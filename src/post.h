@@ -9,6 +9,7 @@
 #include <QString>
 #include <QJsonObject>
 #include <QImage>
+#include <QObject>
 #include <QNetworkReply>
 
 #include <memory>
@@ -17,8 +18,20 @@ struct Post;
 struct Identity;
 class Account;
 
-struct Attachment
+/// Post's attachment object.
+/// TODO make it possible to fetch the images with a Qml image provider.
+/// TODO use getter and setter
+class Attachment : public QObject
 {
+    Q_OBJECT
+
+    Q_PROPERTY(QString id MEMBER m_id CONSTANT)
+    Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
+    Q_PROPERTY(QString previewUrl MEMBER m_preview_url CONSTANT)
+    Q_PROPERTY(QString url MEMBER m_url CONSTANT)
+    Q_PROPERTY(QString description MEMBER m_description CONSTANT)
+
+public:
     Attachment(Post *parent, QJsonObject &obj);
     ~Attachment();
 
@@ -37,13 +50,6 @@ struct Attachment
     QString m_url;
     QString m_description;
 
-    QImage m_preview;
-    QImage m_scratch;
-
-    QNetworkReply *m_reply;
-
-    void fetchPreviewImage();
-    void cancelFetchRequest();
     void setDescription(QString desc);
 };
 
@@ -67,8 +73,11 @@ struct Notification
     std::shared_ptr<Identity> m_identity;
 };
 
-struct Post
+class Post : public QObject
 {
+    Q_OBJECT
+
+public:
     Post() = delete;
     Post(const Post &) = delete;
     Post(Account *parent);
@@ -80,7 +89,6 @@ struct Post
         Unlisted,
         Private,
         Direct,
-        NMembers
     };
 
     Account *m_parent;
@@ -88,10 +96,12 @@ struct Post
     std::shared_ptr<Identity> m_repeat_identity;
 
     bool m_repeat;
-    bool m_is_repeated;
-    bool m_is_favorited;
-    bool m_is_sensitive;
-    bool m_is_expanded;
+    int m_repliesCount;
+    bool m_isRepeated;
+    int m_repeatedCount;
+    bool m_isFavorite;
+    int m_favoriteCount;
+    bool m_isSensitive;
     bool m_attachments_visible;
 
     QDateTime m_published_at;
@@ -103,14 +113,13 @@ struct Post
     QString m_author;
     QString m_reply_to_author;
     QString m_content_type;
-    QList<std::shared_ptr<Attachment>> m_attachments;
+    QList<Attachment *> m_attachments;
     Visibility m_visibility;
     QStringList m_mentions;
 
     bool isEmpty() { return m_post_id.isEmpty(); }
     void addAttachments(const QJsonArray& attachments);
     void setDirtyAttachment();
-    void fetchAttachmentPreviews();
     void updateAttachment(Attachment *a);
 
     // prepares a post for posting

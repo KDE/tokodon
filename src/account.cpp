@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "account.h"
+#include "accountmanager.h"
 #include <QUrlQuery>
 #include <QDebug>
 
@@ -43,6 +44,7 @@ QUrl Account::apiUrl(QString path)
 void Account::registerApplication()
 {
     // clear any previous bearer token credentials
+    qDebug() << "clear token";
     m_token = QString();
 
     // register
@@ -240,15 +242,13 @@ void Account::upload(std::shared_ptr<Post> p, QFile *file, QString filename)
 
         auto obj = doc.object ();
 
-        auto att = std::make_shared<Attachment> (p.get (), obj);
+        auto att = new Attachment(p.get(), obj);
         if (att->m_url.isEmpty ())
             return;
 
-        att->fetchPreviewImage ();
+        p->m_attachments.append(att);
 
-        p->m_attachments.append (att);
-
-        Q_EMIT attachmentUploaded (p, att);
+        Q_EMIT attachmentUploaded(p, att);
     });
 }
 
@@ -339,6 +339,7 @@ void Account::setToken(const QString &authcode)
        auto doc = QJsonDocument::fromJson(data);
 
        m_token = doc.object()["access_token"].toString();
+       qDebug() << "token set";
        validateToken();
     });
 }
@@ -352,9 +353,7 @@ void Account::validateToken()
     QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
 
     get(verify_credentials, true, [=] (QNetworkReply *reply) {
-            qDebug() << "validating";
         if (! reply->isFinished()) {
-            qDebug() << "invalid";
             return;
         }
 
@@ -365,6 +364,8 @@ void Account::validateToken()
             return;
 
         Q_EMIT authenticated();
+
+        AccountManager::instance().addAccount(this);
 
         m_identity.fromSourceData(doc.object());
     });
@@ -390,7 +391,7 @@ void Account::writeToSettings(QSettings &settings)
 
 void Account::buildFromSettings(QSettings &settings)
 {
-    if (settings.value("token").toString().isEmpty()) {
+    if (!settings.value("token").toString().isEmpty()) {
         m_token = settings.value("token").toString();
         m_client_id = settings.value("client_id").toString();
         m_client_secret = settings.value("client_secret").toString();
@@ -759,9 +760,7 @@ void Identity::fromSourceData(QJsonObject doc)
     QJsonObject source = doc["source"].toObject();
     m_visibility = source["privacy"].toString();
 
-    QUrl avatar_url = QUrl(doc["avatar"].toString());
-
-    m_avatarUrl = avatar_url;
+    m_avatarUrl = QUrl(doc["avatar"].toString());;
 
     if (m_acct == m_parent->identity().m_acct)
         m_parent->setDirtyIdentity();

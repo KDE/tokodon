@@ -14,11 +14,10 @@ static QMap<QString, Attachment::AttachmentType> str_to_att_type = {
 };
 
 Attachment::Attachment(Post *parent, QJsonObject &obj)
-    : m_parent(parent),
-      m_reply(nullptr)
+    : m_parent(parent)
 {
     m_type = Unknown;
-    if (! obj.contains("type"))
+    if (!obj.contains("type"))
         return;
 
     m_id = obj["id"].toString();
@@ -28,40 +27,12 @@ Attachment::Attachment(Post *parent, QJsonObject &obj)
 
     // determine type if we can
     auto type = obj["type"].toString();
-    if (str_to_att_type.contains (type))
+    if (str_to_att_type.contains(type))
         m_type = str_to_att_type[type];
 }
 
 Attachment::~Attachment()
 {
-    cancelFetchRequest();
-}
-
-void Attachment::cancelFetchRequest()
-{
-    if (! m_reply)
-        return;
-
-    m_reply->disconnect();
-    m_reply->deleteLater();
-}
-
-void Attachment::fetchPreviewImage()
-{
-    cancelFetchRequest();
-
-    QNetworkRequest request = QNetworkRequest(m_preview_url);
-    m_reply = m_parent->m_parent->qnam()->get(request);
-
-    QObject::connect(m_reply, &QNetworkReply::finished, [=] () {
-        if (! m_reply->isFinished())
-            return;
-
-        auto data = m_reply->readAll();
-        m_preview = QImage::fromData(data);
-
-        m_parent->setDirtyAttachment();
-    });
 }
 
 void Attachment::setDescription(QString desc)
@@ -85,29 +56,27 @@ static QMap<QString, Post::Visibility> str_to_vis = {
 };
 
 Post::Post(Account *parent)
-    : m_parent(parent),
-      m_is_expanded(true),
-      m_attachments_visible(true)
+    : QObject(parent)
+    , m_parent(parent)
+    , m_attachments_visible(true)
 {
     QString vis_str = parent->identity().m_visibility;
     m_visibility = str_to_vis[vis_str];
 }
 
 Post::Post(Account *parent, QJsonObject obj)
-    : m_parent(parent),
-      m_visibility(Post::Visibility::Public)
+    : QObject(parent)
+    , m_parent(parent)
+    , m_visibility(Post::Visibility::Public)
 {
     auto account_doc = obj["account"].toObject();
     auto acct = account_doc["acct"].toString();
     auto reblog_obj = obj["reblog"].toObject();
 
-    if (! obj.contains("reblog") || reblog_obj.isEmpty())
-    {
+    if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
         m_author_identity = m_parent->identityLookup(acct, account_doc);
-    }
-    else
-    {
+    } else {
         m_repeat = true;
 
         auto repeat_doc = obj["reblog"].toObject();
@@ -121,37 +90,35 @@ Post::Post(Account *parent, QJsonObject obj)
     m_subject = obj["spoiler_text"].toString();
     m_content = obj["content"].toString();
     m_post_id =  m_reply_target_id = obj["id"].toString();
-    m_is_favorited = obj["favourited"].toBool();
-    m_is_repeated = obj["reblogged"].toBool();
-    m_is_sensitive = obj["sensitive"].toBool();
+    m_isFavorite = obj["favourited"].toBool();
+    m_favoriteCount = obj["favourites_count"].toInt();
+    m_repeatedCount = obj["reblogs_count"].toInt();
+    m_repliesCount = obj["replies_count"].toInt();
+    m_isRepeated = obj["reblogged"].toBool();
+    m_isSensitive = obj["sensitive"].toBool();
     m_link = QUrl(obj["url"].toString());
     m_visibility = str_to_vis[obj["visibility"].toString()];
 
     QJsonArray mentions;
 
-    if (m_repeat)
-    {
+    if (m_repeat) {
         m_visibility = str_to_vis[reblog_obj["visibility"].toString()];
         m_reply_target_id = reblog_obj["id"].toString();
         addAttachments(reblog_obj["media_attachments"].toArray());
 
         mentions = reblog_obj["mentions"].toArray();
-    }
-    else
-    {
+    } else {
         addAttachments(obj["media_attachments"].toArray());
 
         mentions = obj["mentions"].toArray();
     }
 
-    for (auto m : mentions)
-    {
-        QJsonObject o = m.toObject();
+    for (const auto &m : qAsConst(mentions)) {
+        const QJsonObject o = m.toObject();
         m_mentions.push_back(o["acct"].toString());
     }
 
-    m_attachments_visible = ! m_is_sensitive;
-    m_is_expanded = m_subject.isEmpty ();
+    m_attachments_visible = !m_isSensitive;
 }
 
 Post::~Post()
@@ -161,19 +128,12 @@ Post::~Post()
 
 void Post::addAttachments(const QJsonArray& attachments)
 {
-    for (auto attachment_val : attachments)
-    {
+    for (const auto &attachment_val : attachments) {
         auto attachment_obj = attachment_val.toObject();
-        auto attachment = std::make_shared<Attachment>(this, attachment_obj);
+        auto attachment = new Attachment(this, attachment_obj);
 
         m_attachments.push_back(attachment);
     }
-}
-
-void Post::fetchAttachmentPreviews()
-{
-    for (auto att : m_attachments)
-        att->fetchPreviewImage();
 }
 
 void Post::setDirtyAttachment()
@@ -188,17 +148,17 @@ QJsonDocument Post::toJsonDocument() const
     obj["spoiler_text"] = m_subject;
     obj["status"] = m_content;
     obj["content_type"] = m_content_type;
-    obj["sensitive"] = m_is_sensitive;
+    obj["sensitive"] = m_isSensitive;
     obj["visibility"] = vis_to_str[m_visibility];
 
     if (! m_reply_target_id.isEmpty ())
         obj["in_reply_to_id"] = m_reply_target_id;
 
     auto media_ids = QJsonArray ();
-    for (auto att : m_attachments)
-    {
-         media_ids.append (att->m_id);
+    for (const auto att : m_attachments) {
+         media_ids.append(att->m_id);
     }
+
     obj["media_ids"] = media_ids;
 
     return QJsonDocument (obj);

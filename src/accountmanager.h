@@ -16,8 +16,7 @@ class AccountManager : public QObject
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
     Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
 public:
-    explicit AccountManager(QObject *parent = nullptr);
-    virtual ~AccountManager();
+    static AccountManager &instance();
 
     void loadFromSettings(QSettings &settings);
     void writeToSettings(QSettings &settings);
@@ -46,6 +45,8 @@ public Q_SLOTS:
     void childIdentityChanged(Account *account);
 
 private:
+    explicit AccountManager(QObject *parent = nullptr);
+    virtual ~AccountManager();
     QList<Account *> m_accounts;
     Account *m_selected_account;
 };

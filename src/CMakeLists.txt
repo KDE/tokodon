@@ -3,6 +3,7 @@ add_executable(kmasto
     account.cpp
     post.cpp
     main.cpp
+    threadmodel.cpp
     timelinemodel.cpp
     resources.qrc
 )

@@ -13,6 +13,7 @@ class TimelineModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(AccountManager *accountManager READ accountManager WRITE setAccountManager NOTIFY accountManagerChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
 
 public:
     enum CustoRoles {
@@ -20,14 +21,20 @@ public:
         AuthorDisplayNameRole,
         PublishedAtRole,
         AuthorIdRole,
-        RebloggedRole,
+        TodayRole,
         SensitiveRole,
         SpoilerTextRole,
         MutedRole,
+        AttachmentsRole,
+        WasRebloggedRole,
+        RebloggedDisplayNameRole,
+        RebloggedIdRole,
+        RebloggedRole,
         ReblogsCountRole,
         RepliesCountRole,
         FavoritedRole,
         FavoritesCountRole,
+        ThreadModelRole,
         UrlRole,
     };
 
@@ -44,6 +51,8 @@ public:
     QString name() const;
     void setName(const QString &name);
 
+    virtual QString displayName() const;
+
     void disallowUpdates() { m_last_fetch = time(nullptr) + 3; }
     std::shared_ptr<Post> internalData(const QModelIndex &index) const;
 
@@ -54,9 +63,6 @@ public Q_SLOTS:
     void actionRepeat(const QModelIndex &index);
     void actionMenu(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
-    void actionExpand(const QModelIndex &index);
-    void handleMouseOver(const QModelIndex &index);
-    void showThreadWindow(const QModelIndex &index);
 
 Q_SIGNALS:
     void wantReply(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);

@@ -24,6 +24,12 @@ AccountManager::~AccountManager()
     m_accounts.clear();
 }
 
+AccountManager &AccountManager::instance()
+{
+    static AccountManager accountManager;
+    return accountManager;
+}
+
 Account *AccountManager::createNewAccount(const QString &username, const QString &instanceUri)
 {
     return new Account(username, instanceUri, this);

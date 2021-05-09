@@ -67,9 +67,7 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 #endif
 
-    AccountManager accountManager;
-
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &accountManager);
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Post *>("Post*");

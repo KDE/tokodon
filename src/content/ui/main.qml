@@ -9,6 +9,16 @@ import org.kde.kmasto 1.0
 
 Kirigami.ApplicationWindow {
 
+    globalDrawer: Kirigami.GlobalDrawer {
+        title: "Hello App"
+        titleIcon: "applications-graphics"
+        isMenu: true
+    }
+
+    contextDrawer: Kirigami.ContextDrawer {
+        id: contextDrawer
+    }
+
     Component.onCompleted: {
         if (AccountManager.hasAccounts) {
             pageStack.push(mainTimeline);
@@ -68,8 +78,6 @@ Kirigami.ApplicationWindow {
                     text: i18n("Continue")
                     onClicked: {
                         account.setToken(tokenField.text);
-                        AccountManager.addAccount(account);
-                        AccountManager.selectedAccount = account;
                         pageStack.clear();
                         pageStack.push(mainTimeline)
                     }
@@ -80,41 +88,11 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: mainTimeline
-        Kirigami.ScrollablePage {
-            title: "Logged in!" + AccountManager.selectedAccount.instanceName
-
-            ListView {
-                model: TimelineModel {
-                    accountManager: AccountManager
-                    name: "home"
-                }
-                delegate: Kirigami.BasicListItem {
-                    GridLayout {
-                        columns: 2
-                        Kirigami.Avatar {
-                            Layout.alignment: Qt.AlignTop
-                            Layout.rowSpan: 2
-                            source: model.avatar
-                            name: model.authorDisplayName
-                        }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            QQC2.Label {
-                                Layout.fillWidth: true
-                                text: i18n("%1 @%2 -", model.authorDisplayName, model.authorId)
-                                elide:Text.ElideRight
-                            }
-                            QQC2.Label {
-                                text: Date(model.publishedAt).toString()
-                            }
-                        }
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            text: model.display
-                            wrapMode: Text.Wrap
-                        }
-                    }
-                }
+        TimelinePage {
+            model: TimelineModel {
+                id: timelineModel
+                accountManager: AccountManager
+                name: "home"
             }
         }
     }
