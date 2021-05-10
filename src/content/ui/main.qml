@@ -29,7 +29,7 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: loginPage
-        Kirigami.Page {
+        MastoPage {
             Kirigami.FormLayout {
                 anchors.centerIn: parent
                 QQC2.TextField {

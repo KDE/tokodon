@@ -13,6 +13,12 @@ Kirigami.ScrollablePage {
 
     required property var model
 
+    actions.main: Kirigami.Action {
+        icon.name: "list-add"
+        text: i18n("Toot")
+        onTriggered: pageStack.layers.push("qrc:/content/ui/TootComposer.qml")
+    }
+
     ListView {
         model: timelinePage.model
         delegate: Kirigami.BasicListItem {
@@ -26,6 +32,7 @@ Kirigami.ScrollablePage {
             })
             GridLayout {
                 columnSpacing: Kirigami.Units.largeSpacing
+                rowSpacing: 0
                 columns: 2
 
                 Kirigami.Icon {
@@ -35,6 +42,7 @@ Kirigami.ScrollablePage {
                     color: Kirigami.Theme.disabledTextColor
                     Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                     Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
                 }
                 QQC2.Label {
                     visible: model.wasReblogged
@@ -51,6 +59,7 @@ Kirigami.ScrollablePage {
                 }
                 RowLayout {
                     Layout.fillWidth: true
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: model.authorDisplayName
                     }

@@ -93,7 +93,6 @@ QString TimelineModel::name() const
 
 void TimelineModel::fillTimeline(QString from_id)
 {
-    qDebug() << "trying to fill home" << from_id;
     if (m_timeline_name != "home" && m_timeline_name != "public" && m_timeline_name != "federated") {
         return;
     }
