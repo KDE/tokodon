@@ -21,7 +21,7 @@ public:
         AuthorDisplayNameRole,
         PublishedAtRole,
         AuthorIdRole,
-        TodayRole,
+        RelativeTimeRole,
         SensitiveRole,
         SpoilerTextRole,
         MutedRole,

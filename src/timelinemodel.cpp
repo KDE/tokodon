@@ -5,6 +5,7 @@
 #include "timelinemodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
+#include <QtMath>
 
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -191,7 +192,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
         {AuthorIdRole, QByteArrayLiteral("authorId")},
         {PublishedAtRole, QByteArrayLiteral("publishedAt")},
-        {TodayRole, QByteArrayLiteral("isToday")},
+        {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
         {SensitiveRole, QByteArrayLiteral("sensitive")},
         {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
         {RebloggedRole, QByteArrayLiteral("reblogged")},
@@ -227,8 +228,6 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_author_identity->m_acct;
     case PublishedAtRole:
         return p->m_published_at;
-    case TodayRole:
-        return p->m_published_at.time() == QTime::currentTime();
     case WasRebloggedRole:
         return p->m_repeat;
     case RebloggedDisplayNameRole:
@@ -255,6 +254,20 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<QList<Attachment *>>(p->m_attachments);
     case ThreadModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
+    case RelativeTimeRole:
+        {
+            const auto current = QDateTime::currentDateTime();
+            auto secsTo = p->m_published_at.secsTo(current);
+            if (secsTo < 60 * 60) {
+                return i18nc("hour:minute", "%1:%2", p->m_published_at.time().hour(),
+                        p->m_published_at.time().minute());
+            } else if (secsTo < 60 * 60 * 24) {
+                return i18n("%1h", qCeil(secsTo / (60 * 60)));
+            } else if (secsTo < 60 * 60 * 24 * 7) { 
+                return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
+            }
+            return p->m_published_at.date().toString(Qt::SystemLocaleShortDate);
+        }
     }
 
     return {};

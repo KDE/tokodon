@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
                         text: `@${model.authorId}`
                     }
                     QQC2.Label {
-                        text: Date(model.publishedAt).toLocaleString(Qt.locale(), "hh:mm")
+                        text: model.relativeTime
                     }
                 }
                 QQC2.Label {

@@ -98,6 +98,7 @@ Post::Post(Account *parent, QJsonObject obj)
     m_isSensitive = obj["sensitive"].toBool();
     m_link = QUrl(obj["url"].toString());
     m_visibility = str_to_vis[obj["visibility"].toString()];
+    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
 
     QJsonArray mentions;
 
