@@ -51,10 +51,10 @@ void Account::registerApplication()
     QUrl regUrl = apiUrl("/api/v1/apps");
     QJsonObject obj;
 
-    obj["client_name"] = "KMasto";
+    obj["client_name"] = "Tokodon";
     obj["redirect_uris"] = "urn:ietf:wg:oauth:2.0:oob";
     obj["scopes"] = "read write follow";
-    obj["website"] = "https://git.pleroma.social/kaniini/michabo"; // TODO
+    obj["website"] = "https://invent.kde.org/carlschwan/kmasto";
 
     QJsonDocument doc(obj);
 
@@ -220,7 +220,7 @@ void Account::post(QUrl url, QHttpMultiPart *message, bool authenticated, std::f
 }
 
 // assumes file is already opened and named
-void Account::upload(std::shared_ptr<Post> p, QFile *file, QString filename)
+void Account::upload(Post *p, QFile *file, QString filename)
 {
     QHttpMultiPart *mp = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
@@ -240,9 +240,9 @@ void Account::upload(std::shared_ptr<Post> p, QFile *file, QString filename)
         if (! doc.isObject ())
             return;
 
-        auto obj = doc.object ();
+        auto obj = doc.object();
 
-        auto att = new Attachment(p.get(), obj);
+        auto att = new Attachment(p, obj);
         if (att->m_url.isEmpty ())
             return;
 
@@ -506,7 +506,7 @@ void Account::fetchThread(QString post_id, std::function<void (QList<std::shared
     get (status_url, true, on_fetch_status);
 }
 
-void Account::postStatus(std::shared_ptr<Post> p)
+void Account::postStatus(Post *p)
 {
     QUrl post_status_url = apiUrl("/api/v1/statuses");
     auto doc = p->toJsonDocument();
@@ -696,8 +696,7 @@ QWebSocket *Account::streamingSocket(QString stream)
             target_tl = "home";
 
         auto event = env.object()["event"].toString();
-        if (event == "update")
-        {
+        if (event == "update") {
             QSettings settings;
             QJsonDocument doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
             auto account_obj = doc.object()["account"].toObject ();
@@ -709,9 +708,7 @@ QWebSocket *Account::streamingSocket(QString stream)
                 handleUpdate(doc, target_tl);
 
             return;
-        }
-        else if (event == "notification")
-        {
+        } else if (event == "notification") {
             QJsonDocument doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
 
             handleNotification(doc);
@@ -745,6 +742,11 @@ void Account::handleNotification(QJsonDocument doc)
     std::shared_ptr<Notification> n = std::make_shared<Notification> (this, obj);
 
     Q_EMIT notification (n);
+}
+
+Post *Account::newPost()
+{
+    return new Post(this);
 }
 
 void Identity::fromSourceData(QJsonObject doc)

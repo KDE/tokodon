@@ -76,6 +76,11 @@ struct Notification
 class Post : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString subject READ subject WRITE setSubject NOTIFY subjectChanged)
+    Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
+    Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
+    Q_PROPERTY(bool isSensitive READ isSensitive WRITE setSensitive NOTIFY sensitiveChanged)
+    Q_PROPERTY(Visibility visibility READ visibility WRITE setVisibility NOTIFY visibilityChanged)
 
 public:
     Post() = delete;
@@ -90,10 +95,24 @@ public:
         Private,
         Direct,
     };
+    Q_ENUM(Visibility)
 
     Account *m_parent;
     std::shared_ptr<Identity> m_author_identity;
     std::shared_ptr<Identity> m_repeat_identity;
+
+    QString subject() const;
+    void setSubject(const QString &subject);
+    QString content() const;
+    void setContent(const QString &content);
+    QString contentType() const;
+    void setContentType(const QString &contentType);
+    bool isSensitive() const;
+    void setSensitive(bool isSensitive);
+    Visibility visibility() const;
+    void setVisibility(Visibility visibility);
+
+    Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
     bool m_repeat;
     int m_repliesCount;
@@ -118,10 +137,17 @@ public:
     QStringList m_mentions;
 
     bool isEmpty() { return m_post_id.isEmpty(); }
-    void addAttachments(const QJsonArray& attachments);
+    Q_INVOKABLE void addAttachments(const QJsonArray& attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
 
     // prepares a post for posting
     QJsonDocument toJsonDocument() const;
+
+Q_SIGNALS:
+    void subjectChanged();
+    void contentChanged();
+    void contentTypeChanged();
+    void sensitiveChanged();
+    void visibilityChanged();
 };

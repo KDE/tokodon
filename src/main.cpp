@@ -27,6 +27,7 @@
 
 #include "accountmanager.h"
 #include "account.h"
+#include "attachmenteditormodel.h"
 #include "timelinemodel.h"
 #include "post.h"
 
@@ -69,6 +70,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
+    qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Post *>("Post*");
 

@@ -4,55 +4,200 @@
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
+import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
+import QtQuick.Dialogs 1.3
 import org.kde.kmasto 1.0
 
 MastoPage {
     title: i18n("Write a new toot")
+    property var postObject
 
     Kirigami.FlexColumn {
         padding: 0
         QQC2.TextField {
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true
+            visible: contentWarning.checked
+            onTextChanged: postObject.subject = text
         }
+
         QQC2.TextArea {
+            id: textArea
             placeholderText: i18n("What's new?")
             Layout.fillWidth: true
-            Layout.preferredHeight: Kirigami.Units.gridUnit * 15
-        }
-        RowLayout {
-            QQC2.ToolButton {
-                icon.name: "mail-attachment-symbolic"
-            }
-            QQC2.ToolButton {
-                icon.name: "gnumeric-graphguru"
-            }
-            QQC2.ToolButton {
-                icon.name: "kstars_xplanet"
-                onClicked: visibilityMenu.open()
-                QQC2.Menu {
-                    id: visibilityMenu
-                    QQC2.MenuItem {
-                        icon.name: "kstars_xplanet"
-                        text: i18n("Public")
+            Layout.fillHeight: true
+            Layout.preferredHeight: Kirigami.Units.gridUnit * 12 + actions.implicitHeight
+            bottomInset: -1
+            leftInset: -1
+            rightInset: -1
+            onTextChanged: postObject.content = text
+            Item {
+                id: actions
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.bottom
+                    leftMargin: 1
+                    rightMargin: 1
+                    bottomMargin: 1
+                }
+                implicitHeight: {
+                    let h = 0
+                    for(let i = 0; i < visibleChildren.length; ++i) {
+                        h += Math.ceil(visibleChildren[i].implicitHeight)
                     }
-                    QQC2.MenuItem {
-                        icon.name: "unlock"
-                        text: i18n("Unlisted")
+                    return h
+                }
+                height: implicitHeight
+
+                Behavior on height {
+                    NumberAnimation {
+                        property: "height"
+                        duration: Kirigami.Units.shortDuration
+                        easing.type: Easing.OutCubic
                     }
-                    QQC2.MenuItem {
-                        text: i18n("Private")
-                        icon.name: "lock"
+                }
+
+                GridLayout {
+                    id: attachmentLayout
+                    width: parent.width
+                    height: visible ? implicitHeight : 0
+                    visible: repeater.count > 0
+                    implicitHeight: Kirigami.Units.gridUnit * 20
+                    anchors.bottom: pollSeparator.top
+                    columns: repeater.count > 1 ? 2 : 1
+                    Repeater {
+                        id: repeater
+                        model: AttachmentEditorModel {
+                            id: attachmentModel
+                            post: postObject
+                        }
+
+                        Image {
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            Layout.preferredWidth: Kirigami.Units.gridUnit * 15
+                            Layout.margins: Kirigami.Units.largeSpacing
+                            fillMode: Image.PreserveAspectCrop
+                            source: model.preview
+                        }
                     }
-                    QQC2.MenuItem {
-                        text: i18n("Direct Message")
-                        icon.name: "mail-message"
+                }
+
+                Kirigami.Separator {
+                    id: pollSeparator
+                    visible: addPool.checked
+                    width: parent.width
+                    anchors.bottom: poll.top
+                }
+
+                Column {
+                    width: parent.width
+                    anchors.bottom: actionsToolbar.top
+                    Repeater {
+                        id: poll
+                        model: ListModel {
+                            id: pollModel
+                            property bool multipleChoice: true
+                            ListElement {
+                                name: ""
+                            }
+                            ListElement {
+                                name: ""
+                            }
+                        }
+
+                        Kirigami.AbstractListItem {
+                            background: null
+                            visible: addPool.checked
+                            contentItem: RowLayout {
+                                QQC2.RadioButton {
+                                    autoExclusive: pollModel.multipleChoice
+                                    QQC2.ToolTip {
+                                        text: i18n("Make pool auto-exclusive")
+                                    }
+                                    TapHandler {
+                                        onTapped: pollModel.multipleChoice = !pollModel.multipleChoice
+                                    }
+                                }
+                                QQC2.TextField {
+                                    Layout.fillWidth: true
+                                    placeholderText: i18n("Choice %1", index + 1)
+                                }
+                                QQC2.ToolButton {
+                                    icon.name: "edit-delete-remove"
+                                    enabled: pollModel.count > 2
+                                }
+                            }
+                        }
+                    }
+                }
+
+                QQC2.ToolBar {
+                    id: actionsToolbar
+                    width: parent.width
+                    anchors.bottom: parent.bottom
+                    RowLayout {
+                        QQC2.ToolButton {
+                            visible: !addPool.checked
+                            icon.name: "mail-attachment-symbolic"
+                            onClicked: fileDialog.open()
+                            enabled: repeater.count < 4
+                            FileDialog {
+                                id: fileDialog
+                                folder: shortcuts.home
+                                title: i18n("Please choose a file")
+                                onAccepted: postObject.uploadAttachment(fileDialog.fileUrl);
+                            }
+                        }
+                        QQC2.ToolButton {
+                            id: addPool
+                            icon.name: "gnumeric-graphguru"
+                            checkable: true
+                        }
+                        QQC2.ToolButton {
+                            icon.name: "kstars_xplanet"
+                            onClicked: visibilityMenu.open()
+                            QQC2.Menu {
+                                id: visibilityMenu
+                                QQC2.MenuItem {
+                                    icon.name: "kstars_xplanet"
+                                    text: i18n("Public")
+                                    onTriggered: postObject.visibility = Post.Visibility.Public
+                                }
+                                QQC2.MenuItem {
+                                    icon.name: "unlock"
+                                    text: i18n("Unlisted")
+                                    onTriggered: postObject.visibility = Post.Visibility.Unlisted
+                                }
+                                QQC2.MenuItem {
+                                    text: i18n("Private")
+                                    icon.name: "lock"
+                                    onTriggered: postObject.visibility = Post.Visibility.Private
+                                }
+                                QQC2.MenuItem {
+                                    text: i18n("Direct Message")
+                                    icon.name: "mail-message"
+                                    onTriggered: postObject.visibility = Post.Visibility.Direct
+                                }
+                            }
+                        }
+                        QQC2.ToolButton {
+                            id: contentWarning
+                            text: i18nc("Short for content warning", "cw")
+                            checkable: true
+                        }
                     }
                 }
             }
-            QQC2.ToolButton {
-                text: i18nc("Short for content warning", "cw")
+        }
+
+        QQC2.Button {
+            text: i18n("Send")
+            Layout.alignment: Qt.AlignRight
+            onClicked: {
+                AccountManager.selectedAccount.postStatus(postObject)
             }
         }
     }

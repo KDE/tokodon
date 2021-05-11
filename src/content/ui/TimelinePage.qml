@@ -16,7 +16,12 @@ Kirigami.ScrollablePage {
     actions.main: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Toot")
-        onTriggered: pageStack.layers.push("qrc:/content/ui/TootComposer.qml")
+        onTriggered: {
+            const post = AccountManager.selectedAccount.newPost()
+            pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
+                postObject: post
+            });
+        }
     }
 
     ListView {

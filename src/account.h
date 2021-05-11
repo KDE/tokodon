@@ -78,6 +78,8 @@ public:
     bool haveToken() { return ! m_token.isEmpty (); }
     void validateToken();
 
+    Q_INVOKABLE Post *newPost();
+
     // name
     QString username() const { return m_name; }
     void setUsername(const QString &name) { m_name = name; }
@@ -106,14 +108,14 @@ public:
     void invalidate();
 
     // posting statuses
-    void postStatus(std::shared_ptr<Post> p);
+    Q_INVOKABLE void postStatus(Post *p);
     void favorite(std::shared_ptr<Post> p);
     void unfavorite(std::shared_ptr<Post> p);
     void repeat(std::shared_ptr<Post> p);
     void unrepeat(std::shared_ptr<Post> p);
 
     // uploading media
-    void upload(std::shared_ptr<Post> p, QFile *file, QString filename);
+    void upload(Post *p, QFile *file, QString filename);
     void updateAttachment(Attachment *a);
 
     // thread fetching
@@ -148,7 +150,7 @@ Q_SIGNALS:
     void nameChanged();
     void fetchedInstanceMetadata();
     void invalidatedPost(Post *p);
-    void attachmentUploaded(std::shared_ptr<Post> p, Attachment *att);
+    void attachmentUploaded(Post *p, Attachment *att);
     void notification(std::shared_ptr<Notification> n);
 
 private:

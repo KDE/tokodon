@@ -3,6 +3,8 @@
 
 #include <QDebug>
 #include <QMap>
+#include <QFile>
+#include <QFileInfo>
 
 #include "post.h"
 #include "account.h"
@@ -152,18 +154,28 @@ QJsonDocument Post::toJsonDocument() const
     obj["sensitive"] = m_isSensitive;
     obj["visibility"] = vis_to_str[m_visibility];
 
-    if (! m_reply_target_id.isEmpty ())
+    if (!m_reply_target_id.isEmpty())
         obj["in_reply_to_id"] = m_reply_target_id;
 
-    auto media_ids = QJsonArray ();
+    auto media_ids = QJsonArray();
     for (const auto att : m_attachments) {
          media_ids.append(att->m_id);
     }
 
     obj["media_ids"] = media_ids;
 
-    return QJsonDocument (obj);
+    return QJsonDocument(obj);
 }
+
+void Post::uploadAttachment(const QUrl &filename)
+{
+    QFile *file = new QFile(filename.toLocalFile());
+    const QFileInfo info(filename.toLocalFile());
+
+    file->open(QFile::ReadOnly);
+    m_parent->upload(this, file, info.fileName());
+}
+
 
 void Post::updateAttachment(Attachment *a)
 {
@@ -188,4 +200,75 @@ Notification::Notification(Account *parent, QJsonObject &obj)
     m_post = std::make_shared<Post> (m_account, status);
     m_identity = m_account->identityLookup (acct, account);
     m_type = str_to_not_type[type];
+}
+
+QString Post::subject() const
+{
+    return m_subject;
+}
+
+void Post::setSubject(const QString &subject)
+{
+    if (subject == m_subject) {
+        return;
+    }
+    m_subject = subject;
+    Q_EMIT subjectChanged();
+}
+
+QString Post::content() const
+{
+    return m_content;
+}
+
+void Post::setContent(const QString &content)
+{
+    if (content == m_content) {
+        return;
+    }
+    m_content = content;
+    Q_EMIT contentChanged();
+}
+
+QString Post::contentType() const
+{
+    return m_content_type;
+}
+
+void Post::setContentType(const QString &contentType)
+{
+    if (m_content_type == contentType) {
+        return;
+    }
+    m_content_type = contentType;
+    Q_EMIT contentTypeChanged();
+
+}
+
+bool Post::isSensitive() const
+{
+    return m_isSensitive;
+}
+
+void Post::setSensitive(bool isSensitive)
+{
+    if (m_isSensitive == isSensitive) {
+        return;
+    }
+    m_isSensitive = isSensitive;
+    Q_EMIT sensitiveChanged();
+}
+
+Post::Visibility Post::visibility() const
+{
+    return m_visibility;
+}
+
+void Post::setVisibility(Visibility visibility)
+{
+    if (visibility == m_visibility) {
+        return;
+    }
+    m_visibility = visibility;
+    Q_EMIT visibilityChanged();
 }
