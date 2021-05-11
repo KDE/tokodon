@@ -35,7 +35,8 @@ Account::~Account()
 
 QUrl Account::apiUrl(QString path)
 {
-    auto url = QUrl(m_instance_uri);
+    auto url = QUrl::fromUserInput(m_instance_uri);
+    url.setScheme("https");
     url.setPath(path);
 
     return url;
@@ -321,7 +322,10 @@ void Account::setInstanceUri(const QString &instance_uri)
         return;
 
     // instance URI changed, get new credentials
-    m_instance_uri = instance_uri;
+    QUrl instance_url = QUrl::fromUserInput(instance_uri);
+    instance_url.setScheme("https"); // getting token from http is not supported
+
+    m_instance_uri = instance_url.toString();
     registerApplication();
 }
 
@@ -489,7 +493,8 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     if (from_id != "")
         q.addQueryItem("max_id", from_id);
 
-    QUrl uri(m_instance_uri);
+    QUrl uri = QUrl::fromUserInput(m_instance_uri);
+    uri.setScheme("https");
     uri.setPath(QString("/api/v1/timelines/%1").arg(timeline_name));
     uri.setQuery(q);
 
