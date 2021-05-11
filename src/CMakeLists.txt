@@ -1,4 +1,4 @@
-add_executable(kmasto
+add_executable(tokodon
     accountmanager.cpp
     account.cpp
     post.cpp
@@ -10,12 +10,12 @@ add_executable(kmasto
     resources.qrc
 )
 
-target_include_directories(kmasto PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(kmasto PRIVATE Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
+target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
+target_link_libraries(tokodon PRIVATE Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
 #kconfig_add_kcfg_files(neochat GENERATE_MOC neochatconfig.kcfgc)
 
 if(ANDROID)
-    target_link_libraries(kmasto PRIVATE Qt5::Svg OpenSSL::SSL)
+    target_link_libraries(tokodon PRIVATE Qt5::Svg OpenSSL::SSL)
     kirigami_package_breeze_icons(ICONS
         "help-about"
         "im-user"
@@ -52,12 +52,12 @@ if(ANDROID)
         "network-connect"
     )
 else()
-    target_link_libraries(kmasto PRIVATE Qt5::Widgets)
+    target_link_libraries(tokodon PRIVATE Qt5::Widgets)
 endif()
 
 if(TARGET KF5::DBusAddons)
-    target_link_libraries(kmasto PRIVATE KF5::DBusAddons)
-    target_compile_definitions(kmasto PRIVATE -DHAVE_KDBUSADDONS)
+    target_link_libraries(tokodon PRIVATE KF5::DBusAddons)
+    target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
 endif()
 
-install(TARGETS kmasto ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS tokodon ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

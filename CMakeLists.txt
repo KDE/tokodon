@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(KMasto)
+project(Tokodon)
 
 set(KF5_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
@@ -21,16 +21,9 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddAppIcon)
 
-if(NEOCHAT_FLATPAK)
-    include(cmake/Flatpak.cmake)
-endif()
-
-# Fix a crash due to problems with quotient's event system. Can probably be removed once the reworked event system is in
-cmake_policy(SET CMP0063 OLD)
-
 ecm_setup_version(0.0.1
-    VARIABLE_PREFIX KMASTO
-    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/kmasto-version.h
+    VARIABLE_PREFIX TOKODON
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets)
