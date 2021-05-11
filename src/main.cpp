@@ -73,6 +73,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Post *>("Post*");
+    qRegisterMetaType<Identity *>("Identity*");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

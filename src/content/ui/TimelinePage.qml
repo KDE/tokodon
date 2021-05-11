@@ -13,9 +13,12 @@ Kirigami.ScrollablePage {
 
     required property var model
 
+    property alias listViewHeader: listview.header
+
     actions.main: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Toot")
+        enabled: AccountManager.hasAccounts
         onTriggered: {
             const post = AccountManager.selectedAccount.newPost()
             pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
@@ -25,6 +28,7 @@ Kirigami.ScrollablePage {
     }
 
     ListView {
+        id: listview
         model: timelinePage.model
         delegate: Kirigami.BasicListItem {
             topPadding: Kirigami.Units.largeSpacing
@@ -60,6 +64,13 @@ Kirigami.ScrollablePage {
                     Layout.alignment: Qt.AlignTop
                     Layout.rowSpan: 4
                     source: model.avatar
+                    TapHandler {
+                        onTapped: {
+                            pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                                model: model.accountModel
+                            });
+                        }
+                    }
                     name: model.authorDisplayName
                 }
                 RowLayout {

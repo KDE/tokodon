@@ -1,0 +1,25 @@
+// SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
+// SPDX-License-Identifier: GPL-3.0-only
+
+#include "timelinemodel.h"
+#include "account.h"
+
+class AccountModel : public TimelineModel
+{
+    Q_OBJECT
+    Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
+
+public:
+    AccountModel(AccountManager *manager, int id, const QString &acct, QObject *parent = nullptr);
+
+    QString displayName() const override;
+    Identity *identity() const;
+    void fillTimeline(QString fromId = QString()) override;
+    bool canFetchMore(const QModelIndex &parent) const override;
+
+Q_SIGNALS:
+    void identityChanged();
+private:
+    std::shared_ptr<Identity> m_identity;
+    int m_id;
+};

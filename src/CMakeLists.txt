@@ -4,6 +4,7 @@ add_executable(kmasto
     post.cpp
     main.cpp
     threadmodel.cpp
+    accountmodel.cpp
     timelinemodel.cpp
     attachmenteditormodel.cpp
     resources.qrc

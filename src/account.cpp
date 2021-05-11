@@ -97,10 +97,10 @@ void Account::get(QUrl url, bool authenticated, std::function<void(QNetworkReply
 
     QNetworkReply *reply = m_qnam->get(request);
 
-    if (reply_cb != nullptr)
-    {
+    if (reply_cb != nullptr) {
         QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb] () {
             if (200 != reply->attribute (QNetworkRequest::HttpStatusCodeAttribute)) {
+            qDebug() << reply->attribute (QNetworkRequest::HttpStatusCodeAttribute);
                 return;
             }
 
@@ -265,7 +265,7 @@ void Account::updateAttachment(Attachment *a)
     put(att_url, doc, true, nullptr);
 }
 
-const std::shared_ptr<Identity> Account::identityLookup(QString &acct, QJsonObject doc)
+const std::shared_ptr<Identity> Account::identityLookup(const QString &acct, const QJsonObject &doc)
 {
     auto id = m_identity_cache[acct];
     if (id && id->m_acct == acct)
@@ -277,6 +277,12 @@ const std::shared_ptr<Identity> Account::identityLookup(QString &acct, QJsonObje
     m_identity_cache[acct] = id;
 
     return m_identity_cache[acct];
+}
+
+bool Account::identityCached(const QString &acct) const
+{
+    auto id = m_identity_cache[acct];
+    return id && id->m_acct == acct;
 }
 
 QUrlQuery Account::buildOAuthQuery()
@@ -401,7 +407,71 @@ void Account::buildFromSettings(QSettings &settings)
     }
 }
 
-void Account::fetchTimeline(QString &original_name, QString &from_id)
+void Account::fetchAccount(int id, bool excludeReplies,
+        std::function<void (QList<std::shared_ptr<Post>>)> final_cb)
+{
+    QList<std::shared_ptr<Post>> *thread = new QList<std::shared_ptr<Post>>;
+
+    QUrl uriStatus(m_instance_uri);
+    uriStatus.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
+    QUrlQuery q;
+    if (excludeReplies) {
+        q.addQueryItem("exclude_replies","true");
+    }
+    uriStatus.setQuery(q);
+
+    QUrl uriPinned(m_instance_uri);
+    QUrlQuery q1;
+    uriPinned.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
+    q1.addQueryItem("pinned","true");
+    uriPinned.setQuery(q);
+
+    auto onFetchPinned = [=] (QNetworkReply *reply) {
+        QList<std::shared_ptr<Post>> posts;
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            qDebug() << data;
+            return;
+        }
+        for (const auto &value : doc.array()) {
+            const QJsonObject obj = value.toObject();
+
+            auto p = std::make_shared<Post>(this, obj);
+            thread->push_front(p);
+        }
+
+        QList<std::shared_ptr<Post>> finalThread = QList<std::shared_ptr<Post>> (*thread);
+        delete thread;
+        final_cb(finalThread);
+    };
+
+    auto onFetchAccount = [=] (QNetworkReply *reply) {
+        qDebug() << "fetch pinned";
+        QList<std::shared_ptr<Post>> posts;
+
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            return;
+        }
+
+        for (const auto &value : doc.array()) {
+            const QJsonObject obj = value.toObject();
+
+            auto p = std::make_shared<Post>(this, obj);
+            thread->push_back(p);
+        }
+
+        get(uriPinned, true, onFetchPinned);
+    };
+
+    get(uriStatus, true, onFetchAccount);
+}
+
+void Account::fetchTimeline(const QString &original_name, const QString &from_id)
 {
     QString timeline_name = QString(original_name);
     bool local = timeline_name == "public";
@@ -416,7 +486,7 @@ void Account::fetchTimeline(QString &original_name, QString &from_id)
     if (from_id != "")
         q.addQueryItem("max_id", from_id);
 
-    QUrl uri = QUrl(m_instance_uri);
+    QUrl uri(m_instance_uri);
     uri.setPath(QString("/api/v1/timelines/%1").arg(timeline_name));
     uri.setQuery(q);
 
@@ -443,10 +513,10 @@ void Account::fetchTimeline(QString &original_name, QString &from_id)
     });
 }
 
-void Account::fetchThread(QString post_id, std::function<void (QList<std::shared_ptr<Post>>)> final_cb)
+void Account::fetchThread(const QString &post_id, std::function<void (QList<std::shared_ptr<Post>>)> final_cb)
 {
-    auto status_url = apiUrl (QString ("/api/v1/statuses/%1").arg (post_id));
-    auto context_url = apiUrl (QString ("/api/v1/statuses/%1/context").arg (post_id));
+    auto status_url = apiUrl(QString("/api/v1/statuses/%1").arg(post_id));
+    auto context_url = apiUrl(QString("/api/v1/statuses/%1/context").arg(post_id));
     QList<std::shared_ptr<Post>> *thread = new QList<std::shared_ptr<Post>>;
 
     auto on_fetch_context = [=] (QNetworkReply *reply) {
@@ -457,36 +527,34 @@ void Account::fetchThread(QString post_id, std::function<void (QList<std::shared
         if (! doc.isObject ())
             return;
 
-        auto ancestors = obj["ancestors"].toArray ();
+        const auto ancestors = obj["ancestors"].toArray();
 
-        for (auto anc : ancestors)
-        {
-            if (! anc.isObject ())
+        for (const auto &anc : ancestors) {
+            if (!anc.isObject())
                 continue;
 
-            auto anc_obj = anc.toObject ();
+            auto anc_obj = anc.toObject();
             auto p = std::make_shared<Post> (this, anc_obj);
 
-            thread->push_front (p);
+            thread->push_front(p);
         }
 
-        auto descendents = obj["descendants"].toArray ();
+        const auto descendents = obj["descendants"].toArray();
 
-        for (auto desc : descendents)
-        {
-            if (! desc.isObject ())
+        for (const auto &desc : descendents) {
+            if (!desc.isObject())
                 continue;
 
-            auto desc_obj = desc.toObject ();
-            auto p = std::make_shared<Post> (this, desc_obj);
+            auto desc_obj = desc.toObject();
+            auto p = std::make_shared<Post>(this, desc_obj);
 
-            thread->push_back (p);
+            thread->push_back(p);
         }
 
-        QList<std::shared_ptr<Post>> final_thread = QList<std::shared_ptr<Post>> (*thread);
+        QList<std::shared_ptr<Post>> finalThread = QList<std::shared_ptr<Post>> (*thread);
 
         delete thread;
-        final_cb (final_thread);
+        final_cb(finalThread);
     };
 
     auto on_fetch_status = [=] (QNetworkReply *reply) {
@@ -500,10 +568,10 @@ void Account::fetchThread(QString post_id, std::function<void (QList<std::shared
         auto p = std::make_shared<Post>(this, obj);
         thread->push_front(p);
 
-        get (context_url, true, on_fetch_context);
+        get(context_url, true, on_fetch_context);
     };
 
-    get (status_url, true, on_fetch_status);
+    get(status_url, true, on_fetch_status);
 }
 
 void Account::postStatus(Post *p)
@@ -751,10 +819,17 @@ Post *Account::newPost()
 
 void Identity::fromSourceData(QJsonObject doc)
 {
+    qDebug() << doc["id"];
+    m_id = doc["id"].toString().toInt();
     m_display_name = doc["display_name"].toString();
     m_acct = doc["acct"].toString();
     m_bio = doc["note"].toString();
     m_locked = doc["locked"].toBool();
+    m_backgroundUrl = QUrl(doc["header"].toString());
+    m_followersCount = doc["followers_count"].toInt();
+    m_followingCount = doc["following_count"].toInt();
+    m_statusesCount = doc["statuses_count"].toInt();
+    m_fields = doc["fields"].toArray();
 
     // When the user data is ourselves, we get source.privacy
     // with the default post privacy setting for the user. all others
@@ -762,7 +837,7 @@ void Identity::fromSourceData(QJsonObject doc)
     QJsonObject source = doc["source"].toObject();
     m_visibility = source["privacy"].toString();
 
-    m_avatarUrl = QUrl(doc["avatar"].toString());;
+    m_avatarUrl = QUrl(doc["avatar"].toString());
 
     if (m_acct == m_parent->identity().m_acct)
         m_parent->setDirtyIdentity();

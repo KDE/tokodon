@@ -25,15 +25,35 @@
 
 class Account;
 
-struct Identity
+class Identity : public QObject
 {
+    Q_OBJECT
+
+    Q_PROPERTY(QString displayName MEMBER m_display_name CONSTANT)
+    Q_PROPERTY(QString bio MEMBER m_bio CONSTANT)
+    Q_PROPERTY(QString account MEMBER m_acct CONSTANT)
+    Q_PROPERTY(bool locked MEMBER m_locked CONSTANT)
+    Q_PROPERTY(QString visibility MEMBER m_visibility CONSTANT)
+    Q_PROPERTY(QUrl avatarUrl MEMBER m_avatarUrl CONSTANT)
+    Q_PROPERTY(QUrl backgroundUrl MEMBER m_backgroundUrl CONSTANT)
+    Q_PROPERTY(int followersCount MEMBER m_followersCount CONSTANT)
+    Q_PROPERTY(int followingCount MEMBER m_followingCount CONSTANT)
+    Q_PROPERTY(int statusesCount MEMBER m_statusesCount CONSTANT)
+    Q_PROPERTY(QJsonArray fields MEMBER m_fields CONSTANT)
+
+public:
+    int m_id;
     QString m_display_name;
     QString m_bio;
     QString m_acct;
     bool m_locked;
     QString m_visibility;
     QUrl m_avatarUrl;
-
+    QUrl m_backgroundUrl;
+    QJsonArray m_fields;
+    int m_followersCount;
+    int m_followingCount;
+    int m_statusesCount;
     void fromSourceData(QJsonObject doc);
     void fetchAvatar(QUrl &avatar_url);
     void reparentIdentity(Account *parent);
@@ -98,13 +118,14 @@ public:
     void buildFromSettings(QSettings &settings);
 
     // identity
-    const Identity & identity() { return m_identity; }
+    const Identity &identity() { return m_identity; }
     void setDirtyIdentity();
-    const std::shared_ptr<Identity> identityLookup(QString &acct, QJsonObject doc);
+    const std::shared_ptr<Identity> identityLookup(const QString &acct, const QJsonObject &doc);
     QNetworkAccessManager *qnam() { return m_qnam; }
+    bool identityCached(const QString &acct) const;
 
     // timeline
-    void fetchTimeline(QString &timeline_name, QString &from_id);
+    void fetchTimeline(const QString &timeline_name, const QString &from_id);
     void invalidate();
 
     // posting statuses
@@ -118,8 +139,12 @@ public:
     void upload(Post *p, QFile *file, QString filename);
     void updateAttachment(Attachment *a);
 
-    // thread fetching
-    void fetchThread(QString post_id, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
+    /// Thread fetching
+    void fetchThread(const QString &postId, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
+
+    /// Fetch account timeline
+    void fetchAccount(int id, bool excludeReplies,
+            std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     // streaming
     QUrl streamingUrl(QString stream);

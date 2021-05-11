@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timelinemodel.h"
+#include "accountmodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
@@ -159,7 +160,7 @@ void TimelineModel::fetchedTimeline(Account *account, QString original_name, QLi
         }
     } else {
         row = 0;
-        last = posts.size();
+        last = posts.size() - 1;
         m_timeline = posts;
     }
 
@@ -204,7 +205,8 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {FavoritedRole, QByteArrayLiteral("favorite")},
         {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
         {UrlRole, QByteArrayLiteral("url")},
-        {ThreadModelRole, QByteArrayLiteral("threadModel")}
+        {ThreadModelRole, QByteArrayLiteral("threadModel")},
+        {AccountModelRole, QByteArrayLiteral("accountModel")}
     };
 }
 
@@ -253,6 +255,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<QList<Attachment *>>(p->m_attachments);
     case ThreadModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
+    case AccountModelRole:
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->m_author_identity->m_id, p->m_author_identity->m_acct));
     case RelativeTimeRole:
         {
             const auto current = QDateTime::currentDateTime();

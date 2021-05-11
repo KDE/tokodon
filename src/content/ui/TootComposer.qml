@@ -14,6 +14,7 @@ MastoPage {
     property var postObject
 
     Kirigami.FlexColumn {
+        maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
         QQC2.TextField {
             placeholderText: i18n("Content Warning")
@@ -66,7 +67,7 @@ MastoPage {
                     visible: repeater.count > 0
                     implicitHeight: Kirigami.Units.gridUnit * 20
                     anchors.bottom: pollSeparator.top
-                    columns: repeater.count > 1 ? 2 : 1
+                    columns: repeater.count === 0 ? 1 : 2
                     Repeater {
                         id: repeater
                         model: AttachmentEditorModel {
@@ -77,7 +78,9 @@ MastoPage {
                         Image {
                             Layout.fillWidth: true
                             Layout.fillHeight: true
-                            Layout.preferredWidth: Kirigami.Units.gridUnit * 15
+                            Layout.maximumWidth: Kirigami.Units.gridUnit * 30
+                            Layout.preferredWidth: Kirigami.Units.gridUnit * (repeater.count === 1 ? 30 : 15)
+                            Layout.preferredHeight: Kirigami.Units.gridUnit * (repeater.count > 2 ? 20 : 10)
                             Layout.margins: Kirigami.Units.largeSpacing
                             fillMode: Image.PreserveAspectCrop
                             source: model.preview
@@ -93,10 +96,10 @@ MastoPage {
                 }
 
                 Column {
+                    id: poll
                     width: parent.width
                     anchors.bottom: actionsToolbar.top
                     Repeater {
-                        id: poll
                         model: ListModel {
                             id: pollModel
                             property bool multipleChoice: true
@@ -197,7 +200,8 @@ MastoPage {
             text: i18n("Send")
             Layout.alignment: Qt.AlignRight
             onClicked: {
-                AccountManager.selectedAccount.postStatus(postObject)
+                AccountManager.selectedAccount.postStatus(postObject);
+                applicationWindow().pageStack.layers.pop();
             }
         }
     }

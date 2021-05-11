@@ -7,6 +7,7 @@
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_scratch(nullptr)
 {
 }
 
@@ -21,8 +22,7 @@ void AttachmentEditorModel::setPost(Post *post)
         return;
     }
     if (m_scratch) {
-        disconnect(m_scratch->m_parent, &Account::attachmentUploaded,
-                   this, nullptr);
+        disconnect(m_scratch->m_parent, nullptr, this, nullptr);
     }
     beginResetModel();
     m_scratch = post;
@@ -31,7 +31,6 @@ void AttachmentEditorModel::setPost(Post *post)
         connect(m_scratch->m_parent, &Account::attachmentUploaded,
                 this, [=](Post *p, Attachment *att) {
                     if (p == m_scratch) {
-                        qDebug() << m_scratch << att << att->m_preview_url;
                         // TODO beginInsertModel
                         beginResetModel();
                         endResetModel();

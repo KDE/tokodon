@@ -35,6 +35,7 @@ public:
         FavoritedRole,
         FavoritesCountRole,
         ThreadModelRole,
+        AccountModelRole,
         UrlRole,
     };
 
