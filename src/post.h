@@ -135,6 +135,7 @@ public:
     QList<Attachment *> m_attachments;
     Visibility m_visibility;
     QStringList m_mentions;
+    bool m_pinned;
 
     bool isEmpty() { return m_post_id.isEmpty(); }
     Q_INVOKABLE void addAttachments(const QJsonArray& attachments);

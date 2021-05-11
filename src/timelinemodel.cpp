@@ -190,6 +190,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {Qt::DisplayRole, QByteArrayLiteral("display")},
         {AvatarRole, QByteArrayLiteral("avatar")},
         {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
+        {PinnedRole, QByteArrayLiteral("pinned")},
         {AuthorIdRole, QByteArrayLiteral("authorId")},
         {PublishedAtRole, QByteArrayLiteral("publishedAt")},
         {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
@@ -247,6 +248,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_repeatedCount;
     case FavoritedRole:
         return p->m_isFavorite;
+    case PinnedRole:
+        return p->m_pinned;
     case SensitiveRole:
         return p->m_isSensitive;
     case SpoilerTextRole:

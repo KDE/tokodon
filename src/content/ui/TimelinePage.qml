@@ -14,6 +14,7 @@ Kirigami.ScrollablePage {
     required property var model
 
     property alias listViewHeader: listview.header
+    property bool isProfile: false
 
     actions.main: Kirigami.Action {
         icon.name: "list-add"
@@ -43,6 +44,22 @@ Kirigami.ScrollablePage {
                 columnSpacing: Kirigami.Units.largeSpacing
                 rowSpacing: 0
                 columns: 2
+
+                Kirigami.Icon {
+                    source: "pin"
+                    Layout.alignment: Qt.AlignRight
+                    visible: model.pinned && timelinePage.isProfile
+                    color: Kirigami.Theme.disabledTextColor
+                    Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                    Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                }
+                QQC2.Label {
+                    text: i18n("Pinned entry")
+                    visible: model.pinned && timelinePage.isProfile
+                    color: Kirigami.Theme.disabledTextColor
+                    font: Kirigami.Theme.smallFont
+                }
 
                 Kirigami.Icon {
                     source: "retweet"

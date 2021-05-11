@@ -10,6 +10,7 @@ import QtQuick.Dialogs 1.3
 import org.kde.kmasto 1.0
 
 TimelinePage {
+    isProfile: true
     listViewHeader: ColumnLayout {
         width: parent.width
         Item {

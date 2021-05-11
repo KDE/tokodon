@@ -424,7 +424,7 @@ void Account::fetchAccount(int id, bool excludeReplies,
     QUrlQuery q1;
     uriPinned.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
     q1.addQueryItem("pinned","true");
-    uriPinned.setQuery(q);
+    uriPinned.setQuery(q1);
 
     auto onFetchPinned = [=] (QNetworkReply *reply) {
         QList<std::shared_ptr<Post>> posts;
@@ -435,11 +435,13 @@ void Account::fetchAccount(int id, bool excludeReplies,
             qDebug() << data;
             return;
         }
+        int i = 0;
         for (const auto &value : doc.array()) {
             const QJsonObject obj = value.toObject();
 
             auto p = std::make_shared<Post>(this, obj);
-            thread->push_front(p);
+            thread->insert(i, p);
+            i++;
         }
 
         QList<std::shared_ptr<Post>> finalThread = QList<std::shared_ptr<Post>> (*thread);
@@ -465,6 +467,7 @@ void Account::fetchAccount(int id, bool excludeReplies,
             thread->push_back(p);
         }
 
+        qDebug() << uriPinned;
         get(uriPinned, true, onFetchPinned);
     };
 

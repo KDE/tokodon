@@ -25,6 +25,7 @@ public:
         SensitiveRole,
         SpoilerTextRole,
         MutedRole,
+        PinnedRole,
         AttachmentsRole,
         WasRebloggedRole,
         RebloggedDisplayNameRole,
