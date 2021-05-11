@@ -8,7 +8,6 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 
 Kirigami.ApplicationWindow {
-
     globalDrawer: Kirigami.GlobalDrawer {
         title: "Hello App"
         titleIcon: "applications-graphics"
@@ -32,6 +31,10 @@ Kirigami.ApplicationWindow {
         MastoPage {
             Kirigami.FormLayout {
                 anchors.centerIn: parent
+                Kirigami.Heading {
+                    Kirigami.FormData.isSection: true
+                    text: i18n("Welcome to Tokodon")
+                }
                 QQC2.TextField {
                     id: instanceUrl
                     Kirigami.FormData.label: i18n("Instance Url:")
@@ -40,15 +43,11 @@ Kirigami.ApplicationWindow {
                     id: username
                     Kirigami.FormData.label: i18n("Username:")
                 }
-            }
-            footer: QQC2.ToolBar {
-                RowLayout {
-                    QQC2.Button {
-                        text: i18n("Continue")
-                        onClicked: pageStack.push(authorizationPage, {
-                            account: AccountManager.createNewAccount(username.text, instanceUrl.text)
-                        });
-                    }
+                QQC2.Button {
+                    text: i18n("Continue")
+                    onClicked: pageStack.push(authorizationPage, {
+                        account: AccountManager.createNewAccount(username.text, instanceUrl.text)
+                    });
                 }
             }
         }
@@ -56,21 +55,46 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: authorizationPage
-        Kirigami.Page {
+        MastoPage {
             required property var account
-
-            ColumnLayout {
-                anchors.centerIn: parent
-                QQC2.TextField {
-                    text: account.authorizeUrl
+            Kirigami.FlexColumn {
+                maximumWidth: Kirigami.Units.gridUnits * 30
+                TextEdit {
+                    color: Kirigami.Theme.textColor
+                    textFormat: Text.RichText
+                    readOnly: true
+                    selectByMouse: true
+                    text: i18n("To continue, please open the following link and authorize Tokodon: %1", "<br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
+                    wrapMode: Text.WordWrap
+                    onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
+                    Layout.fillWidth: true
+                    TapHandler {
+                        acceptedButtons: Qt.RightButton
+                        onTapped: if (parent.hoveredLink.length > 0) {
+                            menuLink.link = parent.hoveredLink;
+                            menuLink.popup();
+                        }
+                    }
+                    QQC2.Menu {
+                        id: menuLink
+                        property string link
+                        QQC2.MenuItem {
+                            text: i18n("Copy link")
+                            onTriggered: Clipboard.saveText(menuLink.link)
+                        }
+                        QQC2.MenuItem {
+                            text: i18n("Open link")
+                            onTriggered: Qt.openUrlExternally(menuLink.link)
+                        }
+                    }
                 }
 
-                QQC2.Button {
-                    text: "Open browser"
-                    onClicked: Qt.openUrlExternally(account.authorizeUrl)
+                QQC2.Label {
+                    text: i18n("Enter token:")
                 }
 
                 QQC2.TextField {
+                    Layout.fillWidth: true
                     id: tokenField
                 }
 

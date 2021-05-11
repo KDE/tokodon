@@ -30,6 +30,7 @@
 #include "attachmenteditormodel.h"
 #include "timelinemodel.h"
 #include "post.h"
+#include "clipboard.h"
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -57,12 +58,12 @@ int main(int argc, char *argv[])
 
     QApplication::setOrganizationName("KDE");
 
-    KAboutData about(QStringLiteral("kmasto"), i18n("KMasto"), QStringLiteral(KMASTO_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
+    KAboutData about(QStringLiteral("tokodon"), i18n("Tokodon"), QStringLiteral(KMASTO_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"), QString(), QStringLiteral("carl@carlschwan.eu"));
     about.setOrganizationDomain("kde.org");
 
     KAboutData::setApplicationData(about);
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kmasto")));
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
 
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
@@ -70,6 +71,11 @@ int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
+    qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "Clipboard", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new Clipboard;
+    });
     qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Post *>("Post*");

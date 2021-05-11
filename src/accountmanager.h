@@ -6,6 +6,7 @@
 
 #include <QObject>
 #include <QSettings>
+#include <KAboutData>
 
 #include "account.h"
 #include "post.h"
@@ -15,6 +16,7 @@ class AccountManager : public QObject
     Q_OBJECT
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
     Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
+    Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
     static AccountManager &instance();
 
@@ -28,6 +30,9 @@ public:
     void selectAccount(Account *account);
     Account *selectedAccount();
 
+    void setAboutData(const KAboutData &aboutData);
+    [[nodiscard]] KAboutData aboutData() const;
+
     Q_INVOKABLE Account *createNewAccount(const QString &username, const QString &instanceUri);
 
 Q_SIGNALS:
@@ -40,6 +45,7 @@ Q_SIGNALS:
     void fetchedInstanceMetadata(Account *account);
     void invalidatedPost(Account *account, Post *post);
     void notification(Account *account, std::shared_ptr<Notification> n);
+    void aboutDataChanged();
 
 public Q_SLOTS:
     void childIdentityChanged(Account *account);
@@ -49,4 +55,5 @@ private:
     virtual ~AccountManager();
     QList<Account *> m_accounts;
     Account *m_selected_account;
+    KAboutData m_aboutData;
 };

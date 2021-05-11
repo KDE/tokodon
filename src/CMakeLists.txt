@@ -7,6 +7,7 @@ add_executable(tokodon
     accountmodel.cpp
     timelinemodel.cpp
     attachmenteditormodel.cpp
+    clipboard.cpp
     resources.qrc
 )
 

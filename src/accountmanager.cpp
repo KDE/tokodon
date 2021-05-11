@@ -130,3 +130,14 @@ void AccountManager::loadFromSettings(QSettings &settings)
 
     settings.endGroup();
 }
+
+KAboutData AccountManager::aboutData() const
+{
+    return m_aboutData;
+}
+
+void AccountManager::setAboutData(const KAboutData &aboutData)
+{
+    m_aboutData = aboutData;
+    Q_EMIT aboutDataChanged();
+}
