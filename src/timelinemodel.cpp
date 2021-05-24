@@ -137,8 +137,8 @@ void TimelineModel::fetchedTimeline(Account *account, QString original_name, QLi
     if (posts.isEmpty())
         return;
 
-    int row, last;
-
+    int row = 0;
+    int last = 0;
 
     if (!m_timeline.isEmpty()) {
         auto post_old = m_timeline.first();

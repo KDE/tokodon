@@ -81,7 +81,7 @@ protected:
     Account *m_account = nullptr;
 
     QList<std::shared_ptr<Post>> m_timeline;
-    bool m_fetching;
+    bool m_fetching = false;
     time_t m_last_fetch;
 
 public Q_SLOTS:

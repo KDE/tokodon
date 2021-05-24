@@ -22,7 +22,7 @@ void ThreadModel::fillTimeline(QString)
 
     m_fetching = true;
 
-    m_account->fetchThread(m_timeline_name, [=] (QList<std::shared_ptr<Post>> posts) {
+    m_account->fetchThread(m_timeline_name, [=] (const QList<std::shared_ptr<Post>> posts) {
         qDebug() << "Got" << posts.size () << "posts";
 
         m_timeline = posts;

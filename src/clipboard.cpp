@@ -43,7 +43,7 @@ bool Clipboard::saveImage(const QUrl &localPath) const
         return false;
     }
 
-    QString path = QFileInfo(localPath.toLocalFile()).absolutePath();
+    const QString path = QFileInfo(localPath.toLocalFile()).absolutePath();
     QDir dir;
     if (!dir.exists(path)) {
         dir.mkpath(path);

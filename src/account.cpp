@@ -7,7 +7,7 @@
 #include <QUrlQuery>
 #include <QDebug>
 
-Account::Account(QString name, QString instance_uri, QObject *parent)
+Account::Account(const QString &name, QString instance_uri, QObject *parent)
     : QObject(parent)
     , m_name(name)
     , m_qnam(new QNetworkAccessManager(this))

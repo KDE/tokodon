@@ -60,7 +60,6 @@ static QMap<QString, Post::Visibility> str_to_vis = {
 Post::Post(Account *parent)
     : QObject(parent)
     , m_parent(parent)
-    , m_attachments_visible(true)
 {
     QString vis_str = parent->identity().m_visibility;
     m_visibility = str_to_vis[vis_str];
@@ -159,7 +158,7 @@ QJsonDocument Post::toJsonDocument() const
         obj["in_reply_to_id"] = m_reply_target_id;
 
     auto media_ids = QJsonArray();
-    for (const auto att : m_attachments) {
+    for (const auto att : qAsConst(m_attachments)) {
          media_ids.append(att->m_id);
     }
 

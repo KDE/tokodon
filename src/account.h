@@ -74,7 +74,7 @@ class Account : public QObject
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
 
 public:
-    Account(QString username, QString instance_uri, QObject *parent = nullptr);
+    Account(const QString &username, QString instance_uri, QObject *parent = nullptr);
     Account(QSettings &settings, QObject *parent = nullptr);
     ~Account();
 

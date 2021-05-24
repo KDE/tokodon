@@ -113,8 +113,8 @@ void AccountManager::loadFromSettings(QSettings &settings)
 
     settings.beginGroup("accounts");
 
-    for (auto child : settings.childGroups())
-    {
+    const auto childGroups = settings.childGroups();
+    for (const auto &child : childGroups) {
         settings.beginGroup(child);
 
         auto account = new Account(settings);

@@ -118,14 +118,14 @@ public:
 
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
-    bool m_repeat;
-    int m_repliesCount;
-    bool m_isRepeated;
-    int m_repeatedCount;
-    bool m_isFavorite;
-    int m_favoriteCount;
-    bool m_isSensitive;
-    bool m_attachments_visible;
+    bool m_repeat = false;
+    int m_repliesCount = 0;
+    bool m_isRepeated = false;
+    int m_repeatedCount = 0;
+    bool m_isFavorite = false;
+    int m_favoriteCount = 0;
+    bool m_isSensitive = false;
+    bool m_attachments_visible = true;
 
     QDateTime m_published_at;
     QString m_post_id;
@@ -139,7 +139,7 @@ public:
     QList<Attachment *> m_attachments;
     Visibility m_visibility;
     QStringList m_mentions;
-    bool m_pinned;
+    bool m_pinned = false;
 
     bool isEmpty() { return m_post_id.isEmpty(); }
     Q_INVOKABLE void addAttachments(const QJsonArray& attachments);
