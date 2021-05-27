@@ -23,7 +23,7 @@
 #include <KWindowConfig>
 #include <KConfig>
 
-#include "kmasto-version.h"
+#include "tokodon-version.h"
 
 #include "accountmanager.h"
 #include "account.h"
