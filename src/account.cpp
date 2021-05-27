@@ -496,16 +496,15 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     get(uri, true, [=] (QNetworkReply *reply) {
         QList<std::shared_ptr<Post>> posts;
 
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
         if (! doc.isArray()) {
             qDebug() << data;
             return;
         }
 
-        for (auto value : doc.array())
-        {
+        for (const auto &value : doc.array()) {
             QJsonObject obj = value.toObject();
 
             auto p = std::make_shared<Post>(this, obj);

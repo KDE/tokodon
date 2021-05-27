@@ -193,14 +193,20 @@ static QMap<QString, Notification::Type> str_to_not_type = {
 Notification::Notification(Account *parent, QJsonObject &obj)
     : m_account(parent)
 {
-    QJsonObject account = obj["account"].toObject ();
-    QJsonObject status = obj["status"].toObject ();
-    auto acct = account["acct"].toString ();
-    auto type = obj["type"].toString ();
+    QJsonObject account = obj["account"].toObject();
+    QJsonObject status = obj["status"].toObject();
+    auto acct = account["acct"].toString();
+    auto type = obj["type"].toString();
 
-    m_post = std::make_shared<Post> (m_account, status);
-    m_identity = m_account->identityLookup (acct, account);
+    m_post = std::make_shared<Post>(m_account, status);
+    m_identity = m_account->identityLookup(acct, account);
     m_type = str_to_not_type[type];
+    m_id = obj["id"].toString().toInt();
+}
+
+int Notification::id() const
+{
+    return m_id;
 }
 
 QString Post::subject() const

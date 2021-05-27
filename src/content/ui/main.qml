@@ -8,7 +8,6 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 
 Kirigami.ApplicationWindow {
-    maximumWidth: Kirigami.Units.gridUnit * 30
     globalDrawer: Kirigami.GlobalDrawer {
         title: "Hello App"
         titleIcon: "applications-graphics"

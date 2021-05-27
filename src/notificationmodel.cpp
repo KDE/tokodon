@@ -2,55 +2,18 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "timelinemodel.h"
+#include "notificationmodel.h"
 #include "accountmodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
 
-TimelineModel::TimelineModel(QObject *parent)
+NotificationModel::NotificationModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-}
+    m_account = AccountManager::instance().selectedAccount();
 
-void TimelineModel::setName(const QString &timeline_name)
-{
-    if (timeline_name == m_timeline_name) {
-        return;
-    }
-
-    m_timeline_name = timeline_name;
-    Q_EMIT nameChanged();
-}
-
-QString TimelineModel::displayName() const
-{
-    if (m_timeline_name == "home") {
-        return i18nc("@title", "Home");
-    } else if (m_timeline_name == "public") {
-        return i18nc("@title", "Public Timeline");
-    } else if (m_timeline_name == "federated") {
-        return i18nc("@title", "Federated Timeline");
-    }
-    return QString();
-}
-
-void TimelineModel::setAccountManager(AccountManager *accountManager)
-{
-    if (accountManager == m_manager) {
-        return;
-    }
-
-    if (m_manager) {
-        disconnect(m_manager, nullptr, this, nullptr);
-    }
-
-    m_manager = accountManager;
-    m_account = m_manager->selectedAccount();
-
-    Q_EMIT accountManagerChanged();
-
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=] (Account *account) {
+    QObject::connect(&AccountManager::instance(), &AccountManager::accountSelected, this, [=] (Account *account) {
         if (m_account == account) {
             return;
         }
@@ -62,8 +25,19 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
 
         fillTimeline();
     });
-    QObject::connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
-    QObject::connect(m_manager, &AccountManager::invalidated, this, [=] (Account *account) {
+    QObject::connect(&AccountManager::instance(), &AccountManager::fetchedTimeline, this, &NotificationModel::fetchedTimeline);
+    QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=] (Account *account) {
+        if (m_account == account) {
+            qDebug() << "Invalidating account" << account;
+
+            beginResetModel();
+            m_timeline.clear();
+            endResetModel();
+
+            fillTimeline();
+        }
+    });
+    connect(this, &NotificationModel::excludeTypesChanged, this, [this] {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -78,73 +52,86 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
     fillTimeline();
 }
 
-AccountManager *TimelineModel::accountManager() const
+QStringList NotificationModel::excludeTypes() const
 {
-    return m_manager;
+    return m_excludeTypes;
 }
 
-QString TimelineModel::name() const
+void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
 {
-    return m_timeline_name;
-}
-
-void TimelineModel::fillTimeline(QString from_id)
-{
-    if (m_timeline_name != "home" && m_timeline_name != "public" && m_timeline_name != "federated") {
+    if (m_excludeTypes == excludeTypes) {
         return;
     }
 
+    m_excludeTypes = excludeTypes;
+    Q_EMIT excludeTypesChanged();
+}
+
+void NotificationModel::fillTimeline(const QString &fromId)
+{
     m_fetching = true;
 
-    if (m_account)
-        m_account->fetchTimeline(m_timeline_name, from_id);
+    if (m_account) {
+        QUrl uri(m_account->m_instance_uri);
+        uri.setPath(QStringLiteral("/api/v1/notifications"));
+        if (!fromId.isEmpty()) {
+            QUrlQuery q;
+            q.addQueryItem(QStringLiteral("max_id"), fromId);
+            uri.setQuery(q);
+        }
+        m_account->get(uri, true, [=] (QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            if (!doc.isArray()) {
+                qDebug() << data;
+                return;
+            }
+
+            QList<std::make_shared<Notification>> notifications;
+            for (const auto &value : doc.array()) {
+                QJsonObject obj = value.toObject();
+
+                auto notification = std::make_shared<Notification>(this, obj);
+                notifications.push_back(notification);
+            }
+        });
+    }
 }
 
-void TimelineModel::fetchMore(const QModelIndex &parent)
+void NotificationModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_timeline.size() < 1)
+    if (m_notifications.size() < 1) {
         return;
+    }
 
-    auto p = m_timeline.last();
+    auto notification = m_notifications.last();
 
-    fillTimeline(p->m_post_id);
+    fillTimeline(notification->id());
 }
 
-bool TimelineModel::canFetchMore(const QModelIndex &parent) const
+bool NotificationModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    if (m_fetching)
-        return false;
-
-    if (time(nullptr) <= m_last_fetch)
-        return false;
-
-    return true;
+    return !m_fetching && time(nullptr) > m_last_fetch;
 }
 
-void TimelineModel::fetchedTimeline(Account *account, QString original_name, QList<std::shared_ptr<Post>> posts)
+void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>> notifications)
 {
     m_fetching = false;
 
-    // make sure the timeline update is for us
-    if (account != m_account || original_name != m_timeline_name) {
-        return;
-    }
-
-    if (posts.isEmpty())
+    if (notifications.isEmpty())
         return;
 
     int row, last;
 
+    if (!m_notifications.isEmpty()) {
+        auto notification_old = m_notifications.first();
+        auto notification_new = notifications.first();
 
-    if (!m_timeline.isEmpty()) {
-        auto post_old = m_timeline.first();
-        auto post_new = posts.first();
-
-        qDebug() << "fetchedTimeline" << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;
         if (post_old->m_post_id > post_new->m_post_id) {
             row = m_timeline.size();
             last = row + posts.size() - 1;
@@ -166,7 +153,7 @@ void TimelineModel::fetchedTimeline(Account *account, QString original_name, QLi
     m_last_fetch = time(nullptr);
 }
 
-int TimelineModel::rowCount(const QModelIndex &parent) const
+int NotificationModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
 
@@ -174,13 +161,13 @@ int TimelineModel::rowCount(const QModelIndex &parent) const
 }
 
 // this is even more extremely cursed
-std::shared_ptr<Post> TimelineModel::internalData(const QModelIndex &index) const
+std::shared_ptr<Post> NotificationModel::internalData(const QModelIndex &index) const
 {
     int row = index.row();
     return m_timeline[row];
 }
 
-QHash<int, QByteArray> TimelineModel::roleNames() const
+QHash<int, QByteArray> NotificationModel::roleNames() const
 {
     return {
         {Qt::DisplayRole, QByteArrayLiteral("display")},
@@ -207,7 +194,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     };
 }
 
-QVariant TimelineModel::data(const QModelIndex &index, int role) const
+QVariant NotificationModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return {};
@@ -275,7 +262,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-void TimelineModel::actionReply(const QModelIndex &index)
+void NotificationModel::actionReply(const QModelIndex &index)
 {
     int row = index.row ();
     auto p = m_timeline[row];
@@ -283,7 +270,7 @@ void TimelineModel::actionReply(const QModelIndex &index)
     Q_EMIT wantReply (m_account, p, index);
 }
 
-void TimelineModel::actionMenu(const QModelIndex &index)
+void NotificationModel::actionMenu(const QModelIndex &index)
 {
     int row = index.row ();
     auto p = m_timeline[row];
@@ -291,7 +278,7 @@ void TimelineModel::actionMenu(const QModelIndex &index)
     Q_EMIT wantMenu (m_account, p, index);
 }
 
-void TimelineModel::actionFavorite(const QModelIndex &index)
+void NotificationModel::actionFavorite(const QModelIndex &index)
 {
     int row = index.row ();
     auto p = m_timeline[row];
@@ -307,7 +294,7 @@ void TimelineModel::actionFavorite(const QModelIndex &index)
     Q_EMIT dataChanged(index,index);
 }
 
-void TimelineModel::actionRepeat(const QModelIndex &index)
+void NotificationModel::actionRepeat(const QModelIndex &index)
 {
     int row = index.row();
     auto p = m_timeline[row];
@@ -323,7 +310,7 @@ void TimelineModel::actionRepeat(const QModelIndex &index)
     Q_EMIT dataChanged(index, index);
 }
 
-void TimelineModel::actionVis(const QModelIndex &index)
+void NotificationModel::actionVis(const QModelIndex &index)
 {
     int row = index.row ();
     auto p = m_timeline[row];

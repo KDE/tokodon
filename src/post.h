@@ -71,6 +71,10 @@ struct Notification
 
     std::shared_ptr<Post> m_post;
     std::shared_ptr<Identity> m_identity;
+    int id() const;
+
+private:
+    int m_id;
 };
 
 class Post : public QObject
