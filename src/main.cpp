@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 
     QApplication::setOrganizationName("KDE");
 
-    KAboutData about(QStringLiteral("tokodon"), i18n("Tokodon"), QStringLiteral(KMASTO_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
+    KAboutData about(QStringLiteral("tokodon"), i18n("Tokodon"), QStringLiteral(TOKODON_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"), QString(), QStringLiteral("carl@carlschwan.eu"));
     about.setOrganizationDomain("kde.org");
 
