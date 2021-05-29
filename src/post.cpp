@@ -90,7 +90,7 @@ Post::Post(Account *parent, QJsonObject obj)
 
     m_subject = obj["spoiler_text"].toString();
     m_content = obj["content"].toString();
-    m_post_id =  m_reply_target_id = obj["id"].toString();
+    m_post_id = m_replyTargetId = obj["id"].toString();
     m_isFavorite = obj["favourited"].toBool();
     m_favoriteCount = obj["favourites_count"].toInt();
     m_repeatedCount = obj["reblogs_count"].toInt();
@@ -106,7 +106,7 @@ Post::Post(Account *parent, QJsonObject obj)
 
     if (m_repeat) {
         m_visibility = str_to_vis[reblog_obj["visibility"].toString()];
-        m_reply_target_id = reblog_obj["id"].toString();
+        m_replyTargetId = reblog_obj["id"].toString();
         addAttachments(reblog_obj["media_attachments"].toArray());
 
         mentions = reblog_obj["mentions"].toArray();
@@ -118,7 +118,7 @@ Post::Post(Account *parent, QJsonObject obj)
 
     for (const auto &m : qAsConst(mentions)) {
         const QJsonObject o = m.toObject();
-        m_mentions.push_back(o["acct"].toString());
+        m_mentions.push_back("@"+ o["acct"].toString());
     }
 
     m_attachments_visible = !m_isSensitive;
@@ -139,9 +139,37 @@ void Post::addAttachments(const QJsonArray& attachments)
     }
 }
 
+void Post::setInReplyTo(const QString &inReplyTo)
+{
+    if (inReplyTo == m_replyTargetId) {
+        return;
+    }
+    m_replyTargetId = inReplyTo;
+    Q_EMIT inReplyToChanged();
+}
+
+QString Post::inReplyTo() const
+{
+    return m_replyTargetId;
+}
+
 void Post::setDirtyAttachment()
 {
     m_parent->invalidatePost(this);
+}
+
+QStringList Post::mentions() const
+{
+    return m_mentions;
+}
+
+void Post::setMentions(const QStringList &mentions)
+{
+    if (mentions == m_mentions) {
+        return;
+    }
+    m_mentions = mentions;
+    Q_EMIT mentionsChanged();
 }
 
 QJsonDocument Post::toJsonDocument() const
@@ -154,8 +182,8 @@ QJsonDocument Post::toJsonDocument() const
     obj["sensitive"] = m_isSensitive;
     obj["visibility"] = vis_to_str[m_visibility];
 
-    if (!m_reply_target_id.isEmpty())
-        obj["in_reply_to_id"] = m_reply_target_id;
+    if (!m_replyTargetId.isEmpty())
+        obj["in_reply_to_id"] = m_replyTargetId;
 
     auto media_ids = QJsonArray();
     for (const auto att : qAsConst(m_attachments)) {

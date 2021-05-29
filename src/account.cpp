@@ -602,7 +602,7 @@ void Account::postStatus(Post *p)
 
 void Account::mutatePost(std::shared_ptr<Post> p, const QString verb, bool deliver_home)
 {
-    QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->m_reply_target_id, verb));
+    QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
     QJsonDocument doc;
 
     post(mutation_url, doc, true, [=] (QNetworkReply *reply) {

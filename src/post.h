@@ -41,7 +41,6 @@ public:
         GifV,
         Video
     };
-
     Post *m_parent;
 
     QString m_id;
@@ -85,6 +84,8 @@ class Post : public QObject
     Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
     Q_PROPERTY(bool isSensitive READ isSensitive WRITE setSensitive NOTIFY sensitiveChanged)
     Q_PROPERTY(Visibility visibility READ visibility WRITE setVisibility NOTIFY visibilityChanged)
+    Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
+    Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
 
 public:
     Post() = delete;
@@ -115,6 +116,10 @@ public:
     void setSensitive(bool isSensitive);
     Visibility visibility() const;
     void setVisibility(Visibility visibility);
+    QString inReplyTo() const;
+    void setInReplyTo(const QString &inReplyTo);
+    QStringList mentions() const;
+    void setMentions(const QStringList &mentions);
 
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
@@ -129,7 +134,6 @@ public:
 
     QDateTime m_published_at;
     QString m_post_id;
-    QString m_reply_target_id;
     QUrl m_link;
     QString m_content;
     QString m_subject;
@@ -155,4 +159,9 @@ Q_SIGNALS:
     void contentTypeChanged();
     void sensitiveChanged();
     void visibilityChanged();
+    void inReplyToChanged();
+    void mentionsChanged();
+
+private:
+    QString m_replyTargetId;
 };

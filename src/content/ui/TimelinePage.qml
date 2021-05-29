@@ -131,6 +131,15 @@ Kirigami.ScrollablePage {
                     QQC2.ToolButton {
                         icon.name: "mail-replied-symbolic"
                         text: model.repliesCount < 2 ? model.repliesCount : "1+"
+                        onClicked: {
+                            const post = AccountManager.selectedAccount.newPost()
+                            post.inReplyTo = model.id;
+                            post.mentions = model.mentions;
+                            post.mentions.push(`@${model.authorId}`);
+                            pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
+                                postObject: post
+                            });
+                        }
                     }
                     QQC2.ToolButton {
                         icon.name: "retweet"

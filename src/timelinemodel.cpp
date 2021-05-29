@@ -187,8 +187,10 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {AvatarRole, QByteArrayLiteral("avatar")},
         {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
         {PinnedRole, QByteArrayLiteral("pinned")},
+        {IdRole, QByteArrayLiteral("id")},
         {AuthorIdRole, QByteArrayLiteral("authorId")},
         {PublishedAtRole, QByteArrayLiteral("publishedAt")},
+        {MentionsRole, QByteArrayLiteral("mentions")},
         {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
         {SensitiveRole, QByteArrayLiteral("sensitive")},
         {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
@@ -216,6 +218,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     auto p = m_timeline[row];
 
     switch (role) {
+    case IdRole:
+        return p->m_post_id;
     case Qt::DisplayRole:
         return p->m_content;
     case AvatarRole:
@@ -228,6 +232,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_published_at;
     case WasRebloggedRole:
         return p->m_repeat;
+    case MentionsRole:
+        return p->mentions();
     case RebloggedDisplayNameRole:
         if (p->m_repeat_identity) {
             return p->m_repeat_identity->m_display_name;

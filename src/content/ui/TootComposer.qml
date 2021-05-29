@@ -26,6 +26,7 @@ MastoPage {
         QQC2.TextArea {
             id: textArea
             placeholderText: i18n("What's new?")
+            text: postObject.mentions.join(" ")
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredHeight: Kirigami.Units.gridUnit * 12 + actions.implicitHeight

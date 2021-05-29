@@ -18,6 +18,7 @@ class TimelineModel : public QAbstractListModel
 public:
     enum CustoRoles {
         AvatarRole = Qt::UserRole +1,
+        IdRole,
         AuthorDisplayNameRole,
         PublishedAtRole,
         AuthorIdRole,
@@ -32,6 +33,7 @@ public:
         RebloggedIdRole,
         RebloggedRole,
         ReblogsCountRole,
+        MentionsRole,
         RepliesCountRole,
         FavoritedRole,
         FavoritesCountRole,
