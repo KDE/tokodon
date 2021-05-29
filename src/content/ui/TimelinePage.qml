@@ -40,7 +40,7 @@ Kirigami.ScrollablePage {
             onClicked: pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: model.threadModel
             })
-            GridLayout {
+            contentItem: GridLayout {
                 columnSpacing: Kirigami.Units.largeSpacing
                 rowSpacing: 0
                 columns: 2

@@ -248,6 +248,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_pinned;
     case SensitiveRole:
         return p->m_isSensitive;
+    case RepliesCountRole:
+        return p->m_repliesCount;
     case SpoilerTextRole:
         return p->m_subject;
     case AttachmentsRole:
