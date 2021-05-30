@@ -5,7 +5,7 @@
 #include "accountmanager.h"
 
 AccountManager::AccountManager(QObject *parent)
-    : QObject(parent)
+    : QAbstractListModel(parent)
     , m_selected_account(nullptr)
 {
     QSettings settings;
@@ -22,6 +22,34 @@ AccountManager::~AccountManager()
         delete a;
 
     m_accounts.clear();
+}
+
+QVariant AccountManager::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid()) {
+        return {};
+    }
+
+    switch (role) {
+        case Qt::DisplayRole:
+            return m_accounts[index.row()]->username();
+        case AccountRole:
+            return QVariant::fromValue(m_accounts[index.row()]);
+    }
+    return {};
+}
+
+int AccountManager::rowCount(const QModelIndex &index) const
+{
+    return m_accounts.size();
+}
+
+QHash<int, QByteArray> AccountManager::roleNames() const
+{
+    return {
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {AccountRole, QByteArrayLiteral("account")}
+    };
 }
 
 AccountManager &AccountManager::instance()
@@ -42,12 +70,15 @@ bool AccountManager::hasAccounts() const
 
 void AccountManager::addAccount(Account *account)
 {
+    beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
     m_accounts.append(account);
+    endInsertRows();
 
     Q_EMIT accountAdded(account);
     selectAccount(account);
 
     QObject::connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
+
     QObject::connect(account, &Account::fetchedTimeline, [=] (QString original_name, QList<std::shared_ptr<Post>> posts) {
         Q_EMIT fetchedTimeline(account, original_name, posts);
     });
@@ -81,7 +112,7 @@ void AccountManager::removeAccount(Account *account)
 
 void AccountManager::selectAccount(Account *account)
 {
-    if (! m_accounts.contains(account))
+    if (!m_accounts.contains(account))
     {
         qDebug() << "WTF: attempt to select unmanaged account" << account;
         return;

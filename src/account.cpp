@@ -45,7 +45,6 @@ QUrl Account::apiUrl(QString path)
 void Account::registerApplication()
 {
     // clear any previous bearer token credentials
-    qDebug() << "clear token";
     m_token = QString();
 
     // register
@@ -88,8 +87,6 @@ void Account::get(QUrl url, bool authenticated, std::function<void(QNetworkReply
 {
     QNetworkRequest request = QNetworkRequest(url);
 
-    qDebug() << "GET" << url;
-
     if (authenticated && haveToken())
     {
         QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
@@ -99,9 +96,9 @@ void Account::get(QUrl url, bool authenticated, std::function<void(QNetworkReply
     QNetworkReply *reply = m_qnam->get(request);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb] () {
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, url] () {
             if (200 != reply->attribute (QNetworkRequest::HttpStatusCodeAttribute)) {
-            qDebug() << reply->attribute (QNetworkRequest::HttpStatusCodeAttribute);
+                qDebug() << reply->attribute (QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
             }
 
@@ -349,7 +346,7 @@ void Account::setToken(const QString &authcode)
        auto doc = QJsonDocument::fromJson(data);
 
        m_token = doc.object()["access_token"].toString();
-       qDebug() << "token set";
+       AccountManager::instance().addAccount(this);
        validateToken();
     });
 }
@@ -360,7 +357,7 @@ void Account::validateToken()
         return;
     }
 
-    QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
+    const QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
 
     get(verify_credentials, true, [=] (QNetworkReply *reply) {
         if (! reply->isFinished()) {
@@ -374,8 +371,6 @@ void Account::validateToken()
             return;
 
         Q_EMIT authenticated();
-
-        AccountManager::instance().addAccount(this);
 
         m_identity.fromSourceData(doc.object());
     });
@@ -436,7 +431,6 @@ void Account::fetchAccount(int id, bool excludeReplies,
         const auto doc = QJsonDocument::fromJson(data);
 
         if (!doc.isArray()) {
-            qDebug() << data;
             return;
         }
         int i = 0;
@@ -454,7 +448,6 @@ void Account::fetchAccount(int id, bool excludeReplies,
     };
 
     auto onFetchAccount = [=] (QNetworkReply *reply) {
-        qDebug() << "fetch pinned";
         QList<std::shared_ptr<Post>> posts;
 
         const auto data = reply->readAll();
@@ -471,7 +464,6 @@ void Account::fetchAccount(int id, bool excludeReplies,
             thread->push_back(p);
         }
 
-        qDebug() << uriPinned;
         get(uriPinned, true, onFetchPinned);
     };
 
@@ -505,7 +497,6 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
         const auto doc = QJsonDocument::fromJson(data);
 
         if (! doc.isArray()) {
-            qDebug() << data;
             return;
         }
 
@@ -826,7 +817,6 @@ Post *Account::newPost()
 
 void Identity::fromSourceData(QJsonObject doc)
 {
-    qDebug() << doc["id"];
     m_id = doc["id"].toString().toInt();
     m_display_name = doc["display_name"].toString();
     m_acct = doc["acct"].toString();

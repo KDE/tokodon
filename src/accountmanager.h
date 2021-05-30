@@ -4,20 +4,24 @@
 
 #pragma once
 
-#include <QObject>
+#include <QAbstractListModel>
 #include <QSettings>
 #include <KAboutData>
 
 #include "account.h"
 #include "post.h"
 
-class AccountManager : public QObject
+class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
     Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
+    enum CustomRoles {
+        AccountRole = Qt::UserRole + 1
+    };
+
     static AccountManager &instance();
 
     void loadFromSettings(QSettings &settings);
@@ -32,6 +36,10 @@ public:
 
     void setAboutData(const KAboutData &aboutData);
     [[nodiscard]] KAboutData aboutData() const;
+
+    int rowCount(const QModelIndex &index) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE Account *createNewAccount(const QString &username, const QString &instanceUri);
 

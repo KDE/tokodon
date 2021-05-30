@@ -8,10 +8,34 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 
 Kirigami.ApplicationWindow {
+
+    Connections {
+        target: AccountManager
+        function onAccountSelected() {
+            pageStack.clear();
+            pageStack.push(mainTimeline);
+        }
+    }
+
     globalDrawer: Kirigami.GlobalDrawer {
-        title: "Hello App"
-        titleIcon: "applications-graphics"
-        isMenu: true
+        header: ColumnLayout {
+            Repeater {
+                model: AccountManager
+                delegate: Kirigami.BasicListItem {
+                    label: model.display
+                    onClicked: {
+                        AccountManager.selectedAccount = model.account;
+                    }
+                }
+            }
+        }
+        actions: [
+            Kirigami.Action {
+                icon.name: "list-add"
+                onTriggered: pageStack.push(loginPage);
+                text: i18n("Add Account")
+            }
+        ]
     }
 
     contextDrawer: Kirigami.ContextDrawer {
@@ -102,8 +126,6 @@ Kirigami.ApplicationWindow {
                     text: i18n("Continue")
                     onClicked: {
                         account.setToken(tokenField.text);
-                        pageStack.clear();
-                        pageStack.push(mainTimeline)
                     }
                 }
             }

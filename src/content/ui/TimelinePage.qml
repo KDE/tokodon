@@ -135,7 +135,9 @@ Kirigami.ScrollablePage {
                             const post = AccountManager.selectedAccount.newPost()
                             post.inReplyTo = model.id;
                             post.mentions = model.mentions;
-                            post.mentions.push(`@${model.authorId}`);
+                            if (!post.mentions.includes(`@${model.authorId}`)) {
+                                post.mentions.push(`@${model.authorId}`);
+                            }
                             pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
                                 postObject: post
                             });

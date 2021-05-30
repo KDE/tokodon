@@ -96,8 +96,9 @@ void TimelineModel::fillTimeline(QString from_id)
 
     m_fetching = true;
 
-    if (m_account)
+    if (m_account) {
         m_account->fetchTimeline(m_timeline_name, from_id);
+    }
 }
 
 void TimelineModel::fetchMore(const QModelIndex &parent)
