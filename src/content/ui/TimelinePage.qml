@@ -142,16 +142,25 @@ Kirigami.ScrollablePage {
                                 postObject: post
                             });
                         }
+                        QQC2.ToolTip {
+                            text: i18n("Reply to a post", "Reply")
+                        }
                     }
                     QQC2.ToolButton {
                         icon.name: "retweet"
                         icon.color: model.reblogged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                         onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
+                        QQC2.ToolTip {
+                            text: i18nc("Share a post", "Boost")
+                        }
                     }
                     QQC2.ToolButton {
                         icon.name: "emblem-favorite-symbolic"
                         icon.color: model.favorite ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
                         onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
+                        QQC2.ToolTip {
+                            text: i18nc("Like a post", "Like")
+                        }
                     }
                 }
             }
