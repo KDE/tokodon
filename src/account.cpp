@@ -578,16 +578,10 @@ void Account::postStatus(Post *p)
     auto doc = p->toJsonDocument();
 
     post(post_status_url, doc, true, [=] (QNetworkReply *reply) {
-        QList<std::shared_ptr<Post>> posts;
-
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
         auto obj = doc.object();
-
-        auto p = std::make_shared<Post>(this, obj);
-        posts.push_back(p);
-
-        Q_EMIT fetchedTimeline("home", posts);
+        qDebug() << "Message sent:" << obj;
     });
 }
 
