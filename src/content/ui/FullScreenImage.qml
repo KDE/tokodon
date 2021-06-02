@@ -34,6 +34,9 @@ ApplicationWindow {
         snapMode: ListView.SnapOneItem 
         highlightRangeMode: ListView.StrictlyEnforceRange
         highlightMoveDuration: 0
+        focus: true
+        keyNavigationEnabled: true
+        keyNavigationWraps: true
         model: root.model
         orientation: ListView.Horizontal
         delegate: Item {
@@ -44,11 +47,11 @@ ApplicationWindow {
                 anchors.centerIn: parent
 
                 width: Math.min(sourceSize.width, root.width)
-                height: Math.min(sourceSize.height, root.height)
+                height: Math.min(sourceSize.height, root.height - description.height - Kirigami.Units.gridUnit)
 
                 cache: false
                 fillMode: Image.PreserveAspectFit
-                source: modelData.previewUrl
+                source: modelData.url
 
                 BusyIndicator {
                     visible: image.status !== Image.Ready
@@ -56,13 +59,22 @@ ApplicationWindow {
                     running: visible
                 }
             }
+
+            Label {
+                id: description
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: Kirigami.Units.gridUnit
+                width: Math.min(root.width, implicitWidth)
+                text: modelData.description
+            }
         }
 
         RoundButton {
             anchors {
-              left: parent.left
-              leftMargin: Kirigami.Units.largeSpacing
-              verticalCenter: parent.verticalCenter
+                left: parent.left
+                leftMargin: Kirigami.Units.largeSpacing
+                verticalCenter: parent.verticalCenter
             }
             width: Kirigami.Units.gridUnit * 2
             height: width
@@ -75,9 +87,9 @@ ApplicationWindow {
 
         RoundButton {
             anchors {
-              right: parent.right
-              rightMargin: Kirigami.Units.largeSpacing
-              verticalCenter: parent.verticalCenter
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                verticalCenter: parent.verticalCenter
             }
             width: Kirigami.Units.gridUnit * 2
             height: width
