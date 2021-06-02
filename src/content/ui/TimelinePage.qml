@@ -81,6 +81,7 @@ Kirigami.ScrollablePage {
                     Layout.alignment: Qt.AlignTop
                     Layout.rowSpan: 4
                     source: model.avatar
+                    cache: true
                     TapHandler {
                         onTapped: {
                             pageStack.push("qrc:/content/ui/AccountInfo.qml", {
@@ -123,6 +124,7 @@ Kirigami.ScrollablePage {
                             Layout.maximumWidth: sourceSize.width
                             Layout.maximumHeight: width / sourceSize.width * sourceSize.height 
                             source: modelData.previewUrl
+                            cache: true
                         }
                     }
                 }
