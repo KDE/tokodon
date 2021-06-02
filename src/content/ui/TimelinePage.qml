@@ -31,6 +31,11 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
         model: timelinePage.model
+
+        Component {
+            id: fullScreenImage
+            FullScreenImage {}
+        }
         delegate: Kirigami.BasicListItem {
             topPadding: Kirigami.Units.largeSpacing
             leftPadding: Kirigami.Units.smallSpacing
@@ -125,6 +130,14 @@ Kirigami.ScrollablePage {
                             Layout.maximumHeight: width / sourceSize.width * sourceSize.height 
                             source: modelData.previewUrl
                             cache: true
+                            TapHandler {
+                                onTapped: {
+                                    fullScreenImage.createObject(parent, {
+                                        model: attachments,
+                                        currentIndex: index
+                                    }).showFullScreen()
+                                }
+                            }
                         }
                     }
                 }
