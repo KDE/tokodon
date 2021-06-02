@@ -14,6 +14,12 @@ import org.kde.kmasto 1.0
 Kirigami.ApplicationWindow {
     id: appwindow
 
+    minimumWidth: Kirigami.Units.gridUnit * 15
+    minimumHeight: Kirigami.Units.gridUnit * 40
+    maximumWidth: Kirigami.Units.gridUnit * 30
+    maximumHeight: Kirigami.Units.gridUnit * 90
+    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
+
     Connections {
         target: AccountManager
         function onAccountSelected() {

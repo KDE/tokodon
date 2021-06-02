@@ -37,7 +37,7 @@ Kirigami.ScrollablePage {
             rightPadding: Kirigami.Units.smallSpacing
             highlighted: false
             hoverEnabled: false
-            onClicked: pageStack.layers.push("qrc:/content/ui/TimelinePage.qml", {
+            onClicked: pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: model.threadModel
             })
             contentItem: GridLayout {
@@ -83,7 +83,7 @@ Kirigami.ScrollablePage {
                     source: model.avatar
                     TapHandler {
                         onTapped: {
-                            pageStack.layers.push("qrc:/content/ui/AccountInfo.qml", {
+                            pageStack.push("qrc:/content/ui/AccountInfo.qml", {
                                 model: model.accountModel
                             });
                         }
