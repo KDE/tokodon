@@ -28,9 +28,9 @@ QString TimelineModel::displayName() const
     if (m_timeline_name == "home") {
         return i18nc("@title", "Home");
     } else if (m_timeline_name == "public") {
-        return i18nc("@title", "Public Timeline");
+        return i18nc("@title", "Local Timeline");
     } else if (m_timeline_name == "federated") {
-        return i18nc("@title", "Federated Timeline");
+        return i18nc("@title", "Global Timeline");
     }
     return QString();
 }
