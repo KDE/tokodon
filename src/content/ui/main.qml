@@ -15,7 +15,7 @@ Kirigami.ApplicationWindow {
     id: appwindow
 
     minimumWidth: Kirigami.Units.gridUnit * 15
-    minimumHeight: Kirigami.Units.gridUnit * 40
+    minimumHeight: Kirigami.Units.gridUnit * 20
     maximumWidth: Kirigami.Units.gridUnit * 30
     maximumHeight: Kirigami.Units.gridUnit * 90
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30

@@ -158,7 +158,7 @@ Kirigami.ScrollablePage {
                             });
                         }
                         QQC2.ToolTip {
-                            text: i18n("Reply to a post", "Reply")
+                            text: i18nc("Reply to a post", "Reply")
                         }
                     }
                     QQC2.ToolButton {
