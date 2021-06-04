@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  - SPDX-License-Identifier: CC0-1.0
+  - SPDX-FileCopyrightText: 2020-2021 Carl Schwan <carlschwan@kde.org>
+ -->
+<component type="desktop">
+  <id>org.kde.tokodon</id>
+  <provides>
+    <binary>tokodon</binary>
+  </provides>
+  <name>Tokodon</name>
+  <summary>A native Mastodon client</summary>
+  <description>
+    <p>Tokodon is a Mastodon client. It allows you to interact with the Fediverse community.</p>
+  </description>
+  <url type="homepage">https://apps.kde.org/tokodon/</url>
+  <url type="bugtracker">https://invent.kde.org/network/tokodon/-/issues</url>
+  <categories>
+    <category>Network</category>
+  </categories>
+  <developer_name>The KDE Community</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <value key="KDE::matrix">#tokodon:kde.org</value>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+</component>
