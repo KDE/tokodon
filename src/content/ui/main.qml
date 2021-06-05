@@ -51,7 +51,11 @@ Kirigami.ApplicationWindow {
 
     property QQC2.ToolBar toolBar: QQC2.ToolBar {
         id: toolbarRoot
-        property int iconSize: Kirigami.Units.gridUnit * 2
+        property int iconSize: Math.round(Kirigami.Units.gridUnit * 1.6)
+        property double shrinkIconSize: Math.round(Kirigami.Units.gridUnit * 1.1)
+        property double fontSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 0.6)
+        property double shrinkFontSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 0.5)
+
         background: Rectangle {
             Kirigami.Theme.colorSet: Kirigami.Theme.Window
             Kirigami.Theme.inherit: false
@@ -111,7 +115,7 @@ Kirigami.ApplicationWindow {
                 Rectangle {
                     Layout.minimumWidth: parent.width / 5
                     Layout.maximumWidth: parent.width / 5
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2.5
                     Layout.alignment: Qt.AlignCenter
 
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -155,10 +159,11 @@ Kirigami.ApplicationWindow {
                     ColumnLayout {
                         id: itemColumn
                         anchors.fill: parent
-                        spacing: Kirigami.Units.smallSpacing
+                        spacing: 0 //Kirigami.Units.smallSpacing
+                        property color color: modelData.isCurrentPage ? Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.highlightColor, Kirigami.Theme.textColor, 0.4) : Kirigami.Theme.textColor
         
                         Kirigami.Icon {
-                            color: modelData.isCurrentPage ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                            color: parent.color
                             source: model.icon.name
                             Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                             Layout.preferredHeight: toolbarRoot.iconSize
@@ -189,6 +194,13 @@ Kirigami.ApplicationWindow {
                                     }
                                 }
                             }
+                        }
+
+                        QQC2.Label {
+                            text: model.text
+                            color: parent.color
+                            Layout.fillWidth: true
+                            horizontalAlignment: Qt.AlignHCenter
                         }
                     }
                 }
