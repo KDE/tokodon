@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(Tokodon)
+project(tokodon)
+set(PROJECT_VERSION "21.06")
 
 set(KF5_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
@@ -21,7 +22,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddAppIcon)
 
-ecm_setup_version(0.0.1
+ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX TOKODON
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
 )
@@ -60,15 +61,6 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
 endif()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
-
-#install(FILES org.kde.neochat.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-#install(FILES org.kde.neochat.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-#install(FILES org.kde.neochat.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
-#install(FILES org.kde.neochat-symbolic.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/16x16/apps RENAME org.kde.neochat.svg)
-#install(FILES org.kde.neochat-symbolic.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/16x16@2/apps RENAME org.kde.neochat.svg)
-#install(FILES org.kde.neochat-symbolic.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/16x16@3/apps RENAME org.kde.neochat.svg)
-#install(FILES org.kde.neochat-symbolic.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/symbolic/apps)
-#install(FILES neochat.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
