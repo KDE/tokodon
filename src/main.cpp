@@ -5,14 +5,18 @@
  */
 #include <QCommandLineParser>
 #include <QFontDatabase>
-#include <QGuiApplication>
-#include <QApplication>
 #include <QNetworkProxy>
 #include <QNetworkProxyFactory>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
+
+#ifdef Q_OS_ANDROID
+#include <QGuiApplication>
+#else
+#include <QApplication>
+#endif
 
 #include <KAboutData>
 #ifdef HAVE_KDBUSADDONS
