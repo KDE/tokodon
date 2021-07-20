@@ -41,7 +41,7 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QNetworkProxyFactory::setUseSystemConfiguration(true);
 
@@ -60,14 +60,14 @@ int main(int argc, char *argv[])
     QApplication::setStyle(QStringLiteral("breeze"));
 #endif
 
-    QApplication::setOrganizationName("KDE");
+    QCoreApplication::setOrganizationName("KDE");
 
     KAboutData about(QStringLiteral("tokodon"), i18n("Tokodon"), QStringLiteral(TOKODON_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"), QString(), QStringLiteral("carl@carlschwan.eu"));
     about.setOrganizationDomain("kde.org");
 
     KAboutData::setApplicationData(about);
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
 
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
@@ -129,5 +129,5 @@ int main(int argc, char *argv[])
         }
     }
 #endif
-    return QApplication::exec();
+    return QCoreApplication::exec();
 }
