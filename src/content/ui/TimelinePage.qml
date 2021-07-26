@@ -45,6 +45,7 @@ Kirigami.ScrollablePage {
             onClicked: pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: model.threadModel
             })
+            ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
             contentItem: GridLayout {
                 columnSpacing: Kirigami.Units.largeSpacing
                 rowSpacing: 0
@@ -111,11 +112,26 @@ Kirigami.ScrollablePage {
                     QQC2.Label {
                         text: model.relativeTime
                     }
-                }
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: model.display
-                    wrapMode: Text.Wrap
+                ColumnLayout {
+                    RowLayout {
+                        visible: model.spoilerText.length !== 0
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: model.spoilerText
+                            wrapMode: Text.Wrap
+                        }
+                        QQC2.Button {
+                            text: i18n("Show more")
+                            onClicked: tootContent.visible = !tootContent.visible
+                        }
+                    }
+                    QQC2.Label {
+                        id: tootContent
+                        Layout.fillWidth: true
+                        text: model.display
+                        wrapMode: Text.Wrap
+                        visible: model.spoilerText.length === 0
+                    }
                 }
 
                 GridLayout {
