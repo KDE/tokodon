@@ -112,6 +112,7 @@ Kirigami.ScrollablePage {
                     QQC2.Label {
                         text: model.relativeTime
                     }
+                }
                 ColumnLayout {
                     RowLayout {
                         visible: model.spoilerText.length !== 0
