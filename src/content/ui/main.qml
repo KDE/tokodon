@@ -121,12 +121,12 @@ Kirigami.ApplicationWindow {
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     Kirigami.Theme.inherit: false
 
-                    color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
+                    color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) :
                            mouseArea.containsMouse ? Qt.darker(Kirigami.Theme.backgroundColor, 1.03) : Kirigami.Theme.backgroundColor
 
                     Behavior on color {
-                        ColorAnimation { 
-                            duration: 100 
+                        ColorAnimation {
+                            duration: 100
                             easing.type: Easing.InOutQuad
                         }
                     }
@@ -155,13 +155,13 @@ Kirigami.ApplicationWindow {
                             }
                         }
                     }
-                    
+
                     ColumnLayout {
                         id: itemColumn
                         anchors.fill: parent
                         spacing: 0 //Kirigami.Units.smallSpacing
                         property color color: modelData.isCurrentPage ? Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.highlightColor, Kirigami.Theme.textColor, 0.4) : Kirigami.Theme.textColor
-        
+
                         Kirigami.Icon {
                             color: parent.color
                             source: model.icon.name
@@ -284,6 +284,11 @@ Kirigami.ApplicationWindow {
                             onTriggered: Qt.openUrlExternally(menuLink.link)
                         }
                     }
+                }
+
+                RowLayout {
+                        QQC2.Button { text: i18n("Open link"); onClicked: Qt.openUrlExternally(account.authorizeUrl) }
+                        QQC2.Button { text: i18n("Copy link"); onClicked: Clipboard.saveText(account.authorizeUrl) }
                 }
 
                 QQC2.Label {
