@@ -153,7 +153,7 @@ Kirigami.ScrollablePage {
                         Image {
                             Layout.fillWidth: true
                             Layout.maximumWidth: sourceSize.width
-                            Layout.maximumHeight: width / sourceSize.width * sourceSize.height 
+                            Layout.maximumHeight: width / sourceSize.width * sourceSize.height
                             source: modelData.previewUrl
                             cache: true
                             TapHandler {
@@ -171,6 +171,8 @@ Kirigami.ScrollablePage {
                 RowLayout {
                     QQC2.ToolButton {
                         icon.name: "mail-replied-symbolic"
+                        icon.width: Kirigami.Units.iconSizes.medium
+                        icon.height: Kirigami.Units.iconSizes.medium
                         text: model.repliesCount < 2 ? model.repliesCount : "1+"
                         onClicked: {
                             const post = AccountManager.selectedAccount.newPost()
@@ -188,16 +190,18 @@ Kirigami.ScrollablePage {
                         }
                     }
                     QQC2.ToolButton {
-                        icon.name: "retweet"
-                        icon.color: model.reblogged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                        icon.source: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
+                        icon.width: Kirigami.Units.iconSizes.medium
+                        icon.height: Kirigami.Units.iconSizes.medium
                         onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
                         QQC2.ToolTip {
                             text: i18nc("Share a post", "Boost")
                         }
                     }
                     QQC2.ToolButton {
-                        icon.name: "emblem-favorite-symbolic"
-                        icon.color: model.favorite ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
+                        icon.source: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
+                        icon.width: Kirigami.Units.iconSizes.medium
+                        icon.height: Kirigami.Units.iconSizes.medium
                         onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
                         QQC2.ToolTip {
                             text: i18nc("Like a post", "Like")
