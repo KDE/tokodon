@@ -126,12 +126,21 @@ Kirigami.ScrollablePage {
                             onClicked: tootContent.visible = !tootContent.visible
                         }
                     }
-                    QQC2.Label {
+                    TextEdit {
                         id: tootContent
                         Layout.fillWidth: true
                         text: model.display
+                        textFormat: TextEdit.RichText
                         wrapMode: Text.Wrap
                         visible: model.spoilerText.length === 0
+                        readOnly: true
+                        selectByMouse: !Kirigami.Settings.isMobile
+                        onLinkActivated: Qt.openUrlExternally(link)
+                        MouseArea {
+                            anchors.fill: parent
+                            acceptedButtons: Qt.NoButton // don't eat clicks on the Text
+                            cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                        }
                     }
                 }
 
