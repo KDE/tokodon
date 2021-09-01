@@ -51,6 +51,10 @@ if(ANDROID)
         "gtk-quit"
         "compass"
         "network-connect"
+        "notifications"
+        "kstars_xplanet"
+        "system-users"
+        "go-home-large"
     )
 else()
     target_link_libraries(tokodon PRIVATE Qt5::Widgets)
