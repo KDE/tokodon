@@ -19,6 +19,7 @@ Kirigami.ApplicationWindow {
     maximumWidth: Kirigami.Units.gridUnit * 30
     maximumHeight: Kirigami.Units.gridUnit * 90
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
+    pageStack.globalToolBar.canContainHandles: true
 
     Connections {
         target: AccountManager
