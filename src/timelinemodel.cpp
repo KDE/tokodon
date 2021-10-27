@@ -12,6 +12,7 @@ TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_last_fetch(time(nullptr))
 {
+    connect(m_manager, &AccountManager::accountSelected, this, &TimelineModel::nameChanged);
 }
 
 void TimelineModel::setName(const QString &timeline_name)
@@ -27,7 +28,11 @@ void TimelineModel::setName(const QString &timeline_name)
 QString TimelineModel::displayName() const
 {
     if (m_timeline_name == "home") {
-        return i18nc("@title", "Home");
+        if (m_manager && m_manager->rowCount() > 1) {
+            return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->username());
+        } else {
+            return i18nc("@title", "Home");
+        }
     } else if (m_timeline_name == "public") {
         return i18nc("@title", "Local Timeline");
     } else if (m_timeline_name == "federated") {

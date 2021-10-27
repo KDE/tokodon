@@ -35,7 +35,7 @@ public:
     void setAboutData(const KAboutData &aboutData);
     [[nodiscard]] KAboutData aboutData() const;
 
-    int rowCount(const QModelIndex &index) const override;
+    int rowCount(const QModelIndex &index = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
