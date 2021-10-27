@@ -28,14 +28,13 @@ void AttachmentEditorModel::setPost(Post *post)
     m_scratch = post;
     endResetModel();
     if (m_scratch) {
-        connect(m_scratch->m_parent, &Account::attachmentUploaded,
-                this, [=](Post *p, Attachment *att) {
-                    if (p == m_scratch) {
-                        // TODO beginInsertModel
-                        beginResetModel();
-                        endResetModel();
-                    }
-                });
+        connect(m_scratch->m_parent, &Account::attachmentUploaded, this, [=](Post *p, Attachment *att) {
+            if (p == m_scratch) {
+                // TODO beginInsertModel
+                beginResetModel();
+                endResetModel();
+            }
+        });
     }
 
     Q_EMIT postChanged();
@@ -86,9 +85,5 @@ bool AttachmentEditorModel::setData(const QModelIndex &index, const QVariant &va
 
 QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
 {
-    return {
-        {Preview, QByteArrayLiteral("preview")},
-        {Description, QByteArrayLiteral("description")},
-        {Qt::DisplayRole, QByteArrayLiteral("display")}
-    };
+    return {{Preview, QByteArrayLiteral("preview")}, {Description, QByteArrayLiteral("description")}, {Qt::DisplayRole, QByteArrayLiteral("display")}};
 }

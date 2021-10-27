@@ -16,4 +16,3 @@ public:
     void fillTimeline(QString fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 };
-

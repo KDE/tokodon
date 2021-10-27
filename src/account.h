@@ -4,22 +4,22 @@
 
 #pragma once
 
-#include <QObject>
-#include <QUrl>
-#include <QUrlQuery>
+#include <QFile>
+#include <QHttpMultiPart>
+#include <QHttpPart>
+#include <QImage>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QJsonArray>
-#include <QSettings>
-#include <QImage>
 #include <QMap>
-#include <QHttpPart>
-#include <QHttpMultiPart>
-#include <QFile>
+#include <QObject>
+#include <QSettings>
+#include <QUrl>
+#include <QUrlQuery>
 #include <QWebSocket>
 #include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
 
 #include "post.h"
 
@@ -95,21 +95,36 @@ public:
     Q_INVOKABLE QUrl getAuthorizeUrl() const;
     QUrl getTokenUrl() const;
     Q_INVOKABLE void setToken(const QString &authcode);
-    bool haveToken() const { return ! m_token.isEmpty (); }
+    bool haveToken() const
+    {
+        return !m_token.isEmpty();
+    }
     void validateToken();
 
     Q_INVOKABLE Post *newPost();
 
     // name
-    QString username() const { return m_name; }
-    void setUsername(const QString &name) { m_name = name; }
+    QString username() const
+    {
+        return m_name;
+    }
+    void setUsername(const QString &name)
+    {
+        m_name = name;
+    }
 
     // instance metadata
     void fetchInstanceMetadata();
     QString instanceUri() const;
     void setInstanceUri(const QString &instance_uri);
-    size_t maxPostLength() const { return m_max_post_length; }
-    QString instanceName() const { return QString(m_instance_name); }
+    size_t maxPostLength() const
+    {
+        return m_max_post_length;
+    }
+    QString instanceName() const
+    {
+        return QString(m_instance_name);
+    }
 
     // save/restore.
     // writeToSettings assumes a settings object in a parent context
@@ -118,10 +133,16 @@ public:
     void buildFromSettings(const QSettings &settings);
 
     // identity
-    const Identity &identity() { return m_identity; }
+    const Identity &identity()
+    {
+        return m_identity;
+    }
     void setDirtyIdentity();
     const std::shared_ptr<Identity> identityLookup(const QString &acct, const QJsonObject &doc);
-    QNetworkAccessManager *qnam() { return m_qnam; }
+    QNetworkAccessManager *qnam()
+    {
+        return m_qnam;
+    }
     bool identityCached(const QString &acct) const;
 
     // timeline
@@ -143,8 +164,7 @@ public:
     void fetchThread(const QString &postId, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     /// Fetch account timeline
-    void fetchAccount(int id, bool excludeReplies,
-            std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
+    void fetchAccount(int id, bool excludeReplies, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     // streaming
     QUrl streamingUrl(const QString &stream);
@@ -155,14 +175,10 @@ public:
 
     // Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough
     // way to determine what formats are accepted.
-    enum AllowedContentType {
-        PlainText = 1 << 0,
-        Markdown = 1 << 1,
-        Html = 1 << 2,
-        BBCode = 1 << 3
-    };
+    enum AllowedContentType { PlainText = 1 << 0, Markdown = 1 << 1, Html = 1 << 2, BBCode = 1 << 3 };
 
-    AllowedContentType allowedContentTypes () const {
+    AllowedContentType allowedContentTypes() const
+    {
         return m_allowed_content_types;
     }
 

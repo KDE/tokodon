@@ -16,7 +16,7 @@ AccountModel::AccountModel(AccountManager *manager, int id, const QString &acct,
         QUrl uriAccount(m_account->instanceUri());
         uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
 
-        manager->selectedAccount()->get(uriAccount, true, [this, manager, &acct] (QNetworkReply *reply) {
+        manager->selectedAccount()->get(uriAccount, true, [this, manager, &acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
@@ -48,8 +48,8 @@ void AccountModel::fillTimeline(QString)
 {
     m_fetching = true;
 
-    m_account->fetchAccount(m_id, true, [=] (QList<std::shared_ptr<Post>> posts) {
-        qDebug() << "Got" << posts.size () << "posts";
+    m_account->fetchAccount(m_id, true, [=](QList<std::shared_ptr<Post>> posts) {
+        qDebug() << "Got" << posts.size() << "posts";
 
         m_timeline = posts;
 

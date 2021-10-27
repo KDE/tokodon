@@ -35,4 +35,3 @@ Q_SIGNALS:
 private:
     Post *m_scratch;
 };
-

@@ -31,10 +31,10 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-        case Qt::DisplayRole:
-            return m_accounts[index.row()]->username();
-        case AccountRole:
-            return QVariant::fromValue(m_accounts[index.row()]);
+    case Qt::DisplayRole:
+        return m_accounts[index.row()]->username();
+    case AccountRole:
+        return QVariant::fromValue(m_accounts[index.row()]);
     }
     return {};
 }
@@ -46,10 +46,7 @@ int AccountManager::rowCount(const QModelIndex &index) const
 
 QHash<int, QByteArray> AccountManager::roleNames() const
 {
-    return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {AccountRole, QByteArrayLiteral("account")}
-    };
+    return {{Qt::DisplayRole, QByteArrayLiteral("display")}, {AccountRole, QByteArrayLiteral("account")}};
 }
 
 AccountManager &AccountManager::instance()
@@ -79,19 +76,19 @@ void AccountManager::addAccount(Account *account)
 
     QObject::connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
 
-    QObject::connect(account, &Account::fetchedTimeline, [=] (QString original_name, QList<std::shared_ptr<Post>> posts) {
+    QObject::connect(account, &Account::fetchedTimeline, [=](QString original_name, QList<std::shared_ptr<Post>> posts) {
         Q_EMIT fetchedTimeline(account, original_name, posts);
     });
-    QObject::connect(account, &Account::invalidated, [=] () {
+    QObject::connect(account, &Account::invalidated, [=]() {
         Q_EMIT invalidated(account);
     });
-    QObject::connect(account, &Account::fetchedInstanceMetadata, [=] () {
+    QObject::connect(account, &Account::fetchedInstanceMetadata, [=]() {
         Q_EMIT fetchedInstanceMetadata(account);
     });
-    QObject::connect(account, &Account::invalidatedPost, [=] (Post *p) {
+    QObject::connect(account, &Account::invalidatedPost, [=](Post *p) {
         Q_EMIT invalidatedPost(account, p);
     });
-    QObject::connect(account, &Account::notification, [=] (std::shared_ptr<Notification> n) {
+    QObject::connect(account, &Account::notification, [=](std::shared_ptr<Notification> n) {
         Q_EMIT notification(account, n);
     });
     QSettings settings;
@@ -112,8 +109,7 @@ void AccountManager::removeAccount(Account *account)
 
 void AccountManager::selectAccount(Account *account)
 {
-    if (!m_accounts.contains(account))
-    {
+    if (!m_accounts.contains(account)) {
         qDebug() << "WTF: attempt to select unmanaged account" << account;
         return;
     }

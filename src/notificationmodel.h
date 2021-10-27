@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "post.h"
 #include "accountmanager.h"
+#include "post.h"
 #include <QAbstractListModel>
 
 class NotificationModel : public QAbstractListModel
@@ -15,7 +15,7 @@ class NotificationModel : public QAbstractListModel
 
 public:
     enum CustoRoles {
-        AvatarRole = Qt::UserRole +1,
+        AvatarRole = Qt::UserRole + 1,
         AuthorDisplayNameRole,
         PublishedAtRole,
         AuthorIdRole,
@@ -45,7 +45,10 @@ public:
 
     virtual void fillTimeline(const QString &fromId = QString());
 
-    void disallowUpdates() { m_last_fetch = time(nullptr) + 3; }
+    void disallowUpdates()
+    {
+        m_last_fetch = time(nullptr) + 3;
+    }
     std::shared_ptr<Post> internalData(const QModelIndex &index) const;
 
 public Q_SLOTS:
@@ -74,4 +77,3 @@ protected:
 public Q_SLOTS:
     void fetchedNotifications(QList<std::shared_ptr<Notification>> notifications);
 };
-

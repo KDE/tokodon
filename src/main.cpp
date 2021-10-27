@@ -22,19 +22,19 @@
 #ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
 #endif
+#include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KWindowConfig>
-#include <KConfig>
 
 #include "tokodon-version.h"
 
-#include "accountmanager.h"
 #include "account.h"
+#include "accountmanager.h"
 #include "attachmenteditormodel.h"
-#include "timelinemodel.h"
-#include "post.h"
 #include "clipboard.h"
+#include "post.h"
+#include "timelinemodel.h"
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -62,7 +62,12 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setOrganizationName("KDE");
 
-    KAboutData about(QStringLiteral("tokodon"), i18n("Tokodon"), QStringLiteral(TOKODON_VERSION_STRING), i18n("Mastodon client"), KAboutLicense::GPL_V3, i18n("© 2021 Carl Schwan, 2021 KDE Community"));
+    KAboutData about(QStringLiteral("tokodon"),
+                     i18n("Tokodon"),
+                     QStringLiteral(TOKODON_VERSION_STRING),
+                     i18n("Mastodon client"),
+                     KAboutLicense::GPL_V3,
+                     i18n("© 2021 Carl Schwan, 2021 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"), QString(), QStringLiteral("carl@carlschwan.eu"));
     about.setOrganizationDomain("kde.org");
 
@@ -98,7 +103,7 @@ int main(int argc, char *argv[])
     parser.process(app);
     about.processCommandLine(&parser);
 
-    //Controller::instance().setAboutData(about);
+    // Controller::instance().setAboutData(about);
 
     engine.load(QUrl(QStringLiteral("qrc:/content/ui/main.qml")));
     if (engine.rootObjects().isEmpty()) {
@@ -119,7 +124,7 @@ int main(int argc, char *argv[])
     });
     const auto rootObjects = engine.rootObjects();
     for (auto obj : rootObjects) {
-        auto view = qobject_cast<QQuickWindow*>(obj);
+        auto view = qobject_cast<QQuickWindow *>(obj);
         if (view) {
             KConfig dataResource("data", KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
             KConfigGroup windowGroup(&dataResource, "Window");

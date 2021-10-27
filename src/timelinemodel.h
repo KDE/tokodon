@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "post.h"
 #include "accountmanager.h"
+#include "post.h"
 #include <QAbstractListModel>
 
 class TimelineModel : public QAbstractListModel
@@ -17,7 +17,7 @@ class TimelineModel : public QAbstractListModel
 
 public:
     enum CustoRoles {
-        AvatarRole = Qt::UserRole +1,
+        AvatarRole = Qt::UserRole + 1,
         IdRole,
         AuthorDisplayNameRole,
         PublishedAtRole,
@@ -57,9 +57,11 @@ public:
 
     virtual QString displayName() const;
 
-    void disallowUpdates() { m_last_fetch = time(nullptr) + 3; }
+    void disallowUpdates()
+    {
+        m_last_fetch = time(nullptr) + 3;
+    }
     std::shared_ptr<Post> internalData(const QModelIndex &index) const;
-
 
 public Q_SLOTS:
     void actionReply(const QModelIndex &index);
@@ -89,4 +91,3 @@ protected:
 public Q_SLOTS:
     void fetchedTimeline(Account *account, QString original_name, QList<std::shared_ptr<Post>> posts);
 };
-

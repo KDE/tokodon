@@ -2,18 +2,16 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include <QDebug>
-#include <QMap>
 #include <QFile>
 #include <QFileInfo>
+#include <QMap>
 
-#include "post.h"
 #include "account.h"
+#include "post.h"
 
-static QMap<QString, Attachment::AttachmentType> str_to_att_type = {
-    {"image", Attachment::AttachmentType::Image},
-    {"gifv", Attachment::AttachmentType::GifV},
-    {"video", Attachment::AttachmentType::Video}
-};
+static QMap<QString, Attachment::AttachmentType> str_to_att_type = {{"image", Attachment::AttachmentType::Image},
+                                                                    {"gifv", Attachment::AttachmentType::GifV},
+                                                                    {"video", Attachment::AttachmentType::Video}};
 
 Attachment::Attachment(Post *parent, QJsonObject &obj)
     : m_parent(parent)
@@ -43,19 +41,15 @@ void Attachment::setDescription(QString desc)
     m_parent->updateAttachment(this);
 }
 
-static QMap<Post::Visibility, QString> vis_to_str = {
-    {Post::Visibility::Public, "public"},
-    {Post::Visibility::Unlisted, "unlisted"},
-    {Post::Visibility::Private, "private"},
-    {Post::Visibility::Direct, "direct"}
-};
+static QMap<Post::Visibility, QString> vis_to_str = {{Post::Visibility::Public, "public"},
+                                                     {Post::Visibility::Unlisted, "unlisted"},
+                                                     {Post::Visibility::Private, "private"},
+                                                     {Post::Visibility::Direct, "direct"}};
 
-static QMap<QString, Post::Visibility> str_to_vis = {
-    {"public", Post::Visibility::Public},
-    {"unlisted", Post::Visibility::Unlisted},
-    {"private", Post::Visibility::Private},
-    {"direct", Post::Visibility::Direct}
-};
+static QMap<QString, Post::Visibility> str_to_vis = {{"public", Post::Visibility::Public},
+                                                     {"unlisted", Post::Visibility::Unlisted},
+                                                     {"private", Post::Visibility::Private},
+                                                     {"direct", Post::Visibility::Direct}};
 
 Post::Post(Account *parent)
     : QObject(parent)
@@ -118,7 +112,7 @@ Post::Post(Account *parent, QJsonObject obj)
 
     for (const auto &m : qAsConst(mentions)) {
         const QJsonObject o = m.toObject();
-        m_mentions.push_back("@"+ o["acct"].toString());
+        m_mentions.push_back("@" + o["acct"].toString());
     }
 
     m_attachments_visible = !m_isSensitive;
@@ -129,7 +123,7 @@ Post::~Post()
     m_attachments.clear();
 }
 
-void Post::addAttachments(const QJsonArray& attachments)
+void Post::addAttachments(const QJsonArray &attachments)
 {
     for (const auto &attachment_val : attachments) {
         auto attachment_obj = attachment_val.toObject();
@@ -187,7 +181,7 @@ QJsonDocument Post::toJsonDocument() const
 
     auto media_ids = QJsonArray();
     for (const auto att : qAsConst(m_attachments)) {
-         media_ids.append(att->m_id);
+        media_ids.append(att->m_id);
     }
 
     obj["media_ids"] = media_ids;
@@ -204,18 +198,15 @@ void Post::uploadAttachment(const QUrl &filename)
     m_parent->upload(this, file, info.fileName());
 }
 
-
 void Post::updateAttachment(Attachment *a)
 {
     m_parent->updateAttachment(a);
 }
 
-static QMap<QString, Notification::Type> str_to_not_type = {
-    {"favourite", Notification::Type::Favorite},
-    {"follow", Notification::Type::Follow},
-    {"mention", Notification::Type::Mention},
-    {"reblog", Notification::Type::Repeat}
-};
+static QMap<QString, Notification::Type> str_to_not_type = {{"favourite", Notification::Type::Favorite},
+                                                            {"follow", Notification::Type::Follow},
+                                                            {"mention", Notification::Type::Mention},
+                                                            {"reblog", Notification::Type::Repeat}};
 
 Notification::Notification(Account *parent, QJsonObject &obj)
     : m_account(parent)
@@ -276,7 +267,6 @@ void Post::setContentType(const QString &contentType)
     }
     m_content_type = contentType;
     Q_EMIT contentTypeChanged();
-
 }
 
 bool Post::isSensitive() const

@@ -5,12 +5,12 @@
 #pragma once
 
 #include <QDateTime>
-#include <QUrl>
-#include <QString>
-#include <QJsonObject>
 #include <QImage>
-#include <QObject>
+#include <QJsonObject>
 #include <QNetworkReply>
+#include <QObject>
+#include <QString>
+#include <QUrl>
 
 #include <memory>
 
@@ -35,12 +35,7 @@ public:
     explicit Attachment(Post *parent, QJsonObject &obj);
     ~Attachment();
 
-    enum AttachmentType {
-        Unknown,
-        Image,
-        GifV,
-        Video
-    };
+    enum AttachmentType { Unknown, Image, GifV, Video };
     Post *m_parent;
 
     QString m_id;
@@ -52,8 +47,7 @@ public:
     void setDescription(QString desc);
 };
 
-struct Notification
-{
+struct Notification {
     Notification() = delete;
     Notification(const Notification &) = delete;
     Notification(Account *parent, QJsonObject &obj);
@@ -145,8 +139,11 @@ public:
     QStringList m_mentions;
     bool m_pinned = false;
 
-    bool isEmpty() { return m_post_id.isEmpty(); }
-    Q_INVOKABLE void addAttachments(const QJsonArray& attachments);
+    bool isEmpty()
+    {
+        return m_post_id.isEmpty();
+    }
+    Q_INVOKABLE void addAttachments(const QJsonArray &attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
 

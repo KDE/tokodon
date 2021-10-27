@@ -51,7 +51,7 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
 
     Q_EMIT accountManagerChanged();
 
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=] (Account *account) {
+    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](Account *account) {
         if (m_account == account) {
             return;
         }
@@ -64,7 +64,7 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
         fillTimeline();
     });
     QObject::connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
-    QObject::connect(m_manager, &AccountManager::invalidated, this, [=] (Account *account) {
+    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](Account *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -146,7 +146,8 @@ void TimelineModel::fetchedTimeline(Account *account, QString original_name, QLi
         auto post_old = m_timeline.first();
         auto post_new = posts.first();
 
-        qDebug() << "fetchedTimeline" << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;
+        qDebug() << "fetchedTimeline"
+                 << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;
         if (post_old->m_post_id > post_new->m_post_id) {
             row = m_timeline.size();
             last = row + posts.size() - 1;
@@ -207,7 +208,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
         {UrlRole, QByteArrayLiteral("url")},
         {ThreadModelRole, QByteArrayLiteral("threadModel")},
-        {AccountModelRole, QByteArrayLiteral("accountModel")}
+        {AccountModelRole, QByteArrayLiteral("accountModel")},
     };
 }
 
@@ -266,20 +267,18 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
     case AccountModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->m_author_identity->m_id, p->m_author_identity->m_acct));
-    case RelativeTimeRole:
-        {
-            const auto current = QDateTime::currentDateTime();
-            auto secsTo = p->m_published_at.secsTo(current);
-            if (secsTo < 60 * 60) {
-                return i18nc("hour:minute", "%1:%2", p->m_published_at.time().hour(),
-                        p->m_published_at.time().minute());
-            } else if (secsTo < 60 * 60 * 24) {
-                return i18n("%1h", qCeil(secsTo / (60 * 60)));
-            } else if (secsTo < 60 * 60 * 24 * 7) { 
-                return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
-            }
-            return p->m_published_at.date().toString(Qt::SystemLocaleShortDate);
+    case RelativeTimeRole: {
+        const auto current = QDateTime::currentDateTime();
+        auto secsTo = p->m_published_at.secsTo(current);
+        if (secsTo < 60 * 60) {
+            return i18nc("hour:minute", "%1:%2", p->m_published_at.time().hour(), p->m_published_at.time().minute());
+        } else if (secsTo < 60 * 60 * 24) {
+            return i18n("%1h", qCeil(secsTo / (60 * 60)));
+        } else if (secsTo < 60 * 60 * 24 * 7) {
+            return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
         }
+        return p->m_published_at.date().toString(Qt::SystemLocaleShortDate);
+    }
     }
 
     return {};
@@ -287,26 +286,26 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
 
 void TimelineModel::actionReply(const QModelIndex &index)
 {
-    int row = index.row ();
+    int row = index.row();
     auto p = m_timeline[row];
 
-    Q_EMIT wantReply (m_account, p, index);
+    Q_EMIT wantReply(m_account, p, index);
 }
 
 void TimelineModel::actionMenu(const QModelIndex &index)
 {
-    int row = index.row ();
+    int row = index.row();
     auto p = m_timeline[row];
 
-    Q_EMIT wantMenu (m_account, p, index);
+    Q_EMIT wantMenu(m_account, p, index);
 }
 
 void TimelineModel::actionFavorite(const QModelIndex &index)
 {
-    int row = index.row ();
+    int row = index.row();
     auto p = m_timeline[row];
 
-    if (! p->m_isFavorite) {
+    if (!p->m_isFavorite) {
         m_account->favorite(p);
         p->m_isFavorite = true;
     } else {
@@ -314,7 +313,7 @@ void TimelineModel::actionFavorite(const QModelIndex &index)
         p->m_isFavorite = false;
     }
 
-    Q_EMIT dataChanged(index,index);
+    Q_EMIT dataChanged(index, index);
 }
 
 void TimelineModel::actionRepeat(const QModelIndex &index)
@@ -335,7 +334,7 @@ void TimelineModel::actionRepeat(const QModelIndex &index)
 
 void TimelineModel::actionVis(const QModelIndex &index)
 {
-    int row = index.row ();
+    int row = index.row();
     auto p = m_timeline[row];
 
     p->m_attachments_visible ^= true;
