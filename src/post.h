@@ -32,7 +32,7 @@ class Attachment : public QObject
     Q_PROPERTY(QString description MEMBER m_description CONSTANT)
 
 public:
-    Attachment(Post *parent, QJsonObject &obj);
+    explicit Attachment(Post *parent, QJsonObject &obj);
     ~Attachment();
 
     enum AttachmentType {

@@ -7,7 +7,7 @@
 #include <QUrlQuery>
 #include <QDebug>
 
-Account::Account(const QString &name, QString instance_uri, QObject *parent)
+Account::Account(const QString &name, const QString &instance_uri, QObject *parent)
     : QObject(parent)
     , m_name(name)
     , m_qnam(new QNetworkAccessManager(this))
@@ -18,7 +18,7 @@ Account::Account(const QString &name, QString instance_uri, QObject *parent)
     m_identity.reparentIdentity(this);
 }
 
-Account::Account(QSettings &settings, QObject *parent)
+Account::Account(const QSettings &settings, QObject *parent)
     : QObject(parent)
     , m_qnam(new QNetworkAccessManager(this))
     , m_max_post_length(500)
@@ -33,7 +33,7 @@ Account::~Account()
     m_identity_cache.clear();
 }
 
-QUrl Account::apiUrl(QString path)
+QUrl Account::apiUrl(const QString &path) const
 {
     auto url = QUrl::fromUserInput(m_instance_uri);
     url.setScheme("https");
@@ -48,7 +48,7 @@ void Account::registerApplication()
     m_token = QString();
 
     // register
-    QUrl regUrl = apiUrl("/api/v1/apps");
+    const QUrl regUrl = apiUrl("/api/v1/apps");
     QJsonObject obj;
 
     obj["client_name"] = "Tokodon";
@@ -56,7 +56,7 @@ void Account::registerApplication()
     obj["scopes"] = "read write follow";
     obj["website"] = "https://invent.kde.org/carlschwan/kmasto";
 
-    QJsonDocument doc(obj);
+    const QJsonDocument doc(obj);
 
     post(regUrl, doc, false, [=] (QNetworkReply *reply) {
         if (! reply->isFinished())
@@ -83,13 +83,13 @@ bool Account::isRegistered() const
     return ! m_client_id.isEmpty() && ! m_client_secret.isEmpty();
 }
 
-void Account::get(QUrl url, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     QNetworkRequest request = QNetworkRequest(url);
 
     if (authenticated && haveToken())
     {
-        QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
+        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
@@ -107,7 +107,7 @@ void Account::get(QUrl url, bool authenticated, std::function<void(QNetworkReply
     }
 }
 
-void Account::post(QUrl url, QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
@@ -135,7 +135,7 @@ void Account::post(QUrl url, QJsonDocument &doc, bool authenticated, std::functi
     }
 }
 
-void Account::put(QUrl url, QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
@@ -163,7 +163,7 @@ void Account::put(QUrl url, QJsonDocument &doc, bool authenticated, std::functio
     }
 }
 
-void Account::post(QUrl url, QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = formdata.toString().toLatin1();
 
@@ -191,7 +191,7 @@ void Account::post(QUrl url, QUrlQuery &formdata, bool authenticated, std::funct
     }
 }
 
-void Account::post(QUrl url, QHttpMultiPart *message, bool authenticated, std::function<void (QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void (QNetworkReply *)> reply_cb)
 {
     QNetworkRequest request = QNetworkRequest (url);
 
@@ -232,16 +232,16 @@ void Account::upload(Post *p, QFile *file, QString filename)
 
     auto upload_url = apiUrl("/api/v1/media");
     post(upload_url, mp, true, [=] (QNetworkReply *reply) {
-        auto data = reply->readAll ();
-        auto doc = QJsonDocument::fromJson (data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
-        if (! doc.isObject ())
+        if ( doc.isObject())
             return;
 
         auto obj = doc.object();
 
         auto att = new Attachment(p, obj);
-        if (att->m_url.isEmpty ())
+        if (att->m_url.isEmpty())
             return;
 
         p->m_attachments.append(att);
@@ -253,12 +253,12 @@ void Account::upload(Post *p, QFile *file, QString filename)
 // best effort for now, maybe we fire a signal later
 void Account::updateAttachment(Attachment *a)
 {
-    auto att_url = apiUrl (QString ("/api/v1/media/%1").arg (a->m_id));
+    const auto att_url = apiUrl(QString ("/api/v1/media/%1").arg (a->m_id));
     QJsonObject obj;
 
     obj["description"] = a->m_description;
 
-    QJsonDocument doc (obj);
+    const QJsonDocument doc(obj);
 
     put(att_url, doc, true, nullptr);
 }
@@ -283,7 +283,7 @@ bool Account::identityCached(const QString &acct) const
     return id && id->m_acct == acct;
 }
 
-QUrlQuery Account::buildOAuthQuery()
+QUrlQuery Account::buildOAuthQuery() const
 {
     QUrlQuery q = QUrlQuery();
 
@@ -292,7 +292,7 @@ QUrlQuery Account::buildOAuthQuery()
     return q;
 }
 
-QUrl Account::getAuthorizeUrl()
+QUrl Account::getAuthorizeUrl() const
 {
     QUrl url = apiUrl("/oauth/authorize");
     QUrlQuery q = buildOAuthQuery();
@@ -306,11 +306,9 @@ QUrl Account::getAuthorizeUrl()
     return url;
 }
 
-QUrl Account::getTokenUrl()
+QUrl Account::getTokenUrl() const
 {
-    QUrl url = apiUrl("/oauth/token");
-
-    return url;
+    return apiUrl("/oauth/token");
 }
 
 void Account::setInstanceUri(const QString &instance_uri)
@@ -381,7 +379,7 @@ void Account::validateToken()
     streamingSocket("user");
 }
 
-void Account::writeToSettings(QSettings &settings)
+void Account::writeToSettings(QSettings &settings) const
 {
     settings.beginGroup(m_name);
 
@@ -394,7 +392,7 @@ void Account::writeToSettings(QSettings &settings)
     settings.endGroup();
 }
 
-void Account::buildFromSettings(QSettings &settings)
+void Account::buildFromSettings(const QSettings &settings)
 {
     if (!settings.value("token").toString().isEmpty()) {
         m_token = settings.value("token").toString();
@@ -585,7 +583,7 @@ void Account::postStatus(Post *p)
     });
 }
 
-void Account::mutatePost(std::shared_ptr<Post> p, const QString verb, bool deliver_home)
+void Account::mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home)
 {
     QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
     QJsonDocument doc;
@@ -631,7 +629,7 @@ void Account::unrepeat(std::shared_ptr<Post> p)
 
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
 // that it might need to be extended later on.
-static Account::AllowedContentType parse_version(QString instanceVer)
+static Account::AllowedContentType parse_version(const QString &instanceVer)
 {
     using ContentType = Account::AllowedContentType;
 
@@ -649,7 +647,7 @@ static QMap<QString, Account::AllowedContentType> str_to_content_type = {
     {"text/markdown", Account::AllowedContentType::Markdown}
 };
 
-static Account::AllowedContentType parse_pleroma_info(QJsonDocument doc)
+static Account::AllowedContentType parse_pleroma_info(const QJsonDocument &doc)
 {
     using ContentType = Account::AllowedContentType;
     unsigned int result = ContentType::PlainText;
@@ -724,7 +722,7 @@ void Account::invalidatePost(Post *p)
     Q_EMIT invalidatedPost(p);
 }
 
-QUrl Account::streamingUrl(QString stream)
+QUrl Account::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl ("/api/v1/streaming");
     QUrlQuery q;
@@ -738,7 +736,7 @@ QUrl Account::streamingUrl(QString stream)
     return QUrl (url);
 }
 
-QWebSocket *Account::streamingSocket(QString stream)
+QWebSocket *Account::streamingSocket(const QString &stream)
 {
     if (m_websockets.contains (stream))
         return m_websockets[stream];
@@ -784,7 +782,7 @@ QWebSocket *Account::streamingSocket(QString stream)
     return socket;
 }
 
-void Account::handleUpdate(QJsonDocument doc, QString target)
+void Account::handleUpdate(const QJsonDocument &doc, const QString &target)
 {
     QList<std::shared_ptr<Post>> posts;
 
@@ -796,12 +794,12 @@ void Account::handleUpdate(QJsonDocument doc, QString target)
     Q_EMIT fetchedTimeline(target, posts);
 }
 
-void Account::handleNotification(QJsonDocument doc)
+void Account::handleNotification(const QJsonDocument &doc)
 {
-    auto obj = doc.object ();
-    std::shared_ptr<Notification> n = std::make_shared<Notification> (this, obj);
+    auto obj = doc.object();
+    std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj);
 
-    Q_EMIT notification (n);
+    Q_EMIT notification(n);
 }
 
 Post *Account::newPost()
@@ -809,7 +807,7 @@ Post *Account::newPost()
     return new Post(this);
 }
 
-void Identity::fromSourceData(QJsonObject doc)
+void Identity::fromSourceData(const QJsonObject &doc)
 {
     m_id = doc["id"].toString().toInt();
     m_display_name = doc["display_name"].toString();

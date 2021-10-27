@@ -10,6 +10,7 @@
 
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_last_fetch(time(nullptr))
 {
 }
 

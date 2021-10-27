@@ -54,8 +54,8 @@ public:
     int m_followersCount;
     int m_followingCount;
     int m_statusesCount;
-    void fromSourceData(QJsonObject doc);
-    void fetchAvatar(QUrl &avatar_url);
+    void fromSourceData(const QJsonObject &doc);
+    void fetchAvatar(const QUrl &avatar_url);
     void reparentIdentity(Account *parent);
 
     QNetworkAccessManager *m_qnam;
@@ -74,8 +74,8 @@ class Account : public QObject
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
 
 public:
-    Account(const QString &username, QString instance_uri, QObject *parent = nullptr);
-    Account(QSettings &settings, QObject *parent = nullptr);
+    explicit Account(const QString &username, const QString &instance_uri, QObject *parent = nullptr);
+    explicit Account(const QSettings &settings, QObject *parent = nullptr);
     ~Account();
 
     // API stuff (registering)
@@ -83,19 +83,19 @@ public:
     bool isRegistered() const;
 
     // making API calls
-    QUrl apiUrl(QString path);
-    void get(QUrl url, bool authenticated, std::function<void(QNetworkReply *)>);
-    void post(QUrl url, QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
-    void post(QUrl url, QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)>);
-    void post(QUrl url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)>);
-    void patch(QUrl url, QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
-    void put(QUrl url, QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
+    QUrl apiUrl(const QString &path) const;
+    void get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)>);
+    void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
+    void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)>);
+    void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)>);
+    void patch(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
+    void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)>);
 
     // OAuth authorization
-    Q_INVOKABLE QUrl getAuthorizeUrl();
-    QUrl getTokenUrl();
+    Q_INVOKABLE QUrl getAuthorizeUrl() const;
+    QUrl getTokenUrl() const;
     Q_INVOKABLE void setToken(const QString &authcode);
-    bool haveToken() { return ! m_token.isEmpty (); }
+    bool haveToken() const { return ! m_token.isEmpty (); }
     void validateToken();
 
     Q_INVOKABLE Post *newPost();
@@ -114,8 +114,8 @@ public:
     // save/restore.
     // writeToSettings assumes a settings object in a parent context
     // buildFromSettings assumes a settings object in the object context
-    void writeToSettings(QSettings &settings);
-    void buildFromSettings(QSettings &settings);
+    void writeToSettings(QSettings &settings) const;
+    void buildFromSettings(const QSettings &settings);
 
     // identity
     const Identity &identity() { return m_identity; }
@@ -147,8 +147,8 @@ public:
             std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     // streaming
-    QUrl streamingUrl(QString stream);
-    QWebSocket *streamingSocket(QString stream);
+    QUrl streamingUrl(const QString &stream);
+    QWebSocket *streamingSocket(const QString &stream);
 
     // post refresh
     void invalidatePost(Post *p);
@@ -170,7 +170,7 @@ Q_SIGNALS:
     void authenticated();
     void registered();
     void identityChanged(Account *);
-    void fetchedTimeline(QString, QList<std::shared_ptr<Post>>);
+    void fetchedTimeline(const QString &, QList<std::shared_ptr<Post>>);
     void invalidated();
     void nameChanged();
     void fetchedInstanceMetadata();
@@ -194,10 +194,10 @@ private:
     QMap<QString, std::shared_ptr<Identity>> m_identity_cache;
 
     // OAuth authorization
-    QUrlQuery buildOAuthQuery();
-    void mutatePost(std::shared_ptr<Post> p, const QString verb, bool deliver_home = false);
+    QUrlQuery buildOAuthQuery() const;
+    void mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home = false);
 
     // updates and notifications
-    void handleUpdate(QJsonDocument doc, QString target);
-    void handleNotification(QJsonDocument doc);
+    void handleUpdate(const QJsonDocument &doc, const QString &target);
+    void handleNotification(const QJsonDocument &doc);
 };
