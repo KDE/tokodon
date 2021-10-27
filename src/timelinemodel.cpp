@@ -89,7 +89,7 @@ QString TimelineModel::name() const
     return m_timeline_name;
 }
 
-void TimelineModel::fillTimeline(QString from_id)
+void TimelineModel::fillTimeline(const QString &from_id)
 {
     if (m_timeline_name != "home" && m_timeline_name != "public" && m_timeline_name != "federated") {
         return;
@@ -127,7 +127,7 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
     return true;
 }
 
-void TimelineModel::fetchedTimeline(Account *account, QString original_name, QList<std::shared_ptr<Post>> posts)
+void TimelineModel::fetchedTimeline(Account *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts)
 {
     m_fetching = false;
 
@@ -136,15 +136,16 @@ void TimelineModel::fetchedTimeline(Account *account, QString original_name, QLi
         return;
     }
 
-    if (posts.isEmpty())
+    if (posts.isEmpty()) {
         return;
+    }
 
     int row = 0;
     int last = 0;
 
     if (!m_timeline.isEmpty()) {
-        auto post_old = m_timeline.first();
-        auto post_new = posts.first();
+        const auto post_old = m_timeline.first();
+        const auto post_new = posts.first();
 
         qDebug() << "fetchedTimeline"
                  << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;

@@ -47,7 +47,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    virtual void fillTimeline(QString fromId = QString());
+    virtual void fillTimeline(const QString &fromId = QString());
 
     AccountManager *accountManager() const;
     void setAccountManager(AccountManager *accountManager);
@@ -89,5 +89,5 @@ protected:
     time_t m_last_fetch;
 
 public Q_SLOTS:
-    void fetchedTimeline(Account *account, QString original_name, QList<std::shared_ptr<Post>> posts);
+    void fetchedTimeline(Account *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts);
 };

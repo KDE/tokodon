@@ -14,7 +14,7 @@ public:
 
     QString displayName() const override;
     Identity *identity() const;
-    void fillTimeline(QString fromId = QString()) override;
+    void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
 Q_SIGNALS:

@@ -44,7 +44,7 @@ QString AccountModel::displayName() const
     return m_identity->m_display_name;
 }
 
-void AccountModel::fillTimeline(QString)
+void AccountModel::fillTimeline(const QString &)
 {
     m_fetching = true;
 

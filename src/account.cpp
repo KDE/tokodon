@@ -464,15 +464,17 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     bool local = timeline_name == "public";
 
     // federated timeline is really "public" without local set
-    if (timeline_name == "federated")
+    if (timeline_name == "federated") {
         timeline_name = "public";
+    }
 
     QUrlQuery q;
-    if (local)
+    if (local) {
         q.addQueryItem("local", "true");
-    if (from_id != "")
+    }
+    if (!from_id.isEmpty()) {
         q.addQueryItem("max_id", from_id);
-
+    }
     QUrl uri = QUrl::fromUserInput(m_instance_uri);
     uri.setScheme("https");
     uri.setPath(QString("/api/v1/timelines/%1").arg(timeline_name));
@@ -491,7 +493,7 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
         for (const auto &value : doc.array()) {
             QJsonObject obj = value.toObject();
 
-            auto p = std::make_shared<Post>(this, obj);
+            const auto p = std::make_shared<Post>(this, obj);
             posts.push_back(p);
         }
 

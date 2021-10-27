@@ -17,7 +17,7 @@ QString ThreadModel::displayName() const
     return i18nc("@title", "Thread");
 }
 
-void ThreadModel::fillTimeline(QString)
+void ThreadModel::fillTimeline(const QString &)
 {
     m_fetching = true;
 

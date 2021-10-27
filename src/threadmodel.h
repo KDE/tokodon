@@ -13,6 +13,6 @@ public:
     ThreadModel(AccountManager *manager, const QString &id, QObject *parent = nullptr);
 
     QString displayName() const override;
-    void fillTimeline(QString fromId = QString()) override;
+    void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 };
