@@ -119,7 +119,7 @@ public:
     void setInstanceUri(const QString &instance_uri);
     size_t maxPostLength() const
     {
-        return m_max_post_length;
+        return m_maxPostLength;
     }
     QString instanceName() const
     {
@@ -146,7 +146,7 @@ public:
     bool identityCached(const QString &acct) const;
 
     // timeline
-    void fetchTimeline(const QString &timeline_name, const QString &from_id);
+    void fetchTimeline(const QString &timelineName, const QString &from_id);
     void invalidate();
 
     // posting statuses
@@ -179,7 +179,7 @@ public:
 
     AllowedContentType allowedContentTypes() const
     {
-        return m_allowed_content_types;
+        return m_allowedContentTypes;
     }
 
 Q_SIGNALS:
@@ -201,13 +201,13 @@ private:
     QString m_client_id;
     QString m_client_secret;
     QNetworkAccessManager *m_qnam;
-    size_t m_max_post_length;
+    size_t m_maxPostLength;
     QString m_instance_name;
     Identity m_identity;
-    AllowedContentType m_allowed_content_types;
+    AllowedContentType m_allowedContentTypes;
     QMap<QString, QWebSocket *> m_websockets;
 
-    QMap<QString, std::shared_ptr<Identity>> m_identity_cache;
+    QMap<QString, std::shared_ptr<Identity>> m_identityCache;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

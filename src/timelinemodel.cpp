@@ -15,27 +15,27 @@ TimelineModel::TimelineModel(QObject *parent)
     connect(m_manager, &AccountManager::accountSelected, this, &TimelineModel::nameChanged);
 }
 
-void TimelineModel::setName(const QString &timeline_name)
+void TimelineModel::setName(const QString &timelineName)
 {
-    if (timeline_name == m_timeline_name) {
+    if (timelineName == m_timelineName) {
         return;
     }
 
-    m_timeline_name = timeline_name;
+    m_timelineName = timelineName;
     Q_EMIT nameChanged();
 }
 
 QString TimelineModel::displayName() const
 {
-    if (m_timeline_name == "home") {
+    if (m_timelineName == "home") {
         if (m_manager && m_manager->rowCount() > 1) {
             return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->username());
         } else {
             return i18nc("@title", "Home");
         }
-    } else if (m_timeline_name == "public") {
+    } else if (m_timelineName == "public") {
         return i18nc("@title", "Local Timeline");
-    } else if (m_timeline_name == "federated") {
+    } else if (m_timelineName == "federated") {
         return i18nc("@title", "Global Timeline");
     }
     return QString();
@@ -91,19 +91,19 @@ AccountManager *TimelineModel::accountManager() const
 
 QString TimelineModel::name() const
 {
-    return m_timeline_name;
+    return m_timelineName;
 }
 
 void TimelineModel::fillTimeline(const QString &from_id)
 {
-    if (m_timeline_name != "home" && m_timeline_name != "public" && m_timeline_name != "federated") {
+    if (m_timelineName != "home" && m_timelineName != "public" && m_timelineName != "federated") {
         return;
     }
 
     m_fetching = true;
 
     if (m_account) {
-        m_account->fetchTimeline(m_timeline_name, from_id);
+        m_account->fetchTimeline(m_timelineName, from_id);
     }
 }
 
@@ -137,7 +137,7 @@ void TimelineModel::fetchedTimeline(Account *account, const QString &original_na
     m_fetching = false;
 
     // make sure the timeline update is for us
-    if (account != m_account || original_name != m_timeline_name) {
+    if (account != m_account || original_name != m_timelineName) {
         return;
     }
 

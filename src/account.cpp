@@ -12,7 +12,7 @@ Account::Account(const QString &name, const QString &instance_uri, QObject *pare
     , m_name(name)
     , m_qnam(new QNetworkAccessManager(this))
     // default to 500, instances which support more signal it
-    , m_max_post_length(500)
+    , m_maxPostLength(500)
 {
     setInstanceUri(instance_uri);
     m_identity.reparentIdentity(this);
@@ -21,7 +21,7 @@ Account::Account(const QString &name, const QString &instance_uri, QObject *pare
 Account::Account(const QSettings &settings, QObject *parent)
     : QObject(parent)
     , m_qnam(new QNetworkAccessManager(this))
-    , m_max_post_length(500)
+    , m_maxPostLength(500)
 {
     m_identity.reparentIdentity(this);
 
@@ -30,7 +30,7 @@ Account::Account(const QSettings &settings, QObject *parent)
 
 Account::~Account()
 {
-    m_identity_cache.clear();
+    m_identityCache.clear();
 }
 
 QUrl Account::apiUrl(const QString &path) const
@@ -256,21 +256,21 @@ void Account::updateAttachment(Attachment *a)
 
 const std::shared_ptr<Identity> Account::identityLookup(const QString &acct, const QJsonObject &doc)
 {
-    auto id = m_identity_cache[acct];
+    auto id = m_identityCache[acct];
     if (id && id->m_acct == acct)
-        return m_identity_cache[acct];
+        return m_identityCache[acct];
 
     id = std::make_shared<Identity>();
     id->reparentIdentity(this);
     id->fromSourceData(doc);
-    m_identity_cache[acct] = id;
+    m_identityCache[acct] = id;
 
-    return m_identity_cache[acct];
+    return m_identityCache[acct];
 }
 
 bool Account::identityCached(const QString &acct) const
 {
-    auto id = m_identity_cache[acct];
+    auto id = m_identityCache[acct];
     return id && id->m_acct == acct;
 }
 
@@ -460,12 +460,12 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
 
 void Account::fetchTimeline(const QString &original_name, const QString &from_id)
 {
-    QString timeline_name = QString(original_name);
-    bool local = timeline_name == "public";
+    QString timelineName = QString(original_name);
+    bool local = timelineName == "public";
 
     // federated timeline is really "public" without local set
-    if (timeline_name == "federated") {
-        timeline_name = "public";
+    if (timelineName == "federated") {
+        timelineName = "public";
     }
 
     QUrlQuery q;
@@ -477,7 +477,7 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     }
     QUrl uri = QUrl::fromUserInput(m_instance_uri);
     uri.setScheme("https");
-    uri.setPath(QString("/api/v1/timelines/%1").arg(timeline_name));
+    uri.setPath(QString("/api/v1/timelines/%1").arg(timelineName));
     uri.setQuery(q);
 
     get(uri, true, [=](QNetworkReply *reply) {
@@ -620,7 +620,7 @@ void Account::unrepeat(std::shared_ptr<Post> p)
 
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
 // that it might need to be extended later on.
-static Account::AllowedContentType parse_version(const QString &instanceVer)
+static Account::AllowedContentType parseVersion(const QString &instanceVer)
 {
     using ContentType = Account::AllowedContentType;
 
@@ -680,11 +680,11 @@ void Account::fetchInstanceMetadata()
         auto obj = doc.object();
 
         if (obj.contains("max_toot_chars"))
-            m_max_post_length = (unsigned)obj["max_toot_chars"].toInt();
+            m_maxPostLength = (unsigned)obj["max_toot_chars"].toInt();
 
         // One can only hope that there will always be a version attached
         if (obj.contains("version"))
-            m_allowed_content_types = parse_version(obj["version"].toString());
+            m_allowedContentTypes = parseVersion(obj["version"].toString());
 
         m_instance_name = obj["title"].toString();
         Q_EMIT fetchedInstanceMetadata();
@@ -694,7 +694,7 @@ void Account::fetchInstanceMetadata()
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        m_allowed_content_types = parse_pleroma_info(doc);
+        m_allowedContentTypes = parse_pleroma_info(doc);
         Q_EMIT fetchedInstanceMetadata();
     });
 }

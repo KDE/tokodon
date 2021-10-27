@@ -65,7 +65,7 @@ protected:
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
-    QString m_timeline_name;
+    QString m_timelineName;
     AccountManager *m_manager = nullptr;
     Account *m_account = nullptr;
 
