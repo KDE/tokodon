@@ -11,6 +11,10 @@ Dependencies:
     'frameworks/knotifications': '@stable'
     'frameworks/kconfig': '@stable'
 
+- 'on': ['Linux', 'FreeBSD', 'Windows']
+  'require':
+    'frameworks/qqc2-desktop-style': '@stable'
+
 - 'on': ['Linux', 'FreeBSD']
   'require':
     'frameworks/kdbusaddons': '@stable'

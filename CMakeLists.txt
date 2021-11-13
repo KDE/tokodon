@@ -49,6 +49,7 @@ if(ANDROID)
         PURPOSE "Encrypted communications"
     )
 else()
+    find_package(KF5QQC2DesktopStyle REQUIRED)
     find_package(Qt5Keychain)
     set_package_properties(Qt5Keychain PROPERTIES
         TYPE REQUIRED
