@@ -136,6 +136,7 @@ Kirigami.ScrollablePage {
                         readOnly: true
                         selectByMouse: !Kirigami.Settings.isMobile
                         onLinkActivated: Qt.openUrlExternally(link)
+                        color: Kirigami.Theme.textColor
                         MouseArea {
                             anchors.fill: parent
                             acceptedButtons: Qt.NoButton // don't eat clicks on the Text
