@@ -14,8 +14,8 @@
 
 #include <memory>
 
-struct Post;
-struct Identity;
+class Post;
+class Identity;
 class Account;
 
 /// Post's attachment object.
