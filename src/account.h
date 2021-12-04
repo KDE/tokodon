@@ -21,6 +21,12 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
 
+#include "config.h"
+
+#if HAVE_KACCOUNTS
+#include <Accounts/Account>
+#endif
+
 #include "post.h"
 
 class Account;
@@ -76,6 +82,9 @@ class Account : public QObject
 public:
     explicit Account(const QString &username, const QString &instance_uri, QObject *parent = nullptr);
     explicit Account(const QSettings &settings, QObject *parent = nullptr);
+#if HAVE_KACCOUNTS
+    Account(const QString &name, Accounts::Account *account, QObject *parent = nullptr);
+#endif
     ~Account();
 
     // API stuff (registering)
@@ -206,6 +215,9 @@ private:
     Identity m_identity;
     AllowedContentType m_allowedContentTypes;
     QMap<QString, QWebSocket *> m_websockets;
+#if HAVE_KACCOUNTS
+    Accounts::Account *m_kaccountsAccount = nullptr;
+#endif
 
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
 

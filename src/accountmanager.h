@@ -25,6 +25,8 @@ public:
     void loadFromSettings(QSettings &settings);
     void writeToSettings(QSettings &settings);
 
+    void loadFromKAccounts();
+
     bool hasAccounts() const;
     Q_INVOKABLE void addAccount(Account *account);
     Q_INVOKABLE void removeAccount(Account *account);

@@ -4,12 +4,18 @@
 
 #include "accountmanager.h"
 
+#if HAVE_KACCOUNTS
+#include <KAccounts/Core>
+#include <Accounts/Manager>
+#endif
+
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
 {
     QSettings settings;
     loadFromSettings(settings);
+    loadFromKAccounts();
 }
 
 AccountManager::~AccountManager()
@@ -156,6 +162,25 @@ void AccountManager::loadFromSettings(QSettings &settings)
     }
 
     settings.endGroup();
+}
+
+void AccountManager::loadFromKAccounts()
+{
+#if HAVE_KACCOUNTS
+    qDebug() << "Loading accounts from kaccounts.";
+
+    auto manager = KAccounts::accountsManager();
+
+    for (auto i : KAccounts::accountsManager()->accountList()) {
+        auto *a = manager->account(i);
+        QString name = a->provider().name();
+
+        if (name == QStringLiteral("mastodon")) {
+            auto tokodonAccount = new Account(a->displayName(), a);
+            addAccount(tokodonAccount);
+        }
+    }
+#endif
 }
 
 KAboutData AccountManager::aboutData() const

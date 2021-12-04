@@ -7,6 +7,10 @@
 #include <QDebug>
 #include <QUrlQuery>
 
+#if HAVE_KACCOUNTS
+#include <GetCredentialsJob>
+#endif
+
 Account::Account(const QString &name, const QString &instance_uri, QObject *parent)
     : QObject(parent)
     , m_name(name)
@@ -27,6 +31,30 @@ Account::Account(const QSettings &settings, QObject *parent)
 
     buildFromSettings(settings);
 }
+
+#if HAVE_KACCOUNTS
+Account::Account(const QString &name, Accounts::Account *account, QObject *parent)
+    : QObject(parent)
+    , m_name(name)
+    , m_qnam(new QNetworkAccessManager(this))
+    , m_maxPostLength(500)
+    , m_kaccountsAccount(account)
+{
+    m_identity.reparentIdentity(this);
+
+    auto job = new GetCredentialsJob(account->id(), this);
+
+    connect(job, &GetCredentialsJob::finished, this, [job, this] {
+        const QVariantMap data = job->credentialsData();
+        m_token = data.value("AccessToken").toString();
+        m_client_id = data.value("ClientId").toString();
+        m_client_secret = data.value("ClientSecret").toString();
+        m_instance_uri = QStringLiteral("https://") + data.value("Host").toString();
+    });
+
+    job->start();
+}
+#endif
 
 Account::~Account()
 {
@@ -372,6 +400,13 @@ void Account::validateToken()
 
 void Account::writeToSettings(QSettings &settings) const
 {
+#if HAVE_KACCOUNTS
+    if (m_kaccountsAccount) {
+        // Don't save KAccounts accounts to settings
+        return;
+    }
+#endif
+
     settings.beginGroup(m_name);
 
     settings.setValue("token", m_token);

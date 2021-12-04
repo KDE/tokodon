@@ -57,7 +57,7 @@ if(ANDROID)
         "go-home-large"
     )
 else()
-    target_link_libraries(tokodon PRIVATE Qt5::Widgets)
+    target_link_libraries(tokodon PRIVATE Qt5::Widgets KAccounts)
 endif()
 
 if(TARGET KF5::DBusAddons)

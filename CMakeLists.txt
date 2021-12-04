@@ -55,11 +55,17 @@ else()
         TYPE REQUIRED
         PURPOSE "Secure storage of account secrets"
     )
+
+    find_package(KAccounts)
 endif()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
 endif()
+
+set(HAVE_KACCOUNTS ${KAccounts_FOUND})
+
+configure_file(config.h.in ${CMAKE_BINARY_DIR}/config.h)
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 
