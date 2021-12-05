@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("Material"));
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
@@ -57,7 +57,15 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef Q_OS_WINDOWS
+    if (AttachConsole(ATTACH_PARENT_PROCESS)) {
+        freopen("CONOUT$", "w", stdout);
+        freopen("CONOUT$", "w", stderr);
+    }
+
     QApplication::setStyle(QStringLiteral("breeze"));
+    auto font = app.font();
+    font.setPointSize(10);
+    app.setFont(font);
 #endif
 
     QCoreApplication::setOrganizationName("KDE");
