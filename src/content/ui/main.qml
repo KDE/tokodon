@@ -66,6 +66,7 @@ Kirigami.ApplicationWindow {
                 delegate: Kirigami.BasicListItem {
                     label: model.display
                     subtitle: model.description
+                    highlighted: AccountManager.selectedAccount === model.account
                     leading: Kirigami.Avatar {
                         source: model.account.identity.avatarUrl
                         name: model.display
