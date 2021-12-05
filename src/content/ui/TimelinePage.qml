@@ -42,9 +42,14 @@ Kirigami.ScrollablePage {
             rightPadding: Kirigami.Units.smallSpacing
             highlighted: false
             hoverEnabled: false
-            onClicked: pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                model: model.threadModel
-            })
+            onClicked: {
+                const subModel = model.threadModel
+                if (subModel.name !== timelinePage.model.name) {
+                    pageStack.push("qrc:/content/ui/TimelinePage.qml", {
+                        model: subModel
+                    })
+                }
+            }
             ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
             contentItem: GridLayout {
                 columnSpacing: Kirigami.Units.largeSpacing
@@ -172,8 +177,8 @@ Kirigami.ScrollablePage {
                 RowLayout {
                     QQC2.ToolButton {
                         icon.name: "mail-replied-symbolic"
-                        icon.width: Kirigami.Units.iconSizes.medium
-                        icon.height: Kirigami.Units.iconSizes.medium
+                        icon.width: Kirigami.Units.iconSizes.smallMedium
+                        icon.height: Kirigami.Units.iconSizes.smallMedium
                         text: model.repliesCount < 2 ? model.repliesCount : "1+"
                         onClicked: {
                             const post = AccountManager.selectedAccount.newPost()
@@ -192,8 +197,8 @@ Kirigami.ScrollablePage {
                     }
                     QQC2.ToolButton {
                         icon.source: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
-                        icon.width: Kirigami.Units.iconSizes.medium
-                        icon.height: Kirigami.Units.iconSizes.medium
+                        icon.width: Kirigami.Units.iconSizes.smallMedium
+                        icon.height: Kirigami.Units.iconSizes.smallMedium
                         onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
                         QQC2.ToolTip {
                             text: i18nc("Share a post", "Boost")
@@ -201,8 +206,8 @@ Kirigami.ScrollablePage {
                     }
                     QQC2.ToolButton {
                         icon.source: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
-                        icon.width: Kirigami.Units.iconSizes.medium
-                        icon.height: Kirigami.Units.iconSizes.medium
+                        icon.width: Kirigami.Units.iconSizes.smallMedium
+                        icon.height: Kirigami.Units.iconSizes.smallMedium
                         onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
                         QQC2.ToolTip {
                             text: i18nc("Like a post", "Like")
