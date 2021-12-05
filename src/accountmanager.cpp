@@ -18,8 +18,9 @@ AccountManager::~AccountManager()
     QSettings settings;
     writeToSettings(settings);
 
-    for (auto a : m_accounts)
+    for (auto a : m_accounts) {
         delete a;
+    }
 
     m_accounts.clear();
 }
@@ -30,9 +31,12 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
         return {};
     }
 
+    auto account = m_accounts.at(index.row());
     switch (role) {
     case Qt::DisplayRole:
-        return m_accounts[index.row()]->username();
+        return account->identity().m_display_name;
+    case DescriptionRole:
+        return account->identity().m_acct;
     case AccountRole:
         return QVariant::fromValue(m_accounts[index.row()]);
     }
@@ -46,7 +50,11 @@ int AccountManager::rowCount(const QModelIndex &index) const
 
 QHash<int, QByteArray> AccountManager::roleNames() const
 {
-    return {{Qt::DisplayRole, QByteArrayLiteral("display")}, {AccountRole, QByteArrayLiteral("account")}};
+    return {
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {AccountRole, QByteArrayLiteral("account")},
+        {DescriptionRole, QByteArrayLiteral("description")},
+    };
 }
 
 AccountManager &AccountManager::instance()
@@ -74,21 +82,24 @@ void AccountManager::addAccount(Account *account)
     Q_EMIT accountAdded(account);
     selectAccount(account);
 
-    QObject::connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
+    connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
+    connect(account, &Account::authenticated, this, [this, account] () {
+        dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+    });
 
-    QObject::connect(account, &Account::fetchedTimeline, [=](QString original_name, QList<std::shared_ptr<Post>> posts) {
+    connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<std::shared_ptr<Post>> posts) {
         Q_EMIT fetchedTimeline(account, original_name, posts);
     });
-    QObject::connect(account, &Account::invalidated, [=]() {
+    connect(account, &Account::invalidated, this, [this, account]() {
         Q_EMIT invalidated(account);
     });
-    QObject::connect(account, &Account::fetchedInstanceMetadata, [=]() {
+    connect(account, &Account::fetchedInstanceMetadata, this, [this, account]() {
         Q_EMIT fetchedInstanceMetadata(account);
     });
-    QObject::connect(account, &Account::invalidatedPost, [=](Post *p) {
+    connect(account, &Account::invalidatedPost, [this, account](Post *p) {
         Q_EMIT invalidatedPost(account, p);
     });
-    QObject::connect(account, &Account::notification, [=](std::shared_ptr<Notification> n) {
+    connect(account, &Account::notification, [this, account](std::shared_ptr<Notification> n) {
         Q_EMIT notification(account, n);
     });
     QSettings settings;

@@ -8,7 +8,6 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQml.Models 2.15
-import QtGraphicalEffects 1.12
 import org.kde.kmasto 1.0
 
 Kirigami.ApplicationWindow {
@@ -16,8 +15,6 @@ Kirigami.ApplicationWindow {
 
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
-    maximumWidth: Kirigami.Units.gridUnit * 30
-    maximumHeight: Kirigami.Units.gridUnit * 90
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
     pageStack.globalToolBar.canContainHandles: true
 
@@ -29,29 +26,83 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    globalDrawer: Kirigami.GlobalDrawer {
-        header: ColumnLayout {
+    globalDrawer: Kirigami.OverlayDrawer {
+        id: drawer
+        edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+        modal: Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+        drawerOpen: !Kirigami.Settings.isMobile
+        width: Kirigami.Units.gridUnit * 16
+        Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
+        leftPadding: 0
+        rightPadding: 0
+        topPadding: 0
+        bottomPadding: 0
+
+        contentItem: ColumnLayout {
+            QQC2.ToolBar {
+                id: toolbar
+                Layout.fillWidth: true
+                Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+
+                leftPadding: Kirigami.Units.smallSpacing
+                rightPadding: Kirigami.Units.smallSpacing
+                topPadding: 0
+                bottomPadding: 0
+
+                RowLayout {
+                    anchors.fill: parent
+
+                    Kirigami.Heading {
+                        Layout.leftMargin: Kirigami.Units.smallSpacing + Kirigami.Units.largeSpacing
+                        text: i18n("Tokodon")
+                    }
+                }
+            }
+
             Repeater {
                 model: AccountManager
                 delegate: Kirigami.BasicListItem {
                     label: model.display
-                    onClicked: {
+                    subtitle: model.description
+                    leading: Kirigami.Avatar {
+                        source: model.account.identity.avatarUrl
+                        name: model.display
+                        implicitWidth: height
+                        sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
+                        sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
+                    }
+                    onClicked: if (AccountManager.selectedAccount !== model.account) {
                         AccountManager.selectedAccount = model.account;
                     }
                 }
             }
-        }
-        actions: [
-            Kirigami.Action {
-                icon.name: "list-add"
-                onTriggered: pageStack.push(loginPage);
-                text: i18n("Add Account")
+            Kirigami.BasicListItem {
+                action: Kirigami.Action {
+                    icon.name: "list-add"
+                    onTriggered: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
+                    text: i18n("Add Account")
+                }
             }
-        ]
+            Item {
+                Layout.fillHeight: true
+            }
+            Kirigami.BasicListItem {
+                action: Kirigami.Action {
+                    icon.name: "settings-configure"
+                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml');
+                    text: i18nc("@action:inmenu", "Settings")
+                }
+            }
+        }
     }
 
     footer: Kirigami.NavigationTabBar {
-        visible: pageStack.layers.depth <= 1
+        // Make sure we take in count drawer width
+        anchors.left: parent.left
+        anchors.right: parent.right
+        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts
         actions: [
             Kirigami.Action {
                 iconName: "go-home-large"
@@ -98,96 +149,10 @@ Kirigami.ApplicationWindow {
         if (AccountManager.hasAccounts) {
             pageStack.push(mainTimeline);
         } else {
-            pageStack.push(loginPage);
+            pageStack.push('qrc:/content/ui/LoginPage.qml');
         }
     }
 
-    Component {
-        id: loginPage
-        MastoPage {
-            Kirigami.FormLayout {
-                anchors.centerIn: parent
-                Kirigami.Heading {
-                    Kirigami.FormData.isSection: true
-                    text: i18n("Welcome to Tokodon")
-                }
-                QQC2.TextField {
-                    id: instanceUrl
-                    Kirigami.FormData.label: i18n("Instance Url:")
-                }
-                QQC2.TextField {
-                    id: username
-                    Kirigami.FormData.label: i18n("Username:")
-                }
-                QQC2.Button {
-                    text: i18n("Continue")
-                    onClicked: pageStack.push(authorizationPage, {
-                        account: AccountManager.createNewAccount(username.text, instanceUrl.text)
-                    });
-                }
-            }
-        }
-    }
-
-    Component {
-        id: authorizationPage
-        MastoPage {
-            required property var account
-            Kirigami.FlexColumn {
-                maximumWidth: Kirigami.Units.gridUnits * 30
-                TextEdit {
-                    color: Kirigami.Theme.textColor
-                    textFormat: Text.RichText
-                    readOnly: true
-                    selectByMouse: true
-                    text: i18n("To continue, please open the following link and authorize Tokodon: %1", "<br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
-                    wrapMode: Text.WordWrap
-                    onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
-                    Layout.fillWidth: true
-                    TapHandler {
-                        acceptedButtons: Qt.RightButton
-                        onTapped: if (parent.hoveredLink.length > 0) {
-                            menuLink.link = parent.hoveredLink;
-                            menuLink.popup();
-                        }
-                    }
-                    QQC2.Menu {
-                        id: menuLink
-                        property string link
-                        QQC2.MenuItem {
-                            text: i18n("Copy link")
-                            onTriggered: Clipboard.saveText(menuLink.link)
-                        }
-                        QQC2.MenuItem {
-                            text: i18n("Open link")
-                            onTriggered: Qt.openUrlExternally(menuLink.link)
-                        }
-                    }
-                }
-
-                RowLayout {
-                    QQC2.Button { text: i18n("Open link"); onClicked: Qt.openUrlExternally(account.authorizeUrl) }
-                    QQC2.Button { text: i18n("Copy link"); onClicked: Clipboard.saveText(account.authorizeUrl) }
-                }
-
-                QQC2.Label {
-                    text: i18n("Enter token:")
-                }
-
-                QQC2.TextField {
-                    Layout.fillWidth: true
-                    id: tokenField
-                }
-
-                QQC2.Button {
-                    text: i18n("Continue")
-                    onClicked: {
-                        account.setToken(tokenField.text);
-                    }
-                }
-            }
-        }
-    }
 
     Component {
         id: mainTimeline

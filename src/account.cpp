@@ -353,15 +353,15 @@ void Account::validateToken()
             return;
         }
 
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
-        if (!doc.isObject() || !doc.object().contains("source"))
+        if (!doc.isObject() || !doc.object().contains("source")) {
             return;
-
-        Q_EMIT authenticated();
+        }
 
         m_identity.fromSourceData(doc.object());
+        Q_EMIT authenticated();
     });
 
     fetchInstanceMetadata();
@@ -401,17 +401,13 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
 
     QUrl uriStatus(m_instance_uri);
     uriStatus.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
-    QUrlQuery q;
     if (excludeReplies) {
-        q.addQueryItem("exclude_replies", "true");
+        uriStatus.setQuery(QUrlQuery{{"exclude_replies", "true"}});
     }
-    uriStatus.setQuery(q);
 
     QUrl uriPinned(m_instance_uri);
-    QUrlQuery q1;
     uriPinned.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
-    q1.addQueryItem("pinned", "true");
-    uriPinned.setQuery(q1);
+    uriPinned.setQuery(QUrlQuery{{"pinned", "true"}});
 
     auto onFetchPinned = [=](QNetworkReply *reply) {
         QList<std::shared_ptr<Post>> posts;
@@ -679,12 +675,14 @@ void Account::fetchInstanceMetadata()
 
         auto obj = doc.object();
 
-        if (obj.contains("max_toot_chars"))
+        if (obj.contains("max_toot_chars")) {
             m_maxPostLength = (unsigned)obj["max_toot_chars"].toInt();
+        }
 
         // One can only hope that there will always be a version attached
-        if (obj.contains("version"))
+        if (obj.contains("version")) {
             m_allowedContentTypes = parseVersion(obj["version"].toString());
+        }
 
         m_instance_name = obj["title"].toString();
         Q_EMIT fetchedInstanceMetadata();
@@ -712,12 +710,10 @@ void Account::invalidatePost(Post *p)
 QUrl Account::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl("/api/v1/streaming");
-    QUrlQuery q;
-
-    q.addQueryItem("access_token", m_token);
-    q.addQueryItem("stream", stream);
-
-    url.setQuery(q);
+    url.setQuery(QUrlQuery{
+        {"access_token", m_token},
+        {"stream", stream}
+    });
     url.setScheme("wss");
 
     return QUrl(url);
@@ -725,8 +721,9 @@ QUrl Account::streamingUrl(const QString &stream)
 
 QWebSocket *Account::streamingSocket(const QString &stream)
 {
-    if (m_websockets.contains(stream))
+    if (m_websockets.contains(stream)) {
         return m_websockets[stream];
+    }
 
     auto socket = new QWebSocket();
     socket->setParent(this);

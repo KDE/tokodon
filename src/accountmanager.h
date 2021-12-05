@@ -18,7 +18,10 @@ class AccountManager : public QAbstractListModel
     Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
-    enum CustomRoles { AccountRole = Qt::UserRole + 1 };
+    enum CustomRoles {
+        AccountRole = Qt::UserRole + 1,
+        DescriptionRole,
+    };
 
     static AccountManager &instance();
 

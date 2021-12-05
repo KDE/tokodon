@@ -72,6 +72,7 @@ class Account : public QObject
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
+    Q_PROPERTY(Identity *identity READ identityObj CONSTANT)
 
 public:
     explicit Account(const QString &username, const QString &instance_uri, QObject *parent = nullptr);
@@ -136,6 +137,11 @@ public:
     const Identity &identity()
     {
         return m_identity;
+    }
+
+    Identity *identityObj()
+    {
+        return &m_identity;
     }
     void setDirtyIdentity();
     const std::shared_ptr<Identity> identityLookup(const QString &acct, const QJsonObject &doc);
