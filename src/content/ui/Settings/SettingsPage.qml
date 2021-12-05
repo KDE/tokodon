@@ -13,6 +13,11 @@ Kirigami.CategorizedSettings {
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
             page: Qt.resolvedUrl("AccountsPage.qml")
+        },
+        Kirigami.SettingAction {
+            text: i18n("Spell Checking")
+            iconName: "tools-check-spelling"
+            page: Qt.resolvedUrl("SonnetConfigPage.qml")
         }
     ]
 }
