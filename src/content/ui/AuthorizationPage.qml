@@ -60,6 +60,8 @@ MastoPage {
             text: i18n("Continue")
             onClicked: {
                 account.setToken(tokenField.text);
+                pageStack.layers.pop();
+                pageStack.layers.pop();
             }
         }
     }
