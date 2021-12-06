@@ -26,7 +26,7 @@ MastoPage {
         }
         QQC2.Button {
             text: i18n("Continue")
-            onClicked: pageStack.push('qrc:/content/ui/AuthorizationPage.qml', {
+            onClicked: pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
                 account: AccountManager.createNewAccount(username.text, instanceUrl.text)
             });
         }

@@ -9,7 +9,7 @@ import QtQml.Models 2.15
 import org.kde.kmasto 1.0
 
 MastoPage {
-    required property var account
+    property var account
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnits * 30
         TextEdit {
