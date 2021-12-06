@@ -150,7 +150,7 @@ Kirigami.ApplicationWindow {
         if (AccountManager.hasAccounts) {
             pageStack.push(mainTimeline);
         } else {
-            pageStack.push('qrc:/content/ui/LoginPage.qml');
+            pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
         }
     }
 
