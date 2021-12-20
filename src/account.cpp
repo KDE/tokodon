@@ -397,7 +397,7 @@ void Account::buildFromSettings(const QSettings &settings)
 
 void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList<std::shared_ptr<Post>>)> final_cb)
 {
-    QList<std::shared_ptr<Post>> *thread = new QList<std::shared_ptr<Post>>;
+    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
 
     QUrl uriStatus(m_instance_uri);
     uriStatus.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
@@ -427,9 +427,7 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
             i++;
         }
 
-        QList<std::shared_ptr<Post>> finalThread = QList<std::shared_ptr<Post>>(*thread);
-        delete thread;
-        final_cb(finalThread);
+        final_cb(*thread);
     };
 
     auto onFetchAccount = [=](QNetworkReply *reply) {
@@ -502,7 +500,7 @@ void Account::fetchThread(const QString &post_id, std::function<void(QList<std::
 {
     auto status_url = apiUrl(QString("/api/v1/statuses/%1").arg(post_id));
     auto context_url = apiUrl(QString("/api/v1/statuses/%1/context").arg(post_id));
-    QList<std::shared_ptr<Post>> *thread = new QList<std::shared_ptr<Post>>;
+    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
 
     auto on_fetch_context = [=](QNetworkReply *reply) {
         auto data = reply->readAll();
@@ -536,10 +534,7 @@ void Account::fetchThread(const QString &post_id, std::function<void(QList<std::
             thread->push_back(p);
         }
 
-        QList<std::shared_ptr<Post>> finalThread = QList<std::shared_ptr<Post>>(*thread);
-
-        delete thread;
-        final_cb(finalThread);
+        final_cb(*thread);
     };
 
     auto on_fetch_status = [=](QNetworkReply *reply) {
