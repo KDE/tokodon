@@ -55,9 +55,11 @@ MastoPage {
         QQC2.TextField {
             Layout.fillWidth: true
             id: tokenField
+            onAccepted: continueButton.clicked()
         }
 
         QQC2.Button {
+            id: continueButton
             text: i18n("Continue")
             onClicked: {
                 account.setToken(tokenField.text);
