@@ -23,6 +23,7 @@ MastoPage {
             Layout.fillWidth: true
             TapHandler {
                 acceptedButtons: Qt.RightButton
+                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
                 onTapped: if (parent.hoveredLink.length > 0) {
                     menuLink.link = parent.hoveredLink;
                     menuLink.popup();
