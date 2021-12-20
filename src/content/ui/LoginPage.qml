@@ -19,12 +19,15 @@ MastoPage {
         QQC2.TextField {
             id: instanceUrl
             Kirigami.FormData.label: i18n("Instance Url:")
+            onAccepted: username.forceActiveFocus()
         }
         QQC2.TextField {
             id: username
             Kirigami.FormData.label: i18n("Username:")
+            onAccepted: continueButton.clicked()
         }
         QQC2.Button {
+            id: continueButton
             text: i18n("Continue")
             onClicked: pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
                 account: AccountManager.createNewAccount(username.text, instanceUrl.text)
