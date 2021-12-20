@@ -29,9 +29,16 @@ MastoPage {
         QQC2.Button {
             id: continueButton
             text: i18n("Continue")
-            onClicked: pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
-                account: AccountManager.createNewAccount(username.text, instanceUrl.text)
-            });
+            onClicked: {
+                if (!instanceUrl.text || !username.text) {
+                    applicationWindow().showPassiveNotification(i18n("Instance URL and username must not be empty!"));
+                    return;
+                }
+
+                pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
+                    account: AccountManager.createNewAccount(username.text, instanceUrl.text)
+                });
+            }
         }
     }
 }
