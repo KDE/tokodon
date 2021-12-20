@@ -62,6 +62,10 @@ MastoPage {
             id: continueButton
             text: i18n("Continue")
             onClicked: {
+                if (!tokenField.text) {
+                    applicationWindow().showPassiveNotification(i18n("Please insert the generated token."));
+                    return;
+                }
                 account.setToken(tokenField.text);
                 pageStack.layers.pop();
                 pageStack.layers.pop();
