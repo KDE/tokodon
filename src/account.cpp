@@ -410,15 +410,16 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
     uriPinned.setQuery(QUrlQuery{{"pinned", "true"}});
 
     auto onFetchPinned = [=](QNetworkReply *reply) {
-        QList<std::shared_ptr<Post>> posts;
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
         if (!doc.isArray()) {
             return;
         }
+
         int i = 0;
-        for (const auto &value : doc.array()) {
+        const auto array = doc.array();
+        for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
             auto p = std::make_shared<Post>(this, obj);
@@ -432,8 +433,6 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
     };
 
     auto onFetchAccount = [=](QNetworkReply *reply) {
-        QList<std::shared_ptr<Post>> posts;
-
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -441,7 +440,8 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
             return;
         }
 
-        for (const auto &value : doc.array()) {
+        const auto array = doc.array();
+        for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
             auto p = std::make_shared<Post>(this, obj);
@@ -486,7 +486,8 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
             return;
         }
 
-        for (const auto &value : doc.array()) {
+        const auto array = doc.array();
+        for (const auto &value : array) {
             QJsonObject obj = value.toObject();
 
             const auto p = std::make_shared<Post>(this, obj);
@@ -579,8 +580,6 @@ void Account::mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deli
     post(mutation_url, doc, true, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
-
-        auto post_id = doc.object()["id"].toString();
 
         if (deliver_home) {
             QList<std::shared_ptr<Post>> posts;
@@ -730,7 +729,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
     auto url = streamingUrl(stream);
 
-    QObject::connect(socket, &QWebSocket::textMessageReceived, [=](const QString &message) {
+    QObject::connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
         QString target_tl = stream;
         auto env = QJsonDocument::fromJson(message.toLocal8Bit());
 

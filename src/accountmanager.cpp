@@ -83,8 +83,8 @@ void AccountManager::addAccount(Account *account)
     selectAccount(account);
 
     connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
-    connect(account, &Account::authenticated, this, [this, account] () {
-        dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+    connect(account, &Account::authenticated, this, [this] () {
+        Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });
 
     connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<std::shared_ptr<Post>> posts) {
@@ -96,10 +96,10 @@ void AccountManager::addAccount(Account *account)
     connect(account, &Account::fetchedInstanceMetadata, this, [this, account]() {
         Q_EMIT fetchedInstanceMetadata(account);
     });
-    connect(account, &Account::invalidatedPost, [this, account](Post *p) {
+    connect(account, &Account::invalidatedPost, this, [this, account](Post *p) {
         Q_EMIT invalidatedPost(account, p);
     });
-    connect(account, &Account::notification, [this, account](std::shared_ptr<Notification> n) {
+    connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
         Q_EMIT notification(account, n);
     });
     QSettings settings;
@@ -139,8 +139,9 @@ void AccountManager::writeToSettings(QSettings &settings)
 {
     settings.beginGroup("accounts");
 
-    for (auto a : m_accounts)
+    for (auto a : std::as_const(m_accounts)) {
         a->writeToSettings(settings);
+    }
 
     settings.endGroup();
 }

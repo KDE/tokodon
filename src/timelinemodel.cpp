@@ -283,7 +283,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         } else if (secsTo < 60 * 60 * 24 * 7) {
             return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
         }
-        return p->m_published_at.date().toString(Qt::SystemLocaleShortDate);
+        return QLocale::system().toString(p->m_published_at.date(), QLocale::ShortFormat);
     }
     }
 
