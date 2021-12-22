@@ -9,6 +9,7 @@ import QtQml.Models 2.15
 import org.kde.kmasto 1.0
 
 MastoPage {
+    objectName: 'loginPage'
     title: i18n("Login")
     Kirigami.FormLayout {
         anchors.centerIn: parent

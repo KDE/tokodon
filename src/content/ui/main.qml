@@ -24,6 +24,12 @@ Kirigami.ApplicationWindow {
             pageStack.clear();
             pageStack.push(mainTimeline);
         }
+
+        function onAccountRemoved() {
+            if (!AccountManager.hasAccount) {
+                pageStack.replace('qrc:/content/ui/LoginPage.qml');
+            }
+        }
     }
 
     globalDrawer: Kirigami.OverlayDrawer {
@@ -85,6 +91,7 @@ Kirigami.ApplicationWindow {
                     onTriggered: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
                     text: i18n("Add Account")
                 }
+                enabled: AccountManager.hasAccounts && pageStack.get(0).objectName !== 'loginPage' && pageStack.get(0).objectName !== 'authorizationPage' && (pageStack.layers.depth === 1 || pageStack.layers.get(1).objectName !== 'loginPage' && pageStack.layers.get(1).objectName !== 'authorizationPage')
             }
             Item {
                 Layout.fillHeight: true
@@ -150,7 +157,7 @@ Kirigami.ApplicationWindow {
         if (AccountManager.hasAccounts) {
             pageStack.push(mainTimeline);
         } else {
-            pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
+            pageStack.push('qrc:/content/ui/LoginPage.qml');
         }
     }
 

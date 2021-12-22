@@ -9,6 +9,7 @@ import QtQml.Models 2.15
 import org.kde.kmasto 1.0
 
 MastoPage {
+    objectName: 'authorizationPage'
     property var account
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnits * 30
@@ -68,7 +69,9 @@ MastoPage {
                 }
                 account.setToken(tokenField.text);
                 pageStack.layers.pop();
-                pageStack.layers.pop();
+                if (pageStack.layers.depth > 1) {
+                    pageStack.layers.pop();
+                }
             }
         }
     }

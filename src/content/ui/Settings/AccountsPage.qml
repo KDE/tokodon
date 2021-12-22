@@ -80,7 +80,12 @@ Kirigami.Page {
                     Kirigami.Action {
                         text: i18n("Logout")
                         iconName: "im-kick-user"
-                        onTriggered: AccountManager.removeAccount(model.account)
+                        onTriggered: {
+                            AccountManager.removeAccount(model.account)
+                            if (!AccountManager.hasAccount) {
+                                settingsPage.closeDialog()
+                            }
+                        }
                     }
                 ]
             }
