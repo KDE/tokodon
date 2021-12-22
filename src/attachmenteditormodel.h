@@ -13,6 +13,7 @@ class AttachmentEditorModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(Post *post READ post WRITE setPost NOTIFY postChanged)
+    Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
     explicit AttachmentEditorModel(QObject *parent = nullptr);
 
@@ -22,6 +23,7 @@ public:
     };
 
     Post *post() const;
+    int count() const;
     void setPost(Post *post);
 
     Q_INVOKABLE int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -31,6 +33,7 @@ public:
 
 Q_SIGNALS:
     void postChanged();
+    void countChanged();
 
 private:
     Post *m_scratch;

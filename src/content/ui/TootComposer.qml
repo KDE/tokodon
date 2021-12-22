@@ -200,6 +200,7 @@ MastoPage {
 
         QQC2.Button {
             text: i18n("Send")
+            enabled: textArea.text.length > 0 || attachmentModel.rowCount() > 0
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 AccountManager.selectedAccount.postStatus(postObject);

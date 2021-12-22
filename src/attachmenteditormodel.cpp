@@ -33,14 +33,24 @@ void AttachmentEditorModel::setPost(Post *post)
                 // TODO beginInsertModel
                 beginResetModel();
                 endResetModel();
+                Q_EMIT countChanged();
             }
         });
     }
 
     Q_EMIT postChanged();
+    Q_EMIT countChanged();
 }
 
 int AttachmentEditorModel::rowCount(const QModelIndex &) const
+{
+    if (!m_scratch) {
+        return 0;
+    }
+    return m_scratch->m_attachments.size();
+}
+
+int AttachmentEditorModel::count() const
 {
     if (!m_scratch) {
         return 0;
