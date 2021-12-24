@@ -114,13 +114,13 @@ void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
     if (authenticated && haveToken()) {
-        QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
+        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
     qDebug() << "POST" << url << "[" << post_data << "]";
 
-    QNetworkReply *reply = m_qnam->post(request, post_data);
+    auto reply = m_qnam->post(request, post_data);
 
     if (reply_cb != nullptr) {
         QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
@@ -166,7 +166,7 @@ void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticate
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
     if (authenticated && haveToken()) {
-        QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
+        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
@@ -191,7 +191,7 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
     qDebug() << "POST" << url << "(multipart-message)";
 
     if (authenticated && haveToken()) {
-        QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
+        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
