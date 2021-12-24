@@ -28,13 +28,12 @@ void AttachmentEditorModel::setPost(Post *post)
     m_scratch = post;
     endResetModel();
     if (m_scratch) {
-        connect(m_scratch->m_parent, &Account::attachmentUploaded, this, [=](Post *p, Attachment *att) {
-            if (p == m_scratch) {
-                // TODO beginInsertModel
-                beginResetModel();
-                endResetModel();
-                Q_EMIT countChanged();
-            }
+        connect(m_scratch, &Post::attachmentUploaded, this, [this] {
+            qDebug() << "Uploaded 2";
+            // TODO beginInsertModel
+            beginResetModel();
+            endResetModel();
+            Q_EMIT countChanged();
         });
     }
 

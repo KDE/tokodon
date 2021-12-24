@@ -226,18 +226,11 @@ void Account::upload(Post *p, QFile *file, QString filename)
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
-        if (doc.isObject())
+        if (!doc.isObject()) {
             return;
+        }
 
-        auto obj = doc.object();
-
-        auto att = new Attachment(p, obj);
-        if (att->m_url.isEmpty())
-            return;
-
-        p->m_attachments.append(att);
-
-        Q_EMIT attachmentUploaded(p, att);
+        p->addAttachment(doc.object());
     });
 }
 

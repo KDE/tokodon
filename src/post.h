@@ -32,7 +32,7 @@ class Attachment : public QObject
     Q_PROPERTY(QString description MEMBER m_description CONSTANT)
 
 public:
-    explicit Attachment(Post *parent, QJsonObject &obj);
+    explicit Attachment(Post *parent, const QJsonObject &obj);
     ~Attachment();
 
     enum AttachmentType { Unknown, Image, GifV, Video };
@@ -115,6 +115,7 @@ public:
     QStringList mentions() const;
     void setMentions(const QStringList &mentions);
 
+    void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
     bool m_repeat = false;
@@ -158,6 +159,7 @@ Q_SIGNALS:
     void visibilityChanged();
     void inReplyToChanged();
     void mentionsChanged();
+    void attachmentUploaded();
 
 private:
     QString m_replyTargetId;

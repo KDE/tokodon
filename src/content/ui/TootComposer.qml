@@ -66,7 +66,7 @@ MastoPage {
                     id: attachmentLayout
                     width: parent.width
                     height: visible ? implicitHeight : 0
-                    visible: repeater.count > 0
+                    visible: attachmentModel.count > 0
                     implicitHeight: Kirigami.Units.gridUnit * 20
                     anchors.bottom: pollSeparator.top
                     columns: repeater.count === 0 ? 1 : 2

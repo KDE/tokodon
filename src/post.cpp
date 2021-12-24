@@ -13,12 +13,13 @@ static QMap<QString, Attachment::AttachmentType> str_to_att_type = {{"image", At
                                                                     {"gifv", Attachment::AttachmentType::GifV},
                                                                     {"video", Attachment::AttachmentType::Video}};
 
-Attachment::Attachment(Post *parent, QJsonObject &obj)
+Attachment::Attachment(Post *parent, const QJsonObject &obj)
     : m_parent(parent)
 {
     m_type = Unknown;
-    if (!obj.contains("type"))
+    if (!obj.contains("type")) {
         return;
+    }
 
     m_id = obj["id"].toString();
     m_url = obj["url"].toString();
@@ -131,6 +132,18 @@ void Post::addAttachments(const QJsonArray &attachments)
 
         m_attachments.push_back(attachment);
     }
+}
+
+void Post::addAttachment(const QJsonObject &attachment)
+{
+    auto att = new Attachment(this, attachment);
+    if (att->m_url.isEmpty()) {
+        return;
+    }
+
+    m_attachments.append(att);
+
+    Q_EMIT attachmentUploaded();
 }
 
 void Post::setInReplyTo(const QString &inReplyTo)

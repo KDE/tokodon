@@ -197,7 +197,6 @@ Q_SIGNALS:
     void nameChanged();
     void fetchedInstanceMetadata();
     void invalidatedPost(Post *p);
-    void attachmentUploaded(Post *p, Attachment *att);
     void notification(std::shared_ptr<Notification> n);
 
 private:
