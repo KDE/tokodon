@@ -33,6 +33,7 @@
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
 #include "clipboard.h"
+#include "config.h"
 #include "post.h"
 #include "timelinemodel.h"
 
@@ -85,7 +86,9 @@ int main(int argc, char *argv[])
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
+    auto config = Config::self();
 
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "Clipboard", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {

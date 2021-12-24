@@ -179,7 +179,7 @@ Kirigami.ScrollablePage {
                         icon.name: "mail-replied-symbolic"
                         icon.width: Kirigami.Units.iconSizes.smallMedium
                         icon.height: Kirigami.Units.iconSizes.smallMedium
-                        text: model.repliesCount < 2 ? model.repliesCount : "1+"
+                        text: model.repliesCount < 2 || Config.showPostStats ? model.repliesCount : "1+"
                         onClicked: {
                             const post = AccountManager.selectedAccount.newPost()
                             post.inReplyTo = model.id;
@@ -200,6 +200,7 @@ Kirigami.ScrollablePage {
                         icon.width: Kirigami.Units.iconSizes.smallMedium
                         icon.height: Kirigami.Units.iconSizes.smallMedium
                         onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
+                        text: Config.showPostStats ? model.reblogsCount : ''
                         QQC2.ToolTip {
                             text: i18nc("Share a post", "Boost")
                         }
@@ -209,6 +210,7 @@ Kirigami.ScrollablePage {
                         icon.width: Kirigami.Units.iconSizes.smallMedium
                         icon.height: Kirigami.Units.iconSizes.smallMedium
                         onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
+                        text: Config.showPostStats ? favoritesCount : ''
                         QQC2.ToolTip {
                             text: i18nc("Like a post", "Like")
                         }

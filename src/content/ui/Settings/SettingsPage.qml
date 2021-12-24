@@ -11,6 +11,11 @@ Kirigami.CategorizedSettings {
     objectName: "settingsPage"
     actions: [
         Kirigami.SettingAction {
+            text: i18n("General")
+            icon.name: "org.kde.tokodon"
+            page: Qt.resolvedUrl("GeneralPage.qml")
+        },
+        Kirigami.SettingAction {
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
             page: Qt.resolvedUrl("AccountsPage.qml")

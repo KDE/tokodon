@@ -259,6 +259,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_repeatedCount;
     case FavoritedRole:
         return p->m_isFavorite;
+    case FavoritesCountRole:
+        return p->m_favoriteCount;
     case PinnedRole:
         return p->m_pinned;
     case SensitiveRole:

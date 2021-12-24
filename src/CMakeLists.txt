@@ -13,7 +13,7 @@ add_executable(tokodon
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(tokodon PRIVATE Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
-#kconfig_add_kcfg_files(neochat GENERATE_MOC neochatconfig.kcfgc)
+kconfig_add_kcfg_files(tokodon GENERATE_MOC config.kcfgc)
 
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt5::Svg OpenSSL::SSL)
