@@ -113,7 +113,14 @@ void AccountManager::childIdentityChanged(Account *account)
 
 void AccountManager::removeAccount(Account *account)
 {
+    const auto index = m_accounts.indexOf(account);
+    beginRemoveRows(QModelIndex(), index, index);
     m_accounts.removeOne(account);
+    endRemoveRows();
+
+    QSettings settings;
+    settings.clear();
+    writeToSettings(settings);
 
     Q_EMIT accountRemoved(account);
 }
