@@ -40,6 +40,10 @@ Kirigami.ApplicationWindow {
         width: Kirigami.Units.gridUnit * 16
         Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        
+        handleClosedIcon.source: modal ? null : "sidebar-expand-left"
+        handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
+        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1
 
         leftPadding: 0
         rightPadding: 0
