@@ -162,29 +162,42 @@ MastoPage {
                             checkable: true
                         }
                         QQC2.ToolButton {
-                            icon.name: "kstars_xplanet"
+                            icon.name: {
+                                switch(postObject.visibility) {
+                                    case Post.Public:
+                                        return "kstars_xplanet";
+                                    case Post.Unlisted:
+                                        return "unlock";
+                                    case Post.Private:
+                                        return "lock";
+                                    case Post.Direct:
+                                        return "mail-message";
+                                    default:
+                                        return "kstars_xplanet";
+                                }
+                            }
                             onClicked: visibilityMenu.open()
                             QQC2.Menu {
                                 id: visibilityMenu
                                 QQC2.MenuItem {
                                     icon.name: "kstars_xplanet"
                                     text: i18n("Public")
-                                    onTriggered: postObject.visibility = Post.Visibility.Public
+                                    onTriggered: postObject.visibility = Post.Public
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "unlock"
                                     text: i18n("Unlisted")
-                                    onTriggered: postObject.visibility = Post.Visibility.Unlisted
+                                    onTriggered: postObject.visibility = Post.Unlisted
                                 }
                                 QQC2.MenuItem {
-                                    text: i18n("Private")
                                     icon.name: "lock"
-                                    onTriggered: postObject.visibility = Post.Visibility.Private
+                                    text: i18n("Private")
+                                    onTriggered: postObject.visibility = Post.Private
                                 }
                                 QQC2.MenuItem {
-                                    text: i18n("Direct Message")
                                     icon.name: "mail-message"
-                                    onTriggered: postObject.visibility = Post.Visibility.Direct
+                                    text: i18n("Direct Message")
+                                    onTriggered: postObject.visibility = Post.Direct
                                 }
                             }
                         }
