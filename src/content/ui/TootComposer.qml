@@ -155,11 +155,17 @@ MastoPage {
                                 title: i18n("Please choose a file")
                                 onAccepted: postObject.uploadAttachment(fileDialog.fileUrl);
                             }
+                            QQC2.ToolTip {
+                                text: i18n("Attach File")
+                            }
                         }
                         QQC2.ToolButton {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
                             checkable: true
+                            QQC2.ToolTip {
+                                text: i18n("Add Poll")
+                            }
                         }
                         QQC2.ToolButton {
                             icon.name: {
@@ -200,11 +206,17 @@ MastoPage {
                                     onTriggered: postObject.visibility = Post.Direct
                                 }
                             }
+                            QQC2.ToolTip {
+                                text: i18n("Visibility")
+                            }
                         }
                         QQC2.ToolButton {
                             id: contentWarning
                             text: i18nc("Short for content warning", "cw")
                             checkable: true
+                            QQC2.ToolTip {
+                                text: i18n("Content Warning")
+                            }
                         }
                     }
                 }
