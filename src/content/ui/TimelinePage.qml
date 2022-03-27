@@ -83,7 +83,7 @@ Kirigami.ScrollablePage {
                 }
                 QQC2.Label {
                     visible: model.wasReblogged
-                    text: i18n("Shared by %1", model.rebloggedDisplayName)
+                    text: model.rebloggedDisplayName ? i18n("Shared by %1", model.rebloggedDisplayName) : ''
                     color: Kirigami.Theme.disabledTextColor
                     font: Kirigami.Theme.smallFont
                 }
