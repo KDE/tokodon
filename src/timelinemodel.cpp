@@ -279,7 +279,12 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         const auto current = QDateTime::currentDateTime();
         auto secsTo = p->m_published_at.secsTo(current);
         if (secsTo < 60 * 60) {
-            return i18nc("hour:minute", "%1:%2", p->m_published_at.time().hour(), p->m_published_at.time().minute());
+            const auto hours = p->m_published_at.time().hour();
+            const auto minutes = p->m_published_at.time().minute();
+            return i18nc(
+                    "hour:minute", "%1:%2",
+                    hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
+                    minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
         } else if (secsTo < 60 * 60 * 24) {
             return i18n("%1h", qCeil(secsTo / (60 * 60)));
         } else if (secsTo < 60 * 60 * 24 * 7) {
