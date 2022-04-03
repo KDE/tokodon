@@ -200,9 +200,46 @@ public:
         return m_allowedContentTypes;
     }
 
-    // Follow Account
-    void followAccount(Identity *i);
-    void unfollowAccount(Identity *i);
+    /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
+    /// @param Identity identity The account to follow
+    /// @param bool reblogs Receive this account's reblogs in home timeline? Defaults to true.
+    /// @param bool notify Receive notifications when this account posts a status? Defaults to false.
+    Q_INVOKABLE void followAccount(Identity *identity, bool reblogs = true, bool notify = false);
+
+    /// Unfollow the given account.
+    /// @param Identity identity The account to unfollow
+    Q_INVOKABLE void unfollowAccount(Identity *identity);
+
+    /// Block the given account.
+    /// @param Identity identity The account to block
+    Q_INVOKABLE void blockAccount(Identity *identity);
+
+    /// Unblock the given account.
+    /// @param Identity identity The account to unblock
+    Q_INVOKABLE void unblockAccount(Identity *identity);
+
+    /// Mute the given account.
+    /// @param Identity identity The account to mute
+    /// @param bool notifications Whether notifications should also be muted, by default true
+    /// @param int duration How long the mute should last, in seconds. Defaults to 0 (indefinite).
+    Q_INVOKABLE void muteAccount(Identity *identity, bool notifications = true, int duration = 0);
+
+    /// Unmute the given account.
+    /// @param Identity identity The account to unmute
+    Q_INVOKABLE void unmuteAccount(Identity *identity);
+
+    /// Add the given account to the user's featured profiles.
+    /// @param Identity identity The account to feature
+    Q_INVOKABLE void featureAccount(Identity *identity);
+
+    /// Remove the given account from the user's featured profiles.
+    /// @param Identity identity The account to unfeature
+    Q_INVOKABLE void unfeatureAccount(Identity *identity);
+
+    /// Sets a private note on a user.
+    /// @param Identity identity The account to annotate
+    /// @param QString note The note to add to the account. Leave empty to remove the existing note.
+    Q_INVOKABLE void addNote(Identity *identity, const QString &note);
 
 Q_SIGNALS:
     void authenticated();
@@ -215,7 +252,7 @@ Q_SIGNALS:
     void invalidatedPost(Post *p);
     void notification(std::shared_ptr<Notification> n);
     void followRequestBlocked();
-    void errorOccured(QString &);
+    void errorOccured(const QString &errorMessage);
 
 private:
     QString m_name;
@@ -235,6 +272,20 @@ private:
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;
     void mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home = false);
+
+    enum AccountAction {
+        Follow,
+        Unfollow,
+        Block,
+        Unblock,
+        Mute,
+        Unmute,
+        Feature,
+        Unfeature,
+        Note
+    };
+
+    void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 
     // updates and notifications
     void handleUpdate(const QJsonDocument &doc, const QString &target);

@@ -6,6 +6,7 @@
 #include "accountmanager.h"
 #include <QDebug>
 #include <QUrlQuery>
+#include <KLocalizedString>
 
 Relationship* Identity::relationship() const {
     return m_relationship;
@@ -794,12 +795,26 @@ Post *Account::newPost()
     return new Post(this);
 }
 
-void Account::followAccount(Identity *i)
+void Account::executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments)
 {
+    const QHash<AccountAction, QString> accountActionMap = {
+        {AccountAction::Follow, QStringLiteral("/follow")},
+        {AccountAction::Unfollow, QStringLiteral("/unfollow")},
+        {AccountAction::Block, QStringLiteral("/block")},
+        {AccountAction::Unblock, QStringLiteral("/unblock")},
+        {AccountAction::Mute, QStringLiteral("/mute")},
+        {AccountAction::Unmute, QStringLiteral("/unmute")},
+        {AccountAction::Feature, QStringLiteral("/pin")},
+        {AccountAction::Unfeature, QStringLiteral("/unpin")},
+        {AccountAction::Note, QStringLiteral("/note")},
+    };
+
+    const auto apiCall = accountActionMap[accountAction];
+
     const auto account_id = QString::number(i->m_id);
-    const QString api_url = QStringLiteral("/api/v1/accounts/") + account_id + QStringLiteral("/follow");
+    const QString api_url = QStringLiteral("/api/v1/accounts/") + account_id + apiCall;
     QUrl url = apiUrl(api_url);
-    QJsonDocument doc;
+    const QJsonDocument doc(extraArguments);
 
     post(url, doc, true, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -807,7 +822,18 @@ void Account::followAccount(Identity *i)
 
         // Check if the request failed due to one account blocking the other
         if (!jsonObj.value("error").isUndefined()) {
-            auto errorMessage = QStringLiteral("Could not follow account");
+            const QHash<AccountAction, QString> accountActionMap = {
+                {AccountAction::Follow, i18n("Could not follow account")},
+                {AccountAction::Unfollow, i18n("Could not unfollow account")},
+                {AccountAction::Block, i18n("Could not block account")},
+                {AccountAction::Unblock, i18n("Could not unblock account")},
+                {AccountAction::Mute, i18n("Could not mute account")},
+                {AccountAction::Unmute, i18n("Could not unmute account")},
+                {AccountAction::Feature, i18n("Could not feature account")},
+                {AccountAction::Unfeature, i18n("Could not unfeature account")},
+                {AccountAction::Note, i18n("Could not edit note about an account")},
+            };
+            const auto errorMessage = accountActionMap[accountAction];
             Q_EMIT errorOccured(errorMessage);
             return;
         }
@@ -821,8 +847,61 @@ void Account::followAccount(Identity *i)
     });
 }
 
-void Account::unfollowAccount(Identity *i) {
-    Q_UNUSED(i);
+void Account::followAccount(Identity *identity, bool reblogs, bool notify)
+{
+    executeAction(identity, AccountAction::Follow, {
+        {"reblogs", reblogs},
+        {"notify", notify}
+    });
+}
+
+void Account::unfollowAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Unfollow);
+}
+
+void Account::blockAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Block);
+}
+
+void Account::unblockAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Unblock);
+}
+
+void Account::muteAccount(Identity *identity, bool notifications, int duration)
+{
+    executeAction(identity, AccountAction::Mute, {
+        {"notifcations", notifications},
+        {"duration", duration}
+    });
+}
+
+void Account::unmuteAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Unmute);
+}
+
+void Account::featureAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Feature);
+}
+
+void Account::unfeatureAccount(Identity *identity)
+{
+    executeAction(identity, AccountAction::Unfeature);
+}
+
+void Account::addNote(Identity *identity, const QString &note)
+{
+    if (note.isEmpty()) {
+        executeAction(identity, AccountAction::Note);
+    } else {
+        executeAction(identity, AccountAction::Note, {
+            {"comment", note}
+        });
+    }
 }
 
 void Identity::fromSourceData(const QJsonObject &doc)

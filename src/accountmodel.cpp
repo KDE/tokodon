@@ -3,6 +3,7 @@
 
 #include "accountmodel.h"
 #include <KLocalizedString>
+#include <QCoreApplication>
 
 AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
@@ -38,7 +39,7 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
     uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->m_id)}});
 
-    manager->selectedAccount()->get(uriRelationship, true, [this](QNetworkReply *reply) {
+    m_account->get(uriRelationship, true, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (!doc.isArray()) {
             qDebug() << "Data returned from Relationship network request is not an array" << "data: " << doc;
@@ -85,10 +86,7 @@ Identity *AccountModel::identity() const
     return m_identity.get();
 }
 
-void AccountModel::followAccount() {
-    m_account->followAccount(identity());
-}
-
-void AccountModel::unfollowAccount() {
-    m_account->unfollowAccount(identity());
+Account *AccountModel::account() const
+{
+    return m_account;
 }

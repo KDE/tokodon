@@ -13,18 +13,18 @@ Relationship::Relationship(Identity* parent, const QJsonObject& jsonObj)
 
 void Relationship::updateFromJson(const QJsonObject& jsonObj)
 {
-    m_following = jsonObj["following"].toBool();
-    m_requested = jsonObj["requested"].toBool();
-    m_endorsed = jsonObj["endorsed"].toBool();
-    m_followedBy = jsonObj["followedBy"].toBool();
-    m_muting = jsonObj["muting"].toBool();
-    m_mutingNotifications = jsonObj["mutingNotifications"].toBool();
-    m_showingReblogs = jsonObj["showingReblogs"].toBool();
-    m_notifying = jsonObj["notifying"].toBool();
-    m_blocking = jsonObj["blocking"].toBool();
-    m_domainBlocking = jsonObj["domainBlocking"].toBool();
-    m_blockedBy = jsonObj["blockedBy"].toBool();
-    m_note = jsonObj["note"].toString();
+    setFollowing(jsonObj["following"].toBool());
+    setRequested(jsonObj["requested"].toBool());
+    setEndorsed(jsonObj["endorsed"].toBool());
+    setFollowedBy(jsonObj["followed_by"].toBool());
+    setMuting(jsonObj["muting"].toBool());
+    setMutingNotifications(jsonObj["muting_notifications"].toBool());
+    setShowingReblogs(jsonObj["showing_reblogs"].toBool());
+    setNotifying(jsonObj["notifying"].toBool());
+    setBlocking(jsonObj["blocking"].toBool());
+    setDomainBlocking(jsonObj["domain_blocking"].toBool());
+    setBlockedBy(jsonObj["blocked_by"].toBool());
+    setNote(jsonObj["note"].toString());
 }
 
 

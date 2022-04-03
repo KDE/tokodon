@@ -8,19 +8,20 @@ class AccountModel : public TimelineModel
 {
     Q_OBJECT
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
+    Q_PROPERTY(Account *account READ account NOTIFY accountChanged)
 
 public:
     AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent = nullptr);
 
     QString displayName() const override;
+    Account *account() const;
     Identity *identity() const;
     void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
-    Q_INVOKABLE void followAccount();
-    Q_INVOKABLE void unfollowAccount();
 
 Q_SIGNALS:
     void identityChanged();
+    void accountChanged();
 
 private:
     std::shared_ptr<Identity> m_identity;
