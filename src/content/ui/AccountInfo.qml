@@ -10,6 +10,7 @@ import QtQuick.Dialogs 1.3
 import org.kde.kmasto 1.0
 
 TimelinePage {
+    id: accountInfo
     isProfile: true
     listViewHeader: ColumnLayout {
         width: parent.width
@@ -81,14 +82,20 @@ TimelinePage {
             text: model.identity.account
         }
         Repeater {
-            model: model.identity.fields
-            QQC2.Label {
+            model: accountInfo.model.identity.fields
+            QQC2.TextArea {
                 Layout.fillWidth: true
-                text: `${name} ${value}`
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                readOnly: true
+                background: Item{}
+                textFormat: TextEdit.RichText
+                text: `${modelData.name} ${modelData.value}`
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
         QQC2.Label {
-            text: model.identity.bio
+            text: accountInfo.model.identity.bio
             Layout.fillWidth: true
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing
