@@ -22,6 +22,7 @@
 #include <QtNetwork/QNetworkRequest>
 
 #include "post.h"
+#include "relationship.h"
 
 class Account;
 
@@ -40,6 +41,8 @@ class Identity : public QObject
     Q_PROPERTY(int followingCount MEMBER m_followingCount CONSTANT)
     Q_PROPERTY(int statusesCount MEMBER m_statusesCount CONSTANT)
     Q_PROPERTY(QJsonArray fields MEMBER m_fields CONSTANT)
+
+    Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
 public:
     int m_id;
@@ -60,6 +63,15 @@ public:
 
     QNetworkAccessManager *m_qnam;
     Account *m_parent;
+
+    Relationship* relationship() const;
+    void setRelationship(Relationship *r);
+
+Q_SIGNALS:
+    void relationshipChanged();
+
+private:
+    Relationship *m_relationship = nullptr;
 };
 
 class Account : public QObject
@@ -188,6 +200,10 @@ public:
         return m_allowedContentTypes;
     }
 
+    // Follow Account
+    void followAccount(Identity *i);
+    void unfollowAccount(Identity *i);
+
 Q_SIGNALS:
     void authenticated();
     void registered();
@@ -198,6 +214,8 @@ Q_SIGNALS:
     void fetchedInstanceMetadata();
     void invalidatedPost(Post *p);
     void notification(std::shared_ptr<Notification> n);
+    void followRequestBlocked();
+    void errorOccured(QString &);
 
 private:
     QString m_name;

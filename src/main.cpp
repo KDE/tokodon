@@ -99,6 +99,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Identity *>("Identity*");
+    qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
 
     QQmlApplicationEngine engine;

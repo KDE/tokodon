@@ -16,6 +16,8 @@ public:
     Identity *identity() const;
     void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
+    Q_INVOKABLE void followAccount();
+    Q_INVOKABLE void unfollowAccount();
 
 Q_SIGNALS:
     void identityChanged();

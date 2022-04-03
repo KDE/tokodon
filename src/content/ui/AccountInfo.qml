@@ -46,8 +46,24 @@ TimelinePage {
             }
             QQC2.Button {
                 id: followButton
-                text: i18n("Follow")
+                text: {
+                    if (model.identity.relationship && model.identity.relationship.requested) {
+                      return i18n("Requested");
+                    }
+                    if (model.identity.relationship && model.identity.relationship.following) {
+                      return i18n("Following");
+                    }
+                    return i18n("Follow");
+                }
                 Layout.alignment: Qt.AlignBottom
+                onClicked: {
+                    if (model.identity.relationship.requested
+                        || model.identity.relationship.following) {
+                        model.unfollowAccount();
+                    } else {
+                        model.followAccount();
+                    }
+                }
             }
         }
 

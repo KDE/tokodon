@@ -33,6 +33,22 @@ AccountModel::AccountModel(AccountManager *manager, int id, const QString &acct,
         m_identity = m_account->identityLookup(acct, empty);
         Q_EMIT identityChanged();
     }
+    // Fetch relationship. Don't cache this; it's lightweight.
+    QUrl uriRelationship(m_account->instanceUri());
+    uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
+    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->m_id)}});
+
+    manager->selectedAccount()->get(uriRelationship, true, [this](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (!doc.isArray()) {
+            qDebug() << "Data returned from Relationship network request is not an array" << "data: " << doc;
+            return;
+        }
+
+        // We only are requesting for a single relationship, so doc should only contain one element
+        m_identity->setRelationship(new Relationship(m_identity.get(), doc[0].toObject()));
+        Q_EMIT identityChanged();
+    });
 }
 
 QString AccountModel::displayName() const
@@ -67,4 +83,12 @@ bool AccountModel::canFetchMore(const QModelIndex &parent) const
 Identity *AccountModel::identity() const
 {
     return m_identity.get();
+}
+
+void AccountModel::followAccount() {
+    m_account->followAccount(identity());
+}
+
+void AccountModel::unfollowAccount() {
+    m_account->unfollowAccount(identity());
 }

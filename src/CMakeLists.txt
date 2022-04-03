@@ -8,6 +8,7 @@ add_executable(tokodon
     timelinemodel.cpp
     attachmenteditormodel.cpp
     clipboard.cpp
+    relationship.cpp
     resources.qrc
 )
 

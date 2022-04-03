@@ -7,6 +7,22 @@
 #include <QDebug>
 #include <QUrlQuery>
 
+Relationship* Identity::relationship() const {
+    return m_relationship;
+}
+
+void Identity::setRelationship(Relationship *r) {
+    if (m_relationship == r) {
+        return;
+    }
+    if (m_relationship != nullptr) {
+        // delete old relationship object if we receive a new one
+        delete m_relationship;
+    }
+    m_relationship = r;
+    Q_EMIT relationshipChanged();
+}
+
 Account::Account(const QString &name, const QString &instance_uri, QObject *parent)
     : QObject(parent)
     , m_name(name)
@@ -776,6 +792,37 @@ void Account::handleNotification(const QJsonDocument &doc)
 Post *Account::newPost()
 {
     return new Post(this);
+}
+
+void Account::followAccount(Identity *i)
+{
+    const auto account_id = QString::number(i->m_id);
+    const QString api_url = QStringLiteral("/api/v1/accounts/") + account_id + QStringLiteral("/follow");
+    QUrl url = apiUrl(api_url);
+    QJsonDocument doc;
+
+    post(url, doc, true, [=](QNetworkReply *reply) {
+        auto doc = QJsonDocument::fromJson(reply->readAll());
+        auto jsonObj = doc.object();
+
+        // Check if the request failed due to one account blocking the other
+        if (!jsonObj.value("error").isUndefined()) {
+            auto errorMessage = QStringLiteral("Could not follow account");
+            Q_EMIT errorOccured(errorMessage);
+            return;
+        }
+        // If returned json obj is not an error, it's a relationship status.
+        // Returned relationship should have a value of true
+        // under either the "following" or "requested" keys.
+        auto relationship = i->relationship();
+        relationship->updateFromJson(jsonObj);
+
+        Q_EMIT i->relationshipChanged();
+    });
+}
+
+void Account::unfollowAccount(Identity *i) {
+    Q_UNUSED(i);
 }
 
 void Identity::fromSourceData(const QJsonObject &doc)
