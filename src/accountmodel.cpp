@@ -4,7 +4,7 @@
 #include "accountmodel.h"
 #include <KLocalizedString>
 
-AccountModel::AccountModel(AccountManager *manager, int id, const QString &acct, QObject *parent)
+AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
     , m_identity(nullptr)
     , m_id(id)

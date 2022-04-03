@@ -827,7 +827,7 @@ void Account::unfollowAccount(Identity *i) {
 
 void Identity::fromSourceData(const QJsonObject &doc)
 {
-    m_id = doc["id"].toString().toInt();
+    m_id = doc["id"].toString().toULongLong();
     m_display_name = doc["display_name"].toString();
     m_acct = doc["acct"].toString();
     m_bio = doc["note"].toString();

@@ -10,7 +10,7 @@ class AccountModel : public TimelineModel
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
 
 public:
-    AccountModel(AccountManager *manager, int id, const QString &acct, QObject *parent = nullptr);
+    AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent = nullptr);
 
     QString displayName() const override;
     Identity *identity() const;
@@ -24,5 +24,5 @@ Q_SIGNALS:
 
 private:
     std::shared_ptr<Identity> m_identity;
-    int m_id;
+    qint64 m_id;
 };
