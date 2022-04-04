@@ -110,7 +110,7 @@ TimelinePage {
                             visible: model.identity.relationship && model.identity.relationship.following
                             tooltip: {
                                 if (model.identity.relationship && model.identity.relationship.notifying) {
-                                    return i18n("Stop notifing me when %1 posts", '@' + model.identity.account);
+                                    return i18n("Stop notifying me when %1 posts", '@' + model.identity.account);
                                 } else {
                                     return i18n("Notify me when %1 posts", '@' + model.identity.account);
                                 }
