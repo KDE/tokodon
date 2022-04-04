@@ -405,14 +405,23 @@ void Account::buildFromSettings(const QSettings &settings)
     }
 }
 
-void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList<std::shared_ptr<Post>>)> final_cb)
+void Account::fetchAccount(int id, bool excludeReplies, const QString &timelineName, const QString &fromId)
 {
     auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
+    // Fetch pinned posts if we are starting from the top
+    const bool fetchPinned = fromId.isNull();
 
     QUrl uriStatus(m_instance_uri);
     uriStatus.setPath(QString("/api/v1/accounts/%1/statuses").arg(id));
+    auto statusQuery = QUrlQuery();
     if (excludeReplies) {
-        uriStatus.setQuery(QUrlQuery{{"exclude_replies", "true"}});
+        statusQuery.addQueryItem("exclude_replies", "true");
+    }
+    if (!fetchPinned) {
+        statusQuery.addQueryItem("max_id", fromId);
+    }
+    if (!statusQuery.isEmpty()) {
+        uriStatus.setQuery(statusQuery);
     }
 
     QUrl uriPinned(m_instance_uri);
@@ -437,7 +446,7 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
             i++;
         }
 
-        final_cb(*thread);
+        Q_EMIT fetchedTimeline(timelineName, *thread);
     };
 
     auto onFetchAccount = [=](QNetworkReply *reply) {
@@ -456,7 +465,11 @@ void Account::fetchAccount(int id, bool excludeReplies, std::function<void(QList
             thread->push_back(p);
         }
 
-        get(uriPinned, true, onFetchPinned);
+        if (fetchPinned) {
+            get(uriPinned, true, onFetchPinned);
+        } else {
+            Q_EMIT fetchedTimeline(timelineName, *thread);
+        }
     };
 
     get(uriStatus, true, onFetchAccount);

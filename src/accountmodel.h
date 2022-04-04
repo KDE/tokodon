@@ -21,7 +21,6 @@ public:
     bool isSelf() const;
 
     void fillTimeline(const QString &fromId = QString()) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
 
 Q_SIGNALS:
     void identityChanged();

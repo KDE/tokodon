@@ -10,8 +10,8 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     , m_identity(nullptr)
     , m_id(id)
 {
-    setAccountManager(manager);
     setName(acct);
+    setAccountManager(manager);
 
     if (!m_account->identityCached(acct)) {
         QUrl uriAccount(m_account->instanceUri());
@@ -71,24 +71,11 @@ QString AccountModel::displayName() const
     return m_identity->m_display_name;
 }
 
-void AccountModel::fillTimeline(const QString &)
+void AccountModel::fillTimeline(const QString &fromId)
 {
     m_fetching = true;
 
-    m_account->fetchAccount(m_id, true, [=](QList<std::shared_ptr<Post>> posts) {
-        qDebug() << "Got" << posts.size() << "posts";
-
-        m_timeline = posts;
-
-        beginInsertRows(QModelIndex(), 0, m_timeline.size() - 1);
-        endInsertRows();
-    });
-}
-
-bool AccountModel::canFetchMore(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    return false;
+    m_account->fetchAccount(m_id, true, m_timelineName, fromId);
 }
 
 Identity *AccountModel::identity() const

@@ -184,7 +184,7 @@ public:
     void fetchThread(const QString &postId, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     /// Fetch account timeline
-    void fetchAccount(int id, bool excludeReplies, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
+    void fetchAccount(int id, bool excludeReplies, const QString &timelineName, const QString& from_id = QString());
 
     // streaming
     QUrl streamingUrl(const QString &stream);
