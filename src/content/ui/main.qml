@@ -130,7 +130,7 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action notificationAction: Kirigami.Action {
         iconName: "notifications"
         text: i18n("Notifications")
-        checked: pageStack.currentItem.title === i18n("Home")
+        checked: pageStack.currentItem.title === i18n("Notifications")
         onTriggered: appwindow.showPassiveNotification(i18n("Notifications support is not implemented yet"));
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
