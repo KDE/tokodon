@@ -405,7 +405,7 @@ void Account::buildFromSettings(const QSettings &settings)
     }
 }
 
-void Account::fetchAccount(int id, bool excludeReplies, const QString &timelineName, const QString &fromId)
+void Account::fetchAccount(qint64 id, bool excludeReplies, const QString &timelineName, const QString &fromId)
 {
     auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
     // Fetch pinned posts if we are starting from the top
