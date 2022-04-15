@@ -17,6 +17,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
     pageStack.globalToolBar.canContainHandles: true
+    pageStack.globalToolBar.showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
 
     Connections {
         target: AccountManager
