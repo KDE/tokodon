@@ -66,13 +66,12 @@ void Account::registerApplication()
 
     // register
     const QUrl regUrl = apiUrl("/api/v1/apps");
-    QJsonObject obj;
-
-    obj["client_name"] = "Tokodon";
-    obj["redirect_uris"] = "urn:ietf:wg:oauth:2.0:oob";
-    obj["scopes"] = "read write follow";
-    obj["website"] = "https://invent.kde.org/carlschwan/kmasto";
-
+    const QJsonObject obj = {
+        {"client_name", "Tokodon"},
+        {"redirect_uris", "urn:ietf:wg:oauth:2.0:oob"},
+        {"scopes", "read write follow"},
+        {"website", "https://invent.kde.org/network/tokodon"}
+    };
     const QJsonDocument doc(obj);
 
     post(regUrl, doc, false, [=](QNetworkReply *reply) {
