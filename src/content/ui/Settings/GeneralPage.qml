@@ -9,6 +9,7 @@ import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kmasto 1.0
 
 Kirigami.ScrollablePage {
+    title: i18n("General")
     ColumnLayout {
         Kirigami.FormLayout {
             QQC2.CheckBox {
