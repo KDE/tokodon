@@ -137,9 +137,19 @@ void AccountManager::selectAccount(Account *account)
     Q_EMIT accountSelected(account);
 }
 
-Account *AccountManager::selectedAccount()
+Account *AccountManager::selectedAccount() const
 {
     return m_selected_account;
+}
+
+int AccountManager::selectedIndex() const
+{
+    for (int i = 0; i < m_accounts.length(); i++) {
+        if (m_selected_account == m_accounts[i]) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 void AccountManager::writeToSettings(QSettings &settings)

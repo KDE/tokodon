@@ -51,6 +51,7 @@ Kirigami.ApplicationWindow {
         bottomPadding: 0
 
         contentItem: ColumnLayout {
+            spacing: 0
             QQC2.ToolBar {
                 id: toolbar
                 Layout.fillWidth: true
@@ -64,39 +65,46 @@ Kirigami.ApplicationWindow {
                 RowLayout {
                     anchors.fill: parent
 
-                    Kirigami.Heading {
-                        Layout.leftMargin: Kirigami.Units.smallSpacing + Kirigami.Units.largeSpacing
-                        text: i18n("Tokodon")
+                    QQC2.ComboBox {
+                        model: AccountManager
+                        currentIndex: AccountManager.selectedIndex
+                        textRole: 'display'
+                        displayText: `${currentText} (${AccountManager.selectedAccount.instanceName})`
+                        Layout.fillWidth: true
+                        delegate: Kirigami.BasicListItem {
+                            label: model.display
+                            subtitle: model.description
+                            leading: Kirigami.Avatar {
+                                source: model.account.identity.avatarUrl
+                                name: model.display
+                                implicitWidth: height
+                                sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
+                                sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
+                            }
+                            onClicked: if (AccountManager.selectedAccount !== model.account) {
+                                AccountManager.selectedAccount = model.account;
+                                currentIndex = index
+                            }
+                        }
                     }
+
+                    QQC2.Button {
+                        icon.name: "list-add"
+                        onClicked: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
+                        Accessible.name: i18n("Add Account")
+                        enabled: AccountManager.hasAccounts && pageStack.get(0).objectName !== 'loginPage' && pageStack.get(0).objectName !== 'authorizationPage' && (pageStack.layers.depth === 1 || pageStack.layers.get(1).objectName !== 'loginPage' && pageStack.layers.get(1).objectName !== 'authorizationPage')
+                    }
+                }
+            }
+            Repeater {
+                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
+                Kirigami.BasicListItem {
+                    action: modelData
+                    visible: appwindow.wideScreen
+                    separatorVisible: false
                 }
             }
 
-            Repeater {
-                model: AccountManager
-                delegate: Kirigami.BasicListItem {
-                    label: model.display
-                    subtitle: model.description
-                    highlighted: AccountManager.selectedAccount === model.account
-                    leading: Kirigami.Avatar {
-                        source: model.account.identity.avatarUrl
-                        name: model.display
-                        implicitWidth: height
-                        sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
-                        sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
-                    }
-                    onClicked: if (AccountManager.selectedAccount !== model.account) {
-                        AccountManager.selectedAccount = model.account;
-                    }
-                }
-            }
-            Kirigami.BasicListItem {
-                action: Kirigami.Action {
-                    icon.name: "list-add"
-                    onTriggered: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
-                    text: i18n("Add Account")
-                }
-                enabled: AccountManager.hasAccounts && pageStack.get(0).objectName !== 'loginPage' && pageStack.get(0).objectName !== 'authorizationPage' && (pageStack.layers.depth === 1 || pageStack.layers.get(1).objectName !== 'loginPage' && pageStack.layers.get(1).objectName !== 'authorizationPage')
-            }
             Item {
                 Layout.fillHeight: true
             }
@@ -110,46 +118,46 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    property Kirigami.Action homeAction: Kirigami.Action {
+        iconName: "go-home-large"
+        text: i18n("Home")
+        checked: pageStack.currentItem.title === i18n("Home")
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline);
+        }
+    }
+    property Kirigami.Action notificationAction: Kirigami.Action {
+        iconName: "notifications"
+        text: i18n("Notifications")
+        checked: pageStack.currentItem.title === i18n("Home")
+        onTriggered: appwindow.showPassiveNotification(i18n("Notifications support is not implemented yet"));
+    }
+    property Kirigami.Action localTimelineAction: Kirigami.Action {
+        iconName: "system-users"
+        text: i18n("Local")
+        checked: pageStack.currentItem.title === i18n("Local Timeline")
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, { name: "public" });
+        }
+    }
+    property Kirigami.Action globalTimelineAction: Kirigami.Action {
+        iconName: "kstars_xplanet"
+        text: i18n("Global")
+        checked: pageStack.currentItem.title === i18n("Global Timeline")
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, { name: "federated" });
+        }
+    }
+
     footer: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         anchors.left: parent.left
         anchors.right: parent.right
-        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts
-        actions: [
-            Kirigami.Action {
-                iconName: "go-home-large"
-                text: i18n("Home")
-                checked: pageStack.currentItem.title === i18n("Home")
-                onTriggered: {
-                    pageStack.layers.clear();
-                    pageStack.replace(mainTimeline);
-                }
-            },
-            Kirigami.Action {
-                iconName: "notifications"
-                text: i18n("Notifications")
-                checked: pageStack.currentItem.title === i18n("Home")
-                onTriggered: appwindow.showPassiveNotification(i18n("Notifications support is not implemented yet"));
-            },
-            Kirigami.Action {
-                iconName: "system-users"
-                text: i18n("Local")
-                checked: pageStack.currentItem.title === i18n("Local Timeline")
-                onTriggered: {
-                    pageStack.layers.clear();
-                    pageStack.replace(mainTimeline, { name: "public" });
-                }
-            },
-            Kirigami.Action {
-                iconName: "kstars_xplanet"
-                text: i18n("Global")
-                checked: pageStack.currentItem.title === i18n("Global Timeline")
-                onTriggered: {
-                    pageStack.layers.clear();
-                    pageStack.replace(mainTimeline, { name: "federated" });
-                }
-            }
-        ]
+        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
     }
     //header: Kirigami.Settings.isMobile ? null : toolBar
 

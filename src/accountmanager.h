@@ -16,6 +16,7 @@ class AccountManager : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
     Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
+    Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
     enum CustomRoles {
@@ -33,7 +34,9 @@ public:
     Q_INVOKABLE void removeAccount(Account *account);
 
     void selectAccount(Account *account);
-    Account *selectedAccount();
+    Account *selectedAccount() const;
+
+    int selectedIndex() const;
 
     void setAboutData(const KAboutData &aboutData);
     [[nodiscard]] KAboutData aboutData() const;
