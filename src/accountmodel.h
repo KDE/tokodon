@@ -3,12 +3,14 @@
 
 #include "account.h"
 #include "timelinemodel.h"
+#include <qobjectdefs.h>
 
 class AccountModel : public TimelineModel
 {
     Q_OBJECT
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
     Q_PROPERTY(Account *account READ account NOTIFY accountChanged)
+    Q_PROPERTY(bool isSelf READ isSelf NOTIFY identityChanged)
 
 public:
     AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent = nullptr);
@@ -16,6 +18,8 @@ public:
     QString displayName() const override;
     Account *account() const;
     Identity *identity() const;
+    bool isSelf() const;
+
     void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 

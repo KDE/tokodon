@@ -45,6 +45,8 @@ class Identity : public QObject
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
 public:
+    qint64 id() const;
+
     qint64 m_id;
     QString m_display_name;
     QString m_bio;

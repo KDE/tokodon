@@ -96,6 +96,7 @@ TimelinePage {
                                     model.account.followAccount(model.identity);
                                 }
                             }
+                            visible: !model.isSelf
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.KeepVisible
@@ -107,7 +108,7 @@ TimelinePage {
                                 }
                             }
 
-                            visible: model.identity.relationship && model.identity.relationship.following
+                            visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
                             tooltip: {
                                 if (model.identity.relationship && model.identity.relationship.notifying) {
                                     return i18n("Stop notifying me when %1 posts", '@' + model.identity.account);
@@ -125,7 +126,7 @@ TimelinePage {
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.AlwaysHide
-                            visible: model.identity.relationship && model.identity.relationship.following
+                            visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
                             text: {
                                 if (model.identity.relationship && model.identity.relationship.showingReblogs) {
                                     return i18n("Hide boosts from %1", '@' + model.identity.account);
@@ -143,7 +144,7 @@ TimelinePage {
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.AlwaysHide
-                            visible: model.identity.relationship
+                            visible: model.identity.relationship && !model.isSelf
                             text: {
                                 if (model.identity.relationship && model.identity.relationship.endorsed) {
                                     return i18n("Stop featuring on profile");
@@ -161,7 +162,7 @@ TimelinePage {
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.AlwaysHide
-                            visible: model.identity.relationship
+                            visible: model.identity.relationship && !model.isSelf
                             text: {
                                 if (model.identity.relationship && model.identity.relationship.muting) {
                                     return i18n("Stop muting");
@@ -179,7 +180,7 @@ TimelinePage {
                         },
                         Kirigami.Action {
                             displayHint: Kirigami.DisplayHint.AlwaysHide
-                            visible: model.identity.relationship
+                            visible: model.identity.relationship && !model.isSelf
                             text: {
                                 if (model.identity.relationship && model.identity.relationship.blocking) {
                                     return i18n("Stop blocking");

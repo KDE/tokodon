@@ -933,3 +933,8 @@ void Identity::reparentIdentity(Account *parent)
 {
     m_parent = parent;
 }
+
+qint64 Identity::id() const
+{
+    return m_id;
+}

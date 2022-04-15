@@ -34,6 +34,11 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
         m_identity = m_account->identityLookup(acct, empty);
         Q_EMIT identityChanged();
     }
+
+    if (m_account->identity().id() != m_identity->id()) {
+        return;
+    }
+
     // Fetch relationship. Don't cache this; it's lightweight.
     QUrl uriRelationship(m_account->instanceUri());
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
@@ -50,6 +55,11 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
         m_identity->setRelationship(new Relationship(m_identity.get(), doc[0].toObject()));
         Q_EMIT identityChanged();
     });
+}
+
+bool AccountModel::isSelf() const
+{
+    return m_account->identity().id() == m_identity->id();
 }
 
 QString AccountModel::displayName() const
