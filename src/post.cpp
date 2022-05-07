@@ -69,9 +69,27 @@ Post::Post(Account *parent, QJsonObject obj)
     auto acct = account_doc["acct"].toString();
     auto reblog_obj = obj["reblog"].toObject();
 
+    QJsonArray mentions;
     if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
         m_author_identity = m_parent->identityLookup(acct, account_doc);
+        m_subject = obj["spoiler_text"].toString();
+        m_content = obj["content"].toString();
+        m_post_id = m_replyTargetId = obj["id"].toString();
+        m_isFavorite = obj["favourited"].toBool();
+        m_favoriteCount = obj["favourites_count"].toInt();
+        m_repeatedCount = obj["reblogs_count"].toInt();
+        m_repliesCount = obj["replies_count"].toInt();
+        m_isRepeated = obj["reblogged"].toBool();
+        m_isSensitive = obj["sensitive"].toBool();
+        m_link = QUrl(obj["url"].toString());
+        m_pinned = obj["pinned"].toBool();
+        m_visibility = str_to_vis[obj["visibility"].toString()];
+        m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
+
+        addAttachments(obj["media_attachments"].toArray());
+
+        mentions = obj["mentions"].toArray();
     } else {
         m_repeat = true;
 
@@ -81,34 +99,25 @@ Post::Post(Account *parent, QJsonObject obj)
 
         m_author_identity = m_parent->identityLookup(repeat_acct, repeat_account_doc);
         m_repeat_identity = m_parent->identityLookup(acct, account_doc);
-    }
 
-    m_subject = obj["spoiler_text"].toString();
-    m_content = obj["content"].toString();
-    m_post_id = m_replyTargetId = obj["id"].toString();
-    m_isFavorite = obj["favourited"].toBool();
-    m_favoriteCount = obj["favourites_count"].toInt();
-    m_repeatedCount = obj["reblogs_count"].toInt();
-    m_repliesCount = obj["replies_count"].toInt();
-    m_isRepeated = obj["reblogged"].toBool();
-    m_isSensitive = obj["sensitive"].toBool();
-    m_link = QUrl(obj["url"].toString());
-    m_pinned = obj["pinned"].toBool();
-    m_visibility = str_to_vis[obj["visibility"].toString()];
-    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
+        m_subject = reblog_obj["spoiler_text"].toString();
+        m_content = reblog_obj["content"].toString();
+        m_post_id = m_replyTargetId = obj["id"].toString();
+        m_isFavorite = reblog_obj["favourited"].toBool();
+        m_favoriteCount = reblog_obj["favourites_count"].toInt();
+        m_repeatedCount = reblog_obj["reblogs_count"].toInt();
+        m_repliesCount = reblog_obj["replies_count"].toInt();
+        m_isRepeated = reblog_obj["reblogged"].toBool();
+        m_isSensitive = reblog_obj["sensitive"].toBool();
+        m_link = QUrl(reblog_obj["url"].toString());
+        m_pinned = reblog_obj["pinned"].toBool();
+        m_published_at = QDateTime::fromString(reblog_obj["created_at"].toString(), Qt::ISODate);
 
-    QJsonArray mentions;
-
-    if (m_repeat) {
         m_visibility = str_to_vis[reblog_obj["visibility"].toString()];
         m_replyTargetId = reblog_obj["id"].toString();
         addAttachments(reblog_obj["media_attachments"].toArray());
 
         mentions = reblog_obj["mentions"].toArray();
-    } else {
-        addAttachments(obj["media_attachments"].toArray());
-
-        mentions = obj["mentions"].toArray();
     }
 
     for (const auto &m : qAsConst(mentions)) {
