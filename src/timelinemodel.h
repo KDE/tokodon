@@ -40,6 +40,7 @@ public:
         ThreadModelRole,
         AccountModelRole,
         UrlRole,
+        CardRole,
     };
 
     explicit TimelineModel(QObject *parent = nullptr);

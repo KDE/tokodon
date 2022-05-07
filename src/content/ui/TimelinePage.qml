@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
 
                 Kirigami.Avatar {
                     Layout.alignment: Qt.AlignTop
-                    Layout.rowSpan: 4
+                    Layout.rowSpan: 5
                     source: model.avatar
                     cache: true
                     TapHandler {
@@ -168,6 +168,54 @@ Kirigami.ScrollablePage {
                                         model: attachments,
                                         currentIndex: index
                                     }).showFullScreen()
+                                }
+                            }
+                        }
+                    }
+                }
+
+                Kirigami.AbstractCard {
+                    visible: model.card
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+                    TapHandler {
+                        onTapped: Qt.openUrlExternally(model.card.url)
+                    }
+                    HoverHandler {
+                        cursorShape: Qt.PointingHandCursor
+                    }
+                    contentItem: RowLayout {
+                        QQC2.Pane {
+                            visible: model.card && model.card.image
+                            Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                            Layout.preferredHeight: Kirigami.Units.gridUnit * 3
+                            Layout.preferredWidth: Kirigami.Units.gridUnit * 3
+                            Layout.maximumWidth: Kirigami.Units.gridUnit * 3
+                            Layout.rightMargin: Kirigami.Units.smallSpacing
+                            Image {
+                                anchors.centerIn: parent
+                                sourceSize.width: Kirigami.Units.gridUnit * 3
+                                sourceSize.height: Kirigami.Units.gridUnit * 3
+                                source: model.card ? model.card.image : ''
+                            }
+                        }
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            Kirigami.Heading {
+                                level: 3
+                                text: model.card ? model.card.title : ''
+                                elide: Text.ElideRight
+                                Layout.fillWidth: true
+                                HoverHandler {
+                                    cursorShape: Qt.PointingHandCursor
+                                }
+                            }
+                            QQC2.Label {
+                                text: model.card ? model.card.providerName : ''
+                                elide: Text.ElideRight
+                                Layout.fillWidth: true
+                                HoverHandler {
+                                    cursorShape: Qt.PointingHandCursor
                                 }
                             }
                         }

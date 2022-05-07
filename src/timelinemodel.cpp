@@ -215,6 +215,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {UrlRole, QByteArrayLiteral("url")},
         {ThreadModelRole, QByteArrayLiteral("threadModel")},
         {AccountModelRole, QByteArrayLiteral("accountModel")},
+        {CardRole, QByteArrayLiteral("card")},
     };
 }
 
@@ -271,6 +272,11 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->m_subject;
     case AttachmentsRole:
         return QVariant::fromValue<QList<Attachment *>>(p->m_attachments);
+    case CardRole:
+        if (p->card().has_value()) {
+            return QVariant::fromValue<Card>(*p->card());
+        }
+        return false;
     case ThreadModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
     case AccountModelRole:
@@ -354,3 +360,4 @@ void TimelineModel::actionVis(const QModelIndex &index)
 
     Q_EMIT dataChanged(index, index);
 }
+

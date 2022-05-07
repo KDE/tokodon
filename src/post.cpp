@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QMap>
+#include <qurl.h>
 
 #include "account.h"
 #include "post.h"
@@ -69,55 +70,38 @@ Post::Post(Account *parent, QJsonObject obj)
     auto acct = account_doc["acct"].toString();
     auto reblog_obj = obj["reblog"].toObject();
 
-    QJsonArray mentions;
     if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
         m_author_identity = m_parent->identityLookup(acct, account_doc);
-        m_subject = obj["spoiler_text"].toString();
-        m_content = obj["content"].toString();
-        m_post_id = m_replyTargetId = obj["id"].toString();
-        m_isFavorite = obj["favourited"].toBool();
-        m_favoriteCount = obj["favourites_count"].toInt();
-        m_repeatedCount = obj["reblogs_count"].toInt();
-        m_repliesCount = obj["replies_count"].toInt();
-        m_isRepeated = obj["reblogged"].toBool();
-        m_isSensitive = obj["sensitive"].toBool();
-        m_link = QUrl(obj["url"].toString());
-        m_pinned = obj["pinned"].toBool();
-        m_visibility = str_to_vis[obj["visibility"].toString()];
-        m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
-
-        addAttachments(obj["media_attachments"].toArray());
-
-        mentions = obj["mentions"].toArray();
     } else {
         m_repeat = true;
 
-        auto repeat_doc = obj["reblog"].toObject();
-        auto repeat_account_doc = repeat_doc["account"].toObject();
+        auto repeat_account_doc = reblog_obj["account"].toObject();
         auto repeat_acct = repeat_account_doc["acct"].toString();
 
         m_author_identity = m_parent->identityLookup(repeat_acct, repeat_account_doc);
         m_repeat_identity = m_parent->identityLookup(acct, account_doc);
 
-        m_subject = reblog_obj["spoiler_text"].toString();
-        m_content = reblog_obj["content"].toString();
-        m_post_id = m_replyTargetId = obj["id"].toString();
-        m_isFavorite = reblog_obj["favourited"].toBool();
-        m_favoriteCount = reblog_obj["favourites_count"].toInt();
-        m_repeatedCount = reblog_obj["reblogs_count"].toInt();
-        m_repliesCount = reblog_obj["replies_count"].toInt();
-        m_isRepeated = reblog_obj["reblogged"].toBool();
-        m_isSensitive = reblog_obj["sensitive"].toBool();
-        m_link = QUrl(reblog_obj["url"].toString());
-        m_pinned = reblog_obj["pinned"].toBool();
-        m_published_at = QDateTime::fromString(reblog_obj["created_at"].toString(), Qt::ISODate);
+        obj = reblog_obj;
+    }
 
-        m_visibility = str_to_vis[reblog_obj["visibility"].toString()];
-        m_replyTargetId = reblog_obj["id"].toString();
-        addAttachments(reblog_obj["media_attachments"].toArray());
-
-        mentions = reblog_obj["mentions"].toArray();
+    m_subject = obj["spoiler_text"].toString();
+    m_content = obj["content"].toString();
+    m_post_id = m_replyTargetId = obj["id"].toString();
+    m_isFavorite = obj["favourited"].toBool();
+    m_favoriteCount = obj["favourites_count"].toInt();
+    m_repeatedCount = obj["reblogs_count"].toInt();
+    m_repliesCount = obj["replies_count"].toInt();
+    m_isRepeated = obj["reblogged"].toBool();
+    m_isSensitive = obj["sensitive"].toBool();
+    m_link = QUrl(obj["url"].toString());
+    m_pinned = obj["pinned"].toBool();
+    m_visibility = str_to_vis[obj["visibility"].toString()];
+    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
+    addAttachments(obj["media_attachments"].toArray());
+    const QJsonArray mentions = obj["mentions"].toArray();
+    if (obj.contains("card") && !obj["card"].toObject().empty()) {
+        setCard(std::make_optional<Card>(obj["card"].toObject()));
     }
 
     for (const auto &m : qAsConst(mentions)) {
@@ -317,4 +301,84 @@ void Post::setVisibility(Visibility visibility)
     }
     m_visibility = visibility;
     Q_EMIT visibilityChanged();
+}
+
+std::optional<Card> Post::card() const
+{
+    return m_card;
+}
+
+void Post::setCard(std::optional<Card> card)
+{
+    m_card = card;
+}
+
+Card::Card(QJsonObject card)
+    : m_card(card)
+{
+}
+
+QString Card::authorName() const
+{
+    return m_card[QLatin1String("author_name")].toString();
+}
+
+QString Card::authorUrl() const
+{
+    return m_card[QLatin1String("author_url")].toString();
+}
+
+QString Card::blurhash() const
+{
+    return m_card[QLatin1String("blurhas")].toString();
+}
+
+QString Card::description() const
+{
+    return m_card[QLatin1String("description")].toString();
+}
+
+QString Card::embedUrl() const
+{
+    return m_card[QLatin1String("embed_url")].toString();
+}
+
+int Card::width() const
+{
+    return m_card[QLatin1String("weight")].toInt();
+}
+
+int Card::height() const
+{
+    return m_card[QLatin1String("height")].toInt();
+}
+
+QString Card::html() const
+{
+    return m_card[QLatin1String("html")].toString();
+}
+
+QString Card::image() const
+{
+    return m_card[QLatin1String("image")].toString();
+}
+
+QString Card::providerName() const
+{
+    return m_card[QLatin1String("provider_name")].toString();
+}
+
+QString Card::providerUrl() const
+{
+    return m_card[QLatin1String("provider_url")].toString();
+}
+
+QString Card::title() const
+{
+    return m_card[QLatin1String("title")].toString();
+}
+
+QUrl Card::url() const
+{
+    return QUrl::fromUserInput(m_card[QLatin1String("url")].toString());
 }

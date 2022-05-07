@@ -13,10 +13,51 @@
 #include <QUrl>
 
 #include <memory>
+#include <optional>
+#include <qjsonobject.h>
 
 class Post;
 class Identity;
 class Account;
+
+class Card
+{
+    Q_GADGET
+    Q_PROPERTY(QString authorName READ authorName)
+    Q_PROPERTY(QString authorUrl READ authorUrl)
+    Q_PROPERTY(QString blurhash READ blurhash)
+    Q_PROPERTY(QString description READ description)
+    Q_PROPERTY(QString embedUrl READ embedUrl)
+    Q_PROPERTY(int width READ width)
+    Q_PROPERTY(int height READ height)
+    Q_PROPERTY(QString html READ html)
+    Q_PROPERTY(QString image READ image)
+    Q_PROPERTY(QString providerName READ providerName)
+    Q_PROPERTY(QString providerUrl READ providerUrl)
+    Q_PROPERTY(QString title READ title)
+    Q_PROPERTY(QUrl url READ url)
+
+public:
+    Card() = default;
+    Card(QJsonObject card);
+
+    QString authorName() const;
+    QString authorUrl() const;
+    QString blurhash() const;
+    QString description() const;
+    QString embedUrl() const;
+    int width() const;
+    int height() const;
+    QString html() const;
+    QString image() const;
+    QString providerName() const;
+    QString providerUrl() const;
+    QString title() const;
+    QUrl url() const;
+
+private:
+    QJsonObject m_card;
+};
 
 /// Post's attachment object.
 /// TODO make it possible to fetch the images with a Qml image provider.
@@ -114,6 +155,8 @@ public:
     void setInReplyTo(const QString &inReplyTo);
     QStringList mentions() const;
     void setMentions(const QStringList &mentions);
+    std::optional<Card> card() const;
+    void setCard(std::optional<Card> card);
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
@@ -163,4 +206,7 @@ Q_SIGNALS:
 
 private:
     QString m_replyTargetId;
+    std::optional<Card> m_card;
 };
+
+Q_DECLARE_METATYPE(Card)
