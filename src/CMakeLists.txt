@@ -12,6 +12,7 @@ add_executable(tokodon
     attachmenteditormodel.cpp
     clipboard.cpp
     relationship.cpp
+    notificationhandler.cpp
     resources.qrc
 )
 
@@ -67,6 +68,12 @@ endif()
 if(TARGET KF5::DBusAddons)
     target_link_libraries(tokodon PRIVATE KF5::DBusAddons)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
+endif()
+
+if(ANDROID)
+    target_sources(tokodon PRIVATE notifyrc.qrc)
+else()
+    install(FILES tokodon.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 endif()
 
 install(TARGETS tokodon ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

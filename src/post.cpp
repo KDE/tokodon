@@ -233,6 +233,27 @@ int Notification::id() const
     return m_id;
 }
 
+
+Account *Notification::account() const
+{
+    return m_account;
+}
+
+Notification::Type Notification::type() const
+{
+    return m_type;
+}
+
+std::shared_ptr<Post> Notification::post() const
+{
+    return m_post;
+}
+
+std::shared_ptr<Identity> Notification::identity() const
+{
+    return m_identity;
+}
+
 QString Post::subject() const
 {
     return m_subject;

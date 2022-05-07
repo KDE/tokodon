@@ -69,6 +69,10 @@ public:
     Relationship* relationship() const;
     void setRelationship(Relationship *r);
 
+    QUrl avatarUrl() const;
+    QString displayName() const;
+
+
 Q_SIGNALS:
     void relationshipChanged();
 

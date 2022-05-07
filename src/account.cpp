@@ -6,7 +6,18 @@
 #include "accountmanager.h"
 #include <QDebug>
 #include <QUrlQuery>
+#include "notificationhandler.h"
 #include <KLocalizedString>
+
+QString Identity::displayName() const
+{
+    return m_display_name;
+}
+
+QUrl Identity::avatarUrl() const
+{
+    return m_avatarUrl;
+}
 
 Relationship* Identity::relationship() const {
     return m_relationship;
@@ -33,6 +44,10 @@ Account::Account(const QString &name, const QString &instance_uri, QObject *pare
 {
     setInstanceUri(instance_uri);
     m_identity.reparentIdentity(this);
+    auto notificationHandler = new NotificationHandler(this);
+    connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
+        notificationHandler->handle(notification, this);
+    });
 }
 
 Account::Account(const QSettings &settings, QObject *parent)
@@ -41,6 +56,10 @@ Account::Account(const QSettings &settings, QObject *parent)
     , m_maxPostLength(500)
 {
     m_identity.reparentIdentity(this);
+    auto notificationHandler = new NotificationHandler(this);
+    connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
+        notificationHandler->handle(notification, this);
+    });
 
     buildFromSettings(settings);
 }

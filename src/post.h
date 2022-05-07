@@ -100,15 +100,19 @@ struct Notification {
         Favorite,
     };
 
-    Account *m_account;
-    Type m_type;
-
-    std::shared_ptr<Post> m_post;
-    std::shared_ptr<Identity> m_identity;
     int id() const;
+    Account *account() const;
+    Type type() const;
+    std::shared_ptr<Post> post() const;
+    std::shared_ptr<Identity> identity() const;
 
 private:
     int m_id;
+
+    Account *m_account;
+    Type m_type;
+    std::shared_ptr<Post> m_post;
+    std::shared_ptr<Identity> m_identity;
 };
 
 class Post : public QObject
