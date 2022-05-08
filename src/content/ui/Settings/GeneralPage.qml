@@ -21,6 +21,16 @@ Kirigami.ScrollablePage {
                     Config.save()
                 }
             }
+
+            QQC2.CheckBox {
+                text: i18n("Show link preview.")
+                checked: Config.showLinkPreview
+                enabled: !Config.isShowLinkPreviewImmutable
+                onToggled: {
+                    Config.showLinkPreview = checked
+                    Config.save()
+                }
+            }
         }
     }
 }

@@ -171,7 +171,7 @@ Kirigami.BasicListItem {
         }
 
         Kirigami.AbstractCard {
-            visible: model.card && tootContent.visible
+            visible: model.card && tootContent.visible && Config.showLinkPreview
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.smallSpacing
             TapHandler {
