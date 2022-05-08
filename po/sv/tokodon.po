@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-16 00:46+0000\n"
+"POT-Creation-Date: 2022-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-04-05 20:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,47 +27,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@bredband.net"
 
-#: account.cpp:838
+#: account.cpp:857
 #, kde-format
 msgid "Could not follow account"
 msgstr "Kunde inte följa konto"
 
-#: account.cpp:839
+#: account.cpp:858
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Kunde inte sluta följa konto"
 
-#: account.cpp:840
+#: account.cpp:859
 #, kde-format
 msgid "Could not block account"
 msgstr "Kunde inte blockera konto"
 
-#: account.cpp:841
+#: account.cpp:860
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Kunde inte sluta blockera konto"
 
-#: account.cpp:842
+#: account.cpp:861
 #, kde-format
 msgid "Could not mute account"
 msgstr "Kunde inte tysta konto"
 
-#: account.cpp:843
+#: account.cpp:862
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Kunde inte sluta tysta konto"
 
-#: account.cpp:844
+#: account.cpp:863
 #, kde-format
 msgid "Could not feature account"
 msgstr "Kunde inte presentera konto"
 
-#: account.cpp:845
+#: account.cpp:864
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Kunde inte sluta presentera konto"
 
-#: account.cpp:846
+#: account.cpp:865
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Kunde inte redigera anmärkning om ett konto"
@@ -412,19 +412,19 @@ msgstr "Delas av %1"
 msgid "Show more"
 msgstr "Visa fler"
 
-#: content/ui/TimelinePage.qml:195
+#: content/ui/TimelinePage.qml:243
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/TimelinePage.qml:205
+#: content/ui/TimelinePage.qml:253
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Förstärk"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:263
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -531,18 +531,34 @@ msgstr "Carl Schwan"
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
 
-#: notificationmodel.cpp:248 timelinemodel.cpp:285
+#: notificationhandler.cpp:24
+#, kde-format
+msgid "%1 favorited your post"
+msgstr ""
+
+#: notificationhandler.cpp:28
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "%1 followed you"
+msgstr "%1 följare"
+
+#: notificationhandler.cpp:32
+#, kde-format
+msgid "%1 boosted your post"
+msgstr ""
+
+#: notificationmodel.cpp:248 timelinemodel.cpp:291
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:250 timelinemodel.cpp:289
+#: notificationmodel.cpp:250 timelinemodel.cpp:295
 #, kde-format
 msgid "%1h"
 msgstr "%1 t"
 
-#: notificationmodel.cpp:252 timelinemodel.cpp:291
+#: notificationmodel.cpp:252 timelinemodel.cpp:297
 #, kde-format
 msgid "%1d"
 msgstr "%1 d"

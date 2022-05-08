@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-16 00:46+0000\n"
+"POT-Creation-Date: 2022-05-08 00:46+0000\n"
 "PO-Revision-Date: 2022-04-16 02:36+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -30,47 +30,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: account.cpp:838
+#: account.cpp:857
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account.cpp:839
+#: account.cpp:858
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account.cpp:840
+#: account.cpp:859
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account.cpp:841
+#: account.cpp:860
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account.cpp:842
+#: account.cpp:861
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account.cpp:843
+#: account.cpp:862
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account.cpp:844
+#: account.cpp:863
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account.cpp:845
+#: account.cpp:864
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account.cpp:846
+#: account.cpp:865
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
@@ -415,19 +415,19 @@ msgstr "%1 님이 공유함"
 msgid "Show more"
 msgstr "더 보기"
 
-#: content/ui/TimelinePage.qml:195
+#: content/ui/TimelinePage.qml:243
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/TimelinePage.qml:205
+#: content/ui/TimelinePage.qml:253
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:263
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -534,18 +534,34 @@ msgstr "Carl Schwan"
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
 
-#: notificationmodel.cpp:248 timelinemodel.cpp:285
+#: notificationhandler.cpp:24
+#, kde-format
+msgid "%1 favorited your post"
+msgstr ""
+
+#: notificationhandler.cpp:28
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "%1 followed you"
+msgstr "팔로워 %1명"
+
+#: notificationhandler.cpp:32
+#, kde-format
+msgid "%1 boosted your post"
+msgstr ""
+
+#: notificationmodel.cpp:248 timelinemodel.cpp:291
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:250 timelinemodel.cpp:289
+#: notificationmodel.cpp:250 timelinemodel.cpp:295
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: notificationmodel.cpp:252 timelinemodel.cpp:291
+#: notificationmodel.cpp:252 timelinemodel.cpp:297
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
