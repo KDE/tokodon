@@ -36,8 +36,6 @@ NotificationModel::NotificationModel(QObject *parent)
         }
     });
     connect(this, &NotificationModel::excludeTypesChanged, this, [this] {
-        qDebug() << "Invalidating account" << m_account;
-
         beginResetModel();
         m_notifications.clear();
         endResetModel();
@@ -77,6 +75,11 @@ void NotificationModel::fillTimeline(const QUrl &next)
     } else {
         uri = next;
     }
+    QUrlQuery urlQuery;
+    for (const auto &excludeType : m_excludeTypes) {
+        urlQuery.addQueryItem("exclude_types[]", excludeType);
+    }
+    uri.setQuery(urlQuery);
 
     m_account->get(uri, true, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();

@@ -107,6 +107,8 @@ public:
         Follow,
         Repeat,
         Favorite,
+        Poll,
+        FollowRequest,
     };
     Q_ENUM(Type);
 

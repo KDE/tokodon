@@ -5,7 +5,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 
 Kirigami.ScrollablePage {
@@ -29,9 +29,36 @@ Kirigami.ScrollablePage {
         }
     }
 
+    property Kirigami.Action showAllAction: Kirigami.Action {
+        id: showAllAction
+        text: i18nc("Show all notifications", "All")
+        checkable: true
+        checked: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = []
+        }
+    }
+
+    property Kirigami.Action mentionOnlyAction: Kirigami.Action {
+        id: onlyMentionAction
+        text: i18nc("Show only mentions", "Mentions")
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['follow', 'favourite', 'reblog', 'poll', 'follow_request']
+        }
+    }
+
+    header: Kirigami.NavigationTabBar {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        actions: [showAllAction, onlyMentionAction]
+    }
+
     ListView {
         id: listview
-        model: NotificationModel {}
+        model: NotificationModel {
+            id: notificationModel
+        }
 
         Component {
             id: fullScreenImage
