@@ -217,6 +217,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
         {ThreadModelRole, QByteArrayLiteral("threadModel")},
         {AccountModelRole, QByteArrayLiteral("accountModel")},
         {CardRole, QByteArrayLiteral("card")},
+        {TypeRole, QByteArrayLiteral("type")},
     };
 }
 
@@ -229,6 +230,8 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     auto p = m_timeline[row];
 
     switch (role) {
+    case TypeRole:
+        return false;
     case IdRole:
         return p->m_post_id;
     case Qt::DisplayRole:

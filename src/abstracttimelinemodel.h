@@ -40,6 +40,7 @@ public:
         AccountModelRole,
         UrlRole,
         CardRole,
+        TypeRole,
     };
 
     AbstractTimelineModel(QObject *parent = nullptr);

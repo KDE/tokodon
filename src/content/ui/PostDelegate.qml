@@ -69,7 +69,7 @@ Kirigami.BasicListItem {
         }
         QQC2.Label {
             visible: model.wasReblogged || model.type === Notification.Repeat
-            text: model.rebloggedDisplayName ? i18n("%1 boosted your post", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.actorDisplayName) : '')
+            text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.actorDisplayName) : '')
             color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             font: Kirigami.Theme.smallFont
         }
@@ -128,8 +128,15 @@ Kirigami.BasicListItem {
                 visible: model.spoilerText.length === 0
                 readOnly: true
                 selectByMouse: !Kirigami.Settings.isMobile
+                // TODO handle opening profile page in tokodon
                 onLinkActivated: Qt.openUrlExternally(link)
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                onHoveredLinkChanged: if (hoveredLink.length > 0) {
+                    applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                } else {
+                    applicationWindow().hoverLinkIndicator.text = "";
+                }
+
                 MouseArea {
                     anchors.fill: parent
                     acceptedButtons: Qt.NoButton // don't eat clicks on the Text
