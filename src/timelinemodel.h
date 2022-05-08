@@ -4,11 +4,12 @@
 
 #pragma once
 
+#include "abstracttimelinemodel.h"
 #include "accountmanager.h"
 #include "post.h"
 #include <QAbstractListModel>
 
-class TimelineModel : public QAbstractListModel
+class TimelineModel : public AbstractTimelineModel
 {
     Q_OBJECT
     Q_PROPERTY(AccountManager *accountManager READ accountManager WRITE setAccountManager NOTIFY accountManagerChanged)
@@ -83,7 +84,6 @@ protected:
 
     QString m_timelineName;
     AccountManager *m_manager = nullptr;
-    Account *m_account = nullptr;
 
     QList<std::shared_ptr<Post>> m_timeline;
     bool m_fetching = false;

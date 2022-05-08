@@ -10,9 +10,12 @@ add_executable(tokodon
     accountmodel.cpp
     timelinemodel.cpp
     attachmenteditormodel.cpp
+    notificationmodel.cpp
     clipboard.cpp
     relationship.cpp
     notificationhandler.cpp
+    notificationmodel.cpp
+    abstracttimelinemodel.cpp
     resources.qrc
 )
 

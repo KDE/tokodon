@@ -83,7 +83,7 @@ void AccountManager::addAccount(Account *account)
     selectAccount(account);
 
     connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
-    connect(account, &Account::authenticated, this, [this] () {
+    connect(account, &Account::authenticated, this, [this]() {
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });
 

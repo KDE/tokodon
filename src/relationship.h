@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <QObject>
 #include <QJsonObject>
+#include <QObject>
 #include <QString>
 
 class Identity;
@@ -27,7 +27,6 @@ class Relationship : public QObject
     Q_PROPERTY(QString note READ note WRITE setNote NOTIFY noteChanged)
 
 public:
-
     explicit Relationship(Identity *parent, const QJsonObject &jsonObj);
 
     void updateFromJson(const QJsonObject &jsonObj);
@@ -59,7 +58,7 @@ public:
     QString note() const;
     void setNote(const QString &note);
 
- Q_SIGNALS:
+Q_SIGNALS:
     void followingChanged();
     void requestedChanged();
     void endorsedChanged();

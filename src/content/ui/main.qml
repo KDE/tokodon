@@ -132,7 +132,10 @@ Kirigami.ApplicationWindow {
         iconName: "notifications"
         text: i18n("Notifications")
         checked: pageStack.currentItem.title === i18n("Notifications")
-        onTriggered: appwindow.showPassiveNotification(i18n("Notifications support is not implemented yet"));
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(notificationTimeline);
+        }
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         iconName: "system-users"
@@ -183,6 +186,16 @@ Kirigami.ApplicationWindow {
                 id: timelineModel
                 accountManager: AccountManager
                 name: "home"
+            }
+        }
+    }
+
+    Component {
+        id: notificationTimeline
+        NotificationPage {
+            model: TimelineModel {
+                id: timelineModel
+                accountManager: AccountManager
             }
         }
     }

@@ -15,6 +15,7 @@
 #include <memory>
 #include <optional>
 #include <qjsonobject.h>
+#include <qobjectdefs.h>
 
 class Post;
 class Identity;
@@ -88,9 +89,17 @@ public:
     void setDescription(QString desc);
 };
 
-struct Notification {
-    Notification() = delete;
-    Notification(const Notification &) = delete;
+class Notification
+{
+    Q_GADGET
+
+public:
+    Notification()
+    {
+    }
+    Notification(const Notification &)
+    {
+    }
     Notification(Account *parent, QJsonObject &obj);
 
     enum Type {
@@ -99,6 +108,7 @@ struct Notification {
         Repeat,
         Favorite,
     };
+    Q_ENUM(Type);
 
     int id() const;
     Account *account() const;
@@ -214,3 +224,4 @@ private:
 };
 
 Q_DECLARE_METATYPE(Card)
+Q_DECLARE_METATYPE(Notification)

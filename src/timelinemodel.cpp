@@ -3,13 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timelinemodel.h"
+#include "abstracttimelinemodel.h"
 #include "accountmodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
 
 TimelineModel::TimelineModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractTimelineModel(parent)
     , m_last_fetch(time(nullptr))
 {
     connect(m_manager, &AccountManager::accountSelected, this, &TimelineModel::nameChanged);
@@ -287,10 +288,10 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         if (secsTo < 60 * 60) {
             const auto hours = p->m_published_at.time().hour();
             const auto minutes = p->m_published_at.time().minute();
-            return i18nc(
-                    "hour:minute", "%1:%2",
-                    hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
-                    minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
+            return i18nc("hour:minute",
+                         "%1:%2",
+                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
+                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
         } else if (secsTo < 60 * 60 * 24) {
             return i18n("%1h", qCeil(secsTo / (60 * 60)));
         } else if (secsTo < 60 * 60 * 24 * 7) {
@@ -360,4 +361,3 @@ void TimelineModel::actionVis(const QModelIndex &index)
 
     Q_EMIT dataChanged(index, index);
 }
-

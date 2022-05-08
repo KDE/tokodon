@@ -66,12 +66,11 @@ public:
     QNetworkAccessManager *m_qnam;
     Account *m_parent;
 
-    Relationship* relationship() const;
+    Relationship *relationship() const;
     void setRelationship(Relationship *r);
 
     QUrl avatarUrl() const;
     QString displayName() const;
-
 
 Q_SIGNALS:
     void relationshipChanged();
@@ -188,7 +187,7 @@ public:
     void fetchThread(const QString &postId, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
 
     /// Fetch account timeline
-    void fetchAccount(qint64 id, bool excludeReplies, const QString &timelineName, const QString& from_id = QString());
+    void fetchAccount(qint64 id, bool excludeReplies, const QString &timelineName, const QString &from_id = QString());
 
     // streaming
     QUrl streamingUrl(const QString &stream);
@@ -279,17 +278,7 @@ private:
     QUrlQuery buildOAuthQuery() const;
     void mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home = false);
 
-    enum AccountAction {
-        Follow,
-        Unfollow,
-        Block,
-        Unblock,
-        Mute,
-        Unmute,
-        Feature,
-        Unfeature,
-        Note
-    };
+    enum AccountAction { Follow, Unfollow, Block, Unblock, Mute, Unmute, Feature, Unfeature, Note };
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 

@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "notificationhandler.h"
-#include "post.h"
 #include "account.h"
-#include <KNotification>
+#include "post.h"
 #include <KLocalizedString>
+#include <KNotification>
 #include <QNetworkAccessManager>
 
 NotificationHandler::NotificationHandler(QObject *parent)
@@ -21,19 +21,19 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Acc
     switch (notification->type()) {
     case Notification::Favorite:
         knotification = new KNotification("favorite");
-        knotification->setTitle(i18n("%1 favorited your post", notification->account()->identity().displayName()));
+        knotification->setTitle(i18n("%1 favorited your post", notification->identity()->displayName()));
         break;
     case Notification::Follow:
         knotification = new KNotification("follow");
-        knotification->setTitle(i18n("%1 followed you", notification->account()->identity().displayName()));
+        knotification->setTitle(i18n("%1 followed you", notification->identity()->displayName()));
         break;
     case Notification::Repeat:
         knotification = new KNotification("boost");
-        knotification->setTitle(i18n("%1 boosted your post", notification->account()->identity().displayName()));
+        knotification->setTitle(i18n("%1 boosted your post", notification->identity()->displayName()));
         break;
-    case Notification::Mention :
+    case Notification::Mention:
         knotification = new KNotification("mention");
-        knotification->setTitle(notification->account()->identity().displayName());
+        knotification->setTitle(notification->identity()->displayName());
         break;
     default:
         Q_UNREACHABLE();
@@ -56,7 +56,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Acc
             knotification->setPixmap(img);
             knotification->sendEvent();
         });
-    } else  {
+    } else {
         knotification->sendEvent();
     }
 }

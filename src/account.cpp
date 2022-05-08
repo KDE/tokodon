@@ -4,10 +4,10 @@
 
 #include "account.h"
 #include "accountmanager.h"
-#include <QDebug>
-#include <QUrlQuery>
 #include "notificationhandler.h"
 #include <KLocalizedString>
+#include <QDebug>
+#include <QUrlQuery>
 
 QString Identity::displayName() const
 {
@@ -19,11 +19,13 @@ QUrl Identity::avatarUrl() const
     return m_avatarUrl;
 }
 
-Relationship* Identity::relationship() const {
+Relationship *Identity::relationship() const
+{
     return m_relationship;
 }
 
-void Identity::setRelationship(Relationship *r) {
+void Identity::setRelationship(Relationship *r)
+{
     if (m_relationship == r) {
         return;
     }
@@ -85,12 +87,10 @@ void Account::registerApplication()
 
     // register
     const QUrl regUrl = apiUrl("/api/v1/apps");
-    const QJsonObject obj = {
-        {"client_name", "Tokodon"},
-        {"redirect_uris", "urn:ietf:wg:oauth:2.0:oob"},
-        {"scopes", "read write follow"},
-        {"website", "https://invent.kde.org/network/tokodon"}
-    };
+    const QJsonObject obj = {{"client_name", "Tokodon"},
+                             {"redirect_uris", "urn:ietf:wg:oauth:2.0:oob"},
+                             {"scopes", "read write follow"},
+                             {"website", "https://invent.kde.org/network/tokodon"}};
     const QJsonDocument doc(obj);
 
     post(regUrl, doc, false, [=](QNetworkReply *reply) {
@@ -745,10 +745,7 @@ void Account::invalidatePost(Post *p)
 QUrl Account::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl("/api/v1/streaming");
-    url.setQuery(QUrlQuery{
-        {"access_token", m_token},
-        {"stream", stream}
-    });
+    url.setQuery(QUrlQuery{{"access_token", m_token}, {"stream", stream}});
     url.setScheme("wss");
 
     return QUrl(url);
@@ -880,10 +877,7 @@ void Account::executeAction(Identity *i, AccountAction accountAction, const QJso
 
 void Account::followAccount(Identity *identity, bool reblogs, bool notify)
 {
-    executeAction(identity, AccountAction::Follow, {
-        {"reblogs", reblogs},
-        {"notify", notify}
-    });
+    executeAction(identity, AccountAction::Follow, {{"reblogs", reblogs}, {"notify", notify}});
 }
 
 void Account::unfollowAccount(Identity *identity)
@@ -903,10 +897,7 @@ void Account::unblockAccount(Identity *identity)
 
 void Account::muteAccount(Identity *identity, bool notifications, int duration)
 {
-    executeAction(identity, AccountAction::Mute, {
-        {"notifcations", notifications},
-        {"duration", duration}
-    });
+    executeAction(identity, AccountAction::Mute, {{"notifcations", notifications}, {"duration", duration}});
 }
 
 void Account::unmuteAccount(Identity *identity)
@@ -929,9 +920,7 @@ void Account::addNote(Identity *identity, const QString &note)
     if (note.isEmpty()) {
         executeAction(identity, AccountAction::Note);
     } else {
-        executeAction(identity, AccountAction::Note, {
-            {"comment", note}
-        });
+        executeAction(identity, AccountAction::Note, {{"comment", note}});
     }
 }
 

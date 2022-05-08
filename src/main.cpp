@@ -34,6 +34,7 @@
 #include "attachmenteditormodel.h"
 #include "clipboard.h"
 #include "config.h"
+#include "notificationmodel.h"
 #include "post.h"
 #include "timelinemodel.h"
 
@@ -91,6 +92,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
+    qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
     qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "Clipboard", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
@@ -101,6 +103,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
+    qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

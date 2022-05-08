@@ -1,6 +1,5 @@
-// SPDX-FileCopyrightText: 2021 kaniini <https://git.pleroma.social/kaniini>
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
-// SPDX-License-Identifier: GPL-3.0-only
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "notificationmodel.h"
 #include "accountmodel.h"
@@ -9,7 +8,7 @@
 #include <QtMath>
 
 NotificationModel::NotificationModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractTimelineModel(parent)
 {
     m_account = AccountManager::instance().selectedAccount();
 
@@ -20,33 +19,30 @@ NotificationModel::NotificationModel(QObject *parent)
         m_account = account;
 
         beginResetModel();
-        m_timeline.clear();
+        m_notifications.clear();
         endResetModel();
 
         fillTimeline();
     });
-    QObject::connect(&AccountManager::instance(), &AccountManager::fetchedTimeline, this, &NotificationModel::fetchedTimeline);
     QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](Account *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
             beginResetModel();
-            m_timeline.clear();
+            m_notifications.clear();
             endResetModel();
 
             fillTimeline();
         }
     });
     connect(this, &NotificationModel::excludeTypesChanged, this, [this] {
-        if (m_account == account) {
-            qDebug() << "Invalidating account" << account;
+        qDebug() << "Invalidating account" << m_account;
 
-            beginResetModel();
-            m_timeline.clear();
-            endResetModel();
+        beginResetModel();
+        m_notifications.clear();
+        endResetModel();
 
-            fillTimeline();
-        }
+        fillTimeline();
     });
 
     fillTimeline();
@@ -67,36 +63,43 @@ void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
     Q_EMIT excludeTypesChanged();
 }
 
-void NotificationModel::fillTimeline(const QString &fromId)
+void NotificationModel::fillTimeline(const QUrl &next)
 {
     m_fetching = true;
 
-    if (m_account) {
-        QUrl uri(m_account->m_instance_uri);
-        uri.setPath(QStringLiteral("/api/v1/notifications"));
-        if (!fromId.isEmpty()) {
-            QUrlQuery q;
-            q.addQueryItem(QStringLiteral("max_id"), fromId);
-            uri.setQuery(q);
-        }
-        m_account->get(uri, true, [=](QNetworkReply *reply) {
-            const auto data = reply->readAll();
-            const auto doc = QJsonDocument::fromJson(data);
-
-            if (!doc.isArray()) {
-                qDebug() << data;
-                return;
-            }
-
-            QList<std::make_shared<Notification>> notifications;
-            for (const auto &value : doc.array()) {
-                QJsonObject obj = value.toObject();
-
-                auto notification = std::make_shared<Notification>(this, obj);
-                notifications.push_back(notification);
-            }
-        });
+    if (!m_account) {
+        return;
     }
+    QUrl uri;
+    if (next.isEmpty()) {
+        uri = QUrl::fromUserInput(m_account->instanceUri());
+        uri.setPath(QStringLiteral("/api/v1/notifications"));
+    } else {
+        uri = next;
+    }
+
+    m_account->get(uri, true, [=](QNetworkReply *reply) {
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            qDebug() << data;
+            return;
+        }
+        static QRegularExpression re("<(.*)>; rel=\"next\"");
+        auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+        auto match = re.match(next);
+        m_next = QUrl::fromUserInput(match.captured(1));
+
+        QList<std::shared_ptr<Notification>> notifications;
+        for (const auto &value : doc.array()) {
+            QJsonObject obj = value.toObject();
+
+            auto notification = std::make_shared<Notification>(m_account, obj);
+            notifications.push_back(notification);
+        }
+        fetchedNotifications(notifications);
+    });
 }
 
 void NotificationModel::fetchMore(const QModelIndex &parent)
@@ -107,89 +110,72 @@ void NotificationModel::fetchMore(const QModelIndex &parent)
         return;
     }
 
-    auto notification = m_notifications.last();
-
-    fillTimeline(notification->id());
+    fillTimeline(m_next);
 }
 
 bool NotificationModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    return !m_fetching && time(nullptr) > m_last_fetch;
+    // Todo detect when there is nothing left
+    return !m_fetching;
 }
 
 void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>> notifications)
 {
     m_fetching = false;
 
-    if (notifications.isEmpty())
+    if (notifications.isEmpty()) {
         return;
-
-    int row, last;
-
-    if (!m_notifications.isEmpty()) {
-        auto notification_old = m_notifications.first();
-        auto notification_new = notifications.first();
-
-        if (post_old->m_post_id > post_new->m_post_id) {
-            row = m_timeline.size();
-            last = row + posts.size() - 1;
-            m_timeline += posts;
-        } else {
-            row = 0;
-            last = posts.size();
-            m_timeline = posts + m_timeline;
-        }
-    } else {
-        row = 0;
-        last = posts.size() - 1;
-        m_timeline = posts;
     }
 
-    beginInsertRows(QModelIndex(), row, last);
+    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
+    m_notifications.append(notifications);
     endInsertRows();
-
-    m_last_fetch = time(nullptr);
 }
 
 int NotificationModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
 
-    return m_timeline.size();
+    return m_notifications.size();
 }
 
 // this is even more extremely cursed
-std::shared_ptr<Post> NotificationModel::internalData(const QModelIndex &index) const
+std::shared_ptr<Notification> NotificationModel::internalData(const QModelIndex &index) const
 {
     int row = index.row();
-    return m_timeline[row];
+    return m_notifications[row];
 }
 
 QHash<int, QByteArray> NotificationModel::roleNames() const
 {
-    return {{Qt::DisplayRole, QByteArrayLiteral("display")},
-            {AvatarRole, QByteArrayLiteral("avatar")},
-            {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
-            {PinnedRole, QByteArrayLiteral("pinned")},
-            {AuthorIdRole, QByteArrayLiteral("authorId")},
-            {PublishedAtRole, QByteArrayLiteral("publishedAt")},
-            {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
-            {SensitiveRole, QByteArrayLiteral("sensitive")},
-            {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
-            {RebloggedRole, QByteArrayLiteral("reblogged")},
-            {WasRebloggedRole, QByteArrayLiteral("wasReblogged")},
-            {RebloggedDisplayNameRole, QByteArrayLiteral("rebloggedDisplayName")},
-            {RebloggedIdRole, QByteArrayLiteral("rebloggedId")},
-            {AttachmentsRole, QByteArrayLiteral("attachments")},
-            {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
-            {RepliesCountRole, QByteArrayLiteral("repliesCount")},
-            {FavoritedRole, QByteArrayLiteral("favorite")},
-            {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
-            {UrlRole, QByteArrayLiteral("url")},
-            {ThreadModelRole, QByteArrayLiteral("threadModel")},
-            {AccountModelRole, QByteArrayLiteral("accountModel")}};
+    return {
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {AvatarRole, QByteArrayLiteral("avatar")},
+        {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
+        {PinnedRole, QByteArrayLiteral("pinned")},
+        {AuthorIdRole, QByteArrayLiteral("authorId")},
+        {PublishedAtRole, QByteArrayLiteral("publishedAt")},
+        {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
+        {SensitiveRole, QByteArrayLiteral("sensitive")},
+        {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
+        {RebloggedRole, QByteArrayLiteral("reblogged")},
+        {WasRebloggedRole, QByteArrayLiteral("wasReblogged")},
+        {RebloggedDisplayNameRole, QByteArrayLiteral("rebloggedDisplayName")},
+        {RebloggedIdRole, QByteArrayLiteral("rebloggedId")},
+        {AttachmentsRole, QByteArrayLiteral("attachments")},
+        {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
+        {RepliesCountRole, QByteArrayLiteral("repliesCount")},
+        {FavoritedRole, QByteArrayLiteral("favorite")},
+        {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
+        {UrlRole, QByteArrayLiteral("url")},
+        {ThreadModelRole, QByteArrayLiteral("threadModel")},
+        {AccountModelRole, QByteArrayLiteral("accountModel")},
+        {TypeRole, QByteArrayLiteral("type")},
+        {CardRole, QByteArrayLiteral("card")},
+        {ActorDisplayNameRole, QByteArrayLiteral("actorDisplayName")},
+    };
 }
 
 QVariant NotificationModel::data(const QModelIndex &index, int role) const
@@ -198,60 +184,81 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return {};
     }
     int row = index.row();
-    auto p = m_timeline[row];
+    auto notification = m_notifications[row];
+    auto post = notification->post();
 
     switch (role) {
+    case TypeRole:
+        return notification->type();
+    case ActorDisplayNameRole:
+        return notification->identity()->displayName();
     case Qt::DisplayRole:
-        return p->m_content;
+        return post->m_content;
     case AvatarRole:
-        return p->m_author_identity->m_avatarUrl;
+        return post->m_author_identity->m_avatarUrl;
     case AuthorDisplayNameRole:
-        return p->m_author_identity->m_display_name;
+        return post->m_author_identity->m_display_name;
     case AuthorIdRole:
-        return p->m_author_identity->m_acct;
+        return post->m_author_identity->m_acct;
     case PublishedAtRole:
-        return p->m_published_at;
+        return post->m_published_at;
     case WasRebloggedRole:
-        return p->m_repeat;
+        return post->m_repeat || notification->type() == Notification::Repeat;
     case RebloggedDisplayNameRole:
-        if (p->m_repeat_identity) {
-            return p->m_repeat_identity->m_display_name;
+        if (post->m_repeat_identity) {
+            return post->m_repeat_identity->m_display_name;
+        }
+        if (notification->type() == Notification::Repeat) {
+            return notification->identity()->displayName();
         }
         return {};
     case RebloggedIdRole:
-        if (p->m_repeat_identity) {
-            return p->m_repeat_identity->m_acct;
+        if (post->m_repeat_identity) {
+            return post->m_repeat_identity->m_acct;
+        }
+        if (notification->type() == Notification::Repeat) {
+            return notification->identity()->m_acct;
         }
         return {};
     case RebloggedRole:
-        return p->m_isRepeated;
+        return post->m_isRepeated;
     case ReblogsCountRole:
-        return p->m_repeatedCount;
+        return post->m_repeatedCount;
     case FavoritedRole:
-        return p->m_isFavorite;
+        return post->m_isFavorite;
     case PinnedRole:
-        return p->m_pinned;
+        return post->m_pinned;
     case SensitiveRole:
-        return p->m_isSensitive;
+        return post->m_isSensitive;
     case SpoilerTextRole:
-        return p->m_subject;
+        return post->m_subject;
     case AttachmentsRole:
-        return QVariant::fromValue<QList<Attachment *>>(p->m_attachments);
+        return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
     case ThreadModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
+        return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, post->m_post_id));
+    case CardRole:
+        if (post->card().has_value()) {
+            return QVariant::fromValue<Card>(*post->card());
+        }
+        return false;
     case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->m_author_identity->m_id, p->m_author_identity->m_acct));
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->m_author_identity->m_id, post->m_author_identity->m_acct));
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
-        auto secsTo = p->m_published_at.secsTo(current);
+        auto secsTo = post->m_published_at.secsTo(current);
         if (secsTo < 60 * 60) {
-            return i18nc("hour:minute", "%1:%2", p->m_published_at.time().hour(), p->m_published_at.time().minute());
+            const auto hours = post->m_published_at.time().hour();
+            const auto minutes = post->m_published_at.time().minute();
+            return i18nc("hour:minute",
+                         "%1:%2",
+                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
+                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
         } else if (secsTo < 60 * 60 * 24) {
             return i18n("%1h", qCeil(secsTo / (60 * 60)));
         } else if (secsTo < 60 * 60 * 24 * 7) {
             return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
         }
-        return p->m_published_at.date().toString(Qt::SystemLocaleShortDate);
+        return QLocale::system().toString(post->m_published_at.date(), QLocale::ShortFormat);
     }
     }
 
@@ -261,7 +268,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
 void NotificationModel::actionReply(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    auto p = m_notifications[row]->post();
 
     Q_EMIT wantReply(m_account, p, index);
 }
@@ -269,7 +276,7 @@ void NotificationModel::actionReply(const QModelIndex &index)
 void NotificationModel::actionMenu(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    auto p = m_notifications[row]->post();
 
     Q_EMIT wantMenu(m_account, p, index);
 }
@@ -277,7 +284,7 @@ void NotificationModel::actionMenu(const QModelIndex &index)
 void NotificationModel::actionFavorite(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    auto p = m_notifications[row]->post();
 
     if (!p->m_isFavorite) {
         m_account->favorite(p);
@@ -293,7 +300,7 @@ void NotificationModel::actionFavorite(const QModelIndex &index)
 void NotificationModel::actionRepeat(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    auto p = m_notifications[row]->post();
 
     if (!p->m_isRepeated) {
         m_account->repeat(p);
@@ -309,7 +316,7 @@ void NotificationModel::actionRepeat(const QModelIndex &index)
 void NotificationModel::actionVis(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    auto p = m_notifications[row]->post();
 
     p->m_attachments_visible ^= true;
 

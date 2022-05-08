@@ -4,14 +4,14 @@
 #include "relationship.h"
 #include "account.h"
 
-Relationship::Relationship(Identity* parent, const QJsonObject& jsonObj)
+Relationship::Relationship(Identity *parent, const QJsonObject &jsonObj)
     : QObject(parent)
     , m_parent(parent)
 {
     updateFromJson(jsonObj);
 }
 
-void Relationship::updateFromJson(const QJsonObject& jsonObj)
+void Relationship::updateFromJson(const QJsonObject &jsonObj)
 {
     setFollowing(jsonObj["following"].toBool());
     setRequested(jsonObj["requested"].toBool());
@@ -26,7 +26,6 @@ void Relationship::updateFromJson(const QJsonObject& jsonObj)
     setBlockedBy(jsonObj["blocked_by"].toBool());
     setNote(jsonObj["note"].toString());
 }
-
 
 bool Relationship::following() const
 {

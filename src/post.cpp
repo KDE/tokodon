@@ -233,7 +233,6 @@ int Notification::id() const
     return m_id;
 }
 
-
 Account *Notification::account() const
 {
     return m_account;

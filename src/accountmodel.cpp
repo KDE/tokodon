@@ -47,7 +47,8 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     m_account->get(uriRelationship, true, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (!doc.isArray()) {
-            qDebug() << "Data returned from Relationship network request is not an array" << "data: " << doc;
+            qDebug() << "Data returned from Relationship network request is not an array"
+                     << "data: " << doc;
             return;
         }
 
