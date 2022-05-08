@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
+// SPD-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.15
@@ -147,6 +147,7 @@ Kirigami.BasicListItem {
 
         GridLayout {
             id: attachmentGrid
+            visible: tootContent.visible
             Layout.fillWidth: true
             columns: model.attachments.length > 1 ? 2 : 1
             Repeater {
@@ -170,7 +171,7 @@ Kirigami.BasicListItem {
         }
 
         Kirigami.AbstractCard {
-            visible: model.card
+            visible: model.card && tootContent.visible
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.smallSpacing
             TapHandler {
