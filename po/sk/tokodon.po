@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-08 00:46+0000\n"
+"POT-Creation-Date: 2022-05-09 00:45+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -25,53 +25,53 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: account.cpp:857
+#: account.cpp:854
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: account.cpp:858
+#: account.cpp:855
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: account.cpp:859
+#: account.cpp:856
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: account.cpp:860
+#: account.cpp:857
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: account.cpp:861
+#: account.cpp:858
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Could not mute account"
 msgstr "Pridať účet"
 
-#: account.cpp:862
+#: account.cpp:859
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: account.cpp:863
+#: account.cpp:860
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: account.cpp:864
+#: account.cpp:861
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: account.cpp:865
+#: account.cpp:862
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
 
-#: accountmodel.cpp:68
+#: accountmodel.cpp:69
 #, fuzzy, kde-format
 msgid "Loading"
 msgstr "Načítavam"
@@ -254,34 +254,95 @@ msgid "Home"
 msgstr "Domov"
 
 #: content/ui/main.qml:133 content/ui/main.qml:134
+#: content/ui/NotificationPage.qml:13
 #, fuzzy, kde-format
 msgid "Notifications"
 msgstr "Upozornenia"
 
-#: content/ui/main.qml:135
-#, kde-format
-msgid "Notifications support is not implemented yet"
-msgstr ""
-
-#: content/ui/main.qml:139
+#: content/ui/main.qml:142
 #, fuzzy, kde-format
 msgid "Local"
 msgstr "Lokálne"
 
-#: content/ui/main.qml:140
+#: content/ui/main.qml:143
 #, kde-format
 msgid "Local Timeline"
 msgstr ""
 
-#: content/ui/main.qml:148
+#: content/ui/main.qml:151
 #, fuzzy, kde-format
 msgid "Global"
 msgstr "Globálne"
 
-#: content/ui/main.qml:149
+#: content/ui/main.qml:152
 #, kde-format
 msgid "Global Timeline"
 msgstr ""
+
+#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:21
+#, kde-format
+msgid "Toot"
+msgstr ""
+
+#: content/ui/NotificationPage.qml:34
+#, kde-format
+msgctxt "Show all notifications"
+msgid "All"
+msgstr ""
+
+#: content/ui/NotificationPage.qml:44
+#, fuzzy, kde-format
+msgctxt "Show only mentions"
+msgid "Mentions"
+msgstr "Voľby:"
+
+#: content/ui/NotificationPage.qml:92 notificationhandler.cpp:28
+#, fuzzy, kde-format
+msgid "%1 followed you"
+msgstr "Nasledovatelia"
+
+#: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
+#, kde-format
+msgid "%1 favorited your post"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:55
+#, kde-format
+msgid "Pinned entry"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:72
+#, kde-format
+msgid "%1 boosted"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
+#, kde-format
+msgid "%1 boosted your post"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:118
+#, fuzzy, kde-format
+msgid "Show more"
+msgstr "Zobraziť ďalších %1"
+
+#: content/ui/PostDelegate.qml:239
+#, fuzzy, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Odpovedať"
+
+#: content/ui/PostDelegate.qml:249
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:259
+#, kde-format
+msgctxt "Like a post"
+msgid "Like"
+msgstr "Páči sa mi"
 
 #: content/ui/Settings/AccountsPage.qml:14
 #: content/ui/Settings/SettingsPage.qml:19
@@ -310,6 +371,11 @@ msgstr "Všeobecné"
 #: content/ui/Settings/GeneralPage.qml:16
 #, kde-format
 msgid "Show detailed statistics about posts."
+msgstr ""
+
+#: content/ui/Settings/GeneralPage.qml:26
+#, kde-format
+msgid "Show link preview."
 msgstr ""
 
 #: content/ui/Settings/SettingsPage.qml:24
@@ -391,44 +457,6 @@ msgstr ""
 msgid "Apply"
 msgstr "Použiť"
 
-#: content/ui/TimelinePage.qml:21
-#, kde-format
-msgid "Toot"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:69
-#, kde-format
-msgid "Pinned entry"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:86
-#, kde-format
-msgid "Shared by %1"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:130
-#, fuzzy, kde-format
-msgid "Show more"
-msgstr "Zobraziť ďalších %1"
-
-#: content/ui/TimelinePage.qml:243
-#, fuzzy, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Odpovedať"
-
-#: content/ui/TimelinePage.qml:253
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:263
-#, kde-format
-msgctxt "Like a post"
-msgid "Like"
-msgstr "Páči sa mi"
-
 #: content/ui/TootComposer.qml:13
 #, kde-format
 msgid "Write a new toot"
@@ -505,58 +533,43 @@ msgstr "cW"
 msgid "Send"
 msgstr "Poslať"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:77
+#: main.cpp:78
 #, fuzzy, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon klient"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr ""
 
-#: main.cpp:80
+#: main.cpp:81
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:114
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
 
-#: notificationhandler.cpp:24
-#, kde-format
-msgid "%1 favorited your post"
-msgstr ""
-
-#: notificationhandler.cpp:28
-#, fuzzy, kde-format
-msgid "%1 followed you"
-msgstr "Nasledovatelia"
-
-#: notificationhandler.cpp:32
-#, kde-format
-msgid "%1 boosted your post"
-msgstr ""
-
-#: notificationmodel.cpp:248 timelinemodel.cpp:291
+#: notificationmodel.cpp:256 timelinemodel.cpp:295
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr ""
 
-#: notificationmodel.cpp:250 timelinemodel.cpp:295
+#: notificationmodel.cpp:260 timelinemodel.cpp:299
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: notificationmodel.cpp:252 timelinemodel.cpp:297
+#: notificationmodel.cpp:262 timelinemodel.cpp:301
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -567,25 +580,25 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Vlákno %1"
 
-#: timelinemodel.cpp:32
+#: timelinemodel.cpp:33
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Domov"
 
-#: timelinemodel.cpp:34
+#: timelinemodel.cpp:35
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Domov"
 
-#: timelinemodel.cpp:37
+#: timelinemodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr ""
 
-#: timelinemodel.cpp:39
+#: timelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
