@@ -62,6 +62,7 @@ endif()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
+    find_package(KF5WindowSystem ${KF5_MIN_VERSION} REQUIRED)
 endif()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)

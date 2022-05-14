@@ -69,7 +69,7 @@ else()
 endif()
 
 if(TARGET KF5::DBusAddons)
-    target_link_libraries(tokodon PRIVATE KF5::DBusAddons)
+    target_link_libraries(tokodon PRIVATE KF5::DBusAddons KF5::WindowSystem)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
 endif()
 

@@ -21,6 +21,7 @@
 #include <KAboutData>
 #ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
+#include <KWindowSystem>
 #endif
 #include <KConfig>
 #include <KLocalizedContext>
@@ -130,8 +131,8 @@ int main(int argc, char *argv[])
         for (auto obj : rootObjects) {
             auto view = qobject_cast<QQuickWindow *>(obj);
             if (view) {
-                view->show();
-                view->raise();
+                KWindowSystem::updateStartupId(view);
+                KWindowSystem::activateWindow(view);
                 return;
             }
         }
