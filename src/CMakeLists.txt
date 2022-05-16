@@ -1,6 +1,25 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-2-Clause
 
+set(debug_files_SRCS)
+
+ecm_qt_declare_logging_category(debug_files_SRCS
+    HEADER tokodon_debug.h
+    IDENTIFIER TOKODON_LOG
+    CATEGORY_NAME org.kde.tokodon
+    DESCRIPTION "tokodon"
+    DEFAULT_SEVERITY Warning
+    EXPORT TOKODON
+)
+
+ecm_qt_declare_logging_category(debug_files_SRCS
+    HEADER tokodon_http_debug.h
+    IDENTIFIER TOKODON_HTTP
+    CATEGORY_NAME org.kde.tokodon.http
+    DESCRIPTION "Tokodon request"
+    EXPORT TOKODON
+)
+
 add_executable(tokodon
     accountmanager.cpp
     account.cpp
@@ -17,6 +36,7 @@ add_executable(tokodon
     notificationmodel.cpp
     abstracttimelinemodel.cpp
     resources.qrc
+    ${debug_files_SRCS}
 )
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})

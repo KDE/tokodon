@@ -21,6 +21,7 @@ include(ECMSetupVersion)
 include(KDEInstallDirs)
 include(ECMQMLModules)
 include(KDEClangFormat)
+include(ECMQtDeclareLoggingCategory)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddAppIcon)
@@ -77,6 +78,11 @@ install(FILES org.kde.tokodon.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.tokodon.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.tokodon.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
 
+ecm_qt_install_logging_categories(
+    EXPORT TOKODON
+    FILE tokodon.categories
+    SORT DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

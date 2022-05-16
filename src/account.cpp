@@ -6,7 +6,8 @@
 #include "accountmanager.h"
 #include "notificationhandler.h"
 #include <KLocalizedString>
-#include <QDebug>
+#include "tokodon_debug.h"
+#include "tokodon_http_debug.h"
 #include <QUrlQuery>
 #include <qnetworkaccessmanager.h>
 
@@ -106,14 +107,13 @@ void Account::registerApplication()
 
     post(regUrl, doc, false, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
-            qDebug() << "not finished";
+            qCDebug(TOKODON_LOG) << "not finished";
             return;
         }
 
-        qDebug() << "rjoier";
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
-        qDebug() << doc;
+        qDebug(TOKODON_HTTP) << doc;
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
@@ -142,15 +142,16 @@ void Account::get(const QUrl &url, bool authenticated, std::function<void(QNetwo
         request.setRawHeader("Authorization", bearer);
     }
 
+    qCDebug(TOKODON_HTTP) << "GET" << url;
+
     QNetworkReply *reply = m_qnam->get(request);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, url]() {
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
             if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
             }
-
             reply_cb(reply);
         });
     }
@@ -168,15 +169,16 @@ void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated
         request.setRawHeader("Authorization", bearer);
     }
 
-    qDebug() << "POST" << url << "[" << post_data << "]";
+    qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     auto reply = m_qnam->post(request, post_data);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
-
+            }
             reply_cb(reply);
         });
     }
@@ -194,15 +196,16 @@ void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated,
         request.setRawHeader("Authorization", bearer);
     }
 
-    qDebug() << "PUT" << url << "[" << post_data << "]";
+    qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->put(request, post_data);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
-
+            }
             reply_cb(reply);
         });
     }
@@ -220,15 +223,16 @@ void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticate
         request.setRawHeader("Authorization", bearer);
     }
 
-    qDebug() << "POST" << url << "[" << post_data << "]";
+    qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->post(request, post_data);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
-
+            }
             reply_cb(reply);
         });
     }
@@ -238,7 +242,7 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
 {
     QNetworkRequest request = QNetworkRequest(url);
 
-    qDebug() << "POST" << url << "(multipart-message)";
+    qCDebug(TOKODON_HTTP) << "POST" << url << "(multipart-message)";
 
     if (authenticated && haveToken()) {
         const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
@@ -249,10 +253,11 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
     message->setParent(reply);
 
     if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
                 return;
-
+            }
             reply_cb(reply);
         });
     }
@@ -271,7 +276,10 @@ void Account::upload(Post *p, QFile *file, QString filename)
 
     mp->append(filePart);
 
+
     auto upload_url = apiUrl("/api/v1/media");
+    qCDebug(TOKODON_HTTP) << "POST" << upload_url << "(upload)";
+
     post(upload_url, mp, true, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
