@@ -45,7 +45,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE Account *createNewAccount(const QString &username, const QString &instanceUri);
+    Q_INVOKABLE Account *createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors = false);
 
 Q_SIGNALS:
     void accountAdded(Account *account);

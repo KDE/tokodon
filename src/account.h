@@ -92,7 +92,7 @@ class Account : public QObject
     Q_PROPERTY(Identity *identity READ identityObj CONSTANT)
 
 public:
-    explicit Account(const QString &username, const QString &instance_uri, QObject *parent = nullptr);
+    explicit Account(const QString &username, const QString &instance_uri, bool ignoreSslErrors = false, QObject *parent = nullptr);
     explicit Account(const QSettings &settings, QObject *parent = nullptr);
     ~Account();
 
@@ -265,6 +265,7 @@ private:
     QString m_token;
     QString m_client_id;
     QString m_client_secret;
+    bool m_ignoreSslErrors = false;
     QNetworkAccessManager *m_qnam;
     size_t m_maxPostLength;
     QString m_instance_name;

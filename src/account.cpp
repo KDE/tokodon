@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <QDebug>
 #include <QUrlQuery>
+#include <qnetworkaccessmanager.h>
 
 QString Identity::displayName() const
 {
@@ -37,13 +38,19 @@ void Identity::setRelationship(Relationship *r)
     Q_EMIT relationshipChanged();
 }
 
-Account::Account(const QString &name, const QString &instance_uri, QObject *parent)
+Account::Account(const QString &name, const QString &instance_uri, bool ignoreSslErrors, QObject *parent)
     : QObject(parent)
     , m_name(name)
     , m_qnam(new QNetworkAccessManager(this))
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
 {
+    if (ignoreSslErrors) {
+        connect(m_qnam, &QNetworkAccessManager::sslErrors, this, [](QNetworkReply * reply, const QList<QSslError> &) {
+            reply->ignoreSslErrors();
+        });
+        m_ignoreSslErrors = true;
+    }
     setInstanceUri(instance_uri);
     m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(this);
@@ -73,9 +80,13 @@ Account::~Account()
 
 QUrl Account::apiUrl(const QString &path) const
 {
+    auto instanceUrl = QUrl::fromUserInput(m_instance_uri);
+
     auto url = QUrl::fromUserInput(m_instance_uri);
-    url.setScheme("https");
-    url.setPath(path);
+    if (!m_ignoreSslErrors) {
+        url.setScheme("https");
+    }
+    url.setPath(instanceUrl.path() + path);
 
     return url;
 }
@@ -94,11 +105,15 @@ void Account::registerApplication()
     const QJsonDocument doc(obj);
 
     post(regUrl, doc, false, [=](QNetworkReply *reply) {
-        if (!reply->isFinished())
+        if (!reply->isFinished()) {
+            qDebug() << "not finished";
             return;
+        }
 
+        qDebug() << "rjoier";
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
+        qDebug() << doc;
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
@@ -407,6 +422,7 @@ void Account::writeToSettings(QSettings &settings) const
     settings.setValue("client_secret", m_client_secret);
     settings.setValue("instance_uri", m_instance_uri);
     settings.setValue("name", m_name);
+    settings.setValue("ignoreSslErrors", m_ignoreSslErrors);
 
     settings.endGroup();
 }
@@ -419,6 +435,13 @@ void Account::buildFromSettings(const QSettings &settings)
         m_client_secret = settings.value("client_secret").toString();
         m_name = settings.value("name").toString();
         m_instance_uri = settings.value("instance_uri").toString();
+
+        if (settings.value("ignoreSslErrors", false).toBool()) {
+            connect(m_qnam, &QNetworkAccessManager::sslErrors, this, [](QNetworkReply * reply, const QList<QSslError> &) {
+                reply->ignoreSslErrors();
+            });
+            m_ignoreSslErrors = true;
+        }
         validateToken();
     }
 }
@@ -510,9 +533,8 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     if (!from_id.isEmpty()) {
         q.addQueryItem("max_id", from_id);
     }
-    QUrl uri = QUrl::fromUserInput(m_instance_uri);
-    uri.setScheme("https");
-    uri.setPath(QString("/api/v1/timelines/%1").arg(timelineName));
+
+    auto uri = apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
     uri.setQuery(q);
 
     get(uri, true, [=](QNetworkReply *reply) {
@@ -722,6 +744,8 @@ void Account::fetchInstanceMetadata()
         m_instance_name = obj["title"].toString();
         Q_EMIT fetchedInstanceMetadata();
     });
+    m_instance_name = QString("social");
+    Q_EMIT fetchedInstanceMetadata();
 
     get(pleroma_info, false, [=](QNetworkReply *reply) {
         auto data = reply->readAll();

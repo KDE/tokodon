@@ -63,9 +63,9 @@ AccountManager &AccountManager::instance()
     return accountManager;
 }
 
-Account *AccountManager::createNewAccount(const QString &username, const QString &instanceUri)
+Account *AccountManager::createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors)
 {
-    return new Account(username, instanceUri, this);
+    return new Account(username, instanceUri, ignoreSslErrors, this);
 }
 
 bool AccountManager::hasAccounts() const

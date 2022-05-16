@@ -27,6 +27,10 @@ MastoPage {
             Kirigami.FormData.label: i18n("Username:")
             onAccepted: continueButton.clicked()
         }
+        QQC2.CheckBox {
+            id: sslErrors
+            text: i18n("Ignore ssl errors")
+        }
         QQC2.Button {
             id: continueButton
             text: i18n("Continue")
@@ -37,7 +41,7 @@ MastoPage {
                 }
 
                 pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
-                    account: AccountManager.createNewAccount(username.text, instanceUrl.text)
+                    account: AccountManager.createNewAccount(username.text, instanceUrl.text, sslErrors.checked)
                 });
             }
         }
