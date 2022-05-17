@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-15 00:48+0000\n"
-"PO-Revision-Date: 2022-04-21 16:01+0100\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2022-05-16 14:34+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -23,47 +23,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: account.cpp:854
+#: account.cpp:886
 #, kde-format
 msgid "Could not follow account"
 msgstr "Não foi possível seguir a conta"
 
-#: account.cpp:855
+#: account.cpp:887
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Não foi possível deixar de seguir a conta"
 
-#: account.cpp:856
+#: account.cpp:888
 #, kde-format
 msgid "Could not block account"
 msgstr "Não foi possível bloquear a conta"
 
-#: account.cpp:857
+#: account.cpp:889
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Não foi possível desbloquear a conta"
 
-#: account.cpp:858
+#: account.cpp:890
 #, kde-format
 msgid "Could not mute account"
 msgstr "Não foi possível silenciar a conta"
 
-#: account.cpp:859
+#: account.cpp:891
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Não foi possível reactivar a conta"
 
-#: account.cpp:860
+#: account.cpp:892
 #, kde-format
 msgid "Could not feature account"
 msgstr "Não foi possível destacar a conta"
 
-#: account.cpp:861
+#: account.cpp:893
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Não foi possível remover o destaque da conta"
 
-#: account.cpp:862
+#: account.cpp:894
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Não foi possível editar a nota sobre a conta"
@@ -101,12 +101,12 @@ msgstr "Notificar-me quando o %1 publica"
 #: content/ui/AccountInfo.qml:132
 #, kde-format
 msgid "Hide boosts from %1"
-msgstr "Esconder as amplificações do %1"
+msgstr "Esconder os destaques do %1"
 
 #: content/ui/AccountInfo.qml:134
 #, kde-format
 msgid "Stop hiding boosts from %1"
-msgstr "Parar de esconder as amplificações do %1"
+msgstr "Parar de esconder os destaques do %1"
 
 #: content/ui/AccountInfo.qml:150
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Abrir a ligação"
 msgid "Enter token:"
 msgstr "Indique o código:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:32
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:36
 #, kde-format
 msgid "Continue"
 msgstr "Continuar"
@@ -230,7 +230,13 @@ msgstr "URL da Instância:"
 msgid "Username:"
 msgstr "Utilizador:"
 
-#: content/ui/LoginPage.qml:35
+#: content/ui/LoginPage.qml:32
+#, fuzzy, kde-format
+#| msgid "Ignore uppercase words"
+msgid "Ignore ssl errors"
+msgstr "Ignorar as palavras em maiúsculas"
+
+#: content/ui/LoginPage.qml:39
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "O URL da instância e o utilizador não deverão estar em branco!"
@@ -286,25 +292,23 @@ msgstr "'Toot'"
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr ""
+msgstr "Tudo"
 
 #: content/ui/NotificationPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Opções:"
+msgstr "Citações"
 
 #: content/ui/NotificationPage.qml:92 notificationhandler.cpp:28
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 followed you"
-msgstr "%1 seguidores"
+msgstr "%1 seguiu-o"
 
 #: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
-msgstr ""
+msgstr "O %1 adicionou a sua publicação aos favoritos"
 
 #: content/ui/PostDelegate.qml:55
 #, kde-format
@@ -314,12 +318,12 @@ msgstr "Item fixo"
 #: content/ui/PostDelegate.qml:72
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
+msgstr "O %1 foi destacado"
 
 #: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
-msgstr ""
+msgstr "O %1 destacou a sua publicação"
 
 #: content/ui/PostDelegate.qml:118
 #, kde-format
@@ -336,7 +340,7 @@ msgstr "Responder"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Amplificar"
+msgstr "Destacar"
 
 #: content/ui/PostDelegate.qml:259
 #, kde-format
@@ -375,7 +379,7 @@ msgstr "Mostrar estatísticas detalhadas sobre as publicações."
 #: content/ui/Settings/GeneralPage.qml:26
 #, kde-format
 msgid "Show link preview."
-msgstr ""
+msgstr "Mostrar uma antevisão da ligação."
 
 #: content/ui/Settings/SettingsPage.qml:24
 #, kde-format
@@ -604,9 +608,3 @@ msgstr "Cronologia Local"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Cronologia Global"
-
-#~ msgid "Notifications support is not implemented yet"
-#~ msgstr "O suporte para as notificações ainda não está implementado"
-
-#~ msgid "Shared by %1"
-#~ msgstr "Partilhado por %1"

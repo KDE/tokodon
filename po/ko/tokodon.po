@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-15 00:48+0000\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
 "PO-Revision-Date: 2022-05-15 22:51+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -30,47 +30,47 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: account.cpp:854
+#: account.cpp:886
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account.cpp:855
+#: account.cpp:887
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account.cpp:856
+#: account.cpp:888
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account.cpp:857
+#: account.cpp:889
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account.cpp:858
+#: account.cpp:890
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account.cpp:859
+#: account.cpp:891
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account.cpp:860
+#: account.cpp:892
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account.cpp:861
+#: account.cpp:893
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account.cpp:862
+#: account.cpp:894
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
@@ -185,7 +185,7 @@ msgstr "링크 열기"
 msgid "Enter token:"
 msgstr "토큰 입력:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:32
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:36
 #, kde-format
 msgid "Continue"
 msgstr "계속"
@@ -235,7 +235,13 @@ msgstr "인스턴스 URL:"
 msgid "Username:"
 msgstr "사용자 이름:"
 
-#: content/ui/LoginPage.qml:35
+#: content/ui/LoginPage.qml:32
+#, fuzzy, kde-format
+#| msgid "Ignore uppercase words"
+msgid "Ignore ssl errors"
+msgstr "대문자 단어 무시"
+
+#: content/ui/LoginPage.qml:39
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
