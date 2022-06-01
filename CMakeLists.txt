@@ -74,6 +74,10 @@ add_subdirectory(src)
 
 ki18n_install(po)
 
+if (ANDROID)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
+endif()
+
 install(FILES org.kde.tokodon.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.tokodon.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.tokodon.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
