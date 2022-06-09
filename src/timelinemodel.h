@@ -15,6 +15,7 @@ class TimelineModel : public AbstractTimelineModel
     Q_PROPERTY(AccountManager *accountManager READ accountManager WRITE setAccountManager NOTIFY accountManagerChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
+    Q_PROPERTY(bool fetching READ fetching NOTIFY fetchingChanged)
 
 public:
     enum CustoRoles {
@@ -65,6 +66,10 @@ public:
     }
     std::shared_ptr<Post> internalData(const QModelIndex &index) const;
 
+    Q_INVOKABLE void refresh();
+
+    bool fetching() const;
+
 public Q_SLOTS:
     void actionReply(const QModelIndex &index);
     void actionFavorite(const QModelIndex &index);
@@ -77,6 +82,7 @@ Q_SIGNALS:
     void wantMenu(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);
     void accountManagerChanged();
     void nameChanged();
+    void fetchingChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;

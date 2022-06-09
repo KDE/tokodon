@@ -102,6 +102,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
     }
 
     m_fetching = true;
+    Q_EMIT fetchingChanged();
 
     if (m_account) {
         m_account->fetchTimeline(m_timelineName, from_id);
@@ -136,6 +137,7 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 void TimelineModel::fetchedTimeline(Account *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts)
 {
     m_fetching = false;
+    Q_EMIT fetchingChanged();
 
     // make sure the timeline update is for us
     if (account != m_account || original_name != m_timelineName) {
@@ -363,4 +365,14 @@ void TimelineModel::actionVis(const QModelIndex &index)
     p->m_attachments_visible ^= true;
 
     Q_EMIT dataChanged(index, index);
+}
+
+void TimelineModel::refresh()
+{
+    fillTimeline();
+}
+
+bool TimelineModel::fetching() const
+{
+    return m_fetching;
 }

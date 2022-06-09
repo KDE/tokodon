@@ -16,6 +16,22 @@ Kirigami.ScrollablePage {
     property alias listViewHeader: listview.header
     property bool isProfile: false
 
+    supportsRefreshing: true
+
+    onRefreshingChanged: {
+        if (refreshing) {
+            model.refresh();
+        }
+    }
+
+    Connections {
+        target: model
+
+        function onFetchingChanged() {
+            timelinePage.refreshing = false
+        }
+    }
+
     actions.main: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Toot")
