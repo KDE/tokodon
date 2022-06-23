@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(tokodon)
-set(PROJECT_VERSION "22.04")
+set(PROJECT_VERSION "22.06")
 
 set(KF5_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
