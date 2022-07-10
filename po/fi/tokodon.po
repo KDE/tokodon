@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-06-30 00:45+0000\n"
-"PO-Revision-Date: 2022-02-12 19:08+0200\n"
+"PO-Revision-Date: 2022-06-11 21:51+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,48 +30,47 @@ msgstr "translator@legisign.org"
 #: account.cpp:886
 #, kde-format
 msgid "Could not follow account"
-msgstr ""
+msgstr "Tiliä ei voitu seurata"
 
 #: account.cpp:887
 #, kde-format
 msgid "Could not unfollow account"
-msgstr ""
+msgstr "Tilin seuraamista ei voitu perua"
 
 #: account.cpp:888
 #, kde-format
 msgid "Could not block account"
-msgstr ""
+msgstr "Tiliä ei voitu estää"
 
 #: account.cpp:889
 #, kde-format
 msgid "Could not unblock account"
-msgstr ""
+msgstr "Tilin estoa ei voitu perua"
 
 #: account.cpp:890
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not mute account"
-msgstr "Lisää tili"
+msgstr "Tiliä ei voitu vaimentaa"
 
 #: account.cpp:891
 #, kde-format
 msgid "Could not unmute account"
-msgstr ""
+msgstr "Tilin vaimennusta ei voitu perua"
 
 #: account.cpp:892
 #, kde-format
 msgid "Could not feature account"
-msgstr ""
+msgstr "Tiliä ei voitu esitellä"
 
 #: account.cpp:893
 #, kde-format
 msgid "Could not unfeature account"
-msgstr ""
+msgstr "Tilin esittelyä ei voitu perua"
 
 #: account.cpp:894
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr ""
+msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
 
 #: accountmodel.cpp:69
 #, kde-format
@@ -81,11 +80,10 @@ msgstr "Ladataan"
 #: content/ui/AccountInfo.qml:84
 #, kde-format
 msgid "Requested"
-msgstr ""
+msgstr "Pyydetty"
 
 #: content/ui/AccountInfo.qml:87
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Following"
 msgstr "Seuraa"
 
@@ -97,12 +95,12 @@ msgstr "Seuraa"
 #: content/ui/AccountInfo.qml:114
 #, kde-format
 msgid "Stop notifying me when %1 posts"
-msgstr ""
+msgstr "Älä ilmoita enää, kun %1 viestittelee"
 
 #: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Notify me when %1 posts"
-msgstr ""
+msgstr "Ilmoita, kun %1 viestittelee"
 
 #: content/ui/AccountInfo.qml:132
 #, kde-format
@@ -117,39 +115,37 @@ msgstr ""
 #: content/ui/AccountInfo.qml:150
 #, kde-format
 msgid "Stop featuring on profile"
-msgstr ""
+msgstr "Lopeta esittely profiilissa"
 
 #: content/ui/AccountInfo.qml:152
 #, kde-format
 msgid "Feature on profile"
-msgstr ""
+msgstr "Esittele profiilissa"
 
 #: content/ui/AccountInfo.qml:168
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Stop muting"
-msgstr "Asetukset"
+msgstr "Lopeta vaimennus"
 
 #: content/ui/AccountInfo.qml:170
 #, kde-format
 msgid "Mute"
-msgstr ""
+msgstr "Vaimenna"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "Stop blocking"
-msgstr ""
+msgstr "Lopeta esto"
 
 #: content/ui/AccountInfo.qml:188
 #, kde-format
 msgid "Block"
-msgstr ""
+msgstr "Estä"
 
 #: content/ui/AccountInfo.qml:294
 #, kde-format
 msgid "Click to add a note"
-msgstr ""
+msgstr "Lisää muistiinpano napsauttamalla"
 
 #: content/ui/AccountInfo.qml:360
 #, kde-format
@@ -237,10 +233,9 @@ msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
 #: content/ui/LoginPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Ignore uppercase words"
+#, kde-format
 msgid "Ignore ssl errors"
-msgstr "Sivuuta suuraakkosin kirjoitetut sanat"
+msgstr "Sivuuta SSL-virheet"
 
 #: content/ui/LoginPage.qml:39
 #, kde-format
@@ -298,25 +293,23 @@ msgstr ""
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr ""
+msgstr "Kaikki"
 
 #: content/ui/NotificationPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Valinnat:"
+msgstr "Maininnat"
 
 #: content/ui/NotificationPage.qml:92 notificationhandler.cpp:28
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 followed you"
-msgstr "%1 seuraajaa"
+msgstr "%1 alkoi seurata sinua"
 
 #: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
-msgstr ""
+msgstr "%1 merkitse viestisi suosikiksi"
 
 #: content/ui/PostDelegate.qml:55
 #, kde-format
@@ -387,7 +380,7 @@ msgstr "Näytä viestien yksityiskohtaiset tilastot."
 #: content/ui/Settings/GeneralPage.qml:26
 #, kde-format
 msgid "Show link preview."
-msgstr ""
+msgstr "Näytä linkin esikatselu."
 
 #: content/ui/Settings/SettingsPage.qml:24
 #, kde-format
@@ -503,14 +496,12 @@ msgstr "Valitse tiedosto"
 #: content/ui/TootComposer.qml:159
 #, kde-format
 msgid "Attach File"
-msgstr ""
+msgstr "Liitä tiedosto"
 
 #: content/ui/TootComposer.qml:167
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add word"
+#, kde-format
 msgid "Add Poll"
-msgstr "Lisää sana"
+msgstr "Lisää kysely"
 
 #: content/ui/TootComposer.qml:190
 #, kde-format
@@ -535,7 +526,7 @@ msgstr "Suoraviesti"
 #: content/ui/TootComposer.qml:210
 #, kde-format
 msgid "Visibility"
-msgstr ""
+msgstr "Näkyvyys"
 
 #: content/ui/TootComposer.qml:215
 #, kde-format
