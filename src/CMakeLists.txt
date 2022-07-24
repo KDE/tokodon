@@ -44,7 +44,7 @@ target_link_libraries(tokodon PRIVATE Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::
 kconfig_add_kcfg_files(tokodon GENERATE_MOC config.kcfgc)
 
 if(ANDROID)
-    target_link_libraries(tokodon PRIVATE Qt5::Svg OpenSSL::SSL)
+    target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
     kirigami_package_breeze_icons(ICONS
         "help-about"
         "im-user"
@@ -85,7 +85,7 @@ if(ANDROID)
         "go-home-large"
     )
 else()
-    target_link_libraries(tokodon PRIVATE Qt5::Widgets)
+    target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
 
 if(TARGET KF5::DBusAddons)

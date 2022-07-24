@@ -31,8 +31,8 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets)
-set_package_properties(Qt5 PROPERTIES
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets)
+set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
     TYPE REQUIRED
     PURPOSE "Basic application components"
 )
@@ -54,8 +54,8 @@ if(ANDROID)
     )
 else()
     find_package(KF5QQC2DesktopStyle REQUIRED)
-    find_package(Qt5Keychain)
-    set_package_properties(Qt5Keychain PROPERTIES
+    find_package(Qt${QT_MAJOR_VERSION}Keychain)
+    set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
         TYPE REQUIRED
         PURPOSE "Secure storage of account secrets"
     )
