@@ -96,7 +96,7 @@ endif()
 if(ANDROID)
     target_sources(tokodon PRIVATE notifyrc.qrc)
 else()
-    install(FILES tokodon.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+    install(FILES tokodon.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 endif()
 
 install(TARGETS tokodon ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
