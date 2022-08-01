@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-06-30 00:45+0000\n"
-"PO-Revision-Date: 2022-03-13 11:14+0100\n"
+"PO-Revision-Date: 2022-07-31 09:47+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -31,48 +31,47 @@ msgstr "lukasz.wojnilowicz@gmail.com"
 #: account.cpp:886
 #, kde-format
 msgid "Could not follow account"
-msgstr ""
+msgstr "Nie można zacząć śledzić konta"
 
 #: account.cpp:887
 #, kde-format
 msgid "Could not unfollow account"
-msgstr ""
+msgstr "Nie można przestać śledzić konta"
 
 #: account.cpp:888
 #, kde-format
 msgid "Could not block account"
-msgstr ""
+msgstr "Nie można zablokować konta"
 
 #: account.cpp:889
 #, kde-format
 msgid "Could not unblock account"
-msgstr ""
+msgstr "Nie można odblokować konta"
 
 #: account.cpp:890
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not mute account"
-msgstr "Dodaj konto"
+msgstr "Nie można wyciszyć konta"
 
 #: account.cpp:891
 #, kde-format
 msgid "Could not unmute account"
-msgstr ""
+msgstr "Nie można usunąć wyciszenia konta"
 
 #: account.cpp:892
 #, kde-format
 msgid "Could not feature account"
-msgstr ""
+msgstr "Nie można zacząć wyróżniać konta"
 
 #: account.cpp:893
 #, kde-format
 msgid "Could not unfeature account"
-msgstr ""
+msgstr "Nie można przestać wyróżniać konta"
 
 #: account.cpp:894
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr ""
+msgstr "Nie można zmienić uwagi o koncie"
 
 #: accountmodel.cpp:69
 #, kde-format
@@ -82,75 +81,72 @@ msgstr "Wczytywanie"
 #: content/ui/AccountInfo.qml:84
 #, kde-format
 msgid "Requested"
-msgstr ""
+msgstr "Żądane"
 
 #: content/ui/AccountInfo.qml:87
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Following"
-msgstr "Obserwuj"
+msgstr "Śledzone"
 
 #: content/ui/AccountInfo.qml:89
 #, kde-format
 msgid "Follow"
-msgstr "Obserwuj"
+msgstr "Śledź"
 
 #: content/ui/AccountInfo.qml:114
 #, kde-format
 msgid "Stop notifying me when %1 posts"
-msgstr ""
+msgstr "Przestań powiadamiać mnie gdy %1 coś napisze"
 
 #: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Notify me when %1 posts"
-msgstr ""
+msgstr "Powiadamiaj mnie gdy %1 coś napisze"
 
 #: content/ui/AccountInfo.qml:132
 #, kde-format
 msgid "Hide boosts from %1"
-msgstr ""
+msgstr "Ukrywaj udostępnienia od %1"
 
 #: content/ui/AccountInfo.qml:134
 #, kde-format
 msgid "Stop hiding boosts from %1"
-msgstr ""
+msgstr "Przestań ukrywać udostępnienia od %1"
 
 #: content/ui/AccountInfo.qml:150
 #, kde-format
 msgid "Stop featuring on profile"
-msgstr ""
+msgstr "Przestań wyróżniania na profilu"
 
 #: content/ui/AccountInfo.qml:152
 #, kde-format
 msgid "Feature on profile"
-msgstr ""
+msgstr "Wyróżnij na profilu"
 
 #: content/ui/AccountInfo.qml:168
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Stop muting"
-msgstr "Ustawienia"
+msgstr "Przestań wyciszać"
 
 #: content/ui/AccountInfo.qml:170
 #, kde-format
 msgid "Mute"
-msgstr ""
+msgstr "Wycisz"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "Stop blocking"
-msgstr ""
+msgstr "Przestań blokować"
 
 #: content/ui/AccountInfo.qml:188
 #, kde-format
 msgid "Block"
-msgstr ""
+msgstr "Zablokuj"
 
 #: content/ui/AccountInfo.qml:294
 #, kde-format
 msgid "Click to add a note"
-msgstr ""
+msgstr "Naciśnij, aby dodać uwagę"
 
 #: content/ui/AccountInfo.qml:360
 #, kde-format
@@ -160,12 +156,12 @@ msgstr "%1 toots"
 #: content/ui/AccountInfo.qml:364
 #, kde-format
 msgid "%1 followers"
-msgstr "%1 obserwatorów"
+msgstr "%1 śledzących"
 
 #: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 following"
-msgstr "%1 obserwuje"
+msgstr "%1 śledzi"
 
 #: content/ui/AuthorizationPage.qml:21
 #, kde-format
@@ -239,10 +235,9 @@ msgid "Username:"
 msgstr "Nazwa użytkownika:"
 
 #: content/ui/LoginPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Ignore uppercase words"
+#, kde-format
 msgid "Ignore ssl errors"
-msgstr "Pomiń słowa pisane wielkimi listerami"
+msgstr "Pomiń błędy SSL"
 
 #: content/ui/LoginPage.qml:39
 #, kde-format
@@ -300,25 +295,23 @@ msgstr "Toot"
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr ""
+msgstr "Wszystkie"
 
 #: content/ui/NotificationPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Ustawienia:"
+msgstr "Wspomnienia"
 
 #: content/ui/NotificationPage.qml:92 notificationhandler.cpp:28
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 followed you"
-msgstr "%1 obserwatorów"
+msgstr "%1 śledzi cię"
 
 #: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
-msgstr ""
+msgstr "%1 polubił twój wpis"
 
 #: content/ui/PostDelegate.qml:55
 #, kde-format
@@ -328,12 +321,12 @@ msgstr "Przypięty wpis"
 #: content/ui/PostDelegate.qml:72
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
+msgstr "%1 udostępnił"
 
 #: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
-msgstr ""
+msgstr "%1 udostępnił twój wpis"
 
 #: content/ui/PostDelegate.qml:118
 #, kde-format
@@ -350,7 +343,7 @@ msgstr "Odpowiedz"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Boost"
+msgstr "Udostępnij"
 
 #: content/ui/PostDelegate.qml:259
 #, kde-format
@@ -389,7 +382,7 @@ msgstr "Pokaż szczegółową statystykę o poście."
 #: content/ui/Settings/GeneralPage.qml:26
 #, kde-format
 msgid "Show link preview."
-msgstr ""
+msgstr "Pokaż podgląd odnośnika."
 
 #: content/ui/Settings/SettingsPage.qml:24
 #, kde-format
