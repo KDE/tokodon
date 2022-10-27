@@ -37,14 +37,14 @@ Kirigami.ApplicationWindow {
         id: drawer
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
-        drawerOpen: !Kirigami.Settings.isMobile
+        drawerOpen: !Kirigami.Settings.isMobile && accountBox.count > 0
         width: Kirigami.Units.gridUnit * 16
         Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        
+
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
-        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1
+        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1 && accountBox.count > 0
 
         leftPadding: 0
         rightPadding: 0
@@ -67,6 +67,7 @@ Kirigami.ApplicationWindow {
                     anchors.fill: parent
 
                     QQC2.ComboBox {
+                        id: accountBox
                         model: AccountManager
                         currentIndex: AccountManager.selectedIndex
                         textRole: 'display'
