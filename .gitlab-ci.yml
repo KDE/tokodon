@@ -8,3 +8,10 @@ include:
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
   #- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android-qt6.yml
+
+qml-import-lint:
+  stage: build
+  image: alpine:latest
+  needs: []
+  script:
+    - ./scripts/import-validation.sh

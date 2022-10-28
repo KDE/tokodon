@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick.Controls 2.15 as QQC2
 
 import org.kde.kirigami 2.15 as Kirigami
 
-ApplicationWindow {
+QQC2.ApplicationWindow {
     id: root
 
     required property var model
@@ -24,7 +24,7 @@ ApplicationWindow {
 
     color: Kirigami.Theme.backgroundColor
 
-    background: AbstractButton {
+    background: QQC2.AbstractButton {
         onClicked: root.destroy()
     }
 
@@ -60,7 +60,7 @@ ApplicationWindow {
                 }
             }
 
-            Label {
+            QQC2.Label {
                 id: description
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
@@ -70,7 +70,7 @@ ApplicationWindow {
             }
         }
 
-        RoundButton {
+        QQC2.RoundButton {
             anchors {
                 left: parent.left
                 leftMargin: Kirigami.Units.largeSpacing
@@ -85,7 +85,7 @@ ApplicationWindow {
             onClicked: view.currentIndex -= 1
         }
 
-        RoundButton {
+        QQC2.RoundButton {
             anchors {
                 right: parent.right
                 rightMargin: Kirigami.Units.largeSpacing
@@ -102,7 +102,7 @@ ApplicationWindow {
 
     }
 
-    Button {
+    QQC2.Button {
         anchors.top: parent.top
         anchors.right: parent.right
 
