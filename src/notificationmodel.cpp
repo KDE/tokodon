@@ -85,8 +85,13 @@ void NotificationModel::fillTimeline(const QUrl &next)
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
+        if (m_loading) {
+            m_loading = false;
+            Q_EMIT loadingChanged();
+        }
+
         if (!doc.isArray()) {
-            qDebug() << data;
+            m_account->errorOccured(i18n("Error ocurred when fetching the latest notification."));
             return;
         }
         static QRegularExpression re("<(.*)>; rel=\"next\"");

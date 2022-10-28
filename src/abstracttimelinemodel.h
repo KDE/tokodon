@@ -14,6 +14,7 @@ class AbstractTimelineModel : public QAbstractListModel
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 public:
     enum CustoRoles {
         AvatarRole = Qt::UserRole + 1,
@@ -44,8 +45,13 @@ public:
     };
 
     AbstractTimelineModel(QObject *parent = nullptr);
-    ~AbstractTimelineModel();
+
+    bool loading() const;
+
+Q_SIGNALS:
+    void loadingChanged();
 
 protected:
     Account *m_account = nullptr;
+    bool m_loading = true;
 };

@@ -139,6 +139,9 @@ void TimelineModel::fetchedTimeline(Account *account, const QString &original_na
     m_fetching = false;
     Q_EMIT fetchingChanged();
 
+    m_loading = false;
+    Q_EMIT loadingChanged();
+
     // make sure the timeline update is for us
     if (account != m_account || original_name != m_timelineName) {
         return;

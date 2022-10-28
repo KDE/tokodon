@@ -8,4 +8,7 @@ AbstractTimelineModel::AbstractTimelineModel(QObject *parent)
 {
 }
 
-AbstractTimelineModel::~AbstractTimelineModel() = default;
+bool AbstractTimelineModel::loading() const
+{
+    return m_loading;
+}
