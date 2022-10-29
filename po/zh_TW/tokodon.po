@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:45+0000\n"
+"POT-Creation-Date: 2022-10-29 00:47+0000\n"
 "PO-Revision-Date: 2022-05-17 00:45+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -307,6 +307,11 @@ msgstr ""
 msgid "%1 followed you"
 msgstr ""
 
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:59
+#, kde-format
+msgid "Loading..."
+msgstr ""
+
 #: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
@@ -538,43 +543,48 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-format
 msgid "Tokodon"
 msgstr ""
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Mastodon client"
 msgstr ""
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr ""
 
-#: main.cpp:84
+#: main.cpp:85
 #, kde-format
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
 
-#: notificationmodel.cpp:256 timelinemodel.cpp:297
+#: notificationmodel.cpp:94
+#, kde-format
+msgid "Error ocurred when fetching the latest notification."
+msgstr ""
+
+#: notificationmodel.cpp:261 timelinemodel.cpp:300
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr ""
 
-#: notificationmodel.cpp:260 timelinemodel.cpp:301
+#: notificationmodel.cpp:265 timelinemodel.cpp:304
 #, kde-format
 msgid "%1h"
 msgstr ""
 
-#: notificationmodel.cpp:262 timelinemodel.cpp:303
+#: notificationmodel.cpp:267 timelinemodel.cpp:306
 #, kde-format
 msgid "%1d"
 msgstr ""
