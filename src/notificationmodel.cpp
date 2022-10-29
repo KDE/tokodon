@@ -91,7 +91,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
         }
 
         if (!doc.isArray()) {
-            m_account->errorOccured(i18n("Error ocurred when fetching the latest notification."));
+            m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
             return;
         }
         static QRegularExpression re("<(.*)>; rel=\"next\"");
