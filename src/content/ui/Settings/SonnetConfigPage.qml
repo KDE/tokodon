@@ -7,47 +7,98 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.sonnet 1.0 as Sonnet
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
-Kirigami.Page {
-    id: page
+MobileForm.FormCard {
+    Layout.topMargin: Kirigami.Units.largeSpacing
+    Layout.fillWidth: true
 
-    /**
-     * This property holds whether the setting on that page are automatically
-     * applied or whether the user can apply then manually. By default, false.
-     */
-    property bool instantApply: false
+    Sonnet.Settings {
+        id: settings
+    }
 
-    /**
-     * This property holds whether the ListViews inside the page should get
-     * extra padding and a background. By default, use the Kirigami.ApplicationWindow
-     * wideMode value.
-     */
-    property bool wideMode: QQC2.ApplicationWindow.window.wideMode ?? QQC2.ApplicationWindow.window.width > Kirigami.Units.gridUnit * 40
-
-    /**
-     * Signal emmited when the user decide to discard it's change and close the
-     * setting page.
-     *
-     * For example when using the ConfigPage inside Kirigami PageRow:
-     *
-     * \code
-     * Sonnet.ConfigPage {
-     *      onClose: applicationWindow().pageStack.pop();
-     * }
-     * \endcode
-     */
-    signal close()
-
-    function onBackRequested(event) {
-        if (settings.modified) {
-            applyDialog.open();
-            event.accepted = true;
+    contentItem: ColumnLayout {
+        spacing: 0
+        MobileForm.FormCardHeader {
+            title: i18n("Spellchecking")
         }
-        if (dialog) {
-            dialog.close();
+
+        MobileForm.FormSwitchDelegate {
+            id: enable
+            checked: settings.checkerEnabledByDefault
+            text: i18n("Enable automatic spell checking")
+            onCheckedChanged: {
+                settings.checkerEnabledByDefault = checked;
+                settings.save();
+            }
+        }
+
+        MobileForm.FormDelegateSeparator { below: enable; above: skipUppercase }
+
+        MobileForm.FormSwitchDelegate {
+            id: skipUppercase
+            checked: settings.skipUppercase
+            text: i18n("Ignore uppercase words")
+            onCheckedChanged: {
+                settings.skipUppercase = checked;
+                settings.save();
+            }
+        }
+
+        MobileForm.FormDelegateSeparator { below: skipUppercase; above: skipRunTogether }
+
+        MobileForm.FormSwitchDelegate {
+            id: skipRunTogether
+            checked: settings.skipRunTogether
+            text: i18n("Ignore hyphenated words")
+            onCheckedChanged: {
+                settings.skipRunTogether = checked;
+                settings.save();
+            }
+        }
+
+        MobileForm.FormDelegateSeparator { below: skipRunTogether; above: autodetectLanguageCheckbox }
+
+        MobileForm.FormSwitchDelegate {
+            id: autodetectLanguageCheckbox
+            checked: settings.autodetectLanguage
+            text: i18n("Detect language automatically")
+            onCheckedChanged: {
+                settings.autodetectLanguage = checked;
+                settings.save();
+            }
+        }
+
+        MobileForm.FormComboBoxDelegate {
+            Kirigami.FormData.label: i18n("Selected default language:")
+            model: settings.dictionaryModel
+            textRole: "display"
+            valueRole: "languageCode"
+            Component.onCompleted: currentIndex = indexOfValue(settings.defaultLanguage);
+            onActivated: {
+                settings.defaultLanguage = currentValue;
+            }
+        }
+
+        QQC2.Button {
+            text: i18n("Open Personal Dictionary")
+            onClicked: if (!dialog) {
+                if (Kirigami.Settings.isMobile) {
+                    dialog = mobileSheet.createObject(page, {settings: settings});
+                    dialog.open();
+                } else {
+                    dialog = desktopSheet.createObject(page, {settings: settings})
+                    dialog.show();
+                }
+            } else {
+                if (Kirigami.Settings.isMobile) {
+                    dialog.open();
+                } else {
+                    dialog.show();
+                }
+            }
         }
     }
-    title: i18nc('@window:title', 'Spellchecking')
 
     QQC2.Dialog {
         id: applyDialog
@@ -69,19 +120,9 @@ Kirigami.Page {
         onRejected: applyDialog.close();
     }
 
-    onWideModeChanged: scroll.background.visible = wideMode;
-
-    leftPadding: wideMode ? Kirigami.Units.gridUnit : 0
-    topPadding: wideMode ? Kirigami.Units.gridUnit : 0
-    bottomPadding: wideMode ? Kirigami.Units.gridUnit : 0
-    rightPadding: wideMode ? Kirigami.Units.gridUnit : 0
-
     property var dialog: null
 
-    Sonnet.Settings {
-        id: settings
-    }
-
+/*
     ColumnLayout {
         anchors.fill: parent
 
@@ -90,81 +131,7 @@ Kirigami.Page {
             Layout.leftMargin: wideMode ? 0 : Kirigami.Units.largeSpacing
             Layout.rightMargin: wideMode ? 0 : Kirigami.Units.largeSpacing
 
-            QQC2.ComboBox {
-                Kirigami.FormData.label: i18n("Selected default language:")
-                model: settings.dictionaryModel
-                textRole: "display"
-                valueRole: "languageCode"
-                Component.onCompleted: currentIndex = indexOfValue(settings.defaultLanguage);
-                onActivated: {
-                    settings.defaultLanguage = currentValue;
-                }
-            }
 
-            QQC2.Button {
-                text: i18n("Open Personal Dictionary")
-                onClicked: if (!dialog) {
-                    if (Kirigami.Settings.isMobile) {
-                        dialog = mobileSheet.createObject(page, {settings: settings});
-                        dialog.open();
-                    } else {
-                        dialog = desktopSheet.createObject(page, {settings: settings})
-                        dialog.show();
-                    }
-                } else {
-                    if (Kirigami.Settings.isMobile) {
-                        dialog.open();
-                    } else {
-                        dialog.show();
-                    }
-                }
-            }
-
-            QQC2.CheckBox {
-                Kirigami.FormData.label: i18n("Options:")
-                checked: settings.checkerEnabledByDefault
-                text: i18n("Enable automatic spell checking")
-                onCheckedChanged: {
-                    settings.checkerEnabledByDefault = checked;
-                    if (instantApply) {
-                        settings.save();
-                    }
-                }
-            }
-
-            QQC2.CheckBox {
-                checked: settings.skipUppercase
-                text: i18n("Ignore uppercase words")
-                onCheckedChanged: {
-                    settings.skipUppercase = checked;
-                    if (instantApply) {
-                        settings.save();
-                    }
-                }
-            }
-
-            QQC2.CheckBox {
-                checked: settings.skipRunTogether
-                text: i18n("Ignore hyphenated words")
-                onCheckedChanged: {
-                    settings.skipRunTogether = checked;
-                    if (instantApply) {
-                        settings.save();
-                    }
-                }
-            }
-
-            QQC2.CheckBox {
-                id: autodetectLanguageCheckbox
-                checked: settings.autodetectLanguage
-                text: i18n("Detect language automatically")
-                onCheckedChanged: {
-                    settings.autodetectLanguage = checked;
-                    if (instantApply) {
-                        settings.save();
-                    }
-                }
-            }
         }
 
         Kirigami.Heading {
@@ -333,4 +300,6 @@ Kirigami.Page {
             return value !== word;
         });
     }
+
+    */
 }
