@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
-
 import QtQml 2.15
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
@@ -17,8 +16,8 @@ Kirigami.ScrollablePage {
                 checked: Config.showPostStats
                 enabled: !Config.isShowPostStatsImmutable
                 onToggled: {
-                    Config.showPostStats = checked
-                    Config.save()
+                    Config.showPostStats = checked;
+                    Config.save();
                 }
             }
 
@@ -27,8 +26,8 @@ Kirigami.ScrollablePage {
                 checked: Config.showLinkPreview
                 enabled: !Config.isShowLinkPreviewImmutable
                 onToggled: {
-                    Config.showLinkPreview = checked
-                    Config.save()
+                    Config.showLinkPreview = checked;
+                    Config.save();
                 }
             }
         }

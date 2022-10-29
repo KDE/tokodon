@@ -1,13 +1,10 @@
 // SPDX-FileCopyrightText: 2020 Tobias Fella <fella@posteo.de>
 // SPDX-License-Identifier: GPL-2.0-or-later
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
-
 import org.kde.kirigami 2.15 as Kirigami
-
 import org.kde.kmasto 1.0
 
 Kirigami.Page {
@@ -28,7 +25,7 @@ Kirigami.Page {
     Connections {
         target: pageSettingStack
         function onWideModeChanged() {
-            scroll.background.visible = pageSettingStack.wideMode
+            scroll.background.visible = pageSettingStack.wideMode;
         }
     }
 
@@ -64,7 +61,7 @@ Kirigami.Page {
                         if (AccountManager.selectedAccount !== model.account) {
                             AccountManager.selectedAccount = model.account;
                         }
-                        pageStack.layers.pop()
+                        pageStack.layers.pop();
                     }
                 }
                 actions: [
@@ -81,9 +78,9 @@ Kirigami.Page {
                         text: i18n("Logout")
                         iconName: "im-kick-user"
                         onTriggered: {
-                            AccountManager.removeAccount(model.account)
+                            AccountManager.removeAccount(model.account);
                             if (!AccountManager.hasAccount) {
-                                settingsPage.closeDialog()
+                                settingsPage.closeDialog();
                             }
                         }
                     }

@@ -1,9 +1,7 @@
 // SPDX-FileCopyrightText: 2019 Black Hat <bhat@encom.eu.org>
 // SPDX-License-Identifier: GPL-3.0-only
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-
 import org.kde.kirigami 2.15 as Kirigami
 
 QQC2.ApplicationWindow {
@@ -31,7 +29,7 @@ QQC2.ApplicationWindow {
     ListView {
         id: view
         anchors.fill: parent
-        snapMode: ListView.SnapOneItem 
+        snapMode: ListView.SnapOneItem
         highlightRangeMode: ListView.StrictlyEnforceRange
         highlightMoveDuration: 0
         focus: true
@@ -99,7 +97,6 @@ QQC2.ApplicationWindow {
             Accessible.name: i18n("Next image")
             onClicked: view.currentIndex += 1
         }
-
     }
 
     QQC2.Button {

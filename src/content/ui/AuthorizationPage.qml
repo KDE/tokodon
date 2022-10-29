@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 import QtQuick 2.15
 import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
@@ -45,8 +44,14 @@ MastoPage {
         }
 
         RowLayout {
-            QQC2.Button { text: i18n("Open link"); onClicked: Qt.openUrlExternally(account.authorizeUrl) }
-            QQC2.Button { text: i18n("Copy link"); onClicked: Clipboard.saveText(account.authorizeUrl) }
+            QQC2.Button {
+                text: i18n("Open link")
+                onClicked: Qt.openUrlExternally(account.authorizeUrl)
+            }
+            QQC2.Button {
+                text: i18n("Copy link")
+                onClicked: Clipboard.saveText(account.authorizeUrl)
+            }
         }
 
         QQC2.Label {
@@ -54,8 +59,8 @@ MastoPage {
         }
 
         QQC2.TextField {
-            Layout.fillWidth: true
             id: tokenField
+            Layout.fillWidth: true
             onAccepted: continueButton.clicked()
         }
 

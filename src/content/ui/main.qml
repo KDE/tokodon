@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 // SPDX-FileCopyrightText: 2020 Devin Lin <espidev@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
-
 import QtQuick 2.15
 import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
@@ -39,7 +38,12 @@ Kirigami.ApplicationWindow {
         modal: Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
         drawerOpen: !Kirigami.Settings.isMobile && accountBox.count > 0
         width: Kirigami.Units.gridUnit * 16
-        Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
+        Behavior on width  {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
@@ -85,14 +89,14 @@ Kirigami.ApplicationWindow {
                             }
                             onClicked: if (AccountManager.selectedAccount !== model.account) {
                                 AccountManager.selectedAccount = model.account;
-                                currentIndex = index
+                                currentIndex = index;
                             }
                         }
                     }
 
                     QQC2.Button {
                         icon.name: "list-add"
-                        onClicked: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
+                        onClicked: pageStack.layers.push('qrc:/content/ui/LoginPage.qml')
                         Accessible.name: i18n("Add Account")
                         enabled: AccountManager.hasAccounts && pageStack.get(0).objectName !== 'loginPage' && pageStack.get(0).objectName !== 'authorizationPage' && (pageStack.layers.depth === 1 || pageStack.layers.get(1).objectName !== 'loginPage' && pageStack.layers.get(1).objectName !== 'authorizationPage')
                     }
@@ -113,7 +117,7 @@ Kirigami.ApplicationWindow {
             Kirigami.BasicListItem {
                 action: Kirigami.Action {
                     icon.name: "settings-configure"
-                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml');
+                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml')
                     text: i18nc("@action:inmenu", "Settings")
                 }
             }
@@ -144,7 +148,9 @@ Kirigami.ApplicationWindow {
         checked: pageStack.currentItem.title === i18n("Local Timeline")
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, { name: "public" });
+            pageStack.replace(mainTimeline, {
+                    "name": "public"
+                });
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
@@ -153,7 +159,9 @@ Kirigami.ApplicationWindow {
         checked: pageStack.currentItem.title === i18n("Global Timeline")
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, { name: "federated" });
+            pageStack.replace(mainTimeline, {
+                    "name": "federated"
+                });
         }
     }
 
@@ -164,8 +172,8 @@ Kirigami.ApplicationWindow {
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
         actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
     }
-    //header: Kirigami.Settings.isMobile ? null : toolBar
 
+    //header: Kirigami.Settings.isMobile ? null : toolBar
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
     }
@@ -177,7 +185,6 @@ Kirigami.ApplicationWindow {
             pageStack.push('qrc:/content/ui/LoginPage.qml');
         }
     }
-
 
     Component {
         id: mainTimeline
@@ -202,7 +209,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
-        parent: overlay.parent 
+        parent: overlay.parent
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
 
@@ -214,7 +221,7 @@ Kirigami.ApplicationWindow {
         }
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         background: Rectangle {
-             color: Kirigami.Theme.backgroundColor
+            color: Kirigami.Theme.backgroundColor
         }
     }
 }

@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
-
 import QtQuick 2.15
 import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
@@ -47,15 +46,15 @@ MastoPage {
                     bottomMargin: 1
                 }
                 implicitHeight: {
-                    let h = 0
-                    for(let i = 0; i < visibleChildren.length; ++i) {
-                        h += Math.ceil(visibleChildren[i].implicitHeight)
+                    let h = 0;
+                    for (var i = 0; i < visibleChildren.length; ++i) {
+                        h += Math.ceil(visibleChildren[i].implicitHeight);
                     }
-                    return h
+                    return h;
                 }
                 height: implicitHeight
 
-                Behavior on height {
+                Behavior on height  {
                     NumberAnimation {
                         property: "height"
                         duration: Kirigami.Units.shortDuration
@@ -154,7 +153,7 @@ MastoPage {
                                 id: fileDialog
                                 folder: shortcuts.home
                                 title: i18n("Please choose a file")
-                                onAccepted: postObject.uploadAttachment(fileDialog.fileUrl);
+                                onAccepted: postObject.uploadAttachment(fileDialog.fileUrl)
                             }
                             QQC2.ToolTip {
                                 text: i18n("Attach File")
@@ -170,17 +169,17 @@ MastoPage {
                         }
                         QQC2.ToolButton {
                             icon.name: {
-                                switch(postObject.visibility) {
-                                    case Post.Public:
-                                        return "kstars_xplanet";
-                                    case Post.Unlisted:
-                                        return "unlock";
-                                    case Post.Private:
-                                        return "lock";
-                                    case Post.Direct:
-                                        return "mail-message";
-                                    default:
-                                        return "kstars_xplanet";
+                                switch (postObject.visibility) {
+                                case Post.Public:
+                                    return "kstars_xplanet";
+                                case Post.Unlisted:
+                                    return "unlock";
+                                case Post.Private:
+                                    return "lock";
+                                case Post.Direct:
+                                    return "mail-message";
+                                default:
+                                    return "kstars_xplanet";
                                 }
                             }
                             onClicked: visibilityMenu.open()

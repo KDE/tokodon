@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
@@ -15,14 +14,16 @@ Kirigami.BasicListItem {
     hoverEnabled: false
     property bool secondary: false
     onClicked: {
-        const subModel = model.threadModel
+        const subModel = model.threadModel;
         if (subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                model: subModel
-            })
+                    "model": subModel
+                });
         }
     }
-    ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
+    ListView.onReused: tootContent.visible = Qt.binding(() => {
+            return model.spoilerText.length === 0;
+        })
     contentItem: GridLayout {
         columnSpacing: Kirigami.Units.largeSpacing
         rowSpacing: 0
@@ -82,8 +83,8 @@ Kirigami.BasicListItem {
             TapHandler {
                 onTapped: {
                     pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: model.accountModel
-                    });
+                            "model": model.accountModel
+                        });
                 }
             }
             name: model.authorDisplayName
@@ -161,9 +162,9 @@ Kirigami.BasicListItem {
                     TapHandler {
                         onTapped: {
                             fullScreenImage.createObject(parent, {
-                                model: attachments,
-                                currentIndex: index
-                            }).showFullScreen()
+                                    "model": attachments,
+                                    "currentIndex": index
+                                }).showFullScreen();
                         }
                     }
                 }
@@ -225,15 +226,15 @@ Kirigami.BasicListItem {
                 icon.height: Kirigami.Units.iconSizes.smallMedium
                 text: model.repliesCount < 2 || Config.showPostStats ? model.repliesCount : "1+"
                 onClicked: {
-                    const post = AccountManager.selectedAccount.newPost()
+                    const post = AccountManager.selectedAccount.newPost();
                     post.inReplyTo = model.id;
                     post.mentions = model.mentions;
                     if (!post.mentions.includes(`@${model.authorId}`)) {
                         post.mentions.push(`@${model.authorId}`);
                     }
                     pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                        postObject: post
-                    });
+                            "postObject": post
+                        });
                 }
                 QQC2.ToolTip {
                     text: i18nc("Reply to a post", "Reply")

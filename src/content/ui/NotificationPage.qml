@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
@@ -22,10 +21,10 @@ Kirigami.ScrollablePage {
         text: i18n("Toot")
         enabled: AccountManager.hasAccounts
         onTriggered: {
-            const post = AccountManager.selectedAccount.newPost()
+            const post = AccountManager.selectedAccount.newPost();
             pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                postObject: post
-            });
+                    "postObject": post
+                });
         }
     }
 
@@ -35,7 +34,7 @@ Kirigami.ScrollablePage {
         checkable: true
         checked: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = []
+            notificationModel.excludeTypes = [];
         }
     }
 
@@ -44,7 +43,7 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only mentions", "Mentions")
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['follow', 'favourite', 'reblog', 'poll', 'follow_request']
+            notificationModel.excludeTypes = ['follow', 'favourite', 'reblog', 'poll', 'follow_request'];
         }
     }
 
@@ -62,7 +61,8 @@ Kirigami.ScrollablePage {
 
         Component {
             id: fullScreenImage
-            FullScreenImage {}
+            FullScreenImage {
+            }
         }
         delegate: DelegateChooser {
             role: "type"

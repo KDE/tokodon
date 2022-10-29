@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
-
 import QtQml 2.15
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
@@ -36,7 +35,7 @@ Kirigami.Page {
      * }
      * \endcode
      */
-    signal close()
+    signal close
 
     function onBackRequested(event) {
         if (settings.modified) {
@@ -66,10 +65,10 @@ Kirigami.Page {
             applyDialog.close();
             page.close();
         }
-        onRejected: applyDialog.close();
+        onRejected: applyDialog.close()
     }
 
-    onWideModeChanged: scroll.background.visible = wideMode;
+    onWideModeChanged: scroll.background.visible = wideMode
 
     leftPadding: wideMode ? Kirigami.Units.gridUnit : 0
     topPadding: wideMode ? Kirigami.Units.gridUnit : 0
@@ -95,7 +94,7 @@ Kirigami.Page {
                 model: settings.dictionaryModel
                 textRole: "display"
                 valueRole: "languageCode"
-                Component.onCompleted: currentIndex = indexOfValue(settings.defaultLanguage);
+                Component.onCompleted: currentIndex = indexOfValue(settings.defaultLanguage)
                 onActivated: {
                     settings.defaultLanguage = currentValue;
                 }
@@ -105,10 +104,14 @@ Kirigami.Page {
                 text: i18n("Open Personal Dictionary")
                 onClicked: if (!dialog) {
                     if (Kirigami.Settings.isMobile) {
-                        dialog = mobileSheet.createObject(page, {settings: settings});
+                        dialog = mobileSheet.createObject(page, {
+                                "settings": settings
+                            });
                         dialog.open();
                     } else {
-                        dialog = desktopSheet.createObject(page, {settings: settings})
+                        dialog = desktopSheet.createObject(page, {
+                                "settings": settings
+                            });
                         dialog.show();
                     }
                 } else {
@@ -215,7 +218,7 @@ Kirigami.Page {
         }
     }
 
-    component SheetHeader : RowLayout {
+    component SheetHeader: RowLayout {
         QQC2.TextField {
             id: dictionaryField
             Layout.fillWidth: true
@@ -261,7 +264,7 @@ Kirigami.Page {
                         trailing: QQC2.ToolButton {
                             icon.name: "delete"
                             onClicked: {
-                                remove(modelData)
+                                remove(modelData);
                                 if (instantApply) {
                                     settings.save();
                                 }
@@ -279,10 +282,11 @@ Kirigami.Page {
     Component {
         id: mobileSheet
         Kirigami.OverlaySheet {
-            required property Sonnet.Settings settings
             id: dictionarySheet
+            required property Sonnet.Settings settings
 
-            header: SheetHeader {}
+            header: SheetHeader {
+            }
 
             ListView {
                 implicitWidth: Kirigami.Units.gridUnit * 15
@@ -292,7 +296,7 @@ Kirigami.Page {
                     trailing: QQC2.ToolButton {
                         icon.name: "delete"
                         onClicked: {
-                            remove(modelData)
+                            remove(modelData);
                             if (instantApply) {
                                 settings.save();
                             }
@@ -314,10 +318,10 @@ Kirigami.Page {
                 Layout.fillWidth: true
             }
 
-            QQC2.Button  {
+            QQC2.Button {
                 text: i18n("Apply")
                 enabled: settings.modified
-                onClicked: settings.save();
+                onClicked: settings.save()
             }
         }
     }
@@ -330,7 +334,7 @@ Kirigami.Page {
 
     function remove(word) {
         settings.currentIgnoreList = settings.currentIgnoreList.filter(function (value, _, _) {
-            return value !== word;
-        });
+                return value !== word;
+            });
     }
 }

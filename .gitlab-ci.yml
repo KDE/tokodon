@@ -15,3 +15,20 @@ qml-import-lint:
   needs: []
   script:
     - ./scripts/import-validation.sh
+
+qml-format:
+  stage: build
+  image: kdeorg/ci-suse-qt64:latest
+  needs: []
+  script:
+    - git config --global --add safe.directory $CI_PROJECT_DIR
+    - bash -c "find -iname '*.qml' -exec qmlformat6 -i --force {} \;"
+    - bash -c "[[ ! \"`git status --porcelain `\" ]] || (echo \"Please install qmlformat-qt6 and run find -iname '*.qml' -exec qmlformat-qt6/qmlformat6 -i --force {} \\;\" && exit 1)"
+
+  after_script:
+   - >
+     if [ $CI_JOB_STATUS != 'success' ]; then
+         git --no-pager diff
+     fi
+
+

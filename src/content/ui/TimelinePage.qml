@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
-
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
@@ -28,7 +27,7 @@ Kirigami.ScrollablePage {
         target: model
 
         function onFetchingChanged() {
-            timelinePage.refreshing = false
+            timelinePage.refreshing = false;
         }
     }
 
@@ -37,10 +36,10 @@ Kirigami.ScrollablePage {
         text: i18n("Toot")
         enabled: AccountManager.hasAccounts
         onTriggered: {
-            const post = AccountManager.selectedAccount.newPost()
+            const post = AccountManager.selectedAccount.newPost();
             pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                postObject: post
-            });
+                    "postObject": post
+                });
         }
     }
 
@@ -50,8 +49,10 @@ Kirigami.ScrollablePage {
 
         Component {
             id: fullScreenImage
-            FullScreenImage {}
+            FullScreenImage {
+            }
         }
-        delegate: PostDelegate {}
+        delegate: PostDelegate {
+        }
     }
 }
