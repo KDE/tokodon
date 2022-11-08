@@ -75,7 +75,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
     } else {
         uri = next;
     }
-    QUrlQuery urlQuery;
+    QUrlQuery urlQuery(uri);
     for (const auto &excludeType : m_excludeTypes) {
         urlQuery.addQueryItem("exclude_types[]", excludeType);
     }
@@ -114,7 +114,7 @@ void NotificationModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_notifications.size() < 1) {
+    if (m_notifications.isEmpty() || !m_next.isValid()) {
         return;
     }
 
