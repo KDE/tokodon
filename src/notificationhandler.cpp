@@ -8,10 +8,10 @@
 #include <KNotification>
 #include <QNetworkAccessManager>
 
-NotificationHandler::NotificationHandler(QObject *parent)
+NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
+    , m_nam(nam)
 {
-    m_nam = new QNetworkAccessManager(this);
 }
 
 void NotificationHandler::handle(std::shared_ptr<Notification> notification, Account *account)

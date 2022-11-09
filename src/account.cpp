@@ -49,7 +49,7 @@ Account::Account(const QString &name, const QString &instance_uri, bool ignoreSs
 {
     setInstanceUri(instance_uri);
     m_identity.reparentIdentity(this);
-    auto notificationHandler = new NotificationHandler(this);
+    auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
         notificationHandler->handle(notification, this);
     });
@@ -61,7 +61,7 @@ Account::Account(const QSettings &settings, QObject *parent)
     , m_maxPostLength(500)
 {
     m_identity.reparentIdentity(this);
-    auto notificationHandler = new NotificationHandler(this);
+    auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
         notificationHandler->handle(notification, this);
     });

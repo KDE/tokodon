@@ -63,7 +63,6 @@ public:
     void fetchAvatar(const QUrl &avatar_url);
     void reparentIdentity(Account *parent);
 
-    QNetworkAccessManager *m_qnam;
     Account *m_parent;
 
     Relationship *relationship() const;

@@ -14,7 +14,7 @@ class NotificationHandler : public QObject
     Q_OBJECT
 
 public:
-    NotificationHandler(QObject *parent = nullptr);
+    NotificationHandler(QNetworkAccessManager *nam, QObject *parent = nullptr);
     void handle(std::shared_ptr<Notification> notification, Account *account);
 
 private:
