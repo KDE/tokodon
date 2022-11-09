@@ -43,7 +43,7 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     return {};
 }
 
-int AccountManager::rowCount(const QModelIndex &index) const
+int AccountManager::rowCount(const QModelIndex &) const
 {
     return m_accounts.size();
 }
