@@ -3,27 +3,23 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.18 as Kirigami
-import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
 
-Kirigami.CategorizedSettings {
-    id: settingsPage
-    objectName: "settingsPage"
-    actions: [
-        Kirigami.SettingAction {
-            text: i18n("General")
-            icon.name: "org.kde.tokodon"
-            page: Qt.resolvedUrl("GeneralPage.qml")
-        },
-        Kirigami.SettingAction {
-            text: i18n("Accounts")
-            icon.name: "preferences-system-users"
-            page: Qt.resolvedUrl("AccountsPage.qml")
-        },
-        Kirigami.SettingAction {
-            text: i18n("Spell Checking")
-            iconName: "tools-check-spelling"
-            page: Qt.resolvedUrl("SonnetConfigPage.qml")
+Kirigami.PageRow {
+    id: pageStack
+
+    globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+
+    initialPage: Kirigami.ScrollablePage {
+        title: i18nc("@title:window", "Settings")
+
+        leftPadding: 0
+        rightPadding: 0
+
+        ColumnLayout {
+            GeneralCard {}
+            AccountsCard {}
+            SonnetCard {}
         }
-    ]
+    }
 }

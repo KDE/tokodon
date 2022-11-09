@@ -11,7 +11,15 @@ Kirigami.ScrollablePage {
     id: timelinePage
     title: model.displayName
 
+    enum TimelineType {
+        Home,
+        Notification,
+        Local,
+        Global
+    }
+
     required property var model
+    required property var type
 
     property alias listViewHeader: listview.header
     property bool isProfile: false

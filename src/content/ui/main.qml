@@ -124,16 +124,18 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action homeAction: Kirigami.Action {
         iconName: "go-home-large"
         text: i18n("Home")
-        checked: pageStack.currentItem.title === i18n("Home")
+        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Home
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline);
+            pageStack.replace(mainTimeline, {
+                type: TimelineType.TimelineType.Home,
+            });
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
         iconName: "notifications"
         text: i18n("Notifications")
-        checked: pageStack.currentItem.title === i18n("Notifications")
+        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Notifications
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
@@ -142,19 +144,25 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         iconName: "system-users"
         text: i18n("Local")
-        checked: pageStack.currentItem.title === i18n("Local Timeline")
+        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Local
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, { name: "public" });
+            pageStack.replace(mainTimeline, {
+                name: "public",
+                type: TimelineType.TimelineType.Local,
+            });
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
         iconName: "kstars_xplanet"
         text: i18n("Global")
-        checked: pageStack.currentItem.title === i18n("Global Timeline")
+        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Global
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, { name: "federated" });
+            pageStack.replace(mainTimeline, {
+                name: "federated",
+                type: TimelineType.TimelineType.Global,
+            });
         }
     }
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
@@ -184,6 +192,7 @@ Kirigami.ApplicationWindow {
         id: mainTimeline
         TimelinePage {
             property alias name: timelineModel.name
+            type: TimelinePage.TimelineType.H
             model: TimelineModel {
                 id: timelineModel
                 accountManager: AccountManager
@@ -195,6 +204,7 @@ Kirigami.ApplicationWindow {
     Component {
         id: notificationTimeline
         NotificationPage {
+            property var type
             model: TimelineModel {
                 id: timelineModel
                 accountManager: AccountManager
