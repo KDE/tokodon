@@ -13,7 +13,7 @@
 
 QString Identity::displayName() const
 {
-    return m_display_name;
+    return !m_display_name.isEmpty() ? m_display_name : m_acct;
 }
 
 QUrl Identity::avatarUrl() const
