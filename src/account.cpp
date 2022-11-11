@@ -135,132 +135,84 @@ bool Account::isRegistered() const
 
 void Account::get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
-    QNetworkRequest request = QNetworkRequest(url);
-
-    if (authenticated && haveToken()) {
-        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
-        request.setRawHeader("Authorization", bearer);
-    }
-
+    QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
     QNetworkReply *reply = m_qnam->get(request);
-
-    if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
-                return;
-            }
-            reply_cb(reply);
-        });
-    }
+    handleReply(reply, reply_cb);
 }
 
 void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
-    QNetworkRequest request = QNetworkRequest(url);
+    QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-    if (authenticated && haveToken()) {
-        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
-        request.setRawHeader("Authorization", bearer);
-    }
-
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     auto reply = m_qnam->post(request, post_data);
-
-    if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
-                return;
-            }
-            reply_cb(reply);
-        });
-    }
+    handleReply(reply, reply_cb);
 }
 
 void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
-    QNetworkRequest request = QNetworkRequest(url);
+    QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-    if (authenticated && haveToken()) {
-        QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
-        request.setRawHeader("Authorization", bearer);
-    }
-
     qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->put(request, post_data);
-
-    if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
-                return;
-            }
-            reply_cb(reply);
-        });
-    }
+    handleReply(reply, reply_cb);
 }
 
 void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = formdata.toString().toLatin1();
 
-    QNetworkRequest request = QNetworkRequest(url);
+    QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
-
-    if (authenticated && haveToken()) {
-        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
-        request.setRawHeader("Authorization", bearer);
-    }
-
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->post(request, post_data);
-
-    if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
-                return;
-            }
-            reply_cb(reply);
-        });
-    }
+    handleReply(reply, reply_cb);
 }
 
 void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
 {
-    QNetworkRequest request = QNetworkRequest(url);
+    QNetworkRequest request = makeRequest(url, authenticated);
 
     qCDebug(TOKODON_HTTP) << "POST" << url << "(multipart-message)";
+
+    QNetworkReply *reply = m_qnam->post(request, message);
+    message->setParent(reply);
+    handleReply(reply, reply_cb);
+}
+
+QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
+{
+    QNetworkRequest request(url);
 
     if (authenticated && haveToken()) {
         const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
-    QNetworkReply *reply = m_qnam->post(request, message);
-    message->setParent(reply);
+    return request;
+}
 
-    if (reply_cb != nullptr) {
-        QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb, &url]() {
+void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply*)> reply_cb) const
+{
+    QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
+        reply->deleteLater();
+        if (reply_cb) {
             if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << url;
+                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 return;
             }
             reply_cb(reply);
-        });
-    }
+        }
+    });
 }
 
 // assumes file is already opened and named

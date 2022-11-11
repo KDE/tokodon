@@ -286,4 +286,8 @@ private:
     // updates and notifications
     void handleUpdate(const QJsonDocument &doc, const QString &target);
     void handleNotification(const QJsonDocument &doc);
+
+    // common parts for all HTTP request
+    QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;
+    void handleReply(QNetworkReply *reply, std::function<void(QNetworkReply *)> reply_cb) const;
 };
