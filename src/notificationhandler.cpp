@@ -47,6 +47,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Acc
         auto request = QNetworkRequest(avatarUrl);
         auto reply = m_nam->get(request);
         connect(reply, &QNetworkReply::finished, this, [reply, knotification]() {
+            reply->deleteLater();
             if (reply->error() != QNetworkReply::NoError) {
                 knotification->sendEvent();
                 return;
