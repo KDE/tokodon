@@ -42,16 +42,11 @@ void Identity::setRelationship(Relationship *r)
 Account::Account(const QString &name, const QString &instance_uri, bool ignoreSslErrors, QObject *parent)
     : QObject(parent)
     , m_name(name)
+    , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(new QNetworkAccessManager(this))
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
 {
-    if (ignoreSslErrors) {
-        connect(m_qnam, &QNetworkAccessManager::sslErrors, this, [](QNetworkReply * reply, const QList<QSslError> &) {
-            reply->ignoreSslErrors();
-        });
-        m_ignoreSslErrors = true;
-    }
     setInstanceUri(instance_uri);
     m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(this);
@@ -213,6 +208,11 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
             reply_cb(reply);
         }
     });
+    if (m_ignoreSslErrors) {
+        connect(reply, &QNetworkReply::sslErrors, this, [reply](const QList<QSslError> &) {
+            reply->ignoreSslErrors();
+        });
+    }
 }
 
 // assumes file is already opened and named
@@ -395,13 +395,7 @@ void Account::buildFromSettings(const QSettings &settings)
         m_client_secret = settings.value("client_secret").toString();
         m_name = settings.value("name").toString();
         m_instance_uri = settings.value("instance_uri").toString();
-
-        if (settings.value("ignoreSslErrors", false).toBool()) {
-            connect(m_qnam, &QNetworkAccessManager::sslErrors, this, [](QNetworkReply * reply, const QList<QSslError> &) {
-                reply->ignoreSslErrors();
-            });
-            m_ignoreSslErrors = true;
-        }
+        m_ignoreSslErrors = settings.value("ignoreSslErrors", false).toBool();
         validateToken();
     }
 }
