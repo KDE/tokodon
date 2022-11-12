@@ -11,6 +11,8 @@
 #include "account.h"
 #include "post.h"
 
+class QNetworkAccessManager;
+
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
@@ -68,4 +70,5 @@ private:
     QList<Account *> m_accounts;
     Account *m_selected_account;
     KAboutData m_aboutData;
+    QNetworkAccessManager *m_qnam;
 };

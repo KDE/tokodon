@@ -7,6 +7,7 @@
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
+    , m_qnam(new QNetworkAccessManager(this))
 {
     QSettings settings;
     loadFromSettings(settings);
@@ -65,7 +66,7 @@ AccountManager &AccountManager::instance()
 
 Account *AccountManager::createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors)
 {
-    return new Account(username, instanceUri, ignoreSslErrors, this);
+    return new Account(username, instanceUri, m_qnam, ignoreSslErrors, this);
 }
 
 bool AccountManager::hasAccounts() const
@@ -173,7 +174,7 @@ void AccountManager::loadFromSettings(QSettings &settings)
     for (const auto &child : childGroups) {
         settings.beginGroup(child);
 
-        auto account = new Account(settings);
+        auto account = new Account(settings, m_qnam);
         if (account->haveToken()) {
             addAccount(account);
             qDebug() << "Loaded from settings:" << account;

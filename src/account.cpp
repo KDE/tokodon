@@ -39,11 +39,11 @@ void Identity::setRelationship(Relationship *r)
     Q_EMIT relationshipChanged();
 }
 
-Account::Account(const QString &name, const QString &instance_uri, bool ignoreSslErrors, QObject *parent)
+Account::Account(const QString &name, const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
     : QObject(parent)
     , m_name(name)
     , m_ignoreSslErrors(ignoreSslErrors)
-    , m_qnam(new QNetworkAccessManager(this))
+    , m_qnam(nam)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
 {
@@ -55,11 +55,12 @@ Account::Account(const QString &name, const QString &instance_uri, bool ignoreSs
     });
 }
 
-Account::Account(const QSettings &settings, QObject *parent)
+Account::Account(const QSettings &settings, QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
-    , m_qnam(new QNetworkAccessManager(this))
+    , m_qnam(nam)
     , m_maxPostLength(500)
 {
+    qDebug() << "XXX";
     m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {

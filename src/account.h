@@ -91,8 +91,8 @@ class Account : public QObject
     Q_PROPERTY(Identity *identity READ identityObj CONSTANT)
 
 public:
-    explicit Account(const QString &username, const QString &instance_uri, bool ignoreSslErrors = false, QObject *parent = nullptr);
-    explicit Account(const QSettings &settings, QObject *parent = nullptr);
+    explicit Account(const QString &username, const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, QObject *parent = nullptr);
+    explicit Account(const QSettings &settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account();
 
     // API stuff (registering)
