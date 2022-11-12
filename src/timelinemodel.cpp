@@ -151,9 +151,6 @@ void TimelineModel::fetchedTimeline(Account *account, const QString &original_na
         return;
     }
 
-    int row = 0;
-    int last = 0;
-
     if (!m_timeline.isEmpty()) {
         const auto post_old = m_timeline.first();
         const auto post_new = posts.first();
@@ -161,22 +158,21 @@ void TimelineModel::fetchedTimeline(Account *account, const QString &original_na
         qDebug() << "fetchedTimeline"
                  << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;
         if (post_old->m_post_id > post_new->m_post_id) {
-            row = m_timeline.size();
-            last = row + posts.size() - 1;
+            const int row = m_timeline.size();
+            const int last = row + posts.size() - 1;
+            beginInsertRows(QModelIndex(), row, last);
             m_timeline += posts;
+            endInsertRows();
         } else {
-            row = 0;
-            last = posts.size();
+            beginInsertRows(QModelIndex(), 0, posts.size());
             m_timeline = posts + m_timeline;
+            endInsertRows();
         }
     } else {
-        row = 0;
-        last = posts.size() - 1;
+        beginInsertRows(QModelIndex(), 0, posts.size() - 1);
         m_timeline = posts;
+        endInsertRows();
     }
-
-    beginInsertRows(QModelIndex(), row, last);
-    endInsertRows();
 
     m_last_fetch = time(nullptr);
 }
