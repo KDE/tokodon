@@ -32,6 +32,7 @@ add_executable(tokodon
     notificationmodel.cpp
     clipboard.cpp
     relationship.cpp
+    networkaccessmanagerfactory.cpp
     notificationhandler.cpp
     notificationmodel.cpp
     abstracttimelinemodel.cpp

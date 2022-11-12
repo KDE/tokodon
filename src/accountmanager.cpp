@@ -3,11 +3,12 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "accountmanager.h"
+#include "networkaccessmanagerfactory.h"
 
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
-    , m_qnam(new QNetworkAccessManager(this))
+    , m_qnam(NetworkAccessManagerFactory().create(this))
 {
     QSettings settings;
     loadFromSettings(settings);

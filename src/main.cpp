@@ -35,6 +35,7 @@
 #include "attachmenteditormodel.h"
 #include "clipboard.h"
 #include "config.h"
+#include "networkaccessmanagerfactory.h"
 #include "notificationmodel.h"
 #include "post.h"
 #include "timelinemodel.h"
@@ -114,6 +115,9 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     KLocalizedString::setApplicationDomain("kmasto");
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
+
+    NetworkAccessManagerFactory namFactory;
+    engine.setNetworkAccessManagerFactory(&namFactory);
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
