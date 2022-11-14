@@ -76,7 +76,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
         uri = next;
     }
     QUrlQuery urlQuery(uri);
-    for (const auto &excludeType : m_excludeTypes) {
+    for (const auto &excludeType : std::as_const(m_excludeTypes)) {
         urlQuery.addQueryItem("exclude_types[]", excludeType);
     }
     uri.setQuery(urlQuery);
@@ -100,7 +100,8 @@ void NotificationModel::fillTimeline(const QUrl &next)
         m_next = QUrl::fromUserInput(match.captured(1));
 
         QList<std::shared_ptr<Notification>> notifications;
-        for (const auto &value : doc.array()) {
+        const auto values = doc.array();
+        for (const auto &value : values) {
             QJsonObject obj = value.toObject();
 
             auto notification = std::make_shared<Notification>(m_account, obj);

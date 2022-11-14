@@ -10,9 +10,11 @@
 #include "account.h"
 #include "post.h"
 
-static QMap<QString, Attachment::AttachmentType> str_to_att_type = {{"image", Attachment::AttachmentType::Image},
-                                                                    {"gifv", Attachment::AttachmentType::GifV},
-                                                                    {"video", Attachment::AttachmentType::Video}};
+static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
+    {"image", Attachment::AttachmentType::Image},
+    {"gifv", Attachment::AttachmentType::GifV},
+    {"video", Attachment::AttachmentType::Video},
+};
 
 Attachment::Attachment(Post *parent, const QJsonObject &obj)
     : m_parent(parent)
@@ -29,36 +31,39 @@ Attachment::Attachment(Post *parent, const QJsonObject &obj)
 
     // determine type if we can
     auto type = obj["type"].toString();
-    if (str_to_att_type.contains(type))
-        m_type = str_to_att_type[type];
+    if (stringToAttachmentType.contains(type)) {
+        m_type = stringToAttachmentType[type];
+    }
 }
 
-Attachment::~Attachment()
-{
-}
+Attachment::~Attachment() = default;
 
-void Attachment::setDescription(QString desc)
+void Attachment::setDescription(const QString &description)
 {
-    m_description = desc;
+    m_description = description;
     m_parent->updateAttachment(this);
 }
 
-static QMap<Post::Visibility, QString> vis_to_str = {{Post::Visibility::Public, "public"},
-                                                     {Post::Visibility::Unlisted, "unlisted"},
-                                                     {Post::Visibility::Private, "private"},
-                                                     {Post::Visibility::Direct, "direct"}};
+static QMap<Post::Visibility, QString> visibilityToString = {
+    {Post::Visibility::Public, "public"},
+    {Post::Visibility::Unlisted, "unlisted"},
+    {Post::Visibility::Private, "private"},
+    {Post::Visibility::Direct, "direct"},
+};
 
-static QMap<QString, Post::Visibility> str_to_vis = {{"public", Post::Visibility::Public},
-                                                     {"unlisted", Post::Visibility::Unlisted},
-                                                     {"private", Post::Visibility::Private},
-                                                     {"direct", Post::Visibility::Direct}};
+static QMap<QString, Post::Visibility> stringToVisibility = {
+    {"public", Post::Visibility::Public},
+    {"unlisted", Post::Visibility::Unlisted},
+    {"private", Post::Visibility::Private},
+    {"direct", Post::Visibility::Direct},
+};
 
 Post::Post(Account *parent)
     : QObject(parent)
     , m_parent(parent)
 {
     QString vis_str = parent->identity().m_visibility;
-    m_visibility = str_to_vis[vis_str];
+    m_visibility = stringToVisibility[vis_str];
 }
 
 Post::Post(Account *parent, QJsonObject obj)
@@ -96,7 +101,7 @@ Post::Post(Account *parent, QJsonObject obj)
     m_isSensitive = obj["sensitive"].toBool();
     m_link = QUrl(obj["url"].toString());
     m_pinned = obj["pinned"].toBool();
-    m_visibility = str_to_vis[obj["visibility"].toString()];
+    m_visibility = stringToVisibility[obj["visibility"].toString()];
     m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
     addAttachments(obj["media_attachments"].toArray());
     const QJsonArray mentions = obj["mentions"].toArray();
@@ -180,7 +185,7 @@ QJsonDocument Post::toJsonDocument() const
     obj["status"] = m_content;
     obj["content_type"] = m_content_type;
     obj["sensitive"] = m_isSensitive;
-    obj["visibility"] = vis_to_str[m_visibility];
+    obj["visibility"] = visibilityToString[m_visibility];
 
     if (!m_replyTargetId.isEmpty())
         obj["in_reply_to_id"] = m_replyTargetId;

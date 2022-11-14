@@ -633,16 +633,19 @@ static Account::AllowedContentType parseVersion(const QString &instanceVer)
     using ContentType = Account::AllowedContentType;
 
     unsigned int result = ContentType::PlainText;
-    if (instanceVer.contains("glitch"))
+    if (instanceVer.contains("glitch")) {
         result |= ContentType::Markdown | ContentType::Html;
+    }
 
     return static_cast<ContentType>(result);
 }
 
-static QMap<QString, Account::AllowedContentType> str_to_content_type = {{"text/plain", Account::AllowedContentType::PlainText},
-                                                                         {"text/bbcode", Account::AllowedContentType::BBCode},
-                                                                         {"text/html", Account::AllowedContentType::Html},
-                                                                         {"text/markdown", Account::AllowedContentType::Markdown}};
+static QMap<QString, Account::AllowedContentType> stringToContentType = {
+    {"text/plain", Account::AllowedContentType::PlainText},
+    {"text/bbcode", Account::AllowedContentType::BBCode},
+    {"text/html", Account::AllowedContentType::Html},
+    {"text/markdown", Account::AllowedContentType::Markdown},
+};
 
 static Account::AllowedContentType parse_pleroma_info(const QJsonDocument &doc)
 {
@@ -660,10 +663,10 @@ static Account::AllowedContentType parse_pleroma_info(const QJsonDocument &doc)
         for (auto c : formats) {
             auto fmt = c.toString();
 
-            if (!str_to_content_type.contains(fmt))
+            if (!stringToContentType.contains(fmt))
                 continue;
 
-            result |= (unsigned int)str_to_content_type[fmt];
+            result |= (unsigned int)stringToContentType[fmt];
         }
     }
 

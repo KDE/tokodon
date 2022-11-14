@@ -32,7 +32,6 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     } else {
         const QJsonObject empty;
         m_identity = m_account->identityLookup(acct, empty);
-        Q_EMIT identityChanged();
     }
 
     if (m_account->identity().id() != m_identity->id()) {

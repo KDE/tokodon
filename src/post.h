@@ -86,7 +86,7 @@ public:
     QString m_url;
     QString m_description;
 
-    void setDescription(QString desc);
+    void setDescription(const QString &description);
 };
 
 class Notification

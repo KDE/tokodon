@@ -19,7 +19,7 @@ AccountManager::~AccountManager()
     QSettings settings;
     writeToSettings(settings);
 
-    for (auto a : m_accounts) {
+    for (auto a : std::as_const(m_accounts)) {
         delete a;
     }
 
@@ -46,6 +46,7 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
 
 int AccountManager::rowCount(const QModelIndex &index) const
 {
+    Q_UNUSED(index)
     return m_accounts.size();
 }
 
