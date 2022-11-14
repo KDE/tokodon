@@ -24,7 +24,7 @@ MobileForm.FormCard {
             title: i18n("Spellchecking")
         }
 
-        MobileForm.FormSwitchDelegate {
+        MobileForm.FormCheckDelegate {
             id: enable
             checked: settings.checkerEnabledByDefault
             text: i18n("Enable automatic spell checking")
@@ -36,7 +36,7 @@ MobileForm.FormCard {
 
         MobileForm.FormDelegateSeparator { below: enable; above: skipUppercase }
 
-        MobileForm.FormSwitchDelegate {
+        MobileForm.FormCheckDelegate {
             id: skipUppercase
             checked: settings.skipUppercase
             text: i18n("Ignore uppercase words")
@@ -48,7 +48,7 @@ MobileForm.FormCard {
 
         MobileForm.FormDelegateSeparator { below: skipUppercase; above: skipRunTogether }
 
-        MobileForm.FormSwitchDelegate {
+        MobileForm.FormCheckDelegate {
             id: skipRunTogether
             checked: settings.skipRunTogether
             text: i18n("Ignore hyphenated words")
@@ -60,7 +60,7 @@ MobileForm.FormCard {
 
         MobileForm.FormDelegateSeparator { below: skipRunTogether; above: autodetectLanguageCheckbox }
 
-        MobileForm.FormSwitchDelegate {
+        MobileForm.FormCheckDelegate {
             id: autodetectLanguageCheckbox
             checked: settings.autodetectLanguage
             text: i18n("Detect language automatically")

@@ -20,7 +20,7 @@ MobileForm.FormCard {
 
         MobileForm.FormSwitchDelegate {
             id: showStats
-            text: i18n("Show detailed statistics about posts.")
+            text: i18n("Show detailed statistics about posts")
             checked: Config.showPostStats
             enabled: !Config.isShowPostStatsImmutable
             onToggled: {
@@ -33,7 +33,7 @@ MobileForm.FormCard {
 
         MobileForm.FormSwitchDelegate {
             id: showLinkPreview
-            text: i18n("Show link preview.")
+            text: i18n("Show link preview")
             checked: Config.showLinkPreview
             enabled: !Config.isShowLinkPreviewImmutable
             onToggled: {
