@@ -170,28 +170,53 @@ Kirigami.BasicListItem {
             }
         }
 
-        Kirigami.AbstractCard {
+        QQC2.Control {
             visible: model.card && tootContent.visible && Config.showLinkPreview
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.smallSpacing
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            leftPadding: 0
+            topPadding: 0
+            rightPadding: 0
+            bottomPadding: 0
             TapHandler {
                 onTapped: Qt.openUrlExternally(model.card.url)
             }
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
+            background: Rectangle {
+                border {
+                    width: 1
+                    color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor,0.15)
+                }
+            }
             contentItem: RowLayout {
                 QQC2.Pane {
+                    id: logo
                     visible: model.card && model.card.image
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     Layout.preferredHeight: Kirigami.Units.gridUnit * 3
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 3
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 3
+                    Layout.minimumHeight: Kirigami.Units.gridUnit * 3
                     Layout.rightMargin: Kirigami.Units.smallSpacing
-                    Image {
-                        anchors.centerIn: parent
-                        sourceSize.width: Kirigami.Units.gridUnit * 3
-                        sourceSize.height: Kirigami.Units.gridUnit * 3
+                    Layout.topMargin: 1
+                    Layout.bottomMargin: 1
+                    Layout.leftMargin: 1
+
+                    contentItem: Image {
+                        id: img
+                        mipmap: true
+                        smooth: true
+                        sourceSize {
+                            width: logo.width
+                            height: logo.height
+                        }
+
+                        fillMode: Image.PreserveAspectCrop
+                        anchors {
+                            fill: parent
+                        }
                         source: model.card ? model.card.image : ''
                     }
                 }
