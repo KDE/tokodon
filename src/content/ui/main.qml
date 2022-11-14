@@ -110,6 +110,7 @@ Kirigami.ApplicationWindow {
             Item {
                 Layout.fillHeight: true
             }
+
             Kirigami.BasicListItem {
                 action: Kirigami.Action {
                     icon.name: "settings-configure"
@@ -156,15 +157,16 @@ Kirigami.ApplicationWindow {
             pageStack.replace(mainTimeline, { name: "federated" });
         }
     }
-
-    footer: Kirigami.NavigationTabBar {
+    property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         anchors.left: parent.left
         anchors.right: parent.right
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
         actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
     }
-    //header: Kirigami.Settings.isMobile ? null : toolBar
+
+    footer: Kirigami.Settings.isMobile ? tabBar : null
+    header: Kirigami.Settings.isMobile ? null : toolBar
 
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
