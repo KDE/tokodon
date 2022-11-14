@@ -166,7 +166,6 @@ Kirigami.ApplicationWindow {
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
-    header: Kirigami.Settings.isMobile ? null : toolBar
 
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
