@@ -222,6 +222,7 @@ Kirigami.BasicListItem {
                 }
                 ColumnLayout {
                     Layout.fillWidth: true
+                    Layout.margins: Kirigami.Units.smallSpacing
                     Kirigami.Heading {
                         level: 3
                         text: model.card ? model.card.title : ''
