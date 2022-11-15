@@ -128,7 +128,7 @@ Kirigami.ApplicationWindow {
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
-                type: TimelineType.TimelineType.Home,
+                type: TimelinePage.TimelineType.Home,
             });
         }
     }
@@ -149,7 +149,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "public",
-                type: TimelineType.TimelineType.Local,
+                type: TimelinePage.TimelineType.Local,
             });
         }
     }
@@ -190,7 +190,7 @@ Kirigami.ApplicationWindow {
         id: mainTimeline
         TimelinePage {
             property alias name: timelineModel.name
-            type: TimelinePage.TimelineType.H
+            type: TimelinePage.TimelineType.Home
             model: TimelineModel {
                 id: timelineModel
                 accountManager: AccountManager
