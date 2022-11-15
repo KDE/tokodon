@@ -6,6 +6,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
+import QtGraphicalEffects 1.0
 
 Kirigami.BasicListItem {
     topPadding: Kirigami.Units.largeSpacing
@@ -35,12 +36,12 @@ Kirigami.BasicListItem {
             color: Kirigami.Theme.disabledTextColor
             Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
             Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
         QQC2.Label {
             text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.actorDisplayName) : ''
             visible: model.type === Notification.Favorite
-            font: Kirigami.Theme.smallFont
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
 
         Kirigami.Icon {
@@ -49,13 +50,13 @@ Kirigami.BasicListItem {
             visible: model.pinned && timelinePage.isProfile
             Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
             Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
         QQC2.Label {
             text: i18n("Pinned entry")
             visible: model.pinned && timelinePage.isProfile
             color: Kirigami.Theme.disabledTextColor
-            font: Kirigami.Theme.smallFont
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
 
         Kirigami.Icon {
@@ -65,13 +66,14 @@ Kirigami.BasicListItem {
             color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
             Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
+
         QQC2.Label {
             visible: model.wasReblogged || model.type === Notification.Repeat
             text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.actorDisplayName) : '')
             color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            font: Kirigami.Theme.smallFont
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
 
         Kirigami.Avatar {
@@ -91,17 +93,22 @@ Kirigami.BasicListItem {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: Kirigami.Units.smallSpacing
-            QQC2.Label {
+            Kirigami.Heading {
+                id: heading
+                level: 5
                 text: model.authorDisplayName
+                type: Kirigami.Heading.Type.Primary
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
             }
-            QQC2.Label {
+            Kirigami.Heading {
+                level: 5
                 Layout.fillWidth: true
                 elide: Text.ElideRight
                 color: Kirigami.Theme.disabledTextColor
                 text: `@${model.authorId}`
             }
-            QQC2.Label {
+            Kirigami.Heading {
+                level: 5
                 text: model.relativeTime
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
             }
@@ -121,6 +128,7 @@ Kirigami.BasicListItem {
             }
             TextEdit {
                 id: tootContent
+                font.pointSize: heading.font.pointSize
                 Layout.fillWidth: true
                 text: "<style>
 a{
@@ -156,13 +164,31 @@ a{
             Layout.fillWidth: true
             columns: model.attachments.length > 1 ? 2 : 1
             Repeater {
+                id: attachmentsRepeater
                 model: attachments
                 Image {
+                    id: img
                     Layout.fillWidth: true
-                    Layout.maximumWidth: sourceSize.width
-                    Layout.maximumHeight: width / sourceSize.width * sourceSize.height
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    //Layout.maximumWidth: sourceSize.width
+                    Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
                     source: modelData.previewUrl
+                    mipmap: true
                     cache: true
+                    fillMode: Image.PreserveAspectCrop
+                    layer.enabled: true
+                    layer.effect: OpacityMask {
+                        maskSource: Item {
+                            width: img.width
+                            height: img.height
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: img.width
+                                height: img.height
+                                radius: Kirigami.Units.smallSpacing
+                            }
+                        }
+                    }
                     TapHandler {
                         onTapped: {
                             fullScreenImage.createObject(parent, {
@@ -250,6 +276,7 @@ a{
         }
 
         RowLayout {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             QQC2.ToolButton {
                 icon.name: "mail-replied-symbolic"
                 icon.width: Kirigami.Units.iconSizes.smallMedium
