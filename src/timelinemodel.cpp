@@ -13,7 +13,6 @@ TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
     , m_last_fetch(time(nullptr))
 {
-    connect(m_manager, &AccountManager::accountSelected, this, &TimelineModel::nameChanged);
 }
 
 void TimelineModel::setName(const QString &timelineName)
