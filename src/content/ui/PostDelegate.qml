@@ -122,7 +122,12 @@ Kirigami.BasicListItem {
             TextEdit {
                 id: tootContent
                 Layout.fillWidth: true
-                text: model.display
+                text: "<style>
+a{
+    color: " + Kirigami.Theme.linkColor + ";
+    text-decoration: none;
+}
+</style>" + model.display
                 textFormat: TextEdit.RichText
                 wrapMode: Text.Wrap
                 visible: model.spoilerText.length === 0
