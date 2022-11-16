@@ -21,6 +21,7 @@ MastoPage {
             id: instanceUrl
             Kirigami.FormData.label: i18n("Instance Url:")
             onAccepted: username.forceActiveFocus()
+            inputMethodHints: Qt.ImhUrlCharactersOnly
         }
         QQC2.TextField {
             id: username
