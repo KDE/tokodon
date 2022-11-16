@@ -48,6 +48,7 @@ ApplicationWindow {
 
                 width: Math.min(sourceSize.width, root.width)
                 height: Math.min(sourceSize.height, root.height - description.height - Kirigami.Units.gridUnit)
+                mipmap: true
 
                 cache: false
                 fillMode: Image.PreserveAspectFit
