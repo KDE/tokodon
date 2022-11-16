@@ -163,7 +163,7 @@ void TimelineModel::fetchedTimeline(Account *account, const QString &original_na
             m_timeline += posts;
             endInsertRows();
         } else {
-            beginInsertRows(QModelIndex(), 0, posts.size());
+            beginInsertRows(QModelIndex(), 0, posts.size() - 1);
             m_timeline = posts + m_timeline;
             endInsertRows();
         }
