@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:47+0000\n"
 "PO-Revision-Date: 2022-10-30 13:15+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -242,7 +242,7 @@ msgstr "SSL-fouten negeren"
 msgid "Instance URL and username must not be empty!"
 msgstr "URL van exemplaar en gebruikersnaam mogen niet leeg zijn!"
 
-#: content/ui/main.qml:96
+#: content/ui/main.qml:96 content/ui/Settings/AccountsCard.qml:90
 #, kde-format
 msgid "Add Account"
 msgstr "Account toevoegen"
@@ -253,38 +253,27 @@ msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: content/ui/main.qml:126 content/ui/main.qml:127
+#: content/ui/main.qml:126
 #, kde-format
 msgid "Home"
 msgstr "Home"
 
-#: content/ui/main.qml:135 content/ui/main.qml:136
-#: content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:137 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: content/ui/main.qml:144
+#: content/ui/main.qml:146
 #, kde-format
 msgid "Local"
 msgstr "Lokaal"
 
-#: content/ui/main.qml:145
-#, kde-format
-msgid "Local Timeline"
-msgstr "Locale tijdlijn"
-
-#: content/ui/main.qml:153
+#: content/ui/main.qml:158
 #, kde-format
 msgid "Global"
 msgstr "Globaal"
 
-#: content/ui/main.qml:154
-#, kde-format
-msgid "Global Timeline"
-msgstr "Globale tijdlijn"
-
-#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:37
+#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:45
 #, kde-format
 msgid "Toot"
 msgstr "Toot"
@@ -306,133 +295,127 @@ msgstr "Vermeldingen"
 msgid "%1 followed you"
 msgstr "%1 volgde u"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:59
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
 #, kde-format
 msgid "Loading..."
 msgstr "Bezig met laden..."
 
-#: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
+#: content/ui/PostDelegate.qml:42 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 vond uw bericht de favoriet"
 
-#: content/ui/PostDelegate.qml:55
+#: content/ui/PostDelegate.qml:56
 #, kde-format
 msgid "Pinned entry"
 msgstr "Vastgezet item"
 
-#: content/ui/PostDelegate.qml:72
+#: content/ui/PostDelegate.qml:74
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 versterkt"
 
-#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:74 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 versterkte uw bericht"
 
-#: content/ui/PostDelegate.qml:118
+#: content/ui/PostDelegate.qml:125
 #, kde-format
 msgid "Show more"
 msgstr "Meer tonen"
 
-#: content/ui/PostDelegate.qml:265
+#: content/ui/PostDelegate.qml:297
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: content/ui/PostDelegate.qml:275
+#: content/ui/PostDelegate.qml:307
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Oppepper"
 
-#: content/ui/PostDelegate.qml:285
+#: content/ui/PostDelegate.qml:317
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Is OK"
 
-#: content/ui/Settings/AccountsPage.qml:14
-#: content/ui/Settings/SettingsPage.qml:19
+#: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
 msgid "Accounts"
 msgstr "Accounts"
 
-#: content/ui/Settings/AccountsPage.qml:22
-#: content/ui/Settings/AccountsPage.qml:104
-#, kde-format
-msgid "Add an account"
-msgstr "Een account toevoegen"
-
-#: content/ui/Settings/AccountsPage.qml:81
+#: content/ui/Settings/AccountsCard.qml:67
 #, kde-format
 msgid "Logout"
 msgstr "Afmelden"
 
-#: content/ui/Settings/GeneralPage.qml:12
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
 msgid "General"
 msgstr "Algemeen"
 
-#: content/ui/Settings/GeneralPage.qml:16
-#, kde-format
-msgid "Show detailed statistics about posts."
+#: content/ui/Settings/GeneralCard.qml:23
+#, fuzzy, kde-format
+#| msgid "Show detailed statistics about posts."
+msgid "Show detailed statistics about posts"
 msgstr "Gedetailleerde statistieken tonen over posten."
 
-#: content/ui/Settings/GeneralPage.qml:26
-#, kde-format
-msgid "Show link preview."
+#: content/ui/Settings/GeneralCard.qml:36
+#, fuzzy, kde-format
+#| msgid "Show link preview."
+msgid "Show link preview"
 msgstr "Koppelingsvoorbeeld tonen."
 
-#: content/ui/Settings/SettingsPage.qml:24
-#, kde-format
-msgid "Spell Checking"
+#: content/ui/Settings/SettingsPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Instellingen"
+
+#: content/ui/Settings/SonnetCard.qml:24
+#, fuzzy, kde-format
+#| msgid "Spell Checking"
+msgid "Spellchecking"
 msgstr "Spellingcontrole"
 
-#: content/ui/Settings/SonnetConfigPage.qml:94
-#, kde-format
-msgid "Selected default language:"
-msgstr "Geselecteerde standaardtaal:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:105
-#, kde-format
-msgid "Open Personal Dictionary"
-msgstr "Persoonlijk woordenboek openen"
-
-#: content/ui/Settings/SonnetConfigPage.qml:124
-#, kde-format
-msgid "Options:"
-msgstr "Opties:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:126
+#: content/ui/Settings/SonnetCard.qml:30
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Automatische spellingcontrole inschakelen"
 
-#: content/ui/Settings/SonnetConfigPage.qml:137
+#: content/ui/Settings/SonnetCard.qml:42
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Woorden in hoofdletters negeren"
 
-#: content/ui/Settings/SonnetConfigPage.qml:148
+#: content/ui/Settings/SonnetCard.qml:54
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Woorden met koppeltekens negeren"
 
-#: content/ui/Settings/SonnetConfigPage.qml:160
+#: content/ui/Settings/SonnetCard.qml:66
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Taal automatisch detecteren"
 
-#: content/ui/Settings/SonnetConfigPage.qml:172
+#: content/ui/Settings/SonnetCard.qml:77
 #, kde-format
-msgid "Spell checking languages"
+msgid "Selected default language:"
+msgstr "Geselecteerde standaardtaal:"
+
+#: content/ui/Settings/SonnetCard.qml:89
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgid "Additional spell checking languages"
 msgstr "Talen met spellingcontrole"
 
-#: content/ui/Settings/SonnetConfigPage.qml:180
+#: content/ui/Settings/SonnetCard.qml:90
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -441,32 +424,45 @@ msgstr ""
 "%1 zal spellingcontrole bieden en suggesties voor de talen hier in de lijst "
 "wanneer automatische detectie is ingeschakeld."
 
-#: content/ui/Settings/SonnetConfigPage.qml:222
+#: content/ui/Settings/SonnetCard.qml:101
+#, kde-format
+msgid "Open Personal Dictionary"
+msgstr "Persoonlijk woordenboek openen"
+
+#: content/ui/Settings/SonnetCard.qml:112
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgctxt "@title:window"
+msgid "Spell checking languages"
+msgstr "Talen met spellingcontrole"
+
+#: content/ui/Settings/SonnetCard.qml:122
+#: content/ui/Settings/SonnetCard.qml:132
+#, fuzzy, kde-format
+#| msgid "Selected default language:"
+msgid "Default Language"
+msgstr "Geselecteerde standaardtaal:"
+
+#: content/ui/Settings/SonnetCard.qml:144
+#, kde-format
+msgid "Spell checking dictionary"
+msgstr "Woordenboek voor spellingcontrole"
+
+#: content/ui/Settings/SonnetCard.qml:151
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Een nieuw woord aan uw persoonlijke woordenboek toevoegen…"
 
-#: content/ui/Settings/SonnetConfigPage.qml:225
+#: content/ui/Settings/SonnetCard.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Add word"
 msgstr "Woord toevoegen"
 
-#: content/ui/Settings/SonnetConfigPage.qml:244
-#, kde-format
-msgid "Spell checking dictionary"
-msgstr "Woordenboek voor spellingcontrole"
-
-#: content/ui/Settings/SonnetConfigPage.qml:270
-#: content/ui/Settings/SonnetConfigPage.qml:301
+#: content/ui/Settings/SonnetCard.qml:181
 #, kde-format
 msgid "Delete word"
 msgstr "Woord verwijderen"
-
-#: content/ui/Settings/SonnetConfigPage.qml:318
-#, kde-format
-msgid "Apply"
-msgstr "Toepassen"
 
 #: content/ui/TootComposer.qml:13
 #, kde-format
@@ -574,18 +570,18 @@ msgstr "Client Voor het gedecentraliseerde sociale netwerk: mastodon"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Er is een fout opgetreden bij het ophalen van de laatste melding."
 
-#: notificationmodel.cpp:262 timelinemodel.cpp:296
+#: notificationmodel.cpp:262 timelinemodel.cpp:295
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:266 timelinemodel.cpp:300
+#: notificationmodel.cpp:266 timelinemodel.cpp:299
 #, kde-format
 msgid "%1h"
 msgstr "%1u"
 
-#: notificationmodel.cpp:268 timelinemodel.cpp:302
+#: notificationmodel.cpp:268 timelinemodel.cpp:301
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -596,29 +592,44 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Thread"
 
-#: timelinemodel.cpp:33
+#: timelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Home (%1)"
 
-#: timelinemodel.cpp:35
+#: timelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Home"
 
-#: timelinemodel.cpp:38
+#: timelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Locale tijdlijn"
 
-#: timelinemodel.cpp:40
+#: timelinemodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Globale tijdlijn"
+
+#~ msgid "Local Timeline"
+#~ msgstr "Locale tijdlijn"
+
+#~ msgid "Global Timeline"
+#~ msgstr "Globale tijdlijn"
+
+#~ msgid "Add an account"
+#~ msgstr "Een account toevoegen"
+
+#~ msgid "Options:"
+#~ msgstr "Opties:"
+
+#~ msgid "Apply"
+#~ msgstr "Toepassen"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "Ondersteuning van meldingen is nog niet geïmplementeerd"

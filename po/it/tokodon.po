@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:46+0000\n"
-"PO-Revision-Date: 2022-05-19 02:36+0200\n"
+"POT-Creation-Date: 2022-11-16 00:47+0000\n"
+"PO-Revision-Date: 2022-11-03 12:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -242,7 +242,7 @@ msgstr "Ignora errori SSL"
 msgid "Instance URL and username must not be empty!"
 msgstr "L'URL dell'istanza e il nome utente non possono essere vuoti!"
 
-#: content/ui/main.qml:96
+#: content/ui/main.qml:96 content/ui/Settings/AccountsCard.qml:90
 #, kde-format
 msgid "Add Account"
 msgstr "Aggiungi account"
@@ -253,38 +253,27 @@ msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: content/ui/main.qml:126 content/ui/main.qml:127
+#: content/ui/main.qml:126
 #, kde-format
 msgid "Home"
 msgstr "Home"
 
-#: content/ui/main.qml:135 content/ui/main.qml:136
-#: content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:137 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: content/ui/main.qml:144
+#: content/ui/main.qml:146
 #, kde-format
 msgid "Local"
 msgstr "Locale"
 
-#: content/ui/main.qml:145
-#, kde-format
-msgid "Local Timeline"
-msgstr "Timeline locale"
-
-#: content/ui/main.qml:153
+#: content/ui/main.qml:158
 #, kde-format
 msgid "Global"
 msgstr "Globale"
 
-#: content/ui/main.qml:154
-#, kde-format
-msgid "Global Timeline"
-msgstr "Timeline globale"
-
-#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:37
+#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:45
 #, kde-format
 msgid "Toot"
 msgstr "Toot"
@@ -306,134 +295,127 @@ msgstr "Menzioni"
 msgid "%1 followed you"
 msgstr "%1 ti ha seguito"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Loading"
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
+#, kde-format
 msgid "Loading..."
-msgstr "Caricamento in corso"
+msgstr "Caricamento..."
 
-#: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
+#: content/ui/PostDelegate.qml:42 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ha aggiunto il tuo commento ai preferiti"
 
-#: content/ui/PostDelegate.qml:55
+#: content/ui/PostDelegate.qml:56
 #, kde-format
 msgid "Pinned entry"
 msgstr "Voce appuntata"
 
-#: content/ui/PostDelegate.qml:72
+#: content/ui/PostDelegate.qml:74
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ha messo in evidenza"
 
-#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:74 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 ha messo in evidenza il tuo commento"
 
-#: content/ui/PostDelegate.qml:118
+#: content/ui/PostDelegate.qml:125
 #, kde-format
 msgid "Show more"
 msgstr "Mostra altro"
 
-#: content/ui/PostDelegate.qml:265
+#: content/ui/PostDelegate.qml:297
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Rispondi"
 
-#: content/ui/PostDelegate.qml:275
+#: content/ui/PostDelegate.qml:307
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/PostDelegate.qml:285
+#: content/ui/PostDelegate.qml:317
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Mi piace"
 
-#: content/ui/Settings/AccountsPage.qml:14
-#: content/ui/Settings/SettingsPage.qml:19
+#: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
 msgid "Accounts"
 msgstr "Account"
 
-#: content/ui/Settings/AccountsPage.qml:22
-#: content/ui/Settings/AccountsPage.qml:104
-#, kde-format
-msgid "Add an account"
-msgstr "Aggiungi un account"
-
-#: content/ui/Settings/AccountsPage.qml:81
+#: content/ui/Settings/AccountsCard.qml:67
 #, kde-format
 msgid "Logout"
 msgstr "Chiudi sessione"
 
-#: content/ui/Settings/GeneralPage.qml:12
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
 msgid "General"
 msgstr "Generale"
 
-#: content/ui/Settings/GeneralPage.qml:16
-#, kde-format
-msgid "Show detailed statistics about posts."
+#: content/ui/Settings/GeneralCard.qml:23
+#, fuzzy, kde-format
+#| msgid "Show detailed statistics about posts."
+msgid "Show detailed statistics about posts"
 msgstr "Mostra statistiche dettagliate sui commenti."
 
-#: content/ui/Settings/GeneralPage.qml:26
-#, kde-format
-msgid "Show link preview."
+#: content/ui/Settings/GeneralCard.qml:36
+#, fuzzy, kde-format
+#| msgid "Show link preview."
+msgid "Show link preview"
 msgstr "Mostra l'anteprima del collegamento."
 
-#: content/ui/Settings/SettingsPage.qml:24
-#, kde-format
-msgid "Spell Checking"
+#: content/ui/Settings/SettingsPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: content/ui/Settings/SonnetCard.qml:24
+#, fuzzy, kde-format
+#| msgid "Spell Checking"
+msgid "Spellchecking"
 msgstr "Controllo ortografico"
 
-#: content/ui/Settings/SonnetConfigPage.qml:94
-#, kde-format
-msgid "Selected default language:"
-msgstr "Seleziona la lingua predefinita:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:105
-#, kde-format
-msgid "Open Personal Dictionary"
-msgstr "Apri il dizionario personale"
-
-#: content/ui/Settings/SonnetConfigPage.qml:124
-#, kde-format
-msgid "Options:"
-msgstr "Opzioni:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:126
+#: content/ui/Settings/SonnetCard.qml:30
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Abilita il controllo ortografico automatico"
 
-#: content/ui/Settings/SonnetConfigPage.qml:137
+#: content/ui/Settings/SonnetCard.qml:42
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Salta le parole tutte maiuscole"
 
-#: content/ui/Settings/SonnetConfigPage.qml:148
+#: content/ui/Settings/SonnetCard.qml:54
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Ignora le parole con trattino"
 
-#: content/ui/Settings/SonnetConfigPage.qml:160
+#: content/ui/Settings/SonnetCard.qml:66
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Rileva automaticamente la lingua"
 
-#: content/ui/Settings/SonnetConfigPage.qml:172
+#: content/ui/Settings/SonnetCard.qml:77
 #, kde-format
-msgid "Spell checking languages"
+msgid "Selected default language:"
+msgstr "Seleziona la lingua predefinita:"
+
+#: content/ui/Settings/SonnetCard.qml:89
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgid "Additional spell checking languages"
 msgstr "Lingue del controllo ortografico"
 
-#: content/ui/Settings/SonnetConfigPage.qml:180
+#: content/ui/Settings/SonnetCard.qml:90
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -442,32 +424,45 @@ msgstr ""
 "%1 fornirà il controllo ortografico e i suggerimenti per le lingue elencate "
 "qui quando il rilevamento automatico è abilitato."
 
-#: content/ui/Settings/SonnetConfigPage.qml:222
+#: content/ui/Settings/SonnetCard.qml:101
+#, kde-format
+msgid "Open Personal Dictionary"
+msgstr "Apri il dizionario personale"
+
+#: content/ui/Settings/SonnetCard.qml:112
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgctxt "@title:window"
+msgid "Spell checking languages"
+msgstr "Lingue del controllo ortografico"
+
+#: content/ui/Settings/SonnetCard.qml:122
+#: content/ui/Settings/SonnetCard.qml:132
+#, fuzzy, kde-format
+#| msgid "Selected default language:"
+msgid "Default Language"
+msgstr "Seleziona la lingua predefinita:"
+
+#: content/ui/Settings/SonnetCard.qml:144
+#, kde-format
+msgid "Spell checking dictionary"
+msgstr "Dizionario del controllo ortografico"
+
+#: content/ui/Settings/SonnetCard.qml:151
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Aggiungi una nuova parola al tuo dizionario personale…"
 
-#: content/ui/Settings/SonnetConfigPage.qml:225
+#: content/ui/Settings/SonnetCard.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Add word"
 msgstr "Aggiungi la parola"
 
-#: content/ui/Settings/SonnetConfigPage.qml:244
-#, kde-format
-msgid "Spell checking dictionary"
-msgstr "Dizionario del controllo ortografico"
-
-#: content/ui/Settings/SonnetConfigPage.qml:270
-#: content/ui/Settings/SonnetConfigPage.qml:301
+#: content/ui/Settings/SonnetCard.qml:181
 #, kde-format
 msgid "Delete word"
 msgstr "Elimina la parola"
-
-#: content/ui/Settings/SonnetConfigPage.qml:318
-#, kde-format
-msgid "Apply"
-msgstr "Applica"
 
 #: content/ui/TootComposer.qml:13
 #, kde-format
@@ -573,20 +568,20 @@ msgstr "Cliente per la rete sociale decentralizzata: mastodon"
 #: notificationmodel.cpp:94
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr ""
+msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
 
-#: notificationmodel.cpp:262 timelinemodel.cpp:296
+#: notificationmodel.cpp:262 timelinemodel.cpp:295
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:266 timelinemodel.cpp:300
+#: notificationmodel.cpp:266 timelinemodel.cpp:299
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: notificationmodel.cpp:268 timelinemodel.cpp:302
+#: notificationmodel.cpp:268 timelinemodel.cpp:301
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -597,29 +592,44 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Discussione"
 
-#: timelinemodel.cpp:33
+#: timelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Home (%1)"
 
-#: timelinemodel.cpp:35
+#: timelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Home"
 
-#: timelinemodel.cpp:38
+#: timelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Timeline locale"
 
-#: timelinemodel.cpp:40
+#: timelinemodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Timeline globale"
+
+#~ msgid "Local Timeline"
+#~ msgstr "Timeline locale"
+
+#~ msgid "Global Timeline"
+#~ msgstr "Timeline globale"
+
+#~ msgid "Add an account"
+#~ msgstr "Aggiungi un account"
+
+#~ msgid "Options:"
+#~ msgstr "Opzioni:"
+
+#~ msgid "Apply"
+#~ msgstr "Applica"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "Il supporto delle notifiche non è ancora implementato"

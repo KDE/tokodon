@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:47+0000\n"
 "PO-Revision-Date: 2022-06-11 21:51+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -242,7 +242,7 @@ msgstr "Sivuuta SSL-virheet"
 msgid "Instance URL and username must not be empty!"
 msgstr "Instanssin verkko-osoite ja käyttäjätunnus eivät voi olla tyhjiä!"
 
-#: content/ui/main.qml:96
+#: content/ui/main.qml:96 content/ui/Settings/AccountsCard.qml:90
 #, kde-format
 msgid "Add Account"
 msgstr "Lisää tili"
@@ -253,38 +253,27 @@ msgctxt "@action:inmenu"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: content/ui/main.qml:126 content/ui/main.qml:127
+#: content/ui/main.qml:126
 #, kde-format
 msgid "Home"
 msgstr "Koti"
 
-#: content/ui/main.qml:135 content/ui/main.qml:136
-#: content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:137 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: content/ui/main.qml:144
+#: content/ui/main.qml:146
 #, kde-format
 msgid "Local"
 msgstr "Paikallinen"
 
-#: content/ui/main.qml:145
-#, kde-format
-msgid "Local Timeline"
-msgstr "Paikallinen aikajana"
-
-#: content/ui/main.qml:153
+#: content/ui/main.qml:158
 #, kde-format
 msgid "Global"
 msgstr "Yleinen"
 
-#: content/ui/main.qml:154
-#, kde-format
-msgid "Global Timeline"
-msgstr "Yleinen aikajana"
-
-#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:37
+#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:45
 #, kde-format
 msgid "Toot"
 msgstr ""
@@ -306,134 +295,128 @@ msgstr "Maininnat"
 msgid "%1 followed you"
 msgstr "%1 alkoi seurata sinua"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:59
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
 msgstr "Ladataan"
 
-#: content/ui/PostDelegate.qml:41 notificationhandler.cpp:24
+#: content/ui/PostDelegate.qml:42 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 merkitse viestisi suosikiksi"
 
-#: content/ui/PostDelegate.qml:55
+#: content/ui/PostDelegate.qml:56
 #, kde-format
 msgid "Pinned entry"
 msgstr "Kiinnitetty kohde"
 
-#: content/ui/PostDelegate.qml:72
+#: content/ui/PostDelegate.qml:74
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:74 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:118
+#: content/ui/PostDelegate.qml:125
 #, kde-format
 msgid "Show more"
 msgstr "Näytä lisää"
 
-#: content/ui/PostDelegate.qml:265
+#: content/ui/PostDelegate.qml:297
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: content/ui/PostDelegate.qml:275
+#: content/ui/PostDelegate.qml:307
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:285
+#: content/ui/PostDelegate.qml:317
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Tykkää"
 
-#: content/ui/Settings/AccountsPage.qml:14
-#: content/ui/Settings/SettingsPage.qml:19
+#: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
 msgid "Accounts"
 msgstr "Tilit"
 
-#: content/ui/Settings/AccountsPage.qml:22
-#: content/ui/Settings/AccountsPage.qml:104
-#, kde-format
-msgid "Add an account"
-msgstr "Lisää tili"
-
-#: content/ui/Settings/AccountsPage.qml:81
+#: content/ui/Settings/AccountsCard.qml:67
 #, kde-format
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: content/ui/Settings/GeneralPage.qml:12
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
 msgid "General"
 msgstr "Perusasetukset"
 
-#: content/ui/Settings/GeneralPage.qml:16
-#, kde-format
-msgid "Show detailed statistics about posts."
+#: content/ui/Settings/GeneralCard.qml:23
+#, fuzzy, kde-format
+#| msgid "Show detailed statistics about posts."
+msgid "Show detailed statistics about posts"
 msgstr "Näytä viestien yksityiskohtaiset tilastot."
 
-#: content/ui/Settings/GeneralPage.qml:26
-#, kde-format
-msgid "Show link preview."
+#: content/ui/Settings/GeneralCard.qml:36
+#, fuzzy, kde-format
+#| msgid "Show link preview."
+msgid "Show link preview"
 msgstr "Näytä linkin esikatselu."
 
-#: content/ui/Settings/SettingsPage.qml:24
-#, kde-format
-msgid "Spell Checking"
+#: content/ui/Settings/SettingsPage.qml:14
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Asetukset"
+
+#: content/ui/Settings/SonnetCard.qml:24
+#, fuzzy, kde-format
+#| msgid "Spell Checking"
+msgid "Spellchecking"
 msgstr "Oikeinkirjoituksen tarkistus"
 
-#: content/ui/Settings/SonnetConfigPage.qml:94
-#, kde-format
-msgid "Selected default language:"
-msgstr "Valittu oletuskieli:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:105
-#, kde-format
-msgid "Open Personal Dictionary"
-msgstr "Avaa henkilökohtainen sanasto"
-
-#: content/ui/Settings/SonnetConfigPage.qml:124
-#, kde-format
-msgid "Options:"
-msgstr "Valinnat:"
-
-#: content/ui/Settings/SonnetConfigPage.qml:126
+#: content/ui/Settings/SonnetCard.qml:30
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Käytä automaattista oikeinkirjoituksen tarkistusta"
 
-#: content/ui/Settings/SonnetConfigPage.qml:137
+#: content/ui/Settings/SonnetCard.qml:42
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Sivuuta suuraakkosin kirjoitetut sanat"
 
-#: content/ui/Settings/SonnetConfigPage.qml:148
+#: content/ui/Settings/SonnetCard.qml:54
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Sivuuta yhdysmerkin sisältävät sanat"
 
-#: content/ui/Settings/SonnetConfigPage.qml:160
+#: content/ui/Settings/SonnetCard.qml:66
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Tunnista kieli automaattisesti"
 
-#: content/ui/Settings/SonnetConfigPage.qml:172
+#: content/ui/Settings/SonnetCard.qml:77
 #, kde-format
-msgid "Spell checking languages"
+msgid "Selected default language:"
+msgstr "Valittu oletuskieli:"
+
+#: content/ui/Settings/SonnetCard.qml:89
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgid "Additional spell checking languages"
 msgstr "Oikeinkirjoituksen tarkistuksen kielet"
 
-#: content/ui/Settings/SonnetConfigPage.qml:180
+#: content/ui/Settings/SonnetCard.qml:90
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -442,32 +425,45 @@ msgstr ""
 "%1 tarjoaa oikeinkirjoituksen tarkistuksen ja ehdotukset tässä luetelluille "
 "kielille käytettäessä automaattista tunnistusta."
 
-#: content/ui/Settings/SonnetConfigPage.qml:222
+#: content/ui/Settings/SonnetCard.qml:101
+#, kde-format
+msgid "Open Personal Dictionary"
+msgstr "Avaa henkilökohtainen sanasto"
+
+#: content/ui/Settings/SonnetCard.qml:112
+#, fuzzy, kde-format
+#| msgid "Spell checking languages"
+msgctxt "@title:window"
+msgid "Spell checking languages"
+msgstr "Oikeinkirjoituksen tarkistuksen kielet"
+
+#: content/ui/Settings/SonnetCard.qml:122
+#: content/ui/Settings/SonnetCard.qml:132
+#, fuzzy, kde-format
+#| msgid "Selected default language:"
+msgid "Default Language"
+msgstr "Valittu oletuskieli:"
+
+#: content/ui/Settings/SonnetCard.qml:144
+#, kde-format
+msgid "Spell checking dictionary"
+msgstr "Oikeinkirjoituksen tarkistuksen sanasto"
+
+#: content/ui/Settings/SonnetCard.qml:151
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Lisää uusi sana henkilökohtaiseen sanastoosi…"
 
-#: content/ui/Settings/SonnetConfigPage.qml:225
+#: content/ui/Settings/SonnetCard.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Add word"
 msgstr "Lisää sana"
 
-#: content/ui/Settings/SonnetConfigPage.qml:244
-#, kde-format
-msgid "Spell checking dictionary"
-msgstr "Oikeinkirjoituksen tarkistuksen sanasto"
-
-#: content/ui/Settings/SonnetConfigPage.qml:270
-#: content/ui/Settings/SonnetConfigPage.qml:301
+#: content/ui/Settings/SonnetCard.qml:181
 #, kde-format
 msgid "Delete word"
 msgstr "Poista sana"
-
-#: content/ui/Settings/SonnetConfigPage.qml:318
-#, kde-format
-msgid "Apply"
-msgstr "Käytä"
 
 #: content/ui/TootComposer.qml:13
 #, kde-format
@@ -575,18 +571,18 @@ msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: notificationmodel.cpp:262 timelinemodel.cpp:296
+#: notificationmodel.cpp:262 timelinemodel.cpp:295
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:266 timelinemodel.cpp:300
+#: notificationmodel.cpp:266 timelinemodel.cpp:299
 #, kde-format
 msgid "%1h"
 msgstr "%1 t"
 
-#: notificationmodel.cpp:268 timelinemodel.cpp:302
+#: notificationmodel.cpp:268 timelinemodel.cpp:301
 #, kde-format
 msgid "%1d"
 msgstr "%1 pv"
@@ -597,29 +593,44 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Säie"
 
-#: timelinemodel.cpp:33
+#: timelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Koti (%1)"
 
-#: timelinemodel.cpp:35
+#: timelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Koti"
 
-#: timelinemodel.cpp:38
+#: timelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Paikallinen aikajana"
 
-#: timelinemodel.cpp:40
+#: timelinemodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Yleinen aikajana"
+
+#~ msgid "Local Timeline"
+#~ msgstr "Paikallinen aikajana"
+
+#~ msgid "Global Timeline"
+#~ msgstr "Yleinen aikajana"
+
+#~ msgid "Add an account"
+#~ msgstr "Lisää tili"
+
+#~ msgid "Options:"
+#~ msgstr "Valinnat:"
+
+#~ msgid "Apply"
+#~ msgstr "Käytä"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "Ilmoitustukea ei ole vielä toteutettu"
