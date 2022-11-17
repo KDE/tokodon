@@ -216,6 +216,7 @@ a{
                 cursorShape: Qt.PointingHandCursor
             }
             background: Rectangle {
+                color: 'transparent'
                 border {
                     width: 1
                     color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor,0.15)
