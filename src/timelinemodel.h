@@ -18,33 +18,6 @@ class TimelineModel : public AbstractTimelineModel
     Q_PROPERTY(bool fetching READ fetching NOTIFY fetchingChanged)
 
 public:
-    enum CustoRoles {
-        AvatarRole = Qt::UserRole + 1,
-        IdRole,
-        AuthorDisplayNameRole,
-        PublishedAtRole,
-        AuthorIdRole,
-        RelativeTimeRole,
-        SensitiveRole,
-        SpoilerTextRole,
-        MutedRole,
-        PinnedRole,
-        AttachmentsRole,
-        WasRebloggedRole,
-        RebloggedDisplayNameRole,
-        RebloggedIdRole,
-        RebloggedRole,
-        ReblogsCountRole,
-        MentionsRole,
-        RepliesCountRole,
-        FavoritedRole,
-        FavoritesCountRole,
-        ThreadModelRole,
-        AccountModelRole,
-        UrlRole,
-        CardRole,
-    };
-
     explicit TimelineModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;

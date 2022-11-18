@@ -16,8 +16,7 @@ class NotificationModel : public AbstractTimelineModel
 
 public:
     enum ExtraRoles {
-        TypeRole = 100,
-        ActorDisplayNameRole,
+        ActorDisplayNameRole = AbstractTimelineModel::ExtraRole
     };
 
     explicit NotificationModel(QObject *parent = nullptr);

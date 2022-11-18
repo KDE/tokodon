@@ -42,6 +42,7 @@ public:
         UrlRole,
         CardRole,
         TypeRole,
+        ExtraRole, ///< for sub-classes to extend the roles
     };
 
     AbstractTimelineModel(QObject *parent = nullptr);
