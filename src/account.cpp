@@ -514,64 +514,6 @@ void Account::fetchTimeline(const QString &original_name, const QString &from_id
     });
 }
 
-void Account::fetchThread(const QString &post_id, std::function<void(QList<std::shared_ptr<Post>>)> final_cb)
-{
-    auto status_url = apiUrl(QString("/api/v1/statuses/%1").arg(post_id));
-    auto context_url = apiUrl(QString("/api/v1/statuses/%1/context").arg(post_id));
-    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
-
-    auto on_fetch_context = [=](QNetworkReply *reply) {
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
-        auto obj = doc.object();
-
-        if (!doc.isObject())
-            return;
-
-        const auto ancestors = obj["ancestors"].toArray();
-
-        for (const auto &anc : ancestors) {
-            if (!anc.isObject())
-                continue;
-
-            auto anc_obj = anc.toObject();
-            auto p = std::make_shared<Post>(this, anc_obj);
-
-            thread->push_front(p);
-        }
-
-        const auto descendents = obj["descendants"].toArray();
-
-        for (const auto &desc : descendents) {
-            if (!desc.isObject())
-                continue;
-
-            auto desc_obj = desc.toObject();
-            auto p = std::make_shared<Post>(this, desc_obj);
-
-            thread->push_back(p);
-        }
-
-        final_cb(*thread);
-    };
-
-    auto on_fetch_status = [=](QNetworkReply *reply) {
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
-        auto obj = doc.object();
-
-        if (!doc.isObject())
-            return;
-
-        auto p = std::make_shared<Post>(this, obj);
-        thread->push_front(p);
-
-        get(context_url, true, on_fetch_context);
-    };
-
-    get(status_url, true, on_fetch_status);
-}
-
 void Account::postStatus(Post *p)
 {
     QUrl post_status_url = apiUrl("/api/v1/statuses");

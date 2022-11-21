@@ -182,9 +182,6 @@ public:
     void upload(Post *p, QFile *file, QString filename);
     void updateAttachment(Attachment *a);
 
-    /// Thread fetching
-    void fetchThread(const QString &postId, std::function<void(QList<std::shared_ptr<Post>>)> final_cb);
-
     /// Fetch account timeline
     void fetchAccount(qint64 id, bool excludeReplies, const QString &timelineName, const QString &from_id = QString());
 
