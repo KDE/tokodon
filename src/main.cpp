@@ -38,6 +38,7 @@
 #include "networkaccessmanagerfactory.h"
 #include "notificationmodel.h"
 #include "post.h"
+#include "about.h"
 #include "timelinemodel.h"
 
 #ifdef Q_OS_ANDROID
@@ -104,6 +105,11 @@ int main(int argc, char *argv[])
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new Clipboard;
+    });
+    qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
+        Q_UNUSED(engine)
+        Q_UNUSED(scriptEngine)
+        return new AboutType;
     });
     qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
