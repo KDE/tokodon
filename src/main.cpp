@@ -83,7 +83,8 @@ int main(int argc, char *argv[])
                      i18n("Mastodon client"),
                      KAboutLicense::GPL_V3,
                      i18n("© 2021 Carl Schwan, 2021 KDE Community"));
-    about.addAuthor(i18n("Carl Schwan"), QString(), QStringLiteral("carl@carlschwan.eu"));
+    about.addAuthor(i18n("Carl Schwan"), i18n("Maintainer"), QStringLiteral("carl@carlschwan.eu"));
+    about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
     about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=tokodon");
 
