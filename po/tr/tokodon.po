@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:45+0000\n"
+"POT-Creation-Date: 2022-11-22 00:46+0000\n"
 "PO-Revision-Date: 2022-11-16 19:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,57 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Emir SARI"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "emir_sari@icloud.com"
-
-#: account.cpp:836
+#: account.cpp:778
 #, kde-format
 msgid "Could not follow account"
 msgstr "Hesap takip edilemedi"
 
-#: account.cpp:837
+#: account.cpp:779
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Hesap takipten çıkarılamadı"
 
-#: account.cpp:838
+#: account.cpp:780
 #, kde-format
 msgid "Could not block account"
 msgstr "Hesap engellenemedi"
 
-#: account.cpp:839
+#: account.cpp:781
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Hesap engeli kaldırılamadı"
 
-#: account.cpp:840
+#: account.cpp:782
 #, kde-format
 msgid "Could not mute account"
 msgstr "Hesap sessize alınamadı"
 
-#: account.cpp:841
+#: account.cpp:783
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Hesap sessizden kaldırılamadı"
 
-#: account.cpp:842
+#: account.cpp:784
 #, kde-format
 msgid "Could not feature account"
 msgstr "Hesap tanıtılamadı"
 
-#: account.cpp:843
+#: account.cpp:785
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Hesap tanıtımı kaldırılamadı"
 
-#: account.cpp:844
+#: account.cpp:786
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Bir hesap üzerine olan not düzenlenemedi"
@@ -369,11 +359,17 @@ msgstr "Gönderiler hakkında ayrıntılı istatistikler göster"
 msgid "Show link preview"
 msgstr "Bağlantı önizlemesi göster"
 
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarla"
+
+#: content/ui/Settings/SettingsPage.qml:38
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgid "About Tokodon"
+msgstr "Tokodon"
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -533,27 +529,44 @@ msgstr "iu"
 msgid "Send"
 msgstr "Gönder"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon İstemcisi"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Topluluğu"
 
-#: main.cpp:86
+#: main.cpp:87
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:123
+#: main.cpp:87
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:88
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Emir SARI"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "emir_sari@icloud.com"
+
+#: main.cpp:130
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Merkezi olmayan sosyal ağ için istemci: Mastodon"

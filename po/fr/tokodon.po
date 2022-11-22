@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:45+0000\n"
+"POT-Creation-Date: 2022-11-22 00:46+0000\n"
 "PO-Revision-Date: 2022-11-18 07:00+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -14,57 +14,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.11.80\n"
 
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Xavier Besnard"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "xavier.besnard@neuf.fr"
-
-#: account.cpp:836
+#: account.cpp:778
 #, kde-format
 msgid "Could not follow account"
 msgstr "Impossible de suivre un compte"
 
-#: account.cpp:837
+#: account.cpp:779
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Impossible de se désabonner d'un compte"
 
-#: account.cpp:838
+#: account.cpp:780
 #, kde-format
 msgid "Could not block account"
 msgstr "Impossible de bloquer un compte"
 
-#: account.cpp:839
+#: account.cpp:781
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Impossible de débloquer un compte"
 
-#: account.cpp:840
+#: account.cpp:782
 #, kde-format
 msgid "Could not mute account"
 msgstr "Impossible de mettre un compte en pause"
 
-#: account.cpp:841
+#: account.cpp:783
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Impossible de sortir un un compte du mode pause"
 
-#: account.cpp:842
+#: account.cpp:784
 #, kde-format
 msgid "Could not feature account"
 msgstr "Impossible de présenter un compte"
 
-#: account.cpp:843
+#: account.cpp:785
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Impossible de ne pas présenter un compte"
 
-#: account.cpp:844
+#: account.cpp:786
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Impossible de modifier une note concernant un compte"
@@ -366,11 +356,17 @@ msgstr "Afficher des statistiques détaillées concernant les messages."
 msgid "Show link preview"
 msgstr "Afficher un aperçu du lien."
 
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuration"
+
+#: content/ui/Settings/SettingsPage.qml:38
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgid "About Tokodon"
+msgstr "Tokodon"
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -530,27 +526,44 @@ msgstr "cw"
 msgid "Send"
 msgstr "Envoyer"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client Mastodon"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 Communauté KDE"
 
-#: main.cpp:86
+#: main.cpp:87
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:123
+#: main.cpp:87
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:88
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xavier Besnard"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xavier.besnard@neuf.fr"
+
+#: main.cpp:130
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Un client pour le réseau social décentralisé : mastodon."

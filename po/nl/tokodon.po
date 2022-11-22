@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:45+0000\n"
+"POT-Creation-Date: 2022-11-22 00:46+0000\n"
 "PO-Revision-Date: 2022-11-16 15:11+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,57 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Freek de Kruijf - 2021 t/m 2022"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "freekdekruijf@kde.nl"
-
-#: account.cpp:836
+#: account.cpp:778
 #, kde-format
 msgid "Could not follow account"
 msgstr "Kon het account niet volgen "
 
-#: account.cpp:837
+#: account.cpp:779
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Moest het account volgen "
 
-#: account.cpp:838
+#: account.cpp:780
 #, kde-format
 msgid "Could not block account"
 msgstr "Kon account niet blokkeren "
 
-#: account.cpp:839
+#: account.cpp:781
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Kon blokkeren van het account niet opheffen"
 
-#: account.cpp:840
+#: account.cpp:782
 #, kde-format
 msgid "Could not mute account"
 msgstr "Kon account niet dempen"
 
-#: account.cpp:841
+#: account.cpp:783
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Kon demping van account niet opheffen"
 
-#: account.cpp:842
+#: account.cpp:784
 #, kde-format
 msgid "Could not feature account"
 msgstr "Kon account niet aanbevelen"
 
-#: account.cpp:843
+#: account.cpp:785
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Kon aanbeveling van account niet opheffen"
 
-#: account.cpp:844
+#: account.cpp:786
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Kon notitie over een account niet bewerken"
@@ -368,11 +358,17 @@ msgstr "Gedetailleerde statistieken tonen over posten"
 msgid "Show link preview"
 msgstr "Koppelingsvoorbeeld tonen"
 
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Instellingen"
+
+#: content/ui/Settings/SettingsPage.qml:38
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgid "About Tokodon"
+msgstr "Tokodon"
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -532,27 +528,44 @@ msgstr "cw"
 msgid "Send"
 msgstr "Verzenden"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-client"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Community"
 
-#: main.cpp:86
+#: main.cpp:87
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:123
+#: main.cpp:87
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:88
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Freek de Kruijf - 2021 t/m 2022"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "freekdekruijf@kde.nl"
+
+#: main.cpp:130
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client Voor het gedecentraliseerde sociale netwerk: mastodon"

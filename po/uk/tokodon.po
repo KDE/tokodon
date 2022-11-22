@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-18 00:45+0000\n"
+"POT-Creation-Date: 2022-11-22 00:46+0000\n"
 "PO-Revision-Date: 2022-11-16 18:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,57 +18,47 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Юрій Чорноіван"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "yurchor@ukr.net"
-
-#: account.cpp:836
+#: account.cpp:778
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account.cpp:837
+#: account.cpp:779
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account.cpp:838
+#: account.cpp:780
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account.cpp:839
+#: account.cpp:781
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account.cpp:840
+#: account.cpp:782
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account.cpp:841
+#: account.cpp:783
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account.cpp:842
+#: account.cpp:784
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account.cpp:843
+#: account.cpp:785
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account.cpp:844
+#: account.cpp:786
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -371,11 +361,17 @@ msgstr "Показати докладну статистику щодо допи
 msgid "Show link preview"
 msgstr "Показати попередній перегляд вмісту посилання"
 
-#: content/ui/Settings/SettingsPage.qml:14
+#: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметри"
+
+#: content/ui/Settings/SettingsPage.qml:38
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgid "About Tokodon"
+msgstr "Tokodon"
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -535,27 +531,44 @@ msgstr "пв"
 msgid "Send"
 msgstr "Надіслати"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© Carl Schwan, 2021; Спільнота KDE, 2021"
 
-#: main.cpp:86
+#: main.cpp:87
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:123
+#: main.cpp:87
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:88
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: main.cpp:130
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
