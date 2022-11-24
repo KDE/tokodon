@@ -16,11 +16,12 @@ Kirigami.BasicListItem {
     hoverEnabled: false
     property bool secondary: false
     onClicked: {
-        const subModel = model.threadModel
+        const subModel = model.threadModel;
         if (subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                model: subModel
-            })
+                model: subModel,
+                type: TimelinePage.TimelineType.Thread,
+            });
         }
     }
     ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })

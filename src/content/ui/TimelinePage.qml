@@ -15,7 +15,8 @@ Kirigami.ScrollablePage {
         Home,
         Notification,
         Local,
-        Global
+        Global,
+        Thread
     }
 
     required property var model
