@@ -7,6 +7,7 @@ A modern [Mastodon](https://joinmastodon.org/) client.
 ## Links
 * Project page: https://invent.kde.org/network/tokodon
 * File issues: https://bugs.kde.org/describecomponents.cgi?product=tokodon
+* Matrix chat: #tokodon:kde.org [matrix.to](https://matrix.to/#/#tokodon:kde.org)
 
 ## License
 
