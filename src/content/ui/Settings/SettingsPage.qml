@@ -31,7 +31,7 @@ Kirigami.PageRow {
                     Component {
                         id: aboutPage
                         MobileForm.AboutPage {
-                            aboutData: About.aboutData
+                            aboutData: About
                         }
                     }
                     MobileForm.FormButtonDelegate {

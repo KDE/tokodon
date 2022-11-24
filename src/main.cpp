@@ -38,7 +38,6 @@
 #include "networkaccessmanagerfactory.h"
 #include "notificationmodel.h"
 #include "post.h"
-#include "about.h"
 #include "timelinemodel.h"
 
 #ifdef Q_OS_ANDROID
@@ -101,17 +100,10 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
-    qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "Clipboard", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        return new Clipboard;
-    });
-    qmlRegisterSingletonType<Clipboard>("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        return new AboutType;
-    });
-    qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
+    qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });    qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<Relationship *>("Relationship*");

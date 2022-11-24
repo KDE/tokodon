@@ -21,7 +21,6 @@ ecm_qt_declare_logging_category(debug_files_SRCS
 )
 
 add_executable(tokodon
-    about.cpp
     accountmanager.cpp
     account.cpp
     post.cpp
