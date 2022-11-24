@@ -85,7 +85,7 @@ Kirigami.BasicListItem {
             TapHandler {
                 onTapped: {
                     pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: model.accountModel
+                        model: model.accountModel,
                     });
                 }
             }

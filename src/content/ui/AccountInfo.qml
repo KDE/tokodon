@@ -12,6 +12,7 @@ import org.kde.kmasto 1.0
 TimelinePage {
     id: accountInfo
     isProfile: true
+    type: TimelinePage.TimelineType.Profile
     listViewHeader: QQC2.Pane {
         width: parent.width
         Kirigami.Theme.colorSet: Kirigami.Theme.Window

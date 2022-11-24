@@ -16,7 +16,8 @@ Kirigami.ScrollablePage {
         Notification,
         Local,
         Global,
-        Thread
+        Thread,
+        Profile
     }
 
     required property var model
@@ -27,10 +28,8 @@ Kirigami.ScrollablePage {
 
     supportsRefreshing: true
 
-    onRefreshingChanged: {
-        if (refreshing) {
-            model.refresh();
-        }
+    onRefreshingChanged: if (refreshing) {
+        model.refresh();
     }
 
     Connections {
