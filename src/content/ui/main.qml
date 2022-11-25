@@ -161,7 +161,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "federated",
-                type: TimelineType.TimelineType.Global,
+                type: TimelinePage.TimelineType.Global,
             });
         }
     }
