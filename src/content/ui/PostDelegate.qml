@@ -15,6 +15,7 @@ Kirigami.BasicListItem {
     highlighted: false
     hoverEnabled: false
     property bool secondary: false
+    separatorVisible: true
     onClicked: {
         const subModel = model.threadModel;
         if (subModel.name !== timelinePage.model.name) {
