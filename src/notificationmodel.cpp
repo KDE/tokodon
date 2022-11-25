@@ -159,32 +159,9 @@ std::shared_ptr<Notification> NotificationModel::internalData(const QModelIndex 
 
 QHash<int, QByteArray> NotificationModel::roleNames() const
 {
-    return {
-        {Qt::DisplayRole, QByteArrayLiteral("display")},
-        {AvatarRole, QByteArrayLiteral("avatar")},
-        {AuthorDisplayNameRole, QByteArrayLiteral("authorDisplayName")},
-        {PinnedRole, QByteArrayLiteral("pinned")},
-        {AuthorIdRole, QByteArrayLiteral("authorId")},
-        {PublishedAtRole, QByteArrayLiteral("publishedAt")},
-        {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
-        {SensitiveRole, QByteArrayLiteral("sensitive")},
-        {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
-        {RebloggedRole, QByteArrayLiteral("reblogged")},
-        {WasRebloggedRole, QByteArrayLiteral("wasReblogged")},
-        {RebloggedDisplayNameRole, QByteArrayLiteral("rebloggedDisplayName")},
-        {RebloggedIdRole, QByteArrayLiteral("rebloggedId")},
-        {AttachmentsRole, QByteArrayLiteral("attachments")},
-        {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
-        {RepliesCountRole, QByteArrayLiteral("repliesCount")},
-        {FavoritedRole, QByteArrayLiteral("favorite")},
-        {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
-        {UrlRole, QByteArrayLiteral("url")},
-        {ThreadModelRole, QByteArrayLiteral("threadModel")},
-        {AccountModelRole, QByteArrayLiteral("accountModel")},
-        {TypeRole, QByteArrayLiteral("type")},
-        {CardRole, QByteArrayLiteral("card")},
-        {ActorDisplayNameRole, QByteArrayLiteral("actorDisplayName")},
-    };
+    auto roles = AbstractTimelineModel::roleNames();
+    roles.insert(ActorDisplayNameRole, QByteArrayLiteral("actorDisplayName"));
+    return roles;
 }
 
 QVariant NotificationModel::data(const QModelIndex &index, int role) const
