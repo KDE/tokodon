@@ -12,14 +12,13 @@
 #include <QString>
 #include <QUrl>
 
+#include <QJsonObject>
 #include <memory>
 #include <optional>
-#include <qjsonobject.h>
-#include <qobjectdefs.h>
 
 class Post;
 class Identity;
-class Account;
+class AbstractAccount;
 
 class Card
 {
@@ -100,7 +99,7 @@ public:
     Notification(const Notification &)
     {
     }
-    Notification(Account *parent, QJsonObject &obj);
+    Notification(AbstractAccount *parent, const QJsonObject &obj);
 
     enum Type {
         Mention,
@@ -113,7 +112,7 @@ public:
     Q_ENUM(Type);
 
     int id() const;
-    Account *account() const;
+    AbstractAccount *account() const;
     Type type() const;
     std::shared_ptr<Post> post() const;
     std::shared_ptr<Identity> identity() const;
@@ -121,7 +120,7 @@ public:
 private:
     int m_id;
 
-    Account *m_account;
+    AbstractAccount *m_account;
     Type m_type;
     std::shared_ptr<Post> m_post;
     std::shared_ptr<Identity> m_identity;
@@ -141,8 +140,8 @@ class Post : public QObject
 public:
     Post() = delete;
     Post(const Post &) = delete;
-    Post(Account *parent);
-    Post(Account *parent, QJsonObject obj);
+    Post(AbstractAccount *parent);
+    Post(AbstractAccount *parent, QJsonObject obj);
     ~Post();
 
     enum Visibility {
@@ -153,7 +152,7 @@ public:
     };
     Q_ENUM(Visibility)
 
-    Account *m_parent;
+    AbstractAccount *m_parent;
     std::shared_ptr<Identity> m_author_identity;
     std::shared_ptr<Identity> m_repeat_identity;
 

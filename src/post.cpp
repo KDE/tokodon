@@ -58,7 +58,7 @@ static QMap<QString, Post::Visibility> stringToVisibility = {
     {"direct", Post::Visibility::Direct},
 };
 
-Post::Post(Account *parent)
+Post::Post(AbstractAccount *parent)
     : QObject(parent)
     , m_parent(parent)
 {
@@ -66,14 +66,14 @@ Post::Post(Account *parent)
     m_visibility = stringToVisibility[vis_str];
 }
 
-Post::Post(Account *parent, QJsonObject obj)
+Post::Post(AbstractAccount *parent, QJsonObject obj)
     : QObject(parent)
     , m_parent(parent)
     , m_visibility(Post::Visibility::Public)
 {
-    auto account_doc = obj["account"].toObject();
-    auto acct = account_doc["acct"].toString();
-    auto reblog_obj = obj["reblog"].toObject();
+    const auto account_doc = obj["account"].toObject();
+    const auto acct = account_doc["acct"].toString();
+    const auto reblog_obj = obj["reblog"].toObject();
 
     if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
@@ -214,16 +214,18 @@ void Post::updateAttachment(Attachment *a)
     m_parent->updateAttachment(a);
 }
 
-static QMap<QString, Notification::Type> str_to_not_type = {{"favourite", Notification::Type::Favorite},
-                                                            {"follow", Notification::Type::Follow},
-                                                            {"mention", Notification::Type::Mention},
-                                                            {"reblog", Notification::Type::Repeat}};
+static QMap<QString, Notification::Type> str_to_not_type = {
+    {"favourite", Notification::Type::Favorite},
+    {"follow", Notification::Type::Follow},
+    {"mention", Notification::Type::Mention},
+    {"reblog", Notification::Type::Repeat},
+};
 
-Notification::Notification(Account *parent, QJsonObject &obj)
+Notification::Notification(AbstractAccount *parent, const QJsonObject &obj)
     : m_account(parent)
 {
-    QJsonObject account = obj["account"].toObject();
-    QJsonObject status = obj["status"].toObject();
+    const QJsonObject account = obj["account"].toObject();
+    const QJsonObject status = obj["status"].toObject();
     auto acct = account["acct"].toString();
     auto type = obj["type"].toString();
 
@@ -238,7 +240,7 @@ int Notification::id() const
     return m_id;
 }
 
-Account *Notification::account() const
+AbstractAccount *Notification::account() const
 {
     return m_account;
 }

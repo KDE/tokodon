@@ -8,16 +8,16 @@
 #include <QAbstractListModel>
 #include <QSettings>
 
-#include "account.h"
 #include "post.h"
 
+class AbstractAccount;
 class QNetworkAccessManager;
 
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
-    Q_PROPERTY(Account *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
+    Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
@@ -32,11 +32,11 @@ public:
     void writeToSettings(QSettings &settings);
 
     bool hasAccounts() const;
-    Q_INVOKABLE void addAccount(Account *account);
-    Q_INVOKABLE void removeAccount(Account *account);
+    Q_INVOKABLE void addAccount(AbstractAccount *account);
+    Q_INVOKABLE void removeAccount(AbstractAccount *account);
 
-    void selectAccount(Account *account);
-    Account *selectedAccount() const;
+    void selectAccount(AbstractAccount *account);
+    AbstractAccount *selectedAccount() const;
 
     int selectedIndex() const;
 
@@ -47,28 +47,28 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE Account *createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors = false);
+    Q_INVOKABLE AbstractAccount *createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors = false);
 
 Q_SIGNALS:
-    void accountAdded(Account *account);
-    void accountRemoved(Account *account);
-    void accountSelected(Account *account);
-    void identityChanged(Account *account);
-    void fetchedTimeline(Account *account, QString original_name, QList<std::shared_ptr<Post>> posts);
-    void invalidated(Account *account);
-    void fetchedInstanceMetadata(Account *account);
-    void invalidatedPost(Account *account, Post *post);
-    void notification(Account *account, std::shared_ptr<Notification> n);
+    void accountAdded(AbstractAccount *account);
+    void accountRemoved(AbstractAccount *account);
+    void accountSelected(AbstractAccount *account);
+    void identityChanged(AbstractAccount *account);
+    void fetchedTimeline(AbstractAccount *account, QString original_name, QList<std::shared_ptr<Post>> posts);
+    void invalidated(AbstractAccount *account);
+    void fetchedInstanceMetadata(AbstractAccount *account);
+    void invalidatedPost(AbstractAccount *account, Post *post);
+    void notification(AbstractAccount *account, std::shared_ptr<Notification> n);
     void aboutDataChanged();
 
 public Q_SLOTS:
-    void childIdentityChanged(Account *account);
+    void childIdentityChanged(AbstractAccount *account);
 
 private:
     explicit AccountManager(QObject *parent = nullptr);
     virtual ~AccountManager();
-    QList<Account *> m_accounts;
-    Account *m_selected_account;
+    QList<AbstractAccount *> m_accounts;
+    AbstractAccount *m_selected_account;
     KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
 };

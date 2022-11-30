@@ -2,9 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "notificationmodel.h"
+#include "abstractaccount.h"
 #include "accountmodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
+#include <QUrlQuery>
 #include <QtMath>
 
 NotificationModel::NotificationModel(QObject *parent)
@@ -12,7 +14,7 @@ NotificationModel::NotificationModel(QObject *parent)
 {
     m_account = AccountManager::instance().selectedAccount();
 
-    QObject::connect(&AccountManager::instance(), &AccountManager::accountSelected, this, [=](Account *account) {
+    QObject::connect(&AccountManager::instance(), &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             return;
         }
@@ -24,7 +26,7 @@ NotificationModel::NotificationModel(QObject *parent)
 
         fillTimeline();
     });
-    QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](Account *account) {
+    QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 

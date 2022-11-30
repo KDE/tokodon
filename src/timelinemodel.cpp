@@ -3,8 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timelinemodel.h"
+#include "abstractaccount.h"
 #include "abstracttimelinemodel.h"
 #include "accountmodel.h"
+#include "identity.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
@@ -56,7 +58,7 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
 
     Q_EMIT accountManagerChanged();
 
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](Account *account) {
+    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             return;
         }
@@ -69,7 +71,7 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
         fillTimeline();
     });
     QObject::connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
-    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](Account *account) {
+    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -133,7 +135,7 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
     return true;
 }
 
-void TimelineModel::fetchedTimeline(Account *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts)
+void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts)
 {
     m_fetching = false;
     Q_EMIT fetchingChanged();

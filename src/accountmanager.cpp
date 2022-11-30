@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "accountmanager.h"
+#include "account.h"
 #include "networkaccessmanagerfactory.h"
 
 AccountManager::AccountManager(QObject *parent)
@@ -66,7 +67,7 @@ AccountManager &AccountManager::instance()
     return accountManager;
 }
 
-Account *AccountManager::createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors)
+AbstractAccount *AccountManager::createNewAccount(const QString &username, const QString &instanceUri, bool ignoreSslErrors)
 {
     return new Account(username, instanceUri, m_qnam, ignoreSslErrors, this);
 }
@@ -76,7 +77,7 @@ bool AccountManager::hasAccounts() const
     return m_accounts.size() > 0;
 }
 
-void AccountManager::addAccount(Account *account)
+void AccountManager::addAccount(AbstractAccount *account)
 {
     beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
     m_accounts.append(account);
@@ -109,12 +110,12 @@ void AccountManager::addAccount(Account *account)
     writeToSettings(settings);
 }
 
-void AccountManager::childIdentityChanged(Account *account)
+void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
     Q_EMIT identityChanged(account);
 }
 
-void AccountManager::removeAccount(Account *account)
+void AccountManager::removeAccount(AbstractAccount *account)
 {
     const auto index = m_accounts.indexOf(account);
     beginRemoveRows(QModelIndex(), index, index);
@@ -128,7 +129,7 @@ void AccountManager::removeAccount(Account *account)
     Q_EMIT accountRemoved(account);
 }
 
-void AccountManager::selectAccount(Account *account)
+void AccountManager::selectAccount(AbstractAccount *account)
 {
     if (!m_accounts.contains(account)) {
         qDebug() << "WTF: attempt to select unmanaged account" << account;
@@ -140,7 +141,7 @@ void AccountManager::selectAccount(Account *account)
     Q_EMIT accountSelected(account);
 }
 
-Account *AccountManager::selectedAccount() const
+AbstractAccount *AccountManager::selectedAccount() const
 {
     return m_selected_account;
 }

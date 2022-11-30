@@ -14,7 +14,7 @@ NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *pa
 {
 }
 
-void NotificationHandler::handle(std::shared_ptr<Notification> notification, Account *account)
+void NotificationHandler::handle(std::shared_ptr<Notification> notification, AbstractAccount *account)
 {
     KNotification *knotification;
 

@@ -50,8 +50,8 @@ public Q_SLOTS:
     void actionVis(const QModelIndex &index);
 
 Q_SIGNALS:
-    void wantReply(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);
-    void wantMenu(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantReply(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantMenu(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
     void accountManagerChanged();
     void nameChanged();
     void fetchingChanged();
@@ -68,5 +68,5 @@ protected:
     time_t m_last_fetch;
 
 public Q_SLOTS:
-    void fetchedTimeline(Account *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts);
+    void fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts);
 };

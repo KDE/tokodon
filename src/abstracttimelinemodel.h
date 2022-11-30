@@ -8,7 +8,7 @@
 #include <QAbstractListModel>
 #include <qabstractitemmodel.h>
 
-class Account;
+class AbstractAccount;
 
 class AbstractTimelineModel : public QAbstractListModel
 {
@@ -54,6 +54,6 @@ Q_SIGNALS:
     void loadingChanged();
 
 protected:
-    Account *m_account = nullptr;
+    AbstractAccount *m_account = nullptr;
     bool m_loading = true;
 };

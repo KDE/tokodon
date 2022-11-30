@@ -2,8 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "accountmodel.h"
+#include "abstractaccount.h"
+#include "relationship.h"
 #include <KLocalizedString>
 #include <QCoreApplication>
+#include <QUrlQuery>
 
 AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
@@ -83,7 +86,7 @@ Identity *AccountModel::identity() const
     return m_identity.get();
 }
 
-Account *AccountModel::account() const
+AbstractAccount *AccountModel::account() const
 {
     return m_account;
 }

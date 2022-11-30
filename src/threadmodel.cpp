@@ -3,7 +3,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "threadmodel.h"
+#include "abstractaccount.h"
 #include <KLocalizedString>
+#include <QJsonObject>
 
 ThreadModel::ThreadModel(AccountManager *manager, const QString &postId, QObject *parent)
     : TimelineModel(parent)
@@ -40,7 +42,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
     m_fetching = true;
 
     auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
-    auto contextUrl =m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
+    auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
     auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
 
     auto onFetchContext = [=](QNetworkReply *reply) {

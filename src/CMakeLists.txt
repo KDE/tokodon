@@ -36,6 +36,8 @@ add_executable(tokodon
     notificationhandler.cpp
     notificationmodel.cpp
     abstracttimelinemodel.cpp
+    abstractaccount.cpp
+    identity.cpp
     resources.qrc
     ${debug_files_SRCS}
 )

@@ -15,9 +15,7 @@ class NotificationModel : public AbstractTimelineModel
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
 
 public:
-    enum ExtraRoles {
-        ActorDisplayNameRole = AbstractTimelineModel::ExtraRole
-    };
+    enum ExtraRoles { ActorDisplayNameRole = AbstractTimelineModel::ExtraRole };
 
     explicit NotificationModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;
@@ -39,8 +37,8 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void excludeTypesChanged();
-    void wantReply(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);
-    void wantMenu(Account *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantReply(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantMenu(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -48,7 +46,7 @@ protected:
 
     QString m_timelineName;
     AccountManager *m_manager = nullptr;
-    Account *m_account = nullptr;
+    AbstractAccount *m_account = nullptr;
 
     QList<std::shared_ptr<Notification>> m_notifications;
     bool m_fetching;
