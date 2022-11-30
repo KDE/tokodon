@@ -20,11 +20,11 @@ ecm_qt_declare_logging_category(debug_files_SRCS
     EXPORT TOKODON
 )
 
-add_executable(tokodon
+set(tokodon_src
     accountmanager.cpp
     account.cpp
+    mockaccount.cpp
     post.cpp
-    main.cpp
     threadmodel.cpp
     accountmodel.cpp
     timelinemodel.cpp
@@ -38,12 +38,23 @@ add_executable(tokodon
     abstracttimelinemodel.cpp
     abstractaccount.cpp
     identity.cpp
-    resources.qrc
     ${debug_files_SRCS}
 )
 
+add_library(tokodon_static STATIC ${tokodon_src})
+target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
+
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()
+
+add_executable(tokodon
+    main.cpp
+    resources.qrc
+)
+
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(tokodon PRIVATE Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
+target_link_libraries(tokodon PRIVATE tokodon_static)
 kconfig_add_kcfg_files(tokodon GENERATE_MOC config.kcfgc)
 
 if(ANDROID)

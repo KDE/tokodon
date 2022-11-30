@@ -62,7 +62,7 @@ bool AbstractAccount::haveToken() const
 
 QUrl AbstractAccount::apiUrl(const QString &path) const
 {
-    auto instanceUrl = QUrl::fromUserInput(m_instance_uri);
+    const auto instanceUrl = QUrl::fromUserInput(m_instance_uri);
 
     auto url = QUrl::fromUserInput(m_instance_uri);
     url.setScheme("https");
@@ -92,8 +92,8 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
             return;
         }
 
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
