@@ -187,8 +187,9 @@ QJsonDocument Post::toJsonDocument() const
     obj["sensitive"] = m_isSensitive;
     obj["visibility"] = visibilityToString[m_visibility];
 
-    if (!m_replyTargetId.isEmpty())
+    if (!m_replyTargetId.isEmpty()) {
         obj["in_reply_to_id"] = m_replyTargetId;
+    }
 
     auto media_ids = QJsonArray();
     for (const auto att : qAsConst(m_attachments)) {

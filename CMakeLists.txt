@@ -25,13 +25,14 @@ include(ECMQtDeclareLoggingCategory)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddAppIcon)
+include(ECMAddTests)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX TOKODON
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets Test)
 set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
     TYPE REQUIRED
     PURPOSE "Basic application components"

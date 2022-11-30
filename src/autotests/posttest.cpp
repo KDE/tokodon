@@ -29,6 +29,10 @@ private Q_SLOTS:
 
         QCOMPARE(post.subject(), "SPOILER");
         QCOMPARE(post.content(), "<p>LOREM</p>");
+        QVERIFY(post.card());
+        QCOMPARE(post.contentType(), QString());
+        QCOMPARE(post.isSensitive(), false);
+        QCOMPARE(post.visibility(), Post::Visibility::Public);
     }
 };
 
