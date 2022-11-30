@@ -37,6 +37,7 @@ set(tokodon_src
     notificationmodel.cpp
     abstracttimelinemodel.cpp
     abstractaccount.cpp
+    messagefiltercontainer.cpp
     identity.cpp
     ${debug_files_SRCS}
 )

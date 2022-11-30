@@ -8,6 +8,7 @@
 #include "accountmanager.h"
 #include "post.h"
 #include "relationship.h"
+#include "messagefiltercontainer.h"
 #include "tokodon_debug.h"
 #include <KLocalizedString>
 #include <QNetworkReply>
@@ -97,6 +98,8 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
+
+        s_messageFilter->insert(m_client_secret, "CLIENT_SECRET");
 
         if (isRegistered()) {
             Q_EMIT registered();
@@ -197,6 +200,7 @@ void AbstractAccount::setToken(const QString &authcode)
         auto doc = QJsonDocument::fromJson(data);
 
         m_token = doc.object()["access_token"].toString();
+        s_messageFilter->insert(m_token, "ACCESS_TOKEN");
         AccountManager::instance().addAccount(this);
         validateToken();
     });
