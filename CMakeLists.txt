@@ -45,6 +45,7 @@ set_package_properties(KF5Kirigami2 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Kirigami application UI framework"
 )
+find_package(KF5KirigamiAddons 0.6 REQUIRED)
 
 if(ANDROID)
     find_package(OpenSSL)
