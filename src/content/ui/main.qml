@@ -90,8 +90,8 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action homeAction: Kirigami.Action {
         iconName: "go-home-large"
         text: i18n("Home")
-        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Home
-        onTriggered: {
+        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Home
+        onTriggered: if (!checked) {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 type: TimelinePage.TimelineType.Home,
@@ -101,8 +101,9 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action notificationAction: Kirigami.Action {
         iconName: "notifications"
         text: i18n("Notifications")
-        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Notifications
-        onTriggered: {
+        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Notifications
+        onCheckedChanged: console.log("BLO", checked)
+        onTriggered: if (!checked) {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
         }
@@ -110,8 +111,8 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         iconName: "system-users"
         text: i18n("Local")
-        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Local
-        onTriggered: {
+        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Local
+        onTriggered: if (!checked) {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "public",
@@ -122,8 +123,8 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
         iconName: "kstars_xplanet"
         text: i18n("Global")
-        checked: pageStack.currentItem.type === TimelinePage.TimelineType.Global
-        onTriggered: {
+        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Global
+        onTriggered: if (!checked) {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "federated",
