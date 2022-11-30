@@ -716,8 +716,6 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
     socket->open(url);
 
-    qDebug() << "[WEBSOCKET] Connecting to" << url;
-
     m_websockets[stream] = socket;
     return socket;
 }
