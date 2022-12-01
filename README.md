@@ -4,7 +4,7 @@ A modern [Mastodon](https://joinmastodon.org/) client.
 
 <a href='https://flathub.org/apps/details/org.kde.tokodon'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
 
-![coverage](https://invent.kde.org/network/tokodon/badges/master/coverage.svg?job=coverage)
+![coverage](https://invent.kde.org/network/tokodon/badges/master/coverage.svg?job=suse_tumbleweed_qt515)
 
 ## Links
 * Project page: https://invent.kde.org/network/tokodon
