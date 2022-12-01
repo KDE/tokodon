@@ -52,6 +52,16 @@ Kirigami.ScrollablePage {
         }
     }
 
+    actions.right: Kirigami.Action {
+        icon.name: "view-refresh"
+        text: i18n("Refresh")
+        enabled: AccountManager.hasAccounts
+        visible: !Kirigami.Settings.isMobile
+        onTriggered: {
+            model.refresh();
+        }
+    }
+
     ListView {
         id: listview
         model: timelinePage.model
