@@ -77,15 +77,15 @@ Post::Post(AbstractAccount *parent, QJsonObject obj)
 
     if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
-        m_author_identity = m_parent->identityLookup(acct, account_doc);
+        m_authorIdentity = m_parent->identityLookup(acct, account_doc);
     } else {
         m_repeat = true;
 
         auto repeat_account_doc = reblog_obj["account"].toObject();
         auto repeat_acct = repeat_account_doc["acct"].toString();
 
-        m_author_identity = m_parent->identityLookup(repeat_acct, repeat_account_doc);
-        m_repeat_identity = m_parent->identityLookup(acct, account_doc);
+        m_authorIdentity = m_parent->identityLookup(repeat_acct, repeat_account_doc);
+        m_repeatIdentity = m_parent->identityLookup(acct, account_doc);
 
         obj = reblog_obj;
     }
@@ -417,4 +417,14 @@ QString Card::title() const
 QUrl Card::url() const
 {
     return QUrl::fromUserInput(m_card[QLatin1String("url")].toString());
+}
+
+std::shared_ptr<Identity> Post::authorIdentity() const
+{
+    return m_authorIdentity;
+}
+
+std::shared_ptr<Identity> Post::repeatIdentity() const
+{
+    return m_repeatIdentity;
 }

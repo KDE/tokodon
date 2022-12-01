@@ -153,8 +153,9 @@ public:
     Q_ENUM(Visibility)
 
     AbstractAccount *m_parent;
-    std::shared_ptr<Identity> m_author_identity;
-    std::shared_ptr<Identity> m_repeat_identity;
+
+    std::shared_ptr<Identity> authorIdentity() const;
+    std::shared_ptr<Identity> repeatIdentity() const;
 
     QString subject() const;
     void setSubject(const QString &subject);
@@ -222,6 +223,8 @@ Q_SIGNALS:
 private:
     QString m_replyTargetId;
     std::optional<Card> m_card;
+    std::shared_ptr<Identity> m_authorIdentity;
+    std::shared_ptr<Identity> m_repeatIdentity;
 };
 
 Q_DECLARE_METATYPE(Card)

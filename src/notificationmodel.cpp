@@ -183,26 +183,26 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     case Qt::DisplayRole:
         return post->m_content;
     case AvatarRole:
-        return post->m_author_identity->avatarUrl();
+        return post->authorIdentity()->avatarUrl();
     case AuthorDisplayNameRole:
-        return post->m_author_identity->displayNameHtml();
+        return post->authorIdentity()->displayNameHtml();
     case AuthorIdRole:
-        return post->m_author_identity->account();
+        return post->authorIdentity()->account();
     case PublishedAtRole:
         return post->m_published_at;
     case WasRebloggedRole:
         return post->m_repeat || notification->type() == Notification::Repeat;
     case RebloggedDisplayNameRole:
-        if (post->m_repeat_identity) {
-            return post->m_repeat_identity->displayNameHtml();
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->displayNameHtml();
         }
         if (notification->type() == Notification::Repeat) {
             return notification->identity()->displayName();
         }
         return {};
     case RebloggedIdRole:
-        if (post->m_repeat_identity) {
-            return post->m_repeat_identity->account();
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->account();
         }
         if (notification->type() == Notification::Repeat) {
             return notification->identity()->account();
@@ -230,7 +230,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         }
         return false;
     case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->m_author_identity->id(), post->m_author_identity->account()));
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->authorIdentity()->id(), post->authorIdentity()->account()));
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
         auto secsTo = post->m_published_at.secsTo(current);
