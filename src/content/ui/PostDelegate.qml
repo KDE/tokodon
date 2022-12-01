@@ -212,7 +212,7 @@ a{
                             fullScreenImage.createObject(parent, {
                                 model: attachments,
                                 currentIndex: index
-                            }).showFullScreen()
+                            }).open()
                         }
                     }
                 }
