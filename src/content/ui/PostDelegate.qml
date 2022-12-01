@@ -280,10 +280,8 @@ a{
 
         RowLayout {
             Layout.topMargin: Kirigami.Units.largeSpacing
-            QQC2.ToolButton {
-                icon.name: "mail-replied-symbolic"
-                icon.width: Kirigami.Units.iconSizes.smallMedium
-                icon.height: Kirigami.Units.iconSizes.smallMedium
+            InteractionButton {
+                iconSource: "qrc:/content/icon/reply-post.svg"
                 text: model.repliesCount < 2 || Config.showPostStats ? model.repliesCount : "1+"
                 onClicked: {
                     const post = AccountManager.selectedAccount.newPost()
@@ -300,20 +298,20 @@ a{
                     text: i18nc("Reply to a post", "Reply")
                 }
             }
-            QQC2.ToolButton {
-                icon.source: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
-                icon.width: Kirigami.Units.iconSizes.smallMedium
-                icon.height: Kirigami.Units.iconSizes.smallMedium
+            InteractionButton {
+                iconSource: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
+                interacted: model.reblogged
+                interactionColor: "green"
                 onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
                 text: Config.showPostStats ? model.reblogsCount : ''
                 QQC2.ToolTip {
                     text: i18nc("Share a post", "Boost")
                 }
             }
-            QQC2.ToolButton {
-                icon.source: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
-                icon.width: Kirigami.Units.iconSizes.smallMedium
-                icon.height: Kirigami.Units.iconSizes.smallMedium
+            InteractionButton {
+                iconSource: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
+                interacted: model.favorite
+                interactionColor: "orange"
                 onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
                 text: Config.showPostStats ? favoritesCount : ''
                 QQC2.ToolTip {
