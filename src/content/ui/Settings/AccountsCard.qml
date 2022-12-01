@@ -48,7 +48,7 @@ MobileForm.FormCard {
                         QQC2.Label {
                             Layout.fillWidth: true
                             text: model.display
-                            textFormat: Text.PlainText
+                            textFormat: Text.RichText
                             elide: Text.ElideRight
                             wrapMode: Text.Wrap
                             maximumLineCount: 2
