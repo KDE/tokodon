@@ -14,6 +14,8 @@ Account::Account(const QString &name, const QString &instanceUri, QNetworkAccess
     , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(nam)
 {
+    setInstanceUri(instanceUri);
+
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
         notificationHandler->handle(notification, this);

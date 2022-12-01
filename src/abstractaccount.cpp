@@ -21,7 +21,6 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &name, const QSt
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
 {
-    setInstanceUri(instanceUri);
     m_identity.reparentIdentity(this);
 }
 
@@ -168,10 +167,6 @@ QUrl AbstractAccount::getTokenUrl() const
 
 void AbstractAccount::setInstanceUri(const QString &instance_uri)
 {
-    if (m_instance_uri == instance_uri) {
-        return;
-    }
-
     // instance URI changed, get new credentials
     QUrl instance_url = QUrl::fromUserInput(instance_uri);
     instance_url.setScheme("https"); // getting token from http is not supported
