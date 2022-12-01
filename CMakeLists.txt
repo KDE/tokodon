@@ -69,6 +69,7 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
 endif()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
+ecm_find_qmlmodule(org.kde.sonnet 1.0)
 
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
