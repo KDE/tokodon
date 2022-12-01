@@ -63,9 +63,25 @@ void Identity::fromSourceData(const QJsonObject &doc)
     if (m_acct == m_parent->identity().m_acct) {
         m_parent->setDirtyIdentity();
     }
+
+    m_displayNameHtml = m_display_name
+        .replace(QLatin1Char('<'), QStringLiteral("&lt;"))
+        .replace(QLatin1Char('>'), QStringLiteral("&gt;"));
+
+    const auto emojis = doc["emojis"].toArray();
+
+    for (const auto &emoji : emojis) {
+        const auto emojiObj = emoji.toObject();
+        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+    }
 }
 
 qint64 Identity::id() const
 {
     return m_id;
+}
+
+QString Identity::displayNameHtml() const
+{
+    return m_displayNameHtml;
 }

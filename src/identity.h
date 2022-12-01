@@ -16,6 +16,7 @@ class Identity : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QString displayName MEMBER m_display_name CONSTANT)
+    Q_PROPERTY(QString displayNameHtml READ displayNameHtml CONSTANT)
     Q_PROPERTY(QString bio MEMBER m_bio CONSTANT)
     Q_PROPERTY(QString account MEMBER m_acct CONSTANT)
     Q_PROPERTY(bool locked MEMBER m_locked CONSTANT)
@@ -55,10 +56,12 @@ public:
 
     QUrl avatarUrl() const;
     QString displayName() const;
+    QString displayNameHtml() const;
 
 Q_SIGNALS:
     void relationshipChanged();
 
 private:
+    QString m_displayNameHtml;
     Relationship *m_relationship = nullptr;
 };

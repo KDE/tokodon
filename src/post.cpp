@@ -92,6 +92,14 @@ Post::Post(AbstractAccount *parent, QJsonObject obj)
 
     m_subject = obj["spoiler_text"].toString();
     m_content = obj["content"].toString();
+
+    const auto emojis = obj["emojis"].toArray();
+
+    for (const auto &emoji : emojis) {
+        const auto emojiObj = emoji.toObject();
+        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+    }
+
     m_post_id = m_replyTargetId = obj["id"].toString();
     m_isFavorite = obj["favourited"].toBool();
     m_favoriteCount = obj["favourites_count"].toInt();

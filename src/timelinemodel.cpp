@@ -210,7 +210,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     case AvatarRole:
         return p->m_author_identity->m_avatarUrl;
     case AuthorDisplayNameRole:
-        return p->m_author_identity->m_display_name;
+        return p->m_author_identity->displayNameHtml();
     case AuthorIdRole:
         return p->m_author_identity->m_acct;
     case PublishedAtRole:
@@ -221,7 +221,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return p->mentions();
     case RebloggedDisplayNameRole:
         if (p->m_repeat_identity) {
-            return p->m_repeat_identity->m_display_name;
+            return p->m_repeat_identity->displayNameHtml();
         }
         return {};
     case RebloggedIdRole:
