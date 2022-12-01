@@ -183,18 +183,18 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     case Qt::DisplayRole:
         return post->m_content;
     case AvatarRole:
-        return post->m_author_identity->m_avatarUrl;
+        return post->m_author_identity->avatarUrl();
     case AuthorDisplayNameRole:
-        return post->m_author_identity->m_display_name;
+        return post->m_author_identity->displayNameHtml();
     case AuthorIdRole:
-        return post->m_author_identity->m_acct;
+        return post->m_author_identity->account();
     case PublishedAtRole:
         return post->m_published_at;
     case WasRebloggedRole:
         return post->m_repeat || notification->type() == Notification::Repeat;
     case RebloggedDisplayNameRole:
         if (post->m_repeat_identity) {
-            return post->m_repeat_identity->m_display_name;
+            return post->m_repeat_identity->displayNameHtml();
         }
         if (notification->type() == Notification::Repeat) {
             return notification->identity()->displayName();
@@ -202,10 +202,10 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return {};
     case RebloggedIdRole:
         if (post->m_repeat_identity) {
-            return post->m_repeat_identity->m_acct;
+            return post->m_repeat_identity->account();
         }
         if (notification->type() == Notification::Repeat) {
-            return notification->identity()->m_acct;
+            return notification->identity()->account();
         }
         return {};
     case RebloggedRole:
@@ -230,7 +230,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         }
         return false;
     case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->m_author_identity->m_id, post->m_author_identity->m_acct));
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->m_author_identity->id(), post->m_author_identity->account()));
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
         auto secsTo = post->m_published_at.secsTo(current);

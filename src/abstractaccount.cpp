@@ -119,7 +119,7 @@ Identity *AbstractAccount::identityObj()
 const std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &acct, const QJsonObject &doc)
 {
     auto id = m_identityCache[acct];
-    if (id && id->m_acct == acct) {
+    if (id && id->account() == acct) {
         return m_identityCache[acct];
     }
 
@@ -134,15 +134,13 @@ const std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &a
 bool AbstractAccount::identityCached(const QString &acct) const
 {
     auto id = m_identityCache[acct];
-    return id && id->m_acct == acct;
+    return id && id->account() == acct;
 }
 
 QUrlQuery AbstractAccount::buildOAuthQuery() const
 {
-    QUrlQuery q = QUrlQuery();
-
+    QUrlQuery q;
     q.addQueryItem("client_id", m_client_id);
-
     return q;
 }
 
@@ -498,7 +496,7 @@ Post *AbstractAccount::newPost()
     return new Post(this);
 }
 
-void AbstractAccount::executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments)
+void AbstractAccount::executeAction(Identity *identity, AccountAction accountAction, const QJsonObject &extraArguments)
 {
     const QHash<AccountAction, QString> accountActionMap = {
         {AccountAction::Follow, QStringLiteral("/follow")},
@@ -514,8 +512,8 @@ void AbstractAccount::executeAction(Identity *i, AccountAction accountAction, co
 
     const auto apiCall = accountActionMap[accountAction];
 
-    const auto account_id = QString::number(i->m_id);
-    const QString api_url = QStringLiteral("/api/v1/accounts/") + account_id + apiCall;
+    const auto accountId = QString::number(identity->id());
+    const QString api_url = QStringLiteral("/api/v1/accounts/") + accountId + apiCall;
     QUrl url = apiUrl(api_url);
     const QJsonDocument doc(extraArguments);
 
@@ -543,10 +541,10 @@ void AbstractAccount::executeAction(Identity *i, AccountAction accountAction, co
         // If returned json obj is not an error, it's a relationship status.
         // Returned relationship should have a value of true
         // under either the "following" or "requested" keys.
-        auto relationship = i->relationship();
+        auto relationship = identity->relationship();
         relationship->updateFromJson(jsonObj);
 
-        Q_EMIT i->relationshipChanged();
+        Q_EMIT identity->relationshipChanged();
     });
 }
 

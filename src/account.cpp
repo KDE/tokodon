@@ -168,28 +168,30 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     auto url = streamingUrl(stream);
 
     QObject::connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
-        QString target_tl = stream;
-        auto env = QJsonDocument::fromJson(message.toLocal8Bit());
+        QString targetTimeline = stream;
+        const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
 
-        if (stream == "user")
-            target_tl = "home";
+        if (stream == "user") {
+            targetTimeline = "home";
+        }
 
-        auto event = env.object()["event"].toString();
+        const auto event = env.object()["event"].toString();
         if (event == "update") {
-            QSettings settings;
-            QJsonDocument doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
-            auto account_obj = doc.object()["account"].toObject();
+            const QSettings settings;
+            const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
+            const auto accountObject = doc.object()["account"].toObject();
 
-            if (account_obj["acct"] == m_identity.m_acct)
+            if (accountObject["acct"] == m_identity.account()) {
                 return;
+            }
 
-            if (settings.value("Preferences/timeline_firehose", true).toBool())
-                handleUpdate(doc, target_tl);
+            if (settings.value("Preferences/timeline_firehose", true).toBool()) {
+                handleUpdate(doc, targetTimeline);
+            }
 
             return;
         } else if (event == "notification") {
-            QJsonDocument doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
-
+            const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
             handleNotification(doc);
             return;
         }

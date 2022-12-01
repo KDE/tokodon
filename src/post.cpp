@@ -62,8 +62,8 @@ Post::Post(AbstractAccount *parent)
     : QObject(parent)
     , m_parent(parent)
 {
-    QString vis_str = parent->identity().m_visibility;
-    m_visibility = stringToVisibility[vis_str];
+    QString visibilityString = parent->identity().visibility();
+    m_visibility = stringToVisibility[visibilityString];
 }
 
 Post::Post(AbstractAccount *parent, QJsonObject obj)

@@ -44,7 +44,7 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     // Fetch relationship. Don't cache this; it's lightweight.
     QUrl uriRelationship(m_account->instanceUri());
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
-    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->m_id)}});
+    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->id())}});
 
     m_account->get(uriRelationship, true, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -71,7 +71,7 @@ QString AccountModel::displayName() const
         return i18n("Loading");
     }
 
-    return m_identity->m_display_name;
+    return m_identity->displayNameHtml();
 }
 
 void AccountModel::fillTimeline(const QString &fromId)

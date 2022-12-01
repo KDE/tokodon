@@ -208,11 +208,11 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     case Qt::DisplayRole:
         return p->m_content;
     case AvatarRole:
-        return p->m_author_identity->m_avatarUrl;
+        return p->m_author_identity->avatarUrl();
     case AuthorDisplayNameRole:
         return p->m_author_identity->displayNameHtml();
     case AuthorIdRole:
-        return p->m_author_identity->m_acct;
+        return p->m_author_identity->account();
     case PublishedAtRole:
         return p->m_published_at;
     case WasRebloggedRole:
@@ -226,7 +226,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return {};
     case RebloggedIdRole:
         if (p->m_repeat_identity) {
-            return p->m_repeat_identity->m_acct;
+            return p->m_repeat_identity->account();
         }
         return {};
     case RebloggedRole:
@@ -255,7 +255,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     case ThreadModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
     case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->m_author_identity->m_id, p->m_author_identity->m_acct));
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->m_author_identity->id(), p->m_author_identity->account()));
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
         auto secsTo = p->m_published_at.secsTo(current);

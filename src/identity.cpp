@@ -5,15 +5,61 @@
 #include "abstractaccount.h"
 #include "relationship.h"
 #include <QJsonObject>
+#include <qjsonarray.h>
 
 QString Identity::displayName() const
 {
-    return !m_display_name.isEmpty() ? m_display_name : m_acct;
+    return !m_displayName.isEmpty() ? m_displayName : m_account;
+}
+
+QString Identity::bio() const
+{
+    return m_bio;
+}
+
+QString Identity::account() const
+{
+    return m_account;
+}
+
+bool Identity::locked() const
+{
+    return m_locked;
+}
+
+QString Identity::visibility() const
+{
+    return m_visibility;
 }
 
 QUrl Identity::avatarUrl() const
 {
     return m_avatarUrl;
+}
+
+QUrl Identity::backgroundUrl() const
+{
+    return m_avatarUrl;
+}
+
+int Identity::followersCount() const
+{
+    return m_followersCount;
+}
+
+int Identity::followingCount() const
+{
+    return m_followingCount;
+}
+
+int Identity::statusesCount() const
+{
+    return m_statusesCount;
+}
+
+QJsonArray Identity::fields() const
+{
+    return m_fields;
 }
 
 Relationship *Identity::relationship() const
@@ -42,8 +88,8 @@ void Identity::reparentIdentity(AbstractAccount *parent)
 void Identity::fromSourceData(const QJsonObject &doc)
 {
     m_id = doc["id"].toString().toULongLong();
-    m_display_name = doc["display_name"].toString();
-    m_acct = doc["acct"].toString();
+    m_displayName = doc["display_name"].toString();
+    m_account = doc["acct"].toString();
     m_bio = doc["note"].toString();
     m_locked = doc["locked"].toBool();
     m_backgroundUrl = QUrl(doc["header"].toString());
@@ -60,11 +106,11 @@ void Identity::fromSourceData(const QJsonObject &doc)
 
     m_avatarUrl = QUrl(doc["avatar"].toString());
 
-    if (m_acct == m_parent->identity().m_acct) {
+    if (m_account == m_parent->identity().m_account) {
         m_parent->setDirtyIdentity();
     }
 
-    m_displayNameHtml = m_display_name
+    m_displayNameHtml = m_displayName
         .replace(QLatin1Char('<'), QStringLiteral("&lt;"))
         .replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
