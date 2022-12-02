@@ -63,6 +63,10 @@ else()
     )
 endif()
 
+if (UNIX AND NOT APPLE)
+    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KIO)
+endif()
+
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
     find_package(KF5WindowSystem ${KF5_MIN_VERSION} REQUIRED)

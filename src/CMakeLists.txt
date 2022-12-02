@@ -25,6 +25,8 @@ set(tokodon_src
     account.cpp
     mockaccount.cpp
     post.cpp
+    filetransferjob.cpp
+    filehelper.cpp
     threadmodel.cpp
     accountmodel.cpp
     timelinemodel.cpp
@@ -44,6 +46,11 @@ set(tokodon_src
 
 add_library(tokodon_static STATIC ${tokodon_src})
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
+
+if (TARGET KF5::KIOWidgets)
+    target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
+    target_link_libraries(tokodon_static PUBLIC KF5::KIOWidgets)
+endif()
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)

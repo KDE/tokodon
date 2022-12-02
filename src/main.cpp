@@ -38,6 +38,7 @@
 #include "networkaccessmanagerfactory.h"
 #include "notificationmodel.h"
 #include "post.h"
+#include "filehelper.h"
 #include "timelinemodel.h"
 
 #ifdef Q_OS_ANDROID
@@ -101,6 +102,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);
     qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });

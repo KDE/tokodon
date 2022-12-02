@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kmasto 1.0
 
 QQC2.Popup {
     id: root
@@ -118,9 +119,11 @@ QQC2.Popup {
                     icon.name: "document-save"
                     display: QQC2.AbstractButton.IconOnly
                     onClicked: {
-                        var dialog = saveAsDialog.createObject(QQC2.ApplicationWindow.overlay)
-                        dialog.open()
-                        dialog.currentFile = dialog.folder + "/" + currentRoom.fileNameToDownload(eventId)
+                        const dialog = saveAsDialog.createObject(QQC2.ApplicationWindow.overlay, {
+                            url: view.currentItem.image.source,
+                        })
+                        dialog.open();
+                        dialog.currentFile = dialog.folder + "/" + FileHelper.fileName(view.currentItem.image.source);
                     }
 
                     QQC2.ToolTip {
@@ -258,5 +261,26 @@ QQC2.Popup {
                 onClicked: view.currentIndex += 1
             }
         }
+    }
+
+    Component {
+        id: saveAsDialog
+        FileDialog {
+            property var url
+            fileMode: FileDialog.SaveFile
+            folder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+            onAccepted: {
+                if (!currentFile) {
+                    return;
+                }
+                console.log(url, currentFile, AccountManager.selectedAccount)
+                FileHelper.downloadFile(AccountManager.selectedAccount, url, currentFile)
+            }
+        }
+    }
+
+    onClosed: {
+        view.currentItem.image.scaleFactor = 1
+        view.currentItem.image.rotationAngle = 0
     }
 }
