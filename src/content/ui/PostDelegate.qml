@@ -8,14 +8,27 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import QtGraphicalEffects 1.0
 
-Kirigami.BasicListItem {
+QQC2.ItemDelegate {
     topPadding: Kirigami.Units.largeSpacing
-    leftPadding: Kirigami.Units.smallSpacing
-    rightPadding: Kirigami.Units.smallSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
     highlighted: false
     hoverEnabled: false
     property bool secondary: false
-    separatorVisible: true
+    width: ListView.view.width
+    background: Item {
+        Kirigami.Separator {
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+                leftMargin: Kirigami.Units.largeSpacing
+                rightMargin: Kirigami.Units.largeSpacing
+            }
+        }
+    }
+    bottomInset: 2
     onClicked: {
         const subModel = model.threadModel;
         if (subModel.name !== timelinePage.model.name) {
