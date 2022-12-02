@@ -22,8 +22,7 @@ Kirigami.ApplicationWindow {
     Connections {
         target: AccountManager
         function onAccountSelected() {
-            pageStack.clear();
-            pageStack.push(mainTimeline);
+            homeAction.trigger();
         }
 
         function onAccountRemoved() {
