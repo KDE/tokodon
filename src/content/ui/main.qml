@@ -102,7 +102,6 @@ Kirigami.ApplicationWindow {
         iconName: "notifications"
         text: i18n("Notifications")
         checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Notifications
-        onCheckedChanged: console.log("BLO", checked)
         onTriggered: if (!checked) {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
