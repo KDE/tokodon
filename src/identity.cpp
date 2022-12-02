@@ -126,6 +126,8 @@ void Identity::fromSourceData(const QJsonObject &doc)
         const auto emojiObj = emoji.toObject();
         m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
+
+    Q_EMIT identityUpdated();
 }
 
 qint64 Identity::id() const

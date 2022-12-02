@@ -24,6 +24,7 @@ public:
     enum CustomRoles {
         AccountRole = Qt::UserRole + 1,
         DescriptionRole,
+        InstanceRole,
     };
 
     static AccountManager &instance();

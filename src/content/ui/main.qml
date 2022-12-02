@@ -37,14 +37,14 @@ Kirigami.ApplicationWindow {
         id: drawer
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
-        drawerOpen: !Kirigami.Settings.isMobile && accountBox.count > 0
+        drawerOpen: !Kirigami.Settings.isMobile
         width: Kirigami.Units.gridUnit * 16
         Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
-        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1 && accountBox.count > 0
+        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1
 
         leftPadding: 0
         rightPadding: 0
@@ -53,51 +53,21 @@ Kirigami.ApplicationWindow {
 
         contentItem: ColumnLayout {
             spacing: 0
+
             QQC2.ToolBar {
-                id: toolbar
                 Layout.fillWidth: true
                 Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
 
-                leftPadding: Kirigami.Units.smallSpacing
-                rightPadding: Kirigami.Units.smallSpacing
-                topPadding: 0
-                bottomPadding: 0
+                leftPadding: Kirigami.Units.largeSpacing
+                rightPadding: Kirigami.Units.largeSpacing
+                topPadding: Kirigami.Units.smallSpacing
+                bottomPadding: Kirigami.Units.smallSpacing
 
-                RowLayout {
-                    anchors.fill: parent
-
-                    QQC2.ComboBox {
-                        id: accountBox
-                        model: AccountManager
-                        currentIndex: AccountManager.selectedIndex
-                        textRole: 'display'
-                        displayText: `${currentText} (${AccountManager.selectedAccount.instanceName})`
-                        Layout.fillWidth: true
-                        delegate: Kirigami.BasicListItem {
-                            label: model.display
-                            subtitle: model.description
-                            leading: Kirigami.Avatar {
-                                source: model.account.identity.avatarUrl
-                                name: model.display
-                                implicitWidth: height
-                                sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
-                                sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
-                            }
-                            onClicked: if (AccountManager.selectedAccount !== model.account) {
-                                AccountManager.selectedAccount = model.account;
-                                currentIndex = index
-                            }
-                        }
-                    }
-
-                    QQC2.Button {
-                        icon.name: "list-add"
-                        onClicked: pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
-                        Accessible.name: i18n("Add Account")
-                        enabled: AccountManager.hasAccounts && pageStack.get(0).objectName !== 'loginPage' && pageStack.get(0).objectName !== 'authorizationPage' && (pageStack.layers.depth === 1 || pageStack.layers.get(1).objectName !== 'loginPage' && pageStack.layers.get(1).objectName !== 'authorizationPage')
-                    }
+                contentItem: Kirigami.Heading {
+                    text: i18n("Tokodon")
                 }
             }
+
             Repeater {
                 model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
                 Kirigami.BasicListItem {
@@ -111,12 +81,8 @@ Kirigami.ApplicationWindow {
                 Layout.fillHeight: true
             }
 
-            Kirigami.BasicListItem {
-                action: Kirigami.Action {
-                    icon.name: "settings-configure"
-                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml');
-                    text: i18nc("@action:inmenu", "Settings")
-                }
+            UserInfo {
+                Layout.fillWidth: true
             }
         }
     }

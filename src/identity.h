@@ -16,19 +16,19 @@ class Identity : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString displayName READ displayName CONSTANT)
-    Q_PROPERTY(QString displayNameHtml READ displayNameHtml CONSTANT)
-    Q_PROPERTY(QString bio READ bio CONSTANT)
-    Q_PROPERTY(QString username READ username CONSTANT)
-    Q_PROPERTY(QString account READ account CONSTANT)
-    Q_PROPERTY(bool locked READ locked CONSTANT)
-    Q_PROPERTY(QString visibility READ visibility CONSTANT)
-    Q_PROPERTY(QUrl avatarUrl READ avatarUrl CONSTANT)
-    Q_PROPERTY(QUrl backgroundUrl READ backgroundUrl CONSTANT)
-    Q_PROPERTY(int followersCount READ followersCount CONSTANT)
-    Q_PROPERTY(int followingCount READ followingCount CONSTANT)
-    Q_PROPERTY(int statusesCount READ statusesCount CONSTANT)
-    Q_PROPERTY(QJsonArray fields READ fields CONSTANT)
+    Q_PROPERTY(QString displayName READ displayName NOTIFY identityUpdated)
+    Q_PROPERTY(QString displayNameHtml READ displayNameHtml NOTIFY identityUpdated)
+    Q_PROPERTY(QString username READ username NOTIFY identityUpdated)
+    Q_PROPERTY(QString bio READ bio NOTIFY identityUpdated)
+    Q_PROPERTY(QString account READ account NOTIFY identityUpdated)
+    Q_PROPERTY(bool locked READ locked NOTIFY identityUpdated)
+    Q_PROPERTY(QString visibility READ visibility NOTIFY identityUpdated)
+    Q_PROPERTY(QUrl avatarUrl READ avatarUrl NOTIFY identityUpdated)
+    Q_PROPERTY(QUrl backgroundUrl READ backgroundUrl NOTIFY identityUpdated)
+    Q_PROPERTY(int followersCount READ followersCount NOTIFY identityUpdated)
+    Q_PROPERTY(int followingCount READ followingCount NOTIFY identityUpdated)
+    Q_PROPERTY(int statusesCount READ statusesCount NOTIFY identityUpdated)
+    Q_PROPERTY(QJsonArray fields READ fields NOTIFY identityUpdated)
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
 public:
@@ -56,6 +56,7 @@ public:
 
 Q_SIGNALS:
     void relationshipChanged();
+    void identityUpdated();
 
 private:
     qint64 m_id;

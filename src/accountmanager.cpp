@@ -40,6 +40,8 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
         return account->identity().displayNameHtml();
     case DescriptionRole:
         return account->identity().account();
+    case InstanceRole:
+        return account->instanceName();
     case AccountRole:
         return QVariant::fromValue(m_accounts[index.row()]);
     }
@@ -58,6 +60,7 @@ QHash<int, QByteArray> AccountManager::roleNames() const
         {Qt::DisplayRole, QByteArrayLiteral("display")},
         {AccountRole, QByteArrayLiteral("account")},
         {DescriptionRole, QByteArrayLiteral("description")},
+        {InstanceRole, QByteArrayLiteral("instance")},
     };
 }
 
