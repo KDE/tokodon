@@ -9,6 +9,7 @@ import org.kde.kmasto 1.0
 import QtGraphicalEffects 1.0
 
 QQC2.ItemDelegate {
+    id: root
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing
@@ -163,6 +164,10 @@ a{
                     applicationWindow().hoverLinkIndicator.text = hoveredLink;
                 } else {
                     applicationWindow().hoverLinkIndicator.text = "";
+                }
+
+                TapHandler {
+                    onTapped: root.clicked()
                 }
 
                 MouseArea {
