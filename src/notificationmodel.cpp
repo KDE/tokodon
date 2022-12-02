@@ -170,7 +170,7 @@ std::shared_ptr<Notification> NotificationModel::internalData(const QModelIndex 
 QHash<int, QByteArray> NotificationModel::roleNames() const
 {
     auto roles = AbstractTimelineModel::roleNames();
-    roles.insert(ActorDisplayNameRole, QByteArrayLiteral("actorDisplayName"));
+    roles.insert(NewFollowerIdentityRole, QByteArrayLiteral("newFollowerIdentity"));
     return roles;
 }
 
@@ -186,14 +186,10 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case TypeRole:
         return notification->type();
-    case ActorDisplayNameRole:
-        return notification->identity()->displayName();
     case Qt::DisplayRole:
         return post->m_content;
     case AvatarRole:
         return post->authorIdentity()->avatarUrl();
-    case AuthorDisplayNameRole:
-        return post->authorIdentity()->displayNameHtml();
     case AuthorIdRole:
         return post->authorIdentity()->account();
     case PublishedAtRole:
@@ -208,6 +204,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
             return notification->identity()->displayName();
         }
         return {};
+    case AuthorDisplayNameRole:
+        return post->authorIdentity()->displayNameHtml();
     case RebloggedIdRole:
         if (post->repeatIdentity()) {
             return post->repeatIdentity()->account();
@@ -256,6 +254,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         }
         return QLocale::system().toString(post->m_published_at.date(), QLocale::ShortFormat);
     }
+    case NewFollowerIdentityRole:
+        return QVariant::fromValue(notification->identity().get());
     }
 
     return {};

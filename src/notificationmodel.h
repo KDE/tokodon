@@ -15,7 +15,9 @@ class NotificationModel : public AbstractTimelineModel
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
 
 public:
-    enum ExtraRoles { ActorDisplayNameRole = AbstractTimelineModel::ExtraRole };
+    enum ExtraRoles {
+        NewFollowerIdentityRole = AbstractTimelineModel::ExtraRole,
+    };
 
     explicit NotificationModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;

@@ -82,34 +82,12 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Mention
-                PostDelegate {
-                }
+                PostDelegate {}
             }
 
             DelegateChoice {
                 roleValue: Notification.Follow
-                QQC2.ItemDelegate {
-                    topPadding: Kirigami.Units.largeSpacing
-                    bottomPadding: Kirigami.Units.largeSpacing
-                    leftPadding: Kirigami.Units.largeSpacing
-                    rightPadding: Kirigami.Units.largeSpacing
-                    highlighted: false
-                    hoverEnabled: false
-                    width: ListView.view.width
-                    background: Item {
-                        Kirigami.Separator {
-                            anchors {
-                                left: parent.left
-                                right: parent.right
-                                bottom: parent.bottom
-                                leftMargin: Kirigami.Units.largeSpacing
-                                rightMargin: Kirigami.Units.largeSpacing
-                            }
-                        }
-                    }
-                    bottomInset: 2
-                    text: i18n("%1 followed you", model.actorDisplayName)
-                }
+                FollowDelegate {}
             }
         }
         Kirigami.PlaceholderMessage {

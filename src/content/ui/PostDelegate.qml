@@ -10,10 +10,10 @@ import QtGraphicalEffects 1.0
 
 QQC2.ItemDelegate {
     id: root
-    topPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
-    leftPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing
+    topPadding: Kirigami.Units.largeSpacing * 2
+    bottomPadding: Kirigami.Units.largeSpacing * 2
+    leftPadding: Kirigami.Units.largeSpacing * 2
+    rightPadding: Kirigami.Units.largeSpacing * 2
     highlighted: false
     hoverEnabled: false
     property bool secondary: false
@@ -41,7 +41,7 @@ QQC2.ItemDelegate {
     }
     ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
     contentItem: GridLayout {
-        columnSpacing: Kirigami.Units.largeSpacing
+        columnSpacing: Kirigami.Units.largeSpacing * 2
         rowSpacing: 0
         columns: 2
 
@@ -97,12 +97,10 @@ QQC2.ItemDelegate {
             Layout.rowSpan: 5
             source: model.avatar
             cache: true
-            TapHandler {
-                onTapped: {
-                    pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: model.accountModel,
-                    });
-                }
+            actions.main: Kirigami.Action {
+                onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                    model: model.accountModel,
+                })
             }
             name: model.authorDisplayName
         }
@@ -159,7 +157,7 @@ a{
                 selectByMouse: !Kirigami.Settings.isMobile
                 // TODO handle opening profile page in tokodon
                 onLinkActivated: Qt.openUrlExternally(link)
-                color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 onHoveredLinkChanged: if (hoveredLink.length > 0) {
                     applicationWindow().hoverLinkIndicator.text = hoveredLink;
                 } else {
@@ -180,12 +178,12 @@ a{
 
         GridLayout {
             id: attachmentGrid
-            visible: tootContent.visible
+            visible: tootContent.visible && !secondary
             Layout.fillWidth: true
             columns: model.attachments.length > 1 ? 2 : 1
             Repeater {
                 id: attachmentsRepeater
-                model: attachments
+                model: secondary ? attachments : []
                 Image {
                     id: img
                     Layout.fillWidth: true
@@ -222,7 +220,7 @@ a{
         }
 
         QQC2.Control {
-            visible: model.card && tootContent.visible && Config.showLinkPreview
+            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
             leftPadding: 0
