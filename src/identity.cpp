@@ -44,7 +44,7 @@ QUrl Identity::avatarUrl() const
 
 QUrl Identity::backgroundUrl() const
 {
-    return m_avatarUrl;
+    return m_backgroundUrl;
 }
 
 int Identity::followersCount() const
@@ -99,6 +99,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_bio = doc["note"].toString();
     m_locked = doc["locked"].toBool();
     m_backgroundUrl = QUrl(doc["header"].toString());
+    m_avatarUrl = QUrl(doc["avatar"].toString());
     m_followersCount = doc["followers_count"].toInt();
     m_followingCount = doc["following_count"].toInt();
     m_statusesCount = doc["statuses_count"].toInt();
@@ -110,7 +111,6 @@ void Identity::fromSourceData(const QJsonObject &doc)
     QJsonObject source = doc["source"].toObject();
     m_visibility = source["privacy"].toString();
 
-    m_avatarUrl = QUrl(doc["avatar"].toString());
 
     if (m_account == m_parent->identity().m_account) {
         m_parent->setDirtyIdentity();
