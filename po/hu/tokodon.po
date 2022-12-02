@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:46+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,48 +17,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.07.70\n"
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:527
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:528
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: abstractaccount.cpp:536
+#: abstractaccount.cpp:529
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: abstractaccount.cpp:537
+#: abstractaccount.cpp:530
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: abstractaccount.cpp:538
+#: abstractaccount.cpp:531
 #, fuzzy, kde-format
 #| msgid "Add an account"
 msgid "Could not mute account"
 msgstr "Fiók hozzáadása"
 
-#: abstractaccount.cpp:539
+#: abstractaccount.cpp:532
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: abstractaccount.cpp:540
+#: abstractaccount.cpp:533
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: abstractaccount.cpp:541
+#: abstractaccount.cpp:534
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: abstractaccount.cpp:542
+#: abstractaccount.cpp:535
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
@@ -178,7 +178,7 @@ msgstr "Hivatkozás megnyitása"
 msgid "Enter token:"
 msgstr "Adja meg a kódot:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:37
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
 #, kde-format
 msgid "Continue"
 msgstr "Folytatás"
@@ -208,33 +208,33 @@ msgstr "Következő kép"
 msgid "Close"
 msgstr "Bezárás"
 
-#: content/ui/LoginPage.qml:13
+#: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
 msgstr "Bejelentkezés"
 
-#: content/ui/LoginPage.qml:18
+#: content/ui/LoginPage.qml:28
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Üdvözli a Tokodon"
 
-#: content/ui/LoginPage.qml:22
+#: content/ui/LoginPage.qml:33
 #, kde-format
 msgid "Instance Url:"
 msgstr "Példány URL:"
 
-#: content/ui/LoginPage.qml:28
+#: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Username:"
 msgstr "Felhasználónév:"
 
-#: content/ui/LoginPage.qml:33
+#: content/ui/LoginPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Ignore uppercase words"
 msgid "Ignore ssl errors"
 msgstr "Nagybetűs szavak kihagyása"
 
-#: content/ui/LoginPage.qml:40
+#: content/ui/LoginPage.qml:54
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "A példány URL és a felhasználónév nem lehet üres!"
@@ -294,7 +294,7 @@ msgstr "Beállítások:"
 msgid "%1 followed you"
 msgstr "%1 követő"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:77
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -325,19 +325,19 @@ msgstr ""
 msgid "Show more"
 msgstr "Több megjelenítése"
 
-#: content/ui/PostDelegate.qml:300
+#: content/ui/PostDelegate.qml:298
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Válasz"
 
-#: content/ui/PostDelegate.qml:310
+#: content/ui/PostDelegate.qml:308
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Kiemelés"
 
-#: content/ui/PostDelegate.qml:320
+#: content/ui/PostDelegate.qml:318
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -468,6 +468,11 @@ msgstr "Szó hozzáadása"
 #, kde-format
 msgid "Delete word"
 msgstr "Szó törlése"
+
+#: content/ui/TimelinePage.qml:57
+#, kde-format
+msgid "Refresh"
+msgstr ""
 
 #: content/ui/TootComposer.qml:13
 #, kde-format

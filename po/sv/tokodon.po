@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:46+0000\n"
 "PO-Revision-Date: 2022-05-21 11:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:527
 #, kde-format
 msgid "Could not follow account"
 msgstr "Kunde inte följa konto"
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:528
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Kunde inte sluta följa konto"
 
-#: abstractaccount.cpp:536
+#: abstractaccount.cpp:529
 #, kde-format
 msgid "Could not block account"
 msgstr "Kunde inte blockera konto"
 
-#: abstractaccount.cpp:537
+#: abstractaccount.cpp:530
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Kunde inte sluta blockera konto"
 
-#: abstractaccount.cpp:538
+#: abstractaccount.cpp:531
 #, kde-format
 msgid "Could not mute account"
 msgstr "Kunde inte tysta konto"
 
-#: abstractaccount.cpp:539
+#: abstractaccount.cpp:532
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Kunde inte sluta tysta konto"
 
-#: abstractaccount.cpp:540
+#: abstractaccount.cpp:533
 #, kde-format
 msgid "Could not feature account"
 msgstr "Kunde inte presentera konto"
 
-#: abstractaccount.cpp:541
+#: abstractaccount.cpp:534
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Kunde inte sluta presentera konto"
 
-#: abstractaccount.cpp:542
+#: abstractaccount.cpp:535
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Kunde inte redigera anmärkning om ett konto"
@@ -172,7 +172,7 @@ msgstr "Öppna länk"
 msgid "Enter token:"
 msgstr "Ange token:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:37
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
 #, kde-format
 msgid "Continue"
 msgstr "Fortsätt"
@@ -202,32 +202,32 @@ msgstr "Nästa bild"
 msgid "Close"
 msgstr "Stäng"
 
-#: content/ui/LoginPage.qml:13
+#: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
 msgstr "Logga in"
 
-#: content/ui/LoginPage.qml:18
+#: content/ui/LoginPage.qml:28
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Välkommen till Tokodon"
 
-#: content/ui/LoginPage.qml:22
+#: content/ui/LoginPage.qml:33
 #, kde-format
 msgid "Instance Url:"
 msgstr "Instans Url:"
 
-#: content/ui/LoginPage.qml:28
+#: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: content/ui/LoginPage.qml:33
+#: content/ui/LoginPage.qml:46
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ignorera ssl-fel"
 
-#: content/ui/LoginPage.qml:40
+#: content/ui/LoginPage.qml:54
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "Instansens webbadress och användarnamn får inte vara tomma."
@@ -285,7 +285,7 @@ msgstr "Omnämnanden"
 msgid "%1 followed you"
 msgstr "%1 följer dig"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:77
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -316,19 +316,19 @@ msgstr "%1 förstärkte ditt inlägg"
 msgid "Show more"
 msgstr "Visa fler"
 
-#: content/ui/PostDelegate.qml:300
+#: content/ui/PostDelegate.qml:298
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/PostDelegate.qml:310
+#: content/ui/PostDelegate.qml:308
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Förstärk"
 
-#: content/ui/PostDelegate.qml:320
+#: content/ui/PostDelegate.qml:318
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -460,6 +460,11 @@ msgstr "Lägg till ord"
 #, kde-format
 msgid "Delete word"
 msgstr "Ta bort ord"
+
+#: content/ui/TimelinePage.qml:57
+#, kde-format
+msgid "Refresh"
+msgstr ""
 
 #: content/ui/TootComposer.qml:13
 #, kde-format

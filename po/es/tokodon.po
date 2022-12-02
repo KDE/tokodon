@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:46+0000\n"
 "PO-Revision-Date: 2022-11-22 12:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.11.80\n"
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:527
 #, kde-format
 msgid "Could not follow account"
 msgstr "No se ha podido seguir la cuenta"
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:528
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "No se ha podido dejar de seguir la cuenta"
 
-#: abstractaccount.cpp:536
+#: abstractaccount.cpp:529
 #, kde-format
 msgid "Could not block account"
 msgstr "No se ha podido bloquear la cuenta"
 
-#: abstractaccount.cpp:537
+#: abstractaccount.cpp:530
 #, kde-format
 msgid "Could not unblock account"
 msgstr "No se ha podido desbloquear la cuenta"
 
-#: abstractaccount.cpp:538
+#: abstractaccount.cpp:531
 #, kde-format
 msgid "Could not mute account"
 msgstr "No se ha podido silenciar la cuenta"
 
-#: abstractaccount.cpp:539
+#: abstractaccount.cpp:532
 #, kde-format
 msgid "Could not unmute account"
 msgstr "No se ha podido dejar de silenciar la cuenta"
 
-#: abstractaccount.cpp:540
+#: abstractaccount.cpp:533
 #, kde-format
 msgid "Could not feature account"
 msgstr "No se ha podido destacar la cuenta"
 
-#: abstractaccount.cpp:541
+#: abstractaccount.cpp:534
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "No se ha podido dejar de destacar la cuenta"
 
-#: abstractaccount.cpp:542
+#: abstractaccount.cpp:535
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "No se ha podido editar la nota sobre una cuenta"
@@ -174,7 +174,7 @@ msgstr "Abrir enlace"
 msgid "Enter token:"
 msgstr "Introducir token:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:37
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
 #, kde-format
 msgid "Continue"
 msgstr "Continuar"
@@ -204,32 +204,32 @@ msgstr "Imagen siguiente"
 msgid "Close"
 msgstr "Cerrar"
 
-#: content/ui/LoginPage.qml:13
+#: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
 msgstr "Inicio de sesión"
 
-#: content/ui/LoginPage.qml:18
+#: content/ui/LoginPage.qml:28
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Bienvenido a Tokodon"
 
-#: content/ui/LoginPage.qml:22
+#: content/ui/LoginPage.qml:33
 #, kde-format
 msgid "Instance Url:"
 msgstr "URL de la instancia:"
 
-#: content/ui/LoginPage.qml:28
+#: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Username:"
 msgstr "Nombre de usuario:"
 
-#: content/ui/LoginPage.qml:33
+#: content/ui/LoginPage.qml:46
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ignorar errores de SSL"
 
-#: content/ui/LoginPage.qml:40
+#: content/ui/LoginPage.qml:54
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "El nombre de usuario y el URL de la instancia no pueden estar vacíos."
@@ -287,7 +287,7 @@ msgstr "Menciones"
 msgid "%1 followed you"
 msgstr "%1 le está siguiendo"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:77
 #, kde-format
 msgid "Loading..."
 msgstr "Cargando..."
@@ -317,19 +317,19 @@ msgstr "%1 ha promovido su publicación"
 msgid "Show more"
 msgstr "Mostrar más"
 
-#: content/ui/PostDelegate.qml:300
+#: content/ui/PostDelegate.qml:298
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/PostDelegate.qml:310
+#: content/ui/PostDelegate.qml:308
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Promover"
 
-#: content/ui/PostDelegate.qml:320
+#: content/ui/PostDelegate.qml:318
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -452,6 +452,11 @@ msgstr "Añadir palabra"
 #, kde-format
 msgid "Delete word"
 msgstr "Borrar palabra"
+
+#: content/ui/TimelinePage.qml:57
+#, kde-format
+msgid "Refresh"
+msgstr ""
 
 #: content/ui/TootComposer.qml:13
 #, kde-format

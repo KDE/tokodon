@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:47+0000\n"
+"POT-Creation-Date: 2022-12-02 00:46+0000\n"
 "PO-Revision-Date: 2022-06-11 21:51+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:527
 #, kde-format
 msgid "Could not follow account"
 msgstr "Tiliä ei voitu seurata"
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:528
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Tilin seuraamista ei voitu perua"
 
-#: abstractaccount.cpp:536
+#: abstractaccount.cpp:529
 #, kde-format
 msgid "Could not block account"
 msgstr "Tiliä ei voitu estää"
 
-#: abstractaccount.cpp:537
+#: abstractaccount.cpp:530
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Tilin estoa ei voitu perua"
 
-#: abstractaccount.cpp:538
+#: abstractaccount.cpp:531
 #, kde-format
 msgid "Could not mute account"
 msgstr "Tiliä ei voitu vaimentaa"
 
-#: abstractaccount.cpp:539
+#: abstractaccount.cpp:532
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Tilin vaimennusta ei voitu perua"
 
-#: abstractaccount.cpp:540
+#: abstractaccount.cpp:533
 #, kde-format
 msgid "Could not feature account"
 msgstr "Tiliä ei voitu esitellä"
 
-#: abstractaccount.cpp:541
+#: abstractaccount.cpp:534
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Tilin esittelyä ei voitu perua"
 
-#: abstractaccount.cpp:542
+#: abstractaccount.cpp:535
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
@@ -172,7 +172,7 @@ msgstr "Avaa linkki"
 msgid "Enter token:"
 msgstr "Syötä merkki:"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:37
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
 #, kde-format
 msgid "Continue"
 msgstr "Jatka"
@@ -202,32 +202,32 @@ msgstr "Seuraava kuva"
 msgid "Close"
 msgstr "Sulje"
 
-#: content/ui/LoginPage.qml:13
+#: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: content/ui/LoginPage.qml:18
+#: content/ui/LoginPage.qml:28
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Tervetuloa Tokodoniin"
 
-#: content/ui/LoginPage.qml:22
+#: content/ui/LoginPage.qml:33
 #, kde-format
 msgid "Instance Url:"
 msgstr "Instanssin verkko-osoite:"
 
-#: content/ui/LoginPage.qml:28
+#: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
-#: content/ui/LoginPage.qml:33
+#: content/ui/LoginPage.qml:46
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr "Sivuuta SSL-virheet"
 
-#: content/ui/LoginPage.qml:40
+#: content/ui/LoginPage.qml:54
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "Instanssin verkko-osoite ja käyttäjätunnus eivät voi olla tyhjiä!"
@@ -285,7 +285,7 @@ msgstr "Maininnat"
 msgid "%1 followed you"
 msgstr "%1 alkoi seurata sinua"
 
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:67
+#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:77
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -316,19 +316,19 @@ msgstr ""
 msgid "Show more"
 msgstr "Näytä lisää"
 
-#: content/ui/PostDelegate.qml:300
+#: content/ui/PostDelegate.qml:298
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: content/ui/PostDelegate.qml:310
+#: content/ui/PostDelegate.qml:308
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:320
+#: content/ui/PostDelegate.qml:318
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -460,6 +460,11 @@ msgstr "Lisää sana"
 #, kde-format
 msgid "Delete word"
 msgstr "Poista sana"
+
+#: content/ui/TimelinePage.qml:57
+#, kde-format
+msgid "Refresh"
+msgstr ""
 
 #: content/ui/TootComposer.qml:13
 #, kde-format
