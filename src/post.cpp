@@ -127,7 +127,7 @@ Post::Post(AbstractAccount *parent, QJsonObject obj)
 
 Post::~Post()
 {
-    m_attachments.clear();
+    qDeleteAll(m_attachments);
 }
 
 void Post::addAttachments(const QJsonArray &attachments)
