@@ -18,14 +18,16 @@ NotificationModel::NotificationModel(QObject *parent)
         if (m_account == account) {
             return;
         }
-        m_account = account;
 
         beginResetModel();
         m_notifications.clear();
         endResetModel();
+        m_next = QString();
+        m_fetching = false;
 
-        fillTimeline();
+        m_account = account;
     });
+
     QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
@@ -33,18 +35,21 @@ NotificationModel::NotificationModel(QObject *parent)
             beginResetModel();
             m_notifications.clear();
             endResetModel();
-
-            fillTimeline();
+            m_next = QString();
+            m_fetching = false;
         }
     });
+
     connect(this, &NotificationModel::excludeTypesChanged, this, [this] {
         beginResetModel();
         m_notifications.clear();
         endResetModel();
-
+        m_next = QString();
+        m_fetching = false;
         fillTimeline();
     });
 
+    m_fetching = false;
     fillTimeline();
 }
 
@@ -65,11 +70,14 @@ void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
 
 void NotificationModel::fillTimeline(const QUrl &next)
 {
-    m_fetching = true;
-
     if (!m_account) {
         return;
     }
+
+    if (m_fetching) {
+        return;
+    }
+    m_fetching = true;
     QUrl uri;
     if (next.isEmpty()) {
         uri = QUrl::fromUserInput(m_account->instanceUri());
@@ -117,7 +125,7 @@ void NotificationModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_notifications.isEmpty() || !m_next.isValid()) {
+    if (m_notifications.isEmpty() || !m_next.isValid() || m_fetching) {
         return;
     }
 
@@ -140,7 +148,7 @@ void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>
         return;
     }
 
-    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count());
+    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
     m_notifications.append(notifications);
     endInsertRows();
 }
