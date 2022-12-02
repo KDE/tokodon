@@ -9,7 +9,12 @@
 
 QString Identity::displayName() const
 {
-    return !m_displayName.isEmpty() ? m_displayName : m_account;
+    return !m_displayName.isEmpty() ? m_displayName : m_username;
+}
+
+QString Identity::username() const
+{
+    return m_username;
 }
 
 QString Identity::bio() const
@@ -89,6 +94,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
 {
     m_id = doc["id"].toString().toULongLong();
     m_displayName = doc["display_name"].toString();
+    m_username = doc["username"].toString();
     m_account = doc["acct"].toString();
     m_bio = doc["note"].toString();
     m_locked = doc["locked"].toBool();
@@ -129,5 +135,5 @@ qint64 Identity::id() const
 
 QString Identity::displayNameHtml() const
 {
-    return m_displayNameHtml;
+    return !m_displayNameHtml.isEmpty() ? m_displayNameHtml : m_username;
 }

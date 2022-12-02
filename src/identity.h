@@ -19,6 +19,7 @@ class Identity : public QObject
     Q_PROPERTY(QString displayName READ displayName CONSTANT)
     Q_PROPERTY(QString displayNameHtml READ displayNameHtml CONSTANT)
     Q_PROPERTY(QString bio READ bio CONSTANT)
+    Q_PROPERTY(QString username READ username CONSTANT)
     Q_PROPERTY(QString account READ account CONSTANT)
     Q_PROPERTY(bool locked READ locked CONSTANT)
     Q_PROPERTY(QString visibility READ visibility CONSTANT)
@@ -33,6 +34,7 @@ class Identity : public QObject
 public:
     qint64 id() const;
     QString displayName() const;
+    QString username() const;
     QString displayNameHtml() const;
     QString bio() const;
     QString account() const;
@@ -59,6 +61,7 @@ private:
     qint64 m_id;
     QString m_displayName;
     QString m_displayNameHtml;
+    QString m_username;
     QString m_bio;
     QString m_account;
     bool m_locked;
