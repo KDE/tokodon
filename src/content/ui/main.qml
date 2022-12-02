@@ -72,7 +72,6 @@ Kirigami.ApplicationWindow {
                 model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
                 Kirigami.BasicListItem {
                     action: modelData
-                    visible: appwindow.wideScreen
                     separatorVisible: false
                 }
             }
@@ -90,45 +89,50 @@ Kirigami.ApplicationWindow {
     property Kirigami.Action homeAction: Kirigami.Action {
         iconName: "go-home-large"
         text: i18n("Home")
-        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Home
-        onTriggered: if (!checked) {
+        checkable: true
+        checked: true
+        onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 type: TimelinePage.TimelineType.Home,
             });
+            checked = true;
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
         iconName: "notifications"
         text: i18n("Notifications")
-        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Notifications
-        onTriggered: if (!checked) {
+        checkable: true
+        onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
+            checked = true;
         }
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
         iconName: "system-users"
         text: i18n("Local")
-        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Local
-        onTriggered: if (!checked) {
+        checkable: true
+        onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "public",
                 type: TimelinePage.TimelineType.Local,
             });
+            checked = true;
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
         iconName: "kstars_xplanet"
         text: i18n("Global")
-        checked: pageStack.currentItem && pageStack.currentItem.type === TimelinePage.TimelineType.Global
-        onTriggered: if (!checked) {
+        checkable: true
+        onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "federated",
                 type: TimelinePage.TimelineType.Global,
             });
+            checked = true;
         }
     }
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
