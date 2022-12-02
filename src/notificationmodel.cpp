@@ -140,7 +140,7 @@ void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>
         return;
     }
 
-    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
+    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count());
     m_notifications.append(notifications);
     endInsertRows();
 }
