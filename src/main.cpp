@@ -114,7 +114,6 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    KLocalizedString::setApplicationDomain("kmasto");
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
     NetworkAccessManagerFactory namFactory;
