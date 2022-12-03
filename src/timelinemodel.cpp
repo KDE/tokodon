@@ -119,7 +119,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 
     auto p = m_timeline.last();
 
-    fillTimeline(p->m_post_id);
+    fillTimeline(p->m_original_post_id);
 }
 
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const

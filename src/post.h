@@ -188,6 +188,7 @@ public:
 
     QDateTime m_published_at;
     QString m_post_id;
+    QString m_original_post_id;
     QUrl m_link;
     QString m_content;
     QString m_subject;

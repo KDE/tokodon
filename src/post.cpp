@@ -75,6 +75,8 @@ Post::Post(AbstractAccount *parent, QJsonObject obj)
     const auto acct = account_doc["acct"].toString();
     const auto reblog_obj = obj["reblog"].toObject();
 
+    m_original_post_id = obj["id"].toString();
+
     if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
         m_repeat = false;
         m_authorIdentity = m_parent->identityLookup(acct, account_doc);
