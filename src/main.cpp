@@ -33,6 +33,7 @@
 #include "account.h"
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
+#include "blurhashimageprovider.h"
 #include "clipboard.h"
 #include "config.h"
 #include "networkaccessmanagerfactory.h"
@@ -129,6 +130,8 @@ int main(int argc, char *argv[])
     about.processCommandLine(&parser);
 
     // Controller::instance().setAboutData(about);
+
+    engine.addImageProvider(QLatin1String("blurhash"), new BlurhashImageProvider);
 
     engine.load(QUrl(QStringLiteral("qrc:/content/ui/main.qml")));
     if (engine.rootObjects().isEmpty()) {

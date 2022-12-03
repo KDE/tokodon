@@ -41,6 +41,8 @@ set(tokodon_src
     abstractaccount.cpp
     messagefiltercontainer.cpp
     identity.cpp
+    blurhash.cpp
+    blurhashimageprovider.cpp
     ${debug_files_SRCS}
 )
 

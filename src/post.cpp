@@ -28,6 +28,7 @@ Attachment::Attachment(Post *parent, const QJsonObject &obj)
     m_url = obj["url"].toString();
     m_preview_url = obj["preview_url"].toString();
     m_description = obj["description"].toString();
+    m_blurhash = obj["blurhash"].toString();
 
     // determine type if we can
     auto type = obj["type"].toString();
@@ -368,7 +369,7 @@ QString Card::authorUrl() const
 
 QString Card::blurhash() const
 {
-    return m_card[QLatin1String("blurhas")].toString();
+    return m_card[QLatin1String("blurhash")].toString();
 }
 
 QString Card::description() const

@@ -181,6 +181,9 @@ a{
             visible: tootContent.visible && !root.secondary
             Layout.fillWidth: true
             columns: model.attachments.length > 1 ? 2 : 1
+
+            property var isSensitive: model.sensitive
+
             Repeater {
                 id: attachmentsRepeater
                 model: root.secondary ? [] : attachments
@@ -209,12 +212,62 @@ a{
                     }
                     TapHandler {
                         onTapped: {
-                            fullScreenImage.createObject(parent, {
-                                model: attachments,
-                                currentIndex: index
-                            }).open()
+                            if(attachmentGrid.isSensitive) {
+                                attachmentGrid.isSensitive = false
+                            } else {
+                              fullScreenImage.createObject(parent, {
+                                    model: attachments,
+                                    currentIndex: index
+                                }).open()
+                            }
                         }
                     }
+
+                    Image {
+                        anchors.fill: parent
+                        source: "image://blurhash/" + modelData.blurhash
+                        visible: parent.status !== Image.Ready || attachmentGrid.isSensitive
+                    }
+                }
+            }
+
+            QQC2.Button {
+                icon.name: "view-hidden"
+
+                visible: !parent.isSensitive
+
+                anchors.top: parent.top
+                anchors.topMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                anchors.left: parent.left
+                anchors.leftMargin: Kirigami.Units.smallSpacing
+
+                onClicked: {
+                    attachmentGrid.isSensitive = true
+                }
+            }
+
+            Rectangle {
+                anchors.centerIn: parent
+
+                visible: parent.isSensitive
+
+                width: mediaHiddenLabel.width + Kirigami.Units.smallSpacing * 2
+                height: mediaHiddenLabel.height + Kirigami.Units.smallSpacing * 2
+                radius: 5
+
+                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.inherit: false
+
+                color: Kirigami.Theme.backgroundColor
+
+                QQC2.Label {
+                    id: mediaHiddenLabel
+
+                    anchors.centerIn: parent
+
+                    color: Kirigami.Theme.textColor
+
+                    text: i18n("Media Hidden")
                 }
             }
         }
