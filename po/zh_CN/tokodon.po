@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:46+0000\n"
+"POT-Creation-Date: 2022-12-03 00:46+0000\n"
 "PO-Revision-Date: 2022-12-01 06:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -182,6 +182,12 @@ msgstr "继续"
 msgid "Please insert the generated token."
 msgstr ""
 
+#: content/ui/FollowDelegate.qml:42 content/ui/FollowDelegate.qml:79
+#: notificationhandler.cpp:28
+#, kde-format
+msgid "%1 followed you"
+msgstr ""
+
 #: content/ui/FullScreenImage.qml:18
 #, kde-format
 msgid "Image View"
@@ -232,33 +238,27 @@ msgstr ""
 msgid "Instance URL and username must not be empty!"
 msgstr ""
 
-#: content/ui/main.qml:96 content/ui/Settings/AccountsCard.qml:91
+#: content/ui/main.qml:66 main.cpp:81
 #, kde-format
-msgid "Add Account"
-msgstr "添加账户"
+msgid "Tokodon"
+msgstr "Tokodon"
 
-#: content/ui/main.qml:118
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Settings"
-msgstr "设置"
-
-#: content/ui/main.qml:126
+#: content/ui/main.qml:90
 #, kde-format
 msgid "Home"
 msgstr ""
 
-#: content/ui/main.qml:137 content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:103 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/main.qml:146
+#: content/ui/main.qml:113
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:126
 #, kde-format
 msgid "Global"
 msgstr "全局"
@@ -280,54 +280,49 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:92 notificationhandler.cpp:28
-#, kde-format
-msgid "%1 followed you"
-msgstr ""
-
-#: content/ui/NotificationPage.qml:98 content/ui/TimelinePage.qml:77
+#: content/ui/NotificationPage.qml:95 content/ui/TimelinePage.qml:77
 #, kde-format
 msgid "Loading..."
 msgstr ""
 
-#: content/ui/PostDelegate.qml:44 notificationhandler.cpp:24
+#: content/ui/PostDelegate.qml:58 notificationhandler.cpp:24
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:58
+#: content/ui/PostDelegate.qml:72
 #, kde-format
 msgid "Pinned entry"
 msgstr "固定的条目"
 
-#: content/ui/PostDelegate.qml:76
+#: content/ui/PostDelegate.qml:90
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:76 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:90 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:127
+#: content/ui/PostDelegate.qml:139
 #, kde-format
 msgid "Show more"
 msgstr "显示更多"
 
-#: content/ui/PostDelegate.qml:298
+#: content/ui/PostDelegate.qml:314
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "回复"
 
-#: content/ui/PostDelegate.qml:308
+#: content/ui/PostDelegate.qml:324
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:318
+#: content/ui/PostDelegate.qml:334
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -342,6 +337,11 @@ msgstr "账户"
 #, kde-format
 msgid "Logout"
 msgstr "注销"
+
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:59
+#, kde-format
+msgid "Add Account"
+msgstr "添加账户"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -530,10 +530,32 @@ msgstr ""
 msgid "Send"
 msgstr "发送"
 
-#: main.cpp:81
+#: content/ui/UserInfo.qml:62
 #, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
+msgid "Log in to an existing account"
+msgstr ""
+
+#: content/ui/UserInfo.qml:168
+#, kde-format
+msgid "Switch User"
+msgstr ""
+
+#: content/ui/UserInfo.qml:180
+#, kde-format
+msgid "Add"
+msgstr ""
+
+#: content/ui/UserInfo.qml:191
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: content/ui/UserInfo.qml:192
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgid "Open Settings"
+msgstr "设置"
 
 #: main.cpp:83
 #, kde-format
@@ -567,28 +589,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "slreycn@outlook.com"
 
-#: main.cpp:124
+#: main.cpp:123
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "去中心化的社交网络客户端：mastodon"
 
-#: notificationmodel.cpp:96
+#: notificationmodel.cpp:104
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: notificationmodel.cpp:241 timelinemodel.cpp:266
+#: notificationmodel.cpp:247 timelinemodel.cpp:266
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr ""
 
-#: notificationmodel.cpp:245 timelinemodel.cpp:270
+#: notificationmodel.cpp:251 timelinemodel.cpp:270
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: notificationmodel.cpp:247 timelinemodel.cpp:272
+#: notificationmodel.cpp:253 timelinemodel.cpp:272
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
