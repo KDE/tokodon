@@ -403,7 +403,11 @@ QString Card::image() const
 
 QString Card::providerName() const
 {
-    return m_card[QLatin1String("provider_name")].toString();
+    const auto providerName = m_card[QLatin1String("provider_name")].toString();
+    if (!providerName.isEmpty()) {
+        return providerName;
+    }
+    return url().host();
 }
 
 QString Card::providerUrl() const
@@ -413,7 +417,7 @@ QString Card::providerUrl() const
 
 QString Card::title() const
 {
-    return m_card[QLatin1String("title")].toString();
+    return m_card[QLatin1String("title")].toString().trimmed();
 }
 
 QUrl Card::url() const

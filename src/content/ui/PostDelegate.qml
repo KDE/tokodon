@@ -178,12 +178,12 @@ a{
 
         GridLayout {
             id: attachmentGrid
-            visible: tootContent.visible && !secondary
+            visible: tootContent.visible && !root.secondary
             Layout.fillWidth: true
             columns: model.attachments.length > 1 ? 2 : 1
             Repeater {
                 id: attachmentsRepeater
-                model: secondary ? attachments : []
+                model: root.secondary ? [] : attachments
                 Image {
                     id: img
                     Layout.fillWidth: true
@@ -219,21 +219,20 @@ a{
             }
         }
 
-        QQC2.Control {
-            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary
+        QQC2.AbstractButton {
+            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary && model.attachments.length === 0
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
             leftPadding: 0
             topPadding: 0
             rightPadding: 0
             bottomPadding: 0
-            TapHandler {
-                onTapped: Qt.openUrlExternally(model.card.url)
-            }
+            onClicked: Qt.openUrlExternally(model.card.url)
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
             background: Rectangle {
+                radius: Kirigami.Units.largeSpacing
                 color: 'transparent'
                 border {
                     width: 1
@@ -241,26 +240,43 @@ a{
                 }
             }
             contentItem: RowLayout {
-                QQC2.Pane {
+                Rectangle {
                     id: logo
                     visible: model.card && model.card.image
+                    color: Kirigami.Theme.backgroundColor
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 3
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 3
-                    Layout.maximumWidth: Kirigami.Units.gridUnit * 3
+                    radius: Kirigami.Units.largeSpacing
                     Layout.minimumHeight: Kirigami.Units.gridUnit * 3
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
+                    Layout.maximumHeight: Kirigami.Units.gridUnit * 3
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 3
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 3
                     Layout.topMargin: 1
                     Layout.bottomMargin: 1
                     Layout.leftMargin: 1
-
-                    contentItem: Image {
+                    Image {
                         id: img
                         mipmap: true
                         smooth: true
                         sourceSize {
                             width: logo.width
                             height: logo.height
+                        }
+
+                        layer.enabled: true
+                        layer.effect: OpacityMask {
+                            maskSource: Item {
+                                width: img.width
+                                height: img.height
+                                Kirigami.ShadowedRectangle {
+                                    anchors.centerIn: parent
+                                    corners {
+                                        bottomLeftRadius: Kirigami.Units.largeSpacing + 1
+                                        topLeftRadius: Kirigami.Units.largeSpacing + 1
+                                    }
+                                    width: img.width
+                                    height: img.height
+                                }
+                            }
                         }
 
                         fillMode: Image.PreserveAspectCrop
@@ -273,11 +289,14 @@ a{
                 ColumnLayout {
                     Layout.fillWidth: true
                     Layout.margins: Kirigami.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                     Kirigami.Heading {
-                        level: 3
+                        level: 4
                         text: model.card ? model.card.title : ''
                         elide: Text.ElideRight
                         Layout.fillWidth: true
+                        wrapMode: model.card && model.card.providerName ? Text.WordWrap : Text.NoWrap
+                        maximumLineCount: 2
                         HoverHandler {
                             cursorShape: Qt.PointingHandCursor
                         }
