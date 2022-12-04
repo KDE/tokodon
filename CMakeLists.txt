@@ -63,7 +63,7 @@ else()
     )
 endif()
 
-if (UNIX AND NOT APPLE)
+if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif()
 

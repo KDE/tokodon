@@ -11,7 +11,6 @@ Dependencies:
     'frameworks/knotifications': '@stable'
     'frameworks/kconfig': '@stable'
     'libraries/kirigami-addons': '@latest'
-    
 
 - 'on': ['Linux', 'FreeBSD', 'Windows']
   'require':
@@ -21,6 +20,7 @@ Dependencies:
   'require':
     'frameworks/kdbusaddons': '@stable'
     'frameworks/kwindowsystem': '@stable'
+    'frameworks/kio': '@stable'
 
 Options:
   require-passing-tests-on: [ '@all' ]
