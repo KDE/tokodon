@@ -176,57 +176,62 @@ a{
             }
         }
 
-        GridLayout {
+        QQC2.Control {
             id: attachmentGrid
-            visible: tootContent.visible && !root.secondary
-            Layout.fillWidth: true
-            columns: model.attachments.length > 1 ? 2 : 1
-
             property var isSensitive: model.sensitive
+            Layout.fillWidth: true
+            topPadding: 0
+            leftPadding: 0
+            bottomPadding: 0
+            rightPadding: 0
+            contentItem: GridLayout {
+                visible: tootContent.visible && !root.secondary && model.attachments.length > 0
+                columns: model.attachments.length > 1 ? 2 : 1
 
-            Repeater {
-                id: attachmentsRepeater
-                model: root.secondary ? [] : attachments
-                Image {
-                    id: img
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    //Layout.maximumWidth: sourceSize.width
-                    Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
-                    source: modelData.previewUrl
-                    mipmap: true
-                    cache: true
-                    fillMode: Image.PreserveAspectCrop
-                    layer.enabled: true
-                    layer.effect: OpacityMask {
-                        maskSource: Item {
-                            width: img.width
-                            height: img.height
-                            Rectangle {
-                                anchors.centerIn: parent
+                Repeater {
+                    id: attachmentsRepeater
+                    model: root.secondary ? [] : attachments
+                    Image {
+                        id: img
+                        Layout.fillWidth: true
+                        Layout.topMargin: Kirigami.Units.largeSpacing
+                        //Layout.maximumWidth: sourceSize.width
+                        Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
+                        source: modelData.previewUrl
+                        mipmap: true
+                        cache: true
+                        fillMode: Image.PreserveAspectCrop
+                        layer.enabled: true
+                        layer.effect: OpacityMask {
+                            maskSource: Item {
                                 width: img.width
                                 height: img.height
-                                radius: Kirigami.Units.smallSpacing
+                                Rectangle {
+                                    anchors.centerIn: parent
+                                    width: img.width
+                                    height: img.height
+                                    radius: Kirigami.Units.smallSpacing
+                                }
                             }
                         }
-                    }
-                    TapHandler {
-                        onTapped: {
-                            if(attachmentGrid.isSensitive) {
-                                attachmentGrid.isSensitive = false
-                            } else {
-                              fullScreenImage.createObject(parent, {
-                                    model: attachments,
-                                    currentIndex: index
-                                }).open()
+                        TapHandler {
+                            onTapped: {
+                                if (attachmentGrid.isSensitive) {
+                                    attachmentGrid.isSensitive = false;
+                                } else {
+                                  fullScreenImage.createObject(parent, {
+                                        model: attachments,
+                                        currentIndex: index,
+                                    }).open();
+                                }
                             }
                         }
-                    }
 
-                    Image {
-                        anchors.fill: parent
-                        source: "image://blurhash/" + modelData.blurhash
-                        visible: parent.status !== Image.Ready || attachmentGrid.isSensitive
+                        Image {
+                            anchors.fill: parent
+                            source: visible ? "image://blurhash/" + modelData.blurhash : ''
+                            visible: parent.status !== Image.Ready || attachmentGrid.isSensitive
+                        }
                     }
                 }
             }
@@ -241,33 +246,25 @@ a{
                 anchors.left: parent.left
                 anchors.leftMargin: Kirigami.Units.smallSpacing
 
-                onClicked: {
-                    attachmentGrid.isSensitive = true
-                }
+                onClicked: attachmentGrid.isSensitive = true
             }
 
-            Rectangle {
+            QQC2.Button {
                 anchors.centerIn: parent
 
                 visible: parent.isSensitive
 
-                width: mediaHiddenLabel.width + Kirigami.Units.smallSpacing * 2
-                height: mediaHiddenLabel.height + Kirigami.Units.smallSpacing * 2
-                radius: 5
-
                 Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                 Kirigami.Theme.inherit: false
 
-                color: Kirigami.Theme.backgroundColor
-
-                QQC2.Label {
-                    id: mediaHiddenLabel
-
-                    anchors.centerIn: parent
-
-                    color: Kirigami.Theme.textColor
-
-                    text: i18n("Media Hidden")
+                text: i18n("Media Hidden")
+                onClicked: if (attachmentGrid.isSensitive) {
+                    attachmentGrid.isSensitive = false;
+                } else {
+                  fullScreenImage.createObject(parent, {
+                        model: attachments,
+                        currentIndex: 0,
+                    }).open();
                 }
             }
         }
