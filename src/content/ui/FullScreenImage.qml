@@ -23,8 +23,6 @@ QQC2.Popup {
     padding: 0
     background: null
 
-    Keys.onBackPressed: root.close()
-
     ColumnLayout {
         anchors.fill: parent
         spacing: Kirigami.Units.largeSpacing
@@ -34,15 +32,6 @@ QQC2.Popup {
 
             contentItem: RowLayout {
                 spacing: Kirigami.Units.largeSpacing
-
-                QQC2.Label {
-                    id: imageLabel
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-
-                    text: root.model[view.currentIndex].description
-                    font.weight: Font.Bold
-                    elide: Text.ElideRight
-                }
 
                 Kirigami.ActionToolBar {
                     Layout.fillWidth: true
@@ -217,6 +206,32 @@ QQC2.Popup {
                 Keys.forwardTo: view
                 Accessible.name: i18n("Next image")
                 onClicked: view.currentIndex += 1
+            }
+        }
+
+        QQC2.Control {
+            Layout.fillWidth: true
+            visible: root.model[view.currentIndex].description
+
+            contentItem: QQC2.Label {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                wrapMode: Text.WordWrap
+
+                text: root.model[view.currentIndex].description
+                font.weight: Font.Bold
+            }
+
+            background: Rectangle {
+                color: Kirigami.Theme.alternateBackgroundColor
+            }
+
+            Kirigami.Separator {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.top
+                }
+                height: 1
             }
         }
     }
