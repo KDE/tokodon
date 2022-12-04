@@ -37,114 +37,72 @@ QQC2.Popup {
 
                 QQC2.Label {
                     id: imageLabel
-                    Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.largeSpacing
 
                     text: root.model[view.currentIndex].description
                     font.weight: Font.Bold
                     elide: Text.ElideRight
                 }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
 
-                    text: i18n("Zoom in")
-                    Accessible.name: text
-                    icon.name: "zoom-in"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: {
-                        view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor + 0.25
-                        if (view.currentItem.image.scaleFactor > 3) {
-                            view.currentItem.image.scaleFactor = 3
+                Kirigami.ActionToolBar {
+                    Layout.fillWidth: true
+                    alignment: Qt.AlignRight
+                    actions: [
+                        Kirigami.Action {
+                            text: i18n("Zoom in")
+                            icon.name: "zoom-in"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: {
+                                view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor + 0.25
+                                if (view.currentItem.image.scaleFactor > 3) {
+                                    view.currentItem.image.scaleFactor = 3
+                                }
+                            }
+                        },
+                        Kirigami.Action {
+                            text: i18n("Zoom out")
+                            icon.name: "zoom-out"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: {
+                                view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor - 0.25
+                                if (view.currentItem.image.scaleFactor < 0.25) {
+                                    view.currentItem.image.scaleFactor = 0.25
+                                }
+                            }
+                        },
+                        Kirigami.Action {
+                            text: i18n("Rotate left")
+                            icon.name: "image-rotate-left-symbolic"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle - 90
+
+                        },
+                        Kirigami.Action {
+                            text: i18n("Rotate right")
+                            icon.name: "image-rotate-right-symbolic"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle + 90
+
+                        },
+                        Kirigami.Action {
+                            text: i18n("Save as")
+                            icon.name: "document-save"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: {
+                                const dialog = saveAsDialog.createObject(QQC2.ApplicationWindow.overlay, {
+                                    url: view.currentItem.image.source,
+                                })
+                                dialog.open();
+                                dialog.currentFile = dialog.folder + "/" + FileHelper.fileName(view.currentItem.image.source);
+                            }
+                        },
+                        Kirigami.Action {
+                            text: i18n("Close")
+                            icon.name: "dialog-close"
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            onTriggered: root.close()
                         }
-                    }
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
-                }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-
-                    text: i18n("Zoom out")
-                    Accessible.name: text
-                    icon.name: "zoom-out"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: {
-                        view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor - 0.25
-                        if (view.currentItem.image.scaleFactor < 0.25) {
-                            view.currentItem.image.scaleFactor = 0.25
-                        }
-                    }
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
-                }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-
-                    text: i18n("Rotate left")
-                    Accessible.name: text
-                    icon.name: "image-rotate-left-symbolic"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle - 90
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
-                }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-
-                    text: i18n("Rotate right")
-                    Accessible.name: text
-                    icon.name: "image-rotate-right-symbolic"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle + 90
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
-                }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-
-                    text: i18n("Save as")
-                    Accessible.name: text
-                    icon.name: "document-save"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: {
-                        const dialog = saveAsDialog.createObject(QQC2.ApplicationWindow.overlay, {
-                            url: view.currentItem.image.source,
-                        })
-                        dialog.open();
-                        dialog.currentFile = dialog.folder + "/" + FileHelper.fileName(view.currentItem.image.source);
-                    }
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
-                }
-                QQC2.ToolButton {
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-
-                    text: i18n("Close")
-                    Accessible.name: text
-                    icon.name: "dialog-close"
-                    display: QQC2.AbstractButton.IconOnly
-                    onClicked: {
-                        root.close()
-                    }
-
-                    QQC2.ToolTip {
-                        text: parent.text
-                    }
+                    ]
                 }
             }
 
