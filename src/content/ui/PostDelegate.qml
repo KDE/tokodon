@@ -230,6 +230,11 @@ a{
             onClicked: Qt.openUrlExternally(model.card.url)
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
+                onHoveredChanged: if (hovered) {
+                    applicationWindow().hoverLinkIndicator.text = model.card.url;
+                } else {
+                    applicationWindow().hoverLinkIndicator.text = "";
+                }
             }
             background: Rectangle {
                 radius: Kirigami.Units.largeSpacing
