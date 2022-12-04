@@ -63,7 +63,7 @@ void FileTransferJob::start()
                 m_temporaryFile->write(bytes);
             } else {
                 qCWarning(TOKODON_HTTP) << "Unexpected empty chunk when downloading from"
-                                << reply->url() << "to" << m_temporaryFile;
+                                << reply->url() << "to" << m_temporaryFile->fileName();
             }
         });
 
