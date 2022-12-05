@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:46+0000\n"
+"POT-Creation-Date: 2022-12-05 00:46+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -191,25 +191,45 @@ msgstr "생성된 토큰을 입력하십시오."
 msgid "%1 followed you"
 msgstr "%1 님이 팔로우함"
 
-#: content/ui/FullScreenImage.qml:18
+#: content/ui/FullScreenImage.qml:41
 #, kde-format
-msgid "Image View"
-msgstr "그림 보기"
+msgid "Zoom in"
+msgstr ""
 
-#: content/ui/FullScreenImage.qml:85
+#: content/ui/FullScreenImage.qml:52
+#, kde-format
+msgid "Zoom out"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:63
+#, kde-format
+msgid "Rotate left"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:70
+#, kde-format
+msgid "Rotate right"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:77
+#, kde-format
+msgid "Save as"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:89
+#, kde-format
+msgid "Close"
+msgstr "닫기"
+
+#: content/ui/FullScreenImage.qml:192
 #, kde-format
 msgid "Previous image"
 msgstr "이전 그림"
 
-#: content/ui/FullScreenImage.qml:100
+#: content/ui/FullScreenImage.qml:207
 #, kde-format
 msgid "Next image"
 msgstr "다음 그림"
-
-#: content/ui/FullScreenImage.qml:110
-#, kde-format
-msgid "Close"
-msgstr "닫기"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -241,7 +261,7 @@ msgstr "SSL 오류 무시"
 msgid "Instance URL and username must not be empty!"
 msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
 
-#: content/ui/main.qml:66 main.cpp:81
+#: content/ui/main.qml:66 main.cpp:83
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -314,19 +334,24 @@ msgstr "%1 님이 내 글을 부스트함"
 msgid "Show more"
 msgstr "더 보기"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:260
+#, kde-format
+msgid "Media Hidden"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:388
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/PostDelegate.qml:324
+#: content/ui/PostDelegate.qml:398
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate.qml:334
+#: content/ui/PostDelegate.qml:408
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -572,39 +597,60 @@ msgstr ""
 msgid "Open Settings"
 msgstr "설정"
 
-#: main.cpp:83
+#: filetransferjob.cpp:87
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "불러오는 중"
+
+#: filetransferjob.cpp:88
+#, kde-format
+msgctxt "The URL being downloaded/uploaded"
+msgid "Source"
+msgstr ""
+
+#: filetransferjob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "멘션"
+
+#: main.cpp:85
 #, kde-format
 msgid "Mastodon client"
 msgstr "마스토돈 클라이언트"
 
-#: main.cpp:85
+#: main.cpp:87
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Community"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:123
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
@@ -659,6 +705,9 @@ msgstr "로컬 타임라인"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "연합 타임라인"
+
+#~ msgid "Image View"
+#~ msgstr "그림 보기"
 
 #~ msgid "Local Timeline"
 #~ msgstr "로컬 타임라인"

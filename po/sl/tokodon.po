@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:46+0000\n"
+"POT-Creation-Date: 2022-12-05 00:46+0000\n"
 "PO-Revision-Date: 2022-12-03 07:46+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -189,25 +189,45 @@ msgstr "Vstavite ustvarjeni žeton."
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
-#: content/ui/FullScreenImage.qml:18
+#: content/ui/FullScreenImage.qml:41
 #, kde-format
-msgid "Image View"
-msgstr "Pogled slike"
+msgid "Zoom in"
+msgstr ""
 
-#: content/ui/FullScreenImage.qml:85
+#: content/ui/FullScreenImage.qml:52
+#, kde-format
+msgid "Zoom out"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:63
+#, kde-format
+msgid "Rotate left"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:70
+#, kde-format
+msgid "Rotate right"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:77
+#, kde-format
+msgid "Save as"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:89
+#, kde-format
+msgid "Close"
+msgstr "Zapri"
+
+#: content/ui/FullScreenImage.qml:192
 #, kde-format
 msgid "Previous image"
 msgstr "Prejšnja slika"
 
-#: content/ui/FullScreenImage.qml:100
+#: content/ui/FullScreenImage.qml:207
 #, kde-format
 msgid "Next image"
 msgstr "Naslednja slika"
-
-#: content/ui/FullScreenImage.qml:110
-#, kde-format
-msgid "Close"
-msgstr "Zapri"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -239,7 +259,7 @@ msgstr "Prezri napake ssl"
 msgid "Instance URL and username must not be empty!"
 msgstr "URL in uporabniško ime primerka ne smeta biti prazna!"
 
-#: content/ui/main.qml:66 main.cpp:81
+#: content/ui/main.qml:66 main.cpp:83
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -311,19 +331,24 @@ msgstr "%1 je ojačalo vašo objavo"
 msgid "Show more"
 msgstr "Prikaži več"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:260
+#, kde-format
+msgid "Media Hidden"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:388
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/PostDelegate.qml:324
+#: content/ui/PostDelegate.qml:398
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/PostDelegate.qml:334
+#: content/ui/PostDelegate.qml:408
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -558,39 +583,60 @@ msgstr "Konfiguriraj"
 msgid "Open Settings"
 msgstr "Odpri nastavitve"
 
-#: main.cpp:83
+#: filetransferjob.cpp:87
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Nalaganje"
+
+#: filetransferjob.cpp:88
+#, kde-format
+msgctxt "The URL being downloaded/uploaded"
+msgid "Source"
+msgstr ""
+
+#: filetransferjob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Omembe"
+
+#: main.cpp:85
 #, kde-format
 msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
-#: main.cpp:85
+#: main.cpp:87
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 skupnost KDE"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:123
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
@@ -645,6 +691,9 @@ msgstr "Krajevna časovnica"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Globalna časovnica"
+
+#~ msgid "Image View"
+#~ msgstr "Pogled slike"
 
 #~ msgid "Local Timeline"
 #~ msgstr "Lokalna časovnica"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:46+0000\n"
+"POT-Creation-Date: 2022-12-05 00:46+0000\n"
 "PO-Revision-Date: 2022-06-11 21:51+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -188,25 +188,45 @@ msgstr "Syötä annettu merkki."
 msgid "%1 followed you"
 msgstr "%1 alkoi seurata sinua"
 
-#: content/ui/FullScreenImage.qml:18
+#: content/ui/FullScreenImage.qml:41
 #, kde-format
-msgid "Image View"
-msgstr "Kuvanäkymä"
+msgid "Zoom in"
+msgstr ""
 
-#: content/ui/FullScreenImage.qml:85
+#: content/ui/FullScreenImage.qml:52
+#, kde-format
+msgid "Zoom out"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:63
+#, kde-format
+msgid "Rotate left"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:70
+#, kde-format
+msgid "Rotate right"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:77
+#, kde-format
+msgid "Save as"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:89
+#, kde-format
+msgid "Close"
+msgstr "Sulje"
+
+#: content/ui/FullScreenImage.qml:192
 #, kde-format
 msgid "Previous image"
 msgstr "Edellinen kuva"
 
-#: content/ui/FullScreenImage.qml:100
+#: content/ui/FullScreenImage.qml:207
 #, kde-format
 msgid "Next image"
 msgstr "Seuraava kuva"
-
-#: content/ui/FullScreenImage.qml:110
-#, kde-format
-msgid "Close"
-msgstr "Sulje"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -238,7 +258,7 @@ msgstr "Sivuuta SSL-virheet"
 msgid "Instance URL and username must not be empty!"
 msgstr "Instanssin verkko-osoite ja käyttäjätunnus eivät voi olla tyhjiä!"
 
-#: content/ui/main.qml:66 main.cpp:81
+#: content/ui/main.qml:66 main.cpp:83
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -311,19 +331,24 @@ msgstr ""
 msgid "Show more"
 msgstr "Näytä lisää"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:260
+#, kde-format
+msgid "Media Hidden"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:388
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: content/ui/PostDelegate.qml:324
+#: content/ui/PostDelegate.qml:398
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:334
+#: content/ui/PostDelegate.qml:408
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -569,39 +594,60 @@ msgstr ""
 msgid "Open Settings"
 msgstr "Asetukset"
 
-#: main.cpp:83
+#: filetransferjob.cpp:87
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Ladataan"
+
+#: filetransferjob.cpp:88
+#, kde-format
+msgctxt "The URL being downloaded/uploaded"
+msgid "Source"
+msgstr ""
+
+#: filetransferjob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Maininnat"
+
+#: main.cpp:85
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
-#: main.cpp:85
+#: main.cpp:87
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE-yhteisö"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:123
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
@@ -656,6 +702,9 @@ msgstr "Paikallinen aikajana"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Yleinen aikajana"
+
+#~ msgid "Image View"
+#~ msgstr "Kuvanäkymä"
 
 #~ msgid "Local Timeline"
 #~ msgstr "Paikallinen aikajana"

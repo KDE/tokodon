@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:46+0000\n"
+"POT-Creation-Date: 2022-12-05 00:46+0000\n"
 "PO-Revision-Date: 2022-12-03 12:45+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -191,25 +191,45 @@ msgstr "Inseriu el testimoni generat."
 msgid "%1 followed you"
 msgstr "%1 vos seguix"
 
-#: content/ui/FullScreenImage.qml:18
+#: content/ui/FullScreenImage.qml:41
 #, kde-format
-msgid "Image View"
-msgstr "Vista de la imatge"
+msgid "Zoom in"
+msgstr ""
 
-#: content/ui/FullScreenImage.qml:85
+#: content/ui/FullScreenImage.qml:52
+#, kde-format
+msgid "Zoom out"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:63
+#, kde-format
+msgid "Rotate left"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:70
+#, kde-format
+msgid "Rotate right"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:77
+#, kde-format
+msgid "Save as"
+msgstr ""
+
+#: content/ui/FullScreenImage.qml:89
+#, kde-format
+msgid "Close"
+msgstr "Tanca"
+
+#: content/ui/FullScreenImage.qml:192
 #, kde-format
 msgid "Previous image"
 msgstr "Imatge anterior"
 
-#: content/ui/FullScreenImage.qml:100
+#: content/ui/FullScreenImage.qml:207
 #, kde-format
 msgid "Next image"
 msgstr "Imatge següent"
-
-#: content/ui/FullScreenImage.qml:110
-#, kde-format
-msgid "Close"
-msgstr "Tanca"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -241,7 +261,7 @@ msgstr "Ignora els errors d'SSL"
 msgid "Instance URL and username must not be empty!"
 msgstr "L'URL o el nom d'usuari de la instància no pot estar buit!"
 
-#: content/ui/main.qml:66 main.cpp:81
+#: content/ui/main.qml:66 main.cpp:83
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -313,19 +333,24 @@ msgstr "%1 ha impulsat la vostra publicació"
 msgid "Show more"
 msgstr "Mostra'n més"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:260
+#, kde-format
+msgid "Media Hidden"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:388
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/PostDelegate.qml:324
+#: content/ui/PostDelegate.qml:398
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Interessant"
 
-#: content/ui/PostDelegate.qml:334
+#: content/ui/PostDelegate.qml:408
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -560,39 +585,60 @@ msgstr "Configura"
 msgid "Open Settings"
 msgstr "Obri la configuració"
 
-#: main.cpp:83
+#: filetransferjob.cpp:87
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "S'està carregant"
+
+#: filetransferjob.cpp:88
+#, kde-format
+msgctxt "The URL being downloaded/uploaded"
+msgid "Source"
+msgstr ""
+
+#: filetransferjob.cpp:89
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Mencions"
+
+#: main.cpp:85
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client del Mastodon"
 
-#: main.cpp:85
+#: main.cpp:87
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 Comunitat KDE"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:86
+#: main.cpp:88
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:87
+#: main.cpp:89
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:123
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
@@ -647,3 +693,6 @@ msgstr "Línia de temps local"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Línia de temps global"
+
+#~ msgid "Image View"
+#~ msgstr "Vista de la imatge"
