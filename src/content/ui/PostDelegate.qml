@@ -184,8 +184,8 @@ a{
             leftPadding: 0
             bottomPadding: 0
             rightPadding: 0
+            visible: tootContent.visible && !root.secondary && model.attachments.length > 0
             contentItem: GridLayout {
-                visible: tootContent.visible && !root.secondary && model.attachments.length > 0
                 columns: model.attachments.length > 1 ? 2 : 1
 
                 Repeater {
