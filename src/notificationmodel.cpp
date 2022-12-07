@@ -169,6 +169,10 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     auto post = notification->post();
 
     switch (role) {
+    case IdRole:
+        return post->m_post_id;
+    case MentionsRole:
+        return post->mentions();
     case TypeRole:
         return notification->type();
     case Qt::DisplayRole:
