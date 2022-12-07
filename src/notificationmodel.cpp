@@ -155,7 +155,7 @@ std::shared_ptr<Notification> NotificationModel::internalData(const QModelIndex 
 QHash<int, QByteArray> NotificationModel::roleNames() const
 {
     auto roles = AbstractTimelineModel::roleNames();
-    roles.insert(NewFollowerIdentityRole, QByteArrayLiteral("newFollowerIdentity"));
+    roles.insert(NotificationActorIdentityRole, QByteArrayLiteral("notificationActorIdentity"));
     return roles;
 }
 
@@ -239,7 +239,7 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         }
         return QLocale::system().toString(post->m_published_at.date(), QLocale::ShortFormat);
     }
-    case NewFollowerIdentityRole:
+    case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
     }
 

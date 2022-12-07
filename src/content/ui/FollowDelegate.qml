@@ -39,7 +39,7 @@ QQC2.ItemDelegate {
 
             Kirigami.Heading {
                 level: 4
-                text: i18n("%1 followed you", model.newFollowerIdentity.displayNameHtml)
+                text: i18n("%1 followed you", model.notificationActorIdentity.displayNameHtml)
                 textFormat: Text.RichText
             }
         }
@@ -49,20 +49,20 @@ QQC2.ItemDelegate {
             Kirigami.Avatar {
                 Layout.alignment: Qt.AlignTop
                 Layout.rowSpan: 5
-                source: model.newFollowerIdentity.avatarUrl
+                source: model.notificationActorIdentity.avatarUrl
                 cache: true
                 actions.main: Kirigami.Action {
                     onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
                         model: model.accountModel,
                     })
                 }
-                name: model.newFollowerIdentity.displayName
+                name: model.notificationActorIdentity.displayName
             }
             ColumnLayout {
                 Kirigami.Heading {
                     id: heading
                     level: 5
-                    text: model.newFollowerIdentity.displayNameHtml
+                    text: model.notificationActorIdentity.displayNameHtml
                     type: Kirigami.Heading.Type.Primary
                     color: Kirigami.Theme.textColor
                 }
@@ -71,10 +71,10 @@ QQC2.ItemDelegate {
                     Layout.fillWidth: true
                     elide: Text.ElideRight
                     color: Kirigami.Theme.disabledTextColor
-                    text: `@${model.newFollowerIdentity.account}`
+                    text: `@${model.notificationActorIdentity.account}`
                 }
             }
         }
     }
-    text: i18n("%1 followed you", model.newFollowerIdentity.displayName)
+    text: i18n("%1 followed you", model.notificationActorIdentity.displayName)
 }

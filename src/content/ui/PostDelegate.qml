@@ -55,7 +55,8 @@ QQC2.ItemDelegate {
             Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
         QQC2.Label {
-            text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.actorDisplayName) : ''
+            text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml) : ''
+            textFormat: Text.RichText
             visible: model.type === Notification.Favorite
             Layout.bottomMargin: Kirigami.Units.largeSpacing
         }
@@ -87,7 +88,7 @@ QQC2.ItemDelegate {
 
         QQC2.Label {
             visible: model.wasReblogged || model.type === Notification.Repeat
-            text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.actorDisplayName) : '')
+            text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
             color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             Layout.bottomMargin: Kirigami.Units.largeSpacing
         }

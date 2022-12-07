@@ -16,7 +16,7 @@ class NotificationModel : public AbstractTimelineModel
 
 public:
     enum ExtraRoles {
-        NewFollowerIdentityRole = AbstractTimelineModel::ExtraRole,
+        NotificationActorIdentityRole = AbstractTimelineModel::ExtraRole,
     };
 
     explicit NotificationModel(QObject *parent = nullptr);
