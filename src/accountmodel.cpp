@@ -78,7 +78,71 @@ void AccountModel::fillTimeline(const QString &fromId)
 {
     m_fetching = true;
 
-    m_account->fetchAccount(m_id, true, m_timelineName, fromId);
+    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
+    // Fetch pinned posts if we are starting from the top
+    const auto fetchPinned = fromId.isNull();
+    const auto excludeReplies = true;
+    auto uriStatus = m_account->apiUrl(QString("/api/v1/accounts/%1/statuses").arg(m_id));
+
+    auto statusQuery = QUrlQuery();
+    if (excludeReplies) {
+        statusQuery.addQueryItem("exclude_replies", "true");
+    }
+    if (!fetchPinned) {
+        statusQuery.addQueryItem("max_id", fromId);
+    }
+    if (!statusQuery.isEmpty()) {
+        uriStatus.setQuery(statusQuery);
+    }
+
+    auto uriPinned = m_account->apiUrl(QString("/api/v1/accounts/%1/statuses").arg(m_id));
+    uriPinned.setQuery(QUrlQuery{{"pinned", "true"}});
+
+    auto onFetchPinned = [=](QNetworkReply *reply) {
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            return;
+        }
+
+        int i = 0;
+        const auto array = doc.array();
+        for (const auto &value : array) {
+            const QJsonObject obj = value.toObject();
+
+            auto p = std::make_shared<Post>(m_account, obj);
+            thread->insert(i, p);
+            i++;
+        }
+
+        fetchedTimeline(m_account, m_timelineName, *thread);
+    };
+
+    auto onFetchAccount = [=](QNetworkReply *reply) {
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            return;
+        }
+
+        const auto array = doc.array();
+        for (const auto &value : array) {
+            const QJsonObject obj = value.toObject();
+
+            auto p = std::make_shared<Post>(m_account, obj);
+            thread->push_back(p);
+        }
+
+        if (fetchPinned) {
+            m_account->get(uriPinned, true, onFetchPinned);
+        } else {
+            fetchedTimeline(m_account, m_timelineName, *thread);
+        }
+    };
+
+    m_account->get(uriStatus, true, onFetchAccount);
 }
 
 Identity *AccountModel::identity() const

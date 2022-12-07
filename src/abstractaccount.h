@@ -79,9 +79,6 @@ public:
     // uploading media
     void updateAttachment(Attachment *a);
 
-    /// Fetch account timeline
-    void fetchAccount(qint64 id, bool excludeReplies, const QString &timelineName, const QString &from_id = QString());
-
     // streaming
     QUrl streamingUrl(const QString &stream);
 
@@ -187,7 +184,7 @@ Q_SIGNALS:
     void authenticated();
     void registered();
     void identityChanged(AbstractAccount *account);
-    void fetchedTimeline(const QString &, QList<std::shared_ptr<Post>>);
+    void fetchedTimeline(const QString &timelineName, QList<std::shared_ptr<Post>>);
     void invalidated();
     void nameChanged();
     void usernameChanged();

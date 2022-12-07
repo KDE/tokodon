@@ -122,7 +122,7 @@ public:
 private:
     int m_id;
 
-    AbstractAccount *m_account;
+    AbstractAccount *m_account = nullptr;
     Type m_type;
     std::shared_ptr<Post> m_post;
     std::shared_ptr<Identity> m_identity;

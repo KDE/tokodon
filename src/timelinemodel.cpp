@@ -10,6 +10,7 @@
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
+#include <QUrlQuery>
 
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
@@ -58,18 +59,6 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
 
     Q_EMIT accountManagerChanged();
 
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
-            return;
-        }
-        m_account = account;
-
-        beginResetModel();
-        m_timeline.clear();
-        endResetModel();
-
-        fillTimeline();
-    });
     QObject::connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
     QObject::connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
@@ -102,11 +91,52 @@ void TimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
+    if (m_fetching) {
+        return;
+    }
     m_fetching = true;
     Q_EMIT fetchingChanged();
 
     if (m_account) {
-        m_account->fetchTimeline(m_timelineName, from_id);
+        QString timelineName = m_timelineName;
+        bool local = timelineName == "public";
+
+        // federated timeline is really "public" without local set
+        if (timelineName == "federated") {
+            timelineName = "public";
+        }
+
+        QUrlQuery q;
+        if (local) {
+            q.addQueryItem("local", "true");
+        }
+        if (!from_id.isEmpty()) {
+            q.addQueryItem("max_id", from_id);
+        }
+
+        auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(m_timelineName));
+        uri.setQuery(q);
+
+        m_account->get(uri, true, [this, uri](QNetworkReply *reply) {
+            QList<std::shared_ptr<Post>> posts;
+
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            if (!doc.isArray()) {
+                return;
+            }
+
+            const auto array = doc.array();
+            for (const auto &value : array) {
+                const QJsonObject obj = value.toObject();
+
+                const auto p = std::make_shared<Post>(m_account, obj);
+                posts.push_back(p);
+            }
+
+            fetchedTimeline(m_account, m_timelineName, posts);
+        });
     }
 }
 

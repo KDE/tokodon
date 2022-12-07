@@ -14,20 +14,6 @@ NotificationModel::NotificationModel(QObject *parent)
 {
     m_account = AccountManager::instance().selectedAccount();
 
-    QObject::connect(&AccountManager::instance(), &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
-            return;
-        }
-
-        beginResetModel();
-        m_notifications.clear();
-        endResetModel();
-        m_next = QString();
-        m_fetching = false;
-
-        m_account = account;
-    });
-
     QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
@@ -105,16 +91,15 @@ void NotificationModel::fillTimeline(const QUrl &next)
             return;
         }
         static QRegularExpression re("<(.*)>; rel=\"next\"");
-        auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-        auto match = re.match(next);
+        const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+        const auto match = re.match(next);
         m_next = QUrl::fromUserInput(match.captured(1));
 
         QList<std::shared_ptr<Notification>> notifications;
         const auto values = doc.array();
         for (const auto &value : values) {
-            QJsonObject obj = value.toObject();
-
-            auto notification = std::make_shared<Notification>(m_account, obj);
+            const QJsonObject obj = value.toObject();
+            const auto notification = std::make_shared<Notification>(m_account, obj);
             notifications.push_back(notification);
         }
         fetchedNotifications(notifications);
