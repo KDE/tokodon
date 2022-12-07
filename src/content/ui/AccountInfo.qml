@@ -43,7 +43,7 @@ TimelinePage {
                     x: Kirigami.Units.smallSpacing
                     y: Kirigami.Units.smallSpacing
                     contentItem: QQC2.Label {
-                        text: i18n('Follows you')
+                        text: i18n("Follows you")
                         color: '#fafafa'
                     }
 
@@ -270,7 +270,7 @@ TimelinePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    text: i18n('Note')
+                    text: i18n("Note")
                     level: 4
                 }
 
@@ -278,7 +278,7 @@ TimelinePage {
                     id: savedNotification
                     visible: false
                     contentItem: QQC2.Label {
-                        text: i18n('Saved')
+                        text: i18n("Saved")
                         color: Kirigami.Theme.positiveTextColor
                     }
 
