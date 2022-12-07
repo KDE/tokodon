@@ -32,13 +32,14 @@ MastoPage {
                     id: instanceUrl
                     label: i18n("Instance Url:")
                     onAccepted: username.forceActiveFocus()
-                    inputMethodHints: Qt.ImhUrlCharactersOnly
+                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: username
                     label: i18n("Username:")
                     onAccepted: continueButton.clicked()
+                    inputMethodHints: Qt.ImhNoPredictiveText
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormSwitchDelegate {
