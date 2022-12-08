@@ -107,6 +107,7 @@ if(ANDROID)
         "kstars_xplanet"
         "system-users"
         "go-home-large"
+        "view-hidden"
     )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
