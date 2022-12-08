@@ -59,17 +59,17 @@ static QMap<QString, Post::Visibility> stringToVisibility = {
     {"direct", Post::Visibility::Direct},
 };
 
-Post::Post(AbstractAccount *parent)
+Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
-    , m_parent(parent)
+    , m_parent(account)
 {
-    QString visibilityString = parent->identity().visibility();
+    QString visibilityString = account->identity().visibility();
     m_visibility = stringToVisibility[visibilityString];
 }
 
-Post::Post(AbstractAccount *parent, QJsonObject obj)
+Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
-    , m_parent(parent)
+    , m_parent(account)
     , m_visibility(Post::Visibility::Public)
 {
     const auto account_doc = obj["account"].toObject();
@@ -241,7 +241,7 @@ Notification::Notification(AbstractAccount *parent, const QJsonObject &obj)
     auto acct = account["acct"].toString();
     auto type = obj["type"].toString();
 
-    m_post = std::make_shared<Post>(m_account, status);
+    m_post = std::make_shared<Post>(m_account, status, parent);
     m_identity = m_account->identityLookup(acct, account);
     m_type = str_to_not_type[type];
     m_id = obj["id"].toString().toInt();

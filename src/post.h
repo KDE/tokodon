@@ -142,8 +142,8 @@ class Post : public QObject
 public:
     Post() = delete;
     Post(const Post &) = delete;
-    Post(AbstractAccount *parent);
-    Post(AbstractAccount *parent, QJsonObject obj);
+    Post(AbstractAccount *account, QObject *parent = nullptr);
+    Post(AbstractAccount *account, QJsonObject obj, QObject *parent = nullptr);
     ~Post();
 
     enum Visibility {

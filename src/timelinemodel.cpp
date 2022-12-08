@@ -131,7 +131,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
             for (const auto &value : array) {
                 const QJsonObject obj = value.toObject();
 
-                const auto p = std::make_shared<Post>(m_account, obj);
+                const auto p = std::make_shared<Post>(m_account, obj, this);
                 posts.push_back(p);
             }
 

@@ -93,7 +93,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
-            auto p = std::make_shared<Post>(m_account, obj);
+            auto p = std::make_shared<Post>(m_account, obj, this);
             thread->insert(i, p);
             i++;
         }
@@ -113,7 +113,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
-            auto p = std::make_shared<Post>(m_account, obj);
+            auto p = std::make_shared<Post>(m_account, obj, this);
             thread->push_back(p);
         }
 

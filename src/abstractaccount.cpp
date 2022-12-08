@@ -225,7 +225,7 @@ void AbstractAccount::mutatePost(std::shared_ptr<Post> p, const QString &verb, b
             QList<std::shared_ptr<Post>> posts;
             auto obj = doc.object();
 
-            auto p = std::make_shared<Post>(this, obj);
+            auto p = std::make_shared<Post>(this, obj, this);
             posts.push_back(p);
 
             Q_EMIT fetchedTimeline("home", posts);
@@ -364,7 +364,7 @@ void AbstractAccount::handleUpdate(const QJsonDocument &doc, const QString &targ
 {
     QList<std::shared_ptr<Post>> posts;
     const auto obj = doc.object();
-    const auto p = std::make_shared<Post>(this, obj);
+    const auto p = std::make_shared<Post>(this, obj, this);
     posts.push_back(p);
 
     Q_EMIT fetchedTimeline(target, posts);
