@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-05 00:46+0000\n"
+"POT-Creation-Date: 2022-12-08 00:46+0000\n"
 "PO-Revision-Date: 2022-12-05 19:37+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.11.90\n"
 
-#: abstractaccount.cpp:527
+#: abstractaccount.cpp:414
 #, kde-format
 msgid "Could not follow account"
 msgstr "Impossible de suivre un compte"
 
-#: abstractaccount.cpp:528
+#: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Impossible de se désabonner d'un compte"
 
-#: abstractaccount.cpp:529
+#: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not block account"
 msgstr "Impossible de bloquer un compte"
 
-#: abstractaccount.cpp:530
+#: abstractaccount.cpp:417
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Impossible de débloquer un compte"
 
-#: abstractaccount.cpp:531
+#: abstractaccount.cpp:418
 #, kde-format
 msgid "Could not mute account"
 msgstr "Impossible de mettre un compte en pause"
 
-#: abstractaccount.cpp:532
+#: abstractaccount.cpp:419
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Impossible de sortir un un compte du mode pause"
 
-#: abstractaccount.cpp:533
+#: abstractaccount.cpp:420
 #, kde-format
 msgid "Could not feature account"
 msgstr "Impossible de présenter un compte"
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:421
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Impossible de ne pas présenter un compte"
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:422
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Impossible de modifier une note concernant un compte"
@@ -63,6 +63,12 @@ msgstr "Impossible de modifier une note concernant un compte"
 #, kde-format
 msgid "Loading"
 msgstr "Chargement"
+
+#: content/ui/AccountInfo.qml:46
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Follows you"
+msgstr "Suivre"
 
 #: content/ui/AccountInfo.qml:85
 #, kde-format
@@ -129,6 +135,17 @@ msgstr "Arrêter le blocage"
 msgid "Block"
 msgstr "Bloquer"
 
+#: content/ui/AccountInfo.qml:273
+#, kde-format
+msgid "Note"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:281
+#, fuzzy, kde-format
+#| msgid "Save as"
+msgid "Saved"
+msgstr "Enregistrer sous"
+
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Click to add a note"
@@ -170,7 +187,7 @@ msgstr "Ouvrir un lien"
 msgid "Enter token:"
 msgstr "Saisissez un jeton :"
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Continue"
 msgstr "Continuer"
@@ -246,12 +263,12 @@ msgstr "Instance d'URL :"
 msgid "Username:"
 msgstr "Nom d'utilisateur :"
 
-#: content/ui/LoginPage.qml:46
+#: content/ui/LoginPage.qml:47
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ignorer les erreurs « ssl »"
 
-#: content/ui/LoginPage.qml:54
+#: content/ui/LoginPage.qml:55
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr "L'instance d'URL et le nom d'utilisateur ne doivent pas être vide !"
@@ -308,44 +325,44 @@ msgstr "Chargement en cours..."
 msgid "%1 favorited your post"
 msgstr "%1 a favorisé votre message"
 
-#: content/ui/PostDelegate.qml:72
+#: content/ui/PostDelegate.qml:73
 #, kde-format
 msgid "Pinned entry"
 msgstr "Article épinglé"
 
-#: content/ui/PostDelegate.qml:90
+#: content/ui/PostDelegate.qml:91
 #, kde-format
 msgid "%1 boosted"
 msgstr "mis en avant par %1"
 
-#: content/ui/PostDelegate.qml:90 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:91 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 a mis en avant votre message"
 
-#: content/ui/PostDelegate.qml:139
+#: content/ui/PostDelegate.qml:140
 #, kde-format
 msgid "Show more"
 msgstr "Afficher plus"
 
-#: content/ui/PostDelegate.qml:260
+#: content/ui/PostDelegate.qml:261
 #, kde-format
 msgid "Media Hidden"
 msgstr "Media masqué"
 
-#: content/ui/PostDelegate.qml:388
+#: content/ui/PostDelegate.qml:389
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Répondre"
 
-#: content/ui/PostDelegate.qml:398
+#: content/ui/PostDelegate.qml:399
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Stimuler"
 
-#: content/ui/PostDelegate.qml:408
+#: content/ui/PostDelegate.qml:409
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -635,24 +652,24 @@ msgstr "xavier.besnard@neuf.fr"
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Un client pour le réseau social décentralisé : mastodon."
 
-#: notificationmodel.cpp:104
+#: notificationmodel.cpp:90
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 "Une erreur est survenue durant la rechercher de la dernière notification."
 
-#: notificationmodel.cpp:247 timelinemodel.cpp:266
+#: notificationmodel.cpp:236 timelinemodel.cpp:296
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1 : %2"
 
-#: notificationmodel.cpp:251 timelinemodel.cpp:270
+#: notificationmodel.cpp:240 timelinemodel.cpp:300
 #, kde-format
 msgid "%1h"
 msgstr "%1 h"
 
-#: notificationmodel.cpp:253 timelinemodel.cpp:272
+#: notificationmodel.cpp:242 timelinemodel.cpp:302
 #, kde-format
 msgid "%1d"
 msgstr "%1 d"
@@ -663,25 +680,25 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Fil d'exécution "
 
-#: timelinemodel.cpp:34
+#: timelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Accueil (%1)"
 
-#: timelinemodel.cpp:36
+#: timelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Accueil"
 
-#: timelinemodel.cpp:39
+#: timelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Chronologie locale"
 
-#: timelinemodel.cpp:41
+#: timelinemodel.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"

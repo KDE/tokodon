@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-05 00:46+0000\n"
+"POT-Creation-Date: 2022-12-08 00:46+0000\n"
 "PO-Revision-Date: 2022-02-11 15:52+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.2\n"
 
-#: abstractaccount.cpp:527
+#: abstractaccount.cpp:414
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: abstractaccount.cpp:528
+#: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: abstractaccount.cpp:529
+#: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: abstractaccount.cpp:530
+#: abstractaccount.cpp:417
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: abstractaccount.cpp:531
+#: abstractaccount.cpp:418
 #, kde-format
 msgid "Could not mute account"
 msgstr ""
 
-#: abstractaccount.cpp:532
+#: abstractaccount.cpp:419
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: abstractaccount.cpp:533
+#: abstractaccount.cpp:420
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: abstractaccount.cpp:534
+#: abstractaccount.cpp:421
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: abstractaccount.cpp:535
+#: abstractaccount.cpp:422
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
@@ -66,6 +66,12 @@ msgstr ""
 #, kde-format
 msgid "Loading"
 msgstr "Načítání"
+
+#: content/ui/AccountInfo.qml:46
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Follows you"
+msgstr "Následovat"
 
 #: content/ui/AccountInfo.qml:85
 #, kde-format
@@ -132,6 +138,16 @@ msgstr ""
 msgid "Block"
 msgstr "Blokovat"
 
+#: content/ui/AccountInfo.qml:273
+#, kde-format
+msgid "Note"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:281
+#, kde-format
+msgid "Saved"
+msgstr ""
+
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Click to add a note"
@@ -172,7 +188,7 @@ msgstr "Otevřít odkaz"
 msgid "Enter token:"
 msgstr ""
 
-#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:51
+#: content/ui/AuthorizationPage.qml:64 content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Continue"
 msgstr "Pokračovat"
@@ -248,12 +264,12 @@ msgstr ""
 msgid "Username:"
 msgstr "Uživatelské jméno:"
 
-#: content/ui/LoginPage.qml:46
+#: content/ui/LoginPage.qml:47
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr ""
 
-#: content/ui/LoginPage.qml:54
+#: content/ui/LoginPage.qml:55
 #, kde-format
 msgid "Instance URL and username must not be empty!"
 msgstr ""
@@ -311,44 +327,44 @@ msgstr "Načítání"
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:72
+#: content/ui/PostDelegate.qml:73
 #, kde-format
 msgid "Pinned entry"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:90
+#: content/ui/PostDelegate.qml:91
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:90 notificationhandler.cpp:32
+#: content/ui/PostDelegate.qml:91 notificationhandler.cpp:32
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:139
+#: content/ui/PostDelegate.qml:140
 #, kde-format
 msgid "Show more"
 msgstr "Ukázat víc"
 
-#: content/ui/PostDelegate.qml:260
+#: content/ui/PostDelegate.qml:261
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:388
+#: content/ui/PostDelegate.qml:389
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: content/ui/PostDelegate.qml:398
+#: content/ui/PostDelegate.qml:399
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:408
+#: content/ui/PostDelegate.qml:409
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -644,23 +660,23 @@ msgstr "vit@pelcak.org"
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
 
-#: notificationmodel.cpp:104
+#: notificationmodel.cpp:90
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: notificationmodel.cpp:247 timelinemodel.cpp:266
+#: notificationmodel.cpp:236 timelinemodel.cpp:296
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: notificationmodel.cpp:251 timelinemodel.cpp:270
+#: notificationmodel.cpp:240 timelinemodel.cpp:300
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: notificationmodel.cpp:253 timelinemodel.cpp:272
+#: notificationmodel.cpp:242 timelinemodel.cpp:302
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -671,25 +687,25 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Vlákno"
 
-#: timelinemodel.cpp:34
+#: timelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Domů (%1)"
 
-#: timelinemodel.cpp:36
+#: timelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Domů"
 
-#: timelinemodel.cpp:39
+#: timelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Místní časová osa"
 
-#: timelinemodel.cpp:41
+#: timelinemodel.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
