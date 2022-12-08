@@ -28,6 +28,8 @@ Q_SIGNALS:
     void accountChanged();
 
 private:
+    void updateRelationships();
+
     std::shared_ptr<Identity> m_identity;
     qint64 m_id;
 };

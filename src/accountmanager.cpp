@@ -5,6 +5,7 @@
 #include "accountmanager.h"
 #include "account.h"
 #include "networkaccessmanagerfactory.h"
+#include "accountmodel.h"
 
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
@@ -147,6 +148,11 @@ void AccountManager::selectAccount(AbstractAccount *account)
 AbstractAccount *AccountManager::selectedAccount() const
 {
     return m_selected_account;
+}
+
+QVariant AccountManager::selectedAccountModel()
+{
+    return QVariant::fromValue<QAbstractListModel *>(new AccountModel(this, m_selected_account->identity().id(), m_selected_account->identity().account()));
 }
 
 int AccountManager::selectedIndex() const

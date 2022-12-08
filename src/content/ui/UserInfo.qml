@@ -131,33 +131,53 @@ QQC2.ToolBar {
 
         RowLayout {
             Layout.preferredHeight: Kirigami.Units.gridUnit * 3
-            Item {
+            RowLayout {
                 Layout.fillHeight: true
-                Layout.preferredWidth: height
-                Kirigami.Avatar {
-                    anchors.fill: parent
-                    anchors.margins: Kirigami.Units.smallSpacing
-                    source: AccountManager.selectedAccount.identity.avatarUrl
-                    name: AccountManager.selectedAccount.identity.displayName
-                }
-            }
-            ColumnLayout {
                 Layout.fillWidth: true
-                spacing: 0
-                QQC2.Label {
-                    id: displayNameLabel
-                    text: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayNameHtml : ''
 
-                    elide: Text.ElideRight
-                    Layout.fillWidth: true
+                Item {
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: height
+                    Kirigami.Avatar {
+                        anchors.fill: parent
+                        anchors.margins: Kirigami.Units.smallSpacing
+                        source: AccountManager.selectedAccount.identity.avatarUrl
+                        name: AccountManager.selectedAccount.identity.displayName
+                        actions.main: Kirigami.Action {
+                            onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                                model: AccountManager.selectedAccountModel,
+                            })
+                        }
+                    }
                 }
-                QQC2.Label {
-                    text: AccountManager.selectedAccount.instanceName
-                    font.pointSize: displayNameLabel.font.pointSize * 0.8
-                    opacity: 0.7
-                    textFormat: Text.PlainText
-                    elide: Text.ElideRight
+                ColumnLayout {
                     Layout.fillWidth: true
+                    spacing: 0
+                    QQC2.Label {
+                        id: displayNameLabel
+                        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayNameHtml : ''
+
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
+                    }
+                    QQC2.Label {
+                        text: AccountManager.selectedAccount.instanceName
+                        font.pointSize: displayNameLabel.font.pointSize * 0.8
+                        opacity: 0.7
+                        textFormat: Text.PlainText
+                        elide: Text.ElideRight
+                        Layout.fillWidth: true
+                    }
+                }
+
+                TapHandler {
+                    onTapped: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                        model: AccountManager.selectedAccountModel,
+                    })
+                }
+
+                HoverHandler {
+                    cursorShape: Qt.PointingHandCursor
                 }
             }
             QQC2.ToolButton {

@@ -12,12 +12,14 @@
 
 class AbstractAccount;
 class QNetworkAccessManager;
+class AccountModel;
 
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
+    Q_PROPERTY(QVariant selectedAccountModel READ selectedAccountModel NOTIFY accountSelected)
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
@@ -38,6 +40,7 @@ public:
 
     void selectAccount(AbstractAccount *account);
     AbstractAccount *selectedAccount() const;
+    QVariant selectedAccountModel();
 
     int selectedIndex() const;
 
