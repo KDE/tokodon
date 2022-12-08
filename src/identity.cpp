@@ -125,6 +125,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
         m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
     Q_EMIT identityUpdated();

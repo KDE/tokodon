@@ -9,7 +9,19 @@ import org.kde.kmasto 1.0
 
 Kirigami.ScrollablePage {
     id: timelinePage
-    title: model.displayName
+
+    titleDelegate: Kirigami.Heading {
+        // identical to normal Kirigami headers
+        Layout.fillWidth: true
+        Layout.maximumWidth: implicitWidth + 1
+        Layout.minimumWidth: 0
+        maximumLineCount: 1
+        elide: Text.ElideRight
+
+        text: model.displayName
+
+        textFormat: TextEdit.RichText
+    }
 
     enum TimelineType {
         Home,
