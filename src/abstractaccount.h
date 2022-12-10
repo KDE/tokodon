@@ -4,11 +4,11 @@
 #pragma once
 
 #include "identity.h"
+#include "post.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
 
-class Post;
 class Attachment;
 class Notification;
 class QNetworkReply;
