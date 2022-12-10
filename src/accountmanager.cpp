@@ -95,7 +95,7 @@ void AccountManager::addAccount(AbstractAccount *account)
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });
 
-    connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<std::shared_ptr<Post>> posts) {
+    connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<Post *> posts) {
         Q_EMIT fetchedTimeline(account, original_name, posts);
     });
     connect(account, &Account::invalidated, this, [this, account]() {

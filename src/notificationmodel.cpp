@@ -99,7 +99,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
         const auto values = doc.array();
         for (const auto &value : values) {
             const QJsonObject obj = value.toObject();
-            const auto notification = std::make_shared<Notification>(m_account, obj);
+            const auto notification = std::make_shared<Notification>(m_account, obj, this);
             notifications.push_back(notification);
         }
         fetchedNotifications(notifications);
@@ -255,7 +255,7 @@ void NotificationModel::actionReply(const QModelIndex &index)
     int row = index.row();
     auto p = m_notifications[row]->post();
 
-    Q_EMIT wantReply(m_account, p, index);
+    Q_EMIT wantReply(m_account, p.get(), index);
 }
 
 void NotificationModel::actionMenu(const QModelIndex &index)
@@ -263,7 +263,7 @@ void NotificationModel::actionMenu(const QModelIndex &index)
     int row = index.row();
     auto p = m_notifications[row]->post();
 
-    Q_EMIT wantMenu(m_account, p, index);
+    Q_EMIT wantMenu(m_account, p.get(), index);
 }
 
 void NotificationModel::actionFavorite(const QModelIndex &index)
@@ -272,10 +272,10 @@ void NotificationModel::actionFavorite(const QModelIndex &index)
     auto p = m_notifications[row]->post();
 
     if (!p->m_isFavorite) {
-        m_account->favorite(p);
+        m_account->favorite(p.get());
         p->m_isFavorite = true;
     } else {
-        m_account->unfavorite(p);
+        m_account->unfavorite(p.get());
         p->m_isFavorite = false;
     }
 
@@ -288,10 +288,10 @@ void NotificationModel::actionRepeat(const QModelIndex &index)
     auto p = m_notifications[row]->post();
 
     if (!p->m_isRepeated) {
-        m_account->repeat(p);
+        m_account->repeat(p.get());
         p->m_isRepeated = true;
     } else {
-        m_account->unrepeat(p);
+        m_account->unrepeat(p.get());
         p->m_isRepeated = false;
     }
 

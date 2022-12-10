@@ -39,8 +39,8 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void excludeTypesChanged();
-    void wantReply(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
-    void wantMenu(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
+    void wantMenu(AbstractAccount *account, Post *post, const QModelIndex &index);
 
 protected:
     void fetchMore(const QModelIndex &parent) override;

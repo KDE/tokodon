@@ -58,7 +58,7 @@ Q_SIGNALS:
     void accountRemoved(AbstractAccount *account);
     void accountSelected(AbstractAccount *account);
     void identityChanged(AbstractAccount *account);
-    void fetchedTimeline(AbstractAccount *account, QString original_name, QList<std::shared_ptr<Post>> posts);
+    void fetchedTimeline(AbstractAccount *account, QString original_name, QList<Post *> posts);
     void invalidated(AbstractAccount *account);
     void fetchedInstanceMetadata(AbstractAccount *account);
     void invalidatedPost(AbstractAccount *account, Post *post);

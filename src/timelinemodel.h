@@ -36,7 +36,7 @@ public:
     {
         m_last_fetch = time(nullptr) + 3;
     }
-    std::shared_ptr<Post> internalData(const QModelIndex &index) const;
+    Post *internalData(const QModelIndex &index) const;
 
     Q_INVOKABLE void refresh();
 
@@ -50,8 +50,8 @@ public Q_SLOTS:
     void actionVis(const QModelIndex &index);
 
 Q_SIGNALS:
-    void wantReply(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
-    void wantMenu(AbstractAccount *account, std::shared_ptr<Post> post, const QModelIndex &index);
+    void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
+    void wantMenu(AbstractAccount *account, Post *post, const QModelIndex &index);
     void accountManagerChanged();
     void nameChanged();
     void fetchingChanged();
@@ -63,10 +63,10 @@ protected:
     QString m_timelineName;
     AccountManager *m_manager = nullptr;
 
-    QList<std::shared_ptr<Post>> m_timeline;
+    QList<Post *> m_timeline;
     bool m_fetching = false;
     time_t m_last_fetch;
 
 public Q_SLOTS:
-    void fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts);
+    void fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<Post *> &posts);
 };

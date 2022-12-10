@@ -118,7 +118,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
         uri.setQuery(q);
 
         m_account->get(uri, true, [this, uri](QNetworkReply *reply) {
-            QList<std::shared_ptr<Post>> posts;
+            QList<Post *> posts;
 
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
@@ -131,7 +131,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
             for (const auto &value : array) {
                 const QJsonObject obj = value.toObject();
 
-                const auto p = std::make_shared<Post>(m_account, obj, this);
+                const auto p = new Post(m_account, obj, this);
                 posts.push_back(p);
             }
 
@@ -165,7 +165,7 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
     return true;
 }
 
-void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<std::shared_ptr<Post>> &posts)
+void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<Post *> &posts)
 {
     m_fetching = false;
     Q_EMIT fetchingChanged();
@@ -216,7 +216,7 @@ int TimelineModel::rowCount(const QModelIndex &parent) const
 }
 
 // this is even more extremely cursed
-std::shared_ptr<Post> TimelineModel::internalData(const QModelIndex &index) const
+Post *TimelineModel::internalData(const QModelIndex &index) const
 {
     int row = index.row();
     return m_timeline[row];

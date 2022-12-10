@@ -212,7 +212,7 @@ void AbstractAccount::postStatus(Post *p)
     });
 }
 
-void AbstractAccount::mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home)
+void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home)
 {
     const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
     const QJsonDocument doc;
@@ -222,10 +222,10 @@ void AbstractAccount::mutatePost(std::shared_ptr<Post> p, const QString &verb, b
         const auto doc = QJsonDocument::fromJson(data);
 
         if (deliver_home) {
-            QList<std::shared_ptr<Post>> posts;
+            QList<Post *> posts;
             auto obj = doc.object();
 
-            auto p = std::make_shared<Post>(this, obj, this);
+            auto p = new Post(this, obj, this);
             posts.push_back(p);
 
             Q_EMIT fetchedTimeline("home", posts);
@@ -233,22 +233,22 @@ void AbstractAccount::mutatePost(std::shared_ptr<Post> p, const QString &verb, b
     });
 }
 
-void AbstractAccount::favorite(std::shared_ptr<Post> p)
+void AbstractAccount::favorite(Post *p)
 {
     mutatePost(p, "favourite");
 }
 
-void AbstractAccount::unfavorite(std::shared_ptr<Post> p)
+void AbstractAccount::unfavorite(Post *p)
 {
     mutatePost(p, "unfavourite");
 }
 
-void AbstractAccount::repeat(std::shared_ptr<Post> p)
+void AbstractAccount::repeat(Post *p)
 {
     mutatePost(p, "reblog", true);
 }
 
-void AbstractAccount::unrepeat(std::shared_ptr<Post> p)
+void AbstractAccount::unrepeat(Post *p)
 {
     mutatePost(p, "unreblog");
 }
@@ -362,9 +362,9 @@ QUrl AbstractAccount::streamingUrl(const QString &stream)
 
 void AbstractAccount::handleUpdate(const QJsonDocument &doc, const QString &target)
 {
-    QList<std::shared_ptr<Post>> posts;
+    QList<Post *> posts;
     const auto obj = doc.object();
-    const auto p = std::make_shared<Post>(this, obj, this);
+    const auto p = new Post(this, obj, this);
     posts.push_back(p);
 
     Q_EMIT fetchedTimeline(target, posts);

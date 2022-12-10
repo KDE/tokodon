@@ -60,7 +60,7 @@ void AccountModel::fillTimeline(const QString &fromId)
 {
     m_fetching = true;
 
-    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
+    auto thread = std::make_shared<QList<Post *>>();
     // Fetch pinned posts if we are starting from the top
     const auto fetchPinned = fromId.isNull();
     const auto excludeReplies = true;
@@ -93,7 +93,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
-            auto p = std::make_shared<Post>(m_account, obj, this);
+            auto p = new Post(m_account, obj, this);
             thread->insert(i, p);
             i++;
         }
@@ -113,7 +113,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         for (const auto &value : array) {
             const QJsonObject obj = value.toObject();
 
-            auto p = std::make_shared<Post>(m_account, obj, this);
+            auto p = new Post(m_account, obj, this);
             thread->push_back(p);
         }
 

@@ -101,7 +101,7 @@ public:
     Notification(const Notification &)
     {
     }
-    Notification(AbstractAccount *parent, const QJsonObject &obj);
+    Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
 
     enum Type {
         Mention,

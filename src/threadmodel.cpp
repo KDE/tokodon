@@ -43,7 +43,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
 
     auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
     auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
-    auto thread = std::make_shared<QList<std::shared_ptr<Post>>>();
+    auto thread = std::make_shared<QList<Post *>>();
 
     auto onFetchContext = [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
@@ -62,7 +62,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
             }
 
             const auto anc_obj = anc.toObject();
-            const auto p = std::make_shared<Post>(m_account, anc_obj, this);
+            const auto p = new Post(m_account, anc_obj, this);
 
             thread->push_front(p);
         }
@@ -75,7 +75,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
             }
 
             const auto desc_obj = desc.toObject();
-            const auto p = std::make_shared<Post>(m_account, desc_obj, this);
+            const auto p = new Post(m_account, desc_obj, this);
 
             thread->push_back(p);
         }
@@ -94,7 +94,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
             return;
         }
 
-        const auto p = std::make_shared<Post>(m_account, obj, this);
+        const auto p = new Post(m_account, obj, this);
         thread->push_front(p);
 
         m_account->get(contextUrl, true, onFetchContext);

@@ -233,16 +233,16 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {"reblog", Notification::Type::Repeat},
 };
 
-Notification::Notification(AbstractAccount *parent, const QJsonObject &obj)
-    : m_account(parent)
+Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
+    : m_account(account)
 {
-    const QJsonObject account = obj["account"].toObject();
+    const QJsonObject accountObj = obj["account"].toObject();
     const QJsonObject status = obj["status"].toObject();
-    auto acct = account["acct"].toString();
+    auto acct = accountObj["acct"].toString();
     auto type = obj["type"].toString();
 
     m_post = std::make_shared<Post>(m_account, status, parent);
-    m_identity = m_account->identityLookup(acct, account);
+    m_identity = m_account->identityLookup(acct, accountObj);
     m_type = str_to_not_type[type];
     m_id = obj["id"].toString().toInt();
 }

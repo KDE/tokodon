@@ -32,7 +32,7 @@ private Q_SLOTS:
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
         statusExampleApi.open(QIODevice::ReadOnly);
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
-        auto post = std::make_shared<Post>(account, doc.object());
+        auto post = new Post(account, doc.object(), this);
         timelineModel.fetchedTimeline(account, "home", {post});
         QCOMPARE(timelineModel.rowCount({}), 1);
     }

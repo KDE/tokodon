@@ -71,10 +71,10 @@ public:
 
     // posting statuses
     Q_INVOKABLE void postStatus(Post *p);
-    void favorite(std::shared_ptr<Post> p);
-    void unfavorite(std::shared_ptr<Post> p);
-    void repeat(std::shared_ptr<Post> p);
-    void unrepeat(std::shared_ptr<Post> p);
+    void favorite(Post *p);
+    void unfavorite(Post *p);
+    void repeat(Post *p);
+    void unrepeat(Post *p);
 
     // uploading media
     void updateAttachment(Attachment *a);
@@ -184,7 +184,7 @@ Q_SIGNALS:
     void authenticated();
     void registered();
     void identityChanged(AbstractAccount *account);
-    void fetchedTimeline(const QString &timelineName, QList<std::shared_ptr<Post>>);
+    void fetchedTimeline(const QString &timelineName, QList<Post *> posts);
     void invalidated();
     void nameChanged();
     void usernameChanged();
@@ -212,7 +212,7 @@ protected:
     void handleUpdate(const QJsonDocument &doc, const QString &target);
     void handleNotification(const QJsonDocument &doc);
 
-    void mutatePost(std::shared_ptr<Post> p, const QString &verb, bool deliver_home = false);
+    void mutatePost(Post *p, const QString &verb, bool deliver_home = false);
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
