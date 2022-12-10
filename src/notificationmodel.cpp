@@ -255,7 +255,7 @@ void NotificationModel::actionReply(const QModelIndex &index)
     int row = index.row();
     auto p = m_notifications[row]->post();
 
-    Q_EMIT wantReply(m_account, p.get(), index);
+    Q_EMIT wantReply(m_account, p, index);
 }
 
 void NotificationModel::actionMenu(const QModelIndex &index)
@@ -263,7 +263,7 @@ void NotificationModel::actionMenu(const QModelIndex &index)
     int row = index.row();
     auto p = m_notifications[row]->post();
 
-    Q_EMIT wantMenu(m_account, p.get(), index);
+    Q_EMIT wantMenu(m_account, p, index);
 }
 
 void NotificationModel::actionFavorite(const QModelIndex &index)
@@ -272,10 +272,10 @@ void NotificationModel::actionFavorite(const QModelIndex &index)
     auto p = m_notifications[row]->post();
 
     if (!p->m_isFavorite) {
-        m_account->favorite(p.get());
+        m_account->favorite(p);
         p->m_isFavorite = true;
     } else {
-        m_account->unfavorite(p.get());
+        m_account->unfavorite(p);
         p->m_isFavorite = false;
     }
 
@@ -288,10 +288,10 @@ void NotificationModel::actionRepeat(const QModelIndex &index)
     auto p = m_notifications[row]->post();
 
     if (!p->m_isRepeated) {
-        m_account->repeat(p.get());
+        m_account->repeat(p);
         p->m_isRepeated = true;
     } else {
-        m_account->unrepeat(p.get());
+        m_account->unrepeat(p);
         p->m_isRepeated = false;
     }
 

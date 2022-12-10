@@ -241,7 +241,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     auto acct = accountObj["acct"].toString();
     auto type = obj["type"].toString();
 
-    m_post = std::make_shared<Post>(m_account, status, parent);
+    m_post = new Post(m_account, status, parent);
     m_identity = m_account->identityLookup(acct, accountObj);
     m_type = str_to_not_type[type];
     m_id = obj["id"].toString().toInt();
@@ -262,7 +262,7 @@ Notification::Type Notification::type() const
     return m_type;
 }
 
-std::shared_ptr<Post> Notification::post() const
+Post *Notification::post() const
 {
     return m_post;
 }

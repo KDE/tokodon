@@ -116,15 +116,15 @@ public:
     int id() const;
     AbstractAccount *account() const;
     Type type() const;
-    std::shared_ptr<Post> post() const;
+    Post *post() const;
     std::shared_ptr<Identity> identity() const;
 
 private:
     int m_id;
 
     AbstractAccount *m_account = nullptr;
+    Post *m_post = nullptr;
     Type m_type;
-    std::shared_ptr<Post> m_post;
     std::shared_ptr<Identity> m_identity;
 };
 
