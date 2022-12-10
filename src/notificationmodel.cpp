@@ -77,7 +77,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
     }
     uri.setQuery(urlQuery);
 
-    m_account->get(uri, true, [=](QNetworkReply *reply) {
+    m_account->get(uri, true, this, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 

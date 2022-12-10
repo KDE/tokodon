@@ -97,10 +97,10 @@ void ThreadModel::fillTimeline(const QString &from_id)
         const auto p = new Post(m_account, obj, this);
         thread->push_front(p);
 
-        m_account->get(contextUrl, true, onFetchContext);
+        m_account->get(contextUrl, true, this, onFetchContext);
     };
 
-    m_account->get(statusUrl, true, onFetchStatus);
+    m_account->get(statusUrl, true, this, onFetchStatus);
 }
 
 bool ThreadModel::canFetchMore(const QModelIndex &parent) const

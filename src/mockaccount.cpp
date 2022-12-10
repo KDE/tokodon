@@ -7,16 +7,16 @@ MockAccount::MockAccount(QObject *parent)
     : AbstractAccount(parent)
 {}
 
-void MockAccount::get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)> callback) 
+void MockAccount::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
 }
-void MockAccount::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> callback) 
+void MockAccount::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {}
-void MockAccount::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> callback) 
+void MockAccount::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {}
-void MockAccount::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)> callback) 
+void MockAccount::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {}
-void MockAccount::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> callback) 
+void MockAccount::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {}
 void MockAccount::upload(Post *post, QFile *file, const QString &filename) 
 {}

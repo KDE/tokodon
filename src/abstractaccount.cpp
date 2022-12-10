@@ -86,7 +86,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     };
     const QJsonDocument doc(obj);
 
-    post(regUrl, doc, false, [=](QNetworkReply *reply) {
+    post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
             qCDebug(TOKODON_LOG) << "not finished";
             return;
@@ -188,7 +188,7 @@ void AbstractAccount::setToken(const QString &authcode)
     q.addQueryItem("grant_type", "authorization_code");
     q.addQueryItem("code", authcode);
 
-    post(tokenUrl, q, false, [=](QNetworkReply *reply) {
+    post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
@@ -204,7 +204,7 @@ void AbstractAccount::postStatus(Post *p)
     QUrl post_status_url = apiUrl("/api/v1/statuses");
     auto doc = p->toJsonDocument();
 
-    post(post_status_url, doc, true, [=](QNetworkReply *reply) {
+    post(post_status_url, doc, true, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
         auto obj = doc.object();
@@ -217,7 +217,7 @@ void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home
     const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
     const QJsonDocument doc;
 
-    post(mutation_url, doc, true, [=](QNetworkReply *reply) {
+    post(mutation_url, doc, true, this, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -305,7 +305,7 @@ void AbstractAccount::fetchInstanceMetadata()
     QUrl instance_url = apiUrl("/api/v1/instance");
     QUrl pleroma_info = apiUrl("/nodeinfo/2.1.json");
 
-    get(instance_url, false, [=](QNetworkReply *reply) {
+    get(instance_url, false, this, [=](QNetworkReply *reply) {
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
             return;
 
@@ -332,7 +332,7 @@ void AbstractAccount::fetchInstanceMetadata()
     m_instance_name = QString("social");
     Q_EMIT fetchedInstanceMetadata();
 
-    get(pleroma_info, false, [=](QNetworkReply *reply) {
+    get(pleroma_info, false, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
@@ -404,7 +404,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
     QUrl url = apiUrl(api_url);
     const QJsonDocument doc(extraArguments);
 
-    post(url, doc, true, [=](QNetworkReply *reply) {
+    post(url, doc, true, this, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 
@@ -507,5 +507,5 @@ void AbstractAccount::updateAttachment(Attachment *a)
         {"description", a->m_description},
     };
     const QJsonDocument doc(obj);
-    put(attachementUrl, doc, true, nullptr);
+    put(attachementUrl, doc, true, this, nullptr);
 }

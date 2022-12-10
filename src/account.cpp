@@ -41,16 +41,17 @@ Account::~Account()
     m_identityCache.clear();
 }
 
-void Account::get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
     QNetworkReply *reply = m_qnam->get(request);
+    reply->setParent(parent);
     handleReply(reply, reply_cb);
 }
 
-void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
@@ -59,10 +60,11 @@ void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     auto reply = m_qnam->post(request, post_data);
+    reply->setParent(parent);
     handleReply(reply, reply_cb);
 }
 
-void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = doc.toJson();
 
@@ -71,10 +73,11 @@ void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated,
     qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->put(request, post_data);
+    reply->setParent(parent);
     handleReply(reply, reply_cb);
 }
 
-void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     auto post_data = formdata.toString().toLatin1();
 
@@ -83,10 +86,11 @@ void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticate
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->post(request, post_data);
+    reply->setParent(parent);
     handleReply(reply, reply_cb);
 }
 
-void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
 
@@ -144,7 +148,7 @@ void Account::upload(Post *p, QFile *file, const QString &filename)
     const auto uploadUrl = apiUrl("/api/v1/media");
     qCDebug(TOKODON_HTTP) << "POST" << uploadUrl << "(upload)";
 
-    post(uploadUrl, mp, true, [=](QNetworkReply *reply) {
+    post(uploadUrl, mp, true, this, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -211,7 +215,7 @@ void Account::validateToken()
 
     const QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
 
-    get(verify_credentials, true, [=](QNetworkReply *reply) {
+    get(verify_credentials, true, this, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
             return;
         }

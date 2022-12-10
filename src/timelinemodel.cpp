@@ -117,7 +117,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
         auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(m_timelineName));
         uri.setQuery(q);
 
-        m_account->get(uri, true, [this, uri](QNetworkReply *reply) {
+        m_account->get(uri, true, this, [this, uri](QNetworkReply *reply) {
             QList<Post *> posts;
 
             const auto data = reply->readAll();

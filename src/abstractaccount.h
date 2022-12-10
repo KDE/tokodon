@@ -99,24 +99,27 @@ public:
     /// Make an HTTP GET request to the mastodon server
     /// \param url The url of the request
     /// \param authenticated Whether the request should be authentificated
+    /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void get(const QUrl &url, bool authenticated, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Make an HTTP POST request to the mastodon server
     /// \param url The url of the request
     /// \param doc The request body as JSON
+    /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Make an HTTP POST request to the mastodon server
     /// \param url The url of the request
     /// \param doc The request body as form-data
     /// \param authenticated Whether the request should be authentificated
+    /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
-    virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, std::function<void(QNetworkReply *)> callback) = 0;
-    virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Upload a file
     virtual void upload(Post *post, QFile *file, const QString &filename) = 0;

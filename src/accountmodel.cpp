@@ -22,7 +22,7 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
         QUrl uriAccount(m_account->instanceUri());
         uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
 
-        manager->selectedAccount()->get(uriAccount, true, [this, manager, acct](QNetworkReply *reply) {
+        manager->selectedAccount()->get(uriAccount, true, this, [this, manager, &acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
@@ -33,10 +33,30 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
     } else {
         const QJsonObject empty;
         m_identity = m_account->identityLookup(acct, empty);
+    }
 
+    if (m_account->identity().id() != m_identity->id()) {
+        return;
+    }
+
+    // Fetch relationship. Don't cache this; it's lightweight.
+    QUrl uriRelationship(m_account->instanceUri());
+    uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
+    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->id())}});
+
+    m_account->get(uriRelationship, true, this, [this](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (!doc.isArray()) {
+            qDebug() << "Data returned from Relationship network request is not an array"
+                     << "data: " << doc;
+            return;
+        }
+
+        // We only are requesting for a single relationship, so doc should only contain one element
+        m_identity->setRelationship(new Relationship(m_identity.get(), doc[0].toObject()));
         Q_EMIT identityChanged();
         updateRelationships();
-    }
+    });
 }
 
 bool AccountModel::isSelf() const
@@ -118,13 +138,13 @@ void AccountModel::fillTimeline(const QString &fromId)
         }
 
         if (fetchPinned) {
-            m_account->get(uriPinned, true, onFetchPinned);
+            m_account->get(uriPinned, true, this, onFetchPinned);
         } else {
             fetchedTimeline(m_account, m_timelineName, *thread);
         }
     };
 
-    m_account->get(uriStatus, true, onFetchAccount);
+    m_account->get(uriStatus, true, this, onFetchAccount);
 }
 
 Identity *AccountModel::identity() const
