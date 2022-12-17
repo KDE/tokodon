@@ -309,13 +309,13 @@ void AbstractAccount::fetchInstanceMetadata()
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
             return;
 
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
         if (!doc.isObject())
             return;
 
-        auto obj = doc.object();
+        const auto obj = doc.object();
 
         if (obj.contains("max_toot_chars")) {
             m_maxPostLength = (unsigned)obj["max_toot_chars"].toInt();
@@ -333,8 +333,8 @@ void AbstractAccount::fetchInstanceMetadata()
     Q_EMIT fetchedInstanceMetadata();
 
     get(pleroma_info, false, this, [=](QNetworkReply *reply) {
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
 
         m_allowedContentTypes = parsePleromaInfo(doc);
         Q_EMIT fetchedInstanceMetadata();

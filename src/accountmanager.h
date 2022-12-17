@@ -38,7 +38,7 @@ public:
     Q_INVOKABLE void addAccount(AbstractAccount *account);
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
 
-    void selectAccount(AbstractAccount *account);
+    void selectAccount(AbstractAccount *account, bool explicitUserAction = true);
     AbstractAccount *selectedAccount() const;
     QVariant selectedAccountModel();
 

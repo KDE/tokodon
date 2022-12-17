@@ -32,6 +32,9 @@ QString TimelineModel::displayName() const
 {
     if (m_timelineName == "home") {
         if (m_manager && m_manager->rowCount() > 1) {
+            if (m_manager->selectedAccount() == nullptr) {
+                return i18n("Loading");
+            }
             return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->username());
         } else {
             return i18nc("@title", "Home");

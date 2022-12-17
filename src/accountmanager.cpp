@@ -6,6 +6,7 @@
 #include "account.h"
 #include "networkaccessmanagerfactory.h"
 #include "accountmodel.h"
+#include "config.h"
 
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
@@ -88,8 +89,6 @@ void AccountManager::addAccount(AbstractAccount *account)
     endInsertRows();
 
     Q_EMIT accountAdded(account);
-    selectAccount(account);
-
     connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
     connect(account, &Account::authenticated, this, [this]() {
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
@@ -116,6 +115,11 @@ void AccountManager::addAccount(AbstractAccount *account)
 
 void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
+    auto config = Config::self();
+    if (selectedAccount() == nullptr || account->identity().account() == config->lastUsedAccount()) {
+        selectAccount(account, false);
+    }
+
     Q_EMIT identityChanged(account);
 }
 
@@ -133,7 +137,7 @@ void AccountManager::removeAccount(AbstractAccount *account)
     Q_EMIT accountRemoved(account);
 }
 
-void AccountManager::selectAccount(AbstractAccount *account)
+void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAction)
 {
     if (!m_accounts.contains(account)) {
         qDebug() << "WTF: attempt to select unmanaged account" << account;
@@ -141,6 +145,12 @@ void AccountManager::selectAccount(AbstractAccount *account)
     }
 
     m_selected_account = account;
+
+    if (explicitUserAction) {
+        auto config = Config::self();
+        config->setLastUsedAccount(account->identity().account());
+        config->save();
+    }
 
     Q_EMIT accountSelected(account);
 }

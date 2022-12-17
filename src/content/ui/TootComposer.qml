@@ -16,6 +16,7 @@ MastoPage {
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
+
         QQC2.TextField {
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true

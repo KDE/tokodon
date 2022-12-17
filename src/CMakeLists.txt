@@ -47,6 +47,7 @@ set(tokodon_src
 )
 
 add_library(tokodon_static STATIC ${tokodon_src})
+kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc)
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
 
 if (TARGET KF5::KIOWidgets)
@@ -65,7 +66,6 @@ add_executable(tokodon
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(tokodon PRIVATE tokodon_static)
-kconfig_add_kcfg_files(tokodon GENERATE_MOC config.kcfgc)
 
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
