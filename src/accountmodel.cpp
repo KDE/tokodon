@@ -22,7 +22,7 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
         QUrl uriAccount(m_account->instanceUri());
         uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
 
-        manager->selectedAccount()->get(uriAccount, true, this, [this, manager, &acct](QNetworkReply *reply) {
+        manager->selectedAccount()->get(uriAccount, true, this, [this, manager, acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
