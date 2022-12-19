@@ -38,9 +38,15 @@ Kirigami.ApplicationWindow {
         id: drawer
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+        z: modal ? Math.round(position * 10000000) : 100
         drawerOpen: !Kirigami.Settings.isMobile
         width: Kirigami.Units.gridUnit * 16
-        Behavior on width { NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad } }
+        Behavior on width {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
@@ -148,14 +154,11 @@ Kirigami.ApplicationWindow {
         id: contextDrawer
     }
 
-    Component.onCompleted: {
-        if (AccountManager.hasAccounts) {
-            pageStack.push(mainTimeline);
-        } else {
-            pageStack.push('qrc:/content/ui/LoginPage.qml');
-        }
+    Component.onCompleted: if (AccountManager.hasAccounts) {
+        pageStack.push(mainTimeline);
+    } else {
+        pageStack.push('qrc:/content/ui/LoginPage.qml');
     }
-
 
     Component {
         id: mainTimeline
