@@ -10,6 +10,9 @@ import QtGraphicalEffects 1.0
 
 QQC2.ItemDelegate {
     id: root
+
+    property var poll: model.poll
+
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
@@ -40,6 +43,7 @@ QQC2.ItemDelegate {
         }
     }
     ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
+
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.largeSpacing
 
@@ -380,6 +384,71 @@ a{
                         }
                     }
                 }
+            }
+        }
+
+        ColumnLayout {
+            QQC2.ButtonGroup {
+                id: pollGroup
+                exclusive: poll !== undefined && !poll.multiple
+            }
+
+            Repeater {
+                model: poll ? poll.options : []
+                RowLayout {
+                    QQC2.CheckBox {
+                        visible: !poll.voted && poll.multiple
+                        Layout.alignment: Qt.AlignVCenter
+                        QQC2.ButtonGroup.group: pollGroup
+                        property int choiceIndex: index
+                    }
+
+                    QQC2.RadioButton {
+                        visible: !poll.voted && !poll.multiple
+                        Layout.alignment: Qt.AlignVCenter
+                        QQC2.ButtonGroup.group: pollGroup
+                        property int choiceIndex: index
+                    }
+
+                    QQC2.ProgressBar {
+                        from: 0
+                        to: 100
+                        value: modelData.votesCount / poll.votesCount * 100
+                        visible: poll.voted
+                        Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+
+                    QQC2.Label {
+                        text: modelData.title
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                }
+            }
+
+            QQC2.Button {
+                visible: poll !== undefined && !poll.voted
+                Layout.alignment: Qt.AlignRight
+                text: i18n("Vote")
+                enabled: pollGroup.checkState !== Qt.Unchecked
+                onClicked: {
+                    let choices = [];
+                    const buttons = pollGroup.buttons;
+                    for (let i in buttons) {
+                        const button = buttons[i];
+                        if (!button.visible) {
+                            continue;
+                        }
+
+                        if (button.checked) {
+                            choices.push(button.choiceIndex);
+                        }
+                    }
+                    timelineModel.actionVote(timelineModel.index(model.index, 0), choices)
+                }
+
             }
         }
 

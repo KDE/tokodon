@@ -39,6 +39,7 @@
 #include "networkaccessmanagerfactory.h"
 #include "notificationmodel.h"
 #include "post.h"
+#include "poll.h"
 #include "filehelper.h"
 #include "timelinemodel.h"
 
@@ -111,6 +112,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
+    qRegisterMetaType<Poll *>("Poll*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");

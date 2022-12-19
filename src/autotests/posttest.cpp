@@ -63,10 +63,10 @@ private Q_SLOTS:
         QCOMPARE(poll->ownVotes().count(), 1);
         QCOMPARE(poll->ownVotes()[0], 1);
         QCOMPARE(poll->options().count(), 2);
-        QCOMPARE(poll->options()[0].title(), QStringLiteral("accept"));
-        QCOMPARE(poll->options()[0].votesCount(), 6);
-        QCOMPARE(poll->options()[1].title(), QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
-        QCOMPARE(poll->options()[1].votesCount(), 4);
+        QCOMPARE(poll->options()[0]["title"], QStringLiteral("accept"));
+        QCOMPARE(poll->options()[0]["votesCount"], 6);
+        QCOMPARE(poll->options()[1]["title"], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
+        QCOMPARE(poll->options()[1]["votesCount"], 4);
     }
 };
 

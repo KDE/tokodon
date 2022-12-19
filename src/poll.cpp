@@ -7,6 +7,9 @@
 #include <algorithm>
 #include <qstringliteral.h>
 
+Poll::Poll()
+{}
+
 Poll::Poll(const QJsonObject &json)
 {
     m_id = json[QStringLiteral("id")].toString();
@@ -31,8 +34,12 @@ Poll::Poll(const QJsonObject &json)
             const auto emojiObj = emoji.toObject();
             title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
         }
-        return PollOption(title, option[QStringLiteral("votes_count")].toInt());
+        return QVariantMap {
+             {"title", title},
+             {"votesCount", option[QStringLiteral("votes_count")].toInt()}
+        };
     });
+    qDebug() << m_options;
 }
 
 QString Poll::id() const
@@ -75,23 +82,7 @@ QList<int> Poll::ownVotes() const
     return m_ownVotes;
 }
 
-QList<PollOption> Poll::options() const
+QList<QVariantMap> Poll::options() const
 {
     return m_options;
-}
-
-PollOption::PollOption(const QString &title, int votesCount)
-    : m_title(title)
-    , m_votesCount(votesCount)
-{
-}
-
-QString PollOption::title() const
-{
-    return m_title;
-}
-
-int PollOption::votesCount() const
-{
-    return m_votesCount;
 }

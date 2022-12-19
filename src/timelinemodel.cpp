@@ -7,9 +7,13 @@
 #include "accountmodel.h"
 #include "identity.h"
 #include "threadmodel.h"
+#include "poll.h"
 #include <KLocalizedString>
 #include <QUrlQuery>
 #include <QtMath>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <algorithm>
 
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
@@ -288,6 +292,11 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
     case AccountModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->authorIdentity()->id(), p->authorIdentity()->account()));
+    case PollRole:
+        if (p->poll()) {
+            return QVariant::fromValue<Poll>(*p->poll());
+        }
+        return {};
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
         auto secsTo = p->m_published_at.secsTo(current);
@@ -366,6 +375,37 @@ void TimelineModel::actionVis(const QModelIndex &index)
     p->m_attachments_visible ^= true;
 
     Q_EMIT dataChanged(index, index);
+}
+
+void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choices)
+{
+    int row = index.row();
+    auto post = m_timeline[row];
+    auto poll = post->poll();
+    Q_ASSERT(poll);
+
+    QJsonObject obj;
+    QJsonArray array;
+    std::transform(choices.cbegin(), choices.cend(), std::back_inserter(array), [](int choice) -> auto {
+            return choice;
+    });
+    obj["choices"] = array;
+    QJsonDocument doc(obj);
+    const auto id = poll->id();
+
+    m_account->post(m_account->apiUrl(QString("/api/v1/polls/%1/votes").arg(id)), doc, true, this, [this, id](QNetworkReply *reply) {
+        int i = 0;
+        for (auto &post : m_timeline) {
+            if (post->poll() && post->poll()->id() == id) {
+                const auto newPoll = QJsonDocument::fromJson(reply->readAll()).object();
+                delete post->poll();
+                post->setPoll(new Poll(newPoll));
+                Q_EMIT dataChanged(this->index(i, 0), this->index(i, 0), {PollRole});
+                break;
+            }
+            i++;
+        }
+    });
 }
 
 void TimelineModel::refresh()

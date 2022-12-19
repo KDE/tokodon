@@ -177,6 +177,7 @@ public:
     void setMentions(const QStringList &mentions);
     std::optional<Card> card() const;
     void setCard(std::optional<Card> card);
+    void setPoll(Poll *poll);
     Poll *poll() const;
 
     void addAttachment(const QJsonObject &attachment);

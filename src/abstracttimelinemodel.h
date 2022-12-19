@@ -42,6 +42,7 @@ public:
         UrlRole,
         CardRole,
         TypeRole,
+        PollRole,
         ExtraRole, ///< for sub-classes to extend the roles
     };
 

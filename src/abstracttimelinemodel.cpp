@@ -41,5 +41,6 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {AccountModelRole, QByteArrayLiteral("accountModel")},
         {CardRole, QByteArrayLiteral("card")},
         {TypeRole, QByteArrayLiteral("type")},
+        {PollRole, QByteArrayLiteral("poll")},
     };
 }

@@ -446,3 +446,9 @@ Poll *Post::poll() const
 {
     return m_poll;
 }
+
+void Post::setPoll(Poll *poll)
+{
+    m_poll = poll;
+    Q_EMIT pollChanged();
+}
