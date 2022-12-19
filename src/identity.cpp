@@ -5,7 +5,6 @@
 #include "abstractaccount.h"
 #include "relationship.h"
 #include <QJsonObject>
-#include <qjsonarray.h>
 
 QString Identity::displayName() const
 {

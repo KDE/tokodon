@@ -4,13 +4,12 @@
 
 #include "timelinemodel.h"
 #include "abstractaccount.h"
-#include "abstracttimelinemodel.h"
 #include "accountmodel.h"
 #include "identity.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
-#include <QtMath>
 #include <QUrlQuery>
+#include <QtMath>
 
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)

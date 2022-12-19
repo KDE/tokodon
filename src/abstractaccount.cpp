@@ -3,12 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "abstractaccount.h"
-#include "identity.h"
 
 #include "accountmanager.h"
-#include "post.h"
-#include "relationship.h"
 #include "messagefiltercontainer.h"
+#include "relationship.h"
 #include "tokodon_debug.h"
 #include <KLocalizedString>
 #include <QNetworkReply>

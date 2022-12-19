@@ -2,13 +2,12 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "filetransferjob.h"
-#include <KLocalizedString>
+#include "account.h"
 #include "tokodon_http_debug.h"
+#include <KLocalizedString>
 #include <QDebug>
 #include <QNetworkReply>
 #include <QUrl>
-#include <QSaveFile>
-#include "account.h"
 
 FileTransferJob::FileTransferJob(AbstractAccount *account, const QString &source, const QString &destination)
     : KJob()

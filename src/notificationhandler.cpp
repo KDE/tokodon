@@ -3,7 +3,6 @@
 
 #include "notificationhandler.h"
 #include "account.h"
-#include "post.h"
 #include <KLocalizedString>
 #include <KNotification>
 #include <QNetworkAccessManager>
