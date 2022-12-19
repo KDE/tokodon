@@ -41,6 +41,7 @@
 #include "post.h"
 #include "poll.h"
 #include "filehelper.h"
+#include "networkcontroller.h"
 #include "timelinemodel.h"
 
 #ifdef Q_OS_ANDROID
@@ -100,6 +101,7 @@ int main(int argc, char *argv[])
     auto config = Config::self();
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");

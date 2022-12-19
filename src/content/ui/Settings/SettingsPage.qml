@@ -29,6 +29,23 @@ Kirigami.PageRow {
                 contentItem: ColumnLayout {
                     spacing: 0
                     Component {
+                        id: networkProxyPage
+                        NetworkProxyPage {
+                        }
+                    }
+                    MobileForm.FormButtonDelegate {
+                        text: i18n("Network Proxy")
+                        onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
+                    }
+                }
+            }
+
+            MobileForm.FormCard {
+                Layout.topMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+                contentItem: ColumnLayout {
+                    spacing: 0
+                    Component {
                         id: aboutPage
                         MobileForm.AboutPage {
                             aboutData: About
