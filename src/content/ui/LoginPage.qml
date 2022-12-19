@@ -56,8 +56,13 @@ MastoPage {
                             return;
                         }
 
-                        pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
-                            account: AccountManager.createNewAccount(username.text, instanceUrl.text, sslErrors.checked)
+                        const account = AccountManager.createNewAccount(username.text, instanceUrl.text, sslErrors.checked);
+
+                        account.registered.connect(() => {
+                            const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
+                                account: account,
+                            });
+
                         });
                     }
                 }

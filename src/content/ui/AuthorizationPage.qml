@@ -7,70 +7,110 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQml.Models 2.15
 import org.kde.kmasto 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 MastoPage {
     objectName: 'authorizationPage'
     property var account
-    Kirigami.FlexColumn {
-        maximumWidth: Kirigami.Units.gridUnits * 30
-        TextEdit {
-            color: Kirigami.Theme.textColor
-            textFormat: Text.RichText
-            readOnly: true
-            selectByMouse: true
-            text: i18n("To continue, please open the following link and authorize Tokodon: %1", "<br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
+    title: i18n("Authorization")
+
+    leftPadding: 0
+    rightPadding: 0
+
+    ColumnLayout {
+        width: parent.width
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            TapHandler {
-                acceptedButtons: Qt.RightButton
-                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                onTapped: if (parent.hoveredLink.length > 0) {
-                    menuLink.link = parent.hoveredLink;
-                    menuLink.popup();
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Authorize Tokodon to act on your behalf")
                 }
-            }
-            QQC2.Menu {
-                id: menuLink
-                property string link
-                QQC2.MenuItem {
-                    text: i18n("Copy link")
-                    onTriggered: Clipboard.saveText(menuLink.link)
+
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    Layout.fillWidth: true
+
+                    contentItem: TextEdit {
+                        color: Kirigami.Theme.textColor
+                        textFormat: Text.RichText
+                        readOnly: true
+                        selectByMouse: true
+                        text: i18n("To continue, please open the following link and authorize Tokodon: %1", "<br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
+                        wrapMode: Text.WordWrap
+                        onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
+                        Layout.fillWidth: true
+                        TapHandler {
+                            acceptedButtons: Qt.RightButton
+                            cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                            onTapped: if (parent.hoveredLink.length > 0) {
+                                menuLink.link = parent.hoveredLink;
+                                menuLink.popup();
+                            }
+                        }
+                        QQC2.Menu {
+                            id: menuLink
+                            property string link
+                            QQC2.MenuItem {
+                                text: i18n("Copy link")
+                                onTriggered: Clipboard.saveText(menuLink.link)
+                            }
+                            QQC2.MenuItem {
+                                text: i18n("Open link")
+                                onTriggered: Qt.openUrlExternally(menuLink.link)
+                            }
+                        }
+                    }
                 }
-                QQC2.MenuItem {
+
+                MobileForm.FormDelegateSeparator { above: openLink }
+
+                MobileForm.FormButtonDelegate {
+                    id: openLink
                     text: i18n("Open link")
-                    onTriggered: Qt.openUrlExternally(menuLink.link)
+                    onClicked: Qt.openUrlExternally(account.authorizeUrl)
+                }
+
+                MobileForm.FormDelegateSeparator { above: openLink; below: copyLink }
+
+                MobileForm.FormButtonDelegate {
+                    id: copyLink
+                    text: i18n("Copy link")
+                    onClicked: Clipboard.saveText(account.authorizeUrl)
                 }
             }
         }
 
-        RowLayout {
-            QQC2.Button { text: i18n("Open link"); onClicked: Qt.openUrlExternally(account.authorizeUrl) }
-            QQC2.Button { text: i18n("Copy link"); onClicked: Clipboard.saveText(account.authorizeUrl) }
-        }
-
-        QQC2.Label {
-            text: i18n("Enter token:")
-        }
-
-        QQC2.TextField {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            id: tokenField
-            onAccepted: continueButton.clicked()
-        }
+            contentItem: ColumnLayout {
+                spacing: 0
 
-        QQC2.Button {
-            id: continueButton
-            text: i18n("Continue")
-            onClicked: {
-                if (!tokenField.text) {
-                    applicationWindow().showPassiveNotification(i18n("Please insert the generated token."));
-                    return;
+                MobileForm.FormTextFieldDelegate {
+                    id: tokenField
+                    label: i18n("Enter token:")
+                    onAccepted: continueButton.clicked()
                 }
-                account.setToken(tokenField.text);
-                pageStack.layers.pop();
-                if (pageStack.layers.depth > 1) {
-                    pageStack.layers.pop();
+
+                MobileForm.FormDelegateSeparator { below: continueButton; above: tokenField }
+
+                MobileForm.FormButtonDelegate {
+                    id: continueButton
+                    text: i18n("Continue")
+                    onClicked: {
+                        if (!tokenField.text) {
+                            applicationWindow().showPassiveNotification(i18n("Please insert the generated token."));
+                            return;
+                        }
+                        account.setToken(tokenField.text);
+                        pageStack.layers.pop();
+                        if (pageStack.layers.depth > 1) {
+                            pageStack.layers.pop();
+                        }
+                    }
                 }
             }
         }
