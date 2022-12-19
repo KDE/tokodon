@@ -1,0 +1,97 @@
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
+
+#include "poll.h"
+
+#include <QJsonArray>
+#include <algorithm>
+#include <qstringliteral.h>
+
+Poll::Poll(const QJsonObject &json)
+{
+    m_id = json[QStringLiteral("id")].toString();
+    m_expiresAt = QDateTime::fromString(json[QStringLiteral("expires_at")].toString(), Qt::ISODate);
+    m_expired = json[QStringLiteral("expired")].toBool();
+    m_multiple = json[QStringLiteral("multiple")].toBool();
+    m_votesCount = json[QStringLiteral("votes_count")].toInt();
+    m_votersCount = json[QStringLiteral("voters_count")].toInt(-1);
+    m_voted = json[QStringLiteral("voted")].toBool();
+    const auto ownVotes = json[QStringLiteral("own_votes")].toArray();
+    std::transform(ownVotes.cbegin(), ownVotes.cend(), std::back_inserter(m_ownVotes), [](const QJsonValue &value) -> auto {
+        return value.toInt();
+    });
+
+    const auto emojis = json[QStringLiteral("emojis")].toArray();
+
+    const auto options = json[QStringLiteral("options")].toArray();
+    std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> auto {
+        const auto option = value.toObject();
+        QString title = option[QStringLiteral("title")].toString();
+        for (const auto &emoji : emojis) {
+            const auto emojiObj = emoji.toObject();
+            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        }
+        return PollOption(title, option[QStringLiteral("votes_count")].toInt());
+    });
+}
+
+QString Poll::id() const
+{
+    return m_id;
+}
+
+QDateTime Poll::expiresAt() const
+{
+    return m_expiresAt;
+}
+
+bool Poll::expired() const
+{
+    return m_expired;
+}
+
+bool Poll::multiple() const
+{
+    return m_multiple;
+}
+
+int Poll::votesCount() const
+{
+    return m_votesCount;
+}
+
+int Poll::votersCount() const
+{
+    return m_votersCount;
+}
+
+bool Poll::voted() const
+{
+    return m_voted;
+}
+
+QList<int> Poll::ownVotes() const
+{
+    return m_ownVotes;
+}
+
+QList<PollOption> Poll::options() const
+{
+    return m_options;
+}
+
+PollOption::PollOption(const QString &title, int votesCount)
+    : m_title(title)
+    , m_votesCount(votesCount)
+{
+}
+
+QString PollOption::title() const
+{
+    return m_title;
+}
+
+int PollOption::votesCount() const
+{
+    return m_votesCount;
+}

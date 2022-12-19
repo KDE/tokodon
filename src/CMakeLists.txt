@@ -25,6 +25,7 @@ set(tokodon_src
     account.cpp
     mockaccount.cpp
     post.cpp
+    poll.cpp
     filetransferjob.cpp
     filehelper.cpp
     threadmodel.cpp

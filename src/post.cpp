@@ -9,6 +9,7 @@
 
 #include "account.h"
 #include "post.h"
+#include "poll.h"
 
 static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"image", Attachment::AttachmentType::Image},
@@ -100,7 +101,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
-        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
     m_post_id = m_replyTargetId = obj["id"].toString();
@@ -125,12 +126,17 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
         m_mentions.push_back("@" + o["acct"].toString());
     }
 
+    if (obj.contains(QStringLiteral("poll")) && !obj[QStringLiteral("poll")].isNull()) {
+        m_poll = new Poll(obj[QStringLiteral("poll")].toObject());
+    }
+
     m_attachments_visible = !m_isSensitive;
 }
 
 Post::~Post()
 {
     qDeleteAll(m_attachments);
+    delete m_poll;
 }
 
 void Post::addAttachments(const QJsonArray &attachments)
@@ -434,4 +440,9 @@ std::shared_ptr<Identity> Post::authorIdentity() const
 std::shared_ptr<Identity> Post::repeatIdentity() const
 {
     return m_repeatIdentity;
+}
+
+Poll *Post::poll() const
+{
+    return m_poll;
 }

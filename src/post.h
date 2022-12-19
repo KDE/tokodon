@@ -19,6 +19,7 @@
 class Post;
 class Identity;
 class AbstractAccount;
+class Poll;
 
 class Card
 {
@@ -138,6 +139,7 @@ class Post : public QObject
     Q_PROPERTY(Visibility visibility READ visibility WRITE setVisibility NOTIFY visibilityChanged)
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
+    Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
 
 public:
     Post() = delete;
@@ -175,6 +177,7 @@ public:
     void setMentions(const QStringList &mentions);
     std::optional<Card> card() const;
     void setCard(std::optional<Card> card);
+    Poll *poll() const;
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
@@ -222,12 +225,14 @@ Q_SIGNALS:
     void inReplyToChanged();
     void mentionsChanged();
     void attachmentUploaded();
+    void pollChanged();
 
 private:
     QString m_replyTargetId;
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
     std::shared_ptr<Identity> m_repeatIdentity;
+    Poll *m_poll = nullptr;
 };
 
 Q_DECLARE_METATYPE(Card)
