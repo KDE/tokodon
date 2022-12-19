@@ -52,12 +52,10 @@ QQC2.ItemDelegate {
                 color: Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
             }
             QQC2.Label {
                 text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml) : ''
                 textFormat: Text.RichText
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
             }
@@ -71,12 +69,10 @@ QQC2.ItemDelegate {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
             }
             QQC2.Label {
                 text: i18n("Pinned entry")
                 color: Kirigami.Theme.disabledTextColor
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
             }
@@ -91,14 +87,12 @@ QQC2.ItemDelegate {
                 color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
             }
 
             QQC2.Label {
                 text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
                 color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 Layout.alignment: Qt.AlignVCenter
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
             }
         }
