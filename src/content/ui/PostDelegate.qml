@@ -10,8 +10,8 @@ import QtGraphicalEffects 1.0
 
 QQC2.ItemDelegate {
     id: root
-    topPadding: Kirigami.Units.largeSpacing * 2
-    bottomPadding: Kirigami.Units.largeSpacing * 2
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
     highlighted: false
@@ -40,92 +40,112 @@ QQC2.ItemDelegate {
         }
     }
     ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
-    contentItem: GridLayout {
-        columnSpacing: Kirigami.Units.largeSpacing * 2
-        rowSpacing: 0
-        columns: 2
+    contentItem: ColumnLayout {
+        spacing: Kirigami.Units.largeSpacing
 
-        Kirigami.Icon {
-            source: "favorite"
-            Layout.alignment: Qt.AlignRight
-            visible: model.type === Notification.Favorite
-            color: Kirigami.Theme.disabledTextColor
-            Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-            Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-        QQC2.Label {
-            text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml) : ''
-            textFormat: Text.RichText
-            visible: model.type === Notification.Favorite
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-
-        Kirigami.Icon {
-            source: "pin"
-            Layout.alignment: Qt.AlignRight
-            visible: model.pinned && timelinePage.isProfile
-            Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-            Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-        QQC2.Label {
-            text: i18n("Pinned entry")
-            visible: model.pinned && timelinePage.isProfile
-            color: Kirigami.Theme.disabledTextColor
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-
-        Kirigami.Icon {
-            source: "retweet"
-            Layout.alignment: Qt.AlignRight
-            visible: model.wasReblogged || model.type === Notification.Repeat
-            color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-            Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-
-        QQC2.Label {
-            visible: model.wasReblogged || model.type === Notification.Repeat
-            text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
-            color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
-
-        Kirigami.Avatar {
-            Layout.alignment: Qt.AlignTop
-            Layout.rowSpan: 5
-            source: model.avatar
-            cache: true
-            actions.main: Kirigami.Action {
-                onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                    model: model.accountModel,
-                })
-            }
-            name: model.authorDisplayName
-        }
         RowLayout {
             Layout.fillWidth: true
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
-            Kirigami.Heading {
-                id: heading
-                level: 5
-                text: model.authorDisplayName
-                type: Kirigami.Heading.Type.Primary
-                color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
-            }
-            Kirigami.Heading {
-                level: 5
-                Layout.fillWidth: true
-                elide: Text.ElideRight
+            visible: model.type === Notification.Favorite
+            Kirigami.Icon {
+                source: "favorite"
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: Kirigami.Theme.disabledTextColor
-                text: `@${model.authorId}`
+                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
             }
+            QQC2.Label {
+                text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml) : ''
+                textFormat: Text.RichText
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignVCenter
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+            visible: model.pinned && timelinePage.isProfile
+            Kirigami.Icon {
+                source: "pin"
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
+            }
+            QQC2.Label {
+                text: i18n("Pinned entry")
+                color: Kirigami.Theme.disabledTextColor
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
+                Layout.alignment: Qt.AlignVCenter
+                Layout.fillWidth: true
+            }
+        }
+
+        RowLayout {
+            visible: model.wasReblogged || model.type === Notification.Repeat
+            Layout.fillWidth: true
+            Kirigami.Icon {
+                source: "retweet"
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
+            }
+
+            QQC2.Label {
+                text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
+                color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                Layout.alignment: Qt.AlignVCenter
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+            Kirigami.Avatar {
+                Layout.alignment: Qt.AlignTop
+                Layout.rowSpan: 5
+                source: model.avatar
+                cache: true
+                actions.main: Kirigami.Action {
+                    onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                        model: model.accountModel,
+                    })
+                }
+                name: model.authorDisplayName
+            }
+            ColumnLayout {
+                Layout.fillWidth: true
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                spacing: 0
+                Kirigami.Heading {
+                    id: heading
+                    level: 5
+                    text: model.authorDisplayName
+                    type: Kirigami.Heading.Type.Primary
+                    color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    verticalAlignment: Text.AlignTop
+                }
+                Kirigami.Heading {
+                    level: 5
+                    Layout.fillWidth: true
+                    elide: Text.ElideRight
+                    color: Kirigami.Theme.disabledTextColor
+                    text: `@${model.authorId}`
+                    verticalAlignment: Text.AlignTop
+                }
+            }
+
             Kirigami.Heading {
                 level: 5
                 text: model.relativeTime
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                verticalAlignment: Text.AlignTop
+                Layout.alignment: Qt.AlignTop
             }
         }
         ColumnLayout {
