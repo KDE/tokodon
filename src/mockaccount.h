@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "abstractaccount.h"
+#include <qnetworkreply.h>
 
 class MockAccount : public AbstractAccount
 {
@@ -17,5 +18,10 @@ public:
     virtual void writeToSettings(QSettings &settings) const override;
     virtual void buildFromSettings(const QSettings &settings) override;
     virtual void validateToken() override;
+
+    void registerPost(const QString &url, QNetworkReply *reply);
+
+private:
+    QHash<QUrl, QNetworkReply *> m_postReplies;
 };
 
