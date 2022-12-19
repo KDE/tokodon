@@ -220,7 +220,7 @@ a{
                                 if (attachmentGrid.isSensitive) {
                                     attachmentGrid.isSensitive = false;
                                 } else {
-                                  fullScreenImage.createObject(parent, {
+                                    fullScreenImage.createObject(parent, {
                                         model: attachments,
                                         currentIndex: index,
                                     }).open();

@@ -19,6 +19,8 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
 
+    property bool isShowingFullScreenImage: false
+
     Connections {
         target: AccountManager
         function onAccountSelected() {
@@ -43,7 +45,7 @@ Kirigami.ApplicationWindow {
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
-        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1
+        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1 && !isShowingFullScreenImage
 
         leftPadding: 0
         rightPadding: 0

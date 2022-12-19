@@ -253,7 +253,12 @@ QQC2.Popup {
     }
 
     onClosed: {
-        view.currentItem.image.scaleFactor = 1
-        view.currentItem.image.rotationAngle = 0
+        applicationWindow().isShowingFullScreenImage = false;
+        view.currentItem.image.scaleFactor = 1;
+        view.currentItem.image.rotationAngle = 0;
+    }
+
+    onOpened: {
+        applicationWindow().isShowingFullScreenImage = true;
     }
 }
