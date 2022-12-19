@@ -35,7 +35,7 @@ private Q_SLOTS:
         QCOMPARE(post.visibility(), Post::Visibility::Public);
 
         QCOMPARE(post.authorIdentity()->displayName(), "Eugen :kde:");
-        QCOMPARE(post.authorIdentity()->displayNameHtml(), "Eugen <img height=\"16\" width=\"16\" src=\"https://kde.org\">");
+        QCOMPARE(post.authorIdentity()->displayNameHtml(), "Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">");
     }
 };
 
