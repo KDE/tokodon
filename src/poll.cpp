@@ -36,7 +36,7 @@ Poll::Poll(const QJsonObject &json)
         }
         return QVariantMap {
              {"title", title},
-             {"votesCount", option[QStringLiteral("votes_count")].toInt()}
+             {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)}
         };
     });
     qDebug() << m_options;

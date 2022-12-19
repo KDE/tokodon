@@ -394,30 +394,48 @@ a{
             }
 
             Repeater {
-                model: poll ? poll.options : []
-                RowLayout {
-                    QQC2.CheckBox {
-                        visible: !poll.voted && poll.multiple
-                        Layout.alignment: Qt.AlignVCenter
-                        QQC2.ButtonGroup.group: pollGroup
-                        property int choiceIndex: index
-                    }
+                model: poll !== undefined && poll.voted ? poll.options : []
+                ColumnLayout {
+                    RowLayout {
+                        QQC2.Label {
+                            text: modelData.votesCount !== -1 ? i18nc("Votes percentage", "%1%", modelData.votesCount / poll.votesCount * 100) : ''
+                            Layout.alignment: Qt.AlignVCenter
+                            Layout.minimumWidth: Kirigami.Units.gridUnit * 2
+                        }
 
-                    QQC2.RadioButton {
-                        visible: !poll.voted && !poll.multiple
-                        Layout.alignment: Qt.AlignVCenter
-                        QQC2.ButtonGroup.group: pollGroup
-                        property int choiceIndex: index
+                        QQC2.Label {
+                            text: modelData.title
+                            Layout.fillWidth: true
+                            Layout.alignment: Qt.AlignVCenter
+                        }
                     }
 
                     QQC2.ProgressBar {
                         from: 0
                         to: 100
                         value: modelData.votesCount / poll.votesCount * 100
-                        visible: poll.voted
                         Layout.maximumWidth: Kirigami.Units.gridUnit * 10
                         Layout.minimumWidth: Kirigami.Units.gridUnit * 10
                         Layout.alignment: Qt.AlignVCenter
+                    }
+                }
+            }
+
+            Repeater {
+                model: poll !== undefined && !poll.voted ? poll.options : []
+                RowLayout {
+                    QQC2.CheckBox {
+                        visible: poll.multiple
+                        Layout.alignment: Qt.AlignVCenter
+                        QQC2.ButtonGroup.group: pollGroup
+                        property int choiceIndex: index
+                    }
+
+                    QQC2.RadioButton {
+                        visible: !poll.multiple
+                        Layout.alignment: Qt.AlignVCenter
+                        QQC2.ButtonGroup.group: pollGroup
+                        property int choiceIndex: index
                     }
 
                     QQC2.Label {
@@ -430,7 +448,6 @@ a{
 
             QQC2.Button {
                 visible: poll !== undefined && !poll.voted
-                Layout.alignment: Qt.AlignRight
                 text: i18n("Vote")
                 enabled: pollGroup.checkState !== Qt.Unchecked
                 onClicked: {
@@ -448,7 +465,6 @@ a{
                     }
                     timelineModel.actionVote(timelineModel.index(model.index, 0), choices)
                 }
-
             }
         }
 
