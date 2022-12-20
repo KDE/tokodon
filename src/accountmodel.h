@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timelinemodel.h"
-#include <qobjectdefs.h>
 
 class AbstractAccount;
 
@@ -14,7 +13,7 @@ class AccountModel : public TimelineModel
     Q_PROPERTY(bool isSelf READ isSelf NOTIFY identityChanged)
 
 public:
-    AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent = nullptr);
+    AccountModel(qint64 id, const QString &acct, QObject *parent = nullptr);
 
     QString displayName() const override;
     AbstractAccount *account() const;

@@ -233,90 +233,10 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
     if (!index.isValid()) {
         return {};
     }
-    int row = index.row();
-    auto p = m_timeline[row];
-
-    switch (role) {
-    case TypeRole:
+    if (role == TypeRole) {
         return false;
-    case IdRole:
-        return p->m_post_id;
-    case Qt::DisplayRole:
-        return p->m_content;
-    case AvatarRole:
-        return p->authorIdentity()->avatarUrl();
-    case AuthorDisplayNameRole:
-        return p->authorIdentity()->displayNameHtml();
-    case AuthorIdRole:
-        return p->authorIdentity()->account();
-    case PublishedAtRole:
-        return p->m_published_at;
-    case WasRebloggedRole:
-        return p->m_repeat;
-    case MentionsRole:
-        return p->mentions();
-    case RebloggedDisplayNameRole:
-        if (p->repeatIdentity()) {
-            return p->repeatIdentity()->displayNameHtml();
-        }
-        return {};
-    case RebloggedIdRole:
-        if (p->repeatIdentity()) {
-            return p->repeatIdentity()->account();
-        }
-        return {};
-    case RebloggedRole:
-        return p->m_isRepeated;
-    case ReblogsCountRole:
-        return p->m_repeatedCount;
-    case FavoritedRole:
-        return p->m_isFavorite;
-    case FavoritesCountRole:
-        return p->m_favoriteCount;
-    case PinnedRole:
-        return p->m_pinned;
-    case SensitiveRole:
-        return p->m_isSensitive;
-    case RepliesCountRole:
-        return p->m_repliesCount;
-    case SpoilerTextRole:
-        return p->m_subject;
-    case AttachmentsRole:
-        return QVariant::fromValue<QList<Attachment *>>(p->m_attachments);
-    case CardRole:
-        if (p->card().has_value()) {
-            return QVariant::fromValue<Card>(*p->card());
-        }
-        return false;
-    case ThreadModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, p->m_post_id));
-    case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, p->authorIdentity()->id(), p->authorIdentity()->account()));
-    case PollRole:
-        if (p->poll()) {
-            return QVariant::fromValue<Poll>(*p->poll());
-        }
-        return {};
-    case RelativeTimeRole: {
-        const auto current = QDateTime::currentDateTime();
-        auto secsTo = p->m_published_at.secsTo(current);
-        if (secsTo < 60 * 60) {
-            const auto hours = p->m_published_at.time().hour();
-            const auto minutes = p->m_published_at.time().minute();
-            return i18nc("hour:minute",
-                         "%1:%2",
-                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
-                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
-        } else if (secsTo < 60 * 60 * 24) {
-            return i18n("%1h", qCeil(secsTo / (60 * 60)));
-        } else if (secsTo < 60 * 60 * 24 * 7) {
-            return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
-        }
-        return QLocale::system().toString(p->m_published_at.date(), QLocale::ShortFormat);
     }
-    }
-
-    return {};
+    return postData(m_timeline[index.row()], role);
 }
 
 void TimelineModel::actionReply(const QModelIndex &index)

@@ -48,6 +48,7 @@ public:
 
     AbstractTimelineModel(QObject *parent = nullptr);
     QHash<int, QByteArray> roleNames() const override;
+    QVariant postData(Post *post, int role) const;
 
     bool loading() const;
 

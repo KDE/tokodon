@@ -70,9 +70,7 @@ Kirigami.ApplicationWindow {
                 topPadding: Kirigami.Units.smallSpacing
                 bottomPadding: Kirigami.Units.smallSpacing
 
-                contentItem: Kirigami.Heading {
-                    text: i18n("Tokodon")
-                }
+                contentItem: SearchField {}
             }
 
             Repeater {

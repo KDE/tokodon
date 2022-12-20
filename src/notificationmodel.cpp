@@ -169,20 +169,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     auto post = notification->post();
 
     switch (role) {
-    case IdRole:
-        return post->m_post_id;
-    case MentionsRole:
-        return post->mentions();
     case TypeRole:
         return notification->type();
-    case Qt::DisplayRole:
-        return post->m_content;
-    case AvatarRole:
-        return post->authorIdentity()->avatarUrl();
-    case AuthorIdRole:
-        return post->authorIdentity()->account();
-    case PublishedAtRole:
-        return post->m_published_at;
     case WasRebloggedRole:
         return post->m_repeat || notification->type() == Notification::Repeat;
     case RebloggedDisplayNameRole:
@@ -193,58 +181,10 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
             return notification->identity()->displayName();
         }
         return {};
-    case AuthorDisplayNameRole:
-        return post->authorIdentity()->displayNameHtml();
-    case RebloggedIdRole:
-        if (post->repeatIdentity()) {
-            return post->repeatIdentity()->account();
-        }
-        if (notification->type() == Notification::Repeat) {
-            return notification->identity()->account();
-        }
-        return {};
-    case RebloggedRole:
-        return post->m_isRepeated;
-    case ReblogsCountRole:
-        return post->m_repeatedCount;
-    case FavoritedRole:
-        return post->m_isFavorite;
-    case PinnedRole:
-        return post->m_pinned;
-    case SensitiveRole:
-        return post->m_isSensitive;
-    case SpoilerTextRole:
-        return post->m_subject;
-    case AttachmentsRole:
-        return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
-    case ThreadModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(m_manager, post->m_post_id));
-    case CardRole:
-        if (post->card().has_value()) {
-            return QVariant::fromValue<Card>(*post->card());
-        }
-        return false;
-    case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_manager, post->authorIdentity()->id(), post->authorIdentity()->account()));
-    case RelativeTimeRole: {
-        const auto current = QDateTime::currentDateTime();
-        auto secsTo = post->m_published_at.secsTo(current);
-        if (secsTo < 60 * 60) {
-            const auto hours = post->m_published_at.time().hour();
-            const auto minutes = post->m_published_at.time().minute();
-            return i18nc("hour:minute",
-                         "%1:%2",
-                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
-                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
-        } else if (secsTo < 60 * 60 * 24) {
-            return i18n("%1h", qCeil(secsTo / (60 * 60)));
-        } else if (secsTo < 60 * 60 * 24 * 7) {
-            return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
-        }
-        return QLocale::system().toString(post->m_published_at.date(), QLocale::ShortFormat);
-    }
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
+    default:
+        return postData(post, role);
     }
 
     return {};

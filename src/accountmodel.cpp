@@ -8,13 +8,13 @@
 #include <QCoreApplication>
 #include <QUrlQuery>
 
-AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &acct, QObject *parent)
+AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
     , m_identity(nullptr)
     , m_id(id)
 {
     setName(acct);
-    setAccountManager(manager);
+    setAccountManager(&AccountManager::instance());
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
 
@@ -22,11 +22,11 @@ AccountModel::AccountModel(AccountManager *manager, qint64 id, const QString &ac
         QUrl uriAccount(m_account->instanceUri());
         uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
 
-        manager->selectedAccount()->get(uriAccount, true, this, [this, manager, acct](QNetworkReply *reply) {
+        AccountManager::instance().selectedAccount()->get(uriAccount, true, this, [this,  acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
-            m_identity = manager->selectedAccount()->identityLookup(acct, doc.object());
+            m_identity = AccountManager::instance().selectedAccount()->identityLookup(acct, doc.object());
             Q_EMIT identityChanged();
             updateRelationships();
         });

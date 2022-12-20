@@ -12,6 +12,9 @@ QQC2.ItemDelegate {
     id: root
 
     property var poll: model.poll
+    property bool secondary: false
+    property bool showSeparator: true
+    property bool showInteractionButton: true
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
@@ -19,10 +22,11 @@ QQC2.ItemDelegate {
     rightPadding: Kirigami.Units.largeSpacing * 2
     highlighted: false
     hoverEnabled: false
-    property bool secondary: false
     width: ListView.view.width
-    background: Item {
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
         Kirigami.Separator {
+            visible: showSeparator
             anchors {
                 left: parent.left
                 right: parent.right
@@ -35,7 +39,7 @@ QQC2.ItemDelegate {
     bottomInset: 2
     onClicked: {
         const subModel = model.threadModel;
-        if (subModel.name !== timelinePage.model.name) {
+        if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: subModel,
                 type: TimelinePage.TimelineType.Thread,
@@ -103,6 +107,7 @@ QQC2.ItemDelegate {
 
         RowLayout {
             Layout.fillWidth: true
+            spacing: Kirigami.Units.largeSpacing
             Kirigami.Avatar {
                 Layout.alignment: Qt.AlignTop
                 Layout.rowSpan: 5
@@ -118,7 +123,6 @@ QQC2.ItemDelegate {
             ColumnLayout {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
-                Layout.leftMargin: Kirigami.Units.largeSpacing
                 spacing: 0
                 Kirigami.Heading {
                     id: heading
@@ -127,6 +131,7 @@ QQC2.ItemDelegate {
                     type: Kirigami.Heading.Type.Primary
                     color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     verticalAlignment: Text.AlignTop
+                    elide: Text.ElideRight
                 }
                 Kirigami.Heading {
                     level: 5
@@ -144,6 +149,7 @@ QQC2.ItemDelegate {
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 verticalAlignment: Text.AlignTop
                 Layout.alignment: Qt.AlignTop
+                elide: Text.ElideRight
             }
         }
         ColumnLayout {
@@ -469,6 +475,7 @@ a{
         }
 
         RowLayout {
+            visible: showInteractionButton
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "qrc:/content/icon/reply-post.svg"

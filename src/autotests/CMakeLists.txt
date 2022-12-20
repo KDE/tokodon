@@ -14,3 +14,9 @@ ecm_add_test(timelinetest.cpp
     LINK_LIBRARIES tokodon_static Qt::Test
     NAME_PREFIX "tokodon-"
 )
+
+ecm_add_test(searchtest.cpp
+    TEST_NAME searchtest
+    LINK_LIBRARIES tokodon_static Qt::Test
+    NAME_PREFIX "tokodon-"
+)

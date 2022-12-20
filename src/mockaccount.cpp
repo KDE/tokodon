@@ -9,7 +9,18 @@ MockAccount::MockAccount(QObject *parent)
 
 void MockAccount::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
+    Q_UNUSED(authenticated)
+    Q_UNUSED(parent)
+
+    if (m_getReplies.contains(url)) {
+        auto reply = m_getReplies[url];
+        reply->open(QIODevice::ReadOnly);
+        callback(reply);
+    } else {
+        qWarning() << url << m_getReplies;
+    }
 }
+
 void MockAccount::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
     Q_UNUSED(doc)
@@ -43,4 +54,9 @@ void MockAccount::validateToken()
 void MockAccount::registerPost(const QString &url, QNetworkReply *reply)
 {
     m_postReplies[apiUrl(url)] = reply;
+}
+
+void MockAccount::registerGet(const QUrl &url, QNetworkReply *reply)
+{
+    m_getReplies[url] = reply;
 }

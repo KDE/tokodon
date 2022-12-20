@@ -2,6 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "abstracttimelinemodel.h"
+#include "account.h"
+#include "identity.h"
+#include "poll.h"
+#include "threadmodel.h"
+#include "accountmodel.h"
+#include <KLocalizedString>
+#include <QtMath>
 
 AbstractTimelineModel::AbstractTimelineModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -43,4 +50,84 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {TypeRole, QByteArrayLiteral("type")},
         {PollRole, QByteArrayLiteral("poll")},
     };
+}
+
+QVariant AbstractTimelineModel::postData(Post *post, int role) const
+{
+    switch (role) {
+    case IdRole:
+        return post->m_post_id;
+    case MentionsRole:
+        return post->mentions();
+    case Qt::DisplayRole:
+        return post->m_content;
+    case AvatarRole:
+        return post->authorIdentity()->avatarUrl();
+    case AuthorIdRole:
+        return post->authorIdentity()->account();
+    case AuthorDisplayNameRole:
+        return post->authorIdentity()->displayNameHtml();
+    case WasRebloggedRole:
+        return post->m_repeat;
+    case RebloggedDisplayNameRole:
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->displayNameHtml();
+        }
+        return {};
+    case RebloggedIdRole:
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->account();
+        }
+        return {};
+    case PublishedAtRole:
+        return post->m_published_at;
+    case RebloggedRole:
+        return post->m_isRepeated;
+    case ReblogsCountRole:
+        return post->m_repeatedCount;
+    case FavoritedRole:
+        return post->m_isFavorite;
+    case FavoritesCountRole:
+        return post->m_favoriteCount;
+    case PinnedRole:
+        return post->m_pinned;
+    case SensitiveRole:
+        return post->m_isSensitive;
+    case SpoilerTextRole:
+        return post->subject();
+    case AttachmentsRole:
+        return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
+    case ThreadModelRole:
+        return QVariant::fromValue<QAbstractListModel *>(new ThreadModel(post->m_post_id));
+    case CardRole:
+        if (post->card().has_value()) {
+            return QVariant::fromValue<Card>(*post->card());
+        }
+        return false;
+    case AccountModelRole:
+        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(post->authorIdentity()->id(), post->authorIdentity()->account()));
+    case RelativeTimeRole: {
+        const auto current = QDateTime::currentDateTime();
+        auto secsTo = post->m_published_at.secsTo(current);
+        if (secsTo < 60 * 60) {
+            const auto hours = post->m_published_at.time().hour();
+            const auto minutes = post->m_published_at.time().minute();
+            return i18nc("hour:minute",
+                         "%1:%2",
+                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
+                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
+        } else if (secsTo < 60 * 60 * 24) {
+            return i18n("%1h", qCeil(secsTo / (60 * 60)));
+        } else if (secsTo < 60 * 60 * 24 * 7) {
+            return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
+        }
+        return QLocale::system().toString(post->m_published_at.date(), QLocale::ShortFormat);
+    }
+    case PollRole:
+        if (post->poll()) {
+            return QVariant::fromValue<Poll>(*post->poll());
+        }
+        return {};
+    }
+    return {};
 }

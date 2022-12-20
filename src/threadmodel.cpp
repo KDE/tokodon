@@ -7,11 +7,11 @@
 #include <KLocalizedString>
 #include <QJsonObject>
 
-ThreadModel::ThreadModel(AccountManager *manager, const QString &postId, QObject *parent)
+ThreadModel::ThreadModel(const QString &postId, QObject *parent)
     : TimelineModel(parent)
     , m_postId(postId)
 {
-    setAccountManager(manager);
+    setAccountManager(&AccountManager::instance());
 }
 
 QString ThreadModel::displayName() const

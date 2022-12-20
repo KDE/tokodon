@@ -162,7 +162,7 @@ AbstractAccount *AccountManager::selectedAccount() const
 
 QVariant AccountManager::selectedAccountModel()
 {
-    return QVariant::fromValue<QAbstractListModel *>(new AccountModel(this, m_selected_account->identity().id(), m_selected_account->identity().account()));
+    return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_selected_account->identity().id(), m_selected_account->identity().account()));
 }
 
 int AccountManager::selectedIndex() const

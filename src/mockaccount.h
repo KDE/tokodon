@@ -20,8 +20,10 @@ public:
     virtual void validateToken() override;
 
     void registerPost(const QString &url, QNetworkReply *reply);
+    void registerGet(const QUrl &url, QNetworkReply *reply);
 
 private:
     QHash<QUrl, QNetworkReply *> m_postReplies;
+    QHash<QUrl, QNetworkReply *> m_getReplies;
 };
 
