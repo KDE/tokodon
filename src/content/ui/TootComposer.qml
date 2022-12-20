@@ -27,7 +27,7 @@ MastoPage {
         QQC2.TextArea {
             id: textArea
             placeholderText: i18n("What's new?")
-            text: postObject.mentions.join(" ")
+            text: postObject.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
             wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
