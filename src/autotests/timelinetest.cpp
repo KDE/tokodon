@@ -9,7 +9,6 @@
 #include "timelinemodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
-#include <qtestcase.h>
 
 class PollReply : public QNetworkReply
 {
@@ -79,6 +78,13 @@ private Q_SLOTS:
         auto post = new Post(account, doc.object(), this);
         timelineModel.fetchedTimeline(account, "home", {post});
         QCOMPARE(timelineModel.rowCount({}), 1);
+
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), "103270115826048975");
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), Qt::DisplayRole).value<QString>(), "<p>LOREM</p>");
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).value<QString>(), QStringLiteral("Gargron"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).value<QString>(), QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::WasRebloggedRole).value<bool>(), false);
 
         const auto poll = timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::PollRole).value<Poll>();
         QCOMPARE(poll.id(), "34830");
