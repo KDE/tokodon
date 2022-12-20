@@ -120,7 +120,7 @@ void TimelineModel::fillTimeline(const QString &from_id)
             q.addQueryItem("max_id", from_id);
         }
 
-        auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(m_timelineName));
+        auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
         uri.setQuery(q);
 
         m_account->get(uri, true, this, [this, uri](QNetworkReply *reply) {
