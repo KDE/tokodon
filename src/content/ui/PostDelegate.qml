@@ -49,10 +49,11 @@ QQC2.ItemDelegate {
     ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
 
     contentItem: ColumnLayout {
-        spacing: Kirigami.Units.largeSpacing
+        spacing: 0
 
         RowLayout {
             Layout.fillWidth: true
+            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             visible: model.type === Notification.Favorite
             Kirigami.Icon {
                 source: "favorite"
@@ -71,6 +72,7 @@ QQC2.ItemDelegate {
 
         RowLayout {
             Layout.fillWidth: true
+            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             visible: model.pinned && timelinePage.isProfile
             Kirigami.Icon {
                 source: "pin"
@@ -89,6 +91,7 @@ QQC2.ItemDelegate {
         RowLayout {
             visible: model.wasReblogged || model.type === Notification.Repeat
             Layout.fillWidth: true
+            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             Kirigami.Icon {
                 source: "retweet"
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -297,7 +300,7 @@ a{
         QQC2.AbstractButton {
             visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary && model.attachments.length === 0
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
             leftPadding: 0
             topPadding: 0
             rightPadding: 0
