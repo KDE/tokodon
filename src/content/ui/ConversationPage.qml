@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
-// SPDX-License-Identifier: LGPL-2.0-or-only
+// SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick 2.15
 import org.kde.kirigami 2.20 as Kirigami
