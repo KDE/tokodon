@@ -20,3 +20,9 @@ ecm_add_test(searchtest.cpp
     LINK_LIBRARIES tokodon_static Qt::Test
     NAME_PREFIX "tokodon-"
 )
+
+ecm_add_test(conversationmodeltest.cpp
+    TEST_NAME conversationmodeltest
+    LINK_LIBRARIES tokodon_static Qt::Test
+    NAME_PREFIX "tokodon-"
+)

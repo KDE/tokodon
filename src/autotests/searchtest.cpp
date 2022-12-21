@@ -7,32 +7,9 @@
 #include "post.h"
 #include "poll.h"
 #include "searchmodel.h"
+#include "helperreply.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
-#include <qtestcase.h>
-
-class SearchReply : public QNetworkReply
-{
-public:
-    SearchReply(QObject *parent)
-        : QNetworkReply(parent)
-    {
-        setError(NetworkError::NoError, QString());
-        setFinished(true);
-
-        searchExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "search-result.json");
-        searchExampleApi.open(QIODevice::ReadOnly);
-    }
-
-    virtual qint64 readData(char *data, qint64 maxSize) override {
-        return searchExampleApi.read(data, maxSize);
-    }
-
-    virtual void abort() override {
-    }
-
-    QFile searchExampleApi;
-};
 
 class SearchTest : public QObject
 {
@@ -50,7 +27,7 @@ private Q_SLOTS:
         AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl("/api/v2/search");
         url.setQuery(QUrlQuery{{"q", "myQuery"}});
-        account->registerGet(url, new SearchReply(account));
+        account->registerGet(url, new TestReply("search-result.json", account));
 
         SearchModel searchModel;
         searchModel.search("myQuery");
