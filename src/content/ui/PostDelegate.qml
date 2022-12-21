@@ -494,9 +494,9 @@ a{
                         postObject: post
                     });
                 }
-                QQC2.ToolTip {
-                    text: i18nc("Reply to a post", "Reply")
-                }
+                QQC2.ToolTip.text: i18nc("Reply to a post", "Reply")
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
                 iconSource: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
@@ -504,9 +504,9 @@ a{
                 interactionColor: "green"
                 onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
                 text: Config.showPostStats ? model.reblogsCount : ''
-                QQC2.ToolTip {
-                    text: i18nc("Share a post", "Boost")
-                }
+                QQC2.ToolTip.text: i18nc("Share a post", "Boost")
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
                 iconSource: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
@@ -514,9 +514,9 @@ a{
                 interactionColor: "orange"
                 onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
                 text: Config.showPostStats ? favoritesCount : ''
-                QQC2.ToolTip {
-                    text: i18nc("Like a post", "Like")
-                }
+                QQC2.ToolTip.text: i18nc("Like a post", "Like")
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
         }
     }
