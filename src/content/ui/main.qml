@@ -145,7 +145,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action conversationAction: Kirigami.Action {
-        iconName: "kstars_xplanet"
+        iconName: "reply"
         text: i18n("Conversation")
         checkable: true
         onTriggered: {
