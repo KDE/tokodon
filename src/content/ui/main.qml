@@ -157,7 +157,7 @@ Kirigami.ApplicationWindow {
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction]
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
