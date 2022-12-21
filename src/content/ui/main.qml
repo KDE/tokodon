@@ -77,7 +77,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
+                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction]
                 Kirigami.BasicListItem {
                     action: modelData
                     separatorVisible: false
@@ -140,6 +140,17 @@ Kirigami.ApplicationWindow {
                 name: "federated",
                 type: TimelinePage.TimelineType.Global,
             });
+            checked = true;
+        }
+    }
+
+    property Kirigami.Action conversationAction: Kirigami.Action {
+        iconName: "kstars_xplanet"
+        text: i18n("Conversation")
+        checkable: true
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace("qrc:/content/ui/ConversationPage.qml");
             checked = true;
         }
     }

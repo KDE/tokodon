@@ -46,6 +46,7 @@ set(tokodon_src
     blurhashimageprovider.cpp
     networkcontroller.cpp
     searchmodel.cpp
+    conversationmodel.cpp
     ${debug_files_SRCS}
 )
 
