@@ -482,7 +482,7 @@ a{
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "qrc:/content/icon/reply-post.svg"
-                text: model.repliesCount < 2 || Config.showPostStats ? model.repliesCount : "1+"
+                text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats ? model.repliesCount : i18nc("More than one reply", "1+"))
                 onClicked: {
                     const post = AccountManager.selectedAccount.newPost()
                     post.inReplyTo = model.id;
@@ -491,7 +491,7 @@ a{
                         post.mentions.push(`@${model.authorId}`);
                     }
                     pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                        postObject: post
+                        postObject: post,
                     });
                 }
                 QQC2.ToolTip.text: i18nc("Reply to a post", "Reply")

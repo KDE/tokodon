@@ -179,6 +179,7 @@ public:
     void setCard(std::optional<Card> card);
     void setPoll(Poll *poll);
     Poll *poll() const;
+    int repliesCount() const;
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);

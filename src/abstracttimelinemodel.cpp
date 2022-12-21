@@ -89,6 +89,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->m_isFavorite;
     case FavoritesCountRole:
         return post->m_favoriteCount;
+    case RepliesCountRole:
+        return post->repliesCount();
     case PinnedRole:
         return post->m_pinned;
     case SensitiveRole:

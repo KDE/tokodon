@@ -170,6 +170,11 @@ void Post::setInReplyTo(const QString &inReplyTo)
     Q_EMIT inReplyToChanged();
 }
 
+int Post::repliesCount() const
+{
+    return m_repliesCount;
+}
+
 QString Post::inReplyTo() const
 {
     return m_replyTargetId;
