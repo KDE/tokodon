@@ -26,7 +26,6 @@ Account::Account(const QSettings &settings, QNetworkAccessManager *nam, QObject 
     : AbstractAccount(parent)
     , m_qnam(nam)
 {
-    qDebug() << "XXX";
     m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
@@ -118,8 +117,8 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
     QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
         reply->deleteLater();
         if (reply_cb) {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute)) {
-                qCDebug(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo")) {
+                qCWarning(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 return;
             }
             reply_cb(reply);
