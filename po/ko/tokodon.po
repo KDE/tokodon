@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:46+0000\n"
+"POT-Creation-Date: 2022-12-21 00:46+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -64,6 +64,22 @@ msgstr "계정을 추천 해제할 수 없음"
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
+
+#: abstracttimelinemodel.cpp:116
+#, kde-format
+msgctxt "hour:minute"
+msgid "%1:%2"
+msgstr "%1:%2"
+
+#: abstracttimelinemodel.cpp:120
+#, kde-format
+msgid "%1h"
+msgstr "%1시간"
+
+#: abstracttimelinemodel.cpp:122
+#, kde-format
+msgid "%1d"
+msgstr "%1일"
 
 #: accountmodel.cpp:52 timelinemodel.cpp:39
 #, kde-format
@@ -287,11 +303,6 @@ msgstr "SSL 오류 무시"
 msgid "Instance URL and username must not be empty!"
 msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
 
-#: content/ui/main.qml:74 main.cpp:84
-#, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
-
 #: content/ui/main.qml:98
 #, kde-format
 msgid "Home"
@@ -335,37 +346,37 @@ msgstr "멘션"
 msgid "Loading..."
 msgstr "불러오는 중"
 
-#: content/ui/PostDelegate.qml:61 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:66 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/PostDelegate.qml:78
+#: content/ui/PostDelegate.qml:84
 #, kde-format
 msgid "Pinned entry"
 msgstr "고정된 항목"
 
-#: content/ui/PostDelegate.qml:97
+#: content/ui/PostDelegate.qml:104
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 님이 부스트함"
 
-#: content/ui/PostDelegate.qml:97 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:104 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
 
-#: content/ui/PostDelegate.qml:158
+#: content/ui/PostDelegate.qml:167
 #, kde-format
 msgid "Show more"
 msgstr "더 보기"
 
-#: content/ui/PostDelegate.qml:279
+#: content/ui/PostDelegate.qml:288
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:401
+#: content/ui/PostDelegate.qml:410
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -373,24 +384,24 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:451
+#: content/ui/PostDelegate.qml:460
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:488
+#: content/ui/PostDelegate.qml:498
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/PostDelegate.qml:498
+#: content/ui/PostDelegate.qml:508
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate.qml:508
+#: content/ui/PostDelegate.qml:518
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -428,6 +439,66 @@ msgstr "자세한 글 통계를 표시합니다."
 msgid "Show link preview"
 msgstr "링크를 미리 봅니다."
 
+#: content/ui/Settings/NetworkProxyPage.qml:14
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:27
+#: content/ui/Settings/SettingsPage.qml:37
+#, kde-format
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:30
+#, kde-format
+msgid "System Default"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:38
+#, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:46
+#, kde-format
+msgid "Socks5"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:62
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgid "Proxy Settings"
+msgstr "설정"
+
+#: content/ui/Settings/NetworkProxyPage.qml:66
+#, kde-format
+msgid "Host"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:78
+#, kde-format
+msgid "Port"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:98
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "User"
+msgstr "사용자 이름:"
+
+#: content/ui/Settings/NetworkProxyPage.qml:107
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:127
+#, kde-format
+msgid "Apply"
+msgstr "적용"
+
 #: content/ui/Settings/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
@@ -436,7 +507,7 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "설정"
 
-#: content/ui/Settings/SettingsPage.qml:38
+#: content/ui/Settings/SettingsPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Tokodon"
 msgid "About Tokodon"
@@ -659,37 +730,42 @@ msgstr "멘션"
 
 #: main.cpp:86
 #, kde-format
+msgid "Tokodon"
+msgstr "Tokodon"
+
+#: main.cpp:88
+#, kde-format
 msgid "Mastodon client"
 msgstr "마스토돈 클라이언트"
 
-#: main.cpp:88
+#: main.cpp:90
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Community"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:128
+#: main.cpp:132
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
@@ -699,21 +775,20 @@ msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: notificationmodel.cpp:236 timelinemodel.cpp:307
+#: searchmodel.cpp:112
 #, kde-format
-msgctxt "hour:minute"
-msgid "%1:%2"
-msgstr "%1:%2"
+msgid "People"
+msgstr ""
 
-#: notificationmodel.cpp:240 timelinemodel.cpp:311
+#: searchmodel.cpp:114
 #, kde-format
-msgid "%1h"
-msgstr "%1시간"
+msgid "Hashtags"
+msgstr ""
 
-#: notificationmodel.cpp:242 timelinemodel.cpp:313
+#: searchmodel.cpp:116
 #, kde-format
-msgid "%1d"
-msgstr "%1일"
+msgid "Post"
+msgstr ""
 
 #: threadmodel.cpp:19
 #, kde-format
@@ -759,9 +834,6 @@ msgstr "연합 타임라인"
 
 #~ msgid "Options:"
 #~ msgstr "옵션:"
-
-#~ msgid "Apply"
-#~ msgstr "적용"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "알림 지원은 아직 구현되지 않았습니다"

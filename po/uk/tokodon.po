@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:46+0000\n"
-"PO-Revision-Date: 2022-12-08 06:57+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"POT-Creation-Date: 2022-12-21 00:46+0000\n"
+"PO-Revision-Date: 2022-12-20 11:14+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,22 @@ msgstr "Не вдалося скасувати рекомендування об
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
+
+#: abstracttimelinemodel.cpp:116
+#, kde-format
+msgctxt "hour:minute"
+msgid "%1:%2"
+msgstr "%1:%2"
+
+#: abstracttimelinemodel.cpp:120
+#, kde-format
+msgid "%1h"
+msgstr "%1г"
+
+#: abstracttimelinemodel.cpp:122
+#, kde-format
+msgid "%1d"
+msgstr "%1д"
 
 #: accountmodel.cpp:52 timelinemodel.cpp:39
 #, kde-format
@@ -171,12 +187,12 @@ msgstr "%1 тих, за ким стежить"
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "Уповноваження"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr ""
+msgstr "Уповноважте Tokodon на дії від вашого імені"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
@@ -286,11 +302,6 @@ msgstr "Ігнорувати помилки SSL"
 msgid "Instance URL and username must not be empty!"
 msgstr "Адреса екземпляра та ім'я користувача не можуть бути порожніми!"
 
-#: content/ui/main.qml:74 main.cpp:84
-#, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
-
 #: content/ui/main.qml:98
 #, kde-format
 msgid "Home"
@@ -333,62 +344,60 @@ msgstr "Згадки"
 msgid "Loading..."
 msgstr "Завантаження…"
 
-#: content/ui/PostDelegate.qml:61 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:66 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "Ваш допис позначено %1 як улюблений"
 
-#: content/ui/PostDelegate.qml:78
+#: content/ui/PostDelegate.qml:84
 #, kde-format
 msgid "Pinned entry"
 msgstr "Пришпилений запис"
 
-#: content/ui/PostDelegate.qml:97
+#: content/ui/PostDelegate.qml:104
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 підсилено"
 
-#: content/ui/PostDelegate.qml:97 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:104 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "Ваш допис підсилено %1"
 
-#: content/ui/PostDelegate.qml:158
+#: content/ui/PostDelegate.qml:167
 #, kde-format
 msgid "Show more"
 msgstr "Показати більше"
 
-#: content/ui/PostDelegate.qml:279
+#: content/ui/PostDelegate.qml:288
 #, kde-format
 msgid "Media Hidden"
 msgstr "Мультимедіа приховано"
 
-#: content/ui/PostDelegate.qml:401
-#, fuzzy, kde-format
-#| msgctxt "hour:minute"
-#| msgid "%1:%2"
+#: content/ui/PostDelegate.qml:410
+#, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1:%2"
+msgstr "%1%"
 
-#: content/ui/PostDelegate.qml:451
+#: content/ui/PostDelegate.qml:460
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Голосувати"
 
-#: content/ui/PostDelegate.qml:488
+#: content/ui/PostDelegate.qml:498
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/PostDelegate.qml:498
+#: content/ui/PostDelegate.qml:508
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/PostDelegate.qml:508
+#: content/ui/PostDelegate.qml:518
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -424,13 +433,73 @@ msgstr "Показати докладну статистику щодо допи
 msgid "Show link preview"
 msgstr "Показати попередній перегляд вмісту посилання"
 
+#: content/ui/Settings/NetworkProxyPage.qml:14
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:27
+#: content/ui/Settings/SettingsPage.qml:37
+#, kde-format
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:30
+#, kde-format
+msgid "System Default"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:38
+#, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:46
+#, kde-format
+msgid "Socks5"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:62
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Settings"
+msgid "Proxy Settings"
+msgstr "Параметри"
+
+#: content/ui/Settings/NetworkProxyPage.qml:66
+#, kde-format
+msgid "Host"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:78
+#, kde-format
+msgid "Port"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:98
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "User"
+msgstr "Користувач:"
+
+#: content/ui/Settings/NetworkProxyPage.qml:107
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:127
+#, kde-format
+msgid "Apply"
+msgstr "Застосувати"
+
 #: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/Settings/SettingsPage.qml:38
+#: content/ui/Settings/SettingsPage.qml:55
 #, kde-format
 msgid "About Tokodon"
 msgstr "Про Tokodon"
@@ -643,37 +712,42 @@ msgstr "Призначення"
 
 #: main.cpp:86
 #, kde-format
+msgid "Tokodon"
+msgstr "Tokodon"
+
+#: main.cpp:88
+#, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:88
+#: main.cpp:90
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© Carl Schwan, 2021; Спільнота KDE, 2021"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:128
+#: main.cpp:132
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
@@ -683,21 +757,20 @@ msgstr "Клієнт децентралізованої соціальної м�
 msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
 
-#: notificationmodel.cpp:236 timelinemodel.cpp:307
+#: searchmodel.cpp:112
 #, kde-format
-msgctxt "hour:minute"
-msgid "%1:%2"
-msgstr "%1:%2"
+msgid "People"
+msgstr ""
 
-#: notificationmodel.cpp:240 timelinemodel.cpp:311
+#: searchmodel.cpp:114
 #, kde-format
-msgid "%1h"
-msgstr "%1г"
+msgid "Hashtags"
+msgstr ""
 
-#: notificationmodel.cpp:242 timelinemodel.cpp:313
+#: searchmodel.cpp:116
 #, kde-format
-msgid "%1d"
-msgstr "%1д"
+msgid "Post"
+msgstr ""
 
 #: threadmodel.cpp:19
 #, kde-format
@@ -743,9 +816,6 @@ msgstr "Загальний розклад"
 
 #~ msgid "Options:"
 #~ msgstr "Параметри:"
-
-#~ msgid "Apply"
-#~ msgstr "Застосувати"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "Підтримки сповіщень ще не передбачено"

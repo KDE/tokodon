@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:46+0000\n"
+"POT-Creation-Date: 2022-12-21 00:46+0000\n"
 "PO-Revision-Date: 2022-06-27 00:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -63,6 +63,22 @@ msgstr ""
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
+
+#: abstracttimelinemodel.cpp:116
+#, kde-format
+msgctxt "hour:minute"
+msgid "%1:%2"
+msgstr "%1:%2"
+
+#: abstracttimelinemodel.cpp:120
+#, kde-format
+msgid "%1h"
+msgstr "%1 Std."
+
+#: abstracttimelinemodel.cpp:122
+#, kde-format
+msgid "%1d"
+msgstr "%1 Tage"
 
 #: accountmodel.cpp:52 timelinemodel.cpp:39
 #, kde-format
@@ -291,11 +307,6 @@ msgstr "SSL-Fehler ignorieren"
 msgid "Instance URL and username must not be empty!"
 msgstr "Instanz-Adresse und Benutzername dürfen nicht leer sein."
 
-#: content/ui/main.qml:74 main.cpp:84
-#, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
-
 #: content/ui/main.qml:98
 #, kde-format
 msgid "Home"
@@ -339,37 +350,37 @@ msgstr "Nennungen"
 msgid "Loading..."
 msgstr "Wird geladen"
 
-#: content/ui/PostDelegate.qml:61 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:66 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:78
+#: content/ui/PostDelegate.qml:84
 #, kde-format
 msgid "Pinned entry"
 msgstr "Angehefteter Eintrag"
 
-#: content/ui/PostDelegate.qml:97
+#: content/ui/PostDelegate.qml:104
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:97 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:104 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:158
+#: content/ui/PostDelegate.qml:167
 #, kde-format
 msgid "Show more"
 msgstr "Mehr anzeigen"
 
-#: content/ui/PostDelegate.qml:279
+#: content/ui/PostDelegate.qml:288
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:401
+#: content/ui/PostDelegate.qml:410
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -377,24 +388,24 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:451
+#: content/ui/PostDelegate.qml:460
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:488
+#: content/ui/PostDelegate.qml:498
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/PostDelegate.qml:498
+#: content/ui/PostDelegate.qml:508
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/PostDelegate.qml:508
+#: content/ui/PostDelegate.qml:518
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -430,6 +441,66 @@ msgstr ""
 msgid "Show link preview"
 msgstr ""
 
+#: content/ui/Settings/NetworkProxyPage.qml:14
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:27
+#: content/ui/Settings/SettingsPage.qml:37
+#, kde-format
+msgid "Network Proxy"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:30
+#, kde-format
+msgid "System Default"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:38
+#, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:46
+#, kde-format
+msgid "Socks5"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:62
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Settings"
+msgid "Proxy Settings"
+msgstr "Einstellungen"
+
+#: content/ui/Settings/NetworkProxyPage.qml:66
+#, kde-format
+msgid "Host"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:78
+#, kde-format
+msgid "Port"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:98
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "User"
+msgstr "Benutzername:"
+
+#: content/ui/Settings/NetworkProxyPage.qml:107
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:127
+#, kde-format
+msgid "Apply"
+msgstr "Anwenden"
+
 #: content/ui/Settings/SettingsPage.qml:16
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
@@ -438,7 +509,7 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: content/ui/Settings/SettingsPage.qml:38
+#: content/ui/Settings/SettingsPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Tokodon"
 msgid "About Tokodon"
@@ -661,37 +732,42 @@ msgstr "Nennungen"
 
 #: main.cpp:86
 #, kde-format
+msgid "Tokodon"
+msgstr "Tokodon"
+
+#: main.cpp:88
+#, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-Client"
 
-#: main.cpp:88
+#: main.cpp:90
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "Copyright © 2021 Carl Schwan, 2021 KDE-Gemeinschaft"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Deutsches KDE-Übersetzerteam"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: main.cpp:128
+#: main.cpp:132
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Ein Programm für Mastodon, das dezentrale soziale Netzwerk"
@@ -701,21 +777,20 @@ msgstr "Ein Programm für Mastodon, das dezentrale soziale Netzwerk"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: notificationmodel.cpp:236 timelinemodel.cpp:307
+#: searchmodel.cpp:112
 #, kde-format
-msgctxt "hour:minute"
-msgid "%1:%2"
-msgstr "%1:%2"
+msgid "People"
+msgstr ""
 
-#: notificationmodel.cpp:240 timelinemodel.cpp:311
+#: searchmodel.cpp:114
 #, kde-format
-msgid "%1h"
-msgstr "%1 Std."
+msgid "Hashtags"
+msgstr ""
 
-#: notificationmodel.cpp:242 timelinemodel.cpp:313
+#: searchmodel.cpp:116
 #, kde-format
-msgid "%1d"
-msgstr "%1 Tage"
+msgid "Post"
+msgstr ""
 
 #: threadmodel.cpp:19
 #, kde-format
@@ -761,9 +836,6 @@ msgstr "Globale Zeitleiste"
 
 #~ msgid "Options:"
 #~ msgstr "Einstellungen:"
-
-#~ msgid "Apply"
-#~ msgstr "Anwenden"
 
 #~ msgid "Notifications support is not implemented yet"
 #~ msgstr "Benachrichtigungen werden noch nicht unterstützt"
