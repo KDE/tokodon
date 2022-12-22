@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:46+0000\n"
-"PO-Revision-Date: 2022-12-09 09:24+0100\n"
+"POT-Creation-Date: 2022-12-22 00:46+0000\n"
+"PO-Revision-Date: 2022-12-21 09:58+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -63,18 +63,18 @@ msgstr "Profilu ni mogoče odvzeti izpostavljenost"
 msgid "Could not edit note about an account"
 msgstr "Ni bilo mogoče urediti opombe o računu"
 
-#: abstracttimelinemodel.cpp:116
+#: abstracttimelinemodel.cpp:118
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:120
+#: abstracttimelinemodel.cpp:122
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: abstracttimelinemodel.cpp:122
+#: abstracttimelinemodel.cpp:124
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -187,12 +187,12 @@ msgstr "%1 sledenih"
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "Avtorizacija"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr ""
+msgstr "Avtoriziraj Tokodon, da deluje v vašem imenu"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
@@ -373,31 +373,35 @@ msgid "Media Hidden"
 msgstr "Medij je skrit"
 
 #: content/ui/PostDelegate.qml:410
-#, fuzzy, kde-format
-#| msgctxt "hour:minute"
-#| msgid "%1:%2"
+#, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1:%2"
+msgstr "%1%"
 
 #: content/ui/PostDelegate.qml:460
 #, kde-format
 msgid "Vote"
+msgstr "Glasuj"
+
+#: content/ui/PostDelegate.qml:485
+#, kde-format
+msgctxt "More than one reply"
+msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:498
+#: content/ui/PostDelegate.qml:497
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/PostDelegate.qml:508
+#: content/ui/PostDelegate.qml:507
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/PostDelegate.qml:518
+#: content/ui/PostDelegate.qml:517
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -437,56 +441,53 @@ msgstr "Prikaži predogled povezave"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Omrežni posrednik"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Omrežni posrednik"
 
 #: content/ui/Settings/NetworkProxyPage.qml:30
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Sistemsko privzeto"
 
 #: content/ui/Settings/NetworkProxyPage.qml:38
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: content/ui/Settings/NetworkProxyPage.qml:46
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Nastavitve"
+msgstr "Nastavitve posrednika"
 
 #: content/ui/Settings/NetworkProxyPage.qml:66
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Gostitelj"
 
 #: content/ui/Settings/NetworkProxyPage.qml:78
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Vrata"
 
 #: content/ui/Settings/NetworkProxyPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User"
-msgstr "Uporabniško ime:"
+msgstr "Uporabnik"
 
 #: content/ui/Settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
 #, kde-format
@@ -760,17 +761,17 @@ msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 #: searchmodel.cpp:112
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Ljudje"
 
 #: searchmodel.cpp:114
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Ključniki"
 
 #: searchmodel.cpp:116
 #, kde-format
 msgid "Post"
-msgstr ""
+msgstr "Objavi"
 
 #: threadmodel.cpp:19
 #, kde-format

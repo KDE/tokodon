@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:46+0000\n"
-"PO-Revision-Date: 2022-12-08 17:12+0100\n"
+"POT-Creation-Date: 2022-12-22 00:46+0000\n"
+"PO-Revision-Date: 2022-12-21 10:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -65,18 +65,18 @@ msgstr "No s'ha pogut desfer el fet de destacar el compte"
 msgid "Could not edit note about an account"
 msgstr "No s'ha pogut editar una nota quant al compte"
 
-#: abstracttimelinemodel.cpp:116
+#: abstracttimelinemodel.cpp:118
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:120
+#: abstracttimelinemodel.cpp:122
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: abstracttimelinemodel.cpp:122
+#: abstracttimelinemodel.cpp:124
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -189,12 +189,12 @@ msgstr "%1 seguits"
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "Autorització"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr ""
+msgstr "Autoritza Tokodon a actuar en nom vostre"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
@@ -375,31 +375,35 @@ msgid "Media Hidden"
 msgstr "Fitxers multimèdia ocults"
 
 #: content/ui/PostDelegate.qml:410
-#, fuzzy, kde-format
-#| msgctxt "hour:minute"
-#| msgid "%1:%2"
+#, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1:%2"
+msgstr "%1%"
 
 #: content/ui/PostDelegate.qml:460
 #, kde-format
 msgid "Vote"
+msgstr "Voteu"
+
+#: content/ui/PostDelegate.qml:485
+#, kde-format
+msgctxt "More than one reply"
+msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:498
+#: content/ui/PostDelegate.qml:497
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/PostDelegate.qml:508
+#: content/ui/PostDelegate.qml:507
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Interessant"
 
-#: content/ui/PostDelegate.qml:518
+#: content/ui/PostDelegate.qml:517
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -439,61 +443,58 @@ msgstr "Mostra la vista prèvia de l'enllaç"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Servidor intermediari de la xarxa"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Servidor intermediari de la xarxa"
 
 #: content/ui/Settings/NetworkProxyPage.qml:30
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Predeterminada del sistema"
 
 #: content/ui/Settings/NetworkProxyPage.qml:38
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: content/ui/Settings/NetworkProxyPage.qml:46
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Configuració"
+msgstr "Configuració del servidor intermediari"
 
 #: content/ui/Settings/NetworkProxyPage.qml:66
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Servidor"
 
 #: content/ui/Settings/NetworkProxyPage.qml:78
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: content/ui/Settings/NetworkProxyPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User"
-msgstr "Nom d'usuari:"
+msgstr "Usuari"
 
 #: content/ui/Settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Contrasenya"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Aplica"
 
 #: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
@@ -762,17 +763,17 @@ msgstr "S'ha produït un error en recuperar l'última notificació."
 #: searchmodel.cpp:112
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Persones"
 
 #: searchmodel.cpp:114
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Etiqueta"
 
 #: searchmodel.cpp:116
 #, kde-format
 msgid "Post"
-msgstr ""
+msgstr "Publicació"
 
 #: threadmodel.cpp:19
 #, kde-format
