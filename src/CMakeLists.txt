@@ -47,6 +47,7 @@ set(tokodon_src
     networkcontroller.cpp
     searchmodel.cpp
     conversationmodel.cpp
+    tagsmodel.cpp
     ${debug_files_SRCS}
 )
 

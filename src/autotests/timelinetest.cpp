@@ -49,7 +49,6 @@ private Q_SLOTS:
         AccountManager::instance().selectAccount(account);
 
         TimelineModel timelineModel;
-        timelineModel.setAccountManager(&AccountManager::instance());
         timelineModel.setName("home");
 
         QFile statusExampleApi;
@@ -68,7 +67,6 @@ private Q_SLOTS:
         AccountManager::instance().selectAccount(account);
 
         TimelineModel timelineModel;
-        timelineModel.setAccountManager(&AccountManager::instance());
         timelineModel.setName("home");
 
         QFile statusExampleApi;

@@ -21,6 +21,7 @@ class Identity : public QObject
     Q_PROPERTY(QString username READ username NOTIFY identityUpdated)
     Q_PROPERTY(QString bio READ bio NOTIFY identityUpdated)
     Q_PROPERTY(QString account READ account NOTIFY identityUpdated)
+    Q_PROPERTY(QUrl url READ url NOTIFY identityUpdated)
     Q_PROPERTY(bool locked READ locked NOTIFY identityUpdated)
     Q_PROPERTY(QString visibility READ visibility NOTIFY identityUpdated)
     Q_PROPERTY(QUrl avatarUrl READ avatarUrl NOTIFY identityUpdated)
@@ -38,6 +39,7 @@ public:
     QString displayNameHtml() const;
     QString bio() const;
     QString account() const;
+    QUrl url() const;
     bool locked() const;
     QString visibility() const;
     QUrl avatarUrl() const;
@@ -69,6 +71,7 @@ private:
     QString m_visibility;
     QUrl m_avatarUrl;
     QUrl m_backgroundUrl;
+    QUrl m_url;
     QJsonArray m_fields;
     int m_followersCount;
     int m_followingCount;

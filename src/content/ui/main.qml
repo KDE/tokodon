@@ -179,7 +179,6 @@ Kirigami.ApplicationWindow {
             type: TimelinePage.TimelineType.Home
             model: TimelineModel {
                 id: timelineModel
-                accountManager: AccountManager
                 name: "home"
             }
         }
@@ -191,7 +190,6 @@ Kirigami.ApplicationWindow {
             property var type
             model: TimelineModel {
                 id: timelineModel
-                accountManager: AccountManager
             }
         }
     }
@@ -211,6 +209,18 @@ Kirigami.ApplicationWindow {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         background: Rectangle {
              color: Kirigami.Theme.backgroundColor
+        }
+    }
+
+    Component {
+        id: tagModelComponent
+        TimelinePage {
+            id: tagPage
+            property string hashtag
+            model: TagsModel {
+                hashtag: tagPage.hashtag
+            }
+            type: TimelinePage.TimelineType.Tag
         }
     }
 }

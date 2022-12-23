@@ -39,6 +39,9 @@ QQC2.ItemDelegate {
     }
     bottomInset: 2
     onClicked: {
+        if (tootContent.linkHovered) {
+            return;
+        }
         const subModel = model.threadModel;
         if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
@@ -185,7 +188,15 @@ a{
                 readOnly: true
                 selectByMouse: !Kirigami.Settings.isMobile
                 // TODO handle opening profile page in tokodon
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: {
+                    if (link.startsWith('hashtag:/')) {
+                        const item = pageStack.push(tagModelComponent, {
+                            hashtag: link.substring(9),
+                        })
+                    } else {
+                        Qt.openUrlExternally(link)
+                    }
+                }
                 color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 onHoveredLinkChanged: if (hoveredLink.length > 0) {
                     applicationWindow().hoverLinkIndicator.text = hoveredLink;

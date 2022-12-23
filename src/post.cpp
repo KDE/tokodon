@@ -106,6 +106,14 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
         m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
+    const auto tags = obj["tags"].toArray();
+    const QString baseUrl = authorIdentity()->url().toDisplayString(QUrl::RemovePath);
+
+    for (const auto &tag : tags) {
+        const auto tagObj = tag.toObject();
+        m_content = m_content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(), QStringLiteral("hashtag:/") + tagObj["name"].toString(), Qt::CaseInsensitive);
+    }
+
     m_post_id = m_replyTargetId = obj["id"].toString();
     m_isFavorite = obj["favourited"].toBool();
     m_favoriteCount = obj["favourites_count"].toInt();
@@ -458,4 +466,9 @@ void Post::setPoll(Poll *poll)
 {
     m_poll = poll;
     Q_EMIT pollChanged();
+}
+
+QString Post::postId() const
+{
+    return m_post_id;
 }

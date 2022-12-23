@@ -12,20 +12,19 @@
 class TimelineModel : public AbstractTimelineModel
 {
     Q_OBJECT
-    Q_PROPERTY(AccountManager *accountManager READ accountManager WRITE setAccountManager NOTIFY accountManagerChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
     Q_PROPERTY(bool fetching READ fetching NOTIFY fetchingChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
+    TimelineModel(const QString &timelineName, QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
     virtual void fillTimeline(const QString &fromId = QString());
 
-    AccountManager *accountManager() const;
-    void setAccountManager(AccountManager *accountManager);
+    void init();
 
     QString name() const;
     void setName(const QString &name);
@@ -51,7 +50,6 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
-    void accountManagerChanged();
     void nameChanged();
     void fetchingChanged();
 

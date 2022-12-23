@@ -17,6 +17,17 @@
 
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
+    , m_timelineName(QStringLiteral("home"))
+    , m_manager(&AccountManager::instance())
+    , m_last_fetch(time(nullptr))
+{
+    init();
+}
+
+TimelineModel::TimelineModel(const QString &timelineName, QObject *parent)
+    : AbstractTimelineModel(parent)
+    , m_timelineName(timelineName)
+    , m_manager(&AccountManager::instance())
     , m_last_fetch(time(nullptr))
 {
 }
@@ -47,26 +58,16 @@ QString TimelineModel::displayName() const
     } else if (m_timelineName == "federated") {
         return i18nc("@title", "Global Timeline");
     }
-    return QString();
+    return {};
 }
 
-void TimelineModel::setAccountManager(AccountManager *accountManager)
+void TimelineModel::init()
 {
-    if (accountManager == m_manager) {
-        return;
-    }
-
-    if (m_manager) {
-        disconnect(m_manager, nullptr, this, nullptr);
-    }
-
-    m_manager = accountManager;
+    m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
 
-    Q_EMIT accountManagerChanged();
-
-    QObject::connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
-    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::fetchedTimeline, this, &TimelineModel::fetchedTimeline);
+    connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -78,7 +79,7 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
         }
     });
 
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account != account) {
             m_account = account;
 
@@ -98,11 +99,6 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
     fillTimeline();
 }
 
-AccountManager *TimelineModel::accountManager() const
-{
-    return m_manager;
-}
-
 QString TimelineModel::name() const
 {
     return m_timelineName;
@@ -120,56 +116,55 @@ void TimelineModel::fillTimeline(const QString &from_id)
     m_fetching = true;
     Q_EMIT fetchingChanged();
 
-    if (m_account) {
-        QString timelineName = m_timelineName;
-        bool local = timelineName == "public";
-
-        // federated timeline is really "public" without local set
-        if (timelineName == "federated") {
-            timelineName = "public";
-        }
-
-        QUrlQuery q;
-        if (local) {
-            q.addQueryItem("local", "true");
-        }
-        if (!from_id.isEmpty()) {
-            q.addQueryItem("max_id", from_id);
-        }
-
-        auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
-        uri.setQuery(q);
-
-        auto account = m_account;
-        m_account->get(uri, true, this, [this, account, uri](QNetworkReply *reply) {
-            if (account != m_account) {
-                m_fetching = false;
-                Q_EMIT fetchingChanged();
-
-                m_loading = false;
-                Q_EMIT loadingChanged();
-                return;
-            }
-            QList<Post *> posts;
-
-            const auto data = reply->readAll();
-            const auto doc = QJsonDocument::fromJson(data);
-
-            if (!doc.isArray()) {
-                return;
-            }
-
-            const auto array = doc.array();
-            for (const auto &value : array) {
-                const QJsonObject obj = value.toObject();
-
-                const auto p = new Post(m_account, obj, this);
-                posts.push_back(p);
-            }
-
-            fetchedTimeline(m_account, m_timelineName, posts);
-        });
+    if (!m_account) {
+        return;
     }
+
+    QString timelineName = m_timelineName;
+    const bool local = timelineName == "public";
+
+    // federated timeline is really "public" without local set
+    if (timelineName == "federated") {
+        timelineName = "public";
+    }
+
+    QUrlQuery q;
+    if (local) {
+        q.addQueryItem("local", "true");
+    }
+    if (!from_id.isEmpty()) {
+        q.addQueryItem("max_id", from_id);
+    }
+
+    auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
+    uri.setQuery(q);
+
+    auto account = m_account;
+    m_account->get(uri, true, this, [this, account, uri](QNetworkReply *reply) {
+        if (account != m_account) {
+            m_fetching = false;
+            Q_EMIT fetchingChanged();
+
+            m_loading = false;
+            Q_EMIT loadingChanged();
+            return;
+        }
+        QList<Post *> posts;
+
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray()) {
+            return;
+        }
+
+        const auto array = doc.array();
+        for (const auto &value : array) {
+            posts.push_back(new Post(m_account, value.toObject(), this));
+        }
+
+        fetchedTimeline(m_account, m_timelineName, posts);
+    });
 }
 
 void TimelineModel::fetchMore(const QModelIndex &parent)
@@ -179,7 +174,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
     if (m_timeline.size() < 1)
         return;
 
-    auto p = m_timeline.last();
+    const auto p = m_timeline.last();
 
     fillTimeline(p->m_original_post_id);
 }
@@ -215,12 +210,12 @@ void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &ori
     }
 
     if (!m_timeline.isEmpty()) {
-        const auto post_old = m_timeline.first();
-        const auto post_new = posts.first();
+        const auto postOld = m_timeline.first();
+        const auto postNew = posts.first();
 
         qDebug() << "fetchedTimeline"
-                 << "post_old->m_post_id" << post_old->m_post_id << "post_new->m_post_id" << post_new->m_post_id;
-        if (post_old->m_post_id > post_new->m_post_id) {
+                 << "post_old->m_post_id" << postOld->m_post_id << "post_new->m_post_id" << postNew->m_post_id;
+        if (postOld->m_post_id > postNew->m_post_id) {
             const int row = m_timeline.size();
             const int last = row + posts.size() - 1;
             beginInsertRows(QModelIndex(), row, last);

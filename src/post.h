@@ -184,6 +184,7 @@ public:
     void setPoll(Poll *poll);
     Poll *poll() const;
     int repliesCount() const;
+    QString postId() const;
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);

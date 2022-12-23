@@ -14,7 +14,7 @@ AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
     , m_id(id)
 {
     setName(acct);
-    setAccountManager(&AccountManager::instance());
+    init();
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
 

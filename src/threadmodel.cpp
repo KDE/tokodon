@@ -6,12 +6,13 @@
 #include "abstractaccount.h"
 #include <KLocalizedString>
 #include <QJsonObject>
+#include <qstringliteral.h>
 
 ThreadModel::ThreadModel(const QString &postId, QObject *parent)
-    : TimelineModel(parent)
+    : TimelineModel(QStringLiteral("None"), parent)
     , m_postId(postId)
 {
-    setAccountManager(&AccountManager::instance());
+    init();
 }
 
 QString ThreadModel::displayName() const
