@@ -188,6 +188,7 @@ Kirigami.ApplicationWindow {
         parent: overlay.parent 
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
+        visible: !Kirigami.Settings.isMobile
 
         z: 999990
         x: 0
