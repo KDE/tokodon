@@ -12,9 +12,10 @@
 NotificationModel::NotificationModel(QObject *parent)
     : AbstractTimelineModel(parent)
 {
-    m_account = AccountManager::instance().selectedAccount();
+    m_manager = &AccountManager::instance();
+    m_account = m_manager->selectedAccount();
 
-    QObject::connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](AbstractAccount *account) {
+    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -23,6 +24,18 @@ NotificationModel::NotificationModel(QObject *parent)
             endResetModel();
             m_next = QString();
             m_fetching = false;
+        }
+    });
+
+    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+        if (m_account != account) {
+            m_account = account;
+
+            beginResetModel();
+            m_notifications.clear();
+            endResetModel();
+
+            fillTimeline();
         }
     });
 

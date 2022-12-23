@@ -78,6 +78,23 @@ void TimelineModel::setAccountManager(AccountManager *accountManager)
         }
     });
 
+    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+        if (m_account != account) {
+            m_account = account;
+
+            beginResetModel();
+            qDeleteAll(m_timeline);
+            m_timeline.clear();
+            endResetModel();
+
+            m_fetching = false;
+            Q_EMIT fetchingChanged();
+
+            Q_EMIT nameChanged();
+            fillTimeline();
+        }
+    });
+
     fillTimeline();
 }
 
@@ -123,7 +140,16 @@ void TimelineModel::fillTimeline(const QString &from_id)
         auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
         uri.setQuery(q);
 
-        m_account->get(uri, true, this, [this, uri](QNetworkReply *reply) {
+        auto account = m_account;
+        m_account->get(uri, true, this, [this, account, uri](QNetworkReply *reply) {
+            if (account != m_account) {
+                m_fetching = false;
+                Q_EMIT fetchingChanged();
+
+                m_loading = false;
+                Q_EMIT loadingChanged();
+                return;
+            }
             QList<Post *> posts;
 
             const auto data = reply->readAll();
