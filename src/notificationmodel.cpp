@@ -183,6 +183,12 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return {};
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
+    case AccountModelRole:
+        if (notification->type() == Notification::Follow || notification->type() == Notification::FollowRequest) {
+            return QVariant::fromValue<QAbstractListModel *>(new AccountModel(notification->identity()->id(), notification->identity()->account()));
+        } else {
+            return QVariant::fromValue<QAbstractListModel *>(new AccountModel(post->authorIdentity()->id(), post->authorIdentity()->account()));
+        }
     default:
         return postData(post, role);
     }
