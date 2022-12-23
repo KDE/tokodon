@@ -75,10 +75,17 @@ MobileForm.FormCard {
         MobileForm.FormComboBoxDelegate {
             id: selectedDefaultLanguage
             text: i18n("Selected default language:")
-            model: settings.dictionaryModel
+            model: isEmpty ? [{"display": i18n("None")}] : settings.dictionaryModel
             textRole: "display"
             valueRole: "languageCode"
-            Component.onCompleted: currentIndex = indexOfValue(settings.defaultLanguage);
+            property bool isEmpty: false
+            Component.onCompleted: {
+                if (settings.dictionaryModel.rowCount() === 0) {
+                    isEmpty = true;
+                } else {
+                    currentIndex = indexOfValue(settings.defaultLanguage);
+                }
+            }
             onActivated: settings.defaultLanguage = currentValue;
         }
 
