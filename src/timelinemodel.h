@@ -46,13 +46,11 @@ public Q_SLOTS:
     void actionReply(const QModelIndex &index);
     void actionFavorite(const QModelIndex &index);
     void actionRepeat(const QModelIndex &index);
-    void actionMenu(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
     void actionVote(const QModelIndex &index, const QList<int> &choices);
 
 Q_SIGNALS:
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
-    void wantMenu(AbstractAccount *account, Post *post, const QModelIndex &index);
     void accountManagerChanged();
     void nameChanged();
     void fetchingChanged();

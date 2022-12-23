@@ -34,13 +34,11 @@ public Q_SLOTS:
     void actionReply(const QModelIndex &index);
     void actionFavorite(const QModelIndex &index);
     void actionRepeat(const QModelIndex &index);
-    void actionMenu(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
 
 Q_SIGNALS:
     void excludeTypesChanged();
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
-    void wantMenu(AbstractAccount *account, Post *post, const QModelIndex &index);
 
 protected:
     void fetchMore(const QModelIndex &parent) override;

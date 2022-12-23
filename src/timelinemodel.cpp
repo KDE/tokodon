@@ -273,14 +273,6 @@ void TimelineModel::actionReply(const QModelIndex &index)
     Q_EMIT wantReply(m_account, p, index);
 }
 
-void TimelineModel::actionMenu(const QModelIndex &index)
-{
-    int row = index.row();
-    auto p = m_timeline[row];
-
-    Q_EMIT wantMenu(m_account, p, index);
-}
-
 void TimelineModel::actionFavorite(const QModelIndex &index)
 {
     int row = index.row();

@@ -41,8 +41,8 @@ void ThreadModel::fillTimeline(const QString &from_id)
 
     m_fetching = true;
 
-    auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
-    auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
+    const auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
+    const auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
     auto thread = std::make_shared<QList<Post *>>();
 
     auto onFetchContext = [=](QNetworkReply *reply) {

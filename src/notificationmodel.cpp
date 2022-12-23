@@ -15,7 +15,7 @@ NotificationModel::NotificationModel(QObject *parent)
     m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
 
-    QObject::connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
@@ -27,7 +27,7 @@ NotificationModel::NotificationModel(QObject *parent)
         }
     });
 
-    QObject::connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account != account) {
             m_account = account;
 
@@ -215,14 +215,6 @@ void NotificationModel::actionReply(const QModelIndex &index)
     auto p = m_notifications[row]->post();
 
     Q_EMIT wantReply(m_account, p, index);
-}
-
-void NotificationModel::actionMenu(const QModelIndex &index)
-{
-    int row = index.row();
-    auto p = m_notifications[row]->post();
-
-    Q_EMIT wantMenu(m_account, p, index);
 }
 
 void NotificationModel::actionFavorite(const QModelIndex &index)
