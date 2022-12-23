@@ -23,7 +23,7 @@ NotificationModel::NotificationModel(QObject *parent)
             m_notifications.clear();
             endResetModel();
             m_next = QString();
-            m_fetching = false;
+            m_loading = false;
         }
     });
 
@@ -44,11 +44,11 @@ NotificationModel::NotificationModel(QObject *parent)
         m_notifications.clear();
         endResetModel();
         m_next = QString();
-        m_fetching = false;
+        m_loading = false;
         fillTimeline();
     });
 
-    m_fetching = false;
+    m_loading = false;
     fillTimeline();
 }
 
@@ -73,10 +73,10 @@ void NotificationModel::fillTimeline(const QUrl &next)
         return;
     }
 
-    if (m_fetching) {
+    if (m_loading) {
         return;
     }
-    m_fetching = true;
+    m_loading = true;
     QUrl uri;
     if (next.isEmpty()) {
         uri = QUrl::fromUserInput(m_account->instanceUri());
@@ -123,7 +123,7 @@ void NotificationModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_notifications.isEmpty() || !m_next.isValid() || m_fetching) {
+    if (m_notifications.isEmpty() || !m_next.isValid() || m_loading) {
         return;
     }
 
@@ -135,12 +135,12 @@ bool NotificationModel::canFetchMore(const QModelIndex &parent) const
     Q_UNUSED(parent);
 
     // Todo detect when there is nothing left
-    return !m_fetching;
+    return !m_loading;
 }
 
 void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>> notifications)
 {
-    m_fetching = false;
+    m_loading = false;
 
     if (notifications.isEmpty()) {
         return;

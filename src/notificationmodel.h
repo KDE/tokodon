@@ -49,7 +49,6 @@ protected:
     AbstractAccount *m_account = nullptr;
 
     QList<std::shared_ptr<Notification>> m_notifications;
-    bool m_fetching;
     QStringList m_excludeTypes;
     QUrl m_next;
 

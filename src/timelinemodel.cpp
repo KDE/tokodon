@@ -88,8 +88,8 @@ void TimelineModel::init()
             m_timeline.clear();
             endResetModel();
 
-            m_fetching = false;
-            Q_EMIT fetchingChanged();
+            m_loading = false;
+            Q_EMIT loadingChanged();
 
             Q_EMIT nameChanged();
             fillTimeline();
@@ -110,11 +110,11 @@ void TimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    if (m_fetching) {
+    if (m_loading) {
         return;
     }
-    m_fetching = true;
-    Q_EMIT fetchingChanged();
+    m_loading = true;
+    Q_EMIT loadingChanged();
 
     if (!m_account) {
         return;
@@ -142,9 +142,6 @@ void TimelineModel::fillTimeline(const QString &from_id)
     auto account = m_account;
     m_account->get(uri, true, this, [this, account, uri](QNetworkReply *reply) {
         if (account != m_account) {
-            m_fetching = false;
-            Q_EMIT fetchingChanged();
-
             m_loading = false;
             Q_EMIT loadingChanged();
             return;
@@ -183,8 +180,9 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    if (m_fetching)
+    if (m_loading) {
         return false;
+    }
 
     if (time(nullptr) <= m_last_fetch)
         return false;
@@ -194,11 +192,7 @@ bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 
 void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<Post *> &posts)
 {
-    m_fetching = false;
-    Q_EMIT fetchingChanged();
-
-    m_loading = false;
-    Q_EMIT loadingChanged();
+    setLoading(false);
 
     // make sure the timeline update is for us
     if (account != m_account || original_name != m_timelineName) {
@@ -213,21 +207,19 @@ void TimelineModel::fetchedTimeline(AbstractAccount *account, const QString &ori
         const auto postOld = m_timeline.first();
         const auto postNew = posts.first();
 
-        qDebug() << "fetchedTimeline"
-                 << "post_old->m_post_id" << postOld->m_post_id << "post_new->m_post_id" << postNew->m_post_id;
-        if (postOld->m_post_id > postNew->m_post_id) {
+        if (postOld->postId() > postNew->postId()) {
             const int row = m_timeline.size();
             const int last = row + posts.size() - 1;
-            beginInsertRows(QModelIndex(), row, last);
+            beginInsertRows({}, row, last);
             m_timeline += posts;
             endInsertRows();
         } else {
-            beginInsertRows(QModelIndex(), 0, posts.size() - 1);
+            beginInsertRows({}, 0, posts.size() - 1);
             m_timeline = posts + m_timeline;
             endInsertRows();
         }
     } else {
-        beginInsertRows(QModelIndex(), 0, posts.size() - 1);
+        beginInsertRows({}, 0, posts.size() - 1);
         m_timeline = posts;
         endInsertRows();
     }
@@ -344,9 +336,4 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
 void TimelineModel::refresh()
 {
     fillTimeline();
-}
-
-bool TimelineModel::fetching() const
-{
-    return m_fetching;
 }

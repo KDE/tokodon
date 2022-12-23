@@ -14,7 +14,6 @@ class TimelineModel : public AbstractTimelineModel
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
-    Q_PROPERTY(bool fetching READ fetching NOTIFY fetchingChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
@@ -39,8 +38,6 @@ public:
 
     Q_INVOKABLE void refresh();
 
-    bool fetching() const;
-
 public Q_SLOTS:
     void actionReply(const QModelIndex &index);
     void actionFavorite(const QModelIndex &index);
@@ -51,7 +48,6 @@ public Q_SLOTS:
 Q_SIGNALS:
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
     void nameChanged();
-    void fetchingChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -61,7 +57,6 @@ protected:
     AccountManager *m_manager = nullptr;
 
     QList<Post *> m_timeline;
-    bool m_fetching = false;
     time_t m_last_fetch;
 
 public Q_SLOTS:

@@ -40,7 +40,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
 {
     Q_UNUSED(from_id)
 
-    m_fetching = true;
+    setLoading(true);
 
     const auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
     const auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
@@ -57,33 +57,27 @@ void ThreadModel::fillTimeline(const QString &from_id)
 
         const auto ancestors = obj["ancestors"].toArray();
 
-        for (const auto &anc : ancestors) {
-            if (!anc.isObject()) {
+        for (const auto &ancestor : ancestors) {
+            if (!ancestor.isObject()) {
                 continue;
             }
-
-            const auto anc_obj = anc.toObject();
-            const auto p = new Post(m_account, anc_obj, this);
-
-            thread->push_front(p);
+            thread->push_front(new Post(m_account, ancestor.toObject(), this));
         }
 
         const auto descendents = obj["descendants"].toArray();
 
-        for (const auto &desc : descendents) {
-            if (!desc.isObject()) {
+        for (const auto &descendent : descendents) {
+            if (!descendent.isObject()) {
                 continue;
             }
 
-            const auto desc_obj = desc.toObject();
-            const auto p = new Post(m_account, desc_obj, this);
-
-            thread->push_back(p);
+            thread->push_back(new Post(m_account, descendent.toObject(), this));
         }
 
         beginResetModel();
         m_timeline = *thread;
         endResetModel();
+        setLoading(false);
     };
 
     auto onFetchStatus = [=](QNetworkReply *reply) {
@@ -94,10 +88,7 @@ void ThreadModel::fillTimeline(const QString &from_id)
         if (!doc.isObject()) {
             return;
         }
-
-        const auto p = new Post(m_account, obj, this);
-        thread->push_front(p);
-
+        thread->push_front(new Post(m_account, obj, this));
         m_account->get(contextUrl, true, this, onFetchContext);
     };
 

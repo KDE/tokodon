@@ -52,6 +52,7 @@ public:
     QVariant postData(Post *post, int role) const;
 
     bool loading() const;
+    void setLoading(bool loading);
 
 Q_SIGNALS:
     void loadingChanged();

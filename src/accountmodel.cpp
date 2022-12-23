@@ -57,7 +57,7 @@ QString AccountModel::displayName() const
 
 void AccountModel::fillTimeline(const QString &fromId)
 {
-    m_fetching = true;
+    m_loading = true;
 
     auto thread = std::make_shared<QList<Post *>>();
     // Fetch pinned posts if we are starting from the top

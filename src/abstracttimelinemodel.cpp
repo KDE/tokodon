@@ -20,6 +20,15 @@ bool AbstractTimelineModel::loading() const
     return m_loading;
 }
 
+void AbstractTimelineModel::setLoading(bool loading)
+{
+    if (m_loading == loading) {
+        return;
+    }
+    m_loading = loading;
+    Q_EMIT loadingChanged();
+}
+
 QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
 {
     return {
