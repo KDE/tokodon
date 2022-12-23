@@ -73,6 +73,8 @@ class Attachment : public QObject
     Q_PROPERTY(QString url MEMBER m_url CONSTANT)
     Q_PROPERTY(QString description MEMBER m_description CONSTANT)
     Q_PROPERTY(QString blurhash MEMBER m_blurhash CONSTANT)
+    Q_PROPERTY(int originalWidth MEMBER m_originalWidth CONSTANT)
+    Q_PROPERTY(int originalHeight MEMBER m_originalHeight CONSTANT)
 
 public:
     explicit Attachment(Post *parent, const QJsonObject &obj);
@@ -87,6 +89,8 @@ public:
     QString m_url;
     QString m_description;
     QString m_blurhash;
+    int m_originalWidth;
+    int m_originalHeight;
 
     void setDescription(const QString &description);
 };

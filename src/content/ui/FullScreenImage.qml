@@ -14,6 +14,8 @@ QQC2.Popup {
 
     required property var model
     property alias currentIndex: view.currentIndex
+    property int imageWidth: -1
+    property int imageHeight: -1
 
     parent: QQC2.Overlay.overlay
     closePolicy: QQC2.Popup.CloseOnEscape
@@ -134,8 +136,8 @@ QQC2.Popup {
 
                     property var scaleFactor: 1
                     property int rotationAngle: 0
-                    property var rotationInsensitiveWidth: Math.min(root.imageWidth > 0 ? root.imageWidth : sourceSize.width, imageContainer.width - Kirigami.Units.largeSpacing * 2)
-                    property var rotationInsensitiveHeight: Math.min(root.imageHeight > 0 ? root.imageHeight : sourceSize.height, imageContainer.height - Kirigami.Units.largeSpacing * 2)
+                    property var rotationInsensitiveWidth: Math.min(modelData.originalWidth, imageContainer.width - Kirigami.Units.largeSpacing * 2)
+                    property var rotationInsensitiveHeight: Math.min(modelData.originalHeight, imageContainer.height - Kirigami.Units.largeSpacing * 2)
 
                     anchors.centerIn: parent
                     width: rotationAngle % 180 === 0 ? rotationInsensitiveWidth : rotationInsensitiveHeight
@@ -149,6 +151,15 @@ QQC2.Popup {
                     }
                     Behavior on height {
                         NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                    }
+
+                    Image {
+                        anchors.centerIn: parent
+                        width: imageItem.width
+                        height: imageItem.height
+                        source: modelData.blurhash !== "" ? ("image://blurhash/" + modelData.blurhash) : ""
+                        visible: parent.status !== Image.Ready
+                        onVisibleChanged: console.error(visible, parent.status)
                     }
 
                     transform: [
@@ -218,6 +229,7 @@ QQC2.Popup {
                 wrapMode: Text.WordWrap
 
                 text: root.model[view.currentIndex].description
+
                 font.weight: Font.Bold
             }
 

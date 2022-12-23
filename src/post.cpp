@@ -30,6 +30,8 @@ Attachment::Attachment(Post *parent, const QJsonObject &obj)
     m_preview_url = obj["preview_url"].toString();
     m_description = obj["description"].toString();
     m_blurhash = obj["blurhash"].toString();
+    m_originalHeight = obj["meta"].toObject()["original"].toObject()["height"].toInt();
+    m_originalWidth = obj["meta"].toObject()["original"].toObject()["width"].toInt();
 
     // determine type if we can
     auto type = obj["type"].toString();
