@@ -49,6 +49,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {CardRole, QByteArrayLiteral("card")},
         {TypeRole, QByteArrayLiteral("type")},
         {PollRole, QByteArrayLiteral("poll")},
+        {VisibilityRole, QByteArrayLiteral("visibility")},
     };
 }
 
@@ -97,6 +98,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->m_isSensitive;
     case SpoilerTextRole:
         return post->subject();
+    case VisibilityRole:
+        return post->visibility();
     case AttachmentsRole:
         return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
     case ThreadModelRole:

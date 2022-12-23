@@ -487,6 +487,7 @@ a{
                     const post = AccountManager.selectedAccount.newPost()
                     post.inReplyTo = model.id;
                     post.mentions = model.mentions;
+                    post.visibility = model.visibility;
                     if (!post.mentions.includes(`@${model.authorId}`)) {
                         post.mentions.push(`@${model.authorId}`);
                     }
