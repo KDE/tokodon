@@ -70,6 +70,7 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Favorite
                 PostDelegate {
                     secondary: true
+                    timelineModel: notificationModel
                 }
             }
 
@@ -77,12 +78,15 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Repeat
                 PostDelegate {
                     secondary: true
+                    timelineModel: notificationModel
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Mention
-                PostDelegate {}
+                PostDelegate {
+                    timelineModel: notificationModel
+                }
             }
 
             DelegateChoice {

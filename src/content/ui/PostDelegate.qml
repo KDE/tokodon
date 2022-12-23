@@ -11,6 +11,7 @@ import QtGraphicalEffects 1.0
 QQC2.ItemDelegate {
     id: root
 
+    property var timelineModel
     property var poll: model.poll
     property bool secondary: false
     property bool showSeparator: true

@@ -82,7 +82,9 @@ Kirigami.ScrollablePage {
             id: fullScreenImage
             FullScreenImage {}
         }
-        delegate: PostDelegate {}
+        delegate: PostDelegate {
+            timelineModel: timelinePage.model
+        }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
