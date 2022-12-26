@@ -120,6 +120,7 @@ public:
 
     virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) = 0;
 
     /// Upload a file
     virtual void upload(Post *post, QFile *file, const QString &filename) = 0;
@@ -129,6 +130,8 @@ public:
 
     /// Read account from settings
     virtual void buildFromSettings(const QSettings &settings) = 0;
+
+    Q_INVOKABLE void saveAccount(Identity *newIdentity);
 
     /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
     /// @param Identity identity The account to follow
@@ -210,6 +213,7 @@ Q_SIGNALS:
     void followRequestBlocked();
     void errorOccured(const QString &errorMessage);
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
+    void sendNotification(const QString &message, const QString &type = QStringLiteral("info"));
 
 protected:
     QString m_name;

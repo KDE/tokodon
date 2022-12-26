@@ -35,12 +35,13 @@ public:
     ~Account();
 
     // making API calls
-    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
-    virtual void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
-    virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
-    virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
-    virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
-    virtual void upload(Post *post, QFile *file, const QString &filename) override;
+    void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) override;
+    void upload(Post *post, QFile *file, const QString &filename) override;
 
     QWebSocket *streamingSocket(const QString &stream);
     QNetworkAccessManager *qnam()

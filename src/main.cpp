@@ -111,6 +111,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
+    qmlRegisterType<Identity>("org.kde.kmasto", 1, 0, "Identity");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);

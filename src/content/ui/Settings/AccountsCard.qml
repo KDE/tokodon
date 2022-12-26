@@ -26,11 +26,11 @@ MobileForm.FormCard {
             model: AccountManager
             delegate: MobileForm.AbstractFormDelegate {
                 Layout.fillWidth: true
-                //onClicked: pageSettingStack.pushDialogLayer("qrc:/AccountEditorPage.qml", {
-                //    connection: model.connection
-                //}, {
-                //    title: i18n("Account editor")
-                //})
+                onClicked: applicationWindow().pageStack.layers.push("./ProfileEditor.qml", {
+                    account: model.account,
+                }, {
+                    title: i18n("Account editor")
+                })
 
                 contentItem: RowLayout {
                     Kirigami.Avatar {

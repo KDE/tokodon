@@ -15,6 +15,7 @@ public:
     virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     virtual void upload(Post *post, QFile *file, const QString &filename) override;
+    void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) override;
     virtual void writeToSettings(QSettings &settings) const override;
     virtual void buildFromSettings(const QSettings &settings) override;
     virtual void validateToken() override;
