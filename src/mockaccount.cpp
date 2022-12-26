@@ -37,22 +37,46 @@ void MockAccount::post(const QUrl &url, const QJsonDocument &doc, bool authentic
 
 void MockAccount::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
+    Q_UNUSED(url)
+    Q_UNUSED(authenticated)
+    Q_UNUSED(parent)
+    Q_UNUSED(callback)
+    Q_UNUSED(formdata)
 }
+
 void MockAccount::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
+    Q_UNUSED(url)
+    Q_UNUSED(authenticated)
+    Q_UNUSED(parent)
+    Q_UNUSED(callback)
+    Q_UNUSED(message)
 }
+
 void MockAccount::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
+    Q_UNUSED(url)
+    Q_UNUSED(authenticated)
+    Q_UNUSED(parent)
+    Q_UNUSED(callback)
+    Q_UNUSED(doc)
 }
+
 void MockAccount::upload(Post *post, QFile *file, const QString &filename)
 {
+    Q_UNUSED(post)
+    Q_UNUSED(file)
+    Q_UNUSED(filename)
 }
 
 void MockAccount::writeToSettings(QSettings &settings) const
 {
+    Q_UNUSED(settings)
 }
+
 void MockAccount::buildFromSettings(const QSettings &settings)
 {
+    Q_UNUSED(settings)
 }
 
 void MockAccount::validateToken()
