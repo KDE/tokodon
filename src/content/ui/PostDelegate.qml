@@ -261,10 +261,11 @@ a{
                                 if (attachmentGrid.isSensitive) {
                                     attachmentGrid.isSensitive = false;
                                 } else {
-                                    fullScreenImage.createObject(parent, {
+                                    timelinePage.dialog = fullScreenImage.createObject(parent, {
                                         model: attachments,
                                         currentIndex: index,
-                                    }).open();
+                                    });
+                                    timelinePage.dialog.open();
                                 }
                             }
                         }

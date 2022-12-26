@@ -10,6 +10,8 @@ import org.kde.kmasto 1.0
 Kirigami.ScrollablePage {
     id: timelinePage
 
+    property var dialog: null
+
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -43,6 +45,12 @@ Kirigami.ScrollablePage {
 
     onRefreshingChanged: if (refreshing) {
         model.refresh();
+    }
+
+    onBackRequested: if (dialog) {
+        dialog.close();
+        dialog = null;
+        event.accepted = true;
     }
 
     Connections {
