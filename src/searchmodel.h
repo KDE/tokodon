@@ -24,7 +24,7 @@ public:
     ~SearchModel();
 
     Q_INVOKABLE void search(const QString &queryString);
-    Q_INVOKABLE QString labelForType(ResultType sectionType);
+    Q_INVOKABLE QString labelForType(SearchModel::ResultType sectionType);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;

@@ -32,7 +32,6 @@ AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
     } else {
         const QJsonObject empty;
         m_identity = m_account->identityLookup(acct, empty);
-        Q_EMIT identityChanged();
         updateRelationships();
     }
 }

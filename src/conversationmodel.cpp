@@ -76,7 +76,7 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
         beginResetModel();
         m_conversations.clear();
         const auto conversationArray = QJsonDocument::fromJson(reply->readAll()).array();
-        for (const auto conversation : conversationArray) {
+        for (const auto &conversation : conversationArray) {
             const auto obj = conversation.toObject();
             const auto accountsArray = obj["accounts"].toArray();
             QList<std::shared_ptr<Identity>> accounts;

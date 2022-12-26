@@ -72,7 +72,7 @@ void FileTransferJob::start()
                         qCWarning(TOKODON_HTTP) << "Failed to allocate" << targetSize << "bytes for" << m_temporaryFile->fileName();
                         setError(FileError);
                         setErrorText("Could not reserve disk space for download");
-                        Q_EMIT emitResult();
+                        emitResult();
                     }
                 }
             }

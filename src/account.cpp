@@ -96,7 +96,7 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
     qCDebug(TOKODON_HTTP) << "POST" << url << "(multipart-message)";
 
     QNetworkReply *reply = m_qnam->post(request, message);
-    message->setParent(reply);
+    reply->setParent(parent);
     handleReply(reply, reply_cb);
 }
 
@@ -184,7 +184,6 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     const auto url = streamingUrl(stream);
 
     connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
-        QString targetTimeline = stream;
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
 
         const auto event = stringToStreamingEventType[env.object()["event"].toString()];

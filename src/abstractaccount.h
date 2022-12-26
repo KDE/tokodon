@@ -209,7 +209,7 @@ Q_SIGNALS:
     void notification(std::shared_ptr<Notification> n);
     void followRequestBlocked();
     void errorOccured(const QString &errorMessage);
-    void streamingEvent(StreamingEventType eventType, const QByteArray &payload);
+    void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
 
 protected:
     QString m_name;
