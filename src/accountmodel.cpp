@@ -40,8 +40,9 @@ AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
 
 bool AccountModel::isSelf() const
 {
-    if(m_identity == nullptr)
+    if (m_identity == nullptr) {
         return false;
+    }
 
     return m_account->identity().id() == m_identity->id();
 }
@@ -89,15 +90,24 @@ void AccountModel::fillTimeline(const QString &fromId)
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
         if (!doc.isArray()) {
+            setLoading(false);
+            return;
+        }
+        const auto array = doc.array();
+        if (array.isEmpty()) {
+            setLoading(false);
             return;
         }
 
         QList<Post *> posts;
-        const auto array = doc.array();
         std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
-            return new Post(m_account, value.toObject(), this);
+            auto post = new Post(m_account, value.toObject(), this);
+            post->m_pinned = true;
+            return post;
         });
+        beginInsertRows({}, 0, posts.size() - 1);
         m_timeline = posts + m_timeline;
+        endInsertRows();
         setLoading(false);
     };
 
@@ -107,10 +117,11 @@ void AccountModel::fillTimeline(const QString &fromId)
             return;
         }
 
+        fetchedTimeline(reply->readAll());
         if (fetchPinned) {
             m_account->get(uriPinned, true, this, onFetchPinned);
         } else {
-            fetchedTimeline(reply->readAll());
+            setLoading(false);
         }
     };
 

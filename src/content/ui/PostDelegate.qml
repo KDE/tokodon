@@ -77,7 +77,7 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: model.pinned && timelinePage.isProfile
+            visible: model.pinned
             Kirigami.Icon {
                 source: "pin"
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
