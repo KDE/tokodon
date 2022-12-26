@@ -7,31 +7,10 @@
 #include "post.h"
 #include "poll.h"
 #include "maintimelinemodel.h"
+#include "tagsmodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
-
-class PollReply : public QNetworkReply
-{
-public:
-    PollReply(QObject *parent)
-        : QNetworkReply(parent)
-    {
-        setError(NetworkError::NoError, QString());
-        setFinished(true);
-
-        pollExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "poll.json");
-        pollExampleApi.open(QIODevice::ReadOnly);
-    }
-
-    virtual qint64 readData(char *data, qint64 maxSize) override {
-        return pollExampleApi.read(data, maxSize);
-    }
-
-    virtual void abort() override {
-    }
-
-    QFile pollExampleApi;
-};
+#include "helperreply.h"
 
 class TimelineTest : public QObject
 {
@@ -56,6 +35,28 @@ private Q_SLOTS:
         statusExampleApi.open(QIODevice::ReadOnly);
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 1);
+    }
+
+    void testTagModel()
+    {
+        auto account = new MockAccount();
+        AccountManager::instance().addAccount(account);
+        AccountManager::instance().selectAccount(account);
+
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply("statuses.json", account));
+        auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home"));
+        fetchMoreUrl.setQuery(QUrlQuery{
+            { "max_id", "103270115826038975" },
+        });
+        account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
+
+        TagsModel tagModel;
+        tagModel.setHashtag("home");
+
+        QCOMPARE(tagModel.rowCount({}), 2);
+        QVERIFY(tagModel.canFetchMore({}));
+        tagModel.fetchMore({});
+        QCOMPARE(tagModel.rowCount({}), 4);
     }
 
     void testModelPoll()
@@ -96,7 +97,7 @@ private Q_SLOTS:
         QCOMPARE(poll.options()[1]["title"], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
         QCOMPARE(poll.options()[1]["votesCount"], 4);
 
-        account->registerPost(QString("/api/v1/polls/34830/votes"), new PollReply(account));
+        account->registerPost(QString("/api/v1/polls/34830/votes"), new TestReply("poll.json", account));
 
         QSignalSpy spy(&timelineModel, &QAbstractItemModel::dataChanged);
         QVERIFY(spy.isValid());

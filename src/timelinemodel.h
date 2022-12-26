@@ -47,4 +47,6 @@ protected:
     AccountManager *m_manager = nullptr;
 
     QList<Post *> m_timeline;
+
+    friend class TimelineTest;
 };
