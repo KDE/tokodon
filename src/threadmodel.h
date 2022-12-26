@@ -28,4 +28,6 @@ Q_SIGNALS:
 
 private:
     QString m_postId;
+
+    friend class TimelineTest;
 };

@@ -9,6 +9,7 @@
 #include "poll.h"
 #include "post.h"
 #include "tagsmodel.h"
+#include "threadmodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 
@@ -57,6 +58,23 @@ private Q_SLOTS:
         QVERIFY(tagModel.canFetchMore({}));
         tagModel.fetchMore({});
         QCOMPARE(tagModel.rowCount({}), 4);
+    }
+
+    void testThreadModel()
+    {
+        auto account = new MockAccount();
+        AccountManager::instance().addAccount(account);
+        AccountManager::instance().selectAccount(account);
+
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975")), new TestReply("status.json", account));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975/context")), new TestReply("context.json", account));
+
+        ThreadModel threadModel(QStringLiteral("103270115826048975"));
+        QCOMPARE(threadModel.rowCount({}), 3);
+        QCOMPARE(threadModel.data(threadModel.index(1, 0), AbstractTimelineModel::SelectedRole).toBool(), true);
+        QCOMPARE(threadModel.displayName(), "Thread");
+        QCOMPARE(threadModel.postId(), "103270115826048975");
+        QCOMPARE(threadModel.canFetchMore({}), false);
     }
 
     void testModelPoll()
