@@ -17,6 +17,7 @@ public:
 
     QString postId() const;
     void setPostId(const QString &postId);
+    QVariant data(const QModelIndex &index, int role) const override;
 
     QString displayName() const override;
     void fillTimeline(const QString &fromId = QString()) override;

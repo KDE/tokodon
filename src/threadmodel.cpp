@@ -4,6 +4,7 @@
 
 #include "threadmodel.h"
 #include "abstractaccount.h"
+#include "timelinemodel.h"
 #include <KLocalizedString>
 #include <QJsonObject>
 #include <qstringliteral.h>
@@ -13,6 +14,15 @@ ThreadModel::ThreadModel(const QString &postId, QObject *parent)
     , m_postId(postId)
 {
     init();
+}
+
+QVariant ThreadModel::data(const QModelIndex &index, int role) const
+{
+    if (role == SelectedRole) {
+        return m_postId == TimelineModel::data(index, IdRole).toString();
+    }
+
+    return TimelineModel::data(index, role);
 }
 
 QString ThreadModel::displayName() const

@@ -24,10 +24,12 @@ QQC2.ItemDelegate {
     highlighted: false
     hoverEnabled: false
     width: ListView.view.width
+    Kirigami.Theme.colorSet: model.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
     background: Rectangle {
         color: Kirigami.Theme.backgroundColor
         Kirigami.Separator {
-            visible: showSeparator
+            visible: showSeparator && !model.selected
             anchors {
                 left: parent.left
                 right: parent.right

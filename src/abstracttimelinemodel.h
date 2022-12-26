@@ -44,6 +44,7 @@ public:
         TypeRole,
         PollRole,
         VisibilityRole,
+        SelectedRole,
         ExtraRole, ///< for sub-classes to extend the roles
     };
 
