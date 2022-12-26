@@ -39,7 +39,7 @@ QQC2.ItemDelegate {
     }
     bottomInset: 2
     onClicked: {
-        if (tootContent.linkHovered) {
+        if (tootContent.hoveredLink) {
             return;
         }
         const subModel = model.threadModel;
