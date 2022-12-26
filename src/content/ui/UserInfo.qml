@@ -10,6 +10,7 @@ import org.kde.kmasto 1.0
 
 QQC2.ToolBar {
     id: userInfo
+    visible: AccountManager.selectedAccount
 
     padding: 0
 
@@ -136,6 +137,7 @@ QQC2.ToolBar {
                 Layout.fillWidth: true
 
                 Item {
+                    
                     Layout.fillHeight: true
                     Layout.preferredWidth: height
                     Kirigami.Avatar {
