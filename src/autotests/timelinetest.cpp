@@ -6,7 +6,7 @@
 #include "mockaccount.h"
 #include "post.h"
 #include "poll.h"
-#include "timelinemodel.h"
+#include "maintimelinemodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 
@@ -48,15 +48,13 @@ private Q_SLOTS:
         AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account);
 
-        TimelineModel timelineModel;
+        MainTimelineModel timelineModel;
         timelineModel.setName("home");
 
         QFile statusExampleApi;
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
         statusExampleApi.open(QIODevice::ReadOnly);
-        const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
-        auto post = new Post(account, doc.object(), this);
-        timelineModel.fetchedTimeline(account, "home", {post});
+        account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 1);
     }
 
@@ -66,15 +64,13 @@ private Q_SLOTS:
         AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account);
 
-        TimelineModel timelineModel;
+        MainTimelineModel timelineModel;
         timelineModel.setName("home");
 
         QFile statusExampleApi;
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json");
         statusExampleApi.open(QIODevice::ReadOnly);
-        const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
-        auto post = new Post(account, doc.object(), this);
-        timelineModel.fetchedTimeline(account, "home", {post});
+        account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 1);
 
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), "103270115826048975");

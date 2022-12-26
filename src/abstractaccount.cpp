@@ -358,16 +358,6 @@ QUrl AbstractAccount::streamingUrl(const QString &stream)
     return QUrl(url);
 }
 
-void AbstractAccount::handleUpdate(const QJsonDocument &doc, const QString &target)
-{
-    QList<Post *> posts;
-    const auto obj = doc.object();
-    const auto p = new Post(this, obj, this);
-    posts.push_back(p);
-
-    Q_EMIT fetchedTimeline(target, posts);
-}
-
 void AbstractAccount::handleNotification(const QJsonDocument &doc)
 {
     const auto obj = doc.object();

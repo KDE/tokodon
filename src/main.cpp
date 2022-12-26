@@ -46,6 +46,7 @@
 #include "searchmodel.h"
 #include "conversationmodel.h"
 #include "tagsmodel.h"
+#include "maintimelinemodel.h"
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -106,7 +107,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
-    qmlRegisterType<TimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
+    qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");

@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
     Connections {
         target: model
 
-        function onFetchingChanged() {
+        function onLoadingChanged() {
             timelinePage.refreshing = false
         }
     }

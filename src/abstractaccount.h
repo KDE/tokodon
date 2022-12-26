@@ -183,6 +183,19 @@ public:
         Note,
     };
 
+    enum StreamingEventType {
+        UpdateEvent, //< A new Status has appeared.
+        DeleteEvent, ///< A status has been deleted.
+        NotificationEvent, ///< A new notification has appeared.
+        FiltersChangedEvent, ///< Keyword filters have been changed.
+        ConversationEvent, ///< A direct conversation has been updated.
+        AnnouncementEvent, //< An announcement has been published.
+        AnnouncementRedactedEvent, //< An announcement has received an emoji reaction.
+        AnnouncementDeletedEvent, //< An announcement has been deleted. 
+        StatusUpdatedEvent, ///< A Status has been edited.
+        EncryptedMessageChangedEvent, ///< An encrypted message has been received. 
+    };
+
 Q_SIGNALS:
     void authenticated();
     void registered();
@@ -196,6 +209,7 @@ Q_SIGNALS:
     void notification(std::shared_ptr<Notification> n);
     void followRequestBlocked();
     void errorOccured(const QString &errorMessage);
+    void streamingEvent(StreamingEventType eventType, const QByteArray &payload);
 
 protected:
     QString m_name;

@@ -9,7 +9,7 @@
 #include <qstringliteral.h>
 
 ThreadModel::ThreadModel(const QString &postId, QObject *parent)
-    : TimelineModel(QStringLiteral("None"), parent)
+    : TimelineModel(parent)
     , m_postId(postId)
 {
     init();
@@ -36,9 +36,9 @@ void ThreadModel::setPostId(const QString &postId)
     fillTimeline();
 }
 
-void ThreadModel::fillTimeline(const QString &from_id)
+void ThreadModel::fillTimeline(const QString &fromId)
 {
-    Q_UNUSED(from_id)
+    Q_UNUSED(fromId)
 
     setLoading(true);
 

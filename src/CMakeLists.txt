@@ -48,6 +48,7 @@ set(tokodon_src
     searchmodel.cpp
     conversationmodel.cpp
     tagsmodel.cpp
+    maintimelinemodel.cpp
     ${debug_files_SRCS}
 )
 

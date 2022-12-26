@@ -7,13 +7,13 @@
 #include <KLocalizedString>
 #include <QCoreApplication>
 #include <QUrlQuery>
+#include <qnetworkreply.h>
 
 AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
     , m_identity(nullptr)
     , m_id(id)
 {
-    setName(acct);
     init();
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
@@ -57,9 +57,8 @@ QString AccountModel::displayName() const
 
 void AccountModel::fillTimeline(const QString &fromId)
 {
-    m_loading = true;
+    setLoading(true);
 
-    auto thread = std::make_shared<QList<Post *>>();
     // Fetch pinned posts if we are starting from the top
     const auto fetchPinned = fromId.isNull();
     const auto excludeReplies = true;
@@ -79,47 +78,39 @@ void AccountModel::fillTimeline(const QString &fromId)
     auto uriPinned = m_account->apiUrl(QString("/api/v1/accounts/%1/statuses").arg(m_id));
     uriPinned.setQuery(QUrlQuery{{"pinned", "true"}});
 
-    auto onFetchPinned = [=](QNetworkReply *reply) {
+    const auto account = m_account;
+    const auto id = m_id;
+
+    auto onFetchPinned = [this, id, account](QNetworkReply *reply) {
+        if (m_account != account || m_id != id) {
+            setLoading(false);
+            return;
+        }
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
-
         if (!doc.isArray()) {
             return;
         }
 
-        int i = 0;
+        QList<Post *> posts;
         const auto array = doc.array();
-        for (const auto &value : array) {
-            const QJsonObject obj = value.toObject();
-
-            auto p = new Post(m_account, obj, this);
-            thread->insert(i, p);
-            i++;
-        }
-
-        fetchedTimeline(m_account, m_timelineName, *thread);
+        std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
+            return new Post(m_account, value.toObject(), this);
+        });
+        m_timeline = posts + m_timeline;
+        setLoading(false);
     };
 
-    auto onFetchAccount = [=](QNetworkReply *reply) {
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
-
-        if (!doc.isArray()) {
+    auto onFetchAccount = [account, id, fetchPinned, uriPinned, onFetchPinned, this](QNetworkReply *reply) {
+        if (m_account != account || m_id != id) {
+            setLoading(false);
             return;
-        }
-
-        const auto array = doc.array();
-        for (const auto &value : array) {
-            const QJsonObject obj = value.toObject();
-
-            auto p = new Post(m_account, obj, this);
-            thread->push_back(p);
         }
 
         if (fetchPinned) {
             m_account->get(uriPinned, true, this, onFetchPinned);
         } else {
-            fetchedTimeline(m_account, m_timelineName, *thread);
+            fetchedTimeline(reply->readAll());
         }
     };
 

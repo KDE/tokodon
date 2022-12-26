@@ -159,6 +159,19 @@ void Account::upload(Post *p, QFile *file, const QString &filename)
     });
 }
 
+static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEventType = {
+    {"update", AbstractAccount::StreamingEventType::UpdateEvent},
+    {"delete", AbstractAccount::StreamingEventType::DeleteEvent},
+    {"notification", AbstractAccount::StreamingEventType::NotificationEvent},
+    {"filters_changed", AbstractAccount::StreamingEventType::FiltersChangedEvent},
+    {"conversation", AbstractAccount::StreamingEventType::ConversationEvent},
+    {"announcement", AbstractAccount::StreamingEventType::AnnouncementEvent},
+    {"announcement.reaction", AbstractAccount::StreamingEventType::AnnouncementRedactedEvent},
+    {"announcement.delete", AbstractAccount::StreamingEventType::AnnouncementDeletedEvent},
+    {"status.update", AbstractAccount::StreamingEventType::StatusUpdatedEvent },
+    {"encrypted_message", AbstractAccount::StreamingEventType::EncryptedMessageChangedEvent },
+};
+
 QWebSocket *Account::streamingSocket(const QString &stream)
 {
     if (m_websockets.contains(stream)) {
@@ -168,32 +181,16 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     auto socket = new QWebSocket();
     socket->setParent(this);
 
-    auto url = streamingUrl(stream);
+    const auto url = streamingUrl(stream);
 
-    QObject::connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
+    connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
         QString targetTimeline = stream;
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
 
-        if (stream == "user") {
-            targetTimeline = "home";
-        }
+        const auto event = stringToStreamingEventType[env.object()["event"].toString()];
+        Q_EMIT streamingEvent(event, env.object()["payload"].toString().toLocal8Bit());
 
-        const auto event = env.object()["event"].toString();
-        if (event == "update") {
-            const QSettings settings;
-            const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
-            const auto accountObject = doc.object()["account"].toObject();
-
-            if (accountObject["acct"] == m_identity.account()) {
-                return;
-            }
-
-            if (settings.value("Preferences/timeline_firehose", true).toBool()) {
-                handleUpdate(doc, targetTimeline);
-            }
-
-            return;
-        } else if (event == "notification") {
+        if (event == NotificationEvent) {
             const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
             handleNotification(doc);
             return;

@@ -12,28 +12,18 @@
 class TimelineModel : public AbstractTimelineModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
-    TimelineModel(const QString &timelineName, QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    virtual void fillTimeline(const QString &fromId = QString());
+    virtual void fillTimeline(const QString &fromId = {}) = 0;
+    virtual QString displayName() const = 0;
 
     void init();
 
-    QString name() const;
-    void setName(const QString &name);
-
-    virtual QString displayName() const;
-
-    void disallowUpdates()
-    {
-        m_last_fetch = time(nullptr) + 3;
-    }
     Post *internalData(const QModelIndex &index) const;
 
     Q_INVOKABLE void refresh();
@@ -52,13 +42,9 @@ Q_SIGNALS:
 protected:
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
+    void fetchedTimeline(const QByteArray &array);
 
-    QString m_timelineName;
     AccountManager *m_manager = nullptr;
 
     QList<Post *> m_timeline;
-    time_t m_last_fetch;
-
-public Q_SLOTS:
-    void fetchedTimeline(AbstractAccount *account, const QString &original_name, const QList<Post *> &posts);
 };
