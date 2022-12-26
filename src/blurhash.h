@@ -8,4 +8,3 @@
 uint8_t *decode(const char *blurhash, int width, int height, int punch, int nChannels);
 
 bool isValidBlurhash(const char *blurhash);
-

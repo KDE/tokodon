@@ -4,8 +4,8 @@
 #include <QtTest/QtTest>
 
 #include "mockaccount.h"
-#include "post.h"
 #include "poll.h"
+#include "post.h"
 #include <QJsonObject>
 #include <qstringliteral.h>
 

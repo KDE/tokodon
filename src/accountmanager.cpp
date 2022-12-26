@@ -4,9 +4,9 @@
 
 #include "accountmanager.h"
 #include "account.h"
-#include "networkaccessmanagerfactory.h"
 #include "accountmodel.h"
 #include "config.h"
+#include "networkaccessmanagerfactory.h"
 
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)

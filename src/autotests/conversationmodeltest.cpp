@@ -4,13 +4,12 @@
 #include <QtTest/QtTest>
 
 #include "abstracttimelinemodel.h"
-#include "mockaccount.h"
-#include "post.h"
 #include "conversationmodel.h"
 #include "helperreply.h"
+#include "mockaccount.h"
+#include "post.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
-
 
 class ConversationModelTest : public QObject
 {
@@ -32,7 +31,8 @@ private Q_SLOTS:
         ConversationModel conversationModel;
 
         QCOMPARE(conversationModel.rowCount({}), 1);
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AvatarRole), QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AvatarRole),
+                 QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).toString(), "Gargron");
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::ConversationIdRole).toString(), "418374");
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::UnreadRole), false);

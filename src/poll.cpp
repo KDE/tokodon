@@ -8,7 +8,8 @@
 #include <qstringliteral.h>
 
 Poll::Poll()
-{}
+{
+}
 
 Poll::Poll(const QJsonObject &json)
 {
@@ -20,25 +21,29 @@ Poll::Poll(const QJsonObject &json)
     m_votersCount = json[QStringLiteral("voters_count")].toInt(-1);
     m_voted = json[QStringLiteral("voted")].toBool();
     const auto ownVotes = json[QStringLiteral("own_votes")].toArray();
-    std::transform(ownVotes.cbegin(), ownVotes.cend(), std::back_inserter(m_ownVotes), [](const QJsonValue &value) -> auto {
-        return value.toInt();
-    });
+    std::transform(
+        ownVotes.cbegin(),
+        ownVotes.cend(),
+        std::back_inserter(m_ownVotes),
+        [](const QJsonValue &value) -> auto{ return value.toInt(); });
 
     const auto emojis = json[QStringLiteral("emojis")].toArray();
 
     const auto options = json[QStringLiteral("options")].toArray();
-    std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> auto {
-        const auto option = value.toObject();
-        QString title = option[QStringLiteral("title")].toString();
-        for (const auto &emoji : emojis) {
-            const auto emojiObj = emoji.toObject();
-            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
-        }
-        return QVariantMap {
-             {"title", title},
-             {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)}
-        };
-    });
+    std::transform(
+        options.cbegin(),
+        options.cend(),
+        std::back_inserter(m_options),
+        [emojis](const QJsonValue &value) -> auto{
+            const auto option = value.toObject();
+            QString title = option[QStringLiteral("title")].toString();
+            for (const auto &emoji : emojis) {
+                const auto emojiObj = emoji.toObject();
+                title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+            }
+            return QVariantMap{{"title", title}, {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)}};
+        });
     qDebug() << m_options;
 }
 

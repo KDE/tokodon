@@ -3,14 +3,14 @@
 
 #include <QtTest/QtTest>
 
-#include "mockaccount.h"
-#include "post.h"
-#include "poll.h"
+#include "helperreply.h"
 #include "maintimelinemodel.h"
+#include "mockaccount.h"
+#include "poll.h"
+#include "post.h"
 #include "tagsmodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
-#include "helperreply.h"
 
 class TimelineTest : public QObject
 {
@@ -46,7 +46,7 @@ private Q_SLOTS:
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply("statuses.json", account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
-            { "max_id", "103270115826038975" },
+            {"max_id", "103270115826038975"},
         });
         account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
 
@@ -78,7 +78,8 @@ private Q_SLOTS:
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), Qt::DisplayRole).value<QString>(), "<p>LOREM</p>");
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).value<QString>(), QStringLiteral("Gargron"));
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).value<QString>(), QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).value<QString>(),
+                 QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::WasRebloggedRole).value<bool>(), false);
 
         const auto poll = timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::PollRole).value<Poll>();
@@ -109,7 +110,6 @@ private Q_SLOTS:
         QCOMPARE(arguments[1].value<QModelIndex>().row(), 0);
         QCOMPARE(arguments[2].value<QVector<int>>().count(), 1);
         QCOMPARE(arguments[2].value<QVector<int>>()[0], AbstractTimelineModel::PollRole);
-
     }
 };
 

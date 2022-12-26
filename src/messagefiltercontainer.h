@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2019 Harald Sitter <sitter@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include <QString>
 #include <QHash>
-#include <QtMessageHandler>
 #include <QReadWriteLock>
+#include <QString>
+#include <QtMessageHandler>
 
 struct QMessageFilterContainer {
     QMessageFilterContainer();

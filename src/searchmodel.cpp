@@ -5,9 +5,9 @@
 #include "abstractaccount.h"
 #include "account.h"
 #include "accountmodel.h"
-#include <QUrlQuery>
-#include <QNetworkReply>
 #include <KLocalizedString>
+#include <QNetworkReply>
+#include <QUrlQuery>
 #include <algorithm>
 
 SearchModel::SearchModel(QObject *parent)
@@ -38,9 +38,7 @@ SearchModel::~SearchModel() = default;
 void SearchModel::search(const QString &queryString)
 {
     auto url = m_account->apiUrl("/api/v2/search");
-    url.setQuery({
-        { "q", queryString }
-    });
+    url.setQuery({{"q", queryString}});
     m_account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -48,18 +46,23 @@ void SearchModel::search(const QString &queryString)
         beginResetModel();
         clear();
 
-        std::transform(statuses.cbegin(), statuses.cend(), std::back_inserter(m_statuses), [this](const QJsonValue &value) -> auto {
-            return new Post(m_account, value.toObject(), this);
-        });
+        std::transform(
+            statuses.cbegin(),
+            statuses.cend(),
+            std::back_inserter(m_statuses),
+            [this](const QJsonValue &value) -> auto{ return new Post(m_account, value.toObject(), this); });
         const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
-        std::transform(accounts.cbegin(), accounts.cend(), std::back_inserter(m_accounts), [this](const QJsonValue &value) -> auto {
-            const auto account = value.toObject();
-            return m_account->identityLookup(account["acct"].toString(), account);
-        });
+        std::transform(
+            accounts.cbegin(),
+            accounts.cend(),
+            std::back_inserter(m_accounts),
+            [this](const QJsonValue &value) -> auto{
+                const auto account = value.toObject();
+                return m_account->identityLookup(account["acct"].toString(), account);
+            });
         endResetModel();
     });
 }
-
 
 int SearchModel::rowCount(const QModelIndex &parent) const
 {
@@ -81,7 +84,6 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
         const auto post = m_statuses[row - m_accounts.count()];
         return postData(post, role);
     }
-
 
     const auto identity = m_accounts[row];
     switch (role) {

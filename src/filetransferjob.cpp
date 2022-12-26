@@ -27,15 +27,13 @@ void FileTransferJob::start()
 
         setTotalAmount(Unit::Files, 1);
         if (!m_temporaryFile->isReadable() && !m_temporaryFile->open(QIODevice::WriteOnly)) {
-            qCWarning(TOKODON_HTTP) << "Couldn't open the temporary file"
-                            << m_temporaryFile->fileName() << "for writing" << m_temporaryFile->errorString();
+            qCWarning(TOKODON_HTTP) << "Couldn't open the temporary file" << m_temporaryFile->fileName() << "for writing" << m_temporaryFile->errorString();
             setError(FileError);
             setErrorText("Could not open the temporary download file");
             emitResult();
             return;
         }
-        connect(reply, &QNetworkReply::downloadProgress, this, [this](qint64 bytesReceived, qint64 bytesTotal)
-        {
+        connect(reply, &QNetworkReply::downloadProgress, this, [this](qint64 bytesReceived, qint64 bytesTotal) {
             if (bytesTotal != -1) {
                 setTotalAmount(Unit::Bytes, bytesTotal);
             }
@@ -61,8 +59,7 @@ void FileTransferJob::start()
             if (!bytes.isEmpty()) {
                 m_temporaryFile->write(bytes);
             } else {
-                qCWarning(TOKODON_HTTP) << "Unexpected empty chunk when downloading from"
-                                << reply->url() << "to" << m_temporaryFile->fileName();
+                qCWarning(TOKODON_HTTP) << "Unexpected empty chunk when downloading from" << reply->url() << "to" << m_temporaryFile->fileName();
             }
         });
 
@@ -72,8 +69,7 @@ void FileTransferJob::start()
                 auto targetSize = sizeHeader.toLongLong();
                 if (targetSize != -1) {
                     if (!m_temporaryFile->resize(targetSize)) {
-                        qCWarning(TOKODON_HTTP) << "Failed to allocate" << targetSize
-                                        << "bytes for" << m_temporaryFile->fileName();
+                        qCWarning(TOKODON_HTTP) << "Failed to allocate" << targetSize << "bytes for" << m_temporaryFile->fileName();
                         setError(FileError);
                         setErrorText("Could not reserve disk space for download");
                         Q_EMIT emitResult();

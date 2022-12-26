@@ -111,21 +111,20 @@ void Identity::fromSourceData(const QJsonObject &doc)
     QJsonObject source = doc["source"].toObject();
     m_visibility = source["privacy"].toString();
 
-
     if (m_account == m_parent->identity().m_account) {
         m_parent->setDirtyIdentity();
     }
 
-    m_displayNameHtml = m_displayName
-        .replace(QLatin1Char('<'), QStringLiteral("&lt;"))
-        .replace(QLatin1Char('>'), QStringLiteral("&gt;"));
+    m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
     const auto emojis = doc["emojis"].toArray();
 
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
-        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
-        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" width=\"16\" align=\"middle\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                              "<img height=\"16\" width=\"16\" align=\"middle\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
     Q_EMIT identityUpdated();

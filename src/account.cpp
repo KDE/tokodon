@@ -168,8 +168,8 @@ static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEvent
     {"announcement", AbstractAccount::StreamingEventType::AnnouncementEvent},
     {"announcement.reaction", AbstractAccount::StreamingEventType::AnnouncementRedactedEvent},
     {"announcement.delete", AbstractAccount::StreamingEventType::AnnouncementDeletedEvent},
-    {"status.update", AbstractAccount::StreamingEventType::StatusUpdatedEvent },
-    {"encrypted_message", AbstractAccount::StreamingEventType::EncryptedMessageChangedEvent },
+    {"status.update", AbstractAccount::StreamingEventType::StatusUpdatedEvent},
+    {"encrypted_message", AbstractAccount::StreamingEventType::EncryptedMessageChangedEvent},
 };
 
 QWebSocket *Account::streamingSocket(const QString &stream)

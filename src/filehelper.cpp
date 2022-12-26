@@ -10,7 +10,8 @@
 
 FileHelper::FileHelper(QObject *parent)
     : QObject(parent)
-{}
+{
+}
 
 FileHelper::~FileHelper() = default;
 

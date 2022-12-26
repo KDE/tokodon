@@ -3,9 +3,9 @@
 
 #include "conversationmodel.h"
 
+#include "abstractaccount.h"
 #include "accountmanager.h"
 #include "identity.h"
-#include "abstractaccount.h"
 #include <KLocalizedString>
 #include <QTextDocumentFragment>
 #include <algorithm>
@@ -80,10 +80,14 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
             const auto obj = conversation.toObject();
             const auto accountsArray = obj["accounts"].toArray();
             QList<std::shared_ptr<Identity>> accounts;
-            std::transform(accountsArray.cbegin(), accountsArray.cend(), std::back_inserter(accounts), [account](const QJsonValue &value) -> auto {
-                const auto accountObj = value.toObject();
-                return account->identityLookup(accountObj["acct"].toString(), accountObj);
-            });
+            std::transform(
+                accountsArray.cbegin(),
+                accountsArray.cend(),
+                std::back_inserter(accounts),
+                [account](const QJsonValue &value) -> auto{
+                    const auto accountObj = value.toObject();
+                    return account->identityLookup(accountObj["acct"].toString(), accountObj);
+                });
             m_conversations.append(Conversation{
                 accounts,
                 new Post(account, obj["last_status"].toObject(), this),

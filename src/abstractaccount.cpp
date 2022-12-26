@@ -137,9 +137,7 @@ bool AbstractAccount::identityCached(const QString &acct) const
 
 QUrlQuery AbstractAccount::buildOAuthQuery() const
 {
-    return QUrlQuery {
-        { "client_id", m_client_id }
-    };
+    return QUrlQuery{{"client_id", m_client_id}};
 }
 
 QUrl AbstractAccount::getAuthorizeUrl() const

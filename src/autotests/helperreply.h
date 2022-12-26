@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <QNetworkReply>
 #include <QFile>
+#include <QNetworkReply>
 
 class TestReply : public QNetworkReply
 {
@@ -19,13 +19,14 @@ public:
         apiResult.open(QIODevice::ReadOnly);
     }
 
-    virtual qint64 readData(char *data, qint64 maxSize) override {
+    virtual qint64 readData(char *data, qint64 maxSize) override
+    {
         return apiResult.read(data, maxSize);
     }
 
-    virtual void abort() override {
+    virtual void abort() override
+    {
     }
 
     QFile apiResult;
 };
-

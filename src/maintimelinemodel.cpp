@@ -37,7 +37,6 @@ QString MainTimelineModel::displayName() const
     return {};
 }
 
-
 void MainTimelineModel::setName(const QString &timelineName)
 {
     if (timelineName == m_timelineName) {
@@ -47,7 +46,6 @@ void MainTimelineModel::setName(const QString &timelineName)
     m_timelineName = timelineName;
     Q_EMIT nameChanged();
 }
-
 
 void MainTimelineModel::fillTimeline(const QString &from_id)
 {
@@ -62,8 +60,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
     if (m_timelineName == "home" && !m_hasSetupStreaming) {
         m_hasSetupStreaming = true;
         connect(m_account, &AbstractAccount::streamingEvent, this, [this](AbstractAccount::StreamingEventType eventType, const QByteArray &payload) {
-            if (eventType == AbstractAccount::StreamingEventType::UpdateEvent
-                && m_timelineName == "home") {
+            if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == "home") {
                 const auto doc = QJsonDocument::fromJson(payload);
                 const auto post = new Post(m_account, doc.object(), this);
                 m_timeline.push_front(post);
@@ -76,7 +73,6 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
     }
     m_loading = true;
     Q_EMIT loadingChanged();
-
 
     QString timelineName = m_timelineName;
     const bool local = timelineName == "public";

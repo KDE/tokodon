@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include <QJsonObject>
 #include <QDateTime>
+#include <QJsonObject>
 
 class Poll
 {

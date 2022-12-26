@@ -191,9 +191,9 @@ public:
         ConversationEvent, ///< A direct conversation has been updated.
         AnnouncementEvent, //< An announcement has been published.
         AnnouncementRedactedEvent, //< An announcement has received an emoji reaction.
-        AnnouncementDeletedEvent, //< An announcement has been deleted. 
+        AnnouncementDeletedEvent, //< An announcement has been deleted.
         StatusUpdatedEvent, ///< A Status has been edited.
-        EncryptedMessageChangedEvent, ///< An encrypted message has been received. 
+        EncryptedMessageChangedEvent, ///< An encrypted message has been received.
     };
 
 Q_SIGNALS:

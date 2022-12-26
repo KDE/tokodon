@@ -7,7 +7,6 @@
 #include <KLocalizedString>
 #include <QCoreApplication>
 #include <QUrlQuery>
-#include <qnetworkreply.h>
 
 AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
     : TimelineModel(parent)
@@ -22,7 +21,7 @@ AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
         QUrl uriAccount(m_account->instanceUri());
         uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
 
-        AccountManager::instance().selectedAccount()->get(uriAccount, true, this, [this,  acct](QNetworkReply *reply) {
+        AccountManager::instance().selectedAccount()->get(uriAccount, true, this, [this, acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 

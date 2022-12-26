@@ -8,8 +8,8 @@
 #include <qurl.h>
 
 #include "account.h"
-#include "post.h"
 #include "poll.h"
+#include "post.h"
 
 static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"image", Attachment::AttachmentType::Image},
@@ -103,7 +103,8 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
-        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'), "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
     const auto tags = obj["tags"].toArray();
@@ -111,7 +112,9 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
     for (const auto &tag : tags) {
         const auto tagObj = tag.toObject();
-        m_content = m_content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(), QStringLiteral("hashtag:/") + tagObj["name"].toString(), Qt::CaseInsensitive);
+        m_content = m_content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(),
+                                      QStringLiteral("hashtag:/") + tagObj["name"].toString(),
+                                      Qt::CaseInsensitive);
     }
 
     m_post_id = m_replyTargetId = obj["id"].toString();

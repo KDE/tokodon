@@ -6,14 +6,13 @@
 #include "abstractaccount.h"
 #include "accountmodel.h"
 #include "identity.h"
-#include "threadmodel.h"
 #include "poll.h"
+#include "threadmodel.h"
 #include <KLocalizedString>
-#include <QtMath>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QtMath>
 #include <algorithm>
-
 
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
@@ -57,7 +56,6 @@ void TimelineModel::init()
 
     fillTimeline();
 }
-
 
 void TimelineModel::fetchedTimeline(const QByteArray &data)
 {
@@ -199,9 +197,11 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
 
     QJsonObject obj;
     QJsonArray array;
-    std::transform(choices.cbegin(), choices.cend(), std::back_inserter(array), [](int choice) -> auto {
-            return choice;
-    });
+    std::transform(
+        choices.cbegin(),
+        choices.cend(),
+        std::back_inserter(array),
+        [](int choice) -> auto{ return choice; });
     obj["choices"] = array;
     QJsonDocument doc(obj);
     const auto id = poll->id();

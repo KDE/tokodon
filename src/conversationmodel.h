@@ -9,8 +9,7 @@
 class Identity;
 class Post;
 
-struct Conversation
-{
+struct Conversation {
     QList<std::shared_ptr<Identity>> accounts;
     Post *lastPost;
     bool unread;

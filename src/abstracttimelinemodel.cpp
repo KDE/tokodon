@@ -3,10 +3,10 @@
 
 #include "abstracttimelinemodel.h"
 #include "account.h"
+#include "accountmodel.h"
 #include "identity.h"
 #include "poll.h"
 #include "threadmodel.h"
-#include "accountmodel.h"
 #include <KLocalizedString>
 #include <QtMath>
 
