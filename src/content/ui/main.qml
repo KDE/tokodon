@@ -145,7 +145,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action conversationAction: Kirigami.Action {
-        iconName: "chat-reply"
+        iconName: "tokodon-chat-reply"
         text: i18n("Conversation")
         checkable: true
         onTriggered: {
