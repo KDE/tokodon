@@ -10,6 +10,7 @@
 #include "post.h"
 #include "tagsmodel.h"
 #include "threadmodel.h"
+#include <KLocalizedString>
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 
@@ -22,20 +23,64 @@ private Q_SLOTS:
     {
     }
 
-    void testModel()
+    void testMainDisplayName()
+    {
+        KLocalizedString::setApplicationDomain("tokodon");
+        KLocalizedString::setLanguages(QStringList{"C"});
+        auto account = new MockAccount();
+        AccountManager::instance().addAccount(account);
+        AccountManager::instance().selectAccount(account);
+        account->setUsername("test");
+
+        MainTimelineModel timelineModel;
+        timelineModel.setName("public");
+        QCOMPARE(timelineModel.displayName(), "Local Timeline");
+        timelineModel.setName("federated");
+        QCOMPARE(timelineModel.displayName(), "Global Timeline");
+        timelineModel.setName("home");
+        QCOMPARE(timelineModel.displayName(), "Home");
+
+        auto account2 = new MockAccount();
+        AccountManager::instance().addAccount(account2);
+        QCOMPARE(timelineModel.displayName(), "Home (test)");
+    }
+
+    void testStreamUpdate()
     {
         auto account = new MockAccount();
         AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account);
 
-        MainTimelineModel timelineModel;
-        timelineModel.setName("home");
-
         QFile statusExampleApi;
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
         statusExampleApi.open(QIODevice::ReadOnly);
+
+        MainTimelineModel timelineModel;
+        QCOMPARE(timelineModel.rowCount({}), 0);
+
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 1);
+    }
+
+    void testFillTimelineMain()
+    {
+        auto account = new MockAccount();
+        AccountManager::instance().addAccount(account);
+        AccountManager::instance().selectAccount(account);
+
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
+        auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/home"));
+        fetchMoreUrl.setQuery(QUrlQuery{
+            {"max_id", "103270115826038975"},
+        });
+        account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
+
+        MainTimelineModel timelineModel;
+
+        QCOMPARE(timelineModel.rowCount({}), 2);
+        QVERIFY(timelineModel.canFetchMore({}));
+        timelineModel.fetchMore({});
+        QCOMPARE(timelineModel.rowCount({}), 4);
     }
 
     void testTagModel()

@@ -60,5 +60,5 @@ Q_SIGNALS:
 
 protected:
     AbstractAccount *m_account = nullptr;
-    bool m_loading = true;
+    bool m_loading = false;
 };
