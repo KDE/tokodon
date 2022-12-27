@@ -62,7 +62,6 @@ void MockAccount::put(const QUrl &url, const QJsonDocument &doc, bool authentica
     Q_UNUSED(doc)
 }
 
-
 void MockAccount::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
     Q_UNUSED(url)

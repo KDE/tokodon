@@ -9,9 +9,9 @@
 #include "relationship.h"
 #include "tokodon_debug.h"
 #include <KLocalizedString>
-#include <QNetworkReply>
-#include <QHttpMultiPart>
 #include <QFile>
+#include <QHttpMultiPart>
+#include <QNetworkReply>
 #include <QUrlQuery>
 
 AbstractAccount::AbstractAccount(QObject *parent, const QString &name, const QString &instanceUri)

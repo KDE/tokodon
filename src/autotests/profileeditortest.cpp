@@ -3,10 +3,10 @@
 
 #include <QtTest/QtTest>
 
-#include "profileeditor.h"
-#include "mockaccount.h"
 #include "accountmanager.h"
 #include "helperreply.h"
+#include "mockaccount.h"
+#include "profileeditor.h"
 
 class ProfileEditorTest : public QObject
 {
@@ -34,14 +34,17 @@ private Q_SLOTS:
         backend.setAccount(account);
         QCOMPARE(backend.account(), account);
         QCOMPARE(backend.displayName(), "infinite love ⴳ");
-        QCOMPARE(backend.note(), "i have approximate knowledge of many things. perpetual student. (nb/ace/they)\r\n\r\nxmpp/email: a@trwnh.com\r\nhttps://trwnh.com\r\nhelp me live: https://liberapay.com/at or https://paypal.me/trwnh\r\n\r\n- my triggers are moths and glitter\r\n- i have all notifs except mentions turned off, so please interact if you wanna be friends! i literally will not notice otherwise\r\n- dm me if i did something wrong, so i can improve\r\n- purest person on fedi, do not lewd in my presence\r\n- #1 ami cole fan account\r\n\r\n:fatyoshi:");
+        QCOMPARE(backend.note(),
+                 "i have approximate knowledge of many things. perpetual student. (nb/ace/they)\r\n\r\nxmpp/email: a@trwnh.com\r\nhttps://trwnh.com\r\nhelp me "
+                 "live: https://liberapay.com/at or https://paypal.me/trwnh\r\n\r\n- my triggers are moths and glitter\r\n- i have all notifs except mentions "
+                 "turned off, so please interact if you wanna be friends! i literally will not notice otherwise\r\n- dm me if i did something wrong, so i can "
+                 "improve\r\n- purest person on fedi, do not lewd in my presence\r\n- #1 ami cole fan account\r\n\r\n:fatyoshi:");
         QCOMPARE(backend.privacy(), "public");
         QCOMPARE(backend.sensitive(), false);
         QCOMPARE(backend.language(), "fr");
         QCOMPARE(backend.bot(), false);
         QCOMPARE(backend.avatarUrl(), QUrl("https://files.mastodon.social/accounts/avatars/000/014/715/original/34aa222f4ae2e0a9.png"));
         QCOMPARE(backend.backgroundUrl(), QUrl("https://files.mastodon.social/accounts/headers/000/014/715/original/5c6fc24edb3bb873.jpg"));
-
     }
 
     void setDataTest()

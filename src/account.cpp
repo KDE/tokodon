@@ -100,7 +100,6 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
     handleReply(reply, reply_cb);
 }
 
-
 void Account::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
 {
     QNetworkRequest request = makeRequest(url, authenticated);

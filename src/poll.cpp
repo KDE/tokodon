@@ -28,21 +28,19 @@ Poll::Poll(const QJsonObject &json)
     const auto emojis = json[QStringLiteral("emojis")].toArray();
 
     const auto options = json[QStringLiteral("options")].toArray();
-    std::transform(
-        options.cbegin(),
-        options.cend(),
-        std::back_inserter(m_options),
-        [emojis](const QJsonValue &value) -> auto{
-            const auto option = value.toObject();
-            QString title = option[QStringLiteral("title")].toString();
-            for (const auto &emoji : emojis) {
-                const auto emojiObj = emoji.toObject();
-                title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
-            }
-            return QVariantMap{{"title", title}, {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)}};
-        });
-    qDebug() << m_options;
+    std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> QVariantMap {
+        const auto option = value.toObject();
+        QString title = option[QStringLiteral("title")].toString();
+        for (const auto &emoji : emojis) {
+            const auto emojiObj = emoji.toObject();
+            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        }
+        return {
+            {"title", title},
+            {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)},
+        };
+    });
 }
 
 QString Poll::id() const

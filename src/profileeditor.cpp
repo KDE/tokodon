@@ -3,11 +3,11 @@
 
 #include "profileeditor.h"
 #include "abstractaccount.h"
+#include <KLocalizedString>
 #include <QFile>
 #include <QFileInfo>
-#include <QMimeDatabase>
 #include <QHttpMultiPart>
-#include <KLocalizedString>
+#include <QMimeDatabase>
 
 ProfileEditorBackend::ProfileEditorBackend(QObject *parent)
     : QObject(parent)
@@ -164,10 +164,10 @@ QUrl ProfileEditorBackend::backgroundUrl() const
     return m_backgroundUrl;
 }
 
-namespace {
+namespace
+{
 
-auto operator""_MiB( unsigned long long const x )
-    -> long
+auto operator""_MiB(unsigned long long const x) -> long
 {
     return 1024L * 1024L * x;
 }
@@ -297,7 +297,7 @@ void ProfileEditorBackend::save()
         }
     } else if (backgroundUrl().isEmpty()) {
         QHttpPart headerPart;
-       headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"header\""));
+        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"header\""));
         multiPart->append(headerPart);
     }
 
@@ -314,7 +314,7 @@ void ProfileEditorBackend::save()
         }
     } else if (avatarUrl().isEmpty()) {
         QHttpPart headerPart;
-       headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"avatar\""));
+        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"avatar\""));
         multiPart->append(headerPart);
     }
 

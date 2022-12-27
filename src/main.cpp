@@ -44,10 +44,10 @@
 #include "notificationmodel.h"
 #include "poll.h"
 #include "post.h"
+#include "profileeditor.h"
 #include "searchmodel.h"
 #include "tagsmodel.h"
 #include "timelinemodel.h"
-#include "profileeditor.h"
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
