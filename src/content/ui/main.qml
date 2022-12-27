@@ -198,7 +198,7 @@ Kirigami.ApplicationWindow {
         parent: overlay.parent 
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
-        visible: !Kirigami.Settings.isMobile
+        visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:")
 
         z: 999990
         x: 0
