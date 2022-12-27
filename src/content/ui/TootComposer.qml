@@ -165,7 +165,7 @@ MastoPage {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
                             checkable: true
-                            QQC2.ToolTip.text  i18n("Add Poll")
+                            QQC2.ToolTip.text: i18n("Add Poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                             enabled: false
