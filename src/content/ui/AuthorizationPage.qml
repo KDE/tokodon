@@ -39,7 +39,7 @@ MastoPage {
                         readOnly: true
                         selectByMouse: true
                         text: i18n("To continue, please open the following link and authorize Tokodon: %1", "<br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
-                        wrapMode: Text.WordWrap
+                        wrapMode: Text.Wrap
                         onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
                         Layout.fillWidth: true
                         TapHandler {
