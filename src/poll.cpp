@@ -7,9 +7,7 @@
 #include <algorithm>
 #include <qstringliteral.h>
 
-Poll::Poll()
-{
-}
+Poll::Poll() = default;
 
 Poll::Poll(const QJsonObject &json)
 {
@@ -17,7 +15,7 @@ Poll::Poll(const QJsonObject &json)
     m_expiresAt = QDateTime::fromString(json[QStringLiteral("expires_at")].toString(), Qt::ISODate);
     m_expired = json[QStringLiteral("expired")].toBool();
     m_multiple = json[QStringLiteral("multiple")].toBool();
-    m_votesCount = json[QStringLiteral("votes_count")].toInt();
+    m_votesCount = json[QStringLiteral("votes_count")].toInt(-1);
     m_votersCount = json[QStringLiteral("voters_count")].toInt(-1);
     m_voted = json[QStringLiteral("voted")].toBool();
     const auto ownVotes = json[QStringLiteral("own_votes")].toArray();

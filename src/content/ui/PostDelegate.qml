@@ -421,10 +421,17 @@ a{
                 model: poll !== undefined && poll.voted ? poll.options : []
                 ColumnLayout {
                     RowLayout {
+                        spacing: poll.votesCount !== 0 ? Kirigami.Units.largeSpacing : 0
                         QQC2.Label {
-                            text: modelData.votesCount !== -1 ? i18nc("Votes percentage", "%1%", modelData.votesCount / poll.votesCount * 100) : ''
+                            text: if (modelData.votesCount === -1) {
+                                return ''
+                            } else if (poll.votesCount === 0) {
+                                return ''
+                            } else {
+                                return i18nc("Votes percentage", "%1%", modelData.votesCount / poll.votesCount * 100)
+                            }
                             Layout.alignment: Qt.AlignVCenter
-                            Layout.minimumWidth: Kirigami.Units.gridUnit * 2
+                            Layout.minimumWidth: poll.votesCount !== 0 ? Kirigami.Units.gridUnit * 2 : 0
                         }
 
                         QQC2.Label {
@@ -434,13 +441,20 @@ a{
                         }
                     }
 
-                    QQC2.ProgressBar {
-                        from: 0
-                        to: 100
-                        value: modelData.votesCount / poll.votesCount * 100
-                        Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                        Layout.alignment: Qt.AlignVCenter
+                    RowLayout {
+                        QQC2.ProgressBar {
+                            from: 0
+                            to: 100
+                            value: modelData.votesCount / poll.votesCount * 100
+                            Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+                            Layout.alignment: Qt.AlignVCenter
+                        }
+
+                        QQC2.Label {
+                            text: i18n("(No votes)")
+                            visible: poll.votesCount === 0
+                        }
                     }
                 }
             }

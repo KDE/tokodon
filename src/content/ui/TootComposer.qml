@@ -157,17 +157,18 @@ MastoPage {
                                 title: i18n("Please choose a file")
                                 onAccepted: postObject.uploadAttachment(fileDialog.fileUrl);
                             }
-                            QQC2.ToolTip {
-                                text: i18n("Attach File")
-                            }
+                            QQC2.ToolTip.text: i18n("Attach File")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
                         }
                         QQC2.ToolButton {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
                             checkable: true
-                            QQC2.ToolTip {
-                                text: i18n("Add Poll")
-                            }
+                            QQC2.ToolTip.text  i18n("Add Poll")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
+                            enabled: false
                         }
                         QQC2.ToolButton {
                             icon.name: {
