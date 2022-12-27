@@ -236,6 +236,8 @@ void ProfileEditorBackend::fetchAccountInfo()
         setBot(obj["bot"].toBool());
         setBackgroundUrl(obj["header_static"].toString());
         setAvatarUrl(obj["avatar_static"].toString());
+        setLocked(obj["locked"].toBool());
+        setDiscoverable(obj["discoverable"].toBool());
     });
 }
 
@@ -317,10 +319,8 @@ void ProfileEditorBackend::save()
     }
 
     m_account->patch(url, multiPart, true, this, [=](QNetworkReply *reply) {
-        qDebug() << "account detail saved" << reply << reply->readAll();
         multiPart->setParent(reply);
-        Q_EMIT m_account->sendNotification(i18n("Account details saved"));
-
+        Q_EMIT sendNotification(i18n("Account details saved"));
         fetchAccountInfo();
     });
 }

@@ -497,8 +497,3 @@ void AbstractAccount::updateAttachment(Attachment *a)
     const QJsonDocument doc(obj);
     put(attachementUrl, doc, true, this, nullptr);
 }
-
-
-void AbstractAccount::saveAccount()
-{
-}

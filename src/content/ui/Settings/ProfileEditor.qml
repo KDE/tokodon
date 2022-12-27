@@ -17,6 +17,7 @@ Kirigami.ScrollablePage {
 
     readonly property ProfileEditorBackend backend : ProfileEditorBackend {
         account: root.account
+        onSendNotification: applicationWindow().showPassiveNotification(message)
     }
 
     title: i18n("Profile Editor")

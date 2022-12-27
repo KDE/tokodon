@@ -41,6 +41,23 @@ private Q_SLOTS:
         QCOMPARE(backend.bot(), false);
         QCOMPARE(backend.avatarUrl(), QUrl("https://files.mastodon.social/accounts/avatars/000/014/715/original/34aa222f4ae2e0a9.png"));
         QCOMPARE(backend.backgroundUrl(), QUrl("https://files.mastodon.social/accounts/headers/000/014/715/original/5c6fc24edb3bb873.jpg"));
+
+    }
+
+    void setDataTest()
+    {
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/accounts/verify_credentials")), new TestReply("verify_credentials.json", account));
+        ProfileEditorBackend backend;
+        account->setUsername("trwnh");
+        backend.setAccount(account);
+        backend.setDisplayName("Hello");
+        backend.setAvatarUrl(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")));
+        backend.setBackgroundUrl(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")));
+        QCOMPARE("Hello", backend.displayName());
+        QCOMPARE(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")), backend.avatarUrl());
+        QCOMPARE(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")), backend.backgroundUrl());
+        QCOMPARE(QString(), backend.backgroundUrlError());
+        QCOMPARE(QString(), backend.avatarUrlError());
     }
 
 private:

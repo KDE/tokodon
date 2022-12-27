@@ -104,6 +104,7 @@ Q_SIGNALS:
     void backgroundUrlChanged();
     void discoverableChanged();
     void lockedChanged();
+    void sendNotification(const QString &message, const QString &type = QStringLiteral("info"));
 
 private:
     AbstractAccount *m_account = nullptr;

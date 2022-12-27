@@ -131,8 +131,6 @@ public:
     /// Read account from settings
     virtual void buildFromSettings(const QSettings &settings) = 0;
 
-    Q_INVOKABLE void saveAccount();
-
     /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
     /// @param Identity identity The account to follow
     /// @param bool reblogs Receive this account's reblogs in home timeline? Defaults to true.
