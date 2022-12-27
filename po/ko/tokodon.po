@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:49+0000\n"
+"POT-Creation-Date: 2022-12-27 00:48+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -20,68 +20,68 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: abstractaccount.cpp:412
+#: abstractaccount.cpp:400
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: abstractaccount.cpp:413
+#: abstractaccount.cpp:401
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: abstractaccount.cpp:414
+#: abstractaccount.cpp:402
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: abstractaccount.cpp:415
+#: abstractaccount.cpp:403
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: abstractaccount.cpp:416
+#: abstractaccount.cpp:404
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: abstractaccount.cpp:417
+#: abstractaccount.cpp:405
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: abstractaccount.cpp:418
+#: abstractaccount.cpp:406
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: abstractaccount.cpp:419
+#: abstractaccount.cpp:407
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: abstractaccount.cpp:420
+#: abstractaccount.cpp:408
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
 
-#: abstracttimelinemodel.cpp:121
+#: abstracttimelinemodel.cpp:131
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:125
+#: abstracttimelinemodel.cpp:135
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: abstracttimelinemodel.cpp:127
+#: abstracttimelinemodel.cpp:137
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: accountmodel.cpp:52 timelinemodel.cpp:39
+#: accountmodel.cpp:51 maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr "불러오는 중"
@@ -227,6 +227,11 @@ msgstr "계속"
 msgid "Please insert the generated token."
 msgstr "생성된 토큰을 입력하십시오."
 
+#: content/ui/ConversationPage.qml:11
+#, kde-format
+msgid "Conversations"
+msgstr ""
+
 #: content/ui/FollowDelegate.qml:42 content/ui/FollowDelegate.qml:79
 #: notificationhandler.cpp:27
 #, kde-format
@@ -323,7 +328,14 @@ msgstr "로컬"
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:57
+#: content/ui/main.qml:149
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Conversation"
+msgstr "멘션"
+
+#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:58
 #, kde-format
 msgid "Toot"
 msgstr "툿"
@@ -340,43 +352,43 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "멘션"
 
-#: content/ui/NotificationPage.qml:99 content/ui/TimelinePage.qml:91
+#: content/ui/NotificationPage.qml:99 content/ui/TimelinePage.qml:92
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
 msgstr "불러오는 중"
 
-#: content/ui/PostDelegate.qml:67 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/PostDelegate.qml:85
+#: content/ui/PostDelegate.qml:90
 #, kde-format
 msgid "Pinned entry"
 msgstr "고정된 항목"
 
-#: content/ui/PostDelegate.qml:105
+#: content/ui/PostDelegate.qml:110
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 님이 부스트함"
 
-#: content/ui/PostDelegate.qml:105 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:110 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
 
-#: content/ui/PostDelegate.qml:168
+#: content/ui/PostDelegate.qml:173
 #, kde-format
 msgid "Show more"
 msgstr "더 보기"
 
-#: content/ui/PostDelegate.qml:289
+#: content/ui/PostDelegate.qml:302
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:411
+#: content/ui/PostDelegate.qml:424
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -384,30 +396,30 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:461
+#: content/ui/PostDelegate.qml:474
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:486
+#: content/ui/PostDelegate.qml:499
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:499
+#: content/ui/PostDelegate.qml:512
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/PostDelegate.qml:509
+#: content/ui/PostDelegate.qml:522
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate.qml:519
+#: content/ui/PostDelegate.qml:532
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -423,7 +435,7 @@ msgstr "계정"
 msgid "Logout"
 msgstr "로그아웃"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:59
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:60
 #, kde-format
 msgid "Add Account"
 msgstr "계정 추가"
@@ -610,7 +622,7 @@ msgstr "단어 추가"
 msgid "Delete word"
 msgstr "단어 삭제"
 
-#: content/ui/TimelinePage.qml:69
+#: content/ui/TimelinePage.qml:70
 #, kde-format
 msgid "Refresh"
 msgstr ""
@@ -691,47 +703,63 @@ msgstr "경고"
 msgid "Send"
 msgstr "뿌우!"
 
-#: content/ui/UserInfo.qml:62
+#: content/ui/UserInfo.qml:63
 #, kde-format
 msgid "Log in to an existing account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:188
+#: content/ui/UserInfo.qml:190
 #, kde-format
 msgid "Switch User"
 msgstr ""
 
-#: content/ui/UserInfo.qml:200
+#: content/ui/UserInfo.qml:202
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: content/ui/UserInfo.qml:211
+#: content/ui/UserInfo.qml:213
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/UserInfo.qml:212
+#: content/ui/UserInfo.qml:214
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
 msgid "Open Settings"
 msgstr "설정"
 
-#: filetransferjob.cpp:86
+#: conversationmodel.cpp:60
+#, kde-format
+msgid "Empty conversation"
+msgstr ""
+
+#: conversationmodel.cpp:64
+#, kde-format
+msgid "%1 and %2"
+msgstr ""
+
+#: conversationmodel.cpp:66
+#, kde-format
+msgid "%2 and one other"
+msgid_plural "%2 and %1 others"
+msgstr[0] ""
+
+#: filetransferjob.cpp:82
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "불러오는 중"
 
-#: filetransferjob.cpp:87
+#: filetransferjob.cpp:83
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr ""
 
-#: filetransferjob.cpp:88
+#: filetransferjob.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -739,97 +767,97 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "멘션"
 
-#: main.cpp:86
+#: main.cpp:89
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:88
+#: main.cpp:91
 #, kde-format
 msgid "Mastodon client"
 msgstr "마스토돈 클라이언트"
 
-#: main.cpp:90
+#: main.cpp:93
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Community"
 
-#: main.cpp:91
+#: main.cpp:94
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:91
+#: main.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:92
+#: main.cpp:95
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:92
+#: main.cpp:95
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:132
+#: main.cpp:137
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
+
+#: maintimelinemodel.cpp:28
+#, kde-format
+msgctxt "@title"
+msgid "Home (%1)"
+msgstr "홈(%1)"
+
+#: maintimelinemodel.cpp:30
+#, kde-format
+msgctxt "@title"
+msgid "Home"
+msgstr "홈"
+
+#: maintimelinemodel.cpp:33
+#, kde-format
+msgctxt "@title"
+msgid "Local Timeline"
+msgstr "로컬 타임라인"
+
+#: maintimelinemodel.cpp:35
+#, kde-format
+msgctxt "@title"
+msgid "Global Timeline"
+msgstr "연합 타임라인"
 
 #: notificationmodel.cpp:103
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: searchmodel.cpp:112
+#: searchmodel.cpp:114
 #, kde-format
 msgid "People"
 msgstr ""
 
-#: searchmodel.cpp:114
+#: searchmodel.cpp:116
 #, kde-format
 msgid "Hashtags"
 msgstr ""
 
-#: searchmodel.cpp:116
+#: searchmodel.cpp:118
 #, kde-format
 msgid "Post"
 msgstr ""
 
-#: threadmodel.cpp:19
+#: threadmodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "스레드"
-
-#: timelinemodel.cpp:41
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "홈(%1)"
-
-#: timelinemodel.cpp:43
-#, kde-format
-msgctxt "@title"
-msgid "Home"
-msgstr "홈"
-
-#: timelinemodel.cpp:46
-#, kde-format
-msgctxt "@title"
-msgid "Local Timeline"
-msgstr "로컬 타임라인"
-
-#: timelinemodel.cpp:48
-#, kde-format
-msgctxt "@title"
-msgid "Global Timeline"
-msgstr "연합 타임라인"
 
 #~ msgid "Image View"
 #~ msgstr "그림 보기"
