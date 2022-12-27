@@ -49,6 +49,7 @@ set(tokodon_src
     conversationmodel.cpp
     tagsmodel.cpp
     maintimelinemodel.cpp
+    profileeditor.cpp
     ${debug_files_SRCS}
 )
 

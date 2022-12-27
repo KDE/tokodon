@@ -21,15 +21,20 @@ class TimelineTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        account = new MockAccount();
+        AccountManager::instance().addAccount(account);
+        AccountManager::instance().selectAccount(account);
+    }
+
+    void cleanupTestCase()
+    {
+        AccountManager::instance().removeAccount(account);
     }
 
     void testMainDisplayName()
     {
         KLocalizedString::setApplicationDomain("tokodon");
         KLocalizedString::setLanguages(QStringList{"C"});
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
         account->setUsername("test");
 
         MainTimelineModel timelineModel;
@@ -47,10 +52,6 @@ private Q_SLOTS:
 
     void testStreamUpdate()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
-
         QFile statusExampleApi;
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
         statusExampleApi.open(QIODevice::ReadOnly);
@@ -64,10 +65,6 @@ private Q_SLOTS:
 
     void testFillTimelineMain()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
-
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
@@ -85,10 +82,6 @@ private Q_SLOTS:
 
     void testTagModel()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
-
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply("statuses.json", account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
@@ -107,10 +100,6 @@ private Q_SLOTS:
 
     void testThreadModel()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
-
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975")), new TestReply("status.json", account));
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975/context")), new TestReply("context.json", account));
 
@@ -124,10 +113,6 @@ private Q_SLOTS:
 
     void testModelPoll()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account);
-
         MainTimelineModel timelineModel;
         timelineModel.setName("home");
 
@@ -174,6 +159,9 @@ private Q_SLOTS:
         QCOMPARE(arguments[2].value<QVector<int>>().count(), 1);
         QCOMPARE(arguments[2].value<QVector<int>>()[0], AbstractTimelineModel::PollRole);
     }
+
+private:
+    MockAccount *account;
 };
 
 QTEST_MAIN(TimelineTest)

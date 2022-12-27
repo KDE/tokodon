@@ -499,37 +499,6 @@ void AbstractAccount::updateAttachment(Attachment *a)
 }
 
 
-void AbstractAccount::saveAccount(Identity *identity)
+void AbstractAccount::saveAccount()
 {
-    const QUrl url = apiUrl("/api/v1/accounts/update_credentials");
-
-    auto multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-
-    QHttpPart displayNamePart;
-    displayNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"display_name\""));
-    displayNamePart.setBody(identity->displayName().toUtf8());
-    multiPart->append(displayNamePart);
-
-    QHttpPart notePart;
-    notePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"note\""));
-    notePart.setBody(identity->bio().toUtf8());
-    multiPart->append(notePart);
-
-    if (identity->backgroundUrl().isLocalFile()) {
-        auto file = new QFile(identity->backgroundUrl().toLocalFile());
-        if (file->open(QIODevice::ReadOnly)) {
-            QHttpPart headerPart;
-            headerPart.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("image/jpeg"));
-            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"header\""));
-            headerPart.setBodyDevice(file);
-            file->setParent(multiPart);
-            multiPart->append(headerPart);
-        }
-    }
-
-    patch(url, multiPart, true, this, [=](QNetworkReply *reply) {
-        qDebug() << "account detail saved" << reply << reply->readAll();
-        multiPart->setParent(reply);
-        Q_EMIT sendNotification(i18n("Account details saved"));
-    });
 }
