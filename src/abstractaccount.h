@@ -211,7 +211,6 @@ Q_SIGNALS:
     void followRequestBlocked();
     void errorOccured(const QString &errorMessage);
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
-    void sendNotification(const QString &message, const QString &type = QStringLiteral("info"));
 
 protected:
     QString m_name;
