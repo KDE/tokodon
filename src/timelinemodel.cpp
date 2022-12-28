@@ -81,6 +81,12 @@ void TimelineModel::fetchedTimeline(const QByteArray &data)
     }
 
     const auto array = doc.array();
+
+    if (array.isEmpty()) {
+        setLoading(false);
+        return;
+    }
+
     std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
         return new Post(m_account, value.toObject(), this);
     });
