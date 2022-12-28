@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-27 00:48+0000\n"
+"POT-Creation-Date: 2022-12-28 00:49+0000\n"
 "PO-Revision-Date: 2022-06-11 21:51+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: abstractaccount.cpp:400
+#: abstractaccount.cpp:402
 #, kde-format
 msgid "Could not follow account"
 msgstr "Tiliä ei voitu seurata"
 
-#: abstractaccount.cpp:401
+#: abstractaccount.cpp:403
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Tilin seuraamista ei voitu perua"
 
-#: abstractaccount.cpp:402
+#: abstractaccount.cpp:404
 #, kde-format
 msgid "Could not block account"
 msgstr "Tiliä ei voitu estää"
 
-#: abstractaccount.cpp:403
+#: abstractaccount.cpp:405
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Tilin estoa ei voitu perua"
 
-#: abstractaccount.cpp:404
+#: abstractaccount.cpp:406
 #, kde-format
 msgid "Could not mute account"
 msgstr "Tiliä ei voitu vaimentaa"
 
-#: abstractaccount.cpp:405
+#: abstractaccount.cpp:407
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Tilin vaimennusta ei voitu perua"
 
-#: abstractaccount.cpp:406
+#: abstractaccount.cpp:408
 #, kde-format
 msgid "Could not feature account"
 msgstr "Tiliä ei voitu esitellä"
 
-#: abstractaccount.cpp:407
+#: abstractaccount.cpp:409
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Tilin esittelyä ei voitu perua"
 
-#: abstractaccount.cpp:408
+#: abstractaccount.cpp:410
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
@@ -332,24 +332,24 @@ msgstr "Yleinen"
 msgid "Conversation"
 msgstr "Maininnat"
 
-#: content/ui/NotificationPage.qml:22 content/ui/TimelinePage.qml:58
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
 #, kde-format
 msgid "Toot"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:34
+#: content/ui/NotificationPage.qml:35
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Kaikki"
 
-#: content/ui/NotificationPage.qml:44
+#: content/ui/NotificationPage.qml:45
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Maininnat"
 
-#: content/ui/NotificationPage.qml:99 content/ui/TimelinePage.qml:92
+#: content/ui/NotificationPage.qml:100 content/ui/TimelinePage.qml:100
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -380,12 +380,12 @@ msgstr ""
 msgid "Show more"
 msgstr "Näytä lisää"
 
-#: content/ui/PostDelegate.qml:302
+#: content/ui/PostDelegate.qml:303
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:424
+#: content/ui/PostDelegate.qml:431
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -393,30 +393,35 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:474
+#: content/ui/PostDelegate.qml:455
+#, kde-format
+msgid "(No votes)"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:489
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:499
+#: content/ui/PostDelegate.qml:514
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:512
+#: content/ui/PostDelegate.qml:527
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: content/ui/PostDelegate.qml:522
+#: content/ui/PostDelegate.qml:537
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:532
+#: content/ui/PostDelegate.qml:547
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -425,6 +430,12 @@ msgstr "Tykkää"
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
 msgid "Accounts"
+msgstr "Tilit"
+
+#: content/ui/Settings/AccountsCard.qml:32
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Account editor"
 msgstr "Tilit"
 
 #: content/ui/Settings/AccountsCard.qml:68
@@ -510,9 +521,106 @@ msgid "Password"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
+#: content/ui/Settings/ProfileEditor.qml:356
 #, kde-format
 msgid "Apply"
 msgstr "Käytä"
+
+#: content/ui/Settings/ProfileEditor.qml:23
+#, kde-format
+msgid "Profile Editor"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:31 content/ui/TootComposer.qml:157
+#, kde-format
+msgid "Please choose a file"
+msgstr "Valitse tiedosto"
+
+#: content/ui/Settings/ProfileEditor.qml:116
+#, kde-format
+msgid "Display Name"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:129
+#, kde-format
+msgid "Bio"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:148
+#, kde-format
+msgid "Header"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:182
+#, kde-format
+msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:195
+#: content/ui/Settings/ProfileEditor.qml:257
+#, fuzzy, kde-format
+#| msgid "Delete word"
+msgid "Delete"
+msgstr "Poista sana"
+
+#: content/ui/Settings/ProfileEditor.qml:210
+#, kde-format
+msgid "Avatar"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:275
+#, kde-format
+msgid "Default status privacy"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:278
+#, fuzzy, kde-format
+#| msgid "Public"
+msgid "Public post"
+msgstr "Julkinen"
+
+#: content/ui/Settings/ProfileEditor.qml:282
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "Unlisted post"
+msgstr "Luettelematon"
+
+#: content/ui/Settings/ProfileEditor.qml:286
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Followers-only post"
+msgstr "Seuraa"
+
+#: content/ui/Settings/ProfileEditor.qml:290
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgid "Direct post"
+msgstr "Suoraviesti"
+
+#: content/ui/Settings/ProfileEditor.qml:309
+#, kde-format
+msgid "Mark by default content as sensitive"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:317
+#, kde-format
+msgid "Require follow requests"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:325
+#, kde-format
+msgid "This is a bot account"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:333
+#, kde-format
+msgid "Suggest account to others"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:349
+#, kde-format
+msgid "Reset"
+msgstr ""
 
 #: content/ui/Settings/SettingsPage.qml:16
 #, fuzzy, kde-format
@@ -619,7 +727,7 @@ msgstr "Lisää sana"
 msgid "Delete word"
 msgstr "Poista sana"
 
-#: content/ui/TimelinePage.qml:70
+#: content/ui/TimelinePage.qml:78
 #, kde-format
 msgid "Refresh"
 msgstr ""
@@ -629,7 +737,7 @@ msgstr ""
 msgid "Write a new toot"
 msgstr ""
 
-#: content/ui/TootComposer.qml:21 content/ui/TootComposer.qml:220
+#: content/ui/TootComposer.qml:21 content/ui/TootComposer.qml:221
 #, kde-format
 msgid "Content Warning"
 msgstr "Sisältövaroitus"
@@ -649,53 +757,48 @@ msgstr ""
 msgid "Choice %1"
 msgstr "Valinta %1"
 
-#: content/ui/TootComposer.qml:157
-#, kde-format
-msgid "Please choose a file"
-msgstr "Valitse tiedosto"
-
-#: content/ui/TootComposer.qml:161
+#: content/ui/TootComposer.qml:160
 #, kde-format
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: content/ui/TootComposer.qml:169
+#: content/ui/TootComposer.qml:168
 #, kde-format
 msgid "Add Poll"
 msgstr "Lisää kysely"
 
-#: content/ui/TootComposer.qml:192
+#: content/ui/TootComposer.qml:193
 #, kde-format
 msgid "Public"
 msgstr "Julkinen"
 
-#: content/ui/TootComposer.qml:197
+#: content/ui/TootComposer.qml:198
 #, kde-format
 msgid "Unlisted"
 msgstr "Luettelematon"
 
-#: content/ui/TootComposer.qml:202
+#: content/ui/TootComposer.qml:203
 #, kde-format
 msgid "Private"
 msgstr "Yksityinen"
 
-#: content/ui/TootComposer.qml:207
+#: content/ui/TootComposer.qml:208
 #, kde-format
 msgid "Direct Message"
 msgstr "Suoraviesti"
 
-#: content/ui/TootComposer.qml:212
+#: content/ui/TootComposer.qml:213
 #, kde-format
 msgid "Visibility"
 msgstr "Näkyvyys"
 
-#: content/ui/TootComposer.qml:217
+#: content/ui/TootComposer.qml:218
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr ""
 
-#: content/ui/TootComposer.qml:229
+#: content/ui/TootComposer.qml:230
 #, kde-format
 msgid "Send"
 msgstr "Lähetä"
@@ -765,44 +868,44 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Maininnat"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE-yhteisö"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:137
+#: main.cpp:139
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
@@ -834,6 +937,21 @@ msgstr "Yleinen aikajana"
 #: notificationmodel.cpp:103
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
+msgstr ""
+
+#: profileeditor.cpp:183
+#, kde-format
+msgid "Image is too big"
+msgstr ""
+
+#: profileeditor.cpp:196
+#, kde-format
+msgid "Unsupported image file. Only jpeg, png and gif are supported."
+msgstr ""
+
+#: profileeditor.cpp:323
+#, kde-format
+msgid "Account details saved"
 msgstr ""
 
 #: searchmodel.cpp:114
