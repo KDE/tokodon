@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-28 00:49+0000\n"
-"PO-Revision-Date: 2022-12-24 07:32+0000\n"
+"PO-Revision-Date: 2022-12-28 19:27+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: toots Tokodon Toot toot ac Mastodon Schwan act\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-POFile-SpellExtra: Hashtags SOCKS\n"
+"X-POFile-SpellExtra: Hashtags SOCKS JPG px Avatar robot\n"
 
 #: abstractaccount.cpp:402
 #, kde-format
@@ -225,7 +225,7 @@ msgstr "Por favor, introduza o código gerado."
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr ""
+msgstr "Conversas"
 
 #: content/ui/FollowDelegate.qml:42 content/ui/FollowDelegate.qml:79
 #: notificationhandler.cpp:27
@@ -324,11 +324,9 @@ msgid "Global"
 msgstr "Global"
 
 #: content/ui/main.qml:149
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgid "Conversation"
-msgstr "Destino"
+msgstr "Conversação"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
 #, kde-format
@@ -391,7 +389,7 @@ msgstr "%1%"
 #: content/ui/PostDelegate.qml:455
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Sem votos)"
 
 #: content/ui/PostDelegate.qml:489
 #, kde-format
@@ -428,10 +426,9 @@ msgid "Accounts"
 msgstr "Contas"
 
 #: content/ui/Settings/AccountsCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Account editor"
-msgstr "Contas"
+msgstr "Editor da conta"
 
 #: content/ui/Settings/AccountsCard.qml:68
 #, kde-format
@@ -519,7 +516,7 @@ msgstr "Aplicar"
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
 msgid "Profile Editor"
-msgstr ""
+msgstr "Editor do Perfil"
 
 #: content/ui/Settings/ProfileEditor.qml:31 content/ui/TootComposer.qml:157
 #, kde-format
@@ -529,88 +526,84 @@ msgstr "Escolha por favor um ficheiro"
 #: content/ui/Settings/ProfileEditor.qml:116
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "Nome a Mostrar"
 
 #: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
 msgid "Bio"
-msgstr ""
+msgstr "Biografia"
 
 #: content/ui/Settings/ProfileEditor.qml:148
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "Cabeçalho"
 
 #: content/ui/Settings/ProfileEditor.qml:182
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
+"PNG, GIF ou JPG. No máximo 2 MB. Será reduzida a escala para 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgid "Delete"
-msgstr "Apaga a palavra"
+msgstr "Apagar"
 
 #: content/ui/Settings/ProfileEditor.qml:210
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr ""
+msgstr "Privacidade predefinida do estado"
 
 #: content/ui/Settings/ProfileEditor.qml:278
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgid "Public post"
-msgstr "Público"
+msgstr "Publicação pública"
 
 #: content/ui/Settings/ProfileEditor.qml:282
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Unlisted post"
-msgstr "Não Listado"
+msgstr "Publicação não apresentada"
 
 #: content/ui/Settings/ProfileEditor.qml:286
-#, fuzzy, kde-format
-#| msgid "Follows you"
+#, kde-format
 msgid "Followers-only post"
-msgstr "Segue-o"
+msgstr "Publicação apenas para seguidores"
 
 #: content/ui/Settings/ProfileEditor.qml:290
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgid "Direct post"
-msgstr "Mensagem Directa"
+msgstr "Publicação directa"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgid "Mark by default content as sensitive"
-msgstr ""
+msgstr "Marcar o conteúdo como sensível por omissão"
 
 #: content/ui/Settings/ProfileEditor.qml:317
 #, kde-format
 msgid "Require follow requests"
-msgstr ""
+msgstr "Pedidos de seguimento obrigatórios"
 
 #: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgid "This is a bot account"
-msgstr ""
+msgstr "Esta é a conta de um robot"
 
 #: content/ui/Settings/ProfileEditor.qml:333
 #, kde-format
 msgid "Suggest account to others"
-msgstr ""
+msgstr "Sugerir a conta a outros"
 
 #: content/ui/Settings/ProfileEditor.qml:349
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
@@ -814,19 +807,19 @@ msgstr "Abrir a Configuração"
 #: conversationmodel.cpp:60
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Conversa vazia"
 
 #: conversationmodel.cpp:64
 #, kde-format
 msgid "%1 and %2"
-msgstr ""
+msgstr "%1 e %2"
 
 #: conversationmodel.cpp:66
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 e mais um"
+msgstr[1] "%2 e mais outros %1"
 
 #: filetransferjob.cpp:82
 #, kde-format
@@ -920,17 +913,19 @@ msgstr "Ocorreu um erro ao obter a última notificação."
 #: profileeditor.cpp:183
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "A imagem é demasiado grande"
 
 #: profileeditor.cpp:196
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
+"O ficheiro de imagem não é suportado. Só são suportados os ficheiros JPEG, "
+"PNG e GIF."
 
 #: profileeditor.cpp:323
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Detalhes da conta gravados"
 
 #: searchmodel.cpp:114
 #, kde-format
