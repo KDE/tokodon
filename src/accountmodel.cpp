@@ -19,13 +19,13 @@ AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
 
     if (!m_account->identityCached(acct)) {
         QUrl uriAccount(m_account->instanceUri());
-        uriAccount.setPath(QString("/api/v1/accounts/%1").arg(id));
+        uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(id));
 
-        AccountManager::instance().selectedAccount()->get(uriAccount, true, this, [this, acct](QNetworkReply *reply) {
+        m_account->get(uriAccount, true, this, [this, acct](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
-            m_identity = AccountManager::instance().selectedAccount()->identityLookup(acct, doc.object());
+            m_identity = m_account->identityLookup(acct, doc.object());
             Q_EMIT identityChanged();
             updateRelationships();
         });
@@ -138,19 +138,19 @@ AbstractAccount *AccountModel::account() const
 
 void AccountModel::updateRelationships()
 {
-    if (m_account->identity().id() != m_identity->id()) {
+    if (m_account->identity().id() == m_identity->id()) {
         return;
     }
 
     // Fetch relationship. Don't cache this; it's lightweight.
     QUrl uriRelationship(m_account->instanceUri());
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
-    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->id())}});
+    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->id())},});
 
     m_account->get(uriRelationship, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (!doc.isArray()) {
-            qDebug() << "Data returned from Relationship network request is not an array"
+            qWarning() << "Data returned from Relationship network request is not an array"
                      << "data: " << doc;
             return;
         }
