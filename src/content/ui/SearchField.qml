@@ -28,8 +28,16 @@ Kirigami.SearchField {
         id: popup
         x: searchField.y
         y: searchField.y + searchField.height
+        z: drawer.z + 1
         width: searchField.width
         height: Kirigami.Units.gridUnit * 20
+
+        property int originalZ;
+        onOpened: {
+            originalZ = QQC2.Overlay.overlay.z;
+            QQC2.Overlay.overlay.z = drawer.z + 1;
+        }
+        onClosed: QQC2.Overlay.overlay.z = originalZ
 
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         Kirigami.Theme.inherit: false

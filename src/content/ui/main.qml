@@ -52,7 +52,7 @@ Kirigami.ApplicationWindow {
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
-        handleVisible: applicationWindow().pageStack.depth <= 1 && applicationWindow().pageStack.layers.depth <= 1 && !isShowingFullScreenImage
+        handleVisible: modal && !isShowingFullScreenImage
 
         leftPadding: 0
         rightPadding: 0
