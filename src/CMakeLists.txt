@@ -24,6 +24,7 @@ set(tokodon_src
     accountmanager.cpp
     account.cpp
     post.cpp
+    posteditorbackend.cpp
     poll.cpp
     utils.cpp
     preferences.cpp
@@ -33,6 +34,7 @@ set(tokodon_src
     accountmodel.cpp
     timelinemodel.cpp
     attachmenteditormodel.cpp
+    networkrequestprogress.cpp
     notificationmodel.cpp
     clipboard.cpp
     relationship.cpp

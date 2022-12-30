@@ -46,10 +46,13 @@
 #include "notificationmodel.h"
 #include "poll.h"
 #include "post.h"
+#include "posteditorbackend.h"
 #include "profileeditor.h"
 #include "searchmodel.h"
 #include "tagsmodel.h"
 #include "threadmodel.h"
+#include "timelinemodel.h"
+#include "networkrequestprogress.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
@@ -136,17 +139,20 @@ int main(int argc, char *argv[])
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
     qmlRegisterType<AccountModel>("org.kde.kmasto", 1, 0, "AccountModel");
     qmlRegisterType<ProfileEditorBackend>("org.kde.kmasto", 1, 0, "ProfileEditorBackend");
+    qmlRegisterType<NetworkRequestProgress>("org.kde.kmasto", 1, 0, "NetworkRequestProgress");
+    qmlRegisterType<PostEditorBackend>("org.kde.kmasto", 1, 0, "PostEditorBackend");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);
     qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });
-    qmlRegisterType<AttachmentEditorModel>("org.kde.kmasto", 1, 0, "AttachmentEditorModel");
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
+    qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
     qRegisterMetaType<Poll *>("Poll*");
+    qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");

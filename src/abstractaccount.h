@@ -127,12 +127,12 @@ public:
     /// \param callback The callback that should be executed if the request is successful
     virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
-    virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
     virtual void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) = 0;
 
     /// Upload a file
-    virtual void upload(Post *post, QFile *file, const QString &filename) = 0;
+    virtual QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Write account to settings
     virtual void writeToSettings(QSettings &settings) const = 0;

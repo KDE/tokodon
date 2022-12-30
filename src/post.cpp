@@ -19,11 +19,17 @@ static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"unknown", Attachment::AttachmentType::Unknown},
 };
 
-Attachment::Attachment(Post *parent, const QJsonObject &obj)
-    : m_parent(parent)
+Attachment::Attachment(const QJsonObject &obj)
 {
-    m_type = Unknown;
+    fromJson(obj);
+}
+
+Attachment::~Attachment() = default;
+
+void Attachment::fromJson(const QJsonObject &obj)
+{
     if (!obj.contains("type")) {
+        m_type = Unknown;
         return;
     }
 
@@ -32,24 +38,31 @@ Attachment::Attachment(Post *parent, const QJsonObject &obj)
     m_preview_url = obj["preview_url"].toString();
     m_remote_url = obj["remote_url"].toString();
 
-    m_description = obj["description"].toString();
+    setDescription(obj["description"].toString());
     m_blurhash = obj["blurhash"].toString();
     m_originalHeight = obj["meta"].toObject()["original"].toObject()["height"].toInt();
     m_originalWidth = obj["meta"].toObject()["original"].toObject()["width"].toInt();
 
     // determine type if we can
-    auto type = obj["type"].toString();
+    const auto type = obj["type"].toString();
     if (stringToAttachmentType.contains(type)) {
         m_type = stringToAttachmentType[type];
     }
 }
 
-Attachment::~Attachment() = default;
+QString Attachment::description() const
+{
+    return m_description;
+}
 
 void Attachment::setDescription(const QString &description)
 {
     m_description = description;
-    m_parent->updateAttachment(this);
+}
+
+QString Attachment::id() const
+{
+    return m_id;
 }
 
 Post::Post(AbstractAccount *account, QObject *parent)
@@ -157,28 +170,23 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
 Post::~Post()
 {
-    qDeleteAll(m_attachments);
     delete m_poll;
 }
 
 void Post::addAttachments(const QJsonArray &attachments)
 {
-    for (const auto &attachment_val : attachments) {
-        auto attachment_obj = attachment_val.toObject();
-        auto attachment = new Attachment(this, attachment_obj);
-
-        m_attachments.push_back(attachment);
+    for (const auto &attachment : attachments) {
+        m_attachments.append(Attachment{attachment.toObject()});
     }
 }
 
 void Post::addAttachment(const QJsonObject &attachment)
 {
-    auto att = new Attachment(this, attachment);
-    if (att->m_url.isEmpty()) {
+    Attachment att(attachment);
+    if (att.m_url.isEmpty()) {
         return;
     }
-
-    m_attachments.append(att);
+    m_attachments.append(std::move(att));
 
     Q_EMIT attachmentUploaded();
 }
@@ -246,27 +254,13 @@ QJsonDocument Post::toJsonDocument() const
     }
 
     auto media_ids = QJsonArray();
-    for (const auto att : qAsConst(m_attachments)) {
-        media_ids.append(att->m_id);
+    for (const auto &att : qAsConst(m_attachments)) {
+        media_ids.append(att.m_id);
     }
 
     obj["media_ids"] = media_ids;
 
     return QJsonDocument(obj);
-}
-
-void Post::uploadAttachment(const QUrl &filename)
-{
-    QFile *file = new QFile(filename.toLocalFile());
-    const QFileInfo info(filename.toLocalFile());
-
-    file->open(QFile::ReadOnly);
-    m_parent->upload(this, file, info.fileName());
-}
-
-void Post::updateAttachment(Attachment *a)
-{
-    m_parent->updateAttachment(a);
 }
 
 QDateTime Post::publishedAt() const

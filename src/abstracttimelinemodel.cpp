@@ -5,6 +5,7 @@
 #include "account.h"
 #include "identity.h"
 #include "poll.h"
+#include "post.h"
 #include <KLocalizedString>
 #include <QtMath>
 #include <qvariant.h>

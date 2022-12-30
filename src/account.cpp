@@ -8,6 +8,7 @@
 #include "preferences.h"
 #include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
+#include <QFileInfo>
 #include <QNetworkAccessManager>
 
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
@@ -95,7 +96,7 @@ void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticate
     handleReply(reply, reply_cb);
 }
 
-void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
+QNetworkReply *Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
 
@@ -104,6 +105,7 @@ void Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated,
     QNetworkReply *reply = m_qnam->post(request, message);
     reply->setParent(parent);
     handleReply(reply, reply_cb);
+	return reply;
 }
 
 void Account::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
@@ -151,13 +153,17 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
 }
 
 // assumes file is already opened and named
-void Account::upload(Post *p, QFile *file, const QString &filename)
+QNetworkReply *Account::upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback)
 {
+    auto file = new QFile(filename.toLocalFile());
+    const QFileInfo info(filename.toLocalFile());
+    file->open(QFile::ReadOnly);
+
     auto mp = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     QHttpPart filePart;
     filePart.setHeader(QNetworkRequest::ContentTypeHeader, "application/octet-stream");
-    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QString("attachment; name=\"file\"; filename=\"%1\"").arg(filename));
+    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("attachment; name=\"file\"; filename=\"%1\"").arg(info.fileName()));
     filePart.setBodyDevice(file);
     file->setParent(mp);
 
@@ -166,16 +172,7 @@ void Account::upload(Post *p, QFile *file, const QString &filename)
     const auto uploadUrl = apiUrl("/api/v1/media");
     qCDebug(TOKODON_HTTP) << "POST" << uploadUrl << "(upload)";
 
-    post(uploadUrl, mp, true, this, [=](QNetworkReply *reply) {
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
-
-        if (!doc.isObject()) {
-            return;
-        }
-
-        p->addAttachment(doc.object());
-    });
+    return post(uploadUrl, mp, true, this, callback);
 }
 
 static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEventType = {

@@ -371,10 +371,13 @@ void AbstractAccount::invalidatePost(Post *p)
 QUrl AbstractAccount::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl("/api/v1/streaming");
-    url.setQuery(QUrlQuery{{"access_token", m_token}, {"stream", stream}});
+    url.setQuery(QUrlQuery{
+        {"access_token", m_token},
+        {"stream", stream},
+    });
     url.setScheme("wss");
 
-    return QUrl(url);
+    return url;
 }
 
 void AbstractAccount::handleNotification(const QJsonDocument &doc)
@@ -500,13 +503,3 @@ bool AbstractAccount::isRegistered() const
     return !m_client_id.isEmpty() && !m_client_secret.isEmpty();
 }
 
-// best effort for now, maybe we fire a signal later
-void AbstractAccount::updateAttachment(Attachment *a)
-{
-    const auto attachementUrl = apiUrl(QString("/api/v1/media/%1").arg(a->m_id));
-    const QJsonObject obj{
-        {"description", a->m_description},
-    };
-    const QJsonDocument doc(obj);
-    put(attachementUrl, doc, true, this, nullptr);
-}

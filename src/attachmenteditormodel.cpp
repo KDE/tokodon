@@ -4,57 +4,24 @@
 
 #include "attachmenteditormodel.h"
 #include "account.h"
+#include "abstractaccount.h"
+#include <QTimer>
 
-AttachmentEditorModel::AttachmentEditorModel(QObject *parent)
+AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)
     : QAbstractListModel(parent)
-    , m_scratch(nullptr)
+	, m_account(account)
 {
 }
 
-Post *AttachmentEditorModel::post() const
+int AttachmentEditorModel::rowCount(const QModelIndex &parent) const
 {
-    return m_scratch;
-}
-
-void AttachmentEditorModel::setPost(Post *post)
-{
-    if (post == m_scratch) {
-        return;
-    }
-    if (m_scratch) {
-        disconnect(m_scratch->m_parent, nullptr, this, nullptr);
-    }
-    beginResetModel();
-    m_scratch = post;
-    endResetModel();
-    if (m_scratch) {
-        connect(m_scratch, &Post::attachmentUploaded, this, [this] {
-            qDebug() << "Uploaded 2";
-            // TODO beginInsertModel
-            beginResetModel();
-            endResetModel();
-            Q_EMIT countChanged();
-        });
-    }
-
-    Q_EMIT postChanged();
-    Q_EMIT countChanged();
-}
-
-int AttachmentEditorModel::rowCount(const QModelIndex &) const
-{
-    if (!m_scratch) {
-        return 0;
-    }
-    return m_scratch->m_attachments.size();
+    Q_UNUSED(parent);
+    return m_attachments.size();
 }
 
 int AttachmentEditorModel::count() const
 {
-    if (!m_scratch) {
-        return 0;
-    }
-    return m_scratch->m_attachments.size();
+    return rowCount({});
 }
 
 QVariant AttachmentEditorModel::data(const QModelIndex &index, int role) const
@@ -62,15 +29,14 @@ QVariant AttachmentEditorModel::data(const QModelIndex &index, int role) const
     if (!index.isValid()) {
         return {};
     }
-    int row = index.row();
-    auto att = m_scratch->m_attachments[row];
+    const int row = index.row();
+    const auto &attachment = m_attachments[row];
 
     switch (role) {
     case Preview:
-        qDebug() << att->m_preview_url;
-        return att->m_preview_url;
+        return attachment.m_preview_url;
     case Description:
-        return att->m_description;
+        return attachment.description();
     }
 
     return {};
@@ -80,19 +46,67 @@ bool AttachmentEditorModel::setData(const QModelIndex &index, const QVariant &va
 {
     const int row = index.row();
 
-    if (role != Qt::EditRole)
+    if (role != Qt::EditRole) {
         return false;
+    }
 
-    if (row != Description)
+    if (row != Description) {
         return false;
+    }
 
-    auto att = m_scratch->m_attachments[row];
-    att->setDescription(value.toString());
+	const auto description = value.toString();
+	auto &attachment = m_attachments[row];
+	const auto id = attachment.id();
+	attachment.setDescription(description);
+	if (m_updateTimers.contains(id)) {
+		auto timer = m_updateTimers[id];
+		timer->stop();
+		timer->deleteLater();
+		m_updateTimers.remove(id);
+	}
+
+	auto timer = new QTimer(this);
+	timer->setSingleShot(true);
+	timer->setInterval(1000);
+	connect(timer, &QTimer::timeout, this, [timer, id, row, this, description]() {
+		timer->deleteLater();
+		m_updateTimers.remove(id);
+		const auto attachementUrl = m_account->apiUrl(QStringLiteral("/api/v1/media/%1").arg(id));
+		const QJsonObject obj{
+			{"description", description},
+		};
+		const QJsonDocument doc(obj);
+		m_account->put(attachementUrl, doc, true, this, [row, description, this](QNetworkReply *reply) {
+			auto &attachment = m_attachments[row];
+		});
+	});
 
     return true;
 }
 
 QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
 {
-    return {{Preview, QByteArrayLiteral("preview")}, {Description, QByteArrayLiteral("description")}, {Qt::DisplayRole, QByteArrayLiteral("display")}};
+    return {
+        {Preview, QByteArrayLiteral("preview")},
+        {Description, QByteArrayLiteral("description")},
+        {Qt::DisplayRole, QByteArrayLiteral("display")},
+    };
+}
+
+QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
+{
+	if (rowCount({}) >= 4) {
+		return nullptr;
+	}
+    return m_account->upload(filename, [=](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+
+        if (!doc.isObject()) {
+            return;
+        }
+
+		beginInsertRows({}, m_attachments.count(), m_attachments.count());
+        m_attachments.append(Attachment{doc.object()});
+		endInsertRows();
+    });
 }

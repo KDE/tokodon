@@ -63,22 +63,23 @@ private:
 /// Post's attachment object.
 /// TODO make it possible to fetch the images with a Qml image provider.
 /// TODO use getter and setter
-class Attachment : public QObject
+class Attachment
 {
-    Q_OBJECT
+    Q_GADGET
 
     Q_PROPERTY(QString id MEMBER m_id CONSTANT)
     Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
     Q_PROPERTY(QString previewUrl MEMBER m_preview_url CONSTANT)
     Q_PROPERTY(QString url MEMBER m_url CONSTANT)
     Q_PROPERTY(QString remoteUrl MEMBER m_remote_url CONSTANT)
-    Q_PROPERTY(QString description MEMBER m_description CONSTANT)
+    Q_PROPERTY(QString description READ description CONSTANT)
     Q_PROPERTY(QString blurhash MEMBER m_blurhash CONSTANT)
     Q_PROPERTY(int originalWidth MEMBER m_originalWidth CONSTANT)
     Q_PROPERTY(int originalHeight MEMBER m_originalHeight CONSTANT)
 
 public:
-    explicit Attachment(Post *parent, const QJsonObject &obj);
+	Attachment() = default;
+    explicit Attachment(const QJsonObject &object);
     ~Attachment();
 
     enum AttachmentType {
@@ -88,6 +89,7 @@ public:
         Video,
     };
     Q_ENUM(AttachmentType);
+
     Post *m_parent;
 
     QString m_id;
@@ -95,12 +97,19 @@ public:
     QString m_preview_url;
     QString m_url;
     QString m_remote_url;
-    QString m_description;
     QString m_blurhash;
     int m_originalWidth;
     int m_originalHeight;
 
+    QString id() const;
+
     void setDescription(const QString &description);
+    QString description() const;
+
+private:
+    void fromJson(const QJsonObject &object);
+
+    QString m_description;
 };
 
 class Notification
@@ -108,13 +117,8 @@ class Notification
     Q_GADGET
 
 public:
-    Notification()
-    {
-    }
-    Notification(const Notification &)
-    {
-    }
-    Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
+    Notification() = default;
+    explicit Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
 
     enum Type {
         Mention,
@@ -203,7 +207,6 @@ public:
     QStringList filters() const;
 
     void addAttachment(const QJsonObject &attachment);
-    Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
     /// Returns the published/creation time of this status.
     QDateTime publishedAt() const;

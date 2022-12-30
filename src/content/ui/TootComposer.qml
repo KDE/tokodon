@@ -10,8 +10,18 @@ import QtQuick.Dialogs 1.3
 import org.kde.kmasto 1.0
 
 MastoPage {
+    id: root
+
+    property string inReplyTo: ''
+    property var mentions: []
+    readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
+
+    readonly property PostEditorBackend backend: PostEditorBackend {
+        inReplyTo: root.inReplyTo
+        mentions: root.mentions
+    }
+
     title: i18n("Write a new toot")
-    property var postObject
 
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
@@ -21,13 +31,13 @@ MastoPage {
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
-            onTextChanged: postObject.subject = text
+            onTextChanged: backend.spoilerText = text
         }
 
         QQC2.TextArea {
             id: textArea
             placeholderText: i18n("What's new?")
-            text: postObject.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
+            text: backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
             wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -35,7 +45,7 @@ MastoPage {
             bottomInset: -1
             leftInset: -1
             rightInset: -1
-            onTextChanged: postObject.content = text
+            onTextChanged: backend.status = text
             Kirigami.SpellChecking.enabled: true
             Item {
                 id: actions
@@ -68,16 +78,13 @@ MastoPage {
                     id: attachmentLayout
                     width: parent.width
                     height: visible ? implicitHeight : 0
-                    visible: attachmentModel.count > 0
+                    visible: repeater.count > 0
                     implicitHeight: Kirigami.Units.gridUnit * 20
                     anchors.bottom: pollSeparator.top
                     columns: repeater.count === 0 ? 1 : 2
                     Repeater {
                         id: repeater
-                        model: AttachmentEditorModel {
-                            id: attachmentModel
-                            post: postObject
-                        }
+                        model: backend.attachmentEditorModel
 
                         Image {
                             Layout.fillWidth: true
@@ -90,6 +97,14 @@ MastoPage {
                             source: model.preview
                         }
                     }
+                }
+
+                QQC2.ProgressBar {
+                    Layout.fillWidth: true
+                    from: 0
+                    to: 100
+                    visible: progress.uploading
+                    value: progress.progress
                 }
 
                 Kirigami.Separator {
@@ -155,7 +170,7 @@ MastoPage {
                                 id: fileDialog
                                 folder: shortcuts.home
                                 title: i18n("Please choose a file")
-                                onAccepted: postObject.uploadAttachment(fileDialog.fileUrl);
+                                onAccepted: progress.reply = backend.attachmentEditorModel.append(fileDialog.fileUrl);
                             }
                             QQC2.ToolTip.text: i18n("Attach File")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -172,7 +187,7 @@ MastoPage {
                         }
                         QQC2.ToolButton {
                             icon.name: {
-                                switch(postObject.visibility) {
+                                switch(backend.visibility) {
                                     case Post.Public:
                                         return "kstars_xplanet";
                                     case Post.Unlisted:
@@ -191,22 +206,22 @@ MastoPage {
                                 QQC2.MenuItem {
                                     icon.name: "kstars_xplanet"
                                     text: i18n("Public")
-                                    onTriggered: postObject.visibility = Post.Public
+                                    onTriggered: backend.visibility = Post.Public
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "unlock"
                                     text: i18n("Unlisted")
-                                    onTriggered: postObject.visibility = Post.Unlisted
+                                    onTriggered: backend.visibility = Post.Unlisted
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "lock"
                                     text: i18n("Private")
-                                    onTriggered: postObject.visibility = Post.Private
+                                    onTriggered: backend.visibility = Post.Private
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "mail-message"
                                     text: i18n("Direct Message")
-                                    onTriggered: postObject.visibility = Post.Direct
+                                    onTriggered: backend.visibility = Post.Direct
                                 }
                             }
                             QQC2.ToolTip {
@@ -228,10 +243,10 @@ MastoPage {
 
         QQC2.Button {
             text: i18n("Send")
-            enabled: textArea.text.length > 0 || attachmentModel.rowCount() > 0
+            enabled: textArea.text.length > 0 || backend.attachmentEditorModel.count > 0
             Layout.alignment: Qt.AlignRight
             onClicked: {
-                AccountManager.selectedAccount.postStatus(postObject);
+                backend.save()
                 applicationWindow().pageStack.layers.pop();
             }
         }
