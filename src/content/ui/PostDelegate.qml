@@ -123,6 +123,7 @@ QQC2.ItemDelegate {
                 source: model.avatar
                 cache: true
                 actions.main: Kirigami.Action {
+                    tooltip: i18n("View profile")
                     onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
                         model: model.accountModel,
                     })
@@ -389,12 +390,12 @@ a{
                     Layout.margins: Kirigami.Units.smallSpacing
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Kirigami.Heading {
-                        level: 4
+                        level: 5
                         text: model.card ? model.card.title : ''
                         elide: Text.ElideRight
                         Layout.fillWidth: true
                         wrapMode: model.card && model.card.providerName ? Text.WordWrap : Text.NoWrap
-                        maximumLineCount: 2
+                        maximumLineCount: 1
                         HoverHandler {
                             cursorShape: Qt.PointingHandCursor
                         }

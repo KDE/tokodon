@@ -137,14 +137,13 @@ QQC2.ToolBar {
                 Layout.fillWidth: true
 
                 Item {
-                    
                     Layout.fillHeight: true
                     Layout.preferredWidth: height
                     Kirigami.Avatar {
                         anchors.fill: parent
                         anchors.margins: Kirigami.Units.smallSpacing
-                        source: AccountManager.selectedAccount.identity.avatarUrl
-                        name: AccountManager.selectedAccount.identity.displayName
+                        source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
+                        name: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayName : 'user'
                         actions.main: Kirigami.Action {
                             onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
                                 model: AccountManager.selectedAccountModel,
@@ -163,7 +162,7 @@ QQC2.ToolBar {
                         Layout.fillWidth: true
                     }
                     QQC2.Label {
-                        text: AccountManager.selectedAccount.instanceName
+                        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ''
                         font.pointSize: displayNameLabel.font.pointSize * 0.8
                         opacity: 0.7
                         textFormat: Text.PlainText
