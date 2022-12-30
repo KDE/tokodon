@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-28 00:49+0000\n"
-"PO-Revision-Date: 2022-12-09 08:15+0100\n"
+"PO-Revision-Date: 2022-12-28 20:17+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: abstractaccount.cpp:402
 #, kde-format
@@ -186,12 +186,12 @@ msgstr "%1 seguiti"
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "Autorizzazione"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr ""
+msgstr "Autorizza Tokodon ad agire per tuo conto"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
@@ -226,7 +226,7 @@ msgstr "Inserisci il token generato."
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr ""
+msgstr "Conversazioni"
 
 #: content/ui/FollowDelegate.qml:42 content/ui/FollowDelegate.qml:79
 #: notificationhandler.cpp:27
@@ -325,11 +325,9 @@ msgid "Global"
 msgstr "Globale"
 
 #: content/ui/main.qml:149
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgid "Conversation"
-msgstr "Destinazione"
+msgstr "Conversazione"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
 #, kde-format
@@ -384,28 +382,26 @@ msgid "Media Hidden"
 msgstr "Supporto nascosto"
 
 #: content/ui/PostDelegate.qml:431
-#, fuzzy, kde-format
-#| msgctxt "hour:minute"
-#| msgid "%1:%2"
+#, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1:%2"
+msgstr "%1%"
 
 #: content/ui/PostDelegate.qml:455
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Nessun voto)"
 
 #: content/ui/PostDelegate.qml:489
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Vota"
 
 #: content/ui/PostDelegate.qml:514
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
-msgstr ""
+msgstr "1+"
 
 #: content/ui/PostDelegate.qml:527
 #, kde-format
@@ -431,10 +427,9 @@ msgid "Accounts"
 msgstr "Account"
 
 #: content/ui/Settings/AccountsCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Account editor"
-msgstr "Account"
+msgstr "Editor degli account"
 
 #: content/ui/Settings/AccountsCard.qml:68
 #, kde-format
@@ -465,56 +460,53 @@ msgstr "Mostra l'anteprima del collegamento"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Proxy di rete"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Proxy di rete"
 
 #: content/ui/Settings/NetworkProxyPage.qml:30
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Impostazioni predefinite di sistema"
 
 #: content/ui/Settings/NetworkProxyPage.qml:38
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: content/ui/Settings/NetworkProxyPage.qml:46
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni del proxy"
 
 #: content/ui/Settings/NetworkProxyPage.qml:66
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 #: content/ui/Settings/NetworkProxyPage.qml:78
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Porta"
 
 #: content/ui/Settings/NetworkProxyPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User"
-msgstr "Nome utente:"
+msgstr "Utente"
 
 #: content/ui/Settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
 #: content/ui/Settings/ProfileEditor.qml:356
@@ -525,7 +517,7 @@ msgstr "Applica"
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
 msgid "Profile Editor"
-msgstr ""
+msgstr "Editor dei profili"
 
 #: content/ui/Settings/ProfileEditor.qml:31 content/ui/TootComposer.qml:157
 #, kde-format
@@ -535,88 +527,83 @@ msgstr "Scegli un file"
 #: content/ui/Settings/ProfileEditor.qml:116
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
 msgid "Bio"
-msgstr ""
+msgstr "Biografia"
 
 #: content/ui/Settings/ProfileEditor.qml:148
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "Intestazione"
 
 #: content/ui/Settings/ProfileEditor.qml:182
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr ""
+msgstr "PNG, GIF o JPG. Al massimo 2 MB. Sarà ridotto a 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgid "Delete"
-msgstr "Elimina la parola"
+msgstr "Elimina"
 
 #: content/ui/Settings/ProfileEditor.qml:210
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr ""
+msgstr "Stato predefinito di riservatezza"
 
 #: content/ui/Settings/ProfileEditor.qml:278
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgid "Public post"
-msgstr "Pubblico"
+msgstr "Commento pubblico"
 
 #: content/ui/Settings/ProfileEditor.qml:282
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Unlisted post"
-msgstr "Non elencato"
+msgstr "Commenti non elencati"
 
 #: content/ui/Settings/ProfileEditor.qml:286
-#, fuzzy, kde-format
-#| msgid "Follows you"
+#, kde-format
 msgid "Followers-only post"
-msgstr "Ti segue"
+msgstr "Commento riservato ai seguaci"
 
 #: content/ui/Settings/ProfileEditor.qml:290
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgid "Direct post"
-msgstr "Messaggio diretto"
+msgstr "Commento diretto"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgid "Mark by default content as sensitive"
-msgstr ""
+msgstr "Contrassegna per impostazione predefinita i contenuti come sensibili"
 
 #: content/ui/Settings/ProfileEditor.qml:317
 #, kde-format
 msgid "Require follow requests"
-msgstr ""
+msgstr "Richiedi richieste di seguito"
 
 #: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgid "This is a bot account"
-msgstr ""
+msgstr "Questo è un account bot"
 
 #: content/ui/Settings/ProfileEditor.qml:333
 #, kde-format
 msgid "Suggest account to others"
-msgstr ""
+msgstr "Suggerisci account ad altri"
 
 #: content/ui/Settings/ProfileEditor.qml:349
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Ripristina"
 
 #: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
@@ -662,7 +649,7 @@ msgstr "Seleziona la lingua predefinita:"
 #: content/ui/Settings/SonnetCard.qml:78
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Nessuna"
 
 #: content/ui/Settings/SonnetCard.qml:96
 #, kde-format
@@ -820,19 +807,19 @@ msgstr "Apri le impostazioni"
 #: conversationmodel.cpp:60
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Conversazione vuota"
 
 #: conversationmodel.cpp:64
 #, kde-format
 msgid "%1 and %2"
-msgstr ""
+msgstr "%1 e %2"
 
 #: conversationmodel.cpp:66
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 e un altro"
+msgstr[1] "%2 e %1 altri"
 
 #: filetransferjob.cpp:82
 #, kde-format
@@ -926,32 +913,32 @@ msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
 #: profileeditor.cpp:183
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "L'immagine è troppo grande"
 
 #: profileeditor.cpp:196
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
+msgstr "File immagine non supportato. Sono supportati solo jpeg, png e gif."
 
 #: profileeditor.cpp:323
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Dati dell'account salvati"
 
 #: searchmodel.cpp:114
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Persone"
 
 #: searchmodel.cpp:116
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Hashtag"
 
 #: searchmodel.cpp:118
 #, kde-format
 msgid "Post"
-msgstr ""
+msgstr "Commento"
 
 #: threadmodel.cpp:30
 #, kde-format
