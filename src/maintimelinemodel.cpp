@@ -3,6 +3,7 @@
 
 #include "maintimelinemodel.h"
 #include "abstractaccount.h"
+#include "timelinemodel.h"
 #include <KLocalizedString>
 #include <QUrlQuery>
 
@@ -57,17 +58,6 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    if (m_timelineName == "home" && !m_hasSetupStreaming) {
-        m_hasSetupStreaming = true;
-        connect(m_account, &AbstractAccount::streamingEvent, this, [this](AbstractAccount::StreamingEventType eventType, const QByteArray &payload) {
-            if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == "home") {
-                const auto doc = QJsonDocument::fromJson(payload);
-                const auto post = new Post(m_account, doc.object(), this);
-                m_timeline.push_front(post);
-            }
-        });
-    }
-
     if (m_loading) {
         return;
     }
@@ -104,3 +94,17 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         fetchedTimeline(reply->readAll());
     });
 }
+
+
+void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
+{
+    TimelineModel::handleEvent(eventType, payload);
+    if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == "home") {
+        const auto doc = QJsonDocument::fromJson(payload);
+        const auto post = new Post(m_account, doc.object(), this);
+        beginInsertRows({}, 0, 0);
+        m_timeline.push_front(post);
+        endInsertRows();
+    }
+}
+

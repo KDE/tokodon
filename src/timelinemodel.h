@@ -6,6 +6,7 @@
 
 #include "abstracttimelinemodel.h"
 #include "accountmanager.h"
+#include "abstractaccount.h"
 #include "post.h"
 #include <QAbstractListModel>
 
@@ -21,6 +22,7 @@ public:
 
     virtual void fillTimeline(const QString &fromId = {}) = 0;
     virtual QString displayName() const = 0;
+    virtual void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
 
     void init();
 

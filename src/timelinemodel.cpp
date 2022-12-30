@@ -25,6 +25,7 @@ void TimelineModel::init()
     m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
 
+
     connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
@@ -38,20 +39,28 @@ void TimelineModel::init()
     });
 
     connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        if (m_account != account) {
-            m_account = account;
-
-            beginResetModel();
-            qDeleteAll(m_timeline);
-            m_timeline.clear();
-            endResetModel();
-
-            m_loading = false;
-            Q_EMIT loadingChanged();
-
-            Q_EMIT nameChanged();
-            fillTimeline();
+        if (m_account == account) {
+            return;
         }
+
+        if (m_account) {
+            disconnect(m_account, &AbstractAccount::streamingEvent, this, &TimelineModel::handleEvent);
+        }
+
+        m_account = account;
+
+        connect(m_account, &AbstractAccount::streamingEvent, this, &TimelineModel::handleEvent);
+
+        beginResetModel();
+        qDeleteAll(m_timeline);
+        m_timeline.clear();
+        endResetModel();
+
+        m_loading = false;
+        Q_EMIT loadingChanged();
+
+        Q_EMIT nameChanged();
+        fillTimeline();
     });
 
     fillTimeline();
@@ -224,4 +233,20 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
 void TimelineModel::refresh()
 {
     fillTimeline();
+}
+
+void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
+{
+    if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {
+        int i = 0;
+        for (const auto &post : std::as_const(m_timeline)) {
+            if (post->m_original_post_id.toUtf8() == payload) {
+                beginRemoveRows({}, i, i);
+                m_timeline.removeAt(i);
+                endRemoveRows();
+                break;
+            }
+            i++;
+        }
+    }
 }
