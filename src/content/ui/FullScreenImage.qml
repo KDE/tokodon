@@ -159,7 +159,6 @@ QQC2.Popup {
                         height: imageItem.height
                         source: modelData.blurhash !== "" ? ("image://blurhash/" + modelData.blurhash) : ""
                         visible: parent.status !== Image.Ready
-                        onVisibleChanged: console.error(visible, parent.status)
                     }
 
                     transform: [
