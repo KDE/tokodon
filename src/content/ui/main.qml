@@ -103,6 +103,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 type: TimelinePage.TimelineType.Home,
+                name: "home"
             });
             checked = true;
         }
@@ -167,7 +168,9 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: if (AccountManager.hasAccounts) {
-        pageStack.push(mainTimeline);
+        pageStack.push(mainTimeline, {
+            name: 'home',
+        });
     } else {
         pageStack.push('qrc:/content/ui/LoginPage.qml');
     }
@@ -175,11 +178,12 @@ Kirigami.ApplicationWindow {
     Component {
         id: mainTimeline
         TimelinePage {
-            property alias name: timelineModel.name
+            id: timelinePage
+            property string name
             type: TimelinePage.TimelineType.Home
             model: TimelineModel {
                 id: timelineModel
-                name: "home"
+                name: timelinePage.name
             }
         }
     }

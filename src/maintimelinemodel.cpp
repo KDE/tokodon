@@ -46,6 +46,8 @@ void MainTimelineModel::setName(const QString &timelineName)
 
     m_timelineName = timelineName;
     Q_EMIT nameChanged();
+    setLoading(false);
+    fillTimeline();
 }
 
 void MainTimelineModel::fillTimeline(const QString &from_id)
@@ -80,7 +82,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         q.addQueryItem("max_id", from_id);
     }
 
-    auto uri = m_account->apiUrl(QString("/api/v1/timelines/%1").arg(timelineName));
+    auto uri = m_account->apiUrl(QStringLiteral("/api/v1/timelines/%1").arg(timelineName));
     uri.setQuery(q);
 
     auto account = m_account;
