@@ -115,6 +115,7 @@ public:
         Favorite,
         Poll,
         FollowRequest,
+        Update,
     };
     Q_ENUM(Type);
 

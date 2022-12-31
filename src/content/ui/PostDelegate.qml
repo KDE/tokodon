@@ -60,16 +60,26 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: model.type === Notification.Favorite
+            visible: model.type === Notification.Favorite || model.type === Notification.Update
             Kirigami.Icon {
-                source: "favorite"
+                source: if (model.type === Notification.Favorite) {
+                    return "favorite"
+                } else if (model.type === Notification.Update) {
+                    return "cell_edit"
+                }
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
             }
             QQC2.Label {
-                text: model.type === Notification.Favorite ? i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml) : ''
+                text: if (model.type === Notification.Favorite) {
+                    return i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml)
+                } else if (model.type === Notification.Update) {
+                    return i18n("%1 edited a post", model.notificationActorIdentity.displayNameHtml)
+                } else {
+                    return ''
+                }
                 textFormat: Text.RichText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter

@@ -94,6 +94,14 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Follow
                 FollowDelegate {}
             }
+            DelegateChoice {
+                roleValue: Notification.Update
+                PostDelegate {
+                    secondary: true
+                    timelineModel: notificationModel
+                }
+            }
+
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

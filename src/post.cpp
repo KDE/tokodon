@@ -255,6 +255,7 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {"follow", Notification::Type::Follow},
     {"mention", Notification::Type::Mention},
     {"reblog", Notification::Type::Repeat},
+    {"update", Notification::Type::Update},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
