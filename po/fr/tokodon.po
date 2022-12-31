@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:49+0000\n"
+"POT-Creation-Date: 2022-12-31 00:51+0000\n"
 "PO-Revision-Date: 2022-12-27 21:52+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -76,7 +76,7 @@ msgstr "%1 h"
 msgid "%1d"
 msgstr "%1 d"
 
-#: accountmodel.cpp:51 maintimelinemodel.cpp:26
+#: accountmodel.cpp:51 maintimelinemodel.cpp:27
 #, kde-format
 msgid "Loading"
 msgstr "Chargement"
@@ -263,12 +263,12 @@ msgstr "Enregistrer sous"
 msgid "Close"
 msgstr "Fermer"
 
-#: content/ui/FullScreenImage.qml:203
+#: content/ui/FullScreenImage.qml:202
 #, kde-format
 msgid "Previous image"
 msgstr "Image précédente"
 
-#: content/ui/FullScreenImage.qml:218
+#: content/ui/FullScreenImage.qml:217
 #, kde-format
 msgid "Next image"
 msgstr "Image suivante"
@@ -308,22 +308,22 @@ msgstr "L'instance d'URL et le nom d'utilisateur ne doivent pas être vide !"
 msgid "Home"
 msgstr "Accueil"
 
-#: content/ui/main.qml:112 content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:113 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "Notifications"
 
-#: content/ui/main.qml:122
+#: content/ui/main.qml:123
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:135
+#: content/ui/main.qml:136
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:149
+#: content/ui/main.qml:150
 #, kde-format
 msgid "Conversation"
 msgstr "Conversation"
@@ -370,51 +370,57 @@ msgstr "mis en avant par %1"
 msgid "%1 boosted your post"
 msgstr "%1 a mis en avant votre message"
 
-#: content/ui/PostDelegate.qml:173
+#: content/ui/PostDelegate.qml:126
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgid "View profile"
+msgstr "Fonctionnalité sur un profil"
+
+#: content/ui/PostDelegate.qml:174
 #, kde-format
 msgid "Show more"
 msgstr "Afficher plus"
 
-#: content/ui/PostDelegate.qml:303
+#: content/ui/PostDelegate.qml:304
 #, kde-format
 msgid "Media Hidden"
 msgstr "Media masqué"
 
-#: content/ui/PostDelegate.qml:431
+#: content/ui/PostDelegate.qml:432
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: content/ui/PostDelegate.qml:455
+#: content/ui/PostDelegate.qml:456
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:489
+#: content/ui/PostDelegate.qml:490
 #, kde-format
 msgid "Vote"
 msgstr "Vote"
 
-#: content/ui/PostDelegate.qml:514
+#: content/ui/PostDelegate.qml:515
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/PostDelegate.qml:527
+#: content/ui/PostDelegate.qml:528
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Répondre"
 
-#: content/ui/PostDelegate.qml:537
+#: content/ui/PostDelegate.qml:538
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Stimuler"
 
-#: content/ui/PostDelegate.qml:547
+#: content/ui/PostDelegate.qml:548
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -789,22 +795,22 @@ msgstr "Envoyer"
 msgid "Log in to an existing account"
 msgstr "Se connecter à un compte existant"
 
-#: content/ui/UserInfo.qml:190
+#: content/ui/UserInfo.qml:189
 #, kde-format
 msgid "Switch User"
 msgstr "Changer d'utilisateur"
 
-#: content/ui/UserInfo.qml:202
+#: content/ui/UserInfo.qml:201
 #, kde-format
 msgid "Add"
 msgstr "Ajouter"
 
-#: content/ui/UserInfo.qml:213
+#: content/ui/UserInfo.qml:212
 #, kde-format
 msgid "Configure"
 msgstr "Configurer"
 
-#: content/ui/UserInfo.qml:214
+#: content/ui/UserInfo.qml:213
 #, kde-format
 msgid "Open Settings"
 msgstr "Ouvrir la configuration"
@@ -886,25 +892,25 @@ msgstr "xavier.besnard@neuf.fr"
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Un client pour le réseau social décentralisé : mastodon."
 
-#: maintimelinemodel.cpp:28
+#: maintimelinemodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Accueil (%1)"
 
-#: maintimelinemodel.cpp:30
+#: maintimelinemodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Accueil"
 
-#: maintimelinemodel.cpp:33
+#: maintimelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Chronologie locale"
 
-#: maintimelinemodel.cpp:35
+#: maintimelinemodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
