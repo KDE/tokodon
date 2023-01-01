@@ -127,7 +127,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     m_link = QUrl(obj["url"].toString());
     m_pinned = obj["pinned"].toBool();
     m_visibility = stringToVisibility[obj["visibility"].toString()];
-    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate);
+    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
     addAttachments(obj["media_attachments"].toArray());
     const QJsonArray mentions = obj["mentions"].toArray();
     if (obj.contains("card") && !obj["card"].toObject().empty()) {
