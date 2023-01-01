@@ -158,13 +158,6 @@ int NotificationModel::rowCount(const QModelIndex &parent) const
     return m_notifications.size();
 }
 
-// this is even more extremely cursed
-std::shared_ptr<Notification> NotificationModel::internalData(const QModelIndex &index) const
-{
-    int row = index.row();
-    return m_notifications[row];
-}
-
 QHash<int, QByteArray> NotificationModel::roleNames() const
 {
     auto roles = AbstractTimelineModel::roleNames();

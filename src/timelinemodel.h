@@ -26,10 +26,6 @@ public:
 
     void init();
 
-    Post *internalData(const QModelIndex &index) const;
-
-    Q_INVOKABLE void refresh();
-
 public Q_SLOTS:
     void actionReply(const QModelIndex &index);
     void actionFavorite(const QModelIndex &index);

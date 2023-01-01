@@ -138,13 +138,6 @@ int TimelineModel::rowCount(const QModelIndex &parent) const
     return m_timeline.size();
 }
 
-// this is even more extremely cursed
-Post *TimelineModel::internalData(const QModelIndex &index) const
-{
-    int row = index.row();
-    return m_timeline[row];
-}
-
 QVariant TimelineModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
@@ -237,11 +230,6 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
             i++;
         }
     });
-}
-
-void TimelineModel::refresh()
-{
-    fillTimeline();
 }
 
 void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
