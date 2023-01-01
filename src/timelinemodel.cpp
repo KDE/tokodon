@@ -24,10 +24,10 @@ void TimelineModel::init()
 {
     m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
+
     if (m_account) {
         connect(m_account, &AbstractAccount::streamingEvent, this, &TimelineModel::handleEvent);
     }
-
 
     connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
         if (m_account == account) {

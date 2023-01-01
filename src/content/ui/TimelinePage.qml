@@ -41,24 +41,10 @@ Kirigami.ScrollablePage {
     property alias listViewHeader: listview.header
     property bool isProfile: false
 
-    supportsRefreshing: true
-
-    onRefreshingChanged: if (refreshing) {
-        model.refresh();
-    }
-
     onBackRequested: if (dialog) {
         dialog.close();
         dialog = null;
         event.accepted = true;
-    }
-
-    Connections {
-        target: model
-
-        function onLoadingChanged() {
-            timelinePage.refreshing = false
-        }
     }
 
     actions.main: Kirigami.Action {
@@ -70,16 +56,6 @@ Kirigami.ScrollablePage {
             pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
                 postObject: post
             });
-        }
-    }
-
-    actions.right: Kirigami.Action {
-        icon.name: "view-refresh"
-        text: i18n("Refresh")
-        enabled: AccountManager.hasAccounts
-        visible: !Kirigami.Settings.isMobile
-        onTriggered: {
-            model.refresh();
         }
     }
 
