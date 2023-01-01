@@ -59,8 +59,7 @@ void TimelineModel::init()
         m_timeline.clear();
         endResetModel();
 
-        m_loading = false;
-        Q_EMIT loadingChanged();
+        setLoading(false);
 
         Q_EMIT nameChanged();
         fillTimeline();

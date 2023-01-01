@@ -63,8 +63,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
     if (m_loading) {
         return;
     }
-    m_loading = true;
-    Q_EMIT loadingChanged();
+    setLoading(true);
 
     QString timelineName = m_timelineName;
     const bool local = timelineName == "public";

@@ -23,7 +23,7 @@ NotificationModel::NotificationModel(QObject *parent)
             m_notifications.clear();
             endResetModel();
             m_next = QString();
-            m_loading = false;
+            setLoading(false);
         }
     });
 
@@ -44,11 +44,11 @@ NotificationModel::NotificationModel(QObject *parent)
         m_notifications.clear();
         endResetModel();
         m_next = QString();
-        m_loading = false;
+        setLoading(false);
         fillTimeline();
     });
 
-    m_loading = false;
+    setLoading(false);
     fillTimeline();
 }
 
@@ -76,7 +76,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
     if (m_loading) {
         return;
     }
-    m_loading = true;
+    setLoading(true);
     QUrl uri;
     if (next.isEmpty()) {
         uri = QUrl::fromUserInput(m_account->instanceUri());
@@ -94,10 +94,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
-        if (m_loading) {
-            m_loading = false;
-            Q_EMIT loadingChanged();
-        }
+        setLoading(false);
 
         if (!doc.isArray()) {
             m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
@@ -140,9 +137,8 @@ bool NotificationModel::canFetchMore(const QModelIndex &parent) const
 
 void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>> notifications)
 {
-    m_loading = false;
-
     if (notifications.isEmpty()) {
+        setLoading(false);
         return;
     }
 
