@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
                      QStringLiteral(TOKODON_VERSION_STRING),
                      i18n("Mastodon client"),
                      KAboutLicense::GPL_V3,
-                     i18n("© 2021 Carl Schwan, 2021 KDE Community"));
+                     i18n("© 2021-2023 Carl Schwan, 2021-2023 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"), i18n("Maintainer"), QStringLiteral("carl@carlschwan.eu"));
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
