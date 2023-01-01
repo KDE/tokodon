@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-31 00:51+0000\n"
-"PO-Revision-Date: 2022-12-28 07:17+0100\n"
+"POT-Creation-Date: 2023-01-01 00:57+0000\n"
+"PO-Revision-Date: 2022-12-31 06:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -349,82 +349,87 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Mencions"
 
-#: content/ui/NotificationPage.qml:100 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:100
 #, kde-format
 msgid "Loading..."
 msgstr "S'està carregant..."
 
-#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:77 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ha marcat com a favorit la vostra publicació"
 
-#: content/ui/PostDelegate.qml:90
+#: content/ui/PostDelegate.qml:79
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "%1 edited a post"
+msgstr "%1 ha marcat com a favorit la vostra publicació"
+
+#: content/ui/PostDelegate.qml:100
 #, kde-format
 msgid "Pinned entry"
 msgstr "Entrada fixada"
 
-#: content/ui/PostDelegate.qml:110
+#: content/ui/PostDelegate.qml:120
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ha impulsat"
 
-#: content/ui/PostDelegate.qml:110 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:120 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 ha impulsat la vostra publicació"
 
-#: content/ui/PostDelegate.qml:126
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#: content/ui/PostDelegate.qml:136
+#, kde-format
 msgid "View profile"
-msgstr "Destaca en el perfil"
+msgstr "Visualitza el perfil"
 
-#: content/ui/PostDelegate.qml:174
+#: content/ui/PostDelegate.qml:184
 #, kde-format
 msgid "Show more"
 msgstr "Mostra'n més"
 
-#: content/ui/PostDelegate.qml:304
+#: content/ui/PostDelegate.qml:314
 #, kde-format
 msgid "Media Hidden"
 msgstr "Fitxers multimèdia ocults"
 
-#: content/ui/PostDelegate.qml:432
+#: content/ui/PostDelegate.qml:442
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: content/ui/PostDelegate.qml:456
+#: content/ui/PostDelegate.qml:466
 #, kde-format
 msgid "(No votes)"
 msgstr "(Sense vots)"
 
-#: content/ui/PostDelegate.qml:490
+#: content/ui/PostDelegate.qml:500
 #, kde-format
 msgid "Vote"
 msgstr "Voteu"
 
-#: content/ui/PostDelegate.qml:515
+#: content/ui/PostDelegate.qml:525
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/PostDelegate.qml:528
+#: content/ui/PostDelegate.qml:538
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/PostDelegate.qml:538
+#: content/ui/PostDelegate.qml:548
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Interessant"
 
-#: content/ui/PostDelegate.qml:548
+#: content/ui/PostDelegate.qml:558
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"

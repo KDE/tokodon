@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-31 00:51+0000\n"
+"POT-Creation-Date: 2023-01-01 00:57+0000\n"
 "PO-Revision-Date: 2022-02-11 15:52+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -347,48 +347,54 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:100 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:100
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
 msgstr "Načítání"
 
-#: content/ui/PostDelegate.qml:72 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:77 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:90
+#: content/ui/PostDelegate.qml:79
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "%1 edited a post"
+msgstr "Neuvedené v seznamu"
+
+#: content/ui/PostDelegate.qml:100
 #, kde-format
 msgid "Pinned entry"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:110
+#: content/ui/PostDelegate.qml:120
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:110 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:120 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:126
+#: content/ui/PostDelegate.qml:136
 #, kde-format
 msgid "View profile"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:174
+#: content/ui/PostDelegate.qml:184
 #, kde-format
 msgid "Show more"
 msgstr "Ukázat víc"
 
-#: content/ui/PostDelegate.qml:304
+#: content/ui/PostDelegate.qml:314
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:432
+#: content/ui/PostDelegate.qml:442
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -396,35 +402,35 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:456
+#: content/ui/PostDelegate.qml:466
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:490
+#: content/ui/PostDelegate.qml:500
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:515
+#: content/ui/PostDelegate.qml:525
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:528
+#: content/ui/PostDelegate.qml:538
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: content/ui/PostDelegate.qml:538
+#: content/ui/PostDelegate.qml:548
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:548
+#: content/ui/PostDelegate.qml:558
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
