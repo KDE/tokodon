@@ -51,7 +51,4 @@ protected:
     QList<std::shared_ptr<Notification>> m_notifications;
     QStringList m_excludeTypes;
     QUrl m_next;
-
-public Q_SLOTS:
-    void fetchedNotifications(QList<std::shared_ptr<Notification>> notifications);
 };

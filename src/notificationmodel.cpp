@@ -112,7 +112,14 @@ void NotificationModel::fillTimeline(const QUrl &next)
             const auto notification = std::make_shared<Notification>(m_account, obj, this);
             notifications.push_back(notification);
         }
-        fetchedNotifications(notifications);
+
+        if (notifications.isEmpty()) {
+            return;
+        }
+
+        beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
+        m_notifications.append(notifications);
+        endInsertRows();
     });
 }
 
@@ -132,19 +139,7 @@ bool NotificationModel::canFetchMore(const QModelIndex &parent) const
     Q_UNUSED(parent);
 
     // Todo detect when there is nothing left
-    return !m_loading;
-}
-
-void NotificationModel::fetchedNotifications(QList<std::shared_ptr<Notification>> notifications)
-{
-    if (notifications.isEmpty()) {
-        setLoading(false);
-        return;
-    }
-
-    beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
-    m_notifications.append(notifications);
-    endInsertRows();
+    return !loading();
 }
 
 int NotificationModel::rowCount(const QModelIndex &parent) const
