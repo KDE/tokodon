@@ -35,7 +35,11 @@ public:
     ~Account();
 
     // making API calls
-    void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback,  std::function<void(QNetworkReply *)> errorCallback = nullptr) override;
+    void get(const QUrl &url,
+             bool authenticated,
+             QObject *parent,
+             std::function<void(QNetworkReply *)> callback,
+             std::function<void(QNetworkReply *)> errorCallback = nullptr) override;
     void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;

@@ -86,19 +86,23 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
 
     auto account = m_account;
     auto currentTimelineName = m_timelineName;
-    m_account->get(uri, true, this, [this, currentTimelineName, account, uri](QNetworkReply *reply) {
-        if (m_account != account || m_timelineName != currentTimelineName) {
+    m_account->get(
+        uri,
+        true,
+        this,
+        [this, currentTimelineName, account, uri](QNetworkReply *reply) {
+            if (m_account != account || m_timelineName != currentTimelineName) {
+                setLoading(false);
+                return;
+            }
+
+            fetchedTimeline(reply->readAll());
+        },
+        [this](QNetworkReply *reply) {
+            Q_UNUSED(reply);
             setLoading(false);
-            return;
-        }
-
-        fetchedTimeline(reply->readAll());
-    }, [this](QNetworkReply *reply) {
-        Q_UNUSED(reply);
-        setLoading(false);
-    });
+        });
 }
-
 
 void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
@@ -111,4 +115,3 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
         endInsertRows();
     }
 }
-

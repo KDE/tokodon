@@ -49,4 +49,3 @@ bool Preferences::extendSpoiler() const
 {
     return m_extendSpoiler;
 }
-

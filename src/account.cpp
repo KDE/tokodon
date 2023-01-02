@@ -5,10 +5,10 @@
 #include "account.h"
 #include "accountmanager.h"
 #include "notificationhandler.h"
+#include "preferences.h"
 #include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
 #include <QNetworkAccessManager>
-#include "preferences.h"
 
 Account::Account(const QString &name, const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
     : AbstractAccount(parent, name, instanceUri)
@@ -43,7 +43,11 @@ Account::~Account()
     m_identityCache.clear();
 }
 
-void Account::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb,  std::function<void(QNetworkReply *)> errorCallback)
+void Account::get(const QUrl &url,
+                  bool authenticated,
+                  QObject *parent,
+                  std::function<void(QNetworkReply *)> reply_cb,
+                  std::function<void(QNetworkReply *)> errorCallback)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;

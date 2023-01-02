@@ -107,7 +107,11 @@ public:
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
     /// \param errorCallback The callback that should be executed if the request is not successful
-    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback, std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
+    virtual void get(const QUrl &url,
+                     bool authenticated,
+                     QObject *parent,
+                     std::function<void(QNetworkReply *)> callback,
+                     std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
 
     /// Make an HTTP POST request to the mastodon server
     /// \param url The url of the request

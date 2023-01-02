@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include "abstractaccount.h"
 #include "abstracttimelinemodel.h"
 #include "accountmanager.h"
-#include "abstractaccount.h"
 #include "post.h"
 #include <QAbstractListModel>
 

@@ -52,13 +52,18 @@ void TagsModel::fillTimeline(const QString &fromId)
         setLoading(false);
     };
 
-    m_account->get(uri, true, this, [this, account, hashtag, uri](QNetworkReply *reply) {
-        if (account != m_account || m_hashtag != hashtag) {
-            // Receiving request for an old query
-            setLoading(false);
-            return;
-        }
+    m_account->get(
+        uri,
+        true,
+        this,
+        [this, account, hashtag, uri](QNetworkReply *reply) {
+            if (account != m_account || m_hashtag != hashtag) {
+                // Receiving request for an old query
+                setLoading(false);
+                return;
+            }
 
-        fetchedTimeline(reply->readAll());
-    }, handleError);
+            fetchedTimeline(reply->readAll());
+        },
+        handleError);
 }

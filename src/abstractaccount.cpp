@@ -6,8 +6,8 @@
 
 #include "accountmanager.h"
 #include "messagefiltercontainer.h"
-#include "relationship.h"
 #include "preferences.h"
+#include "relationship.h"
 #include "tokodon_debug.h"
 #include <KLocalizedString>
 #include <QFile>

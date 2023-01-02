@@ -80,8 +80,13 @@ public:
     explicit Attachment(Post *parent, const QJsonObject &obj);
     ~Attachment();
 
-    enum AttachmentType { Unknown, Image, GifV, Video, };
-	Q_ENUM(AttachmentType);
+    enum AttachmentType {
+        Unknown,
+        Image,
+        GifV,
+        Video,
+    };
+    Q_ENUM(AttachmentType);
     Post *m_parent;
 
     QString m_id;

@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "post.h"
 #include "abstractaccount.h"
+#include "post.h"
 
 class Preferences : public QObject
 {

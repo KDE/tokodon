@@ -9,7 +9,11 @@ class MockAccount : public AbstractAccount
     Q_OBJECT
 public:
     MockAccount(QObject *parent = nullptr);
-    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback, std::function<void(QNetworkReply *)> errorCallback = nullptr) override;
+    virtual void get(const QUrl &url,
+                     bool authenticated,
+                     QObject *parent,
+                     std::function<void(QNetworkReply *)> callback,
+                     std::function<void(QNetworkReply *)> errorCallback = nullptr) override;
     virtual void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     virtual void post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;

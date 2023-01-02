@@ -17,7 +17,6 @@ static QMap<QString, Post::Visibility> p_stringToVisibility = {
     {"direct", Post::Visibility::Direct},
 };
 
-
 QString visibilityToString(Post::Visibility visibility)
 {
     return p_visibilityToString[visibility];

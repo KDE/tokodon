@@ -150,13 +150,15 @@ void AccountModel::updateRelationships()
     // Fetch relationship. Don't cache this; it's lightweight.
     QUrl uriRelationship(m_account->instanceUri());
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
-    uriRelationship.setQuery(QUrlQuery{{QStringLiteral("id[]"), QString::number(m_identity->id())},});
+    uriRelationship.setQuery(QUrlQuery{
+        {QStringLiteral("id[]"), QString::number(m_identity->id())},
+    });
 
     m_account->get(uriRelationship, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (!doc.isArray()) {
             qWarning() << "Data returned from Relationship network request is not an array"
-                     << "data: " << doc;
+                       << "data: " << doc;
             return;
         }
 
