@@ -19,6 +19,23 @@ QQC2.ToolBar {
     property alias accountsListVisible: accounts.visible
     property var addAccount
 
+    function openAccountPage() {
+        const accountModel = AccountManager.selectedAccountModel;
+        if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
+            pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                model: accountModel,
+            })
+        } else {
+            accountModel.identityChanged.connect(() => {
+                if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
+                    pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                        model: accountModel,
+                    })
+                }
+            });
+        }
+    }
+
     ColumnLayout {
         id: content
         width: parent.width
@@ -145,9 +162,7 @@ QQC2.ToolBar {
                         source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
                         name: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayName : 'user'
                         actions.main: Kirigami.Action {
-                            onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                                model: AccountManager.selectedAccountModel,
-                            })
+                            onTriggered: openAccountPage()
                         }
                     }
                 }
@@ -172,9 +187,7 @@ QQC2.ToolBar {
                 }
 
                 TapHandler {
-                    onTapped: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: AccountManager.selectedAccountModel,
-                    })
+                    onTapped: openAccountPage()
                 }
 
                 HoverHandler {
