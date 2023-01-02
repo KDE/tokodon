@@ -26,6 +26,23 @@ QQC2.ItemDelegate {
     width: ListView.view.width
     Kirigami.Theme.colorSet: model.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
     Kirigami.Theme.inherit: false
+
+    function openAccountPage(accountModel) {
+        if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
+            pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                model: accountModel,
+            })
+        } else {
+            accountModel.identityChanged.connect(() => {
+                if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
+                    pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                        model: accountModel,
+                    })
+                }
+            });
+        }
+    }
+
     background: Rectangle {
         color: Kirigami.Theme.backgroundColor
         Kirigami.Separator {
@@ -159,9 +176,7 @@ QQC2.ItemDelegate {
                 cache: true
                 actions.main: Kirigami.Action {
                     tooltip: i18n("View profile")
-                    onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: model.accountModel,
-                    })
+                    onTriggered: openAccountPage(model.accountModel)
                 }
                 name: model.authorDisplayName
             }
