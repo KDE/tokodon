@@ -46,6 +46,12 @@ void TagsModel::fillTimeline(const QString &fromId)
     uri.setQuery(q);
     const auto account = m_account;
     const auto hashtag = m_hashtag;
+
+    auto handleError = [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        setLoading(false);
+    };
+
     m_account->get(uri, true, this, [this, account, hashtag, uri](QNetworkReply *reply) {
         if (account != m_account || m_hashtag != hashtag) {
             // Receiving request for an old query
@@ -54,5 +60,5 @@ void TagsModel::fillTimeline(const QString &fromId)
         }
 
         fetchedTimeline(reply->readAll());
-    });
+    }, handleError);
 }

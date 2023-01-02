@@ -7,6 +7,7 @@
 #include "accountmanager.h"
 #include "messagefiltercontainer.h"
 #include "relationship.h"
+#include "preferences.h"
 #include "tokodon_debug.h"
 #include <KLocalizedString>
 #include <QFile>
@@ -29,6 +30,11 @@ AbstractAccount::AbstractAccount(QObject *parent)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
 {
+}
+
+Preferences *AbstractAccount::preferences() const
+{
+    return m_preferences;
 }
 
 QString AbstractAccount::username() const

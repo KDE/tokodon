@@ -5,6 +5,7 @@
 
 #include "identity.h"
 #include "post.h"
+#include "preferences.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
@@ -14,6 +15,7 @@ class Notification;
 class QNetworkReply;
 class QHttpMultiPart;
 class QFile;
+class Preferences;
 
 class AbstractAccount : public QObject
 {
@@ -26,6 +28,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
     Q_PROPERTY(Identity *identity READ identityObj CONSTANT)
+    Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
 
 public:
     AbstractAccount(QObject *parent, const QString &name, const QString &instanceUri);
@@ -45,6 +48,8 @@ public:
     Q_INVOKABLE Post *newPost();
     bool haveToken() const;
     virtual void validateToken() = 0;
+
+    Preferences *preferences() const;
 
     // name
     QString username() const;
@@ -101,7 +106,8 @@ public:
     /// \param authenticated Whether the request should be authentificated
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    /// \param errorCallback The callback that should be executed if the request is not successful
+    virtual void get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback, std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
 
     /// Make an HTTP POST request to the mastodon server
     /// \param url The url of the request
@@ -222,6 +228,7 @@ protected:
     QString m_instance_name;
     Identity m_identity;
     AllowedContentType m_allowedContentTypes;
+    Preferences *m_preferences = nullptr;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

@@ -2,13 +2,17 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "mockaccount.h"
+#include "autotests/helperreply.h"
 
 MockAccount::MockAccount(QObject *parent)
     : AbstractAccount(parent)
 {
+    registerGet(apiUrl("/api/v1/preferences"), new TestReply("preferences.json", this));
+    m_preferences = new Preferences(this);
+    Q_EMIT authenticated();
 }
 
-void MockAccount::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
+void MockAccount::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback, std::function<void(QNetworkReply *)> errorCallback)
 {
     Q_UNUSED(authenticated)
     Q_UNUSED(parent)

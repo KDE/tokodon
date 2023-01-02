@@ -8,12 +8,14 @@
 #include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
 #include <QNetworkAccessManager>
+#include "preferences.h"
 
 Account::Account(const QString &name, const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
     : AbstractAccount(parent, name, instanceUri)
     , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(nam)
 {
+    m_preferences = new Preferences(this);
     setInstanceUri(instanceUri);
 
     auto notificationHandler = new NotificationHandler(m_qnam, this);
@@ -26,6 +28,7 @@ Account::Account(const QSettings &settings, QNetworkAccessManager *nam, QObject 
     : AbstractAccount(parent)
     , m_qnam(nam)
 {
+    m_preferences = new Preferences(this);
     m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
@@ -40,14 +43,14 @@ Account::~Account()
     m_identityCache.clear();
 }
 
-void Account::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
+void Account::get(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb,  std::function<void(QNetworkReply *)> errorCallback)
 {
     QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
     QNetworkReply *reply = m_qnam->get(request);
     reply->setParent(parent);
-    handleReply(reply, reply_cb);
+    handleReply(reply, reply_cb, errorCallback);
 }
 
 void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
@@ -122,15 +125,18 @@ QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
     return request;
 }
 
-void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply *)> reply_cb) const
+void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply *)> reply_cb, std::function<void(QNetworkReply *)> errorCallback) const
 {
-    QObject::connect(reply, &QNetworkReply::finished, [reply, reply_cb]() {
+    connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
-        if (reply_cb) {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo")) {
-                qCWarning(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
-                return;
+        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo")) {
+            qCWarning(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
+            if (errorCallback) {
+                errorCallback(reply);
             }
+            return;
+        }
+        if (reply_cb) {
             reply_cb(reply);
         }
     });

@@ -23,9 +23,10 @@ ecm_qt_declare_logging_category(debug_files_SRCS
 set(tokodon_src
     accountmanager.cpp
     account.cpp
-    mockaccount.cpp
     post.cpp
     poll.cpp
+    utils.cpp
+    preferences.cpp
     filetransferjob.cpp
     filehelper.cpp
     threadmodel.cpp

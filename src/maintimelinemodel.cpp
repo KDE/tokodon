@@ -93,6 +93,9 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         }
 
         fetchedTimeline(reply->readAll());
+    }, [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        setLoading(false);
     });
 }
 

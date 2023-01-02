@@ -153,6 +153,7 @@ Kirigami.ApplicationWindow {
         iconName: "tokodon-chat-reply"
         text: i18n("Conversation")
         checkable: true
+        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace("qrc:/content/ui/ConversationPage.qml");

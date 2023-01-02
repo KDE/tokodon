@@ -10,6 +10,7 @@
 #include "account.h"
 #include "poll.h"
 #include "post.h"
+#include "utils.h"
 
 static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"image", Attachment::AttachmentType::Image},
@@ -48,26 +49,12 @@ void Attachment::setDescription(const QString &description)
     m_parent->updateAttachment(this);
 }
 
-static QMap<Post::Visibility, QString> visibilityToString = {
-    {Post::Visibility::Public, "public"},
-    {Post::Visibility::Unlisted, "unlisted"},
-    {Post::Visibility::Private, "private"},
-    {Post::Visibility::Direct, "direct"},
-};
-
-static QMap<QString, Post::Visibility> stringToVisibility = {
-    {"public", Post::Visibility::Public},
-    {"unlisted", Post::Visibility::Unlisted},
-    {"private", Post::Visibility::Private},
-    {"direct", Post::Visibility::Direct},
-};
-
 Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
     , m_parent(account)
 {
     QString visibilityString = account->identity().visibility();
-    m_visibility = stringToVisibility[visibilityString];
+    m_visibility = stringToVisibility(visibilityString);
 }
 
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
@@ -126,7 +113,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     m_isSensitive = obj["sensitive"].toBool();
     m_link = QUrl(obj["url"].toString());
     m_pinned = obj["pinned"].toBool();
-    m_visibility = stringToVisibility[obj["visibility"].toString()];
+    m_visibility = stringToVisibility(obj["visibility"].toString());
     m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
     addAttachments(obj["media_attachments"].toArray());
     const QJsonArray mentions = obj["mentions"].toArray();
@@ -220,7 +207,7 @@ QJsonDocument Post::toJsonDocument() const
     obj["status"] = m_content;
     obj["content_type"] = m_content_type;
     obj["sensitive"] = m_isSensitive;
-    obj["visibility"] = visibilityToString[m_visibility];
+    obj["visibility"] = visibilityToString(m_visibility);
 
     if (!m_replyTargetId.isEmpty()) {
         obj["in_reply_to_id"] = m_replyTargetId;

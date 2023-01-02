@@ -80,6 +80,11 @@ void AccountModel::fillTimeline(const QString &fromId)
     const auto account = m_account;
     const auto id = m_id;
 
+    auto handleError = [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        setLoading(false);
+    };
+
     auto onFetchPinned = [this, id, account](QNetworkReply *reply) {
         if (m_account != account || m_id != id) {
             setLoading(false);
@@ -109,7 +114,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         setLoading(false);
     };
 
-    auto onFetchAccount = [account, id, fetchPinned, uriPinned, onFetchPinned, this](QNetworkReply *reply) {
+    auto onFetchAccount = [account, id, fetchPinned, uriPinned, handleError, onFetchPinned, this](QNetworkReply *reply) {
         if (m_account != account || m_id != id) {
             setLoading(false);
             return;
@@ -117,13 +122,13 @@ void AccountModel::fillTimeline(const QString &fromId)
 
         fetchedTimeline(reply->readAll());
         if (fetchPinned) {
-            m_account->get(uriPinned, true, this, onFetchPinned);
+            m_account->get(uriPinned, true, this, onFetchPinned, handleError);
         } else {
             setLoading(false);
         }
     };
 
-    m_account->get(uriStatus, true, this, onFetchAccount);
+    m_account->get(uriStatus, true, this, onFetchAccount, handleError);
 }
 
 Identity *AccountModel::identity() const

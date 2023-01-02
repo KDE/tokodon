@@ -56,6 +56,11 @@ void ThreadModel::fillTimeline(const QString &fromId)
     const auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
     auto thread = std::make_shared<QList<Post *>>();
 
+    auto handleError = [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        setLoading(false);
+    };
+
     auto onFetchContext = [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
@@ -99,10 +104,10 @@ void ThreadModel::fillTimeline(const QString &fromId)
             return;
         }
         thread->push_front(new Post(m_account, obj, this));
-        m_account->get(contextUrl, true, this, onFetchContext);
+        m_account->get(contextUrl, true, this, onFetchContext, handleError);
     };
 
-    m_account->get(statusUrl, true, this, onFetchStatus);
+    m_account->get(statusUrl, true, this, onFetchStatus, handleError);
 }
 
 bool ThreadModel::canFetchMore(const QModelIndex &parent) const
