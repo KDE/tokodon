@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:57+0000\n"
+"POT-Creation-Date: 2023-01-02 01:01+0000\n"
 "PO-Revision-Date: 2022-06-27 00:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -339,7 +339,7 @@ msgstr "Global"
 msgid "Conversation"
 msgstr "Nennungen"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Toot"
 msgstr "Tröt"
@@ -356,7 +356,7 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Nennungen"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -743,11 +743,6 @@ msgstr "Wort hinzufügen"
 msgid "Delete word"
 msgstr "Wort löschen"
 
-#: content/ui/TimelinePage.qml:78
-#, kde-format
-msgid "Refresh"
-msgstr ""
-
 #: content/ui/TootComposer.qml:13
 #, kde-format
 msgid "Write a new toot"
@@ -895,8 +890,9 @@ msgid "Mastodon client"
 msgstr "Mastodon-Client"
 
 #: main.cpp:94
-#, kde-format
-msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "Copyright © 2021 Carl Schwan, 2021 KDE-Gemeinschaft"
 
 #: main.cpp:95
@@ -950,7 +946,7 @@ msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Globale Zeitleiste"
 
-#: notificationmodel.cpp:103
+#: notificationmodel.cpp:100
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr ""

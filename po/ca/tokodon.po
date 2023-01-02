@@ -1,15 +1,15 @@
 # Translation of tokodon.po to Catalan
-# Copyright (C) 2021-2022 This_file_is_part_of_KDE
+# Copyright (C) 2021-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:57+0000\n"
-"PO-Revision-Date: 2022-12-31 06:37+0100\n"
+"POT-Creation-Date: 2023-01-02 01:01+0000\n"
+"PO-Revision-Date: 2023-01-01 06:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -332,7 +332,7 @@ msgstr "Global"
 msgid "Conversation"
 msgstr "Conversa"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Toot"
 msgstr "Tut"
@@ -349,7 +349,7 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Mencions"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
 #, kde-format
 msgid "Loading..."
 msgstr "S'està carregant..."
@@ -360,10 +360,9 @@ msgid "%1 favorited your post"
 msgstr "%1 ha marcat com a favorit la vostra publicació"
 
 #: content/ui/PostDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 edited a post"
-msgstr "%1 ha marcat com a favorit la vostra publicació"
+msgstr "%1 ha editat una publicació"
 
 #: content/ui/PostDelegate.qml:100
 #, kde-format
@@ -717,11 +716,6 @@ msgstr "Afegeix una paraula"
 msgid "Delete word"
 msgstr "Suprimeix una paraula"
 
-#: content/ui/TimelinePage.qml:78
-#, kde-format
-msgid "Refresh"
-msgstr "Actualitza"
-
 #: content/ui/TootComposer.qml:13
 #, kde-format
 msgid "Write a new toot"
@@ -864,8 +858,9 @@ msgid "Mastodon client"
 msgstr "Client del Mastodon"
 
 #: main.cpp:94
-#, kde-format
-msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE Community"
 
 #: main.cpp:95
@@ -919,7 +914,7 @@ msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Línia de temps global"
 
-#: notificationmodel.cpp:103
+#: notificationmodel.cpp:100
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar la darrera notificació."
@@ -959,3 +954,6 @@ msgstr "Publicació"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil"
+
+#~ msgid "Refresh"
+#~ msgstr "Actualitza"

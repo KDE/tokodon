@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:57+0000\n"
-"PO-Revision-Date: 2022-12-31 08:59+0200\n"
+"POT-Creation-Date: 2023-01-02 01:01+0000\n"
+"PO-Revision-Date: 2023-01-01 09:39+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -332,7 +332,7 @@ msgstr "Загальний"
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:66
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Toot"
 msgstr "Тут"
@@ -349,7 +349,7 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Згадки"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
 #, kde-format
 msgid "Loading..."
 msgstr "Завантаження…"
@@ -360,10 +360,9 @@ msgid "%1 favorited your post"
 msgstr "Ваш допис позначено %1 як улюблений"
 
 #: content/ui/PostDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 edited a post"
-msgstr "Ваш допис позначено %1 як улюблений"
+msgstr "%1 змінено допис"
 
 #: content/ui/PostDelegate.qml:100
 #, kde-format
@@ -719,11 +718,6 @@ msgstr "Додати слово"
 msgid "Delete word"
 msgstr "Вилучити слово"
 
-#: content/ui/TimelinePage.qml:78
-#, kde-format
-msgid "Refresh"
-msgstr "Освіжити"
-
 #: content/ui/TootComposer.qml:13
 #, kde-format
 msgid "Write a new toot"
@@ -868,8 +862,9 @@ msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
 #: main.cpp:94
-#, kde-format
-msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021; Спільнота KDE, 2021"
 
 #: main.cpp:95
@@ -923,7 +918,7 @@ msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Загальний розклад"
 
-#: notificationmodel.cpp:103
+#: notificationmodel.cpp:100
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
@@ -965,6 +960,9 @@ msgstr "Допис"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Потік"
+
+#~ msgid "Refresh"
+#~ msgstr "Освіжити"
 
 #~ msgid "Image View"
 #~ msgstr "Перегляд зображення"
