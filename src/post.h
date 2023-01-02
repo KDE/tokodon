@@ -80,7 +80,8 @@ public:
     explicit Attachment(Post *parent, const QJsonObject &obj);
     ~Attachment();
 
-    enum AttachmentType { Unknown, Image, GifV, Video };
+    enum AttachmentType { Unknown, Image, GifV, Video, };
+	Q_ENUM(AttachmentType);
     Post *m_parent;
 
     QString m_id;
@@ -145,6 +146,7 @@ class Post : public QObject
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
     Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
+    Q_PROPERTY(QStringList filters READ filters CONSTANT)
 
 public:
     Post() = delete;
@@ -186,6 +188,7 @@ public:
     Poll *poll() const;
     int repliesCount() const;
     QString postId() const;
+    QStringList filters() const;
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
@@ -237,6 +240,7 @@ Q_SIGNALS:
 
 private:
     QString m_replyTargetId;
+    QStringList m_filters;
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
     std::shared_ptr<Identity> m_repeatIdentity;

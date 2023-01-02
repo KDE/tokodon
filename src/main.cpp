@@ -126,6 +126,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Poll *>("Poll*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
+    qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
 
     QQmlApplicationEngine engine;

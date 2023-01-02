@@ -52,15 +52,38 @@ QQC2.ItemDelegate {
             });
         }
     }
-    ListView.onReused: tootContent.visible = Qt.binding(() => { return model.spoilerText.length === 0; })
+    ListView.onReused: {
+        tootContent.visible = Qt.binding(() => {
+            return model.spoilerText.length === 0;
+        });
+        filtered = Qt.binding(() => {
+            return model.filters.length > 0;
+        });
+    }
+
+    property bool filtered: model.filters.length > 0
 
     contentItem: ColumnLayout {
         spacing: 0
 
         RowLayout {
+            visible: filtered
+            Layout.fillWidth: true
+            QQC2.Label {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Filtered: %1", model.filters.join(', '))
+            }
+            Kirigami.LinkButton {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Show anyway")
+                onClicked: filtered = false
+            }
+        }
+
+        RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: model.type === Notification.Favorite || model.type === Notification.Update
+            visible: (model.type === Notification.Favorite || model.type === Notification.Update) && !filtered
             Kirigami.Icon {
                 source: if (model.type === Notification.Favorite) {
                     return "favorite"
@@ -89,7 +112,7 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: model.pinned
+            visible: model.pinned && !filtered
             Kirigami.Icon {
                 source: "pin"
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -105,7 +128,8 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
-            visible: model.wasReblogged || model.type === Notification.Repeat
+            visible: (model.wasReblogged || model.type === Notification.Repeat) && !filtered
+
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             Kirigami.Icon {
@@ -125,6 +149,7 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
+            visible: !filtered
             Layout.fillWidth: true
             spacing: Kirigami.Units.largeSpacing
             Kirigami.Avatar {
@@ -172,7 +197,9 @@ QQC2.ItemDelegate {
                 elide: Text.ElideRight
             }
         }
+
         ColumnLayout {
+            visible: !filtered
             RowLayout {
                 visible: model.spoilerText.length !== 0
                 QQC2.Label {
@@ -237,7 +264,15 @@ a{
             leftPadding: 0
             bottomPadding: 0
             rightPadding: 0
-            visible: tootContent.visible && !root.secondary && model.attachments.length > 0
+            visible: tootContent.visible && !root.secondary && model.attachments.length > 0 && !filtered
+            property bool hasValidAttachment: {
+                for (let i in model.attachments) {
+                    if (model.attachments[i].attachmentType !== Attachment.Unknown) {
+                        return true;
+                    }
+                }
+                return false;
+            }
             contentItem: GridLayout {
                 columns: model.attachments.length > 1 ? 2 : 1
 
@@ -250,6 +285,7 @@ a{
                         Layout.topMargin: Kirigami.Units.largeSpacing
                         //Layout.maximumWidth: sourceSize.width
                         Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
+                        Layout.minimumHeight: Kirigami.Units.gridUnit * 10
                         source: modelData.previewUrl
                         mipmap: true
                         cache: true
@@ -269,6 +305,9 @@ a{
                         }
                         TapHandler {
                             onTapped: {
+                                if (modelData.attachmentType !== Attachment.Image) {
+                                    return;
+                                }
                                 if (attachmentGrid.isSensitive) {
                                     attachmentGrid.isSensitive = false;
                                 } else {
@@ -286,6 +325,13 @@ a{
                             source: visible ? "image://blurhash/" + modelData.blurhash : ''
                             visible: parent.status !== Image.Ready || attachmentGrid.isSensitive
                         }
+
+                        QQC2.Button {
+                            visible: modelData.attachmentType === Attachment.Unknown
+                            enabled: false
+                            text: i18n("Not available")
+                            anchors.centerIn: parent
+                        }
                     }
                 }
             }
@@ -293,7 +339,7 @@ a{
             QQC2.Button {
                 icon.name: "view-hidden"
 
-                visible: !parent.isSensitive
+                visible: !parent.isSensitive && parent.hasValidAttachment
 
                 anchors.top: parent.top
                 anchors.topMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
@@ -306,7 +352,7 @@ a{
             QQC2.Button {
                 anchors.centerIn: parent
 
-                visible: parent.isSensitive
+                visible: parent.isSensitive && parent.hasValidAttachment
 
                 Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                 Kirigami.Theme.inherit: false
@@ -324,7 +370,7 @@ a{
         }
 
         QQC2.AbstractButton {
-            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary && model.attachments.length === 0
+            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary && model.attachments.length === 0 && !filtered
             Layout.fillWidth: true
             Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
             leftPadding: 0
@@ -423,6 +469,7 @@ a{
         }
 
         ColumnLayout {
+            visible: !filtered
             QQC2.ButtonGroup {
                 id: pollGroup
                 exclusive: poll !== undefined && !poll.multiple
@@ -518,7 +565,7 @@ a{
         }
 
         RowLayout {
-            visible: showInteractionButton
+            visible: showInteractionButton && !filtered
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "qrc:/content/icon/reply-post.svg"

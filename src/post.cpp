@@ -16,6 +16,7 @@ static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"image", Attachment::AttachmentType::Image},
     {"gifv", Attachment::AttachmentType::GifV},
     {"video", Attachment::AttachmentType::Video},
+    {"unknown", Attachment::AttachmentType::Unknown},
 };
 
 Attachment::Attachment(Post *parent, const QJsonObject &obj)
@@ -130,6 +131,13 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
         m_poll = new Poll(obj[QStringLiteral("poll")].toObject());
     }
 
+    const auto filters = obj["filtered"].toArray();
+    for (const auto &filter : filters) {
+        const auto filterContext = filter.toObject();
+        const auto filterObj = filterContext["filter"].toObject();
+        m_filters << filterObj["title"].toString();
+    }
+
     m_attachments_visible = !m_isSensitive;
 }
 
@@ -188,6 +196,11 @@ void Post::setDirtyAttachment()
 QStringList Post::mentions() const
 {
     return m_mentions;
+}
+
+QStringList Post::filters() const
+{
+    return m_filters;
 }
 
 void Post::setMentions(const QStringList &mentions)

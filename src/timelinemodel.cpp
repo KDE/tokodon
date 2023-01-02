@@ -128,7 +128,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return !m_loading;
+    return true;
 }
 
 int TimelineModel::rowCount(const QModelIndex &parent) const

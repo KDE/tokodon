@@ -60,6 +60,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {PollRole, QByteArrayLiteral("poll")},
         {VisibilityRole, QByteArrayLiteral("visibility")},
         {SelectedRole, QByteArrayLiteral("selected")},
+        {FiltersRole, QByteArrayLiteral("filters")},
     };
 }
 
@@ -110,6 +111,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->subject();
     case VisibilityRole:
         return post->visibility();
+    case FiltersRole:
+        return post->filters();
     case AttachmentsRole:
         return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
     case ThreadModelRole:
