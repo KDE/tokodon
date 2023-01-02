@@ -24,6 +24,7 @@ Kirigami.ScrollablePage {
 
         textFormat: TextEdit.RichText
     }
+    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
     enum TimelineType {
         Home,

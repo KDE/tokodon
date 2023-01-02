@@ -17,6 +17,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
     pageStack.globalToolBar.canContainHandles: true
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
 
     property bool isShowingFullScreenImage: false
@@ -53,6 +54,9 @@ Kirigami.ApplicationWindow {
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
         handleVisible: modal && !isShowingFullScreenImage
+        onModalChanged: if (!modal) {
+            drawerOpen = true;
+        }
 
         leftPadding: 0
         rightPadding: 0
