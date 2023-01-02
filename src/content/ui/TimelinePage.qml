@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("Loading...")
-            visible: listview.model.loading
+            visible: listview.model.loading && listview.count < 2
         }
     }
 }
