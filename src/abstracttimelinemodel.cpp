@@ -124,6 +124,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return false;
     case AccountModelRole:
         return QVariant::fromValue<QAbstractListModel *>(new AccountModel(post->authorIdentity()->id(), post->authorIdentity()->account()));
+    case UrlRole:
+        return QVariant::fromValue<QUrl>(post->m_link);
     case RelativeTimeRole: {
         const auto current = QDateTime::currentDateTime();
         auto secsTo = post->m_published_at.secsTo(current);
