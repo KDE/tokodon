@@ -93,7 +93,7 @@ void TimelineModel::fetchedTimeline(const QByteArray &data)
     if (!m_timeline.isEmpty()) {
         const auto postOld = m_timeline.first();
         const auto postNew = posts.first();
-        if (postOld->postId() > postNew->postId()) {
+        if (postOld->m_original_post_id > postNew->m_original_post_id) {
             const int row = m_timeline.size();
             const int last = row + posts.size() - 1;
             beginInsertRows({}, row, last);
