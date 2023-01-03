@@ -223,7 +223,7 @@ QQC2.ItemDelegate {
                     wrapMode: Text.Wrap
                 }
                 QQC2.Button {
-                    text: i18n("Show more")
+                    text: tootContent.visible ? i18n("Show Less") : i18n("Show More")
                     onClicked: tootContent.visible = !tootContent.visible
                 }
             }
