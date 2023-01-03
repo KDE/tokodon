@@ -34,6 +34,10 @@ QString MainTimelineModel::displayName() const
         return i18nc("@title", "Local Timeline");
     } else if (m_timelineName == "federated") {
         return i18nc("@title", "Global Timeline");
+    } else if (m_timelineName == "bookmarks") {
+        return i18nc("@title", "Bookmarks");
+    } else if (m_timelineName == "favourites") {
+        return i18nc("@title", "Favourites");
     }
     return {};
 }
@@ -56,7 +60,11 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    if (m_timelineName != "home" && m_timelineName != "public" && m_timelineName != "federated") {
+    if (m_timelineName != "home" &&
+        m_timelineName != "public" &&
+        m_timelineName != "federated" &&
+        m_timelineName != "bookmarks" &&
+        m_timelineName != "favourites") {
         return;
     }
 
@@ -81,7 +89,16 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         q.addQueryItem("max_id", from_id);
     }
 
-    auto uri = m_account->apiUrl(QStringLiteral("/api/v1/timelines/%1").arg(timelineName));
+    QString apiUrl;
+    if (m_timelineName == "home" || m_timelineName == "public" || m_timelineName == "federated") {
+        apiUrl = QStringLiteral("/api/v1/timelines/%1").arg(timelineName);
+    } else if (m_timelineName == "bookmarks") {
+        apiUrl = QStringLiteral("/api/v1/bookmarks");
+    } else if(m_timelineName == "favourites") {
+        apiUrl = QStringLiteral("/api/v1/favourites");
+    }
+
+    auto uri = m_account->apiUrl(apiUrl);
     uri.setQuery(q);
 
     auto account = m_account;

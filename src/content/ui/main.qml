@@ -81,7 +81,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction]
+                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
                 Kirigami.BasicListItem {
                     action: modelData
                     separatorVisible: false
@@ -160,10 +160,41 @@ Kirigami.ApplicationWindow {
             checked = true;
         }
     }
+
+    property Kirigami.Action favouritesAction: Kirigami.Action {
+        iconName: "favorite"
+        text: i18n("Favourites")
+        checkable: true
+        visible: !Kirigami.Settings.isMobile
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, {
+                name: "favourites",
+                type: TimelinePage.TimelineType.Favourites,
+            });
+            checked = true;
+        }
+    }
+
+    property Kirigami.Action bookmarksAction: Kirigami.Action {
+        iconName: "bookmarks"
+        text: i18n("Bookmarks")
+        checkable: true
+        visible: !Kirigami.Settings.isMobile
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, {
+                name: "bookmarks",
+                type: TimelinePage.TimelineType.Bookmarks,
+            });
+            checked = true;
+        }
+    }
+
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction]
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null

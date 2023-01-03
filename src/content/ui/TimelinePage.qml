@@ -33,7 +33,9 @@ Kirigami.ScrollablePage {
         Global,
         Thread,
         Profile,
-        Tag
+        Tag,
+        Bookmarks,
+        Favourites
     }
 
     required property var model
