@@ -621,6 +621,28 @@ a{
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
+            InteractionButton {
+                iconSource: 'overflow-menu'
+                onClicked: postMenu.open()
+                QQC2.Menu {
+                    id: postMenu
+                    QQC2.MenuItem {
+                        text: i18n("Expand this post")
+                        onTriggered: {
+                            pageStack.push("qrc:/content/ui/TimelinePage.qml", {
+                                model: model.threadModel,
+                                type: TimelinePage.TimelineType.Thread,
+                            });
+                        }
+                    }
+                    QQC2.MenuItem {
+                        text: i18n("Copy link to this post")
+                        onTriggered: {
+                            Clipboard.saveText(model.url)
+                        }
+                    }
+                }
+            }
         }
     }
 }
