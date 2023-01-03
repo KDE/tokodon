@@ -41,5 +41,26 @@ MobileForm.FormCard {
                 Config.save()
             }
         }
+
+        MobileForm.FormComboBoxDelegate {
+            Layout.fillWidth: true
+            text: i18n("Color theme")
+            textRole: "display"
+            valueRole: "display"
+            model: ColorSchemer.model
+            Component.onCompleted: currentIndex = ColorSchemer.indexForScheme(Config.colorScheme);
+            onCurrentValueChanged: {
+                ColorSchemer.apply(currentIndex);
+                Config.colorScheme = ColorSchemer.nameForIndex(currentIndex);
+                Config.save();
+            }
+        }
+
+        Loader {
+            id: colorSchemeDelegate
+            visible: Qt.platform.os !== "android"
+            source: "qrc:/ColorScheme.qml"
+            Layout.fillWidth: true
+        }
     }
 }

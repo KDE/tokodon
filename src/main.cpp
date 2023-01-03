@@ -49,6 +49,10 @@
 #include "tagsmodel.h"
 #include "timelinemodel.h"
 
+#ifdef HAVE_COLORSCHEME
+#include "colorschemer.h"
+#endif
+
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
 #endif
@@ -104,6 +108,14 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 #endif
     auto config = Config::self();
+
+#ifdef HAVE_COLORSCHEME
+    ColorSchemer colorScheme;
+    qmlRegisterSingletonInstance<ColorSchemer>("org.kde.kmasto", 1, 0, "ColorSchemer", &colorScheme);
+    if (!config->colorScheme().isEmpty()) {
+        colorScheme.apply(config->colorScheme());
+    }
+#endif
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());

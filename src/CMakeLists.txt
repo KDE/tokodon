@@ -54,6 +54,11 @@ set(tokodon_src
     ${debug_files_SRCS}
 )
 
+if(NOT ANDROID)
+    set(tokodon_src ${tokodon_src}
+            colorschemer.cpp)
+endif()
+
 add_library(tokodon_static STATIC ${tokodon_src})
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc)
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF5::I18n KF5::Kirigami2 KF5::Notifications KF5::ConfigCore KF5::ConfigGui KF5::CoreAddons ${QTKEYCHAIN_LIBRARIES})
@@ -119,6 +124,8 @@ if(ANDROID)
     )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
+    target_compile_definitions(tokodon PRIVATE -DHAVE_COLORSCHEME)
+    target_link_libraries(tokodon_static PUBLIC KF5::ConfigWidgets)
 endif()
 
 if(TARGET KF5::DBusAddons)
