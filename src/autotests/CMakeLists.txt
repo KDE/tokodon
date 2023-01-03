@@ -35,3 +35,9 @@ ecm_add_test(conversationmodeltest.cpp
     LINK_LIBRARIES tokodon_test_static Qt::Test
     NAME_PREFIX "tokodon-"
 )
+
+ecm_add_test(blurhashtest.cpp
+        TEST_NAME blurhashtest
+        LINK_LIBRARIES tokodon_test_static Qt::Test
+        NAME_PREFIX "tokodon-"
+)
