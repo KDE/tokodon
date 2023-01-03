@@ -52,6 +52,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {RepliesCountRole, QByteArrayLiteral("repliesCount")},
         {FavoritedRole, QByteArrayLiteral("favorite")},
         {FavoritesCountRole, QByteArrayLiteral("favoritesCount")},
+        {BookmarkedRole, QByteArrayLiteral("bookmarked")},
         {UrlRole, QByteArrayLiteral("url")},
         {ThreadModelRole, QByteArrayLiteral("threadModel")},
         {AccountModelRole, QByteArrayLiteral("accountModel")},
@@ -103,6 +104,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->m_favoriteCount;
     case RepliesCountRole:
         return post->repliesCount();
+    case BookmarkedRole:
+        return post->m_isBookmarked;
     case PinnedRole:
         return post->m_pinned;
     case SensitiveRole:

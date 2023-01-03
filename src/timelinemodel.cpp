@@ -231,6 +231,22 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
     });
 }
 
+void TimelineModel::actionBookmark(const QModelIndex &index)
+{
+    int row = index.row();
+    auto p = m_timeline[row];
+
+    if (!p->m_isBookmarked) {
+        m_account->bookmark(p);
+        p->m_isBookmarked = true;
+    } else {
+        m_account->unbookmark(p);
+        p->m_isBookmarked = false;
+    }
+
+    Q_EMIT dataChanged(index, index);
+}
+
 void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
     if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {

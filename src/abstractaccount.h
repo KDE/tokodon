@@ -80,6 +80,8 @@ public:
     void unfavorite(Post *p);
     void repeat(Post *p);
     void unrepeat(Post *p);
+    void bookmark(Post *p);
+    void unbookmark(Post *p);
 
     // uploading media
     void updateAttachment(Attachment *a);

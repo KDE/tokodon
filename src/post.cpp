@@ -111,6 +111,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     m_repeatedCount = obj["reblogs_count"].toInt();
     m_repliesCount = obj["replies_count"].toInt();
     m_isRepeated = obj["reblogged"].toBool();
+    m_isBookmarked = obj["bookmarked"].toBool();
     m_isSensitive = obj["sensitive"].toBool();
     m_link = QUrl(obj["url"].toString());
     m_pinned = obj["pinned"].toBool();

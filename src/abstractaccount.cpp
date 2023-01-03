@@ -257,6 +257,16 @@ void AbstractAccount::unrepeat(Post *p)
     mutatePost(p, "unreblog");
 }
 
+void AbstractAccount::bookmark(Post *p)
+{
+    mutatePost(p, "bookmark", true);
+}
+
+void AbstractAccount::unbookmark(Post *p)
+{
+    mutatePost(p, "unbookmark");
+}
+
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
 // that it might need to be extended later on.
 static AbstractAccount::AllowedContentType parseVersion(const QString &instanceVer)

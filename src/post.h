@@ -204,6 +204,7 @@ public:
     int m_repeatedCount = 0;
     bool m_isFavorite = false;
     int m_favoriteCount = 0;
+    bool m_isBookmarked = false;
     bool m_isSensitive = false;
     bool m_attachments_visible = true;
 

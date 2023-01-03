@@ -33,6 +33,7 @@ public:
         RebloggedIdRole,
         RebloggedRole,
         ReblogsCountRole,
+        BookmarkedRole,
         MentionsRole,
         RepliesCountRole,
         FavoritedRole,
