@@ -34,6 +34,10 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         knotification = new KNotification("mention");
         knotification->setTitle(notification->identity()->displayName());
         break;
+    case Notification::Update:
+        knotification = new KNotification("update");
+        knotification->setTitle(i18n("%1 edited a post", notification->identity()->displayName()));
+        break;
     default:
         Q_UNREACHABLE();
     }
