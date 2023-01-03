@@ -40,6 +40,7 @@ static const QMap<QLatin1String, QLatin1String> knownEncodings = {
         {QLatin1String("%7C"), QLatin1String("|")},
         {QLatin1String("%7B"), QLatin1String("{")},
         {QLatin1String("%7D"), QLatin1String("}")},
+        {QLatin1String("%7E"), QLatin1String("~")}
 };
 
 QImage BlurhashImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
