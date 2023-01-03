@@ -215,7 +215,8 @@ TimelinePage {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 Layout.topMargin: Kirigami.Units.smallSpacing
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
-                text: model.identity.account
+                text: '@' + model.identity.account
+                color: Kirigami.Theme.disabledTextColor
             }
             Repeater {
                 model: accountInfo.model.identity.fields
