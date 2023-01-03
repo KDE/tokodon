@@ -131,6 +131,11 @@ QQC2.Popup {
 
                 property alias image: imageItem
 
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: root.close()
+                }
+
                 AnimatedImage {
                     id: imageItem
 
@@ -145,6 +150,12 @@ QQC2.Popup {
                     fillMode: Image.PreserveAspectFit
                     clip: true
                     source: modelData.url
+
+                    MouseArea {
+                        anchors.centerIn: parent
+                        width: parent.paintedWidth
+                        height: parent.paintedHeight
+                    }
 
                     Behavior on width {
                         NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
