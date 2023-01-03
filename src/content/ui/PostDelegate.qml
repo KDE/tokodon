@@ -71,7 +71,7 @@ QQC2.ItemDelegate {
     }
     ListView.onReused: {
         tootContent.visible = Qt.binding(() => {
-            return model.spoilerText.length === 0;
+            return model.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler;
         });
         filtered = Qt.binding(() => {
             return model.filters.length > 0;
@@ -239,7 +239,7 @@ a{
 </style>" + model.display
                 textFormat: TextEdit.RichText
                 wrapMode: Text.Wrap
-                visible: model.spoilerText.length === 0
+                visible: model.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 readOnly: true
                 selectByMouse: !Kirigami.Settings.isMobile
                 // TODO handle opening profile page in tokodon
