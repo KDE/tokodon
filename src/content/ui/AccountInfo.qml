@@ -61,11 +61,12 @@ TimelinePage {
                 Item {
                     Layout.minimumWidth: Kirigami.Units.gridUnit * 5
                     Layout.alignment: Qt.AlignBottom
-                    Image {
+                    Kirigami.Avatar {
                         anchors {
                             left: parent.left
                             bottom: parent.bottom
                         }
+                        cache: true
                         source: model.identity.avatarUrl
                         width: Kirigami.Units.gridUnit * 5
                         height: Kirigami.Units.gridUnit * 5
