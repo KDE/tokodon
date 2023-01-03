@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-02 01:01+0000\n"
+"POT-Creation-Date: 2023-01-03 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -20,63 +20,63 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: abstractaccount.cpp:402
+#: abstractaccount.cpp:408
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: abstractaccount.cpp:403
+#: abstractaccount.cpp:409
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: abstractaccount.cpp:404
+#: abstractaccount.cpp:410
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: abstractaccount.cpp:405
+#: abstractaccount.cpp:411
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: abstractaccount.cpp:406
+#: abstractaccount.cpp:412
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: abstractaccount.cpp:407
+#: abstractaccount.cpp:413
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: abstractaccount.cpp:408
+#: abstractaccount.cpp:414
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: abstractaccount.cpp:409
+#: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: abstractaccount.cpp:410
+#: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
 
-#: abstracttimelinemodel.cpp:131
+#: abstracttimelinemodel.cpp:134
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:135
+#: abstracttimelinemodel.cpp:138
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: abstracttimelinemodel.cpp:137
+#: abstracttimelinemodel.cpp:140
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
@@ -308,34 +308,34 @@ msgstr "SSL 오류 무시"
 msgid "Instance URL and username must not be empty!"
 msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
 
-#: content/ui/main.qml:99
+#: content/ui/main.qml:103
 #, kde-format
 msgid "Home"
 msgstr "홈"
 
-#: content/ui/main.qml:113 content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:117 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: content/ui/main.qml:123
+#: content/ui/main.qml:127
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/main.qml:136
+#: content/ui/main.qml:140
 #, kde-format
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/main.qml:150
+#: content/ui/main.qml:154
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Conversation"
 msgstr "멘션"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:53
 #, kde-format
 msgid "Toot"
 msgstr "툿"
@@ -352,55 +352,70 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "멘션"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:77
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
 msgstr "불러오는 중"
 
-#: content/ui/PostDelegate.qml:77 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:91
+#, kde-format
+msgid "Filtered: %1"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:95
+#, kde-format
+msgid "Show anyway"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/PostDelegate.qml:79
+#: content/ui/PostDelegate.qml:119
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "%1 edited a post"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/PostDelegate.qml:100
+#: content/ui/PostDelegate.qml:140
 #, kde-format
 msgid "Pinned entry"
 msgstr "고정된 항목"
 
-#: content/ui/PostDelegate.qml:120
+#: content/ui/PostDelegate.qml:161
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 님이 부스트함"
 
-#: content/ui/PostDelegate.qml:120 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:161 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 님이 내 글을 부스트함"
 
-#: content/ui/PostDelegate.qml:136
+#: content/ui/PostDelegate.qml:178
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "View profile"
 msgstr "프로필에 추천하기"
 
-#: content/ui/PostDelegate.qml:184
+#: content/ui/PostDelegate.qml:226
 #, kde-format
 msgid "Show more"
 msgstr "더 보기"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:347
+#, kde-format
+msgid "Not available"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:375
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:442
+#: content/ui/PostDelegate.qml:504
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -408,35 +423,35 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/PostDelegate.qml:466
+#: content/ui/PostDelegate.qml:528
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:500
+#: content/ui/PostDelegate.qml:562
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:525
+#: content/ui/PostDelegate.qml:587
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:538
+#: content/ui/PostDelegate.qml:600
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/PostDelegate.qml:548
+#: content/ui/PostDelegate.qml:610
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "부스트"
 
-#: content/ui/PostDelegate.qml:558
+#: content/ui/PostDelegate.qml:620
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -458,7 +473,7 @@ msgstr "계정"
 msgid "Logout"
 msgstr "로그아웃"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:60
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:77
 #, kde-format
 msgid "Add Account"
 msgstr "계정 추가"
@@ -813,27 +828,27 @@ msgstr "경고"
 msgid "Send"
 msgstr "뿌우!"
 
-#: content/ui/UserInfo.qml:63
+#: content/ui/UserInfo.qml:80
 #, kde-format
 msgid "Log in to an existing account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:189
+#: content/ui/UserInfo.qml:202
 #, kde-format
 msgid "Switch User"
 msgstr ""
 
-#: content/ui/UserInfo.qml:201
+#: content/ui/UserInfo.qml:214
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: content/ui/UserInfo.qml:212
+#: content/ui/UserInfo.qml:225
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/UserInfo.qml:213
+#: content/ui/UserInfo.qml:226
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -915,7 +930,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:139
+#: main.cpp:140
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"

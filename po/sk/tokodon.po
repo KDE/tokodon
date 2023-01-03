@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-02 01:01+0000\n"
+"POT-Creation-Date: 2023-01-03 00:47+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,64 +15,64 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: abstractaccount.cpp:402
+#: abstractaccount.cpp:408
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: abstractaccount.cpp:403
+#: abstractaccount.cpp:409
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: abstractaccount.cpp:404
+#: abstractaccount.cpp:410
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: abstractaccount.cpp:405
+#: abstractaccount.cpp:411
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: abstractaccount.cpp:406
+#: abstractaccount.cpp:412
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Could not mute account"
 msgstr "Pridať účet"
 
-#: abstractaccount.cpp:407
+#: abstractaccount.cpp:413
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: abstractaccount.cpp:408
+#: abstractaccount.cpp:414
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: abstractaccount.cpp:409
+#: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: abstractaccount.cpp:410
+#: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
 
-#: abstracttimelinemodel.cpp:131
+#: abstracttimelinemodel.cpp:134
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr ""
 
-#: abstracttimelinemodel.cpp:135
+#: abstracttimelinemodel.cpp:138
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: abstracttimelinemodel.cpp:137
+#: abstracttimelinemodel.cpp:140
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -305,32 +305,32 @@ msgstr ""
 msgid "Instance URL and username must not be empty!"
 msgstr ""
 
-#: content/ui/main.qml:99
+#: content/ui/main.qml:103
 #, fuzzy, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/main.qml:113 content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:117 content/ui/NotificationPage.qml:13
 #, fuzzy, kde-format
 msgid "Notifications"
 msgstr "Upozornenia"
 
-#: content/ui/main.qml:123
+#: content/ui/main.qml:127
 #, fuzzy, kde-format
 msgid "Local"
 msgstr "Lokálne"
 
-#: content/ui/main.qml:136
+#: content/ui/main.qml:140
 #, fuzzy, kde-format
 msgid "Global"
 msgstr "Globálne"
 
-#: content/ui/main.qml:150
+#: content/ui/main.qml:154
 #, fuzzy, kde-format
 msgid "Conversation"
 msgstr "Voľby:"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:53
 #, kde-format
 msgid "Toot"
 msgstr ""
@@ -347,87 +347,102 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Voľby:"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:77
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "Načítavam"
 
-#: content/ui/PostDelegate.qml:77 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:91
+#, kde-format
+msgid "Filtered: %1"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:95
+#, kde-format
+msgid "Show anyway"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:79
+#: content/ui/PostDelegate.qml:119
 #, fuzzy, kde-format
 msgid "%1 edited a post"
 msgstr "Neuvedené"
 
-#: content/ui/PostDelegate.qml:100
+#: content/ui/PostDelegate.qml:140
 #, kde-format
 msgid "Pinned entry"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:120
+#: content/ui/PostDelegate.qml:161
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:120 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:161 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:136
+#: content/ui/PostDelegate.qml:178
 #, kde-format
 msgid "View profile"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:184
+#: content/ui/PostDelegate.qml:226
 #, fuzzy, kde-format
 msgid "Show more"
 msgstr "Zobraziť ďalších %1"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:347
+#, kde-format
+msgid "Not available"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:375
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:442
+#: content/ui/PostDelegate.qml:504
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1h"
 
-#: content/ui/PostDelegate.qml:466
+#: content/ui/PostDelegate.qml:528
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:500
+#: content/ui/PostDelegate.qml:562
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:525
+#: content/ui/PostDelegate.qml:587
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:538
+#: content/ui/PostDelegate.qml:600
 #, fuzzy, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: content/ui/PostDelegate.qml:548
+#: content/ui/PostDelegate.qml:610
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:558
+#: content/ui/PostDelegate.qml:620
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -450,7 +465,7 @@ msgstr "Účty"
 msgid "Logout"
 msgstr "Odhlásenie"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:60
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:77
 #, kde-format
 msgid "Add Account"
 msgstr "Pridať účet"
@@ -790,27 +805,27 @@ msgstr "cW"
 msgid "Send"
 msgstr "Poslať"
 
-#: content/ui/UserInfo.qml:63
+#: content/ui/UserInfo.qml:80
 #, kde-format
 msgid "Log in to an existing account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:189
+#: content/ui/UserInfo.qml:202
 #, kde-format
 msgid "Switch User"
 msgstr ""
 
-#: content/ui/UserInfo.qml:201
+#: content/ui/UserInfo.qml:214
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: content/ui/UserInfo.qml:212
+#: content/ui/UserInfo.qml:225
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/UserInfo.qml:213
+#: content/ui/UserInfo.qml:226
 #, fuzzy, kde-format
 msgid "Open Settings"
 msgstr "Nastavenia"
@@ -888,7 +903,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: main.cpp:139
+#: main.cpp:140
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""

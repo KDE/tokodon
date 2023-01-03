@@ -1,80 +1,80 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2021, 2022.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-02 01:01+0000\n"
-"PO-Revision-Date: 2022-12-25 09:06+0100\n"
+"POT-Creation-Date: 2023-01-03 00:47+0000\n"
+"PO-Revision-Date: 2023-01-02 21:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.2.2\n"
 
-#: abstractaccount.cpp:402
+#: abstractaccount.cpp:408
 #, kde-format
 msgid "Could not follow account"
 msgstr "Ni bilo mogoče slediti računu"
 
-#: abstractaccount.cpp:403
+#: abstractaccount.cpp:409
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Ni bilo mogoče od-slediti računa"
 
-#: abstractaccount.cpp:404
+#: abstractaccount.cpp:410
 #, kde-format
 msgid "Could not block account"
 msgstr "Ni bilo mogoče blokirati računa"
 
-#: abstractaccount.cpp:405
+#: abstractaccount.cpp:411
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Ni bilo mogoče odblokirati računa"
 
-#: abstractaccount.cpp:406
+#: abstractaccount.cpp:412
 #, kde-format
 msgid "Could not mute account"
 msgstr "Ni bilo mogoče utišati računa"
 
-#: abstractaccount.cpp:407
+#: abstractaccount.cpp:413
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Ni bilo mogoče od-utišati računa"
 
-#: abstractaccount.cpp:408
+#: abstractaccount.cpp:414
 #, kde-format
 msgid "Could not feature account"
 msgstr "Profila ni mogoče izpostaviti"
 
-#: abstractaccount.cpp:409
+#: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Profilu ni mogoče odvzeti izpostavljenost"
 
-#: abstractaccount.cpp:410
+#: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Ni bilo mogoče urediti opombe o računu"
 
-#: abstracttimelinemodel.cpp:131
+#: abstracttimelinemodel.cpp:134
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:135
+#: abstracttimelinemodel.cpp:138
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: abstracttimelinemodel.cpp:137
+#: abstracttimelinemodel.cpp:140
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
@@ -227,7 +227,7 @@ msgstr "Vstavite ustvarjeni žeton."
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr ""
+msgstr "Pogovori"
 
 #: content/ui/FollowDelegate.qml:42 content/ui/FollowDelegate.qml:79
 #: notificationhandler.cpp:27
@@ -305,34 +305,32 @@ msgstr "Prezri napake ssl"
 msgid "Instance URL and username must not be empty!"
 msgstr "URL in uporabniško ime primerka ne smeta biti prazna!"
 
-#: content/ui/main.qml:99
+#: content/ui/main.qml:103
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/main.qml:113 content/ui/NotificationPage.qml:13
+#: content/ui/main.qml:117 content/ui/NotificationPage.qml:13
 #, kde-format
 msgid "Notifications"
 msgstr "Opozorila"
 
-#: content/ui/main.qml:123
+#: content/ui/main.qml:127
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: content/ui/main.qml:136
+#: content/ui/main.qml:140
 #, kde-format
 msgid "Global"
 msgstr "Globalno"
 
-#: content/ui/main.qml:150
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#: content/ui/main.qml:154
+#, kde-format
 msgid "Conversation"
-msgstr "Cilj"
+msgstr "Pogovor"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:52
+#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:53
 #, kde-format
 msgid "Toot"
 msgstr "Hupa"
@@ -349,88 +347,101 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Omembe"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:76
+#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:77
 #, kde-format
 msgid "Loading..."
 msgstr "Nalaganje..."
 
-#: content/ui/PostDelegate.qml:77 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:91
+#, kde-format
+msgid "Filtered: %1"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:95
+#, kde-format
+msgid "Show anyway"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: content/ui/PostDelegate.qml:79
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#: content/ui/PostDelegate.qml:119
+#, kde-format
 msgid "%1 edited a post"
-msgstr "%1 je pohvalilo vašo objavo"
+msgstr "%1 je uredila objavo"
 
-#: content/ui/PostDelegate.qml:100
+#: content/ui/PostDelegate.qml:140
 #, kde-format
 msgid "Pinned entry"
 msgstr "Pripeti vnos"
 
-#: content/ui/PostDelegate.qml:120
+#: content/ui/PostDelegate.qml:161
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ojačalo"
 
-#: content/ui/PostDelegate.qml:120 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:161 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je ojačalo vašo objavo"
 
-#: content/ui/PostDelegate.qml:136
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#: content/ui/PostDelegate.qml:178
+#, kde-format
 msgid "View profile"
-msgstr "Izpostavljanje profila"
+msgstr "Poglej profil"
 
-#: content/ui/PostDelegate.qml:184
+#: content/ui/PostDelegate.qml:226
 #, kde-format
 msgid "Show more"
 msgstr "Prikaži več"
 
-#: content/ui/PostDelegate.qml:314
+#: content/ui/PostDelegate.qml:347
+#, kde-format
+msgid "Not available"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:375
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medij je skrit"
 
-#: content/ui/PostDelegate.qml:442
+#: content/ui/PostDelegate.qml:504
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: content/ui/PostDelegate.qml:466
+#: content/ui/PostDelegate.qml:528
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Ni glasov)"
 
-#: content/ui/PostDelegate.qml:500
+#: content/ui/PostDelegate.qml:562
 #, kde-format
 msgid "Vote"
-msgstr "Glasuj"
+msgstr "Glas"
 
-#: content/ui/PostDelegate.qml:525
+#: content/ui/PostDelegate.qml:587
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/PostDelegate.qml:538
+#: content/ui/PostDelegate.qml:600
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/PostDelegate.qml:548
+#: content/ui/PostDelegate.qml:610
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/PostDelegate.qml:558
+#: content/ui/PostDelegate.qml:620
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
@@ -442,17 +453,16 @@ msgid "Accounts"
 msgstr "Računi"
 
 #: content/ui/Settings/AccountsCard.qml:32
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Account editor"
-msgstr "Računi"
+msgstr "Urejevalnik računa"
 
 #: content/ui/Settings/AccountsCard.qml:68
 #, kde-format
 msgid "Logout"
 msgstr "Odjava"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:60
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:77
 #, kde-format
 msgid "Add Account"
 msgstr "Dodaj račun"
@@ -533,7 +543,7 @@ msgstr "Uveljavi"
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
 msgid "Profile Editor"
-msgstr ""
+msgstr "Urejevalnik profila"
 
 #: content/ui/Settings/ProfileEditor.qml:31 content/ui/TootComposer.qml:157
 #, kde-format
@@ -543,68 +553,63 @@ msgstr "Izberite datoteko"
 #: content/ui/Settings/ProfileEditor.qml:116
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "Ime zaslona"
 
 #: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
 msgid "Bio"
-msgstr ""
+msgstr "Bio"
 
 #: content/ui/Settings/ProfileEditor.qml:148
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "Glava"
 
 #: content/ui/Settings/ProfileEditor.qml:182
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr ""
+msgstr "PNG, GIF ali JPG. Največ 2 MB. Bo zmanjšano na 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgid "Delete"
-msgstr "Briši besedo"
+msgstr "Briši"
 
 #: content/ui/Settings/ProfileEditor.qml:210
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr ""
+msgstr "Privzeto stanje zasebnosti"
 
 #: content/ui/Settings/ProfileEditor.qml:278
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgid "Public post"
-msgstr "Javno"
+msgstr "Javna objava"
 
 #: content/ui/Settings/ProfileEditor.qml:282
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Unlisted post"
-msgstr "Neobjavljeno"
+msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:286
-#, fuzzy, kde-format
-#| msgid "Follows you"
+#, kde-format
 msgid "Followers-only post"
-msgstr "Vam sledi"
+msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:290
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgid "Direct post"
-msgstr "Neposredno sporočilo"
+msgstr "Neposredna objava"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgid "Mark by default content as sensitive"
-msgstr ""
+msgstr "Privzeto označi vsebino kot občutljivo"
 
 #: content/ui/Settings/ProfileEditor.qml:317
 #, kde-format
@@ -614,17 +619,17 @@ msgstr ""
 #: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgid "This is a bot account"
-msgstr ""
+msgstr "To je račun bot-a"
 
 #: content/ui/Settings/ProfileEditor.qml:333
 #, kde-format
 msgid "Suggest account to others"
-msgstr ""
+msgstr "Predlagaj račun drugim"
 
 #: content/ui/Settings/ProfileEditor.qml:349
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Ponovno nastavi"
 
 #: content/ui/Settings/SettingsPage.qml:16
 #, kde-format
@@ -795,27 +800,27 @@ msgstr "cw"
 msgid "Send"
 msgstr "Pošlji"
 
-#: content/ui/UserInfo.qml:63
+#: content/ui/UserInfo.qml:80
 #, kde-format
 msgid "Log in to an existing account"
 msgstr "Prijavi se na obstoječi račun"
 
-#: content/ui/UserInfo.qml:189
+#: content/ui/UserInfo.qml:202
 #, kde-format
 msgid "Switch User"
 msgstr "Preklopi uporabnika"
 
-#: content/ui/UserInfo.qml:201
+#: content/ui/UserInfo.qml:214
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
 
-#: content/ui/UserInfo.qml:212
+#: content/ui/UserInfo.qml:225
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: content/ui/UserInfo.qml:213
+#: content/ui/UserInfo.qml:226
 #, kde-format
 msgid "Open Settings"
 msgstr "Odpri nastavitve"
@@ -823,21 +828,21 @@ msgstr "Odpri nastavitve"
 #: conversationmodel.cpp:60
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Prazen pogovor"
 
 #: conversationmodel.cpp:64
 #, kde-format
 msgid "%1 and %2"
-msgstr ""
+msgstr "%1 in %2"
 
 #: conversationmodel.cpp:66
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 in še %1 drug"
+msgstr[1] "%2 in še %1 druga"
+msgstr[2] "%2 in še %1 drugi"
+msgstr[3] "%2 in še %1 drugi"
 
 #: filetransferjob.cpp:82
 #, kde-format
@@ -868,10 +873,9 @@ msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
 #: main.cpp:94
-#, fuzzy, kde-format
-#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021 Carl Schwan, 2021 skupnost KDE"
+msgstr "© 2021-2023 Carl Schwan, 2021-2023 skupnost KDE"
 
 #: main.cpp:95
 #, kde-format
@@ -895,7 +899,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:139
+#: main.cpp:140
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
@@ -932,17 +936,17 @@ msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 #: profileeditor.cpp:183
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "Slika je prevelika"
 
 #: profileeditor.cpp:196
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
+msgstr "Nepodprta slikovna datoteka. Podprte so samo jpeg, png in gif."
 
 #: profileeditor.cpp:323
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Shranjene podrobnosti računa"
 
 #: searchmodel.cpp:114
 #, kde-format
