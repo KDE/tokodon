@@ -51,6 +51,7 @@ set(tokodon_src
     tagsmodel.cpp
     maintimelinemodel.cpp
     profileeditor.cpp
+    linkpaginatedtimelinemodel.cpp
     ${debug_files_SRCS}
 )
 

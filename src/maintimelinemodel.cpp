@@ -60,11 +60,8 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    if (m_timelineName != "home" &&
-        m_timelineName != "public" &&
-        m_timelineName != "federated" &&
-        m_timelineName != "bookmarks" &&
-        m_timelineName != "favourites") {
+    if (m_timelineName != "home" && m_timelineName != "public" && m_timelineName != "federated" && m_timelineName != "bookmarks"
+        && m_timelineName != "favourites") {
         return;
     }
 
@@ -94,7 +91,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         apiUrl = QStringLiteral("/api/v1/timelines/%1").arg(timelineName);
     } else if (m_timelineName == "bookmarks") {
         apiUrl = QStringLiteral("/api/v1/bookmarks");
-    } else if(m_timelineName == "favourites") {
+    } else if (m_timelineName == "favourites") {
         apiUrl = QStringLiteral("/api/v1/favourites");
     }
 

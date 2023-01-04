@@ -38,6 +38,7 @@
 #include "config.h"
 #include "conversationmodel.h"
 #include "filehelper.h"
+#include "linkpaginatedtimelinemodel.h"
 #include "maintimelinemodel.h"
 #include "networkaccessmanagerfactory.h"
 #include "networkcontroller.h"
@@ -47,7 +48,6 @@
 #include "profileeditor.h"
 #include "searchmodel.h"
 #include "tagsmodel.h"
-#include "timelinemodel.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
@@ -121,6 +121,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
     qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
+    qmlRegisterType<LinkPaginationTimelineModel>("org.kde.kmasto", 1, 0, "LinkPaginationTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");

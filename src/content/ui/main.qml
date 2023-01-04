@@ -168,7 +168,7 @@ Kirigami.ApplicationWindow {
         visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, {
+            pageStack.replace(linkPaginationTimeline, {
                 name: "favourites",
                 type: TimelinePage.TimelineType.Favourites,
             });
@@ -183,7 +183,7 @@ Kirigami.ApplicationWindow {
         visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(mainTimeline, {
+            pageStack.replace(linkPaginationTimeline, {
                 name: "bookmarks",
                 type: TimelinePage.TimelineType.Bookmarks,
             });
@@ -218,6 +218,19 @@ Kirigami.ApplicationWindow {
             property string name
             type: TimelinePage.TimelineType.Home
             model: TimelineModel {
+                id: timelineModel
+                name: timelinePage.name
+            }
+        }
+    }
+
+    Component {
+        id: linkPaginationTimeline
+        TimelinePage {
+            id: timelinePage
+            property string name
+            type: TimelinePage.TimelineType.Home
+            model: LinkPaginationTimelineModel {
                 id: timelineModel
                 name: timelinePage.name
             }
