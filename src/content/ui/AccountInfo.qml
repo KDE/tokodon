@@ -266,6 +266,7 @@ TimelinePage {
                 Layout.fillWidth: true
             }
             RowLayout {
+                visible: accountInfo.model.identity.relationship
                 Kirigami.Heading {
                     Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.largeSpacing
@@ -292,6 +293,7 @@ TimelinePage {
             }
             QQC2.TextArea {
                 id: noteField
+                visible: accountInfo.model.identity.relationship
                 Layout.fillWidth: true
                 background: Item {}
                 placeholderText: i18n("Click to add a note")
