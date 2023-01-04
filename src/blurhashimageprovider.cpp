@@ -33,7 +33,6 @@ static const QMap<QLatin1String, QLatin1String> knownEncodings = {
         {QLatin1String("%2C"), QLatin1String(",")},
         {QLatin1String("%2D"), QLatin1String("-")},
         {QLatin1String("%2E"), QLatin1String(".")},
-        {QLatin1String("%3B"), QLatin1String(";")},
         {QLatin1String("%3D"), QLatin1String("=")},
         {QLatin1String("%25"), QLatin1String("%")},
         {QLatin1String("%5E"), QLatin1String("^")},
