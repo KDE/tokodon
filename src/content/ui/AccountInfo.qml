@@ -197,6 +197,22 @@ TimelinePage {
                                     model.account.block(model.identity);
                                 }
                             }
+                        },
+                        Kirigami.Action {
+                            displayHint: Kirigami.DisplayHint.AlwaysHide
+                            visible: model.isSelf
+                            text: i18n("Edit profile")
+                            onTriggered: pageStack.push('qrc:/content/ui/Settings/ProfileEditor.qml', {
+                                                account: model.account
+                                            }, {
+                                                title: i18n("Account editor")
+                                            })
+                        },
+                        Kirigami.Action {
+                            displayHint: Kirigami.DisplayHint.AlwaysHide
+                            visible: model.isSelf
+                            text: i18n("Settings")
+                            onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
                         }
                     ]
                 }
