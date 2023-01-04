@@ -25,7 +25,7 @@ private Q_SLOTS:
 
     void testImageProviderEncoding()
     {
-        const QString blurHashEncoded = QStringLiteral("%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D%3BRPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%2Bj%5BrrW%3Bni%25Mt7V%40W%3Bt7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
+        const QString blurHashEncoded = QStringLiteral("%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D;RPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%2Bj%5BrrW;ni%25Mt7V%40W;t7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
 
         QSize outSize;
         QImage image = imageProvider->requestImage(blurHashEncoded, &outSize, QSize(25, 25));
