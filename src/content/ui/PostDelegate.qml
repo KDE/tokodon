@@ -301,7 +301,7 @@ a{
                         //Layout.maximumWidth: sourceSize.width
                         Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
                         Layout.minimumHeight: Kirigami.Units.gridUnit * 10
-                        source: modelData.previewUrl
+                        source: modelData.attachmentType === Attachment.Image ? modelData.previewUrl : ''
                         mipmap: true
                         cache: true
                         fillMode: Image.PreserveAspectCrop
@@ -343,9 +343,9 @@ a{
 
                         QQC2.Button {
                             visible: modelData.attachmentType === Attachment.Unknown
-                            enabled: false
                             text: i18n("Not available")
                             anchors.centerIn: parent
+                            onClicked: Qt.openUrlExternally(modelData.remoteUrl)
                         }
                     }
                 }

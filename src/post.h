@@ -71,6 +71,7 @@ class Attachment : public QObject
     Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
     Q_PROPERTY(QString previewUrl MEMBER m_preview_url CONSTANT)
     Q_PROPERTY(QString url MEMBER m_url CONSTANT)
+    Q_PROPERTY(QString remoteUrl MEMBER m_remote_url CONSTANT)
     Q_PROPERTY(QString description MEMBER m_description CONSTANT)
     Q_PROPERTY(QString blurhash MEMBER m_blurhash CONSTANT)
     Q_PROPERTY(int originalWidth MEMBER m_originalWidth CONSTANT)
@@ -93,6 +94,7 @@ public:
     AttachmentType m_type;
     QString m_preview_url;
     QString m_url;
+    QString m_remote_url;
     QString m_description;
     QString m_blurhash;
     int m_originalWidth;
