@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:49+0000\n"
+"POT-Creation-Date: 2023-01-05 00:48+0000\n"
 "PO-Revision-Date: 2022-02-11 15:52+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -153,32 +153,32 @@ msgstr ""
 msgid "Block"
 msgstr "Blokovat"
 
-#: content/ui/AccountInfo.qml:275
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Note"
 msgstr "Poznámka"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:284
 #, kde-format
 msgid "Saved"
 msgstr "Uloženo"
 
-#: content/ui/AccountInfo.qml:297
+#: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Click to add a note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:363
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "%1 toots"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:367
+#: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 followers"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:372
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "%1 following"
 msgstr ""
@@ -337,7 +337,7 @@ msgstr ""
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Záložky"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -402,16 +402,14 @@ msgid "View profile"
 msgstr ""
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Ukázat víc"
+msgstr ""
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
-msgstr "Ukázat víc"
+msgstr ""
 
 #: content/ui/PostDelegate.qml:347
 #, kde-format
@@ -482,12 +480,12 @@ msgstr ""
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Smazat záložku"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Záložka"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
@@ -513,7 +511,7 @@ msgstr "Přidat účet"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Barevný motiv"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -908,6 +906,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
 
+#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr ""
+
+#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr ""
+
 #: main.cpp:94
 #, kde-format
 msgid "Tokodon"
@@ -945,7 +955,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
@@ -972,18 +982,6 @@ msgstr "Místní časová osa"
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr ""
-
-#: maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
 msgstr ""
 
 #: notificationmodel.cpp:100

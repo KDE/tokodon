@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:49+0000\n"
-"PO-Revision-Date: 2023-01-03 05:51+0100\n"
+"POT-Creation-Date: 2023-01-05 00:48+0000\n"
+"PO-Revision-Date: 2023-01-04 06:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -154,32 +154,32 @@ msgstr "დაბლოკვის შეჩერება"
 msgid "Block"
 msgstr "დაბლოკვა"
 
-#: content/ui/AccountInfo.qml:275
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Note"
 msgstr "შენიშვნა"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:284
 #, kde-format
 msgid "Saved"
 msgstr "შენახულია"
 
-#: content/ui/AccountInfo.qml:297
+#: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Click to add a note"
 msgstr "შენიშვნის დასამატებლად დააწკაპუნეთ"
 
-#: content/ui/AccountInfo.qml:363
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 ტუტი"
 
-#: content/ui/AccountInfo.qml:367
+#: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 მიმდევარი"
 
-#: content/ui/AccountInfo.qml:372
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "%1 following"
 msgstr "%1 -ს მისდევთ"
@@ -333,12 +333,12 @@ msgstr "საუბარი"
 #: content/ui/main.qml:166
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "რჩეულები"
 
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "სანიშნები"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -403,14 +403,12 @@ msgid "View profile"
 msgstr "პროფილის ნახვა"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "მეტის ჩვენება"
+msgstr "ნაკლების ჩვენება"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
 msgstr "მეტის ჩვენება"
 
@@ -468,27 +466,27 @@ msgstr "მომწონს"
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "სანიშნი"
 
 #: content/ui/PostDelegate.qml:639
 #, kde-format
 msgid "Expand this post"
-msgstr ""
+msgstr "პოსტის გაფართოება"
 
 #: content/ui/PostDelegate.qml:648
 #, kde-format
 msgid "Copy link to this post"
-msgstr ""
+msgstr "ამ პოსტის ბმულის კოპირება"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "სანიშნის წაშლა"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "სანიშნი"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
@@ -514,7 +512,7 @@ msgstr "ანგარიშის დამატება"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "ფერის თემა"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -909,6 +907,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
 
+#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "სანიშნები"
+
+#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr "რჩეულები"
+
 #: main.cpp:94
 #, kde-format
 msgid "Tokodon"
@@ -946,7 +956,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
@@ -974,18 +984,6 @@ msgstr "ლოკალური დროის ხაზი"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "გლობალური დროის ხაზი"
-
-#: maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
 
 #: notificationmodel.cpp:100
 #, kde-format

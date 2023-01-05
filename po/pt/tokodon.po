@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:49+0000\n"
+"POT-Creation-Date: 2023-01-05 00:48+0000\n"
 "PO-Revision-Date: 2022-12-28 19:27+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -150,32 +150,32 @@ msgstr "Parar de bloquear"
 msgid "Block"
 msgstr "Bloquear"
 
-#: content/ui/AccountInfo.qml:275
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Note"
 msgstr "Nota"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:284
 #, kde-format
 msgid "Saved"
 msgstr "Gravado"
 
-#: content/ui/AccountInfo.qml:297
+#: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Click to add a note"
 msgstr "Carregue para adicionar uma nota"
 
-#: content/ui/AccountInfo.qml:363
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 'toots'"
 
-#: content/ui/AccountInfo.qml:367
+#: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 seguidores"
 
-#: content/ui/AccountInfo.qml:372
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "%1 following"
 msgstr "%1 a seguir"
@@ -331,12 +331,12 @@ msgstr "Conversação"
 #: content/ui/main.qml:166
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Favoritos"
 
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Favoritos"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -409,15 +409,14 @@ msgid "Show Less"
 msgstr "Mostrar mais"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
-msgstr "Mostrar mais"
+msgstr "Mostrar Mais"
 
 #: content/ui/PostDelegate.qml:347
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "Não disponível"
 
 #: content/ui/PostDelegate.qml:375
 #, kde-format
@@ -483,12 +482,12 @@ msgstr ""
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Remover o favorito"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Favorito"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
@@ -514,7 +513,7 @@ msgstr "Adicionar uma Conta"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Tema de cores"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -910,6 +909,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
 
+#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "Favoritos"
+
+#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr ""
+
 #: main.cpp:94
 #, kde-format
 msgid "Tokodon"
@@ -948,7 +959,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Cliente da rede social descentralizada Mastodon"
@@ -976,18 +987,6 @@ msgstr "Cronologia Local"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Cronologia Global"
-
-#: maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
 
 #: notificationmodel.cpp:100
 #, kde-format

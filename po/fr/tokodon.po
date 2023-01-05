@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:49+0000\n"
-"PO-Revision-Date: 2023-01-01 19:36+0100\n"
+"POT-Creation-Date: 2023-01-05 00:48+0000\n"
+"PO-Revision-Date: 2023-01-04 07:45+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -151,32 +151,32 @@ msgstr "Arrêter le blocage"
 msgid "Block"
 msgstr "Bloquer"
 
-#: content/ui/AccountInfo.qml:275
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Note"
 msgstr "Remarques"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:284
 #, kde-format
 msgid "Saved"
 msgstr "Enregistré"
 
-#: content/ui/AccountInfo.qml:297
+#: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Click to add a note"
 msgstr "Cliquer pour ajouter une note"
 
-#: content/ui/AccountInfo.qml:363
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 toots"
 
-#: content/ui/AccountInfo.qml:367
+#: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 Abonné(e)s"
 
-#: content/ui/AccountInfo.qml:372
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "%1 following"
 msgstr "%1 suiveurs"
@@ -363,12 +363,12 @@ msgstr "Chargement en cours..."
 #: content/ui/PostDelegate.qml:91
 #, kde-format
 msgid "Filtered: %1"
-msgstr ""
+msgstr "Filtré : %1"
 
 #: content/ui/PostDelegate.qml:95
 #, kde-format
 msgid "Show anyway"
-msgstr ""
+msgstr "Afficher malgré tout"
 
 #: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
 #, kde-format
@@ -415,7 +415,7 @@ msgstr "Afficher plus"
 #: content/ui/PostDelegate.qml:347
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "Non disponible"
 
 #: content/ui/PostDelegate.qml:375
 #, kde-format
@@ -907,6 +907,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
 
+#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr ""
+
+#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr ""
+
 #: main.cpp:94
 #, kde-format
 msgid "Tokodon"
@@ -918,10 +930,9 @@ msgid "Mastodon client"
 msgstr "Client Mastodon"
 
 #: main.cpp:98
-#, fuzzy, kde-format
-#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021 Carl Schwan, 2021 Communauté KDE"
+msgstr "© 2021 - 2023 Carl Schwan, 2021 - 2023 La communauté KDE"
 
 #: main.cpp:99
 #, kde-format
@@ -945,7 +956,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Un client pour le réseau social décentralisé : mastodon."
@@ -973,18 +984,6 @@ msgstr "Chronologie locale"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Chronologie globale"
-
-#: maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
 
 #: notificationmodel.cpp:100
 #, kde-format

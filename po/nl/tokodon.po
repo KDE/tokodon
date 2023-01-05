@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:49+0000\n"
-"PO-Revision-Date: 2023-01-03 13:24+0100\n"
+"POT-Creation-Date: 2023-01-05 00:48+0000\n"
+"PO-Revision-Date: 2023-01-04 15:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -153,32 +153,32 @@ msgstr "Blokkeren stoppen"
 msgid "Block"
 msgstr "Blokkeren"
 
-#: content/ui/AccountInfo.qml:275
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Note"
 msgstr "Notitie"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:284
 #, kde-format
 msgid "Saved"
 msgstr "Opgeslagen"
 
-#: content/ui/AccountInfo.qml:297
+#: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Click to add a note"
 msgstr "Klik om notitie toe te voegen"
 
-#: content/ui/AccountInfo.qml:363
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 toots"
 
-#: content/ui/AccountInfo.qml:367
+#: content/ui/AccountInfo.qml:369
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 volgers"
 
-#: content/ui/AccountInfo.qml:372
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "%1 following"
 msgstr "%1 wordt gevolgd"
@@ -332,12 +332,12 @@ msgstr "Conversatie"
 #: content/ui/main.qml:166
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Favorieten"
 
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Bladwijzers"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -402,14 +402,12 @@ msgid "View profile"
 msgstr "Profiel bekijken"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Meer tonen"
+msgstr "Minder tonen"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
 msgstr "Meer tonen"
 
@@ -467,27 +465,27 @@ msgstr "Is OK"
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "Bladwijzer"
 
 #: content/ui/PostDelegate.qml:639
 #, kde-format
 msgid "Expand this post"
-msgstr ""
+msgstr "Dit bericht uitvouwen"
 
 #: content/ui/PostDelegate.qml:648
 #, kde-format
 msgid "Copy link to this post"
-msgstr ""
+msgstr "Koppeling naar bericht kopiëren"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Bladwijzer verwijderen"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Bladwijzer"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
@@ -513,7 +511,7 @@ msgstr "Account toevoegen"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Kleurenthema"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -909,6 +907,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
 
+#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "Bladwijzers"
+
+#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr "Favorieten"
+
 #: main.cpp:94
 #, kde-format
 msgid "Tokodon"
@@ -946,7 +956,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client Voor het gedecentraliseerde sociale netwerk: mastodon"
@@ -974,18 +984,6 @@ msgstr "Locale tijdlijn"
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Globale tijdlijn"
-
-#: maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
 
 #: notificationmodel.cpp:100
 #, kde-format
