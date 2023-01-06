@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-05 00:48+0000\n"
+"POT-Creation-Date: 2023-01-06 00:47+0000\n"
 "PO-Revision-Date: 2023-01-04 15:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -156,32 +156,55 @@ msgstr "Atura el bloqueig"
 msgid "Block"
 msgstr "Bloqueja"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:204
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Edit profile"
+msgstr "Visualitza el perfil"
+
+#: content/ui/AccountInfo.qml:208 content/ui/Settings/AccountsCard.qml:32
+#, kde-format
+msgid "Account editor"
+msgstr "Editor de comptes"
+
+#: content/ui/AccountInfo.qml:214
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Settings"
+msgid "Settings"
+msgstr "Configuració"
+
+#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:225
+#, kde-format
+msgid "Configure"
+msgstr "Configura"
+
+#: content/ui/AccountInfo.qml:292
 #, kde-format
 msgid "Note"
 msgstr "Nota"
 
-#: content/ui/AccountInfo.qml:284
+#: content/ui/AccountInfo.qml:300
 #, kde-format
 msgid "Saved"
 msgstr "Desat"
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:315
 #, kde-format
 msgid "Click to add a note"
 msgstr "Feu clic per a afegir una nota"
 
-#: content/ui/AccountInfo.qml:365
+#: content/ui/AccountInfo.qml:381
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 tuts"
 
-#: content/ui/AccountInfo.qml:369
+#: content/ui/AccountInfo.qml:385
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 seguidors"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:390
 #, kde-format
 msgid "%1 following"
 msgstr "%1 seguits"
@@ -494,11 +517,6 @@ msgstr "Punt"
 #, kde-format
 msgid "Accounts"
 msgstr "Comptes"
-
-#: content/ui/Settings/AccountsCard.qml:32
-#, kde-format
-msgid "Account editor"
-msgstr "Editor de comptes"
 
 #: content/ui/Settings/AccountsCard.qml:68
 #, kde-format
@@ -863,11 +881,6 @@ msgstr "Commuta d'usuari"
 #, kde-format
 msgid "Add"
 msgstr "Afegeix"
-
-#: content/ui/UserInfo.qml:225
-#, kde-format
-msgid "Configure"
-msgstr "Configura"
 
 #: content/ui/UserInfo.qml:226
 #, kde-format

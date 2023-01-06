@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-05 00:48+0000\n"
-"PO-Revision-Date: 2023-01-03 16:58+0100\n"
+"POT-Creation-Date: 2023-01-06 00:47+0000\n"
+"PO-Revision-Date: 2023-01-05 09:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: abstractaccount.cpp:418
 #, kde-format
@@ -154,32 +154,55 @@ msgstr "Ustavi blokiranje"
 msgid "Block"
 msgstr "Blokiraj"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:204
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Edit profile"
+msgstr "Poglej profil"
+
+#: content/ui/AccountInfo.qml:208 content/ui/Settings/AccountsCard.qml:32
+#, kde-format
+msgid "Account editor"
+msgstr "Urejevalnik računa"
+
+#: content/ui/AccountInfo.qml:214
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Settings"
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:225
+#, kde-format
+msgid "Configure"
+msgstr "Konfiguriraj"
+
+#: content/ui/AccountInfo.qml:292
 #, kde-format
 msgid "Note"
 msgstr "Opomba"
 
-#: content/ui/AccountInfo.qml:284
+#: content/ui/AccountInfo.qml:300
 #, kde-format
 msgid "Saved"
 msgstr "Shranjeno"
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:315
 #, kde-format
 msgid "Click to add a note"
 msgstr "Kliknite za dodajanje opombe"
 
-#: content/ui/AccountInfo.qml:365
+#: content/ui/AccountInfo.qml:381
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 tootov"
 
-#: content/ui/AccountInfo.qml:369
+#: content/ui/AccountInfo.qml:385
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 sledilcev"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:390
 #, kde-format
 msgid "%1 following"
 msgstr "%1 sledenih"
@@ -333,12 +356,12 @@ msgstr "Pogovor"
 #: content/ui/main.qml:166
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Priljubljene"
 
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Zaznamki"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -403,14 +426,12 @@ msgid "View profile"
 msgstr "Poglej profil"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Prikaži več"
+msgstr "Prikaži manj"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
 msgstr "Prikaži več"
 
@@ -468,37 +489,32 @@ msgstr "Podobno"
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "Zaznamek"
 
 #: content/ui/PostDelegate.qml:639
 #, kde-format
 msgid "Expand this post"
-msgstr ""
+msgstr "Razširi to objavo"
 
 #: content/ui/PostDelegate.qml:648
 #, kde-format
 msgid "Copy link to this post"
-msgstr ""
+msgstr "Kopiraj povezavo na to objavo"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Odstrani zaznamek"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Zaznamek"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
 msgid "Accounts"
 msgstr "Računi"
-
-#: content/ui/Settings/AccountsCard.qml:32
-#, kde-format
-msgid "Account editor"
-msgstr "Urejevalnik računa"
 
 #: content/ui/Settings/AccountsCard.qml:68
 #, kde-format
@@ -514,7 +530,7 @@ msgstr "Dodaj račun"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Barvna tema"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -864,11 +880,6 @@ msgstr "Preklopi uporabnika"
 msgid "Add"
 msgstr "Dodaj"
 
-#: content/ui/UserInfo.qml:225
-#, kde-format
-msgid "Configure"
-msgstr "Konfiguriraj"
-
 #: content/ui/UserInfo.qml:226
 #, kde-format
 msgid "Open Settings"
@@ -915,13 +926,13 @@ msgstr "Cilj"
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Zaznamki"
 
 #: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr ""
+msgstr "Priljubljene"
 
 #: main.cpp:94
 #, kde-format
