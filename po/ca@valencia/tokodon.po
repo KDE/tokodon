@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-07 00:49+0000\n"
-"PO-Revision-Date: 2023-01-01 06:19+0100\n"
+"PO-Revision-Date: 2023-01-06 05:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -157,10 +157,9 @@ msgid "Block"
 msgstr "Bloqueja"
 
 #: content/ui/AccountInfo.qml:204
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Edit profile"
-msgstr "Visualitza el perfil"
+msgstr "Edita el perfil"
 
 #: content/ui/AccountInfo.qml:208 content/ui/Settings/AccountsCard.qml:32
 #, kde-format
@@ -168,9 +167,7 @@ msgid "Account editor"
 msgstr "Editor de comptes"
 
 #: content/ui/AccountInfo.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Settings"
+#, kde-format
 msgid "Settings"
 msgstr "Configuració"
 
@@ -358,12 +355,12 @@ msgstr "Conversa"
 #: content/ui/main.qml:166
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Preferides"
 
 #: content/ui/main.qml:181
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Punts"
 
 #: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:55
 #, kde-format
@@ -390,12 +387,12 @@ msgstr "S'està carregant..."
 #: content/ui/PostDelegate.qml:91
 #, kde-format
 msgid "Filtered: %1"
-msgstr ""
+msgstr "Filtrades: %1"
 
 #: content/ui/PostDelegate.qml:95
 #, kde-format
 msgid "Show anyway"
-msgstr ""
+msgstr "Mostra igualment"
 
 #: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
 #, kde-format
@@ -428,21 +425,19 @@ msgid "View profile"
 msgstr "Visualitza el perfil"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Mostra'n més"
+msgstr "Mostra'n menys"
 
 #: content/ui/PostDelegate.qml:226
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
 msgstr "Mostra'n més"
 
 #: content/ui/PostDelegate.qml:346
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "No disponible"
 
 #: content/ui/PostDelegate.qml:375
 #, kde-format
@@ -493,27 +488,27 @@ msgstr "M'agrada"
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "Afig un punt"
 
 #: content/ui/PostDelegate.qml:639
 #, kde-format
 msgid "Expand this post"
-msgstr ""
+msgstr "Expandix esta publicació"
 
 #: content/ui/PostDelegate.qml:648
 #, kde-format
 msgid "Copy link to this post"
-msgstr ""
+msgstr "Copia l'enllaç a esta publicació"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Elimina el punt"
 
 #: content/ui/PostDelegate.qml:655
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Punt"
 
 #: content/ui/Settings/AccountsCard.qml:22
 #, kde-format
@@ -534,7 +529,7 @@ msgstr "Afig un compte"
 #: content/ui/Settings/GeneralCard.qml:47
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Tema de color"
 
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
@@ -668,7 +663,7 @@ msgstr "Publicació no llistada"
 #: content/ui/Settings/ProfileEditor.qml:286
 #, kde-format
 msgid "Followers-only post"
-msgstr "Publicació només per a qui vos seguix"
+msgstr "Publicació només per als seguidors"
 
 #: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
@@ -928,13 +923,13 @@ msgstr "Destinació"
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Punts"
 
 #: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr ""
+msgstr "Preferits"
 
 #: main.cpp:94
 #, kde-format
@@ -947,10 +942,9 @@ msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
 #: main.cpp:98
-#, fuzzy, kde-format
-#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021 Carl Schwan, 2021 Comunitat KDE"
+msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
 #: main.cpp:99
 #, kde-format
@@ -1043,6 +1037,3 @@ msgstr "Publicació"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualitza"
