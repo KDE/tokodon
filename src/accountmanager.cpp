@@ -130,6 +130,12 @@ void AccountManager::removeAccount(AbstractAccount *account)
     m_accounts.removeOne(account);
     endRemoveRows();
 
+    if (m_accounts.size() > 0) {
+        m_selected_account = m_accounts[0];
+    } else {
+        m_selected_account = nullptr;
+    }
+    Q_EMIT accountSelected(m_selected_account);
     QSettings settings;
     settings.clear();
     writeToSettings(settings);
