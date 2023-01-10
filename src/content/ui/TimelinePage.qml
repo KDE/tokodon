@@ -12,6 +12,7 @@ Kirigami.ScrollablePage {
 
     property var dialog: null
 
+    title: model.displayName
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -20,7 +21,7 @@ Kirigami.ScrollablePage {
         maximumLineCount: 1
         elide: Text.ElideRight
 
-        text: model.displayName
+        text: timelinePage.title
 
         textFormat: TextEdit.RichText
     }
