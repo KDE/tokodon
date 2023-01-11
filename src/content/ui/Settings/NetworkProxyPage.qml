@@ -26,7 +26,9 @@ Kirigami.ScrollablePage {
                 MobileForm.FormCardHeader {
                     title: i18n("Network Proxy")
                 }
+
                 MobileForm.FormRadioDelegate {
+                    id: systemDefault
                     text: i18n("System Default")
                     checked: currentType === 0
                     enabled: !Config.isProxyTypeImmutable
@@ -34,7 +36,11 @@ Kirigami.ScrollablePage {
                         currentType = 0
                     }
                 }
+
+                MobileForm.FormDelegateSeparator { below: systemDefault; above: http }
+
                 MobileForm.FormRadioDelegate {
+                    id: http
                     text: i18n("HTTP")
                     checked: currentType === 1
                     enabled: !Config.isProxyTypeImmutable
@@ -42,7 +48,11 @@ Kirigami.ScrollablePage {
                         currentType = 1
                     }
                 }
+
+                MobileForm.FormDelegateSeparator { below: http; above: socks5 }
+
                 MobileForm.FormRadioDelegate {
+                    id: socks5
                     text: i18n("Socks5")
                     checked: currentType === 2
                     enabled: !Config.isProxyTypeImmutable
@@ -70,6 +80,7 @@ Kirigami.ScrollablePage {
                         proxyConfigChanged = true
                     }
                 }
+                MobileForm.FormDelegateSeparator { below: hostField; above: portField }
                 // we probably still need a FormSpinBoxDelegate
                 MobileForm.AbstractFormDelegate {
                     Layout.fillWidth: true
@@ -93,6 +104,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
+                MobileForm.FormDelegateSeparator { below: portField; above: userField }
                 MobileForm.FormTextFieldDelegate {
                     id: userField
                     label: i18n("User")
@@ -102,6 +114,7 @@ Kirigami.ScrollablePage {
                         proxyConfigChanged = true
                     }
                 }
+                MobileForm.FormDelegateSeparator { below: userField; above: passwordField }
                 MobileForm.FormTextFieldDelegate {
                     id: passwordField
                     label: i18n("Password")
