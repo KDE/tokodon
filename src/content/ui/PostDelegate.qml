@@ -273,7 +273,7 @@ a{
 
         QQC2.Control {
             id: attachmentGrid
-            property var isSensitive: model.sensitive
+            property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : model.sensitive))
             Layout.fillWidth: true
             topPadding: 0
             leftPadding: 0
