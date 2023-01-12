@@ -42,8 +42,11 @@ MobileForm.FormCard {
             }
         }
 
+        MobileForm.FormDelegateSeparator { below: showLinkPreview; above: colorTheme }
+
         MobileForm.FormComboBoxDelegate {
             Layout.fillWidth: true
+            id: colorTheme
             text: i18n("Color theme")
             textRole: "display"
             valueRole: "display"
