@@ -102,6 +102,13 @@ Kirigami.ScrollablePage {
                 }
             }
 
+            DelegateChoice {
+                roleValue: Notification.Poll
+                PostDelegate {
+                    secondary: true
+                    timelineModel: notificationModel
+                }
+            }
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

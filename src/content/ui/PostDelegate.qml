@@ -100,12 +100,14 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: (model.type === Notification.Favorite || model.type === Notification.Update) && !filtered
+            visible: (model.type === Notification.Favorite || model.type === Notification.Update || model.type === Notification.Poll) && !filtered
             Kirigami.Icon {
                 source: if (model.type === Notification.Favorite) {
                     return "favorite"
                 } else if (model.type === Notification.Update) {
                     return "cell_edit"
+                } else if (model.type === Notification.Poll) {
+                    return "folder-chart"
                 }
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: Kirigami.Theme.disabledTextColor
@@ -117,6 +119,12 @@ QQC2.ItemDelegate {
                     return i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml)
                 } else if (model.type === Notification.Update) {
                     return i18n("%1 edited a post", model.notificationActorIdentity.displayNameHtml)
+                } else if (model.type === Notification.Poll) {
+                    if (AccountManager.selectedAccount.identity === model.accountModel.identity) {
+                        return i18n("Your poll has ended")
+                    } else {
+                        return i18n("A poll you voted in has ended")
+                    }
                 } else {
                     return ''
                 }
