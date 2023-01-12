@@ -73,6 +73,7 @@ Kirigami.ScrollablePage {
         }
         delegate: PostDelegate {
             timelineModel: timelinePage.model
+            dontCropMedia: timelinePage.type === TimelinePage.TimelineType.Thread
         }
 
         Kirigami.PlaceholderMessage {

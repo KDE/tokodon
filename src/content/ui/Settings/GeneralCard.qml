@@ -42,7 +42,19 @@ MobileForm.FormCard {
             }
         }
 
-        MobileForm.FormDelegateSeparator { below: showLinkPreview; above: colorTheme }
+        MobileForm.FormDelegateSeparator { below: showStats; above: cropMedia }
+
+        MobileForm.FormSwitchDelegate {
+            id: cropMedia
+            text: i18n("Crop images in the timeline to 16:9")
+            checked: Config.cropMedia
+            onToggled: {
+                Config.cropMedia = checked
+                Config.save()
+            }
+        }
+
+        MobileForm.FormDelegateSeparator { below: cropMedia; above: colorTheme }
 
         MobileForm.FormComboBoxDelegate {
             Layout.fillWidth: true

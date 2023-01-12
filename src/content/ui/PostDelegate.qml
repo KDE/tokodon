@@ -16,6 +16,7 @@ QQC2.ItemDelegate {
     property bool secondary: false
     property bool showSeparator: true
     property bool showInteractionButton: true
+    property bool dontCropMedia: false
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
@@ -281,8 +282,19 @@ a{
 
         QQC2.Control {
             id: attachmentGrid
+
+            // Only uncrop timeline media if requested by the user, and there's only one attachment
+            // Expanded posts (like in threads) are always uncropped.
+            property var shouldKeepAspectRatio: (!Config.cropMedia || dontCropMedia) && model.attachments.length === 1
+
             property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : model.sensitive))
+
+            readonly property var mediaRatio: 9.0 / 16.0
+
             Layout.fillWidth: true
+            Layout.fillHeight: shouldKeepAspectRatio
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
             topPadding: 0
             leftPadding: 0
             bottomPadding: 0
@@ -302,13 +314,21 @@ a{
                 Repeater {
                     id: attachmentsRepeater
                     model: root.secondary ? [] : attachments
+
                     Image {
                         id: img
-                        Layout.fillWidth: true
-                        Layout.topMargin: Kirigami.Units.largeSpacing
-                        //Layout.maximumWidth: sourceSize.width
-                        Layout.maximumHeight: Math.min(width / sourceSize.width * sourceSize.height, attachmentsRepeater.count === 1 ? Kirigami.Units.gridUnit * 18 : Kirigami.Units.gridUnit * 10)
-                        Layout.minimumHeight: Kirigami.Units.gridUnit * 10
+
+                        property var aspectRatio: sourceSize.height / sourceSize.width
+
+                        property var widthDivisor: attachmentsRepeater.count > 1 ? 2 : 1
+                        property var heightDivisor: attachmentsRepeater.count > 2 ? 2 : 1
+
+                        Layout.fillWidth: attachmentGrid.shouldKeepAspectRatio
+                        Layout.fillHeight: attachmentGrid.shouldKeepAspectRatio
+
+                        Layout.preferredWidth: attachmentGrid.shouldKeepAspectRatio ? -1 : parent.width / widthDivisor
+                        Layout.preferredHeight: attachmentGrid.shouldKeepAspectRatio ? parent.width * aspectRatio : (attachmentGrid.width * attachmentGrid.mediaRatio) / heightDivisor
+
                         source: modelData.attachmentType === Attachment.Image ? modelData.previewUrl : ''
                         mipmap: true
                         cache: true
@@ -365,7 +385,7 @@ a{
                 visible: !parent.isSensitive && parent.hasValidAttachment
 
                 anchors.top: parent.top
-                anchors.topMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                anchors.topMargin: Kirigami.Units.smallSpacing
                 anchors.left: parent.left
                 anchors.leftMargin: Kirigami.Units.smallSpacing
 
