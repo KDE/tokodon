@@ -187,6 +187,7 @@ QQC2.ToolBar {
                 }
 
                 TapHandler {
+                    gesturePolicy: TapHandler.WithinBounds
                     onTapped: openAccountPage()
                 }
 
