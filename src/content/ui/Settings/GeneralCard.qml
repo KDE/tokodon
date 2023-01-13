@@ -52,18 +52,12 @@ MobileForm.FormCard {
             valueRole: "display"
             model: ColorSchemer.model
             Component.onCompleted: currentIndex = ColorSchemer.indexForScheme(Config.colorScheme);
+            visible: Qt.platform.os !== "android"
             onCurrentValueChanged: {
                 ColorSchemer.apply(currentIndex);
                 Config.colorScheme = ColorSchemer.nameForIndex(currentIndex);
                 Config.save();
             }
-        }
-
-        Loader {
-            id: colorSchemeDelegate
-            visible: Qt.platform.os !== "android"
-            source: "qrc:/ColorScheme.qml"
-            Layout.fillWidth: true
         }
     }
 }
