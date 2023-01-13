@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:56+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -170,7 +170,7 @@ msgstr "Účty"
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:225
+#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:226
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -378,7 +378,7 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Voľby:"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:80
+#: content/ui/NotificationPage.qml:115 content/ui/TimelinePage.qml:80
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "Načítavam"
@@ -393,119 +393,129 @@ msgstr ""
 msgid "Show anyway"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:119 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:119 notificationhandler.cpp:39
+#: content/ui/PostDelegate.qml:121 notificationhandler.cpp:39
 #, fuzzy, kde-format
 msgid "%1 edited a post"
 msgstr "Neuvedené"
 
-#: content/ui/PostDelegate.qml:140
+#: content/ui/PostDelegate.qml:124
+#, kde-format
+msgid "Your poll has ended"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:126
+#, kde-format
+msgid "A poll you voted in has ended"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:148
 #, kde-format
 msgid "Pinned entry"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:161
+#: content/ui/PostDelegate.qml:169
 #, kde-format
 msgid "%1 boosted"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:161 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:169 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:178
+#: content/ui/PostDelegate.qml:186
 #, kde-format
 msgid "View profile"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:226
+#: content/ui/PostDelegate.qml:234
 #, fuzzy, kde-format
 msgid "Show Less"
 msgstr "Zobraziť ďalších %1"
 
-#: content/ui/PostDelegate.qml:226
+#: content/ui/PostDelegate.qml:234
 #, fuzzy, kde-format
 msgid "Show More"
 msgstr "Zobraziť ďalších %1"
 
-#: content/ui/PostDelegate.qml:346
+#: content/ui/PostDelegate.qml:354
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:375
+#: content/ui/PostDelegate.qml:383
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:504
+#: content/ui/PostDelegate.qml:512
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1h"
 
-#: content/ui/PostDelegate.qml:528
+#: content/ui/PostDelegate.qml:536
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:562
+#: content/ui/PostDelegate.qml:570
 #, kde-format
 msgid "Vote"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:587
+#: content/ui/PostDelegate.qml:595
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:600
+#: content/ui/PostDelegate.qml:608
 #, fuzzy, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: content/ui/PostDelegate.qml:610
+#: content/ui/PostDelegate.qml:618
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:620
+#: content/ui/PostDelegate.qml:628
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Páči sa mi"
 
-#: content/ui/PostDelegate.qml:629
+#: content/ui/PostDelegate.qml:637
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:639
+#: content/ui/PostDelegate.qml:647
 #, kde-format
 msgid "Expand this post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:648
+#: content/ui/PostDelegate.qml:656
 #, kde-format
 msgid "Copy link to this post"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:655
+#: content/ui/PostDelegate.qml:663
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate.qml:655
+#: content/ui/PostDelegate.qml:663
 #, kde-format
 msgid "Bookmark"
 msgstr ""
@@ -526,12 +536,6 @@ msgstr "Odhlásenie"
 msgid "Add Account"
 msgstr "Pridať účet"
 
-#: content/ui/Settings/ColorScheme.qml:15
-#: content/ui/Settings/GeneralCard.qml:47
-#, kde-format
-msgid "Color theme"
-msgstr ""
-
 #: content/ui/Settings/GeneralCard.qml:18
 #, fuzzy, kde-format
 msgid "General"
@@ -545,6 +549,11 @@ msgstr ""
 #: content/ui/Settings/GeneralCard.qml:36
 #, kde-format
 msgid "Show link preview"
+msgstr ""
+
+#: content/ui/Settings/GeneralCard.qml:50
+#, kde-format
+msgid "Color theme"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
@@ -872,17 +881,17 @@ msgstr "Poslať"
 msgid "Log in to an existing account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:202
+#: content/ui/UserInfo.qml:203
 #, kde-format
 msgid "Switch User"
 msgstr ""
 
-#: content/ui/UserInfo.qml:214
+#: content/ui/UserInfo.qml:215
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: content/ui/UserInfo.qml:226
+#: content/ui/UserInfo.qml:227
 #, fuzzy, kde-format
 msgid "Open Settings"
 msgstr "Nastavenia"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:56+0000\n"
 "PO-Revision-Date: 2023-01-06 05:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -169,7 +169,7 @@ msgstr "ანგარიშების რედაქტორი"
 msgid "Settings"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:225
+#: content/ui/AccountInfo.qml:215 content/ui/UserInfo.qml:226
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
@@ -377,7 +377,7 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "მოხსენებები"
 
-#: content/ui/NotificationPage.qml:108 content/ui/TimelinePage.qml:80
+#: content/ui/NotificationPage.qml:115 content/ui/TimelinePage.qml:80
 #, kde-format
 msgid "Loading..."
 msgstr "ჩატვირთვა..."
@@ -392,118 +392,128 @@ msgstr "გაფილტრულია: %1"
 msgid "Show anyway"
 msgstr "მაინც ჩვენება"
 
-#: content/ui/PostDelegate.qml:117 notificationhandler.cpp:23
+#: content/ui/PostDelegate.qml:119 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ჩაინიშნა თქვენი პოსტი"
 
-#: content/ui/PostDelegate.qml:119 notificationhandler.cpp:39
+#: content/ui/PostDelegate.qml:121 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 -მა პოსტი ჩაასწორა"
 
-#: content/ui/PostDelegate.qml:140
+#: content/ui/PostDelegate.qml:124
+#, kde-format
+msgid "Your poll has ended"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:126
+#, kde-format
+msgid "A poll you voted in has ended"
+msgstr ""
+
+#: content/ui/PostDelegate.qml:148
 #, kde-format
 msgid "Pinned entry"
 msgstr "მიჭიკარტებული ჩანაწერი"
 
-#: content/ui/PostDelegate.qml:161
+#: content/ui/PostDelegate.qml:169
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 აწეულია"
 
-#: content/ui/PostDelegate.qml:161 notificationhandler.cpp:31
+#: content/ui/PostDelegate.qml:169 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 -მა აწია თქვენი პოსტი"
 
-#: content/ui/PostDelegate.qml:178
+#: content/ui/PostDelegate.qml:186
 #, kde-format
 msgid "View profile"
 msgstr "პროფილის ნახვა"
 
-#: content/ui/PostDelegate.qml:226
+#: content/ui/PostDelegate.qml:234
 #, kde-format
 msgid "Show Less"
 msgstr "ნაკლების ჩვენება"
 
-#: content/ui/PostDelegate.qml:226
+#: content/ui/PostDelegate.qml:234
 #, kde-format
 msgid "Show More"
 msgstr "მეტის ჩვენება"
 
-#: content/ui/PostDelegate.qml:346
+#: content/ui/PostDelegate.qml:354
 #, kde-format
 msgid "Not available"
 msgstr "მიუწვდომელია"
 
-#: content/ui/PostDelegate.qml:375
+#: content/ui/PostDelegate.qml:383
 #, kde-format
 msgid "Media Hidden"
 msgstr "მედია დამალულია"
 
-#: content/ui/PostDelegate.qml:504
+#: content/ui/PostDelegate.qml:512
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: content/ui/PostDelegate.qml:528
+#: content/ui/PostDelegate.qml:536
 #, kde-format
 msgid "(No votes)"
 msgstr "(ხმების გარეშე)"
 
-#: content/ui/PostDelegate.qml:562
+#: content/ui/PostDelegate.qml:570
 #, kde-format
 msgid "Vote"
 msgstr "ხმის მიცემა"
 
-#: content/ui/PostDelegate.qml:587
+#: content/ui/PostDelegate.qml:595
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/PostDelegate.qml:600
+#: content/ui/PostDelegate.qml:608
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: content/ui/PostDelegate.qml:610
+#: content/ui/PostDelegate.qml:618
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "გაძლიერება"
 
-#: content/ui/PostDelegate.qml:620
+#: content/ui/PostDelegate.qml:628
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "მომწონს"
 
-#: content/ui/PostDelegate.qml:629
+#: content/ui/PostDelegate.qml:637
 #, kde-format
 msgctxt "Boookmark a post"
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: content/ui/PostDelegate.qml:639
+#: content/ui/PostDelegate.qml:647
 #, kde-format
 msgid "Expand this post"
 msgstr "პოსტის გაფართოება"
 
-#: content/ui/PostDelegate.qml:648
+#: content/ui/PostDelegate.qml:656
 #, kde-format
 msgid "Copy link to this post"
 msgstr "ამ პოსტის ბმულის კოპირება"
 
-#: content/ui/PostDelegate.qml:655
+#: content/ui/PostDelegate.qml:663
 #, kde-format
 msgid "Remove bookmark"
 msgstr "სანიშნის წაშლა"
 
-#: content/ui/PostDelegate.qml:655
+#: content/ui/PostDelegate.qml:663
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
@@ -523,12 +533,6 @@ msgstr "გასვლა"
 msgid "Add Account"
 msgstr "ანგარიშის დამატება"
 
-#: content/ui/Settings/ColorScheme.qml:15
-#: content/ui/Settings/GeneralCard.qml:47
-#, kde-format
-msgid "Color theme"
-msgstr "ფერის თემა"
-
 #: content/ui/Settings/GeneralCard.qml:18
 #, kde-format
 msgid "General"
@@ -543,6 +547,11 @@ msgstr "პოსტების შესახებ დეტალური 
 #, kde-format
 msgid "Show link preview"
 msgstr "ბმულის მინიატურის ჩვენება"
+
+#: content/ui/Settings/GeneralCard.qml:50
+#, kde-format
+msgid "Color theme"
+msgstr "ფერის თემა"
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
 #, kde-format
@@ -867,17 +876,17 @@ msgstr "გაგზავნა"
 msgid "Log in to an existing account"
 msgstr "შედით არსებულ ანგარიშზე"
 
-#: content/ui/UserInfo.qml:202
+#: content/ui/UserInfo.qml:203
 #, kde-format
 msgid "Switch User"
 msgstr "მომხმარებლის გადართვა"
 
-#: content/ui/UserInfo.qml:214
+#: content/ui/UserInfo.qml:215
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
 
-#: content/ui/UserInfo.qml:226
+#: content/ui/UserInfo.qml:227
 #, kde-format
 msgid "Open Settings"
 msgstr "პარამეტრების გახსნა"
