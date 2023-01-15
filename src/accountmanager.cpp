@@ -91,7 +91,9 @@ void AccountManager::addAccount(AbstractAccount *account)
     endInsertRows();
 
     Q_EMIT accountAdded(account);
-    connect(account, &Account::identityChanged, this, &AccountManager::childIdentityChanged);
+    connect(account, &Account::identityChanged, this, [this, account]() {
+        childIdentityChanged(account);
+    });
     connect(account, &Account::authenticated, this, [this]() {
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });

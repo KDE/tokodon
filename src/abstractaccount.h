@@ -209,7 +209,7 @@ public:
 Q_SIGNALS:
     void authenticated();
     void registered();
-    void identityChanged(AbstractAccount *account);
+    void identityChanged();
     void fetchedTimeline(const QString &timelineName, QList<Post *> posts);
     void invalidated();
     void nameChanged();

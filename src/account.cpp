@@ -246,7 +246,7 @@ void Account::validateToken()
         }
 
         m_identity = identityLookup(object["id"].toString(), object);
-        Q_EMIT identityChanged(this);
+        Q_EMIT identityChanged();
         Q_EMIT authenticated();
     });
 
