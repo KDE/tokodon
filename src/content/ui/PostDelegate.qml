@@ -58,7 +58,6 @@ QQC2.ItemDelegate {
         if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: subModel,
-                type: TimelinePage.TimelineType.Thread,
             });
         }
     }
@@ -660,7 +659,6 @@ a{
                         onTriggered: {
                             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                                 model: model.threadModel,
-                                type: TimelinePage.TimelineType.Thread,
                             });
                         }
                     }
