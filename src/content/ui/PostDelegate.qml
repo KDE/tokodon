@@ -58,6 +58,7 @@ QQC2.ItemDelegate {
         if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: subModel,
+                cropMedia: false,
             });
         }
     }
@@ -658,6 +659,7 @@ a{
                         text: i18n("Expand this post")
                         onTriggered: {
                             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
+                                cropMedia: false,
                                 model: model.threadModel,
                             });
                         }
