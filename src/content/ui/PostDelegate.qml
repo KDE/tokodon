@@ -29,7 +29,7 @@ QQC2.ItemDelegate {
     Kirigami.Theme.inherit: false
 
     function openAccountPage(accountId) {
-        if (!pageStack.currentItem.model.identity || pageStack.currentItem.model.identity.id !== accountId) {
+        if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
             pageStack.push('qrc:/content/ui/AccountInfo.qml', {
                 accountId: accountId,
             });

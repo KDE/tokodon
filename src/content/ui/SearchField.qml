@@ -71,9 +71,11 @@ Kirigami.SearchField {
                             rightPadding: Kirigami.Units.largeSpacing
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing
-                            onClicked: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                                accountId: model.accountId,
-                            })
+                            onClicked: if (!pageStack.currentItem.model.accountId || model.authorId !== pageStack.currentItem.accountId) {
+                                pageStack.push("qrc:/content/ui/AccountInfo.qml", {
+                                    accountId: model.authorId,
+                                });
+                            }
                             contentItem: RowLayout {
                                 Kirigami.Avatar {
                                     Layout.alignment: Qt.AlignTop

@@ -21,7 +21,7 @@ QQC2.ToolBar {
 
     function openAccountPage() {
         const accountId = AccountManager.selectedAccountId;
-        if (!pageStack.currentItem.model.identity || accountId !== pageStack.currentItem.model.identity.id) {
+        if (!pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
             const item = pageStack.push('qrc:/content/ui/AccountInfo.qml', {
                 accountId: accountId,
             });
