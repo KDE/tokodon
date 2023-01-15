@@ -36,20 +36,6 @@ QQC2.ItemDelegate {
         }
     }
 
-    background: Rectangle {
-        color: Kirigami.Theme.backgroundColor
-        Kirigami.Separator {
-            visible: showSeparator && !model.selected
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.bottom
-                leftMargin: Kirigami.Units.largeSpacing
-                rightMargin: Kirigami.Units.largeSpacing
-            }
-        }
-    }
-    bottomInset: 2
     onClicked: {
         if (tootContent.hoveredLink) {
             return;
@@ -73,8 +59,10 @@ QQC2.ItemDelegate {
 
     property bool filtered: model.filters.length > 0
 
-    contentItem: ColumnLayout {
+    contentItem: Kirigami.FlexColumn {
         spacing: 0
+
+        maximumWidth: Kirigami.Units.gridUnit * 40
 
         RowLayout {
             visible: filtered
@@ -694,6 +682,11 @@ a{
                     }
                 }
             }
+        }
+
+        Kirigami.Separator {
+            visible: root.showSeparator && !model.selected
+            Layout.fillWidth: true
         }
     }
 }

@@ -9,27 +9,17 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 
 QQC2.ItemDelegate {
-    topPadding: Kirigami.Units.largeSpacing * 2
+    topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing * 2
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
     highlighted: false
     hoverEnabled: false
     width: ListView.view.width
-    background: Item {
-        Kirigami.Separator {
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.bottom
-                leftMargin: Kirigami.Units.largeSpacing
-                rightMargin: Kirigami.Units.largeSpacing
-            }
-        }
-    }
-    bottomInset: 2
-    contentItem: ColumnLayout {
+    contentItem: Kirigami.FlexColumn {
+        maximumWidth: Kirigami.Units.gridUnit * 40
         spacing: Kirigami.Units.largeSpacing
+
         RowLayout {
             Kirigami.Icon {
                 implicitWidth: Kirigami.Units.iconSizes.small
@@ -74,6 +64,11 @@ QQC2.ItemDelegate {
                     text: `@${model.notificationActorIdentity.account}`
                 }
             }
+        }
+
+        Kirigami.Separator {
+            visible: root.showSeparator && !model.selected
+            Layout.fillWidth: true
         }
     }
     text: i18n("%1 followed you", model.notificationActorIdentity.displayName)
