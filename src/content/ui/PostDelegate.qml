@@ -613,7 +613,7 @@ a{
             visible: showInteractionButton && !filtered
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
-                iconSource: "qrc:/content/icon/reply-post.svg"
+                iconSource: "reply-post"
                 text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats ? model.repliesCount : i18nc("More than one reply", "1+"))
                 onClicked: {
                     const post = AccountManager.selectedAccount.newPost()
@@ -632,7 +632,7 @@ a{
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
-                iconSource: model.reblogged ? 'qrc:/content/icon/boost-post-done.svg' : 'qrc:/content/icon/boost-post.svg'
+                iconSource: model.reblogged ? 'boost-post-done' : 'boost-post'
                 interacted: model.reblogged
                 interactionColor: "green"
                 onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
@@ -642,7 +642,7 @@ a{
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
-                iconSource: model.favorite ? 'qrc:/content/icon/like-post-done.svg' : 'qrc:/content/icon/like-post.svg'
+                iconSource: model.favorite ? 'like-post-done' : 'like-post'
                 interacted: model.favorite
                 interactionColor: "orange"
                 onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))

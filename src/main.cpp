@@ -74,6 +74,12 @@ int main(int argc, char *argv[])
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
+
+    if (QIcon::themeName().contains("dark")) {
+        QIcon::setFallbackThemeName("tokodon-dark");
+    } else {
+        QIcon::setFallbackThemeName("tokodon");
+    }
 #endif
 
 #ifdef Q_OS_WINDOWS
