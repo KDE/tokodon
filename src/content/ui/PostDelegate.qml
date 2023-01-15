@@ -158,11 +158,28 @@ QQC2.ItemDelegate {
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
             }
 
-            QQC2.Label {
-                text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
-                color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                Layout.alignment: Qt.AlignVCenter
-                Layout.fillWidth: true
+            QQC2.AbstractButton {
+                contentItem: RowLayout {
+                    Kirigami.Avatar {
+                        implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+                        implicitWidth: implicitHeight
+                        Layout.alignment: Qt.AlignTop
+                        Layout.bottomMargin: -Kirigami.Units.gridUnit
+                        source: model.rebloggedAvatar ? model.rebloggedAvatar : ''
+                        cache: true
+                        actions.main: Kirigami.Action {
+                            tooltip: i18n("View profile")
+                            onTriggered: openAccountPage(model.rebloggedAuthorId)
+                        }
+                        name: model.authorDisplayName
+                    }
+                    QQC2.Label {
+                        text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
+                        color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                        Layout.alignment: Qt.AlignVCenter
+                        Layout.fillWidth: true
+                    }
+                }
             }
         }
 

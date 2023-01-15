@@ -46,6 +46,8 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {RebloggedRole, QByteArrayLiteral("reblogged")},
         {WasRebloggedRole, QByteArrayLiteral("wasReblogged")},
         {RebloggedDisplayNameRole, QByteArrayLiteral("rebloggedDisplayName")},
+        {RebloggedAvatarRole, QByteArrayLiteral("rebloggedAvatar")},
+        {RebloggedAuthorIdRole, QByteArrayLiteral("rebloggedAuthorId")},
         {RebloggedIdRole, QByteArrayLiteral("rebloggedId")},
         {AttachmentsRole, QByteArrayLiteral("attachments")},
         {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
@@ -86,6 +88,16 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case RebloggedDisplayNameRole:
         if (post->repeatIdentity()) {
             return post->repeatIdentity()->displayNameHtml();
+        }
+        return {};
+    case RebloggedAvatarRole:
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->avatarUrl();
+        }
+        return {};
+    case RebloggedAuthorIdRole:
+        if (post->repeatIdentity()) {
+            return post->repeatIdentity()->id();
         }
         return {};
     case RebloggedIdRole:
