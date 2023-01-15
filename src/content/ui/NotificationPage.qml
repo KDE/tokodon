@@ -16,7 +16,6 @@ Kirigami.ScrollablePage {
     property var dialog: null
 
     property alias listViewHeader: listview.header
-    property bool isProfile: false
 
     actions.main: Kirigami.Action {
         icon.name: "list-add"

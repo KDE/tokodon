@@ -28,7 +28,6 @@ Kirigami.ScrollablePage {
                 const subModel = model.threadModel;
                 pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                     model: subModel,
-                    type: TimelinePage.TimelineType.Thread,
                 });
                 if (model.unread) {
                     conversationView.model.markAsRead(model.conversationId);

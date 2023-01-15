@@ -28,18 +28,10 @@ QQC2.ItemDelegate {
     Kirigami.Theme.colorSet: model.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
     Kirigami.Theme.inherit: false
 
-    function openAccountPage(accountModel) {
-        if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
+    function openAccountPage(accountId) {
+        if (!pageStack.currentItem.model.identity || pageStack.currentItem.model.identity.id !== accountId) {
             pageStack.push('qrc:/content/ui/AccountInfo.qml', {
-                model: accountModel,
-            })
-        } else {
-            accountModel.identityChanged.connect(() => {
-                if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
-                    pageStack.push('qrc:/content/ui/AccountInfo.qml', {
-                        model: accountModel,
-                    })
-                }
+                accountId: accountId,
             });
         }
     }
@@ -121,7 +113,7 @@ QQC2.ItemDelegate {
                 } else if (model.type === Notification.Update) {
                     return i18n("%1 edited a post", model.notificationActorIdentity.displayNameHtml)
                 } else if (model.type === Notification.Poll) {
-                    if (AccountManager.selectedAccount.identity === model.accountModel.identity) {
+                    if (AccountManager.selectedAccount.identity.id === model.authorId) {
                         return i18n("Your poll has ended")
                     } else {
                         return i18n("A poll you voted in has ended")
@@ -185,7 +177,7 @@ QQC2.ItemDelegate {
                 cache: true
                 actions.main: Kirigami.Action {
                     tooltip: i18n("View profile")
-                    onTriggered: openAccountPage(model.accountModel)
+                    onTriggered: openAccountPage(model.authorId)
                 }
                 name: model.authorDisplayName
             }
@@ -207,7 +199,7 @@ QQC2.ItemDelegate {
                     Layout.fillWidth: true
                     elide: Text.ElideRight
                     color: Kirigami.Theme.disabledTextColor
-                    text: `@${model.authorId}`
+                    text: `@${model.authorUri}`
                     verticalAlignment: Text.AlignTop
                 }
             }
@@ -618,8 +610,8 @@ a{
                     post.inReplyTo = model.id;
                     post.mentions = model.mentions;
                     post.visibility = model.visibility;
-                    if (!post.mentions.includes(`@${model.authorId}`)) {
-                        post.mentions.push(`@${model.authorId}`);
+                    if (!post.mentions.includes(`@${model.authorUri}`)) {
+                        post.mentions.push(`@${model.authorUri}`);
                     }
                     pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
                         postObject: post,

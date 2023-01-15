@@ -8,33 +8,15 @@
 #include <QCoreApplication>
 #include <QUrlQuery>
 
-AccountModel::AccountModel(qint64 id, const QString &acct, QObject *parent)
+AccountModel::AccountModel(QObject *parent)
     : TimelineModel(parent)
-    , m_identity(nullptr)
-    , m_id(id)
 {
     init();
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
-
-    if (!m_account->identityCached(acct)) {
-        QUrl uriAccount(m_account->instanceUri());
-        uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(id));
-
-        m_account->get(uriAccount, true, this, [this, acct](QNetworkReply *reply) {
-            const auto data = reply->readAll();
-            const auto doc = QJsonDocument::fromJson(data);
-
-            m_identity = m_account->identityLookup(acct, doc.object());
-            Q_EMIT identityChanged();
-            updateRelationships();
-        });
-    } else {
-        const QJsonObject empty;
-        m_identity = m_account->identityLookup(acct, empty);
-        updateRelationships();
-    }
 }
+
+AccountModel::~AccountModel() = default;
 
 bool AccountModel::isSelf() const
 {
@@ -42,7 +24,7 @@ bool AccountModel::isSelf() const
         return false;
     }
 
-    return m_account->identity().id() == m_identity->id();
+    return m_account->identity()->id() == m_identity->id();
 }
 
 QString AccountModel::displayName() const
@@ -56,12 +38,15 @@ QString AccountModel::displayName() const
 
 void AccountModel::fillTimeline(const QString &fromId)
 {
+    if (m_accountId.isEmpty() || m_accountId.isNull()) {
+        return;
+    }
     setLoading(true);
 
     // Fetch pinned posts if we are starting from the top
     const auto fetchPinned = fromId.isNull();
     const auto excludeReplies = true;
-    auto uriStatus = m_account->apiUrl(QString("/api/v1/accounts/%1/statuses").arg(m_id));
+    auto uriStatus = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
 
     auto statusQuery = QUrlQuery();
     if (excludeReplies) {
@@ -74,11 +59,11 @@ void AccountModel::fillTimeline(const QString &fromId)
         uriStatus.setQuery(statusQuery);
     }
 
-    auto uriPinned = m_account->apiUrl(QString("/api/v1/accounts/%1/statuses").arg(m_id));
-    uriPinned.setQuery(QUrlQuery{{"pinned", "true"}});
+    auto uriPinned = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
+    uriPinned.setQuery(QUrlQuery{{"pinned", "true",}});
 
     const auto account = m_account;
-    const auto id = m_id;
+    const auto id = m_accountId;
 
     auto handleError = [this](QNetworkReply *reply) {
         Q_UNUSED(reply);
@@ -86,7 +71,7 @@ void AccountModel::fillTimeline(const QString &fromId)
     };
 
     auto onFetchPinned = [this, id, account](QNetworkReply *reply) {
-        if (m_account != account || m_id != id) {
+        if (m_account != account || m_accountId != id) {
             setLoading(false);
             return;
         }
@@ -115,7 +100,7 @@ void AccountModel::fillTimeline(const QString &fromId)
     };
 
     auto onFetchAccount = [account, id, fetchPinned, uriPinned, handleError, onFetchPinned, this](QNetworkReply *reply) {
-        if (m_account != account || m_id != id) {
+        if (m_account != account || m_accountId != id) {
             setLoading(false);
             return;
         }
@@ -136,6 +121,41 @@ Identity *AccountModel::identity() const
     return m_identity.get();
 }
 
+QString AccountModel::accountId() const
+{
+    return m_accountId;
+}
+
+void AccountModel::setAccountId(const QString &accountId)
+{
+    if (accountId == m_accountId || accountId.isEmpty()) {
+        return;
+    }
+    m_accountId = accountId;
+    Q_EMIT accountIdChanged();
+
+    if (!m_account->identityCached(accountId)) {
+        QUrl uriAccount(m_account->instanceUri());
+        uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
+
+        m_account->get(uriAccount, true, this, [this, accountId](QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            m_identity = m_account->identityLookup(accountId, doc.object());
+            Q_EMIT identityChanged();
+            updateRelationships();
+        });
+    } else {
+        m_identity = m_account->identityLookup(accountId, {});
+        Q_EMIT identityChanged();
+        updateRelationships();
+    }
+    Q_EMIT accountIdChanged();
+
+    fillTimeline();
+}
+
 AbstractAccount *AccountModel::account() const
 {
     return m_account;
@@ -143,7 +163,7 @@ AbstractAccount *AccountModel::account() const
 
 void AccountModel::updateRelationships()
 {
-    if (m_account->identity().id() == m_identity->id()) {
+    if (m_account->identity()->id() == m_identity->id()) {
         return;
     }
 
@@ -151,7 +171,7 @@ void AccountModel::updateRelationships()
     QUrl uriRelationship(m_account->instanceUri());
     uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
     uriRelationship.setQuery(QUrlQuery{
-        {QStringLiteral("id[]"), QString::number(m_identity->id())},
+        {QStringLiteral("id[]"), m_identity->id()},
     });
 
     m_account->get(uriRelationship, true, this, [this](QNetworkReply *reply) {

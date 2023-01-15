@@ -4,7 +4,6 @@
 
 #include "accountmanager.h"
 #include "account.h"
-#include "accountmodel.h"
 #include "config.h"
 #include "networkaccessmanagerfactory.h"
 
@@ -37,11 +36,14 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     }
 
     auto account = m_accounts.at(index.row());
+    if (account->identity() == nullptr) {
+        return {};
+    }
     switch (role) {
     case Qt::DisplayRole:
-        return account->identity().displayNameHtml();
+        return account->identity()->displayNameHtml();
     case DescriptionRole:
-        return account->identity().account();
+        return account->identity()->account();
     case InstanceRole:
         return account->instanceName();
     case AccountRole:
@@ -116,11 +118,14 @@ void AccountManager::addAccount(AbstractAccount *account)
 void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
     auto config = Config::self();
-    if (selectedAccount() == nullptr || account->identity().account() == config->lastUsedAccount()) {
+    if (selectedAccount() == nullptr || account->identity()->account() == config->lastUsedAccount()) {
         selectAccount(account, false);
     }
 
     Q_EMIT identityChanged(account);
+
+    const auto idx = m_accounts.indexOf(account);
+    Q_EMIT dataChanged(index(idx, 0), index(idx, 0));
 }
 
 void AccountManager::removeAccount(AbstractAccount *account)
@@ -154,7 +159,7 @@ void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAc
 
     if (explicitUserAction) {
         auto config = Config::self();
-        config->setLastUsedAccount(account->identity().account());
+        config->setLastUsedAccount(account->identity()->account());
         config->save();
     }
 
@@ -166,9 +171,9 @@ AbstractAccount *AccountManager::selectedAccount() const
     return m_selected_account;
 }
 
-QVariant AccountManager::selectedAccountModel()
+QString AccountManager::selectedAccountId() const
 {
-    return QVariant::fromValue<QAbstractListModel *>(new AccountModel(m_selected_account->identity().id(), m_selected_account->identity().account()));
+    return m_selected_account->identity()->id();
 }
 
 int AccountManager::selectedIndex() const

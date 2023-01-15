@@ -91,7 +91,7 @@ void Identity::reparentIdentity(AbstractAccount *parent)
 
 void Identity::fromSourceData(const QJsonObject &doc)
 {
-    m_id = doc["id"].toString().toULongLong();
+    m_id = doc["id"].toString();
     m_displayName = doc["display_name"].toString();
     m_username = doc["username"].toString();
     m_account = doc["acct"].toString();
@@ -111,10 +111,6 @@ void Identity::fromSourceData(const QJsonObject &doc)
     QJsonObject source = doc["source"].toObject();
     m_visibility = source["privacy"].toString();
 
-    if (m_account == m_parent->identity().m_account) {
-        m_parent->setDirtyIdentity();
-    }
-
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
     const auto emojis = doc["emojis"].toArray();
@@ -130,7 +126,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     Q_EMIT identityUpdated();
 }
 
-qint64 Identity::id() const
+QString Identity::id() const
 {
     return m_id;
 }

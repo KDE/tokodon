@@ -5,30 +5,48 @@
 
 class AbstractAccount;
 
+/// TimelineModel to show the last post of an account
+///
+/// This expose as well some properties of the user (\see identity)
 class AccountModel : public TimelineModel
 {
     Q_OBJECT
+
+    /// The account id of the account we want to display
+    Q_PROPERTY(QString accountId READ accountId WRITE setAccountId NOTIFY accountIdChanged)
+
+    /// The identity of the account
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
+
+    /// The account of the current user
     Q_PROPERTY(AbstractAccount *account READ account NOTIFY accountChanged)
+
+    /// This property holds whether the current user is the account displayed by this model
     Q_PROPERTY(bool isSelf READ isSelf NOTIFY identityChanged)
 
 public:
-    AccountModel(qint64 id, const QString &acct, QObject *parent = nullptr);
+    explicit AccountModel(QObject *parent = nullptr);
+    ~AccountModel();
+
+    QString accountId() const;
+    void setAccountId(const QString &accountId);
+
+    Identity *identity() const;
 
     QString displayName() const override;
     AbstractAccount *account() const;
-    Identity *identity() const;
     bool isSelf() const;
 
-    void fillTimeline(const QString &fromId = QString()) override;
+    void fillTimeline(const QString &fromId = {}) override;
 
 Q_SIGNALS:
     void identityChanged();
     void accountChanged();
+    void accountIdChanged();
 
 private:
     void updateRelationships();
 
     std::shared_ptr<Identity> m_identity;
-    qint64 m_id;
+    QString m_accountId;
 };

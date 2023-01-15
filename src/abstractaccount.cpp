@@ -21,14 +21,15 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &name, const QSt
     , m_instance_uri(instanceUri)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_identity(std::make_shared<Identity>())
 {
-    m_identity.reparentIdentity(this);
 }
 
 AbstractAccount::AbstractAccount(QObject *parent)
     : QObject(parent)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_identity(std::make_shared<Identity>())
 {
 }
 
@@ -112,35 +113,36 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     });
 }
 
-const Identity &AbstractAccount::identity()
+Identity *AbstractAccount::identity()
 {
-    return m_identity;
+    return m_identity.get();
 }
 
-Identity *AbstractAccount::identityObj()
+const std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &accountId, const QJsonObject &doc)
 {
-    return &m_identity;
-}
-
-const std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &acct, const QJsonObject &doc)
-{
-    auto id = m_identityCache[acct];
-    if (id && id->account() == acct) {
-        return m_identityCache[acct];
+    if (m_identity && m_identity->id() == accountId) {
+        return m_identity;
+    }
+    auto id = m_identityCache[accountId];
+    if (id && id->id() == accountId) {
+        return id;
     }
 
     id = std::make_shared<Identity>();
     id->reparentIdentity(this);
     id->fromSourceData(doc);
-    m_identityCache[acct] = id;
+    m_identityCache[accountId] = id;
 
-    return m_identityCache[acct];
+    return m_identityCache[accountId];
 }
 
-bool AbstractAccount::identityCached(const QString &acct) const
+bool AbstractAccount::identityCached(const QString &accountId) const
 {
-    auto id = m_identityCache[acct];
-    return id && id->account() == acct;
+    if (m_identity && m_identity->id() == accountId) {
+        return true;
+    }
+    auto id = m_identityCache[accountId];
+    return id && id->id() == accountId;
 }
 
 QUrlQuery AbstractAccount::buildOAuthQuery() const
@@ -403,12 +405,11 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
 
     const auto apiCall = accountActionMap[accountAction];
 
-    const auto accountId = QString::number(identity->id());
-    const QString api_url = QStringLiteral("/api/v1/accounts/") + accountId + apiCall;
-    QUrl url = apiUrl(api_url);
+    const auto accountId = identity->id();
+    const QString accountApiUrl = QStringLiteral("/api/v1/accounts/") + accountId + apiCall;
     const QJsonDocument doc(extraArguments);
 
-    post(url, doc, true, this, [=](QNetworkReply *reply) {
+    post(apiUrl(accountApiUrl), doc, true, this, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 
@@ -491,11 +492,6 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
     } else {
         executeAction(identity, AccountAction::Note, {{"comment", note}});
     }
-}
-
-void AbstractAccount::setDirtyIdentity()
-{
-    Q_EMIT identityChanged(this);
 }
 
 bool AbstractAccount::isRegistered() const

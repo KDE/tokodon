@@ -29,7 +29,6 @@ Account::Account(const QSettings &settings, QNetworkAccessManager *nam, QObject 
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
-    m_identity.reparentIdentity(this);
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
         notificationHandler->handle(notification, this);
@@ -235,14 +234,19 @@ void Account::validateToken()
             return;
         }
 
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
 
-        if (!doc.isObject() || !doc.object().contains("source")) {
+        if (!doc.isObject()) {
             return;
         }
 
-        m_identity.fromSourceData(doc.object());
+        const auto object = doc.object();
+        if (!object.contains("source")) {
+            return;
+        }
+
+        m_identity = identityLookup(object["id"].toString(), object);
+        Q_EMIT identityChanged(this);
         Q_EMIT authenticated();
     });
 

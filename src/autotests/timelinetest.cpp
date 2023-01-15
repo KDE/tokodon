@@ -125,7 +125,7 @@ private Q_SLOTS:
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), "103270115826048975");
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), Qt::DisplayRole).value<QString>(), "<p>LOREM</p>");
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).value<QString>(), QStringLiteral("Gargron"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).value<QString>(), QStringLiteral("1"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).value<QString>(),
                  QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::WasRebloggedRole).value<bool>(), false);

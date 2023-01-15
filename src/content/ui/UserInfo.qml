@@ -20,18 +20,10 @@ QQC2.ToolBar {
     property var addAccount
 
     function openAccountPage() {
-        const accountModel = AccountManager.selectedAccountModel;
-        if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
-            pageStack.push('qrc:/content/ui/AccountInfo.qml', {
-                model: accountModel,
-            })
-        } else {
-            accountModel.identityChanged.connect(() => {
-                if (accountModel.identity && accountModel.identity !== pageStack.currentItem.model.identity) {
-                    pageStack.push('qrc:/content/ui/AccountInfo.qml', {
-                        model: accountModel,
-                    })
-                }
+        const accountId = AccountManager.selectedAccountId;
+        if (!pageStack.currentItem.model.identity || accountId !== pageStack.currentItem.model.identity.id) {
+            const item = pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                accountId: accountId,
             });
         }
     }

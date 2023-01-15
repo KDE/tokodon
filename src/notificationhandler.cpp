@@ -43,10 +43,10 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     }
 
     knotification->setText(notification->post()->content());
-    knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity().displayName());
+    knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
-    if (!notification->account()->identity().avatarUrl().isEmpty()) {
-        const auto avatarUrl = notification->account()->identity().avatarUrl();
+    if (!notification->account()->identity()->avatarUrl().isEmpty()) {
+        const auto avatarUrl = notification->account()->identity()->avatarUrl();
         auto request = QNetworkRequest(avatarUrl);
         auto reply = m_nam->get(request);
         connect(reply, &QNetworkReply::finished, this, [reply, knotification]() {

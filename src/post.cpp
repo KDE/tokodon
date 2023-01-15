@@ -56,7 +56,7 @@ Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
     , m_parent(account)
 {
-    QString visibilityString = account->identity().visibility();
+    QString visibilityString = account->identity()->visibility();
     m_visibility = stringToVisibility(visibilityString);
 }
 
@@ -65,25 +65,25 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     , m_parent(account)
     , m_visibility(Post::Visibility::Public)
 {
-    const auto account_doc = obj["account"].toObject();
-    const auto acct = account_doc["acct"].toString();
-    const auto reblog_obj = obj["reblog"].toObject();
+    const auto accountDoc = obj["account"].toObject();
+    const auto accountId = accountDoc["id"].toString();
+    const auto reblogObj = obj["reblog"].toObject();
 
     m_original_post_id = obj["id"].toString();
 
-    if (!obj.contains("reblog") || reblog_obj.isEmpty()) {
+    if (!obj.contains("reblog") || reblogObj.isEmpty()) {
         m_repeat = false;
-        m_authorIdentity = m_parent->identityLookup(acct, account_doc);
+        m_authorIdentity = m_parent->identityLookup(accountId, accountDoc);
     } else {
         m_repeat = true;
 
-        auto repeat_account_doc = reblog_obj["account"].toObject();
-        auto repeat_acct = repeat_account_doc["acct"].toString();
+        auto repeatAccountDoc = reblogObj["account"].toObject();
+        auto repeatAccountId = repeatAccountDoc["id"].toString();
 
-        m_authorIdentity = m_parent->identityLookup(repeat_acct, repeat_account_doc);
-        m_repeatIdentity = m_parent->identityLookup(acct, account_doc);
+        m_authorIdentity = m_parent->identityLookup(repeatAccountId, repeatAccountDoc);
+        m_repeatIdentity = m_parent->identityLookup(accountId, accountDoc);
 
-        obj = reblog_obj;
+        obj = reblogObj;
     }
 
     m_subject = obj["spoiler_text"].toString();
@@ -265,13 +265,13 @@ static QMap<QString, Notification::Type> str_to_not_type = {
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
     : m_account(account)
 {
-    const QJsonObject accountObj = obj["account"].toObject();
-    const QJsonObject status = obj["status"].toObject();
-    auto acct = accountObj["acct"].toString();
-    auto type = obj["type"].toString();
+    const auto accountObj = obj["account"].toObject();
+    const auto status = obj["status"].toObject();
+    const auto accountId = accountObj["id"].toString();
+    const auto type = obj["type"].toString();
 
     m_post = new Post(m_account, status, parent);
-    m_identity = m_account->identityLookup(acct, accountObj);
+    m_identity = m_account->identityLookup(accountId, accountObj);
     m_type = str_to_not_type[type];
     m_id = obj["id"].toString().toInt();
 }

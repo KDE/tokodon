@@ -27,23 +27,9 @@ Kirigami.ScrollablePage {
     }
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
-    enum TimelineType {
-        Home,
-        Notification,
-        Local,
-        Global,
-        Thread,
-        Profile,
-        Tag,
-        Bookmarks,
-        Favourites
-    }
-
     required property var model
-    required property var type
 
     property alias listViewHeader: listview.header
-    property bool isProfile: false
 
     onBackRequested: if (dialog) {
         dialog.close();

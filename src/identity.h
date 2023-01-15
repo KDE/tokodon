@@ -33,7 +33,7 @@ class Identity : public QObject
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
 public:
-    qint64 id() const;
+    QString id() const;
     QString displayName() const;
     QString username() const;
     QString displayNameHtml() const;
@@ -61,7 +61,7 @@ Q_SIGNALS:
     void identityUpdated();
 
 private:
-    qint64 m_id;
+    QString m_id;
     QString m_displayName;
     QString m_displayNameHtml;
     QString m_username;

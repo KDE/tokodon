@@ -3,7 +3,6 @@
 
 #include "abstracttimelinemodel.h"
 #include "account.h"
-#include "accountmodel.h"
 #include "identity.h"
 #include "poll.h"
 #include "threadmodel.h"
@@ -38,6 +37,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {PinnedRole, QByteArrayLiteral("pinned")},
         {IdRole, QByteArrayLiteral("id")},
         {AuthorIdRole, QByteArrayLiteral("authorId")},
+        {AuthorUriRole, QByteArrayLiteral("authorUri")},
         {PublishedAtRole, QByteArrayLiteral("publishedAt")},
         {MentionsRole, QByteArrayLiteral("mentions")},
         {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
@@ -55,7 +55,6 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {BookmarkedRole, QByteArrayLiteral("bookmarked")},
         {UrlRole, QByteArrayLiteral("url")},
         {ThreadModelRole, QByteArrayLiteral("threadModel")},
-        {AccountModelRole, QByteArrayLiteral("accountModel")},
         {CardRole, QByteArrayLiteral("card")},
         {TypeRole, QByteArrayLiteral("type")},
         {PollRole, QByteArrayLiteral("poll")},
@@ -77,6 +76,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case AvatarRole:
         return post->authorIdentity()->avatarUrl();
     case AuthorIdRole:
+        return post->authorIdentity()->id();
+    case AuthorUriRole:
         return post->authorIdentity()->account();
     case AuthorDisplayNameRole:
         return post->authorIdentity()->displayNameHtml();
@@ -125,8 +126,6 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
             return QVariant::fromValue<Card>(*post->card());
         }
         return false;
-    case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(post->authorIdentity()->id(), post->authorIdentity()->account()));
     case UrlRole:
         return QVariant::fromValue<QUrl>(post->m_link);
     case RelativeTimeRole: {

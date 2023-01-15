@@ -58,7 +58,7 @@ void SearchModel::search(const QString &queryString)
             std::back_inserter(m_accounts),
             [this](const QJsonValue &value) -> auto{
                 const auto account = value.toObject();
-                return m_account->identityLookup(account["acct"].toString(), account);
+                return m_account->identityLookup(account["id"].toString(), account);
             });
         endResetModel();
     });
@@ -90,11 +90,11 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
     case AvatarRole:
         return identity->avatarUrl();
     case AuthorIdRole:
-        return identity->account();
+        return identity->id();
     case AuthorDisplayNameRole:
         return identity->displayNameHtml();
-    case AccountModelRole:
-        return QVariant::fromValue<QAbstractListModel *>(new AccountModel(identity->id(), identity->account()));
+    case AuthorUriRole:
+        return identity->account();
     }
 
     return {};

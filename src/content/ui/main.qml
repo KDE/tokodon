@@ -106,7 +106,6 @@ Kirigami.ApplicationWindow {
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
-                type: TimelinePage.TimelineType.Home,
                 name: "home"
             });
             checked = true;
@@ -130,7 +129,6 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "public",
-                type: TimelinePage.TimelineType.Local,
             });
             checked = true;
         }
@@ -143,7 +141,6 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(mainTimeline, {
                 name: "federated",
-                type: TimelinePage.TimelineType.Global,
             });
             checked = true;
         }
@@ -170,7 +167,6 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "favourites",
-                type: TimelinePage.TimelineType.Favourites,
             });
             checked = true;
         }
@@ -185,7 +181,6 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "bookmarks",
-                type: TimelinePage.TimelineType.Bookmarks,
             });
             checked = true;
         }
@@ -216,7 +211,6 @@ Kirigami.ApplicationWindow {
         TimelinePage {
             id: timelinePage
             property string name
-            type: TimelinePage.TimelineType.Home
             model: TimelineModel {
                 id: timelineModel
                 name: timelinePage.name
@@ -229,7 +223,6 @@ Kirigami.ApplicationWindow {
         TimelinePage {
             id: timelinePage
             property string name
-            type: TimelinePage.TimelineType.Home
             model: LinkPaginationTimelineModel {
                 id: timelineModel
                 name: timelinePage.name
@@ -240,7 +233,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: notificationTimeline
         NotificationPage {
-            property var type
             model: TimelineModel {
                 id: timelineModel
             }
@@ -273,7 +265,6 @@ Kirigami.ApplicationWindow {
             model: TagsModel {
                 hashtag: tagPage.hashtag
             }
-            type: TimelinePage.TimelineType.Tag
         }
     }
 }

@@ -72,7 +72,7 @@ Kirigami.SearchField {
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing
                             onClicked: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                                model: model.accountModel,
+                                accountId: model.accountId,
                             })
                             contentItem: RowLayout {
                                 Kirigami.Avatar {
@@ -100,7 +100,7 @@ Kirigami.SearchField {
                                         Layout.fillWidth: true
                                         elide: Text.ElideRight
                                         color: Kirigami.Theme.disabledTextColor
-                                        text: `@${model.authorId}`
+                                        text: `@${model.authorUri}`
                                         verticalAlignment: Text.AlignTop
                                     }
                                 }

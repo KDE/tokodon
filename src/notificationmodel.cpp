@@ -3,7 +3,6 @@
 
 #include "notificationmodel.h"
 #include "abstractaccount.h"
-#include "accountmodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QUrlQuery>
@@ -180,11 +179,11 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return {};
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
-    case AccountModelRole:
+    case AuthorIdRole:
         if (notification->type() == Notification::Follow || notification->type() == Notification::FollowRequest) {
-            return QVariant::fromValue<QAbstractListModel *>(new AccountModel(notification->identity()->id(), notification->identity()->account()));
+            return notification->identity()->id();
         } else {
-            return QVariant::fromValue<QAbstractListModel *>(new AccountModel(post->authorIdentity()->id(), post->authorIdentity()->account()));
+            return post->authorIdentity()->id();
         }
     default:
         return postData(post, role);

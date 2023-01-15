@@ -27,7 +27,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
-    Q_PROPERTY(Identity *identity READ identityObj CONSTANT)
+    Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
 
 public:
@@ -62,13 +62,10 @@ public:
     size_t maxPostLength() const;
     QString instanceName() const;
 
-    // identity
-    const Identity &identity();
-
-    Identity *identityObj();
-    void setDirtyIdentity();
-    const std::shared_ptr<Identity> identityLookup(const QString &acct, const QJsonObject &doc);
-    bool identityCached(const QString &acct) const;
+    /// Get identity of the accoutn
+    Identity *identity();
+    const std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
+    bool identityCached(const QString &accountId) const;
 
     // timeline
     void fetchTimeline(const QString &timelineName, const QString &from_id);
@@ -232,7 +229,7 @@ protected:
     QString m_client_secret;
     size_t m_maxPostLength;
     QString m_instance_name;
-    Identity m_identity;
+    std::shared_ptr<Identity> m_identity;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
 

@@ -86,7 +86,7 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
                 std::back_inserter(accounts),
                 [account](const QJsonValue &value) -> auto{
                     const auto accountObj = value.toObject();
-                    return account->identityLookup(accountObj["acct"].toString(), accountObj);
+                    return account->identityLookup(accountObj["id"].toString(), accountObj);
                 });
             m_conversations.append(Conversation{
                 accounts,
