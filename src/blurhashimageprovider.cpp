@@ -20,27 +20,29 @@ BlurhashImageProvider::BlurhashImageProvider()
  * QUrl::fromPercentEncoding is too greedy, and spits out invalid characters
  * for parts of valid base83 like %14.
  */
+// clang-format off
 static const QMap<QLatin1String, QLatin1String> knownEncodings = {
-        {QLatin1String("%23A"), QLatin1String(":")},
-        {QLatin1String("%3F"), QLatin1String("?")},
-        {QLatin1String("%23"), QLatin1String("#")},
-        {QLatin1String("%5B"), QLatin1String("[")},
-        {QLatin1String("%5D"), QLatin1String("]")},
-        {QLatin1String("%40"), QLatin1String("@")},
-        {QLatin1String("%24"), QLatin1String("$")},
-        {QLatin1String("%2A"), QLatin1String("*")},
-        {QLatin1String("%2B"), QLatin1String("+")},
-        {QLatin1String("%2C"), QLatin1String(",")},
-        {QLatin1String("%2D"), QLatin1String("-")},
-        {QLatin1String("%2E"), QLatin1String(".")},
-        {QLatin1String("%3D"), QLatin1String("=")},
-        {QLatin1String("%25"), QLatin1String("%")},
-        {QLatin1String("%5E"), QLatin1String("^")},
-        {QLatin1String("%7C"), QLatin1String("|")},
-        {QLatin1String("%7B"), QLatin1String("{")},
-        {QLatin1String("%7D"), QLatin1String("}")},
-        {QLatin1String("%7E"), QLatin1String("~")}
+    {QLatin1String("%23A"), QLatin1String(":")},
+    {QLatin1String("%3F"), QLatin1String("?")},
+    {QLatin1String("%23"), QLatin1String("#")},
+    {QLatin1String("%5B"), QLatin1String("[")},
+    {QLatin1String("%5D"), QLatin1String("]")},
+    {QLatin1String("%40"), QLatin1String("@")},
+    {QLatin1String("%24"), QLatin1String("$")},
+    {QLatin1String("%2A"), QLatin1String("*")},
+    {QLatin1String("%2B"), QLatin1String("+")},
+    {QLatin1String("%2C"), QLatin1String(",")},
+    {QLatin1String("%2D"), QLatin1String("-")},
+    {QLatin1String("%2E"), QLatin1String(".")},
+    {QLatin1String("%3D"), QLatin1String("=")},
+    {QLatin1String("%25"), QLatin1String("%")},
+    {QLatin1String("%5E"), QLatin1String("^")},
+    {QLatin1String("%7C"), QLatin1String("|")},
+    {QLatin1String("%7B"), QLatin1String("{")},
+    {QLatin1String("%7D"), QLatin1String("}")},
+    {QLatin1String("%7E"), QLatin1String("~")},
 };
+// clang-format on
 
 QImage BlurhashImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {

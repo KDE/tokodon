@@ -16,8 +16,6 @@ AccountModel::AccountModel(QObject *parent)
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
 }
 
-AccountModel::~AccountModel() = default;
-
 bool AccountModel::isSelf() const
 {
     if (m_identity == nullptr) {
@@ -60,7 +58,10 @@ void AccountModel::fillTimeline(const QString &fromId)
     }
 
     auto uriPinned = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
-    uriPinned.setQuery(QUrlQuery{{"pinned", "true",}});
+    uriPinned.setQuery(QUrlQuery{{
+        "pinned",
+        "true",
+    }});
 
     const auto account = m_account;
     const auto id = m_accountId;

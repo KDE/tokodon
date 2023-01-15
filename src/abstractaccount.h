@@ -62,7 +62,7 @@ public:
     size_t maxPostLength() const;
     QString instanceName() const;
 
-    /// Get identity of the accoutn
+    /// Get identity of the account
     Identity *identity();
     const std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
     bool identityCached(const QString &accountId) const;

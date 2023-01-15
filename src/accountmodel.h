@@ -26,7 +26,6 @@ class AccountModel : public TimelineModel
 
 public:
     explicit AccountModel(QObject *parent = nullptr);
-    ~AccountModel();
 
     QString accountId() const;
     void setAccountId(const QString &accountId);

@@ -13,7 +13,7 @@ class BlurHashTest : public QObject
 
     QImage goodBlurHashImage;
     QImage specialBlurHashImage;
-    BlurhashImageProvider* imageProvider;
+    BlurhashImageProvider *imageProvider;
 
 private Q_SLOTS:
     void initTestCase()
@@ -25,7 +25,9 @@ private Q_SLOTS:
 
     void testImageProviderEncoding()
     {
-        const QString blurHashEncoded = QStringLiteral("%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D;RPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%2Bj%5BrrW;ni%25Mt7V%40W;t7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
+        const QString blurHashEncoded = QStringLiteral(
+            "%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D;RPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%"
+            "2Bj%5BrrW;ni%25Mt7V%40W;t7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
 
         QSize outSize;
         QImage image = imageProvider->requestImage(blurHashEncoded, &outSize, QSize(25, 25));
@@ -47,7 +49,9 @@ private Q_SLOTS:
 
     void testBlurHashAlgo()
     {
-        const QByteArray blurHash = QByteArrayLiteral("|KO2?U%2Tw=wR6cErDEhOD]~RBVZRip0W9ofwxM_};RPxuwH%3s89]t8$%tLOtxZ%gixtQt8IUS#I.ENa0NZIVt6xFM{M{%1j^M_bcRPX9nht7n+j[rrW;ni%Mt7V@W;t7t8%1bbxat7WBIUR*RjRjRjxuRjs.MxbbV@WY");
+        const QByteArray blurHash = QByteArrayLiteral(
+            "|KO2?U%2Tw=wR6cErDEhOD]~RBVZRip0W9ofwxM_};RPxuwH%3s89]t8$%tLOtxZ%gixtQt8IUS#I.ENa0NZIVt6xFM{M{%1j^M_bcRPX9nht7n+j[rrW;ni%Mt7V@W;t7t8%1bbxat7WBIUR*"
+            "RjRjRjxuRjs.MxbbV@WY");
 
         auto data = decode(blurHash.constData(), 25, 25, 1, 3);
         QImage image(data, 25, 25, 25 * 3, QImage::Format_RGB888, free, data);

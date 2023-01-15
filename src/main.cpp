@@ -32,11 +32,11 @@
 
 #include "account.h"
 #include "accountmanager.h"
+#include "accountmodel.h"
 #include "attachmenteditormodel.h"
 #include "blurhashimageprovider.h"
 #include "clipboard.h"
 #include "config.h"
-#include "accountmodel.h"
 #include "conversationmodel.h"
 #include "filehelper.h"
 #include "linkpaginatedtimelinemodel.h"
