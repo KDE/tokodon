@@ -306,6 +306,7 @@ a{
                 return false;
             }
             contentItem: GridLayout {
+                id: attachmentGridLayout
                 columns: model.attachments.length > 1 ? 2 : 1
 
                 Repeater {
@@ -317,14 +318,18 @@ a{
 
                         property var aspectRatio: sourceSize.height / sourceSize.width
 
+                        property var isSpecialAttachment: index == 0 && attachmentsRepeater.count == 3
                         property var widthDivisor: attachmentsRepeater.count > 1 ? 2 : 1
-                        property var heightDivisor: attachmentsRepeater.count > 2 ? 2 : 1
+
+                        // the first attachment in a three attachment set is displayed at full height
+                        property var heightDivisor: isSpecialAttachment ? 1 : (attachmentsRepeater.count > 2 ? 2 : 1)
+                        Layout.rowSpan: isSpecialAttachment ? 2 : 1
 
                         Layout.fillWidth: attachmentGrid.shouldKeepAspectRatio
                         Layout.fillHeight: attachmentGrid.shouldKeepAspectRatio
 
                         Layout.preferredWidth: attachmentGrid.shouldKeepAspectRatio ? -1 : parent.width / widthDivisor
-                        Layout.preferredHeight: attachmentGrid.shouldKeepAspectRatio ? parent.width * aspectRatio : (attachmentGrid.width * attachmentGrid.mediaRatio) / heightDivisor
+                        Layout.preferredHeight: attachmentGrid.shouldKeepAspectRatio ? parent.width * aspectRatio : (attachmentGrid.width * attachmentGrid.mediaRatio) / heightDivisor + (isSpecialAttachment ? attachmentGridLayout.rowSpacing : 0)
 
                         source: modelData.attachmentType === Attachment.Image ? modelData.previewUrl : ''
                         mipmap: true
