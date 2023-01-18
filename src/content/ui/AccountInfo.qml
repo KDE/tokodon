@@ -231,15 +231,14 @@ TimelinePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     text: model.identity.displayName
                 }
-                Kirigami.Heading {
-                    level: 3
+                QQC2.TextArea{
+                    text: "@" + model.identity.account
+                    textFormat: TextEdit.AutoText
+                    readOnly: true
                     Layout.fillWidth: true
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                    text: '@' + model.identity.account
-                    color: Kirigami.Theme.disabledTextColor
+                    background: null
                 }
                 Repeater {
                     model: accountInfo.model.identity.fields
@@ -362,13 +361,16 @@ TimelinePage {
                 Kirigami.Separator {
                     Layout.fillWidth: true
                 }
-                QQC2.Label {
+                QQC2.TextArea {
                     text: accountInfo.model.identity.bio
+                    textFormat: TextEdit.AutoText
+                    readOnly: true
                     Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    background: null
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
