@@ -16,7 +16,7 @@ QQC2.ItemDelegate {
     property bool secondary: false
     property bool showSeparator: true
     property bool showInteractionButton: true
-    property bool dontCropMedia: false
+    property bool expandedPost: false
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
@@ -44,7 +44,7 @@ QQC2.ItemDelegate {
         if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
                 model: subModel,
-                cropMedia: false,
+                expandedPost: true,
             });
         }
     }
@@ -282,7 +282,7 @@ a{
 
             // Only uncrop timeline media if requested by the user, and there's only one attachment
             // Expanded posts (like in threads) are always uncropped.
-            property var shouldKeepAspectRatio: (!Config.cropMedia || dontCropMedia) && model.attachments.length === 1
+            property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && model.attachments.length === 1
 
             property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : model.sensitive))
 
@@ -614,7 +614,7 @@ a{
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "reply-post"
-                text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats ? model.repliesCount : i18nc("More than one reply", "1+"))
+                text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats || root.expandedPost ? model.repliesCount : i18nc("More than one reply", "1+"))
                 onClicked: {
                     const post = AccountManager.selectedAccount.newPost()
                     post.inReplyTo = model.id;
@@ -636,7 +636,7 @@ a{
                 interacted: model.reblogged
                 interactionColor: "green"
                 onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
-                text: Config.showPostStats ? model.reblogsCount : ''
+                text: (Config.showPostStats || root.expandedPost) ? model.reblogsCount : ''
                 QQC2.ToolTip.text: i18nc("Share a post", "Boost")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -646,7 +646,7 @@ a{
                 interacted: model.favorite
                 interactionColor: "orange"
                 onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
-                text: Config.showPostStats ? favoritesCount : ''
+                text: (Config.showPostStats || root.expandedPost) ? favoritesCount : ''
                 QQC2.ToolTip.text: i18nc("Like a post", "Like")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -669,7 +669,7 @@ a{
                         text: i18n("Expand this post")
                         onTriggered: {
                             pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                                cropMedia: false,
+                                expandedPost: true,
                                 model: model.threadModel,
                             });
                         }

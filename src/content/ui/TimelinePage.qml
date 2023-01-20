@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
     required property var model
-    property bool cropMedia: true
+    property bool expandedPost: false
 
     property alias listViewHeader: listview.header
 
@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
         }
         delegate: PostDelegate {
             timelineModel: timelinePage.model
-            dontCropMedia: !cropMedia
+            expandedPost: timelinePage.expandedPost
         }
 
         Kirigami.PlaceholderMessage {
