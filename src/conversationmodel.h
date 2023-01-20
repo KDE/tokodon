@@ -23,6 +23,7 @@ class ConversationModel : public AbstractTimelineModel
 public:
     enum ExtraRole {
         UnreadRole = AbstractTimelineModel::ExtraRole + 1,
+        ConversationAuthorsRole,
         ConversationIdRole,
     };
     Q_ENUM(ExtraRole)

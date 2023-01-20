@@ -8,9 +8,12 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 
 Kirigami.ScrollablePage {
-    id: timelinePage
+    id: root
 
     property var dialog: null
+    required property var model
+    property bool expandedPost: false
+    property alias listViewHeader: listview.header
 
     title: model.displayName
     titleDelegate: Kirigami.Heading {
@@ -21,16 +24,12 @@ Kirigami.ScrollablePage {
         maximumLineCount: 1
         elide: Text.ElideRight
 
-        text: timelinePage.title
+        text: root.title
 
         textFormat: TextEdit.RichText
     }
+
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
-
-    required property var model
-    property bool expandedPost: false
-
-    property alias listViewHeader: listview.header
 
     onBackRequested: if (dialog) {
         dialog.close();
@@ -50,16 +49,28 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Connections {
+        target: Navigation
+        function onOpenFullScreenImage(attachments, currentIndex) {
+            root.dialog = fullScreenImage.createObject(parent, {
+                model: attachments,
+                currentIndex: currentIndex,
+            });
+            root.dialog.open();
+        }
+    }
+
     ListView {
         id: listview
-        model: timelinePage.model
+        model: root.model
 
         Component {
             id: fullScreenImage
             FullScreenImage {}
         }
+
         delegate: PostDelegate {
-            timelineModel: timelinePage.model
+            timelineModel: root.model
             expandedPost: timelinePage.expandedPost
         }
 

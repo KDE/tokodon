@@ -103,7 +103,8 @@ private Q_SLOTS:
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975")), new TestReply("status.json", account));
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975/context")), new TestReply("context.json", account));
 
-        ThreadModel threadModel(QStringLiteral("103270115826048975"));
+        ThreadModel threadModel;
+        threadModel.setPostId(QStringLiteral("103270115826048975"));
         QCOMPARE(threadModel.rowCount({}), 3);
         QCOMPARE(threadModel.data(threadModel.index(1, 0), AbstractTimelineModel::SelectedRole).toBool(), true);
         QCOMPARE(threadModel.displayName(), "Thread");

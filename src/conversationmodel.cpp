@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QTextDocumentFragment>
 #include <algorithm>
+#include <qvariant.h>
 
 ConversationModel::ConversationModel(QObject *parent)
     : AbstractTimelineModel(parent)
@@ -45,17 +46,15 @@ QVariant ConversationModel::data(const QModelIndex &index, int role) const
     const auto &firstIdentity = identities[0];
 
     switch (role) {
-    case AvatarRole:
-        return firstIdentity->avatarUrl();
-    case AuthorIdRole:
-        return firstIdentity->account();
+    case AuthorIdentityRole:
+        return QVariant::fromValue<Identity *>(firstIdentity.get());
     case ConversationIdRole:
         return m_conversations[row].id;
     case UnreadRole:
         return m_conversations[row].unread;
     case Qt::DisplayRole:
         return QTextDocumentFragment::fromHtml(lastPost->content()).toPlainText();
-    case AuthorDisplayNameRole:
+    case ConversationAuthorsRole:
         if (identities.count() == 0) {
             return i18n("Empty conversation");
         } else if (identities.count() == 1) {

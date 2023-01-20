@@ -17,38 +17,45 @@ class AbstractTimelineModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 public:
     enum CustoRoles {
-        AvatarRole = Qt::UserRole + 1,
-        IdRole,
-        AuthorDisplayNameRole,
-        AuthorIdRole,
-        AuthorUriRole,
+        IdRole = Qt::UserRole + 1,
+        UrlRole,
+        ContentRole,
+        SpoilerTextRole,
+        AuthorIdentityRole,
         PublishedAtRole,
         RelativeTimeRole,
         SensitiveRole,
-        SpoilerTextRole,
-        MutedRole,
-        PinnedRole,
-        AttachmentsRole,
-        WasRebloggedRole,
-        RebloggedDisplayNameRole,
-        RebloggedIdRole,
-        RebloggedRole,
-        RebloggedAuthorIdRole,
-        RebloggedAvatarRole,
-        ReblogsCountRole,
-        BookmarkedRole,
-        MentionsRole,
-        RepliesCountRole,
-        FavoritedRole,
-        FavoritesCountRole,
-        ThreadModelRole,
-        UrlRole,
-        CardRole,
-        TypeRole,
-        PollRole,
         VisibilityRole,
+
+        // Additional content
+        AttachmentsRole,
+        CardRole,
+        PollRole,
+        MentionsRole,
+
+        // Reblog
+        IsBoostedRole,
+        BoostAuthorIdentityRole,
+
+        // Interaction count
+        ReblogsCountRole,
+        RepliesCountRole,
+        FavouritesCountRole,
+
+        // User self interaction
+        FavouritedRole,
+        RebloggedRole,
+        MutedRole,
+        BookmarkedRole,
+        PinnedRole,
+
+        // Notification
+        NotificationActorIdentityRole,
+        TypeRole,
+
         SelectedRole,
         FiltersRole,
+
         ExtraRole, ///< for sub-classes to extend the roles
     };
 
@@ -58,6 +65,9 @@ public:
 
     bool loading() const;
     void setLoading(bool loading);
+
+    void actionFavorite(const QModelIndex &index, Post *post);
+    void actionRepeat(const QModelIndex &index, Post *post);
 
 Q_SIGNALS:
     void loadingChanged();

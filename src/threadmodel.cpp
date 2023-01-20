@@ -9,9 +9,8 @@
 #include <QJsonObject>
 #include <qstringliteral.h>
 
-ThreadModel::ThreadModel(const QString &postId, QObject *parent)
+ThreadModel::ThreadModel(QObject *parent)
     : TimelineModel(parent)
-    , m_postId(postId)
 {
     init();
 }
@@ -49,6 +48,10 @@ void ThreadModel::setPostId(const QString &postId)
 void ThreadModel::fillTimeline(const QString &fromId)
 {
     Q_UNUSED(fromId)
+
+    if (m_postId.isNull() || m_postId.isEmpty()) {
+        return;
+    }
 
     setLoading(true);
 

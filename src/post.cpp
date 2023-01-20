@@ -60,6 +60,30 @@ Post::Post(AbstractAccount *account, QObject *parent)
     m_visibility = stringToVisibility(visibilityString);
 }
 
+QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity)
+{
+    QString content = obj["content"].toString();
+    const auto emojis = obj["emojis"].toArray();
+
+    for (const auto &emoji : emojis) {
+        const auto emojiObj = emoji.toObject();
+        content = content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
+                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+    }
+
+    const auto tags = obj["tags"].toArray();
+    const QString baseUrl = authorIdentity->url().toDisplayString(QUrl::RemovePath);
+
+    for (const auto &tag : tags) {
+        const auto tagObj = tag.toObject();
+        content = content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(),
+                                  QStringLiteral("hashtag:/") + tagObj["name"].toString(),
+                                  Qt::CaseInsensitive);
+    }
+
+    return content;
+}
+
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
@@ -67,58 +91,52 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 {
     const auto accountDoc = obj["account"].toObject();
     const auto accountId = accountDoc["id"].toString();
+
+    m_postId = obj["id"].toString();
     const auto reblogObj = obj["reblog"].toObject();
 
-    m_original_post_id = obj["id"].toString();
-
     if (!obj.contains("reblog") || reblogObj.isEmpty()) {
-        m_repeat = false;
+        m_boosted = false;
         m_authorIdentity = m_parent->identityLookup(accountId, accountDoc);
     } else {
-        m_repeat = true;
+        m_boosted = true;
 
-        auto repeatAccountDoc = reblogObj["account"].toObject();
-        auto repeatAccountId = repeatAccountDoc["id"].toString();
+        const auto reblogAccountDoc = reblogObj["account"].toObject();
+        const auto reblogAccountId = reblogAccountDoc["id"].toString();
 
-        m_authorIdentity = m_parent->identityLookup(repeatAccountId, repeatAccountDoc);
-        m_repeatIdentity = m_parent->identityLookup(accountId, accountDoc);
+        m_authorIdentity = m_parent->identityLookup(reblogAccountId, reblogAccountDoc);
+        m_boostIdentity = m_parent->identityLookup(accountId, accountDoc);
 
         obj = reblogObj;
     }
 
-    m_subject = obj["spoiler_text"].toString();
-    m_content = obj["content"].toString();
+    m_spoilerText = obj["spoiler_text"].toString();
+    m_content = computeContent(obj, m_authorIdentity);
 
-    const auto emojis = obj["emojis"].toArray();
+    m_replyTargetId = obj["id"].toString();
+    m_url = QUrl(obj["url"].toString());
 
-    for (const auto &emoji : emojis) {
-        const auto emojiObj = emoji.toObject();
-        m_content = m_content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
-    }
-
-    const auto tags = obj["tags"].toArray();
-    const QString baseUrl = authorIdentity()->url().toDisplayString(QUrl::RemovePath);
-
-    for (const auto &tag : tags) {
-        const auto tagObj = tag.toObject();
-        m_content = m_content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(),
-                                      QStringLiteral("hashtag:/") + tagObj["name"].toString(),
-                                      Qt::CaseInsensitive);
-    }
-
-    m_post_id = m_replyTargetId = obj["id"].toString();
-    m_isFavorite = obj["favourited"].toBool();
-    m_favoriteCount = obj["favourites_count"].toInt();
-    m_repeatedCount = obj["reblogs_count"].toInt();
+    m_favouritesCount = obj["favourites_count"].toInt();
+    m_reblogsCount = obj["reblogs_count"].toInt();
     m_repliesCount = obj["replies_count"].toInt();
-    m_isRepeated = obj["reblogged"].toBool();
-    m_isBookmarked = obj["bookmarked"].toBool();
-    m_isSensitive = obj["sensitive"].toBool();
-    m_link = QUrl(obj["url"].toString());
+
+    m_favourited = obj["favourited"].toBool();
+    m_reblogged = obj["reblogged"].toBool();
+    m_bookmarked = obj["bookmarked"].toBool();
     m_pinned = obj["pinned"].toBool();
+    m_muted = obj["muted"].toBool();
+    const auto filters = obj["filtered"].toArray();
+    for (const auto &filter : filters) {
+        const auto filterContext = filter.toObject();
+        const auto filterObj = filterContext["filter"].toObject();
+        m_filters << filterObj["title"].toString();
+        m_filtered = true;
+    }
+
+    m_sensitive = obj["sensitive"].toBool();
     m_visibility = stringToVisibility(obj["visibility"].toString());
-    m_published_at = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
+
+    m_publishedAt = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
     addAttachments(obj["media_attachments"].toArray());
     const QJsonArray mentions = obj["mentions"].toArray();
     if (obj.contains("card") && !obj["card"].toObject().empty()) {
@@ -134,14 +152,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
         m_poll = new Poll(obj[QStringLiteral("poll")].toObject());
     }
 
-    const auto filters = obj["filtered"].toArray();
-    for (const auto &filter : filters) {
-        const auto filterContext = filter.toObject();
-        const auto filterObj = filterContext["filter"].toObject();
-        m_filters << filterObj["title"].toString();
-    }
-
-    m_attachments_visible = !m_isSensitive;
+    m_attachments_visible = !m_sensitive;
 }
 
 Post::~Post()
@@ -206,6 +217,11 @@ QStringList Post::filters() const
     return m_filters;
 }
 
+QUrl Post::url() const
+{
+    return m_url;
+}
+
 void Post::setMentions(const QStringList &mentions)
 {
     if (mentions == m_mentions) {
@@ -219,10 +235,10 @@ QJsonDocument Post::toJsonDocument() const
 {
     QJsonObject obj;
 
-    obj["spoiler_text"] = m_subject;
+    obj["spoiler_text"] = m_spoilerText;
     obj["status"] = m_content;
     obj["content_type"] = m_content_type;
-    obj["sensitive"] = m_isSensitive;
+    obj["sensitive"] = m_sensitive;
     obj["visibility"] = visibilityToString(m_visibility);
 
     if (!m_replyTargetId.isEmpty()) {
@@ -251,6 +267,21 @@ void Post::uploadAttachment(const QUrl &filename)
 void Post::updateAttachment(Attachment *a)
 {
     m_parent->updateAttachment(a);
+}
+
+QDateTime Post::publishedAt() const
+{
+    return m_publishedAt;
+}
+
+int Post::favouritesCount() const
+{
+    return m_favouritesCount;
+}
+
+int Post::reblogsCount() const
+{
+    return m_reblogsCount;
 }
 
 static QMap<QString, Notification::Type> str_to_not_type = {
@@ -301,18 +332,18 @@ std::shared_ptr<Identity> Notification::identity() const
     return m_identity;
 }
 
-QString Post::subject() const
+QString Post::spoilerText() const
 {
-    return m_subject;
+    return m_spoilerText;
 }
 
-void Post::setSubject(const QString &subject)
+void Post::setSpoilerText(const QString &spoilerText)
 {
-    if (subject == m_subject) {
+    if (spoilerText == m_spoilerText) {
         return;
     }
-    m_subject = subject;
-    Q_EMIT subjectChanged();
+    m_spoilerText = spoilerText;
+    Q_EMIT spoilerTextChanged();
 }
 
 QString Post::content() const
@@ -343,17 +374,17 @@ void Post::setContentType(const QString &contentType)
     Q_EMIT contentTypeChanged();
 }
 
-bool Post::isSensitive() const
+bool Post::sensitive() const
 {
-    return m_isSensitive;
+    return m_sensitive;
 }
 
-void Post::setSensitive(bool isSensitive)
+void Post::setSensitive(bool sensitive)
 {
-    if (m_isSensitive == isSensitive) {
+    if (m_sensitive == sensitive) {
         return;
     }
-    m_isSensitive = isSensitive;
+    m_sensitive = sensitive;
     Q_EMIT sensitiveChanged();
 }
 
@@ -379,6 +410,81 @@ std::optional<Card> Post::card() const
 void Post::setCard(std::optional<Card> card)
 {
     m_card = card;
+}
+
+bool Post::favourited() const
+{
+    return m_favourited;
+}
+
+void Post::setFavourited(bool favourited)
+{
+    m_favourited = favourited;
+}
+
+bool Post::reblogged() const
+{
+    return m_reblogged;
+}
+
+void Post::setReblogged(bool reblogged)
+{
+    m_reblogged = reblogged;
+}
+
+bool Post::muted() const
+{
+    return m_muted;
+}
+
+void Post::setMuted(bool muted)
+{
+    m_muted = muted;
+}
+
+bool Post::bookmarked() const
+{
+    return m_bookmarked;
+}
+
+void Post::setBookmarked(bool bookmarked)
+{
+    m_bookmarked = bookmarked;
+}
+
+bool Post::pinned() const
+{
+    return m_pinned;
+}
+
+void Post::setPinned(bool pinned)
+{
+    m_pinned = pinned;
+}
+
+bool Post::filtered() const
+{
+    return m_filtered;
+}
+
+QList<Attachment *> Post::attachments() const
+{
+    return m_attachments;
+}
+
+void Post::setAttachmentsVisible(bool attachmentsVisible)
+{
+    m_attachments_visible = attachmentsVisible;
+}
+
+bool Post::attachmentsVisible() const
+{
+    return m_attachments_visible;
+}
+
+bool Post::boosted() const
+{
+    return m_boosted;
 }
 
 Card::Card(QJsonObject card)
@@ -460,9 +566,9 @@ std::shared_ptr<Identity> Post::authorIdentity() const
     return m_authorIdentity;
 }
 
-std::shared_ptr<Identity> Post::repeatIdentity() const
+std::shared_ptr<Identity> Post::boostIdentity() const
 {
-    return m_repeatIdentity;
+    return m_boostIdentity;
 }
 
 Poll *Post::poll() const
@@ -478,5 +584,10 @@ void Post::setPoll(Poll *poll)
 
 QString Post::postId() const
 {
-    return m_post_id;
+    return m_postId;
+}
+
+bool Post::isEmpty() const
+{
+    return m_postId.isEmpty();
 }

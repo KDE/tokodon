@@ -14,13 +14,15 @@ QQC2.Popup {
 
     required property var model
     property alias currentIndex: view.currentIndex
+
     property int imageWidth: -1
     property int imageHeight: -1
 
-    parent: QQC2.Overlay.overlay
-    closePolicy: QQC2.Popup.CloseOnEscape
     width: parent.width
     height: parent.height
+
+    parent: QQC2.Overlay.overlay
+    closePolicy: QQC2.Popup.CloseOnEscape
     modal: true
     padding: 0
     background: null
@@ -115,7 +117,7 @@ QQC2.Popup {
             id: view
             Layout.fillWidth: true
             Layout.fillHeight: true
-            snapMode: ListView.SnapOneItem 
+            snapMode: ListView.SnapOneItem
             highlightRangeMode: ListView.StrictlyEnforceRange
             highlightMoveDuration: 0
             focus: true

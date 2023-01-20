@@ -9,13 +9,22 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 
 QQC2.ItemDelegate {
+    id: root
+
+    required property int index
+    required property var notificationActorIdentity
+    required property bool selected
+
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing * 2
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
+
     highlighted: false
     hoverEnabled: false
+
     width: ListView.view.width
+
     contentItem: Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 40
         spacing: Kirigami.Units.largeSpacing
@@ -29,7 +38,7 @@ QQC2.ItemDelegate {
 
             Kirigami.Heading {
                 level: 4
-                text: i18n("%1 followed you", model.notificationActorIdentity.displayNameHtml)
+                text: i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
                 textFormat: Text.RichText
             }
         }
@@ -39,20 +48,18 @@ QQC2.ItemDelegate {
             Kirigami.Avatar {
                 Layout.alignment: Qt.AlignTop
                 Layout.rowSpan: 5
-                source: model.notificationActorIdentity.avatarUrl
+                source: root.notificationActorIdentity.avatarUrl
                 cache: true
                 actions.main: Kirigami.Action {
-                    onTriggered: pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                        model: model.accountModel,
-                    })
+                    onTriggered: Navigation.openAccount(root.notificationActorIdentity.id)
                 }
-                name: model.notificationActorIdentity.displayName
+                name: root.notificationActorIdentity.displayName
             }
             ColumnLayout {
                 Kirigami.Heading {
                     id: heading
                     level: 5
-                    text: model.notificationActorIdentity.displayNameHtml
+                    text: root.notificationActorIdentity.displayNameHtml
                     type: Kirigami.Heading.Type.Primary
                     color: Kirigami.Theme.textColor
                 }
@@ -61,15 +68,14 @@ QQC2.ItemDelegate {
                     Layout.fillWidth: true
                     elide: Text.ElideRight
                     color: Kirigami.Theme.disabledTextColor
-                    text: `@${model.notificationActorIdentity.account}`
+                    text: `@${root.notificationActorIdentity.account}`
                 }
             }
         }
 
         Kirigami.Separator {
-            visible: root.showSeparator && !model.selected
             Layout.fillWidth: true
         }
     }
-    text: i18n("%1 followed you", model.notificationActorIdentity.displayName)
+    text: i18n("%1 followed you", root.notificationActorIdentity.displayName)
 }

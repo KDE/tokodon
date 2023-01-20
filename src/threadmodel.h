@@ -13,7 +13,7 @@ class ThreadModel : public TimelineModel
     Q_PROPERTY(QString postId READ postId WRITE setPostId NOTIFY postIdChanged)
 
 public:
-    ThreadModel(const QString &postId, QObject *parent = nullptr);
+    explicit ThreadModel(QObject *parent = nullptr);
 
     QString postId() const;
     void setPostId(const QString &postId);

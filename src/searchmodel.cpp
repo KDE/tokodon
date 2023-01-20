@@ -87,14 +87,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
 
     const auto identity = m_accounts[row];
     switch (role) {
-    case AvatarRole:
-        return identity->avatarUrl();
-    case AuthorIdRole:
-        return identity->id();
-    case AuthorDisplayNameRole:
-        return identity->displayNameHtml();
-    case AuthorUriRole:
-        return identity->account();
+    case AuthorIdentityRole:
+        return QVariant::fromValue<Identity *>(identity.get());
     }
 
     return {};

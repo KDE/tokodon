@@ -49,6 +49,7 @@
 #include "profileeditor.h"
 #include "searchmodel.h"
 #include "tagsmodel.h"
+#include "threadmodel.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
@@ -130,6 +131,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<LinkPaginationTimelineModel>("org.kde.kmasto", 1, 0, "LinkPaginationTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
+    qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
     qmlRegisterType<AccountModel>("org.kde.kmasto", 1, 0, "AccountModel");
@@ -149,6 +151,7 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
+    qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

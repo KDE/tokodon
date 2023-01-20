@@ -145,10 +145,10 @@ private:
 class Post : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString subject READ subject WRITE setSubject NOTIFY subjectChanged)
+    Q_PROPERTY(QString spoilerText READ spoilerText WRITE setSpoilerText NOTIFY spoilerTextChanged)
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
     Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
-    Q_PROPERTY(bool isSensitive READ isSensitive WRITE setSensitive NOTIFY sensitiveChanged)
+    Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
     Q_PROPERTY(Visibility visibility READ visibility WRITE setVisibility NOTIFY visibilityChanged)
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
@@ -173,15 +173,22 @@ public:
     AbstractAccount *m_parent;
 
     std::shared_ptr<Identity> authorIdentity() const;
-    std::shared_ptr<Identity> repeatIdentity() const;
+    std::shared_ptr<Identity> boostIdentity() const;
+    bool boosted() const;
 
-    QString subject() const;
-    void setSubject(const QString &subject);
+    /// Returns the post id of the status itself
+    QString postId() const;
+    QUrl url() const;
+
+    /// Returns the spoiler text (subject) of the status
+    QString spoilerText() const;
+    void setSpoilerText(const QString &spoilerText);
+
     QString content() const;
     void setContent(const QString &content);
     QString contentType() const;
     void setContentType(const QString &contentType);
-    bool isSensitive() const;
+    bool sensitive() const;
     void setSensitive(bool isSensitive);
     Visibility visibility() const;
     void setVisibility(Visibility visibility);
@@ -193,50 +200,62 @@ public:
     void setCard(std::optional<Card> card);
     void setPoll(Poll *poll);
     Poll *poll() const;
-    int repliesCount() const;
-    QString postId() const;
     QStringList filters() const;
 
     void addAttachment(const QJsonObject &attachment);
     Q_INVOKABLE void uploadAttachment(const QUrl &filename);
 
-    bool m_repeat = false;
-    int m_repliesCount = 0;
-    bool m_isRepeated = false;
-    int m_repeatedCount = 0;
-    bool m_isFavorite = false;
-    int m_favoriteCount = 0;
-    bool m_isBookmarked = false;
-    bool m_isSensitive = false;
-    bool m_attachments_visible = true;
+    /// Returns the published/creation time of this status.
+    QDateTime publishedAt() const;
 
-    QDateTime m_published_at;
-    QString m_post_id;
-    QString m_original_post_id;
-    QUrl m_link;
-    QString m_content;
-    QString m_subject;
-    QString m_author;
-    QString m_reply_to_author;
-    QString m_content_type;
-    QList<Attachment *> m_attachments;
-    Visibility m_visibility;
-    QStringList m_mentions;
-    bool m_pinned = false;
+    /// Returns whether the user favorited this status.
+    bool favourited() const;
+    /// Set this post as favourited.
+    void setFavourited(bool favourited);
+    /// Returns whether the user reblogged this status.
+    bool reblogged() const;
+    /// Set this post as reblogged.
+    void setReblogged(bool reblogged);
+    /// Returns whether the user muted this status.
+    bool muted() const;
+    /// Set this post as muted.
+    void setMuted(bool muted);
+    /// Returns whether the user bookmarked this status.
+    bool bookmarked() const;
+    /// Set this post as bookmarked.
+    void setBookmarked(bool bookmarked);
+    /// Returns whether the user pinned this status.
+    bool pinned() const;
+    /// Set this status as pinned
+    void setPinned(bool pinned);
+    /// Returns whether the user filtered this status.
+    bool filtered() const;
 
-    bool isEmpty()
-    {
-        return m_post_id.isEmpty();
-    }
+    /// Returns the number of time this status has been boosted.
+    int reblogsCount() const;
+    /// Returns the number of time this status has been favorited.
+    int favouritesCount() const;
+    /// Returns the number of time this status has been replied.
+    int repliesCount() const;
+
+    /// Returns whether this status is empty
+    bool isEmpty() const;
+
     Q_INVOKABLE void addAttachments(const QJsonArray &attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
+    QList<Attachment *> attachments() const;
+    bool attachmentsVisible() const;
+    void setAttachmentsVisible(bool attachmentsVisible);
 
     // prepares a post for posting
     QJsonDocument toJsonDocument() const;
 
+    // TODO move to private
+    QList<Attachment *> m_attachments;
+
 Q_SIGNALS:
-    void subjectChanged();
+    void spoilerTextChanged();
     void contentChanged();
     void contentTypeChanged();
     void sensitiveChanged();
@@ -247,12 +266,39 @@ Q_SIGNALS:
     void pollChanged();
 
 private:
+    bool m_attachments_visible = true;
+    QDateTime m_publishedAt;
+    QString m_postId;
+    QUrl m_url;
+    QString m_content;
+    QString m_spoilerText;
+    QString m_author;
+    QString m_reply_to_author;
+    QString m_content_type;
+    QStringList m_mentions;
+
     QString m_replyTargetId;
     QStringList m_filters;
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
-    std::shared_ptr<Identity> m_repeatIdentity;
     Poll *m_poll = nullptr;
+
+    bool m_sensitive;
+    Visibility m_visibility;
+
+    bool m_boosted;
+    std::shared_ptr<Identity> m_boostIdentity;
+
+    bool m_favourited;
+    bool m_reblogged;
+    bool m_muted;
+    bool m_bookmarked;
+    bool m_filtered;
+    bool m_pinned;
+
+    int m_reblogsCount;
+    int m_favouritesCount;
+    int m_repliesCount;
 };
 
 Q_DECLARE_METATYPE(Card)

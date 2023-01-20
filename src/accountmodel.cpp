@@ -91,7 +91,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         QList<Post *> posts;
         std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
             auto post = new Post(m_account, value.toObject(), this);
-            post->m_pinned = true;
+            post->setPinned(true);
             return post;
         });
         beginInsertRows({}, 0, posts.size() - 1);

@@ -3,6 +3,7 @@
 
 #include "notificationmodel.h"
 #include "abstractaccount.h"
+#include "abstracttimelinemodel.h"
 #include "threadmodel.h"
 #include <KLocalizedString>
 #include <QUrlQuery>
@@ -148,13 +149,6 @@ int NotificationModel::rowCount(const QModelIndex &parent) const
     return m_notifications.size();
 }
 
-QHash<int, QByteArray> NotificationModel::roleNames() const
-{
-    auto roles = AbstractTimelineModel::roleNames();
-    roles.insert(NotificationActorIdentityRole, QByteArrayLiteral("notificationActorIdentity"));
-    return roles;
-}
-
 QVariant NotificationModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
@@ -167,23 +161,23 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case TypeRole:
         return notification->type();
-    case WasRebloggedRole:
-        return post->m_repeat || notification->type() == Notification::Repeat;
-    case RebloggedDisplayNameRole:
-        if (post->repeatIdentity()) {
-            return post->repeatIdentity()->displayNameHtml();
+    case IsBoostedRole:
+        return post->boosted() || notification->type() == Notification::Repeat;
+    case BoostAuthorIdentityRole:
+        if (post->boostIdentity()) {
+            return QVariant::fromValue<Identity *>(post->boostIdentity().get());
         }
         if (notification->type() == Notification::Repeat) {
-            return notification->identity()->displayName();
+            return QVariant::fromValue<Identity *>(notification->identity().get());
         }
         return {};
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
-    case AuthorIdRole:
+    case AuthorIdentityRole:
         if (notification->type() == Notification::Follow || notification->type() == Notification::FollowRequest) {
-            return notification->identity()->id();
+            return QVariant::fromValue<Identity *>(notification->identity().get());
         } else {
-            return post->authorIdentity()->id();
+            return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
     default:
         return postData(post, role);
@@ -203,41 +197,22 @@ void NotificationModel::actionReply(const QModelIndex &index)
 void NotificationModel::actionFavorite(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_notifications[row]->post();
-
-    if (!p->m_isFavorite) {
-        m_account->favorite(p);
-        p->m_isFavorite = true;
-    } else {
-        m_account->unfavorite(p);
-        p->m_isFavorite = false;
-    }
-
-    Q_EMIT dataChanged(index, index);
+    auto post = m_notifications[row]->post();
+    AbstractTimelineModel::actionFavorite(index, post);
 }
 
 void NotificationModel::actionRepeat(const QModelIndex &index)
 {
-    int row = index.row();
-    auto p = m_notifications[row]->post();
-
-    if (!p->m_isRepeated) {
-        m_account->repeat(p);
-        p->m_isRepeated = true;
-    } else {
-        m_account->unrepeat(p);
-        p->m_isRepeated = false;
-    }
-
-    Q_EMIT dataChanged(index, index);
+    const int row = index.row();
+    const auto post = m_notifications[row]->post();
+    AbstractTimelineModel::actionRepeat(index, post);
 }
 
 void NotificationModel::actionVis(const QModelIndex &index)
 {
-    int row = index.row();
-    auto p = m_notifications[row]->post();
+    const int row = index.row();
+    const auto p = m_notifications[row]->post();
 
-    p->m_attachments_visible ^= true;
-
+    p->setAttachmentsVisible(!p->attachmentsVisible());
     Q_EMIT dataChanged(index, index);
 }

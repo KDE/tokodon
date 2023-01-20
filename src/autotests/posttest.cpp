@@ -29,11 +29,11 @@ private Q_SLOTS:
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
         Post post(&account, doc.object());
 
-        QCOMPARE(post.subject(), "SPOILER");
+        QCOMPARE(post.spoilerText(), "SPOILER");
         QCOMPARE(post.content(), "<p>LOREM</p>");
         QVERIFY(post.card());
         QCOMPARE(post.contentType(), QString());
-        QCOMPARE(post.isSensitive(), false);
+        QCOMPARE(post.sensitive(), false);
         QCOMPARE(post.visibility(), Post::Visibility::Public);
 
         QCOMPARE(post.authorIdentity()->displayName(), "Eugen :kde:");

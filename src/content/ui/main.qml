@@ -36,6 +36,26 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    Connections {
+        target: Navigation
+
+        function onOpenThread(postId) {
+            if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
+                pageStack.push("qrc:/content/ui/ThreadModel.qml", {
+                    postId: postId,
+                });
+            }
+        }
+
+        function onOpenAccount(accountId) {
+            if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
+                pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                    accountId: accountId,
+                });
+            }
+        }
+    }
+
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge

@@ -93,7 +93,7 @@ void TimelineModel::fetchedTimeline(const QByteArray &data)
     if (!m_timeline.isEmpty()) {
         const auto postOld = m_timeline.first();
         const auto postNew = posts.first();
-        if (postOld->m_original_post_id > postNew->m_original_post_id) {
+        if (postOld->postId() > postNew->postId()) {
             const int row = m_timeline.size();
             const int last = row + posts.size() - 1;
             beginInsertRows({}, row, last);
@@ -122,7 +122,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 
     const auto p = m_timeline.last();
 
-    fillTimeline(p->m_original_post_id);
+    fillTimeline(p->postId());
 }
 
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const
@@ -158,51 +158,33 @@ void TimelineModel::actionReply(const QModelIndex &index)
 
 void TimelineModel::actionFavorite(const QModelIndex &index)
 {
-    int row = index.row();
-    auto p = m_timeline[row];
-
-    if (!p->m_isFavorite) {
-        m_account->favorite(p);
-        p->m_isFavorite = true;
-    } else {
-        m_account->unfavorite(p);
-        p->m_isFavorite = false;
-    }
-
-    Q_EMIT dataChanged(index, index);
+    const int row = index.row();
+    const auto post = m_timeline[row];
+    AbstractTimelineModel::actionFavorite(index, post);
 }
 
 void TimelineModel::actionRepeat(const QModelIndex &index)
 {
-    int row = index.row();
-    auto p = m_timeline[row];
-
-    if (!p->m_isRepeated) {
-        m_account->repeat(p);
-        p->m_isRepeated = true;
-    } else {
-        m_account->unrepeat(p);
-        p->m_isRepeated = false;
-    }
-
-    Q_EMIT dataChanged(index, index);
+    const int row = index.row();
+    const auto post = m_timeline[row];
+    AbstractTimelineModel::actionRepeat(index, post);
 }
 
 void TimelineModel::actionVis(const QModelIndex &index)
 {
-    int row = index.row();
-    auto p = m_timeline[row];
+    const int row = index.row();
+    const auto p = m_timeline[row];
 
-    p->m_attachments_visible ^= true;
+    p->setAttachmentsVisible(!p->attachmentsVisible());
 
     Q_EMIT dataChanged(index, index);
 }
 
 void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choices)
 {
-    int row = index.row();
-    auto post = m_timeline[row];
-    auto poll = post->poll();
+    const int row = index.row();
+    const auto post = m_timeline[row];
+    const auto poll = post->poll();
     Q_ASSERT(poll);
 
     QJsonObject obj;
@@ -236,12 +218,12 @@ void TimelineModel::actionBookmark(const QModelIndex &index)
     int row = index.row();
     auto p = m_timeline[row];
 
-    if (!p->m_isBookmarked) {
+    if (!p->bookmarked()) {
         m_account->bookmark(p);
-        p->m_isBookmarked = true;
+        p->setBookmarked(true);
     } else {
         m_account->unbookmark(p);
-        p->m_isBookmarked = false;
+        p->setBookmarked(false);
     }
 
     Q_EMIT dataChanged(index, index);
@@ -252,7 +234,7 @@ void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, c
     if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {
         int i = 0;
         for (const auto &post : std::as_const(m_timeline)) {
-            if (post->m_original_post_id.toUtf8() == payload) {
+            if (post->postId().toUtf8() == payload) {
                 beginRemoveRows({}, i, i);
                 m_timeline.removeAt(i);
                 endRemoveRows();

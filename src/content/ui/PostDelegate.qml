@@ -11,8 +11,40 @@ import QtGraphicalEffects 1.0
 QQC2.ItemDelegate {
     id: root
 
+    required property int index
+
+    required property string id
+    required property var authorIdentity
+
+    required property bool isBoosted
+    required property var boostAuthorIdentity
+
+    required property var notificationActorIdentity
+
+    // Interaction count
+    required property int reblogsCount
+    required property int repliesCount
+    required property int favouritesCount
+
+    // User self interaction
+    required property bool favourited
+    required property bool reblogged
+    required property bool muted
+    required property bool bookmarked
+    required property bool pinned
+
+    required property string content
+    required property string spoilerText
+    required property string relativeTime
+    required property var attachments
+    required property var poll
+    required property var card
+    required property bool selected
+    required property var filters
+    required property int type
+
+    property bool filtered: root.filters.length > 0
     property var timelineModel
-    property var poll: model.poll
     property bool secondary: false
     property bool showSeparator: true
     property bool showInteractionButton: true
@@ -22,42 +54,28 @@ QQC2.ItemDelegate {
     bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
+
     highlighted: false
     hoverEnabled: false
     width: ListView.view.width
-    Kirigami.Theme.colorSet: model.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
 
-    function openAccountPage(accountId) {
-        if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
-            pageStack.push('qrc:/content/ui/AccountInfo.qml', {
-                accountId: accountId,
-            });
-        }
-    }
+    Kirigami.Theme.colorSet: root.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     onClicked: {
         if (tootContent.hoveredLink) {
             return;
         }
-        const subModel = model.threadModel;
-        if (!showInteractionButton || subModel.name !== timelinePage.model.name) {
-            pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                model: subModel,
-                expandedPost: true,
-            });
-        }
+        Navigation.openThread(root.id);
     }
     ListView.onReused: {
         tootContent.visible = Qt.binding(() => {
-            return model.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler;
+            return root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler;
         });
         filtered = Qt.binding(() => {
-            return model.filters.length > 0;
+            return root.filters.length > 0;
         });
     }
-
-    property bool filtered: model.filters.length > 0
 
     contentItem: Kirigami.FlexColumn {
         spacing: 0
@@ -69,7 +87,7 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
             QQC2.Label {
                 Layout.alignment: Qt.AlignHCenter
-                text: i18n("Filtered: %1", model.filters.join(', '))
+                text: i18n("Filtered: %1", root.filters.join(', '))
             }
             Kirigami.LinkButton {
                 Layout.alignment: Qt.AlignHCenter
@@ -81,13 +99,13 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: (model.type === Notification.Favorite || model.type === Notification.Update || model.type === Notification.Poll) && !filtered
+            visible: (root.type === Notification.Favorite || root.type === Notification.Update || root.type === Notification.Poll) && !root.filtered
             Kirigami.Icon {
-                source: if (model.type === Notification.Favorite) {
+                source: if (root.type === Notification.Favorite) {
                     return "favorite"
-                } else if (model.type === Notification.Update) {
+                } else if (root.type === Notification.Update) {
                     return "cell_edit"
-                } else if (model.type === Notification.Poll) {
+                } else if (root.type === Notification.Poll) {
                     return "folder-chart"
                 }
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -96,12 +114,12 @@ QQC2.ItemDelegate {
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
             }
             QQC2.Label {
-                text: if (model.type === Notification.Favorite) {
-                    return i18n("%1 favorited your post", model.notificationActorIdentity.displayNameHtml)
-                } else if (model.type === Notification.Update) {
-                    return i18n("%1 edited a post", model.notificationActorIdentity.displayNameHtml)
-                } else if (model.type === Notification.Poll) {
-                    if (AccountManager.selectedAccount.identity.id === model.authorId) {
+                text: if (root.type === Notification.Favorite) {
+                    return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml)
+                } else if (root.type === Notification.Update) {
+                    return i18n("%1 edited a post", root.notificationActorIdentity.displayNameHtml)
+                } else if (root.type === Notification.Poll) {
+                    if (AccountManager.selectedAccount.identity.id === root.authorId) {
                         return i18n("Your poll has ended")
                     } else {
                         return i18n("A poll you voted in has ended")
@@ -118,7 +136,7 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: model.pinned && !filtered
+            visible: root.pinned && !root.filtered
             Kirigami.Icon {
                 source: "pin"
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -134,14 +152,14 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
-            visible: (model.wasReblogged || model.type === Notification.Repeat) && !filtered
+            visible: (root.isBoosted || root.type === Notification.Repeat) && !filtered
 
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             Kirigami.Icon {
                 source: "retweet"
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
             }
@@ -153,17 +171,17 @@ QQC2.ItemDelegate {
                         implicitWidth: implicitHeight
                         Layout.alignment: Qt.AlignTop
                         Layout.bottomMargin: -Kirigami.Units.gridUnit
-                        source: model.rebloggedAvatar ? model.rebloggedAvatar : ''
+                        source: root.boostAuthorIdentity && root.boostAuthorIdentity.avatarUrl ?  root.boostAuthorIdentity.avatarUrl :  ''
                         cache: true
                         actions.main: Kirigami.Action {
                             tooltip: i18n("View profile")
-                            onTriggered: openAccountPage(model.rebloggedAuthorId)
+                            onTriggered: Navigation.openAccount(root.boostAuthorIdentity.id)
                         }
-                        name: model.authorDisplayName
+                        name: root.boostAuthorIdentity && root.boostAuthorIdentity.displayName ?  root.boostAuthorIdentity.displayName :  ''
                     }
                     QQC2.Label {
-                        text: model.rebloggedDisplayName ? i18n("%1 boosted", model.rebloggedDisplayName) : (model.type === Notification.Repeat ? i18n("%1 boosted your post", model.notificationActorIdentity.displayNameHtml) : '')
-                        color: model.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                        text: root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : (root.type === Notification.Repeat ? i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml) : '')
+                        color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                         Layout.alignment: Qt.AlignVCenter
                         Layout.fillWidth: true
                     }
@@ -178,13 +196,13 @@ QQC2.ItemDelegate {
             Kirigami.Avatar {
                 Layout.alignment: Qt.AlignTop
                 Layout.rowSpan: 5
-                source: model.avatar
+                source: root.authorIdentity.avatarUrl
                 cache: true
                 actions.main: Kirigami.Action {
                     tooltip: i18n("View profile")
-                    onTriggered: openAccountPage(model.authorId)
+                    onTriggered: Navigation.openAccount(root.authorIdentity.id)
                 }
-                name: model.authorDisplayName
+                name: root.authorIdentity.displayName
             }
             ColumnLayout {
                 Layout.fillWidth: true
@@ -193,7 +211,7 @@ QQC2.ItemDelegate {
                 Kirigami.Heading {
                     id: heading
                     level: 5
-                    text: model.authorDisplayName
+                    text: root.authorIdentity.displayNameHtml
                     type: Kirigami.Heading.Type.Primary
                     color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     verticalAlignment: Text.AlignTop
@@ -204,14 +222,14 @@ QQC2.ItemDelegate {
                     Layout.fillWidth: true
                     elide: Text.ElideRight
                     color: Kirigami.Theme.disabledTextColor
-                    text: `@${model.authorUri}`
+                    text: `@${root.authorIdentity.account}`
                     verticalAlignment: Text.AlignTop
                 }
             }
 
             Kirigami.Heading {
                 level: 5
-                text: model.relativeTime
+                text: root.relativeTime
                 color: secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 verticalAlignment: Text.AlignTop
                 Layout.alignment: Qt.AlignTop
@@ -222,10 +240,10 @@ QQC2.ItemDelegate {
         ColumnLayout {
             visible: !filtered
             RowLayout {
-                visible: model.spoilerText.length !== 0
+                visible: root.spoilerText.length !== 0
                 QQC2.Label {
                     Layout.fillWidth: true
-                    text: model.spoilerText
+                    text: root.spoilerText
                     wrapMode: Text.Wrap
                 }
                 QQC2.Button {
@@ -242,10 +260,10 @@ a{
     color: " + Kirigami.Theme.linkColor + ";
     text-decoration: none;
 }
-</style>" + model.display
+</style>" + root.content
                 textFormat: TextEdit.RichText
                 wrapMode: Text.Wrap
-                visible: model.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 readOnly: true
                 selectByMouse: !Kirigami.Settings.isMobile
                 // TODO handle opening profile page in tokodon
@@ -282,9 +300,9 @@ a{
 
             // Only uncrop timeline media if requested by the user, and there's only one attachment
             // Expanded posts (like in threads) are always uncropped.
-            property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && model.attachments.length === 1
+            property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
 
-            property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : model.sensitive))
+            property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
 
             readonly property var mediaRatio: 9.0 / 16.0
 
@@ -296,10 +314,10 @@ a{
             leftPadding: 0
             bottomPadding: 0
             rightPadding: 0
-            visible: tootContent.visible && !root.secondary && model.attachments.length > 0 && !filtered
+            visible: tootContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
             property bool hasValidAttachment: {
-                for (let i in model.attachments) {
-                    if (model.attachments[i].attachmentType !== Attachment.Unknown) {
+                for (let i in root.attachments) {
+                    if (root.attachments[i].attachmentType !== Attachment.Unknown) {
                         return true;
                     }
                 }
@@ -307,7 +325,7 @@ a{
             }
             contentItem: GridLayout {
                 id: attachmentGridLayout
-                columns: model.attachments.length > 1 ? 2 : 1
+                columns: root.attachments.length > 1 ? 2 : 1
 
                 Repeater {
                     id: attachmentsRepeater
@@ -315,6 +333,9 @@ a{
 
                     Image {
                         id: img
+
+                        required property int index
+                        required property var modelData
 
                         property var aspectRatio: sourceSize.height / sourceSize.width
 
@@ -356,11 +377,7 @@ a{
                                 if (attachmentGrid.isSensitive) {
                                     attachmentGrid.isSensitive = false;
                                 } else {
-                                    timelinePage.dialog = fullScreenImage.createObject(parent, {
-                                        model: attachments,
-                                        currentIndex: index,
-                                    });
-                                    timelinePage.dialog.open();
+                                    Navigation.openFullScreenImage(root.attachments, img.index);
                                 }
                             }
                         }
@@ -406,27 +423,24 @@ a{
                 onClicked: if (attachmentGrid.isSensitive) {
                     attachmentGrid.isSensitive = false;
                 } else {
-                  fullScreenImage.createObject(parent, {
-                        model: attachments,
-                        currentIndex: 0,
-                    }).open();
+                    Navigation.openFullScreenImage(root.attachments, 0);
                 }
             }
         }
 
         QQC2.AbstractButton {
-            visible: model.card && tootContent.visible && Config.showLinkPreview && !root.secondary && model.attachments.length === 0 && !filtered
+            visible: root.card && tootContent.visible && Config.showLinkPreview && !root.secondary && root.attachments.length === 0 && !filtered
             Layout.fillWidth: true
             Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
             leftPadding: 0
             topPadding: 0
             rightPadding: 0
             bottomPadding: 0
-            onClicked: Qt.openUrlExternally(model.card.url)
+            onClicked: Qt.openUrlExternally(root.card.url)
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
                 onHoveredChanged: if (hovered) {
-                    applicationWindow().hoverLinkIndicator.text = model.card.url;
+                    applicationWindow().hoverLinkIndicator.text = root.card.url;
                 } else {
                     applicationWindow().hoverLinkIndicator.text = "";
                 }
@@ -442,7 +456,7 @@ a{
             contentItem: RowLayout {
                 Rectangle {
                     id: logo
-                    visible: model.card && model.card.image
+                    visible: root.card && root.card.image
                     color: Kirigami.Theme.backgroundColor
                     Kirigami.Theme.colorSet: Kirigami.Theme.Window
                     radius: Kirigami.Units.largeSpacing
@@ -483,7 +497,7 @@ a{
                         anchors {
                             fill: parent
                         }
-                        source: model.card ? model.card.image : ''
+                        source: root.card ? root.card.image : ''
                     }
                 }
                 ColumnLayout {
@@ -492,17 +506,17 @@ a{
                     Layout.leftMargin: Kirigami.Units.largeSpacing
                     Kirigami.Heading {
                         level: 5
-                        text: model.card ? model.card.title : ''
+                        text: root.card ? root.card.title : ''
                         elide: Text.ElideRight
                         Layout.fillWidth: true
-                        wrapMode: model.card && model.card.providerName ? Text.WordWrap : Text.NoWrap
+                        wrapMode: root.card && root.card.providerName ? Text.WordWrap : Text.NoWrap
                         maximumLineCount: 1
                         HoverHandler {
                             cursorShape: Qt.PointingHandCursor
                         }
                     }
                     QQC2.Label {
-                        text: model.card ? model.card.providerName : ''
+                        text: root.card ? root.card.providerName : ''
                         elide: Text.ElideRight
                         Layout.fillWidth: true
                         HoverHandler {
@@ -604,7 +618,7 @@ a{
                             choices.push(button.choiceIndex);
                         }
                     }
-                    timelineModel.actionVote(timelineModel.index(model.index, 0), choices)
+                    timelineModel.actionVote(timelineModel.index(root.index, 0), choices)
                 }
             }
         }
@@ -614,14 +628,14 @@ a{
             Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "reply-post"
-                text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats || root.expandedPost ? model.repliesCount : i18nc("More than one reply", "1+"))
+                text: model.repliesCount < 2 ? model.repliesCount : (Config.showPostStats || root.expandedPost ? root.repliesCount : i18nc("More than one reply", "1+"))
                 onClicked: {
                     const post = AccountManager.selectedAccount.newPost()
-                    post.inReplyTo = model.id;
-                    post.mentions = model.mentions;
-                    post.visibility = model.visibility;
-                    if (!post.mentions.includes(`@${model.authorUri}`)) {
-                        post.mentions.push(`@${model.authorUri}`);
+                    post.inReplyTo = root.id;
+                    post.mentions = root.mentions;
+                    post.visibility = root.visibility;
+                    if (!post.mentions.includes(`@${root.authorIdentity.account}`)) {
+                        post.mentions.push(`@${root.authorIdentity.account}`);
                     }
                     pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
                         postObject: post,
@@ -632,28 +646,28 @@ a{
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
-                iconSource: model.reblogged ? 'boost-post-done' : 'boost-post'
-                interacted: model.reblogged
+                iconSource: root.reblogged ? 'boost-post-done' : 'boost-post'
+                interacted: root.reblogged
                 interactionColor: "green"
-                onClicked: timelineModel.actionRepeat(timelineModel.index(model.index, 0))
-                text: (Config.showPostStats || root.expandedPost) ? model.reblogsCount : ''
+                onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                text: (Config.showPostStats || root.expandedPost) ? root.reblogsCount : ''
                 QQC2.ToolTip.text: i18nc("Share a post", "Boost")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
-                iconSource: model.favorite ? 'like-post-done' : 'like-post'
-                interacted: model.favorite
+                iconSource: root.favourited ? 'like-post-done' : 'like-post'
+                interacted: root.favourited
                 interactionColor: "orange"
-                onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
-                text: (Config.showPostStats || root.expandedPost) ? favoritesCount : ''
+                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+                text: (Config.showPostStats || root.expandedPost) ? root.favouritesCount : ''
                 QQC2.ToolTip.text: i18nc("Like a post", "Like")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
                 iconSource: 'bookmarks'
-                interacted: model.bookmarked
+                interacted: root.bookmarked
                 interactionColor: "red"
                 onClicked: timelineModel.actionBookmark(timelineModel.index(model.index, 0))
                 QQC2.ToolTip.text: i18nc("Boookmark a post", "Bookmark")
@@ -682,7 +696,7 @@ a{
                     }
                     QQC2.MenuSeparator {}
                     QQC2.MenuItem {
-                        text: model.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
+                        text: root.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
                         onTriggered: timelineModel.actionBookmark(timelineModel.index(model.index, 0))
                     }
                 }
