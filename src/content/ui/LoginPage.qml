@@ -31,15 +31,8 @@ MastoPage {
                 MobileForm.FormTextFieldDelegate {
                     id: instanceUrl
                     label: i18n("Instance Url:")
-                    onAccepted: username.forceActiveFocus()
-                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: username
-                    label: i18n("Username:")
                     onAccepted: continueButton.clicked()
-                    inputMethodHints: Qt.ImhNoPredictiveText
+                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormSwitchDelegate {
@@ -51,12 +44,12 @@ MastoPage {
                     id: continueButton
                     text: i18n("Continue")
                     onClicked: {
-                        if (!instanceUrl.text || !username.text) {
-                            applicationWindow().showPassiveNotification(i18n("Instance URL and username must not be empty!"));
+                        if (!instanceUrl.text) {
+                            applicationWindow().showPassiveNotification(i18n("Instance URL must not be empty!"));
                             return;
                         }
 
-                        const account = AccountManager.createNewAccount(username.text, instanceUrl.text, sslErrors.checked);
+                        const account = AccountManager.createNewAccount("", instanceUrl.text, sslErrors.checked);
 
                         account.registered.connect(() => {
                             const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
