@@ -30,7 +30,7 @@ class Account : public AbstractAccount
     Q_OBJECT
 
 public:
-    explicit Account(const QString &username, const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, QObject *parent = nullptr);
+    explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, QObject *parent = nullptr);
     explicit Account(const QSettings &settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account();
 

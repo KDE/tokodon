@@ -31,7 +31,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
 
 public:
-    AbstractAccount(QObject *parent, const QString &name, const QString &instanceUri);
+    AbstractAccount(QObject *parent, const QString &instanceUri);
     AbstractAccount(QObject *parent);
 
     /// Register the application to the mastodon server

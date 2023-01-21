@@ -10,8 +10,8 @@
 #include "tokodon_http_debug.h"
 #include <QNetworkAccessManager>
 
-Account::Account(const QString &name, const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
-    : AbstractAccount(parent, name, instanceUri)
+Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
+    : AbstractAccount(parent, instanceUri)
     , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(nam)
 {
@@ -246,6 +246,7 @@ void Account::validateToken()
         }
 
         m_identity = identityLookup(object["id"].toString(), object);
+        m_name = m_identity->username();
         Q_EMIT identityChanged();
         Q_EMIT authenticated();
     });

@@ -15,9 +15,8 @@
 #include <QNetworkReply>
 #include <QUrlQuery>
 
-AbstractAccount::AbstractAccount(QObject *parent, const QString &name, const QString &instanceUri)
+AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     : QObject(parent)
-    , m_name(name)
     , m_instance_uri(instanceUri)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
@@ -197,6 +196,8 @@ void AbstractAccount::setToken(const QString &authcode)
     post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
+
+        qDebug() << doc;
 
         m_token = doc.object()["access_token"].toString();
         s_messageFilter->insert(m_token, "ACCESS_TOKEN");

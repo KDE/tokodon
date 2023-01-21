@@ -49,7 +49,7 @@ MastoPage {
                             return;
                         }
 
-                        const account = AccountManager.createNewAccount("", instanceUrl.text, sslErrors.checked);
+                        const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked);
 
                         account.registered.connect(() => {
                             const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
