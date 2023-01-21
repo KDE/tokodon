@@ -92,14 +92,12 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
 
-                leftPadding: Kirigami.Units.smallSpacing
-                rightPadding: Kirigami.Units.smallSpacing
+                leftPadding: 3
+                rightPadding: 3
+                topPadding: 3
+                bottomPadding: 3
 
-                contentItem: RowLayout {
-                    SearchField {
-                        Layout.fillWidth: true
-                    }
-                }
+                contentItem: SearchField {}
             }
 
             Repeater {
