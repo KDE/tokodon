@@ -30,8 +30,9 @@ Kirigami.ApplicationWindow {
         }
 
         function onAccountRemoved() {
-            if (!AccountManager.hasAccount) {
+            if (!AccountManager.hasAccounts) {
                 pageStack.replace('qrc:/content/ui/LoginPage.qml');
+                globalDrawer.drawerOpen = false
             }
         }
     }
