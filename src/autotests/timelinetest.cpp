@@ -125,11 +125,11 @@ private Q_SLOTS:
 
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), "103270115826048975");
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), Qt::DisplayRole).value<QString>(), "<p>LOREM</p>");
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).value<QString>(), QStringLiteral("1"));
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).value<QString>(),
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(), "<p>LOREM</p>");
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->id(), QStringLiteral("1"));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayNameHtml(),
                  QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::WasRebloggedRole).value<bool>(), false);
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IsBoostedRole).value<bool>(), false);
 
         const auto poll = timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::PollRole).value<Poll>();
         QCOMPARE(poll.id(), "34830");

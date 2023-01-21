@@ -31,13 +31,14 @@ private Q_SLOTS:
         ConversationModel conversationModel;
 
         QCOMPARE(conversationModel.rowCount({}), 1);
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AvatarRole),
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
                  QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdRole).toString(), "Gargron");
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->account(), "Gargron");
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::ConversationIdRole).toString(), "418374");
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::UnreadRole), false);
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), Qt::DisplayRole), QStringLiteral("LOREM"));
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorDisplayNameRole).toString(), QStringLiteral("Eugen"));
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::ContentRole), QStringLiteral("LOREM"));
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayName(),
+                 QStringLiteral("Eugen"));
     }
 };
 

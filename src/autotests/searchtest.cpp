@@ -35,9 +35,9 @@ private Q_SLOTS:
         QCOMPARE(searchModel.rowCount({}), 2);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::TypeRole), SearchModel::Account);
         QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::TypeRole), SearchModel::Status);
-        QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::AvatarRole),
+        QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
                  QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
-        QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::AvatarRole),
+        QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
                  QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
     }
 };

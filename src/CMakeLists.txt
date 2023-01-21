@@ -70,7 +70,7 @@ if (TARGET KF5::KIOWidgets)
 endif()
 
 if (BUILD_TESTING)
-    #add_subdirectory(autotests)
+    add_subdirectory(autotests)
 endif()
 
 add_executable(tokodon
