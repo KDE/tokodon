@@ -42,6 +42,8 @@ QQC2.ItemDelegate {
     required property var filters
     required property bool sensitive
     required property int type
+    required property var mentions
+    required property int visibility
 
     property bool filtered: root.filters.length > 0
     property var timelineModel
