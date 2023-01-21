@@ -298,6 +298,38 @@ QQC2.Control {
                                 showInteractionButton: false
                             }
                         }
+
+                        DelegateChoice {
+                            roleValue: SearchModel.Hashtag
+                            QQC2.ItemDelegate {
+                                required property string id
+
+                                width: ListView.view.width
+                                leftPadding: Kirigami.Units.largeSpacing
+                                rightPadding: Kirigami.Units.largeSpacing
+                                topPadding: Kirigami.Units.smallSpacing
+                                bottomPadding: Kirigami.Units.smallSpacing
+                                onClicked: {
+                                    pageStack.push(tagModelComponent, {
+                                        hashtag: id,
+                                    })
+                                }
+                                contentItem: ColumnLayout {
+                                    Layout.fillWidth: true
+                                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                                    spacing: 0
+                                    Kirigami.Heading {
+                                        id: heading
+                                        level: 5
+                                        text: "#" + id
+                                        type: Kirigami.Heading.Type.Primary
+                                        color: Kirigami.Theme.textColor
+                                        verticalAlignment: Text.AlignTop
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

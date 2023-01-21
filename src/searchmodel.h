@@ -8,6 +8,17 @@
 class Identity;
 class Post;
 
+class SearchHashtag
+{
+public:
+    explicit SearchHashtag(QJsonObject object);
+
+    QString getName() const;
+
+private:
+    QString m_name;
+};
+
 class SearchModel : public AbstractTimelineModel
 {
     Q_OBJECT
@@ -33,4 +44,5 @@ private:
     void clear();
     QList<std::shared_ptr<Identity>> m_accounts;
     QList<Post *> m_statuses;
+    QList<SearchHashtag> m_hashtags;
 };

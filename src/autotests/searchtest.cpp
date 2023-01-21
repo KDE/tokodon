@@ -32,7 +32,7 @@ private Q_SLOTS:
         SearchModel searchModel;
         searchModel.search("myQuery");
 
-        QCOMPARE(searchModel.rowCount({}), 2);
+        QCOMPARE(searchModel.rowCount({}), 3);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::TypeRole), SearchModel::Account);
         QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::TypeRole), SearchModel::Status);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),

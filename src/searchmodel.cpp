@@ -60,6 +60,12 @@ void SearchModel::search(const QString &queryString)
                 const auto account = value.toObject();
                 return m_account->identityLookup(account["id"].toString(), account);
             });
+        const auto hashtags = searchResult[QStringLiteral("hashtags")].toArray();
+        std::transform(
+            hashtags.cbegin(),
+            hashtags.cend(),
+            std::back_inserter(m_hashtags),
+            [](const QJsonValue &value) -> auto{ return SearchHashtag(value.toObject()); });
         endResetModel();
     });
 }
@@ -68,21 +74,37 @@ int SearchModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    return m_accounts.count() + m_statuses.count();
+    return m_accounts.count() + m_statuses.count() + m_hashtags.count();
 }
 
 QVariant SearchModel::data(const QModelIndex &index, int role) const
 {
     const auto row = index.row();
-    const bool isStatus = row >= m_accounts.count();
+
+    const bool isStatus = row >= m_accounts.count() && row < m_accounts.count() + m_statuses.size();
+    const bool isHashtag = row >= m_accounts.size() + m_statuses.count();
 
     if (role == TypeRole) {
-        return isStatus ? Status : Account;
+        if (isHashtag) {
+            return Hashtag;
+        } else if (isStatus) {
+            return Status;
+        } else {
+            return Account;
+        }
     }
 
     if (isStatus) {
         const auto post = m_statuses[row - m_accounts.count()];
         return postData(post, role);
+    }
+
+    if (isHashtag) {
+        const auto hashtag = m_hashtags[row - m_accounts.count() - m_statuses.count()];
+        switch (role) {
+        case IdRole:
+            return hashtag.getName();
+        }
     }
 
     const auto identity = m_accounts[row];
@@ -99,6 +121,7 @@ void SearchModel::clear()
     m_accounts.clear();
     qDeleteAll(m_statuses);
     m_statuses.clear();
+    m_hashtags.clear();
 }
 
 QString SearchModel::labelForType(ResultType sectionType)
@@ -113,4 +136,14 @@ QString SearchModel::labelForType(ResultType sectionType)
     default:
         return {};
     }
+}
+
+SearchHashtag::SearchHashtag(QJsonObject object)
+{
+    m_name = object["name"].toString();
+}
+
+QString SearchHashtag::getName() const
+{
+    return m_name;
 }
