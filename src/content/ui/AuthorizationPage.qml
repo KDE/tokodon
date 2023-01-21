@@ -106,10 +106,10 @@ MastoPage {
                             return;
                         }
                         account.setToken(tokenField.text);
-                        pageStack.layers.pop();
-                        if (pageStack.layers.depth > 1) {
-                            pageStack.layers.pop();
-                        }
+                        pageStack.layers.clear();
+                        pageStack.replace(mainTimeline, {
+                            name: "home"
+                        });
                     }
                 }
             }
