@@ -73,6 +73,7 @@ Kirigami.ScrollablePage {
         delegate: StatusDelegate {
             timelineModel: root.model
             expandedPost: root.expandedPost
+            showSeparator: index !== ListView.view.count - 1
         }
 
         Kirigami.PlaceholderMessage {

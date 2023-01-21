@@ -80,7 +80,9 @@ QQC2.ItemDelegate {
         });
     }
 
-    background: null
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+    }
 
     contentItem: Kirigami.FlexColumn {
         spacing: 0
