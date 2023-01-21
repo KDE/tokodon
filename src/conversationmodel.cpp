@@ -52,7 +52,7 @@ QVariant ConversationModel::data(const QModelIndex &index, int role) const
         return m_conversations[row].id;
     case UnreadRole:
         return m_conversations[row].unread;
-    case Qt::DisplayRole:
+    case ContentRole:
         return QTextDocumentFragment::fromHtml(lastPost->content()).toPlainText();
     case ConversationAuthorsRole:
         if (identities.count() == 0) {

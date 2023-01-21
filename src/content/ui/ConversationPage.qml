@@ -14,7 +14,14 @@ Kirigami.ScrollablePage {
         id: conversationView
 
         currentIndex: -1
-        model: ConversationModel {}
-        delegate: ConversationDelegate {}
+        model: ConversationModel {
+            id: conversationModel
+        }
+        delegate: ConversationDelegate {
+            conversationsCount: conversationView.count
+            onMarkAsRead: (conversationId) => {
+                conversationModel.markAsRead(conversationId)
+            }
+        }
     }
 }

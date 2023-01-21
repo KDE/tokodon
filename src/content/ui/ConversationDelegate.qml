@@ -10,13 +10,18 @@ import org.kde.kmasto 1.0
 Kirigami.AbstractListItem {
     id: root
 
+    required property int index
     required property string id
+    required property string content
     required property bool unread
-    required property string authorDisplayName
-    required property string avatar
+    required property var authorIdentity
     required property string relativeTime
+    required property int conversationsCount
+    required property string conversationId
 
-    readonly property bool showSeparator: model.index !== conversationView.count - 1
+    readonly property bool showSeparator: root.index !== conversationsCount - 1
+
+    signal markAsRead(conversationId: string)
 
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
@@ -26,7 +31,7 @@ Kirigami.AbstractListItem {
     onClicked: {
         Navigation.openThread(root.id)
         if (root.unread) {
-            conversationView.model.markAsRead(model.conversationId);
+            root.markAsRead(root.conversationId);
         }
     }
 
@@ -76,8 +81,8 @@ Kirigami.AbstractListItem {
             anchors.right: parent.right
 
             Kirigami.Avatar {
-                name: root.authorDisplayName
-                source: root.avatar
+                name: root.authorIdentity.displayName
+                source: root.authorIdentity.avatarUrl
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
                 sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
@@ -89,12 +94,11 @@ Kirigami.AbstractListItem {
                 Layout.fillWidth: true
                 spacing: Kirigami.Units.smallSpacing
 
-
                 RowLayout {
                     Layout.fillWidth: true
                     QQC2.Label {
                         Layout.fillWidth: true
-                        text: root.authorDisplayName
+                        text: root.authorIdentity.displayNameHtml
                         elide: Text.ElideRight
                         font.weight: root.unread ? Font.Bold : Font.Normal
                     }
@@ -108,7 +112,7 @@ Kirigami.AbstractListItem {
                     Layout.fillWidth: true
                     maximumLineCount: 1
                     elide: Text.ElideRight
-                    text: model.display
+                    text: root.content
                 }
             }
         }
