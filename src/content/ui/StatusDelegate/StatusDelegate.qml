@@ -385,7 +385,7 @@ a{
         }
 
         Kirigami.Separator {
-            visible: root.showSeparator && !model.selected
+            visible: root.showSeparator && !root.selected
             Layout.fillWidth: true
         }
     }

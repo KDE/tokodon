@@ -67,43 +67,50 @@ Kirigami.SearchField {
                     DelegateChoice {
                         roleValue: SearchModel.Account
                         QQC2.ItemDelegate {
+                            id: accountDelegate
+
+                            required property var authorIdentity
+
                             width: ListView.view.width
+
                             leftPadding: Kirigami.Units.largeSpacing
                             rightPadding: Kirigami.Units.largeSpacing
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing
-                            onClicked: if (!pageStack.currentItem.model.accountId || model.authorId !== pageStack.currentItem.accountId) {
-                                pageStack.push("qrc:/content/ui/AccountInfo.qml", {
-                                    accountId: model.authorId,
-                                });
-                            }
+
+                            onClicked: Navigation.openAccount(accountDelegate.authorIdentity.id)
+
                             contentItem: RowLayout {
                                 Kirigami.Avatar {
                                     Layout.alignment: Qt.AlignTop
                                     Layout.rowSpan: 5
-                                    source: model.avatar
+                                    source: accountDelegate.authorIdentity.avatarUrl
                                     cache: true
-                                    name: model.authorDisplayName
+                                    name: accountDelegate.authorIdentity.displayName
                                 }
+
                                 ColumnLayout {
                                     Layout.fillWidth: true
                                     Layout.bottomMargin: Kirigami.Units.smallSpacing
                                     Layout.leftMargin: Kirigami.Units.largeSpacing
+
                                     spacing: 0
+
                                     Kirigami.Heading {
                                         id: heading
                                         level: 5
-                                        text: model.authorDisplayName
+                                        text: accountDelegate.authorIdentity.displayNameHtml
                                         type: Kirigami.Heading.Type.Primary
                                         color: Kirigami.Theme.textColor
                                         verticalAlignment: Text.AlignTop
                                     }
+
                                     Kirigami.Heading {
                                         level: 5
                                         Layout.fillWidth: true
                                         elide: Text.ElideRight
                                         color: Kirigami.Theme.disabledTextColor
-                                        text: `@${model.authorUri}`
+                                        text: `@${accountDelegate.authorIdentity.account}`
                                         verticalAlignment: Text.AlignTop
                                     }
                                 }
@@ -120,7 +127,7 @@ Kirigami.SearchField {
                             topPadding: Kirigami.Units.smallSpacing
                             bottomPadding: Kirigami.Units.smallSpacing
                             secondary: true
-                            showSeparator: false
+                            showSeparator: true
                             showInteractionButton: false
                         }
                     }
