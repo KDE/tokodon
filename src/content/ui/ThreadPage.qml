@@ -9,9 +9,10 @@ TimelinePage {
 
     required property string postId
 
-    cropMedia: false,
+    expandedPost: true
+
     model: ThreadModel {
-        postId: parent.postId
+        postId: root.postId
     }
 }
 

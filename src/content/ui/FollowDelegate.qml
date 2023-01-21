@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
+import "./StatusDelegate"
 
 QQC2.ItemDelegate {
     id: root
@@ -15,8 +16,8 @@ QQC2.ItemDelegate {
     required property var notificationActorIdentity
     required property bool selected
 
-    topPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing * 2
+    topPadding: 0
+    bottomPadding: Kirigami.Units.smallSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
 
@@ -25,9 +26,11 @@ QQC2.ItemDelegate {
 
     width: ListView.view.width
 
+    background: null
+
     contentItem: Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 40
-        spacing: Kirigami.Units.largeSpacing
+        spacing: 0
 
         RowLayout {
             Kirigami.Icon {
@@ -43,34 +46,10 @@ QQC2.ItemDelegate {
             }
         }
 
-        RowLayout {
-            spacing: Kirigami.Units.largeSpacing * 2
-            Kirigami.Avatar {
-                Layout.alignment: Qt.AlignTop
-                Layout.rowSpan: 5
-                source: root.notificationActorIdentity.avatarUrl
-                cache: true
-                actions.main: Kirigami.Action {
-                    onTriggered: Navigation.openAccount(root.notificationActorIdentity.id)
-                }
-                name: root.notificationActorIdentity.displayName
-            }
-            ColumnLayout {
-                Kirigami.Heading {
-                    id: heading
-                    level: 5
-                    text: root.notificationActorIdentity.displayNameHtml
-                    type: Kirigami.Heading.Type.Primary
-                    color: Kirigami.Theme.textColor
-                }
-                Kirigami.Heading {
-                    level: 5
-                    Layout.fillWidth: true
-                    elide: Text.ElideRight
-                    color: Kirigami.Theme.disabledTextColor
-                    text: `@${root.notificationActorIdentity.account}`
-                }
-            }
+        InlineIdentityInfo {
+            secondary: false
+            identity: root.notificationActorIdentity
+            Layout.bottomMargin: Kirigami.Units.smallSpacing
         }
 
         Kirigami.Separator {

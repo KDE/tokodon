@@ -41,7 +41,7 @@ Kirigami.ApplicationWindow {
 
         function onOpenThread(postId) {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
-                pageStack.push("qrc:/content/ui/ThreadModel.qml", {
+                pageStack.push("qrc:/content/ui/ThreadPage.qml", {
                     postId: postId,
                 });
             }

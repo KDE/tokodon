@@ -16,6 +16,7 @@ class Identity : public QObject
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString id READ id NOTIFY identityUpdated)
     Q_PROPERTY(QString displayName READ displayName NOTIFY identityUpdated)
     Q_PROPERTY(QString displayNameHtml READ displayNameHtml NOTIFY identityUpdated)
     Q_PROPERTY(QString username READ username NOTIFY identityUpdated)

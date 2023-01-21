@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
+import "./StatusDelegate"
 
 Kirigami.ScrollablePage {
     id: timelinePage
@@ -68,7 +69,7 @@ Kirigami.ScrollablePage {
             role: "type"
             DelegateChoice {
                 roleValue: Notification.Favorite
-                PostDelegate {
+                StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
                 }
@@ -76,7 +77,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Repeat
-                PostDelegate {
+                StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
                 }
@@ -84,7 +85,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Mention
-                PostDelegate {
+                StatusDelegate {
                     timelineModel: notificationModel
                 }
             }
@@ -95,7 +96,7 @@ Kirigami.ScrollablePage {
             }
             DelegateChoice {
                 roleValue: Notification.Update
-                PostDelegate {
+                StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
                 }
@@ -103,7 +104,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Poll
-                PostDelegate {
+                StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
                 }
