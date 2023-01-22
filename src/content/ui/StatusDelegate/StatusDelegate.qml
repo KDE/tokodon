@@ -13,6 +13,7 @@ QQC2.ItemDelegate {
     required property int index
 
     required property string id
+    required property string url
     required property var authorIdentity
 
     required property bool isBoosted
@@ -353,35 +354,20 @@ a{
                 interacted: root.bookmarked
                 interactionColor: "red"
                 onClicked: timelineModel.actionBookmark(timelineModel.index(model.index, 0))
-                QQC2.ToolTip.text: i18nc("Boookmark a post", "Bookmark")
+                QQC2.ToolTip.text: root.bookmarked ? i18n("Remove bookmark") : i18nc("Boookmark a post", "Bookmark")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
                 iconSource: 'overflow-menu'
                 onClicked: postMenu.open()
-                QQC2.Menu {
+
+                OverflowMenu {
                     id: postMenu
-                    QQC2.MenuItem {
-                        text: i18n("Expand this post")
-                        onTriggered: {
-                            pageStack.push("qrc:/content/ui/TimelinePage.qml", {
-                                expandedPost: true,
-                                model: model.threadModel,
-                            });
-                        }
-                    }
-                    QQC2.MenuItem {
-                        text: i18n("Copy link to this post")
-                        onTriggered: {
-                            Clipboard.saveText(model.url)
-                        }
-                    }
-                    QQC2.MenuSeparator {}
-                    QQC2.MenuItem {
-                        text: root.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
-                        onTriggered: timelineModel.actionBookmark(timelineModel.index(model.index, 0))
-                    }
+                    index: root.index
+                    postId: root.id
+                    url: root.url
+                    bookmarked: root.bookmarked
                 }
             }
         }
