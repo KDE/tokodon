@@ -67,7 +67,17 @@ GridLayout {
                 QQC2.ToolTip.visible: hovered
 
                 icon.name: 'document-edit'
-                onClicked: backend.attachmentEditorModel.setDescription(img.index)
+
+                onClicked: {
+                    const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
+                        text: img.description,
+                    });
+                    dialog.open();
+                    dialog.accepted.connect(() => {
+                        root.backend.attachmentEditorModel.setDescription(img.index, dialog.text);
+
+                    });
+                }
 
                 anchors {
                     right: removeButton.left
@@ -76,6 +86,11 @@ GridLayout {
                     rightMargin: Kirigami.Units.largeSpacing
                 }
 
+                Component {
+                    id: attachmentInfoDialog
+
+                    AttachmentInfoDialog {}
+                }
             }
 
             QQC2.RoundButton {
