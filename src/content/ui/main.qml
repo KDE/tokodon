@@ -55,6 +55,12 @@ Kirigami.ApplicationWindow {
                 });
             }
         }
+
+        function onOpenTag(tag) {
+            pageStack.push(tagModelComponent, {
+                hashtag: tag,
+            })
+        }
     }
 
     globalDrawer: Kirigami.OverlayDrawer {

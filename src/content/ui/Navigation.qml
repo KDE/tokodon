@@ -8,4 +8,5 @@ QtObject {
     signal openAccount(accountId: string)
     signal openThread(postId: string)
     signal openFullScreenImage(attachments: var, currentIndex: int)
+    signal openTag(tag: string)
 }

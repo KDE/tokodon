@@ -309,11 +309,9 @@ QQC2.Control {
                                 rightPadding: Kirigami.Units.largeSpacing
                                 topPadding: Kirigami.Units.smallSpacing
                                 bottomPadding: Kirigami.Units.smallSpacing
-                                onClicked: {
-                                    pageStack.push(tagModelComponent, {
-                                        hashtag: id,
-                                    })
-                                }
+
+                                onClicked: Navigation.openTag(id)
+
                                 contentItem: ColumnLayout {
                                     Layout.fillWidth: true
                                     Layout.bottomMargin: Kirigami.Units.smallSpacing
