@@ -8,6 +8,8 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import QtGraphicalEffects 1.0
+import Qt.labs.qmlmodels 1.0
+import QtMultimedia 5.15
 
 QQC2.Control {
     id: root
@@ -53,68 +55,144 @@ QQC2.Control {
             id: attachmentsRepeater
             model: root.secondary ? [] : attachments
 
-            Image {
-                id: img
+            DelegateChooser {
+                role: "attachmentType"
 
-                required property int index
-                required property var modelData
+                DelegateChoice {
+                    roleValue: Attachment.Image
 
-                property var aspectRatio: sourceSize.height / sourceSize.width
+                    MediaContainer {
+                        required property int index
+                        required property var modelData
 
-                property var isSpecialAttachment: index == 0 && attachmentsRepeater.count == 3
-                property var widthDivisor: attachmentsRepeater.count > 1 ? 2 : 1
+                        repeater: attachmentsRepeater
+                        aspectRatio: img.sourceSize.height / img.sourceSize.width
+                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
+                        mediaRatio: root.mediaRatio
+                        rootWidth: root.width
+                        gridLayout: attachmentGridLayout
 
-                // the first attachment in a three attachment set is displayed at full height
-                property var heightDivisor: isSpecialAttachment ? 1 : (attachmentsRepeater.count > 2 ? 2 : 1)
-                Layout.rowSpan: isSpecialAttachment ? 2 : 1
+                        Image {
+                            id: img
 
-                Layout.fillWidth: root.shouldKeepAspectRatio
-                Layout.fillHeight: root.shouldKeepAspectRatio
+                            anchors.fill: parent
 
-                Layout.preferredWidth: root.shouldKeepAspectRatio ? -1 : parent.width / widthDivisor
-                Layout.preferredHeight: root.shouldKeepAspectRatio ? parent.width * aspectRatio : (root.width * root.mediaRatio) / heightDivisor + (isSpecialAttachment ? attachmentGridLayout.rowSpacing : 0)
+                            source: modelData.previewUrl
+                            mipmap: true
+                            cache: true
+                            fillMode: Image.PreserveAspectCrop
+                            layer.enabled: true
+                            layer.effect: OpacityMask {
+                                maskSource: Item {
+                                    width: img.width
+                                    height: img.height
+                                    Rectangle {
+                                        anchors.centerIn: parent
+                                        width: img.width
+                                        height: img.height
+                                        radius: Kirigami.Units.smallSpacing
+                                    }
+                                }
+                            }
 
-                source: modelData.attachmentType === Attachment.Image ? modelData.previewUrl : ''
-                mipmap: true
-                cache: true
-                fillMode: Image.PreserveAspectCrop
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: img.width
-                        height: img.height
-                        Rectangle {
+                            TapHandler {
+                                onTapped: {
+                                    if (root.isSensitive) {
+                                        root.isSensitive = false;
+                                    } else {
+                                        Navigation.openFullScreenImage(root.attachments, img.index);
+                                    }
+                                }
+                            }
+
+                            Image {
+                                anchors.fill: parent
+                                source: visible ? "image://blurhash/" + modelData.blurhash : ''
+                                visible: parent.status !== Image.Ready || root.isSensitive
+                            }
+
+                            QQC2.Button {
+                                visible: modelData.attachmentType === Attachment.Unknown
+                                text: i18n("Not available")
+                                anchors.centerIn: parent
+                                onClicked: Qt.openUrlExternally(modelData.remoteUrl)
+                            }
+                        }
+                    }
+                }
+
+                DelegateChoice {
+                    roleValue: Attachment.GifV
+
+                    MediaContainer {
+                        required property int index
+                        required property var modelData
+
+                        repeater: attachmentsRepeater
+                        aspectRatio: output.sourceRect.height / output.sourceRect.width
+                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
+                        mediaRatio: root.mediaRatio
+                        rootWidth: root.width
+                        gridLayout: attachmentGridLayout
+
+                        MediaPlayer {
+                            id: player
+
+                            autoPlay: true
+
+                            loops: MediaPlayer.Infinite
+
+                            source: modelData.url
+                            videoOutput: output
+                        }
+
+                        VideoOutput {
+                            id: output
+
+                            source: player
+                            fillMode: VideoOutput.PreserveAspectCrop
+                            flushMode: VideoOutput.FirstFrame
+
+                            anchors.fill: parent
+
+                            layer.enabled: true
+                            layer.effect: OpacityMask {
+                                maskSource: Item {
+                                    width: output.width
+                                    height: output.height
+                                    Rectangle {
+                                        anchors.centerIn: parent
+                                        width: output.width
+                                        height: output.height
+                                        radius: Kirigami.Units.smallSpacing
+                                    }
+                                }
+                            }
+                        }
+
+                        TapHandler {
+                            onTapped: {
+                                if (root.isSensitive) {
+                                    root.isSensitive = false;
+                                } else {
+                                    Navigation.openFullScreenImage(root.attachments, parent.index);
+                                }
+                            }
+                        }
+
+                        Image {
+                            anchors.fill: parent
+                            source: visible ? "image://blurhash/" + modelData.blurhash : ''
+                            visible: player.status === MediaPlayer.Loading || root.isSensitive
+                        }
+
+                        QQC2.Button {
+                            visible: modelData.attachmentType === Attachment.Unknown
+                            text: i18n("Not available")
                             anchors.centerIn: parent
-                            width: img.width
-                            height: img.height
-                            radius: Kirigami.Units.smallSpacing
+                            onClicked: Qt.openUrlExternally(modelData.remoteUrl)
                         }
                     }
-                }
-                TapHandler {
-                    onTapped: {
-                        if (modelData.attachmentType !== Attachment.Image) {
-                            return;
-                        }
-                        if (root.isSensitive) {
-                            root.isSensitive = false;
-                        } else {
-                            Navigation.openFullScreenImage(root.attachments, img.index);
-                        }
-                    }
-                }
-
-                Image {
-                    anchors.fill: parent
-                    source: visible ? "image://blurhash/" + modelData.blurhash : ''
-                    visible: parent.status !== Image.Ready || root.isSensitive
-                }
-
-                QQC2.Button {
-                    visible: modelData.attachmentType === Attachment.Unknown
-                    text: i18n("Not available")
-                    anchors.centerIn: parent
-                    onClicked: Qt.openUrlExternally(modelData.remoteUrl)
                 }
             }
         }
