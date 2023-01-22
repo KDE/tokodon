@@ -179,10 +179,19 @@ void PostEditorBackend::save()
     QUrl post_status_url = m_account->apiUrl("/api/v1/statuses");
     auto doc = toJsonDocument();
 
-    m_account->post(post_status_url, doc, true, this, [=](QNetworkReply *reply) {
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
-        auto obj = doc.object();
-        qDebug() << "Message sent:" << obj;
-    });
+    QHash<QByteArray, QByteArray> headers;
+    headers["Idempotency-Key"] = m_idenpotencyKey.toUtf8();
+
+    m_account->post(
+        post_status_url,
+        doc,
+        true,
+        this,
+        [=](QNetworkReply *reply) {
+            auto data = reply->readAll();
+            auto doc = QJsonDocument::fromJson(data);
+            auto obj = doc.object();
+            qDebug() << "Message sent:" << obj;
+        },
+        headers);
 }

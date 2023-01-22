@@ -73,8 +73,8 @@ GridLayout {
                         text: img.description,
                     });
                     dialog.open();
-                    dialog.accepted.connect(() => {
-                        root.backend.attachmentEditorModel.setDescription(img.index, dialog.text);
+                    dialog.applied.connect(() => {
+                        root.attachmentEditorModel.setDescription(img.index, dialog.text);
 
                     });
                 }

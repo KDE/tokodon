@@ -19,6 +19,9 @@ QQC2.Dialog {
     implicitHeight: Kirigami.Units.gridUnit * 20
     implicitWidth: Kirigami.Units.gridUnit * 20
 
+    onApplied: root.close()
+    onRejected: root.close()
+
     contentItem: ColumnLayout {
         QQC2.TextArea {
             id: textArea

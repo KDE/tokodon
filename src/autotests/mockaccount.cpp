@@ -30,7 +30,12 @@ void MockAccount::get(const QUrl &url,
     }
 }
 
-void MockAccount::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
+void MockAccount::post(const QUrl &url,
+                       const QJsonDocument &doc,
+                       bool authenticated,
+                       QObject *parent,
+                       std::function<void(QNetworkReply *)> callback,
+                       QHash<QByteArray, QByteArray> headers)
 {
     Q_UNUSED(doc)
     Q_UNUSED(authenticated)

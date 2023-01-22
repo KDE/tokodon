@@ -14,11 +14,15 @@ MastoPage {
 
     property string inReplyTo: ''
     property var mentions: []
+    property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
+    property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
     readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
 
     readonly property PostEditorBackend backend: PostEditorBackend {
         inReplyTo: root.inReplyTo
         mentions: root.mentions
+        visibility: root.visibility
+        sensitive: root.sensitive
     }
 
     title: i18n("Write a new toot")

@@ -8,6 +8,7 @@
 #include "preferences.h"
 #include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
+#include "utils.h"
 #include <QFileInfo>
 #include <QNetworkAccessManager>
 
@@ -57,12 +58,20 @@ void Account::get(const QUrl &url,
     handleReply(reply, reply_cb, errorCallback);
 }
 
-void Account::post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url,
+                   const QJsonDocument &doc,
+                   bool authenticated,
+                   QObject *parent,
+                   std::function<void(QNetworkReply *)> reply_cb,
+                   QHash<QByteArray, QByteArray> headers)
 {
     auto post_data = doc.toJson();
 
     QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    for (const auto [headerKey, headerValue] : asKeyValueRange(headers)) {
+        request.setRawHeader(headerKey, headerValue);
+    }
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     auto reply = m_qnam->post(request, post_data);

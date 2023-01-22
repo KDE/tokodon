@@ -115,7 +115,12 @@ public:
     /// \param doc The request body as JSON
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void post(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual void post(const QUrl &url,
+                      const QJsonDocument &doc,
+                      bool authenticated,
+                      QObject *parent,
+                      std::function<void(QNetworkReply *)> callback,
+                      QHash<QByteArray, QByteArray> headers = {}) = 0;
 
     /// Make an HTTP POST request to the mastodon server
     /// \param url The url of the request
