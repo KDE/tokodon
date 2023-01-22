@@ -45,7 +45,6 @@ public:
     Q_INVOKABLE QUrl getAuthorizeUrl() const;
     QUrl getTokenUrl() const;
     Q_INVOKABLE void setToken(const QString &authcode);
-    Q_INVOKABLE Post *newPost();
     bool haveToken() const;
     virtual void validateToken() = 0;
 
@@ -72,7 +71,6 @@ public:
     void invalidate();
 
     // posting statuses
-    Q_INVOKABLE void postStatus(Post *p);
     void favorite(Post *p);
     void unfavorite(Post *p);
     void repeat(Post *p);

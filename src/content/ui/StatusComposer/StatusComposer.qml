@@ -8,6 +8,7 @@ import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
 import org.kde.kmasto 1.0
+import '..'
 
 MastoPage {
     id: root
@@ -31,13 +32,13 @@ MastoPage {
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
-            onTextChanged: backend.spoilerText = text
+            onTextChanged: root.backend.spoilerText = text
         }
 
         QQC2.TextArea {
             id: textArea
             placeholderText: i18n("What's new?")
-            text: backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
+            text: root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
             wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -47,8 +48,9 @@ MastoPage {
             rightInset: -1
             onTextChanged: backend.status = text
             Kirigami.SpellChecking.enabled: true
-            Item {
+            ColumnLayout {
                 id: actions
+                spacing: 0
                 anchors {
                     left: parent.left
                     right: parent.right
@@ -56,13 +58,6 @@ MastoPage {
                     leftMargin: 1
                     rightMargin: 1
                     bottomMargin: 1
-                }
-                implicitHeight: {
-                    let h = 0
-                    for(let i = 0; i < visibleChildren.length; ++i) {
-                        h += Math.ceil(visibleChildren[i].implicitHeight)
-                    }
-                    return h
                 }
                 height: implicitHeight
 
@@ -74,29 +69,10 @@ MastoPage {
                     }
                 }
 
-                GridLayout {
-                    id: attachmentLayout
-                    width: parent.width
-                    height: visible ? implicitHeight : 0
-                    visible: repeater.count > 0
-                    implicitHeight: Kirigami.Units.gridUnit * 20
-                    anchors.bottom: pollSeparator.top
-                    columns: repeater.count === 0 ? 1 : 2
-                    Repeater {
-                        id: repeater
-                        model: backend.attachmentEditorModel
-
-                        Image {
-                            Layout.fillWidth: true
-                            Layout.fillHeight: true
-                            Layout.maximumWidth: Kirigami.Units.gridUnit * 30
-                            Layout.preferredWidth: Kirigami.Units.gridUnit * (repeater.count === 1 ? 30 : 15)
-                            Layout.preferredHeight: Kirigami.Units.gridUnit * (repeater.count > 2 ? 20 : 10)
-                            Layout.margins: Kirigami.Units.largeSpacing
-                            fillMode: Image.PreserveAspectCrop
-                            source: model.preview
-                        }
-                    }
+                AttachmentGrid {
+                    attachmentEditorModel: root.backend.attachmentEditorModel
+                    Layout.fillWidth: true
+                    Layout.margins: Kirigami.Units.smallSpacing
                 }
 
                 QQC2.ProgressBar {
@@ -105,19 +81,19 @@ MastoPage {
                     to: 100
                     visible: progress.uploading
                     value: progress.progress
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                 }
 
                 Kirigami.Separator {
                     id: pollSeparator
                     visible: addPool.checked
                     width: parent.width
-                    anchors.bottom: poll.top
                 }
 
                 Column {
                     id: poll
                     width: parent.width
-                    anchors.bottom: actionsToolbar.top
                     Repeater {
                         model: ListModel {
                             id: pollModel
@@ -158,8 +134,9 @@ MastoPage {
 
                 QQC2.ToolBar {
                     id: actionsToolbar
-                    width: parent.width
-                    anchors.bottom: parent.bottom
+
+                    Layout.fillWidth: true
+
                     RowLayout {
                         QQC2.ToolButton {
                             visible: !addPool.checked

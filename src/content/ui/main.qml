@@ -40,6 +40,10 @@ Kirigami.ApplicationWindow {
     Connections {
         target: Navigation
 
+        function onOpenStatusComposer() {
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml");
+        }
+
         function onOpenThread(postId) {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
                 pageStack.push("qrc:/content/ui/ThreadPage.qml", {

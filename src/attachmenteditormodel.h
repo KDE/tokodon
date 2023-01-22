@@ -21,20 +21,21 @@ public:
     explicit AttachmentEditorModel(QObject *parent, AbstractAccount *account);
 
     enum ExtraRole {
-        Preview = Qt::UserRole + 1,
-        Description,
+        PreviewRole = Qt::UserRole + 1,
+        DescriptionRole,
     };
 
     int count() const;
 
     Q_INVOKABLE int rowCount(const QModelIndex &parent = {}) const override;
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
-    std::vector<Attachment> &attachments() const;
+    const QVector<Attachment> &attachments() const;
 
 public Q_SLOTS:
     QNetworkReply *append(const QUrl &fileName);
+    void removeAttachment(int row);
+    void setDescription(int row, const QString &description);
 
 Q_SIGNALS:
     void postChanged();

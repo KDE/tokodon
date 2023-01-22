@@ -31,6 +31,10 @@ void NetworkRequestProgress::setReply(QNetworkReply *reply)
                 Q_EMIT uploadingChanged();
             }
         });
+        connect(reply, &QNetworkReply::finished, this, [this] {
+            m_reply = nullptr;
+            Q_EMIT uploadingChanged();
+        });
         setProgress(reply->isFinished() ? 100 : 0);
     }
 }

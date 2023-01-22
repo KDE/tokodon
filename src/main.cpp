@@ -43,6 +43,7 @@
 #include "maintimelinemodel.h"
 #include "networkaccessmanagerfactory.h"
 #include "networkcontroller.h"
+#include "networkrequestprogress.h"
 #include "notificationmodel.h"
 #include "poll.h"
 #include "post.h"
@@ -52,7 +53,6 @@
 #include "tagsmodel.h"
 #include "threadmodel.h"
 #include "timelinemodel.h"
-#include "networkrequestprogress.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"

@@ -116,7 +116,7 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case FiltersRole:
         return post->filters();
     case AttachmentsRole:
-        return QVariant::fromValue<QList<Attachment *>>(post->m_attachments);
+        return QVariant::fromValue<QVector<Attachment>>(post->attachments());
     case CardRole:
         if (post->card().has_value()) {
             return QVariant::fromValue<Card>(*post->card());

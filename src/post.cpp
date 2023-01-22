@@ -239,30 +239,6 @@ void Post::setMentions(const QStringList &mentions)
     Q_EMIT mentionsChanged();
 }
 
-QJsonDocument Post::toJsonDocument() const
-{
-    QJsonObject obj;
-
-    obj["spoiler_text"] = m_spoilerText;
-    obj["status"] = m_content;
-    obj["content_type"] = m_content_type;
-    obj["sensitive"] = m_sensitive;
-    obj["visibility"] = visibilityToString(m_visibility);
-
-    if (!m_replyTargetId.isEmpty()) {
-        obj["in_reply_to_id"] = m_replyTargetId;
-    }
-
-    auto media_ids = QJsonArray();
-    for (const auto &att : qAsConst(m_attachments)) {
-        media_ids.append(att.m_id);
-    }
-
-    obj["media_ids"] = media_ids;
-
-    return QJsonDocument(obj);
-}
-
 QDateTime Post::publishedAt() const
 {
     return m_publishedAt;
@@ -461,7 +437,7 @@ bool Post::filtered() const
     return m_filtered;
 }
 
-QList<Attachment *> Post::attachments() const
+QVector<Attachment> Post::attachments() const
 {
     return m_attachments;
 }

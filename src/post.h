@@ -247,15 +247,9 @@ public:
     Q_INVOKABLE void addAttachments(const QJsonArray &attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
-    QList<Attachment *> attachments() const;
+    QVector<Attachment> attachments() const;
     bool attachmentsVisible() const;
     void setAttachmentsVisible(bool attachmentsVisible);
-
-    // prepares a post for posting
-    QJsonDocument toJsonDocument() const;
-
-    // TODO move to private
-    QList<Attachment *> m_attachments;
 
 Q_SIGNALS:
     void spoilerTextChanged();
@@ -284,6 +278,7 @@ private:
     QStringList m_filters;
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
+    QVector<Attachment> m_attachments;
     Poll *m_poll = nullptr;
 
     bool m_sensitive;

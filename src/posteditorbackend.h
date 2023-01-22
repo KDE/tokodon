@@ -54,6 +54,9 @@ public:
     AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);
 
+public Q_SLOTS:
+    void save();
+
 Q_SIGNALS:
     void statusChanged();
     void spoilerTextChanged();
@@ -65,6 +68,8 @@ Q_SIGNALS:
     void accountChanged();
 
 private:
+    QJsonDocument toJsonDocument() const;
+
     QString m_status;
     QString m_idenpotencyKey;
     QString m_spoilerText;

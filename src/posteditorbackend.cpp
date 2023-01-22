@@ -2,8 +2,11 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "posteditorbackend.h"
-#include "attachmenteditormodel.h"
+#include "abstractaccount.h"
 #include "accountmanager.h"
+#include "attachmenteditormodel.h"
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QUuid>
 
 PostEditorBackend::PostEditorBackend(QObject *parent)
@@ -131,4 +134,41 @@ void PostEditorBackend::setAccount(AbstractAccount *account)
 	}
 	m_account = account;
 	Q_EMIT accountChanged();
+}
+
+QJsonDocument PostEditorBackend::toJsonDocument() const
+{
+    QJsonObject obj;
+
+    obj["spoiler_text"] = m_spoilerText;
+    obj["status"] = m_status;
+    // obj["content_type"] = m_content_type;
+    // obj["sensitive"] = m_sensitive;
+    // obj["visibility"] = visibilityToString(m_visibility);
+
+    if (!m_inReplyTo.isEmpty()) {
+        obj["in_reply_to_id"] = m_inReplyTo;
+    }
+
+    auto media_ids = QJsonArray();
+    for (const auto &att : qAsConst(m_attachmentEditorModel->attachments())) {
+        media_ids.append(att.m_id);
+    }
+
+    obj["media_ids"] = media_ids;
+
+    return QJsonDocument(obj);
+}
+
+void PostEditorBackend::save()
+{
+    QUrl post_status_url = m_account->apiUrl("/api/v1/statuses");
+    auto doc = toJsonDocument();
+
+    m_account->post(post_status_url, doc, true, this, [=](QNetworkReply *reply) {
+        auto data = reply->readAll();
+        auto doc = QJsonDocument::fromJson(data);
+        auto obj = doc.object();
+        qDebug() << "Message sent:" << obj;
+    });
 }

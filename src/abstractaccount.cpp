@@ -206,19 +206,6 @@ void AbstractAccount::setToken(const QString &authcode)
     });
 }
 
-void AbstractAccount::postStatus(Post *p)
-{
-    QUrl post_status_url = apiUrl("/api/v1/statuses");
-    auto doc = p->toJsonDocument();
-
-    post(post_status_url, doc, true, this, [=](QNetworkReply *reply) {
-        auto data = reply->readAll();
-        auto doc = QJsonDocument::fromJson(data);
-        auto obj = doc.object();
-        qDebug() << "Message sent:" << obj;
-    });
-}
-
 void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home)
 {
     const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
@@ -386,11 +373,6 @@ void AbstractAccount::handleNotification(const QJsonDocument &doc)
     std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj);
 
     Q_EMIT notification(n);
-}
-
-Post *AbstractAccount::newPost()
-{
-    return new Post(this);
 }
 
 void AbstractAccount::executeAction(Identity *identity, AccountAction accountAction, const QJsonObject &extraArguments)
