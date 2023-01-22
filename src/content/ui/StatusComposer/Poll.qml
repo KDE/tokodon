@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
-// SPDX-License-Identifier: LGPL-2.0-or-only
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
