@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -240,7 +240,7 @@ msgstr "Opna tengil"
 msgid "Enter token:"
 msgstr "Settu inn teikn:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Halda áfram"
@@ -318,17 +318,13 @@ msgstr "Slóð á netþjónstilvik:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "Notandanafn:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "Hunsa SSL-villur"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
 
 #: content/ui/main.qml:103
@@ -1087,6 +1083,9 @@ msgstr ""
 msgctxt "@title"
 msgid "Thread"
 msgstr "Spjallþráður"
+
+#~ msgid "Username:"
+#~ msgstr "Notandanafn:"
 
 #~ msgid "Image View"
 #~ msgstr "Myndskoðun"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2023-01-15 21:19+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -233,7 +233,7 @@ msgstr "Apri collegamento"
 msgid "Enter token:"
 msgstr "Digita token:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Continua"
@@ -311,17 +311,13 @@ msgstr "URL istanza:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "Nome utente:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ignora errori SSL"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "L'URL dell'istanza e il nome utente non possono essere vuoti!"
 
 #: content/ui/main.qml:103
@@ -1048,6 +1044,9 @@ msgstr "Commento"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Discussione"
+
+#~ msgid "Username:"
+#~ msgstr "Nome utente:"
 
 #~ msgid "Refresh"
 #~ msgstr "Aggiorna"

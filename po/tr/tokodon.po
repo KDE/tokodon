@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2023-01-15 17:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -234,7 +234,7 @@ msgstr "Bağlantıyı aç"
 msgid "Enter token:"
 msgstr "Jetonu gir:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Sürdür"
@@ -312,17 +312,13 @@ msgstr "Örnek URL'si:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "Kullanıcı adı:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "SSL hatalarını yok say"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "Örnek URL'si ve kullanıcı adı boş olmamalı!"
 
 #: content/ui/main.qml:103
@@ -1049,6 +1045,9 @@ msgstr "Gönderi"
 msgctxt "@title"
 msgid "Thread"
 msgstr "İş Parçacığı"
+
+#~ msgid "Username:"
+#~ msgstr "Kullanıcı adı:"
 
 #~ msgid "Refresh"
 #~ msgstr "Yenile"

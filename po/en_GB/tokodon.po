@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2022-12-31 17:11+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -236,7 +236,7 @@ msgstr "Open link"
 msgid "Enter token:"
 msgstr "Enter token:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Continue"
@@ -314,17 +314,13 @@ msgstr "Instance URL:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "Username:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ignore SSL errors"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "Instance URL and username must not be empty!"
 
 #: content/ui/main.qml:103
@@ -1055,6 +1051,9 @@ msgstr "Post"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Thread"
+
+#~ msgid "Username:"
+#~ msgstr "Username:"
 
 #~ msgid "Refresh"
 #~ msgstr "Refresh"

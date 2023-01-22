@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2023-01-15 08:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -236,7 +236,7 @@ msgstr "Відкрити посилання"
 msgid "Enter token:"
 msgstr "Введіть жетон:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Продовжити"
@@ -314,17 +314,13 @@ msgstr "Адреса екземпляра:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "Користувач:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "Ігнорувати помилки SSL"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "Адреса екземпляра та ім'я користувача не можуть бути порожніми!"
 
 #: content/ui/main.qml:103
@@ -1057,6 +1053,9 @@ msgstr "Допис"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Потік"
+
+#~ msgid "Username:"
+#~ msgstr "Користувач:"
 
 #~ msgid "Refresh"
 #~ msgstr "Освіжити"

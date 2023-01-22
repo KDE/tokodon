@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -235,7 +235,7 @@ msgstr "Otvoriť odkaz"
 msgid "Enter token:"
 msgstr ""
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Pokračovať"
@@ -312,18 +312,13 @@ msgid "Instance Url:"
 msgstr ""
 
 #: content/ui/LoginPage.qml:40
-#, fuzzy, kde-format
-msgid "Username:"
-msgstr "Užívateľské meno:"
-
-#: content/ui/LoginPage.qml:47
 #, kde-format
 msgid "Ignore ssl errors"
 msgstr ""
 
-#: content/ui/LoginPage.qml:55
+#: content/ui/LoginPage.qml:48
 #, kde-format
-msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr ""
 
 #: content/ui/main.qml:103
@@ -1055,6 +1050,10 @@ msgstr ""
 msgctxt "@title"
 msgid "Thread"
 msgstr "Vlákno %1"
+
+#, fuzzy
+#~ msgid "Username:"
+#~ msgstr "Užívateľské meno:"
 
 #~ msgid "Image View"
 #~ msgstr "Zobrazenie obrázka"

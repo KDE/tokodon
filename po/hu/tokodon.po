@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -243,7 +243,7 @@ msgstr "Hivatkozás megnyitása"
 msgid "Enter token:"
 msgstr "Adja meg a kódot:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "Folytatás"
@@ -321,19 +321,15 @@ msgid "Instance Url:"
 msgstr "Példány URL:"
 
 #: content/ui/LoginPage.qml:40
-#, kde-format
-msgid "Username:"
-msgstr "Felhasználónév:"
-
-#: content/ui/LoginPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Ignore uppercase words"
 msgid "Ignore ssl errors"
 msgstr "Nagybetűs szavak kihagyása"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "A példány URL és a felhasználónév nem lehet üres!"
 
 #: content/ui/main.qml:103
@@ -1091,6 +1087,9 @@ msgstr ""
 msgctxt "@title"
 msgid "Thread"
 msgstr "Szál"
+
+#~ msgid "Username:"
+#~ msgstr "Felhasználónév:"
 
 #~ msgid "Image View"
 #~ msgstr "Képmegjelenítés"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:57+0000\n"
+"POT-Creation-Date: 2023-01-22 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -241,7 +241,7 @@ msgstr "링크 열기"
 msgid "Enter token:"
 msgstr "토큰 입력:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:52
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Continue"
 msgstr "계속"
@@ -319,17 +319,13 @@ msgstr "인스턴스 URL:"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
-msgid "Username:"
-msgstr "사용자 이름:"
-
-#: content/ui/LoginPage.qml:47
-#, kde-format
 msgid "Ignore ssl errors"
 msgstr "SSL 오류 무시"
 
-#: content/ui/LoginPage.qml:55
-#, kde-format
-msgid "Instance URL and username must not be empty!"
+#: content/ui/LoginPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Instance URL and username must not be empty!"
+msgid "Instance URL must not be empty!"
 msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
 
 #: content/ui/main.qml:103
@@ -1087,6 +1083,9 @@ msgstr ""
 msgctxt "@title"
 msgid "Thread"
 msgstr "스레드"
+
+#~ msgid "Username:"
+#~ msgstr "사용자 이름:"
 
 #~ msgid "Image View"
 #~ msgstr "그림 보기"
