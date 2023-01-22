@@ -24,9 +24,9 @@ void NetworkRequestProgress::setReply(QNetworkReply *reply)
 
     if (m_reply) {
         connect(reply, &QNetworkReply::uploadProgress, this, [this](qint64 bytesSent, qint64 bytesTotal) {
-            double progres = 1.0 * bytesSent / bytesTotal * 100.0;
+            double progress = static_cast<double>(bytesSent) / static_cast<double>(bytesTotal) * 100.0;
             if (bytesTotal != 0) {
-                setProgress(progres);
+                setProgress(progress);
             } else {
                 Q_EMIT uploadingChanged();
             }
