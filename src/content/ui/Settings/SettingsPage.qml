@@ -8,9 +8,19 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kmasto 1.0
 
 Kirigami.PageRow {
-    id: pageStack
+    id: settingsPage
 
     globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+
+    Connections {
+        target: AccountManager
+
+        function onAccountRemoved() {
+            if (!AccountManager.hasAccounts) {
+                close()
+            }
+        }
+    }
 
     initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title:window", "Settings")

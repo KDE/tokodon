@@ -14,6 +14,8 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kmasto 1.0
 
 MobileForm.FormCard {
+    id: accountsCard
+
     Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.fillWidth: true
     contentItem: ColumnLayout {
@@ -21,6 +23,8 @@ MobileForm.FormCard {
         MobileForm.FormCardHeader {
             title: i18n("Accounts")
         }
+
+
 
         Repeater {
             model: AccountManager
@@ -69,9 +73,6 @@ MobileForm.FormCard {
                         icon.name: "im-kick-user"
                         onClicked: {
                             AccountManager.removeAccount(model.account)
-                            if (!AccountManager.hasAccount) {
-                                settingsPage.closeDialog()
-                            }
                         }
                     }
 
