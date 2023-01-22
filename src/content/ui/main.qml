@@ -44,6 +44,17 @@ Kirigami.ApplicationWindow {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml");
         }
 
+        function onReplyTo(inReplyTo, mentions, visibility, authorIdentity) {
+            if (!mentions.includes(`@${authorIdentity.account}`)) {
+                mentions.push(`@${authorIdentity.account}`);
+            }
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                inReplyTo: inReplyTo,
+                mentions: mentions,
+                visibility: visibility,
+            });
+        }
+
         function onOpenThread(postId) {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
                 pageStack.push("qrc:/content/ui/ThreadPage.qml", {

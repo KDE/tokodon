@@ -9,7 +9,7 @@
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)
     : QAbstractListModel(parent)
-	, m_account(account)
+    , m_account(account)
 {
 }
 
@@ -52,9 +52,9 @@ QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
 
 QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
 {
-	if (rowCount({}) >= 4) {
-		return nullptr;
-	}
+    if (rowCount({}) >= 4) {
+        return nullptr;
+    }
     return m_account->upload(filename, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
 
@@ -65,6 +65,7 @@ QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
         beginInsertRows({}, m_attachments.count(), m_attachments.count());
         m_attachments.append(Attachment{doc.object()});
         endInsertRows();
+        Q_EMIT countChanged();
     });
 }
 
@@ -73,6 +74,7 @@ void AttachmentEditorModel::removeAttachment(int row)
     beginRemoveRows({}, row, row);
     m_attachments.removeAt(row);
     endRemoveRows();
+    Q_EMIT countChanged();
 }
 
 void AttachmentEditorModel::setDescription(int row, const QString &description)

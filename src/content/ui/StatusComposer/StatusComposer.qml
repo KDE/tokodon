@@ -2,11 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import QtQuick 2.15
-import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
-import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 import '..'
 
@@ -86,50 +85,13 @@ MastoPage {
                 }
 
                 Kirigami.Separator {
-                    id: pollSeparator
                     visible: addPool.checked
-                    width: parent.width
+                    Layout.fillWidth: true
                 }
 
-                Column {
-                    id: poll
-                    width: parent.width
-                    Repeater {
-                        model: ListModel {
-                            id: pollModel
-                            property bool multipleChoice: true
-                            ListElement {
-                                name: ""
-                            }
-                            ListElement {
-                                name: ""
-                            }
-                        }
-
-                        Kirigami.AbstractListItem {
-                            background: null
-                            visible: addPool.checked
-                            contentItem: RowLayout {
-                                QQC2.RadioButton {
-                                    autoExclusive: pollModel.multipleChoice
-                                    QQC2.ToolTip {
-                                        text: i18n("Make pool auto-exclusive")
-                                    }
-                                    TapHandler {
-                                        onTapped: pollModel.multipleChoice = !pollModel.multipleChoice
-                                    }
-                                }
-                                QQC2.TextField {
-                                    Layout.fillWidth: true
-                                    placeholderText: i18n("Choice %1", index + 1)
-                                }
-                                QQC2.ToolButton {
-                                    icon.name: "edit-delete-remove"
-                                    enabled: pollModel.count > 2
-                                }
-                            }
-                        }
-                    }
+                Poll {
+                    visible: addPool.checked
+                    Layout.fillWidth: true
                 }
 
                 QQC2.ToolBar {
@@ -142,7 +104,7 @@ MastoPage {
                             visible: !addPool.checked
                             icon.name: "mail-attachment-symbolic"
                             onClicked: fileDialog.open()
-                            enabled: repeater.count < 4
+                            enabled: backend.attachmentEditorModel.count < 4
                             FileDialog {
                                 id: fileDialog
                                 folder: shortcuts.home
@@ -153,6 +115,7 @@ MastoPage {
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
+
                         QQC2.ToolButton {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
@@ -162,6 +125,7 @@ MastoPage {
                             QQC2.ToolTip.visible: hovered
                             enabled: false
                         }
+
                         QQC2.ToolButton {
                             icon.name: {
                                 switch(backend.visibility) {

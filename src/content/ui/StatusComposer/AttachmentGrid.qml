@@ -14,8 +14,8 @@ GridLayout {
     required property var attachmentEditorModel
     readonly property var mediaRatio: 9.0 / 16.0
 
-    visible: repeater.count > 0
-    columns: repeater.count === 0 > 1 ? 2 : 1
+    visible: attachmentsRepeater.count > 0
+    columns: attachmentsRepeater.count === 0 > 1 ? 2 : 1
     implicitHeight: Kirigami.Units.gridUnit * 20
 
     Repeater {

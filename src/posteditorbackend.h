@@ -21,6 +21,7 @@ class PostEditorBackend : public QObject
     Q_PROPERTY(QDateTime scheduledAt READ scheduledAt WRITE setScheduledAt NOTIFY scheduledAtChanged)
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
     Q_PROPERTY(AttachmentEditorModel *attachmentEditorModel READ attachmentEditorModel CONSTANT)
+    Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
 
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
 
@@ -51,6 +52,9 @@ public:
 
     AttachmentEditorModel *attachmentEditorModel() const;
 
+    bool sensitive() const;
+    void setSensitive(bool sensitive);
+
     AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);
 
@@ -66,6 +70,7 @@ Q_SIGNALS:
     void scheduledAtChanged();
     void mentionsChanged();
     void accountChanged();
+    void sensitiveChanged();
 
 private:
     QJsonDocument toJsonDocument() const;
@@ -77,6 +82,7 @@ private:
     QString m_language;
     QDateTime m_scheduledAt;
     QStringList m_mentions;
+    bool m_sensitive = false;
     Post::Visibility m_visibility;
     AbstractAccount *m_account = nullptr;
     AttachmentEditorModel *m_attachmentEditorModel = nullptr;

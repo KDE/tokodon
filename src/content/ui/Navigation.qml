@@ -6,6 +6,7 @@ import QtQml 2.14
 
 QtObject {
     signal openStatusComposer()
+    signal replyTo(inReplyTo: string, mentions: var, visibility: int, authorIdentity: var)
     signal openAccount(accountId: string)
     signal openThread(postId: string)
     signal openFullScreenImage(attachments: var, currentIndex: int)

@@ -5,6 +5,7 @@
 #include "abstractaccount.h"
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
+#include "utils.h"
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QUuid>
@@ -12,7 +13,7 @@
 PostEditorBackend::PostEditorBackend(QObject *parent)
     : QObject(parent)
     , m_idenpotencyKey(QUuid::createUuid().toString())
-	, m_account(AccountManager::instance().selectedAccount())
+    , m_account(AccountManager::instance().selectedAccount())
     , m_attachmentEditorModel(new AttachmentEditorModel(this, m_account))
 {
 }
@@ -122,18 +123,32 @@ void PostEditorBackend::setMentions(const QStringList &mentions)
     Q_EMIT mentionsChanged();
 }
 
+bool PostEditorBackend::sensitive() const
+{
+    return m_sensitive;
+}
+
+void PostEditorBackend::setSensitive(bool sensitive)
+{
+    if (m_sensitive == sensitive) {
+        return;
+    }
+    m_sensitive = sensitive;
+    Q_EMIT sensitiveChanged();
+}
+
 AbstractAccount *PostEditorBackend::account() const
 {
-	return m_account;
+    return m_account;
 }
 
 void PostEditorBackend::setAccount(AbstractAccount *account)
 {
-	if (m_account == account) {
-		return;
-	}
-	m_account = account;
-	Q_EMIT accountChanged();
+    if (m_account == account) {
+        return;
+    }
+    m_account = account;
+    Q_EMIT accountChanged();
 }
 
 QJsonDocument PostEditorBackend::toJsonDocument() const
@@ -142,9 +157,8 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
 
     obj["spoiler_text"] = m_spoilerText;
     obj["status"] = m_status;
-    // obj["content_type"] = m_content_type;
-    // obj["sensitive"] = m_sensitive;
-    // obj["visibility"] = visibilityToString(m_visibility);
+    obj["sensitive"] = m_sensitive;
+    obj["visibility"] = visibilityToString(m_visibility);
 
     if (!m_inReplyTo.isEmpty()) {
         obj["in_reply_to_id"] = m_inReplyTo;
