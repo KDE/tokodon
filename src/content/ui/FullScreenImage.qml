@@ -5,6 +5,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
+import Qt.labs.qmlmodels 1.0
+import QtMultimedia 5.15
 
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kmasto 1.0
@@ -46,9 +48,9 @@ QQC2.Popup {
                             icon.name: "zoom-in"
                             displayHint: Kirigami.DisplayHint.IconOnly
                             onTriggered: {
-                                view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor + 0.25
-                                if (view.currentItem.image.scaleFactor > 3) {
-                                    view.currentItem.image.scaleFactor = 3
+                                view.currentItem.scaleFactor = view.currentItem.scaleFactor + 0.25
+                                if (view.currentItem.scaleFactor > 3) {
+                                    view.currentItem.scaleFactor = 3
                                 }
                             }
                         },
@@ -57,9 +59,9 @@ QQC2.Popup {
                             icon.name: "zoom-out"
                             displayHint: Kirigami.DisplayHint.IconOnly
                             onTriggered: {
-                                view.currentItem.image.scaleFactor = view.currentItem.image.scaleFactor - 0.25
-                                if (view.currentItem.image.scaleFactor < 0.25) {
-                                    view.currentItem.image.scaleFactor = 0.25
+                                view.currentItem.scaleFactor = view.currentItem.scaleFactor - 0.25
+                                if (view.currentItem.scaleFactor < 0.25) {
+                                    view.currentItem.scaleFactor = 0.25
                                 }
                             }
                         },
@@ -67,14 +69,14 @@ QQC2.Popup {
                             text: i18n("Rotate left")
                             icon.name: "image-rotate-left-symbolic"
                             displayHint: Kirigami.DisplayHint.IconOnly
-                            onTriggered: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle - 90
+                            onTriggered: view.currentItem.rotationAngle = view.currentItem.rotationAngle - 90
 
                         },
                         Kirigami.Action {
                             text: i18n("Rotate right")
                             icon.name: "image-rotate-right-symbolic"
                             displayHint: Kirigami.DisplayHint.IconOnly
-                            onTriggered: view.currentItem.image.rotationAngle = view.currentItem.image.rotationAngle + 90
+                            onTriggered: view.currentItem.rotationAngle = view.currentItem.rotationAngle + 90
 
                         },
                         Kirigami.Action {
@@ -126,78 +128,156 @@ QQC2.Popup {
             model: root.model
             orientation: ListView.Horizontal
             clip: true
-            delegate: Item {
-                id: imageContainer
-                width: ListView.view.width
-                height: ListView.view.height
+            delegate: DelegateChooser {
+                role: "attachmentType"
+                DelegateChoice {
+                    roleValue: Attachment.Image
 
-                property alias image: imageItem
+                    Item {
+                        id: imageContainer
+                        width: ListView.view.width
+                        height: ListView.view.height
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: root.close()
+                        property alias image: imageItem
+
+                        property var scaleFactor: 1
+                        property int rotationAngle: 0
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: root.close()
+                        }
+
+                        Image {
+                            id: imageItem
+
+                            property var rotationInsensitiveWidth: Math.min(modelData.originalWidth, imageContainer.width - Kirigami.Units.largeSpacing * 2)
+                            property var rotationInsensitiveHeight: Math.min(modelData.originalHeight, imageContainer.height - Kirigami.Units.largeSpacing * 2)
+
+                            anchors.centerIn: parent
+                            width: rotationAngle % 180 === 0 ? rotationInsensitiveWidth : rotationInsensitiveHeight
+                            height: rotationAngle % 180 === 0 ? rotationInsensitiveHeight : rotationInsensitiveWidth
+                            fillMode: Image.PreserveAspectFit
+                            clip: true
+                            source: modelData.url
+
+                            MouseArea {
+                                anchors.centerIn: parent
+                                width: parent.paintedWidth
+                                height: parent.paintedHeight
+                            }
+
+                            Behavior on width {
+                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                            }
+                            Behavior on height {
+                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                            }
+
+                            Image {
+                                anchors.centerIn: parent
+                                width: imageItem.width
+                                height: imageItem.height
+                                source: modelData.blurhash !== "" ? ("image://blurhash/" + modelData.blurhash) : ""
+                                visible: parent.status !== Image.Ready
+                            }
+
+                            transform: [
+                                Rotation {
+                                    origin.x: image.width / 2
+                                    origin.y: image.height / 2
+                                    angle: imageContainer.rotationAngle
+
+                                    Behavior on angle {
+                                        RotationAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                    }
+                                },
+                                Scale {
+                                    origin.x: image.width / 2
+                                    origin.y: image.height / 2
+                                    xScale: imageContainer.scaleFactor
+                                    yScale: imageContainer.scaleFactor
+
+                                    Behavior on xScale {
+                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                    }
+                                    Behavior on yScale {
+                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
 
-                AnimatedImage {
-                    id: imageItem
+                DelegateChoice {
+                    roleValue: Attachment.GifV
 
-                    property var scaleFactor: 1
-                    property int rotationAngle: 0
-                    property var rotationInsensitiveWidth: Math.min(modelData.originalWidth, imageContainer.width - Kirigami.Units.largeSpacing * 2)
-                    property var rotationInsensitiveHeight: Math.min(modelData.originalHeight, imageContainer.height - Kirigami.Units.largeSpacing * 2)
+                    Item {
+                        id: videoContainer
+                        width: ListView.view.width
+                        height: ListView.view.height
 
-                    anchors.centerIn: parent
-                    width: rotationAngle % 180 === 0 ? rotationInsensitiveWidth : rotationInsensitiveHeight
-                    height: rotationAngle % 180 === 0 ? rotationInsensitiveHeight : rotationInsensitiveWidth
-                    fillMode: Image.PreserveAspectFit
-                    clip: true
-                    source: modelData.url
+                        property alias video: videoItem
 
-                    MouseArea {
-                        anchors.centerIn: parent
-                        width: parent.paintedWidth
-                        height: parent.paintedHeight
-                    }
+                        property var scaleFactor: 1
+                        property int rotationAngle: 0
 
-                    Behavior on width {
-                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                    }
-                    Behavior on height {
-                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                    }
-
-                    Image {
-                        anchors.centerIn: parent
-                        width: imageItem.width
-                        height: imageItem.height
-                        source: modelData.blurhash !== "" ? ("image://blurhash/" + modelData.blurhash) : ""
-                        visible: parent.status !== Image.Ready
-                    }
-
-                    transform: [
-                        Rotation {
-                            origin.x: image.width / 2
-                            origin.y: image.height / 2
-                            angle: image.rotationAngle
-
-                            Behavior on angle {
-                                RotationAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                            }
-                        },
-                        Scale {
-                            origin.x: image.width / 2
-                            origin.y: image.height / 2
-                            xScale: image.scaleFactor
-                            yScale: image.scaleFactor
-
-                            Behavior on xScale {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                            }
-                            Behavior on yScale {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                            }
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: root.close()
                         }
-                    ]
+
+                        Video {
+                            id: videoItem
+
+                            anchors.centerIn: parent
+                            width: videoContainer.width
+                            height: videoContainer.height
+                            clip: true
+                            source: modelData.url
+                            autoPlay: true
+                            loops: MediaPlayer.Infinite
+                            flushMode: VideoOutput.FirstFrame
+
+                            MouseArea {
+                                anchors.centerIn: parent
+                                width: parent.paintedWidth
+                                height: parent.paintedHeight
+                            }
+
+                            Behavior on width {
+                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                            }
+                            Behavior on height {
+                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                            }
+
+                            Image {
+                                anchors.centerIn: parent
+                                width: videoItem.width
+                                height: videoItem.height
+                                source: modelData.blurhash !== "" ? ("image://blurhash/" + modelData.blurhash) : ""
+                                visible: parent.status === MediaPlayer.Loading
+                            }
+
+                            transform: [
+                                Scale {
+                                    origin.x: video.width / 2
+                                    origin.y: video.height / 2
+                                    xScale: videoContainer.scaleFactor
+                                    yScale: videoContainer.scaleFactor
+
+                                    Behavior on xScale {
+                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                    }
+                                    Behavior on yScale {
+                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             }
 
