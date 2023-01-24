@@ -13,6 +13,7 @@ QQC2.Menu {
     required property string postId
     required property string url
     required property bool bookmarked
+    required property bool isSelf
 
     QQC2.MenuItem {
         text: i18n("Expand this post")
@@ -38,5 +39,15 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: root.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
         onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+    }
+
+    QQC2.MenuSeparator {
+        visible: root.isSelf
+    }
+
+    QQC2.MenuItem {
+        visible: root.isSelf
+        text: i18n("Edit")
+        onTriggered: timelineModel.actionEdit(timelineModel.index(root.index, 0))
     }
 }

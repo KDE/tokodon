@@ -33,6 +33,7 @@ public Q_SLOTS:
     void actionVis(const QModelIndex &index);
     void actionVote(const QModelIndex &index, const QList<int> &choices);
     void actionBookmark(const QModelIndex &index);
+    void actionEdit(const QModelIndex &index);
 
 Q_SIGNALS:
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);

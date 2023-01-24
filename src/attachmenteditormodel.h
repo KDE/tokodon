@@ -34,6 +34,7 @@ public:
 
 public Q_SLOTS:
     QNetworkReply *append(const QUrl &fileName);
+    void appendExisting(const Attachment &attachment);
     void removeAttachment(int row);
     void setDescription(int row, const QString &description);
 

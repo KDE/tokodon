@@ -69,6 +69,14 @@ QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
     });
 }
 
+void AttachmentEditorModel::appendExisting(const Attachment &attachment)
+{
+    beginInsertRows({}, m_attachments.count(), m_attachments.count());
+    m_attachments.append(attachment);
+    endInsertRows();
+    Q_EMIT countChanged();
+}
+
 void AttachmentEditorModel::removeAttachment(int row)
 {
     beginRemoveRows({}, row, row);

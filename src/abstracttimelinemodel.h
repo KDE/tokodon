@@ -9,6 +9,7 @@
 #include <qabstractitemmodel.h>
 
 class AbstractAccount;
+class PostEditorBackend;
 
 class AbstractTimelineModel : public QAbstractListModel
 {
@@ -68,9 +69,11 @@ public:
 
     void actionFavorite(const QModelIndex &index, Post *post);
     void actionRepeat(const QModelIndex &index, Post *post);
+    void actionEdit(Post *post);
 
 Q_SIGNALS:
     void loadingChanged();
+    void postSourceReady(PostEditorBackend *backend);
 
 protected:
     AbstractAccount *m_account = nullptr;

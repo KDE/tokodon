@@ -229,6 +229,14 @@ void TimelineModel::actionBookmark(const QModelIndex &index)
     Q_EMIT dataChanged(index, index);
 }
 
+void TimelineModel::actionEdit(const QModelIndex &index)
+{
+    int row = index.row();
+    auto p = m_timeline[row];
+
+    AbstractTimelineModel::actionEdit(p);
+}
+
 void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
     if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {

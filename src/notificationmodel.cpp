@@ -216,3 +216,11 @@ void NotificationModel::actionVis(const QModelIndex &index)
     p->setAttachmentsVisible(!p->attachmentsVisible());
     Q_EMIT dataChanged(index, index);
 }
+
+void NotificationModel::actionEdit(const QModelIndex &index)
+{
+    const int row = index.row();
+    const auto p = m_notifications[row]->post();
+
+    AbstractTimelineModel::actionEdit(p);
+}

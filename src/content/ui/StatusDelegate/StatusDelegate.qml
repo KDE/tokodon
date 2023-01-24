@@ -53,6 +53,8 @@ QQC2.ItemDelegate {
     property bool showInteractionButton: true
     property bool expandedPost: false
 
+    readonly property bool isSelf: AccountManager.selectedAccount.identity.displayName === root.authorIdentity.displayName
+
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
@@ -144,7 +146,7 @@ QQC2.ItemDelegate {
                         } else if (root.type === Notification.Update) {
                             return i18n("%1 edited a post", root.notificationActorIdentity.displayNameHtml)
                         } else if (root.type === Notification.Poll) {
-                            if (AccountManager.selectedAccount.identity.displayName === root.authorIdentity.displayName) {
+                            if (root.isSelf) {
                                 return i18n("Your poll has ended")
                             } else {
                                 return i18n("A poll you voted in has ended")
@@ -363,6 +365,7 @@ a{
                     postId: root.id
                     url: root.url
                     bookmarked: root.bookmarked
+                    isSelf: root.isSelf
                 }
 
                 QQC2.ToolTip.text: i18nc("Show more options", "More")

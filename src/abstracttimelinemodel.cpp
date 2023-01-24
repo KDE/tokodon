@@ -3,9 +3,11 @@
 
 #include "abstracttimelinemodel.h"
 #include "account.h"
+#include "attachmenteditormodel.h"
 #include "identity.h"
 #include "poll.h"
 #include "post.h"
+#include "posteditorbackend.h"
 #include <KLocalizedString>
 #include <QtMath>
 #include <qvariant.h>
@@ -178,4 +180,29 @@ void AbstractTimelineModel::actionRepeat(const QModelIndex &index, Post *post)
     }
 
     Q_EMIT dataChanged(index, index);
+}
+
+void AbstractTimelineModel::actionEdit(Post *post)
+{
+    m_account->get(m_account->apiUrl(QString("/api/v1/statuses/%1/source").arg(post->postId())), true, this, [this, post](QNetworkReply *reply) {
+        const auto postSource = QJsonDocument::fromJson(reply->readAll()).object();
+
+        auto backend = new PostEditorBackend();
+        backend->setStatus(postSource["text"].toString());
+        backend->setSpoilerText(postSource["spoiler_text"].toString());
+        backend->setInReplyTo(post->inReplyTo());
+        backend->setVisibility(post->visibility());
+        backend->setLanguage(post->language());
+        backend->setMentions(post->mentions()); // TODO: needed?
+        backend->setSensitive(post->sensitive());
+
+        qDebug() << "EDIT";
+
+        Q_EMIT postSourceReady(backend);
+
+        auto attachmentBackend = backend->attachmentEditorModel();
+        for (const auto &attachment : post->attachments()) {
+            attachmentBackend->appendExisting(attachment);
+        }
+    });
 }

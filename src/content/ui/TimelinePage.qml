@@ -58,6 +58,15 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Connections {
+        target: root.model
+        function onPostSourceReady(backend) {
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                backend: backend
+            });
+        }
+    }
+
     ListView {
         id: listview
         model: root.model

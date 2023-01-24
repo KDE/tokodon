@@ -61,6 +61,15 @@ Kirigami.ScrollablePage {
             id: notificationModel
         }
 
+        Connections {
+            target: notificationModel
+            function onPostSourceReady(backend) {
+                pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                    backend: backend
+                });
+            }
+        }
+
         Component {
             id: fullScreenImage
             FullScreenImage {}

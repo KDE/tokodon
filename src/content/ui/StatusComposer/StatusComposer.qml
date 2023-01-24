@@ -18,12 +18,14 @@ MastoPage {
     property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
     readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
 
-    readonly property PostEditorBackend backend: PostEditorBackend {
+    readonly property PostEditorBackend defaultBackend: PostEditorBackend {
         inReplyTo: root.inReplyTo
         mentions: root.mentions
         visibility: root.visibility
         sensitive: root.sensitive
     }
+
+    property PostEditorBackend backend: defaultBackend
 
     title: i18n("Write a new toot")
 
@@ -70,6 +72,9 @@ MastoPage {
             rightInset: -1
             onTextChanged: backend.status = text
             Kirigami.SpellChecking.enabled: true
+
+            Component.onCompleted: textArea.text = root.backend.status
+
             ColumnLayout {
                 id: actions
                 spacing: 0

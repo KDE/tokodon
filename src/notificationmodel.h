@@ -30,6 +30,7 @@ public Q_SLOTS:
     void actionFavorite(const QModelIndex &index);
     void actionRepeat(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
+    void actionEdit(const QModelIndex &index);
 
 Q_SIGNALS:
     void excludeTypesChanged();
@@ -41,7 +42,6 @@ protected:
 
     QString m_timelineName;
     AccountManager *m_manager = nullptr;
-    AbstractAccount *m_account = nullptr;
 
     QList<std::shared_ptr<Notification>> m_notifications;
     QStringList m_excludeTypes;
