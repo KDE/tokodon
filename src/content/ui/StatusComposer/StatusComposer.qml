@@ -28,7 +28,18 @@ MastoPage {
 
     property PostEditorBackend backend: defaultBackend
 
-    title: purpose === "edit" ? i18n("Edit this toot") : (purpose === "reply" ? i18n("Reply to toot") : i18n("Write a new toot"))
+    title: {
+        switch (purpose) {
+            case "edit":
+                return i18n("Edit this toot")
+            case "reply":
+                return i18n("Reply to this toot")
+            case "redraft":
+                return i18n("Rewrite this toot")
+            case "new":
+                return i18n("Write a new toot")
+        }
+    }
 
     Connections {
         target: backend

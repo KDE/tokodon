@@ -229,12 +229,12 @@ void TimelineModel::actionBookmark(const QModelIndex &index)
     Q_EMIT dataChanged(index, index);
 }
 
-void TimelineModel::actionEdit(const QModelIndex &index)
+void TimelineModel::actionRedraft(const QModelIndex &index, bool isEdit)
 {
     int row = index.row();
     auto p = m_timeline[row];
 
-    AbstractTimelineModel::actionEdit(index, p);
+    AbstractTimelineModel::actionRedraft(index, p, isEdit);
 }
 
 void TimelineModel::actionDelete(const QModelIndex &index)

@@ -60,9 +60,9 @@ Kirigami.ScrollablePage {
 
     Connections {
         target: root.model
-        function onPostSourceReady(backend) {
+        function onPostSourceReady(backend, isEdit) {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: "edit",
+                purpose: isEdit ? "edit" : "redraft",
                 backend: backend
             });
         }

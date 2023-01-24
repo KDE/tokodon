@@ -33,7 +33,7 @@ public Q_SLOTS:
     void actionVis(const QModelIndex &index);
     void actionVote(const QModelIndex &index, const QList<int> &choices);
     void actionBookmark(const QModelIndex &index);
-    void actionEdit(const QModelIndex &index);
+    void actionRedraft(const QModelIndex &index, bool isEdit);
     void actionDelete(const QModelIndex &index);
 
 Q_SIGNALS:

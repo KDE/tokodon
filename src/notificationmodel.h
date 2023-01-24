@@ -30,7 +30,7 @@ public Q_SLOTS:
     void actionFavorite(const QModelIndex &index);
     void actionRepeat(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
-    void actionEdit(const QModelIndex &index);
+    void actionRedraft(const QModelIndex &index, bool isEdit);
     void actionDelete(const QModelIndex &index);
 
 Q_SIGNALS:

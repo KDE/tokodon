@@ -69,12 +69,12 @@ public:
 
     void actionFavorite(const QModelIndex &index, Post *post);
     void actionRepeat(const QModelIndex &index, Post *post);
-    void actionEdit(const QModelIndex &index, Post *post);
+    void actionRedraft(const QModelIndex &index, Post *post, bool isEdit);
     void actionDelete(const QModelIndex &index, Post *post);
 
 Q_SIGNALS:
     void loadingChanged();
-    void postSourceReady(PostEditorBackend *backend);
+    void postSourceReady(PostEditorBackend *backend, bool isEdit);
 
 protected:
     AbstractAccount *m_account = nullptr;

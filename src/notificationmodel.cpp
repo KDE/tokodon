@@ -217,12 +217,12 @@ void NotificationModel::actionVis(const QModelIndex &index)
     Q_EMIT dataChanged(index, index);
 }
 
-void NotificationModel::actionEdit(const QModelIndex &index)
+void NotificationModel::actionRedraft(const QModelIndex &index, bool isEdit)
 {
     const int row = index.row();
     const auto p = m_notifications[row]->post();
 
-    AbstractTimelineModel::actionEdit(index, p);
+    AbstractTimelineModel::actionRedraft(index, p, isEdit);
 }
 
 void NotificationModel::actionDelete(const QModelIndex &index)

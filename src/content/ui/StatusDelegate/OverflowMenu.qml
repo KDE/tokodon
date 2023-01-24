@@ -48,12 +48,21 @@ QQC2.Menu {
     QQC2.MenuItem {
         visible: root.isSelf
         text: i18n("Edit")
-        onTriggered: timelineModel.actionEdit(timelineModel.index(root.index, 0))
+        onTriggered: timelineModel.actionRedraft(timelineModel.index(root.index, 0), true)
     }
 
     QQC2.MenuItem {
         visible: root.isSelf
         text: i18n("Delete")
         onTriggered: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+    }
+
+    QQC2.MenuItem {
+        visible: root.isSelf
+        text: i18n("Delete & Re-draft")
+        onTriggered: {
+            timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
+            timelineModel.actionDelete(timelineModel.index(root.index, 0))
+        }
     }
 }
