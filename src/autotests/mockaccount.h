@@ -26,6 +26,7 @@ public:
     void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) override;
     void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) override;
+    void deleteResource(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     void writeToSettings(QSettings &settings) const override;
     void buildFromSettings(const QSettings &settings) override;
     void validateToken() override;

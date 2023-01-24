@@ -86,6 +86,14 @@ void MockAccount::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authent
     Q_UNUSED(multiPart)
 }
 
+void MockAccount::deleteResource(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
+{
+    Q_UNUSED(url)
+    Q_UNUSED(authenticated)
+    Q_UNUSED(parent)
+    Q_UNUSED(callback)
+}
+
 QNetworkReply *MockAccount::upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback)
 {
     Q_UNUSED(callback)

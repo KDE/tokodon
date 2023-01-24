@@ -128,6 +128,17 @@ void Account::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticat
     handleReply(reply, callback);
 }
 
+void Account::deleteResource(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
+{
+    QNetworkRequest request = makeRequest(url, authenticated);
+
+    qCDebug(TOKODON_HTTP) << "DELETE" << url << "(multipart-message)";
+
+    QNetworkReply *reply = m_qnam->deleteResource(request);
+    reply->setParent(parent);
+    handleReply(reply, callback);
+}
+
 QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
 {
     QNetworkRequest request(url);
