@@ -246,7 +246,7 @@ QQC2.ItemDelegate {
                     onClicked: tootContent.visible = !tootContent.visible
                 }
             }
-            TextEdit {
+            QQC2.TextArea {
                 id: tootContent
                 font.pointSize: heading.font.pointSize
                 Layout.fillWidth: true
@@ -257,9 +257,13 @@ a{
 }
 </style>" + root.content
                 textFormat: TextEdit.RichText
+                leftPadding: 0
+                rightPadding: 0
+                bottomPadding: 0
+                readOnly: true
+                background: null
                 wrapMode: Text.Wrap
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
-                readOnly: true
                 selectByMouse: !Kirigami.Settings.isMobile
                 // TODO handle opening profile page in tokodon
                 onLinkActivated: {

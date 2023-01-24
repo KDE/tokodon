@@ -231,9 +231,10 @@ TimelinePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     text: model.identity.displayName
                 }
-                QQC2.TextArea{
+                QQC2.TextArea {
                     text: "@" + model.identity.account
-                    textFormat: TextEdit.AutoText
+                    color: Kirigami.Theme.disabledTextColor
+                    textFormat: TextEdit.PlainText
                     readOnly: true
                     Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.smallSpacing
@@ -363,7 +364,7 @@ TimelinePage {
                 }
                 QQC2.TextArea {
                     text: accountInfo.model.identity.bio
-                    textFormat: TextEdit.AutoText
+                    textFormat: TextEdit.RichText
                     readOnly: true
                     Layout.fillWidth: true
                     Layout.leftMargin: Kirigami.Units.largeSpacing

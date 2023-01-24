@@ -71,6 +71,7 @@ Kirigami.ScrollablePage {
             timelineModel: root.model
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
+            Layout.fillWidth: true
         }
 
         Kirigami.PlaceholderMessage {
