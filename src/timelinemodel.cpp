@@ -234,7 +234,7 @@ void TimelineModel::actionEdit(const QModelIndex &index)
     int row = index.row();
     auto p = m_timeline[row];
 
-    AbstractTimelineModel::actionEdit(p);
+    AbstractTimelineModel::actionEdit(index, p);
 }
 
 void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)

@@ -182,12 +182,13 @@ void AbstractTimelineModel::actionRepeat(const QModelIndex &index, Post *post)
     Q_EMIT dataChanged(index, index);
 }
 
-void AbstractTimelineModel::actionEdit(Post *post)
+void AbstractTimelineModel::actionEdit(const QModelIndex &index, Post *post)
 {
-    m_account->get(m_account->apiUrl(QString("/api/v1/statuses/%1/source").arg(post->postId())), true, this, [this, post](QNetworkReply *reply) {
+    m_account->get(m_account->apiUrl(QString("/api/v1/statuses/%1/source").arg(post->postId())), true, this, [this, post, index](QNetworkReply *reply) {
         const auto postSource = QJsonDocument::fromJson(reply->readAll()).object();
 
         auto backend = new PostEditorBackend();
+        backend->setId(post->postId());
         backend->setStatus(postSource["text"].toString());
         backend->setSpoilerText(postSource["spoiler_text"].toString());
         backend->setInReplyTo(post->inReplyTo());
@@ -196,13 +197,16 @@ void AbstractTimelineModel::actionEdit(Post *post)
         backend->setMentions(post->mentions()); // TODO: needed?
         backend->setSensitive(post->sensitive());
 
-        qDebug() << "EDIT";
-
         Q_EMIT postSourceReady(backend);
 
         auto attachmentBackend = backend->attachmentEditorModel();
         for (const auto &attachment : post->attachments()) {
             attachmentBackend->appendExisting(attachment);
         }
+
+        connect(backend, &PostEditorBackend::editComplete, this, [this, post, index](QJsonObject object) {
+            post->fromJson(object);
+            Q_EMIT dataChanged(index, index);
+        });
     });
 }

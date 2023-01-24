@@ -21,6 +21,16 @@ PostEditorBackend::PostEditorBackend(QObject *parent)
 
 PostEditorBackend::~PostEditorBackend() = default;
 
+QString PostEditorBackend::id() const
+{
+    return m_id;
+}
+
+void PostEditorBackend::setId(const QString &id)
+{
+    m_id = id;
+}
+
 QString PostEditorBackend::status() const
 {
     return m_status;
@@ -203,4 +213,18 @@ void PostEditorBackend::save()
             }
         },
         headers);
+}
+
+void PostEditorBackend::edit()
+{
+    QUrl edit_status_url = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_id));
+    auto doc = toJsonDocument();
+
+    m_account->put(edit_status_url, doc, true, this, [=](QNetworkReply *reply) {
+        auto data = reply->readAll();
+        auto doc = QJsonDocument::fromJson(data);
+        auto obj = doc.object();
+
+        Q_EMIT editComplete(obj);
+    });
 }

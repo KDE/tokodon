@@ -177,6 +177,8 @@ public:
 
     AbstractAccount *m_parent;
 
+    void fromJson(QJsonObject obj);
+
     std::shared_ptr<Identity> authorIdentity() const;
     std::shared_ptr<Identity> boostIdentity() const;
     bool boosted() const;

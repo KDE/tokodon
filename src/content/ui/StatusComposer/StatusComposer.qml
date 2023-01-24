@@ -217,7 +217,11 @@ MastoPage {
             enabled: !progress.uploading || textArea.text.length > 0 || backend.attachmentEditorModel.count > 0
             Layout.alignment: Qt.AlignRight
             onClicked: {
-                backend.save()
+                if(root.purpose == "edit") {
+                    backend.edit()
+                } else {
+                    backend.save()
+                }
             }
         }
     }

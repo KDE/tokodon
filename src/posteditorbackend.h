@@ -29,6 +29,9 @@ public:
     explicit PostEditorBackend(QObject *parent = nullptr);
     ~PostEditorBackend();
 
+    QString id() const;
+    void setId(const QString &id);
+
     QString status() const;
     void setStatus(const QString &status);
 
@@ -60,6 +63,7 @@ public:
 
 public Q_SLOTS:
     void save();
+    void edit();
 
 Q_SIGNALS:
 
@@ -80,12 +84,14 @@ Q_SIGNALS:
     void accountChanged();
 
     void sensitiveChanged();
+    void editComplete(QJsonObject object);
 
     void posted(QString error);
 
 private:
     QJsonDocument toJsonDocument() const;
 
+    QString m_id;
     QString m_status;
     QString m_idenpotencyKey;
     QString m_spoilerText;

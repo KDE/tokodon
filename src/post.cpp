@@ -102,6 +102,16 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     , m_parent(account)
     , m_visibility(Post::Visibility::Public)
 {
+    fromJson(obj);
+}
+
+Post::~Post()
+{
+    delete m_poll;
+}
+
+void Post::fromJson(QJsonObject obj)
+{
     const auto accountDoc = obj["account"].toObject();
     const auto accountId = accountDoc["id"].toString();
 
@@ -138,6 +148,9 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     m_bookmarked = obj["bookmarked"].toBool();
     m_pinned = obj["pinned"].toBool();
     m_muted = obj["muted"].toBool();
+
+    m_filters.clear();
+
     const auto filters = obj["filtered"].toArray();
     for (const auto &filter : filters) {
         const auto filterContext = filter.toObject();
@@ -151,12 +164,15 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     m_language = obj["language"].toString();
 
     m_publishedAt = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
+
+    m_attachments.clear();
     addAttachments(obj["media_attachments"].toArray());
     const QJsonArray mentions = obj["mentions"].toArray();
     if (obj.contains("card") && !obj["card"].toObject().empty()) {
         setCard(std::make_optional<Card>(obj["card"].toObject()));
     }
 
+    m_mentions.clear();
     for (const auto &m : qAsConst(mentions)) {
         const QJsonObject o = m.toObject();
         m_mentions.push_back("@" + o["acct"].toString());
@@ -167,11 +183,6 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     }
 
     m_attachments_visible = !m_sensitive;
-}
-
-Post::~Post()
-{
-    delete m_poll;
 }
 
 void Post::addAttachments(const QJsonArray &attachments)
