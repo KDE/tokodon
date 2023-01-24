@@ -70,6 +70,7 @@ public:
     void actionFavorite(const QModelIndex &index, Post *post);
     void actionRepeat(const QModelIndex &index, Post *post);
     void actionEdit(const QModelIndex &index, Post *post);
+    void actionDelete(const QModelIndex &index, Post *post);
 
 Q_SIGNALS:
     void loadingChanged();

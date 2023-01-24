@@ -210,3 +210,11 @@ void AbstractTimelineModel::actionEdit(const QModelIndex &index, Post *post)
         });
     });
 }
+
+void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
+{
+    m_account->deleteResource(m_account->apiUrl(QString("/api/v1/statuses/%1").arg(post->postId())), true, this, [this, post, index](QNetworkReply *reply) {
+        const auto postSource = QJsonDocument::fromJson(reply->readAll()).object();
+        qDebug() << "DELETED: " << postSource;
+    });
+}

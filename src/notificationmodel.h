@@ -31,6 +31,7 @@ public Q_SLOTS:
     void actionRepeat(const QModelIndex &index);
     void actionVis(const QModelIndex &index);
     void actionEdit(const QModelIndex &index);
+    void actionDelete(const QModelIndex &index);
 
 Q_SIGNALS:
     void excludeTypesChanged();

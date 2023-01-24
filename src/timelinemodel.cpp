@@ -237,6 +237,18 @@ void TimelineModel::actionEdit(const QModelIndex &index)
     AbstractTimelineModel::actionEdit(index, p);
 }
 
+void TimelineModel::actionDelete(const QModelIndex &index)
+{
+    int row = index.row();
+    auto p = m_timeline[row];
+
+    AbstractTimelineModel::actionDelete(index, p);
+
+    beginRemoveRows({}, row, row);
+    m_timeline.removeAt(row);
+    endRemoveRows();
+}
+
 void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
     if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {

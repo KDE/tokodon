@@ -50,4 +50,10 @@ QQC2.Menu {
         text: i18n("Edit")
         onTriggered: timelineModel.actionEdit(timelineModel.index(root.index, 0))
     }
+
+    QQC2.MenuItem {
+        visible: root.isSelf
+        text: i18n("Delete")
+        onTriggered: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+    }
 }

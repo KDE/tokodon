@@ -224,3 +224,20 @@ void NotificationModel::actionEdit(const QModelIndex &index)
 
     AbstractTimelineModel::actionEdit(index, p);
 }
+
+void NotificationModel::actionDelete(const QModelIndex &index)
+{
+    const auto p = m_notifications[index.row()]->post();
+
+    AbstractTimelineModel::actionDelete(index, p);
+
+    // TODO: this sucks
+    for (auto &notification : m_notifications) {
+        if (notification->post()->postId() == p->postId()) {
+            int row = m_notifications.indexOf(notification);
+            beginRemoveRows({}, row, row);
+            m_notifications.removeOne(notification);
+            endRemoveRows();
+        }
+    }
+}
