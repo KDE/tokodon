@@ -309,7 +309,6 @@ a{
 
         RowLayout {
             visible: showInteractionButton && !filtered
-            Layout.topMargin: Kirigami.Units.largeSpacing
             InteractionButton {
                 iconSource: "reply-post"
                 text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.expandedPost ? root.repliesCount : i18nc("More than one reply", "1+"))
