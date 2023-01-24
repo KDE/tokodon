@@ -62,6 +62,7 @@ Kirigami.ScrollablePage {
         target: root.model
         function onPostSourceReady(backend) {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: "edit",
                 backend: backend
             });
         }

@@ -41,7 +41,9 @@ Kirigami.ApplicationWindow {
         target: Navigation
 
         function onOpenStatusComposer() {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml");
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: "new"
+            });
         }
 
         function onReplyTo(inReplyTo, mentions, visibility, authorIdentity) {
@@ -49,6 +51,7 @@ Kirigami.ApplicationWindow {
                 mentions.push(`@${authorIdentity.account}`);
             }
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: "reply",
                 inReplyTo: inReplyTo,
                 mentions: mentions,
                 visibility: visibility,

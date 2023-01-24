@@ -12,6 +12,7 @@ import '..'
 MastoPage {
     id: root
 
+    property string purpose: ''
     property string inReplyTo: ''
     property var mentions: []
     property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
@@ -27,7 +28,7 @@ MastoPage {
 
     property PostEditorBackend backend: defaultBackend
 
-    title: i18n("Write a new toot")
+    title: purpose === "edit" ? i18n("Edit this toot") : (purpose === "reply" ? i18n("Reply to toot") : i18n("Write a new toot"))
 
     Connections {
         target: backend
