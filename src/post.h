@@ -154,6 +154,7 @@ class Post : public QObject
     Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
     Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
     Q_PROPERTY(Visibility visibility READ visibility WRITE setVisibility NOTIFY visibilityChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
     Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
@@ -196,6 +197,8 @@ public:
     void setSensitive(bool isSensitive);
     Visibility visibility() const;
     void setVisibility(Visibility visibility);
+    QString language() const;
+    void setLanguage(const QString &language);
     QString inReplyTo() const;
     void setInReplyTo(const QString &inReplyTo);
     QStringList mentions() const;
@@ -257,6 +260,7 @@ Q_SIGNALS:
     void contentTypeChanged();
     void sensitiveChanged();
     void visibilityChanged();
+    void languageChanged();
     void inReplyToChanged();
     void mentionsChanged();
     void attachmentUploaded();
@@ -273,6 +277,7 @@ private:
     QString m_reply_to_author;
     QString m_content_type;
     QStringList m_mentions;
+    QString m_language;
 
     QString m_replyTargetId;
     QStringList m_filters;

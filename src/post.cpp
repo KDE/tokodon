@@ -148,6 +148,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
     m_sensitive = obj["sensitive"].toBool();
     m_visibility = stringToVisibility(obj["visibility"].toString());
+    m_language = obj["language"].toString();
 
     m_publishedAt = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
     addAttachments(obj["media_attachments"].toArray());
@@ -370,6 +371,20 @@ void Post::setVisibility(Visibility visibility)
     }
     m_visibility = visibility;
     Q_EMIT visibilityChanged();
+}
+
+QString Post::language() const
+{
+    return m_language;
+}
+
+void Post::setLanguage(const QString &language)
+{
+    if (language == m_language) {
+        return;
+    }
+    m_language = language;
+    Q_EMIT languageChanged();
 }
 
 std::optional<Card> Post::card() const
