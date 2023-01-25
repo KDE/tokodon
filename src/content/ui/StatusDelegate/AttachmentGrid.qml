@@ -59,7 +59,7 @@ QQC2.Control {
                 role: "attachmentType"
 
                 DelegateChoice {
-                    roleValue: Attachment.Image
+                    roleValue: AttachmentType.Image
 
                     MediaContainer {
                         required property int index
@@ -122,7 +122,7 @@ QQC2.Control {
                 }
 
                 DelegateChoice {
-                    roleValue: Attachment.GifV
+                    roleValue: AttachmentType.GifV
 
                     MediaContainer {
                         required property int index

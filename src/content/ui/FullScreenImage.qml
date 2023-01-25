@@ -131,7 +131,7 @@ QQC2.Popup {
             delegate: DelegateChooser {
                 role: "attachmentType"
                 DelegateChoice {
-                    roleValue: Attachment.Image
+                    roleValue: AttachmentType.Image
 
                     Item {
                         id: imageContainer
@@ -211,7 +211,7 @@ QQC2.Popup {
                 }
 
                 DelegateChoice {
-                    roleValue: Attachment.GifV
+                    roleValue: AttachmentType.GifV
 
                     Item {
                         id: videoContainer
