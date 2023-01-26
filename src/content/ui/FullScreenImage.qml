@@ -70,14 +70,14 @@ QQC2.Popup {
                             icon.name: "image-rotate-left-symbolic"
                             displayHint: Kirigami.DisplayHint.IconOnly
                             onTriggered: view.currentItem.rotationAngle = view.currentItem.rotationAngle - 90
-
+                            enabled: root.model[root.currentIndex].attachmentType === Attachment.Image
                         },
                         Kirigami.Action {
                             text: i18n("Rotate right")
                             icon.name: "image-rotate-right-symbolic"
                             displayHint: Kirigami.DisplayHint.IconOnly
                             onTriggered: view.currentItem.rotationAngle = view.currentItem.rotationAngle + 90
-
+                            enabled: root.model[root.currentIndex].attachmentType === Attachment.Image
                         },
                         Kirigami.Action {
                             text: i18n("Save as")
@@ -358,8 +358,8 @@ QQC2.Popup {
 
     onClosed: {
         applicationWindow().isShowingFullScreenImage = false;
-        view.currentItem.image.scaleFactor = 1;
-        view.currentItem.image.rotationAngle = 0;
+        view.currentItem.scaleFactor = 1;
+        view.currentItem.rotationAngle = 0;
     }
 
     onOpened: {
