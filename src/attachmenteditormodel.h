@@ -30,7 +30,7 @@ public:
     Q_INVOKABLE int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
-    const QVector<Attachment> &attachments() const;
+    const QVector<Attachment *> &attachments() const;
 
 public Q_SLOTS:
     QNetworkReply *append(const QUrl &fileName);
@@ -43,7 +43,7 @@ Q_SIGNALS:
     void countChanged();
 
 private:
-    QVector<Attachment> m_attachments;
+    QVector<Attachment *> m_attachments;
     QHash<QString, QTimer *> m_updateTimers;
     AbstractAccount *m_account;
 };

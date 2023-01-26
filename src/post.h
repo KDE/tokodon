@@ -63,9 +63,9 @@ private:
 /// Post's attachment object.
 /// TODO make it possible to fetch the images with a Qml image provider.
 /// TODO use getter and setter
-class Attachment
+class Attachment : public QObject
 {
-    Q_GADGET
+    Q_OBJECT
 
     Q_PROPERTY(QString id MEMBER m_id CONSTANT)
     Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
@@ -252,7 +252,7 @@ public:
     Q_INVOKABLE void addAttachments(const QJsonArray &attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
-    QVector<Attachment> attachments() const;
+    QVector<Attachment *> attachments() const;
     bool attachmentsVisible() const;
     void setAttachmentsVisible(bool attachmentsVisible);
 
@@ -285,7 +285,7 @@ private:
     QStringList m_filters;
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
-    QVector<Attachment> m_attachments;
+    QVector<Attachment *> m_attachments;
     Poll *m_poll = nullptr;
 
     bool m_sensitive;

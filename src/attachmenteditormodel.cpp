@@ -34,9 +34,9 @@ QVariant AttachmentEditorModel::data(const QModelIndex &index, int role) const
 
     switch (role) {
     case PreviewRole:
-        return attachment.m_preview_url;
+        return attachment->m_preview_url;
     case DescriptionRole:
-        return attachment.description();
+        return attachment->description();
     }
 
     return {};
@@ -63,7 +63,7 @@ QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
         }
 
         beginInsertRows({}, m_attachments.count(), m_attachments.count());
-        m_attachments.append(Attachment{doc.object()});
+        m_attachments.append(new Attachment{doc.object()});
         endInsertRows();
         Q_EMIT countChanged();
     });
@@ -88,8 +88,8 @@ void AttachmentEditorModel::removeAttachment(int row)
 void AttachmentEditorModel::setDescription(int row, const QString &description)
 {
     auto &attachment = m_attachments[row];
-    const auto id = attachment.id();
-    attachment.setDescription(description);
+    const auto id = attachment->id();
+    attachment->setDescription(description);
 
     const auto attachementUrl = m_account->apiUrl(QStringLiteral("/api/v1/media/%1").arg(id));
     const QJsonObject obj{
@@ -100,7 +100,7 @@ void AttachmentEditorModel::setDescription(int row, const QString &description)
     Q_EMIT dataChanged(index(row, 0), index(row, 0), {DescriptionRole});
 }
 
-const QVector<Attachment> &AttachmentEditorModel::attachments() const
+const QVector<Attachment *> &AttachmentEditorModel::attachments() const
 {
     return m_attachments;
 }

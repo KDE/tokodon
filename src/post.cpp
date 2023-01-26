@@ -188,17 +188,17 @@ void Post::fromJson(QJsonObject obj)
 void Post::addAttachments(const QJsonArray &attachments)
 {
     for (const auto &attachment : attachments) {
-        m_attachments.append(Attachment{attachment.toObject()});
+        m_attachments.append(new Attachment{attachment.toObject()});
     }
 }
 
 void Post::addAttachment(const QJsonObject &attachment)
 {
-    Attachment att(attachment);
-    if (att.m_url.isEmpty()) {
+    auto att = new Attachment{attachment};
+    if (att->m_url.isEmpty()) {
         return;
     }
-    m_attachments.append(std::move(att));
+    m_attachments.append(att);
 
     Q_EMIT attachmentUploaded();
 }
@@ -463,7 +463,7 @@ bool Post::filtered() const
     return m_filtered;
 }
 
-QVector<Attachment> Post::attachments() const
+QVector<Attachment *> Post::attachments() const
 {
     return m_attachments;
 }
