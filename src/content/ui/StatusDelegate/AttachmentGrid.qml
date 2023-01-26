@@ -124,53 +124,20 @@ QQC2.Control {
                 DelegateChoice {
                     roleValue: Attachment.GifV
 
-                    MediaContainer {
+                    VideoAttachment {
                         required property int index
                         required property var modelData
 
                         repeater: attachmentsRepeater
-                        aspectRatio: output.sourceRect.height / output.sourceRect.width
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
                         mediaRatio: root.mediaRatio
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
-                        MediaPlayer {
-                            id: player
-
-                            autoPlay: true
-
-                            loops: MediaPlayer.Infinite
-
-                            source: modelData.url
-                            videoOutput: output
-
-                            onPlaying: if(!Config.autoPlayGif) { pause() }
-                        }
-
-                        VideoOutput {
-                            id: output
-
-                            source: player
-                            fillMode: VideoOutput.PreserveAspectCrop
-                            flushMode: VideoOutput.FirstFrame
-
-                            anchors.fill: parent
-
-                            layer.enabled: true
-                            layer.effect: OpacityMask {
-                                maskSource: Item {
-                                    width: output.width
-                                    height: output.height
-                                    Rectangle {
-                                        anchors.centerIn: parent
-                                        width: output.width
-                                        height: output.height
-                                        radius: Kirigami.Units.smallSpacing
-                                    }
-                                }
-                            }
-                        }
+                        videoUrl: modelData.url
+                        previewUrl: modelData.previewUrl
+                        autoPlay: Config.autoPlayGif
+                        isSensitive: root.isSensitive
 
                         TapHandler {
                             onTapped: {
@@ -181,19 +148,26 @@ QQC2.Control {
                                 }
                             }
                         }
+                    }
+                }
 
-                        Image {
-                            anchors.fill: parent
-                            source: visible ? "image://blurhash/" + modelData.blurhash : ''
-                            visible: player.status === MediaPlayer.Loading || root.isSensitive
-                        }
+                DelegateChoice {
+                    roleValue: Attachment.Video
 
-                        QQC2.Button {
-                            visible: modelData.attachmentType === Attachment.Unknown
-                            text: i18n("Not available")
-                            anchors.centerIn: parent
-                            onClicked: Qt.openUrlExternally(modelData.remoteUrl)
-                        }
+                    VideoAttachment {
+                        required property int index
+                        required property var modelData
+
+                        repeater: attachmentsRepeater
+                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
+                        mediaRatio: root.mediaRatio
+                        rootWidth: root.width
+                        gridLayout: attachmentGridLayout
+
+                        videoUrl: modelData.url
+                        previewUrl: modelData.previewUrl
+                        autoPlay: false
+                        isSensitive: root.isSensitive
                     }
                 }
             }
