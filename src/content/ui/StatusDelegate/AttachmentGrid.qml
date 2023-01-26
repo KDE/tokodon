@@ -144,6 +144,8 @@ QQC2.Control {
 
                             source: modelData.url
                             videoOutput: output
+
+                            onPlaying: if(!Config.autoPlayGif) { pause() }
                         }
 
                         VideoOutput {

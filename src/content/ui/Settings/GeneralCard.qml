@@ -54,7 +54,19 @@ MobileForm.FormCard {
             }
         }
 
-        MobileForm.FormDelegateSeparator { below: cropMedia; above: colorTheme }
+        MobileForm.FormDelegateSeparator { below: cropMedia; above: autoPlayGif }
+
+        MobileForm.FormSwitchDelegate {
+            id: autoPlayGif
+            text: i18n("Auto-play animated GIFs")
+            checked: Config.autoPlayGif
+            onToggled: {
+                Config.autoPlayGif = checked
+                Config.save()
+            }
+        }
+
+        MobileForm.FormDelegateSeparator { below: autoPlayGif; above: colorTheme }
 
         MobileForm.FormComboBoxDelegate {
             Layout.fillWidth: true
