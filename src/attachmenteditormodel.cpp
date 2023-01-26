@@ -3,14 +3,21 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "attachmenteditormodel.h"
-#include "account.h"
 #include "abstractaccount.h"
+#include "account.h"
 #include <QTimer>
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)
     : QAbstractListModel(parent)
     , m_account(account)
 {
+}
+
+AttachmentEditorModel::~AttachmentEditorModel()
+{
+    for (auto attachment : m_attachments) {
+        delete attachment;
+    }
 }
 
 int AttachmentEditorModel::rowCount(const QModelIndex &parent) const
