@@ -91,6 +91,7 @@ void AccountManager::addAccount(AbstractAccount *account)
     endInsertRows();
 
     Q_EMIT accountAdded(account);
+    Q_EMIT accountsChanged();
     connect(account, &Account::identityChanged, this, [this, account]() {
         childIdentityChanged(account);
     });
@@ -148,6 +149,7 @@ void AccountManager::removeAccount(AbstractAccount *account)
     writeToSettings(settings);
 
     Q_EMIT accountRemoved(account);
+    Q_EMIT accountsChanged();
 }
 
 void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAction)

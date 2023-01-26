@@ -16,7 +16,7 @@ class QNetworkAccessManager;
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountAdded NOTIFY accountRemoved)
+    Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountsChanged)
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
     Q_PROPERTY(QString selectedAccountId READ selectedAccountId NOTIFY accountSelected)
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
@@ -55,6 +55,7 @@ public:
 Q_SIGNALS:
     void accountAdded(AbstractAccount *account);
     void accountRemoved(AbstractAccount *account);
+    void accountsChanged();
     void accountSelected(AbstractAccount *account);
     void identityChanged(AbstractAccount *account);
     void fetchedTimeline(AbstractAccount *account, QString original_name, QList<Post *> posts);
