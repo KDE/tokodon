@@ -304,6 +304,7 @@ a{
         }
 
         Poll {
+            index: root.index
             poll: root.poll
         }
 

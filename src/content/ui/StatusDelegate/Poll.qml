@@ -10,6 +10,7 @@ import org.kde.kmasto 1.0
 ColumnLayout {
     id: root
 
+    required property var index
     required property var poll
 
     visible: !filtered
