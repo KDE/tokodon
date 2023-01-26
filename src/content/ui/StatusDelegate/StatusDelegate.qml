@@ -333,7 +333,7 @@ a{
                 iconSource: root.favourited ? 'like-post-done' : 'like-post'
                 interacted: root.favourited
                 interactionColor: "orange"
-                onClicked: timelineModel.actionFavorite(timelineModel.index(model.index, 0))
+                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
                 text: (Config.showPostStats || root.expandedPost) ? root.favouritesCount : ''
                 QQC2.ToolTip.text: i18nc("Like a post", "Like")
                 QQC2.ToolTip.visible: hovered
@@ -343,7 +343,7 @@ a{
                 iconSource: 'bookmarks'
                 interacted: root.bookmarked
                 interactionColor: "red"
-                onClicked: timelineModel.actionBookmark(timelineModel.index(model.index, 0))
+                onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
                 QQC2.ToolTip.text: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
