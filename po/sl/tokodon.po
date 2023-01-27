@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:58+0000\n"
+"POT-Creation-Date: 2023-01-27 00:58+0000\n"
 "PO-Revision-Date: 2023-01-23 07:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -795,7 +795,7 @@ msgid "Copy link to this post"
 msgstr "Kopiraj povezavo na to objavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#: content/ui/StatusDelegate/StatusDelegate.qml:347
+#: content/ui/StatusDelegate/StatusDelegate.qml:348
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
@@ -805,18 +805,18 @@ msgstr "Odstrani zaznamek"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/Poll.qml:38
+#: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: content/ui/StatusDelegate/Poll.qml:62
+#: content/ui/StatusDelegate/Poll.qml:63
 #, kde-format
 msgid "(No votes)"
 msgstr "(Ni glasov)"
 
-#: content/ui/StatusDelegate/Poll.qml:96
+#: content/ui/StatusDelegate/Poll.qml:97
 #, kde-format
 msgid "Vote"
 msgstr "Glas"
@@ -876,35 +876,43 @@ msgstr "Prikaži manj"
 msgid "Show More"
 msgstr "Prikaži več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:314
+#: content/ui/StatusDelegate/StatusDelegate.qml:315
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:318
+#: content/ui/StatusDelegate/StatusDelegate.qml:319
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:328
+#: content/ui/StatusDelegate/StatusDelegate.qml:329
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:338
+#: content/ui/StatusDelegate/StatusDelegate.qml:339
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Podobno"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:347
-#, kde-format
-msgctxt "Boookmark a post"
+#: content/ui/StatusDelegate/StatusDelegate.qml:348
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:364
+#, fuzzy, kde-format
+#| msgid "Show More"
+msgctxt "Show more options"
+msgid "More"
+msgstr "Prikaži več"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1081,6 +1089,10 @@ msgstr "Objavi"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Nit"
+
+#~ msgctxt "Boookmark a post"
+#~ msgid "Bookmark"
+#~ msgstr "Zaznamek"
 
 #~ msgid "Username:"
 #~ msgstr "Uporabniško ime:"
