@@ -140,7 +140,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action homeAction: Kirigami.Action {
-        iconName: "go-home-large"
+        icon.name: "go-home-large"
         text: i18n("Home")
         checkable: true
         checked: true
@@ -153,7 +153,7 @@ Kirigami.ApplicationWindow {
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
-        iconName: "notifications"
+        icon.name: "notifications"
         text: i18n("Notifications")
         checkable: true
         onTriggered: {
@@ -163,7 +163,7 @@ Kirigami.ApplicationWindow {
         }
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
-        iconName: "system-users"
+        icon.name: "system-users"
         text: i18n("Local")
         checkable: true
         onTriggered: {
@@ -175,7 +175,7 @@ Kirigami.ApplicationWindow {
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
-        iconName: "kstars_xplanet"
+        icon.name: "kstars_xplanet"
         text: i18n("Global")
         checkable: true
         onTriggered: {
@@ -188,7 +188,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action conversationAction: Kirigami.Action {
-        iconName: "tokodon-chat-reply"
+        icon.name: "tokodon-chat-reply"
         text: i18n("Conversation")
         checkable: true
         visible: !Kirigami.Settings.isMobile
@@ -200,7 +200,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action favouritesAction: Kirigami.Action {
-        iconName: "favorite"
+        icon.name: "favorite"
         text: i18n("Favourites")
         checkable: true
         visible: !Kirigami.Settings.isMobile
@@ -214,7 +214,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action bookmarksAction: Kirigami.Action {
-        iconName: "bookmarks"
+        icon.name: "bookmarks"
         text: i18n("Bookmarks")
         checkable: true
         visible: !Kirigami.Settings.isMobile
