@@ -36,7 +36,7 @@ ColumnLayout {
                     } else if (root.poll.votesCount === 0) {
                         return ''
                     } else {
-                        return i18nc("Votes percentage", "%1%", votedPollDelegate.modelData.votesCount / root.poll.votesCount * 100)
+                        return i18nc("Votes percentage", "%1%", Math.round(votedPollDelegate.modelData.votesCount / root.poll.votesCount * 100))
                     }
                     Layout.alignment: Qt.AlignVCenter
                     Layout.minimumWidth: root.poll.votesCount !== 0 ? Kirigami.Units.gridUnit * 2 : 0
