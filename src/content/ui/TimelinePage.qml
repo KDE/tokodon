@@ -48,11 +48,13 @@ Kirigami.ScrollablePage {
     Connections {
         target: Navigation
         function onOpenFullScreenImage(attachments, currentIndex) {
-            root.dialog = fullScreenImage.createObject(parent, {
-                model: attachments,
-                currentIndex: currentIndex,
-            });
-            root.dialog.open();
+            if (root.isCurrentPage) {
+                root.dialog = fullScreenImage.createObject(parent, {
+                    model: attachments,
+                    currentIndex: currentIndex,
+                });
+                root.dialog.open();
+            }
         }
     }
 
