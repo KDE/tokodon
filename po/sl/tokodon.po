@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:58+0000\n"
-"PO-Revision-Date: 2023-01-23 07:04+0100\n"
+"PO-Revision-Date: 2023-01-28 10:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: abstractaccount.cpp:405
@@ -901,18 +901,16 @@ msgid "Like"
 msgstr "Podobno"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:348
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:364
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "Show more options"
 msgid "More"
-msgstr "Prikaži več"
+msgstr "Več"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
