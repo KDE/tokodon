@@ -80,7 +80,7 @@ MastoPage {
         QQC2.TextArea {
             id: textArea
             placeholderText: i18n("What's new?")
-            text: root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
+            text: root.backend.status
             wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -91,7 +91,11 @@ MastoPage {
             onTextChanged: backend.status = text
             Kirigami.SpellChecking.enabled: true
 
-            Component.onCompleted: textArea.text = root.backend.status
+            Component.onCompleted: {
+                if (root.purpose === StatusComposer.New || root.purpose === StatusComposer.Reply) {
+                    textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
+                }
+            }
 
             ColumnLayout {
                 id: actions
