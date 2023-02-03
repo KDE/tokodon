@@ -10,6 +10,8 @@ import QtQuick.Layouts 1.15
 import QtQml.Models 2.15
 import org.kde.kmasto 1.0
 
+import "./StatusComposer"
+
 Kirigami.ApplicationWindow {
     id: appwindow
 
@@ -42,7 +44,7 @@ Kirigami.ApplicationWindow {
 
         function onOpenStatusComposer() {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: "new"
+                purpose: StatusComposer.New
             });
         }
 
@@ -51,7 +53,7 @@ Kirigami.ApplicationWindow {
                 mentions.push(`@${authorIdentity.account}`);
             }
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: "reply",
+                purpose: StatusComposer.Reply,
                 inReplyTo: inReplyTo,
                 mentions: mentions,
                 visibility: visibility,

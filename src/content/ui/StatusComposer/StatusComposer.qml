@@ -12,7 +12,13 @@ import '..'
 MastoPage {
     id: root
 
-    property string purpose: ''
+    enum Purpose {
+        New,
+        Reply,
+        Redraft
+    }
+
+    property var purpose
     property string inReplyTo: ''
     property var mentions: []
     property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
@@ -29,14 +35,14 @@ MastoPage {
     property PostEditorBackend backend: defaultBackend
 
     title: {
-        switch (purpose) {
-            case "edit":
+        switch (root.purpose) {
+            case StatusComposer.Edit:
                 return i18n("Edit this toot")
-            case "reply":
+            case StatusComposer.Reply:
                 return i18n("Reply to this toot")
-            case "redraft":
+            case StatusComposer.Redraft:
                 return i18n("Rewrite this toot")
-            case "new":
+            case StatusComposer.New:
                 return i18n("Write a new toot")
         }
     }
@@ -228,7 +234,7 @@ MastoPage {
             enabled: !progress.uploading || textArea.text.length > 0 || backend.attachmentEditorModel.count > 0
             Layout.alignment: Qt.AlignRight
             onClicked: {
-                if(root.purpose == "edit") {
+                if(root.purpose === StatusComposer.Edit) {
                     backend.edit()
                 } else {
                     backend.save()

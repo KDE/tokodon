@@ -8,6 +8,7 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 import "./StatusDelegate"
+import "./StatusComposer"
 
 Kirigami.ScrollablePage {
     id: timelinePage
@@ -65,6 +66,7 @@ Kirigami.ScrollablePage {
             target: notificationModel
             function onPostSourceReady(backend) {
                 pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                    purpose: StatusComposer.Edit,
                     backend: backend
                 });
             }

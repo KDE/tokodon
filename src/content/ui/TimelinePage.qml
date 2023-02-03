@@ -7,6 +7,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import './StatusDelegate'
+import './StatusComposer'
 
 Kirigami.ScrollablePage {
     id: root
@@ -62,7 +63,7 @@ Kirigami.ScrollablePage {
         target: root.model
         function onPostSourceReady(backend, isEdit) {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: isEdit ? "edit" : "redraft",
+                purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                 backend: backend
             });
         }
