@@ -71,6 +71,8 @@ QVariant ConversationModel::data(const QModelIndex &index, int role) const
 
 void ConversationModel::fetchConversation(AbstractAccount *account)
 {
+    setLoading(true);
+
     account->get(account->apiUrl("/api/v1/conversations"), true, this, [account, this](QNetworkReply *reply) {
         beginResetModel();
         m_conversations.clear();
@@ -94,6 +96,7 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
                 obj["id"].toString(),
             });
         }
+        setLoading(false);
         endResetModel();
     });
 }
