@@ -237,9 +237,8 @@ TimelinePage {
                     textFormat: TextEdit.PlainText
                     readOnly: true
                     Layout.fillWidth: true
-                    Layout.leftMargin: Kirigami.Units.smallSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
                     background: null
+                    topPadding: 0
                 }
                 Repeater {
                     model: accountInfo.model.identity.fields
@@ -371,6 +370,10 @@ TimelinePage {
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    leftPadding: 0
+                    rightPadding: 0
+                    bottomPadding: 0
+                    topPadding: 0
                     background: null
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
