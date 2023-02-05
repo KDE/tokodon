@@ -264,7 +264,7 @@ a{
                 background: null
                 wrapMode: Text.Wrap
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
-                selectByMouse: !Kirigami.Settings.isMobile
+                selectByMouse: root.expandedPost
                 // TODO handle opening profile page in tokodon
                 onLinkActivated: {
                     if (link.startsWith('hashtag:/')) {
