@@ -115,5 +115,10 @@ Kirigami.ScrollablePage {
             text: i18n("Loading...")
             visible: listview.count === 0 && listview.model.loading
         }
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No Notifications")
+            visible: listview.count === 0 && !listview.model.loading
+        }
     }
 }

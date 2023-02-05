@@ -23,5 +23,16 @@ Kirigami.ScrollablePage {
                 conversationModel.markAsRead(conversationId)
             }
         }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("Loading...")
+            visible: conversationView.count === 0 && conversationView.model.loading
+        }
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No Conversations")
+            visible: conversationView.count === 0 && !conversationView.model.loading
+        }
     }
 }
