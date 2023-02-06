@@ -17,8 +17,6 @@ AccountManager::AccountManager(QObject *parent)
 {
     QSettings settings;
     migrateSettings(settings);
-    loadFromSettings(settings);
-
     connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (account != nullptr) {
             account->checkForFollowRequests();

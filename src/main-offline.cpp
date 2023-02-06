@@ -34,12 +34,12 @@
 #include "accountmanager.h"
 #include "accountmodel.h"
 #include "attachmenteditormodel.h"
+#include "autotests/mockaccount.h"
 #include "blurhashimageprovider.h"
 #include "clipboard.h"
 #include "config.h"
 #include "conversationmodel.h"
 #include "filehelper.h"
-#include "languagemodel.h"
 #include "linkpaginatedtimelinemodel.h"
 #include "maintimelinemodel.h"
 #include "networkaccessmanagerfactory.h"
@@ -47,22 +47,16 @@
 #include "networkrequestprogress.h"
 #include "notificationmodel.h"
 #include "poll.h"
-#include "polltimemodel.h"
 #include "post.h"
 #include "posteditorbackend.h"
 #include "profileeditor.h"
 #include "searchmodel.h"
-#include "socialgraphmodel.h"
 #include "tagsmodel.h"
 #include "threadmodel.h"
 #include "timelinemodel.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
-#endif
-
-#ifdef Q_OS_WINDOWS
-#include <Windows.h>
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -79,7 +73,6 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
-    QIcon::setThemeName("tokodon");
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
@@ -123,14 +116,6 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
 
-    QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
-    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
-
-    about.setupCommandLine(&parser);
-    parser.process(app);
-    about.processCommandLine(&parser);
-
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
@@ -143,9 +128,9 @@ int main(int argc, char *argv[])
         colorScheme.apply(config->colorScheme());
     }
 #endif
-
-    QSettings settings;
-    AccountManager::instance().loadFromSettings(settings);
+    auto account = new MockAccount();
+    AccountManager::instance().addAccount(account);
+    AccountManager::instance().selectAccount(account);
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
@@ -153,7 +138,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<LinkPaginationTimelineModel>("org.kde.kmasto", 1, 0, "LinkPaginationTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
-    qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
@@ -162,7 +146,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<NetworkRequestProgress>("org.kde.kmasto", 1, 0, "NetworkRequestProgress");
     qmlRegisterType<PostEditorBackend>("org.kde.kmasto", 1, 0, "PostEditorBackend");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
-    qmlRegisterType<PollTimeModel>("org.kde.kmasto", 1, 0, "PollTimeModel");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);
     qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
@@ -172,17 +155,13 @@ int main(int argc, char *argv[])
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
-    qRegisterMetaType<Post *>("Post*");
     qRegisterMetaType<Poll *>("Poll*");
-    qRegisterMetaType<Card *>("Card*");
-    qRegisterMetaType<Application *>("Application*");
     qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
-    qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
@@ -190,6 +169,13 @@ int main(int argc, char *argv[])
 
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
+
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
 
     // Controller::instance().setAboutData(about);
 
@@ -200,30 +186,14 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    if (parser.positionalArguments().length() > 0) {
-        NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
-    }
-
 #ifdef HAVE_KDBUSADDONS
-    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
+    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
         const auto rootObjects = engine.rootObjects();
         for (auto obj : rootObjects) {
             auto view = qobject_cast<QQuickWindow *>(obj);
             if (view) {
                 KWindowSystem::updateStartupId(view);
                 KWindowSystem::activateWindow(view);
-
-                if (arguments.isEmpty()) {
-                    return;
-                }
-
-                auto args = arguments;
-                args.removeFirst();
-
-                if (arguments.length() >= 1) {
-                    NetworkController::instance().openWebApLink(args[0]);
-                }
-
                 return;
             }
         }

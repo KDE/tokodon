@@ -84,8 +84,19 @@ add_executable(tokodon
     resources.qrc
 )
 
+add_definitions(-DDATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/autotests/data")
+
+add_executable(tokodon-offline
+    main-offline.cpp
+    autotests/mockaccount.cpp
+    resources.qrc
+)
+
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(tokodon PRIVATE tokodon_static)
+
+target_include_directories(tokodon-offline PRIVATE ${CMAKE_BINARY_DIR})
+target_link_libraries(tokodon-offline PRIVATE tokodon_static)
 
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)

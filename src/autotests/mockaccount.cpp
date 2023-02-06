@@ -8,6 +8,9 @@ MockAccount::MockAccount(QObject *parent)
     : AbstractAccount(parent)
 {
     registerGet(apiUrl("/api/v1/preferences"), new TestReply("preferences.json", this));
+
+    registerPost(QString("/api/v1/apps"), new TestReply("registration.json", this));
+
     m_preferences = new Preferences(this);
     Q_EMIT authenticated();
 }
