@@ -7,12 +7,15 @@
 #include "config.h"
 #include "networkaccessmanagerfactory.h"
 
+void migrateSettings(QSettings &settings);
+
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
 {
     QSettings settings;
+    migrateSettings(settings);
     loadFromSettings(settings);
 }
 
@@ -234,4 +237,38 @@ void AccountManager::setAboutData(const KAboutData &aboutData)
 {
     m_aboutData = aboutData;
     Q_EMIT aboutDataChanged();
+}
+
+void migrateSettings(QSettings &settings) {
+    const auto version = settings.value("settingsVersion").toInt();
+    if (version == 0) {
+        qDebug() << "Migrating v0 settings to v1";
+        settings.beginGroup("accounts");
+        const auto childGroups = settings.childGroups();
+        // we are just going to re-index
+        qDebug() << "Account list is" << childGroups;
+        for (int i = 0; i < childGroups.size(); i++){
+            // we're going to move all of this into an array instead
+            const auto child = childGroups[i];
+            settings.beginGroup(child);
+            const auto keysInChild = settings.childKeys();
+            const auto childName = settings.value("name").toString();
+            const auto childInstance = QUrl(settings.value("instance_uri").toString()).host();
+            const auto newName = childName + QString("@") + childInstance;
+            qDebug() << "Rewriting key from " << child << " to " << newName;
+            settings.endGroup();
+            for (const auto &key: keysInChild) {
+                settings.beginGroup(child);
+                const auto value = settings.value(key);
+                settings.endGroup(); // child
+                settings.beginGroup(newName);
+                settings.setValue(key, value);
+                settings.endGroup();
+            }
+            // after porting over the settings, remove it
+            settings.remove(child);
+        }
+        settings.endGroup();
+        settings.setValue("settingsVersion", 1);
+    }
 }
