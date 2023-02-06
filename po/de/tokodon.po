@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:57+0000\n"
+"POT-Creation-Date: 2023-02-06 01:00+0000\n"
 "PO-Revision-Date: 2022-06-27 00:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -181,32 +181,32 @@ msgstr "Einstellungen"
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:298
 #, kde-format
 msgid "Note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:307
+#: content/ui/AccountInfo.qml:306
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:322
+#: content/ui/AccountInfo.qml:321
 #, kde-format
 msgid "Click to add a note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:388
+#: content/ui/AccountInfo.qml:394
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 Tröts"
 
-#: content/ui/AccountInfo.qml:392
+#: content/ui/AccountInfo.qml:398
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 Abonnenten"
 
-#: content/ui/AccountInfo.qml:397
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "%1 following"
 msgstr "%1 Abonnierte"
@@ -257,6 +257,20 @@ msgstr "Bitte geben Sie das erzeugte Token ein."
 #, kde-format
 msgid "Conversations"
 msgstr ""
+
+#: content/ui/ConversationPage.qml:29 content/ui/NotificationPage.qml:115
+#: content/ui/TimelinePage.qml:79
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgid "Loading..."
+msgstr "Wird geladen"
+
+#: content/ui/ConversationPage.qml:34
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "No Conversations"
+msgstr "Nennungen"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -385,11 +399,11 @@ msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Nennungen"
 
-#: content/ui/NotificationPage.qml:115 content/ui/TimelinePage.qml:78
+#: content/ui/NotificationPage.qml:120
 #, fuzzy, kde-format
-#| msgid "Loading"
-msgid "Loading..."
-msgstr "Wird geladen"
+#| msgid "Notifications"
+msgid "No Notifications"
+msgstr "Benachrichtigungen"
 
 #: content/ui/SearchField.qml:215
 #, kde-format
@@ -824,7 +838,7 @@ msgid "Copy link to this post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#: content/ui/StatusDelegate/StatusDelegate.qml:348
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -910,37 +924,37 @@ msgstr "Mehr anzeigen"
 msgid "Show More"
 msgstr "Mehr anzeigen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:315
+#: content/ui/StatusDelegate/StatusDelegate.qml:319
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:319
+#: content/ui/StatusDelegate/StatusDelegate.qml:323
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:329
+#: content/ui/StatusDelegate/StatusDelegate.qml:333
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:339
+#: content/ui/StatusDelegate/StatusDelegate.qml:343
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Mag ich"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:348
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:364
+#: content/ui/StatusDelegate/StatusDelegate.qml:368
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "Show more options"
