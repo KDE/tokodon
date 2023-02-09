@@ -144,15 +144,20 @@ if(ANDROID)
         "folder-chart"
     )
 else()
-    target_link_libraries(tokodon PRIVATE Qt::Widgets)
+    target_link_libraries(tokodon PRIVATE Qt::Widgets KF${QT_MAJOR_VERSION}::ConfigWidgets)
     target_compile_definitions(tokodon PRIVATE -DHAVE_COLORSCHEME)
-    target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::ConfigWidgets)
+
+    target_link_libraries(tokodon-offline PRIVATE Qt::Widgets KF${QT_MAJOR_VERSION}::ConfigWidgets)
+    target_compile_definitions(tokodon-offline PRIVATE -DHAVE_COLORSCHEME)
 endif()
 
 if (TARGET KF${QT_MAJOR_VERSION}::DBusAddons)
     target_link_libraries(tokodon PRIVATE KF${QT_MAJOR_VERSION}::DBusAddons KF${QT_MAJOR_VERSION}::WindowSystem)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
-endif ()
+
+    target_link_libraries(tokodon-offline PRIVATE KF${QT_MAJOR_VERSION}::DBusAddons KF${QT_MAJOR_VERSION}::WindowSystem)
+    target_compile_definitions(tokodon-offline PRIVATE -DHAVE_KDBUSADDONS)
+endif()
 
 if(ANDROID)
     target_sources(tokodon PRIVATE notifyrc.qrc)
