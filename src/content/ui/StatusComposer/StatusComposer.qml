@@ -35,6 +35,8 @@ MastoPage {
 
     property PostEditorBackend backend: defaultBackend
 
+    readonly property bool isPollValid: backend.poll !== undefined ? backend.poll.isValid : true
+
     title: {
         switch (root.purpose) {
             case StatusComposer.Edit:
@@ -148,6 +150,8 @@ MastoPage {
                 Poll {
                     visible: addPool.checked
                     Layout.fillWidth: true
+
+                    poll: backend.poll
                 }
 
                 QQC2.ToolBar {
@@ -157,10 +161,9 @@ MastoPage {
 
                     RowLayout {
                         QQC2.ToolButton {
-                            visible: !addPool.checked
+                            enabled: backend.attachmentEditorModel.count < 4 && !addPool.checked
                             icon.name: "mail-attachment-symbolic"
                             onClicked: fileDialog.open()
-                            enabled: backend.attachmentEditorModel.count < 4
                             FileDialog {
                                 id: fileDialog
                                 folder: shortcuts.home
@@ -176,9 +179,12 @@ MastoPage {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
                             checkable: true
+                            enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
                             QQC2.ToolTip.text: i18n("Add Poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
+
+                            onToggled: backend.pollEnabled = checked
                         }
 
                         QQC2.ToolButton {
@@ -253,7 +259,7 @@ MastoPage {
 
         QQC2.Button {
             text: i18n("Send")
-            enabled: !progress.uploading || textArea.text.length > 0 || backend.attachmentEditorModel.count > 0
+            enabled: isPollValid && (!progress.uploading || textArea.text.length > 0 || backend.attachmentEditorModel.count > 0)
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 if(root.purpose === StatusComposer.Edit) {

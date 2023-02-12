@@ -16,6 +16,7 @@ PostEditorBackend::PostEditorBackend(QObject *parent)
     : QObject(parent)
     , m_idenpotencyKey(QUuid::createUuid().toString())
     , m_language(AccountManager::instance().selectedAccount()->preferences()->defaultLanguage())
+    , m_poll(new PollEditorBackend(this))
     , m_account(AccountManager::instance().selectedAccount())
     , m_attachmentEditorModel(new AttachmentEditorModel(this, m_account))
 {
@@ -184,6 +185,10 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
 
     obj["media_ids"] = media_ids;
     obj["language"] = m_language;
+
+    if (m_pollEnabled) {
+        obj["poll"] = m_poll->toJsonObject();
+    }
 
     return QJsonDocument(obj);
 }

@@ -54,7 +54,9 @@ set(tokodon_src
     maintimelinemodel.cpp
     profileeditor.cpp
     linkpaginatedtimelinemodel.cpp
+    polltimemodel.cpp
     languagemodel.cpp
+    polleditorbackend.cpp
     ${debug_files_SRCS}
 )
 

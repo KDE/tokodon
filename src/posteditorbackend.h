@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "poll.h"
+#include "polleditorbackend.h"
 #include "post.h"
 #include <QObject>
 #include <memory>
@@ -22,6 +24,8 @@ class PostEditorBackend : public QObject
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
     Q_PROPERTY(AttachmentEditorModel *attachmentEditorModel READ attachmentEditorModel CONSTANT)
     Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
+    Q_PROPERTY(PollEditorBackend *poll MEMBER m_poll CONSTANT)
+    Q_PROPERTY(bool pollEnabled MEMBER m_pollEnabled NOTIFY pollEnabledChanged)
 
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
 
@@ -88,6 +92,8 @@ Q_SIGNALS:
 
     void posted(QString error);
 
+    void pollEnabledChanged();
+
 private:
     QJsonDocument toJsonDocument() const;
 
@@ -100,6 +106,8 @@ private:
     QDateTime m_scheduledAt;
     QStringList m_mentions;
     bool m_sensitive = false;
+    PollEditorBackend *m_poll = nullptr;
+    bool m_pollEnabled = false;
     Post::Visibility m_visibility;
     AbstractAccount *m_account = nullptr;
     AttachmentEditorModel *m_attachmentEditorModel = nullptr;
