@@ -171,6 +171,7 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
+    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
 
     about.setupCommandLine(&parser);
     parser.process(app);
@@ -185,14 +186,30 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    if (parser.positionalArguments().length() > 0) {
+        NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
+    }
+
 #ifdef HAVE_KDBUSADDONS
-    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList & /*arguments*/, const QString & /*workingDirectory*/) {
+    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
         const auto rootObjects = engine.rootObjects();
         for (auto obj : rootObjects) {
             auto view = qobject_cast<QQuickWindow *>(obj);
             if (view) {
                 KWindowSystem::updateStartupId(view);
                 KWindowSystem::activateWindow(view);
+
+                if (arguments.isEmpty()) {
+                    return;
+                }
+
+                auto args = arguments;
+                args.removeFirst();
+
+                if (arguments.length() >= 1) {
+                    NetworkController::instance().openWebApLink(args[0]);
+                }
+
                 return;
             }
         }

@@ -55,6 +55,10 @@ void ThreadModel::fillTimeline(const QString &fromId)
 
     setLoading(true);
 
+    if (!m_account) {
+        m_account = AccountManager::instance().selectedAccount();
+    }
+
     const auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
     const auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
     auto thread = std::make_shared<QList<Post *>>();

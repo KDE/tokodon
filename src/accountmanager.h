@@ -47,30 +47,50 @@ public:
     [[nodiscard]] KAboutData aboutData() const;
 
     int rowCount(const QModelIndex &index = QModelIndex()) const override;
+
     QVariant data(const QModelIndex &index, int role) const override;
+
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false);
 
 Q_SIGNALS:
+
     void accountAdded(AbstractAccount *account);
+
     void accountRemoved(AbstractAccount *account);
+
     void accountsChanged();
+
+    void accountsReady();
+
     void accountSelected(AbstractAccount *account);
+
     void identityChanged(AbstractAccount *account);
+
     void fetchedTimeline(AbstractAccount *account, QString original_name, QList<Post *> posts);
+
     void invalidated(AbstractAccount *account);
+
     void fetchedInstanceMetadata(AbstractAccount *account);
+
     void invalidatedPost(AbstractAccount *account, Post *post);
+
     void notification(AbstractAccount *account, std::shared_ptr<Notification> n);
+
     void aboutDataChanged();
 
+    void webapLink(QString id);
+
 public Q_SLOTS:
+
     void childIdentityChanged(AbstractAccount *account);
 
 private:
     explicit AccountManager(QObject *parent = nullptr);
+
     virtual ~AccountManager();
+
     QList<AbstractAccount *> m_accounts;
     AbstractAccount *m_selected_account;
     KAboutData m_aboutData;

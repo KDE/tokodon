@@ -46,6 +46,18 @@ Kirigami.ApplicationWindow {
     }
 
     Connections {
+        target: Controller
+
+        function onOpenPost(id) {
+            Navigation.openThread(id)
+        }
+
+        function onOpenAccount(id) {
+            Navigation.openAccount(id)
+        }
+    }
+
+    Connections {
         target: Navigation
 
         function onOpenStatusComposer() {

@@ -125,8 +125,9 @@ void AccountManager::addAccount(AbstractAccount *account)
 void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
     auto config = Config::self();
-    if (selectedAccount() == nullptr || account->identity()->account() == config->lastUsedAccount()) {
+    if (selectedAccount() == nullptr && account->identity()->account() == config->lastUsedAccount()) {
         selectAccount(account, false);
+        Q_EMIT accountsReady();
     }
 
     Q_EMIT identityChanged(account);
