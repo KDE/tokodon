@@ -55,6 +55,7 @@
 #include "tagsmodel.h"
 #include "threadmodel.h"
 #include "timelinemodel.h"
+#include "autotests/helperreply.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
