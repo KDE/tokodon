@@ -34,6 +34,7 @@
 #include "accountmanager.h"
 #include "accountmodel.h"
 #include "attachmenteditormodel.h"
+#include "autotests/helperreply.h"
 #include "autotests/mockaccount.h"
 #include "blurhashimageprovider.h"
 #include "clipboard.h"
@@ -131,6 +132,9 @@ int main(int argc, char *argv[])
     auto account = new MockAccount();
     AccountManager::instance().addAccount(account);
     AccountManager::instance().selectAccount(account);
+    QUrl url = account->apiUrl("/api/v2/search");
+    url.setQuery(QUrlQuery{{"q", "myQuery"}});
+    account->registerGet(url, new TestReply("search-result.json", account));
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
