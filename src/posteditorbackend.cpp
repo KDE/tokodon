@@ -192,6 +192,8 @@ void PostEditorBackend::save()
             auto doc = QJsonDocument::fromJson(data);
             auto obj = doc.object();
             qDebug() << "Message sent:" << obj;
+
+            Q_EMIT posted();
         },
         headers);
 }

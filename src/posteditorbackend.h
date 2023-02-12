@@ -62,15 +62,26 @@ public Q_SLOTS:
     void save();
 
 Q_SIGNALS:
+
     void statusChanged();
+
     void spoilerTextChanged();
+
     void inReplyToChanged();
+
     void visibilityChanged();
+
     void languageChanged();
+
     void scheduledAtChanged();
+
     void mentionsChanged();
+
     void accountChanged();
+
     void sensitiveChanged();
+
+    void posted();
 
 private:
     QJsonDocument toJsonDocument() const;

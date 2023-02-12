@@ -27,6 +27,13 @@ MastoPage {
 
     title: i18n("Write a new toot")
 
+    Connections {
+        target: backend
+        function onPosted() {
+            applicationWindow().pageStack.layers.pop();
+        }
+    }
+
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
@@ -192,7 +199,6 @@ MastoPage {
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 backend.save()
-                applicationWindow().pageStack.layers.pop();
             }
         }
     }
