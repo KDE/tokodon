@@ -28,12 +28,12 @@ void NetworkRequestProgress::setReply(QNetworkReply *reply)
             if (bytesTotal != 0) {
                 setProgress(progress);
             } else {
-                Q_EMIT uploadingChanged();
+                Q_EMIT progressChanged();
             }
         });
         connect(reply, &QNetworkReply::finished, this, [this] {
             m_reply = nullptr;
-            Q_EMIT uploadingChanged();
+            Q_EMIT progressChanged();
         });
         setProgress(reply->isFinished() ? 100 : 0);
     }

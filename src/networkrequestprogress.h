@@ -13,7 +13,7 @@ class NetworkRequestProgress : public QObject
 
     Q_PROPERTY(QNetworkReply *reply READ reply WRITE setReply NOTIFY replyChanged)
 
-    Q_PROPERTY(bool uploading READ uploading NOTIFY uploadingChanged NOTIFY replyChanged)
+    Q_PROPERTY(bool uploading READ uploading NOTIFY progressChanged)
     Q_PROPERTY(int progress READ progress NOTIFY progressChanged)
 
 public:
@@ -29,7 +29,6 @@ public:
 
 Q_SIGNALS:
     void replyChanged();
-    void uploadingChanged();
     void progressChanged();
 
 private:

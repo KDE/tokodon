@@ -91,6 +91,7 @@ MastoPage {
                     to: 100
                     visible: progress.uploading
                     value: progress.progress
+                    indeterminate: progress.progress === 100 && progress.uploading
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
                 }
