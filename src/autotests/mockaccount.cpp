@@ -35,6 +35,7 @@ void MockAccount::post(const QUrl &url,
                        bool authenticated,
                        QObject *parent,
                        std::function<void(QNetworkReply *)> callback,
+                       std::function<void(QNetworkReply *)> errorCallback,
                        QHash<QByteArray, QByteArray> headers)
 {
     Q_UNUSED(doc)

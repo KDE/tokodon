@@ -120,6 +120,7 @@ public:
                       bool authenticated,
                       QObject *parent,
                       std::function<void(QNetworkReply *)> callback,
+                      std::function<void(QNetworkReply *)> errorCallback = nullptr,
                       QHash<QByteArray, QByteArray> headers = {}) = 0;
 
     /// Make an HTTP POST request to the mastodon server

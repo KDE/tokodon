@@ -63,6 +63,7 @@ void Account::post(const QUrl &url,
                    bool authenticated,
                    QObject *parent,
                    std::function<void(QNetworkReply *)> reply_cb,
+                   std::function<void(QNetworkReply *)> error_cb,
                    QHash<QByteArray, QByteArray> headers)
 {
     auto post_data = doc.toJson();
@@ -76,7 +77,7 @@ void Account::post(const QUrl &url,
 
     auto reply = m_qnam->post(request, post_data);
     reply->setParent(parent);
-    handleReply(reply, reply_cb);
+    handleReply(reply, reply_cb, error_cb);
 }
 
 void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)

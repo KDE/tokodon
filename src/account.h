@@ -45,6 +45,7 @@ public:
               bool authenticated,
               QObject *parent,
               std::function<void(QNetworkReply *)> callback,
+              std::function<void(QNetworkReply *)> errorCallback,
               QHash<QByteArray, QByteArray> headers = {}) override;
     void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
     QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
