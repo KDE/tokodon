@@ -81,7 +81,7 @@ Q_SIGNALS:
 
     void sensitiveChanged();
 
-    void posted();
+    void posted(QString error);
 
 private:
     QJsonDocument toJsonDocument() const;

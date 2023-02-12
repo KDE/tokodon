@@ -29,14 +29,26 @@ MastoPage {
 
     Connections {
         target: backend
-        function onPosted() {
-            applicationWindow().pageStack.layers.pop();
+        function onPosted(error) {
+            if (error.length === 0) {
+                applicationWindow().pageStack.layers.pop();
+            } else {
+                inlineMessage.text = error
+                console.log(error);
+            }
         }
     }
 
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
+
+        Kirigami.InlineMessage {
+            id: inlineMessage
+            Layout.fillWidth: true
+            visible: text.length !== 0
+            type: Kirigami.MessageType.Error
+        }
 
         QQC2.TextField {
             placeholderText: i18n("Content Warning")

@@ -6,6 +6,7 @@
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
 #include "utils.h"
+#include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QUuid>
@@ -187,13 +188,19 @@ void PostEditorBackend::save()
         doc,
         true,
         this,
+        [=](QNetworkReply *) {
+            Q_EMIT posted("");
+        },
         [=](QNetworkReply *reply) {
             auto data = reply->readAll();
             auto doc = QJsonDocument::fromJson(data);
             auto obj = doc.object();
-            qDebug() << "Message sent:" << obj;
 
-            Q_EMIT posted();
+            if (obj.contains("error")) {
+                Q_EMIT posted(obj["error"].toString());
+            } else {
+                Q_EMIT posted(i18n("An unknown error occurred."));
+            }
         },
         headers);
 }
