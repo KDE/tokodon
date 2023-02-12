@@ -14,10 +14,12 @@ QQC2.Menu {
     required property string url
     required property bool bookmarked
     required property bool isSelf
+    required property bool expandedPost
 
     QQC2.MenuItem {
         text: i18n("Expand this post")
-        onTriggered: Navigation.openThread(root.id)
+        onTriggered: Navigation.openThread(root.postId)
+        visible: !root.expandedPost
     }
 
     QQC2.MenuItem {

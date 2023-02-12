@@ -366,6 +366,7 @@ a{
                     url: root.url
                     bookmarked: root.bookmarked
                     isSelf: root.isSelf
+                    expandedPost: root.expandedPost
                 }
 
                 QQC2.ToolTip.text: i18nc("Show more options", "More")
