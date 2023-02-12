@@ -179,7 +179,6 @@ MastoPage {
                             QQC2.ToolTip.text: i18n("Add Poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
-                            enabled: false
                         }
 
                         QQC2.ToolButton {
