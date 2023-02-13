@@ -19,12 +19,16 @@ static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {"unknown", Attachment::AttachmentType::Unknown},
 };
 
-Attachment::Attachment(const QJsonObject &obj)
+Attachment::Attachment(QObject *parent)
+    : QObject(parent)
+{
+}
+
+Attachment::Attachment(const QJsonObject &obj, QObject *parent)
+    : QObject(parent)
 {
     fromJson(obj);
 }
-
-Attachment::~Attachment() = default;
 
 void Attachment::fromJson(const QJsonObject &obj)
 {
@@ -107,9 +111,6 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
 Post::~Post()
 {
-    for (auto attachment : m_attachments) {
-        delete attachment;
-    }
     delete m_poll;
 }
 
@@ -191,13 +192,13 @@ void Post::fromJson(QJsonObject obj)
 void Post::addAttachments(const QJsonArray &attachments)
 {
     for (const auto &attachment : attachments) {
-        m_attachments.append(new Attachment{attachment.toObject()});
+        m_attachments.append(new Attachment{attachment.toObject(), this});
     }
 }
 
 void Post::addAttachment(const QJsonObject &attachment)
 {
-    auto att = new Attachment{attachment};
+    auto att = new Attachment{attachment, this};
     if (att->m_url.isEmpty()) {
         return;
     }

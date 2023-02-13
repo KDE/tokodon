@@ -78,9 +78,8 @@ class Attachment : public QObject
     Q_PROPERTY(int originalHeight MEMBER m_originalHeight CONSTANT)
 
 public:
-	Attachment() = default;
-    explicit Attachment(const QJsonObject &object);
-    ~Attachment();
+    explicit Attachment(QObject *parent = nullptr);
+    explicit Attachment(const QJsonObject &object, QObject *parent = nullptr);
 
     enum AttachmentType {
         Unknown,

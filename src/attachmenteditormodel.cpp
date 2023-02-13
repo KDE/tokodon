@@ -70,7 +70,7 @@ QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
         }
 
         beginInsertRows({}, m_attachments.count(), m_attachments.count());
-        m_attachments.append(new Attachment{doc.object()});
+        m_attachments.append(new Attachment{doc.object(), this});
         endInsertRows();
         Q_EMIT countChanged();
     });
