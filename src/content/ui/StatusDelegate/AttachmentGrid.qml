@@ -96,12 +96,10 @@ QQC2.Control {
                             }
 
                             TapHandler {
-                                onTapped: {
-                                    if (root.isSensitive) {
-                                        root.isSensitive = false;
-                                    } else {
-                                        Navigation.openFullScreenImage(root.attachments, img.index);
-                                    }
+                                onTapped: if (root.isSensitive) {
+                                    root.isSensitive = false;
+                                } else {
+                                    Navigation.openFullScreenImage(root.attachments, img.index);
                                 }
                             }
 
@@ -140,12 +138,10 @@ QQC2.Control {
                         isSensitive: root.isSensitive
 
                         TapHandler {
-                            onTapped: {
-                                if (root.isSensitive) {
-                                    root.isSensitive = false;
-                                } else {
-                                    Navigation.openFullScreenImage(root.attachments, parent.index);
-                                }
+                            onTapped: if (root.isSensitive) {
+                                root.isSensitive = false;
+                            } else {
+                                Navigation.openFullScreenImage(root.attachments, parent.index);
                             }
                         }
                     }
