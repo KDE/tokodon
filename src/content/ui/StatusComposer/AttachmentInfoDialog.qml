@@ -11,18 +11,28 @@ QQC2.Dialog {
 
     property alias text: textArea.text
 
-    title: i18n("Add a description")
-
     x: Math.round((parent.width - width) / 2)
     y: Math.round((parent.height - height) / 2)
 
     implicitHeight: Kirigami.Units.gridUnit * 20
     implicitWidth: Kirigami.Units.gridUnit * 20
 
+    padding: Kirigami.Units.largeSpacing
+    bottomPadding: 0
+
+    modal: true
+
+    standardButtons: QQC2.Dialog.Apply | QQC2.Dialog.Cancel
+
     onApplied: root.close()
     onRejected: root.close()
 
     contentItem: ColumnLayout {
+        Kirigami.Heading {
+            text: i18n("Add a description")
+            Layout.fillWidth: true
+        }
+
         QQC2.TextArea {
             id: textArea
             Layout.fillWidth: true
@@ -30,5 +40,24 @@ QQC2.Dialog {
         }
     }
 
-    standardButtons: QQC2.Dialog.Apply | QQC2.Dialog.Cancel
+    Component.onCompleted: footer.padding = Kirigami.Units.largeSpacing;
+
+    background: Kirigami.ShadowedRectangle {
+        radius: 7
+        color: Kirigami.Theme.backgroundColor
+
+        border {
+            width: 1
+            color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.3);
+        }
+
+        shadow {
+            size: Kirigami.Units.gridUnit
+            yOffset: 4
+            color: Qt.rgba(0, 0, 0, 0.2)
+        }
+
+        Kirigami.Theme.inherit: false
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+    }
 }
