@@ -108,6 +108,7 @@ QQC2.Control {
             from: 40
             duration: Kirigami.Units.longDuration
             to: Kirigami.Units.gridUnit * 20 + 40
+            running: false
         }
 
         NumberAnimation on width {
@@ -116,6 +117,7 @@ QQC2.Control {
             from: searchField.width
             duration: Kirigami.Units.shortDuration
             to: searchField.width + 40
+            running: false
         }
 
         NumberAnimation on x {
@@ -124,6 +126,7 @@ QQC2.Control {
             from: 0
             to: -20
             duration: Kirigami.Units.shortDuration
+            running: false
         }
 
         NumberAnimation on y {
@@ -132,6 +135,7 @@ QQC2.Control {
             from: 0
             to: -5
             duration: Kirigami.Units.shortDuration
+            running: false
         }
 
         NumberAnimation on height{
@@ -140,6 +144,7 @@ QQC2.Control {
             from: Kirigami.Units.gridUnit * 20 + 40
             duration: Kirigami.Units.longDuration
             to: searchField.heigth + 40
+            running: false
         }
 
         NumberAnimation on width{
@@ -148,6 +153,7 @@ QQC2.Control {
             from: searchField.width + 40
             duration: Kirigami.Units.shortDuration
             to: searchField.width + 30
+            running: false
         }
 
         NumberAnimation on x{
@@ -156,6 +162,7 @@ QQC2.Control {
             from: -20
             to: -15
             duration: Kirigami.Units.shortDuration
+            running: false
         }
 
         NumberAnimation on y{
@@ -164,6 +171,7 @@ QQC2.Control {
             from: -5
             to: -0
             duration: Kirigami.Units.shortDuration
+            running: false
         }
 
         contentItem: ColumnLayout {
