@@ -75,12 +75,12 @@ MediaContainer {
 
     QQC2.Button {
         visible: player.playbackState !== MediaPlayer.PlayingState
-        icon.name: "media-playback-start"
         anchors.centerIn: parent
         onClicked: player.play()
         text: i18n("Play")
-        icon.width: Kirigami.Units.iconSizes.large
-        icon.height: Kirigami.Units.iconSizes.large
-        display: QQC2.Button.IconOnly
+        icon {
+            width: Kirigami.Units.iconSizes.large
+            height: Kirigami.Units.iconSizes.large
+        }
     }
 }
