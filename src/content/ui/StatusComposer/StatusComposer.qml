@@ -233,6 +233,20 @@ MastoPage {
                                 text: i18n("Content Warning")
                             }
                         }
+                        LanguageSelector {
+                            id: languageSelect
+
+                            Accessible.name: tooltip.text
+                            Accessible.description: i18nc("@info:whatsthis Post language selection", "Select the language the post is written in")
+
+                            Component.onCompleted: currentIndex = indexOfValue(backend.language);
+                            onActivated: backend.language = model.getCode(currentIndex);
+
+                            QQC2.ToolTip {
+                                id: tooltip
+                                text: i18nc("@label:listbox Post language selection", "Post Language")
+                            }
+                        }
                     }
                 }
             }

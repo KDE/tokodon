@@ -5,6 +5,7 @@
 #include "abstractaccount.h"
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
+#include "config.h"
 #include "utils.h"
 #include <KLocalizedString>
 #include <QJsonArray>
@@ -14,6 +15,7 @@
 PostEditorBackend::PostEditorBackend(QObject *parent)
     : QObject(parent)
     , m_idenpotencyKey(QUuid::createUuid().toString())
+    , m_language(AccountManager::instance().selectedAccount()->preferences()->defaultLanguage())
     , m_account(AccountManager::instance().selectedAccount())
     , m_attachmentEditorModel(new AttachmentEditorModel(this, m_account))
 {
@@ -181,6 +183,7 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
     }
 
     obj["media_ids"] = media_ids;
+    obj["language"] = m_language;
 
     return QJsonDocument(obj);
 }
