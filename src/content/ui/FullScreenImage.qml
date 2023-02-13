@@ -115,6 +115,46 @@ QQC2.Popup {
             }
         }
 
+        component StandardImageAnimation: NumberAnimation {
+            duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic
+        }
+
+        component StandardRotation: Rotation {
+            required property var item
+            required property var container
+
+            origin {
+                x: item.width / 2
+                y: item.height / 2
+            }
+
+            angle: container.rotationAngle
+
+            Behavior on angle {
+                StandardImageAnimation {}
+            }
+        }
+
+        component StandardScale: Scale {
+            required property var item
+            required property var container
+
+            origin {
+                x: item.width / 2
+                y: item.height / 2
+            }
+
+            xScale: container.scaleFactor
+            yScale: container.scaleFactor
+
+            Behavior on xScale {
+                StandardImageAnimation {}
+            }
+            Behavior on yScale {
+                StandardImageAnimation {}
+            }
+        }
+
         ListView {
             id: view
             Layout.fillWidth: true
@@ -137,6 +177,8 @@ QQC2.Popup {
                         id: imageContainer
                         width: ListView.view.width
                         height: ListView.view.height
+
+                        required property var modelData
 
                         property alias image: imageItem
 
@@ -168,10 +210,10 @@ QQC2.Popup {
                             }
 
                             Behavior on width {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                StandardImageAnimation {}
                             }
                             Behavior on height {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                StandardImageAnimation {}
                             }
 
                             Image {
@@ -183,27 +225,13 @@ QQC2.Popup {
                             }
 
                             transform: [
-                                Rotation {
-                                    origin.x: image.width / 2
-                                    origin.y: image.height / 2
-                                    angle: imageContainer.rotationAngle
-
-                                    Behavior on angle {
-                                        RotationAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                                    }
+                                StandardRotation {
+                                    item: image
+                                    container: imageContainer
                                 },
-                                Scale {
-                                    origin.x: image.width / 2
-                                    origin.y: image.height / 2
-                                    xScale: imageContainer.scaleFactor
-                                    yScale: imageContainer.scaleFactor
-
-                                    Behavior on xScale {
-                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                                    }
-                                    Behavior on yScale {
-                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                                    }
+                                StandardScale {
+                                    item: image
+                                    container: imageContainer
                                 }
                             ]
                         }
@@ -247,10 +275,10 @@ QQC2.Popup {
                             }
 
                             Behavior on width {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                StandardImageAnimation {}
                             }
                             Behavior on height {
-                                NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
+                                StandardImageAnimation {}
                             }
 
                             Image {
@@ -262,18 +290,9 @@ QQC2.Popup {
                             }
 
                             transform: [
-                                Scale {
-                                    origin.x: video.width / 2
-                                    origin.y: video.height / 2
-                                    xScale: videoContainer.scaleFactor
-                                    yScale: videoContainer.scaleFactor
-
-                                    Behavior on xScale {
-                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                                    }
-                                    Behavior on yScale {
-                                        NumberAnimation {duration: Kirigami.Units.longDuration; easing.type: Easing.InOutCubic}
-                                    }
+                                StandardScale {
+                                    item: video
+                                    container: videoContainer
                                 }
                             ]
                         }
