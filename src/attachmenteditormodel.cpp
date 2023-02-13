@@ -13,13 +13,6 @@ AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *a
 {
 }
 
-AttachmentEditorModel::~AttachmentEditorModel()
-{
-    for (auto attachment : m_attachments) {
-        delete attachment;
-    }
-}
-
 int AttachmentEditorModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
