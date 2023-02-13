@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:00+0000\n"
+"POT-Creation-Date: 2023-02-13 00:57+0000\n"
 "PO-Revision-Date: 2023-02-08 21:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -62,18 +62,18 @@ msgstr "Hesap tanıtımı kaldırılamadı"
 msgid "Could not edit note about an account"
 msgstr "Bir hesap üzerine olan not düzenlenemedi"
 
-#: abstracttimelinemodel.cpp:134
+#: abstracttimelinemodel.cpp:136
 #, kde-format
 msgctxt "hour:minute"
 msgid "%1:%2"
 msgstr "%1:%2"
 
-#: abstracttimelinemodel.cpp:138
+#: abstracttimelinemodel.cpp:140
 #, kde-format
 msgid "%1h"
 msgstr "%1 sa"
 
-#: abstracttimelinemodel.cpp:140
+#: abstracttimelinemodel.cpp:142
 #, kde-format
 msgid "%1d"
 msgstr "%1 g"
@@ -249,8 +249,8 @@ msgstr "Oluşturulan jetonu girin."
 msgid "Conversations"
 msgstr "Konuşmalar"
 
-#: content/ui/ConversationPage.qml:29 content/ui/NotificationPage.qml:115
-#: content/ui/TimelinePage.qml:79
+#: content/ui/ConversationPage.qml:29 content/ui/NotificationPage.qml:126
+#: content/ui/TimelinePage.qml:90
 #, kde-format
 msgid "Loading..."
 msgstr "Yükleniyor..."
@@ -331,59 +331,59 @@ msgstr "SSL hatalarını yok say"
 msgid "Instance URL must not be empty!"
 msgstr "Örnek URL'si boş olmamalı!"
 
-#: content/ui/main.qml:144
+#: content/ui/main.qml:149
 #, kde-format
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: content/ui/main.qml:157 content/ui/NotificationPage.qml:14
+#: content/ui/main.qml:162 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: content/ui/main.qml:167
+#: content/ui/main.qml:172
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: content/ui/main.qml:179
+#: content/ui/main.qml:184
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:192
+#: content/ui/main.qml:197
 #, kde-format
 msgid "Conversation"
 msgstr "Konuşma"
 
-#: content/ui/main.qml:204
+#: content/ui/main.qml:209
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriler"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:223
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer İmleri"
 
-#: content/ui/NotificationPage.qml:23 content/ui/TimelinePage.qml:43
+#: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Toot"
 msgstr "Toot"
 
-#: content/ui/NotificationPage.qml:35
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Tümü"
 
-#: content/ui/NotificationPage.qml:45
+#: content/ui/NotificationPage.qml:46
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Bahsetmeler"
 
-#: content/ui/NotificationPage.qml:120
+#: content/ui/NotificationPage.qml:131
 #, kde-format
 msgid "No Notifications"
 msgstr "Bildirim Yok"
@@ -502,7 +502,7 @@ msgid "Profile Editor"
 msgstr "Profil Düzenleyici"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:115
+#: content/ui/StatusComposer/StatusComposer.qml:162
 #, kde-format
 msgid "Please choose a file"
 msgstr "Lütfen bir dosya seçin"
@@ -529,6 +529,7 @@ msgstr "PNG, GIF veya JPG. En çok 2 MB. 1500 x 500 pks olarak ölçeklendirilir
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
+#: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
@@ -687,6 +688,7 @@ msgid "Delete word"
 msgstr "Sözcük sil"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
+#: content/ui/StatusDelegate/OverflowMenu.qml:52
 #, kde-format
 msgid "Edit"
 msgstr "Düzenle"
@@ -711,64 +713,82 @@ msgstr "Anketi kendiliğinden özel yap"
 msgid "Choice %1"
 msgstr "Seçim %1"
 
-#: content/ui/StatusComposer/StatusComposer.qml:28
+#: content/ui/StatusComposer/StatusComposer.qml:40
+#, fuzzy, kde-format
+#| msgid "Expand this post"
+msgid "Edit this toot"
+msgstr "Bu gönderiyi genişlet"
+
+#: content/ui/StatusComposer/StatusComposer.qml:42
+#, fuzzy, kde-format
+#| msgid "Copy link to this post"
+msgid "Reply to this toot"
+msgstr "Bağlantıyı bu gönderiye kopyala"
+
+#: content/ui/StatusComposer/StatusComposer.qml:44
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Rewrite this toot"
+msgstr "Yeni bir toot yazın"
+
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Write a new toot"
 msgstr "Yeni bir toot yazın"
 
-#: content/ui/StatusComposer/StatusComposer.qml:35
-#: content/ui/StatusComposer/StatusComposer.qml:181
+#: content/ui/StatusComposer/StatusComposer.qml:74
+#: content/ui/StatusComposer/StatusComposer.qml:228
 #, kde-format
 msgid "Content Warning"
 msgstr "İçerik Uyarısı"
 
-#: content/ui/StatusComposer/StatusComposer.qml:43
+#: content/ui/StatusComposer/StatusComposer.qml:82
 #, kde-format
 msgid "What's new?"
 msgstr "Neler yeni?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:118
+#: content/ui/StatusComposer/StatusComposer.qml:165
 #, kde-format
 msgid "Attach File"
 msgstr "Dosya Ekle"
 
-#: content/ui/StatusComposer/StatusComposer.qml:127
+#: content/ui/StatusComposer/StatusComposer.qml:174
 #, kde-format
 msgid "Add Poll"
 msgstr "Anket Ekle"
 
-#: content/ui/StatusComposer/StatusComposer.qml:153
+#: content/ui/StatusComposer/StatusComposer.qml:200
 #, kde-format
 msgid "Public"
 msgstr "Genel"
 
-#: content/ui/StatusComposer/StatusComposer.qml:158
+#: content/ui/StatusComposer/StatusComposer.qml:205
 #, kde-format
 msgid "Unlisted"
 msgstr "Listelenmemiş"
 
-#: content/ui/StatusComposer/StatusComposer.qml:163
+#: content/ui/StatusComposer/StatusComposer.qml:210
 #, kde-format
 msgid "Private"
 msgstr "Gizli"
 
-#: content/ui/StatusComposer/StatusComposer.qml:168
+#: content/ui/StatusComposer/StatusComposer.qml:215
 #, kde-format
 msgid "Direct Message"
 msgstr "Doğrudan İleti"
 
-#: content/ui/StatusComposer/StatusComposer.qml:173
+#: content/ui/StatusComposer/StatusComposer.qml:220
 #, kde-format
 msgid "Visibility"
 msgstr "Görünürlük"
 
-#: content/ui/StatusComposer/StatusComposer.qml:178
+#: content/ui/StatusComposer/StatusComposer.qml:225
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "iu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:190
+#: content/ui/StatusComposer/StatusComposer.qml:237
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
@@ -784,37 +804,42 @@ msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:135
-#: content/ui/StatusDelegate/StatusDelegate.qml:204
+#: content/ui/StatusDelegate/StatusDelegate.qml:137
+#: content/ui/StatusDelegate/StatusDelegate.qml:206
 #, kde-format
 msgid "View profile"
 msgstr "Profili görüntüle"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:18
+#: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
 msgid "Expand this post"
 msgstr "Bu gönderiyi genişlet"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:23
+#: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
 msgid "Open original page"
 msgstr "Özgün sayfayı aç"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:30
+#: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
 msgid "Copy link to this post"
 msgstr "Bağlantıyı bu gönderiye kopyala"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:39
-#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#: content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/StatusDelegate/StatusDelegate.qml:354
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Yer imini kaldır"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#: content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Bookmark"
 msgstr "Yer imlerine ekle"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:64
+#, kde-format
+msgid "Delete & Re-draft"
+msgstr ""
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -832,92 +857,92 @@ msgstr "(Oy yok)"
 msgid "Vote"
 msgstr "Oy Ver"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:98
+#: content/ui/StatusDelegate/StatusDelegate.qml:100
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Süzülen: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:102
+#: content/ui/StatusDelegate/StatusDelegate.qml:104
 #, kde-format
 msgid "Show anyway"
 msgstr "Yine de göster"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:143 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:145 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1, gönderinizi favoriledi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:145 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:147 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 bir gönderiyi düzenledi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:148
+#: content/ui/StatusDelegate/StatusDelegate.qml:150
 #, kde-format
 msgid "Your poll has ended"
 msgstr "Anketiniz sona erdi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:150
+#: content/ui/StatusDelegate/StatusDelegate.qml:152
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "Oy verdiğiniz bir anket sona erdi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:174
+#: content/ui/StatusDelegate/StatusDelegate.qml:176
 #, kde-format
 msgid "Pinned entry"
 msgstr "İğnelenmiş girdi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:210
+#: content/ui/StatusDelegate/StatusDelegate.qml:212
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1, boost'ladı"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:210 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:212 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1, gönderizi boost'ladı"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:245
+#: content/ui/StatusDelegate/StatusDelegate.qml:247
 #, kde-format
 msgid "Show Less"
 msgstr "Daha Az Göster"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:245
+#: content/ui/StatusDelegate/StatusDelegate.qml:247
 #, kde-format
 msgid "Show More"
 msgstr "Daha Çok Göster"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:319
+#: content/ui/StatusDelegate/StatusDelegate.qml:321
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:323
+#: content/ui/StatusDelegate/StatusDelegate.qml:325
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:333
+#: content/ui/StatusDelegate/StatusDelegate.qml:335
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boost'la"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:343
+#: content/ui/StatusDelegate/StatusDelegate.qml:345
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Beğen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#: content/ui/StatusDelegate/StatusDelegate.qml:354
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Yer İmlerine Ekle"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:368
+#: content/ui/StatusDelegate/StatusDelegate.qml:372
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
@@ -1060,6 +1085,11 @@ msgstr "Global Zaman Akışı"
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "En son bildirimi getirirken alırken bir hata oluştu."
+
+#: posteditorbackend.cpp:212
+#, kde-format
+msgid "An unknown error occurred."
+msgstr ""
 
 #: profileeditor.cpp:183
 #, kde-format
