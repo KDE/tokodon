@@ -16,10 +16,11 @@
 #include <memory>
 #include <optional>
 
+#include "poll.h"
+
 class Post;
 class Identity;
 class AbstractAccount;
-class Poll;
 
 class Card
 {
@@ -164,7 +165,6 @@ public:
     Post(const Post &) = delete;
     Post(AbstractAccount *account, QObject *parent = nullptr);
     Post(AbstractAccount *account, QJsonObject obj, QObject *parent = nullptr);
-    ~Post();
 
     enum Visibility {
         Public,
@@ -206,7 +206,7 @@ public:
     void setMentions(const QStringList &mentions);
     std::optional<Card> card() const;
     void setCard(std::optional<Card> card);
-    void setPoll(Poll *poll);
+    void setPollJson(const QJsonObject &object);
     Poll *poll() const;
     QStringList filters() const;
 
@@ -285,7 +285,7 @@ private:
     std::optional<Card> m_card;
     std::shared_ptr<Identity> m_authorIdentity;
     QVector<Attachment *> m_attachments;
-    Poll *m_poll = nullptr;
+    std::unique_ptr<Poll> m_poll;
 
     bool m_sensitive;
     Visibility m_visibility;

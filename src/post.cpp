@@ -109,11 +109,6 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     fromJson(obj);
 }
 
-Post::~Post()
-{
-    delete m_poll;
-}
-
 void Post::fromJson(QJsonObject obj)
 {
     const auto accountDoc = obj["account"].toObject();
@@ -183,7 +178,7 @@ void Post::fromJson(QJsonObject obj)
     }
 
     if (obj.contains(QStringLiteral("poll")) && !obj[QStringLiteral("poll")].isNull()) {
-        m_poll = new Poll(obj[QStringLiteral("poll")].toObject());
+        m_poll = std::make_unique<Poll>(obj[QStringLiteral("poll")].toObject());
     }
 
     m_attachments_visible = !m_sensitive;
@@ -573,12 +568,12 @@ std::shared_ptr<Identity> Post::boostIdentity() const
 
 Poll *Post::poll() const
 {
-    return m_poll;
+    return m_poll.get();
 }
 
-void Post::setPoll(Poll *poll)
+void Post::setPollJson(const QJsonObject &object)
 {
-    m_poll = poll;
+    m_poll = std::make_unique<Poll>(object);
     Q_EMIT pollChanged();
 }
 

@@ -203,8 +203,7 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
         for (auto &post : m_timeline) {
             if (post->poll() && post->poll()->id() == id) {
                 const auto newPoll = QJsonDocument::fromJson(reply->readAll()).object();
-                delete post->poll();
-                post->setPoll(new Poll(newPoll));
+                post->setPollJson(newPoll);
                 Q_EMIT dataChanged(this->index(i, 0), this->index(i, 0), {PollRole});
                 break;
             }
