@@ -107,6 +107,9 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 
 Post::~Post()
 {
+    for (auto attachment : m_attachments) {
+        delete attachment;
+    }
     delete m_poll;
 }
 
@@ -183,14 +186,6 @@ void Post::fromJson(QJsonObject obj)
     }
 
     m_attachments_visible = !m_sensitive;
-}
-
-Post::~Post()
-{
-    for (auto attachment : m_attachments) {
-        delete attachment;
-    }
-    delete m_poll;
 }
 
 void Post::addAttachments(const QJsonArray &attachments)

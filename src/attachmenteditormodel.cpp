@@ -76,7 +76,7 @@ QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
     });
 }
 
-void AttachmentEditorModel::appendExisting(const Attachment &attachment)
+void AttachmentEditorModel::appendExisting(Attachment *attachment)
 {
     beginInsertRows({}, m_attachments.count(), m_attachments.count());
     m_attachments.append(attachment);
