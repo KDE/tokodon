@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:57+0000\n"
-"PO-Revision-Date: 2023-02-08 21:28+0300\n"
+"POT-Creation-Date: 2023-02-14 00:58+0000\n"
+"PO-Revision-Date: 2023-02-13 10:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -266,42 +266,42 @@ msgstr "Konuşma Yok"
 msgid "%1 followed you"
 msgstr "%1, sizi takip etti"
 
-#: content/ui/FullScreenImage.qml:45
+#: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: content/ui/FullScreenImage.qml:56
+#: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: content/ui/FullScreenImage.qml:67
+#: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
 msgstr "Sola döndür"
 
-#: content/ui/FullScreenImage.qml:74
+#: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
 msgstr "Sağa döndür"
 
-#: content/ui/FullScreenImage.qml:81
+#: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
 msgstr "Farklı kaydet"
 
-#: content/ui/FullScreenImage.qml:93
+#: content/ui/FullScreenImage.qml:95
 #, kde-format
 msgid "Close"
 msgstr "Kapat"
 
-#: content/ui/FullScreenImage.qml:215
+#: content/ui/FullScreenImage.qml:314
 #, kde-format
 msgid "Previous image"
 msgstr "Önceki görsel"
 
-#: content/ui/FullScreenImage.qml:230
+#: content/ui/FullScreenImage.qml:329
 #, kde-format
 msgid "Next image"
 msgstr "Sonraki görsel"
@@ -388,12 +388,12 @@ msgstr "Bahsetmeler"
 msgid "No Notifications"
 msgstr "Bildirim Yok"
 
-#: content/ui/SearchField.qml:215
+#: content/ui/SearchField.qml:223
 #, kde-format
 msgid "No search results"
 msgstr "Arama sonucu yok"
 
-#: content/ui/SearchField.qml:223
+#: content/ui/SearchField.qml:231
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "Kişiler, etiketler ve gönderiler arayın"
@@ -433,7 +433,12 @@ msgstr "Bağlantı önizlemesi göster"
 msgid "Crop images in the timeline to 16:9"
 msgstr "Zaman akışındaki görselleri 16:9 olarak kırp"
 
-#: content/ui/Settings/GeneralCard.qml:62
+#: content/ui/Settings/GeneralCard.qml:61
+#, kde-format
+msgid "Auto-play animated GIFs"
+msgstr ""
+
+#: content/ui/Settings/GeneralCard.qml:74
 #, kde-format
 msgid "Color theme"
 msgstr "Renk teması"
@@ -698,7 +703,7 @@ msgstr "Düzenle"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:14
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
 msgstr "Bir açıklama ekle"
@@ -714,22 +719,19 @@ msgid "Choice %1"
 msgstr "Seçim %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:40
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Edit this toot"
-msgstr "Bu gönderiyi genişlet"
+msgstr "Bu toot'u düzenle"
 
 #: content/ui/StatusComposer/StatusComposer.qml:42
-#, fuzzy, kde-format
-#| msgid "Copy link to this post"
+#, kde-format
 msgid "Reply to this toot"
-msgstr "Bağlantıyı bu gönderiye kopyala"
+msgstr "Bu toot'u yanıtla"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Rewrite this toot"
-msgstr "Yeni bir toot yazın"
+msgstr "Bu toot'u yeniden yaz"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
@@ -793,12 +795,12 @@ msgstr "iu"
 msgid "Send"
 msgstr "Gönder"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:115
+#: content/ui/StatusDelegate/AttachmentGrid.qml:114
 #, kde-format
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:144
+#: content/ui/StatusDelegate/AttachmentGrid.qml:194
 #, kde-format
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
@@ -839,7 +841,7 @@ msgstr "Yer imlerine ekle"
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Sil ve Yeniden Taslak Oluştur"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -947,6 +949,11 @@ msgstr "Yer İmlerine Ekle"
 msgctxt "Show more options"
 msgid "More"
 msgstr "Daha Fazla"
+
+#: content/ui/StatusDelegate/VideoAttachment.qml:80
+#, kde-format
+msgid "Play"
+msgstr ""
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1089,7 +1096,7 @@ msgstr "En son bildirimi getirirken alırken bir hata oluştu."
 #: posteditorbackend.cpp:212
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Bilinmeyen bir hata oluştu."
 
 #: profileeditor.cpp:183
 #, kde-format

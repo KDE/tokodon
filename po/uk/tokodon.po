@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:57+0000\n"
-"PO-Revision-Date: 2023-02-06 08:11+0200\n"
+"POT-Creation-Date: 2023-02-14 00:58+0000\n"
+"PO-Revision-Date: 2023-02-13 09:11+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -268,42 +268,42 @@ msgstr "Немає спілкувань"
 msgid "%1 followed you"
 msgstr "%1 стежить за вашими дописами"
 
-#: content/ui/FullScreenImage.qml:45
+#: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
 msgstr "Збільшити"
 
-#: content/ui/FullScreenImage.qml:56
+#: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
 msgstr "Зменшити"
 
-#: content/ui/FullScreenImage.qml:67
+#: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
 msgstr "Обернути ліворуч"
 
-#: content/ui/FullScreenImage.qml:74
+#: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
 msgstr "Обернути праворуч"
 
-#: content/ui/FullScreenImage.qml:81
+#: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
 msgstr "Зберегти як"
 
-#: content/ui/FullScreenImage.qml:93
+#: content/ui/FullScreenImage.qml:95
 #, kde-format
 msgid "Close"
 msgstr "Закрити"
 
-#: content/ui/FullScreenImage.qml:215
+#: content/ui/FullScreenImage.qml:314
 #, kde-format
 msgid "Previous image"
 msgstr "Попереднє зображення"
 
-#: content/ui/FullScreenImage.qml:230
+#: content/ui/FullScreenImage.qml:329
 #, kde-format
 msgid "Next image"
 msgstr "Наступне зображення"
@@ -390,12 +390,12 @@ msgstr "Згадки"
 msgid "No Notifications"
 msgstr "Немає сповіщень"
 
-#: content/ui/SearchField.qml:215
+#: content/ui/SearchField.qml:223
 #, kde-format
 msgid "No search results"
 msgstr "Нічого не знайдено"
 
-#: content/ui/SearchField.qml:223
+#: content/ui/SearchField.qml:231
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "Шукати людей, мітки та дописи"
@@ -435,7 +435,12 @@ msgstr "Показати попередній перегляд вмісту по
 msgid "Crop images in the timeline to 16:9"
 msgstr "Обрізати зображення у розкладі до 16:9"
 
-#: content/ui/Settings/GeneralCard.qml:62
+#: content/ui/Settings/GeneralCard.qml:61
+#, kde-format
+msgid "Auto-play animated GIFs"
+msgstr ""
+
+#: content/ui/Settings/GeneralCard.qml:74
 #, kde-format
 msgid "Color theme"
 msgstr "Тема кольорів"
@@ -702,7 +707,7 @@ msgstr "Змінити"
 msgid "Remove"
 msgstr "Вилучити"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:14
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
 msgstr "Додати опис"
@@ -718,22 +723,19 @@ msgid "Choice %1"
 msgstr "Вибір %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:40
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Edit this toot"
-msgstr "Розгорнути цей допис"
+msgstr "Редагувати цей тут"
 
 #: content/ui/StatusComposer/StatusComposer.qml:42
-#, fuzzy, kde-format
-#| msgid "Reply to a post"
+#, kde-format
 msgid "Reply to this toot"
-msgstr "Відповісти на допис"
+msgstr "Відповісти на цей тут"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Rewrite this toot"
-msgstr "Написати новий тут"
+msgstr "Переписати цей тут"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
@@ -797,12 +799,12 @@ msgstr "пв"
 msgid "Send"
 msgstr "Надіслати"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:115
+#: content/ui/StatusDelegate/AttachmentGrid.qml:114
 #, kde-format
 msgid "Not available"
 msgstr "Немає доступу"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:144
+#: content/ui/StatusDelegate/AttachmentGrid.qml:194
 #, kde-format
 msgid "Media Hidden"
 msgstr "Мультимедіа приховано"
@@ -843,7 +845,7 @@ msgstr "Закладка"
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Вилучити і переписати"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -951,6 +953,11 @@ msgstr "Створити закладку"
 msgctxt "Show more options"
 msgid "More"
 msgstr "Інше"
+
+#: content/ui/StatusDelegate/VideoAttachment.qml:80
+#, kde-format
+msgid "Play"
+msgstr ""
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1095,7 +1102,7 @@ msgstr "Під час отримання найсвіжішого сповіще
 #: posteditorbackend.cpp:212
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Сталася невідома помилка."
 
 #: profileeditor.cpp:183
 #, kde-format

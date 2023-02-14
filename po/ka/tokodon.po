@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:57+0000\n"
-"PO-Revision-Date: 2023-02-07 07:29+0100\n"
+"POT-Creation-Date: 2023-02-14 00:58+0000\n"
+"PO-Revision-Date: 2023-02-13 07:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -266,42 +266,42 @@ msgstr "საუბრების გარეშე"
 msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
 
-#: content/ui/FullScreenImage.qml:45
+#: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
 msgstr "გადიდება"
 
-#: content/ui/FullScreenImage.qml:56
+#: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
 msgstr "დაპატარავება"
 
-#: content/ui/FullScreenImage.qml:67
+#: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
 msgstr "მარცხნივ მოტრიალება"
 
-#: content/ui/FullScreenImage.qml:74
+#: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
 msgstr "მარჯვნივ მოტრიალება"
 
-#: content/ui/FullScreenImage.qml:81
+#: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
 msgstr "შენახვა, როგორც"
 
-#: content/ui/FullScreenImage.qml:93
+#: content/ui/FullScreenImage.qml:95
 #, kde-format
 msgid "Close"
 msgstr "დახურვა"
 
-#: content/ui/FullScreenImage.qml:215
+#: content/ui/FullScreenImage.qml:314
 #, kde-format
 msgid "Previous image"
 msgstr "წინა გამოსახულება"
 
-#: content/ui/FullScreenImage.qml:230
+#: content/ui/FullScreenImage.qml:329
 #, kde-format
 msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
@@ -388,12 +388,12 @@ msgstr "მოხსენებები"
 msgid "No Notifications"
 msgstr "შეტყობინებების გარეშე"
 
-#: content/ui/SearchField.qml:215
+#: content/ui/SearchField.qml:223
 #, kde-format
 msgid "No search results"
 msgstr "ძებნის შედეგების გარეშე"
 
-#: content/ui/SearchField.qml:223
+#: content/ui/SearchField.qml:231
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "მოძებნეთ ხალხი, ჭდეები და პოსტები"
@@ -433,7 +433,12 @@ msgstr "ბმულის მინიატურის ჩვენება"
 msgid "Crop images in the timeline to 16:9"
 msgstr "დროის ხაზზე გამოსახულებების 16:9-ზე ამოჭრა"
 
-#: content/ui/Settings/GeneralCard.qml:62
+#: content/ui/Settings/GeneralCard.qml:61
+#, kde-format
+msgid "Auto-play animated GIFs"
+msgstr ""
+
+#: content/ui/Settings/GeneralCard.qml:74
 #, kde-format
 msgid "Color theme"
 msgstr "ფერის თემა"
@@ -698,7 +703,7 @@ msgstr "ჩასწორება"
 msgid "Remove"
 msgstr "ამოღება"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:14
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
 msgstr "აღწერის დამატება"
@@ -714,22 +719,19 @@ msgid "Choice %1"
 msgstr "არჩევანი %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:40
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Edit this toot"
-msgstr "პოსტის გაფართოება"
+msgstr "ტუტის ჩასწორება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:42
-#, fuzzy, kde-format
-#| msgid "Copy link to this post"
+#, kde-format
 msgid "Reply to this toot"
-msgstr "ამ პოსტის ბმულის კოპირება"
+msgstr "უპასუხეთ ამ ტუტს"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Rewrite this toot"
-msgstr "დაწერეთ ახალი ტუტი"
+msgstr "გადაწერეთ ეს ტუტი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
@@ -793,12 +795,12 @@ msgstr "გაფრთხ"
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:115
+#: content/ui/StatusDelegate/AttachmentGrid.qml:114
 #, kde-format
 msgid "Not available"
 msgstr "მიუწვდომელია"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:144
+#: content/ui/StatusDelegate/AttachmentGrid.qml:194
 #, kde-format
 msgid "Media Hidden"
 msgstr "მედია დამალულია"
@@ -839,7 +841,7 @@ msgstr "სანიშნი"
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "წაშლა და მონახაზის თავიდან შექმნა"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -947,6 +949,11 @@ msgstr "სანიშნი"
 msgctxt "Show more options"
 msgid "More"
 msgstr "მეტი"
+
+#: content/ui/StatusDelegate/VideoAttachment.qml:80
+#, kde-format
+msgid "Play"
+msgstr ""
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1089,7 +1096,7 @@ msgstr "შეცდომა უახლესი შეტყობინე�
 #: posteditorbackend.cpp:212
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "უცნობი შეცდომა."
 
 #: profileeditor.cpp:183
 #, kde-format

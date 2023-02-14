@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-13 00:57+0000\n"
-"PO-Revision-Date: 2023-02-06 15:20+0100\n"
+"POT-Creation-Date: 2023-02-14 00:58+0000\n"
+"PO-Revision-Date: 2023-02-13 12:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -267,42 +267,42 @@ msgstr "No hay conversaciones"
 msgid "%1 followed you"
 msgstr "%1 le está siguiendo"
 
-#: content/ui/FullScreenImage.qml:45
+#: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: content/ui/FullScreenImage.qml:56
+#: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: content/ui/FullScreenImage.qml:67
+#: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
 msgstr "Rotar a la izquierda"
 
-#: content/ui/FullScreenImage.qml:74
+#: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
 msgstr "Rotar a la derecha"
 
-#: content/ui/FullScreenImage.qml:81
+#: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
 msgstr "Guardar como"
 
-#: content/ui/FullScreenImage.qml:93
+#: content/ui/FullScreenImage.qml:95
 #, kde-format
 msgid "Close"
 msgstr "Cerrar"
 
-#: content/ui/FullScreenImage.qml:215
+#: content/ui/FullScreenImage.qml:314
 #, kde-format
 msgid "Previous image"
 msgstr "Imagen anterior"
 
-#: content/ui/FullScreenImage.qml:230
+#: content/ui/FullScreenImage.qml:329
 #, kde-format
 msgid "Next image"
 msgstr "Imagen siguiente"
@@ -389,12 +389,12 @@ msgstr "Menciones"
 msgid "No Notifications"
 msgstr "No hay notificaciones"
 
-#: content/ui/SearchField.qml:215
+#: content/ui/SearchField.qml:223
 #, kde-format
 msgid "No search results"
 msgstr "Búsqueda sin resultados"
 
-#: content/ui/SearchField.qml:223
+#: content/ui/SearchField.qml:231
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "Buscar personas, etiquetas y publicaciones"
@@ -434,7 +434,12 @@ msgstr "Mostrar vista previa del enlace"
 msgid "Crop images in the timeline to 16:9"
 msgstr "Recortar imágenes de la línea de tiempo a 16:9"
 
-#: content/ui/Settings/GeneralCard.qml:62
+#: content/ui/Settings/GeneralCard.qml:61
+#, kde-format
+msgid "Auto-play animated GIFs"
+msgstr ""
+
+#: content/ui/Settings/GeneralCard.qml:74
 #, kde-format
 msgid "Color theme"
 msgstr "Tema de color"
@@ -699,7 +704,7 @@ msgstr "Editar"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:14
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
 msgstr "Añadir una descripción"
@@ -715,22 +720,19 @@ msgid "Choice %1"
 msgstr "Elección %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:40
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Edit this toot"
-msgstr "Expandir esta publicación"
+msgstr "Editar este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:42
-#, fuzzy, kde-format
-#| msgid "Reply to a post"
+#, kde-format
 msgid "Reply to this toot"
-msgstr "Responder a una publicación"
+msgstr "Responder a este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Rewrite this toot"
-msgstr "Escribir un nuevo toot"
+msgstr "Volver a escribir este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
@@ -794,12 +796,12 @@ msgstr "ac"
 msgid "Send"
 msgstr "Enviar"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:115
+#: content/ui/StatusDelegate/AttachmentGrid.qml:114
 #, kde-format
 msgid "Not available"
 msgstr "No disponible"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:144
+#: content/ui/StatusDelegate/AttachmentGrid.qml:194
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medios ocultos"
@@ -840,7 +842,7 @@ msgstr "Añadir marcador"
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Borrar y crear borrador"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -948,6 +950,11 @@ msgstr "Marcador"
 msgctxt "Show more options"
 msgid "More"
 msgstr "Más"
+
+#: content/ui/StatusDelegate/VideoAttachment.qml:80
+#, kde-format
+msgid "Play"
+msgstr ""
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1091,7 +1098,7 @@ msgstr "Ha ocurrido un error al extraer la última notificación."
 #: posteditorbackend.cpp:212
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Ha ocurrido un error desconocido."
 
 #: profileeditor.cpp:183
 #, kde-format
