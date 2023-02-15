@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-14 00:58+0000\n"
-"PO-Revision-Date: 2023-02-07 08:43+0100\n"
+"PO-Revision-Date: 2023-02-14 09:05+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: abstractaccount.cpp:405
@@ -436,7 +436,7 @@ msgstr "Obreži slike v časovnici v razmerju 16:9"
 #: content/ui/Settings/GeneralCard.qml:61
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr ""
+msgstr "Samodejno predvajaj animirane GIFe"
 
 #: content/ui/Settings/GeneralCard.qml:74
 #, kde-format
@@ -719,22 +719,19 @@ msgid "Choice %1"
 msgstr "Izbira %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:40
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Edit this toot"
-msgstr "Razširi to objavo"
+msgstr "Uredi to objavo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:42
-#, fuzzy, kde-format
-#| msgid "Copy link to this post"
+#, kde-format
 msgid "Reply to this toot"
-msgstr "Kopiraj povezavo na to objavo"
+msgstr "Odgovori na to objavo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Rewrite this toot"
-msgstr "Zapiši nov toot"
+msgstr "Ponovno zapiši to objavo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
@@ -844,7 +841,7 @@ msgstr "Zaznamek"
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Zbriši in postavi med osnutke"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -956,7 +953,7 @@ msgstr "Več"
 #: content/ui/StatusDelegate/VideoAttachment.qml:80
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "Predvajaj"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1101,7 +1098,7 @@ msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 #: posteditorbackend.cpp:212
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Prišlo je do neznane napake."
 
 #: profileeditor.cpp:183
 #, kde-format
