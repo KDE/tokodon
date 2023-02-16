@@ -184,6 +184,7 @@ public:
 
     /// Returns the post id of the status itself
     QString postId() const;
+    QString originalPostId() const;
     QUrl url() const;
 
     /// Returns the spoiler text (subject) of the status
@@ -271,6 +272,7 @@ private:
     bool m_attachments_visible = true;
     QDateTime m_publishedAt;
     QString m_postId;
+    QString m_originalPostId;
     QUrl m_url;
     QString m_content;
     QString m_spoilerText;

@@ -114,7 +114,7 @@ void Post::fromJson(QJsonObject obj)
     const auto accountDoc = obj["account"].toObject();
     const auto accountId = accountDoc["id"].toString();
 
-    m_postId = obj["id"].toString();
+    m_originalPostId = obj["id"].toString();
     const auto reblogObj = obj["reblog"].toObject();
 
     if (!obj.contains("reblog") || reblogObj.isEmpty()) {
@@ -131,6 +131,8 @@ void Post::fromJson(QJsonObject obj)
 
         obj = reblogObj;
     }
+
+    m_postId = obj["id"].toString();
 
     m_spoilerText = obj["spoiler_text"].toString();
     m_content = computeContent(obj, m_authorIdentity);
@@ -580,6 +582,11 @@ void Post::setPollJson(const QJsonObject &object)
 QString Post::postId() const
 {
     return m_postId;
+}
+
+QString Post::originalPostId() const
+{
+    return m_originalPostId;
 }
 
 bool Post::isEmpty() const

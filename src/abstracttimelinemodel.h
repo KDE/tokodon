@@ -19,6 +19,7 @@ class AbstractTimelineModel : public QAbstractListModel
 public:
     enum CustoRoles {
         IdRole = Qt::UserRole + 1,
+        OriginalIdRole,
         UrlRole,
         ContentRole,
         SpoilerTextRole,

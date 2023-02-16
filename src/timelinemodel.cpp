@@ -93,7 +93,7 @@ void TimelineModel::fetchedTimeline(const QByteArray &data)
     if (!m_timeline.isEmpty()) {
         const auto postOld = m_timeline.first();
         const auto postNew = posts.first();
-        if (postOld->postId() > postNew->postId()) {
+        if (postOld->originalPostId() > postNew->originalPostId()) {
             const int row = m_timeline.size();
             const int last = row + posts.size() - 1;
             beginInsertRows({}, row, last);
@@ -122,7 +122,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 
     const auto p = m_timeline.last();
 
-    fillTimeline(p->postId());
+    fillTimeline(p->originalPostId());
 }
 
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const
@@ -253,7 +253,7 @@ void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, c
     if (eventType == AbstractAccount::StreamingEventType::DeleteEvent) {
         int i = 0;
         for (const auto &post : std::as_const(m_timeline)) {
-            if (post->postId().toUtf8() == payload) {
+            if (post->originalPostId().toUtf8() == payload) {
                 beginRemoveRows({}, i, i);
                 m_timeline.removeAt(i);
                 endRemoveRows();

@@ -35,6 +35,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
 {
     return {
         {IdRole, QByteArrayLiteral("id")},
+        {OriginalIdRole, QByteArrayLiteral("originalId")},
         {UrlRole, QByteArrayLiteral("url")},
         {ContentRole, QByteArrayLiteral("content")},
         {SpoilerTextRole, QByteArrayLiteral("spoilerText")},
@@ -79,6 +80,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     switch (role) {
     case IdRole:
         return post->postId();
+    case OriginalIdRole:
+        return post->originalPostId();
     case MentionsRole:
         return post->mentions();
     case ContentRole:

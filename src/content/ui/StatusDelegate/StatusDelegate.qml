@@ -13,6 +13,7 @@ QQC2.ItemDelegate {
     required property int index
 
     required property string id
+    required property string originalId
     required property string url
     required property var authorIdentity
 
