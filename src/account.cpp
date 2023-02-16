@@ -277,7 +277,7 @@ void Account::validateToken()
 
 QString Account::settingsGroupName() const
 {
-    return m_name + QString("@") + QUrl(m_instance_uri).host();
+    return m_name + QLatin1Char('@') + QUrl(m_instance_uri).host();
 }
 
 void Account::writeToSettings(QSettings &settings) const

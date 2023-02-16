@@ -6,6 +6,7 @@
 #include "account.h"
 #include "config.h"
 #include "networkaccessmanagerfactory.h"
+#include "tokodon_debug.h"
 
 void migrateSettings(QSettings &settings);
 
@@ -242,11 +243,11 @@ void AccountManager::setAboutData(const KAboutData &aboutData)
 void migrateSettings(QSettings &settings) {
     const auto version = settings.value("settingsVersion").toInt();
     if (version == 0) {
-        qDebug() << "Migrating v0 settings to v1";
+        qCDebug(TOKODON_LOG) << "Migrating v0 settings to v1";
         settings.beginGroup("accounts");
         const auto childGroups = settings.childGroups();
         // we are just going to re-index
-        qDebug() << "Account list is" << childGroups;
+        qCDebug(TOKODON_LOG) << "Account list is" << childGroups;
         for (int i = 0; i < childGroups.size(); i++){
             // we're going to move all of this into an array instead
             const auto child = childGroups[i];
@@ -254,8 +255,8 @@ void migrateSettings(QSettings &settings) {
             const auto keysInChild = settings.childKeys();
             const auto childName = settings.value("name").toString();
             const auto childInstance = QUrl(settings.value("instance_uri").toString()).host();
-            const auto newName = childName + QString("@") + childInstance;
-            qDebug() << "Rewriting key from " << child << " to " << newName;
+            const QString newName = childName + QLatin1Char('@') + childInstance;
+            qCDebug(TOKODON_LOG) << "Rewriting key from" << child << "to" << newName;
             settings.endGroup();
             for (const auto &key: keysInChild) {
                 settings.beginGroup(child);
