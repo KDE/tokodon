@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_VERSION "23.01.0")
+set(PROJECT_VERSION "23.02.0")
 project(tokodon VERSION ${PROJECT_VERSION})
 
 set(KF5_MIN_VERSION "5.77.0")
