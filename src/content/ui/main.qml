@@ -17,10 +17,16 @@ Kirigami.ApplicationWindow {
 
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
-    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 30
-    pageStack.globalToolBar.canContainHandles: true
-    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
-    pageStack.globalToolBar.showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
+
+    pageStack {
+        defaultColumnWidth: Kirigami.Units.gridUnit * 30
+
+        globalToolBar {
+            canContainHandles: true
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+            showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
+        }
+    }
 
     property bool isShowingFullScreenImage: false
 
