@@ -62,6 +62,8 @@ QQC2.Control {
                     roleValue: Attachment.Image
 
                     MediaContainer {
+                        id: imgContainer
+
                         required property int index
                         required property var modelData
 
@@ -99,7 +101,7 @@ QQC2.Control {
                                 onTapped: if (root.isSensitive) {
                                     root.isSensitive = false;
                                 } else {
-                                    Navigation.openFullScreenImage(root.attachments, img.index);
+                                    Navigation.openFullScreenImage(root.attachments, imgContainer.index);
                                 }
                             }
 
