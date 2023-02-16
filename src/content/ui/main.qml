@@ -15,6 +15,8 @@ import "./StatusComposer"
 Kirigami.ApplicationWindow {
     id: appwindow
 
+    property bool isShowingFullScreenImage: false
+
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
 
@@ -27,8 +29,6 @@ Kirigami.ApplicationWindow {
             showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
         }
     }
-
-    property bool isShowingFullScreenImage: false
 
     Connections {
         target: AccountManager
