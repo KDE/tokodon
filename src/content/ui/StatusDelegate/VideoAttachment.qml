@@ -23,6 +23,11 @@ MediaContainer {
 
     property bool paused: false
 
+    function pause() {
+        player.pause();
+        root.paused = true;
+    }
+
     MediaPlayer {
         id: player
 

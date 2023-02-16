@@ -18,6 +18,7 @@ QQC2.Control {
     required property bool sensitive
     required property bool secondary
     required property bool expandedPost
+    required property bool inViewPort
 
     // Only uncrop timeline media if requested by the user, and there's only one attachment
     // Expanded posts (like in threads) are always uncropped.
@@ -153,6 +154,8 @@ QQC2.Control {
                     roleValue: Attachment.Video
 
                     VideoAttachment {
+                        id: video
+
                         required property int index
                         required property var modelData
 
@@ -166,6 +169,15 @@ QQC2.Control {
                         previewUrl: modelData.previewUrl
                         autoPlay: false
                         isSensitive: root.isSensitive
+
+                        Connections {
+                            target: root
+                            function onInViewPortChanged() {
+                                if (!root.inViewPort) {
+                                    video.pause();
+                                }
+                            }
+                        }
                     }
                 }
             }

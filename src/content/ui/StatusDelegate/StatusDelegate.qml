@@ -53,6 +53,7 @@ QQC2.ItemDelegate {
     property bool showSeparator: true
     property bool showInteractionButton: true
     property bool expandedPost: false
+    property bool inViewPort: true
 
     readonly property bool isSelf: AccountManager.selectedAccount.identity.displayName === root.authorIdentity.displayName
 
@@ -302,6 +303,7 @@ a{
             attachments: root.attachments
             sensitive: root.sensitive
             secondary: root.secondary
+            inViewPort: root.inViewPort
         }
 
         LinkPreview {
