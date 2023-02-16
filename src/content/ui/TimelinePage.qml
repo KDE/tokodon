@@ -82,6 +82,7 @@ Kirigami.ScrollablePage {
             timelineModel: root.model
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
+            inViewPort: root.Kirigami.ColumnView.inViewport
             Layout.fillWidth: true
         }
 
