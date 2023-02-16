@@ -21,6 +21,8 @@ MediaContainer {
     required property bool autoPlay
     required property bool isSensitive
 
+    property bool paused: false
+
     MediaPlayer {
         id: player
 
@@ -68,9 +70,22 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: player.playbackState !== MediaPlayer.PlayingState
+        visible: player.playbackState !== MediaPlayer.PlayingState && !root.paused
 
         fillMode: Image.PreserveAspectCrop
+    }
+
+    MouseArea {
+        enabled: !root.autoPlay
+        anchors.fill: parent
+
+        onClicked: if (player.playbackState !== MediaPlayer.PlayingState) {
+            root.paused = false;
+            player.play();
+        } else {
+            root.paused = true;
+            player.pause();
+        }
     }
 
     QQC2.Button {
