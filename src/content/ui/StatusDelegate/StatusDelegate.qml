@@ -98,6 +98,7 @@ QQC2.ItemDelegate {
             visible: filtered
             Layout.fillWidth: true
             QQC2.Label {
+                font: Config.defaultFont
                 Layout.alignment: Qt.AlignHCenter
                 text: i18n("Filtered: %1", root.filters.join(', '))
             }
@@ -143,6 +144,7 @@ QQC2.ItemDelegate {
                         visible: [Notification.Favorite, root.type === Notification.Update].includes(root.type)
                     }
                     QQC2.Label {
+                        font: Config.defaultFont
                         text: if (root.type === Notification.Favorite) {
                             return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml)
                         } else if (root.type === Notification.Update) {
@@ -175,6 +177,7 @@ QQC2.ItemDelegate {
                 Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
             }
             QQC2.Label {
+                font: Config.defaultFont
                 text: i18n("Pinned entry")
                 color: Kirigami.Theme.disabledTextColor
                 Layout.alignment: Qt.AlignVCenter
@@ -213,6 +216,7 @@ QQC2.ItemDelegate {
                     QQC2.Label {
                         text: root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : (root.type === Notification.Repeat ? i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml) : '')
                         color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                        font: Config.defaultFont
                         Layout.alignment: Qt.AlignVCenter
                         Layout.fillWidth: true
                     }
@@ -227,7 +231,7 @@ QQC2.ItemDelegate {
 
             Kirigami.Heading {
                 id: heading
-                level: 5
+                font.pixelSize: Config.defaultFont.pixelSize + 1
                 text: root.relativeTime
                 color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 verticalAlignment: Text.AlignTop
@@ -238,12 +242,14 @@ QQC2.ItemDelegate {
 
         ColumnLayout {
             visible: !filtered
+
             RowLayout {
                 visible: root.spoilerText.length !== 0
                 QQC2.Label {
                     Layout.fillWidth: true
                     text: root.spoilerText
                     wrapMode: Text.Wrap
+                    font: Config.defaultFont
                 }
                 QQC2.Button {
                     text: tootContent.visible ? i18n("Show Less") : i18n("Show More")
@@ -252,7 +258,7 @@ QQC2.ItemDelegate {
             }
             QQC2.TextArea {
                 id: tootContent
-                font.pointSize: heading.font.pointSize
+                font: Config.defaultFont
                 Layout.fillWidth: true
                 text: "<style>
 a{

@@ -37,7 +37,8 @@ RowLayout {
         spacing: 0
 
         Kirigami.Heading {
-            level: 5
+            level: 4
+            font.pixelSize: Config.defaultFont.pixelSize + 2
             text: root.identity.displayNameHtml
             type: Kirigami.Heading.Type.Primary
             color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
@@ -46,8 +47,8 @@ RowLayout {
             textFormat: Text.RichText
         }
 
-        Kirigami.Heading {
-            level: 5
+        QQC2.Label {
+            font.pixelSize: Config.defaultFont.pixelSize + 1
             Layout.fillWidth: true
             elide: Text.ElideRight
             color: Kirigami.Theme.disabledTextColor
