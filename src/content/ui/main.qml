@@ -134,9 +134,12 @@ Kirigami.ApplicationWindow {
 
             Repeater {
                 model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
-                Kirigami.BasicListItem {
+                Kirigami.NavigationTabButton {
                     action: modelData
-                    separatorVisible: false
+                    display: Controls.AbstractButton.TextBesideIcon
+                    Layout.fillWidth: true
+                    implicitHeight: 50
+
                 }
             }
 
