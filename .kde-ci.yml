@@ -44,5 +44,9 @@ Dependencies:
       'frameworks/kwindowsystem': '@stable'
       'frameworks/kio': '@stable'
 
+- 'on': ['Linux']
+  'require':
+    'sdk/selenium-webdriver-at-spi': '@latest'
+
 Options:
   require-passing-tests-on: [ '@all' ]

@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
     AccountManager::instance().addAccount(account);
     AccountManager::instance().selectAccount(account);
     QUrl url = account->apiUrl("/api/v2/search");
-    url.setQuery(QUrlQuery{{"q", "myQuery"}});
+    url.setQuery(QUrlQuery{{"q", "myquery"}});
     account->registerGet(url, new TestReply("search-result.json", account));
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);

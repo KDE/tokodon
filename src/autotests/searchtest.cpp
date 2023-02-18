@@ -26,11 +26,11 @@ private Q_SLOTS:
         AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl("/api/v2/search");
-        url.setQuery(QUrlQuery{{"q", "myQuery"}});
+        url.setQuery(QUrlQuery{{"q", "myquery"}});
         account->registerGet(url, new TestReply("search-result.json", account));
 
         SearchModel searchModel;
-        searchModel.search("myQuery");
+        searchModel.search("myquery");
 
         QCOMPARE(searchModel.rowCount({}), 3);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::TypeRole), SearchModel::Account);
