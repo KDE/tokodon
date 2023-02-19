@@ -198,6 +198,7 @@ MastoPage {
                                 }
                             }
                             onClicked: visibilityMenu.open()
+                            enabled: root.purpose !== StatusComposer.Edit
                             QQC2.Menu {
                                 id: visibilityMenu
                                 QQC2.MenuItem {
