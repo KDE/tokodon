@@ -137,7 +137,7 @@ void Post::fromJson(QJsonObject obj)
     m_spoilerText = obj["spoiler_text"].toString();
     m_content = computeContent(obj, m_authorIdentity);
 
-    m_replyTargetId = obj["id"].toString();
+    m_replyTargetId = obj["in_reply_to_id"].toString();
     m_url = QUrl(obj["url"].toString());
 
     m_favouritesCount = obj["favourites_count"].toInt();
