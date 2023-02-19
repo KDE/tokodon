@@ -15,7 +15,8 @@ MastoPage {
     enum Purpose {
         New,
         Reply,
-        Redraft
+        Redraft,
+        Edit
     }
 
     property var purpose
