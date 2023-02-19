@@ -58,6 +58,10 @@ MastoPage {
                 console.log(error);
             }
         }
+
+        function onEditComplete(obj) {
+            applicationWindow().pageStack.layers.pop();
+        }
     }
 
     Kirigami.FlexColumn {
