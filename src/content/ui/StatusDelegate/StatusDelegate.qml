@@ -55,7 +55,7 @@ QQC2.ItemDelegate {
     property bool expandedPost: false
     property bool inViewPort: true
 
-    readonly property bool isSelf: AccountManager.selectedAccount.identity.displayName === root.authorIdentity.displayName
+    readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
