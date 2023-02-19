@@ -136,7 +136,7 @@ Kirigami.ApplicationWindow {
                 model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
                 Kirigami.NavigationTabButton {
                     action: modelData
-                    display: Controls.AbstractButton.TextBesideIcon
+                    display: QQC2.AbstractButton.TextBesideIcon
                     Layout.fillWidth: true
                     implicitHeight: 50
 
