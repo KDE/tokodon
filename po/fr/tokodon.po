@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:58+0000\n"
+"POT-Creation-Date: 2023-02-20 00:57+0000\n"
 "PO-Revision-Date: 2023-02-14 21:34+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -411,35 +411,47 @@ msgstr "Déconnexion"
 msgid "Add Account"
 msgstr "Ajouter un compte"
 
-#: content/ui/Settings/GeneralCard.qml:18
+#: content/ui/Settings/GeneralCard.qml:19
 #, kde-format
 msgid "General"
 msgstr "Général"
 
-#: content/ui/Settings/GeneralCard.qml:23
+#: content/ui/Settings/GeneralCard.qml:24
 #, kde-format
 msgid "Show detailed statistics about posts"
 msgstr "Afficher des statistiques détaillées concernant les messages."
 
-#: content/ui/Settings/GeneralCard.qml:36
+#: content/ui/Settings/GeneralCard.qml:37
 #, kde-format
 msgid "Show link preview"
 msgstr "Afficher un aperçu du lien."
 
-#: content/ui/Settings/GeneralCard.qml:49
+#: content/ui/Settings/GeneralCard.qml:50
 #, kde-format
 msgid "Crop images in the timeline to 16:9"
 msgstr "Rogner les images dans la frise chronologique pour le ration 16 : 9"
 
-#: content/ui/Settings/GeneralCard.qml:61
+#: content/ui/Settings/GeneralCard.qml:62
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "Lire automatiquement les fichiers « GIF » animés"
 
-#: content/ui/Settings/GeneralCard.qml:74
+#: content/ui/Settings/GeneralCard.qml:75
 #, kde-format
 msgid "Color theme"
 msgstr "Thème de couleurs"
+
+#: content/ui/Settings/GeneralCard.qml:92
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgid "Content font"
+msgstr "Avertissement sur le contenu"
+
+#: content/ui/Settings/GeneralCard.qml:98
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgid "Please choose a font"
+msgstr "Veuillez choisir un fichier"
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
 #, kde-format
@@ -505,7 +517,7 @@ msgid "Profile Editor"
 msgstr "Éditeur de profils"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:162
+#: content/ui/StatusComposer/StatusComposer.qml:167
 #, kde-format
 msgid "Please choose a file"
 msgstr "Veuillez choisir un fichier"
@@ -716,79 +728,79 @@ msgstr "Rendre le groupe auto-exclusif"
 msgid "Choice %1"
 msgstr "Choix %1"
 
-#: content/ui/StatusComposer/StatusComposer.qml:40
+#: content/ui/StatusComposer/StatusComposer.qml:41
 #, kde-format
 msgid "Edit this toot"
 msgstr "Modifier ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:42
+#: content/ui/StatusComposer/StatusComposer.qml:43
 #, kde-format
 msgid "Reply to this toot"
 msgstr "Répondre à ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:44
+#: content/ui/StatusComposer/StatusComposer.qml:45
 #, kde-format
 msgid "Rewrite this toot"
 msgstr "Ré-écrire ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:46
+#: content/ui/StatusComposer/StatusComposer.qml:47
 #, kde-format
 msgid "Write a new toot"
 msgstr "Écrire un nouveau toot..."
 
-#: content/ui/StatusComposer/StatusComposer.qml:74
-#: content/ui/StatusComposer/StatusComposer.qml:228
+#: content/ui/StatusComposer/StatusComposer.qml:79
+#: content/ui/StatusComposer/StatusComposer.qml:233
 #, kde-format
 msgid "Content Warning"
 msgstr "Avertissement sur le contenu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:82
+#: content/ui/StatusComposer/StatusComposer.qml:87
 #, kde-format
 msgid "What's new?"
 msgstr "Quoi de neuf ?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:165
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, kde-format
 msgid "Attach File"
 msgstr "Joindre un fichier"
 
-#: content/ui/StatusComposer/StatusComposer.qml:174
+#: content/ui/StatusComposer/StatusComposer.qml:179
 #, kde-format
 msgid "Add Poll"
 msgstr "Ajouter un vote"
 
-#: content/ui/StatusComposer/StatusComposer.qml:200
+#: content/ui/StatusComposer/StatusComposer.qml:205
 #, kde-format
 msgid "Public"
 msgstr "Public"
 
-#: content/ui/StatusComposer/StatusComposer.qml:205
+#: content/ui/StatusComposer/StatusComposer.qml:210
 #, kde-format
 msgid "Unlisted"
 msgstr "Non répertorié"
 
-#: content/ui/StatusComposer/StatusComposer.qml:210
+#: content/ui/StatusComposer/StatusComposer.qml:215
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/StatusComposer/StatusComposer.qml:215
+#: content/ui/StatusComposer/StatusComposer.qml:220
 #, kde-format
 msgid "Direct Message"
 msgstr "Message direct"
 
-#: content/ui/StatusComposer/StatusComposer.qml:220
+#: content/ui/StatusComposer/StatusComposer.qml:225
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilité"
 
-#: content/ui/StatusComposer/StatusComposer.qml:225
+#: content/ui/StatusComposer/StatusComposer.qml:230
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:237
+#: content/ui/StatusComposer/StatusComposer.qml:242
 #, kde-format
 msgid "Send"
 msgstr "Envoyer"
@@ -804,8 +816,8 @@ msgid "Media Hidden"
 msgstr "Media masqué"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:139
-#: content/ui/StatusDelegate/StatusDelegate.qml:208
+#: content/ui/StatusDelegate/StatusDelegate.qml:140
+#: content/ui/StatusDelegate/StatusDelegate.qml:211
 #, kde-format
 msgid "View profile"
 msgstr "Afficher un profil"
@@ -826,7 +838,7 @@ msgid "Copy link to this post"
 msgstr "Copier un lien vers ce message"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:363
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Supprimer un signet"
@@ -857,92 +869,92 @@ msgstr "(Aucun vote)"
 msgid "Vote"
 msgstr "Vote"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:102
+#: content/ui/StatusDelegate/StatusDelegate.qml:103
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Filtré : %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:106
+#: content/ui/StatusDelegate/StatusDelegate.qml:107
 #, kde-format
 msgid "Show anyway"
 msgstr "Afficher malgré tout"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:147 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:149 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 a favorisé votre message"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:149 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:151 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 a modifié un message"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:152
+#: content/ui/StatusDelegate/StatusDelegate.qml:154
 #, kde-format
 msgid "Your poll has ended"
 msgstr "Votre sondage est terminé"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:154
+#: content/ui/StatusDelegate/StatusDelegate.qml:156
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "Votre sondage auquel vous avez participé, est terminé"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:178
+#: content/ui/StatusDelegate/StatusDelegate.qml:181
 #, kde-format
 msgid "Pinned entry"
 msgstr "Article épinglé"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:214
+#: content/ui/StatusDelegate/StatusDelegate.qml:217
 #, kde-format
 msgid "%1 boosted"
 msgstr "mis en avant par %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:214 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:217 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 a mis en avant votre message"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:249
+#: content/ui/StatusDelegate/StatusDelegate.qml:255
 #, kde-format
 msgid "Show Less"
 msgstr "Afficher moins"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:249
+#: content/ui/StatusDelegate/StatusDelegate.qml:255
 #, kde-format
 msgid "Show More"
 msgstr "Afficher plus"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:324
+#: content/ui/StatusDelegate/StatusDelegate.qml:330
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:328
+#: content/ui/StatusDelegate/StatusDelegate.qml:334
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Répondre"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:338
+#: content/ui/StatusDelegate/StatusDelegate.qml:344
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Stimuler"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:348
+#: content/ui/StatusDelegate/StatusDelegate.qml:354
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "J'aime"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:363
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Signet"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:375
+#: content/ui/StatusDelegate/StatusDelegate.qml:381
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
