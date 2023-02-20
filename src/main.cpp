@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    QIcon::setThemeName("tokodon");
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
