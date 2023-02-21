@@ -35,6 +35,7 @@ QQC2.Dialog {
 
         QQC2.TextArea {
             id: textArea
+            wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
         }
