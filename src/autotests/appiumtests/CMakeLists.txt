@@ -7,7 +7,7 @@ if("${QT_MAJOR_VERSION}" STREQUAL "6" AND NOT Qt${QT_MAJOR_VERSION}_VERSION VERS
     return()
 endif()
 
-if(NOT BUILD_TESTING OR NOT CMAKE_SYSTEM_NAME MATCHES "Linux")
+if(NOT CMAKE_SYSTEM_NAME MATCHES "Linux")
     return()
 endif()
 find_package(SeleniumWebDriverATSPI)
