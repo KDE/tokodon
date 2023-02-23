@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # SPDX-FileCopyrightText: 2022-2023 Harald Sitter <sitter@kde.org>
+# SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 
 if("${QT_MAJOR_VERSION}" STREQUAL "6" AND NOT Qt${QT_MAJOR_VERSION}_VERSION VERSION_GREATER_EQUAL "6.5.0")
     # Before Qt 6.5 the AbstractButtons didn't trigger properly at all.
