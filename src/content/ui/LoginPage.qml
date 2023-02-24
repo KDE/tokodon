@@ -37,7 +37,7 @@ MastoPage {
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormSwitchDelegate {
                     id: sslErrors
-                    text: i18n("Ignore SSL errors")
+                    text: i18nc("@option:check Login page", "Ignore SSL errors")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormButtonDelegate {
