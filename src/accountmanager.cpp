@@ -125,7 +125,16 @@ void AccountManager::addAccount(AbstractAccount *account)
 void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
     auto config = Config::self();
-    if (selectedAccount() == nullptr && (config->lastUsedAccount().isEmpty() || account->identity()->account() == config->lastUsedAccount())) {
+
+    // old LastUsedAccount values used to be only username
+    const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
+    const bool isEmpty = config->lastUsedAccount().isEmpty();
+    const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
+    const bool matchesOldFormat = account->username() == config->lastUsedAccount();
+
+    const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
+
+    if (selectedAccount() == nullptr && isValid) {
         selectAccount(account, false);
         Q_EMIT accountsReady();
     }
@@ -168,7 +177,7 @@ void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAc
 
     if (explicitUserAction) {
         auto config = Config::self();
-        config->setLastUsedAccount(account->identity()->account());
+        config->setLastUsedAccount(account->settingsGroupName());
         config->save();
     }
 
