@@ -275,11 +275,6 @@ void Account::validateToken()
     streamingSocket("user");
 }
 
-QString Account::settingsGroupName() const
-{
-    return m_name + QLatin1Char('@') + QUrl(m_instance_uri).host();
-}
-
 void Account::writeToSettings(QSettings &settings) const
 {
     settings.beginGroup(settingsGroupName());

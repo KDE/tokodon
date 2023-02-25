@@ -485,3 +485,7 @@ bool AbstractAccount::isRegistered() const
     return !m_client_id.isEmpty() && !m_client_secret.isEmpty();
 }
 
+QString AbstractAccount::settingsGroupName() const
+{
+    return m_name + QLatin1Char('@') + QUrl(m_instance_uri).host();
+}

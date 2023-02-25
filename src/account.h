@@ -65,7 +65,6 @@ public:
     // buildFromSettings assumes a settings object in the object context
     virtual void writeToSettings(QSettings &settings) const override;
     virtual void buildFromSettings(const QSettings &settings) override;
-    QString settingsGroupName() const;
     virtual void validateToken() override;
 
 private:

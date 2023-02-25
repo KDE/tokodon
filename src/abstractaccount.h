@@ -186,6 +186,9 @@ public:
     /// @param QString note The note to add to the account. Leave empty to remove the existing note.
     Q_INVOKABLE void addNote(Identity *identity, const QString &note);
 
+    /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
+    QString settingsGroupName() const;
+
     enum AccountAction {
         Follow,
         Unfollow,
