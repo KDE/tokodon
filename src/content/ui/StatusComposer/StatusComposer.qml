@@ -242,10 +242,9 @@ MastoPage {
                             Component.onCompleted: currentIndex = indexOfValue(backend.language);
                             onActivated: backend.language = model.getCode(currentIndex);
 
-                            QQC2.ToolTip {
-                                id: tooltip
-                                text: i18nc("@label:listbox Post language selection", "Post Language")
-                            }
+                            QQC2.ToolTip.text: i18nc("@label:listbox Post language selection", "Post Language")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
                         }
                     }
                 }
