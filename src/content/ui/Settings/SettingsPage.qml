@@ -61,9 +61,21 @@ Kirigami.PageRow {
                             aboutData: About
                         }
                     }
+                    Component {
+                        id: aboutKDE
+                        MobileForm.AboutKDE {}
+                    }
+
                     MobileForm.FormButtonDelegate {
                         text: i18n("About Tokodon")
                         onClicked: applicationWindow().pageStack.layers.push(aboutPage)
+                    }
+
+                    MobileForm.FormDelegateSeparator {}
+
+                    MobileForm.FormButtonDelegate {
+                        text: i18n("About KDE")
+                        onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
                     }
                 }
             }
