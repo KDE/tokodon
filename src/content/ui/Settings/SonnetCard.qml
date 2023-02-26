@@ -77,6 +77,7 @@ MobileForm.FormCard {
             text: i18n("Selected default language:")
             model: isEmpty ? [{"display": i18n("None")}] : settings.dictionaryModel
             textRole: "display"
+            displayMode: Kirigami.Settings.isMobile ? MobileForm.FormComboBoxDelegate.Dialog : MobileForm.FormComboBoxDelegate.Page
             valueRole: "languageCode"
             property bool isEmpty: false
             Component.onCompleted: {
