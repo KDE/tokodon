@@ -150,8 +150,6 @@ Kirigami.ApplicationWindow {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
                     Layout.fillWidth: true
-                    implicitHeight: 50
-
                 }
             }
 
