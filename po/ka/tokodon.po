@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:00+0000\n"
+"POT-Creation-Date: 2023-02-26 00:58+0000\n"
 "PO-Revision-Date: 2023-02-20 07:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -306,6 +306,20 @@ msgstr "წინა გამოსახულება"
 msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
 
+#: content/ui/LanguageSelector.qml:64
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of preferred languages"
+msgid "Preferred Languages"
+msgstr "ნაგულისხმები ენა"
+
+#: content/ui/LanguageSelector.qml:65
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of all languages"
+msgid "All Languages"
+msgstr "ნაგულისხმები ენა"
+
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
@@ -333,37 +347,37 @@ msgstr "SSL-ის შეცდომების იგნორი"
 msgid "Instance URL must not be empty!"
 msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:170
 #, kde-format
 msgid "Home"
 msgstr "საწყისი"
 
-#: content/ui/main.qml:171 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/main.qml:181
+#: content/ui/main.qml:193
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Global"
 msgstr "გლობალური"
 
-#: content/ui/main.qml:206
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: content/ui/main.qml:232
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Bookmarks"
 msgstr "სანიშნები"
@@ -802,7 +816,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "გაფრთხ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:242
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, kde-format
+msgctxt "@info:whatsthis Post language selection"
+msgid "Select the language the post is written in"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:245
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label:listbox Post language selection"
+msgid "Post Language"
+msgstr "ნაგულისხმები ენა"
+
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "Send"
 msgstr "გაგზავნა"
@@ -1034,47 +1061,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-ის კლიენტი"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE -ის საზოგადოება"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:171
+#: main.cpp:173
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
+
+#: main.cpp:174
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1105,7 +1137,7 @@ msgstr "გლობალური დროის ხაზი"
 msgid "Error occurred when fetching the latest notification."
 msgstr "შეცდომა უახლესი შეტყობინების გამოთხოვისას."
 
-#: posteditorbackend.cpp:212
+#: posteditorbackend.cpp:215
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "უცნობი შეცდომა."

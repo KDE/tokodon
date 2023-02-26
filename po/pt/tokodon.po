@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:00+0000\n"
+"POT-Creation-Date: 2023-02-26 00:58+0000\n"
 "PO-Revision-Date: 2023-02-15 12:54+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -304,6 +304,20 @@ msgstr "Imagem anterior"
 msgid "Next image"
 msgstr "Imagem seguinte"
 
+#: content/ui/LanguageSelector.qml:64
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of preferred languages"
+msgid "Preferred Languages"
+msgstr "Língua por Omissão"
+
+#: content/ui/LanguageSelector.qml:65
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of all languages"
+msgid "All Languages"
+msgstr "Língua por Omissão"
+
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
@@ -331,37 +345,37 @@ msgstr "Ignorar os erros de SSL"
 msgid "Instance URL must not be empty!"
 msgstr "O URL da instância não deverá estar em branco!"
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:170
 #, kde-format
 msgid "Home"
 msgstr "Início"
 
-#: content/ui/main.qml:171 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: content/ui/main.qml:181
+#: content/ui/main.qml:193
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:206
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Conversation"
 msgstr "Conversação"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Favourites"
 msgstr "Favoritos"
 
-#: content/ui/main.qml:232
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Bookmarks"
 msgstr "Favoritos"
@@ -803,7 +817,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:242
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, kde-format
+msgctxt "@info:whatsthis Post language selection"
+msgid "Select the language the post is written in"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:245
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label:listbox Post language selection"
+msgid "Post Language"
+msgstr "Língua por Omissão"
+
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
@@ -1035,47 +1062,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "Favoritos"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Mastodon client"
 msgstr "Cliente de Mastodon"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunidade do KDE"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Maintainer"
 msgstr "Manutenção"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "José Nuno Pires"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: main.cpp:171
+#: main.cpp:173
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Cliente da rede social descentralizada Mastodon"
+
+#: main.cpp:174
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1106,7 +1138,7 @@ msgstr "Cronologia Global"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Ocorreu um erro ao obter a última notificação."
 
-#: posteditorbackend.cpp:212
+#: posteditorbackend.cpp:215
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Ocorreu um erro desconhecido."

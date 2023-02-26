@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:00+0000\n"
+"POT-Creation-Date: 2023-02-26 00:58+0000\n"
 "PO-Revision-Date: 2023-02-24 12:44\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -305,6 +305,18 @@ msgstr "上一张图片"
 msgid "Next image"
 msgstr "下一张图片"
 
+#: content/ui/LanguageSelector.qml:64
+#, kde-format
+msgctxt "@item:inlistbox Group of preferred languages"
+msgid "Preferred Languages"
+msgstr ""
+
+#: content/ui/LanguageSelector.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Group of all languages"
+msgid "All Languages"
+msgstr ""
+
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
@@ -332,37 +344,37 @@ msgstr "忽略 SSL 错误"
 msgid "Instance URL must not be empty!"
 msgstr ""
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:170
 #, kde-format
 msgid "Home"
 msgstr "主页"
 
-#: content/ui/main.qml:171 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/main.qml:181
+#: content/ui/main.qml:193
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/main.qml:206
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Conversation"
 msgstr ""
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/main.qml:232
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
@@ -799,7 +811,19 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:242
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, kde-format
+msgctxt "@info:whatsthis Post language selection"
+msgid "Select the language the post is written in"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:245
+#, kde-format
+msgctxt "@label:listbox Post language selection"
+msgid "Post Language"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "Send"
 msgstr "发送"
@@ -1030,47 +1054,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr ""
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon 客户端"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr ""
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Maintainer"
 msgstr "维护人员"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Shi Lei, Gary Wang"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "slreycn@outlook.com, git@blumia.net"
 
-#: main.cpp:171
+#: main.cpp:173
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "去中心化的社交网络客户端：mastodon"
+
+#: main.cpp:174
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1101,7 +1130,7 @@ msgstr "全局时间线"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: posteditorbackend.cpp:212
+#: posteditorbackend.cpp:215
 #, kde-format
 msgid "An unknown error occurred."
 msgstr ""

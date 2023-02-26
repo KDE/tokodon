@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:00+0000\n"
-"PO-Revision-Date: 2023-02-24 08:55+0100\n"
+"POT-Creation-Date: 2023-02-26 00:58+0000\n"
+"PO-Revision-Date: 2023-02-25 09:26+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -306,6 +306,20 @@ msgstr "Prejšnja slika"
 msgid "Next image"
 msgstr "Naslednja slika"
 
+#: content/ui/LanguageSelector.qml:64
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of preferred languages"
+msgid "Preferred Languages"
+msgstr "Privzeti jezik"
+
+#: content/ui/LanguageSelector.qml:65
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of all languages"
+msgid "All Languages"
+msgstr "Privzeti jezik"
+
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
@@ -333,37 +347,37 @@ msgstr "Prezri napake ssl"
 msgid "Instance URL must not be empty!"
 msgstr "URL pojavka ne sme biti prazno!"
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:170
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/main.qml:171 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Opozorila"
 
-#: content/ui/main.qml:181
+#: content/ui/main.qml:193
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Global"
 msgstr "Globalno"
 
-#: content/ui/main.qml:206
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Conversation"
 msgstr "Pogovor"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Favourites"
 msgstr "Priljubljene"
 
-#: content/ui/main.qml:232
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
@@ -802,7 +816,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:242
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, kde-format
+msgctxt "@info:whatsthis Post language selection"
+msgid "Select the language the post is written in"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:245
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label:listbox Post language selection"
+msgid "Post Language"
+msgstr "Privzeti jezik"
+
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
@@ -1036,47 +1063,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "Priljubljene"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 skupnost KDE"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:171
+#: main.cpp:173
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
+
+#: main.cpp:174
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1107,7 +1139,7 @@ msgstr "Globalna časovnica"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 
-#: posteditorbackend.cpp:212
+#: posteditorbackend.cpp:215
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."

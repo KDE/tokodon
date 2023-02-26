@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:00+0000\n"
-"PO-Revision-Date: 2023-02-20 09:27+0200\n"
+"POT-Creation-Date: 2023-02-26 00:58+0000\n"
+"PO-Revision-Date: 2023-02-25 08:35+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -308,6 +308,20 @@ msgstr "Попереднє зображення"
 msgid "Next image"
 msgstr "Наступне зображення"
 
+#: content/ui/LanguageSelector.qml:64
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of preferred languages"
+msgid "Preferred Languages"
+msgstr "Типова мова"
+
+#: content/ui/LanguageSelector.qml:65
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@item:inlistbox Group of all languages"
+msgid "All Languages"
+msgstr "Типова мова"
+
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
@@ -324,8 +338,7 @@ msgid "Instance Url:"
 msgstr "Адреса екземпляра:"
 
 #: content/ui/LoginPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Ignore ssl errors"
+#, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "Ігнорувати помилки SSL"
@@ -335,37 +348,37 @@ msgstr "Ігнорувати помилки SSL"
 msgid "Instance URL must not be empty!"
 msgstr "Адреса екземпляра не може бути порожньою!"
 
-#: content/ui/main.qml:158
+#: content/ui/main.qml:170
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: content/ui/main.qml:171 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/main.qml:181
+#: content/ui/main.qml:193
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/main.qml:206
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Favourites"
 msgstr "Улюблені"
 
-#: content/ui/main.qml:232
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
@@ -806,7 +819,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "пв"
 
-#: content/ui/StatusComposer/StatusComposer.qml:242
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, kde-format
+msgctxt "@info:whatsthis Post language selection"
+msgid "Select the language the post is written in"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:245
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label:listbox Post language selection"
+msgid "Post Language"
+msgstr "Типова мова"
+
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "Send"
 msgstr "Надіслати"
@@ -1040,47 +1066,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "Улюблені"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021–2023; Спільнота KDE, 2021–2023"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:171
+#: main.cpp:173
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
+
+#: main.cpp:174
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1111,7 +1142,7 @@ msgstr "Загальний розклад"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
 
-#: posteditorbackend.cpp:212
+#: posteditorbackend.cpp:215
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
