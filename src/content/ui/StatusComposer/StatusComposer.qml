@@ -242,7 +242,7 @@ MastoPage {
                         LanguageSelector {
                             id: languageSelect
 
-                            Accessible.name: tooltip.text
+                            Accessible.name: QQC2.ToolTip.text
                             Accessible.description: i18nc("@info:whatsthis Post language selection", "Select the language the post is written in")
 
                             Component.onCompleted: currentIndex = indexOfValue(backend.language);
