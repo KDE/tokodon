@@ -46,8 +46,6 @@ QQC2.Control {
     bottomPadding: 0
     rightPadding: 0
 
-    visible: tootContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
-
     contentItem: GridLayout {
         id: attachmentGridLayout
         columns: root.attachments.length > 1 ? 2 : 1
