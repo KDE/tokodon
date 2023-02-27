@@ -34,12 +34,9 @@ MastoPage {
                     onAccepted: continueButton.clicked()
                     inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
                 }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormSwitchDelegate {
-                    id: sslErrors
-                    text: i18nc("@option:check Login page", "Ignore SSL errors")
-                }
-                MobileForm.FormDelegateSeparator {}
+
+                MobileForm.FormDelegateSeparator { above: continueButton }
+
                 MobileForm.FormButtonDelegate {
                     id: continueButton
                     text: i18n("Continue")
@@ -58,6 +55,31 @@ MastoPage {
 
                         });
                     }
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18nc("@title:group Login page", "Network Settings")
+                }
+
+                MobileForm.FormSwitchDelegate {
+                    id: sslErrors
+                    text: i18nc("@option:check Login page", "Ignore SSL errors")
+                }
+
+                MobileForm.FormDelegateSeparator { above: proxySettingDelegate; below: sslErrors }
+
+                MobileForm.FormButtonDelegate {
+                    id: proxySettingDelegate
+                    text: i18n("Proxy Settings")
+                    onClicked: pageStack.layers.push('qrc:/content/ui/Settings/NetworkProxyPage.qml')
                 }
             }
         }
