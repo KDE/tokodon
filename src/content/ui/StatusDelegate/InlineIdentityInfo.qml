@@ -39,6 +39,7 @@ RowLayout {
         Kirigami.Heading {
             level: 4
             font.pixelSize: Config.defaultFont.pixelSize + 2
+            font.pointSize: -1
             text: root.identity.displayNameHtml
             type: Kirigami.Heading.Type.Primary
             color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor

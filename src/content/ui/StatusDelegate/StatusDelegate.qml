@@ -232,6 +232,7 @@ QQC2.ItemDelegate {
             Kirigami.Heading {
                 id: heading
                 font.pixelSize: Config.defaultFont.pixelSize + 1
+                font.pointSize: -1
                 text: root.relativeTime
                 color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 verticalAlignment: Text.AlignTop
