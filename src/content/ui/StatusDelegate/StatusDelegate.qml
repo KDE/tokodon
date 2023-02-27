@@ -259,52 +259,14 @@ QQC2.ItemDelegate {
                     onClicked: tootContent.visible = !tootContent.visible
                 }
             }
-            QQC2.TextArea {
+
+            PostContent {
                 id: tootContent
-                font: Config.defaultFont
-                Layout.fillWidth: true
-                text: "<style>
-a{
-    color: " + Kirigami.Theme.linkColor + ";
-    text-decoration: none;
-}
-</style>" + root.content
-                textFormat: TextEdit.RichText
-                leftPadding: 0
-                rightPadding: 0
-                bottomPadding: 0
-                readOnly: true
-                background: null
-                wrapMode: Text.Wrap
+
+                content: root.content
+                expandedPost: root.expandedPost
+                secondary: root.secondary
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
-                selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
-                // TODO handle opening profile page in tokodon
-                onLinkActivated: {
-                    if (link.startsWith('hashtag:/')) {
-                        const item = pageStack.push(tagModelComponent, {
-                            hashtag: link.substring(9),
-                        })
-                    } else {
-                        Qt.openUrlExternally(link)
-                    }
-                }
-                color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
-                onHoveredLinkChanged: if (hoveredLink.length > 0) {
-                    applicationWindow().hoverLinkIndicator.text = hoveredLink;
-                } else {
-                    applicationWindow().hoverLinkIndicator.text = "";
-                }
-
-                TapHandler {
-                    enabled: !parent.hoveredLink && !root.expandedPost
-                    onTapped: root.clicked()
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                    cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                }
             }
         }
 
