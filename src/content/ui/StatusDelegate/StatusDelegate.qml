@@ -276,6 +276,8 @@ QQC2.ItemDelegate {
             sensitive: root.sensitive
             secondary: root.secondary
             inViewPort: root.inViewPort
+
+            visible: tootContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
         }
 
         LinkPreview {
