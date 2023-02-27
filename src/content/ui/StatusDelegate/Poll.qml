@@ -10,7 +10,7 @@ import org.kde.kmasto 1.0
 ColumnLayout {
     id: root
 
-    required property var index
+    property var index
     required property var poll
 
     visible: !filtered
@@ -93,7 +93,7 @@ ColumnLayout {
     }
 
     QQC2.Button {
-        visible: poll !== undefined && !poll.voted
+        visible: poll !== undefined && index !== undefined && !poll.voted
         text: i18n("Vote")
         enabled: pollGroup.checkState !== Qt.Unchecked
         onClicked: {
