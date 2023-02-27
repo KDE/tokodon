@@ -47,6 +47,8 @@ QQC2.ItemDelegate {
     required property var mentions
     required property int visibility
 
+    required property var post
+
     property bool filtered: root.filters.length > 0
     property var timelineModel
     property bool secondary: false
