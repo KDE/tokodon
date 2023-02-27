@@ -298,7 +298,7 @@ QQC2.ItemDelegate {
                 iconSource: "reply-post"
                 text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.expandedPost ? root.repliesCount : i18nc("More than one reply", "1+"))
 
-                onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity)
+                onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
 
                 QQC2.ToolTip.text: i18nc("Reply to a post", "Reply")
                 QQC2.ToolTip.visible: hovered
