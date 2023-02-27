@@ -20,6 +20,8 @@ QQC2.Control {
     required property bool expandedPost
     required property bool inViewPort
 
+    property bool canHideMedia: true
+
     // Only uncrop timeline media if requested by the user, and there's only one attachment
     // Expanded posts (like in threads) are always uncropped.
     readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
@@ -186,7 +188,7 @@ QQC2.Control {
     QQC2.Button {
         icon.name: "view-hidden"
 
-        visible: !parent.isSensitive && parent.hasValidAttachment
+        visible: !parent.isSensitive && parent.hasValidAttachment && root.canHideMedia
 
         anchors.top: parent.top
         anchors.topMargin: Kirigami.Units.smallSpacing
