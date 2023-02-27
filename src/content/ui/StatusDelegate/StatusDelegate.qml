@@ -284,6 +284,7 @@ QQC2.ItemDelegate {
             attachments: root.attachments
             card: root.card
             secondary: root.secondary
+            contentVisible: tootContent.visible
         }
 
         Poll {
