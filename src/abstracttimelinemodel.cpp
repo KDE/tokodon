@@ -132,21 +132,7 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case UrlRole:
         return QVariant::fromValue<QUrl>(post->url());
     case RelativeTimeRole: {
-        const auto current = QDateTime::currentDateTime();
-        auto secsTo = post->publishedAt().secsTo(current);
-        if (secsTo < 60 * 60) {
-            const auto hours = post->publishedAt().time().hour();
-            const auto minutes = post->publishedAt().time().minute();
-            return i18nc("hour:minute",
-                         "%1:%2",
-                         hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
-                         minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
-        } else if (secsTo < 60 * 60 * 24) {
-            return i18n("%1h", qCeil(secsTo / (60 * 60)));
-        } else if (secsTo < 60 * 60 * 24 * 7) {
-            return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
-        }
-        return QLocale::system().toString(post->publishedAt().date(), QLocale::ShortFormat);
+        return post->relativeTime();
     }
     case PollRole:
         if (post->poll()) {

@@ -159,6 +159,10 @@ class Post : public QObject
     Q_PROPERTY(QStringList mentions READ mentions WRITE setMentions NOTIFY mentionsChanged)
     Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
     Q_PROPERTY(QStringList filters READ filters CONSTANT)
+    Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
+    Q_PROPERTY(QVector<Attachment *> attachments READ attachments CONSTANT)
+    Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
+    Q_PROPERTY(Card *card READ getCard CONSTANT)
 
 public:
     Post() = delete;
@@ -178,6 +182,7 @@ public:
 
     void fromJson(QJsonObject obj);
 
+    Identity *getAuthorIdentity() const;
     std::shared_ptr<Identity> authorIdentity() const;
     std::shared_ptr<Identity> boostIdentity() const;
     bool boosted() const;
@@ -206,6 +211,7 @@ public:
     QStringList mentions() const;
     void setMentions(const QStringList &mentions);
     std::optional<Card> card() const;
+    Card *getCard() const;
     void setCard(std::optional<Card> card);
     void setPollJson(const QJsonObject &object);
     Poll *poll() const;
@@ -215,6 +221,9 @@ public:
 
     /// Returns the published/creation time of this status.
     QDateTime publishedAt() const;
+
+    /// Returns a locale-aware relative time.
+    QString relativeTime() const;
 
     /// Returns whether the user favorited this status.
     bool favourited() const;

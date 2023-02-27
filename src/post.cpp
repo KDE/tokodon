@@ -1,10 +1,12 @@
 // SPDX-FileCopyrightText: 2021 kaniini <https://git.pleroma.social/kaniini>
 // SPDX-License-Identifier: GPL-3.0-only
 
+#include <KLocalizedString>
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
 #include <QMap>
+#include <QtMath>
 #include <qurl.h>
 
 #include "account.h"
@@ -257,6 +259,25 @@ QDateTime Post::publishedAt() const
     return m_publishedAt;
 }
 
+QString Post::relativeTime() const
+{
+    const auto current = QDateTime::currentDateTime();
+    auto secsTo = publishedAt().secsTo(current);
+    if (secsTo < 60 * 60) {
+        const auto hours = publishedAt().time().hour();
+        const auto minutes = publishedAt().time().minute();
+        return i18nc("hour:minute",
+                     "%1:%2",
+                     hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
+                     minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
+    } else if (secsTo < 60 * 60 * 24) {
+        return i18n("%1h", qCeil(secsTo / (60 * 60)));
+    } else if (secsTo < 60 * 60 * 24 * 7) {
+        return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
+    }
+    return QLocale::system().toString(publishedAt().date(), QLocale::ShortFormat);
+}
+
 int Post::favouritesCount() const
 {
     return m_favouritesCount;
@@ -402,6 +423,15 @@ void Post::setLanguage(const QString &language)
 std::optional<Card> Post::card() const
 {
     return m_card;
+}
+
+Card *Post::getCard() const
+{
+    if (m_card.has_value()) {
+        return const_cast<Card *>(&m_card.value());
+    } else {
+        return nullptr;
+    }
 }
 
 void Post::setCard(std::optional<Card> card)
@@ -556,6 +586,11 @@ QString Card::title() const
 QUrl Card::url() const
 {
     return QUrl::fromUserInput(m_card[QLatin1String("url")].toString());
+}
+
+Identity *Post::getAuthorIdentity() const
+{
+    return authorIdentity().get();
 }
 
 std::shared_ptr<Identity> Post::authorIdentity() const
