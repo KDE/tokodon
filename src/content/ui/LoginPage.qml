@@ -16,6 +16,13 @@ MastoPage {
     leftPadding: 0
     rightPadding: 0
 
+    Connections {
+        target: Controller
+        function onNetworkError(error) {
+            applicationWindow().showPassiveNotification(i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error));
+        }
+    }
+
     ColumnLayout {
         width: parent.width
         MobileForm.FormCard {
