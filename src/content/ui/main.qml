@@ -82,6 +82,7 @@ Kirigami.ApplicationWindow {
                 inReplyTo: inReplyTo,
                 mentions: mentions,
                 visibility: visibility,
+                previewPost: post
             });
         }
 

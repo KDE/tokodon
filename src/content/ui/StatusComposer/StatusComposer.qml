@@ -25,6 +25,7 @@ MastoPage {
     property int visibility: AccountManager.selectedAccount.preferences.defaultVisibility
     property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
     readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
+    property var previewPost: null
 
     readonly property PostEditorBackend defaultBackend: PostEditorBackend {
         inReplyTo: root.inReplyTo
@@ -82,6 +83,11 @@ MastoPage {
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
+        }
+
+        StatusPreview {
+            Layout.fillWidth: true
+            post: root.previewPost
         }
 
         QQC2.TextArea {
