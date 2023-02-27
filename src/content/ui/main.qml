@@ -73,7 +73,7 @@ Kirigami.ApplicationWindow {
             });
         }
 
-        function onReplyTo(inReplyTo, mentions, visibility, authorIdentity) {
+        function onReplyTo(inReplyTo, mentions, visibility, authorIdentity, post) {
             if (!mentions.includes(`@${authorIdentity.account}`)) {
                 mentions.push(`@${authorIdentity.account}`);
             }
