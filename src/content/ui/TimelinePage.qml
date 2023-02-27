@@ -60,6 +60,14 @@ Kirigami.ScrollablePage {
     }
 
     Connections {
+        target: Controller
+        function onNetworkError(error) {
+            message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
+            message.visible = true
+        }
+    }
+
+    Connections {
         target: root.model
         function onPostSourceReady(backend, isEdit) {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
@@ -89,7 +97,25 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("Loading...")
-            visible: listview.model.loading && listview.count < 2
+            visible: listview.model.loading
+        }
+
+        Kirigami.InlineMessage {
+            id: message
+            type: Kirigami.MessageType.Error
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+            }
+
+            actions: [
+                Kirigami.Action {
+                    text: i18n("Settings")
+                    icon.name: "settings-configure"
+                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+                }
+            ]
         }
     }
 }
