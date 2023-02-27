@@ -58,6 +58,8 @@ public:
         SelectedRole,
         FiltersRole,
 
+        PostRole,
+
         ExtraRole, ///< for sub-classes to extend the roles
     };
 

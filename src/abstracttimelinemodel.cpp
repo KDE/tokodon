@@ -72,6 +72,8 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         // Notification
         {NotificationActorIdentityRole, "notificationActorIdentity"},
         {TypeRole, "type"},
+
+        {PostRole, "post"},
     };
 }
 
@@ -154,6 +156,8 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case TypeRole:
     case NotificationActorIdentityRole:
         return false;
+    case PostRole:
+        return QVariant::fromValue<Post *>(post);
     }
 
     return {};

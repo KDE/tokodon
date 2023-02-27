@@ -165,6 +165,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
+    qRegisterMetaType<Post *>("Post*");
     qRegisterMetaType<Poll *>("Poll*");
     qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
