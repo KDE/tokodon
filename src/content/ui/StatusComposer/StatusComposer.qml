@@ -35,7 +35,7 @@ MastoPage {
 
     property PostEditorBackend backend: defaultBackend
 
-    readonly property bool isPollValid: backend.poll !== undefined ? backend.poll.isValid : true
+    readonly property bool isPollValid: backend.pollEnabled ? backend.poll.isValid : true
 
     title: {
         switch (root.purpose) {
@@ -259,7 +259,7 @@ MastoPage {
 
         QQC2.Button {
             text: i18n("Send")
-            enabled: isPollValid && (!progress.uploading || textArea.text.length > 0 || backend.attachmentEditorModel.count > 0)
+            enabled: textArea.text.length > 0 && isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
             Layout.alignment: Qt.AlignRight
             onClicked: {
                 if(root.purpose === StatusComposer.Edit) {
