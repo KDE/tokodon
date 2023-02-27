@@ -159,6 +159,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
     qRegisterMetaType<Post *>("Post*");
     qRegisterMetaType<Poll *>("Poll*");
+    qRegisterMetaType<Card *>("Card*");
     qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
