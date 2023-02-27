@@ -4,6 +4,7 @@
 
 #include "account.h"
 #include "accountmanager.h"
+#include "networkcontroller.h"
 #include "notificationhandler.h"
 #include "preferences.h"
 #include "tokodon_debug.h"
@@ -159,6 +160,8 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
             qCWarning(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
             if (errorCallback) {
                 errorCallback(reply);
+            } else {
+                Q_EMIT NetworkController::instance().networkError(reply->errorString());
             }
             return;
         }
