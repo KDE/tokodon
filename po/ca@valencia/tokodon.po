@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:58+0000\n"
-"PO-Revision-Date: 2023-02-20 10:36+0100\n"
+"POT-Creation-Date: 2023-02-28 00:58+0000\n"
+"PO-Revision-Date: 2023-02-26 11:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -236,7 +236,7 @@ msgstr "Obri l'enllaç"
 msgid "Enter token:"
 msgstr "Introduïu el testimoni:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:45
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:42
 #, kde-format
 msgid "Continue"
 msgstr "Continua"
@@ -309,18 +309,16 @@ msgid "Next image"
 msgstr "Imatge següent"
 
 #: content/ui/LanguageSelector.qml:64
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
-msgstr "Idioma predeterminat"
+msgstr "Idiomes preferits"
 
 #: content/ui/LanguageSelector.qml:65
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
-msgstr "Idioma predeterminat"
+msgstr "Tots els idiomes"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -337,49 +335,60 @@ msgstr "Us donem la benvinguda a Tokodon"
 msgid "Instance Url:"
 msgstr "URL de la instància:"
 
-#: content/ui/LoginPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Ignore ssl errors"
-msgctxt "@option:check Login page"
-msgid "Ignore SSL errors"
-msgstr "Ignora els errors d'SSL"
-
-#: content/ui/LoginPage.qml:48
+#: content/ui/LoginPage.qml:45
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "L'URL de la instància no pot estar buit!"
 
-#: content/ui/main.qml:170
+#: content/ui/LoginPage.qml:69
+#, fuzzy, kde-format
+#| msgid "Open Settings"
+msgctxt "@title:group Login page"
+msgid "Network Settings"
+msgstr "Obri la configuració"
+
+#: content/ui/LoginPage.qml:74
+#, kde-format
+msgctxt "@option:check Login page"
+msgid "Ignore SSL errors"
+msgstr "Ignora els errors d'SSL"
+
+#: content/ui/LoginPage.qml:81 content/ui/Settings/NetworkProxyPage.qml:72
+#, kde-format
+msgid "Proxy Settings"
+msgstr "Configureu el servidor intermediari"
+
+#: content/ui/main.qml:168
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/main.qml:183 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:181 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/main.qml:193
+#: content/ui/main.qml:191
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:205
+#: content/ui/main.qml:203
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:218
+#: content/ui/main.qml:216
 #, kde-format
 msgid "Conversation"
 msgstr "Conversa"
 
-#: content/ui/main.qml:230
+#: content/ui/main.qml:228
 #, kde-format
 msgid "Favourites"
 msgstr "Preferides"
 
-#: content/ui/main.qml:244
+#: content/ui/main.qml:242
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
@@ -498,11 +507,6 @@ msgstr "HTTP"
 msgid "Socks5"
 msgstr "Socks5"
 
-#: content/ui/Settings/NetworkProxyPage.qml:72
-#, kde-format
-msgid "Proxy Settings"
-msgstr "Configureu el servidor intermediari"
-
 #: content/ui/Settings/NetworkProxyPage.qml:76
 #, kde-format
 msgid "Host"
@@ -535,7 +539,7 @@ msgid "Profile Editor"
 msgstr "Editor de perfils"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:167
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, kde-format
 msgid "Please choose a file"
 msgstr "Seleccioneu un fitxer"
@@ -668,12 +672,12 @@ msgstr "Idioma predeterminat seleccionat:"
 msgid "None"
 msgstr "Sense"
 
-#: content/ui/Settings/SonnetCard.qml:96
+#: content/ui/Settings/SonnetCard.qml:97
 #, kde-format
 msgid "Additional spell checking languages"
 msgstr "Idiomes addicionals de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetCard.qml:97
+#: content/ui/Settings/SonnetCard.qml:98
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -682,40 +686,40 @@ msgstr ""
 "%1 proporcionarà la verificació ortogràfica i suggeriments per als idiomes "
 "llistats ací si s'ha activat la detecció automàtica."
 
-#: content/ui/Settings/SonnetCard.qml:108
+#: content/ui/Settings/SonnetCard.qml:109
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Obri un diccionari personal"
 
-#: content/ui/Settings/SonnetCard.qml:119
+#: content/ui/Settings/SonnetCard.qml:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Idiomes de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetCard.qml:129
-#: content/ui/Settings/SonnetCard.qml:139
+#: content/ui/Settings/SonnetCard.qml:130
+#: content/ui/Settings/SonnetCard.qml:140
 #, kde-format
 msgid "Default Language"
 msgstr "Idioma predeterminat"
 
-#: content/ui/Settings/SonnetCard.qml:151
+#: content/ui/Settings/SonnetCard.qml:152
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Diccionari de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetCard.qml:158
+#: content/ui/Settings/SonnetCard.qml:159
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Afig una paraula nova al vostre diccionari personal…"
 
-#: content/ui/Settings/SonnetCard.qml:161
+#: content/ui/Settings/SonnetCard.qml:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Add word"
 msgstr "Afig una paraula"
 
-#: content/ui/Settings/SonnetCard.qml:188
+#: content/ui/Settings/SonnetCard.qml:189
 #, kde-format
 msgid "Delete word"
 msgstr "Suprimix una paraula"
@@ -736,102 +740,141 @@ msgstr "Elimina"
 msgid "Add a description"
 msgstr "Afig una descripció"
 
-#: content/ui/StatusComposer/Poll.qml:32
-#, kde-format
-msgid "Make pool auto-exclusive"
-msgstr "Fes les opcions exclusives automàticament"
-
-#: content/ui/StatusComposer/Poll.qml:40
-#, kde-format
+#: content/ui/StatusComposer/Poll.qml:35
+#, fuzzy, kde-format
+#| msgid "Choice %1"
+msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Opció %1"
 
-#: content/ui/StatusComposer/StatusComposer.qml:41
+#: content/ui/StatusComposer/Poll.qml:59
+#, fuzzy, kde-format
+#| msgid "Choice %1"
+msgctxt "@action:intoolbar Poll toolbar"
+msgid "Add Choice"
+msgstr "Opció %1"
+
+#: content/ui/StatusComposer/Poll.qml:60
+#, kde-format
+msgctxt "@info:tooltip Poll toolbar"
+msgid "Add a new poll choice"
+msgstr ""
+
+#: content/ui/StatusComposer/Poll.qml:79
+#, kde-format
+msgctxt "@info:tooltip Poll toolbar"
+msgid "When the poll will expire"
+msgstr ""
+
+#: content/ui/StatusComposer/Poll.qml:88
+#, kde-format
+msgctxt "@option:check Poll toolbar"
+msgid "Multiple choice"
+msgstr ""
+
+#: content/ui/StatusComposer/Poll.qml:94
+#, kde-format
+msgctxt "@info:tooltip Poll toolbar"
+msgid "Allow multiple choices"
+msgstr ""
+
+#: content/ui/StatusComposer/Poll.qml:103
+#, kde-format
+msgctxt "@option:check Poll toolbar"
+msgid "Hide totals"
+msgstr ""
+
+#: content/ui/StatusComposer/Poll.qml:109
+#, kde-format
+msgctxt "@info:tooltip Poll toolbar"
+msgid "Hide vote count until the poll ends"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:43
 #, kde-format
 msgid "Edit this toot"
 msgstr "Edita este tut"
 
-#: content/ui/StatusComposer/StatusComposer.qml:43
+#: content/ui/StatusComposer/StatusComposer.qml:45
 #, kde-format
 msgid "Reply to this toot"
 msgstr "Contesta a este tut"
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:47
 #, kde-format
 msgid "Rewrite this toot"
 msgstr "Torna a escriure este tut"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:49
 #, kde-format
 msgid "Write a new toot"
 msgstr "Escriviu un tut nou"
 
-#: content/ui/StatusComposer/StatusComposer.qml:79
-#: content/ui/StatusComposer/StatusComposer.qml:233
+#: content/ui/StatusComposer/StatusComposer.qml:81
+#: content/ui/StatusComposer/StatusComposer.qml:239
 #, kde-format
 msgid "Content Warning"
 msgstr "Avís de contingut"
 
-#: content/ui/StatusComposer/StatusComposer.qml:87
+#: content/ui/StatusComposer/StatusComposer.qml:89
 #, kde-format
 msgid "What's new?"
 msgstr "Què hi ha de nou?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:170
+#: content/ui/StatusComposer/StatusComposer.qml:173
 #, kde-format
 msgid "Attach File"
 msgstr "Adjunta un fitxer"
 
-#: content/ui/StatusComposer/StatusComposer.qml:179
+#: content/ui/StatusComposer/StatusComposer.qml:183
 #, kde-format
 msgid "Add Poll"
 msgstr "Afig una votació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:205
+#: content/ui/StatusComposer/StatusComposer.qml:211
 #, kde-format
 msgid "Public"
 msgstr "Públic"
 
-#: content/ui/StatusComposer/StatusComposer.qml:210
+#: content/ui/StatusComposer/StatusComposer.qml:216
 #, kde-format
 msgid "Unlisted"
 msgstr "No llistat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:215
+#: content/ui/StatusComposer/StatusComposer.qml:221
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:220
+#: content/ui/StatusComposer/StatusComposer.qml:226
 #, kde-format
 msgid "Direct Message"
 msgstr "Missatge directe"
 
-#: content/ui/StatusComposer/StatusComposer.qml:225
+#: content/ui/StatusComposer/StatusComposer.qml:231
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilitat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:230
+#: content/ui/StatusComposer/StatusComposer.qml:236
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:240
+#: content/ui/StatusComposer/StatusComposer.qml:246
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
-msgstr ""
+msgstr "Seleccioneu l'idioma en què s'ha escrit la publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:245
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#: content/ui/StatusComposer/StatusComposer.qml:251
+#, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
-msgstr "Idioma predeterminat"
+msgstr "Idioma de la publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:255
+#: content/ui/StatusComposer/StatusComposer.qml:261
 #, kde-format
 msgid "Send"
 msgstr "Envia"
@@ -869,7 +912,7 @@ msgid "Copy link to this post"
 msgstr "Copia l'enllaç a esta publicació"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
-#: content/ui/StatusDelegate/StatusDelegate.qml:364
+#: content/ui/StatusDelegate/StatusDelegate.qml:365
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Elimina el punt"
@@ -945,47 +988,47 @@ msgstr "%1 ha impulsat"
 msgid "%1 boosted your post"
 msgstr "%1 ha impulsat la vostra publicació"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:255
+#: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format
 msgid "Show Less"
 msgstr "Mostra'n menys"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:255
+#: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format
 msgid "Show More"
 msgstr "Mostra'n més"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:331
+#: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:335
+#: content/ui/StatusDelegate/StatusDelegate.qml:336
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:345
+#: content/ui/StatusDelegate/StatusDelegate.qml:346
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Interessant"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:355
+#: content/ui/StatusDelegate/StatusDelegate.qml:356
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "M'agrada"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:364
+#: content/ui/StatusDelegate/StatusDelegate.qml:365
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Afig un punt"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:382
+#: content/ui/StatusDelegate/StatusDelegate.qml:383
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
@@ -1063,52 +1106,52 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "Preferits"
 
-#: main.cpp:107
+#: main.cpp:108
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:109
+#: main.cpp:110
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:173
+#: main.cpp:175
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
 
-#: main.cpp:174
+#: main.cpp:176
 #, kde-format
 msgid "Supports web+ap: url scheme"
-msgstr ""
+msgstr "Implementa l'esquema «web+ap: url»"
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1139,7 +1182,55 @@ msgstr "Línia de temps global"
 msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar l'última notificació."
 
-#: posteditorbackend.cpp:215
+#: polltimemodel.cpp:11
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "5 minutes"
+msgstr ""
+
+#: polltimemodel.cpp:12
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "30 minutes"
+msgstr ""
+
+#: polltimemodel.cpp:13
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "1 hour"
+msgstr ""
+
+#: polltimemodel.cpp:14
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "6 hours"
+msgstr ""
+
+#: polltimemodel.cpp:15
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "12 hours"
+msgstr ""
+
+#: polltimemodel.cpp:16
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "1 day"
+msgstr ""
+
+#: polltimemodel.cpp:17
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "3 days"
+msgstr ""
+
+#: polltimemodel.cpp:18
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "7 days"
+msgstr ""
+
+#: posteditorbackend.cpp:220
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
@@ -1179,3 +1270,6 @@ msgstr "Publicació"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil"
+
+#~ msgid "Make pool auto-exclusive"
+#~ msgstr "Fes les opcions exclusives automàticament"
