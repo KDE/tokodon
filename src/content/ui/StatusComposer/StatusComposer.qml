@@ -95,9 +95,12 @@ MastoPage {
             onTextChanged: root.backend.spoilerText = text
         }
 
-        StatusPreview {
+        Loader {
+            active: root.previewPost !== null
             Layout.fillWidth: true
-            post: root.previewPost
+            sourceComponent: StatusPreview {
+                post: root.previewPost
+            }
         }
 
         QQC2.TextArea {
