@@ -11,6 +11,7 @@ import QtQml.Models 2.15
 import org.kde.kmasto 1.0
 
 import "./StatusComposer"
+import "./StatusDelegate"
 
 Kirigami.ApplicationWindow {
     id: appwindow
@@ -145,7 +146,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
+                model: [homeAction, notificationAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
                 Kirigami.NavigationTabButton {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
@@ -183,6 +184,16 @@ Kirigami.ApplicationWindow {
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
+            checked = true;
+        }
+    }
+    property Kirigami.Action followRequestAction: Kirigami.Action {
+        icon.name: "list-add-user"
+        text: i18n("Follow Requests")
+        checkable: true
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(followRequestPage);
             checked = true;
         }
     }
@@ -281,6 +292,11 @@ Kirigami.ApplicationWindow {
                 name: timelinePage.name
             }
         }
+    }
+
+    Component {
+        id: followRequestPage
+        FollowRequestsPage {}
     }
 
     Component {
