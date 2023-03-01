@@ -39,6 +39,7 @@
 #include "config.h"
 #include "conversationmodel.h"
 #include "filehelper.h"
+#include "followrequestmodel.h"
 #include "languagemodel.h"
 #include "linkpaginatedtimelinemodel.h"
 #include "maintimelinemodel.h"
@@ -137,6 +138,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
     qmlRegisterType<LinkPaginationTimelineModel>("org.kde.kmasto", 1, 0, "LinkPaginationTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
+    qmlRegisterType<FollowRequestModel>("org.kde.kmasto", 1, 0, "FollowRequestModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");

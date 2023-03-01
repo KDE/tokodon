@@ -57,7 +57,8 @@ set(tokodon_src
     polltimemodel.cpp
     languagemodel.cpp
     polleditorbackend.cpp
-    ${debug_files_SRCS}
+        followrequestmodel.cpp
+        ${debug_files_SRCS}
 )
 
 if(NOT ANDROID)
