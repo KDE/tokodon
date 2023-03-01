@@ -208,7 +208,7 @@ void AbstractAccount::setToken(const QString &authcode)
 
 void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home)
 {
-    const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->inReplyTo(), verb));
+    const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->postId(), verb));
     const QJsonDocument doc;
 
     post(mutation_url, doc, true, this, [=](QNetworkReply *reply) {
