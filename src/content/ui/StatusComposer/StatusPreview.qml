@@ -32,6 +32,7 @@ ColumnLayout {
         content: post.content
         expandedPost: false
         secondary: true
+        shouldOpenInternalLinks: false
     }
 
     StatusDelegate.AttachmentGrid {

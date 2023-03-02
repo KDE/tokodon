@@ -13,6 +13,7 @@ QQC2.TextArea {
     required property string content
     required property bool expandedPost
     required property bool secondary
+    required property bool shouldOpenInternalLinks
 
     font: Config.defaultFont
     Layout.fillWidth: true
@@ -32,7 +33,7 @@ QQC2.TextArea {
     selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
     // TODO handle opening profile page in tokodon
     onLinkActivated: {
-        if (link.startsWith('hashtag:/')) {
+        if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
             const item = pageStack.push(tagModelComponent, {
                 hashtag: link.substring(9),
             })
