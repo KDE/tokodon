@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-28 00:58+0000\n"
-"PO-Revision-Date: 2023-02-27 07:59+0100\n"
+"PO-Revision-Date: 2023-02-28 08:41+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: abstractaccount.cpp:405
 #, kde-format
@@ -192,7 +192,7 @@ msgstr "Kliknite za dodajanje opombe"
 #: content/ui/AccountInfo.qml:394
 #, kde-format
 msgid "%1 toots"
-msgstr "%1 tootov"
+msgstr "%1 trobljenj"
 
 #: content/ui/AccountInfo.qml:398
 #, kde-format
@@ -339,11 +339,10 @@ msgid "Instance URL must not be empty!"
 msgstr "URL pojavka ne sme biti prazno!"
 
 #: content/ui/LoginPage.qml:69
-#, fuzzy, kde-format
-#| msgid "Open Settings"
+#, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
-msgstr "Odpri nastavitve"
+msgstr "Nastavitve omrežja"
 
 #: content/ui/LoginPage.qml:74
 #, kde-format
@@ -394,7 +393,7 @@ msgstr "Zaznamki"
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Toot"
-msgstr "Troblja"
+msgstr "Trobljenje"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -739,74 +738,72 @@ msgid "Add a description"
 msgstr "Dodaj opis"
 
 #: content/ui/StatusComposer/Poll.qml:35
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Izbira %1"
 
 #: content/ui/StatusComposer/Poll.qml:59
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Izbira %1"
+msgstr "Dodaj izbiro"
 
 #: content/ui/StatusComposer/Poll.qml:60
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr ""
+msgstr "Dodaj novo izbiro glasovanja"
 
 #: content/ui/StatusComposer/Poll.qml:79
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr ""
+msgstr "Kdaj bo glasovanje poteklo"
 
 #: content/ui/StatusComposer/Poll.qml:88
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr ""
+msgstr "Večkratna izbira"
 
 #: content/ui/StatusComposer/Poll.qml:94
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr ""
+msgstr "Dovoli večkratne izbire"
 
 #: content/ui/StatusComposer/Poll.qml:103
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr ""
+msgstr "Skrij vsote"
 
 #: content/ui/StatusComposer/Poll.qml:109
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr ""
+msgstr "Skrij število glasov dokler glasovanje ne poteče"
 
 #: content/ui/StatusComposer/StatusComposer.qml:43
 #, kde-format
 msgid "Edit this toot"
-msgstr "Uredi to objavo"
+msgstr "Uredi to trobljenje"
 
 #: content/ui/StatusComposer/StatusComposer.qml:45
 #, kde-format
 msgid "Reply to this toot"
-msgstr "Odgovori na to objavo"
+msgstr "Odgovori na to trobljenje"
 
 #: content/ui/StatusComposer/StatusComposer.qml:47
 #, kde-format
 msgid "Rewrite this toot"
-msgstr "Ponovno zapiši to objavo"
+msgstr "Ponovno zapiši to trobljenje"
 
 #: content/ui/StatusComposer/StatusComposer.qml:49
 #, kde-format
 msgid "Write a new toot"
-msgstr "Zapiši nov toot"
+msgstr "Zapiši novo trobljenje"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #: content/ui/StatusComposer/StatusComposer.qml:239
@@ -1186,49 +1183,49 @@ msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minut"
 
 #: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minut"
 
 #: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr ""
+msgstr "1 ura"
 
 #: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr ""
+msgstr "6 ur"
 
 #: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr ""
+msgstr "12 ur"
 
 #: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr ""
+msgstr "1 dan"
 
 #: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr ""
+msgstr "3 dni"
 
 #: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr ""
+msgstr "7 dni"
 
 #: posteditorbackend.cpp:220
 #, kde-format
