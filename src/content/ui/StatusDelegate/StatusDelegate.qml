@@ -267,6 +267,7 @@ QQC2.ItemDelegate {
                 expandedPost: root.expandedPost
                 secondary: root.secondary
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                shouldOpenInternalLinks: true
             }
         }
 
