@@ -246,6 +246,8 @@ QQC2.Popup {
                         width: ListView.view.width
                         height: ListView.view.height
 
+                        required property var modelData
+
                         property alias video: videoItem
 
                         property var scaleFactor: 1
