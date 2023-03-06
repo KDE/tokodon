@@ -11,13 +11,13 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION "5.77.0")
+set(KF_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
 if (ANDROID)
     set(QT_MIN_VERSION "5.15.8")
 endif()
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -37,34 +37,34 @@ include(ECMAddTests)
 include(KDEGitCommitHooks)
 
 ecm_setup_version(${PROJECT_VERSION}
-    VARIABLE_PREFIX TOKODON
-    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
-)
+        VARIABLE_PREFIX TOKODON
+        VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
+        )
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Multimedia Svg WebSockets Test)
 set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
-    TYPE REQUIRED
-    PURPOSE "Basic application components"
-)
-find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Kirigami2 I18n Notifications Config CoreAddons)
-set_package_properties(KF5 PROPERTIES
-    TYPE REQUIRED
-    PURPOSE "Basic application components"
-)
-set_package_properties(KF5Kirigami2 PROPERTIES
-    TYPE REQUIRED
-    PURPOSE "Kirigami application UI framework"
-)
-find_package(KF5KirigamiAddons 0.6 REQUIRED)
+        TYPE REQUIRED
+        PURPOSE "Basic application components"
+        )
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Kirigami2 I18n Notifications Config CoreAddons)
+set_package_properties(KF${QT_MAJOR_VERSION} PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Basic application components"
+        )
+set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Kirigami application UI framework"
+        )
+find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
 
-if(ANDROID)
+if (ANDROID)
     find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES
         TYPE REQUIRED
         PURPOSE "Encrypted communications"
     )
 else()
-    find_package(KF5QQC2DesktopStyle REQUIRED)
+    find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
     find_package(Qt${QT_MAJOR_VERSION}Keychain)
     set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
         TYPE REQUIRED
@@ -73,13 +73,13 @@ else()
 endif()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
-    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KIO)
+    find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
-    find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
-    find_package(KF5WindowSystem ${KF5_MIN_VERSION} REQUIRED)
-endif()
+    find_package(KF${QT_MAJOR_VERSION}DBusAddons ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF${QT_MAJOR_VERSION}WindowSystem ${KF_MIN_VERSION} REQUIRED)
+endif ()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)
