@@ -14,11 +14,14 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listview
-        model: FollowRequestModel {}
+        model: FollowRequestModel {
+            id: model
+        }
 
         delegate: QQC2.ItemDelegate {
             id: delegate
 
+            required property var index
             required property var identity
 
             width: ListView.view.width
@@ -40,11 +43,13 @@ Kirigami.ScrollablePage {
                     QQC2.Button {
                         text: "Allow"
                         icon.name: "checkmark"
+                        onClicked: model.actionAllow(model.index(delegate.index, 0))
                     }
 
                     QQC2.Button {
                         text: "Deny"
                         icon.name: "cards-block"
+                        onClicked: model.actionDeny(model.index(delegate.index, 0))
                     }
                 }
 
