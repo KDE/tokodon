@@ -24,8 +24,9 @@ public:
     bool loading() const;
     void setLoading(bool loading);
 
-    Q_INVOKABLE void actionAllow(const QModelIndex &index);
-    Q_INVOKABLE void actionDeny(const QModelIndex &index);
+public Q_SLOTS:
+    void actionAllow(const QModelIndex &index);
+    void actionDeny(const QModelIndex &index);
 
 Q_SIGNALS:
     void loadingChanged();
