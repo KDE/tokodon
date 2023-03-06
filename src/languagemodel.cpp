@@ -6,6 +6,7 @@
 #include <QDebug>
 
 RawLanguageModel::RawLanguageModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     auto locales = QLocale::matchingLocales(QLocale::AnyLanguage, QLocale::AnyScript, QLocale::AnyCountry);
 
@@ -39,6 +40,8 @@ QVariant RawLanguageModel::data(const QModelIndex &index, int role) const
 
 int RawLanguageModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
+
     return m_languages.count();
 }
 
@@ -53,6 +56,7 @@ QString RawLanguageModel::getCode(const int index) const
 }
 
 LanguageModel::LanguageModel(QObject *parent)
+    : QSortFilterProxyModel(parent)
 {
     m_model = new RawLanguageModel(this);
 

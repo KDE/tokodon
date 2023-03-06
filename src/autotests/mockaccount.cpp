@@ -20,6 +20,7 @@ void MockAccount::get(const QUrl &url,
 {
     Q_UNUSED(authenticated)
     Q_UNUSED(parent)
+    Q_UNUSED(errorCallback)
 
     if (m_getReplies.contains(url)) {
         auto reply = m_getReplies[url];
@@ -41,6 +42,8 @@ void MockAccount::post(const QUrl &url,
     Q_UNUSED(doc)
     Q_UNUSED(authenticated)
     Q_UNUSED(parent)
+    Q_UNUSED(errorCallback)
+    Q_UNUSED(headers)
 
     if (m_postReplies.contains(url)) {
         auto reply = m_postReplies[url];

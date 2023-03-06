@@ -6,6 +6,7 @@
 #include <KLocalizedString>
 
 PollTimeModel::PollTimeModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     m_times = {
         {i18nc("@item:inlistbox Poll expire times", "5 minutes"), 300},
@@ -39,6 +40,7 @@ QVariant PollTimeModel::data(const QModelIndex &index, int role) const
 
 int PollTimeModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
     return m_times.count();
 }
 
