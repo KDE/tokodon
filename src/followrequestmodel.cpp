@@ -82,11 +82,19 @@ void FollowRequestModel::actionAllow(const QModelIndex &index)
 
     auto requestIdentity = m_accounts[index.row()]->id();
 
-    m_account->get(m_account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentity)), true, this, [this, index](QNetworkReply *reply) {
-        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
+    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentity)),
+                    QJsonDocument{},
+                    true,
+                    this,
+                    [this, index](QNetworkReply *reply) {
+                        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
-    });
+                        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
+
+                        beginRemoveRows(QModelIndex(), index.row(), index.row());
+                        m_accounts.removeAt(index.row());
+                        endRemoveRows();
+                    });
 }
 
 void FollowRequestModel::actionDeny(const QModelIndex &index)
@@ -95,9 +103,17 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
 
     auto requestIdentity = m_accounts[index.row()]->id();
 
-    m_account->get(m_account->apiUrl(QString("/api/v1/follow_requests/%1/deny").arg(requestIdentity)), true, this, [this, index](QNetworkReply *reply) {
-        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
+    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/deny").arg(requestIdentity)),
+                    QJsonDocument{},
+                    true,
+                    this,
+                    [this, index](QNetworkReply *reply) {
+                        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
-    });
+                        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
+
+                        beginRemoveRows(QModelIndex(), index.row(), index.row());
+                        m_accounts.removeAt(index.row());
+                        endRemoveRows();
+                    });
 }
