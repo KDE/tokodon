@@ -14,30 +14,7 @@
 
 FollowRequestModel::FollowRequestModel(QObject *parent)
 {
-    auto m_account = AccountManager::instance().selectedAccount();
-
-    setLoading(true);
-
-    auto url = m_account->apiUrl("/api/v1/follow_requests");
-    m_account->get(url, true, this, [this, m_account](QNetworkReply *reply) {
-        const auto searchResult = QJsonDocument::fromJson(reply->readAll());
-        const auto accounts = searchResult.array();
-
-        beginResetModel();
-
-        std::transform(
-            accounts.cbegin(),
-            accounts.cend(),
-            std::back_inserter(m_accounts),
-            [m_account](const QJsonValue &value) -> auto{
-                const auto account = value.toObject();
-                return m_account->identityLookup(account["id"].toString(), account);
-            });
-
-        endResetModel();
-
-        setLoading(false);
-    });
+    fillTimeline();
 }
 
 QVariant FollowRequestModel::data(const QModelIndex &index, int role) const
@@ -116,4 +93,58 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
                         m_accounts.removeAt(index.row());
                         endRemoveRows();
                     });
+}
+
+bool FollowRequestModel::canFetchMore(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent);
+    return !m_next.isEmpty();
+}
+
+void FollowRequestModel::fetchMore(const QModelIndex &parent)
+{
+    Q_UNUSED(parent);
+
+    fillTimeline();
+}
+
+void FollowRequestModel::fillTimeline()
+{
+    auto m_account = AccountManager::instance().selectedAccount();
+
+    setLoading(true);
+
+    QUrl url;
+    if (m_next.isEmpty()) {
+        url = m_account->apiUrl("/api/v1/follow_requests");
+    } else {
+        url = m_next;
+    }
+
+    m_account->get(url, true, this, [this, m_account](QNetworkReply *reply) {
+        const auto searchResult = QJsonDocument::fromJson(reply->readAll());
+        const auto accounts = searchResult.array();
+
+        static QRegularExpression re("<(.*)>; rel=\"next\"");
+        const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+        const auto match = re.match(next);
+        if (re.isValid()) {
+            m_next = QUrl::fromUserInput(match.captured(1));
+        }
+
+        beginResetModel();
+
+        std::transform(
+            accounts.cbegin(),
+            accounts.cend(),
+            std::back_inserter(m_accounts),
+            [m_account](const QJsonValue &value) -> auto{
+                const auto account = value.toObject();
+                return m_account->identityLookup(account["id"].toString(), account);
+            });
+
+        endResetModel();
+
+        setLoading(false);
+    });
 }

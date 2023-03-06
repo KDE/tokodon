@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QUrl>
 #include <memory>
 
 class Identity;
@@ -31,7 +32,14 @@ public Q_SLOTS:
 Q_SIGNALS:
     void loadingChanged();
 
+protected:
+    void fetchMore(const QModelIndex &parent) override;
+    bool canFetchMore(const QModelIndex &parent) const override;
+
 private:
+    void fillTimeline();
+
     QList<std::shared_ptr<Identity>> m_accounts;
     bool m_loading = false;
+    QUrl m_next;
 };
