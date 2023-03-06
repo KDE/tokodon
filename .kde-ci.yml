@@ -2,26 +2,44 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kirigami': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/knotifications': '@stable'
-    'frameworks/kconfig': '@stable'
-    'libraries/kirigami-addons': '@latest'
-    'third-party/qtkeychain': '@latest'
+  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6', 'Android/Qt6' ]
+    'require':
+      'frameworks/extra-cmake-modules': '@latest-kf6'
+      'frameworks/ki18n': '@latest-kf6'
+      'frameworks/kirigami': '@latest-kf6'
+      'frameworks/kcoreaddons': '@latest-kf6'
+      'frameworks/knotifications': '@latest-kf6'
+      'frameworks/kconfig': '@latest-kf6'
+      'libraries/kirigami-addons': '@latest-kf6'
+      'third-party/qtkeychain': '@latest'
+      'frameworks/qqc2-desktop-style': '@latest-kf6'
 
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
-    'frameworks/qqc2-desktop-style': '@stable'
+  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6' ]
+    'require':
+      'frameworks/kdbusaddons': '@latest-kf6'
+      'frameworks/kwindowsystem': '@latest-kf6'
+      'frameworks/kio': '@latest-kf6'
 
-- 'on': ['Linux', 'FreeBSD']
-  'require':
-    'frameworks/kdbusaddons': '@stable'
-    'frameworks/kwindowsystem': '@stable'
-    'frameworks/kio': '@stable'
+  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5' ]
+    'require':
+      'frameworks/extra-cmake-modules': '@stable'
+      'frameworks/ki18n': '@stable'
+      'frameworks/kirigami': '@stable'
+      'frameworks/kcoreaddons': '@stable'
+      'frameworks/knotifications': '@stable'
+      'frameworks/kconfig': '@stable'
+      'libraries/kirigami-addons': '@latest'
+      'third-party/qtkeychain': '@latest'
+
+  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5' ]
+    'require':
+      'frameworks/qqc2-desktop-style': '@stable'
+
+  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5' ]
+    'require':
+      'frameworks/kdbusaddons': '@stable'
+      'frameworks/kwindowsystem': '@stable'
+      'frameworks/kio': '@stable'
 
 Options:
   require-passing-tests-on: [ '@all' ]
