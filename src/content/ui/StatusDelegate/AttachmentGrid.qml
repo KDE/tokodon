@@ -139,6 +139,7 @@ QQC2.Control {
                         previewUrl: modelData.previewUrl
                         autoPlay: Config.autoPlayGif
                         isSensitive: root.isSensitive
+                        showControls: false
 
                         TapHandler {
                             onTapped: if (root.isSensitive) {

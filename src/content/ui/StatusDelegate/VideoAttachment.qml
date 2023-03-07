@@ -11,6 +11,8 @@ import QtGraphicalEffects 1.0
 import Qt.labs.qmlmodels 1.0
 import QtMultimedia 5.15
 
+import QtQml 2.15
+
 MediaContainer {
     id: root
 
@@ -20,12 +22,10 @@ MediaContainer {
     required property var previewUrl
     required property bool autoPlay
     required property bool isSensitive
-
-    property bool paused: false
+    property alias showControls: mediaControls.visible
 
     function pause() {
         player.pause();
-        root.paused = true;
     }
 
     MediaPlayer {
@@ -37,6 +37,15 @@ MediaContainer {
 
         source: root.videoUrl
         videoOutput: output
+
+        function togglePlayPause() {
+            if (playbackState === MediaPlayer.PlayingState) {
+                pause();
+            } else {
+                play();
+            }
+        }
+
     }
 
     VideoOutput {
@@ -75,32 +84,86 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: player.playbackState !== MediaPlayer.PlayingState && !root.paused
+        visible: player.status !== MediaPlayer.Buffered
 
         fillMode: Image.PreserveAspectCrop
     }
 
     MouseArea {
-        enabled: !root.autoPlay
+        id: playerMouseArea
+        acceptedButtons: root.autoPlay ? Qt.NoButton : Qt.LeftButton
+        hoverEnabled: true
         anchors.fill: parent
 
-        onClicked: if (player.playbackState !== MediaPlayer.PlayingState) {
-            root.paused = false;
-            player.play();
-        } else {
-            root.paused = true;
-            player.pause();
-        }
+        onClicked: player.togglePlayPause()
     }
 
-    QQC2.Button {
-        visible: player.playbackState !== MediaPlayer.PlayingState
-        anchors.centerIn: parent
-        onClicked: player.play()
-        text: i18n("Play")
-        icon {
-            width: Kirigami.Units.iconSizes.large
-            height: Kirigami.Units.iconSizes.large
+    Rectangle {
+        id: mediaControls
+        anchors {
+            right: parent.right
+            bottom: parent.bottom
+            left: parent.left
+        }
+        height: mediaControlsLayout.implicitHeight
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        Kirigami.Theme.inherit: false
+
+        radius: previewImage.visible ? 0 : Kirigami.Units.smallSpacing
+        color: Kirigami.Theme.backgroundColor
+        opacity: {
+            if (player.playbackState !== MediaPlayer.PlayingState) {
+                return 0.7;
+            }
+
+            return playerMouseArea.containsMouse || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
+        }
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+            }
+        }
+
+        RowLayout {
+            id: mediaControlsLayout
+            anchors.fill: parent
+
+            QQC2.ToolButton {
+                id: playPauseButton
+                Layout.alignment: Qt.AlignVCenter
+
+                icon.name: {
+                    switch (player.playbackState) {
+                    case MediaPlayer.PlayingState:
+                        return "media-playback-pause";
+                    case MediaPlayer.PausedState:
+                    case MediaPlayer.StoppedState:
+                        return "media-playback-start";
+                    }
+                }
+
+                onClicked: player.togglePlayPause()
+            }
+
+            QQC2.Slider {
+                id: videoSeekSlider
+                Layout.alignment: Qt.AlignVCenter
+                Layout.fillWidth: true
+
+                from: 0
+                to: player.duration
+
+                Binding {
+                    target: videoSeekSlider
+                    property: "value"
+                    value: player.position
+                    when: !videoSeekSlider.pressed
+                    restoreMode: Binding.RestoreBindingOrValue
+                }
+
+                onMoved: player.seek(value)
+            }
         }
     }
 }
