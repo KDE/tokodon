@@ -32,6 +32,7 @@ public:
 
     void loadFromSettings(QSettings &settings);
     void writeToSettings(QSettings &settings);
+    void disableSettings(bool disabled);
 
     bool hasAccounts() const;
     Q_INVOKABLE void addAccount(AbstractAccount *account);
@@ -91,11 +92,11 @@ public Q_SLOTS:
 
 private:
     explicit AccountManager(QObject *parent = nullptr);
-
     virtual ~AccountManager();
 
     QList<AbstractAccount *> m_accounts;
     AbstractAccount *m_selected_account;
     KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
+    bool m_disableSettings = false;
 };

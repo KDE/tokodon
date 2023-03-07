@@ -26,9 +26,11 @@ AccountManager::AccountManager(QObject *parent)
 
 AccountManager::~AccountManager()
 {
-    // before destroying the world, dump everything to QSettings
-    QSettings settings;
-    writeToSettings(settings);
+    if (!m_disableSettings) {
+        // before destroying the world, dump everything to QSettings
+        QSettings settings;
+        writeToSettings(settings);
+    }
 
     for (auto a : std::as_const(m_accounts)) {
         delete a;
@@ -219,6 +221,9 @@ int AccountManager::selectedIndex() const
 
 void AccountManager::writeToSettings(QSettings &settings)
 {
+    if (m_disableSettings)
+        return;
+
     settings.beginGroup("accounts");
 
     for (auto a : std::as_const(m_accounts)) {
@@ -230,6 +235,9 @@ void AccountManager::writeToSettings(QSettings &settings)
 
 void AccountManager::loadFromSettings(QSettings &settings)
 {
+    if (m_disableSettings)
+        return;
+
     qDebug() << "Loading any accounts from settings.";
 
     settings.beginGroup("accounts");
@@ -250,6 +258,11 @@ void AccountManager::loadFromSettings(QSettings &settings)
     }
 
     settings.endGroup();
+}
+
+void AccountManager::disableSettings(bool disabled)
+{
+    this->m_disableSettings = disabled;
 }
 
 KAboutData AccountManager::aboutData() const

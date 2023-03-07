@@ -18,6 +18,7 @@ class ConversationModelTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        AccountManager::instance().disableSettings(true);
     }
 
     void testModel()

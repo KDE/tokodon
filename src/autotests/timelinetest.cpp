@@ -21,6 +21,8 @@ class TimelineTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        AccountManager::instance().disableSettings(true);
+
         account = new MockAccount();
         AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account);
