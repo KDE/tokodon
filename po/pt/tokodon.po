@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-04 00:47+0000\n"
-"PO-Revision-Date: 2023-02-15 12:54+0000\n"
+"PO-Revision-Date: 2023-03-06 15:08+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: toots Tokodon Toot toot ac Mastodon Schwan act\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-POFile-SpellExtra: Hashtags SOCKS JPG px Avatar robot\n"
+"X-POFile-SpellExtra: Hashtags SOCKS JPG px Avatar robot ap\n"
 
 #: abstractaccount.cpp:405
 #, kde-format
@@ -305,18 +305,16 @@ msgid "Next image"
 msgstr "Imagem seguinte"
 
 #: content/ui/LanguageSelector.qml:64
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
-msgstr "Língua por Omissão"
+msgstr "Línguas Preferidas"
 
 #: content/ui/LanguageSelector.qml:65
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
-msgstr "Língua por Omissão"
+msgstr "Todas as Línguas"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -339,18 +337,16 @@ msgid "Instance URL must not be empty!"
 msgstr "O URL da instância não deverá estar em branco!"
 
 #: content/ui/LoginPage.qml:69
-#, fuzzy, kde-format
-#| msgid "Open Settings"
+#, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
-msgstr "Abrir a Configuração"
+msgstr "Configuração da Rede"
 
 #: content/ui/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Ignore ssl errors"
+#, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
-msgstr "Ignorar os erros de SSL"
+msgstr "Ignorar os Erros de SSL"
 
 #: content/ui/LoginPage.qml:81 content/ui/Settings/NetworkProxyPage.qml:72
 #, kde-format
@@ -470,16 +466,14 @@ msgid "Color theme"
 msgstr "Tema de cores"
 
 #: content/ui/Settings/GeneralCard.qml:92
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "Content font"
-msgstr "Aviso do Conteúdo"
+msgstr "Tipo de letra do conteúdo"
 
 #: content/ui/Settings/GeneralCard.qml:98
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#, kde-format
 msgid "Please choose a font"
-msgstr "Escolha por favor um ficheiro"
+msgstr "Escolha por favor um tipo de letra"
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
 #, kde-format
@@ -743,54 +737,52 @@ msgid "Add a description"
 msgstr "Adicionar uma descrição"
 
 #: content/ui/StatusComposer/Poll.qml:35
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Opção %1"
 
 #: content/ui/StatusComposer/Poll.qml:59
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Opção %1"
+msgstr "Adicionar uma Opção"
 
 #: content/ui/StatusComposer/Poll.qml:60
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr ""
+msgstr "Adicionar uma nova opção à sondagem"
 
 #: content/ui/StatusComposer/Poll.qml:79
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr ""
+msgstr "Quando a sondagem irá expirar"
 
 #: content/ui/StatusComposer/Poll.qml:88
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr ""
+msgstr "Escolha múltipla"
 
 #: content/ui/StatusComposer/Poll.qml:94
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr ""
+msgstr "Permitir escolha múltipla"
 
 #: content/ui/StatusComposer/Poll.qml:103
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr ""
+msgstr "Esconder os totais"
 
 #: content/ui/StatusComposer/Poll.qml:109
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr ""
+msgstr "Esconder o número de votos até terminar a sondagem"
 
 #: content/ui/StatusComposer/StatusComposer.qml:43
 #, kde-format
@@ -868,14 +860,13 @@ msgstr "ac"
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
-msgstr ""
+msgstr "Seleccionar a língua em que está escrita a publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:251
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
-msgstr "Língua por Omissão"
+msgstr "Língua da Publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:261
 #, kde-format
@@ -1154,7 +1145,7 @@ msgstr "Cliente da rede social descentralizada Mastodon"
 #: main.cpp:176
 #, kde-format
 msgid "Supports web+ap: url scheme"
-msgstr ""
+msgstr "Suporta o esquema de URL's web+ap:"
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1189,49 +1180,49 @@ msgstr "Ocorreu um erro ao obter a última notificação."
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutos"
 
 #: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutos"
 
 #: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr ""
+msgstr "1 hora"
 
 #: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr ""
+msgstr "6 horas"
 
 #: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr ""
+msgstr "12 horas"
 
 #: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr ""
+msgstr "1 dia"
 
 #: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr ""
+msgstr "3 dias"
 
 #: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr ""
+msgstr "7 dias"
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1275,6 +1266,3 @@ msgstr "Enviar"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Tópico"
-
-#~ msgid "Make pool auto-exclusive"
-#~ msgstr "Tornar a lista auto-exclusiva"
