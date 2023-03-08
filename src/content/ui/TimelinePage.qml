@@ -112,6 +112,8 @@ Kirigami.ScrollablePage {
                 rightMargin: Kirigami.Units.largeSpacing
             }
 
+            showCloseButton: true
+
             actions: [
                 Kirigami.Action {
                     text: i18n("Settings")
