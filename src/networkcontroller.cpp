@@ -75,6 +75,9 @@ void NetworkController::openWebApLink(QString url)
 
 void NetworkController::openLink()
 {
+    if (m_requestedLink.isEmpty())
+        return;
+
     auto account = AccountManager::instance().selectedAccount();
 
     auto url = account->apiUrl("/api/v2/search");
