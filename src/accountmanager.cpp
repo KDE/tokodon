@@ -174,7 +174,7 @@ void AccountManager::removeAccount(AbstractAccount *account)
 
 void AccountManager::reloadAccounts()
 {
-    for (auto account : m_accounts) {
+    for (auto account : std::as_const(m_accounts)) {
         account->validateToken();
     }
 
