@@ -100,6 +100,12 @@ Kirigami.ScrollablePage {
             visible: listview.model.loading
         }
 
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No posts")
+            visible: listview.count === 0 && !listview.model.loading
+        }
+
         Kirigami.InlineMessage {
             id: message
             type: Kirigami.MessageType.Error
