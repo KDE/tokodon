@@ -172,6 +172,15 @@ void AccountManager::removeAccount(AbstractAccount *account)
     Q_EMIT accountsChanged();
 }
 
+void AccountManager::reloadAccounts()
+{
+    for (auto account : m_accounts) {
+        account->validateToken();
+    }
+
+    Q_EMIT accountsReloaded();
+}
+
 void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAction)
 {
     if (!m_accounts.contains(account)) {

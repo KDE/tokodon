@@ -36,6 +36,7 @@ public:
     bool hasAccounts() const;
     Q_INVOKABLE void addAccount(AbstractAccount *account);
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
+    void reloadAccounts();
 
     void selectAccount(AbstractAccount *account, bool explicitUserAction = true);
     AbstractAccount *selectedAccount() const;
@@ -63,6 +64,8 @@ Q_SIGNALS:
     void accountsChanged();
 
     void accountsReady();
+
+    void accountsReloaded();
 
     void accountSelected(AbstractAccount *account);
 
