@@ -105,8 +105,11 @@ Kirigami.ScrollablePage {
             type: Kirigami.MessageType.Error
             anchors {
                 top: parent.top
+                topMargin: Kirigami.Units.largeSpacing
                 left: parent.left
+                leftMargin: Kirigami.Units.largeSpacing
                 right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
             }
 
             actions: [
