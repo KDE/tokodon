@@ -44,6 +44,12 @@ Kirigami.ApplicationWindow {
                 globalDrawer.drawerOpen = false
             }
         }
+
+        function onAccountsReloaded() {
+            pageStack.replace(mainTimeline, {
+                name: "home"
+            });
+        }
     }
 
     Connections {
