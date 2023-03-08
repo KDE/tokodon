@@ -15,7 +15,7 @@ public:
     void openWebApLink(QString url);
 
 Q_SIGNALS:
-    void networkError(QString qString);
+    void networkErrorOccurred(const QString &errorString);
     void openPost(QString id);
     void openAccount(QString id);
 

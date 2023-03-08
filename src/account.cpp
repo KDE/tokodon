@@ -161,7 +161,7 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
             if (errorCallback) {
                 errorCallback(reply);
             } else {
-                Q_EMIT NetworkController::instance().networkError(reply->errorString());
+                Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
             }
             return;
         }

@@ -18,7 +18,7 @@ MastoPage {
 
     Connections {
         target: Controller
-        function onNetworkError(error) {
+        function onNetworkErrorOccurred(error) {
             applicationWindow().showPassiveNotification(i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error));
         }
     }
