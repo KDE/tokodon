@@ -56,6 +56,8 @@ void NetworkController::setApplicationProxy()
     }
 
     QNetworkProxy::setApplicationProxy(proxy);
+
+    AccountManager::instance().reloadAccounts();
 }
 
 void NetworkController::openWebApLink(QString url)
