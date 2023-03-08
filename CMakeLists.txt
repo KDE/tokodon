@@ -55,7 +55,7 @@ set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
         TYPE REQUIRED
         PURPOSE "Kirigami application UI framework"
         )
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
+find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.7.2 REQUIRED)
 
 if (ANDROID)
     find_package(OpenSSL)
