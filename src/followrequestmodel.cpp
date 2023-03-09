@@ -124,28 +124,30 @@ void FollowRequestModel::fillTimeline()
     }
 
     m_account->get(url, true, this, [this, m_account](QNetworkReply *reply) {
-        const auto searchResult = QJsonDocument::fromJson(reply->readAll());
-        const auto accounts = searchResult.array();
+        const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
+        const auto accounts = followRequestResult.array();
 
-        static QRegularExpression re("<(.*)>; rel=\"next\"");
-        const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-        const auto match = re.match(next);
-        if (re.isValid()) {
-            m_next = QUrl::fromUserInput(match.captured(1));
+        if (!accounts.isEmpty()) {
+            static QRegularExpression re("<(.*)>; rel=\"next\"");
+            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+            const auto match = re.match(next);
+            if (re.isValid()) {
+                m_next = QUrl::fromUserInput(match.captured(1));
+            }
+
+            beginResetModel();
+
+            std::transform(
+                accounts.cbegin(),
+                accounts.cend(),
+                std::back_inserter(m_accounts),
+                [m_account](const QJsonValue &value) -> auto{
+                    const auto account = value.toObject();
+                    return m_account->identityLookup(account["id"].toString(), account);
+                });
+
+            endResetModel();
         }
-
-        beginResetModel();
-
-        std::transform(
-            accounts.cbegin(),
-            accounts.cend(),
-            std::back_inserter(m_accounts),
-            [m_account](const QJsonValue &value) -> auto{
-                const auto account = value.toObject();
-                return m_account->identityLookup(account["id"].toString(), account);
-            });
-
-        endResetModel();
 
         setLoading(false);
     });
