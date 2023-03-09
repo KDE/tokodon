@@ -19,11 +19,17 @@ FollowRequestModel::FollowRequestModel(QObject *parent)
 
 QVariant FollowRequestModel::data(const QModelIndex &index, int role) const
 {
-    const auto identity = m_accounts[index.row()];
+    if (!index.isValid())
+        return {};
+
+    if (index.row() < 0 || index.row() >= m_accounts.size())
+        return {};
+
+    const auto identity = m_accounts[index.row()].get();
 
     switch (role) {
     case CustomRoles::IdentityRole:
-        return QVariant::fromValue<Identity *>(identity.get());
+        return QVariant::fromValue<Identity *>(identity);
     default:
         return {};
     }
@@ -57,17 +63,23 @@ void FollowRequestModel::actionAllow(const QModelIndex &index)
 {
     auto m_account = AccountManager::instance().selectedAccount();
 
-    auto requestIdentity = m_accounts[index.row()]->id();
+    if (!index.isValid())
+        return;
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentity)),
+    if (index.row() < 0 || index.row() >= m_accounts.size())
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    const auto requestIdentityId = requestIdentity->id();
+
+    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentityId)),
                     QJsonDocument{},
                     true,
                     this,
-                    [this, index](QNetworkReply *reply) {
+                    [this, requestIdentity, index](QNetworkReply *reply) {
                         const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        auto relationship = new Relationship(m_accounts[index.row()].get(), newRelation);
-                        m_accounts[index.row()]->setRelationship(relationship);
+                        m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
 
                         beginRemoveRows(QModelIndex(), index.row(), index.row());
                         m_accounts.removeAt(index.row());
@@ -79,17 +91,23 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
 {
     auto m_account = AccountManager::instance().selectedAccount();
 
-    auto requestIdentity = m_accounts[index.row()]->id();
+    if (!index.isValid())
+        return;
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/reject").arg(requestIdentity)),
+    if (index.row() < 0 || index.row() >= m_accounts.size())
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    const auto requestIdentityId = requestIdentity->id();
+
+    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/reject").arg(requestIdentityId)),
                     QJsonDocument{},
                     true,
                     this,
-                    [this, index](QNetworkReply *reply) {
+                    [this, requestIdentity, index](QNetworkReply *reply) {
                         const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        auto relationship = new Relationship(m_accounts[index.row()].get(), newRelation);
-                        m_accounts[index.row()]->setRelationship(relationship);
+                        m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
 
                         beginRemoveRows(QModelIndex(), index.row(), index.row());
                         m_accounts.removeAt(index.row());
