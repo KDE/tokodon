@@ -29,6 +29,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
+    Q_PROPERTY(bool hasFollowRequests READ hasFollowRequests NOTIFY hasFollowRequestsChanged)
 
 public:
     AbstractAccount(QObject *parent, const QString &instanceUri);
@@ -145,6 +146,12 @@ public:
     /// Read account from settings
     virtual void buildFromSettings(const QSettings &settings) = 0;
 
+    /// Check if the account has any follow requests
+    virtual bool hasFollowRequests() const = 0;
+
+    /// Check against the server for any new follow requests
+    virtual void checkForFollowRequests() = 0;
+
     /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
     /// @param Identity identity The account to follow
     /// @param bool reblogs Receive this account's reblogs in home timeline? Defaults to true.
@@ -228,6 +235,7 @@ Q_SIGNALS:
     void followRequestBlocked();
     void errorOccured(const QString &errorMessage);
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
+    void hasFollowRequestsChanged();
 
 protected:
     QString m_name;
