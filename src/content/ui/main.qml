@@ -151,6 +151,7 @@ Kirigami.ApplicationWindow {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
                     Layout.fillWidth: true
+                    visible: modelData.visible
                 }
             }
 
@@ -191,6 +192,7 @@ Kirigami.ApplicationWindow {
         icon.name: "list-add-user"
         text: i18n("Follow Requests")
         checkable: true
+        visible: AccountManager.hasAccounts && AccountManager.selectedAccount && AccountManager.selectedAccount.hasFollowRequests
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(followRequestPage);
