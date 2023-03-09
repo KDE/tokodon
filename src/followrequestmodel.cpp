@@ -81,7 +81,7 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
 
     auto requestIdentity = m_accounts[index.row()]->id();
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/deny").arg(requestIdentity)),
+    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/reject").arg(requestIdentity)),
                     QJsonDocument{},
                     true,
                     this,
