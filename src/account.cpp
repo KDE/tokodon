@@ -301,3 +301,20 @@ void Account::buildFromSettings(const QSettings &settings)
         validateToken();
     }
 }
+
+bool Account::hasFollowRequests() const
+{
+    return m_hasFollowRequests;
+}
+
+void Account::checkForFollowRequests()
+{
+    get(apiUrl("/api/v1/follow_requests"), true, this, [this](QNetworkReply *reply) {
+        const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
+        const bool hasFollowRequests = followRequestResult.isArray() && !followRequestResult.array().isEmpty();
+        if (hasFollowRequests != m_hasFollowRequests) {
+            m_hasFollowRequests = hasFollowRequests;
+            Q_EMIT hasFollowRequestsChanged();
+        }
+    });
+}

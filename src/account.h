@@ -67,10 +67,14 @@ public:
     virtual void buildFromSettings(const QSettings &settings) override;
     virtual void validateToken() override;
 
+    bool hasFollowRequests() const override;
+    Q_INVOKABLE void checkForFollowRequests() override;
+
 private:
     bool m_ignoreSslErrors = false;
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
+    bool m_hasFollowRequests = false;
 
     // common parts for all HTTP request
     QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;

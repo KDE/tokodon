@@ -118,6 +118,15 @@ void MockAccount::validateToken()
 {
 }
 
+bool MockAccount::hasFollowRequests() const
+{
+    return false;
+}
+
+void MockAccount::checkForFollowRequests()
+{
+}
+
 void MockAccount::registerPost(const QString &url, QNetworkReply *reply)
 {
     m_postReplies[apiUrl(url)] = reply;

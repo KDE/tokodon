@@ -30,6 +30,8 @@ public:
     void writeToSettings(QSettings &settings) const override;
     void buildFromSettings(const QSettings &settings) override;
     void validateToken() override;
+    bool hasFollowRequests() const override;
+    void checkForFollowRequests() override;
 
     void registerPost(const QString &url, QNetworkReply *reply);
     void registerGet(const QUrl &url, QNetworkReply *reply);
