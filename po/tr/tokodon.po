@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-09 00:46+0000\n"
 "PO-Revision-Date: 2023-02-28 11:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -629,10 +629,15 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarla"
 
-#: content/ui/Settings/SettingsPage.qml:65
+#: content/ui/Settings/SettingsPage.qml:70
 #, kde-format
 msgid "About Tokodon"
 msgstr "Tokodon Hakkında"
+
+#: content/ui/Settings/SettingsPage.qml:77
+#, kde-format
+msgid "About KDE"
+msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -879,7 +884,7 @@ msgstr "Gönder"
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:208
+#: content/ui/StatusDelegate/AttachmentGrid.qml:209
 #, kde-format
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
@@ -1029,11 +1034,6 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Daha Fazla"
 
-#: content/ui/StatusDelegate/VideoAttachment.qml:100
-#, kde-format
-msgid "Play"
-msgstr "Oynat"
-
 #: content/ui/UserInfo.qml:72
 #, kde-format
 msgid "Log in to an existing account"
@@ -1177,49 +1177,49 @@ msgstr "Global Zaman Akışı"
 msgid "Error occurred when fetching the latest notification."
 msgstr "En son bildirimi getirirken alırken bir hata oluştu."
 
-#: polltimemodel.cpp:11
+#: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
 msgstr "5 dakika"
 
-#: polltimemodel.cpp:12
+#: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
 msgstr "30 dakika"
 
-#: polltimemodel.cpp:13
+#: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
 msgstr "1 saat"
 
-#: polltimemodel.cpp:14
+#: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
 msgstr "6 saat"
 
-#: polltimemodel.cpp:15
+#: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
 msgstr "12 saat"
 
-#: polltimemodel.cpp:16
+#: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
 msgstr "1 gün"
 
-#: polltimemodel.cpp:17
+#: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
 msgstr "3 gün"
 
-#: polltimemodel.cpp:18
+#: polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
@@ -1265,6 +1265,9 @@ msgstr "Gönderi"
 msgctxt "@title"
 msgid "Thread"
 msgstr "İş Parçacığı"
+
+#~ msgid "Play"
+#~ msgstr "Oynat"
 
 #~ msgid "Make pool auto-exclusive"
 #~ msgstr "Anketi kendiliğinden özel yap"

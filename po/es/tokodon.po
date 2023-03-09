@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-09 00:46+0000\n"
 "PO-Revision-Date: 2023-02-28 03:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -630,10 +630,15 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Preferencias"
 
-#: content/ui/Settings/SettingsPage.qml:65
+#: content/ui/Settings/SettingsPage.qml:70
 #, kde-format
 msgid "About Tokodon"
 msgstr "Acerca de Tokodon"
+
+#: content/ui/Settings/SettingsPage.qml:77
+#, kde-format
+msgid "About KDE"
+msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
@@ -880,7 +885,7 @@ msgstr "Enviar"
 msgid "Not available"
 msgstr "No disponible"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:208
+#: content/ui/StatusDelegate/AttachmentGrid.qml:209
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medios ocultos"
@@ -1030,11 +1035,6 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Más"
 
-#: content/ui/StatusDelegate/VideoAttachment.qml:100
-#, kde-format
-msgid "Play"
-msgstr "Reproducir"
-
 #: content/ui/UserInfo.qml:72
 #, kde-format
 msgid "Log in to an existing account"
@@ -1179,49 +1179,49 @@ msgstr "Cronología global"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Ha ocurrido un error al extraer la última notificación."
 
-#: polltimemodel.cpp:11
+#: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
 msgstr "5 minutos"
 
-#: polltimemodel.cpp:12
+#: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
 msgstr "30 minutos"
 
-#: polltimemodel.cpp:13
+#: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
 msgstr "1 hora"
 
-#: polltimemodel.cpp:14
+#: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
 msgstr "6 horas"
 
-#: polltimemodel.cpp:15
+#: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
 msgstr "12 horas"
 
-#: polltimemodel.cpp:16
+#: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
 msgstr "1 día"
 
-#: polltimemodel.cpp:17
+#: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
 msgstr "3 días"
 
-#: polltimemodel.cpp:18
+#: polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
@@ -1267,6 +1267,9 @@ msgstr "Publicar"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Hilo"
+
+#~ msgid "Play"
+#~ msgstr "Reproducir"
 
 #~ msgid "Make pool auto-exclusive"
 #~ msgstr "Hacer la reserva autoexclusiva"
