@@ -220,6 +220,12 @@ TimelinePage {
                                 visible: model.isSelf
                                 text: i18n("Settings")
                                 onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+                            },
+                            Kirigami.Action {
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
+                                visible: model.isSelf
+                                text: i18n("Follow Requests")
+                                onTriggered: pageStack.push('qrc:/content/ui/FollowRequestsPage.qml')
                             }
                         ]
                     }
