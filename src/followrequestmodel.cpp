@@ -66,7 +66,8 @@ void FollowRequestModel::actionAllow(const QModelIndex &index)
                     [this, index](QNetworkReply *reply) {
                         const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
+                        auto relationship = new Relationship(m_accounts[index.row()].get(), newRelation);
+                        m_accounts[index.row()]->setRelationship(relationship);
 
                         beginRemoveRows(QModelIndex(), index.row(), index.row());
                         m_accounts.removeAt(index.row());
@@ -87,7 +88,8 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
                     [this, index](QNetworkReply *reply) {
                         const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        m_accounts[index.row()]->relationship()->updateFromJson(newRelation);
+                        auto relationship = new Relationship(m_accounts[index.row()].get(), newRelation);
+                        m_accounts[index.row()]->setRelationship(relationship);
 
                         beginRemoveRows(QModelIndex(), index.row(), index.row());
                         m_accounts.removeAt(index.row());
