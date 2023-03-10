@@ -68,6 +68,14 @@ MastoPage {
 
     Component.onCompleted: textArea.forceActiveFocus()
 
+    function submitPost() {
+        if(root.purpose === StatusComposer.Edit) {
+            backend.edit()
+        } else {
+            backend.save()
+        }
+    }
+
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
@@ -104,6 +112,16 @@ MastoPage {
                 if (root.purpose === StatusComposer.New || root.purpose === StatusComposer.Reply) {
                     textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
                 }
+            }
+
+            Keys.onEnterPressed: (event)=> {
+               if (event.modifiers & Qt.ControlModifier)
+                    root.submitPost()
+            }
+
+            Keys.onReturnPressed: (event)=> {
+               if (event.modifiers & Qt.ControlModifier)
+                    root.submitPost()
             }
 
             ColumnLayout {
@@ -263,13 +281,7 @@ MastoPage {
             text: i18n("Send")
             enabled: textArea.text.length > 0 && isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
             Layout.alignment: Qt.AlignRight
-            onClicked: {
-                if(root.purpose === StatusComposer.Edit) {
-                    backend.edit()
-                } else {
-                    backend.save()
-                }
-            }
+            onClicked: root.submitPost()
         }
     }
 }
