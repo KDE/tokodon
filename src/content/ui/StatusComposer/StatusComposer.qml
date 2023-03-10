@@ -66,6 +66,8 @@ MastoPage {
         }
     }
 
+    Component.onCompleted: textArea.forceActiveFocus()
+
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
