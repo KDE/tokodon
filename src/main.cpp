@@ -118,6 +118,14 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
 
+    QCommandLineParser parser;
+    parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
+    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
+
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
+
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
@@ -170,14 +178,6 @@ int main(int argc, char *argv[])
 
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
-
-    QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
-    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
-
-    about.setupCommandLine(&parser);
-    parser.process(app);
-    about.processCommandLine(&parser);
 
     // Controller::instance().setAboutData(about);
 
