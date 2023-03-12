@@ -14,6 +14,10 @@ ListView {
 
     required property string text
 
+    onTextChanged: if (text.length === 0) {
+        searchModel.clear();
+    }
+
     model: SearchModel {
         id: searchModel
     }
@@ -26,8 +30,16 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
+        text: i18n("Loading")
+        visible: searchModel.loading
+        icon.name: "system-search"
+        anchors.centerIn: parent
+        width: parent.width - Kirigami.Units.gridUnit * 4
+    }
+
+    Kirigami.PlaceholderMessage {
         text: i18n("No search results")
-        visible: root.count === 0 && root.text.length > 2
+        visible: root.count === 0 && root.text.length > 2 && !searchModel.loading && searchModel.loaded
         icon.name: "system-search"
         anchors.centerIn: parent
         width: parent.width - Kirigami.Units.gridUnit * 4
@@ -35,7 +47,7 @@ ListView {
 
     Kirigami.PlaceholderMessage {
         text: i18n("Search for peoples, tags and posts")
-        visible: root.count === 0 && root.text.length <= 2
+        visible: root.count === 0 && !searchModel.loading && !searchModel.loaded
         icon.name: "system-search"
         anchors.centerIn: parent
         width: parent.width - Kirigami.Units.gridUnit * 4
