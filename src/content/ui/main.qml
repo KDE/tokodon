@@ -149,11 +149,13 @@ Kirigami.ApplicationWindow {
                 topPadding: 3
                 bottomPadding: 3
 
+                visible: !Kirigami.Settings.isMobile
+
                 contentItem: SearchField {}
             }
 
             Repeater {
-                model: [homeAction, notificationAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
+                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
                 Kirigami.NavigationTabButton {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
@@ -270,6 +272,19 @@ Kirigami.ApplicationWindow {
             checked = true;
         }
     }
+
+    property Kirigami.Action searchAction: Kirigami.Action {
+        icon.name: "search"
+        text: i18n("Search")
+        checkable: true
+        visible: Kirigami.Settings.isMobile
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace("qrc:/content/ui/SearchPage.qml");
+            checked = true;
+        }
+    }
+
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
