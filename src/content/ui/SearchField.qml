@@ -7,15 +7,14 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
-import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
-import './StatusDelegate'
 
 QQC2.Control {
     id: root
 
     property alias text: searchField.text
+    property alias searchModel: searchView.model
     property bool hasSearched: false
 
     leftPadding: 0
@@ -38,7 +37,7 @@ QQC2.Control {
         }
 
         onAccepted: if (text.length > 2) {
-            searchModel.search(text)
+            root.searchModel.search(text)
             root.hasSearched = true
         } else {
             popup.close();
@@ -208,145 +207,9 @@ QQC2.Control {
                     color: Kirigami.Theme.backgroundColor
                 }
 
-                ListView {
+                SearchView {
                     id: searchView
-                    model: SearchModel {
-                        id: searchModel
-                    }
-
-                    section {
-                        property: "type"
-                        delegate: Kirigami.ListSectionHeader {
-                            text: searchModel.labelForType(section)
-                        }
-                    }
-
-                    Kirigami.PlaceholderMessage {
-                        text: i18n("No search results")
-                        visible: searchView.count === 0 && root.hasSearched && !searchView.model.loading
-                        icon.name: "system-search"
-                        anchors.centerIn: parent
-                        width: parent.width - Kirigami.Units.gridUnit * 4
-                    }
-
-                    Kirigami.PlaceholderMessage {
-                        text: i18n("Loading...")
-                        visible: searchView.count === 0 && searchView.model.loading
-                        icon.name: "system-search"
-                        anchors.centerIn: parent
-                        width: parent.width - Kirigami.Units.gridUnit * 4
-                    }
-
-                    Kirigami.PlaceholderMessage {
-                        text: i18n("Search for peoples, tags and posts")
-                        visible: !root.hasSearched && !searchView.model.loading
-                        icon.name: "system-search"
-                        anchors.centerIn: parent
-                        width: parent.width - Kirigami.Units.gridUnit * 4
-                    }
-
-                    delegate: DelegateChooser {
-                        role: "type"
-                        DelegateChoice {
-                            roleValue: SearchModel.Account
-                            QQC2.ItemDelegate {
-                                id: accountDelegate
-
-                                required property var authorIdentity
-
-                                width: ListView.view.width
-
-                                leftPadding: Kirigami.Units.largeSpacing
-                                rightPadding: Kirigami.Units.largeSpacing
-                                topPadding: Kirigami.Units.smallSpacing
-                                bottomPadding: Kirigami.Units.smallSpacing
-
-                                onClicked: Navigation.openAccount(accountDelegate.authorIdentity.id)
-
-                                contentItem: RowLayout {
-                                    Kirigami.Avatar {
-                                        Layout.alignment: Qt.AlignTop
-                                        Layout.rowSpan: 5
-                                        source: accountDelegate.authorIdentity.avatarUrl
-                                        cache: true
-                                        name: accountDelegate.authorIdentity.displayName
-                                    }
-
-                                    ColumnLayout {
-                                        Layout.fillWidth: true
-                                        Layout.bottomMargin: Kirigami.Units.smallSpacing
-                                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                                        spacing: 0
-                                        Kirigami.Heading {
-                                            id: heading
-                                            level: 5
-                                            text: accountDelegate.authorIdentity.displayNameHtml
-                                            textFormat: Text.RichText
-                                            type: Kirigami.Heading.Type.Primary
-                                            color: Kirigami.Theme.textColor
-                                            verticalAlignment: Text.AlignTop
-
-                                            Layout.fillWidth: true
-                                        }
-
-                                        Kirigami.Heading {
-                                            level: 5
-                                            elide: Text.ElideRight
-                                            color: Kirigami.Theme.disabledTextColor
-                                            text: `@${accountDelegate.authorIdentity.account}`
-                                            verticalAlignment: Text.AlignTop
-
-                                            Layout.fillWidth: true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        DelegateChoice {
-                            roleValue: SearchModel.Status
-                            StatusDelegate {
-                                width: ListView.view.width
-                                leftPadding: Kirigami.Units.largeSpacing
-                                rightPadding: Kirigami.Units.largeSpacing
-                                topPadding: Kirigami.Units.smallSpacing
-                                bottomPadding: Kirigami.Units.smallSpacing
-                                secondary: true
-                                showSeparator: true
-                                showInteractionButton: false
-                            }
-                        }
-
-                        DelegateChoice {
-                            roleValue: SearchModel.Hashtag
-                            QQC2.ItemDelegate {
-                                required property string id
-
-                                width: ListView.view.width
-                                leftPadding: Kirigami.Units.largeSpacing
-                                rightPadding: Kirigami.Units.largeSpacing
-                                topPadding: Kirigami.Units.smallSpacing
-                                bottomPadding: Kirigami.Units.smallSpacing
-
-                                onClicked: Navigation.openTag(id)
-
-                                contentItem: ColumnLayout {
-                                    Layout.fillWidth: true
-                                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                                    spacing: 0
-                                    Kirigami.Heading {
-                                        id: heading
-                                        level: 5
-                                        text: "#" + id
-                                        type: Kirigami.Heading.Type.Primary
-                                        color: Kirigami.Theme.textColor
-                                        verticalAlignment: Text.AlignTop
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    text: searchField.text
                 }
             }
         }
