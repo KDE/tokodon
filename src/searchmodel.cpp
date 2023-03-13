@@ -39,6 +39,9 @@ void SearchModel::search(const QString &queryString)
 {
     auto url = m_account->apiUrl("/api/v2/search");
     url.setQuery({{"q", queryString}});
+
+    setLoading(true);
+
     m_account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -67,6 +70,8 @@ void SearchModel::search(const QString &queryString)
             std::back_inserter(m_hashtags),
             [](const QJsonValue &value) -> auto{ return SearchHashtag(value.toObject()); });
         endResetModel();
+
+        setLoading(false);
     });
 }
 
