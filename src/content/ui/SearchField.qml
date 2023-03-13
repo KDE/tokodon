@@ -15,7 +15,6 @@ QQC2.Control {
 
     property alias text: searchField.text
     property alias searchModel: searchView.model
-    property bool hasSearched: false
 
     leftPadding: 0
     topPadding: 0
@@ -38,7 +37,6 @@ QQC2.Control {
 
         onAccepted: if (text.length > 2) {
             root.searchModel.search(text)
-            root.hasSearched = true
         } else {
             popup.close();
         }
