@@ -35,7 +35,6 @@ Kirigami.ApplicationWindow {
         target: AccountManager
 
         function onAccountSelected() {
-            AccountManager.selectedAccount.checkForFollowRequests();
             pageStack.pop(pageStack.get(0))
         }
 
