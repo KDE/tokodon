@@ -20,7 +20,9 @@ AccountManager::AccountManager(QObject *parent)
     loadFromSettings(settings);
 
     connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        account->checkForFollowRequests();
+        if (account != nullptr) {
+            account->checkForFollowRequests();
+        }
     });
 }
 
