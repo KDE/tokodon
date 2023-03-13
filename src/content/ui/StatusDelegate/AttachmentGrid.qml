@@ -27,6 +27,7 @@ QQC2.Control {
     readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
 
     property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
+    signal userSensitivityChanged()
 
     readonly property var mediaRatio: 9.0 / 16.0
 
@@ -178,6 +179,9 @@ QQC2.Control {
                                     video.pause();
                                 }
                             }
+                            function onUserSensitivityChanged() {
+                                video.pause()
+                            }
                         }
                     }
                 }
@@ -195,7 +199,10 @@ QQC2.Control {
         anchors.left: parent.left
         anchors.leftMargin: Kirigami.Units.smallSpacing
 
-        onClicked: root.isSensitive = true
+        onClicked: {
+            root.isSensitive = true
+            root.userSensitivityChanged()
+        }
     }
 
     QQC2.Button {
