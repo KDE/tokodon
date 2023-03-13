@@ -84,7 +84,7 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: player.status !== MediaPlayer.Buffered
+        visible: player.status !== MediaPlayer.Buffered && !root.isSensitive
 
         fillMode: Image.PreserveAspectCrop
     }
@@ -110,6 +110,7 @@ MediaContainer {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
         Kirigami.Theme.inherit: false
 
+        visible: !root.isSensitive
         radius: previewImage.visible ? 0 : Kirigami.Units.smallSpacing
         color: Kirigami.Theme.backgroundColor
         opacity: {
