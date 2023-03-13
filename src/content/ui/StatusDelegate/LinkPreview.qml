@@ -29,7 +29,6 @@ QQC2.AbstractButton {
     onClicked: Qt.openUrlExternally(root.card.url)
 
     HoverHandler {
-        enabled: root.card !== null
         cursorShape: Qt.PointingHandCursor
         onHoveredChanged: if (hovered) {
             applicationWindow().hoverLinkIndicator.text = root.card.url;
@@ -49,7 +48,7 @@ QQC2.AbstractButton {
     contentItem: RowLayout {
         Rectangle {
             id: logo
-            visible: root.card !== undefined && root.card && root.card.image
+            visible: root.card && root.card.image
             color: Kirigami.Theme.backgroundColor
             Kirigami.Theme.colorSet: Kirigami.Theme.Window
             radius: Kirigami.Units.largeSpacing
@@ -90,7 +89,7 @@ QQC2.AbstractButton {
                 anchors {
                     fill: parent
                 }
-                source: root.card !== undefined && root.card ? root.card.image : ''
+                source: root.card ? root.card.image : ''
             }
         }
         ColumnLayout {
@@ -99,7 +98,7 @@ QQC2.AbstractButton {
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Kirigami.Heading {
                 level: 5
-                text: root.card !== undefined && root.card ? root.card.title : ''
+                text: root.card ? root.card.title : ''
                 elide: Text.ElideRight
                 Layout.fillWidth: true
                 wrapMode: root.card && root.card.providerName ? Text.WordWrap : Text.NoWrap
@@ -109,7 +108,7 @@ QQC2.AbstractButton {
                 }
             }
             QQC2.Label {
-                text: root.card !== undefined && root.card ? root.card.providerName : ''
+                text: root.card ? root.card.providerName : ''
                 elide: Text.ElideRight
                 Layout.fillWidth: true
                 HoverHandler {
