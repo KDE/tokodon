@@ -30,7 +30,7 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18n("Loading")
+        text: i18n("Loading...")
         visible: searchModel.loading
         icon.name: "system-search"
         anchors.centerIn: parent
