@@ -64,10 +64,12 @@ Kirigami.ScrollablePage {
         anchors.centerIn: parent
         text: i18n("Loading...")
         visible: listview.count === 0 && listview.model.loading
+        width: parent.width - Kirigami.Units.gridUnit * 4
     }
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("No Follow Requests")
         visible: listview.count === 0 && !listview.model.loading
+        width: parent.width - Kirigami.Units.gridUnit * 4
     }
 }
