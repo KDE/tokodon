@@ -44,13 +44,6 @@ ColumnLayout {
         canHideMedia: false
     }
 
-    StatusDelegate.LinkPreview {
-        attachments: root.post.attachments
-        card: root.post.card
-        secondary: true
-        contentVisible: true
-    }
-
     StatusDelegate.Poll {
         poll: root.post.poll
     }
