@@ -34,6 +34,7 @@ Kirigami.ScrollablePage {
     property Kirigami.Action showAllAction: Kirigami.Action {
         id: showAllAction
         text: i18nc("Show all notifications", "All")
+        icon.name: "notifications"
         checkable: true
         checked: true
         onCheckedChanged: if (checked) {
@@ -44,16 +45,53 @@ Kirigami.ScrollablePage {
     property Kirigami.Action mentionOnlyAction: Kirigami.Action {
         id: onlyMentionAction
         text: i18nc("Show only mentions", "Mentions")
+        icon.name: "tokodon-chat-reply"
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['follow', 'favourite', 'reblog', 'poll', 'follow_request']
+            notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+        }
+    }
+
+    property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
+        text: i18nc("Show only favorites", "Favorites")
+        icon.name: "like-post"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'poll', 'update']
+        }
+    }
+
+    property Kirigami.Action boostsOnlyAction: Kirigami.Action {
+        text: i18nc("Show only boosts", "Boosts")
+        icon.name: "boost-post"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+        }
+    }
+
+    property Kirigami.Action pollResultsOnlyAction: Kirigami.Action {
+        text: i18nc("Show only poll results", "Poll results")
+        icon.name: "folder-chart"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'favourite', 'update']
+        }
+    }
+
+    property Kirigami.Action followsOnlyAction: Kirigami.Action {
+        text: i18nc("Show only follows", "Follows")
+        icon.name: "list-add-user"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update']
         }
     }
 
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [showAllAction, onlyMentionAction]
+        actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, followsOnlyAction]
     }
 
     ListView {
