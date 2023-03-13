@@ -13,16 +13,14 @@
 #include <QNetworkReply>
 
 FollowRequestModel::FollowRequestModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     fillTimeline();
 }
 
 QVariant FollowRequestModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid())
-        return {};
-
-    if (index.row() < 0 || index.row() >= m_accounts.size())
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
         return {};
 
     const auto identity = m_accounts[index.row()].get();
@@ -35,7 +33,7 @@ QVariant FollowRequestModel::data(const QModelIndex &index, int role) const
     }
 }
 
-int FollowRequestModel::rowCount(const QModelIndex &parent) const
+int FollowRequestModel::rowCount(const QModelIndex &) const
 {
     return m_accounts.count();
 }
@@ -61,58 +59,52 @@ void FollowRequestModel::setLoading(bool loading)
 
 void FollowRequestModel::actionAllow(const QModelIndex &index)
 {
-    auto m_account = AccountManager::instance().selectedAccount();
+    auto account = AccountManager::instance().selectedAccount();
 
-    if (!index.isValid())
-        return;
-
-    if (index.row() < 0 || index.row() >= m_accounts.size())
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
         return;
 
     auto requestIdentity = m_accounts[index.row()].get();
     const auto requestIdentityId = requestIdentity->id();
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentityId)),
-                    QJsonDocument{},
-                    true,
-                    this,
-                    [this, requestIdentity, index](QNetworkReply *reply) {
-                        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
+    account->post(account->apiUrl(QString("/api/v1/follow_requests/%1/authorize").arg(requestIdentityId)),
+                  QJsonDocument{},
+                  true,
+                  this,
+                  [this, requestIdentity, index](QNetworkReply *reply) {
+                      const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
+                      m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
 
-                        beginRemoveRows(QModelIndex(), index.row(), index.row());
-                        m_accounts.removeAt(index.row());
-                        endRemoveRows();
-                    });
+                      beginRemoveRows(QModelIndex(), index.row(), index.row());
+                      m_accounts.removeAt(index.row());
+                      endRemoveRows();
+                  });
 }
 
 void FollowRequestModel::actionDeny(const QModelIndex &index)
 {
-    auto m_account = AccountManager::instance().selectedAccount();
+    auto account = AccountManager::instance().selectedAccount();
 
-    if (!index.isValid())
-        return;
-
-    if (index.row() < 0 || index.row() >= m_accounts.size())
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
         return;
 
     auto requestIdentity = m_accounts[index.row()].get();
     const auto requestIdentityId = requestIdentity->id();
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/follow_requests/%1/reject").arg(requestIdentityId)),
-                    QJsonDocument{},
-                    true,
-                    this,
-                    [this, requestIdentity, index](QNetworkReply *reply) {
-                        const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
+    account->post(account->apiUrl(QString("/api/v1/follow_requests/%1/reject").arg(requestIdentityId)),
+                  QJsonDocument{},
+                  true,
+                  this,
+                  [this, requestIdentity, index](QNetworkReply *reply) {
+                      const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
-                        m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
+                      m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
 
-                        beginRemoveRows(QModelIndex(), index.row(), index.row());
-                        m_accounts.removeAt(index.row());
-                        endRemoveRows();
-                    });
+                      beginRemoveRows(QModelIndex(), index.row(), index.row());
+                      m_accounts.removeAt(index.row());
+                      endRemoveRows();
+                  });
 }
 
 bool FollowRequestModel::canFetchMore(const QModelIndex &parent) const
@@ -130,18 +122,18 @@ void FollowRequestModel::fetchMore(const QModelIndex &parent)
 
 void FollowRequestModel::fillTimeline()
 {
-    auto m_account = AccountManager::instance().selectedAccount();
+    auto account = AccountManager::instance().selectedAccount();
 
     setLoading(true);
 
     QUrl url;
     if (m_next.isEmpty()) {
-        url = m_account->apiUrl("/api/v1/follow_requests");
+        url = account->apiUrl("/api/v1/follow_requests");
     } else {
         url = m_next;
     }
 
-    m_account->get(url, true, this, [this, m_account](QNetworkReply *reply) {
+    account->get(url, true, this, [this, account](QNetworkReply *reply) {
         const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
         const auto accounts = followRequestResult.array();
 
@@ -159,9 +151,9 @@ void FollowRequestModel::fillTimeline()
                 accounts.cbegin(),
                 accounts.cend(),
                 std::back_inserter(m_accounts),
-                [m_account](const QJsonValue &value) -> auto{
-                    const auto account = value.toObject();
-                    return m_account->identityLookup(account["id"].toString(), account);
+                [account](const QJsonValue &value) -> auto{
+                    const auto identityJson = value.toObject();
+                    return account->identityLookup(identityJson["id"].toString(), identityJson);
                 });
 
             endResetModel();
