@@ -98,12 +98,14 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             text: i18n("Loading...")
             visible: listview.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No posts")
             visible: listview.count === 0 && !listview.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
 
         Kirigami.InlineMessage {
@@ -120,13 +122,11 @@ Kirigami.ScrollablePage {
 
             showCloseButton: true
 
-            actions: [
-                Kirigami.Action {
-                    text: i18n("Settings")
-                    icon.name: "settings-configure"
-                    onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
-                }
-            ]
+            actions: Kirigami.Action {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+            }
         }
     }
 }
