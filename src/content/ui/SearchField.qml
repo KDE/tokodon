@@ -16,6 +16,7 @@ QQC2.Control {
     id: root
 
     property alias text: searchField.text
+    property bool hasSearched: false
 
     leftPadding: 0
     topPadding: 0
@@ -38,6 +39,7 @@ QQC2.Control {
 
         onAccepted: if (text.length > 2) {
             searchModel.search(text)
+            root.hasSearched = true
         } else {
             popup.close();
         }
@@ -221,7 +223,15 @@ QQC2.Control {
 
                     Kirigami.PlaceholderMessage {
                         text: i18n("No search results")
-                        visible: searchView.count === 0 && searchField.text.length > 2
+                        visible: searchView.count === 0 && root.hasSearched && !searchView.model.loading
+                        icon.name: "system-search"
+                        anchors.centerIn: parent
+                        width: parent.width - Kirigami.Units.gridUnit * 4
+                    }
+
+                    Kirigami.PlaceholderMessage {
+                        text: i18n("Loading...")
+                        visible: searchView.count === 0 && searchView.model.loading
                         icon.name: "system-search"
                         anchors.centerIn: parent
                         width: parent.width - Kirigami.Units.gridUnit * 4
@@ -229,7 +239,7 @@ QQC2.Control {
 
                     Kirigami.PlaceholderMessage {
                         text: i18n("Search for peoples, tags and posts")
-                        visible: searchView.count === 0 && searchField.text.length <= 2
+                        visible: !root.hasSearched && !searchView.model.loading
                         icon.name: "system-search"
                         anchors.centerIn: parent
                         width: parent.width - Kirigami.Units.gridUnit * 4
