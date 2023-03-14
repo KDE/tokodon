@@ -27,7 +27,12 @@ Kirigami.ApplicationWindow {
         globalToolBar {
             canContainHandles: true
             style: Kirigami.ApplicationHeaderStyle.ToolBar
-            showNavigationButtons: applicationWindow().pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : 0
+            showNavigationButtons: if (applicationWindow().pageStack.currentIndex > 0
+                || applicationWindow().pageStack.currentIndex > 0) {
+                Kirigami.ApplicationHeaderStyle.ShowBackButton
+            } else {
+                0
+            }
         }
     }
 
