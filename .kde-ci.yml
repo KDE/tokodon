@@ -12,6 +12,9 @@ Dependencies:
       'frameworks/kconfig': '@latest-kf6'
       'libraries/kirigami-addons': '@latest-kf6'
       'third-party/qtkeychain': '@latest'
+
+  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6' ]
+    'require':
       'frameworks/qqc2-desktop-style': '@latest-kf6'
 
   - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6' ]
