@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:46+0000\n"
+"POT-Creation-Date: 2023-03-14 02:53+0000\n"
 "PO-Revision-Date: 2023-03-10 02:08+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -62,22 +62,6 @@ msgstr "ანგარიშის მიმაგრების მოხს�
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
-
-#: abstracttimelinemodel.cpp:139
-#, kde-format
-msgctxt "hour:minute"
-msgid "%1:%2"
-msgstr "%1:%2"
-
-#: abstracttimelinemodel.cpp:143
-#, kde-format
-msgid "%1h"
-msgstr "%1სთ"
-
-#: abstracttimelinemodel.cpp:145
-#, kde-format
-msgid "%1d"
-msgstr "%1დღ"
 
 #: accountmodel.cpp:31 maintimelinemodel.cpp:27
 #, kde-format
@@ -164,42 +148,50 @@ msgstr "პროფილის ჩასწორება"
 msgid "Account editor"
 msgstr "ანგარიშების რედაქტორი"
 
-#: content/ui/AccountInfo.qml:221
+#: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:126
 #, kde-format
 msgid "Settings"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:222 content/ui/UserInfo.qml:218
+#: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:128
+#: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:298
+#: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
+#: content/ui/main.qml:202
+#, fuzzy, kde-format
+#| msgid "Require follow requests"
+msgid "Follow Requests"
+msgstr "გამოწერის მოთხოვების აუცილებლად მოთხოვნა"
+
+#: content/ui/AccountInfo.qml:304
 #, kde-format
 msgid "Note"
 msgstr "შენიშვნა"
 
-#: content/ui/AccountInfo.qml:306
+#: content/ui/AccountInfo.qml:312
 #, kde-format
 msgid "Saved"
 msgstr "შენახულია"
 
-#: content/ui/AccountInfo.qml:321
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Click to add a note"
 msgstr "შენიშვნის დასამატებლად დააწკაპუნეთ"
 
-#: content/ui/AccountInfo.qml:394
+#: content/ui/AccountInfo.qml:400
 #, kde-format
 msgid "%1 toots"
 msgstr "%1 ტუტი"
 
-#: content/ui/AccountInfo.qml:398
+#: content/ui/AccountInfo.qml:404
 #, kde-format
 msgid "%1 followers"
 msgstr "%1 მიმდევარი"
 
-#: content/ui/AccountInfo.qml:403
+#: content/ui/AccountInfo.qml:409
 #, kde-format
 msgid "%1 following"
 msgstr "%1 -ს მისდევთ"
@@ -234,7 +226,7 @@ msgstr "ბმულის გახსნა"
 msgid "Enter token:"
 msgstr "შეიყვანეთ კოდი:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:42
+#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "გაგრძელება"
@@ -249,8 +241,9 @@ msgstr "ჩასვით გენერირებული კოდი."
 msgid "Conversations"
 msgstr "საუბრები"
 
-#: content/ui/ConversationPage.qml:29 content/ui/NotificationPage.qml:126
-#: content/ui/TimelinePage.qml:91
+#: content/ui/ConversationPage.qml:29 content/ui/FollowRequestsPage.qml:65
+#: content/ui/NotificationPage.qml:164 content/ui/SearchView.qml:33
+#: content/ui/TimelinePage.qml:99
 #, kde-format
 msgid "Loading..."
 msgstr "ჩატვირთვა..."
@@ -265,6 +258,12 @@ msgstr "საუბრების გარეშე"
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
+
+#: content/ui/FollowRequestsPage.qml:71
+#, fuzzy, kde-format
+#| msgid "Require follow requests"
+msgid "No Follow Requests"
+msgstr "გამოწერის მოთხოვების აუცილებლად მოთხოვნა"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
@@ -323,72 +322,83 @@ msgstr "ყველა ენა"
 msgid "Login"
 msgstr "შესვლა"
 
-#: content/ui/LoginPage.qml:28
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:65
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your settings."
+msgstr ""
+
+#: content/ui/LoginPage.qml:35
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "მოგესალმებით Tokodon-ში"
 
-#: content/ui/LoginPage.qml:33
+#: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Instance Url:"
 msgstr "გაშვებული ასლის URL:"
 
-#: content/ui/LoginPage.qml:45
+#: content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
 
-#: content/ui/LoginPage.qml:69
+#: content/ui/LoginPage.qml:76
 #, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
 msgstr "ქსელის მორგება"
 
-#: content/ui/LoginPage.qml:74
+#: content/ui/LoginPage.qml:81
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "SSL-ის შეცდომების იგნორი"
 
-#: content/ui/LoginPage.qml:81 content/ui/Settings/NetworkProxyPage.qml:72
+#: content/ui/LoginPage.qml:88 content/ui/Settings/NetworkProxyPage.qml:72
 #, kde-format
 msgid "Proxy Settings"
 msgstr "პროქსის მორგება"
 
-#: content/ui/main.qml:168
+#: content/ui/main.qml:179
 #, kde-format
 msgid "Home"
 msgstr "საწყისი"
 
-#: content/ui/main.qml:181 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:192 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/main.qml:191
+#: content/ui/main.qml:213
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: content/ui/main.qml:203
+#: content/ui/main.qml:225
 #, kde-format
 msgid "Global"
 msgstr "გლობალური"
 
-#: content/ui/main.qml:216
+#: content/ui/main.qml:238
 #, kde-format
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: content/ui/main.qml:228
+#: content/ui/main.qml:250
 #, kde-format
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:264
 #, kde-format
 msgid "Bookmarks"
 msgstr "სანიშნები"
+
+#: content/ui/main.qml:278
+#, kde-format
+msgid "Search"
+msgstr ""
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
@@ -401,23 +411,58 @@ msgctxt "Show all notifications"
 msgid "All"
 msgstr "ყველა"
 
-#: content/ui/NotificationPage.qml:46
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "მოხსენებები"
 
-#: content/ui/NotificationPage.qml:131
+#: content/ui/NotificationPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Favourites"
+msgctxt "Show only favorites"
+msgid "Favorites"
+msgstr "რჩეულები"
+
+#: content/ui/NotificationPage.qml:65
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgctxt "Show only boosts"
+msgid "Boosts"
+msgstr "გაძლიერება"
+
+#: content/ui/NotificationPage.qml:74
+#, fuzzy, kde-format
+#| msgid "No search results"
+msgctxt "Show only poll results"
+msgid "Poll results"
+msgstr "ძებნის შედეგების გარეშე"
+
+#: content/ui/NotificationPage.qml:83
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "Show only follows"
+msgid "Follows"
+msgstr "გამოწერა"
+
+#: content/ui/NotificationPage.qml:169
 #, kde-format
 msgid "No Notifications"
 msgstr "შეტყობინებების გარეშე"
 
-#: content/ui/SearchField.qml:223
+#: content/ui/SearchPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Search"
+msgstr ""
+
+#: content/ui/SearchView.qml:41
 #, kde-format
 msgid "No search results"
 msgstr "ძებნის შედეგების გარეშე"
 
-#: content/ui/SearchField.qml:231
+#: content/ui/SearchView.qml:49
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "მოძებნეთ ხალხი, ჭდეები და პოსტები"
@@ -536,7 +581,7 @@ msgid "Profile Editor"
 msgstr "პროფილების რედაქტორი"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:170
+#: content/ui/StatusComposer/StatusComposer.qml:179
 #, kde-format
 msgid "Please choose a file"
 msgstr "გთხოვთ, აირჩიოთ ფაილი"
@@ -790,108 +835,108 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "ხმების რაოდენობის დამალვა არჩევანის დასრულებამდე"
 
-#: content/ui/StatusComposer/StatusComposer.qml:43
+#: content/ui/StatusComposer/StatusComposer.qml:44
 #, kde-format
 msgid "Edit this toot"
 msgstr "ტუტის ჩასწორება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Reply to this toot"
 msgstr "უპასუხეთ ამ ტუტს"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Rewrite this toot"
 msgstr "გადაწერეთ ეს ტუტი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:49
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Write a new toot"
 msgstr "დაწერეთ ახალი ტუტი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:81
-#: content/ui/StatusComposer/StatusComposer.qml:239
+#: content/ui/StatusComposer/StatusComposer.qml:82
+#: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
 msgid "Content Warning"
 msgstr "შემცველობის გაფრთხილება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:89
+#: content/ui/StatusComposer/StatusComposer.qml:98
 #, kde-format
 msgid "What's new?"
 msgstr "რა არის ახალი?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:173
+#: content/ui/StatusComposer/StatusComposer.qml:182
 #, kde-format
 msgid "Attach File"
 msgstr "ფაილის მიმაგრება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:183
+#: content/ui/StatusComposer/StatusComposer.qml:192
 #, kde-format
 msgid "Add Poll"
 msgstr "დაამატე გამოკითხვა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:220
 #, kde-format
 msgid "Public"
 msgstr "საჯარო"
 
-#: content/ui/StatusComposer/StatusComposer.qml:216
+#: content/ui/StatusComposer/StatusComposer.qml:225
 #, kde-format
 msgid "Unlisted"
 msgstr "სიაში არაა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:230
 #, kde-format
 msgid "Private"
 msgstr "პირადი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:226
+#: content/ui/StatusComposer/StatusComposer.qml:235
 #, kde-format
 msgid "Direct Message"
 msgstr "პირადი შეტყობინება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:231
+#: content/ui/StatusComposer/StatusComposer.qml:240
 #, kde-format
 msgid "Visibility"
 msgstr "ხილვადობა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:236
+#: content/ui/StatusComposer/StatusComposer.qml:245
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "გაფრთხ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:246
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "აირჩიეთ ენა, რომელშიც პოსტია დაწერილი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:251
+#: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "პოსტის ენა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:261
+#: content/ui/StatusComposer/StatusComposer.qml:270
 #, kde-format
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:117
+#: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
 msgstr "მიუწვდომელია"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:209
+#: content/ui/StatusDelegate/AttachmentGrid.qml:216
 #, kde-format
 msgid "Media Hidden"
 msgstr "მედია დამალულია"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:140
-#: content/ui/StatusDelegate/StatusDelegate.qml:211
+#: content/ui/StatusDelegate/StatusDelegate.qml:142
+#: content/ui/StatusDelegate/StatusDelegate.qml:213
 #, kde-format
 msgid "View profile"
 msgstr "პროფილის ნახვა"
@@ -912,7 +957,7 @@ msgid "Copy link to this post"
 msgstr "ამ პოსტის ბმულის კოპირება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
-#: content/ui/StatusDelegate/StatusDelegate.qml:365
+#: content/ui/StatusDelegate/StatusDelegate.qml:333
 #, kde-format
 msgid "Remove bookmark"
 msgstr "სანიშნის წაშლა"
@@ -943,96 +988,101 @@ msgstr "(ხმების გარეშე)"
 msgid "Vote"
 msgstr "ხმის მიცემა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:103
+#: content/ui/StatusDelegate/StatusDelegate.qml:105
 #, kde-format
 msgid "Filtered: %1"
 msgstr "გაფილტრულია: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:107
+#: content/ui/StatusDelegate/StatusDelegate.qml:109
 #, kde-format
 msgid "Show anyway"
 msgstr "მაინც ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:149 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:151 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ჩაინიშნა თქვენი პოსტი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:151 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:153 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 -მა პოსტი ჩაასწორა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:154
+#: content/ui/StatusDelegate/StatusDelegate.qml:156
 #, kde-format
 msgid "Your poll has ended"
 msgstr "თქვენი ხმა დაემატა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:156
+#: content/ui/StatusDelegate/StatusDelegate.qml:158
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "გამოკითხვა, რომელშიც ხმა მიეცით, დასრულდა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:181
+#: content/ui/StatusDelegate/StatusDelegate.qml:183
 #, kde-format
 msgid "Pinned entry"
 msgstr "მიჭიკარტებული ჩანაწერი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:217
+#: content/ui/StatusDelegate/StatusDelegate.qml:219
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 აწეულია"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:217 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:219 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 -მა აწია თქვენი პოსტი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:256
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "Show Less"
 msgstr "ნაკლების ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:256
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "Show More"
 msgstr "მეტის ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:332
+#: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:336
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:346
+#: content/ui/StatusDelegate/StatusDelegate.qml:314
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "გაძლიერება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:356
+#: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "მომწონს"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:365
+#: content/ui/StatusDelegate/StatusDelegate.qml:333
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:383
+#: content/ui/StatusDelegate/StatusDelegate.qml:351
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "მეტი"
+
+#: content/ui/TimelinePage.qml:106
+#, kde-format
+msgid "No posts"
+msgstr ""
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1101,49 +1151,49 @@ msgctxt "@title"
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-ის კლიენტი"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE -ის საზოგადოება"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:175
+#: main.cpp:179
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
 
-#: main.cpp:176
+#: main.cpp:180
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "აქვს web+ap: url სქემის მხარდაჭერა"
@@ -1225,6 +1275,22 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 დღე"
 
+#: post.cpp:270
+#, kde-format
+msgctxt "hour:minute"
+msgid "%1:%2"
+msgstr "%1:%2"
+
+#: post.cpp:274
+#, kde-format
+msgid "%1h"
+msgstr "%1სთ"
+
+#: post.cpp:276
+#, kde-format
+msgid "%1d"
+msgstr "%1დღ"
+
 #: posteditorbackend.cpp:220
 #, kde-format
 msgid "An unknown error occurred."
@@ -1247,17 +1313,17 @@ msgstr ""
 msgid "Account details saved"
 msgstr "ანგარშის დეტალები შენახულია"
 
-#: searchmodel.cpp:131
+#: searchmodel.cpp:137
 #, kde-format
 msgid "People"
 msgstr "ხალხი"
 
-#: searchmodel.cpp:133
+#: searchmodel.cpp:139
 #, kde-format
 msgid "Hashtags"
 msgstr "ჰეშტეგები"
 
-#: searchmodel.cpp:135
+#: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "პოსტი"
