@@ -7,10 +7,13 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kmasto 1.0
 
-Kirigami.PageRow {
-    id: settingsPage
+Kirigami.ScrollablePage {
+    id: root
 
-    globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+    title: i18nc("@title:window", "Settings")
+
+    leftPadding: 0
+    rightPadding: 0
 
     Connections {
         target: AccountManager
@@ -22,61 +25,54 @@ Kirigami.PageRow {
         }
     }
 
-    initialPage: Kirigami.ScrollablePage {
-        title: i18nc("@title:window", "Settings")
+    ColumnLayout {
+        GeneralCard {}
+        AccountsCard {}
+        SonnetCard {}
 
-        leftPadding: 0
-        rightPadding: 0
-
-        ColumnLayout {
-            GeneralCard {}
-            AccountsCard {}
-            SonnetCard {}
-
-            MobileForm.FormCard {
-                Layout.topMargin: Kirigami.Units.largeSpacing
-                Layout.fillWidth: true
-                contentItem: ColumnLayout {
-                    spacing: 0
-                    Component {
-                        id: networkProxyPage
-                        NetworkProxyPage {
-                        }
-                    }
-                    MobileForm.FormButtonDelegate {
-                        text: i18n("Network Proxy")
-                        onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                Component {
+                    id: networkProxyPage
+                    NetworkProxyPage {
                     }
                 }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Network Proxy")
+                    onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
+                }
             }
+        }
 
-            MobileForm.FormCard {
-                Layout.topMargin: Kirigami.Units.largeSpacing
-                Layout.fillWidth: true
-                contentItem: ColumnLayout {
-                    spacing: 0
-                    Component {
-                        id: aboutPage
-                        MobileForm.AboutPage {
-                            aboutData: About
-                        }
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                Component {
+                    id: aboutPage
+                    MobileForm.AboutPage {
+                        aboutData: About
                     }
-                    Component {
-                        id: aboutKDE
-                        MobileForm.AboutKDE {}
-                    }
+                }
+                Component {
+                    id: aboutKDE
+                    MobileForm.AboutKDE {}
+                }
 
-                    MobileForm.FormButtonDelegate {
-                        text: i18n("About Tokodon")
-                        onClicked: applicationWindow().pageStack.layers.push(aboutPage)
-                    }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("About Tokodon")
+                    onClicked: applicationWindow().pageStack.layers.push(aboutPage)
+                }
 
-                    MobileForm.FormDelegateSeparator {}
+                MobileForm.FormDelegateSeparator {}
 
-                    MobileForm.FormButtonDelegate {
-                        text: i18n("About KDE")
-                        onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
-                    }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("About KDE")
+                    onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
                 }
             }
         }
