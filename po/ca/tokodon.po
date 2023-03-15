@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:53+0000\n"
-"PO-Revision-Date: 2023-03-09 10:37+0100\n"
+"POT-Creation-Date: 2023-03-15 02:47+0000\n"
+"PO-Revision-Date: 2023-03-14 08:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -162,11 +162,10 @@ msgid "Configure"
 msgstr "Configura"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
-#: content/ui/main.qml:202
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#: content/ui/main.qml:207
+#, kde-format
 msgid "Follow Requests"
-msgstr "Requereix sol·licituds de seguiment"
+msgstr "Sol·licituds de seguiment"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
@@ -262,10 +261,9 @@ msgid "%1 followed you"
 msgstr "%1 us segueix"
 
 #: content/ui/FollowRequestsPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Requereix sol·licituds de seguiment"
+msgstr "Sense sol·licituds de seguiment"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
@@ -328,7 +326,7 @@ msgstr "Inici de sessió"
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr ""
+msgstr "Ha fallat en contactar amb el servidor: %1. Reviseu la configuració."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
@@ -362,45 +360,45 @@ msgstr "Ignora els errors d'SSL"
 msgid "Proxy Settings"
 msgstr "Configuració del servidor intermediari"
 
-#: content/ui/main.qml:179
+#: content/ui/main.qml:184
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/main.qml:192 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:197 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/main.qml:213
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:225
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:238
+#: content/ui/main.qml:243
 #, kde-format
 msgid "Conversation"
 msgstr "Conversa"
 
-#: content/ui/main.qml:250
+#: content/ui/main.qml:255
 #, kde-format
 msgid "Favourites"
 msgstr "Preferides"
 
-#: content/ui/main.qml:264
+#: content/ui/main.qml:269
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
 
-#: content/ui/main.qml:278
+#: content/ui/main.qml:283
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
@@ -420,30 +418,25 @@ msgid "Mentions"
 msgstr "Mencions"
 
 #: content/ui/NotificationPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr "Preferides"
+msgstr "Preferits"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Interessant"
+msgstr "Impulsos"
 
 #: content/ui/NotificationPage.qml:74
-#, fuzzy, kde-format
-#| msgid "No search results"
+#, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
-msgstr "Cerca sense cap resultat"
+msgstr "Resultats de votació"
 
 #: content/ui/NotificationPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Segueix"
@@ -457,7 +450,7 @@ msgstr "Sense notificacions"
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -531,7 +524,7 @@ msgid "Network Proxy"
 msgstr "Servidor intermediari de la xarxa"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:47
+#: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
 msgid "Network Proxy"
 msgstr "Servidor intermediari de la xarxa"
@@ -670,18 +663,18 @@ msgstr "Suggereix el compte a altres"
 msgid "Reset"
 msgstr "Reinicia"
 
-#: content/ui/Settings/SettingsPage.qml:26
+#: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuració"
 
-#: content/ui/Settings/SettingsPage.qml:70
+#: content/ui/Settings/SettingsPage.qml:67
 #, kde-format
 msgid "About Tokodon"
 msgstr "Quant al Tokodon"
 
-#: content/ui/Settings/SettingsPage.qml:77
+#: content/ui/Settings/SettingsPage.qml:74
 #, kde-format
 msgid "About KDE"
 msgstr "Quant a KDE"
@@ -1084,7 +1077,7 @@ msgstr "Més"
 #: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Sense publicacions"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
@@ -1333,6 +1326,3 @@ msgstr "Publicació"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil"
-
-#~ msgid "Play"
-#~ msgstr "Reprodueix"

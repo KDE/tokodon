@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:53+0000\n"
-"PO-Revision-Date: 2023-03-09 11:55+0100\n"
+"POT-Creation-Date: 2023-03-15 02:47+0000\n"
+"PO-Revision-Date: 2023-03-14 13:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -161,11 +161,10 @@ msgid "Configure"
 msgstr "Configurar"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
-#: content/ui/main.qml:202
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#: content/ui/main.qml:207
+#, kde-format
 msgid "Follow Requests"
-msgstr "Solicitar peticiones de seguimiento"
+msgstr "Peticiones de seguimiento"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
@@ -261,10 +260,9 @@ msgid "%1 followed you"
 msgstr "%1 le está siguiendo"
 
 #: content/ui/FollowRequestsPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Solicitar peticiones de seguimiento"
+msgstr "No hay peticiones de seguimiento"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
@@ -328,6 +326,7 @@ msgstr "Inicio de sesión"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
+"No se ha podido contactar con el servidor: %1. Compruebe las preferencias."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
@@ -361,45 +360,45 @@ msgstr "Ignorar errores de SSL"
 msgid "Proxy Settings"
 msgstr "Preferencias del proxy"
 
-#: content/ui/main.qml:179
+#: content/ui/main.qml:184
 #, kde-format
 msgid "Home"
 msgstr "Inicio"
 
-#: content/ui/main.qml:192 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:197 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: content/ui/main.qml:213
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:225
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:238
+#: content/ui/main.qml:243
 #, kde-format
 msgid "Conversation"
 msgstr "Conversación"
 
-#: content/ui/main.qml:250
+#: content/ui/main.qml:255
 #, kde-format
 msgid "Favourites"
 msgstr "Favoritos"
 
-#: content/ui/main.qml:264
+#: content/ui/main.qml:269
 #, kde-format
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: content/ui/main.qml:278
+#: content/ui/main.qml:283
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
@@ -419,33 +418,28 @@ msgid "Mentions"
 msgstr "Menciones"
 
 #: content/ui/NotificationPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoritos"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Promover"
+msgstr "Promociones"
 
 #: content/ui/NotificationPage.qml:74
-#, fuzzy, kde-format
-#| msgid "No search results"
+#, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
-msgstr "Búsqueda sin resultados"
+msgstr "Resultado de la encuesta"
 
 #: content/ui/NotificationPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Seguir"
+msgstr "Seguimiento"
 
 #: content/ui/NotificationPage.qml:169
 #, kde-format
@@ -456,7 +450,7 @@ msgstr "No hay notificaciones"
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -530,7 +524,7 @@ msgid "Network Proxy"
 msgstr "Proxy de red"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:47
+#: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
 msgid "Network Proxy"
 msgstr "Proxy de red"
@@ -669,18 +663,18 @@ msgstr "Sugerir la cuenta a otros"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: content/ui/Settings/SettingsPage.qml:26
+#: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Preferencias"
 
-#: content/ui/Settings/SettingsPage.qml:70
+#: content/ui/Settings/SettingsPage.qml:67
 #, kde-format
 msgid "About Tokodon"
 msgstr "Acerca de Tokodon"
 
-#: content/ui/Settings/SettingsPage.qml:77
+#: content/ui/Settings/SettingsPage.qml:74
 #, kde-format
 msgid "About KDE"
 msgstr "Acerca de KDE"
@@ -1083,7 +1077,7 @@ msgstr "Más"
 #: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "No hay publicaciones"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format

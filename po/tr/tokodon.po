@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:53+0000\n"
-"PO-Revision-Date: 2023-03-09 13:10+0300\n"
+"POT-Creation-Date: 2023-03-15 02:47+0000\n"
+"PO-Revision-Date: 2023-03-14 14:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -159,11 +159,10 @@ msgid "Configure"
 msgstr "Yapılandır"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
-#: content/ui/main.qml:202
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#: content/ui/main.qml:207
+#, kde-format
 msgid "Follow Requests"
-msgstr "Takip isteği gerektir"
+msgstr "Takip İstekleri"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
@@ -260,10 +259,9 @@ msgid "%1 followed you"
 msgstr "%1, sizi takip etti"
 
 #: content/ui/FollowRequestsPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Takip isteği gerektir"
+msgstr "Takip İsteği Yok"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
@@ -326,7 +324,7 @@ msgstr "Oturum Aç"
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr ""
+msgstr "Sunucuya bağlanılamadı: %1 Lütfen ayarlarınızı denetleyin."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
@@ -360,45 +358,45 @@ msgstr "SSL hatalarını yok say"
 msgid "Proxy Settings"
 msgstr "Vekil Ayarları"
 
-#: content/ui/main.qml:179
+#: content/ui/main.qml:184
 #, kde-format
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: content/ui/main.qml:192 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:197 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: content/ui/main.qml:213
+#: content/ui/main.qml:218
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: content/ui/main.qml:225
+#: content/ui/main.qml:230
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:238
+#: content/ui/main.qml:243
 #, kde-format
 msgid "Conversation"
 msgstr "Konuşma"
 
-#: content/ui/main.qml:250
+#: content/ui/main.qml:255
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriler"
 
-#: content/ui/main.qml:264
+#: content/ui/main.qml:269
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer İmleri"
 
-#: content/ui/main.qml:278
+#: content/ui/main.qml:283
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
@@ -418,33 +416,28 @@ msgid "Mentions"
 msgstr "Bahsetmeler"
 
 #: content/ui/NotificationPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoriler"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Boost'la"
+msgstr "Boost'lar"
 
 #: content/ui/NotificationPage.qml:74
-#, fuzzy, kde-format
-#| msgid "No search results"
+#, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
-msgstr "Arama sonucu yok"
+msgstr "Anket sonuçları"
 
 #: content/ui/NotificationPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Takip et"
+msgstr "Takip Ediyor"
 
 #: content/ui/NotificationPage.qml:169
 #, kde-format
@@ -455,7 +448,7 @@ msgstr "Bildirim Yok"
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -529,7 +522,7 @@ msgid "Network Proxy"
 msgstr "Ağ Vekili"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:47
+#: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
 msgid "Network Proxy"
 msgstr "Ağ Vekili"
@@ -668,18 +661,18 @@ msgstr "Hesabı başkalarına öner"
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: content/ui/Settings/SettingsPage.qml:26
+#: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarla"
 
-#: content/ui/Settings/SettingsPage.qml:70
+#: content/ui/Settings/SettingsPage.qml:67
 #, kde-format
 msgid "About Tokodon"
 msgstr "Tokodon Hakkında"
 
-#: content/ui/Settings/SettingsPage.qml:77
+#: content/ui/Settings/SettingsPage.qml:74
 #, kde-format
 msgid "About KDE"
 msgstr "KDE Hakkında"
@@ -1082,7 +1075,7 @@ msgstr "Daha Fazla"
 #: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Gönderi yok"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
