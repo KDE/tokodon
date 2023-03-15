@@ -55,7 +55,6 @@
 #include "tagsmodel.h"
 #include "threadmodel.h"
 #include "timelinemodel.h"
-#include "autotests/helperreply.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
@@ -136,6 +135,8 @@ int main(int argc, char *argv[])
     QUrl url = account->apiUrl("/api/v2/search");
     url.setQuery(QUrlQuery{{"q", "myquery"}});
     account->registerGet(url, new TestReply("search-result.json", account));
+
+    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());

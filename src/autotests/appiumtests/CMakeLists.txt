@@ -25,4 +25,9 @@ add_test(
     NAME SearchboxTest
     COMMAND selenium-webdriver-at-spi-run ${CMAKE_CURRENT_SOURCE_DIR}/SearchboxTest.py 
 )
+add_test(
+    NAME TimelineTest
+    COMMAND selenium-webdriver-at-spi-run ${CMAKE_CURRENT_SOURCE_DIR}/TimelineTest.py 
+)
 set_tests_properties(SearchboxTest PROPERTIES TIMEOUT 300)
+set_tests_properties(TimelineTest PROPERTIES TIMEOUT 300)
