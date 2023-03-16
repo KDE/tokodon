@@ -144,8 +144,9 @@ if(ANDROID)
         "folder-chart"
     )
 else()
-    target_link_libraries(tokodon PRIVATE Qt::Widgets KF${QT_MAJOR_VERSION}::ConfigWidgets)
+    target_link_libraries(tokodon PRIVATE Qt::Widgets)
     target_compile_definitions(tokodon PRIVATE -DHAVE_COLORSCHEME)
+    target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::ConfigWidgets)
 
     target_link_libraries(tokodon-offline PRIVATE Qt::Widgets KF${QT_MAJOR_VERSION}::ConfigWidgets)
     target_compile_definitions(tokodon-offline PRIVATE -DHAVE_COLORSCHEME)
