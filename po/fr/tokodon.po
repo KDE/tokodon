@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 02:47+0000\n"
-"PO-Revision-Date: 2023-03-15 14:50+0100\n"
+"PO-Revision-Date: 2023-03-15 20:57+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -158,10 +158,9 @@ msgstr "Configurer"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
 #: content/ui/main.qml:207
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Follow Requests"
-msgstr "Demandes de suivi requises"
+msgstr "Demandes de suivi"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
@@ -258,10 +257,9 @@ msgid "%1 followed you"
 msgstr "%1 vous a suivi"
 
 #: content/ui/FollowRequestsPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Demandes de suivi requises"
+msgstr "Aucune demande de suivi"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
@@ -325,6 +323,8 @@ msgstr "Connexion"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
+"Impossible de contacter le serveur : %1. Veuillez vérifier votre "
+"configuration."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
@@ -422,12 +422,10 @@ msgid "Favorites"
 msgstr "Favoris"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Stimuler"
+msgstr "Stimulations"
 
 #: content/ui/NotificationPage.qml:74
 #, kde-format
@@ -436,11 +434,10 @@ msgid "Poll results"
 msgstr "Résultats de vote"
 
 #: content/ui/NotificationPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Suivre"
+msgstr "Suivis"
 
 #: content/ui/NotificationPage.qml:169
 #, kde-format
