@@ -128,6 +128,10 @@ if(ANDROID)
         "system-users"
         "go-home-large"
         "view-hidden"
+        "favourite"
+        "cell_edit"
+        "folder-chart"
+        "retweet"
     )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
