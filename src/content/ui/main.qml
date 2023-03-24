@@ -190,6 +190,9 @@ Kirigami.ApplicationWindow {
                 name: "home"
             });
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
@@ -200,6 +203,9 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
     property Kirigami.Action followRequestAction: Kirigami.Action {
@@ -211,6 +217,9 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(followRequestPage);
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
@@ -223,6 +232,9 @@ Kirigami.ApplicationWindow {
                 name: "public",
             });
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
@@ -235,6 +247,9 @@ Kirigami.ApplicationWindow {
                 name: "federated",
             });
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
 
@@ -247,6 +262,9 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace("qrc:/content/ui/ConversationPage.qml");
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
 
@@ -287,9 +305,11 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace("qrc:/content/ui/SearchPage.qml");
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
-
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
