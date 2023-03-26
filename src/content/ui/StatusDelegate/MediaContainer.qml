@@ -14,11 +14,15 @@ QQC2.Control {
     id: root
 
     required property var repeater
-    required property var aspectRatio
     required property var shouldKeepAspectRatio
     required property var mediaRatio
     required property var rootWidth
     required property var gridLayout
+
+    required property int sourceWidth
+    required property int sourceHeight
+
+    readonly property double aspectRatio: root.sourceHeight / Math.max(root.sourceWidth, 1)
 
     property var isSpecialAttachment: index == 0 && repeater.count == 3
     property var widthDivisor: repeater.count > 1 ? 2 : 1

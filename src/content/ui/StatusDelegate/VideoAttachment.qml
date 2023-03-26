@@ -16,7 +16,8 @@ import QtQml 2.15
 MediaContainer {
     id: root
 
-    aspectRatio: output.sourceRect.height / output.sourceRect.width
+    sourceWidth: Math.max(modelData.originalWidth, img.sourceSize.width)
+    sourceHeight: Math.max(modelData.originalHeight, img.sourceSize.height)
 
     required property var videoUrl
     required property var previewUrl

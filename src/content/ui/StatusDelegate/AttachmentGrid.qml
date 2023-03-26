@@ -70,11 +70,13 @@ QQC2.Control {
                         required property var modelData
 
                         repeater: attachmentsRepeater
-                        aspectRatio: img.sourceSize.height / img.sourceSize.width
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
                         mediaRatio: root.mediaRatio
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
+
+                        sourceWidth: Math.max(modelData.originalWidth, img.sourceSize.width)
+                        sourceHeight: Math.max(modelData.originalHeight, img.sourceSize.height)
 
                         Image {
                             id: img
