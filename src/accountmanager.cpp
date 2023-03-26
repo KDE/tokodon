@@ -134,7 +134,7 @@ void AccountManager::childIdentityChanged(AbstractAccount *account)
 
     // old LastUsedAccount values used to be only username
     const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
-    const bool isEmpty = config->lastUsedAccount().isEmpty();
+    const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@';
     const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
     const bool matchesOldFormat = account->username() == config->lastUsedAccount();
 
