@@ -16,6 +16,8 @@ QQC2.TextArea {
     required property bool secondary
     required property bool shouldOpenInternalLinks
 
+    signal clicked()
+
     font: Config.defaultFont
     Layout.fillWidth: true
     text: "<style>
