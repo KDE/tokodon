@@ -124,13 +124,21 @@ MastoPage {
             }
 
             Keys.onEnterPressed: (event)=> {
-               if (event.modifiers & Qt.ControlModifier)
+               if (event.modifiers & Qt.ControlModifier) {
                     root.submitPost()
+                    event.accepted = true
+               } else {
+                    event.accepted = false
+               }
             }
 
             Keys.onReturnPressed: (event)=> {
-               if (event.modifiers & Qt.ControlModifier)
+               if (event.modifiers & Qt.ControlModifier) {
                     root.submitPost()
+                    event.accepted = true
+               } else {
+                    event.accepted = false
+               }
             }
 
             ColumnLayout {
