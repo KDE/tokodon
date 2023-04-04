@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-28 00:47+0000\n"
-"PO-Revision-Date: 2023-02-22 10:43+0200\n"
+"PO-Revision-Date: 2023-04-02 17:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: abstractaccount.cpp:405
 #, kde-format
@@ -68,10 +68,9 @@ msgid "Loading"
 msgstr "Ladataan"
 
 #: content/ui/AccountInfo.qml:53
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Follows you"
-msgstr "Seuraa"
+msgstr "Seuraa sinua"
 
 #: content/ui/AccountInfo.qml:93
 #, kde-format
@@ -139,21 +138,17 @@ msgid "Block"
 msgstr "Estä"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#, kde-format
 msgid "Edit profile"
-msgstr "Esittele profiilissa"
+msgstr "Muokkaa profiilia"
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Account editor"
-msgstr "Tilit"
+msgstr "Tilimuokkain"
 
 #: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:126
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Settings"
 msgstr "Asetukset"
 
@@ -161,24 +156,23 @@ msgstr "Asetukset"
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Asetukset"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
 #: content/ui/main.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Follow Requests"
-msgstr "Seuraa"
+msgstr "Seurauspyynnöt"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
 msgid "Note"
-msgstr ""
+msgstr "Muistiinpano"
 
 #: content/ui/AccountInfo.qml:312
 #, kde-format
 msgid "Saved"
-msgstr ""
+msgstr "Tallennettu"
 
 #: content/ui/AccountInfo.qml:327
 #, kde-format
@@ -203,12 +197,12 @@ msgstr "%1 seuraa"
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "Valtuutus"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr ""
+msgstr "Valtuuta Tokodon toimimaan puolestasi"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
@@ -243,22 +237,19 @@ msgstr "Syötä annettu merkki."
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr ""
+msgstr "Keskustelut"
 
 #: content/ui/ConversationPage.qml:29 content/ui/FollowRequestsPage.qml:65
 #: content/ui/NotificationPage.qml:164 content/ui/SearchView.qml:33
 #: content/ui/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgid "Loading..."
-msgstr "Ladataan"
+msgstr "Ladataan…"
 
 #: content/ui/ConversationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "No Conversations"
-msgstr "Maininnat"
+msgstr "Ei keskusteluja"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -269,32 +260,32 @@ msgstr "%1 alkoi seurata sinua"
 #: content/ui/FollowRequestsPage.qml:71
 #, kde-format
 msgid "No Follow Requests"
-msgstr ""
+msgstr "Ei seurauspyyntöjä"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
-msgstr ""
+msgstr "Lähennä"
 
 #: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
-msgstr ""
+msgstr "Loitonna"
 
 #: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
-msgstr ""
+msgstr "Kierrä vasemmalle"
 
 #: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
-msgstr ""
+msgstr "Kierrä oikealle"
 
 #: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
-msgstr ""
+msgstr "Tallenna nimellä"
 
 #: content/ui/FullScreenImage.qml:95
 #, kde-format
@@ -312,18 +303,16 @@ msgid "Next image"
 msgstr "Seuraava kuva"
 
 #: content/ui/LanguageSelector.qml:64
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
-msgstr "Valittu oletuskieli:"
+msgstr "Suositut kielet"
 
 #: content/ui/LanguageSelector.qml:65
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
-msgstr "Valittu oletuskieli:"
+msgstr "Kaikki kielet"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -334,7 +323,7 @@ msgstr "Kirjaudu"
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr ""
+msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
@@ -347,32 +336,26 @@ msgid "Instance Url:"
 msgstr "Instanssin verkko-osoite:"
 
 #: content/ui/LoginPage.qml:52
-#, fuzzy, kde-format
-#| msgid "Instance URL and username must not be empty!"
+#, kde-format
 msgid "Instance URL must not be empty!"
-msgstr "Instanssin verkko-osoite ja käyttäjätunnus eivät voi olla tyhjiä!"
+msgstr "Instanssin verkko-osoite ei voi olla tyhjä!"
 
 #: content/ui/LoginPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
-msgstr "Asetukset"
+msgstr "Verkkoasetukset"
 
 #: content/ui/LoginPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Ignore ssl errors"
+#, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "Sivuuta SSL-virheet"
 
 #: content/ui/LoginPage.qml:88 content/ui/Settings/NetworkProxyPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Asetukset"
+msgstr "Välityspalvelinasetukset"
 
 #: content/ui/main.qml:184
 #, kde-format
@@ -395,26 +378,24 @@ msgid "Global"
 msgstr "Yleinen"
 
 #: content/ui/main.qml:258
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Conversation"
-msgstr "Maininnat"
+msgstr "Keskustelu"
 
 #: content/ui/main.qml:273
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Suosikit"
 
 #: content/ui/main.qml:287
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Kirjanmerkit"
 
 #: content/ui/main.qml:301
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Etsi"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
 #, kde-format
@@ -437,50 +418,47 @@ msgstr "Maininnat"
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr ""
+msgstr "Suosikit"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Tehosta"
+msgstr "Tehostukset"
 
 #: content/ui/NotificationPage.qml:74
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
-msgstr ""
+msgstr "Kyselyn tulokset"
 
+# *** TARKISTA: Saattaisi olla myös ”seuratut”.
 #: content/ui/NotificationPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Seuraa"
+msgstr "Seuraamiset"
 
 #: content/ui/NotificationPage.qml:169
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "No Notifications"
-msgstr "Ilmoitukset"
+msgstr "Ei ilmoituksia"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr ""
+msgstr "Etsi"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
 msgid "No search results"
-msgstr ""
+msgstr "Ei hakutuloksia"
 
 #: content/ui/SearchView.qml:49
 #, kde-format
 msgid "Search for peoples, tags and posts"
-msgstr ""
+msgstr "Etsi ihmisiä, luokituksia ja julkaisuja"
 
 #: content/ui/Settings/AccountsCard.qml:24
 #, kde-format
@@ -503,91 +481,86 @@ msgid "General"
 msgstr "Perusasetukset"
 
 #: content/ui/Settings/GeneralCard.qml:24
-#, fuzzy, kde-format
-#| msgid "Show detailed statistics about posts."
+#, kde-format
 msgid "Show detailed statistics about posts"
-msgstr "Näytä viestien yksityiskohtaiset tilastot."
+msgstr "Näytä julkaisujen yksityiskohtaiset tilastot"
 
 #: content/ui/Settings/GeneralCard.qml:37
-#, fuzzy, kde-format
-#| msgid "Show link preview."
+#, kde-format
 msgid "Show link preview"
-msgstr "Näytä linkin esikatselu."
+msgstr "Näytä linkin esikatselu"
 
 #: content/ui/Settings/GeneralCard.qml:50
 #, kde-format
 msgid "Crop images in the timeline to 16:9"
-msgstr ""
+msgstr "Rajaa aikajanan kuvat 16:9-suhteeseen"
 
 #: content/ui/Settings/GeneralCard.qml:62
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr ""
+msgstr "Toista animoidut GIFit automaattisesti"
 
 #: content/ui/Settings/GeneralCard.qml:75
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Väriteema"
 
 #: content/ui/Settings/GeneralCard.qml:92
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "Content font"
-msgstr "Sisältövaroitus"
+msgstr "Sisältöfontti"
 
 #: content/ui/Settings/GeneralCard.qml:98
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#, kde-format
 msgid "Please choose a font"
-msgstr "Valitse tiedosto"
+msgstr "Valitse fontti"
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Välityspalvelin"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
 #: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Välityspalvelin"
 
 #: content/ui/Settings/NetworkProxyPage.qml:32
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Järjestelmän oletus"
 
 #: content/ui/Settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: content/ui/Settings/NetworkProxyPage.qml:56
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:76
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Verkkonimi"
 
 #: content/ui/Settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Portti"
 
 #: content/ui/Settings/NetworkProxyPage.qml:110
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User"
-msgstr "Käyttäjätunnus:"
+msgstr "Käyttäjä"
 
 #: content/ui/Settings/NetworkProxyPage.qml:120
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Salasana"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
 #: content/ui/Settings/ProfileEditor.qml:356
@@ -598,7 +571,7 @@ msgstr "Käytä"
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
 msgid "Profile Editor"
-msgstr ""
+msgstr "Profiilimuokkain"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:207
@@ -609,7 +582,7 @@ msgstr "Valitse tiedosto"
 #: content/ui/Settings/ProfileEditor.qml:116
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "Näyttönimi"
 
 #: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
@@ -619,102 +592,94 @@ msgstr ""
 #: content/ui/Settings/ProfileEditor.qml:148
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "Otsake"
 
 #: content/ui/Settings/ProfileEditor.qml:182
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
+"PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan 1500 × 500 kuvapisteeseen."
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
 #: content/ui/StatusDelegate/OverflowMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgid "Delete"
-msgstr "Poista sana"
+msgstr "Poista"
 
 #: content/ui/Settings/ProfileEditor.qml:210
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr ""
+msgstr "Tilan oletusyksityisyys"
 
 #: content/ui/Settings/ProfileEditor.qml:278
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgid "Public post"
-msgstr "Julkinen"
+msgstr "Julkinen julkaisu"
 
 #: content/ui/Settings/ProfileEditor.qml:282
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Unlisted post"
-msgstr "Luettelematon"
+msgstr "Luettelematon julkaisu"
 
 #: content/ui/Settings/ProfileEditor.qml:286
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Followers-only post"
-msgstr "Seuraa"
+msgstr "Julkaisu vain seuraajille"
 
 #: content/ui/Settings/ProfileEditor.qml:290
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgid "Direct post"
-msgstr "Suoraviesti"
+msgstr "Suora julkaisu"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgid "Mark by default content as sensitive"
-msgstr ""
+msgstr "Merkitse oletussisältö arkaluontoiseksi"
 
 #: content/ui/Settings/ProfileEditor.qml:317
 #, kde-format
 msgid "Require follow requests"
-msgstr ""
+msgstr "Vaadi seurauspyynnöt"
 
 #: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgid "This is a bot account"
-msgstr ""
+msgstr "Tämä on robottitili"
 
 #: content/ui/Settings/ProfileEditor.qml:333
 #, kde-format
 msgid "Suggest account to others"
-msgstr ""
+msgstr "Ehdota tiliä muille"
 
 #: content/ui/Settings/ProfileEditor.qml:349
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Palauta"
 
 #: content/ui/Settings/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Asetukset"
 
 #: content/ui/Settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Tokodon"
+#, kde-format
 msgid "About Tokodon"
-msgstr "Tokodon"
+msgstr "Tietoa Tokodonista"
 
 #: content/ui/Settings/SettingsPage.qml:74
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Tietoa KDE:stä"
 
 #: content/ui/Settings/SonnetCard.qml:24
-#, fuzzy, kde-format
-#| msgid "Spell Checking"
+#, kde-format
 msgid "Spellchecking"
 msgstr "Oikeinkirjoituksen tarkistus"
 
@@ -746,13 +711,12 @@ msgstr "Valittu oletuskieli:"
 #: content/ui/Settings/SonnetCard.qml:78
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Ei mitään"
 
 #: content/ui/Settings/SonnetCard.qml:97
-#, fuzzy, kde-format
-#| msgid "Spell checking languages"
+#, kde-format
 msgid "Additional spell checking languages"
-msgstr "Oikeinkirjoituksen tarkistuksen kielet"
+msgstr "Oikeinkirjoituksen tarkistuksen lisäkielet"
 
 #: content/ui/Settings/SonnetCard.qml:98
 #, kde-format
@@ -769,18 +733,16 @@ msgid "Open Personal Dictionary"
 msgstr "Avaa henkilökohtainen sanasto"
 
 #: content/ui/Settings/SonnetCard.qml:120
-#, fuzzy, kde-format
-#| msgid "Spell checking languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Oikeinkirjoituksen tarkistuksen kielet"
 
 #: content/ui/Settings/SonnetCard.qml:130
 #: content/ui/Settings/SonnetCard.qml:140
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgid "Default Language"
-msgstr "Valittu oletuskieli:"
+msgstr "Oletuskieli"
 
 #: content/ui/Settings/SonnetCard.qml:152
 #, kde-format
@@ -807,82 +769,80 @@ msgstr "Poista sana"
 #: content/ui/StatusDelegate/OverflowMenu.qml:52
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Muokkaa"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:99
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Poista"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
-msgstr ""
+msgstr "Lisää kuvaus"
 
 #: content/ui/StatusComposer/Poll.qml:35
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Valinta %1"
 
 #: content/ui/StatusComposer/Poll.qml:59
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Valinta %1"
+msgstr "Lisää valinta"
 
 #: content/ui/StatusComposer/Poll.qml:60
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr ""
+msgstr "Lisää uusi kyselyvaihtoehto"
 
 #: content/ui/StatusComposer/Poll.qml:79
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr ""
+msgstr "Milloin kysely vanhenee"
 
 #: content/ui/StatusComposer/Poll.qml:88
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr ""
+msgstr "Monivalinta"
 
 #: content/ui/StatusComposer/Poll.qml:94
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr ""
+msgstr "Salli useampi valinta"
 
 #: content/ui/StatusComposer/Poll.qml:103
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr ""
+msgstr "Piilota tulokset"
 
 #: content/ui/StatusComposer/Poll.qml:109
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr ""
+msgstr "Piilota tulokset kunnes kysely päättyy"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
 #, kde-format
 msgid "Edit this toot"
-msgstr ""
+msgstr "Muokkaa tätä tuuttausta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Reply to this toot"
-msgstr ""
+msgstr "Vastaa tähän tuuttaukseen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Rewrite this toot"
-msgstr ""
+msgstr "Kirjoita tämä tuuttaus uudelleen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
@@ -945,14 +905,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
-msgstr ""
+msgstr "Valitse julkaisun kieli"
 
 #: content/ui/StatusComposer/StatusComposer.qml:288
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
-msgstr "Valittu oletuskieli:"
+msgstr "Julkaisukieli"
 
 #: content/ui/StatusComposer/StatusComposer.qml:298
 #, kde-format
@@ -962,79 +921,76 @@ msgstr "Lähetä"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:120
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "Ei käytettävissä"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:218
 #, kde-format
 msgid "Media Hidden"
-msgstr ""
+msgstr "Piilotettu media"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
 #: content/ui/StatusDelegate/StatusDelegate.qml:142
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#, kde-format
 msgid "View profile"
-msgstr "Esittele profiilissa"
+msgstr "Näytä profiili"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
 msgid "Expand this post"
-msgstr ""
+msgstr "Laajenna tämä julkaisu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
 msgid "Open original page"
-msgstr ""
+msgstr "Avaa alkuperäinen sivu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
 msgid "Copy link to this post"
-msgstr ""
+msgstr "Kopioi linkki tähän julkaisuun"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
 #: content/ui/StatusDelegate/StatusDelegate.qml:335
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Poista kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Poista ja kirjoita uudelleen"
 
 #: content/ui/StatusDelegate/Poll.qml:39
-#, fuzzy, kde-format
-#| msgctxt "hour:minute"
-#| msgid "%1:%2"
+#, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1:%2"
+msgstr "%1 %"
 
 #: content/ui/StatusDelegate/Poll.qml:63
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Ei ääniä)"
 
 #: content/ui/StatusDelegate/Poll.qml:97
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Äänestä"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:105
 #, kde-format
 msgid "Filtered: %1"
-msgstr ""
+msgstr "Suodatettu: %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:109
 #, kde-format
 msgid "Show anyway"
-msgstr ""
+msgstr "Näytä silti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:151 notificationhandler.cpp:23
 #, kde-format
@@ -1042,20 +998,19 @@ msgid "%1 favorited your post"
 msgstr "%1 merkitse viestisi suosikiksi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153 notificationhandler.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 edited a post"
-msgstr "%1 merkitse viestisi suosikiksi"
+msgstr "%1 muokkasi julkaisuaan"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:156
 #, kde-format
 msgid "Your poll has ended"
-msgstr ""
+msgstr "Kysely on päättynyt"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:158
 #, kde-format
 msgid "A poll you voted in has ended"
-msgstr ""
+msgstr "Kysely, jossa äänestit, on päättynyt"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:183
 #, kde-format
@@ -1073,22 +1028,20 @@ msgid "%1 boosted your post"
 msgstr "%1 tehosti julkaisusi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Näytä lisää"
+msgstr "Näytä vähemmän"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
-msgstr "Näytä lisää"
+msgstr "Näytä enemmän"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
-msgstr ""
+msgstr "1+"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
@@ -1112,62 +1065,58 @@ msgstr "Tykkää"
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:353
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgctxt "Show more options"
 msgid "More"
-msgstr "Näytä lisää"
+msgstr "Lisää"
 
 #: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Ei julkaisuja"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
 msgid "Log in to an existing account"
-msgstr ""
+msgstr "Kirjaudu olemassa olevalle tilille"
 
 #: content/ui/UserInfo.qml:195
 #, kde-format
 msgid "Switch User"
-msgstr ""
+msgstr "Vaihda käyttäjää"
 
 #: content/ui/UserInfo.qml:207
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Lisää"
 
 #: content/ui/UserInfo.qml:219
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Open Settings"
-msgstr "Asetukset"
+msgstr "Avaa asetukset"
 
 #: conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Tyhjä keskustelu"
 
 #: conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
-msgstr ""
+msgstr "%1 ja %2"
 
 #: conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 ja yksi muu"
+msgstr[1] "%2 ja %1 muuta"
 
 #: filetransferjob.cpp:82
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Ladataan"
@@ -1176,27 +1125,25 @@ msgstr "Ladataan"
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
-msgstr ""
+msgstr "Lähde"
 
 #: filetransferjob.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "Maininnat"
+msgstr "Kohde"
 
 #: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Kirjanmerkit"
 
 #: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr ""
+msgstr "Suosikit"
 
 #: main.cpp:109
 #, kde-format
@@ -1209,10 +1156,9 @@ msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
 #: main.cpp:113
-#, fuzzy, kde-format
-#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+#, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021 Carl Schwan, 2021 KDE-yhteisö"
+msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE-yhteisö"
 
 #: main.cpp:114
 #, kde-format
@@ -1222,7 +1168,7 @@ msgstr "Carl Schwan"
 #: main.cpp:114
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Ylläpitäjä"
 
 #: main.cpp:115
 #, kde-format
@@ -1244,7 +1190,7 @@ msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
 #: main.cpp:124
 #, kde-format
 msgid "Supports web+ap: url scheme"
-msgstr ""
+msgstr "Tukee web+ap: -verkko-osoitemallia"
 
 #: maintimelinemodel.cpp:29
 #, kde-format
@@ -1273,55 +1219,55 @@ msgstr "Yleinen aikajana"
 #: notificationmodel.cpp:100
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr ""
+msgstr "Noudettaessa viimeisintä ilmoitusta tapahtui virhe."
 
 #: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minuuttia"
 
 #: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minuuttia"
 
 #: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr ""
+msgstr "1 tunti"
 
 #: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr ""
+msgstr "6 tuntia"
 
 #: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr ""
+msgstr "12 tuntia"
 
 #: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr ""
+msgstr "1 päivä"
 
 #: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr ""
+msgstr "3 päivää"
 
 #: polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr ""
+msgstr "7 päivää"
 
 #: post.cpp:270
 #, kde-format
@@ -1342,37 +1288,37 @@ msgstr "%1 pv"
 #: posteditorbackend.cpp:220
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Tapahtui tuntematon virhe."
 
 #: profileeditor.cpp:183
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "Kuva on liian iso"
 
 #: profileeditor.cpp:196
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
+msgstr "Ei-tuettu kuvamuoto. Tuettuja ovat vain JPEG, PNG ovat GIF."
 
 #: profileeditor.cpp:323
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Tilin tiedot tallennettu"
 
 #: searchmodel.cpp:137
 #, kde-format
 msgid "People"
-msgstr ""
+msgstr "Ihmiset"
 
 #: searchmodel.cpp:139
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Aihetunnisteet"
 
 #: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
-msgstr ""
+msgstr "Julkaisu"
 
 #: threadmodel.cpp:29
 #, kde-format
