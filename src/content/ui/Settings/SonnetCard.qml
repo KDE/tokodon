@@ -94,7 +94,7 @@ MobileForm.FormCard {
 
         MobileForm.FormButtonDelegate {
             id: spellCheckingLanguage
-            text: i18n("Additional spell checking languages")
+            text: i18n("Additional Spell Checking Languages")
             description: i18n("%1 will provide spell checking and suggestions for the languages listed here when autodetection is enabled.", Qt.application.displayName)
             onClicked: pageStack.pushDialogLayer(spellCheckingLanguageList, {}, {
                 width: pageStack.width - Kirigami.Units.gridUnit * 5,
@@ -159,7 +159,7 @@ MobileForm.FormCard {
                         placeholderText: i18n("Add a new word to your personal dictionary…")
                     }
                     QQC2.Button {
-                        text: i18nc("@action:button", "Add word")
+                        text: i18nc("@action:button", "Add Word")
                         icon.name: "list-add"
                         enabled: dictionaryField.text.length > 0
                         onClicked: {

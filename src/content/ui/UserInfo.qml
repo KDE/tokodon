@@ -192,7 +192,7 @@ QQC2.ToolBar {
                 onClicked: {
                     userInfo.accountsListVisible = !userInfo.accountsListVisible
                 }
-                text: i18n("Switch User")
+                text: i18n("Switch user")
                 display: QQC2.AbstractButton.IconOnly
                 Accessible.name: text
                 QQC2.ToolTip {
@@ -216,7 +216,7 @@ QQC2.ToolBar {
             QQC2.ToolButton {
                 icon.name: "settings-configure"
                 onClicked: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
-                text: i18n("Open Settings")
+                text: i18n("Open settings")
                 display: QQC2.AbstractButton.IconOnly
                 Layout.minimumWidth: Layout.preferredWidth
                 Layout.alignment: Qt.AlignRight

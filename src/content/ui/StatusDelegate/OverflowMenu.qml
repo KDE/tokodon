@@ -17,20 +17,20 @@ QQC2.Menu {
     required property bool expandedPost
 
     QQC2.MenuItem {
-        text: i18n("Expand this post")
+        text: i18n("Expand This Post")
         onTriggered: Navigation.openThread(root.postId)
         visible: !root.expandedPost
     }
 
     QQC2.MenuItem {
-        text: i18n("Open original page")
+        text: i18n("Open Original Page")
         onTriggered: {
             Qt.openUrlExternally(root.url)
         }
     }
 
     QQC2.MenuItem {
-        text: i18n("Copy link to this post")
+        text: i18n("Copy Link to This Post")
         onTriggered: {
             Clipboard.saveText(root.url)
         }

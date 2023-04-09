@@ -138,9 +138,9 @@ TimelinePage {
                                 visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
                                 text: {
                                     if (model.identity.relationship && model.identity.relationship.showingReblogs) {
-                                        return i18n("Hide boosts from %1", '@' + model.identity.account);
+                                        return i18n("Hide Boosts from %1", '@' + model.identity.account);
                                     } else {
-                                        return i18n("Stop hiding boosts from %1", '@' + model.identity.account);
+                                        return i18n("Stop Hiding Boosts from %1", '@' + model.identity.account);
                                     }
                                 }
                                 onTriggered: {
@@ -156,9 +156,9 @@ TimelinePage {
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
                                     if (model.identity.relationship && model.identity.relationship.endorsed) {
-                                        return i18n("Stop featuring on profile");
+                                        return i18n("Stop Featuring on Profile");
                                     } else {
-                                        return i18n("Feature on profile");
+                                        return i18n("Feature on Profile");
                                     }
                                 }
                                 onTriggered: {
@@ -174,7 +174,7 @@ TimelinePage {
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
                                     if (model.identity.relationship && model.identity.relationship.muting) {
-                                        return i18n("Stop muting");
+                                        return i18n("Stop Muting");
                                     } else {
                                         return i18n("Mute");
                                     }
@@ -192,7 +192,7 @@ TimelinePage {
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
                                     if (model.identity.relationship && model.identity.relationship.blocking) {
-                                        return i18n("Stop blocking");
+                                        return i18n("Stop Blocking");
                                     } else {
                                         return i18n("Block");
                                     }
@@ -208,7 +208,7 @@ TimelinePage {
                             Kirigami.Action {
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
-                                text: i18n("Edit profile")
+                                text: i18n("Edit Profile")
                                 onTriggered: pageStack.push('qrc:/content/ui/Settings/ProfileEditor.qml', {
                                                     account: model.account
                                                 }, {

@@ -54,12 +54,13 @@ MastoPage {
                             id: menuLink
                             property string link
                             QQC2.MenuItem {
-                                text: i18n("Copy link")
-                                onTriggered: Clipboard.saveText(menuLink.link)
-                            }
-                            QQC2.MenuItem {
-                                text: i18n("Open link")
+                                text: i18n("Open Link")
                                 onTriggered: Qt.openUrlExternally(menuLink.link)
+                            }
+
+                            QQC2.MenuItem {
+                                text: i18n("Copy Link")
+                                onTriggered: Clipboard.saveText(menuLink.link)
                             }
                         }
                     }
@@ -69,7 +70,7 @@ MastoPage {
 
                 MobileForm.FormButtonDelegate {
                     id: openLink
-                    text: i18n("Open link")
+                    text: i18n("Open Link")
                     onClicked: Qt.openUrlExternally(account.authorizeUrl)
                 }
 
@@ -77,7 +78,7 @@ MastoPage {
 
                 MobileForm.FormButtonDelegate {
                     id: copyLink
-                    text: i18n("Copy link")
+                    text: i18n("Copy Link")
                     onClicked: Clipboard.saveText(account.authorizeUrl)
                 }
             }
