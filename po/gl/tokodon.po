@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-28 00:47+0000\n"
+"POT-Creation-Date: 2023-04-10 00:46+0000\n"
 "PO-Revision-Date: 2022-12-31 18:39+0100\n"
 "Last-Translator: José M. <correoxm@disroot.org>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -98,28 +98,33 @@ msgid "Notify me when %1 posts"
 msgstr "Notificarme con %1 publicacións"
 
 #: content/ui/AccountInfo.qml:141
-#, kde-format
-msgid "Hide boosts from %1"
+#, fuzzy, kde-format
+#| msgid "Hide boosts from %1"
+msgid "Hide Boosts from %1"
 msgstr "Agochar promocións de %1"
 
 #: content/ui/AccountInfo.qml:143
-#, kde-format
-msgid "Stop hiding boosts from %1"
+#, fuzzy, kde-format
+#| msgid "Stop hiding boosts from %1"
+msgid "Stop Hiding Boosts from %1"
 msgstr "Deixar de agochar promocións de %1"
 
 #: content/ui/AccountInfo.qml:159
-#, kde-format
-msgid "Stop featuring on profile"
+#, fuzzy, kde-format
+#| msgid "Stop featuring on profile"
+msgid "Stop Featuring on Profile"
 msgstr "Deixar de destacar no perfil"
 
 #: content/ui/AccountInfo.qml:161
-#, kde-format
-msgid "Feature on profile"
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgid "Feature on Profile"
 msgstr "Destacar no perfil"
 
 #: content/ui/AccountInfo.qml:177
-#, kde-format
-msgid "Stop muting"
+#, fuzzy, kde-format
+#| msgid "Stop muting"
+msgid "Stop Muting"
 msgstr "Deixar de acalar"
 
 #: content/ui/AccountInfo.qml:179
@@ -128,8 +133,9 @@ msgid "Mute"
 msgstr "Acalar"
 
 #: content/ui/AccountInfo.qml:195
-#, kde-format
-msgid "Stop blocking"
+#, fuzzy, kde-format
+#| msgid "Stop blocking"
+msgid "Stop Blocking"
 msgstr "Deixar de bloquear"
 
 #: content/ui/AccountInfo.qml:197
@@ -140,7 +146,7 @@ msgstr "Bloquear"
 #: content/ui/AccountInfo.qml:211
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
-msgid "Edit profile"
+msgid "Edit Profile"
 msgstr "Destacar no perfil"
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
@@ -213,27 +219,29 @@ msgstr "Permitir a Tokodon actuar no teu nome"
 msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "Para continuar, abre a seguinte ligazón e autoriza a Tokodon: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:80
-#, kde-format
-msgid "Copy link"
-msgstr "Copiar ligazón"
-
-#: content/ui/AuthorizationPage.qml:61 content/ui/AuthorizationPage.qml:72
-#, kde-format
-msgid "Open link"
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Open link"
+msgid "Open Link"
 msgstr "Abrir ligazón"
 
-#: content/ui/AuthorizationPage.qml:94
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Copy link"
+msgid "Copy Link"
+msgstr "Copiar ligazón"
+
+#: content/ui/AuthorizationPage.qml:95
 #, kde-format
 msgid "Enter token:"
 msgstr "Escribir o código:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Continuar"
 
-#: content/ui/AuthorizationPage.qml:105
+#: content/ui/AuthorizationPage.qml:106
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "Escribe aquí o código creado."
@@ -728,8 +736,9 @@ msgid "None"
 msgstr "Ningún"
 
 #: content/ui/Settings/SonnetCard.qml:97
-#, kde-format
-msgid "Additional spell checking languages"
+#, fuzzy, kde-format
+#| msgid "Additional spell checking languages"
+msgid "Additional Spell Checking Languages"
 msgstr "Idiomas adicionais para comprobacións"
 
 #: content/ui/Settings/SonnetCard.qml:98
@@ -769,9 +778,11 @@ msgid "Add a new word to your personal dictionary…"
 msgstr "Engade unha nova palabra ao diionario persoal…"
 
 #: content/ui/Settings/SonnetCard.qml:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add word"
 msgctxt "@action:button"
-msgid "Add word"
+msgid "Add Word"
 msgstr "Engadir palabra"
 
 #: content/ui/Settings/SonnetCard.qml:189
@@ -955,17 +966,17 @@ msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
-msgid "Expand this post"
+msgid "Expand This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
-msgid "Open original page"
+msgid "Open Original Page"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
-msgid "Copy link to this post"
+msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
@@ -1106,8 +1117,9 @@ msgid "Log in to an existing account"
 msgstr "Accede cunha conta existente"
 
 #: content/ui/UserInfo.qml:195
-#, kde-format
-msgid "Switch User"
+#, fuzzy, kde-format
+#| msgid "Switch User"
+msgid "Switch user"
 msgstr "Cambiar de usuaria"
 
 #: content/ui/UserInfo.qml:207
@@ -1116,8 +1128,9 @@ msgid "Add"
 msgstr "Engadir"
 
 #: content/ui/UserInfo.qml:219
-#, kde-format
-msgid "Open Settings"
+#, fuzzy, kde-format
+#| msgid "Open Settings"
+msgid "Open settings"
 msgstr "Abrir Axustes"
 
 #: conversationmodel.cpp:59

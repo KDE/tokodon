@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-28 00:47+0000\n"
+"POT-Creation-Date: 2023-04-10 00:46+0000\n"
 "PO-Revision-Date: 2023-03-27 12:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -98,28 +98,31 @@ msgid "Notify me when %1 posts"
 msgstr "当 %1 发帖时通知我"
 
 #: content/ui/AccountInfo.qml:141
-#, kde-format
-msgid "Hide boosts from %1"
+#, fuzzy, kde-format
+#| msgid "Hide boosts from %1"
+msgid "Hide Boosts from %1"
 msgstr "隐藏来自 %1 的转嘟"
 
 #: content/ui/AccountInfo.qml:143
-#, kde-format
-msgid "Stop hiding boosts from %1"
+#, fuzzy, kde-format
+#| msgid "Stop hiding boosts from %1"
+msgid "Stop Hiding Boosts from %1"
 msgstr "停止隐藏来自 %1 的转嘟"
 
 #: content/ui/AccountInfo.qml:159
 #, kde-format
-msgid "Stop featuring on profile"
+msgid "Stop Featuring on Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:161
 #, kde-format
-msgid "Feature on profile"
+msgid "Feature on Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:177
-#, kde-format
-msgid "Stop muting"
+#, fuzzy, kde-format
+#| msgid "Stop muting"
+msgid "Stop Muting"
 msgstr "停止静音"
 
 #: content/ui/AccountInfo.qml:179
@@ -128,8 +131,9 @@ msgid "Mute"
 msgstr "静音"
 
 #: content/ui/AccountInfo.qml:195
-#, kde-format
-msgid "Stop blocking"
+#, fuzzy, kde-format
+#| msgid "Stop blocking"
+msgid "Stop Blocking"
 msgstr "停止屏蔽"
 
 #: content/ui/AccountInfo.qml:197
@@ -139,7 +143,7 @@ msgstr "屏蔽"
 
 #: content/ui/AccountInfo.qml:211
 #, kde-format
-msgid "Edit profile"
+msgid "Edit Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
@@ -209,27 +213,29 @@ msgstr ""
 msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "若要继续，请打开以下链接并授权 Tokodon：%1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:80
-#, kde-format
-msgid "Copy link"
-msgstr "复制链接"
-
-#: content/ui/AuthorizationPage.qml:61 content/ui/AuthorizationPage.qml:72
-#, kde-format
-msgid "Open link"
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Open link"
+msgid "Open Link"
 msgstr "打开链接"
 
-#: content/ui/AuthorizationPage.qml:94
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Copy link"
+msgid "Copy Link"
+msgstr "复制链接"
+
+#: content/ui/AuthorizationPage.qml:95
 #, kde-format
 msgid "Enter token:"
 msgstr "输入令牌："
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "继续"
 
-#: content/ui/AuthorizationPage.qml:105
+#: content/ui/AuthorizationPage.qml:106
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "请输入所生成的令牌。"
@@ -712,9 +718,11 @@ msgid "None"
 msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:97
-#, kde-format
-msgid "Additional spell checking languages"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Spell checking languages"
+msgid "Additional Spell Checking Languages"
+msgstr "拼写检查语言"
 
 #: content/ui/Settings/SonnetCard.qml:98
 #, kde-format
@@ -751,9 +759,11 @@ msgid "Add a new word to your personal dictionary…"
 msgstr "在您的个人字典中添加一个新单词…"
 
 #: content/ui/Settings/SonnetCard.qml:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add word"
 msgctxt "@action:button"
-msgid "Add word"
+msgid "Add Word"
 msgstr "添加单词"
 
 #: content/ui/Settings/SonnetCard.qml:189
@@ -933,17 +943,17 @@ msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
-msgid "Expand this post"
+msgid "Expand This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
-msgid "Open original page"
+msgid "Open Original Page"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
-msgid "Copy link to this post"
+msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
@@ -1080,8 +1090,9 @@ msgid "Log in to an existing account"
 msgstr "使用现有账户登录"
 
 #: content/ui/UserInfo.qml:195
-#, kde-format
-msgid "Switch User"
+#, fuzzy, kde-format
+#| msgid "Switch User"
+msgid "Switch user"
 msgstr "切换用户"
 
 #: content/ui/UserInfo.qml:207
@@ -1090,8 +1101,9 @@ msgid "Add"
 msgstr ""
 
 #: content/ui/UserInfo.qml:219
-#, kde-format
-msgid "Open Settings"
+#, fuzzy, kde-format
+#| msgid "Open Settings"
+msgid "Open settings"
 msgstr "打开设置"
 
 #: conversationmodel.cpp:59

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-28 00:47+0000\n"
+"POT-Creation-Date: 2023-04-10 00:46+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -102,28 +102,29 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:141
 #, kde-format
-msgid "Hide boosts from %1"
+msgid "Hide Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:143
 #, kde-format
-msgid "Stop hiding boosts from %1"
+msgid "Stop Hiding Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:159
 #, kde-format
-msgid "Stop featuring on profile"
+msgid "Stop Featuring on Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:161
 #, kde-format
-msgid "Feature on profile"
+msgid "Feature on Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:177
-#, kde-format
-msgid "Stop muting"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Open link"
+msgid "Stop Muting"
+msgstr "Abrir link"
 
 #: content/ui/AccountInfo.qml:179
 #, kde-format
@@ -132,7 +133,7 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:195
 #, kde-format
-msgid "Stop blocking"
+msgid "Stop Blocking"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:197
@@ -142,7 +143,7 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:211
 #, kde-format
-msgid "Edit profile"
+msgid "Edit Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
@@ -215,27 +216,29 @@ msgstr ""
 msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "Para continuar, abra o seguinte link e autorize o Tokodon: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:80
-#, kde-format
-msgid "Copy link"
-msgstr "Copiar link"
-
-#: content/ui/AuthorizationPage.qml:61 content/ui/AuthorizationPage.qml:72
-#, kde-format
-msgid "Open link"
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Open link"
+msgid "Open Link"
 msgstr "Abrir link"
 
-#: content/ui/AuthorizationPage.qml:94
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Copy link"
+msgid "Copy Link"
+msgstr "Copiar link"
+
+#: content/ui/AuthorizationPage.qml:95
 #, kde-format
 msgid "Enter token:"
 msgstr "Digitar token:"
 
-#: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Continuar"
 
-#: content/ui/AuthorizationPage.qml:105
+#: content/ui/AuthorizationPage.qml:106
 #, kde-format
 msgid "Please insert the generated token."
 msgstr ""
@@ -733,7 +736,7 @@ msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:97
 #, kde-format
-msgid "Additional spell checking languages"
+msgid "Additional Spell Checking Languages"
 msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:98
@@ -773,7 +776,7 @@ msgstr ""
 #: content/ui/Settings/SonnetCard.qml:162
 #, kde-format
 msgctxt "@action:button"
-msgid "Add word"
+msgid "Add Word"
 msgstr ""
 
 #: content/ui/Settings/SonnetCard.qml:189
@@ -955,17 +958,17 @@ msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
-msgid "Expand this post"
+msgid "Expand This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
-msgid "Open original page"
+msgid "Open Original Page"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
-msgid "Copy link to this post"
+msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
@@ -1109,7 +1112,7 @@ msgstr ""
 
 #: content/ui/UserInfo.qml:195
 #, kde-format
-msgid "Switch User"
+msgid "Switch user"
 msgstr ""
 
 #: content/ui/UserInfo.qml:207
@@ -1120,7 +1123,7 @@ msgstr ""
 #: content/ui/UserInfo.qml:219
 #, fuzzy, kde-format
 #| msgid "Open link"
-msgid "Open Settings"
+msgid "Open settings"
 msgstr "Abrir link"
 
 #: conversationmodel.cpp:59
