@@ -15,6 +15,7 @@ QQC2.Control {
     id: root
 
     required property var attachments
+    required property var identity
     required property bool sensitive
     required property bool secondary
     required property bool expandedPost
@@ -105,7 +106,7 @@ QQC2.Control {
                                 onTapped: if (root.isSensitive) {
                                     root.isSensitive = false;
                                 } else {
-                                    Navigation.openFullScreenImage(root.attachments, imgContainer.index);
+                                    Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
                                 }
                             }
 
@@ -148,7 +149,7 @@ QQC2.Control {
                             onTapped: if (root.isSensitive) {
                                 root.isSensitive = false;
                             } else {
-                                Navigation.openFullScreenImage(root.attachments, parent.index);
+                                Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
                             }
                         }
                     }
@@ -219,7 +220,7 @@ QQC2.Control {
         onClicked: if (root.isSensitive) {
             root.isSensitive = false;
         } else {
-            Navigation.openFullScreenImage(root.attachments, 0);
+            Navigation.openFullScreenImage(root.attachments, root.identity, 0);
         }
     }
 }

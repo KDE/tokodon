@@ -9,6 +9,6 @@ QtObject {
     signal replyTo(inReplyTo: string, mentions: var, visibility: int, authorIdentity: var, post: var)
     signal openAccount(accountId: string)
     signal openThread(postId: string)
-    signal openFullScreenImage(attachments: var, currentIndex: int)
+    signal openFullScreenImage(attachments: var, identity: var, currentIndex: int)
     signal openTag(tag: string)
 }

@@ -280,6 +280,7 @@ QQC2.ItemDelegate {
         AttachmentGrid {
             expandedPost: root.expandedPost
             attachments: root.attachments
+            identity: root.authorIdentity
             sensitive: root.sensitive
             secondary: root.secondary
             inViewPort: root.inViewPort
