@@ -51,8 +51,9 @@ Kirigami.ScrollablePage {
         function onOpenFullScreenImage(attachments, identity, currentIndex) {
             if (root.isCurrentPage) {
                 root.dialog = fullScreenImage.createObject(parent, {
-                    model: attachments,
-                    currentIndex: currentIndex,
+                    attachments: attachments,
+                    identity: identity,
+                    initialIndex: currentIndex,
                 });
                 root.dialog.open();
             }

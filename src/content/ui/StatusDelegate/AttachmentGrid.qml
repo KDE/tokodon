@@ -112,7 +112,7 @@ QQC2.Control {
 
                             Image {
                                 anchors.fill: parent
-                                source: visible ? "image://blurhash/" + modelData.blurhash : ''
+                                source: visible ? modelData.tempSource : ''
                                 visible: parent.status !== Image.Ready || root.isSensitive
                             }
 
@@ -139,7 +139,7 @@ QQC2.Control {
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
-                        videoUrl: modelData.url
+                        videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
                         autoPlay: Config.autoPlayGif
                         isSensitive: root.isSensitive
@@ -170,7 +170,7 @@ QQC2.Control {
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
-                        videoUrl: modelData.url
+                        videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
                         autoPlay: false
                         isSensitive: root.isSensitive

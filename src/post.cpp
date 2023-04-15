@@ -71,9 +71,24 @@ QString Attachment::id() const
     return m_id;
 }
 
+int Attachment::isVideo() const
+{
+    if (m_type == AttachmentType::GifV || m_type == AttachmentType::Video) {
+        return 1;
+    }
+
+    return 0;
+}
+
+QString Attachment::tempSource() const
+{
+    return QString("image://blurhash/%1").arg(m_blurhash);
+}
+
 Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
     , m_parent(account)
+    , m_attachmentList(this, &m_attachments)
 {
     QString visibilityString = account->identity()->visibility();
     m_visibility = stringToVisibility(visibilityString);
@@ -107,6 +122,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
     , m_visibility(Post::Visibility::Public)
+    , m_attachmentList(this, &m_attachments)
 {
     fromJson(obj);
 }
@@ -534,9 +550,14 @@ bool Post::filtered() const
     return m_filtered;
 }
 
-QVector<Attachment *> Post::attachments() const
+QList<Attachment *> Post::attachments() const
 {
     return m_attachments;
+}
+
+QQmlListProperty<Attachment> Post::attachmentList() const
+{
+    return m_attachmentList;
 }
 
 void Post::setAttachmentsVisible(bool attachmentsVisible)

@@ -16,8 +16,8 @@ import QtQml 2.15
 MediaContainer {
     id: root
 
-    sourceWidth: Math.max(modelData.originalWidth, img.sourceSize.width)
-    sourceHeight: Math.max(modelData.originalHeight, img.sourceSize.height)
+    sourceWidth: Math.max(modelData.originalWidth, output.sourceRect.width)
+    sourceHeight: Math.max(modelData.originalHeight, output.sourceRect.height)
 
     required property var videoUrl
     required property var previewUrl
@@ -75,7 +75,7 @@ MediaContainer {
 
     Image {
         anchors.fill: parent
-        source: visible ? "image://blurhash/" + modelData.blurhash : ''
+        source: visible ? modelData.tempSource : ''
         visible: previewImage.status !== Image.Ready || root.isSensitive
     }
 

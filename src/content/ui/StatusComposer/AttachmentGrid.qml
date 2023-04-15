@@ -70,7 +70,7 @@ GridLayout {
 
                 onClicked: {
                     const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
-                        text: img.description,
+                        text: img.caption,
                     });
                     dialog.open();
                     dialog.applied.connect(() => {

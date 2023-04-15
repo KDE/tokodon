@@ -9,6 +9,7 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <QObject>
+#include <QQmlListProperty>
 #include <QString>
 #include <QUrl>
 
@@ -87,11 +88,12 @@ class Attachment : public QObject
 
     Q_PROPERTY(QString id MEMBER m_id CONSTANT)
     Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
+    Q_PROPERTY(int type READ isVideo CONSTANT)
     Q_PROPERTY(QString previewUrl MEMBER m_preview_url CONSTANT)
-    Q_PROPERTY(QString url MEMBER m_url CONSTANT)
+    Q_PROPERTY(QString source MEMBER m_url CONSTANT)
     Q_PROPERTY(QString remoteUrl MEMBER m_remote_url CONSTANT)
-    Q_PROPERTY(QString description READ description CONSTANT)
-    Q_PROPERTY(QString blurhash MEMBER m_blurhash CONSTANT)
+    Q_PROPERTY(QString caption READ description CONSTANT)
+    Q_PROPERTY(QString tempSource READ tempSource CONSTANT)
     Q_PROPERTY(int originalWidth MEMBER m_originalWidth CONSTANT)
     Q_PROPERTY(int originalHeight MEMBER m_originalHeight CONSTANT)
 
@@ -114,7 +116,6 @@ public:
     QString m_preview_url;
     QString m_url;
     QString m_remote_url;
-    QString m_blurhash;
     int m_originalWidth;
     int m_originalHeight;
 
@@ -123,10 +124,16 @@ public:
     void setDescription(const QString &description);
     QString description() const;
 
+    /// Used exclusively in Maximize component to tell it whether or not an attachment is a video
+    int isVideo() const;
+
+    QString tempSource() const;
+
 private:
     void fromJson(const QJsonObject &object);
 
     QString m_description;
+    QString m_blurhash;
 };
 
 class Notification
@@ -177,7 +184,7 @@ class Post : public QObject
     Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
     Q_PROPERTY(QStringList filters READ filters CONSTANT)
     Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
-    Q_PROPERTY(QVector<Attachment *> attachments READ attachments CONSTANT)
+    Q_PROPERTY(QQmlListProperty<Attachment> attachments READ attachmentList CONSTANT)
     Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
     Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
@@ -284,7 +291,8 @@ public:
     Q_INVOKABLE void addAttachments(const QJsonArray &attachments);
     void setDirtyAttachment();
     void updateAttachment(Attachment *a);
-    QVector<Attachment *> attachments() const;
+    QList<Attachment *> attachments() const;
+    QQmlListProperty<Attachment> attachmentList() const;
     bool attachmentsVisible() const;
     void setAttachmentsVisible(bool attachmentsVisible);
 
@@ -319,7 +327,8 @@ private:
     std::optional<Card> m_card;
     std::optional<Application> m_application;
     std::shared_ptr<Identity> m_authorIdentity;
-    QVector<Attachment *> m_attachments;
+    QList<Attachment *> m_attachments;
+    QQmlListProperty<Attachment> m_attachmentList;
     std::unique_ptr<Poll> m_poll;
 
     bool m_sensitive;

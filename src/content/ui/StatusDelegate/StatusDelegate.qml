@@ -279,7 +279,7 @@ QQC2.ItemDelegate {
 
         AttachmentGrid {
             expandedPost: root.expandedPost
-            attachments: root.attachments
+            attachments: root.post.attachments
             identity: root.authorIdentity
             sensitive: root.sensitive
             secondary: root.secondary
