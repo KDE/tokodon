@@ -144,6 +144,7 @@ int main(int argc, char *argv[])
     auto account = new MockAccount();
     AccountManager::instance().addAccount(account);
     AccountManager::instance().selectAccount(account);
+    AccountManager::instance().disableSettings(true);
     QUrl url = account->apiUrl("/api/v2/search");
     url.setQuery(QUrlQuery{{"q", "myquery"}});
     account->registerGet(url, new TestReply("search-result.json", account));

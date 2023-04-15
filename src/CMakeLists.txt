@@ -75,9 +75,7 @@ if (TARGET KF${QT_MAJOR_VERSION}::KIOWidgets)
     target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::KIOWidgets)
 endif ()
 
-if (BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()
+
 
 add_executable(tokodon
     main.cpp
@@ -167,3 +165,8 @@ else()
 endif()
 
 install(TARGETS tokodon ${KF${QT_MAJOR_VERSION}_INSTALL_TARGETS_DEFAULT_ARGS})
+
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+    install(TARGETS tokodon-offline ${KF${QT_MAJOR_VERSION}_INSTALL_TARGETS_DEFAULT_ARGS})
+endif()

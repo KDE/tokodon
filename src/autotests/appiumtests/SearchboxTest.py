@@ -34,7 +34,7 @@ class SearchBoxTest(unittest.TestCase):
         searchElement = self.driver.find_element(by=AppiumBy.NAME, value="Search")
         searchFocused = searchElement.get_attribute('focused')
         self.assertTrue(searchFocused)
-
+        searchElement.click()
         searchElement.send_keys("myquery")
         searchElement.send_keys(Keys.ENTER)
 

@@ -13,7 +13,8 @@ import QtMultimedia 5.15
 
 QQC2.Control {
     id: root
-
+    Accessible.description: root.attachments[0].attachmentType == Attachment.Image ? i18n("Status with image attachment") : root.attachments[0].attachmentType == Attachment.GifV ? i18n("Status with GifV attachment") : i18n("Status with Video attachment") 
+    
     required property var attachments
     required property var identity
     required property bool sensitive
@@ -69,6 +70,7 @@ QQC2.Control {
 
                         required property int index
                         required property var modelData
+                        Accessible.description: modelData.description
 
                         repeater: attachmentsRepeater
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
@@ -133,6 +135,7 @@ QQC2.Control {
                     VideoAttachment {
                         required property int index
                         required property var modelData
+                        Accessible.description: modelData.description
 
                         repeater: attachmentsRepeater
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
@@ -165,6 +168,7 @@ QQC2.Control {
 
                         required property int index
                         required property var modelData
+                        Accessible.description: modelData.description
 
                         repeater: attachmentsRepeater
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio

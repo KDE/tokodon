@@ -76,10 +76,10 @@ private Q_SLOTS:
 
         MainTimelineModel timelineModel;
 
-        QCOMPARE(timelineModel.rowCount({}), 2);
+        QCOMPARE(timelineModel.rowCount({}), 5);
         QVERIFY(timelineModel.canFetchMore({}));
         timelineModel.fetchMore({});
-        QCOMPARE(timelineModel.rowCount({}), 4);
+        QCOMPARE(timelineModel.rowCount({}), 10);
     }
 
     void testTagModel()
@@ -94,10 +94,10 @@ private Q_SLOTS:
         TagsModel tagModel;
         tagModel.setHashtag("home");
 
-        QCOMPARE(tagModel.rowCount({}), 2);
+        QCOMPARE(tagModel.rowCount({}), 5);
         QVERIFY(tagModel.canFetchMore({}));
         tagModel.fetchMore({});
-        QCOMPARE(tagModel.rowCount({}), 4);
+        QCOMPARE(tagModel.rowCount({}), 10);
     }
 
     void testThreadModel()

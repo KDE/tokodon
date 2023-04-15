@@ -8,6 +8,7 @@ from appium import webdriver
 from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
 from appium.options.common.app_option import AppOption
+from selenium.webdriver.common.keys import Keys
 
 
 class ATSPIOptions(AppiumOptions, AppOption):
@@ -22,7 +23,7 @@ class TimelineTest(unittest.TestCase):
         self.driver = webdriver.Remote(
             command_executor='http://127.0.0.1:4723',
             options=options)
-
+        
     def tearDown(self):
         self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
         self.driver.quit()
@@ -45,6 +46,16 @@ class TimelineTest(unittest.TestCase):
         boostButton=self.driver.find_element(by='description',value="Boost")
         boostButton.click()  
         self.assertTrue(self.driver.find_element(by='description', value="Boosted"))
+
+    def test_status_media(self):
+        searchElement = self.driver.find_element(by=AppiumBy.NAME, value="Home")
+        searchElement.send_keys(Keys.DOWN)
+        searchElement.send_keys(Keys.DOWN)
+        searchElement.send_keys(Keys.DOWN)
+        self.assertTrue(self.driver.find_element(by='description', value="Status with image attachment"))
+        self.assertTrue(self.driver.find_element(by='description', value="Status with Video attachment"))
+        self.assertTrue(self.driver.find_element(by='description', value="Status with GifV attachment"))
+
 
 if __name__ == '__main__':
     unittest.main()
