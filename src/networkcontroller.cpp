@@ -33,7 +33,7 @@ void NetworkController::setApplicationProxy()
     Config *cfg = Config::self();
     QNetworkProxy proxy;
 
-    // type match to ProxyType from neochatconfig.kcfg
+    // type match to ProxyType from config.kcfg
     switch (cfg->proxyType()) {
     case 1: // HTTP
         proxy.setType(QNetworkProxy::HttpProxy);

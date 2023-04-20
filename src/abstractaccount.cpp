@@ -185,7 +185,7 @@ void AbstractAccount::setInstanceUri(const QString &instance_uri)
     instance_url.setScheme("https"); // getting token from http is not supported
 
     m_instance_uri = instance_url.toString();
-    registerApplication("Tokodon", "https://app.kde.org/neochat");
+    registerApplication("Tokodon", "https://apps.kde.org/tokodon");
 }
 
 QString AbstractAccount::instanceUri() const
