@@ -26,12 +26,14 @@ public:
         AuthorIdentityRole,
         PublishedAtRole,
         RelativeTimeRole,
+        AbsoluteTimeRole,
         SensitiveRole,
         VisibilityRole,
 
         // Additional content
         AttachmentsRole,
         CardRole,
+        ApplicationRole,
         PollRole,
         MentionsRole,
 

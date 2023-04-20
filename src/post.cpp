@@ -175,6 +175,10 @@ void Post::fromJson(QJsonObject obj)
         setCard(std::make_optional<Card>(obj["card"].toObject()));
     }
 
+    if (obj.contains("application") && !obj["application"].toObject().empty()) {
+        setApplication(std::make_optional<Application>(obj["application"].toObject()));
+    }
+
     m_mentions.clear();
     for (const auto &m : qAsConst(mentions)) {
         const QJsonObject o = m.toObject();
@@ -276,6 +280,11 @@ QString Post::relativeTime() const
         return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
     }
     return QLocale::system().toString(publishedAt().date(), QLocale::ShortFormat);
+}
+
+QString Post::absoluteTime() const
+{
+    return QLocale::system().toString(publishedAt(), QLocale::LongFormat);
 }
 
 int Post::favouritesCount() const
@@ -439,6 +448,16 @@ void Post::setCard(std::optional<Card> card)
     m_card = card;
 }
 
+std::optional<Application> Post::application() const
+{
+    return m_application;
+}
+
+void Post::setApplication(std::optional<Application> application)
+{
+    m_application = application;
+}
+
 bool Post::favourited() const
 {
     return m_favourited;
@@ -586,6 +605,21 @@ QString Card::title() const
 QUrl Card::url() const
 {
     return QUrl::fromUserInput(m_card[QLatin1String("url")].toString());
+}
+
+Application::Application(QJsonObject application)
+    : m_application(application)
+{
+}
+
+QString Application::name() const
+{
+    return m_application[QLatin1String("name")].toString();
+}
+
+QUrl Application::website() const
+{
+    return QUrl::fromUserInput(m_application[QLatin1String("website")].toString());
 }
 
 Identity *Post::getAuthorIdentity() const

@@ -45,10 +45,12 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {SelectedRole, QByteArrayLiteral("selected")},
         {FiltersRole, QByteArrayLiteral("filters")},
         {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
+        {AbsoluteTimeRole, QByteArrayLiteral("absoluteTime")},
         {SensitiveRole, QByteArrayLiteral("sensitive")},
 
         // Additional content
         {CardRole, QByteArrayLiteral("card")},
+        {ApplicationRole, QByteArrayLiteral("application")},
         {PollRole, QByteArrayLiteral("poll")},
         {MentionsRole, QByteArrayLiteral("mentions")},
         {AttachmentsRole, QByteArrayLiteral("attachments")},
@@ -129,10 +131,18 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
             return QVariant::fromValue<Card>(*post->card());
         }
         return false;
+    case ApplicationRole:
+        if (post->application().has_value()) {
+            return QVariant::fromValue<Application>(*post->application());
+        }
+        return false;
     case UrlRole:
         return QVariant::fromValue<QUrl>(post->url());
     case RelativeTimeRole: {
         return post->relativeTime();
+    }
+    case AbsoluteTimeRole: {
+        return post->absoluteTime();
     }
     case PollRole:
         if (post->poll()) {

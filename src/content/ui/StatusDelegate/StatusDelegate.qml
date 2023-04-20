@@ -37,9 +37,12 @@ QQC2.ItemDelegate {
     required property string content
     required property string spoilerText
     required property string relativeTime
+    required property string absoluteTime
+    required property string publishedAt
     required property var attachments
     required property var poll
     required property var card
+    required property var application
     required property bool selected
     required property var filters
     required property bool sensitive
@@ -56,6 +59,7 @@ QQC2.ItemDelegate {
     property bool showInteractionButton: true
     property bool expandedPost: false
     property bool inViewPort: true
+    property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
 
     readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
 
@@ -353,6 +357,74 @@ QQC2.ItemDelegate {
                 QQC2.ToolTip.text: i18nc("Show more options", "More")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            }
+
+        }
+
+        RowLayout {
+            visible: root.expandedPost && root.selected
+            QQC2.ToolButton {
+                icon.name: 
+                    switch(root.visibility) {
+                        case Post.Public:
+                            return "kstars_xplanet";
+                        case Post.Unlisted:
+                            return "unlock";
+                        case Post.Private:
+                            return "lock";
+                        case Post.Direct:
+                            return "mail-message";
+                        default:
+                            return "kstars_xplanet";
+                    }
+                text: i18n("Visibility")
+                display: QQC2.AbstractButton.IconOnly
+                QQC2.ToolTip.text: switch(root.visibility) {
+                    case Post.Public:
+                        return i18n("Public");
+                    case Post.Unlisted:
+                        return i18n("Unlisted");
+                    case Post.Private:
+                        return i18n("Private");
+                    case Post.Direct:
+                        return i18n("Direct Message");
+                    default:
+                        return i18n("Public");
+                    }
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+            }
+
+            QQC2.Label {
+                text: root.absoluteTime
+                elide: Text.ElideRight
+                color: Kirigami.Theme.disabledTextColor
+            }
+
+            QQC2.Label {
+                visible: root.application && root.application.name
+                text: root.application && root.application.name ? i18n("via %1", root.application.name) : ''
+                elide: Text.ElideRight
+                Layout.fillWidth: true
+                color: Kirigami.Theme.disabledTextColor
+                
+                HoverHandler {
+                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
+                    onHoveredChanged: if (hovered) {
+                        applicationWindow().hoverLinkIndicator.text = root.application.website;
+                    } else {
+                        applicationWindow().hoverLinkIndicator.text = "";
+                    }
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
+                    onClicked: Qt.openUrlExternally(root.application.website)
+                }
+
             }
         }
 

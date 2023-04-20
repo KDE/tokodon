@@ -22,6 +22,23 @@ class Post;
 class Identity;
 class AbstractAccount;
 
+class Application
+{
+    Q_GADGET
+    Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QUrl website READ website)
+
+public:
+    Application() = default;
+    Application(QJsonObject application);
+
+    QString name() const;
+    QUrl website() const;
+
+private:
+    QJsonObject m_application;
+};
+
 class Card
 {
     Q_GADGET
@@ -162,6 +179,7 @@ class Post : public QObject
     Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
     Q_PROPERTY(QVector<Attachment *> attachments READ attachments CONSTANT)
     Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
+    Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
 
 public:
@@ -213,6 +231,8 @@ public:
     std::optional<Card> card() const;
     Card *getCard() const;
     void setCard(std::optional<Card> card);
+    std::optional<Application> application() const;
+    void setApplication(std::optional<Application> application);
     void setPollJson(const QJsonObject &object);
     Poll *poll() const;
     QStringList filters() const;
@@ -224,6 +244,9 @@ public:
 
     /// Returns a locale-aware relative time.
     QString relativeTime() const;
+
+    // Returns absolute locale-aware time
+    QString absoluteTime() const;
 
     /// Returns whether the user favorited this status.
     bool favourited() const;
@@ -294,6 +317,7 @@ private:
     QString m_replyTargetId;
     QStringList m_filters;
     std::optional<Card> m_card;
+    std::optional<Application> m_application;
     std::shared_ptr<Identity> m_authorIdentity;
     QVector<Attachment *> m_attachments;
     std::unique_ptr<Poll> m_poll;
@@ -316,5 +340,6 @@ private:
     int m_repliesCount;
 };
 
+Q_DECLARE_METATYPE(Application)
 Q_DECLARE_METATYPE(Card)
 Q_DECLARE_METATYPE(Notification)
