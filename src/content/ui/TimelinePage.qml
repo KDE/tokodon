@@ -104,7 +104,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No posts")
-            visible: listview.count === 0 && !listview.model.loading
+            visible: !listview.model.loading && listview.count === 0
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
 
