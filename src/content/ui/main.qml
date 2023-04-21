@@ -160,7 +160,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
+                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction, exploreAction]
                 Kirigami.NavigationTabButton {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
@@ -296,6 +296,21 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    property Kirigami.Action exploreAction: Kirigami.Action {
+        icon.name: "kstars_planets"
+        text: i18n("Explore")
+        checkable: true
+        visible: !Kirigami.Settings.isMobile
+        onTriggered: {
+            pageStack.layers.clear();
+            pageStack.replace(exploreTimeline);
+            checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
+        }
+    }
+
     property Kirigami.Action searchAction: Kirigami.Action {
         icon.name: "search"
         text: i18n("Search")
@@ -314,7 +329,7 @@ Kirigami.ApplicationWindow {
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction]
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction, exploreAction]
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
@@ -363,6 +378,15 @@ Kirigami.ApplicationWindow {
     Component {
         id: notificationTimeline
         NotificationPage {
+            model: TimelineModel {
+                id: timelineModel
+            }
+        }
+    }
+
+    Component {
+        id: exploreTimeline
+        ExplorePage {
             model: TimelineModel {
                 id: timelineModel
             }
