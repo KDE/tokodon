@@ -25,6 +25,8 @@ QString LinkPaginationTimelineModel::displayName() const
         return i18nc("@title", "Bookmarks");
     } else if (m_timelineName == "favourites") {
         return i18nc("@title", "Favourites");
+    } else if (m_timelineName == "trending") {
+        return i18nc("@title", "Trending");
     }
     return {};
 }
@@ -49,7 +51,7 @@ void LinkPaginationTimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    if (m_timelineName != "bookmarks" && m_timelineName != "favourites") {
+    if (m_timelineName != "bookmarks" && m_timelineName != "favourites" && m_timelineName != "trending") {
         return;
     }
 
@@ -58,9 +60,14 @@ void LinkPaginationTimelineModel::fillTimeline(const QString &from_id)
     }
     setLoading(true);
 
+    auto api_arg = m_timelineName;
+    if (m_timelineName == "trending") {
+        api_arg = "/trends/statuses";
+    }
+
     QUrl uri;
     if (m_next.isEmpty()) {
-        uri = m_account->apiUrl(QStringLiteral("/api/v1/%1").arg(m_timelineName));
+        uri = m_account->apiUrl(QStringLiteral("/api/v1/%1").arg(api_arg));
     } else {
         uri = m_next;
     }
