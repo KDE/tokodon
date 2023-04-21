@@ -17,32 +17,31 @@ Kirigami.ScrollablePage {
     required property var model
     property var dialog: null
 
-        property alias listViewHeader: listview.header
+    property alias listViewHeader: listview.header
 
-            actions.main: Kirigami.Action {
-                icon.name: "list-add"
-                text: i18n("Toot")
-                enabled: AccountManager.hasAccounts
-                onTriggered: {
-                    const post = AccountManager.selectedAccount.newPost()
-                    pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                    postObject: post
-                });
-            }
+    actions.main: Kirigami.Action {
+        icon.name: "list-add"
+        text: i18n("Toot")
+        enabled: AccountManager.hasAccounts
+        onTriggered: {
+            const post = AccountManager.selectedAccount.newPost()
+            pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
+                postObject: post
+            });
+        }
+    }
+
+    ListView {
+        id: listview
+        model: LinkPaginationTimelineModel {
+            id: trendingPostsModel
+            name: "trending"
         }
 
-        ListView {
-            id: listview
-            model: LinkPaginationTimelineModel {
-                id: trendingPostsModel
-                name: "trending"
-            }
-
-            Connections {
-                target: trendingPostsModel
-                function onPostSourceReady(backend)
-                {
-                    pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+        Connections {
+            target: trendingPostsModel
+            function onPostSourceReady(backend) {
+                pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                     purpose: StatusComposer.Edit,
                     backend: backend
                 });
