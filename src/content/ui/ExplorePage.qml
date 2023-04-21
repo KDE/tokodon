@@ -54,7 +54,6 @@ Kirigami.ScrollablePage {
             FullScreenImage {}
         }
         delegate: StatusDelegate {
-            secondary: true
             timelineModel: trendingPostsModel
         }
         Kirigami.PlaceholderMessage {
