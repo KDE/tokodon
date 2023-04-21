@@ -266,20 +266,41 @@ QDateTime Post::publishedAt() const
 QString Post::relativeTime() const
 {
     const auto current = QDateTime::currentDateTime();
-    auto secsTo = publishedAt().secsTo(current);
-    if (secsTo < 60 * 60) {
-        const auto hours = publishedAt().time().hour();
-        const auto minutes = publishedAt().time().minute();
-        return i18nc("hour:minute",
-                     "%1:%2",
-                     hours < 10 ? QChar('0') + QString::number(hours) : QString::number(hours),
-                     minutes < 10 ? QChar('0') + QString::number(minutes) : QString::number(minutes));
+    const auto publishingDate = publishedAt();
+    const auto secsTo = publishingDate.secsTo(current);
+    const auto daysTo = publishingDate.daysTo(current);
+    if (secsTo < 0) {
+        return i18n("in the future");
+    } else if (secsTo < 60) {
+        return i18n("%1s", qCeil(secsTo));
+    } else if (secsTo < 60 * 60) {
+        return i18n("%1m", qCeil(secsTo / 60));
     } else if (secsTo < 60 * 60 * 24) {
         return i18n("%1h", qCeil(secsTo / (60 * 60)));
-    } else if (secsTo < 60 * 60 * 24 * 7) {
-        return i18n("%1d", qCeil(secsTo / (60 * 60 * 24)));
+    } else if (daysTo < 7) {
+        return i18n("%1d", qCeil(daysTo));
+    } else if (daysTo < 365) {
+        const auto weeksTo = qCeil(daysTo / 7);
+        if (weeksTo == 1) {
+            return i18n("1 week ago");
+        } else if (weeksTo < 5) {
+            return i18n("%1 weeks ago", weeksTo);
+        } else {
+            const auto monthsTo = qCeil(daysTo / 30);
+            if (monthsTo == 1) {
+                return i18n("1 month ago");
+            } else {
+                return i18n("%1 months ago", monthsTo);
+            }
+        }
+    } else {
+        const auto yearsTo = qCeil(daysTo / 365);
+        if (yearsTo == 1) {
+            return i18n("1 year ago");
+        } else {
+            return i18n("%1 years ago", yearsTo);
+        }
     }
-    return QLocale::system().toString(publishedAt().date(), QLocale::ShortFormat);
 }
 
 QString Post::absoluteTime() const
