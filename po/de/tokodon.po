@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-21 00:48+0000\n"
+"POT-Creation-Date: 2023-04-22 00:51+0000\n"
 "PO-Revision-Date: 2022-06-27 00:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1343,21 +1343,62 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr ""
 
-#: post.cpp:274
+#: post.cpp:273
 #, kde-format
-msgctxt "hour:minute"
-msgid "%1:%2"
-msgstr "%1:%2"
+msgid "in the future"
+msgstr ""
 
-#: post.cpp:278
+#: post.cpp:275
+#, fuzzy, kde-format
+#| msgid "%1h"
+msgid "%1s"
+msgstr "%1 Std."
+
+#: post.cpp:277
+#, fuzzy, kde-format
+#| msgid "%1h"
+msgid "%1m"
+msgstr "%1 Std."
+
+#: post.cpp:279
 #, kde-format
 msgid "%1h"
 msgstr "%1 Std."
 
-#: post.cpp:280
+#: post.cpp:281
 #, kde-format
 msgid "%1d"
 msgstr "%1 Tage"
+
+#: post.cpp:285
+#, kde-format
+msgid "1 week ago"
+msgstr ""
+
+#: post.cpp:287
+#, kde-format
+msgid "%1 weeks ago"
+msgstr ""
+
+#: post.cpp:291
+#, kde-format
+msgid "1 month ago"
+msgstr ""
+
+#: post.cpp:293
+#, kde-format
+msgid "%1 months ago"
+msgstr ""
+
+#: post.cpp:299
+#, kde-format
+msgid "1 year ago"
+msgstr ""
+
+#: post.cpp:301
+#, kde-format
+msgid "%1 years ago"
+msgstr ""
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1399,6 +1440,10 @@ msgstr ""
 msgctxt "@title"
 msgid "Thread"
 msgstr "Diskussion"
+
+#~ msgctxt "hour:minute"
+#~ msgid "%1:%2"
+#~ msgstr "%1:%2"
 
 #~ msgid "Username:"
 #~ msgstr "Benutzername:"
