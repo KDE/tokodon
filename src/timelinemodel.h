@@ -43,7 +43,7 @@ Q_SIGNALS:
 protected:
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
-    void fetchedTimeline(const QByteArray &array);
+    void fetchedTimeline(const QByteArray &array, bool alwaysAppendToEnd = false);
 
     AccountManager *m_manager = nullptr;
 

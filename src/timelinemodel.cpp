@@ -68,7 +68,7 @@ void TimelineModel::init()
     fillTimeline();
 }
 
-void TimelineModel::fetchedTimeline(const QByteArray &data)
+void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEnd)
 {
     QList<Post *> posts;
 
@@ -91,18 +91,24 @@ void TimelineModel::fetchedTimeline(const QByteArray &data)
     });
 
     if (!m_timeline.isEmpty()) {
-        const auto postOld = m_timeline.first();
-        const auto postNew = posts.first();
-        if (postOld->originalPostId() > postNew->originalPostId()) {
-            const int row = m_timeline.size();
-            const int last = row + posts.size() - 1;
-            beginInsertRows({}, row, last);
+        if (alwaysAppendToEnd) {
+            beginInsertRows({}, m_timeline.size(), m_timeline.size() + posts.size() - 1);
             m_timeline += posts;
             endInsertRows();
         } else {
-            beginInsertRows({}, 0, posts.size() - 1);
-            m_timeline = posts + m_timeline;
-            endInsertRows();
+            const auto postOld = m_timeline.first();
+            const auto postNew = posts.first();
+            if (postOld->originalPostId() > postNew->originalPostId()) {
+                const int row = m_timeline.size();
+                const int last = row + posts.size() - 1;
+                beginInsertRows({}, row, last);
+                m_timeline += posts;
+                endInsertRows();
+            } else {
+                beginInsertRows({}, 0, posts.size() - 1);
+                m_timeline = posts + m_timeline;
+                endInsertRows();
+            }
         }
     } else {
         beginInsertRows({}, 0, posts.size() - 1);

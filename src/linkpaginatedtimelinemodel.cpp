@@ -89,7 +89,7 @@ void LinkPaginationTimelineModel::fillTimeline(const QString &from_id)
             const auto match = re.match(next);
             m_next = QUrl::fromUserInput(match.captured(1));
 
-            fetchedTimeline(reply->readAll());
+            fetchedTimeline(reply->readAll(), true);
         },
         [this](QNetworkReply *reply) {
             Q_UNUSED(reply);
