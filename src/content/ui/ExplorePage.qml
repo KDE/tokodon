@@ -19,6 +19,12 @@ Kirigami.ScrollablePage {
 
     property alias listViewHeader: listview.header
 
+    onBackRequested: if (dialog) {
+        dialog.close();
+        dialog = null;
+        event.accepted = true;
+    }
+
     actions.main: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Toot")
@@ -36,6 +42,19 @@ Kirigami.ScrollablePage {
         model: LinkPaginationTimelineModel {
             id: trendingPostsModel
             name: "trending"
+        }
+
+        Connections {
+            target: Navigation
+            function onOpenFullScreenImage(attachments, currentIndex) {
+                if (timelinePage.isCurrentPage) {
+                    timelinePage.dialog = fullScreenImage.createObject(parent, {
+                        model: attachments,
+                        currentIndex: currentIndex,
+                    });
+                    timelinePage.dialog.open();
+                }
+            }
         }
 
         Connections {
