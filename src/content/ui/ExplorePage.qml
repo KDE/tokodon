@@ -29,12 +29,7 @@ Kirigami.ScrollablePage {
         icon.name: "list-add"
         text: i18n("Toot")
         enabled: AccountManager.hasAccounts
-        onTriggered: {
-            const post = AccountManager.selectedAccount.newPost()
-            pageStack.layers.push("qrc:/content/ui/TootComposer.qml", {
-                postObject: post
-            });
-        }
+        onTriggered: Navigation.openStatusComposer()
     }
 
     ListView {
