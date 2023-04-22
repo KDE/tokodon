@@ -59,11 +59,13 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             text: i18n("Loading...")
             visible: listview.count === 0 && listview.model.loading
+            width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Posts")
             visible: listview.count === 0 && !listview.model.loading
+            width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
     }
 }
