@@ -41,13 +41,13 @@ MastoPage {
     title: {
         switch (root.purpose) {
             case StatusComposer.Edit:
-                return i18n("Edit this toot")
+                return i18n("Edit this post")
             case StatusComposer.Reply:
-                return i18n("Reply to this toot")
+                return i18n("Reply to this post")
             case StatusComposer.Redraft:
-                return i18n("Rewrite this toot")
+                return i18n("Rewrite this post")
             case StatusComposer.New:
-                return i18n("Write a new toot")
+                return i18n("Write a new post")
         }
     }
 

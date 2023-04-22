@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
 
     actions.main: Kirigami.Action {
         icon.name: "list-add"
-        text: i18n("Toot")
+        text: i18n("Post")
         enabled: AccountManager.hasAccounts
         onTriggered: {
             const post = AccountManager.selectedAccount.newPost()

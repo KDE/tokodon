@@ -76,14 +76,14 @@ QQC2.ItemDelegate {
     Kirigami.Theme.inherit: false
 
     onClicked: {
-        if (tootContent.hoveredLink) {
+        if (postContent.hoveredLink) {
             return;
         }
         Navigation.openThread(root.id);
     }
 
     ListView.onReused: {
-        tootContent.visible = Qt.binding(() => {
+        postContent.visible = Qt.binding(() => {
             return root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler;
         });
         filtered = Qt.binding(() => {
@@ -259,13 +259,13 @@ QQC2.ItemDelegate {
                     font: Config.defaultFont
                 }
                 QQC2.Button {
-                    text: tootContent.visible ? i18n("Show Less") : i18n("Show More")
-                    onClicked: tootContent.visible = !tootContent.visible
+                    text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                    onClicked: postContent.visible = !postContent.visible
                 }
             }
 
             PostContent {
-                id: tootContent
+                id: postContent
 
                 content: root.content
                 expandedPost: root.expandedPost
@@ -284,14 +284,14 @@ QQC2.ItemDelegate {
             secondary: root.secondary
             inViewPort: root.inViewPort
 
-            visible: tootContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
+            visible: postContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
         }
 
         LinkPreview {
             attachments: root.attachments
             card: root.card
             secondary: root.secondary
-            contentVisible: tootContent.visible
+            contentVisible: postContent.visible
         }
 
         Poll {

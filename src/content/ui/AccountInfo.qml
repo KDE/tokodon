@@ -397,7 +397,7 @@ TimelinePage {
                     QQC2.Label {
                         Layout.fillWidth: true
                         Layout.leftMargin: Kirigami.Units.largeSpacing
-                        text: i18n("%1 toots", model.identity.statusesCount)
+                        text: i18n("%1 posts", model.identity.statusesCount)
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
