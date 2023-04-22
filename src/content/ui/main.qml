@@ -160,7 +160,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction, exploreAction]
+                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
                 Kirigami.NavigationTabButton {
                     action: modelData
                     display: QQC2.AbstractButton.TextBesideIcon
@@ -329,7 +329,7 @@ Kirigami.ApplicationWindow {
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, conversationAction, favouritesAction, bookmarksAction, exploreAction]
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
