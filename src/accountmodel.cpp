@@ -14,6 +14,9 @@ AccountModel::AccountModel(QObject *parent)
     init();
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
+    connect(this, &AccountModel::filtersChanged, this, [this] {
+        fillTimeline();
+    });
 }
 
 bool AccountModel::isSelf() const
@@ -43,12 +46,20 @@ void AccountModel::fillTimeline(const QString &fromId)
 
     // Fetch pinned posts if we are starting from the top
     const auto fetchPinned = fromId.isNull();
-    const auto excludeReplies = true;
     auto uriStatus = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
 
     auto statusQuery = QUrlQuery();
-    if (excludeReplies) {
+    if (m_excludeReplies) {
         statusQuery.addQueryItem("exclude_replies", "true");
+    }
+    if (m_excludeBoosts) {
+        statusQuery.addQueryItem("exclude_reblogs", "true");
+    }
+    if (m_onlyMedia) {
+        statusQuery.addQueryItem("only_media", "true");
+    }
+    if (!m_tagged.isEmpty()) {
+        statusQuery.addQueryItem("tagged", m_tagged);
     }
     if (!fetchPinned) {
         statusQuery.addQueryItem("max_id", fromId);
@@ -107,7 +118,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         }
 
         fetchedTimeline(reply->readAll());
-        if (fetchPinned) {
+        if (fetchPinned && !m_excludePinned) {
             m_account->get(uriPinned, true, this, onFetchPinned, handleError);
         } else {
             setLoading(false);
