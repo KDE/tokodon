@@ -304,7 +304,7 @@ QQC2.ItemDelegate {
             visible: showInteractionButton && !filtered
             InteractionButton {
                 iconSource: "reply-post"
-                text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.expandedPost ? root.repliesCount : i18nc("More than one reply", "1+"))
+                text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.selected ? root.repliesCount : i18nc("More than one reply", "1+"))
 
                 onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
 
@@ -317,7 +317,7 @@ QQC2.ItemDelegate {
                 interacted: root.reblogged
                 interactionColor: "green"
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
-                text: (Config.showPostStats || root.expandedPost) ? root.reblogsCount : ''
+                text: (Config.showPostStats || root.selected) ? root.reblogsCount : ''
                 QQC2.ToolTip.text: i18nc("Share a post", "Boost")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -327,7 +327,7 @@ QQC2.ItemDelegate {
                 interacted: root.favourited
                 interactionColor: "orange"
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
-                text: (Config.showPostStats || root.expandedPost) ? root.favouritesCount : ''
+                text: (Config.showPostStats || root.selected) ? root.favouritesCount : ''
                 QQC2.ToolTip.text: i18nc("Like a post", "Like")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
