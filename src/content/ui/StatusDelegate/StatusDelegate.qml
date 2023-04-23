@@ -301,48 +301,75 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
+            id: buttonLayout
+
             visible: showInteractionButton && !filtered
+            Layout.fillWidth: true
+            spacing: 0
+
+            readonly property bool shouldExpand: applicationWindow().width < Kirigami.Units.gridUnit * 50
+
             InteractionButton {
-                iconSource: "reply-post"
+                Layout.fillWidth: buttonLayout.shouldExpand
+
+                iconName: "post-reply"
+
+                tooltip: i18nc("Reply to a post", "Reply")
                 text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.selected ? root.repliesCount : i18nc("More than one reply", "1+"))
 
                 onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
-
-                QQC2.ToolTip.text: i18nc("Reply to a post", "Reply")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             InteractionButton {
-                iconSource: root.reblogged ? 'boost-post-done' : 'boost-post'
+                Layout.fillWidth: buttonLayout.shouldExpand
+
                 interacted: root.reblogged
                 interactionColor: "green"
-                onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+
+                iconName: 'post-boost'
+                interactedIconName: 'post-boosted'
+
                 text: (Config.showPostStats || root.selected) ? root.reblogsCount : ''
-                QQC2.ToolTip.text: i18nc("Share a post", "Boost")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                tooltip: i18nc("Share a post", "Boost")
+
+                onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
             }
             InteractionButton {
-                iconSource: root.favourited ? 'like-post-done' : 'like-post'
+                Layout.fillWidth: buttonLayout.shouldExpand
+
                 interacted: root.favourited
                 interactionColor: "orange"
-                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+
+                iconName: 'post-favorite'
+                interactedIconName: 'post-favorited'
+
                 text: (Config.showPostStats || root.selected) ? root.favouritesCount : ''
-                QQC2.ToolTip.text: i18nc("Like a post", "Like")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                tooltip: i18nc("Like a post", "Like")
+
+                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
             }
             InteractionButton {
-                iconSource: 'bookmarks'
+                Layout.fillWidth: buttonLayout.shouldExpand
+
                 interacted: root.bookmarked
                 interactionColor: "red"
+
+                iconName: 'bookmarks'
+                interactedIconName: 'post-bookmarked'
+
+                tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
+
                 onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
-                QQC2.ToolTip.text: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            }
+            Item {
+                Layout.fillWidth: true
             }
             InteractionButton {
-                iconSource: 'overflow-menu'
+                rightPadding: 0
+
+                iconName: 'overflow-menu'
+
+                tooltip: i18nc("Show more options", "More")
+
                 onClicked: postMenu.open()
 
                 OverflowMenu {
@@ -354,12 +381,7 @@ QQC2.ItemDelegate {
                     isSelf: root.isSelf
                     expandedPost: root.expandedPost
                 }
-
-                QQC2.ToolTip.text: i18nc("Show more options", "More")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
-
         }
 
         RowLayout {

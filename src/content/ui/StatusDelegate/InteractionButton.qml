@@ -8,14 +8,24 @@ import QtQuick.Controls 2.15 as QQC2
 QQC2.AbstractButton {
     id: control
 
-    property string iconSource
-    property bool interacted
+    required property string iconName
+    property string interactedIconName
+
+    property bool interacted: false
     property color interactionColor
+
+    required property string tooltip
 
     hoverEnabled: true
 
-    implicitWidth: icon.width + label.contentWidth + Kirigami.Units.smallSpacing
-    implicitHeight: icon.height + Kirigami.Units.smallSpacing
+    implicitWidth: icon.width + (control.text.length > 0 ? label.contentWidth + Kirigami.Units.largeSpacing * 2 : 0) + rightPadding
+    implicitHeight: icon.height
+
+    rightPadding: Kirigami.Units.largeSpacing * 2
+
+    QQC2.ToolTip.text: control.tooltip
+    QQC2.ToolTip.visible: hovered
+    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Kirigami.Icon {
         id: icon
@@ -23,22 +33,25 @@ QQC2.AbstractButton {
         width: Kirigami.Units.iconSizes.smallMedium
         height: Kirigami.Units.iconSizes.smallMedium
 
-        anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
-
-        source: parent.iconSource
+        source: control.interacted ? control.interactedIconName : control.iconName
 
         isMask: true
-        color: control.hovered ? Kirigami.Theme.focusColor : (interacted ? control.interactionColor : Kirigami.Theme.textColor)
+        color: control.hovered ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
     }
 
     QQC2.Label {
         id: label
 
-        anchors.left: icon.right
-        anchors.leftMargin: Kirigami.Units.smallSpacing
-        anchors.verticalCenter: parent.verticalCenter
+        anchors {
+            left: icon.right
+            leftMargin: Kirigami.Units.smallSpacing
+
+            top: parent.top
+            bottom: parent.bottom
+        }
 
         text: control.text
+
+        verticalAlignment: Text.AlignVCenter
     }
 }
