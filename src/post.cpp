@@ -156,6 +156,11 @@ void Post::fromJson(QJsonObject obj)
     m_content = computeContent(obj, m_authorIdentity);
 
     m_replyTargetId = obj["in_reply_to_id"].toString();
+
+    if (obj.contains("in_reply_to_account_id")) {
+        m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"].toString(), {});
+    }
+
     m_url = QUrl(obj["url"].toString());
 
     m_favouritesCount = obj["favourites_count"].toInt();
@@ -677,6 +682,11 @@ std::shared_ptr<Identity> Post::authorIdentity() const
 std::shared_ptr<Identity> Post::boostIdentity() const
 {
     return m_boostIdentity;
+}
+
+std::shared_ptr<Identity> Post::replyIdentity() const
+{
+    return m_replyIdentity;
 }
 
 Poll *Post::poll() const

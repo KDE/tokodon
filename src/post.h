@@ -210,6 +210,7 @@ public:
     Identity *getAuthorIdentity() const;
     std::shared_ptr<Identity> authorIdentity() const;
     std::shared_ptr<Identity> boostIdentity() const;
+    std::shared_ptr<Identity> replyIdentity() const;
     bool boosted() const;
 
     /// Returns the post id of the status itself
@@ -336,6 +337,8 @@ private:
 
     bool m_boosted;
     std::shared_ptr<Identity> m_boostIdentity;
+
+    std::shared_ptr<Identity> m_replyIdentity;
 
     bool m_favourited;
     bool m_reblogged;
