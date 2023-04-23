@@ -59,6 +59,10 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {IsBoostedRole, "isBoosted"},
         {BoostAuthorIdentityRole, "boostAuthorIdentity"},
 
+        // Reply
+        {IsReplyRole, "isReply"},
+        {ReplyAuthorIdentityRole, "replyAuthorIdentity"},
+
         // Interaction count
         {ReblogsCountRole, QByteArrayLiteral("reblogsCount")},
         {RepliesCountRole, QByteArrayLiteral("repliesCount")},
@@ -97,6 +101,13 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
     case BoostAuthorIdentityRole:
         if (post->boostIdentity()) {
             return QVariant::fromValue<Identity *>(post->boostIdentity().get());
+        }
+        return false;
+    case IsReplyRole:
+        return !post->inReplyTo().isEmpty();
+    case ReplyAuthorIdentityRole:
+        if (!post->inReplyTo().isEmpty()) {
+            return QVariant::fromValue<Identity *>(post->replyIdentity().get());
         }
         return false;
     case PublishedAtRole:

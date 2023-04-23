@@ -41,6 +41,10 @@ public:
         IsBoostedRole,
         BoostAuthorIdentityRole,
 
+        // Reply
+        IsReplyRole,
+        ReplyAuthorIdentityRole,
+
         // Interaction count
         ReblogsCountRole,
         RepliesCountRole,
