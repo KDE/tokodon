@@ -401,13 +401,21 @@ TimelinePage {
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
 
-                    QQC2.Label {
+                    Kirigami.Chip {
                         Layout.fillWidth: true
                         Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                        closable: false
+                        enabled: false
+
                         text: i18n("%1 posts", model.identity.statusesCount)
                     }
-                    QQC2.Label {
+                    Kirigami.Chip {
                         Layout.fillWidth: true
+
+                        closable: false
+                        enabled: false
+
                         text: i18n("%1 followers", model.identity.followersCount)
                         MouseArea {
                             anchors.fill: parent
@@ -421,9 +429,13 @@ TimelinePage {
                             }
                         }
                     }
-                    QQC2.Label {
+                    Kirigami.Chip {
                         Layout.fillWidth: true
                         Layout.rightMargin: Kirigami.Units.largeSpacing
+
+                        closable: false
+                        enabled: false
+
                         text: i18n("%1 following", model.identity.followingCount)
                         MouseArea {
                             anchors.fill: parent
