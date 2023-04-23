@@ -45,7 +45,7 @@ void AccountModel::fillTimeline(const QString &fromId)
     setLoading(true);
 
     // Fetch pinned posts if we are starting from the top
-    const auto fetchPinned = fromId.isNull();
+    const auto fetchPinned = fromId.isNull() && !m_excludePinned;
     auto uriStatus = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
 
     auto statusQuery = QUrlQuery();
@@ -61,7 +61,7 @@ void AccountModel::fillTimeline(const QString &fromId)
     if (!m_tagged.isEmpty()) {
         statusQuery.addQueryItem("tagged", m_tagged);
     }
-    if (!fetchPinned) {
+    if (!fromId.isNull()) {
         statusQuery.addQueryItem("max_id", fromId);
     }
     if (!statusQuery.isEmpty()) {
@@ -111,14 +111,23 @@ void AccountModel::fillTimeline(const QString &fromId)
         setLoading(false);
     };
 
-    auto onFetchAccount = [account, id, fetchPinned, uriPinned, handleError, onFetchPinned, this](QNetworkReply *reply) {
+    auto onFetchAccount = [account, id, fetchPinned, uriPinned, handleError, onFetchPinned, fromId, this](QNetworkReply *reply) {
         if (m_account != account || m_accountId != id) {
             setLoading(false);
             return;
         }
 
+        // if we just restarted the fetch (fromId is null) then we must clear the previous array
+        // this can happen if we just entered the profile page (okay, just a no-op) or if the filters change
+        if (fromId.isNull()) {
+            beginResetModel();
+            qDeleteAll(m_timeline);
+            m_timeline.clear();
+            endResetModel();
+        }
+
         fetchedTimeline(reply->readAll());
-        if (fetchPinned && !m_excludePinned) {
+        if (fetchPinned) {
             m_account->get(uriPinned, true, this, onFetchPinned, handleError);
         } else {
             setLoading(false);
