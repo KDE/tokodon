@@ -373,6 +373,7 @@ TimelinePage {
                 }
                 Kirigami.Separator {
                     Layout.fillWidth: true
+                    visible: noteField.visible
                 }
                 QQC2.TextArea {
                     text: accountInfo.model.identity.bio
