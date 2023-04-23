@@ -21,6 +21,7 @@ TimelinePage {
     readonly property bool onRepliesTab: accountInfo.currentIndex === 1
     readonly property bool onMediaTab: accountInfo.currentIndex === 2
 
+    readonly property bool canExcludeBoosts: accountInfo.onPostsTab || accountInfo.onRepliesTab
     property bool excludeBoosts: false
 
     model: AccountModel {
@@ -510,6 +511,8 @@ TimelinePage {
                             text: i18nc("@option:check", "Hide boosts")
 
                             onToggled: accountInfo.excludeBoosts = checked
+
+                            enabled: accountInfo.canExcludeBoosts
                         }
                     }
                 }
