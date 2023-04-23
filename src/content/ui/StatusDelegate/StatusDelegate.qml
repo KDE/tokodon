@@ -20,6 +20,9 @@ QQC2.ItemDelegate {
     required property bool isBoosted
     required property var boostAuthorIdentity
 
+    required property bool isReply
+    required property var replyAuthorIdentity
+
     required property var notificationActorIdentity
 
     // Interaction count
@@ -192,12 +195,31 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
-            visible: (root.isBoosted || root.type === Notification.Repeat) && !filtered
+            id: interactLayout
+
+            readonly property bool isBoost: root.isBoosted || root.type === Notification.Repeat
+            readonly property bool isReply: root.isReply || root.type === Notification.Reply
+
+            visible: {
+                if (filtered) {
+                    return false
+                }
+
+                return interactLayout.isBoost || interactLayout.isReply
+            }
 
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             Kirigami.Icon {
-                source: "retweet"
+                source: {
+                    if (interactLayout.isBoost) {
+                        return "boost-post"
+                    } else if (interactLayout.isReply) {
+                        return "reply-post"
+                    }
+
+                    return ''
+                }
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
@@ -211,16 +233,33 @@ QQC2.ItemDelegate {
                         implicitWidth: implicitHeight
                         Layout.alignment: Qt.AlignTop
                         Layout.bottomMargin: -Kirigami.Units.gridUnit
-                        source: root.boostAuthorIdentity && root.boostAuthorIdentity.avatarUrl ? root.boostAuthorIdentity.avatarUrl :  ''
+                        source: {
+                            if (interactLayout.isBoost) {
+                                return root.boostAuthorIdentity.avatarUrl ? root.boostAuthorIdentity.avatarUrl : ''
+                            } else if (interactLayout.isReply) {
+                                return root.replyAuthorIdentity.avatarUrl ? root.replyAuthorIdentity.avatarUrl : ''
+                            }
+
+                            return ''
+                        }
                         cache: true
-                        actions.main: Kirigami.Action {
+                        actions.main: Kirigami.Action
+                            {
                             tooltip: i18n("View profile")
                             onTriggered: Navigation.openAccount(root.boostAuthorIdentity.id)
                         }
-                        name: root.boostAuthorIdentity && root.boostAuthorIdentity.displayName ? root.boostAuthorIdentity.displayName :  ''
+                        name: root.boostAuthorIdentity && root.boostAuthorIdentity.displayName ? root.boostAuthorIdentity.displayName : ''
                     }
                     QQC2.Label {
-                        text: root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : (root.type === Notification.Repeat ? i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml) : '')
+                        text: {
+                            if (interactLayout.isBoost) {
+                                return root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : (root.type === Notification.Repeat ? i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml) : '')
+                            } else if (interactLayout.isReply) {
+                                return root.replyAuthorIdentity ? i18n("In reply to %1", root.replyAuthorIdentity.displayNameHtml) : (root.type === Notification.Reply ? i18n("%1 replied to your post", root.notificationActorIdentity.displayNameHtml) : '')
+                            }
+
+                            return ''
+                        }
                         color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                         font: Config.defaultFont
                         Layout.alignment: Qt.AlignVCenter
