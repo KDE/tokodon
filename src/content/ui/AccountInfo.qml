@@ -14,8 +14,24 @@ TimelinePage {
 
     required property string accountId
 
+    property var postsBar
+
+    readonly property var currentIndex: postsBar ? postsBar.currentIndex : 0
+    readonly property bool onPostsTab: accountInfo.currentIndex === 0
+    readonly property bool onRepliesTab: accountInfo.currentIndex === 1
+    readonly property bool onMediaTab: accountInfo.currentIndex === 2
+
+    property bool excludeBoosts: false
+
     model: AccountModel {
+        id: model
+
         accountId: accountInfo.accountId
+
+        excludeReplies: !accountInfo.onRepliesTab
+        excludeBoosts: accountInfo.excludeBoosts || accountInfo.onMediaTab
+        excludePinned: !accountInfo.onPostsTab
+        onlyMedia: accountInfo.onMediaTab
     }
 
     listViewHeader: QQC2.Pane {
@@ -448,6 +464,52 @@ TimelinePage {
                                     accountId: accountId 
                                 });
                             }
+                        }
+                    }
+                }
+                QQC2.TabBar {
+                    id: bar
+
+                    Component.onCompleted: accountInfo.postsBar = bar
+
+                    Layout.alignment: Qt.AlignHCenter
+
+                    QQC2.TabButton {
+                        text: i18nc("@item:inmenu Profile Post Filter", "Posts")
+                    }
+                    QQC2.TabButton {
+                        text: i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
+                    }
+                    QQC2.TabButton {
+                        text: i18nc("@item:inmenu Profile Post Filter", "Media")
+                    }
+                }
+                Rectangle {
+                    Layout.fillWidth: true
+
+                    implicitHeight: extraLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+
+                    Kirigami.Theme.inherit: false
+                    Kirigami.Theme.colorSet: Kirigami.Theme.Header
+
+                    color: Kirigami.Theme.backgroundColor
+
+                    RowLayout {
+                        id: extraLayout
+
+                        anchors {
+                            fill: parent
+
+                            topMargin: Kirigami.Units.largeSpacing
+                            leftMargin: Kirigami.Units.largeSpacing
+                            rightMargin: Kirigami.Units.largeSpacing
+                            bottomMargin: Kirigami.Units.largeSpacing
+                        }
+
+                        QQC2.Switch {
+                            text: i18nc("@option:check", "Hide boosts")
+
+                            onToggled: accountInfo.excludeBoosts = checked
                         }
                     }
                 }
