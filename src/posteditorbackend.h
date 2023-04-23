@@ -26,6 +26,7 @@ class PostEditorBackend : public QObject
     Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
     Q_PROPERTY(PollEditorBackend *poll MEMBER m_poll CONSTANT)
     Q_PROPERTY(bool pollEnabled MEMBER m_pollEnabled NOTIFY pollEnabledChanged)
+    Q_PROPERTY(int charactersLeft READ charactersLeft NOTIFY statusChanged)
 
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
 
@@ -64,6 +65,8 @@ public:
 
     AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);
+
+    int charactersLeft() const;
 
 public Q_SLOTS:
     void save();

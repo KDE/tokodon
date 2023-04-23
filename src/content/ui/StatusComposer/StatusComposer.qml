@@ -283,7 +283,8 @@ MastoPage {
                             Accessible.description: i18nc("@info:whatsthis Post language selection", "Select the language the post is written in")
 
                             Component.onCompleted: currentIndex = indexOfValue(backend.language);
-                            onActivated: backend.language = model.getCode(currentIndex);
+                            onActivated: backend.language = model.getCode(currentIndex)
+                            ;
 
                             QQC2.ToolTip.text: i18nc("@label:listbox Post language selection", "Post Language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -294,11 +295,25 @@ MastoPage {
             }
         }
 
-        QQC2.Button {
-            text: i18n("Send")
-            enabled: textArea.text.length > 0 && isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
-            Layout.alignment: Qt.AlignRight
-            onClicked: root.submitPost()
+        RowLayout {
+            Layout.fillWidth: true
+
+            QQC2.Label {
+                Layout.fillHeight: true
+                Layout.alignment: Qt.AlignLeft
+                text: root.backend.charactersLeft
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                text: i18n("Send")
+                enabled: textArea.text.length > 0 && isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
+                Layout.alignment: Qt.AlignRight
+                onClicked: root.submitPost()
+            }
         }
     }
 }

@@ -165,6 +165,15 @@ void PostEditorBackend::setAccount(AbstractAccount *account)
     Q_EMIT accountChanged();
 }
 
+int PostEditorBackend::charactersLeft() const
+{
+    if (m_account == nullptr) {
+        return 0;
+    }
+
+    return m_account->maxPostLength() - m_status.length();
+}
+
 QJsonDocument PostEditorBackend::toJsonDocument() const
 {
     QJsonObject obj;
