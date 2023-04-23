@@ -103,11 +103,12 @@ Kirigami.ScrollablePage {
 
         Connections {
             target: Navigation
-            function onOpenFullScreenImage(attachments, currentIndex) {
+            function onOpenFullScreenImage(attachments, identity, currentIndex) {
                 if (timelinePage.isCurrentPage) {
                     timelinePage.dialog = fullScreenImage.createObject(parent, {
-                        model: attachments,
-                        currentIndex: currentIndex,
+                        attachments: attachments,
+                        identity: identity,
+                        initialIndex: currentIndex,
                     });
                     timelinePage.dialog.open();
                 }
