@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
 "PO-Revision-Date: 2023-04-21 09:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -183,9 +183,10 @@ msgid "Click to add a note"
 msgstr "Feu clic per a afegir una nota"
 
 #: content/ui/AccountInfo.qml:400
-#, kde-format
-msgid "%1 toots"
-msgstr "%1 tuts"
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "%1 posts"
+msgstr "Sense publicacions"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -401,9 +402,10 @@ msgid "Search"
 msgstr "Busca"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Tut"
+msgid "Post"
+msgstr "Publicació"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -831,23 +833,27 @@ msgid "Hide vote count until the poll ends"
 msgstr "Oculta el comptador de vots fins que acabe la votació"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
+#, fuzzy, kde-format
+#| msgid "Edit this toot"
+msgid "Edit this post"
 msgstr "Edita este tut"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
+#, fuzzy, kde-format
+#| msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr "Contesta a este tut"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, kde-format
-msgid "Rewrite this toot"
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "Torna a escriure este tut"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "Escriviu un tut nou"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1368,16 +1374,17 @@ msgstr "Persones"
 msgid "Hashtags"
 msgstr "Etiqueta"
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Publicació"
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil"
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 tuts"
+
+#~ msgid "Toot"
+#~ msgstr "Tut"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

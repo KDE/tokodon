@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-03-14 20:57+0000\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"PO-Revision-Date: 2023-04-22 11:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -98,34 +98,29 @@ msgid "Notify me when %1 posts"
 msgstr "Notify me when %1 posts"
 
 #: content/ui/AccountInfo.qml:141
-#, fuzzy, kde-format
-#| msgid "Hide boosts from %1"
+#, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Hide boosts from %1"
+msgstr "Hide Boosts from %1"
 
 #: content/ui/AccountInfo.qml:143
-#, fuzzy, kde-format
-#| msgid "Stop hiding boosts from %1"
+#, kde-format
 msgid "Stop Hiding Boosts from %1"
-msgstr "Stop hiding boosts from %1"
+msgstr "Stop Hiding Boosts from %1"
 
 #: content/ui/AccountInfo.qml:159
-#, fuzzy, kde-format
-#| msgid "Stop featuring on profile"
+#, kde-format
 msgid "Stop Featuring on Profile"
-msgstr "Stop featuring on profile"
+msgstr "Stop Featuring on Profile"
 
 #: content/ui/AccountInfo.qml:161
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#, kde-format
 msgid "Feature on Profile"
-msgstr "Feature on profile"
+msgstr "Feature on Profile"
 
 #: content/ui/AccountInfo.qml:177
-#, fuzzy, kde-format
-#| msgid "Stop muting"
+#, kde-format
 msgid "Stop Muting"
-msgstr "Stop muting"
+msgstr "Stop Muting"
 
 #: content/ui/AccountInfo.qml:179
 #, kde-format
@@ -133,10 +128,9 @@ msgid "Mute"
 msgstr "Mute"
 
 #: content/ui/AccountInfo.qml:195
-#, fuzzy, kde-format
-#| msgid "Stop blocking"
+#, kde-format
 msgid "Stop Blocking"
-msgstr "Stop blocking"
+msgstr "Stop Blocking"
 
 #: content/ui/AccountInfo.qml:197
 #, kde-format
@@ -144,10 +138,9 @@ msgid "Block"
 msgstr "Block"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Edit profile"
+#, kde-format
 msgid "Edit Profile"
-msgstr "Edit profile"
+msgstr "Edit Profile"
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
 #, kde-format
@@ -187,9 +180,10 @@ msgid "Click to add a note"
 msgstr "Click to add a note"
 
 #: content/ui/AccountInfo.qml:400
-#, kde-format
-msgid "%1 toots"
-msgstr "%1 toots"
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "%1 posts"
+msgstr "No posts"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -217,16 +211,14 @@ msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "To continue, please open the following link and authorise Tokodon: %1"
 
 #: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Open link"
+#, kde-format
 msgid "Open Link"
-msgstr "Open link"
+msgstr "Open Link"
 
 #: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Copy link"
+#, kde-format
 msgid "Copy Link"
-msgstr "Copy link"
+msgstr "Copy Link"
 
 #: content/ui/AuthorizationPage.qml:95
 #, kde-format
@@ -407,9 +399,10 @@ msgid "Search"
 msgstr "Search"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Toot"
+msgid "Post"
+msgstr "Post"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -721,10 +714,9 @@ msgid "None"
 msgstr "None"
 
 #: content/ui/Settings/SonnetCard.qml:97
-#, fuzzy, kde-format
-#| msgid "Additional spell checking languages"
+#, kde-format
 msgid "Additional Spell Checking Languages"
-msgstr "Additional spell checking languages"
+msgstr "Additional Spell Checking Languages"
 
 #: content/ui/Settings/SonnetCard.qml:98
 #, kde-format
@@ -763,12 +755,10 @@ msgid "Add a new word to your personal dictionary…"
 msgstr "Add a new word to your personal dictionary…"
 
 #: content/ui/Settings/SonnetCard.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add word"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
-msgstr "Add word"
+msgstr "Add Word"
 
 #: content/ui/Settings/SonnetCard.qml:189
 #, kde-format
@@ -840,23 +830,27 @@ msgid "Hide vote count until the poll ends"
 msgstr "Hide vote count until the poll ends"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
+#, fuzzy, kde-format
+#| msgid "Edit this toot"
+msgid "Edit this post"
 msgstr "Edit this toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
+#, fuzzy, kde-format
+#| msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr "Reply to this toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, kde-format
-msgid "Rewrite this toot"
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "Rewrite this toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "Write a new toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -952,22 +946,19 @@ msgid "View profile"
 msgstr "View profile"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
-#, fuzzy, kde-format
-#| msgid "Expand this post"
+#, kde-format
 msgid "Expand This Post"
-msgstr "Expand this post"
+msgstr "Expand This Post"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
-#, fuzzy, kde-format
-#| msgid "Open original page"
+#, kde-format
 msgid "Open Original Page"
-msgstr "Open original page"
+msgstr "Open Original Page"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
-#, fuzzy, kde-format
-#| msgid "Copy link to this post"
+#, kde-format
 msgid "Copy Link to This Post"
-msgstr "Copy link to this post"
+msgstr "Copy Link to This Post"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
 #: content/ui/StatusDelegate/StatusDelegate.qml:339
@@ -1095,7 +1086,7 @@ msgstr "More"
 #: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "via %1"
 
 #: content/ui/TimelinePage.qml:106
 #, kde-format
@@ -1108,10 +1099,9 @@ msgid "Log in to an existing account"
 msgstr "Log in to an existing account"
 
 #: content/ui/UserInfo.qml:195
-#, fuzzy, kde-format
-#| msgid "Switch User"
+#, kde-format
 msgid "Switch user"
-msgstr "Switch User"
+msgstr "Switch user"
 
 #: content/ui/UserInfo.qml:207
 #, kde-format
@@ -1119,10 +1109,9 @@ msgid "Add"
 msgstr "Add"
 
 #: content/ui/UserInfo.qml:219
-#, fuzzy, kde-format
-#| msgid "Open Settings"
+#, kde-format
 msgid "Open settings"
-msgstr "Open Settings"
+msgstr "Open settings"
 
 #: conversationmodel.cpp:59
 #, kde-format
@@ -1298,19 +1287,17 @@ msgstr "7 days"
 #: post.cpp:273
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "in the future"
 
 #: post.cpp:275
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1s"
-msgstr "%1h"
+msgstr "%1s"
 
 #: post.cpp:277
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1m"
-msgstr "%1h"
+msgstr "%1m"
 
 #: post.cpp:279
 #, kde-format
@@ -1325,32 +1312,32 @@ msgstr "%1d"
 #: post.cpp:285
 #, kde-format
 msgid "1 week ago"
-msgstr ""
+msgstr "1 week ago"
 
 #: post.cpp:287
 #, kde-format
 msgid "%1 weeks ago"
-msgstr ""
+msgstr "%1 weeks ago"
 
 #: post.cpp:291
 #, kde-format
 msgid "1 month ago"
-msgstr ""
+msgstr "1 month"
 
 #: post.cpp:293
 #, kde-format
 msgid "%1 months ago"
-msgstr ""
+msgstr "%1 months ago"
 
 #: post.cpp:299
 #, kde-format
 msgid "1 year ago"
-msgstr ""
+msgstr "1 year"
 
 #: post.cpp:301
 #, kde-format
 msgid "%1 years ago"
-msgstr ""
+msgstr "%1 years ago"
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1382,16 +1369,17 @@ msgstr "People"
 msgid "Hashtags"
 msgstr "Hashtags"
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Post"
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "Thread"
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 toots"
+
+#~ msgid "Toot"
+#~ msgstr "Toot"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

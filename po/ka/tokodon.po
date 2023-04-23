@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-04-11 04:53+0200\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"PO-Revision-Date: 2023-04-22 05:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -181,9 +181,10 @@ msgid "Click to add a note"
 msgstr "შენიშვნის დასამატებლად დააწკაპუნეთ"
 
 #: content/ui/AccountInfo.qml:400
-#, kde-format
-msgid "%1 toots"
-msgstr "%1 ტუტი"
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "%1 posts"
+msgstr "პოსტების გარეშე"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -399,9 +400,10 @@ msgid "Search"
 msgstr "ძებნა"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "ტუტი"
+msgid "Post"
+msgstr "პოსტი"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -829,23 +831,27 @@ msgid "Hide vote count until the poll ends"
 msgstr "ხმების რაოდენობის დამალვა არჩევანის დასრულებამდე"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
+#, fuzzy, kde-format
+#| msgid "Edit this toot"
+msgid "Edit this post"
 msgstr "ტუტის ჩასწორება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
+#, fuzzy, kde-format
+#| msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr "უპასუხეთ ამ ტუტს"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, kde-format
-msgid "Rewrite this toot"
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "გადაწერეთ ეს ტუტი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "დაწერეთ ახალი ტუტი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1081,7 +1087,7 @@ msgstr "მეტი"
 #: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "%1-ის გავლით"
 
 #: content/ui/TimelinePage.qml:106
 #, kde-format
@@ -1282,19 +1288,17 @@ msgstr "7 დღე"
 #: post.cpp:273
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "მომავალში"
 
 #: post.cpp:275
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1s"
-msgstr "%1სთ"
+msgstr "%1წმ"
 
 #: post.cpp:277
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1m"
-msgstr "%1სთ"
+msgstr "%1წთ"
 
 #: post.cpp:279
 #, kde-format
@@ -1309,32 +1313,32 @@ msgstr "%1დღ"
 #: post.cpp:285
 #, kde-format
 msgid "1 week ago"
-msgstr ""
+msgstr "1 კვირის წინ"
 
 #: post.cpp:287
 #, kde-format
 msgid "%1 weeks ago"
-msgstr ""
+msgstr "%1 კვირის წინ"
 
 #: post.cpp:291
 #, kde-format
 msgid "1 month ago"
-msgstr ""
+msgstr "1 თვის წინ"
 
 #: post.cpp:293
 #, kde-format
 msgid "%1 months ago"
-msgstr ""
+msgstr "%1 თვის წინ"
 
 #: post.cpp:299
 #, kde-format
 msgid "1 year ago"
-msgstr ""
+msgstr "1 წლის წინ"
 
 #: post.cpp:301
 #, kde-format
 msgid "%1 years ago"
-msgstr ""
+msgstr "%1 წლის წინ"
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1368,16 +1372,17 @@ msgstr "ხალხი"
 msgid "Hashtags"
 msgstr "ჰეშტეგები"
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "პოსტი"
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "ნაკადი"
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 ტუტი"
+
+#~ msgid "Toot"
+#~ msgstr "ტუტი"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

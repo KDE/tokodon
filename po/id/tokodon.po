@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
 "PO-Revision-Date: 2023-03-03 10:32+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -189,8 +189,8 @@ msgstr "Klik untuk menambahkan catatan"
 
 #: content/ui/AccountInfo.qml:400
 #, kde-format
-msgid "%1 toots"
-msgstr "%1 toot"
+msgid "%1 posts"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -410,9 +410,10 @@ msgid "Search"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Toot"
+msgid "Post"
+msgstr ""
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -842,22 +843,22 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
 #, kde-format
-msgid "Edit this toot"
+msgid "Edit this post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
-msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
-msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
-msgid "Write a new toot"
+msgid "Write a new post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1379,16 +1380,17 @@ msgstr ""
 msgid "Hashtags"
 msgstr ""
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr ""
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr ""
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 toot"
+
+#~ msgid "Toot"
+#~ msgstr "Toot"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-04-15 20:20+0200\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"PO-Revision-Date: 2023-04-22 09:36+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -178,9 +178,10 @@ msgid "Click to add a note"
 msgstr "Cliquer pour ajouter une note"
 
 #: content/ui/AccountInfo.qml:400
-#, kde-format
-msgid "%1 toots"
-msgstr "%1 toots"
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "%1 posts"
+msgstr "Aucun message"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -399,9 +400,10 @@ msgid "Search"
 msgstr "Rechercher"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Toot"
+msgid "Post"
+msgstr "Message"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -829,23 +831,27 @@ msgid "Hide vote count until the poll ends"
 msgstr "Masquer le compteur de votes jusqu'à la fin du sondage"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
+#, fuzzy, kde-format
+#| msgid "Edit this toot"
+msgid "Edit this post"
 msgstr "Modifier ce message"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
+#, fuzzy, kde-format
+#| msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr "Répondre à ce message"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, kde-format
-msgid "Rewrite this toot"
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "Ré-écrire ce message"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "Écrire un nouveau toot..."
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1081,7 +1087,7 @@ msgstr "Plus encore"
 #: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "grâce à %1"
 
 #: content/ui/TimelinePage.qml:106
 #, kde-format
@@ -1351,7 +1357,7 @@ msgstr "L'image est trop volumineuse"
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
-"Fichier d'image non pris en charge. Seuls les formats  « jpeg », « png » et "
+"Fichier d'image non pris en charge. Seuls les formats « jpeg », « png » et "
 "« gif » sont pris en charge."
 
 #: profileeditor.cpp:323
@@ -1369,16 +1375,17 @@ msgstr "Personnes"
 msgid "Hashtags"
 msgstr "Hashtags"
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Message"
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "Fil d'exécution "
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 toots"
+
+#~ msgid "Toot"
+#~ msgstr "Toot"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

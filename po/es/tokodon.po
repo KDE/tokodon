@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-04-21 04:33+0200\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"PO-Revision-Date: 2023-04-22 04:53+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -182,9 +182,10 @@ msgid "Click to add a note"
 msgstr "Clic para añadir una nota"
 
 #: content/ui/AccountInfo.qml:400
-#, kde-format
-msgid "%1 toots"
-msgstr "%1 toots"
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "%1 posts"
+msgstr "No hay publicaciones"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -401,9 +402,10 @@ msgid "Search"
 msgstr "Buscar"
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Toot"
+msgid "Post"
+msgstr "Publicar"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -831,23 +833,27 @@ msgid "Hide vote count until the poll ends"
 msgstr "Ocultar el número de votos hasta que la encuesta finalice"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
+#, fuzzy, kde-format
+#| msgid "Edit this toot"
+msgid "Edit this post"
 msgstr "Editar este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
+#, fuzzy, kde-format
+#| msgid "Reply to this toot"
+msgid "Reply to this post"
 msgstr "Responder a este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, kde-format
-msgid "Rewrite this toot"
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "Volver a escribir este toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "Escribir un nuevo toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1285,19 +1291,17 @@ msgstr "7 días"
 #: post.cpp:273
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "en el futuro"
 
 #: post.cpp:275
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1s"
-msgstr "%1 h"
+msgstr "%1 s"
 
 #: post.cpp:277
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1m"
-msgstr "%1 h"
+msgstr "%1 m"
 
 #: post.cpp:279
 #, kde-format
@@ -1312,32 +1316,32 @@ msgstr "%1 d"
 #: post.cpp:285
 #, kde-format
 msgid "1 week ago"
-msgstr ""
+msgstr "hace 1 semana"
 
 #: post.cpp:287
 #, kde-format
 msgid "%1 weeks ago"
-msgstr ""
+msgstr "hace %1 semanas"
 
 #: post.cpp:291
 #, kde-format
 msgid "1 month ago"
-msgstr ""
+msgstr "hace 1 mes"
 
 #: post.cpp:293
 #, kde-format
 msgid "%1 months ago"
-msgstr ""
+msgstr "hace %1 meses"
 
 #: post.cpp:299
 #, kde-format
 msgid "1 year ago"
-msgstr ""
+msgstr "hace 1 año"
 
 #: post.cpp:301
 #, kde-format
 msgid "%1 years ago"
-msgstr ""
+msgstr "hace %1 años"
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1369,16 +1373,17 @@ msgstr "Personas"
 msgid "Hashtags"
 msgstr "Hashtags"
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Publicar"
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "Hilo"
+
+#~ msgid "%1 toots"
+#~ msgstr "%1 toots"
+
+#~ msgid "Toot"
+#~ msgstr "Toot"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

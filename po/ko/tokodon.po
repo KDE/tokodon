@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
+"POT-Creation-Date: 2023-04-23 00:49+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -196,8 +196,8 @@ msgstr "메모를 추가하려면 클릭하십시오"
 
 #: content/ui/AccountInfo.qml:400
 #, kde-format
-msgid "%1 toots"
-msgstr "툿 %1개"
+msgid "%1 posts"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -428,9 +428,10 @@ msgid "Search"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "툿"
+msgid "Post"
+msgstr ""
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -883,24 +884,27 @@ msgid "Hide vote count until the poll ends"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, kde-format
-msgid "Edit this toot"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Edit this post"
+msgstr "새 툿 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, kde-format
-msgid "Reply to this toot"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Reply to this post"
+msgstr "새 툿 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
-msgid "Rewrite this toot"
+msgid "Rewrite this post"
 msgstr "새 툿 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, kde-format
-msgid "Write a new toot"
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "Write a new post"
 msgstr "새 툿 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
@@ -1434,16 +1438,17 @@ msgstr ""
 msgid "Hashtags"
 msgstr ""
 
-#: searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr ""
-
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "스레드"
+
+#~ msgid "%1 toots"
+#~ msgstr "툿 %1개"
+
+#~ msgid "Toot"
+#~ msgstr "툿"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"
