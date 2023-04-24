@@ -190,7 +190,7 @@ Kirigami.ApplicationWindow {
                 name: "home"
             });
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -203,7 +203,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(notificationTimeline);
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -217,7 +217,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(followRequestPage);
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -232,7 +232,7 @@ Kirigami.ApplicationWindow {
                 name: "public",
             });
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -247,7 +247,7 @@ Kirigami.ApplicationWindow {
                 name: "federated",
             });
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -261,7 +261,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace("qrc:/content/ui/ConversationPage.qml");
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -277,7 +277,7 @@ Kirigami.ApplicationWindow {
                 name: "favourites",
             });
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -293,7 +293,7 @@ Kirigami.ApplicationWindow {
                 name: "bookmarks",
             });
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
@@ -307,7 +307,7 @@ Kirigami.ApplicationWindow {
             pageStack.layers.clear();
             pageStack.replace(exploreTimeline);
             checked = true;
-            if (Kirigami.Settings.isMobile) {
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
