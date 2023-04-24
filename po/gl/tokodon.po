@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"POT-Creation-Date: 2023-04-24 00:48+0000\n"
 "PO-Revision-Date: 2023-04-20 05:47+0200\n"
 "Last-Translator: josé m. <correoxm@disroot.org>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -147,12 +147,12 @@ msgstr "Editar Perfil"
 msgid "Account editor"
 msgstr "Editor da conta"
 
-#: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:126
+#: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:127
 #, kde-format
 msgid "Settings"
 msgstr "Axustes"
 
-#: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:128
+#: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:129
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -240,9 +240,9 @@ msgstr "Escribe aquí o código creado."
 msgid "Conversations"
 msgstr "Conversas"
 
-#: content/ui/ConversationPage.qml:29 content/ui/FollowRequestsPage.qml:65
-#: content/ui/NotificationPage.qml:164 content/ui/SearchView.qml:33
-#: content/ui/TimelinePage.qml:99
+#: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:74
+#: content/ui/FollowRequestsPage.qml:65 content/ui/NotificationPage.qml:178
+#: content/ui/SearchView.qml:33 content/ui/TimelinePage.qml:100
 #, kde-format
 msgid "Loading..."
 msgstr "Cargando..."
@@ -251,6 +251,22 @@ msgstr "Cargando..."
 #, kde-format
 msgid "No Conversations"
 msgstr "Sen conversas"
+
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:301
+#, kde-format
+msgid "Explore"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:30
+#, kde-format
+msgid "Toot"
+msgstr "Toot"
+
+#: content/ui/ExplorePage.qml:80
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "No Posts"
+msgstr "Sen publicacións"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -262,46 +278,6 @@ msgstr "%1 seguíute"
 #, kde-format
 msgid "No Follow Requests"
 msgstr "Sen solicitudes"
-
-#: content/ui/FullScreenImage.qml:47
-#, kde-format
-msgid "Zoom in"
-msgstr "Aumentar"
-
-#: content/ui/FullScreenImage.qml:58
-#, kde-format
-msgid "Zoom out"
-msgstr "Diminuír"
-
-#: content/ui/FullScreenImage.qml:69
-#, kde-format
-msgid "Rotate left"
-msgstr "Rotar á esquerda"
-
-#: content/ui/FullScreenImage.qml:76
-#, kde-format
-msgid "Rotate right"
-msgstr "Rotar á dereita"
-
-#: content/ui/FullScreenImage.qml:83
-#, kde-format
-msgid "Save as"
-msgstr "Gardar como"
-
-#: content/ui/FullScreenImage.qml:95
-#, kde-format
-msgid "Close"
-msgstr "Pechar"
-
-#: content/ui/FullScreenImage.qml:316
-#, kde-format
-msgid "Previous image"
-msgstr "Imaxe anterior"
-
-#: content/ui/FullScreenImage.qml:331
-#, kde-format
-msgid "Next image"
-msgstr "Imaxe seguinte"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -320,7 +296,7 @@ msgstr "Todos os idiomas"
 msgid "Login"
 msgstr "Acceder"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:65
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:66
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -393,54 +369,54 @@ msgstr "Favoritas"
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: content/ui/main.qml:301
+#: content/ui/main.qml:316
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
 
-#: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
 #: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Publicación"
 
-#: content/ui/NotificationPage.qml:36
+#: content/ui/NotificationPage.qml:37
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Todas"
 
-#: content/ui/NotificationPage.qml:47
+#: content/ui/NotificationPage.qml:48
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Mencións"
 
-#: content/ui/NotificationPage.qml:56
+#: content/ui/NotificationPage.qml:57
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoritas"
 
-#: content/ui/NotificationPage.qml:65
+#: content/ui/NotificationPage.qml:66
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Promocións"
 
-#: content/ui/NotificationPage.qml:74
+#: content/ui/NotificationPage.qml:75
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr "Resultados da enquisa"
 
-#: content/ui/NotificationPage.qml:83
+#: content/ui/NotificationPage.qml:84
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Segue"
 
-#: content/ui/NotificationPage.qml:169
+#: content/ui/NotificationPage.qml:183
 #, kde-format
 msgid "No Notifications"
 msgstr "Sen Notificacións"
@@ -875,32 +851,32 @@ msgid "Add Poll"
 msgstr "Engadir Enquisa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
-#: content/ui/StatusDelegate/StatusDelegate.qml:384
-#: content/ui/StatusDelegate/StatusDelegate.qml:392
+#: content/ui/StatusDelegate/StatusDelegate.qml:407
+#: content/ui/StatusDelegate/StatusDelegate.qml:415
 #, kde-format
 msgid "Public"
 msgstr "Pública"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr "Non listada"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
-#: content/ui/StatusDelegate/StatusDelegate.qml:388
+#: content/ui/StatusDelegate/StatusDelegate.qml:411
 #, kde-format
 msgid "Private"
 msgstr "Privada"
 
 #: content/ui/StatusComposer/StatusComposer.qml:263
-#: content/ui/StatusDelegate/StatusDelegate.qml:390
+#: content/ui/StatusDelegate/StatusDelegate.qml:413
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensaxe Directa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:268
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:403
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilidade"
@@ -928,12 +904,12 @@ msgstr "Idioma da publicación"
 msgid "Send"
 msgstr "Enviar"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:120
+#: content/ui/StatusDelegate/AttachmentGrid.qml:121
 #, kde-format
 msgid "Not available"
 msgstr "Non dispoñible"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:218
+#: content/ui/StatusDelegate/AttachmentGrid.qml:219
 #, kde-format
 msgid "Media Hidden"
 msgstr "Multimedia oculto"
@@ -961,7 +937,7 @@ msgid "Copy Link to This Post"
 msgstr "Copiar Ligazón a esta Publicación"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
-#: content/ui/StatusDelegate/StatusDelegate.qml:339
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Eliminar marcador"
@@ -1047,48 +1023,48 @@ msgstr "Mostrar menos"
 msgid "Show More"
 msgstr "Mostrar máis"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:306
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr "1+"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:310
+#: content/ui/StatusDelegate/StatusDelegate.qml:317
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:320
+#: content/ui/StatusDelegate/StatusDelegate.qml:318
+#, kde-format
+msgctxt "More than one reply"
+msgid "1+"
+msgstr "1+"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Promover"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:330
+#: content/ui/StatusDelegate/StatusDelegate.qml:346
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Gustar"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:339
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Marcar"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:371
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Máis"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:409
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "via %1"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:106
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgid "No posts"
 msgstr "Sen publicacións"
@@ -1159,6 +1135,12 @@ msgstr "Marcadores"
 msgctxt "@title"
 msgid "Favourites"
 msgstr "Favoritas"
+
+#: linkpaginatedtimelinemodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr ""
 
 #: main.cpp:109
 #, kde-format
@@ -1284,59 +1266,59 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 días"
 
-#: post.cpp:273
+#: post.cpp:289
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: post.cpp:275
+#: post.cpp:291
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1s"
 msgstr "%1h"
 
-#: post.cpp:277
+#: post.cpp:293
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1m"
 msgstr "%1h"
 
-#: post.cpp:279
+#: post.cpp:295
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: post.cpp:281
+#: post.cpp:297
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: post.cpp:285
+#: post.cpp:301
 #, kde-format
 msgid "1 week ago"
 msgstr ""
 
-#: post.cpp:287
+#: post.cpp:303
 #, kde-format
 msgid "%1 weeks ago"
 msgstr ""
 
-#: post.cpp:291
+#: post.cpp:307
 #, kde-format
 msgid "1 month ago"
 msgstr ""
 
-#: post.cpp:293
+#: post.cpp:309
 #, kde-format
 msgid "%1 months ago"
 msgstr ""
 
-#: post.cpp:299
+#: post.cpp:315
 #, kde-format
 msgid "1 year ago"
 msgstr ""
 
-#: post.cpp:301
+#: post.cpp:317
 #, kde-format
 msgid "%1 years ago"
 msgstr ""
@@ -1377,11 +1359,32 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Fío"
 
+#~ msgid "Zoom in"
+#~ msgstr "Aumentar"
+
+#~ msgid "Zoom out"
+#~ msgstr "Diminuír"
+
+#~ msgid "Rotate left"
+#~ msgstr "Rotar á esquerda"
+
+#~ msgid "Rotate right"
+#~ msgstr "Rotar á dereita"
+
+#~ msgid "Save as"
+#~ msgstr "Gardar como"
+
+#~ msgid "Close"
+#~ msgstr "Pechar"
+
+#~ msgid "Previous image"
+#~ msgstr "Imaxe anterior"
+
+#~ msgid "Next image"
+#~ msgstr "Imaxe seguinte"
+
 #~ msgid "%1 toots"
 #~ msgstr "%1 publicacións"
-
-#~ msgid "Toot"
-#~ msgstr "Toot"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"

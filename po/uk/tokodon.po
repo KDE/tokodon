@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:49+0000\n"
+"POT-Creation-Date: 2023-04-24 00:48+0000\n"
 "PO-Revision-Date: 2023-04-22 08:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -148,12 +148,12 @@ msgstr "Змінити профіль"
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:126
+#: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:127
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:128
+#: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:129
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -243,9 +243,9 @@ msgstr "Будь ласка, вставте створений жетон."
 msgid "Conversations"
 msgstr "Спілкування"
 
-#: content/ui/ConversationPage.qml:29 content/ui/FollowRequestsPage.qml:65
-#: content/ui/NotificationPage.qml:164 content/ui/SearchView.qml:33
-#: content/ui/TimelinePage.qml:99
+#: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:74
+#: content/ui/FollowRequestsPage.qml:65 content/ui/NotificationPage.qml:178
+#: content/ui/SearchView.qml:33 content/ui/TimelinePage.qml:100
 #, kde-format
 msgid "Loading..."
 msgstr "Завантаження…"
@@ -254,6 +254,22 @@ msgstr "Завантаження…"
 #, kde-format
 msgid "No Conversations"
 msgstr "Немає спілкувань"
+
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:301
+#, kde-format
+msgid "Explore"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:30
+#, kde-format
+msgid "Toot"
+msgstr "Тут"
+
+#: content/ui/ExplorePage.qml:80
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "No Posts"
+msgstr "Немає дописів"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -265,46 +281,6 @@ msgstr "%1 стежить за вашими дописами"
 #, kde-format
 msgid "No Follow Requests"
 msgstr "Немає запитів щодо стеження"
-
-#: content/ui/FullScreenImage.qml:47
-#, kde-format
-msgid "Zoom in"
-msgstr "Збільшити"
-
-#: content/ui/FullScreenImage.qml:58
-#, kde-format
-msgid "Zoom out"
-msgstr "Зменшити"
-
-#: content/ui/FullScreenImage.qml:69
-#, kde-format
-msgid "Rotate left"
-msgstr "Обернути ліворуч"
-
-#: content/ui/FullScreenImage.qml:76
-#, kde-format
-msgid "Rotate right"
-msgstr "Обернути праворуч"
-
-#: content/ui/FullScreenImage.qml:83
-#, kde-format
-msgid "Save as"
-msgstr "Зберегти як"
-
-#: content/ui/FullScreenImage.qml:95
-#, kde-format
-msgid "Close"
-msgstr "Закрити"
-
-#: content/ui/FullScreenImage.qml:316
-#, kde-format
-msgid "Previous image"
-msgstr "Попереднє зображення"
-
-#: content/ui/FullScreenImage.qml:331
-#, kde-format
-msgid "Next image"
-msgstr "Наступне зображення"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -323,7 +299,7 @@ msgstr "Усі мови"
 msgid "Login"
 msgstr "Увійти"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:65
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:66
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -398,54 +374,54 @@ msgstr "Улюблені"
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/main.qml:301
+#: content/ui/main.qml:316
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/NotificationPage.qml:24 content/ui/TimelinePage.qml:44
+#: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
 #: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Допис"
 
-#: content/ui/NotificationPage.qml:36
+#: content/ui/NotificationPage.qml:37
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Усі"
 
-#: content/ui/NotificationPage.qml:47
+#: content/ui/NotificationPage.qml:48
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Згадки"
 
-#: content/ui/NotificationPage.qml:56
+#: content/ui/NotificationPage.qml:57
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/NotificationPage.qml:65
+#: content/ui/NotificationPage.qml:66
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Підсилення"
 
-#: content/ui/NotificationPage.qml:74
+#: content/ui/NotificationPage.qml:75
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr "Результати голосування"
 
-#: content/ui/NotificationPage.qml:83
+#: content/ui/NotificationPage.qml:84
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Стеження"
 
-#: content/ui/NotificationPage.qml:169
+#: content/ui/NotificationPage.qml:183
 #, kde-format
 msgid "No Notifications"
 msgstr "Немає сповіщень"
@@ -882,32 +858,32 @@ msgid "Add Poll"
 msgstr "Додати опитування"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
-#: content/ui/StatusDelegate/StatusDelegate.qml:384
-#: content/ui/StatusDelegate/StatusDelegate.qml:392
+#: content/ui/StatusDelegate/StatusDelegate.qml:407
+#: content/ui/StatusDelegate/StatusDelegate.qml:415
 #, kde-format
 msgid "Public"
 msgstr "Загальнодоступне"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr "Незареєстрований"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
-#: content/ui/StatusDelegate/StatusDelegate.qml:388
+#: content/ui/StatusDelegate/StatusDelegate.qml:411
 #, kde-format
 msgid "Private"
 msgstr "Особисте"
 
 #: content/ui/StatusComposer/StatusComposer.qml:263
-#: content/ui/StatusDelegate/StatusDelegate.qml:390
+#: content/ui/StatusDelegate/StatusDelegate.qml:413
 #, kde-format
 msgid "Direct Message"
 msgstr "Безпосереднє повідомлення"
 
 #: content/ui/StatusComposer/StatusComposer.qml:268
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:403
 #, kde-format
 msgid "Visibility"
 msgstr "Видимість"
@@ -935,12 +911,12 @@ msgstr "Мова допису"
 msgid "Send"
 msgstr "Надіслати"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:120
+#: content/ui/StatusDelegate/AttachmentGrid.qml:121
 #, kde-format
 msgid "Not available"
 msgstr "Немає доступу"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:218
+#: content/ui/StatusDelegate/AttachmentGrid.qml:219
 #, kde-format
 msgid "Media Hidden"
 msgstr "Мультимедіа приховано"
@@ -968,7 +944,7 @@ msgid "Copy Link to This Post"
 msgstr "Копіювати посилання на цій допис"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
-#: content/ui/StatusDelegate/StatusDelegate.qml:339
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Вилучити закладку"
@@ -1054,48 +1030,48 @@ msgstr "Показати менше"
 msgid "Show More"
 msgstr "Докладніше"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:306
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr "1+"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:310
+#: content/ui/StatusDelegate/StatusDelegate.qml:317
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:320
+#: content/ui/StatusDelegate/StatusDelegate.qml:318
+#, kde-format
+msgctxt "More than one reply"
+msgid "1+"
+msgstr "1+"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:330
+#: content/ui/StatusDelegate/StatusDelegate.qml:346
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Подобається"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:339
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:371
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Інше"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:409
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "via %1"
 msgstr "з використанням %1"
 
-#: content/ui/TimelinePage.qml:106
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgid "No posts"
 msgstr "Немає дописів"
@@ -1168,6 +1144,12 @@ msgstr "Закладки"
 msgctxt "@title"
 msgid "Favourites"
 msgstr "Улюблені"
+
+#: linkpaginatedtimelinemodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr ""
 
 #: main.cpp:109
 #, kde-format
@@ -1293,57 +1275,57 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 днів"
 
-#: post.cpp:273
+#: post.cpp:289
 #, kde-format
 msgid "in the future"
 msgstr "у майбутньому"
 
-#: post.cpp:275
+#: post.cpp:291
 #, kde-format
 msgid "%1s"
 msgstr "%1с"
 
-#: post.cpp:277
+#: post.cpp:293
 #, kde-format
 msgid "%1m"
 msgstr "%1хв"
 
-#: post.cpp:279
+#: post.cpp:295
 #, kde-format
 msgid "%1h"
 msgstr "%1г"
 
-#: post.cpp:281
+#: post.cpp:297
 #, kde-format
 msgid "%1d"
 msgstr "%1д"
 
-#: post.cpp:285
+#: post.cpp:301
 #, kde-format
 msgid "1 week ago"
 msgstr "1 тиждень тому"
 
-#: post.cpp:287
+#: post.cpp:303
 #, kde-format
 msgid "%1 weeks ago"
 msgstr "%1 тижнів тому"
 
-#: post.cpp:291
+#: post.cpp:307
 #, kde-format
 msgid "1 month ago"
 msgstr "1 місяць тому"
 
-#: post.cpp:293
+#: post.cpp:309
 #, kde-format
 msgid "%1 months ago"
 msgstr "%1 місяців тому"
 
-#: post.cpp:299
+#: post.cpp:315
 #, kde-format
 msgid "1 year ago"
 msgstr "1 рік тому"
 
-#: post.cpp:301
+#: post.cpp:317
 #, kde-format
 msgid "%1 years ago"
 msgstr "%1 років тому"
@@ -1386,11 +1368,32 @@ msgctxt "@title"
 msgid "Thread"
 msgstr "Потік"
 
+#~ msgid "Zoom in"
+#~ msgstr "Збільшити"
+
+#~ msgid "Zoom out"
+#~ msgstr "Зменшити"
+
+#~ msgid "Rotate left"
+#~ msgstr "Обернути ліворуч"
+
+#~ msgid "Rotate right"
+#~ msgstr "Обернути праворуч"
+
+#~ msgid "Save as"
+#~ msgstr "Зберегти як"
+
+#~ msgid "Close"
+#~ msgstr "Закрити"
+
+#~ msgid "Previous image"
+#~ msgstr "Попереднє зображення"
+
+#~ msgid "Next image"
+#~ msgstr "Наступне зображення"
+
 #~ msgid "%1 toots"
 #~ msgstr "%1 тутів"
-
-#~ msgid "Toot"
-#~ msgstr "Тут"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"
