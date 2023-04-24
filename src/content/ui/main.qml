@@ -257,7 +257,6 @@ Kirigami.ApplicationWindow {
         icon.name: "tokodon-chat-reply"
         text: i18n("Conversation")
         checkable: true
-        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace("qrc:/content/ui/ConversationPage.qml");
@@ -272,13 +271,15 @@ Kirigami.ApplicationWindow {
         icon.name: "favorite"
         text: i18n("Favourites")
         checkable: true
-        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "favourites",
             });
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
 
@@ -286,13 +287,15 @@ Kirigami.ApplicationWindow {
         icon.name: "bookmarks"
         text: i18n("Bookmarks")
         checkable: true
-        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "bookmarks",
             });
             checked = true;
+            if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
         }
     }
 
@@ -300,7 +303,6 @@ Kirigami.ApplicationWindow {
         icon.name: "kstars_planets"
         text: i18n("Explore")
         checkable: true
-        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.layers.clear();
             pageStack.replace(exploreTimeline);
@@ -329,7 +331,7 @@ Kirigami.ApplicationWindow {
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
+        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
