@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-25 00:51+0000\n"
-"PO-Revision-Date: 2023-04-17 14:37+0100\n"
+"PO-Revision-Date: 2023-04-25 23:59+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -177,10 +177,9 @@ msgid "Click to add a note"
 msgstr "Carregue para adicionar uma nota"
 
 #: content/ui/AccountInfo.qml:400
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "%1 posts"
-msgstr "Sem publicações"
+msgstr "%1 publicações"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
@@ -254,7 +253,7 @@ msgstr "Sem Conversas"
 #: content/ui/ExplorePage.qml:15 content/ui/main.qml:301
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Explorar"
 
 #: content/ui/ExplorePage.qml:30
 #, kde-format
@@ -262,10 +261,9 @@ msgid "Toot"
 msgstr "'Toot'"
 
 #: content/ui/ExplorePage.qml:81
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
-msgstr "Sem publicações"
+msgstr "Sem Publicações"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -808,28 +806,24 @@ msgid "Hide vote count until the poll ends"
 msgstr "Esconder o número de votos até terminar a sondagem"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
-#, fuzzy, kde-format
-#| msgid "Edit this toot"
+#, kde-format
 msgid "Edit this post"
-msgstr "Editar este 'toot'"
+msgstr "Editar esta publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
-#, fuzzy, kde-format
-#| msgid "Reply to this toot"
+#, kde-format
 msgid "Reply to this post"
-msgstr "Responder a este 'toot'"
+msgstr "Responder a esta publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
-#, fuzzy, kde-format
-#| msgid "Rewrite this toot"
+#, kde-format
 msgid "Rewrite this post"
-msgstr "Escrever de novo este 'toot'"
+msgstr "Escrever de novo esta publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Write a new post"
-msgstr "Escrever um novo 'toot'"
+msgstr "Escrever uma nova publicação"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
 #: content/ui/StatusComposer/StatusComposer.qml:276
@@ -1064,7 +1058,7 @@ msgstr "Mais"
 #: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "através de %1"
 
 #: content/ui/TimelinePage.qml:107
 #, kde-format
@@ -1142,7 +1136,7 @@ msgstr "Favoritos"
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr ""
+msgstr "Nas Tendências"
 
 #: main.cpp:109
 #, kde-format
@@ -1271,19 +1265,17 @@ msgstr "7 dias"
 #: post.cpp:289
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "no futuro"
 
 #: post.cpp:291
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1s"
-msgstr "%1h"
+msgstr "%1s"
 
 #: post.cpp:293
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1m"
-msgstr "%1h"
+msgstr "%1m"
 
 #: post.cpp:295
 #, kde-format
@@ -1298,32 +1290,32 @@ msgstr "%1d"
 #: post.cpp:301
 #, kde-format
 msgid "1 week ago"
-msgstr ""
+msgstr "há 1 semana"
 
 #: post.cpp:303
 #, kde-format
 msgid "%1 weeks ago"
-msgstr ""
+msgstr "há %1 semanas"
 
 #: post.cpp:307
 #, kde-format
 msgid "1 month ago"
-msgstr ""
+msgstr "há 1 mês"
 
 #: post.cpp:309
 #, kde-format
 msgid "%1 months ago"
-msgstr ""
+msgstr "há %1 meses"
 
 #: post.cpp:315
 #, kde-format
 msgid "1 year ago"
-msgstr ""
+msgstr "há 1 ano"
 
 #: post.cpp:317
 #, kde-format
 msgid "%1 years ago"
-msgstr ""
+msgstr "há %1 anos"
 
 #: posteditorbackend.cpp:220
 #, kde-format
@@ -1362,33 +1354,6 @@ msgstr "'Hashtags'"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Tópico"
-
-#~ msgid "%1 toots"
-#~ msgstr "%1 'toots'"
-
-#~ msgid "Zoom in"
-#~ msgstr "Ampliar"
-
-#~ msgid "Zoom out"
-#~ msgstr "Reduzir"
-
-#~ msgid "Rotate left"
-#~ msgstr "Rodar para a esquerda"
-
-#~ msgid "Rotate right"
-#~ msgstr "Rodar para a direita"
-
-#~ msgid "Save as"
-#~ msgstr "Gravar como"
-
-#~ msgid "Close"
-#~ msgstr "Fechar"
-
-#~ msgid "Previous image"
-#~ msgstr "Imagem anterior"
-
-#~ msgid "Next image"
-#~ msgstr "Imagem seguinte"
 
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"
