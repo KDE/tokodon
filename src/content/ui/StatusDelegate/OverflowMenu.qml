@@ -17,12 +17,14 @@ QQC2.Menu {
     required property bool expandedPost
 
     QQC2.MenuItem {
+        icon.name: "expand"
         text: i18n("Expand This Post")
         onTriggered: Navigation.openThread(root.postId)
         visible: !root.expandedPost
     }
 
     QQC2.MenuItem {
+        icon.name: "window"
         text: i18n("Open Original Page")
         onTriggered: {
             Qt.openUrlExternally(root.url)
@@ -30,6 +32,7 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
+        icon.name: "edit-copy"
         text: i18n("Copy Link to This Post")
         onTriggered: {
             Clipboard.saveText(root.url)
@@ -39,6 +42,7 @@ QQC2.Menu {
     QQC2.MenuSeparator {}
 
     QQC2.MenuItem {
+        icon.name: "bookmark-new"
         text: root.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
         onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
     }
@@ -48,18 +52,21 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
+        icon.name: "edit-entry"
         visible: root.isSelf
         text: i18n("Edit")
         onTriggered: timelineModel.actionRedraft(timelineModel.index(root.index, 0), true)
     }
 
     QQC2.MenuItem {
+        icon.name: "edit-delete"
         visible: root.isSelf
         text: i18n("Delete")
         onTriggered: timelineModel.actionDelete(timelineModel.index(root.index, 0))
     }
 
     QQC2.MenuItem {
+        icon.name: "edit-cut"
         visible: root.isSelf
         text: i18n("Delete & Re-draft")
         onTriggered: {
