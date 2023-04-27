@@ -301,7 +301,7 @@ MastoPage {
             QQC2.Label {
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignLeft
-                text: root.backend.charactersLeft
+                text: i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
             }
 
             Item {
