@@ -61,6 +61,10 @@
 #include "colorschemer.h"
 #endif
 
+#ifdef Q_OS_WINDOWS
+#include <Windows.h>
+#endif
+
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
 #endif
