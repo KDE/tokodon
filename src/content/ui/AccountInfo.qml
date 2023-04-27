@@ -415,57 +415,50 @@ TimelinePage {
                     }
                 }
                 RowLayout {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
 
                     Kirigami.Chip {
-                        Layout.fillWidth: true
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-
                         closable: false
                         enabled: false
 
-                        text: i18n("%1 posts", model.identity.statusesCount)
+                        text: i18nc("@label User's number of statuses", "<b>%1</b> posts", model.identity.statusesCount)
                     }
                     Kirigami.Chip {
-                        Layout.fillWidth: true
-
                         closable: false
                         enabled: false
 
-                        text: i18n("%1 followers", model.identity.followersCount)
                         MouseArea {
                             anchors.fill: parent
                             acceptedButtons: Qt.LeftButton | Qt.RightButton
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
-                                pageStack.push(socialGraphComponent, { 
+                                pageStack.push(socialGraphComponent, {
                                     name: "followers",
-                                    accountId: accountId 
+                                    accountId: accountId,
                                 });
                             }
                         }
+                        text: i18nc("@label User's number of followers", "<b>%1</b> followers", model.identity.followersCount)
                     }
                     Kirigami.Chip {
-                        Layout.fillWidth: true
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
-
                         closable: false
                         enabled: false
 
-                        text: i18n("%1 following", model.identity.followingCount)
                         MouseArea {
                             anchors.fill: parent
                             acceptedButtons: Qt.LeftButton | Qt.RightButton
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
-                                pageStack.push(socialGraphComponent, { 
+                                pageStack.push(socialGraphComponent, {
                                     name: "following",
-                                    accountId: accountId 
+                                    accountId: accountId,
                                 });
                             }
                         }
+                        text: i18nc("@label User's number of followed accounts", "<b>%1</b> following", model.identity.followingCount)
                     }
                 }
                 QQC2.TabBar {
