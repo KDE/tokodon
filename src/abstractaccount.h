@@ -60,6 +60,7 @@ public:
     QString instanceUri() const;
     void setInstanceUri(const QString &instance_uri);
     size_t maxPostLength() const;
+    size_t charactersReservedPerUrl() const;
     QString instanceName() const;
 
     /// Get identity of the account
@@ -244,6 +245,7 @@ protected:
     QString m_client_id;
     QString m_client_secret;
     size_t m_maxPostLength;
+    size_t m_charactersReservedPerUrl;
     QString m_instance_name;
     std::shared_ptr<Identity> m_identity;
     AllowedContentType m_allowedContentTypes;

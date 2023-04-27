@@ -171,8 +171,6 @@ int PostEditorBackend::charactersLeft() const
         return 0;
     }
 
-    const int charactersPreservedPerUrl = 23;
-
     QRegularExpression re{R"((http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-]))"};
     re.setPatternOptions(QRegularExpression::DontCaptureOption);
 
@@ -180,8 +178,8 @@ int PostEditorBackend::charactersLeft() const
 
     // We want to accumulate each link, and then "add back" the characters you should
     // have, taking the difference from charactersPreservedPerUrl.
-    const int sum = std::accumulate(matches.constBegin(), matches.constEnd(), 0, [](int sum, const QString &link) {
-        return sum + link.length() - charactersPreservedPerUrl;
+    const int sum = std::accumulate(matches.constBegin(), matches.constEnd(), 0, [this](int sum, const QString &link) {
+        return sum + link.length() - m_account->charactersReservedPerUrl();
     });
 
     return m_account->maxPostLength() - m_status.length() + sum;

@@ -20,6 +20,7 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     , m_instance_uri(instanceUri)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
 {
 }
@@ -28,6 +29,7 @@ AbstractAccount::AbstractAccount(QObject *parent)
     : QObject(parent)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
 {
 }
@@ -54,6 +56,11 @@ void AbstractAccount::setUsername(const QString &username)
 size_t AbstractAccount::maxPostLength() const
 {
     return m_maxPostLength;
+}
+
+size_t AbstractAccount::charactersReservedPerUrl() const
+{
+    return m_charactersReservedPerUrl;
 }
 
 QString AbstractAccount::instanceName() const
@@ -321,8 +328,14 @@ void AbstractAccount::fetchInstanceMetadata()
 
         const auto obj = doc.object();
 
-        if (obj.contains("max_toot_chars")) {
-            m_maxPostLength = (unsigned)obj["max_toot_chars"].toInt();
+        if (obj.contains("configuration")) {
+            const auto configObj = obj["configuration"].toObject();
+
+            if (configObj.contains("statuses")) {
+                const auto statusConfigObj = configObj["statuses"].toObject();
+                m_maxPostLength = statusConfigObj["max_characters"].toInt();
+                m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+            }
         }
 
         // One can only hope that there will always be a version attached
