@@ -134,6 +134,7 @@ TimelinePage {
                                 }
                             },
                             Kirigami.Action {
+                                icon.name: "view-hidden"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
                                 text: {
@@ -152,6 +153,7 @@ TimelinePage {
                                 }
                             },
                             Kirigami.Action {
+                                icon.name: "favorite"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
@@ -170,6 +172,7 @@ TimelinePage {
                                 }
                             },
                             Kirigami.Action {
+                                icon.name: "dialog-cancel"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
@@ -188,6 +191,7 @@ TimelinePage {
                                 }
                             },
                             Kirigami.Action {
+                                icon.name: "im-ban-kick-user"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.identity.relationship && !model.isSelf
                                 text: {
@@ -206,6 +210,7 @@ TimelinePage {
                                 }
                             },
                             Kirigami.Action {
+                                icon.name: "user-group-properties"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Edit Profile")
@@ -216,12 +221,14 @@ TimelinePage {
                                                 })
                             },
                             Kirigami.Action {
+                                icon.name: "settings-configure"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Settings")
                                 onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
                             },
                             Kirigami.Action {
+                                icon.name: "list-add-user"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Follow Requests")
