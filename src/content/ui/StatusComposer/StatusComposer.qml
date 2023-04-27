@@ -37,7 +37,7 @@ MastoPage {
     property PostEditorBackend backend: defaultBackend
 
     readonly property bool isPollValid: backend.pollEnabled ? backend.poll.isValid : true
-    readonly property bool isStatusValid: textArea.text.length > 0 && backend.charactersLeft > 0
+    readonly property bool isStatusValid: textArea.text.length > 0 && backend.charactersLeft >= 0
 
     title: {
         switch (root.purpose) {
