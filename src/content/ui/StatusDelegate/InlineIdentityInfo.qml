@@ -35,6 +35,7 @@ RowLayout {
         Layout.bottomMargin: Kirigami.Units.smallSpacing
 
         spacing: 0
+        clip: true
 
         Kirigami.Heading {
             level: 4
@@ -46,6 +47,7 @@ RowLayout {
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight
             textFormat: Text.RichText
+            Layout.fillWidth: true
         }
 
         QQC2.Label {
