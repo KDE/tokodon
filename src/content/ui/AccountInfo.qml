@@ -467,15 +467,19 @@ TimelinePage {
                     Component.onCompleted: accountInfo.postsBar = bar
 
                     Layout.alignment: Qt.AlignHCenter
+                    Layout.fillWidth: true
 
                     QQC2.TabButton {
                         text: i18nc("@item:inmenu Profile Post Filter", "Posts")
+                        implicitWidth: bar.width / 3
                     }
                     QQC2.TabButton {
                         text: i18nc("@item:inmenu Profile Post Filter", "Posts && Replies")
+                        implicitWidth: bar.width / 3
                     }
                     QQC2.TabButton {
                         text: i18nc("@item:inmenu Profile Post Filter", "Media")
+                        implicitWidth: bar.width / 3
                     }
                 }
                 Rectangle {
