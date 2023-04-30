@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-28 00:48+0000\n"
-"PO-Revision-Date: 2023-04-25 10:04+0200\n"
+"PO-Revision-Date: 2023-04-28 19:59+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -898,7 +898,7 @@ msgstr "Langue du message"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1 / %2</b> caractères"
 
 #: content/ui/StatusComposer/StatusComposer.qml:313
 #, kde-format
@@ -1017,13 +1017,12 @@ msgstr "%1 a mis en avant votre message"
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "En réponse à %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 replied to your post"
-msgstr "%1 a favorisé votre message"
+msgstr "%1 a répondu à votre message"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:301
 #, kde-format
