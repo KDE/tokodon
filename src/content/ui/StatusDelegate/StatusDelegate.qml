@@ -213,13 +213,14 @@ QQC2.ItemDelegate {
             Kirigami.Icon {
                 source: {
                     if (interactLayout.isBoost) {
-                        return "retweet"
+                        return "post-boost"
                     } else if (interactLayout.isReply) {
-                        return "edit-undo"
+                        return "post-reply"
                     }
 
                     return ''
                 }
+                isMask: true
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2

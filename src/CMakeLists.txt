@@ -131,8 +131,6 @@ if(ANDROID)
         "favourite"
         "cell_edit"
         "folder-chart"
-        "retweet"
-        "edit-undo"
     )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
