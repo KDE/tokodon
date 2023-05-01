@@ -213,9 +213,9 @@ QQC2.ItemDelegate {
             Kirigami.Icon {
                 source: {
                     if (interactLayout.isBoost) {
-                        return "boost-post"
+                        return "retweet"
                     } else if (interactLayout.isReply) {
-                        return "reply-post"
+                        return "edit-undo"
                     }
 
                     return ''
