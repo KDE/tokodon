@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-28 00:48+0000\n"
-"PO-Revision-Date: 2023-04-22 20:06+0200\n"
+"PO-Revision-Date: 2023-04-28 18:03+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -180,10 +180,9 @@ msgid "Click to add a note"
 msgstr "Clic per aggiungere una nota"
 
 #: content/ui/AccountInfo.qml:407
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "%1 posts"
-msgstr "Nessun commento"
+msgstr "%1 commenti"
 
 #: content/ui/AccountInfo.qml:411
 #, kde-format
@@ -255,7 +254,7 @@ msgstr "Nessuna conversazione"
 #: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Esplora"
 
 #: content/ui/ExplorePage.qml:30
 #, kde-format
@@ -263,8 +262,7 @@ msgid "Toot"
 msgstr "Toot"
 
 #: content/ui/ExplorePage.qml:81
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
 msgstr "Nessun commento"
 
@@ -806,28 +804,24 @@ msgid "Hide vote count until the poll ends"
 msgstr "Nascondi il conteggio dei voti fino al termine del sondaggio"
 
 #: content/ui/StatusComposer/StatusComposer.qml:45
-#, fuzzy, kde-format
-#| msgid "Edit this toot"
+#, kde-format
 msgid "Edit this post"
-msgstr "Modifica questo toot"
+msgstr "Modifica questo commento"
 
 #: content/ui/StatusComposer/StatusComposer.qml:47
-#, fuzzy, kde-format
-#| msgid "Reply to this toot"
+#, kde-format
 msgid "Reply to this post"
-msgstr "Rispondi a questo toot"
+msgstr "Rispondi a questo commento"
 
 #: content/ui/StatusComposer/StatusComposer.qml:49
-#, fuzzy, kde-format
-#| msgid "Rewrite this toot"
+#, kde-format
 msgid "Rewrite this post"
-msgstr "Riscrivi questo toot"
+msgstr "Riscrivi questo commento"
 
 #: content/ui/StatusComposer/StatusComposer.qml:51
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "Write a new post"
-msgstr "Scrivi un nuovo toot"
+msgstr "Scrivi un nuovo commento"
 
 #: content/ui/StatusComposer/StatusComposer.qml:93
 #: content/ui/StatusComposer/StatusComposer.qml:277
@@ -903,7 +897,7 @@ msgstr "Lingua dei commenti"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1/%2</b> caratteri"
 
 #: content/ui/StatusComposer/StatusComposer.qml:313
 #, kde-format
@@ -1022,13 +1016,12 @@ msgstr "%1 ha messo in evidenza il tuo commento"
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "In risposta a %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 replied to your post"
-msgstr "%1 ha aggiunto il tuo commento ai preferiti"
+msgstr "%1 ha risposto al tuo commento"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:301
 #, kde-format
@@ -1157,7 +1150,7 @@ msgstr "Preferiti"
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr ""
+msgstr "Di tendenza"
 
 #: main.cpp:113
 #, kde-format
