@@ -76,14 +76,12 @@ QQC2.Control {
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
-                        sourceWidth: Math.max(modelData.originalWidth, img.sourceSize.width)
-                        sourceHeight: Math.max(modelData.originalHeight, img.sourceSize.height)
+                        sourceWidth: modelData.originalWidth > img.sourceSize.width ? modelData.originalWidth : img.sourceSize.width
+                        sourceHeight: modelData.originalHeight > img.sourceSize.height ? modelData.originalHeight : img.sourceSize.height
 
                         Image {
                             id: img
-
                             anchors.fill: parent
-
                             source: modelData.previewUrl
                             mipmap: true
                             cache: true
@@ -102,11 +100,14 @@ QQC2.Control {
                                 }
                             }
 
-                            TapHandler {
-                                onTapped: if (root.isSensitive) {
-                                    root.isSensitive = false;
-                                } else {
-                                    Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    if (root.isSensitive) {
+                                        root.isSensitive = false;
+                                    } else {
+                                        Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
+                                    }
                                 }
                             }
 
@@ -145,14 +146,15 @@ QQC2.Control {
                         isSensitive: root.isSensitive
                         showControls: false
 
-                        TapHandler {
-                            onTapped: if (root.isSensitive) {
-                                root.isSensitive = false;
-                            } else {
-                                Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: if (root.isSensitive) {
+                                    root.isSensitive = false;
+                                } else {
+                                    Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
+                                }
                             }
                         }
-                    }
                 }
 
                 DelegateChoice {
