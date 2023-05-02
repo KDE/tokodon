@@ -119,7 +119,9 @@ if(NOT ANDROID)
 endif()
 
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc)
-target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES})
+target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES} ${MPV_LIBRARIES})
+target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})
+target_compile_options(tokodon_static PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 
 if (TARGET KF${QT_MAJOR_VERSION}::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)

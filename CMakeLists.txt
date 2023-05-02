@@ -71,16 +71,19 @@ else()
         TYPE REQUIRED
         PURPOSE "Secure storage of account secrets"
     )
-endif()
+endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
-endif()
+endif ()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF${QT_MAJOR_VERSION}DBusAddons ${KF_MIN_VERSION} REQUIRED)
     find_package(KF${QT_MAJOR_VERSION}WindowSystem ${KF_MIN_VERSION} REQUIRED)
 endif ()
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(MPV REQUIRED mpv)
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)
