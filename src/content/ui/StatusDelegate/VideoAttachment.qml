@@ -9,15 +9,14 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import QtGraphicalEffects 1.0
 import Qt.labs.qmlmodels 1.0
-import QtMultimedia 5.15
 
 import QtQml 2.15
 
 MediaContainer {
     id: root
 
-    sourceWidth: Math.max(modelData.sourceWidth, output.sourceRect.width)
-    sourceHeight: Math.max(modelData.sourceHeight, output.sourceRect.height)
+    sourceWidth: Math.max(modelData.sourceWidth, player.sourceSize.width)
+    sourceHeight: Math.max(modelData.sourceHeight, player.sourceSize.height)
 
     required property var videoUrl
     required property var previewUrl
@@ -29,46 +28,17 @@ MediaContainer {
         player.pause();
     }
 
-    MediaPlayer {
+    MpvPlayer {
         id: player
-
-        autoPlay: root.autoPlay
-
-        loops: MediaPlayer.Infinite
+        anchors.fill: parent
 
         source: root.videoUrl
-        videoOutput: output
 
         function togglePlayPause() {
-            if (playbackState === MediaPlayer.PlayingState) {
+            if (!paused) {
                 pause();
             } else {
                 play();
-            }
-        }
-
-    }
-
-    VideoOutput {
-        id: output
-
-        source: player
-        fillMode: VideoOutput.PreserveAspectCrop
-        flushMode: VideoOutput.FirstFrame
-
-        anchors.fill: parent
-
-        layer.enabled: true
-        layer.effect: OpacityMask {
-            maskSource: Item {
-                width: output.width
-                height: output.height
-                Rectangle {
-                    anchors.centerIn: parent
-                    width: output.width
-                    height: output.height
-                    radius: Kirigami.Units.smallSpacing
-                }
             }
         }
     }
@@ -85,7 +55,7 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: player.status !== MediaPlayer.Buffered && !root.isSensitive
+        visible: player.loading && !root.isSensitive
 
         fillMode: Image.PreserveAspectCrop
     }
