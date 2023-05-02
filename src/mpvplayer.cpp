@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "mpvobject.h"
+#include "mpvplayer.h"
 
-#include <QDir>
 #include <QOpenGLContext>
 #include <QOpenGLFramebufferObject>
 #include <QQuickWindow>
@@ -16,12 +16,12 @@ namespace
 {
 void on_mpv_events(void *ctx)
 {
-    QMetaObject::invokeMethod((MpvObject *)ctx, "onMpvEvents", Qt::QueuedConnection);
+    QMetaObject::invokeMethod((MpvPlayer *)ctx, "onMpvEvents", Qt::QueuedConnection);
 }
 
 void on_mpv_redraw(void *ctx)
 {
-    MpvObject::on_update(ctx);
+    MpvPlayer::on_update(ctx);
 }
 
 static void *get_proc_address_mpv(void *ctx, const char *name)
@@ -39,10 +39,10 @@ static void *get_proc_address_mpv(void *ctx, const char *name)
 
 class MpvRenderer : public QQuickFramebufferObject::Renderer
 {
-    MpvObject *obj;
+    MpvPlayer *obj = nullptr;
 
 public:
-    MpvRenderer(MpvObject *new_obj)
+    MpvRenderer(MpvPlayer *new_obj)
         : obj{new_obj}
     {
     }
@@ -103,7 +103,7 @@ public:
     }
 };
 
-MpvObject::MpvObject(QQuickItem *parent)
+MpvPlayer::MpvPlayer(QQuickItem *parent)
     : QQuickFramebufferObject(parent)
     , mpv{mpv_create()}
     , mpv_gl(nullptr)
@@ -117,27 +117,16 @@ MpvObject::MpvObject(QQuickItem *parent)
     if (mpv_initialize(mpv) < 0)
         throw std::runtime_error("could not initialize mpv context");
 
-    // resume/save playback position
-    QString watchLaterLocation = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QDir::separator() + "watch-later";
-    QDir watchLaterDir(watchLaterLocation);
-    if (!watchLaterDir.exists())
-        watchLaterDir.mkpath(".");
-
-    mpv::qt::set_property(mpv, "watch-later-directory", watchLaterLocation);
-
-    // don't save position on quit?
-    // mpv::qt::set_property(mpv, "save-position-on-quit", true);
-
     mpv_observe_property(mpv, 0, "duration", MPV_FORMAT_DOUBLE);
     mpv_observe_property(mpv, 0, "time-pos", MPV_FORMAT_DOUBLE);
     mpv_observe_property(mpv, 0, "pause", MPV_FORMAT_FLAG);
 
     mpv_set_wakeup_callback(mpv, on_mpv_events, this);
 
-    connect(this, &MpvObject::onUpdate, this, &MpvObject::doUpdate, Qt::QueuedConnection);
+    connect(this, &MpvPlayer::onUpdate, this, &MpvPlayer::doUpdate, Qt::QueuedConnection);
 }
 
-MpvObject::~MpvObject()
+MpvPlayer::~MpvPlayer()
 {
     if (mpv_gl) // only initialized if something got drawn
     {
@@ -147,22 +136,22 @@ MpvObject::~MpvObject()
     mpv_terminate_destroy(mpv);
 }
 
-qreal MpvObject::position()
+qreal MpvPlayer::position()
 {
     return m_position;
 }
 
-qreal MpvObject::duration()
+qreal MpvPlayer::duration()
 {
     return m_duration;
 }
 
-bool MpvObject::paused()
+bool MpvPlayer::paused()
 {
     return m_paused;
 }
 
-void MpvObject::play()
+void MpvPlayer::play()
 {
     if (!paused()) {
         return;
@@ -171,7 +160,7 @@ void MpvObject::play()
     Q_EMIT pausedChanged();
 }
 
-void MpvObject::pause()
+void MpvPlayer::pause()
 {
     if (paused()) {
         return;
@@ -180,14 +169,14 @@ void MpvObject::pause()
     Q_EMIT pausedChanged();
 }
 
-void MpvObject::stop()
+void MpvPlayer::stop()
 {
     setPosition(0);
     setProperty("pause", true);
     Q_EMIT pausedChanged();
 }
 
-void MpvObject::setPosition(double value)
+void MpvPlayer::setPosition(double value)
 {
     if (value == position()) {
         return;
@@ -196,54 +185,54 @@ void MpvObject::setPosition(double value)
     Q_EMIT positionChanged();
 }
 
-void MpvObject::seek(qreal offset)
+void MpvPlayer::seek(qreal offset)
 {
     command(QStringList() << "add"
                           << "time-pos" << QString::number(offset));
 }
 
-void MpvObject::on_update(void *ctx)
+void MpvPlayer::on_update(void *ctx)
 {
-    MpvObject *self = (MpvObject *)ctx;
+    MpvPlayer *self = (MpvPlayer *)ctx;
     Q_EMIT self->onUpdate();
 }
 
 // connected to onUpdate(); signal makes sure it runs on the GUI thread
-void MpvObject::doUpdate()
+void MpvPlayer::doUpdate()
 {
     update();
 }
 
-void MpvObject::command(const QVariant &params)
+void MpvPlayer::command(const QVariant &params)
 {
     mpv::qt::command(mpv, params);
 }
 
-void MpvObject::setOption(const QString &name, const QVariant &value)
+void MpvPlayer::setOption(const QString &name, const QVariant &value)
 {
     mpv::qt::set_option_variant(mpv, name, value);
 }
 
-void MpvObject::setProperty(const QString &name, const QVariant &value)
+void MpvPlayer::setProperty(const QString &name, const QVariant &value)
 {
     mpv::qt::set_property(mpv, name, value);
 }
 
-QVariant MpvObject::getProperty(const QString &name)
+QVariant MpvPlayer::getProperty(const QString &name)
 {
     return mpv::qt::get_property(mpv, name);
 }
 
-QQuickFramebufferObject::Renderer *MpvObject::createRenderer() const
+QQuickFramebufferObject::Renderer *MpvPlayer::createRenderer() const
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     window()->setPersistentOpenGLContext(true);
 #endif
     window()->setPersistentSceneGraph(true);
-    return new MpvRenderer(const_cast<MpvObject *>(this));
+    return new MpvRenderer(const_cast<MpvPlayer *>(this));
 }
 
-void MpvObject::onMpvEvents()
+void MpvPlayer::onMpvEvents()
 {
     // Process all events, until the event queue is empty.
     while (mpv) {

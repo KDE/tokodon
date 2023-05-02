@@ -143,6 +143,10 @@ int main(int argc, char *argv[])
     }
 #endif
 
+    // Qt sets the locale in the QGuiApplication constructor, but libmpv
+    // requires the LC_NUMERIC category to be set to "C", so change it back.
+    setlocale(LC_NUMERIC, "C");
+
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
@@ -179,6 +183,7 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
     qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
+    qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
