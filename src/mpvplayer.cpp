@@ -148,6 +148,11 @@ bool MpvPlayer::paused() const
     return m_paused;
 }
 
+QSize MpvPlayer::sourceSize() const
+{
+    return m_sourceSize;
+}
+
 void MpvPlayer::play()
 {
     if (!paused()) {
@@ -261,6 +266,16 @@ void MpvPlayer::onMpvEvents()
             }
             break;
         }
+        case MPV_EVENT_VIDEO_RECONFIG: {
+            int64_t w, h;
+            if (mpv_get_property(mpv, "dwidth", MPV_FORMAT_INT64, &w) >= 0 && mpv_get_property(mpv, "dheight", MPV_FORMAT_INT64, &h) >= 0 && w > 0 && h > 0) {
+                const QSize newSize(w, h);
+                if (newSize != m_sourceSize) {
+                    m_sourceSize = newSize;
+                    Q_EMIT sourceSizeChanged();
+                }
+            }
+        } break;
         default:;
             // Ignore uninteresting or unknown events.
         }
