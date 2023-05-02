@@ -153,6 +153,29 @@ QSize MpvPlayer::sourceSize() const
     return m_sourceSize;
 }
 
+QString MpvPlayer::source() const
+{
+    return m_source;
+}
+
+bool MpvPlayer::loading() const
+{
+    return m_loading;
+}
+
+void MpvPlayer::setSource(const QString &source)
+{
+    if (m_source == source) {
+        return;
+    }
+
+    m_source = source;
+
+    command(QStringList{QStringLiteral("loadfile"), source});
+
+    Q_EMIT sourceChanged();
+}
+
 void MpvPlayer::play()
 {
     if (!paused()) {
@@ -275,6 +298,10 @@ void MpvPlayer::onMpvEvents()
                     Q_EMIT sourceSizeChanged();
                 }
             }
+        } break;
+        case MPV_EVENT_FILE_LOADED: {
+            m_loading = false;
+            Q_EMIT loadingChanged();
         } break;
         default:;
             // Ignore uninteresting or unknown events.
