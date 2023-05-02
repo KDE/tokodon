@@ -24,7 +24,7 @@ void on_mpv_redraw(void *ctx)
     MpvPlayer::on_update(ctx);
 }
 
-static void *get_proc_address_mpv(void *ctx, const char *name)
+void *get_proc_address_mpv(void *ctx, const char *name)
 {
     Q_UNUSED(ctx)
 
@@ -39,15 +39,9 @@ static void *get_proc_address_mpv(void *ctx, const char *name)
 
 class MpvRenderer : public QQuickFramebufferObject::Renderer
 {
-    MpvPlayer *obj = nullptr;
-
 public:
-    MpvRenderer(MpvPlayer *new_obj)
+    explicit MpvRenderer(MpvPlayer *new_obj)
         : obj{new_obj}
-    {
-    }
-
-    virtual ~MpvRenderer()
     {
     }
 
@@ -101,6 +95,9 @@ public:
         obj->window()->resetOpenGLState();
 #endif
     }
+
+private:
+    MpvPlayer *obj = nullptr;
 };
 
 MpvPlayer::MpvPlayer(QQuickItem *parent)
@@ -136,17 +133,17 @@ MpvPlayer::~MpvPlayer()
     mpv_terminate_destroy(mpv);
 }
 
-qreal MpvPlayer::position()
+qreal MpvPlayer::position() const
 {
     return m_position;
 }
 
-qreal MpvPlayer::duration()
+qreal MpvPlayer::duration() const
 {
     return m_duration;
 }
 
-bool MpvPlayer::paused()
+bool MpvPlayer::paused() const
 {
     return m_paused;
 }
@@ -193,7 +190,7 @@ void MpvPlayer::seek(qreal offset)
 
 void MpvPlayer::on_update(void *ctx)
 {
-    MpvPlayer *self = (MpvPlayer *)ctx;
+    auto self = static_cast<MpvPlayer *>(ctx);
     Q_EMIT self->onUpdate();
 }
 
@@ -243,7 +240,7 @@ void MpvPlayer::onMpvEvents()
 
         switch (event->event_id) {
         case MPV_EVENT_PROPERTY_CHANGE: {
-            mpv_event_property *prop = (mpv_event_property *)event->data;
+            const auto prop = static_cast<mpv_event_property *>(event->data);
             if (strcmp(prop->name, "time-pos") == 0) {
                 if (prop->format == MPV_FORMAT_DOUBLE) {
                     double time = *(double *)prop->data;

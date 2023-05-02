@@ -31,9 +31,9 @@ public:
 
     Renderer *createRenderer() const override;
 
-    qreal position();
-    qreal duration();
-    bool paused();
+    qreal position() const;
+    qreal duration() const;
+    bool paused() const;
 
 public Q_SLOTS:
     void play();
