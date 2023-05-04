@@ -33,6 +33,7 @@ MediaContainer {
         anchors.fill: parent
 
         source: root.videoUrl
+        looping: true
 
         function togglePlayPause() {
             if (!paused) {

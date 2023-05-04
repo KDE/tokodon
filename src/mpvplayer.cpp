@@ -163,6 +163,11 @@ bool MpvPlayer::loading() const
     return m_loading;
 }
 
+bool MpvPlayer::looping() const
+{
+    return m_looping;
+}
+
 void MpvPlayer::setSource(const QString &source)
 {
     if (m_source == source) {
@@ -174,6 +179,18 @@ void MpvPlayer::setSource(const QString &source)
     command(QStringList{QStringLiteral("loadfile"), source});
 
     Q_EMIT sourceChanged();
+}
+
+void MpvPlayer::setLooping(bool loop)
+{
+    if (m_looping == loop) {
+        return;
+    }
+
+    m_looping = loop;
+    mpv_set_option_string(mpv, "loop-file", loop ? "inf" : "no");
+
+    Q_EMIT loopingChanged();
 }
 
 void MpvPlayer::play()
