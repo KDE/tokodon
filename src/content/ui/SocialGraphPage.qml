@@ -10,13 +10,24 @@ import org.kde.kmasto 1.0
 import "./StatusDelegate"
 
 Kirigami.ScrollablePage {
-    title: i18n("Follow Requests")
+    id: root
+    property alias model: listview.model
+
+    title: model.displayName
+    titleDelegate: Kirigami.Heading {
+        // identical to normal Kirigami headers
+        Layout.fillWidth: true
+        Layout.maximumWidth: implicitWidth + 1
+        Layout.minimumWidth: 0
+        maximumLineCount: 1
+        elide: Text.ElideRight
+        text: root.title
+        textFormat: TextEdit.RichText
+    }
 
     ListView {
         id: listview
-        model: FollowRequestModel {
-            id: model
-        }
+        model: root.model
 
         delegate: QQC2.ItemDelegate {
             id: delegate
@@ -44,12 +55,14 @@ Kirigami.ScrollablePage {
                         text: "Allow"
                         icon.name: "checkmark"
                         onClicked: model.actionAllow(model.index(delegate.index, 0))
+                        visible: model.isFollowRequest
                     }
 
                     QQC2.Button {
                         text: "Deny"
                         icon.name: "cards-block"
                         onClicked: model.actionDeny(model.index(delegate.index, 0))
+                        visible: model.isFollowRequest
                     }
                 }
 
@@ -58,18 +71,29 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-    }
 
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        text: i18n("Loading...")
-        visible: listview.count === 0 && listview.model.loading
-        width: parent.width - Kirigami.Units.gridUnit * 4
-    }
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        text: i18n("No Follow Requests")
-        visible: listview.count === 0 && !listview.model.loading
-        width: parent.width - Kirigami.Units.gridUnit * 4
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("Loading...")
+            visible: listview.count === 0 && listview.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
+        }
+        
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: { 
+                if (listview.model.isFollowRequest) {
+                    return i18n("No follow requests")
+                } else if (listview.model.isFollowers) {
+                    return i18n("No followers")
+                } else if (listview.model.isFollowing) {
+                    return i18n("Not following anyone")
+                } else {
+                    return ""
+                }
+            }
+            visible: listview.count === 0 && !listview.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
+        }
     }
 }

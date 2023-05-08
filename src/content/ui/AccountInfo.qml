@@ -232,7 +232,7 @@ TimelinePage {
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Follow Requests")
-                                onTriggered: pageStack.push('qrc:/content/ui/FollowRequestsPage.qml')
+                                onTriggered: pageStack.push(socialGraphComponent, { name: "request" });
                             }
                         ]
                     }
@@ -409,11 +409,33 @@ TimelinePage {
                     QQC2.Label {
                         Layout.fillWidth: true
                         text: i18n("%1 followers", model.identity.followersCount)
+                        MouseArea {
+                            anchors.fill: parent
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                                pageStack.push(socialGraphComponent, { 
+                                    name: "followers",
+                                    accountId: accountId 
+                                });
+                            }
+                        }
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
                         Layout.rightMargin: Kirigami.Units.largeSpacing
                         text: i18n("%1 following", model.identity.followingCount)
+                        MouseArea {
+                            anchors.fill: parent
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: {
+                                pageStack.push(socialGraphComponent, { 
+                                    name: "following",
+                                    accountId: accountId 
+                                });
+                            }
+                        }
                     }
                 }
                 Kirigami.Separator {

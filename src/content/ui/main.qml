@@ -215,7 +215,9 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && AccountManager.selectedAccount.hasFollowRequests
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(followRequestPage);
+            pageStack.replace(socialGraphPage, {
+                name: "request"
+            });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -361,8 +363,17 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
-        id: followRequestPage
-        FollowRequestsPage {}
+        id: socialGraphComponent
+        SocialGraphPage {
+            id: socialGraphPage
+            property alias name: socialGraphModel.name
+            property alias accountId: socialGraphModel.accountId
+            model: SocialGraphModel {
+                id: socialGraphModel
+                name: socialGraphPage.name
+                accountId: socialGraphPage.accountId
+            }
+        }
     }
 
     Component {

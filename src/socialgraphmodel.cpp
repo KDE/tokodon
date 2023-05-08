@@ -1,54 +1,95 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "followrequestmodel.h"
+#include "socialgraphmodel.h"
 
 #include "identity.h"
 
 #include "abstractaccount.h"
 #include "accountmanager.h"
 #include "relationship.h"
+#include <KLocalizedString>
 #include <QFile>
 #include <QJsonDocument>
 #include <QNetworkReply>
+#include <qstringliteral.h>
 
-FollowRequestModel::FollowRequestModel(QObject *parent)
+SocialGraphModel::SocialGraphModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+}
+
+QString SocialGraphModel::name() const
+{
+    return m_followListName;
+}
+
+QString SocialGraphModel::displayName() const
+{
+    if (m_followListName == "request") {
+        return i18nc("@title", "Follow Requests");
+    } else if (m_followListName == "followers") {
+        return i18nc("@title", "Followers");
+    } else if (m_followListName == "following") {
+        return i18nc("@title", "Following");
+    }
+    return {};
+}
+
+void SocialGraphModel::setName(const QString &followlistname)
+{
+    if (followlistname == m_followListName) {
+        return;
+    }
+
+    m_followListName = followlistname;
+    Q_EMIT nameChanged();
     fillTimeline();
 }
 
-QVariant FollowRequestModel::data(const QModelIndex &index, int role) const
+QString SocialGraphModel::accountId() const
 {
-    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
-        return {};
+    return m_accountId;
+}
+
+void SocialGraphModel::setAccountId(const QString &accountId)
+{
+    m_accountId = accountId;
+    Q_EMIT accountIdChanged();
+    fillTimeline();
+}
+
+QVariant SocialGraphModel::data(const QModelIndex &index, int role) const
+{
+    Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
     const auto identity = m_accounts[index.row()].get();
-
     switch (role) {
     case CustomRoles::IdentityRole:
         return QVariant::fromValue<Identity *>(identity);
     default:
-        return {};
+        Q_UNREACHABLE();
     }
 }
 
-int FollowRequestModel::rowCount(const QModelIndex &) const
+int SocialGraphModel::rowCount(const QModelIndex &) const
 {
     return m_accounts.count();
 }
 
-QHash<int, QByteArray> FollowRequestModel::roleNames() const
+QHash<int, QByteArray> SocialGraphModel::roleNames() const
 {
-    return {{CustomRoles::IdentityRole, "identity"}};
+    return {
+        {CustomRoles::IdentityRole, "identity"},
+    };
 }
 
-bool FollowRequestModel::loading() const
+bool SocialGraphModel::loading() const
 {
     return m_loading;
 }
 
-void FollowRequestModel::setLoading(bool loading)
+void SocialGraphModel::setLoading(bool loading)
 {
     if (m_loading == loading) {
         return;
@@ -57,7 +98,22 @@ void FollowRequestModel::setLoading(bool loading)
     Q_EMIT loadingChanged();
 }
 
-void FollowRequestModel::actionAllow(const QModelIndex &index)
+bool SocialGraphModel::isFollowRequest() const
+{
+    return m_followListName == "request";
+}
+
+bool SocialGraphModel::isFollowing() const
+{
+    return m_followListName == "following";
+}
+
+bool SocialGraphModel::isFollower() const
+{
+    return m_followListName == "followers";
+}
+
+void SocialGraphModel::actionAllow(const QModelIndex &index)
 {
     auto account = AccountManager::instance().selectedAccount();
 
@@ -82,7 +138,7 @@ void FollowRequestModel::actionAllow(const QModelIndex &index)
                   });
 }
 
-void FollowRequestModel::actionDeny(const QModelIndex &index)
+void SocialGraphModel::actionDeny(const QModelIndex &index)
 {
     auto account = AccountManager::instance().selectedAccount();
 
@@ -107,28 +163,48 @@ void FollowRequestModel::actionDeny(const QModelIndex &index)
                   });
 }
 
-bool FollowRequestModel::canFetchMore(const QModelIndex &parent) const
+bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return !m_next.isEmpty();
 }
 
-void FollowRequestModel::fetchMore(const QModelIndex &parent)
+void SocialGraphModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
     fillTimeline();
 }
 
-void FollowRequestModel::fillTimeline()
+void SocialGraphModel::fillTimeline()
 {
     auto account = AccountManager::instance().selectedAccount();
 
+    if (m_followListName.isEmpty() || m_followListName.isNull()) {
+        return;
+    }
+
+    if ((m_followListName == "followers" || m_followListName == "following") && (m_accountId.isEmpty() || m_accountId.isNull())) {
+        return;
+    }
+
+    if (m_loading) {
+        return;
+    }
     setLoading(true);
+
+    QString uri;
+    if (m_followListName == "request") {
+        uri = "/api/v1/follow_requests";
+    } else if (m_followListName == "followers") {
+        uri = QStringLiteral("/api/v1/accounts/%1/followers").arg(m_accountId);
+    } else if (m_followListName == "following") {
+        uri = QStringLiteral("/api/v1/accounts/%1/following").arg(m_accountId);
+    }
 
     QUrl url;
     if (m_next.isEmpty()) {
-        url = account->apiUrl("/api/v1/follow_requests");
+        url = account->apiUrl(uri);
     } else {
         url = m_next;
     }
@@ -145,18 +221,20 @@ void FollowRequestModel::fillTimeline()
                 m_next = QUrl::fromUserInput(match.captured(1));
             }
 
-            beginResetModel();
+            QList<std::shared_ptr<Identity>> fetchedAccounts;
 
             std::transform(
                 accounts.cbegin(),
                 accounts.cend(),
-                std::back_inserter(m_accounts),
+                std::back_inserter(fetchedAccounts),
                 [account](const QJsonValue &value) -> auto{
                     const auto identityJson = value.toObject();
                     return account->identityLookup(identityJson["id"].toString(), identityJson);
                 });
 
-            endResetModel();
+            beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
+            m_accounts += fetchedAccounts;
+            endInsertRows();
         }
 
         setLoading(false);
