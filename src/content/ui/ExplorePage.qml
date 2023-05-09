@@ -69,6 +69,8 @@ Kirigami.ScrollablePage {
         }
         delegate: StatusDelegate {
             timelineModel: trendingPostsModel
+            loading: listview.model.loading
+            showSeparator: index !== ListView.view.count - 1
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

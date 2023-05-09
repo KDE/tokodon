@@ -92,13 +92,14 @@ Kirigami.ScrollablePage {
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
             inViewPort: root.Kirigami.ColumnView.inViewport
+            loading: listview.model.loading
             Layout.fillWidth: true
         }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("Loading...")
-            visible: listview.model.loading
+            visible: listview.model.loading && listview.count === 0
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
 

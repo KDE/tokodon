@@ -136,6 +136,8 @@ Kirigami.ScrollablePage {
                 StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
                 }
             }
 
@@ -144,6 +146,8 @@ Kirigami.ScrollablePage {
                 StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
                 }
             }
 
@@ -151,6 +155,8 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Mention
                 StatusDelegate {
                     timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
                 }
             }
 
@@ -163,6 +169,8 @@ Kirigami.ScrollablePage {
                 StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
                 }
             }
 
@@ -171,6 +179,8 @@ Kirigami.ScrollablePage {
                 StatusDelegate {
                     secondary: true
                     timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
                 }
             }
         }
