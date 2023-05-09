@@ -42,6 +42,7 @@ ColumnLayout {
         secondary: false
         inViewPort: true
         canHideMedia: false
+        identity: root.post.authorIdentity
     }
 
     StatusDelegate.Poll {
