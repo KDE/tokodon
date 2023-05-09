@@ -24,11 +24,12 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            text: i18n("Loading...")
+        QQC2.ProgressBar {
             visible: conversationView.count === 0 && conversationView.model.loading
+            anchors.centerIn: parent
+            indeterminate: true
         }
+
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Conversations")

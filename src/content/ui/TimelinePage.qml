@@ -96,11 +96,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
         }
 
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            text: i18n("Loading...")
+        QQC2.ProgressBar {
             visible: listview.model.loading && listview.count === 0
-            width: parent.width - Kirigami.Units.gridUnit * 4
+            anchors.centerIn: parent
+            indeterminate: true
+            anchors.verticalCenterOffset: listViewHeader.height !== 0 ? Kirigami.Units.gridUnit * 8 : 0  
         }
 
         Kirigami.PlaceholderMessage {

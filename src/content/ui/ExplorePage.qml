@@ -72,12 +72,13 @@ Kirigami.ScrollablePage {
             loading: listview.model.loading
             showSeparator: index !== ListView.view.count - 1
         }
-        Kirigami.PlaceholderMessage {
+
+        QQC2.ProgressBar {
+            visible: listview.model.loading && listview.count === 0
             anchors.centerIn: parent
-            text: i18n("Loading...")
-            visible: listview.count === 0 && listview.model.loading
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
+            indeterminate: true
         }
+
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Posts")
