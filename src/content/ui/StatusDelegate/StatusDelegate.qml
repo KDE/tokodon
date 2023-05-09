@@ -61,6 +61,7 @@ QQC2.ItemDelegate {
     property bool showSeparator: true
     property bool showInteractionButton: true
     property bool expandedPost: false
+    property bool loading: false
     property bool inViewPort: true
     property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
 
@@ -494,6 +495,17 @@ QQC2.ItemDelegate {
         Kirigami.Separator {
             visible: root.showSeparator && !root.selected
             Layout.fillWidth: true
+        }
+
+         QQC2.ProgressBar {
+            visible: root.loading && !root.showSeparator
+            indeterminate: true
+            padding: Kirigami.Units.largeSpacing * 2
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
         }
     }
 }
