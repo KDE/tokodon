@@ -149,12 +149,12 @@ QQC2.Control {
                         MouseArea {
                             anchors.fill: parent
                             onClicked: if (root.isSensitive) {
-                                    root.isSensitive = false;
-                                } else {
-                                    Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
-                                }
+                                root.isSensitive = false;
+                            } else {
+                                Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
                             }
                         }
+                    }
                 }
 
                 DelegateChoice {
