@@ -67,7 +67,19 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Separator {
+                    visible: index !== listview.count - 1
                     Layout.fillWidth: true
+                }
+
+                QQC2.ProgressBar {
+                    visible: listview.model.loading && (index == listview.count - 1)
+                    indeterminate: true
+                    padding: Kirigami.Units.largeSpacing * 2
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
             }
         }

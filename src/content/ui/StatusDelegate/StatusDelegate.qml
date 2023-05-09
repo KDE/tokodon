@@ -497,7 +497,7 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
         }
 
-         QQC2.ProgressBar {
+        QQC2.ProgressBar {
             visible: root.loading && !root.showSeparator
             indeterminate: true
             padding: Kirigami.Units.largeSpacing * 2
