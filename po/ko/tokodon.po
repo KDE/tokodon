@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:48+0000\n"
+"POT-Creation-Date: 2023-05-09 00:48+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -172,8 +172,7 @@ msgstr "설정"
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:234 content/ui/FollowRequestsPage.qml:13
-#: content/ui/main.qml:213
+#: content/ui/AccountInfo.qml:234 content/ui/main.qml:213
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -204,7 +203,7 @@ msgstr ""
 msgid "%1 followers"
 msgstr "팔로워 %1명"
 
-#: content/ui/AccountInfo.qml:416
+#: content/ui/AccountInfo.qml:427
 #, kde-format
 msgid "%1 following"
 msgstr "팔로잉 %1명"
@@ -257,8 +256,8 @@ msgid "Conversations"
 msgstr ""
 
 #: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:75
-#: content/ui/FollowRequestsPage.qml:65 content/ui/NotificationPage.qml:179
-#: content/ui/SearchView.qml:33 content/ui/TimelinePage.qml:100
+#: content/ui/NotificationPage.qml:179 content/ui/SearchView.qml:33
+#: content/ui/SocialGraphPage.qml:77 content/ui/TimelinePage.qml:100
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgid "Loading..."
@@ -271,7 +270,7 @@ msgstr "불러오는 중"
 msgid "No Conversations"
 msgstr "멘션"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:306
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -293,11 +292,6 @@ msgstr "부스트"
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 님이 팔로우함"
-
-#: content/ui/FollowRequestsPage.qml:71
-#, kde-format
-msgid "No Follow Requests"
-msgstr ""
 
 #: content/ui/LanguageSelector.qml:64
 #, fuzzy, kde-format
@@ -372,34 +366,34 @@ msgstr "홈"
 msgid "Notifications"
 msgstr "알림"
 
-#: content/ui/main.qml:227
+#: content/ui/main.qml:229
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/main.qml:258
+#: content/ui/main.qml:260
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Conversation"
 msgstr "멘션"
 
-#: content/ui/main.qml:272
+#: content/ui/main.qml:274
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/main.qml:288
+#: content/ui/main.qml:290
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/main.qml:318
+#: content/ui/main.qml:320
 #, kde-format
 msgid "Search"
 msgstr ""
@@ -793,6 +787,24 @@ msgstr "단어 추가"
 #, kde-format
 msgid "Delete word"
 msgstr "단어 삭제"
+
+#: content/ui/SocialGraphPage.qml:86
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "No follow requests"
+msgstr "팔로우"
+
+#: content/ui/SocialGraphPage.qml:88
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "No followers"
+msgstr "팔로워 %1명"
+
+#: content/ui/SocialGraphPage.qml:90
+#, fuzzy, kde-format
+#| msgid "%1 following"
+msgid "Not following anyone"
+msgstr "팔로잉 %1명"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
@@ -1437,6 +1449,27 @@ msgstr ""
 #, kde-format
 msgid "Hashtags"
 msgstr ""
+
+#: socialgraphmodel.cpp:30
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@title"
+msgid "Follow Requests"
+msgstr "팔로우"
+
+#: socialgraphmodel.cpp:32
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@title"
+msgid "Followers"
+msgstr "팔로우"
+
+#: socialgraphmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@title"
+msgid "Following"
+msgstr "팔로잉"
 
 #: threadmodel.cpp:29
 #, kde-format
