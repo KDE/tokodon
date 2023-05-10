@@ -57,6 +57,11 @@
 #include "threadmodel.h"
 #include "timelinemodel.h"
 
+#ifdef MOCK_ACCOUNT
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
+#endif
+
 #ifdef HAVE_COLORSCHEME
 #include "colorschemer.h"
 #endif
@@ -145,7 +150,20 @@ int main(int argc, char *argv[])
 #endif
 
     QSettings settings;
+
+#ifdef MOCK_ACCOUNT
+    auto account = new MockAccount();
+    AccountManager::instance().addAccount(account);
+    AccountManager::instance().selectAccount(account);
+    AccountManager::instance().disableSettings(true);
+    QUrl url = account->apiUrl("/api/v2/search");
+    url.setQuery(QUrlQuery{{"q", "myquery"}});
+    account->registerGet(url, new TestReply("search-result.json", account));
+
+    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
+#else
     AccountManager::instance().loadFromSettings(settings);
+#endif
 
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());

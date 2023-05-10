@@ -85,10 +85,11 @@ add_executable(tokodon
 add_definitions(-DDATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/autotests/data")
 
 add_executable(tokodon-offline
-    main-offline.cpp
+    main.cpp
     autotests/mockaccount.cpp
     resources.qrc
 )
+target_compile_definitions(tokodon-offline PUBLIC MOCK_ACCOUNT=true)
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(tokodon PRIVATE tokodon_static)
