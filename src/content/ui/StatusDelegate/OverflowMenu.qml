@@ -36,6 +36,7 @@ QQC2.Menu {
         text: i18n("Copy Link to This Post")
         onTriggered: {
             Clipboard.saveText(root.url)
+            applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
     }
 

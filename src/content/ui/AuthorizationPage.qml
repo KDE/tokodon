@@ -60,7 +60,10 @@ MastoPage {
 
                             QQC2.MenuItem {
                                 text: i18n("Copy Link")
-                                onTriggered: Clipboard.saveText(menuLink.link)
+                                onTriggered: {
+                                    Clipboard.saveText(menuLink.link)
+                                    applicationWindow().showPassiveNotification(i18n("Link copied."));
+                                } 
                             }
                         }
                     }
@@ -79,7 +82,10 @@ MastoPage {
                 MobileForm.FormButtonDelegate {
                     id: copyLink
                     text: i18n("Copy Link")
-                    onClicked: Clipboard.saveText(account.authorizeUrl)
+                    onClicked: {
+                        Clipboard.saveText(account.authorizeUrl)
+                        applicationWindow().showPassiveNotification(i18n("Link copied."));
+                    } 
                 }
             }
         }
