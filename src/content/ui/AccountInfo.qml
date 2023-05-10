@@ -428,35 +428,25 @@ TimelinePage {
                     }
                     Kirigami.Chip {
                         closable: false
-                        enabled: false
+                        checkable: false
 
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.LeftButton | Qt.RightButton
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: {
-                                pageStack.push(socialGraphComponent, {
-                                    name: "followers",
-                                    accountId: accountId,
-                                });
-                            }
+                        onClicked: {
+                            pageStack.push(socialGraphComponent, {
+                                name: "followers",
+                                accountId: accountId,
+                            });
                         }
                         text: i18nc("@label User's number of followers", "<b>%1</b> followers", model.identity.followersCount)
                     }
                     Kirigami.Chip {
                         closable: false
-                        enabled: false
+                        checkable: false
 
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.LeftButton | Qt.RightButton
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: {
-                                pageStack.push(socialGraphComponent, {
-                                    name: "following",
-                                    accountId: accountId,
-                                });
-                            }
+                        onClicked: {
+                            pageStack.push(socialGraphComponent, {
+                                name: "following",
+                                accountId: accountId,
+                            });
                         }
                         text: i18nc("@label User's number of followed accounts", "<b>%1</b> following", model.identity.followingCount)
                     }
