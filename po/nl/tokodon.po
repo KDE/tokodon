@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 00:48+0000\n"
-"PO-Revision-Date: 2023-04-28 10:12+0200\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
+"PO-Revision-Date: 2023-05-09 10:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -147,12 +147,12 @@ msgstr "Profiel bewerken"
 msgid "Account editor"
 msgstr "Accountbewerker"
 
-#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:127
+#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:130
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:129
+#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:132
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -238,14 +238,7 @@ msgstr "Voeg het gegenereerde token in."
 msgid "Conversations"
 msgstr "Conversaties"
 
-#: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:75
-#: content/ui/NotificationPage.qml:179 content/ui/SearchView.qml:33
-#: content/ui/SocialGraphPage.qml:77 content/ui/TimelinePage.qml:100
-#, kde-format
-msgid "Loading..."
-msgstr "Bezig met laden..."
-
-#: content/ui/ConversationPage.qml:34
+#: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
 msgstr "Geen conversaties"
@@ -260,7 +253,7 @@ msgstr "Verkennen"
 msgid "Toot"
 msgstr "Toot"
 
-#: content/ui/ExplorePage.qml:81
+#: content/ui/ExplorePage.qml:84
 #, kde-format
 msgid "No Posts"
 msgstr "Geen posten"
@@ -408,7 +401,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Volgacties"
 
-#: content/ui/NotificationPage.qml:184
+#: content/ui/NotificationPage.qml:196
 #, kde-format
 msgid "No Notifications"
 msgstr "Geen meldingen"
@@ -418,6 +411,11 @@ msgstr "Geen meldingen"
 msgctxt "@title"
 msgid "Search"
 msgstr "Zoeken"
+
+#: content/ui/SearchView.qml:33
+#, kde-format
+msgid "Loading..."
+msgstr "Bezig met laden..."
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -734,23 +732,20 @@ msgstr "Woord toevoegen"
 msgid "Delete word"
 msgstr "Woord verwijderen"
 
-#: content/ui/SocialGraphPage.qml:86
-#, fuzzy, kde-format
-#| msgid "No Follow Requests"
+#: content/ui/SocialGraphPage.qml:97
+#, kde-format
 msgid "No follow requests"
 msgstr "Geen verzoeken om te volgen"
 
-#: content/ui/SocialGraphPage.qml:88
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#: content/ui/SocialGraphPage.qml:99
+#, kde-format
 msgid "No followers"
-msgstr "%1 volgers"
+msgstr "Geen volgers"
 
-#: content/ui/SocialGraphPage.qml:90
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#: content/ui/SocialGraphPage.qml:101
+#, kde-format
 msgid "Not following anyone"
-msgstr "%1 wordt gevolgd"
+msgstr "Niemand wordt gevolgd"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
@@ -858,32 +853,32 @@ msgid "Add Poll"
 msgstr "Peiling toevoegen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "Publiek"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "Direct bericht"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Zichtbaarheid"
@@ -917,19 +912,19 @@ msgstr "<b>%1/%2</b> tekens"
 msgid "Send"
 msgstr "Verzenden"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:121
+#: content/ui/StatusDelegate/AttachmentGrid.qml:122
 #, kde-format
 msgid "Not available"
 msgstr "Niet beschikbaar"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:219
+#: content/ui/StatusDelegate/AttachmentGrid.qml:221
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medium verborgen"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:149
-#: content/ui/StatusDelegate/StatusDelegate.qml:249
+#: content/ui/StatusDelegate/StatusDelegate.qml:150
+#: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, kde-format
 msgid "View profile"
 msgstr "Profiel bekijken"
@@ -950,7 +945,7 @@ msgid "Copy Link to This Post"
 msgstr "Koppeling naar bericht kopiëren"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:46
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Bladwijzer verwijderen"
@@ -981,113 +976,113 @@ msgstr "(Geen stemmen)"
 msgid "Vote"
 msgstr "Stemmen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:112
+#: content/ui/StatusDelegate/StatusDelegate.qml:113
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Gefilterd: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:116
+#: content/ui/StatusDelegate/StatusDelegate.qml:117
 #, kde-format
 msgid "Show anyway"
 msgstr "Toch tonen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:158 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:159 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 vond uw bericht de favoriet"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:160 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 heeft uw post bewerkt"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:163
+#: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
 msgid "Your poll has ended"
 msgstr "Uw peiling is geëindigd"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:165
+#: content/ui/StatusDelegate/StatusDelegate.qml:166
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "Een peiling waarin u stemde is geëindigd"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:190
+#: content/ui/StatusDelegate/StatusDelegate.qml:191
 #, kde-format
 msgid "Pinned entry"
 msgstr "Vastgezet item"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 versterkt"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:258 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 versterkte uw bericht"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "In reply to %1"
 msgstr "In antwoord op %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "%1 replied to your post"
 msgstr "%1 heeft op uw bericht geantwoord"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, kde-format
 msgid "Show Less"
 msgstr "Minder tonen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, kde-format
 msgid "Show More"
 msgstr "Meer tonen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:373
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Oppepper"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
+#: content/ui/StatusDelegate/StatusDelegate.qml:387
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Is OK"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Bladwijzer"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Meer"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr "via %1"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "No posts"
 msgstr "Geen posten"
@@ -1377,23 +1372,19 @@ msgid "Hashtags"
 msgstr "Hashtags"
 
 #: socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Verzoeken volgen"
 
 #: socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Volgacties"
+msgstr "Volgers"
 
 #: socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Volgen"

@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 00:48+0000\n"
-"PO-Revision-Date: 2023-04-28 07:30+0200\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
+"PO-Revision-Date: 2023-05-09 08:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: abstractaccount.cpp:418
@@ -148,12 +148,12 @@ msgstr "Uredi profil"
 msgid "Account editor"
 msgstr "Urejevalnik računa"
 
-#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:127
+#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:130
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:129
+#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:132
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -239,14 +239,7 @@ msgstr "Vstavite ustvarjeni žeton."
 msgid "Conversations"
 msgstr "Pogovori"
 
-#: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:75
-#: content/ui/NotificationPage.qml:179 content/ui/SearchView.qml:33
-#: content/ui/SocialGraphPage.qml:77 content/ui/TimelinePage.qml:100
-#, kde-format
-msgid "Loading..."
-msgstr "Nalaganje..."
-
-#: content/ui/ConversationPage.qml:34
+#: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
 msgstr "Ni pogovorov"
@@ -261,7 +254,7 @@ msgstr "Razišči"
 msgid "Toot"
 msgstr "Trobljenje"
 
-#: content/ui/ExplorePage.qml:81
+#: content/ui/ExplorePage.qml:84
 #, kde-format
 msgid "No Posts"
 msgstr "Ni objav"
@@ -409,7 +402,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Sledi"
 
-#: content/ui/NotificationPage.qml:184
+#: content/ui/NotificationPage.qml:196
 #, kde-format
 msgid "No Notifications"
 msgstr "Ni opozoril"
@@ -419,6 +412,11 @@ msgstr "Ni opozoril"
 msgctxt "@title"
 msgid "Search"
 msgstr "Išči"
+
+#: content/ui/SearchView.qml:33
+#, kde-format
+msgid "Loading..."
+msgstr "Nalaganje..."
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -734,23 +732,20 @@ msgstr "Dodaj besedo"
 msgid "Delete word"
 msgstr "Briši besedo"
 
-#: content/ui/SocialGraphPage.qml:86
-#, fuzzy, kde-format
-#| msgid "No Follow Requests"
+#: content/ui/SocialGraphPage.qml:97
+#, kde-format
 msgid "No follow requests"
 msgstr "Ne sledi zahtevkom"
 
-#: content/ui/SocialGraphPage.qml:88
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#: content/ui/SocialGraphPage.qml:99
+#, kde-format
 msgid "No followers"
-msgstr "%1 sledilcev"
+msgstr "Ni sledilcev"
 
-#: content/ui/SocialGraphPage.qml:90
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#: content/ui/SocialGraphPage.qml:101
+#, kde-format
 msgid "Not following anyone"
-msgstr "%1 sledenih"
+msgstr "Ne sledim nobenemu"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
@@ -858,32 +853,32 @@ msgid "Add Poll"
 msgstr "Dodaj glasovanje"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "Javno"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "Neobjavljeno"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "Zasebno"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "Neposredno sporočilo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Vidnost"
@@ -917,19 +912,19 @@ msgstr "<b>%1/%2</b> znaki"
 msgid "Send"
 msgstr "Pošlji"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:121
+#: content/ui/StatusDelegate/AttachmentGrid.qml:122
 #, kde-format
 msgid "Not available"
 msgstr "Ni na voljo"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:219
+#: content/ui/StatusDelegate/AttachmentGrid.qml:221
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medij je skrit"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:149
-#: content/ui/StatusDelegate/StatusDelegate.qml:249
+#: content/ui/StatusDelegate/StatusDelegate.qml:150
+#: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, kde-format
 msgid "View profile"
 msgstr "Poglej profil"
@@ -950,7 +945,7 @@ msgid "Copy Link to This Post"
 msgstr "Kopiraj povezavo na to objavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:46
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
@@ -981,113 +976,113 @@ msgstr "(Ni glasov)"
 msgid "Vote"
 msgstr "Glas"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:112
+#: content/ui/StatusDelegate/StatusDelegate.qml:113
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Filtrirano: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:116
+#: content/ui/StatusDelegate/StatusDelegate.qml:117
 #, kde-format
 msgid "Show anyway"
 msgstr "Vseeno prikaži"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:158 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:159 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:160 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 je uredila objavo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:163
+#: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
 msgid "Your poll has ended"
 msgstr "Vaše glasovanje se je končalo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:165
+#: content/ui/StatusDelegate/StatusDelegate.qml:166
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "Glasovanje, kjer ste glasovali, se je končalo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:190
+#: content/ui/StatusDelegate/StatusDelegate.qml:191
 #, kde-format
 msgid "Pinned entry"
 msgstr "Pripeti vnos"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ojačalo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:258 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je ojačalo vašo objavo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "In reply to %1"
 msgstr "Odgovor na %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "%1 replied to your post"
 msgstr "%1 je odgovorilo na vašo objavo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, kde-format
 msgid "Show Less"
 msgstr "Prikaži manj"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, kde-format
 msgid "Show More"
 msgstr "Prikaži več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:373
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
+#: content/ui/StatusDelegate/StatusDelegate.qml:387
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Podobno"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr "prek %1"
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "No posts"
 msgstr "Ni objav"
@@ -1377,26 +1372,22 @@ msgid "Hashtags"
 msgstr "Ključniki"
 
 #: socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr "Sledi zahtevke"
+msgstr "Sledi zahtevkom"
 
 #: socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Sledi"
+msgstr "Sledilci"
 
 #: socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr "Sledenje"
+msgstr "Sledim"
 
 #: threadmodel.cpp:29
 #, kde-format

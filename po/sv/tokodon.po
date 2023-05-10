@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 00:48+0000\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
 "PO-Revision-Date: 2022-05-21 11:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -156,14 +156,14 @@ msgstr "Presentera för profil"
 msgid "Account editor"
 msgstr "Konton"
 
-#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:127
+#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:130
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:129
+#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:132
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -252,15 +252,7 @@ msgstr "Infoga genererade symbol."
 msgid "Conversations"
 msgstr ""
 
-#: content/ui/ConversationPage.qml:29 content/ui/ExplorePage.qml:75
-#: content/ui/NotificationPage.qml:179 content/ui/SearchView.qml:33
-#: content/ui/SocialGraphPage.qml:77 content/ui/TimelinePage.qml:100
-#, fuzzy, kde-format
-#| msgid "Loading"
-msgid "Loading..."
-msgstr "Läser in"
-
-#: content/ui/ConversationPage.qml:34
+#: content/ui/ConversationPage.qml:35
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -277,7 +269,7 @@ msgstr ""
 msgid "Toot"
 msgstr "Tut"
 
-#: content/ui/ExplorePage.qml:81
+#: content/ui/ExplorePage.qml:84
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -440,7 +432,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Följ"
 
-#: content/ui/NotificationPage.qml:184
+#: content/ui/NotificationPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "No Notifications"
@@ -451,6 +443,12 @@ msgstr "Underrättelser"
 msgctxt "@title"
 msgid "Search"
 msgstr ""
+
+#: content/ui/SearchView.qml:33
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgid "Loading..."
+msgstr "Läser in"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
@@ -785,19 +783,19 @@ msgstr "Lägg till ord"
 msgid "Delete word"
 msgstr "Ta bort ord"
 
-#: content/ui/SocialGraphPage.qml:86
+#: content/ui/SocialGraphPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No follow requests"
 msgstr "Följ"
 
-#: content/ui/SocialGraphPage.qml:88
+#: content/ui/SocialGraphPage.qml:99
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "No followers"
 msgstr "%1 följare"
 
-#: content/ui/SocialGraphPage.qml:90
+#: content/ui/SocialGraphPage.qml:101
 #, fuzzy, kde-format
 #| msgid "%1 following"
 msgid "Not following anyone"
@@ -915,32 +913,32 @@ msgid "Add Poll"
 msgstr "Bifoga enkät"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "Öppen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "Olistad"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "Direkt meddelande"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Synlighet"
@@ -975,19 +973,19 @@ msgstr ""
 msgid "Send"
 msgstr "Skicka"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:121
+#: content/ui/StatusDelegate/AttachmentGrid.qml:122
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:219
+#: content/ui/StatusDelegate/AttachmentGrid.qml:221
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
-#: content/ui/StatusDelegate/StatusDelegate.qml:149
-#: content/ui/StatusDelegate/StatusDelegate.qml:249
+#: content/ui/StatusDelegate/StatusDelegate.qml:150
+#: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "View profile"
@@ -1009,7 +1007,7 @@ msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:46
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -1042,118 +1040,118 @@ msgstr ""
 msgid "Vote"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:112
+#: content/ui/StatusDelegate/StatusDelegate.qml:113
 #, kde-format
 msgid "Filtered: %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:116
+#: content/ui/StatusDelegate/StatusDelegate.qml:117
 #, kde-format
 msgid "Show anyway"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:158 notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:159 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 markerade ditt inlägg som favorit"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:160 notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "%1 edited a post"
 msgstr "%1 markerade ditt inlägg som favorit"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:163
+#: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
 msgid "Your poll has ended"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:165
+#: content/ui/StatusDelegate/StatusDelegate.qml:166
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:190
+#: content/ui/StatusDelegate/StatusDelegate.qml:191
 #, kde-format
 msgid "Pinned entry"
 msgstr "Fäst post"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 förstärkte"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:257 notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:258 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 förstärkte ditt inlägg"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "In reply to %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:259
+#: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "%1 replied to your post"
 msgstr "%1 markerade ditt inlägg som favorit"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show Less"
 msgstr "Visa fler"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:303
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show More"
 msgstr "Visa fler"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:359
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:373
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Förstärk"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
+#: content/ui/StatusDelegate/StatusDelegate.qml:387
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Gilla"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "Show more options"
 msgid "More"
 msgstr "Visa fler"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:107
+#: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "No posts"
 msgstr ""
