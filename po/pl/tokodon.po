@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 00:47+0000\n"
+"POT-Creation-Date: 2023-05-11 00:47+0000\n"
 "PO-Revision-Date: 2023-04-01 09:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -218,29 +218,34 @@ msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr ""
 "Aby przejść dalej, otwórz następujący odnośnik i uwierzytelnij Tokodona: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:76
 #, fuzzy, kde-format
 #| msgid "Open link"
 msgid "Open Link"
 msgstr "Otwórz odnośnik"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Copy link"
 msgid "Copy Link"
 msgstr "Skopiuj odnośnik"
 
-#: content/ui/AuthorizationPage.qml:95
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#, kde-format
+msgid "Link copied."
+msgstr ""
+
+#: content/ui/AuthorizationPage.qml:101
 #, kde-format
 msgid "Enter token:"
 msgstr "Wpisz token:"
 
-#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Kontynuuj"
 
-#: content/ui/AuthorizationPage.qml:106
+#: content/ui/AuthorizationPage.qml:112
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "Wstaw utworzony token"
@@ -581,7 +586,7 @@ msgstr "PNG, GIF lub JPG. Najwyżej 2 MB. Zostaną zmniejszone do 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:64
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Delete"
 msgstr "Usuń"
@@ -766,7 +771,7 @@ msgid "Not following anyone"
 msgstr "%1 śledzi"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
+#: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Edytuj"
@@ -969,18 +974,23 @@ msgstr "Otwórz pierwotną stronę"
 msgid "Copy Link to This Post"
 msgstr "Skopiuj odnośnik do wpisu"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#, kde-format
+msgid "Post link copied."
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Usuń zakładkę"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgid "Bookmark"
 msgstr "Zakładka"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:71
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Usuń i naszkicuj na nowo"

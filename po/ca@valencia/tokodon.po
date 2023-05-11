@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 00:47+0000\n"
-"PO-Revision-Date: 2023-04-28 13:04+0200\n"
+"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"PO-Revision-Date: 2023-05-09 09:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -211,27 +211,32 @@ msgstr "Autoritza Tokodon a actuar en nom vostre"
 msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "Per a continuar, obriu l'enllaç següent i autoritzeu Tokodon: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:76
 #, kde-format
 msgid "Open Link"
 msgstr "Obri l'enllaç"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
 #, kde-format
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: content/ui/AuthorizationPage.qml:95
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#, kde-format
+msgid "Link copied."
+msgstr ""
+
+#: content/ui/AuthorizationPage.qml:101
 #, kde-format
 msgid "Enter token:"
 msgstr "Introduïu el testimoni:"
 
-#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Continua"
 
-#: content/ui/AuthorizationPage.qml:106
+#: content/ui/AuthorizationPage.qml:112
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "Inseriu el testimoni generat."
@@ -571,7 +576,7 @@ msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:64
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
@@ -735,25 +740,22 @@ msgid "Delete word"
 msgstr "Suprimix una paraula"
 
 #: content/ui/SocialGraphPage.qml:97
-#, fuzzy, kde-format
-#| msgid "No Follow Requests"
+#, kde-format
 msgid "No follow requests"
 msgstr "Sense sol·licituds de seguiment"
 
 #: content/ui/SocialGraphPage.qml:99
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "No followers"
-msgstr "%1 seguidors"
+msgstr "Sense seguidors"
 
 #: content/ui/SocialGraphPage.qml:101
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgid "Not following anyone"
-msgstr "%1 seguits"
+msgstr "No seguiu a ningú"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
+#: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Edita"
@@ -949,18 +951,23 @@ msgstr "Obri la pàgina original"
 msgid "Copy Link to This Post"
 msgstr "Copia l'enllaç a esta publicació"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#, kde-format
+msgid "Post link copied."
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Elimina el punt"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgid "Bookmark"
 msgstr "Punt"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:71
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Suprimix i torna a esborrany"
@@ -1375,23 +1382,19 @@ msgid "Hashtags"
 msgstr "Etiqueta"
 
 #: socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
 #: socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Seguix"
+msgstr "Seguidors"
 
 #: socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Seguint"

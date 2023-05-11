@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 00:47+0000\n"
+"POT-Creation-Date: 2023-05-11 00:47+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -221,29 +221,34 @@ msgstr ""
 "A folytatáshoz nyissa meg a következő hivatkozást, és hitelesítse a "
 "Tokodont: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:76
 #, fuzzy, kde-format
 #| msgid "Open link"
 msgid "Open Link"
 msgstr "Hivatkozás megnyitása"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Copy link"
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
-#: content/ui/AuthorizationPage.qml:95
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#, kde-format
+msgid "Link copied."
+msgstr ""
+
+#: content/ui/AuthorizationPage.qml:101
 #, kde-format
 msgid "Enter token:"
 msgstr "Adja meg a kódot:"
 
-#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Folytatás"
 
-#: content/ui/AuthorizationPage.qml:106
+#: content/ui/AuthorizationPage.qml:112
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "Illessze be a generált kódot."
@@ -606,7 +611,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:64
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgid "Delete"
@@ -802,7 +807,7 @@ msgid "Not following anyone"
 msgstr "%1 követett"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
+#: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Edit"
 msgstr ""
@@ -1007,18 +1012,23 @@ msgstr ""
 msgid "Copy Link to This Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#, kde-format
+msgid "Post link copied."
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:71
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""

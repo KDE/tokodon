@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 00:47+0000\n"
+"POT-Creation-Date: 2023-05-11 00:47+0000\n"
 "PO-Revision-Date: 2023-05-09 10:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -208,27 +208,32 @@ msgstr "Autoriseer Tokodon om in uw naam te acteren"
 msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "Om door te gaan, open de volgende koppeling en autoriseer Tokodon: %1"
 
-#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:73
+#: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:76
 #, kde-format
 msgid "Open Link"
 msgstr "Koppeling openen"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:81
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
 #, kde-format
 msgid "Copy Link"
 msgstr "Koppeling kopiëren"
 
-#: content/ui/AuthorizationPage.qml:95
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#, kde-format
+msgid "Link copied."
+msgstr ""
+
+#: content/ui/AuthorizationPage.qml:101
 #, kde-format
 msgid "Enter token:"
 msgstr "Token invoeren:"
 
-#: content/ui/AuthorizationPage.qml:103 content/ui/LoginPage.qml:49
+#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
 msgstr "Doorgaan"
 
-#: content/ui/AuthorizationPage.qml:106
+#: content/ui/AuthorizationPage.qml:112
 #, kde-format
 msgid "Please insert the generated token."
 msgstr "Voeg het gegenereerde token in."
@@ -569,7 +574,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:64
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
@@ -748,7 +753,7 @@ msgid "Not following anyone"
 msgstr "Niemand wordt gevolgd"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
+#: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Bewerken"
@@ -944,18 +949,23 @@ msgstr "Originele pagina openen"
 msgid "Copy Link to This Post"
 msgstr "Koppeling naar bericht kopiëren"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#, kde-format
+msgid "Post link copied."
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Bladwijzer verwijderen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgid "Bookmark"
 msgstr "Bladwijzer"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:71
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Verwijderen & Opnieuw concept maken"
