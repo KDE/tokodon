@@ -158,7 +158,22 @@ void Post::fromJson(QJsonObject obj)
     m_replyTargetId = obj["in_reply_to_id"].toString();
 
     if (obj.contains("in_reply_to_account_id")) {
-        m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"].toString(), {});
+        if (m_parent->identityCached(obj["in_reply_to_account_id"].toString())) {
+            m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"].toString(), {});
+        } else if (!obj["in_reply_to_account_id"].toString().isEmpty()) {
+            const auto accountId = obj["in_reply_to_account_id"].toString();
+            QUrl uriAccount(m_parent->instanceUri());
+            uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
+            qDebug() << uriAccount << obj["in_reply_to_account_id"].toString();
+
+            m_parent->get(uriAccount, true, this, [this, accountId](QNetworkReply *reply) {
+                const auto data = reply->readAll();
+                const auto doc = QJsonDocument::fromJson(data);
+
+                m_replyIdentity = m_parent->identityLookup(accountId, doc.object());
+                Q_EMIT replyIdentityChanged();
+            });
+        }
     }
 
     m_url = QUrl(obj["url"].toString());

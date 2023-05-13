@@ -308,6 +308,7 @@ Q_SIGNALS:
     void mentionsChanged();
     void attachmentUploaded();
     void pollChanged();
+    void replyIdentityChanged();
 
 private:
     bool m_attachments_visible = true;
