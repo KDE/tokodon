@@ -127,6 +127,8 @@ QQC2.Control {
                     roleValue: Attachment.GifV
 
                     VideoAttachment {
+                        id: video
+
                         required property var modelData
 
                         count: attachmentsRepeater.count
@@ -146,6 +148,20 @@ QQC2.Control {
                                 root.isSensitive = false;
                             } else {
                                 Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
+                            }
+                        }
+
+                        Connections {
+                            target: root
+                            function onInViewPortChanged() {
+                                if (!root.inViewPort) {
+                                    video.pause();
+                                } else if(root.autoPlay) {
+                                    video.play();
+                                }
+                            }
+                            function onUserSensitivityChanged() {
+                                video.pause()
                             }
                         }
                     }

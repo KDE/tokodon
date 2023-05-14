@@ -90,12 +90,39 @@ Kirigami.ScrollablePage {
         }
 
         delegate: StatusDelegate {
+            id: status
+
             timelineModel: root.model
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
-            inViewPort: root.Kirigami.ColumnView.inViewport
             loading: listview.model.loading
             Layout.fillWidth: true
+
+            Connections {
+                target: listview
+
+                function onContentYChanged() {
+                    const aMin = status.y
+                    const aMax = status.y + status.height
+
+                    const bMin = listview.contentY
+                    const bMax = listview.contentY + listview.height
+
+                    if (status.height > listview.height) {
+                        if (bMin >= aMin && bMax <= aMax) {
+                            status.inViewPort = true
+                            return
+                        }
+                    } else {
+                        if (aMin >= bMin && aMax <= bMax) {
+                            status.inViewPort = true
+                            return
+                        }
+                    }
+
+                    status.inViewPort = false
+                }
+            }
         }
 
         QQC2.ProgressBar {
