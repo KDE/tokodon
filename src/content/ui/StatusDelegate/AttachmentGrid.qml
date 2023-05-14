@@ -156,7 +156,7 @@ QQC2.Control {
                             function onInViewPortChanged() {
                                 if (!root.inViewPort) {
                                     video.pause();
-                                } else if(root.autoPlay) {
+                                } else if(video.autoPlay) {
                                     video.play();
                                 }
                             }

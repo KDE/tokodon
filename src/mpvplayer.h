@@ -24,6 +24,7 @@ class MpvPlayer : public QQuickFramebufferObject
     Q_PROPERTY(QSize sourceSize READ sourceSize NOTIFY sourceSizeChanged)
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(bool looping READ looping WRITE setLooping NOTIFY loopingChanged)
+    Q_PROPERTY(bool autoPlay READ autoPlay WRITE setAutoPlay NOTIFY autoPlayChanged)
 
     friend class MpvRenderer;
 
@@ -42,9 +43,11 @@ public:
     QString source() const;
     bool loading() const;
     bool looping() const;
+    bool autoPlay() const;
 
     void setSource(const QString &source);
     void setLooping(bool loop);
+    void setAutoPlay(bool autoPlay);
 
 public Q_SLOTS:
     Q_INVOKABLE void play();
@@ -66,19 +69,21 @@ Q_SIGNALS:
     void sourceChanged();
     void loadingChanged();
     void loopingChanged();
+    void autoPlayChanged();
 
 private Q_SLOTS:
     void onMpvEvents();
     void doUpdate();
 
 private:
-    bool m_paused = true;
+    bool m_paused = false;
     qreal m_position = 0;
     qreal m_duration = 0;
     QSize m_sourceSize;
     QString m_source;
     bool m_loading = true;
     bool m_looping = false;
+    bool m_autoPlay = false;
 
     mpv_handle *mpv = nullptr;
     mpv_render_context *mpv_gl = nullptr;

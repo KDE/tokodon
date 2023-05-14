@@ -36,14 +36,9 @@ MediaContainer {
         id: player
         anchors.fill: parent
 
+        autoPlay: root.autoPlay
         source: root.videoUrl
         looping: true
-
-        Component.onCompleted: {
-            if (root.autoPlay) {
-                player.play()
-            }
-        }
 
         function togglePlayPause() {
             if (!paused) {
