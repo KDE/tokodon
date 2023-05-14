@@ -121,8 +121,8 @@ QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorI
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
-    , m_visibility(Post::Visibility::Public)
     , m_attachmentList(this, &m_attachments)
+    , m_visibility(Post::Visibility::Public)
 {
     fromJson(obj);
 }
