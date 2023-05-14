@@ -92,7 +92,9 @@ public:
         mpv_render_context_render(obj->mpv_gl, params);
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        obj->window()->resetOpenGLState();
+        if (obj->window() != nullptr) {
+            obj->window()->resetOpenGLState();
+        }
 #endif
     }
 
