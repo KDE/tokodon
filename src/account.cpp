@@ -280,6 +280,12 @@ void Account::validateToken()
 
 void Account::writeToSettings(QSettings &settings) const
 {
+    // do not write to settings if we do not have complete information yet,
+    // or else it writes malformed and possibly duplicate accounts to settings.
+    if (m_name.isEmpty() || m_instance_uri.isEmpty()) {
+        return;
+    }
+
     settings.beginGroup(settingsGroupName());
 
     settings.setValue("token", m_token);
