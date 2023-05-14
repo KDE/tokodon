@@ -135,7 +135,7 @@ MediaContainer {
                     restoreMode: Binding.RestoreBindingOrValue
                 }
 
-                onMoved: player.seek(value)
+                onMoved: player.setPosition(value)
             }
         }
     }

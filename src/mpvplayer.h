@@ -50,7 +50,7 @@ public Q_SLOTS:
     Q_INVOKABLE void play();
     Q_INVOKABLE void pause();
     Q_INVOKABLE void stop();
-    void setPosition(double value);
+    Q_INVOKABLE void setPosition(double value);
     void seek(qreal offset);
     void command(const QVariant &params);
     void setOption(const QString &name, const QVariant &value);
