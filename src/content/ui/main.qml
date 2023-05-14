@@ -133,9 +133,7 @@ Kirigami.ApplicationWindow {
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
         handleVisible: modal && !isShowingFullScreenImage && enabled
-        onModalChanged: if (!modal) {
-            drawerOpen = true;
-        }
+        onModalChanged: drawerOpen = !modal;
 
         leftPadding: 0
         rightPadding: 0
