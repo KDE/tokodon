@@ -123,6 +123,16 @@ Kirigami.ScrollablePage {
                     status.inViewPort = false
                 }
             }
+
+            Connections {
+                target: root
+
+                function onIsCurrentPageChanged() {
+                    if (!root.isCurrentPage) {
+                        status.inViewPort = false
+                    }
+                }
+            }
         }
 
         QQC2.ProgressBar {
