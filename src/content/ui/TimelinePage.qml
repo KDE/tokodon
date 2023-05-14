@@ -108,19 +108,25 @@ Kirigami.ScrollablePage {
                     const bMin = listview.contentY
                     const bMax = listview.contentY + listview.height
 
-                    if (status.height > listview.height) {
-                        if (bMin >= aMin && bMax <= aMax) {
-                            status.inViewPort = true
-                            return
-                        }
-                    } else {
-                        if (aMin >= bMin && aMax <= bMax) {
-                            status.inViewPort = true
-                            return
-                        }
+                    if (!root.isCurrentPage) {
+                        status.inViewPort = false
+                        return
                     }
 
-                    status.inViewPort = false
+                    var topEdgeVisible
+                    var bottomEdgeVisible
+
+                    // we are still checking two rectangles, but if one is bigger than the other
+                    // just switch which one should be checked.
+                    if (status.height > listview.height) {
+                        topEdgeVisible = bMin > aMin && bMin < aMax
+                        bottomEdgeVisible = bMax > aMin && bMax < aMax
+                    } else {
+                        topEdgeVisible = aMin > bMin && aMin < bMax
+                        bottomEdgeVisible = aMax > bMin && aMax < bMax
+                    }
+
+                    status.inViewPort = topEdgeVisible || bottomEdgeVisible
                 }
             }
 
