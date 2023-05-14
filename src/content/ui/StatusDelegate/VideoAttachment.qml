@@ -86,7 +86,7 @@ MediaContainer {
         radius: previewImage.visible ? 0 : Kirigami.Units.smallSpacing
         color: Kirigami.Theme.backgroundColor
         opacity: {
-            if (player.playbackState !== MediaPlayer.PlayingState) {
+            if (!player.paused) {
                 return 0.7;
             }
 
@@ -106,15 +106,7 @@ MediaContainer {
                 id: playPauseButton
                 Layout.alignment: Qt.AlignVCenter
 
-                icon.name: {
-                    switch (player.playbackState) {
-                    case MediaPlayer.PlayingState:
-                        return "media-playback-pause";
-                    case MediaPlayer.PausedState:
-                    case MediaPlayer.StoppedState:
-                        return "media-playback-start";
-                    }
-                }
+                icon.name: player.paused ? "media-playback-start" : "media-playback-pause"
 
                 onClicked: player.togglePlayPause()
             }
