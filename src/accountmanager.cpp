@@ -241,7 +241,7 @@ void AccountManager::loadFromSettings(QSettings &settings)
         settings.beginGroup(child);
 
         auto account = new Account(settings, m_qnam);
-        if (account->haveToken()) {
+        if (account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
             addAccount(account);
             qDebug() << "Loaded from settings:" << account;
         } else {

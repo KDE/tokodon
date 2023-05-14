@@ -47,6 +47,8 @@ public:
     QUrl getTokenUrl() const;
     Q_INVOKABLE void setToken(const QString &authcode);
     bool haveToken() const;
+    bool hasName() const;
+    bool hasInstanceUrl() const;
     virtual void validateToken() = 0;
 
     Preferences *preferences() const;
