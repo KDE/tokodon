@@ -88,9 +88,9 @@ int main(int argc, char *argv[])
     }
 
     if (QIcon::themeName().contains("dark")) {
-        QIcon::setFallbackThemeName("tokodon-dark");
+        QIcon::setThemeName("tokodon-dark");
     } else {
-        QIcon::setFallbackThemeName("tokodon");
+        QIcon::setThemeName("tokodon");
     }
 #endif
 
