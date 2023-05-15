@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-14 00:48+0000\n"
+"POT-Creation-Date: 2023-05-15 00:47+0000\n"
 "PO-Revision-Date: 2023-05-12 21:12+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -18,181 +18,214 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.0\n"
 
-#: abstractaccount.cpp:418
+#: abstractaccount.cpp:428
 #, kde-format
 msgid "Could not follow account"
 msgstr "Non se seguiu a conta"
 
-#: abstractaccount.cpp:419
+#: abstractaccount.cpp:429
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Non se deixou de seguir a conta"
 
-#: abstractaccount.cpp:420
+#: abstractaccount.cpp:430
 #, kde-format
 msgid "Could not block account"
 msgstr "Non se bloqueou a conta"
 
-#: abstractaccount.cpp:421
+#: abstractaccount.cpp:431
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Non se desbloqueou a conta"
 
-#: abstractaccount.cpp:422
+#: abstractaccount.cpp:432
 #, kde-format
 msgid "Could not mute account"
 msgstr "Non se acalou a conta"
 
-#: abstractaccount.cpp:423
+#: abstractaccount.cpp:433
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Non se restableceu a conta"
 
-#: abstractaccount.cpp:424
+#: abstractaccount.cpp:434
 #, kde-format
 msgid "Could not feature account"
 msgstr "Non se destacou a conta"
 
-#: abstractaccount.cpp:425
+#: abstractaccount.cpp:435
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Non se retirou a conta"
 
-#: abstractaccount.cpp:426
+#: abstractaccount.cpp:436
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Non se editou a nota sobre a conta"
 
-#: accountmodel.cpp:31 maintimelinemodel.cpp:27
+#: accountmodel.cpp:34 maintimelinemodel.cpp:27
 #, kde-format
 msgid "Loading"
 msgstr "Cargando"
 
-#: content/ui/AccountInfo.qml:53
+#: content/ui/AccountInfo.qml:70
 #, kde-format
 msgid "Follows you"
 msgstr "Séguete"
 
-#: content/ui/AccountInfo.qml:93
+#: content/ui/AccountInfo.qml:110
 #, kde-format
 msgid "Requested"
 msgstr "Solicitado"
 
-#: content/ui/AccountInfo.qml:96
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Following"
 msgstr "Seguindo"
 
-#: content/ui/AccountInfo.qml:98
+#: content/ui/AccountInfo.qml:115
 #, kde-format
 msgid "Follow"
 msgstr "Seguir"
 
-#: content/ui/AccountInfo.qml:123
+#: content/ui/AccountInfo.qml:140
 #, kde-format
 msgid "Stop notifying me when %1 posts"
 msgstr "Deixar de notificarme con %1 publicacións"
 
-#: content/ui/AccountInfo.qml:125
+#: content/ui/AccountInfo.qml:142
 #, kde-format
 msgid "Notify me when %1 posts"
 msgstr "Notificarme con %1 publicacións"
 
-#: content/ui/AccountInfo.qml:142
+#: content/ui/AccountInfo.qml:159
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Agochar promocións de %1"
 
-#: content/ui/AccountInfo.qml:144
+#: content/ui/AccountInfo.qml:161
 #, kde-format
 msgid "Stop Hiding Boosts from %1"
 msgstr "Deixar de agochar promocións de %1"
 
-#: content/ui/AccountInfo.qml:161
+#: content/ui/AccountInfo.qml:178
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr "Deixar de destacar no perfil"
 
-#: content/ui/AccountInfo.qml:163
+#: content/ui/AccountInfo.qml:180
 #, kde-format
 msgid "Feature on Profile"
 msgstr "Destacar no perfil"
 
-#: content/ui/AccountInfo.qml:180
+#: content/ui/AccountInfo.qml:197
 #, kde-format
 msgid "Stop Muting"
 msgstr "Deixar de acalar"
 
-#: content/ui/AccountInfo.qml:182
+#: content/ui/AccountInfo.qml:199
 #, kde-format
 msgid "Mute"
 msgstr "Acalar"
 
-#: content/ui/AccountInfo.qml:199
+#: content/ui/AccountInfo.qml:216
 #, kde-format
 msgid "Stop Blocking"
 msgstr "Deixar de bloquear"
 
-#: content/ui/AccountInfo.qml:201
+#: content/ui/AccountInfo.qml:218
 #, kde-format
 msgid "Block"
 msgstr "Bloquear"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:233
 #, kde-format
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: content/ui/AccountInfo.qml:220 content/ui/Settings/AccountsCard.qml:36
+#: content/ui/AccountInfo.qml:237 content/ui/Settings/AccountsCard.qml:36
 #, kde-format
 msgid "Account editor"
 msgstr "Editor da conta"
 
-#: content/ui/AccountInfo.qml:227 content/ui/TimelinePage.qml:130
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:130
 #, kde-format
 msgid "Settings"
 msgstr "Axustes"
 
-#: content/ui/AccountInfo.qml:228 content/ui/TimelinePage.qml:132
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:132
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
 
-#: content/ui/AccountInfo.qml:234 content/ui/main.qml:213
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:211
 #, kde-format
 msgid "Follow Requests"
 msgstr "Solicitudes de seguimento"
 
-#: content/ui/AccountInfo.qml:311
+#: content/ui/AccountInfo.qml:328
 #, kde-format
 msgid "Note"
 msgstr "Nota"
 
-#: content/ui/AccountInfo.qml:319
+#: content/ui/AccountInfo.qml:336
 #, kde-format
 msgid "Saved"
 msgstr "Gardada"
 
-#: content/ui/AccountInfo.qml:334
+#: content/ui/AccountInfo.qml:351
 #, kde-format
 msgid "Click to add a note"
 msgstr "Preme para engadir unha nota"
 
-#: content/ui/AccountInfo.qml:407
-#, kde-format
-msgid "%1 posts"
+#: content/ui/AccountInfo.qml:427
+#, fuzzy, kde-format
+#| msgid "%1 posts"
+msgctxt "@label User's number of statuses"
+msgid "<b>%1</b> posts"
 msgstr "%1 publicacións"
 
-#: content/ui/AccountInfo.qml:411
-#, kde-format
-msgid "%1 followers"
+#: content/ui/AccountInfo.qml:439
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgctxt "@label User's number of followers"
+msgid "<b>%1</b> followers"
 msgstr "%1 seguidoras"
 
-#: content/ui/AccountInfo.qml:427
-#, kde-format
-msgid "%1 following"
+#: content/ui/AccountInfo.qml:451
+#, fuzzy, kde-format
+#| msgid "%1 following"
+msgctxt "@label User's number of followed accounts"
+msgid "<b>%1</b> following"
 msgstr "Seguindo a %1"
+
+#: content/ui/AccountInfo.qml:463
+#, fuzzy, kde-format
+#| msgid "Post"
+msgctxt "@item:inmenu Profile Post Filter"
+msgid "Posts"
+msgstr "Publicación"
+
+#: content/ui/AccountInfo.qml:467
+#, kde-format
+msgctxt "@item:inmenu Profile Post Filter"
+msgid "Posts && Replies"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:471
+#, kde-format
+msgctxt "@item:inmenu Profile Post Filter"
+msgid "Media"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:498
+#, fuzzy, kde-format
+#| msgctxt "@option:check Poll toolbar"
+#| msgid "Hide totals"
+msgctxt "@option:check"
+msgid "Hide boosts"
+msgstr "Agochar totais"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -249,7 +282,7 @@ msgstr "Conversas"
 msgid "No Conversations"
 msgstr "Sen conversas"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:306
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
 #, kde-format
 msgid "Explore"
 msgstr "Explorar"
@@ -325,42 +358,42 @@ msgstr "Ignorar erros SSL"
 msgid "Proxy Settings"
 msgstr "Axustes do proxy"
 
-#: content/ui/main.qml:184
+#: content/ui/main.qml:182
 #, kde-format
 msgid "Home"
 msgstr "Inicio"
 
-#: content/ui/main.qml:200 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:198 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacións"
 
-#: content/ui/main.qml:229
+#: content/ui/main.qml:227
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:244
+#: content/ui/main.qml:242
 #, kde-format
 msgid "Global"
 msgstr "Federada"
 
-#: content/ui/main.qml:260
+#: content/ui/main.qml:258
 #, kde-format
 msgid "Conversation"
 msgstr "Conversa"
 
-#: content/ui/main.qml:274
+#: content/ui/main.qml:272
 #, kde-format
 msgid "Favourites"
 msgstr "Favoritas"
 
-#: content/ui/main.qml:290
+#: content/ui/main.qml:288
 #, kde-format
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: content/ui/main.qml:320
+#: content/ui/main.qml:318
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
