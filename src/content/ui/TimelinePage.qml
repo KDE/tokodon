@@ -141,6 +141,18 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
+
+            Connections {
+                target: appwindow
+
+                function onIsShowingFullScreenImageChanged() {
+                    if (appwindow.isShowingFullScreenImage) {
+                        status.inViewPort = false
+                    } else {
+                        listview.onContentYChanged()
+                    }
+                }
+            }
         }
 
         QQC2.ProgressBar {
