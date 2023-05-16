@@ -338,7 +338,7 @@ void MpvPlayer::onMpvEvents()
                 }
             }
         } break;
-        case MPV_EVENT_FILE_LOADED: {
+        case MPV_EVENT_PLAYBACK_RESTART: {
             m_loading = false;
             Q_EMIT loadingChanged();
         } break;
