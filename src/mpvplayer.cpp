@@ -194,6 +194,11 @@ bool MpvPlayer::autoPlay() const
     return m_autoPlay;
 }
 
+bool MpvPlayer::stopped() const
+{
+    return m_currentSource.isEmpty();
+}
+
 void MpvPlayer::setSource(const QString &source)
 {
     if (m_source == source) {
@@ -234,7 +239,7 @@ void MpvPlayer::setAutoPlay(bool autoPlay)
 
 void MpvPlayer::play()
 {
-    if (!paused()) {
+    if (!paused() || m_source.isEmpty()) {
         return;
     }
 
@@ -242,9 +247,14 @@ void MpvPlayer::play()
     // regardless of autoPlay. This incurs a very visible overhead in the UI, so we want to delay
     // the loadfile command until the last possible moment (when the user requests to play it).
     if (m_currentSource != m_source) {
+        m_loading = true;
+        Q_EMIT loadingChanged();
+
         command(QStringList{QStringLiteral("loadfile"), m_source});
 
         m_currentSource = m_source;
+
+        Q_EMIT stoppedChanged();
     }
 
     m_paused = false;

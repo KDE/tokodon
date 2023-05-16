@@ -34,7 +34,6 @@ MediaContainer {
     }
 
     function togglePlayPause() {
-        console.log("toggling playpause()")
         if (player.paused) {
             player.play();
         } else {
@@ -62,9 +61,14 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: player.loading && !root.isSensitive
+        visible: (player.loading || player.stopped) && !root.isSensitive
 
         fillMode: Image.PreserveAspectCrop
+    }
+
+    QQC2.BusyIndicator {
+        visible: player.loading && !root.isSensitive
+        anchors.centerIn: parent
     }
 
     MouseArea {
@@ -74,6 +78,20 @@ MediaContainer {
         anchors.fill: parent
 
         onClicked: root.togglePlayPause()
+    }
+
+    QQC2.Button {
+        visible: !root.showControls && !player.loading && player.paused && !root.isSensitive
+        anchors.centerIn: parent
+        onClicked: player.play()
+
+        Accessible.name: i18nc("@action:button Start media playback", "Play")
+
+        icon {
+            name: "media-playback-start"
+            width: Kirigami.Units.iconSizes.large
+            height: Kirigami.Units.iconSizes.large
+        }
     }
 
     Rectangle {
