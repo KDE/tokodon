@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:47+0000\n"
-"PO-Revision-Date: 2023-05-11 09:09+0200\n"
+"PO-Revision-Date: 2023-05-15 09:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: abstractaccount.cpp:428
@@ -180,52 +180,46 @@ msgid "Click to add a note"
 msgstr "Kliknite za dodajanje opombe"
 
 #: content/ui/AccountInfo.qml:427
-#, fuzzy, kde-format
-#| msgid "%1 posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
-msgstr "%1 objav"
+msgstr "<b>%1</b> objav"
 
 #: content/ui/AccountInfo.qml:439
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
-msgstr "%1 sledilcev"
+msgstr "<b>%1</b> sledilcev"
 
 #: content/ui/AccountInfo.qml:451
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
-msgstr "%1 sledenih"
+msgstr "<b>%1</b> sledenih"
 
 #: content/ui/AccountInfo.qml:463
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Objavi"
+msgstr "Objave"
 
 #: content/ui/AccountInfo.qml:467
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Objave && Odgovori"
 
 #: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Mediji"
 
 #: content/ui/AccountInfo.qml:498
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Skrij vsote"
+msgstr "Skrij pospeševanja"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 00:47+0000\n"
-"PO-Revision-Date: 2023-05-11 10:00+0200\n"
+"PO-Revision-Date: 2023-05-15 12:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: abstractaccount.cpp:428
 #, kde-format
@@ -90,12 +90,12 @@ msgstr "Volgen"
 #: content/ui/AccountInfo.qml:140
 #, kde-format
 msgid "Stop notifying me when %1 posts"
-msgstr "Mij melden stoppen bij %1 posts"
+msgstr "Mij melden stoppen bij %1 berichten"
 
 #: content/ui/AccountInfo.qml:142
 #, kde-format
 msgid "Notify me when %1 posts"
-msgstr "Mij melden bij %1 posts"
+msgstr "Mij melden bij %1 berichten"
 
 #: content/ui/AccountInfo.qml:159
 #, kde-format
@@ -179,52 +179,46 @@ msgid "Click to add a note"
 msgstr "Klik om notitie toe te voegen"
 
 #: content/ui/AccountInfo.qml:427
-#, fuzzy, kde-format
-#| msgid "%1 posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
-msgstr "%1 berichten"
+msgstr "<b>%1</b> berichten"
 
 #: content/ui/AccountInfo.qml:439
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
-msgstr "%1 volgers"
+msgstr "<b>%1</b> volgers"
 
 #: content/ui/AccountInfo.qml:451
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
-msgstr "%1 wordt gevolgd"
+msgstr "<b>%1</b> wordt gevolgd"
 
 #: content/ui/AccountInfo.qml:463
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Posten"
+msgstr "Berichten"
 
 #: content/ui/AccountInfo.qml:467
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Berichten && antwoorden"
 
 #: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Media"
 
 #: content/ui/AccountInfo.qml:498
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Totalen verbergen"
+msgstr "Oppeppers verbergen"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -294,7 +288,7 @@ msgstr "Toot"
 #: content/ui/ExplorePage.qml:84
 #, kde-format
 msgid "No Posts"
-msgstr "Geen posten"
+msgstr "Geen berichten"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
@@ -401,7 +395,7 @@ msgstr "Zoeken"
 #: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
-msgstr "Posten"
+msgstr "Bericht"
 
 #: content/ui/NotificationPage.qml:37
 #, kde-format
@@ -463,7 +457,7 @@ msgstr "Geen zoekresultaten"
 #: content/ui/SearchView.qml:49
 #, kde-format
 msgid "Search for peoples, tags and posts"
-msgstr "Zoeken naar mensen, tags en posts"
+msgstr "Zoeken naar mensen, tags en berichten"
 
 #: content/ui/Settings/AccountsCard.qml:24
 #, kde-format
@@ -488,7 +482,7 @@ msgstr "Algemeen"
 #: content/ui/Settings/GeneralCard.qml:24
 #, kde-format
 msgid "Show detailed statistics about posts"
-msgstr "Gedetailleerde statistieken tonen over posten"
+msgstr "Gedetailleerde statistieken tonen over berichten"
 
 #: content/ui/Settings/GeneralCard.qml:37
 #, kde-format
@@ -625,22 +619,22 @@ msgstr "Standaard privacystatus"
 #: content/ui/Settings/ProfileEditor.qml:278
 #, kde-format
 msgid "Public post"
-msgstr "Publieke post"
+msgstr "Publiek bericht"
 
 #: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "Unlisted post"
-msgstr "Post niet in de lijst"
+msgstr "Bericht niet in de lijst"
 
 #: content/ui/Settings/ProfileEditor.qml:286
 #, kde-format
 msgid "Followers-only post"
-msgstr "Post van alleen volgers"
+msgstr "Bericht van alleen volgers"
 
 #: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Direct post"
-msgstr "Directe post"
+msgstr "Direct bericht"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
@@ -852,22 +846,22 @@ msgstr "Telling van de stemmen verbergen totdat de peiling eindigt"
 #: content/ui/StatusComposer/StatusComposer.qml:45
 #, kde-format
 msgid "Edit this post"
-msgstr "Deze post bewerken"
+msgstr "Dit bericht bewerken"
 
 #: content/ui/StatusComposer/StatusComposer.qml:47
 #, kde-format
 msgid "Reply to this post"
-msgstr "Op deze post antwoorden"
+msgstr "Op dit bericht antwoorden"
 
 #: content/ui/StatusComposer/StatusComposer.qml:49
 #, kde-format
 msgid "Rewrite this post"
-msgstr "Deze post herschrijven"
+msgstr "Dit bericht herschrijven"
 
 #: content/ui/StatusComposer/StatusComposer.qml:51
 #, kde-format
 msgid "Write a new post"
-msgstr "Een nieuwe post schrijven"
+msgstr "Een nieuw bericht schrijven"
 
 #: content/ui/StatusComposer/StatusComposer.qml:93
 #: content/ui/StatusComposer/StatusComposer.qml:277
@@ -931,13 +925,13 @@ msgstr "cw"
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
-msgstr "De taal selecteren waarin de post is geschreven"
+msgstr "De taal selecteren waarin het bericht is geschreven"
 
 #: content/ui/StatusComposer/StatusComposer.qml:290
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
-msgstr "Taal van post"
+msgstr "Taal van bericht"
 
 #: content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
@@ -985,7 +979,7 @@ msgstr "Koppeling naar bericht kopiëren"
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Post link copied."
-msgstr "Koppeling naar post gekopieerd."
+msgstr "Koppeling naar bericht gekopieerd."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:47
 #: content/ui/StatusDelegate/StatusDelegate.qml:400
@@ -1037,7 +1031,7 @@ msgstr "%1 vond uw bericht de favoriet"
 #: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
-msgstr "%1 heeft uw post bewerkt"
+msgstr "%1 heeft uw bericht bewerkt"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
@@ -1128,7 +1122,7 @@ msgstr "via %1"
 #: content/ui/TimelinePage.qml:110
 #, kde-format
 msgid "No posts"
-msgstr "Geen posten"
+msgstr "Geen berichten"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
