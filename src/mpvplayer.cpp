@@ -113,6 +113,25 @@ MpvPlayer::MpvPlayer(QQuickItem *parent)
     // enable console output
     mpv_set_option_string(mpv, "terminal", "yes");
 
+    // don't load user scripts or configs
+    mpv_set_option_string(mpv, "config", "no");
+    mpv_set_option_string(mpv, "load-scripts", "no");
+
+    // force vo to libmpv (which it should be set to anyway)
+    mpv_set_option_string(mpv, "vo", "libmpv");
+
+    // use safe hardware acceleration
+    mpv_set_option_string(mpv, "hwdec", "auto-safe");
+
+    // disable OSD and fonts
+    mpv_set_option_string(mpv, "osd-level", "0");
+    mpv_set_option_string(mpv, "embeddedfonts", "no");
+
+    // disable input
+    mpv_set_option_string(mpv, "input-builtin-bindings", "no");
+    mpv_set_option_string(mpv, "input-default-bindings", "no");
+    mpv_set_option_string(mpv, "input-vo-keyboard", "no");
+
     if (mpv_initialize(mpv) < 0)
         throw std::runtime_error("could not initialize mpv context");
 
