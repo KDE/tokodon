@@ -28,7 +28,7 @@ QQC2.Control {
     readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
 
     property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
-    signal userSensitivityChanged()
+    signal userSensitivityChanged(hide: bool)
 
     property bool hasValidAttachment: {
         for (let i in root.attachments) {
@@ -101,6 +101,7 @@ QQC2.Control {
                                 onClicked: {
                                     if (root.isSensitive) {
                                         root.isSensitive = false;
+                                        root.userSensitivityChanged(false);
                                     } else {
                                         Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
                                     }
@@ -147,6 +148,7 @@ QQC2.Control {
                             anchors.fill: parent
                             onClicked: if (root.isSensitive) {
                                 root.isSensitive = false;
+                                root.userSensitivityChanged(false);
                             } else {
                                 video.togglePlayPause()
                             }
@@ -161,8 +163,12 @@ QQC2.Control {
                                     video.play();
                                 }
                             }
-                            function onUserSensitivityChanged() {
-                                video.pause()
+                            function onUserSensitivityChanged(hide) {
+                                if (hide) {
+                                    video.pause()
+                                } else if (video.autoPlay) {
+                                    video.play()
+                                }
                             }
                         }
                     }
@@ -191,6 +197,7 @@ QQC2.Control {
                             anchors.fill: parent
                             onClicked: if (root.isSensitive) {
                                 root.isSensitive = false;
+                                root.userSensitivityChanged(false);
                             } else {
                                 video.togglePlayPause()
                             }
@@ -203,7 +210,7 @@ QQC2.Control {
                                     video.pause();
                                 }
                             }
-                            function onUserSensitivityChanged() {
+                            function onUserSensitivityChanged(hide) {
                                 video.pause()
                             }
                         }
@@ -225,7 +232,7 @@ QQC2.Control {
 
         onClicked: {
             root.isSensitive = true
-            root.userSensitivityChanged()
+            root.userSensitivityChanged(true)
         }
     }
 
@@ -240,6 +247,7 @@ QQC2.Control {
         text: i18n("Media Hidden")
         onClicked: if (root.isSensitive) {
             root.isSensitive = false;
+            root.userSensitivityChanged(false);
         } else {
             Navigation.openFullScreenImage(root.attachments, root.identity, 0);
         }
