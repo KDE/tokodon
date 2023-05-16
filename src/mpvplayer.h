@@ -76,11 +76,12 @@ private Q_SLOTS:
     void doUpdate();
 
 private:
-    bool m_paused = false;
+    bool m_paused = true;
     qreal m_position = 0;
     qreal m_duration = 0;
     QSize m_sourceSize;
     QString m_source;
+    QString m_currentSource;
     bool m_loading = true;
     bool m_looping = false;
     bool m_autoPlay = false;

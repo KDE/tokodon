@@ -202,10 +202,8 @@ void MpvPlayer::setSource(const QString &source)
 
     m_source = source;
 
-    command(QStringList{QStringLiteral("loadfile"), source});
-
-    if (!m_autoPlay) {
-        pause();
+    if (m_autoPlay) {
+        play();
     }
 
     Q_EMIT sourceChanged();
@@ -239,7 +237,19 @@ void MpvPlayer::play()
     if (!paused()) {
         return;
     }
+
+    // setSource doesn't actually load the file into MPV, because the player is always created
+    // regardless of autoPlay. This incurs a very visible overhead in the UI, so we want to delay
+    // the loadfile command until the last possible moment (when the user requests to play it).
+    if (m_currentSource != m_source) {
+        command(QStringList{QStringLiteral("loadfile"), m_source});
+
+        m_currentSource = m_source;
+    }
+
+    m_paused = false;
     setProperty("pause", false);
+
     Q_EMIT pausedChanged();
 }
 
@@ -341,8 +351,11 @@ void MpvPlayer::onMpvEvents()
                 }
             } else if (strcmp(prop->name, "pause") == 0) {
                 if (prop->format == MPV_FORMAT_FLAG) {
-                    m_paused = *(bool *)prop->data;
-                    Q_EMIT pausedChanged();
+                    // pause is expected to be false if there's no currently loaded media, so skip it
+                    if (!m_currentSource.isEmpty()) {
+                        m_paused = *(bool *)prop->data;
+                        Q_EMIT pausedChanged();
+                    }
                 }
             }
             break;
