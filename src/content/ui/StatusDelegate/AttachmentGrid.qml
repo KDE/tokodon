@@ -141,13 +141,14 @@ QQC2.Control {
                         autoPlay: Config.autoPlayGif
                         isSensitive: root.isSensitive
                         showControls: false
+                        looping: true
 
                         MouseArea {
                             anchors.fill: parent
                             onClicked: if (root.isSensitive) {
                                 root.isSensitive = false;
                             } else {
-                                Navigation.openFullScreenImage(root.attachments, root.identity, parent.index);
+                                video.togglePlayPause()
                             }
                         }
 
@@ -184,6 +185,16 @@ QQC2.Control {
                         previewUrl: modelData.previewUrl
                         autoPlay: false
                         isSensitive: root.isSensitive
+                        looping: false
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: if (root.isSensitive) {
+                                root.isSensitive = false;
+                            } else {
+                                video.togglePlayPause()
+                            }
+                        }
 
                         Connections {
                             target: root

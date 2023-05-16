@@ -23,6 +23,7 @@ MediaContainer {
     required property bool autoPlay
     required property bool isSensitive
     property alias showControls: mediaControls.visible
+    property alias looping: player.looping
 
     function pause() {
         player.pause();
@@ -32,21 +33,21 @@ MediaContainer {
         player.play();
     }
 
+    function togglePlayPause() {
+        console.log("toggling playpause()")
+        if (player.paused) {
+            player.play();
+        } else {
+            player.pause();
+        }
+    }
+
     MpvPlayer {
         id: player
         anchors.fill: parent
 
         autoPlay: root.autoPlay
         source: root.videoUrl
-        looping: true
-
-        function togglePlayPause() {
-            if (!paused) {
-                pause();
-            } else {
-                play();
-            }
-        }
     }
 
     Image {
@@ -72,7 +73,7 @@ MediaContainer {
         hoverEnabled: true
         anchors.fill: parent
 
-        onClicked: player.togglePlayPause()
+        onClicked: root.togglePlayPause()
     }
 
     Rectangle {
@@ -113,7 +114,7 @@ MediaContainer {
 
                 icon.name: player.paused ? "media-playback-start" : "media-playback-pause"
 
-                onClicked: player.togglePlayPause()
+                onClicked: root.togglePlayPause()
             }
 
             QQC2.Slider {
