@@ -136,6 +136,8 @@ Kirigami.ScrollablePage {
                 function onIsCurrentPageChanged() {
                     if (!root.isCurrentPage) {
                         status.inViewPort = false
+                    } else {
+                        listview.onContentYChanged()
                     }
                 }
             }
