@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "admin/adminaccountinfo.h"
 #include "identity.h"
 #include "timeline/post.h"
 #include "preferences.h"
@@ -105,6 +106,9 @@ public:
 
     /// Checks if the accountId exists in the account's identity cache
     bool identityCached(const QString &accountId) const;
+
+    /// Get identity of the admin::account
+    std::shared_ptr<AdminAccountInfo> adminIdentityLookup(const QString &accountId, const QJsonObject &doc);
 
     /// Invalidates the account
     void invalidate();
@@ -337,6 +341,7 @@ protected:
     size_t m_charactersReservedPerUrl;
     QString m_instance_name;
     std::shared_ptr<Identity> m_identity;
+    std::shared_ptr<AdminAccountInfo> m_adminIdentity;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
 
@@ -349,6 +354,7 @@ protected:
 
     void mutatePost(Post *p, const QString &verb, bool deliver_home = false);
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
+    QMap<QString, std::shared_ptr<AdminAccountInfo>> m_adminIdentityCache;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 };

@@ -106,7 +106,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QJsonObject obj = {
         {"client_name", appName},
         {"redirect_uris", "urn:ietf:wg:oauth:2.0:oob"},
-        {"scopes", "read write follow"},
+        {"scopes", "read write follow admin:read admin:write"},
         {"website", website},
     };
     const QJsonDocument doc(obj);
@@ -154,6 +154,24 @@ std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &account
     return m_identityCache[accountId];
 }
 
+std::shared_ptr<AdminAccountInfo> AbstractAccount::adminIdentityLookup(const QString &accountId, const QJsonObject &doc)
+{
+    if (m_adminIdentity && m_adminIdentity->userLevelIdentity()->id() == accountId) {
+        return m_adminIdentity;
+    }
+    auto id = m_adminIdentityCache[accountId];
+    if (id && id->userLevelIdentity()->id() == accountId) {
+        return id;
+    }
+
+    id = std::make_shared<AdminAccountInfo>();
+    id->reparentAdminAccountInfo(this);
+    id->fromSourceData(doc);
+    m_adminIdentityCache[accountId] = id;
+
+    return m_adminIdentityCache[accountId];
+}
+
 bool AbstractAccount::identityCached(const QString &accountId) const
 {
     if (m_identity && m_identity->id() == accountId) {
@@ -175,7 +193,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
     q.addQueryItem("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
     q.addQueryItem("response_type", "code");
-    q.addQueryItem("scope", "read write follow");
+    q.addQueryItem("scope", "read write follow admin:read admin:write");
 
     url.setQuery(q);
 

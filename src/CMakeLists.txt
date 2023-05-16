@@ -20,7 +20,6 @@ ecm_qt_declare_logging_category(tokodon_static
     EXPORT TOKODON
 )
 
-
 target_sources(tokodon_static
 PRIVATE
     # Account
@@ -109,6 +108,10 @@ PRIVATE
     network/networkaccessmanagerfactory.h
     network/networkcontroller.cpp
     network/networkcontroller.h
+
+    # Admin
+    admin/accounttoolmodel.cpp
+    admin/adminaccountinfo.cpp
 )
 
 if(NOT ANDROID)

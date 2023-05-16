@@ -12,18 +12,20 @@ RowLayout {
 
     required property var identity
     required property bool secondary
+    property bool admin: false
+    property string ip
 
     Layout.fillWidth: true
     spacing: Kirigami.Units.largeSpacing
 
     Kirigami.Avatar {
-        Layout.alignment: Qt.AlignTop
+        Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.rowSpan: 5
         source: root.identity.avatarUrl
         cache: true
         actions.main: Kirigami.Action {
             tooltip: i18n("View profile")
-            onTriggered: Navigation.openAccount(root.identity.id)
+            onTriggered: !admin && Navigation.openAccount(root.identity.id)
         }
         name: root.identity.displayName
     }
@@ -57,6 +59,15 @@ RowLayout {
             color: Kirigami.Theme.disabledTextColor
             text: `@${root.identity.account}`
             verticalAlignment: Text.AlignTop
+        }
+        Kirigami.Heading {
+            id: emailHeading
+            level: 4
+            text: root.ip ? root.ip : ""
+            visible: admin && root.ip
+            type: Kirigami.Heading.Type.Secondary
+            verticalAlignment: Text.AlignTop
+            elide: Text.ElideRight
         }
     }
 }

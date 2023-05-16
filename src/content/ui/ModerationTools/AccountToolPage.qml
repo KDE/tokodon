@@ -1,0 +1,298 @@
+// SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
+// SPDX-License-Identifier: GPL-3.0-only
+
+import QtQuick 2.15
+import org.kde.kirigami 2.19 as Kirigami
+import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts 1.15
+import org.kde.kmasto 1.0
+
+import "../StatusDelegate"
+
+Kirigami.ScrollablePage {
+    title: i18n("Accounts Tool Page")
+
+    function reset() {
+        username.text = ""
+        displayName.text = ""
+        email.text = ""
+        ip.text = ""
+        accountView.model.username = ""
+        accountView.model.displayName = ""
+        accountView.model.email = ""
+        accountView.model.ip = ""
+    }
+
+    Kirigami.PromptDialog {
+        id: textPromptDialog
+        title: i18n("Advanced Search")
+        mainItem: Kirigami.FormLayout {
+            QQC2.TextField {
+                id: username
+                placeholderText: i18nc("@info:placeholder Username for searching accounts", "Username")
+            }
+            QQC2.TextField {
+                id: displayName
+                placeholderText: i18nc("@info:placeholder display name for searching accounts", "Display Name")
+            }
+            QQC2.TextField {
+                id: email
+                placeholderText: i18nc("@info:placeholder email for searching accounts", "Email")
+            }
+            QQC2.TextField {
+                id: ip
+                placeholderText: i18nc("@info:placeholder ip for searching accounts", "IP")
+            }
+        }
+
+        standardButtons: Kirigami.Dialog.NoButton
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@info:Search button to initiate searching accounts", "Search")
+                icon.name: "search"
+                onTriggered: {
+                    accountView.model.username = username.text
+                    accountView.model.displayName = displayName.text
+                    accountView.model.email = email.text
+                    accountView.model.ip = ip.text
+                    textPromptDialog.close();
+                }
+            },
+            Kirigami.Action {
+                text: i18nc("@info:Reset button to reset all the text fields", "Reset")
+                icon.name: "edit-clear"
+                onTriggered: reset()
+            },
+            Kirigami.Action {
+                text: i18nc("@info:Cancel button to close the dailog", "Cancel")
+                icon.name: "dialog-cancel"
+                onTriggered: textPromptDialog.close();
+
+            }
+        ]
+
+    }
+
+    header: ColumnLayout {
+        
+        RowLayout {
+            id: filterOptions
+            spacing: Kirigami.Units.largeSpacing
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            ColumnLayout {
+                Kirigami.Heading {
+                    level: 4
+                    text: i18nc("@info:Location combobox to choose location filters", "Location")
+                    type: Kirigami.Heading.Type.Primary
+                    elide: Text.ElideRight
+                    horizontalAlignment: Text.AlignHCenter
+                    Layout.fillWidth: true
+                }
+                QQC2.ComboBox {
+                    Layout.fillWidth: true
+                    id: locationCombobox
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    model: [
+                        {
+                            display: i18nc("@info:Filter out accounts from any location", "All"),
+                            value: ""
+                        },
+                        {
+                            display: i18nc("@info:Filter out local accounts", "Local"),
+                            value: "local"
+                        },
+                        {
+                            display: i18nc("@info:Filter out remote accounts", "Remote"),
+                            value: "remote"
+                        },
+                    ]
+                    textRole: "display"
+                    valueRole: "value"
+                    Component.onCompleted: locationCombobox.currentIndex = locationCombobox.indexOfValue(accountView.model.location);
+                    onCurrentIndexChanged: accountView.model.location = model[currentIndex].value
+                }
+            }
+
+            ColumnLayout {
+                Kirigami.Heading {
+                    level: 4
+                    text: i18nc("@info:Moderation Status combobox to choose between different moderation status filters", "Moderation Status")
+                    type: Kirigami.Heading.Type.Primary
+                    horizontalAlignment: Text.AlignHCenter
+                    elide: Text.ElideRight
+                    Layout.fillWidth: true
+                }
+                QQC2.ComboBox {
+                    Layout.fillWidth: true
+                    id: moderationStatusCombobox
+                    model: [
+                        {
+                            display: i18nc("@info:Filter out accounts with any moderation status", "All"),
+                            value: ""
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with active moderation status", "Active"),
+                            value: "active"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with pending moderation status", "Pending"),
+                            value: "pending"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with disabled moderation status", "Disabled"),
+                            value: "disabled"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with silenced moderation status", "Silenced"),
+                            value: "silenced"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with suspended moderation status", "Suspended"),
+                            value: "suspended"
+                        }
+                    ]
+                    textRole: "display"
+                    valueRole: "value"
+                    Component.onCompleted: moderationStatusCombobox.currentIndex = moderationStatusCombobox.indexOfValue(accountView.model.moderationStatus);
+                    onCurrentIndexChanged: accountView.model.moderationStatus = model[currentIndex].value
+                }
+            }
+            ColumnLayout {
+                Kirigami.Heading {
+                    level: 4
+                    text: i18nc("@info:Role combobox to choose between different role filters", "Role")
+                    type: Kirigami.Heading.Type.Primary
+                    horizontalAlignment: Text.AlignHCenter
+                    elide: Text.ElideRight
+                    Layout.fillWidth: true
+                }
+                QQC2.ComboBox {
+                    Layout.fillWidth: true
+                    id: roleCombobox
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    model: [
+                        ///todo: Dynamically fetch the roles
+                        {
+                            display: i18nc("@info:Filter out accounts with any role", "All"),
+                            value: ""
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with moderator role", "Moderator"),
+                            value: "1"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with admin role", "Admin"),
+                            value: "2"
+                        },
+                        {
+                            display: i18nc("@info:Filter out accounts with owner role", "Owner"),
+                            value: "3"
+                        },
+                    ]
+                    textRole: "display"
+                    valueRole: "value"
+                    Component.onCompleted: roleCombobox.currentIndex = roleCombobox.indexOfValue(accountView.model.role);
+                    onCurrentIndexChanged: accountView.model.role = model[currentIndex].value
+                }
+            }
+        }
+        QQC2.Button {
+            icon.name: "search"
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            text: i18n("Advanced Search")
+            Layout.alignment: Qt.AlignHCenter
+            onClicked: textPromptDialog.open()
+        }
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+    }
+
+    ListView {
+        id: accountView
+        model: AccountsToolModel{}
+
+        delegate: QQC2.ItemDelegate {
+            id: delegate
+
+            required property var index
+            required property var identity
+
+            width: ListView.view.width
+
+            onClicked: applicationWindow().pageStack.layers.push("./MainAccountToolPage.qml", {
+                identity: delegate.identity,
+                index: delegate.index,
+                model: accountView.model
+                },
+            )
+
+            contentItem: Kirigami.FlexColumn {
+                spacing: 0
+                maximumWidth: Kirigami.Units.gridLayout * 40
+                RowLayout {
+                    spacing: 0
+                    Layout.fillWidth: true
+                    InlineIdentityInfo {
+                        identity: delegate.identity.userLevelIdentity
+                        secondary: false
+                        admin: true
+                        ip: delegate.identity.ip
+                    }
+                    ColumnLayout {
+                        spacing: 0
+                        Kirigami.Heading {
+                            level: 4
+                            Layout.alignment: Qt.AlignRight
+                            text: delegate.identity.userLevelIdentity.statusesCount + " Posts"
+                            type: Kirigami.Heading.Type.Secondary
+                            elide: Text.ElideRight
+                        }
+                        Kirigami.Heading {
+                            level: 4
+                            Layout.alignment: Qt.AlignRight
+                            text: delegate.identity.userLevelIdentity.followersCount + " Followers"
+                            type: Kirigami.Heading.Type.Secondary
+                            elide: Text.ElideRight
+                        }
+                        Kirigami.Heading {
+                            id: emailHeading
+                            level: 4
+                            Layout.alignment: Qt.AlignRight
+                            text: delegate.identity.emailProvider
+                            visible: delegate.identity.emailProvider
+                            type: Kirigami.Heading.Type.Secondary
+                            elide: Text.ElideRight
+                        }
+                    }
+                }
+                QQC2.ProgressBar {
+                    visible: accountView.model.loading && (index == accountView.count - 1)
+                    indeterminate: true
+                    padding: Kirigami.Units.largeSpacing * 2
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+            }
+        }
+        QQC2.ProgressBar {
+            visible: accountView.model.loading && accountView.count === 0
+            anchors.centerIn: parent
+            indeterminate: true
+        }
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No accounts found")
+            visible: accountView.count === 0 && !accountView.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
+        }
+    }
+}
+
+

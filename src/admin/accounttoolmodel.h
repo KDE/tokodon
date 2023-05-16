@@ -1,0 +1,138 @@
+// SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+#pragma once
+
+#include "account/abstractaccount.h"
+#include "account/identity.h"
+#include <QAbstractListModel>
+#include <QUrl>
+#include <QUrlQuery>
+#include <memory>
+
+class AdminAccountInfo;
+
+class AccountsToolModel : public QAbstractListModel
+{
+    Q_OBJECT
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+    /// This property holds the "Location" value of account tool.
+    Q_PROPERTY(QString location READ location WRITE setLocation NOTIFY locationChanged)
+    /// This property holds the "moderation Status" value of account tool.
+    Q_PROPERTY(QString moderationStatus READ moderationStatus WRITE setModerationStatus NOTIFY moderationStatusChanged)
+    /// This property holds the "Role" value of account tool.
+    Q_PROPERTY(QString role READ role WRITE setRole NOTIFY roleChanged)
+    /// This property holds the "username" value of account tool.
+    Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
+    /// This property holds the "displayName" value of account tool.
+    Q_PROPERTY(QString displayName READ displayName WRITE setDisplayName NOTIFY displayNameChanged)
+    /// This property holds the "email" value of account tool.
+    Q_PROPERTY(QString email READ email WRITE setEmail NOTIFY emailChanged)
+    /// This property holds the "ip" value of account tool.
+    Q_PROPERTY(QString ip READ ip WRITE setIp NOTIFY ipChanged)
+    /// This property holds the position value of the current account which is logged in
+    Q_PROPERTY(int selectedAccountPosition READ selectedAccountPosition CONSTANT)
+
+public:
+    enum CustomRoles {
+        IdentityRole = Qt::UserRole + 1,
+    };
+
+    // think about delete implementation
+    enum AdminAccountAction {
+        ApproveAccount,
+        RejectAccount,
+        ActionAgainstAccount,
+        EnableDisabledAccount,
+        UnsilenceAccount,
+        UnsuspendAccount,
+        UnmarkSensitiveAccount,
+    };
+
+    explicit AccountsToolModel(QObject *parent = nullptr);
+
+    QVariant data(const QModelIndex &index, int role) const override;
+    int rowCount(const QModelIndex &parent) const override;
+    QHash<int, QByteArray> roleNames() const override;
+
+    bool loading() const;
+    void setLoading(bool loading);
+
+    QUrlQuery buildQuery() const;
+
+    // location
+    QString location() const;
+    void setLocation(const QString &location);
+
+    // moderation status
+    QString moderationStatus() const;
+    void setModerationStatus(const QString &moderationStatus);
+
+    // role
+    QString role() const;
+    void setRole(const QString &role);
+
+    // UserName
+    QString username() const;
+    void setUsername(const QString &username);
+
+    // displayName
+    QString displayName() const;
+    void setDisplayName(const QString &displayName);
+
+    // email
+    QString email() const;
+    void setEmail(const QString &email);
+
+    // ip
+    QString ip() const;
+    void setIp(const QString &role);
+
+    int selectedAccountPosition() const;
+
+    // clearing and relaoding the model
+    void clear();
+    // delete account data
+    Q_INVOKABLE void deleteAccountData(const int row);
+
+    Q_INVOKABLE void approveAccount(const int row);
+    Q_INVOKABLE void rejectAccount(const int row);
+    Q_INVOKABLE void enableAccount(const int row);
+    Q_INVOKABLE void unsilenceAccount(const int row);
+    Q_INVOKABLE void unsuspendAccount(const int row);
+    Q_INVOKABLE void unsensitiveAccount(const int row);
+    Q_INVOKABLE void actionAgainstAccount(const int row, const QString &type, const bool &emailWarning, const QString &note);
+
+Q_SIGNALS:
+    void loadingChanged();
+    void locationChanged();
+    void moderationStatusChanged();
+    void roleChanged();
+    void usernameChanged();
+    void displayNameChanged();
+    void emailChanged();
+    void ipChanged();
+
+protected:
+    void fetchSelectedAccountPosition();
+    void fetchMore(const QModelIndex &parent) override;
+    bool canFetchMore(const QModelIndex &parent) const override;
+    void executeAdminAction(const int row, AdminAccountAction accountAction, const QJsonObject &extraArguments = {});
+
+private:
+    void fillTimeline();
+
+    QList<std::shared_ptr<AdminAccountInfo>> m_accounts;
+    bool m_loading = false;
+    bool m_pagination = true;
+
+    QString m_username;
+    QString m_displayName;
+    QString m_email;
+    QString m_ip;
+    QString m_location;
+    QString m_moderationStatus;
+    QString m_role;
+    QUrl m_next;
+    int m_selectedAccountPosition;
+};

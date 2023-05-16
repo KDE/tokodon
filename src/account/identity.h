@@ -30,6 +30,7 @@ class Identity : public QObject
     Q_PROPERTY(int followersCount READ followersCount NOTIFY identityUpdated)
     Q_PROPERTY(int followingCount READ followingCount NOTIFY identityUpdated)
     Q_PROPERTY(int statusesCount READ statusesCount NOTIFY identityUpdated)
+    Q_PROPERTY(int permission READ permission NOTIFY identityUpdated)
     Q_PROPERTY(QJsonArray fields READ fields NOTIFY identityUpdated)
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
@@ -48,6 +49,7 @@ public:
     int followersCount() const;
     int followingCount() const;
     int statusesCount() const;
+    int permission() const;
     QJsonArray fields() const;
 
     void fromSourceData(const QJsonObject &doc);
@@ -77,6 +79,7 @@ private:
     int m_followersCount;
     int m_followingCount;
     int m_statusesCount;
+    int m_permission;
     Relationship *m_relationship = nullptr;
     AbstractAccount *m_parent = nullptr;
 };

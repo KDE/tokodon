@@ -35,6 +35,8 @@
 #include "account/accountmanager.h"
 #include "account/profileeditor.h"
 #include "account/socialgraphmodel.h"
+#include "admin/accounttoolmodel.h"
+#include "admin/adminaccountinfo.h"
 #include "config.h"
 #include "conversation/conversationmodel.h"
 #include "editor/attachmenteditormodel.h"
@@ -154,6 +156,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "MainTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
+    qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
@@ -171,6 +174,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<Account *>("Account*");
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
+    qRegisterMetaType<AdminAccountInfo *>("AdminAccountInfo*");
     qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
     qRegisterMetaType<Post *>("Post*");
     qRegisterMetaType<Poll *>("Poll*");
@@ -179,6 +183,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
+    qmlRegisterUncreatableType<AdminAccountInfo>("org.kde.kmasto", 1, 0, "AdminAccountInfo", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
