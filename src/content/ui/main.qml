@@ -22,7 +22,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
 
     pageStack {
-        defaultColumnWidth: Kirigami.Units.gridUnit * 30
+        defaultColumnWidth: appwindow.width - drawer.width
 
         globalToolBar {
             canContainHandles: true
