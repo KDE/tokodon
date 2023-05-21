@@ -6,6 +6,8 @@
 
 #include "timelinemodel.h"
 
+/// Model for displaying and organizing post threads
+/// \see TimelineModel
 class ThreadModel : public TimelineModel
 {
     Q_OBJECT
@@ -15,8 +17,14 @@ class ThreadModel : public TimelineModel
 public:
     explicit ThreadModel(QObject *parent = nullptr);
 
+    /// The post id of the "root" post of the thread
+    /// \see setPostId
     QString postId() const;
+
+    /// Set the post id of the "root" post of the thread
+    /// \see postId
     void setPostId(const QString &postId);
+
     QVariant data(const QModelIndex &index, int role) const override;
 
     QString displayName() const override;
