@@ -67,7 +67,7 @@ size_t AbstractAccount::charactersReservedPerUrl() const
 
 QString AbstractAccount::instanceName() const
 {
-    return QString(m_instance_name);
+    return m_instance_name;
 }
 
 bool AbstractAccount::haveToken() const
@@ -199,7 +199,7 @@ void AbstractAccount::setInstanceUri(const QString &instance_uri)
 
 QString AbstractAccount::instanceUri() const
 {
-    return QString(m_instance_uri);
+    return m_instance_uri;
 }
 
 void AbstractAccount::setToken(const QString &authcode)
