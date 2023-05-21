@@ -31,7 +31,7 @@ class Application
 
 public:
     Application() = default;
-    Application(QJsonObject application);
+    explicit Application(QJsonObject application);
 
     QString name() const;
     QUrl website() const;
@@ -59,7 +59,7 @@ class Card
 
 public:
     Card() = default;
-    Card(QJsonObject card);
+    explicit Card(QJsonObject card);
 
     QString authorName() const;
     QString authorUrl() const;
@@ -192,7 +192,7 @@ class Post : public QObject
 public:
     Post() = delete;
     Post(const Post &) = delete;
-    Post(AbstractAccount *account, QObject *parent = nullptr);
+    explicit Post(AbstractAccount *account, QObject *parent = nullptr);
     Post(AbstractAccount *account, QJsonObject obj, QObject *parent = nullptr);
 
     enum Visibility {

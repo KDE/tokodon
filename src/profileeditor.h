@@ -51,7 +51,7 @@ class ProfileEditorBackend : public QObject
 
 public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
-    ~ProfileEditorBackend();
+    ~ProfileEditorBackend() override;
 
     AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);

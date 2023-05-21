@@ -32,7 +32,7 @@ class PostEditorBackend : public QObject
 
 public:
     explicit PostEditorBackend(QObject *parent = nullptr);
-    ~PostEditorBackend();
+    ~PostEditorBackend() override;
 
     QString id() const;
     void setId(const QString &id);

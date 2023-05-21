@@ -17,7 +17,7 @@ class PollEditorBackend : public QObject
     Q_PROPERTY(int expiresIn MEMBER m_expiresIn NOTIFY expiresInChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY validityChanged)
 public:
-    PollEditorBackend(QObject *parent = nullptr);
+    explicit PollEditorBackend(QObject *parent = nullptr);
 
     Q_INVOKABLE void addOption();
     Q_INVOKABLE void removeOption(int index);

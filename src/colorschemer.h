@@ -13,8 +13,7 @@ class ColorSchemer : public QObject
     Q_OBJECT
     Q_PROPERTY(QAbstractItemModel *model READ model CONSTANT)
 public:
-    ColorSchemer(QObject *parent = nullptr);
-    ~ColorSchemer();
+    explicit ColorSchemer(QObject *parent = nullptr);
 
     QAbstractItemModel *model() const;
     Q_INVOKABLE void apply(int idx);

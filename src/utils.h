@@ -13,7 +13,7 @@ template<typename T>
 class asKeyValueRange
 {
 public:
-    asKeyValueRange(T &data)
+    explicit asKeyValueRange(T &data)
         : m_data{data}
     {
     }

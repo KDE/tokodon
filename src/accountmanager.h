@@ -92,7 +92,7 @@ public Q_SLOTS:
 private:
     explicit AccountManager(QObject *parent = nullptr);
 
-    virtual ~AccountManager();
+    ~AccountManager() override;
 
     QList<AbstractAccount *> m_accounts;
     AbstractAccount *m_selected_account;

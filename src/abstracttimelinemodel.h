@@ -72,7 +72,7 @@ public:
         ExtraRole, ///< Base role for sub-class roles
     };
 
-    AbstractTimelineModel(QObject *parent = nullptr);
+    explicit AbstractTimelineModel(QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
 

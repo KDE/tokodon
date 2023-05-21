@@ -10,7 +10,7 @@ class FileHelper : public QObject
 
 public:
     explicit FileHelper(QObject *parent = nullptr);
-    ~FileHelper();
+    ~FileHelper() override;
 
     Q_INVOKABLE void downloadFile(AbstractAccount *account, const QString &url, const QString &destination) const;
     Q_INVOKABLE QString url(const QUrl &url) const;

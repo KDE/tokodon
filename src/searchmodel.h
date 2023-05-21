@@ -38,7 +38,7 @@ public:
     Q_ENUM(ResultType);
 
     explicit SearchModel(QObject *parent = nullptr);
-    ~SearchModel();
+    ~SearchModel() override;
 
     /// Check if the search has finished loading
     /// \see setLoaded

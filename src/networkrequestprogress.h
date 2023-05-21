@@ -17,7 +17,7 @@ class NetworkRequestProgress : public QObject
     Q_PROPERTY(int progress READ progress NOTIFY progressChanged)
 
 public:
-    NetworkRequestProgress(QObject *parent = nullptr);
+    explicit NetworkRequestProgress(QObject *parent = nullptr);
 
     QNetworkReply *reply() const;
     void setReply(QNetworkReply *reply);

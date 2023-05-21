@@ -32,7 +32,7 @@ class Account : public AbstractAccount
 public:
     explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, QObject *parent = nullptr);
     explicit Account(const QSettings &settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
-    ~Account();
+    ~Account() override;
 
     // making API calls
     void get(const QUrl &url,

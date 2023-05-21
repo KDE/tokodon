@@ -32,7 +32,7 @@ public:
     Q_ENUM(ExtraRole)
 
     explicit ConversationModel(QObject *parent = nullptr);
-    ~ConversationModel();
+    ~ConversationModel() override;
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
