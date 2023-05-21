@@ -208,15 +208,6 @@ void NotificationModel::actionRepeat(const QModelIndex &index)
     AbstractTimelineModel::actionRepeat(index, post);
 }
 
-void NotificationModel::actionVis(const QModelIndex &index)
-{
-    const int row = index.row();
-    const auto p = m_notifications[row]->post();
-
-    p->setAttachmentsVisible(!p->attachmentsVisible());
-    Q_EMIT dataChanged(index, index);
-}
-
 void NotificationModel::actionRedraft(const QModelIndex &index, bool isEdit)
 {
     const int row = index.row();
