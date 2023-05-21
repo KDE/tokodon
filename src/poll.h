@@ -37,11 +37,11 @@ public:
 private:
     QString m_id;
     QDateTime m_expiresAt;
-    bool m_expired;
-    bool m_multiple;
-    int m_votesCount;
-    int m_votersCount;
-    bool m_voted;
+    bool m_expired = false;
+    bool m_multiple = false;
+    int m_votesCount = 0;
+    int m_votersCount = 0;
+    bool m_voted = false;
     QList<int> m_ownVotes;
     QList<QVariantMap> m_options;
 };

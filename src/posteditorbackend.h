@@ -111,7 +111,7 @@ private:
     bool m_sensitive = false;
     PollEditorBackend *m_poll = nullptr;
     bool m_pollEnabled = false;
-    Post::Visibility m_visibility;
+    Post::Visibility m_visibility = Post::Visibility::Public;
     AbstractAccount *m_account = nullptr;
     AttachmentEditorModel *m_attachmentEditorModel = nullptr;
 };

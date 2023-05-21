@@ -109,15 +109,15 @@ public:
     };
     Q_ENUM(AttachmentType);
 
-    Post *m_parent;
+    Post *m_parent = nullptr;
 
     QString m_id;
-    AttachmentType m_type;
+    AttachmentType m_type = AttachmentType::Unknown;
     QString m_preview_url;
     QString m_url;
     QString m_remote_url;
-    int m_originalWidth;
-    int m_originalHeight;
+    int m_originalWidth = -1;
+    int m_originalHeight = -1;
 
     QString id() const;
 
@@ -162,11 +162,11 @@ public:
     std::shared_ptr<Identity> identity() const;
 
 private:
-    int m_id;
+    int m_id = 0;
 
     AbstractAccount *m_account = nullptr;
     Post *m_post = nullptr;
-    Type m_type;
+    Type m_type = Type::Favorite;
     std::shared_ptr<Identity> m_identity;
 };
 
@@ -333,24 +333,24 @@ private:
     QQmlListProperty<Attachment> m_attachmentList;
     std::unique_ptr<Poll> m_poll;
 
-    bool m_sensitive;
+    bool m_sensitive = false;
     Visibility m_visibility;
 
-    bool m_boosted;
+    bool m_boosted = false;
     std::shared_ptr<Identity> m_boostIdentity;
 
     std::shared_ptr<Identity> m_replyIdentity;
 
-    bool m_favourited;
-    bool m_reblogged;
-    bool m_muted;
-    bool m_bookmarked;
-    bool m_filtered;
-    bool m_pinned;
+    bool m_favourited = false;
+    bool m_reblogged = false;
+    bool m_muted = false;
+    bool m_bookmarked = false;
+    bool m_filtered = false;
+    bool m_pinned = false;
 
-    int m_reblogsCount;
-    int m_favouritesCount;
-    int m_repliesCount;
+    int m_reblogsCount = 0;
+    int m_favouritesCount = 0;
+    int m_repliesCount = 0;
 };
 
 Q_DECLARE_METATYPE(Application)

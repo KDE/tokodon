@@ -73,16 +73,16 @@ Q_SIGNALS:
     void noteChanged();
 
 private:
-    bool m_following;
-    bool m_requested;
-    bool m_endorsed;
-    bool m_followedBy;
-    bool m_muting;
-    bool m_mutingNotifications;
-    bool m_showingReblogs;
-    bool m_notifying;
-    bool m_blocking;
-    bool m_domainBlocking;
-    bool m_blockedBy;
+    bool m_following = false;
+    bool m_requested = false;
+    bool m_endorsed = false;
+    bool m_followedBy = false;
+    bool m_muting = false;
+    bool m_mutingNotifications = false;
+    bool m_showingReblogs = false;
+    bool m_notifying = false;
+    bool m_blocking = false;
+    bool m_domainBlocking = false;
+    bool m_blockedBy = false;
     QString m_note;
 };
