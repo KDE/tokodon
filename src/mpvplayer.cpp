@@ -67,7 +67,9 @@ public:
     void render() override
     {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        obj->window()->resetOpenGLState();
+        if (obj->window() != nullptr) {
+            obj->window()->resetOpenGLState();
+        }
 #endif
 
         QOpenGLFramebufferObject *fbo = framebufferObject();
@@ -328,6 +330,10 @@ QVariant MpvPlayer::getProperty(const QString &name)
 
 QQuickFramebufferObject::Renderer *MpvPlayer::createRenderer() const
 {
+    if (window() == nullptr) {
+        return nullptr;
+    }
+
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     window()->setPersistentOpenGLContext(true);
 #endif
