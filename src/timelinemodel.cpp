@@ -176,16 +176,6 @@ void TimelineModel::actionRepeat(const QModelIndex &index)
     AbstractTimelineModel::actionRepeat(index, post);
 }
 
-void TimelineModel::actionVis(const QModelIndex &index)
-{
-    const int row = index.row();
-    const auto p = m_timeline[row];
-
-    p->setAttachmentsVisible(!p->attachmentsVisible());
-
-    Q_EMIT dataChanged(index, index);
-}
-
 void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choices)
 {
     const int row = index.row();
