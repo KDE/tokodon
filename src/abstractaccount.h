@@ -17,11 +17,13 @@ class QHttpMultiPart;
 class QFile;
 class Preferences;
 
+/// Represents an account, which could possibly be real or a mock for testing.
+/// Also handles most of the API work, and account actions.
 class AbstractAccount : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY nameChanged)
+    Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
 
     Q_PROPERTY(QString instanceUri READ instanceUri CONSTANT)
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
@@ -44,62 +46,110 @@ public:
 
     /// Get the oauth2 authorization url
     Q_INVOKABLE QUrl getAuthorizeUrl() const;
+
+    /// Get the oauth2 token url
     QUrl getTokenUrl() const;
+
+    /// Set the oauth2 token
     Q_INVOKABLE void setToken(const QString &authcode);
+
+    /// Check if the account has a token set
+    /// \see setToken
     bool haveToken() const;
+
+    /// Check if the account has a username yet
     bool hasName() const;
+
+    /// Check if the account has an instance uri set
     bool hasInstanceUrl() const;
+
+    /// Verifies the token with the instance and if successful, loads identity information for the account
     virtual void validateToken() = 0;
 
+    /// Returns the server-side preferences
     Preferences *preferences() const;
 
-    // name
+    /// Return the username of the account
+    /// \see setUsername
     QString username() const;
+
+    /// Sets the username for the account
     void setUsername(const QString &name);
 
-    // instance metadata
+    /// Fetches instance-specific metadata like max post length, allowed content types, etc
     void fetchInstanceMetadata();
+
+    /// Returns the instance URI
+    /// \see setInstanceUri
     QString instanceUri() const;
+
+    /// Sets the instance URI for the account
     void setInstanceUri(const QString &instance_uri);
+
+    /// Returns the max allowable length of posts in characters
     size_t maxPostLength() const;
+
+    /// Returns the amount of characters that URLs take
+    /// Any URL that appears in a post will only be counted by this limit
     size_t charactersReservedPerUrl() const;
+
+    /// Returns the title set by the instance
     QString instanceName() const;
 
-    /// Get identity of the account
+    /// Returns the identity of the account
     Identity *identity();
+
+    /// Looks up an identity specific to this account (like relationships) using an accountId
+    /// and optionally a JSON document containing identity information.
     const std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
+
+    /// Checks if the accountId exists in the account's identity cache
     bool identityCached(const QString &accountId) const;
 
-    // timeline
-    void fetchTimeline(const QString &timelineName, const QString &from_id);
+    /// Invalidates the account
     void invalidate();
 
-    // posting statuses
+    /// Favorite a post
+    /// \see unfavorite
     void favorite(Post *p);
+
+    /// Unfavorite a post
+    /// \see favorite
     void unfavorite(Post *p);
+
+    /// Boost (also known as reblog, or repeat) a post
+    /// \see unrepeat
     void repeat(Post *p);
+
+    /// Unboost a post
+    /// \see repeat
     void unrepeat(Post *p);
+
+    /// Bookmark a post
+    /// \see unbookmark
     void bookmark(Post *p);
+
+    /// Unbookmark a post
+    /// \see bookmark
     void unbookmark(Post *p);
 
-    // uploading media
-    void updateAttachment(Attachment *a);
-
-    // streaming
+    /// Returns a streaming url for \p stream
     QUrl streamingUrl(const QString &stream);
 
-    // post refresh
+    /// Invalidates a post
     void invalidatePost(Post *p);
 
-    // Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough
-    // way to determine what formats are accepted.
+    /// Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough
+    /// way to determine what formats are accepted.
     enum AllowedContentType { PlainText = 1 << 0, Markdown = 1 << 1, Html = 1 << 2, BBCode = 1 << 3 };
 
+    /// Return the allowed content types of the account's instance
     AllowedContentType allowedContentTypes() const
     {
         return m_allowedContentTypes;
     }
 
+    /// Return a well-formed URL of an API path
     QUrl apiUrl(const QString &path) const;
 
     /// Make an HTTP GET request to the mastodon server
@@ -199,45 +249,74 @@ public:
     /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
     QString settingsGroupName() const;
 
+    /// Type of account action
     enum AccountAction {
-        Follow,
-        Unfollow,
-        Block,
-        Unblock,
-        Mute,
-        Unmute,
-        Feature,
-        Unfeature,
-        Note,
+        Follow, ///< Follow the account
+        Unfollow, ///< Unfollow the account
+        Block, ///< Block the account
+        Unblock, ///< Unlock the account
+        Mute, ///< Mute the account
+        Unmute, ///< Unmute the account
+        Feature, ///< Feature the account
+        Unfeature, ///< Unfeature the account
+        Note, ///< Update the note for the account
     };
 
+    /// Type of streaming event
     enum StreamingEventType {
-        UpdateEvent, //< A new Status has appeared.
+        UpdateEvent, ///< A new Status has appeared.
         DeleteEvent, ///< A status has been deleted.
         NotificationEvent, ///< A new notification has appeared.
         FiltersChangedEvent, ///< Keyword filters have been changed.
         ConversationEvent, ///< A direct conversation has been updated.
-        AnnouncementEvent, //< An announcement has been published.
-        AnnouncementRedactedEvent, //< An announcement has received an emoji reaction.
-        AnnouncementDeletedEvent, //< An announcement has been deleted.
+        AnnouncementEvent, ///< An announcement has been published.
+        AnnouncementRedactedEvent, ///< An announcement has received an emoji reaction.
+        AnnouncementDeletedEvent, ///< An announcement has been deleted.
         StatusUpdatedEvent, ///< A Status has been edited.
         EncryptedMessageChangedEvent, ///< An encrypted message has been received.
     };
 
 Q_SIGNALS:
+    /// Emitted when the account is successfully authenticated
+    /// \see validateToken
     void authenticated();
+
+    /// Emitted when the application is successfully registered to the server
+    /// \see registerApplication
     void registered();
+
+    /// Emitted when the account's own identity has been updated
     void identityChanged();
+
+    /// Emitted when the requested timeline has been fetched
     void fetchedTimeline(const QString &timelineName, QList<Post *> posts);
+
+    /// Emitted when th=e account has been invalidated
+    /// \see invalidate
     void invalidated();
-    void nameChanged();
+
+    /// Emitted when the account's username has been changed
+    /// \see setUsername
     void usernameChanged();
+
+    /// Emitted when the instance metadata has been fetched
+    /// \see fetchInstanceMetadata
     void fetchedInstanceMetadata();
+
+    /// Emitted when a post has been invalidated
+    /// \see invalidatePost
     void invalidatedPost(Post *p);
+
+    /// Emitted when a notification has been received
     void notification(std::shared_ptr<Notification> n);
-    void followRequestBlocked();
+
+    /// Emitted when an error occurred when performing an API request
     void errorOccured(const QString &errorMessage);
+
+    /// Emitted when a streaming event has been received
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
+
+    /// Emitted when the account has follow requests
     void hasFollowRequestsChanged();
 
 protected:
