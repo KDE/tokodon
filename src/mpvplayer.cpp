@@ -259,10 +259,7 @@ void MpvPlayer::play()
         Q_EMIT stoppedChanged();
     }
 
-    m_paused = false;
     setProperty("pause", false);
-
-    Q_EMIT pausedChanged();
 }
 
 void MpvPlayer::pause()
@@ -271,14 +268,12 @@ void MpvPlayer::pause()
         return;
     }
     setProperty("pause", true);
-    Q_EMIT pausedChanged();
 }
 
 void MpvPlayer::stop()
 {
     setPosition(0);
     setProperty("pause", true);
-    Q_EMIT pausedChanged();
 }
 
 void MpvPlayer::setPosition(double value)
@@ -287,7 +282,6 @@ void MpvPlayer::setPosition(double value)
         return;
     }
     setProperty("time-pos", value);
-    Q_EMIT positionChanged();
 }
 
 void MpvPlayer::seek(qreal offset)
