@@ -47,7 +47,7 @@ static const QMap<QLatin1String, QLatin1String> knownEncodings = {
 QImage BlurhashImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {
     if (id.isEmpty()) {
-        return QImage();
+        return {};
     }
     *size = requestedSize;
     if (size->width() == -1) {
