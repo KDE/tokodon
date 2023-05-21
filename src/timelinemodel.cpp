@@ -122,7 +122,7 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_timeline.size() < 1) {
+    if (m_timeline.empty()) {
         return;
     }
 

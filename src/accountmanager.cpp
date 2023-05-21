@@ -91,7 +91,7 @@ AbstractAccount *AccountManager::createNewAccount(const QString &instanceUri, bo
 
 bool AccountManager::hasAccounts() const
 {
-    return m_accounts.size() > 0;
+    return !m_accounts.empty();
 }
 
 void AccountManager::addAccount(AbstractAccount *account)
@@ -158,7 +158,7 @@ void AccountManager::removeAccount(AbstractAccount *account)
     m_accounts.removeOne(account);
     endRemoveRows();
 
-    if (m_accounts.size() > 0) {
+    if (hasAccounts()) {
         m_selected_account = m_accounts[0];
     } else {
         m_selected_account = nullptr;
