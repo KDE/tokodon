@@ -7,6 +7,8 @@
 
 class AbstractAccount;
 
+/// Model designed for the new type of pagination used in newer timelines, such as the bookmarks timeline
+/// \see TimelineModel
 class LinkPaginationTimelineModel : public TimelineModel
 {
     Q_OBJECT
@@ -14,8 +16,14 @@ class LinkPaginationTimelineModel : public TimelineModel
 
 public:
     explicit LinkPaginationTimelineModel(QObject *parent = nullptr);
+
+    /// Name of the timeline
+    /// \see setName
     QString name() const;
+
+    /// Set the name of the timeline to fetch ("bookmarks", "favorites" or "trending")
     void setName(const QString &name);
+
     void fillTimeline(const QString &fromId = {}) override;
     QString displayName() const override;
 
