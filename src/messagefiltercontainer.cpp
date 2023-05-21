@@ -11,7 +11,7 @@
 
 QMessageFilterContainer::QMessageFilterContainer()
 {
-    qInstallMessageHandler(0);
+    qInstallMessageHandler(nullptr);
 
     handler = qInstallMessageHandler([](QtMsgType type, const QMessageLogContext &context, const QString &msg) {
         s_messageFilter->handler(type, context, s_messageFilter->filter(msg));
