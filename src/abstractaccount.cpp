@@ -22,6 +22,7 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     , m_maxPostLength(500)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
+    , m_allowedContentTypes(AllowedContentType::PlainText)
 {
 }
 
@@ -31,6 +32,7 @@ AbstractAccount::AbstractAccount(QObject *parent)
     , m_maxPostLength(500)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
+    , m_allowedContentTypes(AllowedContentType::PlainText)
 {
 }
 
