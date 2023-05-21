@@ -76,10 +76,10 @@ void Identity::setRelationship(Relationship *r)
     if (m_relationship == r) {
         return;
     }
-    if (m_relationship != nullptr) {
-        // delete old relationship object if we receive a new one
-        delete m_relationship;
-    }
+
+    // delete old relationship object if we receive a new one
+    delete m_relationship;
+
     m_relationship = r;
     Q_EMIT relationshipChanged();
 }
