@@ -12,10 +12,6 @@ ColorSchemer::ColorSchemer(QObject *parent)
 {
 }
 
-ColorSchemer::~ColorSchemer()
-{
-}
-
 QAbstractItemModel *ColorSchemer::model() const
 {
     return c->model();
