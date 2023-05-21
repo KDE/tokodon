@@ -136,7 +136,7 @@ Identity *AbstractAccount::identity()
     return m_identity.get();
 }
 
-const std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &accountId, const QJsonObject &doc)
+std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &accountId, const QJsonObject &doc)
 {
     if (m_identity && m_identity->id() == accountId) {
         return m_identity;

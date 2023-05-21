@@ -101,7 +101,7 @@ public:
 
     /// Looks up an identity specific to this account (like relationships) using an accountId
     /// and optionally a JSON document containing identity information.
-    const std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
+    std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
 
     /// Checks if the accountId exists in the account's identity cache
     bool identityCached(const QString &accountId) const;
