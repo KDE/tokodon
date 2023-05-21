@@ -28,6 +28,7 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         GeneralCard {}
         AccountsCard {}
+        PreferencesCard {}
         SonnetCard {}
 
         MobileForm.FormCard {
