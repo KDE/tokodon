@@ -6,6 +6,7 @@
 #include "abstractaccount.h"
 #include "timeline/post.h"
 
+/// Account-specific preferences which are stored server-side
 class Preferences : public QObject
 {
     Q_OBJECT
@@ -19,23 +20,55 @@ class Preferences : public QObject
 public:
     explicit Preferences(AbstractAccount *account);
 
+    /// The default visibility when composing new statuses
+    /// \see setDefaultVisibility
     Post::Visibility defaultVisibility() const;
+
+    /// Sets the default visibility when composing new statuses
+    /// \see defaultVisibility
     void setDefaultVisibility(Post::Visibility visibility);
 
+    /// Whether newly uploaded media attachments are sensitive by default
+    /// \see setDefaultSensitive
     bool defaultSensitive() const;
+
+    // Set whether newly uploaded media attachments are sensitive by default
+    /// \see setDefaultSensitive
     void setDefaultSensitive(bool sensitive);
 
+    /// The default language code (ISO 6391) when composing new statuses
+    /// \see setDefaultLanguage
     QString defaultLanguage() const;
+
+    /// Set the default language code (ISO 6391) when composing new statuses
+    /// \see defaultLanguage
     void setDefaultLanguage(QString language);
 
+    /// Returns true if media should not be cropped to 16:9
+    /// Currently read-only, see https://github.com/mastodon/mastodon/issues/7021
     QString extendMedia() const;
+
+    /// Returns true if spoilers on statuses should be ignored, and always shown
+    /// Currently read-only, see https://github.com/mastodon/mastodon/issues/7021
     bool extendSpoiler() const;
 
 Q_SIGNALS:
+    /// Emitted when the default status visibility preference has been changed
+    /// \see setDefaultVisibility
     void defaultVisibilityChanged();
+
+    /// Emitted when the default media attachment sensitivity preference has been changed
+    /// \see setDefaultSensitive
     void defaultSensitiveChanged();
+
+    /// Emitted when the default status language preference has been changed
+    /// \see setDefaultLanguage
     void defaultLanguageChanged();
+
+    /// Emitted when the extend media preference has been changed
     void extendMediaChanged();
+
+    /// Emitted when the extend spoiler preference has been changed
     void extendSpoilerChanged();
 
 private:
