@@ -35,6 +35,13 @@ Post::Visibility Preferences::defaultVisibility() const
 
 void Preferences::setDefaultVisibility(Post::Visibility visibility)
 {
+    if (visibility == m_defaultVisibility) {
+        return;
+    }
+
+    m_defaultVisibility = visibility;
+    Q_EMIT defaultVisibilityChanged();
+
     setPreferencesField(QStringLiteral("source[privacy]"), visibilityToString(visibility));
 }
 
@@ -45,6 +52,13 @@ bool Preferences::defaultSensitive() const
 
 void Preferences::setDefaultSensitive(bool sensitive)
 {
+    if (sensitive == m_defaultSensitive) {
+        return;
+    }
+
+    m_defaultSensitive = sensitive;
+    Q_EMIT defaultSensitiveChanged();
+
     setPreferencesField(QStringLiteral("source[sensitive]"), sensitive ? QStringLiteral("true") : QStringLiteral("false"));
 }
 
@@ -55,6 +69,13 @@ QString Preferences::defaultLanguage() const
 
 void Preferences::setDefaultLanguage(QString language)
 {
+    if (language == m_defaultLanguage) {
+        return;
+    }
+
+    m_defaultLanguage = language;
+    Q_EMIT defaultLanguageChanged();
+
     setPreferencesField(QStringLiteral("source[language]"), language);
 }
 
