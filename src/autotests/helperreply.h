@@ -19,12 +19,12 @@ public:
         apiResult.open(QIODevice::ReadOnly);
     }
 
-    virtual qint64 readData(char *data, qint64 maxSize) override
+    qint64 readData(char *data, qint64 maxSize) override
     {
         return apiResult.read(data, maxSize);
     }
 
-    virtual void abort() override
+    void abort() override
     {
     }
 
