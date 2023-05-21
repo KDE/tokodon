@@ -24,7 +24,7 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE int getTime(const int index);
+    Q_INVOKABLE int getTime(int index);
 
 private:
     QList<Time> m_times;

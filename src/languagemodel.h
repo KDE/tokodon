@@ -19,7 +19,7 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE QString getCode(const int index) const;
+    Q_INVOKABLE QString getCode(int index) const;
 
 private:
     QList<QLocale::Language> m_languages;
@@ -33,7 +33,7 @@ class LanguageModel : public QSortFilterProxyModel
 public:
     explicit LanguageModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE QString getCode(const int index) const;
+    Q_INVOKABLE QString getCode(int index) const;
 
 protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
