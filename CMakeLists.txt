@@ -66,7 +66,6 @@ if (ANDROID)
 else()
     find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
     find_package(KF${QT_MAJOR_VERSION}ConfigWidgets REQUIRED)
-    find_package(KF${QT_MAJOR_VERSION}BreezeIcons REQUIRED)
     find_package(Qt${QT_MAJOR_VERSION}Keychain)
     set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
         TYPE REQUIRED
