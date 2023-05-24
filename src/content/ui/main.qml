@@ -183,7 +183,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         checked: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(mainTimeline, {
                 name: "home"
             });
@@ -198,7 +198,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Notifications")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(notificationTimeline);
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -212,7 +212,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && AccountManager.selectedAccount.hasFollowRequests
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(socialGraphComponent, {
                 name: "request"
             });
@@ -227,7 +227,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Local")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(mainTimeline, {
                 name: "public",
             });
@@ -242,7 +242,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Global")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(mainTimeline, {
                 name: "federated",
             });
@@ -258,7 +258,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Conversation")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace("qrc:/content/ui/ConversationPage.qml");
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -272,7 +272,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Favourites")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "favourites",
             });
@@ -288,7 +288,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Bookmarks")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(linkPaginationTimeline, {
                 name: "bookmarks",
             });
@@ -304,7 +304,7 @@ Kirigami.ApplicationWindow {
         text: i18n("Explore")
         checkable: true
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace(exploreTimeline);
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -319,7 +319,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         visible: Kirigami.Settings.isMobile
         onTriggered: {
-            pageStack.layers.clear();
+            pageStack.clear();
             pageStack.replace("qrc:/content/ui/SearchPage.qml");
             checked = true;
             if (Kirigami.Settings.isMobile) {
