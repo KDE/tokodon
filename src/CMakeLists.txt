@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-2-Clause
 
-set(debug_files_SRCS)
+add_library(tokodon_static STATIC)
 
-ecm_qt_declare_logging_category(debug_files_SRCS
+ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_debug.h
     IDENTIFIER TOKODON_LOG
     CATEGORY_NAME org.kde.tokodon
@@ -12,7 +12,7 @@ ecm_qt_declare_logging_category(debug_files_SRCS
     EXPORT TOKODON
 )
 
-ecm_qt_declare_logging_category(debug_files_SRCS
+ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_http_debug.h
     IDENTIFIER TOKODON_HTTP
     CATEGORY_NAME org.kde.tokodon.http
@@ -20,7 +20,9 @@ ecm_qt_declare_logging_category(debug_files_SRCS
     EXPORT TOKODON
 )
 
-set(tokodon_src
+
+target_sources(tokodon_static
+PRIVATE
     # Account
     account/abstractaccount.cpp
     account/abstractaccount.h
@@ -106,19 +108,16 @@ set(tokodon_src
     network/networkaccessmanagerfactory.h
     network/networkcontroller.cpp
     network/networkcontroller.h
-
-    ${debug_files_SRCS}
 )
 
 if(NOT ANDROID)
-    set(tokodon_src
-        ${tokodon_src}
+    target_sources(tokodon_static
+    PRIVATE
         utils/colorschemer.cpp
         utils/colorschemer.h
     )
 endif()
 
-add_library(tokodon_static STATIC ${tokodon_src})
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc)
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES})
 
