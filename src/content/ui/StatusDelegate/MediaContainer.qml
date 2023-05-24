@@ -2,38 +2,44 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.15
-import org.kde.kirigami 2.14 as Kirigami
-import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
-import org.kde.kmasto 1.0
-import QtGraphicalEffects 1.0
-import Qt.labs.qmlmodels 1.0
-import QtMultimedia 5.15
 
-QQC2.Control {
+Item {
     id: root
 
-    required property var repeater
-    required property var shouldKeepAspectRatio
-    required property var mediaRatio
-    required property var rootWidth
+    // The GridLayout holding the media attachments
     required property var gridLayout
 
+    // Whether the media should attempt to limit the aspect ratio to 16:9
+    required property bool shouldKeepAspectRatio
+
+    // The width of the AttachmentGrid
+    required property real rootWidth
+
+    // The index of this attachment
+    required property int index
+
+    // The total number of media attachments
+    required property int count
+
+    // Source image dimensions
     required property int sourceWidth
     required property int sourceHeight
 
-    readonly property double aspectRatio: root.sourceHeight / Math.max(root.sourceWidth, 1)
+    readonly property real aspectRatio: root.sourceHeight / Math.max(root.sourceWidth, 1)
+    readonly property real mediaRatio: 9.0 / 16.0
 
-    property var isSpecialAttachment: index == 0 && repeater.count == 3
-    property var widthDivisor: repeater.count > 1 ? 2 : 1
+    // If there is three attachments, the first one is bigger than the other two.
+    readonly property bool isSpecialAttachment: index == 0 && count == 3
 
-    // the first attachment in a three attachment set is displayed at full height
-    property var heightDivisor: isSpecialAttachment ? 1 : (repeater.count > 2 ? 2 : 1)
-    Layout.rowSpan: isSpecialAttachment ? 2 : 1
+    readonly property int heightDivisor: (isSpecialAttachment || count < 3) ? 1 : 2
 
     Layout.fillWidth: shouldKeepAspectRatio
     Layout.fillHeight: shouldKeepAspectRatio
+    Layout.rowSpan: isSpecialAttachment ? 2 : 1
 
-    Layout.preferredWidth: shouldKeepAspectRatio ? -1 : parent.width / widthDivisor
-    Layout.preferredHeight: shouldKeepAspectRatio ? parent.width * aspectRatio : (rootWidth * mediaRatio) / heightDivisor + (isSpecialAttachment ? gridLayout.rowSpacing : 0)
+    readonly property real extraSpacing: isSpecialAttachment ? gridLayout.rowSpacing : 0
+
+    Layout.preferredWidth: shouldKeepAspectRatio ? -1 : parent.width / gridLayout.columns
+    Layout.preferredHeight: shouldKeepAspectRatio ? (parent.width * aspectRatio) : (rootWidth * mediaRatio / heightDivisor) + extraSpacing
 }

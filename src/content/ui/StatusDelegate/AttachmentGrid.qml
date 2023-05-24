@@ -30,8 +30,6 @@ QQC2.Control {
     property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
     signal userSensitivityChanged()
 
-    readonly property var mediaRatio: 9.0 / 16.0
-
     property bool hasValidAttachment: {
         for (let i in root.attachments) {
             if (root.attachments[i].attachmentType !== Attachment.Unknown) {
@@ -52,7 +50,7 @@ QQC2.Control {
 
     contentItem: GridLayout {
         id: attachmentGridLayout
-        columns: root.attachments.length > 1 ? 2 : 1
+        columns: Math.min(root.attachments.length, 2)
 
         Repeater {
             id: attachmentsRepeater
@@ -67,12 +65,10 @@ QQC2.Control {
                     MediaContainer {
                         id: imgContainer
 
-                        required property int index
                         required property var modelData
 
-                        repeater: attachmentsRepeater
+                        count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        mediaRatio: root.mediaRatio
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
@@ -131,12 +127,10 @@ QQC2.Control {
                     roleValue: Attachment.GifV
 
                     VideoAttachment {
-                        required property int index
                         required property var modelData
 
-                        repeater: attachmentsRepeater
+                        count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        mediaRatio: root.mediaRatio
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
@@ -163,12 +157,10 @@ QQC2.Control {
                     VideoAttachment {
                         id: video
 
-                        required property int index
                         required property var modelData
 
-                        repeater: attachmentsRepeater
+                        count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        mediaRatio: root.mediaRatio
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
