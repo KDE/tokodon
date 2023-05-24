@@ -213,7 +213,7 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && AccountManager.selectedAccount.hasFollowRequests
         onTriggered: {
             pageStack.layers.clear();
-            pageStack.replace(socialGraphPage, {
+            pageStack.replace(socialGraphComponent, {
                 name: "request"
             });
             checked = true;
