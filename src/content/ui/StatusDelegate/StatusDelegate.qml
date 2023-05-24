@@ -330,10 +330,9 @@ QQC2.ItemDelegate {
         }
 
         LinkPreview {
-            attachments: root.attachments
             card: root.card
-            secondary: root.secondary
-            contentVisible: postContent.visible
+
+            visible: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
         }
 
         Poll {

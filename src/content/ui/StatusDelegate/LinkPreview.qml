@@ -12,11 +12,6 @@ QQC2.AbstractButton {
     id: root
 
     required property var card
-    required property bool secondary
-    required property bool attachments
-    required property bool contentVisible
-
-    visible: root.card && contentVisible && Config.showLinkPreview && !root.secondary && root.attachments.length === 0 && !filtered
 
     Layout.fillWidth: true
     Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
