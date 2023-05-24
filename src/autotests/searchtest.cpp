@@ -5,9 +5,7 @@
 
 #include "helperreply.h"
 #include "mockaccount.h"
-#include "poll.h"
-#include "post.h"
-#include "searchmodel.h"
+#include "search/searchmodel.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 

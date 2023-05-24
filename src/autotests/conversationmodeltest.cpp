@@ -3,11 +3,10 @@
 
 #include <QtTest/QtTest>
 
-#include "abstracttimelinemodel.h"
-#include "conversationmodel.h"
+#include "conversation/conversationmodel.h"
+#include "timeline/abstracttimelinemodel.h"
 #include "helperreply.h"
 #include "mockaccount.h"
-#include "post.h"
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 

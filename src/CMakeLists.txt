@@ -21,49 +21,101 @@ ecm_qt_declare_logging_category(debug_files_SRCS
 )
 
 set(tokodon_src
-    accountmanager.cpp
-    account.cpp
-    post.cpp
-    posteditorbackend.cpp
-    poll.cpp
-    utils.cpp
-    preferences.cpp
-    filetransferjob.cpp
-    filehelper.cpp
-    threadmodel.cpp
-    accountmodel.cpp
-    timelinemodel.cpp
-    attachmenteditormodel.cpp
-    networkrequestprogress.cpp
-    notificationmodel.cpp
-    clipboard.cpp
-    relationship.cpp
-    networkaccessmanagerfactory.cpp
-    notificationhandler.cpp
-    notificationmodel.cpp
-    abstracttimelinemodel.cpp
-    abstractaccount.cpp
-    messagefiltercontainer.cpp
-    identity.cpp
-    blurhash.cpp
-    blurhashimageprovider.cpp
-    networkcontroller.cpp
-    searchmodel.cpp
-    conversationmodel.cpp
-    tagsmodel.cpp
-    maintimelinemodel.cpp
-    profileeditor.cpp
-    linkpaginatedtimelinemodel.cpp
-    polltimemodel.cpp
-    languagemodel.cpp
-    polleditorbackend.cpp
-    socialgraphmodel.cpp
+    # Account
+    account/abstractaccount.cpp
+    account/abstractaccount.h
+    account/accountmanager.cpp
+    account/accountmanager.h
+    account/account.cpp
+    account/account.h
+    account/preferences.cpp
+    account/preferences.h
+    account/identity.cpp
+    account/identity.h
+    account/socialgraphmodel.cpp
+    account/socialgraphmodel.h
+    account/relationship.cpp
+    account/profileeditor.cpp
+    account/notificationhandler.cpp
+    account/notificationhandler.h
+
+    # Editor
+    editor/posteditorbackend.cpp
+    editor/posteditorbackend.h
+    editor/attachmenteditormodel.cpp
+    editor/attachmenteditormodel.h
+    editor/polltimemodel.cpp
+    editor/polltimemodel.h
+    editor/languagemodel.cpp
+    editor/languagemodel.h
+    editor/polleditorbackend.cpp
+    editor/polleditorbackend.h
+
+    # Conversation view
+    conversation/conversationmodel.cpp
+    conversation/conversationmodel.h
+
+    # Timeline
+    timeline/post.cpp
+    timeline/post.h
+    timeline/poll.cpp
+    timeline/poll.h
+    timeline/accountmodel.cpp
+    timeline/accountmodel.h
+    timeline/threadmodel.cpp
+    timeline/threadmodel.h
+    timeline/timelinemodel.cpp
+    timeline/timelinemodel.h
+    timeline/notificationmodel.cpp
+    timeline/notificationmodel.h
+    timeline/tagsmodel.cpp
+    timeline/tagsmodel.h
+    timeline/maintimelinemodel.cpp
+    timeline/maintimelinemodel.h
+    timeline/notificationmodel.cpp
+    timeline/notificationmodel.h
+    timeline/abstracttimelinemodel.cpp
+    timeline/abstracttimelinemodel.h
+    timeline/linkpaginatedtimelinemodel.cpp
+    timeline/linkpaginatedtimelinemodel.h
+
+    # Search
+    search/searchmodel.cpp
+    search/searchmodel.h
+
+    # Misc utils
+    utils/blurhash.cpp
+    utils/blurhash.h
+    utils/blurhashimageprovider.cpp
+    utils/blurhashimageprovider.h
+    utils/filehelper.cpp
+    utils/filehelper.h
+    utils/filetransferjob.cpp
+    utils/filetransferjob.h
+    utils/clipboard.cpp
+    utils/clipboard.h
+    utils/messagefiltercontainer.cpp
+    utils/messagefiltercontainer.h
+    utils/utils.cpp
+    utils/utils.h
+
+    # Network related classes
+    network/networkrequestprogress.cpp
+    network/networkrequestprogress.h
+    network/networkaccessmanagerfactory.cpp
+    network/networkaccessmanagerfactory.h
+    network/networkcontroller.cpp
+    network/networkcontroller.h
+
     ${debug_files_SRCS}
 )
 
 if(NOT ANDROID)
-    set(tokodon_src ${tokodon_src}
-            colorschemer.cpp)
+    set(tokodon_src
+        ${tokodon_src}
+        utils/colorschemer.cpp
+        utils/colorschemer.h
+    )
 endif()
 
 add_library(tokodon_static STATIC ${tokodon_src})

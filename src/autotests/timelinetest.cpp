@@ -4,12 +4,11 @@
 #include <QtTest/QtTest>
 
 #include "helperreply.h"
-#include "maintimelinemodel.h"
 #include "mockaccount.h"
-#include "poll.h"
-#include "post.h"
-#include "tagsmodel.h"
-#include "threadmodel.h"
+#include "timeline/maintimelinemodel.h"
+#include "timeline/poll.h"
+#include "timeline/tagsmodel.h"
+#include "timeline/threadmodel.h"
 #include <KLocalizedString>
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>

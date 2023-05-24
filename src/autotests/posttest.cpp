@@ -4,10 +4,9 @@
 #include <QtTest/QtTest>
 
 #include "mockaccount.h"
-#include "poll.h"
-#include "post.h"
+#include "timeline/poll.h"
+#include "timeline/post.h"
 #include <QJsonObject>
-#include <qstringliteral.h>
 
 class PostTest : public QObject
 {

@@ -3,9 +3,8 @@
 
 #include <QtTest/QtTest>
 
-#include "blurhash.h"
-#include "blurhashimageprovider.h"
-#include <qstringliteral.h>
+#include "utils/blurhash.h"
+#include "utils/blurhashimageprovider.h"
 
 class BlurHashTest : public QObject
 {

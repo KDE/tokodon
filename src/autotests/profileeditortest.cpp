@@ -3,10 +3,10 @@
 
 #include <QtTest/QtTest>
 
-#include "accountmanager.h"
+#include "account/accountmanager.h"
+#include "account/profileeditor.h"
 #include "helperreply.h"
 #include "mockaccount.h"
-#include "profileeditor.h"
 
 class ProfileEditorTest : public QObject
 {
