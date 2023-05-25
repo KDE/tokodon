@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:47+0000\n"
+"POT-Creation-Date: 2023-05-25 00:46+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,56 +17,113 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.07.70\n"
 
-#: abstractaccount.cpp:428
+#: account/abstractaccount.cpp:430
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: abstractaccount.cpp:429
+#: account/abstractaccount.cpp:431
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: abstractaccount.cpp:430
+#: account/abstractaccount.cpp:432
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: abstractaccount.cpp:431
+#: account/abstractaccount.cpp:433
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: abstractaccount.cpp:432
+#: account/abstractaccount.cpp:434
 #, fuzzy, kde-format
 #| msgid "Add an account"
 msgid "Could not mute account"
 msgstr "Fiók hozzáadása"
 
-#: abstractaccount.cpp:433
+#: account/abstractaccount.cpp:435
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: abstractaccount.cpp:434
+#: account/abstractaccount.cpp:436
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: abstractaccount.cpp:435
+#: account/abstractaccount.cpp:437
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: abstractaccount.cpp:436
+#: account/abstractaccount.cpp:438
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
 
-#: accountmodel.cpp:34 maintimelinemodel.cpp:27
+#: account/notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:159
 #, kde-format
-msgid "Loading"
-msgstr "Betöltés"
+msgid "%1 favorited your post"
+msgstr ""
+
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
+#: content/ui/FollowDelegate.qml:59
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "%1 followed you"
+msgstr "%1 követő"
+
+#: account/notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#, kde-format
+msgid "%1 boosted your post"
+msgstr ""
+
+#: account/notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:161
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "%1 edited a post"
+msgstr "Nem listázott"
+
+#: account/profileeditor.cpp:183
+#, kde-format
+msgid "Image is too big"
+msgstr ""
+
+#: account/profileeditor.cpp:196
+#, kde-format
+msgid "Unsupported image file. Only jpeg, png and gif are supported."
+msgstr ""
+
+#: account/profileeditor.cpp:323
+#, kde-format
+msgid "Account details saved"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:30
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@title"
+msgid "Follow Requests"
+msgstr "Követés"
+
+#: account/socialgraphmodel.cpp:32
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@title"
+msgid "Followers"
+msgstr "Követés"
+
+#: account/socialgraphmodel.cpp:34
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@title"
+msgid "Following"
+msgstr "Követés"
 
 #: content/ui/AccountInfo.qml:70
 #, fuzzy, kde-format
@@ -312,13 +369,6 @@ msgstr "Tülk"
 msgid "No Posts"
 msgstr "Kiemelés"
 
-#: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
-#: notificationhandler.cpp:27
-#, fuzzy, kde-format
-#| msgid "%1 followers"
-msgid "%1 followed you"
-msgstr "%1 követő"
-
 #: content/ui/LanguageSelector.qml:64
 #, fuzzy, kde-format
 #| msgid "Selected default language:"
@@ -424,7 +474,7 @@ msgid "Search"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
-#: searchmodel.cpp:141
+#: search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr ""
@@ -1092,17 +1142,6 @@ msgstr ""
 msgid "Show anyway"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:159 notificationhandler.cpp:23
-#, kde-format
-msgid "%1 favorited your post"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
-#, fuzzy, kde-format
-#| msgid "Unlisted"
-msgid "%1 edited a post"
-msgstr "Nem listázott"
-
 #: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
 msgid "Your poll has ended"
@@ -1121,11 +1160,6 @@ msgstr "Kitűzött bejegyzés"
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:258 notificationhandler.cpp:31
-#, kde-format
-msgid "%1 boosted your post"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:260
@@ -1220,299 +1254,268 @@ msgstr ""
 msgid "Open settings"
 msgstr "Beállítások"
 
-#: conversationmodel.cpp:59
+#: conversation/conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
 msgstr ""
 
-#: conversationmodel.cpp:63
+#: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
 msgstr ""
 
-#: conversationmodel.cpp:65
+#: conversation/conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] ""
 msgstr[1] ""
 
-#: filetransferjob.cpp:82
+#: editor/polltimemodel.cpp:12
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "5 minutes"
+msgstr ""
+
+#: editor/polltimemodel.cpp:13
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "30 minutes"
+msgstr ""
+
+#: editor/polltimemodel.cpp:14
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "1 hour"
+msgstr ""
+
+#: editor/polltimemodel.cpp:15
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "6 hours"
+msgstr ""
+
+#: editor/polltimemodel.cpp:16
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "12 hours"
+msgstr ""
+
+#: editor/polltimemodel.cpp:17
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "1 day"
+msgstr ""
+
+#: editor/polltimemodel.cpp:18
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "3 days"
+msgstr ""
+
+#: editor/polltimemodel.cpp:19
+#, kde-format
+msgctxt "@item:inlistbox Poll expire times"
+msgid "7 days"
+msgstr ""
+
+#: editor/posteditorbackend.cpp:240
+#, kde-format
+msgid "An unknown error occurred."
+msgstr ""
+
+#: main.cpp:112
+#, kde-format
+msgid "Tokodon"
+msgstr "Tokodon"
+
+#: main.cpp:114
+#, kde-format
+msgid "Mastodon client"
+msgstr "Mastodon kliens"
+
+#: main.cpp:116
+#, fuzzy, kde-format
+#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
+msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgstr "© Carl Schwan, 2021., A KDE közösség, 2021."
+
+#: main.cpp:117
+#, kde-format
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: main.cpp:117
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:118
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#: main.cpp:118
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@fsf.hu"
+
+#: main.cpp:126
+#, kde-format
+msgid "Client for the decentralized social network: mastodon"
+msgstr "Kliens a decentralizált közösségi hálózathoz, a Mastodonhoz"
+
+#: main.cpp:127
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr ""
+
+#: search/searchmodel.cpp:137
+#, kde-format
+msgid "People"
+msgstr ""
+
+#: search/searchmodel.cpp:139
+#, kde-format
+msgid "Hashtags"
+msgstr ""
+
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#, kde-format
+msgid "Loading"
+msgstr "Betöltés"
+
+#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr ""
+
+#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr ""
+
+#: timeline/linkpaginatedtimelinemodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr ""
+
+#: timeline/maintimelinemodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Home (%1)"
+msgstr "Kezdőlap (%1)"
+
+#: timeline/maintimelinemodel.cpp:31
+#, kde-format
+msgctxt "@title"
+msgid "Home"
+msgstr "Kezdőlap"
+
+#: timeline/maintimelinemodel.cpp:34
+#, kde-format
+msgctxt "@title"
+msgid "Local Timeline"
+msgstr "Helyi idővonal"
+
+#: timeline/maintimelinemodel.cpp:36
+#, kde-format
+msgctxt "@title"
+msgid "Global Timeline"
+msgstr "Globális idővonal"
+
+#: timeline/notificationmodel.cpp:99
+#, kde-format
+msgid "Error occurred when fetching the latest notification."
+msgstr ""
+
+#: timeline/post.cpp:309
+#, kde-format
+msgid "in the future"
+msgstr ""
+
+#: timeline/post.cpp:311
+#, fuzzy, kde-format
+#| msgid "%1h"
+msgid "%1s"
+msgstr "%1 óra"
+
+#: timeline/post.cpp:313
+#, fuzzy, kde-format
+#| msgid "%1h"
+msgid "%1m"
+msgstr "%1 óra"
+
+#: timeline/post.cpp:315
+#, kde-format
+msgid "%1h"
+msgstr "%1 óra"
+
+#: timeline/post.cpp:317
+#, kde-format
+msgid "%1d"
+msgstr "%1 nap"
+
+#: timeline/post.cpp:321
+#, kde-format
+msgid "1 week ago"
+msgstr ""
+
+#: timeline/post.cpp:323
+#, kde-format
+msgid "%1 weeks ago"
+msgstr ""
+
+#: timeline/post.cpp:327
+#, kde-format
+msgid "1 month ago"
+msgstr ""
+
+#: timeline/post.cpp:329
+#, kde-format
+msgid "%1 months ago"
+msgstr ""
+
+#: timeline/post.cpp:335
+#, kde-format
+msgid "1 year ago"
+msgstr ""
+
+#: timeline/post.cpp:337
+#, kde-format
+msgid "%1 years ago"
+msgstr ""
+
+#: timeline/threadmodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Thread"
+msgstr "Szál"
+
+#: utils/filetransferjob.cpp:82
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Betöltés"
 
-#: filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:83
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr ""
 
-#: filetransferjob.cpp:84
+#: utils/filetransferjob.cpp:84
 #, fuzzy, kde-format
 #| msgid "Options:"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
-
-#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
-
-#: linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr ""
-
-#: main.cpp:113
-#, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
-
-#: main.cpp:115
-#, kde-format
-msgid "Mastodon client"
-msgstr "Mastodon kliens"
-
-#: main.cpp:117
-#, fuzzy, kde-format
-#| msgid "© 2021 Carl Schwan, 2021 KDE Community"
-msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© Carl Schwan, 2021., A KDE közösség, 2021."
-
-#: main.cpp:118
-#, kde-format
-msgid "Carl Schwan"
-msgstr "Carl Schwan"
-
-#: main.cpp:118
-#, kde-format
-msgid "Maintainer"
-msgstr ""
-
-#: main.cpp:119
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Kiszel Kristóf"
-
-#: main.cpp:119
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "ulysses@fsf.hu"
-
-#: main.cpp:127
-#, kde-format
-msgid "Client for the decentralized social network: mastodon"
-msgstr "Kliens a decentralizált közösségi hálózathoz, a Mastodonhoz"
-
-#: main.cpp:128
-#, kde-format
-msgid "Supports web+ap: url scheme"
-msgstr ""
-
-#: maintimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "Kezdőlap (%1)"
-
-#: maintimelinemodel.cpp:31
-#, kde-format
-msgctxt "@title"
-msgid "Home"
-msgstr "Kezdőlap"
-
-#: maintimelinemodel.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Local Timeline"
-msgstr "Helyi idővonal"
-
-#: maintimelinemodel.cpp:36
-#, kde-format
-msgctxt "@title"
-msgid "Global Timeline"
-msgstr "Globális idővonal"
-
-#: notificationmodel.cpp:100
-#, kde-format
-msgid "Error occurred when fetching the latest notification."
-msgstr ""
-
-#: polltimemodel.cpp:12
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "5 minutes"
-msgstr ""
-
-#: polltimemodel.cpp:13
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "30 minutes"
-msgstr ""
-
-#: polltimemodel.cpp:14
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "1 hour"
-msgstr ""
-
-#: polltimemodel.cpp:15
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "6 hours"
-msgstr ""
-
-#: polltimemodel.cpp:16
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "12 hours"
-msgstr ""
-
-#: polltimemodel.cpp:17
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "1 day"
-msgstr ""
-
-#: polltimemodel.cpp:18
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "3 days"
-msgstr ""
-
-#: polltimemodel.cpp:19
-#, kde-format
-msgctxt "@item:inlistbox Poll expire times"
-msgid "7 days"
-msgstr ""
-
-#: post.cpp:309
-#, kde-format
-msgid "in the future"
-msgstr ""
-
-#: post.cpp:311
-#, fuzzy, kde-format
-#| msgid "%1h"
-msgid "%1s"
-msgstr "%1 óra"
-
-#: post.cpp:313
-#, fuzzy, kde-format
-#| msgid "%1h"
-msgid "%1m"
-msgstr "%1 óra"
-
-#: post.cpp:315
-#, kde-format
-msgid "%1h"
-msgstr "%1 óra"
-
-#: post.cpp:317
-#, kde-format
-msgid "%1d"
-msgstr "%1 nap"
-
-#: post.cpp:321
-#, kde-format
-msgid "1 week ago"
-msgstr ""
-
-#: post.cpp:323
-#, kde-format
-msgid "%1 weeks ago"
-msgstr ""
-
-#: post.cpp:327
-#, kde-format
-msgid "1 month ago"
-msgstr ""
-
-#: post.cpp:329
-#, kde-format
-msgid "%1 months ago"
-msgstr ""
-
-#: post.cpp:335
-#, kde-format
-msgid "1 year ago"
-msgstr ""
-
-#: post.cpp:337
-#, kde-format
-msgid "%1 years ago"
-msgstr ""
-
-#: posteditorbackend.cpp:240
-#, kde-format
-msgid "An unknown error occurred."
-msgstr ""
-
-#: profileeditor.cpp:183
-#, kde-format
-msgid "Image is too big"
-msgstr ""
-
-#: profileeditor.cpp:196
-#, kde-format
-msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
-
-#: profileeditor.cpp:323
-#, kde-format
-msgid "Account details saved"
-msgstr ""
-
-#: searchmodel.cpp:137
-#, kde-format
-msgid "People"
-msgstr ""
-
-#: searchmodel.cpp:139
-#, kde-format
-msgid "Hashtags"
-msgstr ""
-
-#: socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgctxt "@title"
-msgid "Follow Requests"
-msgstr "Követés"
-
-#: socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgctxt "@title"
-msgid "Followers"
-msgstr "Követés"
-
-#: socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgctxt "@title"
-msgid "Following"
-msgstr "Követés"
-
-#: threadmodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Thread"
-msgstr "Szál"
 
 #~ msgid "Close"
 #~ msgstr "Bezárás"

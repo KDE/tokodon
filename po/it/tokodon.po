@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-15 00:47+0000\n"
+"POT-Creation-Date: 2023-05-25 00:46+0000\n"
 "PO-Revision-Date: 2023-05-09 18:35+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -17,55 +17,107 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.0\n"
 
-#: abstractaccount.cpp:428
+#: account/abstractaccount.cpp:430
 #, kde-format
 msgid "Could not follow account"
 msgstr "Impossibile seguire l'account"
 
-#: abstractaccount.cpp:429
+#: account/abstractaccount.cpp:431
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Impossibile smettere di seguire l'account"
 
-#: abstractaccount.cpp:430
+#: account/abstractaccount.cpp:432
 #, kde-format
 msgid "Could not block account"
 msgstr "Impossibile bloccare l'account"
 
-#: abstractaccount.cpp:431
+#: account/abstractaccount.cpp:433
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Impossibile sbloccare l'account"
 
-#: abstractaccount.cpp:432
+#: account/abstractaccount.cpp:434
 #, kde-format
 msgid "Could not mute account"
 msgstr "Impossibile silenziare l'account"
 
-#: abstractaccount.cpp:433
+#: account/abstractaccount.cpp:435
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Impossibile rimuovere il silenzio per l'account"
 
-#: abstractaccount.cpp:434
+#: account/abstractaccount.cpp:436
 #, kde-format
 msgid "Could not feature account"
 msgstr "Impossibile evidenziare l'account"
 
-#: abstractaccount.cpp:435
+#: account/abstractaccount.cpp:437
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Impossibile rimuovere l'evidenziazione dell'account"
 
-#: abstractaccount.cpp:436
+#: account/abstractaccount.cpp:438
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Impossibile modificare la nota su un account"
 
-#: accountmodel.cpp:34 maintimelinemodel.cpp:27
+#: account/notificationhandler.cpp:23
+#: content/ui/StatusDelegate/StatusDelegate.qml:159
 #, kde-format
-msgid "Loading"
-msgstr "Caricamento in corso"
+msgid "%1 favorited your post"
+msgstr "%1 ha aggiunto il tuo commento ai preferiti"
+
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
+#: content/ui/FollowDelegate.qml:59
+#, kde-format
+msgid "%1 followed you"
+msgstr "%1 ti ha seguito"
+
+#: account/notificationhandler.cpp:31
+#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#, kde-format
+msgid "%1 boosted your post"
+msgstr "%1 ha messo in evidenza il tuo commento"
+
+#: account/notificationhandler.cpp:39
+#: content/ui/StatusDelegate/StatusDelegate.qml:161
+#, kde-format
+msgid "%1 edited a post"
+msgstr "%1 ha modificato un messaggio"
+
+#: account/profileeditor.cpp:183
+#, kde-format
+msgid "Image is too big"
+msgstr "L'immagine è troppo grande"
+
+#: account/profileeditor.cpp:196
+#, kde-format
+msgid "Unsupported image file. Only jpeg, png and gif are supported."
+msgstr "File immagine non supportato. Sono supportati solo jpeg, png e gif."
+
+#: account/profileeditor.cpp:323
+#, kde-format
+msgid "Account details saved"
+msgstr "Dati dell'account salvati"
+
+#: account/socialgraphmodel.cpp:30
+#, kde-format
+msgctxt "@title"
+msgid "Follow Requests"
+msgstr "Richieste di seguito"
+
+#: account/socialgraphmodel.cpp:32
+#, kde-format
+msgctxt "@title"
+msgid "Followers"
+msgstr "Seguaci"
+
+#: account/socialgraphmodel.cpp:34
+#, kde-format
+msgctxt "@title"
+msgid "Following"
+msgstr "Segui"
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -296,12 +348,6 @@ msgstr "Toot"
 msgid "No Posts"
 msgstr "Nessun commento"
 
-#: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
-#: notificationhandler.cpp:27
-#, kde-format
-msgid "%1 followed you"
-msgstr "%1 ti ha seguito"
-
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
@@ -398,7 +444,7 @@ msgid "Search"
 msgstr "Cerca"
 
 #: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
-#: searchmodel.cpp:141
+#: search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Commento"
@@ -1028,16 +1074,6 @@ msgstr "Filtrato: %1"
 msgid "Show anyway"
 msgstr "Mostra comunque"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:159 notificationhandler.cpp:23
-#, kde-format
-msgid "%1 favorited your post"
-msgstr "%1 ha aggiunto il tuo commento ai preferiti"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:161 notificationhandler.cpp:39
-#, kde-format
-msgid "%1 edited a post"
-msgstr "%1 ha modificato un messaggio"
-
 #: content/ui/StatusDelegate/StatusDelegate.qml:164
 #, kde-format
 msgid "Your poll has ended"
@@ -1057,11 +1093,6 @@ msgstr "Voce appuntata"
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ha messo in evidenza"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:258 notificationhandler.cpp:31
-#, kde-format
-msgid "%1 boosted your post"
-msgstr "%1 ha messo in evidenza il tuo commento"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
@@ -1149,291 +1180,263 @@ msgstr "Aggiungi"
 msgid "Open settings"
 msgstr "Apri impostazioni"
 
-#: conversationmodel.cpp:59
+#: conversation/conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
 msgstr "Conversazione vuota"
 
-#: conversationmodel.cpp:63
+#: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
 msgstr "%1 e %2"
 
-#: conversationmodel.cpp:65
+#: conversation/conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] "%2 e un altro"
 msgstr[1] "%2 e %1 altri"
 
-#: filetransferjob.cpp:82
-#, kde-format
-msgctxt "Job heading, like 'Copying'"
-msgid "Downloading"
-msgstr "Scaricamento"
-
-#: filetransferjob.cpp:83
-#, kde-format
-msgctxt "The URL being downloaded/uploaded"
-msgid "Source"
-msgstr "Sorgente"
-
-#: filetransferjob.cpp:84
-#, kde-format
-msgctxt "The location being downloaded to"
-msgid "Destination"
-msgstr "Destinazione"
-
-#: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr "Segnalibri"
-
-#: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr "Preferiti"
-
-#: linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr "Di tendenza"
-
-#: main.cpp:113
-#, kde-format
-msgid "Tokodon"
-msgstr "Tokodon"
-
-#: main.cpp:115
-#, kde-format
-msgid "Mastodon client"
-msgstr "Client Mastodon"
-
-#: main.cpp:117
-#, kde-format
-msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021 Carl Schwan, 2021-2023 La comunità KDE"
-
-#: main.cpp:118
-#, kde-format
-msgid "Carl Schwan"
-msgstr "Carl Schwan"
-
-#: main.cpp:118
-#, kde-format
-msgid "Maintainer"
-msgstr "Responsabile"
-
-#: main.cpp:119
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Vincenzo Reale"
-
-#: main.cpp:119
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "smart2128vr@gmail.com"
-
-#: main.cpp:127
-#, kde-format
-msgid "Client for the decentralized social network: mastodon"
-msgstr "Cliente per la rete sociale decentralizzata: mastodon"
-
-#: main.cpp:128
-#, kde-format
-msgid "Supports web+ap: url scheme"
-msgstr "Supporta lo scherma di URL web+api:"
-
-#: maintimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "Home (%1)"
-
-#: maintimelinemodel.cpp:31
-#, kde-format
-msgctxt "@title"
-msgid "Home"
-msgstr "Home"
-
-#: maintimelinemodel.cpp:34
-#, kde-format
-msgctxt "@title"
-msgid "Local Timeline"
-msgstr "Timeline locale"
-
-#: maintimelinemodel.cpp:36
-#, kde-format
-msgctxt "@title"
-msgid "Global Timeline"
-msgstr "Timeline globale"
-
-#: notificationmodel.cpp:100
-#, kde-format
-msgid "Error occurred when fetching the latest notification."
-msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
-
-#: polltimemodel.cpp:12
+#: editor/polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
 msgstr "5 minuti"
 
-#: polltimemodel.cpp:13
+#: editor/polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
 msgstr "30 minuti"
 
-#: polltimemodel.cpp:14
+#: editor/polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
 msgstr "1 ora"
 
-#: polltimemodel.cpp:15
+#: editor/polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
 msgstr "6 ore"
 
-#: polltimemodel.cpp:16
+#: editor/polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
 msgstr "12 ore"
 
-#: polltimemodel.cpp:17
+#: editor/polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
 msgstr "1 giorno"
 
-#: polltimemodel.cpp:18
+#: editor/polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
 msgstr "3 giorni"
 
-#: polltimemodel.cpp:19
+#: editor/polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 giorni"
 
-#: post.cpp:309
-#, kde-format
-msgid "in the future"
-msgstr "in futuro"
-
-#: post.cpp:311
-#, kde-format
-msgid "%1s"
-msgstr "%1s"
-
-#: post.cpp:313
-#, kde-format
-msgid "%1m"
-msgstr "%1m"
-
-#: post.cpp:315
-#, kde-format
-msgid "%1h"
-msgstr "%1h"
-
-#: post.cpp:317
-#, kde-format
-msgid "%1d"
-msgstr "%1d"
-
-#: post.cpp:321
-#, kde-format
-msgid "1 week ago"
-msgstr "1 settimana fa"
-
-#: post.cpp:323
-#, kde-format
-msgid "%1 weeks ago"
-msgstr "%1 settimane fa"
-
-#: post.cpp:327
-#, kde-format
-msgid "1 month ago"
-msgstr "1 mese fa"
-
-#: post.cpp:329
-#, kde-format
-msgid "%1 months ago"
-msgstr "%1 mesi fa"
-
-#: post.cpp:335
-#, kde-format
-msgid "1 year ago"
-msgstr "1 anno fa"
-
-#: post.cpp:337
-#, kde-format
-msgid "%1 years ago"
-msgstr "%1 anni fa"
-
-#: posteditorbackend.cpp:240
+#: editor/posteditorbackend.cpp:240
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Si è verificato un errore sconosciuto."
 
-#: profileeditor.cpp:183
+#: main.cpp:112
 #, kde-format
-msgid "Image is too big"
-msgstr "L'immagine è troppo grande"
+msgid "Tokodon"
+msgstr "Tokodon"
 
-#: profileeditor.cpp:196
+#: main.cpp:114
 #, kde-format
-msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr "File immagine non supportato. Sono supportati solo jpeg, png e gif."
+msgid "Mastodon client"
+msgstr "Client Mastodon"
 
-#: profileeditor.cpp:323
+#: main.cpp:116
 #, kde-format
-msgid "Account details saved"
-msgstr "Dati dell'account salvati"
+msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgstr "© 2021 Carl Schwan, 2021-2023 La comunità KDE"
 
-#: searchmodel.cpp:137
+#: main.cpp:117
+#, kde-format
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: main.cpp:117
+#, kde-format
+msgid "Maintainer"
+msgstr "Responsabile"
+
+#: main.cpp:118
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Vincenzo Reale"
+
+#: main.cpp:118
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "smart2128vr@gmail.com"
+
+#: main.cpp:126
+#, kde-format
+msgid "Client for the decentralized social network: mastodon"
+msgstr "Cliente per la rete sociale decentralizzata: mastodon"
+
+#: main.cpp:127
+#, kde-format
+msgid "Supports web+ap: url scheme"
+msgstr "Supporta lo scherma di URL web+api:"
+
+#: search/searchmodel.cpp:137
 #, kde-format
 msgid "People"
 msgstr "Persone"
 
-#: searchmodel.cpp:139
+#: search/searchmodel.cpp:139
 #, kde-format
 msgid "Hashtags"
 msgstr "Hashtag"
 
-#: socialgraphmodel.cpp:30
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#, kde-format
+msgid "Loading"
+msgstr "Caricamento in corso"
+
+#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
 #, kde-format
 msgctxt "@title"
-msgid "Follow Requests"
-msgstr "Richieste di seguito"
+msgid "Bookmarks"
+msgstr "Segnalibri"
 
-#: socialgraphmodel.cpp:32
+#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
-msgid "Followers"
-msgstr "Seguaci"
+msgid "Favourites"
+msgstr "Preferiti"
 
-#: socialgraphmodel.cpp:34
+#: timeline/linkpaginatedtimelinemodel.cpp:29
 #, kde-format
 msgctxt "@title"
-msgid "Following"
-msgstr "Segui"
+msgid "Trending"
+msgstr "Di tendenza"
 
-#: threadmodel.cpp:29
+#: timeline/maintimelinemodel.cpp:29
+#, kde-format
+msgctxt "@title"
+msgid "Home (%1)"
+msgstr "Home (%1)"
+
+#: timeline/maintimelinemodel.cpp:31
+#, kde-format
+msgctxt "@title"
+msgid "Home"
+msgstr "Home"
+
+#: timeline/maintimelinemodel.cpp:34
+#, kde-format
+msgctxt "@title"
+msgid "Local Timeline"
+msgstr "Timeline locale"
+
+#: timeline/maintimelinemodel.cpp:36
+#, kde-format
+msgctxt "@title"
+msgid "Global Timeline"
+msgstr "Timeline globale"
+
+#: timeline/notificationmodel.cpp:99
+#, kde-format
+msgid "Error occurred when fetching the latest notification."
+msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
+
+#: timeline/post.cpp:309
+#, kde-format
+msgid "in the future"
+msgstr "in futuro"
+
+#: timeline/post.cpp:311
+#, kde-format
+msgid "%1s"
+msgstr "%1s"
+
+#: timeline/post.cpp:313
+#, kde-format
+msgid "%1m"
+msgstr "%1m"
+
+#: timeline/post.cpp:315
+#, kde-format
+msgid "%1h"
+msgstr "%1h"
+
+#: timeline/post.cpp:317
+#, kde-format
+msgid "%1d"
+msgstr "%1d"
+
+#: timeline/post.cpp:321
+#, kde-format
+msgid "1 week ago"
+msgstr "1 settimana fa"
+
+#: timeline/post.cpp:323
+#, kde-format
+msgid "%1 weeks ago"
+msgstr "%1 settimane fa"
+
+#: timeline/post.cpp:327
+#, kde-format
+msgid "1 month ago"
+msgstr "1 mese fa"
+
+#: timeline/post.cpp:329
+#, kde-format
+msgid "%1 months ago"
+msgstr "%1 mesi fa"
+
+#: timeline/post.cpp:335
+#, kde-format
+msgid "1 year ago"
+msgstr "1 anno fa"
+
+#: timeline/post.cpp:337
+#, kde-format
+msgid "%1 years ago"
+msgstr "%1 anni fa"
+
+#: timeline/threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
 msgstr "Discussione"
+
+#: utils/filetransferjob.cpp:82
+#, kde-format
+msgctxt "Job heading, like 'Copying'"
+msgid "Downloading"
+msgstr "Scaricamento"
+
+#: utils/filetransferjob.cpp:83
+#, kde-format
+msgctxt "The URL being downloaded/uploaded"
+msgid "Source"
+msgstr "Sorgente"
+
+#: utils/filetransferjob.cpp:84
+#, kde-format
+msgctxt "The location being downloaded to"
+msgid "Destination"
+msgstr "Destinazione"
 
 #~ msgid "Zoom in"
 #~ msgstr "Ingrandisci"
