@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-25 00:46+0000\n"
+"POT-Creation-Date: 2023-05-26 00:46+0000\n"
 "PO-Revision-Date: 2023-05-15 21:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -567,7 +567,7 @@ msgid "Network Proxy"
 msgstr "Ağ Vekili"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:44
+#: content/ui/Settings/SettingsPage.qml:45
 #, kde-format
 msgid "Network Proxy"
 msgstr "Ağ Vekili"
@@ -612,6 +612,41 @@ msgstr "Parola"
 #, kde-format
 msgid "Apply"
 msgstr "Uygula"
+
+#: content/ui/Settings/PreferencesCard.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox Group of preferred languages"
+#| msgid "Preferred Languages"
+msgctxt "@label Settings header"
+msgid "Preferences"
+msgstr "Tercih Edilen Diller"
+
+#: content/ui/Settings/PreferencesCard.qml:30
+#, kde-format
+msgctxt "@label Account preferences"
+msgid ""
+"These preferences apply to the current account and are synced to other "
+"clients."
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:36
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:48
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr "Öntanımlı Dil"
+
+#: content/ui/Settings/PreferencesCard.qml:64
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -712,12 +747,12 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: content/ui/Settings/SettingsPage.qml:67
+#: content/ui/Settings/SettingsPage.qml:68
 #, kde-format
 msgid "About Tokodon"
 msgstr "Tokodon Hakkında"
 
-#: content/ui/Settings/SettingsPage.qml:74
+#: content/ui/Settings/SettingsPage.qml:75
 #, kde-format
 msgid "About KDE"
 msgstr "KDE Hakkında"
@@ -989,12 +1024,12 @@ msgstr "<b>%1/%2</b> karakter"
 msgid "Send"
 msgstr "Gönder"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:122
+#: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:221
+#: content/ui/StatusDelegate/AttachmentGrid.qml:213
 #, kde-format
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"

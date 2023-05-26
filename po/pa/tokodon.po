@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-25 00:46+0000\n"
+"POT-Creation-Date: 2023-05-26 00:46+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -567,7 +567,7 @@ msgid "Network Proxy"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:44
+#: content/ui/Settings/SettingsPage.qml:45
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
@@ -612,6 +612,41 @@ msgstr "ਪਾਸਵਰਡ"
 #, kde-format
 msgid "Apply"
 msgstr "ਲਾਗੂ ਕਰੋ"
+
+#: content/ui/Settings/PreferencesCard.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox Group of preferred languages"
+#| msgid "Preferred Languages"
+msgctxt "@label Settings header"
+msgid "Preferences"
+msgstr "ਭਾਸ਼ਾਵਾਂ ਦੀ ਤਰਜੀਹ"
+
+#: content/ui/Settings/PreferencesCard.qml:30
+#, kde-format
+msgctxt "@label Account preferences"
+msgid ""
+"These preferences apply to the current account and are synced to other "
+"clients."
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:36
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:48
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr "ਮੂਲ ਭਾਸ਼ਾ"
+
+#: content/ui/Settings/PreferencesCard.qml:64
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -712,12 +747,12 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/Settings/SettingsPage.qml:67
+#: content/ui/Settings/SettingsPage.qml:68
 #, kde-format
 msgid "About Tokodon"
 msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
 
-#: content/ui/Settings/SettingsPage.qml:74
+#: content/ui/Settings/SettingsPage.qml:75
 #, kde-format
 msgid "About KDE"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
@@ -987,12 +1022,12 @@ msgstr "<b>%1/%2</b> ਅੱਖਰ"
 msgid "Send"
 msgstr "ਭੇਜੋ"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:122
+#: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
 msgstr "ਮੌਜੂਦ ਨਹੀਂ"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:221
+#: content/ui/StatusDelegate/AttachmentGrid.qml:213
 #, kde-format
 msgid "Media Hidden"
 msgstr "ਮੀਡੀਆ ਲੁਕਾਓ"

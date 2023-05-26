@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-25 00:46+0000\n"
+"POT-Creation-Date: 2023-05-26 00:46+0000\n"
 "PO-Revision-Date: 2023-05-15 10:34+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -570,7 +570,7 @@ msgid "Network Proxy"
 msgstr "'Proxy' de Rede"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:44
+#: content/ui/Settings/SettingsPage.qml:45
 #, kde-format
 msgid "Network Proxy"
 msgstr "'Proxy' de Rede"
@@ -615,6 +615,41 @@ msgstr "Senha"
 #, kde-format
 msgid "Apply"
 msgstr "Aplicar"
+
+#: content/ui/Settings/PreferencesCard.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox Group of preferred languages"
+#| msgid "Preferred Languages"
+msgctxt "@label Settings header"
+msgid "Preferences"
+msgstr "Línguas Preferidas"
+
+#: content/ui/Settings/PreferencesCard.qml:30
+#, kde-format
+msgctxt "@label Account preferences"
+msgid ""
+"These preferences apply to the current account and are synced to other "
+"clients."
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:36
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr ""
+
+#: content/ui/Settings/PreferencesCard.qml:48
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr "Língua por Omissão"
+
+#: content/ui/Settings/PreferencesCard.qml:64
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -716,12 +751,12 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuração"
 
-#: content/ui/Settings/SettingsPage.qml:67
+#: content/ui/Settings/SettingsPage.qml:68
 #, kde-format
 msgid "About Tokodon"
 msgstr "Acerca do Tokodon"
 
-#: content/ui/Settings/SettingsPage.qml:74
+#: content/ui/Settings/SettingsPage.qml:75
 #, kde-format
 msgid "About KDE"
 msgstr "Acerca do KDE"
@@ -993,12 +1028,12 @@ msgstr "<b>%1/%2</b> caracteres"
 msgid "Send"
 msgstr "Enviar"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:122
+#: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
 msgstr "Não disponível"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:221
+#: content/ui/StatusDelegate/AttachmentGrid.qml:213
 #, kde-format
 msgid "Media Hidden"
 msgstr "Conteúdo Escondido"
