@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-26 00:46+0000\n"
-"PO-Revision-Date: 2023-05-09 18:35+0200\n"
+"POT-Creation-Date: 2023-05-27 00:47+0000\n"
+"PO-Revision-Date: 2023-05-26 15:19+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: account/abstractaccount.cpp:430
 #, kde-format
@@ -231,52 +231,46 @@ msgid "Click to add a note"
 msgstr "Clic per aggiungere una nota"
 
 #: content/ui/AccountInfo.qml:427
-#, fuzzy, kde-format
-#| msgid "%1 posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
-msgstr "%1 commenti"
+msgstr "<b>%1</b> commenti"
 
 #: content/ui/AccountInfo.qml:439
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
-msgstr "%1 seguaci"
+msgstr "<b>%1</b> seguaci"
 
 #: content/ui/AccountInfo.qml:451
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
-msgstr "%1 seguiti"
+msgstr "<b>%1</b> seguiti"
 
 #: content/ui/AccountInfo.qml:463
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Commento"
+msgstr "Commenti"
 
 #: content/ui/AccountInfo.qml:467
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Commenti e risposte"
 
 #: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Media"
 
 #: content/ui/AccountInfo.qml:498
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Nascondi i totali"
+msgstr "Nascondi i boost"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -306,7 +300,7 @@ msgstr "Copia collegamento"
 #: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
 #, kde-format
 msgid "Link copied."
-msgstr ""
+msgstr "Collegamento copiato."
 
 #: content/ui/AuthorizationPage.qml:101
 #, kde-format
@@ -620,12 +614,10 @@ msgid "Apply"
 msgstr "Applica"
 
 #: content/ui/Settings/PreferencesCard.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Group of preferred languages"
-#| msgid "Preferred Languages"
+#, kde-format
 msgctxt "@label Settings header"
 msgid "Preferences"
-msgstr "Lingue preferite"
+msgstr "Preferenze"
 
 #: content/ui/Settings/PreferencesCard.qml:30
 #, kde-format
@@ -634,25 +626,26 @@ msgid ""
 "These preferences apply to the current account and are synced to other "
 "clients."
 msgstr ""
+"Queste preferenze si applicano all'account attuale e sono sincronizzate con "
+"gli altri client."
 
 #: content/ui/Settings/PreferencesCard.qml:36
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Contrassegna i media caricati come sensibili in modo predefinito"
 
 #: content/ui/Settings/PreferencesCard.qml:48
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr "Lingua predefinita"
+msgstr "Lingua predefinita dei commenti"
 
 #: content/ui/Settings/PreferencesCard.qml:64
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Visibilità predefinita dei commenti"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -971,32 +964,32 @@ msgid "Add Poll"
 msgstr "Aggiungi sondaggio"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
-#: content/ui/StatusDelegate/StatusDelegate.qml:456
+#: content/ui/StatusDelegate/StatusDelegate.qml:447
+#: content/ui/StatusDelegate/StatusDelegate.qml:455
 #, kde-format
 msgid "Public"
 msgstr "Pubblico"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:449
 #, kde-format
 msgid "Unlisted"
 msgstr "Non elencato"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:452
+#: content/ui/StatusDelegate/StatusDelegate.qml:451
 #, kde-format
 msgid "Private"
 msgstr "Privato"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:454
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Direct Message"
 msgstr "Messaggio diretto"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:444
+#: content/ui/StatusDelegate/StatusDelegate.qml:443
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilità"
@@ -1065,10 +1058,10 @@ msgstr "Copia collegamento a questo messaggio"
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Collegamento del commento copiato."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:47
-#: content/ui/StatusDelegate/StatusDelegate.qml:400
+#: content/ui/StatusDelegate/StatusDelegate.qml:399
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Rimuovi il segnalibro"
@@ -1149,43 +1142,43 @@ msgstr "Mostra meno"
 msgid "Show More"
 msgstr "Mostra altro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:357
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Rispondi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:359
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
 #, kde-format
 msgctxt "More than one reply"
 msgid "1+"
 msgstr "1+"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:373
+#: content/ui/StatusDelegate/StatusDelegate.qml:372
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:387
+#: content/ui/StatusDelegate/StatusDelegate.qml:386
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
 msgstr "Mi piace"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:400
+#: content/ui/StatusDelegate/StatusDelegate.qml:399
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Segnalibro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:412
+#: content/ui/StatusDelegate/StatusDelegate.qml:411
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Altro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:472
 #, kde-format
 msgid "via %1"
 msgstr "tramite %1"
