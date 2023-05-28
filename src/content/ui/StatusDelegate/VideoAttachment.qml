@@ -16,8 +16,8 @@ import QtQml 2.15
 MediaContainer {
     id: root
 
-    sourceWidth: Math.max(modelData.originalWidth, output.sourceRect.width)
-    sourceHeight: Math.max(modelData.originalHeight, output.sourceRect.height)
+    sourceWidth: Math.max(modelData.sourceWidth, output.sourceRect.width)
+    sourceHeight: Math.max(modelData.sourceHeight, output.sourceRect.height)
 
     required property var videoUrl
     required property var previewUrl

@@ -46,8 +46,8 @@ void Attachment::fromJson(const QJsonObject &obj)
 
     setDescription(obj["description"].toString());
     m_blurhash = obj["blurhash"].toString();
-    m_originalHeight = obj["meta"].toObject()["original"].toObject()["height"].toInt();
-    m_originalWidth = obj["meta"].toObject()["original"].toObject()["width"].toInt();
+    m_sourceHeight = obj["meta"].toObject()["original"].toObject()["height"].toInt();
+    m_sourceWidth = obj["meta"].toObject()["original"].toObject()["width"].toInt();
 
     // determine type if we can
     const auto type = obj["type"].toString();

@@ -94,8 +94,8 @@ class Attachment : public QObject
     Q_PROPERTY(QString remoteUrl MEMBER m_remote_url CONSTANT)
     Q_PROPERTY(QString caption READ description CONSTANT)
     Q_PROPERTY(QString tempSource READ tempSource CONSTANT)
-    Q_PROPERTY(int originalWidth MEMBER m_originalWidth CONSTANT)
-    Q_PROPERTY(int originalHeight MEMBER m_originalHeight CONSTANT)
+    Q_PROPERTY(int sourceWidth MEMBER m_sourceWidth CONSTANT)
+    Q_PROPERTY(int sourceHeight MEMBER m_sourceHeight CONSTANT)
 
 public:
     explicit Attachment(QObject *parent = nullptr);
@@ -116,8 +116,8 @@ public:
     QString m_preview_url;
     QString m_url;
     QString m_remote_url;
-    int m_originalWidth = -1;
-    int m_originalHeight = -1;
+    int m_sourceWidth = -1;
+    int m_sourceHeight = -1;
 
     QString id() const;
 

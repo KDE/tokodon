@@ -72,8 +72,8 @@ QQC2.Control {
                         rootWidth: root.width
                         gridLayout: attachmentGridLayout
 
-                        sourceWidth: modelData.originalWidth > img.sourceSize.width ? modelData.originalWidth : img.sourceSize.width
-                        sourceHeight: modelData.originalHeight > img.sourceSize.height ? modelData.originalHeight : img.sourceSize.height
+                        sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
+                        sourceHeight: modelData.sourceHeight > img.sourceSize.height ? modelData.sourceHeight : img.sourceSize.height
 
                         Image {
                             id: img
