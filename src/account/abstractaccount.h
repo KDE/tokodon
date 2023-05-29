@@ -17,6 +17,7 @@ class QNetworkReply;
 class QHttpMultiPart;
 class QFile;
 class Preferences;
+class AccountConfig;
 
 /// Represents an account, which could possibly be real or a mock for testing.
 /// Also handles most of the API work, and account actions.
@@ -206,10 +207,10 @@ public:
     virtual QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Write account to settings
-    virtual void writeToSettings(QSettings &settings) const = 0;
+    virtual void writeToSettings(QSettings &settings) = 0;
 
     /// Read account from settings
-    virtual void buildFromSettings(const QSettings &settings) = 0;
+    virtual void buildFromSettings(const AccountConfig &settings) = 0;
 
     /// Check if the account has any follow requests
     virtual bool hasFollowRequests() const = 0;

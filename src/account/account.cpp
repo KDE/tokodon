@@ -3,15 +3,17 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "account.h"
+#include "accountconfig.h"
 #include "accountmanager.h"
+#include "network/networkcontroller.h"
 #include "notificationhandler.h"
 #include "preferences.h"
-#include "network/networkcontroller.h"
-#include "utils/utils.h"
 #include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
+#include "utils/utils.h"
 #include <QFileInfo>
 #include <QNetworkAccessManager>
+#include <qt5keychain/keychain.h>
 
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
     : AbstractAccount(parent, instanceUri)
@@ -27,7 +29,7 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
     });
 }
 
-Account::Account(const QSettings &settings, QNetworkAccessManager *nam, QObject *parent)
+Account::Account(const AccountConfig &settings, QNetworkAccessManager *nam, QObject *parent)
     : AbstractAccount(parent)
     , m_qnam(nam)
 {
@@ -278,7 +280,7 @@ void Account::validateToken()
     streamingSocket("user");
 }
 
-void Account::writeToSettings(QSettings &settings) const
+void Account::writeToSettings(QSettings &settings)
 {
     // do not write to settings if we do not have complete information yet,
     // or else it writes malformed and possibly duplicate accounts to settings.
@@ -286,29 +288,38 @@ void Account::writeToSettings(QSettings &settings) const
         return;
     }
 
-    settings.beginGroup(settingsGroupName());
+    AccountConfig config(settingsGroupName());
+    config.setClientId(m_client_id);
+    config.setClientSecret(m_client_secret);
+    config.setInstanceUri(m_instance_uri);
+    config.setName(m_name);
+    config.setIgnoreSslErrors(m_ignoreSslErrors);
 
-    settings.setValue("token", m_token);
-    settings.setValue("client_id", m_client_id);
-    settings.setValue("client_secret", m_client_secret);
-    settings.setValue("instance_uri", m_instance_uri);
-    settings.setValue("name", m_name);
-    settings.setValue("ignoreSslErrors", m_ignoreSslErrors);
+    config.save();
 
-    settings.endGroup();
+    auto job = new QKeychain::WritePasswordJob{"Tokodon", this};
+    job->setKey(m_name);
+    job->setTextData(m_token);
+    job->start();
 }
 
-void Account::buildFromSettings(const QSettings &settings)
+void Account::buildFromSettings(const AccountConfig &settings)
 {
-    if (!settings.value("token").toString().isEmpty()) {
-        m_token = settings.value("token").toString();
-        m_client_id = settings.value("client_id").toString();
-        m_client_secret = settings.value("client_secret").toString();
-        m_name = settings.value("name").toString();
-        m_instance_uri = settings.value("instance_uri").toString();
-        m_ignoreSslErrors = settings.value("ignoreSslErrors", false).toBool();
+    m_client_id = settings.clientId();
+    m_client_secret = settings.clientSecret();
+    m_name = settings.name();
+    m_instance_uri = settings.instanceUri();
+    m_ignoreSslErrors = settings.ignoreSslErrors();
+
+    auto job = new QKeychain::ReadPasswordJob{"Tokodon", this};
+    job->setKey(m_name);
+
+    QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [this, job]() {
+        m_token = job->textData();
         validateToken();
-    }
+    });
+
+    job->start();
 }
 
 bool Account::hasFollowRequests() const

@@ -4,6 +4,7 @@
 
 #include "accountmanager.h"
 #include "account.h"
+#include "accountconfig.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "tokodon_debug.h"
@@ -234,24 +235,20 @@ void AccountManager::loadFromSettings(QSettings &settings)
 {
     qDebug() << "Loading any accounts from settings.";
 
-    settings.beginGroup("accounts");
+    KConfig config{"testrc", KConfig::OpenFlag::NoGlobals};
+    for (const auto &id : config.groupList()) {
+        auto accountConfig = AccountConfig{id};
 
-    const auto childGroups = settings.childGroups();
-    for (const auto &child : childGroups) {
-        settings.beginGroup(child);
-
-        auto account = new Account(settings, m_qnam);
-        if (account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
-            addAccount(account);
-            qDebug() << "Loaded from settings:" << account;
-        } else {
-            delete account;
-        }
-
-        settings.endGroup();
+        auto account = new Account(accountConfig, m_qnam);
+        connect(account, &Account::authenticated, this, [=] {
+            if (account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
+                addAccount(account);
+                qDebug() << "Loaded from settings:" << account;
+            } else {
+                delete account;
+            }
+        });
     }
-
-    settings.endGroup();
 }
 
 KAboutData AccountManager::aboutData() const
