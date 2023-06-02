@@ -27,6 +27,8 @@ QQC2.AbstractButton {
     QQC2.ToolTip.visible: hovered
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
+    Accessible.name: tooltip
+
     Kirigami.Icon {
         id: icon
 
@@ -36,7 +38,7 @@ QQC2.AbstractButton {
         source: control.interacted ? control.interactedIconName : control.iconName
 
         isMask: true
-        color: control.hovered ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
+        color: (control.hovered || parent.activeFocus) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
     }
 
     QQC2.Label {
