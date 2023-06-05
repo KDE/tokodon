@@ -209,17 +209,9 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
 void TimelineModel::actionBookmark(const QModelIndex &index)
 {
     int row = index.row();
-    auto p = m_timeline[row];
+    const auto post = m_timeline[row];
 
-    if (!p->bookmarked()) {
-        m_account->bookmark(p);
-        p->setBookmarked(true);
-    } else {
-        m_account->unbookmark(p);
-        p->setBookmarked(false);
-    }
-
-    Q_EMIT dataChanged(index, index);
+    AbstractTimelineModel::actionBookmark(index, post);
 }
 
 void TimelineModel::actionRedraft(const QModelIndex &index, bool isEdit)

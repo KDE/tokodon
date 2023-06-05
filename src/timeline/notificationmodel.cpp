@@ -215,6 +215,15 @@ void NotificationModel::actionRedraft(const QModelIndex &index, bool isEdit)
     AbstractTimelineModel::actionRedraft(index, p, isEdit);
 }
 
+void NotificationModel::actionBookmark(const QModelIndex &index)
+{
+    const int row = index.row();
+    const auto post = m_notifications[row]->post();
+    ;
+
+    AbstractTimelineModel::actionBookmark(index, post);
+}
+
 void NotificationModel::actionDelete(const QModelIndex &index)
 {
     const auto p = m_notifications[index.row()]->post();

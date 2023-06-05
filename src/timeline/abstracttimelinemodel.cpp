@@ -227,6 +227,19 @@ void AbstractTimelineModel::actionRedraft(const QModelIndex &index, Post *post, 
     });
 }
 
+void AbstractTimelineModel::actionBookmark(const QModelIndex &index, Post *post)
+{
+    if (!post->bookmarked()) {
+        m_account->bookmark(post);
+        post->setBookmarked(true);
+    } else {
+        m_account->unbookmark(post);
+        post->setBookmarked(false);
+    }
+
+    Q_EMIT dataChanged(index, index);
+}
+
 void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
 {
     Q_UNUSED(index);

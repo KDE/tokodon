@@ -99,6 +99,8 @@ public:
     /// May have no effect if the account does not have permission to delete the post
     void actionDelete(const QModelIndex &index, Post *post);
 
+    /// Bookmark the \p post at \p index
+    void actionBookmark(const QModelIndex &index, Post *post);
 Q_SIGNALS:
     /// Emitted when the timeline loading status has changed
     void loadingChanged();

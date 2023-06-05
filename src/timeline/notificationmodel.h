@@ -54,6 +54,8 @@ public Q_SLOTS:
     /// Delete the notification at \p index
     void actionDelete(const QModelIndex &index);
 
+    /// Bookmark the notification at \p index
+    void actionBookmark(const QModelIndex &index);
 Q_SIGNALS:
     /// Emitted when the list of excluded notification types change
     /// \see setExcludesTypes
