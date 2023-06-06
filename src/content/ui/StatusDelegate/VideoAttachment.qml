@@ -81,7 +81,24 @@ MediaContainer {
     }
 
     QQC2.Button {
-        visible: !root.showControls && !player.loading && player.paused && !root.isSensitive
+        visible: {
+            // don't overlay the controls with the "Media is hidden" message
+            if (root.isSensitive) {
+                return false;
+            }
+
+            // don't show the controls if the media is still loading
+            if (player.loading) {
+                return false;
+            }
+
+            // if the media is paused, definitely show them
+            if (player.paused) {
+                return true;
+            }
+
+            return root.showControls;
+        }
         anchors.centerIn: parent
         onClicked: player.play()
 
