@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 00:47+0000\n"
+"POT-Creation-Date: 2023-06-06 00:47+0000\n"
 "PO-Revision-Date: 2023-04-22 22:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -347,10 +347,11 @@ msgstr "Elkarrizketarik ez"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30
+#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Tutu"
+msgid "Post"
+msgstr "Posta"
 
 #: content/ui/ExplorePage.qml:84
 #, fuzzy, kde-format
@@ -454,12 +455,6 @@ msgstr "Laster-markak"
 #, kde-format
 msgid "Search"
 msgstr "Bilatu"
-
-#: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
-#: search/searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Posta"
 
 #: content/ui/NotificationPage.qml:37
 #, kde-format
@@ -1492,6 +1487,9 @@ msgstr "Sorburua"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
+
+#~ msgid "Toot"
+#~ msgstr "Tutu"
 
 #~ msgid "Zoom in"
 #~ msgstr "Zooma gerturatu"

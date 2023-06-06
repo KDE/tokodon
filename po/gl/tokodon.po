@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 00:47+0000\n"
-"PO-Revision-Date: 2023-05-29 08:04+0200\n"
+"POT-Creation-Date: 2023-06-06 00:47+0000\n"
+"PO-Revision-Date: 2023-06-05 15:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -333,10 +333,11 @@ msgstr "Sen conversas"
 msgid "Explore"
 msgstr "Explorar"
 
-#: content/ui/ExplorePage.qml:30
+#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Chío"
+msgid "Post"
+msgstr "Publicación"
 
 #: content/ui/ExplorePage.qml:84
 #, kde-format
@@ -438,12 +439,6 @@ msgstr "Marcadores"
 msgid "Search"
 msgstr "Buscar"
 
-#: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
-#: search/searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Publicación"
-
 #: content/ui/NotificationPage.qml:37
 #, kde-format
 msgctxt "Show all notifications"
@@ -544,7 +539,7 @@ msgstr "Recortar imaxes na cronoloxía a 16:9"
 #: content/ui/Settings/GeneralCard.qml:62
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr "Reprodución automática de GIFs"
+msgstr "Reprodución automática de GIF"
 
 #: content/ui/Settings/GeneralCard.qml:75
 #, kde-format
@@ -1464,6 +1459,9 @@ msgstr "Orixe"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgid "Toot"
+#~ msgstr "Chío"
 
 #~ msgid "Zoom in"
 #~ msgstr "Aumentar"

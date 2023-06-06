@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 00:47+0000\n"
+"POT-Creation-Date: 2023-06-06 00:47+0000\n"
 "PO-Revision-Date: 2023-05-08 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -343,10 +343,11 @@ msgstr "Ei keskusteluja"
 msgid "Explore"
 msgstr "Selaa"
 
-#: content/ui/ExplorePage.qml:30
+#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
-msgid "Toot"
-msgstr "Julkaise"
+msgid "Post"
+msgstr "Julkaisu"
 
 #: content/ui/ExplorePage.qml:84
 #, kde-format
@@ -447,12 +448,6 @@ msgstr "Kirjanmerkit"
 #, kde-format
 msgid "Search"
 msgstr "Etsi"
-
-#: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
-#: search/searchmodel.cpp:141
-#, kde-format
-msgid "Post"
-msgstr "Julkaisu"
 
 #: content/ui/NotificationPage.qml:37
 #, kde-format
@@ -1483,6 +1478,9 @@ msgstr "Lähde"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
+
+#~ msgid "Toot"
+#~ msgstr "Julkaise"
 
 #~ msgid "Zoom in"
 #~ msgstr "Lähennä"
