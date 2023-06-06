@@ -255,8 +255,10 @@ void MpvPlayer::play()
         command(QStringList{QStringLiteral("loadfile"), m_source});
 
         m_currentSource = m_source;
+        m_paused = false;
 
         Q_EMIT stoppedChanged();
+        Q_EMIT pausedChanged();
     }
 
     setProperty("pause", false);
