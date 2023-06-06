@@ -139,7 +139,7 @@ QQC2.Control {
 
                         videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
-                        autoPlay: Config.autoPlayGif
+                        autoPlay: Config.autoPlayGif && !root.isSensitive
                         isSensitive: root.isSensitive
                         showControls: false
                         looping: true
