@@ -113,8 +113,8 @@ Kirigami.ScrollablePage {
                         return
                     }
 
-                    var topEdgeVisible
-                    var bottomEdgeVisible
+                    let topEdgeVisible
+                    let bottomEdgeVisible
 
                     // we are still checking two rectangles, but if one is bigger than the other
                     // just switch which one should be checked.
