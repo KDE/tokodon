@@ -98,6 +98,9 @@ PRIVATE
     utils/clipboard.h
     utils/messagefiltercontainer.cpp
     utils/messagefiltercontainer.h
+    utils/mpvplayer.cpp
+    utils/mpvplayer.h
+    utils/qthelper.hpp
     utils/utils.cpp
     utils/utils.h
 
