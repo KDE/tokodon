@@ -133,6 +133,14 @@ public:
     /// \see bookmark
     void unbookmark(Post *p);
 
+    /// Pin a post
+    /// \see unpin
+    void pin(Post *p);
+
+    /// Unpin a post
+    /// \see pin
+    void unpin(Post *p);
+
     /// Returns a streaming url for \p stream
     QUrl streamingUrl(const QString &stream);
 

@@ -420,6 +420,7 @@ QQC2.ItemDelegate {
                     bookmarked: root.bookmarked
                     isSelf: root.isSelf
                     expandedPost: root.expandedPost
+                    pinned: root.pinned
                 }
             }
         }

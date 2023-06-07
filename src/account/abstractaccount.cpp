@@ -276,6 +276,16 @@ void AbstractAccount::unbookmark(Post *p)
     mutatePost(p, "unbookmark");
 }
 
+void AbstractAccount::pin(Post *p)
+{
+    mutatePost(p, "pin", true);
+}
+
+void AbstractAccount::unpin(Post *p)
+{
+    mutatePost(p, "unpin");
+}
+
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
 // that it might need to be extended later on.
 static AbstractAccount::AllowedContentType parseVersion(const QString &instanceVer)

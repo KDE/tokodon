@@ -15,6 +15,7 @@ QQC2.Menu {
     required property bool bookmarked
     required property bool isSelf
     required property bool expandedPost
+    required property bool pinned
 
     QQC2.MenuItem {
         icon.name: "expand"
@@ -46,6 +47,12 @@ QQC2.Menu {
         icon.name: "bookmark-new"
         text: root.bookmarked ? i18n("Remove bookmark") : i18n("Bookmark")
         onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+    }
+
+    QQC2.MenuItem {
+        icon.name: root.pinned ? "window-unpin" : "pin"
+        text: root.pinned ? i18n("Unpin on profile") : i18n("Pin on profile")
+        onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
 
     QQC2.MenuSeparator {

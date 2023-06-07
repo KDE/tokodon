@@ -214,6 +214,14 @@ void TimelineModel::actionBookmark(const QModelIndex &index)
     AbstractTimelineModel::actionBookmark(index, post);
 }
 
+void TimelineModel::actionPin(const QModelIndex &index)
+{
+    int row = index.row();
+    const auto post = m_timeline[row];
+
+    AbstractTimelineModel::actionPin(index, post);
+}
+
 void TimelineModel::actionRedraft(const QModelIndex &index, bool isEdit)
 {
     int row = index.row();

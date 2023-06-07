@@ -59,6 +59,8 @@ public Q_SLOTS:
     /// Delete the post at \p index
     void actionDelete(const QModelIndex &index);
 
+    /// Pin the post at \p index
+    void actionPin(const QModelIndex &index);
 Q_SIGNALS:
     /// Emitted when actionReply is called
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);

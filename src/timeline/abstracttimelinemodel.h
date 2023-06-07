@@ -101,6 +101,9 @@ public:
 
     /// Bookmark the \p post at \p index
     void actionBookmark(const QModelIndex &index, Post *post);
+
+    /// Pin the \p post at \p index
+    void actionPin(const QModelIndex &index, Post *post);
 Q_SIGNALS:
     /// Emitted when the timeline loading status has changed
     void loadingChanged();

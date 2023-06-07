@@ -240,6 +240,19 @@ void AbstractTimelineModel::actionBookmark(const QModelIndex &index, Post *post)
     Q_EMIT dataChanged(index, index);
 }
 
+void AbstractTimelineModel::actionPin(const QModelIndex &index, Post *post)
+{
+    if (!post->pinned()) {
+        m_account->pin(post);
+        post->setPinned(true);
+    } else {
+        m_account->unpin(post);
+        post->setPinned(false);
+    }
+
+    Q_EMIT dataChanged(index, index);
+}
+
 void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
 {
     Q_UNUSED(index);
