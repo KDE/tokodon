@@ -7,15 +7,15 @@
 
 /// Model used for fetching posts for a specific tag (like searching for #KDE)
 /// \see TimelineModel
-class TagsModel : public TimelineModel
+class TagsTimelineModel : public TimelineModel
 {
     Q_OBJECT
 
     Q_PROPERTY(QString hashtag READ hashtag WRITE setHashtag NOTIFY hashtagChanged)
 
 public:
-    explicit TagsModel(QObject *parent = nullptr);
-    ~TagsModel() override;
+    explicit TagsTimelineModel(QObject *parent = nullptr);
+    ~TagsTimelineModel() override;
 
     void fillTimeline(const QString &fromId) override;
     QString displayName() const override;

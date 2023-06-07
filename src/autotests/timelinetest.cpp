@@ -7,7 +7,7 @@
 #include "mockaccount.h"
 #include "timeline/maintimelinemodel.h"
 #include "timeline/poll.h"
-#include "timeline/tagsmodel.h"
+#include "timeline/tagstimelinemodel.h"
 #include "timeline/threadmodel.h"
 #include <KLocalizedString>
 #include <QAbstractItemModelTester>

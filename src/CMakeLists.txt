@@ -69,8 +69,8 @@ PRIVATE
     timeline/timelinemodel.h
     timeline/notificationmodel.cpp
     timeline/notificationmodel.h
-    timeline/tagsmodel.cpp
-    timeline/tagsmodel.h
+    timeline/tagstimelinemodel.cpp
+    timeline/tagstimelinemodel.h
     timeline/maintimelinemodel.cpp
     timeline/maintimelinemodel.h
     timeline/notificationmodel.cpp
