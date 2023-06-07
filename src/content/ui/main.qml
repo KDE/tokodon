@@ -419,7 +419,7 @@ Kirigami.ApplicationWindow {
         TimelinePage {
             id: tagPage
             property string hashtag
-            model: TagsModel {
+            model: TagsTimelineModel {
                 hashtag: tagPage.hashtag
             }
         }

@@ -1,24 +1,24 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "tagsmodel.h"
+#include "tagstimelinemodel.h"
 #include "account/abstractaccount.h"
 #include <QUrlQuery>
 
-TagsModel::TagsModel(QObject *parent)
+TagsTimelineModel::TagsTimelineModel(QObject *parent)
     : TimelineModel(parent)
 {
     init();
 }
 
-TagsModel::~TagsModel() = default;
+TagsTimelineModel::~TagsTimelineModel() = default;
 
-QString TagsModel::hashtag() const
+QString TagsTimelineModel::hashtag() const
 {
     return m_hashtag;
 }
 
-void TagsModel::setHashtag(const QString &hashtag)
+void TagsTimelineModel::setHashtag(const QString &hashtag)
 {
     if (hashtag == m_hashtag) {
         return;
@@ -28,12 +28,12 @@ void TagsModel::setHashtag(const QString &hashtag)
     fillTimeline({});
 }
 
-QString TagsModel::displayName() const
+QString TagsTimelineModel::displayName() const
 {
     return QLatin1Char('#') + m_hashtag;
 }
 
-void TagsModel::fillTimeline(const QString &fromId)
+void TagsTimelineModel::fillTimeline(const QString &fromId)
 {
     if (m_hashtag.isEmpty()) {
         return;

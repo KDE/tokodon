@@ -53,7 +53,7 @@
 #include "timeline/notificationmodel.h"
 #include "timeline/poll.h"
 #include "timeline/post.h"
-#include "timeline/tagsmodel.h"
+#include "timeline/tagstimelinemodel.h"
 #include "timeline/threadmodel.h"
 #include "utils/blurhashimageprovider.h"
 #include "utils/clipboard.h"
@@ -163,7 +163,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
-    qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
+    qmlRegisterType<TagsTimelineModel>("org.kde.kmasto", 1, 0, "TagsTimelineModel");
     qmlRegisterType<AccountModel>("org.kde.kmasto", 1, 0, "AccountModel");
     qmlRegisterType<ProfileEditorBackend>("org.kde.kmasto", 1, 0, "ProfileEditorBackend");
     qmlRegisterType<NetworkRequestProgress>("org.kde.kmasto", 1, 0, "NetworkRequestProgress");
