@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 00:47+0000\n"
+"POT-Creation-Date: 2023-06-07 00:48+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -199,12 +199,12 @@ msgstr "ਪਰੋਫ਼ਾਈਲ ਸੋਧੋ"
 msgid "Account editor"
 msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:130
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:187
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:132
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:189
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -1017,12 +1017,12 @@ msgstr "<b>%1/%2</b> ਅੱਖਰ"
 msgid "Send"
 msgstr "ਭੇਜੋ"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:118
+#: content/ui/StatusDelegate/AttachmentGrid.qml:119
 #, kde-format
 msgid "Not available"
 msgstr "ਮੌਜੂਦ ਨਹੀਂ"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:213
+#: content/ui/StatusDelegate/AttachmentGrid.qml:247
 #, kde-format
 msgid "Media Hidden"
 msgstr "ਮੀਡੀਆ ਲੁਕਾਓ"
@@ -1177,7 +1177,13 @@ msgstr "ਹੋਰ"
 msgid "via %1"
 msgstr "%1 ਰਾਹੀਂ"
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/StatusDelegate/VideoAttachment.qml:105
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr ""
+
+#: content/ui/TimelinePage.qml:167
 #, kde-format
 msgid "No posts"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
@@ -1272,49 +1278,49 @@ msgstr "7 ਦਿਨ"
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "ਟੂਕੂਡੂਨ"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "ਮਸਟੂਡੂਨ ਕਲਾਈਂਟ"
 
-#: main.cpp:116
+#: main.cpp:117
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© ੨੦੨੧-੨੦੨੩ Carl Schwan, 2021-2023 KDE ਕਮਿਊਨਟੀ"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "ਕਾਰਲ ਸਚਵਾਨ"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Maintainer"
 msgstr "ਪਰਬੰਧਕ"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ ੨੦੨੩"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr ""

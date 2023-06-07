@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 00:47+0000\n"
+"POT-Creation-Date: 2023-06-07 00:48+0000\n"
 "PO-Revision-Date: 2022-05-21 11:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -212,14 +212,14 @@ msgstr "Presentera för profil"
 msgid "Account editor"
 msgstr "Konton"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:130
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:187
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:132
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:189
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -1089,12 +1089,12 @@ msgstr ""
 msgid "Send"
 msgstr "Skicka"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:118
+#: content/ui/StatusDelegate/AttachmentGrid.qml:119
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:213
+#: content/ui/StatusDelegate/AttachmentGrid.qml:247
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
@@ -1256,7 +1256,13 @@ msgstr "Visa fler"
 msgid "via %1"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/StatusDelegate/VideoAttachment.qml:105
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr ""
+
+#: content/ui/TimelinePage.qml:167
 #, kde-format
 msgid "No posts"
 msgstr ""
@@ -1353,50 +1359,50 @@ msgstr ""
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
-#: main.cpp:116
+#: main.cpp:117
 #, fuzzy, kde-format
 #| msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE-gemenskapen"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luna Jernberg,Stefan Asserhäll"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@bredband.net"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr ""

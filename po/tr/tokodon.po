@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 00:47+0000\n"
+"POT-Creation-Date: 2023-06-07 00:48+0000\n"
 "PO-Revision-Date: 2023-05-26 12:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -199,12 +199,12 @@ msgstr "Profili Düzenle"
 msgid "Account editor"
 msgstr "Hesap düzenleyici"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:130
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:187
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:132
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:189
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
@@ -1017,12 +1017,12 @@ msgstr "<b>%1/%2</b> karakter"
 msgid "Send"
 msgstr "Gönder"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:118
+#: content/ui/StatusDelegate/AttachmentGrid.qml:119
 #, kde-format
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:213
+#: content/ui/StatusDelegate/AttachmentGrid.qml:247
 #, kde-format
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
@@ -1177,7 +1177,14 @@ msgstr "Daha fazla"
 msgid "via %1"
 msgstr "%1 aracılığıyla"
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/StatusDelegate/VideoAttachment.qml:105
+#, fuzzy, kde-format
+#| msgid "Play"
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr "Oynat"
+
+#: content/ui/TimelinePage.qml:167
 #, kde-format
 msgid "No posts"
 msgstr "Gönderi yok"
@@ -1272,49 +1279,49 @@ msgstr "7 gün"
 msgid "An unknown error occurred."
 msgstr "Bilinmeyen bir hata oluştu."
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon İstemcisi"
 
-#: main.cpp:116
+#: main.cpp:117
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Topluluğu"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "Maintainer"
 msgstr "Bakımcı"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Emir SARI"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Merkezi olmayan sosyal ağ için istemci: Mastodon"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "web+ap: URL şemasını destekler"
@@ -1493,9 +1500,6 @@ msgstr "Hedef"
 #~ msgctxt "hour:minute"
 #~ msgid "%1:%2"
 #~ msgstr "%1:%2"
-
-#~ msgid "Play"
-#~ msgstr "Oynat"
 
 #~ msgid "Make pool auto-exclusive"
 #~ msgstr "Anketi kendiliğinden özel yap"
