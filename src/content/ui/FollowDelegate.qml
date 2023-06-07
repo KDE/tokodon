@@ -17,8 +17,8 @@ QQC2.ItemDelegate {
     required property var notificationActorIdentity
     required property bool selected
 
-    topPadding: 0
-    bottomPadding: Kirigami.Units.smallSpacing
+    topPadding: Kirigami.Units.smallSpacing
+    bottomPadding: Kirigami.Units.largeSpacing * 2
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
 
