@@ -48,10 +48,11 @@ void TagsTimelineModel::fillTimeline(const QString &fromId)
     const auto hashtag = m_hashtag;
 
     auto handleError = [this](QNetworkReply *reply) {
-        Q_UNUSED(reply);
+        Q_UNUSED(reply)
         setLoading(false);
     };
 
+    setLoading(true);
     m_account->get(
         uri,
         true,
