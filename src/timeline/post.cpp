@@ -127,6 +127,16 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     fromJson(obj);
 }
 
+Post *Notification::createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
+{
+    if (!obj.empty()) {
+        Post *post = new Post(account, obj, parent);
+        return post;
+    }
+
+    return nullptr;
+}
+
 void Post::fromJson(QJsonObject obj)
 {
     const auto accountDoc = obj["account"].toObject();
@@ -371,7 +381,7 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     const auto accountId = accountObj["id"].toString();
     const auto type = obj["type"].toString();
 
-    m_post = new Post(m_account, status, parent);
+    m_post = createPost(m_account, status, parent);
     m_identity = m_account->identityLookup(accountId, accountObj);
     m_type = str_to_not_type[type];
     m_id = obj["id"].toString().toInt();

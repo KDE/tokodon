@@ -109,7 +109,10 @@ void NotificationModel::fillTimeline(const QUrl &next)
         for (const auto &value : values) {
             const QJsonObject obj = value.toObject();
             const auto notification = std::make_shared<Notification>(m_account, obj, this);
-            notifications.push_back(notification);
+
+            if (notification.get()->post() != nullptr) {
+                notifications.push_back(notification);
+            }
         }
 
         if (notifications.isEmpty()) {

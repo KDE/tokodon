@@ -168,6 +168,8 @@ private:
     Post *m_post = nullptr;
     Type m_type = Type::Favorite;
     std::shared_ptr<Identity> m_identity;
+
+    Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);
 };
 
 class Post : public QObject
