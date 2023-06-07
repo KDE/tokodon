@@ -200,6 +200,10 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/accounts/%1/followers").arg(m_accountId);
     } else if (m_followListName == "following") {
         uri = QStringLiteral("/api/v1/accounts/%1/following").arg(m_accountId);
+    } else if (m_followListName == "mutes") {
+        uri = QStringLiteral("/api/v1/mutes");
+    } else if (m_followListName == "blocks") {
+        uri = QStringLiteral("/api/v1/blocks");
     }
 
     QUrl url;

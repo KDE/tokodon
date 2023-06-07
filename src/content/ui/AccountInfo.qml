@@ -250,6 +250,20 @@ TimelinePage {
                                 visible: model.isSelf
                                 text: i18n("Follow Requests")
                                 onTriggered: pageStack.push(socialGraphComponent, { name: "request" });
+                            },
+                            Kirigami.Action {
+                                icon.name: "microphone-sensitivity-muted"
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
+                                visible: model.isSelf
+                                text: i18n("Muted Accounts")
+                                onTriggered: pageStack.push(socialGraphComponent, { name: "mutes" });
+                            },
+                            Kirigami.Action {
+                                icon.name: "cards-block"
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
+                                visible: model.isSelf
+                                text: i18n("Blocked Accounts")
+                                onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
                             }
                         ]
                     }
