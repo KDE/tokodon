@@ -130,8 +130,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
 Post *Notification::createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
 {
     if (!obj.empty()) {
-        Post *post = new Post(account, obj, parent);
-        return post;
+        return new Post(account, obj, parent);
     }
 
     return nullptr;
