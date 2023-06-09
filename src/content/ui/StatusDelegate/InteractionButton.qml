@@ -15,7 +15,7 @@ QQC2.AbstractButton {
     property bool interacted: false
     property color interactionColor
 
-    property color textColor
+    property color textColor: Kirigami.Theme.textColor
 
     required property string tooltip
 
@@ -56,7 +56,7 @@ QQC2.AbstractButton {
         }
 
         text: control.text
-        color: textColor ? textColor : Kirigami.Theme.textColor
+        color: control.textColor
         verticalAlignment: Text.AlignVCenter
     }
 }

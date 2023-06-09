@@ -276,6 +276,36 @@ QQC2.ItemDelegate {
             secondary: root.secondary
             visible: !filtered
 
+            InteractionButton {
+                Layout.alignment: Qt.AlignTop
+                rightPadding: 0
+                iconName: switch(root.visibility) {
+                    case Post.Public:
+                        return "kstars_xplanet";
+                    case Post.Unlisted:
+                        return "unlock";
+                    case Post.Private:
+                        return "lock";
+                    case Post.Direct:
+                        return "mail-message";
+                    default:
+                        return "kstars_xplanet";
+                }
+                tooltip: switch(root.visibility) {
+                    case Post.Public:
+                        return i18n("Public");
+                    case Post.Unlisted:
+                        return i18n("Unlisted");
+                    case Post.Private:
+                        return i18n("Private");
+                    case Post.Direct:
+                        return i18n("Direct Message");
+                    default:
+                        return i18n("Public");
+                }
+                interactable: false
+            }
+
             Kirigami.Heading {
                 id: heading
                 font.pixelSize: Config.defaultFont.pixelSize + 1
@@ -358,6 +388,10 @@ QQC2.ItemDelegate {
             poll: root.poll
         }
 
+        Item {
+            height: root.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+        }
+
         RowLayout {
             id: buttonLayout
 
@@ -368,16 +402,20 @@ QQC2.ItemDelegate {
             readonly property bool shouldExpand: applicationWindow().width < Kirigami.Units.gridUnit * 50
 
             InteractionButton {
+                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
                 Layout.fillWidth: buttonLayout.shouldExpand
 
+                interacted: root.repliesCount > 0
                 iconName: "post-reply"
+                interactedIconName: "post-reply-filled"
 
                 tooltip: i18nc("Reply to a post", "Reply")
-                text: root.repliesCount < 2 ? root.repliesCount : (Config.showPostStats || root.selected ? root.repliesCount : i18nc("More than one reply", "1+"))
+                text: Config.showPostStats && !root.selected ? root.repliesCount : ''
 
                 onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
             }
             InteractionButton {
+                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
                 Layout.fillWidth: buttonLayout.shouldExpand
 
                 interacted: root.reblogged
@@ -386,12 +424,13 @@ QQC2.ItemDelegate {
                 iconName: 'post-boost'
                 interactedIconName: 'post-boosted'
 
-                text: (Config.showPostStats || root.selected) ? root.reblogsCount : ''
+                text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
                 tooltip: i18nc("Share a post", "Boost")
 
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
             }
             InteractionButton {
+                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
                 Layout.fillWidth: buttonLayout.shouldExpand
 
                 interacted: root.favourited
@@ -400,13 +439,13 @@ QQC2.ItemDelegate {
                 iconName: 'post-favorite'
                 interactedIconName: 'post-favorited'
 
-                text: (Config.showPostStats || root.selected) ? root.favouritesCount : ''
-                tooltip: i18nc("Like a post", "Like")
+                text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
+                tooltip: i18nc("Favorite a post", "Favorite")
 
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
             }
             InteractionButton {
-                Layout.fillWidth: buttonLayout.shouldExpand
+                Layout.alignment: Qt.AlignRight
 
                 interacted: root.bookmarked
                 interactionColor: "red"
@@ -420,42 +459,12 @@ QQC2.ItemDelegate {
             }
         }
 
+        Item {
+            height: root.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+        }
+
         RowLayout {
             visible: root.expandedPost && root.selected
-            QQC2.ToolButton {
-                icon.name: 
-                    switch(root.visibility) {
-                        case Post.Public:
-                            return "kstars_xplanet";
-                        case Post.Unlisted:
-                            return "unlock";
-                        case Post.Private:
-                            return "lock";
-                        case Post.Direct:
-                            return "mail-message";
-                        default:
-                            return "kstars_xplanet";
-                    }
-                text: i18n("Visibility")
-                display: QQC2.AbstractButton.IconOnly
-                QQC2.ToolTip.text: switch(root.visibility) {
-                    case Post.Public:
-                        return i18n("Public");
-                    case Post.Unlisted:
-                        return i18n("Unlisted");
-                    case Post.Private:
-                        return i18n("Private");
-                    case Post.Direct:
-                        return i18n("Direct Message");
-                    default:
-                        return i18n("Public");
-                    }
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                QQC2.ToolTip.visible: hovered
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            }
 
             QQC2.Label {
                 text: root.absoluteTime
@@ -469,7 +478,7 @@ QQC2.ItemDelegate {
                 elide: Text.ElideRight
                 Layout.fillWidth: true
                 color: Kirigami.Theme.disabledTextColor
-                
+
                 HoverHandler {
                     cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
                     onHoveredChanged: if (hovered) {
@@ -484,6 +493,45 @@ QQC2.ItemDelegate {
                     onClicked: Qt.openUrlExternally(root.application.website)
                 }
 
+            }
+        }
+
+        Item {
+            height: Kirigami.Units.mediumSpacing
+            visible: root.selected && (root.repliesCount > 0 || root.reblogsCount > 0 || root.favouritesCount > 0)
+        }
+
+        RowLayout {
+            visible: root.expandedPost && root.selected
+            InteractionButton {
+                visible: root.repliesCount > 0
+                iconName: "post-reply-filled"
+                tooltip: root.repliesCount === 1 ? i18n("%1 Reply", root.repliesCount) : i18n("%1 Replies", root.repliesCount)
+                text: i18n("%1 Replies", root.repliesCount)
+                interactable: false
+                textColor: Kirigami.Theme.disabledTextColor
+            }
+
+            InteractionButton {
+                visible: root.favouritesCount > 0
+                iconName: "post-favorited"
+                tooltip: i18n("%1 Favorites", root.favouritesCount)
+                text: root.favouritesCount === 1 ? i18n("%1 Favorite", root.favouritesCount) : i18n("%1 Favorites", root.favouritesCount)
+                textColor: Kirigami.Theme.disabledTextColor
+                HoverHandler {
+                    cursorShape: Qt.PointingHandCursor
+                }
+            }
+
+            InteractionButton {
+                visible: root.reblogsCount > 0
+                iconName: "post-boosted"
+                tooltip: root.reblogsCount === 1 ? i18n("%1 Boost", root.reblogsCount) : i18n("%1 Boosts", root.reblogsCount)
+                text: i18n("%1 Boosts", root.reblogsCount)
+                textColor: Kirigami.Theme.disabledTextColor
+                HoverHandler {
+                    cursorShape: Qt.PointingHandCursor
+                }
             }
         }
 
