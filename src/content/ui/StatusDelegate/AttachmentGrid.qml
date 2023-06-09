@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.15
-import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
@@ -170,6 +170,20 @@ QQC2.Control {
                                 }
                             }
                         }
+
+                        Kirigami.Chip {
+                            anchors {
+                                top: parent.top
+                                topMargin: Kirigami.Units.largeSpacing
+                                right: parent.right
+                                rightMargin: Kirigami.Units.largeSpacing
+                            }
+
+                            checked: false
+                            checkable: false
+                            text: i18n("GIF")
+                            closable: false
+                        }
                     }
                 }
 
@@ -212,6 +226,20 @@ QQC2.Control {
                             function onUserSensitivityChanged(hide) {
                                 video.pause()
                             }
+                        }
+
+                        Kirigami.Chip {
+                            anchors {
+                                top: parent.top
+                                topMargin: Kirigami.Units.largeSpacing
+                                right: parent.right
+                                rightMargin: Kirigami.Units.largeSpacing
+                            }
+
+                            checked: false
+                            checkable: false
+                            text: i18n("Video")
+                            closable: false
                         }
                     }
                 }
