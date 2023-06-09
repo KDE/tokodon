@@ -11,8 +11,11 @@ QQC2.AbstractButton {
     required property string iconName
     property string interactedIconName
 
+    property bool interactable: true
     property bool interacted: false
     property color interactionColor
+
+    property color textColor
 
     required property string tooltip
 
@@ -38,7 +41,7 @@ QQC2.AbstractButton {
         source: control.interacted ? control.interactedIconName : control.iconName
 
         isMask: true
-        color: (control.hovered || parent.activeFocus) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
+        color: (interactable && (control.hovered || parent.activeFocus)) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
     }
 
     QQC2.Label {
@@ -53,7 +56,7 @@ QQC2.AbstractButton {
         }
 
         text: control.text
-
+        color: textColor ? textColor : Kirigami.Theme.textColor
         verticalAlignment: Text.AlignVCenter
     }
 }
