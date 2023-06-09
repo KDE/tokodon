@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 00:48+0000\n"
-"PO-Revision-Date: 2023-05-30 06:23+0200\n"
+"POT-Creation-Date: 2023-06-09 00:48+0000\n"
+"PO-Revision-Date: 2023-06-08 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: account/abstractaccount.cpp:430
+#: account/abstractaccount.cpp:440
 #, kde-format
 msgid "Could not follow account"
 msgstr "ანგარიშზე მიყოლის შეცდომა"
 
-#: account/abstractaccount.cpp:431
+#: account/abstractaccount.cpp:441
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "ანგარიშზე მიყოლის გაუქმების შეცდომა"
 
-#: account/abstractaccount.cpp:432
+#: account/abstractaccount.cpp:442
 #, kde-format
 msgid "Could not block account"
 msgstr "ანგარიშის დაბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:433
+#: account/abstractaccount.cpp:443
 #, kde-format
 msgid "Could not unblock account"
 msgstr "ანგარიშის განბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:434
+#: account/abstractaccount.cpp:444
 #, kde-format
 msgid "Could not mute account"
 msgstr "ანგარიშის დადუმების შეცდომა"
 
-#: account/abstractaccount.cpp:435
+#: account/abstractaccount.cpp:445
 #, kde-format
 msgid "Could not unmute account"
 msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:436
+#: account/abstractaccount.cpp:446
 #, kde-format
 msgid "Could not feature account"
 msgstr "ანგარიშის მიმაგრების შეცდომა"
 
-#: account/abstractaccount.cpp:437
+#: account/abstractaccount.cpp:447
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "ანგარიშის მიმაგრების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:438
+#: account/abstractaccount.cpp:448
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
@@ -218,58 +218,70 @@ msgstr "მორგება"
 msgid "Follow Requests"
 msgstr "მოთხოვნების მიყოლა"
 
-#: content/ui/AccountInfo.qml:328
+#: content/ui/AccountInfo.qml:258
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Muted Accounts"
+msgstr "ანგარიშები"
+
+#: content/ui/AccountInfo.qml:265
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Blocked Accounts"
+msgstr "ანგარიშის დამატება"
+
+#: content/ui/AccountInfo.qml:342
 #, kde-format
 msgid "Note"
 msgstr "შენიშვნა"
 
-#: content/ui/AccountInfo.qml:336
+#: content/ui/AccountInfo.qml:350
 #, kde-format
 msgid "Saved"
 msgstr "შენახულია"
 
-#: content/ui/AccountInfo.qml:351
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "Click to add a note"
 msgstr "შენიშვნის დასამატებლად დააწკაპუნეთ"
 
-#: content/ui/AccountInfo.qml:427
+#: content/ui/AccountInfo.qml:441
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr "<b>%1</b> პოსტი"
 
-#: content/ui/AccountInfo.qml:439
+#: content/ui/AccountInfo.qml:453
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "<b>%1</b> მიმდევარი"
 
-#: content/ui/AccountInfo.qml:451
+#: content/ui/AccountInfo.qml:465
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "<b>%1</b> მიმდევარი"
 
-#: content/ui/AccountInfo.qml:463
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "პოსტები"
 
-#: content/ui/AccountInfo.qml:467
+#: content/ui/AccountInfo.qml:481
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "პოსტები და პასუხები"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:485
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "მედია"
 
-#: content/ui/AccountInfo.qml:498
+#: content/ui/AccountInfo.qml:512
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
@@ -678,7 +690,7 @@ msgstr "PNG, GIF ან JPG. მაქს 2 მბ. დაპატარავ�
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:65
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete"
 msgstr "DELETE"
@@ -857,7 +869,7 @@ msgid "Not following anyone"
 msgstr "არავის მიყვებით"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:58
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Edit"
 msgstr "ჩასწორება"
@@ -962,32 +974,32 @@ msgid "Add Poll"
 msgstr "დაამატე გამოკითხვა"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "საჯარო"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "სიაში არაა"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "პირადი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "პირადი შეტყობინება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "ხილვადობა"
@@ -1038,38 +1050,50 @@ msgstr "მედია დამალულია"
 msgid "View profile"
 msgstr "პროფილის ნახვა"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:21
+#: content/ui/StatusDelegate/OverflowMenu.qml:22
 #, kde-format
 msgid "Expand This Post"
 msgstr "ამ პოსტის გაფართოება"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:28
+#: content/ui/StatusDelegate/OverflowMenu.qml:29
 #, kde-format
 msgid "Open Original Page"
 msgstr "თავდაპირველი გვერდის გახსნა"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:36
+#: content/ui/StatusDelegate/OverflowMenu.qml:37
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr "ამ პოსტის ბმულის კოპირება"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#: content/ui/StatusDelegate/OverflowMenu.qml:40
 #, kde-format
 msgid "Post link copied."
 msgstr "პოსტის ბმული დაკოპირდა."
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #: content/ui/StatusDelegate/StatusDelegate.qml:399
 #, kde-format
 msgid "Remove bookmark"
 msgstr "სანიშნის წაშლა"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #, kde-format
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:72
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Unpin on profile"
+msgstr "პროფილის ნახვა"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Pin on profile"
+msgstr "პროფილის ნახვა"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "წაშლა და მონახაზის თავიდან შექმნა"
@@ -1176,14 +1200,13 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "მეტი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr "%1-ის გავლით"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
-#, fuzzy, kde-format
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "დაკვრა"
@@ -1392,57 +1415,57 @@ msgstr "გლობალური დროის ხაზი"
 msgid "Error occurred when fetching the latest notification."
 msgstr "შეცდომა უახლესი შეტყობინების გამოთხოვისას."
 
-#: timeline/post.cpp:309
+#: timeline/post.cpp:318
 #, kde-format
 msgid "in the future"
 msgstr "მომავალში"
 
-#: timeline/post.cpp:311
+#: timeline/post.cpp:320
 #, kde-format
 msgid "%1s"
 msgstr "%1წმ"
 
-#: timeline/post.cpp:313
+#: timeline/post.cpp:322
 #, kde-format
 msgid "%1m"
 msgstr "%1წთ"
 
-#: timeline/post.cpp:315
+#: timeline/post.cpp:324
 #, kde-format
 msgid "%1h"
 msgstr "%1სთ"
 
-#: timeline/post.cpp:317
+#: timeline/post.cpp:326
 #, kde-format
 msgid "%1d"
 msgstr "%1დღ"
 
-#: timeline/post.cpp:321
+#: timeline/post.cpp:330
 #, kde-format
 msgid "1 week ago"
 msgstr "1 კვირის წინ"
 
-#: timeline/post.cpp:323
+#: timeline/post.cpp:332
 #, kde-format
 msgid "%1 weeks ago"
 msgstr "%1 კვირის წინ"
 
-#: timeline/post.cpp:327
+#: timeline/post.cpp:336
 #, kde-format
 msgid "1 month ago"
 msgstr "1 თვის წინ"
 
-#: timeline/post.cpp:329
+#: timeline/post.cpp:338
 #, kde-format
 msgid "%1 months ago"
 msgstr "%1 თვის წინ"
 
-#: timeline/post.cpp:335
+#: timeline/post.cpp:344
 #, kde-format
 msgid "1 year ago"
 msgstr "1 წლის წინ"
 
-#: timeline/post.cpp:337
+#: timeline/post.cpp:346
 #, kde-format
 msgid "%1 years ago"
 msgstr "%1 წლის წინ"

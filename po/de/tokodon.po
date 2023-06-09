@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 00:48+0000\n"
+"POT-Creation-Date: 2023-06-09 00:48+0000\n"
 "PO-Revision-Date: 2022-06-27 00:56+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -18,48 +18,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.07.70\n"
 
-#: account/abstractaccount.cpp:430
+#: account/abstractaccount.cpp:440
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: account/abstractaccount.cpp:431
+#: account/abstractaccount.cpp:441
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: account/abstractaccount.cpp:432
+#: account/abstractaccount.cpp:442
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: account/abstractaccount.cpp:433
+#: account/abstractaccount.cpp:443
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: account/abstractaccount.cpp:434
+#: account/abstractaccount.cpp:444
 #, fuzzy, kde-format
 #| msgid "Add an account"
 msgid "Could not mute account"
 msgstr "Einen Zugang hinzufügen"
 
-#: account/abstractaccount.cpp:435
+#: account/abstractaccount.cpp:445
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: account/abstractaccount.cpp:436
+#: account/abstractaccount.cpp:446
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: account/abstractaccount.cpp:437
+#: account/abstractaccount.cpp:447
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: account/abstractaccount.cpp:438
+#: account/abstractaccount.cpp:448
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
@@ -230,42 +230,54 @@ msgstr ""
 msgid "Follow Requests"
 msgstr "Abonnieren"
 
-#: content/ui/AccountInfo.qml:328
+#: content/ui/AccountInfo.qml:258
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Muted Accounts"
+msgstr "Zugänge"
+
+#: content/ui/AccountInfo.qml:265
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Blocked Accounts"
+msgstr "Zugang hinzufügen"
+
+#: content/ui/AccountInfo.qml:342
 #, kde-format
 msgid "Note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:336
+#: content/ui/AccountInfo.qml:350
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:351
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "Click to add a note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:427
+#: content/ui/AccountInfo.qml:441
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:439
+#: content/ui/AccountInfo.qml:453
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "%1 Abonnenten"
 
-#: content/ui/AccountInfo.qml:451
+#: content/ui/AccountInfo.qml:465
 #, fuzzy, kde-format
 #| msgid "%1 following"
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "%1 Abonnierte"
 
-#: content/ui/AccountInfo.qml:463
+#: content/ui/AccountInfo.qml:477
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -273,19 +285,19 @@ msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Teilen"
 
-#: content/ui/AccountInfo.qml:467
+#: content/ui/AccountInfo.qml:481
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:485
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:498
+#: content/ui/AccountInfo.qml:512
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
@@ -720,7 +732,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:65
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgid "Delete"
@@ -916,7 +928,7 @@ msgid "Not following anyone"
 msgstr "%1 Abonnierte"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:58
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Edit"
 msgstr ""
@@ -1027,32 +1039,32 @@ msgid "Add Poll"
 msgstr "Umfrage hinzufügen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "Öffentlich"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "Nicht aufgeführt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "Direktnachricht"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Sichtbarkeit"
@@ -1104,38 +1116,48 @@ msgstr ""
 msgid "View profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:21
+#: content/ui/StatusDelegate/OverflowMenu.qml:22
 #, kde-format
 msgid "Expand This Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:28
+#: content/ui/StatusDelegate/OverflowMenu.qml:29
 #, kde-format
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:36
+#: content/ui/StatusDelegate/OverflowMenu.qml:37
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#: content/ui/StatusDelegate/OverflowMenu.qml:40
 #, kde-format
 msgid "Post link copied."
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #: content/ui/StatusDelegate/StatusDelegate.qml:399
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:72
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, kde-format
+msgid "Unpin on profile"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, kde-format
+msgid "Pin on profile"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""
@@ -1248,7 +1270,7 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Mehr anzeigen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr ""
@@ -1466,59 +1488,59 @@ msgstr "Globale Zeitleiste"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: timeline/post.cpp:309
+#: timeline/post.cpp:318
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: timeline/post.cpp:311
+#: timeline/post.cpp:320
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1s"
 msgstr "%1 Std."
 
-#: timeline/post.cpp:313
+#: timeline/post.cpp:322
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1m"
 msgstr "%1 Std."
 
-#: timeline/post.cpp:315
+#: timeline/post.cpp:324
 #, kde-format
 msgid "%1h"
 msgstr "%1 Std."
 
-#: timeline/post.cpp:317
+#: timeline/post.cpp:326
 #, kde-format
 msgid "%1d"
 msgstr "%1 Tage"
 
-#: timeline/post.cpp:321
+#: timeline/post.cpp:330
 #, kde-format
 msgid "1 week ago"
 msgstr ""
 
-#: timeline/post.cpp:323
+#: timeline/post.cpp:332
 #, kde-format
 msgid "%1 weeks ago"
 msgstr ""
 
-#: timeline/post.cpp:327
+#: timeline/post.cpp:336
 #, kde-format
 msgid "1 month ago"
 msgstr ""
 
-#: timeline/post.cpp:329
+#: timeline/post.cpp:338
 #, kde-format
 msgid "%1 months ago"
 msgstr ""
 
-#: timeline/post.cpp:335
+#: timeline/post.cpp:344
 #, kde-format
 msgid "1 year ago"
 msgstr ""
 
-#: timeline/post.cpp:337
+#: timeline/post.cpp:346
 #, kde-format
 msgid "%1 years ago"
 msgstr ""

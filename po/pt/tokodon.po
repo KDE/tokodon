@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-07 00:48+0000\n"
+"POT-Creation-Date: 2023-06-09 00:48+0000\n"
 "PO-Revision-Date: 2023-05-26 22:54+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Hashtags SOCKS JPG px Avatar robot ap Silenciamento\n"
 
-#: account/abstractaccount.cpp:430
+#: account/abstractaccount.cpp:440
 #, kde-format
 msgid "Could not follow account"
 msgstr "Não foi possível seguir a conta"
 
-#: account/abstractaccount.cpp:431
+#: account/abstractaccount.cpp:441
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Não foi possível deixar de seguir a conta"
 
-#: account/abstractaccount.cpp:432
+#: account/abstractaccount.cpp:442
 #, kde-format
 msgid "Could not block account"
 msgstr "Não foi possível bloquear a conta"
 
-#: account/abstractaccount.cpp:433
+#: account/abstractaccount.cpp:443
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Não foi possível desbloquear a conta"
 
-#: account/abstractaccount.cpp:434
+#: account/abstractaccount.cpp:444
 #, kde-format
 msgid "Could not mute account"
 msgstr "Não foi possível silenciar a conta"
 
-#: account/abstractaccount.cpp:435
+#: account/abstractaccount.cpp:445
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Não foi possível reactivar a conta"
 
-#: account/abstractaccount.cpp:436
+#: account/abstractaccount.cpp:446
 #, kde-format
 msgid "Could not feature account"
 msgstr "Não foi possível destacar a conta"
 
-#: account/abstractaccount.cpp:437
+#: account/abstractaccount.cpp:447
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Não foi possível remover o destaque da conta"
 
-#: account/abstractaccount.cpp:438
+#: account/abstractaccount.cpp:448
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Não foi possível editar a nota sobre a conta"
@@ -214,58 +214,70 @@ msgstr "Configurar"
 msgid "Follow Requests"
 msgstr "Pedidos de Seguimento"
 
-#: content/ui/AccountInfo.qml:328
+#: content/ui/AccountInfo.qml:258
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Muted Accounts"
+msgstr "Contas"
+
+#: content/ui/AccountInfo.qml:265
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Blocked Accounts"
+msgstr "Adicionar uma Conta"
+
+#: content/ui/AccountInfo.qml:342
 #, kde-format
 msgid "Note"
 msgstr "Nota"
 
-#: content/ui/AccountInfo.qml:336
+#: content/ui/AccountInfo.qml:350
 #, kde-format
 msgid "Saved"
 msgstr "Gravado"
 
-#: content/ui/AccountInfo.qml:351
+#: content/ui/AccountInfo.qml:365
 #, kde-format
 msgid "Click to add a note"
 msgstr "Carregue para adicionar uma nota"
 
-#: content/ui/AccountInfo.qml:427
+#: content/ui/AccountInfo.qml:441
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr "<b>%1</b> publicações"
 
-#: content/ui/AccountInfo.qml:439
+#: content/ui/AccountInfo.qml:453
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "<b>%1</b> seguidores"
 
-#: content/ui/AccountInfo.qml:451
+#: content/ui/AccountInfo.qml:465
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "<b>%1</b> a seguir"
 
-#: content/ui/AccountInfo.qml:463
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Publicações"
 
-#: content/ui/AccountInfo.qml:467
+#: content/ui/AccountInfo.qml:481
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Publicações && Respostas"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:485
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Conteúdos"
 
-#: content/ui/AccountInfo.qml:498
+#: content/ui/AccountInfo.qml:512
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
@@ -679,7 +691,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:65
+#: content/ui/StatusDelegate/OverflowMenu.qml:72
 #, kde-format
 msgid "Delete"
 msgstr "Apagar"
@@ -858,7 +870,7 @@ msgid "Not following anyone"
 msgstr "A não seguir ninguém"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:58
+#: content/ui/StatusDelegate/OverflowMenu.qml:65
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -963,32 +975,32 @@ msgid "Add Poll"
 msgstr "Adicionar uma Pesquisa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
-#: content/ui/StatusDelegate/StatusDelegate.qml:455
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Public"
 msgstr "Público"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Unlisted"
 msgstr "Não Listado"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgid "Private"
 msgstr "Privado"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:453
+#: content/ui/StatusDelegate/StatusDelegate.qml:454
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensagem Directa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:443
+#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilidade"
@@ -1039,38 +1051,50 @@ msgstr "Conteúdo Escondido"
 msgid "View profile"
 msgstr "Ver o perfil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:21
+#: content/ui/StatusDelegate/OverflowMenu.qml:22
 #, kde-format
 msgid "Expand This Post"
 msgstr "Expandir esta Publicação"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:28
+#: content/ui/StatusDelegate/OverflowMenu.qml:29
 #, kde-format
 msgid "Open Original Page"
 msgstr "Abrir a Página Original"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:36
+#: content/ui/StatusDelegate/OverflowMenu.qml:37
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr "Copiar a Ligação desta Publicação"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:39
+#: content/ui/StatusDelegate/OverflowMenu.qml:40
 #, kde-format
 msgid "Post link copied."
 msgstr "A ligação da publicação foi copiada."
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #: content/ui/StatusDelegate/StatusDelegate.qml:399
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Remover o favorito"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:47
+#: content/ui/StatusDelegate/OverflowMenu.qml:48
 #, kde-format
 msgid "Bookmark"
 msgstr "Favorito"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:72
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Unpin on profile"
+msgstr "Ver o perfil"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:54
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "Pin on profile"
+msgstr "Ver o perfil"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Apagar & Voltar ao Rascunho"
@@ -1177,7 +1201,7 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Mais"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:472
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgid "via %1"
 msgstr "através de %1"
@@ -1392,57 +1416,57 @@ msgstr "Cronologia Global"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Ocorreu um erro ao obter a última notificação."
 
-#: timeline/post.cpp:309
+#: timeline/post.cpp:318
 #, kde-format
 msgid "in the future"
 msgstr "no futuro"
 
-#: timeline/post.cpp:311
+#: timeline/post.cpp:320
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:313
+#: timeline/post.cpp:322
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:315
+#: timeline/post.cpp:324
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:317
+#: timeline/post.cpp:326
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:321
+#: timeline/post.cpp:330
 #, kde-format
 msgid "1 week ago"
 msgstr "há 1 semana"
 
-#: timeline/post.cpp:323
+#: timeline/post.cpp:332
 #, kde-format
 msgid "%1 weeks ago"
 msgstr "há %1 semanas"
 
-#: timeline/post.cpp:327
+#: timeline/post.cpp:336
 #, kde-format
 msgid "1 month ago"
 msgstr "há 1 mês"
 
-#: timeline/post.cpp:329
+#: timeline/post.cpp:338
 #, kde-format
 msgid "%1 months ago"
 msgstr "há %1 meses"
 
-#: timeline/post.cpp:335
+#: timeline/post.cpp:344
 #, kde-format
 msgid "1 year ago"
 msgstr "há 1 ano"
 
-#: timeline/post.cpp:337
+#: timeline/post.cpp:346
 #, kde-format
 msgid "%1 years ago"
 msgstr "há %1 anos"
