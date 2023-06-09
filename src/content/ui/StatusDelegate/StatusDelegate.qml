@@ -340,12 +340,19 @@ QQC2.ItemDelegate {
             visible: !filtered
 
             RowLayout {
+                Layout.preferredHeight: spoilerTextLabel.contentHeight + Kirigami.Units.gridUnit * 2
                 visible: root.spoilerText.length !== 0
+                Kirigami.Icon {
+                    Layout.alignment: Qt.AlignVCenter
+                    source: "data-warning"
+                }
                 QQC2.Label {
+                    id: spoilerTextLabel
                     Layout.fillWidth: true
-                    text: root.spoilerText
+                    text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
                     wrapMode: Text.Wrap
                     font: Config.defaultFont
+
                 }
                 QQC2.Button {
                     text: postContent.visible ? i18n("Show Less") : i18n("Show More")
