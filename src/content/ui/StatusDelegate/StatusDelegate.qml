@@ -286,6 +286,24 @@ QQC2.ItemDelegate {
                 Layout.alignment: Qt.AlignTop
                 elide: Text.ElideRight
             }
+
+            InteractionButton {
+                Layout.alignment: Qt.AlignTop
+                rightPadding: 0
+                iconName: 'overflow-menu'
+                tooltip: i18nc("Show more options", "More")
+                onClicked: postMenu.open()
+                OverflowMenu {
+                    id: postMenu
+                    index: root.index
+                    postId: root.id
+                    url: root.url
+                    bookmarked: root.bookmarked
+                    isSelf: root.isSelf
+                    expandedPost: root.expandedPost
+                    pinned: root.pinned
+                }
+            }
         }
 
         ColumnLayout {
@@ -399,29 +417,6 @@ QQC2.ItemDelegate {
                 tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
 
                 onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
-            }
-            Item {
-                Layout.fillWidth: true
-            }
-            InteractionButton {
-                rightPadding: 0
-
-                iconName: 'overflow-menu'
-
-                tooltip: i18nc("Show more options", "More")
-
-                onClicked: postMenu.open()
-
-                OverflowMenu {
-                    id: postMenu
-                    index: root.index
-                    postId: root.id
-                    url: root.url
-                    bookmarked: root.bookmarked
-                    isSelf: root.isSelf
-                    expandedPost: root.expandedPost
-                    pinned: root.pinned
-                }
             }
         }
 
