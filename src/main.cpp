@@ -45,7 +45,6 @@
 #include "network/networkrequestprogress.h"
 #include "search/searchmodel.h"
 #include "timeline/accountmodel.h"
-#include "timeline/linkpaginatedtimelinemodel.h"
 #include "timeline/maintimelinemodel.h"
 #include "timeline/notificationmodel.h"
 #include "timeline/poll.h"
@@ -151,8 +150,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
-    qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "TimelineModel");
-    qmlRegisterType<LinkPaginationTimelineModel>("org.kde.kmasto", 1, 0, "LinkPaginationTimelineModel");
+    qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "MainTimelineModel");
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");

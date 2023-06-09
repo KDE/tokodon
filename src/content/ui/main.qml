@@ -273,7 +273,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.replace(linkPaginationTimeline, {
+            pageStack.replace(mainTimeline, {
                 name: "favourites",
             });
             checked = true;
@@ -289,7 +289,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.replace(linkPaginationTimeline, {
+            pageStack.replace(mainTimeline, {
                 name: "bookmarks",
             });
             checked = true;
@@ -353,7 +353,7 @@ Kirigami.ApplicationWindow {
         TimelinePage {
             id: timelinePage
             property string name
-            model: TimelineModel {
+            model: MainTimelineModel {
                 id: timelineModel
                 name: timelinePage.name
             }
@@ -375,33 +375,13 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
-        id: linkPaginationTimeline
-        TimelinePage {
-            id: timelinePage
-            property string name
-            model: LinkPaginationTimelineModel {
-                id: timelineModel
-                name: timelinePage.name
-            }
-        }
-    }
-
-    Component {
         id: notificationTimeline
-        NotificationPage {
-            model: TimelineModel {
-                id: timelineModel
-            }
-        }
+        NotificationPage { }
     }
 
     Component {
         id: exploreTimeline
-        ExplorePage {
-            model: TimelineModel {
-                id: timelineModel
-            }
-        }
+        ExplorePage { }
     }
 
     property Item hoverLinkIndicator: QQC2.Control {

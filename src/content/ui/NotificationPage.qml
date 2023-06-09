@@ -14,7 +14,6 @@ Kirigami.ScrollablePage {
     id: timelinePage
     title: i18n("Notifications")
 
-    required property var model
     property var dialog: null
 
     property alias listViewHeader: listview.header

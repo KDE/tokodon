@@ -9,7 +9,6 @@
 
 MainTimelineModel::MainTimelineModel(QObject *parent)
     : TimelineModel(parent)
-    , m_timelineName(QStringLiteral("home"))
 {
     init();
 }
@@ -38,7 +37,10 @@ QString MainTimelineModel::displayName() const
         return i18nc("@title", "Bookmarks");
     } else if (m_timelineName == "favourites") {
         return i18nc("@title", "Favourites");
+    } else if (m_timelineName == "trending") {
+        return i18nc("@title", "Trending");
     }
+
     return {};
 }
 
@@ -51,32 +53,21 @@ void MainTimelineModel::setName(const QString &timelineName)
     m_timelineName = timelineName;
     Q_EMIT nameChanged();
     setLoading(false);
-    fillTimeline();
+    fillTimeline({});
 }
 
 void MainTimelineModel::fillTimeline(const QString &from_id)
 {
-    if (!m_account) {
+    static const QSet<QString> validTimelines = {"home", "public", "federated", "bookmarks", "favourites", "trending"};
+    static const QSet<QString> publicTimelines = {"home", "public", "federated"};
+
+    if (!m_account || m_loading || !validTimelines.contains(m_timelineName)) {
         return;
     }
 
-    if (m_timelineName != "home" && m_timelineName != "public" && m_timelineName != "federated" && m_timelineName != "bookmarks"
-        && m_timelineName != "favourites") {
-        return;
-    }
-
-    if (m_loading) {
-        return;
-    }
     setLoading(true);
 
-    QString timelineName = m_timelineName;
-    const bool local = timelineName == "public";
-
-    // federated timeline is really "public" without local set
-    if (timelineName == "federated") {
-        timelineName = "public";
-    }
+    const bool local = m_timelineName == "public";
 
     QUrlQuery q;
     if (local) {
@@ -86,17 +77,21 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         q.addQueryItem("max_id", from_id);
     }
 
-    QString apiUrl;
-    if (m_timelineName == "home" || m_timelineName == "public" || m_timelineName == "federated") {
-        apiUrl = QStringLiteral("/api/v1/timelines/%1").arg(timelineName);
-    } else if (m_timelineName == "bookmarks") {
-        apiUrl = QStringLiteral("/api/v1/bookmarks");
-    } else if (m_timelineName == "favourites") {
-        apiUrl = QStringLiteral("/api/v1/favourites");
+    QUrl uri;
+    if (publicTimelines.contains(m_timelineName)) {
+        // federated timeline is really "public" without local set
+        const QString apiUrl = QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == "federated" ? "public" : m_timelineName);
+        uri = m_account->apiUrl(apiUrl);
+        uri.setQuery(q);
+    } else {
+        // Fixes issues where on reaching the end the data is fetched from the start
+        if (m_next.isEmpty() && !m_timeline.isEmpty()) {
+            setLoading(false);
+            return;
+        }
+        uri =
+            m_next.isEmpty() ? m_account->apiUrl(QStringLiteral("/api/v1/%1").arg(m_timelineName == "trending" ? "trends/statuses" : m_timelineName)) : m_next;
     }
-
-    auto uri = m_account->apiUrl(apiUrl);
-    uri.setQuery(q);
 
     auto account = m_account;
     auto currentTimelineName = m_timelineName;
@@ -104,16 +99,24 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         uri,
         true,
         this,
-        [this, currentTimelineName, account, uri](QNetworkReply *reply) {
+        [this, currentTimelineName, account](QNetworkReply *reply) {
             if (m_account != account || m_timelineName != currentTimelineName) {
                 setLoading(false);
                 return;
             }
 
-            fetchedTimeline(reply->readAll());
+            if (publicTimelines.contains(m_timelineName)) {
+                fetchedTimeline(reply->readAll());
+            } else {
+                static QRegularExpression re("<(.*)>; rel=\"next\"");
+                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+                const auto match = re.match(next);
+                m_next = QUrl::fromUserInput(match.captured(1));
+                fetchedTimeline(reply->readAll(), true);
+            }
         },
         [this](QNetworkReply *reply) {
-            Q_UNUSED(reply);
+            Q_UNUSED(reply)
             setLoading(false);
         });
 }

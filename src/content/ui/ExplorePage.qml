@@ -14,7 +14,6 @@ Kirigami.ScrollablePage {
     id: timelinePage
     title: i18n("Explore")
 
-    required property var model
     property var dialog: null
 
     property alias listViewHeader: listview.header
@@ -34,7 +33,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listview
-        model: LinkPaginationTimelineModel {
+        model: MainTimelineModel {
             id: trendingPostsModel
             name: "trending"
         }

@@ -24,10 +24,11 @@ public:
     /// Set the name of the timeline to fetch ("home", "public" or "federated")
     void setName(const QString &name);
 
-    void fillTimeline(const QString &fromId = {}) override;
+    void fillTimeline(const QString &fromId) override;
     QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
 
 private:
     QString m_timelineName;
+    QUrl m_next;
 };

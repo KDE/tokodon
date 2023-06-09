@@ -78,8 +78,6 @@ PRIVATE
     timeline/notificationmodel.h
     timeline/abstracttimelinemodel.cpp
     timeline/abstracttimelinemodel.h
-    timeline/linkpaginatedtimelinemodel.cpp
-    timeline/linkpaginatedtimelinemodel.h
 
     # Search
     search/searchmodel.cpp
