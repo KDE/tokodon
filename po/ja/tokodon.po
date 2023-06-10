@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-09 00:48+0000\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
 "PO-Revision-Date: 2021-06-02 10:44-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -65,8 +65,7 @@ msgstr ""
 msgid "%1 favorited your post"
 msgstr ""
 
-#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
-#: content/ui/FollowDelegate.qml:59
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:49
 #, kde-format
 msgid "%1 followed you"
 msgstr ""
@@ -339,13 +338,13 @@ msgstr ""
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:84
+#: content/ui/ExplorePage.qml:83
 #, kde-format
 msgid "No Posts"
 msgstr ""
@@ -445,43 +444,43 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:37
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:48
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:56
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:66
+#: content/ui/NotificationPage.qml:65
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:75
+#: content/ui/NotificationPage.qml:74
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:83
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:196
+#: content/ui/NotificationPage.qml:195
 #, kde-format
 msgid "No Notifications"
 msgstr ""
@@ -1291,49 +1290,49 @@ msgstr ""
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:113
+#: main.cpp:112
 #, kde-format
 msgid "Tokodon"
 msgstr ""
 
-#: main.cpp:115
+#: main.cpp:114
 #, kde-format
 msgid "Mastodon client"
 msgstr ""
 
-#: main.cpp:117
+#: main.cpp:116
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: main.cpp:127
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr ""
 
-#: main.cpp:128
+#: main.cpp:127
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr ""
@@ -1348,51 +1347,51 @@ msgstr ""
 msgid "Hashtags"
 msgstr ""
 
-#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr ""
 
-#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr ""
-
-#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr ""
-
-#: timeline/linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr ""
-
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr ""
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr ""
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr ""
 
-#: timeline/maintimelinemodel.cpp:36
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
+msgstr ""
+
+#: timeline/maintimelinemodel.cpp:37
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr ""
+
+#: timeline/maintimelinemodel.cpp:39
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr ""
+
+#: timeline/maintimelinemodel.cpp:41
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
 msgstr ""
 
 #: timeline/notificationmodel.cpp:99

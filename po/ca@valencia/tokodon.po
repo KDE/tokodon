@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-09 00:48+0000\n"
-"PO-Revision-Date: 2023-06-07 11:10+0200\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
+"PO-Revision-Date: 2023-06-09 10:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: account/abstractaccount.cpp:440
 #, kde-format
@@ -72,8 +72,7 @@ msgstr "No s'ha pogut editar una nota quant al compte"
 msgid "%1 favorited your post"
 msgstr "%1 ha marcat la vostra publicació com a preferida"
 
-#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
-#: content/ui/FollowDelegate.qml:59
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:49
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vos seguix"
@@ -220,16 +219,14 @@ msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Comptes"
+msgstr "Comptes silenciats"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Afig un compte"
+msgstr "Comptes bloquejats"
 
 #: content/ui/AccountInfo.qml:342
 #, kde-format
@@ -348,13 +345,13 @@ msgstr "Sense converses"
 msgid "Explore"
 msgstr "Explora"
 
-#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Publicació"
 
-#: content/ui/ExplorePage.qml:84
+#: content/ui/ExplorePage.qml:83
 #, kde-format
 msgid "No Posts"
 msgstr "Sense publicacions"
@@ -454,43 +451,43 @@ msgstr "Punts"
 msgid "Search"
 msgstr "Busca"
 
-#: content/ui/NotificationPage.qml:37
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Totes"
 
-#: content/ui/NotificationPage.qml:48
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Mencions"
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:56
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Preferits"
 
-#: content/ui/NotificationPage.qml:66
+#: content/ui/NotificationPage.qml:65
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Impulsos"
 
-#: content/ui/NotificationPage.qml:75
+#: content/ui/NotificationPage.qml:74
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr "Resultats de votació"
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:83
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Seguix"
 
-#: content/ui/NotificationPage.qml:196
+#: content/ui/NotificationPage.qml:195
 #, kde-format
 msgid "No Notifications"
 msgstr "Sense notificacions"
@@ -1085,16 +1082,14 @@ msgid "Bookmark"
 msgstr "Punt"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Visualitza el perfil"
+msgstr "Deixa de fixar en el perfil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Pin on profile"
-msgstr "Visualitza el perfil"
+msgstr "Fixa en el perfil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
@@ -1309,49 +1304,49 @@ msgstr "7 dies"
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: main.cpp:113
+#: main.cpp:112
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115
+#: main.cpp:114
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:117
+#: main.cpp:116
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:127
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
 
-#: main.cpp:128
+#: main.cpp:127
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Implementa l'esquema «web+ap: url»"
@@ -1366,52 +1361,52 @@ msgstr "Persones"
 msgid "Hashtags"
 msgstr "Etiqueta"
 
-#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr "S'està carregant"
 
-#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr "Punts"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr "Preferits"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr "Tendències"
-
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Inici (%1)"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Inici"
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Línia de temps local"
 
-#: timeline/maintimelinemodel.cpp:36
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Línia de temps global"
+
+#: timeline/maintimelinemodel.cpp:37
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "Punts"
+
+#: timeline/maintimelinemodel.cpp:39
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr "Preferits"
+
+#: timeline/maintimelinemodel.cpp:41
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr "Tendències"
 
 #: timeline/notificationmodel.cpp:99
 #, kde-format

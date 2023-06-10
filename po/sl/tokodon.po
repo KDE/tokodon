@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-09 00:48+0000\n"
-"PO-Revision-Date: 2023-06-07 06:57+0200\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
+"PO-Revision-Date: 2023-06-09 08:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #: account/abstractaccount.cpp:440
@@ -69,8 +69,7 @@ msgstr "Ni bilo mogoče urediti opombe o računu"
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
-#: content/ui/FollowDelegate.qml:59
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:49
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
@@ -217,16 +216,14 @@ msgid "Follow Requests"
 msgstr "Sledi zahtevke"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Računi"
+msgstr "Utišani računi"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Dodaj račun"
+msgstr "Blokirani računi"
 
 #: content/ui/AccountInfo.qml:342
 #, kde-format
@@ -345,13 +342,13 @@ msgstr "Ni pogovorov"
 msgid "Explore"
 msgstr "Razišči"
 
-#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Objavi"
 
-#: content/ui/ExplorePage.qml:84
+#: content/ui/ExplorePage.qml:83
 #, kde-format
 msgid "No Posts"
 msgstr "Ni objav"
@@ -451,43 +448,43 @@ msgstr "Zaznamki"
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/NotificationPage.qml:37
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/NotificationPage.qml:48
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Omembe"
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:56
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Priljubljene"
 
-#: content/ui/NotificationPage.qml:66
+#: content/ui/NotificationPage.qml:65
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Pospeški"
 
-#: content/ui/NotificationPage.qml:75
+#: content/ui/NotificationPage.qml:74
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr "Rezultati glasovanja"
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:83
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Sledi"
 
-#: content/ui/NotificationPage.qml:196
+#: content/ui/NotificationPage.qml:195
 #, kde-format
 msgid "No Notifications"
 msgstr "Ni opozoril"
@@ -1080,16 +1077,14 @@ msgid "Bookmark"
 msgstr "Zaznamek"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Poglej profil"
+msgstr "Odpni s profila"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Pin on profile"
-msgstr "Poglej profil"
+msgstr "Pripni na profil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
@@ -1306,49 +1301,49 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."
 
-#: main.cpp:113
+#: main.cpp:112
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115
+#: main.cpp:114
 #, kde-format
 msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
-#: main.cpp:117
+#: main.cpp:116
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 skupnost KDE"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:127
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
 
-#: main.cpp:128
+#: main.cpp:127
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Podpira shemo url web+ap"
@@ -1363,52 +1358,52 @@ msgstr "Ljudje"
 msgid "Hashtags"
 msgstr "Ključniki"
 
-#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr "Nalaganje"
 
-#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr "Zaznamki"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr "Priljubljene"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr "V trendu"
-
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Domov (%1)"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Domov"
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Krajevna časovnica"
 
-#: timeline/maintimelinemodel.cpp:36
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Globalna časovnica"
+
+#: timeline/maintimelinemodel.cpp:37
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "Zaznamki"
+
+#: timeline/maintimelinemodel.cpp:39
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr "Priljubljene"
+
+#: timeline/maintimelinemodel.cpp:41
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr "V trendu"
 
 #: timeline/notificationmodel.cpp:99
 #, kde-format

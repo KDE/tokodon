@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-09 00:48+0000\n"
-"PO-Revision-Date: 2023-06-07 16:18+0300\n"
+"POT-Creation-Date: 2023-06-10 00:48+0000\n"
+"PO-Revision-Date: 2023-06-09 17:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -69,8 +69,7 @@ msgstr "Не вдалося змінити нотатку щодо обліко�
 msgid "%1 favorited your post"
 msgstr "Ваш допис позначено %1 як улюблений"
 
-#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:44
-#: content/ui/FollowDelegate.qml:59
+#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:49
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 стежить за вашими дописами"
@@ -219,16 +218,14 @@ msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Облікові записи"
+msgstr "Записи без голосу"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Додати обліковий запис"
+msgstr "Заблоковані записи"
 
 #: content/ui/AccountInfo.qml:342
 #, kde-format
@@ -349,13 +346,13 @@ msgstr "Немає спілкувань"
 msgid "Explore"
 msgstr "Ознайомлення"
 
-#: content/ui/ExplorePage.qml:30 content/ui/NotificationPage.qml:30
+#: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Допис"
 
-#: content/ui/ExplorePage.qml:84
+#: content/ui/ExplorePage.qml:83
 #, kde-format
 msgid "No Posts"
 msgstr "Немає дописів"
@@ -457,43 +454,43 @@ msgstr "Закладки"
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/NotificationPage.qml:37
+#: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Усі"
 
-#: content/ui/NotificationPage.qml:48
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Згадки"
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:56
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/NotificationPage.qml:66
+#: content/ui/NotificationPage.qml:65
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Підсилення"
 
-#: content/ui/NotificationPage.qml:75
+#: content/ui/NotificationPage.qml:74
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
 msgstr "Результати голосування"
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:83
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Стеження"
 
-#: content/ui/NotificationPage.qml:196
+#: content/ui/NotificationPage.qml:195
 #, kde-format
 msgid "No Notifications"
 msgstr "Немає сповіщень"
@@ -1088,16 +1085,14 @@ msgid "Bookmark"
 msgstr "Закладка"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Переглянути профіль"
+msgstr "Відшпилити на профілі"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:54
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Pin on profile"
-msgstr "Переглянути профіль"
+msgstr "Пришпилити на профілі"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:79
 #, kde-format
@@ -1314,49 +1309,49 @@ msgstr "7 днів"
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: main.cpp:113
+#: main.cpp:112
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115
+#: main.cpp:114
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:117
+#: main.cpp:116
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021–2023; Спільнота KDE, 2021–2023"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:118
+#: main.cpp:117
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:119
+#: main.cpp:118
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:127
+#: main.cpp:126
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
 
-#: main.cpp:128
+#: main.cpp:127
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Передбачено підтримку схеми адреси web+ap:"
@@ -1371,52 +1366,52 @@ msgstr "Люди"
 msgid "Hashtags"
 msgstr "Хештеґи"
 
-#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:27
+#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr "Завантаження"
 
-#: timeline/linkpaginatedtimelinemodel.cpp:25 timeline/maintimelinemodel.cpp:38
-#, kde-format
-msgctxt "@title"
-msgid "Bookmarks"
-msgstr "Закладки"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:27 timeline/maintimelinemodel.cpp:40
-#, kde-format
-msgctxt "@title"
-msgid "Favourites"
-msgstr "Улюблені"
-
-#: timeline/linkpaginatedtimelinemodel.cpp:29
-#, kde-format
-msgctxt "@title"
-msgid "Trending"
-msgstr "Тренди"
-
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
 msgstr "Домівка (%1)"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Домівка"
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Місцевий розклад"
 
-#: timeline/maintimelinemodel.cpp:36
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Загальний розклад"
+
+#: timeline/maintimelinemodel.cpp:37
+#, kde-format
+msgctxt "@title"
+msgid "Bookmarks"
+msgstr "Закладки"
+
+#: timeline/maintimelinemodel.cpp:39
+#, kde-format
+msgctxt "@title"
+msgid "Favourites"
+msgstr "Улюблені"
+
+#: timeline/maintimelinemodel.cpp:41
+#, kde-format
+msgctxt "@title"
+msgid "Trending"
+msgstr "Тренди"
 
 #: timeline/notificationmodel.cpp:99
 #, kde-format
