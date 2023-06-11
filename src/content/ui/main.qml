@@ -55,6 +55,16 @@ Kirigami.ApplicationWindow {
                 name: "home"
             });
         }
+
+        function onAccountsReady() {
+            if (AccountManager.hasAccounts) {
+                pageStack.push(mainTimeline, {
+                    name: 'home',
+                });
+            } else {
+                pageStack.push('qrc:/content/ui/LoginPage.qml');
+            }
+        }
     }
 
     Connections {
@@ -338,14 +348,6 @@ Kirigami.ApplicationWindow {
 
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
-    }
-
-    Component.onCompleted: if (AccountManager.hasAccounts) {
-        pageStack.push(mainTimeline, {
-            name: 'home',
-        });
-    } else {
-        pageStack.push('qrc:/content/ui/LoginPage.qml');
     }
 
     Component {
