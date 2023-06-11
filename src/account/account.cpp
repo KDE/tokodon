@@ -246,10 +246,6 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
 void Account::validateToken()
 {
-    if (!haveToken()) {
-        return;
-    }
-
     const QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
 
     get(
@@ -322,7 +318,9 @@ void Account::buildFromSettings(const AccountConfig &settings)
     job->setKey(settingsGroupName());
 
     QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [this, job]() {
+        qInfo() << "got token" << m_token;
         m_token = job->textData();
+
         validateToken();
     });
 
