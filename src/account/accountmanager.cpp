@@ -125,8 +125,6 @@ void AccountManager::addAccount(AbstractAccount *account)
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
         Q_EMIT notification(account, n);
     });
-    QSettings settings;
-    writeToSettings(settings);
 }
 
 void AccountManager::childIdentityChanged(AbstractAccount *account)
@@ -225,7 +223,7 @@ void AccountManager::writeToSettings(QSettings &settings)
     settings.beginGroup("accounts");
 
     for (auto a : std::as_const(m_accounts)) {
-        a->writeToSettings(settings);
+        a->writeToSettings();
     }
 
     settings.endGroup();

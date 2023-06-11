@@ -280,7 +280,7 @@ void Account::validateToken()
     streamingSocket("user");
 }
 
-void Account::writeToSettings(QSettings &settings)
+void Account::writeToSettings()
 {
     // do not write to settings if we do not have complete information yet,
     // or else it writes malformed and possibly duplicate accounts to settings.

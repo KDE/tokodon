@@ -207,7 +207,7 @@ public:
     virtual QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Write account to settings
-    virtual void writeToSettings(QSettings &settings) = 0;
+    virtual void writeToSettings() = 0;
 
     /// Read account from settings
     virtual void buildFromSettings(const AccountConfig &settings) = 0;

@@ -104,12 +104,11 @@ QNetworkReply *MockAccount::upload(const QUrl &filename, std::function<void(QNet
     return nullptr;
 }
 
-void MockAccount::writeToSettings(QSettings &settings) const
+void MockAccount::writeToSettings()
 {
-    Q_UNUSED(settings)
 }
 
-void MockAccount::buildFromSettings(const QSettings &settings)
+void MockAccount::buildFromSettings(const AccountConfig &settings)
 {
     Q_UNUSED(settings)
 }

@@ -65,11 +65,14 @@ public:
     // save/restore.
     // writeToSettings assumes a settings object in a parent context
     // buildFromSettings assumes a settings object in the object context
-    void writeToSettings(QSettings &settings) override;
+    void writeToSettings() override;
+
     void buildFromSettings(const AccountConfig &settings) override;
+
     void validateToken() override;
 
     bool hasFollowRequests() const override;
+
     Q_INVOKABLE void checkForFollowRequests() override;
 
 private:
