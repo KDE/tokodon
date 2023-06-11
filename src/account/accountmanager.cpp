@@ -136,6 +136,14 @@ void AccountManager::childIdentityChanged(AbstractAccount *account)
 
 void AccountManager::removeAccount(AbstractAccount *account)
 {
+    // remove from settings
+    AccountConfig config(account->settingsGroupName());
+    config.config()->deleteGroup(account->settingsGroupName());
+
+    auto job = new QKeychain::DeletePasswordJob{"Tokodon"};
+    job->setKey(account->settingsGroupName());
+    job->start();
+
     const auto index = m_accounts.indexOf(account);
     beginRemoveRows(QModelIndex(), index, index);
     m_accounts.removeOne(account);
