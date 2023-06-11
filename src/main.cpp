@@ -11,6 +11,7 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
+#include <clocale>
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
