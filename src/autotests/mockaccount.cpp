@@ -9,7 +9,7 @@ MockAccount::MockAccount(QObject *parent)
 {
     registerGet(apiUrl("/api/v1/preferences"), new TestReply("preferences.json", this));
     m_preferences = new Preferences(this);
-    Q_EMIT authenticated();
+    Q_EMIT authenticated(true);
 }
 
 void MockAccount::get(const QUrl &url,

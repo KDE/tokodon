@@ -252,29 +252,38 @@ void Account::validateToken()
 
     const QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
 
-    get(verify_credentials, true, this, [=](QNetworkReply *reply) {
-        if (!reply->isFinished()) {
-            return;
-        }
+    get(
+        verify_credentials,
+        true,
+        this,
+        [=](QNetworkReply *reply) {
+            qDebug() << "got reply:" << reply->url();
 
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
+            if (!reply->isFinished()) {
+                return;
+            }
 
-        if (!doc.isObject()) {
-            return;
-        }
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
 
-        const auto object = doc.object();
-        if (!object.contains("source")) {
-            return;
-        }
+            if (!doc.isObject()) {
+                return;
+            }
 
-        qWarning() << "Authenticatied!";
+            const auto object = doc.object();
+            if (!object.contains("source")) {
+                return;
+            }
 
-        m_identity = identityLookup(object["id"].toString(), object);
-        m_name = m_identity->username();
-        Q_EMIT identityChanged();
-        Q_EMIT authenticated();
-    });
+            qWarning() << "Authenticatied!";
+
+            m_identity = identityLookup(object["id"].toString(), object);
+            m_name = m_identity->username();
+            Q_EMIT identityChanged();
+            Q_EMIT authenticated(true);
+        },
+        [=](QNetworkReply *reply) {
+            Q_EMIT authenticated(false);
+        });
 
     fetchInstanceMetadata();
 

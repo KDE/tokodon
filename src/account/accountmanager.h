@@ -113,7 +113,10 @@ private:
     AbstractAccount *m_selected_account;
     KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
-    QList<bool> m_accountStatus;
+
+    enum class AccountStatus { NotLoaded, Loaded, InvalidCredentials };
+
+    QList<AccountStatus> m_accountStatus;
 
     bool m_ready = false;
 

@@ -290,9 +290,9 @@ public:
     };
 
 Q_SIGNALS:
-    /// Emitted when the account is successfully authenticated
+    /// Emitted when the account is authenticated
     /// \see validateToken
-    void authenticated();
+    void authenticated(bool successful);
 
     /// Emitted when the application is successfully registered to the server
     /// \see registerApplication

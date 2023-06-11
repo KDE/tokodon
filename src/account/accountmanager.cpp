@@ -225,21 +225,23 @@ void AccountManager::loadFromSettings(QSettings &settings)
         auto accountConfig = AccountConfig{id};
 
         int index = m_accountStatus.size();
-        m_accountStatus.push_back(false);
+        m_accountStatus.push_back(AccountStatus::NotLoaded);
 
         auto account = new Account(accountConfig, m_qnam);
-        connect(account, &Account::authenticated, this, [=] {
-            if (account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
-                m_accountStatus[index] = true;
+        connect(account, &Account::authenticated, this, [=](bool successful) {
+            if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
+                m_accountStatus[index] = AccountStatus::Loaded;
 
                 addAccount(account);
 
                 qDebug() << "Loaded from settings:" << account;
-
-                checkIfLoadingFinished();
             } else {
+                m_accountStatus[index] = AccountStatus::InvalidCredentials;
+
                 delete account;
             }
+
+            checkIfLoadingFinished();
         });
     }
 }
@@ -259,7 +261,7 @@ void AccountManager::checkIfLoadingFinished()
 {
     bool finished = true;
     for (auto status : m_accountStatus) {
-        if (!status)
+        if (status == AccountStatus::NotLoaded)
             finished = false;
     }
 
