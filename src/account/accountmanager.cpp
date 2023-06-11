@@ -8,6 +8,7 @@
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "tokodon_debug.h"
+#include <qt5keychain/keychain.h>
 
 void migrateSettings(QSettings &settings);
 
@@ -311,5 +312,43 @@ void migrateSettings(QSettings &settings)
         }
         settings.endGroup();
         settings.setValue("settingsVersion", 1);
+
+        // we need to migrate to kconfig
+        migrateSettings(settings);
+    } else if (version == 1) {
+        qWarning() << "Migrating v1 settings to kconfig";
+
+        settings.beginGroup("accounts");
+        const auto childGroups = settings.childGroups();
+        for (int i = 0; i < childGroups.size(); i++) {
+            const auto child = childGroups[i];
+            settings.beginGroup(child);
+
+            const auto childName = settings.value("name").toString();
+            const auto childInstance = QUrl(settings.value("instance_uri").toString()).host();
+
+            const QString settingsGroupName = childName + QLatin1Char('@') + childInstance;
+
+            AccountConfig config(settingsGroupName);
+            config.setClientId(settings.value("client_id").toString());
+            config.setClientSecret(settings.value("client_secret").toString());
+            config.setInstanceUri(settings.value("instance_uri").toString());
+            config.setName(settings.value("name").toString());
+            config.setIgnoreSslErrors(settings.value("ignoreSslErrors").toBool());
+
+            config.save();
+
+            auto job = new QKeychain::WritePasswordJob{"Tokodon"};
+            job->setKey(childName);
+            job->setTextData(settings.value("token").toString());
+            job->start();
+
+            settings.endGroup();
+        }
+
+        settings.endGroup();
+
+        // wipe file
+        settings.clear();
     }
 }
