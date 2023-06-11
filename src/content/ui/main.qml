@@ -421,4 +421,14 @@ Kirigami.ApplicationWindow {
             AccountManager.selectedAccount.checkForFollowRequests();
         }
     }
+
+    Rectangle {
+        anchors.fill: parent
+        visible: !AccountManager.isReady
+        color: Kirigami.Theme.backgroundColor
+
+        Kirigami.LoadingPlaceholder {
+            anchors.centerIn: parent
+        }
+    }
 }

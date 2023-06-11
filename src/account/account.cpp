@@ -268,6 +268,8 @@ void Account::validateToken()
             return;
         }
 
+        qWarning() << "Authenticatied!";
+
         m_identity = identityLookup(object["id"].toString(), object);
         m_name = m_identity->username();
         Q_EMIT identityChanged();
@@ -287,6 +289,8 @@ void Account::writeToSettings()
     if (m_name.isEmpty() || m_instance_uri.isEmpty()) {
         return;
     }
+
+    qDebug() << "Writing to settings...";
 
     AccountConfig config(settingsGroupName());
     config.setClientId(m_client_id);

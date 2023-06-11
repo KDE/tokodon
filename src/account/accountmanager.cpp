@@ -105,6 +105,8 @@ void AccountManager::addAccount(AbstractAccount *account)
     Q_EMIT accountsChanged();
     connect(account, &Account::identityChanged, this, [this, account]() {
         childIdentityChanged(account);
+        qDebug() << "Identity has changed...";
+        account->writeToSettings();
     });
     connect(account, &Account::authenticated, this, [this]() {
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
@@ -129,21 +131,6 @@ void AccountManager::addAccount(AbstractAccount *account)
 
 void AccountManager::childIdentityChanged(AbstractAccount *account)
 {
-    auto config = Config::self();
-
-    // old LastUsedAccount values used to be only username
-    const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
-    const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@';
-    const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
-    const bool matchesOldFormat = account->username() == config->lastUsedAccount();
-
-    const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
-
-    if (selectedAccount() == nullptr && isValid) {
-        selectAccount(account, false);
-        Q_EMIT accountsReady();
-    }
-
     Q_EMIT identityChanged(account);
 
     const auto idx = m_accounts.indexOf(account);
@@ -237,11 +224,19 @@ void AccountManager::loadFromSettings(QSettings &settings)
     for (const auto &id : config.groupList()) {
         auto accountConfig = AccountConfig{id};
 
+        int index = m_accountStatus.size();
+        m_accountStatus.push_back(false);
+
         auto account = new Account(accountConfig, m_qnam);
         connect(account, &Account::authenticated, this, [=] {
             if (account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
+                m_accountStatus[index] = true;
+
                 addAccount(account);
+
                 qDebug() << "Loaded from settings:" << account;
+
+                checkIfLoadingFinished();
             } else {
                 delete account;
             }
@@ -260,7 +255,48 @@ void AccountManager::setAboutData(const KAboutData &aboutData)
     Q_EMIT aboutDataChanged();
 }
 
-void migrateSettings(QSettings &settings) {
+void AccountManager::checkIfLoadingFinished()
+{
+    bool finished = true;
+    for (auto status : m_accountStatus) {
+        if (!status)
+            finished = false;
+    }
+
+    if (!finished) {
+        qDebug() << "Not finished loading all accounts yet!";
+        return;
+    }
+
+    qDebug() << "Finish loading accounts, now setting default";
+
+    auto config = Config::self();
+
+    for (auto account : m_accounts) {
+        // old LastUsedAccount values used to be only username
+        const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
+        const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@';
+        const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
+        const bool matchesOldFormat = account->username() == config->lastUsedAccount();
+
+        const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
+
+        if (selectedAccount() == nullptr && isValid) {
+            selectAccount(account, false);
+        }
+    }
+
+    m_ready = true;
+    Q_EMIT accountsReady();
+}
+
+bool AccountManager::isReady() const
+{
+    return m_ready;
+}
+
+void migrateSettings(QSettings &settings)
+{
     const auto version = settings.value("settingsVersion").toInt();
     if (version == 0) {
         qCDebug(TOKODON_LOG) << "Migrating v0 settings to v1";
@@ -268,7 +304,7 @@ void migrateSettings(QSettings &settings) {
         const auto childGroups = settings.childGroups();
         // we are just going to re-index
         qCDebug(TOKODON_LOG) << "Account list is" << childGroups;
-        for (int i = 0; i < childGroups.size(); i++){
+        for (int i = 0; i < childGroups.size(); i++) {
             // we're going to move all of this into an array instead
             const auto child = childGroups[i];
             settings.beginGroup(child);
@@ -278,7 +314,7 @@ void migrateSettings(QSettings &settings) {
             const QString newName = childName + QLatin1Char('@') + childInstance;
             qCDebug(TOKODON_LOG) << "Rewriting key from" << child << "to" << newName;
             settings.endGroup();
-            for (const auto &key: keysInChild) {
+            for (const auto &key : keysInChild) {
                 settings.beginGroup(child);
                 const auto value = settings.value(key);
                 settings.endGroup(); // child

@@ -16,10 +16,24 @@ class QNetworkAccessManager;
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
+
+    /// Whether or not the account manager is completely ready
+    /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
+    Q_PROPERTY(bool isReady READ isReady NOTIFY accountsReady)
+
+    /// If there any valid accounts loaded
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountsChanged)
+
+    /// The currently selected account
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
+
+    /// The currently seelcted account's id
     Q_PROPERTY(QString selectedAccountId READ selectedAccountId NOTIFY accountSelected)
+
+    /// The index of the seelcted account in the account list
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
+
+    /// The about data of the application
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
 public:
     enum CustomRoles {
@@ -33,6 +47,7 @@ public:
     void loadFromSettings(QSettings &settings);
     void writeToSettings(QSettings &settings);
 
+    bool isReady() const;
     bool hasAccounts() const;
     Q_INVOKABLE void addAccount(AbstractAccount *account);
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
@@ -98,4 +113,9 @@ private:
     AbstractAccount *m_selected_account;
     KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
+    QList<bool> m_accountStatus;
+
+    bool m_ready = false;
+
+    void checkIfLoadingFinished();
 };
