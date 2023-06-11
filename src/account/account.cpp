@@ -257,8 +257,6 @@ void Account::validateToken()
         true,
         this,
         [=](QNetworkReply *reply) {
-            qDebug() << "got reply:" << reply->url();
-
             if (!reply->isFinished()) {
                 return;
             }
@@ -273,8 +271,6 @@ void Account::validateToken()
             if (!object.contains("source")) {
                 return;
             }
-
-            qWarning() << "Authenticatied!";
 
             m_identity = identityLookup(object["id"].toString(), object);
             m_name = m_identity->username();
@@ -298,8 +294,6 @@ void Account::writeToSettings()
     if (m_name.isEmpty() || m_instance_uri.isEmpty()) {
         return;
     }
-
-    qDebug() << "Writing to settings...";
 
     AccountConfig config(settingsGroupName());
     config.setClientId(m_client_id);

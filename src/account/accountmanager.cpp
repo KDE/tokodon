@@ -102,7 +102,6 @@ void AccountManager::addAccount(AbstractAccount *account)
     Q_EMIT accountsChanged();
     connect(account, &Account::identityChanged, this, [this, account]() {
         childIdentityChanged(account);
-        qDebug() << "Identity has changed...";
         account->writeToSettings();
     });
     connect(account, &Account::authenticated, this, [this]() {
@@ -209,7 +208,7 @@ int AccountManager::selectedIndex() const
 
 void AccountManager::loadFromSettings()
 {
-    qDebug() << "Loading any accounts from settings.";
+    qCDebug(TOKODON_LOG) << "Loading accounts from settings.";
 
     KConfig config{"testrc", KConfig::OpenFlag::NoGlobals};
     for (const auto &id : config.groupList()) {
@@ -224,8 +223,6 @@ void AccountManager::loadFromSettings()
                 m_accountStatus[index] = AccountStatus::Loaded;
 
                 addAccount(account);
-
-                qDebug() << "Loaded from settings:" << account;
             } else {
                 m_accountStatus[index] = AccountStatus::InvalidCredentials;
 
@@ -257,11 +254,10 @@ void AccountManager::checkIfLoadingFinished()
     }
 
     if (!finished) {
-        qDebug() << "Not finished loading all accounts yet!";
         return;
     }
 
-    qDebug() << "Finish loading accounts, now setting default";
+    qCDebug(TOKODON_LOG) << "Accounts have finished loading.";
 
     auto config = Config::self();
 
@@ -324,7 +320,7 @@ void migrateSettings(QSettings &settings)
         // we need to migrate to kconfig
         migrateSettings(settings);
     } else if (version == 1) {
-        qWarning() << "Migrating v1 settings to kconfig";
+        qCDebug(TOKODON_LOG) << "Migrating v1 settings to kconfig";
 
         settings.beginGroup("accounts");
         const auto childGroups = settings.childGroups();
