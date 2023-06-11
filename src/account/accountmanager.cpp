@@ -339,7 +339,7 @@ void migrateSettings(QSettings &settings)
             config.save();
 
             auto job = new QKeychain::WritePasswordJob{"Tokodon"};
-            job->setKey(childName);
+            job->setKey(settingsGroupName);
             job->setTextData(settings.value("token").toString());
             job->start();
 

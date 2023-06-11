@@ -311,7 +311,7 @@ void Account::writeToSettings()
     config.save();
 
     auto job = new QKeychain::WritePasswordJob{"Tokodon", this};
-    job->setKey(m_name);
+    job->setKey(settingsGroupName());
     job->setTextData(m_token);
     job->start();
 }
@@ -325,7 +325,7 @@ void Account::buildFromSettings(const AccountConfig &settings)
     m_ignoreSslErrors = settings.ignoreSslErrors();
 
     auto job = new QKeychain::ReadPasswordJob{"Tokodon", this};
-    job->setKey(m_name);
+    job->setKey(settingsGroupName());
 
     QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [this, job]() {
         m_token = job->textData();
