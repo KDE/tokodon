@@ -234,6 +234,8 @@ void AccountManager::loadFromSettings()
             });
         }
     }
+
+    checkIfLoadingFinished();
 }
 
 KAboutData AccountManager::aboutData() const
@@ -249,6 +251,13 @@ void AccountManager::setAboutData(const KAboutData &aboutData)
 
 void AccountManager::checkIfLoadingFinished()
 {
+    // no accounts at all
+    if (m_accountStatus.empty()) {
+        m_ready = true;
+        Q_EMIT accountsReady();
+        return;
+    }
+
     bool finished = true;
     for (auto status : m_accountStatus) {
         if (status == AccountStatus::NotLoaded)
