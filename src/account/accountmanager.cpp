@@ -210,27 +210,29 @@ void AccountManager::loadFromSettings()
 {
     qCDebug(TOKODON_LOG) << "Loading accounts from settings.";
 
-    KConfig config{"testrc", KConfig::OpenFlag::NoGlobals};
+    KConfig config{"tokodonrc", KConfig::OpenFlag::NoGlobals};
     for (const auto &id : config.groupList()) {
-        auto accountConfig = AccountConfig{id};
+        if (id.contains('@')) {
+            auto accountConfig = AccountConfig{id};
 
-        int index = m_accountStatus.size();
-        m_accountStatus.push_back(AccountStatus::NotLoaded);
+            int index = m_accountStatus.size();
+            m_accountStatus.push_back(AccountStatus::NotLoaded);
 
-        auto account = new Account(accountConfig, m_qnam);
-        connect(account, &Account::authenticated, this, [=](bool successful) {
-            if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
-                m_accountStatus[index] = AccountStatus::Loaded;
+            auto account = new Account(accountConfig, m_qnam);
+            connect(account, &Account::authenticated, this, [=](bool successful) {
+                if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
+                    m_accountStatus[index] = AccountStatus::Loaded;
 
-                addAccount(account);
-            } else {
-                m_accountStatus[index] = AccountStatus::InvalidCredentials;
+                    addAccount(account);
+                } else {
+                    m_accountStatus[index] = AccountStatus::InvalidCredentials;
 
-                delete account;
-            }
+                    delete account;
+                }
 
-            checkIfLoadingFinished();
-        });
+                checkIfLoadingFinished();
+            });
+        }
     }
 }
 
