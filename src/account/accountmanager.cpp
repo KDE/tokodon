@@ -18,7 +18,7 @@ AccountManager::AccountManager(QObject *parent)
 {
     QSettings settings;
     migrateSettings(settings);
-    loadFromSettings(settings);
+    loadFromSettings();
 
     connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (account != nullptr) {
@@ -29,10 +29,6 @@ AccountManager::AccountManager(QObject *parent)
 
 AccountManager::~AccountManager()
 {
-    // before destroying the world, dump everything to QSettings
-    QSettings settings;
-    writeToSettings(settings);
-
     for (auto a : std::as_const(m_accounts)) {
         delete a;
     }
@@ -150,9 +146,6 @@ void AccountManager::removeAccount(AbstractAccount *account)
         m_selected_account = nullptr;
     }
     Q_EMIT accountSelected(m_selected_account);
-    QSettings settings;
-    settings.clear();
-    writeToSettings(settings);
 
     Q_EMIT accountRemoved(account);
     Q_EMIT accountsChanged();
@@ -205,18 +198,7 @@ int AccountManager::selectedIndex() const
     return -1;
 }
 
-void AccountManager::writeToSettings(QSettings &settings)
-{
-    settings.beginGroup("accounts");
-
-    for (auto a : std::as_const(m_accounts)) {
-        a->writeToSettings();
-    }
-
-    settings.endGroup();
-}
-
-void AccountManager::loadFromSettings(QSettings &settings)
+void AccountManager::loadFromSettings()
 {
     qDebug() << "Loading any accounts from settings.";
 

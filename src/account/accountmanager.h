@@ -44,8 +44,7 @@ public:
 
     static AccountManager &instance();
 
-    void loadFromSettings(QSettings &settings);
-    void writeToSettings(QSettings &settings);
+    void loadFromSettings();
 
     bool isReady() const;
     bool hasAccounts() const;
