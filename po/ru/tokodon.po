@@ -1,536 +1,537 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Xosé M. <correoxm@disroot.org>, 2022, 2023.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
 #
+# Alexander Yavorsky <kekcuha@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-15 02:32+0000\n"
-"PO-Revision-Date: 2023-06-05 15:25+0200\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
-"Language: gl\n"
+"PO-Revision-Date: 2023-06-11 14:27+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 21.08.3\n"
 
 #: abstractaccount.cpp:415
 #, kde-format
 msgid "Could not follow account"
-msgstr "Non se seguiu a conta"
+msgstr "Не удалось подписаться на учётную запись"
 
 #: abstractaccount.cpp:416
 #, kde-format
 msgid "Could not unfollow account"
-msgstr "Non se deixou de seguir a conta"
+msgstr "Не удалось отписаться от учётной записи"
 
 #: abstractaccount.cpp:417
 #, kde-format
 msgid "Could not block account"
-msgstr "Non se bloqueou a conta"
+msgstr "Не удалось заблокировать учётную запись"
 
 #: abstractaccount.cpp:418
 #, kde-format
 msgid "Could not unblock account"
-msgstr "Non se desbloqueou a conta"
+msgstr "Не удалось разблокировать учётную запись"
 
 #: abstractaccount.cpp:419
 #, kde-format
 msgid "Could not mute account"
-msgstr "Non se acalou a conta"
+msgstr "Не удалось отключить уведомления учётной записи"
 
 #: abstractaccount.cpp:420
 #, kde-format
 msgid "Could not unmute account"
-msgstr "Non se restableceu a conta"
+msgstr "Не удалось включить уведомления учётной записи"
 
 #: abstractaccount.cpp:421
 #, kde-format
 msgid "Could not feature account"
-msgstr "Non se destacou a conta"
+msgstr "Не удалось добавить учётную запись в подборку"
 
 #: abstractaccount.cpp:422
 #, kde-format
 msgid "Could not unfeature account"
-msgstr "Non se retirou a conta"
+msgstr "Не удалось убрать учётную запись из подборки"
 
 #: abstractaccount.cpp:423
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr "Non se editou a nota sobre a conta"
+msgstr "Не удалось отредактировать заметку об учётной записи"
 
 #: accountmodel.cpp:31 maintimelinemodel.cpp:27
 #, kde-format
 msgid "Loading"
-msgstr "Cargando"
+msgstr "Загрузка"
 
 #: content/ui/AccountInfo.qml:53
 #, kde-format
 msgid "Follows you"
-msgstr "Séguete"
+msgstr "Подписан(а) на вас"
 
 #: content/ui/AccountInfo.qml:93
 #, kde-format
 msgid "Requested"
-msgstr "Solicitado"
+msgstr "Отправлен запрос"
 
 #: content/ui/AccountInfo.qml:96
 #, kde-format
 msgid "Following"
-msgstr "Seguindo"
+msgstr "Вы подписаны"
 
 #: content/ui/AccountInfo.qml:98
 #, kde-format
 msgid "Follow"
-msgstr "Seguir"
+msgstr "Подписаться"
 
 #: content/ui/AccountInfo.qml:123
 #, kde-format
 msgid "Stop notifying me when %1 posts"
-msgstr "Deixar de notificarme con %1 publicacións"
+msgstr "Не уведомлять о публикациях %1"
 
 #: content/ui/AccountInfo.qml:125
 #, kde-format
 msgid "Notify me when %1 posts"
-msgstr "Notificarme con %1 publicacións"
+msgstr "Уведомлять о публикациях %1"
 
 #: content/ui/AccountInfo.qml:141
 #, kde-format
 msgid "Hide boosts from %1"
-msgstr "Agochar promocións de %1"
+msgstr "Скрывать записи, которыми вы поделились, от %1"
 
 #: content/ui/AccountInfo.qml:143
 #, kde-format
 msgid "Stop hiding boosts from %1"
-msgstr "Deixar de agochar promocións de %1"
+msgstr "Не скрывать записи, которыми вы поделились, от %1"
 
 #: content/ui/AccountInfo.qml:159
 #, kde-format
 msgid "Stop featuring on profile"
-msgstr "Deixar de destacar no perfil"
+msgstr "Не рекомендовать профиль"
 
 #: content/ui/AccountInfo.qml:161
 #, kde-format
 msgid "Feature on profile"
-msgstr "Destacar no perfil"
+msgstr "Рекомендовать профиль"
 
 #: content/ui/AccountInfo.qml:177
 #, kde-format
 msgid "Stop muting"
-msgstr "Deixar de acalar"
+msgstr "Включить уведомления"
 
 #: content/ui/AccountInfo.qml:179
 #, kde-format
 msgid "Mute"
-msgstr "Acalar"
+msgstr "Отключить уведомления"
 
 #: content/ui/AccountInfo.qml:195
 #, kde-format
 msgid "Stop blocking"
-msgstr "Deixar de bloquear"
+msgstr "Разблокировать"
 
 #: content/ui/AccountInfo.qml:197
 #, kde-format
 msgid "Block"
-msgstr "Bloquear"
+msgstr "Заблокировать"
 
 #: content/ui/AccountInfo.qml:211
 #, kde-format
 msgid "Edit profile"
-msgstr "Editar o perfil"
+msgstr "Редактировать профиль"
 
 #: content/ui/AccountInfo.qml:215 content/ui/Settings/AccountsCard.qml:36
 #, kde-format
 msgid "Account editor"
-msgstr "Editor da conta"
+msgstr "Редактор учётной записи"
 
 #: content/ui/AccountInfo.qml:221 content/ui/TimelinePage.qml:126
 #, kde-format
 msgid "Settings"
-msgstr "Axustes"
+msgstr "Параметры"
 
 #: content/ui/AccountInfo.qml:222 content/ui/TimelinePage.qml:128
 #: content/ui/UserInfo.qml:218
 #, kde-format
 msgid "Configure"
-msgstr "Configurar"
+msgstr "Настройка"
 
 #: content/ui/AccountInfo.qml:227 content/ui/FollowRequestsPage.qml:13
 #: content/ui/main.qml:213
 #, kde-format
 msgid "Follow Requests"
-msgstr "Solicitudes de seguimento"
+msgstr "Запросы на подписку"
 
 #: content/ui/AccountInfo.qml:304
 #, kde-format
 msgid "Note"
-msgstr "Nota"
+msgstr "Заметка"
 
 #: content/ui/AccountInfo.qml:312
 #, kde-format
 msgid "Saved"
-msgstr "Gardada"
+msgstr "Сохранено"
 
 #: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Click to add a note"
-msgstr "Preme para engadir unha nota"
+msgstr "Нажмите, чтобы добавить заметку"
 
 #: content/ui/AccountInfo.qml:400
 #, kde-format
 msgid "%1 toots"
-msgstr "%1 chíos"
+msgstr "Записей: %1"
 
 #: content/ui/AccountInfo.qml:404
 #, kde-format
 msgid "%1 followers"
-msgstr "%1 seguidoras"
+msgstr "Подписчиков: %1"
 
 #: content/ui/AccountInfo.qml:409
 #, kde-format
 msgid "%1 following"
-msgstr "Seguindo a %1"
+msgstr "Подписок: %1"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr "Autorización"
+msgstr "Авторизация"
 
 #: content/ui/AuthorizationPage.qml:29
 #, kde-format
 msgid "Authorize Tokodon to act on your behalf"
-msgstr "Permitir a Tokodon actuar no teu nome"
+msgstr "Авторизация приложения Tokodon на выполнение действий от вашего имени"
 
 #: content/ui/AuthorizationPage.qml:41
 #, kde-format
 msgid "To continue, please open the following link and authorize Tokodon: %1"
-msgstr "Para continuar, abre a seguinte ligazón e autoriza a Tokodon: %1"
+msgstr "Для продолжения откройте следующую ссылку и авторизуйте Tokodon: %1"
 
 #: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:80
 #, kde-format
 msgid "Copy link"
-msgstr "Copiar a ligazón"
+msgstr "Копировать ссылку"
 
 #: content/ui/AuthorizationPage.qml:61 content/ui/AuthorizationPage.qml:72
 #, kde-format
 msgid "Open link"
-msgstr "Abrir a ligazón"
+msgstr "Открыть ссылку"
 
 #: content/ui/AuthorizationPage.qml:94
 #, kde-format
 msgid "Enter token:"
-msgstr "Escribir o código:"
+msgstr "Код авторизации:"
 
 #: content/ui/AuthorizationPage.qml:102 content/ui/LoginPage.qml:49
 #, kde-format
 msgid "Continue"
-msgstr "Continuar"
+msgstr "Продолжить"
 
 #: content/ui/AuthorizationPage.qml:105
 #, kde-format
 msgid "Please insert the generated token."
-msgstr "Escribe aquí o código creado."
+msgstr "Вставьте код авторизации в текстовое поле."
 
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr "Conversas"
+msgstr "Чаты"
 
 #: content/ui/ConversationPage.qml:29 content/ui/FollowRequestsPage.qml:65
 #: content/ui/NotificationPage.qml:178 content/ui/SearchView.qml:33
 #: content/ui/TimelinePage.qml:99
 #, kde-format
 msgid "Loading..."
-msgstr "Cargando..."
+msgstr "Загрузка..."
 
 #: content/ui/ConversationPage.qml:34
 #, kde-format
 msgid "No Conversations"
-msgstr "Sen conversas"
+msgstr "Нет ни одного чата"
 
 #: content/ui/FollowDelegate.qml:44 content/ui/FollowDelegate.qml:59
 #: notificationhandler.cpp:27
 #, kde-format
 msgid "%1 followed you"
-msgstr "%1 seguiulle"
+msgstr "«%1» добавил(а) вас в свои подписки"
 
 #: content/ui/FollowRequestsPage.qml:71
 #, kde-format
 msgid "No Follow Requests"
-msgstr "Sen solicitudes"
+msgstr "Запросов на подписку нет"
 
 #: content/ui/FullScreenImage.qml:47
 #, kde-format
 msgid "Zoom in"
-msgstr "Aumentar"
+msgstr "Увеличить"
 
 #: content/ui/FullScreenImage.qml:58
 #, kde-format
 msgid "Zoom out"
-msgstr "Diminuír"
+msgstr "Уменьшить"
 
 #: content/ui/FullScreenImage.qml:69
 #, kde-format
 msgid "Rotate left"
-msgstr "Rotar á esquerda"
+msgstr "Повернуть влево"
 
 #: content/ui/FullScreenImage.qml:76
 #, kde-format
 msgid "Rotate right"
-msgstr "Rotar á dereita"
+msgstr "Повернуть вправо"
 
 #: content/ui/FullScreenImage.qml:83
 #, kde-format
 msgid "Save as"
-msgstr "Gardar como"
+msgstr "Сохранить как"
 
 #: content/ui/FullScreenImage.qml:95
 #, kde-format
 msgid "Close"
-msgstr "Pechar"
+msgstr "Закрыть"
 
 #: content/ui/FullScreenImage.qml:316
 #, kde-format
 msgid "Previous image"
-msgstr "Imaxe anterior"
+msgstr "Предыдущее изображение"
 
 #: content/ui/FullScreenImage.qml:331
 #, kde-format
 msgid "Next image"
-msgstr "Imaxe seguinte"
+msgstr "Следующее изображение"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
-msgstr "Idiomas preferidos"
+msgstr "Предпочитаемые языки"
 
 #: content/ui/LanguageSelector.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
-msgstr "Todos os idiomas"
+msgstr "Все языки"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
 msgid "Login"
-msgstr "Acceder"
+msgstr "Вход в систему"
 
 #: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:65
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr "Fallou a conexión ao servidor: %1. Comproba os axustes."
+msgstr ""
+"Не удалось подключиться к серверу: %1. Проверьте параметры подключения."
 
 #: content/ui/LoginPage.qml:35
 #, kde-format
 msgid "Welcome to Tokodon"
-msgstr "Benvida a Tokodon"
+msgstr "Добро пожаловать в Tokodon"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Instance Url:"
-msgstr "URL da instancia:"
+msgstr "URL-адрес сервера:"
 
 #: content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr "O URL da instancia non pode estar baleiro!"
+msgstr "URL-адрес сервера не может быть пустым!"
 
 #: content/ui/LoginPage.qml:76
 #, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
-msgstr "Axustes da Rede"
+msgstr "Параметры сети"
 
 #: content/ui/LoginPage.qml:81
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
-msgstr "Ignorar erros SSL"
+msgstr "Игнорировать ошибки SSL"
 
 #: content/ui/LoginPage.qml:88 content/ui/Settings/NetworkProxyPage.qml:72
 #, kde-format
 msgid "Proxy Settings"
-msgstr "Axustes do proxy"
+msgstr "Параметры прокси-сервера"
 
 #: content/ui/main.qml:184
 #, kde-format
 msgid "Home"
-msgstr "Inicio"
+msgstr "Главная"
 
 #: content/ui/main.qml:200 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
-msgstr "Notificacións"
+msgstr "Уведомления"
 
 #: content/ui/main.qml:227
 #, kde-format
 msgid "Local"
-msgstr "Local"
+msgstr "Локальная лента"
 
 #: content/ui/main.qml:242
 #, kde-format
 msgid "Global"
-msgstr "Federada"
+msgstr "Глобальная лента"
 
 #: content/ui/main.qml:258
 #, kde-format
 msgid "Conversation"
-msgstr "Conversa"
+msgstr "Чат"
 
 #: content/ui/main.qml:273
 #, kde-format
 msgid "Favourites"
-msgstr "Favoritas"
+msgstr "Избранное"
 
 #: content/ui/main.qml:287
 #, kde-format
 msgid "Bookmarks"
-msgstr "Marcadores"
+msgstr "Закладки"
 
 #: content/ui/main.qml:301
 #, kde-format
 msgid "Search"
-msgstr "Buscar"
+msgstr "Поиск"
 
 #: content/ui/NotificationPage.qml:30 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Toot"
-msgstr "Chío"
+msgstr "Запись"
 
 #: content/ui/NotificationPage.qml:37
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr "Todas"
+msgstr "Все"
 
 #: content/ui/NotificationPage.qml:48
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Mencións"
+msgstr "Упоминания"
 
 #: content/ui/NotificationPage.qml:57
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr "Favoritas"
+msgstr "Избранное"
 
 #: content/ui/NotificationPage.qml:66
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Promocións"
+msgstr "Записи, которыми поделились"
 
 #: content/ui/NotificationPage.qml:75
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll results"
-msgstr "Resultados da enquisa"
+msgstr "Результаты опроса"
 
 #: content/ui/NotificationPage.qml:84
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Segue"
+msgstr "Подписки"
 
 #: content/ui/NotificationPage.qml:183
 #, kde-format
 msgid "No Notifications"
-msgstr "Sen Notificacións"
+msgstr "Уведомлений нет"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr "Busca"
+msgstr "Поиск"
 
 #: content/ui/SearchView.qml:41
 #, kde-format
 msgid "No search results"
-msgstr "Non hai resultados"
+msgstr "Ничего не найдено"
 
 #: content/ui/SearchView.qml:49
 #, kde-format
 msgid "Search for peoples, tags and posts"
-msgstr "Buscar persoas, cancelos e publicacións"
+msgstr "Поиск людей, меток и публикаций"
 
 #: content/ui/Settings/AccountsCard.qml:24
 #, kde-format
 msgid "Accounts"
-msgstr "Contas"
+msgstr "Учётные записи"
 
 #: content/ui/Settings/AccountsCard.qml:72
 #, kde-format
 msgid "Logout"
-msgstr "Saír"
+msgstr "Выйти"
 
 #: content/ui/Settings/AccountsCard.qml:92 content/ui/UserInfo.qml:69
 #, kde-format
 msgid "Add Account"
-msgstr "Engadir Conta"
+msgstr "Добавить учётную запись"
 
 #: content/ui/Settings/GeneralCard.qml:19
 #, kde-format
 msgid "General"
-msgstr "Xeral"
+msgstr "Общие"
 
 #: content/ui/Settings/GeneralCard.qml:24
 #, kde-format
 msgid "Show detailed statistics about posts"
-msgstr "Mostrar estatísticas detalladas das publicacións"
+msgstr "Показывать подробную статистику публикаций"
 
 #: content/ui/Settings/GeneralCard.qml:37
 #, kde-format
 msgid "Show link preview"
-msgstr "Mostrar vista previa"
+msgstr "Предварительный просмотр ссылок"
 
 #: content/ui/Settings/GeneralCard.qml:50
 #, kde-format
 msgid "Crop images in the timeline to 16:9"
-msgstr "Recortar imaxes na cronoloxía a 16:9"
+msgstr "Обрезать изображения в ленте новостей до соотношения сторон 16:9"
 
 #: content/ui/Settings/GeneralCard.qml:62
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr "Reprodución automática de GIF"
+msgstr "Автовоспроизведение анимационных GIF-файлов"
 
 #: content/ui/Settings/GeneralCard.qml:75
 #, kde-format
 msgid "Color theme"
-msgstr "Cor do decorado"
+msgstr "Цветовая схема"
 
 #: content/ui/Settings/GeneralCard.qml:92
 #, kde-format
 msgid "Content font"
-msgstr "Tipografía"
+msgstr "Шрифт"
 
 #: content/ui/Settings/GeneralCard.qml:98
 #, kde-format
 msgid "Please choose a font"
-msgstr "Elixe o tipo de letra"
+msgstr "Выберите шрифт"
 
 #: content/ui/Settings/NetworkProxyPage.qml:14
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr "Proxy da rede"
+msgstr "Прокси-сервер"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
 #: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
 msgid "Network Proxy"
-msgstr "Proxy da rede"
+msgstr "Тип прокси-сервера"
 
 #: content/ui/Settings/NetworkProxyPage.qml:32
 #, kde-format
 msgid "System Default"
-msgstr "Por defecto no sistema"
+msgstr "Заданный в системе"
 
 #: content/ui/Settings/NetworkProxyPage.qml:44
 #, kde-format
@@ -545,177 +546,177 @@ msgstr "Socks5"
 #: content/ui/Settings/NetworkProxyPage.qml:76
 #, kde-format
 msgid "Host"
-msgstr "Servidor"
+msgstr "Хост"
 
 #: content/ui/Settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Port"
-msgstr "Porto"
+msgstr "Порт"
 
 #: content/ui/Settings/NetworkProxyPage.qml:110
 #, kde-format
 msgid "User"
-msgstr "Identificador"
+msgstr "Пользователь"
 
 #: content/ui/Settings/NetworkProxyPage.qml:120
 #, kde-format
 msgid "Password"
-msgstr "Contrasinal"
+msgstr "Пароль"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
 #: content/ui/Settings/ProfileEditor.qml:356
 #, kde-format
 msgid "Apply"
-msgstr "Aplicar"
+msgstr "Применить"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
 msgid "Profile Editor"
-msgstr "Editor do perfil"
+msgstr "Редактор профиля"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:207
 #, kde-format
 msgid "Please choose a file"
-msgstr "Elixe un ficheiro"
+msgstr "Выберите файл"
 
 #: content/ui/Settings/ProfileEditor.qml:116
 #, kde-format
 msgid "Display Name"
-msgstr "Nome público"
+msgstr "Отображаемое имя"
 
 #: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
 msgid "Bio"
-msgstr "Bio"
+msgstr "О себе"
 
 #: content/ui/Settings/ProfileEditor.qml:148
 #, kde-format
 msgid "Header"
-msgstr "Cabeceira"
+msgstr "Шапка"
 
 #: content/ui/Settings/ProfileEditor.qml:182
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr "PNG, GIF ou JPG. 2 MB como máximo. Será reducida á 1500x500px"
+msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 1500×500 пкс"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
 #: content/ui/StatusDelegate/OverflowMenu.qml:58
 #, kde-format
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "Удалить"
 
 #: content/ui/Settings/ProfileEditor.qml:210
 #, kde-format
 msgid "Avatar"
-msgstr "Avatar"
+msgstr "Аватар"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr "Privacidade por defecto da publicación"
+msgstr "Конфиденциальность статуса по умолчанию"
 
 #: content/ui/Settings/ProfileEditor.qml:278
 #, kde-format
 msgid "Public post"
-msgstr "Pública"
+msgstr "Общедоступная публикация"
 
 #: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "Unlisted post"
-msgstr "Non listada"
+msgstr "Скрытая публикация"
 
 #: content/ui/Settings/ProfileEditor.qml:286
 #, kde-format
 msgid "Followers-only post"
-msgstr "Só para seguidoras"
+msgstr "Публикация только для подписчиков"
 
 #: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Direct post"
-msgstr "Só para mencionadas"
+msgstr "Публикация для указанных пользователей"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgid "Mark by default content as sensitive"
-msgstr "Marcar como sensible por defecto"
+msgstr "Помечать по умолчанию содержимое как конфиденциальное"
 
 #: content/ui/Settings/ProfileEditor.qml:317
 #, kde-format
 msgid "Require follow requests"
-msgstr "Pedir que soliciten seguimento"
+msgstr "Требовать запрос на подписку"
 
 #: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgid "This is a bot account"
-msgstr "Esta conta é un bot"
+msgstr "Это автоматизированная учётная запись"
 
 #: content/ui/Settings/ProfileEditor.qml:333
 #, kde-format
 msgid "Suggest account to others"
-msgstr "Suxerir a conta a outras persoas"
+msgstr "Рекомендовать учётную запись другим"
 
 #: content/ui/Settings/ProfileEditor.qml:349
 #, kde-format
 msgid "Reset"
-msgstr "Restablecer"
+msgstr "Сбросить"
 
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Axustes"
+msgstr "Параметры"
 
 #: content/ui/Settings/SettingsPage.qml:67
 #, kde-format
 msgid "About Tokodon"
-msgstr "Acerca de Tokodon"
+msgstr "О Tokodon"
 
 #: content/ui/Settings/SettingsPage.qml:74
 #, kde-format
 msgid "About KDE"
-msgstr "Acerca de KDE"
+msgstr "О KDE"
 
 #: content/ui/Settings/SonnetCard.qml:24
 #, kde-format
 msgid "Spellchecking"
-msgstr "Ortografía"
+msgstr "Проверка орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:30
 #, kde-format
 msgid "Enable automatic spell checking"
-msgstr "Revisión automática de palabras"
+msgstr "Включить автоматическую проверку орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:42
 #, kde-format
 msgid "Ignore uppercase words"
-msgstr "Ignorar palabras maiúsculas"
+msgstr "Игнорировать слова в верхнем регистре"
 
 #: content/ui/Settings/SonnetCard.qml:54
 #, kde-format
 msgid "Ignore hyphenated words"
-msgstr "Ignorar palabras con trazos"
+msgstr "Игнорировать слова, написанные через дефис"
 
 #: content/ui/Settings/SonnetCard.qml:66
 #, kde-format
 msgid "Detect language automatically"
-msgstr "Detección automática do idioma"
+msgstr "Определять язык автоматически"
 
 #: content/ui/Settings/SonnetCard.qml:77
 #, kde-format
 msgid "Selected default language:"
-msgstr "Idioma por defecto:"
+msgstr "Язык по умолчанию:"
 
 #: content/ui/Settings/SonnetCard.qml:78
 #, kde-format
 msgid "None"
-msgstr "Ningún"
+msgstr "Не выбран"
 
 #: content/ui/Settings/SonnetCard.qml:97
 #, kde-format
 msgid "Additional spell checking languages"
-msgstr "Idiomas adicionais para comprobacións"
+msgstr "Дополнительные языки проверки орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:98
 #, kde-format
@@ -723,247 +724,247 @@ msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
 msgstr ""
-"%1 proporcionará suxestións e comprobará as palabras para estes idiomas se a "
-"detección automática está activada."
+"%1 будет выполнять проверку орфографии и предлагать возможные варианты для "
+"указанных здесь языков, если включено автоопределение языка."
 
 #: content/ui/Settings/SonnetCard.qml:109
 #, kde-format
 msgid "Open Personal Dictionary"
-msgstr "Abrir Dicionario persoal"
+msgstr "Открыть личный словарь"
 
 #: content/ui/Settings/SonnetCard.qml:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
-msgstr "Idiomas para revisión"
+msgstr "Языки проверки орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:130
 #: content/ui/Settings/SonnetCard.qml:140
 #, kde-format
 msgid "Default Language"
-msgstr "Idioma por defecto"
+msgstr "Язык по умолчанию"
 
 #: content/ui/Settings/SonnetCard.qml:152
 #, kde-format
 msgid "Spell checking dictionary"
-msgstr "Dicionario para comprobación"
+msgstr "Словарь проверки орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:159
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
-msgstr "Engadir unha palabra ao seu dicionario persoal…"
+msgstr "Добавить новое слово в личный словарь…"
 
 #: content/ui/Settings/SonnetCard.qml:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Add word"
-msgstr "Engadir a palabra"
+msgstr "Добавить слово"
 
 #: content/ui/Settings/SonnetCard.qml:189
 #, kde-format
 msgid "Delete word"
-msgstr "Eliminar palabra"
+msgstr "Удалить слово"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:52
 #, kde-format
 msgid "Edit"
-msgstr "Editar"
+msgstr "Изменить"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:99
 #, kde-format
 msgid "Remove"
-msgstr "Eliminar"
+msgstr "Удалить"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:32
 #, kde-format
 msgid "Add a description"
-msgstr "Engadir descrición"
+msgstr "Добавить описание"
 
 #: content/ui/StatusComposer/Poll.qml:35
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
-msgstr "Opción %1"
+msgstr "Вариант ответа %1"
 
 #: content/ui/StatusComposer/Poll.qml:59
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Engadir Opción"
+msgstr "Добавить вариант ответа"
 
 #: content/ui/StatusComposer/Poll.qml:60
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr "Engadir nova opción"
+msgstr "Добавить новый вариант ответа в опрос"
 
 #: content/ui/StatusComposer/Poll.qml:79
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr "Caducidade da enquisa"
+msgstr "Срок окончания опроса"
 
 #: content/ui/StatusComposer/Poll.qml:88
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr "Varias opcións"
+msgstr "Несколько вариантов ответа"
 
 #: content/ui/StatusComposer/Poll.qml:94
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr "Permitir marcar varias opcións"
+msgstr "Разрешить несколько вариантов ответа"
 
 #: content/ui/StatusComposer/Poll.qml:103
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr "Agochar totais"
+msgstr "Скрывать результаты"
 
 #: content/ui/StatusComposer/Poll.qml:109
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr "Agochar o número total de votos ata que remate"
+msgstr "Скрывать количество голосов до окончания опроса"
 
 #: content/ui/StatusComposer/StatusComposer.qml:44
 #, kde-format
 msgid "Edit this toot"
-msgstr "Editar"
+msgstr "Изменить эту запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Reply to this toot"
-msgstr "Responder"
+msgstr "Ответить на эту запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Rewrite this toot"
-msgstr "Reescribir"
+msgstr "Отредактировать запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Write a new toot"
-msgstr "Escribir un novo chío"
+msgstr "Создать запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:92
 #: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "Content Warning"
-msgstr "Aviso sobre o contido"
+msgstr "Предупреждение о содержимом"
 
 #: content/ui/StatusComposer/StatusComposer.qml:108
 #, kde-format
 msgid "What's new?"
-msgstr "Que hai de novo?"
+msgstr "Что нового?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:210
 #, kde-format
 msgid "Attach File"
-msgstr "Engade o Ficheiro"
+msgstr "Прикрепить файл"
 
 #: content/ui/StatusComposer/StatusComposer.qml:220
 #, kde-format
 msgid "Add Poll"
-msgstr "Engadir Enquisa"
+msgstr "Добавить опрос"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
 msgid "Public"
-msgstr "Pública"
+msgstr "Общедоступная запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "Unlisted"
-msgstr "Non listada"
+msgstr "Скрытая запись"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "Private"
-msgstr "Privada"
+msgstr "Только для подписчиков"
 
 #: content/ui/StatusComposer/StatusComposer.qml:263
 #, kde-format
 msgid "Direct Message"
-msgstr "Mensaxe Directa"
+msgstr "Личное сообщение"
 
 #: content/ui/StatusComposer/StatusComposer.qml:268
 #, kde-format
 msgid "Visibility"
-msgstr "Visibilidade"
+msgstr "Видимость"
 
 #: content/ui/StatusComposer/StatusComposer.qml:273
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
-msgstr "cw"
+msgstr "пс"
 
 #: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
-msgstr "Elixir o idioma da publicación"
+msgstr "Выберите язык публикации"
 
 #: content/ui/StatusComposer/StatusComposer.qml:288
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
-msgstr "Idioma da publicación"
+msgstr "Язык публикации"
 
 #: content/ui/StatusComposer/StatusComposer.qml:298
 #, kde-format
 msgid "Send"
-msgstr "Enviar"
+msgstr "Отправить"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
-msgstr "Non dispoñible"
+msgstr "Недоступно"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:216
 #, kde-format
 msgid "Media Hidden"
-msgstr "Multimedia oculto"
+msgstr "Медиафайлы скрыты"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
 #: content/ui/StatusDelegate/StatusDelegate.qml:142
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
 #, kde-format
 msgid "View profile"
-msgstr "Ver perfil"
+msgstr "Показать профиль"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:20
 #, kde-format
 msgid "Expand this post"
-msgstr "Expandir"
+msgstr "Развернуть эту публикацию"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:26
 #, kde-format
 msgid "Open original page"
-msgstr "Abrir a páxina orixinal"
+msgstr "Открыть исходную страницу"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:33
 #, kde-format
 msgid "Copy link to this post"
-msgstr "Copiar a ligazón a esta publicación"
+msgstr "Копировать ссылку на эту публикацию"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
 #: content/ui/StatusDelegate/StatusDelegate.qml:335
 #, kde-format
 msgid "Remove bookmark"
-msgstr "Eliminar marcador"
+msgstr "Удалить закладку"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Bookmark"
-msgstr "Marcar"
+msgstr "Добавить в закладки"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:64
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr "Eliminar e Reescribir"
+msgstr "Удалить и создать заново"
 
 #: content/ui/StatusDelegate/Poll.qml:39
 #, kde-format
@@ -974,67 +975,67 @@ msgstr "%1%"
 #: content/ui/StatusDelegate/Poll.qml:63
 #, kde-format
 msgid "(No votes)"
-msgstr "(Sen votos)"
+msgstr "(Ответов нет)"
 
 #: content/ui/StatusDelegate/Poll.qml:97
 #, kde-format
 msgid "Vote"
-msgstr "Votar"
+msgstr "Ответить"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:105
 #, kde-format
 msgid "Filtered: %1"
-msgstr "Filtrada: %1"
+msgstr "Отфильтровано: %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:109
 #, kde-format
 msgid "Show anyway"
-msgstr "Mostrar igualmente"
+msgstr "Всё равно показать"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:151 notificationhandler.cpp:23
 #, kde-format
 msgid "%1 favorited your post"
-msgstr "%1 favoreceu a túa publicación"
+msgstr "%1 добавил(а) вашу публикацию в избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153 notificationhandler.cpp:39
 #, kde-format
 msgid "%1 edited a post"
-msgstr "%1 editou unha publicación"
+msgstr "%1 изменил(а) публикацию"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:156
 #, kde-format
 msgid "Your poll has ended"
-msgstr "Rematou a túa enquisa"
+msgstr "Ваш опрос завершён"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:158
 #, kde-format
 msgid "A poll you voted in has ended"
-msgstr "Rematou unha enquisa na que votaches"
+msgstr "Опрос, в котором вы участвовали, завершён"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:183
 #, kde-format
 msgid "Pinned entry"
-msgstr "Entrada fixada"
+msgstr "Закреплённая запись"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:219
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1 promoveu"
+msgstr "%1 поделился(ась)"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:219 notificationhandler.cpp:31
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1 promoveu a túa publicación"
+msgstr "%1 поделился(ась) вашей публикацией"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "Show Less"
-msgstr "Mostrar menos"
+msgstr "Показать меньше"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "Show More"
-msgstr "Mostrar máis"
+msgstr "Показать больше"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
@@ -1046,103 +1047,104 @@ msgstr "1+"
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
-msgstr "Responder"
+msgstr "Ответить"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:316
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Promover"
+msgstr "Поделиться"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:326
 #, kde-format
 msgctxt "Like a post"
 msgid "Like"
-msgstr "Gustar"
+msgstr "Мне нравится"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:335
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
-msgstr "Marcar"
+msgstr "Добавить в закладки"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:353
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
-msgstr "Máis"
+msgstr "Больше"
 
 #: content/ui/TimelinePage.qml:106
 #, kde-format
 msgid "No posts"
-msgstr "Sen publicacións"
+msgstr "Нет ни одной публикации"
 
 #: content/ui/UserInfo.qml:72
 #, kde-format
 msgid "Log in to an existing account"
-msgstr "Accede cunha conta existente"
+msgstr "Войти в существующую учётную запись"
 
 #: content/ui/UserInfo.qml:195
 #, kde-format
 msgid "Switch User"
-msgstr "Cambiar de usuaria"
+msgstr "Переключить пользователя"
 
 #: content/ui/UserInfo.qml:207
 #, kde-format
 msgid "Add"
-msgstr "Engadir"
+msgstr "Добавить"
 
 #: content/ui/UserInfo.qml:219
 #, kde-format
 msgid "Open Settings"
-msgstr "Abrir a configuración"
+msgstr "Открыть параметры"
 
 #: conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
-msgstr "Conversa baleira"
+msgstr "Чат пуст"
 
 #: conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
-msgstr "%1 e %2"
+msgstr "%1 и %2"
 
 #: conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] "%2 e outra máis"
-msgstr[1] "%2 e %1 máis"
+msgstr[0] "%2 и ещё %1"
+msgstr[1] "%2 и ещё %1"
+msgstr[2] "%2 и ещё %1"
 
 #: filetransferjob.cpp:82
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "Descargando"
+msgstr "Выполняется загрузка"
 
 #: filetransferjob.cpp:83
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
-msgstr "Orixe"
+msgstr "Источник"
 
 #: filetransferjob.cpp:84
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "Destino"
+msgstr "Назначение"
 
 #: linkpaginatedtimelinemodel.cpp:25 maintimelinemodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr "Marcadores"
+msgstr "Закладки"
 
 #: linkpaginatedtimelinemodel.cpp:27 maintimelinemodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr "Favoritas"
+msgstr "Избранное"
 
 #: main.cpp:109
 #, kde-format
@@ -1152,12 +1154,12 @@ msgstr "Tokodon"
 #: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
-msgstr "Cliente Mastodon"
+msgstr "Клиент Mastodon"
 
 #: main.cpp:113
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgstr "© Carl Schwan, 2021—2023; Сообщество KDE, 2021—2023"
 
 #: main.cpp:114
 #, kde-format
@@ -1167,106 +1169,106 @@ msgstr "Carl Schwan"
 #: main.cpp:114
 #, kde-format
 msgid "Maintainer"
-msgstr "Desenvolvedora"
+msgstr "Сопровождающий"
 
 #: main.cpp:115
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Nomes"
+msgstr "Алевтина Карашокова"
 
 #: main.cpp:115
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Emails"
+msgstr "translation-team@basealt.ru"
 
 #: main.cpp:179
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
-msgstr "Cliente para a rede social descentralizada: mastodon"
+msgstr "Клиент децентрализованной социальной сети: mastodon"
 
 #: main.cpp:180
 #, kde-format
 msgid "Supports web+ap: url scheme"
-msgstr "Soporta web+ap: url scheme"
+msgstr "Предусмотрена поддержка схемы URL-адреса web+ap:"
 
 #: maintimelinemodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Home (%1)"
-msgstr "Inicio (%1)"
+msgstr "Главная (%1)"
 
 #: maintimelinemodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Home"
-msgstr "Inicio"
+msgstr "Главная"
 
 #: maintimelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
-msgstr "Cronoloxía Local"
+msgstr "Локальная лента новостей"
 
 #: maintimelinemodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr "Cronoloxía Federada"
+msgstr "Глобальная лента новостей"
 
 #: notificationmodel.cpp:100
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr "Algo fallou ao intentar obter a última notificación."
+msgstr "Ошибка при получении последнего уведомления."
 
 #: polltimemodel.cpp:12
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr "5 minutos"
+msgstr "5 минут"
 
 #: polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr "30 minutos"
+msgstr "30 минут"
 
 #: polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr "1 hora"
+msgstr "1 час"
 
 #: polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr "6 horas"
+msgstr "6 часов"
 
 #: polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr "12 horas"
+msgstr "12 часов"
 
 #: polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr "1 día"
+msgstr "1 день"
 
 #: polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr "3 días"
+msgstr "3 дня"
 
 #: polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr "7 días"
+msgstr "7 дней"
 
 #: post.cpp:270
 #, kde-format
@@ -1277,59 +1279,52 @@ msgstr "%1:%2"
 #: post.cpp:274
 #, kde-format
 msgid "%1h"
-msgstr "%1h"
+msgstr "%1 ч"
 
 #: post.cpp:276
 #, kde-format
 msgid "%1d"
-msgstr "%1d"
+msgstr "%1 д"
 
 #: posteditorbackend.cpp:220
 #, kde-format
 msgid "An unknown error occurred."
-msgstr "Houbo un fallo descoñecido."
+msgstr "Произошла неизвестная ошибка."
 
 #: profileeditor.cpp:183
 #, kde-format
 msgid "Image is too big"
-msgstr "A imaxe é demasiado grande"
+msgstr "Изображение слишком велико"
 
 #: profileeditor.cpp:196
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr "Tipo de ficheiro de imaxe non válido. Só se permite jpeg, png e gif."
+msgstr ""
+"Неподдерживаемый файл изображения. Поддерживаются только файлы форматов "
+"JPEG, PNG и GIF."
 
 #: profileeditor.cpp:323
 #, kde-format
 msgid "Account details saved"
-msgstr "Gardáronse os detalles da conta"
+msgstr "Данные учётной записи сохранены"
 
 #: searchmodel.cpp:137
 #, kde-format
 msgid "People"
-msgstr "Persoas"
+msgstr "Люди"
 
 #: searchmodel.cpp:139
 #, kde-format
 msgid "Hashtags"
-msgstr "Cancelos"
+msgstr "Метки"
 
 #: searchmodel.cpp:141
 #, kde-format
 msgid "Post"
-msgstr "Publicación"
+msgstr "Публикация"
 
 #: threadmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Thread"
-msgstr "Fío"
-
-#~ msgid "Make pool auto-exclusive"
-#~ msgstr "Facer a enquisa auto-excluínte"
-
-#~ msgid "Username:"
-#~ msgstr "Identificador"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualizar"
+msgstr "Ветка обсуждений"
