@@ -210,8 +210,8 @@ void AccountManager::loadFromSettings()
 {
     qCDebug(TOKODON_LOG) << "Loading accounts from settings.";
 
-    KConfig config{"tokodonrc", KConfig::OpenFlag::NoGlobals};
-    for (const auto &id : config.groupList()) {
+    auto config = KSharedConfig::openStateConfig();
+    for (const auto &id : config->groupList()) {
         if (id.contains('@')) {
             auto accountConfig = AccountConfig{id};
 
