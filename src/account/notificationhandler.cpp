@@ -6,6 +6,7 @@
 #include <KLocalizedString>
 #include <KNotification>
 #include <QNetworkAccessManager>
+#include <QPainter>
 
 NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
@@ -57,7 +58,18 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
             }
             QPixmap img;
             img.loadFromData(reply->readAll());
-            knotification->setPixmap(img);
+
+            QImage roundedImage(img.width(), img.height(), QImage::Format_ARGB32);
+
+            QPainter painter(&roundedImage);
+            painter.setRenderHint(QPainter::Antialiasing);
+
+            QBrush brush(img);
+            painter.setBrush(brush);
+
+            painter.drawRoundedRect(0, 0, img.width(), img.height(), img.width(), img.height());
+
+            knotification->setPixmap(QPixmap::fromImage(roundedImage));
             knotification->sendEvent();
         });
     } else {
