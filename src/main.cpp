@@ -89,8 +89,10 @@ int main(int argc, char *argv[])
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 
-    if (QIcon::themeName().contains("dark")) {
-        QIcon::setThemeName("tokodon-dark");
+    // Breeze theme needs to be the "primary" theme or else icons do not get recolored
+    // Non-Breeze themes (like Adwaita) do not load our icons properly unless tokodon is the main icon theme.
+    if (QIcon::themeName() == "breeze") {
+        QIcon::setFallbackThemeName("tokodon");
     } else {
         QIcon::setThemeName("tokodon");
     }
