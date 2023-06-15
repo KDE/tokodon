@@ -206,7 +206,7 @@ QQC2.ItemDelegate {
                     return false
                 }
 
-                return interactLayout.isBoost || interactLayout.isReply
+                return (interactLayout.isBoost && root.boostAuthorIdentity) || (interactLayout.isReply && root.replyAuthorIdentity)
             }
 
             Layout.fillWidth: true
@@ -236,9 +236,9 @@ QQC2.ItemDelegate {
                         Layout.alignment: Qt.AlignTop
                         Layout.bottomMargin: -Kirigami.Units.gridUnit
                         source: {
-                            if (interactLayout.isBoost) {
+                            if (interactLayout.isBoost && root.boostAuthorIdentity) {
                                 return root.boostAuthorIdentity.avatarUrl ? root.boostAuthorIdentity.avatarUrl : ''
-                            } else if (interactLayout.isReply) {
+                            } else if (interactLayout.isReply && root.replyAuthorIdentity) {
                                 return root.replyAuthorIdentity.avatarUrl ? root.replyAuthorIdentity.avatarUrl : ''
                             }
 
