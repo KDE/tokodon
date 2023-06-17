@@ -51,6 +51,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: root.pinned ? "window-unpin" : "pin"
+        visible: root.isSelf
         text: root.pinned ? i18n("Unpin on profile") : i18n("Pin on profile")
         onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
