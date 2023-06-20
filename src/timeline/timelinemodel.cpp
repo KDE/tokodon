@@ -84,9 +84,21 @@ void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToE
         return;
     }
 
-    std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
-        return new Post(m_account, value.toObject(), this);
+    std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) -> Post * {
+        auto post = new Post(m_account, value.toObject(), this);
+        if (!post->hidden()) {
+            return post;
+        } else {
+            return nullptr;
+        }
     });
+
+    posts.erase(std::remove_if(posts.begin(),
+                               posts.end(),
+                               [](Post *post) {
+                                   return post == nullptr;
+                               }),
+                posts.end());
 
     if (!m_timeline.isEmpty()) {
         if (alwaysAppendToEnd) {

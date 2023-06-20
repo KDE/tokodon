@@ -299,6 +299,11 @@ public:
     bool attachmentsVisible() const;
     void setAttachmentsVisible(bool attachmentsVisible);
 
+    bool hidden() const
+    {
+        return m_hidden;
+    }
+
 Q_SIGNALS:
     void spoilerTextChanged();
     void contentChanged();
@@ -348,6 +353,7 @@ private:
     bool m_muted = false;
     bool m_bookmarked = false;
     bool m_filtered = false;
+    bool m_hidden = false;
     bool m_pinned = false;
 
     int m_reblogsCount = 0;

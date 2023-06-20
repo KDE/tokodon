@@ -204,7 +204,13 @@ void Post::fromJson(QJsonObject obj)
         const auto filterContext = filter.toObject();
         const auto filterObj = filterContext["filter"].toObject();
         m_filters << filterObj["title"].toString();
-        m_filtered = true;
+
+        const auto filterAction = filterObj["filter_action"];
+        if (filterAction == "warn") {
+            m_filtered = true;
+        } else if (filterAction == "hide") {
+            m_hidden = true;
+        }
     }
 
     m_sensitive = obj["sensitive"].toBool();
