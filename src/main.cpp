@@ -137,9 +137,6 @@ int main(int argc, char *argv[])
     parser.process(app);
     about.processCommandLine(&parser);
 
-#ifdef HAVE_KDBUSADDONS
-    KDBusService service(KDBusService::Unique);
-#endif
     auto config = Config::self();
 
     ColorSchemer colorScheme;
@@ -201,6 +198,35 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "EmojiModel", &EmojiModel::instance());
 
     QQmlApplicationEngine engine;
+#ifdef HAVE_KDBUSADDONS
+    KDBusService service(KDBusService::Unique);
+    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
+        const auto rootObjects = engine.rootObjects();
+        for (auto obj : rootObjects) {
+            if (auto view = qobject_cast<QQuickWindow *>(obj)) {
+                KWindowSystem::updateStartupId(view);
+                KWindowSystem::activateWindow(view);
+
+                if (arguments.isEmpty()) {
+                    return;
+                }
+
+                auto args = arguments;
+                args.removeFirst();
+
+                if (arguments.length() >= 1) {
+                    if (args[0].startsWith("web+ap")) {
+                        NetworkController::instance().openWebApLink(args[0]);
+                    } else {
+                        NetworkController::instance().setAuthCode(args[0]);
+                    }
+                }
+
+                return;
+            }
+        }
+    });
+#endif
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
@@ -221,29 +247,6 @@ int main(int argc, char *argv[])
     }
 
 #ifdef HAVE_KDBUSADDONS
-    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
-        const auto rootObjects = engine.rootObjects();
-        for (auto obj : rootObjects) {
-            auto view = qobject_cast<QQuickWindow *>(obj);
-            if (view) {
-                KWindowSystem::updateStartupId(view);
-                KWindowSystem::activateWindow(view);
-
-                if (arguments.isEmpty()) {
-                    return;
-                }
-
-                auto args = arguments;
-                args.removeFirst();
-
-                if (arguments.length() >= 1) {
-                    NetworkController::instance().openWebApLink(args[0]);
-                }
-
-                return;
-            }
-        }
-    });
     const auto rootObjects = engine.rootObjects();
     for (auto obj : rootObjects) {
         auto view = qobject_cast<QQuickWindow *>(obj);
