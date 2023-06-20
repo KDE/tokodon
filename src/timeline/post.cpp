@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include <KLocalizedString>
-#include <QDebug>
 #include <QFile>
 #include <QFileInfo>
 #include <QMap>
@@ -173,7 +172,6 @@ void Post::fromJson(QJsonObject obj)
             const auto accountId = obj["in_reply_to_account_id"].toString();
             QUrl uriAccount(m_parent->instanceUri());
             uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
-            qDebug() << uriAccount << obj["in_reply_to_account_id"].toString();
 
             m_parent->get(uriAccount, true, this, [this, accountId](QNetworkReply *reply) {
                 const auto data = reply->readAll();

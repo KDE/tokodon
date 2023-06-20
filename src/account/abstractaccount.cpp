@@ -234,8 +234,6 @@ void AbstractAccount::setToken(const QString &authcode)
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        qDebug() << doc;
-
         m_token = doc.object()["access_token"].toString();
         s_messageFilter->insert(m_token, "ACCESS_TOKEN");
         AccountManager::instance().addAccount(this);
