@@ -216,14 +216,14 @@ QQC2.ToolBar {
             QQC2.ToolButton {
                 icon.name: "lock"
                 onClicked: pageStack.pushDialogLayer('qrc:/content/ui/ModerationTools/ModerationToolPage.qml', {}, { title: i18n("Moderation Tools") })
-                text: i18nc("@action:button", "Open Moderation Tools") 
+                text: i18nc("@action:button", "Open Moderation Tools")
                 display: QQC2.AbstractButton.IconOnly
                 QQC2.ToolTip.text: text
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 Layout.minimumWidth: Layout.preferredWidth
                 Layout.alignment: Qt.AlignRight
-                visible: AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ModerationToolAccess
+                visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
             }
             QQC2.ToolButton {
                 icon.name: "settings-configure"
