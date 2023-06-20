@@ -13,11 +13,13 @@ public:
     Q_INVOKABLE void setApplicationProxy();
 
     void openWebApLink(QString url);
+    void setAuthCode(QUrl authCode);
 
 Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
     void openPost(QString id);
     void openAccount(QString id);
+    void receivedAuthCode(QString authCode);
 
 private:
     explicit NetworkController(QObject *parent = nullptr);

@@ -73,6 +73,15 @@ void NetworkController::openWebApLink(QString url)
     }
 }
 
+void NetworkController::setAuthCode(QUrl authCode)
+{
+    QUrlQuery query(authCode);
+
+    if (query.hasQueryItem("code")) {
+        Q_EMIT receivedAuthCode(query.queryItemValue("code"));
+    }
+}
+
 void NetworkController::openLink()
 {
     if (m_requestedLink.isEmpty())
