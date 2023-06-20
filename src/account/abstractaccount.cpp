@@ -105,7 +105,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QUrl regUrl = apiUrl("/api/v1/apps");
     const QJsonObject obj = {
         {"client_name", appName},
-        {"redirect_uris", "urn:ietf:wg:oauth:2.0:oob"},
+        {"redirect_uris", "tokodon://oauth"},
         {"scopes", "read write follow admin:read admin:write"},
         {"website", website},
     };
@@ -191,7 +191,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
     QUrl url = apiUrl("/oauth/authorize");
     QUrlQuery q = buildOAuthQuery();
 
-    q.addQueryItem("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
+    q.addQueryItem("redirect_uri", "tokodon://oauth");
     q.addQueryItem("response_type", "code");
     q.addQueryItem("scope", "read write follow admin:read admin:write");
 
@@ -226,7 +226,7 @@ void AbstractAccount::setToken(const QString &authcode)
     QUrlQuery q = buildOAuthQuery();
 
     q.addQueryItem("client_secret", m_client_secret);
-    q.addQueryItem("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
+    q.addQueryItem("redirect_uri", "tokodon://oauth");
     q.addQueryItem("grant_type", "authorization_code");
     q.addQueryItem("code", authcode);
 
