@@ -89,37 +89,13 @@ MastoPage {
                 }
             }
         }
+    }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+    Connections {
+        target: Controller
 
-                MobileForm.FormTextFieldDelegate {
-                    id: tokenField
-                    label: i18n("Enter token:")
-                    onAccepted: continueButton.clicked()
-                }
-
-                MobileForm.FormDelegateSeparator { below: continueButton; above: tokenField }
-
-                MobileForm.FormButtonDelegate {
-                    id: continueButton
-                    text: i18n("Continue")
-                    onClicked: {
-                        if (!tokenField.text) {
-                            applicationWindow().showPassiveNotification(i18n("Please insert the generated token."));
-                            return;
-                        }
-                        account.setToken(tokenField.text);
-                        pageStack.layers.clear();
-                        pageStack.replace(mainTimeline, {
-                            name: "home"
-                        });
-                    }
-                }
-            }
+        function onReceivedAuthCode(authCode) {
+            account.setToken(authCode);
         }
     }
 }
