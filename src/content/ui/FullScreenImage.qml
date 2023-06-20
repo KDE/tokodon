@@ -19,6 +19,13 @@ Components.AlbumMaximizeComponent {
     property alias attachments: root.model
     required property var identity
 
+    actions: ShareAction {
+        inputData: {
+            'urls': [content.currentItem.source],
+            'mimeType': ["text/uri-list"]
+        }
+    }
+
     leading: StatusDelegate.InlineIdentityInfo {
         identity: root.identity
         secondary: false
