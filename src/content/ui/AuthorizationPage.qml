@@ -74,6 +74,7 @@ MastoPage {
                 MobileForm.FormButtonDelegate {
                     id: openLink
                     text: i18n("Open Link")
+                    icon.name: "document-open"
                     onClicked: Qt.openUrlExternally(account.authorizeUrl)
                 }
 
@@ -82,6 +83,7 @@ MastoPage {
                 MobileForm.FormButtonDelegate {
                     id: copyLink
                     text: i18n("Copy Link")
+                    icon.name: "edit-copy"
                     onClicked: {
                         Clipboard.saveText(account.authorizeUrl)
                         applicationWindow().showPassiveNotification(i18n("Link copied."));
