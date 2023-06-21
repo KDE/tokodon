@@ -59,6 +59,7 @@
 #include "utils/clipboard.h"
 #include "utils/filehelper.h"
 #include "utils/mpvplayer.h"
+#include "timeline/tagsmodel.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "utils/colorschemer.h"
@@ -161,6 +162,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
     qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
     qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
+    qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsTimelineModel>("org.kde.kmasto", 1, 0, "TagsTimelineModel");
@@ -182,11 +184,13 @@ int main(int argc, char *argv[])
     qRegisterMetaType<AdminAccountInfo *>("AdminAccountInfo*");
     qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
     qRegisterMetaType<Post *>("Post*");
+    qRegisterMetaType<Tag *>("Tag*");
     qRegisterMetaType<Poll *>("Poll*");
     qRegisterMetaType<Card *>("Card*");
     qRegisterMetaType<Application *>("Application*");
     qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
     qRegisterMetaType<Relationship *>("Relationship*");
+    qmlRegisterUncreatableType<Tag>("org.kde.kmasto", 1, 0, "Tag", "ENUM");
     qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
     qmlRegisterUncreatableType<AdminAccountInfo>("org.kde.kmasto", 1, 0, "AdminAccountInfo", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");

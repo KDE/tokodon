@@ -55,6 +55,11 @@ void Attachment::fromJson(const QJsonObject &obj)
     }
 }
 
+QString Post::type() const
+{
+    return "post";
+}
+
 QString Attachment::description() const
 {
     return m_description;
