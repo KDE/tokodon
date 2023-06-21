@@ -9,11 +9,12 @@ import QtQuick.Controls 2.15 as QQC2
 
 import org.kde.kirigami 2.19 as Kirigami
 
-QQC2.Button {
+QQC2.Control {
     id: root
 
     required property string title
     required property string subtitle
+    property bool cardWidthRestricted: false
 
     leftPadding: Kirigami.Units.largeSpacing
     rightPadding: Kirigami.Units.largeSpacing
@@ -21,6 +22,16 @@ QQC2.Button {
     bottomPadding: Kirigami.Units.largeSpacing
 
     Accessible.name: title + " " + subtitle
+
+    background: Rectangle {
+        radius: root.cardWidthRestricted ? Kirigami.Units.smallSpacing : 0
+        color: Kirigami.Theme.backgroundColor
+
+        border {
+            color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.15)
+            width: 1
+        }
+    }
 
     contentItem: ColumnLayout {
         spacing: 0

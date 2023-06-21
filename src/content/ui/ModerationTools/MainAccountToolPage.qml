@@ -362,67 +362,87 @@ Kirigami.ScrollablePage {
             }
         }
 
-        GridLayout {
-            Layout.alignment: Qt.AlignHCenter
-            id: grid
-            readonly property int cellWidth: Kirigami.Units.gridUnit * 10
-            readonly property int cellHeight: Math.max(vaults.implicitHeight,
-                                                       activities.implicitHeight,
-                                                       kdeconnect.implicitHeight,
-                                                       overview.implicitHeight,
-                                                       krunner.implicitHeight,
-                                                       ghns.implicitHeight)
+        FormGridContainer {
+            id: container
 
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
 
-            columns: 3
-            columnSpacing: Kirigami.Units.smallSpacing
-            rowSpacing: Kirigami.Units.smallSpacing
+            contentItem: GridLayout {
+                id: grid
 
-            // First row
-            AccountInfoButton {
-                id: vaults
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title:  root.identity.userLevelIdentity.statusesCount
-                subtitle: i18nc("@info:Number of Posts", "Posts")
-            }
-            AccountInfoButton {
-                id: activities
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title: root.identity.userLevelIdentity.followersCount
-                subtitle: i18nc("@info:Number of followers.", "Followers")
-            }
-            AccountInfoButton {
-                id: kdeconnect
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title: root.identity.userLevelIdentity.followingCount
-                subtitle: i18nc("@info:row Number of accounts followed by the account", "Following")
-            }
+                readonly property int cellWidth: Kirigami.Units.gridUnit * 10
+                readonly property int cellHeight: Math.max(vaults.implicitHeight,
+                                                           activities.implicitHeight,
+                                                           kdeconnect.implicitHeight,
+                                                           overview.implicitHeight,
+                                                           krunner.implicitHeight,
+                                                           ghns.implicitHeight)
 
-            // Second row
-            AccountInfoButton {
-                id: krunner
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title: root.identity.lastActive ? root.identity.lastActive : "Not Available"
-                subtitle: i18nc("@info The last time the account was active.", "Last Active")
-            }
-            AccountInfoButton {
-                id: overview
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : "No role"
-                subtitle: i18nc("@info Role of the account on this server.", "Role")
-            }
-            AccountInfoButton {
-                id: ghns
-                Layout.preferredWidth: grid.cellWidth
-                Layout.preferredHeight: grid.cellHeight
-                title: root.identity.loginStatus
-                subtitle: i18nc("@info The current login status of the account.", "Login Status")
+
+                columns: 3
+                columnSpacing: Kirigami.Units.smallSpacing
+                rowSpacing: Kirigami.Units.smallSpacing
+
+                // First row
+                AccountInfoButton {
+                    id: vaults
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.userLevelIdentity.statusesCount
+                    subtitle: i18nc("@info:Number of Posts", "Posts")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
+
+                AccountInfoButton {
+                    id: activities
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.userLevelIdentity.followersCount
+                    subtitle: i18nc("@info:Number of followers.", "Followers")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
+
+                AccountInfoButton {
+                    id: kdeconnect
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.userLevelIdentity.followingCount
+                    subtitle: i18nc("@info:row Number of accounts followed by the account", "Following")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
+
+                // Second row
+                AccountInfoButton {
+                    id: krunner
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.lastActive ? root.identity.lastActive : "Not Available"
+                    subtitle: i18nc("@info The last time the account was active.", "Last Active")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
+                AccountInfoButton {
+                    id: overview
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : "No role"
+                    subtitle: i18nc("@info Role of the account on this server.", "Role")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
+                AccountInfoButton {
+                    id: ghns
+                    Layout.preferredWidth: grid.cellWidth
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: grid.cellHeight
+                    title: root.identity.loginStatus
+                    subtitle: i18nc("@info The current login status of the account.", "Login Status")
+                    cardWidthRestricted: container.cardWidthRestricted
+                }
             }
         }
 
