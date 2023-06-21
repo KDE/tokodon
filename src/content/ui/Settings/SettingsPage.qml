@@ -29,7 +29,14 @@ Kirigami.ScrollablePage {
         GeneralCard {}
         AccountsCard {}
         PreferencesCard {}
-        SonnetCard {}
+
+        Loader {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+
+            active: Qt.platform.os !== "android"
+            source: "qrc:/content/ui/Settings/SonnetCard.qml"
+        }
 
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing

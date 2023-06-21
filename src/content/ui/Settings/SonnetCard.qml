@@ -15,9 +15,6 @@ MobileForm.FormCard {
         id: settings
     }
 
-    Layout.topMargin: Kirigami.Units.largeSpacing
-    Layout.fillWidth: true
-
     contentItem: ColumnLayout {
         spacing: 0
         MobileForm.FormCardHeader {
