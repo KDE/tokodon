@@ -54,7 +54,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
         text: i18nc("Show only favorites", "Favorites")
-        icon.name: "like-post"
+        icon.name: "post-favorite"
         checkable: true
         onCheckedChanged: if (checked) {
             notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'poll', 'update']
@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action boostsOnlyAction: Kirigami.Action {
         text: i18nc("Show only boosts", "Boosts")
-        icon.name: "boost-post"
+        icon.name: "post-boost"
         checkable: true
         onCheckedChanged: if (checked) {
             notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow', 'follow_request', 'favourite', 'poll', 'update']
