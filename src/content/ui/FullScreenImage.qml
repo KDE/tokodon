@@ -6,7 +6,6 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 import Qt.labs.qmlmodels 1.0
-import QtMultimedia 5.15
 
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1.0 as Components

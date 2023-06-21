@@ -9,7 +9,6 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import QtGraphicalEffects 1.0
 import Qt.labs.qmlmodels 1.0
-import QtMultimedia 5.15
 
 QQC2.Control {
     id: root
