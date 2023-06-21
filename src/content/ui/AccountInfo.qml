@@ -201,9 +201,9 @@ TimelinePage {
                                 }
                                 onTriggered: {
                                     if (model.identity.relationship && model.identity.relationship.muting) {
-                                        model.account.unmute(model.identity);
+                                        model.account.unmuteAccount(model.identity);
                                     } else {
-                                        model.account.mute(model.identity);
+                                        model.account.muteAccount(model.identity);
                                     }
                                 }
                             },
