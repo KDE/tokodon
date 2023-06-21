@@ -39,7 +39,7 @@ MastoPage {
                     id: instanceUrl
                     label: i18n("Instance Url:")
                     onAccepted: continueButton.clicked()
-                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
+                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
                 }
 
                 MobileForm.FormDelegateSeparator { above: continueButton }
