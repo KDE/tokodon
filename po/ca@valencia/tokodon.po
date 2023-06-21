@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:52+0000\n"
+"POT-Creation-Date: 2023-06-21 00:47+0000\n"
 "PO-Revision-Date: 2023-06-09 10:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: account/abstractaccount.cpp:440
+#: account/abstractaccount.cpp:456
 #, kde-format
 msgid "Could not follow account"
 msgstr "No s'ha pogut seguir el compte"
 
-#: account/abstractaccount.cpp:441
+#: account/abstractaccount.cpp:457
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "No s'ha pogut desfer el seguiment del compte"
 
-#: account/abstractaccount.cpp:442
+#: account/abstractaccount.cpp:458
 #, kde-format
 msgid "Could not block account"
 msgstr "No s'ha pogut bloquejar el compte"
 
-#: account/abstractaccount.cpp:443
+#: account/abstractaccount.cpp:459
 #, kde-format
 msgid "Could not unblock account"
 msgstr "No s'ha pogut desbloquejar el compte"
 
-#: account/abstractaccount.cpp:444
+#: account/abstractaccount.cpp:460
 #, kde-format
 msgid "Could not mute account"
 msgstr "No s'ha pogut silenciar el compte"
 
-#: account/abstractaccount.cpp:445
+#: account/abstractaccount.cpp:461
 #, kde-format
 msgid "Could not unmute account"
 msgstr "No s'ha pogut desfer el silenciament del compte"
 
-#: account/abstractaccount.cpp:446
+#: account/abstractaccount.cpp:462
 #, kde-format
 msgid "Could not feature account"
 msgstr "No s'ha pogut destacar el compte"
 
-#: account/abstractaccount.cpp:447
+#: account/abstractaccount.cpp:463
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "No s'ha pogut desfer el fet de destacar el compte"
 
-#: account/abstractaccount.cpp:448
+#: account/abstractaccount.cpp:464
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "No s'ha pogut editar una nota quant al compte"
@@ -121,6 +121,90 @@ msgstr "Seguidors"
 msgctxt "@title"
 msgid "Following"
 msgstr "Seguint"
+
+#: admin/accounttoolmodel.cpp:299
+#, fuzzy, kde-format
+#| msgid "Could not mute account"
+msgid "Could not accept account"
+msgstr "No s'ha pogut silenciar el compte"
+
+#: admin/accounttoolmodel.cpp:300
+#, fuzzy, kde-format
+#| msgid "Could not mute account"
+msgid "Could not reject account"
+msgstr "No s'ha pogut silenciar el compte"
+
+#: admin/accounttoolmodel.cpp:301
+#, fuzzy, kde-format
+#| msgid "Could not edit note about an account"
+msgid "Could not take action against the account"
+msgstr "No s'ha pogut editar una nota quant al compte"
+
+#: admin/accounttoolmodel.cpp:302
+#, fuzzy, kde-format
+#| msgid "Could not feature account"
+msgid "Could not enable  the disabled account"
+msgstr "No s'ha pogut destacar el compte"
+
+#: admin/accounttoolmodel.cpp:303
+#, fuzzy, kde-format
+#| msgid "Could not unmute account"
+msgid "Could not unsilence the account"
+msgstr "No s'ha pogut desfer el silenciament del compte"
+
+#: admin/accounttoolmodel.cpp:304
+#, fuzzy, kde-format
+#| msgid "Could not unmute account"
+msgid "Could not unsuspend the account"
+msgstr "No s'ha pogut desfer el silenciament del compte"
+
+#: admin/accounttoolmodel.cpp:305
+#, fuzzy, kde-format
+#| msgid "Could not mute account"
+msgid "Could not mark the account as not sensitive"
+msgstr "No s'ha pogut silenciar el compte"
+
+#: admin/adminaccountinfo.cpp:20
+#, kde-format
+msgctxt "login status"
+msgid "Suspended"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:22
+#, kde-format
+msgctxt "login status"
+msgid "Silenced"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:24
+#, kde-format
+msgctxt "login status"
+msgid "Sensitized"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:26
+#, kde-format
+msgctxt "login status"
+msgid "Frozen"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:28
+#, kde-format
+msgctxt "login status"
+msgid "Email Not confirmed"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:30
+#, kde-format
+msgctxt "login status"
+msgid "Not Approved"
+msgstr ""
+
+#: admin/adminaccountinfo.cpp:32
+#, kde-format
+msgctxt "login status"
+msgid "No Limits Imposed"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -208,7 +292,7 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:189
-#: content/ui/UserInfo.qml:218
+#: content/ui/UserInfo.qml:230
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -451,6 +535,438 @@ msgstr "Punts"
 msgid "Search"
 msgstr "Busca"
 
+#: content/ui/ModerationTools/AccountToolPage.qml:13
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Accounts Tool Page"
+msgstr "Comptes"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:28
+#: content/ui/ModerationTools/AccountToolPage.qml:205
+#, kde-format
+msgid "Advanced Search"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:32
+#, fuzzy, kde-format
+#| msgid "User"
+msgctxt "@info:placeholder Username for searching accounts"
+msgid "Username"
+msgstr "Usuari"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:36
+#, fuzzy, kde-format
+#| msgid "Display Name"
+msgctxt "@info:placeholder display name for searching accounts"
+msgid "Display Name"
+msgstr "Nom que s'ha de mostrar"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:40
+#, kde-format
+msgctxt "@info:placeholder email for searching accounts"
+msgid "Email"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:44
+#, kde-format
+msgctxt "@info:placeholder ip for searching accounts"
+msgid "IP"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@info:Search button to initiate searching accounts"
+msgid "Search"
+msgstr "Busca"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:62
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@info:Reset button to reset all the text fields"
+msgid "Reset"
+msgstr "Reinicia"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:67
+#, kde-format
+msgctxt "@info:Cancel button to close the dailog"
+msgid "Cancel"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:86
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@info:Location combobox to choose location filters"
+msgid "Location"
+msgstr "Notificacions"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:99
+#, fuzzy, kde-format
+#| msgctxt "Show all notifications"
+#| msgid "All"
+msgctxt "@info:Filter out accounts from any location"
+msgid "All"
+msgstr "Totes"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@info:Filter out local accounts"
+msgid "Local"
+msgstr "Local"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:107
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@info:Filter out remote accounts"
+msgid "Remote"
+msgstr "Elimina"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:121
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt ""
+"@info:Moderation Status combobox to choose between different moderation "
+"status filters"
+msgid "Moderation Status"
+msgstr "Converses"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:132
+#, fuzzy, kde-format
+#| msgctxt "Show all notifications"
+#| msgid "All"
+msgctxt "@info:Filter out accounts with any moderation status"
+msgid "All"
+msgstr "Totes"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:136
+#, kde-format
+msgctxt "@info:Filter out accounts with active moderation status"
+msgid "Active"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgctxt "@info:Filter out accounts with pending moderation status"
+msgid "Pending"
+msgstr "Tendències"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:144
+#, kde-format
+msgctxt "@info:Filter out accounts with disabled moderation status"
+msgid "Disabled"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:148
+#, kde-format
+msgctxt "@info:Filter out accounts with silenced moderation status"
+msgid "Silenced"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:152
+#, kde-format
+msgctxt "@info:Filter out accounts with suspended moderation status"
+msgid "Suspended"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:165
+#, kde-format
+msgctxt "@info:Role combobox to choose between different role filters"
+msgid "Role"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:179
+#, fuzzy, kde-format
+#| msgctxt "Show all notifications"
+#| msgid "All"
+msgctxt "@info:Filter out accounts with any role"
+msgid "All"
+msgstr "Totes"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:183
+#, kde-format
+msgctxt "@info:Filter out accounts with moderator role"
+msgid "Moderator"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:187
+#, kde-format
+msgctxt "@info:Filter out accounts with admin role"
+msgid "Admin"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:191
+#, kde-format
+msgctxt "@info:Filter out accounts with owner role"
+msgid "Owner"
+msgstr ""
+
+#: content/ui/ModerationTools/AccountToolPage.qml:291
+#, kde-format
+msgid "No accounts found"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:28
+#, kde-format
+msgid "Perform moderation action on %1"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:34
+#, kde-format
+msgctxt ""
+"@info: Use this to send a warning to the user, without triggering any other "
+"action."
+msgid "Warn"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:38
+#, kde-format
+msgctxt ""
+"@info: Prevent the user from using their account, but do not delete or hide "
+"their contents."
+msgid "Freeze"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:43
+#, kde-format
+msgctxt ""
+"@info: Force all this user's media attachments to be flagged as sensitive."
+msgid "Force-Senstive"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:48
+#, kde-format
+msgctxt ""
+"@info: Prevent the user from being able to post with public visibility, hide "
+"their posts and notifications from people not following them."
+msgid "Limit"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:53
+#, kde-format
+msgctxt ""
+"@info: Prevent any interaction from or to this account and delete its "
+"contents. Revertible within 30 days."
+msgid "Suspend"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:58
+#, kde-format
+msgctxt ""
+"@info: The user will receive an explanation of what happened with their "
+"account"
+msgid "Notify the user per e-mail"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:64
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info: Send a warning note to the user."
+msgid "Custom warning"
+msgstr "Avís de contingut"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:76
+#, kde-format
+msgctxt "@info:Button to submit the action aginst the user."
+msgid "Submit"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:92
+#, kde-format
+msgid "Action taken successfully"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:97
+#, kde-format
+msgctxt "@info:Cancel button to close the dailog."
+msgid "Cancel"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:107
+#, kde-format
+msgid "Are you sure?"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:108
+#, kde-format
+msgid "Action will be taken against the account."
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:116
+#, kde-format
+msgid "Successfully approved %1's sign-up application"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:120
+#, kde-format
+msgid "Successfully rejected %1's sign-up application"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:124
+#, kde-format
+msgid "Successfully unfreezed %1's account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:128
+#, kde-format
+msgid "Successfully unsilenced %1's account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:132
+#, kde-format
+msgid "Successfully unsuspended %1's account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:136
+#, kde-format
+msgid "Successfully undo force-sensitive %1's account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:140
+#, kde-format
+msgid "Successfully deleted %1's account data"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:282
+#, fuzzy, kde-format
+#| msgid "Bio"
+msgctxt "@info Bio label of account."
+msgid "Bio"
+msgstr "Biografia"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:327
+#, kde-format
+msgid "Reasons for joining"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:388
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgctxt "@info:Number of Posts"
+msgid "Posts"
+msgstr "Publicacions"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:395
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Followers"
+msgctxt "@info:Number of followers."
+msgid "Followers"
+msgstr "Seguidors"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:402
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@info:row Number of accounts followed by the account"
+msgid "Following"
+msgstr "Seguint"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:411
+#, kde-format
+msgctxt "@info The last time the account was active."
+msgid "Last Active"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:418
+#, kde-format
+msgctxt "@info Role of the account on this server."
+msgid "Role"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:425
+#, kde-format
+msgctxt "@info The current login status of the account."
+msgid "Login Status"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:464
+#, kde-format
+msgctxt "@info: Email of the user."
+msgid "Email"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:484
+#, kde-format
+msgctxt "@info: Email confirmation status of the user."
+msgid "Email Status"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:504
+#, fuzzy, kde-format
+#| msgid "Account editor"
+msgctxt "@info: Locale of the user."
+msgid "Account Locale"
+msgstr "Editor de comptes"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:524
+#, kde-format
+msgctxt "@info: Joining date of the user"
+msgid "Joined"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:544
+#, kde-format
+msgid "Most recent IP"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:579
+#, kde-format
+msgid "Invited By"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:610
+#, kde-format
+msgctxt "@info: Approve the user's request"
+msgid "Approve"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:622
+#, kde-format
+msgctxt "@info: Reject the user's request"
+msgid "Reject"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:633
+#, fuzzy, kde-format
+#| msgid "Muted Accounts"
+msgid "Delete Account Data"
+msgstr "Comptes silenciats"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:645
+#, kde-format
+msgctxt "@info: Unfreeze the user's account"
+msgid "Unfreeze"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:655
+#, kde-format
+msgid "Undo Limit"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:665
+#, kde-format
+msgid "Undo Suspension"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:675
+#, kde-format
+msgid "Undo force-sensitive"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:686
+#, kde-format
+msgid "Take action against this account"
+msgstr ""
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:14
+#: content/ui/Settings/AccountsCard.qml:24
+#, kde-format
+msgid "Accounts"
+msgstr "Comptes"
+
 #: content/ui/NotificationPage.qml:36
 #, kde-format
 msgctxt "Show all notifications"
@@ -512,11 +1028,6 @@ msgstr "Busca sense cap resultat"
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr "Busca persones, etiquetes i publicacions"
-
-#: content/ui/Settings/AccountsCard.qml:24
-#, kde-format
-msgid "Accounts"
-msgstr "Comptes"
 
 #: content/ui/Settings/AccountsCard.qml:72
 #, kde-format
@@ -1043,7 +1554,7 @@ msgstr "No disponible"
 msgid "Media Hidden"
 msgstr "Fitxers multimèdia ocults"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:25
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:27
 #: content/ui/StatusDelegate/StatusDelegate.qml:150
 #: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, kde-format
@@ -1229,7 +1740,19 @@ msgstr "Canvia d'usuari"
 msgid "Add"
 msgstr "Afig"
 
+#: content/ui/UserInfo.qml:218
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgid "Moderation Tools"
+msgstr "Converses"
+
 #: content/ui/UserInfo.qml:219
+#, kde-format
+msgctxt "@action:button"
+msgid "Open Moderation Tools"
+msgstr ""
+
+#: content/ui/UserInfo.qml:231
 #, kde-format
 msgid "Open settings"
 msgstr "Obri la configuració"
@@ -1304,49 +1827,49 @@ msgstr "7 dies"
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: main.cpp:113
+#: main.cpp:115
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115
+#: main.cpp:117
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:118
+#: main.cpp:120
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:118
+#: main.cpp:120
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:127
+#: main.cpp:129
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
 
-#: main.cpp:128
+#: main.cpp:130
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Implementa l'esquema «web+ap: url»"
@@ -1413,57 +1936,57 @@ msgstr "Tendències"
 msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar l'última notificació."
 
-#: timeline/post.cpp:318
+#: timeline/post.cpp:322
 #, kde-format
 msgid "in the future"
 msgstr "En el futur"
 
-#: timeline/post.cpp:320
+#: timeline/post.cpp:324
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:322
+#: timeline/post.cpp:326
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:324
+#: timeline/post.cpp:328
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:326
+#: timeline/post.cpp:330
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:330
+#: timeline/post.cpp:334
 #, kde-format
 msgid "1 week ago"
 msgstr "Fa 1 setmana"
 
-#: timeline/post.cpp:332
+#: timeline/post.cpp:336
 #, kde-format
 msgid "%1 weeks ago"
 msgstr "Fa %1 setmanes"
 
-#: timeline/post.cpp:336
+#: timeline/post.cpp:340
 #, kde-format
 msgid "1 month ago"
 msgstr "Fa 1 mes"
 
-#: timeline/post.cpp:338
+#: timeline/post.cpp:342
 #, kde-format
 msgid "%1 months ago"
 msgstr "Fa %1 mesos"
 
-#: timeline/post.cpp:344
+#: timeline/post.cpp:348
 #, kde-format
 msgid "1 year ago"
 msgstr "Fa 1 any"
 
-#: timeline/post.cpp:346
+#: timeline/post.cpp:350
 #, kde-format
 msgid "%1 years ago"
 msgstr "Fa %1 anys"
