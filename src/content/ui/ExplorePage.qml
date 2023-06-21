@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
+import QtQml.Models 2.15
 import "./StatusDelegate"
 import "./StatusComposer"
 
@@ -15,8 +16,6 @@ Kirigami.ScrollablePage {
     title: i18n("Explore")
 
     property var dialog: null
-
-    property alias listViewHeader: listview.header
 
     onBackRequested: if (dialog) {
         dialog.close();
@@ -31,12 +30,51 @@ Kirigami.ScrollablePage {
         onTriggered: Navigation.openStatusComposer()
     }
 
-    ListView {
-        id: listview
-        model: MainTimelineModel {
-            id: trendingPostsModel
-            name: "trending"
+    TagsModel {
+        id: tagsModel
+    }
+
+    MainTimelineModel {
+        id: trendingPostsModel
+        name: "trending"
+    }
+
+
+    property Kirigami.Action tendingPostsAction: Kirigami.Action {
+        id: showPostsAction
+        text: i18n("Trending Posts")
+        checkable: true
+        checked: true
+        onCheckedChanged: if (checked) {
+            if (tagsModel.name.length === 0) {
+                trendingPostsModel.name = "trending";
+            } else {
+                trendingPostsModel.shouldLoadMore = false;
+            }
         }
+    }
+
+    property Kirigami.Action trendingTagsAction: Kirigami.Action {
+        id: showTagsAction
+        text: i18n("Trending Tags")
+        checkable: true
+        onCheckedChanged: if (checked) {
+            if (tagsModel.name.length === 0) {
+                tagsModel.name = "trending";
+            } else {
+                tagsModel.shouldLoadMore = false;
+            }
+        }
+    }
+
+    header: Kirigami.NavigationTabBar {
+        width: parent.width
+        actions: [tendingPostsAction, trendingTagsAction]
+    }
+
+    ListView {
+        id: tagsView
+        model:  showPostsAction.checked ? trendingPostsModel : tagsModel
 
         Connections {
             target: Navigation
@@ -66,23 +104,103 @@ Kirigami.ScrollablePage {
             id: fullScreenImage
             FullScreenImage {}
         }
-        delegate: StatusDelegate {
-            timelineModel: trendingPostsModel
-            loading: listview.model.loading
-            showSeparator: index !== ListView.view.count - 1
+
+        Component {
+            id: trendingPostsModelComponent
+            StatusDelegate {
+                timelineModel: tagsView.model
+                loading: tagsView.model.loading
+                showSeparator: index !== tagsView.count - 1
+            }
         }
 
+        Component {
+            id: trendingTagsModelComponent
+            QQC2.ItemDelegate {
+                id: delegate
+
+                required property int index
+                required property var tag
+                width: ListView.view.width
+
+                contentItem: Kirigami.FlexColumn
+                    {
+                    spacing: 0
+
+                    maximumWidth: Kirigami.Units.gridUnit * 40
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.topMargin: Kirigami.Units.smallSpacing
+                        Layout.bottomMargin: Kirigami.Units.smallSpacing
+
+                        spacing: 0
+                        clip: true
+                        ColumnLayout {
+                            Kirigami.Heading {
+                                level: 4
+                                text: `#${tag.name}`
+                                type: Kirigami.Heading.Type.Primary
+                                verticalAlignment: Text.AlignTop
+                                elide: Text.ElideRight
+                                textFormat: Text.RichText
+                                Layout.fillWidth: true
+                            }
+
+                            QQC2.Label {
+                                font.pixelSize: Config.defaultFont.pixelSize + 1
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
+                                color: Kirigami.Theme.disabledTextColor
+                                text: i18n("%1 people are talking", tag.history[0].accounts)
+                                verticalAlignment: Text.AlignTop
+                            }
+
+                            MouseArea {
+                                onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
+                                anchors.fill: parent
+                                HoverHandler {
+                                    cursorShape: Qt.PointingHandCursor
+                                }
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        visible: index !== tagsView.count - 1
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.ProgressBar {
+                        visible: tagsView.model.loading && (index === tagsView.count - 1)
+                        indeterminate: true
+                        padding: Kirigami.Units.largeSpacing * 2
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                        Layout.topMargin: Kirigami.Units.largeSpacing
+                        Layout.bottomMargin: Kirigami.Units.largeSpacing
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        Layout.rightMargin: Kirigami.Units.largeSpacing
+                    }
+
+                }
+            }
+        }
+        delegate: showPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
+
+
         QQC2.ProgressBar {
-            visible: listview.model.loading && listview.count === 0
+            visible: tagsView.model.loading && tagsView.count === 0
             anchors.centerIn: parent
             indeterminate: true
         }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No Posts")
-            visible: listview.count === 0 && !listview.model.loading
+            text: i18n("No Tags")
+            visible: tagsView.count === 0 && !tagsView.model.loading
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
+
     }
+
 }

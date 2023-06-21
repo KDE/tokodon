@@ -190,6 +190,7 @@ class Post : public QObject
     Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
     Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
+    Q_PROPERTY(QString type READ type CONSTANT)
 
 public:
     Post() = delete;
@@ -207,6 +208,7 @@ public:
 
     AbstractAccount *m_parent;
 
+    QString type() const;
     void fromJson(QJsonObject obj);
 
     Identity *getAuthorIdentity() const;

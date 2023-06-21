@@ -16,6 +16,7 @@ class TimelineModel : public AbstractTimelineModel
 {
     Q_OBJECT
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
+    Q_PROPERTY(bool shouldLoadMore MEMBER m_shouldLoadMore WRITE setShouldLoadMore NOTIFY shouldLoadMoreChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
@@ -34,6 +35,8 @@ public:
 
     /// Initialize and start filling the timeline
     void init();
+
+    void setShouldLoadMore(bool shouldLoadMore);
 
 public Q_SLOTS:
     /// Reply to the post at \p index
@@ -68,6 +71,8 @@ Q_SIGNALS:
     /// Emitted when the timeline display name has changed
     void nameChanged();
 
+    void shouldLoadMoreChanged();
+
 protected:
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
@@ -77,5 +82,6 @@ protected:
 
     QList<Post *> m_timeline;
 
+    bool m_shouldLoadMore = true;
     friend class TimelineTest;
 };

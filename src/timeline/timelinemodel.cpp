@@ -138,7 +138,16 @@ void TimelineModel::fetchMore(const QModelIndex &parent)
 
     const auto p = m_timeline.last();
 
-    fillTimeline(p->originalPostId());
+    if (m_shouldLoadMore) {
+        fillTimeline(p->originalPostId());
+    } else {
+        m_shouldLoadMore = true;
+    }
+}
+
+void TimelineModel::setShouldLoadMore(bool shouldLoadMore)
+{
+    m_shouldLoadMore = shouldLoadMore;
 }
 
 bool TimelineModel::canFetchMore(const QModelIndex &parent) const

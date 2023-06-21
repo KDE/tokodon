@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(tokodon_static STATIC)
+add_library(tokodon_static STATIC )
 
 ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_debug.h
@@ -61,6 +61,8 @@ PRIVATE
     timeline/post.h
     timeline/poll.cpp
     timeline/poll.h
+    timeline/tag.h
+    timeline/tag.cpp
     timeline/accountmodel.cpp
     timeline/accountmodel.h
     timeline/threadmodel.cpp
@@ -77,6 +79,10 @@ PRIVATE
     timeline/notificationmodel.h
     timeline/abstracttimelinemodel.cpp
     timeline/abstracttimelinemodel.h
+    timeline/tagsmodel.h
+    timeline/tagsmodel.cpp
+    timeline/abstractlistmodel.cpp
+    timeline/abstractlistmodel.h
 
     # Search
     search/searchmodel.cpp
