@@ -432,166 +432,84 @@ Kirigami.ScrollablePage {
             visible: root.identity.email
             contentItem: ColumnLayout {
                 spacing: 0
-                RowLayout {
+
+                MobileForm.FormTextDelegate {
                     visible: root.identity.role
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: "Role"
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    QQC2.Label {
-                        text: root.identity.role
-                    }
+                    text: i18nc("@info: Email of the user.", "Role")
+                    description: root.identity.role
                 }
-                MobileForm.FormDelegateSeparator {}
-                RowLayout {
+
+                MobileForm.FormDelegateSeparator { visible: root.identity.email }
+
+                MobileForm.FormTextDelegate {
                     visible: root.identity.email
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18nc("@info: Email of the user.", "Email")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    QQC2.Label {
-                        text: root.identity.email
-                    }
+                    text: i18nc("@info: Email of the user.", "Email")
+                    description: root.identity.email
                 }
+
                 MobileForm.FormDelegateSeparator {}
-                RowLayout {
-                    visible: root.identity.emailStatus
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18nc("@info: Email confirmation status of the user.","Email Status")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    QQC2.Label {
-                        text: root.identity.emailStatus ? "Confirmed" : "Not Confirmed"
-                    }
+
+                MobileForm.FormTextDelegate {
+                    text: i18nc("@info: Email confirmation status of the user.","Email Status")
+                    description: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
                 }
-                MobileForm.FormDelegateSeparator {}
-                RowLayout {
+
+                MobileForm.FormDelegateSeparator { visible: root.identity.locale }
+
+                MobileForm.FormTextDelegate {
                     visible: root.identity.locale
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18nc("@info: Locale of the user.", "Account Locale")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    QQC2.Label {
-                        text: root.identity.locale
-                    }
+                    text: i18nc("@info: Locale of the user.", "Account Locale")
+                    description: root.identity.locale
                 }
-                MobileForm.FormDelegateSeparator {}
-                RowLayout {
+
+                MobileForm.FormDelegateSeparator { visible: root.identity.joined }
+
+                MobileForm.FormTextDelegate {
                     visible: root.identity.joined
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18nc("@info: Joining date of the user","Joined")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    QQC2.Label {
-                        text: root.identity.joined
-                    }
+                    text: i18nc("@info: Joining date of the user","Joined")
+                    description: root.identity.joined
                 }
-                MobileForm.FormDelegateSeparator {}
-                RowLayout {
-                    visible: root.identity.ips
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18n("Most recent IP")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 0
+
+                MobileForm.FormDelegateSeparator { visible: root.identity.ips.length > 0 }
+
+                MobileForm.AbstractFormDelegate {
+                    id: ipDelegate
+                    text: i18n("Most recent IP")
+
+                    contentItem: ColumnLayout {
+                        QQC2.Label {
+                            text: ipDelegate.text
+                            elide: Text.ElideRight
+                            Accessible.ignored: true
+                            Layout.fillWidth: true
+                        }
+
                         Repeater {
                             model: root.identity.ips
-                            ColumnLayout {
+
+                            QQC2.Label {
+                                text: modelData.ip
+                                elide: Text.ElideRight
+                                color: Kirigami.Theme.disabledTextColor
+                                Accessible.ignored: true
                                 Layout.fillWidth: true
-                                spacing: 0
-                                QQC2.Label {
-                                    text: modelData.ip
-                                    Layout.alignment: Qt.AlignHCenter
-                                    Layout.topMargin: Kirigami.Units.smallSpacing
-                                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                                }
-                                MobileForm.FormDelegateSeparator {}
                             }
                         }
                     }
                 }
-                MobileForm.FormDelegateSeparator {}
-                RowLayout {
+
+                MobileForm.FormDelegateSeparator { visible: root.identity.invitedByIdentity }
+
+                MobileForm.FormTextDelegate {
                     visible: root.identity.invitedByIdentity
-                    spacing: Kirigami.Units.largeSpacing
-                    Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: i18n("Invited By")
-                        textFormat: Text.RichText
-                        elide: Text.ElideRight
-                        wrapMode: Text.Wrap
-                        color: Kirigami.Theme.textColor
-                    }
-                    RowLayout {
-                        spacing: Kirigami.Units.largeSpacing
-                        Kirigami.Avatar {
-                            source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ""
-                            implicitHeight: Kirigami.Units.gridUnit
-                            implicitWidth: implicitHeight
-                        }
-                        QQC2.Label {
-                            text: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
-                        }
+                    text: i18n("Invited By")
+                    description: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
+
+                    leadingPadding: Kirigami.Units.largeSpacing
+                    leading: Kirigami.Avatar {
+                        source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ''
+                        implicitHeight: Kirigami.Units.gridUnit * 2
+                        implicitWidth: Kirigami.Units.gridUnit * 2
                     }
                 }
             }
