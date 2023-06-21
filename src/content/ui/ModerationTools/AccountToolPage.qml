@@ -6,6 +6,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 import "../StatusDelegate"
 
@@ -25,23 +26,33 @@ Kirigami.ScrollablePage {
 
     Kirigami.PromptDialog {
         id: textPromptDialog
+
         title: i18n("Advanced Search")
-        mainItem: Kirigami.FormLayout {
-            QQC2.TextField {
+
+        leftPadding: 0
+        rightPadding: 0
+
+        implicitWidth: Kirigami.Units.gridUnit * 20
+
+        contentItem: ColumnLayout {
+            MobileForm.FormTextFieldDelegate {
                 id: username
-                placeholderText: i18nc("@info:placeholder Username for searching accounts", "Username")
+                label: i18nc("@info:placeholder Username for searching accounts", "Username:")
             }
-            QQC2.TextField {
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
                 id: displayName
-                placeholderText: i18nc("@info:placeholder display name for searching accounts", "Display Name")
+                label: i18nc("@info:placeholder display name for searching accounts", "Display Name:")
             }
-            QQC2.TextField {
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
                 id: email
-                placeholderText: i18nc("@info:placeholder email for searching accounts", "Email")
+                label: i18nc("@info:placeholder email for searching accounts", "Email:")
             }
-            QQC2.TextField {
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
                 id: ip
-                placeholderText: i18nc("@info:placeholder ip for searching accounts", "IP")
+                label: i18nc("@info:placeholder ip for searching accounts", "IP:")
             }
         }
 
@@ -70,11 +81,9 @@ Kirigami.ScrollablePage {
 
             }
         ]
-
     }
 
     header: ColumnLayout {
-        
         RowLayout {
             id: filterOptions
             spacing: Kirigami.Units.largeSpacing
