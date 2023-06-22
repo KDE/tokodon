@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-21 00:47+0000\n"
-"PO-Revision-Date: 2023-06-09 08:27+0200\n"
+"POT-Creation-Date: 2023-06-22 00:48+0000\n"
+"PO-Revision-Date: 2023-06-21 09:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: account/abstractaccount.cpp:456
 #, kde-format
@@ -63,24 +63,24 @@ msgstr "Profilu ni mogoče odvzeti izpostavljenost"
 msgid "Could not edit note about an account"
 msgstr "Ni bilo mogoče urediti opombe o računu"
 
-#: account/notificationhandler.cpp:23
+#: account/notificationhandler.cpp:24
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: account/notificationhandler.cpp:27 content/ui/FollowDelegate.qml:49
+#: account/notificationhandler.cpp:28 content/ui/FollowDelegate.qml:49
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
-#: account/notificationhandler.cpp:31
+#: account/notificationhandler.cpp:32
 #: content/ui/StatusDelegate/StatusDelegate.qml:258
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je ojačalo vašo objavo"
 
-#: account/notificationhandler.cpp:39
+#: account/notificationhandler.cpp:40
 #: content/ui/StatusDelegate/StatusDelegate.qml:161
 #, kde-format
 msgid "%1 edited a post"
@@ -120,88 +120,81 @@ msgid "Following"
 msgstr "Sledim"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Ni bilo mogoče utišati računa"
+msgstr "Ni bilo mogoče prejeti računa"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Ni bilo mogoče utišati računa"
+msgstr "Ni bilo mogoče zavrniti računa"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Ni bilo mogoče urediti opombe o računu"
+msgstr "Ni bilo mogoče ukrepati proti računu"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Profila ni mogoče izpostaviti"
+msgstr "Ni bilo mogoče omogočiti onemogočenega računa"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
 msgstr "Ni bilo mogoče od-utišati računa"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Ni bilo mogoče od-utišati računa"
+msgstr "Ni bilo mogoče od-suspendirati računa"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Ni bilo mogoče utišati računa"
+msgstr "Ni bilo mogoče označiti računa kot neobčutljivega"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Suspendiran"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Silenced"
-msgstr ""
+msgstr "Utišan"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Občutljiv"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "Zamrznjen"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "E-naslov ni potrjen"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "Ni odobren"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Brez omejitev"
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -278,7 +271,7 @@ msgstr "Blokiraj"
 msgid "Edit Profile"
 msgstr "Uredi profil"
 
-#: content/ui/AccountInfo.qml:237 content/ui/Settings/AccountsCard.qml:36
+#: content/ui/AccountInfo.qml:237 content/ui/Settings/AccountsCard.qml:35
 #, kde-format
 msgid "Account editor"
 msgstr "Urejevalnik računa"
@@ -532,183 +525,174 @@ msgstr "Zaznamki"
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:13
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#: content/ui/ModerationTools/AccountToolPage.qml:14
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Računi"
+msgstr "Stran orodij računov"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:28
-#: content/ui/ModerationTools/AccountToolPage.qml:205
+#: content/ui/ModerationTools/AccountToolPage.qml:30
+#: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
-
-#: content/ui/ModerationTools/AccountToolPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Username:"
-msgctxt "@info:placeholder Username for searching accounts"
-msgid "Username"
-msgstr "Uporabniško ime:"
-
-#: content/ui/ModerationTools/AccountToolPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Display Name"
-msgctxt "@info:placeholder display name for searching accounts"
-msgid "Display Name"
-msgstr "Ime zaslona"
+msgstr "Napredno iskanje"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, kde-format
-msgctxt "@info:placeholder email for searching accounts"
-msgid "Email"
-msgstr ""
-
-#: content/ui/ModerationTools/AccountToolPage.qml:44
-#, kde-format
-msgctxt "@info:placeholder ip for searching accounts"
-msgid "IP"
-msgstr ""
-
-#: content/ui/ModerationTools/AccountToolPage.qml:51
 #, fuzzy, kde-format
-#| msgid "Search"
+#| msgctxt "@info:placeholder Username for searching accounts"
+#| msgid "Username"
+msgctxt "@info:placeholder Username for searching accounts"
+msgid "Username:"
+msgstr "Uporabniško ime"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:45
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder display name for searching accounts"
+#| msgid "Display Name"
+msgctxt "@info:placeholder display name for searching accounts"
+msgid "Display Name:"
+msgstr "Ime zaslona"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:50
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder email for searching accounts"
+#| msgid "Email"
+msgctxt "@info:placeholder email for searching accounts"
+msgid "Email:"
+msgstr "E-naslov"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder ip for searching accounts"
+#| msgid "IP"
+msgctxt "@info:placeholder ip for searching accounts"
+msgid "IP:"
+msgstr "IP"
+
+#: content/ui/ModerationTools/AccountToolPage.qml:62
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Reset"
+#: content/ui/ModerationTools/AccountToolPage.qml:73
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:67
+#: content/ui/ModerationTools/AccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:86
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#: content/ui/ModerationTools/AccountToolPage.qml:95
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Opozorila"
+msgstr "Lokacija"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#: content/ui/ModerationTools/AccountToolPage.qml:108
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Local"
+#: content/ui/ModerationTools/AccountToolPage.qml:112
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Lokalno"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Remove"
+#: content/ui/ModerationTools/AccountToolPage.qml:116
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Odstrani"
+msgstr "Oddaljeno"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#: content/ui/ModerationTools/AccountToolPage.qml:130
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Pogovori"
+msgstr "Stanje moderiranja"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:132
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#: content/ui/ModerationTools/AccountToolPage.qml:141
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:136
+#: content/ui/ModerationTools/AccountToolPage.qml:145
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Aktiven"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#: content/ui/ModerationTools/AccountToolPage.qml:149
+#, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr "V trendu"
+msgstr "V teku"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:144
+#: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Onemogočen"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:148
+#: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Utišan"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:152
+#: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Suspendiran"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:165
+#: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "Vloga"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:179
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#: content/ui/ModerationTools/AccountToolPage.qml:188
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:183
+#: content/ui/ModerationTools/AccountToolPage.qml:192
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Moderator"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:187
+#: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "Skrbnik"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:191
+#: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "Lastnik"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:291
+#: content/ui/ModerationTools/AccountToolPage.qml:300
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "Ni najdenih računov"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:28
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "Izvaja moderiranje na %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:34
 #, kde-format
@@ -716,7 +700,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "Opozori"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:38
 #, kde-format
@@ -724,14 +708,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "Zamrzni"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:43
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Uveljavi občutljivost"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:48
 #, kde-format
@@ -739,7 +723,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Omeji"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:53
 #, kde-format
@@ -747,7 +731,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Suspendiraj"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:58
 #, kde-format
@@ -755,11 +739,10 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Opozori uporabnika po elektronski pošti"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
 msgstr "Vsebinsko opozorilo"
@@ -768,67 +751,66 @@ msgstr "Vsebinsko opozorilo"
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "Vloži"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:92
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Ukrep uspešno izveden"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:97
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:107
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "Ali ste prepričani?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Zoper račun bo izveden ukrep."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:116
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "Prijava %1 je bila uspešno odobrena"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:120
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "Prijava %1 je bila uspešno zavrnjena"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:124
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "Račun %1 je bil uspešno odmrznjen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:128
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "Račun %1 je bil uspešno od-utišan"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:132
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "Račun %1 je bil uspešno od-suspendiran"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "Uspešno razveljavljen prisilno občutljiv račun %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "Uspešno zbrisani podatki računa %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:282
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "Bio"
@@ -836,130 +818,144 @@ msgstr "Bio"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:327
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Razlogi za pristop"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:388
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#: content/ui/ModerationTools/MainAccountToolPage.qml:394
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "Objave"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:395
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#: content/ui/ModerationTools/MainAccountToolPage.qml:404
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Sledilci"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:402
-#, fuzzy, kde-format
-#| msgid "Following"
+#: content/ui/ModerationTools/MainAccountToolPage.qml:414
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Sledenje"
-
-#: content/ui/ModerationTools/MainAccountToolPage.qml:411
-#, kde-format
-msgctxt "@info The last time the account was active."
-msgid "Last Active"
-msgstr ""
-
-#: content/ui/ModerationTools/MainAccountToolPage.qml:418
-#, kde-format
-msgctxt "@info Role of the account on this server."
-msgid "Role"
-msgstr ""
+msgstr "Sledi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
+msgctxt "@info The last time the account was active."
+msgid "Last Active"
+msgstr "Zadnji aktivni"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:434
+#, kde-format
+msgctxt "@info Role of the account on this server."
+msgid "Role"
+msgstr "Vloga"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:443
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Status prijave"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:464
+#: content/ui/ModerationTools/MainAccountToolPage.qml:458
+#, fuzzy, kde-format
+#| msgctxt "@info:Role combobox to choose between different role filters"
+#| msgid "Role"
+msgctxt "@info: Email of the user."
+msgid "Role"
+msgstr "Vloga"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:466
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "E-naslov"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:484
+#: content/ui/ModerationTools/MainAccountToolPage.qml:473
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "Stanje e-naslova"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:504
+#: content/ui/ModerationTools/MainAccountToolPage.qml:474
 #, fuzzy, kde-format
-#| msgid "Account editor"
+#| msgid "Configure"
+msgid "Confirmed"
+msgstr "Konfiguriraj"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:474
+#, fuzzy, kde-format
+#| msgctxt "login status"
+#| msgid "Email Not confirmed"
+msgid "Not Confirmed"
+msgstr "E-naslov ni potrjen"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:481
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Urejevalnik računa"
+msgstr "Lokalne spremenljivke računa"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:524
+#: content/ui/ModerationTools/MainAccountToolPage.qml:489
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Pridružen"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:544
+#: content/ui/ModerationTools/MainAccountToolPage.qml:497
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Nedavni IP"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:579
+#: content/ui/ModerationTools/MainAccountToolPage.qml:525
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "Povabljen po"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:610
+#: content/ui/ModerationTools/MainAccountToolPage.qml:548
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "Odobri"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:622
+#: content/ui/ModerationTools/MainAccountToolPage.qml:560
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "Zavrni"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:633
-#, fuzzy, kde-format
-#| msgid "Muted Accounts"
+#: content/ui/ModerationTools/MainAccountToolPage.qml:571
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Utišani računi"
+msgstr "Zbriši podatke računa"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:645
+#: content/ui/ModerationTools/MainAccountToolPage.qml:583
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Odmrzni"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:655
+#: content/ui/ModerationTools/MainAccountToolPage.qml:593
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Prekliči omejitve"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:665
+#: content/ui/ModerationTools/MainAccountToolPage.qml:603
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Odstrani suspenz"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:675
+#: content/ui/ModerationTools/MainAccountToolPage.qml:613
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Odstrani prisilno občutljivost"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:686
+#: content/ui/ModerationTools/MainAccountToolPage.qml:624
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Ukrepaj proti računu"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
-#: content/ui/Settings/AccountsCard.qml:24
+#: content/ui/Settings/AccountsCard.qml:23
 #, kde-format
 msgid "Accounts"
 msgstr "Računi"
@@ -1026,12 +1022,12 @@ msgstr "Ni zadetkov iskanja"
 msgid "Search for peoples, tags and posts"
 msgstr "Iskanje ljudi, oznak in objav"
 
-#: content/ui/Settings/AccountsCard.qml:72
+#: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
 msgid "Logout"
 msgstr "Odjava"
 
-#: content/ui/Settings/AccountsCard.qml:92 content/ui/UserInfo.qml:69
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:69
 #, kde-format
 msgid "Add Account"
 msgstr "Dodaj račun"
@@ -1083,7 +1079,7 @@ msgid "Network Proxy"
 msgstr "Omrežni posrednik"
 
 #: content/ui/Settings/NetworkProxyPage.qml:27
-#: content/ui/Settings/SettingsPage.qml:45
+#: content/ui/Settings/SettingsPage.qml:52
 #, kde-format
 msgid "Network Proxy"
 msgstr "Omrežni posrednik"
@@ -1262,57 +1258,57 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/Settings/SettingsPage.qml:68
+#: content/ui/Settings/SettingsPage.qml:75
 #, kde-format
 msgid "About Tokodon"
 msgstr "O Tokodonu"
 
-#: content/ui/Settings/SettingsPage.qml:75
+#: content/ui/Settings/SettingsPage.qml:82
 #, kde-format
 msgid "About KDE"
 msgstr "O KDE"
 
-#: content/ui/Settings/SonnetCard.qml:24
+#: content/ui/Settings/SonnetCard.qml:21
 #, kde-format
 msgid "Spellchecking"
 msgstr "Črkovanje"
 
-#: content/ui/Settings/SonnetCard.qml:30
+#: content/ui/Settings/SonnetCard.qml:27
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Omogoči samodejno črkovanje"
 
-#: content/ui/Settings/SonnetCard.qml:42
+#: content/ui/Settings/SonnetCard.qml:39
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Prezri besede z velikimi črkami"
 
-#: content/ui/Settings/SonnetCard.qml:54
+#: content/ui/Settings/SonnetCard.qml:51
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Prezri besede z vezaji"
 
-#: content/ui/Settings/SonnetCard.qml:66
+#: content/ui/Settings/SonnetCard.qml:63
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Samodejno zaznaj jezik"
 
-#: content/ui/Settings/SonnetCard.qml:77
+#: content/ui/Settings/SonnetCard.qml:74
 #, kde-format
 msgid "Selected default language:"
 msgstr "Izbrani privzeti jezik:"
 
-#: content/ui/Settings/SonnetCard.qml:78
+#: content/ui/Settings/SonnetCard.qml:75
 #, kde-format
 msgid "None"
 msgstr "Noben"
 
-#: content/ui/Settings/SonnetCard.qml:97
+#: content/ui/Settings/SonnetCard.qml:94
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Dodatni jeziki s črkovalnikom"
 
-#: content/ui/Settings/SonnetCard.qml:98
+#: content/ui/Settings/SonnetCard.qml:95
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -1321,40 +1317,40 @@ msgstr ""
 "%1 bo zagotavljal črkovalnike in sugestije za jezike navedene tu, kadar je "
 "omogočeno črkovanje."
 
-#: content/ui/Settings/SonnetCard.qml:109
+#: content/ui/Settings/SonnetCard.qml:106
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Odpri osebni slovar"
 
-#: content/ui/Settings/SonnetCard.qml:120
+#: content/ui/Settings/SonnetCard.qml:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Jeziki s črkovalnikom"
 
-#: content/ui/Settings/SonnetCard.qml:130
-#: content/ui/Settings/SonnetCard.qml:140
+#: content/ui/Settings/SonnetCard.qml:127
+#: content/ui/Settings/SonnetCard.qml:137
 #, kde-format
 msgid "Default Language"
 msgstr "Privzeti jezik"
 
-#: content/ui/Settings/SonnetCard.qml:152
+#: content/ui/Settings/SonnetCard.qml:149
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Slovar črkovalnika"
 
-#: content/ui/Settings/SonnetCard.qml:159
+#: content/ui/Settings/SonnetCard.qml:156
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Dodaj novo besedo v vaš osebni slovar…"
 
-#: content/ui/Settings/SonnetCard.qml:162
+#: content/ui/Settings/SonnetCard.qml:159
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Dodaj besedo"
 
-#: content/ui/Settings/SonnetCard.qml:189
+#: content/ui/Settings/SonnetCard.qml:186
 #, kde-format
 msgid "Delete word"
 msgstr "Briši besedo"
@@ -1539,12 +1535,12 @@ msgstr "<b>%1/%2</b> znaki"
 msgid "Send"
 msgstr "Pošlji"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:119
+#: content/ui/StatusDelegate/AttachmentGrid.qml:118
 #, kde-format
 msgid "Not available"
 msgstr "Ni na voljo"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:247
+#: content/ui/StatusDelegate/AttachmentGrid.qml:246
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medij je skrit"
@@ -1736,16 +1732,15 @@ msgid "Add"
 msgstr "Dodaj"
 
 #: content/ui/UserInfo.qml:218
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Pogovori"
+msgstr "Orodje moderiranja"
 
 #: content/ui/UserInfo.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
-msgstr ""
+msgstr "Odpri orodja moderiranja"
 
 #: content/ui/UserInfo.qml:231
 #, kde-format
