@@ -364,88 +364,38 @@ Kirigami.ScrollablePage {
             }
         }
 
-        FormGridContainer {
+        MobileForm.FormGridContainer {
             id: container
 
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
 
-            contentItem: GridLayout {
-                id: grid
-
-                readonly property int cellWidth: Kirigami.Units.gridUnit * 10
-                readonly property int cellHeight: Math.max(posts.implicitHeight,
-                                                           followers.implicitHeight,
-                                                           following.implicitHeight,
-                                                           lastActive.implicitHeight,
-                                                           role.implicitHeight,
-                                                           loginStatus.implicitHeight)
-
-
-                columns: 3
-                columnSpacing: Kirigami.Units.smallSpacing
-                rowSpacing: Kirigami.Units.smallSpacing
-
-                // First row
-                AccountInfoButton {
-                    id: posts
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
+            infoCards: [
+                MobileForm.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.statusesCount
                     subtitle: i18nc("@info:Number of Posts", "Posts")
-                    cardWidthRestricted: container.cardWidthRestricted
-                }
-
-                AccountInfoButton {
-                    id: followers
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
+                },
+                MobileForm.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.followersCount
                     subtitle: i18nc("@info:Number of followers.", "Followers")
-                    cardWidthRestricted: container.cardWidthRestricted
-                }
-
-                AccountInfoButton {
-                    id: following
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
+                },
+                MobileForm.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.followingCount
                     subtitle: i18nc("@info:row Number of accounts followed by the account", "Following")
-                    cardWidthRestricted: container.cardWidthRestricted
-                }
-
-                // Second row
-                AccountInfoButton {
-                    id: lastActive
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
+                },
+                MobileForm.FormGridContainer.InfoCard {
+                    title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : i18n("No role")
+                    subtitle: i18nc("@info Role of the account on this server.", "Role")
+                },
+                MobileForm.FormGridContainer.InfoCard {
                     title: root.lastActive
                     subtitle: i18nc("@info The last time the account was active.", "Last Active")
-                    cardWidthRestricted: container.cardWidthRestricted
-                }
-                AccountInfoButton {
-                    id: role
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
-                    title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : "No role"
-                    subtitle: i18nc("@info Role of the account on this server.", "Role")
-                    cardWidthRestricted: container.cardWidthRestricted
-                }
-                AccountInfoButton {
-                    id: loginStatus
-                    Layout.preferredWidth: grid.cellWidth
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: grid.cellHeight
+                },
+                MobileForm.FormGridContainer.InfoCard {
                     title: root.identity.loginStatus
                     subtitle: i18nc("@info The current login status of the account.", "Login Status")
-                    cardWidthRestricted: container.cardWidthRestricted
                 }
-            }
+            ]
         }
 
         MobileForm.FormCard {
@@ -457,7 +407,7 @@ Kirigami.ScrollablePage {
 
                 MobileForm.FormTextDelegate {
                     visible: root.identity.role
-                    text: i18nc("@info: Email of the user.", "Role")
+                    text: i18nc("@info: Role of the user.", "Role")
                     description: root.identity.role
                 }
 
