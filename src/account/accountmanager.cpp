@@ -128,6 +128,11 @@ void AccountManager::addAccount(AbstractAccount *account)
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
         Q_EMIT notification(account, n);
     });
+
+    if (m_selected_account == nullptr) {
+        m_selected_account = account;
+        Q_EMIT accountSelected(m_selected_account);
+    }
 }
 
 void AccountManager::childIdentityChanged(AbstractAccount *account)
