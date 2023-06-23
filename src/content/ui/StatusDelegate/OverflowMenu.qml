@@ -92,7 +92,8 @@ QQC2.Menu {
                 id: alternativesModel
                 inputData: {
                     'urls': [root.url],
-                    'mimeType': ["text/uri-list"]
+                    'title': "Post",
+                    'mimeType': '*'
                 }
                 pluginType: "Export"
             }
