@@ -47,13 +47,6 @@ Kirigami.Page {
         id: jobView
         onStateChanged: {
             if (state === Purpose.PurposeJobController.Finished) {
-                if (jobView.job.output.url !== "") {
-                    // Show share url
-                    // TODO no needed anymore in purpose > 5.90
-                    sharingSuccess.text = i18n("Shared url for image is <a href='%1'>%1</a>", jobView.output.url);
-                    sharingSuccess.sendEvent();
-                    Clipboard.saveText(jobView.output.url);
-                }
                 window.closeDialog()
             } else if (state === Purpose.PurposeJobController.Error) {
                 // Show failure notification
