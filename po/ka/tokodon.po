@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-22 00:48+0000\n"
-"PO-Revision-Date: 2023-06-10 06:35+0200\n"
+"PO-Revision-Date: 2023-06-22 08:51+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -122,88 +122,81 @@ msgid "Following"
 msgstr "მიყვებით"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "ანგარიშის დადუმების შეცდომა"
+msgstr "ანგარიშის დადასტურების შეცდომა"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "ანგარიშის დადუმების შეცდომა"
+msgstr "ანგარიშის უარყოფის შეცდომა"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
+msgstr "ანგარიშზე ქმედების შესრულება შეუძლებელია"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "ანგარიშის მიმაგრების შეცდომა"
+msgstr "გამორთული ანგარიშის ჩართვა შეუძლებელია"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
 msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
+msgstr "ანგარიშის შეჩერების მოხსნის შეცდომა"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "ანგარიშის დადუმების შეცდომა"
+msgstr "ანგარიშის მგრძნობიარედ მონიშვნა შეუძლებელია"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "გაჩერებულია"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Silenced"
-msgstr ""
+msgstr "გაჩუმებული"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "მგრძნობიარე"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "გაყინული"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "ელფოსტა დადასტურებული არაა"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "დაუმტკიცებელია"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "შეზღუდვები დაწესებული არაა"
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -535,105 +528,92 @@ msgid "Search"
 msgstr "ძებნა"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "ანგარიშები"
+msgstr "ანგარიშების ხელსაწყოს გვერდი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
+msgstr "გაფართოებული ძებნა"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "მომხმარებელი:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "საჩვენებელი სახელი"
+msgstr "საჩვენებელი სახელი:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "ელ-ფოსტა:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "ძებნა"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
-msgstr "თავიდან ჩართვა"
+msgstr "დაბრუნება"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "გუქმება"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "გაფრთხილებები"
+msgstr "მდებარეობა"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "ყველა"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "ლოკალური"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "ამოღება"
+msgstr "დაშორებული"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "საუბრები"
+msgstr "მოდერაციის სტატუსი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "ყველა"
@@ -642,44 +622,40 @@ msgstr "ყველა"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "აქტიური"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr "ტრენდები"
+msgstr "დარჩენილი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "გამორთულია"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "გაჩუმებული"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "გაჩერებულია"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "როლი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "ყველა"
@@ -688,29 +664,29 @@ msgstr "ყველა"
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "მოდერატორი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "ადმინისტრატორი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "მფლობელი"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:300
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "ანგარიშები ვერ ვიპოვე"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:28
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "%1-ზე მოდერაციის ქმედების შესრულება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:34
 #, kde-format
@@ -718,7 +694,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "გაფრთხ"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:38
 #, kde-format
@@ -726,14 +702,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "გაყინვა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:43
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "ძალით მგრძნობიარე"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:48
 #, kde-format
@@ -741,7 +717,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "ზღვარი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:53
 #, kde-format
@@ -749,7 +725,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "ძილი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:58
 #, kde-format
@@ -757,80 +733,78 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "აცნობეთ მომხმარებელს ელფოსტაზე"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "შემცველობის გაფრთხილება"
+msgstr "მორგებული გაფრთხილება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:76
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "გაგზავნა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:92
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "ქმედება წარმატებით განხორციელდა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:97
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "გუქმება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:107
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "დარწმუნებული ბრძანდებით?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "ქმედება განხორციელდება ანგარიშის წინააღმდეგ."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:116
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "%1-ის რეგისტრაციის აპლიკაცია წარმატებით დამტკიცდა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:120
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "%1-ის რეგისტრაციის აპლიკაცია უარყოფილია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:124
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "%1-ის ანგარიშის გაყინვის მოხსნა წარმატებულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:128
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "%1-ის ანგარიშის დადუმების მოხსნა წარმატებულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:132
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "%1-ის ანგარიშის შეჩერების მოხსნა წარმატებულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "%1-ის ძალით მგრძნობიარობის გაუქმება წარმატებულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "%1-ის ანგარიშის მონაცემების წაშლა წარამტებულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:282
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "ბიო"
@@ -838,27 +812,22 @@ msgstr "ბიო"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:327
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "გაწევრიანების მიზეზები"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:394
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "პოსტები"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:404
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "მიმდევრები"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:414
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "გამოწერილია"
@@ -867,116 +836,112 @@ msgstr "გამოწერილია"
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "ბოლოს აქტიური"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:434
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr ""
+msgstr "როლი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:443
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "შესვლის სტატუსი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:458
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Role"
-msgstr ""
+msgstr "როლი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:466
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "ელფოტა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:473
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "ელფოსტის სტატუსი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:474
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "მორგება"
+msgstr "დადასტურდა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:474
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "მორგება"
+msgstr "დადასტურებული არაა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:481
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "ანგარიშების რედაქტორი"
+msgstr "ანგარიშის ლოკალი"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:489
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "შეერთებული"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:497
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "უახლესი IP"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:525
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "მოწვეულია"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:548
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "დათანხმება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:560
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "უარყოფა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:571
-#, fuzzy, kde-format
-#| msgid "Muted Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "დადუმებული ანგარიშები"
+msgstr "ანგარიშის მონაცემების წაშლა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:583
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "გაყინვის მოხსნა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:593
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "შეზღუდვის გაუქმება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:603
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "შეჩერების გაუქმება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:613
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "ძალით მგრძნობიარობის გაუქმება"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:624
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "ანგარიშზე ქმედების შესრულება"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1756,16 +1721,15 @@ msgid "Add"
 msgstr "დამატება"
 
 #: content/ui/UserInfo.qml:218
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "საუბრები"
+msgstr "მოდერაციის ინსტრუმენტები"
 
 #: content/ui/UserInfo.qml:219
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
-msgstr ""
+msgstr "მოდერაციის ხელსაწყოების გახნა"
 
 #: content/ui/UserInfo.qml:231
 #, kde-format

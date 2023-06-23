@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-22 00:48+0000\n"
-"PO-Revision-Date: 2023-06-21 10:19+0200\n"
+"PO-Revision-Date: 2023-06-22 10:31+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -131,37 +131,32 @@ msgid "Could not reject account"
 msgstr "Kon account niet afwijzen"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Kon notitie over een account niet bewerken"
+msgstr "Kon geen actie nemen tegen het account"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Kon account niet aanbevelen"
+msgstr "Kon het uitgeschakelde account niet inschakelen"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
-msgstr "Kon demping van account niet opheffen"
+msgstr "Kon de stilte van het stil gemaakte account niet opheffen"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Kon demping van account niet opheffen"
+msgstr "Kon de onderbreking van het onderbroeken account niet opheffen"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Kon account niet dempen"
+msgstr "Kon het account niet markeren als niet gevoelig"
 
 #: admin/adminaccountinfo.cpp:20
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "login status"
 msgid "Suspended"
 msgstr "Onderbroken"
@@ -532,10 +527,9 @@ msgid "Search"
 msgstr "Zoeken"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Accounts"
+msgstr "Hulpmiddelpagina voor accounts"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -544,65 +538,55 @@ msgid "Advanced Search"
 msgstr "Geavanceerd zoeken"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
-msgstr "Gebruikersnaam"
+msgstr "Gebruikersnaam:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder display name for searching accounts"
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Schermnaam"
+msgstr "Schermnaam:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr "E-mail"
+msgstr "E-mailadres:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP"
+#, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr "IP"
+msgstr "IP:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Zoeken"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
-msgstr "Reset"
+msgstr "Resetten"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
 msgstr "Locatie"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Alles"
@@ -614,25 +598,21 @@ msgid "Local"
 msgstr "Lokaal"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
 msgstr "Op afstand"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Conversaties"
+msgstr "Status van moderatie"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Alles"
@@ -650,7 +630,7 @@ msgid "Pending"
 msgstr "In behandeling"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
 msgstr "Uitgeschakeld"
@@ -659,24 +639,22 @@ msgstr "Uitgeschakeld"
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Stil gemaakt"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
 msgstr "Onderbroken"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
 msgstr "Rol"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Alles"
@@ -700,9 +678,9 @@ msgid "Owner"
 msgstr "Eigenaar"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:300
-#, fuzzy, kde-format
+#, kde-format
 msgid "No accounts found"
-msgstr "Geen rekening gevonden."
+msgstr "Geen accounts gevonden"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:28
 #, kde-format
@@ -733,7 +711,7 @@ msgid "Force-Senstive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
@@ -757,14 +735,13 @@ msgid "Notify the user per e-mail"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Waarschuwing over inhoud"
+msgstr "Aangepaste waarschuwing"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:76
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
 msgstr "Indienen"
@@ -775,13 +752,13 @@ msgid "Action taken successfully"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:97
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:107
-#, fuzzy, kde-format
+#, kde-format
 msgid "Are you sure?"
 msgstr "Weet u het zeker?"
 
@@ -849,11 +826,10 @@ msgid "Followers"
 msgstr "Volgers"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:414
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Volgen"
+msgstr "Volgt op"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
@@ -862,7 +838,7 @@ msgid "Last Active"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:434
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Rol"
@@ -874,16 +850,16 @@ msgid "Login Status"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:458
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: Email of the user."
 msgid "Role"
 msgstr "Rol"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:466
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr "E-mail"
+msgstr "E-mailadres"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:473
 #, kde-format
@@ -892,24 +868,20 @@ msgid "Email Status"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:474
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "Configureren"
+msgstr "Bevestigd"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:474
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Email Not confirmed"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "E-mailadres niet bevestigd"
+msgstr "Niet bevestigd"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:481
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Accountbewerker"
+msgstr "Locatiecode van account"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:489
 #, kde-format
@@ -934,42 +906,41 @@ msgid "Approve"
 msgstr "Goedkeuren"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:560
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr "Afwijzen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:571
-#, fuzzy, kde-format
-#| msgid "Muted Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Gedempte accounts"
+msgstr "Gegevens van account verwijderen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:583
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Bevriezen ongedaan maken"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:593
-#, fuzzy, kde-format
+#, kde-format
 msgid "Undo Limit"
-msgstr "Limiet van &ongedaan-maken:"
+msgstr "Limiet ongedaan maken"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:603
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Onderbreken ongedaan maken"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:613
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Gevoelig afdwingen ongedaan maken"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:624
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Actie nemen tegen dit account"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1750,10 +1721,9 @@ msgid "Add"
 msgstr "Toevoegen"
 
 #: content/ui/UserInfo.qml:218
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Conversaties"
+msgstr "Hulpmiddelen voor moderatie"
 
 #: content/ui/UserInfo.qml:219
 #, kde-format
