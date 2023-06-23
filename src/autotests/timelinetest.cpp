@@ -56,6 +56,7 @@ private Q_SLOTS:
         statusExampleApi.open(QIODevice::ReadOnly);
 
         MainTimelineModel timelineModel;
+        timelineModel.setName("home");
         QCOMPARE(timelineModel.rowCount({}), 0);
 
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
@@ -72,6 +73,7 @@ private Q_SLOTS:
         account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
 
         MainTimelineModel timelineModel;
+        timelineModel.setName("home");
 
         QCOMPARE(timelineModel.rowCount({}), 2);
         QVERIFY(timelineModel.canFetchMore({}));
