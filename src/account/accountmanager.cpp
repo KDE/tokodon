@@ -136,8 +136,9 @@ void AccountManager::childIdentityChanged(AbstractAccount *account)
 void AccountManager::removeAccount(AbstractAccount *account)
 {
     // remove from settings
-    Config::self()->config()->deleteGroup(account->settingsGroupName());
-    Config::self()->save();
+    auto config = KSharedConfig::openStateConfig();
+    config->deleteGroup(account->settingsGroupName());
+    config->sync();
 
     auto job = new QKeychain::DeletePasswordJob{"Tokodon"};
     job->setKey(account->settingsGroupName());
