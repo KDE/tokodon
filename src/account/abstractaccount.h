@@ -262,6 +262,12 @@ public:
     /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
     QString settingsGroupName() const;
 
+    /// Returns the preferred key name for the client secret
+    QString clientSecretKey() const;
+
+    /// Returns the preferred key name for the access token
+    QString accessTokenKey() const;
+
     /// Type of account action
     enum AccountAction {
         Follow, ///< Follow the account

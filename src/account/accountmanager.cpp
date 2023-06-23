@@ -140,9 +140,13 @@ void AccountManager::removeAccount(AbstractAccount *account)
     config->deleteGroup(account->settingsGroupName());
     config->sync();
 
-    auto job = new QKeychain::DeletePasswordJob{"Tokodon"};
-    job->setKey(account->settingsGroupName());
-    job->start();
+    auto accessTokenJob = new QKeychain::DeletePasswordJob{"Tokodon"};
+    accessTokenJob->setKey(account->accessTokenKey());
+    accessTokenJob->start();
+
+    auto clientSecretJob = new QKeychain::DeletePasswordJob{"Tokodon"};
+    clientSecretJob->setKey(account->clientSecretKey());
+    clientSecretJob->start();
 
     const auto index = m_accounts.indexOf(account);
     beginRemoveRows(QModelIndex(), index, index);
@@ -347,17 +351,21 @@ void migrateSettings(QSettings &settings)
 
             AccountConfig config(settingsGroupName);
             config.setClientId(settings.value("client_id").toString());
-            config.setClientSecret(settings.value("client_secret").toString());
             config.setInstanceUri(settings.value("instance_uri").toString());
             config.setName(settings.value("name").toString());
             config.setIgnoreSslErrors(settings.value("ignoreSslErrors").toBool());
 
             config.save();
 
-            auto job = new QKeychain::WritePasswordJob{"Tokodon"};
-            job->setKey(settingsGroupName);
-            job->setTextData(settings.value("token").toString());
-            job->start();
+            auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon"};
+            accessTokenJob->setKey(QStringLiteral("%1-access-token").arg(settingsGroupName));
+            accessTokenJob->setTextData(settings.value("token").toString());
+            accessTokenJob->start();
+
+            auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon"};
+            clientSecretJob->setKey(QStringLiteral("%1-client-secret").arg(settingsGroupName));
+            clientSecretJob->setTextData(settings.value("client_secret").toString());
+            clientSecretJob->start();
 
             settings.endGroup();
         }

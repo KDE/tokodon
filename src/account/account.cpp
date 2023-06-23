@@ -293,38 +293,49 @@ void Account::writeToSettings()
 
     AccountConfig config(settingsGroupName());
     config.setClientId(m_client_id);
-    config.setClientSecret(m_client_secret);
     config.setInstanceUri(m_instance_uri);
     config.setName(m_name);
     config.setIgnoreSslErrors(m_ignoreSslErrors);
 
     config.save();
 
-    auto job = new QKeychain::WritePasswordJob{"Tokodon", this};
-    job->setKey(settingsGroupName());
-    job->setTextData(m_token);
-    job->start();
+    auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+    accessTokenJob->setKey(accessTokenKey());
+    accessTokenJob->setTextData(m_token);
+    accessTokenJob->start();
+
+    auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+    clientSecretJob->setKey(clientSecretKey());
+    clientSecretJob->setTextData(m_client_secret);
+    clientSecretJob->start();
 }
 
 void Account::buildFromSettings(const AccountConfig &settings)
 {
     m_client_id = settings.clientId();
-    m_client_secret = settings.clientSecret();
     m_name = settings.name();
     m_instance_uri = settings.instanceUri();
     m_ignoreSslErrors = settings.ignoreSslErrors();
 
-    auto job = new QKeychain::ReadPasswordJob{"Tokodon", this};
-    job->setKey(settingsGroupName());
+    auto accessTokenJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+    accessTokenJob->setKey(accessTokenKey());
 
-    QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [this, job]() {
-        qInfo() << "got token" << m_token;
-        m_token = job->textData();
+    QObject::connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
+        m_token = accessTokenJob->textData();
 
         validateToken();
     });
 
-    job->start();
+    accessTokenJob->start();
+
+    auto clientSecretJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+    clientSecretJob->setKey(clientSecretKey());
+
+    QObject::connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {
+        m_client_secret = clientSecretJob->textData();
+    });
+
+    clientSecretJob->start();
 }
 
 bool Account::hasFollowRequests() const

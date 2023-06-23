@@ -540,3 +540,13 @@ QString AbstractAccount::settingsGroupName() const
 {
     return m_name + QLatin1Char('@') + QUrl(m_instance_uri).host();
 }
+
+QString AbstractAccount::clientSecretKey() const
+{
+    return QStringLiteral("%1-client-secret").arg(settingsGroupName());
+}
+
+QString AbstractAccount::accessTokenKey() const
+{
+    return QStringLiteral("%1-access-token").arg(settingsGroupName());
+}
