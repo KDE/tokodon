@@ -92,6 +92,11 @@ bool AccountManager::hasAccounts() const
     return !m_accounts.empty();
 }
 
+bool AccountManager::hasAnyAccounts() const
+{
+    return m_hasAnyAccounts;
+}
+
 void AccountManager::addAccount(AbstractAccount *account)
 {
     beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());

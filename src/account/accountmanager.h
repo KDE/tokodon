@@ -24,6 +24,9 @@ class AccountManager : public QAbstractListModel
     /// If there any valid accounts loaded
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountsChanged)
 
+    // If there are any accounts in the config
+    Q_PROPERTY(bool hasAnyAccounts READ hasAnyAccounts NOTIFY accountsChanged)
+
     /// The currently selected account
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
 
@@ -48,6 +51,7 @@ public:
 
     bool isReady() const;
     bool hasAccounts() const;
+    bool hasAnyAccounts() const;
     Q_INVOKABLE void addAccount(AbstractAccount *account);
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
     void reloadAccounts();
@@ -118,6 +122,7 @@ private:
     QList<AccountStatus> m_accountStatus;
 
     bool m_ready = false;
+    bool m_hasAnyAccounts = false;
 
     void checkIfLoadingFinished();
 };

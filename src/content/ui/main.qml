@@ -36,7 +36,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function checkIfReady() {
+    function startupAccountCheck() {
         if (AccountManager.hasAccounts) {
             pageStack.push(mainTimeline, {
                 name: 'home',
@@ -46,7 +46,11 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component.onCompleted: checkIfReady()
+    Component.onCompleted: {
+        if (AccountManager.isReady) {
+            startupAccountCheck();
+        }
+    }
 
     Connections {
         target: AccountManager
@@ -69,7 +73,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onAccountsReady() {
-            appwindow.checkIfReady()
+            appwindow.startupAccountCheck();
         }
     }
 
