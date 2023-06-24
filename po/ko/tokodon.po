@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 00:48+0000\n"
+"POT-Creation-Date: 2023-06-24 00:50+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -311,7 +311,7 @@ msgstr "설정"
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:211
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -450,7 +450,7 @@ msgstr ""
 msgid "No Conversations"
 msgstr "멘션"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -531,44 +531,44 @@ msgstr "SSL 오류 무시"
 msgid "Proxy Settings"
 msgstr "설정"
 
-#: content/ui/main.qml:182
+#: content/ui/main.qml:202
 #, kde-format
 msgid "Home"
 msgstr "홈"
 
-#: content/ui/main.qml:198 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: content/ui/main.qml:227
+#: content/ui/main.qml:247
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:262
 #, kde-format
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/main.qml:258
+#: content/ui/main.qml:278
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Conversation"
 msgstr "멘션"
 
-#: content/ui/main.qml:272
+#: content/ui/main.qml:292
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/main.qml:288
+#: content/ui/main.qml:308
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/main.qml:318
+#: content/ui/main.qml:338
 #, kde-format
 msgid "Search"
 msgstr ""
@@ -1561,32 +1561,31 @@ msgid "Add Poll"
 msgstr "투표 주가"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
-#: content/ui/StatusDelegate/StatusDelegate.qml:456
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgid "Public"
 msgstr "공개"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Unlisted"
 msgstr "제한 공개"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:452
+#: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgid "Private"
 msgstr "개인"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:454
+#: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "표시 여부"
@@ -1626,7 +1625,17 @@ msgstr "뿌우!"
 msgid "Not available"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:246
+#: content/ui/StatusDelegate/AttachmentGrid.qml:184
+#, kde-format
+msgid "GIF"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:241
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
@@ -1660,7 +1669,7 @@ msgid "Post link copied."
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:48
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -1746,59 +1755,99 @@ msgstr ""
 msgid "%1 replied to your post"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, fuzzy, kde-format
-#| msgid "Show more"
-msgid "Show Less"
-msgstr "더 보기"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, fuzzy, kde-format
-#| msgid "Show more"
-msgid "Show More"
-msgstr "더 보기"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "답장"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "부스트"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
-#, kde-format
-msgctxt "Like a post"
-msgid "Like"
-msgstr "즐겨찾기"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "Show more options"
 msgid "More"
 msgstr "더 보기"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgid "<b>Content Warning</b><br /> %1"
+msgstr "내용 경고"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, fuzzy, kde-format
+#| msgid "Show more"
+msgid "Show Less"
+msgstr "더 보기"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, fuzzy, kde-format
+#| msgid "Show more"
+msgid "Show More"
+msgstr "더 보기"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:419
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "답장"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:435
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "부스트"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#, kde-format
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:484
 #, kde-format
 msgid "via %1"
 msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgid "%1 Reply"
+msgstr "답장"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#, kde-format
+msgid "%1 Replies"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:525
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "%1 Favorites"
+msgstr "%1 님이 좋아요 표시함"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "%1 Favorite"
+msgstr "%1 님이 좋아요 표시함"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#, fuzzy, kde-format
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgstr "%1 님이 부스트함"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#: content/ui/StatusDelegate/StatusDelegate.qml:537
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "%1 Boosts"
+msgstr "부스트"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2106,6 +2155,10 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "멘션"
+
+#~ msgctxt "Like a post"
+#~ msgid "Like"
+#~ msgstr "즐겨찾기"
 
 #~ msgid "Toot"
 #~ msgstr "툿"

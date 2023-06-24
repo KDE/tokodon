@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 00:48+0000\n"
+"POT-Creation-Date: 2023-06-24 00:50+0000\n"
 "PO-Revision-Date: 2023-06-22 09:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -290,7 +290,7 @@ msgstr "Configuració"
 msgid "Configure"
 msgstr "Configura"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:211
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
@@ -417,7 +417,7 @@ msgstr "Converses"
 msgid "No Conversations"
 msgstr "Sense converses"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
 #, kde-format
 msgid "Explore"
 msgstr "Explora"
@@ -488,42 +488,42 @@ msgstr "Ignora els errors d'SSL"
 msgid "Proxy Settings"
 msgstr "Configuració del servidor intermediari"
 
-#: content/ui/main.qml:182
+#: content/ui/main.qml:202
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/main.qml:198 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/main.qml:227
+#: content/ui/main.qml:247
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:262
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:258
+#: content/ui/main.qml:278
 #, kde-format
 msgid "Conversation"
 msgstr "Conversa"
 
-#: content/ui/main.qml:272
+#: content/ui/main.qml:292
 #, kde-format
 msgid "Favourites"
 msgstr "Preferides"
 
-#: content/ui/main.qml:288
+#: content/ui/main.qml:308
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
 
-#: content/ui/main.qml:318
+#: content/ui/main.qml:338
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
@@ -1468,32 +1468,31 @@ msgid "Add Poll"
 msgstr "Afegeix una votació"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
-#: content/ui/StatusDelegate/StatusDelegate.qml:456
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgid "Public"
 msgstr "Públic"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Unlisted"
 msgstr "No llistat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:452
+#: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:454
+#: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgid "Direct Message"
 msgstr "Missatge directe"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilitat"
@@ -1532,7 +1531,17 @@ msgstr "Envia"
 msgid "Not available"
 msgstr "No disponible"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:246
+#: content/ui/StatusDelegate/AttachmentGrid.qml:184
+#, kde-format
+msgid "GIF"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:241
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
 msgid "Media Hidden"
 msgstr "Fitxers multimèdia ocults"
@@ -1565,7 +1574,7 @@ msgid "Post link copied."
 msgstr "S'ha copiat l'enllaç de la publicació."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:48
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Elimina el punt"
@@ -1646,56 +1655,102 @@ msgstr "En resposta a %1"
 msgid "%1 replied to your post"
 msgstr "%1 ha respost la vostra publicació"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, kde-format
-msgid "Show Less"
-msgstr "Mostra'n menys"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, kde-format
-msgid "Show More"
-msgstr "Mostra'n més"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Respon"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr "1+"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "Interessant"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
-#, kde-format
-msgctxt "Like a post"
-msgid "Like"
-msgstr "M'agrada"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr "Afegeix un punt"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Més"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgid "<b>Content Warning</b><br /> %1"
+msgstr "Avís de contingut"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, kde-format
+msgid "Show Less"
+msgstr "Mostra'n menys"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, kde-format
+msgid "Show More"
+msgstr "Mostra'n més"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:419
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Respon"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:435
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "Interessant"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr "Preferits"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr "Afegeix un punt"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:484
 #, kde-format
 msgid "via %1"
 msgstr "mitjançant %1"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgid "%1 Reply"
+msgstr "Respon"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts && Replies"
+msgid "%1 Replies"
+msgstr "Publicacions i respostes"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:525
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "%1 Favorites"
+msgstr "Preferits"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "%1 Favorite"
+msgstr "Preferits"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#, fuzzy, kde-format
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgstr "%1 ha impulsat"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#: content/ui/StatusDelegate/StatusDelegate.qml:537
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgid "%1 Boosts"
+msgstr "Impulsos"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -1996,6 +2051,14 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
+
+#~ msgctxt "More than one reply"
+#~ msgid "1+"
+#~ msgstr "1+"
+
+#~ msgctxt "Like a post"
+#~ msgid "Like"
+#~ msgstr "M'agrada"
 
 #~ msgid "Toot"
 #~ msgstr "Tut"

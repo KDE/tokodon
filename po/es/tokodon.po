@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 00:48+0000\n"
-"PO-Revision-Date: 2023-06-23 01:16+0200\n"
+"POT-Creation-Date: 2023-06-24 00:50+0000\n"
+"PO-Revision-Date: 2023-06-24 01:24+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -151,10 +151,9 @@ msgid "Could not unsuspend the account"
 msgstr "No se ha podido dejar de suspender la cuenta"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "No se ha podido silenciar la cuenta"
+msgstr "No se ha podido marcar la cuenta como no sensible"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
@@ -172,7 +171,7 @@ msgstr "Silenciada"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Sensibilizada"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -289,7 +288,7 @@ msgstr "Preferencias"
 msgid "Configure"
 msgstr "Configurar"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:211
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
 #, kde-format
 msgid "Follow Requests"
 msgstr "Peticiones de seguimiento"
@@ -416,7 +415,7 @@ msgstr "Conversaciones"
 msgid "No Conversations"
 msgstr "No hay conversaciones"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
 #, kde-format
 msgid "Explore"
 msgstr "Explorar"
@@ -488,42 +487,42 @@ msgstr "Ignorar errores de SSL"
 msgid "Proxy Settings"
 msgstr "Preferencias del proxy"
 
-#: content/ui/main.qml:182
+#: content/ui/main.qml:202
 #, kde-format
 msgid "Home"
 msgstr "Inicio"
 
-#: content/ui/main.qml:198 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: content/ui/main.qml:227
+#: content/ui/main.qml:247
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:262
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:258
+#: content/ui/main.qml:278
 #, kde-format
 msgid "Conversation"
 msgstr "Conversación"
 
-#: content/ui/main.qml:272
+#: content/ui/main.qml:292
 #, kde-format
 msgid "Favourites"
 msgstr "Favoritos"
 
-#: content/ui/main.qml:288
+#: content/ui/main.qml:308
 #, kde-format
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: content/ui/main.qml:318
+#: content/ui/main.qml:338
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
@@ -710,7 +709,7 @@ msgstr "Congelar"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Forzar a sensible"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:48
 #, kde-format
@@ -772,32 +771,32 @@ msgstr "Se tomará una medida contra la cuenta."
 #: content/ui/ModerationTools/MainAccountToolPage.qml:116
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "Se ha aprobado correctamente la solicitud de registro de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:120
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "Se ha rechazado correctamente la solicitud de registro de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:124
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "Se ha descongelado correctamente la cuenta de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:128
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "Se ha dejado de silenciar correctamente la cuenta de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:132
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "Se ha dejado de suspender correctamente la cuenta de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "Se ha deshecho correctamente el forzado a sensible de la cuenta de %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
@@ -937,7 +936,7 @@ msgstr "Deshacer suspensión"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:613
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Deshacer el forzado a sensible"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:624
 #, kde-format
@@ -1466,32 +1465,31 @@ msgid "Add Poll"
 msgstr "Añadir encuesta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
-#: content/ui/StatusDelegate/StatusDelegate.qml:456
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgid "Public"
 msgstr "Público"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Unlisted"
 msgstr "Sin listar"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:452
+#: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgid "Private"
 msgstr "Privado"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:454
+#: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensaje directo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilidad"
@@ -1530,7 +1528,17 @@ msgstr "Enviar"
 msgid "Not available"
 msgstr "No disponible"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:246
+#: content/ui/StatusDelegate/AttachmentGrid.qml:184
+#, kde-format
+msgid "GIF"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:241
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medios ocultos"
@@ -1563,7 +1571,7 @@ msgid "Post link copied."
 msgstr "Enlace de la publicación copiado."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:48
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Eliminar marcador"
@@ -1644,56 +1652,102 @@ msgstr "En respuesta a %1"
 msgid "%1 replied to your post"
 msgstr "%1 ha respondido a su publicación"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, kde-format
-msgid "Show Less"
-msgstr "Mostrar menos"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, kde-format
-msgid "Show More"
-msgstr "Mostrar más"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Responder"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr "1+"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "Promover"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
-#, kde-format
-msgctxt "Like a post"
-msgid "Like"
-msgstr "Me gusta"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr "Marcador"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Más"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgid "<b>Content Warning</b><br /> %1"
+msgstr "Advertencia de contenido"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, kde-format
+msgid "Show Less"
+msgstr "Mostrar menos"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, kde-format
+msgid "Show More"
+msgstr "Mostrar más"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:419
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Responder"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:435
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "Promover"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr "Favoritos"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr "Marcador"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:484
 #, kde-format
 msgid "via %1"
 msgstr "vía %1"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgid "%1 Reply"
+msgstr "Responder"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts && Replies"
+msgid "%1 Replies"
+msgstr "Publicaciones y respuestas"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:525
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "%1 Favorites"
+msgstr "Favoritos"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "%1 Favorite"
+msgstr "Favoritos"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#, fuzzy, kde-format
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgstr "%1 promovida"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#: content/ui/StatusDelegate/StatusDelegate.qml:537
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgid "%1 Boosts"
+msgstr "Promociones"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -1995,6 +2049,14 @@ msgstr "Origen"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgctxt "More than one reply"
+#~ msgid "1+"
+#~ msgstr "1+"
+
+#~ msgctxt "Like a post"
+#~ msgid "Like"
+#~ msgstr "Me gusta"
 
 #~ msgid "Toot"
 #~ msgstr "Toot"

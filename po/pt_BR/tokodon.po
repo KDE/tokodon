@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-22 00:48+0000\n"
+"POT-Creation-Date: 2023-06-24 00:50+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -303,7 +303,7 @@ msgstr "Abrir link"
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:211
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -436,7 +436,7 @@ msgstr ""
 msgid "No Conversations"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:304
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -509,42 +509,42 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Abrir link"
 
-#: content/ui/main.qml:182
+#: content/ui/main.qml:202
 #, kde-format
 msgid "Home"
 msgstr "Início"
 
-#: content/ui/main.qml:198 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: content/ui/main.qml:227
+#: content/ui/main.qml:247
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:242
+#: content/ui/main.qml:262
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:258
+#: content/ui/main.qml:278
 #, kde-format
 msgid "Conversation"
 msgstr ""
 
-#: content/ui/main.qml:272
+#: content/ui/main.qml:292
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/main.qml:288
+#: content/ui/main.qml:308
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/main.qml:318
+#: content/ui/main.qml:338
 #, kde-format
 msgid "Search"
 msgstr ""
@@ -1511,32 +1511,31 @@ msgid "Add Poll"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
-#: content/ui/StatusDelegate/StatusDelegate.qml:456
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgid "Public"
 msgstr "Público"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Unlisted"
 msgstr "Não listado"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:452
+#: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgid "Private"
 msgstr "Privado"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:454
+#: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensagem direta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:269
-#: content/ui/StatusDelegate/StatusDelegate.qml:444
 #, kde-format
 msgid "Visibility"
 msgstr ""
@@ -1575,7 +1574,17 @@ msgstr "Enviar"
 msgid "Not available"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:246
+#: content/ui/StatusDelegate/AttachmentGrid.qml:184
+#, kde-format
+msgid "GIF"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:241
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
@@ -1608,7 +1617,7 @@ msgid "Post link copied."
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:48
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -1692,58 +1701,93 @@ msgstr ""
 msgid "%1 replied to your post"
 msgstr "Não listado"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, fuzzy, kde-format
-#| msgid "Show more"
-msgid "Show Less"
-msgstr "Mostrar mais"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:303
-#, fuzzy, kde-format
-#| msgid "Show more"
-msgid "Show More"
-msgstr "Mostrar mais"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:357
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Responder"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
-#, kde-format
-msgctxt "More than one reply"
-msgid "1+"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:386
-#, kde-format
-msgctxt "Like a post"
-msgid "Like"
-msgstr "Curtir"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:399
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:411
+#: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "Show more options"
 msgid "More"
 msgstr "Mostrar mais"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgid "<b>Content Warning</b><br /> %1"
+msgstr "Aviso de conteúdo"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, fuzzy, kde-format
+#| msgid "Show more"
+msgid "Show Less"
+msgstr "Mostrar mais"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#, fuzzy, kde-format
+#| msgid "Show more"
+msgid "Show More"
+msgstr "Mostrar mais"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:419
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Responder"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:435
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#, kde-format
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:484
 #, kde-format
 msgid "via %1"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgid "%1 Reply"
+msgstr "Responder"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#, kde-format
+msgid "%1 Replies"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:525
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, kde-format
+msgid "%1 Favorites"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#, kde-format
+msgid "%1 Favorite"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#, kde-format
+msgid "%1 Boost"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#: content/ui/StatusDelegate/StatusDelegate.qml:537
+#, kde-format
+msgid "%1 Boosts"
 msgstr ""
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
@@ -2050,6 +2094,10 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
+
+#~ msgctxt "Like a post"
+#~ msgid "Like"
+#~ msgstr "Curtir"
 
 #~ msgid "Close"
 #~ msgstr "Fechar"
