@@ -264,6 +264,24 @@ TimelinePage {
                                 visible: model.isSelf
                                 text: i18n("Blocked Accounts")
                                 onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
+                            },
+                            Kirigami.Action {
+                                icon.name: "edit-copy"
+                                text: i18n("Copy Link to This Profile")
+                                onTriggered: {
+                                    Clipboard.saveText(model.identity.url)
+                                    applicationWindow().showPassiveNotification(i18n("Post link copied."));
+                                }
+                            },
+                            ShareAction {
+                                id: shareAction
+
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
+
+                                inputData: {
+                                    'urls': [model.identity.url.toString()],
+                                    'title': "Profile",
+                                }
                             }
                         ]
                     }

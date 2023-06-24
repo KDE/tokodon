@@ -40,7 +40,7 @@ Kirigami.Action {
         Component.onCompleted: {
             const purposeModel = Qt.createQmlObject('import org.kde.purpose 1.0 as Purpose;
 Purpose.PurposeAlternativesModel {
-    pluginType: "Export"
+    pluginType: "ShareUrl"
 }', shareAction._instantiator);
             purposeModel.inputData = Qt.binding(function() {
                 return shareAction.inputData;

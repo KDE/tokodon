@@ -22,8 +22,7 @@ Components.AlbumMaximizeComponent {
     actions: ShareAction {
         inputData: {
             'urls': [content.currentItem.source],
-            'title': ["Image"],
-            'mimeType': '*'
+            'title': "Image",
         }
     }
 

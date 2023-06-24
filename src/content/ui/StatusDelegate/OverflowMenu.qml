@@ -93,9 +93,9 @@ QQC2.Menu {
                 inputData: {
                     'urls': [root.url],
                     'title': "Post",
-                    'mimeType': '*'
+                    'mimeType': "*"
                 }
-                pluginType: "Export"
+                pluginType: "ShareUrl"
             }
 
             delegate: QQC2.MenuItem {
