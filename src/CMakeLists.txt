@@ -288,3 +288,7 @@ else()
 endif()
 
 install(TARGETS tokodon ${KF${QT_MAJOR_VERSION}_INSTALL_TARGETS_DEFAULT_ARGS})
+
+if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
+    add_subdirectory(purpose)
+endif ()

@@ -19,6 +19,11 @@ NetworkController::NetworkController(QObject *parent)
     connect(&AccountManager::instance(), &AccountManager::accountsReady, this, [=] {
         m_accountsReady = true;
         openLink();
+
+        if (!m_storedComposedText.isEmpty()) {
+            Q_EMIT openComposer(m_storedComposedText);
+            m_storedComposedText.clear();
+        }
     });
 }
 
@@ -118,4 +123,13 @@ void NetworkController::openLink()
 
         m_requestedLink.clear();
     });
+}
+
+void NetworkController::startComposing(const QString &text)
+{
+    if (m_accountsReady) {
+        Q_EMIT openComposer(text);
+    } else {
+        m_storedComposedText = text;
+    }
 }

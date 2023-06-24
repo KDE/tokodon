@@ -27,6 +27,8 @@ MastoPage {
     property int sensitive: AccountManager.selectedAccount.preferences.defaultSensitive
     readonly property NetworkRequestProgress progress: NetworkRequestProgress {}
     property var previewPost: null
+    property string initialText
+    property bool closeApplicationWhenFinished: false
 
     readonly property PostEditorBackend defaultBackend: PostEditorBackend {
         inReplyTo: root.inReplyTo
@@ -57,7 +59,11 @@ MastoPage {
         target: backend
         function onPosted(error) {
             if (error.length === 0) {
-                applicationWindow().pageStack.layers.pop();
+                if (root.closeApplicationWhenFinished) {
+                    applicationWindow().close();
+                } else {
+                    applicationWindow().pageStack.layers.pop();
+                }
             } else {
                 banner.text = error
                 console.log(error);
@@ -69,7 +75,15 @@ MastoPage {
         }
     }
 
-    Component.onCompleted: textArea.forceActiveFocus()
+    Component.onCompleted: {
+        if (initialText.length > 0) {
+            backend.status = initialText
+        } else if (root.purpose === StatusComposer.New || root.purpose === StatusComposer.Reply) {
+            textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
+        }
+
+        textArea.forceActiveFocus()
+    }
 
     function submitPost() {
         if(root.purpose === StatusComposer.Edit) {
@@ -120,12 +134,6 @@ MastoPage {
             rightInset: -1
             onTextChanged: backend.status = text
             Kirigami.SpellChecking.enabled: true
-
-            Component.onCompleted: {
-                if (root.purpose === StatusComposer.New || root.purpose === StatusComposer.Reply) {
-                    textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
-                }
-            }
 
             Keys.onEnterPressed: (event)=> {
                if (event.modifiers & Qt.ControlModifier) {

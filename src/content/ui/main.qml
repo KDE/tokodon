@@ -88,6 +88,14 @@ Kirigami.ApplicationWindow {
         function onOpenAccount(id) {
             Navigation.openAccount(id)
         }
+
+        function onOpenComposer(text) {
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: StatusComposer.New,
+                initialText: text,
+                onPostFinished: applicationWindow().pageStack.layers.pop()
+            });
+        }
     }
 
     Connections {

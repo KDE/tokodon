@@ -139,6 +139,9 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
     parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
 
+    QCommandLineOption shareOption("share", i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
+    parser.addOption(shareOption);
+
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
@@ -226,6 +229,11 @@ int main(int argc, char *argv[])
                     } else {
                         NetworkController::instance().setAuthCode(args[0]);
                     }
+                    if (args[0] == "--share") {
+                        NetworkController::instance().startComposing(args[1]);
+                    } else {
+                        NetworkController::instance().openWebApLink(args[0]);
+                    }
                 }
 
                 return;
@@ -243,15 +251,21 @@ int main(int argc, char *argv[])
 
     engine.addImageProvider(QLatin1String("blurhash"), new BlurhashImageProvider);
 
-    engine.load(QUrl(QStringLiteral("qrc:/content/ui/main.qml")));
+    if (parser.isSet(shareOption)) {
+        engine.load(QUrl(QStringLiteral("qrc:/content/ui/StandaloneComposer.qml")));
+
+        NetworkController::instance().startComposing(parser.value(shareOption));
+    } else {
+        engine.load(QUrl(QStringLiteral("qrc:/content/ui/main.qml")));
+
+        if (parser.positionalArguments().length() > 0) {
+            NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
+        }
+    }
+
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
-
-    if (parser.positionalArguments().length() > 0) {
-        NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
-    }
-
 #ifdef HAVE_KDBUSADDONS
     const auto rootObjects = engine.rootObjects();
     for (auto obj : rootObjects) {
