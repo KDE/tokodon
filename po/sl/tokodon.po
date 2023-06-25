@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-24 00:50+0000\n"
-"PO-Revision-Date: 2023-06-22 07:48+0200\n"
+"PO-Revision-Date: 2023-06-24 07:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #: account/abstractaccount.cpp:456
@@ -1529,12 +1529,12 @@ msgstr "Ni na voljo"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:184
 #, kde-format
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:241
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
@@ -1657,10 +1657,9 @@ msgid "More"
 msgstr "Več"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:352
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "Vsebinsko opozorilo"
+msgstr "<b>Vsebinsko opozorilo</b><br /> %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:358
 #, kde-format
@@ -1685,12 +1684,10 @@ msgid "Boost"
 msgstr "Pospeši"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:450
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Priljubljene"
+msgstr "Priljubljen"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
@@ -1704,48 +1701,37 @@ msgid "via %1"
 msgstr "prek %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:516
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgid "%1 Reply"
-msgstr "Odgovori"
+msgstr "%1 Odgovor"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:516
 #: content/ui/StatusDelegate/StatusDelegate.qml:517
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts && Replies"
+#, kde-format
 msgid "%1 Replies"
-msgstr "Objave && Odgovori"
+msgstr "%1 Odgovorov"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:525
 #: content/ui/StatusDelegate/StatusDelegate.qml:526
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorites"
-msgstr "Priljubljene"
+msgstr "%1 Priljubljenih"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:526
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorite"
-msgstr "Priljubljene"
+msgstr "%1 Priljubljen"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:536
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
+#, kde-format
 msgid "%1 Boost"
-msgstr "%1 ojačalo"
+msgstr "%1 Pospešek"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:536
 #: content/ui/StatusDelegate/StatusDelegate.qml:537
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "%1 Boosts"
-msgstr "Pospeški"
+msgstr "%1 Pospeškov"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format

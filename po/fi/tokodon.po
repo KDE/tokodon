@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-24 00:50+0000\n"
-"PO-Revision-Date: 2023-05-08 13:47+0300\n"
+"PO-Revision-Date: 2023-06-02 19:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: account/abstractaccount.cpp:456
 #, kde-format
@@ -101,27 +101,22 @@ msgid "Account details saved"
 msgstr "Tilin tiedot tallennettu"
 
 #: account/socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Seurauspyynnöt"
 
-# *** TARKISTA: Saattaisi olla myös ”seuratut”.
 #: account/socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Seuraamiset"
+msgstr "Seuraajat"
 
 #: account/socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr "Seuraa"
+msgstr "Seuratut"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -331,52 +326,46 @@ msgid "Click to add a note"
 msgstr "Lisää muistiinpano napsauttamalla"
 
 #: content/ui/AccountInfo.qml:441
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
-msgstr "Ei julkaisuja"
+msgstr "<b>%1</b> julkaisua"
 
 #: content/ui/AccountInfo.qml:453
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
-msgstr "%1 seuraajaa"
+msgstr "<b>%1</b> seuraajaa"
 
 #: content/ui/AccountInfo.qml:465
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
-msgstr "%1 seuraa"
+msgstr "<b>%1</b> seurattua"
 
 #: content/ui/AccountInfo.qml:477
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Julkaisu"
+msgstr "Julkaisut"
 
 #: content/ui/AccountInfo.qml:481
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Julkaisut ja vastaukset"
 
 #: content/ui/AccountInfo.qml:485
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Media"
 
 #: content/ui/AccountInfo.qml:512
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Piilota tulokset"
+msgstr "Piilota tehostukset"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -406,7 +395,7 @@ msgstr "Kopioi linkki"
 #: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
 #, kde-format
 msgid "Link copied."
-msgstr ""
+msgstr "Linkki kopioitu."
 
 #: content/ui/AuthorizationPage.qml:101
 #, kde-format
@@ -1161,12 +1150,10 @@ msgid "Apply"
 msgstr "Käytä"
 
 #: content/ui/Settings/PreferencesCard.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Group of preferred languages"
-#| msgid "Preferred Languages"
+#, kde-format
 msgctxt "@label Settings header"
 msgid "Preferences"
-msgstr "Suositut kielet"
+msgstr "Asetukset"
 
 #: content/ui/Settings/PreferencesCard.qml:30
 #, kde-format
@@ -1175,25 +1162,26 @@ msgid ""
 "These preferences apply to the current account and are synced to other "
 "clients."
 msgstr ""
+"Nämä asetukset vaikuttavat nykyiseen tiliin eikä niitä tahdisteta muihin "
+"asiakasohjelmiin."
 
 #: content/ui/Settings/PreferencesCard.qml:36
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Merkitse lähetetty media oletusarvoisesti arkaluontoiseksi"
 
 #: content/ui/Settings/PreferencesCard.qml:48
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr "Oletuskieli"
+msgstr "Julkaisun oletuskieli"
 
 #: content/ui/Settings/PreferencesCard.qml:64
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Julkaisun oletusnäkyvyys"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -1393,22 +1381,19 @@ msgid "Delete word"
 msgstr "Poista sana"
 
 #: content/ui/SocialGraphPage.qml:97
-#, fuzzy, kde-format
-#| msgid "No Follow Requests"
+#, kde-format
 msgid "No follow requests"
 msgstr "Ei seurauspyyntöjä"
 
 #: content/ui/SocialGraphPage.qml:99
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "No followers"
-msgstr "%1 seuraajaa"
+msgstr "Ei seuraajia"
 
 #: content/ui/SocialGraphPage.qml:101
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgid "Not following anyone"
-msgstr "%1 seuraa"
+msgstr "Ei seurattuja"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:66
@@ -1567,7 +1552,7 @@ msgstr "Julkaisukieli"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1/%2</b> merkkiä"
 
 #: content/ui/StatusComposer/StatusComposer.qml:313
 #, kde-format
@@ -1619,7 +1604,7 @@ msgstr "Kopioi linkki tähän julkaisuun"
 #: content/ui/StatusDelegate/OverflowMenu.qml:40
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Julkaisulinkki kopioitu."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:48
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
@@ -1698,13 +1683,12 @@ msgstr "%1 tehosti"
 #: content/ui/StatusDelegate/StatusDelegate.qml:260
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "Vastauksessa julkaisuun %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:260
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 replied to your post"
-msgstr "%1 merkitse viestisi suosikiksi"
+msgstr "%1 vastasi julkaisuusi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:324
 #, kde-format
