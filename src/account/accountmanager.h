@@ -113,7 +113,7 @@ private:
     ~AccountManager() override;
 
     QList<AbstractAccount *> m_accounts;
-    AbstractAccount *m_selected_account;
+    AbstractAccount *m_selected_account = nullptr;
     KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
 

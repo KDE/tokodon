@@ -296,8 +296,9 @@ void AccountManager::checkIfLoadingFinished()
 
         const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
 
-        if (selectedAccount() == nullptr && isValid) {
+        if (isValid) {
             selectAccount(account, false);
+            break;
         }
     }
 
