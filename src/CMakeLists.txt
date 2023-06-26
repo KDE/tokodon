@@ -190,7 +190,7 @@ if(ANDROID)
             "view-hidden"
             "favorite"
             "cell_edit"
-            "folder-chart"
+            "office-chart-bar"
             "im-ban-kick-user"
             "user-group-properties"
             "microphone-sensitivity-muted"

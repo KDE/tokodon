@@ -52,15 +52,6 @@ Kirigami.ScrollablePage {
         }
     }
 
-    property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
-        text: i18nc("Show only favorites", "Favorites")
-        icon.name: "post-favorite"
-        checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'poll', 'update']
-        }
-    }
-
     property Kirigami.Action boostsOnlyAction: Kirigami.Action {
         text: i18nc("Show only boosts", "Boosts")
         icon.name: "post-boost"
@@ -70,9 +61,18 @@ Kirigami.ScrollablePage {
         }
     }
 
+    property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
+        text: i18nc("Show only favorites", "Favorites")
+        icon.name: "post-favorite"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'poll', 'update']
+        }
+    }
+
     property Kirigami.Action pollResultsOnlyAction: Kirigami.Action {
         text: i18nc("Show only poll results", "Poll results")
-        icon.name: "folder-chart"
+        icon.name: "office-chart-bar"
         checkable: true
         onCheckedChanged: if (checked) {
             notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'favourite', 'update']

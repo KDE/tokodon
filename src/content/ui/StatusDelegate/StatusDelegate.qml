@@ -129,7 +129,7 @@ QQC2.ItemDelegate {
                 } else if (root.type === Notification.Update) {
                     return "cell_edit"
                 } else if (root.type === Notification.Poll) {
-                    return "folder-chart"
+                    return "office-chart-bar"
                 }
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: Kirigami.Theme.disabledTextColor
