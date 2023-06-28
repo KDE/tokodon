@@ -30,8 +30,8 @@ class AdminAccountInfo : public QObject
     Q_PROPERTY(QString email READ email NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(QString emailProvider READ emailProvider NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(QString locale READ locale NOTIFY adminAccountInfoUpdated)
-    Q_PROPERTY(QString joined READ joined NOTIFY adminAccountInfoUpdated)
-    Q_PROPERTY(QString lastActive READ lastActive NOTIFY adminAccountInfoUpdated)
+    Q_PROPERTY(QDateTime joined READ joined NOTIFY adminAccountInfoUpdated)
+    Q_PROPERTY(QDateTime lastActive READ lastActive NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(QString role READ role NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(QJsonArray ips READ ips NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(Identity *invitedByIdentity READ invitedByIdentity NOTIFY adminAccountInfoUpdated)
@@ -71,8 +71,8 @@ public:
     QString email() const;
     QString emailProvider() const;
     QString locale() const;
-    QString joined() const;
-    QString lastActive() const;
+    QDateTime joined() const;
+    QDateTime lastActive() const;
     QString role() const;
     QString loginStatus() const;
     QString inviteRequest() const;
@@ -107,8 +107,8 @@ private:
     QString m_email;
     QString m_emailProvider;
     QString m_locale;
-    QString m_joined;
-    QString m_lastActive;
+    QDateTime m_joined;
+    QDateTime m_lastActive;
     QString m_role;
     QString m_inviteRequest;
     bool m_emailStatus;
@@ -122,4 +122,6 @@ private:
     std::shared_ptr<Identity> m_invitedByIdentity;
     std::shared_ptr<Identity> m_userLevelIdentity;
     AbstractAccount *m_parent = nullptr;
+
+    void calculateRecentActivity(const QJsonArray &ipsArray);
 };

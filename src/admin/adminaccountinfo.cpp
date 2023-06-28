@@ -163,11 +163,11 @@ void AdminAccountInfo::fromSourceData(const QJsonObject &jdoc)
     m_approved = jdoc["approved"].toBool();
     m_locale = jdoc["locale"].toString();
     m_position = jdoc["role"]["position"].toInt();
-    m_joined = QDateTime::fromString(jdoc["created_at"].toString(), Qt::ISODateWithMs).toLocalTime().toString("MMMM d, yyyy 'at' h:mm AP");
+    m_joined = QDateTime::fromString(jdoc["created_at"].toString(), Qt::ISODate).toLocalTime();
 
     // logic for last used activity
-    const auto arrLength = jdoc["ips"].toArray().count() - 1;
-    m_lastActive = QDateTime::fromString(jdoc["ips"][arrLength]["used_at"].toString(), Qt::ISODateWithMs).toLocalTime().toString("MMMM d, yyyy 'at' h:mm AP");
+    const QJsonArray ipsArray = jdoc["ips"].toArray();
+    calculateRecentActivity(ipsArray);
 
     if (jdoc["email"].toString().length() > 0) {
         m_emailProvider = jdoc["email"].toString().split('@').at(1);
@@ -206,12 +206,23 @@ QString AdminAccountInfo::locale() const
     return m_locale;
 }
 
-QString AdminAccountInfo::joined() const
+QDateTime AdminAccountInfo::joined() const
 {
     return m_joined;
 }
 
-QString AdminAccountInfo::lastActive() const
+QDateTime AdminAccountInfo::lastActive() const
 {
     return m_lastActive;
+}
+
+void AdminAccountInfo::calculateRecentActivity(const QJsonArray &ipsArray)
+{
+    QDateTime latestDateTime;
+    for (const auto &ipValue : ipsArray) {
+        const QDateTime usedAtTime = QDateTime::fromString(ipValue["used_at"].toString(), Qt::ISODate);
+        if (usedAtTime > latestDateTime)
+            latestDateTime = usedAtTime;
+    }
+    m_lastActive = latestDateTime.toLocalTime();
 }

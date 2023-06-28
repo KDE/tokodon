@@ -17,6 +17,8 @@ Kirigami.ScrollablePage {
     property var model
     //moderation tool only visible if the position value of the account is greater or the account is not local
     readonly property bool displayModerationTool: (root.model.selectedAccountPosition > root.identity.position) || !root.identity.isLocal
+    readonly property string lastActive: !isNaN(root.identity.lastActive) ? root.identity.lastActive.toLocaleString() : i18n("Not Available")
+
 
     title: root.identity.userLevelIdentity.account
     leftPadding: 0
@@ -372,12 +374,12 @@ Kirigami.ScrollablePage {
                 id: grid
 
                 readonly property int cellWidth: Kirigami.Units.gridUnit * 10
-                readonly property int cellHeight: Math.max(vaults.implicitHeight,
-                                                           activities.implicitHeight,
-                                                           kdeconnect.implicitHeight,
-                                                           overview.implicitHeight,
-                                                           krunner.implicitHeight,
-                                                           ghns.implicitHeight)
+                readonly property int cellHeight: Math.max(posts.implicitHeight,
+                                                           followers.implicitHeight,
+                                                           following.implicitHeight,
+                                                           lastActive.implicitHeight,
+                                                           role.implicitHeight,
+                                                           loginStatus.implicitHeight)
 
 
                 columns: 3
@@ -386,7 +388,7 @@ Kirigami.ScrollablePage {
 
                 // First row
                 AccountInfoButton {
-                    id: vaults
+                    id: posts
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
@@ -396,7 +398,7 @@ Kirigami.ScrollablePage {
                 }
 
                 AccountInfoButton {
-                    id: activities
+                    id: followers
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
@@ -406,7 +408,7 @@ Kirigami.ScrollablePage {
                 }
 
                 AccountInfoButton {
-                    id: kdeconnect
+                    id: following
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
@@ -417,16 +419,16 @@ Kirigami.ScrollablePage {
 
                 // Second row
                 AccountInfoButton {
-                    id: krunner
+                    id: lastActive
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
-                    title: root.identity.lastActive ? root.identity.lastActive : "Not Available"
+                    title: root.lastActive
                     subtitle: i18nc("@info The last time the account was active.", "Last Active")
                     cardWidthRestricted: container.cardWidthRestricted
                 }
                 AccountInfoButton {
-                    id: overview
+                    id: role
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
@@ -435,7 +437,7 @@ Kirigami.ScrollablePage {
                     cardWidthRestricted: container.cardWidthRestricted
                 }
                 AccountInfoButton {
-                    id: ghns
+                    id: loginStatus
                     Layout.preferredWidth: grid.cellWidth
                     Layout.fillWidth: true
                     Layout.preferredHeight: grid.cellHeight
@@ -487,7 +489,7 @@ Kirigami.ScrollablePage {
                 MobileForm.FormTextDelegate {
                     visible: root.identity.joined
                     text: i18nc("@info: Joining date of the user","Joined")
-                    description: root.identity.joined
+                    description: root.identity.joined.toLocaleDateString()
                 }
 
                 MobileForm.FormDelegateSeparator { visible: root.identity.ips.length > 0 }
