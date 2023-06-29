@@ -4,8 +4,9 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.purpose 1.0 as Purpose
 import org.kde.kmasto 1.0
+
+import ".."
 
 QQC2.Menu {
     id: root
@@ -85,30 +86,7 @@ QQC2.Menu {
         }
     }
 
-    QQC2.Menu {
-        title: i18n("Share")
-        Repeater {
-            model: Purpose.PurposeAlternativesModel {
-                id: alternativesModel
-                inputData: {
-                    'urls': [root.url],
-                    'title': "Post",
-                    'mimeType': "*"
-                }
-                pluginType: "ShareUrl"
-            }
-
-            delegate: QQC2.MenuItem {
-                text: model.display
-                icon.name: model.iconName
-
-                onTriggered: {
-                    applicationWindow().pageStack.pushDialogLayer('qrc:/content/ui/ShareDialog.qml', {
-                        index: index,
-                        model: alternativesModel
-                    })
-                }
-            }
-        }
+    ShareMenu {
+        url: root.url
     }
 }
