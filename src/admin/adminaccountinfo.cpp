@@ -220,7 +220,8 @@ void AdminAccountInfo::calculateRecentActivity(const QJsonArray &ipsArray)
 {
     QDateTime latestDateTime;
     for (const auto &ipValue : ipsArray) {
-        const QDateTime usedAtTime = QDateTime::fromString(ipValue["used_at"].toString(), Qt::ISODate);
+        const auto object = ipValue.toObject();
+        const QDateTime usedAtTime = QDateTime::fromString(object[QStringLiteral("used_at")].toString(), Qt::ISODate);
         if (usedAtTime > latestDateTime)
             latestDateTime = usedAtTime;
     }
