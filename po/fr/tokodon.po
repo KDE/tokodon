@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-29 00:47+0000\n"
 "PO-Revision-Date: 2023-06-26 09:16+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -709,12 +709,18 @@ msgstr ""
 msgid "No accounts found"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:28
+#: content/ui/ModerationTools/MainAccountToolPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Not available"
+msgid "Not Available"
+msgstr "Non disponible"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:30
 #, kde-format
 msgid "Perform moderation action on %1"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:34
+#: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
 msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
@@ -722,7 +728,7 @@ msgctxt ""
 msgid "Warn"
 msgstr "Prévenir"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:38
+#: content/ui/ModerationTools/MainAccountToolPage.qml:40
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
@@ -730,14 +736,14 @@ msgctxt ""
 msgid "Freeze"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:43
+#: content/ui/ModerationTools/MainAccountToolPage.qml:45
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:48
+#: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
 msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
@@ -745,7 +751,7 @@ msgctxt ""
 msgid "Limit"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:53
+#: content/ui/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
 msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
@@ -753,7 +759,7 @@ msgctxt ""
 msgid "Suspend"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:58
+#: content/ui/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
 msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
@@ -761,88 +767,88 @@ msgctxt ""
 msgid "Notify the user per e-mail"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:64
+#: content/ui/ModerationTools/MainAccountToolPage.qml:66
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
 msgstr "Avertissement sur le contenu"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:76
+#: content/ui/ModerationTools/MainAccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:92
+#: content/ui/ModerationTools/MainAccountToolPage.qml:94
 #, kde-format
 msgid "Action taken successfully"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:97
+#: content/ui/ModerationTools/MainAccountToolPage.qml:99
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:107
+#: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Are you sure?"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:108
+#: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
 msgid "Action will be taken against the account."
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:116
+#: content/ui/ModerationTools/MainAccountToolPage.qml:118
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:120
+#: content/ui/ModerationTools/MainAccountToolPage.qml:122
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:124
+#: content/ui/ModerationTools/MainAccountToolPage.qml:126
 #, kde-format
 msgid "Successfully unfreezed %1's account"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:128
+#: content/ui/ModerationTools/MainAccountToolPage.qml:130
 #, kde-format
 msgid "Successfully unsilenced %1's account"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:132
+#: content/ui/ModerationTools/MainAccountToolPage.qml:134
 #, kde-format
 msgid "Successfully unsuspended %1's account"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:136
+#: content/ui/ModerationTools/MainAccountToolPage.qml:138
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:140
+#: content/ui/ModerationTools/MainAccountToolPage.qml:142
 #, kde-format
 msgid "Successfully deleted %1's account data"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:282
+#: content/ui/ModerationTools/MainAccountToolPage.qml:284
 #, fuzzy, kde-format
 #| msgid "Bio"
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "Bio"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:327
+#: content/ui/ModerationTools/MainAccountToolPage.qml:329
 #, kde-format
 msgid "Reasons for joining"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:394
+#: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -850,7 +856,7 @@ msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:404
+#: content/ui/ModerationTools/MainAccountToolPage.qml:406
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Followers"
@@ -858,124 +864,124 @@ msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Abonné(e)s"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:414
+#: content/ui/ModerationTools/MainAccountToolPage.qml:416
 #, fuzzy, kde-format
 #| msgid "Following"
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Suivant"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:425
+#: content/ui/ModerationTools/MainAccountToolPage.qml:427
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:434
+#: content/ui/ModerationTools/MainAccountToolPage.qml:436
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Rôle"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:443
+#: content/ui/ModerationTools/MainAccountToolPage.qml:445
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:458
+#: content/ui/ModerationTools/MainAccountToolPage.qml:460
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Role"
 msgstr "Rôle"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:466
+#: content/ui/ModerationTools/MainAccountToolPage.qml:468
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:473
+#: content/ui/ModerationTools/MainAccountToolPage.qml:475
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:474
+#: content/ui/ModerationTools/MainAccountToolPage.qml:476
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Confirmed"
 msgstr "Configurer"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:474
+#: content/ui/ModerationTools/MainAccountToolPage.qml:476
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Not Confirmed"
 msgstr "Configurer"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:481
+#: content/ui/ModerationTools/MainAccountToolPage.qml:483
 #, fuzzy, kde-format
 #| msgid "Account editor"
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "Éditeur de comptes"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:489
+#: content/ui/ModerationTools/MainAccountToolPage.qml:491
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:497
+#: content/ui/ModerationTools/MainAccountToolPage.qml:499
 #, kde-format
 msgid "Most recent IP"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:525
+#: content/ui/ModerationTools/MainAccountToolPage.qml:527
 #, kde-format
 msgid "Invited By"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:548
+#: content/ui/ModerationTools/MainAccountToolPage.qml:550
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:560
+#: content/ui/ModerationTools/MainAccountToolPage.qml:562
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:571
+#: content/ui/ModerationTools/MainAccountToolPage.qml:573
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Delete Account Data"
 msgstr "Comptes"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:583
+#: content/ui/ModerationTools/MainAccountToolPage.qml:585
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:593
+#: content/ui/ModerationTools/MainAccountToolPage.qml:595
 #, kde-format
 msgid "Undo Limit"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:603
+#: content/ui/ModerationTools/MainAccountToolPage.qml:605
 #, kde-format
 msgid "Undo Suspension"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:613
+#: content/ui/ModerationTools/MainAccountToolPage.qml:615
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:624
+#: content/ui/ModerationTools/MainAccountToolPage.qml:626
 #, kde-format
 msgid "Take action against this account"
 msgstr ""
