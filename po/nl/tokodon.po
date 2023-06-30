@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-29 00:47+0000\n"
-"PO-Revision-Date: 2023-06-24 12:28+0200\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"PO-Revision-Date: 2023-06-29 10:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -303,62 +303,84 @@ msgstr "Gedempte accounts"
 msgid "Blocked Accounts"
 msgstr "Geblokkeerde accounts"
 
-#: content/ui/AccountInfo.qml:342
+#: content/ui/AccountInfo.qml:270
+#, fuzzy, kde-format
+#| msgid "Copy Link to This Post"
+msgid "Copy Link to This Profile"
+msgstr "Koppeling naar bericht kopiëren"
+
+#: content/ui/AccountInfo.qml:273 content/ui/StatusDelegate/OverflowMenu.qml:42
+#, kde-format
+msgid "Post link copied."
+msgstr "Koppeling naar bericht gekopieerd."
+
+#: content/ui/AccountInfo.qml:360
 #, kde-format
 msgid "Note"
 msgstr "Notitie"
 
-#: content/ui/AccountInfo.qml:350
+#: content/ui/AccountInfo.qml:368
 #, kde-format
 msgid "Saved"
 msgstr "Opgeslagen"
 
-#: content/ui/AccountInfo.qml:365
+#: content/ui/AccountInfo.qml:383
 #, kde-format
 msgid "Click to add a note"
 msgstr "Klik om notitie toe te voegen"
 
-#: content/ui/AccountInfo.qml:441
+#: content/ui/AccountInfo.qml:459
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr "<b>%1</b> berichten"
 
-#: content/ui/AccountInfo.qml:453
+#: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "<b>%1</b> volgers"
 
-#: content/ui/AccountInfo.qml:465
+#: content/ui/AccountInfo.qml:483
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "<b>%1</b> wordt gevolgd"
 
-#: content/ui/AccountInfo.qml:477
+#: content/ui/AccountInfo.qml:495
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Berichten"
 
-#: content/ui/AccountInfo.qml:481
+#: content/ui/AccountInfo.qml:499
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Berichten && antwoorden"
 
-#: content/ui/AccountInfo.qml:485
+#: content/ui/AccountInfo.qml:503
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountInfo.qml:512
+#: content/ui/AccountInfo.qml:530
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Oppeppers verbergen"
+
+#: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
+#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -683,8 +705,7 @@ msgid "No accounts found"
 msgstr "Geen accounts gevonden"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
 msgstr "Niet beschikbaar"
 
@@ -819,131 +840,138 @@ msgstr "Bio"
 msgid "Reasons for joining"
 msgstr "Reden voor meedoen"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:396
+#: content/ui/ModerationTools/MainAccountToolPage.qml:376
 #, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "Berichten"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:406
+#: content/ui/ModerationTools/MainAccountToolPage.qml:380
 #, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Volgers"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:416
+#: content/ui/ModerationTools/MainAccountToolPage.qml:384
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Volgt op"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:427
+#: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
-msgctxt "@info The last time the account was active."
-msgid "Last Active"
-msgstr "Laatst actief"
+msgid "No role"
+msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:436
+#: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Rol"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:445
+#: content/ui/ModerationTools/MainAccountToolPage.qml:392
+#, kde-format
+msgctxt "@info The last time the account was active."
+msgid "Last Active"
+msgstr "Laatst actief"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr "Aanmeldstatus"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:460
-#, kde-format
-msgctxt "@info: Email of the user."
+#: content/ui/ModerationTools/MainAccountToolPage.qml:410
+#, fuzzy, kde-format
+#| msgctxt "@info:Role combobox to choose between different role filters"
+#| msgid "Role"
+msgctxt "@info: Role of the user."
 msgid "Role"
 msgstr "Rol"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:468
+#: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr "E-mailadres"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:475
+#: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr "E-mailstatus"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Confirmed"
 msgstr "Bevestigd"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Not Confirmed"
 msgstr "Niet bevestigd"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:483
+#: content/ui/ModerationTools/MainAccountToolPage.qml:433
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "Locatiecode van account"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:491
+#: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr "Neemt deel aan"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:499
+#: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
 msgstr "Meest recente IP"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:527
+#: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
 msgid "Invited By"
 msgstr "Uitgenodigd door"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:550
+#: content/ui/ModerationTools/MainAccountToolPage.qml:500
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr "Goedkeuren"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:562
+#: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr "Afwijzen"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:573
+#: content/ui/ModerationTools/MainAccountToolPage.qml:523
 #, kde-format
 msgid "Delete Account Data"
 msgstr "Gegevens van account verwijderen"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:585
+#: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr "Bevriezen ongedaan maken"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:595
+#: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
 msgstr "Limiet ongedaan maken"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:605
+#: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
 msgstr "Onderbreken ongedaan maken"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:615
+#: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr "Gevoelig afdwingen ongedaan maken"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:626
+#: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
 msgstr "Actie nemen tegen dit account"
@@ -1187,7 +1215,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:73
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
@@ -1350,6 +1378,11 @@ msgstr "Woord toevoegen"
 msgid "Delete word"
 msgstr "Woord verwijderen"
 
+#: content/ui/ShareDialog.qml:34
+#, kde-format
+msgid "Sharing failed"
+msgstr ""
+
 #: content/ui/SocialGraphPage.qml:97
 #, kde-format
 msgid "No follow requests"
@@ -1366,7 +1399,7 @@ msgid "Not following anyone"
 msgstr "Niemand wordt gevolgd"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:66
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgid "Edit"
 msgstr "Bewerken"
@@ -1556,48 +1589,43 @@ msgstr "Medium verborgen"
 msgid "View profile"
 msgstr "Profiel bekijken"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:22
+#: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
 msgid "Expand This Post"
 msgstr "Dit bericht uitvouwen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:29
+#: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
 msgid "Open Original Page"
 msgstr "Originele pagina openen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:37
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr "Koppeling naar bericht kopiëren"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Post link copied."
-msgstr "Koppeling naar bericht gekopieerd."
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Bladwijzer verwijderen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Bookmark"
 msgstr "Bladwijzer"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Unpin on profile"
 msgstr "Op profiel vastpinnen verwijderen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Pin on profile"
 msgstr "Op profiel vastpinnen"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:80
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Verwijderen & Opnieuw concept maken"
@@ -2040,6 +2068,10 @@ msgstr "Bron"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
+
+#~ msgctxt "@info: Email of the user."
+#~ msgid "Role"
+#~ msgstr "Rol"
 
 #~ msgctxt "More than one reply"
 #~ msgid "1+"

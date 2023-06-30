@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-29 00:47+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -317,61 +317,82 @@ msgstr "Účty"
 msgid "Blocked Accounts"
 msgstr "Pridať účet"
 
-#: content/ui/AccountInfo.qml:342
+#: content/ui/AccountInfo.qml:270
+#, kde-format
+msgid "Copy Link to This Profile"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:273 content/ui/StatusDelegate/OverflowMenu.qml:42
+#, kde-format
+msgid "Post link copied."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:360
 #, kde-format
 msgid "Note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:350
+#: content/ui/AccountInfo.qml:368
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:365
+#: content/ui/AccountInfo.qml:383
 #, kde-format
 msgid "Click to add a note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:441
+#: content/ui/AccountInfo.qml:459
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:453
+#: content/ui/AccountInfo.qml:471
 #, fuzzy, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "Nasledovatelia"
 
-#: content/ui/AccountInfo.qml:465
+#: content/ui/AccountInfo.qml:483
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:477
+#: content/ui/AccountInfo.qml:495
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:481
+#: content/ui/AccountInfo.qml:499
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:485
+#: content/ui/AccountInfo.qml:503
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:512
+#: content/ui/AccountInfo.qml:530
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
+msgstr ""
+
+#: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
+#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
 msgstr ""
 
 #: content/ui/AuthorizationPage.qml:15
@@ -833,135 +854,140 @@ msgstr ""
 msgid "Reasons for joining"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:396
+#: content/ui/ModerationTools/MainAccountToolPage.qml:376
 #, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:406
+#: content/ui/ModerationTools/MainAccountToolPage.qml:380
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Navštíviť"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:416
+#: content/ui/ModerationTools/MainAccountToolPage.qml:384
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Navštíviť"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:427
+#: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
-msgctxt "@info The last time the account was active."
-msgid "Last Active"
+msgid "No role"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:436
+#: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:445
+#: content/ui/ModerationTools/MainAccountToolPage.qml:392
+#, kde-format
+msgctxt "@info The last time the account was active."
+msgid "Last Active"
+msgstr ""
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:460
+#: content/ui/ModerationTools/MainAccountToolPage.qml:410
 #, kde-format
-msgctxt "@info: Email of the user."
+msgctxt "@info: Role of the user."
 msgid "Role"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:468
+#: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:475
+#: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Confirmed"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Not Confirmed"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:483
+#: content/ui/ModerationTools/MainAccountToolPage.qml:433
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "Účty"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:491
+#: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:499
+#: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:527
+#: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
 msgid "Invited By"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:550
+#: content/ui/ModerationTools/MainAccountToolPage.qml:500
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:562
+#: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:573
+#: content/ui/ModerationTools/MainAccountToolPage.qml:523
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Delete Account Data"
 msgstr "Účty"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:585
+#: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:595
+#: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:605
+#: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:615
+#: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:626
+#: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
 msgstr ""
@@ -1204,7 +1230,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:73
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr ""
@@ -1370,6 +1396,11 @@ msgstr ""
 msgid "Delete word"
 msgstr ""
 
+#: content/ui/ShareDialog.qml:34
+#, kde-format
+msgid "Sharing failed"
+msgstr ""
+
 #: content/ui/SocialGraphPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Follow"
@@ -1387,7 +1418,7 @@ msgid "Not following anyone"
 msgstr ""
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:66
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgid "Edit"
 msgstr ""
@@ -1577,48 +1608,43 @@ msgstr ""
 msgid "View profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:22
+#: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
 msgid "Expand This Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:29
+#: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:37
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Post link copied."
-msgstr ""
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Unpin on profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Pin on profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:80
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""

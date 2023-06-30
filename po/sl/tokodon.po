@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-29 00:47+0000\n"
-"PO-Revision-Date: 2023-06-24 07:38+0200\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"PO-Revision-Date: 2023-06-29 07:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #: account/abstractaccount.cpp:456
@@ -302,62 +302,84 @@ msgstr "Utišani računi"
 msgid "Blocked Accounts"
 msgstr "Blokirani računi"
 
-#: content/ui/AccountInfo.qml:342
+#: content/ui/AccountInfo.qml:270
+#, fuzzy, kde-format
+#| msgid "Copy Link to This Post"
+msgid "Copy Link to This Profile"
+msgstr "Kopiraj povezavo na to objavo"
+
+#: content/ui/AccountInfo.qml:273 content/ui/StatusDelegate/OverflowMenu.qml:42
+#, kde-format
+msgid "Post link copied."
+msgstr "Povezava na objavo prekopirana."
+
+#: content/ui/AccountInfo.qml:360
 #, kde-format
 msgid "Note"
 msgstr "Opomba"
 
-#: content/ui/AccountInfo.qml:350
+#: content/ui/AccountInfo.qml:368
 #, kde-format
 msgid "Saved"
 msgstr "Shranjeno"
 
-#: content/ui/AccountInfo.qml:365
+#: content/ui/AccountInfo.qml:383
 #, kde-format
 msgid "Click to add a note"
 msgstr "Kliknite za dodajanje opombe"
 
-#: content/ui/AccountInfo.qml:441
+#: content/ui/AccountInfo.qml:459
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr "<b>%1</b> objav"
 
-#: content/ui/AccountInfo.qml:453
+#: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "<b>%1</b> sledilcev"
 
-#: content/ui/AccountInfo.qml:465
+#: content/ui/AccountInfo.qml:483
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "<b>%1</b> sledenih"
 
-#: content/ui/AccountInfo.qml:477
+#: content/ui/AccountInfo.qml:495
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Objave"
 
-#: content/ui/AccountInfo.qml:481
+#: content/ui/AccountInfo.qml:499
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Objave && Odgovori"
 
-#: content/ui/AccountInfo.qml:485
+#: content/ui/AccountInfo.qml:503
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Mediji"
 
-#: content/ui/AccountInfo.qml:512
+#: content/ui/AccountInfo.qml:530
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Skrij pospeševanja"
+
+#: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
+#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -682,8 +704,7 @@ msgid "No accounts found"
 msgstr "Ni najdenih računov"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
 msgstr "Ni na voljo"
 
@@ -818,131 +839,138 @@ msgstr "Bio"
 msgid "Reasons for joining"
 msgstr "Razlogi za pristop"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:396
+#: content/ui/ModerationTools/MainAccountToolPage.qml:376
 #, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "Objave"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:406
+#: content/ui/ModerationTools/MainAccountToolPage.qml:380
 #, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Sledilci"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:416
+#: content/ui/ModerationTools/MainAccountToolPage.qml:384
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Sledi"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:427
+#: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
-msgctxt "@info The last time the account was active."
-msgid "Last Active"
-msgstr "Zadnji aktivni"
+msgid "No role"
+msgstr ""
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:436
+#: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Vloga"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:445
+#: content/ui/ModerationTools/MainAccountToolPage.qml:392
+#, kde-format
+msgctxt "@info The last time the account was active."
+msgid "Last Active"
+msgstr "Zadnji aktivni"
+
+#: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
 msgstr "Status prijave"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:460
-#, kde-format
-msgctxt "@info: Email of the user."
+#: content/ui/ModerationTools/MainAccountToolPage.qml:410
+#, fuzzy, kde-format
+#| msgctxt "@info:Role combobox to choose between different role filters"
+#| msgid "Role"
+msgctxt "@info: Role of the user."
 msgid "Role"
 msgstr "Vloga"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:468
+#: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
 msgstr "E-naslov"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:475
+#: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
 msgstr "Stanje e-naslova"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Confirmed"
 msgstr "Potrjeno"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:476
+#: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
 msgid "Not Confirmed"
 msgstr "Ni potrjeno"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:483
+#: content/ui/ModerationTools/MainAccountToolPage.qml:433
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
 msgstr "Lokalne spremenljivke računa"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:491
+#: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
 msgstr "Pridružen"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:499
+#: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
 msgstr "Nedavni IP"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:527
+#: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
 msgid "Invited By"
 msgstr "Povabljen po"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:550
+#: content/ui/ModerationTools/MainAccountToolPage.qml:500
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
 msgstr "Odobri"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:562
+#: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
 msgstr "Zavrni"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:573
+#: content/ui/ModerationTools/MainAccountToolPage.qml:523
 #, kde-format
 msgid "Delete Account Data"
 msgstr "Zbriši podatke računa"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:585
+#: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
 msgstr "Odmrzni"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:595
+#: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
 msgstr "Prekliči omejitve"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:605
+#: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
 msgstr "Odstrani suspenz"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:615
+#: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
 msgstr "Odstrani prisilno občutljivost"
 
-#: content/ui/ModerationTools/MainAccountToolPage.qml:626
+#: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
 msgstr "Ukrepaj proti računu"
@@ -1185,7 +1213,7 @@ msgstr "PNG, GIF ali JPG. Največ 2 MB. Bo zmanjšano na 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:195
 #: content/ui/Settings/ProfileEditor.qml:257
-#: content/ui/StatusDelegate/OverflowMenu.qml:73
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Briši"
@@ -1348,6 +1376,11 @@ msgstr "Dodaj besedo"
 msgid "Delete word"
 msgstr "Briši besedo"
 
+#: content/ui/ShareDialog.qml:34
+#, kde-format
+msgid "Sharing failed"
+msgstr ""
+
 #: content/ui/SocialGraphPage.qml:97
 #, kde-format
 msgid "No follow requests"
@@ -1364,7 +1397,7 @@ msgid "Not following anyone"
 msgstr "Ne sledim nobenemu"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
-#: content/ui/StatusDelegate/OverflowMenu.qml:66
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
@@ -1554,48 +1587,43 @@ msgstr "Medij je skrit"
 msgid "View profile"
 msgstr "Poglej profil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:22
+#: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
 msgid "Expand This Post"
 msgstr "Razširi to objavo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:29
+#: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
 msgid "Open Original Page"
 msgstr "Odpri izvirno stran"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:37
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Copy Link to This Post"
 msgstr "Kopiraj povezavo na to objavo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Post link copied."
-msgstr "Povezava na objavo prekopirana."
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Unpin on profile"
 msgstr "Odpni s profila"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:55
+#: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
 msgid "Pin on profile"
 msgstr "Pripni na profil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:80
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Zbriši in postavi med osnutke"
@@ -2040,6 +2068,10 @@ msgstr "Vir"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
+
+#~ msgctxt "@info: Email of the user."
+#~ msgid "Role"
+#~ msgstr "Vloga"
 
 #~ msgctxt "More than one reply"
 #~ msgid "1+"
