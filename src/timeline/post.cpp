@@ -330,25 +330,15 @@ QString Post::relativeTime() const
         return i18n("%1d", qCeil(daysTo));
     } else if (daysTo < 365) {
         const auto weeksTo = qCeil(daysTo / 7);
-        if (weeksTo == 1) {
-            return i18n("1 week ago");
-        } else if (weeksTo < 5) {
-            return i18n("%1 weeks ago", weeksTo);
+        if (weeksTo < 5) {
+            return i18np("1 week ago", "%1 weeks ago", weeksTo);
         } else {
             const auto monthsTo = qCeil(daysTo / 30);
-            if (monthsTo == 1) {
-                return i18n("1 month ago");
-            } else {
-                return i18n("%1 months ago", monthsTo);
-            }
+            return i18np("1 month ago", "%1 months ago", monthsTo);
         }
     } else {
         const auto yearsTo = qCeil(daysTo / 365);
-        if (yearsTo == 1) {
-            return i18n("1 year ago");
-        } else {
-            return i18n("%1 years ago", yearsTo);
-        }
+        return i18np("1 year ago", "%1 years ago", yearsTo);
     }
 }
 
