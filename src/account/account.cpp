@@ -304,11 +304,17 @@ void Account::writeToSettings()
     config.save();
 
     auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+#ifdef SAILFISHOS
+    accessTokenJob->setInsecureFallback(true);
+#endif
     accessTokenJob->setKey(accessTokenKey());
     accessTokenJob->setTextData(m_token);
     accessTokenJob->start();
 
     auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+#ifdef SAILFISHOS
+    clientSecretJob->setInsecureFallback(true);
+#endif
     clientSecretJob->setKey(clientSecretKey());
     clientSecretJob->setTextData(m_client_secret);
     clientSecretJob->start();
@@ -322,6 +328,9 @@ void Account::buildFromSettings(const AccountConfig &settings)
     m_ignoreSslErrors = settings.ignoreSslErrors();
 
     auto accessTokenJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+#ifdef SAILFISHOS
+    accessTokenJob->setInsecureFallback(true);
+#endif
     accessTokenJob->setKey(accessTokenKey());
 
     QObject::connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
@@ -333,6 +342,9 @@ void Account::buildFromSettings(const AccountConfig &settings)
     accessTokenJob->start();
 
     auto clientSecretJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+#ifdef SAILFISHOS
+    clientSecretJob->setInsecureFallback(true);
+#endif
     clientSecretJob->setKey(clientSecretKey());
 
     QObject::connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {

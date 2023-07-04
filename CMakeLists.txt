@@ -11,6 +11,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
+option(SAILFISHOS "Build for sailfishOS" OFF)
+
 set(KF_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
 if (ANDROID)
@@ -64,7 +66,9 @@ if (ANDROID)
         PURPOSE "Encrypted communications"
     )
 else()
-    find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
+    if (NOT SAILFISHOS)
+        find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
+    endif()
     find_package(KF${QT_MAJOR_VERSION}ConfigWidgets REQUIRED)
     find_package(Qt${QT_MAJOR_VERSION}Keychain)
     set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES

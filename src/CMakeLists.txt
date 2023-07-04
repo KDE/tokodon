@@ -131,7 +131,11 @@ target_link_directories(tokodon_static PUBLIC ${MPV_LIBRARY_DIRS})
 if (TARGET KF${QT_MAJOR_VERSION}::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
     target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::KIOWidgets)
-endif ()
+endif()
+
+if (SAILFISHOS)
+    target_compile_definitions(tokodon_static PUBLIC -DSAILFISHOS)
+endif()
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)
