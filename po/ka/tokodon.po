@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-06 00:59+0000\n"
 "PO-Revision-Date: 2023-06-30 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1878,49 +1878,49 @@ msgstr "7 დღე"
 msgid "An unknown error occurred."
 msgstr "უცნობი შეცდომა."
 
-#: main.cpp:115
+#: main.cpp:117
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-ის კლიენტი"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE -ის საზოგადოება"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:129
+#: main.cpp:131
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
 
-#: main.cpp:130
+#: main.cpp:132
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "აქვს web+ap: url სქემის მხარდაჭერა"
@@ -2013,34 +2013,28 @@ msgid "%1d"
 msgstr "%1დღ"
 
 #: timeline/post.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 week ago"
 msgid "1 week ago"
-msgstr "1 კვირის წინ"
+msgid_plural "%1 weeks ago"
+msgstr[0] "1 კვირის წინ"
+msgstr[1] "1 კვირის წინ"
 
-#: timeline/post.cpp:336
-#, kde-format
-msgid "%1 weeks ago"
-msgstr "%1 კვირის წინ"
-
-#: timeline/post.cpp:340
-#, kde-format
+#: timeline/post.cpp:337
+#, fuzzy, kde-format
+#| msgid "1 month ago"
 msgid "1 month ago"
-msgstr "1 თვის წინ"
+msgid_plural "%1 months ago"
+msgstr[0] "1 თვის წინ"
+msgstr[1] "1 თვის წინ"
 
-#: timeline/post.cpp:342
-#, kde-format
-msgid "%1 months ago"
-msgstr "%1 თვის წინ"
-
-#: timeline/post.cpp:348
-#, kde-format
+#: timeline/post.cpp:341
+#, fuzzy, kde-format
+#| msgid "1 year ago"
 msgid "1 year ago"
-msgstr "1 წლის წინ"
-
-#: timeline/post.cpp:350
-#, kde-format
-msgid "%1 years ago"
-msgstr "%1 წლის წინ"
+msgid_plural "%1 years ago"
+msgstr[0] "1 წლის წინ"
+msgstr[1] "1 წლის წინ"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2065,6 +2059,15 @@ msgstr "წყარო"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
+
+#~ msgid "%1 weeks ago"
+#~ msgstr "%1 კვირის წინ"
+
+#~ msgid "%1 months ago"
+#~ msgstr "%1 თვის წინ"
+
+#~ msgid "%1 years ago"
+#~ msgstr "%1 წლის წინ"
 
 #~ msgctxt "@info: Email of the user."
 #~ msgid "Role"

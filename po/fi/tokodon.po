@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-06 00:59+0000\n"
 "PO-Revision-Date: 2023-06-02 19:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1931,49 +1931,49 @@ msgstr "7 päivää"
 msgid "An unknown error occurred."
 msgstr "Tapahtui tuntematon virhe."
 
-#: main.cpp:115
+#: main.cpp:117
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE-yhteisö"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:129
+#: main.cpp:131
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
 
-#: main.cpp:130
+#: main.cpp:132
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Tukee web+ap: -verkko-osoitemallia"
@@ -2066,34 +2066,28 @@ msgid "%1d"
 msgstr "%1 pv"
 
 #: timeline/post.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 week ago"
 msgid "1 week ago"
-msgstr "viikko sitten"
+msgid_plural "%1 weeks ago"
+msgstr[0] "viikko sitten"
+msgstr[1] "viikko sitten"
 
-#: timeline/post.cpp:336
-#, kde-format
-msgid "%1 weeks ago"
-msgstr "%1 viikkoa sitten"
-
-#: timeline/post.cpp:340
-#, kde-format
+#: timeline/post.cpp:337
+#, fuzzy, kde-format
+#| msgid "1 month ago"
 msgid "1 month ago"
-msgstr "Kuukausi sitten"
+msgid_plural "%1 months ago"
+msgstr[0] "Kuukausi sitten"
+msgstr[1] "Kuukausi sitten"
 
-#: timeline/post.cpp:342
-#, kde-format
-msgid "%1 months ago"
-msgstr "%1 kuukautta sitten"
-
-#: timeline/post.cpp:348
-#, kde-format
+#: timeline/post.cpp:341
+#, fuzzy, kde-format
+#| msgid "1 year ago"
 msgid "1 year ago"
-msgstr "vuosi sitten"
-
-#: timeline/post.cpp:350
-#, kde-format
-msgid "%1 years ago"
-msgstr "%1 vuotta sitten"
+msgid_plural "%1 years ago"
+msgstr[0] "vuosi sitten"
+msgstr[1] "vuosi sitten"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2118,6 +2112,15 @@ msgstr "Lähde"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
+
+#~ msgid "%1 weeks ago"
+#~ msgstr "%1 viikkoa sitten"
+
+#~ msgid "%1 months ago"
+#~ msgstr "%1 kuukautta sitten"
+
+#~ msgid "%1 years ago"
+#~ msgstr "%1 vuotta sitten"
 
 #~ msgctxt "More than one reply"
 #~ msgid "1+"

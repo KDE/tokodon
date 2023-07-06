@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-06 00:59+0000\n"
 "PO-Revision-Date: 2023-06-30 21:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1878,49 +1878,49 @@ msgstr "7 dagen"
 msgid "An unknown error occurred."
 msgstr "Er is een onbekende fout opgetreden."
 
-#: main.cpp:115
+#: main.cpp:117
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-client"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE gemeenschap"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Maintainer"
 msgstr "Onderhouder"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Freek de Kruijf - 2021 t/m 2022"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: main.cpp:129
+#: main.cpp:131
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client Voor het gedecentraliseerde sociale netwerk: mastodon"
 
-#: main.cpp:130
+#: main.cpp:132
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Ondersteunt web+ap: url-schema"
@@ -2013,34 +2013,28 @@ msgid "%1d"
 msgstr "%1d"
 
 #: timeline/post.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 week ago"
 msgid "1 week ago"
-msgstr "1 week geleden"
+msgid_plural "%1 weeks ago"
+msgstr[0] "1 week geleden"
+msgstr[1] "1 week geleden"
 
-#: timeline/post.cpp:336
-#, kde-format
-msgid "%1 weeks ago"
-msgstr "%1 weken geleden"
-
-#: timeline/post.cpp:340
-#, kde-format
+#: timeline/post.cpp:337
+#, fuzzy, kde-format
+#| msgid "1 month ago"
 msgid "1 month ago"
-msgstr "1 maand"
+msgid_plural "%1 months ago"
+msgstr[0] "1 maand"
+msgstr[1] "1 maand"
 
-#: timeline/post.cpp:342
-#, kde-format
-msgid "%1 months ago"
-msgstr "%1 maanden geleden"
-
-#: timeline/post.cpp:348
-#, kde-format
+#: timeline/post.cpp:341
+#, fuzzy, kde-format
+#| msgid "1 year ago"
 msgid "1 year ago"
-msgstr "1 jaar"
-
-#: timeline/post.cpp:350
-#, kde-format
-msgid "%1 years ago"
-msgstr "%1 jaren geleden"
+msgid_plural "%1 years ago"
+msgstr[0] "1 jaar"
+msgstr[1] "1 jaar"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2065,6 +2059,15 @@ msgstr "Bron"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
+
+#~ msgid "%1 weeks ago"
+#~ msgstr "%1 weken geleden"
+
+#~ msgid "%1 months ago"
+#~ msgstr "%1 maanden geleden"
+
+#~ msgid "%1 years ago"
+#~ msgstr "%1 jaren geleden"
 
 #~ msgctxt "@info: Email of the user."
 #~ msgid "Role"

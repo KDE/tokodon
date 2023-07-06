@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-06 00:59+0000\n"
 "PO-Revision-Date: 2023-06-30 10:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1881,49 +1881,49 @@ msgstr "7 dies"
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: main.cpp:115
+#: main.cpp:117
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:129
+#: main.cpp:131
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
 
-#: main.cpp:130
+#: main.cpp:132
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Implementa l'esquema «web+ap: url»"
@@ -2016,34 +2016,28 @@ msgid "%1d"
 msgstr "%1d"
 
 #: timeline/post.cpp:334
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 week ago"
 msgid "1 week ago"
-msgstr "Fa 1 setmana"
+msgid_plural "%1 weeks ago"
+msgstr[0] "Fa 1 setmana"
+msgstr[1] "Fa 1 setmana"
 
-#: timeline/post.cpp:336
-#, kde-format
-msgid "%1 weeks ago"
-msgstr "Fa %1 setmanes"
-
-#: timeline/post.cpp:340
-#, kde-format
+#: timeline/post.cpp:337
+#, fuzzy, kde-format
+#| msgid "1 month ago"
 msgid "1 month ago"
-msgstr "Fa 1 mes"
+msgid_plural "%1 months ago"
+msgstr[0] "Fa 1 mes"
+msgstr[1] "Fa 1 mes"
 
-#: timeline/post.cpp:342
-#, kde-format
-msgid "%1 months ago"
-msgstr "Fa %1 mesos"
-
-#: timeline/post.cpp:348
-#, kde-format
+#: timeline/post.cpp:341
+#, fuzzy, kde-format
+#| msgid "1 year ago"
 msgid "1 year ago"
-msgstr "Fa 1 any"
-
-#: timeline/post.cpp:350
-#, kde-format
-msgid "%1 years ago"
-msgstr "Fa %1 anys"
+msgid_plural "%1 years ago"
+msgstr[0] "Fa 1 any"
+msgstr[1] "Fa 1 any"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2068,3 +2062,12 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
+
+#~ msgid "%1 weeks ago"
+#~ msgstr "Fa %1 setmanes"
+
+#~ msgid "%1 months ago"
+#~ msgstr "Fa %1 mesos"
+
+#~ msgid "%1 years ago"
+#~ msgstr "Fa %1 anys"
