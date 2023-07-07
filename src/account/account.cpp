@@ -193,7 +193,7 @@ QNetworkReply *Account::upload(const QUrl &filename, std::function<void(QNetwork
 
     QHttpPart filePart;
     filePart.setHeader(QNetworkRequest::ContentTypeHeader, "application/octet-stream");
-    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("attachment; name=\"file\"; filename=\"%1\"").arg(info.fileName()));
+    filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"file\"; filename=\"%1\"").arg(info.fileName()));
     filePart.setBodyDevice(file);
     file->setParent(mp);
 
