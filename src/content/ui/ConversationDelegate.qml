@@ -38,7 +38,7 @@ Kirigami.AbstractListItem {
     hoverEnabled: true
 
     background: Rectangle {
-        color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, root.showSelected ? 0.5 : hoverHandler.hovered ? 0.2 : 0)
+        color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, root.showSelected ? 0.5 : root.hovered ? 0.2 : 0)
 
         // indicator rectangle
         Rectangle {
@@ -51,12 +51,6 @@ Kirigami.AbstractListItem {
             width: 4
             visible: root.unread
             color: Kirigami.Theme.highlightColor
-        }
-
-        HoverHandler {
-            id: hoverHandler
-            // disable hover input on mobile because touchscreens trigger hover feedback and do not "unhover" in Qt
-            enabled: !Kirigami.Settings.isMobile
         }
 
         Kirigami.Separator {
