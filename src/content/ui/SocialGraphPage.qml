@@ -6,11 +6,13 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 import "./StatusDelegate"
 
 Kirigami.ScrollablePage {
     id: root
+
     property alias model: listview.model
 
     title: model.displayName
@@ -27,54 +29,51 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listview
-        model: root.model
 
-        delegate: QQC2.ItemDelegate {
+        currentIndex: -1
+
+        delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
             required property var index
             required property var identity
 
-            width: ListView.view.width
+            text: identity.displayName
 
             onClicked: Navigation.openAccount(delegate.identity.id)
 
-            contentItem: Kirigami.FlexColumn {
+            contentItem: ColumnLayout {
                 spacing: 0
-
-                maximumWidth: Kirigami.Units.gridUnit * 40
 
                 RowLayout {
                     Layout.fillWidth: true
+
                     InlineIdentityInfo {
                         identity: delegate.identity
                         secondary: false
+                        avatar.actions.main: null
                     }
 
                     QQC2.Button {
-                        text: "Allow"
+                        text: i18nc("@action:button Allow follow request", "Allow")
                         icon.name: "checkmark"
                         onClicked: model.actionAllow(model.index(delegate.index, 0))
                         visible: model.isFollowRequest
                     }
 
                     QQC2.Button {
-                        text: "Deny"
+                        text: i18nc("@action:button Deny follow request", "Deny")
                         icon.name: "cards-block"
                         onClicked: model.actionDeny(model.index(delegate.index, 0))
                         visible: model.isFollowRequest
                     }
                 }
 
-                Kirigami.Separator {
-                    visible: index !== listview.count - 1
-                    Layout.fillWidth: true
-                }
-
                 QQC2.ProgressBar {
                     visible: listview.model.loading && (index == listview.count - 1)
                     indeterminate: true
                     padding: Kirigami.Units.largeSpacing * 2
+
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     Layout.topMargin: Kirigami.Units.largeSpacing
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
@@ -89,7 +88,7 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             indeterminate: true
         }
-        
+
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: listview.model.placeholderText
