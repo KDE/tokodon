@@ -18,6 +18,8 @@ RowLayout {
     Layout.fillWidth: true
     spacing: Kirigami.Units.largeSpacing
 
+    signal clicked()
+
     Kirigami.Avatar {
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.rowSpan: 5
@@ -25,7 +27,12 @@ RowLayout {
         cache: true
         actions.main: Kirigami.Action {
             tooltip: i18n("View profile")
-            onTriggered: !admin && Navigation.openAccount(root.identity.id)
+            onTriggered: {
+                if (!admin) {
+                    Navigation.openAccount(root.identity.id)
+                    root.clicked()
+                }
+            }
         }
         name: root.identity.displayName
     }
