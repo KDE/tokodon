@@ -237,6 +237,7 @@ void AbstractAccount::setToken(const QString &authcode)
         m_token = doc.object()["access_token"].toString();
         s_messageFilter->insert(m_token, "ACCESS_TOKEN");
         AccountManager::instance().addAccount(this);
+        AccountManager::instance().selectAccount(this, true);
         validateToken();
     });
 }
