@@ -267,6 +267,7 @@ TimelinePage {
                             },
                             Kirigami.Action {
                                 icon.name: "edit-copy"
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
                                 text: i18n("Copy Link to This Profile")
                                 onTriggered: {
                                     Clipboard.saveText(model.identity.url)
