@@ -29,6 +29,7 @@ Components.AlbumMaximizeComponent {
     leading: StatusDelegate.InlineIdentityInfo {
         identity: root.identity
         secondary: false
+        onClicked: close()
     }
 
     onSaveItem: {
