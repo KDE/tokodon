@@ -12,6 +12,7 @@ ColumnLayout {
 
     property var index
     required property var poll
+    readonly property bool showResults: poll.voted || poll.expired
 
     visible: !filtered
 
@@ -21,7 +22,7 @@ ColumnLayout {
     }
 
     Repeater {
-        model: root.poll !== undefined && root.poll.voted ? root.poll.options : []
+        model: root.poll !== undefined && root.showResults ? root.poll.options : []
 
         ColumnLayout {
             id: votedPollDelegate
@@ -68,7 +69,7 @@ ColumnLayout {
     }
 
     Repeater {
-        model: poll !== undefined && !poll.voted ? poll.options : []
+        model: poll !== undefined && !root.showResults ? poll.options : []
         RowLayout {
             QQC2.CheckBox {
                 visible: poll.multiple
@@ -93,7 +94,7 @@ ColumnLayout {
     }
 
     QQC2.Button {
-        visible: poll !== undefined && index !== undefined && !poll.voted
+        visible: poll !== undefined && index !== undefined && !root.showResults
         text: i18n("Vote")
         enabled: pollGroup.checkState !== Qt.Unchecked
         onClicked: {
