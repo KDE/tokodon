@@ -14,6 +14,7 @@ RowLayout {
     required property bool secondary
     property bool admin: false
     property string ip
+    readonly property alias avatar: avatar
 
     Layout.fillWidth: true
     spacing: Kirigami.Units.largeSpacing
@@ -21,8 +22,11 @@ RowLayout {
     signal clicked()
 
     Kirigami.Avatar {
+        id: avatar
+
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
         Layout.rowSpan: 5
+
         source: root.identity.avatarUrl
         cache: true
         actions.main: Kirigami.Action {

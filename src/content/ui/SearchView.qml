@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.15
-import org.kde.kirigami 2.20 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.listitems 1.0 as ListItems
 import org.kde.kmasto 1.0
 import './StatusDelegate'
 
@@ -57,17 +58,14 @@ ListView {
         role: "type"
         DelegateChoice {
             roleValue: SearchModel.Account
-            QQC2.ItemDelegate {
+
+            ListItems.RoundedItemDelegate {
                 id: accountDelegate
 
                 required property var authorIdentity
 
                 width: ListView.view.width
-
-                leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: Kirigami.Units.largeSpacing
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
+                text: accountDelegate.authorIdentity.displayName
 
                 onClicked: Navigation.openAccount(accountDelegate.authorIdentity.id)
 
@@ -81,14 +79,17 @@ ListView {
                     }
 
                     ColumnLayout {
+                        spacing: 0
+
                         Layout.fillWidth: true
                         Layout.bottomMargin: Kirigami.Units.smallSpacing
                         Layout.leftMargin: Kirigami.Units.largeSpacing
-                        spacing: 0
+
                         Kirigami.Heading {
                             id: heading
+
                             level: 5
-                            text: accountDelegate.authorIdentity.displayNameHtml
+                            text: accountDelegate.text
                             textFormat: Text.RichText
                             type: Kirigami.Heading.Type.Primary
                             color: Kirigami.Theme.textColor
@@ -115,26 +116,27 @@ ListView {
             roleValue: SearchModel.Status
             StatusDelegate {
                 width: ListView.view.width
-                leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: Kirigami.Units.largeSpacing
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
                 secondary: true
                 showSeparator: true
                 showInteractionButton: false
+
+                leftPadding: 0
+                rightPadding: 0
+                topPadding: Kirigami.Units.smallSpacing
+                bottomPadding: Kirigami.Units.smallSpacing
             }
         }
 
         DelegateChoice {
             roleValue: SearchModel.Hashtag
-            QQC2.ItemDelegate {
+
+            ListItems.RoundedItemDelegate {
+                id: delegate
+
                 required property string id
 
-                width: ListView.view.width
-                leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: Kirigami.Units.largeSpacing
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
+                text: "#" + id
+                Accessible.description: i18n("Hashtag")
 
                 onClicked: Navigation.openTag(id)
 
@@ -146,7 +148,7 @@ ListView {
                     Kirigami.Heading {
                         id: heading
                         level: 5
-                        text: "#" + id
+                        text: delegate.text
                         type: Kirigami.Heading.Type.Primary
                         color: Kirigami.Theme.textColor
                         verticalAlignment: Text.AlignTop
