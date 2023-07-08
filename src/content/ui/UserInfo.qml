@@ -128,9 +128,12 @@ QQC2.ToolBar {
                 label: model.display
                 subtitle: model.instance
 
-                onClicked: if (AccountManager.selectedAccount !== model.account) {
-                    AccountManager.selectedAccount = model.account;
-                    accounts.currentIndex = index;
+                onClicked: {
+                    if (AccountManager.selectedAccount !== model.account) {
+                        AccountManager.selectedAccount = model.account;
+                        accounts.currentIndex = index;
+                    }
+                    userInfo.accountsListVisible = false
                 }
             }
         }
