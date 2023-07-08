@@ -428,7 +428,7 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
             spacing: 0
 
-            readonly property bool shouldExpand: applicationWindow().width < Kirigami.Units.gridUnit * 50
+            readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
 
             InteractionButton {
                 Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4

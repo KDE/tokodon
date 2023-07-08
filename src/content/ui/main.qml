@@ -138,7 +138,7 @@ Kirigami.ApplicationWindow {
         id: drawer
         enabled: AccountManager.hasAccounts && AccountManager.isReady
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-        modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+        modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
         z: modal ? Math.round(position * 10000000) : 100
         drawerOpen: !Kirigami.Settings.isMobile && enabled
         width: Kirigami.Units.gridUnit * 16
