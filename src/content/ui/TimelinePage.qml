@@ -16,6 +16,7 @@ Kirigami.ScrollablePage {
     required property var model
     property bool expandedPost: false
     property alias listViewHeader: listview.header
+    property alias showPostAction: postAction.visible
 
     title: model.displayName
     titleDelegate: Kirigami.Heading {
@@ -40,6 +41,7 @@ Kirigami.ScrollablePage {
     }
 
     actions.main: Kirigami.Action {
+        id: postAction
         icon.name: "list-add"
         text: i18n("Post")
         enabled: AccountManager.hasAccounts

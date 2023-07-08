@@ -10,6 +10,7 @@ TimelinePage {
     required property string postId
 
     expandedPost: true
+    showPostAction: false
 
     model: ThreadModel {
         postId: root.postId
