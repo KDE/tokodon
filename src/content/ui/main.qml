@@ -136,7 +136,7 @@ Kirigami.ApplicationWindow {
 
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
-        enabled: AccountManager.hasAccounts
+        enabled: AccountManager.hasAccounts && AccountManager.isReady
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: !enabled || Kirigami.Settings.isMobile || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
         z: modal ? Math.round(position * 10000000) : 100
@@ -397,7 +397,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
-        parent: overlay.parent 
+        parent: overlay.parent
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:")
