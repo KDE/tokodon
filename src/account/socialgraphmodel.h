@@ -15,6 +15,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
+    Q_PROPERTY(QString placeholderText READ placeholderText NOTIFY nameChanged)
     Q_PROPERTY(bool isFollowRequest READ isFollowRequest CONSTANT)
     Q_PROPERTY(bool isFollowing READ isFollowing CONSTANT)
     Q_PROPERTY(bool isFollower READ isFollower CONSTANT)
@@ -39,6 +40,7 @@ public:
     QString name() const;
     void setName(const QString &name);
     QString displayName() const;
+    QString placeholderText() const;
     QString accountId() const;
     void setAccountId(const QString &accountId);
     bool isFollowRequest() const;

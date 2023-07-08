@@ -32,6 +32,26 @@ QString SocialGraphModel::displayName() const
         return i18nc("@title", "Followers");
     } else if (m_followListName == "following") {
         return i18nc("@title", "Following");
+    } else if (m_followListName == "mutes") {
+        return i18nc("@title", "Muted Accounts");
+    } else if (m_followListName == "blocks") {
+        return i18nc("@title", "Blocked Accounts");
+    }
+    return {};
+}
+
+QString SocialGraphModel::placeholderText() const
+{
+    if (m_followListName == "request") {
+        return i18n("No follow requests");
+    } else if (m_followListName == "followers") {
+        return i18n("No followers");
+    } else if (m_followListName == "following") {
+        return i18n("No followed accounts");
+    } else if (m_followListName == "mutes") {
+        return i18n("No muted accounts");
+    } else if (m_followListName == "blocks") {
+        return i18n("No blocked accounts");
     }
     return {};
 }

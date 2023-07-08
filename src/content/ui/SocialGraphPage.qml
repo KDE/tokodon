@@ -92,17 +92,7 @@ Kirigami.ScrollablePage {
         
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: { 
-                if (listview.model.isFollowRequest) {
-                    return i18n("No follow requests")
-                } else if (listview.model.isFollowers) {
-                    return i18n("No followers")
-                } else if (listview.model.isFollowing) {
-                    return i18n("Not following anyone")
-                } else {
-                    return ""
-                }
-            }
+            text: listview.model.placeholderText
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
