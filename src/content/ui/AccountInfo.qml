@@ -266,6 +266,13 @@ TimelinePage {
                                 onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
                             },
                             Kirigami.Action {
+                                icon.name: "favorite"
+                                displayHint: Kirigami.DisplayHint.AlwaysHide
+                                visible: model.isSelf
+                                text: i18n("Featured Accounts")
+                                onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
+                            },
+                            Kirigami.Action {
                                 icon.name: "edit-copy"
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 text: i18n("Copy Link to This Profile")

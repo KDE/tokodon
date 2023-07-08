@@ -36,6 +36,8 @@ QString SocialGraphModel::displayName() const
         return i18nc("@title", "Muted Accounts");
     } else if (m_followListName == "blocks") {
         return i18nc("@title", "Blocked Accounts");
+    } else if (m_followListName == "featured") {
+        return i18nc("@title", "Featured Accounts");
     }
     return {};
 }
@@ -52,6 +54,8 @@ QString SocialGraphModel::placeholderText() const
         return i18n("No muted accounts");
     } else if (m_followListName == "blocks") {
         return i18n("No blocked accounts");
+    } else if (m_followListName == "featured") {
+        return i18n("No featured accounts");
     }
     return {};
 }
@@ -224,6 +228,8 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/mutes");
     } else if (m_followListName == "blocks") {
         uri = QStringLiteral("/api/v1/blocks");
+    } else if (m_followListName == "featured") {
+        uri = QStringLiteral("/api/v1/endorsements");
     }
 
     QUrl url;
