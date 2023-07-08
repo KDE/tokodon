@@ -16,7 +16,7 @@ option(SAILFISHOS "Build for sailfishOS" OFF)
 set(KF_MIN_VERSION "5.77.0")
 set(QT_MIN_VERSION "5.15.0")
 if (ANDROID)
-    set(QT_MIN_VERSION "5.15.8")
+    set(QT_MIN_VERSION "5.15.10")
 endif()
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
