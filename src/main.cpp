@@ -14,6 +14,7 @@
 #include <clocale>
 
 #ifdef Q_OS_ANDROID
+#include "utils/androidutils.h"
 #include <QGuiApplication>
 #else
 #include <QApplication>
@@ -82,6 +83,11 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+    app.connect(&app, &QGuiApplication::applicationStateChanged, [](Qt::ApplicationState state) {
+        if (state == Qt::ApplicationActive) {
+            AndroidUtils::instance().checkPendingIntents();
+        }
+    });
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
     QIcon::setThemeName("tokodon");
 #else

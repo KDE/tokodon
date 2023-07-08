@@ -76,6 +76,8 @@ if (ANDROID)
         TYPE REQUIRED
         PURPOSE "Encrypted communications"
     )
+
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS AndroidExtras)
 else()
     if (NOT SAILFISHOS)
         find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)

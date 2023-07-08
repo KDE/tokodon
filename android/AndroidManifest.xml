@@ -18,7 +18,8 @@
 
     <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Tokodon" android:icon="@drawable/tokodon">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
-                  android:name="org.qtproject.qt5.android.bindings.QtActivity"
+                  android:process=":custom_activity"
+                  android:name="org.kde.tokodon.OpenUriActivity"
                   android:label="Tokodon"
                   android:windowSoftInputMode="adjustResize"
                   android:launchMode="singleTop"
@@ -27,6 +28,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tokodon" android:host="oauth"/>
             </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="tokodon"/>
@@ -49,7 +57,7 @@
             <meta-data android:value="@string/unsupported_android_version" android:name="android.app.unsupported_android_version"/>
 
             <!-- Background running -->
-            <meta-data android:name="android.app.background_running" android:value="false"/>
+            <meta-data android:name="android.app.background_running" android:value="true"/>
 
             <!-- auto screen scale factor -->
             <meta-data android:name="android.app.auto_screen_scale_factor" android:value="true"/>

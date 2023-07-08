@@ -142,6 +142,15 @@ PRIVATE
     admin/emailinfo.h
 )
 
+if(ANDROID)
+    target_link_libraries(tokodon_static PRIVATE Qt::AndroidExtras)
+    target_sources(tokodon_static
+        PRIVATE
+        utils/androidutils.cpp
+        utils/androidutils.h
+    )
+endif()
+
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES} ${MPV_LIBRARIES})
 target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})

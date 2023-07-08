@@ -98,6 +98,10 @@ MastoPage {
 
         function onReceivedAuthCode(authCode) {
             account.setToken(authCode);
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, {
+                name: "home"
+            });
         }
     }
 }
