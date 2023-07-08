@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-06 00:59+0000\n"
-"PO-Revision-Date: 2023-06-26 09:16+0200\n"
+"PO-Revision-Date: 2023-07-06 21:53+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -119,16 +119,14 @@ msgid "Following"
 msgstr "Suivant"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Impossible de mettre un compte en pause"
+msgstr "Impossible d'accepter un compte"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Impossible de mettre un compte en pause"
+msgstr "Impossible de rejeter un compte"
 
 #: admin/accounttoolmodel.cpp:301
 #, fuzzy, kde-format
@@ -137,10 +135,9 @@ msgid "Could not take action against the account"
 msgstr "Impossible de modifier une note concernant un compte"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Impossible de présenter un compte"
+msgstr "Impossible d'activer un compte désactivé"
 
 #: admin/accounttoolmodel.cpp:303
 #, fuzzy, kde-format
@@ -305,16 +302,14 @@ msgid "Muted Accounts"
 msgstr "Comptes"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Ajouter un compte"
+msgstr "Comptes bloqués"
 
 #: content/ui/AccountInfo.qml:270
-#, fuzzy, kde-format
-#| msgid "Copy Link to This Post"
+#, kde-format
 msgid "Copy Link to This Profile"
-msgstr "Copier un lien vers ce message"
+msgstr "Copier un lien vers ce profil"
 
 #: content/ui/AccountInfo.qml:273 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
@@ -559,10 +554,9 @@ msgid "Search"
 msgstr "Rechercher"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Comptes"
+msgstr "Page des outils pour les comptes"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -571,18 +565,16 @@ msgid "Advanced Search"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "Nom d'utilisateur :"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Nom d'affichage"
+msgstr "Nom d'affichage :"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
@@ -597,15 +589,13 @@ msgid "IP:"
 msgstr "IP :"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Rechercher"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Ré-initialiser"
@@ -617,50 +607,42 @@ msgid "Cancel"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Notifications"
+msgstr "Emplacement"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
-msgstr "Tous"
+msgstr "Tout"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Local"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Supprimer"
+msgstr "Distant"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Conversations"
+msgstr "État de modération"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
-msgstr "Tous"
+msgstr "Tout"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:145
 #, kde-format
@@ -669,12 +651,10 @@ msgid "Active"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr "Tendance"
+msgstr "En attente"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
@@ -701,12 +681,10 @@ msgid "Role"
 msgstr "Rôle"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
-msgstr "Tous"
+msgstr "Tout"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:192
 #, kde-format
@@ -732,8 +710,7 @@ msgid "No accounts found"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
 msgstr "Non disponible"
 
@@ -790,11 +767,10 @@ msgid "Notify the user per e-mail"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Avertissement sur le contenu"
+msgstr "Avertissement personnalisé"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:78
 #, kde-format
@@ -859,8 +835,7 @@ msgid "Successfully deleted %1's account data"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:284
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "Bio"
@@ -871,17 +846,13 @@ msgid "Reasons for joining"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
 msgstr "Messages"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:380
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
 msgstr "Abonné(e)s"
@@ -917,9 +888,7 @@ msgid "Login Status"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:410
-#, fuzzy, kde-format
-#| msgctxt "@info:Role combobox to choose between different role filters"
-#| msgid "Role"
+#, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
 msgstr "Rôle"
@@ -937,16 +906,14 @@ msgid "Email Status"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "Configurer"
+msgstr "Confirmé"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "Configurer"
+msgstr "Non confirmé"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:433
 #, fuzzy, kde-format
@@ -984,10 +951,9 @@ msgid "Reject"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:523
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Comptes"
+msgstr "Supprimer les données de compte"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
@@ -1761,12 +1727,10 @@ msgid "Boost"
 msgstr "Stimuler"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:450
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Favoris"
+msgstr "Favori"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:463
 #, kde-format
@@ -1780,34 +1744,26 @@ msgid "via %1"
 msgstr "grâce à %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:516
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgid "%1 Reply"
-msgstr "Répondre"
+msgstr "%1 réponse"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:516
 #: content/ui/StatusDelegate/StatusDelegate.qml:517
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts && Replies"
+#, kde-format
 msgid "%1 Replies"
-msgstr "Messages && réponses"
+msgstr "%1 réponses"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:525
 #: content/ui/StatusDelegate/StatusDelegate.qml:526
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorites"
-msgstr "Favoris"
+msgstr "%1 favoris"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:526
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorite"
-msgstr "Favoris"
+msgstr "Favori %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:536
 #, fuzzy, kde-format
@@ -1824,8 +1780,7 @@ msgid "%1 Boosts"
 msgstr "Stimulations"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
-#, fuzzy, kde-format
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Lire"
@@ -1851,10 +1806,9 @@ msgid "Add"
 msgstr "Ajouter"
 
 #: content/ui/UserInfo.qml:218
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Conversations"
+msgstr "Outils de modération"
 
 #: content/ui/UserInfo.qml:219
 #, kde-format
