@@ -428,6 +428,8 @@ QQC2.ItemDelegate {
                 interacted: root.reblogged
                 interactionColor: "green"
 
+                enabled: root.visibility !== Post.Direct
+
                 iconName: 'post-boost'
                 interactedIconName: 'post-boosted'
 
