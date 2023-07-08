@@ -517,8 +517,11 @@ QQC2.ItemDelegate {
                 iconName: "post-reply-filled"
                 tooltip: root.repliesCount === 1 ? i18n("%1 Reply", root.repliesCount) : i18n("%1 Replies", root.repliesCount)
                 text: i18n("%1 Replies", root.repliesCount)
-                interactable: false
+                enabled: false
                 textColor: Kirigami.Theme.disabledTextColor
+                HoverHandler {
+                    cursorShape: Qt.PointingHandCursor
+                }
             }
 
             InteractionButton {
@@ -526,6 +529,7 @@ QQC2.ItemDelegate {
                 iconName: "post-favorited"
                 tooltip: i18n("%1 Favorites", root.favouritesCount)
                 text: root.favouritesCount === 1 ? i18n("%1 Favorite", root.favouritesCount) : i18n("%1 Favorites", root.favouritesCount)
+                enabled: false
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
                     cursorShape: Qt.PointingHandCursor
@@ -537,6 +541,7 @@ QQC2.ItemDelegate {
                 iconName: "post-boosted"
                 tooltip: root.reblogsCount === 1 ? i18n("%1 Boost", root.reblogsCount) : i18n("%1 Boosts", root.reblogsCount)
                 text: i18n("%1 Boosts", root.reblogsCount)
+                enabled: false
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
                     cursorShape: Qt.PointingHandCursor
