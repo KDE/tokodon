@@ -240,7 +240,7 @@ Kirigami.ScrollablePage {
                             QQC2.Label {
                                 Layout.alignment: Qt.AlignHCenter
                                 Layout.fillWidth: true
-                                text: i18n('PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px')
+                                text: i18n("PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px")
                                 wrapMode: Text.WordWrap
                             }
                         }
