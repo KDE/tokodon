@@ -97,7 +97,7 @@ MediaContainer {
                 return true;
             }
 
-            return root.showControls;
+            return false;
         }
         anchors.centerIn: parent
         onClicked: player.play()
