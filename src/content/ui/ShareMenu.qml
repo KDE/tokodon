@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
-// SPDX-Licence-Identifier: LGPL-2.0-or-later
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
