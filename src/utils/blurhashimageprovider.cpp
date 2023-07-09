@@ -8,11 +8,6 @@
 
 #include "blurhash.h"
 
-BlurhashImageProvider::BlurhashImageProvider()
-    : QQuickImageProvider(QQuickImageProvider::Image)
-{
-}
-
 /*
  * Qt unfortunately re-encodes the base83 string in QML.
  * The only special ASCII characters used in the blurhash base83 string are:
@@ -44,26 +39,71 @@ static const QMap<QLatin1String, QLatin1String> knownEncodings = {
 };
 // clang-format on
 
-QImage BlurhashImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
+class AsyncImageResponseRunnable : public QObject, public QRunnable
 {
-    if (id.isEmpty()) {
-        return {};
-    }
-    *size = requestedSize;
-    if (size->width() == -1) {
-        size->setWidth(256);
-    }
-    if (size->height() == -1) {
-        size->setHeight(256);
+    Q_OBJECT
+
+Q_SIGNALS:
+    void done(QImage image);
+
+public:
+    AsyncImageResponseRunnable(const QString &id, const QSize &requestedSize)
+        : m_id(id)
+        , m_requestedSize(requestedSize)
+    {
+        if (m_requestedSize.width() == -1) {
+            m_requestedSize.setWidth(256);
+        }
+        if (m_requestedSize.height() == -1) {
+            m_requestedSize.setHeight(256);
+        }
     }
 
-    QString decodedId = id;
+    void run() override
+    {
+        if (m_id.isEmpty()) {
+            return;
+        }
 
-    QMap<QLatin1String, QLatin1String>::const_iterator i;
-    for (i = knownEncodings.constBegin(); i != knownEncodings.constEnd(); ++i)
-        decodedId.replace(i.key(), i.value());
+        QString decodedId = m_id;
 
-    auto data = decode(decodedId.toLatin1().constData(), size->width(), size->height(), 1, 3);
-    QImage image(data, size->width(), size->height(), size->width() * 3, QImage::Format_RGB888, free, data);
-    return image;
+        QMap<QLatin1String, QLatin1String>::const_iterator i;
+        for (i = knownEncodings.constBegin(); i != knownEncodings.constEnd(); ++i)
+            decodedId.replace(i.key(), i.value());
+
+        auto data = decode(decodedId.toLatin1().constData(), m_requestedSize.width(), m_requestedSize.height(), 1, 3);
+        QImage image(data, m_requestedSize.width(), m_requestedSize.height(), m_requestedSize.width() * 3, QImage::Format_RGB888, free, data);
+
+        Q_EMIT done(image);
+    }
+
+private:
+    QString m_id;
+    QSize m_requestedSize;
+};
+
+AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requestedSize, QThreadPool *pool)
+{
+    auto runnable = new AsyncImageResponseRunnable(id, requestedSize);
+    connect(runnable, &AsyncImageResponseRunnable::done, this, &AsyncImageResponse::handleDone);
+    pool->start(runnable);
 }
+
+void AsyncImageResponse::handleDone(QImage image)
+{
+    m_image = image;
+    qDebug() << m_image.size();
+    Q_EMIT finished();
+}
+
+QQuickTextureFactory *AsyncImageResponse::textureFactory() const
+{
+    return QQuickTextureFactory::textureFactoryForImage(m_image);
+}
+
+QQuickImageResponse *BlurhashImageProvider::requestImageResponse(const QString &id, const QSize &requestedSize)
+{
+    return new AsyncImageResponse(id, requestedSize, &pool);
+}
+
+#include "blurhashimageprovider.moc"

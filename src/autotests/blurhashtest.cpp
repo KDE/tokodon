@@ -28,22 +28,24 @@ private Q_SLOTS:
             "%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D;RPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%"
             "2Bj%5BrrW;ni%25Mt7V%40W;t7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
 
-        QSize outSize;
-        QImage image = imageProvider->requestImage(blurHashEncoded, &outSize, QSize(25, 25));
+        auto response = dynamic_cast<AsyncImageResponse *>(imageProvider->requestImageResponse(blurHashEncoded, QSize(25, 25)));
+        QSignalSpy spy(response, &QQuickImageResponse::finished);
+        spy.wait();
 
-        QCOMPARE(outSize, QSize(25, 25));
-        QCOMPARE(image, goodBlurHashImage);
+        QCOMPARE(response->m_image.size(), QSize(25, 25));
+        QCOMPARE(response->m_image, goodBlurHashImage);
     }
 
     void testImageProviderSpecialEncoding()
     {
         const QString blurHashEncoded = QStringLiteral("URI#cIR+L1%14eoJtAWYXMt5IAob4oRQfiRR");
 
-        QSize outSize;
-        QImage image = imageProvider->requestImage(blurHashEncoded, &outSize, QSize(25, 25));
+        auto response = dynamic_cast<AsyncImageResponse *>(imageProvider->requestImageResponse(blurHashEncoded, QSize(25, 25)));
+        QSignalSpy spy(response, &QQuickImageResponse::finished);
+        spy.wait();
 
-        QCOMPARE(outSize, QSize(25, 25));
-        QCOMPARE(image, specialBlurHashImage);
+        QCOMPARE(response->m_image.size(), QSize(25, 25));
+        QCOMPARE(response->m_image, specialBlurHashImage);
     }
 
     void testBlurHashAlgo()
