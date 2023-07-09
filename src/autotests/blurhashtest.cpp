@@ -3,7 +3,7 @@
 
 #include <QtTest/QtTest>
 
-#include "utils/blurhash.h"
+#include "utils/blurhash.hpp"
 #include "utils/blurhashimageprovider.h"
 
 class BlurHashTest : public QObject
@@ -17,8 +17,8 @@ class BlurHashTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        goodBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash.png")).convertToFormat(QImage::Format_RGB888);
-        specialBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash2.png")).convertToFormat(QImage::Format_RGB888);
+        goodBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash.png"));
+        specialBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash2.png"));
         imageProvider = new BlurhashImageProvider();
     }
 
@@ -54,8 +54,9 @@ private Q_SLOTS:
             "|KO2?U%2Tw=wR6cErDEhOD]~RBVZRip0W9ofwxM_};RPxuwH%3s89]t8$%tLOtxZ%gixtQt8IUS#I.ENa0NZIVt6xFM{M{%1j^M_bcRPX9nht7n+j[rrW;ni%Mt7V@W;t7t8%1bbxat7WBIUR*"
             "RjRjRjxuRjs.MxbbV@WY");
 
-        auto data = decode(blurHash.constData(), 25, 25, 1, 3);
-        QImage image(data, 25, 25, 25 * 3, QImage::Format_RGB888, free, data);
+        auto data = blurhash::decode(blurHash.constData(), 25, 25);
+        QImage image(data.image.data(), 25, 25, 25 * 3, QImage::Format_RGB888);
+        image = image.convertToFormat(QImage::Format_RGB32);
 
         QCOMPARE(image, goodBlurHashImage);
     }

@@ -72,9 +72,9 @@ public:
             decodedId.replace(i.key(), i.value());
 
         auto data = blurhash::decode(decodedId.toLatin1().constData(), m_requestedSize.width(), m_requestedSize.height());
-        QImage image(data.image.data(), data.width, data.height, data.width * 3, QImage::Format_RGB888);
+        QImage image(data.image.data(), static_cast<int>(data.width), static_cast<int>(data.height), static_cast<int>(data.width * 3), QImage::Format_RGB888);
 
-        Q_EMIT done(image);
+        Q_EMIT done(image.convertToFormat(QImage::Format_RGB32));
     }
 
 private:
@@ -92,7 +92,6 @@ AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requested
 void AsyncImageResponse::handleDone(QImage image)
 {
     m_image = image;
-    qDebug() << m_image.size();
     Q_EMIT finished();
 }
 
