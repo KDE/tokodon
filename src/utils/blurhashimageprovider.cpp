@@ -52,10 +52,10 @@ public:
         , m_requestedSize(requestedSize)
     {
         if (m_requestedSize.width() == -1) {
-            m_requestedSize.setWidth(256);
+            m_requestedSize.setWidth(64);
         }
         if (m_requestedSize.height() == -1) {
-            m_requestedSize.setHeight(256);
+            m_requestedSize.setHeight(64);
         }
     }
 
