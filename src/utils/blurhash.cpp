@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2022 DeepBlueV7.X <<a href="https://github.com/deepbluev7">https://github.com/deepbluev7</a>>
+// SPDX-License-Identifier: BSL-1.0
+
 #include "blurhash.hpp"
 
 #include <algorithm>

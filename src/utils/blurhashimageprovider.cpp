@@ -6,7 +6,7 @@
 #include <QImage>
 #include <QString>
 
-#include "blurhash.h"
+#include "blurhash.hpp"
 
 /*
  * Qt unfortunately re-encodes the base83 string in QML.
@@ -71,8 +71,8 @@ public:
         for (i = knownEncodings.constBegin(); i != knownEncodings.constEnd(); ++i)
             decodedId.replace(i.key(), i.value());
 
-        auto data = decode(decodedId.toLatin1().constData(), m_requestedSize.width(), m_requestedSize.height(), 1, 3);
-        QImage image(data, m_requestedSize.width(), m_requestedSize.height(), m_requestedSize.width() * 3, QImage::Format_RGB888, free, data);
+        auto data = blurhash::decode(decodedId.toLatin1().constData(), m_requestedSize.width(), m_requestedSize.height());
+        QImage image(data.image.data(), data.width, data.height, data.width * 3, QImage::Format_RGB888);
 
         Q_EMIT done(image);
     }
