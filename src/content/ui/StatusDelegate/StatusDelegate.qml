@@ -417,22 +417,20 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
         }
 
-        Item {
-            height: root.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
-        }
-
         RowLayout {
             id: buttonLayout
 
+            readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
+            readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+
             visible: showInteractionButton && !filtered
             Layout.fillWidth: true
-            spacing: 0
-
-            readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
+            spacing: shouldExpand ? 0 : Kirigami.Units.gridUnit * 2
 
             InteractionButton {
-                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
-                Layout.fillWidth: buttonLayout.shouldExpand
+                topPadding: buttonLayout.buttonPadding
+                bottomPadding: buttonLayout.buttonPadding
+                rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.repliesCount > 0
                 iconName: "post-reply"
@@ -443,9 +441,14 @@ QQC2.ItemDelegate {
 
                 onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
             }
-            InteractionButton {
-                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
+            Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
+            }
+            InteractionButton {
+                topPadding: buttonLayout.buttonPadding
+                bottomPadding: buttonLayout.buttonPadding
+                leftPadding: buttonLayout.buttonPadding
+                rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.reblogged
                 interactionColor: "green"
@@ -460,9 +463,14 @@ QQC2.ItemDelegate {
 
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
             }
-            InteractionButton {
-                Layout.preferredWidth: buttonLayout.shouldExpand ? implicitWidth : Kirigami.Units.gridUnit * 4
+            Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
+            }
+            InteractionButton {
+                topPadding: buttonLayout.buttonPadding
+                bottomPadding: buttonLayout.buttonPadding
+                leftPadding: buttonLayout.buttonPadding
+                rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.favourited
                 interactionColor: "orange"
@@ -475,8 +483,13 @@ QQC2.ItemDelegate {
 
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
             }
+            Item {
+                Layout.fillWidth: buttonLayout.shouldExpand
+            }
             InteractionButton {
-                Layout.alignment: Qt.AlignRight
+                topPadding: buttonLayout.buttonPadding
+                bottomPadding: buttonLayout.buttonPadding
+                leftPadding: buttonLayout.buttonPadding
 
                 interacted: root.bookmarked
                 interactionColor: "red"
@@ -488,10 +501,6 @@ QQC2.ItemDelegate {
 
                 onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
             }
-        }
-
-        Item {
-            height: root.selected || Kirigami.Settings.tabletMode ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
         }
 
         RowLayout {

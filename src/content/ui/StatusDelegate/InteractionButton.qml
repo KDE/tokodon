@@ -21,42 +21,41 @@ QQC2.AbstractButton {
 
     hoverEnabled: true
 
-    implicitWidth: icon.width + (control.text.length > 0 ? label.contentWidth + Kirigami.Units.largeSpacing * 2 : 0) + rightPadding
-    implicitHeight: icon.height
-
-    rightPadding: Kirigami.Units.largeSpacing * 2
-
+    implicitWidth: icon.width + (control.text.length > 0 ? label.contentWidth + Kirigami.Units.largeSpacing * 2 : 0) + rightPadding + leftPadding
+    implicitHeight: icon.height + topPadding + bottomPadding
+    
     QQC2.ToolTip.text: control.tooltip
     QQC2.ToolTip.visible: hovered
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Accessible.name: tooltip
 
-    Kirigami.Icon {
-        id: icon
-
-        width: Kirigami.Units.iconSizes.smallMedium
-        height: Kirigami.Units.iconSizes.smallMedium
-
-        source: control.interacted ? control.interactedIconName : control.iconName
-
-        isMask: true
-        color: (interactable && (control.hovered || parent.activeFocus)) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
-    }
-
-    QQC2.Label {
-        id: label
-
+    Row {
         anchors {
-            left: icon.right
-            leftMargin: Kirigami.Units.smallSpacing
-
-            top: parent.top
-            bottom: parent.bottom
+            horizontalCenter: parent.horizontalCenter
+            verticalCenter: parent.verticalCenter
         }
 
-        text: control.text
-        color: control.textColor
-        verticalAlignment: Text.AlignVCenter
+        spacing: Kirigami.Units.smallSpacing
+
+        Kirigami.Icon {
+            id: icon
+
+            width: Kirigami.Units.iconSizes.smallMedium
+            height: Kirigami.Units.iconSizes.smallMedium
+
+            source: control.interacted ? control.interactedIconName : control.iconName
+
+            isMask: true
+            color: (interactable && (control.hovered || parent.activeFocus)) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
+        }
+
+        QQC2.Label {
+            id: label
+
+            text: control.text
+            color: control.textColor
+            verticalAlignment: Text.AlignVCenter
+        }
     }
 }
