@@ -318,8 +318,8 @@ QQC2.ItemDelegate {
             }
 
             InteractionButton {
+                rightPadding: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit * 2 : 0
                 Layout.alignment: Qt.AlignTop
-                rightPadding: 0
                 iconName: 'overflow-menu'
                 tooltip: i18nc("Show more options", "More")
                 onClicked: {
