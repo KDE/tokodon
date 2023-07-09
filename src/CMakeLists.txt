@@ -84,7 +84,7 @@ PRIVATE
 
     # Misc utils
     utils/blurhash.cpp
-    utils/blurhash.h
+    utils/blurhash.hpp
     utils/blurhashimageprovider.cpp
     utils/blurhashimageprovider.h
     utils/filehelper.cpp
