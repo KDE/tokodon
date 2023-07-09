@@ -322,16 +322,26 @@ QQC2.ItemDelegate {
                 rightPadding: 0
                 iconName: 'overflow-menu'
                 tooltip: i18nc("Show more options", "More")
-                onClicked: postMenu.open()
-                OverflowMenu {
+                onClicked: {
+                    postMenu.active = true;
+                    postMenu.item.open()
+                }
+                Loader {
                     id: postMenu
-                    index: root.index
-                    postId: root.id
-                    url: root.url
-                    bookmarked: root.bookmarked
-                    isSelf: root.isSelf
-                    expandedPost: root.expandedPost
-                    pinned: root.pinned
+
+                    active: false
+
+                    sourceComponent: OverflowMenu {
+                        index: root.index
+                        postId: root.id
+                        url: root.url
+                        bookmarked: root.bookmarked
+                        isSelf: root.isSelf
+                        expandedPost: root.expandedPost
+                        pinned: root.pinned
+
+                        onClosed: postMenu.active = false
+                    }
                 }
             }
         }
@@ -373,26 +383,38 @@ QQC2.ItemDelegate {
             }
         }
 
-        AttachmentGrid {
-            expandedPost: root.expandedPost
-            attachments: root.post.attachments
-            identity: root.authorIdentity
-            sensitive: root.sensitive
-            secondary: root.secondary
-            inViewPort: root.inViewPort
+        Loader {
+            sourceComponent: AttachmentGrid {
+                expandedPost: root.expandedPost
+                attachments: root.post.attachments
+                identity: root.authorIdentity
+                sensitive: root.sensitive
+                secondary: root.secondary
+                inViewPort: root.inViewPort
+            }
 
-            visible: postContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
+            active: postContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
+            Layout.fillWidth: true
         }
 
-        LinkPreview {
-            card: root.card
+        Loader {
+            sourceComponent: LinkPreview {
+                card: root.card
+            }
 
-            visible: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+            Layout.fillWidth: true
+            Layout.topMargin: active ? Kirigami.Units.largeSpacing : 0
         }
 
-        Poll {
-            index: root.index
-            poll: root.poll
+        Loader {
+            sourceComponent: Poll {
+                index: root.index
+                poll: root.poll
+            }
+
+            active: root.poll !== undefined && !root.filtered
+            Layout.fillWidth: true
         }
 
         Item {

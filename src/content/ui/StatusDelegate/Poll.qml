@@ -14,8 +14,6 @@ ColumnLayout {
     required property var poll
     readonly property bool showResults: poll.voted || poll.expired
 
-    visible: !filtered
-
     QQC2.ButtonGroup {
         id: pollGroup
         exclusive: root.poll !== undefined && !root.poll.multiple

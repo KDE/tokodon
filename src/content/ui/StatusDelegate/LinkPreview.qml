@@ -13,9 +13,6 @@ QQC2.AbstractButton {
 
     required property var card
 
-    Layout.fillWidth: true
-    Layout.topMargin: visible ? Kirigami.Units.largeSpacing : 0
-
     leftPadding: 0
     topPadding: 0
     rightPadding: 0
