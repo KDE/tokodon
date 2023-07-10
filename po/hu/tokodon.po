@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-06 00:59+0000\n"
+"POT-Creation-Date: 2023-07-10 00:47+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,48 +17,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.07.70\n"
 
-#: account/abstractaccount.cpp:456
+#: account/abstractaccount.cpp:457
 #, kde-format
 msgid "Could not follow account"
 msgstr ""
 
-#: account/abstractaccount.cpp:457
+#: account/abstractaccount.cpp:458
 #, kde-format
 msgid "Could not unfollow account"
 msgstr ""
 
-#: account/abstractaccount.cpp:458
+#: account/abstractaccount.cpp:459
 #, kde-format
 msgid "Could not block account"
 msgstr ""
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:460
 #, kde-format
 msgid "Could not unblock account"
 msgstr ""
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:461
 #, fuzzy, kde-format
 #| msgid "Add an account"
 msgid "Could not mute account"
 msgstr "Fiók hozzáadása"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:462
 #, kde-format
 msgid "Could not unmute account"
 msgstr ""
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:463
 #, kde-format
 msgid "Could not feature account"
 msgstr ""
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:464
 #, kde-format
 msgid "Could not unfeature account"
 msgstr ""
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:465
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr ""
@@ -123,6 +123,63 @@ msgstr "Követés"
 msgctxt "@title"
 msgid "Following"
 msgstr "Követés"
+
+#: account/socialgraphmodel.cpp:36
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Muted Accounts"
+msgstr "Fiókok"
+
+#: account/socialgraphmodel.cpp:38
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@title"
+msgid "Blocked Accounts"
+msgstr "Fiók hozzáadása"
+
+#: account/socialgraphmodel.cpp:40
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
+msgid "Featured Accounts"
+msgstr "Fiókok"
+
+#: account/socialgraphmodel.cpp:48
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "No follow requests"
+msgstr "Követés"
+
+#: account/socialgraphmodel.cpp:50
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "No followers"
+msgstr "%1 követő"
+
+#: account/socialgraphmodel.cpp:52
+#, fuzzy, kde-format
+#| msgid "%1 followers"
+msgid "No followed accounts"
+msgstr "%1 követő"
+
+#: account/socialgraphmodel.cpp:54
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "No muted accounts"
+msgstr "Fiókok"
+
+#: account/socialgraphmodel.cpp:56
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "No blocked accounts"
+msgstr "Fiók hozzáadása"
+
+#: account/socialgraphmodel.cpp:58
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "No featured accounts"
+msgstr "Fiókok"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -295,15 +352,15 @@ msgstr ""
 msgid "Account editor"
 msgstr "Fiókok"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:187
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:189
-#: content/ui/UserInfo.qml:230
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:191
+#: content/ui/UserInfo.qml:233
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -326,52 +383,58 @@ msgstr "Fiókok"
 msgid "Blocked Accounts"
 msgstr "Fiók hozzáadása"
 
-#: content/ui/AccountInfo.qml:270
+#: content/ui/AccountInfo.qml:272
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Featured Accounts"
+msgstr "Fiókok"
+
+#: content/ui/AccountInfo.qml:278
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:273 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:281 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:360
+#: content/ui/AccountInfo.qml:368
 #, kde-format
 msgid "Note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:368
+#: content/ui/AccountInfo.qml:376
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:383
+#: content/ui/AccountInfo.qml:391
 #, kde-format
 msgid "Click to add a note"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:459
+#: content/ui/AccountInfo.qml:467
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
 msgstr "%1 követő"
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:491
 #, fuzzy, kde-format
 #| msgid "%1 following"
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
 msgstr "%1 követett"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:503
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -379,19 +442,19 @@ msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Kiemelés"
 
-#: content/ui/AccountInfo.qml:499
+#: content/ui/AccountInfo.qml:507
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:503
+#: content/ui/AccountInfo.qml:511
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:530
+#: content/ui/AccountInfo.qml:538
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
@@ -474,7 +537,7 @@ msgid "Explore"
 msgstr ""
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:44 search/searchmodel.cpp:141
+#: content/ui/TimelinePage.qml:46 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr ""
@@ -505,7 +568,7 @@ msgstr "Alapértelmezett nyelv:"
 msgid "Login"
 msgstr "Bejelentkezés"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:66
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:68
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1286,6 +1349,11 @@ msgstr "Szó törlése"
 msgid "Avatar"
 msgstr ""
 
+#: content/ui/Settings/ProfileEditor.qml:243
+#, kde-format
+msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
+msgstr ""
+
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
@@ -1456,24 +1524,6 @@ msgstr "Szó törlése"
 #, kde-format
 msgid "Sharing failed"
 msgstr ""
-
-#: content/ui/SocialGraphPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgid "No follow requests"
-msgstr "Követés"
-
-#: content/ui/SocialGraphPage.qml:99
-#, fuzzy, kde-format
-#| msgid "%1 followers"
-msgid "No followers"
-msgstr "%1 követő"
-
-#: content/ui/SocialGraphPage.qml:101
-#, fuzzy, kde-format
-#| msgid "%1 following"
-msgid "Not following anyone"
-msgstr "%1 követett"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1668,7 +1718,7 @@ msgstr ""
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:27
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:29
 #: content/ui/StatusDelegate/StatusDelegate.qml:150
 #: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, kde-format
@@ -1691,7 +1741,7 @@ msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#: content/ui/StatusDelegate/StatusDelegate.qml:487
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -1716,7 +1766,7 @@ msgstr ""
 msgid "Delete & Re-draft"
 msgstr ""
 
-#: content/ui/StatusDelegate/Poll.qml:39
+#: content/ui/StatusDelegate/Poll.qml:38
 #, fuzzy, kde-format
 #| msgctxt "hour:minute"
 #| msgid "%1:%2"
@@ -1724,12 +1774,12 @@ msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1:%2"
 
-#: content/ui/StatusDelegate/Poll.qml:63
+#: content/ui/StatusDelegate/Poll.qml:62
 #, kde-format
 msgid "(No votes)"
 msgstr ""
 
-#: content/ui/StatusDelegate/Poll.qml:97
+#: content/ui/StatusDelegate/Poll.qml:96
 #, kde-format
 msgid "Vote"
 msgstr ""
@@ -1782,86 +1832,86 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Több megjelenítése"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:352
+#: content/ui/StatusDelegate/StatusDelegate.qml:362
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "Tartalmi figyelmeztetés"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:368
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show Less"
 msgstr "Több megjelenítése"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:358
+#: content/ui/StatusDelegate/StatusDelegate.qml:368
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show More"
 msgstr "Több megjelenítése"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:419
+#: content/ui/StatusDelegate/StatusDelegate.qml:441
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Válasz"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:435
+#: content/ui/StatusDelegate/StatusDelegate.qml:459
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Kiemelés"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:474
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#: content/ui/StatusDelegate/StatusDelegate.qml:487
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:484
+#: content/ui/StatusDelegate/StatusDelegate.qml:508
 #, kde-format
 msgid "via %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:516
+#: content/ui/StatusDelegate/StatusDelegate.qml:540
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
 msgstr "Válasz"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:516
-#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#: content/ui/StatusDelegate/StatusDelegate.qml:540
+#: content/ui/StatusDelegate/StatusDelegate.qml:541
 #, kde-format
 msgid "%1 Replies"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:525
-#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#: content/ui/StatusDelegate/StatusDelegate.qml:552
+#: content/ui/StatusDelegate/StatusDelegate.qml:553
 #, kde-format
 msgid "%1 Favorites"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:526
+#: content/ui/StatusDelegate/StatusDelegate.qml:553
 #, kde-format
 msgid "%1 Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:536
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "%1 Boost"
 msgstr "Kiemelés"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:536
-#: content/ui/StatusDelegate/StatusDelegate.qml:537
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
+#: content/ui/StatusDelegate/StatusDelegate.qml:565
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -1874,7 +1924,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:167
+#: content/ui/TimelinePage.qml:169
 #, kde-format
 msgid "No posts"
 msgstr ""
@@ -1884,28 +1934,28 @@ msgstr ""
 msgid "Log in to an existing account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:195
+#: content/ui/UserInfo.qml:198
 #, kde-format
 msgid "Switch user"
 msgstr ""
 
-#: content/ui/UserInfo.qml:207
+#: content/ui/UserInfo.qml:210
 #, kde-format
 msgid "Add"
 msgstr ""
 
-#: content/ui/UserInfo.qml:218
+#: content/ui/UserInfo.qml:221
 #, kde-format
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/UserInfo.qml:219
+#: content/ui/UserInfo.qml:222
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
 msgstr ""
 
-#: content/ui/UserInfo.qml:231
+#: content/ui/UserInfo.qml:234
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -2165,6 +2215,11 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgid "%1 following"
+#~ msgid "Not following anyone"
+#~ msgstr "%1 követett"
 
 #~ msgctxt "Like a post"
 #~ msgid "Like"
