@@ -111,7 +111,13 @@ PRIVATE
 
     # Admin
     admin/accounttoolmodel.cpp
+    admin/accounttoolmodel.h
     admin/adminaccountinfo.cpp
+    admin/adminaccountinfo.h
+    admin/federationtoolmodel.cpp
+    admin/federationtoolmodel.h
+    admin/federationinfo.h
+    admin/federationinfo.cpp
 )
 
 if(NOT ANDROID)
