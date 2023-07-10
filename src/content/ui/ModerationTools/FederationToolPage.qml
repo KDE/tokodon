@@ -101,7 +101,7 @@ Kirigami.ScrollablePage {
         
         Kirigami.Heading {
             level: 4
-            text: i18nc("@info:Location combobox to choose location filters", "Location")
+            text: i18nc("@info:Choose between allowed and limited domains", "Moderation")
             type: Kirigami.Heading.Type.Primary
             elide: Text.ElideRight
             horizontalAlignment: Text.AlignHCenter
