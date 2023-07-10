@@ -9,11 +9,17 @@ import QtQuick.Layouts 1.15
 Kirigami.CategorizedSettings {
     objectName: "moderationToolPage"
     actions: [
-        Kirigami.SettingAction{
-            actionName: "Accounts";
+        Kirigami.SettingAction {
+            actionName: "Accounts"
             text: i18n("Accounts")
             icon.name: "user-identity"
             page: Qt.resolvedUrl("AccountToolPage.qml")
+        },
+        Kirigami.SettingAction {
+            actionName: "Federation"
+            text: i18n("Federation")
+            icon.name: "cloudstatus"
+            page: Qt.resolvedUrl("FederationToolPage.qml")
         }
     ]
 }

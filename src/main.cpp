@@ -37,6 +37,7 @@
 #include "account/socialgraphmodel.h"
 #include "admin/accounttoolmodel.h"
 #include "admin/adminaccountinfo.h"
+#include "admin/federationtoolmodel.h"
 #include "config.h"
 #include "conversation/conversationmodel.h"
 #include "editor/attachmenteditormodel.h"
@@ -159,6 +160,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
     qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
     qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
+    qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");

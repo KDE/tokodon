@@ -4,9 +4,11 @@
 #pragma once
 
 #include "admin/adminaccountinfo.h"
+#include "admin/federationinfo.h"
 #include "identity.h"
-#include "timeline/post.h"
 #include "preferences.h"
+#include "timeline/post.h"
+
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
@@ -110,6 +112,9 @@ public:
 
     /// Get identity of the admin::account
     std::shared_ptr<AdminAccountInfo> adminIdentityLookup(const QString &accountId, const QJsonObject &doc);
+
+    /// Gets the information about a federation
+    FederationInfo *federationLookup(const QString &federationId, const QJsonObject &doc);
 
     /// Invalidates the account
     void invalidate();
@@ -349,6 +354,7 @@ protected:
     QString m_instance_name;
     std::shared_ptr<Identity> m_identity;
     std::shared_ptr<AdminAccountInfo> m_adminIdentity;
+    AdminAccountInfo *m_federationIdentity;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
 
