@@ -18,22 +18,46 @@ QVariant FederationToolModel::data(const QModelIndex &index, int role) const
 
     const auto federationInfo = m_federations[index.row()];
     switch (role) {
-    case CustomRoles::FederationRole:
-        return QVariant::fromValue<FederationInfo *>(federationInfo);
+    case IdRole:
+        return federationInfo.id();
+    case DomainRole:
+        return federationInfo.domain();
+    case CreatedAtRole:
+        return federationInfo.createdAt();
+    case SeverityRole:
+        return federationInfo.severity();
+    case RejectMediaRole:
+        return federationInfo.rejectMedia();
+    case RejectReportsRole:
+        return federationInfo.rejectReports();
+    case PrivateCommentRole:
+        return federationInfo.privateComment();
+    case PublicCommentRole:
+        return federationInfo.publicComment();
+    case ObfuscateRole:
+        return federationInfo.obfuscate();
     default:
         return {};
     }
 }
 
-int FederationToolModel::rowCount(const QModelIndex &) const
+int FederationToolModel::rowCount(const QModelIndex &parent) const
 {
-    return m_federations.count();
+    return parent.isValid() ? 0 : m_federations.count();
 }
 
 QHash<int, QByteArray> FederationToolModel::roleNames() const
 {
     return {
-        {CustomRoles::FederationRole, "federationInfo"},
+        {IdRole, "id"},
+        {DomainRole, "domain"},
+        {CreatedAtRole, "createdAt"},
+        {SeverityRole, "severity"},
+        {RejectMediaRole, "rejectMedia"},
+        {RejectReportsRole, "rejectReports"},
+        {PrivateCommentRole, "privateComment"},
+        {PublicCommentRole, "publicComment"},
+        {ObfuscateRole, "obfuscate"},
     };
 }
 
@@ -75,7 +99,7 @@ void FederationToolModel::removeDomainBlock(const int row)
 {
     auto account = AccountManager::instance().selectedAccount();
     auto federationInfo = m_federations[row];
-    const auto federationId = federationInfo->id();
+    const auto federationId = federationInfo.id();
 
     account->deleteResource(account->apiUrl(QString("/api/v1/admin/domain_blocks/%1").arg(federationId)), true, this, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
@@ -85,6 +109,13 @@ void FederationToolModel::removeDomainBlock(const int row)
         endRemoveRows();
         Q_EMIT dataChanged(index(row, 0), index(row, 0));
     });
+}
+
+void FederationToolModel::updatePublicComment(const int row, const QString &publicComment)
+{
+    auto federationInfo = m_federations[row];
+    federationInfo.setPublicComment(publicComment);
+    Q_EMIT dataChanged(index(row, 0), index(row, 0));
 }
 
 void FederationToolModel::updateDomainBlock(const int row,
@@ -106,9 +137,13 @@ void FederationToolModel::updateDomainBlock(const int row,
 
     auto account = AccountManager::instance().selectedAccount();
     auto federationInfo = m_federations[row];
-    const auto federationId = federationInfo->id();
+    const auto federationId = federationInfo.id();
 
     account->put(account->apiUrl(QString("/api/v1/admin/domain_blocks/%1").arg(federationId)), doc, true, this, nullptr);
+
+    // trying to change the data in the model here
+    federationInfo.setPublicComment(publicComment);
+
     Q_EMIT dataChanged(index(row, 0), index(row, 0));
 }
 
@@ -137,7 +172,8 @@ void FederationToolModel::newDomainBlock(QString domain,
     account->post(url, doc, true, this, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
-        auto newFederation = account->federationLookup(doc["id"].toString(), jsonObj);
+        auto newFederation = FederationInfo::fromSourceData(jsonObj);
+
         beginInsertRows({}, m_federations.size(), m_federations.size());
         m_federations += newFederation;
         endInsertRows();
@@ -174,7 +210,7 @@ void FederationToolModel::filltimeline(FederationAction action)
         url = m_next;
     }
 
-    account->get(url, true, this, [this, account](QNetworkReply *reply) {
+    account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         const auto federations = doc.array();
 
@@ -185,11 +221,10 @@ void FederationToolModel::filltimeline(FederationAction action)
             if (re.isValid()) {
                 m_next = QUrl::fromUserInput(match.captured(1));
             }
-            QList<FederationInfo *> fetchedFederations;
+            QList<FederationInfo> fetchedFederations;
 
-            std::transform(federations.cbegin(), federations.cend(), std::back_inserter(fetchedFederations), [account](const QJsonValue &value) -> auto {
-                const auto federationJson = value.toObject();
-                return account->federationLookup(federationJson["id"].toString(), federationJson);
+            std::transform(federations.cbegin(), federations.cend(), std::back_inserter(fetchedFederations), [](const QJsonValue &value) -> auto {
+                return FederationInfo::fromSourceData(value.toObject());
             });
             beginInsertRows({}, m_federations.size(), m_federations.size() + fetchedFederations.size() - 1);
             m_federations += fetchedFederations;

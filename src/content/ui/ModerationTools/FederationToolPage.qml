@@ -59,19 +59,19 @@ Kirigami.ScrollablePage {
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectMedia
-                    text: i18n("Reject media files")
+                    text: i18n("Reject Media Files")
                     description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectReports
-                    text: i18n("Reject reports")
+                    text: i18n("Reject Reports")
                     description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: obfuscateReports
-                    text: i18n("Obfuscate domain name")
+                    text: i18n("Obfuscate Domain Name")
                     description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
                 }
             }
@@ -142,16 +142,32 @@ Kirigami.ScrollablePage {
         delegate: QQC2.ItemDelegate {
             id: delegate
             required property var index
-            required property var federationInfo
+            required property var id
+            required property var domain
+            required property var createdAt
+            required property var severity
+            required property var rejectMedia
+            required property var rejectReports
+            required property var publicComment
+            required property var privateComment
+            required property var obfuscate
 
             width: ListView.view.width
 
-            onClicked: applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml", {
-                                                                     index: delegate.index,
-                                                                     federationInfo: delegate.federationInfo,
-                                                                     model: federationView.model
-                                                                 },
-                                                                 )
+            onClicked: applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml",
+                            {
+                                index: delegate.index,
+                                model: federationView.model,
+                                id: delegate.id,
+                                domain: delegate.domain,
+                                createdAt: delegate.createdAt,
+                                severity: delegate.severity,
+                                rejectMedia: delegate.rejectMedia,
+                                rejectReports: delegate.rejectReports,
+                                privateComment: delegate.privateComment,
+                                publicComment: delegate.publicComment,
+                                obfuscate: delegate.obfuscate,
+                            },)
 
             contentItem: Kirigami.FlexColumn {
                 spacing: 0
@@ -164,7 +180,7 @@ Kirigami.ScrollablePage {
                         spacing: 0
                         Kirigami.Heading {
                             level: 2
-                            text: delegate.federationInfo.domain
+                            text: delegate.domain
                             type: Kirigami.Heading.Type.Primary
                             Layout.alignment: Qt.AlignLeft
                         }
@@ -173,7 +189,7 @@ Kirigami.ScrollablePage {
                             Layout.fillWidth: true
                             elide: Text.ElideRight
                             color: Kirigami.Theme.disabledTextColor
-                            text: delegate.federationInfo.severity
+                            text: delegate.severity
                             verticalAlignment: Text.AlignTop
                         }
                     }
@@ -182,7 +198,7 @@ Kirigami.ScrollablePage {
                     }
                     Kirigami.Heading {
                         level: 4
-                        text: delegate.federationInfo.createdAt.toLocaleDateString()
+                        text: delegate.createdAt.toLocaleDateString()
                         type: Kirigami.Heading.Type.Secondary
                         Layout.alignment: Qt.AlignRight
                     }
@@ -200,7 +216,7 @@ Kirigami.ScrollablePage {
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No federations found")
+            text: i18n("No Federations Found")
             visible: federationView.count === 0 && !federationView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
@@ -213,7 +229,7 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
             }
             QQC2.Button {
-                text: i18n("Add new domain block")
+                text: i18n("Add New Domain Block")
                 icon.name: 'list-add'
                 visible: true
                 Layout.margins: Kirigami.Units.smallSpacing

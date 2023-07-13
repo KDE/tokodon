@@ -16,7 +16,15 @@ class FederationToolModel : public QAbstractListModel
 
 public:
     enum CustomRoles {
-        FederationRole = Qt::UserRole + 1,
+        IdRole,
+        DomainRole,
+        CreatedAtRole,
+        SeverityRole,
+        RejectMediaRole,
+        RejectReportsRole,
+        PrivateCommentRole,
+        PublicCommentRole,
+        ObfuscateRole
     };
 
     enum FederationAction {
@@ -38,6 +46,8 @@ public:
     void setModeration(QString moderation);
 
     Q_INVOKABLE void removeDomainBlock(const int row);
+    // using Q_INVOKABLE instead of setData()
+    Q_INVOKABLE void updatePublicComment(const int row, const QString &publicComment);
     Q_INVOKABLE void updateDomainBlock(const int row,
                                        QString severity,
                                        QString publicComment,
@@ -56,8 +66,10 @@ protected:
 private:
     void filltimeline(FederationAction action = FederationAction::BlockedDomains);
 
-    QList<FederationInfo *> m_federations;
+    QList<FederationInfo> m_federations;
     bool m_loading = false;
     QString m_moderation = "Limited";
     QUrl m_next;
+
+public:
 };

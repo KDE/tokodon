@@ -154,14 +154,6 @@ std::shared_ptr<Identity> AbstractAccount::identityLookup(const QString &account
     return m_identityCache[accountId];
 }
 
-FederationInfo *AbstractAccount::federationLookup(const QString &federationId, const QJsonObject &doc)
-{
-    auto id = new FederationInfo();
-    id->reparentFederation(this);
-    id->fromSourceData(doc);
-    return id;
-}
-
 std::shared_ptr<AdminAccountInfo> AbstractAccount::adminIdentityLookup(const QString &accountId, const QJsonObject &doc)
 {
     if (m_adminIdentity && m_adminIdentity->userLevelIdentity()->id() == accountId) {
