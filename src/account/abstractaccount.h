@@ -113,9 +113,6 @@ public:
     /// Get identity of the admin::account
     std::shared_ptr<AdminAccountInfo> adminIdentityLookup(const QString &accountId, const QJsonObject &doc);
 
-    /// Gets the information about a federation
-    FederationInfo *federationLookup(const QString &federationId, const QJsonObject &doc);
-
     /// Invalidates the account
     void invalidate();
 

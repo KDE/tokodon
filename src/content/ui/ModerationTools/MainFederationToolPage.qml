@@ -9,11 +9,20 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 Kirigami.ScrollablePage {
     id: root
-    property var federationInfo
+
     property int index
     property var model
+    property var id
+    property var domain
+    property var createdAt
+    property var severity
+    property var rejectMedia
+    property var rejectReports
+    property var privateComment
+    property var publicComment
+    property var obfuscate
 
-    title: root.federationInfo.domain
+    title: root.domain
 
     actions {
         main: Kirigami.Action {
@@ -21,7 +30,7 @@ Kirigami.ScrollablePage {
             text: i18n("Remove Domain Block")
             onTriggered: {
                 root.model.removeDomainBlock(root.index)
-                showPassiveNotification(i18n("removed domain block"))
+                showPassiveNotification(i18n("Removed Domain Block"))
                 pageStack.layers.pop()
             }
         }
@@ -54,42 +63,44 @@ Kirigami.ScrollablePage {
                             value: "noop"
                         },
                     ]
-                    Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.federationInfo.severity);
-                    onCurrentIndexChanged: root.federationInfo.severity = model[currentIndex].value
-
+                    onCurrentIndexChanged: root.severity = model[currentIndex].value
+                    Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.severity);
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: publicComment
-                    text: root.federationInfo.publicComment
+                    text: root.publicComment
                     label: i18n("Public Comment")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: privateComment
-                    text: root.federationInfo.privateComment
+                    text: root.privateComment
                     label: i18n("Private Comment")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectMedia
-                    text: i18n("Reject media files")
+                    text: i18n("Reject Media Files")
                     description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
-                    onToggled: root.federationInfo.rejectMedia = rejectMedia.checked
+                    checked: root.rejectMedia
+                    onToggled: root.rejectMedia = rejectMedia.checked
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectReports
-                    text: i18n("Reject reports")
+                    text: i18n("Reject Reports")
                     description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
-                    onToggled: root.federationInfo.rejectReports = rejectReports.checked
+                    checked: root.rejectReports
+                    onToggled: root.rejectReports = rejectReports.checked
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: obfuscateReports
-                    text: i18n("Obfuscate domain name")
+                    text: i18n("Obfuscate Domain Name")
                     description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
-                    onToggled: root.federationInfo.obfuscate = obfuscateReports.checked
+                    checked: root.obfuscate
+                    onToggled: root.obfuscate = obfuscateReports.checked
                 }
             }
         }
@@ -104,9 +115,9 @@ Kirigami.ScrollablePage {
                 text: i18nc("@info:Button to update the domain block with new values", "Update Block")
                 icon.name: "view-refresh"
                 onTriggered: {
+                    root.privateComment = privateComment.text
+                    root.publicComment = publicComment.text
                     root.model.updateDomainBlock(root.index, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
-                    root.federationInfo.privateComment = privateComment.text
-                    root.federationInfo.publicComment = publicComment.text
                     textPromptDialog.close();
                     showPassiveNotification(i18n("Domain block updated"))
                 }
@@ -125,37 +136,37 @@ Kirigami.ScrollablePage {
                 MobileForm.FormTextDelegate {
                     visible: true
                     text: i18n("Blocked At")
-                    description: root.federationInfo.createdAt.toLocaleDateString()
+                    description: root.createdAt.toLocaleDateString()
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
-                    text: i18n("Public comment")
-                    description: root.federationInfo.publicComment !== "" ? root.federationInfo.publicComment : i18nc("@info: No public comment provided","None")
+                    text: i18n("Public Comment")
+                    description: root.publicComment !== "" ? root.publicComment : i18nc("@info: No public comment provided","None")
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
-                    text: i18n("Private comment")
-                    description: root.federationInfo.privateComment !== "" ? root.federationInfo.privateComment : i18nc("@info: No private comment provided","None")
+                    text: i18n("Private Comment")
+                    description: root.privateComment !== "" ? root.privateComment : i18nc("@info: No private comment provided","None")
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
                     text: i18nc("@info:The policy to be applied by this domain block","Policy")
-                    description: root.federationInfo.severity
+                    description: root.severity
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
                     text: i18nc("@info:Whether to obfuscate public displays of this domain block","Obfuscate")
-                    description: root.federationInfo.obfuscate
+                    description: root.obfuscate
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
                     text: i18nc("@info:Whether to obfuscate public displays of this domain block","Reject Media")
-                    description: root.federationInfo.rejectMedia
+                    description: root.rejectMedia
                 }
                 MobileForm.FormTextDelegate {
                     visible: true
                     text: i18nc("@info:Whether to obfuscate public displays of this domain block","Reject Report")
-                    description: root.federationInfo.rejectReports
+                    description: root.rejectReports
                 }
             }
         }

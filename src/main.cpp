@@ -176,6 +176,7 @@ int main(int argc, char *argv[])
         return engine->toScriptValue(KAboutData::applicationData());
     });
     qRegisterMetaType<Account *>("Account*");
+    qRegisterMetaType<FederationInfo>("FederationInfo");
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<AdminAccountInfo *>("AdminAccountInfo*");
