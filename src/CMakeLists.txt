@@ -141,9 +141,18 @@ if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
+configure_file(content/ui/ModerationTools/MainAccountToolPage.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/ModerationTools/MainAccountToolPage.qml)
+configure_file(content/ui/Settings/ProfileEditor.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/Settings/ProfileEditor.qml)
+configure_file(content/ui/StatusComposer/AttachmentGrid.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusComposer/AttachmentGrid.qml)
+configure_file(content/ui/StatusDelegate/AttachmentGrid.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/AttachmentGrid.qml)
+configure_file(content/ui/StatusDelegate/LinkPreview.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/LinkPreview.qml)
+configure_file(content/ui/StatusDelegate/VideoAttachment.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/VideoAttachment.qml)
+
+configure_file(resources.qrc ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc)
+
 add_executable(tokodon
     main.cpp
-    resources.qrc
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc
 )
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})

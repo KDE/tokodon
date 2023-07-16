@@ -8,7 +8,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kmasto 1.0
 import Qt.labs.platform 1.1
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
-import QtGraphicalEffects 1.0
+import @QTGRAPHICALEFFECTS_MODULE@
 
 Kirigami.ScrollablePage {
     id: root

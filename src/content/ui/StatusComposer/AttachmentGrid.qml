@@ -6,7 +6,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.0
+import @QTGRAPHICALEFFECTS_MODULE@
 
 GridLayout {
     id: root
