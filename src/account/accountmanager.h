@@ -74,6 +74,14 @@ public:
 
     Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false);
 
+    static QString settingsGroupName(const QString &name, const QString &instanceUri);
+
+    /// Returns the preferred key name for the client secret
+    static QString clientSecretKey(const QString &name);
+
+    /// Returns the preferred key name for the access token
+    static QString accessTokenKey(const QString &name);
+
 Q_SIGNALS:
 
     void accountAdded(AbstractAccount *account);
