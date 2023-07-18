@@ -14,15 +14,12 @@
 #include <qt6keychain/keychain.h>
 #endif
 
-void migrateSettings(QSettings &settings);
-
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
 {
-    QSettings settings;
-    migrateSettings(settings);
+    migrateSettings();
     loadFromSettings();
 
     connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
@@ -315,8 +312,10 @@ bool AccountManager::isReady() const
     return m_ready;
 }
 
-void migrateSettings(QSettings &settings)
+void AccountManager::migrateSettings()
 {
+    QSettings settings;
+
     const auto version = settings.value("settingsVersion", -1).toInt();
     if (version == 0) {
         qCDebug(TOKODON_LOG) << "Migrating v0 settings to v1";
@@ -349,7 +348,7 @@ void migrateSettings(QSettings &settings)
         settings.setValue("settingsVersion", 1);
 
         // we need to migrate to kconfig
-        migrateSettings(settings);
+        migrateSettings();
     } else if (version == 1) {
         qCDebug(TOKODON_LOG) << "Migrating v1 settings to kconfig";
 
