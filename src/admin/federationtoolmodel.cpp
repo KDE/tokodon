@@ -1,10 +1,11 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "account/abstractaccount.h"
-
-#include "account/accountmanager.h"
 #include "admin/federationtoolmodel.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
+
+#include <KLocalizedString>
 
 FederationToolModel::FederationToolModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -16,7 +17,7 @@ QVariant FederationToolModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
-    const auto federationInfo = m_federations[index.row()];
+    const auto &federationInfo = m_federations[index.row()];
     switch (role) {
     case IdRole:
         return federationInfo.id();
@@ -75,35 +76,30 @@ void FederationToolModel::setLoading(bool loading)
     Q_EMIT loadingChanged();
 }
 
-QString FederationToolModel::moderation() const
+FederationToolModel::FederationAction FederationToolModel::federationAction() const
 {
-    return m_moderation;
+    return m_federationAction;
 }
 
-void FederationToolModel::setModeration(QString moderation)
+void FederationToolModel::setFederationAction(const FederationAction &federationAction)
 {
-    if (m_moderation == moderation) {
+    if (m_federationAction == federationAction) {
         return;
     }
-    m_moderation = moderation;
-    Q_EMIT moderationChanged();
+    m_federationAction = federationAction;
+    Q_EMIT federationActionChanged();
     clear();
-    if (moderation == "All") {
-        filltimeline(FederationAction::AllowedDomains);
-    } else {
-        filltimeline(FederationAction::BlockedDomains);
-    }
+    filltimeline(m_federationAction);
 }
 
-void FederationToolModel::removeDomainBlock(const int row)
+void FederationToolModel::removeDomainBlock(const int &row)
 {
     auto account = AccountManager::instance().selectedAccount();
-    auto federationInfo = m_federations[row];
+    const auto &federationInfo = m_federations[row];
     const auto federationId = federationInfo.id();
 
     account->deleteResource(account->apiUrl(QString("/api/v1/admin/domain_blocks/%1").arg(federationId)), true, this, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
-        qDebug() << "DELETED: " << doc;
         beginRemoveRows({}, row, row);
         m_federations.removeAt(row);
         endRemoveRows();
@@ -111,63 +107,107 @@ void FederationToolModel::removeDomainBlock(const int row)
     });
 }
 
-void FederationToolModel::updatePublicComment(const int row, const QString &publicComment)
+void FederationToolModel::removeAllowedDomain(const int &row)
 {
-    auto federationInfo = m_federations[row];
-    federationInfo.setPublicComment(publicComment);
-    Q_EMIT dataChanged(index(row, 0), index(row, 0));
-}
-
-void FederationToolModel::updateDomainBlock(const int row,
-                                            QString severity,
-                                            QString publicComment,
-                                            QString privateComment,
-                                            bool rejectMedia,
-                                            bool rejectReports,
-                                            bool obfuscateReport)
-{
-    QJsonObject obj{{"severity", severity},
-                    {"public_comment", publicComment},
-                    {"private_comment", privateComment},
-                    {"reject_reports", rejectReports},
-                    {"reject_media", rejectMedia},
-                    {"obfuscate", obfuscateReport}};
-
-    auto doc = QJsonDocument(obj);
-
     auto account = AccountManager::instance().selectedAccount();
-    auto federationInfo = m_federations[row];
+    const auto &federationInfo = m_federations[row];
     const auto federationId = federationInfo.id();
 
-    account->put(account->apiUrl(QString("/api/v1/admin/domain_blocks/%1").arg(federationId)), doc, true, this, nullptr);
-
-    // trying to change the data in the model here
-    federationInfo.setPublicComment(publicComment);
-
-    Q_EMIT dataChanged(index(row, 0), index(row, 0));
+    account->deleteResource(account->apiUrl(QString("/api/v1/admin/domain_allows/%1").arg(federationId)), true, this, [=](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
+        beginRemoveRows({}, row, row);
+        m_federations.removeAt(row);
+        endRemoveRows();
+        Q_EMIT dataChanged(index(row, 0), index(row, 0));
+    });
 }
 
-void FederationToolModel::newDomainBlock(QString domain,
-                                         QString severity,
-                                         QString publicComment,
-                                         QString privateComment,
-                                         bool rejectMedia,
-                                         bool rejectReports,
-                                         bool obfuscateReport)
+void FederationToolModel::updateDomainBlock(const int &row,
+                                            const QString &severity,
+                                            const QString &publicComment,
+                                            const QString &privateComment,
+                                            const bool &rejectMedia,
+                                            const bool &rejectReports,
+                                            const bool &obfuscateReport)
 {
-    QJsonObject obj{{"severity", severity},
-                    {"domain", domain},
-                    {"public_comment", publicComment},
-                    {"private_comment", privateComment},
-                    {"reject_reports", rejectReports},
-                    {"reject_media", rejectMedia},
-                    {"obfuscate", obfuscateReport}};
+    QJsonObject obj{
+        {"severity", severity},
+        {"public_comment", publicComment},
+        {"private_comment", privateComment},
+        {"reject_reports", rejectReports},
+        {"reject_media", rejectMedia},
+        {"obfuscate", obfuscateReport},
+    };
 
-    auto doc = QJsonDocument(obj);
+    const auto doc = QJsonDocument(obj);
 
-    auto account = AccountManager::instance().selectedAccount();
+    const auto account = AccountManager::instance().selectedAccount();
+    auto &federationInfo = m_federations[row];
+    const auto federationId = federationInfo.id();
 
-    QUrl url = account->apiUrl("/api/v1/admin/domain_blocks");
+    account->put(account->apiUrl(QString("/api/v1/admin/domain_blocks/%1").arg(federationId)), doc, true, this, [=, &federationInfo](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        const auto jsonObj = doc.object();
+
+        if (!jsonObj.value("error").isUndefined()) {
+            account->errorOccured(i18n("Error occured when making a PUT request to update the domain block."));
+        }
+        federationInfo.setPublicComment(publicComment);
+        federationInfo.setPrivateComment(privateComment);
+        federationInfo.setRejectMedia(rejectMedia);
+        federationInfo.setRejectReports(rejectReports);
+        federationInfo.setObfuscate(obfuscateReport);
+        federationInfo.setSeverity(severity);
+        Q_EMIT dataChanged(index(row, 0), index(row, 0));
+    });
+}
+
+void FederationToolModel::newDomainBlock(const QString &domain,
+                                         const QString &severity,
+                                         const QString &publicComment,
+                                         const QString &privateComment,
+                                         const bool &rejectMedia,
+                                         const bool &rejectReports,
+                                         const bool &obfuscateReport)
+{
+    QJsonObject obj{
+        {"severity", severity},
+        {"domain", domain},
+        {"public_comment", publicComment},
+        {"private_comment", privateComment},
+        {"reject_reports", rejectReports},
+        {"reject_media", rejectMedia},
+        {"obfuscate", obfuscateReport},
+    };
+
+    const auto doc = QJsonDocument(obj);
+
+    const auto account = AccountManager::instance().selectedAccount();
+
+    const QUrl url = account->apiUrl("/api/v1/admin/domain_blocks");
+
+    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+        auto doc = QJsonDocument::fromJson(reply->readAll());
+        auto jsonObj = doc.object();
+        auto newFederation = FederationInfo::fromSourceData(jsonObj);
+
+        beginInsertRows({}, m_federations.size(), m_federations.size());
+        m_federations += newFederation;
+        endInsertRows();
+    });
+}
+
+void FederationToolModel::newDomainAllow(const QString &domain)
+{
+    QJsonObject obj{
+        {"domain", domain},
+    };
+
+    const auto doc = QJsonDocument(obj);
+
+    const auto account = AccountManager::instance().selectedAccount();
+
+    const QUrl url = account->apiUrl("/api/v1/admin/domain_allows");
 
     account->post(url, doc, true, this, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -184,13 +224,14 @@ void FederationToolModel::clear()
 {
     beginResetModel();
     m_federations.clear();
+    m_next.clear();
     endResetModel();
     setLoading(false);
 }
 
 void FederationToolModel::filltimeline(FederationAction action)
 {
-    auto account = AccountManager::instance().selectedAccount();
+    const auto account = AccountManager::instance().selectedAccount();
 
     if (m_loading) {
         return;
