@@ -359,7 +359,7 @@ void AccountsToolModel::fetchSelectedAccountPosition()
 
     QUrl url = account->apiUrl(QString("/api/v1/admin/accounts/%1").arg(id));
 
-    account->get(url, true, this, [this, account](QNetworkReply *reply) {
+    account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         m_selectedAccountPosition = doc["role"]["position"].toInt();
     });
