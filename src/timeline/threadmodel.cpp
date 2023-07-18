@@ -77,13 +77,14 @@ void ThreadModel::fillTimeline(const QString &fromId)
             return;
         }
 
-        const auto ancestors = obj["ancestors"].toArray();
+        auto ancestors = obj["ancestors"].toArray().toVariantList();
+        std::reverse(ancestors.begin(), ancestors.end());
 
         for (const auto &ancestor : ancestors) {
-            if (!ancestor.isObject()) {
+            if (!ancestor.canConvert<QJsonObject>()) {
                 continue;
             }
-            thread->push_front(new Post(m_account, ancestor.toObject(), this));
+            thread->push_front(new Post(m_account, ancestor.toJsonObject(), this));
         }
 
         const auto descendents = obj["descendants"].toArray();
