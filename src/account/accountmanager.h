@@ -48,6 +48,7 @@ public:
     static AccountManager &instance();
 
     void loadFromSettings();
+    void migrateSettings();
 
     bool isReady() const;
     bool hasAccounts() const;
