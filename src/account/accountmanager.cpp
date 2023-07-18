@@ -317,7 +317,7 @@ bool AccountManager::isReady() const
 
 void migrateSettings(QSettings &settings)
 {
-    const auto version = settings.value("settingsVersion").toInt();
+    const auto version = settings.value("settingsVersion", -1).toInt();
     if (version == 0) {
         qCDebug(TOKODON_LOG) << "Migrating v0 settings to v1";
         settings.beginGroup("accounts");
