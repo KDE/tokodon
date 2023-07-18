@@ -539,15 +539,15 @@ bool AbstractAccount::isRegistered() const
 
 QString AbstractAccount::settingsGroupName() const
 {
-    return m_name + QLatin1Char('@') + QUrl(m_instance_uri).host();
+    return AccountManager::settingsGroupName(m_name, m_instance_uri);
 }
 
 QString AbstractAccount::clientSecretKey() const
 {
-    return QStringLiteral("%1-client-secret").arg(settingsGroupName());
+    return AccountManager::clientSecretKey(settingsGroupName());
 }
 
 QString AbstractAccount::accessTokenKey() const
 {
-    return QStringLiteral("%1-access-token").arg(settingsGroupName());
+    return AccountManager::accessTokenKey(settingsGroupName());
 }

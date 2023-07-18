@@ -312,6 +312,29 @@ bool AccountManager::isReady() const
     return m_ready;
 }
 
+QString AccountManager::settingsGroupName(const QString &name, const QString &instanceUri)
+{
+    return name + QLatin1Char('@') + QUrl(instanceUri).host();
+}
+
+QString AccountManager::clientSecretKey(const QString &name)
+{
+#ifdef TOKODON_FLATPAK
+    return QStringLiteral("%1-flatpak-client-secret").arg(name);
+#else
+    return QStringLiteral("%1-client-secret").arg(name);
+#endif
+}
+
+QString AccountManager::accessTokenKey(const QString &name)
+{
+#ifdef TOKODON_FLATPAK
+    return QStringLiteral("%1-flatpak-  client-secret").arg(name);
+#else
+    return QStringLiteral("%1-access-token").arg(name);
+#endif
+}
+
 void AccountManager::migrateSettings()
 {
     QSettings settings;
@@ -372,12 +395,12 @@ void AccountManager::migrateSettings()
             config.save();
 
             auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon"};
-            accessTokenJob->setKey(QStringLiteral("%1-access-token").arg(settingsGroupName));
+            accessTokenJob->setKey(AccountManager::accessTokenKey(settingsGroupName));
             accessTokenJob->setTextData(settings.value("token").toString());
             accessTokenJob->start();
 
             auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon"};
-            clientSecretJob->setKey(QStringLiteral("%1-client-secret").arg(settingsGroupName));
+            clientSecretJob->setKey(AccountManager::clientSecretKey(settingsGroupName));
             clientSecretJob->setTextData(settings.value("client_secret").toString());
             clientSecretJob->start();
 
