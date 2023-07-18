@@ -137,6 +137,10 @@ if (SAILFISHOS)
     target_compile_definitions(tokodon_static PUBLIC -DSAILFISHOS)
 endif()
 
+if(TOKODON_FLATPAK)
+    target_compile_definitions(tokodon_static PUBLIC TOKODON_FLATPAK)
+endif()
+
 if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
