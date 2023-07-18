@@ -13,17 +13,17 @@ public:
     QString domain() const;
     QDateTime createdAt() const;
     QString severity() const;
-    void setSeverity(QString severity);
+    void setSeverity(const QString &severity);
     bool rejectMedia() const;
-    void setRejectMedia(bool rejectMedia);
+    void setRejectMedia(const bool &rejectMedia);
     bool rejectReports() const;
-    void setRejectReports(bool rejectReports);
+    void setRejectReports(const bool &rejectReports);
     QString privateComment() const;
-    void setPrivateComment(QString privateComment);
+    void setPrivateComment(const QString &privateComment);
     QString publicComment() const;
-    void setPublicComment(QString publicComment);
+    void setPublicComment(const QString &publicComment);
     bool obfuscate() const;
-    void setObfuscate(bool obfuscate);
+    void setObfuscate(const bool &obfuscate);
 
     static FederationInfo fromSourceData(const QJsonObject &doc);
 

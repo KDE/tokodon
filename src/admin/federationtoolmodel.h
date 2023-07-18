@@ -12,7 +12,7 @@ class FederationToolModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
-    Q_PROPERTY(QString moderation READ moderation WRITE setModeration NOTIFY moderationChanged)
+    Q_PROPERTY(FederationAction federationAction READ federationAction WRITE setFederationAction NOTIFY federationActionChanged)
 
 public:
     enum CustomRoles {
@@ -32,6 +32,8 @@ public:
         BlockedDomains,
     };
 
+    Q_ENUM(FederationAction)
+
     explicit FederationToolModel(QObject *parent = nullptr);
 
     void clear();
@@ -42,34 +44,36 @@ public:
 
     bool loading() const;
     void setLoading(bool loading);
-    QString moderation() const;
-    void setModeration(QString moderation);
+    FederationToolModel::FederationAction federationAction() const;
+    void setFederationAction(const FederationToolModel::FederationAction &federationAction);
 
-    Q_INVOKABLE void removeDomainBlock(const int row);
-    // using Q_INVOKABLE instead of setData()
-    Q_INVOKABLE void updatePublicComment(const int row, const QString &publicComment);
-    Q_INVOKABLE void updateDomainBlock(const int row,
-                                       QString severity,
-                                       QString publicComment,
-                                       QString privateComment,
-                                       bool rejectMedia,
-                                       bool rejectReports,
-                                       bool obfuscateReport);
-    Q_INVOKABLE void
-    newDomainBlock(QString domain, QString severity, QString publicComment, QString privateComment, bool rejectMedia, bool rejectReports, bool obfuscateReport);
+    Q_INVOKABLE void removeDomainBlock(const int &row);
+    Q_INVOKABLE void removeAllowedDomain(const int &row);
+    Q_INVOKABLE void updateDomainBlock(const int &row,
+                                       const QString &severity,
+                                       const QString &publicComment,
+                                       const QString &privateComment,
+                                       const bool &rejectMedia,
+                                       const bool &rejectReports,
+                                       const bool &obfuscateReport);
+    Q_INVOKABLE void newDomainBlock(const QString &domain,
+                                    const QString &severity,
+                                    const QString &publicComment,
+                                    const QString &privateComment,
+                                    const bool &rejectMedia,
+                                    const bool &rejectReports,
+                                    const bool &obfuscateReport);
+    Q_INVOKABLE void newDomainAllow(const QString &domain);
 
 Q_SIGNALS:
     void loadingChanged();
-    void moderationChanged();
+    void federationActionChanged();
 
-protected:
 private:
     void filltimeline(FederationAction action = FederationAction::BlockedDomains);
 
     QList<FederationInfo> m_federations;
     bool m_loading = false;
-    QString m_moderation = "Limited";
+    FederationToolModel::FederationAction m_federationAction = FederationAction::BlockedDomains;
     QUrl m_next;
-
-public:
 };

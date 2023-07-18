@@ -7,27 +7,65 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.labs.components 1.0 as Components
 
 Kirigami.ScrollablePage {
+    id: root
     title: i18n("Federation Tool Page")
+
+    property bool isDomainBlock
+
+    Kirigami.PromptDialog {
+        id: allowedDomainInfo
+
+        property int index
+        property string domainName
+        property date createdAt
+        title: i18n("Allowed Domain Info")
+
+        implicitWidth: Kirigami.Units.gridUnit * 20
+
+        contentItem: ColumnLayout {
+            MobileForm.FormTextDelegate {
+                text: i18nc("@info:The domain that is allowed to federate", "Domain")
+                description: allowedDomainInfo.domainName
+                Layout.fillWidth: true
+            }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextDelegate {
+                text: i18nc("@info:Time when the domain was allowed to federate.", "Created at")
+                description: allowedDomainInfo.createdAt.toDateString()
+                Layout.fillWidth: true
+            }
+        }
+
+        standardButtons: Kirigami.Dialog.NoButton
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Disallow Federation with Domain")
+                icon.name: "edit-delete-remove"
+                onTriggered: {
+                    federationView.model.removeAllowedDomain(root.index)
+                    showPassiveNotification(i18n("Disallowed federation with the domain"))
+                    allowedDomainInfo.close()
+                }
+            }
+        ]
+    }
 
     Kirigami.PromptDialog {
         id: newDomainBlockDialog
-        implicitWidth: Kirigami.Units.gridUnit * 20
+        title: i18n("Add Domain Block")
 
-        contentItem: Kirigami.ScrollablePage {
-            padding: 0
-
-            ColumnLayout {
-
+        mainItem: Kirigami.FormLayout {
                 MobileForm.FormTextFieldDelegate {
                     id: domain
-                    label: i18nc("@info:Enter the domain address of the domain block", "Domain*")
+                    label: i18nc("@info:Enter the domain address of the domain block", "Domain*")              
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: publicComment
-                    label: i18n("Public Comment")
+                    label: i18n("Public comment")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
@@ -59,23 +97,23 @@ Kirigami.ScrollablePage {
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectMedia
-                    text: i18n("Reject Media Files")
+                    text: i18n("Reject media files")
                     description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
                     id: rejectReports
-                    text: i18n("Reject Reports")
+                    text: i18n("Reject reports")
                     description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormCheckDelegate {
-                    id: obfuscateReports
-                    text: i18n("Obfuscate Domain Name")
+                    id: obfuscateReport
+                    text: i18n("Obfuscate domain name")
                     description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
                 }
             }
-        }
+
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
@@ -87,9 +125,37 @@ Kirigami.ScrollablePage {
                 text: i18nc("@info:Button to create a domain block", "Create Block")
                 icon.name: "checkbox"
                 onTriggered: {
-                    federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
+                    federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateR.checked)
+                    showPassiveNotification(i18n("New domain block added"))
                     newDomainBlockDialog.close();
-                    showPassiveNotification(i18n("New Domain Block Added"))
+                }
+            }
+        ]
+    }
+
+    Kirigami.PromptDialog {
+        id: newDomainAllowDialog
+        title: i18n("Add Domain Block")
+
+        mainItem: MobileForm.FormTextFieldDelegate {
+                    id: newAllowedDomain
+                    label: i18nc("@info:This domain will be able to fetch data from this server and incoming data from it will be processed and stored", "Domain*")
+                }
+
+        standardButtons: Kirigami.Dialog.NoButton
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@info:Cancel button to close the dailog", "Cancel")
+                icon.name: "dialog-cancel"
+                onTriggered: newDomainAllowDialog.close();
+            },
+            Kirigami.Action {
+                text: i18nc("@info:Button to create a domain block", "Create Block")
+                icon.name: "checkbox"
+                onTriggered: {
+                    federationView.model.newDomainAllow(newAllowedDomain.text)
+                    showPassiveNotification(i18n("New Allowed Domain Added"))
+                    newDomainAllowDialog.close();
                 }
             }
         ]
@@ -98,6 +164,13 @@ Kirigami.ScrollablePage {
     header: ColumnLayout {
         Layout.topMargin: Kirigami.Units.largeSpacing * 6
         Layout.bottomMargin: Kirigami.Units.largeSpacing * 6
+
+        Components.Banner {
+            topPadding: Kirigami.Units.largeSpacing
+            title: i18n("Allowed domain option is available for instances with limited federation mode enabled")
+            Layout.fillWidth: true
+            visible: true
+        }
         
         Kirigami.Heading {
             level: 4
@@ -116,18 +189,20 @@ Kirigami.ScrollablePage {
             implicitWidth: parent.width/4
             model: [
                 {
-                    display: i18nc("@info:Filter out all the blocked domains", "Limited"),
-                    value: "Limited"
+                    display: i18nc("@info:Filter out all the blocked domains", "Blocked domains"),
+                    value: FederationToolModel.BlockedDomains
                 },
                 {
-                    display: i18nc("@info:Filter out all the allowed domains", "All"),
-                    value: "All"
+                    display: i18nc("@info:Filter out all the allowed domains in limited federation mode", "Allowed domains"),
+                    value: FederationToolModel.AllowedDomains
                 },
             ]
             textRole: "display"
             valueRole: "value"
-            Component.onCompleted: moderationCombobox.currentIndex = moderationCombobox.indexOfValue(federationView.model.moderation);
-            onCurrentIndexChanged: federationView.model.moderation = model[currentIndex].value
+            Component.onCompleted: moderationCombobox.currentIndex = moderationCombobox.indexOfValue(federationView.model.federationAction);
+            onCurrentIndexChanged: { federationView.model.federationAction = model[currentIndex].value
+            isDomainBlock = model[currentIndex].value === FederationToolModel.BlockedDomains
+            }
         }
         Kirigami.Separator {
             Layout.topMargin: Kirigami.Units.largeSpacing
@@ -141,33 +216,42 @@ Kirigami.ScrollablePage {
 
         delegate: QQC2.ItemDelegate {
             id: delegate
-            required property var index
-            required property var id
-            required property var domain
-            required property var createdAt
+            required property int index
+            required property int id
+            required property string domain
+            required property date createdAt
             required property var severity
-            required property var rejectMedia
-            required property var rejectReports
-            required property var publicComment
-            required property var privateComment
-            required property var obfuscate
+            required property bool rejectMedia
+            required property bool rejectReports
+            required property string publicComment
+            required property string privateComment
+            required property bool obfuscate
 
             width: ListView.view.width
 
-            onClicked: applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml",
-                            {
-                                index: delegate.index,
-                                model: federationView.model,
-                                id: delegate.id,
-                                domain: delegate.domain,
-                                createdAt: delegate.createdAt,
-                                severity: delegate.severity,
-                                rejectMedia: delegate.rejectMedia,
-                                rejectReports: delegate.rejectReports,
-                                privateComment: delegate.privateComment,
-                                publicComment: delegate.publicComment,
-                                obfuscate: delegate.obfuscate,
-                            },)
+            onClicked: if (root.isDomainBlock) {
+                           applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml",
+                                {
+                                    index: delegate.index,
+                                    model: federationView.model,
+                                    id: delegate.id,
+                                    domain: delegate.domain,
+                                    createdAt: delegate.createdAt,
+                                    severity: delegate.severity,
+                                    rejectMedia: delegate.rejectMedia,
+                                    rejectReports: delegate.rejectReports,
+                                    obfuscate: delegate.obfuscate,
+                                    privateComment: delegate.privateComment,
+                                    publicComment: delegate.publicComment,
+                                },)
+                       } else {
+                           allowedDomainInfo.index = delegate.index
+                           allowedDomainInfo.domainName = delegate.domain
+                           allowedDomainInfo.createdAt = delegate.createdAt
+                           allowedDomainInfo.open()
+                       }
+
+
 
             contentItem: Kirigami.FlexColumn {
                 spacing: 0
@@ -189,7 +273,7 @@ Kirigami.ScrollablePage {
                             Layout.fillWidth: true
                             elide: Text.ElideRight
                             color: Kirigami.Theme.disabledTextColor
-                            text: delegate.severity
+                            text: root.isDomainBlock ? delegate.severity : i18n("Allowed for federation")
                             verticalAlignment: Text.AlignTop
                         }
                     }
@@ -216,14 +300,13 @@ Kirigami.ScrollablePage {
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No Federations Found")
+            text: i18n("No federations found")
             visible: federationView.count === 0 && !federationView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 
     footer: QQC2.ToolBar {
-        
         contentItem: RowLayout {
             Item {
                 Layout.fillWidth: true
@@ -231,10 +314,19 @@ Kirigami.ScrollablePage {
             QQC2.Button {
                 text: i18n("Add New Domain Block")
                 icon.name: 'list-add'
-                visible: true
+                visible: isDomainBlock
                 Layout.margins: Kirigami.Units.smallSpacing
                 onClicked: {
                     newDomainBlockDialog.open()
+                }
+            }
+            QQC2.Button {
+                text: i18n("Allow Federation with Domain")
+                icon.name: 'list-add'
+                visible: !isDomainBlock
+                Layout.margins: Kirigami.Units.smallSpacing
+                onClicked: {
+                    newDomainAllowDialog.open()
                 }
             }
         }

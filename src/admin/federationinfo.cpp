@@ -26,8 +26,11 @@ QString FederationInfo::severity() const
     return m_severity;
 }
 
-void FederationInfo::setSeverity(QString severity)
+void FederationInfo::setSeverity(const QString &severity)
 {
+    if (m_severity == severity) {
+        return;
+    }
     m_severity = severity;
 }
 
@@ -36,8 +39,11 @@ bool FederationInfo::rejectMedia() const
     return m_rejectMedia;
 }
 
-void FederationInfo::setRejectMedia(bool rejectMedia)
+void FederationInfo::setRejectMedia(const bool &rejectMedia)
 {
+    if (m_rejectMedia == rejectMedia) {
+        return;
+    }
     m_rejectMedia = rejectMedia;
 }
 
@@ -46,8 +52,11 @@ bool FederationInfo::rejectReports() const
     return m_rejectReports;
 }
 
-void FederationInfo::setRejectReports(bool rejectReports)
+void FederationInfo::setRejectReports(const bool &rejectReports)
 {
+    if (m_rejectReports == rejectReports) {
+        return;
+    }
     m_rejectReports = rejectReports;
 }
 
@@ -56,8 +65,11 @@ QString FederationInfo::privateComment() const
     return m_privateComment;
 }
 
-void FederationInfo::setPrivateComment(QString privateComment)
+void FederationInfo::setPrivateComment(const QString &privateComment)
 {
+    if (m_privateComment == privateComment) {
+        return;
+    }
     m_privateComment = privateComment;
 }
 
@@ -66,8 +78,11 @@ QString FederationInfo::publicComment() const
     return m_publicComment;
 }
 
-void FederationInfo::setPublicComment(QString publicComment)
+void FederationInfo::setPublicComment(const QString &publicComment)
 {
+    if (m_publicComment == publicComment) {
+        return;
+    }
     m_publicComment = publicComment;
 }
 
@@ -76,8 +91,11 @@ bool FederationInfo::obfuscate() const
     return m_obfuscate;
 }
 
-void FederationInfo::setObfuscate(bool obfuscate)
+void FederationInfo::setObfuscate(const bool &obfuscate)
 {
+    if (m_obfuscate == obfuscate) {
+        return;
+    }
     m_obfuscate = obfuscate;
 }
 
