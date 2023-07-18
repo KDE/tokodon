@@ -277,7 +277,7 @@ void Account::validateToken()
             Q_EMIT identityChanged();
             Q_EMIT authenticated(true);
         },
-        [=](QNetworkReply *reply) {
+        [=](QNetworkReply *) {
             Q_EMIT authenticated(false);
         });
 
