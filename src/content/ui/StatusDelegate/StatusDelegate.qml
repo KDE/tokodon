@@ -97,6 +97,15 @@ QQC2.ItemDelegate {
 
     background: Rectangle {
         color: Kirigami.Theme.backgroundColor
+
+        Kirigami.Separator {
+            visible: root.showSeparator && !root.selected
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+            }
+        }
     }
 
     contentItem: Kirigami.FlexColumn {
@@ -392,8 +401,9 @@ QQC2.ItemDelegate {
                 secondary: root.secondary
                 inViewPort: root.inViewPort
             }
-
             active: postContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
+            visible: active
+
             Layout.fillWidth: true
         }
 
@@ -403,6 +413,8 @@ QQC2.ItemDelegate {
             }
 
             active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+
+            visible: active
             Layout.fillWidth: true
             Layout.topMargin: active ? Kirigami.Units.largeSpacing : 0
         }
@@ -413,6 +425,7 @@ QQC2.ItemDelegate {
                 poll: root.poll
             }
 
+            visible: active
             active: root.poll !== undefined && !root.filtered
             Layout.fillWidth: true
         }
@@ -578,11 +591,6 @@ QQC2.ItemDelegate {
                     cursorShape: Qt.PointingHandCursor
                 }
             }
-        }
-
-        Kirigami.Separator {
-            visible: root.showSeparator && !root.selected
-            Layout.fillWidth: true
         }
 
         QQC2.ProgressBar {

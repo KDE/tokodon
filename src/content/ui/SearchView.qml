@@ -6,7 +6,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.listitems 1.0 as ListItems
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.kmasto 1.0
 import './StatusDelegate'
 
@@ -59,7 +59,7 @@ ListView {
         DelegateChoice {
             roleValue: SearchModel.Account
 
-            ListItems.RoundedItemDelegate {
+            Delegates.RoundedItemDelegate {
                 id: accountDelegate
 
                 required property var authorIdentity
@@ -130,7 +130,7 @@ ListView {
         DelegateChoice {
             roleValue: SearchModel.Hashtag
 
-            ListItems.RoundedItemDelegate {
+            Delegates.RoundedItemDelegate {
                 id: delegate
 
                 required property string id
