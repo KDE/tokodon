@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-10 00:47+0000\n"
-"PO-Revision-Date: 2023-07-03 11:39\n"
+"POT-Creation-Date: 2023-07-19 00:50+0000\n"
+"PO-Revision-Date: 2023-07-18 11:12\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -63,7 +63,7 @@ msgid "Could not edit note about an account"
 msgstr "无法编辑账户的备注"
 
 #: account/notificationhandler.cpp:24
-#: content/ui/StatusDelegate/StatusDelegate.qml:159
+#: content/ui/StatusDelegate/StatusDelegate.qml:168
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
@@ -74,13 +74,13 @@ msgid "%1 followed you"
 msgstr "%1 关注了你"
 
 #: account/notificationhandler.cpp:32
-#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 转嘟了你的嘟文"
 
 #: account/notificationhandler.cpp:40
-#: content/ui/StatusDelegate/StatusDelegate.qml:161
+#: content/ui/StatusDelegate/StatusDelegate.qml:170
 #, kde-format
 msgid "%1 edited a post"
 msgstr ""
@@ -119,25 +119,22 @@ msgid "Following"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:36
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Muted Accounts"
-msgstr "账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Accounts"
-msgstr "添加账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Accounts"
-msgstr "添加账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:48
 #, kde-format
@@ -150,28 +147,24 @@ msgid "No followers"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgid "No followed accounts"
-msgstr "无法关注账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "No muted accounts"
-msgstr "无法静音账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Could not block account"
+#, kde-format
 msgid "No blocked accounts"
-msgstr "无法屏蔽账户"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "No featured accounts"
-msgstr "无法静音账户"
+msgstr ""
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -341,7 +334,7 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:234
 #, kde-format
 msgid "Follow Requests"
 msgstr "关注请求"
@@ -357,10 +350,9 @@ msgid "Blocked Accounts"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:272
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Featured Accounts"
-msgstr "添加账户"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:278
 #, kde-format
@@ -495,7 +487,7 @@ msgstr ""
 msgid "No Conversations"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
+#: content/ui/ExplorePage.qml:15 content/ui/main.qml:327
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -566,42 +558,42 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "代理设置"
 
-#: content/ui/main.qml:202
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Home"
 msgstr "主页"
 
-#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:221 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/main.qml:247
+#: content/ui/main.qml:250
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/main.qml:262
+#: content/ui/main.qml:265
 #, kde-format
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/main.qml:278
+#: content/ui/main.qml:281
 #, kde-format
 msgid "Conversation"
 msgstr ""
 
-#: content/ui/main.qml:292
+#: content/ui/main.qml:295
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/main.qml:308
+#: content/ui/main.qml:311
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/main.qml:338
+#: content/ui/main.qml:341
 #, kde-format
 msgid "Search"
 msgstr "搜索"
@@ -1085,20 +1077,26 @@ msgctxt "@title"
 msgid "Search"
 msgstr "搜索"
 
-#: content/ui/SearchView.qml:33
+#: content/ui/SearchView.qml:34
 #, kde-format
 msgid "Loading..."
 msgstr ""
 
-#: content/ui/SearchView.qml:41
+#: content/ui/SearchView.qml:42
 #, kde-format
 msgid "No search results"
 msgstr ""
 
-#: content/ui/SearchView.qml:49
+#: content/ui/SearchView.qml:50
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr ""
+
+#: content/ui/SearchView.qml:139
+#, fuzzy, kde-format
+#| msgid "Hashtags"
+msgid "Hashtag"
+msgstr "话题标签"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1439,6 +1437,19 @@ msgstr "删除单词"
 msgid "Sharing failed"
 msgstr ""
 
+#: content/ui/SocialGraphPage.qml:58
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@action:button Allow follow request"
+msgid "Allow"
+msgstr "关注"
+
+#: content/ui/SocialGraphPage.qml:65
+#, kde-format
+msgctxt "@action:button Deny follow request"
+msgid "Deny"
+msgstr ""
+
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -1545,26 +1556,26 @@ msgid "Add Poll"
 msgstr "添加投票"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
-#: content/ui/StatusDelegate/StatusDelegate.qml:304
+#: content/ui/StatusDelegate/StatusDelegate.qml:305
+#: content/ui/StatusDelegate/StatusDelegate.qml:313
 #, kde-format
 msgid "Public"
 msgstr "公开"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
-#: content/ui/StatusDelegate/StatusDelegate.qml:298
+#: content/ui/StatusDelegate/StatusDelegate.qml:307
 #, kde-format
 msgid "Unlisted"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
-#: content/ui/StatusDelegate/StatusDelegate.qml:300
+#: content/ui/StatusDelegate/StatusDelegate.qml:309
 #, kde-format
 msgid "Private"
 msgstr "私有"
 
 #: content/ui/StatusComposer/StatusComposer.qml:264
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:311
 #, kde-format
 msgid "Direct Message"
 msgstr ""
@@ -1623,9 +1634,9 @@ msgstr ""
 msgid "Media Hidden"
 msgstr ""
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:29
-#: content/ui/StatusDelegate/StatusDelegate.qml:150
-#: content/ui/StatusDelegate/StatusDelegate.qml:250
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
+#: content/ui/StatusDelegate/StatusDelegate.qml:159
+#: content/ui/StatusDelegate/StatusDelegate.qml:259
 #, kde-format
 msgid "View profile"
 msgstr ""
@@ -1646,7 +1657,7 @@ msgid "Copy Link to This Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:487
+#: content/ui/StatusDelegate/StatusDelegate.qml:513
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
@@ -1687,125 +1698,125 @@ msgstr ""
 msgid "Vote"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:113
+#: content/ui/StatusDelegate/StatusDelegate.qml:122
 #, kde-format
 msgid "Filtered: %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:117
+#: content/ui/StatusDelegate/StatusDelegate.qml:126
 #, kde-format
 msgid "Show anyway"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:164
+#: content/ui/StatusDelegate/StatusDelegate.qml:173
 #, kde-format
 msgid "Your poll has ended"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:166
+#: content/ui/StatusDelegate/StatusDelegate.qml:175
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:191
+#: content/ui/StatusDelegate/StatusDelegate.qml:200
 #, kde-format
 msgid "Pinned entry"
 msgstr "固定的条目"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 转嘟了"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:260
+#: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "In reply to %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:260
+#: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "%1 replied to your post"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:324
+#: content/ui/StatusDelegate/StatusDelegate.qml:333
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:362
+#: content/ui/StatusDelegate/StatusDelegate.qml:371
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:368
+#: content/ui/StatusDelegate/StatusDelegate.qml:377
 #, kde-format
 msgid "Show Less"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:368
+#: content/ui/StatusDelegate/StatusDelegate.qml:377
 #, kde-format
 msgid "Show More"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:441
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "回复"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:459
+#: content/ui/StatusDelegate/StatusDelegate.qml:475
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "转嘟"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:474
+#: content/ui/StatusDelegate/StatusDelegate.qml:495
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:487
+#: content/ui/StatusDelegate/StatusDelegate.qml:513
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:508
+#: content/ui/StatusDelegate/StatusDelegate.qml:530
 #, kde-format
 msgid "via %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:540
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, kde-format
 msgid "%1 Reply"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:540
-#: content/ui/StatusDelegate/StatusDelegate.qml:541
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
+#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #, kde-format
 msgid "%1 Replies"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:552
-#: content/ui/StatusDelegate/StatusDelegate.qml:553
+#: content/ui/StatusDelegate/StatusDelegate.qml:574
+#: content/ui/StatusDelegate/StatusDelegate.qml:575
 #, kde-format
 msgid "%1 Favorites"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:553
+#: content/ui/StatusDelegate/StatusDelegate.qml:575
 #, kde-format
 msgid "%1 Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
+#: content/ui/StatusDelegate/StatusDelegate.qml:586
 #, kde-format
 msgid "%1 Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#: content/ui/StatusDelegate/StatusDelegate.qml:565
+#: content/ui/StatusDelegate/StatusDelegate.qml:586
+#: content/ui/StatusDelegate/StatusDelegate.qml:587
 #, kde-format
 msgid "%1 Boosts"
 msgstr ""
