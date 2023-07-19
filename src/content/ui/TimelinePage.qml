@@ -3,6 +3,7 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigamiaddons.labs.components 1.0 as KirigamiComponents
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
@@ -30,6 +31,20 @@ Kirigami.ScrollablePage {
         text: root.title
 
         textFormat: TextEdit.RichText
+    }
+
+    header: KirigamiComponents.Banner {
+        id: message
+        type: Kirigami.MessageType.Error
+        width: parent.width
+
+        showCloseButton: true
+
+        actions: Kirigami.Action {
+            text: i18n("Settings")
+            icon.name: "settings-configure"
+            onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+        }
     }
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
@@ -169,27 +184,6 @@ Kirigami.ScrollablePage {
             text: i18n("No posts")
             visible: !listview.model.loading && listview.count === 0
             width: parent.width - Kirigami.Units.gridUnit * 4
-        }
-
-        Kirigami.InlineMessage {
-            id: message
-            type: Kirigami.MessageType.Error
-            anchors {
-                top: parent.top
-                topMargin: Kirigami.Units.largeSpacing
-                left: parent.left
-                leftMargin: Kirigami.Units.largeSpacing
-                right: parent.right
-                rightMargin: Kirigami.Units.largeSpacing
-            }
-
-            showCloseButton: true
-
-            actions: Kirigami.Action {
-                text: i18n("Settings")
-                icon.name: "settings-configure"
-                onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
-            }
         }
     }
 }
