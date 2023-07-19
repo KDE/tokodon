@@ -6,6 +6,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.labs.components 1.0 as KirigamiComponents
 import org.kde.kmasto 1.0
 import '..'
 
@@ -58,7 +59,7 @@ MastoPage {
             if (error.length === 0) {
                 applicationWindow().pageStack.layers.pop();
             } else {
-                inlineMessage.text = error
+                banner.text = error
                 console.log(error);
             }
         }
@@ -78,16 +79,18 @@ MastoPage {
         }
     }
 
+    header: KirigamiComponents.Banner {
+        id: banner
+        Layout.fillWidth: true
+        width: parent.width
+        visible: text.length !== 0
+        type: Kirigami.MessageType.Error
+    }
+
     Kirigami.FlexColumn {
         maximumWidth: Kirigami.Units.gridUnit * 30
         padding: 0
 
-        Kirigami.InlineMessage {
-            id: inlineMessage
-            Layout.fillWidth: true
-            visible: text.length !== 0
-            type: Kirigami.MessageType.Error
-        }
 
         QQC2.TextField {
             placeholderText: i18n("Content Warning")
