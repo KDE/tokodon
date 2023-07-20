@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import QtQml.Models 2.15
 import "./StatusDelegate"
 import "./StatusComposer"
@@ -116,77 +117,44 @@ Kirigami.ScrollablePage {
 
         Component {
             id: trendingTagsModelComponent
-            QQC2.ItemDelegate {
+            Delegates.RoundedItemDelegate {
                 id: delegate
 
                 required property int index
                 required property var tag
+
                 width: ListView.view.width
 
-                contentItem: Kirigami.FlexColumn
-                    {
-                    spacing: 0
-
-                    maximumWidth: Kirigami.Units.gridUnit * 40
-
-                    RowLayout {
-                        Layout.fillWidth: true
-                        Layout.topMargin: Kirigami.Units.smallSpacing
-                        Layout.bottomMargin: Kirigami.Units.smallSpacing
-
-                        spacing: 0
-                        clip: true
-                        ColumnLayout {
-                            Kirigami.Heading {
-                                level: 4
-                                text: `#${tag.name}`
-                                type: Kirigami.Heading.Type.Primary
-                                verticalAlignment: Text.AlignTop
-                                elide: Text.ElideRight
-                                textFormat: Text.RichText
-                                Layout.fillWidth: true
-                            }
-
-                            QQC2.Label {
-                                font.pixelSize: Config.defaultFont.pixelSize + 1
-                                Layout.fillWidth: true
-                                elide: Text.ElideRight
-                                color: Kirigami.Theme.disabledTextColor
-                                text: i18n("%1 people are talking", tag.history[0].accounts)
-                                verticalAlignment: Text.AlignTop
-                            }
-
-                            MouseArea {
-                                onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
-                                anchors.fill: parent
-                                HoverHandler {
-                                    cursorShape: Qt.PointingHandCursor
-                                }
-                            }
-                        }
-                    }
-
-                    Kirigami.Separator {
-                        visible: index !== tagsView.count - 1
+                contentItem: ColumnLayout {
+                    Kirigami.Heading {
+                        level: 4
+                        text: `#${tag.name}`
+                        type: Kirigami.Heading.Type.Primary
+                        verticalAlignment: Text.AlignTop
+                        elide: Text.ElideRight
+                        textFormat: Text.RichText
                         Layout.fillWidth: true
                     }
 
-                    QQC2.ProgressBar {
-                        visible: tagsView.model.loading && (index === tagsView.count - 1)
-                        indeterminate: true
-                        padding: Kirigami.Units.largeSpacing * 2
-                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                        Layout.topMargin: Kirigami.Units.largeSpacing
-                        Layout.bottomMargin: Kirigami.Units.largeSpacing
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
+                    QQC2.Label {
+                        font.pixelSize: Config.defaultFont.pixelSize + 1
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
+                        color: Kirigami.Theme.disabledTextColor
+                        text: i18n("%1 people are talking", tag.history[0].accounts)
+                        verticalAlignment: Text.AlignTop
                     }
+                }
 
+                MouseArea {
+                    onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
                 }
             }
         }
-        delegate: showPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
 
+        delegate: showPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
 
         QQC2.ProgressBar {
             visible: tagsView.model.loading && tagsView.count === 0
@@ -200,7 +168,5 @@ Kirigami.ScrollablePage {
             visible: tagsView.count === 0 && !tagsView.model.loading
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
-
     }
-
 }
