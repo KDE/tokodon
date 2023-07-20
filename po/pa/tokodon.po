@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-10 00:47+0000\n"
+"POT-Creation-Date: 2023-07-20 02:45+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -331,12 +331,12 @@ msgstr "ਪਰੋਫ਼ਾਈਲ ਸੋਧੋ"
 msgid "Account editor"
 msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:189
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:191
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
 #: content/ui/UserInfo.qml:233
 #, kde-format
 msgid "Configure"
@@ -505,7 +505,7 @@ msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:46 search/searchmodel.cpp:141
+#: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "ਪੋਸਟ"
@@ -532,7 +532,7 @@ msgstr "ਸਭ ਭਾਸ਼ਾਵਾਂ"
 msgid "Login"
 msgstr "ਲਾਗਇਨ"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:68
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:83
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1118,20 +1118,26 @@ msgctxt "@title"
 msgid "Search"
 msgstr "ਖੋਜੋ"
 
-#: content/ui/SearchView.qml:33
+#: content/ui/SearchView.qml:34
 #, kde-format
 msgid "Loading..."
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: content/ui/SearchView.qml:41
+#: content/ui/SearchView.qml:42
 #, kde-format
 msgid "No search results"
 msgstr "ਕੋਈ ਖੋਜ ਨਤੀਜੇ ਨਹੀਂ"
 
-#: content/ui/SearchView.qml:49
+#: content/ui/SearchView.qml:50
 #, kde-format
 msgid "Search for peoples, tags and posts"
 msgstr ""
+
+#: content/ui/SearchView.qml:139
+#, fuzzy, kde-format
+#| msgid "Hashtags"
+msgid "Hashtag"
+msgstr "ਹੈਸ਼-ਟੈਗ"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1277,7 +1283,7 @@ msgid "Profile Editor"
 msgstr "ਪਰੋਫਾਈਲ ਐਡੀਟਰ"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:208
+#: content/ui/StatusComposer/StatusComposer.qml:211
 #, kde-format
 msgid "Please choose a file"
 msgstr "ਫਾਇਲ ਚੁਣੋ ਜੀ"
@@ -1475,6 +1481,19 @@ msgstr "ਸ਼ਬਦ ਹਟਾਓ"
 msgid "Sharing failed"
 msgstr ""
 
+#: content/ui/SocialGraphPage.qml:58
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@action:button Allow follow request"
+msgid "Allow"
+msgstr "ਫ਼ਾਲੋ ਕਰੋ"
+
+#: content/ui/SocialGraphPage.qml:65
+#, kde-format
+msgctxt "@action:button Deny follow request"
+msgid "Deny"
+msgstr ""
+
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -1539,102 +1558,102 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Edit this post"
 msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Reply to this post"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:49
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Rewrite this post"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:51
+#: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Write a new post"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:93
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:96
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "Content Warning"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:109
+#: content/ui/StatusComposer/StatusComposer.qml:112
 #, kde-format
 msgid "What's new?"
 msgstr "ਨਵਾਂ ਕੀ ਹੈ?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:214
 #, kde-format
 msgid "Attach File"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:224
 #, kde-format
 msgid "Add Poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:249
+#: content/ui/StatusComposer/StatusComposer.qml:252
 #: content/ui/StatusDelegate/StatusDelegate.qml:296
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
 #, kde-format
 msgid "Public"
 msgstr "ਪਬਲਿਕ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:254
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Unlisted"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:259
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #: content/ui/StatusDelegate/StatusDelegate.qml:300
 #, kde-format
 msgid "Private"
 msgstr "ਪ੍ਰਾਈਵੇਟ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:264
+#: content/ui/StatusComposer/StatusComposer.qml:267
 #: content/ui/StatusDelegate/StatusDelegate.qml:302
 #, kde-format
 msgid "Direct Message"
 msgstr "ਸਿੱਧਾ ਸੁਨੇਹਾ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "Visibility"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:284
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:290
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/StatusComposer/StatusComposer.qml:308
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> ਅੱਖਰ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgid "Send"
 msgstr "ਭੇਜੋ"
@@ -1659,7 +1678,7 @@ msgstr ""
 msgid "Media Hidden"
 msgstr "ਮੀਡੀਆ ਲੁਕਾਓ"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:29
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
 #: content/ui/StatusDelegate/StatusDelegate.qml:150
 #: content/ui/StatusDelegate/StatusDelegate.qml:250
 #, kde-format
@@ -1682,7 +1701,7 @@ msgid "Copy Link to This Post"
 msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:487
+#: content/ui/StatusDelegate/StatusDelegate.qml:500
 #, kde-format
 msgid "Remove bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
@@ -1787,19 +1806,19 @@ msgstr "ਘੱਟ ਵੇਖਾਓ"
 msgid "Show More"
 msgstr "ਹੋਰ ਵੇਖਾਓ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:441
+#: content/ui/StatusDelegate/StatusDelegate.qml:439
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:459
+#: content/ui/StatusDelegate/StatusDelegate.qml:462
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:474
+#: content/ui/StatusDelegate/StatusDelegate.qml:482
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -1807,54 +1826,54 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:487
+#: content/ui/StatusDelegate/StatusDelegate.qml:500
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:508
+#: content/ui/StatusDelegate/StatusDelegate.qml:517
 #, kde-format
 msgid "via %1"
 msgstr "%1 ਰਾਹੀਂ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:540
+#: content/ui/StatusDelegate/StatusDelegate.qml:549
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:540
-#: content/ui/StatusDelegate/StatusDelegate.qml:541
+#: content/ui/StatusDelegate/StatusDelegate.qml:549
+#: content/ui/StatusDelegate/StatusDelegate.qml:550
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts && Replies"
 msgid "%1 Replies"
 msgstr "ਪੋਸਟਾਂ ਤੇ ਜਵਾਬ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:552
-#: content/ui/StatusDelegate/StatusDelegate.qml:553
+#: content/ui/StatusDelegate/StatusDelegate.qml:561
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "%1 Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:553
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "%1 Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
+#: content/ui/StatusDelegate/StatusDelegate.qml:573
 #, kde-format
 msgid "%1 Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#: content/ui/StatusDelegate/StatusDelegate.qml:565
+#: content/ui/StatusDelegate/StatusDelegate.qml:573
+#: content/ui/StatusDelegate/StatusDelegate.qml:574
 #, kde-format
 msgid "%1 Boosts"
 msgstr ""
@@ -1865,7 +1884,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:184
 #, kde-format
 msgid "No posts"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
