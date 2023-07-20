@@ -125,6 +125,8 @@ Kirigami.ScrollablePage {
 
                 width: ListView.view.width
 
+                onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
+
                 contentItem: ColumnLayout {
                     Kirigami.Heading {
                         level: 4
@@ -144,12 +146,6 @@ Kirigami.ScrollablePage {
                         text: i18n("%1 people are talking", tag.history[0].accounts)
                         verticalAlignment: Text.AlignTop
                     }
-                }
-
-                MouseArea {
-                    onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
                 }
             }
         }
