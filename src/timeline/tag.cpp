@@ -40,6 +40,11 @@ QList<History> Tag::history() const
     return m_history;
 }
 
+QUrl Tag::url() const
+{
+    return m_url;
+}
+
 QString Tag::name() const
 {
     return m_name;

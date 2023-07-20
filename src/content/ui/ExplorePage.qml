@@ -122,17 +122,18 @@ Kirigami.ScrollablePage {
             Delegates.RoundedItemDelegate {
                 id: delegate
 
-                required property int index
-                required property var tag
+                required property string name
+                required property url url
+                required property var history
 
                 width: ListView.view.width
 
-                onClicked: pageStack.push(tagModelComponent, { hashtag: tag.name })
+                onClicked: pageStack.push(tagModelComponent, { hashtag: delegate.name })
 
                 contentItem: ColumnLayout {
                     Kirigami.Heading {
                         level: 4
-                        text: `#${tag.name}`
+                        text: `#${delegate.name}`
                         type: Kirigami.Heading.Type.Primary
                         verticalAlignment: Text.AlignTop
                         elide: Text.ElideRight
@@ -145,7 +146,7 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
-                        text: i18n("%1 people are talking", tag.history[0].accounts)
+                        text: i18n("%1 people are talking", delegate.history[0].accounts)
                         verticalAlignment: Text.AlignTop
                     }
                 }

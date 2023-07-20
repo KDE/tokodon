@@ -96,7 +96,9 @@ void TagsModel::fillTimeline(const QString &fromId)
 QHash<int, QByteArray> TagsModel::roleNames() const
 {
     return {
-        {CustomRoles::TagRole, "tag"},
+        {CustomRoles::NameRole, "name"},
+        {CustomRoles::UrlRole, "url"},
+        {CustomRoles::HistoryRole, "history"},
     };
 }
 
@@ -105,10 +107,12 @@ QVariant TagsModel::data(const QModelIndex &index, int role) const
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
     switch (role) {
-    case CustomRoles::TagRole:
-        return QVariant::fromValue<Tag>(m_tags[index.row()]);
-    case Qt::DisplayRole:
+    case CustomRoles::NameRole:
         return m_tags[index.row()].name();
+    case CustomRoles::UrlRole:
+        return m_tags[index.row()].url();
+    case CustomRoles::HistoryRole:
+        return QVariant::fromValue<QList<History>>(m_tags[index.row()].history());
     default:
         return {};
     }

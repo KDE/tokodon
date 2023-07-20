@@ -22,9 +22,7 @@ class TagsModel : public AbstractListModel
     Q_OBJECT
 
 public:
-    enum CustomRoles {
-        TagRole = Qt::UserRole + 1,
-    };
+    enum CustomRoles { NameRole = Qt::UserRole + 1, UrlRole, HistoryRole };
 
     /**
      * @brief Constructs a TagsModel object.
