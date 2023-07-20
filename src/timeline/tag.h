@@ -37,6 +37,7 @@ public:
     explicit Tag(QJsonObject obj);
 
     QString name() const;
+    QUrl url() const;
     QList<History> history() const;
 
 private:
