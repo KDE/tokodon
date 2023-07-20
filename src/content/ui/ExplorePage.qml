@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: tagsView
-        model:  showPostsAction.checked ? trendingPostsModel : tagsModel
+        model: showPostsAction.checked ? trendingPostsModel : tagsModel
 
         Connections {
             target: Navigation
@@ -108,6 +108,7 @@ Kirigami.ScrollablePage {
 
         Component {
             id: trendingPostsModelComponent
+
             StatusDelegate {
                 timelineModel: tagsView.model
                 loading: tagsView.model.loading
@@ -117,6 +118,7 @@ Kirigami.ScrollablePage {
 
         Component {
             id: trendingTagsModelComponent
+
             Delegates.RoundedItemDelegate {
                 id: delegate
 
