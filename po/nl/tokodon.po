@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:50+0000\n"
-"PO-Revision-Date: 2023-07-18 09:31+0200\n"
+"POT-Creation-Date: 2023-07-20 00:49+0000\n"
+"PO-Revision-Date: 2023-07-19 10:11+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -325,12 +325,12 @@ msgstr "Profiel bewerken"
 msgid "Account editor"
 msgstr "Accountbewerker"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:189
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:191
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
 #: content/ui/UserInfo.qml:233
 #, kde-format
 msgid "Configure"
@@ -495,7 +495,7 @@ msgid "Explore"
 msgstr "Verkennen"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:46 search/searchmodel.cpp:141
+#: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Bericht"
@@ -522,7 +522,7 @@ msgstr "Alle talen"
 msgid "Login"
 msgstr "Aanmelden"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:68
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:83
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1095,10 +1095,9 @@ msgid "Search for peoples, tags and posts"
 msgstr "Zoeken naar mensen, tags en berichten"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
-msgstr "Hashtags"
+msgstr "Hashtag"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1243,7 +1242,7 @@ msgid "Profile Editor"
 msgstr "Profiel bewerken"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:208
+#: content/ui/StatusComposer/StatusComposer.qml:211
 #, kde-format
 msgid "Please choose a file"
 msgstr "Kies een bestand a.u.b"
@@ -1446,17 +1445,16 @@ msgid "Sharing failed"
 msgstr "Delen is mislukt"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Volgen"
+msgstr "Toestaan"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Weigeren"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1522,102 +1520,102 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Telling van de stemmen verbergen totdat de peiling eindigt"
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Edit this post"
 msgstr "Dit bericht bewerken"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Reply to this post"
 msgstr "Op dit bericht antwoorden"
 
-#: content/ui/StatusComposer/StatusComposer.qml:49
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Rewrite this post"
 msgstr "Dit bericht herschrijven"
 
-#: content/ui/StatusComposer/StatusComposer.qml:51
+#: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Write a new post"
 msgstr "Een nieuw bericht schrijven"
 
-#: content/ui/StatusComposer/StatusComposer.qml:93
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:96
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "Content Warning"
 msgstr "Waarschuwing over inhoud"
 
-#: content/ui/StatusComposer/StatusComposer.qml:109
+#: content/ui/StatusComposer/StatusComposer.qml:112
 #, kde-format
 msgid "What's new?"
 msgstr "Wat is nieuw?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:214
 #, kde-format
 msgid "Attach File"
 msgstr "Bestand bijvoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:224
 #, kde-format
 msgid "Add Poll"
 msgstr "Peiling toevoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:249
+#: content/ui/StatusComposer/StatusComposer.qml:252
 #: content/ui/StatusDelegate/StatusDelegate.qml:305
 #: content/ui/StatusDelegate/StatusDelegate.qml:313
 #, kde-format
 msgid "Public"
 msgstr "Publiek"
 
-#: content/ui/StatusComposer/StatusComposer.qml:254
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #: content/ui/StatusDelegate/StatusDelegate.qml:307
 #, kde-format
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
-#: content/ui/StatusComposer/StatusComposer.qml:259
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #: content/ui/StatusDelegate/StatusDelegate.qml:309
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/StatusComposer/StatusComposer.qml:264
+#: content/ui/StatusComposer/StatusComposer.qml:267
 #: content/ui/StatusDelegate/StatusDelegate.qml:311
 #, kde-format
 msgid "Direct Message"
 msgstr "Direct bericht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "Visibility"
 msgstr "Zichtbaarheid"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:284
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "De taal selecteren waarin het bericht is geschreven"
 
-#: content/ui/StatusComposer/StatusComposer.qml:290
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Taal van bericht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/StatusComposer/StatusComposer.qml:308
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tekens"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgid "Send"
 msgstr "Verzenden"
@@ -1835,7 +1833,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Afspelen"
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:184
 #, kde-format
 msgid "No posts"
 msgstr "Geen berichten"

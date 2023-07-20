@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:50+0000\n"
-"PO-Revision-Date: 2023-07-11 07:36+0200\n"
+"POT-Creation-Date: 2023-07-20 00:49+0000\n"
+"PO-Revision-Date: 2023-07-19 06:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: account/abstractaccount.cpp:457
@@ -324,12 +324,12 @@ msgstr "Uredi profil"
 msgid "Account editor"
 msgstr "Urejevalnik računa"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:189
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:191
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
 #: content/ui/UserInfo.qml:233
 #, kde-format
 msgid "Configure"
@@ -494,7 +494,7 @@ msgid "Explore"
 msgstr "Razišči"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:46 search/searchmodel.cpp:141
+#: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Objavi"
@@ -521,7 +521,7 @@ msgstr "Vsi jeziki"
 msgid "Login"
 msgstr "Prijava"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:68
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:83
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1094,10 +1094,9 @@ msgid "Search for peoples, tags and posts"
 msgstr "Iskanje ljudi, oznak in objav"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
-msgstr "Ključniki"
+msgstr "Ključnik"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1242,7 +1241,7 @@ msgid "Profile Editor"
 msgstr "Urejevalnik profila"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:208
+#: content/ui/StatusComposer/StatusComposer.qml:211
 #, kde-format
 msgid "Please choose a file"
 msgstr "Izberite datoteko"
@@ -1443,17 +1442,16 @@ msgid "Sharing failed"
 msgstr "Deljenje ni uspelo"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Sledi"
+msgstr "Dovoli"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Zavrni"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1519,102 +1517,102 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Skrij število glasov dokler glasovanje ne poteče"
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Edit this post"
 msgstr "Uredi to objavo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Reply to this post"
 msgstr "Odgovori na to objavo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:49
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Rewrite this post"
 msgstr "Ponovno zapiši to objavo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:51
+#: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Write a new post"
 msgstr "Zapiši novo objavo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:93
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:96
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "Content Warning"
 msgstr "Vsebinsko opozorilo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:109
+#: content/ui/StatusComposer/StatusComposer.qml:112
 #, kde-format
 msgid "What's new?"
 msgstr "Kaj je novega?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:214
 #, kde-format
 msgid "Attach File"
 msgstr "Priloži datoteko"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:224
 #, kde-format
 msgid "Add Poll"
 msgstr "Dodaj glasovanje"
 
-#: content/ui/StatusComposer/StatusComposer.qml:249
+#: content/ui/StatusComposer/StatusComposer.qml:252
 #: content/ui/StatusDelegate/StatusDelegate.qml:305
 #: content/ui/StatusDelegate/StatusDelegate.qml:313
 #, kde-format
 msgid "Public"
 msgstr "Javno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:254
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #: content/ui/StatusDelegate/StatusDelegate.qml:307
 #, kde-format
 msgid "Unlisted"
 msgstr "Neobjavljeno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:259
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #: content/ui/StatusDelegate/StatusDelegate.qml:309
 #, kde-format
 msgid "Private"
 msgstr "Zasebno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:264
+#: content/ui/StatusComposer/StatusComposer.qml:267
 #: content/ui/StatusDelegate/StatusDelegate.qml:311
 #, kde-format
 msgid "Direct Message"
 msgstr "Neposredno sporočilo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "Visibility"
 msgstr "Vidnost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:284
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Izberi jezik, v katerem je napisana objava"
 
-#: content/ui/StatusComposer/StatusComposer.qml:290
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Jezik objave"
 
-#: content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/StatusComposer/StatusComposer.qml:308
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> znaki"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
@@ -1832,7 +1830,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:184
 #, kde-format
 msgid "No posts"
 msgstr "Ni objav"

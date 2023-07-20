@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:50+0000\n"
-"PO-Revision-Date: 2023-07-10 09:47+0300\n"
+"POT-Creation-Date: 2023-07-20 00:49+0000\n"
+"PO-Revision-Date: 2023-07-19 07:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -326,12 +326,12 @@ msgstr "Змінити профіль"
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:189
+#: content/ui/AccountInfo.qml:244 content/ui/TimelinePage.qml:44
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:191
+#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
 #: content/ui/UserInfo.qml:233
 #, kde-format
 msgid "Configure"
@@ -498,7 +498,7 @@ msgid "Explore"
 msgstr "Ознайомлення"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:46 search/searchmodel.cpp:141
+#: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Допис"
@@ -525,7 +525,7 @@ msgstr "Усі мови"
 msgid "Login"
 msgstr "Увійти"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:68
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:83
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1103,10 +1103,9 @@ msgid "Search for peoples, tags and posts"
 msgstr "Шукати людей, мітки та дописи"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
-msgstr "Хештеґи"
+msgstr "Хештеґ"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1251,7 +1250,7 @@ msgid "Profile Editor"
 msgstr "Редактор профілів"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:208
+#: content/ui/StatusComposer/StatusComposer.qml:211
 #, kde-format
 msgid "Please choose a file"
 msgstr "Будь ласка, виберіть файл"
@@ -1456,17 +1455,16 @@ msgid "Sharing failed"
 msgstr "Не вдалося оприлюднити"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Стежити"
+msgstr "Дозволити"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Відмовити"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1532,102 +1530,102 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Ховати кількість голосів до завершення голосування"
 
-#: content/ui/StatusComposer/StatusComposer.qml:45
+#: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Edit this post"
 msgstr "Редагувати цей допис"
 
-#: content/ui/StatusComposer/StatusComposer.qml:47
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Reply to this post"
 msgstr "Відповісти на цей допис"
 
-#: content/ui/StatusComposer/StatusComposer.qml:49
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Rewrite this post"
 msgstr "Переписати цей допис"
 
-#: content/ui/StatusComposer/StatusComposer.qml:51
+#: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Write a new post"
 msgstr "Написати новий допис"
 
-#: content/ui/StatusComposer/StatusComposer.qml:93
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:96
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "Content Warning"
 msgstr "Попередження щодо вмісту"
 
-#: content/ui/StatusComposer/StatusComposer.qml:109
+#: content/ui/StatusComposer/StatusComposer.qml:112
 #, kde-format
 msgid "What's new?"
 msgstr "Що нового?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:214
 #, kde-format
 msgid "Attach File"
 msgstr "Долучити файл"
 
-#: content/ui/StatusComposer/StatusComposer.qml:221
+#: content/ui/StatusComposer/StatusComposer.qml:224
 #, kde-format
 msgid "Add Poll"
 msgstr "Додати опитування"
 
-#: content/ui/StatusComposer/StatusComposer.qml:249
+#: content/ui/StatusComposer/StatusComposer.qml:252
 #: content/ui/StatusDelegate/StatusDelegate.qml:305
 #: content/ui/StatusDelegate/StatusDelegate.qml:313
 #, kde-format
 msgid "Public"
 msgstr "Загальнодоступне"
 
-#: content/ui/StatusComposer/StatusComposer.qml:254
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #: content/ui/StatusDelegate/StatusDelegate.qml:307
 #, kde-format
 msgid "Unlisted"
 msgstr "Незареєстрований"
 
-#: content/ui/StatusComposer/StatusComposer.qml:259
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #: content/ui/StatusDelegate/StatusDelegate.qml:309
 #, kde-format
 msgid "Private"
 msgstr "Особисте"
 
-#: content/ui/StatusComposer/StatusComposer.qml:264
+#: content/ui/StatusComposer/StatusComposer.qml:267
 #: content/ui/StatusDelegate/StatusDelegate.qml:311
 #, kde-format
 msgid "Direct Message"
 msgstr "Безпосереднє повідомлення"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "Visibility"
 msgstr "Видимість"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "пв"
 
-#: content/ui/StatusComposer/StatusComposer.qml:284
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Вибрати мову, якою написано допис"
 
-#: content/ui/StatusComposer/StatusComposer.qml:290
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Мова допису"
 
-#: content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/StatusComposer/StatusComposer.qml:308
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1 з %2</b> символів"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgid "Send"
 msgstr "Надіслати"
@@ -1845,7 +1843,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Відтворити"
 
-#: content/ui/TimelinePage.qml:169
+#: content/ui/TimelinePage.qml:184
 #, kde-format
 msgid "No posts"
 msgstr "Немає дописів"
