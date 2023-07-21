@@ -46,6 +46,7 @@ public:
     void setLoading(bool loading);
     FederationToolModel::FederationAction federationAction() const;
     void setFederationAction(const FederationToolModel::FederationAction &federationAction);
+    void filltimeline(FederationAction action = FederationAction::BlockedDomains);
 
     Q_INVOKABLE void removeDomainBlock(const int &row);
     Q_INVOKABLE void removeAllowedDomain(const int &row);
@@ -70,8 +71,6 @@ Q_SIGNALS:
     void federationActionChanged();
 
 private:
-    void filltimeline(FederationAction action = FederationAction::BlockedDomains);
-
     QList<FederationInfo> m_federations;
     bool m_loading = false;
     FederationToolModel::FederationAction m_federationAction = FederationAction::BlockedDomains;
