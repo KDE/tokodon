@@ -47,3 +47,9 @@ ecm_add_test(posteditortest.cpp
     LINK_LIBRARIES tokodon_test_static Qt::Test
     NAME_PREFIX "tokodon-"
     )
+
+ecm_add_test(federationtooltest.cpp
+    TEST_NAME federationtooltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
+)
