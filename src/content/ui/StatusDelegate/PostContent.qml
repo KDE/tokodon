@@ -18,6 +18,8 @@ QQC2.TextArea {
 
     signal clicked()
 
+    activeFocusOnTab: false
+
     font: Config.defaultFont
     Layout.fillWidth: true
     text: "<style>

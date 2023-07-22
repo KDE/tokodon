@@ -287,7 +287,6 @@ QQC2.ItemDelegate {
 
             InteractionButton {
                 Layout.alignment: Qt.AlignTop
-                rightPadding: 0
                 iconName: switch(root.visibility) {
                     case Post.Public:
                         return "kstars_xplanet";
@@ -322,12 +321,12 @@ QQC2.ItemDelegate {
                 text: root.relativeTime
                 color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                 verticalAlignment: Text.AlignTop
+                topPadding: Kirigami.Units.smallSpacing
                 Layout.alignment: Qt.AlignTop
                 elide: Text.ElideRight
             }
 
             InteractionButton {
-                rightPadding: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit * 2 : 0
                 Layout.alignment: Qt.AlignTop
                 iconName: 'overflow-menu'
                 tooltip: i18nc("Show more options", "More")
@@ -444,6 +443,7 @@ QQC2.ItemDelegate {
                 topPadding: buttonLayout.buttonPadding
                 bottomPadding: buttonLayout.buttonPadding
                 rightPadding: buttonLayout.buttonPadding
+                leftPadding: buttonLayout.buttonPadding
 
                 interacted: root.repliesCount > 0
                 iconName: "post-reply"
@@ -503,6 +503,7 @@ QQC2.ItemDelegate {
                 topPadding: buttonLayout.buttonPadding
                 bottomPadding: buttonLayout.buttonPadding
                 leftPadding: buttonLayout.buttonPadding
+                rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.bookmarked
                 interactionColor: "red"

@@ -13,6 +13,9 @@ QQC2.AbstractButton {
 
     required property var card
 
+    Accessible.name: i18n("Link preview: %1", root.card ? root.card.title : '')
+    Accessible.description: root.card ? root.card.providerName : ''
+
     leftPadding: 0
     topPadding: 0
     rightPadding: 0
@@ -33,8 +36,8 @@ QQC2.AbstractButton {
         radius: Kirigami.Units.largeSpacing
         color: 'transparent'
         border {
-            width: 1
-            color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor,0.15)
+            width: root.visualFocus ? 2 : 1
+            color: root.visualFocus ? Kirigami.Theme.focusColor : Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor,0.15)
         }
     }
     contentItem: RowLayout {
@@ -48,9 +51,9 @@ QQC2.AbstractButton {
             Layout.maximumHeight: Kirigami.Units.gridUnit * 3
             Layout.minimumWidth: Kirigami.Units.gridUnit * 3
             Layout.maximumWidth: Kirigami.Units.gridUnit * 3
-            Layout.topMargin: 1
-            Layout.bottomMargin: 1
-            Layout.leftMargin: 1
+            Layout.topMargin: root.visualFocus ? 2 : 1
+            Layout.bottomMargin: root.visualFocus ? 2 : 1
+            Layout.leftMargin: root.visualFocus ? 2 : 1
             Image {
                 id: img
                 mipmap: true
