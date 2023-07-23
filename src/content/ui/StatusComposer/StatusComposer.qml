@@ -145,6 +145,11 @@ MastoPage {
                }
             }
 
+            Keys.onTabPressed: (event)=> {
+                nextItemInFocusChain(true).forceActiveFocus(Qt.TabFocusReason)
+                event.accepted = true
+            }
+
             ColumnLayout {
                 id: actions
                 spacing: 0
