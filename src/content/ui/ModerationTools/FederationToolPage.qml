@@ -8,6 +8,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 Kirigami.ScrollablePage {
     id: root
@@ -55,64 +56,70 @@ Kirigami.ScrollablePage {
 
     Kirigami.PromptDialog {
         id: newDomainBlockDialog
+
         title: i18n("Add Domain Block")
 
-        mainItem: Kirigami.FormLayout {
-                MobileForm.FormTextFieldDelegate {
-                    id: domain
-                    label: i18nc("@info:Enter the domain address of the domain block", "Domain*")              
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: publicComment
-                    label: i18n("Public comment")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: privateComment
-                    label: i18n("Private Comment")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormComboBoxDelegate {
-                    id: severityCombobox
-                    text: i18n("Moderation")
-                    textRole: "display"
-                    valueRole: "value"
-                    model: [
-                        {
-                            display: i18nc("@info:Filter out all the allowed domains", "Silence"),
-                            value: "silence"
-                        },
-                        {
-                            display: i18nc("@info:Filter out all the blocked domains", "Suspend"),
-                            value: "suspend"
-                        },
-                        {
-                            display: i18nc("@info:Filter out all the blocked domains", "None"),
-                            value: "noop"
-                        },
-                    ]
-                    Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue("silence");
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: rejectMedia
-                    text: i18n("Reject media files")
-                    description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: rejectReports
-                    text: i18n("Reject reports")
-                    description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: obfuscateReport
-                    text: i18n("Obfuscate domain name")
-                    description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
-                }
+        contentPadding: 0
+        implicitWidth: Kirigami.Units.gridUnit * 20
+
+        mainItem: ColumnLayout {
+            spacing: 0
+
+            MobileForm.FormTextFieldDelegate {
+                id: domain
+                label: i18nc("@info:Enter the domain address of the domain block", "Domain*")
             }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
+                id: publicComment
+                label: i18n("Public comment")
+            }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
+                id: privateComment
+                label: i18n("Private Comment")
+            }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormComboBoxDelegate {
+                id: severityCombobox
+                text: i18n("Moderation")
+                textRole: "display"
+                valueRole: "value"
+                model: [
+                    {
+                        display: i18nc("@info:Filter out all the allowed domains", "Silence"),
+                        value: "silence"
+                    },
+                    {
+                        display: i18nc("@info:Filter out all the blocked domains", "Suspend"),
+                        value: "suspend"
+                    },
+                    {
+                        display: i18nc("@info:Filter out all the blocked domains", "None"),
+                        value: "noop"
+                    },
+                ]
+                Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue("silence");
+            }
+            MobileForm.FormDelegateSeparator { above: rejectMedia }
+            MobileForm.FormCheckDelegate {
+                id: rejectMedia
+                text: i18n("Reject media files")
+                description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
+            }
+            MobileForm.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
+            MobileForm.FormCheckDelegate {
+                id: rejectReports
+                text: i18n("Reject reports")
+                description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
+            }
+            MobileForm.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
+            MobileForm.FormCheckDelegate {
+                id: obfuscateReport
+                text: i18n("Obfuscate domain name")
+                description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
+            }
+        }
 
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
@@ -124,8 +131,9 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 text: i18nc("@info:Button to create a domain block", "Create Block")
                 icon.name: "checkbox"
+                enabled: domain.text.lenght > 0
                 onTriggered: {
-                    federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateR.checked)
+                    federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
                     showPassiveNotification(i18n("New domain block added"))
                     newDomainBlockDialog.close();
                 }
@@ -135,12 +143,14 @@ Kirigami.ScrollablePage {
 
     Kirigami.PromptDialog {
         id: newDomainAllowDialog
-        title: i18n("Add Domain Block")
+        title: i18n("Allow Federation with Domain")
+
+        contentPadding: 0
 
         mainItem: MobileForm.FormTextFieldDelegate {
-                    id: newAllowedDomain
-                    label: i18nc("@info:This domain will be able to fetch data from this server and incoming data from it will be processed and stored", "Domain*")
-                }
+            id: newAllowedDomain
+            label: i18nc("@info:This domain will be able to fetch data from this server and incoming data from it will be processed and stored", "Domain*")
+        }
 
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
@@ -167,11 +177,11 @@ Kirigami.ScrollablePage {
 
         Components.Banner {
             topPadding: Kirigami.Units.largeSpacing
-            title: i18n("Allowed domain option is available for instances with limited federation mode enabled")
+            text: i18n("Allowed domain option is available for instances with limited federation mode enabled")
             Layout.fillWidth: true
             visible: true
         }
-        
+
         Kirigami.Heading {
             level: 4
             text: i18nc("@info:Choose between allowed and limited domains", "Moderation")
@@ -186,7 +196,7 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignCenter
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing
-            implicitWidth: parent.width/4
+            implicitWidth: Kirigami.Units.gridUnit * 8
             model: [
                 {
                     display: i18nc("@info:Filter out all the blocked domains", "Blocked domains"),
@@ -200,8 +210,9 @@ Kirigami.ScrollablePage {
             textRole: "display"
             valueRole: "value"
             Component.onCompleted: moderationCombobox.currentIndex = moderationCombobox.indexOfValue(federationView.model.federationAction);
-            onCurrentIndexChanged: { federationView.model.federationAction = model[currentIndex].value
-            isDomainBlock = model[currentIndex].value === FederationToolModel.BlockedDomains
+            onCurrentIndexChanged: {
+                federationView.model.federationAction = model[currentIndex].value;
+                isDomainBlock = (model[currentIndex].value === FederationToolModel.BlockedDomains);
             }
         }
         Kirigami.Separator {
@@ -212,10 +223,13 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: federationView
-        model: FederationToolModel {}
 
-        delegate: QQC2.ItemDelegate {
+        model: FederationToolModel {}
+        currentIndex: -1
+
+        delegate: Delegates.RoundedItemDelegate {
             id: delegate
+
             required property int index
             required property int id
             required property string domain
@@ -230,69 +244,47 @@ Kirigami.ScrollablePage {
             width: ListView.view.width
 
             onClicked: if (root.isDomainBlock) {
-                           applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml",
-                                {
-                                    index: delegate.index,
-                                    model: federationView.model,
-                                    id: delegate.id,
-                                    domain: delegate.domain,
-                                    createdAt: delegate.createdAt,
-                                    severity: delegate.severity,
-                                    rejectMedia: delegate.rejectMedia,
-                                    rejectReports: delegate.rejectReports,
-                                    obfuscate: delegate.obfuscate,
-                                    privateComment: delegate.privateComment,
-                                    publicComment: delegate.publicComment,
-                                },)
-                       } else {
-                           allowedDomainInfo.index = delegate.index
-                           allowedDomainInfo.domainName = delegate.domain
-                           allowedDomainInfo.createdAt = delegate.createdAt
-                           allowedDomainInfo.open()
-                       }
+               applicationWindow().pageStack.layers.push("./MainFederationToolPage.qml", {
+                    index: delegate.index,
+                    model: federationView.model,
+                    id: delegate.id,
+                    domain: delegate.domain,
+                    createdAt: delegate.createdAt,
+                    severity: delegate.severity,
+                    rejectMedia: delegate.rejectMedia,
+                    rejectReports: delegate.rejectReports,
+                    obfuscate: delegate.obfuscate,
+                    privateComment: delegate.privateComment,
+                    publicComment: delegate.publicComment,
+                });
+            } else {
+                allowedDomainInfo.index = delegate.index;
+                allowedDomainInfo.domainName = delegate.domain;
+                allowedDomainInfo.createdAt = delegate.createdAt;
+                allowedDomainInfo.open();
+            }
 
+            text: delegate.domain
 
-
-            contentItem: Kirigami.FlexColumn {
-                spacing: 0
-                maximumWidth: Kirigami.Units.gridLayout * 40
-
-                RowLayout {
-                    Layout.fillWidth: true
-                    
-                    ColumnLayout {
-                        spacing: 0
-                        Kirigami.Heading {
-                            level: 2
-                            text: delegate.domain
-                            type: Kirigami.Heading.Type.Primary
-                            Layout.alignment: Qt.AlignLeft
-                        }
-                        QQC2.Label {
-                            font.pixelSize: Config.defaultFont.pixelSize + 1
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                            color: Kirigami.Theme.disabledTextColor
-                            text: root.isDomainBlock ? delegate.severity : i18n("Allowed for federation")
-                            verticalAlignment: Text.AlignTop
-                        }
-                    }
-                    Item {
-                        Layout.fillWidth: true
-                    }
-                    Kirigami.Heading {
-                        level: 4
-                        text: delegate.createdAt.toLocaleDateString()
-                        type: Kirigami.Heading.Type.Secondary
-                        Layout.alignment: Qt.AlignRight
-                    }
+            contentItem: RowLayout {
+                Delegates.SubtitleContentItem {
+                    itemDelegate: delegate
+                    subtitle: root.isDomainBlock ? delegate.severity : i18n("Allowed for federation")
                 }
-                Kirigami.Separator {
+
+                Item {
                     Layout.fillWidth: true
+                }
+
+                Kirigami.Heading {
+                    level: 4
+                    text: delegate.createdAt.toLocaleDateString()
+                    type: Kirigami.Heading.Type.Secondary
+                    Layout.alignment: Qt.AlignRight
                 }
             }
         }
-        
+
         QQC2.ProgressBar {
             visible: federationView.model.loading && federationView.count === 0
             anchors.centerIn: parent

@@ -24,82 +24,86 @@ Kirigami.ScrollablePage {
 
     title: root.domain
 
-    actions {
-        main: Kirigami.Action {
-            icon.name: "edit-delete-remove"
-            text: i18n("Remove Domain Block")
-            onTriggered: {
-                root.model.removeDomainBlock(root.index)
-                showPassiveNotification(i18n("Domain Block Removed"))
-                pageStack.layers.pop()
-            }
+    actions.contextualActions: Kirigami.Action {
+        icon.name: "edit-delete-remove"
+        text: i18n("Remove Domain Block")
+        onTriggered: {
+            root.model.removeDomainBlock(root.index)
+            showPassiveNotification(i18n("Domain Block Removed"))
+            pageStack.layers.pop()
         }
     }
 
     Kirigami.PromptDialog {
         id: textPromptDialog
+
+        title: i18n("Edit domain block")
+
+        contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
 
-        mainItem: Kirigami.FormLayout {
-                MobileForm.FormComboBoxDelegate {
-                    id: severityCombobox
-                    text: i18n("Moderation")
-                    textRole: "display"
-                    valueRole: "value"
-                    model: [
-                        {
-                            display: i18nc("@info:Filter out all the allowed domains", "Silence"),
-                            value: "silence"
-                        },
-                        {
-                            display: i18nc("@info:Filter out all the blocked domains", "Suspend"),
-                            value: "suspend"
-                        },
-                        {
-                            display: i18nc("@info:Filter out all the blocked domains", "None"),
-                            value: "noop"
-                        },
-                    ]
-                    onCurrentIndexChanged: root.severity = model[currentIndex].value
-                    Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.severity);
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: publicComment
-                    text: root.publicComment
-                    label: i18n("Public comment")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: privateComment
-                    text: root.privateComment
-                    label: i18n("Private comment")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: rejectMedia
-                    text: i18n("Reject media files")
-                    description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
-                    checked: root.rejectMedia
-                    onToggled: root.rejectMedia = rejectMedia.checked
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: rejectReports
-                    text: i18n("Reject reports")
-                    description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
-                    checked: root.rejectReports
-                    onToggled: root.rejectReports = rejectReports.checked
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormCheckDelegate {
-                    id: obfuscateReports
-                    text: i18n("Obfuscate domain name")
-                    description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
-                    checked: root.obfuscate
-                    onToggled: root.obfuscate = obfuscateReports.checked
-                }
+        mainItem: ColumnLayout {
+            spacing: 0
+
+            MobileForm.FormComboBoxDelegate {
+                id: severityCombobox
+                text: i18n("Moderation")
+                textRole: "display"
+                valueRole: "value"
+                model: [
+                    {
+                        display: i18nc("@info:Filter out all the allowed domains", "Silence"),
+                        value: "silence"
+                    },
+                    {
+                        display: i18nc("@info:Filter out all the blocked domains", "Suspend"),
+                        value: "suspend"
+                    },
+                    {
+                        display: i18nc("@info:Filter out all the blocked domains", "None"),
+                        value: "noop"
+                    },
+                ]
+                onCurrentIndexChanged: root.severity = model[currentIndex].value
+                Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue(root.severity);
             }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
+                id: publicComment
+                text: root.publicComment
+                label: i18n("Public comment")
+            }
+            MobileForm.FormDelegateSeparator {}
+            MobileForm.FormTextFieldDelegate {
+                id: privateComment
+                text: root.privateComment
+                label: i18n("Private comment")
+            }
+            MobileForm.FormDelegateSeparator { above: rejectMedia }
+            MobileForm.FormCheckDelegate {
+                id: rejectMedia
+                text: i18n("Reject media files")
+                description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
+                checked: root.rejectMedia
+                onToggled: root.rejectMedia = rejectMedia.checked
+            }
+            MobileForm.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
+            MobileForm.FormCheckDelegate {
+                id: rejectReports
+                text: i18n("Reject reports")
+                description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
+                checked: root.rejectReports
+                onToggled: root.rejectReports = rejectReports.checked
+            }
+            MobileForm.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
+            MobileForm.FormCheckDelegate {
+                id: obfuscateReports
+                text: i18n("Obfuscate domain name")
+                description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
+                checked: root.obfuscate
+                onToggled: root.obfuscate = obfuscateReports.checked
+            }
+        }
         standardButtons: Kirigami.Dialog.NoButton
         customFooterActions: [
             Kirigami.Action {
@@ -123,6 +127,7 @@ Kirigami.ScrollablePage {
 
     ColumnLayout {
         id: layout
+
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
@@ -133,26 +138,44 @@ Kirigami.ScrollablePage {
                     text: i18n("Blocked at")
                     description: root.createdAt.toLocaleDateString()
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18n("Public comment")
                     description: root.publicComment.length !== 0 ? root.publicComment : i18nc("@info: No public comment provided", "None")
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18n("Private comment")
                     description: root.privateComment.length !== 0 ? root.privateComment : i18nc("@info: No private comment provided", "None")
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("@info:The policy to be applied by this domain block", "Policy")
                     description: root.severity
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("@info:Whether to obfuscate public displays of this domain block", "Obfuscate")
                     description: root.obfuscate
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("@info:Whether to reject incoming media from this domain", "Reject media")
                     description: root.rejectMedia
                 }
+
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("@info:Whether to reject incoming reports from this domain", "Reject report")
                     description: root.rejectReports
@@ -162,7 +185,6 @@ Kirigami.ScrollablePage {
     }
 
     footer: QQC2.ToolBar {
-
         contentItem: RowLayout {
             Item {
                 Layout.fillWidth: true
