@@ -58,6 +58,11 @@ set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
         PURPOSE "Kirigami application UI framework"
         )
 find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.10 REQUIRED)
+find_package(Qt${QT_MAJOR_VERSION}Keychain)
+set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Secure storage of account secrets"
+)
 
 if (ANDROID)
     find_package(OpenSSL)
@@ -70,11 +75,6 @@ else()
         find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
     endif()
     find_package(KF${QT_MAJOR_VERSION}ConfigWidgets REQUIRED)
-    find_package(Qt${QT_MAJOR_VERSION}Keychain)
-    set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
-        TYPE REQUIRED
-        PURPOSE "Secure storage of account secrets"
-    )
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
