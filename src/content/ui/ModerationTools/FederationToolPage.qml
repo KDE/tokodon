@@ -131,7 +131,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 text: i18nc("@info:Button to create a domain block", "Create Block")
                 icon.name: "checkbox"
-                enabled: domain.text.lenght > 0
+                enabled: domain.text.length > 0
                 onTriggered: {
                     federationView.model.newDomainBlock(domain.text, severityCombobox.currentValue, publicComment.text, privateComment.text, rejectMedia.checked, rejectReports.checked, obfuscateReports.checked)
                     showPassiveNotification(i18n("New domain block added"))
