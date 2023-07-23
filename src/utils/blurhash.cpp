@@ -7,7 +7,6 @@
 #include <array>
 #include <cassert>
 #include <cmath>
-#include <numbers>
 #include <stdexcept>
 
 #ifdef DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
