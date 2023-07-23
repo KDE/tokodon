@@ -81,10 +81,9 @@ void ThreadModel::fillTimeline(const QString &fromId)
         std::reverse(ancestors.begin(), ancestors.end());
 
         for (const auto &ancestor : ancestors) {
-            if (!ancestor.canConvert<QJsonObject>()) {
-                continue;
+            if (ancestor.canConvert<QJsonObject>() || ancestor.canConvert<QVariantMap>()) {
+                thread->push_front(new Post(m_account, ancestor.toJsonObject(), this));
             }
-            thread->push_front(new Post(m_account, ancestor.toJsonObject(), this));
         }
 
         const auto descendents = obj["descendants"].toArray();
