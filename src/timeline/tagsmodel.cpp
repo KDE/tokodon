@@ -78,7 +78,7 @@ void TagsModel::fillTimeline(const QString &fromId)
             const auto values = doc.array();
 
             QList<Tag> tags;
-            std::transform(values.cbegin(), values.cend(), std::back_inserter(tags), [this](const QJsonValue &value) {
+            std::transform(values.cbegin(), values.cend(), std::back_inserter(tags), [](const QJsonValue &value) {
                 return Tag(value.toObject());
             });
 
