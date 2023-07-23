@@ -90,7 +90,7 @@ private Q_SLOTS:
         });
         account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
 
-        TagsModel tagModel;
+        TagsTimelineModel tagModel;
         tagModel.setHashtag("home");
 
         QCOMPARE(tagModel.rowCount({}), 2);
