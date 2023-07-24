@@ -179,10 +179,15 @@ Kirigami.ApplicationWindow {
                 contentItem: SearchField {}
             }
 
+            QQC2.ButtonGroup {
+                id: pageButtonGroup
+            }
+
             Repeater {
                 model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
                 Delegates.RoundedItemDelegate {
                     required property var modelData
+                    QQC2.ButtonGroup.group: pageButtonGroup
 
                     action: modelData
                     Layout.fillWidth: true
