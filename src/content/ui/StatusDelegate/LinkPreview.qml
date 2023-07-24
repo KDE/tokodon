@@ -45,6 +45,8 @@ QQC2.AbstractButton {
     }
 
     contentItem: RowLayout {
+        spacing: 0
+
         Rectangle {
             id: logo
             visible: root.card && root.card.image
@@ -55,9 +57,9 @@ QQC2.AbstractButton {
             Layout.maximumHeight: Kirigami.Units.gridUnit * 3
             Layout.minimumWidth: Kirigami.Units.gridUnit * 3
             Layout.maximumWidth: Kirigami.Units.gridUnit * 3
-            Layout.topMargin: root.visualFocus ? 2 : 1
-            Layout.bottomMargin: root.visualFocus ? 2 : 1
-            Layout.leftMargin: root.visualFocus ? 2 : 1
+            Layout.topMargin: 0
+            Layout.bottomMargin: 0
+            Layout.leftMargin: 0
             Image {
                 id: img
                 mipmap: true
