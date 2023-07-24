@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 00:49+0000\n"
+"POT-Creation-Date: 2023-07-24 07:34+0000\n"
 "PO-Revision-Date: 2023-07-19 06:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -243,6 +243,11 @@ msgstr "Ni odobren"
 msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Brez omejitev"
+
+#: admin/federationtoolmodel.cpp:153
+#, kde-format
+msgid "Error occured when making a PUT request to update the domain block."
+msgstr ""
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -488,7 +493,7 @@ msgstr "Pogovori"
 msgid "No Conversations"
 msgstr "Ni pogovorov"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:327
+#: content/ui/ExplorePage.qml:17 content/ui/main.qml:327
 #, kde-format
 msgid "Explore"
 msgstr "Razišči"
@@ -499,10 +504,29 @@ msgstr "Razišči"
 msgid "Post"
 msgstr "Objavi"
 
-#: content/ui/ExplorePage.qml:83
+#: content/ui/ExplorePage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending Posts"
+msgstr "V trendu"
+
+#: content/ui/ExplorePage.qml:60
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending Tags"
+msgstr "V trendu"
+
+#: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "No Posts"
-msgstr "Ni objav"
+msgid "%1 people are talking"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:166
+#, kde-format
+msgid "No Tags"
+msgstr ""
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -647,6 +671,9 @@ msgid "Reset"
 msgstr "Ponovno nastavi"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
+#: content/ui/ModerationTools/FederationToolPage.qml:127
+#: content/ui/ModerationTools/FederationToolPage.qml:158
+#: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
@@ -754,6 +781,215 @@ msgstr "Lastnik"
 #, kde-format
 msgid "No accounts found"
 msgstr "Ni najdenih računov"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Moderation Tools"
+msgid "Federation Tool Page"
+msgstr "Orodje moderiranja"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:25
+#, kde-format
+msgid "Allowed Domain Info"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:31
+#, kde-format
+msgctxt "@info:The domain that is allowed to federate"
+msgid "Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:37
+#, kde-format
+msgctxt "@info:Time when the domain was allowed to federate."
+msgid "Created at"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:46
+#, kde-format
+msgid "Disallow Federation with Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:50
+#, kde-format
+msgid "Disallowed federation with the domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:60
+#, kde-format
+msgid "Add Domain Block"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:70
+#, kde-format
+msgctxt "@info:Enter the domain address of the domain block"
+msgid "Domain*"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:75
+#: content/ui/ModerationTools/MainFederationToolPage.qml:74
+#: content/ui/ModerationTools/MainFederationToolPage.qml:145
+#, fuzzy, kde-format
+#| msgid "Public post"
+msgid "Public comment"
+msgstr "Javna objava"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Private"
+msgid "Private Comment"
+msgstr "Zasebno"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:85
+#: content/ui/ModerationTools/MainFederationToolPage.qml:50
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with moderator role"
+#| msgid "Moderator"
+msgid "Moderation"
+msgstr "Moderator"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:90
+#: content/ui/ModerationTools/MainFederationToolPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "login status"
+#| msgid "Silenced"
+msgctxt "@info:Filter out all the allowed domains"
+msgid "Silence"
+msgstr "Utišan"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:94
+#: content/ui/ModerationTools/MainFederationToolPage.qml:59
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Prevent any interaction from or to this account and delete its "
+#| "contents. Revertible within 30 days."
+#| msgid "Suspend"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "Suspend"
+msgstr "Suspendiraj"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:98
+#: content/ui/ModerationTools/MainFederationToolPage.qml:63
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "None"
+msgstr "Noben"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/MainFederationToolPage.qml:85
+#, kde-format
+msgid "Reject media files"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:108
+#: content/ui/ModerationTools/MainFederationToolPage.qml:86
+#, kde-format
+msgid ""
+"Removes locally stored media files and refuses to download any in the "
+"future. Irrelevant for suspensions"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/MainFederationToolPage.qml:93
+#, kde-format
+msgid "Reject reports"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:114
+#: content/ui/ModerationTools/MainFederationToolPage.qml:94
+#, kde-format
+msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/MainFederationToolPage.qml:101
+#, kde-format
+msgid "Obfuscate domain name"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:120
+#: content/ui/ModerationTools/MainFederationToolPage.qml:102
+#, kde-format
+msgid ""
+"Partially obfuscate the domain name in the list if advertising the list of "
+"domain limitations is enabled"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:132
+#: content/ui/ModerationTools/FederationToolPage.qml:163
+#, kde-format
+msgctxt "@info:Button to create a domain block"
+msgid "Create Block"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:137
+#, kde-format
+msgid "New domain block added"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:146
+#: content/ui/ModerationTools/FederationToolPage.qml:316
+#, kde-format
+msgid "Allow Federation with Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:152
+#, kde-format
+msgctxt ""
+"@info:This domain will be able to fetch data from this server and incoming "
+"data from it will be processed and stored"
+msgid "Domain*"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:167
+#, kde-format
+msgid "New Allowed Domain Added"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:180
+#, kde-format
+msgid ""
+"Allowed domain option is available for instances with limited federation "
+"mode enabled"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:187
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with moderator role"
+#| msgid "Moderator"
+msgctxt "@info:Choose between allowed and limited domains"
+msgid "Moderation"
+msgstr "Moderator"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:202
+#, fuzzy, kde-format
+#| msgid "Blocked Accounts"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "Blocked domains"
+msgstr "Blokirani računi"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:206
+#, kde-format
+msgctxt "@info:Filter out all the allowed domains in limited federation mode"
+msgid "Allowed domains"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:272
+#, kde-format
+msgid "Allowed for federation"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:295
+#, fuzzy, kde-format
+#| msgid "No accounts found"
+msgid "No federations found"
+msgstr "Ni najdenih računov"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:307
+#, kde-format
+msgid "Add New Domain Block"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1025,11 +1261,104 @@ msgstr "Odstrani prisilno občutljivost"
 msgid "Take action against this account"
 msgstr "Ukrepaj proti računu"
 
+#: content/ui/ModerationTools/MainFederationToolPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgid "Remove Domain Block"
+msgstr "Odstrani zaznamek"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:32
+#, kde-format
+msgid "Domain Block Removed"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:40
+#, kde-format
+msgid "Edit domain block"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:80
+#: content/ui/ModerationTools/MainFederationToolPage.qml:152
+#, fuzzy, kde-format
+#| msgid "Private"
+msgid "Private comment"
+msgstr "Zasebno"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:115
+#, kde-format
+msgctxt "@info:Button to update the domain block with new values"
+msgid "Update Block"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:122
+#, kde-format
+msgid "Domain block updated"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:138
+#, fuzzy, kde-format
+#| msgid "Blocked Accounts"
+msgid "Blocked at"
+msgstr "Blokirani računi"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:146
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info: No public comment provided"
+msgid "None"
+msgstr "Noben"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:153
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info: No private comment provided"
+msgid "None"
+msgstr "Noben"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:159
+#, kde-format
+msgctxt "@info:The policy to be applied by this domain block"
+msgid "Policy"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:166
+#, kde-format
+msgctxt "@info:Whether to obfuscate public displays of this domain block"
+msgid "Obfuscate"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:173
+#, fuzzy, kde-format
+#| msgctxt "@info: Reject the user's request"
+#| msgid "Reject"
+msgctxt "@info:Whether to reject incoming media from this domain"
+msgid "Reject media"
+msgstr "Zavrni"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@info: Reject the user's request"
+#| msgid "Reject"
+msgctxt "@info:Whether to reject incoming reports from this domain"
+msgid "Reject report"
+msgstr "Zavrni"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:193
+#, kde-format
+msgid "Edit Domain Block"
+msgstr ""
+
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
 #, kde-format
 msgid "Accounts"
 msgstr "Računi"
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Conversation"
+msgid "Federation"
+msgstr "Pogovor"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1241,7 +1570,7 @@ msgid "Profile Editor"
 msgstr "Urejevalnik profila"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:216
 #, kde-format
 msgid "Please choose a file"
 msgstr "Izberite datoteko"
@@ -1538,7 +1867,7 @@ msgid "Write a new post"
 msgstr "Zapiši novo objavo"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "Content Warning"
 msgstr "Vsebinsko opozorilo"
@@ -1548,71 +1877,71 @@ msgstr "Vsebinsko opozorilo"
 msgid "What's new?"
 msgstr "Kaj je novega?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:214
+#: content/ui/StatusComposer/StatusComposer.qml:219
 #, kde-format
 msgid "Attach File"
 msgstr "Priloži datoteko"
 
-#: content/ui/StatusComposer/StatusComposer.qml:224
+#: content/ui/StatusComposer/StatusComposer.qml:229
 #, kde-format
 msgid "Add Poll"
 msgstr "Dodaj glasovanje"
 
-#: content/ui/StatusComposer/StatusComposer.qml:252
-#: content/ui/StatusDelegate/StatusDelegate.qml:305
-#: content/ui/StatusDelegate/StatusDelegate.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:257
+#: content/ui/StatusDelegate/StatusDelegate.qml:304
+#: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "Javno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:257
-#: content/ui/StatusDelegate/StatusDelegate.qml:307
+#: content/ui/StatusComposer/StatusComposer.qml:262
+#: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "Neobjavljeno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:262
-#: content/ui/StatusDelegate/StatusDelegate.qml:309
+#: content/ui/StatusComposer/StatusComposer.qml:267
+#: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "Zasebno"
 
-#: content/ui/StatusComposer/StatusComposer.qml:267
-#: content/ui/StatusDelegate/StatusDelegate.qml:311
+#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "Neposredno sporočilo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgid "Visibility"
 msgstr "Vidnost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:287
+#: content/ui/StatusComposer/StatusComposer.qml:292
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Izberi jezik, v katerem je napisana objava"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:298
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Jezik objave"
 
-#: content/ui/StatusComposer/StatusComposer.qml:308
+#: content/ui/StatusComposer/StatusComposer.qml:313
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> znaki"
 
-#: content/ui/StatusComposer/StatusComposer.qml:316
+#: content/ui/StatusComposer/StatusComposer.qml:321
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
@@ -1644,6 +1973,12 @@ msgstr "Medij je skrit"
 msgid "View profile"
 msgstr "Poglej profil"
 
+#: content/ui/StatusDelegate/LinkPreview.qml:16
+#, fuzzy, kde-format
+#| msgid "Show link preview"
+msgid "Link preview: %1"
+msgstr "Prikaži predogled povezave"
+
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
 msgid "Expand This Post"
@@ -1660,7 +1995,7 @@ msgid "Copy Link to This Post"
 msgstr "Kopiraj povezavo na to objavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:513
+#: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
@@ -1741,23 +2076,23 @@ msgstr "Odgovor na %1"
 msgid "%1 replied to your post"
 msgstr "%1 je odgovorilo na vašo objavo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:333
+#: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:371
+#: content/ui/StatusDelegate/StatusDelegate.qml:370
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Vsebinsko opozorilo</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:377
+#: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
 msgid "Show Less"
 msgstr "Prikaži manj"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:377
+#: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
 msgid "Show More"
 msgstr "Prikaži več"
@@ -1780,46 +2115,46 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:513
+#: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:530
+#: content/ui/StatusDelegate/StatusDelegate.qml:531
 #, kde-format
 msgid "via %1"
 msgstr "prek %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:562
+#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #, kde-format
 msgid "%1 Reply"
 msgstr "%1 Odgovor"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, kde-format
 msgid "%1 Replies"
 msgstr "%1 Odgovorov"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:574
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
+#: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorites"
 msgstr "%1 Priljubljenih"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:575
+#: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorite"
 msgstr "%1 Priljubljen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:586
+#: content/ui/StatusDelegate/StatusDelegate.qml:587
 #, kde-format
 msgid "%1 Boost"
 msgstr "%1 Pospešek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:586
 #: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:588
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 Pospeškov"
@@ -1938,49 +2273,49 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 skupnost KDE"
 
-#: main.cpp:122
+#: main.cpp:124
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:122
+#: main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:123
+#: main.cpp:125
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak"
 
-#: main.cpp:123
+#: main.cpp:125
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
 
-#: main.cpp:132
+#: main.cpp:134
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Podpira shemo url web+ap"
@@ -2047,32 +2382,32 @@ msgstr "V trendu"
 msgid "Error occurred when fetching the latest notification."
 msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 
-#: timeline/post.cpp:322
+#: timeline/post.cpp:327
 #, kde-format
 msgid "in the future"
 msgstr "v bodoče"
 
-#: timeline/post.cpp:324
+#: timeline/post.cpp:329
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:326
+#: timeline/post.cpp:331
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:328
+#: timeline/post.cpp:333
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:330
+#: timeline/post.cpp:335
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:334
+#: timeline/post.cpp:339
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -2081,7 +2416,7 @@ msgstr[1] "pred %1 tednoma"
 msgstr[2] "pred %1 tedni"
 msgstr[3] "pred %1 tedni"
 
-#: timeline/post.cpp:337
+#: timeline/post.cpp:342
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -2090,7 +2425,7 @@ msgstr[1] "pred %1 mesecema"
 msgstr[2] "pred %1 meseci"
 msgstr[3] "pred %1 meseci"
 
-#: timeline/post.cpp:341
+#: timeline/post.cpp:346
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -2098,6 +2433,13 @@ msgstr[0] "pred %1 letom"
 msgstr[1] "pred %1 letoma"
 msgstr[2] "pred %1 leti"
 msgstr[3] "pred %1 leti"
+
+#: timeline/tagsmodel.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending"
+msgstr "V trendu"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2122,6 +2464,9 @@ msgstr "Vir"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
+
+#~ msgid "No Posts"
+#~ msgstr "Ni objav"
 
 #~ msgid "Not following anyone"
 #~ msgstr "Ne sledim nobenemu"
