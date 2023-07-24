@@ -16,10 +16,10 @@ QQC2.AbstractButton {
     Accessible.name: i18n("Link preview: %1", root.card ? root.card.title : '')
     Accessible.description: root.card ? root.card.providerName : ''
 
-    leftPadding: 0
-    topPadding: 0
-    rightPadding: 0
-    bottomPadding: 0
+    leftPadding: Kirigami.Units.largeSpacing
+    topPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
 
     onClicked: Qt.openUrlExternally(root.card.url)
 
@@ -32,14 +32,18 @@ QQC2.AbstractButton {
         }
     }
 
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
+
     background: Rectangle {
         radius: Kirigami.Units.largeSpacing
-        color: 'transparent'
+        color: Kirigami.Theme.backgroundColor
         border {
-            width: root.visualFocus ? 2 : 1
-            color: root.visualFocus ? Kirigami.Theme.focusColor : Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor,0.15)
+            width: root.visualFocus ? 2 : 0
+            color: root.visualFocus ? Kirigami.Theme.focusColor : 'transparent'
         }
     }
+
     contentItem: RowLayout {
         Rectangle {
             id: logo
@@ -70,10 +74,7 @@ QQC2.AbstractButton {
                         height: img.height
                         Kirigami.ShadowedRectangle {
                             anchors.centerIn: parent
-                            corners {
-                                bottomLeftRadius: Kirigami.Units.largeSpacing + 1
-                                topLeftRadius: Kirigami.Units.largeSpacing + 1
-                            }
+                            radius: Kirigami.Units.largeSpacing
                             width: img.width
                             height: img.height
                         }
@@ -91,25 +92,33 @@ QQC2.AbstractButton {
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.smallSpacing
             Layout.leftMargin: Kirigami.Units.largeSpacing
+            spacing: 0
+            QQC2.Label {
+                text: root.card ? root.card.providerName : ''
+                elide: Text.ElideRight
+                font: Kirigami.Theme.smallFont
+                visible: text
+                Layout.fillWidth: true
+            }
             Kirigami.Heading {
                 level: 5
                 text: root.card ? root.card.title : ''
                 elide: Text.ElideRight
-                Layout.fillWidth: true
-                wrapMode: root.card && root.card.providerName ? Text.WordWrap : Text.NoWrap
+                font.weight: Font.DemiBold
                 maximumLineCount: 1
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
+                visible: text
+                Layout.fillWidth: true
             }
             QQC2.Label {
-                text: root.card ? root.card.providerName : ''
+                text: root.card ? root.card.description : ''
                 elide: Text.ElideRight
+                visible: text
                 Layout.fillWidth: true
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
             }
         }
+    }
+
+    HoverHandler {
+        cursorShape: Qt.PointingHandCursor
     }
 }
