@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-20 02:45+0000\n"
+"POT-Creation-Date: 2023-07-24 10:09+0000\n"
 "PO-Revision-Date: 2023-07-21 06:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -64,7 +64,7 @@ msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
 
 #: account/notificationhandler.cpp:24
-#: content/ui/StatusDelegate/StatusDelegate.qml:159
+#: content/ui/StatusDelegate/StatusDelegate.qml:168
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ჩაინიშნა თქვენი პოსტი"
@@ -75,13 +75,13 @@ msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
 
 #: account/notificationhandler.cpp:32
-#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 -მა აწია თქვენი პოსტი"
 
 #: account/notificationhandler.cpp:40
-#: content/ui/StatusDelegate/StatusDelegate.qml:161
+#: content/ui/StatusDelegate/StatusDelegate.qml:170
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 -მა პოსტი ჩაასწორა"
@@ -246,6 +246,11 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "შეზღუდვები დაწესებული არაა"
 
+#: admin/federationtoolmodel.cpp:153
+#, kde-format
+msgid "Error occured when making a PUT request to update the domain block."
+msgstr ""
+
 #: content/ui/AccountInfo.qml:70
 #, kde-format
 msgid "Follows you"
@@ -337,7 +342,7 @@ msgstr "მორგება"
 msgid "Configure"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:231
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:234
 #, kde-format
 msgid "Follow Requests"
 msgstr "მოთხოვნების მიყოლა"
@@ -490,7 +495,7 @@ msgstr "საუბრები"
 msgid "No Conversations"
 msgstr "საუბრების გარეშე"
 
-#: content/ui/ExplorePage.qml:15 content/ui/main.qml:324
+#: content/ui/ExplorePage.qml:17 content/ui/main.qml:327
 #, kde-format
 msgid "Explore"
 msgstr "დათვალიერება"
@@ -501,10 +506,29 @@ msgstr "დათვალიერება"
 msgid "Post"
 msgstr "პოსტი"
 
-#: content/ui/ExplorePage.qml:83
+#: content/ui/ExplorePage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending Posts"
+msgstr "ტრენდები"
+
+#: content/ui/ExplorePage.qml:60
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending Tags"
+msgstr "ტრენდები"
+
+#: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "No Posts"
-msgstr "პოსტების გარეშე"
+msgid "%1 people are talking"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:166
+#, kde-format
+msgid "No Tags"
+msgstr ""
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -561,42 +585,42 @@ msgstr "SSL-ის შეცდომების იგნორი"
 msgid "Proxy Settings"
 msgstr "პროქსის მორგება"
 
-#: content/ui/main.qml:202
+#: content/ui/main.qml:205
 #, kde-format
 msgid "Home"
 msgstr "საწყისი"
 
-#: content/ui/main.qml:218 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:221 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/main.qml:247
+#: content/ui/main.qml:250
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: content/ui/main.qml:262
+#: content/ui/main.qml:265
 #, kde-format
 msgid "Global"
 msgstr "გლობალური"
 
-#: content/ui/main.qml:278
+#: content/ui/main.qml:281
 #, kde-format
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: content/ui/main.qml:292
+#: content/ui/main.qml:295
 #, kde-format
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: content/ui/main.qml:308
+#: content/ui/main.qml:311
 #, kde-format
 msgid "Bookmarks"
 msgstr "სანიშნები"
 
-#: content/ui/main.qml:338
+#: content/ui/main.qml:341
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
@@ -649,6 +673,9 @@ msgid "Reset"
 msgstr "დაბრუნება"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
+#: content/ui/ModerationTools/FederationToolPage.qml:127
+#: content/ui/ModerationTools/FederationToolPage.qml:158
+#: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
@@ -756,6 +783,215 @@ msgstr "მფლობელი"
 #, kde-format
 msgid "No accounts found"
 msgstr "ანგარიშები ვერ ვიპოვე"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Moderation Tools"
+msgid "Federation Tool Page"
+msgstr "მოდერაციის ინსტრუმენტები"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:25
+#, kde-format
+msgid "Allowed Domain Info"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:31
+#, kde-format
+msgctxt "@info:The domain that is allowed to federate"
+msgid "Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:37
+#, kde-format
+msgctxt "@info:Time when the domain was allowed to federate."
+msgid "Created at"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:46
+#, kde-format
+msgid "Disallow Federation with Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:50
+#, kde-format
+msgid "Disallowed federation with the domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:60
+#, kde-format
+msgid "Add Domain Block"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:70
+#, kde-format
+msgctxt "@info:Enter the domain address of the domain block"
+msgid "Domain*"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:75
+#: content/ui/ModerationTools/MainFederationToolPage.qml:74
+#: content/ui/ModerationTools/MainFederationToolPage.qml:145
+#, fuzzy, kde-format
+#| msgid "Public post"
+msgid "Public comment"
+msgstr "საჯარო"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Private"
+msgid "Private Comment"
+msgstr "პირადი"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:85
+#: content/ui/ModerationTools/MainFederationToolPage.qml:50
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with moderator role"
+#| msgid "Moderator"
+msgid "Moderation"
+msgstr "მოდერატორი"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:90
+#: content/ui/ModerationTools/MainFederationToolPage.qml:55
+#, fuzzy, kde-format
+#| msgctxt "login status"
+#| msgid "Silenced"
+msgctxt "@info:Filter out all the allowed domains"
+msgid "Silence"
+msgstr "გაჩუმებული"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:94
+#: content/ui/ModerationTools/MainFederationToolPage.qml:59
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Prevent any interaction from or to this account and delete its "
+#| "contents. Revertible within 30 days."
+#| msgid "Suspend"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "Suspend"
+msgstr "ძილი"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:98
+#: content/ui/ModerationTools/MainFederationToolPage.qml:63
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "None"
+msgstr "არაფერი"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/MainFederationToolPage.qml:85
+#, kde-format
+msgid "Reject media files"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:108
+#: content/ui/ModerationTools/MainFederationToolPage.qml:86
+#, kde-format
+msgid ""
+"Removes locally stored media files and refuses to download any in the "
+"future. Irrelevant for suspensions"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/MainFederationToolPage.qml:93
+#, kde-format
+msgid "Reject reports"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:114
+#: content/ui/ModerationTools/MainFederationToolPage.qml:94
+#, kde-format
+msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/MainFederationToolPage.qml:101
+#, kde-format
+msgid "Obfuscate domain name"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:120
+#: content/ui/ModerationTools/MainFederationToolPage.qml:102
+#, kde-format
+msgid ""
+"Partially obfuscate the domain name in the list if advertising the list of "
+"domain limitations is enabled"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:132
+#: content/ui/ModerationTools/FederationToolPage.qml:163
+#, kde-format
+msgctxt "@info:Button to create a domain block"
+msgid "Create Block"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:137
+#, kde-format
+msgid "New domain block added"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:146
+#: content/ui/ModerationTools/FederationToolPage.qml:316
+#, kde-format
+msgid "Allow Federation with Domain"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:152
+#, kde-format
+msgctxt ""
+"@info:This domain will be able to fetch data from this server and incoming "
+"data from it will be processed and stored"
+msgid "Domain*"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:167
+#, kde-format
+msgid "New Allowed Domain Added"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:180
+#, kde-format
+msgid ""
+"Allowed domain option is available for instances with limited federation "
+"mode enabled"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:187
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with moderator role"
+#| msgid "Moderator"
+msgctxt "@info:Choose between allowed and limited domains"
+msgid "Moderation"
+msgstr "მოდერატორი"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:202
+#, fuzzy, kde-format
+#| msgid "Blocked Accounts"
+msgctxt "@info:Filter out all the blocked domains"
+msgid "Blocked domains"
+msgstr "დაბლოკილი ანგარიშები"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:206
+#, kde-format
+msgctxt "@info:Filter out all the allowed domains in limited federation mode"
+msgid "Allowed domains"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:272
+#, kde-format
+msgid "Allowed for federation"
+msgstr ""
+
+#: content/ui/ModerationTools/FederationToolPage.qml:295
+#, fuzzy, kde-format
+#| msgid "No accounts found"
+msgid "No federations found"
+msgstr "ანგარიშები ვერ ვიპოვე"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:307
+#, kde-format
+msgid "Add New Domain Block"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1027,11 +1263,104 @@ msgstr "ძალით მგრძნობიარობის გაუქ�
 msgid "Take action against this account"
 msgstr "ანგარიშზე ქმედების შესრულება"
 
+#: content/ui/ModerationTools/MainFederationToolPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgid "Remove Domain Block"
+msgstr "სანიშნის წაშლა"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:32
+#, kde-format
+msgid "Domain Block Removed"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:40
+#, kde-format
+msgid "Edit domain block"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:80
+#: content/ui/ModerationTools/MainFederationToolPage.qml:152
+#, fuzzy, kde-format
+#| msgid "Private"
+msgid "Private comment"
+msgstr "პირადი"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:115
+#, kde-format
+msgctxt "@info:Button to update the domain block with new values"
+msgid "Update Block"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:122
+#, kde-format
+msgid "Domain block updated"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:138
+#, fuzzy, kde-format
+#| msgid "Blocked Accounts"
+msgid "Blocked at"
+msgstr "დაბლოკილი ანგარიშები"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:146
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info: No public comment provided"
+msgid "None"
+msgstr "არაფერი"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:153
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info: No private comment provided"
+msgid "None"
+msgstr "არაფერი"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:159
+#, kde-format
+msgctxt "@info:The policy to be applied by this domain block"
+msgid "Policy"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:166
+#, kde-format
+msgctxt "@info:Whether to obfuscate public displays of this domain block"
+msgid "Obfuscate"
+msgstr ""
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:173
+#, fuzzy, kde-format
+#| msgctxt "@info: Reject the user's request"
+#| msgid "Reject"
+msgctxt "@info:Whether to reject incoming media from this domain"
+msgid "Reject media"
+msgstr "უარყოფა"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:180
+#, fuzzy, kde-format
+#| msgctxt "@info: Reject the user's request"
+#| msgid "Reject"
+msgctxt "@info:Whether to reject incoming reports from this domain"
+msgid "Reject report"
+msgstr "უარყოფა"
+
+#: content/ui/ModerationTools/MainFederationToolPage.qml:193
+#, kde-format
+msgid "Edit Domain Block"
+msgstr ""
+
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
 #, kde-format
 msgid "Accounts"
 msgstr "ანგარიშები"
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Conversation"
+msgid "Federation"
+msgstr "საუბარი"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1243,7 +1572,7 @@ msgid "Profile Editor"
 msgstr "პროფილების რედაქტორი"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:211
+#: content/ui/StatusComposer/StatusComposer.qml:216
 #, kde-format
 msgid "Please choose a file"
 msgstr "გთხოვთ, აირჩიოთ ფაილი"
@@ -1540,7 +1869,7 @@ msgid "Write a new post"
 msgstr "დაწერეთ ახალი პოსტი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "Content Warning"
 msgstr "შემცველობის გაფრთხილება"
@@ -1550,71 +1879,71 @@ msgstr "შემცველობის გაფრთხილება"
 msgid "What's new?"
 msgstr "რა არის ახალი?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:214
+#: content/ui/StatusComposer/StatusComposer.qml:219
 #, kde-format
 msgid "Attach File"
 msgstr "ფაილის მიმაგრება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:224
+#: content/ui/StatusComposer/StatusComposer.qml:229
 #, kde-format
 msgid "Add Poll"
 msgstr "დაამატე გამოკითხვა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:252
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
+#: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "საჯარო"
 
-#: content/ui/StatusComposer/StatusComposer.qml:257
-#: content/ui/StatusDelegate/StatusDelegate.qml:298
+#: content/ui/StatusComposer/StatusComposer.qml:262
+#: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "სიაში არაა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:262
-#: content/ui/StatusDelegate/StatusDelegate.qml:300
+#: content/ui/StatusComposer/StatusComposer.qml:267
+#: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "პირადი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:267
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "პირადი შეტყობინება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgid "Visibility"
 msgstr "ხილვადობა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "გაფრთხ"
 
-#: content/ui/StatusComposer/StatusComposer.qml:287
+#: content/ui/StatusComposer/StatusComposer.qml:292
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "აირჩიეთ ენა, რომელშიც პოსტია დაწერილი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:298
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "პოსტის ენა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:308
+#: content/ui/StatusComposer/StatusComposer.qml:313
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> სიმბოლო"
 
-#: content/ui/StatusComposer/StatusComposer.qml:316
+#: content/ui/StatusComposer/StatusComposer.qml:321
 #, kde-format
 msgid "Send"
 msgstr "გაგზავნა"
@@ -1640,11 +1969,17 @@ msgid "Media Hidden"
 msgstr "მედია დამალულია"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
-#: content/ui/StatusDelegate/StatusDelegate.qml:150
-#: content/ui/StatusDelegate/StatusDelegate.qml:250
+#: content/ui/StatusDelegate/StatusDelegate.qml:159
+#: content/ui/StatusDelegate/StatusDelegate.qml:259
 #, kde-format
 msgid "View profile"
 msgstr "პროფილის ნახვა"
+
+#: content/ui/StatusDelegate/LinkPreview.qml:16
+#, fuzzy, kde-format
+#| msgid "Show link preview"
+msgid "Link preview: %1"
+msgstr "ბმულის მინიატურის ჩვენება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -1662,7 +1997,7 @@ msgid "Copy Link to This Post"
 msgstr "ამ პოსტის ბმულის კოპირება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:500
+#: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
 msgid "Remove bookmark"
 msgstr "სანიშნის წაშლა"
@@ -1703,125 +2038,125 @@ msgstr "(ხმების გარეშე)"
 msgid "Vote"
 msgstr "ხმის მიცემა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:113
+#: content/ui/StatusDelegate/StatusDelegate.qml:122
 #, kde-format
 msgid "Filtered: %1"
 msgstr "გაფილტრულია: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:117
+#: content/ui/StatusDelegate/StatusDelegate.qml:126
 #, kde-format
 msgid "Show anyway"
 msgstr "მაინც ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:164
+#: content/ui/StatusDelegate/StatusDelegate.qml:173
 #, kde-format
 msgid "Your poll has ended"
 msgstr "თქვენი ხმა დაემატა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:166
+#: content/ui/StatusDelegate/StatusDelegate.qml:175
 #, kde-format
 msgid "A poll you voted in has ended"
 msgstr "გამოკითხვა, რომელშიც ხმა მიეცით, დასრულდა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:191
+#: content/ui/StatusDelegate/StatusDelegate.qml:200
 #, kde-format
 msgid "Pinned entry"
 msgstr "მიჭიკარტებული ჩანაწერი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:258
+#: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 აწეულია"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:260
+#: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "In reply to %1"
 msgstr "%1-ის პასუხად"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:260
+#: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "%1 replied to your post"
 msgstr "%1-მა უპასუხა თქვენი პოსტს"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:324
+#: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "მეტი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:362
+#: content/ui/StatusDelegate/StatusDelegate.qml:370
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>შემცველობის გაფრთხილება</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:368
+#: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
 msgid "Show Less"
 msgstr "ნაკლების ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:368
+#: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
 msgid "Show More"
 msgstr "მეტის ჩვენება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:439
+#: content/ui/StatusDelegate/StatusDelegate.qml:452
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:462
+#: content/ui/StatusDelegate/StatusDelegate.qml:475
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "გაძლიერება"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:482
+#: content/ui/StatusDelegate/StatusDelegate.qml:495
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:500
+#: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "სანიშნი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:517
+#: content/ui/StatusDelegate/StatusDelegate.qml:531
 #, kde-format
 msgid "via %1"
 msgstr "%1-ის გავლით"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:549
+#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #, kde-format
 msgid "%1 Reply"
 msgstr "%1 პასუხი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:549
-#: content/ui/StatusDelegate/StatusDelegate.qml:550
+#: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, kde-format
 msgid "%1 Replies"
 msgstr "%1 პასუხი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:561
-#: content/ui/StatusDelegate/StatusDelegate.qml:562
+#: content/ui/StatusDelegate/StatusDelegate.qml:575
+#: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorites"
 msgstr "%1 სანიშნი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:562
+#: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorite"
 msgstr "%1 სანიშნი"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:573
+#: content/ui/StatusDelegate/StatusDelegate.qml:587
 #, kde-format
 msgid "%1 Boost"
 msgstr "%1 აწევა"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:573
-#: content/ui/StatusDelegate/StatusDelegate.qml:574
+#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:588
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 აწევა"
@@ -1938,49 +2273,49 @@ msgstr "7 დღე"
 msgid "An unknown error occurred."
 msgstr "უცნობი შეცდომა."
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-ის კლიენტი"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE -ის საზოგადოება"
 
-#: main.cpp:122
+#: main.cpp:124
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:122
+#: main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:123
+#: main.cpp:125
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:123
+#: main.cpp:125
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
 
-#: main.cpp:132
+#: main.cpp:134
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "აქვს web+ap: url სქემის მხარდაჭერა"
@@ -2047,51 +2382,58 @@ msgstr "ტრენდები"
 msgid "Error occurred when fetching the latest notification."
 msgstr "შეცდომა უახლესი შეტყობინების გამოთხოვისას."
 
-#: timeline/post.cpp:322
+#: timeline/post.cpp:327
 #, kde-format
 msgid "in the future"
 msgstr "მომავალში"
 
-#: timeline/post.cpp:324
+#: timeline/post.cpp:329
 #, kde-format
 msgid "%1s"
 msgstr "%1წმ"
 
-#: timeline/post.cpp:326
+#: timeline/post.cpp:331
 #, kde-format
 msgid "%1m"
 msgstr "%1წთ"
 
-#: timeline/post.cpp:328
+#: timeline/post.cpp:333
 #, kde-format
 msgid "%1h"
 msgstr "%1სთ"
 
-#: timeline/post.cpp:330
+#: timeline/post.cpp:335
 #, kde-format
 msgid "%1d"
 msgstr "%1დღ"
 
-#: timeline/post.cpp:334
+#: timeline/post.cpp:339
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 კვირის წინ"
 msgstr[1] "%1 კვირის წინ"
 
-#: timeline/post.cpp:337
+#: timeline/post.cpp:342
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 თვის წინ"
 msgstr[1] "%1 თვის წინ"
 
-#: timeline/post.cpp:341
+#: timeline/post.cpp:346
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 წლის წინ"
 msgstr[1] "%1 წლის წინ"
+
+#: timeline/tagsmodel.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgid "Trending"
+msgstr "ტრენდები"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2116,6 +2458,9 @@ msgstr "წყარო"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
+
+#~ msgid "No Posts"
+#~ msgstr "პოსტების გარეშე"
 
 #~ msgid "Not following anyone"
 #~ msgstr "არავის მიყვებით"
