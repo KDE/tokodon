@@ -41,6 +41,7 @@ class AccountManager : public QAbstractListModel
 public:
     enum CustomRoles {
         AccountRole = Qt::UserRole + 1,
+        DisplayNameRole,
         DescriptionRole,
         InstanceRole,
     };

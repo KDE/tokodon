@@ -5,19 +5,19 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.labs.components 1.0 as KirigamiComponents
 
 import org.kde.kmasto 1.0
 
-QQC2.ToolBar {
+QQC2.Pane {
     id: userInfo
-    visible: AccountManager.selectedAccount
-
-    padding: 0
-
-    height: content.height
 
     property alias accountsListVisible: accounts.visible
     property var addAccount
+
+    visible: AccountManager.selectedAccount
+    padding: 0
 
     function openAccountPage() {
         const accountId = AccountManager.selectedAccountId;
@@ -28,11 +28,57 @@ QQC2.ToolBar {
         }
     }
 
-    ColumnLayout {
+    contentItem: ColumnLayout {
         id: content
-        width: parent.width
 
         spacing: 0
+
+        Delegates.RoundedItemDelegate {
+            id: currentAccountDelegate
+
+            text: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayNameHtml : ''
+
+            onClicked: openAccountPage()
+            Layout.fillWidth: true
+
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
+                QQC2.AbstractButton {
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                    contentItem: KirigamiComponents.Avatar {
+                        name: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayName : 'User'
+                        source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
+                    }
+
+                    onClicked: openAccountPage()
+                }
+
+                Delegates.SubtitleContentItem {
+                    subtitle: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ''
+                    subtitleItem.textFormat: Text.PlainText
+                    itemDelegate: currentAccountDelegate
+                    Layout.fillWidth: true
+                }
+
+                QQC2.ToolButton {
+                    icon.name: "system-switch-user"
+                    onClicked: {
+                        userInfo.accountsListVisible = !userInfo.accountsListVisible
+                    }
+                    text: i18n("Switch user")
+                    display: QQC2.AbstractButton.IconOnly
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    Layout.minimumWidth: Layout.preferredWidth
+                }
+            }
+        }
 
         ListView {
             id: accounts
@@ -42,39 +88,31 @@ QQC2.ToolBar {
 
             header: Kirigami.Separator {}
 
-            footer: Kirigami.BasicListItem {
+            footer: Delegates.RoundedItemDelegate {
+                id: addAccountDelegaze
+
                 width: parent.width
                 highlighted: focus
-                background: Rectangle {
-                    id: background
-                    color: addAccount.backgroundColor
-
-                    Rectangle {
-                        anchors.fill: parent
-                        visible: !Kirigami.Settings.tabletMode && addAccount.hoverEnabled
-                        color: addAccount.activeBackgroundColor
-                        opacity: {
-                            if ((addAccount.highlighted || addAccount.ListView.isCurrentItem) && !addAccount.pressed) {
-                                return .6
-                            } else if (addAccount.hovered && !addAccount.pressed) {
-                                return .3
-                            } else {
-                                return 0
-                            }
-                        }
-                    }
+                icon {
+                    name: "list-add"
+                    width: Kirigami.Units.iconSizes.medium
+                    height: Kirigami.Units.iconSizes.medium
                 }
-                Component.onCompleted: userInfo.addAccount = this
-                icon: "list-add"
                 text: i18n("Add Account")
                 enabled: AccountManager.hasAccounts && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
 
-                subtitle: i18n("Log in to an existing account")
+                contentItem: Delegates.SubtitleContentItem {
+                    itemDelegate: addAccountDelegaze
+                    subtitle: i18n("Log in to an existing account")
+                }
+
                 onClicked: {
                     pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
                 }
+
+                Component.onCompleted: userInfo.addAccount = this
                 Keys.onUpPressed: {
                     accounts.currentIndex = accounts.count - 1
                     accounts.forceActiveFocus()
@@ -111,137 +149,48 @@ QQC2.ToolBar {
                 userInfo.accountsListVisible = false
             }
 
-            width: parent.width
+            Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
-            delegate: Kirigami.BasicListItem {
-                leftPadding: topPadding
-                leading: Kirigami.Avatar {
-                    source: model.account.identity.avatarUrl
-                    name: model.display
-                    implicitWidth: height
-                    sourceSize.width: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
-                    sourceSize.height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing * 2
+
+            delegate: Delegates.RoundedItemDelegate {
+                id: accountDelegate
+
+                required property int index
+                required property string displayName
+                required property string instance
+                required property var account
+
+                text: displayName
+
+                contentItem: RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    KirigamiComponents.Avatar {
+                        source: accountDelegate.account.identity.avatarUrl
+                        name: accountDelegate.displayName
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                        Layout.leftMargin: Kirigami.Units.smallSpacing
+                        Layout.rightMargin: Kirigami.Units.smallSpacing
+                    }
+
+                    Delegates.SubtitleContentItem {
+                        itemDelegate: accountDelegate
+                        subtitleItem.textFormat: Text.PlainText
+                        subtitle: accountDelegate.instance
+                        Layout.fillWidth: true
+                    }
                 }
-                width: parent.width
-                //labelItem.textFormat: Text.PlainText
-                subtitleItem.textFormat: Text.PlainText
-                label: model.display
-                subtitle: model.instance
 
                 onClicked: {
-                    if (AccountManager.selectedAccount !== model.account) {
-                        AccountManager.selectedAccount = model.account;
-                        accounts.currentIndex = index;
+                    if (AccountManager.selectedAccount !== accountDelegate.account) {
+                        AccountManager.selectedAccount = accountDelegate.account;
+                        accounts.currentIndex = accountDelegate.index;
                     }
                     userInfo.accountsListVisible = false
                 }
             }
         }
 
-        Kirigami.Separator {
-            Layout.fillWidth: true
-        }
-
-        RowLayout {
-            Layout.preferredHeight: Kirigami.Units.gridUnit * 3
-            RowLayout {
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                Item {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: height
-                    Kirigami.Avatar {
-                        anchors.fill: parent
-                        anchors.margins: Kirigami.Units.smallSpacing
-                        source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
-                        name: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayName : 'user'
-                        actions.main: Kirigami.Action {
-                            onTriggered: openAccountPage()
-                        }
-                    }
-                }
-                ColumnLayout {
-                    Layout.fillWidth: true
-                    spacing: 0
-                    QQC2.Label {
-                        id: displayNameLabel
-                        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayNameHtml : ''
-
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                    }
-                    QQC2.Label {
-                        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ''
-                        font.pointSize: displayNameLabel.font.pointSize * 0.8
-                        opacity: 0.7
-                        textFormat: Text.PlainText
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                    }
-                }
-
-                TapHandler {
-                    gesturePolicy: TapHandler.WithinBounds
-                    onTapped: openAccountPage()
-                }
-
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-            }
-            QQC2.ToolButton {
-                icon.name: "system-switch-user"
-                onClicked: {
-                    userInfo.accountsListVisible = !userInfo.accountsListVisible
-                }
-                text: i18n("Switch user")
-                display: QQC2.AbstractButton.IconOnly
-                Accessible.name: text
-                QQC2.ToolTip {
-                    text: parent.text
-                }
-                Layout.minimumWidth: Layout.preferredWidth
-                Layout.alignment: Qt.AlignRight
-            }
-            QQC2.ToolButton {
-                icon.name: "list-add"
-                onClicked: ; //TODO
-                text: i18n("Add") //TODO find better message
-                display: QQC2.AbstractButton.IconOnly
-                QQC2.ToolTip {
-                    text: parent.text
-                }
-                Layout.minimumWidth: Layout.preferredWidth
-                Layout.alignment: Qt.AlignRight
-                visible: false
-            }
-            QQC2.ToolButton {
-                icon.name: "lock"
-                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/ModerationTools/ModerationToolPage.qml', {}, { title: i18n("Moderation Tools") })
-                text: i18nc("@action:button", "Open Moderation Tools")
-                display: QQC2.AbstractButton.IconOnly
-                QQC2.ToolTip.text: text
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                Layout.minimumWidth: Layout.preferredWidth
-                Layout.alignment: Qt.AlignRight
-                visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
-            }
-            QQC2.ToolButton {
-                icon.name: "settings-configure"
-                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
-                text: i18n("Open settings")
-                display: QQC2.AbstractButton.IconOnly
-                Layout.minimumWidth: Layout.preferredWidth
-                Layout.alignment: Qt.AlignRight
-                QQC2.ToolTip {
-                    text: parent.text
-                }
-            }
-            Item {
-                width: 1
-            }
-        }
     }
 }
