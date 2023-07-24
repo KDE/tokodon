@@ -149,7 +149,8 @@ Kirigami.ApplicationWindow {
                 easing.type: Easing.InOutQuad
             }
         }
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
         handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
@@ -179,6 +180,15 @@ Kirigami.ApplicationWindow {
                 contentItem: SearchField {}
             }
 
+            UserInfo {
+                Layout.fillWidth: true
+            }
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.smallSpacing
+            }
+
             QQC2.ButtonGroup {
                 id: pageButtonGroup
             }
@@ -189,6 +199,7 @@ Kirigami.ApplicationWindow {
                     required property var modelData
                     QQC2.ButtonGroup.group: pageButtonGroup
 
+                    padding: Kirigami.Units.largeSpacing
                     action: modelData
                     Layout.fillWidth: true
                     visible: modelData.visible
@@ -199,7 +210,22 @@ Kirigami.ApplicationWindow {
                 Layout.fillHeight: true
             }
 
-            UserInfo {
+            Delegates.RoundedItemDelegate {
+                icon.name: "lock"
+                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/ModerationTools/ModerationToolPage.qml', {}, { title: i18n("Moderation Tools") })
+                text: i18nc("@action:button", "Open Moderation Tools")
+                visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
+                padding: Kirigami.Units.largeSpacing
+
+                Layout.fillWidth: true
+            }
+
+            Delegates.RoundedItemDelegate {
+                icon.name: "settings-configure"
+                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+                text: i18n("Open settings")
+                padding: Kirigami.Units.largeSpacing
+
                 Layout.fillWidth: true
             }
         }

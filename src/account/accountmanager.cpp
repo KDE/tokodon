@@ -50,6 +50,7 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     }
     switch (role) {
     case Qt::DisplayRole:
+    case DisplayNameRole:
         return account->identity()->displayNameHtml();
     case DescriptionRole:
         return account->identity()->account();
@@ -71,6 +72,7 @@ QHash<int, QByteArray> AccountManager::roleNames() const
 {
     return {
         {Qt::DisplayRole, QByteArrayLiteral("display")},
+        {DisplayNameRole, QByteArrayLiteral("displayName")},
         {AccountRole, QByteArrayLiteral("account")},
         {DescriptionRole, QByteArrayLiteral("description")},
         {InstanceRole, QByteArrayLiteral("instance")},
