@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 10:09+0000\n"
+"POT-Creation-Date: 2023-07-25 02:30+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -350,13 +350,13 @@ msgstr "Редактор учётной записи"
 msgid "Settings"
 msgstr "Параметры"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
-#: content/ui/UserInfo.qml:233
+#: content/ui/AccountInfo.qml:245 content/ui/main.qml:225
+#: content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Настройка"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:234
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:265
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запросы на подписку"
@@ -512,7 +512,7 @@ msgstr "Чаты"
 msgid "No Conversations"
 msgstr "Нет ни одного чата"
 
-#: content/ui/ExplorePage.qml:17 content/ui/main.qml:327
+#: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -599,42 +599,59 @@ msgstr "Игнорировать ошибки SSL"
 msgid "Proxy Settings"
 msgstr "Параметры прокси-сервера"
 
-#: content/ui/main.qml:205
+#: content/ui/main.qml:215
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgid "Moderation Tools"
+msgstr "Чаты"
+
+#: content/ui/main.qml:216
+#, kde-format
+msgctxt "@action:button"
+msgid "Open Moderation Tools"
+msgstr ""
+
+#: content/ui/main.qml:226
+#, kde-format
+msgid "Open settings"
+msgstr ""
+
+#: content/ui/main.qml:236
 #, kde-format
 msgid "Home"
 msgstr "Главная"
 
-#: content/ui/main.qml:221 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:252 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: content/ui/main.qml:250
+#: content/ui/main.qml:281
 #, kde-format
 msgid "Local"
 msgstr "Локальная лента"
 
-#: content/ui/main.qml:265
+#: content/ui/main.qml:296
 #, kde-format
 msgid "Global"
 msgstr "Глобальная лента"
 
-#: content/ui/main.qml:281
+#: content/ui/main.qml:312
 #, kde-format
 msgid "Conversation"
 msgstr "Чат"
 
-#: content/ui/main.qml:295
+#: content/ui/main.qml:326
 #, kde-format
 msgid "Favourites"
 msgstr "Избранное"
 
-#: content/ui/main.qml:311
+#: content/ui/main.qml:342
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/main.qml:341
+#: content/ui/main.qml:372
 #, kde-format
 msgid "Search"
 msgstr "Поиск"
@@ -1463,7 +1480,7 @@ msgstr "Метки"
 msgid "Logout"
 msgstr "Выйти"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:69
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Добавить учётную запись"
@@ -2215,37 +2232,15 @@ msgstr ""
 msgid "No posts"
 msgstr "Нет ни одной публикации"
 
-#: content/ui/UserInfo.qml:72
-#, kde-format
-msgid "Log in to an existing account"
-msgstr "Войти в существующую учётную запись"
-
-#: content/ui/UserInfo.qml:198
+#: content/ui/UserInfo.qml:73
 #, kde-format
 msgid "Switch user"
 msgstr ""
 
-#: content/ui/UserInfo.qml:210
+#: content/ui/UserInfo.qml:106
 #, kde-format
-msgid "Add"
-msgstr "Добавить"
-
-#: content/ui/UserInfo.qml:221
-#, fuzzy, kde-format
-#| msgid "Conversations"
-msgid "Moderation Tools"
-msgstr "Чаты"
-
-#: content/ui/UserInfo.qml:222
-#, kde-format
-msgctxt "@action:button"
-msgid "Open Moderation Tools"
-msgstr ""
-
-#: content/ui/UserInfo.qml:234
-#, kde-format
-msgid "Open settings"
-msgstr ""
+msgid "Log in to an existing account"
+msgstr "Войти в существующую учётную запись"
 
 #: conversation/conversationmodel.cpp:59
 #, kde-format
@@ -2507,6 +2502,9 @@ msgstr "Источник"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Назначение"
+
+#~ msgid "Add"
+#~ msgstr "Добавить"
 
 #~ msgctxt "More than one reply"
 #~ msgid "1+"
