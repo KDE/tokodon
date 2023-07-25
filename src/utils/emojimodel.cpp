@@ -96,7 +96,7 @@ void EmojiModel::emojiUsed(AbstractAccount *account, const QString &shortcode)
         return;
     }
 
-    QVector list = history(account).toVector();
+    auto list = history(account).toVector();
 
     // Remove previous instances of this emoji
     auto it = list.begin();
