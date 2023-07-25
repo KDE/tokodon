@@ -576,8 +576,8 @@ void AbstractAccount::fetchCustomEmojis()
             }
 
             CustomEmoji customEmoji{};
-            customEmoji.shortcode = emojiObj["shortcode"].toString();
-            customEmoji.url = emojiObj["url"].toString();
+            customEmoji.shortcode = emojiObj[QStringLiteral("shortcode")].toString();
+            customEmoji.url = emojiObj[QStringLiteral("url")].toString();
 
             m_customEmojis.push_back(customEmoji);
         }
