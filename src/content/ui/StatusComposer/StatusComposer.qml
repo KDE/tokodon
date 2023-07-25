@@ -288,9 +288,10 @@ MastoPage {
                         QQC2.ToolButton {
                             id: languageButton
                             text: backend.language
-                            QQC2.ToolTip {
-                                text: i18n("Post Language")
-                            }
+                            QQC2.ToolTip.text: i18n("Post Language")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
+
                             onClicked: languageSelect.popup.open()
                             LanguageSelector {
                                 id: languageSelect
