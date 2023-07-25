@@ -270,49 +270,6 @@ Kirigami.ScrollablePage {
             contentItem: ColumnLayout {
                 spacing: 0
 
-                MobileForm.FormComboBoxDelegate {
-                    id: box
-                    text: i18n("Default status privacy")
-                    model: [
-                        {
-                            "display": i18n("Public post"),
-                            "value": "public"
-                        },
-                        {
-                            "display": i18n("Unlisted post"),
-                            "value": "unlisted"
-                        },
-                        {
-                            "display": i18n("Followers-only post"),
-                            "value": "private"
-                        },
-                        {
-                            "display": i18n("Direct post"),
-                            "value": "direct"
-                        },
-                    ]
-                    textRole: "display"
-                    valueRole: "value"
-                    Component.onCompleted: box.currentIndex = box.indexOfValue(backend.privacy)
-                    Connections {
-                        target: backend
-                        function onPrivacyChanged() {
-                            box.currentIndex = box.indexOfValue(backend.privacy)
-                        }
-                    }
-                    onCurrentIndexChanged: backend.privacy = model[currentIndex].value
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Mark by default content as sensitive")
-                    checked: backend.sensitive
-                    onCheckedChanged: backend.sensitive = checked
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
                 MobileForm.FormCheckDelegate {
                     text: i18n("Require follow requests")
                     checked: backend.locked
