@@ -302,6 +302,23 @@ MastoPage {
                                 onActivated: backend.language = model.getCode(currentIndex);
                             }
                         }
+                        QQC2.ToolButton {
+                            id: emojiButton
+
+                            icon.name: "smiley"
+                            onClicked: emojiDialog.open()
+                            EmojiDialog {
+                                id: emojiDialog
+
+                                modal: false
+
+                                onChosen: textArea.text += emoji
+                                onClosed: if (emojiButton.checked) emojiButton.checked = false
+                            }
+                            QQC2.ToolTip.text: i18n("Add Emoji")
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                            QQC2.ToolTip.visible: hovered
+                        }
                     }
                 }
             }

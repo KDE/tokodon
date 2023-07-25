@@ -99,6 +99,12 @@ PRIVATE
     utils/filetransferjob.h
     utils/clipboard.cpp
     utils/clipboard.h
+    utils/emojimodel.cpp
+    utils/emojimodel.h
+    utils/emojis.h
+    utils/emojitones.cpp
+    utils/emojitones.h
+    utils/emojitones_data.h
     utils/messagefiltercontainer.cpp
     utils/messagefiltercontainer.h
     utils/mpvplayer.cpp

@@ -13,6 +13,22 @@
 #include <QJsonObject>
 #include <QObject>
 
+class CustomEmoji
+{
+    Q_GADGET
+
+    Q_PROPERTY(QString shortName MEMBER shortcode)
+    Q_PROPERTY(QString unicode MEMBER url)
+    Q_PROPERTY(bool isCustom MEMBER isCustom)
+
+public:
+    QString shortcode;
+    QString url;
+    bool isCustom = true;
+};
+
+Q_DECLARE_METATYPE(CustomEmoji)
+
 class Attachment;
 class Notification;
 class QNetworkReply;
@@ -82,6 +98,11 @@ public:
 
     /// Fetches instance-specific metadata like max post length, allowed content types, etc
     void fetchInstanceMetadata();
+
+    /// Fetches instance-specific custom emojis
+    void fetchCustomEmojis();
+
+    QList<CustomEmoji> customEmojis() const;
 
     /// Returns the instance URI
     /// \see setInstanceUri
@@ -324,6 +345,10 @@ Q_SIGNALS:
     /// \see fetchInstanceMetadata
     void fetchedInstanceMetadata();
 
+    /// Emitted when the custom emojis has been fetched
+    /// \see fetchCustomEmojis
+    void fetchedCustomEmojis();
+
     /// Emitted when a post has been invalidated
     /// \see invalidatePost
     void invalidatedPost(Post *p);
@@ -354,6 +379,7 @@ protected:
     AdminAccountInfo *m_federationIdentity;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
+    QList<CustomEmoji> m_customEmojis;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

@@ -53,13 +53,14 @@
 #include "timeline/notificationmodel.h"
 #include "timeline/poll.h"
 #include "timeline/post.h"
+#include "timeline/tagsmodel.h"
 #include "timeline/tagstimelinemodel.h"
 #include "timeline/threadmodel.h"
 #include "utils/blurhashimageprovider.h"
 #include "utils/clipboard.h"
+#include "utils/emojimodel.h"
 #include "utils/filehelper.h"
 #include "utils/mpvplayer.h"
-#include "timeline/tagsmodel.h"
 
 #ifdef HAVE_COLORSCHEME
 #include "utils/colorschemer.h"
@@ -198,6 +199,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
     qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
     qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");
+    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "EmojiModel", &EmojiModel::instance());
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

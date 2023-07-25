@@ -395,6 +395,8 @@ void AbstractAccount::fetchInstanceMetadata()
         m_allowedContentTypes = parsePleromaInfo(doc);
         Q_EMIT fetchedInstanceMetadata();
     });
+
+    fetchCustomEmojis();
 }
 
 void AbstractAccount::invalidate()
@@ -550,4 +552,41 @@ QString AbstractAccount::clientSecretKey() const
 QString AbstractAccount::accessTokenKey() const
 {
     return AccountManager::accessTokenKey(settingsGroupName());
+}
+
+void AbstractAccount::fetchCustomEmojis()
+{
+    m_customEmojis.clear();
+
+    get(apiUrl("/api/v1/custom_emojis"), false, this, [=](QNetworkReply *reply) {
+        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+            return;
+
+        const auto data = reply->readAll();
+        const auto doc = QJsonDocument::fromJson(data);
+
+        if (!doc.isArray())
+            return;
+
+        const auto array = doc.array();
+
+        for (auto emojiObj : array) {
+            if (!emojiObj.isObject()) {
+                continue;
+            }
+
+            CustomEmoji customEmoji{};
+            customEmoji.shortcode = emojiObj["shortcode"].toString();
+            customEmoji.url = emojiObj["url"].toString();
+
+            m_customEmojis.push_back(customEmoji);
+        }
+
+        Q_EMIT fetchedCustomEmojis();
+    });
+}
+
+QList<CustomEmoji> AbstractAccount::customEmojis() const
+{
+    return m_customEmojis;
 }
