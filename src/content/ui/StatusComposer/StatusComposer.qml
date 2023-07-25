@@ -285,19 +285,21 @@ MastoPage {
                                 text: i18n("Content Warning")
                             }
                         }
-                        LanguageSelector {
-                            id: languageSelect
+                        QQC2.ToolButton {
+                            id: languageButton
+                            text: backend.language
+                            QQC2.ToolTip {
+                                text: i18n("Post Language")
+                            }
+                            onClicked: languageSelect.popup.open()
+                            LanguageSelector {
+                                id: languageSelect
 
-                            Accessible.name: QQC2.ToolTip.text
-                            Accessible.description: i18nc("@info:whatsthis Post language selection", "Select the language the post is written in")
+                                visible: false
 
-                            Component.onCompleted: currentIndex = indexOfValue(backend.language);
-                            onActivated: backend.language = model.getCode(currentIndex)
-                            ;
-
-                            QQC2.ToolTip.text: i18nc("@label:listbox Post language selection", "Post Language")
-                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-                            QQC2.ToolTip.visible: hovered
+                                Component.onCompleted: currentIndex = indexOfValue(backend.language);
+                                onActivated: backend.language = model.getCode(currentIndex);
+                            }
                         }
                     }
                 }
