@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 07:34+0000\n"
-"PO-Revision-Date: 2023-07-19 13:34+0300\n"
+"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"PO-Revision-Date: 2023-07-25 01:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -247,6 +247,7 @@ msgstr "Uygulanan Sınırlama Yok"
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"Alan adı blokunu güncellemek için bir PUT isteği yaparken bir hata oluştu."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -333,13 +334,13 @@ msgstr "Hesap düzenleyici"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
-#: content/ui/UserInfo.qml:233
+#: content/ui/AccountInfo.qml:245 content/ui/main.qml:225
+#: content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:234
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:265
 #, kde-format
 msgid "Follow Requests"
 msgstr "Takip İstekleri"
@@ -492,7 +493,7 @@ msgstr "Sohbetler"
 msgid "No Conversations"
 msgstr "Sohbet Yok"
 
-#: content/ui/ExplorePage.qml:17 content/ui/main.qml:327
+#: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
 #, kde-format
 msgid "Explore"
 msgstr "Keşfet"
@@ -504,28 +505,24 @@ msgid "Post"
 msgstr "Gönderi"
 
 #: content/ui/ExplorePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Posts"
-msgstr "Popüler"
+msgstr "Popüler Gönderiler"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Tags"
-msgstr "Popüler"
+msgstr "Popüler Etiketler"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 kişi konuşuyor"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
 msgid "No Tags"
-msgstr ""
+msgstr "Etiket yok"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -582,42 +579,58 @@ msgstr "SSL hatalarını yok say"
 msgid "Proxy Settings"
 msgstr "Vekil Ayarları"
 
-#: content/ui/main.qml:205
+#: content/ui/main.qml:215
+#, kde-format
+msgid "Moderation Tools"
+msgstr "Moderasyon Araçları"
+
+#: content/ui/main.qml:216
+#, kde-format
+msgctxt "@action:button"
+msgid "Open Moderation Tools"
+msgstr "Moderasyon Araçlarını Aç"
+
+#: content/ui/main.qml:226
+#, kde-format
+msgid "Open settings"
+msgstr "Ayarları aç"
+
+#: content/ui/main.qml:236
 #, kde-format
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: content/ui/main.qml:221 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:252 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: content/ui/main.qml:250
+#: content/ui/main.qml:281
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: content/ui/main.qml:265
+#: content/ui/main.qml:296
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:281
+#: content/ui/main.qml:312
 #, kde-format
 msgid "Conversation"
 msgstr "Sohbet"
 
-#: content/ui/main.qml:295
+#: content/ui/main.qml:326
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriler"
 
-#: content/ui/main.qml:311
+#: content/ui/main.qml:342
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer İmleri"
 
-#: content/ui/main.qml:341
+#: content/ui/main.qml:372
 #, kde-format
 msgid "Search"
 msgstr "Ara"
@@ -782,104 +795,92 @@ msgid "No accounts found"
 msgstr "Hesap bulunamadı"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Moderation Tools"
+#, kde-format
 msgid "Federation Tool Page"
-msgstr "Moderasyon Araçları"
+msgstr "Federasyon Araçları Sayfası"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "İzin Verilen Alan Adı Bilgisi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Alan Adı"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Oluşturulma tarihi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Alan Adıyla Federe Etmeye İzin Verme"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Alan adıyla federe etmeye izin verilmedi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Alan Adı Bloku Ekle"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Alan Adı*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Genel gönderi"
+msgstr "Genel yorum"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Gizli"
+msgstr "Gizli yorum"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgid "Moderation"
-msgstr "Moderatör"
+msgstr "Moderasyon"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Silenced"
+#, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr "Susturuldu"
+msgstr "Sustur"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent any interaction from or to this account and delete its "
-#| "contents. Revertible within 30 days."
-#| msgid "Suspend"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Askıya Al"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:107
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Ortam dosyalarını reddet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -888,24 +889,27 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Yerel olarak depolanan ortam dosyalarını kaldırır ve gelecekte hiçbir "
+"tanesini indirmez. Askıya almalarla ilgisizdir"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Raporları reddet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Bu alan adından gelen tüm raporları yok say. Askıya almalarla ilgisizdir"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Alan adını belirsizleştir"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -914,24 +918,26 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Alan adı sınırlamalarının reklamını yapmak etkinse alan adını kısımsal "
+"olarak belirsizleştir"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Blok Oluştur"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Yeni alan adı bloku eklendi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Alan Adıyla Federe Etmeye İzin Ver"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -939,12 +945,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Alan Adı*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Yeni İzin Verilen Alan Adı Eklendi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -952,43 +958,41 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Sınırlı federasyon kipi etkin olan örnekler için izin verilen alan adı "
+"seçeneği kullanılabilir"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Moderatör"
+msgstr "Moderasyon"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Engellenen Hesaplar"
+msgstr "Engellenen alan adları"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "İzin verilen alan adları"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Federe etmek için izin verilen"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No federations found"
-msgstr "Hesap bulunamadı"
+msgstr "Federasyon bulunamadı"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Yeni Alan Adı Bloku Ekle"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1261,91 +1265,82 @@ msgid "Take action against this account"
 msgstr "Bu Hesaba Karşı Bir Eylem Gerçekleştir"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Yer imini kaldır"
+msgstr "Alan Adı Blokunu Kaldır"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Alan Adı Bloku Kaldırıldı"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Alan adı blokunu düzenle"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Gizli"
+msgstr "Gizli yorum"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Bloku Güncelle"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Alan adı bloku güncellendi"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Blocked at"
-msgstr "Engellenen Hesaplar"
+msgstr "Şurada engellendi"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:159
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Politika"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Belirsizleştir"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr "Reddet"
+msgstr "Ortamı reddet"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr "Reddet"
+msgstr "Raporu reddet"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Alan Adı Blokunu Düzenle"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1354,10 +1349,9 @@ msgid "Accounts"
 msgstr "Hesaplar"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Federation"
-msgstr "Sohbet"
+msgstr "Federasyon"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1431,7 +1425,7 @@ msgstr "Etiket"
 msgid "Logout"
 msgstr "Oturumu Kapat"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:69
+#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Hesap Ekle"
@@ -1972,10 +1966,9 @@ msgid "View profile"
 msgstr "Profili görüntüle"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Link preview: %1"
-msgstr "Bağlantı önizlemesi göster"
+msgstr "Bağlantı önizlemesi: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -2168,36 +2161,15 @@ msgstr "Oynat"
 msgid "No posts"
 msgstr "Gönderi yok"
 
-#: content/ui/UserInfo.qml:72
-#, kde-format
-msgid "Log in to an existing account"
-msgstr "Var olan bir hesaba oturum aç"
-
-#: content/ui/UserInfo.qml:198
+#: content/ui/UserInfo.qml:73
 #, kde-format
 msgid "Switch user"
 msgstr "Kullanıcı değiştir"
 
-#: content/ui/UserInfo.qml:210
+#: content/ui/UserInfo.qml:106
 #, kde-format
-msgid "Add"
-msgstr "Ekle"
-
-#: content/ui/UserInfo.qml:221
-#, kde-format
-msgid "Moderation Tools"
-msgstr "Moderasyon Araçları"
-
-#: content/ui/UserInfo.qml:222
-#, kde-format
-msgctxt "@action:button"
-msgid "Open Moderation Tools"
-msgstr "Moderasyon Araçlarını Aç"
-
-#: content/ui/UserInfo.qml:234
-#, kde-format
-msgid "Open settings"
-msgstr "Ayarları aç"
+msgid "Log in to an existing account"
+msgstr "Var olan bir hesaba oturum aç"
 
 #: conversation/conversationmodel.cpp:59
 #, kde-format
@@ -2425,9 +2397,7 @@ msgstr[0] "1 yıl önce"
 msgstr[1] "%1 yıl önce"
 
 #: timeline/tagsmodel.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending"
 msgstr "Popüler"
 
@@ -2454,6 +2424,9 @@ msgstr "Kaynak"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Hedef"
+
+#~ msgid "Add"
+#~ msgstr "Ekle"
 
 #~ msgid "No Posts"
 #~ msgstr "Gönderi Yok"
