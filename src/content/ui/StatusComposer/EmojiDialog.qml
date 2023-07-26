@@ -6,6 +6,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.15 as Kirigami
 
 import "../Components/Emoji"
+import "../Components"
 
 QQC2.Popup {
     id: emojiPopup
@@ -21,18 +22,13 @@ QQC2.Popup {
         emojiPicker.forceActiveFocus()
     }
 
-    background: Kirigami.ShadowedRectangle {
+    background: PopupShadow {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
-        color: Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.smallSpacing
-        shadow.size: Kirigami.Units.smallSpacing
-        shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.10)
-        border.color: Kirigami.ColorUtils.tintWithAlpha(color, Kirigami.Theme.textColor, 0.15)
-        border.width: 2
     }
 
     modal: true
     focus: true
+    clip: false
     closePolicy: QQC2.Popup.CloseOnEscape | QQC2.Popup.CloseOnPressOutsideParent
     margins: 0
     padding: 2

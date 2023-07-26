@@ -9,6 +9,8 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 import QtQuick.Templates 2.15 as T
 
+import "Components"
+
 QQC2.ComboBox {
     id: controlRoot
 
@@ -77,17 +79,6 @@ QQC2.ComboBox {
             }
         }
 
-        background: Kirigami.ShadowedRectangle {
-            color: Kirigami.Theme.backgroundColor
-
-            property color borderColor: Kirigami.Theme.textColor
-            border.color: Qt.rgba(borderColor.r, borderColor.g, borderColor.b, 0.3)
-            border.width: 1
-
-            shadow.xOffset: 0
-            shadow.yOffset: 2
-            shadow.color: Qt.rgba(0, 0, 0, 0.3)
-            shadow.size: 8
-        }
+        background: PopupShadow {}
     }
 }
