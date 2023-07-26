@@ -3,9 +3,10 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 import org.kde.kirigami 2.20 as Kirigami
 
-QQC2.ItemDelegate {
+Delegates.RoundedItemDelegate {
     id: emojiDelegate
 
     property string name
@@ -13,11 +14,6 @@ QQC2.ItemDelegate {
 
     property bool showTones: false
     property bool isImage: false
-
-    leftInset: Kirigami.Units.smallSpacing
-    topInset: Kirigami.Units.smallSpacing
-    rightInset: Kirigami.Units.smallSpacing
-    bottomInset: Kirigami.Units.smallSpacing
 
     QQC2.ToolTip.text: emojiDelegate.name
     QQC2.ToolTip.visible: hovered && emojiDelegate.name !== ""
@@ -54,18 +50,6 @@ QQC2.ItemDelegate {
                 fillMode: Image.PreserveAspectFit
                 cache: true
             }
-        }
-    }
-
-    background: Rectangle {
-        color: emojiDelegate.checked ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.smallSpacing
-
-        Rectangle {
-            radius: Kirigami.Units.smallSpacing
-            anchors.fill: parent
-            color: Kirigami.Theme.highlightColor
-            opacity: emojiDelegate.hovered && !emojiDelegate.pressed ? 0.2 : 0
         }
     }
 }
