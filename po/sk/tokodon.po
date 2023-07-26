@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1544,7 +1544,7 @@ msgid "Password"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, fuzzy, kde-format
 msgid "Apply"
 msgstr "Použiť"
@@ -1629,53 +1629,22 @@ msgstr ""
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, fuzzy, kde-format
-msgid "Public post"
-msgstr "Verejné"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, fuzzy, kde-format
-msgid "Unlisted post"
-msgstr "Neuvedené"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgid "Followers-only post"
-msgstr "Navštíviť"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr ""
@@ -1944,25 +1913,18 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cW"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
+#: content/ui/StatusComposer/StatusComposer.qml:291
 #, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, fuzzy, kde-format
 msgid "Send"
 msgstr "Poslať"
@@ -2460,6 +2422,19 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Voľby:"
+
+#, fuzzy
+#~ msgid "Public post"
+#~ msgstr "Verejné"
+
+#, fuzzy
+#~ msgid "Unlisted post"
+#~ msgstr "Neuvedené"
+
+#, fuzzy
+#~| msgid "Follow"
+#~ msgid "Followers-only post"
+#~ msgstr "Navštíviť"
 
 #~ msgctxt "Like a post"
 #~ msgid "Like"

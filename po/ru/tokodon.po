@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1573,7 +1573,7 @@ msgid "Password"
 msgstr "Пароль"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgid "Apply"
 msgstr "Применить"
@@ -1659,52 +1659,22 @@ msgstr "Аватар"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 1500×500 пкс"
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr "Конфиденциальность статуса по умолчанию"
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, kde-format
-msgid "Public post"
-msgstr "Общедоступная публикация"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, kde-format
-msgid "Unlisted post"
-msgstr "Скрытая публикация"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, kde-format
-msgid "Followers-only post"
-msgstr "Публикация только для подписчиков"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr "Публикация для указанных пользователей"
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr "Помечать по умолчанию содержимое как конфиденциальное"
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr "Требовать запрос на подписку"
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr "Это автоматизированная учётная запись"
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Рекомендовать учётную запись другим"
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr "Сбросить"
@@ -1971,25 +1941,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "пс"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
-#, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr "Выберите язык публикации"
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
+#: content/ui/StatusComposer/StatusComposer.qml:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Post language selection"
+#| msgid "Post Language"
 msgid "Post Language"
 msgstr "Язык публикации"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgid "Send"
 msgstr "Отправить"
@@ -2502,6 +2467,28 @@ msgstr "Источник"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Назначение"
+
+#~ msgid "Default status privacy"
+#~ msgstr "Конфиденциальность статуса по умолчанию"
+
+#~ msgid "Public post"
+#~ msgstr "Общедоступная публикация"
+
+#~ msgid "Unlisted post"
+#~ msgstr "Скрытая публикация"
+
+#~ msgid "Followers-only post"
+#~ msgstr "Публикация только для подписчиков"
+
+#~ msgid "Direct post"
+#~ msgstr "Публикация для указанных пользователей"
+
+#~ msgid "Mark by default content as sensitive"
+#~ msgstr "Помечать по умолчанию содержимое как конфиденциальное"
+
+#~ msgctxt "@info:whatsthis Post language selection"
+#~ msgid "Select the language the post is written in"
+#~ msgstr "Выберите язык публикации"
 
 #~ msgid "Add"
 #~ msgstr "Добавить"

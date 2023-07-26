@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
 "PO-Revision-Date: 2023-06-17 20:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1576,7 +1576,7 @@ msgid "Password"
 msgstr "Contrasinal"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgid "Apply"
 msgstr "Aplicar"
@@ -1662,52 +1662,22 @@ msgstr "Avatar"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF ou JPG. 2 MB como máximo. Será reducida á 1500x500px"
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr "Privacidade por defecto da publicación"
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, kde-format
-msgid "Public post"
-msgstr "Pública"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, kde-format
-msgid "Unlisted post"
-msgstr "Non listada"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, kde-format
-msgid "Followers-only post"
-msgstr "Só para seguidoras"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr "Só para mencionadas"
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr "Marcar como sensible por defecto"
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr "Pedir que soliciten seguimento"
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr "Esta conta é un bot"
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Suxerir a conta a outras persoas"
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr "Restablecer"
@@ -1974,25 +1944,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
-#, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr "Elixir o idioma da publicación"
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
+#: content/ui/StatusComposer/StatusComposer.qml:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Post language selection"
+#| msgid "Post Language"
 msgid "Post Language"
 msgstr "Idioma da publicación"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caracteres"
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
@@ -2503,6 +2468,28 @@ msgstr "Orixe"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgid "Default status privacy"
+#~ msgstr "Privacidade por defecto da publicación"
+
+#~ msgid "Public post"
+#~ msgstr "Pública"
+
+#~ msgid "Unlisted post"
+#~ msgstr "Non listada"
+
+#~ msgid "Followers-only post"
+#~ msgstr "Só para seguidoras"
+
+#~ msgid "Direct post"
+#~ msgstr "Só para mencionadas"
+
+#~ msgid "Mark by default content as sensitive"
+#~ msgstr "Marcar como sensible por defecto"
+
+#~ msgctxt "@info:whatsthis Post language selection"
+#~ msgid "Select the language the post is written in"
+#~ msgstr "Elixir o idioma da publicación"
 
 #~ msgid "Add"
 #~ msgstr "Engadir"

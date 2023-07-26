@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
-"PO-Revision-Date: 2023-07-19 04:33+0200\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
+"PO-Revision-Date: 2023-07-25 16:10+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -249,6 +249,8 @@ msgstr "Sin límites impuestos"
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"Ha ocurrido un error al hacer una petición PUT para actualizar el bloque de "
+"dominio."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -506,28 +508,24 @@ msgid "Post"
 msgstr "Publicar"
 
 #: content/ui/ExplorePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Posts"
-msgstr "Tendencias"
+msgstr "Publicaciones de tendencia"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Tags"
-msgstr "Tendencias"
+msgstr "Etiquetas de tendencia"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 personas están hablando"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
 msgid "No Tags"
-msgstr ""
+msgstr "Sin etiquetas"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -801,95 +799,83 @@ msgid "No accounts found"
 msgstr "No se han encontrado cuentas"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Moderation Tools"
+#, kde-format
 msgid "Federation Tool Page"
-msgstr "Herramientas de moderación"
+msgstr "Página de herramientas de federación"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Información de dominio permitido"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Creado el"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "No permitir federación con el dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Federación no permitida con el dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Añadir bloqueo de dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Dominio*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Publicación pública"
+msgstr "Comentario público"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Privado"
+msgstr "Comentario privado"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgid "Moderation"
-msgstr "Moderador"
+msgstr "Moderación"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Silenced"
+#, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr "Silenciada"
+msgstr "Silenciado"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent any interaction from or to this account and delete its "
-#| "contents. Revertible within 30 days."
-#| msgid "Suspend"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr "Suspender"
+msgstr "Suspendido"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Ninguno"
@@ -898,7 +884,7 @@ msgstr "Ninguno"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Rechazar archivos multimedia"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -907,24 +893,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Elimina archivos multimedia guardados localmente y rechaza descargar más en "
+"el futuro. Irrelevante para suspensiones."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Rechazar informes"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignorar todos los informes procedentes de este dominio. Irrelevante para "
+"suspensiones."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Ofuscar el nombre de dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -933,24 +923,26 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Ofuscar parcialmente el nombre del dominio en la lista si está activado el "
+"anuncio de la lista de limitaciones de dominios"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Crear bloqueo"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Nuevo bloqueo de dominio añadido"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Permitir federación con el dominio"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -958,12 +950,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Dominio*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Añadido nuevo dominio permitido"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -971,43 +963,41 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"La opción de dominio permitido está disponible para las instancias con el "
+"modo de federación limitada activado"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Moderador"
+msgstr "Moderación"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Cuentas bloqueadas"
+msgstr "Dominios bloqueados"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Dominios permitidos"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Permitido para federación"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No federations found"
-msgstr "No se han encontrado cuentas"
+msgstr "No se han encontrado federaciones"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Añadir nuevo bloqueo de dominio"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1280,55 +1270,50 @@ msgid "Take action against this account"
 msgstr "Tomar medidas contra esta cuenta"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Eliminar marcador"
+msgstr "Eliminar bloqueo de dominio"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Bloqueo de dominio eliminado"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Editar bloqueo de dominio"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Privado"
+msgstr "Comentario privado"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Actualizar bloqueo"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Bloqueo de dominio actualizado"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Blocked at"
-msgstr "Cuentas bloqueadas"
+msgstr "Bloqueado el"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Ninguno"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Ninguno"
@@ -1337,34 +1322,30 @@ msgstr "Ninguno"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Política"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Ofuscar"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr "Rechazar"
+msgstr "Rechazar multimedia"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr "Rechazar"
+msgstr "Rechazar informe"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Editar bloqueo de dominio"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1373,11 +1354,9 @@ msgid "Accounts"
 msgstr "Cuentas"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Federated Timeline"
+#, kde-format
 msgid "Federation"
-msgstr "Cronología federada"
+msgstr "Federación"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1544,7 +1523,7 @@ msgid "Password"
 msgstr "Contraseña"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgid "Apply"
 msgstr "Aplicar"
@@ -1631,52 +1610,22 @@ msgstr "Avatar"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF o JPG. 2 MB como máximo. Se reducirá a 400x400 px."
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr "Privacidad predeterminada del estado"
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, kde-format
-msgid "Public post"
-msgstr "Publicación pública"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, kde-format
-msgid "Unlisted post"
-msgstr "Publicación no listada"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, kde-format
-msgid "Followers-only post"
-msgstr "Publicación solo para seguidores"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr "Publicación directa"
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr "Marcar el contenido como sensible de forma predeterminada"
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr "Solicitar peticiones de seguimiento"
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr "Esta es una cuenta de bot"
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Sugerir la cuenta a otros"
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr "Reiniciar"
@@ -1942,25 +1891,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
-#, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr "Seleccione el idioma en el que se ha escrito la publicación"
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
+#: content/ui/StatusComposer/StatusComposer.qml:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Post language selection"
+#| msgid "Post Language"
 msgid "Post Language"
 msgstr "Idioma de la publicación"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caracteres"
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
@@ -1993,10 +1937,9 @@ msgid "View profile"
 msgstr "Ver perfil"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Link preview: %1"
-msgstr "Mostrar vista previa del enlace"
+msgstr "Vista previa del enlace: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -2426,11 +2369,9 @@ msgstr[0] "hace 1 año"
 msgstr[1] "hace %1 años"
 
 #: timeline/tagsmodel.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending"
-msgstr "Tendencias"
+msgstr "Tendencia"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2455,6 +2396,28 @@ msgstr "Origen"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgid "Default status privacy"
+#~ msgstr "Privacidad predeterminada del estado"
+
+#~ msgid "Public post"
+#~ msgstr "Publicación pública"
+
+#~ msgid "Unlisted post"
+#~ msgstr "Publicación no listada"
+
+#~ msgid "Followers-only post"
+#~ msgstr "Publicación solo para seguidores"
+
+#~ msgid "Direct post"
+#~ msgstr "Publicación directa"
+
+#~ msgid "Mark by default content as sensitive"
+#~ msgstr "Marcar el contenido como sensible de forma predeterminada"
+
+#~ msgctxt "@info:whatsthis Post language selection"
+#~ msgid "Select the language the post is written in"
+#~ msgstr "Seleccione el idioma en el que se ha escrito la publicación"
 
 #~ msgid "Add"
 #~ msgstr "Añadir"

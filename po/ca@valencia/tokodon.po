@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
 "PO-Revision-Date: 2023-07-19 20:27+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1544,7 +1544,7 @@ msgid "Password"
 msgstr "Contrasenya"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgid "Apply"
 msgstr "Aplica"
@@ -1633,52 +1633,22 @@ msgstr "Avatar"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 400x400px"
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr "Estat predeterminat de privadesa"
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, kde-format
-msgid "Public post"
-msgstr "Publicació pública"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, kde-format
-msgid "Unlisted post"
-msgstr "Publicació no llistada"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, kde-format
-msgid "Followers-only post"
-msgstr "Publicació només per als seguidors"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr "Publicació directa"
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr "Marca el contingut com a confidencial de manera predeterminada"
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr "Requerix sol·licituds de seguiment"
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr "Este és un compte de bot"
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Suggerix el compte a altres"
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr "Reinicia"
@@ -1944,25 +1914,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
-#, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr "Seleccioneu l'idioma en què s'ha escrit la publicació"
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
+#: content/ui/StatusComposer/StatusComposer.qml:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Post language selection"
+#| msgid "Post Language"
 msgid "Post Language"
 msgstr "Idioma de la publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caràcters"
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgid "Send"
 msgstr "Envia"
@@ -2456,6 +2421,28 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
+
+#~ msgid "Default status privacy"
+#~ msgstr "Estat predeterminat de privadesa"
+
+#~ msgid "Public post"
+#~ msgstr "Publicació pública"
+
+#~ msgid "Unlisted post"
+#~ msgstr "Publicació no llistada"
+
+#~ msgid "Followers-only post"
+#~ msgstr "Publicació només per als seguidors"
+
+#~ msgid "Direct post"
+#~ msgstr "Publicació directa"
+
+#~ msgid "Mark by default content as sensitive"
+#~ msgstr "Marca el contingut com a confidencial de manera predeterminada"
+
+#~ msgctxt "@info:whatsthis Post language selection"
+#~ msgid "Select the language the post is written in"
+#~ msgstr "Seleccioneu l'idioma en què s'ha escrit la publicació"
 
 #~ msgid "Add"
 #~ msgstr "Afig"

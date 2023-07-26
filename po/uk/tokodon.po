@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 00:45+0000\n"
+"POT-Creation-Date: 2023-07-26 00:47+0000\n"
 "PO-Revision-Date: 2023-07-24 17:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1527,7 +1527,7 @@ msgid "Password"
 msgstr "Пароль"
 
 #: content/ui/Settings/NetworkProxyPage.qml:140
-#: content/ui/Settings/ProfileEditor.qml:356
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgid "Apply"
 msgstr "Застосувати"
@@ -1618,52 +1618,22 @@ msgstr ""
 "PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
 "400x400 пк."
 
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Default status privacy"
-msgstr "Конфіденційність типового стану"
-
-#: content/ui/Settings/ProfileEditor.qml:278
-#, kde-format
-msgid "Public post"
-msgstr "Загальнодоступний допис"
-
-#: content/ui/Settings/ProfileEditor.qml:282
-#, kde-format
-msgid "Unlisted post"
-msgstr "Допис поза списком"
-
-#: content/ui/Settings/ProfileEditor.qml:286
-#, kde-format
-msgid "Followers-only post"
-msgstr "Допис лише для тих, хто стежить"
-
-#: content/ui/Settings/ProfileEditor.qml:290
-#, kde-format
-msgid "Direct post"
-msgstr "Безпосередній допис"
-
-#: content/ui/Settings/ProfileEditor.qml:309
-#, kde-format
-msgid "Mark by default content as sensitive"
-msgstr "Типово позначати вміст як конфіденційний"
-
-#: content/ui/Settings/ProfileEditor.qml:317
+#: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
 msgid "Require follow requests"
 msgstr "Вимагати запитів щодо стеження"
 
-#: content/ui/Settings/ProfileEditor.qml:325
+#: content/ui/Settings/ProfileEditor.qml:282
 #, kde-format
 msgid "This is a bot account"
 msgstr "Це обліковий запис бота"
 
-#: content/ui/Settings/ProfileEditor.qml:333
+#: content/ui/Settings/ProfileEditor.qml:290
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Пропонувати запис іншим"
 
-#: content/ui/Settings/ProfileEditor.qml:349
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
@@ -1929,25 +1899,20 @@ msgctxt "Short for content warning"
 msgid "cw"
 msgstr "пв"
 
-#: content/ui/StatusComposer/StatusComposer.qml:292
-#, kde-format
-msgctxt "@info:whatsthis Post language selection"
-msgid "Select the language the post is written in"
-msgstr "Вибрати мову, якою написано допис"
-
-#: content/ui/StatusComposer/StatusComposer.qml:298
-#, kde-format
-msgctxt "@label:listbox Post language selection"
+#: content/ui/StatusComposer/StatusComposer.qml:291
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox Post language selection"
+#| msgid "Post Language"
 msgid "Post Language"
 msgstr "Мова допису"
 
-#: content/ui/StatusComposer/StatusComposer.qml:313
+#: content/ui/StatusComposer/StatusComposer.qml:316
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1 з %2</b> символів"
 
-#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgid "Send"
 msgstr "Надіслати"
@@ -2446,6 +2411,28 @@ msgstr "Джерело"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
+
+#~ msgid "Default status privacy"
+#~ msgstr "Конфіденційність типового стану"
+
+#~ msgid "Public post"
+#~ msgstr "Загальнодоступний допис"
+
+#~ msgid "Unlisted post"
+#~ msgstr "Допис поза списком"
+
+#~ msgid "Followers-only post"
+#~ msgstr "Допис лише для тих, хто стежить"
+
+#~ msgid "Direct post"
+#~ msgstr "Безпосередній допис"
+
+#~ msgid "Mark by default content as sensitive"
+#~ msgstr "Типово позначати вміст як конфіденційний"
+
+#~ msgctxt "@info:whatsthis Post language selection"
+#~ msgid "Select the language the post is written in"
+#~ msgstr "Вибрати мову, якою написано допис"
 
 #~ msgid "Add"
 #~ msgstr "Додати"
