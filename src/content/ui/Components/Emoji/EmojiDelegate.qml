@@ -19,6 +19,8 @@ Delegates.RoundedItemDelegate {
     QQC2.ToolTip.visible: hovered && emojiDelegate.name !== ""
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
+    Accessible.name: name
+
     contentItem: Item {
         Loader {
             anchors.fill: parent
