@@ -119,6 +119,13 @@ QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorI
                                   Qt::CaseInsensitive);
     }
 
+    const auto mentions = obj["mentions"].toArray();
+
+    for (const auto &mention : mentions) {
+        const auto mentionObj = mention.toObject();
+        content = content.replace(mentionObj["url"].toString(), QStringLiteral("account:/") + mentionObj["id"].toString(), Qt::CaseInsensitive);
+    }
+
     return content;
 }
 
