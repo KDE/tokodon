@@ -400,7 +400,7 @@ QQC2.ItemDelegate {
                 secondary: root.secondary
                 inViewPort: root.inViewPort
             }
-            active: postContent.visible && !root.secondary && root.attachments.length > 0 && !filtered
+            active: !root.secondary && root.attachments.length > 0 && !filtered
             visible: active
 
             Layout.fillWidth: true
