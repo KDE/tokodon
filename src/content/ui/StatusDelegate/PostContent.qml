@@ -36,12 +36,13 @@ QQC2.TextArea {
     background: null
     wrapMode: Text.Wrap
     selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
-    // TODO handle opening profile page in tokodon
     onLinkActivated: {
         if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
-            const item = pageStack.push(tagModelComponent, {
+            pageStack.push(tagModelComponent, {
                 hashtag: link.substring(9),
             })
+        } else if (link.startsWith('account:/') && shouldOpenInternalLinks) {
+            Navigation.openAccount(link.substring(9))
         } else {
             Qt.openUrlExternally(link)
         }
