@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 00:47+0000\n"
-"PO-Revision-Date: 2023-07-19 20:27+0300\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-07-27 00:46+0000\n"
+"PO-Revision-Date: 2023-07-26 15:55+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #: account/abstractaccount.cpp:457
 #, kde-format
@@ -251,6 +251,8 @@ msgstr "No s'ha imposat cap límit"
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"S'ha produït un error en fer una sol·licitud PUT per a actualitzar el bloc "
+"de domini."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -508,28 +510,24 @@ msgid "Post"
 msgstr "Publicació"
 
 #: content/ui/ExplorePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Posts"
-msgstr "Tendències"
+msgstr "Publicacions amb tendències"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Tags"
-msgstr "Tendències"
+msgstr "Etiquetes amb tendències"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 persones estan parlant"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
 msgid "No Tags"
-msgstr ""
+msgstr "Sense etiquetes"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -802,95 +800,83 @@ msgid "No accounts found"
 msgstr "No s'ha trobat cap compte"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Moderation Tools"
+#, kde-format
 msgid "Federation Tool Page"
-msgstr "Eines de moderació"
+msgstr "Pàgina d'eines de federació"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Informació de dominis permesos"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Creat el"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Inhabilita la federació amb el domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "No es permet la federació amb el domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Afig un bloc de domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Domini*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Publicació pública"
+msgstr "Comentari públic"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Privat"
+msgstr "Comentari privat"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgid "Moderation"
-msgstr "Moderador"
+msgstr "Moderació"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
-#, fuzzy, kde-format
-#| msgctxt "login status"
-#| msgid "Silenced"
+#, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr "Silenciat"
+msgstr "Silenci"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent any interaction from or to this account and delete its "
-#| "contents. Revertible within 30 days."
-#| msgid "Suspend"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Suspén"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Sense"
@@ -899,7 +885,7 @@ msgstr "Sense"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Rebutja els fitxers multimèdia"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -908,24 +894,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Elimina els fitxers multimèdia emmagatzemats localment i es nega a "
+"descarregar-ne cap en el futur. Irrellevant per a les suspensions"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Rebutja els informes"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignora tots els informes provinents d'este domini. Irrellevant per a les "
+"suspensions"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Ofusca el nom de domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -934,24 +924,26 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Ofusca parcialment el nom de domini en la llista si s'habilita la publicitat "
+"de la llista de limitacions de domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Crea un bloc"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "S'ha afegit un bloc de domini nou"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Permet la federació amb domini"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -959,12 +951,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Domini*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "S'ha afegit un domini permés nou"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -972,43 +964,41 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"L'opció de domini permesa està disponible per a instàncies amb el mode "
+"federació limitat activat"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with moderator role"
-#| msgid "Moderator"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Moderador"
+msgstr "Moderació"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Comptes bloquejats"
+msgstr "Dominis bloquejats"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Dominis permesos"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Permés per a la federació"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No federations found"
-msgstr "No s'ha trobat cap compte"
+msgstr "No s'ha trobat cap federació"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Afig un bloc de domini nou"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1281,55 +1271,50 @@ msgid "Take action against this account"
 msgstr "Prendre una acció sobre el compte"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Elimina el punt"
+msgstr "Elimina el bloc de domini"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "S'ha eliminat el bloc de domini"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Edita el bloc de domini"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Privat"
+msgstr "Comentari privat"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Actualitza el bloc"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "S'ha actualitzat el bloc de domini"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Blocked at"
-msgstr "Comptes bloquejats"
+msgstr "Bloquejat el"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Sense"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Sense"
@@ -1338,34 +1323,30 @@ msgstr "Sense"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Política"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Ofusca"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr "Rebutja"
+msgstr "Rebutja els elements multimèdia"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@info: Reject the user's request"
-#| msgid "Reject"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr "Rebutja"
+msgstr "Rebutja l'informe"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Editeu el bloc de domini"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1374,10 +1355,9 @@ msgid "Accounts"
 msgstr "Comptes"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Federation"
-msgstr "Conversa"
+msgstr "Federació"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1915,9 +1895,7 @@ msgid "cw"
 msgstr "ac"
 
 #: content/ui/StatusComposer/StatusComposer.qml:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Post language selection"
-#| msgid "Post Language"
+#, kde-format
 msgid "Post Language"
 msgstr "Idioma de la publicació"
 
@@ -1960,10 +1938,9 @@ msgid "View profile"
 msgstr "Visualitza el perfil"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Link preview: %1"
-msgstr "Mostra la vista prèvia de l'enllaç"
+msgstr "Vista prèvia d'enllaç: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -2345,46 +2322,46 @@ msgstr "Tendències"
 msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar l'última notificació."
 
-#: timeline/post.cpp:327
+#: timeline/post.cpp:334
 #, kde-format
 msgid "in the future"
 msgstr "En el futur"
 
-#: timeline/post.cpp:329
+#: timeline/post.cpp:336
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:331
+#: timeline/post.cpp:338
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:333
+#: timeline/post.cpp:340
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:335
+#: timeline/post.cpp:342
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:339
+#: timeline/post.cpp:346
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Fa 1 setmana"
 msgstr[1] "Fa %1 setmanes"
 
-#: timeline/post.cpp:342
+#: timeline/post.cpp:349
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Fa 1 mes"
 msgstr[1] "Fa %1 mesos"
 
-#: timeline/post.cpp:346
+#: timeline/post.cpp:353
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -2392,9 +2369,7 @@ msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
 
 #: timeline/tagsmodel.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending"
 msgstr "Tendències"
 
@@ -2421,31 +2396,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgid "Default status privacy"
-#~ msgstr "Estat predeterminat de privadesa"
-
-#~ msgid "Public post"
-#~ msgstr "Publicació pública"
-
-#~ msgid "Unlisted post"
-#~ msgstr "Publicació no llistada"
-
-#~ msgid "Followers-only post"
-#~ msgstr "Publicació només per als seguidors"
-
-#~ msgid "Direct post"
-#~ msgstr "Publicació directa"
-
-#~ msgid "Mark by default content as sensitive"
-#~ msgstr "Marca el contingut com a confidencial de manera predeterminada"
-
-#~ msgctxt "@info:whatsthis Post language selection"
-#~ msgid "Select the language the post is written in"
-#~ msgstr "Seleccioneu l'idioma en què s'ha escrit la publicació"
-
-#~ msgid "Add"
-#~ msgstr "Afig"
-
-#~ msgid "No Posts"
-#~ msgstr "Sense publicacions"
