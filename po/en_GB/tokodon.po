@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:46+0000\n"
+"POT-Creation-Date: 2023-07-28 00:47+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.03.70\n"
 
-#: account/abstractaccount.cpp:457
+#: account/abstractaccount.cpp:459
 #, kde-format
 msgid "Could not follow account"
 msgstr "Could not follow account"
 
-#: account/abstractaccount.cpp:458
+#: account/abstractaccount.cpp:460
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Could not unfollow account"
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:461
 #, kde-format
 msgid "Could not block account"
 msgstr "Could not block account"
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:462
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Could not unblock account"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:463
 #, kde-format
 msgid "Could not mute account"
 msgstr "Could not mute account"
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:464
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Could not unmute account"
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:465
 #, kde-format
 msgid "Could not feature account"
 msgstr "Could not feature account"
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:466
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Could not unfeature account"
 
-#: account/abstractaccount.cpp:465
+#: account/abstractaccount.cpp:467
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Could not edit note about an account"
@@ -498,6 +498,11 @@ msgstr "Continue"
 msgid "Please insert the generated token."
 msgstr "Please insert the generated token."
 
+#: content/ui/Components/Emoji/EmojiGrid.qml:78
+#, kde-format
+msgid "No emojis"
+msgstr ""
+
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
@@ -543,13 +548,13 @@ msgstr ""
 msgid "No Tags"
 msgstr ""
 
-#: content/ui/LanguageSelector.qml:64
+#: content/ui/LanguageSelector.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
 msgstr "Preferred Languages"
 
-#: content/ui/LanguageSelector.qml:65
+#: content/ui/LanguageSelector.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
@@ -1952,13 +1957,20 @@ msgstr "cw"
 msgid "Post Language"
 msgstr "Post Language"
 
-#: content/ui/StatusComposer/StatusComposer.qml:316
+#: content/ui/StatusComposer/StatusComposer.qml:318
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Poll toolbar"
+#| msgid "Add Choice"
+msgid "Add Emoji"
+msgstr "Add Choice"
+
+#: content/ui/StatusComposer/StatusComposer.qml:333
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> characters"
 
-#: content/ui/StatusComposer/StatusComposer.qml:324
+#: content/ui/StatusComposer/StatusComposer.qml:341
 #, kde-format
 msgid "Send"
 msgstr "Send"
@@ -2281,49 +2293,49 @@ msgstr "7 days"
 msgid "An unknown error occurred."
 msgstr "An unknown error occurred."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:121
+#: main.cpp:122
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon client"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Maintainer"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Steve Allewell"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: main.cpp:133
+#: main.cpp:134
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client for the decentralised social network: mastodon"
 
-#: main.cpp:134
+#: main.cpp:135
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Supports web+ap: URL scheme"
@@ -2451,6 +2463,73 @@ msgstr "Trending"
 msgctxt "@title"
 msgid "Thread"
 msgstr "Thread"
+
+#: utils/emojimodel.cpp:130
+#, kde-format
+msgctxt "Previously used emojis"
+msgid "History"
+msgstr ""
+
+#: utils/emojimodel.cpp:135
+#, kde-format
+msgctxt "'Custom' is a category of emoji"
+msgid "Custom"
+msgstr ""
+
+#: utils/emojimodel.cpp:140
+#, kde-format
+msgctxt "'Smileys' is a category of emoji"
+msgid "Smileys"
+msgstr ""
+
+#: utils/emojimodel.cpp:145
+#, fuzzy, kde-format
+#| msgid "People"
+msgctxt "'People' is a category of emoji"
+msgid "People"
+msgstr "People"
+
+#: utils/emojimodel.cpp:150
+#, kde-format
+msgctxt "'Nature' is a category of emoji"
+msgid "Nature"
+msgstr ""
+
+#: utils/emojimodel.cpp:155
+#, kde-format
+msgctxt "'Food' is a category of emoji"
+msgid "Food"
+msgstr ""
+
+#: utils/emojimodel.cpp:160
+#, kde-format
+msgctxt "'Activities' is a category of emoji"
+msgid "Activities"
+msgstr ""
+
+#: utils/emojimodel.cpp:165
+#, kde-format
+msgctxt "'Travel' is  a category of emoji"
+msgid "Travel"
+msgstr ""
+
+#: utils/emojimodel.cpp:170
+#, kde-format
+msgctxt "'Objects' is a category of emoji"
+msgid "Objects"
+msgstr ""
+
+#: utils/emojimodel.cpp:175
+#, kde-format
+msgctxt "'Symbols' is a category of emoji"
+msgid "Symbols"
+msgstr ""
+
+#: utils/emojimodel.cpp:180
+#, kde-format
+msgctxt "'Flags' is a category of emoji"
+msgid "Flags"
+msgstr ""
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
