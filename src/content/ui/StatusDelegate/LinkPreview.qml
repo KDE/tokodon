@@ -118,6 +118,7 @@ QQC2.AbstractButton {
                 visible: text
                 maximumLineCount: 1
                 Layout.fillWidth: true
+                maximumLineCount: 1
             }
         }
     }
