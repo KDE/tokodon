@@ -413,7 +413,7 @@ QQC2.ItemDelegate {
 
             active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
 
-            visible: active
+            visible: active && postContent.visible
             Layout.fillWidth: true
             Layout.topMargin: active ? Kirigami.Units.largeSpacing : 0
         }
