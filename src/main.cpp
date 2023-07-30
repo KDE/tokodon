@@ -36,8 +36,9 @@
 #include "account/profileeditor.h"
 #include "account/socialgraphmodel.h"
 #include "admin/accounttoolmodel.h"
-#include "admin/adminaccountinfo.h"
 #include "admin/federationtoolmodel.h"
+#include "admin/ipinfo.h"
+#include "admin/iprulestoolmodel.h"
 #include "config.h"
 #include "conversation/conversationmodel.h"
 #include "editor/attachmenteditormodel.h"
@@ -163,6 +164,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
     qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
     qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
+    qmlRegisterType<IpRulesToolModel>("org.kde.kmasto", 1, 0, "IpRulesToolModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
@@ -179,7 +181,6 @@ int main(int argc, char *argv[])
         return engine->toScriptValue(KAboutData::applicationData());
     });
     qRegisterMetaType<Account *>("Account*");
-    qRegisterMetaType<FederationInfo>("FederationInfo");
     qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
     qRegisterMetaType<Identity *>("Identity*");
     qRegisterMetaType<AdminAccountInfo *>("AdminAccountInfo*");
@@ -196,6 +197,7 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<AdminAccountInfo>("org.kde.kmasto", 1, 0, "AdminAccountInfo", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
+    qmlRegisterUncreatableType<IpInfo>("org.kde.kmasto", 1, 0, "IpInfo", "ENUM");
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
     qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
     qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");

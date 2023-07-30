@@ -28,9 +28,6 @@ QString FederationInfo::severity() const
 
 void FederationInfo::setSeverity(const QString &severity)
 {
-    if (m_severity == severity) {
-        return;
-    }
     m_severity = severity;
 }
 
@@ -41,9 +38,6 @@ bool FederationInfo::rejectMedia() const
 
 void FederationInfo::setRejectMedia(const bool &rejectMedia)
 {
-    if (m_rejectMedia == rejectMedia) {
-        return;
-    }
     m_rejectMedia = rejectMedia;
 }
 
@@ -54,9 +48,6 @@ bool FederationInfo::rejectReports() const
 
 void FederationInfo::setRejectReports(const bool &rejectReports)
 {
-    if (m_rejectReports == rejectReports) {
-        return;
-    }
     m_rejectReports = rejectReports;
 }
 
@@ -67,9 +58,6 @@ QString FederationInfo::privateComment() const
 
 void FederationInfo::setPrivateComment(const QString &privateComment)
 {
-    if (m_privateComment == privateComment) {
-        return;
-    }
     m_privateComment = privateComment;
 }
 
@@ -80,9 +68,6 @@ QString FederationInfo::publicComment() const
 
 void FederationInfo::setPublicComment(const QString &publicComment)
 {
-    if (m_publicComment == publicComment) {
-        return;
-    }
     m_publicComment = publicComment;
 }
 
@@ -93,9 +78,6 @@ bool FederationInfo::obfuscate() const
 
 void FederationInfo::setObfuscate(const bool &obfuscate)
 {
-    if (m_obfuscate == obfuscate) {
-        return;
-    }
     m_obfuscate = obfuscate;
 }
 

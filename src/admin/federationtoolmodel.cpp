@@ -92,7 +92,7 @@ void FederationToolModel::setFederationAction(const FederationAction &federation
     filltimeline(m_federationAction);
 }
 
-void FederationToolModel::removeDomainBlock(const int &row)
+void FederationToolModel::removeDomainBlock(const int row)
 {
     auto account = AccountManager::instance().selectedAccount();
     const auto &federationInfo = m_federations[row];
@@ -107,7 +107,7 @@ void FederationToolModel::removeDomainBlock(const int &row)
     });
 }
 
-void FederationToolModel::removeAllowedDomain(const int &row)
+void FederationToolModel::removeAllowedDomain(const int row)
 {
     auto account = AccountManager::instance().selectedAccount();
     const auto &federationInfo = m_federations[row];
@@ -122,7 +122,7 @@ void FederationToolModel::removeAllowedDomain(const int &row)
     });
 }
 
-void FederationToolModel::updateDomainBlock(const int &row,
+void FederationToolModel::updateDomainBlock(const int row,
                                             const QString &severity,
                                             const QString &publicComment,
                                             const QString &privateComment,

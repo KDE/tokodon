@@ -130,6 +130,10 @@ PRIVATE
     admin/federationtoolmodel.h
     admin/federationinfo.h
     admin/federationinfo.cpp
+    admin/ipinfo.cpp
+    admin/ipinfo.h
+    admin/iprulestoolmodel.cpp
+    admin/iprulestoolmodel.h
 )
 
 if(NOT ANDROID)

@@ -20,6 +20,12 @@ Kirigami.CategorizedSettings {
             text: i18n("Federation")
             icon.name: "cloudstatus"
             page: Qt.resolvedUrl("FederationToolPage.qml")
+        },
+        Kirigami.SettingAction {
+            actionName: "IpRules"
+            text: i18n("Ip rules")
+            icon.name: "cards-block"
+            page: Qt.resolvedUrl("IpRulePage.qml")
         }
     ]
 }

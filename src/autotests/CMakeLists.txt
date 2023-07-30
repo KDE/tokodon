@@ -53,3 +53,9 @@ ecm_add_test(federationtooltest.cpp
     LINK_LIBRARIES tokodon_test_static Qt::Test
     NAME_PREFIX "tokodon-"
 )
+
+ecm_add_test(iprulestooltest.cpp
+    TEST_NAME iprulestooltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
+)
