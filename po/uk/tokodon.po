@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-31 00:47+0000\n"
-"PO-Revision-Date: 2023-07-28 09:11+0300\n"
+"PO-Revision-Date: 2023-07-31 15:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1008,186 +1008,160 @@ msgid "Add New Domain Block"
 msgstr "Додати нове блокування доменів"
 
 #: content/ui/ModerationTools/IpRulePage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts Tool Page"
+#, kde-format
 msgid "IP Rule Tool Page"
-msgstr "Сторінка інструментів облікових записів"
+msgstr "Сторінка інструментів IP-правил"
 
 #: content/ui/ModerationTools/IpRulePage.qml:20
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Нове IP-правило"
 
 #: content/ui/ModerationTools/IpRulePage.qml:32
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
-msgstr "IP:"
+msgstr "IP*"
 
 #: content/ui/ModerationTools/IpRulePage.qml:38
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Строк дії"
 
 #: content/ui/ModerationTools/IpRulePage.qml:43
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 день"
 
 #: content/ui/ModerationTools/IpRulePage.qml:47
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "%1 тижнів тому"
+msgstr "2 тижні"
 
 #: content/ui/ModerationTools/IpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "%1 місяць тому"
+msgstr "1 місяць"
 
 #: content/ui/ModerationTools/IpRulePage.qml:55
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "%1 місяць тому"
+msgstr "6 місяців"
 
 #: content/ui/ModerationTools/IpRulePage.qml:59
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "%1 рік тому"
+msgstr "1 рік"
 
 #: content/ui/ModerationTools/IpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "%1 рік тому"
+msgstr "3 роки"
 
 #: content/ui/ModerationTools/IpRulePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Конфіденційний коментар"
+msgstr "Коментар"
 
 #: content/ui/ModerationTools/IpRulePage.qml:75
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Необов'язковий. Для визначення причини додавання цього правила."
 
 #: content/ui/ModerationTools/IpRulePage.qml:81
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Правило *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:82
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Виберіть, що слід робити із запитами з цієї IP-адреси"
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #: content/ui/ModerationTools/MainIpRulePage.qml:122
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Обмежити реєстрації"
 
 #: content/ui/ModerationTools/IpRulePage.qml:88
 #: content/ui/ModerationTools/MainIpRulePage.qml:123
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Нові реєстрації потребуватимуть вашого підтвердження"
 
 #: content/ui/ModerationTools/IpRulePage.qml:94
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgid "Block sign-ups"
-msgstr "Блоковані домени"
+msgstr "Блокувати реєстрацію"
 
 #: content/ui/ModerationTools/IpRulePage.qml:95
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "Нові реєстрації стануть неможливими"
 
 #: content/ui/ModerationTools/IpRulePage.qml:100
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Block access"
-msgstr "Заблоковані записи"
+msgstr "Блокувати доступ"
 
 #: content/ui/ModerationTools/IpRulePage.qml:101
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Блокувати доступ до усіх ресурсів"
 
 #: content/ui/ModerationTools/IpRulePage.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr "Створити блокування"
+msgstr "Створити IP-правило"
 
 #: content/ui/ModerationTools/IpRulePage.qml:119
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New IP rule added"
-msgstr "Додано нове блокування доменів"
+msgstr "Додано нове IP-правило"
 
 #: content/ui/ModerationTools/IpRulePage.qml:145
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Обмежити реєстрації"
 
 #: content/ui/ModerationTools/IpRulePage.qml:147
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Блоковані домени"
+msgstr "Блокувати реєстрацію"
 
 #: content/ui/ModerationTools/IpRulePage.qml:149
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Заблоковані записи"
+msgstr "Блокувати доступ"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Створити блокування"
+msgstr "Створити правило"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1542,130 +1516,108 @@ msgid "Edit Domain Block"
 msgstr "Редагувати блокування домену"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr "Вилучити"
+msgstr "Вилучити IP-правило"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "Вилучено IP-правилоRule Removed"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr "Оновити блокування"
+msgstr "Оновити IP-правило"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr "IP:"
+msgstr "IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Строк дії"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 день"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "%1 тижнів тому"
+msgstr "2 тижні"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "%1 місяць тому"
+msgstr "1 місяць"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "%1 місяць тому"
+msgstr "6 місяців"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "%1 рік тому"
+msgstr "1 рік"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "%1 рік тому"
+msgstr "3 роки"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:188
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Конфіденційний коментар"
+msgstr "Коментар"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:116
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Правило *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:147
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "Скасувати"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr "Оновити блокування"
+msgstr "Оновити IP-правило"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:157
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "Оновлено IP-правило"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:181
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Строк дії завершується"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "Немає"
@@ -1674,15 +1626,13 @@ msgstr "Немає"
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Критичність"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr "Оновити блокування"
+msgstr "Оновити IP-правило"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1698,7 +1648,7 @@ msgstr "Федерація"
 #: content/ui/ModerationTools/ModerationToolPage.qml:26
 #, kde-format
 msgid "Ip rules"
-msgstr ""
+msgstr "IP-правила"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format

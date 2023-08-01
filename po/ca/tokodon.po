@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-31 00:47+0000\n"
-"PO-Revision-Date: 2023-07-28 13:09+0200\n"
+"PO-Revision-Date: 2023-07-31 11:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1008,34 +1008,29 @@ msgid "Add New Domain Block"
 msgstr "Afegeix un bloc de domini nou"
 
 #: content/ui/ModerationTools/IpRulePage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts Tool Page"
+#, kde-format
 msgid "IP Rule Tool Page"
-msgstr "Pàgina d'eines de comptes"
+msgstr "Pàgina d'eines de regles IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:20
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Regla IP nova"
 
 #: content/ui/ModerationTools/IpRulePage.qml:32
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
-msgstr "IP:"
+msgstr "IP*"
 
 #: content/ui/ModerationTools/IpRulePage.qml:38
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Caduca després de"
 
 #: content/ui/ModerationTools/IpRulePage.qml:43
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 dia"
@@ -1044,149 +1039,129 @@ msgstr "1 dia"
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr ""
+msgstr "2 setmanes"
 
 #: content/ui/ModerationTools/IpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "Fa 1 mes"
+msgstr "1 mes"
 
 #: content/ui/ModerationTools/IpRulePage.qml:55
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "Fa 1 mes"
+msgstr "6 mesos"
 
 #: content/ui/ModerationTools/IpRulePage.qml:59
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "Fa 1 any"
+msgstr "1 any"
 
 #: content/ui/ModerationTools/IpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "Fa 1 any"
+msgstr "3 anys"
 
 #: content/ui/ModerationTools/IpRulePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Comentari privat"
+msgstr "Comentari"
 
 #: content/ui/ModerationTools/IpRulePage.qml:75
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Opcional. Recordeu per què heu afegit aquesta regla."
 
 #: content/ui/ModerationTools/IpRulePage.qml:81
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Regla *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:82
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Trieu què passarà amb les sol·licituds des d'aquesta IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #: content/ui/ModerationTools/MainIpRulePage.qml:122
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Limita les inscripcions"
 
 #: content/ui/ModerationTools/IpRulePage.qml:88
 #: content/ui/ModerationTools/MainIpRulePage.qml:123
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Les inscripcions noves requeriran la vostra aprovació"
 
 #: content/ui/ModerationTools/IpRulePage.qml:94
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgid "Block sign-ups"
-msgstr "Dominis bloquejats"
+msgstr "Bloqueja les inscripcions"
 
 #: content/ui/ModerationTools/IpRulePage.qml:95
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "No seran possibles les inscripcions noves"
 
 #: content/ui/ModerationTools/IpRulePage.qml:100
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Block access"
-msgstr "Comptes bloquejats"
+msgstr "Bloqueja l'accés"
 
 #: content/ui/ModerationTools/IpRulePage.qml:101
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Bloqueja l'accés a tots els recursos"
 
 #: content/ui/ModerationTools/IpRulePage.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr "Crea un bloc"
+msgstr "Crea una regla d'IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:119
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New IP rule added"
-msgstr "S'ha afegit un bloc de domini nou"
+msgstr "S'ha afegit una regla nova d'IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:145
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Limita les inscripcions"
 
 #: content/ui/ModerationTools/IpRulePage.qml:147
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Dominis bloquejats"
+msgstr "Bloqueja les inscripcions"
 
 #: content/ui/ModerationTools/IpRulePage.qml:149
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Comptes bloquejats"
+msgstr "Bloqueja l'accés"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Crea un bloc"
+msgstr "Crea una regla"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1538,43 +1513,36 @@ msgid "Edit Domain Block"
 msgstr "Edició de bloc de domini"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr "Elimina"
+msgstr "Elimina la regla d'IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "S'ha eliminat la regla d'IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr "Actualitza el bloc"
+msgstr "Actualització de regla d'IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr "IP:"
+msgstr "IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Caduca després de"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 dia"
@@ -1583,84 +1551,70 @@ msgstr "1 dia"
 #, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr ""
+msgstr "2 setmanes"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "Fa 1 mes"
+msgstr "1 mes"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "Fa 1 mes"
+msgstr "6 mesos"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "Fa 1 any"
+msgstr "1 any"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "Fa 1 any"
+msgstr "3 anys"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:188
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Comentari privat"
+msgstr "Comentari"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:116
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Regla *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:147
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr "Actualitza el bloc"
+msgstr "Actualitza la regla d'IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:157
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "S'ha actualitzat la regla d'IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:181
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Caduca dins de"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "Sense"
@@ -1669,15 +1623,13 @@ msgstr "Sense"
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Severitat"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr "Actualitza el bloc"
+msgstr "Actualitza la regla d'IP"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1693,7 +1645,7 @@ msgstr "Federació"
 #: content/ui/ModerationTools/ModerationToolPage.qml:26
 #, kde-format
 msgid "Ip rules"
-msgstr ""
+msgstr "Regles d'IP"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
