@@ -412,10 +412,14 @@ Kirigami.ApplicationWindow {
             id: socialGraphPage
             property alias name: socialGraphModel.name
             property alias accountId: socialGraphModel.accountId
+            property alias statusId: socialGraphModel.statusId
+            property alias count: socialGraphModel.count
             model: SocialGraphModel {
                 id: socialGraphModel
                 name: socialGraphPage.name
                 accountId: socialGraphPage.accountId
+                statusId: socialGraphPage.statusId
+                count: socialGraphPage.count
             }
         }
     }

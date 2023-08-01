@@ -574,10 +574,17 @@ QQC2.ItemDelegate {
                 iconName: "post-favorited"
                 tooltip: i18n("%1 Favorites", root.favouritesCount)
                 text: root.favouritesCount === 1 ? i18n("%1 Favorite", root.favouritesCount) : i18n("%1 Favorites", root.favouritesCount)
-                enabled: false
+                enabled: true
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
                     cursorShape: Qt.PointingHandCursor
+                }
+                onClicked: {
+                    pageStack.push(socialGraphComponent, {
+                        name: "favourited_by",
+                        statusId: root.id,
+                        count: root.favouritesCount
+                    });
                 }
             }
 
@@ -586,10 +593,17 @@ QQC2.ItemDelegate {
                 iconName: "post-boosted"
                 tooltip: root.reblogsCount === 1 ? i18n("%1 Boost", root.reblogsCount) : i18n("%1 Boosts", root.reblogsCount)
                 text: i18n("%1 Boosts", root.reblogsCount)
-                enabled: false
+                enabled: true
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
                     cursorShape: Qt.PointingHandCursor
+                }
+                onClicked: {
+                    pageStack.push(socialGraphComponent, {
+                        name: "reblogged_by",
+                        statusId: root.id,
+                        count: root.reblogsCount
+                    });
                 }
             }
         }

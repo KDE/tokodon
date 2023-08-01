@@ -22,6 +22,8 @@ class SocialGraphModel : public QAbstractListModel
 
     /// The account id of the account we want to display
     Q_PROPERTY(QString accountId READ accountId WRITE setAccountId NOTIFY accountIdChanged)
+    Q_PROPERTY(QString statusId READ statusId WRITE setStatusId NOTIFY statusIdChanged)
+    Q_PROPERTY(int count READ count WRITE setCount)
 
 public:
     enum CustomRoles {
@@ -46,6 +48,10 @@ public:
     bool isFollowRequest() const;
     bool isFollowing() const;
     bool isFollower() const;
+    QString statusId() const;
+    void setStatusId(const QString &statusId);
+    int count() const;
+    void setCount(int count);
 
 public Q_SLOTS:
     void actionAllow(const QModelIndex &index);
@@ -55,6 +61,7 @@ Q_SIGNALS:
     void loadingChanged();
     void nameChanged();
     void accountIdChanged();
+    void statusIdChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -69,4 +76,6 @@ private:
 
     QString m_followListName;
     QString m_accountId;
+    QString m_statusId;
+    int m_count;
 };

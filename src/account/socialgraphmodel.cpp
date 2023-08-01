@@ -38,6 +38,10 @@ QString SocialGraphModel::displayName() const
         return i18nc("@title", "Blocked Accounts");
     } else if (m_followListName == "featured") {
         return i18nc("@title", "Featured Accounts");
+    } else if (m_followListName == "favourited_by") {
+        return i18nc("@title", "%1 favourites", m_count);
+    } else if (m_followListName == "reblogged_by") {
+        return i18nc("@title", "%1 boosts", m_count);
     }
     return {};
 }
@@ -56,6 +60,10 @@ QString SocialGraphModel::placeholderText() const
         return i18n("No blocked accounts");
     } else if (m_followListName == "featured") {
         return i18n("No featured accounts");
+    } else if (m_followListName == "favourited_by") {
+        return i18n("No users favourited this post");
+    } else if (m_followListName == "reblogged_by") {
+        return i18n("No users boosted this post");
     }
     return {};
 }
@@ -81,6 +89,28 @@ void SocialGraphModel::setAccountId(const QString &accountId)
     m_accountId = accountId;
     Q_EMIT accountIdChanged();
     fillTimeline();
+}
+
+QString SocialGraphModel::statusId() const
+{
+    return m_statusId;
+}
+
+void SocialGraphModel::setStatusId(const QString &statusId)
+{
+    m_statusId = statusId;
+    Q_EMIT statusIdChanged();
+    fillTimeline();
+}
+
+int SocialGraphModel::count() const
+{
+    return m_count;
+}
+
+void SocialGraphModel::setCount(int count)
+{
+    m_count = count;
 }
 
 QVariant SocialGraphModel::data(const QModelIndex &index, int role) const
@@ -212,6 +242,10 @@ void SocialGraphModel::fillTimeline()
         return;
     }
 
+    if ((m_followListName == "favourited_by" || m_followListName == "reblogged_by") && (m_statusId.isEmpty() || m_statusId.isNull())) {
+        return;
+    }
+
     if (m_loading) {
         return;
     }
@@ -230,6 +264,10 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/blocks");
     } else if (m_followListName == "featured") {
         uri = QStringLiteral("/api/v1/endorsements");
+    } else if (m_followListName == "favourited_by") {
+        uri = QStringLiteral("/api/v1/statuses/%1/favourited_by").arg(m_statusId);
+    } else if (m_followListName == "reblogged_by") {
+        uri = QStringLiteral("/api/v1/statuses/%1/reblogged_by").arg(m_statusId);
     }
 
     QUrl url;
