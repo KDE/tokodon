@@ -55,6 +55,7 @@ QQC2.AbstractButton {
             color: control.textColor
             verticalAlignment: Text.AlignVCenter
             visible: control.text
+            rightPadding: Kirigami.Units.smallSpacing
         }
     }
 
