@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2023-03-03 10:32+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -142,41 +142,65 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Akun"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "Favourites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "Favorit"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "Hide boosts from %1"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "Sembunyikan pembagian dari %1"
+
+#: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
 #| msgid "Follows you"
 msgid "No follow requests"
 msgstr "Mengikuti Anda"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "No followers"
 msgstr "%1 pengikut"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
 msgid "No followed accounts"
 msgstr "Tidak dapat mengikuti akun"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No muted accounts"
 msgstr "Akun"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No blocked accounts"
 msgstr "Tambahkan Akun"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
 msgid "No featured accounts"
 msgstr "Tidak dapat memfiturkan akun"
+
+#: account/socialgraphmodel.cpp:64
+#, kde-format
+msgid "No users favourited this post"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:66
+#, kde-format
+msgid "No users boosted this post"
+msgstr ""
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -2465,13 +2489,13 @@ msgstr "Favorit"
 msgid "%1 Favorite"
 msgstr "Favorit"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, kde-format
 msgid "%1 Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
 msgid "%1 Boosts"
 msgstr ""

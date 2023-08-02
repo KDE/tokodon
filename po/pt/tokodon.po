@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -135,35 +135,61 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Contas em Destaque"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "%1 Favorites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "%1 Favoritos"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "%1 Boosts"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "%1 Destaques"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "Sem pedidos de seguimento"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "Sem seguidores"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed accounts"
 msgstr "Nenhumas contas a seguir"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted accounts"
 msgstr "Nenhuma contas silenciadas"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked accounts"
 msgstr "Nenhumas contas bloqueadas"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured accounts"
 msgstr "Nenhumas contas em destaque"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users favourited this post"
+msgstr "Escrever de novo esta publicação"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users boosted this post"
+msgstr "Escrever de novo esta publicação"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -2464,13 +2490,13 @@ msgstr "%1 Favoritos"
 msgid "%1 Favorite"
 msgstr "%1 Favorito"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, kde-format
 msgid "%1 Boost"
 msgstr "%1 Destaque"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 Destaques"

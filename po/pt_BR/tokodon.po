@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -144,41 +144,65 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Adicionar conta"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, kde-format
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:44
+#, kde-format
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No follow requests"
 msgstr "Seguir"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No followers"
 msgstr "Seguir"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No followed accounts"
 msgstr "Seguir"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No muted accounts"
 msgstr "Adicionar conta"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No blocked accounts"
 msgstr "Adicionar conta"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No featured accounts"
 msgstr "Adicionar conta"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "No users favourited this post"
+msgstr "Não listado"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "No users boosted this post"
+msgstr "Não listado"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -2468,13 +2492,13 @@ msgstr ""
 msgid "%1 Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, kde-format
 msgid "%1 Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
 msgid "%1 Boosts"
 msgstr ""

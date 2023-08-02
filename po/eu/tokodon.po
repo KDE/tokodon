@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2023-04-22 22:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -148,41 +148,69 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Kontuak"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "Gogokoak"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "Bultzadak"
+
+#: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
 #| msgid "No Follow Requests"
 msgid "No follow requests"
 msgstr "Ez dago jarraipen eskaerarik"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "No followers"
 msgstr "%1 jarraitzaile"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
 msgid "No followed accounts"
 msgstr "Ezin izan dio kontuari jarraitu"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No muted accounts"
 msgstr "Kontuak"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No blocked accounts"
 msgstr "Gehitu kontua"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No featured accounts"
 msgstr "Kontuak"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "No users favourited this post"
+msgstr "Berridatzi tutu hau"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Rewrite this toot"
+msgid "No users boosted this post"
+msgstr "Berridatzi tutu hau"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -2514,14 +2542,14 @@ msgstr "Gogokoak"
 msgid "%1 Favorite"
 msgstr "Gogokoak"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 boosted"
 msgid "%1 Boost"
 msgstr "%1(e) bultzatu du"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"

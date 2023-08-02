@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
-"PO-Revision-Date: 2023-07-30 19:49+0200\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"PO-Revision-Date: 2023-08-01 14:45+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -138,35 +138,61 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Cuentas destacadas"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "%1 Favorites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "%1 favoritas"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "%1 Boosts"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "%1 promociones"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "No hay peticiones de seguimiento"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "No hay seguidores"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed accounts"
 msgstr "No sigue ninguna cuenta"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted accounts"
 msgstr "No hay cuentas silenciadas"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked accounts"
 msgstr "No hay cuentas bloqueadas"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured accounts"
 msgstr "No hay cuentas destacadas"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users favourited this post"
+msgstr "Reescribir esta publicación"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users boosted this post"
+msgstr "Reescribir esta publicación"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -647,7 +673,7 @@ msgstr "Buscar"
 #: content/ui/ModerationTools/AccountToolPage.qml:14
 #, kde-format
 msgid "Accounts Tool Page"
-msgstr "Página de herramientas de las cuentas"
+msgstr "Página de la herramienta de cuentas"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -807,7 +833,7 @@ msgstr "No se han encontrado cuentas"
 #: content/ui/ModerationTools/FederationToolPage.qml:15
 #, kde-format
 msgid "Federation Tool Page"
-msgstr "Página de herramientas de federación"
+msgstr "Página de la herramienta de federación"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
@@ -1007,186 +1033,160 @@ msgid "Add New Domain Block"
 msgstr "Añadir nuevo bloqueo de dominio"
 
 #: content/ui/ModerationTools/IpRulePage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts Tool Page"
+#, kde-format
 msgid "IP Rule Tool Page"
-msgstr "Página de herramientas de las cuentas"
+msgstr "Página de la herramienta de reglas IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:20
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Nueva regla IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:32
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
-msgstr "IP:"
+msgstr "IP*"
 
 #: content/ui/ModerationTools/IpRulePage.qml:38
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Expirar tras"
 
 #: content/ui/ModerationTools/IpRulePage.qml:43
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 día"
 
 #: content/ui/ModerationTools/IpRulePage.qml:47
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "hace %1 semanas"
+msgstr "2 semanas"
 
 #: content/ui/ModerationTools/IpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "hace 1 mes"
+msgstr "1 mes"
 
 #: content/ui/ModerationTools/IpRulePage.qml:55
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "hace 1 mes"
+msgstr "6 meses"
 
 #: content/ui/ModerationTools/IpRulePage.qml:59
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "hace 1 año"
+msgstr "1 año"
 
 #: content/ui/ModerationTools/IpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "hace 1 año"
+msgstr "3 años"
 
 #: content/ui/ModerationTools/IpRulePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Comentario privado"
+msgstr "Comentario"
 
 #: content/ui/ModerationTools/IpRulePage.qml:75
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Opcional. Recuerde por qué ha añadido esta regla."
 
 #: content/ui/ModerationTools/IpRulePage.qml:81
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Regla *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:82
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Escoja lo que debe ocurrir con las peticiones que provengan de esta IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #: content/ui/ModerationTools/MainIpRulePage.qml:122
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Limitar registros"
 
 #: content/ui/ModerationTools/IpRulePage.qml:88
 #: content/ui/ModerationTools/MainIpRulePage.qml:123
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Los nuevos registros necesitarán de su aprobación"
 
 #: content/ui/ModerationTools/IpRulePage.qml:94
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgid "Block sign-ups"
-msgstr "Dominios bloqueados"
+msgstr "Bloquear registros"
 
 #: content/ui/ModerationTools/IpRulePage.qml:95
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "No se permiten nuevos registros"
 
 #: content/ui/ModerationTools/IpRulePage.qml:100
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgid "Block access"
-msgstr "Cuentas bloqueadas"
+msgstr "Bloquear el acceso"
 
 #: content/ui/ModerationTools/IpRulePage.qml:101
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Bloquear el acceso a todos los recursos"
 
 #: content/ui/ModerationTools/IpRulePage.qml:115
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr "Crear bloqueo"
+msgstr "Crear regla IP"
 
 #: content/ui/ModerationTools/IpRulePage.qml:119
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New IP rule added"
-msgstr "Nuevo bloqueo de dominio añadido"
+msgstr "Nuevo regla IP añadida"
 
 #: content/ui/ModerationTools/IpRulePage.qml:145
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Limitar registros"
 
 #: content/ui/ModerationTools/IpRulePage.qml:147
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out all the blocked domains"
-#| msgid "Blocked domains"
+#, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Dominios bloqueados"
+msgstr "Registros bloqueados"
 
 #: content/ui/ModerationTools/IpRulePage.qml:149
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
-#, fuzzy, kde-format
-#| msgid "Blocked Accounts"
+#, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Cuentas bloqueadas"
+msgstr "Bloquear el acceso"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Crear bloqueo"
+msgstr "Crear regla"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1538,130 +1538,108 @@ msgid "Edit Domain Block"
 msgstr "Editar bloqueo de dominio"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr "Eliminar"
+msgstr "Eliminar regla IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "Regla IP eliminada"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr "Actualizar bloqueo"
+msgstr "Actualizar regla IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder ip for searching accounts"
-#| msgid "IP:"
+#, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr "IP:"
+msgstr "IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Expirar tras"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 día"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "hace %1 semanas"
+msgstr "2 semanas"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "hace 1 mes"
+msgstr "1 mes"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
-#, fuzzy, kde-format
-#| msgid "1 month ago"
-#| msgid_plural "%1 months ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "hace 1 mes"
+msgstr "6 meses"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "hace 1 año"
+msgstr "1 año"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
-#, fuzzy, kde-format
-#| msgid "1 year ago"
-#| msgid_plural "%1 years ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "hace 1 año"
+msgstr "3 años"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:188
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Comentario privado"
+msgstr "Comentario"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:116
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Regla *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:147
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr "Actualizar bloqueo"
+msgstr "Actualizar regla IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:157
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "Regla IP actualizada"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:181
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Expira a las"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "Ninguno"
@@ -1670,15 +1648,13 @@ msgstr "Ninguno"
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Severidad"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to update the domain block with new values"
-#| msgid "Update Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr "Actualizar bloqueo"
+msgstr "Actualizar regla IP"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1694,7 +1670,7 @@ msgstr "Federación"
 #: content/ui/ModerationTools/ModerationToolPage.qml:26
 #, kde-format
 msgid "Ip rules"
-msgstr ""
+msgstr "Reglas IP"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2451,13 +2427,13 @@ msgstr "%1 favoritas"
 msgid "%1 Favorite"
 msgstr "%1 favorita"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, kde-format
 msgid "%1 Boost"
 msgstr "%1 promoción"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 promociones"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2023-07-06 21:53+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -139,39 +139,66 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Comptes"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "%1 Favorites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "%1 favoris"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "Stimulations"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "Aucune demande de suivi"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "Aucun abonné(e)"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
 msgid "No followed accounts"
 msgstr "Impossible de suivre un compte"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No muted accounts"
 msgstr "Comptes"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Blocked Accounts"
 msgid "No blocked accounts"
 msgstr "Comptes bloqués"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
 msgid "No featured accounts"
 msgstr "Impossible de présenter un compte"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users favourited this post"
+msgstr "Ré-écrire ce message"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgid "No users boosted this post"
+msgstr "Ré-écrire ce message"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -2462,14 +2489,14 @@ msgstr "%1 favoris"
 msgid "%1 Favorite"
 msgstr "Favori %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 boosted"
 msgid "%1 Boost"
 msgstr "mis en avant par %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"

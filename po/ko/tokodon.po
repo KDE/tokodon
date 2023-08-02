@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -146,41 +146,68 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "계정"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "%1 님이 좋아요 표시함"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "부스트"
+
+#: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No follow requests"
 msgstr "팔로우"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "No followers"
 msgstr "팔로워 %1명"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
 msgid "No followed accounts"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No muted accounts"
 msgstr "계정"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No blocked accounts"
 msgstr "계정 추가"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
 msgid "No featured accounts"
 msgstr "계정을 추천할 수 없음"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "No users favourited this post"
+msgstr "새 툿 쓰기"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "No users boosted this post"
+msgstr "새 툿 쓰기"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -2530,14 +2557,14 @@ msgstr "%1 님이 좋아요 표시함"
 msgid "%1 Favorite"
 msgstr "%1 님이 좋아요 표시함"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 boosted"
 msgid "%1 Boost"
 msgstr "%1 님이 부스트함"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"

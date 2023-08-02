@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -143,41 +143,68 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr "Notandaaðgangar"
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "%1s setti færslu frá þér í eftirlæti"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "Endurbirta"
+
+#: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "No follow requests"
 msgstr "Fylgjast með"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "No followers"
 msgstr "%1 fylgjendur"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
 msgid "No followed accounts"
 msgstr "Gat ekki fylgst með notandaaðgangi"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "No muted accounts"
 msgstr "Notandaaðgangar"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "No blocked accounts"
 msgstr "Bæta við notandaaðgangi"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
 msgid "No featured accounts"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
+
+#: account/socialgraphmodel.cpp:64
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "No users favourited this post"
+msgstr "Skrifa nýja færslu"
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "Write a new toot"
+msgid "No users boosted this post"
+msgstr "Skrifa nýja færslu"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
@@ -2529,14 +2556,14 @@ msgstr "%1s setti færslu frá þér í eftirlæti"
 msgid "%1 Favorite"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 boosted"
 msgid "%1 Boost"
 msgstr "%1 endurbirti"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"

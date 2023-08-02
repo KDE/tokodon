@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-31 00:47+0000\n"
+"POT-Creation-Date: 2023-08-02 00:47+0000\n"
 "PO-Revision-Date: 2023-07-30 07:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -136,35 +136,61 @@ msgctxt "@title"
 msgid "Featured Accounts"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:48
+#: account/socialgraphmodel.cpp:42
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgctxt "@title"
+msgid "%1 favourites"
+msgstr "收藏夹"
+
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgid "%1 boosted"
+msgctxt "@title"
+msgid "%1 boosts"
+msgstr "%1 转嘟了"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed accounts"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted accounts"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked accounts"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured accounts"
 msgstr ""
+
+#: account/socialgraphmodel.cpp:64
+#, kde-format
+msgid "No users favourited this post"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:66
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "No users boosted this post"
+msgstr "%1 转嘟了你的嘟文"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -2384,13 +2410,13 @@ msgstr ""
 msgid "%1 Favorite"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, kde-format
 msgid "%1 Boost"
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:587
-#: content/ui/StatusDelegate/StatusDelegate.qml:588
+#: content/ui/StatusDelegate/StatusDelegate.qml:594
+#: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
 msgid "%1 Boosts"
 msgstr ""
