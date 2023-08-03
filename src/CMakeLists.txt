@@ -134,6 +134,10 @@ PRIVATE
     admin/ipinfo.h
     admin/iprulestoolmodel.cpp
     admin/iprulestoolmodel.h
+    admin/emailblocktoolmodel.cpp
+    admin/emailblocktoolmodel.h
+    admin/emailinfo.cpp
+    admin/emailinfo.h
 )
 
 if(NOT ANDROID)

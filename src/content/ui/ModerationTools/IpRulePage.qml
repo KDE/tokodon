@@ -193,7 +193,7 @@ Kirigami.ScrollablePage {
         }
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No federations found")
+            text: i18n("No IP rules found")
             visible: ipRuleView.count === 0 && !ipRuleView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

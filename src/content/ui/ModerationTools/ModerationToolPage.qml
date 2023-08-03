@@ -26,6 +26,12 @@ Kirigami.CategorizedSettings {
             text: i18n("Ip rules")
             icon.name: "cards-block"
             page: Qt.resolvedUrl("IpRulePage.qml")
+        },
+        Kirigami.SettingAction {
+            actionName: "EmailBlock"
+            text: i18n("Email block")
+            icon.name: "mail-message"
+            page: Qt.resolvedUrl("EmailBlockToolPage.qml")
         }
     ]
 }

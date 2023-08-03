@@ -36,6 +36,7 @@
 #include "account/profileeditor.h"
 #include "account/socialgraphmodel.h"
 #include "admin/accounttoolmodel.h"
+#include "admin/emailblocktoolmodel.h"
 #include "admin/federationtoolmodel.h"
 #include "admin/ipinfo.h"
 #include "admin/iprulestoolmodel.h"
@@ -165,6 +166,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
     qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
     qmlRegisterType<IpRulesToolModel>("org.kde.kmasto", 1, 0, "IpRulesToolModel");
+    qmlRegisterType<EmailBlockToolModel>("org.kde.kmasto", 1, 0, "EmailBlockToolModel");
     qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
     qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
     qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
