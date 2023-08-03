@@ -59,7 +59,7 @@ QQC2.AbstractButton {
             Layout.maximumWidth: Kirigami.Units.gridUnit * 3
             Layout.topMargin: 0
             Layout.bottomMargin: 0
-            Layout.leftMargin: 0
+            Layout.leftMargin: Kirigami.Units.smallSpacing
             Image {
                 id: img
                 mipmap: true
@@ -101,6 +101,7 @@ QQC2.AbstractButton {
                 font: Kirigami.Theme.smallFont
                 visible: text
                 Layout.fillWidth: true
+                maximumLineCount: 1
             }
             Kirigami.Heading {
                 level: 5
@@ -115,6 +116,7 @@ QQC2.AbstractButton {
                 text: root.card ? root.card.description : ''
                 elide: Text.ElideRight
                 visible: text
+                maximumLineCount: 1
                 Layout.fillWidth: true
             }
         }
