@@ -12,7 +12,7 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Email Block Tool Page")
+    title: i18nc("@title", "Email Block Tool Page")
 
     Kirigami.PromptDialog {
         id: emailInfoDialog
@@ -23,7 +23,7 @@ Kirigami.ScrollablePage {
         property date createdAt
         property int ipCount
 
-        title: i18n("E-Mail Domain Info")
+        title: i18nc("@title", "E-Mail Domain Info")
 
         contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
@@ -84,7 +84,7 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: newEmailBlockDialog
 
-        title: i18n("New E-Mail Domain Block")
+        title: i18n("@title", "New E-Mail Domain Block")
 
         contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
@@ -155,7 +155,7 @@ Kirigami.ScrollablePage {
                 Delegates.SubtitleContentItem {
                     itemDelegate: delegate
                     bold: true
-                    subtitle: (delegate.totalCount) + i18n(" sign-up attempts over the last week")
+                    subtitle: i18nc("@info", "%1 sign-up attempts over the last week", delegate.totalCount)
                 }
 
                 Item {
