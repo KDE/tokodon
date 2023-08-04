@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"POT-Creation-Date: 2023-08-04 00:46+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -865,9 +865,118 @@ msgstr ""
 msgid "No accounts found"
 msgstr ""
 
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgctxt "@title"
+msgid "Email Block Tool Page"
+msgstr "Conversations"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:26
+#, kde-format
+msgctxt "@title"
+msgid "E-Mail Domain Info"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:35
+#, kde-format
+msgctxt "@info The domain on which the block is imposed"
+msgid "Email domain name"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Blocked Accounts"
+msgctxt "@info Time when the block was imposed."
+msgid "Block created at"
+msgstr "Blocked Accounts"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:51
+#, kde-format
+msgctxt ""
+"@info The counted accounts signup attempts using that email domain within "
+"the last week."
+msgid "Account sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:59
+#, kde-format
+msgctxt ""
+"@info The counted IP signup attempts of that email domain within that day."
+msgid "IP sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:68
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:106
+#, kde-format
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete email block"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:77
+#, kde-format
+msgid "Email block deleted"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:87
+#, kde-format
+msgid "@title"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#, kde-format
+msgctxt "@info The domain on which the block will be imposed"
+msgid "Domain *"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:98
+#, kde-format
+msgid ""
+"This can be the domain name that shows up in the e-mail address or the MX "
+"record it uses. They will be checked upon sign-up."
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:button"
+msgid "Resolve domain"
+msgstr "Remove bookmark"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:115
+#, kde-format
+msgid "New email block added"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:158
+#, kde-format
+msgctxt "@info"
+msgid "%1 sign-up attempts over the last week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:180
+#, fuzzy, kde-format
+#| msgid "Conversations"
+msgid "No email blocks found"
+msgstr "Conversations"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:193
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "Remove bookmark"
+
 #: content/ui/ModerationTools/FederationToolPage.qml:15
 #, fuzzy, kde-format
 #| msgid "Conversations"
+msgctxt "@title"
 msgid "Federation Tool Page"
 msgstr "Conversations"
 
@@ -1056,7 +1165,6 @@ msgid "Allowed for federation"
 msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#: content/ui/ModerationTools/IpRulePage.qml:196
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgid "No federations found"
@@ -1229,6 +1337,11 @@ msgstr "Blocked Accounts"
 msgctxt "@label"
 msgid "Block access"
 msgstr "Blocked Accounts"
+
+#: content/ui/ModerationTools/IpRulePage.qml:196
+#, kde-format
+msgid "No IP rules found"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1746,6 +1859,11 @@ msgstr "Conversation"
 #: content/ui/ModerationTools/ModerationToolPage.qml:26
 #, kde-format
 msgid "Ip rules"
+msgstr ""
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:32
+#, kde-format
+msgid "Email block"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:36
@@ -2627,49 +2745,49 @@ msgstr "7 days"
 msgid "An unknown error occurred."
 msgstr "An unknown error occurred."
 
-#: main.cpp:121
+#: main.cpp:122
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon client"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Maintainer"
 msgstr "Maintainer"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Steve Allewell"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client for the decentralised social network: mastodon"
 
-#: main.cpp:136
+#: main.cpp:137
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Supports web+ap: URL scheme"

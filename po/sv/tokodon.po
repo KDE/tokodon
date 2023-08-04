@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"POT-Creation-Date: 2023-08-04 00:46+0000\n"
 "PO-Revision-Date: 2023-08-02 07:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -822,8 +822,128 @@ msgstr "Ägare"
 msgid "No accounts found"
 msgstr "Inga konton hittades"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:15
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Federation Tool Page"
+msgctxt "@title"
+msgid "Email Block Tool Page"
+msgstr "Federationsverktygssida"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Allowed Domain Info"
+msgctxt "@title"
+msgid "E-Mail Domain Info"
+msgstr "Tillåten domäninformation"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Obfuscate domain name"
+msgctxt "@info The domain on which the block is imposed"
+msgid "Email domain name"
+msgstr "Förvräng domännamn"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Blocked at"
+msgctxt "@info Time when the block was imposed."
+msgid "Block created at"
+msgstr "Blockerad"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:51
 #, kde-format
+msgctxt ""
+"@info The counted accounts signup attempts using that email domain within "
+"the last week."
+msgid "Account sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:59
+#, kde-format
+msgctxt ""
+"@info The counted IP signup attempts of that email domain within that day."
+msgid "IP sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:68
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:106
+#, fuzzy, kde-format
+#| msgctxt "@info:Cancel button to close the dailog"
+#| msgid "Cancel"
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit domain block"
+msgctxt "@action:button"
+msgid "Delete email block"
+msgstr "Redigera domänblockering"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:77
+#, fuzzy, kde-format
+#| msgid "Domain block updated"
+msgid "Email block deleted"
+msgstr "Domänblockering uppdaterad"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:87
+#, kde-format
+msgid "@title"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@info:Enter the domain address of the domain block"
+#| msgid "Domain*"
+msgctxt "@info The domain on which the block will be imposed"
+msgid "Domain *"
+msgstr "Domän*"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:98
+#, kde-format
+msgid ""
+"This can be the domain name that shows up in the e-mail address or the MX "
+"record it uses. They will be checked upon sign-up."
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Remove Domain Block"
+msgctxt "@action:button"
+msgid "Resolve domain"
+msgstr "Ta bort domänblockering"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:115
+#, fuzzy, kde-format
+#| msgid "New domain block added"
+msgid "New email block added"
+msgstr "Ny domänblockering tillagd"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:158
+#, kde-format
+msgctxt "@info"
+msgid "%1 sign-up attempts over the last week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:180
+#, fuzzy, kde-format
+#| msgid "No federations found"
+msgid "No email blocks found"
+msgstr "Inga federationer hittades"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:193
+#, fuzzy, kde-format
+#| msgctxt "@info:Button to create a domain block"
+#| msgid "Create Block"
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "Skapa blockering"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Federation Tool Page"
+msgctxt "@title"
 msgid "Federation Tool Page"
 msgstr "Federationsverktygssida"
 
@@ -1014,7 +1134,6 @@ msgid "Allowed for federation"
 msgstr "Tillåten för federation"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#: content/ui/ModerationTools/IpRulePage.qml:196
 #, kde-format
 msgid "No federations found"
 msgstr "Inga federationer hittades"
@@ -1173,6 +1292,12 @@ msgstr "Blockera registreringar"
 msgctxt "@label"
 msgid "Block access"
 msgstr "Blockera åtkomst"
+
+#: content/ui/ModerationTools/IpRulePage.qml:196
+#, fuzzy, kde-format
+#| msgid "New IP rule added"
+msgid "No IP rules found"
+msgstr "Ny IP-regel tillagd"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1663,6 +1788,12 @@ msgstr "Federation"
 #, kde-format
 msgid "Ip rules"
 msgstr "IP-regler"
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:32
+#, fuzzy, kde-format
+#| msgid "Edit domain block"
+msgid "Email block"
+msgstr "Redigera domänblockering"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2525,49 +2656,49 @@ msgstr "7 dagar"
 msgid "An unknown error occurred."
 msgstr "Ett okänt fel uppstod."
 
-#: main.cpp:121
+#: main.cpp:122
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE-gemenskapen"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Maintainer"
 msgstr "Underhåll"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luna Jernberg,Stefan Asserhäll"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@bredband.net"
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
 
-#: main.cpp:136
+#: main.cpp:137
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Stöder web+ap: webbadresschema"

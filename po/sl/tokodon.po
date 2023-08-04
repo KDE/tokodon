@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:47+0000\n"
+"POT-Creation-Date: 2023-08-04 00:46+0000\n"
 "PO-Revision-Date: 2023-08-02 07:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: account/abstractaccount.cpp:459
@@ -823,8 +823,128 @@ msgstr "Lastnik"
 msgid "No accounts found"
 msgstr "Ni najdenih računov"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:15
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Federation Tool Page"
+msgctxt "@title"
+msgid "Email Block Tool Page"
+msgstr "Stran orodja za federiranje"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Allowed Domain Info"
+msgctxt "@title"
+msgid "E-Mail Domain Info"
+msgstr "Dovoljena informacija o domeni"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:35
+#, fuzzy, kde-format
+#| msgid "Obfuscate domain name"
+msgctxt "@info The domain on which the block is imposed"
+msgid "Email domain name"
+msgstr "Zamešaj ime domene"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Blocked at"
+msgctxt "@info Time when the block was imposed."
+msgid "Block created at"
+msgstr "Blokirani pri"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:51
 #, kde-format
+msgctxt ""
+"@info The counted accounts signup attempts using that email domain within "
+"the last week."
+msgid "Account sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:59
+#, kde-format
+msgctxt ""
+"@info The counted IP signup attempts of that email domain within that day."
+msgid "IP sign-up attempts in this week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:68
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:106
+#, fuzzy, kde-format
+#| msgctxt "@info:Cancel button to close the dailog"
+#| msgid "Cancel"
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#, fuzzy, kde-format
+#| msgid "Edit domain block"
+msgctxt "@action:button"
+msgid "Delete email block"
+msgstr "Uredi domenski blok"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:77
+#, fuzzy, kde-format
+#| msgid "Domain block updated"
+msgid "Email block deleted"
+msgstr "Domenski blok posodobljen"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:87
+#, kde-format
+msgid "@title"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@info:Enter the domain address of the domain block"
+#| msgid "Domain*"
+msgctxt "@info The domain on which the block will be imposed"
+msgid "Domain *"
+msgstr "Domena*"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:98
+#, kde-format
+msgid ""
+"This can be the domain name that shows up in the e-mail address or the MX "
+"record it uses. They will be checked upon sign-up."
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Remove Domain Block"
+msgctxt "@action:button"
+msgid "Resolve domain"
+msgstr "Odstrani domenski blok"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:115
+#, fuzzy, kde-format
+#| msgid "New domain block added"
+msgid "New email block added"
+msgstr "Dodan nov blok domene"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:158
+#, kde-format
+msgctxt "@info"
+msgid "%1 sign-up attempts over the last week"
+msgstr ""
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:180
+#, fuzzy, kde-format
+#| msgid "No federations found"
+msgid "No email blocks found"
+msgstr "Ni najdenih federiranj"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:193
+#, fuzzy, kde-format
+#| msgctxt "@info:Button to create a domain block"
+#| msgid "Create Block"
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "Ustvari blok"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:15
+#, fuzzy, kde-format
+#| msgid "Federation Tool Page"
+msgctxt "@title"
 msgid "Federation Tool Page"
 msgstr "Stran orodja za federiranje"
 
@@ -1014,7 +1134,6 @@ msgid "Allowed for federation"
 msgstr "Dovoljene za federiranje"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#: content/ui/ModerationTools/IpRulePage.qml:196
 #, kde-format
 msgid "No federations found"
 msgstr "Ni najdenih federiranj"
@@ -1173,6 +1292,12 @@ msgstr "Blokiraj prijave"
 msgctxt "@label"
 msgid "Block access"
 msgstr "Blokiraj dostop"
+
+#: content/ui/ModerationTools/IpRulePage.qml:196
+#, fuzzy, kde-format
+#| msgid "New IP rule added"
+msgid "No IP rules found"
+msgstr "Novo IP pravilo dodano"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1663,6 +1788,12 @@ msgstr "Federacija"
 #, kde-format
 msgid "Ip rules"
 msgstr "Ip pravila"
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:32
+#, fuzzy, kde-format
+#| msgid "Edit domain block"
+msgid "Email block"
+msgstr "Uredi domenski blok"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2523,49 +2654,49 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."
 
-#: main.cpp:121
+#: main.cpp:122
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Mastodon client"
 msgstr "Odjemalec za Mastodon"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 skupnost KDE"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:126
+#: main.cpp:127
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net"
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Odjemalec decentraliziranega socialnega omrežja: mastodon"
 
-#: main.cpp:136
+#: main.cpp:137
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Podpira shemo url web+ap"
