@@ -12,3 +12,24 @@ include:
     #- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/windows.yml
     #- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/windows-qt6.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/flatpak.yml
+
+qml-check-i18n:
+  stage: build
+  image: invent-registry.kde.org/sysadmin/ci-images/suse-qt515:latest
+  needs: []
+  rules:
+    - changes:
+      - "**/*.qml"
+  tags:
+    - Linux
+  script:
+    - git config --global --add safe.directory $CI_PROJECT_DIR
+    - bash -c "grep -hre 'icon.name: \"' src | sed 's/.*icon.name: \(.*\)/\1/' | sort | uniq > src/icon-list.txt"
+    - bash -c "[[ ! \"`git status --porcelain `\" ]] || (echo \"Please run: grep -hre 'icon.name: \"' src | sed 's/.*icon.name: \(.*\)/\1/' | sort | uniq > src/icon-list.txt\" && exit 1)"
+
+  after_script:
+   - >
+     if [ $CI_JOB_STATUS != 'success' ]; then
+         git --no-pager diff
+     fi
+
