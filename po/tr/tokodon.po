@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 13:14+0300\n"
+"PO-Revision-Date: 2023-08-04 13:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -269,7 +269,7 @@ msgstr "Uygulanan Sınırlama Yok"
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
-"Alan adı blokunu güncellemek için bir PUT isteği yaparken bir hata oluştu."
+"Alan adı engelini güncellemek için bir PUT isteği yaparken bir hata oluştu."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "Sessize Al"
 #: content/ui/AccountInfo.qml:216
 #, kde-format
 msgid "Stop Blocking"
-msgstr "Engeli Kaldır"
+msgstr "Engellemeyi Durdur"
 
 #: content/ui/AccountInfo.qml:218
 #, kde-format
@@ -665,7 +665,7 @@ msgstr "Ara"
 #: content/ui/ModerationTools/AccountToolPage.qml:14
 #, kde-format
 msgid "Accounts Tool Page"
-msgstr "Hesaplar Araçları Sayfası"
+msgstr "Hesaplar Aracı Sayfası"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -823,32 +823,28 @@ msgid "No accounts found"
 msgstr "Hesap bulunamadı"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Email Block Tool Page"
-msgstr "Federasyon Araçları Sayfası"
+msgstr "E-posta Engelleme Aracı Sayfası"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Allowed Domain Info"
+#, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr "İzin Verilen Alan Adı Bilgisi"
+msgstr "E-posta Alan Adı Bilgisi"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Obfuscate domain name"
+#, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr "Alan adını belirsizleştir"
+msgstr "E-posta alan adı"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Şurada engellendi"
+msgstr "Engellenme zamanı"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:51
 #, kde-format
@@ -856,46 +852,40 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Bu haftaki hesap kayıt denemeleri"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:59
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Bu haftaki IP kayıt denemeleri"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:68
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "İptal"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "Alan adı blokunu düzenle"
+msgstr "E-posta blokunu sil"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Domain block updated"
+#, kde-format
 msgid "Email block deleted"
-msgstr "Alan adı bloku güncellendi"
+msgstr "E-posta bloku silindi"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:87
 #, kde-format
 msgid "@title"
-msgstr ""
+msgstr "@başlık"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Enter the domain address of the domain block"
-#| msgid "Domain*"
+#, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Alan Adı*"
@@ -906,46 +896,42 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Bu, e-posta adresinde görünen alan adı veya onun kullandığı MX kaydı "
+"olabilir. Kayıt sırasında denetleneceklerdir."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Remove Domain Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Alan Adı Blokunu Kaldır"
+msgstr "Alan adını çöz"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:115
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New email block added"
-msgstr "Yeni alan adı bloku eklendi"
+msgstr "Yeni e-posta engeli eklendi"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:158
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "Geçen hafta boyunca %1 kayıt denemesi"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:180
-#, fuzzy, kde-format
-#| msgid "No federations found"
+#, kde-format
 msgid "No email blocks found"
-msgstr "Federasyon bulunamadı"
+msgstr "E-posta engeli bulunamadı"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:193
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Blok Oluştur"
+msgstr "E-posta Engeli Oluştur"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Federation Tool Page"
-msgstr "Federasyon Araçları Sayfası"
+msgstr "Federasyon Aracı Sayfası"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
@@ -977,7 +963,7 @@ msgstr "Alan adıyla federe etmeye izin verilmedi"
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr "Alan Adı Bloku Ekle"
+msgstr "Alan Adı Engeli Ekle"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
@@ -1074,12 +1060,12 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr "Blok Oluştur"
+msgstr "Engelleme Oluştur"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr "Yeni alan adı bloku eklendi"
+msgstr "Yeni alan adı engeli eklendi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
@@ -1140,12 +1126,12 @@ msgstr "Federasyon bulunamadı"
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr "Yeni Alan Adı Bloku Ekle"
+msgstr "Yeni Alan Adı Engeli Ekle"
 
 #: content/ui/ModerationTools/IpRulePage.qml:15
 #, kde-format
 msgid "IP Rule Tool Page"
-msgstr "IP Kuralı Araçları Sayfası"
+msgstr "IP Kuralı Aracı Sayfası"
 
 #: content/ui/ModerationTools/IpRulePage.qml:20
 #, kde-format
@@ -1293,10 +1279,9 @@ msgid "Block access"
 msgstr "Erişimi engelle"
 
 #: content/ui/ModerationTools/IpRulePage.qml:196
-#, fuzzy, kde-format
-#| msgid "New IP rule added"
+#, kde-format
 msgid "No IP rules found"
-msgstr "Yeni IP kuralı eklendi"
+msgstr "Bir IP kuralı bulunamadı"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1577,17 +1562,17 @@ msgstr "Bu Hesaba Karşı Bir Eylem Gerçekleştir"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr "Alan Adı Blokunu Kaldır"
+msgstr "Alan Adı Engelini Kaldır"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr "Alan Adı Bloku Kaldırıldı"
+msgstr "Alan Adı Engeli Kaldırıldı"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr "Alan adı blokunu düzenle"
+msgstr "Alan adı engelini düzenle"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
@@ -1599,12 +1584,12 @@ msgstr "Gizli yorum"
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr "Bloku Güncelle"
+msgstr "Engellemeyi Güncelle"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr "Alan adı bloku güncellendi"
+msgstr "Alan adı engeli güncellendi"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
 #: content/ui/ModerationTools/MainIpRulePage.qml:174
@@ -1651,7 +1636,7 @@ msgstr "Raporu reddet"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr "Alan Adı Blokunu Düzenle"
+msgstr "Alan Adı Engelini Düzenle"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
 #, kde-format
@@ -1789,10 +1774,9 @@ msgid "Ip rules"
 msgstr "IP Kuralları"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgid "Email block"
-msgstr "Alan adı blokunu düzenle"
+msgstr "E-posta engellemesi"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format

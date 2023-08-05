@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 12:00+0200\n"
+"PO-Revision-Date: 2023-08-04 10:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -826,32 +826,28 @@ msgid "No accounts found"
 msgstr "Geen accounts gevonden"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Email Block Tool Page"
-msgstr "Hulpmiddelpagina voor federatie"
+msgstr "Hulpmiddelpagina voor e-mail blokkeren"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Allowed Domain Info"
+#, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr "Toegestane domeininformatie"
+msgstr "Domeininformatie van e-mail"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Obfuscate domain name"
+#, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr "Domeinnaam verhullen"
+msgstr "E-maildomeinnaam"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Geblokkeerd op"
+msgstr "Blokkade aangemaakt op"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:51
 #, kde-format
@@ -859,49 +855,43 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Pogingen voor inschrijven in deze week"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:59
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Pogingen voor inschrijven per IP in deze week"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:68
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "Domeinblokkade bewerken"
+msgstr "E-mailblokkade verwijderen"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Domain block updated"
+#, kde-format
 msgid "Email block deleted"
-msgstr "Domeinblokkade bijgewerkt"
+msgstr "E-mailblokkade verwijderd"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:87
 #, kde-format
 msgid "@title"
-msgstr ""
+msgstr "@titel"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Enter the domain address of the domain block"
-#| msgid "Domain*"
+#, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
-msgstr "Domein*"
+msgstr "Domein *"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:98
 #, kde-format
@@ -909,43 +899,39 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Dit kan de domeinnaam zijn die verschijnt in het e-mailadres of het MX-"
+"record die het gebruikt. Ze zullen gecontroleerd worden bij inschrijven."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Remove Domain Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Domeinblokkade verwijderen"
+msgstr "Domein oplossen"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:115
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New email block added"
-msgstr "Nieuwe domeinblokkade toegevoegd"
+msgstr "Nieuwe e-mailblokkade toegevoegd"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:158
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 pogingen voor inschrijven in de laatste week"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:180
-#, fuzzy, kde-format
-#| msgid "No federations found"
+#, kde-format
 msgid "No email blocks found"
-msgstr "Geen federaties gevonden"
+msgstr "Geen e-mailblokkade gevonden"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:193
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Blokkade aanmaken"
+msgstr "E-mailblokkade aanmaken"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Federation Tool Page"
 msgstr "Hulpmiddelpagina voor federatie"
@@ -1296,10 +1282,9 @@ msgid "Block access"
 msgstr "Toegang blokkeren"
 
 #: content/ui/ModerationTools/IpRulePage.qml:196
-#, fuzzy, kde-format
-#| msgid "New IP rule added"
+#, kde-format
 msgid "No IP rules found"
-msgstr "Nieuwe IP-regel toegevoegd"
+msgstr "Geen IP-regels gevonden"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1792,10 +1777,9 @@ msgid "Ip rules"
 msgstr "IP-regels"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgid "Email block"
-msgstr "Domeinblokkade bewerken"
+msgstr "E-mailblokkade"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format

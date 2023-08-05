@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-04 00:46+0000\n"
-"PO-Revision-Date: 2023-08-02 17:14+0300\n"
+"PO-Revision-Date: 2023-08-04 09:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -829,32 +829,28 @@ msgid "No accounts found"
 msgstr "Не знайдено жодного облікового запису"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Email Block Tool Page"
-msgstr "Сторінка засобів федерації"
+msgstr "Сторінка засобу блокування ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Allowed Domain Info"
+#, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr "Дані щодо дозволених доменів"
+msgstr "Дані щодо домену ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Obfuscate domain name"
+#, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr "Шифрувати назву домену"
+msgstr "Назва домену ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Заблоковано"
+msgstr "Блокування створено"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:51
 #, kde-format
@@ -862,49 +858,43 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Спроби увійти до облікового запису цього тижня"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:59
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Спроби увійти для IP-адреси цього тижня"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:68
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Скасувати"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "Редагувати блокування домену"
+msgstr "Вилучити блокування ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Domain block updated"
+#, kde-format
 msgid "Email block deleted"
-msgstr "Оновлено блокування домену"
+msgstr "Блокування ел. пошти вилучено"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:87
 #, kde-format
 msgid "@title"
-msgstr ""
+msgstr "@title"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@info:Enter the domain address of the domain block"
-#| msgid "Domain*"
+#, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
-msgstr "Домен*"
+msgstr "Домен *"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:98
 #, kde-format
@@ -912,43 +902,39 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Це може бути назва домену, яку показано в адресі електронної пошти або "
+"запису MX, який використано. Їх буде перевірено під час реєстрації."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Remove Domain Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Вилучити блокування домену"
+msgstr "Розв'язати домен"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:115
-#, fuzzy, kde-format
-#| msgid "New domain block added"
+#, kde-format
 msgid "New email block added"
-msgstr "Додано нове блокування доменів"
+msgstr "Додано нове блокування адреси ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:158
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 спроб увійти протягом останнього тижня"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:180
-#, fuzzy, kde-format
-#| msgid "No federations found"
+#, kde-format
 msgid "No email blocks found"
-msgstr "Федерацій не знайдено"
+msgstr "Не знайдено блокувань ел. пошти"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:193
-#, fuzzy, kde-format
-#| msgctxt "@info:Button to create a domain block"
-#| msgid "Create Block"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Створити блокування"
+msgstr "Створити блокування ел. пошти"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Federation Tool Page"
+#, kde-format
 msgctxt "@title"
 msgid "Federation Tool Page"
 msgstr "Сторінка засобів федерації"
@@ -1299,10 +1285,9 @@ msgid "Block access"
 msgstr "Блокувати доступ"
 
 #: content/ui/ModerationTools/IpRulePage.qml:196
-#, fuzzy, kde-format
-#| msgid "New IP rule added"
+#, kde-format
 msgid "No IP rules found"
-msgstr "Додано нове IP-правило"
+msgstr "Не знайдено жодного IP-правила"
 
 #: content/ui/ModerationTools/IpRulePage.qml:208
 #, kde-format
@@ -1798,10 +1783,9 @@ msgid "Ip rules"
 msgstr "IP-правила"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:32
-#, fuzzy, kde-format
-#| msgid "Edit domain block"
+#, kde-format
 msgid "Email block"
-msgstr "Редагувати блокування домену"
+msgstr "Блокування ел. пошти"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
