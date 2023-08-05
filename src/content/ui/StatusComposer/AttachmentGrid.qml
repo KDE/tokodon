@@ -8,6 +8,8 @@ import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
 import @QTGRAPHICALEFFECTS_MODULE@
 
+import "../Components"
+
 GridLayout {
     id: root
 
@@ -22,7 +24,7 @@ GridLayout {
 
         model: root.attachmentEditorModel
 
-        Image {
+        FocusedImage {
             id: img
 
             required property int index
@@ -36,7 +38,6 @@ GridLayout {
 
             readonly property var heightDivisor: (isSpecialAttachment || attachmentsRepeater.count < 3) ? 1 : 2
 
-            fillMode: Image.PreserveAspectCrop
             source: img.preview
 
             Layout.rowSpan: isSpecialAttachment ? 2 : 1
@@ -46,8 +47,8 @@ GridLayout {
             Layout.preferredWidth: parent.width / root.columns
             Layout.preferredHeight: (parent.width * mediaRatio / heightDivisor) + extraSpacing
 
-            mipmap: true
-            cache: true
+            focusX: img.focusX
+            focusY: img.focusY
 
             layer.enabled: true
             layer.effect: OpacityMask {
@@ -73,13 +74,20 @@ GridLayout {
                 icon.name: 'document-edit'
 
                 onClicked: {
+                    console.log("giving " + img.focusX + "and " + img.focusY);
                     const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
                         text: img.caption,
+                        preview: img.preview,
+                        focusX: img.focusX,
+                        focusY: img.focusY,
                     });
                     dialog.open();
                     dialog.applied.connect(() => {
+                        console.log("got text:" + dialog.text);
+                        console.log("got focus:" + dialog.focusY);
                         root.attachmentEditorModel.setDescription(img.index, dialog.text);
-
+                        img.focusX = dialog.focusX;
+                        img.focusY = dialog.focusY;
                     });
                 }
 
