@@ -174,6 +174,7 @@ MastoPage {
                 AttachmentGrid {
                     attachmentEditorModel: root.backend.attachmentEditorModel
                     Layout.fillWidth: true
+                    Layout.maximumWidth: actions.width - Layout.leftMargin - Layout.rightMargin - (columns > 1 ? Kirigami.Units.smallSpacing : 0)
                     Layout.margins: Kirigami.Units.smallSpacing
                 }
 

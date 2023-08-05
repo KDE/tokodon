@@ -12,10 +12,9 @@ GridLayout {
     id: root
 
     required property var attachmentEditorModel
-    readonly property var mediaRatio: 9.0 / 16.0
 
     visible: attachmentsRepeater.count > 0
-    columns: attachmentsRepeater.count === 0 > 1 ? 2 : 1
+    columns: Math.min(attachmentsRepeater.count, 2)
     implicitHeight: Kirigami.Units.gridUnit * 20
 
     Repeater {
@@ -30,17 +29,22 @@ GridLayout {
             required property string preview
             required property string description
 
-            readonly property var widthDivisor: attachmentsRepeater.count > 1 ? 2 : 1
+            readonly property var mediaRatio: 9.0 / 16.0
 
-            // the first attachment in a three attachment set is displayed at full height
-            readonly property var heightDivisor: img.isSpecialAttachment ? 1 : (attachmentsRepeater.count > 2 ? 2 : 1)
-            Layout.rowSpan: img.isSpecialAttachment ? 2 : 1
+            // If there is three attachments, the first one is bigger than the other two.
+            readonly property bool isSpecialAttachment: index === 0 && attachmentsRepeater.count === 3
+
+            readonly property var heightDivisor: (isSpecialAttachment || attachmentsRepeater.count < 3) ? 1 : 2
 
             fillMode: Image.PreserveAspectCrop
             source: img.preview
 
-            Layout.preferredWidth: parent.width / widthDivisor
-            Layout.preferredHeight: (root.width * root.mediaRatio) / heightDivisor + (img.isSpecialAttachment ? attachmentGridLayout.rowSpacing : 0)
+            Layout.rowSpan: isSpecialAttachment ? 2 : 1
+
+            readonly property real extraSpacing: isSpecialAttachment ? root.rowSpacing : 0
+
+            Layout.preferredWidth: parent.width / root.columns
+            Layout.preferredHeight: (parent.width * mediaRatio / heightDivisor) + extraSpacing
 
             mipmap: true
             cache: true
