@@ -53,6 +53,11 @@ void Attachment::fromJson(const QJsonObject &obj)
     if (stringToAttachmentType.contains(type)) {
         m_type = stringToAttachmentType[type];
     }
+
+    if (obj.contains("meta") && obj["meta"].toObject().contains("focus")) {
+        m_focusX = obj["meta"].toObject()["focus"].toObject()["x"].toDouble();
+        m_focusY = obj["meta"].toObject()["focus"].toObject()["y"].toDouble();
+    }
 }
 
 QString Post::type() const

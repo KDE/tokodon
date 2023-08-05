@@ -96,6 +96,8 @@ class Attachment : public QObject
     Q_PROPERTY(QString tempSource READ tempSource CONSTANT)
     Q_PROPERTY(int sourceWidth MEMBER m_sourceWidth CONSTANT)
     Q_PROPERTY(int sourceHeight MEMBER m_sourceHeight CONSTANT)
+    Q_PROPERTY(double focusX MEMBER m_focusX CONSTANT)
+    Q_PROPERTY(double focusY MEMBER m_focusY CONSTANT)
 
 public:
     explicit Attachment(QObject *parent = nullptr);
@@ -118,6 +120,9 @@ public:
     QString m_remote_url;
     int m_sourceWidth = -1;
     int m_sourceHeight = -1;
+
+    double m_focusX = 0.0f;
+    double m_focusY = 0.0f;
 
     QString id() const;
 
