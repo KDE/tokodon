@@ -94,6 +94,32 @@ QString Attachment::tempSource() const
     return QString("image://blurhash/%1").arg(m_blurhash);
 }
 
+double Attachment::focusX() const
+{
+    return m_focusX;
+}
+
+void Attachment::setFocusX(double value)
+{
+    if (value != m_focusX) {
+        m_focusX = value;
+        Q_EMIT focusXChanged();
+    }
+}
+
+double Attachment::focusY() const
+{
+    return m_focusY;
+}
+
+void Attachment::setFocusY(double value)
+{
+    if (value != m_focusY) {
+        m_focusY = value;
+        Q_EMIT focusYChanged();
+    }
+}
+
 Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
     , m_parent(account)

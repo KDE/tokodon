@@ -96,8 +96,8 @@ class Attachment : public QObject
     Q_PROPERTY(QString tempSource READ tempSource CONSTANT)
     Q_PROPERTY(int sourceWidth MEMBER m_sourceWidth CONSTANT)
     Q_PROPERTY(int sourceHeight MEMBER m_sourceHeight CONSTANT)
-    Q_PROPERTY(double focusX MEMBER m_focusX CONSTANT)
-    Q_PROPERTY(double focusY MEMBER m_focusY CONSTANT)
+    Q_PROPERTY(double focusX READ focusX WRITE setFocusX NOTIFY focusXChanged)
+    Q_PROPERTY(double focusY READ focusY WRITE setFocusY NOTIFY focusYChanged)
 
 public:
     explicit Attachment(QObject *parent = nullptr);
@@ -121,9 +121,6 @@ public:
     int m_sourceWidth = -1;
     int m_sourceHeight = -1;
 
-    double m_focusX = 0.0f;
-    double m_focusY = 0.0f;
-
     QString id() const;
 
     void setDescription(const QString &description);
@@ -134,11 +131,23 @@ public:
 
     QString tempSource() const;
 
+    double focusX() const;
+    void setFocusX(double value);
+
+    double focusY() const;
+    void setFocusY(double value);
+
+Q_SIGNALS:
+    void focusXChanged();
+    void focusYChanged();
+
 private:
     void fromJson(const QJsonObject &object);
 
     QString m_description;
     QString m_blurhash;
+    double m_focusX = 0.0f;
+    double m_focusY = 0.0f;
 };
 
 class Notification
