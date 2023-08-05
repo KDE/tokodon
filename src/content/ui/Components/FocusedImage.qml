@@ -30,7 +30,7 @@ Rectangle {
         id: image
 
         // The aspect ratio of the image (before it's cropped).
-        readonly property real aspectRatio: sourceWidth / Math.max(sourceHeight, 1)
+        readonly property real aspectRatio: sourceSize.width / Math.max(sourceSize.height, 1)
 
         // Whether the image is going to be vertically or horizontally cropped, based on if the aspect ratio is bigger
         // or smaller.
