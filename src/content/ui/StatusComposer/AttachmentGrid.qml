@@ -74,7 +74,6 @@ GridLayout {
                 icon.name: 'document-edit'
 
                 onClicked: {
-                    console.log("giving " + img.focusX + "and " + img.focusY);
                     const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
                         text: img.caption,
                         preview: img.preview,
@@ -83,11 +82,8 @@ GridLayout {
                     });
                     dialog.open();
                     dialog.applied.connect(() => {
-                        console.log("got text:" + dialog.text);
-                        console.log("got focus:" + dialog.focusY);
                         root.attachmentEditorModel.setDescription(img.index, dialog.text);
-                        img.focusX = dialog.focusX;
-                        img.focusY = dialog.focusY;
+                        root.attachmentEditorModel.setFocusPoint(img.index, dialog.focusX, dialog.focusY);
                     });
                 }
 

@@ -100,6 +100,21 @@ void AttachmentEditorModel::setDescription(int row, const QString &description)
     Q_EMIT dataChanged(index(row, 0), index(row, 0), {DescriptionRole});
 }
 
+void AttachmentEditorModel::setFocusPoint(int row, double x, double y)
+{
+    auto &attachment = m_attachments[row];
+    const auto id = attachment->id();
+    attachment->setFocusX(x);
+    attachment->setFocusY(y);
+
+    const auto attachementUrl = m_account->apiUrl(QStringLiteral("/api/v1/media/%1").arg(id));
+    const QJsonObject obj{
+        {"focus", QStringLiteral("%1,%2").arg(x).arg(y)},
+    };
+    const QJsonDocument doc(obj);
+    m_account->put(attachementUrl, doc, true, this, nullptr);
+}
+
 const QVector<Attachment *> &AttachmentEditorModel::attachments() const
 {
     return m_attachments;

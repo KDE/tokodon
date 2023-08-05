@@ -37,6 +37,7 @@ public Q_SLOTS:
     void appendExisting(Attachment *attachment);
     void removeAttachment(int row);
     void setDescription(int row, const QString &description);
+    void setFocusPoint(int row, double x, double y);
 
 Q_SIGNALS:
     void postChanged();
