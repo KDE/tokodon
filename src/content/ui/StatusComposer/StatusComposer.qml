@@ -243,6 +243,20 @@ MastoPage {
                                 folder: shortcuts.home
                                 title: i18n("Please choose a file")
                                 onAccepted: root.uploadFile(fileDialog.fileUrl);
+                                selectedNameFilter: "All supported formats"
+                                nameFilters: ["All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)",
+                                    "JPEG image (*.jpg *.jpeg)",
+                                    "PNG image (*.png)",
+                                    "GIF image (*.gif)",
+                                    "WebP image (*.webp)",
+                                    "HEIC image(*.heic)",
+                                    "HEIF image (*.heif)",
+                                    "AVIF image (*.avif)",
+                                    "WebM video (*.webm)",
+                                    "MPEG-4 video (*.mp4)",
+                                    "M4V video (*.m4v)",
+                                    "QuickTime video (*.mov)",
+                                    "All files (*)"]
                             }
                             QQC2.ToolTip.text: i18n("Attach File")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
