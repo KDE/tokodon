@@ -10,6 +10,8 @@ import org.kde.kmasto 1.0
 import @QTGRAPHICALEFFECTS_MODULE@
 import Qt.labs.qmlmodels 1.0
 
+import "../Components"
+
 QQC2.Control {
     id: root
 
@@ -74,13 +76,16 @@ QQC2.Control {
                         sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
                         sourceHeight: modelData.sourceHeight > img.sourceSize.height ? modelData.sourceHeight : img.sourceSize.height
 
-                        Image {
+                        FocusedImage {
                             id: img
+
                             anchors.fill: parent
                             source: modelData.previewUrl
-                            mipmap: true
-                            cache: true
-                            fillMode: Image.PreserveAspectCrop
+
+                            crop: !root.shouldKeepAspectRatio
+                            focusX: modelData.focusX
+                            focusY: modelData.focusY
+
                             layer.enabled: true
                             layer.effect: OpacityMask {
                                 maskSource: Item {
