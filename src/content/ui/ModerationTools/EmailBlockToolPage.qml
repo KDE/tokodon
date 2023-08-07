@@ -84,7 +84,7 @@ Kirigami.ScrollablePage {
     Kirigami.PromptDialog {
         id: newEmailBlockDialog
 
-        title: i18n("@title", "New E-Mail Domain Block")
+        title: i18nc("@title", "New E-Mail Domain Block")
 
         contentPadding: 0
         implicitWidth: Kirigami.Units.gridUnit * 20
