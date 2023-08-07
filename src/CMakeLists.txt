@@ -112,6 +112,8 @@ PRIVATE
     utils/qthelper.hpp
     utils/utils.cpp
     utils/utils.h
+    utils/colorschemer.cpp
+    utils/colorschemer.h
 
     # Network related classes
     network/networkrequestprogress.cpp
@@ -140,19 +142,17 @@ PRIVATE
     admin/emailinfo.h
 )
 
-if(NOT ANDROID)
-    target_sources(tokodon_static
-    PRIVATE
-        utils/colorschemer.cpp
-        utils/colorschemer.h
-    )
-endif()
-
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
 target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES} ${MPV_LIBRARIES})
 target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(tokodon_static PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 target_link_directories(tokodon_static PUBLIC ${MPV_LIBRARY_DIRS})
+
+if (QT_MAJOR_VERSION STREQUAL "5")
+    target_link_libraries(tokodon_static PUBLIC KF5::ConfigWidgets)
+else()
+    target_link_libraries(tokodon_static PUBLIC KF6::ColorScheme)
+endif()
 
 if (TARGET KF${QT_MAJOR_VERSION}::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
@@ -262,8 +262,6 @@ if(ANDROID)
 else()
     target_sources(tokodon PRIVATE desktopresources.qrc)
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
-    target_compile_definitions(tokodon PRIVATE -DHAVE_COLORSCHEME)
-    target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::ConfigWidgets)
 endif()
 
 if (TARGET KF${QT_MAJOR_VERSION}::DBusAddons)

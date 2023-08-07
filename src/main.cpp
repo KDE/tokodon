@@ -60,13 +60,10 @@
 #include "timeline/threadmodel.h"
 #include "utils/blurhashimageprovider.h"
 #include "utils/clipboard.h"
+#include "utils/colorschemer.h"
 #include "utils/emojimodel.h"
 #include "utils/filehelper.h"
 #include "utils/mpvplayer.h"
-
-#ifdef HAVE_COLORSCHEME
-#include "utils/colorschemer.h"
-#endif
 
 #ifdef Q_OS_WINDOWS
 #include <Windows.h>
@@ -145,13 +142,11 @@ int main(int argc, char *argv[])
 #endif
     auto config = Config::self();
 
-#ifdef HAVE_COLORSCHEME
     ColorSchemer colorScheme;
     qmlRegisterSingletonInstance<ColorSchemer>("org.kde.kmasto", 1, 0, "ColorSchemer", &colorScheme);
     if (!config->colorScheme().isEmpty()) {
         colorScheme.apply(config->colorScheme());
     }
-#endif
 
     // Qt sets the locale in the QGuiApplication constructor, but libmpv
     // requires the LC_NUMERIC category to be set to "C", so change it back.

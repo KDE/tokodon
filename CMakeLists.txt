@@ -64,6 +64,12 @@ set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
     PURPOSE "Secure storage of account secrets"
 )
 
+if (QT_MAJOR_VERSION STREQUAL "5")
+    find_package(KF5ConfigWidgets ${KF_MIN_VERSION} REQUIRED)
+else()
+    find_package(KF6ColorScheme ${KF_MIN_VERSION} REQUIRED)
+endif()
+
 if (ANDROID)
     find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES
@@ -74,7 +80,6 @@ else()
     if (NOT SAILFISHOS)
         find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
     endif()
-    find_package(KF${QT_MAJOR_VERSION}ConfigWidgets REQUIRED)
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
