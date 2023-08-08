@@ -4,30 +4,31 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.18 as Kirigami
+import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
 import QtQuick.Layouts 1.15
 
-Kirigami.CategorizedSettings {
+KirigamiSettings.CategorizedSettings {
     objectName: "moderationToolPage"
     actions: [
-        Kirigami.SettingAction {
+        KirigamiSettings.SettingAction {
             actionName: "Accounts"
             text: i18n("Accounts")
             icon.name: "user-identity"
             page: Qt.resolvedUrl("AccountToolPage.qml")
         },
-        Kirigami.SettingAction {
+        KirigamiSettings.SettingAction {
             actionName: "Federation"
             text: i18n("Federation")
             icon.name: "cloudstatus"
             page: Qt.resolvedUrl("FederationToolPage.qml")
         },
-        Kirigami.SettingAction {
+        KirigamiSettings.SettingAction {
             actionName: "IpRules"
             text: i18n("Ip rules")
             icon.name: "cards-block"
             page: Qt.resolvedUrl("IpRulePage.qml")
         },
-        Kirigami.SettingAction {
+        KirigamiSettings.SettingAction {
             actionName: "EmailBlock"
             text: i18n("Email block")
             icon.name: "mail-message"
