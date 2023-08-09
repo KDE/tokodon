@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:46+0000\n"
+"POT-Creation-Date: 2023-08-09 00:46+0000\n"
 "PO-Revision-Date: 2023-08-04 10:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -883,9 +883,11 @@ msgid "Email block deleted"
 msgstr "E-mailblokkade verwijderd"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:87
-#, kde-format
-msgid "@title"
-msgstr "@titel"
+#, fuzzy, kde-format
+#| msgid "Edit Domain Block"
+msgctxt "@title"
+msgid "New E-Mail Domain Block"
+msgstr "Domeinblokkade bewerken"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:97
 #, kde-format
@@ -2889,6 +2891,9 @@ msgstr "Bron"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
+
+#~ msgid "@title"
+#~ msgstr "@titel"
 
 #~ msgid "Default status privacy"
 #~ msgstr "Standaard privacystatus"
