@@ -9,7 +9,7 @@ import @QTGRAPHICALEFFECTS_MODULE@
 
 import "../Components"
 
-Kirigami.PromptDialog {
+QQC2.Dialog {
     id: root
 
     property alias text: textArea.text
@@ -17,14 +17,17 @@ Kirigami.PromptDialog {
     property real focusX: 0.0
     property real focusY: 0.0
 
+    x: Math.round((parent.width - width) / 2)
+    y: Math.round((parent.height - height) / 2)
+
     implicitHeight: Kirigami.Units.gridUnit * 30
     implicitWidth: Kirigami.Units.gridUnit * 40
 
     padding: Kirigami.Units.largeSpacing
+    bottomPadding: 0
 
-    title: i18n("Edit Media")
+    modal: true
 
-    showCloseButton: false
     standardButtons: QQC2.Dialog.Apply | QQC2.Dialog.Cancel
 
     onApplied: root.close()
@@ -232,4 +235,6 @@ Kirigami.PromptDialog {
             }
         }
     }
+
+    Component.onCompleted: footer.padding = Kirigami.Units.largeSpacing;
 }
