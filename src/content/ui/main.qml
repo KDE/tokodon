@@ -47,6 +47,20 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    function navigateLink(link, shouldOpenInternalLinks) {
+        if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
+            pageStack.push(tagModelComponent, {
+                hashtag: link.substring(9),
+            })
+        } else if (link.startsWith('account:/') && shouldOpenInternalLinks) {
+            Navigation.openAccount(link.substring(9))
+        } else if (link.startsWith('web+ap:/') && shouldOpenInternalLinks) {
+            Controller.openWebApLink(link.substring(8))
+        } else {
+            Qt.openUrlExternally(link)
+        }
+    }
+
     Component.onCompleted: {
         if (AccountManager.isReady) {
             startupAccountCheck();

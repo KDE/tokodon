@@ -36,17 +36,7 @@ QQC2.TextArea {
     background: null
     wrapMode: Text.Wrap
     selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
-    onLinkActivated: {
-        if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
-            pageStack.push(tagModelComponent, {
-                hashtag: link.substring(9),
-            })
-        } else if (link.startsWith('account:/') && shouldOpenInternalLinks) {
-            Navigation.openAccount(link.substring(9))
-        } else {
-            Qt.openUrlExternally(link)
-        }
-    }
+    onLinkActivated: (link) => applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     onHoveredLinkChanged: if (hoveredLink.length > 0) {
         applicationWindow().hoverLinkIndicator.text = hoveredLink;
