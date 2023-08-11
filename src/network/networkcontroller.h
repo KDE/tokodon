@@ -12,7 +12,7 @@ public:
     static NetworkController &instance();
     Q_INVOKABLE void setApplicationProxy();
 
-    void openWebApLink(QString url);
+    Q_INVOKABLE void openWebApLink(QString url);
     void setAuthCode(QUrl authCode);
     void startComposing(const QString &text);
 
