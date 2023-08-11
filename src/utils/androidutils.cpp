@@ -31,7 +31,7 @@ AndroidUtils &AndroidUtils::instance()
 
 void AndroidUtils::checkPendingIntents()
 {
-    // TODO: may not build on Qt6
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QAndroidJniObject activity =
         QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;"); // activity is valid
     Q_ASSERT(activity.isValid());
@@ -42,6 +42,12 @@ void AndroidUtils::checkPendingIntents()
         _env->ExceptionClear();
         qWarning() << "couldn't launch intent";
     }
+#else
+    QJniObject activity = QJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");
+    Q_ASSERT(activity.isValid());
+
+    QJniObject::callStaticMethod<void>("org/kde/tokodon/OpenUriActivity", "checkPendingIntents");
+#endif
 }
 
 extern "C" {

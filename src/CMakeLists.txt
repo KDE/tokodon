@@ -143,7 +143,10 @@ PRIVATE
 )
 
 if(ANDROID)
-    target_link_libraries(tokodon_static PRIVATE Qt::AndroidExtras)
+    if (QT_MAJOR_VERSION STREQUAL "5")
+        target_link_libraries(tokodon_static PRIVATE Qt::AndroidExtras)
+    endif ()
+
     target_sources(tokodon_static
         PRIVATE
         utils/androidutils.cpp

@@ -77,7 +77,10 @@ if (ANDROID)
         PURPOSE "Encrypted communications"
     )
 
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS AndroidExtras)
+    # AndroidExtras only exists in Qt5, in Qt6 it's moved to Core
+    if (QT_MAJOR_VERSION STREQUAL "5")
+        find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS AndroidExtras)
+    endif ()
 else()
     if (NOT SAILFISHOS)
         find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
