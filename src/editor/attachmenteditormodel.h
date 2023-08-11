@@ -20,10 +20,7 @@ class AttachmentEditorModel : public QAbstractListModel
 public:
     explicit AttachmentEditorModel(QObject *parent, AbstractAccount *account);
 
-    enum ExtraRole {
-        PreviewRole = Qt::UserRole + 1,
-        DescriptionRole,
-    };
+    enum ExtraRole { PreviewRole = Qt::UserRole + 1, DescriptionRole, FocalXRole, FocalYRole };
 
     int count() const;
 

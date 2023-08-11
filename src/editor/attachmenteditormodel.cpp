@@ -37,6 +37,10 @@ QVariant AttachmentEditorModel::data(const QModelIndex &index, int role) const
         return attachment->m_preview_url;
     case DescriptionRole:
         return attachment->description();
+    case FocalXRole:
+        return attachment->focusX();
+    case FocalYRole:
+        return attachment->focusY();
     }
 
     return {};
@@ -47,6 +51,8 @@ QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
     return {
         {PreviewRole, QByteArrayLiteral("preview")},
         {DescriptionRole, QByteArrayLiteral("description")},
+        {FocalXRole, QByteArrayLiteral("focalX")},
+        {FocalYRole, QByteArrayLiteral("focalY")},
     };
 }
 
@@ -113,6 +119,7 @@ void AttachmentEditorModel::setFocusPoint(int row, double x, double y)
     };
     const QJsonDocument doc(obj);
     m_account->put(attachementUrl, doc, true, this, nullptr);
+    Q_EMIT dataChanged(index(row, 0), index(row, 0), {FocalXRole, FocalYRole});
 }
 
 const QVector<Attachment *> &AttachmentEditorModel::attachments() const

@@ -30,6 +30,8 @@ GridLayout {
             required property int index
             required property string preview
             required property string description
+            required property real focalX
+            required property real focalY
 
             readonly property var mediaRatio: 9.0 / 16.0
 
@@ -39,6 +41,8 @@ GridLayout {
             readonly property var heightDivisor: (isSpecialAttachment || attachmentsRepeater.count < 3) ? 1 : 2
 
             source: img.preview
+            focusX: img.focalX
+            focusY: img.focalY
 
             Layout.rowSpan: isSpecialAttachment ? 2 : 1
 
@@ -46,9 +50,6 @@ GridLayout {
 
             Layout.preferredWidth: parent.width / root.columns
             Layout.preferredHeight: (parent.width * mediaRatio / heightDivisor) + extraSpacing
-
-            focusX: img.focusX
-            focusY: img.focusY
 
             layer.enabled: true
             layer.effect: OpacityMask {
@@ -75,10 +76,10 @@ GridLayout {
 
                 onClicked: {
                     const dialog = attachmentInfoDialog.createObject(applicationWindow(), {
-                        text: img.caption,
+                        text: img.description,
                         preview: img.preview,
-                        focusX: img.focusX,
-                        focusY: img.focusY,
+                        focusX: img.focalX,
+                        focusY: img.focalY,
                     });
                     dialog.open();
                     dialog.applied.connect(() => {
