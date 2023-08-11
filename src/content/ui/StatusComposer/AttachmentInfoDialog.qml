@@ -91,6 +91,7 @@ QQC2.Dialog {
 
             Kirigami.Heading {
                 text: i18nc("@info:label Alternate text or description of the imaage", "Description")
+                level: 2
                 Layout.fillWidth: true
             }
 
@@ -108,6 +109,7 @@ QQC2.Dialog {
 
             Kirigami.Heading {
                 text: i18n("Focal point")
+                level: 2
                 Layout.fillWidth: true
             }
 
