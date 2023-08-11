@@ -93,6 +93,10 @@ MastoPage {
         }
     }
 
+    function uploadFile(url) {
+        progress.reply = backend.attachmentEditorModel.append(url);
+    }
+
     header: KirigamiComponents.Banner {
         id: banner
         Layout.fillWidth: true
@@ -223,7 +227,7 @@ MastoPage {
                                 id: fileDialog
                                 folder: shortcuts.home
                                 title: i18n("Please choose a file")
-                                onAccepted: progress.reply = backend.attachmentEditorModel.append(fileDialog.fileUrl);
+                                onAccepted: root.uploadFile(fileDialog.fileUrl);
                             }
                             QQC2.ToolTip.text: i18n("Attach File")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -359,6 +363,15 @@ MastoPage {
                 enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
                 Layout.alignment: Qt.AlignRight
                 onClicked: root.submitPost()
+            }
+        }
+
+        DropArea {
+            anchors.fill: parent
+            onDropped: (drop) => {
+                for (let index in drop.urls) {
+                    root.uploadFile(drop.urls[index])
+                }
             }
         }
     }
