@@ -129,6 +129,27 @@ void Identity::fromSourceData(const QJsonObject &doc)
                               "<img height=\"16\" width=\"16\" align=\"middle\" src=\"" + emojiObj["static_url"].toString() + "\">");
     }
 
+    const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
+    ;
+
+    // Attempt to replace the tag URLs with proper ones, although this should really be handled by the Mastodon API
+    m_bio = m_bio.replace(baseUrl + QStringLiteral("/tags/"), QStringLiteral("hashtag:/"), Qt::CaseInsensitive);
+
+    // Even worse, mentions are not given proper ids so we must figure it out on our own.
+    // The account could be on a different server, so let's take advantage of web+ap and use that
+    // to search for the account!
+    // TODO: Mentions have a specific CSS class in the HTML, maybe we can use that instead of dirty regex?
+    static QRegularExpression re(R"((?:https?|ftp):\S[^"]+)");
+    const auto match = re.match(m_bio);
+    if (re.isValid()) {
+        for (int i = 0; i <= match.lastCapturedIndex(); ++i) {
+            const QString captured = match.captured(i);
+            if (captured.contains('@')) {
+                m_bio = m_bio.replace(captured, QStringLiteral("web+ap:/") + captured, Qt::CaseInsensitive);
+            }
+        }
+    }
+
     Q_EMIT identityUpdated();
 }
 

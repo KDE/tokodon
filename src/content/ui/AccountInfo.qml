@@ -447,7 +447,13 @@ TimelinePage {
                     topPadding: 0
                     background: null
                     wrapMode: Text.WordWrap
-                    onLinkActivated: Qt.openUrlExternally(link)
+                    onLinkActivated: (link) => applicationWindow().navigateLink(link, true)
+                    onHoveredLinkChanged: if (hoveredLink.length > 0) {
+                        applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                    } else {
+                        applicationWindow().hoverLinkIndicator.text = "";
+                    }
+
                     MouseArea {
                         anchors.fill: parent
                         acceptedButtons: Qt.NoButton // don't eat clicks on the Text
