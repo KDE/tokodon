@@ -97,6 +97,15 @@ MastoPage {
         progress.reply = backend.attachmentEditorModel.append(url);
     }
 
+    function pasteImage() {
+        let localPath = Clipboard.saveImage();
+        if (localPath.length === 0) {
+            return false;
+        }
+        uploadFile(localPath);
+        return true;
+    }
+
     header: KirigamiComponents.Banner {
         id: banner
         Layout.fillWidth: true
@@ -160,6 +169,12 @@ MastoPage {
             Keys.onTabPressed: (event)=> {
                 nextItemInFocusChain(true).forceActiveFocus(Qt.TabFocusReason)
                 event.accepted = true
+            }
+
+            Keys.onPressed: (event) => {
+                if (event.key === Qt.Key_V && event.modifiers & Qt.ControlModifier) {
+                    event.accepted = root.pasteImage()
+                }
             }
 
             ColumnLayout {
