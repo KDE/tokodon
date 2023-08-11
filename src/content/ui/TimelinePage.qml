@@ -3,7 +3,8 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1.0 as KirigamiComponents
+import org.kde.kirigamiaddons.labs.components 1.0 as LabComponents
+import org.kde.kirigamiaddons.components 1.0 as Components
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
@@ -33,7 +34,8 @@ Kirigami.ScrollablePage {
         textFormat: TextEdit.RichText
     }
 
-    header: KirigamiComponents.Banner {
+    header: LabComponents.Banner
+    {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
@@ -184,6 +186,29 @@ Kirigami.ScrollablePage {
             text: i18n("No posts")
             visible: !listview.model.loading && listview.count === 0
             width: parent.width - Kirigami.Units.gridUnit * 4
+        }
+
+        Components.FloatingButton {
+            opacity: listview.atYBeginning ? 0 : 1
+            visible: opacity !== 0
+
+            Behavior on opacity {
+                NumberAnimation {
+                }
+            }
+
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.largeSpacing
+            }
+
+            action: Kirigami.Action
+            {
+                icon.name: "arrow-up"
+                onTriggered: listview.positionViewAtBeginning()
+            }
         }
     }
 }
