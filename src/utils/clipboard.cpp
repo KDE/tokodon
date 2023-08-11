@@ -6,12 +6,14 @@
 #include "clipboard.h"
 
 #include <QClipboard>
+#include <QDateTime>
 #include <QDir>
 #include <QFileInfo>
 #include <QGuiApplication>
 #include <QImage>
 #include <QMimeData>
 #include <QRegularExpression>
+#include <QStandardPaths>
 #include <QUrl>
 
 Clipboard::Clipboard(QObject *parent)
@@ -31,27 +33,32 @@ QImage Clipboard::image() const
     return m_clipboard->image();
 }
 
-bool Clipboard::saveImage(const QUrl &localPath) const
+QString Clipboard::saveImage(QString localPath) const
 {
-    if (!localPath.isLocalFile()) {
-        return false;
+    QString imageDir(QStringLiteral("%1/screenshots").arg(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)));
+
+    if (!QDir().exists(imageDir)) {
+        QDir().mkdir(imageDir);
     }
 
-    auto i = image();
+    if (localPath.isEmpty()) {
+        localPath = QStringLiteral("file://%1/%2.png").arg(imageDir, QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd-hh-mm-ss")));
+    }
+    QUrl url(localPath);
+    if (!url.isLocalFile()) {
+        return {};
+    }
+    auto image = this->image();
 
-    if (i.isNull()) {
-        return false;
+    if (image.isNull()) {
+        return {};
     }
 
-    const QString path = QFileInfo(localPath.toLocalFile()).absolutePath();
-    QDir dir;
-    if (!dir.exists(path)) {
-        dir.mkpath(path);
+    if (image.save(url.toLocalFile())) {
+        return localPath;
+    } else {
+        return {};
     }
-
-    i.save(localPath.toLocalFile());
-
-    return true;
 }
 
 void Clipboard::saveText(QString message)
