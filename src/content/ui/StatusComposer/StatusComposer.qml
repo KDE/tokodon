@@ -380,13 +380,13 @@ MastoPage {
                 onClicked: root.submitPost()
             }
         }
+    }
 
-        DropArea {
-            anchors.fill: parent
-            onDropped: (drop) => {
-                for (let index in drop.urls) {
-                    root.uploadFile(drop.urls[index])
-                }
+    DropArea {
+        anchors.fill: parent
+        onDropped: (drop) => {
+            for (let index in drop.urls) {
+                root.uploadFile(drop.urls[index])
             }
         }
     }
