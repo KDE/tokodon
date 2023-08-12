@@ -226,7 +226,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, searchAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
+                model: [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
                 Delegates.RoundedItemDelegate {
                     required property var modelData
                     QQC2.ButtonGroup.group: pageButtonGroup
@@ -410,6 +410,21 @@ Kirigami.ApplicationWindow {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "SearchPage"));
             checked = true;
             if (Kirigami.Settings.isMobile) {
+                drawer.drawerOpen = false;
+            }
+        }
+    }
+
+    property Kirigami.Action announcementsAction: Kirigami.Action {
+        icon.name: "note"
+        text: i18nc("@action:button Server Announcements", "Announcements")
+        checkable: true
+        visible: AccountManager.hasAccounts && AccountManager.selectedAccount
+        onTriggered: {
+            pageStack.clear();
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
+            checked = true;
+            if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }

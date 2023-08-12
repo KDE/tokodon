@@ -30,6 +30,8 @@ target_sources(tokodon_static
     account/abstractaccount.h
     account/accountmanager.cpp
     account/accountmanager.h
+    account/announcementmodel.cpp
+    account/announcementmodel.h
     account/account.cpp
     account/account.h
     account/preferences.cpp
@@ -216,6 +218,7 @@ qt_target_qml_sources(tokodon_static
 
         # Other
         content/ui/AccountInfo.qml
+        content/ui/AnnouncementsPage.qml
         content/ui/ConversationDelegate.qml
         content/ui/ConversationPage.qml
         content/ui/ExplorePage.qml
