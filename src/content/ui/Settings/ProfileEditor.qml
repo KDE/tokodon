@@ -101,8 +101,9 @@ Kirigami.ScrollablePage {
                                 Layout.fillWidth: true
                                 Kirigami.Heading {
                                     level: 5
-                                    text: backend.displayName
+                                    text: backend.displayNameHtml
                                     type: Kirigami.Heading.Primary
+                                    textFormat: Text.RichText
                                 }
                                 QQC2.Label {
                                     text: '@' + account.username + '@' + account.instanceName

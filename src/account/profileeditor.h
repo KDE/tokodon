@@ -19,6 +19,9 @@ class ProfileEditorBackend : public QObject
     /// This property holds the display name of the account.
     Q_PROPERTY(QString displayName READ displayName WRITE setDisplayName NOTIFY displayNameChanged)
 
+    /// This property holds the display name of the account in rendered HTML form.
+    Q_PROPERTY(QString displayNameHtml READ displayNameHtml NOTIFY displayNameChanged)
+
     /// This property holds the note (bio) of the account.
     Q_PROPERTY(QString note READ note WRITE setNote NOTIFY noteChanged)
 
@@ -57,6 +60,7 @@ public:
     void setAccount(AbstractAccount *account);
 
     QString displayName() const;
+    QString displayNameHtml() const;
     void setDisplayName(const QString &displayName);
 
     QString note() const;

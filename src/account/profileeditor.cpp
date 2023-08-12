@@ -38,6 +38,17 @@ QString ProfileEditorBackend::displayName() const
     return m_displayName;
 }
 
+QString ProfileEditorBackend::displayNameHtml() const
+{
+    QString displayNameHtml = QString(m_displayName).replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
+    for (const auto &emoji : m_account->customEmojis()) {
+        displayNameHtml = displayNameHtml.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
+                                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emoji.url + "\">");
+    }
+
+    return displayNameHtml;
+}
+
 void ProfileEditorBackend::setDisplayName(const QString &displayName)
 {
     if (m_displayName == displayName) {
