@@ -36,6 +36,12 @@ private Q_SLOTS:
         KLocalizedString::setLanguages(QStringList{"C"});
         account->setUsername("test");
 
+        QJsonObject fakeIdentity;
+        fakeIdentity["id"] = QStringLiteral("1");
+        fakeIdentity["display_name"] = QStringLiteral("test");
+
+        account->setFakeIdentity(fakeIdentity);
+
         MainTimelineModel timelineModel;
         timelineModel.setName("public");
         QCOMPARE(timelineModel.displayName(), "Local Timeline");
@@ -46,7 +52,10 @@ private Q_SLOTS:
 
         auto account2 = new MockAccount();
         AccountManager::instance().addAccount(account2);
+
         QCOMPARE(timelineModel.displayName(), "Home (test)");
+
+        account->clearFakeIdentity();
     }
 
     void testStreamUpdate()

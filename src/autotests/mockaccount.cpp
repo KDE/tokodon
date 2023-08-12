@@ -9,6 +9,7 @@ MockAccount::MockAccount(QObject *parent)
 {
     registerGet(apiUrl("/api/v1/preferences"), new TestReply("preferences.json", this));
     m_preferences = new Preferences(this);
+
     Q_EMIT authenticated(true);
 }
 
@@ -134,4 +135,15 @@ void MockAccount::registerPost(const QString &url, QNetworkReply *reply)
 void MockAccount::registerGet(const QUrl &url, QNetworkReply *reply)
 {
     m_getReplies[url] = reply;
+}
+
+void MockAccount::setFakeIdentity(const QJsonObject &object)
+{
+    m_identity = std::make_shared<Identity>();
+    m_identity->fromSourceData(object);
+}
+
+void MockAccount::clearFakeIdentity()
+{
+    m_identity.reset();
 }
