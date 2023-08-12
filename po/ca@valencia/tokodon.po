@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:46+0000\n"
-"PO-Revision-Date: 2023-08-04 10:12+0200\n"
+"POT-Creation-Date: 2023-08-12 00:46+0000\n"
+"PO-Revision-Date: 2023-08-09 09:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:459
 #, kde-format
@@ -485,30 +485,15 @@ msgstr "Per a continuar, obriu l'enllaç següent i autoritzeu Tokodon: %1"
 msgid "Open Link"
 msgstr "Obri l'enllaç"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:85
 #, kde-format
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:89
 #, kde-format
 msgid "Link copied."
 msgstr "S'ha copiat l'enllaç."
-
-#: content/ui/AuthorizationPage.qml:101
-#, kde-format
-msgid "Enter token:"
-msgstr "Introduïu el testimoni:"
-
-#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
-#, kde-format
-msgid "Continue"
-msgstr "Continua"
-
-#: content/ui/AuthorizationPage.qml:112
-#, kde-format
-msgid "Please insert the generated token."
-msgstr "Inseriu el testimoni generat."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -588,6 +573,11 @@ msgstr "Us donem la benvinguda a Tokodon"
 #, kde-format
 msgid "Instance Url:"
 msgstr "URL de la instància:"
+
+#: content/ui/LoginPage.qml:49
+#, kde-format
+msgid "Continue"
+msgstr "Continua"
 
 #: content/ui/LoginPage.qml:52
 #, kde-format
@@ -885,11 +875,10 @@ msgid "Email block deleted"
 msgstr "S'ha suprimit el bloqueig de correu electrònic"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:87
-#, fuzzy, kde-format
-#| msgid "Edit Domain Block"
+#, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr "Editeu el bloc de domini"
+msgstr "Bloqueig nou de domini de correu electrònic"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:97
 #, kde-format
@@ -2645,49 +2634,49 @@ msgstr "7 dies"
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: main.cpp:119
+#: main.cpp:125
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:121
+#: main.cpp:127
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:123
+#: main.cpp:129
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:124
+#: main.cpp:130
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:124
+#: main.cpp:130
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:125
+#: main.cpp:131
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:125
+#: main.cpp:131
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Client per a la xarxa social descentralitzada: Mastodon"
 
-#: main.cpp:134
+#: main.cpp:140
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Implementa l'esquema «web+ap: url»"
@@ -2895,5 +2884,8 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
 
-#~ msgid "@title"
-#~ msgstr "@títol"
+#~ msgid "Enter token:"
+#~ msgstr "Introduïu el testimoni:"
+
+#~ msgid "Please insert the generated token."
+#~ msgstr "Inseriu el testimoni generat."

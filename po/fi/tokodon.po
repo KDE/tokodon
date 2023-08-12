@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-10 00:46+0000\n"
-"PO-Revision-Date: 2023-06-02 19:40+0300\n"
+"POT-Creation-Date: 2023-08-12 00:46+0000\n"
+"PO-Revision-Date: 2023-07-27 20:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:459
 #, kde-format
@@ -119,25 +119,22 @@ msgid "Following"
 msgstr "Seuratut"
 
 #: account/socialgraphmodel.cpp:36
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Muted Accounts"
-msgstr "Tilit"
+msgstr "Vaimennetut tilit"
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Accounts"
-msgstr "Lisää tili"
+msgstr "Estetyt tilit"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Accounts"
-msgstr "Tilit"
+msgstr "Esitellyt tilit"
 
 #: account/socialgraphmodel.cpp:42
 #, fuzzy, kde-format
@@ -166,28 +163,24 @@ msgid "No followers"
 msgstr "Ei seuraajia"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgid "No followed accounts"
-msgstr "Tiliä ei voitu seurata"
+msgstr "Ei seurattuja tilejä"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No muted accounts"
-msgstr "Tilit"
+msgstr "Ei vaimennettuja tilejä"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "No blocked accounts"
-msgstr "Lisää tili"
+msgstr "Ei estettyjä tilejä"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "No featured accounts"
-msgstr "Tiliä ei voitu esitellä"
+msgstr "Ei esiteltyjä tilejä"
 
 #: account/socialgraphmodel.cpp:64
 #, fuzzy, kde-format
@@ -202,93 +195,86 @@ msgid "No users boosted this post"
 msgstr "Kirjoita tämä julkaisu uudelleen"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Tiliä ei voitu vaimentaa"
+msgstr "Tiliä ei voitu hyväksyä"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Tiliä ei voitu vaimentaa"
+msgstr "Tiliä ei voitu hylätä"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
+msgstr "Tilinvastaisia toimia ei voitu tehdä"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Tiliä ei voitu esitellä"
+msgstr "Käytöstä poistettua tiliä ei voitu ottaa käyttöön"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
-msgstr "Tilin vaimennusta ei voitu perua"
+msgstr "Tilin hiljennystä ei voitu perua"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Tilin vaimennusta ei voitu perua"
+msgstr "Tilin keskeytystä ei voitu perua"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Tiliä ei voitu vaimentaa"
+msgstr "Tiliä ei voitu merkitä arkaluontoiseksi"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Keskeytetty"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Silenced"
-msgstr ""
+msgstr "Hiljennetty"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Arkaluontoinen"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "Jäädytetty"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "Sähköpostia ei vahvistettu"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "Ei hyväksytty"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Ei asetettuja rajoituksia"
 
 #: admin/federationtoolmodel.cpp:153 admin/iprulestoolmodel.cpp:117
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
-msgstr ""
+msgstr "Sattui virhe tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -387,28 +373,24 @@ msgid "Follow Requests"
 msgstr "Seurauspyynnöt"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Tilit"
+msgstr "Vaimennetut tilit"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Lisää tili"
+msgstr "Estetyt tilit"
 
 #: content/ui/AccountInfo.qml:272
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Featured Accounts"
-msgstr "Tilit"
+msgstr "Esitellyt tilit"
 
 #: content/ui/AccountInfo.qml:278
-#, fuzzy, kde-format
-#| msgid "Copy Link to This Post"
+#, kde-format
 msgid "Copy Link to This Profile"
-msgstr "Kopioi linkki tähän julkaisuun"
+msgstr "Kopioi linkki tähän profiiliin"
 
 #: content/ui/AccountInfo.qml:281 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
@@ -476,12 +458,12 @@ msgstr "Piilota tehostukset"
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Jaa"
 
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Jaa valittu media"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -503,30 +485,15 @@ msgstr "Jatka valitsemalla seuraava linkki ja valtuuta Tokodon: %1"
 msgid "Open Link"
 msgstr "Avaa linkki"
 
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
+#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:85
 #, kde-format
 msgid "Copy Link"
 msgstr "Kopioi linkki"
 
-#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
+#: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:89
 #, kde-format
 msgid "Link copied."
 msgstr "Linkki kopioitu."
-
-#: content/ui/AuthorizationPage.qml:101
-#, kde-format
-msgid "Enter token:"
-msgstr "Syötä merkki:"
-
-#: content/ui/AuthorizationPage.qml:109 content/ui/LoginPage.qml:49
-#, kde-format
-msgid "Continue"
-msgstr "Jatka"
-
-#: content/ui/AuthorizationPage.qml:112
-#, kde-format
-msgid "Please insert the generated token."
-msgstr "Syötä annettu merkki."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -555,28 +522,24 @@ msgid "Post"
 msgstr "Julkaisu"
 
 #: content/ui/ExplorePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Posts"
-msgstr "Nousussa"
+msgstr "Nousussa olevat julkaisut"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Tags"
-msgstr "Nousussa"
+msgstr "Nousussa olevat aihetunnisteet"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 henkeä keskustelee"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
 msgid "No Tags"
-msgstr ""
+msgstr "Ei tunnisteita"
 
 #: content/ui/LanguageSelector.qml:66
 #, kde-format
@@ -611,6 +574,11 @@ msgstr "Tervetuloa Tokodoniin"
 msgid "Instance Url:"
 msgstr "Instanssin verkko-osoite:"
 
+#: content/ui/LoginPage.qml:49
+#, kde-format
+msgid "Continue"
+msgstr "Jatka"
+
 #: content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Instance URL must not be empty!"
@@ -634,16 +602,15 @@ msgid "Proxy Settings"
 msgstr "Välityspalvelinasetukset"
 
 #: content/ui/main.qml:215
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Keskustelut"
+msgstr "Moderointityökalut"
 
 #: content/ui/main.qml:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
-msgstr ""
+msgstr "Avaa moderointityökalut"
 
 #: content/ui/main.qml:226
 #, kde-format
@@ -691,53 +658,48 @@ msgid "Search"
 msgstr "Etsi"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Tilit"
+msgstr "Tilityökalujen sivu"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
+msgstr "Tarkka haku"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Näyttönimi"
+msgstr "Näyttönimi:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "Sähköposti:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Etsi"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Palauta"
@@ -750,50 +712,42 @@ msgstr "Palauta"
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Ilmoitukset"
+msgstr "Sijainti"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Kaikki"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Paikallinen"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Poista"
+msgstr "Etä"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Keskustelut"
+msgstr "Moderoinnin tila"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Kaikki"
@@ -802,44 +756,40 @@ msgstr "Kaikki"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Aktiivinen"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr "Nousussa"
+msgstr "Jonossa"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Ei käytössä"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Hiljennetty"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Keskeytetty"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "Rooli"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Kaikki"
@@ -848,24 +798,24 @@ msgstr "Kaikki"
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Moderaattori"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "Ylläpitäjä"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "Omistaja"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:300
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "Tilejä ei löytynyt"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:15
 #, fuzzy, kde-format
@@ -987,80 +937,76 @@ msgstr "Keskustelut"
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Sallitun verkkoalueen tiedot"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Verkkoalue"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Luotu"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Poista verkkoalueen federointi käytöstä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Verkkoalueen federointi poistettu käytöstä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Lisää verkkoalue-esto"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Verkkoalue*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Julkinen julkaisu"
+msgstr "Julkinen kommentti"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Yksityinen"
+msgstr "Yksityinen kommentti"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation"
-msgstr "Keskustelut"
+msgstr "Moderointi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Hiljennä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Valmiustila"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Ei mitään"
@@ -1069,7 +1015,7 @@ msgstr "Ei mitään"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Hylkää mediatiedostot"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -1078,24 +1024,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Poistaa paikallisesti talletetun median ja kieltäytyy lataamasta sitä "
+"vastaisuudessa. Merkityksetön keskeytyksissä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Hylkää raportit"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Sivuuta kaikki tältä verkkoalueelta tulevat raportit. Merkityksetön "
+"keskeytyksissä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Hämärrä verkkoaluenimi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -1104,24 +1054,26 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Hämärtää verkkoaluenimeä luettelossa, jos verkkoaluerajoitusten "
+"julkistaminen on käytössä"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Luo esto"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Lisättiin uusi verkkoalue-esto"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Salli verkkoalueen federointi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -1129,12 +1081,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Verkkoalue*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Lisättiin uusi sallittu verkkoalue"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -1142,42 +1094,41 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Sallittujen verkkoalueiden valinta on käytettävissä rajoitettua "
+"federointitilaa käyttäville instansseille"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Keskustelut"
+msgstr "Moderointi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Lisää tili"
+msgstr "Estetyt verkkoalueet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Sallitut verkkoalueet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Federointi sallittu"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "No federations found"
-msgstr "Keskustelut"
+msgstr "Federointeja ei löytynyt"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Lisää uusi verkkoalue-esto"
 
 #: content/ui/ModerationTools/IpRulePage.qml:15
 #, fuzzy, kde-format
@@ -1354,15 +1305,14 @@ msgid "Create Rule"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
-msgstr "Ei käytettävissä"
+msgstr "Ei saatavilla"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:30
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "%1 – suorita moderointitoimia"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
@@ -1370,7 +1320,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "Varoita"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:40
 #, kde-format
@@ -1378,7 +1328,7 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "Jäädytä"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:45
 #, kde-format
@@ -1393,7 +1343,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Rajoita"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
@@ -1401,7 +1351,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Valmiustila"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
@@ -1409,66 +1359,65 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Ilmoita käyttäjälle sähköpostitse"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Sisältövaroitus"
+msgstr "Mukautettu varoitus"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "Toteuta"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:94
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Toimenpide onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:99
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "Oletko varma?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Tiliä vastaan ryhdytään toimenpiteisiin."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:118
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "%1 – kirjautumissovelluksen hyväksyminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:122
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "%1 – kirjautumissovelluksen hylkääminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:126
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "%1 – tilin jäädytyksen peruminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:130
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "%1 – tilin hiljennyksen peruminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:134
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "%1 – tilin keskeytyksen peruminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:138
 #, kde-format
@@ -1478,11 +1427,10 @@ msgstr ""
 #: content/ui/ModerationTools/MainAccountToolPage.qml:142
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "%1 – tilitietojen poistaminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:284
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "Elämäkerta"
@@ -1490,27 +1438,22 @@ msgstr "Elämäkerta"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:329
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Liittymissyyt"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
-msgstr "Julkaisu"
+msgstr "Julkaisut"
 
-# *** TARKISTA: Saattaisi olla myös ”seuratut”.
 #: content/ui/ModerationTools/MainAccountToolPage.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "Seuraamiset"
+msgstr "Seuraajat"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:384
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Seuraa"
@@ -1518,112 +1461,108 @@ msgstr "Seuraa"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
 msgid "No role"
-msgstr ""
+msgstr "Ei roolia"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr ""
+msgstr "Rooli"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:392
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Viimeksi aktiivinen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Kirjautumisen tila"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:410
 #, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
-msgstr ""
+msgstr "Rooli"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "Sähköposti"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "Sähköpostin tila"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "Asetukset"
+msgstr "Vahvistettu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "Asetukset"
+msgstr "Ei vahvistettu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:433
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Tilimuokkain"
+msgstr "Tilin maa-asetukset"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Liitytty"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Viimeisin IP"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "Kutsunut"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:500
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "Hyväksy"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "Hylkää"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:523
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Tilit"
+msgstr "Poista tilin tiedot"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Peru jäädytys"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Peru rajoitus"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Peru keskeytys"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
@@ -1633,59 +1572,54 @@ msgstr ""
 #: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Ryhdy toimiin tiliä vastaan"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Poista kirjanmerkki"
+msgstr "Poista verkkoalue-esto"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Poistettiin verkkoaluelohko"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Muokkaa verkkoalue-estoa"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Yksityinen"
+msgstr "Yksityinen kommentti"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Päivitä esto"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Päivitettiin verkkoalue-esto"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
 #: content/ui/ModerationTools/MainIpRulePage.qml:174
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked at"
-msgstr "Lisää tili"
+msgstr "Estetty"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Ei mitään"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Ei mitään"
@@ -1694,30 +1628,30 @@ msgstr "Ei mitään"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Käytänteet"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Hämärrä"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Hylkää media"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr ""
+msgstr "Hylkää raportti"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Muokkaa verkkoalue-estoa"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
 #, fuzzy, kde-format
@@ -1855,10 +1789,9 @@ msgid "Accounts"
 msgstr "Tilit"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Federation"
-msgstr "Keskustelu"
+msgstr "Federointi"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -1934,10 +1867,9 @@ msgid "Search for peoples, tags and posts"
 msgstr "Etsi ihmisiä, luokituksia ja julkaisuja"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
-msgstr "Aihetunnisteet"
+msgstr "Aihetunniste"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -2121,11 +2053,10 @@ msgid "Avatar"
 msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:243
-#, fuzzy, kde-format
-#| msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+#, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
-"PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan 1500 × 500 kuvapisteeseen."
+"PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan alas 400 × 400 kuvapisteeseen"
 
 #: content/ui/Settings/ProfileEditor.qml:274
 #, kde-format
@@ -2253,20 +2184,19 @@ msgstr "Poista sana"
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Jakaminen epäonnistui"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Seuraa"
+msgstr "Salli"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Kiellä"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -2407,12 +2337,10 @@ msgstr "Näkyvyys"
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
-msgstr ""
+msgstr "sis.var."
 
 #: content/ui/StatusComposer/StatusComposer.qml:291
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Post language selection"
-#| msgid "Post Language"
+#, kde-format
 msgid "Post Language"
 msgstr "Julkaisukieli"
 
@@ -2442,12 +2370,12 @@ msgstr "Ei käytettävissä"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:184
 #, kde-format
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:241
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
@@ -2462,10 +2390,9 @@ msgid "View profile"
 msgstr "Näytä profiili"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Link preview: %1"
-msgstr "Näytä linkin esikatselu"
+msgstr "Linkin esikatselu: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -2494,16 +2421,14 @@ msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Näytä profiili"
+msgstr "Irrota profiilista"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Pin on profile"
-msgstr "Näytä profiili"
+msgstr "Kiinnitä profiiliin"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2573,10 +2498,9 @@ msgid "More"
 msgstr "Lisää"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:370
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "Sisältövaroitus"
+msgstr "<b>Sisältövaroitus</b><br /> %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
@@ -2601,12 +2525,10 @@ msgid "Boost"
 msgstr "Tehosta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:495
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Suosikit"
+msgstr "Suosikki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
@@ -2620,52 +2542,43 @@ msgid "via %1"
 msgstr "%1 kautta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgid "%1 Reply"
-msgstr "Vastaa"
+msgstr "%1 vastaus"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, kde-format
 msgid "%1 Replies"
-msgstr ""
+msgstr "%1 vastausta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorites"
-msgstr "Suosikit"
+msgstr "%1 suosikkia"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorite"
-msgstr "Suosikit"
+msgstr "%1 suosikki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
+#, kde-format
 msgid "%1 Boost"
-msgstr "%1 tehosti"
+msgstr "%1 tehostus"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "%1 Boosts"
-msgstr "Tehostukset"
+msgstr "%1 tehostusta"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
-msgstr ""
+msgstr "Toista"
 
 #: content/ui/TimelinePage.qml:184
 #, kde-format
@@ -2752,49 +2665,49 @@ msgstr "7 päivää"
 msgid "An unknown error occurred."
 msgstr "Tapahtui tuntematon virhe."
 
-#: main.cpp:119
+#: main.cpp:125
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:121
+#: main.cpp:127
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
-#: main.cpp:123
+#: main.cpp:129
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE-yhteisö"
 
-#: main.cpp:124
+#: main.cpp:130
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:124
+#: main.cpp:130
 #, kde-format
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: main.cpp:125
+#: main.cpp:131
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:125
+#: main.cpp:131
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
 
-#: main.cpp:134
+#: main.cpp:140
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Tukee web+ap: -verkko-osoitemallia"
@@ -2887,33 +2800,28 @@ msgid "%1d"
 msgstr "%1 pv"
 
 #: timeline/post.cpp:346
-#, fuzzy, kde-format
-#| msgid "1 week ago"
+#, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] "viikko sitten"
-msgstr[1] "viikko sitten"
+msgstr[0] "1 viikko sitten"
+msgstr[1] "%1 viikkoa sitten"
 
 #: timeline/post.cpp:349
-#, fuzzy, kde-format
-#| msgid "1 month ago"
+#, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] "Kuukausi sitten"
-msgstr[1] "Kuukausi sitten"
+msgstr[0] "1 kuukausi sitten"
+msgstr[1] "%1 kuukautta sitten"
 
 #: timeline/post.cpp:353
-#, fuzzy, kde-format
-#| msgid "1 year ago"
+#, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] "vuosi sitten"
-msgstr[1] "vuosi sitten"
+msgstr[0] "1 vuosi sitten"
+msgstr[1] "%1 vuotta sitten"
 
 #: timeline/tagsmodel.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending"
 msgstr "Nousussa"
 
@@ -3007,6 +2915,12 @@ msgstr "Lähde"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
+
+#~ msgid "Enter token:"
+#~ msgstr "Syötä merkki:"
+
+#~ msgid "Please insert the generated token."
+#~ msgstr "Syötä annettu merkki."
 
 #~ msgid "Default status privacy"
 #~ msgstr "Tilan oletusyksityisyys"
