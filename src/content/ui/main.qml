@@ -235,7 +235,7 @@ Kirigami.ApplicationWindow {
             Delegates.RoundedItemDelegate {
                 icon.name: "lock"
                 onClicked: pageStack.pushDialogLayer('qrc:/content/ui/ModerationTools/ModerationToolPage.qml', {}, { title: i18n("Moderation Tools") })
-                text: i18nc("@action:button", "Open Moderation Tools")
+                text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
                 padding: Kirigami.Units.largeSpacing
 
@@ -245,7 +245,7 @@ Kirigami.ApplicationWindow {
             Delegates.RoundedItemDelegate {
                 icon.name: "settings-configure"
                 onClicked: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
-                text: i18n("Open settings")
+                text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
 
                 Layout.fillWidth: true
