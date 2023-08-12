@@ -139,13 +139,17 @@ void Identity::fromSourceData(const QJsonObject &doc)
     // The account could be on a different server, so let's take advantage of web+ap and use that
     // to search for the account!
     // TODO: Mentions have a specific CSS class in the HTML, maybe we can use that instead of dirty regex?
-    static QRegularExpression re(R"((?:https?|ftp):\S[^"]+)");
+    static QRegularExpression re(R"((?:href="?)(?:https?|ftp):\S[^"]+)");
     const auto match = re.match(m_bio);
     if (re.isValid()) {
         for (int i = 0; i <= match.lastCapturedIndex(); ++i) {
+            const int start = match.capturedStart(i);
+            const int length = match.capturedLength(i);
             const QString captured = match.captured(i);
             if (captured.contains('@')) {
-                m_bio = m_bio.replace(captured, QStringLiteral("web+ap:/") + captured, Qt::CaseInsensitive);
+                // The length of "href=" which is used in the regex.
+                const int hrefLength = 6;
+                m_bio = m_bio.replace(start + hrefLength, length - hrefLength, QStringLiteral("web+ap:/") + captured.mid(hrefLength));
             }
         }
     }
