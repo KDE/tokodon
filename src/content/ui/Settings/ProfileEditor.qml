@@ -154,7 +154,7 @@ Kirigami.ScrollablePage {
                             Layout.fillWidth: true
                             QQC2.RoundButton {
                                 id: headerUpload
-                                icon.name: 'download'
+                                icon.name: 'cloud-upload'
                                 property var fileDialog: null;
                                 Layout.alignment: Qt.AlignHCenter
                                 onClicked: {
@@ -215,7 +215,7 @@ Kirigami.ScrollablePage {
                         RowLayout {
                             QQC2.RoundButton {
                                 id: avatarUpload
-                                icon.name: 'download'
+                                icon.name: 'cloud-upload'
                                 property var fileDialog: null;
                                 Layout.alignment: Qt.AlignHCenter
                                 onClicked: {
