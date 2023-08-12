@@ -75,11 +75,10 @@ MobileForm.FormCard {
                         }
                     }
 
-                    // TODO implement account editing
-                    //MobileForm.FormArrow {
-                    //    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                    //    direction: MobileForm.FormArrow.Right
-                    //}
+                    MobileForm.FormArrow {
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        direction: MobileForm.FormArrow.Right
+                    }
                 }
             }
         }
