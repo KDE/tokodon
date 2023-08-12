@@ -124,6 +124,7 @@ void AccountManager::addAccount(AbstractAccount *account)
     });
     connect(account, &Account::fetchedInstanceMetadata, this, [this, account]() {
         Q_EMIT fetchedInstanceMetadata(account);
+        Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });
     connect(account, &Account::invalidatedPost, this, [this, account](Post *p) {
         Q_EMIT invalidatedPost(account, p);
