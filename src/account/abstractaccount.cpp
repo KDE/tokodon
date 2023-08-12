@@ -382,6 +382,11 @@ void AbstractAccount::fetchInstanceMetadata()
             m_allowedContentTypes = parseVersion(obj["version"].toString());
         }
 
+        // Pleroma/Akkoma may report maximum post characters here, instead
+        if (obj.contains("max_toot_chars")) {
+            m_maxPostLength = obj["max_toot_chars"].toInt();
+        }
+
         m_instance_name = obj["title"].toString();
         Q_EMIT fetchedInstanceMetadata();
     });
