@@ -199,6 +199,7 @@ MastoPage {
                     Layout.fillWidth: true
 
                     poll: backend.poll
+                    maxPollOptions: AccountManager.selectedAccount.maxPollOptions
                 }
 
                 QQC2.ToolBar {

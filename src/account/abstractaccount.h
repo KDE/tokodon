@@ -31,6 +31,7 @@ class AbstractAccount : public QObject
 
     Q_PROPERTY(QString instanceUri READ instanceUri CONSTANT)
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int maxPollOptions READ maxPollOptions NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
@@ -92,6 +93,9 @@ public:
 
     /// Returns the max allowable length of posts in characters
     size_t maxPostLength() const;
+
+    /// Returns the maximum number of poll options
+    size_t maxPollOptions() const;
 
     /// Returns the amount of characters that URLs take
     /// Any URL that appears in a post will only be counted by this limit
@@ -347,6 +351,7 @@ protected:
     QString m_client_id;
     QString m_client_secret;
     size_t m_maxPostLength;
+    size_t m_maxPollOptions;
     size_t m_charactersReservedPerUrl;
     QString m_instance_name;
     std::shared_ptr<Identity> m_identity;
