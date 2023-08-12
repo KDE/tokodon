@@ -38,6 +38,10 @@ class AccountManager : public QAbstractListModel
 
     /// The about data of the application
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
+
+    /// Whether or not we're running a Flatpak build
+    Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
+
 public:
     enum CustomRoles {
         AccountRole = Qt::UserRole + 1,
@@ -74,6 +78,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false, bool admin = true);
+
+    bool isFlatpak() const;
 
     /// Returns the preferred settings group name for an account name and an instance uri.
     /// It's preferred to use AbstractAccount::settingsGroupName as it fills in the relevant information.

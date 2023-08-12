@@ -416,3 +416,12 @@ void AccountManager::migrateSettings()
         settings.clear();
     }
 }
+
+bool AccountManager::isFlatpak() const
+{
+#ifdef TOKODON_FLATPAK
+    return true;
+#else
+    return false;
+#endif
+}

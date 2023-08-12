@@ -384,6 +384,7 @@ MastoPage {
 
     DropArea {
         anchors.fill: parent
+        enabled: !AccountManager.isFlatpak
         onDropped: (drop) => {
             for (let index in drop.urls) {
                 root.uploadFile(drop.urls[index])
