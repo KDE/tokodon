@@ -329,7 +329,7 @@ MastoPage {
 
                                 modal: false
 
-                                onChosen: textArea.text += emoji
+                                onChosen: (emoji) => textArea.insert(textArea.cursorPosition, emoji)
                                 onClosed: if (emojiButton.checked) emojiButton.checked = false
                             }
                             QQC2.ToolTip.text: i18n("Add Emoji")
