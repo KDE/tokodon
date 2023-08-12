@@ -65,11 +65,10 @@ FormCard.FormCard {
                     }
                 }
 
-                // TODO implement account editing
-                //FormCard.FormArrow {
-                //    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                //    direction: FormCard.FormArrow.Right
-                //}
+                FormCard.FormArrow {
+                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                    direction: FormCard.FormArrow.Right
+                }
             }
         }
     }
