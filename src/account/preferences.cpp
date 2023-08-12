@@ -14,7 +14,11 @@ Preferences::Preferences(AbstractAccount *account)
     connect(account, &AbstractAccount::authenticated, this, [this, account]() {
         account->get(account->apiUrl(QStringLiteral("/api/v1/preferences")), true, this, [this](QNetworkReply *reply) {
             const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
-            m_defaultLanguage = obj[QStringLiteral("posting:default:language")].toString();
+
+            if (auto defaultLanguage = obj[QStringLiteral("posting:default:language")]; !defaultLanguage.isNull()) {
+                m_defaultLanguage = defaultLanguage.toString();
+            }
+
             m_defaultSensitive = obj[QStringLiteral("posting:default:sensitive")].toBool();
             m_defaultVisibility = stringToVisibility(obj[QStringLiteral("posting:default:visibility")].toString());
             m_extendSpoiler = obj[QStringLiteral("reading:expand:spoilers")].toBool();
@@ -64,7 +68,11 @@ void Preferences::setDefaultSensitive(bool sensitive)
 
 QString Preferences::defaultLanguage() const
 {
-    return m_defaultLanguage;
+    if (!m_defaultLanguage.isEmpty()) {
+        return m_defaultLanguage;
+    } else {
+        return "en";
+    }
 }
 
 void Preferences::setDefaultLanguage(QString language)
