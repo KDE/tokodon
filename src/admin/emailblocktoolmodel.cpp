@@ -95,6 +95,7 @@ void EmailBlockToolModel::deleteEmailBlock(const int row)
     const auto emailBlockId = emailinfo.id();
 
     account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks/%1").arg(emailBlockId)), true, this, [=](QNetworkReply *reply) {
+        Q_UNUSED(reply);
         beginRemoveRows({}, row, row);
         m_emailinfo.removeAt(row);
         endRemoveRows();
