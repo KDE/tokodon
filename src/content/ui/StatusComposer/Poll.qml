@@ -14,6 +14,7 @@ ColumnLayout {
     implicitHeight: Kirigami.Units.gridUnit * 20
 
     required property var poll
+    required property int maxPollOptions
 
     Repeater {
         model: root.poll.options
@@ -60,7 +61,7 @@ ColumnLayout {
                 tooltip: i18nc("@info:tooltip Poll toolbar", "Add a new poll choice")
                 icon.name: "list-add"
                 onTriggered: poll.addOption()
-                enabled: poll.options.length < 4
+                enabled: poll.options.length < root.maxPollOptions
             },
             Kirigami.Action {
                 displayHint: Kirigami.DisplayHint.KeepVisible

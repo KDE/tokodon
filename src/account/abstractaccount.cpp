@@ -20,6 +20,7 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     , m_instance_uri(instanceUri)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_maxPollOptions(4)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
     , m_allowedContentTypes(AllowedContentType::PlainText)
@@ -30,6 +31,7 @@ AbstractAccount::AbstractAccount(QObject *parent)
     : QObject(parent)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
+    , m_maxPollOptions(4)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
     , m_allowedContentTypes(AllowedContentType::PlainText)
@@ -58,6 +60,11 @@ void AbstractAccount::setUsername(const QString &username)
 size_t AbstractAccount::maxPostLength() const
 {
     return m_maxPostLength;
+}
+
+size_t AbstractAccount::maxPollOptions() const
+{
+    return m_maxPollOptions;
 }
 
 size_t AbstractAccount::charactersReservedPerUrl() const
@@ -385,6 +392,11 @@ void AbstractAccount::fetchInstanceMetadata()
         // Pleroma/Akkoma may report maximum post characters here, instead
         if (obj.contains("max_toot_chars")) {
             m_maxPostLength = obj["max_toot_chars"].toInt();
+        }
+
+        // Pleroma/Akkoma can report higher poll limits
+        if (obj.contains("poll_limits")) {
+            m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
         }
 
         m_instance_name = obj["title"].toString();
