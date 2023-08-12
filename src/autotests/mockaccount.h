@@ -7,6 +7,7 @@
 class MockAccount : public AbstractAccount
 {
     Q_OBJECT
+
 public:
     MockAccount(QObject *parent = nullptr);
     void get(const QUrl &url,
@@ -48,6 +49,9 @@ public:
     void registerPost(const QString &url, QNetworkReply *reply);
 
     void registerGet(const QUrl &url, QNetworkReply *reply);
+
+    void setFakeIdentity(const QJsonObject &object);
+    void clearFakeIdentity();
 
 private:
     QHash<QUrl, QNetworkReply *> m_postReplies;
