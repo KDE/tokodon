@@ -25,7 +25,7 @@ QString MainTimelineModel::displayName() const
             if (m_manager->selectedAccount() == nullptr) {
                 return i18n("Loading");
             }
-            return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->username());
+            return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->identity()->displayNameHtml());
         } else {
             return i18nc("@title", "Home");
         }
