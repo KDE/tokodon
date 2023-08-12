@@ -195,6 +195,7 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<AdminAccountInfo>("org.kde.kmasto", 1, 0, "AdminAccountInfo", "ENUM");
     qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
     qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
+    qmlRegisterUncreatableType<Poll>("org.kde.kmasto", 1, 0, "Poll", "ENUM");
     qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
     qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
     qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");
