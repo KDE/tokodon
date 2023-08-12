@@ -198,12 +198,7 @@ public:
     explicit Post(AbstractAccount *account, QObject *parent = nullptr);
     Post(AbstractAccount *account, QJsonObject obj, QObject *parent = nullptr);
 
-    enum Visibility {
-        Public,
-        Unlisted,
-        Private,
-        Direct,
-    };
+    enum Visibility { Public, Unlisted, Private, Direct, Local };
     Q_ENUM(Visibility)
 
     AbstractAccount *m_parent;

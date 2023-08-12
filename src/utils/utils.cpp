@@ -15,6 +15,7 @@ static QMap<QString, Post::Visibility> p_stringToVisibility = {
     {"unlisted", Post::Visibility::Unlisted},
     {"private", Post::Visibility::Private},
     {"direct", Post::Visibility::Direct},
+    {"local", Post::Visibility::Local},
 };
 
 QString visibilityToString(Post::Visibility visibility)

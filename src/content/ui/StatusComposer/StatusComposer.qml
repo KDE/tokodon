@@ -253,6 +253,8 @@ MastoPage {
                                         return "lock";
                                     case Post.Direct:
                                         return "mail-message";
+                                    case Post.Local:
+                                        return "group";
                                     default:
                                         return "kstars_xplanet";
                                 }
@@ -261,6 +263,12 @@ MastoPage {
                             enabled: root.purpose !== StatusComposer.Edit
                             QQC2.Menu {
                                 id: visibilityMenu
+                                QQC2.MenuItem {
+                                    icon.name: "group"
+                                    text: i18n("Local")
+                                    onTriggered: backend.visibility = Post.Local
+                                    visible: AccountManager.selectedAccount.supportsLocalVisibility
+                                }
                                 QQC2.MenuItem {
                                     icon.name: "kstars_xplanet"
                                     text: i18n("Public")

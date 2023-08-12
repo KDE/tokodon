@@ -48,6 +48,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QString instanceUri READ instanceUri CONSTANT)
     Q_PROPERTY(int maxPostLength READ maxPostLength NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(int maxPollOptions READ maxPollOptions NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(bool supportsLocalVisibility READ supportsLocalVisibility NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString instanceName READ instanceName NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
@@ -117,6 +118,9 @@ public:
 
     /// Returns the maximum number of poll options
     size_t maxPollOptions() const;
+
+    /// Certain servers (like Pleroma/Akkoma) support an additional visibility type, called Local
+    bool supportsLocalVisibility() const;
 
     /// Returns the amount of characters that URLs take
     /// Any URL that appears in a post will only be counted by this limit
@@ -377,6 +381,7 @@ protected:
     QString m_client_secret;
     size_t m_maxPostLength;
     size_t m_maxPollOptions;
+    bool m_supportsLocalVisibility;
     size_t m_charactersReservedPerUrl;
     QString m_instance_name;
     std::shared_ptr<Identity> m_identity;

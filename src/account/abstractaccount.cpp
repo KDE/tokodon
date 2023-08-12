@@ -21,6 +21,7 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
     , m_maxPollOptions(4)
+    , m_supportsLocalVisibility(false)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
     , m_allowedContentTypes(AllowedContentType::PlainText)
@@ -32,6 +33,7 @@ AbstractAccount::AbstractAccount(QObject *parent)
     // default to 500, instances which support more signal it
     , m_maxPostLength(500)
     , m_maxPollOptions(4)
+    , m_supportsLocalVisibility(false)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
     , m_allowedContentTypes(AllowedContentType::PlainText)
@@ -65,6 +67,11 @@ size_t AbstractAccount::maxPostLength() const
 size_t AbstractAccount::maxPollOptions() const
 {
     return m_maxPollOptions;
+}
+
+bool AbstractAccount::supportsLocalVisibility() const
+{
+    return m_supportsLocalVisibility;
 }
 
 size_t AbstractAccount::charactersReservedPerUrl() const
@@ -398,6 +405,8 @@ void AbstractAccount::fetchInstanceMetadata()
         if (obj.contains("poll_limits")) {
             m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
         }
+
+        m_supportsLocalVisibility = obj.contains("pleroma");
 
         m_instance_name = obj["title"].toString();
         Q_EMIT fetchedInstanceMetadata();
