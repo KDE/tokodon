@@ -163,8 +163,8 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No Tags")
-            visible: tagsView.count === 0 && !tagsView.model.loading
+            text: showPostsAction.checked ? i18nc("@label", "No Trending Posts") : i18nc("@label", "No Trending Tags")
+            visible: !tagsView.model.loading && tagsView.count === 0
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
     }
