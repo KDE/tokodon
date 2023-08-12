@@ -45,7 +45,11 @@ ColumnLayout {
         identity: root.post.authorIdentity
     }
 
-    StatusDelegate.Poll {
-        poll: root.post.poll
+    Loader {
+        active: root.post.poll !== null
+        sourceComponent: StatusDelegate.StatusPoll
+        {
+            poll: root.post.poll
+        }
     }
 }

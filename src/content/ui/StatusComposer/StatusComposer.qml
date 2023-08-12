@@ -221,7 +221,7 @@ MastoPage {
                     Layout.fillWidth: true
                 }
 
-                Poll {
+                ComposerPoll {
                     visible: addPool.checked
                     Layout.fillWidth: true
 
