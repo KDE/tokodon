@@ -99,7 +99,7 @@ QQC2.Pane {
                     height: Kirigami.Units.iconSizes.medium
                 }
                 text: i18n("Add Account")
-                enabled: AccountManager.hasAccounts && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
+                enabled: AccountManager.hasAccounts && applicationWindow().pageStack.depth > 0 && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
 
                 contentItem: Delegates.SubtitleContentItem {
                     itemDelegate: addAccountDelegaze
