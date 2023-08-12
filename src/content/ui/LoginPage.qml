@@ -42,6 +42,14 @@ MastoPage {
                     inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
                 }
 
+                MobileForm.FormDelegateSeparator { above: adminScopeDelegate }
+
+                MobileForm.FormCheckDelegate {
+                    id: adminScopeDelegate
+                    text: i18n("Enable moderation tools")
+                    description: i18n("Allow Tokodon to access moderation tools. Try disabling this if you have trouble logging into your server.")
+                }
+
                 MobileForm.FormDelegateSeparator { above: continueButton }
 
                 MobileForm.FormButtonDelegate {
@@ -53,7 +61,7 @@ MastoPage {
                             return;
                         }
 
-                        const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked);
+                        const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
 
                         account.registered.connect(() => {
                             const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {

@@ -19,13 +19,14 @@
 #include <qt6keychain/keychain.h>
 #endif
 
-Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, QObject *parent)
+Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, bool admin, QObject *parent)
     : AbstractAccount(parent, instanceUri)
     , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
     setInstanceUri(instanceUri);
+    registerApplication("Tokodon", "https://apps.kde.org/tokodon", admin ? "admin:read admin:write" : "");
 
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {

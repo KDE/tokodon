@@ -110,7 +110,7 @@ QUrl AbstractAccount::apiUrl(const QString &path) const
     return url;
 }
 
-void AbstractAccount::registerApplication(const QString &appName, const QString &website)
+void AbstractAccount::registerApplication(const QString &appName, const QString &website, const QString &additionalScopes)
 {
     // clear any previous bearer token credentials
     m_token = QString();
@@ -120,10 +120,13 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QJsonObject obj = {
         {"client_name", appName},
         {"redirect_uris", "tokodon://oauth"},
-        {"scopes", "read write follow admin:read admin:write"},
+        {"scopes", "read write follow " + additionalScopes},
         {"website", website},
     };
     const QJsonDocument doc(obj);
+
+    // Store for future usage (e.g. authorizeUrl)
+    m_additionalScopes = additionalScopes;
 
     post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
@@ -207,7 +210,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
     q.addQueryItem("redirect_uri", "tokodon://oauth");
     q.addQueryItem("response_type", "code");
-    q.addQueryItem("scope", "read write follow admin:read admin:write");
+    q.addQueryItem("scope", "read write follow " + m_additionalScopes);
 
     url.setQuery(q);
 
@@ -226,7 +229,6 @@ void AbstractAccount::setInstanceUri(const QString &instance_uri)
     instance_url.setScheme("https"); // getting token from http is not supported
 
     m_instance_uri = instance_url.toString();
-    registerApplication("Tokodon", "https://apps.kde.org/tokodon");
 }
 
 QString AbstractAccount::instanceUri() const

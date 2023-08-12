@@ -73,7 +73,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false);
+    Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false, bool admin = true);
 
     /// Returns the preferred settings group name for an account name and an instance uri.
     /// It's preferred to use AbstractAccount::settingsGroupName as it fills in the relevant information.

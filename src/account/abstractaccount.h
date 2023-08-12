@@ -60,7 +60,7 @@ public:
     AbstractAccount(QObject *parent);
 
     /// Register the application to the mastodon server
-    void registerApplication(const QString &appName, const QString &website);
+    void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {});
 
     /// Check if the application is registered
     /// \see registerApplication
@@ -390,6 +390,7 @@ protected:
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
     QList<CustomEmoji> m_customEmojis;
+    QString m_additionalScopes;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;
