@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:46+0000\n"
+"POT-Creation-Date: 2023-08-13 00:46+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.03.70\n"
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:485
 #, kde-format
 msgid "Could not follow account"
 msgstr "Could not follow account"
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:486
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Could not unfollow account"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:487
 #, kde-format
 msgid "Could not block account"
 msgstr "Could not block account"
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:488
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Could not unblock account"
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:489
 #, kde-format
 msgid "Could not mute account"
 msgstr "Could not mute account"
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:490
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Could not unmute account"
 
-#: account/abstractaccount.cpp:465
+#: account/abstractaccount.cpp:491
 #, kde-format
 msgid "Could not feature account"
 msgstr "Could not feature account"
 
-#: account/abstractaccount.cpp:466
+#: account/abstractaccount.cpp:492
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Could not unfeature account"
 
-#: account/abstractaccount.cpp:467
+#: account/abstractaccount.cpp:493
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Could not edit note about an account"
@@ -375,13 +375,13 @@ msgstr "Account editor"
 msgid "Settings"
 msgstr "Settings"
 
-#: content/ui/AccountInfo.qml:245 content/ui/main.qml:225
+#: content/ui/AccountInfo.qml:245 content/ui/main.qml:233
 #: content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Configure"
 msgstr "Configure"
 
-#: content/ui/AccountInfo.qml:251 content/ui/main.qml:265
+#: content/ui/AccountInfo.qml:251 content/ui/main.qml:273
 #, kde-format
 msgid "Follow Requests"
 msgstr "Follow Requests"
@@ -526,7 +526,7 @@ msgstr "Conversations"
 msgid "No Conversations"
 msgstr "No Conversations"
 
-#: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
+#: content/ui/ExplorePage.qml:17 content/ui/main.qml:366
 #, kde-format
 msgid "Explore"
 msgstr "Explore"
@@ -621,59 +621,59 @@ msgstr "Ignore SSL errors"
 msgid "Proxy Settings"
 msgstr "Proxy Settings"
 
-#: content/ui/main.qml:215
+#: content/ui/main.qml:223
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgid "Moderation Tools"
 msgstr "Conversations"
 
-#: content/ui/main.qml:216
+#: content/ui/main.qml:224
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
 msgstr ""
 
-#: content/ui/main.qml:226
+#: content/ui/main.qml:234
 #, kde-format
 msgid "Open settings"
 msgstr "Open settings"
 
-#: content/ui/main.qml:236
+#: content/ui/main.qml:244
 #, kde-format
 msgid "Home"
 msgstr "Home"
 
-#: content/ui/main.qml:252 content/ui/NotificationPage.qml:15
+#: content/ui/main.qml:260 content/ui/NotificationPage.qml:15
 #, kde-format
 msgid "Notifications"
 msgstr "Notifications"
 
-#: content/ui/main.qml:281
+#: content/ui/main.qml:289 content/ui/StatusComposer/StatusComposer.qml:268
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:296
+#: content/ui/main.qml:304
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:312
+#: content/ui/main.qml:320
 #, kde-format
 msgid "Conversation"
 msgstr "Conversation"
 
-#: content/ui/main.qml:326
+#: content/ui/main.qml:334
 #, kde-format
 msgid "Favourites"
 msgstr "Favourites"
 
-#: content/ui/main.qml:342
+#: content/ui/main.qml:350
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
-#: content/ui/main.qml:372
+#: content/ui/main.qml:380
 #, kde-format
 msgid "Search"
 msgstr "Search"
@@ -2069,7 +2069,7 @@ msgid "Profile Editor"
 msgstr "Profile Editor"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:216
+#: content/ui/StatusComposer/StatusComposer.qml:225
 #, kde-format
 msgid "Please choose a file"
 msgstr "Please choose a file"
@@ -2253,6 +2253,12 @@ msgctxt "@action:button Deny follow request"
 msgid "Deny"
 msgstr ""
 
+#: content/ui/StandaloneComposer.qml:58
+#, fuzzy, kde-format
+#| msgid "Not available"
+msgid "No accounts available"
+msgstr "Not available"
+
 #: content/ui/StatusComposer/AttachmentGrid.qml:65
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -2269,152 +2275,152 @@ msgstr "Remove"
 msgid "Add a description"
 msgstr "Add a description"
 
-#: content/ui/StatusComposer/Poll.qml:35
+#: content/ui/StatusComposer/Poll.qml:36
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Choice %1"
 
-#: content/ui/StatusComposer/Poll.qml:59
+#: content/ui/StatusComposer/Poll.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Add Choice"
 
-#: content/ui/StatusComposer/Poll.qml:60
+#: content/ui/StatusComposer/Poll.qml:61
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Add a new poll choice"
 
-#: content/ui/StatusComposer/Poll.qml:79
+#: content/ui/StatusComposer/Poll.qml:80
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "When the poll will expire"
 
-#: content/ui/StatusComposer/Poll.qml:88
+#: content/ui/StatusComposer/Poll.qml:89
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Multiple choice"
 
-#: content/ui/StatusComposer/Poll.qml:94
+#: content/ui/StatusComposer/Poll.qml:95
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Allow multiple choices"
 
-#: content/ui/StatusComposer/Poll.qml:103
+#: content/ui/StatusComposer/Poll.qml:104
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Hide totals"
 
-#: content/ui/StatusComposer/Poll.qml:109
+#: content/ui/StatusComposer/Poll.qml:110
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Hide vote count until the poll ends"
 
-#: content/ui/StatusComposer/StatusComposer.qml:46
+#: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Edit this post"
 msgstr "Edit this post"
 
-#: content/ui/StatusComposer/StatusComposer.qml:48
+#: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Reply to this post"
 msgstr "Reply to this post"
 
-#: content/ui/StatusComposer/StatusComposer.qml:50
+#: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Rewrite this post"
 msgstr "Rewrite this post"
 
-#: content/ui/StatusComposer/StatusComposer.qml:52
+#: content/ui/StatusComposer/StatusComposer.qml:54
 #, kde-format
 msgid "Write a new post"
 msgstr "Write a new post"
 
-#: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:285
+#: content/ui/StatusComposer/StatusComposer.qml:110
+#: content/ui/StatusComposer/StatusComposer.qml:302
 #, kde-format
 msgid "Content Warning"
 msgstr "Content Warning"
 
-#: content/ui/StatusComposer/StatusComposer.qml:112
+#: content/ui/StatusComposer/StatusComposer.qml:126
 #, kde-format
 msgid "What's new?"
 msgstr "What's new?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:219
+#: content/ui/StatusComposer/StatusComposer.qml:228
 #, kde-format
 msgid "Attach File"
 msgstr "Attach File"
 
-#: content/ui/StatusComposer/StatusComposer.qml:229
+#: content/ui/StatusComposer/StatusComposer.qml:238
 #, kde-format
 msgid "Add Poll"
 msgstr "Add Poll"
 
-#: content/ui/StatusComposer/StatusComposer.qml:257
+#: content/ui/StatusComposer/StatusComposer.qml:274
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
 #: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "Public"
 
-#: content/ui/StatusComposer/StatusComposer.qml:262
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "Unlisted"
 
-#: content/ui/StatusComposer/StatusComposer.qml:267
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "Private"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:289
 #: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "Direct Message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:294
 #, kde-format
 msgid "Visibility"
 msgstr "Visibility"
 
-#: content/ui/StatusComposer/StatusComposer.qml:282
+#: content/ui/StatusComposer/StatusComposer.qml:299
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:291
+#: content/ui/StatusComposer/StatusComposer.qml:308
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox Post language selection"
 #| msgid "Post Language"
 msgid "Post Language"
 msgstr "Post Language"
 
-#: content/ui/StatusComposer/StatusComposer.qml:318
+#: content/ui/StatusComposer/StatusComposer.qml:335
 #, fuzzy, kde-format
 #| msgctxt "@action:intoolbar Poll toolbar"
 #| msgid "Add Choice"
 msgid "Add Emoji"
 msgstr "Add Choice"
 
-#: content/ui/StatusComposer/StatusComposer.qml:333
+#: content/ui/StatusComposer/StatusComposer.qml:350
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> characters"
 
-#: content/ui/StatusComposer/StatusComposer.qml:341
+#: content/ui/StatusComposer/StatusComposer.qml:358
 #, kde-format
 msgid "Send"
 msgstr "Send"
@@ -2783,6 +2789,16 @@ msgstr "Client for the decentralised social network: mastodon"
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Supports web+ap: URL scheme"
+
+#: main.cpp:142
+#, kde-format
+msgid "Share a line of text in the standalone composer."
+msgstr ""
+
+#: main.cpp:142
+#, kde-format
+msgid "The text to share."
+msgstr ""
 
 #: search/searchmodel.cpp:137
 #, kde-format
