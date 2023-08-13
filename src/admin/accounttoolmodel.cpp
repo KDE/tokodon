@@ -385,7 +385,7 @@ void AccountsToolModel::fillTimeline()
     }
     // To be removed when the pagination api response in fixed
     if (url.toString().contains("v1")) {
-        url = url.toString().replace("/v1/", "/v2/");
+        url = QUrl(url.toString().replace("/v1/", "/v2/"));
     }
 
     url.setQuery(buildQuery());

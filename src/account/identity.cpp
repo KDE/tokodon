@@ -109,7 +109,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_followingCount = doc["following_count"].toInt();
     m_statusesCount = doc["statuses_count"].toInt();
     m_fields = doc["fields"].toArray();
-    m_url = doc["url"].toString();
+    m_url = QUrl(doc["url"].toString());
     m_permission = doc["role"]["permissions"].toString().toInt();
     // When the user data is ourselves, we get source.privacy
     // with the default post privacy setting for the user. all others

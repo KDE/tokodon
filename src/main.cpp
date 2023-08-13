@@ -227,7 +227,7 @@ int main(int argc, char *argv[])
                     if (args[0].startsWith("web+ap")) {
                         NetworkController::instance().openWebApLink(args[0]);
                     } else {
-                        NetworkController::instance().setAuthCode(args[0]);
+                        NetworkController::instance().setAuthCode(QUrl(args[0]));
                     }
                     if (args[0] == "--share") {
                         NetworkController::instance().startComposing(args[1]);

@@ -234,8 +234,8 @@ void ProfileEditorBackend::fetchAccountInfo()
         setNote(source["note"].toString());
         setLanguage(source["language"].toString());
         setBot(obj["bot"].toBool());
-        setBackgroundUrl(obj["header_static"].toString());
-        setAvatarUrl(obj["avatar_static"].toString());
+        setBackgroundUrl(QUrl(obj["header_static"].toString()));
+        setAvatarUrl(QUrl(obj["avatar_static"].toString()));
         setLocked(obj["locked"].toBool());
         setDiscoverable(obj["discoverable"].toBool());
     });

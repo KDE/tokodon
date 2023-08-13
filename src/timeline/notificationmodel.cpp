@@ -21,7 +21,7 @@ NotificationModel::NotificationModel(QObject *parent)
             beginResetModel();
             m_notifications.clear();
             endResetModel();
-            m_next = QString();
+            m_next = QUrl();
             setLoading(false);
         }
     });
@@ -42,7 +42,7 @@ NotificationModel::NotificationModel(QObject *parent)
         beginResetModel();
         m_notifications.clear();
         endResetModel();
-        m_next = QString();
+        m_next = QUrl();
         setLoading(false);
         fillTimeline();
     });
