@@ -560,8 +560,8 @@ QQC2.ItemDelegate {
             InteractionButton {
                 visible: root.repliesCount > 0
                 iconName: "post-reply-filled"
-                tooltip: root.repliesCount === 1 ? i18n("%1 Reply", root.repliesCount) : i18n("%1 Replies", root.repliesCount)
-                text: i18n("%1 Replies", root.repliesCount)
+                tooltip: i18np("%1 Reply", "%1 Replies", root.repliesCount)
+                text: i18np("%1 Reply", "%1 Replies", root.repliesCount)
                 enabled: false
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
@@ -572,8 +572,8 @@ QQC2.ItemDelegate {
             InteractionButton {
                 visible: root.favouritesCount > 0
                 iconName: "post-favorited"
-                tooltip: i18n("%1 Favorites", root.favouritesCount)
-                text: root.favouritesCount === 1 ? i18n("%1 Favorite", root.favouritesCount) : i18n("%1 Favorites", root.favouritesCount)
+                tooltip: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
+                text: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
                 enabled: true
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {
@@ -591,8 +591,8 @@ QQC2.ItemDelegate {
             InteractionButton {
                 visible: root.reblogsCount > 0
                 iconName: "post-boosted"
-                tooltip: root.reblogsCount === 1 ? i18n("%1 Boost", root.reblogsCount) : i18n("%1 Boosts", root.reblogsCount)
-                text: i18n("%1 Boosts", root.reblogsCount)
+                tooltip: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
+                text: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
                 enabled: true
                 textColor: Kirigami.Theme.disabledTextColor
                 HoverHandler {

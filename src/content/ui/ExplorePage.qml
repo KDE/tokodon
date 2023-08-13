@@ -146,7 +146,7 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                         color: Kirigami.Theme.disabledTextColor
-                        text: i18n("%1 people are talking", delegate.history[0].accounts)
+                        text: i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
                         verticalAlignment: Text.AlignTop
                     }
                 }

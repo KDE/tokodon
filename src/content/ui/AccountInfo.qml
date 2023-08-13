@@ -464,7 +464,7 @@ TimelinePage {
                         closable: false
                         enabled: false
 
-                        text: i18nc("@label User's number of statuses", "<b>%1</b> posts", model.identity.statusesCount)
+                        text: i18ncp("@label User's number of statuses", "<b>%1</b> post", "<b>%1</b> posts", model.identity.statusesCount)
                     }
                     Kirigami.Chip {
                         closable: false
@@ -476,7 +476,7 @@ TimelinePage {
                                 accountId: accountId,
                             });
                         }
-                        text: i18nc("@label User's number of followers", "<b>%1</b> followers", model.identity.followersCount)
+                        text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", model.identity.followersCount)
                     }
                     Kirigami.Chip {
                         closable: false
@@ -488,7 +488,7 @@ TimelinePage {
                                 accountId: accountId,
                             });
                         }
-                        text: i18nc("@label User's number of followed accounts", "<b>%1</b> following", model.identity.followingCount)
+                        text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", model.identity.followingCount)
                     }
                 }
                 QQC2.TabBar {

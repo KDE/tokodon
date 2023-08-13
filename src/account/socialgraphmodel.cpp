@@ -39,9 +39,9 @@ QString SocialGraphModel::displayName() const
     } else if (m_followListName == "featured") {
         return i18nc("@title", "Featured Accounts");
     } else if (m_followListName == "favourited_by") {
-        return i18nc("@title", "%1 favourites", m_count);
+        return i18ncp("@title", "%1 favourite", "%1 favourites", m_count);
     } else if (m_followListName == "reblogged_by") {
-        return i18nc("@title", "%1 boosts", m_count);
+        return i18ncp("@title", "%1 boost", "%1 boosts", m_count);
     }
     return {};
 }
