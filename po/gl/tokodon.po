@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-08-06 05:10+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -145,16 +145,20 @@ msgstr "Contas silenciadas"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "Favoritas"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "Favoritas"
+msgstr[1] "Favoritas"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Promocións"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Promocións"
+msgstr[1] "Promocións"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -430,22 +434,34 @@ msgid "Click to add a note"
 msgstr "Preme para engadir unha nota"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of statuses"
+#| msgid "<b>%1</b> posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "<b>%1</b> publicacións"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "<b>%1</b> publicacións"
+msgstr[1] "<b>%1</b> publicacións"
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "<b>%1</b> seguidoras"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> seguidoras"
+msgstr[1] "<b>%1</b> seguidoras"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "<b>%1</b> seguidas"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "<b>%1</b> seguidoras"
+msgstr[1] "<b>%1</b> seguidoras"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -554,8 +570,10 @@ msgstr "Tendencia"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2608,48 +2626,33 @@ msgid "via %1"
 msgstr "por %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Responder"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts && Replies"
-msgid "%1 Replies"
-msgstr "Publicacións e respostas"
+msgid_plural "%1 Replies"
+msgstr[0] "Responder"
+msgstr[1] "Responder"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
-msgid "%1 Favorites"
-msgstr "Favoritas"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
 msgid "%1 Favorite"
-msgstr "Favoritas"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "%1 promoveu"
+msgid_plural "%1 Favorites"
+msgstr[0] "Favoritas"
+msgstr[1] "Favoritas"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
-msgid "%1 Boosts"
-msgstr "Promocións"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 promoveu"
+msgstr[1] "%1 promoveu"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -3007,6 +3010,28 @@ msgstr "Orixe"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "<b>%1</b> seguidas"
+
+#, fuzzy
+#~| msgctxt "@item:inmenu Profile Post Filter"
+#~| msgid "Posts && Replies"
+#~ msgid "%1 Replies"
+#~ msgstr "Publicacións e respostas"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "%1 Favorites"
+#~ msgstr "Favoritas"
+
+#, fuzzy
+#~| msgctxt "Show only boosts"
+#~| msgid "Boosts"
+#~ msgid "%1 Boosts"
+#~ msgstr "Promocións"
 
 #~ msgid "Enter token:"
 #~ msgstr "Escribir o código:"

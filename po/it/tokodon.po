@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-08-04 18:29+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -137,16 +137,24 @@ msgid "Featured Accounts"
 msgstr "Account in primo piano"
 
 #: account/socialgraphmodel.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "%1 preferiti"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "%1 preferiti"
+msgstr[1] "%1 preferiti"
 
 #: account/socialgraphmodel.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "%1 boost"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "%1 boost"
+msgstr[1] "%1 boost"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -409,22 +417,34 @@ msgid "Click to add a note"
 msgstr "Clic per aggiungere una nota"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of statuses"
+#| msgid "<b>%1</b> posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "<b>%1</b> commenti"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "<b>%1</b> commenti"
+msgstr[1] "<b>%1</b> commenti"
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "<b>%1</b> seguaci"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> seguaci"
+msgstr[1] "<b>%1</b> seguaci"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "<b>%1</b> seguiti"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "<b>%1</b> seguaci"
+msgstr[1] "<b>%1</b> seguaci"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -528,9 +548,12 @@ msgid "Trending Tags"
 msgstr "Tag di tendenza"
 
 #: content/ui/ExplorePage.qml:149
-#, kde-format
-msgid "%1 people are talking"
-msgstr "%1 persone stanno parlando"
+#, fuzzy, kde-format
+#| msgid "%1 people are talking"
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] "%1 persone stanno parlando"
+msgstr[1] "%1 persone stanno parlando"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2513,37 +2536,31 @@ msgid "via %1"
 msgstr "tramite %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, kde-format
-msgid "%1 Reply"
-msgstr "%1 risposta"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr "%1 risposte"
+#, fuzzy, kde-format
+#| msgid "%1 Reply"
+msgid "%1 Reply"
+msgid_plural "%1 Replies"
+msgstr[0] "%1 risposta"
+msgstr[1] "%1 risposta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
-msgid "%1 Favorites"
-msgstr "%1 preferiti"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 Favorite"
 msgid "%1 Favorite"
-msgstr "%1 preferito"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, kde-format
-msgid "%1 Boost"
-msgstr "%1 boost"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 preferito"
+msgstr[1] "%1 preferito"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
-#, kde-format
-msgid "%1 Boosts"
-msgstr "%1 boost"
+#, fuzzy, kde-format
+#| msgid "%1 Boost"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 boost"
+msgstr[1] "%1 boost"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2895,6 +2912,19 @@ msgstr "Sorgente"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinazione"
+
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "<b>%1</b> seguiti"
+
+#~ msgid "%1 Replies"
+#~ msgstr "%1 risposte"
+
+#~ msgid "%1 Favorites"
+#~ msgstr "%1 preferiti"
+
+#~ msgid "%1 Boosts"
+#~ msgstr "%1 boost"
 
 #~ msgid "Enter token:"
 #~ msgstr "Digita token:"

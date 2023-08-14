@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -147,14 +147,18 @@ msgstr "Adicionar conta"
 #: account/socialgraphmodel.cpp:42
 #, kde-format
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr ""
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] ""
+msgstr[1] ""
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr ""
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] ""
+msgstr[1] ""
 
 #: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
@@ -439,23 +443,31 @@ msgid "Click to add a note"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Follow"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr ""
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "Seguir"
+msgstr[1] "Seguir"
 
 #: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "Seguir"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "Seguir"
+msgstr[1] "Seguir"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Follow"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr ""
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "Seguir"
+msgstr[1] "Seguir"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -562,8 +574,10 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2582,39 +2596,30 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Responder"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "Responder"
+msgstr[1] "Responder"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
-msgid "%1 Favorites"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
 msgid "%1 Favorite"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, kde-format
-msgid "%1 Boost"
-msgstr ""
+msgid_plural "%1 Favorites"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
-msgid "%1 Boosts"
-msgstr ""
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format

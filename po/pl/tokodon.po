@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-04-01 09:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -149,16 +149,22 @@ msgstr "Konta"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "Ulubione"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "Ulubione"
+msgstr[1] "Ulubione"
+msgstr[2] "Ulubione"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Napędza"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Napędza"
+msgstr[1] "Napędza"
+msgstr[2] "Napędza"
 
 #: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
@@ -448,22 +454,31 @@ msgstr "Naciśnij, aby dodać uwagę"
 #, fuzzy, kde-format
 #| msgid "No posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "Nie ma żadnych wpisów"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "Nie ma żadnych wpisów"
+msgstr[1] "Nie ma żadnych wpisów"
+msgstr[2] "Nie ma żadnych wpisów"
 
 #: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "%1 śledzących"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "%1 śledzących"
+msgstr[1] "%1 śledzących"
+msgstr[2] "%1 śledzących"
 
 #: content/ui/AccountInfo.qml:491
 #, fuzzy, kde-format
-#| msgid "%1 following"
+#| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "%1 śledzi"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "%1 śledzących"
+msgstr[1] "%1 śledzących"
+msgstr[2] "%1 śledzących"
 
 #: content/ui/AccountInfo.qml:503
 #, fuzzy, kde-format
@@ -574,8 +589,11 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2632,46 +2650,36 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Odpowiedz"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "Odpowiedz"
+msgstr[1] "Odpowiedz"
+msgstr[2] "Odpowiedz"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
-msgid "%1 Favorites"
-msgstr "Ulubione"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
 msgid "%1 Favorite"
-msgstr "Ulubione"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "%1 udostępnił"
+msgid_plural "%1 Favorites"
+msgstr[0] "Ulubione"
+msgstr[1] "Ulubione"
+msgstr[2] "Ulubione"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
-msgid "%1 Boosts"
-msgstr "Napędza"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 udostępnił"
+msgstr[1] "%1 udostępnił"
+msgstr[2] "%1 udostępnił"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -3031,6 +3039,24 @@ msgstr "Źródło"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Miejsce docelowe"
+
+#, fuzzy
+#~| msgid "%1 following"
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "%1 śledzi"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "%1 Favorites"
+#~ msgstr "Ulubione"
+
+#, fuzzy
+#~| msgctxt "Show only boosts"
+#~| msgid "Boosts"
+#~ msgid "%1 Boosts"
+#~ msgstr "Napędza"
 
 #~ msgid "Enter token:"
 #~ msgstr "Wpisz token:"

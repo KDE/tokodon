@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -150,16 +150,18 @@ msgstr "계정"
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "%1 님이 좋아요 표시함"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "%1 님이 좋아요 표시함"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "부스트"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "부스트"
 
 #: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
@@ -451,24 +453,28 @@ msgid "Click to add a note"
 msgstr "메모를 추가하려면 클릭하십시오"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 followers"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr ""
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "팔로워 %1명"
 
 #: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "팔로워 %1명"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "팔로워 %1명"
 
 #: content/ui/AccountInfo.qml:491
 #, fuzzy, kde-format
-#| msgid "%1 following"
+#| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "팔로잉 %1명"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "팔로워 %1명"
 
 #: content/ui/AccountInfo.qml:503
 #, fuzzy, kde-format
@@ -580,8 +586,9 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2646,44 +2653,29 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "답장"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "답장"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
-msgid "%1 Favorites"
-msgstr "%1 님이 좋아요 표시함"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
 msgid "%1 Favorite"
-msgstr "%1 님이 좋아요 표시함"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "%1 님이 부스트함"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 님이 좋아요 표시함"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "%1 Boosts"
-msgstr "부스트"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 님이 부스트함"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -3037,6 +3029,23 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "멘션"
+
+#, fuzzy
+#~| msgid "%1 following"
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "팔로잉 %1명"
+
+#, fuzzy
+#~| msgid "%1 favorited your post"
+#~ msgid "%1 Favorites"
+#~ msgstr "%1 님이 좋아요 표시함"
+
+#, fuzzy
+#~| msgctxt "Share a post"
+#~| msgid "Boost"
+#~ msgid "%1 Boosts"
+#~ msgstr "부스트"
 
 #~ msgid "Enter token:"
 #~ msgstr "토큰 입력:"

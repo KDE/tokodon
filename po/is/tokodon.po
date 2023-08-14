@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -147,16 +147,20 @@ msgstr "Notandaaðgangar"
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "%1s setti færslu frá þér í eftirlæti"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "%1s setti færslu frá þér í eftirlæti"
+msgstr[1] "%1s setti færslu frá þér í eftirlæti"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Endurbirta"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Endurbirta"
+msgstr[1] "Endurbirta"
 
 #: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
@@ -448,24 +452,31 @@ msgid "Click to add a note"
 msgstr "Smelltu til að bæta við minnispunkti"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 followers"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr ""
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "%1 fylgjendur"
+msgstr[1] "%1 fylgjendur"
 
 #: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "%1 fylgjendur"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "%1 fylgjendur"
+msgstr[1] "%1 fylgjendur"
 
 #: content/ui/AccountInfo.qml:491
 #, fuzzy, kde-format
-#| msgid "%1 following"
+#| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "%1 fylgjast með"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "%1 fylgjendur"
+msgstr[1] "%1 fylgjendur"
 
 #: content/ui/AccountInfo.qml:503
 #, fuzzy, kde-format
@@ -579,8 +590,10 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2645,44 +2658,32 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Svara"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "Svara"
+msgstr[1] "Svara"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
-msgid "%1 Favorites"
-msgstr "%1s setti færslu frá þér í eftirlæti"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
 msgid "%1 Favorite"
-msgstr "%1s setti færslu frá þér í eftirlæti"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "%1 endurbirti"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1s setti færslu frá þér í eftirlæti"
+msgstr[1] "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "%1 Boosts"
-msgstr "Endurbirta"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 endurbirti"
+msgstr[1] "%1 endurbirti"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -3040,6 +3041,23 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Minnst á"
+
+#, fuzzy
+#~| msgid "%1 following"
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "%1 fylgjast með"
+
+#, fuzzy
+#~| msgid "%1 favorited your post"
+#~ msgid "%1 Favorites"
+#~ msgstr "%1s setti færslu frá þér í eftirlæti"
+
+#, fuzzy
+#~| msgctxt "Share a post"
+#~| msgid "Boost"
+#~ msgid "%1 Boosts"
+#~ msgstr "Endurbirta"
 
 #~ msgid "Enter token:"
 #~ msgstr "Settu inn teikn:"

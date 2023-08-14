@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -147,16 +147,24 @@ msgstr "Учётные записи"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "Избранное"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "Избранное"
+msgstr[1] "Избранное"
+msgstr[2] "Избранное"
+msgstr[3] "Избранное"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Записи, которыми поделились"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Записи, которыми поделились"
+msgstr[1] "Записи, которыми поделились"
+msgstr[2] "Записи, которыми поделились"
+msgstr[3] "Записи, которыми поделились"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -435,20 +443,33 @@ msgstr "Нажмите, чтобы добавить заметку"
 #: content/ui/AccountInfo.qml:467
 #, kde-format
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr ""
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr ""
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "«%1» добавил(а) вас в свои подписки"
+msgstr[1] "«%1» добавил(а) вас в свои подписки"
+msgstr[2] "«%1» добавил(а) вас в свои подписки"
+msgstr[3] "«%1» добавил(а) вас в свои подписки"
 
 #: content/ui/AccountInfo.qml:491
 #, kde-format
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr ""
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -553,8 +574,12 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2597,46 +2622,39 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Ответить"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "Ответить"
+msgstr[1] "Ответить"
+msgstr[2] "Ответить"
+msgstr[3] "Ответить"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
-msgid "%1 Favorites"
-msgstr "Избранное"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
 msgid "%1 Favorite"
-msgstr "Избранное"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "%1 поделился(ась)"
+msgid_plural "%1 Favorites"
+msgstr[0] "Избранное"
+msgstr[1] "Избранное"
+msgstr[2] "Избранное"
+msgstr[3] "Избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
-msgid "%1 Boosts"
-msgstr "Записи, которыми поделились"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 поделился(ась)"
+msgstr[1] "%1 поделился(ась)"
+msgstr[2] "%1 поделился(ась)"
+msgstr[3] "%1 поделился(ась)"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2996,6 +3014,18 @@ msgstr "Источник"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Назначение"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "%1 Favorites"
+#~ msgstr "Избранное"
+
+#, fuzzy
+#~| msgctxt "Show only boosts"
+#~| msgid "Boosts"
+#~ msgid "%1 Boosts"
+#~ msgstr "Записи, которыми поделились"
 
 #~ msgid "Enter token:"
 #~ msgstr "Код авторизации:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-06-30 21:47+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -140,14 +140,20 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "%1 Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "%1 Oblíbené"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "%1 Oblíbené"
+msgstr[1] "%1 Oblíbené"
+msgstr[2] "%1 Oblíbené"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr ""
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -408,22 +414,37 @@ msgid "Click to add a note"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of statuses"
+#| msgid "<b>%1</b> posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "<b>%1</b> příspěvků"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "<b>%1</b> příspěvků"
+msgstr[1] "<b>%1</b> příspěvků"
+msgstr[2] "<b>%1</b> příspěvků"
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "<b>%1</b> sledujících"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> sledujících"
+msgstr[1] "<b>%1</b> sledujících"
+msgstr[2] "<b>%1</b> sledujících"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "<b>%1</b> sledujete"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "<b>%1</b> sledujících"
+msgstr[1] "<b>%1</b> sledujících"
+msgstr[2] "<b>%1</b> sledujících"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -528,8 +549,11 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2518,37 +2542,33 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, kde-format
-msgid "%1 Reply"
-msgstr "%1 odpověď"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr "%1 odpovědi"
+#, fuzzy, kde-format
+#| msgid "%1 Reply"
+msgid "%1 Reply"
+msgid_plural "%1 Replies"
+msgstr[0] "%1 odpověď"
+msgstr[1] "%1 odpověď"
+msgstr[2] "%1 odpověď"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
-msgid "%1 Favorites"
-msgstr "%1 Oblíbené"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 Favorite"
 msgid "%1 Favorite"
-msgstr "%1 Oblíbené"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, kde-format
-msgid "%1 Boost"
-msgstr ""
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 Oblíbené"
+msgstr[1] "%1 Oblíbené"
+msgstr[2] "%1 Oblíbené"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, kde-format
-msgid "%1 Boosts"
-msgstr ""
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2904,3 +2924,13 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
+
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "<b>%1</b> sledujete"
+
+#~ msgid "%1 Replies"
+#~ msgstr "%1 odpovědi"
+
+#~ msgid "%1 Favorites"
+#~ msgstr "%1 Oblíbené"

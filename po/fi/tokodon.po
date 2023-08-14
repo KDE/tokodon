@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-07-27 20:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -141,16 +141,20 @@ msgstr "Esitellyt tilit"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "Suosikit"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "Suosikit"
+msgstr[1] "Suosikit"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Tehostukset"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Tehostukset"
+msgstr[1] "Tehostukset"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -413,22 +417,34 @@ msgid "Click to add a note"
 msgstr "Lisää muistiinpano napsauttamalla"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of statuses"
+#| msgid "<b>%1</b> posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "<b>%1</b> julkaisua"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "<b>%1</b> julkaisua"
+msgstr[1] "<b>%1</b> julkaisua"
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "<b>%1</b> seuraajaa"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> seuraajaa"
+msgstr[1] "<b>%1</b> seuraajaa"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "<b>%1</b> seurattua"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "<b>%1</b> seuraajaa"
+msgstr[1] "<b>%1</b> seuraajaa"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -532,9 +548,12 @@ msgid "Trending Tags"
 msgstr "Nousussa olevat aihetunnisteet"
 
 #: content/ui/ExplorePage.qml:149
-#, kde-format
-msgid "%1 people are talking"
-msgstr "%1 henkeä keskustelee"
+#, fuzzy, kde-format
+#| msgid "%1 people are talking"
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] "%1 henkeä keskustelee"
+msgstr[1] "%1 henkeä keskustelee"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2548,37 +2567,31 @@ msgid "via %1"
 msgstr "%1 kautta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, kde-format
-msgid "%1 Reply"
-msgstr "%1 vastaus"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr "%1 vastausta"
+#, fuzzy, kde-format
+#| msgid "%1 Reply"
+msgid "%1 Reply"
+msgid_plural "%1 Replies"
+msgstr[0] "%1 vastaus"
+msgstr[1] "%1 vastaus"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
-msgid "%1 Favorites"
-msgstr "%1 suosikkia"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 Favorite"
 msgid "%1 Favorite"
-msgstr "%1 suosikki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, kde-format
-msgid "%1 Boost"
-msgstr "%1 tehostus"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 suosikki"
+msgstr[1] "%1 suosikki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
-#, kde-format
-msgid "%1 Boosts"
-msgstr "%1 tehostusta"
+#, fuzzy, kde-format
+#| msgid "%1 Boost"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 tehostus"
+msgstr[1] "%1 tehostus"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2931,6 +2944,19 @@ msgstr "Lähde"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
+
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "<b>%1</b> seurattua"
+
+#~ msgid "%1 Replies"
+#~ msgstr "%1 vastausta"
+
+#~ msgid "%1 Favorites"
+#~ msgstr "%1 suosikkia"
+
+#~ msgid "%1 Boosts"
+#~ msgstr "%1 tehostusta"
 
 #~ msgid "Enter token:"
 #~ msgstr "Syötä merkki:"

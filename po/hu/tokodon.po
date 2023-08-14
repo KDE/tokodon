@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -148,16 +148,20 @@ msgstr "Fiókok"
 #: account/socialgraphmodel.cpp:42
 #, kde-format
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr ""
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] ""
+msgstr[1] ""
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Kiemelés"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Kiemelés"
+msgstr[1] "Kiemelés"
 
 #: account/socialgraphmodel.cpp:52
 #, fuzzy, kde-format
@@ -446,24 +450,31 @@ msgid "Click to add a note"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 followers"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr ""
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "%1 követő"
+msgstr[1] "%1 követő"
 
 #: content/ui/AccountInfo.qml:479
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "%1 követő"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "%1 követő"
+msgstr[1] "%1 követő"
 
 #: content/ui/AccountInfo.qml:491
 #, fuzzy, kde-format
-#| msgid "%1 following"
+#| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "%1 követett"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "%1 követő"
+msgstr[1] "%1 követő"
 
 #: content/ui/AccountInfo.qml:503
 #, fuzzy, kde-format
@@ -575,8 +586,10 @@ msgstr ""
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2627,43 +2640,32 @@ msgid "via %1"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
+#: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
 msgid "%1 Reply"
-msgstr "Válasz"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
-#: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr ""
+msgid_plural "%1 Replies"
+msgstr[0] "Válasz"
+msgstr[1] "Válasz"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
-msgid "%1 Favorites"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
 msgid "%1 Favorite"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "%1 Boost"
-msgstr "Kiemelés"
+msgid_plural "%1 Favorites"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
-msgid "%1 Boosts"
-msgstr "Kiemelés"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "Kiemelés"
+msgstr[1] "Kiemelés"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -3020,6 +3022,18 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgid "%1 following"
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "%1 követett"
+
+#, fuzzy
+#~| msgctxt "Share a post"
+#~| msgid "Boost"
+#~ msgid "%1 Boosts"
+#~ msgstr "Kiemelés"
 
 #~ msgid "Enter token:"
 #~ msgstr "Adja meg a kódot:"

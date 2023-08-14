@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:46+0000\n"
+"POT-Creation-Date: 2023-08-14 00:47+0000\n"
 "PO-Revision-Date: 2023-07-06 21:53+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -143,16 +143,20 @@ msgstr "Comptes"
 #, fuzzy, kde-format
 #| msgid "%1 Favorites"
 msgctxt "@title"
-msgid "%1 favourites"
-msgstr "%1 favoris"
+msgid "%1 favourite"
+msgid_plural "%1 favourites"
+msgstr[0] "%1 favoris"
+msgstr[1] "%1 favoris"
 
 #: account/socialgraphmodel.cpp:44
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgctxt "@title"
-msgid "%1 boosts"
-msgstr "Stimulations"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "Stimulations"
+msgstr[1] "Stimulations"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -425,22 +429,34 @@ msgid "Click to add a note"
 msgstr "Cliquer pour ajouter une note"
 
 #: content/ui/AccountInfo.qml:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of statuses"
+#| msgid "<b>%1</b> posts"
 msgctxt "@label User's number of statuses"
-msgid "<b>%1</b> posts"
-msgstr "<b>%1</b> messages"
+msgid "<b>%1</b> post"
+msgid_plural "<b>%1</b> posts"
+msgstr[0] "<b>%1</b> messages"
+msgstr[1] "<b>%1</b> messages"
 
 #: content/ui/AccountInfo.qml:479
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followers"
-msgid "<b>%1</b> followers"
-msgstr "<b>%1</b> abonné(e)s"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> abonné(e)s"
+msgstr[1] "<b>%1</b> abonné(e)s"
 
 #: content/ui/AccountInfo.qml:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label User's number of followers"
+#| msgid "<b>%1</b> followers"
 msgctxt "@label User's number of followed accounts"
-msgid "<b>%1</b> following"
-msgstr "<b>%1</b> suiveurs"
+msgid "<b>%1</b> follows"
+msgid_plural "<b>%1</b> following"
+msgstr[0] "<b>%1</b> abonné(e)s"
+msgstr[1] "<b>%1</b> abonné(e)s"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -550,8 +566,10 @@ msgstr "Tendance"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
-msgid "%1 people are talking"
-msgstr ""
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -2584,40 +2602,31 @@ msgid "via %1"
 msgstr "grâce à %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, kde-format
-msgid "%1 Reply"
-msgstr "%1 réponse"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, kde-format
-msgid "%1 Replies"
-msgstr "%1 réponses"
+#, fuzzy, kde-format
+#| msgid "%1 Reply"
+msgid "%1 Reply"
+msgid_plural "%1 Replies"
+msgstr[0] "%1 réponse"
+msgstr[1] "%1 réponse"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
-msgid "%1 Favorites"
-msgstr "%1 favoris"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, kde-format
-msgid "%1 Favorite"
-msgstr "Favori %1"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:594
 #, fuzzy, kde-format
-#| msgid "%1 boosted"
-msgid "%1 Boost"
-msgstr "mis en avant par %1"
+#| msgid "%1 Favorite"
+msgid "%1 Favorite"
+msgid_plural "%1 Favorites"
+msgstr[0] "Favori %1"
+msgstr[1] "Favori %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
 #, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
-msgid "%1 Boosts"
-msgstr "Stimulations"
+#| msgid "%1 boosted"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "mis en avant par %1"
+msgstr[1] "mis en avant par %1"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2976,6 +2985,22 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#~ msgctxt "@label User's number of followed accounts"
+#~ msgid "<b>%1</b> following"
+#~ msgstr "<b>%1</b> suiveurs"
+
+#~ msgid "%1 Replies"
+#~ msgstr "%1 réponses"
+
+#~ msgid "%1 Favorites"
+#~ msgstr "%1 favoris"
+
+#, fuzzy
+#~| msgctxt "Show only boosts"
+#~| msgid "Boosts"
+#~ msgid "%1 Boosts"
+#~ msgstr "Stimulations"
 
 #~ msgid "Enter token:"
 #~ msgstr "Saisissez un jeton :"
