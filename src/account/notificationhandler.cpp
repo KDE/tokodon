@@ -59,15 +59,24 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
             QPixmap img;
             img.loadFromData(reply->readAll());
 
-            QImage roundedImage(img.width(), img.height(), QImage::Format_ARGB32);
+            // Handle avatars that are lopsided in one dimension
+            const int biggestDimension = std::max(img.width(), img.height());
+            const QRect imageRect{0, 0, biggestDimension, biggestDimension};
+
+            QImage roundedImage(imageRect.size(), QImage::Format_ARGB32);
+            roundedImage.fill(Qt::transparent);
 
             QPainter painter(&roundedImage);
-            painter.setRenderHint(QPainter::Antialiasing);
+            painter.setRenderHint(QPainter::SmoothPixmapTransform);
+            painter.setPen(Qt::NoPen);
 
-            QBrush brush(img);
+            // Fill background for transparent avatars
+            painter.setBrush(Qt::white);
+            painter.drawRoundedRect(imageRect, imageRect.width(), imageRect.height());
+
+            QBrush brush(img.scaledToHeight(biggestDimension));
             painter.setBrush(brush);
-
-            painter.drawRoundedRect(0, 0, img.width(), img.height(), img.width(), img.height());
+            painter.drawRoundedRect(imageRect, imageRect.width(), imageRect.height());
 
             knotification->setPixmap(QPixmap::fromImage(roundedImage));
             knotification->sendEvent();
