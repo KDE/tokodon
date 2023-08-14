@@ -12,25 +12,25 @@ KirigamiSettings.CategorizedSettings {
     actions: [
         KirigamiSettings.SettingAction {
             actionName: "Accounts"
-            text: i18n("Accounts")
+            text: i18nc("@title", "Accounts")
             icon.name: "user-identity"
             page: Qt.resolvedUrl("AccountToolPage.qml")
         },
         KirigamiSettings.SettingAction {
             actionName: "Federation"
-            text: i18n("Federation")
+            text: i18nc("@title", "Federation")
             icon.name: "cloudstatus"
             page: Qt.resolvedUrl("FederationToolPage.qml")
         },
         KirigamiSettings.SettingAction {
             actionName: "IpRules"
-            text: i18n("Ip rules")
+            text: i18nc("@title", "IP Rules")
             icon.name: "cards-block"
             page: Qt.resolvedUrl("IpRulePage.qml")
         },
         KirigamiSettings.SettingAction {
             actionName: "EmailBlock"
-            text: i18n("Email block")
+            text: i18nc("@title", "Email Blocks")
             icon.name: "mail-message"
             page: Qt.resolvedUrl("EmailBlockToolPage.qml")
         }

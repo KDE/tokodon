@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import "../StatusDelegate"
 
 Kirigami.ScrollablePage {
-    title: i18n("Accounts Tool Page")
 
     function reset() {
         username.text = ""

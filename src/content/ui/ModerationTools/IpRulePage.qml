@@ -12,7 +12,6 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("IP Rule Tool Page")
 
     Kirigami.PromptDialog {
         id: newIpRuleDialog

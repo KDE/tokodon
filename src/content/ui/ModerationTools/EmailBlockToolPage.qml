@@ -12,7 +12,6 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18nc("@title", "Email Block Tool Page")
 
     Kirigami.PromptDialog {
         id: emailInfoDialog
