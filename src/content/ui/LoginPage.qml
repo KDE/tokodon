@@ -7,7 +7,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQml.Models 2.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 MastoPage {
     objectName: 'loginPage'
@@ -25,78 +25,67 @@ MastoPage {
 
     ColumnLayout {
         width: parent.width
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Welcome to Tokodon")
-                }
+        FormCard.FormHeader {
+            title: i18n("Welcome to Tokodon")
+        }
 
-                MobileForm.FormTextFieldDelegate {
-                    id: instanceUrl
-                    label: i18n("Instance Url:")
-                    onAccepted: continueButton.clicked()
-                    inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
-                }
+        FormCard.FormCard {
+            FormCard.FormTextFieldDelegate {
+                id: instanceUrl
+                label: i18n("Instance Url:")
+                onAccepted: continueButton.clicked()
+                inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
+            }
 
-                MobileForm.FormDelegateSeparator { above: adminScopeDelegate }
+            FormCard.FormDelegateSeparator { above: adminScopeDelegate }
 
-                MobileForm.FormCheckDelegate {
-                    id: adminScopeDelegate
-                    text: i18n("Enable moderation tools")
-                    description: i18n("Allow Tokodon to access moderation tools. Try disabling this if you have trouble logging into your server.")
-                    checked: true
-                }
+            FormCard.FormCheckDelegate {
+                id: adminScopeDelegate
+                text: i18n("Enable moderation tools")
+                description: i18n("Allow Tokodon to access moderation tools. Try disabling this if you have trouble logging into your server.")
+                checked: true
+            }
 
-                MobileForm.FormDelegateSeparator { above: continueButton }
+            FormCard.FormDelegateSeparator { above: continueButton }
 
-                MobileForm.FormButtonDelegate {
-                    id: continueButton
-                    text: i18n("Continue")
-                    onClicked: {
-                        if (!instanceUrl.text) {
-                            applicationWindow().showPassiveNotification(i18n("Instance URL must not be empty!"));
-                            return;
-                        }
-
-                        const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
-
-                        account.registered.connect(() => {
-                            const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
-                                account: account,
-                            });
-
-                        });
+            FormCard.FormButtonDelegate {
+                id: continueButton
+                text: i18n("Continue")
+                onClicked: {
+                    if (!instanceUrl.text) {
+                        applicationWindow().showPassiveNotification(i18n("Instance URL must not be empty!"));
+                        return;
                     }
+
+                    const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
+
+                    account.registered.connect(() => {
+                        const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
+                            account: account,
+                        });
+
+                    });
                 }
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18nc("@title:group Login page", "Network Settings")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18nc("@title:group Login page", "Network Settings")
-                }
+        FormCard.FormCard {
+            FormCard.FormSwitchDelegate {
+                id: sslErrors
+                text: i18nc("@option:check Login page", "Ignore SSL errors")
+            }
 
-                MobileForm.FormSwitchDelegate {
-                    id: sslErrors
-                    text: i18nc("@option:check Login page", "Ignore SSL errors")
-                }
+            FormCard.FormDelegateSeparator { above: proxySettingDelegate; below: sslErrors }
 
-                MobileForm.FormDelegateSeparator { above: proxySettingDelegate; below: sslErrors }
-
-                MobileForm.FormButtonDelegate {
-                    id: proxySettingDelegate
-                    text: i18n("Proxy Settings")
-                    onClicked: pageStack.layers.push('qrc:/content/ui/Settings/NetworkProxyPage.qml')
-                }
+            FormCard.FormButtonDelegate {
+                id: proxySettingDelegate
+                text: i18n("Proxy Settings")
+                onClicked: pageStack.layers.push('qrc:/content/ui/Settings/NetworkProxyPage.qml')
             }
         }
     }
