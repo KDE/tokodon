@@ -110,7 +110,7 @@ QQC2.ItemDelegate {
     }
 
     contentItem: Kirigami.FlexColumn {
-        spacing: 0
+        spacing: Kirigami.Units.largeSpacing
 
         maximumWidth: Kirigami.Units.gridUnit * 40
 
