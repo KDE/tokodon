@@ -48,6 +48,7 @@ MastoPage {
                     id: adminScopeDelegate
                     text: i18n("Enable moderation tools")
                     description: i18n("Allow Tokodon to access moderation tools. Try disabling this if you have trouble logging into your server.")
+                    checked: true
                 }
 
                 MobileForm.FormDelegateSeparator { above: continueButton }
