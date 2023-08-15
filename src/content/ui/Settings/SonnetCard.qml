@@ -7,109 +7,105 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.sonnet 1.0 as Sonnet
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
-MobileForm.FormCard {
+FormCard.FormCard {
     id: card
-    Sonnet.Settings {
+
+    readonly property Sonnet.Settings settings: Sonnet.Settings {
         id: settings
     }
 
-    contentItem: ColumnLayout {
-        spacing: 0
-        MobileForm.FormCardHeader {
-            title: i18n("Spellchecking")
+    FormCard.FormCheckDelegate {
+        id: enable
+        checked: settings.checkerEnabledByDefault
+        text: i18n("Enable automatic spell checking")
+        onCheckedChanged: {
+            settings.checkerEnabledByDefault = checked;
+            settings.save();
         }
+    }
 
-        MobileForm.FormCheckDelegate {
-            id: enable
-            checked: settings.checkerEnabledByDefault
-            text: i18n("Enable automatic spell checking")
-            onCheckedChanged: {
-                settings.checkerEnabledByDefault = checked;
-                settings.save();
+    FormCard.FormDelegateSeparator { below: enable; above: skipUppercase }
+
+    FormCard.FormCheckDelegate {
+        id: skipUppercase
+        checked: settings.skipUppercase
+        text: i18n("Ignore uppercase words")
+        onCheckedChanged: {
+            settings.skipUppercase = checked;
+            settings.save();
+        }
+    }
+
+    FormCard.FormDelegateSeparator { below: skipUppercase; above: skipRunTogether }
+
+    FormCard.FormCheckDelegate {
+        id: skipRunTogether
+        checked: settings.skipRunTogether
+        text: i18n("Ignore hyphenated words")
+        onCheckedChanged: {
+            settings.skipRunTogether = checked;
+            settings.save();
+        }
+    }
+
+    FormCard.FormDelegateSeparator { below: skipRunTogether; above: autodetectLanguageCheckbox }
+
+    FormCard.FormCheckDelegate {
+        id: autodetectLanguageCheckbox
+        checked: settings.autodetectLanguage
+        text: i18n("Detect language automatically")
+        onCheckedChanged: {
+            settings.autodetectLanguage = checked;
+            settings.save();
+        }
+    }
+
+    FormCard.FormDelegateSeparator { below: autodetectLanguageCheckbox; above: selectedDefaultLanguage }
+
+    FormCard.FormComboBoxDelegate {
+        id: selectedDefaultLanguage
+        text: i18n("Selected default language:")
+        model: isEmpty ? [{"display": i18n("None")}] : settings.dictionaryModel
+        textRole: "display"
+        displayMode: Kirigami.Settings.isMobile ? FormCard.FormComboBoxDelegate.Dialog : FormCard.FormComboBoxDelegate.Page
+        valueRole: "languageCode"
+        property bool isEmpty: false
+        Component.onCompleted: {
+            if (settings.dictionaryModel.rowCount() === 0) {
+                isEmpty = true;
+            } else {
+                currentIndex = indexOfValue(settings.defaultLanguage);
             }
         }
+        onActivated: settings.defaultLanguage = currentValue;
+    }
 
-        MobileForm.FormDelegateSeparator { below: enable; above: skipUppercase }
+    FormCard.FormDelegateSeparator { below: selectedDefaultLanguage; above: spellCheckingLanguage }
 
-        MobileForm.FormCheckDelegate {
-            id: skipUppercase
-            checked: settings.skipUppercase
-            text: i18n("Ignore uppercase words")
-            onCheckedChanged: {
-                settings.skipUppercase = checked;
-                settings.save();
-            }
-        }
+    FormCard.FormButtonDelegate {
+        id: spellCheckingLanguage
+        text: i18n("Additional Spell Checking Languages")
+        description: i18n("%1 will provide spell checking and suggestions for the languages listed here when autodetection is enabled.", Qt.application.displayName)
+        onClicked: pageStack.pushDialogLayer(spellCheckingLanguageList, {}, {
+            width: pageStack.width - Kirigami.Units.gridUnit * 5,
+            height: pageStack.height - Kirigami.Units.gridUnit * 5,
+        })
+    }
 
-        MobileForm.FormDelegateSeparator { below: skipUppercase; above: skipRunTogether }
+    FormCard.FormDelegateSeparator { below: spellCheckingLanguageList; above: personalDictionary }
 
-        MobileForm.FormCheckDelegate {
-            id: skipRunTogether
-            checked: settings.skipRunTogether
-            text: i18n("Ignore hyphenated words")
-            onCheckedChanged: {
-                settings.skipRunTogether = checked;
-                settings.save();
-            }
-        }
+    FormCard.FormButtonDelegate {
+        id: personalDictionary
+        text: i18n("Open Personal Dictionary")
+        onClicked: pageStack.pushDialogLayer(dictionaryPage, {}, {
+            width: pageStack.width - Kirigami.Units.gridUnit * 5,
+            height: pageStack.height - Kirigami.Units.gridUnit * 5,
+        })
+    }
 
-        MobileForm.FormDelegateSeparator { below: skipRunTogether; above: autodetectLanguageCheckbox }
-
-        MobileForm.FormCheckDelegate {
-            id: autodetectLanguageCheckbox
-            checked: settings.autodetectLanguage
-            text: i18n("Detect language automatically")
-            onCheckedChanged: {
-                settings.autodetectLanguage = checked;
-                settings.save();
-            }
-        }
-
-        MobileForm.FormDelegateSeparator { below: autodetectLanguageCheckbox; above: selectedDefaultLanguage }
-
-        MobileForm.FormComboBoxDelegate {
-            id: selectedDefaultLanguage
-            text: i18n("Selected default language:")
-            model: isEmpty ? [{"display": i18n("None")}] : settings.dictionaryModel
-            textRole: "display"
-            displayMode: Kirigami.Settings.isMobile ? MobileForm.FormComboBoxDelegate.Dialog : MobileForm.FormComboBoxDelegate.Page
-            valueRole: "languageCode"
-            property bool isEmpty: false
-            Component.onCompleted: {
-                if (settings.dictionaryModel.rowCount() === 0) {
-                    isEmpty = true;
-                } else {
-                    currentIndex = indexOfValue(settings.defaultLanguage);
-                }
-            }
-            onActivated: settings.defaultLanguage = currentValue;
-        }
-
-        MobileForm.FormDelegateSeparator { below: selectedDefaultLanguage; above: spellCheckingLanguage }
-
-        MobileForm.FormButtonDelegate {
-            id: spellCheckingLanguage
-            text: i18n("Additional Spell Checking Languages")
-            description: i18n("%1 will provide spell checking and suggestions for the languages listed here when autodetection is enabled.", Qt.application.displayName)
-            onClicked: pageStack.pushDialogLayer(spellCheckingLanguageList, {}, {
-                width: pageStack.width - Kirigami.Units.gridUnit * 5,
-                height: pageStack.height - Kirigami.Units.gridUnit * 5,
-            })
-        }
-
-        MobileForm.FormDelegateSeparator { below: spellCheckingLanguageList; above: personalDictionary }
-
-        MobileForm.FormButtonDelegate {
-            id: personalDictionary
-            text: i18n("Open Personal Dictionary")
-            onClicked: pageStack.pushDialogLayer(dictionaryPage, {}, {
-                width: pageStack.width - Kirigami.Units.gridUnit * 5,
-                height: pageStack.height - Kirigami.Units.gridUnit * 5,
-            })
-        }
-
+    data: [
         Component {
             id: spellCheckingLanguageList
             Kirigami.ScrollablePage {
@@ -140,56 +136,56 @@ MobileForm.FormCard {
                     }
                 }
             }
-        }
-    }
+        },
 
-    Component {
-        id: dictionaryPage
-        Kirigami.ScrollablePage {
-            title: i18n("Spell checking dictionary")
-            footer: QQC2.ToolBar {
-                contentItem: RowLayout {
-                    QQC2.TextField {
-                        id: dictionaryField
-                        Layout.fillWidth: true
-                        Accessible.name: placeholderText
-                        placeholderText: i18n("Add a new word to your personal dictionary…")
-                    }
-                    QQC2.Button {
-                        text: i18nc("@action:button", "Add Word")
-                        icon.name: "list-add"
-                        enabled: dictionaryField.text.length > 0
-                        onClicked: {
-                            add(dictionaryField.text);
-                            dictionaryField.clear();
-                            if (instantApply) {
-                                settings.save();
-                            }
+        Component {
+            id: dictionaryPage
+            Kirigami.ScrollablePage {
+                title: i18n("Spell checking dictionary")
+                footer: QQC2.ToolBar {
+                    contentItem: RowLayout {
+                        QQC2.TextField {
+                            id: dictionaryField
+                            Layout.fillWidth: true
+                            Accessible.name: placeholderText
+                            placeholderText: i18n("Add a new word to your personal dictionary…")
                         }
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
+                        QQC2.Button {
+                            text: i18nc("@action:button", "Add Word")
+                            icon.name: "list-add"
+                            enabled: dictionaryField.text.length > 0
+                            onClicked: {
+                                add(dictionaryField.text);
+                                dictionaryField.clear();
+                                if (instantApply) {
+                                    settings.save();
+                                }
+                            }
+                            Layout.rightMargin: Kirigami.Units.largeSpacing
+                        }
                     }
                 }
-            }
-            ListView {
-                model: settings.currentIgnoreList
-                delegate: Kirigami.BasicListItem {
-                    label: model.modelData
-                    trailing: QQC2.ToolButton {
-                        icon.name: "delete"
-                        onClicked: {
-                            remove(modelData)
-                            if (instantApply) {
-                                settings.save();
+                ListView {
+                    model: settings.currentIgnoreList
+                    delegate: Kirigami.BasicListItem {
+                        label: model.modelData
+                        trailing: QQC2.ToolButton {
+                            icon.name: "delete"
+                            onClicked: {
+                                remove(modelData)
+                                if (instantApply) {
+                                    settings.save();
+                                }
                             }
-                        }
-                        QQC2.ToolTip {
-                            text: i18n("Delete word")
+                            QQC2.ToolTip {
+                                text: i18n("Delete word")
+                            }
                         }
                     }
                 }
             }
         }
-    }
+    ]
 
     function add(word: string) {
         const dictionary = settings.currentIgnoreList;

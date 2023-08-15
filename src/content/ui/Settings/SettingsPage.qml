@@ -4,18 +4,15 @@
 import QtQuick 2.15
 import org.kde.kirigami 2.18 as Kirigami
 import QtQuick.Layouts 1.15
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kmasto 1.0
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
 
     title: i18nc("@title:window", "Settings")
 
-    leftPadding: 0
-    rightPadding: 0
-
-    Connections {
+    data: Connections {
         target: AccountManager
 
         function onAccountRemoved() {
@@ -25,64 +22,78 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ColumnLayout {
-        GeneralCard {}
-        AccountsCard {}
-        PreferencesCard {}
+    FormCard.FormHeader {
+        title: i18n("General")
+    }
 
-        Loader {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+    GeneralCard {}
 
-            active: Qt.platform.os !== "android"
-            source: "qrc:/content/ui/Settings/SonnetCard.qml"
+    FormCard.FormHeader {
+        title: i18n("Accounts")
+    }
+
+    AccountsCard {}
+
+    FormCard.FormHeader {
+        title: i18nc("@label Settings header", "Preferences")
+    }
+
+    PreferencesCard {}
+
+    FormCard.FormHeader {
+        visible: Qt.platform.os !== "android"
+        title: i18n("Spellchecking")
+    }
+
+    Loader {
+        Layout.fillWidth: true
+
+        active: Qt.platform.os !== "android"
+        source: "qrc:/content/ui/Settings/SonnetCard.qml"
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        data: Component {
+            id: networkProxyPage
+            NetworkProxyPage {}
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Component {
-                    id: networkProxyPage
-                    NetworkProxyPage {
-                    }
+        FormCard.FormButtonDelegate {
+            text: i18n("Network Proxy")
+            onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
+        }
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        data: [
+            Component {
+                id: aboutPage
+                FormCard.AboutPage {
+                    aboutData: About
                 }
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Network Proxy")
-                    onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
-                }
+            },
+            Component {
+                id: aboutKDE
+                FormCard.AboutKDE {}
             }
+        ]
+
+        FormCard.FormButtonDelegate {
+            id: aboutTokodon
+            text: i18n("About Tokodon")
+            onClicked: applicationWindow().pageStack.layers.push(aboutPage)
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Component {
-                    id: aboutPage
-                    MobileForm.AboutPage {
-                        aboutData: About
-                    }
-                }
-                Component {
-                    id: aboutKDE
-                    MobileForm.AboutKDE {}
-                }
+        FormCard.FormDelegateSeparator { above: aboutKde; below: aboutTokodon }
 
-                MobileForm.FormButtonDelegate {
-                    text: i18n("About Tokodon")
-                    onClicked: applicationWindow().pageStack.layers.push(aboutPage)
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormButtonDelegate {
-                    text: i18n("About KDE")
-                    onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
-                }
-            }
+        FormCard.FormButtonDelegate {
+            id: aboutKde
+            text: i18n("About KDE")
+            onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
         }
     }
 }

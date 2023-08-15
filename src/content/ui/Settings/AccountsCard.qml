@@ -8,92 +8,81 @@ import QtQuick.Layouts 1.15
 import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 import org.kde.kmasto 1.0
 
-MobileForm.FormCard {
+FormCard.FormCard {
     id: accountsCard
 
-    Layout.topMargin: Kirigami.Units.largeSpacing
-    Layout.fillWidth: true
-    contentItem: ColumnLayout {
-        spacing: 0
-        MobileForm.FormCardHeader {
-            title: i18n("Accounts")
-        }
+    Repeater {
+        model: AccountManager
+        delegate: FormCard.AbstractFormDelegate {
+            Layout.fillWidth: true
+            onClicked: applicationWindow().pageStack.layers.push("./ProfileEditor.qml", {
+                account: model.account,
+            }, {
+                title: i18n("Account editor")
+            })
 
-
-
-        Repeater {
-            model: AccountManager
-            delegate: MobileForm.AbstractFormDelegate {
-                Layout.fillWidth: true
-                onClicked: applicationWindow().pageStack.layers.push("./ProfileEditor.qml", {
-                    account: model.account,
-                }, {
-                    title: i18n("Account editor")
-                })
-
-                contentItem: RowLayout {
-                    Kirigami.Avatar {
-                        source: model.account.identity.avatarUrl
-                        name: model.display
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: Kirigami.Units.smallSpacing
-
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            text: model.display
-                            textFormat: Text.RichText
-                            elide: Text.ElideRight
-                            wrapMode: Text.Wrap
-                            maximumLineCount: 2
-                            color: Kirigami.Theme.textColor
-                        }
-
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            text: `${model.description} (${model.account.instanceName})`
-                            color: Kirigami.Theme.disabledTextColor
-                            font: Kirigami.Theme.smallFont
-                            elide: Text.ElideRight
-                        }
-                    }
-
-                    QQC2.ToolButton {
-                        text: i18n("Logout")
-                        icon.name: "im-kick-user"
-                        onClicked: {
-                            AccountManager.removeAccount(model.account)
-                        }
-                    }
-
-                    // TODO implement account editing
-                    //MobileForm.FormArrow {
-                    //    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                    //    direction: MobileForm.FormArrow.Right
-                    //}
+            contentItem: RowLayout {
+                Kirigami.Avatar {
+                    source: model.account.identity.avatarUrl
+                    name: model.display
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    implicitWidth: Kirigami.Units.iconSizes.medium
+                    implicitHeight: Kirigami.Units.iconSizes.medium
                 }
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        text: model.display
+                        textFormat: Text.RichText
+                        elide: Text.ElideRight
+                        wrapMode: Text.Wrap
+                        maximumLineCount: 2
+                        color: Kirigami.Theme.textColor
+                    }
+
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        text: `${model.description} (${model.account.instanceName})`
+                        color: Kirigami.Theme.disabledTextColor
+                        font: Kirigami.Theme.smallFont
+                        elide: Text.ElideRight
+                    }
+                }
+
+                QQC2.ToolButton {
+                    text: i18n("Logout")
+                    icon.name: "im-kick-user"
+                    onClicked: {
+                        AccountManager.removeAccount(model.account)
+                    }
+                }
+
+                // TODO implement account editing
+                //FormCard.FormArrow {
+                //    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                //    direction: FormCard.FormArrow.Right
+                //}
             }
         }
+    }
 
-        MobileForm.FormDelegateSeparator { below: addAccountDelegate }
+    FormCard.FormDelegateSeparator { below: addAccountDelegate }
 
-        MobileForm.FormButtonDelegate {
-            id: addAccountDelegate
-            text: i18n("Add Account")
-            icon.name: "list-add"
-            onClicked: pageStack.pushDialogLayer("qrc:/content/ui/LoginPage.qml", {}, {
-                width: pageStack.width - Kirigami.Units.gridUnit * 5,
-                height: pageStack.height - Kirigami.Units.gridUnit * 5,
-            })
-        }
+    FormCard.FormButtonDelegate {
+        id: addAccountDelegate
+        text: i18n("Add Account")
+        icon.name: "list-add"
+        onClicked: pageStack.pushDialogLayer("qrc:/content/ui/LoginPage.qml", {}, {
+            width: pageStack.width - Kirigami.Units.gridUnit * 5,
+            height: pageStack.height - Kirigami.Units.gridUnit * 5,
+        })
     }
 }
