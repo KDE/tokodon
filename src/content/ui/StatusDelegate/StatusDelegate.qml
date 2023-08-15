@@ -3,6 +3,7 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
@@ -148,17 +149,15 @@ QQC2.ItemDelegate {
 
             QQC2.AbstractButton {
                 contentItem: RowLayout {
-                    Kirigami.Avatar {
+                    KirigamiComponents.AvatarButton {
                         implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
                         implicitWidth: implicitHeight
                         Layout.alignment: Qt.AlignTop
                         Layout.bottomMargin: -Kirigami.Units.gridUnit
                         source: root.notificationActorIdentity && root.notificationActorIdentity.avatarUrl ? root.notificationActorIdentity.avatarUrl :  ''
                         cache: true
-                        actions.main: Kirigami.Action {
-                            tooltip: i18n("View profile")
-                            onTriggered: Navigation.openAccount(root.notificationActorIdentity.id)
-                        }
+                        QQC2.ToolTip.text: i18n("View profile")
+                        onClicked: Navigation.openAccount(root.notificationActorIdentity.id)
                         name: root.notificationActorIdentity && root.notificationActorIdentity.displayName ? root.notificationActorIdentity.displayName :  ''
                         visible: [Notification.Favorite, root.type === Notification.Update].includes(root.type)
                     }
@@ -239,7 +238,7 @@ QQC2.ItemDelegate {
 
             QQC2.AbstractButton {
                 contentItem: RowLayout {
-                    Kirigami.Avatar {
+                    KirigamiComponents.AvatarButton {
                         implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
                         implicitWidth: implicitHeight
                         Layout.alignment: Qt.AlignTop
@@ -254,11 +253,8 @@ QQC2.ItemDelegate {
                             return ''
                         }
                         cache: true
-                        actions.main: Kirigami.Action
-                            {
-                            tooltip: i18n("View profile")
-                            onTriggered: Navigation.openAccount(root.boostAuthorIdentity.id)
-                        }
+                        QQC2.ToolTip.text: i18n("View profile")
+                        onClicked: Navigation.openAccount(root.boostAuthorIdentity.id)
                         name: root.boostAuthorIdentity && root.boostAuthorIdentity.displayName ? root.boostAuthorIdentity.displayName : ''
                     }
                     QQC2.Label {

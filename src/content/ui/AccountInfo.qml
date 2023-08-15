@@ -3,6 +3,7 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import QtQuick.Controls 2.15 as QQC2
 import QtQml.Models 2.15
 import QtQuick.Layouts 1.15
@@ -85,7 +86,7 @@ TimelinePage {
                     Item {
                         Layout.minimumWidth: Kirigami.Units.gridUnit * 5
                         Layout.alignment: Qt.AlignBottom
-                        Kirigami.Avatar {
+                        KirigamiComponents.Avatar {
                             anchors {
                                 left: parent.left
                                 bottom: parent.bottom

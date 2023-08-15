@@ -7,6 +7,7 @@ import QtQuick.Layouts 1.15
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import org.kde.kmasto 1.0
 import './StatusDelegate'
 
@@ -70,7 +71,7 @@ ListView {
                 onClicked: Navigation.openAccount(accountDelegate.authorIdentity.id)
 
                 contentItem: RowLayout {
-                    Kirigami.Avatar {
+                    KirigamiComponents.Avatar {
                         Layout.alignment: Qt.AlignTop
                         Layout.rowSpan: 5
                         source: accountDelegate.authorIdentity.avatarUrl
