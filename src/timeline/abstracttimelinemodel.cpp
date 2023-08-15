@@ -256,8 +256,5 @@ void AbstractTimelineModel::actionPin(const QModelIndex &index, Post *post)
 void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
 {
     Q_UNUSED(index);
-    m_account->deleteResource(m_account->apiUrl(QString("/api/v1/statuses/%1").arg(post->postId())), true, this, [](QNetworkReply *reply) {
-        const auto postSource = QJsonDocument::fromJson(reply->readAll()).object();
-        qDebug() << "DELETED: " << postSource;
-    });
+    m_account->deleteResource(m_account->apiUrl(QString("/api/v1/statuses/%1").arg(post->postId())), true, this, {});
 }
