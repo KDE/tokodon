@@ -101,11 +101,9 @@ bool AbstractAccount::hasInstanceUrl() const
 
 QUrl AbstractAccount::apiUrl(const QString &path) const
 {
-    const auto instanceUrl = QUrl::fromUserInput(m_instance_uri);
-
-    auto url = QUrl::fromUserInput(m_instance_uri);
+    QUrl url = QUrl::fromUserInput(m_instance_uri);
     url.setScheme("https");
-    url.setPath(instanceUrl.path() + path);
+    url.setPath(path);
 
     return url;
 }
