@@ -414,7 +414,6 @@ QQC2.ItemDelegate {
 
             visible: active && postContent.visible
             Layout.fillWidth: true
-            Layout.topMargin: active ? Kirigami.Units.largeSpacing : 0
         }
 
         Loader {
