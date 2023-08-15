@@ -351,7 +351,10 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !filtered
+            visible: !filtered && root.content.length !== 0
+            spacing: 0
+
+            Layout.fillWidth: true
 
             RowLayout {
                 Layout.preferredHeight: spoilerTextLabel.contentHeight + Kirigami.Units.gridUnit * 2
