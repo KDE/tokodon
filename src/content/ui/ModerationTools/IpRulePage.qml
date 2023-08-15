@@ -6,7 +6,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
@@ -26,13 +26,13 @@ Kirigami.ScrollablePage {
         mainItem: ColumnLayout {
             spacing: 0
 
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormTextFieldDelegate {
                 id: ip
                 label: i18nc("@info:Enter the domain address of the domain block", "IP*")
                 placeholderText: "192.0.2.0/24"
             }
-            MobileForm.FormDelegateSeparator {above: expireAfter; below: ip}
-            MobileForm.FormComboBoxDelegate {
+            FormCard.FormDelegateSeparator {above: expireAfter; below: ip}
+            FormCard.FormComboBoxDelegate {
                 id: expireAfter
                 text: i18nc("@info:Time after which the rule will be lifted", "Expire After")
                 textRole: "display"
@@ -67,40 +67,46 @@ Kirigami.ScrollablePage {
                 Component.onCompleted: {expireAfter.currentIndex = expireAfter.indexOfValue(IpRulesToolModel.Oneday);
                 }
             }
-            MobileForm.FormDelegateSeparator {above: comment; below: expireAfter}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {above: comment; below: expireAfter}
+            FormCard.FormTextFieldDelegate {
                 id: comment
                 label: i18nc("@info: The comment attached with the ip rule", "Comment")
                 placeholderText: i18n("Optional. Remember why you added this rule.")
 
             }
-            MobileForm.FormDelegateSeparator {above: rule; below: comment}
-            MobileForm.FormCardHeader {
+            FormCard.FormDelegateSeparator { below: comment }
+
+            FormCard.FormHeader {
                 id: rule
                 title: i18nc("@info:The rule attached with the ip rule", "Rule *")
-                subtitle: i18n("Choose what will happen with requests from this IP")
             }
 
-            MobileForm.FormRadioDelegate {
+            QQC2.Label {
+                text: i18n("Choose what will happen with requests from this IP")
+                Layout.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            }
+
+            FormCard.FormRadioDelegate {
                 id: signupLimit
                 text: i18n("Limit sign-ups")
                 description: i18n("New sign-ups will require your approval")
                 checked: true
             }
 
-            MobileForm.FormRadioDelegate {
+            FormCard.FormRadioDelegate {
                 id: signupBlock
                 text: i18n("Block sign-ups")
                 description: i18n("New sign-ups will not be possible")
             }
 
-            MobileForm.FormRadioDelegate {
+            FormCard.FormRadioDelegate {
                 id: accessBlock
                 text: i18n("Block access")
                 description: i18n("Block access to all resources")
             }
 
-            MobileForm.FormDelegateSeparator { below: accessBlock }
+            FormCard.FormDelegateSeparator { below: accessBlock }
         }
 
         standardButtons: Kirigami.Dialog.NoButton

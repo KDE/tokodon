@@ -6,7 +6,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
@@ -30,31 +30,31 @@ Kirigami.ScrollablePage {
         mainItem: ColumnLayout {
             spacing: 0
 
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 text: i18nc("@info The domain on which the block is imposed", "Email domain name")
                 description: emailInfoDialog.domain
                 Layout.fillWidth: true
             }
 
-            MobileForm.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator {}
 
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 text: i18nc("@info Time when the block was imposed.", "Block created at")
                 description: emailInfoDialog.createdAt.toDateString()
                 Layout.fillWidth: true
             }
 
-            MobileForm.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator {}
 
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 text: i18nc("@info The counted accounts signup attempts using that email domain within the last week.", "Account sign-up attempts in this week")
                 description: emailInfoDialog.accountCount
                 Layout.fillWidth: true
             }
 
-            MobileForm.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator {}
 
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 text: i18nc("@info The counted IP signup attempts of that email domain within that day.", "IP sign-up attempts in this week")
                 description: emailInfoDialog.ipCount
                 Layout.fillWidth: true
@@ -91,7 +91,7 @@ Kirigami.ScrollablePage {
         mainItem: ColumnLayout {
             spacing: 0
 
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormTextFieldDelegate {
                 id: email
                 label: i18nc("@info The domain on which the block will be imposed", "Domain *")
                 statusMessage: i18n("This can be the domain name that shows up in the e-mail address or the MX record it uses. They will be checked upon sign-up.")

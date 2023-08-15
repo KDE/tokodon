@@ -7,7 +7,8 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kmasto 1.0
 import Qt.labs.platform 1.1
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 import @QTGRAPHICALEFFECTS_MODULE@
 
 Kirigami.ScrollablePage {
@@ -152,337 +153,331 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         id: layout
 
-        MobileForm.FormCard {
+        FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                Rectangle {
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 9
-                    Layout.fillWidth: true
-                    clip: true
-                    color: Kirigami.Theme.backgroundColor
-                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Rectangle {
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 9
+                Layout.fillWidth: true
+                clip: true
+                color: Kirigami.Theme.backgroundColor
+                Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                    Image {
-                        id: bg
-                        anchors.centerIn: parent
-                        source: root.identity.userLevelIdentity.backgroundUrl
-                        fillMode: Image.PreserveAspectFit
-                        visible: true //change
-                    }
-
-                    QQC2.Pane {
-                        id: pane
-                        visible: true
-                        background: Item {
-                            // Background image
-
-                            FastBlur {
-                                id: blur
-                                source: bg
-                                radius: 48
-                                width: pane.width
-                                height: pane.height
-                            }
-                            ColorOverlay {
-                                width: pane.width
-                                height: pane.height
-                                source: blur
-                                color: "#66808080"
-                            }
-                            Rectangle {
-                                id: strip
-                                color: "#66F0F0F0"
-                                anchors.bottom: parent.bottom;
-                                height: 2 * Kirigami.Units.gridUnit
-                                width: parent.width
-                                visible: children.length > 0
-                            }
-                        }
-                        anchors.left: parent.left
-                        anchors.bottom: parent.bottom;
-                        anchors.right: parent.right
-                        contentItem:
-                            ColumnLayout {
-                            RowLayout {
-                                implicitHeight: Kirigami.Units.gridUnit * 5
-                                Kirigami.Avatar {
-                                    source: root.identity.userLevelIdentity.avatarUrl
-                                }
-
-                                Column {
-                                    Layout.fillWidth: true
-                                    Kirigami.Heading {
-                                        level: 5
-                                        text: root.identity.userLevelIdentity.username
-                                        type: Kirigami.Heading.Primary
-                                    }
-                                    QQC2.Label {
-                                        text: "@" + root.identity.userLevelIdentity.account
-                                    }
-                                }
-                            }
-                        }
-                    }
+                Image {
+                    id: bg
+                    anchors.centerIn: parent
+                    source: root.identity.userLevelIdentity.backgroundUrl
+                    fillMode: Image.PreserveAspectFit
+                    visible: true //change
                 }
 
-                Repeater {
-                    model: root.identity.userLevelIdentity.fields
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 0
-                        Kirigami.Separator {
-                            Layout.fillWidth: true
+                QQC2.Pane {
+                    id: pane
+                    visible: true
+                    background: Item {
+                        // Background image
+
+                        FastBlur {
+                            id: blur
+                            source: bg
+                            radius: 48
+                            width: pane.width
+                            height: pane.height
                         }
+                        ColorOverlay {
+                            width: pane.width
+                            height: pane.height
+                            source: blur
+                            color: "#66808080"
+                        }
+                        Rectangle {
+                            id: strip
+                            color: "#66F0F0F0"
+                            anchors.bottom: parent.bottom;
+                            height: 2 * Kirigami.Units.gridUnit
+                            width: parent.width
+                            visible: children.length > 0
+                        }
+                    }
+                    anchors.left: parent.left
+                    anchors.bottom: parent.bottom;
+                    anchors.right: parent.right
+
+                    contentItem: ColumnLayout {
                         RowLayout {
-                            spacing: 0
-                            QQC2.Pane {
-                                contentItem: QQC2.Label {
-                                    text: modelData.name
-                                    wrapMode: Text.WordWrap
-                                }
-                                Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                                Kirigami.Theme.colorSet: Kirigami.Theme.View
-                                leftPadding: Kirigami.Units.largeSpacing
-                                rightPadding: Kirigami.Units.largeSpacing
-                                bottomPadding: 0
-                                topPadding: 0
+                            implicitHeight: Kirigami.Units.gridUnit * 5
+                            KirigamiComponents.Avatar {
+                                source: root.identity.userLevelIdentity.avatarUrl
                             }
 
-                            QQC2.TextArea {
+                            Column {
                                 Layout.fillWidth: true
-                                Layout.fillHeight: true
-                                readOnly: true
-                                wrapMode: Text.WordWrap
-                                background: Rectangle {
-                                    color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : Kirigami.Theme.backgroundColor
+                                Kirigami.Heading {
+                                    level: 5
+                                    text: root.identity.userLevelIdentity.username
+                                    type: Kirigami.Heading.Primary
                                 }
-                                textFormat: TextEdit.RichText
-                                text: modelData.value
-                                onLinkActivated: Qt.openUrlExternally(link)
-                                MouseArea {
-                                    anchors.fill: parent
-                                    acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                                    cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                                QQC2.Label {
+                                    text: "@" + root.identity.userLevelIdentity.account
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                Kirigami.Separator {
+            Repeater {
+                model: root.identity.userLevelIdentity.fields
+                ColumnLayout {
                     Layout.fillWidth: true
-                }
-                RowLayout {
-                    visible: root.identity.userLevelIdentity.bio
                     spacing: 0
-                    QQC2.Pane {
-                        contentItem: QQC2.Label {
-                            text: i18nc("@info Bio label of account.","Bio")
-                            wrapMode: Text.WordWrap
-                        }
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                        Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                        Kirigami.Theme.colorSet: Kirigami.Theme.View
-                        leftPadding: Kirigami.Units.largeSpacing
-                        rightPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: 0
-                        topPadding: 0
-                    }
-
-                    QQC2.TextArea {
-                        text: root.identity.userLevelIdentity.bio
-                        textFormat: TextEdit.RichText
-                        readOnly: true
+                    Kirigami.Separator {
                         Layout.fillWidth: true
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
-                        Layout.topMargin: Kirigami.Units.smallSpacing
-                        Layout.bottomMargin: Kirigami.Units.smallSpacing
-                        leftPadding: 0
-                        rightPadding: 0
-                        bottomPadding: 0
-                        topPadding: 0
-                        background: null
-                        wrapMode: Text.WordWrap
-                        onLinkActivated: Qt.openUrlExternally(link)
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                            cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                    }
+                    RowLayout {
+                        spacing: 0
+                        QQC2.Pane {
+                            contentItem: QQC2.Label {
+                                text: modelData.name
+                                wrapMode: Text.WordWrap
+                            }
+                            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+                            Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                            Kirigami.Theme.colorSet: Kirigami.Theme.View
+                            leftPadding: Kirigami.Units.largeSpacing
+                            rightPadding: Kirigami.Units.largeSpacing
+                            bottomPadding: 0
+                            topPadding: 0
+                        }
+
+                        QQC2.TextArea {
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            readOnly: true
+                            wrapMode: Text.WordWrap
+                            background: Rectangle {
+                                color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : Kirigami.Theme.backgroundColor
+                            }
+                            textFormat: TextEdit.RichText
+                            text: modelData.value
+                            onLinkActivated: Qt.openUrlExternally(link)
+                            MouseArea {
+                                anchors.fill: parent
+                                acceptedButtons: Qt.NoButton // don't eat clicks on the Text
+                                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                            }
                         }
                     }
+                }
+            }
 
+            Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+            RowLayout {
+                visible: root.identity.userLevelIdentity.bio
+                spacing: 0
+                QQC2.Pane {
+                    contentItem: QQC2.Label {
+                        text: i18nc("@info Bio label of account.","Bio")
+                        wrapMode: Text.WordWrap
+                    }
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+                    leftPadding: Kirigami.Units.largeSpacing
+                    rightPadding: Kirigami.Units.largeSpacing
+                    bottomPadding: 0
+                    topPadding: 0
                 }
 
-                Kirigami.Separator {
+                QQC2.TextArea {
+                    text: root.identity.userLevelIdentity.bio
+                    textFormat: TextEdit.RichText
+                    readOnly: true
                     Layout.fillWidth: true
-                }
-                RowLayout {
-                    visible: root.identity.inviteRequest
-                    spacing: 0
-                    QQC2.Pane {
-                        contentItem: QQC2.Label {
-                            text: i18n("Reasons for joining")
-                            wrapMode: Text.WordWrap
-                        }
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-                        Layout.maximumWidth: Kirigami.Units.gridUnit * 10
-                        Kirigami.Theme.colorSet: Kirigami.Theme.View
-                        leftPadding: Kirigami.Units.largeSpacing
-                        rightPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: 0
-                        topPadding: 0
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    leftPadding: 0
+                    rightPadding: 0
+                    bottomPadding: 0
+                    topPadding: 0
+                    background: null
+                    wrapMode: Text.WordWrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    MouseArea {
+                        anchors.fill: parent
+                        acceptedButtons: Qt.NoButton // don't eat clicks on the Text
+                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
                     }
+                }
 
-                    QQC2.TextArea {
-                        text: root.identity.inviteRequest
-                        textFormat: TextEdit.RichText
-                        readOnly: true
-                        Layout.fillWidth: true
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.rightMargin: Kirigami.Units.largeSpacing
-                        Layout.topMargin: Kirigami.Units.smallSpacing
-                        Layout.bottomMargin: Kirigami.Units.smallSpacing
-                        leftPadding: 0
-                        rightPadding: 0
-                        bottomPadding: 0
-                        topPadding: 0
-                        background: null
+            }
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+            RowLayout {
+                visible: root.identity.inviteRequest
+                spacing: 0
+                QQC2.Pane {
+                    contentItem: QQC2.Label {
+                        text: i18n("Reasons for joining")
                         wrapMode: Text.WordWrap
-                        onLinkActivated: Qt.openUrlExternally(link)
-                        MouseArea {
-                            anchors.fill: parent
-                            acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                            cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                        }
+                    }
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+                    leftPadding: Kirigami.Units.largeSpacing
+                    rightPadding: Kirigami.Units.largeSpacing
+                    bottomPadding: 0
+                    topPadding: 0
+                }
+
+                QQC2.TextArea {
+                    text: root.identity.inviteRequest
+                    textFormat: TextEdit.RichText
+                    readOnly: true
+                    Layout.fillWidth: true
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    leftPadding: 0
+                    rightPadding: 0
+                    bottomPadding: 0
+                    topPadding: 0
+                    background: null
+                    wrapMode: Text.WordWrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    MouseArea {
+                        anchors.fill: parent
+                        acceptedButtons: Qt.NoButton // don't eat clicks on the Text
+                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
                     }
                 }
             }
         }
 
-        MobileForm.FormGridContainer {
+        FormCard.FormGridContainer {
             id: container
 
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
 
             infoCards: [
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.statusesCount
                     subtitle: i18nc("@info:Number of Posts", "Posts")
                 },
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.followersCount
                     subtitle: i18nc("@info:Number of followers.", "Followers")
                 },
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.followingCount
                     subtitle: i18nc("@info:row Number of accounts followed by the account", "Following")
                 },
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.identity.userLevelIdentity.role ? root.identity.userLevelIdentity.role : i18n("No role")
                     subtitle: i18nc("@info Role of the account on this server.", "Role")
                 },
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.lastActive
                     subtitle: i18nc("@info The last time the account was active.", "Last Active")
                 },
-                MobileForm.FormGridContainer.InfoCard {
+                FormCard.FormGridContainer.InfoCard {
                     title: root.identity.loginStatus
                     subtitle: i18nc("@info The current login status of the account.", "Login Status")
                 }
             ]
         }
 
-        MobileForm.FormCard {
+        FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             visible: root.identity.email
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                MobileForm.FormTextDelegate {
-                    visible: root.identity.role
-                    text: i18nc("@info: Role of the user.", "Role")
-                    description: root.identity.role
-                }
+            FormCard.FormTextDelegate {
+                visible: root.identity.role
+                text: i18nc("@info: Role of the user.", "Role")
+                description: root.identity.role
+            }
 
-                MobileForm.FormDelegateSeparator { visible: root.identity.email }
+            FormCard.FormDelegateSeparator { visible: root.identity.email }
 
-                MobileForm.FormTextDelegate {
-                    visible: root.identity.email
-                    text: i18nc("@info: Email of the user.", "Email")
-                    description: root.identity.email
-                }
+            FormCard.FormTextDelegate {
+                visible: root.identity.email
+                text: i18nc("@info: Email of the user.", "Email")
+                description: root.identity.email
+            }
 
-                MobileForm.FormDelegateSeparator {}
+            FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("@info: Email confirmation status of the user.","Email Status")
-                    description: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
-                }
+            FormCard.FormTextDelegate {
+                text: i18nc("@info: Email confirmation status of the user.","Email Status")
+                description: root.identity.emailStatus ? i18n("Confirmed") : i18n("Not Confirmed")
+            }
 
-                MobileForm.FormDelegateSeparator { visible: root.identity.locale }
+            FormCard.FormDelegateSeparator { visible: root.identity.locale }
 
-                MobileForm.FormTextDelegate {
-                    visible: root.identity.locale
-                    text: i18nc("@info: Locale of the user.", "Account Locale")
-                    description: root.identity.locale
-                }
+            FormCard.FormTextDelegate {
+                visible: root.identity.locale
+                text: i18nc("@info: Locale of the user.", "Account Locale")
+                description: root.identity.locale
+            }
 
-                MobileForm.FormDelegateSeparator { visible: root.identity.joined }
+            FormCard.FormDelegateSeparator { visible: root.identity.joined }
 
-                MobileForm.FormTextDelegate {
-                    visible: root.identity.joined
-                    text: i18nc("@info: Joining date of the user","Joined")
-                    description: root.identity.joined.toLocaleDateString()
-                }
+            FormCard.FormTextDelegate {
+                visible: root.identity.joined
+                text: i18nc("@info: Joining date of the user","Joined")
+                description: root.identity.joined.toLocaleDateString()
+            }
 
-                MobileForm.FormDelegateSeparator { visible: root.identity.ips.length > 0 }
+            FormCard.FormDelegateSeparator { visible: root.identity.ips.length > 0 }
 
-                MobileForm.AbstractFormDelegate {
-                    id: ipDelegate
-                    text: i18n("Most recent IP")
+            FormCard.AbstractFormDelegate {
+                id: ipDelegate
+                text: i18n("Most recent IP")
 
-                    contentItem: ColumnLayout {
+                contentItem: ColumnLayout {
+                    QQC2.Label {
+                        text: ipDelegate.text
+                        elide: Text.ElideRight
+                        Accessible.ignored: true
+                        Layout.fillWidth: true
+                    }
+
+                    Repeater {
+                        model: root.identity.ips
+
                         QQC2.Label {
-                            text: ipDelegate.text
+                            text: modelData.ip
                             elide: Text.ElideRight
+                            color: Kirigami.Theme.disabledTextColor
                             Accessible.ignored: true
                             Layout.fillWidth: true
                         }
-
-                        Repeater {
-                            model: root.identity.ips
-
-                            QQC2.Label {
-                                text: modelData.ip
-                                elide: Text.ElideRight
-                                color: Kirigami.Theme.disabledTextColor
-                                Accessible.ignored: true
-                                Layout.fillWidth: true
-                            }
-                        }
                     }
                 }
+            }
 
-                MobileForm.FormDelegateSeparator { visible: root.identity.invitedByIdentity }
+            FormCard.FormDelegateSeparator { visible: root.identity.invitedByIdentity }
 
-                MobileForm.FormTextDelegate {
-                    visible: root.identity.invitedByIdentity
-                    text: i18n("Invited By")
-                    description: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
+            FormCard.FormTextDelegate {
+                visible: root.identity.invitedByIdentity
+                text: i18n("Invited By")
+                description: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
 
-                    leadingPadding: Kirigami.Units.largeSpacing
-                    leading: Kirigami.Avatar {
-                        source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ''
-                        implicitHeight: Kirigami.Units.gridUnit * 2
-                        implicitWidth: Kirigami.Units.gridUnit * 2
-                    }
+                leadingPadding: Kirigami.Units.largeSpacing
+                leading: Kirigami.Avatar {
+                    source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ''
+                    implicitHeight: Kirigami.Units.gridUnit * 2
+                    implicitWidth: Kirigami.Units.gridUnit * 2
                 }
             }
         }

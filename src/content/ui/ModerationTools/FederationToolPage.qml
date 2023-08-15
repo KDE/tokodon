@@ -6,7 +6,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
@@ -26,13 +26,13 @@ Kirigami.ScrollablePage {
         implicitWidth: Kirigami.Units.gridUnit * 20
 
         contentItem: ColumnLayout {
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 text: i18nc("@info:The domain that is allowed to federate", "Domain")
                 description: allowedDomainInfo.domainName
                 Layout.fillWidth: true
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextDelegate {
                 text: i18nc("@info:Time when the domain was allowed to federate.", "Created at")
                 description: allowedDomainInfo.createdAt.toDateString()
                 Layout.fillWidth: true
@@ -64,22 +64,22 @@ Kirigami.ScrollablePage {
         mainItem: ColumnLayout {
             spacing: 0
 
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormTextFieldDelegate {
                 id: domain
                 label: i18nc("@info:Enter the domain address of the domain block", "Domain*")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
                 id: publicComment
                 label: i18n("Public comment")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
                 id: privateComment
                 label: i18n("Private Comment")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormComboBoxDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormComboBoxDelegate {
                 id: severityCombobox
                 text: i18n("Moderation")
                 textRole: "display"
@@ -100,20 +100,20 @@ Kirigami.ScrollablePage {
                 ]
                 Component.onCompleted: severityCombobox.currentIndex = severityCombobox.indexOfValue("silence");
             }
-            MobileForm.FormDelegateSeparator { above: rejectMedia }
-            MobileForm.FormCheckDelegate {
+            FormCard.FormDelegateSeparator { above: rejectMedia }
+            FormCard.FormCheckDelegate {
                 id: rejectMedia
                 text: i18n("Reject media files")
                 description: i18n("Removes locally stored media files and refuses to download any in the future. Irrelevant for suspensions")
             }
-            MobileForm.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
-            MobileForm.FormCheckDelegate {
+            FormCard.FormDelegateSeparator { below: rejectMedia; above: rejectReports }
+            FormCard.FormCheckDelegate {
                 id: rejectReports
                 text: i18n("Reject reports")
                 description: i18n("Ignore all reports coming from this domain. Irrelevant for suspensions")
             }
-            MobileForm.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
-            MobileForm.FormCheckDelegate {
+            FormCard.FormDelegateSeparator { below: rejectReports; above: obfuscateReport }
+            FormCard.FormCheckDelegate {
                 id: obfuscateReport
                 text: i18n("Obfuscate domain name")
                 description: i18n("Partially obfuscate the domain name in the list if advertising the list of domain limitations is enabled")
@@ -146,7 +146,7 @@ Kirigami.ScrollablePage {
 
         contentPadding: 0
 
-        mainItem: MobileForm.FormTextFieldDelegate {
+        mainItem: FormCard.FormTextFieldDelegate {
             id: newAllowedDomain
             label: i18nc("@info:This domain will be able to fetch data from this server and incoming data from it will be processed and stored", "Domain*")
         }

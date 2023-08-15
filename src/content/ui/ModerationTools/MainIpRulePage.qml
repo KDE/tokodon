@@ -6,11 +6,11 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kirigamiaddons.labs.components 1.0 as Components
 import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
 
     property int index
@@ -45,7 +45,7 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Kirigami.PromptDialog {
+    data: Kirigami.PromptDialog {
         id: updateIpRuleDialog
 
         title: i18nc("@title:window", "Update IP Rule")
@@ -58,15 +58,15 @@ Kirigami.ScrollablePage {
         mainItem: ColumnLayout {
             spacing: 0
 
-            MobileForm.FormTextDelegate {
+            FormCard.FormTextDelegate {
                 id: ip
                 text: i18nc("@info IP address of the ip block", "IP")
                 description: root.ip
             }
 
-            MobileForm.FormDelegateSeparator {below: ip; above: expireAfter}
+            FormCard.FormDelegateSeparator {below: ip; above: expireAfter}
 
-            MobileForm.FormComboBoxDelegate {
+            FormCard.FormComboBoxDelegate {
                 id: expireAfter
                 property var currentDate: new Date()
                 text: i18nc("@info Time after which the rule will be lifted", "Expire After")
@@ -102,43 +102,50 @@ Kirigami.ScrollablePage {
                 Component.onCompleted: {expireAfter.currentIndex = expireAfter.indexOfValue(IpRulesToolModel.Oneday);
                 }
             }
-            MobileForm.FormDelegateSeparator {below: expireAfter; above: comment}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {below: expireAfter; above: comment}
+            FormCard.FormTextFieldDelegate {
                 id: comment
                 label: i18nc("@info The comment attached with the ip rule", "Comment")
                 text: root.comment
                 placeholderText: i18n("Optional. Remember why you added this rule.")
 
             }
-            MobileForm.FormDelegateSeparator {below: comment; above: rule}
-            MobileForm.FormCardHeader {
+            FormCard.FormDelegateSeparator {below: comment; above: rule}
+
+            FormCard.FormHeader {
                 id: rule
                 title: i18nc("@info The rule attached with the ip rule", "Rule *")
-                subtitle: i18n("Choose what will happen with requests from this IP")
             }
 
-            MobileForm.FormRadioDelegate {
+            QQC2.Label {
+                text: i18n("Choose what will happen with requests from this IP")
+                Layout.fillWidth: true
+                Layout.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            }
+
+            FormCard.FormRadioDelegate {
                 id: signupLimit
                 text: i18n("Limit sign-ups")
                 description: i18n("New sign-ups will require your approval")
                 onToggled: root.severity = IpInfo.LimitSignUps
             }
 
-            MobileForm.FormRadioDelegate {
+            FormCard.FormRadioDelegate {
                 id: signupBlock
                 text: i18n("Block sign-ups")
                 description: i18n("New sign-ups will not be possible")
                 onToggled: root.severity = IpInfo.BlockSignUps
             }
 
-            MobileForm.FormRadioDelegate {
+            FormCard.FormRadioDelegate {
                 id: accessBlock
                 text: i18n("Block access")
                 description: i18n("Block access to all resources")
                 onToggled: root.severity = IpInfo.BlockAccess
             }
 
-            MobileForm.FormDelegateSeparator {below: accessBlock}
+            FormCard.FormDelegateSeparator {below: accessBlock}
         }
 
         standardButtons: Kirigami.Dialog.NoButton
@@ -161,43 +168,33 @@ Kirigami.ScrollablePage {
         ]
     }
 
-    ColumnLayout {
-        id: layout
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+        FormCard.FormTextDelegate {
+            text: i18n("Blocked at")
+            description: root.createdAt.toLocaleDateString()
+        }
 
-            contentItem: ColumnLayout {
-                spacing: 0
-                MobileForm.FormTextDelegate {
-                    text: i18n("Blocked at")
-                    description: root.createdAt.toLocaleDateString()
-                }
+        FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
+        FormCard.FormTextDelegate {
+            text: i18nc("@info Time after which the rule will be lifted", "Expires at")
+            description: root.expiredAt.toLocaleDateString()
+        }
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("@info Time after which the rule will be lifted", "Expires at")
-                    description: root.expiredAt.toLocaleDateString()
-                }
+        FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
+        FormCard.FormTextDelegate {
+            text: i18nc("@info The comment attached with the ip rule", "Comment")
+            description: root.comment.length !== 0 ? root.comment : i18nc("@info No public comment provided", "None")
+        }
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("@info The comment attached with the ip rule", "Comment")
-                    description: root.comment.length !== 0 ? root.comment : i18nc("@info No public comment provided", "None")
-                }
+        FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormTextDelegate {
-                    text: i18nc("@info The severity to be applied by this IP rule", "Severity")
-                    description: root.displaySeverity
-                }
-
-                MobileForm.FormDelegateSeparator {}
-            }
+        FormCard.FormTextDelegate {
+            text: i18nc("@info The severity to be applied by this IP rule", "Severity")
+            description: root.displaySeverity
         }
     }
 

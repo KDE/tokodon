@@ -6,7 +6,8 @@ import org.kde.kirigami 2.19 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 import "../StatusDelegate"
 
@@ -23,7 +24,7 @@ Kirigami.ScrollablePage {
         accountView.model.ip = ""
     }
 
-    Kirigami.PromptDialog {
+    data: Kirigami.PromptDialog {
         id: textPromptDialog
 
         title: i18n("Advanced Search")
@@ -34,22 +35,22 @@ Kirigami.ScrollablePage {
         implicitWidth: Kirigami.Units.gridUnit * 20
 
         contentItem: ColumnLayout {
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormTextFieldDelegate {
                 id: username
                 label: i18nc("@info:placeholder Username for searching accounts", "Username:")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
                 id: displayName
                 label: i18nc("@info:placeholder display name for searching accounts", "Display Name:")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
                 id: email
                 label: i18nc("@info:placeholder email for searching accounts", "Email:")
             }
-            MobileForm.FormDelegateSeparator {}
-            MobileForm.FormTextFieldDelegate {
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
                 id: ip
                 label: i18nc("@info:placeholder ip for searching accounts", "IP:")
             }
@@ -223,7 +224,7 @@ Kirigami.ScrollablePage {
         id: accountView
         model: AccountsToolModel{}
 
-        delegate: QQC2.ItemDelegate {
+        delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
             required property var index
@@ -235,8 +236,7 @@ Kirigami.ScrollablePage {
                 identity: delegate.identity,
                 index: delegate.index,
                 model: accountView.model
-                },
-            )
+            })
 
             contentItem: Kirigami.FlexColumn {
                 spacing: 0
@@ -302,5 +302,3 @@ Kirigami.ScrollablePage {
         }
     }
 }
-
-
