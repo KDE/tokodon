@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-14 00:47+0000\n"
-"PO-Revision-Date: 2023-08-13 08:29+0200\n"
+"POT-Creation-Date: 2023-08-15 00:45+0000\n"
+"PO-Revision-Date: 2023-08-14 11:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -138,27 +138,23 @@ msgid "Featured Accounts"
 msgstr "Predstavljeni računi"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 priljubljenih"
-msgstr[1] "%1 priljubljenih"
-msgstr[2] "%1 priljubljenih"
+msgstr[0] "%1 priljubljen"
+msgstr[1] "%1 priljubljena"
+msgstr[2] "%1 priljubljeni"
 msgstr[3] "%1 priljubljenih"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boosts"
+#, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 pospeškov"
-msgstr[1] "%1 pospeškov"
-msgstr[2] "%1 pospeškov"
+msgstr[0] "%1 pospešek"
+msgstr[1] "%1 pospeška"
+msgstr[2] "%1 pospeški"
 msgstr[3] "%1 pospeškov"
 
 #: account/socialgraphmodel.cpp:52
@@ -421,40 +417,34 @@ msgid "Click to add a note"
 msgstr "Kliknite za dodajanje opombe"
 
 #: content/ui/AccountInfo.qml:467
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of statuses"
-#| msgid "<b>%1</b> posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
-msgstr[0] "<b>%1</b> objav"
-msgstr[1] "<b>%1</b> objav"
-msgstr[2] "<b>%1</b> objav"
+msgstr[0] "<b>%1</b> objava"
+msgstr[1] "<b>%1</b> objavi"
+msgstr[2] "<b>%1</b> objave"
 msgstr[3] "<b>%1</b> objav"
 
 #: content/ui/AccountInfo.qml:479
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of followers"
-#| msgid "<b>%1</b> followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
-msgstr[0] "<b>%1</b> sledilcev"
-msgstr[1] "<b>%1</b> sledilcev"
-msgstr[2] "<b>%1</b> sledilcev"
+msgstr[0] "<b>%1</b> sledilec"
+msgstr[1] "<b>%1</b> sledilca"
+msgstr[2] "<b>%1</b> sledilci"
 msgstr[3] "<b>%1</b> sledilcev"
 
 #: content/ui/AccountInfo.qml:491
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of followers"
-#| msgid "<b>%1</b> followers"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "<b>%1</b> sledilcev"
-msgstr[1] "<b>%1</b> sledilcev"
-msgstr[2] "<b>%1</b> sledilcev"
-msgstr[3] "<b>%1</b> sledilcev"
+msgstr[0] "<b>%1</b> sledi"
+msgstr[1] "<b>%1</b> sledita"
+msgstr[2] "<b>%1</b> sledijo"
+msgstr[3] "<b>%1</b> sledi"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
@@ -558,13 +548,12 @@ msgid "Trending Tags"
 msgstr "Značke v trendu"
 
 #: content/ui/ExplorePage.qml:149
-#, fuzzy, kde-format
-#| msgid "%1 people are talking"
+#, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] "%1 ljudi se pogovarja"
-msgstr[1] "%1 ljudi se pogovarja"
-msgstr[2] "%1 ljudi se pogovarja"
+msgstr[0] "%1 človek se pogovarja"
+msgstr[1] "%1 človeka se pogovarjata"
+msgstr[2] "%1 ljudje se pogovarjajo"
 msgstr[3] "%1 ljudi se pogovarja"
 
 #: content/ui/ExplorePage.qml:166
@@ -688,88 +677,83 @@ msgstr "Zaznamki"
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:14
-#, kde-format
-msgid "Accounts Tool Page"
-msgstr "Stran orodij računov"
-
-#: content/ui/ModerationTools/AccountToolPage.qml:30
-#: content/ui/ModerationTools/AccountToolPage.qml:214
+#: content/ui/ModerationTools/AccountToolPage.qml:29
+#: content/ui/ModerationTools/AccountToolPage.qml:213
 #, kde-format
 msgid "Advanced Search"
 msgstr "Napredno iskanje"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:40
+#: content/ui/ModerationTools/AccountToolPage.qml:39
 #, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "Uporabniško ime:"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:45
+#: content/ui/ModerationTools/AccountToolPage.qml:44
 #, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
 msgstr "Ime zaslona:"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:50
+#: content/ui/ModerationTools/AccountToolPage.qml:49
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
 msgstr "E-naslov:"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:55
+#: content/ui/ModerationTools/AccountToolPage.qml:54
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
 msgstr "IP:"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:62
+#: content/ui/ModerationTools/AccountToolPage.qml:61
 #, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:73
+#: content/ui/ModerationTools/AccountToolPage.qml:72
 #, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:78
-#: content/ui/ModerationTools/FederationToolPage.qml:127
-#: content/ui/ModerationTools/FederationToolPage.qml:158
-#: content/ui/ModerationTools/IpRulePage.qml:110
+#: content/ui/ModerationTools/AccountToolPage.qml:77
+#: content/ui/ModerationTools/FederationToolPage.qml:126
+#: content/ui/ModerationTools/FederationToolPage.qml:157
+#: content/ui/ModerationTools/IpRulePage.qml:109
 #: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:95
+#: content/ui/ModerationTools/AccountToolPage.qml:94
 #, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
 msgstr "Lokacija"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:108
+#: content/ui/ModerationTools/AccountToolPage.qml:107
 #, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:112
+#: content/ui/ModerationTools/AccountToolPage.qml:111
 #, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Lokalno"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:116
+#: content/ui/ModerationTools/AccountToolPage.qml:115
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
 msgstr "Oddaljeno"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:130
+#: content/ui/ModerationTools/AccountToolPage.qml:129
 #, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
@@ -777,102 +761,96 @@ msgctxt ""
 msgid "Moderation Status"
 msgstr "Stanje moderiranja"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:141
+#: content/ui/ModerationTools/AccountToolPage.qml:140
 #, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:145
+#: content/ui/ModerationTools/AccountToolPage.qml:144
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
 msgstr "Aktiven"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:149
+#: content/ui/ModerationTools/AccountToolPage.qml:148
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
 msgstr "V teku"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:153
+#: content/ui/ModerationTools/AccountToolPage.qml:152
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
 msgstr "Onemogočen"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:157
+#: content/ui/ModerationTools/AccountToolPage.qml:156
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
 msgstr "Utišan"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:161
+#: content/ui/ModerationTools/AccountToolPage.qml:160
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
 msgstr "Suspendiran"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:174
+#: content/ui/ModerationTools/AccountToolPage.qml:173
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
 msgstr "Vloga"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:188
+#: content/ui/ModerationTools/AccountToolPage.qml:187
 #, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Vse"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:192
+#: content/ui/ModerationTools/AccountToolPage.qml:191
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
 msgstr "Moderator"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:196
+#: content/ui/ModerationTools/AccountToolPage.qml:195
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
 msgstr "Skrbnik"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:200
+#: content/ui/ModerationTools/AccountToolPage.qml:199
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
 msgstr "Lastnik"
 
-#: content/ui/ModerationTools/AccountToolPage.qml:300
+#: content/ui/ModerationTools/AccountToolPage.qml:299
 #, kde-format
 msgid "No accounts found"
 msgstr "Ni najdenih računov"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:15
-#, kde-format
-msgctxt "@title"
-msgid "Email Block Tool Page"
-msgstr "Stran orodja za bloke e-pošte"
-
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:26
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "Informacija o domeni e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:35
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:34
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "Ime domene e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:43
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:42
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Blok ustvarjen ob"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:51
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:50
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -880,44 +858,44 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "Poskusi prijav na račun tega tedna"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:59
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:58
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "IP poskusi prijave tega tedna"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:68
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:106
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:67
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
 msgstr "Zbriši blok e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:77
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:76
 #, kde-format
 msgid "Email block deleted"
 msgstr "Blok e-pošte zbrisan"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:87
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:86
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "Novi domenski blok e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:96
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Domena *"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:98
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -926,124 +904,118 @@ msgstr ""
 "To je lahko ime domene, ki je prikazano v e-poštnem naslovu, ali zapis MX, "
 "ki ga uporablja. Preverjeni bodo ob prijavi."
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
 msgstr "Ponovno razreši domeno"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:115
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:114
 #, kde-format
 msgid "New email block added"
 msgstr "Dodan nov blok e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:158
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:157
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "%1 poskusov prijave v zadnjem tednu"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:180
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:179
 #, kde-format
 msgid "No email blocks found"
 msgstr "Ni najdenih blokov e-pošte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:193
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
 msgstr "Ustvari blok e-pošte"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:15
-#, kde-format
-msgctxt "@title"
-msgid "Federation Tool Page"
-msgstr "Stran orodja za federiranje"
-
-#: content/ui/ModerationTools/FederationToolPage.qml:25
+#: content/ui/ModerationTools/FederationToolPage.qml:24
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "Dovoljena informacija o domeni"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:31
+#: content/ui/ModerationTools/FederationToolPage.qml:30
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "Domena"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:37
+#: content/ui/ModerationTools/FederationToolPage.qml:36
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Ustvarjena ob"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:46
+#: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgid "Disallow Federation with Domain"
 msgstr "Prekini dovoljenje za federiranje z domeno"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:50
+#: content/ui/ModerationTools/FederationToolPage.qml:49
 #, kde-format
 msgid "Disallowed federation with the domain"
 msgstr "Prekinjena federiranja z domeno"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:60
+#: content/ui/ModerationTools/FederationToolPage.qml:59
 #, kde-format
 msgid "Add Domain Block"
 msgstr "Dodaj domenski blok"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:70
+#: content/ui/ModerationTools/FederationToolPage.qml:69
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "Domena*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:75
+#: content/ui/ModerationTools/FederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
 #, kde-format
 msgid "Public comment"
 msgstr "Javni komentar"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:80
+#: content/ui/ModerationTools/FederationToolPage.qml:79
 #, kde-format
 msgid "Private Comment"
 msgstr "Zasebni komentar"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:85
+#: content/ui/ModerationTools/FederationToolPage.qml:84
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
 msgstr "Moderacija"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:90
+#: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "Tišina"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:94
+#: content/ui/ModerationTools/FederationToolPage.qml:93
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Suspendiraj"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:98
+#: content/ui/ModerationTools/FederationToolPage.qml:97
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Noben"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/FederationToolPage.qml:106
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
 msgstr "Zavrni medijske datoteke"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:108
+#: content/ui/ModerationTools/FederationToolPage.qml:107
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
 #, kde-format
 msgid ""
@@ -1053,26 +1025,26 @@ msgstr ""
 "Odstrani lokalno shranjene medijske datoteke in zavrni prenos katerekoli v "
 "bodoče. Nepomembno za suspenzije"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
 msgstr "Zavrni poročila"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:114
+#: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
 "Prezrite vsa poročila, ki prihajajo iz te domene. Nepomembno za suspenzije"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/FederationToolPage.qml:118
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "Zamešaj ime domene"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:120
+#: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
 #, kde-format
 msgid ""
@@ -1082,25 +1054,25 @@ msgstr ""
 "Delno zamešajte ime domene na seznamu, če je oglaševanje seznama omejitev "
 "domene omogočeno"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:132
-#: content/ui/ModerationTools/FederationToolPage.qml:163
+#: content/ui/ModerationTools/FederationToolPage.qml:131
+#: content/ui/ModerationTools/FederationToolPage.qml:162
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
 msgstr "Ustvari blok"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:137
+#: content/ui/ModerationTools/FederationToolPage.qml:136
 #, kde-format
 msgid "New domain block added"
 msgstr "Dodan nov blok domene"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:146
-#: content/ui/ModerationTools/FederationToolPage.qml:316
+#: content/ui/ModerationTools/FederationToolPage.qml:145
+#: content/ui/ModerationTools/FederationToolPage.qml:315
 #, kde-format
 msgid "Allow Federation with Domain"
 msgstr "Dovoli federacijo z domeno"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:152
+#: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -1108,12 +1080,12 @@ msgctxt ""
 msgid "Domain*"
 msgstr "Domena*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:167
+#: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
 msgid "New Allowed Domain Added"
 msgstr "Dodana nova dovoljena domena"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:180
+#: content/ui/ModerationTools/FederationToolPage.qml:179
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -1122,195 +1094,190 @@ msgstr ""
 "Možnost dovoljene domene je na voljo za pojavke z omejenim federiranjem "
 "omogočena"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:187
+#: content/ui/ModerationTools/FederationToolPage.qml:186
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "Moderiranje"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:202
+#: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "Blokirane domene"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:206
+#: content/ui/ModerationTools/FederationToolPage.qml:205
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "Dovoljene domene"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:272
+#: content/ui/ModerationTools/FederationToolPage.qml:271
 #, kde-format
 msgid "Allowed for federation"
 msgstr "Dovoljene za federiranje"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:295
+#: content/ui/ModerationTools/FederationToolPage.qml:294
 #, kde-format
 msgid "No federations found"
 msgstr "Ni najdenih federiranj"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:307
+#: content/ui/ModerationTools/FederationToolPage.qml:306
 #, kde-format
 msgid "Add New Domain Block"
 msgstr "Dodaj novi domenski blok"
 
-#: content/ui/ModerationTools/IpRulePage.qml:15
-#, kde-format
-msgid "IP Rule Tool Page"
-msgstr "Stran orodja IP pravila"
-
-#: content/ui/ModerationTools/IpRulePage.qml:20
+#: content/ui/ModerationTools/IpRulePage.qml:19
 #, kde-format
 msgid "New IP Rule"
 msgstr "Novo IP pravilo"
 
-#: content/ui/ModerationTools/IpRulePage.qml:32
+#: content/ui/ModerationTools/IpRulePage.qml:31
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
 msgstr "IP*"
 
-#: content/ui/ModerationTools/IpRulePage.qml:38
+#: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "Poteče"
 
-#: content/ui/ModerationTools/IpRulePage.qml:43
+#: content/ui/ModerationTools/IpRulePage.qml:42
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 dan"
 
-#: content/ui/ModerationTools/IpRulePage.qml:47
+#: content/ui/ModerationTools/IpRulePage.qml:46
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2 tedna"
 
-#: content/ui/ModerationTools/IpRulePage.qml:51
+#: content/ui/ModerationTools/IpRulePage.qml:50
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1 mesec"
 
-#: content/ui/ModerationTools/IpRulePage.qml:55
+#: content/ui/ModerationTools/IpRulePage.qml:54
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6 mesecev"
 
-#: content/ui/ModerationTools/IpRulePage.qml:59
+#: content/ui/ModerationTools/IpRulePage.qml:58
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1 leto"
 
-#: content/ui/ModerationTools/IpRulePage.qml:63
+#: content/ui/ModerationTools/IpRulePage.qml:62
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3 leta"
 
-#: content/ui/ModerationTools/IpRulePage.qml:74
+#: content/ui/ModerationTools/IpRulePage.qml:73
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
 msgstr "Komentar"
 
-#: content/ui/ModerationTools/IpRulePage.qml:75
+#: content/ui/ModerationTools/IpRulePage.qml:74
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
 msgstr "Neobvezno. Zapomni si, zakaj ste dodali to pravilo."
 
-#: content/ui/ModerationTools/IpRulePage.qml:81
+#: content/ui/ModerationTools/IpRulePage.qml:80
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "Pravilo *"
 
-#: content/ui/ModerationTools/IpRulePage.qml:82
+#: content/ui/ModerationTools/IpRulePage.qml:81
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
 msgstr "Izberite, kaj se bo zgodilo z zahtevami s tega IP-ja"
 
-#: content/ui/ModerationTools/IpRulePage.qml:87
+#: content/ui/ModerationTools/IpRulePage.qml:86
 #: content/ui/ModerationTools/MainIpRulePage.qml:122
 #, kde-format
 msgid "Limit sign-ups"
 msgstr "Omeji prijave"
 
-#: content/ui/ModerationTools/IpRulePage.qml:88
+#: content/ui/ModerationTools/IpRulePage.qml:87
 #: content/ui/ModerationTools/MainIpRulePage.qml:123
 #, kde-format
 msgid "New sign-ups will require your approval"
 msgstr "Nove prijave bodo zahtevale vašo odobritev"
 
-#: content/ui/ModerationTools/IpRulePage.qml:94
+#: content/ui/ModerationTools/IpRulePage.qml:93
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Block sign-ups"
 msgstr "Blokiraj prijave"
 
-#: content/ui/ModerationTools/IpRulePage.qml:95
+#: content/ui/ModerationTools/IpRulePage.qml:94
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will not be possible"
 msgstr "Nove prijave ne bodo možne"
 
-#: content/ui/ModerationTools/IpRulePage.qml:100
+#: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block access"
 msgstr "Blokiraj dostop"
 
-#: content/ui/ModerationTools/IpRulePage.qml:101
+#: content/ui/ModerationTools/IpRulePage.qml:100
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "Block access to all resources"
 msgstr "Blokiraj dostop do vseh virov"
 
-#: content/ui/ModerationTools/IpRulePage.qml:115
+#: content/ui/ModerationTools/IpRulePage.qml:114
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "Ustvari IP pravilo"
 
-#: content/ui/ModerationTools/IpRulePage.qml:119
+#: content/ui/ModerationTools/IpRulePage.qml:118
 #, kde-format
 msgid "New IP rule added"
 msgstr "Novo IP pravilo dodano"
 
-#: content/ui/ModerationTools/IpRulePage.qml:145
+#: content/ui/ModerationTools/IpRulePage.qml:144
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "Omeji prijave"
 
-#: content/ui/ModerationTools/IpRulePage.qml:147
+#: content/ui/ModerationTools/IpRulePage.qml:146
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "Blokiraj prijave"
 
-#: content/ui/ModerationTools/IpRulePage.qml:149
+#: content/ui/ModerationTools/IpRulePage.qml:148
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "Blokiraj dostop"
 
-#: content/ui/ModerationTools/IpRulePage.qml:196
+#: content/ui/ModerationTools/IpRulePage.qml:195
 #, kde-format
 msgid "No IP rules found"
 msgstr "Ni najdenih IP pravil"
 
-#: content/ui/ModerationTools/IpRulePage.qml:208
+#: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
@@ -1785,24 +1752,31 @@ msgid "Update IP Rule"
 msgstr "Posodobi IP pravilo"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:15
-#: content/ui/Settings/AccountsCard.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgctxt "@title"
 msgid "Accounts"
 msgstr "Računi"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Federation"
+msgctxt "@title"
 msgid "Federation"
 msgstr "Federacija"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
-#, kde-format
-msgid "Ip rules"
+#, fuzzy, kde-format
+#| msgid "Ip rules"
+msgctxt "@title"
+msgid "IP Rules"
 msgstr "Ip pravila"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:33
-#, kde-format
-msgid "Email block"
+#, fuzzy, kde-format
+#| msgid "Email block"
+msgctxt "@title"
+msgid "Email Blocks"
 msgstr "Blok e-pošte"
 
 #: content/ui/NotificationPage.qml:36
@@ -1871,6 +1845,11 @@ msgstr "Iskanje ljudi, oznak in objav"
 #, kde-format
 msgid "Hashtag"
 msgstr "Ključnik"
+
+#: content/ui/Settings/AccountsCard.qml:23
+#, kde-format
+msgid "Accounts"
+msgstr "Računi"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -2545,36 +2524,33 @@ msgstr "prek %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
-#, fuzzy, kde-format
-#| msgid "%1 Reply"
+#, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
 msgstr[0] "%1 Odgovor"
-msgstr[1] "%1 Odgovor"
-msgstr[2] "%1 Odgovor"
-msgstr[3] "%1 Odgovor"
+msgstr[1] "%1 Odgovora"
+msgstr[2] "%1 Odgovori"
+msgstr[3] "%1 Odgovorov"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgid "%1 Favorite"
+#, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
 msgstr[0] "%1 Priljubljen"
-msgstr[1] "%1 Priljubljen"
-msgstr[2] "%1 Priljubljen"
-msgstr[3] "%1 Priljubljen"
+msgstr[1] "%1 Priljubljena"
+msgstr[2] "%1 Priljubljeni"
+msgstr[3] "%1 Priljubljenih"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:594
 #: content/ui/StatusDelegate/StatusDelegate.qml:595
-#, fuzzy, kde-format
-#| msgid "%1 Boost"
+#, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
 msgstr[0] "%1 Pospešek"
-msgstr[1] "%1 Pospešek"
-msgstr[2] "%1 Pospešek"
-msgstr[3] "%1 Pospešek"
+msgstr[1] "%1 Pospeška"
+msgstr[2] "%1 Pospeški"
+msgstr[3] "%1 Pospeškov"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2934,6 +2910,20 @@ msgstr "Vir"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
+
+#~ msgid "Accounts Tool Page"
+#~ msgstr "Stran orodij računov"
+
+#~ msgctxt "@title"
+#~ msgid "Email Block Tool Page"
+#~ msgstr "Stran orodja za bloke e-pošte"
+
+#~ msgctxt "@title"
+#~ msgid "Federation Tool Page"
+#~ msgstr "Stran orodja za federiranje"
+
+#~ msgid "IP Rule Tool Page"
+#~ msgstr "Stran orodja IP pravila"
 
 #~ msgctxt "@label User's number of followed accounts"
 #~ msgid "<b>%1</b> following"
