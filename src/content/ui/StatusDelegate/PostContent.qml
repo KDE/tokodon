@@ -29,6 +29,7 @@ QQC2.TextArea {
         }
         </style>" + root.content
     textFormat: TextEdit.RichText
+    topPadding: 0
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
