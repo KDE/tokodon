@@ -125,7 +125,21 @@ int main(int argc, char *argv[])
                      i18n("Mastodon client"),
                      KAboutLicense::GPL_V3,
                      i18n("© 2021-2023 Carl Schwan, 2021-2023 KDE Community"));
-    about.addAuthor(i18n("Carl Schwan"), i18n("Maintainer"), QStringLiteral("carl@carlschwan.eu"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    about.addAuthor(i18n("Carl Schwan"), i18n("Maintainer"), QStringLiteral("carl@carlschwan.eu"), QStringLiteral("https://carlschwan.eu"));
+    about.addAuthor(i18n("Joshua Goins"), i18n("Maintainer"), QStringLiteral("josh@redstrate.com"), QStringLiteral("https://redstrate.com/"));
+#else
+    about.addAuthor(i18n("Carl Schwan"),
+                    i18n("Maintainer"),
+                    QStringLiteral("carl@carlschwan.eu"),
+                    QStringLiteral("https://carlschwan.eu"),
+                    QStringLiteral("https://carlschwan.eu/avatar.png"));
+    about.addAuthor(i18n("Joshua Goins"),
+                    i18n("Maintainer"),
+                    QStringLiteral("josh@redstrate.com"),
+                    QStringLiteral("https://redstrate.com/"),
+                    QStringLiteral("https://redstrate.com/rss-image.png"));
+#endif
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
     about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=tokodon");
