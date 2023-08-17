@@ -376,6 +376,10 @@ public:
 
     Q_INVOKABLE void mutateRemotePost(const QString &url, const QString &verb);
 
+    /// Fetches OEmbed data for a post.
+    /// @param QString url the url of the post to fetch.
+    Q_INVOKABLE void fetchOEmbed(const QString &id, Identity *identity);
+
     /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
     QString settingsGroupName() const;
 
@@ -471,6 +475,10 @@ Q_SIGNALS:
     /// Emitted when a registration error has occurred.
     /// \param json The JSON body for further processing
     void registrationError(const QString &json);
+
+    /// Emitted when the oembed data is successfully returned.
+    /// \see fetchOEmbed
+    void fetchedOEmbed(const QString &html);
 
 protected:
     QString m_name;

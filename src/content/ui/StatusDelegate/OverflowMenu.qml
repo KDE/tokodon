@@ -4,6 +4,7 @@
 
 import QtQuick
 import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
 
 import ".."
@@ -48,6 +49,13 @@ QQC2.Menu {
             Clipboard.saveText(root.url)
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
+    }
+
+    QQC2.MenuItem {
+        icon.name: "view-web-browser-dom-tree"
+        text: i18nc("@action Open embed into website dialog", "Embed")
+
+        onTriggered: AccountManager.selectedAccount.fetchOEmbed(root.postId, root.authorIdentity)
     }
 
     QQC2.MenuSeparator {

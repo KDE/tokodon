@@ -754,6 +754,22 @@ void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
     });
 }
 
+void AbstractAccount::fetchOEmbed(const QString &id, Identity *identity)
+{
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("url"), QStringLiteral("%1/@%2/%3").arg(m_instance_uri, identity->username(), id));
+
+    QUrl oembedUrl = apiUrl(QStringLiteral("/api/oembed"));
+    oembedUrl.setQuery(query);
+
+    get(oembedUrl, false, this, [this](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.object().contains("html"_L1)) {
+            Q_EMIT fetchedOEmbed(doc.object()["html"_L1].toString());
+        }
+    });
+}
+
 bool AbstractAccount::isRegistered() const
 {
     return !m_client_id.isEmpty() && !m_client_secret.isEmpty();

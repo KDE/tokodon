@@ -670,4 +670,34 @@ Kirigami.ApplicationWindow {
         function onXChanged() { saveWindowGeometryTimer.restart(); }
         function onYChanged() { saveWindowGeometryTimer.restart(); }
     }
+
+    Connections {
+        target: AccountManager.selectedAccount
+
+        function onFetchedOEmbed(html) {
+            embedDialog.active = true;
+            embedDialog.item.html = html;
+            embedDialog.item.open()
+        }
+    }
+
+    Loader {
+        id: embedDialog
+
+        active: false
+        sourceComponent: Kirigami.PromptDialog {
+            property alias html: textArea.text
+
+            title: i18nc("@title", "Embed Information")
+            mainItem: QQC2.TextArea {
+                id: textArea
+
+                readOnly: true
+
+                Kirigami.SpellCheck.enabled: false
+            }
+            standardButtons: Kirigami.Dialog.Ok
+            showCloseButton: false
+        }
+    }
 }
