@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:46+0000\n"
-"PO-Revision-Date: 2023-08-15 09:31+0200\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 20:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -557,18 +557,16 @@ msgstr[2] "%1 ljudje se pogovarjajo"
 msgstr[3] "%1 ljudi se pogovarja"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Objave v trendu"
+msgstr "Ni objav v trendu"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Značke v trendu"
+msgstr "Ni značk v trendu"
 
 #: content/ui/LanguageSelector.qml:66
 #, kde-format
@@ -604,11 +602,9 @@ msgid "Instance Url:"
 msgstr "Url pojavka:"
 
 #: content/ui/LoginPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open Moderation Tools"
+#, kde-format
 msgid "Enable moderation tools"
-msgstr "Odpri orodja moderiranja"
+msgstr "Omogoči orodja moderiranja"
 
 #: content/ui/LoginPage.qml:46
 #, kde-format
@@ -616,6 +612,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging into your server."
 msgstr ""
+"Dovolite Tokodonu dostop do orodij za moderiranje. Poskusite to onemogočiti, "
+"če imate težave pri prijavi na vaš strežnik."
 
 #: content/ui/LoginPage.qml:54
 #, kde-format
@@ -2212,17 +2210,15 @@ msgid "Remove"
 msgstr "Odstrani"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr "Cilj"
+msgstr "Opis"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
 msgid "Focal point"
-msgstr ""
+msgstr "Žariščna točka"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
@@ -2306,7 +2302,7 @@ msgstr "Kaj je novega?"
 #: content/ui/StatusComposer/StatusComposer.qml:247
 #, kde-format
 msgid "All supported formats"
-msgstr ""
+msgstr "Vsi podprti formati"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
@@ -2314,66 +2310,68 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"Vsi podprti formati (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *."
+"webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "Slika JPEG (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:250
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "Slika PNG (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:251
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "Slika GIF (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "Slika WebP (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "Slika HEIC (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "Slika HEIF (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "Slika AVIF (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "Video WebM (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "Video MPEG-4 (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "Video M4V (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "Video QuickTime (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Vse datoteke (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
@@ -2490,7 +2488,7 @@ msgid "Copy Link to This Post"
 msgstr "Kopiraj povezavo na to objavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
@@ -2561,52 +2559,52 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:366
+#: content/ui/StatusDelegate/StatusDelegate.qml:369
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Vsebinsko opozorilo</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show Less"
 msgstr "Prikaži manj"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show More"
 msgstr "Prikaži več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:471
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:491
+#: content/ui/StatusDelegate/StatusDelegate.qml:493
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:527
+#: content/ui/StatusDelegate/StatusDelegate.qml:529
 #, kde-format
 msgid "via %1"
 msgstr "prek %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:559
-#: content/ui/StatusDelegate/StatusDelegate.qml:560
+#: content/ui/StatusDelegate/StatusDelegate.qml:561
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
@@ -2615,8 +2613,8 @@ msgstr[1] "%1 Odgovora"
 msgstr[2] "%1 Odgovori"
 msgstr[3] "%1 Odgovorov"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:571
-#: content/ui/StatusDelegate/StatusDelegate.qml:572
+#: content/ui/StatusDelegate/StatusDelegate.qml:573
+#: content/ui/StatusDelegate/StatusDelegate.qml:574
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
@@ -2625,8 +2623,8 @@ msgstr[1] "%1 Priljubljena"
 msgstr[2] "%1 Priljubljeni"
 msgstr[3] "%1 Priljubljenih"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:590
-#: content/ui/StatusDelegate/StatusDelegate.qml:591
+#: content/ui/StatusDelegate/StatusDelegate.qml:592
+#: content/ui/StatusDelegate/StatusDelegate.qml:593
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"

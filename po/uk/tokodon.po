@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:46+0000\n"
-"PO-Revision-Date: 2023-08-15 09:48+0300\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 07:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -560,18 +560,16 @@ msgstr[2] "Розмовляє %1 людей"
 msgstr[3] "Розмовляє %1 людина"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Тенденції у дописах"
+msgstr "Немає тенденцій у дописах"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Тенденції у мітках"
+msgstr "Немає тенденцій у мітках"
 
 #: content/ui/LanguageSelector.qml:66
 #, kde-format
@@ -609,11 +607,9 @@ msgid "Instance Url:"
 msgstr "Адреса екземпляра:"
 
 #: content/ui/LoginPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open Moderation Tools"
+#, kde-format
 msgid "Enable moderation tools"
-msgstr "Відкрити засоби модерації"
+msgstr "Увімкнути засоби модерації"
 
 #: content/ui/LoginPage.qml:46
 #, kde-format
@@ -621,6 +617,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging into your server."
 msgstr ""
+"Дозволити Tokodon доступ до засобів модерації. Спробуйте вимкнути, якщо у "
+"вас виникають проблеми зі з'єднанням із сервером."
 
 #: content/ui/LoginPage.qml:54
 #, kde-format
@@ -2224,17 +2222,15 @@ msgid "Remove"
 msgstr "Вилучити"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr "Призначення"
+msgstr "Опис"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
 msgid "Focal point"
-msgstr ""
+msgstr "Точка фокусування"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
@@ -2318,7 +2314,7 @@ msgstr "Що нового?"
 #: content/ui/StatusComposer/StatusComposer.qml:247
 #, kde-format
 msgid "All supported formats"
-msgstr ""
+msgstr "Усі підтримувані формати"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
@@ -2326,66 +2322,68 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"усі підтримувані формати (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "зображення JPEG (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:250
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "зображення PNG (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:251
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "зображення GIF (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "зображення WebP (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "зображення HEIC (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "зображення HEIF (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "зображення AVIF (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "відео WebM (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "відео MPEG-4 (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "відео M4V (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "відео QuickTime (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "усі файли (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
@@ -2502,7 +2500,7 @@ msgid "Copy Link to This Post"
 msgstr "Копіювати посилання на цій допис"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Вилучити закладку"
@@ -2573,52 +2571,52 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Інше"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:366
+#: content/ui/StatusDelegate/StatusDelegate.qml:369
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Попередження щодо вмісту</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show Less"
 msgstr "Показати менше"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show More"
 msgstr "Докладніше"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:471
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:491
+#: content/ui/StatusDelegate/StatusDelegate.qml:493
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Улюблене"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:527
+#: content/ui/StatusDelegate/StatusDelegate.qml:529
 #, kde-format
 msgid "via %1"
 msgstr "з використанням %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:559
-#: content/ui/StatusDelegate/StatusDelegate.qml:560
+#: content/ui/StatusDelegate/StatusDelegate.qml:561
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
@@ -2627,8 +2625,8 @@ msgstr[1] "%1 відповіді"
 msgstr[2] "%1 відповідей"
 msgstr[3] "%1 відповідь"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:571
-#: content/ui/StatusDelegate/StatusDelegate.qml:572
+#: content/ui/StatusDelegate/StatusDelegate.qml:573
+#: content/ui/StatusDelegate/StatusDelegate.qml:574
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
@@ -2637,8 +2635,8 @@ msgstr[1] "%1 улюблених"
 msgstr[2] "%1 улюблених"
 msgstr[3] "%1 улюблене"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:590
-#: content/ui/StatusDelegate/StatusDelegate.qml:591
+#: content/ui/StatusDelegate/StatusDelegate.qml:592
+#: content/ui/StatusDelegate/StatusDelegate.qml:593
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"

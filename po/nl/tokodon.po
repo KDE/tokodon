@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:46+0000\n"
-"PO-Revision-Date: 2023-08-15 16:52+0200\n"
+"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"PO-Revision-Date: 2023-08-16 11:25+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -547,18 +547,16 @@ msgstr[0] "%1 personen zijn aan het praten"
 msgstr[1] "%1 personen zijn aan het praten"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Trending berichten"
+msgstr "Geen trending berichten"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Trending tags"
+msgstr "Geen trending tags"
 
 #: content/ui/LanguageSelector.qml:66
 #, kde-format
@@ -594,11 +592,9 @@ msgid "Instance Url:"
 msgstr "Url van exemplaar:"
 
 #: content/ui/LoginPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open Moderation Tools"
+#, kde-format
 msgid "Enable moderation tools"
-msgstr "Hulpmiddelen voor moderatie openen"
+msgstr "Hulpmiddelen voor moderatie inschakelen"
 
 #: content/ui/LoginPage.qml:46
 #, kde-format
@@ -606,6 +602,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging into your server."
 msgstr ""
+"Tokodon toestaan toegang toestaan tot hulpmiddelen voor moderatie. Probeer "
+"dit uit te schakelen als u problemen hebt zich aan te melden bij de server."
 
 #: content/ui/LoginPage.qml:54
 #, kde-format
@@ -2204,17 +2202,15 @@ msgid "Remove"
 msgstr "Verwijderen"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr "Bestemming"
+msgstr "Beschrijving"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
 msgid "Focal point"
-msgstr ""
+msgstr "Brandpunt"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
@@ -2298,7 +2294,7 @@ msgstr "Wat is nieuw?"
 #: content/ui/StatusComposer/StatusComposer.qml:247
 #, kde-format
 msgid "All supported formats"
-msgstr ""
+msgstr "Alle ondersteunde formaten"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
@@ -2306,66 +2302,68 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"Alle ondersteunde formaten (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "JPEG-afbeelding (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:250
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "PNG-afbeelding (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:251
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "GIF-afbeelding (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "WebP-afbeelding (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "HEIC-afbeelding (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "HEIF-afbeelding (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "AVIF-afbeelding (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "WebM-video (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "MPEG-4-video (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "M4V-video (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "QuickTime-video (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Alle bestanden (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
@@ -2482,7 +2480,7 @@ msgid "Copy Link to This Post"
 msgstr "Koppeling naar bericht kopiëren"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Bladwijzer verwijderen"
@@ -2553,68 +2551,68 @@ msgctxt "Show more options"
 msgid "More"
 msgstr "Meer"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:366
+#: content/ui/StatusDelegate/StatusDelegate.qml:369
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Waarschuwing over inhoud</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show Less"
 msgstr "Minder tonen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:372
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgid "Show More"
 msgstr "Meer tonen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:471
+#: content/ui/StatusDelegate/StatusDelegate.qml:473
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Oppepper"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:491
+#: content/ui/StatusDelegate/StatusDelegate.qml:493
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favoriet"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Bladwijzer"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:527
+#: content/ui/StatusDelegate/StatusDelegate.qml:529
 #, kde-format
 msgid "via %1"
 msgstr "via %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:559
-#: content/ui/StatusDelegate/StatusDelegate.qml:560
+#: content/ui/StatusDelegate/StatusDelegate.qml:561
+#: content/ui/StatusDelegate/StatusDelegate.qml:562
 #, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
 msgstr[0] "%1 antwoord"
 msgstr[1] "%1 antwoord"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:571
-#: content/ui/StatusDelegate/StatusDelegate.qml:572
+#: content/ui/StatusDelegate/StatusDelegate.qml:573
+#: content/ui/StatusDelegate/StatusDelegate.qml:574
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
 msgstr[0] "%1 favoriet"
 msgstr[1] "%1 favoriet"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:590
-#: content/ui/StatusDelegate/StatusDelegate.qml:591
+#: content/ui/StatusDelegate/StatusDelegate.qml:592
+#: content/ui/StatusDelegate/StatusDelegate.qml:593
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
