@@ -1,6 +1,7 @@
 ## Tokodon
 
-A modern [Mastodon](https://joinmastodon.org/) client.
+A modern client for [Mastodon](https://joinmastodon.org/) and other
+decentralized servers that implement it's API (such as Pixelfed).
 
 <a href='https://flathub.org/apps/details/org.kde.tokodon'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
 
@@ -10,17 +11,29 @@ A modern [Mastodon](https://joinmastodon.org/) client.
 
 ## Features
 
-* Notifications
-* Direct messages
-* Editing & deleting toots
-* Multiple accounts
-* Searching for users and hashtags
+* Real-time notifications.
+* Direct messages.
+* Editing & deleting toots.
+* Multiple accounts.
+* Searching for users and hashtags.
 
-## Links
+## Get It
 
-* Project page: https://invent.kde.org/network/tokodon
-* File issues: https://bugs.kde.org/describecomponents.cgi?product=tokodon
-* Matrix chat: [#tokodon:kde.org](https://matrix.to/#/#tokodon:kde.org)
+Details on where to find stable releases of Tokodon can be found on it's
+[homepage](https://apps.kde.org/tokodon). An Android version can be found
+in the [KDE Nightly F-Droid repository](https://community.kde.org/Android/F-Droid).
+
+## Support
+
+If you have an issue with Tokodon, please [open a support thread on KDE Discuss](https://discuss.kde.org/c/help/6). Alternatively, you ask in the [Tokodon Matrix room](https://go.kde.org/matrix/#/#tokodon:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
+
+## Building
+
+The easiest way to make changes and test Tokodon during development is to [build it with kdesrc-build](https://community.kde.org/Get_Involved/development/Build_software_with_kdesrc-build).
+
+## Contributing
+
+Please refer to the [contributing document](/CONTRIBUTING.md) for everything you need to know to get started contributing to Tokodon.
 
 ## License
 
