@@ -1,8 +1,6 @@
-/**
- * SPDX-FileCopyrightText: 2018-2019 Black Hat <bhat@encom.eu.org>
- *
- * SPDX-License-Identifier: GPL-3.0-only
- */
+// SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+
 #include <QCommandLineParser>
 #include <QFontDatabase>
 #include <QNetworkProxy>
