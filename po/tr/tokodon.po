@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:28+0000\n"
+"POT-Creation-Date: 2023-08-18 02:23+0000\n"
 "PO-Revision-Date: 2023-08-04 13:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: account/abstractaccount.cpp:457
+#: account/abstractaccount.cpp:472
 #, kde-format
 msgid "Could not follow account"
 msgstr "Hesap takip edilemedi"
 
-#: account/abstractaccount.cpp:458
+#: account/abstractaccount.cpp:473
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Hesap takipten çıkarılamadı"
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:474
 #, kde-format
 msgid "Could not block account"
 msgstr "Hesap engellenemedi"
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:475
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Hesap engeli kaldırılamadı"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:476
 #, kde-format
 msgid "Could not mute account"
 msgstr "Hesap sessize alınamadı"
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:477
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Hesap sessizden kaldırılamadı"
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:478
 #, kde-format
 msgid "Could not feature account"
 msgstr "Hesap tanıtılamadı"
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:479
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Hesap tanıtımı kaldırılamadı"
 
-#: account/abstractaccount.cpp:465
+#: account/abstractaccount.cpp:480
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Bir hesap üzerine olan not düzenlenemedi"
@@ -1449,7 +1449,7 @@ msgstr "Etiketler"
 msgid "Logout"
 msgstr "Oturumu Kapat"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:90 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Hesap Ekle"
@@ -1586,7 +1586,7 @@ msgid "Profile Editor"
 msgstr "Profil Düzenleyici"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:217
+#: content/ui/StatusComposer/StatusComposer.qml:218
 #, kde-format
 msgid "Please choose a file"
 msgstr "Lütfen bir dosya seçin"
@@ -1815,49 +1815,49 @@ msgstr "Kaldır"
 msgid "Add a description"
 msgstr "Bir açıklama ekle"
 
-#: content/ui/StatusComposer/Poll.qml:35
+#: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "%1. seçenek"
 
-#: content/ui/StatusComposer/Poll.qml:59
+#: content/ui/StatusComposer/ComposerPoll.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Seçenek Ekle"
 
-#: content/ui/StatusComposer/Poll.qml:60
+#: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Yeni bir anket seçeneği ekle"
 
-#: content/ui/StatusComposer/Poll.qml:79
+#: content/ui/StatusComposer/ComposerPoll.qml:80
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Anket ne zaman bitecek"
 
-#: content/ui/StatusComposer/Poll.qml:88
+#: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Çoklu seçim"
 
-#: content/ui/StatusComposer/Poll.qml:94
+#: content/ui/StatusComposer/ComposerPoll.qml:95
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Çoklu seçimlere izin ver"
 
-#: content/ui/StatusComposer/Poll.qml:103
+#: content/ui/StatusComposer/ComposerPoll.qml:104
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Toplamları gizle"
 
-#: content/ui/StatusComposer/Poll.qml:109
+#: content/ui/StatusComposer/ComposerPoll.qml:110
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -1884,7 +1884,7 @@ msgid "Write a new post"
 msgstr "Yeni bir gönderi yaz"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:286
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "Content Warning"
 msgstr "İçerik uyarısı"
@@ -1894,71 +1894,71 @@ msgstr "İçerik uyarısı"
 msgid "What's new?"
 msgstr "Neler yeni?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:220
+#: content/ui/StatusComposer/StatusComposer.qml:221
 #, kde-format
 msgid "Attach File"
 msgstr "Dosya iliştir"
 
-#: content/ui/StatusComposer/StatusComposer.qml:230
+#: content/ui/StatusComposer/StatusComposer.qml:231
 #, kde-format
 msgid "Add Poll"
 msgstr "Anket ekle"
 
-#: content/ui/StatusComposer/StatusComposer.qml:258
+#: content/ui/StatusComposer/StatusComposer.qml:259
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
 #: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "Genel"
 
-#: content/ui/StatusComposer/StatusComposer.qml:263
+#: content/ui/StatusComposer/StatusComposer.qml:264
 #: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "Listelenmemiş"
 
-#: content/ui/StatusComposer/StatusComposer.qml:268
+#: content/ui/StatusComposer/StatusComposer.qml:269
 #: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "Gizli"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:274
 #: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "Doğrudan İleti"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid "Visibility"
 msgstr "Görünürlük"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "iu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:294
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Gönderinin yazıldığı dili seç"
 
-#: content/ui/StatusComposer/StatusComposer.qml:299
+#: content/ui/StatusComposer/StatusComposer.qml:300
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Gönderi Dili"
 
-#: content/ui/StatusComposer/StatusComposer.qml:314
+#: content/ui/StatusComposer/StatusComposer.qml:315
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karakter"
 
-#: content/ui/StatusComposer/StatusComposer.qml:322
+#: content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Send"
 msgstr "Gönder"
@@ -2036,22 +2036,6 @@ msgstr "Profilde sabitle"
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Sil ve Yeniden Taslak Oluştur"
-
-#: content/ui/StatusDelegate/Poll.qml:38
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%​%1"
-
-#: content/ui/StatusDelegate/Poll.qml:62
-#, kde-format
-msgid "(No votes)"
-msgstr "(Oy yok)"
-
-#: content/ui/StatusDelegate/Poll.qml:96
-#, kde-format
-msgid "Vote"
-msgstr "Oy Ver"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:122
 #, kde-format
@@ -2175,6 +2159,22 @@ msgstr "%1 Boost"
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 Boost"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:38
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%​%1"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:62
+#, kde-format
+msgid "(No votes)"
+msgstr "(Oy yok)"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:96
+#, kde-format
+msgid "Vote"
+msgstr "Oy Ver"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format

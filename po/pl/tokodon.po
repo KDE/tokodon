@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:28+0000\n"
+"POT-Creation-Date: 2023-08-18 02:23+0000\n"
 "PO-Revision-Date: 2023-04-01 09:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:457
+#: account/abstractaccount.cpp:472
 #, kde-format
 msgid "Could not follow account"
 msgstr "Nie można zacząć śledzić konta"
 
-#: account/abstractaccount.cpp:458
+#: account/abstractaccount.cpp:473
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Nie można przestać śledzić konta"
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:474
 #, kde-format
 msgid "Could not block account"
 msgstr "Nie można zablokować konta"
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:475
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Nie można odblokować konta"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:476
 #, kde-format
 msgid "Could not mute account"
 msgstr "Nie można wyciszyć konta"
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:477
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Nie można usunąć wyciszenia konta"
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:478
 #, kde-format
 msgid "Could not feature account"
 msgstr "Nie można zacząć wyróżniać konta"
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:479
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Nie można przestać wyróżniać konta"
 
-#: account/abstractaccount.cpp:465
+#: account/abstractaccount.cpp:480
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Nie można zmienić uwagi o koncie"
@@ -1501,7 +1501,7 @@ msgstr "Hasztagi"
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:90 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Dodaj konto"
@@ -1640,7 +1640,7 @@ msgid "Profile Editor"
 msgstr "Edytor profilów"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:217
+#: content/ui/StatusComposer/StatusComposer.qml:218
 #, kde-format
 msgid "Please choose a file"
 msgstr "Wybierz plik"
@@ -1873,49 +1873,49 @@ msgstr "Usuń"
 msgid "Add a description"
 msgstr "Dodaj opis"
 
-#: content/ui/StatusComposer/Poll.qml:35
+#: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Wybór %1"
 
-#: content/ui/StatusComposer/Poll.qml:59
+#: content/ui/StatusComposer/ComposerPoll.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Dodaj wybór"
 
-#: content/ui/StatusComposer/Poll.qml:60
+#: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Dodaj nowy wybór w głosowaniu"
 
-#: content/ui/StatusComposer/Poll.qml:79
+#: content/ui/StatusComposer/ComposerPoll.qml:80
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Gdy głosowanie wygaśnie"
 
-#: content/ui/StatusComposer/Poll.qml:88
+#: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Wielokrotny wybór"
 
-#: content/ui/StatusComposer/Poll.qml:94
+#: content/ui/StatusComposer/ComposerPoll.qml:95
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Zezwól na wielokrotny wybór"
 
-#: content/ui/StatusComposer/Poll.qml:103
+#: content/ui/StatusComposer/ComposerPoll.qml:104
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Ukryj sumy"
 
-#: content/ui/StatusComposer/Poll.qml:109
+#: content/ui/StatusComposer/ComposerPoll.qml:110
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -1946,7 +1946,7 @@ msgid "Write a new post"
 msgstr "Wpisz nowy toot"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:286
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "Content Warning"
 msgstr "Ostrzeżenie o treści"
@@ -1956,71 +1956,71 @@ msgstr "Ostrzeżenie o treści"
 msgid "What's new?"
 msgstr "Co nowego?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:220
+#: content/ui/StatusComposer/StatusComposer.qml:221
 #, kde-format
 msgid "Attach File"
 msgstr "Załącz plik"
 
-#: content/ui/StatusComposer/StatusComposer.qml:230
+#: content/ui/StatusComposer/StatusComposer.qml:231
 #, kde-format
 msgid "Add Poll"
 msgstr "Dodaj odpytywanie"
 
-#: content/ui/StatusComposer/StatusComposer.qml:258
+#: content/ui/StatusComposer/StatusComposer.qml:259
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
 #: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "Publiczny"
 
-#: content/ui/StatusComposer/StatusComposer.qml:263
+#: content/ui/StatusComposer/StatusComposer.qml:264
 #: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "Niewymieniony"
 
-#: content/ui/StatusComposer/StatusComposer.qml:268
+#: content/ui/StatusComposer/StatusComposer.qml:269
 #: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "Prywatny"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:274
 #: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "Bezpośrednia wiadomość"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid "Visibility"
 msgstr "Widoczność"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:294
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Wybierz język, w którym napisany jest ten wpis"
 
-#: content/ui/StatusComposer/StatusComposer.qml:299
+#: content/ui/StatusComposer/StatusComposer.qml:300
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Język wpisu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:314
+#: content/ui/StatusComposer/StatusComposer.qml:315
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:322
+#: content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Send"
 msgstr "Wyślij"
@@ -2103,22 +2103,6 @@ msgstr "Zobacz profil"
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Usuń i naszkicuj na nowo"
-
-#: content/ui/StatusDelegate/Poll.qml:38
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: content/ui/StatusDelegate/Poll.qml:62
-#, kde-format
-msgid "(No votes)"
-msgstr "(Nie ma żadnych głosów)"
-
-#: content/ui/StatusDelegate/Poll.qml:96
-#, kde-format
-msgid "Vote"
-msgstr "Głosuj"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:122
 #, kde-format
@@ -2255,6 +2239,22 @@ msgstr "%1 udostępnił"
 #| msgid "Boosts"
 msgid "%1 Boosts"
 msgstr "Napędza"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:38
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:62
+#, kde-format
+msgid "(No votes)"
+msgstr "(Nie ma żadnych głosów)"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:96
+#, kde-format
+msgid "Vote"
+msgstr "Głosuj"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format

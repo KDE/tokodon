@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:28+0000\n"
+"POT-Creation-Date: 2023-08-18 02:23+0000\n"
 "PO-Revision-Date: 2023-07-27 20:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:457
+#: account/abstractaccount.cpp:472
 #, kde-format
 msgid "Could not follow account"
 msgstr "Tiliä ei voitu seurata"
 
-#: account/abstractaccount.cpp:458
+#: account/abstractaccount.cpp:473
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Tilin seuraamista ei voitu perua"
 
-#: account/abstractaccount.cpp:459
+#: account/abstractaccount.cpp:474
 #, kde-format
 msgid "Could not block account"
 msgstr "Tiliä ei voitu estää"
 
-#: account/abstractaccount.cpp:460
+#: account/abstractaccount.cpp:475
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Tilin estoa ei voitu perua"
 
-#: account/abstractaccount.cpp:461
+#: account/abstractaccount.cpp:476
 #, kde-format
 msgid "Could not mute account"
 msgstr "Tiliä ei voitu vaimentaa"
 
-#: account/abstractaccount.cpp:462
+#: account/abstractaccount.cpp:477
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Tilin vaimennusta ei voitu perua"
 
-#: account/abstractaccount.cpp:463
+#: account/abstractaccount.cpp:478
 #, kde-format
 msgid "Could not feature account"
 msgstr "Tiliä ei voitu esitellä"
 
-#: account/abstractaccount.cpp:464
+#: account/abstractaccount.cpp:479
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Tilin esittelyä ei voitu perua"
 
-#: account/abstractaccount.cpp:465
+#: account/abstractaccount.cpp:480
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
@@ -1426,7 +1426,7 @@ msgstr "Aihetunniste"
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: content/ui/Settings/AccountsCard.qml:91 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:90 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Lisää tili"
@@ -1564,7 +1564,7 @@ msgid "Profile Editor"
 msgstr "Profiilimuokkain"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:217
+#: content/ui/StatusComposer/StatusComposer.qml:218
 #, kde-format
 msgid "Please choose a file"
 msgstr "Valitse tiedosto"
@@ -1794,49 +1794,49 @@ msgstr "Poista"
 msgid "Add a description"
 msgstr "Lisää kuvaus"
 
-#: content/ui/StatusComposer/Poll.qml:35
+#: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Valinta %1"
 
-#: content/ui/StatusComposer/Poll.qml:59
+#: content/ui/StatusComposer/ComposerPoll.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Lisää valinta"
 
-#: content/ui/StatusComposer/Poll.qml:60
+#: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Lisää uusi kyselyvaihtoehto"
 
-#: content/ui/StatusComposer/Poll.qml:79
+#: content/ui/StatusComposer/ComposerPoll.qml:80
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Milloin kysely vanhenee"
 
-#: content/ui/StatusComposer/Poll.qml:88
+#: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Monivalinta"
 
-#: content/ui/StatusComposer/Poll.qml:94
+#: content/ui/StatusComposer/ComposerPoll.qml:95
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Salli useampi valinta"
 
-#: content/ui/StatusComposer/Poll.qml:103
+#: content/ui/StatusComposer/ComposerPoll.qml:104
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Piilota tulokset"
 
-#: content/ui/StatusComposer/Poll.qml:109
+#: content/ui/StatusComposer/ComposerPoll.qml:110
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -1863,7 +1863,7 @@ msgid "Write a new post"
 msgstr "Kirjoita uusi julkaisu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
-#: content/ui/StatusComposer/StatusComposer.qml:286
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "Content Warning"
 msgstr "Sisältövaroitus"
@@ -1873,71 +1873,71 @@ msgstr "Sisältövaroitus"
 msgid "What's new?"
 msgstr "Mitä uutta?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:220
+#: content/ui/StatusComposer/StatusComposer.qml:221
 #, kde-format
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: content/ui/StatusComposer/StatusComposer.qml:230
+#: content/ui/StatusComposer/StatusComposer.qml:231
 #, kde-format
 msgid "Add Poll"
 msgstr "Lisää kysely"
 
-#: content/ui/StatusComposer/StatusComposer.qml:258
+#: content/ui/StatusComposer/StatusComposer.qml:259
 #: content/ui/StatusDelegate/StatusDelegate.qml:304
 #: content/ui/StatusDelegate/StatusDelegate.qml:312
 #, kde-format
 msgid "Public"
 msgstr "Julkinen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:263
+#: content/ui/StatusComposer/StatusComposer.qml:264
 #: content/ui/StatusDelegate/StatusDelegate.qml:306
 #, kde-format
 msgid "Unlisted"
 msgstr "Luettelematon"
 
-#: content/ui/StatusComposer/StatusComposer.qml:268
+#: content/ui/StatusComposer/StatusComposer.qml:269
 #: content/ui/StatusDelegate/StatusDelegate.qml:308
 #, kde-format
 msgid "Private"
 msgstr "Yksityinen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:274
 #: content/ui/StatusDelegate/StatusDelegate.qml:310
 #, kde-format
 msgid "Direct Message"
 msgstr "Suoraviesti"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid "Visibility"
 msgstr "Näkyvyys"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "sis.var."
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:294
 #, kde-format
 msgctxt "@info:whatsthis Post language selection"
 msgid "Select the language the post is written in"
 msgstr "Valitse julkaisun kieli"
 
-#: content/ui/StatusComposer/StatusComposer.qml:299
+#: content/ui/StatusComposer/StatusComposer.qml:300
 #, kde-format
 msgctxt "@label:listbox Post language selection"
 msgid "Post Language"
 msgstr "Julkaisukieli"
 
-#: content/ui/StatusComposer/StatusComposer.qml:314
+#: content/ui/StatusComposer/StatusComposer.qml:315
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> merkkiä"
 
-#: content/ui/StatusComposer/StatusComposer.qml:322
+#: content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Send"
 msgstr "Lähetä"
@@ -2014,22 +2014,6 @@ msgstr "Kiinnitä profiiliin"
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Poista ja kirjoita uudelleen"
-
-#: content/ui/StatusDelegate/Poll.qml:38
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%1 %"
-
-#: content/ui/StatusDelegate/Poll.qml:62
-#, kde-format
-msgid "(No votes)"
-msgstr "(Ei ääniä)"
-
-#: content/ui/StatusDelegate/Poll.qml:96
-#, kde-format
-msgid "Vote"
-msgstr "Äänestä"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:122
 #, kde-format
@@ -2153,6 +2137,22 @@ msgstr "%1 tehostus"
 #, kde-format
 msgid "%1 Boosts"
 msgstr "%1 tehostusta"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:38
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%1 %"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:62
+#, kde-format
+msgid "(No votes)"
+msgstr "(Ei ääniä)"
+
+#: content/ui/StatusDelegate/StatusPoll.qml:96
+#, kde-format
+msgid "Vote"
+msgstr "Äänestä"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
