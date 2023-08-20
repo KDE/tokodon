@@ -1,7 +1,7 @@
 ## Tokodon
 
 A modern client for [Mastodon](https://joinmastodon.org/) and other
-decentralized servers that implement it's API (such as Pixelfed).
+decentralized servers that implement its API (such as Pixelfed).
 
 <a href='https://flathub.org/apps/details/org.kde.tokodon'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
 
@@ -19,7 +19,7 @@ decentralized servers that implement it's API (such as Pixelfed).
 
 ## Get It
 
-Details on where to find stable releases of Tokodon can be found on it's
+Details on where to find stable releases of Tokodon can be found on its
 [homepage](https://apps.kde.org/tokodon). An Android version can be found
 in the [KDE Nightly F-Droid repository](https://community.kde.org/Android/F-Droid).
 

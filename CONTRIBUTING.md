@@ -45,11 +45,11 @@ Everything codewise for Tokodon in the [/src](/src) directory. Tokodon follows m
 
 The backend code is written in C++, and we're currently requiring C++17 to build.
 
-* Classes related to accounts is located under [/src/accounts](/src/accounts).
+* Classes related to accounts are located under [/src/accounts](/src/accounts).
 * The models and other classes used for the moderation tools live in [/src/admin](/src/admin).
 * Code for the tests are put under [/src/autotests](/src/autotests).
 * Models for the conversation (direct messages) page is located in [/src/conversation](/src/conversation).
-* The backend classes for the status composer is in [/src/editor](/src/editor).
+* The backend classes for the status composer are in [/src/editor](/src/editor).
 * The network controller and other miscellanous classes live in [/src/network](/src/network).
 * The Purpose plugin (allowing shared to Tokodon from other KDE applications) is located under [/src/purpose](/src/purpose).
 * The search models are put under [/src/search](/src/search).
@@ -64,7 +64,7 @@ The user interface is written in QML, using technologies such as Kirigami. Pleas
 
 * Generic components that can be used in many places are placed in [/src/content/ui/Components](/src/content/ui/Components).
 * Parts of the moderation tool suite live in [/src/content/ui/ModerationTools](/src/content/ui/ModerationTools).
-* The settings page and it's related components are in [/src/content/ui/Settings](/src/content/ui/Settings).
+* The settings page and its related components are in [/src/content/ui/Settings](/src/content/ui/Settings).
 * The composer page is located under [/src/content/ui/StatusComposer](/src/content/ui/StatusComposer).
 * Timeline Posts and the many components that make up it belong in [/src/content/ui/StatusDelegate](/content/ui/StatusDelegate).
 * Everything else is located in the `ui` directory for now.
