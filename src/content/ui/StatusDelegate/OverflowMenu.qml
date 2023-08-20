@@ -20,6 +20,8 @@ QQC2.Menu {
     required property bool expandedPost
     required property bool pinned
 
+    readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
+
     QQC2.MenuItem {
         icon.name: "expand"
         text: i18nc("@action:inmenu", "Expand Post")
@@ -42,6 +44,45 @@ QQC2.Menu {
             Clipboard.saveText(root.url)
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
+    }
+
+    QQC2.MenuSeparator {
+        visible: root.hasMultipleAccounts
+    }
+
+    QQC2.MenuItem {
+        visible: root.hasMultipleAccounts
+        icon.name: "expand"
+        text: i18nc("@action:inmenu", "Open as…")
+        onTriggered: applicationWindow().requestCrossAction('open', url)
+    }
+
+    QQC2.MenuItem {
+        visible: root.hasMultipleAccounts
+        icon.name: "tokodon-post-reply"
+        text: i18nc("@action:inmenu", "Reply as…")
+        onTriggered: applicationWindow().requestCrossAction('reply', url)
+    }
+
+    QQC2.MenuItem {
+        visible: root.hasMultipleAccounts
+        icon.name: "tokodon-post-favorite"
+        text: i18nc("@action:inmenu", "Favorite as…")
+        onTriggered: applicationWindow().requestCrossAction('favourite', url)
+    }
+
+    QQC2.MenuItem {
+        visible: root.hasMultipleAccounts
+        icon.name: "tokodon-post-boost"
+        text: i18nc("@action:inmenu", "Boost as…")
+        onTriggered: applicationWindow().requestCrossAction('reblog', url)
+    }
+
+    QQC2.MenuItem {
+        visible: root.hasMultipleAccounts
+        icon.name: "bookmark-new"
+        text: i18nc("@action:inmenu", "Bookmark as…")
+        onTriggered: applicationWindow().requestCrossAction('bookmark', url)
     }
 
     QQC2.MenuSeparator {}

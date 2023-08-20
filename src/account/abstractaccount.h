@@ -359,6 +359,8 @@ public:
     /// @param note The note to add to the account. Leave empty to remove the existing note.
     Q_INVOKABLE void addNote(Identity *identity, const QString &note);
 
+    Q_INVOKABLE void mutateRemotePost(const QString &url, const QString &verb);
+
     /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
     QString settingsGroupName() const;
 
@@ -485,7 +487,7 @@ protected:
     void handleUpdate(const QJsonDocument &doc, const QString &target);
     void handleNotification(const QJsonDocument &doc);
 
-    void mutatePost(Post *p, const QString &verb, bool deliver_home = false);
+    void mutatePost(const QString &id, const QString &verb, bool deliver_home = false);
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
     QMap<QString, std::shared_ptr<AdminAccountInfo>> m_adminIdentityCache;
 

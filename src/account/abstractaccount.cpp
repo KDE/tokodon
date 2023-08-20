@@ -5,10 +5,11 @@
 #include "abstractaccount.h"
 
 #include "accountmanager.h"
+#include "network/networkcontroller.h"
 #include "preferences.h"
 #include "relationship.h"
-#include "utils/messagefiltercontainer.h"
 #include "tokodon_debug.h"
+#include "utils/messagefiltercontainer.h"
 #include <KLocalizedString>
 #include <QFile>
 #include <QHttpMultiPart>
@@ -326,9 +327,9 @@ void AbstractAccount::setToken(const QString &authcode)
     });
 }
 
-void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home)
+void AbstractAccount::mutatePost(const QString &id, const QString &verb, bool deliver_home)
 {
-    const QUrl mutation_url = apiUrl(QStringLiteral("/api/v1/statuses/%1/%2").arg(p->postId(), verb));
+    const QUrl mutation_url = apiUrl(QStringLiteral("/api/v1/statuses/%1/%2").arg(id, verb));
     const QJsonDocument doc;
 
     post(mutation_url, doc, true, this, [=](QNetworkReply *reply) {
@@ -349,42 +350,42 @@ void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home
 
 void AbstractAccount::favorite(Post *p)
 {
-    mutatePost(p, QStringLiteral("favourite"));
+    mutatePost(p->postId(), QStringLiteral("favourite"));
 }
 
 void AbstractAccount::unfavorite(Post *p)
 {
-    mutatePost(p, QStringLiteral("unfavourite"));
+    mutatePost(p->postId(), QStringLiteral("unfavourite"));
 }
 
 void AbstractAccount::repeat(Post *p)
 {
-    mutatePost(p, QStringLiteral("reblog"), true);
+    mutatePost(p->postId(), QStringLiteral("reblog"), true);
 }
 
 void AbstractAccount::unrepeat(Post *p)
 {
-    mutatePost(p, QStringLiteral("unreblog"));
+    mutatePost(p->postId(), QStringLiteral("unreblog"));
 }
 
 void AbstractAccount::bookmark(Post *p)
 {
-    mutatePost(p, QStringLiteral("bookmark"), true);
+    mutatePost(p->postId(), QStringLiteral("bookmark"), true);
 }
 
 void AbstractAccount::unbookmark(Post *p)
 {
-    mutatePost(p, QStringLiteral("unbookmark"));
+    mutatePost(p->postId(), QStringLiteral("unbookmark"));
 }
 
 void AbstractAccount::pin(Post *p)
 {
-    mutatePost(p, QStringLiteral("pin"), true);
+    mutatePost(p->postId(), QStringLiteral("pin"), true);
 }
 
 void AbstractAccount::unpin(Post *p)
 {
-    mutatePost(p, QStringLiteral("unpin"));
+    mutatePost(p->postId(), QStringLiteral("unpin"));
 }
 
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
@@ -697,6 +698,23 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
     } else {
         executeAction(identity, AccountAction::Note, {{QStringLiteral("comment"), note}});
     }
+}
+
+void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
+{
+    NetworkController::instance().requestRemoteObject(this, url, [=](QNetworkReply *reply) {
+        const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+        const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+        const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
+
+        // TODO: emit error when the mutation has failed, no post is available on this account's server
+        if (!statuses.isEmpty()) {
+            const auto status = statuses[0].toObject();
+
+            const QString localID = status["id"_L1].toString();
+            mutatePost(localID, verb);
+        }
+    });
 }
 
 bool AbstractAccount::isRegistered() const

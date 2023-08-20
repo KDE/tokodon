@@ -71,6 +71,70 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    function requestCrossAction(action, url) {
+        console.log("Requesting " + action + " of " + url);
+        crossActionDialog.action = action;
+        crossActionDialog.url = url;
+        crossActionDialog.open();
+    }
+
+    Kirigami.PromptDialog {
+        id: crossActionDialog
+
+        property string url
+        property string action
+
+        title: {
+            if (action === 'open') {
+                return i18nc("@title", "Open As…")
+            } else if (action === 'reply') {
+                return i18nc("@title", "Reply As…")
+            } else if (action === 'favourite') {
+                return i18nc("@title", "Favorite As…")
+            } else if (action === 'reblog') {
+                return i18nc("@title", "Boost As…")
+            } else if (action === 'bookmark') {
+                return i18nc("@title", "Bookmark As…")
+            } else {
+                return i18nc("@title", "Unknown Action")
+            }
+        }
+
+        standardButtons: Kirigami.Dialog.NoButton
+
+        mainItem: ColumnLayout {
+            Repeater {
+                id: accounts
+
+                model: AccountManager
+
+                delegate: Delegates.RoundedItemDelegate {
+                    required property int index
+                    required property string displayName
+                    required property string instance
+                    required property var account
+
+                    text: displayName
+
+                    Layout.fillWidth: true
+
+                    onClicked: crossActionDialog.takeAction(account)
+                }
+            }
+        }
+
+        function takeAction(account): void {
+            if (action === 'open') {
+                AccountManager.selectedAccount = account;
+                Controller.openWebApLink(url);
+            } else {
+                account.mutateRemotePost(url, action);
+            }
+
+            close();
+        }
+    }
+
     Component.onCompleted: {
         if (AccountManager.isReady) {
             startupAccountCheck();

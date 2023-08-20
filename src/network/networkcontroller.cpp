@@ -10,6 +10,7 @@
 
 #include <QNetworkProxy>
 #include <QUrlQuery>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -110,13 +111,7 @@ void NetworkController::openLink()
         m_requestedLink.setUserInfo(QString());
     }
 
-    auto url = account->apiUrl(QStringLiteral("/api/v2/search"));
-    url.setQuery({
-        {QStringLiteral("q"), m_requestedLink.toString(QUrl::EncodeSpaces)},
-        {QStringLiteral("resolve"), QStringLiteral("true")},
-        {QStringLiteral("limit"), QStringLiteral("1")},
-    });
-    account->get(url, true, &AccountManager::instance(), [=](QNetworkReply *reply) {
+    requestRemoteObject(account, m_requestedLink.toString(), [=](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
         const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
@@ -148,4 +143,15 @@ void NetworkController::startComposing(const QString &text)
     } else {
         m_storedComposedText = text;
     }
+}
+
+void NetworkController::requestRemoteObject(AbstractAccount *account, const QString &remoteUrl, std::function<void(QNetworkReply *)> callback)
+{
+    auto url = account->apiUrl(QStringLiteral("/api/v2/search"));
+    url.setQuery({
+        {QStringLiteral("q"), remoteUrl},
+        {QStringLiteral("resolve"), QStringLiteral("true")},
+        {QStringLiteral("limit"), QStringLiteral("1")},
+    });
+    account->get(url, true, &AccountManager::instance(), std::move(callback));
 }

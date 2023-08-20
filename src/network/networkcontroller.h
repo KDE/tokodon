@@ -3,8 +3,11 @@
 
 #pragma once
 
+#include <QNetworkReply>
 #include <QObject>
 #include <QtQml>
+
+class AbstractAccount;
 
 class NetworkController : public QObject
 {
@@ -26,6 +29,8 @@ public:
     Q_INVOKABLE void openWebApLink(QString input);
     void setAuthCode(QUrl authCode);
     void startComposing(const QString &text);
+
+    void requestRemoteObject(AbstractAccount *account, const QString &url, std::function<void(QNetworkReply *)> callback);
 
 Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
