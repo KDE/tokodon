@@ -15,6 +15,21 @@ Kirigami.ScrollablePage {
 
     property bool isDomainBlock
 
+    actions.contextualActions: [
+        Kirigami.Action {
+            icon.name: 'list-add'
+            text: i18n("Add New Domain Block")
+            visible: isDomainBlock
+            onTriggered: newDomainBlockDialog.open()
+        },
+        Kirigami.Action {
+            icon.name: 'list-add'
+            text: i18n("Allow Federation with Domain")
+            visible: !isDomainBlock
+            onTriggered: newDomainAllowDialog.open()
+        }
+    ]
+
     Kirigami.PromptDialog {
         id: allowedDomainInfo
 
@@ -294,32 +309,6 @@ Kirigami.ScrollablePage {
             text: i18n("No federations found")
             visible: federationView.count === 0 && !federationView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
-        }
-    }
-
-    footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            Item {
-                Layout.fillWidth: true
-            }
-            QQC2.Button {
-                text: i18n("Add New Domain Block")
-                icon.name: 'list-add'
-                visible: isDomainBlock
-                Layout.margins: Kirigami.Units.smallSpacing
-                onClicked: {
-                    newDomainBlockDialog.open()
-                }
-            }
-            QQC2.Button {
-                text: i18n("Allow Federation with Domain")
-                icon.name: 'list-add'
-                visible: !isDomainBlock
-                Layout.margins: Kirigami.Units.smallSpacing
-                onClicked: {
-                    newDomainAllowDialog.open()
-                }
-            }
         }
     }
 }

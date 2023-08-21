@@ -13,6 +13,12 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 Kirigami.ScrollablePage {
     id: root
 
+    actions.main: Kirigami.Action {
+        text: i18nc("@action:button", "Create Email Block")
+        icon.name: 'list-add'
+        onTriggered: newEmailBlockDialog.open()
+    }
+
     Kirigami.PromptDialog {
         id: emailInfoDialog
 
@@ -179,22 +185,6 @@ Kirigami.ScrollablePage {
                 text: i18n("No email blocks found")
                 visible: emailBlockView.count === 0 && !emailBlockView.model.loading
                 width: parent.width - Kirigami.Units.gridUnit * 4
-            }
-        }
-    }
-
-    footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            Item {
-                Layout.fillWidth: true
-            }
-            QQC2.Button {
-                text: i18nc("@action:button", "Create Email Block")
-                icon.name: 'list-add'
-                Layout.margins: Kirigami.Units.smallSpacing
-                onClicked: {
-                    newEmailBlockDialog.open()
-                }
             }
         }
     }

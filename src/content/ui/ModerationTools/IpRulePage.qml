@@ -13,6 +13,12 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 Kirigami.ScrollablePage {
     id: root
 
+    actions.main: Kirigami.Action {
+        text: i18nc("@action:button", "Create Rule")
+        icon.name: 'list-add'
+        onTriggered: newIpRuleDialog.open()
+    }
+
     Kirigami.PromptDialog {
         id: newIpRuleDialog
 
@@ -201,22 +207,6 @@ Kirigami.ScrollablePage {
             text: i18n("No IP rules found")
             visible: ipRuleView.count === 0 && !ipRuleView.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
-        }
-    }
-
-    footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            Item {
-                Layout.fillWidth: true
-            }
-            QQC2.Button {
-                text: i18nc("@action:button", "Create Rule")
-                icon.name: 'list-add'
-                Layout.margins: Kirigami.Units.smallSpacing
-                onClicked: {
-                    newIpRuleDialog.open()
-                }
-            }
         }
     }
 }
