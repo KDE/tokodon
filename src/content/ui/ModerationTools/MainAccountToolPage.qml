@@ -474,7 +474,7 @@ Kirigami.ScrollablePage {
                 description: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.username : ""
 
                 leadingPadding: Kirigami.Units.largeSpacing
-                leading: Kirigami.Avatar {
+                leading: KirigamiComponents.Avatar {
                     source: root.identity.invitedByIdentity ? root.identity.invitedByIdentity.avatarUrl : ''
                     implicitHeight: Kirigami.Units.gridUnit * 2
                     implicitWidth: Kirigami.Units.gridUnit * 2

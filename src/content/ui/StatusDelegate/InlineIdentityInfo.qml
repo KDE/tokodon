@@ -5,6 +5,8 @@ import QtQuick 2.15
 import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
+import org.kde.kirigamiaddons.components 1.0 as Avatar
+
 import org.kde.kmasto 1.0
 
 RowLayout {
@@ -21,7 +23,7 @@ RowLayout {
 
     signal clicked()
 
-    Kirigami.Avatar {
+    KirigamiComponents.AvatarButton {
         id: avatar
 
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
@@ -29,14 +31,10 @@ RowLayout {
 
         source: root.identity.avatarUrl
         cache: true
-        actions.main: Kirigami.Action {
-            tooltip: i18n("View profile")
-            onTriggered: {
-                if (!admin) {
-                    Navigation.openAccount(root.identity.id)
-                    root.clicked()
-                }
-            }
+        text: i18n("View profile")
+        onClicked: if (!admin) {
+            Navigation.openAccount(root.identity.id);
+            root.clicked();
         }
         name: root.identity.displayName
     }

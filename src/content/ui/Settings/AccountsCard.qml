@@ -9,6 +9,7 @@ import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.kirigamiaddons.components 1.0 as Avatar
 
 import org.kde.kmasto 1.0
 
@@ -26,7 +27,7 @@ FormCard.FormCard {
             })
 
             contentItem: RowLayout {
-                Kirigami.Avatar {
+                KirigamiComponents.Avatar {
                     source: model.account.identity.avatarUrl
                     name: model.display
                     Layout.rightMargin: Kirigami.Units.largeSpacing

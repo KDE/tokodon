@@ -8,6 +8,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kmasto 1.0
 import Qt.labs.platform 1.1
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.kirigamiaddons.components 1.0 as Avatar
 import @QTGRAPHICALEFFECTS_MODULE@
 
 FormCard.FormCardPage {
@@ -87,7 +88,7 @@ FormCard.FormCardPage {
                 anchors.right: parent.right
                 contentItem: RowLayout {
                     implicitHeight: Kirigami.Units.gridUnit * 5
-                    Kirigami.Avatar {
+                    KirigamiComponents.Avatar {
                         source: backend.avatarUrl
                     }
 
