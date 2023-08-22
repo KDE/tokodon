@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-08-22 00:46+0000\n"
 "PO-Revision-Date: 2023-08-16 10:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -355,7 +355,7 @@ msgstr "Bloqueja"
 msgid "Edit Profile"
 msgstr "Edita un perfil"
 
-#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:25
+#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:26
 #, kde-format
 msgid "Account editor"
 msgstr "Editor de comptes"
@@ -733,9 +733,9 @@ msgid "Reset"
 msgstr "Reinicia"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
-#: content/ui/ModerationTools/FederationToolPage.qml:126
-#: content/ui/ModerationTools/FederationToolPage.qml:157
-#: content/ui/ModerationTools/IpRulePage.qml:115
+#: content/ui/ModerationTools/FederationToolPage.qml:141
+#: content/ui/ModerationTools/FederationToolPage.qml:172
+#: content/ui/ModerationTools/IpRulePage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
@@ -845,25 +845,31 @@ msgstr "Propietari"
 msgid "No accounts found"
 msgstr "No s'ha trobat cap compte"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:25
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:17
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "Crea un bloqueig de correu electrònic"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "Informació de domini de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:34
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "Nom de domini de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:42
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Bloqueig creat el"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:50
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -871,44 +877,44 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "Comptador d'intents de registre esta setmana"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:58
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "Intents de registre per IP en esta setmana"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:67
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:105
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:72
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
 msgstr "Suprimix el bloqueig de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:76
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
 msgstr "S'ha suprimit el bloqueig de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:86
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "Bloqueig nou de domini de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:96
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Domini *"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -917,118 +923,123 @@ msgstr ""
 "Este pot ser el nom de domini que apareix a l'adreça de correu electrònic o "
 "el registre MX que utilitza. Es comprovaran en registrar-se."
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:110
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
 msgstr "Resol el domini"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:114
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
 msgstr "S'ha afegit un bloqueig de correu electrònic nou"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:157
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "%1 intents de registre durant l'última setmana"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:179
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
 msgstr "No s'ha trobat cap bloqueig de correu electrònic"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:192
+#: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
-msgctxt "@action:button"
-msgid "Create Email Block"
-msgstr "Crea un bloqueig de correu electrònic"
+msgid "Add New Domain Block"
+msgstr "Afig un bloc de domini nou"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:24
+#: content/ui/ModerationTools/FederationToolPage.qml:27
+#: content/ui/ModerationTools/FederationToolPage.qml:160
+#, kde-format
+msgid "Allow Federation with Domain"
+msgstr "Permet la federació amb domini"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "Informació de dominis permesos"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:30
+#: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "Domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:36
+#: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Creat el"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:45
+#: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
 msgstr "Inhabilita la federació amb el domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:49
+#: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
 msgstr "No es permet la federació amb el domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:59
+#: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
 msgstr "Afig un bloc de domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:69
+#: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "Domini*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:74
+#: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgid "Public comment"
 msgstr "Comentari públic"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:79
+#: content/ui/ModerationTools/FederationToolPage.qml:94
 #, kde-format
 msgid "Private Comment"
 msgstr "Comentari privat"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:84
+#: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
 msgstr "Moderació"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:89
+#: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "Silenci"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:93
+#: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Suspén"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:97
+#: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Sense"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:106
+#: content/ui/ModerationTools/FederationToolPage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
 msgstr "Rebutja els fitxers multimèdia"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/FederationToolPage.qml:122
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
 #, kde-format
 msgid ""
@@ -1038,13 +1049,13 @@ msgstr ""
 "Elimina els fitxers multimèdia emmagatzemats localment i es nega a "
 "descarregar-ne cap en el futur. Irrellevant per a les suspensions"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:112
+#: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
 msgstr "Rebutja els informes"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
@@ -1052,13 +1063,13 @@ msgstr ""
 "Ignora tots els informes provinents d'este domini. Irrellevant per a les "
 "suspensions"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:118
+#: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "Ofusca el nom de domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
 #, kde-format
 msgid ""
@@ -1068,25 +1079,19 @@ msgstr ""
 "Ofusca parcialment el nom de domini en la llista si s'habilita la publicitat "
 "de la llista de limitacions de domini"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:131
-#: content/ui/ModerationTools/FederationToolPage.qml:162
+#: content/ui/ModerationTools/FederationToolPage.qml:146
+#: content/ui/ModerationTools/FederationToolPage.qml:177
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
 msgstr "Crea un bloc"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:136
+#: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
 msgstr "S'ha afegit un bloc de domini nou"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:145
-#: content/ui/ModerationTools/FederationToolPage.qml:315
-#, kde-format
-msgid "Allow Federation with Domain"
-msgstr "Permet la federació amb domini"
-
-#: content/ui/ModerationTools/FederationToolPage.qml:151
+#: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -1094,12 +1099,12 @@ msgctxt ""
 msgid "Domain*"
 msgstr "Domini*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:166
+#: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
 msgstr "S'ha afegit un domini permés nou"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:179
+#: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -1108,194 +1113,189 @@ msgstr ""
 "L'opció de domini permesa està disponible per a instàncies amb el mode "
 "federació limitat activat"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:186
+#: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "Moderació"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:201
+#: content/ui/ModerationTools/FederationToolPage.qml:216
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "Dominis bloquejats"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:205
+#: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "Dominis permesos"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:271
+#: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
 msgstr "Permés per a la federació"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:294
+#: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
 msgstr "No s'ha trobat cap federació"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:306
+#: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
-msgid "Add New Domain Block"
-msgstr "Afig un bloc de domini nou"
+msgctxt "@action:button"
+msgid "Create Rule"
+msgstr "Crea una regla"
 
-#: content/ui/ModerationTools/IpRulePage.qml:19
+#: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
 msgstr "Regla d'IP nova"
 
-#: content/ui/ModerationTools/IpRulePage.qml:31
+#: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
 msgstr "IP*"
 
-#: content/ui/ModerationTools/IpRulePage.qml:37
+#: content/ui/ModerationTools/IpRulePage.qml:43
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "Caduca després de"
 
-#: content/ui/ModerationTools/IpRulePage.qml:42
+#: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 dia"
 
-#: content/ui/ModerationTools/IpRulePage.qml:46
+#: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2 setmanes"
 
-#: content/ui/ModerationTools/IpRulePage.qml:50
+#: content/ui/ModerationTools/IpRulePage.qml:56
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1 mes"
 
-#: content/ui/ModerationTools/IpRulePage.qml:54
+#: content/ui/ModerationTools/IpRulePage.qml:60
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6 mesos"
 
-#: content/ui/ModerationTools/IpRulePage.qml:58
+#: content/ui/ModerationTools/IpRulePage.qml:64
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1 any"
 
-#: content/ui/ModerationTools/IpRulePage.qml:62
+#: content/ui/ModerationTools/IpRulePage.qml:68
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3 anys"
 
-#: content/ui/ModerationTools/IpRulePage.qml:73
+#: content/ui/ModerationTools/IpRulePage.qml:79
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
 msgstr "Comentari"
 
-#: content/ui/ModerationTools/IpRulePage.qml:74
+#: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
 msgstr "Opcional. Recordeu per què heu afegit esta regla."
 
-#: content/ui/ModerationTools/IpRulePage.qml:81
+#: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "Regla *"
 
-#: content/ui/ModerationTools/IpRulePage.qml:85
+#: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
 msgstr "Seleccioneu què passarà amb les sol·licituds des d'esta IP"
 
-#: content/ui/ModerationTools/IpRulePage.qml:92
+#: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
 msgstr "Limita els registres"
 
-#: content/ui/ModerationTools/IpRulePage.qml:93
+#: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
 msgstr "Els registres nous requeriran la vostra aprovació"
 
-#: content/ui/ModerationTools/IpRulePage.qml:99
+#: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
 msgstr "Bloqueja els registres"
 
-#: content/ui/ModerationTools/IpRulePage.qml:100
+#: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
 msgstr "No seran possibles els registres nous"
 
-#: content/ui/ModerationTools/IpRulePage.qml:105
+#: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
 msgstr "Bloqueja l'accés"
 
-#: content/ui/ModerationTools/IpRulePage.qml:106
+#: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
 msgstr "Bloqueja l'accés a tots els recursos"
 
-#: content/ui/ModerationTools/IpRulePage.qml:120
+#: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "Crea una regla d'IP"
 
-#: content/ui/ModerationTools/IpRulePage.qml:124
+#: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
 msgstr "S'ha afegit una regla d'IP nova"
 
-#: content/ui/ModerationTools/IpRulePage.qml:150
+#: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "Limita els registres"
 
-#: content/ui/ModerationTools/IpRulePage.qml:152
+#: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "Bloqueja els registres"
 
-#: content/ui/ModerationTools/IpRulePage.qml:154
+#: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "Bloqueja l'accés"
 
-#: content/ui/ModerationTools/IpRulePage.qml:201
+#: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
 msgstr "No s'ha trobat cap regla d'IP"
-
-#: content/ui/ModerationTools/IpRulePage.qml:213
-#, kde-format
-msgctxt "@action:button"
-msgid "Create Rule"
-msgstr "Crea una regla"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:21
 #, kde-format
@@ -1856,12 +1856,12 @@ msgstr "Busca persones, etiquetes i publicacions"
 msgid "Hashtag"
 msgstr "Etiqueta"
 
-#: content/ui/Settings/AccountsCard.qml:61
+#: content/ui/Settings/AccountsCard.qml:62
 #, kde-format
 msgid "Logout"
 msgstr "Eixida"
 
-#: content/ui/Settings/AccountsCard.qml:80 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:81 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Afig un compte"
@@ -1949,7 +1949,7 @@ msgid "Password"
 msgstr "Contrasenya"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
-#: content/ui/Settings/ProfileEditor.qml:303
+#: content/ui/Settings/ProfileEditor.qml:304
 #, kde-format
 msgid "Apply"
 msgstr "Aplica"
@@ -1984,70 +1984,70 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Visibilitat predeterminada de les publicacions"
 
-#: content/ui/Settings/ProfileEditor.qml:23
+#: content/ui/Settings/ProfileEditor.qml:24
 #, kde-format
 msgid "Profile Editor"
 msgstr "Editor de perfils"
 
-#: content/ui/Settings/ProfileEditor.qml:29
+#: content/ui/Settings/ProfileEditor.qml:30
 #: content/ui/StatusComposer/StatusComposer.qml:245
 #, kde-format
 msgid "Please choose a file"
 msgstr "Seleccioneu un fitxer"
 
-#: content/ui/Settings/ProfileEditor.qml:111
+#: content/ui/Settings/ProfileEditor.qml:112
 #, kde-format
 msgid "Display Name"
 msgstr "Nom que s'ha de mostrar"
 
-#: content/ui/Settings/ProfileEditor.qml:124
+#: content/ui/Settings/ProfileEditor.qml:125
 #, kde-format
 msgid "Bio"
 msgstr "Biografia"
 
-#: content/ui/Settings/ProfileEditor.qml:143
+#: content/ui/Settings/ProfileEditor.qml:144
 #, kde-format
 msgid "Header"
 msgstr "Capçalera"
 
-#: content/ui/Settings/ProfileEditor.qml:177
+#: content/ui/Settings/ProfileEditor.qml:178
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 1500x500px"
 
-#: content/ui/Settings/ProfileEditor.qml:190
-#: content/ui/Settings/ProfileEditor.qml:252
+#: content/ui/Settings/ProfileEditor.qml:191
+#: content/ui/Settings/ProfileEditor.qml:253
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
 
-#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:206
 #, kde-format
 msgid "Avatar"
 msgstr "Avatar"
 
-#: content/ui/Settings/ProfileEditor.qml:238
+#: content/ui/Settings/ProfileEditor.qml:239
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 400x400px"
 
-#: content/ui/Settings/ProfileEditor.qml:266
+#: content/ui/Settings/ProfileEditor.qml:267
 #, kde-format
 msgid "Require follow requests"
 msgstr "Requerix sol·licituds de seguiment"
 
-#: content/ui/Settings/ProfileEditor.qml:274
+#: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "This is a bot account"
 msgstr "Este és un compte de bot"
 
-#: content/ui/Settings/ProfileEditor.qml:282
+#: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Suggerix el compte a altres"
 
-#: content/ui/Settings/ProfileEditor.qml:296
+#: content/ui/Settings/ProfileEditor.qml:297
 #, kde-format
 msgid "Reset"
 msgstr "Reinicia"
@@ -2455,7 +2455,7 @@ msgstr "Vídeo"
 msgid "Media Hidden"
 msgstr "Fitxers multimèdia ocults"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
 #: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format

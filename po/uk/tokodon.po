@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-08-22 00:46+0000\n"
 "PO-Revision-Date: 2023-08-16 07:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -356,7 +356,7 @@ msgstr "Заблокувати"
 msgid "Edit Profile"
 msgstr "Змінити профіль"
 
-#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:25
+#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:26
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор облікових записів"
@@ -746,9 +746,9 @@ msgid "Reset"
 msgstr "Скинути"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
-#: content/ui/ModerationTools/FederationToolPage.qml:126
-#: content/ui/ModerationTools/FederationToolPage.qml:157
-#: content/ui/ModerationTools/IpRulePage.qml:115
+#: content/ui/ModerationTools/FederationToolPage.qml:141
+#: content/ui/ModerationTools/FederationToolPage.qml:172
+#: content/ui/ModerationTools/IpRulePage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
@@ -858,25 +858,31 @@ msgstr "Власник"
 msgid "No accounts found"
 msgstr "Не знайдено жодного облікового запису"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:25
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:17
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "Створити блокування ел. пошти"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "Дані щодо домену ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:34
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "Назва домену ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:42
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Блокування створено"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:50
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -884,44 +890,44 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "Спроби увійти до облікового запису цього тижня"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:58
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "Спроби увійти для IP-адреси цього тижня"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:67
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:105
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:72
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
 msgstr "Вилучити блокування ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:76
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
 msgstr "Блокування ел. пошти вилучено"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:86
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "Нове блокування домену ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:96
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Домен *"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -930,118 +936,123 @@ msgstr ""
 "Це може бути назва домену, яку показано в адресі електронної пошти або "
 "запису MX, який використано. Їх буде перевірено під час реєстрації."
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:110
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
 msgstr "Розв'язати домен"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:114
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
 msgstr "Додано нове блокування адреси ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:157
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "%1 спроб увійти протягом останнього тижня"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:179
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
 msgstr "Не знайдено блокувань ел. пошти"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:192
+#: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
-msgctxt "@action:button"
-msgid "Create Email Block"
-msgstr "Створити блокування ел. пошти"
+msgid "Add New Domain Block"
+msgstr "Додати нове блокування доменів"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:24
+#: content/ui/ModerationTools/FederationToolPage.qml:27
+#: content/ui/ModerationTools/FederationToolPage.qml:160
+#, kde-format
+msgid "Allow Federation with Domain"
+msgstr "Дозволити федерацію з доменом"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "Дані щодо дозволених доменів"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:30
+#: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "Домен"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:36
+#: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Створено"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:45
+#: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
 msgstr "Заборонити федерацію з доменом"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:49
+#: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
 msgstr "Заборонена федерація з доменом"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:59
+#: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
 msgstr "Додати блокування домену"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:69
+#: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "Домен*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:74
+#: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgid "Public comment"
 msgstr "Загальнодоступний коментар"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:79
+#: content/ui/ModerationTools/FederationToolPage.qml:94
 #, kde-format
 msgid "Private Comment"
 msgstr "Конфіденційний коментар"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:84
+#: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
 msgstr "Модерація"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:89
+#: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "Придушити"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:93
+#: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Призупинити"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:97
+#: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Немає"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:106
+#: content/ui/ModerationTools/FederationToolPage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
 msgstr "Відкидати мультимедійні файли"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/FederationToolPage.qml:122
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
 #, kde-format
 msgid ""
@@ -1051,26 +1062,26 @@ msgstr ""
 "Вилучає локально збережені мультимедійні файли і забороняє отримувати такі у "
 "майбутньому. Не пов'язано із призупиненнями"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:112
+#: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
 msgstr "Відкидати звіти"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
 "Ігнорувати звіти, що находять з цього домену. Не пов'язано із призупиненнями"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:118
+#: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "Шифрувати назву домену"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
 #, kde-format
 msgid ""
@@ -1080,25 +1091,19 @@ msgstr ""
 "Частково зашифрувати назву домену у списку, якщо увімкнено розповсюдження "
 "списку обмежень доменів"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:131
-#: content/ui/ModerationTools/FederationToolPage.qml:162
+#: content/ui/ModerationTools/FederationToolPage.qml:146
+#: content/ui/ModerationTools/FederationToolPage.qml:177
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
 msgstr "Створити блокування"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:136
+#: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
 msgstr "Додано нове блокування доменів"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:145
-#: content/ui/ModerationTools/FederationToolPage.qml:315
-#, kde-format
-msgid "Allow Federation with Domain"
-msgstr "Дозволити федерацію з доменом"
-
-#: content/ui/ModerationTools/FederationToolPage.qml:151
+#: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -1106,12 +1111,12 @@ msgctxt ""
 msgid "Domain*"
 msgstr "Домен*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:166
+#: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
 msgstr "Додано новий дозволений домен"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:179
+#: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -1120,194 +1125,189 @@ msgstr ""
 "Параметр дозволу доменів доступний для екземплярів із увімкненим режимом "
 "обмеження федерації"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:186
+#: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "Модерація"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:201
+#: content/ui/ModerationTools/FederationToolPage.qml:216
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "Блоковані домени"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:205
+#: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "Дозволені домени"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:271
+#: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
 msgstr "Дозволено для федерації"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:294
+#: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
 msgstr "Федерацій не знайдено"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:306
+#: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
-msgid "Add New Domain Block"
-msgstr "Додати нове блокування доменів"
+msgctxt "@action:button"
+msgid "Create Rule"
+msgstr "Створити правило"
 
-#: content/ui/ModerationTools/IpRulePage.qml:19
+#: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
 msgstr "Нове IP-правило"
 
-#: content/ui/ModerationTools/IpRulePage.qml:31
+#: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
 msgstr "IP*"
 
-#: content/ui/ModerationTools/IpRulePage.qml:37
+#: content/ui/ModerationTools/IpRulePage.qml:43
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "Строк дії"
 
-#: content/ui/ModerationTools/IpRulePage.qml:42
+#: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 день"
 
-#: content/ui/ModerationTools/IpRulePage.qml:46
+#: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2 тижні"
 
-#: content/ui/ModerationTools/IpRulePage.qml:50
+#: content/ui/ModerationTools/IpRulePage.qml:56
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1 місяць"
 
-#: content/ui/ModerationTools/IpRulePage.qml:54
+#: content/ui/ModerationTools/IpRulePage.qml:60
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6 місяців"
 
-#: content/ui/ModerationTools/IpRulePage.qml:58
+#: content/ui/ModerationTools/IpRulePage.qml:64
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1 рік"
 
-#: content/ui/ModerationTools/IpRulePage.qml:62
+#: content/ui/ModerationTools/IpRulePage.qml:68
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3 роки"
 
-#: content/ui/ModerationTools/IpRulePage.qml:73
+#: content/ui/ModerationTools/IpRulePage.qml:79
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
 msgstr "Коментар"
 
-#: content/ui/ModerationTools/IpRulePage.qml:74
+#: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
 msgstr "Необов'язковий. Для визначення причини додавання цього правила."
 
-#: content/ui/ModerationTools/IpRulePage.qml:81
+#: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "Правило *"
 
-#: content/ui/ModerationTools/IpRulePage.qml:85
+#: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
 msgstr "Виберіть, що слід робити із запитами з цієї IP-адреси"
 
-#: content/ui/ModerationTools/IpRulePage.qml:92
+#: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
 msgstr "Обмежити реєстрації"
 
-#: content/ui/ModerationTools/IpRulePage.qml:93
+#: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
 msgstr "Нові реєстрації потребуватимуть вашого підтвердження"
 
-#: content/ui/ModerationTools/IpRulePage.qml:99
+#: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
 msgstr "Блокувати реєстрацію"
 
-#: content/ui/ModerationTools/IpRulePage.qml:100
+#: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
 msgstr "Нові реєстрації стануть неможливими"
 
-#: content/ui/ModerationTools/IpRulePage.qml:105
+#: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
 msgstr "Блокувати доступ"
 
-#: content/ui/ModerationTools/IpRulePage.qml:106
+#: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
 msgstr "Блокувати доступ до усіх ресурсів"
 
-#: content/ui/ModerationTools/IpRulePage.qml:120
+#: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "Створити IP-правило"
 
-#: content/ui/ModerationTools/IpRulePage.qml:124
+#: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
 msgstr "Додано нове IP-правило"
 
-#: content/ui/ModerationTools/IpRulePage.qml:150
+#: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "Обмежити реєстрації"
 
-#: content/ui/ModerationTools/IpRulePage.qml:152
+#: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "Блокувати реєстрацію"
 
-#: content/ui/ModerationTools/IpRulePage.qml:154
+#: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "Блокувати доступ"
 
-#: content/ui/ModerationTools/IpRulePage.qml:201
+#: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
 msgstr "Не знайдено жодного IP-правила"
-
-#: content/ui/ModerationTools/IpRulePage.qml:213
-#, kde-format
-msgctxt "@action:button"
-msgid "Create Rule"
-msgstr "Створити правило"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:21
 #, kde-format
@@ -1871,12 +1871,12 @@ msgstr "Шукати людей, мітки та дописи"
 msgid "Hashtag"
 msgstr "Хештеґ"
 
-#: content/ui/Settings/AccountsCard.qml:61
+#: content/ui/Settings/AccountsCard.qml:62
 #, kde-format
 msgid "Logout"
 msgstr "Вийти"
 
-#: content/ui/Settings/AccountsCard.qml:80 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:81 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Додати обліковий запис"
@@ -1964,7 +1964,7 @@ msgid "Password"
 msgstr "Пароль"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
-#: content/ui/Settings/ProfileEditor.qml:303
+#: content/ui/Settings/ProfileEditor.qml:304
 #, kde-format
 msgid "Apply"
 msgstr "Застосувати"
@@ -1997,74 +1997,74 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Типова видимість дописів"
 
-#: content/ui/Settings/ProfileEditor.qml:23
+#: content/ui/Settings/ProfileEditor.qml:24
 #, kde-format
 msgid "Profile Editor"
 msgstr "Редактор профілів"
 
-#: content/ui/Settings/ProfileEditor.qml:29
+#: content/ui/Settings/ProfileEditor.qml:30
 #: content/ui/StatusComposer/StatusComposer.qml:245
 #, kde-format
 msgid "Please choose a file"
 msgstr "Будь ласка, виберіть файл"
 
-#: content/ui/Settings/ProfileEditor.qml:111
+#: content/ui/Settings/ProfileEditor.qml:112
 #, kde-format
 msgid "Display Name"
 msgstr "Екранне ім'я"
 
-#: content/ui/Settings/ProfileEditor.qml:124
+#: content/ui/Settings/ProfileEditor.qml:125
 #, kde-format
 msgid "Bio"
 msgstr "Біо"
 
-#: content/ui/Settings/ProfileEditor.qml:143
+#: content/ui/Settings/ProfileEditor.qml:144
 #, kde-format
 msgid "Header"
 msgstr "Заголовок"
 
-#: content/ui/Settings/ProfileEditor.qml:177
+#: content/ui/Settings/ProfileEditor.qml:178
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 "PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
 "1500x500 пк."
 
-#: content/ui/Settings/ProfileEditor.qml:190
-#: content/ui/Settings/ProfileEditor.qml:252
+#: content/ui/Settings/ProfileEditor.qml:191
+#: content/ui/Settings/ProfileEditor.qml:253
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:206
 #, kde-format
 msgid "Avatar"
 msgstr "Аватар"
 
-#: content/ui/Settings/ProfileEditor.qml:238
+#: content/ui/Settings/ProfileEditor.qml:239
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 "PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
 "400x400 пк."
 
-#: content/ui/Settings/ProfileEditor.qml:266
+#: content/ui/Settings/ProfileEditor.qml:267
 #, kde-format
 msgid "Require follow requests"
 msgstr "Вимагати запитів щодо стеження"
 
-#: content/ui/Settings/ProfileEditor.qml:274
+#: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "This is a bot account"
 msgstr "Це обліковий запис бота"
 
-#: content/ui/Settings/ProfileEditor.qml:282
+#: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Пропонувати запис іншим"
 
-#: content/ui/Settings/ProfileEditor.qml:296
+#: content/ui/Settings/ProfileEditor.qml:297
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
@@ -2472,7 +2472,7 @@ msgstr "Відео"
 msgid "Media Hidden"
 msgstr "Мультимедіа приховано"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
 #: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:46+0000\n"
+"POT-Creation-Date: 2023-08-22 00:46+0000\n"
 "PO-Revision-Date: 2023-08-16 14:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -350,7 +350,7 @@ msgstr "Engelle"
 msgid "Edit Profile"
 msgstr "Profili Düzenle"
 
-#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:25
+#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:26
 #, kde-format
 msgid "Account editor"
 msgstr "Hesap düzenleyici"
@@ -728,9 +728,9 @@ msgid "Reset"
 msgstr "Sıfırla"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
-#: content/ui/ModerationTools/FederationToolPage.qml:126
-#: content/ui/ModerationTools/FederationToolPage.qml:157
-#: content/ui/ModerationTools/IpRulePage.qml:115
+#: content/ui/ModerationTools/FederationToolPage.qml:141
+#: content/ui/ModerationTools/FederationToolPage.qml:172
+#: content/ui/ModerationTools/IpRulePage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:110
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
@@ -840,25 +840,31 @@ msgstr "Sahip"
 msgid "No accounts found"
 msgstr "Hesap bulunamadı"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:25
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:17
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Email Block"
+msgstr "E-posta Engeli Oluştur"
+
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
 msgstr "E-posta Alan Adı Bilgisi"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:34
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
 msgstr "E-posta alan adı"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:42
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
 msgstr "Engellenme zamanı"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:50
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
 msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
@@ -866,44 +872,44 @@ msgctxt ""
 msgid "Account sign-up attempts in this week"
 msgstr "Bu haftaki hesap kayıt denemeleri"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:58
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
 msgstr "Bu haftaki IP kayıt denemeleri"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:67
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:105
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:73
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "İptal"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:72
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
 msgstr "E-posta blokunu sil"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:76
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
 msgstr "E-posta bloku silindi"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:86
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
 msgstr "Yeni Alan Adı Engeli"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:96
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
 msgstr "Alan Adı*"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:97
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
 msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
@@ -912,118 +918,123 @@ msgstr ""
 "Bu, e-posta adresinde görünen alan adı veya onun kullandığı MX kaydı "
 "olabilir. Kayıt sırasında denetleneceklerdir."
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:110
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
 msgstr "Alan adını çöz"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:114
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
 msgstr "Yeni e-posta engeli eklendi"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:157
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
 msgstr "Geçen hafta boyunca %1 kayıt denemesi"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:179
+#: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
 msgstr "E-posta engeli bulunamadı"
 
-#: content/ui/ModerationTools/EmailBlockToolPage.qml:192
+#: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
-msgctxt "@action:button"
-msgid "Create Email Block"
-msgstr "E-posta Engeli Oluştur"
+msgid "Add New Domain Block"
+msgstr "Yeni Alan Adı Engeli Ekle"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:24
+#: content/ui/ModerationTools/FederationToolPage.qml:27
+#: content/ui/ModerationTools/FederationToolPage.qml:160
+#, kde-format
+msgid "Allow Federation with Domain"
+msgstr "Alan Adıyla Federe Etmeye İzin Ver"
+
+#: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
 msgstr "İzin Verilen Alan Adı Bilgisi"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:30
+#: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
 msgstr "Alan Adı"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:36
+#: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
 msgstr "Oluşturulma tarihi"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:45
+#: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
 msgstr "Alan Adıyla Federe Etmeye İzin Verme"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:49
+#: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
 msgstr "Alan adıyla federe etmeye izin verilmedi"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:59
+#: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
 msgstr "Alan Adı Engeli Ekle"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:69
+#: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
 msgstr "Alan Adı*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:74
+#: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgid "Public comment"
 msgstr "Genel yorum"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:79
+#: content/ui/ModerationTools/FederationToolPage.qml:94
 #, kde-format
 msgid "Private Comment"
 msgstr "Gizli yorum"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:84
+#: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
 msgstr "Moderasyon"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:89
+#: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
 msgstr "Sustur"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:93
+#: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
 msgstr "Askıya Al"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:97
+#: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Yok"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:106
+#: content/ui/ModerationTools/FederationToolPage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
 msgstr "Ortam dosyalarını reddet"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:107
+#: content/ui/ModerationTools/FederationToolPage.qml:122
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
 #, kde-format
 msgid ""
@@ -1033,26 +1044,26 @@ msgstr ""
 "Yerel olarak depolanan ortam dosyalarını kaldırır ve gelecekte hiçbir "
 "tanesini indirmez. Askıya almalarla ilgisizdir"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:112
+#: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
 msgstr "Raporları reddet"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:113
+#: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
 "Bu alan adından gelen tüm raporları yok say. Askıya almalarla ilgisizdir"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:118
+#: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
 msgstr "Alan adını belirsizleştir"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:119
+#: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
 #, kde-format
 msgid ""
@@ -1062,25 +1073,19 @@ msgstr ""
 "Alan adı sınırlamalarının reklamını yapmak etkinse alan adını kısımsal "
 "olarak belirsizleştir"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:131
-#: content/ui/ModerationTools/FederationToolPage.qml:162
+#: content/ui/ModerationTools/FederationToolPage.qml:146
+#: content/ui/ModerationTools/FederationToolPage.qml:177
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
 msgstr "Engelleme Oluştur"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:136
+#: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
 msgstr "Yeni alan adı engeli eklendi"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:145
-#: content/ui/ModerationTools/FederationToolPage.qml:315
-#, kde-format
-msgid "Allow Federation with Domain"
-msgstr "Alan Adıyla Federe Etmeye İzin Ver"
-
-#: content/ui/ModerationTools/FederationToolPage.qml:151
+#: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
 msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
@@ -1088,12 +1093,12 @@ msgctxt ""
 msgid "Domain*"
 msgstr "Alan Adı*"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:166
+#: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
 msgstr "Yeni İzin Verilen Alan Adı Eklendi"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:179
+#: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
 msgid ""
 "Allowed domain option is available for instances with limited federation "
@@ -1102,194 +1107,189 @@ msgstr ""
 "Sınırlı federasyon kipi etkin olan örnekler için izin verilen alan adı "
 "seçeneği kullanılabilir"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:186
+#: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
 msgstr "Moderasyon"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:201
+#: content/ui/ModerationTools/FederationToolPage.qml:216
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
 msgstr "Engellenen alan adları"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:205
+#: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
 msgstr "İzin verilen alan adları"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:271
+#: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
 msgstr "Federe etmek için izin verilen"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:294
+#: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
 msgstr "Federasyon bulunamadı"
 
-#: content/ui/ModerationTools/FederationToolPage.qml:306
+#: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
-msgid "Add New Domain Block"
-msgstr "Yeni Alan Adı Engeli Ekle"
+msgctxt "@action:button"
+msgid "Create Rule"
+msgstr "Kural Oluştur"
 
-#: content/ui/ModerationTools/IpRulePage.qml:19
+#: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
 msgstr "Yeni IP Kuralı"
 
-#: content/ui/ModerationTools/IpRulePage.qml:31
+#: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
 msgstr "IP*"
 
-#: content/ui/ModerationTools/IpRulePage.qml:37
+#: content/ui/ModerationTools/IpRulePage.qml:43
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
 msgstr "Şu Tarihten Sonra Kaldır"
 
-#: content/ui/ModerationTools/IpRulePage.qml:42
+#: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 gün"
 
-#: content/ui/ModerationTools/IpRulePage.qml:46
+#: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
 msgstr "2 hafta"
 
-#: content/ui/ModerationTools/IpRulePage.qml:50
+#: content/ui/ModerationTools/IpRulePage.qml:56
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
 msgstr "1 ay"
 
-#: content/ui/ModerationTools/IpRulePage.qml:54
+#: content/ui/ModerationTools/IpRulePage.qml:60
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
 msgstr "6 ay"
 
-#: content/ui/ModerationTools/IpRulePage.qml:58
+#: content/ui/ModerationTools/IpRulePage.qml:64
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
 msgstr "1 yıl"
 
-#: content/ui/ModerationTools/IpRulePage.qml:62
+#: content/ui/ModerationTools/IpRulePage.qml:68
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
 msgstr "3 yıl"
 
-#: content/ui/ModerationTools/IpRulePage.qml:73
+#: content/ui/ModerationTools/IpRulePage.qml:79
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
 msgstr "Yorum"
 
-#: content/ui/ModerationTools/IpRulePage.qml:74
+#: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
 msgstr "İsteğe bağlı. Bu kuralı neden eklediğinizi anımsayın."
 
-#: content/ui/ModerationTools/IpRulePage.qml:81
+#: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
 msgstr "Kural *"
 
-#: content/ui/ModerationTools/IpRulePage.qml:85
+#: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
 msgstr "Bu IP'den olan isteklerle ne olacağını seç"
 
-#: content/ui/ModerationTools/IpRulePage.qml:92
+#: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
 msgstr "Kayıtları sınırla"
 
-#: content/ui/ModerationTools/IpRulePage.qml:93
+#: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
 msgstr "Yeni kayıtlar sizin onayınızı gerektirir"
 
-#: content/ui/ModerationTools/IpRulePage.qml:99
+#: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
 msgstr "Kayıtları engelle"
 
-#: content/ui/ModerationTools/IpRulePage.qml:100
+#: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
 msgstr "Yeni kayıtlar olanaklı olmayacaktır"
 
-#: content/ui/ModerationTools/IpRulePage.qml:105
+#: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
 msgstr "Erişimi engelle"
 
-#: content/ui/ModerationTools/IpRulePage.qml:106
+#: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
 msgstr "Tüm özkaynaklara erişimi engelle"
 
-#: content/ui/ModerationTools/IpRulePage.qml:120
+#: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
 msgstr "IP Kuralı oluştur"
 
-#: content/ui/ModerationTools/IpRulePage.qml:124
+#: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
 msgstr "Yeni IP kuralı eklendi"
 
-#: content/ui/ModerationTools/IpRulePage.qml:150
+#: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
 msgstr "Kayıtları sınırla"
 
-#: content/ui/ModerationTools/IpRulePage.qml:152
+#: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
 msgstr "Kayıtları engelle"
 
-#: content/ui/ModerationTools/IpRulePage.qml:154
+#: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
 msgstr "Erişimi engelle"
 
-#: content/ui/ModerationTools/IpRulePage.qml:201
+#: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
 msgstr "Bir IP kuralı bulunamadı"
-
-#: content/ui/ModerationTools/IpRulePage.qml:213
-#, kde-format
-msgctxt "@action:button"
-msgid "Create Rule"
-msgstr "Kural Oluştur"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:21
 #, kde-format
@@ -1850,12 +1850,12 @@ msgstr "Kişiler, etiketler ve gönderiler ara"
 msgid "Hashtag"
 msgstr "Etiket"
 
-#: content/ui/Settings/AccountsCard.qml:61
+#: content/ui/Settings/AccountsCard.qml:62
 #, kde-format
 msgid "Logout"
 msgstr "Oturumu Kapat"
 
-#: content/ui/Settings/AccountsCard.qml:80 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:81 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Hesap Ekle"
@@ -1943,7 +1943,7 @@ msgid "Password"
 msgstr "Parola"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
-#: content/ui/Settings/ProfileEditor.qml:303
+#: content/ui/Settings/ProfileEditor.qml:304
 #, kde-format
 msgid "Apply"
 msgstr "Uygula"
@@ -1975,70 +1975,70 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Öntanımlı gönderi görünürlüğü"
 
-#: content/ui/Settings/ProfileEditor.qml:23
+#: content/ui/Settings/ProfileEditor.qml:24
 #, kde-format
 msgid "Profile Editor"
 msgstr "Profil Düzenleyici"
 
-#: content/ui/Settings/ProfileEditor.qml:29
+#: content/ui/Settings/ProfileEditor.qml:30
 #: content/ui/StatusComposer/StatusComposer.qml:245
 #, kde-format
 msgid "Please choose a file"
 msgstr "Lütfen bir dosya seçin"
 
-#: content/ui/Settings/ProfileEditor.qml:111
+#: content/ui/Settings/ProfileEditor.qml:112
 #, kde-format
 msgid "Display Name"
 msgstr "Ekran Adı"
 
-#: content/ui/Settings/ProfileEditor.qml:124
+#: content/ui/Settings/ProfileEditor.qml:125
 #, kde-format
 msgid "Bio"
 msgstr "Biyografi"
 
-#: content/ui/Settings/ProfileEditor.qml:143
+#: content/ui/Settings/ProfileEditor.qml:144
 #, kde-format
 msgid "Header"
 msgstr "Üstbilgi"
 
-#: content/ui/Settings/ProfileEditor.qml:177
+#: content/ui/Settings/ProfileEditor.qml:178
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 1500 x 500 pks olarak ölçeklendirilir"
 
-#: content/ui/Settings/ProfileEditor.qml:190
-#: content/ui/Settings/ProfileEditor.qml:252
+#: content/ui/Settings/ProfileEditor.qml:191
+#: content/ui/Settings/ProfileEditor.qml:253
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
 
-#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:206
 #, kde-format
 msgid "Avatar"
 msgstr "Avatar"
 
-#: content/ui/Settings/ProfileEditor.qml:238
+#: content/ui/Settings/ProfileEditor.qml:239
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 400 x 400 pks olarak ölçeklendirilir"
 
-#: content/ui/Settings/ProfileEditor.qml:266
+#: content/ui/Settings/ProfileEditor.qml:267
 #, kde-format
 msgid "Require follow requests"
 msgstr "Takip isteği gerektir"
 
-#: content/ui/Settings/ProfileEditor.qml:274
+#: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "This is a bot account"
 msgstr "Bu bir bot hesap"
 
-#: content/ui/Settings/ProfileEditor.qml:282
+#: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Hesabı başkalarına öner"
 
-#: content/ui/Settings/ProfileEditor.qml:296
+#: content/ui/Settings/ProfileEditor.qml:297
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
@@ -2446,7 +2446,7 @@ msgstr "Video"
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
 #: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format
