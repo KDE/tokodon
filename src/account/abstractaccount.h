@@ -286,6 +286,14 @@ public:
     /// \param callback The callback that should be executed if the request is successful
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
+    /// Make an HTTP PUT request to the server
+    /// \param url The url of the request
+    /// \param doc The request body as form-data
+    /// \param authenticated Whether the request should be authenticated
+    /// \param parent The parent object that calls get() or the callback belongs to
+    /// \param callback The callback that should be executed if the request is successful
+    virtual void put(const QUrl &url, const QUrlQuery &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+
     /// Make an HTTP PATCH request to the server
     /// \param url The url of the request
     /// \param message The request body as multi-part data
@@ -317,6 +325,9 @@ public:
 
     /// Check against the server for any new follow requests
     virtual void checkForFollowRequests() = 0;
+
+    /// Update the push notification rules
+    virtual void updatePushNotifications() = 0;
 
     /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
     /// @param identity The account to follow

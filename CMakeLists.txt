@@ -68,6 +68,20 @@ set_package_properties(Qt6Keychain PROPERTIES
     PURPOSE "Secure storage of account secrets"
 )
 
+find_package(KUnifiedPush)
+set_package_properties(KUnifiedPush PROPERTIES
+    TYPE OPTIONAL
+    PURPOSE "Push notification support"
+)
+
+if (TARGET KUnifiedPush)
+    find_package(OpenSSL REQUIRED)
+    set_package_properties(OpenSSL PROPERTIES
+            TYPE REQUIRED
+            PURPOSE "Generate push notification keys"
+    )
+endif()
+
 if (ANDROID)
     find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES

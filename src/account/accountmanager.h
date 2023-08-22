@@ -85,6 +85,7 @@ public:
 
     /// Re-validates every account's credentials
     void reloadAccounts();
+    void queueNotifications();
 
     /// Returns if the currently selected account has issues with authentication
     Q_INVOKABLE bool selectedAccountHasIssue() const;
@@ -170,6 +171,8 @@ Q_SIGNALS:
     void aboutDataChanged();
 
     void webapLink(QString id);
+
+    void finishedNotificationQueue();
 
 public Q_SLOTS:
 

@@ -34,6 +34,7 @@ public:
     QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
 
     void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
+    void put(const QUrl &url, const QUrlQuery &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) override;
 
     QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) override;
 
@@ -57,6 +58,8 @@ public:
 
     void setFakeIdentity(const QJsonObject &object);
     void clearFakeIdentity();
+
+    void updatePushNotifications() override {};
 
     Q_INVOKABLE void mentionNotification();
     Q_INVOKABLE void favoriteNotification();

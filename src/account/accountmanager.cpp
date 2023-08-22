@@ -490,3 +490,52 @@ bool AccountManager::testMode() const
 {
     return m_testMode;
 }
+
+void AccountManager::queueNotifications()
+{
+    static int accountsLeft = m_accounts.size();
+
+    const auto checkIfDone = [this]() {
+        if (accountsLeft <= 0) {
+            Q_EMIT finishedNotificationQueue();
+        }
+    };
+
+    for (auto account : m_accounts) {
+        QUrl uri;
+        uri = QUrl::fromUserInput(account->instanceUri());
+        uri.setPath(QStringLiteral("/api/v1/notifications"));
+
+        AccountConfig config(account->settingsGroupName());
+
+        QUrlQuery urlQuery(uri);
+        urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(1));
+        if (!config.lastPushNotification().isEmpty()) {
+            urlQuery.addQueryItem(QStringLiteral("min_id"), config.lastPushNotification());
+        }
+        uri.setQuery(urlQuery);
+
+        account->get(uri, true, this, [this, account, checkIfDone](QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            if (!doc.isArray() || doc.array().isEmpty()) {
+                accountsLeft--;
+                checkIfDone();
+                return;
+            }
+
+            const auto obj = doc.array()[0].toObject();
+            std::shared_ptr<Notification> n = std::make_shared<Notification>(account, obj);
+
+            AccountConfig config(account->settingsGroupName());
+            config.setLastPushNotification(obj["id"_L1].toString());
+            config.save();
+
+            Q_EMIT account->notification(n);
+
+            accountsLeft--;
+            checkIfDone();
+        });
+    }
+}

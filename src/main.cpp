@@ -29,6 +29,10 @@
 #include <KLocalizedString>
 #include <KWindowConfig>
 
+#ifdef HAVE_KUNIFIEDPUSH
+#include <kunifiedpush/connector.h>
+#endif
+
 #include "tokodon-version.h"
 
 #include "account/accountmanager.h"
@@ -123,6 +127,10 @@ int main(int argc, char *argv[])
     QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
     parser.addOption(shareOption);
 
+    // TODO: then don't expose it, dummy.
+    QCommandLineOption notifyOption(QStringLiteral("notify"), i18n("Internal usage only."));
+    parser.addOption(notifyOption);
+
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
@@ -144,8 +152,45 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableMetaObject(EmailInfo::staticMetaObject, "org.kde.tokodon", 1, 0, "EmailInfo", QStringLiteral("Only for enums"));
 
     QQmlApplicationEngine engine;
+
+#ifdef HAVE_KUNIFIEDPUSH
+    if (parser.isSet(notifyOption)) {
+        // TODO: timeout
+
+        // create the lazy instance
+        Q_UNUSED(AccountManager::instance());
+
+        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [] {
+            // queue notification
+            AccountManager::instance().queueNotifications();
+            qDebug() << "queueing";
+        });
+
+        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
+            // begin timer
+            // QCoreApplication::quit();
+        });
+
+        return QCoreApplication::exec();
+    }
+#endif
+
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
+#endif
+
+#ifdef HAVE_KUNIFIEDPUSH
+    auto connector = new KUnifiedPush::Connector(service.serviceName());
+    QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
+        NetworkController::instance().endpoint = endpoint;
+    });
+
+    NetworkController::instance().endpoint = connector->endpoint();
+
+    connector->registerClient(i18n("Receiving push notifications"));
+#endif
+
+#ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
         const auto rootObjects = engine.rootObjects();
         for (auto obj : rootObjects) {

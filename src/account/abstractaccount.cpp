@@ -130,7 +130,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
         {QStringLiteral("redirect_uris"), QStringLiteral("tokodon://oauth")},
-        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(additionalScopes)},
+        {QStringLiteral("scopes"), QStringLiteral("read write follow push %1").arg(additionalScopes)},
         {QStringLiteral("website"), website},
     };
     const QJsonDocument doc(obj);
@@ -273,7 +273,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
     q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
     q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
-    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
+    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow push ") + m_additionalScopes);
 
     url.setQuery(q);
 

@@ -15,6 +15,10 @@
 #include <QNetworkAccessManager>
 #include <qt6keychain/keychain.h>
 
+#ifdef HAVE_KUNIFIEDPUSH
+#include "utils/ecdh.h"
+#endif
+
 using namespace Qt::Literals::StringLiterals;
 
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, bool admin, QObject *parent)
@@ -96,6 +100,19 @@ void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated,
 
     QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+    qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
+
+    QNetworkReply *reply = m_qnam->put(request, post_data);
+    reply->setParent(parent);
+    handleReply(reply, reply_cb);
+}
+
+void Account::put(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
+{
+    auto post_data = formdata.toString().toLatin1();
+
+    QNetworkRequest request = makeRequest(url, authenticated);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
     qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->put(request, post_data);
@@ -289,6 +306,23 @@ void Account::validateToken()
             m_name = m_identity->username();
             Q_EMIT identityChanged();
             Q_EMIT authenticated(true, {});
+
+#ifdef HAVE_KUNIFIEDPUSH
+            get(
+                apiUrl(QStringLiteral("/api/v1/push/subscription")),
+                true,
+                this,
+                [=](QNetworkReply *reply) {
+                    Q_UNUSED(reply);
+                    m_hasPushSubscription = true;
+                    updatePushNotifications();
+                },
+                [=](QNetworkReply *reply) {
+                    Q_UNUSED(reply);
+                    m_hasPushSubscription = false;
+                    updatePushNotifications();
+                });
+#endif
         },
         [=](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -384,4 +418,93 @@ void Account::checkForFollowRequests()
             Q_EMIT hasFollowRequestsChanged();
         }
     });
+}
+
+void Account::updatePushNotifications()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    auto cfg = config();
+
+    if (m_hasPushSubscription && !cfg->enableNotifications()) {
+        unsubscribePushNotifications();
+    } else if (!m_hasPushSubscription && cfg->enableNotifications()) {
+        subscribePushNotifications();
+    } else {
+        QUrlQuery formdata = buildNotificationFormData();
+
+        formdata.addQueryItem(QStringLiteral("policy"), QStringLiteral("all"));
+
+        put(apiUrl(QStringLiteral("/api/v1/push/subscription")), formdata, true, this, [=](QNetworkReply *reply) {
+            qCDebug(TOKODON_HTTP) << "Updated push notification rules:" << reply->readAll();
+        });
+    }
+#endif
+}
+
+void Account::unsubscribePushNotifications()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    Q_ASSERT(m_hasPushSubscription);
+    deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [=](QNetworkReply *reply) {
+        m_hasPushSubscription = false;
+        qCDebug(TOKODON_HTTP) << "Unsubscribed from push notifications:" << reply->readAll();
+    });
+#endif
+}
+
+void Account::subscribePushNotifications()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    Q_ASSERT(!m_hasPushSubscription);
+
+    // Generate 16 random bytes
+    QByteArray randArray;
+    for (int i = 0; i < 16; i++) {
+        randArray.push_back(QRandomGenerator::global()->generate());
+    }
+
+    QUrlQuery formdata = buildNotificationFormData();
+    formdata.addQueryItem(QStringLiteral("subscription[endpoint]"), QUrl(NetworkController::instance().endpoint).toString());
+
+    // TODO: save this keypair in the keychain
+    const auto keys = generateECDHKeypair();
+
+    formdata.addQueryItem(QStringLiteral("subscription[keys][p256dh]"), QString::fromUtf8(exportPublicKey(keys).toBase64(QByteArray::Base64UrlEncoding)));
+    formdata.addQueryItem(QStringLiteral("subscription[keys][auth]"), QString::fromUtf8(randArray.toBase64(QByteArray::Base64UrlEncoding)));
+
+    formdata.addQueryItem(QStringLiteral("data[policy]"), QStringLiteral("all"));
+
+    post(apiUrl(QStringLiteral("/api/v1/push/subscription")),
+         formdata,
+         true,
+         this,
+         [=](QNetworkReply *reply) {
+             m_hasPushSubscription = true;
+             qCDebug(TOKODON_HTTP) << "Subscribed to push notifications:" << reply->readAll();
+         },
+         {});
+#endif
+}
+
+QUrlQuery Account::buildNotificationFormData()
+{
+    auto cfg = config();
+
+    QUrlQuery formdata;
+    const auto addQuery = [&formdata](const QString key, const bool value) {
+        formdata.addQueryItem(QStringLiteral("data[alerts][%1]").arg(key), value ? QStringLiteral("true") : QStringLiteral("false"));
+    };
+
+    addQuery(QStringLiteral("mention"), cfg->notifyMention());
+    addQuery(QStringLiteral("status"), cfg->notifyStatus());
+    addQuery(QStringLiteral("reblog"), cfg->notifyBoost());
+    addQuery(QStringLiteral("follow"), cfg->notifyFollow());
+    addQuery(QStringLiteral("follow_request"), cfg->notifyFollowRequest());
+    addQuery(QStringLiteral("favourite"), cfg->notifyFavorite());
+    addQuery(QStringLiteral("poll"), cfg->notifyPoll());
+    addQuery(QStringLiteral("update"), cfg->notifyUpdate());
+    addQuery(QStringLiteral("admin.sign_up"), cfg->notifySignup());
+    addQuery(QStringLiteral("admin.report"), cfg->notifyReport());
+
+    return formdata;
 }

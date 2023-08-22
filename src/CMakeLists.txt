@@ -343,6 +343,14 @@ if (TARGET KF6::KIOWidgets)
     target_link_libraries(tokodon_static PUBLIC KF6::KIOWidgets)
 endif()
 
+if (TARGET KUnifiedPush)
+    target_sources(tokodon_static PRIVATE
+            utils/ecdh.cpp
+            utils/ecdh.h)
+    target_compile_definitions(tokodon_static PUBLIC -DHAVE_KUNIFIEDPUSH)
+    target_link_libraries(tokodon_static PUBLIC KUnifiedPush OpenSSL::Crypto)
+endif()
+
 if (SAILFISHOS)
     target_compile_definitions(tokodon_static PUBLIC -DSAILFISHOS)
 endif()
@@ -445,6 +453,9 @@ if(ANDROID)
     target_sources(tokodon PRIVATE notifyrc.qrc)
 else()
     install(FILES tokodon.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+
+    configure_file(org.kde.tokodon.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
 endif()
 
 install(TARGETS tokodon ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
@@ -458,6 +469,11 @@ if(BUILD_TESTING)
     target_compile_definitions(tokodon-offline PUBLIC TEST_MODE=1)
     target_link_libraries(tokodon-offline PRIVATE tokodon_static tokodon_staticplugin)
     target_include_directories(tokodon-offline PRIVATE ${CMAKE_BINARY_DIR})
+
+    if (TARGET KF6::DBusAddons)
+        target_link_libraries(tokodon-offline PRIVATE KF6::DBusAddons KF6::WindowSystem)
+        target_compile_definitions(tokodon-offline PRIVATE -DHAVE_KDBUSADDONS)
+    endif ()
 
     install(TARGETS tokodon-offline ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()

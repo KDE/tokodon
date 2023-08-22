@@ -32,6 +32,8 @@ public:
 
     void requestRemoteObject(AbstractAccount *account, const QString &url, std::function<void(QNetworkReply *)> callback);
 
+    QString endpoint;
+
 Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
     void openPost(QString id);
