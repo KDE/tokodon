@@ -9,7 +9,7 @@ import Qt.labs.platform 1.1
 
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.kirigamiaddons.components 1.0 as Avatar
+import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
 
 import org.kde.kmasto 1.0
 

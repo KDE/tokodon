@@ -51,7 +51,6 @@ Kirigami.ScrollablePage {
                     InlineIdentityInfo {
                         identity: delegate.identity
                         secondary: false
-                        avatar.actions.main: null
                     }
 
                     QQC2.Button {
