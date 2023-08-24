@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:46+0000\n"
+"POT-Creation-Date: 2023-08-24 00:46+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -692,16 +692,18 @@ msgid "Moderation Tools"
 msgstr ""
 
 #: content/ui/main.qml:238
-#, kde-format
-msgctxt "@action:button"
-msgid "Open Moderation Tools"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Options:"
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "Beállítások:"
 
 #: content/ui/main.qml:248
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
-msgid "Open settings"
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
 msgstr "Beállítások"
 
 #: content/ui/main.qml:258
@@ -3107,6 +3109,12 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "Settings"
+#~ msgid "Open settings"
+#~ msgstr "Beállítások"
 
 #, fuzzy
 #~| msgid "Accounts"

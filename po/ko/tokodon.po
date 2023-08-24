@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:46+0000\n"
+"POT-Creation-Date: 2023-08-24 00:46+0000\n"
 "PO-Revision-Date: 2022-07-13 15:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -691,16 +691,19 @@ msgid "Moderation Tools"
 msgstr ""
 
 #: content/ui/main.qml:238
-#, kde-format
-msgctxt "@action:button"
-msgid "Open Moderation Tools"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "멘션"
 
 #: content/ui/main.qml:248
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
-msgid "Open settings"
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
 msgstr "설정"
 
 #: content/ui/main.qml:258
@@ -3115,6 +3118,12 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "멘션"
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "Settings"
+#~ msgid "Open settings"
+#~ msgstr "설정"
 
 #, fuzzy
 #~| msgid "Accounts"
