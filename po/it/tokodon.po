@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-24 00:46+0000\n"
-"PO-Revision-Date: 2023-08-04 18:29+0200\n"
+"PO-Revision-Date: 2023-08-17 15:01+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -137,19 +137,15 @@ msgid "Featured Accounts"
 msgstr "Account in primo piano"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 preferiti"
+msgstr[0] "%1 preferito"
 msgstr[1] "%1 preferiti"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boosts"
+#, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -417,34 +413,28 @@ msgid "Click to add a note"
 msgstr "Clic per aggiungere una nota"
 
 #: content/ui/AccountInfo.qml:474
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of statuses"
-#| msgid "<b>%1</b> posts"
+#, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
-msgstr[0] "<b>%1</b> commenti"
+msgstr[0] "<b>%1</b> commento"
 msgstr[1] "<b>%1</b> commenti"
 
 #: content/ui/AccountInfo.qml:486
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of followers"
-#| msgid "<b>%1</b> followers"
+#, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
-msgstr[0] "<b>%1</b> seguaci"
+msgstr[0] "<b>%1</b> seguace"
 msgstr[1] "<b>%1</b> seguaci"
 
 #: content/ui/AccountInfo.qml:498
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of followers"
-#| msgid "<b>%1</b> followers"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "<b>%1</b> seguaci"
-msgstr[1] "<b>%1</b> seguaci"
+msgstr[0] "<b>%1</b> seguito"
+msgstr[1] "<b>%1</b> seguiti"
 
 #: content/ui/AccountInfo.qml:510
 #, kde-format
@@ -548,26 +538,23 @@ msgid "Trending Tags"
 msgstr "Tag di tendenza"
 
 #: content/ui/ExplorePage.qml:149
-#, fuzzy, kde-format
-#| msgid "%1 people are talking"
+#, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] "%1 persone stanno parlando"
+msgstr[0] "%1 persona sta parlando"
 msgstr[1] "%1 persone stanno parlando"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Commenti di tendenza"
+msgstr "Nessun commento di tendenza"
 
 #: content/ui/ExplorePage.qml:166
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Tag di tendenza"
+msgstr "Nessun tag di tendenza"
 
 #: content/ui/LanguageSelector.qml:66
 #, kde-format
@@ -603,11 +590,9 @@ msgid "Instance Url:"
 msgstr "URL istanza:"
 
 #: content/ui/LoginPage.qml:45
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open Moderation Tools"
+#, kde-format
 msgid "Enable moderation tools"
-msgstr "Apri gli strumenti di moderazione"
+msgstr "Abilita gli strumenti di moderazione"
 
 #: content/ui/LoginPage.qml:46
 #, kde-format
@@ -615,6 +600,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging into your server."
 msgstr ""
+"Consenti a Tokodon di accedere agli strumenti di moderazione. Prova a "
+"disabilitare questa opzione se hai problemi ad accedere al tuo server."
 
 #: content/ui/LoginPage.qml:54
 #, kde-format
@@ -915,11 +902,10 @@ msgid "Email block deleted"
 msgstr "Blocco dei messaggi di posta eliminato"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Edit Domain Block"
+#, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr "Modifica blocco dominio"
+msgstr "Modifica blocco dominio di posta"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
@@ -1780,29 +1766,25 @@ msgid "Update IP Rule"
 msgstr "Aggiorna regola IP"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Account"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Federation"
+#, kde-format
 msgctxt "@title"
 msgid "Federation"
 msgstr "Federazione"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Ip rules"
+#, kde-format
 msgctxt "@title"
 msgid "IP Rules"
 msgstr "Regole IP"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Email block"
+#, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
 msgstr "Blocco dei messaggi di posta"
@@ -2205,10 +2187,9 @@ msgid "Deny"
 msgstr "Nega"
 
 #: content/ui/StandaloneComposer.qml:58
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "No accounts available"
-msgstr "Non disponibile"
+msgstr "Nessun account disponibile"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:71
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -2222,17 +2203,15 @@ msgid "Remove"
 msgstr "Rimuovi"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr "Destinazione"
+msgstr "Descrizione"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
 msgid "Focal point"
-msgstr ""
+msgstr "Punto focale"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:36
 #, kde-format
@@ -2316,7 +2295,7 @@ msgstr "Cosa c'è di nuovo?"
 #: content/ui/StatusComposer/StatusComposer.qml:247
 #, kde-format
 msgid "All supported formats"
-msgstr ""
+msgstr "Tutti i formati supportati"
 
 #: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
@@ -2324,66 +2303,68 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"Tutti i formati supportati (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:249
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "Immagine JPEG (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:250
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "Immagine PNG (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:251
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "Immagine GIF (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "Immagine WebP (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "Immagine HEIC (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "Immagine HEIF (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "Immagine AVIF (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "Video WebM (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "Video MPEG-4 (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "Video M4V (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "Video QuickTime (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Tutti i file (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
@@ -2617,26 +2598,23 @@ msgstr "tramite %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:561
 #: content/ui/StatusDelegate/StatusDelegate.qml:562
-#, fuzzy, kde-format
-#| msgid "%1 Reply"
+#, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
 msgstr[0] "%1 risposta"
-msgstr[1] "%1 risposta"
+msgstr[1] "%1 risposte"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:573
 #: content/ui/StatusDelegate/StatusDelegate.qml:574
-#, fuzzy, kde-format
-#| msgid "%1 Favorite"
+#, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
 msgstr[0] "%1 preferito"
-msgstr[1] "%1 preferito"
+msgstr[1] "%1 preferiti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:592
 #: content/ui/StatusDelegate/StatusDelegate.qml:593
-#, fuzzy, kde-format
-#| msgid "%1 Boost"
+#, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
 msgstr[0] "%1 boost"
@@ -2799,12 +2777,12 @@ msgstr "Supporta lo scherma di URL web+api:"
 #: main.cpp:142
 #, kde-format
 msgid "Share a line of text in the standalone composer."
-msgstr ""
+msgstr "Condividi una riga di testo nel compositore autonomo."
 
 #: main.cpp:142
 #, kde-format
 msgid "The text to share."
-msgstr ""
+msgstr "Il testo da condividere."
 
 #: search/searchmodel.cpp:137
 #, kde-format
