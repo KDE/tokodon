@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Shinjo Park <kde@peremen.name>, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2021, 2022, 2023.
 #
 #
 # 마스토돈 한국어 번역을 참조할 것.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-24 00:46+0000\n"
-"PO-Revision-Date: 2022-07-13 15:38+0200\n"
+"PO-Revision-Date: 2023-08-27 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:485
 #, kde-format
@@ -112,11 +112,10 @@ msgid "Follow Requests"
 msgstr "팔로우"
 
 #: account/socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "팔로우"
+msgstr "팔로워"
 
 #: account/socialgraphmodel.cpp:34
 #, fuzzy, kde-format
@@ -257,7 +256,7 @@ msgstr "계정을 뮤트할 수 없음"
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "일시 정지됨"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
@@ -287,7 +286,7 @@ msgstr ""
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "승인되지 않음"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
@@ -378,21 +377,17 @@ msgid "Block"
 msgstr "차단"
 
 #: content/ui/AccountInfo.qml:234
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#, kde-format
 msgid "Edit Profile"
-msgstr "프로필에 추천하기"
+msgstr "프로필 편집"
 
 #: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:26
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Account editor"
-msgstr "계정"
+msgstr "계정 편집기"
 
 #: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Settings"
 msgstr "설정"
 
@@ -445,7 +440,7 @@ msgstr ""
 #: content/ui/AccountInfo.qml:377
 #, kde-format
 msgid "Saved"
-msgstr ""
+msgstr "저장됨"
 
 #: content/ui/AccountInfo.qml:392
 #, kde-format
@@ -494,7 +489,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "미디어"
 
 #: content/ui/AccountInfo.qml:545
 #, fuzzy, kde-format
@@ -512,12 +507,12 @@ msgstr ""
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "선택한 미디어 공유"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
 msgid "Authorization"
-msgstr ""
+msgstr "인증"
 
 #: content/ui/AuthorizationPage.qml:25
 #, kde-format
@@ -530,14 +525,12 @@ msgid "To continue, please open the following link and authorize Tokodon: %1"
 msgstr "계속 진행하려면 다음 링크를 열고 Tokodon을 인증하십시오: %1"
 
 #: content/ui/AuthorizationPage.qml:54 content/ui/AuthorizationPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Open link"
+#, kde-format
 msgid "Open Link"
 msgstr "링크 열기"
 
 #: content/ui/AuthorizationPage.qml:59 content/ui/AuthorizationPage.qml:82
-#, fuzzy, kde-format
-#| msgid "Copy link"
+#, kde-format
 msgid "Copy Link"
 msgstr "링크 복사"
 
@@ -549,7 +542,7 @@ msgstr ""
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
-msgstr ""
+msgstr "이모지 없음"
 
 #: content/ui/ConversationPage.qml:11
 #, kde-format
@@ -605,18 +598,16 @@ msgid "No Trending Tags"
 msgstr ""
 
 #: content/ui/LanguageSelector.qml:66
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
-msgstr "선택한 기본 언어:"
+msgstr "선호하는 언어"
 
 #: content/ui/LanguageSelector.qml:67
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
-msgstr "선택한 기본 언어:"
+msgstr "모든 언어"
 
 #: content/ui/LoginPage.qml:14
 #, kde-format
@@ -658,32 +649,26 @@ msgid "Continue"
 msgstr "계속"
 
 #: content/ui/LoginPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Instance URL and username must not be empty!"
+#, kde-format
 msgid "Instance URL must not be empty!"
-msgstr "인스턴스 URL과 사용자 이름을 입력해야 합니다!"
+msgstr "인스턴스 URL을 입력해야 합니다!"
 
 #: content/ui/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:group Login page"
 msgid "Network Settings"
-msgstr "설정"
+msgstr "네트워크 설정"
 
 #: content/ui/LoginPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Ignore ssl errors"
+#, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "SSL 오류 무시"
 
 #: content/ui/LoginPage.qml:87 content/ui/Settings/NetworkProxyPage.qml:59
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "설정"
+msgstr "프록시 설정"
 
 #: content/ui/main.qml:237
 #, kde-format
@@ -699,9 +684,7 @@ msgid "Moderation Tools"
 msgstr "멘션"
 
 #: content/ui/main.qml:248
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "설정"
@@ -727,11 +710,9 @@ msgid "Global"
 msgstr "연합"
 
 #: content/ui/main.qml:334
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Conversation"
-msgstr "멘션"
+msgstr "대화"
 
 #: content/ui/main.qml:348
 #, kde-format
@@ -741,7 +722,7 @@ msgstr ""
 #: content/ui/main.qml:364
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "책갈피"
 
 #: content/ui/main.qml:394
 #, kde-format
@@ -755,8 +736,7 @@ msgid "Advanced Search"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "사용자 이름:"
@@ -765,13 +745,13 @@ msgstr "사용자 이름:"
 #, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr ""
+msgstr "표시 이름:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "이메일:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
@@ -799,7 +779,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
 #, fuzzy, kde-format
@@ -809,9 +789,7 @@ msgid "Location"
 msgstr "알림"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "모두"
@@ -827,7 +805,7 @@ msgstr "로컬"
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr ""
+msgstr "원격"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
 #, kde-format
@@ -838,9 +816,7 @@ msgid "Moderation Status"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "모두"
@@ -849,7 +825,7 @@ msgstr "모두"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "활성"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
@@ -873,7 +849,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "일시 정지됨"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
@@ -882,9 +858,7 @@ msgid "Role"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "모두"
@@ -899,7 +873,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "관리자"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
@@ -957,7 +931,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
@@ -1034,7 +1008,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "도메인"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
@@ -1090,7 +1064,7 @@ msgstr "멘션"
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "무음"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
@@ -1215,7 +1189,7 @@ msgstr "멘션"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr ""
+msgstr "규칙 만들기"
 
 #: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
@@ -1238,7 +1212,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr ""
+msgstr "1일"
 
 #: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
@@ -1388,7 +1362,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "경고"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:41
 #, kde-format
@@ -1451,7 +1425,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
@@ -1518,11 +1492,10 @@ msgid "Posts"
 msgstr "부스트"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:378
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "팔로우"
+msgstr "팔로워"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:382
 #, fuzzy, kde-format
@@ -1593,7 +1566,7 @@ msgstr "계정"
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "입장함"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:445
 #, kde-format
@@ -1609,7 +1582,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "승인"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:507
 #, kde-format
@@ -1705,7 +1678,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "정책"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:160
 #, kde-format
@@ -1751,7 +1724,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
@@ -1763,7 +1736,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr ""
+msgstr "1일"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
 #, kde-format
@@ -1813,7 +1786,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
@@ -1842,7 +1815,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "심각도"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:207
 #, kde-format
@@ -1930,15 +1903,14 @@ msgid "Search"
 msgstr ""
 
 #: content/ui/SearchView.qml:35
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgid "Loading..."
-msgstr "불러오는 중"
+msgstr "불러오는 중..."
 
 #: content/ui/SearchView.qml:43
 #, kde-format
 msgid "No search results"
-msgstr ""
+msgstr "검색 결과 없음"
 
 #: content/ui/SearchView.qml:51
 #, kde-format
@@ -1985,7 +1957,7 @@ msgstr ""
 #: content/ui/Settings/GeneralCard.qml:67
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "색 테마"
 
 #: content/ui/Settings/GeneralCard.qml:83
 #, fuzzy, kde-format
@@ -2003,18 +1975,18 @@ msgstr "파일 선택"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "네트워크 프록시"
 
 #: content/ui/Settings/NetworkProxyPage.qml:19
 #: content/ui/Settings/SettingsPage.qml:64
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "네트워크 프록시"
 
 #: content/ui/Settings/NetworkProxyPage.qml:25
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "시스템 기본값"
 
 #: content/ui/Settings/NetworkProxyPage.qml:37
 #, kde-format
@@ -2024,28 +1996,27 @@ msgstr ""
 #: content/ui/Settings/NetworkProxyPage.qml:49
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "SOCKS5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:65
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "호스트"
 
 #: content/ui/Settings/NetworkProxyPage.qml:78
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "포트"
 
 #: content/ui/Settings/NetworkProxyPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User"
-msgstr "사용자 이름:"
+msgstr "사용자"
 
 #: content/ui/Settings/NetworkProxyPage.qml:109
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "암호"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
 #: content/ui/Settings/ProfileEditor.qml:304
@@ -2094,7 +2065,7 @@ msgstr "파일 선택"
 #: content/ui/Settings/ProfileEditor.qml:112
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "표시 이름"
 
 #: content/ui/Settings/ProfileEditor.qml:125
 #, kde-format
@@ -2122,7 +2093,7 @@ msgstr "단어 삭제"
 #: content/ui/Settings/ProfileEditor.qml:206
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "아바타"
 
 #: content/ui/Settings/ProfileEditor.qml:239
 #, kde-format
@@ -2150,9 +2121,7 @@ msgid "Reset"
 msgstr ""
 
 #: content/ui/Settings/SettingsPage.qml:13
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "설정"
@@ -2175,8 +2144,7 @@ msgid "Preferences"
 msgstr "선택한 기본 언어:"
 
 #: content/ui/Settings/SettingsPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Spell Checking"
+#, kde-format
 msgid "Spellchecking"
 msgstr "맞춤법 검사"
 
@@ -2189,7 +2157,7 @@ msgstr "Tokodon"
 #: content/ui/Settings/SettingsPage.qml:95
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "KDE 정보"
 
 #: content/ui/Settings/SonnetCard.qml:22
 #, kde-format
@@ -2242,18 +2210,16 @@ msgid "Open Personal Dictionary"
 msgstr "개인 사전 열기"
 
 #: content/ui/Settings/SonnetCard.qml:113
-#, fuzzy, kde-format
-#| msgid "Spell checking languages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "맞춤법 검사 언어"
 
 #: content/ui/Settings/SonnetCard.qml:123
 #: content/ui/Settings/SonnetCard.qml:133
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgid "Default Language"
-msgstr "선택한 기본 언어:"
+msgstr "기본 언어"
 
 #: content/ui/Settings/SonnetCard.qml:144
 #, kde-format
@@ -2281,20 +2247,19 @@ msgstr "단어 삭제"
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "공유 실패"
 
 #: content/ui/SocialGraphPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "팔로우"
+msgstr "허용"
 
 #: content/ui/SocialGraphPage.qml:64
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "거부"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -2313,12 +2278,10 @@ msgid "Remove"
 msgstr ""
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr "멘션"
+msgstr "설명"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
@@ -2326,8 +2289,7 @@ msgid "Focal point"
 msgstr ""
 
 #: content/ui/StatusComposer/ComposerPoll.qml:36
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "%1 선택"
@@ -2355,7 +2317,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr ""
+msgstr "객관식"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:95
 #, kde-format
@@ -2480,7 +2442,7 @@ msgstr ""
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "모든 파일 (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
@@ -2535,10 +2497,9 @@ msgid "Post Language"
 msgstr "선택한 기본 언어:"
 
 #: content/ui/StatusComposer/StatusComposer.qml:369
-#, fuzzy, kde-format
-#| msgid "Choice %1"
+#, kde-format
 msgid "Add Emoji"
-msgstr "%1 선택"
+msgstr "이모지 추가"
 
 #: content/ui/StatusComposer/StatusComposer.qml:384
 #, kde-format
@@ -2554,12 +2515,12 @@ msgstr "뿌우!"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:123
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "사용할 수 없음"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:189
 #, kde-format
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:246
 #, kde-format
@@ -2574,10 +2535,9 @@ msgstr ""
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
 #: content/ui/StatusDelegate/StatusDelegate.qml:256
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
+#, kde-format
 msgid "View profile"
-msgstr "프로필에 추천하기"
+msgstr "프로필 보기"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, fuzzy, kde-format
@@ -2604,12 +2564,12 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:512
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "책갈피 삭제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "책갈피"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, fuzzy, kde-format
@@ -2689,8 +2649,7 @@ msgid "Show Less"
 msgstr "더 보기"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:375
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
 msgstr "더 보기"
 
@@ -2716,7 +2675,7 @@ msgstr ""
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "책갈피"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:529
 #, kde-format
@@ -2780,12 +2739,12 @@ msgstr ""
 #: content/ui/UserInfo.qml:73
 #, kde-format
 msgid "Switch user"
-msgstr ""
+msgstr "사용자 전환"
 
 #: content/ui/UserInfo.qml:106
 #, kde-format
 msgid "Log in to an existing account"
-msgstr ""
+msgstr "기존 계정에 로그인"
 
 #: conversation/conversationmodel.cpp:59
 #, kde-format
@@ -2807,19 +2766,19 @@ msgstr[0] ""
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr ""
+msgstr "5분"
 
 #: editor/polltimemodel.cpp:13
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr ""
+msgstr "30분"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr ""
+msgstr "1시간"
 
 #: editor/polltimemodel.cpp:15
 #, kde-format
@@ -2837,7 +2796,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr ""
+msgstr "1일"
 
 #: editor/polltimemodel.cpp:18
 #, kde-format
@@ -2854,7 +2813,7 @@ msgstr ""
 #: editor/posteditorbackend.cpp:240
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "알 수 없는 오류가 발생했습니다."
 
 #: main.cpp:125
 #, kde-format
@@ -2880,7 +2839,7 @@ msgstr "Carl Schwan"
 #: main.cpp:130
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "관리자"
 
 #: main.cpp:131
 #, kde-format
@@ -2957,7 +2916,7 @@ msgstr "연합 타임라인"
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr ""
+msgstr "책갈피"
 
 #: timeline/maintimelinemodel.cpp:39
 #, kde-format
@@ -2969,7 +2928,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr ""
+msgstr "트렌드"
 
 #: timeline/notificationmodel.cpp:99
 #, kde-format
@@ -2982,10 +2941,9 @@ msgid "in the future"
 msgstr ""
 
 #: timeline/post.cpp:367
-#, fuzzy, kde-format
-#| msgid "%1h"
+#, kde-format
 msgid "%1s"
-msgstr "%1시간"
+msgstr "%1초"
 
 #: timeline/post.cpp:369
 #, fuzzy, kde-format
@@ -3007,24 +2965,24 @@ msgstr "%1일"
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] ""
+msgstr[0] "%1주 전"
 
 #: timeline/post.cpp:380
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] ""
+msgstr[0] "%1개월 전"
 
 #: timeline/post.cpp:384
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] ""
+msgstr[0] "%1년 전"
 
 #: timeline/tagsmodel.cpp:24
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "트렌드"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -3048,7 +3006,7 @@ msgstr ""
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr ""
+msgstr "스마일리"
 
 #: utils/emojimodel.cpp:145
 #, kde-format
@@ -3060,25 +3018,25 @@ msgstr ""
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
-msgstr ""
+msgstr "자연"
 
 #: utils/emojimodel.cpp:155
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
-msgstr ""
+msgstr "음식"
 
 #: utils/emojimodel.cpp:160
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
-msgstr ""
+msgstr "활동"
 
 #: utils/emojimodel.cpp:165
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
-msgstr ""
+msgstr "여행"
 
 #: utils/emojimodel.cpp:170
 #, kde-format
