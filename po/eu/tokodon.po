@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 02:23+0000\n"
-"PO-Revision-Date: 2023-04-22 22:48+0200\n"
+"PO-Revision-Date: 2023-08-28 20:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: account/abstractaccount.cpp:472
 #, kde-format
@@ -53,12 +53,12 @@ msgstr "Ezin izan du kontua ozendu"
 #: account/abstractaccount.cpp:478
 #, kde-format
 msgid "Could not feature account"
-msgstr ""
+msgstr "Ezin izan du kontua agertu"
 
 #: account/abstractaccount.cpp:479
 #, kde-format
 msgid "Could not unfeature account"
-msgstr ""
+msgstr "Ezin izan dio kontuari agertzeari utzi"
 
 #: account/abstractaccount.cpp:480
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "%1(e)k jarraitu zaituzte"
 #: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1(e)k zure posta bultzatu du"
+msgstr "%1(e)k zure posta bultzatu du(te)"
 
 #: account/notificationhandler.cpp:40
 #: content/ui/StatusDelegate/StatusDelegate.qml:170
@@ -106,172 +106,153 @@ msgid "Account details saved"
 msgstr "Kontuaren xehetasunak gorde dira"
 
 #: account/socialgraphmodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr "Jarraipen eskaera"
+msgstr "Jarraipen eskaerak"
 
 #: account/socialgraphmodel.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Jarraitzen ditu"
+msgstr "Jarraitzaileak"
 
 #: account/socialgraphmodel.cpp:34
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Jarraitzen"
 
 #: account/socialgraphmodel.cpp:36
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Muted Accounts"
-msgstr "Kontuak"
+msgstr "Isilarazitako kontuak"
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Accounts"
-msgstr "Gehitu kontua"
+msgstr "Oztopatutako kontuak"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Accounts"
-msgstr "Kontuak"
+msgstr "Agertutako kontuak"
 
 #: account/socialgraphmodel.cpp:48
-#, fuzzy, kde-format
-#| msgid "No Follow Requests"
+#, kde-format
 msgid "No follow requests"
 msgstr "Ez dago jarraipen eskaerarik"
 
 #: account/socialgraphmodel.cpp:50
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "No followers"
-msgstr "%1 jarraitzaile"
+msgstr "Jarraitzailerik ez"
 
 #: account/socialgraphmodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgid "No followed accounts"
-msgstr "Ezin izan dio kontuari jarraitu"
+msgstr "Ez dago jarraitutako konturik"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No muted accounts"
-msgstr "Kontuak"
+msgstr "Ez dago isilarazitako konturik"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "No blocked accounts"
-msgstr "Gehitu kontua"
+msgstr "Ez dago oztopatutako konturik"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No featured accounts"
-msgstr "Kontuak"
+msgstr "Ez dago agertutako konturik"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Ezin izan du kontua isilarazi"
+msgstr "Ezin izan du kontua onartu"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Ezin izan du kontua isilarazi"
+msgstr "Ezin izan du kontua errefusatu"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Ezin izan du kontu bati buruzko oharra editatu"
+msgstr "Ezin izan du kontuaren aurkako neurririk hartu"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Ezin izan du kontua ozendu"
+msgstr "Ezin izan du ezgaitutako kontua gaitu"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
-msgstr "Ezin izan du kontua ozendu"
+msgstr "Ezin izan dio kontuari isilaraztea kendu"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Ezin izan du kontua ozendu"
+msgstr "Ezin izan dio kontuari esekitzea kendu"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Ezin izan du kontua isilarazi"
+msgstr "Ezin izan dio kontuari ez bereziki babestua marka ipini"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Esekita"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Silenced"
-msgstr ""
+msgstr "Isilarazita"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Bereziki babestu"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "Izoztuta"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "E-posta ez da berretsi"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "Ez onetsita"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Ez da mugarik inposatu"
 
 #: admin/federationtoolmodel.cpp:153
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"Errorea gertatu da, domeinu blokea eguneratzeko PUT eskaera bat egitean."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -370,16 +351,14 @@ msgid "Follow Requests"
 msgstr "Jarraipen eskaera"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Kontuak"
+msgstr "Isilarazitako kontuak"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Gehitu kontua"
+msgstr "Oztopatutako kontuak"
 
 #: content/ui/AccountInfo.qml:272
 #, fuzzy, kde-format
@@ -388,15 +367,14 @@ msgid "Featured Accounts"
 msgstr "Kontuak"
 
 #: content/ui/AccountInfo.qml:278
-#, fuzzy, kde-format
-#| msgid "Copy Link to This Post"
+#, kde-format
 msgid "Copy Link to This Profile"
-msgstr "Kopiatu posta honetarako esteka"
+msgstr "Kopiatu esteka profil horretara"
 
 #: content/ui/AccountInfo.qml:281 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Postako esteka kopiatu da."
 
 #: content/ui/AccountInfo.qml:368
 #, kde-format
@@ -435,42 +413,39 @@ msgid "<b>%1</b> following"
 msgstr "%1 jarraitzen"
 
 #: content/ui/AccountInfo.qml:503
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Posta"
+msgstr "Postak"
 
 #: content/ui/AccountInfo.qml:507
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Postak eta erantzunak"
 
 #: content/ui/AccountInfo.qml:511
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Hedabideak"
 
 #: content/ui/AccountInfo.qml:538
-#, fuzzy, kde-format
-#| msgctxt "@option:check Poll toolbar"
-#| msgid "Hide totals"
+#, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Ezkutatu guztizkoak"
+msgstr "Ezkutatu bultzadak"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Partekatu"
 
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Partekatu hautatutako hedabideak"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -500,7 +475,7 @@ msgstr "Kopiatu esteka"
 #: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
 #, kde-format
 msgid "Link copied."
-msgstr ""
+msgstr "Esteka kopiatu da."
 
 #: content/ui/AuthorizationPage.qml:101
 #, kde-format
@@ -530,7 +505,7 @@ msgstr "Elkarrizketarik ez"
 #: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Esploratu"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
@@ -541,12 +516,12 @@ msgstr "Posta"
 #: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "Trending Posts"
-msgstr ""
+msgstr "Joeran dauden postak"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Trending Tags"
-msgstr ""
+msgstr "Joeran dauden etiketak"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
@@ -616,10 +591,9 @@ msgid "Proxy Settings"
 msgstr "Ordezkariaren ezarpenak"
 
 #: content/ui/main.qml:215
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Elkarrizketak"
+msgstr "Moderatzeko tresnak"
 
 #: content/ui/main.qml:216
 #, kde-format
@@ -682,44 +656,40 @@ msgstr "Kontuak"
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
+msgstr "Bilaketa aurreratua"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
-msgstr "Erabiltzailea"
+msgstr "Erabiltzaile-izena:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Azaltzeko izena"
+msgstr "Azaltzeko izena:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "E-posta:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Bilatu"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Berrezarri"
@@ -731,50 +701,42 @@ msgstr "Berrezarri"
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Utzi"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Jakinarazpenak"
+msgstr "Kokalekua"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Guztiak"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Lokala"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Kendu"
+msgstr "Urrutikoa"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Elkarrizketak"
+msgstr "Moderatze egoera"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Guztiak"
@@ -783,42 +745,40 @@ msgstr "Guztiak"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Aktibo"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr ""
+msgstr "Zain"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Ezgaituta"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Isilarazita"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Esekita"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "Eginkizuna"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Guztiak"
@@ -827,24 +787,24 @@ msgstr "Guztiak"
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Moderatzailea"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "Administratzailea"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "Jabea"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:300
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "Ez da konturik aurkitu"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
 #, fuzzy, kde-format
@@ -855,80 +815,76 @@ msgstr "Elkarrizketak"
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Onartutako domeinuen informazioa"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Domeinua"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Sorrera"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Ez baimendu domeinuarekin federatzea"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Onartu gabeko federazioa domeinuarekin"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Gehitu domeinu oztopoa"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Domeinua*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Posta publikoa"
+msgstr "Iruzkin publikoa"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Pribatua"
+msgstr "Iruzkin pribatua"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation"
-msgstr "Elkarrizketak"
+msgstr "Moderatzea"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Isiltasuna"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Eseki"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
 msgstr "Bat ere ez"
@@ -937,21 +893,21 @@ msgstr "Bat ere ez"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Errefusatu hedabide fitxategiak"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
-msgstr ""
+msgstr "hedabide"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Errefusatu txostenak"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
@@ -963,7 +919,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Lausotu domeinu-izena"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -978,18 +934,18 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Sortu oztopoa"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Domeinu oztopo berria gehitu da"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Baimendu domeinuarekin federatzea"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -997,12 +953,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Domeinua*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Onartutako domeinu berria gehitu da"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -1012,51 +968,47 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Elkarrizketak"
+msgstr "Moderatzea"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Gehitu kontua"
+msgstr "Oztopatutako domeinuak"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Onartutako domeinuak"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Federaziorako onartua"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "No federations found"
-msgstr "Elkarrizketak"
+msgstr "Ez da federaziorik aurkitu"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Gehitu domeinu oztopo berriak"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
 msgstr "Ez erabilgarri"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:30
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "Egin moderatzeko ekintza %1(e)an"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
@@ -1064,7 +1016,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "Abisatu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:40
 #, kde-format
@@ -1072,14 +1024,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "Izoztu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:45
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Behartu-bereziki babestu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -1087,7 +1039,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Muga"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
@@ -1095,7 +1047,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Eseki"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
@@ -1103,46 +1055,45 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Erabiltzaileari e-posta bidez jakinaraztea"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Edukiaren abisua"
+msgstr "Neurrira eginiko abisua"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "Bidali"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:94
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Ekintza hartze arrakastatsua"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:99
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "Utzi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "Ziur al zaude?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Kontuaren aurka ekintza hartuko da."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:118
-#, kde-format
+#, fuzzy, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "%1(e)ren onetsi da"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:122
 #, kde-format
@@ -1175,8 +1126,7 @@ msgid "Successfully deleted %1's account data"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:284
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "Biografia"
@@ -1184,26 +1134,22 @@ msgstr "Biografia"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:329
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Batzeko arrazoiak"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
-msgstr "Posta"
+msgstr "Postak"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "Jarraitzen ditu"
+msgstr "Jarraitzaileak"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:384
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Jarraitzen"
@@ -1211,55 +1157,53 @@ msgstr "Jarraitzen"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
 msgid "No role"
-msgstr ""
+msgstr "Eginkizunik ez"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr ""
+msgstr "Eginkizuna"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:392
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Azkenekoz aktibo"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Saio-haste egoera"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:410
 #, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
-msgstr ""
+msgstr "Eginkizuna"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "E-posta"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "E-postaren egoera"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "Konfiguratu"
+msgstr "Berretsita"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "Konfiguratu"
+msgstr "Berretsi gabe"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:433
 #, fuzzy, kde-format
@@ -1272,12 +1216,12 @@ msgstr "Kontu-editorea"
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Batu da"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "IP berriena"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
@@ -1288,74 +1232,71 @@ msgstr ""
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "Onetsi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "Errefusatu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:523
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Kontuak"
+msgstr "Ezabatu kontuaren datuak"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Desegin izoztea"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Desegin muga"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Desegin esekitzea"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Desegin behartu-bereziki babestua"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Hartu kontu horren aurkako ekintza"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Kendu laster-marka"
+msgstr "Kendu domeinuaren oztopoa"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Domeinuaren oztopoa kendu da"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Editatu domeinuaren oztopoa"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Pribatua"
+msgstr "Iruzkin pribatua"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Eguneratu"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
@@ -1369,15 +1310,13 @@ msgid "Blocked at"
 msgstr "Gehitu kontua"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Bat ere ez"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Bat ere ez"
@@ -1386,25 +1325,25 @@ msgstr "Bat ere ez"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Gidalerroa"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Lausotu"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Errefusatu hedabideak"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr ""
+msgstr "Errefusatu txostena"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
@@ -1418,10 +1357,9 @@ msgid "Accounts"
 msgstr "Kontuak"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Federation"
-msgstr "Elkarrizketa"
+msgstr "Federazioa"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1486,10 +1424,9 @@ msgid "Search for peoples, tags and posts"
 msgstr "Bilatu jendea, etiketak eta postak"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
-msgstr "Traolak"
+msgstr "Traola"
 
 #: content/ui/Settings/AccountsCard.qml:71
 #, kde-format
@@ -1595,12 +1532,10 @@ msgid "Apply"
 msgstr "Ezarri"
 
 #: content/ui/Settings/PreferencesCard.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Group of preferred languages"
-#| msgid "Preferred Languages"
+#, kde-format
 msgctxt "@label Settings header"
 msgid "Preferences"
-msgstr "Hobetsitako hizkuntzak"
+msgstr "Hobespenak"
 
 #: content/ui/Settings/PreferencesCard.qml:30
 #, kde-format
@@ -1615,19 +1550,19 @@ msgstr ""
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr ""
+"Markatu zama-igotako multimedia bereziki babestutako gisa era lehenetsian"
 
 #: content/ui/Settings/PreferencesCard.qml:48
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr "Hizkuntza lehenetsia"
+msgstr "Posten hizkuntza lehenetsia"
 
 #: content/ui/Settings/PreferencesCard.qml:64
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Posten ikusgaitasun lehenetsia"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -1673,10 +1608,9 @@ msgid "Avatar"
 msgstr "Abatarra"
 
 #: content/ui/Settings/ProfileEditor.qml:243
-#, fuzzy, kde-format
-#| msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+#, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr "PNG, GIF edo JPG. 2 MB gehienez. Eskala 1500x500px-era txikituko da"
+msgstr "PNG, GIF edo JPG. Gehienez 2 MB. Eskala 400x400px-era txikituko da"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
@@ -1834,20 +1768,19 @@ msgstr "Ezabatu hitza"
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Partekatzea huts egin du"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Jarraitu"
+msgstr "Baimendu"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Ukatu"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:69
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -2035,7 +1968,7 @@ msgstr ""
 #: content/ui/StatusDelegate/AttachmentGrid.qml:274
 #, kde-format
 msgid "Media Hidden"
-msgstr "Multimedia ezkutuan"
+msgstr "Hedabideak ezkutuan"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:33
 #: content/ui/StatusDelegate/StatusDelegate.qml:159
@@ -2121,7 +2054,7 @@ msgstr "Iltzatutako sarrera"
 #: content/ui/StatusDelegate/StatusDelegate.qml:267
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1(e) bultzatu du"
+msgstr "%1(e)k bultzatu du(te)"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
@@ -2249,7 +2182,7 @@ msgstr "Bozkatu"
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
-msgstr ""
+msgstr "Jo"
 
 #: content/ui/TimelinePage.qml:184
 #, kde-format
