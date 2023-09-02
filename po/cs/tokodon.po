@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 02:23+0000\n"
-"PO-Revision-Date: 2023-06-30 21:47+0200\n"
+"PO-Revision-Date: 2023-08-09 12:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: account/abstractaccount.cpp:472
 #, kde-format
@@ -122,13 +122,13 @@ msgstr "Sledujete"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Accounts"
-msgstr ""
+msgstr "Ztlumené účty"
 
 #: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Accounts"
-msgstr ""
+msgstr "Zablokované účty"
 
 #: account/socialgraphmodel.cpp:40
 #, kde-format
@@ -807,13 +807,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Doména"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Vytvořen v"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
@@ -834,46 +834,47 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Doména*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
 #, kde-format
 msgid "Public comment"
-msgstr ""
+msgstr "Veřejný komentář"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
 #, kde-format
 msgid "Private Comment"
-msgstr ""
+msgstr "Soukromý komentář"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
-msgstr ""
+msgstr "Moderování"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Ticho"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Pozastavit"
 
+# žádné parametry funkce v inspektoru funkcí
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
-msgstr ""
+msgstr "Nic"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:107
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
@@ -939,7 +940,7 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Doména*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
@@ -957,7 +958,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr ""
+msgstr "Moderování"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
 #, kde-format
@@ -1275,7 +1276,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
 #, kde-format
 msgid "Private comment"
-msgstr ""
+msgstr "Soukromý komentář"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
@@ -1293,23 +1294,25 @@ msgstr ""
 msgid "Blocked at"
 msgstr ""
 
+# žádné parametry funkce v inspektoru funkcí
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
 #, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
-msgstr ""
+msgstr "Nic"
 
+# žádné parametry funkce v inspektoru funkcí
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
 #, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
-msgstr ""
+msgstr "Nic"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:159
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Chování"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
@@ -1756,13 +1759,13 @@ msgstr "Sdílení selhalo"
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr ""
+msgstr "Povolit"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Zakázat"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:69
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1958,7 +1961,7 @@ msgstr "Prohlížet profil"
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, kde-format
 msgid "Link preview: %1"
-msgstr ""
+msgstr "Náhled odkazu: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
@@ -2094,7 +2097,7 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #, kde-format
 msgid "%1 Reply"
-msgstr "%1 odpověď"
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
@@ -2111,7 +2114,7 @@ msgstr "%1 Oblíbené"
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorite"
-msgstr "%1 Oblíbené"
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:587
 #, kde-format
