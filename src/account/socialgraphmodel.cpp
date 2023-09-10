@@ -35,11 +35,11 @@ QString SocialGraphModel::displayName() const
     } else if (m_followListName == QStringLiteral("following")) {
         return i18nc("@title", "Following");
     } else if (m_followListName == QStringLiteral("mutes")) {
-        return i18nc("@title", "Muted Accounts");
+        return i18nc("@title", "Muted Users");
     } else if (m_followListName == QStringLiteral("blocks")) {
-        return i18nc("@title", "Blocked Accounts");
+        return i18nc("@title", "Blocked Users");
     } else if (m_followListName == QStringLiteral("featured")) {
-        return i18nc("@title", "Featured Accounts");
+        return i18nc("@title", "Featured Users");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
         return i18ncp("@title", "%1 favourite", "%1 favourites", m_count);
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
@@ -55,13 +55,13 @@ QString SocialGraphModel::placeholderText() const
     } else if (m_followListName == QStringLiteral("followers")) {
         return i18n("No followers");
     } else if (m_followListName == QStringLiteral("following")) {
-        return i18n("No followed accounts");
+        return i18n("No followed users");
     } else if (m_followListName == QStringLiteral("mutes")) {
-        return i18n("No muted accounts");
+        return i18n("No muted users");
     } else if (m_followListName == QStringLiteral("blocks")) {
-        return i18n("No blocked accounts");
+        return i18n("No blocked users");
     } else if (m_followListName == QStringLiteral("featured")) {
-        return i18n("No featured accounts");
+        return i18n("No featured users");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
         return i18n("No users favourited this post");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
