@@ -178,7 +178,7 @@ Kirigami.ScrollablePage {
             visible: listview.model.loading && listview.count === 0
             anchors.centerIn: parent
             indeterminate: true
-            anchors.verticalCenterOffset: listViewHeader && listViewHeader.height !== 0 ? Kirigami.Units.gridUnit * 8 : 0
+            anchors.verticalCenterOffset: listview.headerItem ? listview.headerItem.height / 2 : 0
         }
 
         Kirigami.PlaceholderMessage {
