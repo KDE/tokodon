@@ -39,8 +39,14 @@ class AccountModel : public TimelineModel
     /// Search for posts with a specific hashtag, leave blank to not search for any
     Q_PROPERTY(QString tagged MEMBER m_tagged NOTIFY filtersChanged)
 
+    /// The current account tab, is set to None by default to disable filtering.
+    Q_PROPERTY(AccountTab currentTab MEMBER m_currentTab NOTIFY tabChanged)
+
 public:
     explicit AccountModel(QObject *parent = nullptr);
+
+    enum AccountTab { Posts, Replies, Media, None };
+    Q_ENUM(AccountTab)
 
     QString accountId() const;
     void setAccountId(const QString &accountId);
@@ -58,9 +64,11 @@ Q_SIGNALS:
     void accountChanged();
     void accountIdChanged();
     void filtersChanged();
+    void tabChanged();
 
 private:
     void updateRelationships();
+    void updateTabFilters();
 
     std::shared_ptr<Identity> m_identity;
     QString m_accountId;
@@ -70,4 +78,5 @@ private:
     bool m_excludePinned = false;
     bool m_onlyMedia = false;
     QString m_tagged;
+    AccountTab m_currentTab = AccountTab::None;
 };

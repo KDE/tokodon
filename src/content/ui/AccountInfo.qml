@@ -30,10 +30,8 @@ TimelinePage {
 
         accountId: accountInfo.accountId
 
-        excludeReplies: !accountInfo.onRepliesTab
-        excludeBoosts: accountInfo.excludeBoosts || accountInfo.onMediaTab
-        excludePinned: !accountInfo.onPostsTab
-        onlyMedia: accountInfo.onMediaTab
+        currentTab: accountInfo.currentIndex
+        excludeBoosts: accountInfo.excludeBoosts
     }
 
     listViewHeader: QQC2.Pane {

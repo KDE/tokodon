@@ -22,6 +22,7 @@ AccountModel::AccountModel(QObject *parent)
 
         fillTimeline();
     });
+    connect(this, &AccountModel::tabChanged, this, &AccountModel::updateTabFilters);
 }
 
 bool AccountModel::isSelf() const
@@ -212,4 +213,31 @@ void AccountModel::updateRelationships()
         m_identity->setRelationship(new Relationship(m_identity.get(), doc[0].toObject()));
         Q_EMIT identityChanged();
     });
+}
+
+void AccountModel::updateTabFilters()
+{
+    switch (m_currentTab) {
+    case Posts: {
+        m_excludeBoosts = false;
+        m_excludePinned = false;
+        m_excludeReplies = true;
+        m_onlyMedia = false;
+    } break;
+    case Replies: {
+        m_excludeBoosts = true;
+        m_excludePinned = true;
+        m_excludeReplies = false;
+        m_onlyMedia = false;
+    } break;
+    case Media: {
+        m_excludeBoosts = true;
+        m_excludePinned = true;
+        m_excludeReplies = false;
+        m_onlyMedia = true;
+    } break;
+    default:
+        break;
+    }
+    Q_EMIT filtersChanged();
 }
