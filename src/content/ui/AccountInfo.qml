@@ -196,6 +196,13 @@ TimelinePage {
 
                                     actions: [
                                         Kirigami.Action {
+                                            icon.name: {
+                                                if (model.identity.relationship && model.identity.relationship.following) {
+                                                    return "list-remove-user";
+                                                }
+                                                return "list-add-user";
+                                            }
+
                                             text: {
                                                 if (model.identity.relationship && model.identity.relationship.requested) {
                                                     return i18n("Requested");
