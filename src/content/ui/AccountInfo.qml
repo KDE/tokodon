@@ -505,6 +505,8 @@ TimelinePage {
                     // This bar is on a scrollable page, you will eventually run into this tab bar which is annoying.
                     background: null
 
+                    enabled: !accountInfo.model.loading
+
                     Component.onCompleted: accountInfo.postsBar = bar
 
                     Layout.alignment: Qt.AlignHCenter
@@ -550,7 +552,7 @@ TimelinePage {
 
                             onToggled: accountInfo.excludeBoosts = checked
 
-                            enabled: accountInfo.canExcludeBoosts
+                            enabled: accountInfo.canExcludeBoosts && accountInfo.model.loading
                         }
                     }
                 }
