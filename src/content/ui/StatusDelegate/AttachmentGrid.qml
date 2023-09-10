@@ -325,6 +325,8 @@ QQC2.Control {
 
     QQC2.Button {
         icon.name: "view-hidden"
+        text: i18nc("@action:button", "Hide Media")
+        display: QQC2.Button.IconOnly
 
         visible: !parent.isSensitive && parent.hasValidAttachment && root.canHideMedia
 
