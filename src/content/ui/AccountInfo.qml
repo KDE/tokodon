@@ -205,10 +205,10 @@ TimelinePage {
 
                                             text: {
                                                 if (model.identity.relationship && model.identity.relationship.requested) {
-                                                    return i18n("Requested");
+                                                    return i18n("Follow Requested");
                                                 }
                                                 if (model.identity.relationship && model.identity.relationship.following) {
-                                                    return i18n("Following");
+                                                    return i18n("Unfollow");
                                                 }
                                                 return i18n("Follow");
                                             }
@@ -235,9 +235,9 @@ TimelinePage {
                                             visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
                                             tooltip: {
                                                 if (model.identity.relationship && model.identity.relationship.notifying) {
-                                                    return i18n("Stop notifying me when %1 posts", '@' + model.identity.account);
+                                                    return i18n("Stop notifying me when %1 posts.", '@' + model.identity.account);
                                                 } else {
-                                                    return i18n("Notify me when %1 posts", '@' + model.identity.account);
+                                                    return i18n("Notify me when %1 posts.", '@' + model.identity.account);
                                                 }
                                             }
                                             onTriggered: {
@@ -256,7 +256,7 @@ TimelinePage {
                                                 if (model.identity.relationship && model.identity.relationship.showingReblogs) {
                                                     return i18n("Hide Boosts from %1", '@' + model.identity.account);
                                                 } else {
-                                                    return i18n("Stop Hiding Boosts from %1", '@' + model.identity.account);
+                                                    return i18n("Show Boosts Boosts from %1", '@' + model.identity.account);
                                                 }
                                             }
                                             onTriggered: {
@@ -290,7 +290,7 @@ TimelinePage {
                                             visible: model.identity.relationship && !model.isSelf
                                             text: {
                                                 if (model.identity.relationship && model.identity.relationship.muting) {
-                                                    return i18n("Stop Muting");
+                                                    return i18n("Unmute");
                                                 } else {
                                                     return i18n("Mute");
                                                 }
@@ -308,7 +308,7 @@ TimelinePage {
                                             visible: model.identity.relationship && !model.isSelf
                                             text: {
                                                 if (model.identity.relationship && model.identity.relationship.blocking) {
-                                                    return i18n("Stop Blocking");
+                                                    return i18n("Unblock");
                                                 } else {
                                                     return i18n("Block");
                                                 }
@@ -352,13 +352,13 @@ TimelinePage {
                                         Kirigami.Action {
                                             icon.name: "cards-block"
                                             visible: model.isSelf
-                                            text: i18n("Blocked Accounts")
+                                            text: i18n("Blocked Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
                                         },
                                         Kirigami.Action {
                                             icon.name: "favorite"
                                             visible: model.isSelf
-                                            text: i18n("Featured Accounts")
+                                            text: i18n("Featured Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
                                         },
                                         Kirigami.Action {
