@@ -174,11 +174,20 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.ProgressBar {
-            visible: listview.model.loading && listview.count === 0
-            anchors.centerIn: parent
-            indeterminate: true
-            anchors.verticalCenterOffset: listview.headerItem ? listview.headerItem.height / 2 : 0
+        Rectangle {
+            anchors.fill: parent
+            anchors {
+                topMargin: listview.headerItem ? listview.headerItem.height : 0
+            }
+
+            visible: listview.model.loading
+
+            color: Kirigami.Theme.backgroundColor
+
+            QQC2.ProgressBar {
+                anchors.centerIn: parent
+                indeterminate: true
+            }
         }
 
         Kirigami.PlaceholderMessage {
