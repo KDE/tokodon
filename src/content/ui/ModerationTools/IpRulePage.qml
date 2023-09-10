@@ -13,7 +13,7 @@ import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 Kirigami.ScrollablePage {
     id: root
 
-    actions.main: Kirigami.Action {
+    actions: Kirigami.Action {
         text: i18nc("@action:button", "Create Rule")
         icon.name: 'list-add'
         onTriggered: newIpRuleDialog.open()

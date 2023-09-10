@@ -95,6 +95,8 @@ PRIVATE
     utils/filetransferjob.h
     utils/clipboard.cpp
     utils/clipboard.h
+    utils/navigation.cpp
+    utils/navigation.h
     utils/emojimodel.cpp
     utils/emojimodel.h
     utils/emojis.h
@@ -145,10 +147,6 @@ PRIVATE
 )
 
 if(ANDROID)
-    if (QT_MAJOR_VERSION STREQUAL "5")
-        target_link_libraries(tokodon_static PRIVATE Qt::AndroidExtras)
-    endif ()
-
     target_sources(tokodon_static
         PRIVATE
         utils/androidutils.cpp
@@ -157,7 +155,23 @@ if(ANDROID)
 endif()
 
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
-target_link_libraries(tokodon_static PUBLIC Qt::Quick Qt::Qml Qt::Gui Qt::Network Qt::WebSockets Qt::QuickControls2 KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::Kirigami2 KF${QT_MAJOR_VERSION}::Notifications KF${QT_MAJOR_VERSION}::ConfigCore KF${QT_MAJOR_VERSION}::ConfigGui KF${QT_MAJOR_VERSION}::CoreAddons ${QTKEYCHAIN_LIBRARIES} ${MPV_LIBRARIES})
+target_link_libraries(tokodon_static
+    PUBLIC
+        Qt::Quick
+        Qt::Qml
+        Qt::Gui
+        Qt::Network
+        Qt::WebSockets
+        Qt::QuickControls2
+        KF${QT_MAJOR_VERSION}::I18n
+        KF${QT_MAJOR_VERSION}::Kirigami2
+        KF${QT_MAJOR_VERSION}::Notifications
+        KF${QT_MAJOR_VERSION}::ConfigCore
+        KF${QT_MAJOR_VERSION}::ConfigGui
+        KF${QT_MAJOR_VERSION}::CoreAddons
+        ${QTKEYCHAIN_LIBRARIES}
+        ${MPV_LIBRARIES}
+)
 target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(tokodon_static PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 target_link_directories(tokodon_static PUBLIC ${MPV_LIBRARY_DIRS})
@@ -185,19 +199,9 @@ if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 
-configure_file(content/ui/ModerationTools/MainAccountToolPage.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/ModerationTools/MainAccountToolPage.qml)
-configure_file(content/ui/Settings/ProfileEditor.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/Settings/ProfileEditor.qml)
-configure_file(content/ui/StatusComposer/AttachmentGrid.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusComposer/AttachmentGrid.qml)
-configure_file(content/ui/StatusComposer/AttachmentInfoDialog.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusComposer/AttachmentInfoDialog.qml)
-configure_file(content/ui/StatusDelegate/AttachmentGrid.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/AttachmentGrid.qml)
-configure_file(content/ui/StatusDelegate/LinkPreview.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/LinkPreview.qml)
-configure_file(content/ui/StatusDelegate/VideoAttachment.qml ${CMAKE_CURRENT_BINARY_DIR}/content/ui/StatusDelegate/VideoAttachment.qml)
-
-configure_file(resources.qrc ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc)
-
 add_executable(tokodon
     main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/resources.generated.qrc
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources.qrc
 )
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})

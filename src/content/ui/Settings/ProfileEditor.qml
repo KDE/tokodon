@@ -9,7 +9,7 @@ import org.kde.kmasto 1.0
 import Qt.labs.platform 1.1
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
-import @QTGRAPHICALEFFECTS_MODULE@
+import Qt5Compat.GraphicalEffects
 
 FormCard.FormCardPage {
     id: root

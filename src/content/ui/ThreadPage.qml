@@ -16,4 +16,3 @@ TimelinePage {
         postId: root.postId
     }
 }
-

@@ -34,8 +34,7 @@ Kirigami.ScrollablePage {
         textFormat: TextEdit.RichText
     }
 
-    header: LabComponents.Banner
-    {
+    header: LabComponents.Banner {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
@@ -57,7 +56,7 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
-    actions.main: Kirigami.Action {
+    actions: Kirigami.Action {
         id: postAction
         icon.name: "list-add"
         text: i18n("Post")

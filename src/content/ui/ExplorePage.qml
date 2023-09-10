@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
-    actions.main: Kirigami.Action {
+    actions: Kirigami.Action {
         icon.name: "list-add"
         text: i18n("Post")
         enabled: AccountManager.hasAccounts

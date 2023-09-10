@@ -64,6 +64,7 @@
 #include "utils/emojimodel.h"
 #include "utils/filehelper.h"
 #include "utils/mpvplayer.h"
+#include "utils/navigation.h"
 
 #ifdef Q_OS_WINDOWS
 #include <Windows.h>
@@ -220,6 +221,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
     qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "EmojiModel", &EmojiModel::instance());
+    qmlRegisterSingletonType<Navigation>("org.kde.kmasto", 1, 0, "Navigation", [](QQmlEngine *engine, QJSEngine *) {
+        return new Navigation;
+    });
 
     QQmlApplicationEngine engine;
 #ifdef HAVE_KDBUSADDONS

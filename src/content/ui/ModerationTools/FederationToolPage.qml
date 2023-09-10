@@ -15,7 +15,7 @@ Kirigami.ScrollablePage {
 
     property bool isDomainBlock
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             icon.name: 'list-add'
             text: i18n("Add New Domain Block")

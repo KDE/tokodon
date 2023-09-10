@@ -27,17 +27,14 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
-    actions.main: Kirigami.Action {
+    actions: Kirigami.Action {
         id: groupNotificationsAction
 
         icon.name: "view-visible"
 
-        displayComponent: QQC2.Switch
-        {
+        displayComponent: QQC2.Switch {
             text: i18n("Group Notifications")
-
             enabled: typesAreGroupable
-
             onToggled: groupNotificationsAction.checked = checked
         }
     }

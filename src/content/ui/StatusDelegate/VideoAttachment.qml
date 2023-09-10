@@ -7,7 +7,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
-import @QTGRAPHICALEFFECTS_MODULE@
+import Qt5Compat.GraphicalEffects
 import Qt.labs.qmlmodels 1.0
 
 import QtQml 2.15

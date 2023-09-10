@@ -39,36 +39,35 @@ include(ECMAddTests)
 include(KDEGitCommitHooks)
 
 ecm_setup_version(${PROJECT_VERSION}
-        VARIABLE_PREFIX TOKODON
-        VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
-        )
+    VARIABLE_PREFIX TOKODON
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
+)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
-set_package_properties(Qt${QT_MAJOR_VERSION} PROPERTIES
-        TYPE REQUIRED
-        PURPOSE "Basic application components"
-        )
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} COMPONENTS Kirigami2 I18n Notifications Config CoreAddons)
-set_package_properties(KF${QT_MAJOR_VERSION} PROPERTIES
-        TYPE REQUIRED
-        PURPOSE "Basic application components"
-        )
-set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
-        TYPE REQUIRED
-        PURPOSE "Kirigami application UI framework"
-        )
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.10 REQUIRED)
-find_package(Qt${QT_MAJOR_VERSION}Keychain)
-set_package_properties(Qt${QT_MAJOR_VERSION}Keychain PROPERTIES
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
+set_package_properties(Qt6 PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Basic application components"
+)
+
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami2 I18n Notifications Config CoreAddons ColorScheme)
+set_package_properties(KF6 PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Basic application components"
+)
+
+find_package(KF6KirigamiAddons 0.10 REQUIRED)
+set_package_properties(KF6KirigamiAddons PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Required runtime dependency (all module are required)"
+)
+
+find_package(Qt6Keychain)
+set_package_properties(Qt6Keychain PROPERTIES
     TYPE REQUIRED
     PURPOSE "Secure storage of account secrets"
 )
 
-if (QT_MAJOR_VERSION STREQUAL "5")
-    find_package(KF5ConfigWidgets ${KF_MIN_VERSION} REQUIRED)
-else()
-    find_package(KF6ColorScheme ${KF_MIN_VERSION} REQUIRED)
-endif()
+find_package(KF6ColorScheme ${KF_MIN_VERSION} REQUIRED)
 
 if (ANDROID)
     find_package(OpenSSL)
@@ -76,28 +75,23 @@ if (ANDROID)
         TYPE REQUIRED
         PURPOSE "Encrypted communications"
     )
-
-    # AndroidExtras only exists in Qt5, in Qt6 it's moved to Core
-    if (QT_MAJOR_VERSION STREQUAL "5")
-        find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS AndroidExtras)
-    endif ()
 else()
     if (NOT SAILFISHOS)
-        find_package(KF${QT_MAJOR_VERSION}QQC2DesktopStyle REQUIRED)
+        find_package(KF6QQC2DesktopStyle REQUIRED)
     endif()
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
-    find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
-    find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
 endif ()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
-    find_package(KF${QT_MAJOR_VERSION}DBusAddons ${KF_MIN_VERSION} REQUIRED)
-    find_package(KF${QT_MAJOR_VERSION}WindowSystem ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6DBusAddons ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6WindowSystem ${KF_MIN_VERSION} REQUIRED)
 endif ()
 
 find_package(PkgConfig REQUIRED)
