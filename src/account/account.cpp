@@ -13,11 +13,7 @@
 #include "utils/utils.h"
 #include <QFileInfo>
 #include <QNetworkAccessManager>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <qt5keychain/keychain.h>
-#else
 #include <qt6keychain/keychain.h>
-#endif
 
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, bool admin, QObject *parent)
     : AbstractAccount(parent, instanceUri)

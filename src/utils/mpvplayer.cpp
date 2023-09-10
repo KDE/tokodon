@@ -66,12 +66,6 @@ public:
 
     void render() override
     {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        if (obj->window() != nullptr) {
-            obj->window()->resetOpenGLState();
-        }
-#endif
-
         QOpenGLFramebufferObject *fbo = framebufferObject();
         mpv_opengl_fbo mpfbo;
         mpfbo.fbo = static_cast<int>(fbo->handle());
@@ -92,12 +86,6 @@ public:
         // See render_gl.h on what OpenGL environment mpv expects, and
         // other API details.
         mpv_render_context_render(obj->mpv_gl, params);
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        if (obj->window() != nullptr) {
-            obj->window()->resetOpenGLState();
-        }
-#endif
     }
 
 private:
@@ -330,9 +318,6 @@ QQuickFramebufferObject::Renderer *MpvPlayer::createRenderer() const
         return nullptr;
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    window()->setPersistentOpenGLContext(true);
-#endif
     window()->setPersistentSceneGraph(true);
     return new MpvRenderer(const_cast<MpvPlayer *>(this));
 }

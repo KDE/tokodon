@@ -75,10 +75,6 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
-
     QNetworkProxyFactory::setUseSystemConfiguration(true);
 
 #ifdef Q_OS_ANDROID

@@ -3,15 +3,8 @@
 
 #include "androidutils.h"
 
-#include <jni.h>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QAndroidJniEnvironment>
-#include <QAndroidJniObject>
-#include <QtAndroid>
-#else
 #include <QCoreApplication>
 #include <QJniObject>
-#endif
 
 #include <QDebug>
 #include <QUrl>
@@ -31,23 +24,10 @@ AndroidUtils &AndroidUtils::instance()
 
 void AndroidUtils::checkPendingIntents()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QAndroidJniObject activity =
-        QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;"); // activity is valid
-    Q_ASSERT(activity.isValid());
-
-    QAndroidJniEnvironment _env;
-    QAndroidJniObject::callStaticMethod<void>("org/kde/tokodon/OpenUriActivity", "checkPendingIntents");
-    if (_env->ExceptionCheck()) {
-        _env->ExceptionClear();
-        qWarning() << "couldn't launch intent";
-    }
-#else
     QJniObject activity = QJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");
     Q_ASSERT(activity.isValid());
 
     QJniObject::callStaticMethod<void>("org/kde/tokodon/OpenUriActivity", "checkPendingIntents");
-#endif
 }
 
 extern "C" {
