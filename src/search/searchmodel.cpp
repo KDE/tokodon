@@ -136,7 +136,7 @@ QString SearchModel::labelForType(ResultType sectionType)
 {
     switch (sectionType) {
     case Account:
-        return i18n("People");
+        return i18n("Users");
     case Hashtag:
         return i18n("Hashtags");
     case Status:

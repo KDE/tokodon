@@ -50,7 +50,7 @@ ListView {
     }
 
     Kirigami.PlaceholderMessage {
-        text: i18n("Search for peoples, tags and posts")
+        text: i18n("Search for users, tags and posts")
         visible: root.count === 0 && !searchModel.loading && !searchModel.loaded
         icon.name: "system-search"
         anchors.centerIn: parent
