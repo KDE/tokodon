@@ -197,6 +197,10 @@ Kirigami.ScrollablePage {
         }
 
         Components.FloatingButton {
+            QQC2.ToolTip.text: i18nc("@info:tooltip", "Return to Top")
+            QQC2.ToolTip.visible: hovered
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
             opacity: listview.atYBeginning ? 0 : 1
             visible: opacity !== 0
 
