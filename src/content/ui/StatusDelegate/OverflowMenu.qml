@@ -21,7 +21,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "expand"
-        text: i18n("Expand Post")
+        text: i18nc("@action:inmenu", "Expand Post")
         onTriggered: Navigation.openThread(root.postId)
         visible: !root.expandedPost
     }
@@ -36,7 +36,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "edit-copy"
-        text: i18n("Copy Link")
+        text: i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             Clipboard.saveText(root.url)
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
@@ -47,14 +47,14 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "bookmark-new"
-        text: root.bookmarked ? i18n("Remove Bookmark") : i18n("Bookmark")
+        text: root.bookmarked ? i18nc("@action:inmenu", "Remove Bookmark") : i18nc("@action:inmenu", "Bookmark")
         onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
     }
 
     QQC2.MenuItem {
         icon.name: root.pinned ? "window-unpin" : "pin"
         visible: root.isSelf
-        text: root.pinned ? i18n("Unpin on Profile") : i18n("Pin on Profile")
+        text: root.pinned ? i18nc("@action:inmenu", "Unpin on Profile") : i18n("@action:inmenu", "Pin on Profile")
         onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
 

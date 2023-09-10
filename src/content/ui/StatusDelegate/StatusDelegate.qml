@@ -150,7 +150,7 @@ QQC2.ItemDelegate {
             }
             QQC2.Label {
                 font: Config.defaultFont
-                text: i18n("Pinned entry")
+                text: i18nc("@label", "Pinned Post")
                 color: Kirigami.Theme.disabledTextColor
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
