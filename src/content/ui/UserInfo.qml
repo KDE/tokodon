@@ -82,7 +82,7 @@ QQC2.Pane {
                     onClicked: {
                         userInfo.accountsListVisible = !userInfo.accountsListVisible
                     }
-                    text: i18n("Switch user")
+                    text: i18n("Switch Account")
                     display: QQC2.AbstractButton.IconOnly
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered
