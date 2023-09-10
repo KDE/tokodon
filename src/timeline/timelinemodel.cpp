@@ -73,14 +73,12 @@ void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToE
     const auto doc = QJsonDocument::fromJson(data);
 
     if (!doc.isArray()) {
-        setLoading(false);
         return;
     }
 
     const auto array = doc.array();
 
     if (array.isEmpty()) {
-        setLoading(false);
         return;
     }
 
@@ -125,7 +123,6 @@ void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToE
         m_timeline = posts;
         endInsertRows();
     }
-    setLoading(false);
 }
 
 void TimelineModel::fetchMore(const QModelIndex &parent)

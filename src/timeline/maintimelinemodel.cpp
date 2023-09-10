@@ -107,12 +107,14 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
 
             if (publicTimelines.contains(m_timelineName)) {
                 fetchedTimeline(reply->readAll());
+                setLoading(false);
             } else {
                 static QRegularExpression re("<(.*)>; rel=\"next\"");
                 const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
                 const auto match = re.match(next);
                 m_next = QUrl::fromUserInput(match.captured(1));
                 fetchedTimeline(reply->readAll(), true);
+                setLoading(false);
             }
         },
         [this](QNetworkReply *reply) {

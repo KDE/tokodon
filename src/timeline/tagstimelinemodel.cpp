@@ -65,6 +65,7 @@ void TagsTimelineModel::fillTimeline(const QString &fromId)
             }
 
             fetchedTimeline(reply->readAll());
+            setLoading(false);
         },
         handleError);
 }
