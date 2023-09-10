@@ -23,7 +23,7 @@ TimelinePage {
     readonly property bool onMediaTab: accountInfo.currentIndex === 2
 
     readonly property bool canExcludeBoosts: accountInfo.onPostsTab || accountInfo.onRepliesTab
-    property bool excludeBoosts: false
+    property alias excludeBoosts: model.excludeBoosts
 
     model: AccountModel {
         id: model
@@ -31,7 +31,6 @@ TimelinePage {
         accountId: accountInfo.accountId
 
         currentTab: accountInfo.currentIndex
-        excludeBoosts: accountInfo.excludeBoosts
     }
 
     listViewHeader: QQC2.Pane {
@@ -548,9 +547,10 @@ TimelinePage {
                         QQC2.Switch {
                             text: i18nc("@option:check", "Hide boosts")
 
-                            onToggled: accountInfo.excludeBoosts = checked
+                            checked: accountInfo.excludeBoosts
+                            enabled: accountInfo.canExcludeBoosts && !accountInfo.model.loading
 
-                            enabled: accountInfo.canExcludeBoosts && accountInfo.model.loading
+                            onToggled: accountInfo.excludeBoosts = checked
                         }
                     }
                 }
