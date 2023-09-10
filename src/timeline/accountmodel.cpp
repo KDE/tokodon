@@ -15,6 +15,11 @@ AccountModel::AccountModel(QObject *parent)
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
     connect(this, &AccountModel::filtersChanged, this, [this] {
+        beginResetModel();
+        qDeleteAll(m_timeline);
+        m_timeline.clear();
+        endResetModel();
+
         fillTimeline();
     });
 }
