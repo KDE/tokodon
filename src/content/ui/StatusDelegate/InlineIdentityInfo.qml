@@ -32,7 +32,7 @@ RowLayout {
 
         source: root.identity.avatarUrl
         cache: true
-        text: i18n("View profile")
+        text: i18n("View Profile")
         onClicked: if (!admin) {
             Navigation.openAccount(root.identity.id);
             root.clicked();
