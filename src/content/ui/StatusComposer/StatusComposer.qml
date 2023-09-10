@@ -391,7 +391,18 @@ MastoPage {
             }
 
             QQC2.Button {
-                text: i18n("Send")
+                text: {
+                    switch (root.purpose) {
+                        case StatusComposer.New:
+                            return i18nc("@action:button Send a post", "Send");
+                        case StatusComposer.Reply:
+                            return i18nc("@action:button Reply to a post", "Reply");
+                        case StatusComposer.Redraft:
+                            return i18nc("@action:button Send the same post again", "Repost");
+                        case StatusComposer.Edit:
+                            return i18nc("@action:Button Edit a post", "Edit");
+                    }
+                }
                 enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
                 Layout.alignment: Qt.AlignRight
                 onClicked: root.submitPost()
