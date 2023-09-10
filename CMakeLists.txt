@@ -97,12 +97,6 @@ endif ()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 
-if(QT_MAJOR_VERSION STREQUAL "6")
-    set(QTGRAPHICALEFFECTS_MODULE "Qt5Compat.GraphicalEffects")
-else()
-    set(QTGRAPHICALEFFECTS_MODULE "QtGraphicalEffects 1.0")
-endif()
-
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)
 

@@ -163,12 +163,13 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::Kirigami2
-        KF${QT_MAJOR_VERSION}::Notifications
-        KF${QT_MAJOR_VERSION}::ConfigCore
-        KF${QT_MAJOR_VERSION}::ConfigGui
-        KF${QT_MAJOR_VERSION}::CoreAddons
+        KF6::I18n
+        KF6::Kirigami2
+        KF6::Notifications
+        KF6::ConfigCore
+        KF6::ConfigGui
+        KF6::CoreAddons
+        KF6::ColorScheme
         ${QTKEYCHAIN_LIBRARIES}
         ${MPV_LIBRARIES}
 )
@@ -176,15 +177,9 @@ target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(tokodon_static PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 target_link_directories(tokodon_static PUBLIC ${MPV_LIBRARY_DIRS})
 
-if (QT_MAJOR_VERSION STREQUAL "5")
-    target_link_libraries(tokodon_static PUBLIC KF5::ConfigWidgets)
-else()
-    target_link_libraries(tokodon_static PUBLIC KF6::ColorScheme)
-endif()
-
-if (TARGET KF${QT_MAJOR_VERSION}::KIOWidgets)
+if (TARGET KF6::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
-    target_link_libraries(tokodon_static PUBLIC KF${QT_MAJOR_VERSION}::KIOWidgets)
+    target_link_libraries(tokodon_static PUBLIC KF6::KIOWidgets)
 endif()
 
 if (SAILFISHOS)
@@ -283,8 +278,8 @@ else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
 
-if (TARGET KF${QT_MAJOR_VERSION}::DBusAddons)
-    target_link_libraries(tokodon PRIVATE KF${QT_MAJOR_VERSION}::DBusAddons KF${QT_MAJOR_VERSION}::WindowSystem)
+if (TARGET KF6::DBusAddons)
+    target_link_libraries(tokodon PRIVATE KF6::DBusAddons KF6::WindowSystem)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
 endif ()
 
@@ -294,7 +289,7 @@ else()
     install(FILES tokodon.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 endif()
 
-install(TARGETS tokodon ${KF${QT_MAJOR_VERSION}_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS tokodon ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
     add_subdirectory(purpose)
