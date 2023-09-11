@@ -109,14 +109,19 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormTextFieldDelegate {
+            id: displayNameDelegate
             label: i18n("Display Name")
             text: backend.displayName
             onTextChanged: backend.displayName = text
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: displayNameDelegate; below: bioDelegate
+        }
 
         FormCard.AbstractFormDelegate {
+            id: bioDelegate
+
             background: Item {}
             Layout.fillWidth: true
 
@@ -134,9 +139,12 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: bioDelegate; below: headerDelegate
+        }
 
         FormCard.AbstractFormDelegate {
+            id: headerDelegate
             background: Item {}
             Layout.fillWidth: true
             contentItem: ColumnLayout {
@@ -196,9 +204,12 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: headerDelegate; below: avatarDelegate
+        }
 
         FormCard.AbstractFormDelegate {
+            id: avatarDelegate
             background: Item {}
             Layout.fillWidth: true
             contentItem: ColumnLayout {
@@ -264,22 +275,29 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
 
         FormCard.FormCheckDelegate {
+            id: followRequestDelegate
             text: i18n("Require follow requests")
             checked: backend.locked
             onCheckedChanged: backend.locked = checked
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: followRequestDelegate; below: botAccountDelegate
+        }
 
         FormCard.FormCheckDelegate {
+            id: botAccountDelegate
             text: i18n("This is a bot account")
             checked: backend.bot
             onCheckedChanged: backend.bot = checked
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: botAccountDelegate; below: suggestionDelegate
+        }
 
         FormCard.FormCheckDelegate {
+            id: suggestionDelegate
             text: i18n("Suggest account to others")
             checked: backend.discoverable
             onCheckedChanged: backend.discoverable = checked

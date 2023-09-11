@@ -15,6 +15,7 @@ FormCard.FormCard {
     id: preferencesCard
 
     QQC2.Label {
+        id: preferencesLabel
         Layout.fillWidth: true
         horizontalAlignment: Text.AlignHCenter
         padding: Kirigami.Units.largeSpacing
@@ -22,17 +23,24 @@ FormCard.FormCard {
         text: i18nc("@label Account preferences", "These preferences apply to the current account and are synced to other clients.")
     }
 
-    FormCard.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {
+        above: preferencesLabel; below: sensitiveDelegate
+    }
 
     FormCard.FormSwitchDelegate {
+        id: sensitiveDelegate
         text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
         checked: AccountManager.selectedAccount.preferences.defaultSensitive
         onToggled: AccountManager.selectedAccount.preferences.defaultSensitive = checked
     }
 
-    FormCard.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {
+        above: sensitiveDelegate; below: languageDelegate
+    }
 
     FormCard.AbstractFormDelegate {
+        id: languageDelegate
+
         contentItem: RowLayout {
             QQC2.Label {
                 Layout.fillWidth: true
@@ -48,7 +56,9 @@ FormCard.FormCard {
         }
     }
 
-    FormCard.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {
+        above: languageDelegate; below: postVisibility
+    }
 
     FormCard.FormComboBoxDelegate {
         Layout.fillWidth: true

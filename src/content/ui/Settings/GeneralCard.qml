@@ -35,7 +35,9 @@ FormCard.FormCard {
         }
     }
 
-    FormCard.FormDelegateSeparator { below: showStats; above: cropMedia }
+    FormCard.FormDelegateSeparator {
+        below: showLinkPreview; above: cropMedia
+    }
 
     FormCard.FormSwitchDelegate {
         id: cropMedia
