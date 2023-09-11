@@ -18,6 +18,7 @@ RowLayout {
     readonly property bool isFavorite: type === Notification.Favorite
     readonly property bool isPoll: type === Notification.Poll
     readonly property bool isUpdate: type === Notification.Update
+    readonly property bool isStatus: type === Notification.Status
 
     required property var type
     required property var notificationActorIdentity
@@ -28,7 +29,7 @@ RowLayout {
         source: {
             if (root.isBoost) {
                 return "post-boost"
-            } else if (root.isReply) {
+            } else if (root.isReply || root.isStatus) {
                 return "post-reply"
             } else if (root.isFavorite) {
                 return "favorite"
@@ -79,6 +80,10 @@ RowLayout {
                         return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isPoll) {
                         return i18n("A poll has ended");
+                    } else if (root.isUpdate) {
+                        return i18n("%1 updated their post", root.notificationActorIdentity.displayNameHtml)
+                    } else if (root.isStatus) {
+                        return i18n("%1 wrote a new post", root.notificationActorIdentity.displayNameHtml)
                     }
 
                     return '';
