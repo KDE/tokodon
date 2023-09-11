@@ -69,14 +69,10 @@ PRIVATE
     timeline/threadmodel.h
     timeline/timelinemodel.cpp
     timeline/timelinemodel.h
-    timeline/notificationmodel.cpp
-    timeline/notificationmodel.h
     timeline/tagstimelinemodel.cpp
     timeline/tagstimelinemodel.h
     timeline/maintimelinemodel.cpp
     timeline/maintimelinemodel.h
-    timeline/notificationmodel.cpp
-    timeline/notificationmodel.h
     timeline/abstracttimelinemodel.cpp
     timeline/abstracttimelinemodel.h
     timeline/tagsmodel.h
@@ -140,6 +136,12 @@ PRIVATE
     admin/emailblocktoolmodel.h
     admin/emailinfo.cpp
     admin/emailinfo.h
+
+        # Notification models
+        notification/notificationgroupingmodel.cpp
+        notification/notificationgroupingmodel.h
+        notification/notificationmodel.cpp
+        notification/notificationmodel.h
 )
 
 if(ANDROID)

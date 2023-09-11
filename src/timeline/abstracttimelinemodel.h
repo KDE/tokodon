@@ -63,6 +63,9 @@ public:
         // Notification
         NotificationActorIdentityRole, ///< The identity of account related to this notification
         TypeRole, ///< The notification type
+        IsGroupRole,
+        IsInGroupRole,
+        NumInGroupRole,
 
         SelectedRole, ///< Used in ThreadModel. Is this post the selected (or root) post?
         FiltersRole, ///< The filters that may have hidden this post

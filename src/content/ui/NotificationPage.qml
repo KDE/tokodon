@@ -17,6 +17,9 @@ Kirigami.ScrollablePage {
     property var dialog: null
 
     property alias listViewHeader: listview.header
+    readonly property bool typesAreGroupable: !mentionOnlyAction.checked && !followsOnlyAction.checked && !pollResultsOnlyAction.checked
+    property bool shouldGroupNotifications: groupNotificationsAction.checked && typesAreGroupable
+    readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
     onBackRequested: if (dialog) {
         dialog.close();
@@ -25,10 +28,18 @@ Kirigami.ScrollablePage {
     }
 
     actions.main: Kirigami.Action {
-        icon.name: "list-add"
-        text: i18n("Post")
-        enabled: AccountManager.hasAccounts
-        onTriggered: Navigation.openStatusComposer()
+        id: groupNotificationsAction
+
+        icon.name: "view-visible"
+
+        displayComponent: QQC2.Switch
+        {
+            text: i18n("Group Notifications")
+
+            enabled: typesAreGroupable
+
+            onToggled: groupNotificationsAction.checked = checked
+        }
     }
 
     property Kirigami.Action showAllAction: Kirigami.Action {
@@ -106,11 +117,18 @@ Kirigami.ScrollablePage {
         actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, postsOnlyAction, followsOnlyAction]
     }
 
+    NotificationModel {
+        id: notificationModel
+    }
+
+    NotificationGroupingModel {
+        id: groupedNotificationModel
+        sourceModel: notificationModel
+    }
+
     ListView {
         id: listview
-        model: NotificationModel {
-            id: notificationModel
-        }
+        model: timelinePage.currentModel
 
         Connections {
             target: Navigation
@@ -127,7 +145,7 @@ Kirigami.ScrollablePage {
         }
 
         Connections {
-            target: notificationModel
+            target: timelinePage.currentModel
             function onPostSourceReady(backend) {
                 pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                     purpose: StatusComposer.Edit,
@@ -205,7 +223,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Notifications")
-            visible: listview.count === 0 && !listview.model.loading
+            visible: listview.count === 0 && !timelinePage.currentModel.loading
         }
     }
 }

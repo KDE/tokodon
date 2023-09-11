@@ -5,8 +5,8 @@
 #pragma once
 
 #include "account/accountmanager.h"
-#include "abstracttimelinemodel.h"
-#include "post.h"
+#include "timeline/abstracttimelinemodel.h"
+#include "timeline/post.h"
 #include <QAbstractListModel>
 
 /// Model for the notifications page

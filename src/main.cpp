@@ -48,10 +48,11 @@
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
 #include "network/networkrequestprogress.h"
+#include "notification/notificationgroupingmodel.h"
+#include "notification/notificationmodel.h"
 #include "search/searchmodel.h"
 #include "timeline/accountmodel.h"
 #include "timeline/maintimelinemodel.h"
-#include "timeline/notificationmodel.h"
 #include "timeline/poll.h"
 #include "timeline/post.h"
 #include "timeline/tagsmodel.h"
@@ -190,6 +191,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<PostEditorBackend>("org.kde.kmasto", 1, 0, "PostEditorBackend");
     qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
     qmlRegisterType<PollTimeModel>("org.kde.kmasto", 1, 0, "PollTimeModel");
+    qmlRegisterType<NotificationGroupingModel>("org.kde.kmasto", 1, 0, "NotificationGroupingModel");
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
     qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);
     qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {

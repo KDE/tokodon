@@ -8,6 +8,8 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kmasto 1.0
 
+import "../Notifications" as Notifications
+
 QQC2.ItemDelegate {
     id: root
 
@@ -55,6 +57,10 @@ QQC2.ItemDelegate {
     required property int visibility
 
     required property var post
+
+    required property bool isGroup
+    required property bool isInGroup
+    required property int numInGroup
 
     property bool filtered: root.filters.length > 0
     property var timelineModel
@@ -132,61 +138,6 @@ QQC2.ItemDelegate {
         RowLayout {
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: (root.type === Notification.Favorite || root.type === Notification.Update || root.type === Notification.Poll) && !root.filtered
-            Kirigami.Icon {
-                source: if (root.type === Notification.Favorite) {
-                    return "favorite"
-                } else if (root.type === Notification.Update) {
-                    return "cell_edit"
-                } else if (root.type === Notification.Poll) {
-                    return "office-chart-bar"
-                }
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                color: Kirigami.Theme.disabledTextColor
-                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            }
-
-            QQC2.AbstractButton {
-                contentItem: RowLayout {
-                    KirigamiComponents.AvatarButton {
-                        implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
-                        implicitWidth: implicitHeight
-                        Layout.alignment: Qt.AlignTop
-                        Layout.bottomMargin: -Kirigami.Units.gridUnit
-                        source: root.notificationActorIdentity && root.notificationActorIdentity.avatarUrl ? root.notificationActorIdentity.avatarUrl :  ''
-                        cache: true
-                        QQC2.ToolTip.text: i18n("View profile")
-                        onClicked: Navigation.openAccount(root.notificationActorIdentity.id)
-                        name: root.notificationActorIdentity && root.notificationActorIdentity.displayName ? root.notificationActorIdentity.displayName :  ''
-                        visible: [Notification.Favorite, root.type === Notification.Update].includes(root.type)
-                    }
-                    QQC2.Label {
-                        font: Config.defaultFont
-                        text: if (root.type === Notification.Favorite) {
-                            return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml)
-                        } else if (root.type === Notification.Update) {
-                            return i18n("%1 edited a post", root.notificationActorIdentity.displayNameHtml)
-                        } else if (root.type === Notification.Poll) {
-                            if (root.isSelf) {
-                                return i18n("Your poll has ended")
-                            } else {
-                                return i18n("A poll you voted in has ended")
-                            }
-                        } else {
-                            return ''
-                        }
-                        textFormat: Text.RichText
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-            }
-        }
-
-        RowLayout {
-            Layout.fillWidth: true
-            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             visible: root.pinned && !root.filtered
             Kirigami.Icon {
                 source: "pin"
@@ -203,77 +154,37 @@ QQC2.ItemDelegate {
             }
         }
 
-        RowLayout {
-            id: interactLayout
-
-            readonly property bool isBoost: root.isBoosted || root.type === Notification.Repeat
-            readonly property bool isReply: root.isReply || root.type === Notification.Reply
-
-            visible: {
-                if (filtered) {
-                    return false
-                }
-
-                return (interactLayout.isBoost && root.boostAuthorIdentity) || (interactLayout.isReply && root.replyAuthorIdentity)
+        // Normal interaction labels on the timeline
+        Loader {
+            sourceComponent: UserInteractionLabel {
+                isBoosted: root.isBoosted
+                isReply: root.isReply
+                type: root.type
+                boostAuthorIdentity: root.boostAuthorIdentity
+                replyAuthorIdentity: root.replyAuthorIdentity
             }
+            active: !root.notificationActorIdentity && (root.isBoosted || root.isReply)
+        }
 
-            Layout.fillWidth: true
-            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            Kirigami.Icon {
-                source: {
-                    if (interactLayout.isBoost) {
-                        return "post-boost"
-                    } else if (interactLayout.isReply) {
-                        return "post-reply"
-                    }
-
-                    return ''
-                }
-                isMask: true
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+        // Interaction labels for notifications
+        Loader {
+            sourceComponent: Notifications.UserInteractionLabel
+            {
+                type: root.type
+                notificationActorIdentity: root.notificationActorIdentity
             }
+            active: root.notificationActorIdentity !== undefined && !root.isGroup
+        }
 
-            QQC2.AbstractButton {
-                contentItem: RowLayout {
-                    KirigamiComponents.AvatarButton {
-                        implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
-                        implicitWidth: implicitHeight
-                        Layout.alignment: Qt.AlignTop
-                        Layout.bottomMargin: -Kirigami.Units.gridUnit
-                        source: {
-                            if (interactLayout.isBoost && root.boostAuthorIdentity) {
-                                return root.boostAuthorIdentity.avatarUrl ? root.boostAuthorIdentity.avatarUrl : ''
-                            } else if (interactLayout.isReply && root.replyAuthorIdentity) {
-                                return root.replyAuthorIdentity.avatarUrl ? root.replyAuthorIdentity.avatarUrl : ''
-                            }
-
-                            return ''
-                        }
-                        cache: true
-                        QQC2.ToolTip.text: i18n("View profile")
-                        onClicked: Navigation.openAccount(root.boostAuthorIdentity.id)
-                        name: root.boostAuthorIdentity && root.boostAuthorIdentity.displayName ? root.boostAuthorIdentity.displayName : ''
-                    }
-                    QQC2.Label {
-                        text: {
-                            if (interactLayout.isBoost) {
-                                return root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : (root.type === Notification.Repeat ? i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml) : '')
-                            } else if (interactLayout.isReply) {
-                                return root.replyAuthorIdentity ? i18n("In reply to %1", root.replyAuthorIdentity.displayNameHtml) : (root.type === Notification.Reply ? i18n("%1 replied to your post", root.notificationActorIdentity.displayNameHtml) : '')
-                            }
-
-                            return ''
-                        }
-                        color: root.type === Notification.Repeat ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                        font: Config.defaultFont
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.fillWidth: true
-                    }
-                }
+        // Interaction labels for grouped notifications
+        Loader {
+            sourceComponent: Notifications.GroupInteractionLabel
+            {
+                type: root.type
+                notificationActorIdentity: root.notificationActorIdentity
+                numInGroup: root.numInGroup
             }
+            active: root.notificationActorIdentity !== undefined && root.isGroup
         }
 
         InlineIdentityInfo {
@@ -402,28 +313,6 @@ QQC2.ItemDelegate {
             active: !root.secondary && root.attachments.length > 0 && !filtered
             visible: active
 
-            Layout.fillWidth: true
-        }
-
-        Loader {
-            sourceComponent: LinkPreview {
-                card: root.card
-            }
-
-            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
-
-            visible: active && postContent.visible
-            Layout.fillWidth: true
-        }
-
-        Loader {
-            sourceComponent: StatusPoll {
-                index: root.index
-                poll: root.poll
-            }
-
-            visible: active
-            active: root.poll !== undefined && !root.filtered
             Layout.fillWidth: true
         }
 

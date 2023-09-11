@@ -3,7 +3,7 @@
 
 #include "notificationmodel.h"
 #include "account/abstractaccount.h"
-#include "abstracttimelinemodel.h"
+#include "timeline/abstracttimelinemodel.h"
 #include <KLocalizedString>
 #include <QUrlQuery>
 #include <QtMath>
@@ -93,8 +93,6 @@ void NotificationModel::fillTimeline(const QUrl &next)
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
-        setLoading(false);
-
         if (!doc.isArray()) {
             m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
             return;
@@ -116,12 +114,15 @@ void NotificationModel::fillTimeline(const QUrl &next)
         }
 
         if (notifications.isEmpty()) {
+            setLoading(false);
             return;
         }
 
         beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
         m_notifications.append(notifications);
         endInsertRows();
+
+        setLoading(false);
     });
 }
 
