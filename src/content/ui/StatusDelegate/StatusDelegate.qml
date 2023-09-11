@@ -233,6 +233,7 @@ QQC2.ItemDelegate {
 
             InteractionButton {
                 Layout.alignment: Qt.AlignVCenter
+                Layout.preferredWidth: implicitHeight
                 iconName: 'overflow-menu'
                 tooltip: i18nc("Show more options", "More")
                 onClicked: {
