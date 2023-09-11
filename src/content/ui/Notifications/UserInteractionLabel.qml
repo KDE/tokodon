@@ -72,11 +72,11 @@ RowLayout {
                     }
 
                     if (root.isBoost) {
-                        return i18n("%1 boosted your post", root.notificationActorIdentity.displayName);
+                        return i18n("%1 boosted your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isReply) {
-                        return i18n("%1 replied to your post", root.notificationActorIdentity.displayName);
+                        return i18n("%1 replied to your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isFavorite) {
-                        return i18n("%1 favorited your post", root.notificationActorIdentity.displayName);
+                        return i18n("%1 favorited your post", root.notificationActorIdentity.displayNameHtml);
                     } else if (root.isPoll) {
                         return i18n("A poll has ended");
                     }
