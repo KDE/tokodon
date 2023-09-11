@@ -1,100 +1,48 @@
-// SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
-// SPDX-License-Identifier: LGPL-2.0-or-later
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
-import org.kde.kirigami 2 as Kirigami
-import QtQuick.Layouts
-import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.tokodon
-import org.kde.coreaddons
+import org.kde.kirigamiaddons.settings as KirigamiSettings
 
-FormCard.FormCardPage {
-    id: root
+KirigamiSettings.CategorizedSettings {
+    id: settingsPage
 
-    title: i18nc("@title:window", "Settings")
-
-    data: Connections {
-        target: AccountManager
-
-        function onAccountRemoved() {
-            if (!AccountManager.hasAccounts) {
-                close()
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18n("General")
-    }
-
-    GeneralCard {}
-
-    FormCard.FormHeader {
-        title: i18n("Accounts")
-    }
-
-    AccountsCard {}
-
-    FormCard.FormHeader {
-        title: i18nc("@label Settings header", "Preferences")
-    }
-
-    PreferencesCard {}
-
-    FormCard.FormHeader {
-        visible: Qt.platform.os !== "android"
-        title: i18n("Spellchecking")
-    }
-
-    Loader {
-        Layout.fillWidth: true
-
-        active: Qt.platform.os !== "android"
-        sourceComponent: Qt.createComponent("org.kde.tokodon", "SonnetCard")
-    }
-
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.gridUnit
-
-        data: Component {
-            id: networkProxyPage
-            NetworkProxyPage {}
-        }
-
-        FormCard.FormButtonDelegate {
+    actions: [
+        KirigamiSettings.SettingAction {
+            actionName: "appearance"
+            text: i18n("Appearance")
+            icon.name: "preferences-desktop-theme-global"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AppearancePage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "accounts"
+            text: i18n("Accounts")
+            icon.name: "preferences-system-users"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AccountsPage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "sonnet"
+            text: i18n("Spell Checking")
+            icon.name: "tools-check-spelling"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/SonnetPage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "proxy"
             text: i18n("Network Proxy")
-            onClicked: applicationWindow().pageStack.layers.push(networkProxyPage)
-        }
-    }
-
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.gridUnit
-
-        data: [
-            Component {
-                id: aboutPage
-                FormCard.AboutPage {
-                    aboutData: About
-                }
-            },
-            Component {
-                id: aboutKDE
-                FormCard.AboutKDE {}
-            }
-        ]
-
-        FormCard.FormButtonDelegate {
-            id: aboutTokodon
+            icon.name: "network-connect"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/NetworkProxyPage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "about"
             text: i18n("About Tokodon")
-            onClicked: applicationWindow().pageStack.layers.push(aboutPage)
-        }
-
-        FormCard.FormDelegateSeparator { above: aboutKde; below: aboutTokodon }
-
-        FormCard.FormButtonDelegate {
-            id: aboutKde
+            icon.name: "help-about"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AboutPage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "aboutkde"
             text: i18n("About KDE")
-            onClicked: applicationWindow().pageStack.layers.push(aboutKDE)
+            icon.name: "kde"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AboutKDEPage.qml")
         }
-    }
+    ]
 }

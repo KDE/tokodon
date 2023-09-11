@@ -10,6 +10,7 @@ import Qt.labs.platform 1.1
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import Qt5Compat.GraphicalEffects
+import ".."
 
 FormCard.FormCardPage {
     id: root
@@ -21,7 +22,7 @@ FormCard.FormCardPage {
         onSendNotification: applicationWindow().showPassiveNotification(message)
     }
 
-    title: i18n("Profile Editor")
+    title: i18n("Edit Account")
 
     data: Component {
         id: openFileDialog
@@ -294,6 +295,55 @@ FormCard.FormCardPage {
             text: i18n("Suggest account to others")
             checked: backend.discoverable
             onCheckedChanged: backend.discoverable = checked
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
+            text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
+            checked: AccountManager.selectedAccount.preferences.defaultSensitive
+            onToggled: AccountManager.selectedAccount.preferences.defaultSensitive = checked
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.AbstractFormDelegate {
+            contentItem: RowLayout {
+                QQC2.Label {
+                    Layout.fillWidth: true
+
+                    text: i18nc("@label Account preferences", "Default post language")
+                }
+                LanguageSelector {
+                    id: languageSelect
+
+                    Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
+                    onActivated: AccountManager.selectedAccount.preferences.defaultLanguage = model.getCode(currentIndex)
+                }
+            }
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormComboBoxDelegate {
+            Layout.fillWidth: true
+            id: postVisibility
+            text: i18nc("@label Account preferences", "Default post visibility")
+            textRole: "display"
+            valueRole: "display"
+            model: ListModel {
+                ListElement {
+                    display: "Public"
+                }
+                ListElement {
+                    display: "Unlisted"
+                }
+                ListElement {
+                    display: "Private"
+                }
+            }
+            Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
+            onCurrentValueChanged: AccountManager.selectedAccount.preferences.defaultVisibility = currentIndex
         }
     }
 

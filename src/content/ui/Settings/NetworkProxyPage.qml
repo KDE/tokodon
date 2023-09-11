@@ -16,11 +16,9 @@ FormCard.FormCardPage {
     property int currentType
     property bool proxyConfigChanged: false
 
-    FormCard.FormHeader {
-        title: i18n("Network Proxy")
-    }
-
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
         FormCard.FormRadioDelegate {
             id: systemDefault
             text: i18n("System Default")
