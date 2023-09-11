@@ -114,7 +114,7 @@ MastoPage {
             wrapMode: Text.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.preferredHeight: Kirigami.Units.gridUnit * 12 + actions.implicitHeight
+            Layout.preferredHeight: Math.max(implicitHeight, Kirigami.Units.gridUnit * 12) + actions.implicitHeight
             bottomInset: -1
             leftInset: -1
             rightInset: -1
