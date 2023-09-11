@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
         icon.name: "tokodon-chat-reply"
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+            notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update']
         }
     }
 
@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
         icon.name: "post-boost"
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+            notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update']
         }
     }
 
@@ -66,16 +66,28 @@ Kirigami.ScrollablePage {
         icon.name: "post-favorite"
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'poll', 'update']
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update']
         }
     }
 
     property Kirigami.Action pollResultsOnlyAction: Kirigami.Action {
-        text: i18nc("Show only poll results", "Poll results")
+        text: i18nc("Show only poll results", "Poll Results")
         icon.name: "office-chart-bar"
         checkable: true
         onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow', 'follow_request', 'favourite', 'update']
+            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update']
+        }
+    }
+
+    property
+    Kirigami.Action
+    postsOnlyAction: Kirigami.Action
+    {
+        text: i18nc("Show only followed statuses", "Posts")
+        icon.name: "user-home-symbolic"
+        checkable: true
+        onCheckedChanged: if (checked) {
+            notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update']
         }
     }
 
@@ -91,7 +103,7 @@ Kirigami.ScrollablePage {
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, followsOnlyAction]
+        actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, postsOnlyAction, followsOnlyAction]
     }
 
     ListView {
