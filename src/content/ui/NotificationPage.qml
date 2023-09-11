@@ -112,6 +112,7 @@ Kirigami.ScrollablePage {
         anchors.left: parent.left
         anchors.right: parent.right
         actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, postsOnlyAction, followsOnlyAction]
+        enabled: !listview.model.loading
     }
 
     NotificationModel {
