@@ -110,9 +110,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
             const QJsonObject obj = value.toObject();
             const auto notification = std::make_shared<Notification>(m_account, obj, this);
 
-            if (notification.get()->post() != nullptr) {
-                notifications.push_back(notification);
-            }
+            notifications.push_back(notification);
         }
 
         if (notifications.isEmpty()) {
@@ -182,7 +180,9 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
             return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
     default:
-        return postData(post, role);
+        if (post) {
+            return postData(post, role);
+        }
     }
 
     return {};
