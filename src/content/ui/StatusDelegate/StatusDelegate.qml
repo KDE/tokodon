@@ -193,7 +193,7 @@ QQC2.ItemDelegate {
             visible: !filtered
 
             InteractionButton {
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignVCenter
                 iconName: switch(root.visibility) {
                     case Post.Public:
                         return "kstars_xplanet";
@@ -227,14 +227,12 @@ QQC2.ItemDelegate {
                 font.pointSize: -1
                 text: root.relativeTime
                 color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
-                verticalAlignment: Text.AlignTop
-                topPadding: Kirigami.Units.smallSpacing
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignBaseline
                 elide: Text.ElideRight
             }
 
             InteractionButton {
-                Layout.alignment: Qt.AlignTop
+                Layout.alignment: Qt.AlignVCenter
                 iconName: 'overflow-menu'
                 tooltip: i18nc("Show more options", "More")
                 onClicked: {
