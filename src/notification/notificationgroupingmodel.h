@@ -7,9 +7,8 @@
 
 #include <QSortFilterProxyModel>
 
+#include "notification/notificationmodel.h"
 #include "timeline/abstracttimelinemodel.h"
-
-class NotificationModel;
 
 class NotificationGroupingModel : public QAbstractProxyModel
 {
