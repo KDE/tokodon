@@ -44,7 +44,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
 
     QString displayName() const override;
-    void fillTimeline(const QString &fromId = QString()) override;
+    void fillTimeline(const QString &fromId = QString(), bool backwards = false) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
     /**

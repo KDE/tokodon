@@ -138,6 +138,11 @@ Kirigami.ScrollablePage {
         function onLoadingChanged() {
             root.completedInitialLoad = true;
         }
+
+        function onRepositionAt(index) {
+            console.log("repositioning on index " + index);
+            listview.positionViewAtIndex(index, ListView.Beginning);
+        }
     }
 
     ListView {
@@ -148,6 +153,19 @@ Kirigami.ScrollablePage {
         Component {
             id: fullScreenImage
             FullScreenImage {}
+        }
+
+        header: Item {
+            width: parent.width
+            height: visible ? Kirigami.Units.gridUnit * 4 : 0
+            visible: root.model.hasPrevious
+
+            ReadMarker {
+                anchors.centerIn: parent
+
+                date: root.model.lastReadTime
+                onClicked: timelineModel.fetchPrevious()
+            }
         }
 
         delegate: PostDelegate {

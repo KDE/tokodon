@@ -31,8 +31,9 @@ QString TagsTimelineModel::displayName() const
     return QLatin1Char('#') + m_hashtag;
 }
 
-void TagsTimelineModel::fillTimeline(const QString &fromId)
+void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 {
+    Q_UNUSED(backwards)
     if (m_hashtag.isEmpty()) {
         return;
     }

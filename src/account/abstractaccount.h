@@ -315,6 +315,13 @@ public:
     void invalidatePost(Post *p);
 
     /**
+     * @brief Saves the timeline position.
+     * @param timeline Which timeline to save, right now can only be "home" or "notifications"
+     * @param lastReadId The last read post id.
+     */
+    Q_INVOKABLE void saveTimelinePosition(const QString &timeline, const QString &lastReadId);
+
+    /**
      * @brief Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough way to determine what formats are
      * accepted.
      */

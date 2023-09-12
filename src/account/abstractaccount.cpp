@@ -600,6 +600,17 @@ void AbstractAccount::invalidatePost(Post *p)
     Q_EMIT invalidatedPost(p);
 }
 
+void AbstractAccount::saveTimelinePosition(const QString &timeline, const QString &lastReadId)
+{
+    QUrl uri = apiUrl(QStringLiteral("/api/v1/markers"));
+
+    QUrlQuery urlQuery(uri);
+    urlQuery.addQueryItem(QStringLiteral("%1[last_read_id]").arg(timeline), lastReadId);
+    uri.setQuery(urlQuery);
+
+    post(uri, urlQuery, true, this, {});
+}
+
 QUrl AbstractAccount::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl(QStringLiteral("/api/v1/streaming"));
