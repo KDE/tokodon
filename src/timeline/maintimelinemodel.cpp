@@ -67,7 +67,7 @@ void MainTimelineModel::setName(const QString &timelineName)
     fillTimeline({});
 }
 
-void MainTimelineModel::fillTimeline(const QString &from_id)
+void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
 {
     static const QSet<QString> validTimelines = {QStringLiteral("home"),
                                                  QStringLiteral("public"),
@@ -79,6 +79,11 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
     static const QSet<QString> publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
 
     if (!m_account || m_loading || !validTimelines.contains(m_timelineName)) {
+        return;
+    }
+
+    if (m_timelineName == QStringLiteral("home") && !fetchingLastId) {
+        fetchLastReadId();
         return;
     }
 
@@ -95,21 +100,53 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         q.addQueryItem(QStringLiteral("local"), QStringLiteral("true"));
     }
     if (!from_id.isEmpty()) {
+        // TODO: this is an *upper bound* so it always is one less than the last post we read
+        // is this really how it's supposed to work wrt read markers?
         q.addQueryItem(QStringLiteral("max_id"), from_id);
     }
 
     QUrl uri;
-    if (m_timelineName == QStringLiteral("list")) {
-        const QString apiUrl = QStringLiteral("/api/v1/timelines/list/%1").arg(m_listId);
-        uri = m_account->apiUrl(apiUrl);
-        uri.setQuery(q);
+
+    // FIXME: this logic is terrible and needs to be rewritten
+    if (!backwards && !m_next.isEmpty()) {
+        // Fixes issues where on reaching the end the data is fetched from the start
+        if (m_next.isEmpty() && !m_timeline.isEmpty()) {
+            setLoading(false);
+            return;
+        }
+        uri = m_next.isEmpty()
+            ? m_account->apiUrl(
+                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+            : m_next;
+    } else if (backwards && !m_prev.isEmpty()) {
+        // Fixes issues where on reaching the end the data is fetched from the start
+        if (m_prev.isEmpty() && !m_timeline.isEmpty()) {
+            setLoading(false);
+            return;
+        }
+        uri = m_prev.isEmpty()
+            ? m_account->apiUrl(
+                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+            : m_prev;
     } else if (publicTimelines.contains(m_timelineName)) {
         // federated timeline is really "public" without local set
         const QString apiUrl =
             QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
         uri = m_account->apiUrl(apiUrl);
         uri.setQuery(q);
-    } else {
+    }
+
+    if (m_timelineName == QStringLiteral("list")) {
+        const QString apiUrl = QStringLiteral("/api/v1/timelines/list/%1").arg(m_listId);
+        uri = m_account->apiUrl(apiUrl);
+        uri.setQuery(q);
+    } else if (publicTimelines.contains(m_timelineName) && !backwards) {
+        // federated timeline is really "public" without local set
+        const QString apiUrl =
+            QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
+        uri = m_account->apiUrl(apiUrl);
+        uri.setQuery(q);
+    } else if (!backwards) {
         // Fixes issues where on reaching the end the data is fetched from the start
         if (m_next.isEmpty() && !m_timeline.isEmpty()) {
             setLoading(false);
@@ -126,20 +163,55 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         uri,
         true,
         this,
-        [this, currentTimelineName, account](QNetworkReply *reply) {
+        [this, currentTimelineName, account, backwards](QNetworkReply *reply) {
             if (m_account != account || m_timelineName != currentTimelineName) {
                 setLoading(false);
                 return;
             }
 
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            m_next = QUrl::fromUserInput(match.captured(1));
-            Q_EMIT atEndChanged();
+            // Fetch next post link
+            {
+                static QRegularExpression re(QStringLiteral(".*<(.*)>; rel=\"next\""));
+                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+                const auto match = re.match(QString::fromUtf8(next));
+                if (match.isValid()) {
+                    m_next = QUrl::fromUserInput(match.captured(1));
+                } else {
+                    m_next.clear();
+                }
+            }
+
+            // Fetch prev post link
+            {
+                static QRegularExpression re(QStringLiteral(".*<(.*)>; rel=\"prev\""));
+                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+                const auto match = re.match(QString::fromUtf8(next));
+                if (match.isValid()) {
+                    m_prev = QUrl::fromUserInput(match.captured(1));
+                } else {
+                    m_prev.clear();
+                }
+            }
+
+            if (publicTimelines.contains(m_timelineName) && backwards) {
+                int pos = fetchedTimeline(reply->readAll());
+                Q_EMIT repositionAt(pos);
+                setLoading(false);
+            } else {
+                fetchedTimeline(reply->readAll(), true);
+                setLoading(false);
+            }
 
             fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
             setLoading(false);
+
+            Q_EMIT hasPreviousChanged();
+
+            // Only overwrite the read marker if they hit the button themselves
+            if (m_userHasTakenReadAction && m_timelineName == QStringLiteral("home")) {
+                // We want to force a refresh of the read marker in case we reached the top
+                m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
+            }
         },
         [this](QNetworkReply *reply) {
             Q_UNUSED(reply)
@@ -149,13 +221,16 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
 
 void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
-    TimelineModel::handleEvent(eventType, payload);
-    if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == QStringLiteral("home")) {
-        const auto doc = QJsonDocument::fromJson(payload);
-        const auto post = new Post(m_account, doc.object(), this);
-        beginInsertRows({}, 0, 0);
-        m_timeline.push_front(post);
-        endInsertRows();
+    // Don't add streamed posts if we still have unread ones to go through
+    if (!hasPrevious()) {
+        TimelineModel::handleEvent(eventType, payload);
+        if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == QStringLiteral("home")) {
+            const auto doc = QJsonDocument::fromJson(payload);
+            const auto post = new Post(m_account, doc.object(), this);
+            beginInsertRows({}, 0, 0);
+            m_timeline.push_front(post);
+            endInsertRows();
+        }
     }
 }
 
@@ -171,6 +246,62 @@ void MainTimelineModel::reset()
     m_timeline.clear();
     endResetModel();
     m_next.clear();
+}
+
+void MainTimelineModel::fetchLastReadId()
+{
+    if (fetchingLastId) {
+        return;
+    }
+
+    fetchingLastId = true;
+
+    QUrl uri = m_account->apiUrl(QStringLiteral("/api/v1/markers"));
+
+    QUrlQuery urlQuery(uri);
+    urlQuery.addQueryItem(QStringLiteral("timeline[]"), QStringLiteral("home"));
+    uri.setQuery(urlQuery);
+
+    m_account->get(uri, true, this, [this](QNetworkReply *reply) {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+
+        m_lastReadId = doc.object()[QLatin1String("home")].toObject()[QLatin1String("last_read_id")].toString();
+        m_lastReadTime =
+            QDateTime::fromString(doc.object()[QLatin1String("home")].toObject()[QLatin1String("updated_at")].toString(), Qt::ISODate).toLocalTime();
+
+        Q_EMIT hasPreviousChanged();
+
+        fetchedLastId = true;
+        fillTimeline(m_lastReadId);
+    });
+}
+
+void MainTimelineModel::fetchPrevious()
+{
+    m_userHasTakenReadAction = true;
+    Q_EMIT userHasTakenReadActionChanged();
+    fillTimeline({}, true);
+}
+
+bool MainTimelineModel::hasPrevious() const
+{
+    const bool lastReadTimeIsValid = m_lastReadTime.isValid();
+    const bool hasPreviousLink = !m_prev.isEmpty();
+    const bool hasAnyPosts = !m_timeline.isEmpty();
+    if (hasAnyPosts) {
+        return lastReadTimeIsValid && hasPreviousLink;
+    }
+    return false;
+}
+
+QDateTime MainTimelineModel::lastReadTime() const
+{
+    return m_lastReadTime;
+}
+
+bool MainTimelineModel::userHasTakenReadAction() const
+{
+    return m_userHasTakenReadAction;
 }
 
 #include "moc_maintimelinemodel.cpp"

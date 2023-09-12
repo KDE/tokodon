@@ -143,12 +143,37 @@ Kirigami.ScrollablePage {
                 root.completedInitialLoad = true;
             }
         }
+
+        function onRepositionAt(index): void {
+            listview.positionViewAtIndex(index, ListView.Beginning);
+        }
     }
 
     ListView {
         id: listview
         model: root.model
         reuseItems: false // TODO: this causes jumping on the timeline. needs more investigation before it's re-enabled
+
+        header: Kirigami.FlexColumn {
+            id: flexColumn
+
+            spacing: 0
+            padding: 0
+            maximumWidth: Kirigami.Units.gridUnit * 40
+
+            width: parent.width
+            height: visible ? Kirigami.Units.gridUnit * 4 : 0
+            visible: root.model.hasPrevious ?? false
+
+            ReadMarker {
+                shouldShowDate: !root.model.userHasTakenReadAction
+                date: root.model.lastReadTime
+                onClicked: timelineModel.fetchPrevious()
+
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
+        }
 
         delegate: PostDelegate {
             id: status

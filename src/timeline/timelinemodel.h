@@ -29,7 +29,7 @@ public:
     /**
      * @brief Start filling the timeline starting at @p fromId
      */
-    virtual void fillTimeline(const QString &fromId = {}) = 0;
+    virtual void fillTimeline(const QString &fromId = {}, bool backwards = false) = 0;
 
     /**
      * @return A translated label for the timeline (e.g. "Home")
@@ -111,7 +111,11 @@ Q_SIGNALS:
 protected:
     void fetchMore(const QModelIndex &parent) override;
     [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
-    void fetchedTimeline(const QByteArray &array, bool alwaysAppendToEnd = false);
+
+    /**
+     * @return The number of posts added to the timeline.
+     */
+    int fetchedTimeline(const QByteArray &array, bool alwaysAppendToEnd = false);
 
     AccountManager *m_manager = nullptr;
 

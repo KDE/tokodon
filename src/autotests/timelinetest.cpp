@@ -65,6 +65,9 @@ private Q_SLOTS:
 
     void testFillTimelineMain()
     {
+        QUrl markersUrl = account->apiUrl(QStringLiteral("/api/v1/markers"));
+        markersUrl.setQuery(QStringLiteral("timeline[]=home"));
+        account->registerGet(markersUrl, new TestReply(QStringLiteral("markers.json"), account));
         account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/home"));
         fetchMoreUrl.setQuery(QUrlQuery{

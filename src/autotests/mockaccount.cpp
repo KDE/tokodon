@@ -36,7 +36,7 @@ void MockAccount::get(const QUrl &url,
         callback(reply);
         reply->seek(0);
     } else {
-        qWarning() << url << m_getReplies;
+        qWarning() << "Cannot find reply for " << url;
         if (errorCallback)
             errorCallback(nullptr);
     }

@@ -276,6 +276,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ListTimelinePage.qml
         content/ui/MastoPage.qml
         content/ui/NotificationPage.qml
+        content/ui/ReadMarker.qml
         content/ui/ReportDialog.qml
         content/ui/SearchField.qml
         content/ui/SearchPage.qml

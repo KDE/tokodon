@@ -20,7 +20,7 @@ public:
     explicit TagsTimelineModel(QObject *parent = nullptr);
     ~TagsTimelineModel() override;
 
-    void fillTimeline(const QString &fromId) override;
+    void fillTimeline(const QString &fromId, bool backwards = false) override;
     [[nodiscard]] QString displayName() const override;
 
     /**

@@ -38,8 +38,10 @@ QString AccountModel::displayName() const
     return m_identity->displayNameHtml();
 }
 
-void AccountModel::fillTimeline(const QString &fromId)
+void AccountModel::fillTimeline(const QString &fromId, bool backwards)
 {
+    Q_UNUSED(backwards)
+
     // Media is now handled by AccountMediaTimelineModel
     if (m_accountId.isEmpty() || m_accountId.isNull() || m_currentTab == Media || loading()) {
         return;
