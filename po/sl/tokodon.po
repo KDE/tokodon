@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-11 00:46+0000\n"
-"PO-Revision-Date: 2023-08-24 06:44+0200\n"
+"POT-Creation-Date: 2023-09-12 00:46+0000\n"
+"PO-Revision-Date: 2023-09-11 06:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: account/abstractaccount.cpp:485
@@ -2436,10 +2436,33 @@ msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> znaki"
 
-#: content/ui/StatusComposer/StatusComposer.qml:394
-#, kde-format
+#: content/ui/StatusComposer/StatusComposer.qml:397
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Pošlji"
+
+#: content/ui/StatusComposer/StatusComposer.qml:399
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgctxt "@action:button Reply to a post"
+msgid "Reply"
+msgstr "Odgovori"
+
+#: content/ui/StatusComposer/StatusComposer.qml:401
+#, kde-format
+msgctxt "@action:button Send the same post again"
+msgid "Repost"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:403
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:Button Edit a post"
+msgid "Edit"
+msgstr "Uredi"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:123
 #, kde-format
@@ -2771,7 +2794,7 @@ msgstr "Vzdrževalec"
 #: main.cpp:130 main.cpp:137
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:143
 #, kde-format

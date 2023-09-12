@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-11 00:46+0000\n"
+"POT-Creation-Date: 2023-09-12 00:46+0000\n"
 "PO-Revision-Date: 2023-09-04 23:31+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2432,10 +2432,33 @@ msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karaktere"
 
-#: content/ui/StatusComposer/StatusComposer.qml:394
-#, kde-format
+#: content/ui/StatusComposer/StatusComposer.qml:397
+#, fuzzy, kde-format
+#| msgid "Send"
+msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Bidali"
+
+#: content/ui/StatusComposer/StatusComposer.qml:399
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgctxt "@action:button Reply to a post"
+msgid "Reply"
+msgstr "Erantzun"
+
+#: content/ui/StatusComposer/StatusComposer.qml:401
+#, kde-format
+msgctxt "@action:button Send the same post again"
+msgid "Repost"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:403
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:Button Edit a post"
+msgid "Edit"
+msgstr "Editatu"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:123
 #, kde-format
