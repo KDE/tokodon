@@ -15,10 +15,10 @@ RowLayout {
     id: root
 
     readonly property var identity: {
-        if (root.replyAuthorIdentity) {
-            return root.replyAuthorIdentity;
-        } else if (root.boostAuthorIdentity) {
-            return root.boostAuthorIdentity;
+        if (replyAuthorIdentity) {
+            return replyAuthorIdentity;
+        } else if (boostAuthorIdentity) {
+            return boostAuthorIdentity;
         }
     }
 
@@ -68,9 +68,9 @@ RowLayout {
             QQC2.Label {
                 text: {
                     if (root.isBoosted) {
-                        return root.boostAuthorIdentity ? i18n("%1 boosted", root.boostAuthorIdentity.displayNameHtml) : '';
+                        return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
                     } else if (root.isReply) {
-                        return root.replyAuthorIdentity ? i18n("In reply to %1", root.replyAuthorIdentity.displayNameHtml) : '';
+                        return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
                     }
                 }
                 color: Kirigami.Theme.disabledTextColor
