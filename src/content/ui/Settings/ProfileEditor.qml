@@ -117,8 +117,13 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.AbstractFormDelegate {
-            background: Item {}
+            background: null
             Layout.fillWidth: true
+
+            onClicked: bioField.clicked()
+            onActiveFocusChanged: if (activeFocus) {
+                bioField.forceActiveFocus();
+            }
 
             contentItem: ColumnLayout {
                 QQC2.Label {
@@ -130,6 +135,10 @@ FormCard.FormCardPage {
                     Layout.fillWidth: true
                     text: backend.note
                     onTextChanged: backend.note = text
+                    activeFocusOnTab: false
+
+                    KeyNavigation.tab: nextItemInFocusChain(true)
+                    KeyNavigation.priority: KeyNavigation.BeforeItem
                 }
             }
         }
@@ -137,7 +146,9 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.AbstractFormDelegate {
-            background: Item {}
+            id: headerDelegate
+
+            background: null
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 QQC2.Label {
@@ -196,10 +207,10 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator { below: headerDelegate }
 
         FormCard.AbstractFormDelegate {
-            background: Item {}
+            background: null
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 QQC2.Label {

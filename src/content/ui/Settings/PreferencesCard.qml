@@ -15,6 +15,7 @@ FormCard.FormCard {
     id: preferencesCard
 
     QQC2.Label {
+        id: preferenceLabel
         Layout.fillWidth: true
         horizontalAlignment: Text.AlignHCenter
         padding: Kirigami.Units.largeSpacing
@@ -22,7 +23,7 @@ FormCard.FormCard {
         text: i18nc("@label Account preferences", "These preferences apply to the current account and are synced to other clients.")
     }
 
-    FormCard.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator { below: preferenceLabel }
 
     FormCard.FormSwitchDelegate {
         text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
@@ -33,6 +34,7 @@ FormCard.FormCard {
     FormCard.FormDelegateSeparator {}
 
     FormCard.AbstractFormDelegate {
+        onClicked: languageSelect.clicked();
         contentItem: RowLayout {
             QQC2.Label {
                 Layout.fillWidth: true
@@ -44,6 +46,7 @@ FormCard.FormCard {
 
                 Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
                 onActivated: AccountManager.selectedAccount.preferences.defaultLanguage = model.getCode(currentIndex)
+                activeFocusOnTab: false
             }
         }
     }

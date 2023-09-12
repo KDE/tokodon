@@ -17,6 +17,8 @@ FormCard.FormCard {
     id: accountsCard
 
     Repeater {
+        id: accountRepeater
+
         model: AccountManager
         delegate: FormCard.AbstractFormDelegate {
             Layout.fillWidth: true
@@ -74,7 +76,7 @@ FormCard.FormCard {
         }
     }
 
-    FormCard.FormDelegateSeparator { below: addAccountDelegate }
+    FormCard.FormDelegateSeparator { above: addAccountDelegate; below: accountRepeater.itemAt(accountRepeater.count - 1) }
 
     FormCard.FormButtonDelegate {
         id: addAccountDelegate
