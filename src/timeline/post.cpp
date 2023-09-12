@@ -208,10 +208,10 @@ void Post::fromJson(QJsonObject obj)
 
     m_replyTargetId = obj["in_reply_to_id"].toString();
 
-    if (obj.contains("in_reply_to_account_id")) {
+    if (obj.contains("in_reply_to_account_id") && obj["in_reply_to_account_id"].isString()) {
         if (m_parent->identityCached(obj["in_reply_to_account_id"].toString())) {
             m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"].toString(), {});
-        } else if (!obj["in_reply_to_account_id"].toString().isEmpty()) {
+        } else {
             const auto accountId = obj["in_reply_to_account_id"].toString();
             QUrl uriAccount(m_parent->instanceUri());
             uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
@@ -224,6 +224,15 @@ void Post::fromJson(QJsonObject obj)
                 Q_EMIT replyIdentityChanged();
             });
         }
+    } else if (!m_replyTargetId.isEmpty()) {
+        // Fallback to getting the account id from the status, which is weird but this sometimes has to happen.
+        m_parent->get(m_parent->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(m_replyTargetId)), true, this, [this](QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            m_replyIdentity = m_parent->identityLookup(doc["account"].toObject()["id"].toString(), doc["account"].toObject());
+            Q_EMIT replyIdentityChanged();
+        });
     }
 
     m_url = QUrl(obj["url"].toString());
