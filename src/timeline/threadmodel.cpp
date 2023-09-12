@@ -67,9 +67,10 @@ QString ThreadModel::postUrl() const
     return m_postUrl;
 }
 
-void ThreadModel::fillTimeline(const QString &fromId)
+void ThreadModel::fillTimeline(const QString &fromId, bool backwards)
 {
     Q_UNUSED(fromId)
+    Q_UNUSED(backwards)
 
     if (m_postId.isNull() || m_postId.isEmpty()) {
         return;

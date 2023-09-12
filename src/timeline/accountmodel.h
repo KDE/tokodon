@@ -80,7 +80,7 @@ public:
     [[nodiscard]] AbstractAccount *account() const;
     [[nodiscard]] bool isSelf() const;
 
-    void fillTimeline(const QString &fromId = {}) override;
+    void fillTimeline(const QString &fromId = {}, bool backwards = false) override;
 
 Q_SIGNALS:
     void identityChanged();

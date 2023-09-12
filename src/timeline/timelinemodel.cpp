@@ -63,20 +63,20 @@ void TimelineModel::init()
     fillTimeline();
 }
 
-void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEnd)
+int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEnd)
 {
     QList<Post *> posts;
 
     const auto doc = QJsonDocument::fromJson(data);
 
     if (!doc.isArray()) {
-        return;
+        return 0;
     }
 
     const auto array = doc.array();
 
     if (array.isEmpty()) {
-        return;
+        return 0;
     }
 
     std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) -> Post * {
@@ -126,6 +126,8 @@ void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToE
         m_timeline = posts;
         endInsertRows();
     }
+
+    return posts.size();
 }
 
 void TimelineModel::fetchMore(const QModelIndex &parent)

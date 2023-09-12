@@ -19,6 +19,9 @@ class MainTimelineModel : public TimelineModel
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
     Q_PROPERTY(bool atEnd READ atEnd NOTIFY atEndChanged)
+    Q_PROPERTY(bool hasPrevious READ hasPrevious NOTIFY hasPreviousChanged)
+    Q_PROPERTY(QDateTime lastReadTime READ lastReadTime NOTIFY hasPreviousChanged)
+    Q_PROPERTY(bool userHasTakenReadAction READ userHasTakenReadAction NOTIFY userHasTakenReadActionChanged)
 
 public:
     explicit MainTimelineModel(QObject *parent = nullptr);
@@ -45,20 +48,36 @@ public:
      */
     void setListId(const QString &id);
 
-    void fillTimeline(const QString &fromId) override;
+    void fillTimeline(const QString &fromId, bool backwards = false) override;
     [[nodiscard]] QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
 
     [[nodiscard]] bool atEnd() const;
+    [[nodiscard]] bool hasPrevious() const;
+    [[nodiscard]] QDateTime lastReadTime() const;
+    [[nodiscard]] bool userHasTakenReadAction() const;
 
     void reset() override;
+
+    Q_INVOKABLE void fetchPrevious();
 
 Q_SIGNALS:
     void atEndChanged();
     void listIdChanged();
+    void repositionAt(int index);
+    void hasPreviousChanged();
+    void userHasTakenReadActionChanged();
 
 private:
     QString m_timelineName;
     QString m_listId;
-    QUrl m_next;
+
+    QUrl m_next, m_prev;
+    QString m_lastReadId;
+    bool fetchingLastId = false;
+    bool fetchedLastId = false;
+
+    void fetchLastReadId();
+    QDateTime m_lastReadTime;
+    bool m_userHasTakenReadAction = false;
 };
