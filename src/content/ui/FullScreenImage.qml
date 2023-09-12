@@ -62,5 +62,6 @@ Components.AlbumMaximizeComponent {
 
     onOpened: {
         applicationWindow().isShowingFullScreenImage = true;
+        forceActiveFocus();
     }
 }
