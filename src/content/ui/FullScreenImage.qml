@@ -1,15 +1,15 @@
 // SPDX-FileCopyrightText: 2019 Black Hat <bhat@encom.eu.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls 2 as QQC2
+import QtQuick.Layouts
 import Qt.labs.platform 1.1
 import Qt.labs.qmlmodels 1.0
 
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1.0 as Components
-import org.kde.kmasto 1.0
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.labs.components 1 as Components
+import org.kde.kmasto
 
 import "./StatusDelegate" as StatusDelegate
 

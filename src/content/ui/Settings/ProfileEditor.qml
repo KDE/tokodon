@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.kmasto 1.0
+import QtQuick
+import QtQuick.Controls 2 as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kmasto
 import Qt.labs.platform 1.1
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.kirigamiaddons.components 1.0 as KirigamiComponents
+import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import Qt5Compat.GraphicalEffects
 
 FormCard.FormCardPage {

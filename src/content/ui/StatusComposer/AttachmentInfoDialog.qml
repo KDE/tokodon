@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Controls 2 as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
 import Qt5Compat.GraphicalEffects
 
 import "../Components"

@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.20 as Kirigami
-import QtQuick.Controls 2.15 as QQC2
+import QtQuick
+import QtQuick.Layouts
+import org.kde.kirigami 2 as Kirigami
+import QtQuick.Controls 2 as QQC2
 
 QQC2.AbstractButton {
     id: control

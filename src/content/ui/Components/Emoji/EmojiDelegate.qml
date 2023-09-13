@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Tobias Fella <tobias.fella@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigamiaddons.delegates 1.0 as Delegates
-import org.kde.kirigami 2.20 as Kirigami
+import QtQuick
+import QtQuick.Controls 2 as QQC2
+import org.kde.kirigamiaddons.delegates 1 as Delegates
+import org.kde.kirigami 2 as Kirigami
 
 Delegates.RoundedItemDelegate {
     id: emojiDelegate

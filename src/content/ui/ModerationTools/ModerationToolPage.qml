@@ -2,10 +2,10 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.15
-import org.kde.kirigami 2.18 as Kirigami
-import org.kde.kirigamiaddons.settings 1.0 as KirigamiSettings
-import QtQuick.Layouts 1.15
+import QtQuick
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.settings 1 as KirigamiSettings
+import QtQuick.Layouts
 
 KirigamiSettings.CategorizedSettings {
     objectName: "moderationToolPage"
