@@ -1,7 +1,7 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:46+0000\n"
-"PO-Revision-Date: 2023-09-04 23:31+0200\n"
+"POT-Creation-Date: 2023-09-13 00:46+0000\n"
+"PO-Revision-Date: 2023-09-12 07:34+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: account/abstractaccount.cpp:485
 #, kde-format
@@ -66,7 +66,7 @@ msgid "Could not edit note about an account"
 msgstr "Ezin izan du kontu bati buruzko oharra editatu"
 
 #: account/notificationhandler.cpp:24
-#: content/ui/StatusDelegate/StatusDelegate.qml:167
+#: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1(e)k zure posta gogoko du"
@@ -77,16 +77,22 @@ msgid "%1 followed you"
 msgstr "%1(e)k jarraitu zaituzte"
 
 #: account/notificationhandler.cpp:32
-#: content/ui/StatusDelegate/StatusDelegate.qml:263
+#: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1(e)k zure posta bultzatu du(te)"
 
 #: account/notificationhandler.cpp:40
-#: content/ui/StatusDelegate/StatusDelegate.qml:169
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1(e)k posta editatu du"
+
+#: account/notificationhandler.cpp:44
+#: content/ui/Notifications/UserInteractionLabel.qml:86
+#, fuzzy, kde-format
+#| msgid "Write a new post"
+msgid "%1 wrote a new post"
+msgstr "Idatzi posta berri bat"
 
 #: account/profileeditor.cpp:194
 #, kde-format
@@ -280,143 +286,143 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
 "Errorea gertatu da, domeinu blokea eguneratzeko PUT eskaera bat egitean."
 
-#: content/ui/AccountInfo.qml:71
+#: content/ui/AccountInfo.qml:68
 #, kde-format
 msgid "Follows you"
 msgstr "Jarraitzen zaitu"
 
-#: content/ui/AccountInfo.qml:111
+#: content/ui/AccountInfo.qml:108
 #, kde-format
 msgid "Requested"
 msgstr "Eskatua"
 
-#: content/ui/AccountInfo.qml:114
+#: content/ui/AccountInfo.qml:111
 #, kde-format
 msgid "Following"
 msgstr "Jarraitzen"
 
-#: content/ui/AccountInfo.qml:116
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Jarraitu"
 
-#: content/ui/AccountInfo.qml:141
+#: content/ui/AccountInfo.qml:138
 #, kde-format
 msgid "Stop notifying me when %1 posts"
 msgstr "Ez niri jakinarazi %1(e)k posta bidaltzen duenean"
 
-#: content/ui/AccountInfo.qml:143
+#: content/ui/AccountInfo.qml:140
 #, kde-format
 msgid "Notify me when %1 posts"
 msgstr "Niri jakinarazi %1(e)k posta bidaltzen duenean"
 
-#: content/ui/AccountInfo.qml:160
+#: content/ui/AccountInfo.qml:157
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Ezkutatu %1(e)ren bultzadak"
 
-#: content/ui/AccountInfo.qml:162
+#: content/ui/AccountInfo.qml:159
 #, kde-format
 msgid "Stop Hiding Boosts from %1"
 msgstr "Utzi %1(e)ren bultzadak ezkutatzeari"
 
-#: content/ui/AccountInfo.qml:179
+#: content/ui/AccountInfo.qml:176
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr "Utzi profilean nabarmentzeari"
 
-#: content/ui/AccountInfo.qml:181
+#: content/ui/AccountInfo.qml:178
 #, kde-format
 msgid "Feature on Profile"
 msgstr "Nabarmendu profilean"
 
-#: content/ui/AccountInfo.qml:198
+#: content/ui/AccountInfo.qml:195
 #, kde-format
 msgid "Stop Muting"
 msgstr "Utzi isilarazteari"
 
-#: content/ui/AccountInfo.qml:200
+#: content/ui/AccountInfo.qml:197
 #, kde-format
 msgid "Mute"
 msgstr "Isilarazi"
 
-#: content/ui/AccountInfo.qml:217
+#: content/ui/AccountInfo.qml:214
 #, kde-format
 msgid "Stop Blocking"
 msgstr "Utzi blokeatzeari"
 
-#: content/ui/AccountInfo.qml:219
+#: content/ui/AccountInfo.qml:216
 #, kde-format
 msgid "Block"
 msgstr "Blokeatu"
 
-#: content/ui/AccountInfo.qml:234
+#: content/ui/AccountInfo.qml:231
 #, kde-format
 msgid "Edit Profile"
 msgstr "Editatu profila"
 
-#: content/ui/AccountInfo.qml:238 content/ui/Settings/AccountsCard.qml:26
+#: content/ui/AccountInfo.qml:235 content/ui/Settings/AccountsCard.qml:26
 #, kde-format
 msgid "Account editor"
 msgstr "Kontu-editorea"
 
-#: content/ui/AccountInfo.qml:245 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: content/ui/AccountInfo.qml:246 content/ui/main.qml:247
+#: content/ui/AccountInfo.qml:243 content/ui/main.qml:247
 #: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: content/ui/AccountInfo.qml:252 content/ui/main.qml:287
+#: content/ui/AccountInfo.qml:249 content/ui/main.qml:287
 #, kde-format
 msgid "Follow Requests"
 msgstr "Jarraipen eskaera"
 
-#: content/ui/AccountInfo.qml:259
+#: content/ui/AccountInfo.qml:256
 #, kde-format
 msgid "Muted Accounts"
 msgstr "Isilarazitako kontuak"
 
-#: content/ui/AccountInfo.qml:266
+#: content/ui/AccountInfo.qml:263
 #, kde-format
 msgid "Blocked Accounts"
 msgstr "Oztopatutako kontuak"
 
-#: content/ui/AccountInfo.qml:273
+#: content/ui/AccountInfo.qml:270
 #, kde-format
 msgid "Featured Accounts"
 msgstr "Nabarmendutako kontuak"
 
-#: content/ui/AccountInfo.qml:279
+#: content/ui/AccountInfo.qml:276
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr "Kopiatu esteka profil horretara"
 
-#: content/ui/AccountInfo.qml:282 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr "Postako esteka kopiatu da."
 
-#: content/ui/AccountInfo.qml:369
+#: content/ui/AccountInfo.qml:366
 #, kde-format
 msgid "Note"
 msgstr "Oharra"
 
-#: content/ui/AccountInfo.qml:377
+#: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "Saved"
 msgstr "Gordeta"
 
-#: content/ui/AccountInfo.qml:392
+#: content/ui/AccountInfo.qml:389
 #, kde-format
 msgid "Click to add a note"
 msgstr "Egin klik ohar bat gehitzeko"
 
-#: content/ui/AccountInfo.qml:474
+#: content/ui/AccountInfo.qml:471
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -424,7 +430,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "Posta <b>%1</b>"
 msgstr[1] "<b>%1</b> posta"
 
-#: content/ui/AccountInfo.qml:486
+#: content/ui/AccountInfo.qml:483
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -432,7 +438,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "Jarraitzaile <b>%1</b>"
 msgstr[1] "<b>%1</b> jarraitzaile"
 
-#: content/ui/AccountInfo.qml:498
+#: content/ui/AccountInfo.qml:495
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -440,25 +446,25 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b>(e)k jarraitzen du"
 msgstr[1] "<b>%1</b>(a)k jarraitzen dute"
 
-#: content/ui/AccountInfo.qml:510
+#: content/ui/AccountInfo.qml:513
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Postak"
 
-#: content/ui/AccountInfo.qml:514
+#: content/ui/AccountInfo.qml:517
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Postak eta erantzunak"
 
-#: content/ui/AccountInfo.qml:518
+#: content/ui/AccountInfo.qml:521
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Hedabideak"
 
-#: content/ui/AccountInfo.qml:545
+#: content/ui/AccountInfo.qml:548
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
@@ -525,8 +531,8 @@ msgstr "Elkarrizketarik ez"
 msgid "Explore"
 msgstr "Esploratu"
 
-#: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
-#: content/ui/TimelinePage.qml:63 search/searchmodel.cpp:141
+#: content/ui/ExplorePage.qml:29 content/ui/TimelinePage.qml:63
+#: search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Posta"
@@ -1792,46 +1798,104 @@ msgctxt "@title"
 msgid "Email Blocks"
 msgstr "E-posta oztopoak"
 
-#: content/ui/NotificationPage.qml:36
+#: content/ui/NotificationPage.qml:37
+#, fuzzy, kde-format
+#| msgid "No Notifications"
+msgid "Group Notifications"
+msgstr "Jakinarazpenik ez"
+
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Guztiak"
 
-#: content/ui/NotificationPage.qml:47
+#: content/ui/NotificationPage.qml:58
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Aipamenak"
 
-#: content/ui/NotificationPage.qml:56
+#: content/ui/NotificationPage.qml:67
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Bultzadak"
 
-#: content/ui/NotificationPage.qml:65
+#: content/ui/NotificationPage.qml:76
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Gogokoak"
 
-#: content/ui/NotificationPage.qml:74
-#, kde-format
+#: content/ui/NotificationPage.qml:85
+#, fuzzy, kde-format
+#| msgctxt "Show only poll results"
+#| msgid "Poll results"
 msgctxt "Show only poll results"
-msgid "Poll results"
+msgid "Poll Results"
 msgstr "Galdeketaren emaitzak"
 
-#: content/ui/NotificationPage.qml:83
+#: content/ui/NotificationPage.qml:97
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgctxt "Show only followed statuses"
+msgid "Posts"
+msgstr "Postak"
+
+#: content/ui/NotificationPage.qml:106
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Jarraitzen ditu"
 
-#: content/ui/NotificationPage.qml:195
+#: content/ui/NotificationPage.qml:225
 #, kde-format
 msgid "No Notifications"
 msgstr "Jakinarazpenik ez"
+
+#: content/ui/Notifications/GroupInteractionLabel.qml:60
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "View %1's Profile"
+msgstr "Ikusi profila"
+
+#: content/ui/Notifications/GroupInteractionLabel.qml:69
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "%1 users favorited your post"
+msgstr "%1(e)k zure posta gogoko du"
+
+#: content/ui/Notifications/GroupInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgid "%1 boosted your post"
+msgid "%1 users boosted your post"
+msgstr "%1(e)k zure posta bultzatu du(te)"
+
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:63
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgid "View Profile"
+msgstr "Ikusi profila"
+
+#: content/ui/Notifications/UserInteractionLabel.qml:78
+#, kde-format
+msgid "%1 replied to your post"
+msgstr "%1(e)k zure postari erantzun dio"
+
+#: content/ui/Notifications/UserInteractionLabel.qml:82
+#, fuzzy, kde-format
+#| msgid "Your poll has ended"
+msgid "A poll has ended"
+msgstr "Zure galdeketa bukatu da"
+
+#: content/ui/Notifications/UserInteractionLabel.qml:84
+#, fuzzy, kde-format
+#| msgid "%1 edited a post"
+msgid "%1 updated their post"
+msgstr "%1(e)k posta editatu du"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
@@ -2381,26 +2445,26 @@ msgid "Add Poll"
 msgstr "Gehitu galdeketa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
-#: content/ui/StatusDelegate/StatusDelegate.qml:300
-#: content/ui/StatusDelegate/StatusDelegate.qml:308
+#: content/ui/StatusDelegate/StatusDelegate.qml:211
+#: content/ui/StatusDelegate/StatusDelegate.qml:219
 #, kde-format
 msgid "Public"
 msgstr "Publikoa"
 
 #: content/ui/StatusComposer/StatusComposer.qml:315
-#: content/ui/StatusDelegate/StatusDelegate.qml:302
+#: content/ui/StatusDelegate/StatusDelegate.qml:213
 #, kde-format
 msgid "Unlisted"
 msgstr "Zerrendatu gabea"
 
 #: content/ui/StatusComposer/StatusComposer.qml:320
-#: content/ui/StatusDelegate/StatusDelegate.qml:304
+#: content/ui/StatusDelegate/StatusDelegate.qml:215
 #, kde-format
 msgid "Private"
 msgstr "Pribatua"
 
 #: content/ui/StatusComposer/StatusComposer.qml:325
-#: content/ui/StatusDelegate/StatusDelegate.qml:306
+#: content/ui/StatusDelegate/StatusDelegate.qml:217
 #, kde-format
 msgid "Direct Message"
 msgstr "Zuzeneko mezua"
@@ -2433,16 +2497,13 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karaktere"
 
 #: content/ui/StatusComposer/StatusComposer.qml:397
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Bidali"
 
 #: content/ui/StatusComposer/StatusComposer.qml:399
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Erantzun"
@@ -2451,11 +2512,10 @@ msgstr "Erantzun"
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
-msgstr ""
+msgstr "Birbidali posta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:403
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Editatu"
@@ -2481,8 +2541,6 @@ msgid "Media Hidden"
 msgstr "Hedabideak ezkutuan"
 
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:159
-#: content/ui/StatusDelegate/StatusDelegate.qml:256
 #, kde-format
 msgid "View profile"
 msgstr "Ikusi profila"
@@ -2508,7 +2566,7 @@ msgid "Copy Link to This Post"
 msgstr "Kopiatu posta honetarako esteka"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:512
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Kendu laster-marka"
@@ -2533,114 +2591,89 @@ msgstr "Iltzatu profilean"
 msgid "Delete & Re-draft"
 msgstr "Ezabatu eta zirriborroa egin"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:123
+#: content/ui/StatusDelegate/StatusDelegate.qml:129
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Iragazita: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:127
+#: content/ui/StatusDelegate/StatusDelegate.qml:133
 #, kde-format
 msgid "Show anyway"
 msgstr "Erakutsi dena den"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:172
-#, kde-format
-msgid "Your poll has ended"
-msgstr "Zure galdeketa bukatu da"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:174
-#, kde-format
-msgid "A poll you voted in has ended"
-msgstr "Zuk bozkatu duzun galdeketa bat bukatu da"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:199
+#: content/ui/StatusDelegate/StatusDelegate.qml:150
 #, kde-format
 msgid "Pinned entry"
 msgstr "Iltzatutako sarrera"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:263
-#, kde-format
-msgid "%1 boosted"
-msgstr "%1(e)k bultzatu du(te)"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:265
-#, kde-format
-msgid "In reply to %1"
-msgstr "%1(e)ri erantzunez"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:265
-#, kde-format
-msgid "%1 replied to your post"
-msgstr "%1(e)k zure postari erantzun dio"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:328
+#: content/ui/StatusDelegate/StatusDelegate.qml:238
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Gehiago"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:369
+#: content/ui/StatusDelegate/StatusDelegate.qml:279
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Edukiaren abisua</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:375
+#: content/ui/StatusDelegate/StatusDelegate.qml:285
 #, kde-format
 msgid "Show Less"
 msgstr "Erakutsi gutxiago"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:375
+#: content/ui/StatusDelegate/StatusDelegate.qml:285
 #, kde-format
 msgid "Show More"
 msgstr "Erakutsi gehiago"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:338
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Erantzun"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:473
+#: content/ui/StatusDelegate/StatusDelegate.qml:361
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Bultzada"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:493
+#: content/ui/StatusDelegate/StatusDelegate.qml:381
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Gogokoena"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:512
+#: content/ui/StatusDelegate/StatusDelegate.qml:400
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Laster-marka"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:529
+#: content/ui/StatusDelegate/StatusDelegate.qml:417
 #, kde-format
 msgid "via %1"
 msgstr "%1 bidez"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:561
-#: content/ui/StatusDelegate/StatusDelegate.qml:562
+#: content/ui/StatusDelegate/StatusDelegate.qml:449
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
 msgstr[0] "Erantzun %1"
 msgstr[1] "%1 erantzun"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:573
-#: content/ui/StatusDelegate/StatusDelegate.qml:574
+#: content/ui/StatusDelegate/StatusDelegate.qml:461
+#: content/ui/StatusDelegate/StatusDelegate.qml:462
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
 msgstr[0] "Gogoko %1"
 msgstr[1] "%1 gogoko"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:592
-#: content/ui/StatusDelegate/StatusDelegate.qml:593
+#: content/ui/StatusDelegate/StatusDelegate.qml:480
+#: content/ui/StatusDelegate/StatusDelegate.qml:481
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
@@ -2663,13 +2696,23 @@ msgstr "(Bozkarik ez)"
 msgid "Vote"
 msgstr "Bozkatu"
 
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:70
+#, kde-format
+msgid "%1 boosted"
+msgstr "%1(e)k bultzatu du(te)"
+
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:72
+#, kde-format
+msgid "In reply to %1"
+msgstr "%1(e)ri erantzunez"
+
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Jo"
 
-#: content/ui/TimelinePage.qml:186
+#: content/ui/TimelinePage.qml:195
 #, kde-format
 msgid "No posts"
 msgstr "Postarik ez"
@@ -2754,67 +2797,72 @@ msgstr "7 egun"
 msgid "An unknown error occurred."
 msgstr "Errore ezezagun bat gertatu da."
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:125
+#: main.cpp:126
 #, kde-format
 msgid "Mastodon client"
 msgstr "«Mastodon»en bezeroa"
 
-#: main.cpp:127
+#: main.cpp:128
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Komunitatea"
 
-#: main.cpp:129 main.cpp:132
+#: main.cpp:130 main.cpp:133
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:129 main.cpp:130 main.cpp:133 main.cpp:138
+#: main.cpp:130 main.cpp:131 main.cpp:134 main.cpp:139
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: main.cpp:130 main.cpp:137
+#: main.cpp:131 main.cpp:138
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñigo Salvador Azurmendi"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:151
+#: main.cpp:152
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Deszentralizatutako gizarte sare honetarako bezeroa: mastodon"
 
-#: main.cpp:152
+#: main.cpp:153
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "«web+ap: URL» antolaera onartzen du"
 
-#: main.cpp:154
+#: main.cpp:155
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Partekatu testu-lerro bat konposatzaile autonomoan."
 
-#: main.cpp:154
+#: main.cpp:155
 #, kde-format
 msgid "The text to share."
 msgstr "Partekatu beharreko testua."
+
+#: notification/notificationmodel.cpp:97
+#, kde-format
+msgid "Error occurred when fetching the latest notification."
+msgstr "Errorea gertatu da jakinarazpen berriena eskuratzean."
 
 #: search/searchmodel.cpp:137
 #, kde-format
@@ -2826,7 +2874,7 @@ msgstr "Jendea"
 msgid "Hashtags"
 msgstr "Traolak"
 
-#: timeline/accountmodel.cpp:34 timeline/maintimelinemodel.cpp:26
+#: timeline/accountmodel.cpp:40 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
 msgstr "Zamatzen"
@@ -2872,11 +2920,6 @@ msgstr "Gogokoak"
 msgctxt "@title"
 msgid "Trending"
 msgstr "Joera"
-
-#: timeline/notificationmodel.cpp:99
-#, kde-format
-msgid "Error occurred when fetching the latest notification."
-msgstr "Errorea gertatu da jakinarazpen berriena eskuratzean."
 
 #: timeline/post.cpp:365
 #, kde-format
@@ -3018,6 +3061,9 @@ msgstr "Sorburua"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
+
+#~ msgid "A poll you voted in has ended"
+#~ msgstr "Zuk bozkatu duzun galdeketa bat bukatu da"
 
 #~ msgid "Open settings"
 #~ msgstr "Ireki ezarpenak"
