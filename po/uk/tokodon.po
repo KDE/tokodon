@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:46+0000\n"
-"PO-Revision-Date: 2023-09-12 14:22+0300\n"
+"POT-Creation-Date: 2023-09-14 01:54+0000\n"
+"PO-Revision-Date: 2023-09-13 05:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -87,10 +87,9 @@ msgstr "%1 змінено допис"
 
 #: account/notificationhandler.cpp:44
 #: content/ui/Notifications/UserInteractionLabel.qml:86
-#, fuzzy, kde-format
-#| msgid "Write a new post"
+#, kde-format
 msgid "%1 wrote a new post"
-msgstr "Написати новий допис"
+msgstr "%1 створено новий допис"
 
 #: account/profileeditor.cpp:194
 #, kde-format
@@ -362,18 +361,18 @@ msgstr "Заблокувати"
 msgid "Edit Profile"
 msgstr "Змінити профіль"
 
-#: content/ui/AccountInfo.qml:235 content/ui/Settings/AccountsCard.qml:26
+#: content/ui/AccountInfo.qml:235 content/ui/Settings/AccountsCard.qml:28
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
 #: content/ui/AccountInfo.qml:243 content/ui/main.qml:247
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
@@ -540,7 +539,7 @@ msgstr "Немає спілкувань"
 msgid "Explore"
 msgstr "Ознайомлення"
 
-#: content/ui/ExplorePage.qml:29 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:29 content/ui/TimelinePage.qml:62
 #: search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
@@ -577,13 +576,13 @@ msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Немає тенденцій у мітках"
 
-#: content/ui/LanguageSelector.qml:66
+#: content/ui/LanguageSelector.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Group of preferred languages"
 msgid "Preferred Languages"
 msgstr "Пріоритетні мови"
 
-#: content/ui/LanguageSelector.qml:67
+#: content/ui/LanguageSelector.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
@@ -594,7 +593,7 @@ msgstr "Усі мови"
 msgid "Login"
 msgstr "Увійти"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:85
+#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:84
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -1811,85 +1810,76 @@ msgctxt "@title"
 msgid "Email Blocks"
 msgstr "Блокування ел. пошти"
 
-#: content/ui/NotificationPage.qml:37
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#: content/ui/NotificationPage.qml:36
+#, kde-format
 msgid "Group Notifications"
-msgstr "Немає сповіщень"
+msgstr "Групові сповіщення"
 
-#: content/ui/NotificationPage.qml:47
+#: content/ui/NotificationPage.qml:44
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Усі"
 
-#: content/ui/NotificationPage.qml:58
+#: content/ui/NotificationPage.qml:55
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Згадки"
 
-#: content/ui/NotificationPage.qml:67
+#: content/ui/NotificationPage.qml:64
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Підсилення"
 
-#: content/ui/NotificationPage.qml:76
+#: content/ui/NotificationPage.qml:73
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/NotificationPage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Show only poll results"
-#| msgid "Poll results"
+#: content/ui/NotificationPage.qml:82
+#, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "Результати голосування"
 
-#: content/ui/NotificationPage.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#: content/ui/NotificationPage.qml:94
+#, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Дописи"
 
-#: content/ui/NotificationPage.qml:106
+#: content/ui/NotificationPage.qml:103
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Стеження"
 
-#: content/ui/NotificationPage.qml:225
+#: content/ui/NotificationPage.qml:223
 #, kde-format
 msgid "No Notifications"
 msgstr "Немає сповіщень"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:60
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View %1's Profile"
-msgstr "Переглянути профіль"
+msgstr "Переглянути профіль %1"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 users favorited your post"
-msgstr "Ваш допис позначено %1 як улюблений"
+msgstr "Ваш допис позначено як улюблений %1 користувачами"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 users boosted your post"
-msgstr "Ваш допис підсилено %1"
+msgstr "Ваш допис підсилено %1 користувачами"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:63
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View Profile"
 msgstr "Переглянути профіль"
 
@@ -1899,16 +1889,14 @@ msgid "%1 replied to your post"
 msgstr "%1 надіслано відповідь на ваш допис"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:82
-#, fuzzy, kde-format
-#| msgid "Your poll has ended"
+#, kde-format
 msgid "A poll has ended"
-msgstr "Ваше голосування завершено"
+msgstr "Голосування завершено"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
-#, fuzzy, kde-format
-#| msgid "%1 edited a post"
+#, kde-format
 msgid "%1 updated their post"
-msgstr "%1 змінено допис"
+msgstr "%1 оновлено допис"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
@@ -1936,12 +1924,12 @@ msgstr "Шукати людей, мітки та дописи"
 msgid "Hashtag"
 msgstr "Хештеґ"
 
-#: content/ui/Settings/AccountsCard.qml:62
+#: content/ui/Settings/AccountsCard.qml:64
 #, kde-format
 msgid "Logout"
 msgstr "Вийти"
 
-#: content/ui/Settings/AccountsCard.qml:81 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsCard.qml:83 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Додати обліковий запис"
@@ -2029,12 +2017,12 @@ msgid "Password"
 msgstr "Пароль"
 
 #: content/ui/Settings/NetworkProxyPage.qml:127
-#: content/ui/Settings/ProfileEditor.qml:304
+#: content/ui/Settings/ProfileEditor.qml:315
 #, kde-format
 msgid "Apply"
 msgstr "Застосувати"
 
-#: content/ui/Settings/PreferencesCard.qml:22
+#: content/ui/Settings/PreferencesCard.qml:23
 #, kde-format
 msgctxt "@label Account preferences"
 msgid ""
@@ -2044,19 +2032,19 @@ msgstr ""
 "Це налаштування стосуються поточного облікового запису і синхронізуються з "
 "клієнтами."
 
-#: content/ui/Settings/PreferencesCard.qml:28
+#: content/ui/Settings/PreferencesCard.qml:29
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Типово позначати вивантажені мультимедійні дані як конфіденційні"
 
-#: content/ui/Settings/PreferencesCard.qml:40
+#: content/ui/Settings/PreferencesCard.qml:42
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Типова мова дописів"
 
-#: content/ui/Settings/PreferencesCard.qml:56
+#: content/ui/Settings/PreferencesCard.qml:59
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
@@ -2078,58 +2066,58 @@ msgstr "Будь ласка, виберіть файл"
 msgid "Display Name"
 msgstr "Екранне ім'я"
 
-#: content/ui/Settings/ProfileEditor.qml:125
+#: content/ui/Settings/ProfileEditor.qml:130
 #, kde-format
 msgid "Bio"
 msgstr "Біо"
 
-#: content/ui/Settings/ProfileEditor.qml:144
+#: content/ui/Settings/ProfileEditor.qml:155
 #, kde-format
 msgid "Header"
 msgstr "Заголовок"
 
-#: content/ui/Settings/ProfileEditor.qml:178
+#: content/ui/Settings/ProfileEditor.qml:189
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 "PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
 "1500x500 пк."
 
-#: content/ui/Settings/ProfileEditor.qml:191
-#: content/ui/Settings/ProfileEditor.qml:253
+#: content/ui/Settings/ProfileEditor.qml:202
+#: content/ui/Settings/ProfileEditor.qml:264
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: content/ui/Settings/ProfileEditor.qml:206
+#: content/ui/Settings/ProfileEditor.qml:217
 #, kde-format
 msgid "Avatar"
 msgstr "Аватар"
 
-#: content/ui/Settings/ProfileEditor.qml:239
+#: content/ui/Settings/ProfileEditor.qml:250
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 "PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
 "400x400 пк."
 
-#: content/ui/Settings/ProfileEditor.qml:267
+#: content/ui/Settings/ProfileEditor.qml:278
 #, kde-format
 msgid "Require follow requests"
 msgstr "Вимагати запитів щодо стеження"
 
-#: content/ui/Settings/ProfileEditor.qml:275
+#: content/ui/Settings/ProfileEditor.qml:286
 #, kde-format
 msgid "This is a bot account"
 msgstr "Це обліковий запис бота"
 
-#: content/ui/Settings/ProfileEditor.qml:283
+#: content/ui/Settings/ProfileEditor.qml:294
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Пропонувати запис іншим"
 
-#: content/ui/Settings/ProfileEditor.qml:297
+#: content/ui/Settings/ProfileEditor.qml:308
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
@@ -2734,7 +2722,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Відтворити"
 
-#: content/ui/TimelinePage.qml:195
+#: content/ui/TimelinePage.qml:194
 #, kde-format
 msgid "No posts"
 msgstr "Немає дописів"
@@ -2821,64 +2809,64 @@ msgstr "7 днів"
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: main.cpp:124
+#: main.cpp:121
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:126
+#: main.cpp:123
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:128
+#: main.cpp:125
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021–2023; Спільнота KDE, 2021–2023"
 
-#: main.cpp:130 main.cpp:133
+#: main.cpp:127 main.cpp:130
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:130 main.cpp:131 main.cpp:134 main.cpp:139
+#: main.cpp:127 main.cpp:128 main.cpp:131 main.cpp:136
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:131 main.cpp:138
+#: main.cpp:128 main.cpp:135
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:144
+#: main.cpp:141
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:144
+#: main.cpp:141
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:152
+#: main.cpp:149
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
 
-#: main.cpp:153
+#: main.cpp:150
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Передбачено підтримку схеми адреси web+ap:"
 
-#: main.cpp:155
+#: main.cpp:152
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Оприлюднити рядок тексту в окремому редакторі."
 
-#: main.cpp:155
+#: main.cpp:152
 #, kde-format
 msgid "The text to share."
 msgstr "Текст, який слід оприлюднити."
