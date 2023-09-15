@@ -47,7 +47,10 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     switch (role) {
     case Qt::DisplayRole:
     case DisplayNameRole:
-        return account->identity()->displayNameHtml();
+        if (!account->identity()->displayNameHtml().isEmpty())
+            return account->identity()->displayNameHtml();
+        else
+            return account->username();
     case DescriptionRole:
         return account->identity()->account();
     case InstanceRole:
@@ -271,12 +274,14 @@ void AccountManager::loadFromSettings()
         if (id.contains('@')) {
             auto accountConfig = new AccountConfig{id};
 
-            int index = m_accountStatus.size();
+            const int index = m_accountStatus.size();
             m_accountStatus.push_back(AccountStatus::NotLoaded);
             m_accountStatusStrings.push_back({});
 
             auto account = new Account(accountConfig, m_qnam);
-            connect(account, &Account::authenticated, this, [=](const bool successful, const QString &errorMessage) {
+            addAccount(account, true);
+
+            connect(account, &Account::authenticated, this, [this, account, index](const bool successful, const QString &errorMessage) {
                 if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
                     m_accountStatus[index] = AccountStatus::Loaded;
                 } else {
@@ -284,7 +289,6 @@ void AccountManager::loadFromSettings()
                     m_accountStatusStrings[index] = errorMessage;
                 }
 
-                addAccount(account, true);
                 checkIfLoadingFinished();
             });
         }
