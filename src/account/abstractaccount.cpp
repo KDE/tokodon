@@ -42,6 +42,10 @@ AbstractAccount::AbstractAccount(QObject *parent)
 
 AccountConfig *AbstractAccount::config()
 {
+    if (!m_config) {
+        m_config = new AccountConfig{settingsGroupName(), this};
+    }
+    Q_ASSERT(m_config != nullptr);
     return m_config;
 }
 
@@ -142,8 +146,6 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
-
-        m_config = new AccountConfig{settingsGroupName()};
 
         s_messageFilter->insert(m_client_secret, "CLIENT_SECRET");
 
