@@ -196,6 +196,7 @@ void AbstractAccount::registerAccount(const QString &username,
                 const auto doc = QJsonDocument::fromJson(data);
 
                 if (doc.object().contains("access_token")) {
+                    setUsername(username);
                     setAccessToken(doc["access_token"].toString());
                 }
             },
@@ -276,11 +277,13 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
 void AbstractAccount::setAccessToken(const QString &token)
 {
+    qDebug() << "Setting access token to" << token << " client_id: " << m_client_id << " client_secret: " << m_client_secret;
     m_token = token;
     s_messageFilter->insert(m_token, "ACCESS_TOKEN");
     AccountManager::instance().addAccount(this, false);
     AccountManager::instance().selectAccount(this, true);
     validateToken();
+    writeToSettings();
 }
 
 QUrl AbstractAccount::getTokenUrl() const
@@ -487,7 +490,7 @@ void AbstractAccount::fetchInstanceMetadata()
 
             Q_EMIT fetchedInstanceMetadata();
         },
-        [=](QNetworkReply *reply) {
+        [=](QNetworkReply *) {
             // Fall back to v1 instance information
             // TODO: a lot of this can be merged with v2 handling
             get(apiUrl("/api/v1/instance"), false, this, [=](QNetworkReply *reply) {
