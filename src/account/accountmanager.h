@@ -73,6 +73,9 @@ public:
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
     void reloadAccounts();
 
+    Q_INVOKABLE bool selectedAccountHasIssue() const;
+    Q_INVOKABLE QString selectedAccountLoginIssue() const;
+
     void selectAccount(AbstractAccount *account, bool explicitUserAction = true);
     AbstractAccount *selectedAccount() const;
     QString selectedAccountId() const;

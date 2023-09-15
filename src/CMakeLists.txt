@@ -162,6 +162,7 @@ qt_target_qml_sources(tokodon_static
 
         # Login Flow
         content/ui/LoginFlow/AuthorizationPage.qml
+        content/ui/LoginFlow/LoginIssuePage.qml
         content/ui/LoginFlow/LoginPage.qml
         content/ui/LoginFlow/RegistrationPage.qml
         content/ui/LoginFlow/ServersPage.qml

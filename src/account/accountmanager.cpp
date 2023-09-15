@@ -196,6 +196,34 @@ void AccountManager::reloadAccounts()
     Q_EMIT accountsReloaded();
 }
 
+bool AccountManager::selectedAccountHasIssue() const
+{
+    if (!m_selected_account) {
+        return false;
+    }
+
+    const int index = m_accounts.indexOf(m_selected_account);
+    if (index != -1) {
+        return m_accountStatus[index] != AccountStatus::InvalidCredentials;
+    }
+
+    return false;
+}
+
+QString AccountManager::selectedAccountLoginIssue() const
+{
+    if (!m_selected_account) {
+        return {};
+    }
+
+    const int index = m_accounts.indexOf(m_selected_account);
+    if (index != -1) {
+        return m_accountStatusStrings[index];
+    }
+
+    return {};
+}
+
 void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAction)
 {
     if (!m_accounts.contains(account)) {

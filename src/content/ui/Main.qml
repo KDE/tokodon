@@ -72,6 +72,9 @@ Kirigami.ApplicationWindow {
 
         function onAccountSelected() {
             pageStack.pop(pageStack.get(0))
+            if (AccountManager.selectedAccountHasIssue) {
+                pageStack.replace(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
+            }
         }
 
         function onAccountRemoved() {
