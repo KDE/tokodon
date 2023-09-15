@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
-import QtWebEngine
+import QtWebView
 
 import org.kde.kirigami 2 as Kirigami
 
@@ -20,7 +20,7 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    WebEngineView {
+    WebView {
         anchors.fill: parent
 
         url: root.account.authorizeUrl

@@ -298,7 +298,7 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
-        Qt::WebEngineQuick
+        Qt::WebView
         KF6::I18n
         KF6::Kirigami2
         KF6::Notifications
