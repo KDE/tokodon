@@ -207,7 +207,7 @@ bool AccountManager::selectedAccountHasIssue() const
 
     const int index = m_accounts.indexOf(m_selected_account);
     if (index != -1) {
-        return m_accountStatus[index] != AccountStatus::InvalidCredentials;
+        return m_accountStatus[index] == AccountStatus::InvalidCredentials;
     }
 
     return false;

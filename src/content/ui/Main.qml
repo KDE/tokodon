@@ -37,11 +37,21 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function startupAccountCheck() {
-        if (AccountManager.hasAccounts) {
+    function decideDefaultPage() {
+        pageStack.clear();
+
+        if (AccountManager.selectedAccountHasIssue()) {
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
+        } else {
             pageStack.push(mainTimeline, {
                 name: 'home',
             });
+        }
+    }
+
+    function startupAccountCheck() {
+        if (AccountManager.hasAccounts) {
+            decideDefaultPage();
         } else {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
         }
@@ -71,10 +81,7 @@ Kirigami.ApplicationWindow {
         target: AccountManager
 
         function onAccountSelected() {
-            pageStack.pop(pageStack.get(0))
-            if (AccountManager.selectedAccountHasIssue) {
-                pageStack.replace(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
-            }
+            decideDefaultPage();
         }
 
         function onAccountRemoved() {
