@@ -109,9 +109,8 @@ void MockAccount::writeToSettings()
 {
 }
 
-void MockAccount::buildFromSettings(const AccountConfig &settings)
+void MockAccount::buildFromSettings()
 {
-    Q_UNUSED(settings)
 }
 
 void MockAccount::validateToken()

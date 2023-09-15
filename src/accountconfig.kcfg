@@ -24,5 +24,51 @@ SPDX-License-Identifier: CC0-1.0
       </entry>
       <entry key="lastUsedEmojis" type="StringList">
       </entry>
+      <entry key="EnableNotifications" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyMention" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyStatus" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyBoost" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyFollow" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyFollowRequest" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyFavorite" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyPoll" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyUpdate" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifySignup" type="bool">
+        <default>true</default>
+      </entry>
+      <entry key="NotifyReport" type="bool">
+        <default>true</default>
+      </entry>
+      <entry name="NotifyPolicy" type="Enum">
+        <choices>
+          <choice name="All">
+          </choice>
+          <choice name="Followed">
+          </choice>
+          <choice name="Followers">
+          </choice>
+          <choice name="None">
+          </choice>
+        </choices>
+        <default>All</default>
+      </entry>
     </group>
 </kcfg>

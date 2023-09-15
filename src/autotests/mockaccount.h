@@ -38,7 +38,7 @@ public:
 
     void writeToSettings() override;
 
-    void buildFromSettings(const AccountConfig &settings) override;
+    void buildFromSettings() override;
 
     void validateToken() override;
 

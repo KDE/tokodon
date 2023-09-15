@@ -30,7 +30,7 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
     });
 }
 
-Account::Account(const AccountConfig &settings, QNetworkAccessManager *nam, QObject *parent)
+Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent)
     : AbstractAccount(parent)
     , m_qnam(nam)
 {
@@ -40,7 +40,8 @@ Account::Account(const AccountConfig &settings, QNetworkAccessManager *nam, QObj
         notificationHandler->handle(notification, this);
     });
 
-    buildFromSettings(settings);
+    m_config = settings;
+    buildFromSettings();
 }
 
 Account::~Account()
@@ -317,12 +318,12 @@ void Account::writeToSettings()
     clientSecretJob->start();
 }
 
-void Account::buildFromSettings(const AccountConfig &settings)
+void Account::buildFromSettings()
 {
-    m_client_id = settings.clientId();
-    m_name = settings.name();
-    m_instance_uri = settings.instanceUri();
-    m_ignoreSslErrors = settings.ignoreSslErrors();
+    m_client_id = m_config->clientId();
+    m_name = m_config->name();
+    m_instance_uri = m_config->instanceUri();
+    m_ignoreSslErrors = m_config->ignoreSslErrors();
 
     auto accessTokenJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
 #ifdef SAILFISHOS

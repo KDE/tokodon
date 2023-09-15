@@ -33,7 +33,7 @@ class Account : public AbstractAccount
 
 public:
     explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, bool admin = true, QObject *parent = nullptr);
-    explicit Account(const AccountConfig &settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
+    explicit Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account() override;
 
     // making API calls
@@ -67,7 +67,7 @@ public:
     // buildFromSettings assumes a settings object in the object context
     void writeToSettings() override;
 
-    void buildFromSettings(const AccountConfig &settings) override;
+    void buildFromSettings() override;
 
     void validateToken() override;
 

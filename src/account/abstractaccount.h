@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "accountconfig.h"
 #include "admin/adminaccountinfo.h"
 #include "admin/federationinfo.h"
 #include "identity.h"
@@ -35,7 +36,6 @@ class QNetworkReply;
 class QHttpMultiPart;
 class QFile;
 class Preferences;
-class AccountConfig;
 
 /// Represents an account, which could possibly be real or a mock for testing.
 /// Also handles most of the API work, and account actions.
@@ -54,6 +54,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
     Q_PROPERTY(bool hasFollowRequests READ hasFollowRequests NOTIFY hasFollowRequestsChanged)
+    Q_PROPERTY(AccountConfig *config READ config NOTIFY fetchedInstanceMetadata)
 
 public:
     AbstractAccount(QObject *parent, const QString &instanceUri);
@@ -87,6 +88,9 @@ public:
 
     /// Verifies the token with the instance and if successful, loads identity information for the account
     virtual void validateToken() = 0;
+
+    /// Return local account preferences
+    AccountConfig *config();
 
     /// Returns the server-side preferences
     Preferences *preferences() const;
@@ -241,7 +245,7 @@ public:
     virtual void writeToSettings() = 0;
 
     /// Read account from settings
-    virtual void buildFromSettings(const AccountConfig &settings) = 0;
+    virtual void buildFromSettings() = 0;
 
     /// Check if the account has any follow requests
     virtual bool hasFollowRequests() const = 0;
@@ -391,6 +395,7 @@ protected:
     Preferences *m_preferences = nullptr;
     QList<CustomEmoji> m_customEmojis;
     QString m_additionalScopes;
+    AccountConfig *m_config = nullptr;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

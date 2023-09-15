@@ -40,6 +40,11 @@ AbstractAccount::AbstractAccount(QObject *parent)
 {
 }
 
+AccountConfig *AbstractAccount::config()
+{
+    return m_config;
+}
+
 Preferences *AbstractAccount::preferences() const
 {
     return m_preferences;
@@ -137,6 +142,8 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
 
         m_client_id = doc.object()["client_id"].toString();
         m_client_secret = doc.object()["client_secret"].toString();
+
+        m_config = new AccountConfig{settingsGroupName()};
 
         s_messageFilter->insert(m_client_secret, "CLIENT_SECRET");
 

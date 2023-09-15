@@ -19,30 +19,63 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     KNotification *knotification;
 
     switch (notification->type()) {
-    case Notification::Favorite:
-        knotification = new KNotification("favorite");
-        knotification->setTitle(i18n("%1 favorited your post", notification->identity()->displayName()));
-        break;
-    case Notification::Follow:
-        knotification = new KNotification("follow");
-        knotification->setTitle(i18n("%1 followed you", notification->identity()->displayName()));
-        break;
-    case Notification::Repeat:
-        knotification = new KNotification("boost");
-        knotification->setTitle(i18n("%1 boosted your post", notification->identity()->displayName()));
-        break;
     case Notification::Mention:
+        if (!account->config()->notifyMention()) {
+            return;
+        }
         knotification = new KNotification("mention");
         knotification->setTitle(notification->identity()->displayName());
         break;
-    case Notification::Update:
-        knotification = new KNotification("update");
-        knotification->setTitle(i18n("%1 edited a post", notification->identity()->displayName()));
-        break;
     case Notification::Status:
+        if (!account->config()->notifyStatus()) {
+            return;
+        }
         knotification = new KNotification("status");
         knotification->setTitle(i18n("%1 wrote a new post", notification->identity()->displayName()));
         break;
+    case Notification::Repeat:
+        if (!account->config()->notifyBoost()) {
+            return;
+        }
+        knotification = new KNotification("boost");
+        knotification->setTitle(i18n("%1 boosted your post", notification->identity()->displayName()));
+        break;
+    case Notification::Follow:
+        if (!account->config()->notifyFollow()) {
+            return;
+        }
+        knotification = new KNotification("follow");
+        knotification->setTitle(i18n("%1 followed you", notification->identity()->displayName()));
+        break;
+    case Notification::FollowRequest:
+        if (!account->config()->notifyFollowRequest()) {
+            return;
+        }
+        knotification = new KNotification("follow-request");
+        knotification->setTitle(i18n("%1 requested to follow you", notification->identity()->displayName()));
+        break;
+    case Notification::Favorite:
+        if (!account->config()->notifyFavorite()) {
+            return;
+        }
+        knotification = new KNotification("favorite");
+        knotification->setTitle(i18n("%1 favorited your post", notification->identity()->displayName()));
+        break;
+    case Notification::Poll:
+        if (!account->config()->notifyPoll()) {
+            return;
+        }
+        knotification = new KNotification("poll");
+        knotification->setTitle(i18n("Poll by %1 has ended", notification->identity()->displayName()));
+        break;
+    case Notification::Update:
+        if (!account->config()->notifyUpdate()) {
+            return;
+        }
+        knotification = new KNotification("update");
+        knotification->setTitle(i18n("%1 edited a post", notification->identity()->displayName()));
+        break;
+
     default:
         Q_UNREACHABLE();
     }

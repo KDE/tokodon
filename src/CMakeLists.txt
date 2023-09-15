@@ -180,6 +180,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/AccountsPage.qml
         content/ui/Settings/AppearancePage.qml
         content/ui/Settings/NetworkProxyPage.qml
+        content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml
         content/ui/Settings/SettingsPage.qml
         content/ui/Settings/SonnetPage.qml

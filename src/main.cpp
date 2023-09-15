@@ -30,6 +30,7 @@
 
 #include "tokodon-version.h"
 
+#include "accountconfig.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
@@ -133,6 +134,7 @@ int main(int argc, char *argv[])
     }
 
     qmlRegisterSingletonInstance("org.kde.tokodon.private", 1, 0, "Config", config);
+    qmlRegisterUncreatableType<AccountConfig>("org.kde.tokodon.private", 1, 0, "AccountConfig", QStringLiteral("Use via Account.config"));
 
     QQmlApplicationEngine engine;
 #ifdef HAVE_KDBUSADDONS

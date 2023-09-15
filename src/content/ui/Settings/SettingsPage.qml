@@ -15,6 +15,12 @@ KirigamiSettings.CategorizedSettings {
             page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AppearancePage.qml")
         },
         KirigamiSettings.SettingAction {
+            actionName: "notifications"
+            text: i18n("Notifications")
+            icon.name: "preferences-desktop-notification"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/NotificationsPage.qml")
+        },
+        KirigamiSettings.SettingAction {
             actionName: "accounts"
             text: i18n("Accounts")
             icon.name: "preferences-system-users"

@@ -228,7 +228,7 @@ void AccountManager::loadFromSettings()
     auto config = KSharedConfig::openStateConfig();
     for (const auto &id : config->groupList()) {
         if (id.contains('@')) {
-            auto accountConfig = AccountConfig{id};
+            auto accountConfig = new AccountConfig{id};
 
             int index = m_accountStatus.size();
             m_accountStatus.push_back(AccountStatus::NotLoaded);
