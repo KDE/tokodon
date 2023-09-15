@@ -165,6 +165,7 @@ QQC2.ItemDelegate {
                 replyAuthorIdentity: root.replyAuthorIdentity
             }
             active: !root.notificationActorIdentity && (root.isBoosted || root.isReply)
+            visible: active
         }
 
         // Interaction labels for notifications
@@ -175,6 +176,7 @@ QQC2.ItemDelegate {
                 notificationActorIdentity: root.notificationActorIdentity
             }
             active: root.notificationActorIdentity !== undefined && !root.isGroup
+            visible: active
         }
 
         // Interaction labels for grouped notifications
@@ -186,6 +188,7 @@ QQC2.ItemDelegate {
                 numInGroup: root.numInGroup
             }
             active: root.notificationActorIdentity !== undefined && root.isGroup
+            visible: active
         }
 
         InlineIdentityInfo {
@@ -245,6 +248,7 @@ QQC2.ItemDelegate {
                     id: postMenu
 
                     active: false
+                    visible: active
 
                     sourceComponent: OverflowMenu {
                         index: root.index
