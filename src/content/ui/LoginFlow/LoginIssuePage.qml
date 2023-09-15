@@ -49,7 +49,10 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: attemptButton
             text: i18n("Re-Attempt Log In")
-            onClicked: AccountManager.selectedAccount.validateToken()
+            onClicked: {
+                AccountManager.selectedAccount.validateToken()
+                AccountManager.selectedAccount = AccountManager.selectedAccount; // reload the pages
+            }
         }
     }
 }
