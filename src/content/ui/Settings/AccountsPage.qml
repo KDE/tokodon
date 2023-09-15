@@ -95,10 +95,7 @@ FormCard.FormCardPage {
             id: addAccountDelegate
             text: i18n("Add Account")
             icon.name: "list-add"
-            onClicked: pageStack.pushDialogLayer("qrc:/content/ui/LoginPage.qml", {}, {
-                width: pageStack.width - Kirigami.Units.gridUnit * 5,
-                height: pageStack.height - Kirigami.Units.gridUnit * 5,
-            })
+            onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"))
         }
     }
 }
