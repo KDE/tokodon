@@ -179,12 +179,14 @@ void AbstractAccount::registerAccount(const QString &username,
         m_token = doc.object()["access_token"].toString();
         s_messageFilter->insert(m_token, "ACCESS_TOKEN");
 
-        const QUrlQuery formdata{{"username", username},
-                                 {"email", email},
-                                 {"password", password},
-                                 {"agreement", agreement ? "1" : "0"},
-                                 {"locale", locale},
-                                 {"reason", reason}};
+        const QUrlQuery formdata{
+            {"username", username},
+            {"email", email},
+            {"password", password},
+            {"agreement", agreement ? "1" : "0"},
+            {"locale", locale},
+            {"reason", reason},
+        };
 
         post(
             apiUrl("/api/v1/accounts"),

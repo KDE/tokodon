@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
 import QtQuick.Controls 2 as QQC2
@@ -8,7 +8,7 @@ import QtQml.Models
 
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.labs.components 1 as LabComponents
+import org.kde.kirigamiaddons.components 1 as Components
 
 import org.kde.tokodon
 
@@ -27,7 +27,7 @@ MastoPage {
         }
     }
 
-    header: LabComponents.Banner {
+    header: Components.Banner {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
