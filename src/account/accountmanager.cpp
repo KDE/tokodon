@@ -279,13 +279,12 @@ void AccountManager::loadFromSettings()
             connect(account, &Account::authenticated, this, [=](const bool successful, const QString &errorMessage) {
                 if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
                     m_accountStatus[index] = AccountStatus::Loaded;
-
-                    addAccount(account, true);
                 } else {
                     m_accountStatus[index] = AccountStatus::InvalidCredentials;
                     m_accountStatusStrings[index] = errorMessage;
                 }
 
+                addAccount(account, true);
                 checkIfLoadingFinished();
             });
         }
