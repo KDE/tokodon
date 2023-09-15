@@ -67,8 +67,6 @@ set_package_properties(Qt6Keychain PROPERTIES
     PURPOSE "Secure storage of account secrets"
 )
 
-find_package(KF6ColorScheme ${KF_MIN_VERSION} REQUIRED)
-
 if (ANDROID)
     find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES
