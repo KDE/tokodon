@@ -18,7 +18,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         account = new MockAccount();
-        AccountManager::instance().addAccount(account);
+        AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
     }
 

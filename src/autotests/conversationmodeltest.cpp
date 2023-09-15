@@ -22,7 +22,7 @@ private Q_SLOTS:
     void testModel()
     {
         auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
+        AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl("/api/v1/conversations");
         account->registerGet(url, new TestReply("conversation-result.json", account));

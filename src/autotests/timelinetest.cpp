@@ -21,7 +21,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         account = new MockAccount();
-        AccountManager::instance().addAccount(account);
+        AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
     }
 
@@ -51,7 +51,7 @@ private Q_SLOTS:
         QCOMPARE(timelineModel.displayName(), "Home");
 
         auto account2 = new MockAccount();
-        AccountManager::instance().addAccount(account2);
+        AccountManager::instance().addAccount(account2, false);
 
         QCOMPARE(timelineModel.displayName(), "Home (test)");
 

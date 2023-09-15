@@ -21,7 +21,7 @@ private Q_SLOTS:
     void testModel()
     {
         auto account = new MockAccount();
-        AccountManager::instance().addAccount(account);
+        AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl("/api/v2/search");
         url.setQuery(QUrlQuery{{"q", "myQuery"}});

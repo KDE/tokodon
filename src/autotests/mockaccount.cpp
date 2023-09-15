@@ -10,7 +10,7 @@ MockAccount::MockAccount(QObject *parent)
     registerGet(apiUrl("/api/v1/preferences"), new TestReply("preferences.json", this));
     m_preferences = new Preferences(this);
 
-    Q_EMIT authenticated(true);
+    Q_EMIT authenticated(true, {});
 }
 
 void MockAccount::get(const QUrl &url,
@@ -53,13 +53,19 @@ void MockAccount::post(const QUrl &url,
     }
 }
 
-void MockAccount::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
+void MockAccount::post(const QUrl &url,
+                       const QUrlQuery &formdata,
+                       bool authenticated,
+                       QObject *parent,
+                       std::function<void(QNetworkReply *)> callback,
+                       std::function<void(QNetworkReply *)> errorCallback)
 {
     Q_UNUSED(url)
     Q_UNUSED(authenticated)
     Q_UNUSED(parent)
     Q_UNUSED(callback)
     Q_UNUSED(formdata)
+    Q_UNUSED(errorCallback)
 }
 
 QNetworkReply *MockAccount::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)
