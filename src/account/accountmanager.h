@@ -46,6 +46,9 @@ class AccountManager : public QAbstractListModel
     /// Whether or not we're running a Flatpak build
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
 
+    /// Whether the currently selected account has a login issue that must be addressed
+    Q_PROPERTY(bool selectedAccountHasIssue READ selectedAccountHasIssue NOTIFY accountSelected)
+
 public:
     static AccountManager *create(QQmlEngine *, QJSEngine *)
     {

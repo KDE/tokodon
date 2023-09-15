@@ -40,7 +40,7 @@ Kirigami.ApplicationWindow {
     function decideDefaultPage() {
         pageStack.clear();
 
-        if (AccountManager.selectedAccountHasIssue()) {
+        if (AccountManager.selectedAccountHasIssue) {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
             pageStack.push(mainTimeline, {
