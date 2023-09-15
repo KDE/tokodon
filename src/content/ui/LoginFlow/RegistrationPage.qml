@@ -91,6 +91,8 @@ MastoPage {
         }
     }
 
+    Component.onCompleted: usernameField.forceActiveFocus()
+
     FormCard.FormHeader {
         title: i18nc("@title:group", "Register")
     }
@@ -100,6 +102,7 @@ MastoPage {
             id: usernameField
             label: i18n("Username")
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
+            onAccepted: emailField.forceActiveFocus()
         }
 
         FormCard.FormDelegateSeparator {}
@@ -108,6 +111,7 @@ MastoPage {
             id: emailField
             label: i18n("Email Address")
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
+            onAccepted: passwordField.forceActiveFocus()
         }
 
         FormCard.FormDelegateSeparator {}
@@ -117,6 +121,7 @@ MastoPage {
             label: i18n("Password")
             echoMode: TextInput.Password
             inputMethodHints: Qt.ImhHiddenText | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
+            onAccepted: reasonField.forceActiveFocus()
         }
 
         FormCard.FormDelegateSeparator {}
@@ -124,6 +129,7 @@ MastoPage {
         FormCard.FormTextFieldDelegate {
             id: reasonField
             label: i18n("Reason")
+            onAccepted: agreementDelegate.forceActiveFocus()
         }
     }
 

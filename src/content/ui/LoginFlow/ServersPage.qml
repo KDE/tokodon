@@ -55,6 +55,8 @@ MastoPage {
         });
     }
 
+    Component.onCompleted: instanceUrl.forceActiveFocus()
+
     FormCard.FormHeader {
         title: i18nc("@title:group", "Pick a Server")
     }
