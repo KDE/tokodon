@@ -277,7 +277,6 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
 void AbstractAccount::setAccessToken(const QString &token)
 {
-    qDebug() << "Setting access token to" << token << " client_id: " << m_client_id << " client_secret: " << m_client_secret;
     m_token = token;
     s_messageFilter->insert(m_token, "ACCESS_TOKEN");
     AccountManager::instance().addAccount(this, false);
