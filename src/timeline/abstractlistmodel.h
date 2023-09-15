@@ -1,10 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Shubham Arora <shubhamarora@protonmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-/**
- * @file abstractlistmodel.h
- * @brief The AbstractListModel class provides a base class for custom list models.
- */
 #pragma once
 
 #include "account/abstractaccount.h"
@@ -21,6 +17,7 @@ class AbstractAccount;
 class AbstractListModel : public QAbstractListModel
 {
     Q_OBJECT
+
     Q_PROPERTY(QString displayName READ displayName CONSTANT)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(bool loading READ loading WRITE setLoading NOTIFY loadingChanged)

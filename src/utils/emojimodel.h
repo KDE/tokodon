@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml>
 
 /**
  * @class Emoji
@@ -32,13 +33,12 @@ struct Emoji {
     bool isCustom = false;
 
     Q_GADGET
+
     Q_PROPERTY(QString unicode MEMBER unicode)
     Q_PROPERTY(QString shortName MEMBER shortName)
     Q_PROPERTY(QString description MEMBER description)
     Q_PROPERTY(bool isCustom MEMBER isCustom)
 };
-
-Q_DECLARE_METATYPE(Emoji)
 
 class AbstractAccount;
 
@@ -50,6 +50,8 @@ class AbstractAccount;
 class EmojiModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     /**
      * @brief Return a list of emoji categories.
@@ -57,11 +59,7 @@ class EmojiModel : public QObject
     Q_PROPERTY(QVariantList categories READ categories CONSTANT)
 
 public:
-    static EmojiModel &instance()
-    {
-        static EmojiModel _instance;
-        return _instance;
-    }
+    explicit EmojiModel(QObject *parent = nullptr);
 
     /**
      * @brief Defines the potential categories an emoji can be placed in.
@@ -116,8 +114,6 @@ public Q_SLOTS:
 
 private:
     static QHash<Category, QVariantList> _emojis;
-
-    explicit EmojiModel(QObject *parent = nullptr);
 
     QVariantList categories() const;
 

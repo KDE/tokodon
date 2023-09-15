@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QSettings>
 #include <QUrl>
-#include <QJsonArray>
+#include <QtQml/qqmlregistration.h>
 
 class AbstractAccount;
 class Identity;
@@ -17,6 +17,9 @@ class Identity;
 class AdminAccountInfo : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Enum")
+
     Q_PROPERTY(bool emailStatus READ emailStatus NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(bool suspended READ suspended WRITE setSuspended NOTIFY adminAccountInfoUpdated)
     Q_PROPERTY(bool silenced READ silenced WRITE setSilence NOTIFY adminAccountInfoUpdated)

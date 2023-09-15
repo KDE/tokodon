@@ -14,7 +14,7 @@ project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 option(SAILFISHOS "Build for sailfishOS" OFF)
 
 set(KF_MIN_VERSION "5.77.0")
-set(QT_MIN_VERSION "5.15.0")
+set(QT_MIN_VERSION "6.5")
 if (ANDROID)
     set(QT_MIN_VERSION "5.15.10")
 endif()
@@ -45,9 +45,10 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
 set_package_properties(Qt6 PROPERTIES
-    TYPE REQUIRED
-    PURPOSE "Basic application components"
-)
+        TYPE REQUIRED
+        PURPOSE "Basic application components"
+        )
+qt_policy(SET QTP0001 NEW)
 
 find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami2 I18n Notifications Config CoreAddons ColorScheme)
 set_package_properties(KF6 PROPERTIES

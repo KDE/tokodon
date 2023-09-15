@@ -55,17 +55,17 @@ Purpose.PurposeAlternativesModel {
             icon.name: model.iconName
             onTriggered: {
                 doBeforeSharing();
-                applicationWindow().pageStack.pushDialogLayer('qrc:/content/ui/ShareDialog.qml', {
+                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {
                     title: shareAction.tooltip,
                     index: index,
                     model: shareAction._instantiator.model
                 })
             }
         }
-        onObjectAdded: {
+        onObjectAdded: (object) => {
             object.index = index;
             shareAction.children.push(object)
         }
-        onObjectRemoved: shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+        onObjectRemoved: (object) => shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
     }
 }

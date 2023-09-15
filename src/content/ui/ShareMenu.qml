@@ -29,7 +29,7 @@ QQC2.Menu {
             icon.name: model.iconName
 
             onTriggered: {
-                applicationWindow().pageStack.pushDialogLayer('qrc:/content/ui/ShareDialog.qml', {
+                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {
                     index: index,
                     model: alternativesModel
                 })

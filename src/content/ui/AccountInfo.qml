@@ -8,7 +8,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQml.Models
 import QtQuick.Layouts
 import QtQuick.Dialogs
-import org.kde.kmasto
+import org.kde.tokodon
 
 TimelinePage {
     id: accountInfo
@@ -229,7 +229,7 @@ TimelinePage {
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Edit Profile")
-                                onTriggered: pageStack.push('qrc:/content/ui/Settings/ProfileEditor.qml', {
+                                onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
                                                     account: model.account
                                                 }, {
                                                     title: i18n("Account editor")
@@ -240,7 +240,7 @@ TimelinePage {
                                 displayHint: Kirigami.DisplayHint.AlwaysHide
                                 visible: model.isSelf
                                 text: i18n("Settings")
-                                onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+                                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, { title: i18n("Configure") })
                             },
                             Kirigami.Action {
                                 icon.name: "list-add-user"

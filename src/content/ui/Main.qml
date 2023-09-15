@@ -8,7 +8,7 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
-import org.kde.kmasto
+import org.kde.tokodon
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import "./StatusComposer"
@@ -43,7 +43,7 @@ Kirigami.ApplicationWindow {
                 name: 'home',
             });
         } else {
-            pageStack.push('qrc:/content/ui/LoginPage.qml');
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"));
         }
     }
 
@@ -76,7 +76,7 @@ Kirigami.ApplicationWindow {
 
         function onAccountRemoved() {
             if (!AccountManager.hasAccounts) {
-                pageStack.replace('qrc:/content/ui/LoginPage.qml');
+                pageStack.replace(Qt.createComponent("org.kde.tokodon", "LoginPage"));
                 globalDrawer.drawerOpen = false
             }
         }
@@ -136,7 +136,7 @@ Kirigami.ApplicationWindow {
 
         function onOpenThread(postId) {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
-                pageStack.push("qrc:/content/ui/ThreadPage.qml", {
+                pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
                     postId: postId,
                 });
             }
@@ -144,7 +144,7 @@ Kirigami.ApplicationWindow {
 
         function onOpenAccount(accountId) {
             if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
-                pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+                pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                     accountId: accountId,
                 });
             }
@@ -234,7 +234,7 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "lock"
-                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/ModerationTools/ModerationToolPage.qml', {}, { title: i18n("Moderation Tools") })
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ModerationToolPage"), {}, {title: i18n("Moderation Tools")})
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
                 padding: Kirigami.Units.largeSpacing
@@ -244,7 +244,7 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "settings-configure"
-                onClicked: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
 
@@ -335,7 +335,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push("qrc:/content/ui/ConversationPage.qml");
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -396,7 +396,7 @@ Kirigami.ApplicationWindow {
         visible: Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.clear();
-            pageStack.push("qrc:/content/ui/SearchPage.qml");
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "SearchPage"));
             checked = true;
             if (Kirigami.Settings.isMobile) {
                 drawer.drawerOpen = false;

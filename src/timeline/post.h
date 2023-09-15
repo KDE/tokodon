@@ -12,6 +12,7 @@
 #include <QQmlListProperty>
 #include <QString>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 #include <QJsonObject>
 #include <memory>
@@ -26,6 +27,7 @@ class AbstractAccount;
 class Application
 {
     Q_GADGET
+
     Q_PROPERTY(QString name READ name)
     Q_PROPERTY(QUrl website READ website)
 
@@ -43,6 +45,7 @@ private:
 class Card
 {
     Q_GADGET
+
     Q_PROPERTY(QString authorName READ authorName)
     Q_PROPERTY(QString authorUrl READ authorUrl)
     Q_PROPERTY(QString blurhash READ blurhash)
@@ -85,6 +88,8 @@ private:
 class Attachment : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via Post")
 
     Q_PROPERTY(QString id MEMBER m_id CONSTANT)
     Q_PROPERTY(AttachmentType attachmentType MEMBER m_type CONSTANT)
@@ -153,6 +158,8 @@ private:
 class Notification
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Use via model")
 
 public:
     Notification() = default;
@@ -181,6 +188,9 @@ private:
 class Post : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Posts should be accessed via models")
+
     Q_PROPERTY(QString spoilerText READ spoilerText WRITE setSpoilerText NOTIFY spoilerTextChanged)
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
     Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
@@ -363,7 +373,3 @@ private:
     int m_favouritesCount = 0;
     int m_repliesCount = 0;
 };
-
-Q_DECLARE_METATYPE(Application)
-Q_DECLARE_METATYPE(Card)
-Q_DECLARE_METATYPE(Notification)

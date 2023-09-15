@@ -3,10 +3,11 @@
 
 #pragma once
 
-#include "timeline/poll.h"
 #include "polleditorbackend.h"
+#include "timeline/poll.h"
 #include "timeline/post.h"
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 #include <memory>
 
 class AttachmentEditorModel;
@@ -14,6 +15,7 @@ class AttachmentEditorModel;
 class PostEditorBackend : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QString status READ status WRITE setStatus NOTIFY statusChanged)
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)

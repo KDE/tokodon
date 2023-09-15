@@ -19,6 +19,7 @@ class AbstractTimelineModel : public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+
 public:
     enum CustoRoles {
         IdRole = Qt::UserRole + 1, ///< Post id

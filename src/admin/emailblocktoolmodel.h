@@ -7,10 +7,13 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 class EmailBlockToolModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import org.kde.kmasto
+import org.kde.tokodon
 
 TimelinePage {
     id: root

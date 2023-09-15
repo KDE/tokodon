@@ -8,6 +8,7 @@
 class AndroidUtils : public QObject
 {
     Q_OBJECT
+
 public:
     static AndroidUtils &instance();
 

@@ -7,10 +7,13 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 class FederationToolModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(FederationAction federationAction READ federationAction WRITE setFederationAction NOTIFY federationActionChanged)
 

@@ -6,6 +6,7 @@
 #include <QAbstractListModel>
 #include <QLocale>
 #include <QSortFilterProxyModel>
+#include <QtQml/qqmlregistration.h>
 
 struct Time {
     QString name;
@@ -15,6 +16,8 @@ struct Time {
 class PollTimeModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
 public:
     enum CustomRoles { TextRole = Qt::UserRole + 1, TimeRole };
 

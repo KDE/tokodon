@@ -4,11 +4,22 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml>
 
 class NetworkController : public QObject
 {
     Q_OBJECT
+    QML_NAMED_ELEMENT(Controller)
+    QML_SINGLETON
+
 public:
+    static NetworkController *create(QQmlEngine *, QJSEngine *)
+    {
+        auto inst = &instance();
+        QJSEngine::setObjectOwnership(inst, QJSEngine::ObjectOwnership::CppOwnership);
+        return inst;
+    }
+
     static NetworkController &instance();
     Q_INVOKABLE void setApplicationProxy();
 

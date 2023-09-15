@@ -8,6 +8,7 @@
 #include <QAbstractListModel>
 #include <QUrl>
 #include <QUrlQuery>
+#include <QtQml/qqmlregistration.h>
 #include <memory>
 
 class AdminAccountInfo;
@@ -15,6 +16,8 @@ class AdminAccountInfo;
 class AccountsToolModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     /// This property holds the "Location" value of account tool.
     Q_PROPERTY(QString location READ location WRITE setLocation NOTIFY locationChanged)

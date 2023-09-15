@@ -30,40 +30,11 @@
 
 #include "tokodon-version.h"
 
-#include "account/account.h"
-#include "account/accountmanager.h"
-#include "account/profileeditor.h"
-#include "account/socialgraphmodel.h"
-#include "admin/accounttoolmodel.h"
-#include "admin/emailblocktoolmodel.h"
-#include "admin/federationtoolmodel.h"
-#include "admin/ipinfo.h"
-#include "admin/iprulestoolmodel.h"
 #include "config.h"
-#include "conversation/conversationmodel.h"
-#include "editor/attachmenteditormodel.h"
-#include "editor/languagemodel.h"
-#include "editor/polltimemodel.h"
-#include "editor/posteditorbackend.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
-#include "network/networkrequestprogress.h"
-#include "notification/notificationgroupingmodel.h"
-#include "notification/notificationmodel.h"
-#include "search/searchmodel.h"
-#include "timeline/accountmodel.h"
-#include "timeline/maintimelinemodel.h"
-#include "timeline/poll.h"
-#include "timeline/post.h"
-#include "timeline/tagsmodel.h"
-#include "timeline/tagstimelinemodel.h"
-#include "timeline/threadmodel.h"
 #include "utils/blurhashimageprovider.h"
-#include "utils/clipboard.h"
 #include "utils/colorschemer.h"
-#include "utils/emojimodel.h"
-#include "utils/filehelper.h"
-#include "utils/mpvplayer.h"
 #include "utils/navigation.h"
 
 #ifdef Q_OS_WINDOWS
@@ -151,70 +122,17 @@ int main(int argc, char *argv[])
     parser.process(app);
     about.processCommandLine(&parser);
 
-    auto config = Config::self();
-
-    ColorSchemer colorScheme;
-    qmlRegisterSingletonInstance<ColorSchemer>("org.kde.kmasto", 1, 0, "ColorSchemer", &colorScheme);
-    if (!config->colorScheme().isEmpty()) {
-        colorScheme.apply(config->colorScheme());
-    }
-
     // Qt sets the locale in the QGuiApplication constructor, but libmpv
     // requires the LC_NUMERIC category to be set to "C", so change it back.
     setlocale(LC_NUMERIC, "C");
 
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Config", config);
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Controller", &NetworkController::instance());
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "AccountManager", &AccountManager::instance());
-    qmlRegisterType<MainTimelineModel>("org.kde.kmasto", 1, 0, "MainTimelineModel");
-    qmlRegisterType<SearchModel>("org.kde.kmasto", 1, 0, "SearchModel");
-    qmlRegisterType<SocialGraphModel>("org.kde.kmasto", 1, 0, "SocialGraphModel");
-    qmlRegisterType<AccountsToolModel>("org.kde.kmasto", 1, 0, "AccountsToolModel");
-    qmlRegisterType<FederationToolModel>("org.kde.kmasto", 1, 0, "FederationToolModel");
-    qmlRegisterType<IpRulesToolModel>("org.kde.kmasto", 1, 0, "IpRulesToolModel");
-    qmlRegisterType<EmailBlockToolModel>("org.kde.kmasto", 1, 0, "EmailBlockToolModel");
-    qmlRegisterType<TagsModel>("org.kde.kmasto", 1, 0, "TagsModel");
-    qmlRegisterType<ThreadModel>("org.kde.kmasto", 1, 0, "ThreadModel");
-    qmlRegisterType<ConversationModel>("org.kde.kmasto", 1, 0, "ConversationModel");
-    qmlRegisterType<TagsTimelineModel>("org.kde.kmasto", 1, 0, "TagsTimelineModel");
-    qmlRegisterType<AccountModel>("org.kde.kmasto", 1, 0, "AccountModel");
-    qmlRegisterType<ProfileEditorBackend>("org.kde.kmasto", 1, 0, "ProfileEditorBackend");
-    qmlRegisterType<NetworkRequestProgress>("org.kde.kmasto", 1, 0, "NetworkRequestProgress");
-    qmlRegisterType<PostEditorBackend>("org.kde.kmasto", 1, 0, "PostEditorBackend");
-    qmlRegisterType<NotificationModel>("org.kde.kmasto", 1, 0, "NotificationModel");
-    qmlRegisterType<PollTimeModel>("org.kde.kmasto", 1, 0, "PollTimeModel");
-    qmlRegisterType<NotificationGroupingModel>("org.kde.kmasto", 1, 0, "NotificationGroupingModel");
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "Clipboard", new Clipboard);
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "FileHelper", new FileHelper);
-    qmlRegisterSingletonType("org.kde.kmasto", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-    qRegisterMetaType<Account *>("Account*");
-    qRegisterMetaType<AbstractAccount *>("AbstractAccount*");
-    qRegisterMetaType<Identity *>("Identity*");
-    qRegisterMetaType<AdminAccountInfo *>("AdminAccountInfo*");
-    qRegisterMetaType<AttachmentEditorModel *>("AttachmentEditorModel*");
-    qRegisterMetaType<Post *>("Post*");
-    qRegisterMetaType<Tag *>("Tag*");
-    qRegisterMetaType<Poll *>("Poll*");
-    qRegisterMetaType<Card *>("Card*");
-    qRegisterMetaType<Application *>("Application*");
-    qRegisterMetaType<QNetworkReply *>("QNetworkReply*");
-    qRegisterMetaType<Relationship *>("Relationship*");
-    qmlRegisterUncreatableType<Tag>("org.kde.kmasto", 1, 0, "Tag", "ENUM");
-    qmlRegisterUncreatableType<Post>("org.kde.kmasto", 1, 0, "Post", "ENUM");
-    qmlRegisterUncreatableType<AdminAccountInfo>("org.kde.kmasto", 1, 0, "AdminAccountInfo", "ENUM");
-    qmlRegisterUncreatableType<Attachment>("org.kde.kmasto", 1, 0, "Attachment", "ENUM");
-    qmlRegisterUncreatableType<Notification>("org.kde.kmasto", 1, 0, "Notification", "ENUM");
-    qmlRegisterUncreatableType<IpInfo>("org.kde.kmasto", 1, 0, "IpInfo", "ENUM");
-    qmlRegisterUncreatableType<Poll>("org.kde.kmasto", 1, 0, "Poll", "ENUM");
-    qmlRegisterSingletonType(QUrl("qrc:/content/ui/Navigation.qml"), "org.kde.kmasto", 1, 0, "Navigation");
-    qmlRegisterType<LanguageModel>("org.kde.kmasto", 1, 0, "LanguageModel");
-    qmlRegisterType<MpvPlayer>("org.kde.kmasto", 1, 0, "MpvPlayer");
-    qmlRegisterSingletonInstance("org.kde.kmasto", 1, 0, "EmojiModel", &EmojiModel::instance());
-    qmlRegisterSingletonType<Navigation>("org.kde.kmasto", 1, 0, "Navigation", [](QQmlEngine *engine, QJSEngine *) {
-        return new Navigation;
-    });
+    auto &colorSchemer = ColorSchemer::instance();
+    auto config = Config::self();
+    if (!config->colorScheme().isEmpty()) {
+        colorSchemer.apply(config->colorScheme());
+    }
+
+    qmlRegisterSingletonInstance("org.kde.tokodon.private", 1, 0, "Config", config);
 
     QQmlApplicationEngine engine;
 #ifdef HAVE_KDBUSADDONS
@@ -257,16 +175,14 @@ int main(int argc, char *argv[])
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
 
-    // Controller::instance().setAboutData(about);
-
     engine.addImageProvider(QLatin1String("blurhash"), new BlurhashImageProvider);
 
     if (parser.isSet(shareOption)) {
-        engine.load(QUrl(QStringLiteral("qrc:/content/ui/StandaloneComposer.qml")));
+        engine.loadFromModule("org.kde.tokodon", "StandaloneComposer");
 
         NetworkController::instance().startComposing(parser.value(shareOption));
     } else {
-        engine.load(QUrl(QStringLiteral("qrc:/content/ui/main.qml")));
+        engine.loadFromModule("org.kde.tokodon", "Main");
 
         if (parser.positionalArguments().length() > 0) {
             NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);

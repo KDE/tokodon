@@ -1,7 +1,10 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(tokodon_static STATIC )
+qt_add_qml_module(tokodon_static
+        STATIC
+        URI org.kde.tokodon
+        VERSION 1.0)
 
 ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_debug.h
@@ -21,7 +24,7 @@ ecm_qt_declare_logging_category(tokodon_static
 )
 
 target_sources(tokodon_static
-PRIVATE
+    PRIVATE
     # Account
     account/abstractaccount.cpp
     account/abstractaccount.h
@@ -139,18 +142,138 @@ PRIVATE
     admin/emailinfo.cpp
     admin/emailinfo.h
 
-        # Notification models
-        notification/notificationgroupingmodel.cpp
-        notification/notificationgroupingmodel.h
-        notification/notificationmodel.cpp
-        notification/notificationmodel.h
+    # Notification models
+    notification/notificationgroupingmodel.cpp
+    notification/notificationgroupingmodel.h
+    notification/notificationmodel.cpp
+    notification/notificationmodel.h
 )
+
+qt_target_qml_sources(tokodon_static
+    QML_FILES
+        # Components
+        content/ui/Components/Emoji/EmojiDelegate.qml
+        content/ui/Components/Emoji/EmojiGrid.qml
+        content/ui/Components/Emoji/EmojiPicker.qml
+        content/ui/Components/Emoji/EmojiTonesPicker.qml
+        content/ui/Components/FocusedImage.qml
+        content/ui/Components/PopupShadow.qml
+        content/ui/Components/UserCard.qml
+
+        # Moderation Tools
+        content/ui/ModerationTools/AccountToolPage.qml
+        content/ui/ModerationTools/EmailBlockToolPage.qml
+        content/ui/ModerationTools/FederationToolPage.qml
+        content/ui/ModerationTools/IpRulePage.qml
+        content/ui/ModerationTools/MainAccountToolPage.qml
+        content/ui/ModerationTools/MainFederationToolPage.qml
+        content/ui/ModerationTools/MainIpRulePage.qml
+        content/ui/ModerationTools/ModerationToolPage.qml
+
+        # Notifications
+        content/ui/Notifications/GroupInteractionLabel.qml
+        content/ui/Notifications/UserInteractionLabel.qml
+
+        # Settings
+        content/ui/Settings/AccountsCard.qml
+        content/ui/Settings/GeneralCard.qml
+        content/ui/Settings/NetworkProxyPage.qml
+        content/ui/Settings/PreferencesCard.qml
+        content/ui/Settings/ProfileEditor.qml
+        content/ui/Settings/SettingsPage.qml
+        content/ui/Settings/SonnetCard.qml
+
+        # Composer
+        content/ui/StatusComposer/EditorAttachmentGrid.qml
+        content/ui/StatusComposer/AttachmentInfoDialog.qml
+        content/ui/StatusComposer/ComposerPoll.qml
+        content/ui/StatusComposer/EmojiDialog.qml
+        content/ui/StatusComposer/StatusComposer.qml
+        content/ui/StatusComposer/StatusPreview.qml
+
+        # Delegate
+        content/ui/StatusDelegate/AttachmentGrid.qml
+        content/ui/StatusDelegate/InlineIdentityInfo.qml
+        content/ui/StatusDelegate/InteractionButton.qml
+        content/ui/StatusDelegate/LinkPreview.qml
+        content/ui/StatusDelegate/MediaContainer.qml
+        content/ui/StatusDelegate/OverflowMenu.qml
+        content/ui/StatusDelegate/PostContent.qml
+        content/ui/StatusDelegate/StatusDelegate.qml
+        content/ui/StatusDelegate/StatusPoll.qml
+        content/ui/StatusDelegate/UserInteractionLabel.qml
+        content/ui/StatusDelegate/VideoAttachment.qml
+
+        # Other
+        content/ui/AccountInfo.qml
+        content/ui/AuthorizationPage.qml
+        content/ui/ConversationDelegate.qml
+        content/ui/ConversationPage.qml
+        content/ui/ExplorePage.qml
+        content/ui/FollowDelegate.qml
+        content/ui/FullScreenImage.qml
+        content/ui/LanguageSelector.qml
+        content/ui/LoginPage.qml
+        content/ui/Main.qml
+        content/ui/MastoPage.qml
+        content/ui/NotificationPage.qml
+        content/ui/SearchField.qml
+        content/ui/SearchPage.qml
+        content/ui/SearchView.qml
+        content/ui/ShareDialog.qml
+        content/ui/SocialGraphPage.qml
+        content/ui/StandaloneComposer.qml
+        content/ui/ThreadPage.qml
+        content/ui/TimelinePage.qml
+        content/ui/UserInfo.qml
+        )
+qt_target_qml_sources(tokodon_static
+        PREFIX /
+        RESOURCES
+        content/elephant.svg
+        icons/tokodon/scalable/post-bookmarked.svg
+        icons/tokodon/scalable/post-boost.svg
+        icons/tokodon/scalable/post-boosted.svg
+        icons/tokodon/scalable/post-favorite.svg
+        icons/tokodon/scalable/post-favorited.svg
+        icons/tokodon/scalable/post-reply.svg
+        icons/tokodon/scalable/tokodon-chat-reply.svg
+        icons/tokodon/scalable/post-reply-filled.svg
+        icons/tokodon/index.theme
+)
+
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/search)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/timeline)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/account)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/utils)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/notification)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/network)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/admin)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/conversation)
+target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/editor)
 
 if(ANDROID)
     target_sources(tokodon_static
         PRIVATE
         utils/androidutils.cpp
         utils/androidutils.h
+    )
+    qt_target_qml_sources(tokodon_static
+        QML_FILES
+        content/ui/Android/ShareAction.qml
+        content/ui/Android/ShareMenu.qml
+    )
+    set_source_files_properties(content/ui/Android/ShareAction.qml PROPERTIES
+        QT_RESOURCE_ALIAS content/ui/ShareAction.qml
+    )
+    set_source_files_properties(content/ui/Android/ShareMenu.qml PROPERTIES
+        QT_RESOURCE_ALIAS content/ui/ShareMenu.qml
+    )
+else()
+    qt_target_qml_sources(tokodon_static
+        QML_FILES
+        content/ui/ShareAction.qml
+        content/ui/ShareMenu.qml
     )
 endif()
 
@@ -196,14 +319,12 @@ endif()
 
 add_executable(tokodon
     main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/resources.qrc
 )
 
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(tokodon PRIVATE tokodon_static)
+target_link_libraries(tokodon PRIVATE tokodon_static tokodon_staticplugin)
 
 if(ANDROID)
-    target_sources(tokodon PRIVATE androidresources.qrc)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
     kirigami_package_breeze_icons(ICONS
             "help-about"
@@ -274,7 +395,6 @@ if(ANDROID)
             "system-switch-user"
             )
 else()
-    target_sources(tokodon PRIVATE desktopresources.qrc)
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
 

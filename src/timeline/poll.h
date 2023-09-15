@@ -5,10 +5,13 @@
 
 #include <QDateTime>
 #include <QJsonObject>
+#include <QtQml/qqmlregistration.h>
 
 class Poll
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via Post")
 
     Q_PROPERTY(QString id READ id CONSTANT);
     Q_PROPERTY(QDateTime expiresAt READ expiresAt CONSTANT);
@@ -45,5 +48,3 @@ private:
     QList<int> m_ownVotes;
     QList<QVariantMap> m_options;
 };
-
-Q_DECLARE_METATYPE(Poll *)

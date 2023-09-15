@@ -6,7 +6,9 @@
 
 #include <KAboutData>
 #include <QAbstractListModel>
+#include <QJSEngine>
 #include <QSettings>
+#include <QtQml/qqmlregistration.h>
 
 #include "timeline/post.h"
 
@@ -16,6 +18,8 @@ class QNetworkAccessManager;
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     /// Whether or not the account manager is completely ready
     /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
@@ -43,6 +47,13 @@ class AccountManager : public QAbstractListModel
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
 
 public:
+    static AccountManager *create(QQmlEngine *, QJSEngine *)
+    {
+        auto inst = &instance();
+        QJSEngine::setObjectOwnership(inst, QJSEngine::ObjectOwnership::CppOwnership);
+        return inst;
+    }
+
     enum CustomRoles {
         AccountRole = Qt::UserRole + 1,
         DisplayNameRole,

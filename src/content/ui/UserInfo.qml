@@ -8,7 +8,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 
-import org.kde.kmasto
+import org.kde.tokodon
 
 QQC2.Pane {
     id: userInfo
@@ -22,7 +22,7 @@ QQC2.Pane {
     function openAccountPage() {
         const accountId = AccountManager.selectedAccountId;
         if (!pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
-            const item = pageStack.push('qrc:/content/ui/AccountInfo.qml', {
+            const item = pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                 accountId: accountId,
             });
         }
@@ -107,7 +107,7 @@ QQC2.Pane {
                 }
 
                 onClicked: {
-                    pageStack.layers.push('qrc:/content/ui/LoginPage.qml');
+                    pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "LoginPage"));
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
                 }

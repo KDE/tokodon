@@ -1,11 +1,9 @@
 // SPDX-FileCopyrightText: 2023 Shubham Arora <shubhamarora@protonmail.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-/**
- * @file tagsmodel.h
- * @brief The TagsModel class header file.
- * */
 #pragma once
+
+#include <QtQml/qqmlregistration.h>
 
 #include "abstractlistmodel.h"
 #include "tag.h"
@@ -20,6 +18,7 @@
 class TagsModel : public AbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum CustomRoles { NameRole = Qt::UserRole + 1, UrlRole, HistoryRole };

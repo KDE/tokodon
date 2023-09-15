@@ -7,7 +7,7 @@ import org.kde.kirigamiaddons.labs.components 1 as LabComponents
 import org.kde.kirigamiaddons.components 1 as Components
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import org.kde.kmasto
+import org.kde.tokodon
 import './StatusDelegate'
 import './StatusComposer'
 
@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
         actions: Kirigami.Action {
             text: i18n("Settings")
             icon.name: "settings-configure"
-            onTriggered: pageStack.pushDialogLayer('qrc:/content/ui/Settings/SettingsPage.qml', {}, { title: i18n("Configure") })
+            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
         }
     }
 

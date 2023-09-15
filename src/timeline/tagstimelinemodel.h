@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "timelinemodel.h"
 
 /// Model used for fetching posts for a specific tag (like searching for #KDE)
@@ -10,6 +12,7 @@
 class TagsTimelineModel : public TimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QString hashtag READ hashtag WRITE setHashtag NOTIFY hashtagChanged)
 

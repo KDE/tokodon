@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 class AbstractAccount;
 
@@ -12,6 +13,7 @@ class AbstractAccount;
 class ProfileEditorBackend : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     /// This property holds the account we want to update.
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)

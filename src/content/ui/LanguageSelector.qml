@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kmasto
+import org.kde.tokodon
 import QtQuick.Templates 2.15 as T
 
 import "Components"

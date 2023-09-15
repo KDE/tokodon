@@ -5,10 +5,14 @@
 
 #include <QDateTime>
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 class IpInfo
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via IpRulesToolModel")
+
 public:
     enum SeverityValues { LimitSignUps, BlockSignUps, BlockAccess };
 

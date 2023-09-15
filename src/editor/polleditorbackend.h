@@ -16,6 +16,7 @@ class PollEditorBackend : public QObject
     Q_PROPERTY(bool hideTotals MEMBER m_hideTotals NOTIFY hideTotalsChanged)
     Q_PROPERTY(int expiresIn MEMBER m_expiresIn NOTIFY expiresInChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY validityChanged)
+
 public:
     explicit PollEditorBackend(QObject *parent = nullptr);
 

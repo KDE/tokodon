@@ -2,8 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#ifndef LIBMPV_QTHELPER_H_
-#define LIBMPV_QTHELPER_H_
+#pragma once
 
 #include <mpv/client.h>
 
@@ -138,11 +137,7 @@ private:
     }
     bool test_type(const QVariant &v, QMetaType::Type t)
     {
-        // The Qt docs say: "Although this function is declared as returning
-        // "QVariant::Type(obsolete), the return value should be interpreted
-        // as QMetaType::Type."
-        // So a cast really seems to be needed to avoid warnings (urgh).
-        return static_cast<int>(v.type()) == static_cast<int>(t);
+        return v.typeId() == t;
     }
     void set(mpv_node *dst, const QVariant &src)
     {
@@ -380,5 +375,3 @@ static inline QVariant command(mpv_handle *ctx, const QVariant &args)
 }
 
 Q_DECLARE_METATYPE(mpv::qt::ErrorReturn)
-
-#endif

@@ -7,10 +7,12 @@
 #include <QQmlListProperty>
 #include <QString>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 class History
 {
     Q_GADGET
+
     Q_PROPERTY(QString day MEMBER m_day)
     Q_PROPERTY(QString uses MEMBER m_uses)
     Q_PROPERTY(QString accounts MEMBER m_accounts)
@@ -28,10 +30,14 @@ private:
 class Tag
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Access via TagsModel")
+
     Q_PROPERTY(QString name MEMBER m_name)
     Q_PROPERTY(QUrl url MEMBER m_url)
     Q_PROPERTY(bool following MEMBER m_following)
     Q_PROPERTY(QList<History> history READ history CONSTANT)
+
 public:
     Tag() = default;
     explicit Tag(QJsonObject obj);
@@ -48,6 +54,3 @@ private:
     bool m_following = false;
     QList<History> m_history;
 };
-
-Q_DECLARE_METATYPE(Tag)
-Q_DECLARE_METATYPE(QList<History>)

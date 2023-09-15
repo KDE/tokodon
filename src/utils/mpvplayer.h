@@ -3,9 +3,11 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
+
 #pragma once
 
 #include <QQuickFramebufferObject>
+#include <QtQml/qqmlregistration.h>
 
 #include <mpv/client.h>
 #include <mpv/render_gl.h>
@@ -17,6 +19,8 @@ class MpvRenderer;
 class MpvPlayer : public QQuickFramebufferObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString source READ source WRITE setSource NOTIFY sourceChanged)
     Q_PROPERTY(qreal position READ position NOTIFY positionChanged)
     Q_PROPERTY(qreal duration READ duration NOTIFY durationChanged)

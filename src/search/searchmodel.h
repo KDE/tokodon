@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "timeline/abstracttimelinemodel.h"
 
 class Identity;
@@ -26,6 +28,8 @@ private:
 class SearchModel : public AbstractTimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loaded READ loaded NOTIFY loadedChanged)
 
 public:

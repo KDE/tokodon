@@ -6,10 +6,12 @@
 #include <QAbstractListModel>
 #include <QLocale>
 #include <QSortFilterProxyModel>
+#include <QtQml/qqmlregistration.h>
 
 class RawLanguageModel : public QAbstractListModel
 {
     Q_OBJECT
+
 public:
     enum CustomRoles { NameRole = Qt::UserRole + 1, CodeRole, PreferredRole };
 
@@ -30,6 +32,8 @@ private:
 class LanguageModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
 public:
     explicit LanguageModel(QObject *parent = nullptr);
 

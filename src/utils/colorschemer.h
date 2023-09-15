@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml>
 
 class QAbstractItemModel;
 class KColorSchemeManager;
@@ -11,9 +12,22 @@ class KColorSchemeManager;
 class ColorSchemer : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QAbstractItemModel *model READ model CONSTANT)
+
 public:
+    static ColorSchemer *create(QQmlEngine *, QJSEngine *)
+    {
+        auto inst = &instance();
+        QJSEngine::setObjectOwnership(inst, QJSEngine::ObjectOwnership::CppOwnership);
+        return inst;
+    }
+
     explicit ColorSchemer(QObject *parent = nullptr);
+
+    static ColorSchemer &instance();
 
     QAbstractItemModel *model() const;
     Q_INVOKABLE void apply(int idx);

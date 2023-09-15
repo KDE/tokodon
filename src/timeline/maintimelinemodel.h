@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "timelinemodel.h"
 
 class AbstractAccount;
@@ -12,6 +14,8 @@ class AbstractAccount;
 class MainTimelineModel : public TimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
 
 public:

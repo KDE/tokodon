@@ -8,12 +8,15 @@
 #include "timeline/abstracttimelinemodel.h"
 #include "timeline/post.h"
 #include <QAbstractListModel>
+#include <QtQml/qqmlregistration.h>
 
 /// Model for the notifications page
 /// \see AbstractTimelineModel
 class NotificationModel : public AbstractTimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
 
 public:

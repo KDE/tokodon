@@ -4,7 +4,7 @@
 
 import QtQuick
 import QtQuick.Controls 2 as QQC2
-import org.kde.kmasto
+import org.kde.tokodon
 
 import ".."
 

@@ -6,7 +6,7 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
-import org.kde.kmasto
+import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
 MastoPage {
@@ -61,7 +61,7 @@ MastoPage {
                     const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
 
                     account.registered.connect(() => {
-                        const page = pageStack.layers.push('qrc:/content/ui/AuthorizationPage.qml', {
+                        const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AuthorizationPage"), {
                             account: account,
                         });
 
@@ -85,7 +85,7 @@ MastoPage {
             FormCard.FormButtonDelegate {
                 id: proxySettingDelegate
                 text: i18n("Proxy Settings")
-                onClicked: pageStack.layers.push('qrc:/content/ui/Settings/NetworkProxyPage.qml')
+                onClicked: pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
             }
         }
     }

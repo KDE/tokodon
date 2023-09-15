@@ -7,6 +7,7 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 // todo: use std::chrono when c++20 is stable
 #define YEAR 31536000
@@ -15,6 +16,8 @@
 class IpRulesToolModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:

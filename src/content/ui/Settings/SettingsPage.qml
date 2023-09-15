@@ -5,7 +5,8 @@ import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Layouts
 import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kmasto
+import org.kde.tokodon
+import org.kde.coreaddons
 
 FormCard.FormCardPage {
     id: root
@@ -49,7 +50,7 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
 
         active: Qt.platform.os !== "android"
-        source: "qrc:/content/ui/Settings/SonnetCard.qml"
+        sourceComponent: Qt.createComponent("org.kde.tokodon", "SonnetCard")
     }
 
     FormCard.FormCard {

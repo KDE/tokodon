@@ -10,6 +10,7 @@
 class EmailInfo
 {
     Q_GADGET
+
 public:
     enum SeverityValues { LimitSignUps, BlockSignUps, BlockAccess };
 

@@ -17,6 +17,7 @@ class AttachmentEditorModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(int count READ count NOTIFY countChanged)
+
 public:
     explicit AttachmentEditorModel(QObject *parent, AbstractAccount *account);
 

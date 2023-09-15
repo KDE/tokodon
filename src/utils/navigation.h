@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 class Identity;
 class Post;
@@ -11,6 +12,8 @@ class Post;
 class Navigation : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 Q_SIGNALS:
     void openStatusComposer();

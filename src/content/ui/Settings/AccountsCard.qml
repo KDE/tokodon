@@ -11,7 +11,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
-import org.kde.kmasto
+import org.kde.tokodon
 
 FormCard.FormCard {
     id: accountsCard
@@ -82,7 +82,7 @@ FormCard.FormCard {
         id: addAccountDelegate
         text: i18n("Add Account")
         icon.name: "list-add"
-        onClicked: pageStack.pushDialogLayer("qrc:/content/ui/LoginPage.qml", {}, {
+        onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "LoginPage"), {}, {
             width: pageStack.width - Kirigami.Units.gridUnit * 5,
             height: pageStack.height - Kirigami.Units.gridUnit * 5,
         })

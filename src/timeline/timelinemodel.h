@@ -15,6 +15,7 @@
 class TimelineModel : public AbstractTimelineModel
 {
     Q_OBJECT
+
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
     Q_PROPERTY(bool shouldLoadMore MEMBER m_shouldLoadMore WRITE setShouldLoadMore NOTIFY shouldLoadMoreChanged)
 

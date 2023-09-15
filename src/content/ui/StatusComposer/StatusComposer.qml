@@ -3,13 +3,14 @@
 // SPDX-FileCopyrightText: 2022 Jeremy Winter <jeremy.winter@tutanota.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+import QtCore
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
-import org.kde.kmasto
+import org.kde.tokodon
 import '..'
 
 MastoPage {
@@ -200,7 +201,7 @@ MastoPage {
                     }
                 }
 
-                AttachmentGrid {
+                EditorAttachmentGrid {
                     attachmentEditorModel: root.backend.attachmentEditorModel
                     Layout.fillWidth: true
                     Layout.maximumWidth: actions.width - Layout.leftMargin - Layout.rightMargin - (columns > 1 ? Kirigami.Units.smallSpacing : 0)
@@ -243,10 +244,10 @@ MastoPage {
                             onClicked: fileDialog.open()
                             FileDialog {
                                 id: fileDialog
-                                folder: shortcuts.home
+                                currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
                                 title: i18n("Please choose a file")
                                 onAccepted: root.uploadFile(fileDialog.fileUrl);
-                                selectedNameFilter: i18n("All supported formats")
+                                selectedNameFilter.index: 0
                                 nameFilters: [i18n("All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)"),
                                     i18n("JPEG image (*.jpg *.jpeg)"),
                                     i18n("PNG image (*.png)"),

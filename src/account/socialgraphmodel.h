@@ -5,6 +5,7 @@
 
 #include <QAbstractListModel>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 #include <memory>
 
 class Identity;
@@ -12,6 +13,8 @@ class Identity;
 class SocialGraphModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)

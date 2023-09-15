@@ -8,7 +8,7 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
-import org.kde.kmasto
+import org.kde.tokodon
 import './StatusDelegate'
 
 ListView {

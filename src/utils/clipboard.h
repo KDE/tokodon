@@ -7,6 +7,7 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 class QClipboard;
 class QImage;
@@ -17,6 +18,9 @@ class QImage;
 class Clipboard : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool hasImage READ hasImage NOTIFY imageChanged)
     Q_PROPERTY(QImage image READ image NOTIFY imageChanged)
 

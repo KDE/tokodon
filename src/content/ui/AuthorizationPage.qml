@@ -6,7 +6,7 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
-import org.kde.kmasto
+import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
 MastoPage {

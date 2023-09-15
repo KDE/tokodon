@@ -7,7 +7,8 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import Qt.labs.platform
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kmasto
+import org.kde.tokodon
+import org.kde.tokodon.private
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
 FormCard.FormCard {

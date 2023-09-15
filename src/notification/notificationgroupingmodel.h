@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QSortFilterProxyModel>
+#include <QtQml/qqmlregistration.h>
 
 #include "notification/notificationmodel.h"
 #include "timeline/abstracttimelinemodel.h"
@@ -13,6 +14,8 @@
 class NotificationGroupingModel : public QAbstractProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(NotificationModel *sourceModel WRITE setSourceModel READ getSourceModel NOTIFY sourceModelChanged)
 

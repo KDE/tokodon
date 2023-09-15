@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "account/abstractaccount.h"
 #include "timeline/abstracttimelinemodel.h"
 
@@ -21,6 +23,7 @@ struct Conversation {
 class ConversationModel : public AbstractTimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     /// Extra roles specifically for this model

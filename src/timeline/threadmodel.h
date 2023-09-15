@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "timelinemodel.h"
 
 /// Model for displaying and organizing post threads
@@ -11,6 +13,7 @@
 class ThreadModel : public TimelineModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QString postId READ postId WRITE setPostId NOTIFY postIdChanged)
 

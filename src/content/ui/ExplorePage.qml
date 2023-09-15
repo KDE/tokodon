@@ -6,7 +6,8 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kmasto
+import org.kde.tokodon
+import org.kde.tokodon.private
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import QtQml.Models
 import "./StatusDelegate"
@@ -46,11 +47,13 @@ Kirigami.ScrollablePage {
         text: i18n("Trending Posts")
         checkable: true
         checked: true
-        onCheckedChanged: if (checked) {
-            if (tagsModel.name.length === 0) {
-                trendingPostsModel.name = "trending";
-            } else {
-                trendingPostsModel.shouldLoadMore = false;
+        onCheckedChanged: (checked) => {
+            if (checked) {
+                if (tagsModel.name.length === 0) {
+                    trendingPostsModel.name = "trending";
+                } else {
+                    trendingPostsModel.shouldLoadMore = false;
+                }
             }
         }
     }
@@ -59,11 +62,13 @@ Kirigami.ScrollablePage {
         id: showTagsAction
         text: i18n("Trending Tags")
         checkable: true
-        onCheckedChanged: if (checked) {
-            if (tagsModel.name.length === 0) {
-                tagsModel.name = "trending";
-            } else {
-                tagsModel.shouldLoadMore = false;
+        onCheckedChanged: (checked) => {
+            if (checked) {
+                if (tagsModel.name.length === 0) {
+                    tagsModel.name = "trending";
+                } else {
+                    tagsModel.shouldLoadMore = false;
+                }
             }
         }
     }
