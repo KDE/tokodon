@@ -263,28 +263,37 @@ QQC2.ItemDelegate {
 
         ColumnLayout {
             visible: !filtered && root.content.length !== 0
-            spacing: 0
+            spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
 
-            RowLayout {
-                Layout.preferredHeight: spoilerTextLabel.contentHeight + Kirigami.Units.gridUnit * 2
+            QQC2.Control {
+                Layout.fillWidth: true
                 visible: root.spoilerText.length !== 0
-                Kirigami.Icon {
-                    Layout.alignment: Qt.AlignVCenter
-                    source: "data-warning"
-                }
-                QQC2.Label {
-                    id: spoilerTextLabel
-                    Layout.fillWidth: true
-                    text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
-                    wrapMode: Text.Wrap
-                    font: Config.defaultFont
+                contentItem: RowLayout {
+                    Kirigami.Icon {
+                        Layout.alignment: Qt.AlignVCenter
+                        source: "data-warning"
+                    }
 
+                    QQC2.Label {
+                        id: spoilerTextLabel
+                        Layout.fillWidth: true
+                        text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
+                        wrapMode: Text.Wrap
+                        font: Config.defaultFont
+
+                    }
+
+                    QQC2.Button {
+                        text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                        onClicked: postContent.visible = !postContent.visible
+                    }
                 }
-                QQC2.Button {
-                    text: postContent.visible ? i18n("Show Less") : i18n("Show More")
-                    onClicked: postContent.visible = !postContent.visible
+
+                background: Rectangle {
+                    radius: Kirigami.Units.largeSpacing
+                    color: Kirigami.Theme.neutralBackgroundColor
                 }
             }
 
