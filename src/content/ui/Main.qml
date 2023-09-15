@@ -228,6 +228,7 @@ Kirigami.ApplicationWindow {
                     action: modelData
                     Layout.fillWidth: true
                     visible: modelData.visible
+                    enabled: !AccountManager.selectedAccountHasIssue
                 }
             }
 
@@ -411,6 +412,7 @@ Kirigami.ApplicationWindow {
         // Make sure we take in count drawer width
         visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
         actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
+        enabled: !AccountManager.selectedAccountHasIssue
     }
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
