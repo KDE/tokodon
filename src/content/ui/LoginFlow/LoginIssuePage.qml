@@ -17,17 +17,39 @@ MastoPage {
     title: i18nc("@title:window", "Login Issue")
 
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
         FormCard.FormTextDelegate {
-            id: errorLabel
-            text: i18n("There was an issue when logging into the server: %1", AccountManager.selectedAccountLoginIssue)
+            text: i18n("There was an issue logging into the server:<br><b>%1</b>", AccountManager.selectedAccountLoginIssue())
+            textItem.textFormat: Text.RichText
+        }
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
+        FormCard.FormTextDelegate {
+            id: helpLabel
+            text: i18n("Resolve this issue by logging into the server's website. Once completed, try logging in again with the button below.")
+            textItem {
+                wrapMode: Text.WordWrap
+            }
         }
 
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormButtonDelegate {
             id: continueButton
-            text: i18n("Continue")
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+            text: i18n("View Website")
+            onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            id: attemptButton
+            text: i18n("Re-Attempt Log In")
+            onClicked: AccountManager.selectedAccount.validateToken()
         }
     }
 }
