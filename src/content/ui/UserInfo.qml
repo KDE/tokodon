@@ -36,7 +36,19 @@ QQC2.Pane {
         Delegates.RoundedItemDelegate {
             id: currentAccountDelegate
 
-            text: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayNameHtml : ''
+            readonly property string name: {
+                if (!AccountManager.selectedAccount) {
+                    return '';
+                }
+
+                if (AccountManager.selectedAccount.identity.displayNameHtml.length !== 0) {
+                    return AccountManager.selectedAccount.identity.displayNameHtml;
+                }
+
+                return AccountManager.selectedAccount.username;
+            }
+
+            text: name
 
             onClicked: openAccountPage()
             Layout.fillWidth: true
@@ -51,7 +63,7 @@ QQC2.Pane {
                     Layout.rightMargin: Kirigami.Units.smallSpacing
 
                     contentItem: KirigamiComponents.Avatar {
-                        name: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.displayName : 'User'
+                        name: currentAccountDelegate.name
                         source: AccountManager.selectedAccount ? AccountManager.selectedAccount.identity.avatarUrl : ''
                     }
 
