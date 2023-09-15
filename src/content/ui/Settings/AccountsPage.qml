@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
@@ -13,6 +15,8 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import org.kde.tokodon
 
 FormCard.FormCardPage {
+    id: root
+
     FormCard.FormCard {
         id: accountsCard
 
@@ -20,17 +24,22 @@ FormCard.FormCardPage {
 
         Repeater {
             model: AccountManager
-            delegate: FormCard.AbstractFormDelegate
-            {
+            delegate: FormCard.AbstractFormDelegate {
+                id: delegate
+
+                required property var account
+                required property string description
+                required property string displayName
+
                 Layout.fillWidth: true
                 onClicked: applicationWindow().pageStack.layers.push("./ProfileEditor.qml", {
-                    account: model.account
-                }, {})
+                    account: delegate.account
+                })
 
                 contentItem: RowLayout {
                     KirigamiComponents.Avatar {
-                        source: model.account.identity.avatarUrl
-                        name: model.display
+                        source: delegate.account.identity.avatarUrl
+                        name: delegate.displayName
                         Layout.rightMargin: Kirigami.Units.largeSpacing
                         implicitWidth: Kirigami.Units.iconSizes.medium
                         implicitHeight: Kirigami.Units.iconSizes.medium
@@ -42,7 +51,7 @@ FormCard.FormCardPage {
 
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: model.display
+                            text: delegate.displayName
                             textFormat: Text.RichText
                             elide: Text.ElideRight
                             wrapMode: Text.Wrap
@@ -52,7 +61,7 @@ FormCard.FormCardPage {
 
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: `${model.description} (${model.account.instanceName})`
+                            text: `${delegate.description} (${delegate.account.instanceName})`
                             color: Kirigami.Theme.disabledTextColor
                             font: Kirigami.Theme.smallFont
                             elide: Text.ElideRight
@@ -62,7 +71,12 @@ FormCard.FormCardPage {
                     QQC2.ToolButton {
                         text: i18n("Logout")
                         icon.name: "im-kick-user"
-                        onClicked: AccountManager.removeAccount(model.account)
+                        onClicked: {
+                            AccountManager.removeAccount(delegate.account)
+                            if (!AccountManager.hasAccounts) {
+                                root.Window.window.close();
+                            }
+                        }
                     }
 
                     FormCard.FormArrow {

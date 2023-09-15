@@ -98,7 +98,12 @@ void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated,
     handleReply(reply, reply_cb);
 }
 
-void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
+void Account::post(const QUrl &url,
+                   const QUrlQuery &formdata,
+                   bool authenticated,
+                   QObject *parent,
+                   std::function<void(QNetworkReply *)> reply_cb,
+                   std::function<void(QNetworkReply *)> errorCallback)
 {
     auto post_data = formdata.toString().toLatin1();
 
@@ -108,7 +113,7 @@ void Account::post(const QUrl &url, const QUrlQuery &formdata, bool authenticate
 
     QNetworkReply *reply = m_qnam->post(request, post_data);
     reply->setParent(parent);
-    handleReply(reply, reply_cb);
+    handleReply(reply, reply_cb, errorCallback);
 }
 
 QNetworkReply *Account::post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> reply_cb)
@@ -273,10 +278,12 @@ void Account::validateToken()
             m_identity = identityLookup(object["id"].toString(), object);
             m_name = m_identity->username();
             Q_EMIT identityChanged();
-            Q_EMIT authenticated(true);
+            Q_EMIT authenticated(true, {});
         },
-        [=](QNetworkReply *) {
-            Q_EMIT authenticated(false);
+        [=](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+
+            Q_EMIT authenticated(false, doc["error"].toString());
         });
 
     fetchInstanceMetadata();

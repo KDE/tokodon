@@ -3,8 +3,14 @@
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.formcard 1 as FormCard
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
+
     background: Rectangle {
         color: Kirigami.Theme.backgroundColor
         Kirigami.Theme.colorSet: Kirigami.Theme.Window

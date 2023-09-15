@@ -151,7 +151,57 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
 
         if (isRegistered()) {
             Q_EMIT registered();
+            fetchInstanceMetadata();
         }
+    });
+}
+
+void AbstractAccount::registerAccount(const QString &username,
+                                      const QString &email,
+                                      const QString &password,
+                                      bool agreement,
+                                      const QString &locale,
+                                      const QString &reason)
+{
+    // get an app-level access token, obviously we don't have a user token yet.
+    const QUrl tokenUrl = getTokenUrl();
+    QUrlQuery q = buildOAuthQuery();
+
+    q.addQueryItem("client_secret", m_client_secret);
+    q.addQueryItem("grant_type", "client_credentials");
+    q.addQueryItem("scope", "write");
+
+    post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
+        auto data = reply->readAll();
+        auto doc = QJsonDocument::fromJson(data);
+
+        // override the token for now
+        m_token = doc.object()["access_token"].toString();
+        s_messageFilter->insert(m_token, "ACCESS_TOKEN");
+
+        const QUrlQuery formdata{{"username", username},
+                                 {"email", email},
+                                 {"password", password},
+                                 {"agreement", agreement ? "1" : "0"},
+                                 {"locale", locale},
+                                 {"reason", reason}};
+
+        post(
+            apiUrl("/api/v1/accounts"),
+            formdata,
+            true,
+            this,
+            [=](QNetworkReply *reply) {
+                const auto data = reply->readAll();
+                const auto doc = QJsonDocument::fromJson(data);
+
+                if (doc.object().contains("access_token")) {
+                    setAccessToken(doc["access_token"].toString());
+                }
+            },
+            [=](QNetworkReply *reply) {
+                Q_EMIT registrationError(reply->readAll());
+            });
     });
 }
 
@@ -224,6 +274,15 @@ QUrl AbstractAccount::getAuthorizeUrl() const
     return url;
 }
 
+void AbstractAccount::setAccessToken(const QString &token)
+{
+    m_token = token;
+    s_messageFilter->insert(m_token, "ACCESS_TOKEN");
+    AccountManager::instance().addAccount(this, false);
+    AccountManager::instance().selectAccount(this, true);
+    validateToken();
+}
+
 QUrl AbstractAccount::getTokenUrl() const
 {
     return apiUrl("/oauth/token");
@@ -257,11 +316,7 @@ void AbstractAccount::setToken(const QString &authcode)
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        m_token = doc.object()["access_token"].toString();
-        s_messageFilter->insert(m_token, "ACCESS_TOKEN");
-        AccountManager::instance().addAccount(this);
-        AccountManager::instance().selectAccount(this, true);
-        validateToken();
+        setAccessToken(doc.object()["access_token"].toString());
     });
 }
 
@@ -375,55 +430,119 @@ static AbstractAccount::AllowedContentType parsePleromaInfo(const QJsonDocument 
 
 void AbstractAccount::fetchInstanceMetadata()
 {
-    QUrl instance_url = apiUrl("/api/v1/instance");
-    QUrl pleroma_info = apiUrl("/nodeinfo/2.1.json");
+    get(
+        apiUrl("/api/v2/instance"),
+        false,
+        this,
+        [=](QNetworkReply *reply) {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+                return;
 
-    get(instance_url, false, this, [=](QNetworkReply *reply) {
-        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
-            return;
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
 
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
+            if (!doc.isObject())
+                return;
 
-        if (!doc.isObject())
-            return;
+            const auto obj = doc.object();
 
-        const auto obj = doc.object();
+            if (obj.contains("configuration")) {
+                const auto configObj = obj["configuration"].toObject();
 
-        if (obj.contains("configuration")) {
-            const auto configObj = obj["configuration"].toObject();
-
-            if (configObj.contains("statuses")) {
-                const auto statusConfigObj = configObj["statuses"].toObject();
-                m_maxPostLength = statusConfigObj["max_characters"].toInt();
-                m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+                if (configObj.contains("statuses")) {
+                    const auto statusConfigObj = configObj["statuses"].toObject();
+                    m_maxPostLength = statusConfigObj["max_characters"].toInt();
+                    m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+                }
             }
-        }
 
-        // One can only hope that there will always be a version attached
-        if (obj.contains("version")) {
-            m_allowedContentTypes = parseVersion(obj["version"].toString());
-        }
+            // One can only hope that there will always be a version attached
+            if (obj.contains("version")) {
+                m_allowedContentTypes = parseVersion(obj["version"].toString());
+            }
 
-        // Pleroma/Akkoma may report maximum post characters here, instead
-        if (obj.contains("max_toot_chars")) {
-            m_maxPostLength = obj["max_toot_chars"].toInt();
-        }
+            // Pleroma/Akkoma may report maximum post characters here, instead
+            if (obj.contains("max_toot_chars")) {
+                m_maxPostLength = obj["max_toot_chars"].toInt();
+            }
 
-        // Pleroma/Akkoma can report higher poll limits
-        if (obj.contains("poll_limits")) {
-            m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
-        }
+            // Pleroma/Akkoma can report higher poll limits
+            if (obj.contains("poll_limits")) {
+                m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
+            }
 
-        m_supportsLocalVisibility = obj.contains("pleroma");
+            // Other instance of poll options
+            if (obj.contains("polls")) {
+                m_maxPollOptions = obj["polls"].toObject()["max_options"].toInt();
+            }
 
-        m_instance_name = obj["title"].toString();
-        Q_EMIT fetchedInstanceMetadata();
-    });
-    m_instance_name = QString("social");
-    Q_EMIT fetchedInstanceMetadata();
+            if (obj.contains("registrations")) {
+                m_registrationsOpen = obj["registrations"].toObject()["enabled"].toBool();
+                m_registrationMessage = obj["registrations"].toObject()["message"].toString();
+            }
 
-    get(pleroma_info, false, this, [=](QNetworkReply *reply) {
+            m_supportsLocalVisibility = obj.contains("pleroma");
+
+            m_instance_name = obj["title"].toString();
+
+            Q_EMIT fetchedInstanceMetadata();
+        },
+        [=](QNetworkReply *reply) {
+            // Fall back to v1 instance information
+            // TODO: a lot of this can be merged with v2 handling
+            get(apiUrl("/api/v1/instance"), false, this, [=](QNetworkReply *reply) {
+                if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+                    return;
+
+                const auto data = reply->readAll();
+                const auto doc = QJsonDocument::fromJson(data);
+
+                if (!doc.isObject())
+                    return;
+
+                const auto obj = doc.object();
+
+                if (obj.contains("configuration")) {
+                    const auto configObj = obj["configuration"].toObject();
+
+                    if (configObj.contains("statuses")) {
+                        const auto statusConfigObj = configObj["statuses"].toObject();
+                        m_maxPostLength = statusConfigObj["max_characters"].toInt();
+                        m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+                    }
+                }
+
+                // One can only hope that there will always be a version attached
+                if (obj.contains("version")) {
+                    m_allowedContentTypes = parseVersion(obj["version"].toString());
+                }
+
+                // Pleroma/Akkoma may report maximum post characters here, instead
+                if (obj.contains("max_toot_chars")) {
+                    m_maxPostLength = obj["max_toot_chars"].toInt();
+                }
+
+                // Pleroma/Akkoma can report higher poll limits
+                if (obj.contains("poll_limits")) {
+                    m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
+                }
+
+                // Other instance of poll options
+                if (obj.contains("polls")) {
+                    m_maxPollOptions = obj["polls"].toObject()["max_options"].toInt();
+                }
+
+                m_registrationsOpen = obj["registrations"].toBool();
+
+                m_supportsLocalVisibility = obj.contains("pleroma");
+
+                m_instance_name = obj["title"].toString();
+
+                Q_EMIT fetchedInstanceMetadata();
+            });
+        });
+
+    get(apiUrl("/nodeinfo/2.1.json"), false, this, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -572,6 +691,16 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
 bool AbstractAccount::isRegistered() const
 {
     return !m_client_id.isEmpty() && !m_client_secret.isEmpty();
+}
+
+bool AbstractAccount::registrationsOpen() const
+{
+    return m_registrationsOpen;
+}
+
+QString AbstractAccount::registrationMessage() const
+{
+    return m_registrationMessage;
 }
 
 QString AbstractAccount::settingsGroupName() const

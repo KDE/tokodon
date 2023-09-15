@@ -43,7 +43,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
 )
 
-find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test WebEngineQuick)
 set_package_properties(Qt6 PROPERTIES
         TYPE REQUIRED
         PURPOSE "Basic application components"

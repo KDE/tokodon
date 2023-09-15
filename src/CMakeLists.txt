@@ -160,6 +160,13 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/PopupShadow.qml
         content/ui/Components/UserCard.qml
 
+        # Login Flow
+        content/ui/LoginFlow/AuthorizationPage.qml
+        content/ui/LoginFlow/LoginPage.qml
+        content/ui/LoginFlow/RegistrationPage.qml
+        content/ui/LoginFlow/ServersPage.qml
+        content/ui/LoginFlow/WelcomePage.qml
+
         # Moderation Tools
         content/ui/ModerationTools/AccountToolPage.qml
         content/ui/ModerationTools/EmailBlockToolPage.qml
@@ -208,14 +215,12 @@ qt_target_qml_sources(tokodon_static
 
         # Other
         content/ui/AccountInfo.qml
-        content/ui/AuthorizationPage.qml
         content/ui/ConversationDelegate.qml
         content/ui/ConversationPage.qml
         content/ui/ExplorePage.qml
         content/ui/FollowDelegate.qml
         content/ui/FullScreenImage.qml
         content/ui/LanguageSelector.qml
-        content/ui/LoginPage.qml
         content/ui/Main.qml
         content/ui/MastoPage.qml
         content/ui/NotificationPage.qml
@@ -228,7 +233,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ThreadPage.qml
         content/ui/TimelinePage.qml
         content/ui/UserInfo.qml
-        )
+)
 qt_target_qml_sources(tokodon_static
         PREFIX /
         RESOURCES
@@ -242,6 +247,10 @@ qt_target_qml_sources(tokodon_static
         icons/tokodon/scalable/tokodon-chat-reply.svg
         icons/tokodon/scalable/post-reply-filled.svg
         icons/tokodon/index.theme
+        ../org.kde.tokodon.svg
+)
+set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
+        QT_RESOURCE_ALIAS /org.kde.tokodon.svg
 )
 
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/search)
@@ -288,6 +297,7 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
+        Qt::WebEngineQuick
         KF6::I18n
         KF6::Kirigami2
         KF6::Notifications

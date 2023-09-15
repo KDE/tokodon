@@ -43,7 +43,7 @@ Kirigami.ApplicationWindow {
                 name: 'home',
             });
         } else {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"));
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
         }
     }
 
@@ -76,7 +76,7 @@ Kirigami.ApplicationWindow {
 
         function onAccountRemoved() {
             if (!AccountManager.hasAccounts) {
-                pageStack.replace(Qt.createComponent("org.kde.tokodon", "LoginPage"));
+                pageStack.replace(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                 globalDrawer.drawerOpen = false
             }
         }

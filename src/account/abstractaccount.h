@@ -55,6 +55,8 @@ class AbstractAccount : public QObject
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
     Q_PROPERTY(bool hasFollowRequests READ hasFollowRequests NOTIFY hasFollowRequestsChanged)
     Q_PROPERTY(AccountConfig *config READ config NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(bool registrationsOpen READ registrationsOpen NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(QString registrationMessage READ registrationMessage NOTIFY fetchedInstanceMetadata)
 
 public:
     AbstractAccount(QObject *parent, const QString &instanceUri);
@@ -63,12 +65,25 @@ public:
     /// Register the application to the mastodon server
     void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {});
 
+    /// Register a new account on the server
+    Q_INVOKABLE void
+    registerAccount(const QString &username, const QString &email, const QString &password, bool agreement, const QString &locale, const QString &reason);
+
     /// Check if the application is registered
     /// \see registerApplication
     bool isRegistered() const;
 
+    /// Check if this account's instance has registrations open.
+    bool registrationsOpen() const;
+
+    /// Check the reason why registrations are disabled,
+    QString registrationMessage() const;
+
     /// Get the oauth2 authorization url
     Q_INVOKABLE QUrl getAuthorizeUrl() const;
+
+    /// Sets the access token
+    void setAccessToken(const QString &token);
 
     /// Get the oauth2 token url
     QUrl getTokenUrl() const;
@@ -231,7 +246,13 @@ public:
     /// \param authenticated Whether the request should be authentificated
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual void post(const QUrl &url, const QUrlQuery &formdata, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    /// \param errorCallback The callback that should be executed if the request is not successful
+    virtual void post(const QUrl &url,
+                      const QUrlQuery &formdata,
+                      bool authenticated,
+                      QObject *parent,
+                      std::function<void(QNetworkReply *)> callback,
+                      std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
 
     virtual QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
@@ -333,7 +354,7 @@ public:
 Q_SIGNALS:
     /// Emitted when the account is authenticated
     /// \see validateToken
-    void authenticated(bool successful);
+    void authenticated(bool successful, const QString &errorMessage);
 
     /// Emitted when the application is successfully registered to the server
     /// \see registerApplication
@@ -377,6 +398,9 @@ Q_SIGNALS:
     /// Emitted when the account has follow requests
     void hasFollowRequestsChanged();
 
+    /// Emitted when a registration error has occured. The JSON body is returned for further processimg/
+    void registrationError(const QString &json);
+
 protected:
     QString m_name;
     QString m_instance_uri;
@@ -396,6 +420,8 @@ protected:
     QList<CustomEmoji> m_customEmojis;
     QString m_additionalScopes;
     AccountConfig *m_config = nullptr;
+    bool m_registrationsOpen = false;
+    QString m_registrationMessage;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

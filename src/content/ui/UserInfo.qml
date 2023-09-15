@@ -107,7 +107,7 @@ QQC2.Pane {
                 }
 
                 onClicked: {
-                    pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "LoginPage"));
+                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
                 }

@@ -69,7 +69,7 @@ public:
     bool isReady() const;
     bool hasAccounts() const;
     bool hasAnyAccounts() const;
-    Q_INVOKABLE void addAccount(AbstractAccount *account);
+    Q_INVOKABLE void addAccount(AbstractAccount *account, bool skipAuthenticationCheck);
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
     void reloadAccounts();
 
@@ -151,6 +151,7 @@ private:
     enum class AccountStatus { NotLoaded, Loaded, InvalidCredentials };
 
     QList<AccountStatus> m_accountStatus;
+    QList<QString> m_accountStatusStrings;
 
     bool m_ready = false;
     bool m_hasAnyAccounts = false;

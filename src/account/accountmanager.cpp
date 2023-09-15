@@ -96,10 +96,15 @@ bool AccountManager::hasAnyAccounts() const
     return m_hasAnyAccounts;
 }
 
-void AccountManager::addAccount(AbstractAccount *account)
+void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticationCheck)
 {
     beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
     m_accounts.append(account);
+    int acctIndex = m_accountStatus.size();
+    if (!skipAuthenticationCheck) {
+        m_accountStatus.push_back(AccountStatus::NotLoaded);
+        m_accountStatusStrings.push_back({});
+    }
     endInsertRows();
 
     Q_EMIT accountAdded(account);
@@ -108,9 +113,17 @@ void AccountManager::addAccount(AbstractAccount *account)
         childIdentityChanged(account);
         account->writeToSettings();
     });
-    connect(account, &Account::authenticated, this, [this]() {
-        Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
-    });
+    if (!skipAuthenticationCheck) {
+        connect(account, &Account::authenticated, this, [this, acctIndex](const bool authenticated, const QString &errorMessage) {
+            if (authenticated) {
+                m_accountStatus[acctIndex] = AccountStatus::Loaded;
+            } else {
+                m_accountStatus[acctIndex] = AccountStatus::InvalidCredentials;
+                m_accountStatusStrings[acctIndex] = errorMessage;
+            }
+            Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+        });
+    }
 
     connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<Post *> posts) {
         Q_EMIT fetchedTimeline(account, original_name, posts);
@@ -232,17 +245,17 @@ void AccountManager::loadFromSettings()
 
             int index = m_accountStatus.size();
             m_accountStatus.push_back(AccountStatus::NotLoaded);
+            m_accountStatusStrings.push_back({});
 
             auto account = new Account(accountConfig, m_qnam);
-            connect(account, &Account::authenticated, this, [=](bool successful) {
+            connect(account, &Account::authenticated, this, [=](const bool successful, const QString &errorMessage) {
                 if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
                     m_accountStatus[index] = AccountStatus::Loaded;
 
-                    addAccount(account);
+                    addAccount(account, true);
                 } else {
                     m_accountStatus[index] = AccountStatus::InvalidCredentials;
-
-                    delete account;
+                    m_accountStatusStrings[index] = errorMessage;
                 }
 
                 checkIfLoadingFinished();

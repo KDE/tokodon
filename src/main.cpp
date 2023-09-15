@@ -9,6 +9,7 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
+#include <QtWebEngineQuick/qtwebenginequickglobal.h>
 #include <clocale>
 
 #ifdef Q_OS_ANDROID
@@ -48,6 +49,8 @@ Q_DECL_EXPORT
 int main(int argc, char *argv[])
 {
     QNetworkProxyFactory::setUseSystemConfiguration(true);
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+    QtWebEngineQuick::initialize();
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
