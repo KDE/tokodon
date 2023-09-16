@@ -113,9 +113,12 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
 
             QBrush brush(img.scaledToHeight(biggestDimension));
             painter.setBrush(brush);
-            painter.drawRoundedRect(imageRect, imageRect.width(), imageRect.height());
+            painter.drawRoundedRect(imageRect, imageRect.width(),
+                                    imageRect.height());
+            painter.end();
 
-            knotification->setPixmap(QPixmap::fromImage(roundedImage));
+            knotification->setPixmap(
+                QPixmap::fromImage(std::move(roundedImage)));
             knotification->sendEvent();
         });
     } else {

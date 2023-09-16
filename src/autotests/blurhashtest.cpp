@@ -56,7 +56,7 @@ private Q_SLOTS:
 
         auto data = blurhash::decode(blurHash.constData(), 25, 25);
         QImage image(data.image.data(), 25, 25, 25 * 3, QImage::Format_RGB888);
-        image = image.convertToFormat(QImage::Format_RGB32);
+        image.convertTo(QImage::Format_RGB32);
 
         QCOMPARE(image, goodBlurHashImage);
     }
