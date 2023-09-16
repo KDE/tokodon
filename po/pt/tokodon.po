@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 01:54+0000\n"
+"POT-Creation-Date: 2023-09-16 01:55+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -14,79 +14,91 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Hashtags SOCKS JPG px Avatar robot ap Silenciamento\n"
 
-#: account/abstractaccount.cpp:485
+#: account/abstractaccount.cpp:494
 #, kde-format
 msgid "Could not follow account"
 msgstr "Não foi possível seguir a conta"
 
-#: account/abstractaccount.cpp:486
+#: account/abstractaccount.cpp:495
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Não foi possível deixar de seguir a conta"
 
-#: account/abstractaccount.cpp:487
+#: account/abstractaccount.cpp:496
 #, kde-format
 msgid "Could not block account"
 msgstr "Não foi possível bloquear a conta"
 
-#: account/abstractaccount.cpp:488
+#: account/abstractaccount.cpp:497
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Não foi possível desbloquear a conta"
 
-#: account/abstractaccount.cpp:489
+#: account/abstractaccount.cpp:498
 #, kde-format
 msgid "Could not mute account"
 msgstr "Não foi possível silenciar a conta"
 
-#: account/abstractaccount.cpp:490
+#: account/abstractaccount.cpp:499
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Não foi possível reactivar a conta"
 
-#: account/abstractaccount.cpp:491
+#: account/abstractaccount.cpp:500
 #, kde-format
 msgid "Could not feature account"
 msgstr "Não foi possível destacar a conta"
 
-#: account/abstractaccount.cpp:492
+#: account/abstractaccount.cpp:501
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Não foi possível remover o destaque da conta"
 
-#: account/abstractaccount.cpp:493
+#: account/abstractaccount.cpp:502
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Não foi possível editar a nota sobre a conta"
 
-#: account/notificationhandler.cpp:24
-#: content/ui/Notifications/UserInteractionLabel.qml:80
-#, kde-format
-msgid "%1 favorited your post"
-msgstr "O %1 adicionou a sua publicação aos favoritos"
-
-#: account/notificationhandler.cpp:28 content/ui/FollowDelegate.qml:49
-#, kde-format
-msgid "%1 followed you"
-msgstr "%1 seguiu-o"
-
-#: account/notificationhandler.cpp:32
-#: content/ui/Notifications/UserInteractionLabel.qml:76
-#, kde-format
-msgid "%1 boosted your post"
-msgstr "O %1 destacou a sua publicação"
-
-#: account/notificationhandler.cpp:40
-#, kde-format
-msgid "%1 edited a post"
-msgstr "O %1 editou uma publicação"
-
-#: account/notificationhandler.cpp:44
+#: account/notificationhandler.cpp:34
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, fuzzy, kde-format
 #| msgid "Write a new post"
 msgid "%1 wrote a new post"
 msgstr "Escrever uma nova publicação"
+
+#: account/notificationhandler.cpp:41
+#: content/ui/Notifications/UserInteractionLabel.qml:76
+#, kde-format
+msgid "%1 boosted your post"
+msgstr "O %1 destacou a sua publicação"
+
+#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#, kde-format
+msgid "%1 followed you"
+msgstr "%1 seguiu-o"
+
+#: account/notificationhandler.cpp:55
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 requested to follow you"
+msgstr "%1 seguiu-o"
+
+#: account/notificationhandler.cpp:62
+#: content/ui/Notifications/UserInteractionLabel.qml:80
+#, kde-format
+msgid "%1 favorited your post"
+msgstr "O %1 adicionou a sua publicação aos favoritos"
+
+#: account/notificationhandler.cpp:69
+#, fuzzy, kde-format
+#| msgid "Your poll has ended"
+msgid "Poll by %1 has ended"
+msgstr "A sua sondagem terminou"
+
+#: account/notificationhandler.cpp:76
+#, kde-format
+msgid "%1 edited a post"
+msgstr "O %1 editou uma publicação"
 
 #: account/profileeditor.cpp:194
 #, kde-format
@@ -358,7 +370,7 @@ msgstr "Bloquear"
 msgid "Edit Profile"
 msgstr "Editar o Perfil"
 
-#: content/ui/AccountInfo.qml:235 content/ui/Settings/AccountsCard.qml:28
+#: content/ui/AccountInfo.qml:235
 #, kde-format
 msgid "Account editor"
 msgstr "Editor da conta"
@@ -368,13 +380,13 @@ msgstr "Editor da conta"
 msgid "Settings"
 msgstr "Configuração"
 
-#: content/ui/AccountInfo.qml:243 content/ui/main.qml:247
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:247
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
 
-#: content/ui/AccountInfo.qml:249 content/ui/main.qml:287
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:287
 #, kde-format
 msgid "Follow Requests"
 msgstr "Pedidos de Seguimento"
@@ -531,39 +543,39 @@ msgstr "Conversas"
 msgid "No Conversations"
 msgstr "Sem Conversas"
 
-#: content/ui/ExplorePage.qml:17 content/ui/main.qml:380
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:380
 #, kde-format
 msgid "Explore"
 msgstr "Explorar"
 
-#: content/ui/ExplorePage.qml:29 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
 #: search/searchmodel.cpp:141
 #, kde-format
 msgid "Post"
 msgstr "Enviar"
 
-#: content/ui/ExplorePage.qml:46
+#: content/ui/ExplorePage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Trending"
 msgid "Trending Posts"
 msgstr "Nas Tendências"
 
-#: content/ui/ExplorePage.qml:60
+#: content/ui/ExplorePage.qml:63
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Trending"
 msgid "Trending Tags"
 msgstr "Nas Tendências"
 
-#: content/ui/ExplorePage.qml:149
+#: content/ui/ExplorePage.qml:154
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] ""
 msgstr[1] ""
 
-#: content/ui/ExplorePage.qml:166
+#: content/ui/ExplorePage.qml:171
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Trending"
@@ -571,7 +583,7 @@ msgctxt "@label"
 msgid "No Trending Posts"
 msgstr "Nas Tendências"
 
-#: content/ui/ExplorePage.qml:166
+#: content/ui/ExplorePage.qml:171
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Trending"
@@ -650,66 +662,67 @@ msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "Ignorar os Erros de SSL"
 
-#: content/ui/LoginPage.qml:87 content/ui/Settings/NetworkProxyPage.qml:59
+#: content/ui/LoginPage.qml:87 content/ui/Settings/NetworkProxyPage.qml:58
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Configuração do 'Proxy'"
 
-#: content/ui/main.qml:237
+#: content/ui/Main.qml:237
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Ferramentas de Moderação"
 
-#: content/ui/main.qml:238
+#: content/ui/Main.qml:238
 #, fuzzy, kde-format
 #| msgid "Moderation Tools"
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Ferramentas de Moderação"
 
-#: content/ui/main.qml:248
+#: content/ui/Main.qml:248
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuração"
 
-#: content/ui/main.qml:258
+#: content/ui/Main.qml:258
 #, kde-format
 msgid "Home"
 msgstr "Início"
 
-#: content/ui/main.qml:274 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:274 content/ui/NotificationPage.qml:15
+#: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: content/ui/main.qml:303 content/ui/StatusComposer/StatusComposer.qml:304
+#: content/ui/Main.qml:303 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/main.qml:318
+#: content/ui/Main.qml:318
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/main.qml:334
+#: content/ui/Main.qml:334
 #, kde-format
 msgid "Conversation"
 msgstr "Conversação"
 
-#: content/ui/main.qml:348
+#: content/ui/Main.qml:348
 #, kde-format
 msgid "Favourites"
 msgstr "Favoritos"
 
-#: content/ui/main.qml:364
+#: content/ui/Main.qml:364
 #, kde-format
 msgid "Bookmarks"
 msgstr "Favoritos"
 
-#: content/ui/main.qml:394
+#: content/ui/Main.qml:394
 #, kde-format
 msgid "Search"
 msgstr "Procurar"
@@ -1952,7 +1965,7 @@ msgid "%1 users boosted your post"
 msgstr "O %1 destacou a sua publicação"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:63
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgid "View Profile"
@@ -2002,274 +2015,341 @@ msgstr "Procura por pessoas, marcas e publicações"
 msgid "Hashtag"
 msgstr "'Hashtags'"
 
-#: content/ui/Settings/AccountsCard.qml:64
+#: content/ui/Settings/AccountsPage.qml:63
 #, kde-format
 msgid "Logout"
 msgstr "Encerrar"
 
-#: content/ui/Settings/AccountsCard.qml:83 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsPage.qml:82 content/ui/UserInfo.qml:101
 #, kde-format
 msgid "Add Account"
 msgstr "Adicionar uma Conta"
 
-#: content/ui/Settings/GeneralCard.qml:16
-#, kde-format
-msgid "Show detailed statistics about posts"
-msgstr "Mostrar estatísticas detalhadas sobre as publicações"
+#: content/ui/Settings/AppearancePage.qml:17
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:group"
+msgid "General"
+msgstr "Geral"
 
-#: content/ui/Settings/GeneralCard.qml:29
-#, kde-format
-msgid "Show link preview"
-msgstr "Mostrar uma antevisão da ligação"
-
-#: content/ui/Settings/GeneralCard.qml:42
-#, kde-format
-msgid "Crop images in the timeline to 16:9"
-msgstr "Recortar as imagens na linha temporal em 16:9"
-
-#: content/ui/Settings/GeneralCard.qml:54
-#, kde-format
-msgid "Auto-play animated GIFs"
-msgstr "Reproduzir automaticamente os GIF's animados"
-
-#: content/ui/Settings/GeneralCard.qml:67
+#: content/ui/Settings/AppearancePage.qml:24
 #, kde-format
 msgid "Color theme"
 msgstr "Tema de cores"
 
-#: content/ui/Settings/GeneralCard.qml:83
+#: content/ui/Settings/AppearancePage.qml:38
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgctxt "@title:group"
+msgid "Posts"
+msgstr "Publicações"
+
+#: content/ui/Settings/AppearancePage.qml:44
+#, fuzzy, kde-format
+#| msgid "Search for peoples, tags and posts"
+msgid "Show number of replies, favorites and boosts"
+msgstr "Procura por pessoas, marcas e publicações"
+
+#: content/ui/Settings/AppearancePage.qml:59
+#, fuzzy, kde-format
+#| msgid "Show link preview"
+msgid "Show link previews"
+msgstr "Mostrar uma antevisão da ligação"
+
+#: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
 msgid "Content font"
 msgstr "Tipo de letra do conteúdo"
 
-#: content/ui/Settings/GeneralCard.qml:89
+#: content/ui/Settings/AppearancePage.qml:80
 #, kde-format
 msgid "Please choose a font"
 msgstr "Escolha por favor um tipo de letra"
 
-#: content/ui/Settings/NetworkProxyPage.qml:14
+#: content/ui/Settings/AppearancePage.qml:91
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@title:group"
+msgid "Media"
+msgstr "Conteúdos"
+
+#: content/ui/Settings/AppearancePage.qml:97
+#, fuzzy, kde-format
+#| msgid "Crop images in the timeline to 16:9"
+msgid "Crop images on the timeline to 16x9"
+msgstr "Recortar as imagens na linha temporal em 16:9"
+
+#: content/ui/Settings/AppearancePage.qml:111
+#, kde-format
+msgid "Auto-play animated GIFs"
+msgstr "Reproduzir automaticamente os GIF's animados"
+
+#: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
 msgstr "'Proxy' de Rede"
 
-#: content/ui/Settings/NetworkProxyPage.qml:19
-#: content/ui/Settings/SettingsPage.qml:64
-#, kde-format
-msgid "Network Proxy"
-msgstr "'Proxy' de Rede"
-
-#: content/ui/Settings/NetworkProxyPage.qml:25
+#: content/ui/Settings/NetworkProxyPage.qml:24
 #, kde-format
 msgid "System Default"
 msgstr "Predefinição do Sistema"
 
-#: content/ui/Settings/NetworkProxyPage.qml:37
+#: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: content/ui/Settings/NetworkProxyPage.qml:49
+#: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
 msgid "Socks5"
 msgstr "SOCKS5"
 
-#: content/ui/Settings/NetworkProxyPage.qml:65
+#: content/ui/Settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Host"
 msgstr "Máquina"
 
-#: content/ui/Settings/NetworkProxyPage.qml:78
+#: content/ui/Settings/NetworkProxyPage.qml:77
 #, kde-format
 msgid "Port"
 msgstr "Porto"
 
-#: content/ui/Settings/NetworkProxyPage.qml:99
+#: content/ui/Settings/NetworkProxyPage.qml:98
 #, kde-format
 msgid "User"
 msgstr "Utilizador"
 
-#: content/ui/Settings/NetworkProxyPage.qml:109
+#: content/ui/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "Password"
 msgstr "Senha"
 
-#: content/ui/Settings/NetworkProxyPage.qml:127
-#: content/ui/Settings/ProfileEditor.qml:315
+#: content/ui/Settings/NetworkProxyPage.qml:126
+#: content/ui/Settings/ProfileEditor.qml:365
 #, kde-format
 msgid "Apply"
 msgstr "Aplicar"
 
-#: content/ui/Settings/PreferencesCard.qml:23
+#: content/ui/Settings/NotificationsPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Take action against this account"
+msgid "Enable notifications for this account"
+msgstr "Efectuar uma acção sobre esta conta"
+
+#: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
-msgctxt "@label Account preferences"
-msgid ""
-"These preferences apply to the current account and are synced to other "
-"clients."
+msgctxt "@title:group"
+msgid "Types"
 msgstr ""
-"Estas preferências aplicam-se à conta actual e são sincronizadas com os "
-"outros clientes."
 
-#: content/ui/Settings/PreferencesCard.qml:29
+#: content/ui/Settings/NotificationsPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Mentions"
+msgstr "Citações"
+
+#: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
-msgctxt "@label Account preferences"
-msgid "Mark uploaded media as sensitive by default"
-msgstr "Marcar os conteúdos enviados como privados por omissão"
+msgid "Statuses"
+msgstr ""
 
-#: content/ui/Settings/PreferencesCard.qml:42
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post language"
-msgstr "Língua por omissão das publicações"
+#: content/ui/Settings/NotificationsPage.qml:70
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgid "Boosts"
+msgstr "Destaques"
 
-#: content/ui/Settings/PreferencesCard.qml:59
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post visibility"
-msgstr "Visibilidade por omissão das publicações"
+#: content/ui/Settings/NotificationsPage.qml:82
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "New followers"
+msgstr "Sem seguidores"
 
-#: content/ui/Settings/ProfileEditor.qml:24
-#, kde-format
-msgid "Profile Editor"
-msgstr "Editor do Perfil"
+#: content/ui/Settings/NotificationsPage.qml:94
+#, fuzzy, kde-format
+#| msgid "No follow requests"
+msgid "New follow requests"
+msgstr "Sem pedidos de seguimento"
 
-#: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:247
+#: content/ui/Settings/NotificationsPage.qml:106
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: content/ui/Settings/NotificationsPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgid "Polls"
+msgstr "Adicionar uma Pesquisa"
+
+#: content/ui/Settings/NotificationsPage.qml:130
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edits"
+msgstr "Editar"
+
+#: content/ui/Settings/ProfileEditor.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Edit Account"
+msgstr "Adicionar uma Conta"
+
+#: content/ui/Settings/ProfileEditor.qml:31
+#: content/ui/StatusComposer/StatusComposer.qml:248
 #, kde-format
 msgid "Please choose a file"
 msgstr "Escolha por favor um ficheiro"
 
-#: content/ui/Settings/ProfileEditor.qml:112
+#: content/ui/Settings/ProfileEditor.qml:113
 #, kde-format
 msgid "Display Name"
 msgstr "Nome a Mostrar"
 
-#: content/ui/Settings/ProfileEditor.qml:130
+#: content/ui/Settings/ProfileEditor.qml:131
 #, kde-format
 msgid "Bio"
 msgstr "Biografia"
 
-#: content/ui/Settings/ProfileEditor.qml:155
+#: content/ui/Settings/ProfileEditor.qml:156
 #, kde-format
 msgid "Header"
 msgstr "Cabeçalho"
 
-#: content/ui/Settings/ProfileEditor.qml:189
+#: content/ui/Settings/ProfileEditor.qml:190
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 "PNG, GIF ou JPG. No máximo 2 MB. Será reduzida a escala para 1500x500px"
 
-#: content/ui/Settings/ProfileEditor.qml:202
-#: content/ui/Settings/ProfileEditor.qml:264
+#: content/ui/Settings/ProfileEditor.qml:203
+#: content/ui/Settings/ProfileEditor.qml:265
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgid "Delete"
 msgstr "Apagar"
 
-#: content/ui/Settings/ProfileEditor.qml:217
+#: content/ui/Settings/ProfileEditor.qml:218
 #, kde-format
 msgid "Avatar"
 msgstr "Avatar"
 
-#: content/ui/Settings/ProfileEditor.qml:250
+#: content/ui/Settings/ProfileEditor.qml:251
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF ou JPG. No máximo 2 MB. Será reduzida a escala para 400x400px"
 
-#: content/ui/Settings/ProfileEditor.qml:278
+#: content/ui/Settings/ProfileEditor.qml:279
 #, kde-format
 msgid "Require follow requests"
 msgstr "Pedidos de seguimento obrigatórios"
 
-#: content/ui/Settings/ProfileEditor.qml:286
+#: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
 msgid "This is a bot account"
 msgstr "Esta é a conta de um robot"
 
-#: content/ui/Settings/ProfileEditor.qml:294
+#: content/ui/Settings/ProfileEditor.qml:295
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Sugerir a conta a outros"
 
-#: content/ui/Settings/ProfileEditor.qml:308
+#: content/ui/Settings/ProfileEditor.qml:303
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr "Marcar os conteúdos enviados como privados por omissão"
+
+#: content/ui/Settings/ProfileEditor.qml:315
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr "Língua por omissão das publicações"
+
+#: content/ui/Settings/ProfileEditor.qml:331
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr "Visibilidade por omissão das publicações"
+
+#: content/ui/Settings/ProfileEditor.qml:358
 #, kde-format
 msgid "Reset"
 msgstr "Reiniciar"
 
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
-msgctxt "@title:window"
-msgid "Settings"
-msgstr "Configuração"
+msgid "Appearance"
+msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:26
-#, kde-format
-msgid "General"
-msgstr "Geral"
-
-#: content/ui/Settings/SettingsPage.qml:32
+#: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
 msgid "Accounts"
 msgstr "Contas"
 
-#: content/ui/Settings/SettingsPage.qml:38
-#, kde-format
-msgctxt "@label Settings header"
-msgid "Preferences"
-msgstr "Preferências"
-
-#: content/ui/Settings/SettingsPage.qml:45
-#, kde-format
-msgid "Spellchecking"
+#: content/ui/Settings/SettingsPage.qml:31
+#, fuzzy, kde-format
+#| msgid "Spellchecking"
+msgid "Spell Checking"
 msgstr "Verificação Ortográfica"
 
-#: content/ui/Settings/SettingsPage.qml:87
+#: content/ui/Settings/SettingsPage.qml:37
+#, kde-format
+msgid "Network Proxy"
+msgstr "'Proxy' de Rede"
+
+#: content/ui/Settings/SettingsPage.qml:43
 #, kde-format
 msgid "About Tokodon"
 msgstr "Acerca do Tokodon"
 
-#: content/ui/Settings/SettingsPage.qml:95
+#: content/ui/Settings/SettingsPage.qml:49
 #, kde-format
 msgid "About KDE"
 msgstr "Acerca do KDE"
 
-#: content/ui/Settings/SonnetCard.qml:22
+#: content/ui/Settings/SonnetPage.qml:29
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Activar a verificação ortográfica automática"
 
-#: content/ui/Settings/SonnetCard.qml:34
+#: content/ui/Settings/SonnetPage.qml:43
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Ignorar as palavras em maiúsculas"
 
-#: content/ui/Settings/SonnetCard.qml:46
+#: content/ui/Settings/SonnetPage.qml:57
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Ignorar as palavras com hífen"
 
-#: content/ui/Settings/SonnetCard.qml:58
+#: content/ui/Settings/SonnetPage.qml:71
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Detectar automaticamente a língua"
 
-#: content/ui/Settings/SonnetCard.qml:69
+#: content/ui/Settings/SonnetPage.qml:84
 #, kde-format
 msgid "Selected default language:"
 msgstr "Língua seleccionada por omissão:"
 
-#: content/ui/Settings/SonnetCard.qml:70
+#: content/ui/Settings/SonnetPage.qml:85
 #, kde-format
 msgid "None"
 msgstr "Nenhuma"
 
-#: content/ui/Settings/SonnetCard.qml:89
+#: content/ui/Settings/SonnetPage.qml:106
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Línguas da Verificação Ortográfica Adicionais"
 
-#: content/ui/Settings/SonnetCard.qml:90
+#: content/ui/Settings/SonnetPage.qml:107
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2278,40 +2358,40 @@ msgstr ""
 "O %1 fornecerá a verificação e sugestões ortográficas para as línguas aqui "
 "indicadas, quando a detecção automática estiver activa."
 
-#: content/ui/Settings/SonnetCard.qml:101
+#: content/ui/Settings/SonnetPage.qml:120
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Abrir o Dicionário Pessoal"
 
-#: content/ui/Settings/SonnetCard.qml:113
+#: content/ui/Settings/SonnetPage.qml:132
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Línguas da verificação ortográfica"
 
-#: content/ui/Settings/SonnetCard.qml:123
-#: content/ui/Settings/SonnetCard.qml:133
+#: content/ui/Settings/SonnetPage.qml:144
+#: content/ui/Settings/SonnetPage.qml:155
 #, kde-format
 msgid "Default Language"
 msgstr "Língua por Omissão"
 
-#: content/ui/Settings/SonnetCard.qml:144
+#: content/ui/Settings/SonnetPage.qml:166
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Dicionário de ortografia"
 
-#: content/ui/Settings/SonnetCard.qml:151
+#: content/ui/Settings/SonnetPage.qml:174
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Adicionar uma nova palavra ao seu dicionário pessoal…"
 
-#: content/ui/Settings/SonnetCard.qml:154
+#: content/ui/Settings/SonnetPage.qml:177
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Adicionar uma Palavra"
 
-#: content/ui/Settings/SonnetCard.qml:181
+#: content/ui/Settings/SonnetPage.qml:206
 #, kde-format
 msgid "Delete word"
 msgstr "Apaga a palavra"
@@ -2339,17 +2419,6 @@ msgstr ""
 #| msgid "Not available"
 msgid "No accounts available"
 msgstr "Não disponível"
-
-#: content/ui/StatusComposer/AttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:68
-#, kde-format
-msgid "Edit"
-msgstr "Editar"
-
-#: content/ui/StatusComposer/AttachmentGrid.qml:108
-#, kde-format
-msgid "Remove"
-msgstr "Remover"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
 #, fuzzy, kde-format
@@ -2412,183 +2481,189 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Esconder o número de votos até terminar a sondagem"
 
-#: content/ui/StatusComposer/StatusComposer.qml:50
+#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
+#, kde-format
+msgid "Edit"
+msgstr "Editar"
+
+#: content/ui/StatusComposer/EditorAttachmentGrid.qml:108
+#, kde-format
+msgid "Remove"
+msgstr "Remover"
+
+#: content/ui/StatusComposer/StatusComposer.qml:51
 #, kde-format
 msgid "Edit this post"
 msgstr "Editar esta publicação"
 
-#: content/ui/StatusComposer/StatusComposer.qml:52
+#: content/ui/StatusComposer/StatusComposer.qml:53
 #, kde-format
 msgid "Reply to this post"
 msgstr "Responder a esta publicação"
 
-#: content/ui/StatusComposer/StatusComposer.qml:54
+#: content/ui/StatusComposer/StatusComposer.qml:55
 #, kde-format
 msgid "Rewrite this post"
 msgstr "Escrever de novo esta publicação"
 
-#: content/ui/StatusComposer/StatusComposer.qml:56
+#: content/ui/StatusComposer/StatusComposer.qml:57
 #, kde-format
 msgid "Write a new post"
 msgstr "Escrever uma nova publicação"
 
-#: content/ui/StatusComposer/StatusComposer.qml:125
-#: content/ui/StatusComposer/StatusComposer.qml:338
+#: content/ui/StatusComposer/StatusComposer.qml:126
+#: content/ui/StatusComposer/StatusComposer.qml:339
 #, kde-format
 msgid "Content Warning"
 msgstr "Aviso do Conteúdo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:141
+#: content/ui/StatusComposer/StatusComposer.qml:142
 #, kde-format
 msgid "What's new?"
 msgstr "O que há de novo?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:249
-#, kde-format
-msgid "All supported formats"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:250
+#: content/ui/StatusComposer/StatusComposer.qml:251
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:251
+#: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:252
+#: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:253
+#: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:254
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:255
+#: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:256
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:257
+#: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:258
+#: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:259
+#: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:260
+#: content/ui/StatusComposer/StatusComposer.qml:261
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:261
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:262
+#: content/ui/StatusComposer/StatusComposer.qml:263
 #, kde-format
 msgid "All files (*)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:264
+#: content/ui/StatusComposer/StatusComposer.qml:265
 #, kde-format
 msgid "Attach File"
 msgstr "Anexar um Ficheiro"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:275
 #, kde-format
 msgid "Add Poll"
 msgstr "Adicionar uma Pesquisa"
 
-#: content/ui/StatusComposer/StatusComposer.qml:310
-#: content/ui/StatusDelegate/StatusDelegate.qml:211
-#: content/ui/StatusDelegate/StatusDelegate.qml:219
+#: content/ui/StatusComposer/StatusComposer.qml:311
+#: content/ui/StatusDelegate/StatusDelegate.qml:215
+#: content/ui/StatusDelegate/StatusDelegate.qml:223
 #, kde-format
 msgid "Public"
 msgstr "Público"
 
-#: content/ui/StatusComposer/StatusComposer.qml:315
-#: content/ui/StatusDelegate/StatusDelegate.qml:213
+#: content/ui/StatusComposer/StatusComposer.qml:316
+#: content/ui/StatusDelegate/StatusDelegate.qml:217
 #, kde-format
 msgid "Unlisted"
 msgstr "Não Listado"
 
-#: content/ui/StatusComposer/StatusComposer.qml:320
-#: content/ui/StatusDelegate/StatusDelegate.qml:215
+#: content/ui/StatusComposer/StatusComposer.qml:321
+#: content/ui/StatusDelegate/StatusDelegate.qml:219
 #, kde-format
 msgid "Private"
 msgstr "Privado"
 
-#: content/ui/StatusComposer/StatusComposer.qml:325
-#: content/ui/StatusDelegate/StatusDelegate.qml:217
+#: content/ui/StatusComposer/StatusComposer.qml:326
+#: content/ui/StatusDelegate/StatusDelegate.qml:221
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensagem Directa"
 
-#: content/ui/StatusComposer/StatusComposer.qml:330
+#: content/ui/StatusComposer/StatusComposer.qml:331
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilidade"
 
-#: content/ui/StatusComposer/StatusComposer.qml:335
+#: content/ui/StatusComposer/StatusComposer.qml:336
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:345
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox Post language selection"
 #| msgid "Post Language"
 msgid "Post Language"
 msgstr "Língua da Publicação"
 
-#: content/ui/StatusComposer/StatusComposer.qml:371
+#: content/ui/StatusComposer/StatusComposer.qml:372
 #, fuzzy, kde-format
 #| msgctxt "@action:intoolbar Poll toolbar"
 #| msgid "Add Choice"
 msgid "Add Emoji"
 msgstr "Adicionar uma Opção"
 
-#: content/ui/StatusComposer/StatusComposer.qml:386
+#: content/ui/StatusComposer/StatusComposer.qml:387
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caracteres"
 
-#: content/ui/StatusComposer/StatusComposer.qml:397
+#: content/ui/StatusComposer/StatusComposer.qml:398
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Enviar"
 
-#: content/ui/StatusComposer/StatusComposer.qml:399
+#: content/ui/StatusComposer/StatusComposer.qml:400
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -2596,40 +2671,40 @@ msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/StatusComposer/StatusComposer.qml:401
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:403
+#: content/ui/StatusComposer/StatusComposer.qml:404
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Editar"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:123
+#: content/ui/StatusDelegate/AttachmentGrid.qml:124
 #, kde-format
 msgid "Not available"
 msgstr "Não disponível"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:189
+#: content/ui/StatusDelegate/AttachmentGrid.qml:190
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:246
+#: content/ui/StatusDelegate/AttachmentGrid.qml:247
 #, kde-format
 msgid "Video"
 msgstr "Vídeo"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:279
+#: content/ui/StatusDelegate/AttachmentGrid.qml:280
 #, kde-format
 msgid "Media Hidden"
 msgstr "Conteúdo Escondido"
 
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:34
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #, kde-format
 msgid "View profile"
 msgstr "Ver o perfil"
@@ -2656,7 +2731,7 @@ msgid "Copy Link to This Post"
 msgstr "Copiar a Ligação desta Publicação"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:400
+#: content/ui/StatusDelegate/StatusDelegate.qml:414
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Remover o favorito"
@@ -2681,73 +2756,73 @@ msgstr "Fixar no perfil"
 msgid "Delete & Re-draft"
 msgstr "Apagar & Voltar ao Rascunho"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:129
+#: content/ui/StatusDelegate/StatusDelegate.qml:130
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Filtrados: %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:133
+#: content/ui/StatusDelegate/StatusDelegate.qml:134
 #, kde-format
 msgid "Show anyway"
 msgstr "Mostrar à mesma"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:150
+#: content/ui/StatusDelegate/StatusDelegate.qml:151
 #, kde-format
 msgid "Pinned entry"
 msgstr "Item fixo"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:238
+#: content/ui/StatusDelegate/StatusDelegate.qml:242
 #, kde-format
 msgctxt "Show more options"
 msgid "More"
 msgstr "Mais"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:279
+#: content/ui/StatusDelegate/StatusDelegate.qml:286
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Aviso do Conteúdo</b><br /> %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:285
+#: content/ui/StatusDelegate/StatusDelegate.qml:293
 #, kde-format
 msgid "Show Less"
 msgstr "Mostrar Menos"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:285
+#: content/ui/StatusDelegate/StatusDelegate.qml:293
 #, kde-format
 msgid "Show More"
 msgstr "Mostrar Mais"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:338
+#: content/ui/StatusDelegate/StatusDelegate.qml:352
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:361
+#: content/ui/StatusDelegate/StatusDelegate.qml:375
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Destacar"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:381
+#: content/ui/StatusDelegate/StatusDelegate.qml:395
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Adicionar aos Favoritos"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:400
+#: content/ui/StatusDelegate/StatusDelegate.qml:414
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Favorito"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:417
+#: content/ui/StatusDelegate/StatusDelegate.qml:431
 #, kde-format
 msgid "via %1"
 msgstr "através de %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:449
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:463
+#: content/ui/StatusDelegate/StatusDelegate.qml:464
 #, fuzzy, kde-format
 #| msgid "%1 Reply"
 msgid "%1 Reply"
@@ -2755,8 +2830,8 @@ msgid_plural "%1 Replies"
 msgstr[0] "%1 Resposta"
 msgstr[1] "%1 Resposta"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:461
-#: content/ui/StatusDelegate/StatusDelegate.qml:462
+#: content/ui/StatusDelegate/StatusDelegate.qml:475
+#: content/ui/StatusDelegate/StatusDelegate.qml:476
 #, fuzzy, kde-format
 #| msgid "%1 Favorite"
 msgid "%1 Favorite"
@@ -2764,8 +2839,8 @@ msgid_plural "%1 Favorites"
 msgstr[0] "%1 Favorito"
 msgstr[1] "%1 Favorito"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:480
-#: content/ui/StatusDelegate/StatusDelegate.qml:481
+#: content/ui/StatusDelegate/StatusDelegate.qml:494
+#: content/ui/StatusDelegate/StatusDelegate.qml:495
 #, fuzzy, kde-format
 #| msgid "%1 Boost"
 msgid "%1 Boost"
@@ -2789,12 +2864,12 @@ msgstr "(Sem votos)"
 msgid "Vote"
 msgstr "Votar"
 
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:70
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
 msgstr "O %1 foi destacado"
 
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:72
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:73
 #, kde-format
 msgid "In reply to %1"
 msgstr "Em resposta a %1"
@@ -2890,64 +2965,64 @@ msgstr "7 dias"
 msgid "An unknown error occurred."
 msgstr "Ocorreu um erro desconhecido."
 
-#: main.cpp:121
+#: main.cpp:93
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:123
+#: main.cpp:95
 #, kde-format
 msgid "Mastodon client"
 msgstr "Cliente de Mastodon"
 
-#: main.cpp:125
+#: main.cpp:97
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunidade do KDE"
 
-#: main.cpp:127 main.cpp:130
+#: main.cpp:98
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:127 main.cpp:128 main.cpp:131 main.cpp:136
+#: main.cpp:99 main.cpp:104
 #, kde-format
 msgid "Maintainer"
 msgstr "Manutenção"
 
-#: main.cpp:128 main.cpp:135
+#: main.cpp:103
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:141
+#: main.cpp:108
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "José Nuno Pires"
 
-#: main.cpp:141
+#: main.cpp:108
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: main.cpp:149
+#: main.cpp:116
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Cliente da rede social descentralizada Mastodon"
 
-#: main.cpp:150
+#: main.cpp:117
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Suporta o esquema de URL's web+ap:"
 
-#: main.cpp:152
+#: main.cpp:119
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:152
+#: main.cpp:119
 #, kde-format
 msgid "The text to share."
 msgstr ""
@@ -3161,6 +3236,28 @@ msgstr "Origem"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgid "Show detailed statistics about posts"
+#~ msgstr "Mostrar estatísticas detalhadas sobre as publicações"
+
+#~ msgctxt "@label Account preferences"
+#~ msgid ""
+#~ "These preferences apply to the current account and are synced to other "
+#~ "clients."
+#~ msgstr ""
+#~ "Estas preferências aplicam-se à conta actual e são sincronizadas com os "
+#~ "outros clientes."
+
+#~ msgid "Profile Editor"
+#~ msgstr "Editor do Perfil"
+
+#~ msgctxt "@title:window"
+#~ msgid "Settings"
+#~ msgstr "Configuração"
+
+#~ msgctxt "@label Settings header"
+#~ msgid "Preferences"
+#~ msgstr "Preferências"
 
 #~ msgid "A poll you voted in has ended"
 #~ msgstr "Terminou uma sondagem onde votou"
