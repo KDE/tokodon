@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-13 07:58+0200\n"
+"PO-Revision-Date: 2023-09-16 09:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: account/abstractaccount.cpp:494
@@ -81,10 +81,9 @@ msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 vam sledi"
+msgstr "%1 je zahteval, da vam sledi"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -93,10 +92,9 @@ msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Glasovanje se je končalo"
+msgstr "Glasovanje od %1 se je končalo"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1940,8 +1938,7 @@ msgid "Add Account"
 msgstr "Dodaj račun"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Splošno"
@@ -1952,24 +1949,20 @@ msgid "Color theme"
 msgstr "Barvna tema"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Objave"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Iskanje ljudi, oznak in objav"
+msgstr "Prikaži število odgovorov, pohval in pospeškov"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Prikaži predogled povezave"
+msgstr "Prikaži predoglede povezave"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1982,18 +1975,15 @@ msgid "Please choose a font"
 msgstr "Izberite pisavo"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
-msgstr "Mediji"
+msgstr "Medij"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Obreži slike v časovnici v razmerju 16:9"
+msgstr "Obreži slike v časovnici na 16x9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2048,72 +2038,60 @@ msgid "Apply"
 msgstr "Uveljavi"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Ukrepaj proti računu"
+msgstr "Omogoči obvestila za ta račun"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Vrste"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Omembe"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Statusi"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Pospeški"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Ni sledilcev"
+msgstr "Novi sledilci"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Ne sledi zahtevkom"
+msgstr "Novi zahtevki za sledenje"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Priljubljene"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Dodaj glasovanje"
+msgstr "Glasovanja"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Uredi"
+msgstr "Urejevanja"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Dodaj račun"
+msgstr "Uredi račun"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2199,7 +2177,7 @@ msgstr "Ponovno nastavi"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Videz"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2207,8 +2185,7 @@ msgid "Accounts"
 msgstr "Računi"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Črkovanje"
 

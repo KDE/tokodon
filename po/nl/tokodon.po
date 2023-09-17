@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-13 09:32+0200\n"
+"PO-Revision-Date: 2023-09-16 12:16+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -72,7 +72,7 @@ msgstr "%1 schreef een nieuw bericht"
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1 versterkte uw bericht"
+msgstr "%1 heeft uw bericht opgepept"
 
 #: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
 #, kde-format
@@ -80,10 +80,9 @@ msgid "%1 followed you"
 msgstr "%1 volgde u"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 volgde u"
+msgstr "%1 verzocht u te volgen"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -92,10 +91,9 @@ msgid "%1 favorited your post"
 msgstr "%1 vond uw bericht de favoriet"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Een peiling is geëindigd"
+msgstr "Peiling door %1 is beëindigd"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1930,8 +1928,7 @@ msgid "Add Account"
 msgstr "Account toevoegen"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Algemeen"
@@ -1942,24 +1939,20 @@ msgid "Color theme"
 msgstr "Kleurenthema"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Berichten"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Zoeken naar mensen, tags en berichten"
+msgstr "Aantal antwoorden, favorieten en versterkingen tonen"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Koppelingsvoorbeeld tonen"
+msgstr "Koppelingsvoorbeelden tonen"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1972,18 +1965,15 @@ msgid "Please choose a font"
 msgstr "Kies een lettertype"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Media"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Snij afbeeldingen bij in de tijdlijn tot 16:9"
+msgstr "Snij afbeeldingen op de tijdlijn bij tot 16x9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2038,72 +2028,60 @@ msgid "Apply"
 msgstr "Toepassen"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Actie nemen tegen dit account"
+msgstr "Meldingen voor dit account inschakelen"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Typen"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Vermeldingen"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Statussen"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Oppeppers"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Geen volgers"
+msgstr "Nieuwe volgers"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Geen verzoeken om te volgen"
+msgstr "Nieuwe verzoeken om te volgen"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Favorieten"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Peiling toevoegen"
+msgstr "Peilingen"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Bewerken"
+msgstr "Bewerkingen"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Account toevoegen"
+msgstr "Account bewerken"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2191,7 +2169,7 @@ msgstr "Reset"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Uiterlijk"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2199,8 +2177,7 @@ msgid "Accounts"
 msgstr "Accounts"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Spellingcontrole"
 
@@ -2737,7 +2714,7 @@ msgstr[1] "%1 favoriet"
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
 msgstr[0] "%1 oppepper"
-msgstr[1] "%1 oppepper"
+msgstr[1] "%1 oppeppers"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:38
 #, kde-format
@@ -2758,7 +2735,7 @@ msgstr "Stemmen"
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1 versterkt"
+msgstr "%1 opgepept"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:73
 #, kde-format

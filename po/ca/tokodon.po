@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-13 09:12+0200\n"
+"PO-Revision-Date: 2023-09-16 12:38+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -84,10 +84,9 @@ msgid "%1 followed you"
 msgstr "%1 us segueix"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 us segueix"
+msgstr "%1 ha sol·licitat seguir-vos"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -96,10 +95,9 @@ msgid "%1 favorited your post"
 msgstr "%1 ha marcat com a favorit la vostra publicació"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Ha finalitzat una votació"
+msgstr "La votació de %1 ha acabat"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1889,7 +1887,7 @@ msgstr "%1 ha respost la vostra publicació"
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "A poll has ended"
-msgstr "Ha finalitzat una votació"
+msgstr "Ha acabat una votació"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
@@ -1933,8 +1931,7 @@ msgid "Add Account"
 msgstr "Afegeix un compte"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "General"
@@ -1945,24 +1942,20 @@ msgid "Color theme"
 msgstr "Tema de color"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Publicacions"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Cerca persones, etiquetes i publicacions"
+msgstr "Mostra el nombre de respostes, preferits i impulsos"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Mostra la vista prèvia de l'enllaç"
+msgstr "Mostra la vista prèvia dels enllaços"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1975,18 +1968,15 @@ msgid "Please choose a font"
 msgstr "Trieu una lletra"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Multimèdia"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Escapça les imatges en la línia de temps a 16:9"
+msgstr "Escapça les imatges en la línia de temps a 16x9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2041,72 +2031,60 @@ msgid "Apply"
 msgstr "Aplica"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Prendre una acció sobre el compte"
+msgstr "Activa les notificacions per a aquest compte"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Tipus"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Mencions"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Estats"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Impulsos"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Sense seguidors"
+msgstr "Seguidors nous"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Sense sol·licituds de seguiment"
+msgstr "Sol·licituds noves de seguiment"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Preferits"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Afegeix una votació"
+msgstr "Votacions"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Edita"
+msgstr "Edicions"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Afegeix un compte"
+msgstr "Edita el compte"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2194,7 +2172,7 @@ msgstr "Reinicia"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Aparença"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2202,10 +2180,9 @@ msgid "Accounts"
 msgstr "Comptes"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
-msgstr "Verificació de l'ortografia"
+msgstr "Verificació ortogràfica"
 
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format

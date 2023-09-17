@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-14 23:18+0100\n"
+"PO-Revision-Date: 2023-09-16 08:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -81,10 +81,9 @@ msgid "%1 followed you"
 msgstr "%1 sekvis vin"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 sekvis vin"
+msgstr "%1 alpetis sekvi vin"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -93,10 +92,9 @@ msgid "%1 favorited your post"
 msgstr "%1 ŝatigis vian afiŝon"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Enketo finiĝis"
+msgstr "Enketo per %1 finiĝis"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1928,11 +1926,10 @@ msgid "Add Account"
 msgstr "Aldoni konton"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr "Ĝeneralo"
+msgstr "Ĝenerala"
 
 #: content/ui/Settings/AppearancePage.qml:24
 #, kde-format
@@ -1940,24 +1937,20 @@ msgid "Color theme"
 msgstr "Kolora etoso"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Afiŝoj"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Serĉi homojn, etikedojn kaj afiŝojn"
+msgstr "Montri nombron da respondoj, ŝatatojn kaj plifortigojn"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Montri ligilan antaŭrigardon"
+msgstr "Montri ligilajn antaŭrigardojn"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1970,18 +1963,15 @@ msgid "Please choose a font"
 msgstr "Bonvolu elekti tiparon"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Amaskomunikiloj"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Tondi bildojn en la templinio al 16:9"
+msgstr "Tondi bildojn en la templinio al 16x9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2036,72 +2026,60 @@ msgid "Apply"
 msgstr "Apliki"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Agi kontraŭ ĉi tiu konto"
+msgstr "Ŝalti sciigojn por ĉi tiu konto"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Tipoj"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Mencioj"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Statusoj"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
-msgstr "Plikonatigoj"
+msgstr "Plifortigoj"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
 msgstr "Neniuj sekvantoj"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Neniuj sekvaj petoj"
+msgstr "Neniuj alpetoj pri sekvo"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
-msgstr "Plej ŝatataj"
+msgstr "Ŝatatoj"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Aldoni Enketon"
+msgstr "Enketoj"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Redakti"
+msgstr "Redaktoj"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Aldoni konton"
+msgstr "Redakti Konton"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2187,7 +2165,7 @@ msgstr "Restarigi"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Aspekto"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2195,8 +2173,7 @@ msgid "Accounts"
 msgstr "Kontoj"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Ortografio"
 
@@ -3116,28 +3093,3 @@ msgstr "Fonto"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Celo"
-
-#~ msgid "Show detailed statistics about posts"
-#~ msgstr "Montri detalajn statistikojn pri afiŝoj"
-
-#~ msgctxt "@label Account preferences"
-#~ msgid ""
-#~ "These preferences apply to the current account and are synced to other "
-#~ "clients."
-#~ msgstr ""
-#~ "Ĉi tiuj preferoj validas por la nuna konto kaj estas sinkronigitaj al "
-#~ "aliaj klientoj."
-
-#~ msgid "Profile Editor"
-#~ msgstr "Profila Redaktoro"
-
-#~ msgctxt "@title:window"
-#~ msgid "Settings"
-#~ msgstr "Agordoj"
-
-#~ msgctxt "@label Settings header"
-#~ msgid "Preferences"
-#~ msgstr "Preferoj"
-
-#~ msgid "All supported formats"
-#~ msgstr "Ĉiuj subtenataj formatoj"

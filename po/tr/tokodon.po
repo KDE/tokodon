@@ -80,10 +80,9 @@ msgid "%1 followed you"
 msgstr "%1 sizi takip etti"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 sizi takip etti"
+msgstr "%1 size takip isteği gönderdi"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -92,10 +91,9 @@ msgid "%1 favorited your post"
 msgstr "%1 gönderinizi favoriledi"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Bir anket sona erdi"
+msgstr "%1 tarafından yapılan anket sona erdi"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1927,8 +1925,7 @@ msgid "Add Account"
 msgstr "Hesap Ekle"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Genel"
@@ -1939,24 +1936,20 @@ msgid "Color theme"
 msgstr "Renk teması"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Gönderiler"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Kişiler, etiketler ve gönderiler ara"
+msgstr "Yanıtların, favorilerin ve boostların sayısını göster"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Bağlantı önizlemesi göster"
+msgstr "Bağlantı önizlemelerini göster"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1969,18 +1962,15 @@ msgid "Please choose a font"
 msgstr "Lütfen bir yazıtipi seçin"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Ortam"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Zaman akışındaki görselleri 16:9 olarak kırp"
+msgstr "Zaman akışındaki görselleri 16 x 9 olarak kırp"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2035,72 +2025,60 @@ msgid "Apply"
 msgstr "Uygula"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Bu Hesaba Karşı Bir Eylem Gerçekleştir"
+msgstr "Bu hesap için bildirimleri etkinleştir"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Türler"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Söz Etmeler"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Durumlar"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Boostlar"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Takipçisi yok"
+msgstr "Yeni takipçiler"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Takip isteği yok"
+msgstr "Yeni takip istekleri"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Favoriler"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Anket ekle"
+msgstr "Anketler"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Düzenle"
+msgstr "Düzenlemeler"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Hesap Ekle"
+msgstr "Hesabı Düzenle"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2186,7 +2164,7 @@ msgstr "Sıfırla"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Görünüş"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2194,8 +2172,7 @@ msgid "Accounts"
 msgstr "Hesaplar"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Yazım Denetimi"
 
@@ -3115,27 +3092,3 @@ msgstr "Kaynak"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Hedef"
-
-#~ msgid "Show detailed statistics about posts"
-#~ msgstr "Gönderiler hakkında ayrıntılı istatistikler göster"
-
-#~ msgctxt "@label Account preferences"
-#~ msgid ""
-#~ "These preferences apply to the current account and are synced to other "
-#~ "clients."
-#~ msgstr ""
-#~ "Bu tercihler geçerli hesaba uygulanır ve diğer istemcilere eşzamanlanır."
-
-#~ msgid "Profile Editor"
-#~ msgstr "Profil Düzenleyici"
-
-#~ msgctxt "@title:window"
-#~ msgid "Settings"
-#~ msgstr "Ayarlar"
-
-#~ msgctxt "@label Settings header"
-#~ msgid "Preferences"
-#~ msgstr "Tercihler"
-
-#~ msgid "All supported formats"
-#~ msgstr "Tüm desteklenen biçimler"

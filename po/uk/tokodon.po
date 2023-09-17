@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-13 05:45+0300\n"
+"PO-Revision-Date: 2023-09-16 08:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -81,10 +81,9 @@ msgid "%1 followed you"
 msgstr "%1 стежить за вашими дописами"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 стежить за вашими дописами"
+msgstr "%1 надіслано запит щодо стеження за вами"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -93,10 +92,9 @@ msgid "%1 favorited your post"
 msgstr "Ваш допис позначено %1 як улюблений"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Голосування завершено"
+msgstr "Голосування %1 завершено"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1948,8 +1946,7 @@ msgid "Add Account"
 msgstr "Додати обліковий запис"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Загальне"
@@ -1960,22 +1957,18 @@ msgid "Color theme"
 msgstr "Тема кольорів"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Дописи"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Шукати людей, мітки та дописи"
+msgstr "Показати кількість відповідей, додавань до улюблених і підсилень"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
 msgstr "Показати попередній перегляд вмісту посилання"
 
@@ -1990,18 +1983,15 @@ msgid "Please choose a font"
 msgstr "Будь ласка, виберіть шрифт"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Мультимедіа"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Обрізати зображення у розкладі до 16:9"
+msgstr "Обрізати зображення у розкладі до 16х9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2056,72 +2046,60 @@ msgid "Apply"
 msgstr "Застосувати"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Виконати дію з обліковим записом"
+msgstr "Увімкнути сповіщення для цього облікового запису"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Типи"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
-msgstr "Згадки"
+msgstr "Згадування"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Стани"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Підсилення"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Немає тих, хто стежить"
+msgstr "Нові ті, хто стежить"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Немає запитів щодо стеження"
+msgstr "Нові запити щодо стеження"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Улюблене"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Додати опитування"
+msgstr "Голосування"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Змінити"
+msgstr "Редагування"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Додати обліковий запис"
+msgstr "Змінити обліковий запис"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2211,7 +2189,7 @@ msgstr "Скинути"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Вигляд"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2219,10 +2197,9 @@ msgid "Accounts"
 msgstr "Облікові записи"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
-msgstr "Перевірка правопису"
+msgstr "Перевірка орфографії"
 
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format
@@ -2376,7 +2353,7 @@ msgstr "Додати новий варіант відповіді"
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr "Коли завершується строк опитування"
+msgstr "Коли завершується строк голосування"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:89
 #, kde-format
@@ -2521,7 +2498,7 @@ msgstr "Долучити файл"
 #: content/ui/StatusComposer/StatusComposer.qml:275
 #, kde-format
 msgid "Add Poll"
-msgstr "Додати опитування"
+msgstr "Додати голосування"
 
 #: content/ui/StatusComposer/StatusComposer.qml:311
 #: content/ui/StatusDelegate/StatusDelegate.qml:215
