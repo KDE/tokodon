@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-18 02:23+0000\n"
-"PO-Revision-Date: 2023-09-09 11:23+0200\n"
+"PO-Revision-Date: 2023-09-17 12:34+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -230,7 +230,7 @@ msgstr "Zamrożone"
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "Nie potwierdzono adresu e-mail"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
@@ -242,7 +242,7 @@ msgstr "Niezatwierdzone"
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Nie narzucono żadnych ograniczeń"
 
 #: admin/federationtoolmodel.cpp:153
 #, kde-format
@@ -369,7 +369,7 @@ msgstr "Skopiuj odnośnik do tego profilu"
 #: content/ui/AccountInfo.qml:281 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Skopiowano odnośnik wpisu."
 
 #: content/ui/AccountInfo.qml:368
 #, kde-format
@@ -414,7 +414,7 @@ msgstr "Wpisy"
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Wpisy i odpowiedzi"
 
 #: content/ui/AccountInfo.qml:511
 #, kde-format
@@ -468,7 +468,7 @@ msgstr "Skopiuj odnośnik"
 #: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
 #, kde-format
 msgid "Link copied."
-msgstr ""
+msgstr "Skopiowano odnośnik."
 
 #: content/ui/AuthorizationPage.qml:101
 #, kde-format
@@ -509,17 +509,17 @@ msgstr "Wyślij"
 #: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "Trending Posts"
-msgstr ""
+msgstr "Wpisy na czasie"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Trending Tags"
-msgstr ""
+msgstr "Znaczniki na czasie"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 ludzi rozmawia"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
@@ -590,7 +590,7 @@ msgstr "Narzędzia moderacji"
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
-msgstr ""
+msgstr "Otwórz narzędzia moderacji"
 
 #: content/ui/main.qml:226
 #, kde-format
@@ -804,7 +804,7 @@ msgstr "Strona narzędzia federacji"
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Dodaj szczegóły domeny"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
@@ -831,7 +831,7 @@ msgstr "Wyłączono federację w tej domenie"
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Dodaj blok domeny"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
@@ -882,7 +882,7 @@ msgstr "Brak"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Odrzuć pliki multimedialne"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -898,7 +898,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Odrzuć sprawozdania"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
@@ -910,7 +910,7 @@ msgstr "Pomijaj wszystkie zgłoszenia z tej domeny. Nie dotyczy zawieszeń."
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Zaciemnij nazwę domeny"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -927,7 +927,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Utwórz blok"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
@@ -978,12 +978,12 @@ msgstr "Zablokowane domeny"
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Dozwolone domeny"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Dozwolone do federacji"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
 #, kde-format
@@ -993,7 +993,7 @@ msgstr "Nie znaleziono żadnych federacji"
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Dodaj nowy blok domeny"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
@@ -1026,7 +1026,7 @@ msgstr "Zamrożenie"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Wymuś uwrażliwienie"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -1129,7 +1129,7 @@ msgstr "Opis"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:329
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Powód dołączenia"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
 #, kde-format
@@ -1170,7 +1170,7 @@ msgstr "Ostatnio widziany"
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Stan zalogowania"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:410
 #, kde-format
@@ -1188,7 +1188,7 @@ msgstr "E-mail"
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "Stan e-maila"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
 #, kde-format
@@ -1215,7 +1215,7 @@ msgstr "Dołączono"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Ostatni adres IP"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
@@ -1253,12 +1253,12 @@ msgstr "Liczba cofnięć"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Wycofaj zawieszenie"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Cofnij wymuszone uwrażliwienie"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
@@ -1273,12 +1273,12 @@ msgstr "Usuń blok domeny"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Usunięto blok domeny"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Edytuj blok domeny"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
@@ -1290,12 +1290,12 @@ msgstr "Prywatna uwaga"
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Uaktualnij blok"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Uaktualniono blok domeny"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
 #, kde-format
@@ -1330,18 +1330,18 @@ msgstr "Zaciemnij"
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Odrzuć multimedia"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr ""
+msgstr "odrzuć sprawozdanie"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Edytuj blok domeny"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -2358,7 +2358,7 @@ msgstr "Wystąpił błąd przy pobieraniu najnowszych powiadomień."
 #: timeline/post.cpp:334
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "w przyszłości"
 
 #: timeline/post.cpp:336
 #, kde-format
