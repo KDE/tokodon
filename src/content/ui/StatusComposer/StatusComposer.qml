@@ -149,7 +149,7 @@ MastoPage {
             leftInset: -1
             rightInset: -1
             onTextChanged: backend.status = text
-            Kirigami.SpellChecking.enabled: true
+            Kirigami.SpellCheck.enabled: true
 
             Keys.onEnterPressed: (event)=> {
                if (event.modifiers & Qt.ControlModifier) {

@@ -68,7 +68,6 @@ Kirigami.ScrollablePage {
                 wrapMode: Text.Wrap
                 clip: true
                 visible: root.identity.isLocal
-                Kirigami.SpellChecking.enabled: true
                 Layout.fillWidth: true
             }
         }
