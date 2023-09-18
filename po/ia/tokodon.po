@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-15 15:28+0200\n"
+"PO-Revision-Date: 2023-09-17 23:07+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: account/abstractaccount.cpp:494
 #, kde-format
@@ -30,12 +30,12 @@ msgstr ""
 #: account/abstractaccount.cpp:496
 #, kde-format
 msgid "Could not block account"
-msgstr ""
+msgstr "Non pote blocar conto"
 
 #: account/abstractaccount.cpp:497
 #, kde-format
 msgid "Could not unblock account"
-msgstr ""
+msgstr "Non poteva disblocar conto"
 
 #: account/abstractaccount.cpp:498
 #, kde-format
@@ -80,10 +80,9 @@ msgid "%1 followed you"
 msgstr "%1 te sequeva"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 te sequeva"
+msgstr "%1 requiriva sequer te"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -303,7 +302,7 @@ msgstr ""
 #: content/ui/AccountInfo.qml:111
 #, kde-format
 msgid "Following"
-msgstr ""
+msgstr "Sequente"
 
 #: content/ui/AccountInfo.qml:113
 #, kde-format
@@ -440,7 +439,7 @@ msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] ""
-msgstr[1] "<b>%1</b> AdherentesAdherentes"
+msgstr[1] "Adherentes<b>%1</b> AdherentesAdherentes"
 
 #: content/ui/AccountInfo.qml:495
 #, kde-format
@@ -448,7 +447,7 @@ msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "Sequente"
 
 #: content/ui/AccountInfo.qml:513
 #, kde-format
@@ -1449,7 +1448,7 @@ msgstr "Adherentes"
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr ""
+msgstr "Sequente"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:385
 #, kde-format
@@ -1914,8 +1913,7 @@ msgid "Add Account"
 msgstr "Adde conto"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "General"
@@ -1926,9 +1924,7 @@ msgid "Color theme"
 msgstr "Thema de color"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Posts"
@@ -1939,10 +1935,9 @@ msgid "Show number of replies, favorites and boosts"
 msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Link preview: %1"
+#, kde-format
 msgid "Show link previews"
-msgstr "Vista preliminar de ligamine: %1"
+msgstr "Monstra Vista preliminar de ligamine"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1955,9 +1950,7 @@ msgid "Please choose a font"
 msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Medios"
@@ -2022,18 +2015,16 @@ msgstr "Applica"
 #: content/ui/Settings/NotificationsPage.qml:28
 #, kde-format
 msgid "Enable notifications for this account"
-msgstr ""
+msgstr "Habilita notificatione per iste conto"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Typos:"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Mentiones"
 
@@ -2043,29 +2034,22 @@ msgid "Statuses"
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Boosts"
-msgstr "Posts"
+msgstr "Boosts"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgid "New followers"
-msgstr "Adherentes"
+msgstr "Nove Adherentes"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Nulle requestas de sequer"
+msgstr "Nove requestas de sequer"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -2075,16 +2059,14 @@ msgid "Polls"
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
 msgstr "Modifica"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Adde conto"
+msgstr "Modifica conto"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2170,7 +2152,7 @@ msgstr "Reinitialisa"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Apparentia"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2178,8 +2160,7 @@ msgid "Accounts"
 msgstr "Contos"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Facer Controlo Orthographic"
 
@@ -2191,7 +2172,7 @@ msgstr "Proxy de rete"
 #: content/ui/Settings/SettingsPage.qml:43
 #, kde-format
 msgid "About Tokodon"
-msgstr ""
+msgstr "A proposito de Tokodon"
 
 #: content/ui/Settings/SettingsPage.qml:49
 #, kde-format
@@ -2720,17 +2701,17 @@ msgstr[1] ""
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:62
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(nulle votos)"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:96
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Voto"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -2751,7 +2732,7 @@ msgstr "Reproduce"
 #: content/ui/TimelinePage.qml:194
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Nulle posts"
 
 #: content/ui/UserInfo.qml:73
 #, kde-format
@@ -2774,11 +2755,11 @@ msgid "%1 and %2"
 msgstr "%1 e %2"
 
 #: conversation/conversationmodel.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] "%2 e  un altere"
-msgstr[1] ""
+msgstr[1] "%2 e %1 alteres"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -2841,7 +2822,7 @@ msgstr "Tokodon"
 #: main.cpp:95
 #, kde-format
 msgid "Mastodon client"
-msgstr ""
+msgstr "Cliente de Mastodon"
 
 #: main.cpp:97
 #, kde-format
@@ -2937,7 +2918,7 @@ msgstr "Chronologia local"
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr ""
+msgstr "Chronologia Global"
 
 #: timeline/maintimelinemodel.cpp:37
 #, kde-format
@@ -2960,7 +2941,7 @@ msgstr "Tendentia"
 #: timeline/post.cpp:365
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "in le futuro"
 
 #: timeline/post.cpp:367
 #, kde-format
@@ -2986,8 +2967,8 @@ msgstr "%1d"
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] ""
-msgstr[1] "%1 septimanas ante%1 septimanas ante"
+msgstr[0] "1 septimana ante"
+msgstr[1] "%1 septimanas ante"
 
 #: timeline/post.cpp:380
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-14 08:34+0200\n"
+"PO-Revision-Date: 2023-09-17 06:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -81,10 +81,9 @@ msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 მოგყვებათ"
+msgstr "%1-მა თქვენთვის მოყოლა მოითხოვა"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -93,10 +92,9 @@ msgid "%1 favorited your post"
 msgstr "%1 ჩაინიშნა თქვენი პოსტი"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "არჩევანი დასრულდა"
+msgstr "გამოკითხვა %1-სგან დასრულდა"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1928,8 +1926,7 @@ msgid "Add Account"
 msgstr "ანგარიშის დამატება"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "საერთო"
@@ -1940,24 +1937,20 @@ msgid "Color theme"
 msgstr "ფერის თემა"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "პოსტები"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "მოძებნეთ ხალხი, ჭდეები და პოსტები"
+msgstr "პასუხების, სანიშნებისა და აწევების რაოდენობის ჩვენება"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "ბმულის მინიატურის ჩვენება"
+msgstr "ბმულის მინიატურების ჩვენება"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1970,18 +1963,15 @@ msgid "Please choose a font"
 msgstr "გთხოვთ, აირჩიეთ ფონტი"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "მედია"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "დროის ხაზზე გამოსახულებების 16:9-ზე ამოჭრა"
+msgstr "დროის ხაზზე გამოსახულებების 16x9-ზე ამოჭრა"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2036,72 +2026,60 @@ msgid "Apply"
 msgstr "გამოყენება"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "ანგარიშზე ქმედების შესრულება"
+msgstr "ამ ანგარიშისთვის გაფრთხილებების ჩართვა"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "ტიპები"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "მოხსენებები"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "სტატუსები"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "გაძლიერება"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "მიმდევრების გარეშე"
+msgstr "ახალი მიმდევრები"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "მიყოლის მოთხოვნების გარეშე"
+msgstr "ახალი მიყოლის მოთხოვნები"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "სანიშნები"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "დაამატე გამოკითხვა"
+msgstr "გამოკითხვა"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "ჩასწორება"
+msgstr "&ჩასწორებები"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "ანგარიშის დამატება"
+msgstr "ანგარიშის ჩასწორება"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2187,7 +2165,7 @@ msgstr "თავიდან ჩართვა"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "გარეგნობა"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2195,8 +2173,7 @@ msgid "Accounts"
 msgstr "ანგარიშები"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "მართლწერის შემოწმება"
 

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-14 19:18+0200\n"
+"PO-Revision-Date: 2023-09-17 22:44+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -83,10 +83,9 @@ msgid "%1 followed you"
 msgstr "%1(e)k jarraitu zaituzte"
 
 #: account/notificationhandler.cpp:55
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1(e)k jarraitu zaituzte"
+msgstr "%1(e)k zuri jarraitzea eskatu du"
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -95,10 +94,9 @@ msgid "%1 favorited your post"
 msgstr "%1(e)k zure posta gogoko du"
 
 #: account/notificationhandler.cpp:69
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Galdeketa bat bukatu da"
+msgstr "%1(e)ren galdeketa bukatu da"
 
 #: account/notificationhandler.cpp:76
 #, kde-format
@@ -1935,8 +1933,7 @@ msgid "Add Account"
 msgstr "Gehitu kontua"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Orokorra"
@@ -1947,24 +1944,20 @@ msgid "Color theme"
 msgstr "Kolore-gaia"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Postak"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Bilatu jendea, etiketak eta postak"
+msgstr "Erakutsi erantzun, gogoko eta bultzada kopurua"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Erakutsi estekaren aurreikuspegia"
+msgstr "Erakutsi esteken aurreikuspegiak"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -1977,18 +1970,15 @@ msgid "Please choose a font"
 msgstr "Mesedez, aukeratu letra-tipo bat"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Hedabideak"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Moztu denbora-lerroko irudiak 16:9ra"
+msgstr "Moztu denbora-lerroko irudiak 16x9ra"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2043,72 +2033,60 @@ msgid "Apply"
 msgstr "Ezarri"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Hartu kontu horren aurkako ekintza"
+msgstr "Gaitu jakinarazpenak kontu honetarako"
 
 #: content/ui/Settings/NotificationsPage.qml:38
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Motak"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Aipamenak"
 
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Egoerak"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Bultzadak"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Jarraitzailerik ez"
+msgstr "Jarraitzaile berriak"
 
 #: content/ui/Settings/NotificationsPage.qml:94
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Ez dago jarraipen eskaerarik"
+msgstr "Jarraipen eskaera berriak"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Gogokoak"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Gehitu galdeketa"
+msgstr "Galdeketak"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Editatu"
+msgstr "Editatzeak"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Gehitu kontua"
+msgstr "Editatu kontua"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2195,7 +2173,7 @@ msgstr "Berrezarri"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Itxura"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2203,10 +2181,9 @@ msgid "Accounts"
 msgstr "Kontuak"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
-msgstr "Ortografia-aztertzea"
+msgstr "Ortografia-egiaztatzea"
 
 #: content/ui/Settings/SettingsPage.qml:37
 #, kde-format
