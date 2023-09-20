@@ -67,7 +67,7 @@ FormCard.FormCardPage {
 
                     FormCard.FormArrow {
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        direction: FormCard.FormArrow.Right
+                        direction: Qt.RightArrow
                     }
                 }
             }
