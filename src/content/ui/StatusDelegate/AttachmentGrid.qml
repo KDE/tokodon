@@ -132,6 +132,21 @@ QQC2.Control {
                                 anchors.centerIn: parent
                                 onClicked: Qt.openUrlExternally(modelData.remoteUrl)
                             }
+
+                            Kirigami.Chip {
+                                anchors {
+                                    top: parent.top
+                                    topMargin: Kirigami.Units.largeSpacing
+                                    right: parent.right
+                                    rightMargin: Kirigami.Units.largeSpacing
+                                }
+
+                                checked: false
+                                checkable: false
+                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
+                                closable: false
+                                visible: modelData.caption.length !== 0
+                            }
                         }
                     }
                 }
@@ -184,7 +199,9 @@ QQC2.Control {
                             }
                         }
 
-                        Kirigami.Chip {
+                        RowLayout {
+                            spacing: Kirigami.Units.mediumSpacing
+
                             anchors {
                                 top: parent.top
                                 topMargin: Kirigami.Units.largeSpacing
@@ -192,10 +209,20 @@ QQC2.Control {
                                 rightMargin: Kirigami.Units.largeSpacing
                             }
 
-                            checked: false
-                            checkable: false
-                            text: i18n("GIF")
-                            closable: false
+                            Kirigami.Chip {
+                                checked: false
+                                checkable: false
+                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
+                                closable: false
+                                visible: modelData.caption.length !== 0
+                            }
+
+                            Kirigami.Chip {
+                                checked: false
+                                checkable: false
+                                text: i18n("GIF")
+                                closable: false
+                            }
                         }
                     }
                 }
@@ -241,7 +268,9 @@ QQC2.Control {
                             }
                         }
 
-                        Kirigami.Chip {
+                        RowLayout {
+                            spacing: Kirigami.Units.mediumSpacing
+
                             anchors {
                                 top: parent.top
                                 topMargin: Kirigami.Units.largeSpacing
@@ -249,10 +278,20 @@ QQC2.Control {
                                 rightMargin: Kirigami.Units.largeSpacing
                             }
 
-                            checked: false
-                            checkable: false
-                            text: i18n("Video")
-                            closable: false
+                            Kirigami.Chip {
+                                checked: false
+                                checkable: false
+                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
+                                closable: false
+                                visible: modelData.caption.length !== 0
+                            }
+
+                            Kirigami.Chip {
+                                checked: false
+                                checkable: false
+                                text: i18n("Video")
+                                closable: false
+                            }
                         }
                     }
                 }
