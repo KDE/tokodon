@@ -113,9 +113,16 @@ QQC2.Control {
                                 }
                             }
 
-                            Image {
+                            Rectangle {
                                 anchors.fill: parent
-                                source: visible ? modelData.tempSource : ''
+                                color: "black"
+
+                                Image {
+                                    anchors.fill: parent
+
+                                    source: visible ? modelData.tempSource : ''
+                                }
+
                                 visible: parent.status !== Image.Ready || root.isSensitive
                             }
 
