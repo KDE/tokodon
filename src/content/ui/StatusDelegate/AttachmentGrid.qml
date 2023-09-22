@@ -281,9 +281,6 @@ QQC2.Control {
 
         visible: parent.isSensitive && parent.hasValidAttachment
 
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-        Kirigami.Theme.inherit: false
-
         text: i18n("Media Hidden")
         onClicked: if (root.isSensitive) {
             root.isSensitive = false;
