@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.sonnet 1 as Sonnet
 import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 FormCard.FormCardPage {
     FormCard.FormCard {
@@ -134,17 +135,14 @@ FormCard.FormCardPage {
                     ListView {
                         clip: true
                         model: settings.dictionaryModel
-                        delegate: Kirigami.CheckableListItem
-                        {
+                        delegate: Kirigami.CheckableListItem {
                             label: model.display
-                            action: Kirigami.Action
-                            {
+                            action: Kirigami.Action {
                                 onTriggered: model.checked = checked
                             }
                             Accessible.description: model.isDefault ? i18n("Default Language") : ''
                             checked: model.checked
-                            trailing: Kirigami.Icon
-                            {
+                            trailing: Kirigami.Icon {
                                 source: "favorite"
                                 visible: model.isDefault
                                 HoverHandler {
@@ -164,8 +162,7 @@ FormCard.FormCardPage {
                 id: dictionaryPage
                 Kirigami.ScrollablePage {
                     title: i18n("Spell checking dictionary")
-                    footer: QQC2.ToolBar
-                    {
+                    footer: QQC2.ToolBar {
                         contentItem: RowLayout {
                             QQC2.TextField {
                                 id: dictionaryField
@@ -189,21 +186,39 @@ FormCard.FormCardPage {
                         }
                     }
                     ListView {
+                        topMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+                        bottomMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+
                         model: settings.currentIgnoreList
-                        delegate: Kirigami.BasicListItem
-                        {
-                            label: model.modelData
-                            trailing: QQC2.ToolButton
-                            {
-                                icon.name: "delete"
-                                onClicked: {
-                                    remove(modelData)
-                                    if (instantApply) {
-                                        settings.save();
-                                    }
+                        delegate: Delegates.RoundedItemDelegate {
+                            id: wordDelegate
+
+                            required property var modelData
+
+                            text: modelData
+
+                            contentItem: RowLayout {
+                                spacing: Kirigami.Units.smallSpacing
+
+                                Delegates.DefaultContentItem {
+                                    itemDelegate: wordDelegate
+                                    Layout.fillWidth: true
                                 }
-                                QQC2.ToolTip {
-                                    text: i18n("Delete word")
+
+                                QQC2.ToolButton {
+                                    text: i18nc("@action:button", "Delete word")
+                                    icon.name: "delete"
+                                    display: QQC2.ToolButton.IconOnly
+                                    onClicked: {
+                                        remove(wordDelegate.modelData);
+                                        if (instantApply) {
+                                            settings.save();
+                                        }
+                                    }
+
+                                    QQC2.ToolTip.text: text
+                                    QQC2.ToolTip.visible: hovered
+                                    QQC2.ToolTip.delay: Kirigami.ToolTip.toolTipDelay
                                 }
                             }
                         }
