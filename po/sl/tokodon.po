@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:45+0000\n"
-"PO-Revision-Date: 2023-09-16 09:33+0200\n"
+"POT-Creation-Date: 2023-09-24 01:43+0000\n"
+"PO-Revision-Date: 2023-09-23 09:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #: account/abstractaccount.cpp:494
@@ -2204,42 +2204,42 @@ msgstr "O Tokodonu"
 msgid "About KDE"
 msgstr "O KDE"
 
-#: content/ui/Settings/SonnetPage.qml:29
+#: content/ui/Settings/SonnetPage.qml:30
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Omogoči samodejno črkovanje"
 
-#: content/ui/Settings/SonnetPage.qml:43
+#: content/ui/Settings/SonnetPage.qml:44
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Prezri besede z velikimi črkami"
 
-#: content/ui/Settings/SonnetPage.qml:57
+#: content/ui/Settings/SonnetPage.qml:58
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Prezri besede z vezaji"
 
-#: content/ui/Settings/SonnetPage.qml:71
+#: content/ui/Settings/SonnetPage.qml:72
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Samodejno zaznaj jezik"
 
-#: content/ui/Settings/SonnetPage.qml:84
+#: content/ui/Settings/SonnetPage.qml:85
 #, kde-format
 msgid "Selected default language:"
 msgstr "Izbrani privzeti jezik:"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "None"
 msgstr "Noben"
 
-#: content/ui/Settings/SonnetPage.qml:106
+#: content/ui/Settings/SonnetPage.qml:107
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Dodatni jeziki s črkovalnikom"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2248,41 +2248,43 @@ msgstr ""
 "%1 bo zagotavljal črkovalnike in sugestije za jezike navedene tu, kadar je "
 "omogočeno črkovanje."
 
-#: content/ui/Settings/SonnetPage.qml:120
+#: content/ui/Settings/SonnetPage.qml:121
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Odpri osebni slovar"
 
-#: content/ui/Settings/SonnetPage.qml:132
+#: content/ui/Settings/SonnetPage.qml:133
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Jeziki s črkovalnikom"
 
-#: content/ui/Settings/SonnetPage.qml:144
-#: content/ui/Settings/SonnetPage.qml:155
+#: content/ui/Settings/SonnetPage.qml:143
+#: content/ui/Settings/SonnetPage.qml:153
 #, kde-format
 msgid "Default Language"
 msgstr "Privzeti jezik"
 
-#: content/ui/Settings/SonnetPage.qml:166
+#: content/ui/Settings/SonnetPage.qml:164
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Slovar črkovalnika"
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:171
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Dodaj novo besedo v vaš osebni slovar…"
 
-#: content/ui/Settings/SonnetPage.qml:177
+#: content/ui/Settings/SonnetPage.qml:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Dodaj besedo"
 
-#: content/ui/Settings/SonnetPage.qml:206
-#, kde-format
+#: content/ui/Settings/SonnetPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Delete word"
+msgctxt "@action:button"
 msgid "Delete word"
 msgstr "Briši besedo"
 
@@ -2572,12 +2574,10 @@ msgstr "Ni na voljo"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:146
 #: content/ui/StatusDelegate/AttachmentGrid.qml:215
 #: content/ui/StatusDelegate/AttachmentGrid.qml:284
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr "Vse"
+msgstr "Alt"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:223
 #, kde-format
