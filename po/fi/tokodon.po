@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-24 01:43+0000\n"
-"PO-Revision-Date: 2023-07-27 20:49+0300\n"
+"PO-Revision-Date: 2023-09-20 18:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -205,16 +205,14 @@ msgid "No featured accounts"
 msgstr "Ei esiteltyjä tilejä"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgid "No users favourited this post"
-msgstr "Kirjoita tämä julkaisu uudelleen"
+msgstr "Kukaan ei ole merkinnyt tätä julkaisua suosikiksi"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgid "No users boosted this post"
-msgstr "Kirjoita tämä julkaisu uudelleen"
+msgstr "Kukaan ei ole tehostanut tätä julkaisua"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -532,7 +530,7 @@ msgstr "Linkki kopioitu."
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
-msgstr ""
+msgstr "Ei emojeja"
 
 #: content/ui/ConversationPage.qml:11
 #, kde-format
@@ -877,30 +875,28 @@ msgid "No accounts found"
 msgstr "Tilejä ei löytynyt"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Poista kirjanmerkki"
+msgstr "Luo sähköpostiesto"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr ""
+msgstr "Sähköpostiverkkoalueen tiedot"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr ""
+msgstr "Sähköpostiverkkoalueen nimi"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Lisää tili"
+msgstr "Esto luotu"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -908,45 +904,44 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Tämänviikkoiset kirjautumisyritykset tilille"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Tämänviikkoiset kirjautumisyritykset IP-osoitteeseen"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr ""
+msgstr "Poista sähköpostiesto"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr ""
+msgstr "Sähköpostiesto poistettu"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr "Poista kirjanmerkki"
+msgstr "Uusi sähköpostiverkkoalueen esto"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
-msgstr ""
+msgstr "Verkkoalue *"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
@@ -954,30 +949,30 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Tämä voi olla sähköpostiosoitteessa näkyvä verkkoaluenimi tai sen käyttämä "
+"MX-tietue. Ne tarkistetaan kirjauduttaessa."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Poista kirjanmerkki"
+msgstr "Selvitä verkkoalue"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr ""
+msgstr "Uusi sähköpostiesto lisätty"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 kirjautumisyritystä viikon aikana"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "No email blocks found"
-msgstr "Keskustelut"
+msgstr "Sähköpostiestoja ei löytynyt"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
@@ -1179,169 +1174,157 @@ msgstr "Federointeja ei löytynyt"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr ""
+msgstr "Luo sääntö"
 
 #: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Uusi IP-sääntö"
 
 #: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
-msgstr ""
+msgstr "IP*"
 
 #: content/ui/ModerationTools/IpRulePage.qml:43
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Vanheneminen"
 
 #: content/ui/ModerationTools/IpRulePage.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 päivä"
 
 #: content/ui/ModerationTools/IpRulePage.qml:52
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "%1 viikkoa sitten"
+msgstr "2 viikkoa"
 
 #: content/ui/ModerationTools/IpRulePage.qml:56
-#, fuzzy, kde-format
-#| msgid "1 month ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "Kuukausi sitten"
+msgstr "1 kuukausi"
 
 #: content/ui/ModerationTools/IpRulePage.qml:60
-#, fuzzy, kde-format
-#| msgid "1 month ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "Kuukausi sitten"
+msgstr "6 kuukautta"
 
 #: content/ui/ModerationTools/IpRulePage.qml:64
-#, fuzzy, kde-format
-#| msgid "1 year ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "vuosi sitten"
+msgstr "1 vuosi"
 
 #: content/ui/ModerationTools/IpRulePage.qml:68
-#, fuzzy, kde-format
-#| msgid "1 year ago"
+#, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "vuosi sitten"
+msgstr "3 vuotta"
 
 #: content/ui/ModerationTools/IpRulePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Yksityinen"
+msgstr "Huomautus"
 
 #: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Valinnainen. Muista, miksi loit säännön."
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Sääntö *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Päätä, mitä tapahtuu tämän IP:n pyynnöille"
 
 #: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Rajoita kirjautumisia"
 
 #: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Uudet kirjautumiset vaativat hyväksynnän"
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Block sign-ups"
-msgstr "Lisää tili"
+msgstr "Estä kirjautumiset"
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "Uudet kirjautumiset eivät ole mahdollisia"
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Block access"
-msgstr "Lisää tili"
+msgstr "Estä pääsy"
 
 #: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Estä pääsy kaikkiin resursseihin"
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr ""
+msgstr "Luo IP-sääntö"
 
 #: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
-msgstr ""
+msgstr "Uusi IP-sääntö lisätty"
 
 #: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Rajoita kirjautumisia"
 
 #: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Lisää tili"
+msgstr "Estä kirjautumiset"
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Lisää tili"
+msgstr "Estä pääsy"
 
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr ""
+msgstr "IP-sääntöjä ei löytynyt"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:21
 #, kde-format
@@ -1693,118 +1676,108 @@ msgid "Edit Domain Block"
 msgstr "Muokkaa verkkoalue-estoa"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr "Poista"
+msgstr "Poista IP-sääntö"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "IP-sääntö poistettu"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "Päivitä IP-sääntö"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
 #, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Vanheneminen"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox Poll expire times"
-#| msgid "1 day"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
 msgstr "1 päivä"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
-#, fuzzy, kde-format
-#| msgid "%1 weeks ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "%1 viikkoa sitten"
+msgstr "2 viikkoa"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
-#, fuzzy, kde-format
-#| msgid "1 month ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "Kuukausi sitten"
+msgstr "1 kuukausi"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
-#, fuzzy, kde-format
-#| msgid "1 month ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "Kuukausi sitten"
+msgstr "6 kuukautta"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
-#, fuzzy, kde-format
-#| msgid "1 year ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "vuosi sitten"
+msgstr "1 vuosi"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
-#, fuzzy, kde-format
-#| msgid "1 year ago"
+#, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "vuosi sitten"
+msgstr "3 vuotta"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Yksityinen"
+msgstr "Huomautus"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Sääntö *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:154
 #, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr ""
+msgstr "Päivitä IP-sääntö"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:164
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "IP-sääntö päivitetty"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:182
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Vanhenee"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:190
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
 msgstr "Ei mitään"
@@ -1813,13 +1786,13 @@ msgstr "Ei mitään"
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Vakavuus"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:207
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "Päivitä IP-sääntö"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:15
 #, fuzzy, kde-format
@@ -2604,11 +2577,9 @@ msgid "Post Language"
 msgstr "Julkaisukieli"
 
 #: content/ui/StatusComposer/StatusComposer.qml:372
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Poll toolbar"
-#| msgid "Add Choice"
+#, kde-format
 msgid "Add Emoji"
-msgstr "Lisää valinta"
+msgstr "Lisää emoji"
 
 #: content/ui/StatusComposer/StatusComposer.qml:387
 #, kde-format
@@ -3119,23 +3090,22 @@ msgstr "Säie"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: utils/emojimodel.cpp:135
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr ""
+msgstr "Mukautettu"
 
 #: utils/emojimodel.cpp:140
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr ""
+msgstr "Hymiöt"
 
 #: utils/emojimodel.cpp:145
-#, fuzzy, kde-format
-#| msgid "People"
+#, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
 msgstr "Ihmiset"
@@ -3144,43 +3114,43 @@ msgstr "Ihmiset"
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
-msgstr ""
+msgstr "Luonto"
 
 #: utils/emojimodel.cpp:155
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
-msgstr ""
+msgstr "Ruoka"
 
 #: utils/emojimodel.cpp:160
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
-msgstr ""
+msgstr "Toiminta"
 
 #: utils/emojimodel.cpp:165
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
-msgstr ""
+msgstr "Matkailu"
 
 #: utils/emojimodel.cpp:170
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
-msgstr ""
+msgstr "Esineet"
 
 #: utils/emojimodel.cpp:175
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
-msgstr ""
+msgstr "Symbolit"
 
 #: utils/emojimodel.cpp:180
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
-msgstr ""
+msgstr "Liput"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
