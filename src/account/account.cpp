@@ -234,14 +234,15 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
     connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
+        if (env.isObject() && env.object().contains("event")) {
+            const auto event = stringToStreamingEventType[env.object()["event"].toString()];
+            Q_EMIT streamingEvent(event, env.object()["payload"].toString().toLocal8Bit());
 
-        const auto event = stringToStreamingEventType[env.object()["event"].toString()];
-        Q_EMIT streamingEvent(event, env.object()["payload"].toString().toLocal8Bit());
-
-        if (event == NotificationEvent) {
-            const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
-            handleNotification(doc);
-            return;
+            if (event == NotificationEvent) {
+                const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
+                handleNotification(doc);
+                return;
+            }
         }
     });
 

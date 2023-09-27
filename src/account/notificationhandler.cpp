@@ -80,7 +80,9 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         Q_UNREACHABLE();
     }
 
-    knotification->setText(notification->post()->content());
+    if (notification->post() != nullptr) {
+        knotification->setText(notification->post()->content());
+    }
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
     if (!notification->identity()->avatarUrl().isEmpty()) {
