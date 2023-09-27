@@ -27,6 +27,7 @@ void MockAccount::get(const QUrl &url,
         auto reply = m_getReplies[url];
         reply->open(QIODevice::ReadOnly);
         callback(reply);
+        reply->seek(0);
     } else {
         qWarning() << url << m_getReplies;
     }

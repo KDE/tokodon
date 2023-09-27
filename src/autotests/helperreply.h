@@ -24,6 +24,11 @@ public:
         return apiResult.read(data, maxSize);
     }
 
+    bool seek(const qint64 pos) override
+    {
+        return apiResult.seek(0);
+    }
+
     void abort() override
     {
     }
