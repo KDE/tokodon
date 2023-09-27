@@ -235,24 +235,25 @@ qt_target_qml_sources(tokodon_static
         content/ui/TimelinePage.qml
         content/ui/UserInfo.qml
 )
+
+set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
+    QT_RESOURCE_ALIAS /org.kde.tokodon.svg
+)
+
 qt_target_qml_sources(tokodon_static
-        PREFIX /
-        RESOURCES
+    PREFIX /
+    RESOURCES
         content/elephant.svg
-        icons/tokodon/scalable/post-bookmarked.svg
-        icons/tokodon/scalable/post-boost.svg
-        icons/tokodon/scalable/post-boosted.svg
-        icons/tokodon/scalable/post-favorite.svg
-        icons/tokodon/scalable/post-favorited.svg
-        icons/tokodon/scalable/post-reply.svg
-        icons/tokodon/scalable/tokodon-chat-reply.svg
-        icons/tokodon/scalable/post-reply-filled.svg
-        icons/tokodon/index.theme
         ../org.kde.tokodon.svg
 )
-set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
-        QT_RESOURCE_ALIAS /org.kde.tokodon.svg
-)
+
+if (NOT ANDROID)
+    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/breeze/actions)
+    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/breeze-dark/actions)
+
+else()
+    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
+endif()
 
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/search)
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/timeline)

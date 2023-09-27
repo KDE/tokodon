@@ -33,9 +33,9 @@ RowLayout {
     Kirigami.Icon {
         source: {
             if (root.isBoosted) {
-                return "post-boost"
+                return "tokodon-post-boost"
             } else if (root.isReply) {
-                return "post-reply"
+                return "tokodon-post-reply"
             }
 
             return ''

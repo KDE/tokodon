@@ -348,8 +348,8 @@ QQC2.ItemDelegate {
                 leftPadding: buttonLayout.buttonPadding
 
                 interacted: root.repliesCount > 0
-                iconName: "post-reply"
-                interactedIconName: "post-reply-filled"
+                iconName: "tokodon-post-reply"
+                interactedIconName: "tokodon-post-reply-filled"
 
                 tooltip: i18nc("Reply to a post", "Reply")
                 text: Config.showPostStats && !root.selected ? root.repliesCount : ''
@@ -370,8 +370,8 @@ QQC2.ItemDelegate {
 
                 enabled: root.visibility !== Post.Direct
 
-                iconName: 'post-boost'
-                interactedIconName: 'post-boosted'
+                iconName: 'tokodon-post-boost'
+                interactedIconName: 'tokodon-post-boosted'
 
                 text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
                 tooltip: i18nc("Share a post", "Boost")
@@ -391,8 +391,8 @@ QQC2.ItemDelegate {
                 interacted: root.favourited
                 interactionColor: "orange"
 
-                iconName: 'post-favorite'
-                interactedIconName: 'post-favorited'
+                iconName: 'tokodon-post-favorite'
+                interactedIconName: 'tokodon-post-favorited'
 
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
                 tooltip: i18nc("Favorite a post", "Favorite")
@@ -413,7 +413,7 @@ QQC2.ItemDelegate {
                 interactionColor: "red"
 
                 iconName: 'bookmarks'
-                interactedIconName: 'post-bookmarked'
+                interactedIconName: 'tokodon-post-bookmarked'
 
                 tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
 
@@ -464,7 +464,7 @@ QQC2.ItemDelegate {
             visible: root.expandedPost && root.selected
             InteractionButton {
                 visible: root.repliesCount > 0
-                iconName: "post-reply-filled"
+                iconName: "tokodon-post-reply-filled"
                 tooltip: i18np("%1 Reply", "%1 Replies", root.repliesCount)
                 text: i18np("%1 Reply", "%1 Replies", root.repliesCount)
                 enabled: false
@@ -476,7 +476,7 @@ QQC2.ItemDelegate {
 
             InteractionButton {
                 visible: root.favouritesCount > 0
-                iconName: "post-favorited"
+                iconName: "tokodon-post-favorited"
                 tooltip: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
                 text: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
                 enabled: true
@@ -495,7 +495,7 @@ QQC2.ItemDelegate {
 
             InteractionButton {
                 visible: root.reblogsCount > 0
-                iconName: "post-boosted"
+                iconName: "tokodon-post-boosted"
                 tooltip: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
                 text: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
                 enabled: true

@@ -62,7 +62,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action boostsOnlyAction: Kirigami.Action {
         text: i18nc("Show only boosts", "Boosts")
-        icon.name: "post-boost"
+        icon.name: "tokodon-post-boost"
         checkable: true
         onCheckedChanged: if (checked) {
             notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update']
@@ -71,7 +71,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
         text: i18nc("Show only favorites", "Favorites")
-        icon.name: "post-favorite"
+        icon.name: "tokodon-post-favorite"
         checkable: true
         onCheckedChanged: if (checked) {
             notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update']
@@ -87,10 +87,7 @@ Kirigami.ScrollablePage {
         }
     }
 
-    property
-    Kirigami.Action
-    postsOnlyAction: Kirigami.Action
-    {
+    property Kirigami.Action postsOnlyAction: Kirigami.Action {
         text: i18nc("Show only followed statuses", "Posts")
         icon.name: "user-home-symbolic"
         checkable: true
