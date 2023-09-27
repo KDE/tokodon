@@ -68,6 +68,7 @@ public:
 
     void loadFromSettings();
     void migrateSettings();
+    void setTestMode(bool enabled);
 
     bool isReady() const;
     bool hasAccounts() const;
@@ -161,6 +162,7 @@ private:
 
     bool m_ready = false;
     bool m_hasAnyAccounts = false;
+    bool m_testMode = false;
 
     void checkIfLoadingFinished();
 };

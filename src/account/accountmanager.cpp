@@ -17,9 +17,6 @@ AccountManager::AccountManager(QObject *parent)
     , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
 {
-    migrateSettings();
-    loadFromSettings();
-
     connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (account != nullptr) {
             account->checkForFollowRequests();
@@ -107,7 +104,11 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
     m_accounts.append(account);
     int acctIndex = m_accountStatus.size();
     if (!skipAuthenticationCheck) {
-        m_accountStatus.push_back(AccountStatus::NotLoaded);
+        if (m_testMode) {
+            m_accountStatus.push_back(AccountStatus::Loaded);
+        } else {
+            m_accountStatus.push_back(AccountStatus::NotLoaded);
+        }
         m_accountStatusStrings.push_back({});
     }
     endInsertRows();
@@ -150,6 +151,10 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
     if (m_selected_account == nullptr) {
         m_selected_account = account;
         Q_EMIT accountSelected(m_selected_account);
+    }
+
+    if (m_testMode) {
+        checkIfLoadingFinished();
     }
 }
 
@@ -208,7 +213,7 @@ bool AccountManager::selectedAccountHasIssue() const
     }
 
     const int index = m_accounts.indexOf(m_selected_account);
-    if (index != -1) {
+    if (index != -1 && index < m_accountStatus.size()) {
         return m_accountStatus[index] == AccountStatus::InvalidCredentials;
     }
 
@@ -269,6 +274,11 @@ int AccountManager::selectedIndex() const
 
 void AccountManager::loadFromSettings()
 {
+    if (m_testMode) {
+        qCDebug(TOKODON_LOG) << "Test mode enabled, no local accounts are loaded.";
+        return;
+    }
+
     qCDebug(TOKODON_LOG) << "Loading accounts from settings.";
 
     auto config = KSharedConfig::openStateConfig();
@@ -382,6 +392,10 @@ QString AccountManager::accessTokenKey(const QString &name)
 
 void AccountManager::migrateSettings()
 {
+    if (m_testMode) {
+        return;
+    }
+
     QSettings settings;
 
     const auto version = settings.value("settingsVersion", -1).toInt();
@@ -466,4 +480,9 @@ bool AccountManager::isFlatpak() const
 #else
     return false;
 #endif
+}
+
+void AccountManager::setTestMode(const bool enabled)
+{
+    m_testMode = enabled;
 }

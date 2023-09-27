@@ -31,6 +31,7 @@
 
 #include "tokodon-version.h"
 
+#include "account/accountmanager.h"
 #include "accountconfig.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
@@ -41,6 +42,11 @@
 
 #ifdef Q_OS_WINDOWS
 #include <Windows.h>
+#endif
+
+#ifdef TEST_MODE
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
 #endif
 
 using namespace Qt::Literals::StringLiterals;
@@ -182,6 +188,23 @@ int main(int argc, char *argv[])
     engine.setNetworkAccessManagerFactory(&namFactory);
 
     engine.addImageProvider(QLatin1String("blurhash"), new BlurhashImageProvider);
+
+#ifdef TEST_MODE
+    AccountManager::instance().setTestMode(true);
+
+    auto account = new MockAccount();
+    AccountManager::instance().addAccount(account, true);
+    AccountManager::instance().selectAccount(account);
+
+    QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
+    url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}});
+    account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
+
+    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
+#else
+    AccountManager::instance().migrateSettings();
+    AccountManager::instance().loadFromSettings();
+#endif
 
     if (parser.isSet(shareOption)) {
         engine.loadFromModule("org.kde.tokodon", "StandaloneComposer");
