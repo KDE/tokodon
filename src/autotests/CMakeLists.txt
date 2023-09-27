@@ -65,3 +65,7 @@ ecm_add_test(emailblocktooltest.cpp
 	LINK_LIBRARIES tokodon_test_static Qt::Test
 	NAME_PREFIX "tokodon-"
 )
+
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+	add_subdirectory(appiumtests)
+endif()

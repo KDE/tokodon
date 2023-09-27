@@ -48,5 +48,9 @@ Dependencies:
       'frameworks/kio': '@stable'
       'frameworks/purpose': '@stable'
 
+  - 'on': ['Linux']
+    'require':
+      'sdk/selenium-webdriver-at-spi': '@latest'
+
 Options:
   require-passing-tests-on: [ '@all' ]
