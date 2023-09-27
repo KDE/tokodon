@@ -115,11 +115,21 @@ private Q_SLOTS:
 
         ThreadModel threadModel;
         threadModel.setPostId(QStringLiteral("103270115826048975"));
-        QCOMPARE(threadModel.rowCount({}), 3);
+        QCOMPARE(threadModel.rowCount({}), 4);
         QCOMPARE(threadModel.data(threadModel.index(1, 0), AbstractTimelineModel::SelectedRole).toBool(), true);
         QCOMPARE(threadModel.displayName(), "Thread");
         QCOMPARE(threadModel.postId(), "103270115826048975");
         QCOMPARE(threadModel.canFetchMore({}), false);
+
+        // in_reply_to_account_id filled
+        QCOMPARE(threadModel.data(threadModel.index(2, 0), AbstractTimelineModel::IsReplyRole).toBool(), true);
+        QCOMPARE(threadModel.data(threadModel.index(2, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->username(),
+                 QStringLiteral("Gargron"));
+
+        // in_reply_to_account_id unfilled
+        QCOMPARE(threadModel.data(threadModel.index(3, 0), AbstractTimelineModel::IsReplyRole).toBool(), true);
+        QCOMPARE(threadModel.data(threadModel.index(3, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->username(),
+                 QStringLiteral("Gargron"));
     }
 
     void testModelPoll()
