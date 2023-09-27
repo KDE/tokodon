@@ -87,6 +87,8 @@ QQC2.ItemDelegate {
     Kirigami.Theme.colorSet: root.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
     Kirigami.Theme.inherit: false
 
+    Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
+
     onClicked: {
         if (postContent.hoveredLink) {
             return;
@@ -375,6 +377,7 @@ QQC2.ItemDelegate {
                 tooltip: i18nc("Share a post", "Boost")
 
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
             }
             Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
@@ -395,6 +398,7 @@ QQC2.ItemDelegate {
                 tooltip: i18nc("Favorite a post", "Favorite")
 
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+                Accessible.description: root.favourited ? i18n("Favourited") : i18n("Favourite")
             }
             Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
@@ -414,6 +418,7 @@ QQC2.ItemDelegate {
                 tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
 
                 onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+                Accessible.description: root.bookmarked ? i18n("Bookmarked") : i18n("Bookmark")
             }
         }
 

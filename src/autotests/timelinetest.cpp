@@ -86,10 +86,10 @@ private Q_SLOTS:
         MainTimelineModel timelineModel;
         timelineModel.setName(QStringLiteral("home"));
 
-        QCOMPARE(timelineModel.rowCount({}), 2);
+        QCOMPARE(timelineModel.rowCount({}), 5);
         QVERIFY(timelineModel.canFetchMore({}));
         timelineModel.fetchMore({});
-        QCOMPARE(timelineModel.rowCount({}), 4);
+        QCOMPARE(timelineModel.rowCount({}), 10);
     }
 
     void testTagModel()
@@ -104,10 +104,10 @@ private Q_SLOTS:
         TagsTimelineModel tagModel;
         tagModel.setHashtag(QStringLiteral("home"));
 
-        QCOMPARE(tagModel.rowCount({}), 2);
+        QCOMPARE(tagModel.rowCount({}), 5);
         QVERIFY(tagModel.canFetchMore({}));
         tagModel.fetchMore({});
-        QCOMPARE(tagModel.rowCount({}), 4);
+        QCOMPARE(tagModel.rowCount({}), 10);
     }
 
     void testThreadModel()
@@ -144,7 +144,7 @@ private Q_SLOTS:
         statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json"_L1);
         statusExampleApi.open(QIODevice::ReadOnly);
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
-        QCOMPARE(timelineModel.rowCount({}), 1);
+        QCOMPARE(timelineModel.rowCount({}), 6);
 
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), QStringLiteral("103270115826048975"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});

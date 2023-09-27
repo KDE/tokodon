@@ -45,6 +45,17 @@ QQC2.Control {
     Layout.fillHeight: shouldKeepAspectRatio
     Layout.topMargin: Kirigami.Units.largeSpacing
 
+    Accessible.description: {
+        switch (root.attachments[0].attachmentType) {
+            case Attachment.Image:
+                return i18n("Status with image attachment");
+            case Attachment.GifV:
+                return i18n("Status with GifV attachment");
+            case Attachment.Video:
+                return i18n("Status with Video attachment");
+        }
+    }
+
     topPadding: 0
     leftPadding: 0
     bottomPadding: 0
@@ -76,6 +87,8 @@ QQC2.Control {
 
                         sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
                         sourceHeight: modelData.sourceHeight > img.sourceSize.height ? modelData.sourceHeight : img.sourceSize.height
+
+                        Accessible.description: modelData.caption
 
                         FocusedImage {
                             id: img
@@ -171,6 +184,8 @@ QQC2.Control {
                         showControls: false
                         looping: true
 
+                        Accessible.description: modelData.caption
+
                         MouseArea {
                             anchors.fill: parent
                             onClicked: if (root.isSensitive) {
@@ -245,6 +260,8 @@ QQC2.Control {
                         autoPlay: false
                         isSensitive: root.isSensitive
                         looping: false
+
+                        Accessible.description: modelData.caption
 
                         MouseArea {
                             anchors.fill: parent
