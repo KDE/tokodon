@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-24 01:43+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2023-08-27 23:06+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:494
+#: account/abstractaccount.cpp:617
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account/abstractaccount.cpp:495
+#: account/abstractaccount.cpp:618
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account/abstractaccount.cpp:496
+#: account/abstractaccount.cpp:619
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account/abstractaccount.cpp:497
+#: account/abstractaccount.cpp:620
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account/abstractaccount.cpp:498
+#: account/abstractaccount.cpp:621
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account/abstractaccount.cpp:499
+#: account/abstractaccount.cpp:622
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account/abstractaccount.cpp:500
+#: account/abstractaccount.cpp:623
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account/abstractaccount.cpp:501
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account/abstractaccount.cpp:502
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
@@ -379,13 +379,13 @@ msgstr "계정 편집기"
 msgid "Settings"
 msgstr "설정"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:247
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:258
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "설정"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:287
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:298
 #, kde-format
 msgid "Follow Requests"
 msgstr "팔로우 요청"
@@ -486,36 +486,6 @@ msgstr "공유"
 msgid "Share the selected media"
 msgstr "선택한 미디어 공유"
 
-#: content/ui/AuthorizationPage.qml:15
-#, kde-format
-msgid "Authorization"
-msgstr "인증"
-
-#: content/ui/AuthorizationPage.qml:25
-#, kde-format
-msgid "Authorize Tokodon to act on your behalf"
-msgstr "Tokodon이 내 이름으로 활동할 수 있도록 인증"
-
-#: content/ui/AuthorizationPage.qml:38
-#, kde-format
-msgid "To continue, please open the following link and authorize Tokodon: %1"
-msgstr "계속 진행하려면 다음 링크를 열고 Tokodon을 인증하십시오: %1"
-
-#: content/ui/AuthorizationPage.qml:54 content/ui/AuthorizationPage.qml:73
-#, kde-format
-msgid "Open Link"
-msgstr "링크 열기"
-
-#: content/ui/AuthorizationPage.qml:59 content/ui/AuthorizationPage.qml:82
-#, kde-format
-msgid "Copy Link"
-msgstr "링크 복사"
-
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:86
-#, kde-format
-msgid "Link copied."
-msgstr "링크가 복사되었습니다."
-
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -531,7 +501,7 @@ msgstr "대화"
 msgid "No Conversations"
 msgstr "대화 없음"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:380
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:391
 #, kde-format
 msgid "Explore"
 msgstr "탐색"
@@ -582,122 +552,288 @@ msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
 msgstr "모든 언어"
 
-#: content/ui/LoginPage.qml:14
+#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Authorization"
+msgctxt "@title:window"
+msgid "Authorization"
+msgstr "인증"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:17
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:window"
+msgid "Login Issue"
+msgstr "로그인"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
+msgid "There was an issue logging into the server:<br><b>%1</b>"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:33
+#, kde-format
+msgid ""
+"Resolve this issue by logging into the server's website. Once completed, try "
+"logging in again with the button below."
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:43
+#, kde-format
+msgid "View Website"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:51
+#, kde-format
+msgid "Re-Attempt Log In"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:window"
 msgid "Login"
 msgstr "로그인"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:84
-#, kde-format
+#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/RegistrationPage.qml:26
+#: content/ui/LoginFlow/RegistrationPage.qml:37
+#: content/ui/LoginFlow/ServersPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@info:status Network status"
+#| msgid "Failed to contact server: %1. Please check your settings."
 msgctxt "@info:status Network status"
-msgid "Failed to contact server: %1. Please check your settings."
+msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "서버와 통신할 수 없음: %1. 설정을 확인하십시오."
 
-#: content/ui/LoginPage.qml:30
+#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/RegistrationPage.qml:88
+#: content/ui/LoginFlow/ServersPage.qml:38
+#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/Settings/NetworkProxyPage.qml:58
 #, kde-format
-msgid "Welcome to Tokodon"
-msgstr "Tokodon에 오신 것을 환영합니다"
+msgid "Proxy Settings"
+msgstr "프록시 설정"
 
-#: content/ui/LoginPage.qml:36
+#: content/ui/LoginFlow/LoginPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:group"
+msgid "Login"
+msgstr "로그인"
+
+#: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url:"
 msgstr "인스턴스 URL:"
 
-#: content/ui/LoginPage.qml:45
+#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/ServersPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Mastodon client"
+msgid "mastodon.social"
+msgstr "마스토돈 클라이언트"
+
+#: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "중재 도구 활성화"
 
-#: content/ui/LoginPage.qml:46
-#, kde-format
+#: content/ui/LoginFlow/LoginPage.qml:60
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
+#| "trouble logging into your server."
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
-"trouble logging into your server."
+"trouble logging in."
 msgstr ""
 "Tokodon이 중재 도구에 접근할 수 있도록 허용합니다. 서버에 로그인할 때 문제가 "
 "있으면 이 설정을 비활성화해 보십시오."
 
-#: content/ui/LoginPage.qml:54
+#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "계속"
 
-#: content/ui/LoginPage.qml:57
+#: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "인스턴스 URL을 입력해야 합니다!"
 
-#: content/ui/LoginPage.qml:74
-#, kde-format
-msgctxt "@title:group Login page"
+#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/ServersPage.qml:94
+#, fuzzy, kde-format
+#| msgctxt "@title:group Login page"
+#| msgid "Network Settings"
+msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "네트워크 설정"
 
-#: content/ui/LoginPage.qml:80
+#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "SSL 오류 무시"
 
-#: content/ui/LoginPage.qml:87 content/ui/Settings/NetworkProxyPage.qml:58
-#, kde-format
-msgid "Proxy Settings"
-msgstr "프록시 설정"
+#: content/ui/LoginFlow/RegistrationPage.qml:18
+#, fuzzy, kde-format
+#| msgctxt "The location being downloaded to"
+#| msgid "Destination"
+msgctxt "@title:window"
+msgid "Registration"
+msgstr "대상"
 
-#: content/ui/Main.qml:237
+#: content/ui/LoginFlow/RegistrationPage.qml:61
+#, kde-format
+msgid "Agreement"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:97
+#, kde-format
+msgctxt "@title:group"
+msgid "Register"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:103
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder Username for searching accounts"
+#| msgid "Username:"
+msgid "Username"
+msgstr "사용자 이름:"
+
+#: content/ui/LoginFlow/RegistrationPage.qml:112
+#, kde-format
+msgid "Email Address"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:121
+#: content/ui/Settings/NetworkProxyPage.qml:108
+#, kde-format
+msgid "Password"
+msgstr "암호"
+
+#: content/ui/LoginFlow/RegistrationPage.qml:131
+#, kde-format
+msgid "Reason"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:141
+#, kde-format
+msgid "I have read and agree to the server's rules, terms and policies."
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:148
+#: content/ui/LoginFlow/WelcomePage.qml:45
+#, kde-format
+msgid "Register"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Pick a Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:47
+#, kde-format
+msgid "This server is closed for registration: %1"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:61
+#, kde-format
+msgctxt "@title:group"
+msgid "Pick a Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server Url:"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:83
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty."
+msgstr "인스턴스 URL을 입력해야 합니다!"
+
+#: content/ui/LoginFlow/WelcomePage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:30
+#, kde-format
+msgid "Welcome to Tokodon"
+msgstr "Tokodon에 오신 것을 환영합니다"
+
+#: content/ui/LoginFlow/WelcomePage.qml:36
+#, kde-format
+msgid "Learn More"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:54
+#, kde-format
+msgid "Login"
+msgstr "로그인"
+
+#: content/ui/Main.qml:248
 #, kde-format
 msgid "Moderation Tools"
 msgstr "중재 도구"
 
-#: content/ui/Main.qml:238
+#: content/ui/Main.qml:249
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "중재 도구"
 
-#: content/ui/Main.qml:248
+#: content/ui/Main.qml:259
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "설정"
 
-#: content/ui/Main.qml:258
+#: content/ui/Main.qml:269
 #, kde-format
 msgid "Home"
 msgstr "홈"
 
-#: content/ui/Main.qml:274 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:285 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: content/ui/Main.qml:303 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:314 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/Main.qml:318
+#: content/ui/Main.qml:329
 #, kde-format
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/Main.qml:334
+#: content/ui/Main.qml:345
 #, kde-format
 msgid "Conversation"
 msgstr "대화"
 
-#: content/ui/Main.qml:348
+#: content/ui/Main.qml:359
 #, kde-format
 msgid "Favourites"
 msgstr "좋아요"
 
-#: content/ui/Main.qml:364
+#: content/ui/Main.qml:375
 #, kde-format
 msgid "Bookmarks"
 msgstr "북마크"
 
-#: content/ui/Main.qml:394
+#: content/ui/Main.qml:405
 #, kde-format
 msgid "Search"
 msgstr "검색"
@@ -1921,12 +2057,12 @@ msgstr "사람, 태그, 게시물 검색"
 msgid "Hashtag"
 msgstr "해시태그"
 
-#: content/ui/Settings/AccountsPage.qml:63
+#: content/ui/Settings/AccountsPage.qml:72
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: content/ui/Settings/AccountsPage.qml:82 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsPage.qml:96 content/ui/UserInfo.qml:113
 #, kde-format
 msgid "Add Account"
 msgstr "계정 추가"
@@ -2027,11 +2163,6 @@ msgstr "포트"
 #, kde-format
 msgid "User"
 msgstr "사용자"
-
-#: content/ui/Settings/NetworkProxyPage.qml:108
-#, kde-format
-msgid "Password"
-msgstr "암호"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
 #: content/ui/Settings/ProfileEditor.qml:365
@@ -2788,17 +2919,23 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "재생"
 
+#: content/ui/TimelinePage.qml:84
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your settings."
+msgstr "서버와 통신할 수 없음: %1. 설정을 확인하십시오."
+
 #: content/ui/TimelinePage.qml:194
 #, kde-format
 msgid "No posts"
 msgstr "게시물 없음"
 
-#: content/ui/UserInfo.qml:73
+#: content/ui/UserInfo.qml:85
 #, kde-format
 msgid "Switch user"
 msgstr "사용자 전환"
 
-#: content/ui/UserInfo.qml:106
+#: content/ui/UserInfo.qml:118
 #, kde-format
 msgid "Log in to an existing account"
 msgstr "기존 계정에 로그인"
@@ -2872,64 +3009,64 @@ msgstr "7일"
 msgid "An unknown error occurred."
 msgstr "알 수 없는 오류가 발생했습니다."
 
-#: main.cpp:93
+#: main.cpp:95
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:95
+#: main.cpp:97
 #, kde-format
 msgid "Mastodon client"
 msgstr "마스토돈 클라이언트"
 
-#: main.cpp:97
+#: main.cpp:99
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE 커뮤니티"
 
-#: main.cpp:98
+#: main.cpp:100
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:99 main.cpp:104
+#: main.cpp:101 main.cpp:106
 #, kde-format
 msgid "Maintainer"
 msgstr "관리자"
 
-#: main.cpp:103
+#: main.cpp:105
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:108
+#: main.cpp:110
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:108
+#: main.cpp:110
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:116
+#: main.cpp:118
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "web+ap: URL 형식 지원"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "단독 작성기에 텍스트 한 줄을 공유합니다."
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "The text to share."
 msgstr "공유할 텍스트입니다."
@@ -2996,44 +3133,44 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "트렌드"
 
-#: timeline/post.cpp:365
+#: timeline/post.cpp:374
 #, kde-format
 msgid "in the future"
 msgstr "미래에"
 
-#: timeline/post.cpp:367
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1s"
 msgstr "%1초"
 
-#: timeline/post.cpp:369
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1m"
 msgstr "%1분"
 
-#: timeline/post.cpp:371
+#: timeline/post.cpp:380
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: timeline/post.cpp:373
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:386
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1주 전"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1개월 전"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:393
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3133,6 +3270,22 @@ msgstr "원본"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
+
+#~ msgid "Authorize Tokodon to act on your behalf"
+#~ msgstr "Tokodon이 내 이름으로 활동할 수 있도록 인증"
+
+#~ msgid ""
+#~ "To continue, please open the following link and authorize Tokodon: %1"
+#~ msgstr "계속 진행하려면 다음 링크를 열고 Tokodon을 인증하십시오: %1"
+
+#~ msgid "Open Link"
+#~ msgstr "링크 열기"
+
+#~ msgid "Copy Link"
+#~ msgstr "링크 복사"
+
+#~ msgid "Link copied."
+#~ msgstr "링크가 복사되었습니다."
 
 #~ msgid "Show detailed statistics about posts"
 #~ msgstr "자세한 게시물 통계 표시"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-24 01:43+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2023-09-13 21:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: account/abstractaccount.cpp:494
+#: account/abstractaccount.cpp:617
 #, kde-format
 msgid "Could not follow account"
 msgstr "Kunde inte följa konto"
 
-#: account/abstractaccount.cpp:495
+#: account/abstractaccount.cpp:618
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Kunde inte sluta följa konto"
 
-#: account/abstractaccount.cpp:496
+#: account/abstractaccount.cpp:619
 #, kde-format
 msgid "Could not block account"
 msgstr "Kunde inte blockera konto"
 
-#: account/abstractaccount.cpp:497
+#: account/abstractaccount.cpp:620
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Kunde inte sluta blockera konto"
 
-#: account/abstractaccount.cpp:498
+#: account/abstractaccount.cpp:621
 #, kde-format
 msgid "Could not mute account"
 msgstr "Kunde inte tysta konto"
 
-#: account/abstractaccount.cpp:499
+#: account/abstractaccount.cpp:622
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Kunde inte sluta tysta konto"
 
-#: account/abstractaccount.cpp:500
+#: account/abstractaccount.cpp:623
 #, kde-format
 msgid "Could not feature account"
 msgstr "Kunde inte välja ut konto"
 
-#: account/abstractaccount.cpp:501
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Kunde inte sluta välja ut konto"
 
-#: account/abstractaccount.cpp:502
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Kunde inte redigera anmärkning om ett konto"
@@ -377,13 +377,13 @@ msgstr "Kontoeditor"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:247
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:258
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "Anpassa"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:287
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:298
 #, kde-format
 msgid "Follow Requests"
 msgstr "Förfrågan om att följa"
@@ -487,36 +487,6 @@ msgstr "Dela"
 msgid "Share the selected media"
 msgstr "Dela de markerade medierna"
 
-#: content/ui/AuthorizationPage.qml:15
-#, kde-format
-msgid "Authorization"
-msgstr "Behörighet"
-
-#: content/ui/AuthorizationPage.qml:25
-#, kde-format
-msgid "Authorize Tokodon to act on your behalf"
-msgstr "Ge Tokodon behörighet att agera å dina vägnar"
-
-#: content/ui/AuthorizationPage.qml:38
-#, kde-format
-msgid "To continue, please open the following link and authorize Tokodon: %1"
-msgstr "Fortsätt genom att öppna följande länk och godkänna Tokodon:%1"
-
-#: content/ui/AuthorizationPage.qml:54 content/ui/AuthorizationPage.qml:73
-#, kde-format
-msgid "Open Link"
-msgstr "Öppna länk"
-
-#: content/ui/AuthorizationPage.qml:59 content/ui/AuthorizationPage.qml:82
-#, kde-format
-msgid "Copy Link"
-msgstr "Kopiera länk"
-
-#: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:86
-#, kde-format
-msgid "Link copied."
-msgstr "Länk kopierad."
-
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -532,7 +502,7 @@ msgstr "Konversationer"
 msgid "No Conversations"
 msgstr "Inga konversationer"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:380
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:391
 #, kde-format
 msgid "Explore"
 msgstr "Utforska"
@@ -584,122 +554,288 @@ msgctxt "@item:inlistbox Group of all languages"
 msgid "All Languages"
 msgstr "Alla språk"
 
-#: content/ui/LoginPage.qml:14
+#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Authorization"
+msgctxt "@title:window"
+msgid "Authorization"
+msgstr "Behörighet"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:17
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:window"
+msgid "Login Issue"
+msgstr "Logga in"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
+msgid "There was an issue logging into the server:<br><b>%1</b>"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:33
+#, kde-format
+msgid ""
+"Resolve this issue by logging into the server's website. Once completed, try "
+"logging in again with the button below."
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:43
+#, kde-format
+msgid "View Website"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:51
+#, kde-format
+msgid "Re-Attempt Log In"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:window"
 msgid "Login"
 msgstr "Logga in"
 
-#: content/ui/LoginPage.qml:22 content/ui/TimelinePage.qml:84
-#, kde-format
+#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/RegistrationPage.qml:26
+#: content/ui/LoginFlow/RegistrationPage.qml:37
+#: content/ui/LoginFlow/ServersPage.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@info:status Network status"
+#| msgid "Failed to contact server: %1. Please check your settings."
 msgctxt "@info:status Network status"
-msgid "Failed to contact server: %1. Please check your settings."
+msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Misslyckades ansluta till server: %1. Kontrollera inställningarna."
 
-#: content/ui/LoginPage.qml:30
+#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/RegistrationPage.qml:88
+#: content/ui/LoginFlow/ServersPage.qml:38
+#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/Settings/NetworkProxyPage.qml:58
 #, kde-format
-msgid "Welcome to Tokodon"
-msgstr "Välkommen till Tokodon"
+msgid "Proxy Settings"
+msgstr "Proxyinställningar"
 
-#: content/ui/LoginPage.qml:36
+#: content/ui/LoginFlow/LoginPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Login"
+msgctxt "@title:group"
+msgid "Login"
+msgstr "Logga in"
+
+#: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url:"
 msgstr "Instans Url:"
 
-#: content/ui/LoginPage.qml:45
+#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/ServersPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Mastodon client"
+msgid "mastodon.social"
+msgstr "Mastodon-klient"
+
+#: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "Aktivera modereringsverktyg"
 
-#: content/ui/LoginPage.qml:46
-#, kde-format
+#: content/ui/LoginFlow/LoginPage.qml:60
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
+#| "trouble logging into your server."
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
-"trouble logging into your server."
+"trouble logging in."
 msgstr ""
 "Tillåt Tokodon att komma åt modereringsverktyg. Försök att inaktivera det om "
 "du har problem med att logga in på servern."
 
-#: content/ui/LoginPage.qml:54
+#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: content/ui/LoginPage.qml:57
+#: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "Instanswebbadressen får inte vara tom."
 
-#: content/ui/LoginPage.qml:74
-#, kde-format
-msgctxt "@title:group Login page"
+#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/ServersPage.qml:94
+#, fuzzy, kde-format
+#| msgctxt "@title:group Login page"
+#| msgid "Network Settings"
+msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Nätverksinställningar"
 
-#: content/ui/LoginPage.qml:80
+#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
 msgstr "Ignorera SSL-fel"
 
-#: content/ui/LoginPage.qml:87 content/ui/Settings/NetworkProxyPage.qml:58
-#, kde-format
-msgid "Proxy Settings"
-msgstr "Proxyinställningar"
+#: content/ui/LoginFlow/RegistrationPage.qml:18
+#, fuzzy, kde-format
+#| msgctxt "The location being downloaded to"
+#| msgid "Destination"
+msgctxt "@title:window"
+msgid "Registration"
+msgstr "Mål"
 
-#: content/ui/Main.qml:237
+#: content/ui/LoginFlow/RegistrationPage.qml:61
+#, kde-format
+msgid "Agreement"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:97
+#, kde-format
+msgctxt "@title:group"
+msgid "Register"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:103
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder Username for searching accounts"
+#| msgid "Username:"
+msgid "Username"
+msgstr "Användarnamn:"
+
+#: content/ui/LoginFlow/RegistrationPage.qml:112
+#, kde-format
+msgid "Email Address"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:121
+#: content/ui/Settings/NetworkProxyPage.qml:108
+#, kde-format
+msgid "Password"
+msgstr "Lösenord"
+
+#: content/ui/LoginFlow/RegistrationPage.qml:131
+#, kde-format
+msgid "Reason"
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:141
+#, kde-format
+msgid "I have read and agree to the server's rules, terms and policies."
+msgstr ""
+
+#: content/ui/LoginFlow/RegistrationPage.qml:148
+#: content/ui/LoginFlow/WelcomePage.qml:45
+#, kde-format
+msgid "Register"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Pick a Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:47
+#, kde-format
+msgid "This server is closed for registration: %1"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:61
+#, kde-format
+msgctxt "@title:group"
+msgid "Pick a Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server Url:"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:83
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty."
+msgstr "Instanswebbadressen får inte vara tom."
+
+#: content/ui/LoginFlow/WelcomePage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:30
+#, kde-format
+msgid "Welcome to Tokodon"
+msgstr "Välkommen till Tokodon"
+
+#: content/ui/LoginFlow/WelcomePage.qml:36
+#, kde-format
+msgid "Learn More"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:54
+#, kde-format
+msgid "Login"
+msgstr "Logga in"
+
+#: content/ui/Main.qml:248
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Modereringsverktyg"
 
-#: content/ui/Main.qml:238
+#: content/ui/Main.qml:249
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Modereringsverktyg"
 
-#: content/ui/Main.qml:248
+#: content/ui/Main.qml:259
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: content/ui/Main.qml:258
+#: content/ui/Main.qml:269
 #, kde-format
 msgid "Home"
 msgstr "Hem"
 
-#: content/ui/Main.qml:274 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:285 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Underrättelser"
 
-#: content/ui/Main.qml:303 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:314 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/Main.qml:318
+#: content/ui/Main.qml:329
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:334
+#: content/ui/Main.qml:345
 #, kde-format
 msgid "Conversation"
 msgstr "Samtal"
 
-#: content/ui/Main.qml:348
+#: content/ui/Main.qml:359
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriter"
 
-#: content/ui/Main.qml:364
+#: content/ui/Main.qml:375
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: content/ui/Main.qml:394
+#: content/ui/Main.qml:405
 #, kde-format
 msgid "Search"
 msgstr "Sök"
@@ -1917,12 +2053,12 @@ msgstr "Sök efter personer, etiketter och inlägg"
 msgid "Hashtag"
 msgstr "Hashtagg"
 
-#: content/ui/Settings/AccountsPage.qml:63
+#: content/ui/Settings/AccountsPage.qml:72
 #, kde-format
 msgid "Logout"
 msgstr "Logga ut"
 
-#: content/ui/Settings/AccountsPage.qml:82 content/ui/UserInfo.qml:101
+#: content/ui/Settings/AccountsPage.qml:96 content/ui/UserInfo.qml:113
 #, kde-format
 msgid "Add Account"
 msgstr "Lägg till konto"
@@ -2023,11 +2159,6 @@ msgstr "Port"
 #, kde-format
 msgid "User"
 msgstr "Användare"
-
-#: content/ui/Settings/NetworkProxyPage.qml:108
-#, kde-format
-msgid "Password"
-msgstr "Lösenord"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
 #: content/ui/Settings/ProfileEditor.qml:365
@@ -2783,17 +2914,23 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Spela"
 
+#: content/ui/TimelinePage.qml:84
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your settings."
+msgstr "Misslyckades ansluta till server: %1. Kontrollera inställningarna."
+
 #: content/ui/TimelinePage.qml:194
 #, kde-format
 msgid "No posts"
 msgstr "Inga inlägg"
 
-#: content/ui/UserInfo.qml:73
+#: content/ui/UserInfo.qml:85
 #, kde-format
 msgid "Switch user"
 msgstr "Byt användare"
 
-#: content/ui/UserInfo.qml:106
+#: content/ui/UserInfo.qml:118
 #, kde-format
 msgid "Log in to an existing account"
 msgstr "Logga in på ett befintligt konto"
@@ -2868,64 +3005,64 @@ msgstr "7 dagar"
 msgid "An unknown error occurred."
 msgstr "Ett okänt fel uppstod."
 
-#: main.cpp:93
+#: main.cpp:95
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:95
+#: main.cpp:97
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
-#: main.cpp:97
+#: main.cpp:99
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE-gemenskapen"
 
-#: main.cpp:98
+#: main.cpp:100
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:99 main.cpp:104
+#: main.cpp:101 main.cpp:106
 #, kde-format
 msgid "Maintainer"
 msgstr "Underhåll"
 
-#: main.cpp:103
+#: main.cpp:105
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:108
+#: main.cpp:110
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luna Jernberg,Stefan Asserhäll"
 
-#: main.cpp:108
+#: main.cpp:110
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@bredband.net"
 
-#: main.cpp:116
+#: main.cpp:118
 #, kde-format
 msgid "Client for the decentralized social network: mastodon"
 msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
 
-#: main.cpp:117
+#: main.cpp:119
 #, kde-format
 msgid "Supports web+ap: url scheme"
 msgstr "Stöder web+ap: webbadresschema"
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Dela en textrad i det fristående fönstret."
 
-#: main.cpp:119
+#: main.cpp:121
 #, kde-format
 msgid "The text to share."
 msgstr "Texten att dela."
@@ -2992,46 +3129,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Trendande"
 
-#: timeline/post.cpp:365
+#: timeline/post.cpp:374
 #, kde-format
 msgid "in the future"
 msgstr "i framtiden"
 
-#: timeline/post.cpp:367
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: timeline/post.cpp:369
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1m"
 msgstr " %1 m"
 
-#: timeline/post.cpp:371
+#: timeline/post.cpp:380
 #, kde-format
 msgid "%1h"
 msgstr "%1 t"
 
-#: timeline/post.cpp:373
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1d"
 msgstr "%1 d"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:386
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "förra veckan"
 msgstr[1] "för %1 veckor sedan"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "för 1 månad sedan"
 msgstr[1] "för %1 månader sedan"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:393
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3132,6 +3269,22 @@ msgstr "Källa"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Mål"
+
+#~ msgid "Authorize Tokodon to act on your behalf"
+#~ msgstr "Ge Tokodon behörighet att agera å dina vägnar"
+
+#~ msgid ""
+#~ "To continue, please open the following link and authorize Tokodon: %1"
+#~ msgstr "Fortsätt genom att öppna följande länk och godkänna Tokodon:%1"
+
+#~ msgid "Open Link"
+#~ msgstr "Öppna länk"
+
+#~ msgid "Copy Link"
+#~ msgstr "Kopiera länk"
+
+#~ msgid "Link copied."
+#~ msgstr "Länk kopierad."
 
 #~ msgid "Show detailed statistics about posts"
 #~ msgstr "Visa detaljerad statistik om inlägg"
