@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 18:02+0200\n"
+"PO-Revision-Date: 2023-09-28 10:45+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:617
 #, kde-format
@@ -165,8 +165,8 @@ msgstr[1] "%1 Favoritos"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 boost"
+msgstr[1] "%1 boosts"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -440,7 +440,7 @@ msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] ""
-msgstr[1] "<b>%1</b> Adherentes"
+msgstr[1] "<b>%1</b> Adherentes<b>%1</b> Adherentes"
 
 #: content/ui/AccountInfo.qml:495
 #, kde-format
@@ -553,18 +553,16 @@ msgid "All Languages"
 msgstr "Omne linguages"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorisation"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Accesso de identification"
+msgstr "Problema de Accesso de identification"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
@@ -589,8 +587,7 @@ msgid "Re-Attempt Log In"
 msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Accesso de identification"
@@ -614,8 +611,7 @@ msgid "Proxy Settings"
 msgstr "Preferentias de proxy"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Accesso de identification"
@@ -627,10 +623,9 @@ msgstr "Url de instantia"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Cliente de Mastodon"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -657,9 +652,7 @@ msgstr "Url de instantia non debe esser vacue!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Preferentias de rete"
@@ -672,12 +665,10 @@ msgid "Ignore SSL errors"
 msgstr "Ignora errores de SSL"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Destination"
+msgstr "Registration"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
@@ -688,19 +679,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Registra"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Nomine de usator:"
+msgstr "Nomine usator"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "Adresse de E-Posta"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -711,7 +700,7 @@ msgstr "Contrasigno"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Motivo"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
@@ -722,7 +711,7 @@ msgstr ""
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Registra"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
@@ -744,19 +733,18 @@ msgstr ""
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "URL de servitor:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "Url de instantia non debe esser vacue!"
+msgstr "Url de servitor non debe esser vacue."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Benvenite"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -766,7 +754,7 @@ msgstr ""
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Apprender plus"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -1941,7 +1929,7 @@ msgstr "Mentiones"
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr ""
+msgstr "Boosts"
 
 #: content/ui/NotificationPage.qml:73
 #, kde-format
@@ -2832,8 +2820,8 @@ msgstr[1] "%1 Favoritos"
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 Boost"
+msgstr[1] "%1 Boosts"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:38
 #, kde-format
@@ -3018,12 +3006,12 @@ msgstr ""
 #: main.cpp:121
 #, kde-format
 msgid "The text to share."
-msgstr ""
+msgstr "Le texto a comparttir."
 
 #: notification/notificationmodel.cpp:97
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr ""
+msgstr "Error occurreva quando trovava le ultime notification."
 
 #: search/searchmodel.cpp:137
 #, kde-format
@@ -3033,7 +3021,7 @@ msgstr "Gente"
 #: search/searchmodel.cpp:139
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Hashtags"
 
 #: timeline/accountmodel.cpp:40 timeline/maintimelinemodel.cpp:26
 #, kde-format

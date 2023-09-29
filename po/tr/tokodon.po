@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-12 05:36+0300\n"
+"PO-Revision-Date: 2023-09-28 10:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: account/abstractaccount.cpp:617
 #, kde-format
@@ -553,23 +553,21 @@ msgid "All Languages"
 msgstr "Tüm Diller"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Yetkilendirme"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Oturum aç"
+msgstr "Oturum Açma Sorunu"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Sunucuya oturum açarken bir hata oluştu:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:33
 #, kde-format
@@ -577,34 +575,33 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Sunucunun web sayfasında oturum açarak bu sorunu çözebilirsiniz. İşiniz "
+"bittiğinde, aşağıdaki düğmeyi kullanarak yeniden oturum açmayı deneyin."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:43
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Web Sayfasını Görüntüle"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:51
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Yeniden Oturum Açmayı Dene"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
-msgstr "Oturum aç"
+msgstr "Oturum Aç"
 
 #: content/ui/LoginFlow/LoginPage.qml:21
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "Sunucuya bağlanılamadı: %1. Lütfen ayarlarınızı denetleyin."
+msgstr "Sunucuya bağlanılamadı: %1. Lütfen vekil ayarlarınızı denetleyin."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:88
@@ -616,11 +613,10 @@ msgid "Proxy Settings"
 msgstr "Vekil Ayarları"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
-msgstr "Oturum aç"
+msgstr "Oturum Aç"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
@@ -629,10 +625,9 @@ msgstr "Örnek URL'si:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Mastodon İstemcisi"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -640,16 +635,13 @@ msgid "Enable moderation tools"
 msgstr "Moderasyon araçlarını etkinleştir"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
 "Tokodon'un moderasyon araçlarına erişmesine izin verin. Sunucunuza oturum "
-"açmada sorun yaşıyorsanız bunu devre dışı bırakmayı deneyin."
+"açmada sorun yaşıyorsanız bunu devre dışı bırakın."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -664,9 +656,7 @@ msgstr "Örnek URL'si boş olmamalı!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Ağ Ayarları"
@@ -679,35 +669,31 @@ msgid "Ignore SSL errors"
 msgstr "SSL hatalarını yok say"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Hedef"
+msgstr "Kayıt"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
 msgid "Agreement"
-msgstr ""
+msgstr "Antlaşma"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Kaydıl"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Kullanıcı Adı:"
+msgstr "Kullanıcı Adı"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "E-posta Adresi"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -718,52 +704,52 @@ msgstr "Parola"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Gerekçe"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
 msgstr ""
+"Sunucunun kurallarını, koşullarını ve politikalarını okudum ve kabul ettim."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Kaydol"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Bir Sunucu Seç"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Bu sunucu, kayıt için kapalı: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Bir Sunucu Seç"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "Sunucu URL'si:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "Örnek URL'si boş olmamalı!"
+msgstr "Sunucu URL'si boş olamaz."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Hoş Geldiniz"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -773,7 +759,7 @@ msgstr "Tokodon'a hoş geldiniz"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Daha Fazla Öğren"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format

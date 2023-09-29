@@ -1,16 +1,16 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
+# SPDX-FileCopyrightText: 2003 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 09:31+0200\n"
+"PO-Revision-Date: 2023-09-28 19:33+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -558,23 +558,21 @@ msgid "All Languages"
 msgstr "Hizkuntza guztiak"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Baimen-ematea"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Saio-hastea"
+msgstr "Saio-hasteko arazoa"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Zerbitzarian saio-hasteko arazo bat egon da:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:33
 #, kde-format
@@ -582,36 +580,35 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Konpondu arazo hori zerbitzariaren webgunean saio-hasita. Osatutakoan, "
+"saiatu berriz saio-hasten beheko botoia erabiliz."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:43
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Ikusi webgunea"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:51
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Berriz saiatu saio-hasten"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
-msgstr "Saio-hastea"
+msgstr "Saio-hasi"
 
 #: content/ui/LoginFlow/LoginPage.qml:21
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"Zerbitzariarekin kontaktatzea huts egin du: %1. Mesedez, egiaztatu zure "
-"ezarpenak."
+"Zerbitzariarekin kontaktatzea huts egin du: %1. Mesedez, egiaztatu "
+"ordezkariaren zure ezarpenak."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:88
@@ -623,11 +620,10 @@ msgid "Proxy Settings"
 msgstr "Ordezkariaren ezarpenak"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
-msgstr "Saio-hastea"
+msgstr "Saio-hasi"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
@@ -636,10 +632,9 @@ msgstr "Instantziaren URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "«Mastodon»en bezeroa"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -647,16 +642,13 @@ msgid "Enable moderation tools"
 msgstr "Gaitu moderatzeko tresnak"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
-"Baimendu Tokodon moderatzeko tresnetara sartzea. Ezgaitu hori zure "
-"zerbitzarian saio-hasteko arazorik baduzu."
+"Baimendu Tokodon moderatzeko tresnetara sartzea. Saiatu hori ezgaitzen saio-"
+"hasteko arazorik baduzu."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -671,9 +663,7 @@ msgstr "Instantziaren URL ez da hutsik egon behar!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Sareko ezarpenak"
@@ -686,35 +676,31 @@ msgid "Ignore SSL errors"
 msgstr "Ezikusi SSL erroreak"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Helburua"
+msgstr "Erregistratzea"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
 msgid "Agreement"
-msgstr ""
+msgstr "Adostasuna"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Erregistratu"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Erabiltzaile-izena:"
+msgstr "Erabiltzaile-izena"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "E-posta helbidea"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -725,52 +711,53 @@ msgstr "Pasahitza"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Arrazoia"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
 msgstr ""
+"Zerbitzariaren arauak, baldintzak eta gidalerroak irakurri ditut eta haiekin "
+"ados nago."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Erregistratu"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Aukeratu zerbitzari bat"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Zerbitzari hori erregistratzeko itxita dago: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Aukeratu zerbitzari bat"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "Zerbitzariaren URL:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "Instantziaren URL ez da hutsik egon behar!"
+msgstr "Zerbitzariaren URL ez da hutsk egon behar."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Ongi etorri"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -780,7 +767,7 @@ msgstr "Ongi etorri «Tokodon»era"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Jakizu gehiago"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format

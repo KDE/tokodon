@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-25 12:19+0200\n"
+"PO-Revision-Date: 2023-09-28 12:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -558,23 +558,22 @@ msgid "All Languages"
 msgstr "Tots els idiomes"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorització"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Inici de sessió"
+msgstr "Problema d'inici de sessió"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr ""
+"Hi ha hagut un problema en iniciar la sessió amb el servidor:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:33
 #, kde-format
@@ -582,20 +581,21 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Solucioneu este problema iniciant la sessió en el lloc web del servidor. "
+"Quan ho completeu, inicieu la sessió una altra vegada amb el botó següent."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:43
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Visualitza el lloc web"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:51
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Torna a intentar l'inici de sessió"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Inici de sessió"
@@ -604,12 +604,12 @@ msgstr "Inici de sessió"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració."
+msgstr ""
+"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració del "
+"servidor intermediari."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:88
@@ -621,8 +621,7 @@ msgid "Proxy Settings"
 msgstr "Configureu el servidor intermediari"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Inici de sessió"
@@ -634,10 +633,9 @@ msgstr "URL de la instància:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Client de Mastodon"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -645,16 +643,13 @@ msgid "Enable moderation tools"
 msgstr "Activa les eines de moderació"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
 "Permet que Tokodon accedisca a les eines de moderació. Proveu de desactivar-"
-"ho si teniu problemes per a iniciar la sessió en el servidor."
+"ho si teniu problemes en iniciar la sessió."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -669,9 +664,7 @@ msgstr "L'URL de la instància no pot estar buit!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Configureu la xarxa"
@@ -684,35 +677,31 @@ msgid "Ignore SSL errors"
 msgstr "Ignora els errors d'SSL"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Destinació"
+msgstr "Registre"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
 msgid "Agreement"
-msgstr ""
+msgstr "Acord"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Registre"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Nom d'usuari:"
+msgstr "Nom d'usuari"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "Adreça de correu electrònic"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -723,52 +712,53 @@ msgstr "Contrasenya"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Motiu"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
 msgstr ""
+"Ho he llegit i estic d'acord amb les regles, les clàusules i polítiques del "
+"servidor."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Registre"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Seleccioneu un servidor"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Este servidor està tancat per a registrar-se: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Seleccioneu un servidor"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "URL del servidor:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "L'URL de la instància no pot estar buit!"
+msgstr "L'URL del servidor no pot estar buit."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Us donem la benvinguda"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -778,7 +768,7 @@ msgstr "Us donem la benvinguda a Tokodon"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Apreneu-ne més"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -3246,19 +3236,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgid "Authorize Tokodon to act on your behalf"
-#~ msgstr "Autoritza Tokodon a actuar en nom vostre"
-
-#~ msgid ""
-#~ "To continue, please open the following link and authorize Tokodon: %1"
-#~ msgstr "Per a continuar, obriu l'enllaç següent i autoritzeu Tokodon: %1"
-
-#~ msgid "Open Link"
-#~ msgstr "Obri l'enllaç"
-
-#~ msgid "Copy Link"
-#~ msgstr "Copia l'enllaç"
-
-#~ msgid "Link copied."
-#~ msgstr "S'ha copiat l'enllaç."
