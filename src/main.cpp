@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
     url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}});
     account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
-    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
+    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
 #else
     AccountManager::instance().migrateSettings();
     AccountManager::instance().loadFromSettings();

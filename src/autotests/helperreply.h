@@ -26,7 +26,7 @@ public:
 
     bool seek(const qint64 pos) override
     {
-        return apiResult.seek(0);
+        return apiResult.seek(pos);
     }
 
     void abort() override
