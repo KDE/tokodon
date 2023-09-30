@@ -67,20 +67,11 @@ int main(int argc, char *argv[])
         }
     });
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
-    QIcon::setThemeName(QStringLiteral("tokodon"));
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
-    }
-
-    // Breeze theme needs to be the "primary" theme or else icons do not get recolored
-    // Non-Breeze themes (like Adwaita) do not load our icons properly unless tokodon is the main icon theme.
-    if (QIcon::themeName() == QStringLiteral("breeze")) {
-        QIcon::setFallbackThemeName(QStringLiteral("tokodon"));
-    } else {
-        QIcon::setThemeName(QStringLiteral("tokodon"));
     }
 #endif
 
