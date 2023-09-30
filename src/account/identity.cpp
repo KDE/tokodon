@@ -121,17 +121,10 @@ void Identity::fromSourceData(const QJsonObject &doc)
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
-    const auto emojis = doc["emojis"_L1].toArray();
+    const auto emojis = CustomEmoji::parseCustomEmojis(doc["emojis"_L1].toArray());
 
-    for (const auto &emoji : emojis) {
-        const auto emojiObj = emoji.toObject();
-        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
-                                                      QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"")
-                                                          + emojiObj["static_url"_L1].toString() + QStringLiteral("\">"));
-        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
-                              QStringLiteral("<img height=\"16\" width=\"16\" align=\"middle\" src=\"") + emojiObj["static_url"_L1].toString()
-                                  + QStringLiteral("\">"));
-    }
+    m_displayNameHtml = CustomEmoji::replaceCustomEmojis(emojis, m_displayNameHtml);
+    m_bio = CustomEmoji::replaceCustomEmojis(emojis, m_bio);
 
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
 

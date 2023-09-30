@@ -72,6 +72,12 @@ ecm_add_test(announcementstest.cpp
 		NAME_PREFIX "tokodon-"
 )
 
+ecm_add_test(customemojitest.cpp
+	TEST_NAME customemojitest
+	LINK_LIBRARIES tokodon_test_static Qt::Test
+	NAME_PREFIX "tokodon-"
+)
+
 if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
 	add_subdirectory(appiumtests)
 endif()

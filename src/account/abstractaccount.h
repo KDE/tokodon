@@ -9,26 +9,11 @@
 #include "identity.h"
 #include "preferences.h"
 #include "timeline/post.h"
+#include "utils/customemoji.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
-
-class CustomEmoji
-{
-    Q_GADGET
-
-    Q_PROPERTY(QString shortName MEMBER shortcode)
-    Q_PROPERTY(QString unicode MEMBER url)
-    Q_PROPERTY(bool isCustom MEMBER isCustom)
-
-public:
-    QString shortcode;
-    QString url;
-    bool isCustom = true;
-};
-
-Q_DECLARE_METATYPE(CustomEmoji)
 
 class Attachment;
 class Notification;

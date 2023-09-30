@@ -117,6 +117,8 @@ target_sources(tokodon_static
     utils/utils.h
     utils/colorschemer.cpp
     utils/colorschemer.h
+    utils/customemoji.cpp
+    utils/customemoji.h
 
     # Network related classes
     network/networkrequestprogress.cpp

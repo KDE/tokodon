@@ -133,15 +133,8 @@ Post::Post(AbstractAccount *account, QObject *parent)
 
 QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity)
 {
-    QString content = obj["content"_L1].toString();
-    const auto emojis = obj["emojis"_L1].toArray();
-
-    for (const auto &emoji : emojis) {
-        const auto emojiObj = emoji.toObject();
-        content = content.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
-                                  QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emojiObj["static_url"_L1].toString()
-                                      + QStringLiteral("\">"));
-    }
+    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
+    QString content = CustomEmoji::replaceCustomEmojis(emojis, obj["content"_L1].toString());
 
     const auto tags = obj["tags"_L1].toArray();
     const QString baseUrl = authorIdentity->url().toDisplayString(QUrl::RemovePath);

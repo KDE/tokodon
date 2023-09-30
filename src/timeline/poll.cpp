@@ -6,6 +6,8 @@
 #include <QJsonArray>
 #include <algorithm>
 
+#include "utils/customemoji.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 Poll::Poll() = default;
@@ -26,18 +28,13 @@ Poll::Poll(const QJsonObject &json)
         std::back_inserter(m_ownVotes),
         [](const QJsonValue &value) -> auto{ return value.toInt(); });
 
-    const auto emojis = json[QStringLiteral("emojis")].toArray();
+    const auto emojis = CustomEmoji::parseCustomEmojis(json[QStringLiteral("emojis")].toArray());
 
     const auto options = json[QStringLiteral("options")].toArray();
     std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> QVariantMap {
         const auto option = value.toObject();
-        QString title = option[QStringLiteral("title")].toString();
-        for (const auto &emoji : emojis) {
-            const auto emojiObj = emoji.toObject();
-            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
-                                  QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emojiObj["static_url"_L1].toString()
-                                      + QStringLiteral("\">"));
-        }
+        QString title = CustomEmoji::replaceCustomEmojis(emojis, option[QStringLiteral("title")].toString());
+
         return {
             {"title"_L1, title},
             {"votesCount"_L1, option[QStringLiteral("votes_count")].toInt(-1)},
