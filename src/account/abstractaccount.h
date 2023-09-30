@@ -62,10 +62,19 @@ public:
     AbstractAccount(QObject *parent, const QString &instanceUri);
     AbstractAccount(QObject *parent);
 
-    /// Register the application to the mastodon server
+    /// Register the application on the server
+    /// \param appName The name of the application displayed to other clients
+    /// \param website The application's website
+    /// \param additionalScopes Any additional scopes to request
     void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {});
 
     /// Register a new account on the server
+    /// \param username The account's username
+    /// \param email The account's email address
+    /// \param password The account's password
+    /// \param agreement Whether the user agrees the server's rules and terms
+    /// \param locale The user's locale
+    /// \param reason If the server requires approval, a reason given to register
     Q_INVOKABLE void
     registerAccount(const QString &username, const QString &email, const QString &password, bool agreement, const QString &locale, const QString &reason);
 
@@ -83,12 +92,14 @@ public:
     Q_INVOKABLE QUrl getAuthorizeUrl() const;
 
     /// Sets the access token
+    /// \param token The access token
     void setAccessToken(const QString &token);
 
     /// Get the oauth2 token url
     QUrl getTokenUrl() const;
 
     /// Set the oauth2 token
+    /// \param authcode The oauth2 authentication code
     Q_INVOKABLE void setToken(const QString &authcode);
 
     /// Check if the account has a token set
@@ -115,6 +126,7 @@ public:
     QString username() const;
 
     /// Sets the username for the account
+    /// \param name The new username
     void setUsername(const QString &name);
 
     /// Fetches instance-specific metadata like max post length, allowed content types, etc
@@ -123,6 +135,7 @@ public:
     /// Fetches instance-specific custom emojis
     void fetchCustomEmojis();
 
+    /// Returns the custom emojis that's accessible for this account
     QList<CustomEmoji> customEmojis() const;
 
     /// Returns the instance URI
@@ -130,6 +143,7 @@ public:
     QString instanceUri() const;
 
     /// Sets the instance URI for the account
+    /// \param instance_uri The new instance URI
     void setInstanceUri(const QString &instance_uri);
 
     /// Returns the max allowable length of posts in characters
@@ -153,53 +167,68 @@ public:
 
     /// Looks up an identity specific to this account (like relationships) using an accountId
     /// and optionally a JSON document containing identity information.
+    /// \param accountId The account ID
+    /// \param doc doc Optionally provide an existing account JSON, if you were already given some in another request
     std::shared_ptr<Identity> identityLookup(const QString &accountId, const QJsonObject &doc);
 
     /// Checks if the accountId exists in the account's identity cache
+    /// \param accountId The account ID to look up
     bool identityCached(const QString &accountId) const;
 
     /// Get identity of the admin::account
+    /// \param accountId The account ID to look up
+    /// \param doc doc Optionally provide an existing account JSON, if you were already given some in another request
     std::shared_ptr<AdminAccountInfo> adminIdentityLookup(const QString &accountId, const QJsonObject &doc);
 
     /// Invalidates the account
     void invalidate();
 
     /// Favorite a post
+    /// \param p The post object to mutate
     /// \see unfavorite
     void favorite(Post *p);
 
     /// Unfavorite a post
+    /// \param p The post object to mutate
     /// \see favorite
     void unfavorite(Post *p);
 
     /// Boost (also known as reblog, or repeat) a post
+    /// \param p The post object to mutate
     /// \see unrepeat
     void repeat(Post *p);
 
     /// Unboost a post
+    /// \param p The post object to mutate
     /// \see repeat
     void unrepeat(Post *p);
 
     /// Bookmark a post
+    /// \param p The post object to mutate
     /// \see unbookmark
     void bookmark(Post *p);
 
     /// Unbookmark a post
+    /// \param p The post object to mutate
     /// \see bookmark
     void unbookmark(Post *p);
 
     /// Pin a post
+    /// \param p The post object to mutate
     /// \see unpin
     void pin(Post *p);
 
     /// Unpin a post
+    /// \param p The post object to mutate
     /// \see pin
     void unpin(Post *p);
 
     /// Returns a streaming url for \p stream
+    /// \param stream The requested stream (e.g. user)
     QUrl streamingUrl(const QString &stream);
 
     /// Invalidates a post
+    /// \param p The post object to mutate
     void invalidatePost(Post *p);
 
     /// Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough
@@ -213,9 +242,10 @@ public:
     }
 
     /// Return a well-formed URL of an API path
+    /// \param path The base API path
     QUrl apiUrl(const QString &path) const;
 
-    /// Make an HTTP GET request to the mastodon server
+    /// Make an HTTP GET request to the server
     /// \param url The url of the request
     /// \param authenticated Whether the request should be authentificated
     /// \param parent The parent object that calls get() or the callback belongs to
@@ -227,11 +257,12 @@ public:
                      std::function<void(QNetworkReply *)> callback,
                      std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
 
-    /// Make an HTTP POST request to the mastodon server
+    /// Make an HTTP POST request to the server
     /// \param url The url of the request
     /// \param doc The request body as JSON
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
+    /// \param errorCallback The callback that should be executed if the request is not successful
     virtual void post(const QUrl &url,
                       const QJsonDocument &doc,
                       bool authenticated,
@@ -240,10 +271,10 @@ public:
                       std::function<void(QNetworkReply *)> errorCallback = nullptr,
                       QHash<QByteArray, QByteArray> headers = {}) = 0;
 
-    /// Make an HTTP POST request to the mastodon server
+    /// Make an HTTP POST request to the server
     /// \param url The url of the request
     /// \param doc The request body as form-data
-    /// \param authenticated Whether the request should be authentificated
+    /// \param authenticated Whether the request should be authenticated
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
     /// \param errorCallback The callback that should be executed if the request is not successful
@@ -254,18 +285,46 @@ public:
                       std::function<void(QNetworkReply *)> callback,
                       std::function<void(QNetworkReply *)> errorCallback = nullptr) = 0;
 
+    /// Make an HTTP POST request to the server
+    /// \param url The url of the request
+    /// \param message The request body as multi-part data
+    /// \param authenticated Whether the request should be authenticated
+    /// \param parent The parent object that calls get() or the callback belongs to
+    /// \param callback The callback that should be executed if the request is successful
     virtual QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+
+    /// Make an HTTP PUT request to the server
+    /// \param url The url of the request
+    /// \param doc The request body as JSON
+    /// \param authenticated Whether the request should be authenticated
+    /// \param parent The parent object that calls get() or the callback belongs to
+    /// \param callback The callback that should be executed if the request is successful
     virtual void put(const QUrl &url, const QJsonDocument &doc, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+
+    /// Make an HTTP PATCH request to the server
+    /// \param url The url of the request
+    /// \param message The request body as multi-part data
+    /// \param authenticated Whether the request should be authenticated
+    /// \param parent The parent object that calls get() or the callback belongs to
+    /// \param callback The callback that should be executed if the request is successful
     virtual void patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)>) = 0;
+
+    /// Make an HTTP DELETE request to the server
+    /// \param url The url of the request
+    /// \param authenticated Whether the request should be authenticated
+    /// \param parent The parent object that calls get() or the callback belongs to
+    /// \param callback The callback that should be executed if the request is successful
     virtual void deleteResource(const QUrl &url, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Upload a file
+    /// \param url The name of the file to upload
+    /// \param callback The callback that should be executed if the request is successful
     virtual QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) = 0;
 
-    /// Write account to settings
+    /// Write account to settings to disk
     virtual void writeToSettings() = 0;
 
-    /// Read account from settings
+    /// Read account from settings to disk
     virtual void buildFromSettings() = 0;
 
     /// Check if the account has any follow requests
@@ -275,44 +334,44 @@ public:
     virtual void checkForFollowRequests() = 0;
 
     /// Follow the given account. Can also be used to update whether to show reblogs or enable notifications.
-    /// @param Identity identity The account to follow
-    /// @param bool reblogs Receive this account's reblogs in home timeline? Defaults to true.
-    /// @param bool notify Receive notifications when this account posts a status? Defaults to false.
+    /// @param identity The account to follow
+    /// @param reblogs Receive this account's reblogs in home timeline? Defaults to true.
+    /// @param notify Receive notifications when this account posts a status? Defaults to false.
     Q_INVOKABLE void followAccount(Identity *identity, bool reblogs = true, bool notify = false);
 
     /// Unfollow the given account.
-    /// @param Identity identity The account to unfollow
+    /// @param identity The account to unfollow
     Q_INVOKABLE void unfollowAccount(Identity *identity);
 
     /// Block the given account.
-    /// @param Identity identity The account to block
+    /// @param identity The account to block
     Q_INVOKABLE void blockAccount(Identity *identity);
 
     /// Unblock the given account.
-    /// @param Identity identity The account to unblock
+    /// @param identity The account to unblock
     Q_INVOKABLE void unblockAccount(Identity *identity);
 
     /// Mute the given account.
-    /// @param Identity identity The account to mute
-    /// @param bool notifications Whether notifications should also be muted, by default true
-    /// @param int duration How long the mute should last, in seconds. Defaults to 0 (indefinite).
+    /// @param identity The account to mute
+    /// @param notifications Whether notifications should also be muted, by default true
+    /// @param duration How long the mute should last, in seconds. Defaults to 0 (indefinite).
     Q_INVOKABLE void muteAccount(Identity *identity, bool notifications = true, int duration = 0);
 
     /// Unmute the given account.
-    /// @param Identity identity The account to unmute
+    /// @param identity The account to unmute
     Q_INVOKABLE void unmuteAccount(Identity *identity);
 
     /// Add the given account to the user's featured profiles.
-    /// @param Identity identity The account to feature
+    /// @param identity The account to feature
     Q_INVOKABLE void featureAccount(Identity *identity);
 
     /// Remove the given account from the user's featured profiles.
-    /// @param Identity identity The account to unfeature
+    /// @param identity The account to unfeature
     Q_INVOKABLE void unfeatureAccount(Identity *identity);
 
     /// Sets a private note on a user.
-    /// @param Identity identity The account to annotate
-    /// @param QString note The note to add to the account. Leave empty to remove the existing note.
+    /// @param identity The account to annotate
+    /// @param note The note to add to the account. Leave empty to remove the existing note.
     Q_INVOKABLE void addNote(Identity *identity, const QString &note);
 
     /// Returns the preferred settings group name for this Account which includes the username and the instance uri.
@@ -353,6 +412,8 @@ public:
 
 Q_SIGNALS:
     /// Emitted when the account is authenticated
+    /// \param Whether the authentication was successful
+    /// \param errorMessage If not successful, a localized error message
     /// \see validateToken
     void authenticated(bool successful, const QString &errorMessage);
 
@@ -364,6 +425,8 @@ Q_SIGNALS:
     void identityChanged();
 
     /// Emitted when the requested timeline has been fetched
+    /// \param The name of the timeline that was fetched
+    /// \param posts The list of posts fetched
     void fetchedTimeline(const QString &timelineName, QList<Post *> posts);
 
     /// Emitted when th=e account has been invalidated
@@ -383,22 +446,28 @@ Q_SIGNALS:
     void fetchedCustomEmojis();
 
     /// Emitted when a post has been invalidated
+    /// \param p The post that was invalidated
     /// \see invalidatePost
     void invalidatedPost(Post *p);
 
     /// Emitted when a notification has been received
+    /// \param n A shared handle to the new notification
     void notification(std::shared_ptr<Notification> n);
 
     /// Emitted when an error occurred when performing an API request
+    /// \param errorMessage A localized error message
     void errorOccured(const QString &errorMessage);
 
     /// Emitted when a streaming event has been received
+    /// \param eventType The type of streaming event
+    /// \param payload The payload for the streaming event
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
 
     /// Emitted when the account has follow requests
     void hasFollowRequestsChanged();
 
-    /// Emitted when a registration error has occured. The JSON body is returned for further processimg/
+    /// Emitted when a registration error has occurred.
+    /// \param json The JSON body for further processing
     void registrationError(const QString &json);
 
 protected:

@@ -35,8 +35,6 @@ public:
     explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, bool admin = true, QObject *parent = nullptr);
     explicit Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account() override;
-
-    // making API calls
     void get(const QUrl &url,
              bool authenticated,
              QObject *parent,
@@ -67,9 +65,6 @@ public:
         return m_qnam;
     }
 
-    // save/restore.
-    // writeToSettings assumes a settings object in a parent context
-    // buildFromSettings assumes a settings object in the object context
     void writeToSettings() override;
 
     void buildFromSettings() override;
