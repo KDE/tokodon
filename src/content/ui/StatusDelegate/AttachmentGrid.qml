@@ -96,6 +96,13 @@ QQC2.Control {
                             anchors.fill: parent
                             source: modelData.previewUrl
 
+                            onStatusChanged: {
+                                if (status === Image.Error) {
+                                    // Fall back to remote URL
+                                    img.source = modelData.remoteUrl;
+                                }
+                            }
+
                             crop: !root.shouldKeepAspectRatio
                             focusX: modelData.focusX
                             focusY: modelData.focusY
