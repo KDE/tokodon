@@ -490,3 +490,8 @@ void AccountManager::setTestMode(const bool enabled)
 {
     m_testMode = enabled;
 }
+
+bool AccountManager::testMode() const
+{
+    return m_testMode;
+}

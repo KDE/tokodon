@@ -31,6 +31,7 @@ class AccountManager : public QAbstractListModel
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
     Q_PROPERTY(bool selectedAccountHasIssue READ selectedAccountHasIssue NOTIFY accountSelected)
+    Q_PROPERTY(bool testMode READ testMode CONSTANT)
 
 public:
     static AccountManager *create(QQmlEngine *, QJSEngine *)
@@ -59,6 +60,9 @@ public:
     /// Enables or disables test mode. Used internally for tokodon-offline
     /// \param enabled Whether test mode should be enabled
     void setTestMode(bool enabled);
+
+    /// Returns if testing mode is enabled
+    bool testMode() const;
 
     /// Whether or not the account manager is completely ready
     /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
