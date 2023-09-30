@@ -30,7 +30,8 @@ void MockAccount::get(const QUrl &url,
         reply->seek(0);
     } else {
         qWarning() << url << m_getReplies;
-        errorCallback(nullptr);
+        if (errorCallback)
+            errorCallback(nullptr);
     }
 }
 
