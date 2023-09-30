@@ -79,7 +79,6 @@ private:
     bool m_ignoreSslErrors = false;
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
-    bool m_hasFollowRequests = false;
 
     // common parts for all HTTP request
     QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;

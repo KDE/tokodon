@@ -192,6 +192,8 @@ void SocialGraphModel::actionAllow(const QModelIndex &index)
                       m_accounts.removeAt(index.row());
                       endRemoveRows();
                   });
+
+    account->checkForFollowRequests();
 }
 
 void SocialGraphModel::actionDeny(const QModelIndex &index)
@@ -217,6 +219,8 @@ void SocialGraphModel::actionDeny(const QModelIndex &index)
                       m_accounts.removeAt(index.row());
                       endRemoveRows();
                   });
+
+    account->checkForFollowRequests();
 }
 
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const

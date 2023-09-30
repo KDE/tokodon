@@ -227,6 +227,10 @@ static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEvent
 
 QWebSocket *Account::streamingSocket(const QString &stream)
 {
+    if (m_token.isEmpty()) {
+        return nullptr;
+    }
+
     if (m_websockets.contains(stream)) {
         return m_websockets[stream];
     }

@@ -476,6 +476,7 @@ protected:
     AccountConfig *m_config = nullptr;
     bool m_registrationsOpen = false;
     QString m_registrationMessage;
+    bool m_hasFollowRequests = false;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

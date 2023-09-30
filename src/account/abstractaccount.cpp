@@ -586,6 +586,11 @@ void AbstractAccount::handleNotification(const QJsonDocument &doc)
     const auto obj = doc.object();
     std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj);
 
+    if (n->type() == Notification::FollowRequest) {
+        m_hasFollowRequests = true;
+        Q_EMIT hasFollowRequestsChanged();
+    }
+
     Q_EMIT notification(n);
 }
 

@@ -512,15 +512,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Timer {
-        id: followRequestTimer
-        running: AccountManager.hasAccounts
-        interval: 1800000 // 30 minutes
-        onTriggered: if (AccountManager.hasAccounts && AccountManager.selectedAccount) {
-            AccountManager.selectedAccount.checkForFollowRequests();
-        }
-    }
-
     Rectangle {
         anchors.fill: parent
         visible: !AccountManager.isReady
