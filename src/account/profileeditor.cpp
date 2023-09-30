@@ -9,6 +9,8 @@
 #include <QHttpMultiPart>
 #include <QMimeDatabase>
 
+using namespace Qt::Literals::StringLiterals;
+
 ProfileEditorBackend::ProfileEditorBackend(QObject *parent)
     : QObject(parent)
 {
@@ -42,8 +44,9 @@ QString ProfileEditorBackend::displayNameHtml() const
 {
     QString displayNameHtml = QString(m_displayName).replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
     for (const auto &emoji : m_account->customEmojis()) {
-        displayNameHtml = displayNameHtml.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
-                                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emoji.url + "\">");
+        displayNameHtml =
+            displayNameHtml.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
+                                    QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emoji.url + QStringLiteral("\">"));
     }
 
     return displayNameHtml;
@@ -238,58 +241,58 @@ void ProfileEditorBackend::fetchAccountInfo()
         const auto json = QJsonDocument::fromJson(reply->readAll());
         Q_ASSERT(json.isObject());
         const auto obj = json.object();
-        setDisplayName(obj["display_name"].toString());
-        const auto source = obj["source"].toObject();
-        setSensitive(source["sensitive"].toBool());
-        setPrivacy(source["privacy"].toString());
-        setNote(source["note"].toString());
-        setLanguage(source["language"].toString());
-        setBot(obj["bot"].toBool());
-        setBackgroundUrl(QUrl(obj["header_static"].toString()));
-        setAvatarUrl(QUrl(obj["avatar_static"].toString()));
-        setLocked(obj["locked"].toBool());
-        setDiscoverable(obj["discoverable"].toBool());
+        setDisplayName(obj["display_name"_L1].toString());
+        const auto source = obj["source"_L1].toObject();
+        setSensitive(source["sensitive"_L1].toBool());
+        setPrivacy(source["privacy"_L1].toString());
+        setNote(source["note"_L1].toString());
+        setLanguage(source["language"_L1].toString());
+        setBot(obj["bot"_L1].toBool());
+        setBackgroundUrl(QUrl(obj["header_static"_L1].toString()));
+        setAvatarUrl(QUrl(obj["avatar_static"_L1].toString()));
+        setLocked(obj["locked"_L1].toBool());
+        setDiscoverable(obj["discoverable"_L1].toBool());
     });
 }
 
 void ProfileEditorBackend::save()
 {
-    const QUrl url = m_account->apiUrl("/api/v1/accounts/update_credentials");
+    const QUrl url = m_account->apiUrl(QStringLiteral("/api/v1/accounts/update_credentials"));
 
     auto multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     QHttpPart displayNamePart;
-    displayNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"display_name\""));
+    displayNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"display_name\""));
     displayNamePart.setBody(displayName().toUtf8());
     multiPart->append(displayNamePart);
 
     QHttpPart notePart;
-    notePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"note\""));
+    notePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"note\""));
     notePart.setBody(note().toUtf8());
     multiPart->append(notePart);
 
     QHttpPart lockedPart;
-    lockedPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"locked\""));
+    lockedPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"locked\""));
     lockedPart.setBody(locked() ? "1" : "0");
     multiPart->append(lockedPart);
 
     QHttpPart botPart;
-    botPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"bot\""));
+    botPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"bot\""));
     botPart.setBody(bot() ? "1" : "0");
     multiPart->append(botPart);
 
     QHttpPart discoverablePart;
-    discoverablePart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"discoverable\""));
+    discoverablePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"discoverable\""));
     discoverablePart.setBody(discoverable() ? "1" : "0");
     multiPart->append(discoverablePart);
 
     QHttpPart privacyPart;
-    privacyPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"source[privacy]\""));
+    privacyPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"source[privacy]\""));
     privacyPart.setBody(privacy().toUtf8());
     multiPart->append(privacyPart);
 
     QHttpPart sensitivityPart;
-    sensitivityPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"source[sensitive]\""));
+    sensitivityPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"source[sensitive]\""));
     sensitivityPart.setBody(sensitive() ? "1" : "0");
     multiPart->append(sensitivityPart);
 
@@ -301,14 +304,14 @@ void ProfileEditorBackend::save()
         if (file->open(QIODevice::ReadOnly)) {
             QHttpPart headerPart;
             headerPart.setHeader(QNetworkRequest::ContentTypeHeader, mime.name());
-            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"header\""));
+            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"header\""));
             headerPart.setBodyDevice(file);
             file->setParent(multiPart);
             multiPart->append(headerPart);
         }
     } else if (backgroundUrl().isEmpty()) {
         QHttpPart headerPart;
-        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"header\""));
+        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"header\""));
         multiPart->append(headerPart);
     }
 
@@ -318,14 +321,14 @@ void ProfileEditorBackend::save()
         if (file->open(QIODevice::ReadOnly)) {
             QHttpPart headerPart;
             headerPart.setHeader(QNetworkRequest::ContentTypeHeader, mime.name());
-            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"avatar\""));
+            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"avatar\""));
             headerPart.setBodyDevice(file);
             file->setParent(multiPart);
             multiPart->append(headerPart);
         }
     } else if (avatarUrl().isEmpty()) {
         QHttpPart headerPart;
-        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"avatar\""));
+        headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"avatar\""));
         multiPart->append(headerPart);
     }
 

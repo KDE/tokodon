@@ -24,16 +24,17 @@ private Q_SLOTS:
         auto account = new MockAccount();
         AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
-        QUrl url = account->apiUrl("/api/v1/conversations");
-        account->registerGet(url, new TestReply("conversation-result.json", account));
+        QUrl url = account->apiUrl(QStringLiteral("/api/v1/conversations"));
+        account->registerGet(url, new TestReply(QStringLiteral("conversation-result.json"), account));
 
         ConversationModel conversationModel;
 
         QCOMPARE(conversationModel.rowCount({}), 1);
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
-                 QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->account(), "Gargron");
-        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::ConversationIdRole).toString(), "418374");
+                 QUrl(QStringLiteral("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg")));
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->account(),
+                 QStringLiteral("Gargron"));
+        QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::ConversationIdRole).toString(), QStringLiteral("418374"));
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), ConversationModel::UnreadRole), false);
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::ContentRole), QStringLiteral("LOREM"));
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayName(),

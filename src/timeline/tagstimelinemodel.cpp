@@ -40,9 +40,9 @@ void TagsTimelineModel::fillTimeline(const QString &fromId)
     }
     QUrlQuery q;
     if (!fromId.isEmpty()) {
-        q.addQueryItem("max_id", fromId);
+        q.addQueryItem(QStringLiteral("max_id"), fromId);
     }
-    auto uri = m_account->apiUrl(QString("/api/v1/timelines/tag/%1").arg(m_hashtag));
+    auto uri = m_account->apiUrl(QStringLiteral("/api/v1/timelines/tag/%1").arg(m_hashtag));
     uri.setQuery(q);
     const auto account = m_account;
     const auto hashtag = m_hashtag;

@@ -10,6 +10,8 @@
 #include <QUrlQuery>
 #include <algorithm>
 
+using namespace Qt::Literals::StringLiterals;
+
 SearchModel::SearchModel(QObject *parent)
     : AbstractTimelineModel(parent)
 {
@@ -37,8 +39,8 @@ SearchModel::~SearchModel() = default;
 
 void SearchModel::search(const QString &queryString)
 {
-    auto url = m_account->apiUrl("/api/v2/search");
-    url.setQuery({{"q", queryString}});
+    auto url = m_account->apiUrl(QStringLiteral("/api/v2/search"));
+    url.setQuery({{QStringLiteral("q"), queryString}});
     setLoading(true);
     setLoaded(false);
     m_account->get(url, true, this, [this](QNetworkReply *reply) {
@@ -60,7 +62,7 @@ void SearchModel::search(const QString &queryString)
             std::back_inserter(m_accounts),
             [this](const QJsonValue &value) -> auto{
                 const auto account = value.toObject();
-                return m_account->identityLookup(account["id"].toString(), account);
+                return m_account->identityLookup(account["id"_L1].toString(), account);
             });
         const auto hashtags = searchResult[QStringLiteral("hashtags")].toArray();
         std::transform(
@@ -160,7 +162,7 @@ void SearchModel::setLoaded(bool loaded)
 
 SearchHashtag::SearchHashtag(const QJsonObject &object)
 {
-    m_name = object["name"].toString();
+    m_name = object["name"_L1].toString();
 }
 
 QString SearchHashtag::getName() const

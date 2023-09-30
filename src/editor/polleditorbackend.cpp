@@ -5,6 +5,8 @@
 
 #include <QJsonArray>
 
+using namespace Qt::Literals::StringLiterals;
+
 PollEditorBackend::PollEditorBackend(QObject *parent)
     : QObject(parent)
 {
@@ -46,11 +48,11 @@ QJsonObject PollEditorBackend::toJsonObject() const
     }
 
     QJsonObject pollObj;
-    pollObj["options"] = optionsArray;
+    pollObj["options"_L1] = optionsArray;
 
-    pollObj["expires_in"] = m_expiresIn;
-    pollObj["multiple"] = m_multipleChoice;
-    pollObj["hide_totals"] = m_hideTotals;
+    pollObj["expires_in"_L1] = m_expiresIn;
+    pollObj["multiple"_L1] = m_multipleChoice;
+    pollObj["hide_totals"_L1] = m_hideTotals;
 
     return pollObj;
 }

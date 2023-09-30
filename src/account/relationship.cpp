@@ -4,6 +4,8 @@
 #include "relationship.h"
 #include "account.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 Relationship::Relationship(Identity *parent, const QJsonObject &jsonObj)
     : QObject(parent)
     , m_parent(parent)
@@ -13,18 +15,18 @@ Relationship::Relationship(Identity *parent, const QJsonObject &jsonObj)
 
 void Relationship::updateFromJson(const QJsonObject &jsonObj)
 {
-    setFollowing(jsonObj["following"].toBool());
-    setRequested(jsonObj["requested"].toBool());
-    setEndorsed(jsonObj["endorsed"].toBool());
-    setFollowedBy(jsonObj["followed_by"].toBool());
-    setMuting(jsonObj["muting"].toBool());
-    setMutingNotifications(jsonObj["muting_notifications"].toBool());
-    setShowingReblogs(jsonObj["showing_reblogs"].toBool());
-    setNotifying(jsonObj["notifying"].toBool());
-    setBlocking(jsonObj["blocking"].toBool());
-    setDomainBlocking(jsonObj["domain_blocking"].toBool());
-    setBlockedBy(jsonObj["blocked_by"].toBool());
-    setNote(jsonObj["note"].toString());
+    setFollowing(jsonObj["following"_L1].toBool());
+    setRequested(jsonObj["requested"_L1].toBool());
+    setEndorsed(jsonObj["endorsed"_L1].toBool());
+    setFollowedBy(jsonObj["followed_by"_L1].toBool());
+    setMuting(jsonObj["muting"_L1].toBool());
+    setMutingNotifications(jsonObj["muting_notifications"_L1].toBool());
+    setShowingReblogs(jsonObj["showing_reblogs"_L1].toBool());
+    setNotifying(jsonObj["notifying"_L1].toBool());
+    setBlocking(jsonObj["blocking"_L1].toBool());
+    setDomainBlocking(jsonObj["domain_blocking"_L1].toBool());
+    setBlockedBy(jsonObj["blocked_by"_L1].toBool());
+    setNote(jsonObj["note"_L1].toString());
 }
 
 bool Relationship::following() const

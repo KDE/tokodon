@@ -9,6 +9,8 @@
 #include <QDateTime>
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString AdminAccountInfo::role() const
 {
     return m_role;
@@ -24,9 +26,9 @@ QString AdminAccountInfo::loginStatus() const
         return i18nc("login status", "Sensitized");
     } else if (m_disabled) {
         return i18nc("login status", "Frozen");
-    } else if (!m_emailStatus && m_ip != "") {
+    } else if (!m_emailStatus && m_ip != QStringLiteral("")) {
         return i18nc("login status", "Email Not confirmed");
-    } else if (!m_approved && m_ip != "") {
+    } else if (!m_approved && m_ip != QStringLiteral("")) {
         return i18nc("login status", "Not Approved");
     } else {
         return i18nc("login status", "No Limits Imposed");
@@ -131,7 +133,7 @@ void AdminAccountInfo::setApproved(bool approved)
 bool AdminAccountInfo::isLocal() const
 {
     // hack to determine if an account is local
-    return m_ip != "";
+    return m_ip != QStringLiteral("");
 }
 
 int AdminAccountInfo::position() const
@@ -147,36 +149,36 @@ void AdminAccountInfo::reparentAdminAccountInfo(AbstractAccount *parent)
 void AdminAccountInfo::fromSourceData(const QJsonObject &jdoc)
 {
     auto account = AccountManager::instance().selectedAccount();
-    const auto doc = jdoc["account"];
-    m_userLevelIdentity = account->identityLookup(doc["id"].toString(), doc.toObject());
+    const auto doc = jdoc["account"_L1];
+    m_userLevelIdentity = account->identityLookup(doc["id"_L1].toString(), doc.toObject());
 
-    m_role = jdoc["role"]["name"].toString();
-    m_ip = jdoc["ip"].toString();
-    m_ips = jdoc["ips"].toArray();
-    m_email = jdoc["email"].toString();
-    m_inviteRequest = jdoc["invite_request"].toString();
-    m_emailStatus = jdoc["confirmed"].toBool();
-    m_suspended = jdoc["suspended"].toBool();
-    m_silenced = jdoc["silenced"].toBool();
-    m_sensitized = jdoc["sensitized"].toBool();
-    m_disabled = jdoc["disabled"].toBool();
-    m_approved = jdoc["approved"].toBool();
-    m_locale = jdoc["locale"].toString();
-    m_position = jdoc["role"]["position"].toInt();
-    m_joined = QDateTime::fromString(jdoc["created_at"].toString(), Qt::ISODate).toLocalTime();
+    m_role = jdoc["role"_L1]["name"_L1].toString();
+    m_ip = jdoc["ip"_L1].toString();
+    m_ips = jdoc["ips"_L1].toArray();
+    m_email = jdoc["email"_L1].toString();
+    m_inviteRequest = jdoc["invite_request"_L1].toString();
+    m_emailStatus = jdoc["confirmed"_L1].toBool();
+    m_suspended = jdoc["suspended"_L1].toBool();
+    m_silenced = jdoc["silenced"_L1].toBool();
+    m_sensitized = jdoc["sensitized"_L1].toBool();
+    m_disabled = jdoc["disabled"_L1].toBool();
+    m_approved = jdoc["approved"_L1].toBool();
+    m_locale = jdoc["locale"_L1].toString();
+    m_position = jdoc["role"_L1]["position"_L1].toInt();
+    m_joined = QDateTime::fromString(jdoc["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 
     // logic for last used activity
-    const QJsonArray ipsArray = jdoc["ips"].toArray();
+    const QJsonArray ipsArray = jdoc["ips"_L1].toArray();
     calculateRecentActivity(ipsArray);
 
-    if (jdoc["email"].toString().length() > 0) {
-        m_emailProvider = jdoc["email"].toString().split('@').at(1);
+    if (jdoc["email"_L1].toString().length() > 0) {
+        m_emailProvider = jdoc["email"_L1].toString().split('@'_L1).at(1);
     }
 
-    auto invited_by_account_id = jdoc["invited_by_account_id"].toString();
+    auto invited_by_account_id = jdoc["invited_by_account_id"_L1].toString();
 
-    if (invited_by_account_id != "") {
-        QUrl url = account->apiUrl(QString("/api/v1/accounts/%1").arg(invited_by_account_id));
+    if (invited_by_account_id != QStringLiteral("")) {
+        QUrl url = account->apiUrl(QStringLiteral("/api/v1/accounts/%1").arg(invited_by_account_id));
         account->get(url, true, this, [this, account, invited_by_account_id](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
             m_invitedByIdentity = account->identityLookup(invited_by_account_id, doc);

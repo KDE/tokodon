@@ -6,6 +6,8 @@
 #include <QDateTime>
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString FederationInfo::id() const
 {
     return m_id;
@@ -84,14 +86,14 @@ void FederationInfo::setObfuscate(const bool &obfuscate)
 FederationInfo FederationInfo::fromSourceData(const QJsonObject &doc)
 {
     FederationInfo info;
-    info.m_id = doc["id"].toString();
-    info.m_domain = doc["domain"].toString();
-    info.m_createdAt = QDateTime::fromString(doc["created_at"].toString(), Qt::ISODate).toLocalTime();
-    info.m_severity = doc["severity"].toString();
-    info.m_rejectMedia = doc["reject_media"].toBool();
-    info.m_rejectReports = doc["reject_reports"].toBool();
-    info.m_privateComment = doc["private_comment"].toString();
-    info.m_publicComment = doc["public_comment"].toString();
-    info.m_obfuscate = doc["obfuscate"].toBool();
+    info.m_id = doc["id"_L1].toString();
+    info.m_domain = doc["domain"_L1].toString();
+    info.m_createdAt = QDateTime::fromString(doc["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
+    info.m_severity = doc["severity"_L1].toString();
+    info.m_rejectMedia = doc["reject_media"_L1].toBool();
+    info.m_rejectReports = doc["reject_reports"_L1].toBool();
+    info.m_privateComment = doc["private_comment"_L1].toString();
+    info.m_publicComment = doc["public_comment"_L1].toString();
+    info.m_obfuscate = doc["obfuscate"_L1].toBool();
     return info;
 }

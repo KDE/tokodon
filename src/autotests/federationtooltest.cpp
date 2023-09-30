@@ -29,19 +29,21 @@ private Q_SLOTS:
 
     void testModel()
     {
-        QUrl url = account->apiUrl("/api/v1/admin/domain_blocks");
-        account->registerGet(url, new TestReply("federation-info.json", account));
+        QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks"));
+        account->registerGet(url, new TestReply(QStringLiteral("federation-info.json"), account));
 
         FederationToolModel federationToolModel;
         QCOMPARE(federationToolModel.rowCount({}), 2);
         QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::IdRole).toInt(), 1);
-        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::DomainRole).toUrl(), QUrl("kde.org"));
+        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::DomainRole).toUrl(), QUrl(QStringLiteral("kde.org")));
         Q_ASSERT(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::CreatedAtRole).isValid());
-        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::SeverityRole).toString(), "silence");
+        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::SeverityRole).toString(), QStringLiteral("silence"));
         QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::RejectMediaRole).toBool(), false);
         QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::RejectReportsRole).toBool(), false);
-        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::PrivateCommentRole).toString(), "This is a private comment");
-        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::PublicCommentRole).toString(), "This is a public comment");
+        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::PrivateCommentRole).toString(),
+                 QStringLiteral("This is a private comment"));
+        QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::PublicCommentRole).toString(),
+                 QStringLiteral("This is a public comment"));
         QCOMPARE(federationToolModel.data(federationToolModel.index(0, 0), FederationToolModel::ObfuscateRole).toBool(), false);
     }
 

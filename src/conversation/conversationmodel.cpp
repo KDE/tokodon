@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <qvariant.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 ConversationModel::ConversationModel(QObject *parent)
     : AbstractTimelineModel(parent)
 {
@@ -73,13 +75,13 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
 {
     setLoading(true);
 
-    account->get(account->apiUrl("/api/v1/conversations"), true, this, [account, this](QNetworkReply *reply) {
+    account->get(account->apiUrl(QStringLiteral("/api/v1/conversations")), true, this, [account, this](QNetworkReply *reply) {
         beginResetModel();
         m_conversations.clear();
         const auto conversationArray = QJsonDocument::fromJson(reply->readAll()).array();
         for (const auto &conversation : conversationArray) {
             const auto obj = conversation.toObject();
-            const auto accountsArray = obj["accounts"].toArray();
+            const auto accountsArray = obj["accounts"_L1].toArray();
             QList<std::shared_ptr<Identity>> accounts;
             std::transform(
                 accountsArray.cbegin(),
@@ -87,13 +89,13 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
                 std::back_inserter(accounts),
                 [account](const QJsonValue &value) -> auto{
                     const auto accountObj = value.toObject();
-                    return account->identityLookup(accountObj["id"].toString(), accountObj);
+                    return account->identityLookup(accountObj["id"_L1].toString(), accountObj);
                 });
             m_conversations.append(Conversation{
                 accounts,
-                new Post(account, obj["last_status"].toObject(), this),
-                obj["unread"].toBool(),
-                obj["id"].toString(),
+                new Post(account, obj["last_status"_L1].toObject(), this),
+                obj["unread"_L1].toBool(),
+                obj["id"_L1].toString(),
             });
         }
         setLoading(false);
@@ -105,7 +107,7 @@ void ConversationModel::markAsRead(const QString &id)
 {
     auto account = AccountManager::instance().selectedAccount();
 
-    account->post(account->apiUrl(QString("/api/v1/conversations/%1/read").arg(id)), QJsonDocument(), true, this, [id, this](QNetworkReply *reply) {
+    account->post(account->apiUrl(QStringLiteral("/api/v1/conversations/%1/read").arg(id)), QJsonDocument(), true, this, [id, this](QNetworkReply *reply) {
         const auto conversationObj = QJsonDocument::fromJson(reply->readAll()).object();
         int i = 0;
         for (auto &conversation : m_conversations) {

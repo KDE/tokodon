@@ -7,6 +7,8 @@
 
 #include "tag.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 Tag::Tag(QJsonObject obj)
 {
     fromJson(obj);
@@ -14,15 +16,15 @@ Tag::Tag(QJsonObject obj)
 
 void Tag::fromJson(QJsonObject obj)
 {
-    m_name = obj["name"].toString();
-    m_url = QUrl(obj["url"].toString());
-    m_following = obj["following"].toBool();
-    const auto historyArray = obj["history"].toArray();
+    m_name = obj["name"_L1].toString();
+    m_url = QUrl(obj["url"_L1].toString());
+    m_following = obj["following"_L1].toBool();
+    const auto historyArray = obj["history"_L1].toArray();
     for (const QJsonValue &historyValue : historyArray) {
         QJsonObject historyObj = historyValue.toObject();
-        QString day = historyObj["day"].toString();
-        QString uses = historyObj["uses"].toString();
-        QString accounts = historyObj["accounts"].toString();
+        QString day = historyObj["day"_L1].toString();
+        QString uses = historyObj["uses"_L1].toString();
+        QString accounts = historyObj["accounts"_L1].toString();
         History history(day, uses, accounts);
         m_history.append(history);
     }

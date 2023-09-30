@@ -56,19 +56,19 @@ void AccountModel::fillTimeline(const QString &fromId)
 
     auto statusQuery = QUrlQuery();
     if (m_excludeReplies) {
-        statusQuery.addQueryItem("exclude_replies", "true");
+        statusQuery.addQueryItem(QStringLiteral("exclude_replies"), QStringLiteral("true"));
     }
     if (m_excludeBoosts) {
-        statusQuery.addQueryItem("exclude_reblogs", "true");
+        statusQuery.addQueryItem(QStringLiteral("exclude_reblogs"), QStringLiteral("true"));
     }
     if (m_onlyMedia) {
-        statusQuery.addQueryItem("only_media", "true");
+        statusQuery.addQueryItem(QStringLiteral("only_media"), QStringLiteral("true"));
     }
     if (!m_tagged.isEmpty()) {
-        statusQuery.addQueryItem("tagged", m_tagged);
+        statusQuery.addQueryItem(QStringLiteral("tagged"), m_tagged);
     }
     if (!fromId.isNull()) {
-        statusQuery.addQueryItem("max_id", fromId);
+        statusQuery.addQueryItem(QStringLiteral("max_id"), fromId);
     }
     if (!statusQuery.isEmpty()) {
         uriStatus.setQuery(statusQuery);
@@ -76,8 +76,8 @@ void AccountModel::fillTimeline(const QString &fromId)
 
     auto uriPinned = m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1/statuses").arg(m_accountId));
     uriPinned.setQuery(QUrlQuery{{
-        "pinned",
-        "true",
+        QStringLiteral("pinned"),
+        QStringLiteral("true"),
     }});
 
     const auto account = m_account;

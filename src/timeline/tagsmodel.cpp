@@ -44,16 +44,16 @@ void TagsModel::fillTimeline(const QString &fromId)
 {
     Q_UNUSED(fromId);
 
-    if (!account() || loading() || name() != "trending") {
+    if (!account() || loading() || name() != QStringLiteral("trending")) {
         return;
     }
 
     QUrlQuery q;
-    q.addQueryItem("limit", "20");
+    q.addQueryItem(QStringLiteral("limit"), QStringLiteral("20"));
     QUrl uri;
     if (m_next.isEmpty()) {
-        if (name() == "trending") {
-            uri = account()->apiUrl("/api/v1/trends/tags");
+        if (name() == QStringLiteral("trending")) {
+            uri = account()->apiUrl(QStringLiteral("/api/v1/trends/tags"));
             uri.setQuery(q);
         }
     } else {
@@ -71,9 +71,9 @@ void TagsModel::fillTimeline(const QString &fromId)
             if (!doc.isArray()) {
                 return;
             }
-            static QRegularExpression re("<(.*)>; rel=\"next\"");
+            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
             const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(next);
+            const auto match = re.match(QString::fromUtf8(next));
             m_next = QUrl::fromUserInput(match.captured(1));
             const auto values = doc.array();
 

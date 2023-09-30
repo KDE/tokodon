@@ -71,7 +71,7 @@ QString Preferences::defaultLanguage() const
     if (!m_defaultLanguage.isEmpty()) {
         return m_defaultLanguage;
     } else {
-        return "en";
+        return QStringLiteral("en");
     }
 }
 
@@ -102,9 +102,9 @@ void Preferences::setPreferencesField(QString name, QString value)
     auto multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     QHttpPart preferencesPart;
-    preferencesPart.setHeader(QNetworkRequest::ContentDispositionHeader, QString("form-data; name=\"%1\"").arg(name));
+    preferencesPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"%1\"").arg(name));
     preferencesPart.setBody(value.toUtf8());
     multiPart->append(preferencesPart);
 
-    m_account->patch(m_account->apiUrl("/api/v1/accounts/update_credentials"), multiPart, true, this, [=](QNetworkReply *) {});
+    m_account->patch(m_account->apiUrl(QStringLiteral("/api/v1/accounts/update_credentials")), multiPart, true, this, [=](QNetworkReply *) {});
 }

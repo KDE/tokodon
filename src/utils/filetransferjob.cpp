@@ -29,7 +29,7 @@ void FileTransferJob::start()
         if (!m_temporaryFile->isReadable() && !m_temporaryFile->open(QIODevice::WriteOnly)) {
             qCWarning(TOKODON_HTTP) << "Couldn't open the temporary file" << m_temporaryFile->fileName() << "for writing" << m_temporaryFile->errorString();
             setError(FileError);
-            setErrorText("Could not open the temporary download file");
+            setErrorText(i18n("Could not open the temporary download file"));
             emitResult();
             return;
         }
@@ -71,7 +71,7 @@ void FileTransferJob::start()
                     if (!m_temporaryFile->resize(targetSize)) {
                         qCWarning(TOKODON_HTTP) << "Failed to allocate" << targetSize << "bytes for" << m_temporaryFile->fileName();
                         setError(FileError);
-                        setErrorText("Could not reserve disk space for download");
+                        setErrorText(i18n("Could not reserve disk space for download"));
                         emitResult();
                     }
                 }

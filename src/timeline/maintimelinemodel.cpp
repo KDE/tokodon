@@ -20,7 +20,7 @@ QString MainTimelineModel::name() const
 
 QString MainTimelineModel::displayName() const
 {
-    if (m_timelineName == "home") {
+    if (m_timelineName == QStringLiteral("home")) {
         if (m_manager && m_manager->rowCount() > 1) {
             if (m_manager->selectedAccount() == nullptr) {
                 return i18n("Loading");
@@ -29,15 +29,15 @@ QString MainTimelineModel::displayName() const
         } else {
             return i18nc("@title", "Home");
         }
-    } else if (m_timelineName == "public") {
+    } else if (m_timelineName == QStringLiteral("public")) {
         return i18nc("@title", "Local Timeline");
-    } else if (m_timelineName == "federated") {
+    } else if (m_timelineName == QStringLiteral("federated")) {
         return i18nc("@title", "Global Timeline");
-    } else if (m_timelineName == "bookmarks") {
+    } else if (m_timelineName == QStringLiteral("bookmarks")) {
         return i18nc("@title", "Bookmarks");
-    } else if (m_timelineName == "favourites") {
+    } else if (m_timelineName == QStringLiteral("favourites")) {
         return i18nc("@title", "Favourites");
-    } else if (m_timelineName == "trending") {
+    } else if (m_timelineName == QStringLiteral("trending")) {
         return i18nc("@title", "Trending");
     }
 
@@ -58,8 +58,13 @@ void MainTimelineModel::setName(const QString &timelineName)
 
 void MainTimelineModel::fillTimeline(const QString &from_id)
 {
-    static const QSet<QString> validTimelines = {"home", "public", "federated", "bookmarks", "favourites", "trending"};
-    static const QSet<QString> publicTimelines = {"home", "public", "federated"};
+    static const QSet<QString> validTimelines = {QStringLiteral("home"),
+                                                 QStringLiteral("public"),
+                                                 QStringLiteral("federated"),
+                                                 QStringLiteral("bookmarks"),
+                                                 QStringLiteral("favourites"),
+                                                 QStringLiteral("trending")};
+    static const QSet<QString> publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
 
     if (!m_account || m_loading || !validTimelines.contains(m_timelineName)) {
         return;
@@ -67,20 +72,21 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
 
     setLoading(true);
 
-    const bool local = m_timelineName == "public";
+    const bool local = m_timelineName == QStringLiteral("public");
 
     QUrlQuery q;
     if (local) {
-        q.addQueryItem("local", "true");
+        q.addQueryItem(QStringLiteral("local"), QStringLiteral("true"));
     }
     if (!from_id.isEmpty()) {
-        q.addQueryItem("max_id", from_id);
+        q.addQueryItem(QStringLiteral("max_id"), from_id);
     }
 
     QUrl uri;
     if (publicTimelines.contains(m_timelineName)) {
         // federated timeline is really "public" without local set
-        const QString apiUrl = QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == "federated" ? "public" : m_timelineName);
+        const QString apiUrl =
+            QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
         uri = m_account->apiUrl(apiUrl);
         uri.setQuery(q);
     } else {
@@ -89,8 +95,9 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
             setLoading(false);
             return;
         }
-        uri =
-            m_next.isEmpty() ? m_account->apiUrl(QStringLiteral("/api/v1/%1").arg(m_timelineName == "trending" ? "trends/statuses" : m_timelineName)) : m_next;
+        uri = m_next.isEmpty() ? m_account->apiUrl(
+                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+                               : m_next;
     }
 
     auto account = m_account;
@@ -109,9 +116,9 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
                 fetchedTimeline(reply->readAll());
                 setLoading(false);
             } else {
-                static QRegularExpression re("<(.*)>; rel=\"next\"");
+                static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
                 const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-                const auto match = re.match(next);
+                const auto match = re.match(QString::fromUtf8(next));
                 m_next = QUrl::fromUserInput(match.captured(1));
                 fetchedTimeline(reply->readAll(), true);
                 setLoading(false);
@@ -126,7 +133,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
 void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload)
 {
     TimelineModel::handleEvent(eventType, payload);
-    if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == "home") {
+    if (eventType == AbstractAccount::StreamingEventType::UpdateEvent && m_timelineName == QStringLiteral("home")) {
         const auto doc = QJsonDocument::fromJson(payload);
         const auto post = new Post(m_account, doc.object(), this);
         beginInsertRows({}, 0, 0);

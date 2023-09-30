@@ -13,6 +13,8 @@
 #include <QUrlQuery>
 #include <qstringliteral.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 AccountsToolModel::AccountsToolModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -37,13 +39,13 @@ void AccountsToolModel::setLoading(bool loading)
 QUrlQuery AccountsToolModel::buildQuery() const
 {
     QUrlQuery query;
-    query.addQueryItem("origin", m_location);
-    query.addQueryItem("status", m_moderationStatus);
-    query.addQueryItem("role_ids", m_role);
-    query.addQueryItem("username", m_username);
-    query.addQueryItem("display_name", m_displayName);
-    query.addQueryItem("email", m_email);
-    query.addQueryItem("ip", m_ip);
+    query.addQueryItem(QStringLiteral("origin"), m_location);
+    query.addQueryItem(QStringLiteral("status"), m_moderationStatus);
+    query.addQueryItem(QStringLiteral("role_ids"), m_role);
+    query.addQueryItem(QStringLiteral("username"), m_username);
+    query.addQueryItem(QStringLiteral("display_name"), m_displayName);
+    query.addQueryItem(QStringLiteral("email"), m_email);
+    query.addQueryItem(QStringLiteral("ip"), m_ip);
     return query;
 }
 
@@ -242,7 +244,9 @@ void AccountsToolModel::unsensitiveAccount(const int row)
 
 void AccountsToolModel::actionAgainstAccount(const int row, const QString &type, const bool &emailWarning, const QString &note)
 {
-    executeAdminAction(row, AdminAccountAction::ActionAgainstAccount, {{"type", type}, {"send_email_notification", emailWarning}, {"text", note}});
+    executeAdminAction(row,
+                       AdminAccountAction::ActionAgainstAccount,
+                       {{QStringLiteral("type"), type}, {QStringLiteral("send_email_notification"), emailWarning}, {QStringLiteral("text"), note}});
 }
 
 bool AccountsToolModel::canFetchMore(const QModelIndex &parent) const
@@ -257,7 +261,7 @@ void AccountsToolModel::deleteAccountData(const int row)
     auto identity = m_accounts[row];
     const auto accountId = identity->userLevelIdentity()->id();
 
-    account->deleteResource(account->apiUrl(QString("/api/v1/admin/accounts/%1").arg(accountId)), true, this, [=](QNetworkReply *reply) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/accounts/%1").arg(accountId)), true, this, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
         qDebug() << "DELETED: " << doc;
     });
@@ -284,7 +288,7 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
 
     const QJsonDocument doc(extraArguments);
     // to be used when receiving parameter from actionAgainstAccount
-    const auto type = doc["type"].toString();
+    const auto type = doc["type"_L1].toString();
 
     auto account = AccountManager::instance().selectedAccount();
     QUrl url = account->apiUrl(accountApiUrl);
@@ -294,7 +298,7 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
         auto jsonObj = doc.object();
 
         // Check if the request failed due to one account blocking the other
-        if (!jsonObj.value("error").isUndefined()) {
+        if (!jsonObj.value("error"_L1).isUndefined()) {
             const QHash<AdminAccountAction, QString> accountActionMap = {
                 {AdminAccountAction::ApproveAccount, i18n("Could not accept account")},
                 {AdminAccountAction::RejectAccount, i18n("Could not reject account")},
@@ -317,13 +321,13 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
             identity->setApproved(false);
             break;
         case AdminAccountAction::ActionAgainstAccount:
-            if (type == "disable") {
+            if (type == QStringLiteral("disable")) {
                 identity->setDisabled(true);
-            } else if (type == "sensitive") {
+            } else if (type == QStringLiteral("sensitive")) {
                 identity->setSensitized(true);
-            } else if (type == "silence") {
+            } else if (type == QStringLiteral("silence")) {
                 identity->setSilence(true);
-            } else if (type == "suspend") {
+            } else if (type == QStringLiteral("suspend")) {
                 identity->setSuspended(true);
             }
             break;
@@ -357,11 +361,11 @@ void AccountsToolModel::fetchSelectedAccountPosition()
 
     const auto id = account->identity()->id();
 
-    QUrl url = account->apiUrl(QString("/api/v1/admin/accounts/%1").arg(id));
+    QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/accounts/%1").arg(id));
 
     account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
-        m_selectedAccountPosition = doc["role"]["position"].toInt();
+        m_selectedAccountPosition = doc["role"_L1]["position"_L1].toInt();
     });
 }
 
@@ -384,8 +388,8 @@ void AccountsToolModel::fillTimeline()
         url = m_next;
     }
     // To be removed when the pagination api response in fixed
-    if (url.toString().contains("v1")) {
-        url = QUrl(url.toString().replace("/v1/", "/v2/"));
+    if (url.toString().contains("v1"_L1)) {
+        url = QUrl(url.toString().replace("/v1/"_L1, "/v2/"_L1));
     }
 
     url.setQuery(buildQuery());
@@ -395,9 +399,9 @@ void AccountsToolModel::fillTimeline()
         const auto accounts = doc.array();
 
         if (!accounts.isEmpty()) {
-            static QRegularExpression re("<(.*)>; rel=\"next\"");
+            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
             const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(next);
+            const auto match = re.match(QString::fromUtf8(next));
             if (re.isValid()) {
                 m_next = QUrl::fromUserInput(match.captured(1));
             }
@@ -409,7 +413,7 @@ void AccountsToolModel::fillTimeline()
                 std::back_inserter(fetchedAccounts),
                 [account](const QJsonValue &value) -> auto{
                     const auto identityJson = value.toObject();
-                    return account->adminIdentityLookup(identityJson["id"].toString(), identityJson);
+                    return account->adminIdentityLookup(identityJson["id"_L1].toString(), identityJson);
                 });
             beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
             m_accounts += fetchedAccounts;

@@ -15,6 +15,8 @@
 #include <QNetworkReply>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
+
 AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     : QObject(parent)
     , m_instance_uri(instanceUri)
@@ -111,7 +113,7 @@ bool AbstractAccount::hasInstanceUrl() const
 QUrl AbstractAccount::apiUrl(const QString &path) const
 {
     QUrl url = QUrl::fromUserInput(m_instance_uri);
-    url.setScheme("https");
+    url.setScheme(QStringLiteral("https"));
     url.setPath(path);
 
     return url;
@@ -123,12 +125,12 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     m_token = QString();
 
     // register
-    const QUrl regUrl = apiUrl("/api/v1/apps");
-    const QJsonObject obj = {
-        {"client_name", appName},
-        {"redirect_uris", "tokodon://oauth"},
-        {"scopes", "read write follow " + additionalScopes},
-        {"website", website},
+    const QUrl regUrl = apiUrl(QStringLiteral("/api/v1/apps"));
+    const QJsonObject obj{
+        {QStringLiteral("client_name"), appName},
+        {QStringLiteral("redirect_uris"), QStringLiteral("tokodon://oauth")},
+        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(additionalScopes)},
+        {QStringLiteral("website"), website},
     };
     const QJsonDocument doc(obj);
 
@@ -144,10 +146,10 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
-        m_client_id = doc.object()["client_id"].toString();
-        m_client_secret = doc.object()["client_secret"].toString();
+        m_client_id = doc.object()["client_id"_L1].toString();
+        m_client_secret = doc.object()["client_secret"_L1].toString();
 
-        s_messageFilter->insert(m_client_secret, "CLIENT_SECRET");
+        s_messageFilter->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
 
         if (isRegistered()) {
             Q_EMIT registered();
@@ -167,29 +169,29 @@ void AbstractAccount::registerAccount(const QString &username,
     const QUrl tokenUrl = getTokenUrl();
     QUrlQuery q = buildOAuthQuery();
 
-    q.addQueryItem("client_secret", m_client_secret);
-    q.addQueryItem("grant_type", "client_credentials");
-    q.addQueryItem("scope", "write");
+    q.addQueryItem(QStringLiteral("client_secret"), m_client_secret);
+    q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("client_credentials"));
+    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("write"));
 
     post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
         // override the token for now
-        m_token = doc.object()["access_token"].toString();
-        s_messageFilter->insert(m_token, "ACCESS_TOKEN");
+        m_token = doc.object()["access_token"_L1].toString();
+        s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
 
         const QUrlQuery formdata{
-            {"username", username},
-            {"email", email},
-            {"password", password},
-            {"agreement", agreement ? "1" : "0"},
-            {"locale", locale},
-            {"reason", reason},
+            {QStringLiteral("username"), username},
+            {QStringLiteral("email"), email},
+            {QStringLiteral("password"), password},
+            {QStringLiteral("agreement"), agreement ? QStringLiteral("1") : QStringLiteral("0")},
+            {QStringLiteral("locale"), locale},
+            {QStringLiteral("reason"), reason},
         };
 
         post(
-            apiUrl("/api/v1/accounts"),
+            apiUrl(QStringLiteral("/api/v1/accounts")),
             formdata,
             true,
             this,
@@ -197,13 +199,13 @@ void AbstractAccount::registerAccount(const QString &username,
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 
-                if (doc.object().contains("access_token")) {
+                if (doc.object().contains("access_token"_L1)) {
                     setUsername(username);
-                    setAccessToken(doc["access_token"].toString());
+                    setAccessToken(doc["access_token"_L1].toString());
                 }
             },
             [=](QNetworkReply *reply) {
-                Q_EMIT registrationError(reply->readAll());
+                Q_EMIT registrationError(QString::fromUtf8(reply->readAll()));
             });
     });
 }
@@ -260,17 +262,17 @@ bool AbstractAccount::identityCached(const QString &accountId) const
 
 QUrlQuery AbstractAccount::buildOAuthQuery() const
 {
-    return QUrlQuery{{"client_id", m_client_id}};
+    return QUrlQuery{{QStringLiteral("client_id"), m_client_id}};
 }
 
 QUrl AbstractAccount::getAuthorizeUrl() const
 {
-    QUrl url = apiUrl("/oauth/authorize");
+    QUrl url = apiUrl(QStringLiteral("/oauth/authorize"));
     QUrlQuery q = buildOAuthQuery();
 
-    q.addQueryItem("redirect_uri", "tokodon://oauth");
-    q.addQueryItem("response_type", "code");
-    q.addQueryItem("scope", "read write follow " + m_additionalScopes);
+    q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
+    q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
+    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
 
     url.setQuery(q);
 
@@ -280,7 +282,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 void AbstractAccount::setAccessToken(const QString &token)
 {
     m_token = token;
-    s_messageFilter->insert(m_token, "ACCESS_TOKEN");
+    s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
     AccountManager::instance().addAccount(this, false);
     AccountManager::instance().selectAccount(this, true);
     validateToken();
@@ -289,14 +291,14 @@ void AbstractAccount::setAccessToken(const QString &token)
 
 QUrl AbstractAccount::getTokenUrl() const
 {
-    return apiUrl("/oauth/token");
+    return apiUrl(QStringLiteral("/oauth/token"));
 }
 
 void AbstractAccount::setInstanceUri(const QString &instance_uri)
 {
     // instance URI changed, get new credentials
     QUrl instance_url = QUrl::fromUserInput(instance_uri);
-    instance_url.setScheme("https"); // getting token from http is not supported
+    instance_url.setScheme(QStringLiteral("https")); // getting token from http is not supported
 
     m_instance_uri = instance_url.toString();
 }
@@ -311,22 +313,22 @@ void AbstractAccount::setToken(const QString &authcode)
     const QUrl tokenUrl = getTokenUrl();
     QUrlQuery q = buildOAuthQuery();
 
-    q.addQueryItem("client_secret", m_client_secret);
-    q.addQueryItem("redirect_uri", "tokodon://oauth");
-    q.addQueryItem("grant_type", "authorization_code");
-    q.addQueryItem("code", authcode);
+    q.addQueryItem(QStringLiteral("client_secret"), m_client_secret);
+    q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
+    q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("authorization_code"));
+    q.addQueryItem(QStringLiteral("code"), authcode);
 
     post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        setAccessToken(doc.object()["access_token"].toString());
+        setAccessToken(doc.object()["access_token"_L1].toString());
     });
 }
 
 void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home)
 {
-    const QUrl mutation_url = apiUrl(QString("/api/v1/statuses/%1/%2").arg(p->postId(), verb));
+    const QUrl mutation_url = apiUrl(QStringLiteral("/api/v1/statuses/%1/%2").arg(p->postId(), verb));
     const QJsonDocument doc;
 
     post(mutation_url, doc, true, this, [=](QNetworkReply *reply) {
@@ -340,49 +342,49 @@ void AbstractAccount::mutatePost(Post *p, const QString &verb, bool deliver_home
             auto p = new Post(this, obj, this);
             posts.push_back(p);
 
-            Q_EMIT fetchedTimeline("home", posts);
+            Q_EMIT fetchedTimeline(QStringLiteral("home"), posts);
         }
     });
 }
 
 void AbstractAccount::favorite(Post *p)
 {
-    mutatePost(p, "favourite");
+    mutatePost(p, QStringLiteral("favourite"));
 }
 
 void AbstractAccount::unfavorite(Post *p)
 {
-    mutatePost(p, "unfavourite");
+    mutatePost(p, QStringLiteral("unfavourite"));
 }
 
 void AbstractAccount::repeat(Post *p)
 {
-    mutatePost(p, "reblog", true);
+    mutatePost(p, QStringLiteral("reblog"), true);
 }
 
 void AbstractAccount::unrepeat(Post *p)
 {
-    mutatePost(p, "unreblog");
+    mutatePost(p, QStringLiteral("unreblog"));
 }
 
 void AbstractAccount::bookmark(Post *p)
 {
-    mutatePost(p, "bookmark", true);
+    mutatePost(p, QStringLiteral("bookmark"), true);
 }
 
 void AbstractAccount::unbookmark(Post *p)
 {
-    mutatePost(p, "unbookmark");
+    mutatePost(p, QStringLiteral("unbookmark"));
 }
 
 void AbstractAccount::pin(Post *p)
 {
-    mutatePost(p, "pin", true);
+    mutatePost(p, QStringLiteral("pin"), true);
 }
 
 void AbstractAccount::unpin(Post *p)
 {
-    mutatePost(p, "unpin");
+    mutatePost(p, QStringLiteral("unpin"));
 }
 
 // It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
@@ -392,7 +394,7 @@ static AbstractAccount::AllowedContentType parseVersion(const QString &instanceV
     using ContentType = AbstractAccount::AllowedContentType;
 
     unsigned int result = ContentType::PlainText;
-    if (instanceVer.contains("glitch")) {
+    if (instanceVer.contains("glitch"_L1)) {
         result |= ContentType::Markdown | ContentType::Html;
     }
 
@@ -400,10 +402,10 @@ static AbstractAccount::AllowedContentType parseVersion(const QString &instanceV
 }
 
 static QMap<QString, AbstractAccount::AllowedContentType> stringToContentType = {
-    {"text/plain", AbstractAccount::AllowedContentType::PlainText},
-    {"text/bbcode", AbstractAccount::AllowedContentType::BBCode},
-    {"text/html", AbstractAccount::AllowedContentType::Html},
-    {"text/markdown", AbstractAccount::AllowedContentType::Markdown},
+    {QStringLiteral("text/plain"), AbstractAccount::AllowedContentType::PlainText},
+    {QStringLiteral("text/bbcode"), AbstractAccount::AllowedContentType::BBCode},
+    {QStringLiteral("text/html"), AbstractAccount::AllowedContentType::Html},
+    {QStringLiteral("text/markdown"), AbstractAccount::AllowedContentType::Markdown},
 };
 
 static AbstractAccount::AllowedContentType parsePleromaInfo(const QJsonDocument &doc)
@@ -412,12 +414,12 @@ static AbstractAccount::AllowedContentType parsePleromaInfo(const QJsonDocument 
     unsigned int result = ContentType::PlainText;
 
     auto obj = doc.object();
-    if (obj.contains("metadata")) {
-        auto metadata = obj["metadata"].toObject();
-        if (!metadata.contains("postFormats"))
+    if (obj.contains("metadata"_L1)) {
+        auto metadata = obj["metadata"_L1].toObject();
+        if (!metadata.contains("postFormats"_L1))
             return static_cast<ContentType>(result);
 
-        auto formats = metadata["postFormats"].toArray();
+        auto formats = metadata["postFormats"_L1].toArray();
 
         for (auto c : formats) {
             auto fmt = c.toString();
@@ -435,7 +437,7 @@ static AbstractAccount::AllowedContentType parsePleromaInfo(const QJsonDocument 
 void AbstractAccount::fetchInstanceMetadata()
 {
     get(
-        apiUrl("/api/v2/instance"),
+        apiUrl(QStringLiteral("/api/v2/instance")),
         false,
         this,
         [=](QNetworkReply *reply) {
@@ -450,51 +452,51 @@ void AbstractAccount::fetchInstanceMetadata()
 
             const auto obj = doc.object();
 
-            if (obj.contains("configuration")) {
-                const auto configObj = obj["configuration"].toObject();
+            if (obj.contains("configuration"_L1)) {
+                const auto configObj = obj["configuration"_L1].toObject();
 
-                if (configObj.contains("statuses")) {
-                    const auto statusConfigObj = configObj["statuses"].toObject();
-                    m_maxPostLength = statusConfigObj["max_characters"].toInt();
-                    m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+                if (configObj.contains("statuses"_L1)) {
+                    const auto statusConfigObj = configObj["statuses"_L1].toObject();
+                    m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
+                    m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                 }
             }
 
             // One can only hope that there will always be a version attached
-            if (obj.contains("version")) {
-                m_allowedContentTypes = parseVersion(obj["version"].toString());
+            if (obj.contains("version"_L1)) {
+                m_allowedContentTypes = parseVersion(obj["version"_L1].toString());
             }
 
             // Pleroma/Akkoma may report maximum post characters here, instead
-            if (obj.contains("max_toot_chars")) {
-                m_maxPostLength = obj["max_toot_chars"].toInt();
+            if (obj.contains("max_toot_chars"_L1)) {
+                m_maxPostLength = obj["max_toot_chars"_L1].toInt();
             }
 
             // Pleroma/Akkoma can report higher poll limits
-            if (obj.contains("poll_limits")) {
-                m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
+            if (obj.contains("poll_limits"_L1)) {
+                m_maxPollOptions = obj["poll_limits"_L1].toObject()["max_options"_L1].toInt();
             }
 
             // Other instance of poll options
-            if (obj.contains("polls")) {
-                m_maxPollOptions = obj["polls"].toObject()["max_options"].toInt();
+            if (obj.contains("polls"_L1)) {
+                m_maxPollOptions = obj["polls"_L1].toObject()["max_options"_L1].toInt();
             }
 
-            if (obj.contains("registrations")) {
-                m_registrationsOpen = obj["registrations"].toObject()["enabled"].toBool();
-                m_registrationMessage = obj["registrations"].toObject()["message"].toString();
+            if (obj.contains("registrations"_L1)) {
+                m_registrationsOpen = obj["registrations"_L1].toObject()["enabled"_L1].toBool();
+                m_registrationMessage = obj["registrations"_L1].toObject()["message"_L1].toString();
             }
 
-            m_supportsLocalVisibility = obj.contains("pleroma");
+            m_supportsLocalVisibility = obj.contains("pleroma"_L1);
 
-            m_instance_name = obj["title"].toString();
+            m_instance_name = obj["title"_L1].toString();
 
             Q_EMIT fetchedInstanceMetadata();
         },
         [=](QNetworkReply *) {
             // Fall back to v1 instance information
             // TODO: a lot of this can be merged with v2 handling
-            get(apiUrl("/api/v1/instance"), false, this, [=](QNetworkReply *reply) {
+            get(apiUrl(QStringLiteral("/api/v1/instance")), false, this, [=](QNetworkReply *reply) {
                 if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
                     return;
 
@@ -506,47 +508,47 @@ void AbstractAccount::fetchInstanceMetadata()
 
                 const auto obj = doc.object();
 
-                if (obj.contains("configuration")) {
-                    const auto configObj = obj["configuration"].toObject();
+                if (obj.contains("configuration"_L1)) {
+                    const auto configObj = obj["configuration"_L1].toObject();
 
-                    if (configObj.contains("statuses")) {
-                        const auto statusConfigObj = configObj["statuses"].toObject();
-                        m_maxPostLength = statusConfigObj["max_characters"].toInt();
-                        m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"].toInt();
+                    if (configObj.contains("statuses"_L1)) {
+                        const auto statusConfigObj = configObj["statuses"_L1].toObject();
+                        m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
+                        m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                     }
                 }
 
                 // One can only hope that there will always be a version attached
-                if (obj.contains("version")) {
-                    m_allowedContentTypes = parseVersion(obj["version"].toString());
+                if (obj.contains("version"_L1)) {
+                    m_allowedContentTypes = parseVersion(obj["version"_L1].toString());
                 }
 
                 // Pleroma/Akkoma may report maximum post characters here, instead
-                if (obj.contains("max_toot_chars")) {
-                    m_maxPostLength = obj["max_toot_chars"].toInt();
+                if (obj.contains("max_toot_chars"_L1)) {
+                    m_maxPostLength = obj["max_toot_chars"_L1].toInt();
                 }
 
                 // Pleroma/Akkoma can report higher poll limits
-                if (obj.contains("poll_limits")) {
-                    m_maxPollOptions = obj["poll_limits"].toObject()["max_options"].toInt();
+                if (obj.contains("poll_limits"_L1)) {
+                    m_maxPollOptions = obj["poll_limits"_L1].toObject()["max_options"_L1].toInt();
                 }
 
                 // Other instance of poll options
-                if (obj.contains("polls")) {
-                    m_maxPollOptions = obj["polls"].toObject()["max_options"].toInt();
+                if (obj.contains("polls"_L1)) {
+                    m_maxPollOptions = obj["polls"_L1].toObject()["max_options"_L1].toInt();
                 }
 
-                m_registrationsOpen = obj["registrations"].toBool();
+                m_registrationsOpen = obj["registrations"_L1].toBool();
 
-                m_supportsLocalVisibility = obj.contains("pleroma");
+                m_supportsLocalVisibility = obj.contains("pleroma"_L1);
 
-                m_instance_name = obj["title"].toString();
+                m_instance_name = obj["title"_L1].toString();
 
                 Q_EMIT fetchedInstanceMetadata();
             });
         });
 
-    get(apiUrl("/nodeinfo/2.1.json"), false, this, [=](QNetworkReply *reply) {
+    get(apiUrl(QStringLiteral("/nodeinfo/2.1.json")), false, this, [=](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -569,12 +571,12 @@ void AbstractAccount::invalidatePost(Post *p)
 
 QUrl AbstractAccount::streamingUrl(const QString &stream)
 {
-    QUrl url = apiUrl("/api/v1/streaming");
+    QUrl url = apiUrl(QStringLiteral("/api/v1/streaming"));
     url.setQuery(QUrlQuery{
-        {"access_token", m_token},
-        {"stream", stream},
+        {QStringLiteral("access_token"), m_token},
+        {QStringLiteral("stream"), stream},
     });
-    url.setScheme("wss");
+    url.setScheme(QStringLiteral("wss"));
 
     return url;
 }
@@ -612,7 +614,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
         auto jsonObj = doc.object();
 
         // Check if the request failed due to one account blocking the other
-        if (!jsonObj.value("error").isUndefined()) {
+        if (!jsonObj.value("error"_L1).isUndefined()) {
             const QHash<AccountAction, QString> accountActionMap = {
                 {AccountAction::Follow, i18n("Could not follow account")},
                 {AccountAction::Unfollow, i18n("Could not unfollow account")},
@@ -643,8 +645,8 @@ void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notif
     executeAction(identity,
                   AccountAction::Follow,
                   {
-                      {"reblogs", reblogs},
-                      {"notify", notify},
+                      {QStringLiteral("reblogs"), reblogs},
+                      {QStringLiteral("notify"), notify},
                   });
 }
 
@@ -665,7 +667,7 @@ void AbstractAccount::unblockAccount(Identity *identity)
 
 void AbstractAccount::muteAccount(Identity *identity, bool notifications, int duration)
 {
-    executeAction(identity, AccountAction::Mute, {{"notifcations", notifications}, {"duration", duration}});
+    executeAction(identity, AccountAction::Mute, {{QStringLiteral("notifcations"), notifications}, {QStringLiteral("duration"), duration}});
 }
 
 void AbstractAccount::unmuteAccount(Identity *identity)
@@ -688,7 +690,7 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
     if (note.isEmpty()) {
         executeAction(identity, AccountAction::Note);
     } else {
-        executeAction(identity, AccountAction::Note, {{"comment", note}});
+        executeAction(identity, AccountAction::Note, {{QStringLiteral("comment"), note}});
     }
 }
 
@@ -726,7 +728,7 @@ void AbstractAccount::fetchCustomEmojis()
 {
     m_customEmojis.clear();
 
-    get(apiUrl("/api/v1/custom_emojis"), false, this, [=](QNetworkReply *reply) {
+    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), false, this, [=](QNetworkReply *reply) {
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
             return;
 

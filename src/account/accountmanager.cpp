@@ -10,6 +10,8 @@
 #include "tokodon_debug.h"
 #include <qt6keychain/keychain.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
@@ -166,11 +168,11 @@ void AccountManager::removeAccount(AbstractAccount *account)
     config->deleteGroup(account->settingsGroupName());
     config->sync();
 
-    auto accessTokenJob = new QKeychain::DeletePasswordJob{"Tokodon"};
+    auto accessTokenJob = new QKeychain::DeletePasswordJob{QStringLiteral("Tokodon")};
     accessTokenJob->setKey(account->accessTokenKey());
     accessTokenJob->start();
 
-    auto clientSecretJob = new QKeychain::DeletePasswordJob{"Tokodon"};
+    auto clientSecretJob = new QKeychain::DeletePasswordJob{QStringLiteral("Tokodon")};
     clientSecretJob->setKey(account->clientSecretKey());
     clientSecretJob->start();
 
@@ -271,7 +273,7 @@ void AccountManager::loadFromSettings()
 
     auto config = KSharedConfig::openStateConfig();
     for (const auto &id : config->groupList()) {
-        if (id.contains('@')) {
+        if (id.contains('@'_L1)) {
             auto accountConfig = new AccountConfig{id};
 
             const int index = m_accountStatus.size();
@@ -334,7 +336,7 @@ void AccountManager::checkIfLoadingFinished()
     for (auto account : m_accounts) {
         // old LastUsedAccount values used to be only username
         const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
-        const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@';
+        const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@'_L1;
         const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
         const bool matchesOldFormat = account->username() == config->lastUsedAccount();
 
@@ -437,12 +439,12 @@ void AccountManager::migrateSettings()
 
             config.save();
 
-            auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon"};
+            auto accessTokenJob = new QKeychain::WritePasswordJob{QStringLiteral("Tokodon")};
             accessTokenJob->setKey(AccountManager::accessTokenKey(settingsGroupName));
             accessTokenJob->setTextData(settings.value("token").toString());
             accessTokenJob->start();
 
-            auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon"};
+            auto clientSecretJob = new QKeychain::WritePasswordJob{QStringLiteral("Tokodon")};
             clientSecretJob->setKey(AccountManager::clientSecretKey(settingsGroupName));
             clientSecretJob->setTextData(settings.value("client_secret").toString());
             clientSecretJob->start();

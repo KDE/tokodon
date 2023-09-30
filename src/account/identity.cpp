@@ -7,6 +7,8 @@
 
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 QString Identity::displayName() const
 {
     return !m_displayName.isEmpty() ? m_displayName : m_username;
@@ -97,36 +99,38 @@ void Identity::reparentIdentity(AbstractAccount *parent)
 
 void Identity::fromSourceData(const QJsonObject &doc)
 {
-    m_id = doc["id"].toString();
-    m_displayName = doc["display_name"].toString();
-    m_username = doc["username"].toString();
-    m_account = doc["acct"].toString();
-    m_bio = doc["note"].toString();
-    m_locked = doc["locked"].toBool();
-    m_backgroundUrl = QUrl(doc["header"].toString());
-    m_avatarUrl = QUrl(doc["avatar"].toString());
-    m_followersCount = doc["followers_count"].toInt();
-    m_followingCount = doc["following_count"].toInt();
-    m_statusesCount = doc["statuses_count"].toInt();
-    m_fields = doc["fields"].toArray();
-    m_url = QUrl(doc["url"].toString());
-    m_permission = doc["role"]["permissions"].toString().toInt();
+    m_id = doc["id"_L1].toString();
+    m_displayName = doc["display_name"_L1].toString();
+    m_username = doc["username"_L1].toString();
+    m_account = doc["acct"_L1].toString();
+    m_bio = doc["note"_L1].toString();
+    m_locked = doc["locked"_L1].toBool();
+    m_backgroundUrl = QUrl(doc["header"_L1].toString());
+    m_avatarUrl = QUrl(doc["avatar"_L1].toString());
+    m_followersCount = doc["followers_count"_L1].toInt();
+    m_followingCount = doc["following_count"_L1].toInt();
+    m_statusesCount = doc["statuses_count"_L1].toInt();
+    m_fields = doc["fields"_L1].toArray();
+    m_url = QUrl(doc["url"_L1].toString());
+    m_permission = doc["role"_L1]["permissions"_L1].toString().toInt();
     // When the user data is ourselves, we get source.privacy
     // with the default post privacy setting for the user. all others
     // will get empty strings.
-    QJsonObject source = doc["source"].toObject();
-    m_visibility = source["privacy"].toString();
+    QJsonObject source = doc["source"_L1].toObject();
+    m_visibility = source["privacy"_L1].toString();
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
-    const auto emojis = doc["emojis"].toArray();
+    const auto emojis = doc["emojis"_L1].toArray();
 
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
-        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                                                      "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
-        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                              "<img height=\"16\" width=\"16\" align=\"middle\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        m_displayNameHtml = m_displayNameHtml.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
+                                                      QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"")
+                                                          + emojiObj["static_url"_L1].toString() + QStringLiteral("\">"));
+        m_bio = m_bio.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
+                              QStringLiteral("<img height=\"16\" width=\"16\" align=\"middle\" src=\"") + emojiObj["static_url"_L1].toString()
+                                  + QStringLiteral("\">"));
     }
 
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
@@ -139,14 +143,14 @@ void Identity::fromSourceData(const QJsonObject &doc)
     // The account could be on a different server, so let's take advantage of web+ap and use that
     // to search for the account!
     // TODO: Mentions have a specific CSS class in the HTML, maybe we can use that instead of dirty regex?
-    static QRegularExpression re(R"((?:href="?)(?:https?|ftp):\S[^"]+)");
+    static QRegularExpression re(QStringLiteral(R"((?:href="?)(?:https?|ftp):\S[^"]+)"));
     const auto match = re.match(m_bio);
     if (re.isValid()) {
         for (int i = 0; i <= match.lastCapturedIndex(); ++i) {
             const int start = match.capturedStart(i);
             const int length = match.capturedLength(i);
             const QString captured = match.captured(i);
-            if (captured.contains('@')) {
+            if (captured.contains('@'_L1)) {
                 // The length of "href=" which is used in the regex.
                 const int hrefLength = 6;
                 m_bio = m_bio.replace(start + hrefLength, length - hrefLength, QStringLiteral("web+ap:/") + captured.mid(hrefLength));

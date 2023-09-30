@@ -11,6 +11,8 @@
 #include <QNetworkProxy>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
+
 NetworkController::NetworkController(QObject *parent)
     : QObject(parent)
 {
@@ -67,8 +69,8 @@ void NetworkController::setApplicationProxy()
 
 void NetworkController::openWebApLink(QString url)
 {
-    if (url.startsWith("web+ap")) {
-        url = url.replace(QRegularExpression("(web\\+ap)+:\\/\\/"), "https://");
+    if (url.startsWith("web+ap"_L1)) {
+        url = url.replace(QRegularExpression(QStringLiteral("(web\\+ap)+:\\/\\/")), QStringLiteral("https://"));
     }
 
     m_requestedLink = url;
@@ -82,8 +84,8 @@ void NetworkController::setAuthCode(QUrl authCode)
 {
     QUrlQuery query(authCode);
 
-    if (query.hasQueryItem("code")) {
-        Q_EMIT receivedAuthCode(query.queryItemValue("code"));
+    if (query.hasQueryItem(QStringLiteral("code"))) {
+        Q_EMIT receivedAuthCode(query.queryItemValue(QStringLiteral("code")));
     }
 }
 
@@ -94,11 +96,11 @@ void NetworkController::openLink()
 
     auto account = AccountManager::instance().selectedAccount();
 
-    auto url = account->apiUrl("/api/v2/search");
+    auto url = account->apiUrl(QStringLiteral("/api/v2/search"));
     url.setQuery({
-        {"q", m_requestedLink},
-        {"resolve", "true"},
-        {"limit", "1"},
+        {QStringLiteral("q"), m_requestedLink},
+        {QStringLiteral("resolve"), QStringLiteral("true")},
+        {QStringLiteral("limit"), QStringLiteral("1")},
     });
     account->get(url, true, &AccountManager::instance(), [=](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
@@ -110,7 +112,7 @@ void NetworkController::openLink()
         } else {
             const auto status = statuses[0].toObject();
 
-            Q_EMIT NetworkController::instance().openPost(status["id"].toString());
+            Q_EMIT NetworkController::instance().openPost(status["id"_L1].toString());
         }
 
         if (accounts.isEmpty()) {
@@ -118,7 +120,7 @@ void NetworkController::openLink()
         } else {
             const auto account = accounts[0].toObject();
 
-            Q_EMIT NetworkController::instance().openAccount(account["id"].toString());
+            Q_EMIT NetworkController::instance().openAccount(account["id"_L1].toString());
         }
 
         m_requestedLink.clear();

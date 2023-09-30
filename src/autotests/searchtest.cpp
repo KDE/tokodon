@@ -23,20 +23,20 @@ private Q_SLOTS:
         auto account = new MockAccount();
         AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
-        QUrl url = account->apiUrl("/api/v2/search");
-        url.setQuery(QUrlQuery{{"q", "myQuery"}});
-        account->registerGet(url, new TestReply("search-result.json", account));
+        QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
+        url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myQuery")}});
+        account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
         SearchModel searchModel;
-        searchModel.search("myQuery");
+        searchModel.search(QStringLiteral("myQuery"));
 
         QCOMPARE(searchModel.rowCount({}), 3);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::TypeRole), SearchModel::Account);
         QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::TypeRole), SearchModel::Status);
         QCOMPARE(searchModel.data(searchModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
-                 QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
+                 QUrl(QStringLiteral("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg")));
         QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
-                 QUrl("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg"));
+                 QUrl(QStringLiteral("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg")));
     }
 };
 

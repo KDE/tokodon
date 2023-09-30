@@ -30,7 +30,7 @@ public:
 private:
     QString m_id;
     QString m_domain;
-    QString m_severity = "silence";
+    QString m_severity = QStringLiteral("silence");
     QString m_privateComment;
     QString m_publicComment;
     QDateTime m_createdAt;

@@ -4,18 +4,18 @@
 #include "utils.h"
 
 static QMap<Post::Visibility, QString> p_visibilityToString = {
-    {Post::Visibility::Public, "public"},
-    {Post::Visibility::Unlisted, "unlisted"},
-    {Post::Visibility::Private, "private"},
-    {Post::Visibility::Direct, "direct"},
+    {Post::Visibility::Public, QStringLiteral("public")},
+    {Post::Visibility::Unlisted, QStringLiteral("unlisted")},
+    {Post::Visibility::Private, QStringLiteral("private")},
+    {Post::Visibility::Direct, QStringLiteral("direct")},
 };
 
 static QMap<QString, Post::Visibility> p_stringToVisibility = {
-    {"public", Post::Visibility::Public},
-    {"unlisted", Post::Visibility::Unlisted},
-    {"private", Post::Visibility::Private},
-    {"direct", Post::Visibility::Direct},
-    {"local", Post::Visibility::Local},
+    {QStringLiteral("public"), Post::Visibility::Public},
+    {QStringLiteral("unlisted"), Post::Visibility::Unlisted},
+    {QStringLiteral("private"), Post::Visibility::Private},
+    {QStringLiteral("direct"), Post::Visibility::Direct},
+    {QStringLiteral("local"), Post::Visibility::Local},
 };
 
 QString visibilityToString(Post::Visibility visibility)

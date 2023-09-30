@@ -12,6 +12,8 @@
 #include <QtMath>
 #include <algorithm>
 
+using namespace Qt::Literals::StringLiterals;
+
 TimelineModel::TimelineModel(QObject *parent)
     : AbstractTimelineModel(parent)
     , m_manager(&AccountManager::instance())
@@ -206,11 +208,11 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
         choices.cend(),
         std::back_inserter(array),
         [](int choice) -> auto{ return choice; });
-    obj["choices"] = array;
+    obj["choices"_L1] = array;
     QJsonDocument doc(obj);
     const auto id = poll->id();
 
-    m_account->post(m_account->apiUrl(QString("/api/v1/polls/%1/votes").arg(id)), doc, true, this, [this, id](QNetworkReply *reply) {
+    m_account->post(m_account->apiUrl(QStringLiteral("/api/v1/polls/%1/votes").arg(id)), doc, true, this, [this, id](QNetworkReply *reply) {
         int i = 0;
         for (auto &post : m_timeline) {
             if (post->poll() && post->poll()->id() == id) {

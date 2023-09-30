@@ -85,7 +85,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
     }
     QUrlQuery urlQuery(uri);
     for (const auto &excludeType : std::as_const(m_excludeTypes)) {
-        urlQuery.addQueryItem("exclude_types[]", excludeType);
+        urlQuery.addQueryItem(QStringLiteral("exclude_types[]"), excludeType);
     }
     uri.setQuery(urlQuery);
 
@@ -97,9 +97,9 @@ void NotificationModel::fillTimeline(const QUrl &next)
             m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
             return;
         }
-        static QRegularExpression re("<(.*)>; rel=\"next\"");
+        static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
         const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-        const auto match = re.match(next);
+        const auto match = re.match(QString::fromUtf8(next));
         m_next = QUrl::fromUserInput(match.captured(1));
 
         QList<std::shared_ptr<Notification>> notifications;

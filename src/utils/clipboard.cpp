@@ -61,9 +61,9 @@ QString Clipboard::saveImage() const
 
 void Clipboard::saveText(QString message)
 {
-    const static QRegularExpression re("<[^>]*>");
+    const static QRegularExpression re(QStringLiteral("<[^>]*>"));
     auto *mineData = new QMimeData; // ownership is transferred to clipboard
     mineData->setHtml(message);
-    mineData->setText(message.replace(re, ""));
+    mineData->setText(message.replace(re, QStringLiteral("")));
     m_clipboard->setMimeData(mineData);
 }

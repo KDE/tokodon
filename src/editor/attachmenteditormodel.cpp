@@ -99,7 +99,7 @@ void AttachmentEditorModel::setDescription(int row, const QString &description)
 
     const auto attachementUrl = m_account->apiUrl(QStringLiteral("/api/v1/media/%1").arg(id));
     const QJsonObject obj{
-        {"description", description},
+        {QStringLiteral("description"), description},
     };
     const QJsonDocument doc(obj);
     m_account->put(attachementUrl, doc, true, this, nullptr);
@@ -115,7 +115,7 @@ void AttachmentEditorModel::setFocusPoint(int row, double x, double y)
 
     const auto attachementUrl = m_account->apiUrl(QStringLiteral("/api/v1/media/%1").arg(id));
     const QJsonObject obj{
-        {"focus", QStringLiteral("%1,%2").arg(x).arg(y)},
+        {QStringLiteral("focus"), QStringLiteral("%1,%2").arg(x).arg(y)},
     };
     const QJsonDocument doc(obj);
     m_account->put(attachementUrl, doc, true, this, nullptr);

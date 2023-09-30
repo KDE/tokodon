@@ -29,13 +29,13 @@ private Q_SLOTS:
 
     void testModel()
     {
-        QUrl url = account->apiUrl("/api/v1/admin/email_domain_blocks");
-        account->registerGet(url, new TestReply("email-info.json", account));
+        QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks"));
+        account->registerGet(url, new TestReply(QStringLiteral("email-info.json"), account));
 
         EmailBlockToolModel emailBlockToolModel;
         QCOMPARE(emailBlockToolModel.rowCount({}), 2);
         QCOMPARE(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::IdRole).toInt(), 2);
-        QCOMPARE(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::DomainRole).toString(), "kde.org");
+        QCOMPARE(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::DomainRole).toString(), QStringLiteral("kde.org"));
         Q_ASSERT(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::CreatedAtRole).isValid());
         QCOMPARE(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::AccountSignUpCount).toInt(), 112);
         QCOMPARE(emailBlockToolModel.data(emailBlockToolModel.index(0, 0), EmailBlockToolModel::IpSignUpCount).toInt(), 255);

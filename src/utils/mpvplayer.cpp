@@ -101,26 +101,26 @@ MpvPlayer::MpvPlayer(QQuickItem *parent)
         throw std::runtime_error("could not create mpv context");
 
     // enable console output
-    setProperty("terminal", "yes");
+    setProperty(QStringLiteral("terminal"), QStringLiteral("yes"));
 
     // don't load user scripts or configs
-    setProperty("config", "no");
-    setProperty("load-scripts", "no");
+    setProperty(QStringLiteral("config"), QStringLiteral("no"));
+    setProperty(QStringLiteral("load-scripts"), QStringLiteral("no"));
 
     // force vo to libmpv (which it should be set to anyway)
-    setProperty("vo", "libmpv");
+    setProperty(QStringLiteral("vo"), QStringLiteral("libmpv"));
 
     // use safe hardware acceleration
-    setProperty("hwdec", "auto-safe");
+    setProperty(QStringLiteral("hwdec"), QStringLiteral("auto-safe"));
 
     // disable OSD and fonts
-    setProperty("osd-level", "0");
-    setProperty("embeddedfonts", "no");
+    setProperty(QStringLiteral("osd-level"), QStringLiteral("0"));
+    setProperty(QStringLiteral("embeddedfonts"), QStringLiteral("no"));
 
     // disable input
-    setProperty("input-builtin-bindings", "no");
-    setProperty("input-default-bindings", "no");
-    setProperty("input-vo-keyboard", "no");
+    setProperty(QStringLiteral("input-builtin-bindings"), QStringLiteral("no"));
+    setProperty(QStringLiteral("input-default-bindings"), QStringLiteral("no"));
+    setProperty(QStringLiteral("input-vo-keyboard"), QStringLiteral("no"));
 
     if (mpv_initialize(mpv) < 0)
         throw std::runtime_error("could not initialize mpv context");
@@ -249,7 +249,7 @@ void MpvPlayer::play()
         Q_EMIT pausedChanged();
     }
 
-    setProperty("pause", false);
+    setProperty(QStringLiteral("pause"), false);
 }
 
 void MpvPlayer::pause()
@@ -257,13 +257,13 @@ void MpvPlayer::pause()
     if (paused()) {
         return;
     }
-    setProperty("pause", true);
+    setProperty(QStringLiteral("pause"), true);
 }
 
 void MpvPlayer::stop()
 {
     setPosition(0);
-    setProperty("pause", true);
+    setProperty(QStringLiteral("pause"), true);
 }
 
 void MpvPlayer::setPosition(double value)
@@ -271,13 +271,12 @@ void MpvPlayer::setPosition(double value)
     if (value == position()) {
         return;
     }
-    setProperty("time-pos", value);
+    setProperty(QStringLiteral("time-pos"), value);
 }
 
 void MpvPlayer::seek(qreal offset)
 {
-    command(QStringList() << "add"
-                          << "time-pos" << QString::number(offset));
+    command(QStringList() << QStringLiteral("add") << QStringLiteral("time-pos") << QString::number(offset));
 }
 
 void MpvPlayer::on_update(void *ctx)

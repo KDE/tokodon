@@ -29,16 +29,16 @@ private Q_SLOTS:
 
     void testModel()
     {
-        QUrl url = account->apiUrl("/api/v1/admin/ip_blocks");
-        account->registerGet(url, new TestReply("ip-info.json", account));
+        QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks"));
+        account->registerGet(url, new TestReply(QStringLiteral("ip-info.json"), account));
 
         IpRulesToolModel ipRulesToolModel;
         QCOMPARE(ipRulesToolModel.rowCount({}), 4);
         QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::IdRole).toInt(), 1);
-        QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::IpRole).toString(), "192.0.2.0/30");
+        QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::IpRole).toString(), QStringLiteral("192.0.2.0/30"));
         Q_ASSERT(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::SeverityRole).isValid());
         QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::SeverityRole).toInt(), IpInfo::BlockAccess);
-        QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::CommentRole).toString(), "konqi is cute");
+        QCOMPARE(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::CommentRole).toString(), QStringLiteral("konqi is cute"));
         Q_ASSERT(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::CreatedAtRole).isValid());
         Q_ASSERT(ipRulesToolModel.data(ipRulesToolModel.index(0, 0), IpRulesToolModel::ExpiredAtRole).isValid());
     }

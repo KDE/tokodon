@@ -43,6 +43,8 @@
 #include <Windows.h>
 #endif
 
+using namespace Qt::Literals::StringLiterals;
+
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
 #endif
@@ -69,10 +71,10 @@ int main(int argc, char *argv[])
 
     // Breeze theme needs to be the "primary" theme or else icons do not get recolored
     // Non-Breeze themes (like Adwaita) do not load our icons properly unless tokodon is the main icon theme.
-    if (QIcon::themeName() == "breeze") {
-        QIcon::setFallbackThemeName("tokodon");
+    if (QIcon::themeName() == QStringLiteral("breeze")) {
+        QIcon::setFallbackThemeName(QStringLiteral("tokodon"));
     } else {
-        QIcon::setThemeName("tokodon");
+        QIcon::setThemeName(QStringLiteral("tokodon"));
     }
 #endif
 
@@ -89,7 +91,7 @@ int main(int argc, char *argv[])
 #endif
     KLocalizedString::setApplicationDomain("tokodon");
 
-    QCoreApplication::setOrganizationName("KDE");
+    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
 
     KAboutData about(QStringLiteral("tokodon"),
                      i18n("Tokodon"),
@@ -118,7 +120,7 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
     parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
 
-    QCommandLineOption shareOption("share", i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
+    QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
     parser.addOption(shareOption);
 
     about.setupCommandLine(&parser);
@@ -156,12 +158,12 @@ int main(int argc, char *argv[])
                 args.removeFirst();
 
                 if (arguments.length() >= 1) {
-                    if (args[0].startsWith("web+ap")) {
+                    if (args[0].startsWith("web+ap"_L1)) {
                         NetworkController::instance().openWebApLink(args[0]);
                     } else {
                         NetworkController::instance().setAuthCode(QUrl(args[0]));
                     }
-                    if (args[0] == "--share") {
+                    if (args[0] == "--share"_L1) {
                         NetworkController::instance().startComposing(args[1]);
                     } else {
                         NetworkController::instance().openWebApLink(args[0]);
@@ -201,7 +203,7 @@ int main(int argc, char *argv[])
     for (auto obj : rootObjects) {
         auto view = qobject_cast<QQuickWindow *>(obj);
         if (view) {
-            KConfig dataResource("data", KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+            KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
             KConfigGroup windowGroup(&dataResource, "Window");
             KWindowConfig::restoreWindowSize(view, windowGroup);
             KWindowConfig::restoreWindowPosition(view, windowGroup);

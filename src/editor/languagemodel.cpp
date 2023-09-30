@@ -5,6 +5,8 @@
 
 #include <QDebug>
 
+using namespace Qt::Literals::StringLiterals;
+
 RawLanguageModel::RawLanguageModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -13,12 +15,12 @@ RawLanguageModel::RawLanguageModel(QObject *parent)
     for (const auto &locale : locales) {
         if (!m_languages.contains(locale.language()) && locale != QLocale::c()) {
             m_languages.push_back(locale.language());
-            m_iso639codes.push_back(locale.name().split('_').first());
+            m_iso639codes.push_back(locale.name().split('_'_L1).first());
         }
     }
 
     for (const auto &language : QLocale().uiLanguages()) {
-        if (!language.contains('-')) {
+        if (!language.contains('-'_L1)) {
             m_preferredLanguages.push_back(language);
         }
     }

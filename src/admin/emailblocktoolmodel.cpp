@@ -68,14 +68,14 @@ QHash<int, QByteArray> EmailBlockToolModel::roleNames() const
 void EmailBlockToolModel::newEmailBlock(const QString &domain)
 {
     const QJsonObject obj{
-        {"domain", domain},
+        {QStringLiteral("domain"), domain},
     };
 
     const auto doc = QJsonDocument(obj);
 
     const auto account = AccountManager::instance().selectedAccount();
 
-    const QUrl url = account->apiUrl("/api/v1/admin/email_domain_blocks");
+    const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks"));
 
     account->post(url, doc, true, this, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -123,9 +123,9 @@ void EmailBlockToolModel::filltimeline()
         const auto emailblocks = doc.array();
 
         if (!emailblocks.isEmpty()) {
-            static QRegularExpression re("<(.*)>; rel=\"next\"");
+            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
             const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(next);
+            const auto match = re.match(QString::fromUtf8(next));
             if (re.isValid()) {
                 m_next = QUrl::fromUserInput(match.captured(1));
             }

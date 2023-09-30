@@ -13,11 +13,13 @@
 #include "post.h"
 #include "utils/utils.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
-    {"image", Attachment::AttachmentType::Image},
-    {"gifv", Attachment::AttachmentType::GifV},
-    {"video", Attachment::AttachmentType::Video},
-    {"unknown", Attachment::AttachmentType::Unknown},
+    {QStringLiteral("image"), Attachment::AttachmentType::Image},
+    {QStringLiteral("gifv"), Attachment::AttachmentType::GifV},
+    {QStringLiteral("video"), Attachment::AttachmentType::Video},
+    {QStringLiteral("unknown"), Attachment::AttachmentType::Unknown},
 };
 
 Attachment::Attachment(QObject *parent)
@@ -33,36 +35,36 @@ Attachment::Attachment(const QJsonObject &obj, QObject *parent)
 
 void Attachment::fromJson(const QJsonObject &obj)
 {
-    if (!obj.contains("type")) {
+    if (!obj.contains("type"_L1)) {
         m_type = Unknown;
         return;
     }
 
-    m_id = obj["id"].toString();
-    m_url = obj["url"].toString();
-    m_preview_url = obj["preview_url"].toString();
-    m_remote_url = obj["remote_url"].toString();
+    m_id = obj["id"_L1].toString();
+    m_url = obj["url"_L1].toString();
+    m_preview_url = obj["preview_url"_L1].toString();
+    m_remote_url = obj["remote_url"_L1].toString();
 
-    setDescription(obj["description"].toString());
-    m_blurhash = obj["blurhash"].toString();
-    m_sourceHeight = obj["meta"].toObject()["original"].toObject()["height"].toInt();
-    m_sourceWidth = obj["meta"].toObject()["original"].toObject()["width"].toInt();
+    setDescription(obj["description"_L1].toString());
+    m_blurhash = obj["blurhash"_L1].toString();
+    m_sourceHeight = obj["meta"_L1].toObject()["original"_L1].toObject()["height"_L1].toInt();
+    m_sourceWidth = obj["meta"_L1].toObject()["original"_L1].toObject()["width"_L1].toInt();
 
     // determine type if we can
-    const auto type = obj["type"].toString();
+    const auto type = obj["type"_L1].toString();
     if (stringToAttachmentType.contains(type)) {
         m_type = stringToAttachmentType[type];
     }
 
-    if (obj.contains("meta") && obj["meta"].toObject().contains("focus")) {
-        m_focusX = obj["meta"].toObject()["focus"].toObject()["x"].toDouble();
-        m_focusY = obj["meta"].toObject()["focus"].toObject()["y"].toDouble();
+    if (obj.contains("meta"_L1) && obj["meta"_L1].toObject().contains("focus"_L1)) {
+        m_focusX = obj["meta"_L1].toObject()["focus"_L1].toObject()["x"_L1].toDouble();
+        m_focusY = obj["meta"_L1].toObject()["focus"_L1].toObject()["y"_L1].toDouble();
     }
 }
 
 QString Post::type() const
 {
-    return "post";
+    return QStringLiteral("post");
 }
 
 QString Attachment::description() const
@@ -91,7 +93,7 @@ int Attachment::isVideo() const
 
 QString Attachment::tempSource() const
 {
-    return QString("image://blurhash/%1").arg(m_blurhash);
+    return QStringLiteral("image://blurhash/%1").arg(m_blurhash);
 }
 
 double Attachment::focusX() const
@@ -131,30 +133,31 @@ Post::Post(AbstractAccount *account, QObject *parent)
 
 QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity)
 {
-    QString content = obj["content"].toString();
-    const auto emojis = obj["emojis"].toArray();
+    QString content = obj["content"_L1].toString();
+    const auto emojis = obj["emojis"_L1].toArray();
 
     for (const auto &emoji : emojis) {
         const auto emojiObj = emoji.toObject();
-        content = content.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+        content = content.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
+                                  QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emojiObj["static_url"_L1].toString()
+                                      + QStringLiteral("\">"));
     }
 
-    const auto tags = obj["tags"].toArray();
+    const auto tags = obj["tags"_L1].toArray();
     const QString baseUrl = authorIdentity->url().toDisplayString(QUrl::RemovePath);
 
     for (const auto &tag : tags) {
         const auto tagObj = tag.toObject();
-        content = content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"].toString(),
-                                  QStringLiteral("hashtag:/") + tagObj["name"].toString(),
+        content = content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"_L1].toString(),
+                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
                                   Qt::CaseInsensitive);
     }
 
-    const auto mentions = obj["mentions"].toArray();
+    const auto mentions = obj["mentions"_L1].toArray();
 
     for (const auto &mention : mentions) {
         const auto mentionObj = mention.toObject();
-        content = content.replace(mentionObj["url"].toString(), QStringLiteral("account:/") + mentionObj["id"].toString(), Qt::CaseInsensitive);
+        content = content.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
     }
 
     return content;
@@ -180,20 +183,20 @@ Post *Notification::createPost(AbstractAccount *account, const QJsonObject &obj,
 
 void Post::fromJson(QJsonObject obj)
 {
-    const auto accountDoc = obj["account"].toObject();
-    const auto accountId = accountDoc["id"].toString();
+    const auto accountDoc = obj["account"_L1].toObject();
+    const auto accountId = accountDoc["id"_L1].toString();
 
-    m_originalPostId = obj["id"].toString();
-    const auto reblogObj = obj["reblog"].toObject();
+    m_originalPostId = obj["id"_L1].toString();
+    const auto reblogObj = obj["reblog"_L1].toObject();
 
-    if (!obj.contains("reblog") || reblogObj.isEmpty()) {
+    if (!obj.contains("reblog"_L1) || reblogObj.isEmpty()) {
         m_boosted = false;
         m_authorIdentity = m_parent->identityLookup(accountId, accountDoc);
     } else {
         m_boosted = true;
 
-        const auto reblogAccountDoc = reblogObj["account"].toObject();
-        const auto reblogAccountId = reblogAccountDoc["id"].toString();
+        const auto reblogAccountDoc = reblogObj["account"_L1].toObject();
+        const auto reblogAccountId = reblogAccountDoc["id"_L1].toString();
 
         m_authorIdentity = m_parent->identityLookup(reblogAccountId, reblogAccountDoc);
         m_boostIdentity = m_parent->identityLookup(accountId, accountDoc);
@@ -201,18 +204,18 @@ void Post::fromJson(QJsonObject obj)
         obj = reblogObj;
     }
 
-    m_postId = obj["id"].toString();
+    m_postId = obj["id"_L1].toString();
 
-    m_spoilerText = obj["spoiler_text"].toString();
+    m_spoilerText = obj["spoiler_text"_L1].toString();
     m_content = computeContent(obj, m_authorIdentity);
 
-    m_replyTargetId = obj["in_reply_to_id"].toString();
+    m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
-    if (obj.contains("in_reply_to_account_id") && obj["in_reply_to_account_id"].isString()) {
-        if (m_parent->identityCached(obj["in_reply_to_account_id"].toString())) {
-            m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"].toString(), {});
+    if (obj.contains("in_reply_to_account_id"_L1) && obj["in_reply_to_account_id"_L1].isString()) {
+        if (m_parent->identityCached(obj["in_reply_to_account_id"_L1].toString())) {
+            m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"_L1].toString(), {});
         } else {
-            const auto accountId = obj["in_reply_to_account_id"].toString();
+            const auto accountId = obj["in_reply_to_account_id"_L1].toString();
             QUrl uriAccount(m_parent->instanceUri());
             uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
 
@@ -230,60 +233,60 @@ void Post::fromJson(QJsonObject obj)
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
-            m_replyIdentity = m_parent->identityLookup(doc["account"].toObject()["id"].toString(), doc["account"].toObject());
+            m_replyIdentity = m_parent->identityLookup(doc["account"_L1].toObject()["id"_L1].toString(), doc["account"_L1].toObject());
             Q_EMIT replyIdentityChanged();
         });
     }
 
-    m_url = QUrl(obj["url"].toString());
+    m_url = QUrl(obj["url"_L1].toString());
 
-    m_favouritesCount = obj["favourites_count"].toInt();
-    m_reblogsCount = obj["reblogs_count"].toInt();
-    m_repliesCount = obj["replies_count"].toInt();
+    m_favouritesCount = obj["favourites_count"_L1].toInt();
+    m_reblogsCount = obj["reblogs_count"_L1].toInt();
+    m_repliesCount = obj["replies_count"_L1].toInt();
 
-    m_favourited = obj["favourited"].toBool();
-    m_reblogged = obj["reblogged"].toBool();
-    m_bookmarked = obj["bookmarked"].toBool();
-    m_pinned = obj["pinned"].toBool();
-    m_muted = obj["muted"].toBool();
+    m_favourited = obj["favourited"_L1].toBool();
+    m_reblogged = obj["reblogged"_L1].toBool();
+    m_bookmarked = obj["bookmarked"_L1].toBool();
+    m_pinned = obj["pinned"_L1].toBool();
+    m_muted = obj["muted"_L1].toBool();
 
     m_filters.clear();
 
-    const auto filters = obj["filtered"].toArray();
+    const auto filters = obj["filtered"_L1].toArray();
     for (const auto &filter : filters) {
         const auto filterContext = filter.toObject();
-        const auto filterObj = filterContext["filter"].toObject();
-        m_filters << filterObj["title"].toString();
+        const auto filterObj = filterContext["filter"_L1].toObject();
+        m_filters << filterObj["title"_L1].toString();
 
-        const auto filterAction = filterObj["filter_action"];
-        if (filterAction == "warn") {
+        const auto filterAction = filterObj["filter_action"_L1];
+        if (filterAction == "warn"_L1) {
             m_filtered = true;
-        } else if (filterAction == "hide") {
+        } else if (filterAction == "hide"_L1) {
             m_hidden = true;
         }
     }
 
-    m_sensitive = obj["sensitive"].toBool();
-    m_visibility = stringToVisibility(obj["visibility"].toString());
-    m_language = obj["language"].toString();
+    m_sensitive = obj["sensitive"_L1].toBool();
+    m_visibility = stringToVisibility(obj["visibility"_L1].toString());
+    m_language = obj["language"_L1].toString();
 
-    m_publishedAt = QDateTime::fromString(obj["created_at"].toString(), Qt::ISODate).toLocalTime();
+    m_publishedAt = QDateTime::fromString(obj["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 
     m_attachments.clear();
-    addAttachments(obj["media_attachments"].toArray());
-    const QJsonArray mentions = obj["mentions"].toArray();
-    if (obj.contains("card") && !obj["card"].toObject().empty()) {
-        setCard(std::make_optional<Card>(obj["card"].toObject()));
+    addAttachments(obj["media_attachments"_L1].toArray());
+    const QJsonArray mentions = obj["mentions"_L1].toArray();
+    if (obj.contains("card"_L1) && !obj["card"_L1].toObject().empty()) {
+        setCard(std::make_optional<Card>(obj["card"_L1].toObject()));
     }
 
-    if (obj.contains("application") && !obj["application"].toObject().empty()) {
-        setApplication(std::make_optional<Application>(obj["application"].toObject()));
+    if (obj.contains("application"_L1) && !obj["application"_L1].toObject().empty()) {
+        setApplication(std::make_optional<Application>(obj["application"_L1].toObject()));
     }
 
     m_mentions.clear();
     for (const auto &m : qAsConst(mentions)) {
         const QJsonObject o = m.toObject();
-        m_mentions.push_back("@" + o["acct"].toString());
+        m_mentions.push_back(QStringLiteral("@") + o["acct"_L1].toString());
     }
 
     if (obj.contains(QStringLiteral("poll")) && !obj[QStringLiteral("poll")].isNull()) {
@@ -410,27 +413,27 @@ int Post::reblogsCount() const
 }
 
 static QMap<QString, Notification::Type> str_to_not_type = {
-    {"favourite", Notification::Type::Favorite},
-    {"follow", Notification::Type::Follow},
-    {"mention", Notification::Type::Mention},
-    {"reblog", Notification::Type::Repeat},
-    {"update", Notification::Type::Update},
-    {"poll", Notification::Type::Poll},
-    {"status", Notification::Type::Status},
+    {QStringLiteral("favourite"), Notification::Type::Favorite},
+    {QStringLiteral("follow"), Notification::Type::Follow},
+    {QStringLiteral("mention"), Notification::Type::Mention},
+    {QStringLiteral("reblog"), Notification::Type::Repeat},
+    {QStringLiteral("update"), Notification::Type::Update},
+    {QStringLiteral("poll"), Notification::Type::Poll},
+    {QStringLiteral("status"), Notification::Type::Status},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
     : m_account(account)
 {
-    const auto accountObj = obj["account"].toObject();
-    const auto status = obj["status"].toObject();
-    const auto accountId = accountObj["id"].toString();
-    const auto type = obj["type"].toString();
+    const auto accountObj = obj["account"_L1].toObject();
+    const auto status = obj["status"_L1].toObject();
+    const auto accountId = accountObj["id"_L1].toString();
+    const auto type = obj["type"_L1].toString();
 
     m_post = createPost(m_account, status, parent);
     m_identity = m_account->identityLookup(accountId, accountObj);
     m_type = str_to_not_type[type];
-    m_id = obj["id"].toString().toInt();
+    m_id = obj["id"_L1].toString().toInt();
 }
 
 int Notification::id() const

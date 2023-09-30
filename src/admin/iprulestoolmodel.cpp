@@ -7,6 +7,8 @@
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
+
 IpRulesToolModel::IpRulesToolModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -71,17 +73,17 @@ QHash<int, QByteArray> IpRulesToolModel::roleNames() const
 void IpRulesToolModel::newIpBlock(const QString &ip, const int expiresIn, const QString &comment, const QString &severity)
 {
     const QJsonObject obj{
-        {"ip", ip},
-        {"severity", severity},
-        {"comment", comment},
-        {"expires_in", expiresIn},
+        {QStringLiteral("ip"), ip},
+        {QStringLiteral("severity"), severity},
+        {QStringLiteral("comment"), comment},
+        {QStringLiteral("expires_in"), expiresIn},
     };
 
     const auto doc = QJsonDocument(obj);
 
     const auto account = AccountManager::instance().selectedAccount();
 
-    const QUrl url = account->apiUrl("/api/v1/admin/ip_blocks");
+    const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks"));
 
     account->post(url, doc, true, this, [=](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
@@ -97,10 +99,10 @@ void IpRulesToolModel::newIpBlock(const QString &ip, const int expiresIn, const 
 void IpRulesToolModel::updateIpBlock(const int row, const QString &ip, const QString &severity, const QString &comment, const int expiresAt)
 {
     const QJsonObject obj{
-        {"ip", ip},
-        {"severity", severity},
-        {"comment", comment},
-        {"expires_in", expiresAt},
+        {QStringLiteral("ip"), ip},
+        {QStringLiteral("severity"), severity},
+        {QStringLiteral("comment"), comment},
+        {QStringLiteral("expires_in"), expiresAt},
     };
 
     const auto doc = QJsonDocument(obj);
@@ -109,11 +111,11 @@ void IpRulesToolModel::updateIpBlock(const int row, const QString &ip, const QSt
     auto &ipInfo = m_ipinfo[row];
     const auto ipBlockId = ipInfo.id();
 
-    account->put(account->apiUrl(QString("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), doc, true, this, [=, &ipInfo](QNetworkReply *reply) {
+    account->put(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), doc, true, this, [=, &ipInfo](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         const auto jsonObj = doc.object();
 
-        if (!jsonObj.value("error").isUndefined()) {
+        if (!jsonObj.value("error"_L1).isUndefined()) {
             account->errorOccured(i18n("Error occured when making a PUT request to update the domain block."));
         }
         ipInfo.setIp(ip);
@@ -130,7 +132,7 @@ void IpRulesToolModel::deleteIpBlock(const int row)
     const auto &ipInfo = m_ipinfo[row];
     const auto ipBlockId = ipInfo.id();
 
-    account->deleteResource(account->apiUrl(QString("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), true, this, [=](QNetworkReply *reply) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), true, this, [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
         beginRemoveRows({}, row, row);
         m_ipinfo.removeAt(row);
@@ -159,9 +161,9 @@ void IpRulesToolModel::filltimeline()
         const auto ipblocks = doc.array();
 
         if (!ipblocks.isEmpty()) {
-            static QRegularExpression re("<(.*)>; rel=\"next\"");
+            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
             const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(next);
+            const auto match = re.match(QString::fromUtf8(next));
             if (re.isValid()) {
                 m_next = QUrl::fromUserInput(match.captured(1));
             }

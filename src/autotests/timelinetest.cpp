@@ -13,6 +13,8 @@
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>
 
+using namespace Qt::Literals::StringLiterals;
+
 class TimelineTest : public QObject
 {
     Q_OBJECT
@@ -33,27 +35,27 @@ private Q_SLOTS:
     void testMainDisplayName()
     {
         KLocalizedString::setApplicationDomain("tokodon");
-        KLocalizedString::setLanguages(QStringList{"C"});
-        account->setUsername("test");
+        KLocalizedString::setLanguages(QStringList{QStringLiteral("C")});
+        account->setUsername(QStringLiteral("test"));
 
         QJsonObject fakeIdentity;
-        fakeIdentity["id"] = QStringLiteral("1");
-        fakeIdentity["display_name"] = QStringLiteral("test");
+        fakeIdentity["id"_L1] = QStringLiteral("1");
+        fakeIdentity["display_name"_L1] = QStringLiteral("test");
 
         account->setFakeIdentity(fakeIdentity);
 
         MainTimelineModel timelineModel;
-        timelineModel.setName("public");
-        QCOMPARE(timelineModel.displayName(), "Local Timeline");
-        timelineModel.setName("federated");
-        QCOMPARE(timelineModel.displayName(), "Global Timeline");
-        timelineModel.setName("home");
-        QCOMPARE(timelineModel.displayName(), "Home");
+        timelineModel.setName(QStringLiteral("public"));
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Local Timeline"));
+        timelineModel.setName(QStringLiteral("federated"));
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Global Timeline"));
+        timelineModel.setName(QStringLiteral("home"));
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Home"));
 
         auto account2 = new MockAccount();
         AccountManager::instance().addAccount(account2, false);
 
-        QCOMPARE(timelineModel.displayName(), "Home (test)");
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Home (test)"));
 
         account->clearFakeIdentity();
     }
@@ -61,11 +63,11 @@ private Q_SLOTS:
     void testStreamUpdate()
     {
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json"_L1);
         statusExampleApi.open(QIODevice::ReadOnly);
 
         MainTimelineModel timelineModel;
-        timelineModel.setName("home");
+        timelineModel.setName(QStringLiteral("home"));
         QCOMPARE(timelineModel.rowCount({}), 0);
 
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
@@ -74,15 +76,15 @@ private Q_SLOTS:
 
     void testFillTimelineMain()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply("statuses.json", account));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
-            {"max_id", "103270115826038975"},
+            {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
-        account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
+        account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
 
         MainTimelineModel timelineModel;
-        timelineModel.setName("home");
+        timelineModel.setName(QStringLiteral("home"));
 
         QCOMPARE(timelineModel.rowCount({}), 2);
         QVERIFY(timelineModel.canFetchMore({}));
@@ -92,15 +94,15 @@ private Q_SLOTS:
 
     void testTagModel()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply("statuses.json", account));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
-            {"max_id", "103270115826038975"},
+            {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
-        account->registerGet(fetchMoreUrl, new TestReply("statuses.json", account));
+        account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
 
         TagsTimelineModel tagModel;
-        tagModel.setHashtag("home");
+        tagModel.setHashtag(QStringLiteral("home"));
 
         QCOMPARE(tagModel.rowCount({}), 2);
         QVERIFY(tagModel.canFetchMore({}));
@@ -110,15 +112,16 @@ private Q_SLOTS:
 
     void testThreadModel()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975")), new TestReply("status.json", account));
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975/context")), new TestReply("context.json", account));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975")), new TestReply(QStringLiteral("status.json"), account));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/statuses/103270115826048975/context")),
+                             new TestReply(QStringLiteral("context.json"), account));
 
         ThreadModel threadModel;
         threadModel.setPostId(QStringLiteral("103270115826048975"));
         QCOMPARE(threadModel.rowCount({}), 4);
         QCOMPARE(threadModel.data(threadModel.index(1, 0), AbstractTimelineModel::SelectedRole).toBool(), true);
-        QCOMPARE(threadModel.displayName(), "Thread");
-        QCOMPARE(threadModel.postId(), "103270115826048975");
+        QCOMPARE(threadModel.displayName(), QStringLiteral("Thread"));
+        QCOMPARE(threadModel.postId(), QStringLiteral("103270115826048975"));
         QCOMPARE(threadModel.canFetchMore({}), false);
 
         // in_reply_to_account_id filled
@@ -135,24 +138,24 @@ private Q_SLOTS:
     void testModelPoll()
     {
         MainTimelineModel timelineModel;
-        timelineModel.setName("home");
+        timelineModel.setName(QStringLiteral("home"));
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json");
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json"_L1);
         statusExampleApi.open(QIODevice::ReadOnly);
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 1);
 
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), "103270115826048975");
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), QStringLiteral("103270115826048975"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(), "<p>LOREM</p>");
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(), QStringLiteral("<p>LOREM</p>"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->id(), QStringLiteral("1"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayNameHtml(),
                  QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IsBoostedRole).value<bool>(), false);
 
         const auto poll = timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::PollRole).value<Poll>();
-        QCOMPARE(poll.id(), "34830");
+        QCOMPARE(poll.id(), QStringLiteral("34830"));
         QCOMPARE(poll.expiresAt().date().year(), 2019);
         QCOMPARE(poll.expired(), true);
         QCOMPARE(poll.multiple(), false);
@@ -162,12 +165,12 @@ private Q_SLOTS:
         QCOMPARE(poll.ownVotes().count(), 1);
         QCOMPARE(poll.ownVotes()[0], 1);
         QCOMPARE(poll.options().count(), 2);
-        QCOMPARE(poll.options()[0]["title"], QStringLiteral("accept"));
-        QCOMPARE(poll.options()[0]["votesCount"], 6);
-        QCOMPARE(poll.options()[1]["title"], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
-        QCOMPARE(poll.options()[1]["votesCount"], 4);
+        QCOMPARE(poll.options()[0]["title"_L1], QStringLiteral("accept"));
+        QCOMPARE(poll.options()[0]["votesCount"_L1], 6);
+        QCOMPARE(poll.options()[1]["title"_L1], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
+        QCOMPARE(poll.options()[1]["votesCount"_L1], 4);
 
-        account->registerPost(QString("/api/v1/polls/34830/votes"), new TestReply("poll.json", account));
+        account->registerPost(QStringLiteral("/api/v1/polls/34830/votes"), new TestReply(QStringLiteral("poll.json"), account));
 
         QSignalSpy spy(&timelineModel, &QAbstractItemModel::dataChanged);
         QVERIFY(spy.isValid());

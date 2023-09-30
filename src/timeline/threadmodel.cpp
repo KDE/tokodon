@@ -9,6 +9,8 @@
 #include <QJsonObject>
 #include <qstringliteral.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 ThreadModel::ThreadModel(QObject *parent)
     : TimelineModel(parent)
 {
@@ -59,8 +61,8 @@ void ThreadModel::fillTimeline(const QString &fromId)
         m_account = AccountManager::instance().selectedAccount();
     }
 
-    const auto statusUrl = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_postId));
-    const auto contextUrl = m_account->apiUrl(QString("/api/v1/statuses/%1/context").arg(m_postId));
+    const auto statusUrl = m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(m_postId));
+    const auto contextUrl = m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1/context").arg(m_postId));
     auto thread = std::make_shared<QList<Post *>>();
 
     auto handleError = [this](QNetworkReply *reply) {
@@ -77,7 +79,7 @@ void ThreadModel::fillTimeline(const QString &fromId)
             return;
         }
 
-        auto ancestors = obj["ancestors"].toArray().toVariantList();
+        auto ancestors = obj["ancestors"_L1].toArray().toVariantList();
         std::reverse(ancestors.begin(), ancestors.end());
 
         for (const auto &ancestor : ancestors) {
@@ -86,7 +88,7 @@ void ThreadModel::fillTimeline(const QString &fromId)
             }
         }
 
-        const auto descendents = obj["descendants"].toArray();
+        const auto descendents = obj["descendants"_L1].toArray();
 
         for (const auto &descendent : descendents) {
             if (!descendent.isObject()) {

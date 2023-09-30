@@ -8,6 +8,8 @@
 #include "timeline/post.h"
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 class PostTest : public QObject
 {
     Q_OBJECT
@@ -22,21 +24,21 @@ private Q_SLOTS:
         MockAccount account;
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json");
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json"_L1);
         statusExampleApi.open(QIODevice::ReadOnly);
 
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
         Post post(&account, doc.object());
 
-        QCOMPARE(post.spoilerText(), "SPOILER");
-        QCOMPARE(post.content(), "<p>LOREM</p>");
+        QCOMPARE(post.spoilerText(), QStringLiteral("SPOILER"));
+        QCOMPARE(post.content(), QStringLiteral("<p>LOREM</p>"));
         QVERIFY(post.card());
         QCOMPARE(post.contentType(), QString());
         QCOMPARE(post.sensitive(), false);
         QCOMPARE(post.visibility(), Post::Visibility::Public);
 
-        QCOMPARE(post.authorIdentity()->displayName(), "Eugen :kde:");
-        QCOMPARE(post.authorIdentity()->displayNameHtml(), "Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">");
+        QCOMPARE(post.authorIdentity()->displayName(), QStringLiteral("Eugen :kde:"));
+        QCOMPARE(post.authorIdentity()->displayNameHtml(), QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
     }
 
     void testFromJsonWithPoll()
@@ -44,7 +46,7 @@ private Q_SLOTS:
         MockAccount account;
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json");
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json"_L1);
         statusExampleApi.open(QIODevice::ReadOnly);
 
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
@@ -52,7 +54,7 @@ private Q_SLOTS:
 
         QVERIFY(post.poll());
         const auto poll = post.poll();
-        QCOMPARE(poll->id(), "34830");
+        QCOMPARE(poll->id(), QStringLiteral("34830"));
         QCOMPARE(poll->expiresAt().date().year(), 2019);
         QCOMPARE(poll->expired(), true);
         QCOMPARE(poll->multiple(), false);
@@ -64,10 +66,10 @@ private Q_SLOTS:
         QCOMPARE(ownVotes[0], 1);
         const auto options = poll->options();
         QCOMPARE(options.count(), 2);
-        QCOMPARE(options[0]["title"], QStringLiteral("accept"));
-        QCOMPARE(options[0]["votesCount"], 6);
-        QCOMPARE(options[1]["title"], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
-        QCOMPARE(options[1]["votesCount"], 4);
+        QCOMPARE(options[0]["title"_L1], QStringLiteral("accept"));
+        QCOMPARE(options[0]["votesCount"_L1], 6);
+        QCOMPARE(options[1]["title"_L1], QStringLiteral("deny <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
+        QCOMPARE(options[1]["votesCount"_L1], 4);
     }
 };
 

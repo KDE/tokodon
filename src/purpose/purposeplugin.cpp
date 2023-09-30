@@ -33,9 +33,9 @@ public:
     {
         const QJsonArray urlsJson = data().value(QStringLiteral("urls")).toArray();
         const QString title = data().value(QStringLiteral("title")).toString();
-        const QString message = QString("%1 - %2").arg(title, arrayToList(urlsJson).join(QLatin1Char(' ')));
+        const QString message = QStringLiteral("%1 - %2").arg(title, arrayToList(urlsJson).join(QLatin1Char(' ')));
 
-        auto *job = new KIO::CommandLauncherJob(QStringLiteral("tokodon"), {"--share", message});
+        auto *job = new KIO::CommandLauncherJob(QStringLiteral("tokodon"), {QStringLiteral("--share"), message});
         connect(job, &KJob::finished, this, &TokodonJob::emitResult);
         job->start();
     }

@@ -12,6 +12,8 @@
 #include <QJsonDocument>
 #include <QUuid>
 
+using namespace Qt::Literals::StringLiterals;
+
 PostEditorBackend::PostEditorBackend(QObject *parent)
     : QObject(parent)
     , m_idenpotencyKey(QUuid::createUuid().toString())
@@ -171,7 +173,7 @@ int PostEditorBackend::charactersLeft() const
         return 0;
     }
 
-    QRegularExpression re{R"((http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-]))"};
+    QRegularExpression re{QStringLiteral(R"((http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-]))")};
     re.setPatternOptions(QRegularExpression::DontCaptureOption);
 
     const auto matches = re.match(m_status).capturedTexts();
@@ -189,13 +191,13 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
 {
     QJsonObject obj;
 
-    obj["spoiler_text"] = m_spoilerText;
-    obj["status"] = m_status;
-    obj["sensitive"] = m_sensitive;
-    obj["visibility"] = visibilityToString(m_visibility);
+    obj["spoiler_text"_L1] = m_spoilerText;
+    obj["status"_L1] = m_status;
+    obj["sensitive"_L1] = m_sensitive;
+    obj["visibility"_L1] = visibilityToString(m_visibility);
 
     if (!m_inReplyTo.isEmpty()) {
-        obj["in_reply_to_id"] = m_inReplyTo;
+        obj["in_reply_to_id"_L1] = m_inReplyTo;
     }
 
     auto media_ids = QJsonArray();
@@ -203,11 +205,11 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
         media_ids.append(att->m_id);
     }
 
-    obj["media_ids"] = media_ids;
-    obj["language"] = m_language;
+    obj["media_ids"_L1] = media_ids;
+    obj["language"_L1] = m_language;
 
     if (m_pollEnabled) {
-        obj["poll"] = m_poll->toJsonObject();
+        obj["poll"_L1] = m_poll->toJsonObject();
     }
 
     return QJsonDocument(obj);
@@ -215,7 +217,7 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
 
 void PostEditorBackend::save()
 {
-    QUrl post_status_url = m_account->apiUrl("/api/v1/statuses");
+    QUrl post_status_url = m_account->apiUrl(QStringLiteral("/api/v1/statuses"));
     auto doc = toJsonDocument();
 
     QHash<QByteArray, QByteArray> headers;
@@ -227,15 +229,15 @@ void PostEditorBackend::save()
         true,
         this,
         [=](QNetworkReply *) {
-            Q_EMIT posted("");
+            Q_EMIT posted(QStringLiteral(""));
         },
         [=](QNetworkReply *reply) {
             auto data = reply->readAll();
             auto doc = QJsonDocument::fromJson(data);
             auto obj = doc.object();
 
-            if (obj.contains("error")) {
-                Q_EMIT posted(obj["error"].toString());
+            if (obj.contains("error"_L1)) {
+                Q_EMIT posted(obj["error"_L1].toString());
             } else {
                 Q_EMIT posted(i18n("An unknown error occurred."));
             }
@@ -245,7 +247,7 @@ void PostEditorBackend::save()
 
 void PostEditorBackend::edit()
 {
-    QUrl edit_status_url = m_account->apiUrl(QString("/api/v1/statuses/%1").arg(m_id));
+    QUrl edit_status_url = m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(m_id));
     auto doc = toJsonDocument();
 
     m_account->put(edit_status_url, doc, true, this, [=](QNetworkReply *reply) {

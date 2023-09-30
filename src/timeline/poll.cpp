@@ -6,6 +6,8 @@
 #include <QJsonArray>
 #include <algorithm>
 
+using namespace Qt::Literals::StringLiterals;
+
 Poll::Poll() = default;
 
 Poll::Poll(const QJsonObject &json)
@@ -32,12 +34,13 @@ Poll::Poll(const QJsonObject &json)
         QString title = option[QStringLiteral("title")].toString();
         for (const auto &emoji : emojis) {
             const auto emojiObj = emoji.toObject();
-            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"].toString() + QLatin1Char(':'),
-                                  "<img height=\"16\" align=\"middle\" width=\"16\" src=\"" + emojiObj["static_url"].toString() + "\">");
+            title = title.replace(QLatin1Char(':') + emojiObj["shortcode"_L1].toString() + QLatin1Char(':'),
+                                  QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emojiObj["static_url"_L1].toString()
+                                      + QStringLiteral("\">"));
         }
         return {
-            {"title", title},
-            {"votesCount", option[QStringLiteral("votes_count")].toInt(-1)},
+            {"title"_L1, title},
+            {"votesCount"_L1, option[QStringLiteral("votes_count")].toInt(-1)},
         };
     });
 }

@@ -15,6 +15,8 @@
 #include <QNetworkAccessManager>
 #include <qt6keychain/keychain.h>
 
+using namespace Qt::Literals::StringLiterals;
+
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, bool admin, QObject *parent)
     : AbstractAccount(parent, instanceUri)
     , m_ignoreSslErrors(ignoreSslErrors)
@@ -22,7 +24,9 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
 {
     m_preferences = new Preferences(this);
     setInstanceUri(instanceUri);
-    registerApplication("Tokodon", "https://apps.kde.org/tokodon", admin ? "admin:read admin:write" : "");
+    registerApplication(QStringLiteral("Tokodon"),
+                        QStringLiteral("https://apps.kde.org/tokodon"),
+                        admin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""));
 
     auto notificationHandler = new NotificationHandler(m_qnam, this);
     connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
@@ -74,7 +78,7 @@ void Account::post(const QUrl &url,
     auto post_data = doc.toJson();
 
     QNetworkRequest request = makeRequest(url, authenticated);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     for (const auto [headerKey, headerValue] : asKeyValueRange(headers)) {
         request.setRawHeader(headerKey, headerValue);
     }
@@ -90,7 +94,7 @@ void Account::put(const QUrl &url, const QJsonDocument &doc, bool authenticated,
     auto post_data = doc.toJson();
 
     QNetworkRequest request = makeRequest(url, authenticated);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
     qCDebug(TOKODON_HTTP) << "PUT" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->put(request, post_data);
@@ -108,7 +112,7 @@ void Account::post(const QUrl &url,
     auto post_data = formdata.toString().toLatin1();
 
     QNetworkRequest request = makeRequest(url, authenticated);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";
 
     QNetworkReply *reply = m_qnam->post(request, post_data);
@@ -154,7 +158,7 @@ QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
     QNetworkRequest request(url);
 
     if (authenticated && haveToken()) {
-        const QByteArray bearer = QString("Bearer " + m_token).toLocal8Bit();
+        const QByteArray bearer = QStringLiteral("Bearer %1").arg(m_token).toLocal8Bit();
         request.setRawHeader("Authorization", bearer);
     }
 
@@ -165,7 +169,7 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
 {
     connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
-        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo")) {
+        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo"_L1)) {
             qCWarning(TOKODON_LOG) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
             if (errorCallback) {
                 errorCallback(reply);
@@ -195,30 +199,30 @@ QNetworkReply *Account::upload(const QUrl &filename, std::function<void(QNetwork
     auto mp = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     QHttpPart filePart;
-    filePart.setHeader(QNetworkRequest::ContentTypeHeader, "application/octet-stream");
+    filePart.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/octet-stream"));
     filePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"file\"; filename=\"%1\"").arg(info.fileName()));
     filePart.setBodyDevice(file);
     file->setParent(mp);
 
     mp->append(filePart);
 
-    const auto uploadUrl = apiUrl("/api/v1/media");
+    const auto uploadUrl = apiUrl(QStringLiteral("/api/v1/media"));
     qCDebug(TOKODON_HTTP) << "POST" << uploadUrl << "(upload)";
 
     return post(uploadUrl, mp, true, this, callback);
 }
 
 static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEventType = {
-    {"update", AbstractAccount::StreamingEventType::UpdateEvent},
-    {"delete", AbstractAccount::StreamingEventType::DeleteEvent},
-    {"notification", AbstractAccount::StreamingEventType::NotificationEvent},
-    {"filters_changed", AbstractAccount::StreamingEventType::FiltersChangedEvent},
-    {"conversation", AbstractAccount::StreamingEventType::ConversationEvent},
-    {"announcement", AbstractAccount::StreamingEventType::AnnouncementEvent},
-    {"announcement.reaction", AbstractAccount::StreamingEventType::AnnouncementRedactedEvent},
-    {"announcement.delete", AbstractAccount::StreamingEventType::AnnouncementDeletedEvent},
-    {"status.update", AbstractAccount::StreamingEventType::StatusUpdatedEvent},
-    {"encrypted_message", AbstractAccount::StreamingEventType::EncryptedMessageChangedEvent},
+    {QStringLiteral("update"), AbstractAccount::StreamingEventType::UpdateEvent},
+    {QStringLiteral("delete"), AbstractAccount::StreamingEventType::DeleteEvent},
+    {QStringLiteral("notification"), AbstractAccount::StreamingEventType::NotificationEvent},
+    {QStringLiteral("filters_changed"), AbstractAccount::StreamingEventType::FiltersChangedEvent},
+    {QStringLiteral("conversation"), AbstractAccount::StreamingEventType::ConversationEvent},
+    {QStringLiteral("announcement"), AbstractAccount::StreamingEventType::AnnouncementEvent},
+    {QStringLiteral("announcement.reaction"), AbstractAccount::StreamingEventType::AnnouncementRedactedEvent},
+    {QStringLiteral("announcement.delete"), AbstractAccount::StreamingEventType::AnnouncementDeletedEvent},
+    {QStringLiteral("status.update"), AbstractAccount::StreamingEventType::StatusUpdatedEvent},
+    {QStringLiteral("encrypted_message"), AbstractAccount::StreamingEventType::EncryptedMessageChangedEvent},
 };
 
 QWebSocket *Account::streamingSocket(const QString &stream)
@@ -234,12 +238,12 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
     connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
-        if (env.isObject() && env.object().contains("event")) {
-            const auto event = stringToStreamingEventType[env.object()["event"].toString()];
-            Q_EMIT streamingEvent(event, env.object()["payload"].toString().toLocal8Bit());
+        if (env.isObject() && env.object().contains("event"_L1)) {
+            const auto event = stringToStreamingEventType[env.object()["event"_L1].toString()];
+            Q_EMIT streamingEvent(event, env.object()["payload"_L1].toString().toLocal8Bit());
 
             if (event == NotificationEvent) {
-                const auto doc = QJsonDocument::fromJson(env.object()["payload"].toString().toLocal8Bit());
+                const auto doc = QJsonDocument::fromJson(env.object()["payload"_L1].toString().toLocal8Bit());
                 handleNotification(doc);
                 return;
             }
@@ -254,7 +258,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
 void Account::validateToken()
 {
-    const QUrl verify_credentials = apiUrl("/api/v1/accounts/verify_credentials");
+    const QUrl verify_credentials = apiUrl(QStringLiteral("/api/v1/accounts/verify_credentials"));
 
     get(
         verify_credentials,
@@ -272,11 +276,11 @@ void Account::validateToken()
             }
 
             const auto object = doc.object();
-            if (!object.contains("source")) {
+            if (!object.contains("source"_L1)) {
                 return;
             }
 
-            m_identity = identityLookup(object["id"].toString(), object);
+            m_identity = identityLookup(object["id"_L1].toString(), object);
             m_name = m_identity->username();
             Q_EMIT identityChanged();
             Q_EMIT authenticated(true, {});
@@ -284,13 +288,13 @@ void Account::validateToken()
         [=](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
 
-            Q_EMIT authenticated(false, doc["error"].toString());
+            Q_EMIT authenticated(false, doc["error"_L1].toString());
         });
 
     fetchInstanceMetadata();
 
     // set up streaming for notifications
-    streamingSocket("user");
+    streamingSocket(QStringLiteral("user"));
 }
 
 void Account::writeToSettings()
@@ -309,7 +313,7 @@ void Account::writeToSettings()
 
     config.save();
 
-    auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+    auto accessTokenJob = new QKeychain::WritePasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
     accessTokenJob->setInsecureFallback(true);
 #endif
@@ -317,7 +321,7 @@ void Account::writeToSettings()
     accessTokenJob->setTextData(m_token);
     accessTokenJob->start();
 
-    auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon", this};
+    auto clientSecretJob = new QKeychain::WritePasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
     clientSecretJob->setInsecureFallback(true);
 #endif
@@ -333,7 +337,7 @@ void Account::buildFromSettings()
     m_instance_uri = m_config->instanceUri();
     m_ignoreSslErrors = m_config->ignoreSslErrors();
 
-    auto accessTokenJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+    auto accessTokenJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
     accessTokenJob->setInsecureFallback(true);
 #endif
@@ -347,7 +351,7 @@ void Account::buildFromSettings()
 
     accessTokenJob->start();
 
-    auto clientSecretJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
+    auto clientSecretJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
     clientSecretJob->setInsecureFallback(true);
 #endif
@@ -367,7 +371,7 @@ bool Account::hasFollowRequests() const
 
 void Account::checkForFollowRequests()
 {
-    get(apiUrl("/api/v1/follow_requests"), true, this, [this](QNetworkReply *reply) {
+    get(apiUrl(QStringLiteral("/api/v1/follow_requests")), true, this, [this](QNetworkReply *reply) {
         const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
         const bool hasFollowRequests = followRequestResult.isArray() && !followRequestResult.array().isEmpty();
         if (hasFollowRequests != m_hasFollowRequests) {
