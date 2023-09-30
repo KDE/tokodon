@@ -25,6 +25,7 @@ public:
     Post::Visibility defaultVisibility() const;
 
     /// Sets the default visibility when composing new statuses
+    /// \param visibility The new default visibility
     /// \see defaultVisibility
     void setDefaultVisibility(Post::Visibility visibility);
 
@@ -32,7 +33,8 @@ public:
     /// \see setDefaultSensitive
     bool defaultSensitive() const;
 
-    // Set whether newly uploaded media attachments are sensitive by default
+    /// Set whether newly uploaded media attachments are sensitive by default
+    /// \param sensitive Whether or not media attachments are sensitive by default
     /// \see setDefaultSensitive
     void setDefaultSensitive(bool sensitive);
 
@@ -41,6 +43,7 @@ public:
     QString defaultLanguage() const;
 
     /// Set the default language code (ISO 6391) when composing new statuses
+    /// \param language The new default language code
     /// \see defaultLanguage
     void setDefaultLanguage(QString language);
 
