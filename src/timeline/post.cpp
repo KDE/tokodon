@@ -413,6 +413,7 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("update"), Notification::Type::Update},
     {QStringLiteral("poll"), Notification::Type::Poll},
     {QStringLiteral("status"), Notification::Type::Status},
+    {QStringLiteral("follow_request"), Notification::Type::FollowRequest},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
