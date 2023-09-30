@@ -3,8 +3,11 @@
 
 #include "notificationhandler.h"
 #include "account.h"
+#include "networkcontroller.h"
 #include <KLocalizedString>
 #include <KNotification>
+#include <QCoreApplication>
+#include <QDesktopServices>
 #include <QNetworkAccessManager>
 #include <QPainter>
 
@@ -18,13 +21,30 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
 {
     KNotification *knotification;
 
+    const auto addViewPostAction = [this, &knotification, notification] {
+        knotification->setActions({i18n("View Post")});
+        connect(knotification, &KNotification::action1Activated, this, [=] {
+            NetworkController::instance().openWebApLink(notification->post()->url().toString());
+        });
+        knotification->setDefaultAction(i18n("View Post"));
+    };
+
+    const auto addViewUserAction = [this, &knotification, notification] {
+        knotification->setActions({i18n("View Profile")});
+        connect(knotification, &KNotification::action1Activated, this, [=] {
+            NetworkController::instance().openWebApLink(notification->identity()->url().toString());
+        });
+        knotification->setDefaultAction(i18n("View Profile"));
+    };
+
     switch (notification->type()) {
     case Notification::Mention:
         if (!account->config()->notifyMention()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("mention"));
-        knotification->setTitle(notification->identity()->displayName());
+        knotification->setTitle(i18n("%1 mentioned you", notification->identity()->displayName()));
+        addViewPostAction();
         break;
     case Notification::Status:
         if (!account->config()->notifyStatus()) {
@@ -32,6 +52,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("status"));
         knotification->setTitle(i18n("%1 wrote a new post", notification->identity()->displayName()));
+        addViewPostAction();
         break;
     case Notification::Repeat:
         if (!account->config()->notifyBoost()) {
@@ -39,6 +60,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("boost"));
         knotification->setTitle(i18n("%1 boosted your post", notification->identity()->displayName()));
+        addViewPostAction();
         break;
     case Notification::Follow:
         if (!account->config()->notifyFollow()) {
@@ -46,6 +68,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("follow"));
         knotification->setTitle(i18n("%1 followed you", notification->identity()->displayName()));
+        addViewUserAction();
         break;
     case Notification::FollowRequest:
         if (!account->config()->notifyFollowRequest()) {
@@ -53,6 +76,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("follow-request"));
         knotification->setTitle(i18n("%1 requested to follow you", notification->identity()->displayName()));
+        addViewUserAction();
         break;
     case Notification::Favorite:
         if (!account->config()->notifyFavorite()) {
@@ -60,6 +84,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("favorite"));
         knotification->setTitle(i18n("%1 favorited your post", notification->identity()->displayName()));
+        addViewPostAction();
         break;
     case Notification::Poll:
         if (!account->config()->notifyPoll()) {
@@ -67,6 +92,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("poll"));
         knotification->setTitle(i18n("Poll by %1 has ended", notification->identity()->displayName()));
+        addViewPostAction();
         break;
     case Notification::Update:
         if (!account->config()->notifyUpdate()) {
@@ -74,6 +100,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         }
         knotification = new KNotification(QStringLiteral("update"));
         knotification->setTitle(i18n("%1 edited a post", notification->identity()->displayName()));
+        addViewPostAction();
         break;
 
     default:
