@@ -13,15 +13,15 @@ class Poll
     QML_ELEMENT
     QML_UNCREATABLE("Access via Post")
 
-    Q_PROPERTY(QString id READ id CONSTANT);
-    Q_PROPERTY(QDateTime expiresAt READ expiresAt CONSTANT);
-    Q_PROPERTY(bool expired READ expired CONSTANT);
-    Q_PROPERTY(bool multiple READ multiple CONSTANT);
-    Q_PROPERTY(int votesCount READ votesCount CONSTANT);
-    Q_PROPERTY(int votersCount READ votersCount CONSTANT);
-    Q_PROPERTY(bool voted READ voted CONSTANT);
-    Q_PROPERTY(QList<int> ownVotes READ ownVotes CONSTANT);
-    Q_PROPERTY(QList<QVariantMap> options READ options CONSTANT);
+    Q_PROPERTY(QString id READ id CONSTANT)
+    Q_PROPERTY(QDateTime expiresAt READ expiresAt CONSTANT)
+    Q_PROPERTY(bool expired READ expired CONSTANT)
+    Q_PROPERTY(bool multiple READ multiple CONSTANT)
+    Q_PROPERTY(int votesCount READ votesCount CONSTANT)
+    Q_PROPERTY(int votersCount READ votersCount CONSTANT)
+    Q_PROPERTY(bool voted READ voted CONSTANT)
+    Q_PROPERTY(QList<int> ownVotes READ ownVotes CONSTANT)
+    Q_PROPERTY(QList<QVariantMap> options READ options CONSTANT)
 
 public:
     Poll();

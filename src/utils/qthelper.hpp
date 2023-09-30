@@ -55,7 +55,7 @@ public:
     // Return the raw handle; for use with the libmpv C API.
     operator mpv_handle *() const
     {
-        return sptr ? (*sptr).mpv : 0;
+        return sptr ? (*sptr).mpv : nullptr;
     }
 };
 
@@ -125,7 +125,7 @@ private:
         return list;
     err:
         free_node(dst);
-        return NULL;
+        return nullptr;
     }
     char *dup_qstring(const QString &s)
     {
