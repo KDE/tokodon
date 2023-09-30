@@ -12,6 +12,7 @@
 class AbstractAccount;
 class Relationship;
 
+/// Represents a profile on the server. These are attached to Posts, and even our own Accounts
 class Identity : public QObject
 {
     Q_OBJECT
@@ -35,28 +36,67 @@ class Identity : public QObject
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
 
 public:
+    /// The numeric ID associated with this identity
     QString id() const;
+
+    /// This identity's display name, if not set then returns the username
     QString displayName() const;
+
+    /// The username for this identity
     QString username() const;
+
+    /// This identity's display name, but processed as HTML (for custom emojis). If not set, returns the username
     QString displayNameHtml() const;
+
+    /// The biography for this identity
     QString bio() const;
+
+    /// The account ID for this identity
     QString account() const;
+
+    /// The URL to this identity's profile, which exists on their original server
     QUrl url() const;
+
+    /// If this identity is locked or not
     bool locked() const;
+
+    /// The profile visibility
     QString visibility() const;
+
+    /// URL to this identity's avatar
     QUrl avatarUrl() const;
+
+    /// URL to this identity's background
     QUrl backgroundUrl() const;
+
+    /// The number of users following this identity
     int followersCount() const;
+
+    /// The number of users this identity follows
     int followingCount() const;
+
+    /// The number of posts written by this identity
     int statusesCount() const;
+
+    /// The permissions of this identity
     int permission() const;
+
+    /// Custom fields set by this identity
     QJsonArray fields() const;
 
+    /// Fills in identity data from JSON
+    /// \param doc The JSON data to load from
     void fromSourceData(const QJsonObject &doc);
-    void fetchAvatar(const QUrl &avatar_url);
+
+    /// Sets the parent account for this identity
+    /// \param parent The account to reparent to
     void reparentIdentity(AbstractAccount *parent);
 
+    /// Returns the relationship to this identity
     Relationship *relationship() const;
+
+    /// Replaces the existing relationship with a new one
+    /// \param r The new relationship
     void setRelationship(Relationship *r);
 
 Q_SIGNALS:
