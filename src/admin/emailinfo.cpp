@@ -35,7 +35,7 @@ int EmailInfo::ipSignupCount() const
 
 void EmailInfo::calculateCount(const QJsonArray &history, EmailInfo &info)
 {
-    for (const QJsonValue &entry : history) {
+    for (const auto &entry : history) {
         QJsonObject entryObj = entry.toObject();
         info.m_accountSignupCount += entryObj["accounts"_L1].toString().toInt();
         info.m_ipSignupCount += entryObj["uses"_L1].toString().toInt();

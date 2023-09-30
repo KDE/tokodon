@@ -9,7 +9,7 @@ class MockAccount : public AbstractAccount
     Q_OBJECT
 
 public:
-    MockAccount(QObject *parent = nullptr);
+    explicit MockAccount(QObject *parent = nullptr);
     void get(const QUrl &url,
              bool authenticated,
              QObject *parent,

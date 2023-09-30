@@ -134,7 +134,6 @@ void Identity::fromSourceData(const QJsonObject &doc)
     }
 
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
-    ;
 
     // Attempt to replace the tag URLs with proper ones, although this should really be handled by the Mastodon API
     m_bio = m_bio.replace(baseUrl + QStringLiteral("/tags/"), QStringLiteral("hashtag:/"), Qt::CaseInsensitive);

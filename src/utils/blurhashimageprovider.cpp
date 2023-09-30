@@ -5,6 +5,7 @@
 
 #include <QImage>
 #include <QString>
+#include <utility>
 
 #include "blurhash.hpp"
 
@@ -91,7 +92,7 @@ AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requested
 
 void AsyncImageResponse::handleDone(QImage image)
 {
-    m_image = image;
+    m_image = std::move(image);
     Q_EMIT finished();
 }
 

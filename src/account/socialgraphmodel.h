@@ -80,5 +80,5 @@ private:
     QString m_followListName;
     QString m_accountId;
     QString m_statusId;
-    int m_count;
+    int m_count = 0;
 };

@@ -12,7 +12,7 @@ class BlurHashTest : public QObject
 
     QImage goodBlurHashImage;
     QImage specialBlurHashImage;
-    BlurhashImageProvider *imageProvider;
+    BlurhashImageProvider *imageProvider = nullptr;
 
 private Q_SLOTS:
     void initTestCase()

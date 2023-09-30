@@ -15,7 +15,7 @@ class TokodonJob : public Purpose::Job
 {
     Q_OBJECT
 public:
-    TokodonJob(QObject *parent)
+    explicit TokodonJob(QObject *parent)
         : Purpose::Job(parent)
     {
     }
@@ -23,7 +23,7 @@ public:
     QStringList arrayToList(const QJsonArray &array)
     {
         QStringList ret;
-        for (const QJsonValue &val : array) {
+        for (const auto &val : array) {
             ret += val.toString();
         }
         return ret;

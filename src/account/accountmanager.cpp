@@ -10,6 +10,8 @@
 #include "tokodon_debug.h"
 #include <qt6keychain/keychain.h>
 
+#include <utility>
+
 using namespace Qt::Literals::StringLiterals;
 
 AccountManager::AccountManager(QObject *parent)
@@ -131,8 +133,8 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
         });
     }
 
-    connect(account, &Account::fetchedTimeline, this, [this, account](QString original_name, QList<Post *> posts) {
-        Q_EMIT fetchedTimeline(account, original_name, posts);
+    connect(account, &Account::fetchedTimeline, this, [this, account](const QString &original_name, QList<Post *> posts) {
+        Q_EMIT fetchedTimeline(account, original_name, std::move(posts));
     });
     connect(account, &Account::invalidated, this, [this, account]() {
         Q_EMIT invalidated(account);
@@ -145,7 +147,7 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
         Q_EMIT invalidatedPost(account, p);
     });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
-        Q_EMIT notification(account, n);
+        Q_EMIT notification(account, std::move(n));
     });
 
     if (m_selected_account == nullptr) {

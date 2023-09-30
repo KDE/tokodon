@@ -27,7 +27,7 @@ public:
     void setComment(const QString &comment);
     QDateTime createdAt() const;
     QDateTime expiresAt() const;
-    void setExpiredAt(const int expiresAt);
+    void setExpiredAt(int expiresAt);
 
     static IpInfo fromSourceData(const QJsonObject &doc);
 

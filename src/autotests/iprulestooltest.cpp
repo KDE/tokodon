@@ -44,7 +44,7 @@ private Q_SLOTS:
     }
 
 private:
-    MockAccount *account;
+    MockAccount *account = nullptr;
 };
 
 QTEST_MAIN(IpRulesToolTest)

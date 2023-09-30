@@ -96,15 +96,15 @@ public:
     // clearing and relaoding the model
     void clear();
     // delete account data
-    Q_INVOKABLE void deleteAccountData(const int row);
+    Q_INVOKABLE void deleteAccountData(int row);
 
-    Q_INVOKABLE void approveAccount(const int row);
-    Q_INVOKABLE void rejectAccount(const int row);
-    Q_INVOKABLE void enableAccount(const int row);
-    Q_INVOKABLE void unsilenceAccount(const int row);
-    Q_INVOKABLE void unsuspendAccount(const int row);
-    Q_INVOKABLE void unsensitiveAccount(const int row);
-    Q_INVOKABLE void actionAgainstAccount(const int row, const QString &type, const bool &emailWarning, const QString &note);
+    Q_INVOKABLE void approveAccount(int row);
+    Q_INVOKABLE void rejectAccount(int row);
+    Q_INVOKABLE void enableAccount(int row);
+    Q_INVOKABLE void unsilenceAccount(int row);
+    Q_INVOKABLE void unsuspendAccount(int row);
+    Q_INVOKABLE void unsensitiveAccount(int row);
+    Q_INVOKABLE void actionAgainstAccount(int row, const QString &type, const bool &emailWarning, const QString &note);
 
 Q_SIGNALS:
     void loadingChanged();
@@ -120,7 +120,7 @@ protected:
     void fetchSelectedAccountPosition();
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
-    void executeAdminAction(const int row, AdminAccountAction accountAction, const QJsonObject &extraArguments = {});
+    void executeAdminAction(int row, AdminAccountAction accountAction, const QJsonObject &extraArguments = {});
 
 private:
     void fillTimeline();
@@ -137,5 +137,5 @@ private:
     QString m_moderationStatus;
     QString m_role;
     QUrl m_next;
-    int m_selectedAccountPosition;
+    int m_selectedAccountPosition = 0;
 };

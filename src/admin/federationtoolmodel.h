@@ -51,9 +51,9 @@ public:
     void setFederationAction(const FederationToolModel::FederationAction &federationAction);
     void filltimeline(FederationAction action = FederationAction::BlockedDomains);
 
-    Q_INVOKABLE void removeDomainBlock(const int row);
-    Q_INVOKABLE void removeAllowedDomain(const int row);
-    Q_INVOKABLE void updateDomainBlock(const int row,
+    Q_INVOKABLE void removeDomainBlock(int row);
+    Q_INVOKABLE void removeAllowedDomain(int row);
+    Q_INVOKABLE void updateDomainBlock(int row,
                                        const QString &severity,
                                        const QString &publicComment,
                                        const QString &privateComment,

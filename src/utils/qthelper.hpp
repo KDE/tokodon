@@ -112,11 +112,7 @@ private:
         dst->format = is_map ? MPV_FORMAT_NODE_MAP : MPV_FORMAT_NODE_ARRAY;
         mpv_node_list *list = new mpv_node_list();
         dst->u.list = list;
-        if (!list)
-            goto err;
         list->values = new mpv_node[num]();
-        if (!list->values)
-            goto err;
         if (is_map) {
             list->keys = new char *[num]();
             if (!list->keys)
@@ -131,8 +127,7 @@ private:
     {
         QByteArray b = s.toUtf8();
         char *r = new char[b.size() + 1];
-        if (r)
-            std::memcpy(r, b.data(), b.size() + 1);
+        std::memcpy(r, b.data(), b.size() + 1);
         return r;
     }
     bool test_type(const QVariant &v, QMetaType::Type t)

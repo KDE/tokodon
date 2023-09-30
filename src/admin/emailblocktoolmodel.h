@@ -37,7 +37,7 @@ public:
     void filltimeline();
 
     Q_INVOKABLE void newEmailBlock(const QString &domain);
-    Q_INVOKABLE void deleteEmailBlock(const int row);
+    Q_INVOKABLE void deleteEmailBlock(int row);
 
 Q_SIGNALS:
     void loadingChanged();

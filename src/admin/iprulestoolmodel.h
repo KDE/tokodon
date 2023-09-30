@@ -52,9 +52,9 @@ public:
 
     void filltimeline();
 
-    Q_INVOKABLE void newIpBlock(const QString &ip, const int expiresIn, const QString &comment, const QString &severity);
-    Q_INVOKABLE void deleteIpBlock(const int row);
-    Q_INVOKABLE void updateIpBlock(const int row, const QString &ip, const QString &severity, const QString &comment, const int expiresIn);
+    Q_INVOKABLE void newIpBlock(const QString &ip, int expiresIn, const QString &comment, const QString &severity);
+    Q_INVOKABLE void deleteIpBlock(int row);
+    Q_INVOKABLE void updateIpBlock(int row, const QString &ip, const QString &severity, const QString &comment, int expiresIn);
 
 Q_SIGNALS:
     void loadingChanged();
