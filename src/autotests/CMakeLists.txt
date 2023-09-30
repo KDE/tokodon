@@ -66,6 +66,6 @@ ecm_add_test(emailblocktooltest.cpp
 	NAME_PREFIX "tokodon-"
 )
 
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
 	add_subdirectory(appiumtests)
 endif()
