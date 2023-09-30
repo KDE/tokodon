@@ -27,6 +27,7 @@ NetworkController::NetworkController(QObject *parent)
             m_storedComposedText.clear();
         }
     });
+    m_accountsReady = AccountManager::instance().isReady();
 }
 
 NetworkController &NetworkController::instance()
