@@ -34,9 +34,9 @@ extern "C" {
 JNIEXPORT void JNICALL Java_org_kde_tokodon_AndroidUtils_openUri(JNIEnv *env, jobject obj, jstring path)
 {
     Q_UNUSED(obj)
-    const char *pathStr = env->GetStringUTFChars(path, NULL);
+    const char *pathStr = env->GetStringUTFChars(path, nullptr);
 
-    NetworkController::instance().setAuthCode(QString::fromUtf8(pathStr));
+    NetworkController::instance().setAuthCode(QUrl(QString::fromUtf8(pathStr)));
     env->ReleaseStringUTFChars(path, pathStr);
 }
 }
