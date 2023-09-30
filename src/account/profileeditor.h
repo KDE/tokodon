@@ -15,83 +15,85 @@ class ProfileEditorBackend : public QObject
     Q_OBJECT
     QML_ELEMENT
 
-    /// This property holds the account we want to update.
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
-
-    /// This property holds the display name of the account.
     Q_PROPERTY(QString displayName READ displayName WRITE setDisplayName NOTIFY displayNameChanged)
-
-    /// This property holds the display name of the account in rendered HTML form.
     Q_PROPERTY(QString displayNameHtml READ displayNameHtml NOTIFY displayNameChanged)
-
-    /// This property holds the note (bio) of the account.
     Q_PROPERTY(QString note READ note WRITE setNote NOTIFY noteChanged)
-
-    /// This property holds the default post privacy to be used for new statuses.
-    Q_PROPERTY(QString privacy READ privacy WRITE setPrivacy NOTIFY privacyChanged)
-
-    /// This property holds whether new statuses should be marked sensitive by default.
-    Q_PROPERTY(bool sensitive READ sensitive WRITE setSensitive NOTIFY sensitiveChanged)
-
-    /// This property holds whether this account is a bot.
     Q_PROPERTY(bool bot READ bot WRITE setBot NOTIFY botChanged)
-
-    /// This property holds the the image banner that is shown above the profile
-    /// and in profile cards.
     Q_PROPERTY(QUrl backgroundUrl READ backgroundUrl WRITE setBackgroundUrl NOTIFY backgroundUrlChanged)
-
-    /// This property holds the the image banner that is shown above the profile
-    /// and in profile cards.
     Q_PROPERTY(QUrl avatarUrl READ avatarUrl WRITE setAvatarUrl NOTIFY avatarUrlChanged)
-
-    /// This property holds whether the current backgroundUrl has an error
     Q_PROPERTY(QString backgroundUrlError READ backgroundUrlError NOTIFY backgroundUrlChanged)
-
-    /// This property holds whether the current avatarUrl has an error
     Q_PROPERTY(QString avatarUrlError READ avatarUrlError NOTIFY avatarUrlChanged)
-
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
-
     Q_PROPERTY(bool discoverable READ discoverable WRITE setDiscoverable NOTIFY discoverableChanged)
 
 public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
     ~ProfileEditorBackend() override;
 
+    /// Returns the account we're updating
     AbstractAccount *account() const;
+
+    /// Sets the account to edit
+    /// \param account The account to edit
     void setAccount(AbstractAccount *account);
 
+    /// Returns the display name of the account
     QString displayName() const;
+
+    /// Returns the display name of the account, processed to HTML (for custom emojis)
     QString displayNameHtml() const;
+
+    /// Sets a new display name for the account
+    /// \param displayName The new display name, should be plain text
     void setDisplayName(const QString &displayName);
 
+    /// Returns the biography text for the account
     QString note() const;
+
+    /// Sets a new biography text for the account
+    /// \param note The new bio
     void setNote(const QString &note);
 
-    bool sensitive() const;
-    void setSensitive(bool sensitive);
-
-    QString privacy() const;
-    void setPrivacy(const QString &privacy);
-
+    /// Returns if the account should be marked as a bot
     bool bot() const;
+
+    /// Sets if the account should be marked as a bot
+    /// \param bot If true, the account is marked as a bot and will be visible on the profile
     void setBot(bool bot);
 
-    QString language() const;
-    void setLanguage(const QString &language);
-
+    /// Returns the current avatar URL for the account
     QUrl avatarUrl() const;
+
+    /// Returns a localized error if the new avatar failed to upload
     QString avatarUrlError() const;
+
+    /// Sets a new avatar URL for the account
+    /// \param avatarUrl The new media URL for the avatar
     void setAvatarUrl(const QUrl &avatarUrl);
 
+    /// Returns the current background URL for the account
     QUrl backgroundUrl() const;
+
+    /// Returns a localized error if the new background failed to upload
     QString backgroundUrlError() const;
+
+    /// Sets a new background URL for the account
+    /// \param backgroundUrl The new media URL for the background
     void setBackgroundUrl(const QUrl &backgroundUrl);
 
+    /// Whether the account should be discoverable on the server directory
     bool discoverable() const;
+
+    /// Sets whether the account should be discoverable on the server directory
+    /// \param discoverable If set to true, the account will be listed on the server's directory
     void setDiscoverable(bool discoverable);
 
+    /// Whether the account is locked
     bool locked() const;
+
+    /// Sets if the account is locked or not
+    /// \param locked If true, the account is locked
     void setLocked(bool locked);
 
 public Q_SLOTS:
@@ -102,10 +104,7 @@ Q_SIGNALS:
     void accountChanged();
     void displayNameChanged();
     void noteChanged();
-    void sensitiveChanged();
-    void privacyChanged();
     void botChanged();
-    void languageChanged();
     void avatarUrlChanged();
     void backgroundUrlChanged();
     void discoverableChanged();
@@ -116,10 +115,7 @@ private:
     AbstractAccount *m_account = nullptr;
     QString m_displayName;
     QString m_note;
-    QString m_privacy = QStringLiteral("public");
-    bool m_sensitive = false;
     bool m_bot = false;
-    QString m_language;
     QUrl m_avatarUrl;
     QUrl m_backgroundUrl;
     bool m_discoverable = true;

@@ -75,34 +75,6 @@ void ProfileEditorBackend::setNote(const QString &note)
     Q_EMIT noteChanged();
 }
 
-bool ProfileEditorBackend::sensitive() const
-{
-    return m_sensitive;
-}
-
-void ProfileEditorBackend::setSensitive(bool sensitive)
-{
-    if (m_sensitive == sensitive) {
-        return;
-    }
-    m_sensitive = sensitive;
-    Q_EMIT sensitiveChanged();
-}
-
-QString ProfileEditorBackend::privacy() const
-{
-    return m_privacy;
-}
-
-void ProfileEditorBackend::setPrivacy(const QString &privacy)
-{
-    if (privacy == m_privacy) {
-        return;
-    }
-    m_privacy = privacy;
-    Q_EMIT privacyChanged();
-}
-
 bool ProfileEditorBackend::bot() const
 {
     return m_bot;
@@ -143,20 +115,6 @@ void ProfileEditorBackend::setLocked(bool locked)
     }
     m_locked = locked;
     Q_EMIT lockedChanged();
-}
-
-QString ProfileEditorBackend::language() const
-{
-    return m_language;
-}
-
-void ProfileEditorBackend::setLanguage(const QString &language)
-{
-    if (language == m_language) {
-        return;
-    }
-    m_language = language;
-    Q_EMIT languageChanged();
 }
 
 QUrl ProfileEditorBackend::avatarUrl() const
@@ -243,10 +201,7 @@ void ProfileEditorBackend::fetchAccountInfo()
         const auto obj = json.object();
         setDisplayName(obj["display_name"_L1].toString());
         const auto source = obj["source"_L1].toObject();
-        setSensitive(source["sensitive"_L1].toBool());
-        setPrivacy(source["privacy"_L1].toString());
         setNote(source["note"_L1].toString());
-        setLanguage(source["language"_L1].toString());
         setBot(obj["bot"_L1].toBool());
         setBackgroundUrl(QUrl(obj["header_static"_L1].toString()));
         setAvatarUrl(QUrl(obj["avatar_static"_L1].toString()));
@@ -285,16 +240,6 @@ void ProfileEditorBackend::save()
     discoverablePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"discoverable\""));
     discoverablePart.setBody(discoverable() ? "1" : "0");
     multiPart->append(discoverablePart);
-
-    QHttpPart privacyPart;
-    privacyPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"source[privacy]\""));
-    privacyPart.setBody(privacy().toUtf8());
-    multiPart->append(privacyPart);
-
-    QHttpPart sensitivityPart;
-    sensitivityPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"source[sensitive]\""));
-    sensitivityPart.setBody(sensitive() ? "1" : "0");
-    multiPart->append(sensitivityPart);
 
     QMimeDatabase mimeDatabase;
 

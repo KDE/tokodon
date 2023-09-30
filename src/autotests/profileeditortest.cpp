@@ -42,9 +42,6 @@ private Q_SLOTS:
                 "live: https://liberapay.com/at or https://paypal.me/trwnh\r\n\r\n- my triggers are moths and glitter\r\n- i have all notifs except mentions "
                 "turned off, so please interact if you wanna be friends! i literally will not notice otherwise\r\n- dm me if i did something wrong, so i can "
                 "improve\r\n- purest person on fedi, do not lewd in my presence\r\n- #1 ami cole fan account\r\n\r\n:fatyoshi:"));
-        QCOMPARE(backend.privacy(), QStringLiteral("public"));
-        QCOMPARE(backend.sensitive(), false);
-        QCOMPARE(backend.language(), QStringLiteral("fr"));
         QCOMPARE(backend.bot(), false);
         QCOMPARE(backend.avatarUrl(), QUrl(QStringLiteral("https://files.mastodon.social/accounts/avatars/000/014/715/original/34aa222f4ae2e0a9.png")));
         QCOMPARE(backend.backgroundUrl(), QUrl(QStringLiteral("https://files.mastodon.social/accounts/headers/000/014/715/original/5c6fc24edb3bb873.jpg")));
