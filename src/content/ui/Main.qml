@@ -246,6 +246,16 @@ Kirigami.ApplicationWindow {
             }
 
             Delegates.RoundedItemDelegate {
+                icon.name: "debug-run"
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+                text: i18nc("@action:button Open debug page", "Debug")
+                visible: AccountManager.testMode
+                padding: Kirigami.Units.largeSpacing
+
+                Layout.fillWidth: true
+            }
+
+            Delegates.RoundedItemDelegate {
                 icon.name: "lock"
                 onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ModerationToolPage"), {}, {title: i18n("Moderation Tools")})
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")

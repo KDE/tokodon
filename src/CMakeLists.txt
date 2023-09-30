@@ -272,6 +272,13 @@ target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ad
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/conversation)
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/editor)
 
+if (BUILD_TESTING)
+    qt_target_qml_sources(tokodon_static
+            QML_FILES
+            content/ui/Debug/DebugPage.qml
+    )
+endif()
+
 if(ANDROID)
     target_sources(tokodon_static
         PRIVATE

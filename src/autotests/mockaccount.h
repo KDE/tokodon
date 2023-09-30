@@ -58,7 +58,18 @@ public:
     void setFakeIdentity(const QJsonObject &object);
     void clearFakeIdentity();
 
+    Q_INVOKABLE void mentionNotification();
+    Q_INVOKABLE void favoriteNotification();
+    Q_INVOKABLE void boostNotification();
+    Q_INVOKABLE void followNotification();
+    Q_INVOKABLE void followRequestNotification();
+    Q_INVOKABLE void statusNotification();
+    Q_INVOKABLE void updateNotification();
+    Q_INVOKABLE void pollNotification();
+
 private:
+    void readNotificationFromFile(QLatin1String filename);
+
     QHash<QUrl, QNetworkReply *> m_postReplies;
     QHash<QUrl, QNetworkReply *> m_getReplies;
 };

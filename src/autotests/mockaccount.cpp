@@ -5,6 +5,8 @@
 #include "account/notificationhandler.h"
 #include "autotests/helperreply.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 MockAccount::MockAccount(QObject *parent)
     : AbstractAccount(parent)
 {
@@ -159,4 +161,53 @@ void MockAccount::setFakeIdentity(const QJsonObject &object)
 void MockAccount::clearFakeIdentity()
 {
     m_identity.reset();
+}
+
+void MockAccount::mentionNotification()
+{
+    readNotificationFromFile("notification_mention.json"_L1);
+}
+
+void MockAccount::favoriteNotification()
+{
+    readNotificationFromFile("notification_favorite.json"_L1);
+}
+
+void MockAccount::boostNotification()
+{
+    readNotificationFromFile("notification_boost.json"_L1);
+}
+
+void MockAccount::followNotification()
+{
+    readNotificationFromFile("notification_follow.json"_L1);
+}
+
+void MockAccount::followRequestNotification()
+{
+    readNotificationFromFile("notification_request.json"_L1);
+}
+
+void MockAccount::statusNotification()
+{
+    readNotificationFromFile("notification_status.json"_L1);
+}
+
+void MockAccount::updateNotification()
+{
+    readNotificationFromFile("notification_update.json"_L1);
+}
+
+void MockAccount::pollNotification()
+{
+    readNotificationFromFile("notification_poll.json"_L1);
+}
+
+void MockAccount::readNotificationFromFile(QLatin1String filename)
+{
+    QFile statusExampleApi;
+    statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + filename);
+    statusExampleApi.open(QIODevice::ReadOnly);
+
+    handleNotification(QJsonDocument::fromJson(statusExampleApi.readAll()));
 }
