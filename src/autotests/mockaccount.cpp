@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "mockaccount.h"
+#include "account/notificationhandler.h"
 #include "autotests/helperreply.h"
 
 MockAccount::MockAccount(QObject *parent)
@@ -9,6 +10,10 @@ MockAccount::MockAccount(QObject *parent)
 {
     registerGet(apiUrl(QStringLiteral("/api/v1/preferences")), new TestReply(QStringLiteral("preferences.json"), this));
     m_preferences = new Preferences(this);
+    auto notificationHandler = new NotificationHandler(new QNetworkAccessManager, this);
+    connect(this, &MockAccount::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
+        notificationHandler->handle(notification, this);
+    });
 
     Q_EMIT authenticated(true, {});
 }
