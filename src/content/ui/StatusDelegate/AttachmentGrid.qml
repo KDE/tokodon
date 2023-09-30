@@ -95,6 +95,13 @@ QQC2.Control {
                                 }
                             }
 
+                            onStatusChanged: {
+                                if (status === Image.Error) {
+                                    // Fall back to remote URL
+                                    img.source = modelData.remoteUrl;
+                                }
+                            }
+
                             MouseArea {
                                 anchors.fill: parent
                                 onClicked: {

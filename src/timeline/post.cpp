@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QMap>
+#include <QMimeDatabase>
 #include <QtMath>
 #include <qurl.h>
 
@@ -52,6 +53,11 @@ void Attachment::fromJson(const QJsonObject &obj)
     const auto type = obj["type"].toString();
     if (stringToAttachmentType.contains(type)) {
         m_type = stringToAttachmentType[type];
+    }
+
+    const auto mimeType = QMimeDatabase().mimeTypeForFile(m_remote_url);
+    if (m_type == AttachmentType::Unknown && mimeType.name().contains("image"_L1)) {
+        m_type = AttachmentType::Image;
     }
 }
 
