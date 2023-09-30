@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
         }
     });
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
-    QIcon::setThemeName("tokodon");
+    QIcon::setThemeName(QStringLiteral("tokodon"));
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
