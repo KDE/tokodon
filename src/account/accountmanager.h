@@ -15,38 +15,21 @@
 class AbstractAccount;
 class QNetworkAccessManager;
 
+/// Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
 
-    /// Whether or not the account manager is completely ready
-    /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
     Q_PROPERTY(bool isReady READ isReady NOTIFY accountsReady)
-
-    /// If there any valid accounts loaded
     Q_PROPERTY(bool hasAccounts READ hasAccounts NOTIFY accountsChanged)
-
-    // If there are any accounts in the config
     Q_PROPERTY(bool hasAnyAccounts READ hasAnyAccounts NOTIFY accountsChanged)
-
-    /// The currently selected account
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
-
-    /// The currently seelcted account's id
     Q_PROPERTY(QString selectedAccountId READ selectedAccountId NOTIFY accountSelected)
-
-    /// The index of the seelcted account in the account list
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
-
-    /// The about data of the application
     Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
-
-    /// Whether or not we're running a Flatpak build
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
-
-    /// Whether the currently selected account has a login issue that must be addressed
     Q_PROPERTY(bool selectedAccountHasIssue READ selectedAccountHasIssue NOTIFY accountSelected)
 
 public:
@@ -57,36 +40,72 @@ public:
         return inst;
     }
 
+    /// Custom roles for the AccountManager model
     enum CustomRoles {
-        AccountRole = Qt::UserRole + 1,
-        DisplayNameRole,
-        DescriptionRole,
-        InstanceRole,
+        AccountRole = Qt::UserRole + 1, ///< Account object
+        DisplayNameRole, ///< Display name of the account. Uses the display name if set, otherwise falls back to the username
+        DescriptionRole, ///< Username of the account
+        InstanceRole, ///< Instance name of the account
     };
 
     static AccountManager &instance();
 
+    /// Load accounts from disk
     void loadFromSettings();
+
+    /// Migrates old Tokodon settings to newer formats
     void migrateSettings();
+
+    /// Enables or disables test mode. Used internally for tokodon-offline
+    /// \param enabled Whether test mode should be enabled
     void setTestMode(bool enabled);
 
+    /// Whether or not the account manager is completely ready
+    /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
     bool isReady() const;
+
+    /// If there any valid accounts loaded
     bool hasAccounts() const;
+
+    /// If there are any accounts in the config
     bool hasAnyAccounts() const;
+
+    /// Adds a new account
+    /// \param account The account to manage
+    /// \param skipAuthenticationCheck Whether the account manager should internally check if the account is valid
     Q_INVOKABLE void addAccount(AbstractAccount *account, bool skipAuthenticationCheck);
+
+    /// Removes an existing account
+    /// \param account The account to remove
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
+
+    /// Re-validates every account's credentials
     void reloadAccounts();
 
+    /// Returns if the currently selected account has issues with authentication
     Q_INVOKABLE bool selectedAccountHasIssue() const;
+
+    /// If the selected account has a login issue, returns a localized string explaining why
     Q_INVOKABLE QString selectedAccountLoginIssue() const;
 
+    /// Switches to an existing account
+    /// \param explicitUserAction If true, considers this an explicit user action and the new selected account will be written to disk
     void selectAccount(AbstractAccount *account, bool explicitUserAction = true);
+
+    /// The currently selected account
     AbstractAccount *selectedAccount() const;
+
+    /// The currently selected account's id
     QString selectedAccountId() const;
 
+    /// The index of the selected account in the account list
     int selectedIndex() const;
 
+    /// Sets the application about data
+    /// \param aboutData The new about data
     void setAboutData(const KAboutData &aboutData);
+
+    /// Returns the application's about data
     [[nodiscard]] KAboutData aboutData() const;
 
     int rowCount(const QModelIndex &index = QModelIndex()) const override;
@@ -95,8 +114,13 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
+    /// Creates a new account, and adds it to the manager
+    /// \param instanceUri The URI of the instance
+    /// \param ignoreSslErrors Whether or ignore SSL errors from this URI
+    /// \param admin Request admin scopes
     Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false, bool admin = true);
 
+    /// Returns whether or not Tokodon is built as a Flatpak
     bool isFlatpak() const;
 
     /// Returns the preferred settings group name for an account name and an instance uri.
@@ -105,10 +129,12 @@ public:
 
     /// Returns the preferred key name for the client secret given a settings group name.
     /// It's preferred to use AbstractAccount::clientSecretKey as it fills in the relevant information.
+    /// \param name The settings group name, from AbstractAccount::settingsGroupName()
     static QString clientSecretKey(const QString &name);
 
     /// Returns the preferred key name for the access token.
     /// It's preferred to use AbstractAccount::accessTokenKey as it fills in the relevant information.
+    /// \param name The settings group name, from AbstractAccount::settingsGroupName()
     static QString accessTokenKey(const QString &name);
 
 Q_SIGNALS:
