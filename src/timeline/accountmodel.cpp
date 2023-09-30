@@ -111,6 +111,7 @@ void AccountModel::fillTimeline(const QString &fromId)
             post->setPinned(true);
             return post;
         });
+        std::reverse(posts.begin(), posts.end());
         beginInsertRows({}, 0, posts.size() - 1);
         m_timeline = posts + m_timeline;
         endInsertRows();
@@ -132,7 +133,7 @@ void AccountModel::fillTimeline(const QString &fromId)
             endResetModel();
         }
 
-        fetchedTimeline(reply->readAll());
+        fetchedTimeline(reply->readAll(), true);
         if (fetchPinned) {
             m_account->get(uriPinned, true, this, onFetchPinned, handleError);
         } else {
