@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-28 10:48+0300\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
+"PO-Revision-Date: 2023-09-30 11:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "Hesap takip edilemedi"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Hesap takipten çıkarılamadı"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "Hesap engellenemedi"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Hesap engeli kaldırılamadı"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "Hesap sessize alınamadı"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Hesap sessizden kaldırılamadı"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "Hesap tanıtılamadı"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Hesap tanıtımı kaldırılamadı"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Bir hesap üzerine olan not düzenlenemedi"
@@ -100,17 +100,17 @@ msgstr "%1 tarafından yapılan anket sona erdi"
 msgid "%1 edited a post"
 msgstr "%1 bir gönderiyi düzenledi"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "Görsel pek büyük"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "Desteklenmeyen görsel dosyası. Yalnızca JPEG, PNG ve GIF desteklenir."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Hesap ayrıntıları kaydedildi"
@@ -485,6 +485,24 @@ msgstr "Paylaş"
 msgid "Share the selected media"
 msgstr "Seçili ortamı paylaş"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -823,6 +841,12 @@ msgstr "Yer İmleri"
 #, kde-format
 msgid "Search"
 msgstr "Ara"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2672,17 +2696,17 @@ msgstr "Düzenle"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:51
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Görsel ekli durum"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:53
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "GifV ekli durum"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:55
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Video ekli durum"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:144
 #, kde-format
@@ -2765,18 +2789,14 @@ msgid "Delete & Re-draft"
 msgstr "Sil ve Yeniden Taslak Oluştur"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "E-posta Durumu"
+msgstr "Olağan Durumu"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Oturum Açma Durumu"
+msgstr "Sürprizbozan Durumu"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:132
 #, kde-format
@@ -2827,16 +2847,12 @@ msgid "Boost"
 msgstr "Boostla"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Boostla"
+msgstr "Boostlandı"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Boostla"
 
@@ -2847,16 +2863,14 @@ msgid "Favorite"
 msgstr "Favorilere Ekle"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Favoriler"
+msgstr "Favorilendi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Favoriler"
+msgstr "Favorile"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
@@ -2865,10 +2879,9 @@ msgid "Bookmark"
 msgstr "Yer imlerine ekle"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Yer İmlerine Ekle"
+msgstr "Yer İmlerine Eklendi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -3146,46 +3159,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Popüler"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "gelecekte"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1 sn"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1 dk"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1 sa"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1 g"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 hafta önce"
 msgstr[1] "%1 hafta önce"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 ay önce"
 msgstr[1] "%1 ay önce"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3272,12 +3285,12 @@ msgstr "Bayraklar"
 #: utils/filetransferjob.cpp:32
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Geçici indirme dosyası açılamadı"
 
 #: utils/filetransferjob.cpp:74
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "İndirme için disk alanı ayrılamadı"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-24 19:20+0200\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
+"PO-Revision-Date: 2023-09-28 14:06+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "Impossibile seguire l'account"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Impossibile smettere di seguire l'account"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "Impossibile bloccare l'account"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Impossibile sbloccare l'account"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "Impossibile silenziare l'account"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Impossibile rimuovere il silenzio per l'account"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "Impossibile evidenziare l'account"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Impossibile rimuovere l'evidenziazione dell'account"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Impossibile modificare la nota su un account"
@@ -100,17 +100,17 @@ msgstr "Il sondaggio di %1 è terminato"
 msgid "%1 edited a post"
 msgstr "%1 ha modificato un messaggio"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "L'immagine è troppo grande"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "File immagine non supportato. Sono supportati solo jpeg, png e gif."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Dati dell'account salvati"
@@ -486,6 +486,24 @@ msgstr "Condividi"
 msgid "Share the selected media"
 msgstr "Condividi i file multimediali selezionati"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -554,23 +572,21 @@ msgid "All Languages"
 msgstr "Tutte le lingue"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorizzazione"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Accesso"
+msgstr "Problema di accesso"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Si è verificato un problema durante l'accesso al server:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:33
 #, kde-format
@@ -578,20 +594,21 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Risolvi questo problema accedendo al sito Web del server. Una volta "
+"completato, prova ad accedere nuovamente con il pulsante qui sotto."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:43
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Visualizza il sito web"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:51
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Nuovo tentativo di accesso"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Accesso"
@@ -600,12 +617,12 @@ msgstr "Accesso"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "Impossibile contattare il server: %1. Controlla le tue impostazioni."
+msgstr ""
+"Impossibile contattare il server: %1. Controlla le tue impostazioni del "
+"proxy."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:88
@@ -617,8 +634,7 @@ msgid "Proxy Settings"
 msgstr "Impostazioni del proxy"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Accesso"
@@ -630,10 +646,9 @@ msgstr "URL istanza:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Client Mastodon"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -641,16 +656,13 @@ msgid "Enable moderation tools"
 msgstr "Abilita gli strumenti di moderazione"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
 "Consenti a Tokodon di accedere agli strumenti di moderazione. Prova a "
-"disabilitare questa opzione se hai problemi ad accedere al tuo server."
+"disabilitare questa opzione se hai problemi ad accedere."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -665,9 +677,7 @@ msgstr "L'URL dell'istanza non può essere vuoto!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Impostazioni di rete"
@@ -680,35 +690,31 @@ msgid "Ignore SSL errors"
 msgstr "Ignora gli errori SSL"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Destinazione"
+msgstr "Registrazione"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
 msgid "Agreement"
-msgstr ""
+msgstr "Accordo"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Registra"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Nome utente:"
+msgstr "Nome utente"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "Indirizzo di posta elettronica"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -719,52 +725,51 @@ msgstr "Password"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Motivo"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
-msgstr ""
+msgstr "Ho letto e accetto le regole, i termini e le politiche del server."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Registra"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Scegli un server"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Questo server non accetta registrazioni: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Scegli un server"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "Url del server:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "L'URL dell'istanza non può essere vuoto!"
+msgstr "L'URL del server non può essere vuoto."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Benvenuto"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -774,7 +779,7 @@ msgstr "Benvenuto in Tokodon"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Ulteriori informazioni"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -838,6 +843,12 @@ msgstr "Segnalibri"
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -3163,46 +3174,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Di tendenza"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "in futuro"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 settimana fa"
 msgstr[1] "%1 settimane fa"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 mese fa"
 msgstr[1] "%1 mesi fa"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

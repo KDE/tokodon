@@ -1,7 +1,7 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # SPDX-FileCopyrightText: 2003 Iñigo Salvador Azurmendi <xalba@ni.eus>
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-28 19:33+0200\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
+"PO-Revision-Date: 2023-09-30 14:03+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "Ezin izan dio kontuari jarraitu"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Ezin izan dio kontuari jarraitzen utzi"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "Ezin izan du kontua blokeatu"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Ezin izan du kontua blokeatzeari utzi"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "Ezin izan du kontua isilarazi"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Ezin izan du kontua ozendu"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "Ezin izan du kontua agertu"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Ezin izan dio kontuari agertzeari utzi"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Ezin izan du kontu bati buruzko oharra editatu"
@@ -103,19 +103,19 @@ msgstr "%1(e)ren galdeketa bukatu da"
 msgid "%1 edited a post"
 msgstr "%1(e)k posta editatu du"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "Irudia handiegia da"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
 "Euskarririk gabeko irudi fitxategia. Bakarrik jpeg, png eta gif onartzen "
 "dira."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Kontuaren xehetasunak gorde dira"
@@ -490,6 +490,24 @@ msgstr "Partekatu"
 msgid "Share the selected media"
 msgstr "Partekatu hautatutako hedabideak"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -831,6 +849,12 @@ msgstr "Laster-markak"
 #, kde-format
 msgid "Search"
 msgstr "Bilatu"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2682,17 +2706,17 @@ msgstr "Editatu"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:51
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Egoera irudi-eranskinarekin"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:53
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Egoera GifV eranskinarekin"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:55
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Egoera bideo eranskinarekin"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:144
 #, kde-format
@@ -2775,18 +2799,14 @@ msgid "Delete & Re-draft"
 msgstr "Ezabatu eta zirriborroa egin"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "E-postaren egoera"
+msgstr "Egoera arrunta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Saio-haste egoera"
+msgstr "Zapuzle egoera"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:132
 #, kde-format
@@ -2837,16 +2857,12 @@ msgid "Boost"
 msgstr "Bultzada"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Bultzada"
+msgstr "Bultzatua"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Bultzada"
 
@@ -2857,16 +2873,14 @@ msgid "Favorite"
 msgstr "Gogokoena"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Gogokoak"
+msgstr "Gogokoen egina"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Gogokoak"
+msgstr "Gogokoena"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
@@ -2875,10 +2889,9 @@ msgid "Bookmark"
 msgstr "Laster-marka"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Laster-marka"
+msgstr "Laster-marka egina"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -3158,46 +3171,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Joera"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "etorkizunean"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1e"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Duela astebete"
 msgstr[1] "Duela %1 aste"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Duela hilabete"
 msgstr[1] "Duela %1 hilabete"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3284,12 +3297,12 @@ msgstr "Banderak"
 #: utils/filetransferjob.cpp:32
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Ezin izan du aldi-baterako zama-jaitsitako fitxategia ireki"
 
 #: utils/filetransferjob.cpp:74
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Ezin izan du diskoan zama-jaisteko lekurik erreserbatu"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
 "PO-Revision-Date: 2023-08-14 21:26+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "Konnte dem Konto nicht folgen"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Konnte das Folgen des Kontos nicht beenden"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "Konnte das Konto nicht blockieren"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Konnte das Blockieren des Kontos nicht aufheben"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "Konnte das Konto nicht stumm schalten"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Konnte die Stummschaltung des Kontos nicht aufheben"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "Konnte das Konto nicht empfehlen"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Konnte die Empfehlung des Kontos nicht entfernen"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Konnte die Notiz über das Konto nicht bearbeiten"
@@ -105,18 +105,18 @@ msgstr "Ihre Umfrage ist abgelaufen"
 msgid "%1 edited a post"
 msgstr "%1 bearbeitete einen Betrag"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "Bild ist zu groß"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
 "Nicht unterstützte Bilddatei. Nur jpeg, png und gif werden unterstützt."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Details zu Konto gespeichert"
@@ -502,6 +502,24 @@ msgstr "Teilen"
 msgid "Share the selected media"
 msgstr "Ausgewählte Medien teilen"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -857,6 +875,12 @@ msgstr "Lesezeichen"
 #, kde-format
 msgid "Search"
 msgstr "Suchen"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -3256,46 +3280,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Aktuelle Trends"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "In der Zukunft"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1 Sek."
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1 Min."
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1 Std."
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1 Tage"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Vor einer Woche"
 msgstr[1] "Vor %1 Wochen"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Vor einem Monat"
 msgstr[1] "Vor %1 Monaten"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

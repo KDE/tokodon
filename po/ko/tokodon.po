@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
 "PO-Revision-Date: 2023-08-27 23:06+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
@@ -107,17 +107,17 @@ msgstr "투표가 종료되었습니다"
 msgid "%1 edited a post"
 msgstr "%1 님이 게시물을 편집함"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "그림이 너무 큼"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "지원하지 않는 그림 파일입니다. JPEG, PNG, GIF 파일만 지원합니다."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "계정 정보 저장됨"
@@ -486,6 +486,24 @@ msgstr "공유"
 msgid "Share the selected media"
 msgstr "선택한 미디어 공유"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -837,6 +855,12 @@ msgstr "북마크"
 #, kde-format
 msgid "Search"
 msgstr "검색"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -3195,44 +3219,44 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "트렌드"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "미래에"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1초"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1분"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1주 전"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1개월 전"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

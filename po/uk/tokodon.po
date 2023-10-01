@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-28 09:03+0300\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
+"PO-Revision-Date: 2023-09-30 09:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,47 +18,47 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -101,19 +101,19 @@ msgstr "Голосування %1 завершено"
 msgid "%1 edited a post"
 msgstr "%1 змінено допис"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "Зображення є надто великим"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
 "Непідтримуваний файл зображення. Передбачено підтримку лише файлів jpeg, png "
 "і gif."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Подробиці щодо облікового запису збережено"
@@ -497,6 +497,24 @@ msgstr "Оприлюднити"
 msgid "Share the selected media"
 msgstr "Оприлюднити позначені мультимедійні дані"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -838,6 +856,12 @@ msgstr "Закладки"
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2694,17 +2718,17 @@ msgstr "Змінити"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:51
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Стан з долученням зображення"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:53
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Стан з долученням GifV"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:55
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Стан з долученням відео"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:144
 #, kde-format
@@ -2787,18 +2811,14 @@ msgid "Delete & Re-draft"
 msgstr "Вилучити і переписати"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "Стан ел. пошти"
+msgstr "Звичайний стан"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Стан входу"
+msgstr "Стан спойлера"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:132
 #, kde-format
@@ -2849,16 +2869,12 @@ msgid "Boost"
 msgstr "Підсилення"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Підсилення"
+msgstr "Підсилено"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Підсилення"
 
@@ -2869,14 +2885,12 @@ msgid "Favorite"
 msgstr "Улюблене"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Улюблені"
+msgstr "Додано до улюблених"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
 msgstr "Улюблені"
 
@@ -2887,10 +2901,9 @@ msgid "Bookmark"
 msgstr "Створити закладку"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Закладка"
+msgstr "Додано до закладок"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -3178,32 +3191,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Тренди"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "у майбутньому"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1с"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1хв"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1г"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1д"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -3212,7 +3225,7 @@ msgstr[1] "%1 тижні тому"
 msgstr[2] "%1 тижнів тому"
 msgstr[3] "1 тиждень тому"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -3221,7 +3234,7 @@ msgstr[1] "%1 місяці тому"
 msgstr[2] "%1 місяців тому"
 msgstr[3] "1 місяць тому"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3310,12 +3323,12 @@ msgstr "Прапорці"
 #: utils/filetransferjob.cpp:32
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Не вдалося відкрити тимчасовий отриманий файл"
 
 #: utils/filetransferjob.cpp:74
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Не вдалося зарезервувати місце на диску для отримання даних"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format

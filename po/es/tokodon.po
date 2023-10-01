@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-28 19:05+0200\n"
+"POT-Creation-Date: 2023-10-01 01:54+0000\n"
+"PO-Revision-Date: 2023-09-30 04:51+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: account/abstractaccount.cpp:619
+#: account/abstractaccount.cpp:624
 #, kde-format
 msgid "Could not follow account"
 msgstr "No se ha podido seguir la cuenta"
 
-#: account/abstractaccount.cpp:620
+#: account/abstractaccount.cpp:625
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "No se ha podido dejar de seguir la cuenta"
 
-#: account/abstractaccount.cpp:621
+#: account/abstractaccount.cpp:626
 #, kde-format
 msgid "Could not block account"
 msgstr "No se ha podido bloquear la cuenta"
 
-#: account/abstractaccount.cpp:622
+#: account/abstractaccount.cpp:627
 #, kde-format
 msgid "Could not unblock account"
 msgstr "No se ha podido desbloquear la cuenta"
 
-#: account/abstractaccount.cpp:623
+#: account/abstractaccount.cpp:628
 #, kde-format
 msgid "Could not mute account"
 msgstr "No se ha podido silenciar la cuenta"
 
-#: account/abstractaccount.cpp:624
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not unmute account"
 msgstr "No se ha podido dejar de silenciar la cuenta"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not feature account"
 msgstr "No se ha podido destacar la cuenta"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "No se ha podido dejar de destacar la cuenta"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "No se ha podido editar la nota sobre una cuenta"
@@ -102,17 +102,17 @@ msgstr "La encuesta de %1 ha finalizado"
 msgid "%1 edited a post"
 msgstr "%1 ha editado una publicación"
 
-#: account/profileeditor.cpp:197
+#: account/profileeditor.cpp:148
 #, kde-format
 msgid "Image is too big"
 msgstr "La imagen es demasiado grande"
 
-#: account/profileeditor.cpp:210
+#: account/profileeditor.cpp:161
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "Archivo de imagen no permitido. Solo se permite JPEG, PNG y GIF."
 
-#: account/profileeditor.cpp:337
+#: account/profileeditor.cpp:275
 #, kde-format
 msgid "Account details saved"
 msgstr "Se han guardado los detalles de la cuenta"
@@ -488,6 +488,24 @@ msgstr "Compartir"
 msgid "Share the selected media"
 msgstr "Compartir los medios seleccionados"
 
+#: content/ui/AnnouncementsPage.qml:18
+#, kde-format
+msgctxt "@title Server-wide announcements set by admins."
+msgid "Announcements"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:41
+#, kde-format
+msgctxt "@label An announcement was published on a date"
+msgid "Announcement on %1"
+msgstr ""
+
+#: content/ui/AnnouncementsPage.qml:69
+#, kde-format
+msgctxt "@label"
+msgid "No announcements"
+msgstr ""
+
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
@@ -827,6 +845,12 @@ msgstr "Marcadores"
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
+
+#: content/ui/Main.qml:420
+#, kde-format
+msgctxt "@action:button Server Announcements"
+msgid "Announcements"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2677,17 +2701,17 @@ msgstr "Editar"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:51
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Estado con adjunto de imagen"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:53
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Estado con adjunto GifV"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:55
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Estado con adjunto de vídeo"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:144
 #, kde-format
@@ -2770,18 +2794,14 @@ msgid "Delete & Re-draft"
 msgstr "Borrar y crear borrador"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "Estado del correo electrónico"
+msgstr "Estado normal"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Estado de inicio de sesión"
+msgstr "Estado de espóiler"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:132
 #, kde-format
@@ -2832,16 +2852,12 @@ msgid "Boost"
 msgstr "Promover"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Promover"
+msgstr "Promovida"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Promover"
 
@@ -2852,16 +2868,14 @@ msgid "Favorite"
 msgstr "Favorita"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Favoritos"
+msgstr "Favorita"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Favoritos"
+msgstr "Favorita"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
@@ -2870,10 +2884,9 @@ msgid "Bookmark"
 msgstr "Marcador"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Añadir marcador"
+msgstr "Marcada"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -3153,46 +3166,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Tendencias"
 
-#: timeline/post.cpp:377
+#: timeline/post.cpp:370
 #, kde-format
 msgid "in the future"
 msgstr "en el futuro"
 
-#: timeline/post.cpp:379
+#: timeline/post.cpp:372
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: timeline/post.cpp:381
+#: timeline/post.cpp:374
 #, kde-format
 msgid "%1m"
 msgstr "%1 m"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:376
 #, kde-format
 msgid "%1h"
 msgstr "%1 h"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:378
 #, kde-format
 msgid "%1d"
 msgstr "%1 d"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:382
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "hace 1 semana"
 msgstr[1] "hace %1 semanas"
 
-#: timeline/post.cpp:392
+#: timeline/post.cpp:385
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "hace 1 mes"
 msgstr[1] "hace %1 meses"
 
-#: timeline/post.cpp:396
+#: timeline/post.cpp:389
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3279,12 +3292,12 @@ msgstr "Banderas"
 #: utils/filetransferjob.cpp:32
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "No se ha podido abrir el archivo temporal de la descarga"
 
 #: utils/filetransferjob.cpp:74
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "No se ha podido reservar espacio en disco para la descarga"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
