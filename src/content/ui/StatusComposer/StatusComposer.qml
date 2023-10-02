@@ -13,7 +13,7 @@ import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 import org.kde.tokodon
 import '..'
 
-MastoPage {
+Kirigami.ScrollablePage {
     id: root
 
     enum Purpose {
@@ -58,7 +58,7 @@ MastoPage {
         }
     }
 
-    Connections {
+    data: Connections {
         target: backend
         function onPosted(error) {
             if (error.length === 0) {
@@ -418,6 +418,16 @@ MastoPage {
             for (let index in drop.urls) {
                 root.uploadFile(drop.urls[index])
             }
+        }
+    }
+
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Image {
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            source: "qrc:/content/elephant.svg"
         }
     }
 }
