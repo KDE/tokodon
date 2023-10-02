@@ -179,7 +179,7 @@ Kirigami.ScrollablePage {
                 topMargin: listview.headerItem ? listview.headerItem.height : 0
             }
 
-            visible: listview.model.loading
+            visible: listview.model.loading && listview.count === 0
 
             color: Kirigami.Theme.backgroundColor
 
