@@ -246,7 +246,7 @@ Kirigami.ScrollablePage {
                                 id: fileDialog
                                 currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
                                 title: i18n("Please choose a file")
-                                onAccepted: root.uploadFile(fileDialog.fileUrl);
+                                onAccepted: root.uploadFile(fileDialog.selectedFile);
                                 selectedNameFilter.index: 0
                                 nameFilters: [i18n("All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)"),
                                     i18n("JPEG image (*.jpg *.jpeg)"),

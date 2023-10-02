@@ -56,12 +56,12 @@ QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
     };
 }
 
-QNetworkReply *AttachmentEditorModel::append(const QUrl &filename)
+QNetworkReply *AttachmentEditorModel::append(const QString &filename)
 {
     if (rowCount({}) >= 4) {
         return nullptr;
     }
-    return m_account->upload(filename, [=](QNetworkReply *reply) {
+    return m_account->upload(QUrl(filename), [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
 
         if (!doc.isObject()) {

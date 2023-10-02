@@ -31,7 +31,7 @@ public:
     const QVector<Attachment *> &attachments() const;
 
 public Q_SLOTS:
-    QNetworkReply *append(const QUrl &fileName);
+    QNetworkReply *append(const QString &fileName);
     void appendExisting(Attachment *attachment);
     void removeAttachment(int row);
     void setDescription(int row, const QString &description);
