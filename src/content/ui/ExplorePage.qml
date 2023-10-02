@@ -34,6 +34,7 @@ Kirigami.ScrollablePage {
 
     TagsModel {
         id: tagsModel
+        name: "trending"
     }
 
     MainTimelineModel {
@@ -41,41 +42,23 @@ Kirigami.ScrollablePage {
         name: "trending"
     }
 
-
-    property Kirigami.Action tendingPostsAction: Kirigami.Action {
+    property Kirigami.Action trendingPostsAction: Kirigami.Action {
         id: showPostsAction
         text: i18n("Trending Posts")
         checkable: true
-        checked: true
-        onCheckedChanged: (checked) => {
-            if (checked) {
-                if (tagsModel.name.length === 0) {
-                    trendingPostsModel.name = "trending";
-                } else {
-                    trendingPostsModel.shouldLoadMore = false;
-                }
-            }
-        }
     }
 
     property Kirigami.Action trendingTagsAction: Kirigami.Action {
         id: showTagsAction
         text: i18n("Trending Tags")
         checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked) {
-                if (tagsModel.name.length === 0) {
-                    tagsModel.name = "trending";
-                } else {
-                    tagsModel.shouldLoadMore = false;
-                }
-            }
-        }
     }
+
+    Component.onCompleted: trendingPostsAction.checked = true
 
     header: Kirigami.NavigationTabBar {
         width: parent.width
-        actions: [tendingPostsAction, trendingTagsAction]
+        actions: [trendingPostsAction, trendingTagsAction]
     }
 
     ListView {
