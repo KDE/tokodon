@@ -13,6 +13,8 @@ QQC2.Menu {
     required property string url
 
     title: i18n("Share")
+    icon.name: "emblem-shared-symbolic"
+
     Repeater {
         model: Purpose.PurposeAlternativesModel {
             id: alternativesModel
