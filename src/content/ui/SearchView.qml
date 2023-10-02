@@ -16,6 +16,8 @@ ListView {
 
     required property string text
 
+    signal itemSelected
+
     onTextChanged: if (text.length === 0) {
         searchModel.clear();
     }
@@ -68,7 +70,10 @@ ListView {
                 width: ListView.view.width
                 text: accountDelegate.authorIdentity.displayName
 
-                onClicked: Navigation.openAccount(accountDelegate.authorIdentity.id)
+                onClicked: {
+                    Navigation.openAccount(accountDelegate.authorIdentity.id);
+                    root.itemSelected();
+                }
 
                 contentItem: RowLayout {
                     KirigamiComponents.Avatar {
@@ -139,7 +144,10 @@ ListView {
                 text: "#" + id
                 Accessible.description: i18n("Hashtag")
 
-                onClicked: Navigation.openTag(id)
+                onClicked: {
+                    Navigation.openTag(id);
+                    root.itemSelected();
+                }
 
                 contentItem: ColumnLayout {
                     Layout.fillWidth: true

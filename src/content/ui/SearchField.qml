@@ -32,5 +32,6 @@ KirigamiComponents.SearchPopupField {
     popupContentItem: SearchView {
         id: searchView
         text: root.text
+        onItemSelected: root.popup.close()
     }
 }
