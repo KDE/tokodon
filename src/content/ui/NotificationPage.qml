@@ -44,9 +44,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show all notifications", "All")
         icon.name: "notifications"
         checkable: true
-        checked: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = []
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = [];
         }
     }
 
@@ -55,8 +55,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only mentions", "Mentions")
         icon.name: "tokodon-chat-reply"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
         }
     }
 
@@ -64,8 +65,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only boosts", "Boosts")
         icon.name: "tokodon-post-boost"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
         }
     }
 
@@ -73,8 +75,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only favorites", "Favorites")
         icon.name: "tokodon-post-favorite"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update'];
         }
     }
 
@@ -82,8 +85,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only poll results", "Poll Results")
         icon.name: "office-chart-bar"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update'];
         }
     }
 
@@ -91,8 +95,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only followed statuses", "Posts")
         icon.name: "user-home-symbolic"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
         }
     }
 
@@ -100,8 +105,9 @@ Kirigami.ScrollablePage {
         text: i18nc("Show only follows", "Follows")
         icon.name: "list-add-user"
         checkable: true
-        onCheckedChanged: if (checked) {
-            notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update']
+        onCheckedChanged: (checked) => {
+            if (checked)
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update'];
         }
     }
 
@@ -120,6 +126,8 @@ Kirigami.ScrollablePage {
         id: groupedNotificationModel
         sourceModel: notificationModel
     }
+
+    Component.onCompleted: showAllAction.checked = true
 
     ListView {
         id: listview
