@@ -51,7 +51,7 @@ Purpose.PurposeAlternativesModel {
 
         delegate: Kirigami.Action {
             property int index
-            text: model.display
+            text: model.display ?? ""
             icon.name: model.iconName
             onTriggered: {
                 doBeforeSharing();
@@ -62,10 +62,10 @@ Purpose.PurposeAlternativesModel {
                 })
             }
         }
-        onObjectAdded: (object) => {
+        onObjectAdded: (index, object) => {
             object.index = index;
             shareAction.children.push(object)
         }
-        onObjectRemoved: (object) => shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+        onObjectRemoved: (index, object) => shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
     }
 }
