@@ -173,6 +173,14 @@ Kirigami.ScrollablePage {
             }
         }
 
+        footer: QQC2.ProgressBar {
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            width: Kirigami.Units.gridUnit * 15
+            visible: listview.model.loading
+            indeterminate: true
+        }
+
         Rectangle {
             anchors.fill: parent
             anchors {
