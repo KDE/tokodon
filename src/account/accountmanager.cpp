@@ -202,7 +202,9 @@ void AccountManager::removeAccount(AbstractAccount *account)
 void AccountManager::reloadAccounts()
 {
     for (auto account : std::as_const(m_accounts)) {
-        account->validateToken();
+        if (account->haveToken()) {
+            account->validateToken();
+        }
     }
 
     Q_EMIT accountsReloaded();
