@@ -19,6 +19,8 @@ QQC2.Menu {
     required property bool expandedPost
     required property bool pinned
 
+    modal: true
+
     QQC2.MenuItem {
         icon.name: "expand"
         text: i18n("Expand This Post")

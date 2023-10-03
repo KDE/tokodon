@@ -14,19 +14,21 @@ import org.kde.tokodon.private
 RowLayout {
     id: root
 
+    required property bool isBoosted
+    required property bool isReply
+    required property var type
+    required property var boostAuthorIdentity
+    required property var replyAuthorIdentity
+
     readonly property var identity: {
-        if (replyAuthorIdentity) {
+        if (isReply) {
             return replyAuthorIdentity;
         } else if (boostAuthorIdentity) {
             return boostAuthorIdentity;
         }
     }
 
-    required property bool isBoosted
-    required property bool isReply
-    required property var type
-    required property var boostAuthorIdentity
-    required property var replyAuthorIdentity
+    spacing: Kirigami.Units.smallSpacing
 
     Layout.fillWidth: true
 
@@ -49,36 +51,35 @@ RowLayout {
         Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
     }
 
-    QQC2.AbstractButton {
-        contentItem: RowLayout {
-            KirigamiComponents.AvatarButton {
-                implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
-                implicitWidth: implicitHeight
+    KirigamiComponents.AvatarButton {
+        id: avatar
 
-                name: root.identity ? root.identity.displayName : ''
-                source: root.identity ? root.identity.avatarUrl : ''
-                cache: true
+        implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+        implicitWidth: implicitHeight
 
-                onClicked: Navigation.openAccount(root.identity.id)
+        name: root.identity ? root.identity.displayName : ''
+        source: root.identity ? root.identity.avatarUrl : ''
+        cache: true
 
-                QQC2.ToolTip.text: i18n("View Profile")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            }
-            QQC2.Label {
-                text: {
-                    if (root.isBoosted) {
-                        return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
-                    } else if (root.isReply) {
-                        return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
-                    }
-                }
-                color: Kirigami.Theme.disabledTextColor
-                font: Config.defaultFont
+        onClicked: Navigation.openAccount(root.identity.id)
 
-                Layout.alignment: Qt.AlignBaseline
-                Layout.fillWidth: true
+        QQC2.ToolTip.text: i18n("View Profile")
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+    }
+
+    QQC2.Label {
+        text: {
+            if (root.isBoosted) {
+                return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
+            } else if (root.isReply) {
+                return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
             }
         }
+        color: Kirigami.Theme.disabledTextColor
+        font: Config.defaultFont
+
+        Layout.alignment: Qt.AlignBaseline
+        Layout.fillWidth: true
     }
 }

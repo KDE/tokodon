@@ -50,10 +50,12 @@ Kirigami.ScrollablePage {
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
-    onBackRequested: if (dialog) {
-        dialog.close();
-        dialog = null;
-        event.accepted = true;
+    onBackRequested: (event) => {
+        if (dialog) {
+            dialog.close();
+            dialog = null;
+            event.accepted = true;
+        }
     }
 
     actions: Kirigami.Action {
@@ -114,7 +116,7 @@ Kirigami.ScrollablePage {
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
             loading: listview.model.loading
-            Layout.fillWidth: true
+            width: ListView.view.width
 
             Connections {
                 target: listview

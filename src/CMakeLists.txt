@@ -207,12 +207,15 @@ qt_target_qml_sources(tokodon_static
 
         # Delegate
         content/ui/StatusDelegate/AttachmentGrid.qml
+        content/ui/StatusDelegate/ImageMenu.qml
+        content/ui/StatusDelegate/InformationBar.qml
         content/ui/StatusDelegate/InlineIdentityInfo.qml
         content/ui/StatusDelegate/InteractionButton.qml
         content/ui/StatusDelegate/LinkPreview.qml
         content/ui/StatusDelegate/MediaContainer.qml
         content/ui/StatusDelegate/OverflowMenu.qml
         content/ui/StatusDelegate/PostContent.qml
+        content/ui/StatusDelegate/PostInfoBar.qml
         content/ui/StatusDelegate/StatusDelegate.qml
         content/ui/StatusDelegate/StatusPoll.qml
         content/ui/StatusDelegate/UserInteractionLabel.qml

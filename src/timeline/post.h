@@ -19,6 +19,7 @@
 #include <optional>
 
 #include "poll.h"
+#include "tag.h"
 
 class Post;
 class Identity;
@@ -207,6 +208,9 @@ class Post : public QObject
     Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
     Q_PROPERTY(QString type READ type CONSTANT)
+    Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
+    Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
+    Q_PROPERTY(QList<QString> standaloneTags READ standaloneTags NOTIFY contentChanged)
 
 public:
     Post() = delete;
@@ -239,6 +243,7 @@ public:
 
     QString content() const;
     void setContent(const QString &content);
+    QList<QString> standaloneTags() const;
     QString contentType() const;
     void setContentType(const QString &contentType);
     bool sensitive() const;
@@ -270,6 +275,12 @@ public:
 
     // Returns absolute locale-aware time
     QString absoluteTime() const;
+
+    /// Returns the time this post was last edited
+    QString editedAt() const;
+
+    /// Returns if the post was edited at all
+    bool wasEdited() const;
 
     /// Returns whether the user favorited this status.
     bool favourited() const;
@@ -317,6 +328,8 @@ public:
         return m_hidden;
     }
 
+    static QPair<QString, QList<QString>> parseContent(const QString &html);
+
 Q_SIGNALS:
     void spoilerTextChanged();
     void contentChanged();
@@ -343,6 +356,8 @@ private:
     QString m_content_type;
     QStringList m_mentions;
     QString m_language;
+    QDateTime m_editedAt;
+    QList<QString> m_standaloneTags;
 
     QString m_replyTargetId;
     QStringList m_filters;

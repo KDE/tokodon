@@ -22,17 +22,13 @@ QQC2.Control {
     required property bool secondary
     required property bool expandedPost
     required property bool inViewPort
-
     property bool canHideMedia: true
 
     // Only uncrop timeline media if requested by the user, and there's only one attachment
     // Expanded posts (like in threads) are always uncropped.
     readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
 
-    property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
-    signal userSensitivityChanged(hide: bool)
-
-    property bool hasValidAttachment: {
+    readonly property bool hasValidAttachment: {
         for (let i in root.attachments) {
             if (root.attachments[i].attachmentType !== Attachment.Unknown) {
                 return true;
@@ -41,9 +37,9 @@ QQC2.Control {
         return false;
     }
 
-    Layout.fillWidth: true
-    Layout.fillHeight: shouldKeepAspectRatio
-    Layout.topMargin: Kirigami.Units.largeSpacing
+    property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
+
+    signal userSensitivityChanged(hide: bool)
 
     Accessible.description: {
         switch (root.attachments[0].attachmentType) {
@@ -64,6 +60,8 @@ QQC2.Control {
     contentItem: GridLayout {
         id: attachmentGridLayout
         columns: Math.min(root.attachments.length, 2)
+        rowSpacing: Kirigami.Units.smallSpacing
+        columnSpacing: Kirigami.Units.smallSpacing
 
         Repeater {
             id: attachmentsRepeater
@@ -109,7 +107,7 @@ QQC2.Control {
                                         anchors.centerIn: parent
                                         width: img.width
                                         height: img.height
-                                        radius: Kirigami.Units.smallSpacing
+                                        radius: Kirigami.Units.mediumSpacing
                                     }
                                 }
                             }
@@ -160,6 +158,23 @@ QQC2.Control {
                                 closable: false
                                 visible: modelData.caption.length !== 0
                             }
+
+                            HoverHandler {
+                                id: hover
+                                acceptedDevices: PointerDevice.Stylus
+                            }
+
+                            TapHandler {
+                                acceptedButtons: Qt.RightButton
+                                onTapped: {
+                                    imageMenu.active = true;
+                                    imageMenu.item.popup();
+                                }
+                            }
+
+                            QQC2.ToolTip.text: modelData.caption
+                            QQC2.ToolTip.visible: hover.hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         }
                     }
                 }
@@ -343,6 +358,17 @@ QQC2.Control {
             root.userSensitivityChanged(false);
         } else {
             Navigation.openFullScreenImage(root.attachments, root.identity, 0);
+        }
+    }
+
+    Loader {
+        id: imageMenu
+
+        active: false
+        visible: active
+
+        sourceComponent: ImageMenu {
+            onClosed: postMenu.active = false
         }
     }
 }

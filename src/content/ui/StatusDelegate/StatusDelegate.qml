@@ -56,6 +56,8 @@ QQC2.ItemDelegate {
     required property int type
     required property var mentions
     required property int visibility
+    required property bool wasEdited
+    required property string editedAt
 
     required property var post
 
@@ -71,21 +73,17 @@ QQC2.ItemDelegate {
     property bool expandedPost: false
     property bool loading: false
     property bool inViewPort: true
-    property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
 
+    readonly property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
     readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
-    leftPadding: width > Kirigami.Units.gridUnit * 25 ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
-    rightPadding: width > Kirigami.Units.gridUnit * 25 ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
 
     highlighted: false
     hoverEnabled: false
-    width: ListView.view.width
-
-    Kirigami.Theme.colorSet: root.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
 
     Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
 
@@ -106,54 +104,70 @@ QQC2.ItemDelegate {
     }
 
     background: Rectangle {
-        color: Kirigami.Theme.backgroundColor
+        color: root.selected ? Kirigami.Theme.alternateBackgroundColor : Kirigami.Theme.backgroundColor
 
         Kirigami.Separator {
+            width: flexColumn.innerWidth
             visible: root.showSeparator && !root.selected
             anchors {
-                left: parent.left
-                right: parent.right
+                horizontalCenter: parent.horizontalCenter
                 bottom: parent.bottom
             }
         }
     }
 
     contentItem: Kirigami.FlexColumn {
-        spacing: Kirigami.Units.largeSpacing
+        id: flexColumn
 
+        padding: 0
+        spacing: Kirigami.Units.largeSpacing
         maximumWidth: Kirigami.Units.gridUnit * 40
 
-        RowLayout {
-            visible: filtered
+        Loader {
+            active: filtered
+            visible: active
+
             Layout.fillWidth: true
-            QQC2.Label {
-                font: Config.defaultFont
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Filtered: %1", root.filters.join(', '))
-            }
-            Kirigami.LinkButton {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Show anyway")
-                onClicked: filtered = false
+
+            sourceComponent: RowLayout {
+                spacing: 0
+
+                QQC2.Label {
+                    font: Config.defaultFont
+                    Layout.alignment: Qt.AlignHCenter
+                    text: i18n("Filtered: %1", root.filters.join(', '))
+                }
+                Kirigami.LinkButton {
+                    Layout.alignment: Qt.AlignHCenter
+                    text: i18n("Show anyway")
+                    onClicked: filtered = false
+                }
             }
         }
 
-        RowLayout {
+        Loader {
+            active: root.pinned && !root.filtered
+            visible: active
+
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: root.pinned && !root.filtered
-            Kirigami.Icon {
-                source: "pin"
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            }
-            QQC2.Label {
-                font: Config.defaultFont
-                text: i18n("Pinned entry")
-                color: Kirigami.Theme.disabledTextColor
-                Layout.alignment: Qt.AlignVCenter
-                Layout.fillWidth: true
+
+            sourceComponent: RowLayout {
+                spacing: 0
+
+                Kirigami.Icon {
+                    source: "pin"
+                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                    Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                    Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
+                }
+                QQC2.Label {
+                    font: Config.defaultFont
+                    text: i18n("Pinned entry")
+                    color: Kirigami.Theme.disabledTextColor
+                    Layout.alignment: Qt.AlignVCenter
+                    Layout.fillWidth: true
+                }
             }
         }
 
@@ -172,8 +186,7 @@ QQC2.ItemDelegate {
 
         // Interaction labels for notifications
         Loader {
-            sourceComponent: Notifications.UserInteractionLabel
-            {
+            sourceComponent: Notifications.UserInteractionLabel {
                 type: root.type
                 notificationActorIdentity: root.notificationActorIdentity
             }
@@ -183,8 +196,7 @@ QQC2.ItemDelegate {
 
         // Interaction labels for grouped notifications
         Loader {
-            sourceComponent: Notifications.GroupInteractionLabel
-            {
+            sourceComponent: Notifications.GroupInteractionLabel {
                 type: root.type
                 notificationActorIdentity: root.notificationActorIdentity
                 numInGroup: root.numInGroup
@@ -193,77 +205,14 @@ QQC2.ItemDelegate {
             visible: active
         }
 
-        InlineIdentityInfo {
-            identity: root.authorIdentity
-            secondary: root.secondary
-            visible: !filtered
+        PostInfoBar {
+            id: infoBar
 
-            InteractionButton {
-                Layout.alignment: Qt.AlignVCenter
-                iconName: switch(root.visibility) {
-                    case Post.Public:
-                        return "kstars_xplanet";
-                    case Post.Unlisted:
-                        return "unlock";
-                    case Post.Private:
-                        return "lock";
-                    case Post.Direct:
-                        return "mail-message";
-                    default:
-                        return "kstars_xplanet";
-                }
-                tooltip: switch(root.visibility) {
-                    case Post.Public:
-                        return i18n("Public");
-                    case Post.Unlisted:
-                        return i18n("Unlisted");
-                    case Post.Private:
-                        return i18n("Private");
-                    case Post.Direct:
-                        return i18n("Direct Message");
-                    default:
-                        return i18n("Public");
-                }
-                interactable: false
-            }
+            Layout.fillWidth: true
 
-            Kirigami.Heading {
-                id: heading
-                font.pixelSize: Config.defaultFont.pixelSize + 1
-                font.pointSize: -1
-                text: root.relativeTime
-                color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
-                Layout.alignment: Qt.AlignBaseline
-                elide: Text.ElideRight
-            }
-
-            InteractionButton {
-                Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: implicitHeight
-                iconName: 'overflow-menu'
-                tooltip: i18nc("Show more options", "More")
-                onClicked: {
-                    postMenu.active = true;
-                    postMenu.item.open()
-                }
-                Loader {
-                    id: postMenu
-
-                    active: false
-                    visible: active
-
-                    sourceComponent: OverflowMenu {
-                        index: root.index
-                        postId: root.id
-                        url: root.url
-                        bookmarked: root.bookmarked
-                        isSelf: root.isSelf
-                        expandedPost: root.expandedPost
-                        pinned: root.pinned
-
-                        onClosed: postMenu.active = false
-                    }
-                }
+            onMoreOpened: {
+                postMenu.active = true;
+                postMenu.item.popup()
             }
         }
 
@@ -277,6 +226,8 @@ QQC2.ItemDelegate {
                 Layout.fillWidth: true
                 visible: root.spoilerText.length !== 0
                 contentItem: RowLayout {
+                    spacing: 0
+
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
                         source: "data-warning"
@@ -307,16 +258,29 @@ QQC2.ItemDelegate {
                 id: postContent
 
                 content: root.content
-                expandedPost: root.expandedPost
+                expandedPost: root.selected
                 secondary: root.secondary
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 shouldOpenInternalLinks: true
 
-                onClicked: root.clicked()
+                onPressed: (event) => {
+                    if (event.button === Qt.LeftButton) {
+                        root.clicked()
+                    } else if (event.button === Qt.RightButton && !root.selected) {
+                        postMenu.active = true;
+                        postMenu.item.popup();
+                        event.accepted = false;
+                    }
+                }
             }
         }
 
         Loader {
+            active: !root.secondary && root.attachments.length > 0 && !filtered
+            visible: active
+
+            Layout.fillWidth: true
+
             sourceComponent: AttachmentGrid {
                 expandedPost: root.expandedPost
                 attachments: root.post.attachments
@@ -325,10 +289,40 @@ QQC2.ItemDelegate {
                 secondary: root.secondary
                 inViewPort: root.inViewPort
             }
-            active: !root.secondary && root.attachments.length > 0 && !filtered
-            visible: active
+        }
+
+        Loader {
+            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+            visible: active && postContent.visible
 
             Layout.fillWidth: true
+
+            sourceComponent: LinkPreview {
+                card: root.card
+                selected: root.selected
+            }
+        }
+
+        Flow {
+            spacing: Kirigami.Units.largeSpacing
+            visible: root.post.standaloneTags.length !== 0
+
+            Layout.fillWidth: true
+
+            Repeater {
+                model: root.post.standaloneTags
+
+                Kirigami.Chip {
+                    required property string modelData
+
+                    closable: false
+                    checkable: false
+
+                    text: "#" + modelData
+
+                    onClicked: Navigation.openTag(modelData)
+                }
+            }
         }
 
         RowLayout {
@@ -338,8 +332,9 @@ QQC2.ItemDelegate {
             readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
 
             visible: showInteractionButton && !filtered
-            Layout.fillWidth: true
             spacing: shouldExpand ? 0 : Kirigami.Units.gridUnit * 2
+
+            Layout.fillWidth: true
 
             InteractionButton {
                 topPadding: buttonLayout.buttonPadding
@@ -356,9 +351,11 @@ QQC2.ItemDelegate {
 
                 onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
             }
+
             Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
             }
+
             InteractionButton {
                 topPadding: buttonLayout.buttonPadding
                 bottomPadding: buttonLayout.buttonPadding
@@ -379,9 +376,11 @@ QQC2.ItemDelegate {
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
                 Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
             }
+
             Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
             }
+
             InteractionButton {
                 topPadding: buttonLayout.buttonPadding
                 bottomPadding: buttonLayout.buttonPadding
@@ -400,9 +399,11 @@ QQC2.ItemDelegate {
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
                 Accessible.description: root.favourited ? i18n("Favourited") : i18n("Favourite")
             }
+
             Item {
                 Layout.fillWidth: buttonLayout.shouldExpand
             }
+
             InteractionButton {
                 topPadding: buttonLayout.buttonPadding
                 bottomPadding: buttonLayout.buttonPadding
@@ -422,95 +423,32 @@ QQC2.ItemDelegate {
             }
         }
 
-        RowLayout {
-            visible: root.expandedPost && root.selected
+        Loader {
+            active: root.selected
+            visible: root.selected
 
-            QQC2.Label {
-                text: root.absoluteTime
-                elide: Text.ElideRight
-                color: Kirigami.Theme.disabledTextColor
-            }
+            Layout.fillWidth: true
 
-            QQC2.Label {
-                visible: root.application && root.application.name
-                text: root.application && root.application.name ? i18n("via %1", root.application.name) : ''
-                elide: Text.ElideRight
-                Layout.fillWidth: true
-                color: Kirigami.Theme.disabledTextColor
-
-                HoverHandler {
-                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
-                    onHoveredChanged: if (hovered) {
-                        applicationWindow().hoverLinkIndicator.text = root.application.website;
-                    } else {
-                        applicationWindow().hoverLinkIndicator.text = "";
-                    }
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
-                    onClicked: Qt.openUrlExternally(root.application.website)
-                }
-
-            }
+            sourceComponent: InformationBar {}
         }
+    }
 
-        Item {
-            height: Kirigami.Units.mediumSpacing
-            visible: root.selected && (root.repliesCount > 0 || root.reblogsCount > 0 || root.favouritesCount > 0)
-        }
+    Loader {
+        id: postMenu
 
-        RowLayout {
-            visible: root.expandedPost && root.selected
-            InteractionButton {
-                visible: root.repliesCount > 0
-                iconName: "tokodon-post-reply-filled"
-                tooltip: i18np("%1 Reply", "%1 Replies", root.repliesCount)
-                text: i18np("%1 Reply", "%1 Replies", root.repliesCount)
-                enabled: false
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-            }
+        active: false
+        visible: active
 
-            InteractionButton {
-                visible: root.favouritesCount > 0
-                iconName: "tokodon-post-favorited"
-                tooltip: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
-                text: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
-                enabled: true
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-                onClicked: {
-                    pageStack.push(socialGraphComponent, {
-                        name: "favourited_by",
-                        statusId: root.id,
-                        count: root.favouritesCount
-                    });
-                }
-            }
+        sourceComponent: OverflowMenu {
+            index: root.index
+            postId: root.id
+            url: root.url
+            bookmarked: root.bookmarked
+            isSelf: root.isSelf
+            expandedPost: root.expandedPost
+            pinned: root.pinned
 
-            InteractionButton {
-                visible: root.reblogsCount > 0
-                iconName: "tokodon-post-boosted"
-                tooltip: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
-                text: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
-                enabled: true
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-                onClicked: {
-                    pageStack.push(socialGraphComponent, {
-                        name: "reblogged_by",
-                        statusId: root.id,
-                        count: root.reblogsCount
-                    });
-                }
-            }
+            onClosed: postMenu.active = false
         }
     }
 }

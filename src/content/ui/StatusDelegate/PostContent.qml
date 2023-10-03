@@ -19,7 +19,10 @@ QQC2.TextArea {
 
     signal clicked()
 
-    activeFocusOnTab: false
+    topPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+    bottomPadding: 0
 
     font: Config.defaultFont
     Layout.fillWidth: true
@@ -30,10 +33,7 @@ QQC2.TextArea {
         }
         </style>" + root.content
     textFormat: TextEdit.RichText
-    topPadding: 0
-    leftPadding: 0
-    rightPadding: 0
-    bottomPadding: 0
+    activeFocusOnTab: false
     readOnly: true
     background: null
     wrapMode: Text.Wrap
@@ -54,6 +54,6 @@ QQC2.TextArea {
     MouseArea {
         anchors.fill: parent
         acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+        cursorShape: root.hoveredLink !== '' ? Qt.PointingHandCursor : Qt.ArrowCursor
     }
 }

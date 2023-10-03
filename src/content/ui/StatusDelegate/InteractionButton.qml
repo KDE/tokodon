@@ -16,8 +16,6 @@ QQC2.AbstractButton {
     property bool interacted: false
     property color interactionColor
 
-    property color textColor: Kirigami.Theme.textColor
-
     required property string tooltip
 
     hoverEnabled: true
@@ -29,8 +27,10 @@ QQC2.AbstractButton {
 
     Accessible.name: tooltip
 
-    bottomPadding: Kirigami.Units.smallSpacing
     topPadding: Kirigami.Units.smallSpacing
+    bottomPadding: Kirigami.Units.smallSpacing
+    leftPadding: Kirigami.Units.smallSpacing
+    rightPadding: Kirigami.Units.smallSpacing
 
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
@@ -52,20 +52,20 @@ QQC2.AbstractButton {
             id: label
 
             text: control.text
-            color: control.textColor
             verticalAlignment: Text.AlignVCenter
             visible: control.text
-            rightPadding: Kirigami.Units.smallSpacing
+            color: Kirigami.Theme.disabledTextColor
+            //rightPadding: Kirigami.Units.smallSpacing
         }
     }
 
     background: Rectangle {
         color: control.hovered && control.interactable ? Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.1) : "transparent"
-        radius: Kirigami.Units.smallSpacing
+        radius: Kirigami.Units.mediumSpacing
 
         Rectangle {
             visible: control.visualFocus
-            radius: Kirigami.Units.smallSpacing
+            radius: parent.radius
             color: "transparent"
             anchors {
                 fill: parent

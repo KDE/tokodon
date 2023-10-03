@@ -200,7 +200,12 @@ void Post::fromJson(QJsonObject obj)
     m_postId = obj["id"_L1].toString();
 
     m_spoilerText = obj["spoiler_text"_L1].toString();
-    m_content = computeContent(obj, m_authorIdentity);
+    auto basicContent = computeContent(obj, m_authorIdentity);
+    auto [processedContent, standaloneTags] = parseContent(basicContent);
+    m_content = processedContent;
+    m_standaloneTags = standaloneTags;
+
+    qInfo() << basicContent << m_content;
 
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
@@ -264,6 +269,10 @@ void Post::fromJson(QJsonObject obj)
     m_language = obj["language"_L1].toString();
 
     m_publishedAt = QDateTime::fromString(obj["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
+
+    if (!obj["edited_at"_L1].isNull()) {
+        m_editedAt = QDateTime::fromString(obj["edited_at"_L1].toString(), Qt::ISODate).toLocalTime();
+    }
 
     m_attachments.clear();
     addAttachments(obj["media_attachments"_L1].toArray());
@@ -392,7 +401,17 @@ QString Post::relativeTime() const
 
 QString Post::absoluteTime() const
 {
-    return QLocale::system().toString(publishedAt(), QLocale::LongFormat);
+    return QLocale::system().toString(publishedAt(), QLocale::ShortFormat);
+}
+
+QString Post::editedAt() const
+{
+    return QLocale::system().toString(m_editedAt, QLocale::ShortFormat);
+}
+
+bool Post::wasEdited() const
+{
+    return m_editedAt.isValid();
 }
 
 int Post::favouritesCount() const
@@ -781,4 +800,43 @@ QString Post::originalPostId() const
 bool Post::isEmpty() const
 {
     return m_postId.isEmpty();
+}
+
+QPair<QString, QList<QString>> Post::parseContent(const QString &html)
+{
+    const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>([a-zA-Z]*)<\\/span><\\/a>)"));
+
+    QList<QString> standaloneTags;
+
+    const auto lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
+    const auto lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
+    auto lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
+
+    auto processedHtml = html;
+
+    {
+        auto matchIterator = hashtagExp.globalMatch(lastParagraph);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            standaloneTags.push_back(match.captured(1));
+            processedHtml = processedHtml.replace(match.captured(0), QStringLiteral(""));
+        }
+    }
+
+    const QRegularExpression extraneousBreakExp(QStringLiteral("<p>(?:<br\\s\\/>)*(?:\\s)*<\\/p>"));
+
+    {
+        auto matchIterator = extraneousBreakExp.globalMatch(processedHtml);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            processedHtml = processedHtml.replace(match.captured(0), QStringLiteral(""));
+        }
+    }
+
+    return {processedHtml, standaloneTags};
+}
+
+QList<QString> Post::standaloneTags() const
+{
+    return m_standaloneTags;
 }

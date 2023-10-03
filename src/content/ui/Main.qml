@@ -19,7 +19,7 @@ Kirigami.ApplicationWindow {
 
     property bool isShowingFullScreenImage: false
 
-    minimumWidth: Kirigami.Units.gridUnit * 15
+    minimumWidth: Kirigami.Units.gridUnit * 25
     minimumHeight: Kirigami.Units.gridUnit * 20
 
     pageStack {

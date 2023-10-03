@@ -33,6 +33,8 @@ public:
         AbsoluteTimeRole, ///< Human-readable and locale-aware absolute time of the original post date
         SensitiveRole, ///< Whether or not the post is marked as sensitive
         VisibilityRole, ///< The visibility of the post
+        WasEditedRole, ///< If the post was edited at all
+        EditedAtRole, ///< The datetime of the last edit
 
         // Additional content
         AttachmentsRole, ///< Media attachments for the post, which can be null
