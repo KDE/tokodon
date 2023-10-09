@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-07 01:41+0000\n"
-"PO-Revision-Date: 2023-09-14 20:17+0200\n"
+"PO-Revision-Date: 2023-10-07 15:59+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -502,19 +502,19 @@ msgstr "Partager les médias sélectionnés"
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr ""
+msgstr "Annonces"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr ""
+msgstr "Annonce sur %1"
 
 #: content/ui/AnnouncementsPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "No announcements"
-msgstr ""
+msgstr "Aucune annonce"
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -608,7 +608,7 @@ msgstr "Connexion"
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Une erreur de connexion avec le serveur est survenue : <br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:33
 #, kde-format
@@ -616,11 +616,13 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Résolvez ce problème en vous connectant au site Internet du serveur. Une "
+"fois terminé, essayez de vous reconnecter grâce au bouton ci-dessous."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:43
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Affichage en site internet"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:51
 #, kde-format
@@ -730,13 +732,13 @@ msgstr "Destination"
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
 msgid "Agreement"
-msgstr ""
+msgstr "Accord"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "S'inscrire"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
 #, fuzzy, kde-format
@@ -748,7 +750,7 @@ msgstr "Nom d'utilisateur :"
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "Adresse de courriel"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:121
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -759,40 +761,40 @@ msgstr "Mot de passe"
 #: content/ui/LoginFlow/RegistrationPage.qml:131
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Raison"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
-msgstr ""
+msgstr "J’ai lu et j’accepte les règles, termes et politiques du serveur."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "S'inscrire"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Sélectionner un serveur"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Le serveur ne prend pas en charge les inscriptions : %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Sélectionner un serveur"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server Url:"
-msgstr ""
+msgstr "URL du serveur :"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, fuzzy, kde-format
@@ -804,7 +806,7 @@ msgstr "L'URL d'instance ne doit pas être vide !"
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenue"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -814,7 +816,7 @@ msgstr "Bienvenue dans Tokodon"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "En apprendre plus"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -883,7 +885,7 @@ msgstr "Rechercher"
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
-msgstr ""
+msgstr "Annonces"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2228,7 +2230,7 @@ msgstr "Prendre des mesures à l'encontre de ce compte"
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Types"
 
 #: content/ui/Settings/NotificationsPage.qml:46
 #, fuzzy, kde-format
@@ -2240,7 +2242,7 @@ msgstr "Références"
 #: content/ui/Settings/NotificationsPage.qml:58
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "États"
 
 #: content/ui/Settings/NotificationsPage.qml:70
 #, fuzzy, kde-format
@@ -2371,7 +2373,7 @@ msgstr "Ré-initialiser"
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Apparence"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2765,17 +2767,17 @@ msgstr "Modifier"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:51
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "État avec une pièce jointe d'image"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:53
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "État avec une pièce jointe au format « GifV »"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:55
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "État avec une pièce jointe de vidéo"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:151
 #, kde-format
@@ -3373,12 +3375,12 @@ msgstr "Étiquettes"
 #: utils/filetransferjob.cpp:32
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Impossible d'ouvrir le fichier temporaire pour téléchargement"
 
 #: utils/filetransferjob.cpp:74
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Impossible de trouver de l'espace sur disque pour le téléchargement"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
