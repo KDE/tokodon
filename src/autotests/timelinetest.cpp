@@ -180,8 +180,8 @@ private Q_SLOTS:
         const auto arguments = spy.takeFirst();
         QCOMPARE(arguments[0].value<QModelIndex>().row(), 0);
         QCOMPARE(arguments[1].value<QModelIndex>().row(), 0);
-        QCOMPARE(arguments[2].value<QVector<int>>().count(), 1);
-        QCOMPARE(arguments[2].value<QVector<int>>()[0], AbstractTimelineModel::PollRole);
+        QCOMPARE(arguments[2].value<QList<int>>().count(), 1);
+        QCOMPARE(arguments[2].value<QList<int>>()[0], AbstractTimelineModel::PollRole);
     }
 
 private:

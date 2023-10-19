@@ -53,5 +53,5 @@ private:
     bool tryToGroup(const QModelIndex &sourceIndex, bool silent = false);
     void adjustMap(int anchor, int delta);
 
-    QVector<QVector<int> *> rowMap;
+    QList<QList<int> *> rowMap;
 };

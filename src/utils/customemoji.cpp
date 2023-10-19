@@ -3,9 +3,9 @@
 
 #include "customemoji.h"
 
-QVector<CustomEmoji> CustomEmoji::parseCustomEmojis(const QJsonArray &json)
+QList<CustomEmoji> CustomEmoji::parseCustomEmojis(const QJsonArray &json)
 {
-    QVector<CustomEmoji> emojis;
+    QList<CustomEmoji> emojis;
     for (auto emojiObj : json) {
         if (!emojiObj.isObject()) {
             continue;
@@ -21,7 +21,7 @@ QVector<CustomEmoji> CustomEmoji::parseCustomEmojis(const QJsonArray &json)
     return emojis;
 }
 
-QString CustomEmoji::replaceCustomEmojis(const QVector<CustomEmoji> &emojis, const QString &source)
+QString CustomEmoji::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const QString &source)
 {
     QString processed = source;
     for (const auto &emoji : emojis) {

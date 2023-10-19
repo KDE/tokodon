@@ -122,7 +122,7 @@ void AttachmentEditorModel::setFocusPoint(int row, double x, double y)
     Q_EMIT dataChanged(index(row, 0), index(row, 0), {FocalXRole, FocalYRole});
 }
 
-const QVector<Attachment *> &AttachmentEditorModel::attachments() const
+const QList<Attachment *> &AttachmentEditorModel::attachments() const
 {
     return m_attachments;
 }
