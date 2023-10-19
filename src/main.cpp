@@ -39,6 +39,7 @@
 #include "utils/blurhashimageprovider.h"
 #include "utils/colorschemer.h"
 #include "utils/navigation.h"
+#include "utils/windowcontroller.h"
 
 #ifdef Q_OS_WINDOWS
 #include <Windows.h>
@@ -213,16 +214,21 @@ int main(int argc, char *argv[])
         return -1;
     }
 #ifdef HAVE_KDBUSADDONS
+    QQuickWindow *window = nullptr;
+
     const auto rootObjects = engine.rootObjects();
     for (auto obj : rootObjects) {
         auto view = qobject_cast<QQuickWindow *>(obj);
         if (view) {
-            KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-            KConfigGroup windowGroup(&dataResource, "Window");
-            KWindowConfig::restoreWindowSize(view, windowGroup);
-            KWindowConfig::restoreWindowPosition(view, windowGroup);
+            window = view;
             break;
         }
+    }
+
+    if (window != nullptr) {
+        auto controller = engine.singletonInstance<WindowController *>(QStringLiteral("org.kde.tokodon"), QStringLiteral("WindowController"));
+        controller->setWindow(window);
+        controller->restoreGeometry();
     }
 #endif
     return QCoreApplication::exec();
