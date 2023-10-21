@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:38+0000\n"
+"POT-Creation-Date: 2023-10-21 01:38+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -62,42 +62,62 @@ msgstr "Gat ekki tekið notandaaðgang úr forgrunni"
 msgid "Could not edit note about an account"
 msgstr "Gat ekki breytt minnispunkti um notandaaðgang"
 
-#: account/notificationhandler.cpp:34
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgid "View Post"
+msgstr "Birta í forgrunni á notandasniði"
+
+#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgid "View Profile"
+msgstr "Birta í forgrunni á notandasniði"
+
+#: account/notificationhandler.cpp:46
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 mentioned you"
+msgstr "%1 fylgist núna með þér"
+
+#: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "%1 wrote a new post"
 msgstr "Skrifa nýja færslu"
 
-#: account/notificationhandler.cpp:41
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1s endurbirti færsluna þína"
 
-#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 fylgist núna með þér"
 
-#: account/notificationhandler.cpp:55
+#: account/notificationhandler.cpp:78
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgid "%1 requested to follow you"
 msgstr "%1 fylgist núna með þér"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: account/notificationhandler.cpp:69
+#: account/notificationhandler.cpp:94
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr ""
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:102
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "%1 edited a post"
@@ -332,7 +352,7 @@ msgstr "Umbeðið"
 msgid "Following"
 msgstr "Fylgist með"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
 #, kde-format
 msgid "Follow"
 msgstr "Fylgjast með"
@@ -412,13 +432,13 @@ msgstr "Notandaaðgangar"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:260
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:300
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -568,7 +588,63 @@ msgstr ""
 msgid "No Conversations"
 msgstr "Minnst á"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:393
+#: content/ui/Debug/DebugPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title:group"
+msgid "Notifications"
+msgstr "Tilkynningar"
+
+#: content/ui/Debug/DebugPage.qml:24
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Mention"
+msgstr "Minnst á"
+
+#: content/ui/Debug/DebugPage.qml:29
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "Favorite"
+msgstr "%1s setti færslu frá þér í eftirlæti"
+
+#: content/ui/Debug/DebugPage.qml:34
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Endurbirta"
+
+#: content/ui/Debug/DebugPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Follow Request"
+msgstr "Fylgjast með"
+
+#: content/ui/Debug/DebugPage.qml:49
+#, kde-format
+msgid "Status"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:54
+#, kde-format
+msgid "Update/Edit"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgid "Poll"
+msgstr "Bæta við könnun"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -850,12 +926,18 @@ msgstr ""
 msgid "Login"
 msgstr "Innskráning"
 
-#: content/ui/Main.qml:250
+#: content/ui/Main.qml:251
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Main.qml:260
 #, kde-format
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/Main.qml:251
+#: content/ui/Main.qml:261
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -863,7 +945,7 @@ msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Minnst á"
 
-#: content/ui/Main.qml:261
+#: content/ui/Main.qml:271
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -871,50 +953,50 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: content/ui/Main.qml:271
+#: content/ui/Main.qml:281
 #, kde-format
 msgid "Home"
 msgstr "Heim"
 
-#: content/ui/Main.qml:287 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:297 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Tilkynningar"
 
-#: content/ui/Main.qml:316 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:326 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "Staðvært"
 
-#: content/ui/Main.qml:331
+#: content/ui/Main.qml:341
 #, kde-format
 msgid "Global"
 msgstr "Víðvært"
 
-#: content/ui/Main.qml:347
+#: content/ui/Main.qml:357
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Conversation"
 msgstr "Minnst á"
 
-#: content/ui/Main.qml:361
+#: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/Main.qml:377
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:407
+#: content/ui/Main.qml:417
 #, kde-format
 msgid "Search"
 msgstr ""
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:432
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -2127,13 +2209,6 @@ msgstr "%1s setti færslu frá þér í eftirlæti"
 msgid "%1 users boosted your post"
 msgstr "%1s endurbirti færsluna þína"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
-msgid "View Profile"
-msgstr "Birta í forgrunni á notandasniði"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
@@ -3017,13 +3092,6 @@ msgstr "Endurbirta"
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosted"
-msgstr "Endurbirta"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
 msgstr "Endurbirta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398

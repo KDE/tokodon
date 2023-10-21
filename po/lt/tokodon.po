@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:38+0000\n"
+"POT-Creation-Date: 2023-10-21 01:38+0000\n"
 "PO-Revision-Date: 2023-02-25 01:00+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -63,40 +63,57 @@ msgstr ""
 msgid "Could not edit note about an account"
 msgstr ""
 
-#: account/notificationhandler.cpp:34
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#, kde-format
+msgid "View Post"
+msgstr ""
+
+#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View Profile"
+msgstr ""
+
+#: account/notificationhandler.cpp:46
+#, kde-format
+msgid "%1 mentioned you"
+msgstr ""
+
+#: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr ""
 
-#: account/notificationhandler.cpp:41
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr ""
 
-#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr ""
 
-#: account/notificationhandler.cpp:55
+#: account/notificationhandler.cpp:78
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr ""
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr ""
 
-#: account/notificationhandler.cpp:69
+#: account/notificationhandler.cpp:94
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr ""
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:102
 #, kde-format
 msgid "%1 edited a post"
 msgstr ""
@@ -309,7 +326,7 @@ msgstr ""
 msgid "Following"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
 #, kde-format
 msgid "Follow"
 msgstr ""
@@ -379,13 +396,13 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:260
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:300
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr ""
@@ -528,7 +545,55 @@ msgstr ""
 msgid "No Conversations"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:393
+#: content/ui/Debug/DebugPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:19
+#, kde-format
+msgctxt "@title:group"
+msgid "Notifications"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:24
+#, kde-format
+msgid "Mention"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:29
+#, kde-format
+msgid "Favorite"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:34
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:44
+#, kde-format
+msgid "Follow Request"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:49
+#, kde-format
+msgid "Status"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:54
+#, kde-format
+msgid "Update/Edit"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:59
+#, kde-format
+msgid "Poll"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -791,65 +856,71 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: content/ui/Main.qml:250
-#, kde-format
-msgid "Moderation Tools"
-msgstr ""
-
 #: content/ui/Main.qml:251
 #, kde-format
-msgctxt "@action:button Open moderation tools"
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Main.qml:260
+#, kde-format
 msgid "Moderation Tools"
 msgstr ""
 
 #: content/ui/Main.qml:261
 #, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
 msgstr ""
 
 #: content/ui/Main.qml:271
 #, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr ""
+
+#: content/ui/Main.qml:281
+#, kde-format
 msgid "Home"
 msgstr ""
 
-#: content/ui/Main.qml:287 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:297 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr ""
 
-#: content/ui/Main.qml:316 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:326 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr ""
 
-#: content/ui/Main.qml:331
+#: content/ui/Main.qml:341
 #, kde-format
 msgid "Global"
 msgstr ""
 
-#: content/ui/Main.qml:347
+#: content/ui/Main.qml:357
 #, kde-format
 msgid "Conversation"
 msgstr ""
 
-#: content/ui/Main.qml:361
+#: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/Main.qml:377
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:407
+#: content/ui/Main.qml:417
 #, kde-format
 msgid "Search"
 msgstr ""
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:432
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -2011,12 +2082,6 @@ msgstr ""
 msgid "%1 users boosted your post"
 msgstr ""
 
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, kde-format
-msgid "View Profile"
-msgstr ""
-
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
@@ -2843,11 +2908,6 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
 #, kde-format
 msgid "Boosted"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:38+0000\n"
+"POT-Creation-Date: 2023-10-21 01:38+0000\n"
 "PO-Revision-Date: 2023-10-01 18:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -63,40 +63,59 @@ msgstr "Не вдалося скасувати рекомендування об
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
 
-#: account/notificationhandler.cpp:34
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "View Post"
+msgstr "Переглянути профіль"
+
+#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View Profile"
+msgstr "Переглянути профіль"
+
+#: account/notificationhandler.cpp:46
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 mentioned you"
+msgstr "%1 стежить за вашими дописами"
+
+#: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 створено новий допис"
 
-#: account/notificationhandler.cpp:41
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "Ваш допис підсилено %1"
 
-#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 стежить за вашими дописами"
 
-#: account/notificationhandler.cpp:55
+#: account/notificationhandler.cpp:78
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 надіслано запит щодо стеження за вами"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "Ваш допис позначено %1 як улюблений"
 
-#: account/notificationhandler.cpp:69
+#: account/notificationhandler.cpp:94
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Голосування %1 завершено"
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:102
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 змінено допис"
@@ -311,7 +330,7 @@ msgstr "Надіслано запит"
 msgid "Following"
 msgstr "Стежить"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
 #, kde-format
 msgid "Follow"
 msgstr "Стежити"
@@ -381,13 +400,13 @@ msgstr "Редактор облікових записів"
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:260
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:300
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
@@ -530,7 +549,62 @@ msgstr "Спілкування"
 msgid "No Conversations"
 msgstr "Немає спілкувань"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:393
+#: content/ui/Debug/DebugPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title:group"
+msgid "Notifications"
+msgstr "Сповіщення"
+
+#: content/ui/Debug/DebugPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgid "Mention"
+msgstr "Згадування"
+
+#: content/ui/Debug/DebugPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "Улюблене"
+
+#: content/ui/Debug/DebugPage.qml:34
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "Підсилення"
+
+#: content/ui/Debug/DebugPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "Follow Request"
+msgstr "Запити щодо стеження"
+
+#: content/ui/Debug/DebugPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Statuses"
+msgid "Status"
+msgstr "Стани"
+
+#: content/ui/Debug/DebugPage.qml:54
+#, kde-format
+msgid "Update/Edit"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgid "Poll"
+msgstr "Голосування"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
 msgid "Explore"
 msgstr "Ознайомлення"
@@ -799,65 +873,71 @@ msgstr "Дізнатись більше"
 msgid "Login"
 msgstr "Увійти"
 
-#: content/ui/Main.qml:250
-#, kde-format
-msgid "Moderation Tools"
-msgstr "Засоби модерації"
-
 #: content/ui/Main.qml:251
 #, kde-format
-msgctxt "@action:button Open moderation tools"
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Main.qml:260
+#, kde-format
 msgid "Moderation Tools"
 msgstr "Засоби модерації"
 
 #: content/ui/Main.qml:261
 #, kde-format
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "Засоби модерації"
+
+#: content/ui/Main.qml:271
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/Main.qml:271
+#: content/ui/Main.qml:281
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: content/ui/Main.qml:287 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:297 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/Main.qml:316 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:326 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
 
-#: content/ui/Main.qml:331
+#: content/ui/Main.qml:341
 #, kde-format
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/Main.qml:347
+#: content/ui/Main.qml:357
 #, kde-format
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: content/ui/Main.qml:361
+#: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
 msgstr "Улюблені"
 
-#: content/ui/Main.qml:377
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/Main.qml:407
+#: content/ui/Main.qml:417
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:432
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -2031,12 +2111,6 @@ msgstr "Ваш допис позначено як улюблений %1 кори
 msgid "%1 users boosted your post"
 msgstr "Ваш допис підсилено %1 користувачами"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, kde-format
-msgid "View Profile"
-msgstr "Переглянути профіль"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
@@ -2872,11 +2946,6 @@ msgstr "Підсилення"
 #, kde-format
 msgid "Boosted"
 msgstr "Підсилено"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "Підсилення"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format

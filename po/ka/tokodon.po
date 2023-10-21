@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:38+0000\n"
+"POT-Creation-Date: 2023-10-21 01:38+0000\n"
 "PO-Revision-Date: 2023-10-01 15:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -63,40 +63,59 @@ msgstr "ანგარიშის მიმაგრების მოხს�
 msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
 
-#: account/notificationhandler.cpp:34
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "View Post"
+msgstr "პროფილის ნახვა"
+
+#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View Profile"
+msgstr "პროფილის ნახვა"
+
+#: account/notificationhandler.cpp:46
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 mentioned you"
+msgstr "%1 მოგყვებათ"
+
+#: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1-მა ახალი პოსტი დაწერა"
 
-#: account/notificationhandler.cpp:41
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 -მა ასწია თქვენი პოსტი"
 
-#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 მოგყვებათ"
 
-#: account/notificationhandler.cpp:55
+#: account/notificationhandler.cpp:78
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1-მა თქვენთვის მოყოლა მოითხოვა"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ჩაინიშნა თქვენი პოსტი"
 
-#: account/notificationhandler.cpp:69
+#: account/notificationhandler.cpp:94
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "გამოკითხვა %1-სგან დასრულდა"
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:102
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 -მა პოსტი ჩაასწორა"
@@ -307,7 +326,7 @@ msgstr "Მოთხოვნილი"
 msgid "Following"
 msgstr "გამოწერილია"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
 #, kde-format
 msgid "Follow"
 msgstr "გამოწერა"
@@ -377,13 +396,13 @@ msgstr "ანგარიშების რედაქტორი"
 msgid "Settings"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:260
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:300
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "მოთხოვნების მიყოლა"
@@ -520,7 +539,62 @@ msgstr "საუბრები"
 msgid "No Conversations"
 msgstr "საუბრების გარეშე"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:393
+#: content/ui/Debug/DebugPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title:group"
+msgid "Notifications"
+msgstr "გაფრთხილებები"
+
+#: content/ui/Debug/DebugPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgid "Mention"
+msgstr "მოხსენებები"
+
+#: content/ui/Debug/DebugPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "რჩეული"
+
+#: content/ui/Debug/DebugPage.qml:34
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "აწევა"
+
+#: content/ui/Debug/DebugPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "Follow Request"
+msgstr "მოთხოვნების მიყოლა"
+
+#: content/ui/Debug/DebugPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Statuses"
+msgid "Status"
+msgstr "სტატუსები"
+
+#: content/ui/Debug/DebugPage.qml:54
+#, kde-format
+msgid "Update/Edit"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgid "Poll"
+msgstr "გამოკითხვა"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
 msgid "Explore"
 msgstr "დათვალიერება"
@@ -786,65 +860,71 @@ msgstr "დაწვრილებით"
 msgid "Login"
 msgstr "შესვლა"
 
-#: content/ui/Main.qml:250
+#: content/ui/Main.qml:251
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Main.qml:260
 #, kde-format
 msgid "Moderation Tools"
 msgstr "მოდერაციის ინსტრუმენტები"
 
-#: content/ui/Main.qml:251
+#: content/ui/Main.qml:261
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "მოდერაციის ხელსაწყოები"
 
-#: content/ui/Main.qml:261
+#: content/ui/Main.qml:271
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "მორგება"
 
-#: content/ui/Main.qml:271
+#: content/ui/Main.qml:281
 #, kde-format
 msgid "Home"
 msgstr "საწყისი"
 
-#: content/ui/Main.qml:287 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:297 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/Main.qml:316 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:326 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
 
-#: content/ui/Main.qml:331
+#: content/ui/Main.qml:341
 #, kde-format
 msgid "Global"
 msgstr "გლობალური"
 
-#: content/ui/Main.qml:347
+#: content/ui/Main.qml:357
 #, kde-format
 msgid "Conversation"
 msgstr "საუბარი"
 
-#: content/ui/Main.qml:361
+#: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
 msgstr "რჩეულები"
 
-#: content/ui/Main.qml:377
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Bookmarks"
 msgstr "სანიშნები"
 
-#: content/ui/Main.qml:407
+#: content/ui/Main.qml:417
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:432
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -2014,12 +2094,6 @@ msgstr "%1 მომხმარებელმა ჩაინიშნა თ�
 msgid "%1 users boosted your post"
 msgstr "%1 მომხმარებელმა ასწია თქვენი პოსტი"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, kde-format
-msgid "View Profile"
-msgstr "პროფილის ნახვა"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
@@ -2851,11 +2925,6 @@ msgstr "გაძლიერება"
 #, kde-format
 msgid "Boosted"
 msgstr "აწეულია"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "აწევა"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format

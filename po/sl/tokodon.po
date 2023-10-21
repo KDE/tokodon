@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 01:38+0000\n"
+"POT-Creation-Date: 2023-10-21 01:38+0000\n"
 "PO-Revision-Date: 2023-10-01 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,40 +63,59 @@ msgstr "Profilu ni mogoče odvzeti izpostavljenost"
 msgid "Could not edit note about an account"
 msgstr "Ni bilo mogoče urediti opombe o računu"
 
-#: account/notificationhandler.cpp:34
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "View Post"
+msgstr "Poglej profil"
+
+#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View Profile"
+msgstr "Poglej profil"
+
+#: account/notificationhandler.cpp:46
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 mentioned you"
+msgstr "%1 vam sledi"
+
+#: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 je zapisal novo objavo"
 
-#: account/notificationhandler.cpp:41
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je ojačalo vašo objavo"
 
-#: account/notificationhandler.cpp:48 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
-#: account/notificationhandler.cpp:55
+#: account/notificationhandler.cpp:78
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 je zahteval, da vam sledi"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: account/notificationhandler.cpp:69
+#: account/notificationhandler.cpp:94
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Glasovanje od %1 se je končalo"
 
-#: account/notificationhandler.cpp:76
+#: account/notificationhandler.cpp:102
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 je uredila objavo"
@@ -310,7 +329,7 @@ msgstr "Zahtevano"
 msgid "Following"
 msgstr "Sledenje"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
 #, kde-format
 msgid "Follow"
 msgstr "Sledi"
@@ -380,13 +399,13 @@ msgstr "Urejevalnik računa"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:260
+#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:300
+#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sledi zahtevke"
@@ -529,7 +548,62 @@ msgstr "Pogovori"
 msgid "No Conversations"
 msgstr "Ni pogovorov"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:393
+#: content/ui/Debug/DebugPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title:group"
+msgid "Notifications"
+msgstr "Opozorila"
+
+#: content/ui/Debug/DebugPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgid "Mention"
+msgstr "Omembe"
+
+#: content/ui/Debug/DebugPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "Priljubljen"
+
+#: content/ui/Debug/DebugPage.qml:34
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "Pospeši"
+
+#: content/ui/Debug/DebugPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "Follow Request"
+msgstr "Sledi zahtevke"
+
+#: content/ui/Debug/DebugPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Statuses"
+msgid "Status"
+msgstr "Statusi"
+
+#: content/ui/Debug/DebugPage.qml:54
+#, kde-format
+msgid "Update/Edit"
+msgstr ""
+
+#: content/ui/Debug/DebugPage.qml:59
+#, fuzzy, kde-format
+#| msgid "Polls"
+msgid "Poll"
+msgstr "Glasovanja"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
 msgid "Explore"
 msgstr "Razišči"
@@ -798,65 +872,71 @@ msgstr "Preučite več"
 msgid "Login"
 msgstr "Prijava"
 
-#: content/ui/Main.qml:250
+#: content/ui/Main.qml:251
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr ""
+
+#: content/ui/Main.qml:260
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Orodje moderiranja"
 
-#: content/ui/Main.qml:251
+#: content/ui/Main.qml:261
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Orodja moderiranja"
 
-#: content/ui/Main.qml:261
+#: content/ui/Main.qml:271
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/Main.qml:271
+#: content/ui/Main.qml:281
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/Main.qml:287 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:297 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Opozorila"
 
-#: content/ui/Main.qml:316 content/ui/StatusComposer/StatusComposer.qml:305
+#: content/ui/Main.qml:326 content/ui/StatusComposer/StatusComposer.qml:305
 #, kde-format
 msgid "Local"
 msgstr "Lokalno"
 
-#: content/ui/Main.qml:331
+#: content/ui/Main.qml:341
 #, kde-format
 msgid "Global"
 msgstr "Globalno"
 
-#: content/ui/Main.qml:347
+#: content/ui/Main.qml:357
 #, kde-format
 msgid "Conversation"
 msgstr "Pogovor"
 
-#: content/ui/Main.qml:361
+#: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
 msgstr "Priljubljene"
 
-#: content/ui/Main.qml:377
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: content/ui/Main.qml:407
+#: content/ui/Main.qml:417
 #, kde-format
 msgid "Search"
 msgstr "Išči"
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:432
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -2027,12 +2107,6 @@ msgstr "%1 je pohvalilo vašo objavo"
 msgid "%1 users boosted your post"
 msgstr "%1 uporabnikov je ojačalo vašo objavo"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, kde-format
-msgid "View Profile"
-msgstr "Poglej profil"
-
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
@@ -2864,11 +2938,6 @@ msgstr "Pospeši"
 #, kde-format
 msgid "Boosted"
 msgstr "Pospešeno"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "Pospeši"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
