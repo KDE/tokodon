@@ -23,7 +23,7 @@ public:
     static NetworkController &instance();
     Q_INVOKABLE void setApplicationProxy();
 
-    Q_INVOKABLE void openWebApLink(QString url);
+    Q_INVOKABLE void openWebApLink(QString input);
     void setAuthCode(QUrl authCode);
     void startComposing(const QString &text);
 
@@ -39,7 +39,7 @@ private:
 
     void openLink();
 
-    QString m_requestedLink;
+    QUrl m_requestedLink;
     bool m_accountsReady = false;
     QString m_storedComposedText;
 };

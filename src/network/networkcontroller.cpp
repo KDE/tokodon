@@ -68,13 +68,16 @@ void NetworkController::setApplicationProxy()
     AccountManager::instance().reloadAccounts();
 }
 
-void NetworkController::openWebApLink(QString url)
+void NetworkController::openWebApLink(QString input)
 {
-    if (url.startsWith("web+ap"_L1)) {
-        url = url.replace(QRegularExpression(QStringLiteral("(web\\+ap)+:\\/\\/")), QStringLiteral("https://"));
+    QUrl url(input);
+    // only web+ap (declared in app manifest) and https (explicitly not declared, can be used from command line)
+    if (url.scheme() != QStringLiteral("web+ap") && url.scheme() != QStringLiteral("https")) {
+        // FIXME maybe warn about unsupported links?
+        return;
     }
 
-    m_requestedLink = url;
+    m_requestedLink = std::move(url);
 
     if (m_accountsReady) {
         openLink();
@@ -97,9 +100,19 @@ void NetworkController::openLink()
 
     auto account = AccountManager::instance().selectedAccount();
 
+    if (m_requestedLink.scheme() == QStringLiteral("web+ap")) {
+        if (m_requestedLink.userName() == QStringLiteral("tag")) {
+            // TODO implement in a future MR
+            m_requestedLink.clear();
+            return;
+        }
+        m_requestedLink.setScheme(QStringLiteral("https"));
+        m_requestedLink.setUserInfo(QString());
+    }
+
     auto url = account->apiUrl(QStringLiteral("/api/v2/search"));
     url.setQuery({
-        {QStringLiteral("q"), m_requestedLink},
+        {QStringLiteral("q"), m_requestedLink.toString(QUrl::EncodeSpaces)},
         {QStringLiteral("resolve"), QStringLiteral("true")},
         {QStringLiteral("limit"), QStringLiteral("1")},
     });
