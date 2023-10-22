@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 01:38+0000\n"
-"PO-Revision-Date: 2023-10-01 18:51+0300\n"
+"PO-Revision-Date: 2023-10-21 21:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -64,10 +64,9 @@ msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
 
 #: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View Post"
-msgstr "Переглянути профіль"
+msgstr "Переглянути допис"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -77,10 +76,9 @@ msgid "View Profile"
 msgstr "Переглянути профіль"
 
 #: account/notificationhandler.cpp:46
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 стежить за вашими дописами"
+msgstr "Вас згадано у дописі %1"
 
 #: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -553,25 +551,21 @@ msgstr "Немає спілкувань"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Діагностика"
 
 #: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notifications"
 msgstr "Сповіщення"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgid "Mention"
 msgstr "Згадування"
 
 #: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "Улюблене"
 
@@ -582,25 +576,22 @@ msgid "Boost"
 msgstr "Підсилення"
 
 #: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Request"
-msgstr "Запити щодо стеження"
+msgstr "Запит щодо стеження"
 
 #: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Statuses"
+#, kde-format
 msgid "Status"
-msgstr "Стани"
+msgstr "Стан"
 
 #: content/ui/Debug/DebugPage.qml:54
 #, kde-format
 msgid "Update/Edit"
-msgstr ""
+msgstr "Оновити/Змінити"
 
 #: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Polls"
+#, kde-format
 msgid "Poll"
 msgstr "Голосування"
 
@@ -877,7 +868,7 @@ msgstr "Увійти"
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Діагностика"
 
 #: content/ui/Main.qml:260
 #, kde-format
