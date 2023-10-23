@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 01:38+0000\n"
-"PO-Revision-Date: 2023-10-01 15:39+0200\n"
+"PO-Revision-Date: 2023-10-22 06:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -64,10 +64,9 @@ msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
 
 #: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View Post"
-msgstr "პროფილის ნახვა"
+msgstr "პოსტის ნახვა"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -77,10 +76,9 @@ msgid "View Profile"
 msgstr "პროფილის ნახვა"
 
 #: account/notificationhandler.cpp:46
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 მოგყვებათ"
+msgstr "%1-მა გახსენათ"
 
 #: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -543,25 +541,21 @@ msgstr "საუბრების გარეშე"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "გამართვა"
 
 #: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgid "Mention"
-msgstr "მოხსენებები"
+msgstr "ხსენება"
 
 #: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "რჩეული"
 
@@ -572,25 +566,22 @@ msgid "Boost"
 msgstr "აწევა"
 
 #: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Request"
 msgstr "მოთხოვნების მიყოლა"
 
 #: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Statuses"
+#, kde-format
 msgid "Status"
-msgstr "სტატუსები"
+msgstr "სტატუსი"
 
 #: content/ui/Debug/DebugPage.qml:54
 #, kde-format
 msgid "Update/Edit"
-msgstr ""
+msgstr "განახლება/ჩასწორება"
 
 #: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Polls"
+#, kde-format
 msgid "Poll"
 msgstr "გამოკითხვა"
 
@@ -864,7 +855,7 @@ msgstr "შესვლა"
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "გამართვა"
 
 #: content/ui/Main.qml:260
 #, kde-format
@@ -2207,7 +2198,7 @@ msgstr "ქსელის პროქსი"
 #: content/ui/Settings/NetworkProxyPage.qml:24
 #, kde-format
 msgid "System Default"
-msgstr "სისტემის ნაგულისხმები"
+msgstr "სისტემის ნაგულისხმევი"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
@@ -2358,19 +2349,19 @@ msgstr "ამ ანგარიშის სხვებისთვის შ
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr "შემცველობის მგრძნობიარედ ნაგულისხმებად მონიშვნა"
+msgstr "შემცველობის მგრძნობიარედ ნაგულისხმევად მონიშვნა"
 
 #: content/ui/Settings/ProfileEditor.qml:315
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr "ნაგულისხმები პოსტის ენა"
+msgstr "ნაგულისხმევი პოსტის ენა"
 
 #: content/ui/Settings/ProfileEditor.qml:331
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr "პოსტის ნაგულისხმები ხილვადობა"
+msgstr "პოსტის ნაგულისხმევი ხილვადობა"
 
 #: content/ui/Settings/ProfileEditor.qml:358
 #, kde-format
@@ -2430,7 +2421,7 @@ msgstr "ენების ავტომატური გამოცნო�
 #: content/ui/Settings/SonnetPage.qml:85
 #, kde-format
 msgid "Selected default language:"
-msgstr "აირჩიეთ ნაგულისხმები ენა:"
+msgstr "აირჩიეთ ნაგულისხმევი ენა:"
 
 #: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
@@ -2466,7 +2457,7 @@ msgstr "მართლწერის შემოწმების ენე�
 #: content/ui/Settings/SonnetPage.qml:153
 #, kde-format
 msgid "Default Language"
-msgstr "ნაგულისხმები ენა"
+msgstr "ნაგულისხმევი ენა"
 
 #: content/ui/Settings/SonnetPage.qml:164
 #, kde-format
