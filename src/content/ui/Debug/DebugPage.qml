@@ -13,50 +13,50 @@ import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.tokodon
 
 MastoPage {
-    title: i18nc("@title:window", "Debug")
+    title: "Debug"
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Notifications")
+        title: "Notifications"
     }
 
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
-            text: i18n("Mention")
+            text: "Mention"
             onClicked: AccountManager.selectedAccount.mentionNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Favorite")
+            text: "Favorite"
             onClicked: AccountManager.selectedAccount.favoriteNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Boost")
+            text: "Boost"
             onClicked: AccountManager.selectedAccount.boostNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Follow")
+            text: "Follow"
             onClicked: AccountManager.selectedAccount.followNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Follow Request")
+            text: "Follow Request"
             onClicked: AccountManager.selectedAccount.followRequestNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Status")
+            text: "Status"
             onClicked: AccountManager.selectedAccount.statusNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Update/Edit")
+            text: "Update/Edit"
             onClicked: AccountManager.selectedAccount.updateNotification()
         }
 
         FormCard.FormButtonDelegate {
-            text: i18n("Poll")
+            text: "Poll"
             onClicked: AccountManager.selectedAccount.pollNotification()
         }
     }
