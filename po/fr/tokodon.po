@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 01:38+0000\n"
-"PO-Revision-Date: 2023-10-07 15:59+0200\n"
+"PO-Revision-Date: 2023-10-22 13:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -61,24 +61,21 @@ msgid "Could not edit note about an account"
 msgstr "Impossible de modifier une note concernant un compte"
 
 #: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View Post"
-msgstr "Afficher un profil"
+msgstr "Afficher un message"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View Profile"
 msgstr "Afficher un profil"
 
 #: account/notificationhandler.cpp:46
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 vous a suivi"
+msgstr "%1 vous a cité"
 
 #: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -98,10 +95,9 @@ msgid "%1 followed you"
 msgstr "%1 vous a suivi"
 
 #: account/notificationhandler.cpp:78
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 vous a suivi"
+msgstr "%1 vous a demandé à vous suivre"
 
 #: account/notificationhandler.cpp:86
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -287,7 +283,7 @@ msgstr "Muet"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Sensibilisé"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
@@ -555,34 +551,27 @@ msgstr "Aucune conversation"
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 #: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:group"
 msgid "Notifications"
 msgstr "Notifications"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mention"
 msgstr "Références"
 
 #: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
-msgstr "Favori"
+msgstr "Préféré"
 
 #: content/ui/Debug/DebugPage.qml:34
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Stimuler"
 
@@ -593,21 +582,19 @@ msgid "Follow Request"
 msgstr "Demandes de suivi"
 
 #: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Statuses"
+#, kde-format
 msgid "Status"
-msgstr "États"
+msgstr "État"
 
 #: content/ui/Debug/DebugPage.qml:54
 #, kde-format
 msgid "Update/Edit"
-msgstr ""
+msgstr "Mettre à jour / Modifier"
 
 #: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Poll"
-msgstr "Ajouter un vote"
+msgstr "Voter"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -670,18 +657,16 @@ msgid "All Languages"
 msgstr "Toutes les langues"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorisation"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Connexion"
+msgstr "Problème de connexion"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:23
 #, kde-format
@@ -708,8 +693,7 @@ msgid "Re-Attempt Log In"
 msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Connexion"
@@ -737,8 +721,7 @@ msgid "Proxy Settings"
 msgstr "Configuration du serveur mandataire"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Connexion"
@@ -750,10 +733,9 @@ msgstr "Instance d'URL :"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Client Mastodon"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -785,9 +767,7 @@ msgstr "L'URL d'instance ne doit pas être vide !"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Configuration du réseau"
@@ -800,12 +780,10 @@ msgid "Ignore SSL errors"
 msgstr "Ignorer les erreurs « SSL »"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Destination"
+msgstr "Inscription"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:61
 #, kde-format
@@ -819,11 +797,9 @@ msgid "Register"
 msgstr "S'inscrire"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Nom d'utilisateur :"
+msgstr "Nom d'utilisateur"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:112
 #, kde-format
@@ -875,10 +851,9 @@ msgid "Server Url:"
 msgstr "URL du serveur :"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "L'URL d'instance ne doit pas être vide !"
+msgstr "L'URL du serveur ne doit pas être vide."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
@@ -905,7 +880,7 @@ msgstr "Connexion"
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Déboguer"
 
 #: content/ui/Main.qml:260
 #, kde-format
@@ -2069,10 +2044,9 @@ msgid "Email Blocks"
 msgstr "Blocs de messagerie"
 
 #: content/ui/NotificationPage.qml:36
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Group Notifications"
-msgstr "Aucune notification"
+msgstr "Regrouper les notifications"
 
 #: content/ui/NotificationPage.qml:44
 #, kde-format
@@ -2124,10 +2098,9 @@ msgid "No Notifications"
 msgstr "Aucune notification"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:60
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View %1's Profile"
-msgstr "Afficher un profil"
+msgstr "Afficher le profil de %1"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, fuzzy, kde-format
@@ -2153,10 +2126,9 @@ msgid "A poll has ended"
 msgstr "Votre sondage est terminé"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
-#, fuzzy, kde-format
-#| msgid "%1 edited a post"
+#, kde-format
 msgid "%1 updated their post"
-msgstr "%1 a modifié un message"
+msgstr "%1 a modifié son message"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
@@ -2195,8 +2167,7 @@ msgid "Add Account"
 msgstr "Ajouter un compte"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Général"
@@ -2207,9 +2178,7 @@ msgid "Color theme"
 msgstr "Thème de couleurs"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Messages"
@@ -2221,10 +2190,9 @@ msgid "Show number of replies, favorites and boosts"
 msgstr "Rechercher des personnes, des étiquettes et des messages"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Afficher un aperçu du lien."
+msgstr "Afficher des aperçus de liens"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -2237,9 +2205,7 @@ msgid "Please choose a font"
 msgstr "Veuillez sélectionner une fonte"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Média"
@@ -2310,9 +2276,7 @@ msgid "Types"
 msgstr "Types"
 
 #: content/ui/Settings/NotificationsPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Références"
 
@@ -2322,9 +2286,7 @@ msgid "Statuses"
 msgstr "États"
 
 #: content/ui/Settings/NotificationsPage.qml:70
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Stimulations"
 
@@ -2341,29 +2303,24 @@ msgid "New follow requests"
 msgstr "Aucune demande de suivi"
 
 #: content/ui/Settings/NotificationsPage.qml:106
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
-msgstr "Favoris"
+msgstr "Préférés"
 
 #: content/ui/Settings/NotificationsPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Ajouter un vote"
+msgstr "Votes"
 
 #: content/ui/Settings/NotificationsPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Modifier"
+msgstr "Modifications"
 
 #: content/ui/Settings/ProfileEditor.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Ajouter un compte"
+msgstr "Modifier un compte"
 
 #: content/ui/Settings/ProfileEditor.qml:31
 #: content/ui/StatusComposer/StatusComposer.qml:248
@@ -2458,8 +2415,7 @@ msgid "Accounts"
 msgstr "Comptes"
 
 #: content/ui/Settings/SettingsPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Vérification orthographique"
 
@@ -2556,8 +2512,7 @@ msgid "Add Word"
 msgstr "Ajouter un mot"
 
 #: content/ui/Settings/SonnetPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
 msgstr "Supprimer un mot"
@@ -2817,8 +2772,7 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1 / %2</b> caractères"
 
 #: content/ui/StatusComposer/StatusComposer.qml:398
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Envoyer"
@@ -2864,12 +2818,10 @@ msgstr "Non disponible"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:166
 #: content/ui/StatusDelegate/AttachmentGrid.qml:237
 #: content/ui/StatusDelegate/AttachmentGrid.qml:308
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr "Tout"
+msgstr "ALT"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:245
 #, kde-format
@@ -2941,11 +2893,9 @@ msgid "Delete & Re-draft"
 msgstr "Supprimer et reformuler"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "État de courriel"
+msgstr "État normal"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:90
 #, fuzzy, kde-format
@@ -3003,11 +2953,9 @@ msgid "Boost"
 msgstr "Stimuler"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Stimuler"
+msgstr "Stimulé"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
@@ -3016,16 +2964,14 @@ msgid "Favorite"
 msgstr "Favori"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Favoris"
+msgstr "Mis en préféré"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:401
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Favoris"
+msgstr "Préféré"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
@@ -3034,10 +2980,9 @@ msgid "Bookmark"
 msgstr "Signet"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Signet"
+msgstr "Mis en signet"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
