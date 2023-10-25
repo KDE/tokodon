@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -354,7 +354,7 @@ msgstr "Отправлен запрос"
 msgid "Following"
 msgstr "Вы подписаны"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Подписаться"
@@ -576,64 +576,6 @@ msgstr "Чаты"
 #, kde-format
 msgid "No Conversations"
 msgstr "Нет ни одного чата"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Уведомления"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Упоминания"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
-msgid "Favorite"
-msgstr "Избранное"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
-msgstr "Поделиться"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "Запросы на подписку"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Conversations"
-msgid "Status"
-msgstr "Чаты"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Add Poll"
-msgid "Poll"
-msgstr "Добавить опрос"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -3082,6 +3024,13 @@ msgstr "Поделиться"
 msgid "Boosted"
 msgstr "Поделиться"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Поделиться"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
@@ -3560,6 +3509,39 @@ msgstr "Источник"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Назначение"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Уведомления"
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "Упоминания"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "Favorite"
+#~ msgstr "Избранное"
+
+#, fuzzy
+#~| msgid "Follow Requests"
+#~ msgid "Follow Request"
+#~ msgstr "Запросы на подписку"
+
+#, fuzzy
+#~| msgid "Conversations"
+#~ msgid "Status"
+#~ msgstr "Чаты"
+
+#, fuzzy
+#~| msgid "Add Poll"
+#~ msgid "Poll"
+#~ msgstr "Добавить опрос"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr ""

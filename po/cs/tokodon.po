@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-08-09 12:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -323,7 +323,7 @@ msgstr "Vyžádané"
 msgid "Following"
 msgstr "Sledujete"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Následovat"
@@ -538,63 +538,6 @@ msgstr "Konverzace"
 #, kde-format
 msgid "No Conversations"
 msgstr "Žádné konverzace"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Oznamování"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Zmínky"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
-msgid "Favorite"
-msgstr "Oblíbené"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
-msgid "Follow Request"
-msgstr "Sledující"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
-msgid "Status"
-msgstr "Stav přihlášení"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Add Poll"
-msgid "Poll"
-msgstr "Přidat dotazník"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -2917,6 +2860,11 @@ msgstr ""
 msgid "Boosted"
 msgstr ""
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr ""
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3377,3 +3325,37 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Oznamování"
+
+#, fuzzy
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "Zmínky"
+
+#, fuzzy
+#~| msgctxt "Favorite a post"
+#~| msgid "Favorite"
+#~ msgid "Favorite"
+#~ msgstr "Oblíbené"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Followers"
+#~ msgid "Follow Request"
+#~ msgstr "Sledující"
+
+#, fuzzy
+#~| msgctxt "@info The current login status of the account."
+#~| msgid "Login Status"
+#~ msgid "Status"
+#~ msgstr "Stav přihlášení"
+
+#, fuzzy
+#~| msgid "Add Poll"
+#~ msgid "Poll"
+#~ msgstr "Přidat dotazník"

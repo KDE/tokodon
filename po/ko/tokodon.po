@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-10-09 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -325,7 +325,7 @@ msgstr "요청함"
 msgid "Following"
 msgstr "팔로잉"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "팔로우"
@@ -534,61 +534,6 @@ msgstr "대화"
 #, kde-format
 msgid "No Conversations"
 msgstr "대화 없음"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "알림"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "멘션"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
-msgid "Favorite"
-msgstr "좋아요"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "부스트"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "팔로우 요청"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Statuses"
-msgid "Status"
-msgstr "글"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Polls"
-msgid "Poll"
-msgstr "투표"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -2921,6 +2866,11 @@ msgstr "부스트"
 msgid "Boosted"
 msgstr "부스트됨"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "부스트"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3367,6 +3317,38 @@ msgstr "원본"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "알림"
+
+#, fuzzy
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "멘션"
+
+#, fuzzy
+#~| msgctxt "Favorite a post"
+#~| msgid "Favorite"
+#~ msgid "Favorite"
+#~ msgstr "좋아요"
+
+#, fuzzy
+#~| msgid "Follow Requests"
+#~ msgid "Follow Request"
+#~ msgstr "팔로우 요청"
+
+#, fuzzy
+#~| msgid "Statuses"
+#~ msgid "Status"
+#~ msgstr "글"
+
+#, fuzzy
+#~| msgid "Polls"
+#~ msgid "Poll"
+#~ msgstr "투표"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Tokodon이 내 이름으로 활동할 수 있도록 인증"

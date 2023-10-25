@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -341,7 +341,7 @@ msgstr "Požadované"
 msgid "Following"
 msgstr "Navštíviť"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Navštíviť"
@@ -562,55 +562,6 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "No Conversations"
 msgstr "Voľby:"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Upozornenia"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-msgid "Mention"
-msgstr "Voľby:"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, kde-format
-msgid "Favorite"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgid "Follow Request"
-msgstr "Navštíviť"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, kde-format
-msgid "Status"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, kde-format
-msgid "Poll"
-msgstr ""
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -2952,6 +2903,11 @@ msgstr ""
 msgid "Boosted"
 msgstr ""
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr ""
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3415,6 +3371,20 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Voľby:"
+
+#, fuzzy
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Upozornenia"
+
+#, fuzzy
+#~ msgid "Mention"
+#~ msgstr "Voľby:"
+
+#, fuzzy
+#~| msgid "Follow"
+#~ msgid "Follow Request"
+#~ msgstr "Navštíviť"
 
 #, fuzzy
 #~ msgid "Open Link"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -335,7 +335,7 @@ msgstr "ਬੇਨਤੀ ਕੀਤੀ"
 msgid "Following"
 msgstr "ਫ਼ਾਲੋ ਕਰ ਰਹੇ ਹੋ"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "ਫ਼ਾਲੋ ਕਰੋ"
@@ -556,63 +556,6 @@ msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 #: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "ਜ਼ਿਕਰ"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
-msgid "Favorite"
-msgstr "ਮਨਪਸੰਦ"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
-msgid "Boost"
-msgstr "ਪੋਸਟਾਂ"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Conversations"
-msgid "Status"
-msgstr "ਗੱਲਾਂਬਾਤਾਂ"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, kde-format
-msgid "Poll"
 msgstr ""
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
@@ -3069,6 +3012,13 @@ msgstr ""
 msgid "Boosted"
 msgstr "ਪੋਸਟਾਂ"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgid "Boost"
+msgstr "ਪੋਸਟਾਂ"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
@@ -3537,6 +3487,34 @@ msgstr "ਸਰੋਤ"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "ਜ਼ਿਕਰ"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "Favorite"
+#~ msgstr "ਮਨਪਸੰਦ"
+
+#, fuzzy
+#~| msgid "Follow Requests"
+#~ msgid "Follow Request"
+#~ msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
+
+#, fuzzy
+#~| msgid "Conversations"
+#~ msgid "Status"
+#~ msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
 #~ msgid ""
 #~ "To continue, please open the following link and authorize Tokodon: %1"

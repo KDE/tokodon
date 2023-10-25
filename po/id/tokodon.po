@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-03-03 10:32+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -346,7 +346,7 @@ msgstr "Diminta"
 msgid "Following"
 msgstr "Mengikuti"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Ikuti"
@@ -574,61 +574,6 @@ msgstr "Percakapan"
 #, kde-format
 msgid "No Conversations"
 msgstr "Tidak Ada Percakapan"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Notifikasi"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Sebutan"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Favourites"
-msgid "Favorite"
-msgstr "Favorit"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgid "Hide boosts from %1"
-msgid "Boost"
-msgstr "Sembunyikan pembagian dari %1"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follows you"
-msgid "Follow Request"
-msgstr "Mengikuti Anda"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Conversations"
-msgid "Status"
-msgstr "Percakapan"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, kde-format
-msgid "Poll"
-msgstr ""
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -3009,6 +2954,12 @@ msgstr ""
 msgid "Boosted"
 msgstr ""
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgid "Hide boosts from %1"
+msgid "Boost"
+msgstr "Sembunyikan pembagian dari %1"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, fuzzy, kde-format
 #| msgid "Favourites"
@@ -3469,6 +3420,33 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Notifikasi"
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "Sebutan"
+
+#, fuzzy
+#~| msgid "Favourites"
+#~ msgid "Favorite"
+#~ msgstr "Favorit"
+
+#, fuzzy
+#~| msgid "Follows you"
+#~ msgid "Follow Request"
+#~ msgstr "Mengikuti Anda"
+
+#, fuzzy
+#~| msgid "Conversations"
+#~ msgid "Status"
+#~ msgstr "Percakapan"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Otorisasikan Tokodon untuk bertindak dengan sepengetahuan Anda"

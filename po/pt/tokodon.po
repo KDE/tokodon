@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -330,7 +330,7 @@ msgstr "Pedido"
 msgid "Following"
 msgstr "A Seguir"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Seguir"
@@ -548,65 +548,6 @@ msgstr "Conversas"
 #, kde-format
 msgid "No Conversations"
 msgstr "Sem Conversas"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Notificações"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Citações"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
-msgid "Favorite"
-msgstr "Adicionar aos Favoritos"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
-msgstr "Destacar"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "Pedidos de Seguimento"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
-msgid "Status"
-msgstr "Estado da Conta"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Add Poll"
-msgid "Poll"
-msgstr "Adicionar uma Pesquisa"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -3081,6 +3022,13 @@ msgstr "Destacar"
 msgid "Boosted"
 msgstr "Destacar"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Destacar"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3549,6 +3497,40 @@ msgstr "Origem"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Notificações"
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "Citações"
+
+#, fuzzy
+#~| msgctxt "Favorite a post"
+#~| msgid "Favorite"
+#~ msgid "Favorite"
+#~ msgstr "Adicionar aos Favoritos"
+
+#, fuzzy
+#~| msgid "Follow Requests"
+#~ msgid "Follow Request"
+#~ msgstr "Pedidos de Seguimento"
+
+#, fuzzy
+#~| msgctxt "@info The current login status of the account."
+#~| msgid "Login Status"
+#~ msgid "Status"
+#~ msgstr "Estado da Conta"
+
+#, fuzzy
+#~| msgid "Add Poll"
+#~ msgid "Poll"
+#~ msgstr "Adicionar uma Pesquisa"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Permitir ao Tokodon actuar em sua substituição"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -352,7 +352,7 @@ msgstr "Umbeðið"
 msgid "Following"
 msgstr "Fylgist með"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Fylgjast með"
@@ -587,62 +587,6 @@ msgstr ""
 #| msgid "Mentions"
 msgid "No Conversations"
 msgstr "Minnst á"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Tilkynningar"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Minnst á"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
-msgid "Favorite"
-msgstr "%1s setti færslu frá þér í eftirlæti"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
-msgstr "Endurbirta"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgid "Follow Request"
-msgstr "Fylgjast með"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, kde-format
-msgid "Status"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Add Poll"
-msgid "Poll"
-msgstr "Bæta við könnun"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -3094,6 +3038,13 @@ msgstr "Endurbirta"
 msgid "Boosted"
 msgstr "Endurbirta"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Endurbirta"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3561,6 +3512,33 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Minnst á"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Tilkynningar"
+
+#, fuzzy
+#~| msgctxt "Show only mentions"
+#~| msgid "Mentions"
+#~ msgid "Mention"
+#~ msgstr "Minnst á"
+
+#, fuzzy
+#~| msgid "%1 favorited your post"
+#~ msgid "Favorite"
+#~ msgstr "%1s setti færslu frá þér í eftirlæti"
+
+#, fuzzy
+#~| msgid "Follow"
+#~ msgid "Follow Request"
+#~ msgstr "Fylgjast með"
+
+#, fuzzy
+#~| msgid "Add Poll"
+#~ msgid "Poll"
+#~ msgstr "Bæta við könnun"
 
 #~ msgid ""
 #~ "To continue, please open the following link and authorize Tokodon: %1"

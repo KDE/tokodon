@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2023-10-22 13:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -331,7 +331,7 @@ msgstr "Demandé"
 msgid "Following"
 msgstr "Suivant"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Suivre"
@@ -546,55 +546,6 @@ msgstr "Conversations"
 #, kde-format
 msgid "No Conversations"
 msgstr "Aucune conversation"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr "Déboguer"
-
-#: content/ui/Debug/DebugPage.qml:19
-#, kde-format
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Notifications"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, kde-format
-msgid "Mention"
-msgstr "Références"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, kde-format
-msgid "Favorite"
-msgstr "Préféré"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "Stimuler"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "Demandes de suivi"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, kde-format
-msgid "Status"
-msgstr "État"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr "Mettre à jour / Modifier"
-
-#: content/ui/Debug/DebugPage.qml:59
-#, kde-format
-msgid "Poll"
-msgstr "Voter"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -2957,6 +2908,11 @@ msgstr "Stimuler"
 msgid "Boosted"
 msgstr "Stimulé"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "Stimuler"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3414,6 +3370,34 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#~ msgctxt "@title:window"
+#~ msgid "Debug"
+#~ msgstr "Déboguer"
+
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Notifications"
+
+#~ msgid "Mention"
+#~ msgstr "Références"
+
+#~ msgid "Favorite"
+#~ msgstr "Préféré"
+
+#, fuzzy
+#~| msgid "Follow Requests"
+#~ msgid "Follow Request"
+#~ msgstr "Demandes de suivi"
+
+#~ msgid "Status"
+#~ msgstr "État"
+
+#~ msgid "Update/Edit"
+#~ msgstr "Mettre à jour / Modifier"
+
+#~ msgid "Poll"
+#~ msgstr "Voter"
 
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Autoriser Tokodon à agir à votre place"

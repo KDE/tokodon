@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Following"
 msgstr "Követés"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Követés"
@@ -581,61 +581,6 @@ msgstr ""
 #| msgid "Options:"
 msgid "No Conversations"
 msgstr "Beállítások:"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Értesítések"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Options:"
-msgid "Mention"
-msgstr "Beállítások:"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, kde-format
-msgid "Favorite"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
-msgstr "Kiemelés"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow"
-msgid "Follow Request"
-msgstr "Követés"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, kde-format
-msgid "Status"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add word"
-msgid "Poll"
-msgstr "Szó hozzáadása"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -3065,6 +3010,13 @@ msgstr "Kiemelés"
 msgid "Boosted"
 msgstr "Kiemelés"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Kiemelés"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3529,6 +3481,28 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgid "Notifications"
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Értesítések"
+
+#, fuzzy
+#~| msgid "Options:"
+#~ msgid "Mention"
+#~ msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgid "Follow"
+#~ msgid "Follow Request"
+#~ msgstr "Követés"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Add word"
+#~ msgid "Poll"
+#~ msgstr "Szó hozzáadása"
 
 #~ msgid ""
 #~ "To continue, please open the following link and authorize Tokodon: %1"

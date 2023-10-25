@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:38+0000\n"
-"PO-Revision-Date: 2023-10-01 10:57+0200\n"
+"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"PO-Revision-Date: 2023-10-21 10:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -67,10 +67,9 @@ msgid "Could not edit note about an account"
 msgstr "No s'ha pogut editar una nota quant al compte"
 
 #: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View Post"
-msgstr "Visualitza el perfil"
+msgstr "Visualitza la publicació"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -80,10 +79,9 @@ msgid "View Profile"
 msgstr "Visualitza el perfil"
 
 #: account/notificationhandler.cpp:46
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 vos seguix"
+msgstr "%1 vos ha mencionat"
 
 #: account/notificationhandler.cpp:54
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -329,7 +327,7 @@ msgstr "Sol·licitat"
 msgid "Following"
 msgstr "Seguint"
 
-#: content/ui/AccountInfo.qml:113 content/ui/Debug/DebugPage.qml:39
+#: content/ui/AccountInfo.qml:113
 #, kde-format
 msgid "Follow"
 msgstr "Seguix"
@@ -541,61 +539,6 @@ msgstr "Converses"
 #, kde-format
 msgid "No Conversations"
 msgstr "Sense converses"
-
-#: content/ui/Debug/DebugPage.qml:16
-#, kde-format
-msgctxt "@title:window"
-msgid "Debug"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
-msgctxt "@title:group"
-msgid "Notifications"
-msgstr "Notificacions"
-
-#: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Mentions"
-msgid "Mention"
-msgstr "Mencions"
-
-#: content/ui/Debug/DebugPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
-msgid "Favorite"
-msgstr "Preferit"
-
-#: content/ui/Debug/DebugPage.qml:34
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
-#, kde-format
-msgid "Boost"
-msgstr "Impulsa"
-
-#: content/ui/Debug/DebugPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
-msgid "Follow Request"
-msgstr "Sol·licituds de seguiment"
-
-#: content/ui/Debug/DebugPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Statuses"
-msgid "Status"
-msgstr "Estats"
-
-#: content/ui/Debug/DebugPage.qml:54
-#, kde-format
-msgid "Update/Edit"
-msgstr ""
-
-#: content/ui/Debug/DebugPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Polls"
-msgid "Poll"
-msgstr "Votacions"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:403
 #, kde-format
@@ -871,7 +814,7 @@ msgstr "Inici de sessió"
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Depuració"
 
 #: content/ui/Main.qml:260
 #, kde-format
@@ -2937,6 +2880,11 @@ msgstr "Impulsa"
 msgid "Boosted"
 msgstr "Impulsat"
 
+#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#, kde-format
+msgid "Boost"
+msgstr "Impulsa"
+
 #: content/ui/StatusDelegate/StatusDelegate.qml:398
 #, kde-format
 msgctxt "Favorite a post"
@@ -3390,3 +3338,29 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
+
+#~ msgctxt "@title:window"
+#~ msgid "Debug"
+#~ msgstr "Depuració"
+
+#~ msgctxt "@title:group"
+#~ msgid "Notifications"
+#~ msgstr "Notificacions"
+
+#~ msgid "Mention"
+#~ msgstr "Menció"
+
+#~ msgid "Favorite"
+#~ msgstr "Preferit"
+
+#~ msgid "Follow Request"
+#~ msgstr "Sol·licitud de seguiment"
+
+#~ msgid "Status"
+#~ msgstr "Estat"
+
+#~ msgid "Update/Edit"
+#~ msgstr "Actualitza/Edita"
+
+#~ msgid "Poll"
+#~ msgstr "Votació"
