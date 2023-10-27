@@ -43,6 +43,8 @@ target_sources(tokodon_static
     account/socialgraphmodel.cpp
     account/socialgraphmodel.h
     account/relationship.cpp
+    account/rulesmodel.cpp
+    account/rulesmodel.h
     account/profileeditor.cpp
     account/notificationhandler.cpp
     account/notificationhandler.h
