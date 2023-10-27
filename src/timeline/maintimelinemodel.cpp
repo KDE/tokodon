@@ -116,6 +116,7 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
             const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
             const auto match = re.match(QString::fromUtf8(next));
             m_next = QUrl::fromUserInput(match.captured(1));
+            Q_EMIT atEndChanged();
 
             fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
             setLoading(false);
