@@ -547,7 +547,7 @@ Kirigami.ApplicationWindow {
     Connections {
         id: saveWindowGeometryConnections
         enabled: false // Disable on startup to avoid writing wrong values if the window is hidden
-        target: root
+        target: appwindow
 
         function onClosing() { WindowController.saveGeometry(); }
         function onWidthChanged() { saveWindowGeometryTimer.restart(); }
