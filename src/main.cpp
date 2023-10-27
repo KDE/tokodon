@@ -158,10 +158,9 @@ int main(int argc, char *argv[])
                 if (arguments.length() >= 1) {
                     if (args[0].startsWith("web+ap"_L1)) {
                         NetworkController::instance().openWebApLink(args[0]);
-                    } else {
+                    } else if (args[0].startsWith("tokodon"_L1)) {
                         NetworkController::instance().setAuthCode(QUrl(args[0]));
-                    }
-                    if (args[0] == "--share"_L1) {
+                    } else if (args[0] == "--share"_L1) {
                         NetworkController::instance().startComposing(args[1]);
                     } else {
                         NetworkController::instance().openWebApLink(args[0]);
