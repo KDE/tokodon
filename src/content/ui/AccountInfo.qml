@@ -645,9 +645,6 @@ TimelinePage {
 
                     implicitHeight: extraLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
 
-                    Kirigami.Theme.inherit: false
-                    Kirigami.Theme.colorSet: Kirigami.Theme.Header
-
                     color: Kirigami.Theme.backgroundColor
 
                     RowLayout {
