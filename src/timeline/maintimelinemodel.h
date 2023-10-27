@@ -17,6 +17,7 @@ class MainTimelineModel : public TimelineModel
     QML_ELEMENT
 
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(bool atEnd READ atEnd NOTIFY atEndChanged)
 
 public:
     explicit MainTimelineModel(QObject *parent = nullptr);
@@ -31,6 +32,11 @@ public:
     void fillTimeline(const QString &fromId) override;
     QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
+
+    bool atEnd() const;
+
+Q_SIGNALS:
+    void atEndChanged();
 
 private:
     QString m_timelineName;

@@ -112,17 +112,13 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
                 return;
             }
 
-            if (publicTimelines.contains(m_timelineName)) {
-                fetchedTimeline(reply->readAll());
-                setLoading(false);
-            } else {
-                static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-                const auto match = re.match(QString::fromUtf8(next));
-                m_next = QUrl::fromUserInput(match.captured(1));
-                fetchedTimeline(reply->readAll(), true);
-                setLoading(false);
-            }
+            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
+            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
+            const auto match = re.match(QString::fromUtf8(next));
+            m_next = QUrl::fromUserInput(match.captured(1));
+
+            fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
+            setLoading(false);
         },
         [this](QNetworkReply *reply) {
             Q_UNUSED(reply)
@@ -140,4 +136,9 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
         m_timeline.push_front(post);
         endInsertRows();
     }
+}
+
+bool MainTimelineModel::atEnd() const
+{
+    return m_next.isEmpty();
 }

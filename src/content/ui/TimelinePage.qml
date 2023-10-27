@@ -173,6 +173,17 @@ Kirigami.ScrollablePage {
             }
         }
 
+        footer: Item {
+            width: parent.width
+            height: Kirigami.Units.gridUnit * 4
+
+            Kirigami.PlaceholderMessage {
+                anchors.fill: parent
+                visible: root.model.atEnd ?? false
+                text: i18nc("@info:status", "End of Timeline")
+            }
+        }
+
         Rectangle {
             anchors.fill: parent
             anchors {
