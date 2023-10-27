@@ -9,7 +9,7 @@ SPDX-FileCopyrightText: Carl Schwan <carl@carlschwan.eu>
 SPDX-License-Identifier: CC0-1.0
 -->
   <kcfgfile name="tokodonrc" />
-  <include>Kirigami/PlatformTheme</include>
+  <include>Kirigami/Platform/PlatformTheme</include>
   <group name="General">
     <entry name="ShowPostStats" type="bool">
       <label>Show statistics about stats</label>
@@ -37,7 +37,7 @@ SPDX-License-Identifier: CC0-1.0
     <entry name="defaultFont" type="Font">
       <label>Default font</label>
       <code>
-        Kirigami::PlatformTheme theme;
+        Kirigami::Platform::PlatformTheme theme;
       </code>
       <default code="true">theme.defaultFont()</default>
     </entry>
