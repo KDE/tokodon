@@ -45,6 +45,7 @@ Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *p
     });
 
     m_config = settings;
+    connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
     buildFromSettings();
 }
 

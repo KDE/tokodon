@@ -19,11 +19,6 @@ AccountManager::AccountManager(QObject *parent)
     , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
 {
-    connect(this, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        if (account != nullptr) {
-            account->checkForFollowRequests();
-        }
-    });
 }
 
 AccountManager::~AccountManager()
