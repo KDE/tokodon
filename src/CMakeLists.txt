@@ -32,6 +32,8 @@ target_sources(tokodon_static
     account/accountmanager.h
     account/announcementmodel.cpp
     account/announcementmodel.h
+    account/featuredtagsmodel.cpp
+    account/featuredtagsmodel.h
     account/account.cpp
     account/account.h
     account/preferences.cpp

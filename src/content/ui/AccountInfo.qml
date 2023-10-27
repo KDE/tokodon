@@ -643,6 +643,8 @@ TimelinePage {
                 Rectangle {
                     Layout.fillWidth: true
 
+                    enabled: !accountInfo.model.loading
+
                     implicitHeight: extraLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
 
                     color: Kirigami.Theme.backgroundColor
@@ -666,6 +668,47 @@ TimelinePage {
                             enabled: accountInfo.canExcludeBoosts && !accountInfo.model.loading
 
                             onToggled: accountInfo.excludeBoosts = checked
+                        }
+
+                        QQC2.ScrollView {
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+
+                            RowLayout {
+                                spacing: Kirigami.Units.mediumSpacing
+
+                                QQC2.ButtonGroup {
+                                    id: tagGroup
+                                }
+
+                                Kirigami.Chip {
+                                    text: i18nc("@action:button Show all of a profile's posts", "All")
+                                    closable: false
+                                    checked: true
+
+                                    onClicked: accountInfo.model.tagged = ""
+
+                                    QQC2.ButtonGroup.group: tagGroup
+                                }
+
+                                Repeater {
+                                    model: FeaturedTagsModel {
+                                        accountId: accountInfo.accountId
+                                    }
+
+                                    delegate: Kirigami.Chip
+                                    {
+                                        required property string name
+
+                                        text: '#' + name
+                                        closable: false
+
+                                        onClicked: accountInfo.model.tagged = name
+
+                                        QQC2.ButtonGroup.group: tagGroup
+                                    }
+                                }
+                            }
                         }
                     }
                 }
