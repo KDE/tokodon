@@ -512,16 +512,5 @@ QQC2.ItemDelegate {
                 }
             }
         }
-
-        QQC2.ProgressBar {
-            visible: root.loading && !root.showSeparator
-            indeterminate: true
-            padding: Kirigami.Units.largeSpacing * 2
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-            Layout.leftMargin: Kirigami.Units.largeSpacing
-            Layout.rightMargin: Kirigami.Units.largeSpacing
-        }
     }
 }

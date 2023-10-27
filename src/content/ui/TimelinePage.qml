@@ -19,6 +19,7 @@ Kirigami.ScrollablePage {
     property bool expandedPost: false
     property alias listViewHeader: listview.header
     property alias showPostAction: postAction.visible
+    property bool completedInitialLoad: false
 
     title: model.displayName
     titleDelegate: Kirigami.Heading {
@@ -93,6 +94,10 @@ Kirigami.ScrollablePage {
                 purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                 backend: backend
             });
+        }
+
+        function onLoadingChanged() {
+            root.completedInitialLoad = true;
         }
     }
 
@@ -182,21 +187,26 @@ Kirigami.ScrollablePage {
                 visible: root.model.atEnd ?? false
                 text: i18nc("@info:status", "End of Timeline")
             }
-        }
-
-        Rectangle {
-            anchors.fill: parent
-            anchors {
-                topMargin: listview.headerItem ? listview.headerItem.height : 0
-            }
-
-            visible: listview.model.loading
-
-            color: Kirigami.Theme.backgroundColor
 
             QQC2.ProgressBar {
                 anchors.centerIn: parent
+                visible: root.model.loading
                 indeterminate: true
+            }
+        }
+
+        Rectangle {
+            anchors {
+                fill: parent
+                topMargin: listview.headerItem ? listview.headerItem.height : 0
+            }
+
+            visible: listview.model.loading && !root.completedInitialLoad
+
+            color: Kirigami.Theme.backgroundColor
+
+            Kirigami.LoadingPlaceholder {
+                anchors.centerIn: parent
             }
         }
 
