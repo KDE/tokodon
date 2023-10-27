@@ -346,7 +346,7 @@ TimelinePage {
                                         Kirigami.Action {
                                             icon.name: "microphone-sensitivity-muted"
                                             visible: model.isSelf
-                                            text: i18n("Muted Accounts")
+                                            text: i18n("Muted Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "mutes" });
                                         },
                                         Kirigami.Action {
