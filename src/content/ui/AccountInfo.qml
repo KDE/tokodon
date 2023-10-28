@@ -256,7 +256,7 @@ TimelinePage {
                                                 if (model.identity.relationship && model.identity.relationship.showingReblogs) {
                                                     return i18n("Hide Boosts from %1", '@' + model.identity.account);
                                                 } else {
-                                                    return i18n("Show Boosts Boosts from %1", '@' + model.identity.account);
+                                                    return i18n("Show Boosts from %1", '@' + model.identity.account);
                                                 }
                                             }
                                             onTriggered: {
