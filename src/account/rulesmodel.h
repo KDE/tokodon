@@ -8,6 +8,8 @@
 #include <QUrl>
 #include <QtQml/qqmlregistration.h>
 
+#include "account/abstractaccount.h"
+
 /// Fetches server rules
 class RulesModel : public QAbstractListModel
 {
@@ -15,6 +17,7 @@ class RulesModel : public QAbstractListModel
     QML_ELEMENT
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+    Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
 
 public:
     /// Custom roles for this model
@@ -28,12 +31,16 @@ public:
     bool loading() const;
     void setLoading(bool loading);
 
+    AbstractAccount *account() const;
+    void setAccount(AbstractAccount *account);
+
     QVariant data(const QModelIndex &index, int role) const override;
     int rowCount(const QModelIndex &parent) const override;
     QHash<int, QByteArray> roleNames() const override;
 
 Q_SIGNALS:
     void loadingChanged();
+    void accountChanged();
 
 private:
     void fill();
@@ -44,5 +51,6 @@ private:
 
     QList<Rule> m_rules;
     bool m_loading = false;
+    AbstractAccount *m_account = nullptr;
     Rule fromSourceData(const QJsonObject &object) const;
 };

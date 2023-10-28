@@ -11,7 +11,6 @@ using namespace Qt::Literals::StringLiterals;
 RulesModel::RulesModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    fill();
 }
 
 QVariant RulesModel::data(const QModelIndex &index, int role) const
@@ -44,6 +43,22 @@ void RulesModel::setLoading(bool loading)
     Q_EMIT loadingChanged();
 }
 
+AbstractAccount *RulesModel::account() const
+{
+    return m_account;
+}
+
+void RulesModel::setAccount(AbstractAccount *account)
+{
+    if (m_account == account) {
+        return;
+    }
+    m_account = account;
+    Q_EMIT accountChanged();
+
+    fill();
+}
+
 int RulesModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : m_rules.size();
@@ -56,14 +71,12 @@ QHash<int, QByteArray> RulesModel::roleNames() const
 
 void RulesModel::fill()
 {
-    const auto account = AccountManager::instance().selectedAccount();
-
     if (m_loading) {
         return;
     }
     setLoading(true);
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/instance/rules")), false, this, [this](QNetworkReply *reply) {
+    m_account->get(m_account->apiUrl(QStringLiteral("/api/v1/instance/rules")), false, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         auto rules = doc.array().toVariantList();
 
