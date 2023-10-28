@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"POT-Creation-Date: 2023-10-28 01:45+0000\n"
 "PO-Revision-Date: 2023-10-21 08:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -70,6 +70,7 @@ msgstr "Poglej objavo"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
@@ -154,19 +155,22 @@ msgstr "Sledim"
 #: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
-msgid "Muted Accounts"
-msgstr "Utišani računi"
+msgid "Muted Users"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Blocked at"
 msgctxt "@title"
-msgid "Blocked Accounts"
-msgstr "Blokirani računi"
+msgid "Blocked Users"
+msgstr "Blokirani pri"
 
 #: account/socialgraphmodel.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Featured Accounts"
 msgctxt "@title"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Predstavljeni računi"
 
 #: account/socialgraphmodel.cpp:44
@@ -200,23 +204,27 @@ msgid "No followers"
 msgstr "Ni sledilcev"
 
 #: account/socialgraphmodel.cpp:58
-#, kde-format
-msgid "No followed accounts"
-msgstr "Ni spremljanih računov"
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No followed users"
+msgstr "Ni sledilcev"
 
 #: account/socialgraphmodel.cpp:60
-#, kde-format
-msgid "No muted accounts"
+#, fuzzy, kde-format
+#| msgid "No muted accounts"
+msgid "No muted users"
 msgstr "Ni utišanih računov"
 
 #: account/socialgraphmodel.cpp:62
-#, kde-format
-msgid "No blocked accounts"
+#, fuzzy, kde-format
+#| msgid "No blocked accounts"
+msgid "No blocked users"
 msgstr "Ni blokiranih računov"
 
 #: account/socialgraphmodel.cpp:64
-#, kde-format
-msgid "No featured accounts"
+#, fuzzy, kde-format
+#| msgid "No featured accounts"
+msgid "No featured users"
 msgstr "Ni predstavljenih računov"
 
 #: account/socialgraphmodel.cpp:66
@@ -312,143 +320,152 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
 "Pri izdelavi zahteve PUT za posodobitev bloka domene je prišlo do napake."
 
-#: content/ui/AccountInfo.qml:68
+#: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Follows you"
 msgstr "Vam sledi"
 
-#: content/ui/AccountInfo.qml:108
-#, kde-format
-msgid "Requested"
-msgstr "Zahtevano"
+#: content/ui/AccountInfo.qml:208
+#, fuzzy, kde-format
+#| msgid "Follow Request"
+msgid "Follow Requested"
+msgstr "Sledi zahtevku"
 
-#: content/ui/AccountInfo.qml:111
-#, kde-format
-msgid "Following"
-msgstr "Sledenje"
+#: content/ui/AccountInfo.qml:211
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Unfollow"
+msgstr "Sledi"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Follow"
 msgstr "Sledi"
 
-#: content/ui/AccountInfo.qml:138
-#, kde-format
-msgid "Stop notifying me when %1 posts"
+#: content/ui/AccountInfo.qml:238
+#, fuzzy, kde-format
+#| msgid "Stop notifying me when %1 posts"
+msgid "Stop notifying me when %1 posts."
 msgstr "Ne obveščaj me več, ko objavlja %1"
 
-#: content/ui/AccountInfo.qml:140
-#, kde-format
-msgid "Notify me when %1 posts"
+#: content/ui/AccountInfo.qml:240
+#, fuzzy, kde-format
+#| msgid "Notify me when %1 posts"
+msgid "Notify me when %1 posts."
 msgstr "Obveščaj me, ko objavlja %1"
 
-#: content/ui/AccountInfo.qml:157
+#: content/ui/AccountInfo.qml:257
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Skrivaj izbruhe iz %1"
 
-#: content/ui/AccountInfo.qml:159
-#, kde-format
-msgid "Stop Hiding Boosts from %1"
+#: content/ui/AccountInfo.qml:259
+#, fuzzy, kde-format
+#| msgid "Stop Hiding Boosts from %1"
+msgid "Show Boosts Boosts from %1"
 msgstr "Prenehaj skrivati izbruhe iz %1"
 
-#: content/ui/AccountInfo.qml:176
+#: content/ui/AccountInfo.qml:275
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr "Ustavi izpostavljanje profila"
 
-#: content/ui/AccountInfo.qml:178
+#: content/ui/AccountInfo.qml:277
 #, kde-format
 msgid "Feature on Profile"
 msgstr "Izpostavljaj profil"
 
-#: content/ui/AccountInfo.qml:195
+#: content/ui/AccountInfo.qml:293
 #, kde-format
-msgid "Stop Muting"
-msgstr "Prenehaj utišati"
+msgid "Unmute"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:197
+#: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Mute"
 msgstr "Utišaj"
 
-#: content/ui/AccountInfo.qml:214
-#, kde-format
-msgid "Stop Blocking"
-msgstr "Ustavi blokiranje"
+#: content/ui/AccountInfo.qml:311
+#, fuzzy, kde-format
+#| msgid "Block"
+msgid "Unblock"
+msgstr "Blokiraj"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Block"
 msgstr "Blokiraj"
 
-#: content/ui/AccountInfo.qml:231
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Edit Profile"
 msgstr "Uredi profil"
 
-#: content/ui/AccountInfo.qml:235
+#: content/ui/AccountInfo.qml:331
 #, kde-format
 msgid "Account editor"
 msgstr "Urejevalnik računa"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
+#: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguriraj"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
+#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sledi zahtevke"
 
-#: content/ui/AccountInfo.qml:256
+#: content/ui/AccountInfo.qml:349
 #, kde-format
-msgid "Muted Accounts"
-msgstr "Utišani računi"
+msgid "Muted Users"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:263
-#, kde-format
-msgid "Blocked Accounts"
-msgstr "Blokirani računi"
+#: content/ui/AccountInfo.qml:355
+#, fuzzy, kde-format
+#| msgid "Blocked at"
+msgid "Blocked Users"
+msgstr "Blokirani pri"
 
-#: content/ui/AccountInfo.qml:270
-#, kde-format
-msgid "Featured Accounts"
+#: content/ui/AccountInfo.qml:361
+#, fuzzy, kde-format
+#| msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Predstavljeni računi"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:366
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr "Kopiraj povezavo v ta profil"
 
-#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr "Povezava na objavo prekopirana."
 
-#: content/ui/AccountInfo.qml:366
-#, kde-format
-msgid "Note"
+#: content/ui/AccountInfo.qml:454
+#, fuzzy, kde-format
+#| msgid "Note"
+msgid "Note:"
 msgstr "Opomba"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:462
 #, kde-format
 msgid "Saved"
 msgstr "Shranjeno"
 
-#: content/ui/AccountInfo.qml:389
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgid "Click to add a note"
 msgstr "Kliknite za dodajanje opombe"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:581
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -458,7 +475,7 @@ msgstr[1] "<b>%1</b> objavi"
 msgstr[2] "<b>%1</b> objave"
 msgstr[3] "<b>%1</b> objav"
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:594
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -468,7 +485,7 @@ msgstr[1] "<b>%1</b> sledilca"
 msgstr[2] "<b>%1</b> sledilci"
 msgstr[3] "<b>%1</b> sledilcev"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:607
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -478,29 +495,37 @@ msgstr[1] "<b>%1</b> sledita"
 msgstr[2] "<b>%1</b> sledijo"
 msgstr[3] "<b>%1</b> sledi"
 
-#: content/ui/AccountInfo.qml:513
+#: content/ui/AccountInfo.qml:631
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Objave"
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountInfo.qml:635
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Objave && Odgovori"
 
-#: content/ui/AccountInfo.qml:521
+#: content/ui/AccountInfo.qml:639
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Mediji"
 
-#: content/ui/AccountInfo.qml:548
+#: content/ui/AccountInfo.qml:665
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Skrij pospeševanja"
+
+#: content/ui/AccountInfo.qml:685
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts from any location"
+#| msgid "All"
+msgctxt "@action:button Show all of a profile's posts"
+msgid "All"
+msgstr "Vse"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -551,7 +576,7 @@ msgstr "Ni pogovorov"
 msgid "Explore"
 msgstr "Razišči"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2082,8 +2107,9 @@ msgid "No search results"
 msgstr "Ni zadetkov iskanja"
 
 #: content/ui/SearchView.qml:53
-#, kde-format
-msgid "Search for peoples, tags and posts"
+#, fuzzy, kde-format
+#| msgid "Search for peoples, tags and posts"
+msgid "Search for users, tags and posts"
 msgstr "Iskanje ljudi, oznak in objav"
 
 #: content/ui/SearchView.qml:145
@@ -2762,15 +2788,18 @@ msgstr "GIF"
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:347
+#: content/ui/StatusDelegate/AttachmentGrid.qml:328
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Mediji"
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
 msgstr "Medij je skrit"
-
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#, kde-format
-msgid "View profile"
-msgstr "Poglej profil"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, kde-format
@@ -2778,8 +2807,10 @@ msgid "Link preview: %1"
 msgstr "Predogled povezave: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, kde-format
-msgid "Expand This Post"
+#, fuzzy, kde-format
+#| msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
 msgstr "Razširi to objavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
@@ -2788,31 +2819,37 @@ msgid "Open Original Page"
 msgstr "Odpri izvirno stran"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, kde-format
-msgid "Copy Link to This Post"
-msgstr "Kopiraj povezavo na to objavo"
+#, fuzzy, kde-format
+#| msgid "Copy Link"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Kopiraj povezavo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
-#, kde-format
-msgid "Remove bookmark"
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
 msgstr "Odstrani zaznamek"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "Unpin on profile"
+#, fuzzy, kde-format
+#| msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
 msgstr "Odpni s profila"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
-msgid "Pin on profile"
-msgstr "Pripni na profil"
+msgid "@action:inmenu"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2840,9 +2877,11 @@ msgid "Show anyway"
 msgstr "Vseeno prikaži"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, kde-format
-msgid "Pinned entry"
-msgstr "Pripeti vnos"
+#, fuzzy, kde-format
+#| msgid "View Post"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Poglej objavo"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -2905,6 +2944,11 @@ msgstr "Priljubljen"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
+msgid "Remove bookmark"
+msgstr "Odstrani zaznamek"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
@@ -2913,6 +2957,11 @@ msgstr "Zaznamek"
 #, kde-format
 msgid "Bookmarked"
 msgstr "Zaznamčen"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#, kde-format
+msgid "Bookmark"
+msgstr "Zaznamek"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -2981,21 +3030,35 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: content/ui/TimelinePage.qml:84
+#: content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Ni mogoče priti v stik s strežnikom: %1. Preverite vaše nastavitve."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
+#, fuzzy, kde-format
+#| msgid "Local Timeline"
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "Lokalna časovnica"
+
+#: content/ui/TimelinePage.qml:215
 #, kde-format
 msgid "No posts"
 msgstr "Ni objav"
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/TimelinePage.qml:221
 #, kde-format
-msgid "Switch user"
-msgstr "Preklopi uporabnika"
+msgctxt "@info:tooltip"
+msgid "Return to Top"
+msgstr ""
+
+#: content/ui/UserInfo.qml:85
+#, fuzzy, kde-format
+#| msgid "Edit Account"
+msgid "Switch Account"
+msgstr "Uredi račun"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3142,9 +3205,10 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Prišlo je do napake pri pridobivanju zadnjega obvestila."
 
 #: search/searchmodel.cpp:139
-#, kde-format
-msgid "People"
-msgstr "Ljudje"
+#, fuzzy, kde-format
+#| msgid "User"
+msgid "Users"
+msgstr "Uporabnik"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3355,6 +3419,53 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
 
+#~ msgctxt "@title"
+#~ msgid "Muted Accounts"
+#~ msgstr "Utišani računi"
+
+#~ msgctxt "@title"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Blokirani računi"
+
+#~ msgid "No followed accounts"
+#~ msgstr "Ni spremljanih računov"
+
+#~ msgid "Requested"
+#~ msgstr "Zahtevano"
+
+#~ msgid "Following"
+#~ msgstr "Sledenje"
+
+#~ msgid "Stop Muting"
+#~ msgstr "Prenehaj utišati"
+
+#~ msgid "Stop Blocking"
+#~ msgstr "Ustavi blokiranje"
+
+#~ msgid "Muted Accounts"
+#~ msgstr "Utišani računi"
+
+#~ msgid "Blocked Accounts"
+#~ msgstr "Blokirani računi"
+
+#~ msgid "View profile"
+#~ msgstr "Poglej profil"
+
+#~ msgid "Copy Link to This Post"
+#~ msgstr "Kopiraj povezavo na to objavo"
+
+#~ msgid "Pin on profile"
+#~ msgstr "Pripni na profil"
+
+#~ msgid "Pinned entry"
+#~ msgstr "Pripeti vnos"
+
+#~ msgid "Switch user"
+#~ msgstr "Preklopi uporabnika"
+
+#~ msgid "People"
+#~ msgstr "Ljudje"
+
 #~ msgctxt "@title:window"
 #~ msgid "Debug"
 #~ msgstr "Razhrošči"
@@ -3368,9 +3479,6 @@ msgstr "Cilj"
 
 #~ msgid "Favorite"
 #~ msgstr "Priljubljen"
-
-#~ msgid "Follow Request"
-#~ msgstr "Sledi zahtevku"
 
 #~ msgid "Status"
 #~ msgstr "Stanja"
@@ -3391,9 +3499,6 @@ msgstr "Cilj"
 
 #~ msgid "Open Link"
 #~ msgstr "Odpri povezavo"
-
-#~ msgid "Copy Link"
-#~ msgstr "Kopiraj povezavo"
 
 #~ msgid "Link copied."
 #~ msgstr "Povezava prekopirana."
@@ -3570,9 +3675,6 @@ msgstr "Cilj"
 
 #~ msgid "Image View"
 #~ msgstr "Pogled slike"
-
-#~ msgid "Local Timeline"
-#~ msgstr "Lokalna časovnica"
 
 #~ msgid "Global Timeline"
 #~ msgstr "Globalna časovnica"

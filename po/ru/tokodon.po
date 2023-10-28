@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"POT-Creation-Date: 2023-10-28 01:45+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -71,6 +71,7 @@ msgstr "Показать профиль"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, fuzzy, kde-format
 #| msgid "View profile"
@@ -160,24 +161,23 @@ msgid "Following"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
-msgid "Muted Accounts"
-msgstr "Учётные записи"
+msgid "Muted Users"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title"
-msgid "Blocked Accounts"
+msgid "Blocked Users"
 msgstr "Добавить учётную запись"
 
 #: account/socialgraphmodel.cpp:42
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Учётные записи"
 
 #: account/socialgraphmodel.cpp:44
@@ -217,25 +217,25 @@ msgstr ""
 #: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "Could not follow account"
-msgid "No followed accounts"
+msgid "No followed users"
 msgstr "Не удалось подписаться на учётную запись"
 
 #: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Accounts"
-msgid "No muted accounts"
+msgid "No muted users"
 msgstr "Учётные записи"
 
 #: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Add Account"
-msgid "No blocked accounts"
+msgid "No blocked users"
 msgstr "Добавить учётную запись"
 
 #: account/socialgraphmodel.cpp:64
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
-msgid "No featured accounts"
+msgid "No featured users"
 msgstr "Не удалось добавить учётную запись в подборку"
 
 #: account/socialgraphmodel.cpp:66
@@ -339,146 +339,151 @@ msgstr ""
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:68
+#: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Follows you"
 msgstr "Подписан(а) на вас"
 
-#: content/ui/AccountInfo.qml:108
-#, kde-format
-msgid "Requested"
-msgstr "Отправлен запрос"
+#: content/ui/AccountInfo.qml:208
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "Follow Requested"
+msgstr "Запросы на подписку"
 
-#: content/ui/AccountInfo.qml:111
-#, kde-format
-msgid "Following"
-msgstr "Вы подписаны"
+#: content/ui/AccountInfo.qml:211
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Unfollow"
+msgstr "Подписаться"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Follow"
 msgstr "Подписаться"
 
-#: content/ui/AccountInfo.qml:138
-#, kde-format
-msgid "Stop notifying me when %1 posts"
+#: content/ui/AccountInfo.qml:238
+#, fuzzy, kde-format
+#| msgid "Stop notifying me when %1 posts"
+msgid "Stop notifying me when %1 posts."
 msgstr "Не уведомлять о публикациях %1"
 
-#: content/ui/AccountInfo.qml:140
-#, kde-format
-msgid "Notify me when %1 posts"
+#: content/ui/AccountInfo.qml:240
+#, fuzzy, kde-format
+#| msgid "Notify me when %1 posts"
+msgid "Notify me when %1 posts."
 msgstr "Уведомлять о публикациях %1"
 
-#: content/ui/AccountInfo.qml:157
+#: content/ui/AccountInfo.qml:257
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:159
+#: content/ui/AccountInfo.qml:259
 #, kde-format
-msgid "Stop Hiding Boosts from %1"
+msgid "Show Boosts Boosts from %1"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:176
+#: content/ui/AccountInfo.qml:275
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:178
+#: content/ui/AccountInfo.qml:277
 #, kde-format
 msgid "Feature on Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:195
+#: content/ui/AccountInfo.qml:293
 #, kde-format
-msgid "Stop Muting"
+msgid "Unmute"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:197
+#: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Mute"
 msgstr "Отключить уведомления"
 
-#: content/ui/AccountInfo.qml:214
-#, kde-format
-msgid "Stop Blocking"
-msgstr ""
+#: content/ui/AccountInfo.qml:311
+#, fuzzy, kde-format
+#| msgid "Block"
+msgid "Unblock"
+msgstr "Заблокировать"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Block"
 msgstr "Заблокировать"
 
-#: content/ui/AccountInfo.qml:231
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Edit Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:235
+#: content/ui/AccountInfo.qml:331
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор учётной записи"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Settings"
 msgstr "Параметры"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
+#: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr "Настройка"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
+#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запросы на подписку"
 
-#: content/ui/AccountInfo.qml:256
-#, fuzzy, kde-format
-#| msgid "Accounts"
-msgid "Muted Accounts"
-msgstr "Учётные записи"
+#: content/ui/AccountInfo.qml:349
+#, kde-format
+msgid "Muted Users"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:263
+#: content/ui/AccountInfo.qml:355
 #, fuzzy, kde-format
 #| msgid "Add Account"
-msgid "Blocked Accounts"
+msgid "Blocked Users"
 msgstr "Добавить учётную запись"
 
-#: content/ui/AccountInfo.qml:270
+#: content/ui/AccountInfo.qml:361
 #, fuzzy, kde-format
 #| msgid "Accounts"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Учётные записи"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:366
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:366
-#, kde-format
-msgid "Note"
+#: content/ui/AccountInfo.qml:454
+#, fuzzy, kde-format
+#| msgid "Note"
+msgid "Note:"
 msgstr "Заметка"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:462
 #, kde-format
 msgid "Saved"
 msgstr "Сохранено"
 
-#: content/ui/AccountInfo.qml:389
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgid "Click to add a note"
 msgstr "Нажмите, чтобы добавить заметку"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:581
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -488,7 +493,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgctxt "@label User's number of followers"
@@ -499,7 +504,7 @@ msgstr[1] "«%1» добавил(а) вас в свои подписки"
 msgstr[2] "«%1» добавил(а) вас в свои подписки"
 msgstr[3] "«%1» добавил(а) вас в свои подписки"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:607
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -509,29 +514,37 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: content/ui/AccountInfo.qml:513
+#: content/ui/AccountInfo.qml:631
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountInfo.qml:635
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:521
+#: content/ui/AccountInfo.qml:639
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:548
+#: content/ui/AccountInfo.qml:665
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr ""
+
+#: content/ui/AccountInfo.qml:685
+#, fuzzy, kde-format
+#| msgctxt "Show all notifications"
+#| msgid "All"
+msgctxt "@action:button Show all of a profile's posts"
+msgid "All"
+msgstr "Все"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -582,7 +595,7 @@ msgstr "Нет ни одного чата"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2183,8 +2196,9 @@ msgid "No search results"
 msgstr "Ничего не найдено"
 
 #: content/ui/SearchView.qml:53
-#, kde-format
-msgid "Search for peoples, tags and posts"
+#, fuzzy, kde-format
+#| msgid "Search for peoples, tags and posts"
+msgid "Search for users, tags and posts"
 msgstr "Поиск людей, меток и публикаций"
 
 #: content/ui/SearchView.qml:145
@@ -2896,15 +2910,16 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:347
+#: content/ui/StatusDelegate/AttachmentGrid.qml:328
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
 msgstr "Медиафайлы скрыты"
-
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#, kde-format
-msgid "View profile"
-msgstr "Показать профиль"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, fuzzy, kde-format
@@ -2914,7 +2929,8 @@ msgstr "Предварительный просмотр ссылок"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
-msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
@@ -2924,32 +2940,35 @@ msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
-msgid "Copy Link to This Post"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
-#, kde-format
-msgid "Remove bookmark"
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
 msgstr "Удалить закладку"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Добавить в закладки"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, fuzzy, kde-format
 #| msgid "View profile"
-msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
 msgstr "Показать профиль"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
-msgid "Pin on profile"
-msgstr "Показать профиль"
+#, kde-format
+msgid "@action:inmenu"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2979,9 +2998,11 @@ msgid "Show anyway"
 msgstr "Всё равно показать"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, kde-format
-msgid "Pinned entry"
-msgstr "Закреплённая запись"
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Показать профиль"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -3053,6 +3074,11 @@ msgstr "Избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
+msgid "Remove bookmark"
+msgstr "Удалить закладку"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Добавить в закладки"
@@ -3061,6 +3087,11 @@ msgstr "Добавить в закладки"
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
+msgstr "Добавить в закладки"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#, kde-format
+msgid "Bookmark"
 msgstr "Добавить в закладки"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
@@ -3135,22 +3166,37 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:84
+#: content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 "Не удалось подключиться к серверу: %1. Проверьте параметры подключения."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Local Timeline"
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "Локальная лента новостей"
+
+#: content/ui/TimelinePage.qml:215
 #, kde-format
 msgid "No posts"
 msgstr "Нет ни одной публикации"
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/TimelinePage.qml:221
 #, kde-format
-msgid "Switch user"
+msgctxt "@info:tooltip"
+msgid "Return to Top"
 msgstr ""
+
+#: content/ui/UserInfo.qml:85
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Switch Account"
+msgstr "Добавить учётную запись"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3296,9 +3342,10 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Ошибка при получении последнего уведомления."
 
 #: search/searchmodel.cpp:139
-#, kde-format
-msgid "People"
-msgstr "Люди"
+#, fuzzy, kde-format
+#| msgid "User"
+msgid "Users"
+msgstr "Пользователь"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3511,6 +3558,48 @@ msgid "Destination"
 msgstr "Назначение"
 
 #, fuzzy
+#~| msgid "Accounts"
+#~ msgctxt "@title"
+#~ msgid "Muted Accounts"
+#~ msgstr "Учётные записи"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgctxt "@title"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Добавить учётную запись"
+
+#~ msgid "Requested"
+#~ msgstr "Отправлен запрос"
+
+#~ msgid "Following"
+#~ msgstr "Вы подписаны"
+
+#, fuzzy
+#~| msgid "Accounts"
+#~ msgid "Muted Accounts"
+#~ msgstr "Учётные записи"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Добавить учётную запись"
+
+#~ msgid "View profile"
+#~ msgstr "Показать профиль"
+
+#, fuzzy
+#~| msgid "View profile"
+#~ msgid "Pin on profile"
+#~ msgstr "Показать профиль"
+
+#~ msgid "Pinned entry"
+#~ msgstr "Закреплённая запись"
+
+#~ msgid "People"
+#~ msgstr "Люди"
+
+#, fuzzy
 #~| msgid "Notifications"
 #~ msgctxt "@title:group"
 #~ msgid "Notifications"
@@ -3527,11 +3616,6 @@ msgstr "Назначение"
 #~| msgid "Favorites"
 #~ msgid "Favorite"
 #~ msgstr "Избранное"
-
-#, fuzzy
-#~| msgid "Follow Requests"
-#~ msgid "Follow Request"
-#~ msgstr "Запросы на подписку"
 
 #, fuzzy
 #~| msgid "Conversations"

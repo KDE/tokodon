@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"POT-Creation-Date: 2023-10-28 01:45+0000\n"
 "PO-Revision-Date: 2023-10-23 09:50+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -69,6 +69,7 @@ msgstr "Visualizza commento"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
@@ -153,19 +154,22 @@ msgstr "Segui"
 #: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
-msgid "Muted Accounts"
-msgstr "Account silenziati"
+msgid "Muted Users"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Blocked at"
 msgctxt "@title"
-msgid "Blocked Accounts"
-msgstr "Account bloccati"
+msgid "Blocked Users"
+msgstr "Bloccato"
 
 #: account/socialgraphmodel.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Featured Accounts"
 msgctxt "@title"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Account in primo piano"
 
 #: account/socialgraphmodel.cpp:44
@@ -195,23 +199,27 @@ msgid "No followers"
 msgstr "Nessun seguace"
 
 #: account/socialgraphmodel.cpp:58
-#, kde-format
-msgid "No followed accounts"
-msgstr "Nessun account seguito"
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No followed users"
+msgstr "Nessun seguace"
 
 #: account/socialgraphmodel.cpp:60
-#, kde-format
-msgid "No muted accounts"
+#, fuzzy, kde-format
+#| msgid "No muted accounts"
+msgid "No muted users"
 msgstr "Nessun account silenziato"
 
 #: account/socialgraphmodel.cpp:62
-#, kde-format
-msgid "No blocked accounts"
+#, fuzzy, kde-format
+#| msgid "No blocked accounts"
+msgid "No blocked users"
 msgstr "Nessun account bloccato"
 
 #: account/socialgraphmodel.cpp:64
-#, kde-format
-msgid "No featured accounts"
+#, fuzzy, kde-format
+#| msgid "No featured accounts"
+msgid "No featured users"
 msgstr "Nessun account in primo piano"
 
 #: account/socialgraphmodel.cpp:66
@@ -308,143 +316,152 @@ msgstr ""
 "Si è verificato un errore durante l'esecuzione di una richiesta PUT per "
 "aggiornare il blocco del dominio."
 
-#: content/ui/AccountInfo.qml:68
+#: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Follows you"
 msgstr "Ti segue"
 
-#: content/ui/AccountInfo.qml:108
-#, kde-format
-msgid "Requested"
-msgstr "Richiesto"
+#: content/ui/AccountInfo.qml:208
+#, fuzzy, kde-format
+#| msgid "Follow Request"
+msgid "Follow Requested"
+msgstr "Richiesta di seguito"
 
-#: content/ui/AccountInfo.qml:111
-#, kde-format
-msgid "Following"
+#: content/ui/AccountInfo.qml:211
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Unfollow"
 msgstr "Segui"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Follow"
 msgstr "Segui"
 
-#: content/ui/AccountInfo.qml:138
-#, kde-format
-msgid "Stop notifying me when %1 posts"
+#: content/ui/AccountInfo.qml:238
+#, fuzzy, kde-format
+#| msgid "Stop notifying me when %1 posts"
+msgid "Stop notifying me when %1 posts."
 msgstr "Smetti di avvisarmi quando %1 pubblica un commento"
 
-#: content/ui/AccountInfo.qml:140
-#, kde-format
-msgid "Notify me when %1 posts"
+#: content/ui/AccountInfo.qml:240
+#, fuzzy, kde-format
+#| msgid "Notify me when %1 posts"
+msgid "Notify me when %1 posts."
 msgstr "Avvisami quando %1 pubblica un commento"
 
-#: content/ui/AccountInfo.qml:157
+#: content/ui/AccountInfo.qml:257
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Nascondi i boost da %1"
 
-#: content/ui/AccountInfo.qml:159
-#, kde-format
-msgid "Stop Hiding Boosts from %1"
+#: content/ui/AccountInfo.qml:259
+#, fuzzy, kde-format
+#| msgid "Stop Hiding Boosts from %1"
+msgid "Show Boosts Boosts from %1"
 msgstr "Smetti di nascondere i boost da %1"
 
-#: content/ui/AccountInfo.qml:176
+#: content/ui/AccountInfo.qml:275
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr "Interrompi l'evidenziazione nel profilo"
 
-#: content/ui/AccountInfo.qml:178
+#: content/ui/AccountInfo.qml:277
 #, kde-format
 msgid "Feature on Profile"
 msgstr "Evidenzia nel profilo"
 
-#: content/ui/AccountInfo.qml:195
+#: content/ui/AccountInfo.qml:293
 #, kde-format
-msgid "Stop Muting"
-msgstr "Interrompi il silenziamento"
+msgid "Unmute"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:197
+#: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Mute"
 msgstr "Silenzia"
 
-#: content/ui/AccountInfo.qml:214
-#, kde-format
-msgid "Stop Blocking"
-msgstr "Interrompi il blocco"
+#: content/ui/AccountInfo.qml:311
+#, fuzzy, kde-format
+#| msgid "Block"
+msgid "Unblock"
+msgstr "Blocca"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Block"
 msgstr "Blocca"
 
-#: content/ui/AccountInfo.qml:231
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Edit Profile"
 msgstr "Modifica profilo"
 
-#: content/ui/AccountInfo.qml:235
+#: content/ui/AccountInfo.qml:331
 #, kde-format
 msgid "Account editor"
 msgstr "Editor degli account"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
+#: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
+#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Richieste di seguito"
 
-#: content/ui/AccountInfo.qml:256
+#: content/ui/AccountInfo.qml:349
 #, kde-format
-msgid "Muted Accounts"
-msgstr "Account silenziati"
+msgid "Muted Users"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:263
-#, kde-format
-msgid "Blocked Accounts"
-msgstr "Account bloccati"
+#: content/ui/AccountInfo.qml:355
+#, fuzzy, kde-format
+#| msgid "Blocked at"
+msgid "Blocked Users"
+msgstr "Bloccato"
 
-#: content/ui/AccountInfo.qml:270
-#, kde-format
-msgid "Featured Accounts"
+#: content/ui/AccountInfo.qml:361
+#, fuzzy, kde-format
+#| msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Account in primo piano"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:366
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr "Copia collegamento a questo profilo"
 
-#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr "Collegamento del commento copiato."
 
-#: content/ui/AccountInfo.qml:366
-#, kde-format
-msgid "Note"
+#: content/ui/AccountInfo.qml:454
+#, fuzzy, kde-format
+#| msgid "Note"
+msgid "Note:"
 msgstr "Nota"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:462
 #, kde-format
 msgid "Saved"
 msgstr "Salvato"
 
-#: content/ui/AccountInfo.qml:389
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgid "Click to add a note"
 msgstr "Clic per aggiungere una nota"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:581
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -452,7 +469,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> commento"
 msgstr[1] "<b>%1</b> commenti"
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:594
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -460,7 +477,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> seguace"
 msgstr[1] "<b>%1</b> seguaci"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:607
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -468,29 +485,37 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> seguito"
 msgstr[1] "<b>%1</b> seguiti"
 
-#: content/ui/AccountInfo.qml:513
+#: content/ui/AccountInfo.qml:631
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Commenti"
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountInfo.qml:635
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Commenti e risposte"
 
-#: content/ui/AccountInfo.qml:521
+#: content/ui/AccountInfo.qml:639
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountInfo.qml:548
+#: content/ui/AccountInfo.qml:665
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Nascondi i boost"
+
+#: content/ui/AccountInfo.qml:685
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts from any location"
+#| msgid "All"
+msgctxt "@action:button Show all of a profile's posts"
+msgid "All"
+msgstr "Tutti"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -541,7 +566,7 @@ msgstr "Nessuna conversazione"
 msgid "Explore"
 msgstr "Esplora"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2072,8 +2097,9 @@ msgid "No search results"
 msgstr "Nessun risultato trovato"
 
 #: content/ui/SearchView.qml:53
-#, kde-format
-msgid "Search for peoples, tags and posts"
+#, fuzzy, kde-format
+#| msgid "Search for peoples, tags and posts"
+msgid "Search for users, tags and posts"
 msgstr "Cerca persone, tag e commenti"
 
 #: content/ui/SearchView.qml:145
@@ -2752,15 +2778,18 @@ msgstr "GIF"
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:347
+#: content/ui/StatusDelegate/AttachmentGrid.qml:328
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Media"
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
 msgstr "Supporto nascosto"
-
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#, kde-format
-msgid "View profile"
-msgstr "Visualizza il profilo"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, kde-format
@@ -2768,8 +2797,10 @@ msgid "Link preview: %1"
 msgstr "Anteprima collegamento: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, kde-format
-msgid "Expand This Post"
+#, fuzzy, kde-format
+#| msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
 msgstr "Espandi questo commento"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
@@ -2778,31 +2809,37 @@ msgid "Open Original Page"
 msgstr "Apri la pagina originale"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, kde-format
-msgid "Copy Link to This Post"
-msgstr "Copia collegamento a questo messaggio"
+#, fuzzy, kde-format
+#| msgid "Copy Link"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Copia collegamento"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
-#, kde-format
-msgid "Remove bookmark"
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
 msgstr "Rimuovi il segnalibro"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Segnalibro"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "Unpin on profile"
+#, fuzzy, kde-format
+#| msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
 msgstr "Rimuovi dal profilo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
-msgid "Pin on profile"
-msgstr "Appunta sul profilo"
+msgid "@action:inmenu"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2830,9 +2867,11 @@ msgid "Show anyway"
 msgstr "Mostra comunque"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, kde-format
-msgid "Pinned entry"
-msgstr "Voce appuntata"
+#, fuzzy, kde-format
+#| msgid "View Post"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Visualizza commento"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -2895,6 +2934,11 @@ msgstr "Preferito"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
+msgid "Remove bookmark"
+msgstr "Rimuovi il segnalibro"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Segnalibro"
@@ -2903,6 +2947,11 @@ msgstr "Segnalibro"
 #, kde-format
 msgid "Bookmarked"
 msgstr "Salvato nei segnalibri"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#, kde-format
+msgid "Bookmark"
+msgstr "Segnalibro"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
@@ -2965,21 +3014,35 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Riproduci"
 
-#: content/ui/TimelinePage.qml:84
+#: content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Impossibile contattare il server: %1. Controlla le tue impostazioni."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
+#, fuzzy, kde-format
+#| msgid "Local Timeline"
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "Timeline locale"
+
+#: content/ui/TimelinePage.qml:215
 #, kde-format
 msgid "No posts"
 msgstr "Nessun commento"
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/TimelinePage.qml:221
 #, kde-format
-msgid "Switch user"
-msgstr "Cambia utente"
+msgctxt "@info:tooltip"
+msgid "Return to Top"
+msgstr ""
+
+#: content/ui/UserInfo.qml:85
+#, fuzzy, kde-format
+#| msgid "Edit Account"
+msgid "Switch Account"
+msgstr "Modifica account"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3124,9 +3187,10 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
 
 #: search/searchmodel.cpp:139
-#, kde-format
-msgid "People"
-msgstr "Persone"
+#, fuzzy, kde-format
+#| msgid "User"
+msgid "Users"
+msgstr "Utente"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3331,6 +3395,53 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinazione"
 
+#~ msgctxt "@title"
+#~ msgid "Muted Accounts"
+#~ msgstr "Account silenziati"
+
+#~ msgctxt "@title"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Account bloccati"
+
+#~ msgid "No followed accounts"
+#~ msgstr "Nessun account seguito"
+
+#~ msgid "Requested"
+#~ msgstr "Richiesto"
+
+#~ msgid "Following"
+#~ msgstr "Segui"
+
+#~ msgid "Stop Muting"
+#~ msgstr "Interrompi il silenziamento"
+
+#~ msgid "Stop Blocking"
+#~ msgstr "Interrompi il blocco"
+
+#~ msgid "Muted Accounts"
+#~ msgstr "Account silenziati"
+
+#~ msgid "Blocked Accounts"
+#~ msgstr "Account bloccati"
+
+#~ msgid "View profile"
+#~ msgstr "Visualizza il profilo"
+
+#~ msgid "Copy Link to This Post"
+#~ msgstr "Copia collegamento a questo messaggio"
+
+#~ msgid "Pin on profile"
+#~ msgstr "Appunta sul profilo"
+
+#~ msgid "Pinned entry"
+#~ msgstr "Voce appuntata"
+
+#~ msgid "Switch user"
+#~ msgstr "Cambia utente"
+
+#~ msgid "People"
+#~ msgstr "Persone"
+
 #~ msgctxt "@title:window"
 #~ msgid "Debug"
 #~ msgstr "Debug"
@@ -3344,9 +3455,6 @@ msgstr "Destinazione"
 
 #~ msgid "Favorite"
 #~ msgstr "Preferito"
-
-#~ msgid "Follow Request"
-#~ msgstr "Richiesta di seguito"
 
 #~ msgid "Status"
 #~ msgstr "Stato"
@@ -3367,9 +3475,6 @@ msgstr "Destinazione"
 
 #~ msgid "Open Link"
 #~ msgstr "Apri collegamento"
-
-#~ msgid "Copy Link"
-#~ msgstr "Copia collegamento"
 
 #~ msgid "Link copied."
 #~ msgstr "Collegamento copiato."
@@ -3544,9 +3649,6 @@ msgstr "Destinazione"
 
 #~ msgid "Image View"
 #~ msgstr "Vista immagini"
-
-#~ msgid "Local Timeline"
-#~ msgstr "Timeline locale"
 
 #~ msgid "Global Timeline"
 #~ msgstr "Timeline globale"

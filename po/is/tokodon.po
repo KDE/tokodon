@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"POT-Creation-Date: 2023-10-28 01:45+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -70,6 +70,7 @@ msgstr "Birta í forgrunni á notandasniði"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
@@ -160,24 +161,23 @@ msgid "Following"
 msgstr "Fylgist með"
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
-msgid "Muted Accounts"
-msgstr "Notandaaðgangar"
+msgid "Muted Users"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title"
-msgid "Blocked Accounts"
+msgid "Blocked Users"
 msgstr "Bæta við notandaaðgangi"
 
 #: account/socialgraphmodel.cpp:42
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Notandaaðgangar"
 
 #: account/socialgraphmodel.cpp:44
@@ -213,26 +213,26 @@ msgstr "%1 fylgjendur"
 
 #: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
-#| msgid "Could not follow account"
-msgid "No followed accounts"
-msgstr "Gat ekki fylgst með notandaaðgangi"
+#| msgid "%1 followers"
+msgid "No followed users"
+msgstr "%1 fylgjendur"
 
 #: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "Accounts"
-msgid "No muted accounts"
+msgid "No muted users"
 msgstr "Notandaaðgangar"
 
 #: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Add Account"
-msgid "No blocked accounts"
+msgid "No blocked users"
 msgstr "Bæta við notandaaðgangi"
 
 #: account/socialgraphmodel.cpp:64
 #, fuzzy, kde-format
 #| msgid "Could not feature account"
-msgid "No featured accounts"
+msgid "No featured users"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
 
 #: account/socialgraphmodel.cpp:66
@@ -336,159 +336,161 @@ msgstr ""
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:68
+#: content/ui/AccountInfo.qml:116
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follows you"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountInfo.qml:108
-#, kde-format
-msgid "Requested"
-msgstr "Umbeðið"
+#: content/ui/AccountInfo.qml:208
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Follow Requested"
+msgstr "Fylgjast með"
 
-#: content/ui/AccountInfo.qml:111
-#, kde-format
-msgid "Following"
-msgstr "Fylgist með"
+#: content/ui/AccountInfo.qml:211
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Unfollow"
+msgstr "Fylgjast með"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Follow"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountInfo.qml:138
-#, kde-format
-msgid "Stop notifying me when %1 posts"
+#: content/ui/AccountInfo.qml:238
+#, fuzzy, kde-format
+#| msgid "Stop notifying me when %1 posts"
+msgid "Stop notifying me when %1 posts."
 msgstr "Hætta að láta mig vita þegar %1 sendir inn"
 
-#: content/ui/AccountInfo.qml:140
-#, kde-format
-msgid "Notify me when %1 posts"
+#: content/ui/AccountInfo.qml:240
+#, fuzzy, kde-format
+#| msgid "Notify me when %1 posts"
+msgid "Notify me when %1 posts."
 msgstr "Láta mig vita þegar %1 sendir inn"
 
-#: content/ui/AccountInfo.qml:157
+#: content/ui/AccountInfo.qml:257
 #, fuzzy, kde-format
 #| msgid "Hide boosts from %1"
 msgid "Hide Boosts from %1"
 msgstr "Fela endurbirtingar frá %1"
 
-#: content/ui/AccountInfo.qml:159
+#: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
 #| msgid "Stop hiding boosts from %1"
-msgid "Stop Hiding Boosts from %1"
+msgid "Show Boosts Boosts from %1"
 msgstr "Hætta að fela endurbirtingar frá %1"
 
-#: content/ui/AccountInfo.qml:176
+#: content/ui/AccountInfo.qml:275
 #, fuzzy, kde-format
 #| msgid "Stop featuring on profile"
 msgid "Stop Featuring on Profile"
 msgstr "Hætta að birta á notandasniði"
 
-#: content/ui/AccountInfo.qml:178
+#: content/ui/AccountInfo.qml:277
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "Feature on Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountInfo.qml:195
-#, fuzzy, kde-format
-#| msgid "Stop muting"
-msgid "Stop Muting"
-msgstr "Hætta að þagga"
+#: content/ui/AccountInfo.qml:293
+#, kde-format
+msgid "Unmute"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:197
+#: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Mute"
 msgstr "Þagga niður"
 
-#: content/ui/AccountInfo.qml:214
+#: content/ui/AccountInfo.qml:311
 #, fuzzy, kde-format
-#| msgid "Stop blocking"
-msgid "Stop Blocking"
-msgstr "Hætta að útiloka"
+#| msgid "Block"
+msgid "Unblock"
+msgstr "Útiloka"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Block"
 msgstr "Útiloka"
 
-#: content/ui/AccountInfo.qml:231
+#: content/ui/AccountInfo.qml:327
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "Edit Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountInfo.qml:235
+#: content/ui/AccountInfo.qml:331
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Account editor"
 msgstr "Notandaaðgangar"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
+#: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
+#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:310
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
 msgstr "Fylgjast með"
 
-#: content/ui/AccountInfo.qml:256
-#, fuzzy, kde-format
-#| msgid "Accounts"
-msgid "Muted Accounts"
-msgstr "Notandaaðgangar"
+#: content/ui/AccountInfo.qml:349
+#, kde-format
+msgid "Muted Users"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:263
+#: content/ui/AccountInfo.qml:355
 #, fuzzy, kde-format
 #| msgid "Add Account"
-msgid "Blocked Accounts"
+msgid "Blocked Users"
 msgstr "Bæta við notandaaðgangi"
 
-#: content/ui/AccountInfo.qml:270
+#: content/ui/AccountInfo.qml:361
 #, fuzzy, kde-format
 #| msgid "Accounts"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Notandaaðgangar"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:366
 #, fuzzy, kde-format
 #| msgid "Stop featuring on profile"
 msgid "Copy Link to This Profile"
 msgstr "Hætta að birta á notandasniði"
 
-#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:366
+#: content/ui/AccountInfo.qml:454
 #, kde-format
-msgid "Note"
+msgid "Note:"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:462
 #, kde-format
 msgid "Saved"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:389
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgid "Click to add a note"
 msgstr "Smelltu til að bæta við minnispunkti"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:581
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of statuses"
@@ -497,7 +499,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:594
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followers"
@@ -506,7 +508,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:607
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgctxt "@label User's number of followed accounts"
@@ -515,7 +517,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "%1 fylgjendur"
 msgstr[1] "%1 fylgjendur"
 
-#: content/ui/AccountInfo.qml:513
+#: content/ui/AccountInfo.qml:631
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -523,24 +525,32 @@ msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Endurbirta"
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountInfo.qml:635
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:521
+#: content/ui/AccountInfo.qml:639
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:548
+#: content/ui/AccountInfo.qml:665
 #, fuzzy, kde-format
 #| msgid "Hide boosts from %1"
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Fela endurbirtingar frá %1"
+
+#: content/ui/AccountInfo.qml:685
+#, fuzzy, kde-format
+#| msgctxt "Show all notifications"
+#| msgid "All"
+msgctxt "@action:button Show all of a profile's posts"
+msgid "All"
+msgstr "Allt"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -593,7 +603,7 @@ msgstr "Minnst á"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2189,7 +2199,7 @@ msgstr ""
 
 #: content/ui/SearchView.qml:53
 #, kde-format
-msgid "Search for peoples, tags and posts"
+msgid "Search for users, tags and posts"
 msgstr ""
 
 #: content/ui/SearchView.qml:145
@@ -2908,16 +2918,16 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:347
+#: content/ui/StatusDelegate/AttachmentGrid.qml:328
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr ""
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
-
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
-msgid "View profile"
-msgstr "Birta í forgrunni á notandasniði"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, fuzzy, kde-format
@@ -2927,7 +2937,8 @@ msgstr "Birta forskoðun tengils."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
-msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
@@ -2936,33 +2947,35 @@ msgid "Open Original Page"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
+#, fuzzy, kde-format
+#| msgid "Copy link"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Afrita tengil"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
-msgid "Copy Link to This Post"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
-msgid "Remove bookmark"
-msgstr ""
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, kde-format
+msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
-msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Feature on profile"
-msgid "Pin on profile"
-msgstr "Birta í forgrunni á notandasniði"
+#, kde-format
+msgid "@action:inmenu"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2990,9 +3003,11 @@ msgid "Show anyway"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, kde-format
-msgid "Pinned entry"
-msgstr "Fest færsla"
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Birta í forgrunni á notandasniði"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, fuzzy, kde-format
@@ -3065,6 +3080,11 @@ msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
+msgid "Remove bookmark"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
@@ -3072,6 +3092,11 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:421
 #, kde-format
 msgid "Bookmarked"
+msgstr ""
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#, kde-format
+msgid "Bookmark"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
@@ -3141,21 +3166,35 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:84
+#: content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
+#, fuzzy, kde-format
+#| msgid "Local Timeline"
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "Staðvær tímalína"
+
+#: content/ui/TimelinePage.qml:215
 #, kde-format
 msgid "No posts"
 msgstr ""
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/TimelinePage.qml:221
 #, kde-format
-msgid "Switch user"
+msgctxt "@info:tooltip"
+msgid "Return to Top"
 msgstr ""
+
+#: content/ui/UserInfo.qml:85
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Switch Account"
+msgstr "Bæta við notandaaðgangi"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3301,9 +3340,10 @@ msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
 #: search/searchmodel.cpp:139
-#, kde-format
-msgid "People"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "Users"
+msgstr "Notandanafn:"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3514,6 +3554,62 @@ msgid "Destination"
 msgstr "Minnst á"
 
 #, fuzzy
+#~| msgid "Accounts"
+#~ msgctxt "@title"
+#~ msgid "Muted Accounts"
+#~ msgstr "Notandaaðgangar"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgctxt "@title"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Bæta við notandaaðgangi"
+
+#, fuzzy
+#~| msgid "Could not follow account"
+#~ msgid "No followed accounts"
+#~ msgstr "Gat ekki fylgst með notandaaðgangi"
+
+#~ msgid "Requested"
+#~ msgstr "Umbeðið"
+
+#~ msgid "Following"
+#~ msgstr "Fylgist með"
+
+#, fuzzy
+#~| msgid "Stop muting"
+#~ msgid "Stop Muting"
+#~ msgstr "Hætta að þagga"
+
+#, fuzzy
+#~| msgid "Stop blocking"
+#~ msgid "Stop Blocking"
+#~ msgstr "Hætta að útiloka"
+
+#, fuzzy
+#~| msgid "Accounts"
+#~ msgid "Muted Accounts"
+#~ msgstr "Notandaaðgangar"
+
+#, fuzzy
+#~| msgid "Add Account"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Bæta við notandaaðgangi"
+
+#, fuzzy
+#~| msgid "Feature on profile"
+#~ msgid "View profile"
+#~ msgstr "Birta í forgrunni á notandasniði"
+
+#, fuzzy
+#~| msgid "Feature on profile"
+#~ msgid "Pin on profile"
+#~ msgstr "Birta í forgrunni á notandasniði"
+
+#~ msgid "Pinned entry"
+#~ msgstr "Fest færsla"
+
+#, fuzzy
 #~| msgid "Notifications"
 #~ msgctxt "@title:group"
 #~ msgid "Notifications"
@@ -3531,11 +3627,6 @@ msgstr "Minnst á"
 #~ msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #, fuzzy
-#~| msgid "Follow"
-#~ msgid "Follow Request"
-#~ msgstr "Fylgjast með"
-
-#, fuzzy
 #~| msgid "Add Poll"
 #~ msgid "Poll"
 #~ msgstr "Bæta við könnun"
@@ -3550,11 +3641,6 @@ msgstr "Minnst á"
 #~| msgid "Open link"
 #~ msgid "Open Link"
 #~ msgstr "Opna tengil"
-
-#, fuzzy
-#~| msgid "Copy link"
-#~ msgid "Copy Link"
-#~ msgstr "Afrita tengil"
 
 #, fuzzy
 #~| msgid "Show detailed statistics about posts."
@@ -3661,9 +3747,6 @@ msgstr "Minnst á"
 
 #~ msgid "Image View"
 #~ msgstr "Myndskoðun"
-
-#~ msgid "Local Timeline"
-#~ msgstr "Staðvær tímalína"
 
 #~ msgid "Global Timeline"
 #~ msgstr "Víðvær tímalína"

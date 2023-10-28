@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 01:50+0000\n"
+"POT-Creation-Date: 2023-10-28 01:45+0000\n"
 "PO-Revision-Date: 2023-09-20 18:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -70,6 +70,7 @@ msgstr "Näytä profiili"
 
 #: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
 #, fuzzy, kde-format
 #| msgid "View profile"
@@ -159,19 +160,22 @@ msgstr "Seuratut"
 #: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
-msgid "Muted Accounts"
-msgstr "Vaimennetut tilit"
+msgid "Muted Users"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Blocked at"
 msgctxt "@title"
-msgid "Blocked Accounts"
-msgstr "Estetyt tilit"
+msgid "Blocked Users"
+msgstr "Estetty"
 
 #: account/socialgraphmodel.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Featured Accounts"
 msgctxt "@title"
-msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Esitellyt tilit"
 
 #: account/socialgraphmodel.cpp:44
@@ -205,23 +209,27 @@ msgid "No followers"
 msgstr "Ei seuraajia"
 
 #: account/socialgraphmodel.cpp:58
-#, kde-format
-msgid "No followed accounts"
-msgstr "Ei seurattuja tilejä"
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No followed users"
+msgstr "Ei seuraajia"
 
 #: account/socialgraphmodel.cpp:60
-#, kde-format
-msgid "No muted accounts"
+#, fuzzy, kde-format
+#| msgid "No muted accounts"
+msgid "No muted users"
 msgstr "Ei vaimennettuja tilejä"
 
 #: account/socialgraphmodel.cpp:62
-#, kde-format
-msgid "No blocked accounts"
+#, fuzzy, kde-format
+#| msgid "No blocked accounts"
+msgid "No blocked users"
 msgstr "Ei estettyjä tilejä"
 
 #: account/socialgraphmodel.cpp:64
-#, kde-format
-msgid "No featured accounts"
+#, fuzzy, kde-format
+#| msgid "No featured accounts"
+msgid "No featured users"
 msgstr "Ei esiteltyjä tilejä"
 
 #: account/socialgraphmodel.cpp:66
@@ -316,143 +324,152 @@ msgstr "Ei asetettuja rajoituksia"
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr "Sattui virhe tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi."
 
-#: content/ui/AccountInfo.qml:68
+#: content/ui/AccountInfo.qml:116
 #, kde-format
 msgid "Follows you"
 msgstr "Seuraa sinua"
 
-#: content/ui/AccountInfo.qml:108
-#, kde-format
-msgid "Requested"
-msgstr "Pyydetty"
+#: content/ui/AccountInfo.qml:208
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "Follow Requested"
+msgstr "Seurauspyynnöt"
 
-#: content/ui/AccountInfo.qml:111
-#, kde-format
-msgid "Following"
+#: content/ui/AccountInfo.qml:211
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgid "Unfollow"
 msgstr "Seuraa"
 
-#: content/ui/AccountInfo.qml:113
+#: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Follow"
 msgstr "Seuraa"
 
-#: content/ui/AccountInfo.qml:138
-#, kde-format
-msgid "Stop notifying me when %1 posts"
+#: content/ui/AccountInfo.qml:238
+#, fuzzy, kde-format
+#| msgid "Stop notifying me when %1 posts"
+msgid "Stop notifying me when %1 posts."
 msgstr "Älä ilmoita enää, kun %1 viestittelee"
 
-#: content/ui/AccountInfo.qml:140
-#, kde-format
-msgid "Notify me when %1 posts"
+#: content/ui/AccountInfo.qml:240
+#, fuzzy, kde-format
+#| msgid "Notify me when %1 posts"
+msgid "Notify me when %1 posts."
 msgstr "Ilmoita, kun %1 viestittelee"
 
-#: content/ui/AccountInfo.qml:157
+#: content/ui/AccountInfo.qml:257
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Piilota käyttäjän %1 tehostukset"
 
-#: content/ui/AccountInfo.qml:159
-#, kde-format
-msgid "Stop Hiding Boosts from %1"
+#: content/ui/AccountInfo.qml:259
+#, fuzzy, kde-format
+#| msgid "Stop Hiding Boosts from %1"
+msgid "Show Boosts Boosts from %1"
 msgstr "Lakkaa piilottamasta käyttäjän %1 tehostuksia"
 
-#: content/ui/AccountInfo.qml:176
+#: content/ui/AccountInfo.qml:275
 #, kde-format
 msgid "Stop Featuring on Profile"
 msgstr "Lopeta esittely profiilissa"
 
-#: content/ui/AccountInfo.qml:178
+#: content/ui/AccountInfo.qml:277
 #, kde-format
 msgid "Feature on Profile"
 msgstr "Esittele profiilissa"
 
-#: content/ui/AccountInfo.qml:195
+#: content/ui/AccountInfo.qml:293
 #, kde-format
-msgid "Stop Muting"
-msgstr "Lopeta vaimennus"
+msgid "Unmute"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:197
+#: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Mute"
 msgstr "Vaimenna"
 
-#: content/ui/AccountInfo.qml:214
-#, kde-format
-msgid "Stop Blocking"
-msgstr "Lopeta esto"
+#: content/ui/AccountInfo.qml:311
+#, fuzzy, kde-format
+#| msgid "Block"
+msgid "Unblock"
+msgstr "Estä"
 
-#: content/ui/AccountInfo.qml:216
+#: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Block"
 msgstr "Estä"
 
-#: content/ui/AccountInfo.qml:231
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Edit Profile"
 msgstr "Muokkaa profiilia"
 
-#: content/ui/AccountInfo.qml:235
+#: content/ui/AccountInfo.qml:331
 #, kde-format
 msgid "Account editor"
 msgstr "Tilimuokkain"
 
-#: content/ui/AccountInfo.qml:242 content/ui/TimelinePage.qml:45
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
 
-#: content/ui/AccountInfo.qml:243 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
+#: content/ui/TimelinePage.qml:48
 #, kde-format
 msgid "Configure"
 msgstr "Asetukset"
 
-#: content/ui/AccountInfo.qml:249 content/ui/Main.qml:310
+#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:310
 #, kde-format
 msgid "Follow Requests"
 msgstr "Seurauspyynnöt"
 
-#: content/ui/AccountInfo.qml:256
+#: content/ui/AccountInfo.qml:349
 #, kde-format
-msgid "Muted Accounts"
-msgstr "Vaimennetut tilit"
+msgid "Muted Users"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:263
-#, kde-format
-msgid "Blocked Accounts"
-msgstr "Estetyt tilit"
+#: content/ui/AccountInfo.qml:355
+#, fuzzy, kde-format
+#| msgid "Blocked at"
+msgid "Blocked Users"
+msgstr "Estetty"
 
-#: content/ui/AccountInfo.qml:270
-#, kde-format
-msgid "Featured Accounts"
+#: content/ui/AccountInfo.qml:361
+#, fuzzy, kde-format
+#| msgid "Featured Accounts"
+msgid "Featured Users"
 msgstr "Esitellyt tilit"
 
-#: content/ui/AccountInfo.qml:276
+#: content/ui/AccountInfo.qml:366
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr "Kopioi linkki tähän profiiliin"
 
-#: content/ui/AccountInfo.qml:279 content/ui/StatusDelegate/OverflowMenu.qml:42
+#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
 msgstr "Julkaisulinkki kopioitu."
 
-#: content/ui/AccountInfo.qml:366
-#, kde-format
-msgid "Note"
+#: content/ui/AccountInfo.qml:454
+#, fuzzy, kde-format
+#| msgid "Note"
+msgid "Note:"
 msgstr "Muistiinpano"
 
-#: content/ui/AccountInfo.qml:374
+#: content/ui/AccountInfo.qml:462
 #, kde-format
 msgid "Saved"
 msgstr "Tallennettu"
 
-#: content/ui/AccountInfo.qml:389
+#: content/ui/AccountInfo.qml:477
 #, kde-format
 msgid "Click to add a note"
 msgstr "Lisää muistiinpano napsauttamalla"
 
-#: content/ui/AccountInfo.qml:471
+#: content/ui/AccountInfo.qml:581
 #, fuzzy, kde-format
 #| msgctxt "@label User's number of statuses"
 #| msgid "<b>%1</b> posts"
@@ -462,7 +479,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> julkaisua"
 msgstr[1] "<b>%1</b> julkaisua"
 
-#: content/ui/AccountInfo.qml:483
+#: content/ui/AccountInfo.qml:594
 #, fuzzy, kde-format
 #| msgctxt "@label User's number of followers"
 #| msgid "<b>%1</b> followers"
@@ -472,7 +489,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> seuraajaa"
 msgstr[1] "<b>%1</b> seuraajaa"
 
-#: content/ui/AccountInfo.qml:495
+#: content/ui/AccountInfo.qml:607
 #, fuzzy, kde-format
 #| msgctxt "@label User's number of followers"
 #| msgid "<b>%1</b> followers"
@@ -482,29 +499,37 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> seuraajaa"
 msgstr[1] "<b>%1</b> seuraajaa"
 
-#: content/ui/AccountInfo.qml:513
+#: content/ui/AccountInfo.qml:631
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Julkaisut"
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountInfo.qml:635
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Julkaisut ja vastaukset"
 
-#: content/ui/AccountInfo.qml:521
+#: content/ui/AccountInfo.qml:639
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountInfo.qml:548
+#: content/ui/AccountInfo.qml:665
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Piilota tehostukset"
+
+#: content/ui/AccountInfo.qml:685
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts from any location"
+#| msgid "All"
+msgctxt "@action:button Show all of a profile's posts"
+msgid "All"
+msgstr "Kaikki"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -555,7 +580,7 @@ msgstr "Ei keskusteluja"
 msgid "Explore"
 msgstr "Selaa"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:62
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2115,8 +2140,9 @@ msgid "No search results"
 msgstr "Ei hakutuloksia"
 
 #: content/ui/SearchView.qml:53
-#, kde-format
-msgid "Search for peoples, tags and posts"
+#, fuzzy, kde-format
+#| msgid "Search for peoples, tags and posts"
+msgid "Search for users, tags and posts"
 msgstr "Etsi ihmisiä, luokituksia ja julkaisuja"
 
 #: content/ui/SearchView.qml:145
@@ -2826,15 +2852,18 @@ msgstr "GIF"
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:347
+#: content/ui/StatusDelegate/AttachmentGrid.qml:328
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Media"
+
+#: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
 msgstr "Piilotettu media"
-
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#, kde-format
-msgid "View profile"
-msgstr "Näytä profiili"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, kde-format
@@ -2842,8 +2871,10 @@ msgid "Link preview: %1"
 msgstr "Linkin esikatselu: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, kde-format
-msgid "Expand This Post"
+#, fuzzy, kde-format
+#| msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
 msgstr "Laajenna tämä julkaisu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
@@ -2852,31 +2883,37 @@ msgid "Open Original Page"
 msgstr "Avaa alkuperäinen sivu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, kde-format
-msgid "Copy Link to This Post"
-msgstr "Kopioi linkki tähän julkaisuun"
+#, fuzzy, kde-format
+#| msgid "Copy Link"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Kopioi linkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
-#, kde-format
-msgid "Remove bookmark"
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
 msgstr "Poista kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "Unpin on profile"
+#, fuzzy, kde-format
+#| msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
 msgstr "Irrota profiilista"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
-msgid "Pin on profile"
-msgstr "Kiinnitä profiiliin"
+msgid "@action:inmenu"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2908,9 +2945,11 @@ msgid "Show anyway"
 msgstr "Näytä silti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, kde-format
-msgid "Pinned entry"
-msgstr "Kiinnitetty kohde"
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Näytä profiili"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -2979,6 +3018,11 @@ msgstr "Suosikit"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
+msgid "Remove bookmark"
+msgstr "Poista kirjanmerkki"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
@@ -2987,6 +3031,11 @@ msgstr "Kirjanmerkki"
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
+msgstr "Kirjanmerkki"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#, kde-format
+msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
@@ -3053,21 +3102,35 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Toista"
 
-#: content/ui/TimelinePage.qml:84
+#: content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
 
-#: content/ui/TimelinePage.qml:194
+#: content/ui/TimelinePage.qml:188
+#, fuzzy, kde-format
+#| msgid "Local Timeline"
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "Paikallinen aikajana"
+
+#: content/ui/TimelinePage.qml:215
 #, kde-format
 msgid "No posts"
 msgstr "Ei julkaisuja"
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/TimelinePage.qml:221
 #, kde-format
-msgid "Switch user"
-msgstr "Vaihda käyttäjää"
+msgctxt "@info:tooltip"
+msgid "Return to Top"
+msgstr ""
+
+#: content/ui/UserInfo.qml:85
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Switch Account"
+msgstr "Lisää tili"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3212,9 +3275,10 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Noudettaessa viimeisintä ilmoitusta tapahtui virhe."
 
 #: search/searchmodel.cpp:139
-#, kde-format
-msgid "People"
-msgstr "Ihmiset"
+#, fuzzy, kde-format
+#| msgid "User"
+msgid "Users"
+msgstr "Käyttäjä"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3419,6 +3483,53 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
 
+#~ msgctxt "@title"
+#~ msgid "Muted Accounts"
+#~ msgstr "Vaimennetut tilit"
+
+#~ msgctxt "@title"
+#~ msgid "Blocked Accounts"
+#~ msgstr "Estetyt tilit"
+
+#~ msgid "No followed accounts"
+#~ msgstr "Ei seurattuja tilejä"
+
+#~ msgid "Requested"
+#~ msgstr "Pyydetty"
+
+#~ msgid "Following"
+#~ msgstr "Seuraa"
+
+#~ msgid "Stop Muting"
+#~ msgstr "Lopeta vaimennus"
+
+#~ msgid "Stop Blocking"
+#~ msgstr "Lopeta esto"
+
+#~ msgid "Muted Accounts"
+#~ msgstr "Vaimennetut tilit"
+
+#~ msgid "Blocked Accounts"
+#~ msgstr "Estetyt tilit"
+
+#~ msgid "View profile"
+#~ msgstr "Näytä profiili"
+
+#~ msgid "Copy Link to This Post"
+#~ msgstr "Kopioi linkki tähän julkaisuun"
+
+#~ msgid "Pin on profile"
+#~ msgstr "Kiinnitä profiiliin"
+
+#~ msgid "Pinned entry"
+#~ msgstr "Kiinnitetty kohde"
+
+#~ msgid "Switch user"
+#~ msgstr "Vaihda käyttäjää"
+
+#~ msgid "People"
+#~ msgstr "Ihmiset"
+
 #, fuzzy
 #~| msgid "Notifications"
 #~ msgctxt "@title:group"
@@ -3436,11 +3547,6 @@ msgstr "Kohde"
 #~| msgid "Favorite"
 #~ msgid "Favorite"
 #~ msgstr "Suosikki"
-
-#, fuzzy
-#~| msgid "Follow Requests"
-#~ msgid "Follow Request"
-#~ msgstr "Seurauspyynnöt"
 
 #, fuzzy
 #~| msgctxt "@info The current login status of the account."
@@ -3462,9 +3568,6 @@ msgstr "Kohde"
 
 #~ msgid "Open Link"
 #~ msgstr "Avaa linkki"
-
-#~ msgid "Copy Link"
-#~ msgstr "Kopioi linkki"
 
 #~ msgid "Link copied."
 #~ msgstr "Linkki kopioitu."
@@ -3627,9 +3730,6 @@ msgstr "Kohde"
 
 #~ msgid "Image View"
 #~ msgstr "Kuvanäkymä"
-
-#~ msgid "Local Timeline"
-#~ msgstr "Paikallinen aikajana"
 
 #~ msgid "Global Timeline"
 #~ msgstr "Yleinen aikajana"
