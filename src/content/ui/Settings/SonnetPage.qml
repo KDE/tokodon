@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.sonnet 1 as Sonnet
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.delegates 1 as Delegates
@@ -135,24 +136,17 @@ FormCard.FormCardPage {
                     ListView {
                         clip: true
                         model: settings.dictionaryModel
-                        delegate: Kirigami.CheckableListItem {
-                            label: model.display
+                        delegate: KirigamiDelegates.CheckSubtitleDelegate {
+                            width: ListView.view.width
+
+                            text: model.display
                             action: Kirigami.Action {
                                 onTriggered: model.checked = checked
                             }
                             Accessible.description: model.isDefault ? i18n("Default Language") : ''
                             checked: model.checked
-                            trailing: Kirigami.Icon {
-                                source: "favorite"
-                                visible: model.isDefault
-                                HoverHandler {
-                                    id: hover
-                                }
-                                QQC2.ToolTip {
-                                    visible: hover.hovered
-                                    text: i18n("Default Language")
-                                }
-                            }
+
+                            icon.source: model.isDefault ? "favorite" : undefined
                         }
                     }
                 }
