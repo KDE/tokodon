@@ -59,6 +59,8 @@ MastoPage {
                 required property int index
                 required property string text
 
+                spacing: 0
+
                 FormCard.FormDelegateSeparator {
                     visible: index !== 0
                 }
