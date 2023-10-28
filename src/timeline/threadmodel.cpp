@@ -124,3 +124,14 @@ bool ThreadModel::canFetchMore(const QModelIndex &parent) const
     Q_UNUSED(parent);
     return false;
 }
+
+int ThreadModel::getRootIndex() const
+{
+    for (int i = 0; i < rowCount({}); i++) {
+        if (data(index(i, 0), SelectedRole).toBool()) {
+            return i;
+        }
+    }
+
+    return -1;
+}

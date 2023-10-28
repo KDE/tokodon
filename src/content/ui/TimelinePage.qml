@@ -20,6 +20,7 @@ Kirigami.ScrollablePage {
     property alias listViewHeader: listview.header
     property alias showPostAction: postAction.visible
     property bool completedInitialLoad: false
+    property alias listView: listview
 
     title: model.displayName
     titleDelegate: Kirigami.Heading {

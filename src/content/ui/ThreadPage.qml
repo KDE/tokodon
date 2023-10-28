@@ -12,6 +12,14 @@ TimelinePage {
     expandedPost: true
     showPostAction: false
 
+    Connections {
+        target: root.model
+
+        function onLoadingChanged() {
+            root.listView.positionViewAtIndex(root.model.getRootIndex(), ListView.Beginning);
+        }
+    }
+
     model: ThreadModel {
         postId: root.postId
     }

@@ -34,6 +34,10 @@ public:
     void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
+    /// Returns the index of the root post in the model
+    /// Can be used to find where exactly to position the view
+    Q_INVOKABLE int getRootIndex() const;
+
 Q_SIGNALS:
     void postIdChanged();
 
