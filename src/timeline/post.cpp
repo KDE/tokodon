@@ -208,7 +208,14 @@ void Post::fromJson(QJsonObject obj)
     m_postId = obj["id"_L1].toString();
 
     m_spoilerText = obj["spoiler_text"_L1].toString();
-    m_content = computeContent(obj, m_authorIdentity);
+
+    // First process HTML for links, and custom emojis
+    const QString computedContent = computeContent(obj, m_authorIdentity);
+
+    // And then parse the content for standalone tags
+    auto [processedContent, standaloneTags] = parseContent(computedContent);
+    m_content = processedContent;
+    m_standaloneTags = standaloneTags;
 
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
@@ -503,6 +510,11 @@ void Post::setContent(const QString &content)
     }
     m_content = content;
     Q_EMIT contentChanged();
+}
+
+QVector<QString> Post::standaloneTags() const
+{
+    return m_standaloneTags;
 }
 
 QString Post::contentType() const
@@ -803,4 +815,53 @@ QString Post::originalPostId() const
 bool Post::isEmpty() const
 {
     return m_postId.isEmpty();
+}
+
+QPair<QString, QList<QString>> Post::parseContent(const QString &html)
+{
+    const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
+
+    QList<QString> standaloneTags;
+
+    const auto lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
+    const auto lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
+    auto lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
+
+    QString processedHtml = html;
+
+    // Catch all the tags in the last paragraph of the post
+    {
+        auto matchIterator = hashtagExp.globalMatch(lastParagraph);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            standaloneTags.push_back(match.captured(1));
+            processedHtml = processedHtml.replace(match.captured(0), QStringLiteral(""));
+        }
+    }
+
+    const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
+
+    // Ensure we remove any remaining <br>'s which will mess up the spacing in a post.
+    // Example: "<p>Yosemite Valley reflections with rock<br />    </p>"
+    {
+        auto matchIterator = extraneousBreakExp.globalMatch(processedHtml);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
+        }
+    }
+
+    const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<p\\s*\\/?>)+\\s*<\\/p>)"));
+
+    // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
+    // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"
+    {
+        auto matchIterator = extraneousParagraph.globalMatch(processedHtml);
+        while (matchIterator.hasNext()) {
+            const QRegularExpressionMatch match = matchIterator.next();
+            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
+        }
+    }
+
+    return {processedHtml, standaloneTags};
 }

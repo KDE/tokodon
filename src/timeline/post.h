@@ -207,6 +207,7 @@ class Post : public QObject
     Q_PROPERTY(QString type READ type CONSTANT)
     Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
     Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
+    Q_PROPERTY(QList<QString> standaloneTags READ standaloneTags NOTIFY contentChanged)
 
 public:
     Post() = delete;
@@ -239,6 +240,7 @@ public:
 
     QString content() const;
     void setContent(const QString &content);
+    QVector<QString> standaloneTags() const;
     QString contentType() const;
     void setContentType(const QString &contentType);
     bool sensitive() const;
@@ -323,6 +325,10 @@ public:
         return m_hidden;
     }
 
+    /// Parses a HTML body and returns a processed body and a list of tags respectively.
+    /// The returned body does not have the tags included and is cleaned up.
+    static QPair<QString, QList<QString>> parseContent(const QString &html);
+
 Q_SIGNALS:
     void spoilerTextChanged();
     void contentChanged();
@@ -350,6 +356,7 @@ private:
     QStringList m_mentions;
     QString m_language;
     QDateTime m_editedAt;
+    QVector<QString> m_standaloneTags;
 
     QString m_replyTargetId;
     QStringList m_filters;
