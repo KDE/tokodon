@@ -33,6 +33,7 @@ private Q_SLOTS:
         account->registerGet(url, new TestReply(QStringLiteral("rules.json"), account));
 
         RulesModel rulesModel;
+        rulesModel.setAccount(account);
         QCOMPARE(rulesModel.rowCount({}), 6);
         QCOMPARE(rulesModel.data(rulesModel.index(0, 0), RulesModel::IdRole).toInt(), 1);
         QCOMPARE(rulesModel.data(rulesModel.index(0, 0), RulesModel::TextRole).toString(),
