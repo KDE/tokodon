@@ -321,6 +321,7 @@ target_link_libraries(tokodon_static
         Qt::WebView
         KF6::I18n
         KF6::Kirigami2
+        KF6::KirigamiPlatform
         KF6::Notifications
         KF6::ConfigCore
         KF6::ConfigGui
