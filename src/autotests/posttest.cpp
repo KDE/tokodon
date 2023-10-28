@@ -36,6 +36,7 @@ private Q_SLOTS:
         QCOMPARE(post.contentType(), QString());
         QCOMPARE(post.sensitive(), false);
         QCOMPARE(post.visibility(), Post::Visibility::Public);
+        QCOMPARE(post.wasEdited(), false);
 
         QCOMPARE(post.authorIdentity()->displayName(), QStringLiteral("Eugen :kde:"));
         QCOMPARE(post.authorIdentity()->displayNameHtml(), QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));
@@ -52,6 +53,7 @@ private Q_SLOTS:
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
         Post post(&account, doc.object());
 
+        QCOMPARE(post.wasEdited(), true);
         QVERIFY(post.poll());
         const auto poll = post.poll();
         QCOMPARE(poll->id(), QStringLiteral("34830"));

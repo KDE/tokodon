@@ -207,6 +207,8 @@ class Post : public QObject
     Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
     Q_PROPERTY(QString type READ type CONSTANT)
+    Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
+    Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
 
 public:
     Post() = delete;
@@ -270,6 +272,12 @@ public:
 
     // Returns absolute locale-aware time
     QString absoluteTime() const;
+
+    /// Returns the time this post was last edited
+    QString editedAt() const;
+
+    /// Returns if the post was edited at all
+    bool wasEdited() const;
 
     /// Returns whether the user favorited this status.
     bool favourited() const;
@@ -343,6 +351,7 @@ private:
     QString m_content_type;
     QStringList m_mentions;
     QString m_language;
+    QDateTime m_editedAt;
 
     QString m_replyTargetId;
     QStringList m_filters;

@@ -271,6 +271,10 @@ void Post::fromJson(QJsonObject obj)
 
     m_publishedAt = QDateTime::fromString(obj["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 
+    if (!obj["edited_at"_L1].isNull()) {
+        m_editedAt = QDateTime::fromString(obj["edited_at"_L1].toString(), Qt::ISODate).toLocalTime();
+    }
+
     m_attachments.clear();
     addAttachments(obj["media_attachments"_L1].toArray());
     const QJsonArray mentions = obj["mentions"_L1].toArray();
@@ -399,6 +403,16 @@ QString Post::relativeTime() const
 QString Post::absoluteTime() const
 {
     return QLocale::system().toString(publishedAt(), QLocale::LongFormat);
+}
+
+QString Post::editedAt() const
+{
+    return QLocale::system().toString(m_editedAt, QLocale::ShortFormat);
+}
+
+bool Post::wasEdited() const
+{
+    return m_editedAt.isValid();
 }
 
 int Post::favouritesCount() const
