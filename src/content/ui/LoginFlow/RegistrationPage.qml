@@ -56,9 +56,6 @@ MastoPage {
                     } else if (key === "reason") {
                         targetItem = reasonField;
                         targetName = reasonField.label;
-                    } else if (key === "agreement") {
-                        targetItem = reasonField; // FormCheckDelegate lacks a status message
-                        targetName = i18n("Agreement");
                     }
 
                     let errorMessage = "";
@@ -129,25 +126,17 @@ MastoPage {
         FormCard.FormTextFieldDelegate {
             id: reasonField
             label: i18n("Reason")
-            onAccepted: agreementDelegate.forceActiveFocus()
         }
     }
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
 
-        FormCard.FormCheckDelegate {
-            id: agreementDelegate
-            text: i18n("I have read and agree to the server's rules, terms and policies.")
-        }
-
-        FormCard.FormDelegateSeparator {}
-
         FormCard.FormButtonDelegate {
             id: continueButton
             text: i18n("Register")
             onClicked: {
-                root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, agreementDelegate.checked, "en", reasonField.text);
+                root.account.registerAccount(usernameField.text, emailField.text, passwordField.text, true, "en", reasonField.text);
 
                 account.authenticated.connect(() => {
                     pageStack.layers.clear();

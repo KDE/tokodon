@@ -50,7 +50,7 @@ MastoPage {
 
         account.fetchedInstanceMetadata.disconnect(handleRegistration);
 
-        Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RegistrationPage"), {
+        Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "RulesPage"), {
             account: account,
         });
     }
