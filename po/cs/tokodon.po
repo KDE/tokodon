@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2023-08-09 12:43+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:275
@@ -396,13 +396,13 @@ msgstr "Upravit profil"
 msgid "Account editor"
 msgstr "Editor účtů"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Nastavit"
@@ -562,7 +562,7 @@ msgstr "Žádné konverzace"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2362,83 +2362,82 @@ msgstr "O aplikaci Tokodon"
 msgid "About KDE"
 msgstr "O prostředí KDE"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Povolit automatickou kontrolu pravopisu"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr ""
 
 # žádné parametry funkce v inspektoru funkcí
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "Nic"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Další jazyky pro kontrolu pravopisu"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "Výchozí jazyk"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Přidat slovo"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
@@ -2816,9 +2815,11 @@ msgid "Unpin on Profile"
 msgstr "Odepnout na profilu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Připnout na profilu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2995,13 +2996,13 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Přehrát"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Local Timeline"
@@ -3009,12 +3010,12 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Místní časová osa"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3227,32 +3228,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr ""
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "V budoucnosti"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -3260,7 +3261,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -3268,7 +3269,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3402,9 +3403,6 @@ msgstr "Cíl"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "Kopírovat odkaz na tento příspěvek"
-
-#~ msgid "Pin on profile"
-#~ msgstr "Připnout na profilu"
 
 #~ msgid "Switch user"
 #~ msgstr "Přepnout uživatele"

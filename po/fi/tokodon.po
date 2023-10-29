@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2023-09-20 18:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -366,7 +366,7 @@ msgstr "Piilota käyttäjän %1 tehostukset"
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
 #| msgid "Stop Hiding Boosts from %1"
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr "Lakkaa piilottamasta käyttäjän %1 tehostuksia"
 
 #: content/ui/AccountInfo.qml:275
@@ -410,13 +410,13 @@ msgstr "Muokkaa profiilia"
 msgid "Account editor"
 msgstr "Tilimuokkain"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Asetukset"
@@ -580,7 +580,7 @@ msgstr "Ei keskusteluja"
 msgid "Explore"
 msgstr "Selaa"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2445,42 +2445,42 @@ msgstr "Tietoa Tokodonista"
 msgid "About KDE"
 msgstr "Tietoa KDE:stä"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Käytä automaattista oikeinkirjoituksen tarkistusta"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Sivuuta suuraakkosin kirjoitetut sanat"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Sivuuta yhdysmerkin sisältävät sanat"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Tunnista kieli automaattisesti"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Valittu oletuskieli:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "Ei mitään"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Oikeinkirjoituksen tarkistuksen lisäkielet"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2489,40 +2489,39 @@ msgstr ""
 "%1 tarjoaa oikeinkirjoituksen tarkistuksen ja ehdotukset tässä luetelluille "
 "kielille käytettäessä automaattista tunnistusta."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Avaa henkilökohtainen sanasto"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Oikeinkirjoituksen tarkistuksen kielet"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "Oletuskieli"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Oikeinkirjoituksen tarkistuksen sanasto"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Lisää uusi sana henkilökohtaiseen sanastoosi…"
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Lisää sana"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button"
@@ -2911,9 +2910,11 @@ msgid "Unpin on Profile"
 msgstr "Irrota profiilista"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Kiinnitä profiiliin"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -3102,25 +3103,25 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Toista"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgid "Local Timeline"
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Paikallinen aikajana"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "Ei julkaisuja"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3332,46 +3333,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Nousussa"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "tulevaisuudessa"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1 s"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1 min"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1 t"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1 pv"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 viikko sitten"
 msgstr[1] "%1 viikkoa sitten"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 kuukausi sitten"
 msgstr[1] "%1 kuukautta sitten"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3517,9 +3518,6 @@ msgstr "Kohde"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "Kopioi linkki tähän julkaisuun"
-
-#~ msgid "Pin on profile"
-#~ msgstr "Kiinnitä profiiliin"
 
 #~ msgid "Pinned entry"
 #~ msgstr "Kiinnitetty kohde"

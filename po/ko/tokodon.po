@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2023-10-09 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -360,7 +360,7 @@ msgstr "%1 님의 부스트 숨기기"
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
 #| msgid "Stop Hiding Boosts from %1"
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr "%1 님의 부스트 숨기지 않기"
 
 #: content/ui/AccountInfo.qml:275
@@ -404,13 +404,13 @@ msgstr "프로필 편집"
 msgid "Account editor"
 msgstr "계정 편집기"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "설정"
@@ -565,7 +565,7 @@ msgstr "대화 없음"
 msgid "Explore"
 msgstr "탐색"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2373,42 +2373,42 @@ msgstr "Tokodon 정보"
 msgid "About KDE"
 msgstr "KDE 정보"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "자동 맞춤법 검사 사용"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "대문자 단어 무시"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "하이픈으로 연결된 단어 무시"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "자동으로 언어 감지"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "선택한 기본 언어:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "없음"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "추가 맞춤법 검사 언어"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2417,40 +2417,39 @@ msgstr ""
 "자동 감지를 활성화하면 %1에서 여기에 표시된 언어 감지와 맞춤법 검사를 제공합"
 "니다."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "개인 사전 열기"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "맞춤법 검사 언어"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "기본 언어"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "맞춤법 검사 사전"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "개인 사전에 단어 추가..."
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "단어 추가"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
@@ -2831,9 +2830,11 @@ msgid "Unpin on Profile"
 msgstr "프로필에서 고정 해제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "프로필에 고정"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -3005,25 +3006,25 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "재생"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "서버와 통신할 수 없음: %1. 설정을 확인하십시오."
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgid "Local Timeline"
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "로컬 타임라인"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "게시물 없음"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3234,44 +3235,44 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "트렌드"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "미래에"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1초"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1분"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1주 전"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1개월 전"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3416,9 +3417,6 @@ msgstr "대상"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "이 게시물 링크 복사"
-
-#~ msgid "Pin on profile"
-#~ msgstr "프로필에 고정"
 
 #~ msgid "Pinned entry"
 #~ msgstr "고정된 항목"

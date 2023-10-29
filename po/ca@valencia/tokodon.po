@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
-"PO-Revision-Date: 2023-10-21 10:59+0200\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
+"PO-Revision-Date: 2023-10-28 10:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -159,22 +159,19 @@ msgstr "Seguint"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Usuaris silenciats"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Bloquejat el"
+msgstr "Usuaris bloquejats"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Comptes destacats"
+msgstr "Usuaris destacats"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
@@ -203,28 +200,24 @@ msgid "No followers"
 msgstr "Sense seguidors"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Sense seguidors"
+msgstr "Sense usuaris seguits"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "No hi ha comptes silenciats"
+msgstr "Sense usuaris silenciats"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "No hi ha comptes bloquejats"
+msgstr "Sense usuaris bloquejats"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "No hi ha comptes destacats"
+msgstr "Sense usuaris destacats"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
@@ -326,16 +319,14 @@ msgid "Follows you"
 msgstr "Vos seguix"
 
 #: content/ui/AccountInfo.qml:208
-#, fuzzy, kde-format
-#| msgid "Follow Request"
+#, kde-format
 msgid "Follow Requested"
-msgstr "Sol·licitud de seguiment"
+msgstr "S'ha sol·licitat el seguiment"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Seguix"
+msgstr "Deixa de seguir"
 
 #: content/ui/AccountInfo.qml:213
 #, kde-format
@@ -343,16 +334,14 @@ msgid "Follow"
 msgstr "Seguix"
 
 #: content/ui/AccountInfo.qml:238
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Para notificar-me quan publique %1"
+msgstr "Para notificar-me quan publique %1."
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Notifica'm quan publique %1"
+msgstr "Notifica'm quan publique %1."
 
 #: content/ui/AccountInfo.qml:257
 #, kde-format
@@ -361,9 +350,9 @@ msgstr "Oculta els impulsos de %1"
 
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
-msgid "Show Boosts Boosts from %1"
-msgstr "Para l'ocultament dels impulsos de %1"
+#| msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
+msgstr "Mostra els impulsos de %1"
 
 #: content/ui/AccountInfo.qml:275
 #, kde-format
@@ -378,7 +367,7 @@ msgstr "Destaca en el perfil"
 #: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Trau el silenciament"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
@@ -386,10 +375,9 @@ msgid "Mute"
 msgstr "Silencia"
 
 #: content/ui/AccountInfo.qml:311
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Bloqueja"
+msgstr "Desbloqueja"
 
 #: content/ui/AccountInfo.qml:313
 #, kde-format
@@ -406,13 +394,13 @@ msgstr "Edita un perfil"
 msgid "Account editor"
 msgstr "Editor de comptes"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -425,19 +413,17 @@ msgstr "Sol·licituds de seguiment"
 #: content/ui/AccountInfo.qml:349
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Usuaris silenciats"
 
 #: content/ui/AccountInfo.qml:355
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Bloquejat el"
+msgstr "Usuaris bloquejats"
 
 #: content/ui/AccountInfo.qml:361
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Comptes destacats"
+msgstr "Usuaris destacats"
 
 #: content/ui/AccountInfo.qml:366
 #, kde-format
@@ -450,10 +436,9 @@ msgid "Post link copied."
 msgstr "S'ha copiat l'enllaç de la publicació."
 
 #: content/ui/AccountInfo.qml:454
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Nota"
+msgstr "Nota:"
 
 #: content/ui/AccountInfo.qml:462
 #, kde-format
@@ -514,9 +499,7 @@ msgid "Hide boosts"
 msgstr "Oculta els impulsos"
 
 #: content/ui/AccountInfo.qml:685
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Totes"
@@ -570,7 +553,7 @@ msgstr "Sense converses"
 msgid "Explore"
 msgstr "Explora"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2103,10 +2086,9 @@ msgid "No search results"
 msgstr "Busca sense cap resultat"
 
 #: content/ui/SearchView.qml:53
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Busca persones, etiquetes i publicacions"
+msgstr "Busca usuaris, etiquetes i publicacions"
 
 #: content/ui/SearchView.qml:145
 #, kde-format
@@ -2387,42 +2369,42 @@ msgstr "Quant a Tokodon"
 msgid "About KDE"
 msgstr "Quant a KDE"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Activa la verificació ortogràfica automàtica"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Ignora les paraules en majúscules"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Ignora les paraules amb guió"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Detecta automàticament l'idioma"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Idioma predeterminat seleccionat:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "Sense"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Idiomes addicionals de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2431,40 +2413,39 @@ msgstr ""
 "%1 proporcionarà la verificació ortogràfica i suggeriments per als idiomes "
 "llistats ací si s'ha activat la detecció automàtica."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Obri un diccionari personal"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Idiomes de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "Idioma predeterminat"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Diccionari de verificació ortogràfica"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Afig una paraula nova al vostre diccionari personal…"
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Afig una paraula"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
@@ -2787,12 +2768,10 @@ msgid "Video"
 msgstr "Vídeo"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Multimèdia"
+msgstr "Oculta els elements multimèdia"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
@@ -2805,11 +2784,10 @@ msgid "Link preview: %1"
 msgstr "Vista prèvia d'enllaç: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Expandix esta publicació"
+msgstr "Expandix la publicació"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
@@ -2820,33 +2798,33 @@ msgstr "Obri la pàgina original"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
-msgstr ""
+msgstr "Copia l'enllaç"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Elimina el punt"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Punt"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Deixa de fixar en el perfil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Unpin on Profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Deixa de fixar en el perfil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2874,11 +2852,10 @@ msgid "Show anyway"
 msgstr "Mostra igualment"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Visualitza la publicació"
+msgstr "Publicació fixada"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -3021,36 +2998,33 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Reproduïx"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració."
 
-#: content/ui/TimelinePage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#: content/ui/TimelinePage.qml:189
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Línia de temps local"
+msgstr "Final de la línia de temps"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "Sense publicacions"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Torna a dalt"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Edita el compte"
+msgstr "Canvia el compte"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3195,10 +3169,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar l'última notificació."
 
 #: search/searchmodel.cpp:139
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Usuari"
+msgstr "Usuaris"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3252,46 +3225,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Tendències"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "En el futur"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Fa 1 setmana"
 msgstr[1] "Fa %1 setmanes"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Fa 1 mes"
 msgstr[1] "Fa %1 mesos"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3402,73 +3375,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgctxt "@title"
-#~ msgid "Muted Accounts"
-#~ msgstr "Comptes silenciats"
-
-#~ msgctxt "@title"
-#~ msgid "Blocked Accounts"
-#~ msgstr "Comptes bloquejats"
-
-#~ msgid "No followed accounts"
-#~ msgstr "No hi ha comptes seguits"
-
-#~ msgid "Requested"
-#~ msgstr "Sol·licitat"
-
-#~ msgid "Following"
-#~ msgstr "Seguint"
-
-#~ msgid "Stop Muting"
-#~ msgstr "Para el silenci"
-
-#~ msgid "Stop Blocking"
-#~ msgstr "Para el bloqueig"
-
-#~ msgid "Muted Accounts"
-#~ msgstr "Comptes silenciats"
-
-#~ msgid "Blocked Accounts"
-#~ msgstr "Comptes bloquejats"
-
-#~ msgid "View profile"
-#~ msgstr "Visualitza el perfil"
-
-#~ msgid "Copy Link to This Post"
-#~ msgstr "Copia l'enllaç cap a esta publicació"
-
-#~ msgid "Pin on profile"
-#~ msgstr "Fixa en el perfil"
-
-#~ msgid "Pinned entry"
-#~ msgstr "Entrada fixada"
-
-#~ msgid "Switch user"
-#~ msgstr "Canvia d'usuari"
-
-#~ msgid "People"
-#~ msgstr "Persones"
-
-#~ msgctxt "@title:window"
-#~ msgid "Debug"
-#~ msgstr "Depuració"
-
-#~ msgctxt "@title:group"
-#~ msgid "Notifications"
-#~ msgstr "Notificacions"
-
-#~ msgid "Mention"
-#~ msgstr "Menció"
-
-#~ msgid "Favorite"
-#~ msgstr "Preferit"
-
-#~ msgid "Status"
-#~ msgstr "Estat"
-
-#~ msgid "Update/Edit"
-#~ msgstr "Actualitza/Edita"
-
-#~ msgid "Poll"
-#~ msgstr "Votació"

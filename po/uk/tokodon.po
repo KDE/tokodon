@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
-"PO-Revision-Date: 2023-10-21 21:31+0300\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
+"PO-Revision-Date: 2023-10-28 13:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -158,22 +158,19 @@ msgstr "Стежить"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Позбавлені голосу користувачі"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Заблоковано"
+msgstr "Заблоковані користувачі"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Особливі записи"
+msgstr "Особливі користувачі"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
@@ -206,28 +203,24 @@ msgid "No followers"
 msgstr "Немає тих, хто стежить"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Немає тих, хто стежить"
+msgstr "Немає користувачів, за якими ведеться стеження"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Записи з голосом"
+msgstr "Немає позбавлених голосу користувачів"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "Незаблоковані записи"
+msgstr "Немає заблокованих користувачів"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Неособливі записи"
+msgstr "Немає особливих користувачів"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
@@ -327,16 +320,14 @@ msgid "Follows you"
 msgstr "Стежить за вами"
 
 #: content/ui/AccountInfo.qml:208
-#, fuzzy, kde-format
-#| msgid "Follow Request"
+#, kde-format
 msgid "Follow Requested"
-msgstr "Запит щодо стеження"
+msgstr "Надіслано запит щодо стеження"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Стежити"
+msgstr "Зняти слідкування"
 
 #: content/ui/AccountInfo.qml:213
 #, kde-format
@@ -344,16 +335,14 @@ msgid "Follow"
 msgstr "Стежити"
 
 #: content/ui/AccountInfo.qml:238
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Припинити сповіщення про дописи %1"
+msgstr "Припинити сповіщення про дописи %1."
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Сповіщати про дописи %1"
+msgstr "Сповіщати про дописи %1."
 
 #: content/ui/AccountInfo.qml:257
 #, kde-format
@@ -362,9 +351,9 @@ msgstr "Приховати підсилення від %1"
 
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
-msgid "Show Boosts Boosts from %1"
-msgstr "Припинити приховувати підсилення від %1"
+#| msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
+msgstr "Показати підсилення від %1"
 
 #: content/ui/AccountInfo.qml:275
 #, kde-format
@@ -379,7 +368,7 @@ msgstr "Рекомендувати профіль"
 #: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Дозволити повідомлення"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
@@ -387,10 +376,9 @@ msgid "Mute"
 msgstr "Заборонити повідомлення"
 
 #: content/ui/AccountInfo.qml:311
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Заблокувати"
+msgstr "Розблокувати"
 
 #: content/ui/AccountInfo.qml:313
 #, kde-format
@@ -407,13 +395,13 @@ msgstr "Змінити профіль"
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
@@ -426,19 +414,17 @@ msgstr "Запити щодо стеження"
 #: content/ui/AccountInfo.qml:349
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Позбавлені голосу користувачі"
 
 #: content/ui/AccountInfo.qml:355
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Заблоковано"
+msgstr "Заблоковані користувачі"
 
 #: content/ui/AccountInfo.qml:361
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Особливі записи"
+msgstr "Особливі користувачі"
 
 #: content/ui/AccountInfo.qml:366
 #, kde-format
@@ -451,10 +437,9 @@ msgid "Post link copied."
 msgstr "Посилання на допис скопійовано."
 
 #: content/ui/AccountInfo.qml:454
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Нотатка"
+msgstr "Примітка:"
 
 #: content/ui/AccountInfo.qml:462
 #, kde-format
@@ -521,9 +506,7 @@ msgid "Hide boosts"
 msgstr "Приховати підсилення"
 
 #: content/ui/AccountInfo.qml:685
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Усі"
@@ -577,7 +560,7 @@ msgstr "Немає спілкувань"
 msgid "Explore"
 msgstr "Ознайомлення"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2111,10 +2094,9 @@ msgid "No search results"
 msgstr "Нічого не знайдено"
 
 #: content/ui/SearchView.qml:53
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Шукати людей, мітки та дописи"
+msgstr "Шукати користувачів, мітки та дописи"
 
 #: content/ui/SearchView.qml:145
 #, kde-format
@@ -2397,42 +2379,42 @@ msgstr "Про Tokodon"
 msgid "About KDE"
 msgstr "Про KDE"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Увімкнути автоматичну перевірку правопису"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Ігнорувати слова великими літерами"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Ігнорувати слова з дефісами"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Визначати мову автоматично"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Вибрана типова мова:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "Немає"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Додаткові мови перевірки правопису"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2441,40 +2423,39 @@ msgstr ""
 "Якщо буде увімкнено автоматичне визначення мови, %1 надаватиме послуги "
 "перевірки правопису та пропозиції для мов з цього списку."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Відкрити особистий словник"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Мови перевірки правопису"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "Типова мова"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Словник для перевірки правопису"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Додати нове слово до вашого особистого словника."
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Додати слово"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
@@ -2797,12 +2778,10 @@ msgid "Video"
 msgstr "Відео"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Мультимедіа"
+msgstr "Приховати мультимедіа"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
@@ -2815,11 +2794,10 @@ msgid "Link preview: %1"
 msgstr "Перегляд посилань: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Розгорнути цей допис"
+msgstr "Розгорнути допис"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
@@ -2827,37 +2805,35 @@ msgid "Open Original Page"
 msgstr "Відкрити початкову сторінку"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Вилучити закладку"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
-msgstr "Закладка"
+msgstr "Створити закладку"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Відшпилити на профілі"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Пришпилити на профілі"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2885,11 +2861,10 @@ msgid "Show anyway"
 msgstr "Показувати попри це"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Переглянути допис"
+msgstr "Пришпилений допис"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -3038,7 +3013,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Відтворити"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -3046,29 +3021,27 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри."
 
-#: content/ui/TimelinePage.qml:188
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#: content/ui/TimelinePage.qml:189
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Місцевий розклад"
+msgstr "Кінець розкладу"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "Немає дописів"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Повернутися до початку"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Змінити обліковий запис"
+msgstr "Перемкнути обліковий запис"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3215,10 +3188,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
 
 #: search/searchmodel.cpp:139
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Користувач"
+msgstr "Користувачі"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3272,32 +3244,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Тренди"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "у майбутньому"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1с"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1хв"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1г"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1д"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -3306,7 +3278,7 @@ msgstr[1] "%1 тижні тому"
 msgstr[2] "%1 тижнів тому"
 msgstr[3] "1 тиждень тому"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -3315,7 +3287,7 @@ msgstr[1] "%1 місяці тому"
 msgstr[2] "%1 місяців тому"
 msgstr[3] "1 місяць тому"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3429,6 +3401,9 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
 
+#~ msgid "@action:inmenu"
+#~ msgstr "@action:inmenu"
+
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"
 #~ msgstr "Записи без голосу"
@@ -3463,9 +3438,6 @@ msgstr "Призначення"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "Копіювати посилання на цій допис"
-
-#~ msgid "Pin on profile"
-#~ msgstr "Пришпилити на профілі"
 
 #~ msgid "Pinned entry"
 #~ msgstr "Пришпилений запис"

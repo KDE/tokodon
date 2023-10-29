@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -380,7 +380,7 @@ msgstr "Fela endurbirtingar frá %1"
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
 #| msgid "Stop hiding boosts from %1"
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr "Hætta að fela endurbirtingar frá %1"
 
 #: content/ui/AccountInfo.qml:275
@@ -428,7 +428,7 @@ msgstr "Birta í forgrunni á notandasniði"
 msgid "Account editor"
 msgstr "Notandaaðgangar"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -436,7 +436,7 @@ msgid "Settings"
 msgstr "Stillingar"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -603,7 +603,7 @@ msgstr "Minnst á"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2499,43 +2499,43 @@ msgstr "Tokodon"
 msgid "About KDE"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Virkja sjálfvirka stafsetningaryfirferð"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Hunsa orð í hástöfum"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Hunsa skipt orð"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Greina tungumál sjálfvirkt"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Valið sjálfgefið tungumál:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Spell checking languages"
 msgid "Additional Spell Checking Languages"
 msgstr "Tungumál stafsetningaryfirferðar"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2544,36 +2544,35 @@ msgstr ""
 "%1 gefur kost á stafsetningaryfirferð og tillögum fyrir þau tungumál sem hér "
 "eru talin þegar sjálfvirk greining tungumáls er virk."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Opna einkaorðasafn"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, fuzzy, kde-format
 #| msgid "Spell checking languages"
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Tungumál stafsetningaryfirferðar"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, fuzzy, kde-format
 #| msgid "Selected default language:"
 msgid "Default Language"
 msgstr "Valið sjálfgefið tungumál:"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Stafsetningarorðasafn"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Bæta nýju orði við einkaorðasafn…"
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add word"
@@ -2581,7 +2580,7 @@ msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Bæta við orði"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button"
@@ -2973,9 +2972,11 @@ msgid "Unpin on Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Feature on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Birta í forgrunni á notandasniði"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -3166,25 +3167,25 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgid "Local Timeline"
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Staðvær tímalína"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3397,48 +3398,48 @@ msgctxt "@title"
 msgid "Trending"
 msgstr ""
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1s"
 msgstr "%1k"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1m"
 msgstr "%1k"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1k"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3599,11 +3600,6 @@ msgstr "Minnst á"
 #, fuzzy
 #~| msgid "Feature on profile"
 #~ msgid "View profile"
-#~ msgstr "Birta í forgrunni á notandasniði"
-
-#, fuzzy
-#~| msgid "Feature on profile"
-#~ msgid "Pin on profile"
 #~ msgstr "Birta í forgrunni á notandasniði"
 
 #~ msgid "Pinned entry"

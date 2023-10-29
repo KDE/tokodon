@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -375,7 +375,7 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:275
@@ -419,7 +419,7 @@ msgstr ""
 msgid "Account editor"
 msgstr "Fiókok"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -427,7 +427,7 @@ msgid "Settings"
 msgstr "Beállítások"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr ""
@@ -590,7 +590,7 @@ msgstr "Beállítások:"
 msgid "Explore"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2469,43 +2469,43 @@ msgstr "Tokodon"
 msgid "About KDE"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Automatikus helyesírás-ellenőrzés bekapcsolása"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Nagybetűs szavak kihagyása"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Kötőjeles szavak kihagyása"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Automatikus nyelvfelismerés"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Alapértelmezett nyelv:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Spell checking languages"
 msgid "Additional Spell Checking Languages"
 msgstr "Helyesírás-ellenőrzés nyelvei"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2514,36 +2514,35 @@ msgstr ""
 "A(z) %1 biztosítja a helyesírás-ellenőrzést és a javaslatokat az alábbi "
 "nyelvekhez, ha az automatikus felismerés be van kapcsolva."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Személyes szótár megnyitása"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, fuzzy, kde-format
 #| msgid "Spell checking languages"
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Helyesírás-ellenőrzés nyelvei"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, fuzzy, kde-format
 #| msgid "Selected default language:"
 msgid "Default Language"
 msgstr "Alapértelmezett nyelv:"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Helyesírás-ellenőrzési szótár"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Új szó hozzáadása a személyes szótárhoz…"
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Add word"
@@ -2551,7 +2550,7 @@ msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Szó hozzáadása"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button"
@@ -2941,7 +2940,8 @@ msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
-msgid "@action:inmenu"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
@@ -3131,25 +3131,25 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgid "Local Timeline"
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Helyi idővonal"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3362,48 +3362,48 @@ msgctxt "@title"
 msgid "Trending"
 msgstr ""
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1s"
 msgstr "%1 óra"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, fuzzy, kde-format
 #| msgid "%1h"
 msgid "%1m"
 msgstr "%1 óra"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1 óra"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1 nap"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

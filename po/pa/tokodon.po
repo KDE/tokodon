@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -361,7 +361,7 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
-msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:275
@@ -405,13 +405,13 @@ msgstr "ਪਰੋਫ਼ਾਈਲ ਸੋਧੋ"
 msgid "Account editor"
 msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "ਸੰਰਚਨਾ"
@@ -576,7 +576,7 @@ msgstr ""
 msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2490,82 +2490,81 @@ msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
 msgid "About KDE"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "ਚੁਣੀ ਗਈ ਮੂਲ ਭਾਸ਼ਾ:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "ਕੋਈ ਨਹੀਂ"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "ਮੂਲ ਭਾਸ਼ਾ"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr ""
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "ਸ਼ਬਦ ਜੋੜੋ"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button"
@@ -2956,9 +2955,11 @@ msgid "Unpin on Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -3149,13 +3150,13 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:188
+#: content/ui/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Local Timeline"
@@ -3163,12 +3164,12 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "ਲੋਕਲ ਸਮਾਂ-ਲਾਈਨ"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3380,32 +3381,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "ਰੁਝਾਨ"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "ਭਵਿੱਖ ਵਿੱਚ"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1ਸ"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1ਮਿੰ"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1ਘੰ"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1ਦਿ"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, fuzzy, kde-format
 #| msgid "1 week ago"
 msgid "1 week ago"
@@ -3413,7 +3414,7 @@ msgid_plural "%1 weeks ago"
 msgstr[0] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, fuzzy, kde-format
 #| msgid "1 month ago"
 msgid "1 month ago"
@@ -3421,7 +3422,7 @@ msgid_plural "%1 months ago"
 msgstr[0] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, fuzzy, kde-format
 #| msgid "1 year ago"
 msgid "1 year ago"
@@ -3573,11 +3574,6 @@ msgstr "ਟਿਕਾਣਾ"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
-
-#, fuzzy
-#~| msgid "View profile"
-#~ msgid "Pin on profile"
-#~ msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
 #~ msgid "Switch user"
 #~ msgstr "ਵਰਤੋਂਕਾਰ ਬਦਲੋ"

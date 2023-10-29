@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 01:45+0000\n"
-"PO-Revision-Date: 2023-10-22 14:51+0200\n"
+"POT-Creation-Date: 2023-10-29 01:38+0000\n"
+"PO-Revision-Date: 2023-10-28 07:50+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -160,23 +160,20 @@ msgstr "Jarraitzen"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Isilarazitako erabiltzaileak"
 
 # 2023-09-04 al. xalba. Egiaztatu itzulpena egokia den.
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Non oztopatua"
+msgstr "Oztopatutako erabiltzaileak"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Agertutako kontuak"
+msgstr "Nabarmendutako erabiltzaileak"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
@@ -205,28 +202,24 @@ msgid "No followers"
 msgstr "Jarraitzailerik ez"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Jarraitzailerik ez"
+msgstr "Ez dago jarraitutako erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Ez dago isilarazitako konturik"
+msgstr "Isilarazi gabeko erabiltzaileak"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "Ez dago oztopatutako konturik"
+msgstr "Ez dago oztopatutako erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Ez dago agertutako konturik"
+msgstr "Ez dago nabarmendutako erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
@@ -327,16 +320,14 @@ msgid "Follows you"
 msgstr "Jarraitzen zaitu"
 
 #: content/ui/AccountInfo.qml:208
-#, fuzzy, kde-format
-#| msgid "Follow Request"
+#, kde-format
 msgid "Follow Requested"
 msgstr "Jarraipen eskaera"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Jarraitu"
+msgstr " jarraitzeari utzi"
 
 #: content/ui/AccountInfo.qml:213
 #, kde-format
@@ -344,16 +335,14 @@ msgid "Follow"
 msgstr "Jarraitu"
 
 #: content/ui/AccountInfo.qml:238
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Ez niri jakinarazi %1(e)k posta bidaltzen duenean"
+msgstr "Utzi niri jakinarazteari, %1(e)k posta bidaltzen duenean"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Niri jakinarazi %1(e)k posta bidaltzen duenean"
+msgstr "Jakinarazi niri, %1(e)k posta bidaltzen duenean"
 
 #: content/ui/AccountInfo.qml:257
 #, kde-format
@@ -362,9 +351,9 @@ msgstr "Ezkutatu %1(e)ren bultzadak"
 
 #: content/ui/AccountInfo.qml:259
 #, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
-msgid "Show Boosts Boosts from %1"
-msgstr "Utzi %1(e)ren bultzadak ezkutatzeari"
+#| msgid "Show Boosts Boosts from %1"
+msgid "Show Boosts from %1"
+msgstr "Erakutsi %1(e)k bultzatutako bultzadak"
 
 #: content/ui/AccountInfo.qml:275
 #, kde-format
@@ -379,7 +368,7 @@ msgstr "Nabarmendu profilean"
 #: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Ozendu"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
@@ -387,10 +376,9 @@ msgid "Mute"
 msgstr "Isilarazi"
 
 #: content/ui/AccountInfo.qml:311
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Blokeatu"
+msgstr "Oztopoa kendu"
 
 #: content/ui/AccountInfo.qml:313
 #, kde-format
@@ -407,13 +395,13 @@ msgstr "Editatu profila"
 msgid "Account editor"
 msgstr "Kontu-editorea"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:46
+#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
 #: content/ui/AccountInfo.qml:338 content/ui/Main.qml:270
-#: content/ui/TimelinePage.qml:48
+#: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
@@ -426,20 +414,18 @@ msgstr "Jarraipen eskaera"
 #: content/ui/AccountInfo.qml:349
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Isilarazitako erabiltzaileak"
 
 # 2023-09-04 al. xalba. Egiaztatu itzulpena egokia den.
 #: content/ui/AccountInfo.qml:355
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Non oztopatua"
+msgstr "Oztopatutako erabiltzaileak"
 
 #: content/ui/AccountInfo.qml:361
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Nabarmendutako kontuak"
+msgstr "Nabarmendutako erabiltzaileak"
 
 #: content/ui/AccountInfo.qml:366
 #, kde-format
@@ -452,10 +438,9 @@ msgid "Post link copied."
 msgstr "Postako esteka kopiatu da."
 
 #: content/ui/AccountInfo.qml:454
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Oharra"
+msgstr "Oharra:"
 
 #: content/ui/AccountInfo.qml:462
 #, kde-format
@@ -516,9 +501,7 @@ msgid "Hide boosts"
 msgstr "Ezkutatu bultzadak"
 
 #: content/ui/AccountInfo.qml:685
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Guztiak"
@@ -572,7 +555,7 @@ msgstr "Elkarrizketarik ez"
 msgid "Explore"
 msgstr "Esploratu"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:63
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #: search/searchmodel.cpp:143
 #, kde-format
 msgid "Post"
@@ -2104,10 +2087,9 @@ msgid "No search results"
 msgstr "Ez dago bilaketaren emaitzarik"
 
 #: content/ui/SearchView.qml:53
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Bilatu jendea, etiketak eta postak"
+msgstr "Bilatu erabiltzaileak, etiketak eta postak"
 
 #: content/ui/SearchView.qml:145
 #, kde-format
@@ -2387,42 +2369,42 @@ msgstr "«Tokodon»i buruz"
 msgid "About KDE"
 msgstr "KDEri buruz"
 
-#: content/ui/Settings/SonnetPage.qml:30
+#: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
 msgid "Enable automatic spell checking"
 msgstr "Gaitu ortografia-azterketa automatikoa"
 
-#: content/ui/Settings/SonnetPage.qml:44
+#: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
 msgstr "Ezikusi hizki larriz dauden hitzak"
 
-#: content/ui/Settings/SonnetPage.qml:58
+#: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
 msgstr "Ez ikusi marratxo bidez zatitutako hitzak"
 
-#: content/ui/Settings/SonnetPage.qml:72
+#: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
 msgstr "Hizkuntza automatikoki antzeman"
 
-#: content/ui/Settings/SonnetPage.qml:85
+#: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
 msgstr "Hautatutako hizkuntza lehenetsia:"
 
-#: content/ui/Settings/SonnetPage.qml:86
+#: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
 msgstr "Bat ere ez"
 
-#: content/ui/Settings/SonnetPage.qml:107
+#: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
 msgid "Additional Spell Checking Languages"
 msgstr "Ortografia zuzentzeko hizkuntza gehigarriak"
 
-#: content/ui/Settings/SonnetPage.qml:108
+#: content/ui/Settings/SonnetPage.qml:109
 #, kde-format
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
@@ -2431,40 +2413,39 @@ msgstr ""
 "%1(e)k, hemen zerrendatutako hizkuntzetarako, ortografia-azterketa eta "
 "iradokizunak emango ditu, antzemate automatikoa gaituta dagoenean."
 
-#: content/ui/Settings/SonnetPage.qml:121
+#: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
 msgstr "Ireki hiztegi pertsonala"
 
-#: content/ui/Settings/SonnetPage.qml:133
+#: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Spell checking languages"
 msgstr "Ortografia-aztertzeko hizkuntzak"
 
-#: content/ui/Settings/SonnetPage.qml:143
-#: content/ui/Settings/SonnetPage.qml:153
+#: content/ui/Settings/SonnetPage.qml:146
 #, kde-format
 msgid "Default Language"
 msgstr "Hizkuntza lehenetsia"
 
-#: content/ui/Settings/SonnetPage.qml:164
+#: content/ui/Settings/SonnetPage.qml:158
 #, kde-format
 msgid "Spell checking dictionary"
 msgstr "Ortografia-aztertzeko hiztegia"
 
-#: content/ui/Settings/SonnetPage.qml:171
+#: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
 msgstr "Gehitu hitz berri bat zure hiztegi pertsonalera..."
 
-#: content/ui/Settings/SonnetPage.qml:174
+#: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
 msgstr "Gehitu hitza"
 
-#: content/ui/Settings/SonnetPage.qml:209
+#: content/ui/Settings/SonnetPage.qml:203
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
@@ -2787,12 +2768,10 @@ msgid "Video"
 msgstr "Bideoa"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Hedabideak"
+msgstr "Ezkutatu hedabideak"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
@@ -2805,11 +2784,10 @@ msgid "Link preview: %1"
 msgstr "Estekaren aurreikuspena: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Zabaldu posta hau"
+msgstr "Zabaldu posta"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
@@ -2817,37 +2795,35 @@ msgid "Open Original Page"
 msgstr "Ireki jatorrizko orria"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopiatu esteka"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Kendu laster-marka"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Laster-marka"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr "Iltzagetu profilean"
+msgstr "Profilean iltzea kendu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgid "@action:inmenu"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Iltzatu profilean"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2875,11 +2851,10 @@ msgid "Show anyway"
 msgstr "Erakutsi dena den"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Ikusi posta"
+msgstr "Iltzatutako posta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -3022,7 +2997,7 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Jo"
 
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -3030,30 +3005,27 @@ msgstr ""
 "Zerbitzariarekin kontaktatzea huts egin du: %1. Mesedez, egiaztatu zure "
 "ezarpenak."
 
-#: content/ui/TimelinePage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#: content/ui/TimelinePage.qml:189
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Tokiko denbora-lerroa"
+msgstr "denbora-lerroaren bukaera"
 
-#: content/ui/TimelinePage.qml:215
+#: content/ui/TimelinePage.qml:216
 #, kde-format
 msgid "No posts"
 msgstr "Postarik ez"
 
-#: content/ui/TimelinePage.qml:221
+#: content/ui/TimelinePage.qml:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Itzuli goraino"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Editatu kontua"
+msgstr "Aldatu kontua"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3198,10 +3170,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Errorea gertatu da jakinarazpen berriena eskuratzean."
 
 #: search/searchmodel.cpp:139
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Erabiltzailea"
+msgstr "Erabiltzaileak"
 
 #: search/searchmodel.cpp:141
 #, kde-format
@@ -3255,46 +3226,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Joera"
 
-#: timeline/post.cpp:376
+#: timeline/post.cpp:380
 #, kde-format
 msgid "in the future"
 msgstr "etorkizunean"
 
-#: timeline/post.cpp:378
+#: timeline/post.cpp:382
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:380
+#: timeline/post.cpp:384
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:386
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:388
 #, kde-format
 msgid "%1d"
 msgstr "%1e"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:392
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Duela astebete"
 msgstr[1] "Duela %1 aste"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:395
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Duela hilabete"
 msgstr[1] "Duela %1 hilabete"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:399
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3406,6 +3377,9 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
 
+#~ msgid "@action:inmenu"
+#~ msgstr "@ekintza:menuan"
+
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"
 #~ msgstr "Isilarazitako kontuak"
@@ -3440,9 +3414,6 @@ msgstr "Helburua"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "Kopiatu posta honetarako esteka"
-
-#~ msgid "Pin on profile"
-#~ msgstr "Iltzatu profilean"
 
 #~ msgid "Pinned entry"
 #~ msgstr "Iltzatutako sarrera"
