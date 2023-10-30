@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-29 01:38+0000\n"
-"PO-Revision-Date: 2023-10-22 06:45+0200\n"
+"PO-Revision-Date: 2023-10-29 03:50+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -158,22 +158,19 @@ msgstr "მიყვებით"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "დადუმებული მომხმარებლები"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "დაბლოკვის დრო"
+msgstr "დაბლოკილი მომხმარებლები"
 
 #: account/socialgraphmodel.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "მიმაგრებული ანგარიშები"
+msgstr "მიმაგრებული მომხმარებლები"
 
 #: account/socialgraphmodel.cpp:44
 #, kde-format
@@ -202,28 +199,24 @@ msgid "No followers"
 msgstr "მიმდევრების გარეშე"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
 msgstr "მიმდევრების გარეშე"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "დადუმებული ანგარიშების გარეშე"
+msgstr "დადუმებული მომხმარებლების გარეშე"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "დაბლოკილი ანგარიშების გარეშე"
+msgstr "დაბლოკილი მომხმარებლების გარეშე"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "მიმაგრებული ანგარიშების გარეშე"
+msgstr "მიმაგრებული მომხმარებლების გარეშე"
 
 #: account/socialgraphmodel.cpp:66
 #, kde-format
@@ -323,16 +316,14 @@ msgid "Follows you"
 msgstr "მოგყვებათ"
 
 #: content/ui/AccountInfo.qml:208
-#, fuzzy, kde-format
-#| msgid "Follow Request"
+#, kde-format
 msgid "Follow Requested"
-msgstr "მოთხოვნების მიყოლა"
+msgstr "მიყოლა მოთხოვნილია"
 
 #: content/ui/AccountInfo.qml:211
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "გამოწერა"
+msgstr "გამოწერის გაუქმება"
 
 #: content/ui/AccountInfo.qml:213
 #, kde-format
@@ -340,16 +331,14 @@ msgid "Follow"
 msgstr "გამოწერა"
 
 #: content/ui/AccountInfo.qml:238
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "%1-ის პოსტების შესახებ გაფრთხილებების შეწყვეტა"
+msgstr "%1-ის პოსტების შესახებ გაფრთხილებების შეწყვეტა."
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "შემატყობინე %1-ის პოსტების შესახებ"
+msgstr "შემატყობინე %1-ის პოსტების შესახებ."
 
 #: content/ui/AccountInfo.qml:257
 #, kde-format
@@ -357,10 +346,9 @@ msgid "Hide Boosts from %1"
 msgstr "%1-დან აწევების დამალვა"
 
 #: content/ui/AccountInfo.qml:259
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "%1-დან აწევების დამალვის შეწყვეტა"
+msgstr "%1-დან აწევების ჩვენება"
 
 #: content/ui/AccountInfo.qml:275
 #, kde-format
@@ -375,7 +363,7 @@ msgstr "პროფილზე ჩვენება"
 #: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "დადუმების გამორთვა"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
@@ -383,10 +371,9 @@ msgid "Mute"
 msgstr "დადუმება"
 
 #: content/ui/AccountInfo.qml:311
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "დაბლოკვა"
+msgstr "განბლოკვა"
 
 #: content/ui/AccountInfo.qml:313
 #, kde-format
@@ -422,19 +409,17 @@ msgstr "მოთხოვნების მიყოლა"
 #: content/ui/AccountInfo.qml:349
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "დადუმებული მომხმარებლები"
 
 #: content/ui/AccountInfo.qml:355
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "დაბლოკვის დრო"
+msgstr "დაბლოკილი მომხმარებლები"
 
 #: content/ui/AccountInfo.qml:361
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "მიმაგრებული ანგარიშები"
+msgstr "მიმაგრებული მომხმარებლები"
 
 #: content/ui/AccountInfo.qml:366
 #, kde-format
@@ -447,10 +432,9 @@ msgid "Post link copied."
 msgstr "პოსტის ბმული დაკოპირდა."
 
 #: content/ui/AccountInfo.qml:454
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "შენიშვნა"
+msgstr "შენიშვნა:"
 
 #: content/ui/AccountInfo.qml:462
 #, kde-format
@@ -511,9 +495,7 @@ msgid "Hide boosts"
 msgstr "აწევების დამალვა"
 
 #: content/ui/AccountInfo.qml:685
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "ყველა"
@@ -2094,8 +2076,7 @@ msgid "No search results"
 msgstr "ძებნის შედეგების გარეშე"
 
 #: content/ui/SearchView.qml:53
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
 msgstr "მოძებნეთ ხალხი, ჭდეები და პოსტები"
 
@@ -2775,12 +2756,10 @@ msgid "Video"
 msgstr "ვიდეო"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "მედია"
+msgstr "მედიის დამალვა"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
@@ -2793,11 +2772,10 @@ msgid "Link preview: %1"
 msgstr "ბმულის მინიატურა: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "ამ პოსტის გაფართოება"
+msgstr "პოსტის გაფართოება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
@@ -2805,36 +2783,31 @@ msgid "Open Original Page"
 msgstr "თავდაპირველი გვერდის გახსნა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
-msgstr "Ბმულის კოპირება"
+msgstr "ბმულის კოპირება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr "სანიშნეს წაშლა"
+msgstr "სანიშნის წაშლა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "სანიშნე"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "პროფილიდან მოხსნა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "პროფილზე მიმაგრება"
@@ -2865,11 +2838,10 @@ msgid "Show anyway"
 msgstr "მაინც ჩვენება"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:153
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "პოსტის ნახვა"
+msgstr "მიმაგრებული პოსტი"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:244
 #, kde-format
@@ -2933,7 +2905,7 @@ msgstr "რჩეული"
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
 msgid "Remove bookmark"
-msgstr "სანიშნეს წაშლა"
+msgstr "სანიშნის წაშლა"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:418
 #, kde-format
@@ -3019,11 +2991,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პარამეტრები."
 
 #: content/ui/TimelinePage.qml:189
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "ლოკალური დროის ხაზი"
+msgstr "დროის ხაზის ბოლო"
 
 #: content/ui/TimelinePage.qml:216
 #, kde-format
@@ -3034,13 +3005,12 @@ msgstr "პოსტების გარეშე"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "ზემოთ დაბრუნება"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "ანგარიშის ჩასწორება"
+msgstr "ანგარიშის გადართვა"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3185,10 +3155,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "შეცდომა უახლესი შეტყობინების გამოთხოვისას."
 
 #: search/searchmodel.cpp:139
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "მომხმარებელი"
+msgstr "მომხმარებლები"
 
 #: search/searchmodel.cpp:141
 #, kde-format
