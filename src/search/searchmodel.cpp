@@ -140,7 +140,7 @@ QString SearchModel::labelForType(ResultType sectionType)
     case Hashtag:
         return i18n("Hashtags");
     case Status:
-        return i18n("Post");
+        return i18n("Posts");
     default:
         return {};
     }

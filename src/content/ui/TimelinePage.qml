@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
     actions: Kirigami.Action {
         id: postAction
         icon.name: "list-add"
-        text: i18n("Post")
+        text: i18n("@action:button", "Post")
         enabled: AccountManager.hasAccounts
         onTriggered: Navigation.openStatusComposer()
     }
