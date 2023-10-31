@@ -52,7 +52,7 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
-    LD_LIBRARY_PATH: $SNAP/lib:$SNAP/usr/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/ffmpeg-2204/current/usr/lib:$SNAP/kf5/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib:$SNAP/kf5/usr/lib/vala-current:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas"
+    LD_LIBRARY_PATH: $SNAP/lib:$SNAP/usr/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/ffmpeg-2204/current/usr/lib:$SNAP/kf5/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib:$SNAP/kf5/usr/lib/vala-current:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
 hooks:
     configure:
         plugs:
@@ -127,6 +127,7 @@ parts:
         - oxygen-sounds
         - kirigami-addons-data
         - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-delegates
         - qml-module-org-kde-kirigami-addons-labs-components
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
