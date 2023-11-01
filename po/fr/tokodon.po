@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-29 01:38+0000\n"
-"PO-Revision-Date: 2023-10-22 13:41+0200\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"PO-Revision-Date: 2023-10-30 20:20+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: account/abstractaccount.cpp:624
 #, kde-format
@@ -156,14 +156,13 @@ msgstr "Suivant"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Utilisateurs en mode muet"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Bloqué à"
+msgstr "Utilisateurs bloqués"
 
 #: account/socialgraphmodel.cpp:42
 #, fuzzy, kde-format
@@ -379,7 +378,7 @@ msgstr "Fonctionnalité sur un profil"
 #: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Remettre le son"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
@@ -387,10 +386,9 @@ msgid "Mute"
 msgstr "Mettre en pause"
 
 #: content/ui/AccountInfo.qml:311
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Bloquer"
+msgstr "Débloquer"
 
 #: content/ui/AccountInfo.qml:313
 #, kde-format
@@ -426,13 +424,12 @@ msgstr "Demandes de suivi"
 #: content/ui/AccountInfo.qml:349
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Utilisateurs en mode muet"
 
 #: content/ui/AccountInfo.qml:355
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Bloqué à"
+msgstr "Utilisateurs bloqués"
 
 #: content/ui/AccountInfo.qml:361
 #, fuzzy, kde-format
@@ -451,10 +448,9 @@ msgid "Post link copied."
 msgstr "Envoyer le lien copié."
 
 #: content/ui/AccountInfo.qml:454
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Remarques"
+msgstr "Remarques :"
 
 #: content/ui/AccountInfo.qml:462
 #, kde-format
@@ -517,9 +513,7 @@ msgid "Hide boosts"
 msgstr "Masquer les encouragements"
 
 #: content/ui/AccountInfo.qml:685
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Tout"
@@ -574,10 +568,9 @@ msgid "Explore"
 msgstr "Explorer"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
-#: search/searchmodel.cpp:143
 #, kde-format
-msgid "Post"
-msgstr "Message"
+msgid "@action:button"
+msgstr ""
 
 #: content/ui/ExplorePage.qml:47
 #, fuzzy, kde-format
@@ -2264,10 +2257,9 @@ msgid "Boosts"
 msgstr "Stimulations"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Aucun abonné(e)"
+msgstr "Nouveaux suiveurs"
 
 #: content/ui/Settings/NotificationsPage.qml:94
 #, fuzzy, kde-format
@@ -2806,12 +2798,10 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Média"
+msgstr "Masquer le média"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
@@ -2824,11 +2814,10 @@ msgid "Link preview: %1"
 msgstr "Aperçu du lien : %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Développer ce message"
+msgstr "Développer le message"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
@@ -2836,8 +2825,7 @@ msgid "Open Original Page"
 msgstr "Ouvrir une page originale"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copier un lien"
@@ -2850,8 +2838,7 @@ msgid "Remove Bookmark"
 msgstr "Supprimer un signet"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Signet"
@@ -3055,11 +3042,10 @@ msgstr ""
 "configuration."
 
 #: content/ui/TimelinePage.qml:189
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Chronologie locale"
+msgstr "Fin de la frise chronologique"
 
 #: content/ui/TimelinePage.qml:216
 #, kde-format
@@ -3070,7 +3056,7 @@ msgstr "Aucun message"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Revenir en haut"
 
 #: content/ui/UserInfo.qml:85
 #, fuzzy, kde-format
@@ -3222,15 +3208,21 @@ msgstr ""
 "Une erreur est survenue durant la rechercher de la dernière notification."
 
 #: search/searchmodel.cpp:139
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Utilisateur"
+msgstr "Utilisateurs"
 
 #: search/searchmodel.cpp:141
 #, kde-format
 msgid "Hashtags"
 msgstr "Hashtags"
+
+#: search/searchmodel.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgid "Posts"
+msgstr "Messages"
 
 #: timeline/accountmodel.cpp:40 timeline/maintimelinemodel.cpp:26
 #, kde-format
@@ -3429,6 +3421,9 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#~ msgid "Post"
+#~ msgstr "Message"
 
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"

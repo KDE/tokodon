@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-29 01:38+0000\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -590,10 +590,9 @@ msgid "Explore"
 msgstr "Explore"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
-#: search/searchmodel.cpp:143
 #, kde-format
-msgid "Post"
-msgstr "Post"
+msgid "@action:button"
+msgstr ""
 
 #: content/ui/ExplorePage.qml:47
 #, fuzzy, kde-format
@@ -3363,6 +3362,13 @@ msgstr "User"
 msgid "Hashtags"
 msgstr "Hashtags"
 
+#: search/searchmodel.cpp:143
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgid "Posts"
+msgstr "Posts"
+
 #: timeline/accountmodel.cpp:40 timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgid "Loading"
@@ -3566,6 +3572,9 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#~ msgid "Post"
+#~ msgstr "Post"
 
 #, fuzzy
 #~| msgid "Muted Accounts"
