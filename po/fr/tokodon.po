@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"POT-Creation-Date: 2023-11-02 01:39+0000\n"
 "PO-Revision-Date: 2023-10-30 20:20+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -568,9 +568,11 @@ msgid "Explore"
 msgstr "Explorer"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
-#, kde-format
-msgid "@action:button"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Post"
+msgctxt "@action:button"
+msgid "Post"
+msgstr "Message"
 
 #: content/ui/ExplorePage.qml:47
 #, fuzzy, kde-format
@@ -3421,9 +3423,6 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
-
-#~ msgid "Post"
-#~ msgstr "Message"
 
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"

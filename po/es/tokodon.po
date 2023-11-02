@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:40+0000\n"
-"PO-Revision-Date: 2023-10-29 09:50+0100\n"
+"POT-Creation-Date: 2023-11-02 01:39+0000\n"
+"PO-Revision-Date: 2023-11-01 22:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -552,9 +552,10 @@ msgstr "Explorar"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:64
 #, fuzzy, kde-format
-#| msgid "@action:inmenu"
-msgid "@action:button"
-msgstr "@action:inmenu"
+#| msgid "Post"
+msgctxt "@action:button"
+msgid "Post"
+msgstr "Publicar"
 
 #: content/ui/ExplorePage.qml:47
 #, kde-format
@@ -3171,9 +3172,7 @@ msgid "Hashtags"
 msgstr "Etiquetas"
 
 #: search/searchmodel.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "Publicaciones"
 
@@ -3375,8 +3374,9 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
 
-#~ msgid "Post"
-#~ msgstr "Publicar"
+#~| msgid "@action:inmenu"
+#~ msgid "@action:button"
+#~ msgstr "@action:button"
 
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"
