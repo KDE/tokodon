@@ -307,19 +307,20 @@ FormCard.FormCardPage {
 
         FormCard.FormDelegateSeparator {}
 
-        FormCard.AbstractFormDelegate {
-            contentItem: RowLayout {
-                QQC2.Label {
-                    Layout.fillWidth: true
+        FormCard.FormButtonDelegate {
+            text: i18nc("@label Account preferences", "Default post language")
+            description: Qt.locale(AccountManager.selectedAccount.preferences.defaultLanguage).nativeLanguageName
 
-                    text: i18nc("@label Account preferences", "Default post language")
-                }
-                LanguageSelector {
-                    id: languageSelect
+            onClicked: languageSelect.open()
 
-                    Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
-                    onActivated: AccountManager.selectedAccount.preferences.defaultLanguage = model.getCode(currentIndex)
+            LanguageSelector {
+                id: languageSelect
+
+                onAboutToShow: {
+                    const sourceIndex = listView.model.sourceModel.indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
+                    listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
                 }
+                onCodeSelected: code => AccountManager.selectedAccount.preferences.defaultLanguage = code
             }
         }
 

@@ -11,6 +11,7 @@
 class RawLanguageModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     enum CustomRoles { NameRole = Qt::UserRole + 1, CodeRole, PreferredRole };
@@ -22,26 +23,10 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE QString getCode(int index) const;
+    Q_INVOKABLE QModelIndex indexOfValue(const QString &code);
 
 private:
     QList<QLocale::Language> m_languages;
     QList<QString> m_iso639codes;
     QList<QString> m_preferredLanguages;
-};
-
-class LanguageModel : public QSortFilterProxyModel
-{
-    Q_OBJECT
-    QML_ELEMENT
-
-public:
-    explicit LanguageModel(QObject *parent = nullptr);
-
-    Q_INVOKABLE QString getCode(int index) const;
-
-protected:
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
-
-private:
-    RawLanguageModel *m_model = nullptr;
 };

@@ -345,15 +345,17 @@ Kirigami.ScrollablePage {
                             QQC2.ToolTip.text: i18n("Post Language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
+                            checkable: true
 
-                            onClicked: languageSelect.popup.open()
+                            onClicked: languageSelect.open()
                             LanguageSelector {
                                 id: languageSelect
 
-                                visible: false
-
-                                Component.onCompleted: currentIndex = indexOfValue(backend.language);
-                                onActivated: backend.language = model.getCode(currentIndex);
+                                onAboutToShow: {
+                                    const sourceIndex = listView.model.sourceModel.indexOfValue(backend.language);
+                                    listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
+                                }
+                                onCodeSelected: code => backend.language = code
                             }
                         }
                         QQC2.ToolButton {

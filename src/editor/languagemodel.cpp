@@ -15,7 +15,7 @@ RawLanguageModel::RawLanguageModel(QObject *parent)
     for (const auto &locale : locales) {
         if (!m_languages.contains(locale.language()) && locale != QLocale::c()) {
             m_languages.push_back(locale.language());
-            m_iso639codes.push_back(locale.name().split('_'_L1).first());
+            m_iso639codes.push_back(QLocale::languageToCode(locale.language(), QLocale::ISO639));
         }
     }
 
@@ -29,8 +29,16 @@ RawLanguageModel::RawLanguageModel(QObject *parent)
 QVariant RawLanguageModel::data(const QModelIndex &index, int role) const
 {
     switch (role) {
-    case CustomRoles::NameRole:
-        return QLocale::languageToString(m_languages[index.row()]);
+    case CustomRoles::NameRole: {
+        // Use the native language name if it exists
+        if (const QString nativeName = QLocale(m_languages[index.row()]).nativeLanguageName(); !nativeName.isEmpty()) {
+            return nativeName;
+        } else if (const QString languageString = QLocale::languageToString(m_languages[index.row()]); !languageString.isEmpty()) {
+            return languageString;
+        } else {
+            return m_iso639codes[index.row()];
+        }
+    }
     case CustomRoles::CodeRole:
         return m_iso639codes[index.row()];
     case CustomRoles::PreferredRole:
@@ -57,27 +65,12 @@ QString RawLanguageModel::getCode(const int index) const
     return m_iso639codes[index];
 }
 
-LanguageModel::LanguageModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
+QModelIndex RawLanguageModel::indexOfValue(const QString &code)
 {
-    m_model = new RawLanguageModel(this);
-
-    setSourceModel(m_model);
-    sort(0, Qt::AscendingOrder);
-}
-
-bool LanguageModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
-{
-    const bool preferred = sourceModel()->data(left, RawLanguageModel::CustomRoles::PreferredRole).toBool();
-
-    if (preferred) {
-        return true;
+    const auto it = std::find(m_iso639codes.cbegin(), m_iso639codes.cend(), code);
+    if (it != m_iso639codes.cend()) {
+        return index(std::distance(m_iso639codes.cbegin(), it), 0);
     } else {
-        return QSortFilterProxyModel::lessThan(left, right);
+        return {};
     }
-}
-
-QString LanguageModel::getCode(const int row) const
-{
-    return m_model->getCode(mapToSource(index(row, 0)).row());
 }
