@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-02 01:39+0000\n"
-"PO-Revision-Date: 2023-10-30 20:20+0100\n"
+"PO-Revision-Date: 2023-11-01 15:09+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -176,7 +176,7 @@ msgstr "Comptes"
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "Favori %1"
+msgstr[0] "%1 signets"
 msgstr[1] "%1 favoris"
 
 #: account/socialgraphmodel.cpp:46
@@ -226,7 +226,7 @@ msgstr "Impossible de présenter un compte"
 #: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No users favourited this post"
-msgstr "Aucun utilisateur n'a mis ce message en favoris"
+msgstr "Aucun utilisateur n'a mis ce message en signet"
 
 #: account/socialgraphmodel.cpp:68
 #, fuzzy, kde-format
@@ -527,7 +527,7 @@ msgstr "Partager"
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr "Partager les médias sélectionnés"
+msgstr "Partager les média sélectionnés"
 
 #: content/ui/AnnouncementsPage.qml:18
 #, kde-format
@@ -787,7 +787,7 @@ msgstr "Raison"
 #: content/ui/LoginFlow/RegistrationPage.qml:141
 #, kde-format
 msgid "I have read and agree to the server's rules, terms and policies."
-msgstr "J’ai lu et j’accepte les règles, termes et politiques du serveur."
+msgstr "J'ai lu et j'accepte les règles, termes et politiques du serveur."
 
 #: content/ui/LoginFlow/RegistrationPage.qml:148
 #: content/ui/LoginFlow/WelcomePage.qml:45
@@ -895,7 +895,7 @@ msgstr "Conversation"
 #: content/ui/Main.qml:371
 #, kde-format
 msgid "Favourites"
-msgstr "Favoris"
+msgstr "Signets"
 
 #: content/ui/Main.qml:387
 #, kde-format
@@ -1600,7 +1600,7 @@ msgstr "Annuler"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Are you sure?"
-msgstr "Êtes-vous sûr ?"
+msgstr "Le voulez-vous vraiment ?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
@@ -2165,12 +2165,12 @@ msgstr "Afficher des aperçus de liens"
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
 msgid "Content font"
-msgstr "Fonte pour le contenu"
+msgstr "Police pour le contenu"
 
 #: content/ui/Settings/AppearancePage.qml:80
 #, kde-format
 msgid "Please choose a font"
-msgstr "Veuillez sélectionner une fonte"
+msgstr "Veuillez sélectionner une police"
 
 #: content/ui/Settings/AppearancePage.qml:91
 #, kde-format
@@ -2618,57 +2618,57 @@ msgstr ""
 #: content/ui/StatusComposer/StatusComposer.qml:252
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr "Image JPEG (* .jpg * .jpeg)"
+msgstr "Image JPEG (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr "Image PNG (* .png)"
+msgstr "Image PNG (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:254
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr "Image GIF (* .gif)"
+msgstr "Image GIF (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr "Image WebP (* .webp)"
+msgstr "Image WebP (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:256
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr "Image HEIC (*. heic)"
+msgstr "Image HEIC (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr "Image HEIF (* .Heif)"
+msgstr "Image HEIF (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:258
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr "Image AVIF (* .avif)"
+msgstr "Image AVIF (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:259
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr "Vidéo Webm (* .webm)"
+msgstr "Vidéo Webm (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:260
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr "Vidéo MPEG-4 (* .mp4)"
+msgstr "Vidéo MPEG-4 (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:261
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr "Vidéo M4V (* .m4v)"
+msgstr "Vidéo M4V (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr "Vidéo QuickTime (* .mov)"
+msgstr "Vidéo QuickTime (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:263
 #, kde-format
@@ -2808,7 +2808,7 @@ msgstr "Masquer le média"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgid "Media Hidden"
-msgstr "Media masqué"
+msgstr "Média masqué"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
 #, kde-format
@@ -3191,7 +3191,7 @@ msgstr "Un client pour le réseau social décentralisé : mastodon."
 #: main.cpp:119
 #, kde-format
 msgid "Supports web+ap: url scheme"
-msgstr "Prend en charge un thème « web+ap: url »"
+msgstr "Prend en charge un thème « web+ap: URL »"
 
 #: main.cpp:121
 #, kde-format
@@ -3265,7 +3265,7 @@ msgstr "Signets"
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr "Favoris"
+msgstr "Signets"
 
 #: timeline/maintimelinemodel.cpp:41
 #, kde-format
