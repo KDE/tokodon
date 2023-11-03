@@ -98,6 +98,7 @@ pkg_check_modules(MPV REQUIRED mpv)
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)
+ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
