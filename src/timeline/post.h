@@ -158,8 +158,6 @@ private:
 class Notification
 {
     Q_GADGET
-    QML_ELEMENT
-    QML_UNCREATABLE("Use via model")
 
 public:
     Notification() = default;
