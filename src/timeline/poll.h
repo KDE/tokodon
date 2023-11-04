@@ -10,8 +10,6 @@
 class Poll
 {
     Q_GADGET
-    QML_ELEMENT
-    QML_UNCREATABLE("Access via Post")
 
     Q_PROPERTY(QString id READ id CONSTANT)
     Q_PROPERTY(QDateTime expiresAt READ expiresAt CONSTANT)
