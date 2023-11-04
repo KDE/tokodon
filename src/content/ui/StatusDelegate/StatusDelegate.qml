@@ -317,6 +317,17 @@ QQC2.ItemDelegate {
         }
 
         Loader {
+            sourceComponent: StatusPoll {
+                poll: root.poll
+            }
+
+            active: root.poll !== null && root.poll !== undefined
+            visible: active
+
+            Layout.fillWidth: true
+        }
+
+        Loader {
             sourceComponent: AttachmentGrid {
                 expandedPost: root.expandedPost
                 attachments: root.post.attachments
