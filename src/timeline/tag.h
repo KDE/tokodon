@@ -30,8 +30,6 @@ private:
 class Tag
 {
     Q_GADGET
-    QML_ELEMENT
-    QML_UNCREATABLE("Access via TagsModel")
 
     Q_PROPERTY(QString name MEMBER m_name)
     Q_PROPERTY(QUrl url MEMBER m_url)
