@@ -22,19 +22,27 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     KNotification *knotification;
 
     const auto addViewPostAction = [this, &knotification, notification] {
-        knotification->setActions({i18n("View Post")});
-        connect(knotification, &KNotification::action1Activated, this, [=] {
+        auto viewPostAction = knotification->addAction(i18n("View Post"));
+        auto defaultAction = knotification->addDefaultAction(i18n("View Post"));
+
+        auto openPost = [=] {
             NetworkController::instance().openWebApLink(notification->post()->url().toString());
-        });
-        knotification->setDefaultAction(i18n("View Post"));
+        };
+
+        connect(viewPostAction, &KNotificationAction::activated, this, openPost);
+        connect(defaultAction, &KNotificationAction::activated, this, openPost);
     };
 
     const auto addViewUserAction = [this, &knotification, notification] {
-        knotification->setActions({i18n("View Profile")});
-        connect(knotification, &KNotification::action1Activated, this, [=] {
+        auto viewProfileActions = knotification->addAction(i18n("View Profile"));
+        auto defaultAction = knotification->addDefaultAction(i18n("View Profile"));
+
+        auto viewProfile = [=] {
             NetworkController::instance().openWebApLink(notification->identity()->url().toString());
-        });
-        knotification->setDefaultAction(i18n("View Profile"));
+        };
+
+        connect(viewProfileActions, &KNotificationAction::activated, this, viewProfile);
+        connect(defaultAction, &KNotificationAction::activated, this, viewProfile);
     };
 
     switch (notification->type()) {
