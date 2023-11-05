@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 16:52+0000\n"
+"POT-Creation-Date: 2023-11-05 01:08+0000\n"
 "PO-Revision-Date: 2023-11-02 10:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -63,12 +63,12 @@ msgstr "Profilu ni mogoče odvzeti izpostavljenost"
 msgid "Could not edit note about an account"
 msgstr "Ni bilo mogoče urediti opombe o računu"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
 #, kde-format
 msgid "View Post"
 msgstr "Poglej objavo"
 
-#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
@@ -76,45 +76,45 @@ msgstr "Poglej objavo"
 msgid "View Profile"
 msgstr "Poglej profil"
 
-#: account/notificationhandler.cpp:46
+#: account/notificationhandler.cpp:54
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 vas je omenil"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 je zapisal novo objavo"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:70
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 je ojačalo vašo objavo"
 
-#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
 
-#: account/notificationhandler.cpp:78
+#: account/notificationhandler.cpp:86
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 je zahteval, da vam sledi"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:94
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 je pohvalilo vašo objavo"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:102
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Glasovanje od %1 se je končalo"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:110
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 je uredila objavo"
@@ -2877,72 +2877,72 @@ msgstr "Prikaži manj"
 msgid "Show More"
 msgstr "Prikaži več"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:354
+#: content/ui/StatusDelegate/StatusDelegate.qml:365
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:377
+#: content/ui/StatusDelegate/StatusDelegate.qml:388
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:391
 #, kde-format
 msgid "Boosted"
 msgstr "Pospešeno"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:391
 #, kde-format
 msgid "Boost"
 msgstr "Pospeši"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:398
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:401
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Favourited"
 msgstr "Priljubljeno"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:401
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Favourite"
 msgstr "Priljubljen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#: content/ui/StatusDelegate/StatusDelegate.qml:429
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#: content/ui/StatusDelegate/StatusDelegate.qml:429
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "Bookmarked"
 msgstr "Zaznamčen"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:436
+#: content/ui/StatusDelegate/StatusDelegate.qml:447
 #, kde-format
 msgid "via %1"
 msgstr "prek %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:468
-#: content/ui/StatusDelegate/StatusDelegate.qml:469
+#: content/ui/StatusDelegate/StatusDelegate.qml:479
+#: content/ui/StatusDelegate/StatusDelegate.qml:480
 #, kde-format
 msgid "%1 Reply"
 msgid_plural "%1 Replies"
@@ -2951,8 +2951,8 @@ msgstr[1] "%1 Odgovora"
 msgstr[2] "%1 Odgovori"
 msgstr[3] "%1 Odgovorov"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:480
-#: content/ui/StatusDelegate/StatusDelegate.qml:481
+#: content/ui/StatusDelegate/StatusDelegate.qml:491
+#: content/ui/StatusDelegate/StatusDelegate.qml:492
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
@@ -2961,8 +2961,8 @@ msgstr[1] "%1 Priljubljena"
 msgstr[2] "%1 Priljubljeni"
 msgstr[3] "%1 Priljubljenih"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:499
-#: content/ui/StatusDelegate/StatusDelegate.qml:500
+#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:511
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"

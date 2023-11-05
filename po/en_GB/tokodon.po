@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 16:52+0000\n"
+"POT-Creation-Date: 2023-11-05 01:08+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -62,13 +62,13 @@ msgstr "Could not unfeature account"
 msgid "Could not edit note about an account"
 msgstr "Could not edit note about an account"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:29
+#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgid "View Post"
 msgstr "View profile"
 
-#: account/notificationhandler.cpp:33 account/notificationhandler.cpp:37
+#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:64
@@ -77,49 +77,49 @@ msgstr "View profile"
 msgid "View Profile"
 msgstr "View profile"
 
-#: account/notificationhandler.cpp:46
+#: account/notificationhandler.cpp:54
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgid "%1 mentioned you"
 msgstr "%1 followed you"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, fuzzy, kde-format
 #| msgid "Write a new post"
 msgid "%1 wrote a new post"
 msgstr "Write a new post"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:70
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 boosted your post"
 
-#: account/notificationhandler.cpp:70 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 followed you"
 
-#: account/notificationhandler.cpp:78
+#: account/notificationhandler.cpp:86
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgid "%1 requested to follow you"
 msgstr "%1 followed you"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:94
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 added your post as a favourite"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:102
 #, fuzzy, kde-format
 #| msgid "Your poll has ended"
 msgid "Poll by %1 has ended"
 msgstr "Your poll has ended"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:110
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 edited a post"
@@ -3047,33 +3047,33 @@ msgstr "Show Less"
 msgid "Show More"
 msgstr "Show More"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:354
+#: content/ui/StatusDelegate/StatusDelegate.qml:365
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Reply"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:377
+#: content/ui/StatusDelegate/StatusDelegate.qml:388
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:391
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosted"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:380
+#: content/ui/StatusDelegate/StatusDelegate.qml:391
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:398
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3081,47 +3081,47 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favourites"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:401
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourited"
 msgstr "Favourites"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:401
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourite"
 msgstr "Favourites"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#: content/ui/StatusDelegate/StatusDelegate.qml:429
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Remove bookmark"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:418
+#: content/ui/StatusDelegate/StatusDelegate.qml:429
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
 msgstr "Bookmark"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:421
+#: content/ui/StatusDelegate/StatusDelegate.qml:432
 #, kde-format
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:436
+#: content/ui/StatusDelegate/StatusDelegate.qml:447
 #, kde-format
 msgid "via %1"
 msgstr "via %1"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:468
-#: content/ui/StatusDelegate/StatusDelegate.qml:469
+#: content/ui/StatusDelegate/StatusDelegate.qml:479
+#: content/ui/StatusDelegate/StatusDelegate.qml:480
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -3130,8 +3130,8 @@ msgid_plural "%1 Replies"
 msgstr[0] "Reply"
 msgstr[1] "Reply"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:480
-#: content/ui/StatusDelegate/StatusDelegate.qml:481
+#: content/ui/StatusDelegate/StatusDelegate.qml:491
+#: content/ui/StatusDelegate/StatusDelegate.qml:492
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3140,8 +3140,8 @@ msgid_plural "%1 Favorites"
 msgstr[0] "Favourites"
 msgstr[1] "Favourites"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:499
-#: content/ui/StatusDelegate/StatusDelegate.qml:500
+#: content/ui/StatusDelegate/StatusDelegate.qml:510
+#: content/ui/StatusDelegate/StatusDelegate.qml:511
 #, fuzzy, kde-format
 #| msgid "%1 boosted"
 msgid "%1 Boost"
