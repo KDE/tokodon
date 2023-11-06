@@ -126,6 +126,7 @@ QQC2.ItemDelegate {
         maximumWidth: Kirigami.Units.gridUnit * 40
 
         RowLayout {
+            spacing: Kirigami.Units.largeSpacing
             visible: filtered
             Layout.fillWidth: true
             QQC2.Label {
@@ -141,6 +142,7 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
+            spacing: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
             visible: root.pinned && !root.filtered
@@ -234,6 +236,8 @@ QQC2.ItemDelegate {
                 Layout.fillWidth: true
                 visible: root.spoilerText.length !== 0
                 contentItem: RowLayout {
+                    spacing: 0
+
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
                         source: "data-warning"
