@@ -115,6 +115,7 @@ Kirigami.ScrollablePage {
             id: trendingPostsModelComponent
 
             StatusDelegate {
+                width: ListView.view.width
                 timelineModel: tagsView.model
                 loading: tagsView.model.loading
                 showSeparator: index !== tagsView.count - 1

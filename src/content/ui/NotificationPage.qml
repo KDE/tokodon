@@ -166,6 +166,7 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.Favorite
                 StatusDelegate {
+                    width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
                     loading: listview.model.loading
@@ -176,6 +177,7 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.Repeat
                 StatusDelegate {
+                    width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
                     loading: listview.model.loading
@@ -186,6 +188,7 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.Mention
                 StatusDelegate {
+                    width: ListView.view.width
                     timelineModel: notificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
@@ -199,6 +202,7 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.Update
                 StatusDelegate {
+                    width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
                     loading: listview.model.loading
@@ -209,6 +213,7 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.Poll
                 StatusDelegate {
+                    width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
                     loading: listview.model.loading
