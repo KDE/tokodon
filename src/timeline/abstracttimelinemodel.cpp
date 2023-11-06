@@ -44,6 +44,8 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {AuthorIdentityRole, QByteArrayLiteral("authorIdentity")},
         {PublishedAtRole, QByteArrayLiteral("publishedAt")},
         {VisibilityRole, QByteArrayLiteral("visibility")},
+        {WasEditedRole, QByteArrayLiteral("wasEdited")},
+        {EditedAtRole, QByteArrayLiteral("editedAt")},
         {SelectedRole, QByteArrayLiteral("selected")},
         {FiltersRole, QByteArrayLiteral("filters")},
         {RelativeTimeRole, QByteArrayLiteral("relativeTime")},
@@ -137,6 +139,10 @@ QVariant AbstractTimelineModel::postData(Post *post, int role) const
         return post->spoilerText();
     case VisibilityRole:
         return post->visibility();
+    case WasEditedRole:
+        return post->wasEdited();
+    case EditedAtRole:
+        return post->editedAt();
     case FiltersRole:
         return post->filters();
     case AttachmentsRole:
