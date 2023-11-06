@@ -13,6 +13,7 @@ import Qt.labs.qmlmodels 1.0
 
 import "../Components"
 
+// The attachment grid used in statuses, which is on a specialized grid layout
 QQC2.Control {
     id: root
 

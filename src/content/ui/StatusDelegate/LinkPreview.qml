@@ -8,6 +8,8 @@ import QtQuick.Layouts
 import org.kde.tokodon
 import Qt5Compat.GraphicalEffects
 
+// The visual "link preview box" when there's some data attached to a link
+// Such as the website page description and title
 QQC2.AbstractButton {
     id: root
 

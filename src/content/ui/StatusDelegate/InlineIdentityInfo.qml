@@ -10,6 +10,7 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import org.kde.tokodon
 import org.kde.tokodon.private
 
+// Used everywhere, is a component with an Avatar, some labels and such smashed together
 RowLayout {
     id: root
 

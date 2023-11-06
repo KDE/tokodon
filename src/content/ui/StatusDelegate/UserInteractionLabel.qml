@@ -11,6 +11,7 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import org.kde.tokodon
 import org.kde.tokodon.private
 
+// The label that sits above posts, e.g. "FooBar replied to" or "BarFoo boosted"
 RowLayout {
     id: root
 

@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 
+// A specialized button used for the "Favorite", "Boost", and etc buttons on a status
 QQC2.AbstractButton {
     id: control
 

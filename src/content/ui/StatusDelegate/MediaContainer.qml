@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Layouts
 
+// Wrapper component used for the attachment grid
 Item {
     id: root
 

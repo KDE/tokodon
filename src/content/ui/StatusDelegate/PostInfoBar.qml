@@ -11,6 +11,7 @@ import org.kde.tokodon.private
 import Qt5Compat.GraphicalEffects
 import Qt.labs.qmlmodels 1.0
 
+// This is the top part of the status that contains the author information, and some more actions
 InlineIdentityInfo {
     id: infoBar
 

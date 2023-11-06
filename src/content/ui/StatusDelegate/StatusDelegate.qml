@@ -11,6 +11,7 @@ import org.kde.tokodon.private
 
 import "../Notifications" as Notifications
 
+// This is main status delegate, however much of its contents are in their own subcomponents.
 QQC2.ItemDelegate {
     id: root
 

@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.tokodon.private
 
+// This is the main text content of a status
 QQC2.TextArea {
     id: root
 

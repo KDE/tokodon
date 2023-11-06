@@ -12,6 +12,7 @@ import Qt.labs.qmlmodels 1.0
 
 import QtQml 2.15
 
+// Media container dedicated for videos and gifs
 MediaContainer {
     id: root
 

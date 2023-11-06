@@ -4,6 +4,8 @@
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 
+// The line of tags that are considered "standalone" (e.g. are not embedded in a paragraph)
+// This usually sits below the media attachment
 Flow {
     id: root
 

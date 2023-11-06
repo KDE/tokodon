@@ -7,6 +7,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 
+// Polls inside of a status
 ColumnLayout {
     id: root
 
