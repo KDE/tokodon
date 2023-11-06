@@ -77,6 +77,7 @@ Kirigami.ApplicationWindow {
         }
 
         saveWindowGeometryConnections.enabled = true;
+        homeAction.checked = true;
     }
 
     Connections {
@@ -280,7 +281,6 @@ Kirigami.ApplicationWindow {
         icon.name: "go-home-large"
         text: i18n("Home")
         checkable: true
-        checked: true
         onTriggered: {
             pageStack.clear();
             pageStack.push(mainTimeline, {
