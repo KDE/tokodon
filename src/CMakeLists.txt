@@ -220,6 +220,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/StatusDelegate/MediaContainer.qml
         content/ui/StatusDelegate/OverflowMenu.qml
         content/ui/StatusDelegate/PostContent.qml
+        content/ui/StatusDelegate/PostInfoBar.qml
         content/ui/StatusDelegate/StandaloneTags.qml
         content/ui/StatusDelegate/StatusDelegate.qml
         content/ui/StatusDelegate/StatusPoll.qml

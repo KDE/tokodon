@@ -56,6 +56,8 @@ QQC2.ItemDelegate {
     required property int type
     required property var mentions
     required property int visibility
+    required property bool wasEdited
+    required property string editedAt
 
     required property var post
 
@@ -193,77 +195,33 @@ QQC2.ItemDelegate {
             visible: active
         }
 
-        InlineIdentityInfo {
-            identity: root.authorIdentity
-            secondary: root.secondary
-            visible: !filtered
+        PostInfoBar {
+            id: infoBar
 
-            InteractionButton {
-                Layout.alignment: Qt.AlignVCenter
-                iconName: switch(root.visibility) {
-                    case Post.Public:
-                        return "kstars_xplanet";
-                    case Post.Unlisted:
-                        return "unlock";
-                    case Post.Private:
-                        return "lock";
-                    case Post.Direct:
-                        return "mail-message";
-                    default:
-                        return "kstars_xplanet";
-                }
-                tooltip: switch(root.visibility) {
-                    case Post.Public:
-                        return i18n("Public");
-                    case Post.Unlisted:
-                        return i18n("Unlisted");
-                    case Post.Private:
-                        return i18n("Private");
-                    case Post.Direct:
-                        return i18n("Direct Message");
-                    default:
-                        return i18n("Public");
-                }
-                interactable: false
+            Layout.fillWidth: true
+
+            onMoreOpened: {
+                postMenu.active = true;
+                postMenu.item.popup()
             }
+        }
 
-            Kirigami.Heading {
-                id: heading
-                font.pixelSize: Config.defaultFont.pixelSize + 1
-                font.pointSize: -1
-                text: root.relativeTime
-                color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
-                Layout.alignment: Qt.AlignBaseline
-                elide: Text.ElideRight
-            }
+        Loader {
+            id: postMenu
 
-            InteractionButton {
-                Layout.alignment: Qt.AlignVCenter
-                Layout.preferredWidth: implicitHeight
-                iconName: 'overflow-menu'
-                tooltip: i18nc("Show more options", "More")
-                onClicked: {
-                    postMenu.active = true;
-                    postMenu.item.open()
-                }
-                Loader {
-                    id: postMenu
+            active: false
+            visible: active
 
-                    active: false
-                    visible: active
+            sourceComponent: OverflowMenu {
+                index: root.index
+                postId: root.id
+                url: root.url
+                bookmarked: root.bookmarked
+                isSelf: root.isSelf
+                expandedPost: root.expandedPost
+                pinned: root.pinned
 
-                    sourceComponent: OverflowMenu {
-                        index: root.index
-                        postId: root.id
-                        url: root.url
-                        bookmarked: root.bookmarked
-                        isSelf: root.isSelf
-                        expandedPost: root.expandedPost
-                        pinned: root.pinned
-
-                        onClosed: postMenu.active = false
-                    }
-                }
+                onClosed: postMenu.active = false
             }
         }
 
