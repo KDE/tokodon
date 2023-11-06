@@ -33,6 +33,8 @@
 
 #include "account/accountmanager.h"
 #include "accountconfig.h"
+#include "admin/emailinfo.h"
+#include "admin/ipinfo.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
@@ -137,6 +139,9 @@ int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("org.kde.tokodon.private", 1, 0, "Config", config);
     qmlRegisterUncreatableType<AccountConfig>("org.kde.tokodon.private", 1, 0, "AccountConfig", QStringLiteral("Use via Account.config"));
+    qmlRegisterUncreatableMetaObject(Notification::staticMetaObject, "org.kde.tokodon", 1, 0, "Notification", QStringLiteral("Only for enums"));
+    qmlRegisterUncreatableMetaObject(IpInfo::staticMetaObject, "org.kde.tokodon", 1, 0, "IpInfo", QStringLiteral("Only for enums"));
+    qmlRegisterUncreatableMetaObject(EmailInfo::staticMetaObject, "org.kde.tokodon", 1, 0, "EmailInfo", QStringLiteral("Only for enums"));
 
     QQmlApplicationEngine engine;
 #ifdef HAVE_KDBUSADDONS
