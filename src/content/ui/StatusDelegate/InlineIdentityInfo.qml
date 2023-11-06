@@ -58,16 +58,28 @@ RowLayout {
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight
             textFormat: Text.RichText
-            Layout.fillWidth: true
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: avatar.clicked()
+            }
         }
 
         QQC2.Label {
             font.pixelSize: Config.defaultFont.pixelSize + 1
-            Layout.fillWidth: true
             elide: Text.ElideRight
             color: Kirigami.Theme.disabledTextColor
             text: `@${root.identity.account}`
             verticalAlignment: Text.AlignTop
+
+            width: parent.width
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: avatar.clicked()
+            }
         }
         Kirigami.Heading {
             id: emailHeading
