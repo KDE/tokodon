@@ -168,6 +168,24 @@ QQC2.Control {
                                 closable: false
                                 visible: modelData.caption.length !== 0
                             }
+
+                            HoverHandler {
+                                id: hover
+                                acceptedDevices: PointerDevice.Stylus
+                            }
+
+                            TapHandler {
+                                acceptedButtons: Qt.RightButton
+                                onTapped: {
+                                    imageMenu.active = true;
+                                    imageMenu.item.attachment = modelData;
+                                    imageMenu.item.popup();
+                                }
+                            }
+
+                            QQC2.ToolTip.text: modelData.caption
+                            QQC2.ToolTip.visible: hover.hovered
+                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         }
                     }
                 }
@@ -357,6 +375,17 @@ QQC2.Control {
             root.userSensitivityChanged(false);
         } else {
             Navigation.openFullScreenImage(root.attachments, root.identity, 0);
+        }
+    }
+
+    Loader {
+        id: imageMenu
+
+        active: false
+        visible: active
+
+        sourceComponent: ImageMenu {
+            onClosed: postMenu.active = false
         }
     }
 }
