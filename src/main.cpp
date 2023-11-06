@@ -101,12 +101,12 @@ int main(int argc, char *argv[])
                     i18n("Maintainer"),
                     QStringLiteral("carl@carlschwan.eu"),
                     QStringLiteral("https://carlschwan.eu"),
-                    QStringLiteral("https://carlschwan.eu/avatar.png"));
+                    QUrl(QStringLiteral("https://carlschwan.eu/avatar.png")));
     about.addAuthor(i18n("Joshua Goins"),
                     i18n("Maintainer"),
                     QStringLiteral("josh@redstrate.com"),
                     QStringLiteral("https://redstrate.com/"),
-                    QStringLiteral("https://redstrate.com/rss-image.png"));
+                    QUrl(QStringLiteral("https://redstrate.com/rss-image.png")));
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
     about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=tokodon");
