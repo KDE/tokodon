@@ -202,7 +202,7 @@ QQC2.ItemDelegate {
 
             onMoreOpened: {
                 postMenu.active = true;
-                postMenu.item.popup()
+                postMenu.item.popup(infoBar)
             }
         }
 
@@ -220,6 +220,7 @@ QQC2.ItemDelegate {
                 isSelf: root.isSelf
                 expandedPost: root.expandedPost
                 pinned: root.pinned
+                modal: true
 
                 onClosed: postMenu.active = false
             }
