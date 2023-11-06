@@ -65,6 +65,8 @@ QQC2.Control {
     contentItem: GridLayout {
         id: attachmentGridLayout
         columns: Math.min(root.attachments.length, 2)
+        rowSpacing: Kirigami.Units.smallSpacing
+        columnSpacing: Kirigami.Units.smallSpacing
 
         Repeater {
             id: attachmentsRepeater
