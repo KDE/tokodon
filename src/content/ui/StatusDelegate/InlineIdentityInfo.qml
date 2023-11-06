@@ -20,8 +20,7 @@ RowLayout {
     property string ip
     readonly property alias avatar: avatar
 
-    Layout.fillWidth: true
-    spacing: Kirigami.Units.largeSpacing
+    spacing: Kirigami.Units.mediumSpacing
 
     signal clicked()
 
@@ -45,7 +44,6 @@ RowLayout {
         id: layout
 
         Layout.fillWidth: true
-        Layout.bottomMargin: Kirigami.Units.smallSpacing
 
         spacing: 0
         clip: true
