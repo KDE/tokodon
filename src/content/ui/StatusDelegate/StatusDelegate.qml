@@ -342,6 +342,12 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
         }
 
+        StandaloneTags {
+            standaloneTags: root.post.standaloneTags
+
+            Layout.fillWidth: true
+        }
+
         RowLayout {
             id: buttonLayout
 
