@@ -201,7 +201,7 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
     }
 
     auto media_ids = QJsonArray();
-    for (const auto &att : qAsConst(m_attachmentEditorModel->attachments())) {
+    for (const auto &att : std::as_const(m_attachmentEditorModel->attachments())) {
         media_ids.append(att->m_id);
     }
 
