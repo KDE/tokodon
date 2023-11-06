@@ -85,7 +85,6 @@ QQC2.ItemDelegate {
 
     highlighted: false
     hoverEnabled: false
-    width: ListView.view.width
 
     Kirigami.Theme.colorSet: root.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
     Kirigami.Theme.inherit: false

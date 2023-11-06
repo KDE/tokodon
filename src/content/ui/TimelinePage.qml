@@ -120,7 +120,7 @@ Kirigami.ScrollablePage {
             expandedPost: root.expandedPost
             showSeparator: index !== ListView.view.count - 1
             loading: listview.model.loading
-            Layout.fillWidth: true
+            width: ListView.view.width
 
             Connections {
                 target: listview
