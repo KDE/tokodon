@@ -303,6 +303,18 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
         }
 
+        Loader {
+            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+            visible: active && postContent.visible
+
+            Layout.fillWidth: true
+
+            sourceComponent: LinkPreview {
+                card: root.card
+                selected: root.selected
+            }
+        }
+
         StandaloneTags {
             standaloneTags: root.post.standaloneTags
 

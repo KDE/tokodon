@@ -14,6 +14,7 @@ QQC2.AbstractButton {
     id: root
 
     required property var card
+    required property bool selected
 
     Accessible.name: i18n("Link preview: %1", root.card ? root.card.title : '')
     Accessible.description: root.card ? root.card.providerName : ''
@@ -34,11 +35,11 @@ QQC2.AbstractButton {
         }
     }
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.colorSet: Kirigami.Theme.Button
     Kirigami.Theme.inherit: false
 
     background: Rectangle {
-        radius: Kirigami.Units.largeSpacing
+        radius: Kirigami.Units.mediumSpacing
         color: Kirigami.Theme.backgroundColor
         border {
             width: root.visualFocus ? 2 : 0
@@ -49,12 +50,13 @@ QQC2.AbstractButton {
     contentItem: RowLayout {
         spacing: 0
 
-        Rectangle {
-            id: logo
+        Image {
+            id: img
+            mipmap: true
+            smooth: true
+
             visible: root.card && root.card.image
-            color: Kirigami.Theme.backgroundColor
-            Kirigami.Theme.colorSet: Kirigami.Theme.Window
-            radius: Kirigami.Units.largeSpacing
+
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3
             Layout.maximumHeight: Kirigami.Units.gridUnit * 3
             Layout.minimumWidth: Kirigami.Units.gridUnit * 3
@@ -62,35 +64,23 @@ QQC2.AbstractButton {
             Layout.topMargin: 0
             Layout.bottomMargin: 0
             Layout.leftMargin: Kirigami.Units.smallSpacing
-            Image {
-                id: img
-                mipmap: true
-                smooth: true
-                sourceSize {
-                    width: logo.width
-                    height: logo.height
-                }
 
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
+            layer.enabled: true
+            layer.effect: OpacityMask {
+                maskSource: Item {
+                    width: img.width
+                    height: img.height
+                    Kirigami.ShadowedRectangle {
+                        anchors.centerIn: parent
+                        radius: Kirigami.Units.mediumSpacing
                         width: img.width
                         height: img.height
-                        Kirigami.ShadowedRectangle {
-                            anchors.centerIn: parent
-                            radius: Kirigami.Units.largeSpacing
-                            width: img.width
-                            height: img.height
-                        }
                     }
                 }
-
-                fillMode: Image.PreserveAspectCrop
-                anchors {
-                    fill: parent
-                }
-                source: root.card ? root.card.image : ''
             }
+
+            fillMode: Image.PreserveAspectCrop
+            source: root.card ? root.card.image : ''
         }
         ColumnLayout {
             Layout.fillWidth: true
