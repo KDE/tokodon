@@ -159,9 +159,9 @@ QQC2.Control {
                             Kirigami.Chip {
                                 anchors {
                                     top: parent.top
-                                    topMargin: Kirigami.Units.largeSpacing
+                                    topMargin: Kirigami.Units.smallSpacing
                                     right: parent.right
-                                    rightMargin: Kirigami.Units.largeSpacing
+                                    rightMargin: Kirigami.Units.smallSpacing
                                 }
 
                                 checked: false
@@ -246,9 +246,9 @@ QQC2.Control {
 
                             anchors {
                                 top: parent.top
-                                topMargin: Kirigami.Units.largeSpacing
+                                topMargin: Kirigami.Units.smallSpacing
                                 right: parent.right
-                                rightMargin: Kirigami.Units.largeSpacing
+                                rightMargin: Kirigami.Units.smallSpacing
                             }
 
                             Kirigami.Chip {
@@ -317,9 +317,9 @@ QQC2.Control {
 
                             anchors {
                                 top: parent.top
-                                topMargin: Kirigami.Units.largeSpacing
+                                topMargin: Kirigami.Units.smallSpacing
                                 right: parent.right
-                                rightMargin: Kirigami.Units.largeSpacing
+                                rightMargin: Kirigami.Units.smallSpacing
                             }
 
                             Kirigami.Chip {
