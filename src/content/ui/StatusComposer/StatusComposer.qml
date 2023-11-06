@@ -88,6 +88,24 @@ Kirigami.ScrollablePage {
         textArea.forceActiveFocus()
     }
 
+    Kirigami.PromptDialog {
+        id: discardDraftPrompt
+
+        title: i18nc("@title", "Discard Draft")
+        subtitle: i18nc("@label", "Are you sure you want to discard your draft?")
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+        showCloseButton: false
+
+        onAccepted: applicationWindow().pageStack.layers.pop();
+    }
+
+    onBackRequested: (event) => {
+        if (textArea.text.length > 0) {
+            discardDraftPrompt.open();
+            event.accepted = true;
+        }
+    }
+
     function submitPost() {
         if(root.purpose === StatusComposer.Edit) {
             backend.edit()

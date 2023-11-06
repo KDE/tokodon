@@ -22,6 +22,9 @@ QQC2.Menu {
 
     readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
 
+    signal deletePost
+    signal redraftPost
+
     QQC2.MenuItem {
         icon.name: "expand"
         text: i18nc("@action:inmenu", "Expand Post")
@@ -115,17 +118,14 @@ QQC2.Menu {
         icon.name: "edit-delete"
         visible: root.isSelf
         text: i18n("Delete")
-        onTriggered: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+        onTriggered: root.deletePost()
     }
 
     QQC2.MenuItem {
         icon.name: "edit-cut"
         visible: root.isSelf
         text: i18n("Delete & Re-draft")
-        onTriggered: {
-            timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
-            timelineModel.actionDelete(timelineModel.index(root.index, 0))
-        }
+        onTriggered: root.redraftPost()
     }
 
     ShareMenu {

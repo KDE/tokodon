@@ -204,6 +204,37 @@ QQC2.ItemDelegate {
                 postMenu.active = true;
                 postMenu.item.popup(infoBar)
             }
+
+            Loader {
+                id: deleteDialog
+
+                active: false
+                sourceComponent: Kirigami.PromptDialog {
+                    title: i18nc("@title", "Delete Post")
+                    subtitle: i18nc("@label", "Are you sure you want to delete this post?")
+                    standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                    showCloseButton: false
+
+                    onAccepted: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                }
+            }
+
+            Loader {
+                id: redraftDialog
+
+                active: false
+                sourceComponent: Kirigami.PromptDialog {
+                    title: i18nc("@title", "Delete & Re-draft Post")
+                    subtitle: i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
+                    standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                    showCloseButton: false
+
+                    onAccepted: {
+                        timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
+                        timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                    }
+                }
+            }
         }
 
         Loader {
@@ -222,6 +253,14 @@ QQC2.ItemDelegate {
                 pinned: root.pinned
                 modal: true
 
+                onDeletePost: {
+                    deleteDialog.active = true;
+                    deleteDialog.item.open()
+                }
+                onRedraftPost: {
+                    redraftDialog.active = true;
+                    redraftDialog.item.open()
+                }
                 onClosed: postMenu.active = false
             }
         }

@@ -71,12 +71,24 @@ FormCard.FormCardPage {
                     QQC2.ToolButton {
                         text: i18n("Logout")
                         icon.name: "im-kick-user"
-                        onClicked: {
-                            AccountManager.removeAccount(delegate.account)
-                            if (!AccountManager.hasAccounts) {
-                                root.Window.window.close();
+
+                        Kirigami.PromptDialog {
+                            id: logoutPrompt
+
+                            title: i18nc("@title", "Logout")
+                            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", delegate.displayName)
+                            standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                            showCloseButton: false
+
+                            onAccepted: {
+                                AccountManager.removeAccount(delegate.account);
+                                if (!AccountManager.hasAccounts) {
+                                    root.Window.window.close();
+                                }
                             }
                         }
+
+                        onClicked: logoutPrompt.open();
                     }
 
                     FormCard.FormArrow {
