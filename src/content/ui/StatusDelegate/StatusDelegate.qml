@@ -174,8 +174,7 @@ QQC2.ItemDelegate {
 
         // Interaction labels for notifications
         Loader {
-            sourceComponent: Notifications.UserInteractionLabel
-            {
+            sourceComponent: Notifications.UserInteractionLabel {
                 type: root.type
                 notificationActorIdentity: root.notificationActorIdentity
             }
@@ -185,8 +184,7 @@ QQC2.ItemDelegate {
 
         // Interaction labels for grouped notifications
         Loader {
-            sourceComponent: Notifications.GroupInteractionLabel
-            {
+            sourceComponent: Notifications.GroupInteractionLabel {
                 type: root.type
                 notificationActorIdentity: root.notificationActorIdentity
                 numInGroup: root.numInGroup
