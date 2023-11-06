@@ -16,6 +16,9 @@
 #include <QStandardPaths>
 #include <QUrl>
 
+#include "abstractaccount.h"
+#include "accountmanager.h"
+
 Clipboard::Clipboard(QObject *parent)
     : QObject(parent)
     , m_clipboard(QGuiApplication::clipboard())
@@ -66,4 +69,19 @@ void Clipboard::saveText(QString message)
     mineData->setHtml(message);
     mineData->setText(message.replace(re, QStringLiteral("")));
     m_clipboard->setMimeData(mineData);
+}
+
+void Clipboard::copyImage(const QUrl &url)
+{
+    AccountManager::instance().selectedAccount()->get(
+        url,
+        false,
+        this,
+        [this](QNetworkReply *reply) {
+            QImage image;
+            image.loadFromData(reply->readAll());
+
+            m_clipboard->setImage(image);
+        },
+        nullptr);
 }

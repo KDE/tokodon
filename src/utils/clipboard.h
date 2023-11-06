@@ -33,6 +33,7 @@ public:
     Q_INVOKABLE QString saveImage() const;
 
     Q_INVOKABLE void saveText(QString message);
+    Q_INVOKABLE void copyImage(const QUrl &url);
 
 private:
     QClipboard *m_clipboard;
