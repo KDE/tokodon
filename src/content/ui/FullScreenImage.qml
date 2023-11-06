@@ -40,6 +40,8 @@ Components.AlbumMaximizeComponent {
         dialog.currentFile = dialog.folder + "/" + FileHelper.fileName(content.currentItem.source);
     }
 
+    onItemRightClicked: imageMenu.popup()
+
     Component {
         id: saveAsDialog
         FileDialog {
@@ -63,5 +65,10 @@ Components.AlbumMaximizeComponent {
     onOpened: {
         applicationWindow().isShowingFullScreenImage = true;
         forceActiveFocus();
+    }
+
+    ImageMenu {
+        id: imageMenu
+        attachment: content.currentItem
     }
 }
