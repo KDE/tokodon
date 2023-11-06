@@ -296,7 +296,7 @@ void Post::fromJson(QJsonObject obj)
     }
 
     m_mentions.clear();
-    for (const auto &m : qAsConst(mentions)) {
+    for (const auto &m : std::as_const(mentions)) {
         const QJsonObject o = m.toObject();
         m_mentions.push_back(QStringLiteral("@") + o["acct"_L1].toString());
     }
