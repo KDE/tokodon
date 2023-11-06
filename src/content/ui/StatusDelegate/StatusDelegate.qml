@@ -80,8 +80,8 @@ QQC2.ItemDelegate {
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
-    leftPadding: width > Kirigami.Units.gridUnit * 25 ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
-    rightPadding: width > Kirigami.Units.gridUnit * 25 ? Kirigami.Units.largeSpacing * 2 : Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
 
     highlighted: false
     hoverEnabled: false
