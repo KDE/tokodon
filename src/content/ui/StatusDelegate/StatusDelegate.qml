@@ -86,9 +86,6 @@ QQC2.ItemDelegate {
     highlighted: false
     hoverEnabled: false
 
-    Kirigami.Theme.colorSet: root.selected ? Kirigami.Theme.Window : Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
-
     Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
 
     onClicked: {
@@ -108,21 +105,24 @@ QQC2.ItemDelegate {
     }
 
     background: Rectangle {
-        color: Kirigami.Theme.backgroundColor
+        color: root.selected ? Kirigami.Theme.alternateBackgroundColor : Kirigami.Theme.backgroundColor
 
         Kirigami.Separator {
+            width: flexColumn.innerWidth
             visible: root.showSeparator && !root.selected
             anchors {
-                left: parent.left
-                right: parent.right
+                horizontalCenter: parent.horizontalCenter
                 bottom: parent.bottom
             }
         }
     }
 
     contentItem: Kirigami.FlexColumn {
+        id: flexColumn
+
         spacing: Kirigami.Units.largeSpacing
 
+        padding: 0
         maximumWidth: Kirigami.Units.gridUnit * 40
 
         RowLayout {
