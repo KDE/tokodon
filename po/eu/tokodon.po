@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-06 01:39+0000\n"
 "PO-Revision-Date: 2023-11-02 22:49+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -589,17 +589,12 @@ msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Ez dago joerako etiketarik"
 
-#: content/ui/LanguageSelector.qml:65
-#, kde-format
-msgctxt "@item:inlistbox Group of preferred languages"
-msgid "Preferred Languages"
-msgstr "Hobetsitako hizkuntzak"
-
-#: content/ui/LanguageSelector.qml:66
-#, kde-format
-msgctxt "@item:inlistbox Group of all languages"
-msgid "All Languages"
-msgstr "Hizkuntza guztiak"
+#: content/ui/LanguageSelector.qml:22
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@title"
+msgid "Select Language"
+msgstr "Hizkuntza lehenetsia"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -646,6 +641,7 @@ msgstr "Saio-hasi"
 #: content/ui/LoginFlow/LoginPage.qml:21
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
+#: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
 #, kde-format
 msgctxt "@info:status Network status"
@@ -655,7 +651,8 @@ msgstr ""
 "ordezkariaren zure ezarpenak."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
-#: content/ui/LoginFlow/RegistrationPage.qml:88
+#: content/ui/LoginFlow/RegistrationPage.qml:85
+#: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
 #: content/ui/Settings/NetworkProxyPage.qml:58
@@ -725,50 +722,69 @@ msgctxt "@title:window"
 msgid "Registration"
 msgstr "Erregistratzea"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:61
-#, kde-format
-msgid "Agreement"
-msgstr "Adostasuna"
-
-#: content/ui/LoginFlow/RegistrationPage.qml:97
+#: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
 msgstr "Erregistratu"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:103
+#: content/ui/LoginFlow/RegistrationPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Erabiltzaile-izena"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:112
+#: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
 msgstr "E-posta helbidea"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:121
+#: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "Password"
 msgstr "Pasahitza"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:131
+#: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
 msgstr "Arrazoia"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:141
-#, kde-format
-msgid "I have read and agree to the server's rules, terms and policies."
-msgstr ""
-"Zerbitzariaren arauak, baldintzak eta gidalerroak irakurri ditut eta haiekin "
-"ados nago."
-
-#: content/ui/LoginFlow/RegistrationPage.qml:148
+#: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr "Erregistratu"
+
+#: content/ui/LoginFlow/RulesPage.qml:18
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "IP Rules"
+msgctxt "@title:window"
+msgid "Rules"
+msgstr "IP arauak"
+
+#: content/ui/LoginFlow/RulesPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "IP Rules"
+msgctxt "@title:group"
+msgid "Rules"
+msgstr "IP arauak"
+
+#: content/ui/LoginFlow/RulesPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Agreement"
+msgctxt "@action:button Agree to server rules"
+msgid "Agree"
+msgstr "Adostasuna"
+
+#: content/ui/LoginFlow/RulesPage.qml:99
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with disabled moderation status"
+#| msgid "Disabled"
+msgctxt "@action:button Disagree to server rules"
+msgid "Disagree"
+msgstr "Ezgaituta"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
@@ -2195,7 +2211,7 @@ msgid "User"
 msgstr "Erabiltzailea"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:365
+#: content/ui/Settings/ProfileEditor.qml:366
 #, kde-format
 msgid "Apply"
 msgstr "Ezarri"
@@ -2321,19 +2337,19 @@ msgid "Mark uploaded media as sensitive by default"
 msgstr ""
 "Markatu zama-igotako multimedia bereziki babestutako gisa era lehenetsian"
 
-#: content/ui/Settings/ProfileEditor.qml:315
+#: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Posten hizkuntza lehenetsia"
 
-#: content/ui/Settings/ProfileEditor.qml:331
+#: content/ui/Settings/ProfileEditor.qml:332
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Posten ikusgaitasun lehenetsia"
 
-#: content/ui/Settings/ProfileEditor.qml:358
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Reset"
 msgstr "Berrezarri"
@@ -2693,36 +2709,36 @@ msgstr "ea"
 msgid "Post Language"
 msgstr "Postaren hizkuntza"
 
-#: content/ui/StatusComposer/StatusComposer.qml:372
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "Add Emoji"
 msgstr "Gehitu Emojia"
 
-#: content/ui/StatusComposer/StatusComposer.qml:387
+#: content/ui/StatusComposer/StatusComposer.qml:389
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karaktere"
 
-#: content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/StatusComposer/StatusComposer.qml:400
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Bidali"
 
-#: content/ui/StatusComposer/StatusComposer.qml:400
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Erantzun"
 
-#: content/ui/StatusComposer/StatusComposer.qml:402
+#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Birbidali posta"
 
-#: content/ui/StatusComposer/StatusComposer.qml:404
+#: content/ui/StatusComposer/StatusComposer.qml:406
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3229,46 +3245,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Joera"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:389
 #, kde-format
 msgid "in the future"
 msgstr "etorkizunean"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:391
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:386
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:390
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1d"
 msgstr "%1e"
 
-#: timeline/post.cpp:394
+#: timeline/post.cpp:401
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Duela astebete"
 msgstr[1] "Duela %1 aste"
 
-#: timeline/post.cpp:397
+#: timeline/post.cpp:404
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Duela hilabete"
 msgstr[1] "Duela %1 hilabete"
 
-#: timeline/post.cpp:401
+#: timeline/post.cpp:408
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3379,6 +3395,19 @@ msgstr "Sorburua"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
+
+#~ msgctxt "@item:inlistbox Group of preferred languages"
+#~ msgid "Preferred Languages"
+#~ msgstr "Hobetsitako hizkuntzak"
+
+#~ msgctxt "@item:inlistbox Group of all languages"
+#~ msgid "All Languages"
+#~ msgstr "Hizkuntza guztiak"
+
+#~ msgid "I have read and agree to the server's rules, terms and policies."
+#~ msgstr ""
+#~ "Zerbitzariaren arauak, baldintzak eta gidalerroak irakurri ditut eta "
+#~ "haiekin ados nago."
 
 #~| msgid "@action:inmenu"
 #~ msgid "@action:button"

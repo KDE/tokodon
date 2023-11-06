@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-06 01:39+0000\n"
 "PO-Revision-Date: 2023-06-17 12:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -633,17 +633,12 @@ msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Trending"
 
-#: content/ui/LanguageSelector.qml:65
-#, kde-format
-msgctxt "@item:inlistbox Group of preferred languages"
-msgid "Preferred Languages"
-msgstr "Preferred Languages"
-
-#: content/ui/LanguageSelector.qml:66
-#, kde-format
-msgctxt "@item:inlistbox Group of all languages"
-msgid "All Languages"
-msgstr "All Languages"
+#: content/ui/LanguageSelector.qml:22
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@title"
+msgid "Select Language"
+msgstr "Default Language"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, fuzzy, kde-format
@@ -691,6 +686,7 @@ msgstr "Login"
 #: content/ui/LoginFlow/LoginPage.qml:21
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
+#: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
 #, fuzzy, kde-format
 #| msgctxt "@info:status Network status"
@@ -700,7 +696,8 @@ msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Failed to contact server: %1. Please check your settings."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
-#: content/ui/LoginFlow/RegistrationPage.qml:88
+#: content/ui/LoginFlow/RegistrationPage.qml:85
+#: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
 #: content/ui/Settings/NetworkProxyPage.qml:58
@@ -775,48 +772,64 @@ msgctxt "@title:window"
 msgid "Registration"
 msgstr "Destination"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:61
-#, kde-format
-msgid "Agreement"
-msgstr ""
-
-#: content/ui/LoginFlow/RegistrationPage.qml:97
+#: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
 msgstr ""
 
-#: content/ui/LoginFlow/RegistrationPage.qml:103
+#: content/ui/LoginFlow/RegistrationPage.qml:100
 #, fuzzy, kde-format
 #| msgid "Username:"
 msgid "Username"
 msgstr "Username:"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:112
+#: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
 msgstr ""
 
-#: content/ui/LoginFlow/RegistrationPage.qml:121
+#: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "Password"
 msgstr "Password"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:131
+#: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
 msgstr ""
 
-#: content/ui/LoginFlow/RegistrationPage.qml:141
-#, kde-format
-msgid "I have read and agree to the server's rules, terms and policies."
-msgstr ""
-
-#: content/ui/LoginFlow/RegistrationPage.qml:148
+#: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
+msgstr ""
+
+#: content/ui/LoginFlow/RulesPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@title:window"
+msgid "Rules"
+msgstr "Remove"
+
+#: content/ui/LoginFlow/RulesPage.qml:47
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@title:group"
+msgid "Rules"
+msgstr "Remove"
+
+#: content/ui/LoginFlow/RulesPage.qml:81
+#, kde-format
+msgctxt "@action:button Agree to server rules"
+msgid "Agree"
+msgstr ""
+
+#: content/ui/LoginFlow/RulesPage.qml:99
+#, kde-format
+msgctxt "@action:button Disagree to server rules"
+msgid "Disagree"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:18
@@ -2329,7 +2342,7 @@ msgid "User"
 msgstr "User"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:365
+#: content/ui/Settings/ProfileEditor.qml:366
 #, kde-format
 msgid "Apply"
 msgstr "Apply"
@@ -2466,19 +2479,19 @@ msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Mark uploaded media as sensitive by default"
 
-#: content/ui/Settings/ProfileEditor.qml:315
+#: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Default post language"
 
-#: content/ui/Settings/ProfileEditor.qml:331
+#: content/ui/Settings/ProfileEditor.qml:332
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Default post visibility"
 
-#: content/ui/Settings/ProfileEditor.qml:358
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Reset"
 msgstr "Reset"
@@ -2844,27 +2857,27 @@ msgstr "cw"
 msgid "Post Language"
 msgstr "Post Language"
 
-#: content/ui/StatusComposer/StatusComposer.qml:372
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, fuzzy, kde-format
 #| msgctxt "@action:intoolbar Poll toolbar"
 #| msgid "Add Choice"
 msgid "Add Emoji"
 msgstr "Add Choice"
 
-#: content/ui/StatusComposer/StatusComposer.qml:387
+#: content/ui/StatusComposer/StatusComposer.qml:389
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> characters"
 
-#: content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/StatusComposer/StatusComposer.qml:400
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Send"
 
-#: content/ui/StatusComposer/StatusComposer.qml:400
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -2872,13 +2885,13 @@ msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Reply"
 
-#: content/ui/StatusComposer/StatusComposer.qml:402
+#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:404
+#: content/ui/StatusComposer/StatusComposer.qml:406
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action:Button Edit a post"
@@ -3418,32 +3431,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Trending"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:389
 #, kde-format
 msgid "in the future"
 msgstr "in the future"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:391
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:386
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:390
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:394
+#: timeline/post.cpp:401
 #, fuzzy, kde-format
 #| msgid "1 week ago"
 msgid "1 week ago"
@@ -3451,7 +3464,7 @@ msgid_plural "%1 weeks ago"
 msgstr[0] "1 week ago"
 msgstr[1] "1 week ago"
 
-#: timeline/post.cpp:397
+#: timeline/post.cpp:404
 #, fuzzy, kde-format
 #| msgid "1 month ago"
 msgid "1 month ago"
@@ -3459,7 +3472,7 @@ msgid_plural "%1 months ago"
 msgstr[0] "1 month"
 msgstr[1] "1 month"
 
-#: timeline/post.cpp:401
+#: timeline/post.cpp:408
 #, fuzzy, kde-format
 #| msgid "1 year ago"
 msgid "1 year ago"
@@ -3574,6 +3587,14 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#~ msgctxt "@item:inlistbox Group of preferred languages"
+#~ msgid "Preferred Languages"
+#~ msgstr "Preferred Languages"
+
+#~ msgctxt "@item:inlistbox Group of all languages"
+#~ msgid "All Languages"
+#~ msgstr "All Languages"
 
 #, fuzzy
 #~| msgid "Muted Accounts"

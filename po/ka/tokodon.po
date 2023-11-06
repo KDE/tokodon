@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-06 01:39+0000\n"
 "PO-Revision-Date: 2023-11-02 05:29+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -584,17 +584,12 @@ msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "ტრენდული ჭდეების გარეშე"
 
-#: content/ui/LanguageSelector.qml:65
-#, kde-format
-msgctxt "@item:inlistbox Group of preferred languages"
-msgid "Preferred Languages"
-msgstr "სასურველი ენები"
-
-#: content/ui/LanguageSelector.qml:66
-#, kde-format
-msgctxt "@item:inlistbox Group of all languages"
-msgid "All Languages"
-msgstr "ყველა ენა"
+#: content/ui/LanguageSelector.qml:22
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@title"
+msgid "Select Language"
+msgstr "ნაგულისხმევი ენა"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -641,6 +636,7 @@ msgstr "შესვლა"
 #: content/ui/LoginFlow/LoginPage.qml:21
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
+#: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
 #, kde-format
 msgctxt "@info:status Network status"
@@ -649,7 +645,8 @@ msgstr ""
 "სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პროქსის პარამეტრები."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
-#: content/ui/LoginFlow/RegistrationPage.qml:88
+#: content/ui/LoginFlow/RegistrationPage.qml:85
+#: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
 #: content/ui/Settings/NetworkProxyPage.qml:58
@@ -719,48 +716,69 @@ msgctxt "@title:window"
 msgid "Registration"
 msgstr "რეგისტრაცია"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:61
-#, kde-format
-msgid "Agreement"
-msgstr "შეთანხმება"
-
-#: content/ui/LoginFlow/RegistrationPage.qml:97
+#: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
 msgstr "რესგისტრაცია"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:103
+#: content/ui/LoginFlow/RegistrationPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "მომხმარებლის სახელი"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:112
+#: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
 msgstr "ელფოსტის მისამართი"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:121
+#: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:131
+#: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
 msgstr "მიზეზი"
 
-#: content/ui/LoginFlow/RegistrationPage.qml:141
-#, kde-format
-msgid "I have read and agree to the server's rules, terms and policies."
-msgstr "მე წავიკითხე და ვეთანხმები სერვერის წესებს, პირობებსა და პოლიტიკებს."
-
-#: content/ui/LoginFlow/RegistrationPage.qml:148
+#: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr "რესგისტრაცია"
+
+#: content/ui/LoginFlow/RulesPage.qml:18
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "IP Rules"
+msgctxt "@title:window"
+msgid "Rules"
+msgstr "IP წესები"
+
+#: content/ui/LoginFlow/RulesPage.qml:47
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "IP Rules"
+msgctxt "@title:group"
+msgid "Rules"
+msgstr "IP წესები"
+
+#: content/ui/LoginFlow/RulesPage.qml:81
+#, fuzzy, kde-format
+#| msgid "Agreement"
+msgctxt "@action:button Agree to server rules"
+msgid "Agree"
+msgstr "შეთანხმება"
+
+#: content/ui/LoginFlow/RulesPage.qml:99
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts with disabled moderation status"
+#| msgid "Disabled"
+msgctxt "@action:button Disagree to server rules"
+msgid "Disagree"
+msgstr "გამორთულია"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
@@ -2185,7 +2203,7 @@ msgid "User"
 msgstr "მომხმარებელი"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:365
+#: content/ui/Settings/ProfileEditor.qml:366
 #, kde-format
 msgid "Apply"
 msgstr "გამოყენება"
@@ -2310,19 +2328,19 @@ msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "შემცველობის მგრძნობიარედ ნაგულისხმევად მონიშვნა"
 
-#: content/ui/Settings/ProfileEditor.qml:315
+#: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "ნაგულისხმევი პოსტის ენა"
 
-#: content/ui/Settings/ProfileEditor.qml:331
+#: content/ui/Settings/ProfileEditor.qml:332
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "პოსტის ნაგულისხმევი ხილვადობა"
 
-#: content/ui/Settings/ProfileEditor.qml:358
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Reset"
 msgstr "თავიდან ჩართვა"
@@ -2682,36 +2700,36 @@ msgstr "გაფრთხ"
 msgid "Post Language"
 msgstr "პოსტის ენა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:372
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "Add Emoji"
 msgstr "ემოჯის დამატება"
 
-#: content/ui/StatusComposer/StatusComposer.qml:387
+#: content/ui/StatusComposer/StatusComposer.qml:389
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> სიმბოლო"
 
-#: content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/StatusComposer/StatusComposer.qml:400
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "გაგზავნა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:400
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "პასუხი"
 
-#: content/ui/StatusComposer/StatusComposer.qml:402
+#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "თავიდან დაპოსტვა"
 
-#: content/ui/StatusComposer/StatusComposer.qml:404
+#: content/ui/StatusComposer/StatusComposer.qml:406
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3216,46 +3234,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "ტრენდები"
 
-#: timeline/post.cpp:382
+#: timeline/post.cpp:389
 #, kde-format
 msgid "in the future"
 msgstr "მომავალში"
 
-#: timeline/post.cpp:384
+#: timeline/post.cpp:391
 #, kde-format
 msgid "%1s"
 msgstr "%1წმ"
 
-#: timeline/post.cpp:386
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1m"
 msgstr "%1წთ"
 
-#: timeline/post.cpp:388
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1h"
 msgstr "%1სთ"
 
-#: timeline/post.cpp:390
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1d"
 msgstr "%1დღ"
 
-#: timeline/post.cpp:394
+#: timeline/post.cpp:401
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 კვირის წინ"
 msgstr[1] "%1 კვირის წინ"
 
-#: timeline/post.cpp:397
+#: timeline/post.cpp:404
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 თვის წინ"
 msgstr[1] "%1 თვის წინ"
 
-#: timeline/post.cpp:401
+#: timeline/post.cpp:408
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -3366,6 +3384,18 @@ msgstr "წყარო"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
+
+#~ msgctxt "@item:inlistbox Group of preferred languages"
+#~ msgid "Preferred Languages"
+#~ msgstr "სასურველი ენები"
+
+#~ msgctxt "@item:inlistbox Group of all languages"
+#~ msgid "All Languages"
+#~ msgstr "ყველა ენა"
+
+#~ msgid "I have read and agree to the server's rules, terms and policies."
+#~ msgstr ""
+#~ "მე წავიკითხე და ვეთანხმები სერვერის წესებს, პირობებსა და პოლიტიკებს."
 
 #~ msgctxt "@title"
 #~ msgid "Muted Accounts"
