@@ -173,7 +173,6 @@ QQC2.Control {
 
                             HoverHandler {
                                 id: hover
-                                acceptedDevices: PointerDevice.Stylus
                             }
 
                             TapHandler {
