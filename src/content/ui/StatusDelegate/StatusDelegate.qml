@@ -399,95 +399,13 @@ QQC2.ItemDelegate {
             }
         }
 
-        RowLayout {
-            visible: root.expandedPost && root.selected
+        Loader {
+            active: root.selected
+            visible: root.selected
 
-            QQC2.Label {
-                text: root.absoluteTime
-                elide: Text.ElideRight
-                color: Kirigami.Theme.disabledTextColor
-            }
+            Layout.fillWidth: true
 
-            QQC2.Label {
-                visible: root.application && root.application.name
-                text: root.application && root.application.name ? i18n("via %1", root.application.name) : ''
-                elide: Text.ElideRight
-                Layout.fillWidth: true
-                color: Kirigami.Theme.disabledTextColor
-
-                HoverHandler {
-                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
-                    onHoveredChanged: if (hovered) {
-                        applicationWindow().hoverLinkIndicator.text = root.application.website;
-                    } else {
-                        applicationWindow().hoverLinkIndicator.text = "";
-                    }
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: hasWebsite ? Qt.PointingHandCursor: Qt.ArrowCursor
-                    onClicked: Qt.openUrlExternally(root.application.website)
-                }
-
-            }
-        }
-
-        Item {
-            height: Kirigami.Units.mediumSpacing
-            visible: root.selected && (root.repliesCount > 0 || root.reblogsCount > 0 || root.favouritesCount > 0)
-        }
-
-        RowLayout {
-            visible: root.expandedPost && root.selected
-            InteractionButton {
-                visible: root.repliesCount > 0
-                iconName: "tokodon-post-reply-filled"
-                tooltip: i18np("%1 Reply", "%1 Replies", root.repliesCount)
-                text: i18np("%1 Reply", "%1 Replies", root.repliesCount)
-                enabled: false
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-            }
-
-            InteractionButton {
-                visible: root.favouritesCount > 0
-                iconName: "tokodon-post-favorited"
-                tooltip: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
-                text: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
-                enabled: true
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-                onClicked: {
-                    pageStack.push(socialGraphComponent, {
-                        name: "favourited_by",
-                        statusId: root.id,
-                        count: root.favouritesCount
-                    });
-                }
-            }
-
-            InteractionButton {
-                visible: root.reblogsCount > 0
-                iconName: "tokodon-post-boosted"
-                tooltip: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
-                text: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
-                enabled: true
-                textColor: Kirigami.Theme.disabledTextColor
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
-                onClicked: {
-                    pageStack.push(socialGraphComponent, {
-                        name: "reblogged_by",
-                        statusId: root.id,
-                        count: root.reblogsCount
-                    });
-                }
-            }
+            sourceComponent: InformationBar {}
         }
     }
 }
