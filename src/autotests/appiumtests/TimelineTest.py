@@ -10,6 +10,8 @@ from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
 from appium.options.common.app_option import AppOption
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class ATSPIOptions(AppiumOptions, AppOption):
@@ -21,6 +23,7 @@ class TimelineTest(unittest.TestCase):
     def setUp(self):
         options = ATSPIOptions()
         options.app = tokodon_offline_path
+        options.set_capability("timeouts", {'implicit': 30000})
         self.driver = webdriver.Remote(
             command_executor='http://127.0.0.1:4723',
             options=options)
@@ -34,16 +37,25 @@ class TimelineTest(unittest.TestCase):
         self.assertTrue(self.driver.find_element(by='description', value="Spoiler Status"))
 
     def test_favourite_interactions(self):
+        wait = WebDriverWait(self.driver, 30)
+        wait.until(EC.presence_of_element_located((AppiumBy.NAME, "Favourite")))
+
         favouriteButton=self.driver.find_element(by='description',value="Favourite")
         favouriteButton.click()
         self.assertTrue(self.driver.find_element(by='description', value="Favourited"))
 
     def test_bookmark_interactions(self):
+        wait = WebDriverWait(self.driver, 30)
+        wait.until(EC.presence_of_element_located((AppiumBy.NAME, "Bookmark")))
+
         bookmarkButton=self.driver.find_element(by='description',value="Bookmark")
         bookmarkButton.click()
         self.assertTrue(self.driver.find_element(by='description', value="Bookmarked"))
 
     def test_boost_interactions(self):
+        wait = WebDriverWait(self.driver, 30)
+        wait.until(EC.presence_of_element_located((AppiumBy.NAME, "Boost")))
+
         boostButton=self.driver.find_element(by='description',value="Boost")
         boostButton.click()
         self.assertTrue(self.driver.find_element(by='description', value="Boosted"))

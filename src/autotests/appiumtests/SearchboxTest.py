@@ -21,6 +21,7 @@ class SearchBoxTest(unittest.TestCase):
     def setUp(self):
         options = ATSPIOptions()
         options.app = tokodon_offline_path
+        options.set_capability("timeouts", {'implicit': 30000})
         self.driver = webdriver.Remote(
             command_executor='http://127.0.0.1:4723',
             options=options)
