@@ -4,27 +4,6 @@ Like other projects in the KDE ecosystem, contributions are welcome from all. Th
 
 If this is for your first code contribution, see the [GitLab wiki page](https://community.kde.org/Infrastructure/GitLab) for a tutorial on how to send a merge request.
 
-## Installation
-
-Currently Tokodon requires an additional step when building and testing. Logging into a server will send a callback, which needs a handler for the `tokodon://` URL scheme. This is handled automatically when installing Tokodon regularly, but requires manual intervention when building locally.
-
-First, copy the desktop file:
-
-```bash
-$ cd ~/kde/src/tokodon
-$ cp org.kde.tokodon.desktop ~/.local/share/applications/org.kde.tokodon.desktop
-```
-
-And then edit the file as needed, replacing the path in `Exec=` to where your freshly-built binary will live. If you're using kdesrc-build this will be `~/kde/usr/bin/tokodon`.
-
-Once you're done editing, inform the system that the desktop file database needs to be updated:
-
-```
-$ update-desktop-database ~/.local/share/applications
-```
-
-Please restart your web browser if needed, and authentication should work as expected.
-
 ## Chatting
 
 If you get stuck or need help with anything at all, head over to the [KDE New Contributors room](https://go.kde.org/matrix/#/#kde-welcome:kde.org) on Matrix. For questions about Tokodon, please ask in the [Tokodon room](https://go.kde.org/matrix/#/#tokodon:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
