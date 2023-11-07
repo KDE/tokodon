@@ -19,9 +19,10 @@ ColumnLayout {
     Repeater {
         model: root.poll.options
 
-        Kirigami.AbstractListItem {
+        QQC2.ItemDelegate {
             background: null
             visible: addPool.checked
+            Layout.fillWidth: true
 
             required property var modelData
             required property var index
