@@ -11,11 +11,12 @@ decentralized servers that implement its API (such as Pixelfed).
 
 ## Features
 
-* Real-time notifications.
+* Real-time notifications, including background push notifications (using [KUnifiedPush](https://invent.kde.org/libraries/kunifiedpush).)
 * Direct messages.
 * Editing & deleting toots.
-* Multiple accounts.
-* Searching for users and hashtags.
+* Multiple accounts and cross-account actions.
+* Searching for users, hashtags and posts.
+* Moderation tools like viewing a server's accounts, email blocks and more. 
 
 ## Get It
 
