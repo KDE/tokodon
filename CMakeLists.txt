@@ -38,6 +38,10 @@ include(ECMAddAppIcon)
 include(ECMAddTests)
 include(KDEGitCommitHooks)
 
+if (ANDROID)
+    include(ECMAddAndroidApk)
+endif ()
+
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX TOKODON
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
