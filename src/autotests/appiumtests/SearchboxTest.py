@@ -27,8 +27,8 @@ class SearchBoxTest(unittest.TestCase):
 
 
     def tearDown(self):
-        self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
-        self.driver.quit()
+        if not self._outcome.result.wasSuccessful():
+            self.driver.get_screenshot_as_file(f"failed_test_shot_tokodon_#{self.id()}.png")
 
 
     def test_search_and_app(self):
@@ -39,7 +39,7 @@ class SearchBoxTest(unittest.TestCase):
         searchElement.send_keys("myquery")
         searchElement.send_keys(Keys.ENTER)
 
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="People") or self.driver.find_element(by=AppiumBy.NAME, value="Post") or self.driver.find_element(by=AppiumBy.NAME, value="Hashtags") )
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Users") or self.driver.find_element(by=AppiumBy.NAME, value="Post") or self.driver.find_element(by=AppiumBy.NAME, value="Hashtags") )
 
 
 

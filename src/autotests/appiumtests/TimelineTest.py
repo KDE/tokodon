@@ -26,8 +26,8 @@ class TimelineTest(unittest.TestCase):
             options=options)
 
     def tearDown(self):
-        self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
-        self.driver.quit()
+        if not self._outcome.result.wasSuccessful():
+            self.driver.get_screenshot_as_file(f"failed_test_shot_tokodon_#{self.id()}.png")
 
     def test_status_type(self):
         self.assertTrue(self.driver.find_element(by='description', value="Normal Status"))
