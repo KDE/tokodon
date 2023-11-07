@@ -121,14 +121,15 @@ int main(int argc, char *argv[])
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("Client for the decentralized social network: mastodon"));
-    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports web+ap: url scheme"));
+    parser.setApplicationDescription(i18n("Client for decentralized social networks like Mastodon"));
+    parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports https and web+ap url scheme"));
 
     QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
+    shareOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(shareOption);
 
-    // TODO: then don't expose it, dummy.
     QCommandLineOption notifyOption(QStringLiteral("notify"), i18n("Internal usage only."));
+    notifyOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(notifyOption);
 
     about.setupCommandLine(&parser);
