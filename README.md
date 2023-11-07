@@ -26,7 +26,7 @@ in the [KDE Nightly F-Droid repository](https://community.kde.org/Android/F-Droi
 
 ## Support
 
-If you have an issue with Tokodon, please [open a support thread on KDE Discuss](https://discuss.kde.org/c/help/6). Alternatively, you ask in the [Tokodon Matrix room](https://go.kde.org/matrix/#/#tokodon:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
+If you have an issue with Tokodon, please [open a support thread on KDE Discuss](https://discuss.kde.org/tag/tokodon). Alternatively, you ask in the [Tokodon Matrix room](https://go.kde.org/matrix/#/#tokodon:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
 
 ## Building
 
