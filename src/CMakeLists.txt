@@ -449,6 +449,8 @@ endif ()
 
 if(ANDROID)
     target_sources(tokodon PRIVATE notifyrc.qrc)
+
+    ecm_add_android_apk(tokodon ANDROID_DIR ${CMAKE_SOURCE_DIR}/android)
 else()
     install(FILES tokodon.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 
