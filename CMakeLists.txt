@@ -46,20 +46,20 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test WebView)
 set_package_properties(Qt6 PROPERTIES
         TYPE REQUIRED
-        PURPOSE "Basic application components"
+        PURPOSE "Required application components"
         )
 qt_policy(SET QTP0001 NEW)
 
 find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami2 KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
-    PURPOSE "Basic application components"
+    PURPOSE "Required application components"
 )
 
 find_package(KF6KirigamiAddons 0.11.40 REQUIRED)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
-    PURPOSE "Required runtime dependency (all module are required)"
+    PURPOSE "Required application components and runtime dependency"
 )
 
 find_package(Qt6Keychain)
@@ -68,7 +68,7 @@ set_package_properties(Qt6Keychain PROPERTIES
     PURPOSE "Secure storage of account secrets"
 )
 
-find_package(KUnifiedPush)
+find_package(KUnifiedPush QUIET)
 set_package_properties(KUnifiedPush PROPERTIES
     TYPE OPTIONAL
     PURPOSE "Push notification support"
@@ -77,12 +77,11 @@ set_package_properties(KUnifiedPush PROPERTIES
 if (TARGET KUnifiedPush)
     find_package(OpenSSL REQUIRED)
     set_package_properties(OpenSSL PROPERTIES
-            TYPE REQUIRED
             PURPOSE "Generate push notification keys"
     )
 endif()
 
-if (ANDROID)
+if (ANDROID AND NOT TARGET OpenSSL::SSL)
     find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES
         TYPE REQUIRED
@@ -91,20 +90,35 @@ if (ANDROID)
 else()
     if (NOT SAILFISHOS)
         find_package(KF6QQC2DesktopStyle REQUIRED)
+        set_package_properties(KF6QQC2DesktopStyle PROPERTIES
+                PURPOSE "Preferred Qt Quick Controls style"
+        )
     endif()
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+    set_package_properties(KF6KIO PROPERTIES
+            PURPOSE "Sharing content and downloading files"
+    )
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+    set_package_properties(KF6Purpose PROPERTIES
+            PURPOSE "Sharing content from other KDE applications"
+    )
 endif ()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF6DBusAddons ${KF_MIN_VERSION} REQUIRED)
+    set_package_properties(KF6DBusAddons PROPERTIES
+            PURPOSE "Single application support"
+    )
     find_package(KF6WindowSystem ${KF_MIN_VERSION} REQUIRED)
+    set_package_properties(KF6WindowSystem PROPERTIES
+            PURPOSE "Misc windowing operations"
+    )
 endif ()
 
 find_package(PkgConfig REQUIRED)

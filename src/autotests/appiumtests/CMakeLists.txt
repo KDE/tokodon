@@ -5,7 +5,7 @@
 find_package(SeleniumWebDriverATSPI)
 set_package_properties(SeleniumWebDriverATSPI PROPERTIES
         DESCRIPTION "Server component for selenium tests using Linux accessibility infrastructure"
-        PURPOSE "Needed for GUI tests"
+        PURPOSE "Automatic GUI testing"
         URL "https://invent.kde.org/sdk/selenium-webdriver-at-spi"
         TYPE OPTIONAL
         )
