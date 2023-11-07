@@ -264,11 +264,9 @@ qt_target_qml_sources(tokodon_static
 )
 
 if (NOT ANDROID)
-    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/breeze/actions)
-    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/breeze-dark/actions)
-
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/actions)
 else()
-    install(DIRECTORY icons/22 DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
 endif()
 
 target_include_directories(tokodon_static PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/search)
