@@ -80,6 +80,7 @@ Kirigami.ApplicationWindow {
 
     ReportDialog {
         id: reportDialog
+        visible: false
     }
 
     Kirigami.PromptDialog {
