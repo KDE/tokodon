@@ -116,6 +116,9 @@ Kirigami.ScrollablePage {
         anchors.right: parent.right
         actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, postsOnlyAction, followsOnlyAction]
         enabled: !listview.model.loading
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
     }
 
     NotificationModel {
