@@ -9,7 +9,6 @@
 #include "accountmanager.h"
 #include "relationship.h"
 #include <KLocalizedString>
-#include <QFile>
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <qstringliteral.h>

@@ -3,7 +3,6 @@
 
 #include "networkaccessmanagerfactory.h"
 
-#include <QDebug>
 #include <QThread>
 
 #include <QNetworkAccessManager>

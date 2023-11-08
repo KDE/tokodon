@@ -5,8 +5,6 @@
 #include <QDateTime>
 #include <QJsonObject>
 
-#include <KLocalizedString>
-
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "reportinfo.h"

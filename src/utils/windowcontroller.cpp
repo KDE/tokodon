@@ -3,7 +3,6 @@
 
 #include "windowcontroller.h"
 
-#include <KConfig>
 #include <KSharedConfig>
 #include <KWindowConfig>
 

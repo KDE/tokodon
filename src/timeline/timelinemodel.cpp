@@ -4,9 +4,6 @@
 
 #include "timelinemodel.h"
 #include "account/abstractaccount.h"
-#include "accountmodel.h"
-#include "poll.h"
-#include <KLocalizedString>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QtMath>

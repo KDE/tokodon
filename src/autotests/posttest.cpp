@@ -4,7 +4,6 @@
 #include <QtTest/QtTest>
 
 #include "mockaccount.h"
-#include "timeline/poll.h"
 #include "timeline/post.h"
 #include <QJsonObject>
 

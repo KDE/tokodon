@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "preferences.h"
-#include "identity.h"
 #include "utils/utils.h"
 
 #include <QHttpMultiPart>

@@ -4,7 +4,6 @@
 #include "searchmodel.h"
 #include "account/abstractaccount.h"
 #include "account/account.h"
-#include "timeline/accountmodel.h"
 #include <KLocalizedString>
 #include <QNetworkReply>
 #include <QUrlQuery>

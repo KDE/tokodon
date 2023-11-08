@@ -8,7 +8,6 @@
 #include "editor/posteditorbackend.h"
 #include "poll.h"
 #include "post.h"
-#include <KLocalizedString>
 #include <QtMath>
 #include <qvariant.h>
 

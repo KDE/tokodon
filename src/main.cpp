@@ -4,9 +4,7 @@
 #include <QCommandLineParser>
 #include <QFontDatabase>
 #include <QNetworkProxy>
-#include <QNetworkProxyFactory>
 #include <QQmlApplicationEngine>
-#include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
 #include <QtWebView>
@@ -24,10 +22,8 @@
 #include <KDBusService>
 #include <KWindowSystem>
 #endif
-#include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KWindowConfig>
 
 #ifdef HAVE_KUNIFIEDPUSH
 #include <kunifiedpush/connector.h>

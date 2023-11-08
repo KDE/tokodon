@@ -4,7 +4,6 @@
 
 #include "account.h"
 #include "accountconfig.h"
-#include "accountmanager.h"
 #include "network/networkcontroller.h"
 #include "notificationhandler.h"
 #include "preferences.h"

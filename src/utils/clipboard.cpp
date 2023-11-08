@@ -8,7 +8,6 @@
 #include <QClipboard>
 #include <QDateTime>
 #include <QDir>
-#include <QFileInfo>
 #include <QGuiApplication>
 #include <QImage>
 #include <QMimeData>
