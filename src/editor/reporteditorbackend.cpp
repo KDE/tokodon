@@ -37,7 +37,7 @@ void ReportEditorBackend::submit()
         formdata.addQueryItem(QStringLiteral("status_ids[]"), m_postId);
     }
 
-    account->post(account->apiUrl(QStringLiteral("/api/v1/reports")), formdata, true, this, [=](QNetworkReply *reply) {
+    account->post(account->apiUrl(QStringLiteral("/api/v1/reports")), formdata, true, this, [=](QNetworkReply *) {
         Q_EMIT reported();
     });
 }

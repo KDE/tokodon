@@ -150,7 +150,7 @@ void ReportToolModel::updateReport(const int row, const QString &type, const QLi
     const auto report = m_reports[row];
     const auto reportId = report->reportId();
     QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/reports/%1").arg(reportId));
-    account->put(url, doc, true, this, [=](QNetworkReply *reply) {});
+    account->put(url, doc, true, this, [=](QNetworkReply *) {});
     Q_EMIT dataChanged(index(row, 0), index(row, 0));
 }
 

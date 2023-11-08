@@ -515,7 +515,7 @@ void AccountManager::queueNotifications()
         }
         uri.setQuery(urlQuery);
 
-        account->get(uri, true, this, [this, account, checkIfDone](QNetworkReply *reply) {
+        account->get(uri, true, this, [account, checkIfDone](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
