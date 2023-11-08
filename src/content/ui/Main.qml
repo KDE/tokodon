@@ -78,6 +78,10 @@ Kirigami.ApplicationWindow {
         crossActionDialog.open();
     }
 
+    ReportDialog {
+        id: reportDialog
+    }
+
     Kirigami.PromptDialog {
         id: crossActionDialog
 
@@ -231,6 +235,23 @@ Kirigami.ApplicationWindow {
             pageStack.push(tagModelComponent, {
                 hashtag: tag,
             })
+        }
+
+        function onReportPost(identity, postId) {
+            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
+                {
+                    type: ReportDialog.Post,
+                    identity: identity,
+                    postId: postId
+                });
+        }
+
+        function onReportUser(identity) {
+            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
+                {
+                    type: ReportDialog.User,
+                    identity: identity
+                });
         }
     }
 

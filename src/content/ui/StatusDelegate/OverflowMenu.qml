@@ -146,6 +146,13 @@ QQC2.Menu {
         }
     }
 
+    QQC2.MenuItem {
+        icon.name: "dialog-warning-symbolic"
+        visible: !root.isSelf
+        text: i18nc("@action:inmenu Report this post", "Report…");
+        onTriggered: Navigation.reportPost(root.authorIdentity, root.postId)
+    }
+
     QQC2.MenuSeparator {}
 
     QQC2.MenuItem {

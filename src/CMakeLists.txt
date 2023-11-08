@@ -60,6 +60,8 @@ target_sources(tokodon_static
     editor/languagemodel.h
     editor/polleditorbackend.cpp
     editor/polleditorbackend.h
+    editor/reporteditorbackend.cpp
+    editor/reporteditorbackend.h
 
     # Conversation view
     conversation/conversationmodel.cpp
@@ -241,6 +243,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Main.qml
         content/ui/MastoPage.qml
         content/ui/NotificationPage.qml
+        content/ui/ReportDialog.qml
         content/ui/SearchField.qml
         content/ui/SearchPage.qml
         content/ui/SearchView.qml

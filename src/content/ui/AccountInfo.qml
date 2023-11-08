@@ -322,6 +322,12 @@ TimelinePage {
                                             }
                                         },
                                         Kirigami.Action {
+                                            icon.name: "dialog-warning-symbolic"
+                                            visible: !model.isSelf
+                                            text: i18nc("@action:inmenu Report this post", "Report…");
+                                            onTriggered: Navigation.reportUser(model.identity)
+                                        },
+                                        Kirigami.Action {
                                             icon.name: "user-group-properties"
                                             visible: model.isSelf
                                             text: i18n("Edit Profile")

@@ -22,4 +22,6 @@ Q_SIGNALS:
     void openThread(const QString &postId);
     void openFullScreenImage(const QVariant &attachments, Identity *identity, int currentIndex);
     void openTag(const QString &tag);
+    void reportPost(Identity *identity, const QString &postId);
+    void reportUser(Identity *identity);
 };
