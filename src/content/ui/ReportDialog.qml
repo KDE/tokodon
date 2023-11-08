@@ -22,7 +22,7 @@ Kirigami.Page {
     title: type === ReportDialog.Post ? i18nc("@title", "Report Post") : i18nc("@title", "Report User")
 
     property ReportEditorBackend backend: ReportEditorBackend {
-        accountId: root.identity.id
+        accountId: root.identity !== undefined ? root.identity.id : ""
         postId: root.postId
         comment: reason.text
     }
