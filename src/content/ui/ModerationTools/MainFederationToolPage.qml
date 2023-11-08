@@ -171,7 +171,7 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            text: i18nc("@info:Whether to reject incoming reports from this domain", "Reject report")
+            text: i18nc("@info:Whether to reject incoming reports from this domain", "Reject reports")
             description: root.rejectReports
         }
     }

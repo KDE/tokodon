@@ -276,7 +276,7 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
 
         FormCard.FormCheckDelegate {
-            text: i18n("Require follow requests")
+            text: i18n("Require approval of follow requests")
             checked: backend.locked
             onCheckedChanged: backend.locked = checked
         }
