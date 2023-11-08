@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <QJSEngine>
 #include <QObject>
 #include <QtQml/qqmlregistration.h>
 
@@ -15,6 +16,16 @@ class Navigation : public QObject
     QML_ELEMENT
     QML_SINGLETON
 
+public:
+    static Navigation *create(QQmlEngine *, QJSEngine *)
+    {
+        auto inst = &instance();
+        QJSEngine::setObjectOwnership(inst, QJSEngine::ObjectOwnership::CppOwnership);
+        return inst;
+    }
+
+    static Navigation &instance();
+
 Q_SIGNALS:
     void openStatusComposer();
     void replyTo(const QString &inReplyTo, const QVariant &mentions, int visibility, Identity *authorIdentity, Post *post);
@@ -24,4 +35,7 @@ Q_SIGNALS:
     void openTag(const QString &tag);
     void reportPost(Identity *identity, const QString &postId);
     void reportUser(Identity *identity);
+
+private:
+    Navigation() = default;
 };
