@@ -396,7 +396,7 @@ QQC2.ItemDelegate {
                 rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.reblogged
-                interactionColor: "green"
+                interactionColor: "#63c605"
 
                 enabled: root.visibility !== Post.Direct
 
@@ -419,7 +419,7 @@ QQC2.ItemDelegate {
                 rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.favourited
-                interactionColor: "orange"
+                interactionColor: "#fa8865"
 
                 iconName: 'tokodon-post-favorite'
                 interactedIconName: 'tokodon-post-favorited'
@@ -440,7 +440,7 @@ QQC2.ItemDelegate {
                 rightPadding: buttonLayout.buttonPadding
 
                 interacted: root.bookmarked
-                interactionColor: "red"
+                interactionColor: "#1b89f3"
 
                 iconName: 'bookmarks'
                 interactedIconName: 'tokodon-post-bookmarked'
