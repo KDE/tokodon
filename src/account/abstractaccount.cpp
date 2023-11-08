@@ -10,6 +10,7 @@
 #include "relationship.h"
 #include "tokodon_debug.h"
 #include "utils/messagefiltercontainer.h"
+#include "utils/navigation.h"
 #include <KLocalizedString>
 #include <QFile>
 #include <QHttpMultiPart>
@@ -740,8 +741,15 @@ void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
         if (!statuses.isEmpty()) {
             const auto status = statuses[0].toObject();
 
-            const QString localID = status["id"_L1].toString();
-            mutatePost(localID, verb);
+            if (verb == QStringLiteral("reply")) {
+                // TODO: we can't delete this immediately, will need some smarter cleanup in the PostEditorBackend
+                Post *post = new Post(this, this);
+                post->fromJson(status);
+                Q_EMIT Navigation::instance().replyTo(post->postId(), post->mentions(), post->visibility(), post->getAuthorIdentity(), post);
+            } else {
+                const QString localID = status["id"_L1].toString();
+                mutatePost(localID, verb);
+            }
         }
     });
 }

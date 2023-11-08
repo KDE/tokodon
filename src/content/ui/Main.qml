@@ -129,12 +129,17 @@ Kirigami.ApplicationWindow {
         }
 
         function takeAction(account): void {
-            if (action === 'open') {
+            if (action === 'open' || action === 'reply') {
                 AccountManager.selectedAccount = account;
-                Controller.openWebApLink(url);
-            } else {
-                account.mutateRemotePost(url, action);
             }
+
+            Qt.callLater(() => {
+                if (action === 'open') {
+                    Controller.openWebApLink(url);
+                } else {
+                    account.mutateRemotePost(url, action);
+                }
+            });
 
             close();
         }
