@@ -251,6 +251,7 @@ QQC2.ItemDelegate {
                 isSelf: root.isSelf
                 expandedPost: root.expandedPost
                 pinned: root.pinned
+                authorIdentity: root.authorIdentity
                 modal: true
 
                 onDeletePost: {

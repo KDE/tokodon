@@ -19,6 +19,7 @@ QQC2.Menu {
     required property bool isSelf
     required property bool expandedPost
     required property bool pinned
+    required property var authorIdentity
 
     readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
 
@@ -104,8 +105,48 @@ QQC2.Menu {
     }
 
     QQC2.MenuSeparator {
-        visible: root.isSelf
+        visible: !root.isSelf
     }
+
+    QQC2.MenuItem {
+        icon.name: "dialog-cancel"
+        visible: !root.isSelf
+        text: {
+            if (root.authorIdentity.relationship && root.authorIdentity.relationship.muting) {
+                return i18nc("@action:inmenu Unmute account", "Unmute @%1", root.authorIdentity.username);
+            } else {
+                return i18nc("@action:inmenu Mute account", "Mute @%1", root.authorIdentity.username);
+            }
+        }
+        onTriggered: {
+            if (root.authorIdentity.relationship && root.authorIdentity.relationship.muting) {
+                AccountManager.selectedAccount.unmuteAccount(root.authorIdentity);
+            } else {
+                AccountManager.selectedAccount.muteAccount(root.authorIdentity);
+            }
+        }
+    }
+
+    QQC2.MenuItem {
+        icon.name: "im-ban-kick-user"
+        visible: !root.isSelf
+        text: {
+            if (root.authorIdentity.relationship && root.authorIdentity.relationship.blocking) {
+                return i18nc("@action:inmenu Unblock account", "Unblock @%1", root.authorIdentity.username);
+            } else {
+                return i18nc("@action:inmenu Block account", "Block @%1", root.authorIdentity.username);
+            }
+        }
+        onTriggered: {
+            if (root.authorIdentity.relationship && root.authorIdentity.relationship.blocking) {
+                AccountManager.selectedAccount.unblock(root.authorIdentity.identity);
+            } else {
+                AccountManager.selectedAccount.block(root.authorIdentity.identity);
+            }
+        }
+    }
+
+    QQC2.MenuSeparator {}
 
     QQC2.MenuItem {
         icon.name: "edit-entry"
