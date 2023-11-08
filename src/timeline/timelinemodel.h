@@ -18,6 +18,8 @@ class TimelineModel : public AbstractTimelineModel
 
     Q_PROPERTY(QString displayName READ displayName NOTIFY nameChanged)
     Q_PROPERTY(bool shouldLoadMore MEMBER m_shouldLoadMore WRITE setShouldLoadMore NOTIFY shouldLoadMoreChanged)
+    Q_PROPERTY(bool showReplies MEMBER m_showReplies NOTIFY showRepliesChanged)
+    Q_PROPERTY(bool showBoosts MEMBER m_showBoosts NOTIFY showBoostsChanged)
 
 public:
     explicit TimelineModel(QObject *parent = nullptr);
@@ -65,6 +67,10 @@ public Q_SLOTS:
 
     /// Pin the post at \p index
     void actionPin(const QModelIndex &index);
+
+    /// Reset the timeline posts, and any additional state
+    virtual void reset() = 0;
+
 Q_SIGNALS:
     /// Emitted when actionReply is called
     void wantReply(AbstractAccount *account, Post *post, const QModelIndex &index);
@@ -73,6 +79,9 @@ Q_SIGNALS:
     void nameChanged();
 
     void shouldLoadMoreChanged();
+
+    void showRepliesChanged();
+    void showBoostsChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -84,5 +93,7 @@ protected:
     QList<Post *> m_timeline;
 
     bool m_shouldLoadMore = true;
+    bool m_showReplies = true;
+    bool m_showBoosts = true;
     friend class TimelineTest;
 };

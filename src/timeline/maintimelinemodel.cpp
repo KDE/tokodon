@@ -144,4 +144,13 @@ bool MainTimelineModel::atEnd() const
     return m_next.isEmpty();
 }
 
+void MainTimelineModel::reset()
+{
+    beginResetModel();
+    qDeleteAll(m_timeline);
+    m_timeline.clear();
+    endResetModel();
+    m_next.clear();
+}
+
 #include "moc_maintimelinemodel.cpp"

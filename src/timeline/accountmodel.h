@@ -71,6 +71,9 @@ Q_SIGNALS:
     void filtersChanged();
     void tabChanged();
 
+protected:
+    void reset() override;
+
 private:
     void updateRelationships();
     void updateTabFilters();

@@ -38,6 +38,8 @@ public:
     /// Can be used to find where exactly to position the view
     Q_INVOKABLE int getRootIndex() const;
 
+    void reset() override;
+
 Q_SIGNALS:
     void postIdChanged();
 

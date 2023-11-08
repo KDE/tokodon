@@ -70,4 +70,12 @@ void TagsTimelineModel::fillTimeline(const QString &fromId)
         handleError);
 }
 
+void TagsTimelineModel::reset()
+{
+    beginResetModel();
+    qDeleteAll(m_timeline);
+    m_timeline.clear();
+    endResetModel();
+}
+
 #include "moc_tagstimelinemodel.cpp"

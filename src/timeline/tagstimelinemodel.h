@@ -32,6 +32,8 @@ public:
     /// \see hashtag
     void setHashtag(const QString &hashtag);
 
+    void reset() override;
+
 Q_SIGNALS:
     /// Emitted if the hashtag is changed
     /// \see setHashtag

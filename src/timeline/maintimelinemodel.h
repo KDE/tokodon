@@ -35,6 +35,8 @@ public:
 
     bool atEnd() const;
 
+    void reset() override;
+
 Q_SIGNALS:
     void atEndChanged();
 

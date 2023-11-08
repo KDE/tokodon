@@ -554,6 +554,8 @@ Kirigami.ApplicationWindow {
             model: MainTimelineModel {
                 id: timelineModel
                 name: timelinePage.name
+                showReplies: timelinePage.showReplies
+                showBoosts: timelinePage.showBoosts
             }
         }
     }
@@ -611,6 +613,8 @@ Kirigami.ApplicationWindow {
             property string hashtag
             model: TagsTimelineModel {
                 hashtag: tagPage.hashtag
+                showReplies: tagPage.showReplies
+                showBoosts: tagPage.showBoosts
             }
         }
     }

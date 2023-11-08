@@ -136,4 +136,12 @@ int ThreadModel::getRootIndex() const
     return -1;
 }
 
+void ThreadModel::reset()
+{
+    beginResetModel();
+    qDeleteAll(m_timeline);
+    m_timeline.clear();
+    endResetModel();
+}
+
 #include "moc_threadmodel.cpp"

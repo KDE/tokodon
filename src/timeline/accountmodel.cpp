@@ -15,11 +15,7 @@ AccountModel::AccountModel(QObject *parent)
 
     connect(this, &AccountModel::identityChanged, this, &TimelineModel::nameChanged);
     connect(this, &AccountModel::filtersChanged, this, [this] {
-        beginResetModel();
-        qDeleteAll(m_timeline);
-        m_timeline.clear();
-        endResetModel();
-
+        reset();
         fillTimeline();
     });
     connect(this, &AccountModel::tabChanged, this, &AccountModel::updateTabFilters);
@@ -127,10 +123,7 @@ void AccountModel::fillTimeline(const QString &fromId)
         // if we just restarted the fetch (fromId is null) then we must clear the previous array
         // this can happen if we just entered the profile page (okay, just a no-op) or if the filters change
         if (fromId.isNull()) {
-            beginResetModel();
-            qDeleteAll(m_timeline);
-            m_timeline.clear();
-            endResetModel();
+            reset();
         }
 
         fetchedTimeline(reply->readAll(), true);
@@ -241,6 +234,14 @@ void AccountModel::updateTabFilters()
         break;
     }
     Q_EMIT filtersChanged();
+}
+
+void AccountModel::reset()
+{
+    beginResetModel();
+    qDeleteAll(m_timeline);
+    m_timeline.clear();
+    endResetModel();
 }
 
 #include "moc_accountmodel.cpp"

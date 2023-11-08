@@ -21,6 +21,9 @@ Kirigami.ScrollablePage {
     property alias showPostAction: postAction.visible
     property bool completedInitialLoad: false
     property alias listView: listview
+    readonly property bool showReplies: showRepliesAction.checked
+    readonly property bool showBoosts: showBoostsAction.checked
+    property alias showFilterAction: filterAction.visible
 
     title: model.displayName
     titleDelegate: Kirigami.Heading {
@@ -58,13 +61,35 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
-    actions: Kirigami.Action {
-        id: postAction
-        icon.name: "list-add"
-        text: i18nc("@action:button", "Post")
-        enabled: AccountManager.hasAccounts
-        onTriggered: Navigation.openStatusComposer()
-    }
+    actions: [
+        Kirigami.Action {
+            id: postAction
+            icon.name: "list-add"
+            text: i18nc("@action:button", "Post")
+            enabled: AccountManager.hasAccounts
+            onTriggered: Navigation.openStatusComposer()
+        },
+        Kirigami.Action {
+            id: filterAction
+            text: i18nc("@action:button", "Filters")
+            icon.name: "view-filter"
+
+            Kirigami.Action {
+                id: showBoostsAction
+                text: i18n("Show Boosts")
+                icon.name: "tokodon-post-boost"
+                checkable: true
+                checked: true
+            }
+            Kirigami.Action {
+                id: showRepliesAction
+                text: i18n("Show Replies")
+                icon.name: "tokodon-post-reply"
+                checkable: true
+                checked: true
+            }
+        }
+    ]
 
     Connections {
         target: Navigation

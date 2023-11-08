@@ -29,6 +29,8 @@ TimelinePage {
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
+    showFilterAction: false
+
     model: AccountModel {
         id: model
 

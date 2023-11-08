@@ -30,12 +30,18 @@ void TimelineModel::init()
         if (m_account == account) {
             qDebug() << "Invalidating account" << account;
 
-            beginResetModel();
-            m_timeline.clear();
-            endResetModel();
-
+            reset();
             fillTimeline();
         }
+    });
+
+    connect(this, &TimelineModel::showBoostsChanged, this, [this] {
+        reset();
+        fillTimeline();
+    });
+    connect(this, &TimelineModel::showRepliesChanged, this, [this] {
+        reset();
+        fillTimeline();
     });
 
     connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
@@ -51,10 +57,7 @@ void TimelineModel::init()
 
         connect(m_account, &AbstractAccount::streamingEvent, this, &TimelineModel::handleEvent);
 
-        beginResetModel();
-        qDeleteAll(m_timeline);
-        m_timeline.clear();
-        endResetModel();
+        reset();
 
         setLoading(false);
 
@@ -92,7 +95,13 @@ void TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToE
 
     posts.erase(std::remove_if(posts.begin(),
                                posts.end(),
-                               [](Post *post) {
+                               [this](Post *post) {
+                                   if (!m_showBoosts && post->boostIdentity()) {
+                                       return true;
+                                   }
+                                   if (!m_showReplies && !post->inReplyTo().isEmpty()) {
+                                       return true;
+                                   }
                                    return post == nullptr;
                                }),
                 posts.end());

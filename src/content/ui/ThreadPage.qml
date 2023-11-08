@@ -11,6 +11,7 @@ TimelinePage {
 
     expandedPost: true
     showPostAction: false
+    showFilterAction: false
 
     Connections {
         target: root.model
