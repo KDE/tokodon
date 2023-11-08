@@ -41,12 +41,10 @@ Kirigami.ScrollablePage {
         name: "trending"
     }
 
-
     property Kirigami.Action tendingPostsAction: Kirigami.Action {
-        id: showPostsAction
-        text: i18n("Trending Posts")
+        text: i18n("Posts")
+        icon.name: "tokodon-chat-reply"
         checkable: true
-        checked: true
         onCheckedChanged: (checked) => {
             if (checked) {
                 if (tagsModel.name.length === 0) {
@@ -59,8 +57,8 @@ Kirigami.ScrollablePage {
     }
 
     property Kirigami.Action trendingTagsAction: Kirigami.Action {
-        id: showTagsAction
-        text: i18n("Trending Tags")
+        text: i18n("Tags")
+        icon.name: "tag-symbolic"
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked) {
@@ -74,13 +72,19 @@ Kirigami.ScrollablePage {
     }
 
     header: Kirigami.NavigationTabBar {
-        width: parent.width
+        anchors.left: parent.left
+        anchors.right: parent.right
         actions: [tendingPostsAction, trendingTagsAction]
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
     }
+
+    Component.onCompleted: tendingPostsAction.checked = true
 
     ListView {
         id: tagsView
-        model: showPostsAction.checked ? trendingPostsModel : tagsModel
+        model: tendingPostsAction.checked ? trendingPostsModel : tagsModel
 
         Connections {
             target: Navigation
@@ -159,7 +163,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        delegate: showPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
+        delegate: tendingPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
 
         QQC2.ProgressBar {
             visible: tagsView.model.loading && tagsView.count === 0
@@ -169,7 +173,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: showPostsAction.checked ? i18nc("@label", "No Trending Posts") : i18nc("@label", "No Trending Tags")
+            text: tendingPostsAction.checked ? i18nc("@label", "No Trending Posts") : i18nc("@label", "No Trending Tags")
             visible: !tagsView.model.loading && tagsView.count === 0
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
