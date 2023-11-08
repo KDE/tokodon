@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:43+0000\n"
-"PO-Revision-Date: 2023-11-06 09:05+0200\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"PO-Revision-Date: 2023-11-07 13:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,47 +18,47 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: account/abstractaccount.cpp:625
+#: account/abstractaccount.cpp:654
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:626
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:627
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:628
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:629
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account/abstractaccount.cpp:630
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account/abstractaccount.cpp:631
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:632
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:633
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -136,43 +136,43 @@ msgstr ""
 msgid "Account details saved"
 msgstr "Подробиці щодо облікового запису збережено"
 
-#: account/socialgraphmodel.cpp:32
+#: account/socialgraphmodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
-#: account/socialgraphmodel.cpp:34
+#: account/socialgraphmodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Ті, хто стежить"
 
-#: account/socialgraphmodel.cpp:36
+#: account/socialgraphmodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Стежить"
 
-#: account/socialgraphmodel.cpp:38
+#: account/socialgraphmodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "Позбавлені голосу користувачі"
 
-#: account/socialgraphmodel.cpp:40
+#: account/socialgraphmodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Заблоковані користувачі"
 
-#: account/socialgraphmodel.cpp:42
+#: account/socialgraphmodel.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "Особливі користувачі"
 
-#: account/socialgraphmodel.cpp:44
+#: account/socialgraphmodel.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "%1 favourite"
@@ -182,7 +182,7 @@ msgstr[1] "%1 улюблені записи"
 msgstr[2] "%1 улюблених записів"
 msgstr[3] "%1 улюблений запис"
 
-#: account/socialgraphmodel.cpp:46
+#: account/socialgraphmodel.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -192,118 +192,122 @@ msgstr[1] "%1 підсилення"
 msgstr[2] "%1 підсилень"
 msgstr[3] "%1 підсилення"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:53
 #, kde-format
 msgid "No follow requests"
 msgstr "Немає запитів щодо стеження"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:55
 #, kde-format
 msgid "No followers"
 msgstr "Немає тих, хто стежить"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:57
 #, kde-format
 msgid "No followed users"
 msgstr "Немає користувачів, за якими ведеться стеження"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:59
 #, kde-format
 msgid "No muted users"
 msgstr "Немає позбавлених голосу користувачів"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:61
 #, kde-format
 msgid "No blocked users"
 msgstr "Немає заблокованих користувачів"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No featured users"
 msgstr "Немає особливих користувачів"
 
-#: account/socialgraphmodel.cpp:66
+#: account/socialgraphmodel.cpp:65
 #, kde-format
 msgid "No users favourited this post"
 msgstr "Жоден користувач не зробив цей допис улюбленим"
 
-#: account/socialgraphmodel.cpp:68
+#: account/socialgraphmodel.cpp:67
 #, kde-format
 msgid "No users boosted this post"
 msgstr "Жоден користувач не підсилив цей допис"
 
-#: admin/accounttoolmodel.cpp:303
+#: admin/accounttoolmodel.cpp:301
 #, kde-format
 msgid "Could not accept account"
 msgstr "Не вдалося прийняти обліковий запис"
 
-#: admin/accounttoolmodel.cpp:304
+#: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not reject account"
 msgstr "Не вдалося відмовити в обліковому записі"
 
-#: admin/accounttoolmodel.cpp:305
+#: admin/accounttoolmodel.cpp:303
 #, kde-format
 msgid "Could not take action against the account"
 msgstr "Не вдалося виконати дію щодо облікового запису"
 
-#: admin/accounttoolmodel.cpp:306
+#: admin/accounttoolmodel.cpp:304
 #, kde-format
 msgid "Could not enable  the disabled account"
 msgstr "Не вдалося увімкнути вимкнений обліковий запис"
 
-#: admin/accounttoolmodel.cpp:307
+#: admin/accounttoolmodel.cpp:305
 #, kde-format
 msgid "Could not unsilence the account"
 msgstr "Не вдалося скасувати заглушення для облікового запису"
 
-#: admin/accounttoolmodel.cpp:308
+#: admin/accounttoolmodel.cpp:306
 #, kde-format
 msgid "Could not unsuspend the account"
 msgstr "Не вдалося скасувати призупинення для облікового запису"
 
-#: admin/accounttoolmodel.cpp:309
+#: admin/accounttoolmodel.cpp:307
 #, kde-format
 msgid "Could not mark the account as not sensitive"
 msgstr "Не вдалося позначити обліковий запис як неконфіденційний"
 
-#: admin/adminaccountinfo.cpp:22
+#: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
 msgstr "Призупинено"
 
-#: admin/adminaccountinfo.cpp:24
-#, kde-format
-msgctxt "login status"
-msgid "Silenced"
-msgstr "Заглушено"
-
 #: admin/adminaccountinfo.cpp:26
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Prevent the user from being able to post with public visibility, "
+#| "hide their posts and notifications from people not following them."
+#| msgid "Limit"
+msgctxt "login status"
+msgid "Limited"
+msgstr "Обмежити"
+
+#: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
 msgstr "Позначено як конфіденційний"
 
-#: admin/adminaccountinfo.cpp:28
+#: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
 msgstr "Заморожено"
 
-#: admin/adminaccountinfo.cpp:30
+#: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
 msgstr "Адресу ел. пошти не підтверджено"
 
-#: admin/adminaccountinfo.cpp:32
+#: admin/adminaccountinfo.cpp:34
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
 msgstr "Не схвалений"
 
-#: admin/adminaccountinfo.cpp:34
+#: admin/adminaccountinfo.cpp:36
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
@@ -313,6 +317,30 @@ msgstr "Обмежень не накладено"
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr "Сталася помилка при виконанні запиту PUT для оновлення блоку домену."
+
+#: admin/reporttoolmodel.cpp:198
+#, fuzzy, kde-format
+#| msgid "Could not reject account"
+msgid "Could not resolve report"
+msgstr "Не вдалося відмовити в обліковому записі"
+
+#: admin/reporttoolmodel.cpp:199
+#, fuzzy, kde-format
+#| msgid "Could not unsilence the account"
+msgid "Could not unresolve report"
+msgstr "Не вдалося скасувати заглушення для облікового запису"
+
+#: admin/reporttoolmodel.cpp:200
+#, fuzzy, kde-format
+#| msgid "Could not accept account"
+msgid "Could not assign report"
+msgstr "Не вдалося прийняти обліковий запис"
+
+#: admin/reporttoolmodel.cpp:201
+#, fuzzy, kde-format
+#| msgid "Could not unsilence the account"
+msgid "Could not unassign report"
+msgstr "Не вдалося скасувати заглушення для облікового запису"
 
 #: content/ui/AccountInfo.qml:116
 #, kde-format
@@ -385,72 +413,81 @@ msgid "Block"
 msgstr "Заблокувати"
 
 #: content/ui/AccountInfo.qml:327
+#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgctxt "@action:inmenu Report this post"
+msgid "Report…"
+msgstr "Репост"
+
+#: content/ui/AccountInfo.qml:333
 #, kde-format
 msgid "Edit Profile"
 msgstr "Змінити профіль"
 
-#: content/ui/AccountInfo.qml:331
+#: content/ui/AccountInfo.qml:337
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:337 content/ui/TimelinePage.qml:47
+#: content/ui/AccountInfo.qml:343 content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/AccountInfo.qml:338 content/ui/Main.qml:335
+#: content/ui/AccountInfo.qml:344 content/ui/Main.qml:356
 #: content/ui/TimelinePage.qml:49
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
 
-#: content/ui/AccountInfo.qml:343 content/ui/Main.qml:374
+#: content/ui/AccountInfo.qml:349 content/ui/Main.qml:395
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
-#: content/ui/AccountInfo.qml:349
+#: content/ui/AccountInfo.qml:355
 #, kde-format
 msgid "Muted Users"
 msgstr "Позбавлені голосу користувачі"
 
-#: content/ui/AccountInfo.qml:355
+#: content/ui/AccountInfo.qml:361
 #, kde-format
 msgid "Blocked Users"
 msgstr "Заблоковані користувачі"
 
-#: content/ui/AccountInfo.qml:361
+#: content/ui/AccountInfo.qml:367
 #, kde-format
 msgid "Featured Users"
 msgstr "Особливі користувачі"
 
-#: content/ui/AccountInfo.qml:366
+#: content/ui/AccountInfo.qml:372
 #, kde-format
 msgid "Copy Link to This Profile"
 msgstr "Копіювати посилання на цей профіль"
 
-#: content/ui/AccountInfo.qml:369 content/ui/StatusDelegate/OverflowMenu.qml:48
+#: content/ui/AccountInfo.qml:375 content/ui/StatusDelegate/OverflowMenu.qml:49
 #, kde-format
 msgid "Post link copied."
 msgstr "Посилання на допис скопійовано."
 
-#: content/ui/AccountInfo.qml:454
+#: content/ui/AccountInfo.qml:460
 #, kde-format
 msgid "Note:"
 msgstr "Примітка:"
 
-#: content/ui/AccountInfo.qml:462
+#: content/ui/AccountInfo.qml:468
 #, kde-format
 msgid "Saved"
 msgstr "Збережено"
 
-#: content/ui/AccountInfo.qml:477
+#: content/ui/AccountInfo.qml:483
 #, kde-format
 msgid "Click to add a note"
 msgstr "Натисніть, щоб додати нотатку"
 
-#: content/ui/AccountInfo.qml:581
+#: content/ui/AccountInfo.qml:587
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -460,7 +497,7 @@ msgstr[1] "<b>%1</b> дописи"
 msgstr[2] "<b>%1</b> дописів"
 msgstr[3] "<b>%1</b> допис"
 
-#: content/ui/AccountInfo.qml:594
+#: content/ui/AccountInfo.qml:600
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -470,7 +507,7 @@ msgstr[1] "Має <b>%1</b> тих, хто стежать"
 msgstr[2] "Має <b>%1</b> тих, хто стежать"
 msgstr[3] "Має <b>одного</b> того, хто стежить"
 
-#: content/ui/AccountInfo.qml:607
+#: content/ui/AccountInfo.qml:613
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -480,31 +517,31 @@ msgstr[1] "Стежить за <b>%1</b>"
 msgstr[2] "Стежить за <b>%1</b>"
 msgstr[3] "Стежить за <b>%1</b>"
 
-#: content/ui/AccountInfo.qml:631
+#: content/ui/AccountInfo.qml:637
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Дописи"
 
-#: content/ui/AccountInfo.qml:635
+#: content/ui/AccountInfo.qml:641
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Дописи і відповіді"
 
-#: content/ui/AccountInfo.qml:639
+#: content/ui/AccountInfo.qml:645
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Мультимедіа"
 
-#: content/ui/AccountInfo.qml:665
+#: content/ui/AccountInfo.qml:671
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Приховати підсилення"
 
-#: content/ui/AccountInfo.qml:685
+#: content/ui/AccountInfo.qml:691
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -554,7 +591,7 @@ msgstr "Спілкування"
 msgid "No Conversations"
 msgstr "Немає спілкувань"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:467
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:488
 #, kde-format
 msgid "Explore"
 msgstr "Ознайомлення"
@@ -833,112 +870,107 @@ msgstr "Дізнатись більше"
 msgid "Login"
 msgstr "Увійти"
 
-#: content/ui/Main.qml:89
+#: content/ui/Main.qml:93
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
-
-#: content/ui/Main.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
-msgctxt "@title"
-msgid "Reply As…"
-msgstr "Відповісти"
-
-#: content/ui/Main.qml:93
-#, fuzzy, kde-format
-#| msgid "Favorites"
-msgctxt "@title"
-msgid "Favorite As…"
-msgstr "Улюблене"
+msgstr "Відкрити як…"
 
 #: content/ui/Main.qml:95
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
-msgid "Boost As…"
-msgstr "Підсилення"
+msgid "Reply As…"
+msgstr "Відповісти як…"
 
 #: content/ui/Main.qml:97
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
-msgid "Bookmark As…"
-msgstr "Закладки"
+msgid "Favorite As…"
+msgstr "Додати до улюбленого як…"
 
 #: content/ui/Main.qml:99
 #, kde-format
 msgctxt "@title"
-msgid "Unknown Action"
-msgstr ""
+msgid "Boost As…"
+msgstr "Підсилити як…"
 
-#: content/ui/Main.qml:316
+#: content/ui/Main.qml:101
+#, kde-format
+msgctxt "@title"
+msgid "Bookmark As…"
+msgstr "Додати до закладок як…"
+
+#: content/ui/Main.qml:103
+#, kde-format
+msgctxt "@title"
+msgid "Unknown Action"
+msgstr "Невідома дія"
+
+#: content/ui/Main.qml:337
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Діагностика"
 
-#: content/ui/Main.qml:325
+#: content/ui/Main.qml:346
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Засоби модерації"
 
-#: content/ui/Main.qml:326
+#: content/ui/Main.qml:347
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Засоби модерації"
 
-#: content/ui/Main.qml:336
+#: content/ui/Main.qml:357
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/Main.qml:346
+#: content/ui/Main.qml:367
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: content/ui/Main.qml:361 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:382 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/Main.qml:390 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:411 content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
 
-#: content/ui/Main.qml:405
+#: content/ui/Main.qml:426
 #, kde-format
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/Main.qml:421
+#: content/ui/Main.qml:442
 #, kde-format
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: content/ui/Main.qml:435
+#: content/ui/Main.qml:456
 #, kde-format
 msgid "Favourites"
 msgstr "Улюблені"
 
-#: content/ui/Main.qml:451
+#: content/ui/Main.qml:472
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/Main.qml:481
+#: content/ui/Main.qml:502
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/Main.qml:496
+#: content/ui/Main.qml:517
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
@@ -1679,6 +1711,7 @@ msgid "Successfully deleted %1's account data"
 msgstr "Успішно вилучено дані облікового запису %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:282
+#: content/ui/ModerationTools/MainReportToolPage.qml:155
 #, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
@@ -2021,6 +2054,236 @@ msgctxt "@action:button"
 msgid "Update IP Rule"
 msgstr "Оновити IP-правило"
 
+#: content/ui/ModerationTools/MainReportToolPage.qml:48
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgid "Report #%1"
+msgstr "Репост"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:52
+#, kde-format
+msgid "Mark as unresolved"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:52
+#, kde-format
+msgid "Mark as resolved"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:56
+#, kde-format
+msgid "Report Unresolved"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:59
+#, kde-format
+msgid "Report Resolved"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:205
+#, fuzzy, kde-format
+#| msgid "Posts"
+msgctxt "@info Number of Posts"
+msgid "Posts"
+msgstr "Дописи"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:209
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Followers"
+msgctxt "@info Number of followers."
+msgid "Followers"
+msgstr "Ті, хто стежить"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:213
+#, fuzzy, kde-format
+#| msgid "Following"
+msgctxt "@info Row Number of accounts followed by the account"
+msgid "Following"
+msgstr "Стежить"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:217
+#, fuzzy, kde-format
+#| msgctxt "@info: Joining date of the user"
+#| msgid "Joined"
+msgctxt "@info Time at which the reported account joined."
+msgid "Joined"
+msgstr "Долучення"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:221
+#, fuzzy, kde-format
+#| msgctxt "@info The last time the account was active."
+#| msgid "Last Active"
+msgctxt "@info The last time the reported account was active."
+msgid "Last Active"
+msgstr "Остання активність"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:225
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgctxt "@info The current login status of the account."
+msgid "Reported"
+msgstr "Репост"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:237
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgctxt "@info Time at which the report was made"
+msgid "Reported"
+msgstr "Репост"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:245
+#, kde-format
+msgid "Reported By"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:260
+#, fuzzy, kde-format
+#| msgid "Spoiler Status"
+msgid "Report Status"
+msgstr "Стан спойлера"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:261
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Resolve domain"
+msgid "Resolved"
+msgstr "Розв'язати домен"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:261
+#, kde-format
+msgid "Unresolved"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:268
+#, fuzzy, kde-format
+#| msgid "Action taken successfully"
+msgid "Action taken by"
+msgstr "Дію успішно виконано"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:281
+#, kde-format
+msgid "Assigned moderator"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:282
+#, kde-format
+msgid "No one"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:290
+#, kde-format
+msgid "Unassign"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:290
+#, kde-format
+msgid "Assign to me"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:300
+#, kde-format
+msgid "Forwarded"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:301
+#, kde-format
+msgctxt "@info:The report is forwarded"
+msgid "Yes"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:301
+#, fuzzy, kde-format
+#| msgid "None"
+msgctxt "@info:The report is not forwarded"
+msgid "No"
+msgstr "Немає"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:310
+#, kde-format
+msgid "Category"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:314
+#, kde-format
+msgid ""
+"The reason this account and/or content was reported will be cited in "
+"communication with the reported account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:326
+#, kde-format
+msgid "Other"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:331
+#, kde-format
+msgid "Category changed to other"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:342
+#, kde-format
+msgid "Spam"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:346
+#, kde-format
+msgid "Category changed to spam"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:357
+#, kde-format
+msgid "Content violates one or more server rules"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:361
+#, kde-format
+msgid "Category changed to rule violation"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:404
+#, kde-format
+msgid "To provide more information, %1 wrote:"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:413
+#, kde-format
+msgctxt "@info:Account didn't provide any comment on the report "
+msgid "N/A"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:429
+#, kde-format
+msgid "Reported Content"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:433
+#, kde-format
+msgid ""
+"Offending content will be cited in communication with the reported account"
+msgstr ""
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:464
+#: content/ui/StatusDelegate/StatusDelegate.qml:289
+#, kde-format
+msgid "<b>Content Warning</b><br /> %1"
+msgstr "<b>Попередження щодо вмісту</b><br /> %1"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:470
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#, kde-format
+msgid "Show Less"
+msgstr "Показати менше"
+
+#: content/ui/ModerationTools/MainReportToolPage.qml:470
+#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#, kde-format
+msgid "Show More"
+msgstr "Докладніше"
+
 #: content/ui/ModerationTools/ModerationToolPage.qml:15
 #, kde-format
 msgctxt "@title"
@@ -2028,22 +2291,107 @@ msgid "Accounts"
 msgstr "Облікові записи"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgid "Reports"
+msgstr "Репост"
+
+#: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
 msgstr "Федерація"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:27
+#: content/ui/ModerationTools/ModerationToolPage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
 msgstr "IP-правила"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:33
+#: content/ui/ModerationTools/ModerationToolPage.qml:39
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
 msgstr "Блокування ел. пошти"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:15
+#, kde-format
+msgid "Accounts Tool Page"
+msgstr "Сторінка інструментів облікових записів"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:33
+#, fuzzy, kde-format
+#| msgid "Spoiler Status"
+msgctxt "@info:Combobox to choose Report Status"
+msgid "Report Status"
+msgstr "Стан спойлера"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:45
+#, kde-format
+msgctxt "@info:Filter out unresolved reports"
+msgid "Unresolved"
+msgstr ""
+
+#: content/ui/ModerationTools/ReportToolPage.qml:49
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Resolve domain"
+msgctxt "@info:Filter out resolved reports"
+msgid "Resolved"
+msgstr "Розв'язати домен"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:63
+#, kde-format
+msgctxt "@info:Combobox to choose the origin of report"
+msgid "Report Origin"
+msgstr ""
+
+#: content/ui/ModerationTools/ReportToolPage.qml:76
+#, fuzzy, kde-format
+#| msgctxt "@action:button Show all of a profile's posts"
+#| msgid "All"
+msgctxt "@info:Filter out accounts with any origin"
+msgid "All"
+msgstr "Усі"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:80
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@info:Filter out accounts with local origin"
+msgid "Local"
+msgstr "Місцевий"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out remote accounts"
+#| msgid "Remote"
+msgctxt "@info:Filter out accounts with remote origin"
+msgid "Remote"
+msgstr "Віддалені"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:155
+#, kde-format
+msgid "Reported By:"
+msgstr ""
+
+#: content/ui/ModerationTools/ReportToolPage.qml:240
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Assigned Account:"
+msgstr "Додати обліковий запис"
+
+#: content/ui/ModerationTools/ReportToolPage.qml:265
+#, kde-format
+msgctxt "@info: No account assigned to the report"
+msgid "N/A"
+msgstr ""
+
+#: content/ui/ModerationTools/ReportToolPage.qml:296
+#, fuzzy, kde-format
+#| msgid "No accounts found"
+msgid "No reports found"
+msgstr "Не знайдено жодного облікового запису"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2127,6 +2475,50 @@ msgstr "Голосування завершено"
 msgid "%1 updated their post"
 msgstr "%1 оновлено допис"
 
+#: content/ui/ReportDialog.qml:22
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgctxt "@title"
+msgid "Report Post"
+msgstr "Репост"
+
+#: content/ui/ReportDialog.qml:22
+#, kde-format
+msgctxt "@title"
+msgid "Report User"
+msgstr ""
+
+#: content/ui/ReportDialog.qml:40
+#, fuzzy, kde-format
+#| msgid "Reasons for joining"
+msgctxt "@title"
+msgid "Reason for reporting this post"
+msgstr "Причини долучення"
+
+#: content/ui/ReportDialog.qml:40
+#, fuzzy, kde-format
+#| msgid "Reasons for joining"
+msgctxt "@title"
+msgid "Reason for reporting this user"
+msgstr "Причини долучення"
+
+#: content/ui/ReportDialog.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@action:button Send the same post again"
+#| msgid "Repost"
+msgctxt "@action:button 'Report' as in 'Report this to moderators'"
+msgid "Report"
+msgstr "Репост"
+
+#: content/ui/ReportDialog.qml:64
+#, fuzzy, kde-format
+#| msgctxt "@info:Cancel button to close the dailog"
+#| msgid "Cancel"
+msgctxt "@action"
+msgid "Cancel"
+msgstr "Скасувати"
+
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -2159,8 +2551,7 @@ msgid "Logout"
 msgstr "Вийти"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Вийти"
@@ -2169,7 +2560,7 @@ msgstr "Вийти"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Ви справді хочете вийти з запису %1?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:113
 #, kde-format
@@ -2357,7 +2748,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:120
+#: content/ui/StatusDelegate/OverflowMenu.qml:168
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -2557,56 +2948,56 @@ msgstr "Опис"
 msgid "Focal point"
 msgstr "Точка фокусування"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:36
+#: content/ui/StatusComposer/ComposerPoll.qml:37
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Варіант %1"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:60
+#: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Додати варіант"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:61
+#: content/ui/StatusComposer/ComposerPoll.qml:62
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Додати новий варіант відповіді"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:80
+#: content/ui/StatusComposer/ComposerPoll.qml:81
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Коли завершується строк голосування"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:89
+#: content/ui/StatusComposer/ComposerPoll.qml:90
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Вибір з варіантів"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:95
+#: content/ui/StatusComposer/ComposerPoll.qml:96
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Дозволити декілька варіантів"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:104
+#: content/ui/StatusComposer/ComposerPoll.qml:105
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Приховати результати"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:110
+#: content/ui/StatusComposer/ComposerPoll.qml:111
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Ховати кількість голосів до завершення голосування"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
+#: content/ui/StatusDelegate/OverflowMenu.qml:161
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
@@ -2640,13 +3031,13 @@ msgstr "Написати новий допис"
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "Відкинути чернетку"
 
 #: content/ui/StatusComposer/StatusComposer.qml:95
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Ви справді хочете відкинути вашу чернетку?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
 #: content/ui/StatusComposer/StatusComposer.qml:357
@@ -2869,15 +3260,14 @@ msgid "Media Hidden"
 msgstr "Мультимедіа приховано"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:38
-#, fuzzy, kde-format
-#| msgid "Save as"
+#, kde-format
 msgid "Save Image As…"
-msgstr "Зберегти як"
+msgstr "Зберегти зображення як…"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Копіювати зображення"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
@@ -2907,83 +3297,106 @@ msgstr[3] "%1 підсилення"
 msgid "Link preview: %1"
 msgstr "Перегляд посилань: %1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:30
+#: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "Розгорнути допис"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:37
+#: content/ui/StatusDelegate/OverflowMenu.qml:38
 #, kde-format
 msgid "Open Original Page"
 msgstr "Відкрити початкову сторінку"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:45
+#: content/ui/StatusDelegate/OverflowMenu.qml:46
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:59
+#: content/ui/StatusDelegate/OverflowMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Відкрити як…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:66
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Відповісти"
+msgstr "Відповісти як…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:73
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Улюблене"
+msgstr "Додати до улюбленого як…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:80
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Підсилення"
+msgstr "Підсилити як…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:87
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Закладки"
+msgstr "Додати до закладок як…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:95
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Вилучити закладку"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:95
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:102
+#: content/ui/StatusDelegate/OverflowMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Відшпилити на профілі"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:102
+#: content/ui/StatusDelegate/OverflowMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Пришпилити на профілі"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:127
+#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#, fuzzy, kde-format
+#| msgid "Unmute"
+msgctxt "@action:inmenu Unmute account"
+msgid "Unmute @%1"
+msgstr "Дозволити повідомлення"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:inmenu Mute account"
+msgid "Mute @%1"
+msgstr "Заборонити повідомлення"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#, fuzzy, kde-format
+#| msgid "Unblock"
+msgctxt "@action:inmenu Unblock account"
+msgid "Unblock @%1"
+msgstr "Розблокувати"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#, fuzzy, kde-format
+#| msgid "Block"
+msgctxt "@action:inmenu Block account"
+msgid "Block @%1"
+msgstr "Заблокувати"
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:175
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Вилучити і переписати"
@@ -3021,25 +3434,22 @@ msgid "Pinned Post"
 msgstr "Пришпилений допис"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Вилучити слово"
+msgstr "Вилучити допис"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Ви справді хочете вилучити цей допис?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:227
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Вилучити і переписати"
+msgstr "Вилучити і переписати допис"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:228
 #, kde-format
@@ -3048,77 +3458,64 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Ви справді хочете переписати цей допис? У результаті буде вилучено "
+"початковий допис."
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:288
-#, kde-format
-msgid "<b>Content Warning</b><br /> %1"
-msgstr "<b>Попередження щодо вмісту</b><br /> %1"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:295
-#, kde-format
-msgid "Show Less"
-msgstr "Показати менше"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:295
-#, kde-format
-msgid "Show More"
-msgstr "Докладніше"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:383
+#: content/ui/StatusDelegate/StatusDelegate.qml:384
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:406
+#: content/ui/StatusDelegate/StatusDelegate.qml:407
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:409
+#: content/ui/StatusDelegate/StatusDelegate.qml:410
 #, kde-format
 msgid "Boosted"
 msgstr "Підсилено"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:409
+#: content/ui/StatusDelegate/StatusDelegate.qml:410
 #, kde-format
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:427
+#: content/ui/StatusDelegate/StatusDelegate.qml:428
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Улюблене"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:430
+#: content/ui/StatusDelegate/StatusDelegate.qml:431
 #, kde-format
 msgid "Favourited"
 msgstr "Додано до улюблених"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:430
+#: content/ui/StatusDelegate/StatusDelegate.qml:431
 #, kde-format
 msgid "Favourite"
 msgstr "Улюблені"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Вилучити закладку"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:447
+#: content/ui/StatusDelegate/StatusDelegate.qml:448
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:451
 #, kde-format
 msgid "Bookmarked"
 msgstr "Додано до закладок"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:450
+#: content/ui/StatusDelegate/StatusDelegate.qml:451
 #, kde-format
 msgid "Bookmark"
 msgstr "Закладка"
@@ -3262,94 +3659,96 @@ msgstr "7 днів"
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: main.cpp:101
+#: main.cpp:97
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:103
+#: main.cpp:99
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:105
+#: main.cpp:101
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021–2023; Спільнота KDE, 2021–2023"
 
-#: main.cpp:106
+#: main.cpp:102
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:107 main.cpp:112
+#: main.cpp:103 main.cpp:108
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:111
+#: main.cpp:107
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:116
+#: main.cpp:112
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:116
+#: main.cpp:112
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:124
-#, kde-format
-msgid "Client for the decentralized social network: mastodon"
+#: main.cpp:120
+#, fuzzy, kde-format
+#| msgid "Client for the decentralized social network: mastodon"
+msgid "Client for decentralized social networks like Mastodon"
 msgstr "Клієнт децентралізованої соціальної мережі: mastodon"
 
-#: main.cpp:125
-#, kde-format
-msgid "Supports web+ap: url scheme"
+#: main.cpp:121
+#, fuzzy, kde-format
+#| msgid "Supports web+ap: url scheme"
+msgid "Supports https and web+ap url scheme"
 msgstr "Передбачено підтримку схеми адреси web+ap:"
 
-#: main.cpp:127
+#: main.cpp:123
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Оприлюднити рядок тексту в окремому редакторі."
 
-#: main.cpp:127
+#: main.cpp:123
 #, kde-format
 msgid "The text to share."
 msgstr "Текст, який слід оприлюднити."
 
-#: main.cpp:131
+#: main.cpp:127
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "Лише для внутрішнього використання."
 
-#: main.cpp:190
+#: main.cpp:187
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Отримання імпульсних сповіщень"
 
 #: notification/notificationmodel.cpp:97
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
 
-#: search/searchmodel.cpp:139
+#: search/searchmodel.cpp:138
 #, kde-format
 msgid "Users"
 msgstr "Користувачі"
 
-#: search/searchmodel.cpp:141
+#: search/searchmodel.cpp:140
 #, kde-format
 msgid "Hashtags"
 msgstr "Хештеґи"
 
-#: search/searchmodel.cpp:143
+#: search/searchmodel.cpp:142
 #, kde-format
 msgid "Posts"
 msgstr "Дописи"
@@ -3530,33 +3929,37 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "Прапорці"
 
-#: utils/filetransferjob.cpp:32
+#: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr "Не вдалося відкрити тимчасовий отриманий файл"
 
-#: utils/filetransferjob.cpp:74
+#: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr "Не вдалося зарезервувати місце на диску для отримання даних"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:81
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Отримання"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:82
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "Джерело"
 
-#: utils/filetransferjob.cpp:84
+#: utils/filetransferjob.cpp:83
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
+
+#~ msgctxt "login status"
+#~ msgid "Silenced"
+#~ msgstr "Заглушено"
 
 #~ msgid "%1 Reply"
 #~ msgid_plural "%1 Replies"
@@ -3593,9 +3996,6 @@ msgstr "Призначення"
 
 #~ msgid "Requested"
 #~ msgstr "Надіслано запит"
-
-#~ msgid "Following"
-#~ msgstr "Стежить"
 
 #~ msgid "Stop Muting"
 #~ msgstr "Припинити заборону повідомлень"
@@ -3702,9 +4102,6 @@ msgstr "Призначення"
 
 #~ msgid "Add a description"
 #~ msgstr "Додати опис"
-
-#~ msgid "Accounts Tool Page"
-#~ msgstr "Сторінка інструментів облікових записів"
 
 #~ msgctxt "@title"
 #~ msgid "Email Block Tool Page"
