@@ -4,6 +4,8 @@
 #pragma once
 
 #include <QObject>
+#include <QQuickItem>
+#include <QQuickTextDocument>
 #include <QtQml/qqmlregistration.h>
 
 class AbstractAccount;
@@ -21,4 +23,6 @@ public:
     Q_INVOKABLE void downloadFile(AbstractAccount *account, const QString &url, const QString &destination) const;
     Q_INVOKABLE QString url(const QUrl &url) const;
     Q_INVOKABLE QString fileName(const QUrl &url) const;
+
+    Q_INVOKABLE void forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item);
 };

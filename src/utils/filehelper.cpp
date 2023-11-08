@@ -35,4 +35,10 @@ QString FileHelper::fileName(const QUrl &url) const
     return url.fileName();
 }
 
+void FileHelper::forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item)
+{
+    // HACK: Workaround bug QTBUG 93281
+    connect(textDocument->textDocument(), SIGNAL(imagesLoaded()), item, SLOT(updateWholeDocument()));
+}
+
 #include "moc_filehelper.cpp"
