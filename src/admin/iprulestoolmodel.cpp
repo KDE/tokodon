@@ -181,3 +181,5 @@ void IpRulesToolModel::filltimeline()
         setLoading(false);
     });
 }
+
+#include "moc_iprulestoolmodel.cpp"

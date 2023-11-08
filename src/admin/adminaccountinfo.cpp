@@ -236,3 +236,5 @@ void AdminAccountInfo::calculateRecentActivity(const QJsonArray &ipsArray)
     }
     m_lastActive = latestDateTime.toLocalTime();
 }
+
+#include "moc_adminaccountinfo.cpp"

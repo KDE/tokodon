@@ -56,3 +56,5 @@ int PollTimeModel::getTime(const int index)
 {
     return m_times[index].time;
 }
+
+#include "moc_polltimemodel.cpp"

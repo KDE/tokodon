@@ -169,3 +169,5 @@ QString SearchHashtag::getName() const
 {
     return m_name;
 }
+
+#include "moc_searchmodel.cpp"

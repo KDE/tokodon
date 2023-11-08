@@ -812,3 +812,5 @@ QList<CustomEmoji> AbstractAccount::customEmojis() const
 {
     return m_customEmojis;
 }
+
+#include "moc_abstractaccount.cpp"

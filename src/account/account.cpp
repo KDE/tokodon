@@ -508,3 +508,5 @@ QUrlQuery Account::buildNotificationFormData()
 
     return formdata;
 }
+
+#include "moc_account.cpp"

@@ -143,3 +143,5 @@ bool MainTimelineModel::atEnd() const
 {
     return m_next.isEmpty();
 }
+
+#include "moc_maintimelinemodel.cpp"

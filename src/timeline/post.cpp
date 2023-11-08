@@ -865,3 +865,5 @@ QPair<QString, QList<QString>> Post::parseContent(const QString &html)
 
     return {processedHtml, standaloneTags};
 }
+
+#include "moc_post.cpp"

@@ -56,3 +56,5 @@ void NetworkRequestProgress::setProgress(int progress)
     m_progress = progress;
     Q_EMIT progressChanged();
 }
+
+#include "moc_networkrequestprogress.cpp"

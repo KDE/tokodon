@@ -85,3 +85,5 @@ void Clipboard::copyImage(const QUrl &url)
         },
         nullptr);
 }
+
+#include "moc_clipboard.cpp"

@@ -34,3 +34,5 @@ QString FileHelper::fileName(const QUrl &url) const
 {
     return url.fileName();
 }
+
+#include "moc_filehelper.cpp"

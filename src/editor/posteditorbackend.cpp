@@ -258,3 +258,5 @@ void PostEditorBackend::edit()
         Q_EMIT editComplete(obj);
     });
 }
+
+#include "moc_posteditorbackend.cpp"

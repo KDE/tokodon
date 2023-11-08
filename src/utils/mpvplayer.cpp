@@ -375,3 +375,5 @@ void MpvPlayer::onMpvEvents()
         }
     }
 }
+
+#include "moc_mpvplayer.cpp"

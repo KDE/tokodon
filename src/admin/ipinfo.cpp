@@ -82,3 +82,5 @@ IpInfo IpInfo::fromSourceData(const QJsonObject &doc)
     info.m_expiresAt = QDateTime::fromString(doc["expires_at"_L1].toString(), Qt::ISODate).toLocalTime();
     return info;
 }
+
+#include "moc_ipinfo.cpp"

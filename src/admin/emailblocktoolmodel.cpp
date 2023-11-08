@@ -143,3 +143,5 @@ void EmailBlockToolModel::filltimeline()
         setLoading(false);
     });
 }
+
+#include "moc_emailblocktoolmodel.cpp"

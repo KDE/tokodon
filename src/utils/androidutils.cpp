@@ -40,3 +40,5 @@ JNIEXPORT void JNICALL Java_org_kde_tokodon_AndroidUtils_openUri(JNIEnv *env, jo
     env->ReleaseStringUTFChars(path, pathStr);
 }
 }
+
+#include "moc_androidutils.cpp"

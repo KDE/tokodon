@@ -34,3 +34,5 @@ void WindowController::saveGeometry()
 
     stateConfig->sync();
 }
+
+#include "moc_windowcontroller.cpp"

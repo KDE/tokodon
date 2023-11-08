@@ -58,3 +58,5 @@ AbstractAccount *AbstractListModel::account() const
 {
     return m_account;
 }
+
+#include "moc_abstractlistmodel.cpp"

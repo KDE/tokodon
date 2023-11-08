@@ -282,3 +282,5 @@ void FederationToolModel::filltimeline(FederationAction action)
         setLoading(false);
     });
 }
+
+#include "moc_federationtoolmodel.cpp"

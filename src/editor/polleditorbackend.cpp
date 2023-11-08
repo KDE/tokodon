@@ -73,3 +73,5 @@ void PollEditorBackend::checkValidity()
         Q_EMIT validityChanged();
     }
 }
+
+#include "moc_polleditorbackend.cpp"

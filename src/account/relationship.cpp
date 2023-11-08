@@ -196,3 +196,5 @@ void Relationship::setNote(const QString &note)
     m_note = note;
     Q_EMIT noteChanged();
 }
+
+#include "moc_relationship.cpp"

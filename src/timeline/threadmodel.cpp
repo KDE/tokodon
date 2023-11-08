@@ -135,3 +135,5 @@ int ThreadModel::getRootIndex() const
 
     return -1;
 }
+
+#include "moc_threadmodel.cpp"

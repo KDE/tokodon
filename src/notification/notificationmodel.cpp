@@ -244,3 +244,5 @@ void NotificationModel::actionDelete(const QModelIndex &index)
         }
     }
 }
+
+#include "moc_notificationmodel.cpp"

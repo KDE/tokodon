@@ -277,3 +277,5 @@ void TimelineModel::handleEvent(AbstractAccount::StreamingEventType eventType, c
         }
     }
 }
+
+#include "moc_timelinemodel.cpp"

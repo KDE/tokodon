@@ -167,3 +167,5 @@ QUrl Identity::url() const
 {
     return m_url;
 }
+
+#include "moc_identity.cpp"

@@ -69,3 +69,5 @@ void TagsTimelineModel::fillTimeline(const QString &fromId)
         },
         handleError);
 }
+
+#include "moc_tagstimelinemodel.cpp"

@@ -120,3 +120,5 @@ void ConversationModel::markAsRead(const QString &id)
         }
     });
 }
+
+#include "moc_conversationmodel.cpp"

@@ -74,3 +74,5 @@ QModelIndex RawLanguageModel::indexOfValue(const QString &code)
         return {};
     }
 }
+
+#include "moc_languagemodel.cpp"

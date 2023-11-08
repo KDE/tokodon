@@ -103,3 +103,5 @@ RulesModel::Rule RulesModel::fromSourceData(const QJsonObject &object) const
 
     return rule;
 }
+
+#include "moc_rulesmodel.cpp"

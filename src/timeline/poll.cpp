@@ -86,3 +86,5 @@ QList<QVariantMap> Poll::options() const
 {
     return m_options;
 }
+
+#include "moc_poll.cpp"

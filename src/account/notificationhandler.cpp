@@ -162,3 +162,5 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         knotification->sendEvent();
     }
 }
+
+#include "moc_notificationhandler.cpp"

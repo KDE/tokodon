@@ -422,3 +422,5 @@ void AccountsToolModel::fillTimeline()
         setLoading(false);
     });
 }
+
+#include "moc_accounttoolmodel.cpp"

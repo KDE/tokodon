@@ -155,3 +155,5 @@ void NetworkController::requestRemoteObject(AbstractAccount *account, const QStr
     });
     account->get(url, true, &AccountManager::instance(), std::move(callback));
 }
+
+#include "moc_networkcontroller.cpp"

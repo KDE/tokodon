@@ -31,3 +31,5 @@ QString CustomEmoji::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const
 
     return processed;
 }
+
+#include "moc_customemoji.cpp"

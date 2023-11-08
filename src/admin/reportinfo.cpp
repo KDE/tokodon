@@ -183,3 +183,5 @@ void ReportInfo::fromSourceData(const QJsonObject &doc)
 
     Q_EMIT reportInfoUpdated();
 }
+
+#include "moc_reportinfo.cpp"

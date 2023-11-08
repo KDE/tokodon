@@ -242,3 +242,5 @@ void AccountModel::updateTabFilters()
     }
     Q_EMIT filtersChanged();
 }
+
+#include "moc_accountmodel.cpp"

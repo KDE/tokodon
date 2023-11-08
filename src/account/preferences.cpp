@@ -108,3 +108,5 @@ void Preferences::setPreferencesField(QString name, QString value)
 
     m_account->patch(m_account->apiUrl(QStringLiteral("/api/v1/accounts/update_credentials")), multiPart, true, this, [=](QNetworkReply *) {});
 }
+
+#include "moc_preferences.cpp"

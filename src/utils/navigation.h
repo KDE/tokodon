@@ -6,8 +6,8 @@
 #include <QObject>
 #include <QtQml/qqmlregistration.h>
 
-class Identity;
-class Post;
+#include "account/identity.h"
+#include "timeline/post.h"
 
 class Navigation : public QObject
 {

@@ -271,3 +271,5 @@ void AbstractTimelineModel::actionDelete(const QModelIndex &index, Post *post)
     Q_UNUSED(index);
     m_account->deleteResource(m_account->apiUrl(QStringLiteral("/api/v1/statuses/%1").arg(post->postId())), true, this, {});
 }
+
+#include "moc_abstracttimelinemodel.cpp"

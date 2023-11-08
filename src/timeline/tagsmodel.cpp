@@ -123,3 +123,5 @@ int TagsModel::rowCount(const QModelIndex &parent) const
     Q_UNUSED(parent)
     return m_tags.size();
 }
+
+#include "moc_tagsmodel.cpp"

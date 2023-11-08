@@ -294,3 +294,5 @@ void ReportToolModel::fillTimeline()
         setLoading(false);
     });
 }
+
+#include "moc_reporttoolmodel.cpp"

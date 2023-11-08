@@ -53,3 +53,5 @@ EmailInfo EmailInfo::fromSourceData(const QJsonObject &doc)
 
     return info;
 }
+
+#include "moc_emailinfo.cpp"

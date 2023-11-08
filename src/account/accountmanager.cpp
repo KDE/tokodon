@@ -539,3 +539,5 @@ void AccountManager::queueNotifications()
         });
     }
 }
+
+#include "moc_accountmanager.cpp"

@@ -276,3 +276,5 @@ void ProfileEditorBackend::save()
         fetchAccountInfo();
     });
 }
+
+#include "moc_profileeditor.cpp"

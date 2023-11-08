@@ -126,3 +126,5 @@ const QList<Attachment *> &AttachmentEditorModel::attachments() const
 {
     return m_attachments;
 }
+
+#include "moc_attachmenteditormodel.cpp"

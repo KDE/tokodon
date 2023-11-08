@@ -452,3 +452,5 @@ NotificationModel *NotificationGroupingModel::getSourceModel()
 {
     return qobject_cast<NotificationModel *>(sourceModel());
 }
+
+#include "moc_notificationgroupingmodel.cpp"

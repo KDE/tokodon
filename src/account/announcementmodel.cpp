@@ -97,3 +97,5 @@ AnnouncementModel::Announcement AnnouncementModel::fromSourceData(const QJsonObj
 
     return announcement;
 }
+
+#include "moc_announcementmodel.cpp"

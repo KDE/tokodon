@@ -76,3 +76,5 @@ void FeaturedTagsModel::fill()
         }
     });
 }
+
+#include "moc_featuredtagsmodel.cpp"

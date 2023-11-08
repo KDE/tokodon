@@ -316,3 +316,5 @@ void SocialGraphModel::fillTimeline()
         setLoading(false);
     });
 }
+
+#include "moc_socialgraphmodel.cpp"
