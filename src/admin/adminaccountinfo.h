@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 #pragma once
 
@@ -101,6 +101,7 @@ public:
 
     Identity *invitedByIdentity() const;
     Identity *userLevelIdentity() const;
+    Identity *userLevelIdentityWithVanillaPointer() const;
 
 Q_SIGNALS:
     void adminAccountInfoUpdated();
@@ -124,6 +125,7 @@ private:
     QJsonArray m_ips;
     std::shared_ptr<Identity> m_invitedByIdentity;
     std::shared_ptr<Identity> m_userLevelIdentity;
+    Identity *m_userLevelIdentityWithVanillaPointer;
     AbstractAccount *m_parent = nullptr;
 
     void calculateRecentActivity(const QJsonArray &ipsArray);

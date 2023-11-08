@@ -227,10 +227,11 @@ Kirigami.ScrollablePage {
         delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
-            required property var index
+            required property int index
             required property var identity
 
-            width: ListView.view.width
+            implicitWidth: ListView.view.width
+            Layout.fillWidth: true
 
             onClicked: applicationWindow().pageStack.layers.push("./MainAccountToolPage.qml", {
                 identity: delegate.identity,
@@ -240,7 +241,6 @@ Kirigami.ScrollablePage {
 
             contentItem: Kirigami.FlexColumn {
                 spacing: 0
-                maximumWidth: Kirigami.Units.gridLayout * 40
                 RowLayout {
                     spacing: 0
                     Layout.fillWidth: true

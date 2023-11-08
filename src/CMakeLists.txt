@@ -153,6 +153,10 @@ target_sources(tokodon_static
     admin/emailblocktoolmodel.h
     admin/emailinfo.cpp
     admin/emailinfo.h
+    admin/reporttoolmodel.cpp
+    admin/reporttoolmodel.h
+    admin/reportinfo.h
+    admin/reportinfo.cpp
 
     # Notification models
     notification/notificationgroupingmodel.cpp
@@ -189,7 +193,9 @@ qt_target_qml_sources(tokodon_static
         content/ui/ModerationTools/MainAccountToolPage.qml
         content/ui/ModerationTools/MainFederationToolPage.qml
         content/ui/ModerationTools/MainIpRulePage.qml
+        content/ui/ModerationTools/MainReportToolPage.qml
         content/ui/ModerationTools/ModerationToolPage.qml
+        content/ui/ModerationTools/ReportToolPage.qml
 
         # Notifications
         content/ui/Notifications/GroupInteractionLabel.qml

@@ -6,6 +6,7 @@
 #include "accountconfig.h"
 #include "admin/adminaccountinfo.h"
 #include "admin/federationinfo.h"
+#include "admin/reportinfo.h"
 #include "identity.h"
 #include "preferences.h"
 #include "timeline/post.h"
@@ -164,6 +165,12 @@ public:
     /// \param accountId The account ID to look up
     /// \param doc doc Optionally provide an existing account JSON, if you were already given some in another request
     std::shared_ptr<AdminAccountInfo> adminIdentityLookup(const QString &accountId, const QJsonObject &doc);
+
+    /// Vanilla pointer identity
+    AdminAccountInfo *adminIdentityLookupWithVanillaPointer(const QString &accountId, const QJsonObject &doc);
+
+    /// Populating with Admin::Report
+    std::shared_ptr<ReportInfo> reportInfoLookup(const QString &reportId, const QJsonObject &doc);
 
     /// Invalidates the account
     void invalidate();
@@ -479,9 +486,12 @@ protected:
     bool m_supportsLocalVisibility;
     size_t m_charactersReservedPerUrl;
     QString m_instance_name;
+    QJsonArray m_instance_rules;
     std::shared_ptr<Identity> m_identity;
     std::shared_ptr<AdminAccountInfo> m_adminIdentity;
+    AdminAccountInfo *m_adminIdentityWithVanillaPointer;
     AdminAccountInfo *m_federationIdentity;
+    std::shared_ptr<ReportInfo> m_reportInfo;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
     QList<CustomEmoji> m_customEmojis;
@@ -501,6 +511,8 @@ protected:
     void mutatePost(const QString &id, const QString &verb, bool deliver_home = false);
     QMap<QString, std::shared_ptr<Identity>> m_identityCache;
     QMap<QString, std::shared_ptr<AdminAccountInfo>> m_adminIdentityCache;
+    QMap<QString, AdminAccountInfo *> m_adminIdentityCacheWithVanillaPointer;
+    QMap<QString, std::shared_ptr<ReportInfo>> m_reportInfoCache;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 };

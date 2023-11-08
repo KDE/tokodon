@@ -1,17 +1,17 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include "admin/accounttoolmodel.h"
-
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
-#include "account/relationship.h"
-#include <KLocalizedString>
 #include <QFile>
 #include <QJsonDocument>
 #include <QNetworkReply>
+#include <QStringLiteral>
 #include <QUrlQuery>
-#include <qstringliteral.h>
+
+#include <KLocalizedString>
+
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
+#include "admin/accounttoolmodel.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -297,7 +297,6 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 
-        // Check if the request failed due to one account blocking the other
         if (!jsonObj.value("error"_L1).isUndefined()) {
             const QHash<AdminAccountAction, QString> accountActionMap = {
                 {AdminAccountAction::ApproveAccount, i18n("Could not accept account")},
@@ -387,7 +386,7 @@ void AccountsToolModel::fillTimeline()
     } else {
         url = m_next;
     }
-    // To be removed when the pagination api response in fixed
+    // To be removed when the pagination api response is fixed
     if (url.toString().contains("v1"_L1)) {
         url = QUrl(url.toString().replace("/v1/"_L1, "/v2/"_L1));
     }

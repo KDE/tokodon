@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Carl Schwan <carlschwan@kde.org>
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
-// SPDX-License-Identifier: LGPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
@@ -15,6 +15,12 @@ KirigamiSettings.CategorizedSettings {
             text: i18nc("@title", "Accounts")
             icon.name: "user-identity"
             page: Qt.resolvedUrl("AccountToolPage.qml")
+        },
+        KirigamiSettings.SettingAction {
+            actionName: "Reports"
+            text: i18n("Reports")
+            icon.name: "flag"
+            page: Qt.resolvedUrl("ReportToolPage.qml")
         },
         KirigamiSettings.SettingAction {
             actionName: "Federation"

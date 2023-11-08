@@ -2,12 +2,14 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "adminaccountinfo.h"
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
-#include <KLocalizedString>
 #include <QDateTime>
 #include <QJsonObject>
+
+#include <KLocalizedString>
+
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
+#include "adminaccountinfo.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -21,7 +23,7 @@ QString AdminAccountInfo::loginStatus() const
     if (m_suspended) {
         return i18nc("login status", "Suspended");
     } else if (m_silenced) {
-        return i18nc("login status", "Silenced");
+        return i18nc("login status", "Limited");
     } else if (m_sensitized) {
         return i18nc("login status", "Sensitized");
     } else if (m_disabled) {
@@ -58,6 +60,11 @@ Identity *AdminAccountInfo::invitedByIdentity() const
 Identity *AdminAccountInfo::userLevelIdentity() const
 {
     return m_userLevelIdentity.get();
+}
+
+Identity *AdminAccountInfo::userLevelIdentityWithVanillaPointer() const
+{
+    return m_userLevelIdentityWithVanillaPointer;
 }
 
 bool AdminAccountInfo::suspended() const
