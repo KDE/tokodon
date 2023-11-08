@@ -34,7 +34,6 @@ include(KDEClangFormat)
 include(ECMQtDeclareLoggingCategory)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-include(ECMAddAppIcon)
 include(ECMAddTests)
 include(KDEGitCommitHooks)
 
