@@ -75,6 +75,7 @@ find_package(KUnifiedPush QUIET)
 set_package_properties(KUnifiedPush PROPERTIES
     TYPE OPTIONAL
     PURPOSE "Push notification support"
+    URL "https://invent.kde.org/libraries/kunifiedpush"
 )
 
 if (TARGET KUnifiedPush)
