@@ -274,7 +274,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     return socket;
 }
 
-void Account::validateToken()
+void Account::validateToken(bool newAccount)
 {
     const QUrl verify_credentials = apiUrl(QStringLiteral("/api/v1/accounts/verify_credentials"));
 
@@ -302,6 +302,14 @@ void Account::validateToken()
             m_name = m_identity->username();
             Q_EMIT identityChanged();
             Q_EMIT authenticated(true, {});
+
+#ifdef HAVE_KUNIFIEDPUSH
+            if (newAccount) {
+                // We asked for the push scope, so we can safely start subscribing to notifications
+                config()->setEnablePushNotifications(true);
+                config()->save();
+            }
+#endif
 
 #ifdef HAVE_KUNIFIEDPUSH
             get(
@@ -420,6 +428,11 @@ void Account::updatePushNotifications()
 {
 #ifdef HAVE_KUNIFIEDPUSH
     auto cfg = config();
+
+    // If push notifications are explicitly disabled (like if we have an account that does not have the scope) skip
+    if (!cfg->enablePushNotifications()) {
+        return;
+    }
 
     if (m_hasPushSubscription && !cfg->enableNotifications()) {
         unsubscribePushNotifications();

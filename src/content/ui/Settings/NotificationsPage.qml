@@ -26,6 +26,7 @@ FormCard.FormCardPage {
 
         FormCard.FormSwitchDelegate {
             text: i18n("Enable notifications for this account")
+            description: root.config.enablePushNotifications ? i18n("Push notifications are enabled.") : i18n("Push notifications are not available for this account. Please log out and log back in.")
             checked: root.config.enableNotifications
             onToggled: {
                 root.config.enableNotifications = checked;

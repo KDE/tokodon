@@ -138,8 +138,9 @@ void MockAccount::buildFromSettings()
 {
 }
 
-void MockAccount::validateToken()
+void MockAccount::validateToken(bool newAccount)
 {
+    Q_UNUSED(newAccount)
 }
 
 bool MockAccount::hasFollowRequests() const

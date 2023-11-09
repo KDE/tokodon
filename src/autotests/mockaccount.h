@@ -45,7 +45,7 @@ public:
 
     void buildFromSettings() override;
 
-    void validateToken() override;
+    void validateToken(bool newAccount = false) override;
 
     bool hasFollowRequests() const override;
 

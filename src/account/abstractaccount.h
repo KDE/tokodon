@@ -96,7 +96,7 @@ public:
     bool hasInstanceUrl() const;
 
     /// Verifies the token with the instance and if successful, loads identity information for the account
-    Q_INVOKABLE virtual void validateToken() = 0;
+    Q_INVOKABLE virtual void validateToken(bool newAccount = false) = 0;
 
     /// Return local account preferences
     AccountConfig *config();

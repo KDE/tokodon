@@ -122,18 +122,23 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     // clear any previous bearer token credentials
     m_token = QString();
 
+    QString ourAdditionalScopes;
+#ifdef HAVE_KUNIFIEDPUSH
+    ourAdditionalScopes = QStringLiteral("push ");
+#endif
+
+    // Store for future usage (e.g. authorizeUrl)
+    m_additionalScopes = ourAdditionalScopes + additionalScopes;
+
     // register
     const QUrl regUrl = apiUrl(QStringLiteral("/api/v1/apps"));
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
         {QStringLiteral("redirect_uris"), QStringLiteral("tokodon://oauth")},
-        {QStringLiteral("scopes"), QStringLiteral("read write follow push %1").arg(additionalScopes)},
+        {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes)},
         {QStringLiteral("website"), website},
     };
     const QJsonDocument doc(obj);
-
-    // Store for future usage (e.g. authorizeUrl)
-    m_additionalScopes = additionalScopes;
 
     post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
@@ -299,7 +304,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 
     q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
     q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
-    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow push ") + m_additionalScopes);
+    q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
 
     url.setQuery(q);
 
@@ -312,8 +317,7 @@ void AbstractAccount::setAccessToken(const QString &token)
     s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
     AccountManager::instance().addAccount(this, false);
     AccountManager::instance().selectAccount(this, true);
-    validateToken();
-    writeToSettings();
+    validateToken(true);
 }
 
 QUrl AbstractAccount::getTokenUrl() const
