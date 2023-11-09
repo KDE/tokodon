@@ -146,18 +146,20 @@ int main(int argc, char *argv[])
     if (parser.isSet(notifyOption)) {
         // TODO: timeout
 
+        qInfo() << "Beginning to check for notifications...";
+
         // create the lazy instance
-        Q_UNUSED(AccountManager::instance());
+        AccountManager::instance().loadFromSettings();
 
         QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [] {
+            qInfo() << "Accounts have finished loading. Checking notification queue...";
             // queue notification
             AccountManager::instance().queueNotifications();
-            qDebug() << "queueing";
         });
 
         QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
-            // begin timer
-            // QCoreApplication::quit();
+            // TODO: use timer
+            QCoreApplication::quit();
         });
 
         return QCoreApplication::exec();

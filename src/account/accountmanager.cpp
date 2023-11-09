@@ -495,6 +495,7 @@ void AccountManager::queueNotifications()
     static int accountsLeft = m_accounts.size();
 
     const auto checkIfDone = [this]() {
+        qInfo() << "Accounts left to check:" << accountsLeft;
         if (accountsLeft <= 0) {
             Q_EMIT finishedNotificationQueue();
         }
@@ -514,28 +515,36 @@ void AccountManager::queueNotifications()
         }
         uri.setQuery(urlQuery);
 
-        account->get(uri, true, this, [account, checkIfDone](QNetworkReply *reply) {
-            const auto data = reply->readAll();
-            const auto doc = QJsonDocument::fromJson(data);
+        account->get(
+            uri,
+            true,
+            this,
+            [account, checkIfDone](QNetworkReply *reply) {
+                const auto data = reply->readAll();
+                const auto doc = QJsonDocument::fromJson(data);
 
-            if (!doc.isArray() || doc.array().isEmpty()) {
+                if (!doc.isArray() || doc.array().isEmpty()) {
+                    accountsLeft--;
+                    checkIfDone();
+                    return;
+                }
+
+                const auto obj = doc.array()[0].toObject();
+                std::shared_ptr<Notification> n = std::make_shared<Notification>(account, obj);
+
+                AccountConfig config(account->settingsGroupName());
+                config.setLastPushNotification(obj["id"_L1].toString());
+                config.save();
+
+                Q_EMIT account->notification(n);
+
                 accountsLeft--;
                 checkIfDone();
-                return;
-            }
-
-            const auto obj = doc.array()[0].toObject();
-            std::shared_ptr<Notification> n = std::make_shared<Notification>(account, obj);
-
-            AccountConfig config(account->settingsGroupName());
-            config.setLastPushNotification(obj["id"_L1].toString());
-            config.save();
-
-            Q_EMIT account->notification(n);
-
-            accountsLeft--;
-            checkIfDone();
-        });
+            },
+            [checkIfDone](QNetworkReply *) {
+                accountsLeft--;
+                checkIfDone();
+            });
     }
 }
 
