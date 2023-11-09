@@ -4,6 +4,10 @@
 
 #pragma once
 
+#include <TextEmoticonsCore/EmojiModelManager>
+#include <TextEmoticonsCore/EmojiProxyModel>
+#include <TextEmoticonsCore/EmoticonCategory>
+
 #include <QtQml>
 
 /**
@@ -55,7 +59,12 @@ class EmojiModel : public QObject
     /**
      * @brief Return a list of emoji categories.
      */
-    Q_PROPERTY(QVariantList categories READ categories CONSTANT)
+    Q_PROPERTY(QList<TextEmoticonsCore::EmoticonCategory> categories READ categories CONSTANT)
+
+    Q_PROPERTY(TextEmoticonsCore::EmojiProxyModel *model MEMBER m_emojiProxyModel CONSTANT)
+
+    Q_PROPERTY(QString category MEMBER m_category NOTIFY categoryChanged)
+    Q_PROPERTY(QString searchString MEMBER m_searchString NOTIFY searchStringChanged)
 
 public:
     explicit EmojiModel(QObject *parent = nullptr);
@@ -107,6 +116,8 @@ public:
 
 Q_SIGNALS:
     void historyChanged();
+    void categoryChanged();
+    void searchStringChanged();
 
 public Q_SLOTS:
     void emojiUsed(AbstractAccount *account, const QString &shortcode);
@@ -114,8 +125,14 @@ public Q_SLOTS:
 private:
     static QHash<Category, QVariantList> _emojis;
 
-    QVariantList categories() const;
+    QList<TextEmoticonsCore::EmoticonCategory> categories() const;
 
     static QVariantList filterModelNoCustom(const QString &filter);
     static QVariantList filterCustomModel(AbstractAccount *account, const QString &filter);
+
+    TextEmoticonsCore::EmojiModelManager *m_emojiManager = nullptr;
+    TextEmoticonsCore::EmojiProxyModel *m_emojiProxyModel = nullptr;
+
+    QString m_category;
+    QString m_searchString;
 };

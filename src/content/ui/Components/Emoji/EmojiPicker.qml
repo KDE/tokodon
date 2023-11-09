@@ -71,12 +71,14 @@ ColumnLayout {
          * shortcut as it could block other SearchFields from using it.
          */
         focusSequence: ""
+
+        onAccepted: EmojiModel.searchString = text
     }
 
     EmojiGrid {
         id: emojiGrid
         targetIconSize: root.categoryIconSize  // Custom emojis are bigger
-        model: searchField.text.length === 0 ? EmojiModel.emojis(AccountManager.selectedAccount, root.currentCategory) : EmojiModel.filterModel(AccountManager.selectedAccount, searchField.text)
+        model: EmojiModel.model
         Layout.fillWidth: true
         Layout.fillHeight: true
         withCustom: true
@@ -91,11 +93,12 @@ ColumnLayout {
             width: root.categoryIconSize
             height: width
             checked: categories.currentIndex === model.index
-            text: modelData ? modelData.emoji : ""
-            QQC2.ToolTip.text: modelData ? modelData.name : ""
+            text: modelData.name
+            QQC2.ToolTip.text: modelData.i18nName
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.visible: hovered
             onClicked: {
+                EmojiModel.category = modelData.category;
                 categories.currentIndex = index;
                 categories.focus = true;
             }

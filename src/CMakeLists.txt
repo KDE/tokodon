@@ -110,10 +110,6 @@ target_sources(tokodon_static
     utils/navigation.h
     utils/emojimodel.cpp
     utils/emojimodel.h
-    utils/emojis.h
-    utils/emojitones.cpp
-    utils/emojitones.h
-    utils/emojitones_data.h
     utils/messagefiltercontainer.cpp
     utils/messagefiltercontainer.h
     utils/mpvplayer.cpp
@@ -338,6 +334,7 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
+        KF6::TextEmoticonsCore
         ${QTKEYCHAIN_LIBRARIES}
         ${MPV_LIBRARIES}
 )

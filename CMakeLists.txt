@@ -65,6 +65,8 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
     PURPOSE "Required application components and runtime dependency"
 )
 
+find_package(KF6TextEmoticonsCore 1.5 REQUIRED)
+
 find_package(Qt6Keychain)
 set_package_properties(Qt6Keychain PROPERTIES
     TYPE REQUIRED

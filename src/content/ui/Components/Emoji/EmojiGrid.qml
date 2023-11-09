@@ -37,6 +37,8 @@ QQC2.ScrollView {
             currentIndex = -1
         }
         onModelChanged: currentIndex = -1
+        reuseItems: true
+        cacheBuffer: 1000
 
         cellWidth: emojis.width / emojiGrid.emojisPerRow
         cellHeight: emojiGrid.targetIconSize
@@ -47,19 +49,23 @@ QQC2.ScrollView {
 
         delegate: EmojiDelegate {
             id: emojiDelegate
+
+            required property string unicode
+            required property string identifier
+
             checked: emojis.currentIndex === model.index
-            emoji: modelData.unicode
-            name: modelData.shortName
+            emoji: unicode
+            name: identifier
 
             width: emojis.cellWidth
             height: emojis.cellHeight
 
-            isImage: modelData.isCustom
+            isImage: false //modelData.isCustom
             Keys.onEnterPressed: clicked()
             Keys.onReturnPressed: clicked()
             onClicked: {
-                emojiGrid.chosen(modelData.isCustom ? (":" + modelData.shortName + ":") : modelData.unicode)
-                EmojiModel.emojiUsed(AccountManager.selectedAccount, name)
+                emojiGrid.chosen(unicode);
+                EmojiModel.emojiUsed(AccountManager.selectedAccount, name);
             }
             Keys.onSpacePressed: pressAndHold()
             onPressAndHold: {
@@ -70,7 +76,8 @@ QQC2.ScrollView {
                 tones.open()
                 tones.forceActiveFocus()
             }
-            showTones: !!modelData && EmojiModel.tones(modelData.shortName).length > 0
+            //showTones: !!modelData && EmojiModel.tones(modelData.shortName).length > 0
+            showTones: false
         }
 
         Kirigami.PlaceholderMessage {
