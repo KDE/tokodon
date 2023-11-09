@@ -11,6 +11,7 @@
 
 #ifdef HAVE_KUNIFIEDPUSH
 #include "ecdh.h"
+#include "tokodon_debug.h"
 #endif
 
 #include <qt6keychain/keychain.h>
@@ -317,9 +318,21 @@ void Account::validateToken(bool newAccount)
                 true,
                 this,
                 [=](QNetworkReply *reply) {
-                    Q_UNUSED(reply);
                     m_hasPushSubscription = true;
-                    updatePushNotifications();
+
+                    const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+
+                    if (doc["endpoint"_L1] != NetworkController::instance().endpoint) {
+                        qWarning(TOKODON_LOG) << "KUnifiedPush endpoint has changed, resubscribing!";
+
+                        deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [=](QNetworkReply *reply) {
+                            Q_UNUSED(reply)
+                            m_hasPushSubscription = false;
+                            subscribePushNotifications();
+                        });
+                    } else {
+                        updatePushNotifications();
+                    }
                 },
                 [=](QNetworkReply *reply) {
                     Q_UNUSED(reply);
