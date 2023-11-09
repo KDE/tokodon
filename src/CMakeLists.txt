@@ -463,8 +463,10 @@ if(ANDROID)
 else()
     install(FILES tokodon.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 
-    configure_file(org.kde.tokodon.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
+    if (TARGET KUnifiedPush)
+        configure_file(org.kde.tokodon.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service)
+        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.tokodon.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
+    endif()
 endif()
 
 install(TARGETS tokodon ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
