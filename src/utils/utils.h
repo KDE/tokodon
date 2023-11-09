@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timeline/post.h"
+#include "post.h"
 
 QString visibilityToString(Post::Visibility visibility);
 

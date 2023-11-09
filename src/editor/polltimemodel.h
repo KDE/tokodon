@@ -3,10 +3,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QLocale>
-#include <QSortFilterProxyModel>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 struct Time {
     QString name;

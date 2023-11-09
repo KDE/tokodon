@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "account/abstractaccount.h"
-#include <QNetworkReply>
 
 class MockAccount : public AbstractAccount
 {

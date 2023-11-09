@@ -3,10 +3,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QDateTime>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 /// Fetches server announcements
 class AnnouncementModel : public QAbstractListModel

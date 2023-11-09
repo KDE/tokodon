@@ -3,9 +3,7 @@
 
 #pragma once
 
-#include <QDateTime>
 #include <QJsonArray>
-#include <QObject>
 
 class EmailInfo
 {

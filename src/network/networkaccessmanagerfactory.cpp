@@ -3,11 +3,10 @@
 
 #include "networkaccessmanagerfactory.h"
 
-#include <QThread>
-
 #include <QNetworkAccessManager>
 #include <QNetworkDiskCache>
 #include <QStandardPaths>
+#include <QThread>
 
 QNetworkAccessManager *NetworkAccessManagerFactory::create(QObject *parent)
 {

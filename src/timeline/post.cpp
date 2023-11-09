@@ -1,18 +1,12 @@
 // SPDX-FileCopyrightText: 2021 kaniini <https://git.pleroma.social/kaniini>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include <KLocalizedString>
-#include <QFile>
-#include <QFileInfo>
-#include <QMap>
-#include <QMimeDatabase>
-#include <QtMath>
-#include <qurl.h>
+#include "post.h"
 
 #include "account/abstractaccount.h"
-#include "poll.h"
-#include "post.h"
 #include "utils/utils.h"
+
+#include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
 

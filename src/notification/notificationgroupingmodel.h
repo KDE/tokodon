@@ -5,11 +5,7 @@
 
 #pragma once
 
-#include <QSortFilterProxyModel>
-#include <QtQml/qqmlregistration.h>
-
-#include "notification/notificationmodel.h"
-#include "timeline/abstracttimelinemodel.h"
+#include "notificationmodel.h"
 
 class NotificationGroupingModel : public QAbstractProxyModel
 {

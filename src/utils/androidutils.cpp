@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QUrl>
 
-#include "../network/networkcontroller.h"
+#include "networkcontroller.h"
 
 AndroidUtils::AndroidUtils(QObject *parent)
     : QObject(parent)

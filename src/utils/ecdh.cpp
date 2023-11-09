@@ -4,7 +4,6 @@
 #include "ecdh.h"
 
 #include <openssl/obj_mac.h>
-#include <openssl/pem.h>
 
 constexpr int PRIVATE_KEY_LENGTH = 32;
 constexpr int PUBLIC_KEY_LENGTH = 65;

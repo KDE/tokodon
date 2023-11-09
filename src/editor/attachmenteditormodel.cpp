@@ -3,9 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "attachmenteditormodel.h"
-#include "account/abstractaccount.h"
-#include "account/account.h"
-#include <QTimer>
+
+#include "account.h"
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)
     : QAbstractListModel(parent)

@@ -4,6 +4,7 @@
 #pragma once
 
 #include <QByteArray>
+
 #include <openssl/ec.h>
 
 /// Generates a ECDH keypair using the prime256v1 curve.

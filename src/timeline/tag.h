@@ -3,11 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QQmlListProperty>
-#include <QString>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class History
 {

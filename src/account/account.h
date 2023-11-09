@@ -4,26 +4,10 @@
 
 #pragma once
 
-#include <QFile>
-#include <QHttpMultiPart>
-#include <QHttpPart>
-#include <QImage>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QMap>
-#include <QObject>
-#include <QSettings>
-#include <QUrl>
-#include <QUrlQuery>
-#include <QWebSocket>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
-#include <QtNetwork/QNetworkRequest>
-
 #include "abstractaccount.h"
-#include "identity.h"
 #include "relationship.h"
-#include "timeline/post.h"
+
+#include <QWebSocket>
 
 class AccountConfig;
 

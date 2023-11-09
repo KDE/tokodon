@@ -6,12 +6,9 @@
 #include "helperreply.h"
 #include "mockaccount.h"
 #include "timeline/maintimelinemodel.h"
-#include "timeline/poll.h"
 #include "timeline/tagstimelinemodel.h"
 #include "timeline/threadmodel.h"
 #include <KLocalizedString>
-#include <QAbstractItemModelTester>
-#include <QSignalSpy>
 
 using namespace Qt::Literals::StringLiterals;
 

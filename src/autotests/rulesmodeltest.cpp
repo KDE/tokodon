@@ -6,8 +6,6 @@
 #include "helperreply.h"
 #include "mockaccount.h"
 
-#include <QAbstractItemModelTester>
-#include <QSignalSpy>
 #include <QtTest/QtTest>
 
 class RulesModelTest : public QObject

@@ -5,8 +5,6 @@
 
 #include "notificationgroupingmodel.h"
 
-#include "notificationmodel.h"
-
 NotificationGroupingModel::NotificationGroupingModel(QObject *parent)
     : QAbstractProxyModel(parent)
 {

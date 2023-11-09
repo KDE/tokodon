@@ -4,11 +4,9 @@
 #pragma once
 
 #include <QJSEngine>
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
 
-#include "account/identity.h"
-#include "timeline/post.h"
+#include "identity.h"
+#include "post.h"
 
 class Navigation : public QObject
 {

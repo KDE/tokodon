@@ -3,11 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "threadmodel.h"
-#include "account/abstractaccount.h"
-#include "timelinemodel.h"
+
 #include <KLocalizedString>
-#include <QJsonObject>
-#include <qstringliteral.h>
 
 using namespace Qt::Literals::StringLiterals;
 

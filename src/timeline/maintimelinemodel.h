@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "timelinemodel.h"
 
 class AbstractAccount;

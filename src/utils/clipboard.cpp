@@ -3,20 +3,14 @@
  *
  * SPDX-License-Identifier: GPL-3.0-only
  */
-#include "clipboard.h"
 
-#include <QClipboard>
-#include <QDateTime>
-#include <QDir>
-#include <QGuiApplication>
-#include <QImage>
-#include <QMimeData>
-#include <QRegularExpression>
-#include <QStandardPaths>
-#include <QUrl>
+#include "clipboard.h"
 
 #include "abstractaccount.h"
 #include "accountmanager.h"
+
+#include <QClipboard>
+#include <QGuiApplication>
 
 Clipboard::Clipboard(QObject *parent)
     : QObject(parent)

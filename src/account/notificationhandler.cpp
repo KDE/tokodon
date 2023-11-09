@@ -2,14 +2,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "notificationhandler.h"
+
 #include "account.h"
 #include "networkcontroller.h"
+
+#include <QPainter>
+
 #include <KLocalizedString>
 #include <KNotification>
-#include <QCoreApplication>
-#include <QDesktopServices>
-#include <QNetworkAccessManager>
-#include <QPainter>
 
 NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)

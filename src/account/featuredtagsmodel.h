@@ -3,8 +3,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class FeaturedTagsModel : public QAbstractListModel
 {

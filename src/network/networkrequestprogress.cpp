@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "networkrequestprogress.h"
-#include <QNetworkReply>
 
 NetworkRequestProgress::NetworkRequestProgress(QObject *parent)
     : QObject(parent)

@@ -2,12 +2,10 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "profileeditor.h"
+
 #include "abstractaccount.h"
+
 #include <KLocalizedString>
-#include <QFile>
-#include <QFileInfo>
-#include <QHttpMultiPart>
-#include <QMimeDatabase>
 
 using namespace Qt::Literals::StringLiterals;
 

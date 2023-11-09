@@ -6,7 +6,6 @@
 #include "helperreply.h"
 #include "mockaccount.h"
 
-#include <QSignalSpy>
 #include <QtTest/QtTest>
 
 class AnnouncementsTest : public QObject

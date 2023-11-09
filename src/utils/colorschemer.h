@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include <QObject>
 #include <QtQml>
 
 class QAbstractItemModel;

@@ -1,10 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "account/rulesmodel.h"
-
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
+#include "rulesmodel.h"
 
 using namespace Qt::Literals::StringLiterals;
 

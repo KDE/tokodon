@@ -3,9 +3,6 @@
 
 #include "poll.h"
 
-#include <QJsonArray>
-#include <algorithm>
-
 #include "utils/customemoji.h"
 
 using namespace Qt::Literals::StringLiterals;

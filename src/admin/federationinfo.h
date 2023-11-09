@@ -4,7 +4,6 @@
 #pragma once
 
 #include <QDateTime>
-#include <QObject>
 
 class FederationInfo
 {

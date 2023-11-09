@@ -4,11 +4,8 @@
 
 #pragma once
 
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
+#include "abstractaccount.h"
 #include "abstracttimelinemodel.h"
-#include "post.h"
-#include <QAbstractListModel>
 
 /// Model building on top of AbstractTimelineModel, used by MainTimelineModel and ThreadModel for example
 /// \see AbstractTimelineModel

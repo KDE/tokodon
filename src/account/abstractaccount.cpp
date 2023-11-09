@@ -5,17 +5,13 @@
 #include "abstractaccount.h"
 
 #include "accountmanager.h"
-#include "network/networkcontroller.h"
-#include "preferences.h"
+#include "messagefiltercontainer.h"
+#include "navigation.h"
+#include "networkcontroller.h"
 #include "relationship.h"
 #include "tokodon_debug.h"
-#include "utils/messagefiltercontainer.h"
-#include "utils/navigation.h"
+
 #include <KLocalizedString>
-#include <QFile>
-#include <QHttpMultiPart>
-#include <QNetworkReply>
-#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 

@@ -3,8 +3,6 @@
 
 #include "languagemodel.h"
 
-#include <QDebug>
-
 using namespace Qt::Literals::StringLiterals;
 
 RawLanguageModel::RawLanguageModel(QObject *parent)

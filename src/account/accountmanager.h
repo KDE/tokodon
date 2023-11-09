@@ -4,13 +4,12 @@
 
 #pragma once
 
+#include "post.h"
+
 #include <KAboutData>
+
 #include <QAbstractListModel>
 #include <QJSEngine>
-#include <QSettings>
-#include <QtQml/qqmlregistration.h>
-
-#include "timeline/post.h"
 
 class AbstractAccount;
 class QNetworkAccessManager;

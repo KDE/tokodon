@@ -3,11 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timelinemodel.h"
-#include "account/abstractaccount.h"
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QtMath>
-#include <algorithm>
 
 using namespace Qt::Literals::StringLiterals;
 

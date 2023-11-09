@@ -2,12 +2,10 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "searchmodel.h"
-#include "account/abstractaccount.h"
-#include "account/account.h"
+
+#include "account.h"
+
 #include <KLocalizedString>
-#include <QNetworkReply>
-#include <QUrlQuery>
-#include <algorithm>
 
 using namespace Qt::Literals::StringLiterals;
 

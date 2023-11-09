@@ -2,11 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "accountmodel.h"
-#include "account/abstractaccount.h"
-#include "account/relationship.h"
+
+#include "relationship.h"
+
 #include <KLocalizedString>
-#include <QCoreApplication>
-#include <QUrlQuery>
 
 AccountModel::AccountModel(QObject *parent)
     : TimelineModel(parent)

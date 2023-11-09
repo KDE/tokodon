@@ -3,14 +3,10 @@
 
 #include "networkcontroller.h"
 
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
+#include "abstractaccount.h"
+#include "accountmanager.h"
 #include "config.h"
 #include "tokodon_http_debug.h"
-
-#include <QNetworkProxy>
-#include <QUrlQuery>
-#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 

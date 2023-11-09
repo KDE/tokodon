@@ -4,8 +4,6 @@
 #pragma once
 
 #include <QJsonObject>
-#include <QObject>
-#include <QVariant>
 
 class PollEditorBackend : public QObject
 {

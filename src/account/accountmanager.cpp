@@ -3,14 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "accountmanager.h"
-#include "account.h"
-#include "accountconfig.h"
-#include "config.h"
-#include "network/networkaccessmanagerfactory.h"
-#include "tokodon_debug.h"
-#include <qt6keychain/keychain.h>
 
-#include <utility>
+#include "account.h"
+#include "config.h"
+#include "networkaccessmanagerfactory.h"
+#include "tokodon_debug.h"
+
+#include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 

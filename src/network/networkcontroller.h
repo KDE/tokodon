@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QNetworkReply>
-#include <QObject>
 #include <QtQml>
 
 class AbstractAccount;

@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "abstractlistmodel.h"
 #include "tag.h"
 

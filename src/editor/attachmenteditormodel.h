@@ -4,11 +4,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <memory>
-
-#include "timeline/post.h"
-#include "posteditorbackend.h"
+#include "post.h"
 
 class QTimer;
 class AbstractAccount;

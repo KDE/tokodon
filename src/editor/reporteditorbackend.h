@@ -3,11 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
-#include <memory>
-
-#include "timeline/post.h"
+#include "post.h"
 
 class ReportEditorBackend : public QObject
 {

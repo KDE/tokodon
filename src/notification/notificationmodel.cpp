@@ -2,11 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "notificationmodel.h"
-#include "account/abstractaccount.h"
-#include "timeline/abstracttimelinemodel.h"
+
+#include "abstractaccount.h"
+
 #include <KLocalizedString>
-#include <QUrlQuery>
-#include <QtMath>
 
 NotificationModel::NotificationModel(QObject *parent)
     : AbstractTimelineModel(parent)

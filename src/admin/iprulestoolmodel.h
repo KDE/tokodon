@@ -3,11 +3,9 @@
 
 #pragma once
 
-#include "admin/ipinfo.h"
+#include "ipinfo.h"
 
-#include <QAbstractListModel>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 // todo: use std::chrono when c++20 is stable
 #define YEAR 31536000

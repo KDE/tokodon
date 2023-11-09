@@ -1,16 +1,11 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include <QJsonDocument>
-#include <QNetworkReply>
-#include <QStringLiteral>
-#include <QUrlQuery>
+#include "accounttoolmodel.h"
+
+#include "accountmanager.h"
 
 #include <KLocalizedString>
-
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
-#include "admin/accounttoolmodel.h"
 
 using namespace Qt::Literals::StringLiterals;
 

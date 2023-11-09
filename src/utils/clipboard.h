@@ -6,8 +6,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class QClipboard;
 class QImage;

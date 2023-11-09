@@ -3,10 +3,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
-#include <memory>
+#include <QtQml>
 
 class Identity;
 

@@ -2,8 +2,6 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "tagstimelinemodel.h"
-#include "account/abstractaccount.h"
-#include <QUrlQuery>
 
 TagsTimelineModel::TagsTimelineModel(QObject *parent)
     : TimelineModel(parent)

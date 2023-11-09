@@ -3,11 +3,6 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QDateTime>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
-
 #include "account/abstractaccount.h"
 
 /// Fetches server rules

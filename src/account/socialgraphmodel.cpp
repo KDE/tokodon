@@ -3,15 +3,11 @@
 
 #include "socialgraphmodel.h"
 
-#include "identity.h"
-
 #include "abstractaccount.h"
 #include "accountmanager.h"
 #include "relationship.h"
+
 #include <KLocalizedString>
-#include <QJsonDocument>
-#include <QNetworkReply>
-#include <qstringliteral.h>
 
 using namespace Qt::Literals::StringLiterals;
 

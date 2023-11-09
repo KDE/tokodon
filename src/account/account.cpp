@@ -3,20 +3,17 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "account.h"
-#include "accountconfig.h"
-#include "network/networkcontroller.h"
+
+#include "networkcontroller.h"
 #include "notificationhandler.h"
-#include "preferences.h"
-#include "tokodon_debug.h"
 #include "tokodon_http_debug.h"
-#include "utils/utils.h"
-#include <QFileInfo>
-#include <QNetworkAccessManager>
-#include <qt6keychain/keychain.h>
+#include "utils.h"
 
 #ifdef HAVE_KUNIFIEDPUSH
-#include "utils/ecdh.h"
+#include "ecdh.h"
 #endif
+
+#include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 

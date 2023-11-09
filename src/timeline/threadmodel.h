@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "timelinemodel.h"
 
 /// Model for displaying and organizing post threads

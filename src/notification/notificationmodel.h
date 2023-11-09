@@ -4,11 +4,7 @@
 
 #pragma once
 
-#include "account/accountmanager.h"
-#include "timeline/abstracttimelinemodel.h"
-#include "timeline/post.h"
-#include <QAbstractListModel>
-#include <QtQml/qqmlregistration.h>
+#include "abstracttimelinemodel.h"
 
 /// Model for the notifications page
 /// \see AbstractTimelineModel

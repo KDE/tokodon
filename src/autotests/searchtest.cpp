@@ -6,8 +6,6 @@
 #include "helperreply.h"
 #include "mockaccount.h"
 #include "search/searchmodel.h"
-#include <QAbstractItemModelTester>
-#include <QSignalSpy>
 
 class SearchTest : public QObject
 {

@@ -3,10 +3,6 @@
 
 #include "blurhashimageprovider.h"
 
-#include <QImage>
-#include <QString>
-#include <utility>
-
 #include "blurhash.hpp"
 
 /*

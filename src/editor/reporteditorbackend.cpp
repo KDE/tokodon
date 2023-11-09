@@ -3,8 +3,6 @@
 
 #include "reporteditorbackend.h"
 
-#include <QUrlQuery>
-
 #include "abstractaccount.h"
 #include "accountmanager.h"
 

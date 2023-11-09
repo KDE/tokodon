@@ -4,21 +4,9 @@
 
 #pragma once
 
-#include <QDateTime>
-#include <QImage>
-#include <QJsonObject>
-#include <QNetworkReply>
-#include <QObject>
-#include <QQmlListProperty>
-#include <QString>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
-
-#include <QJsonObject>
-#include <memory>
-#include <optional>
-
 #include "poll.h"
+
+#include <QImage>
 
 class Post;
 class Identity;

@@ -3,15 +3,9 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QJsonObject>
-#include <QUrl>
-#include <QUrlQuery>
-#include <QtQml/qqmlregistration.h>
+#include "reportinfo.h"
 
-#include <memory>
-
-#include "admin/reportinfo.h"
+#include <QtQml>
 
 class AdminAccountInfo;
 

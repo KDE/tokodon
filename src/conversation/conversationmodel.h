@@ -3,10 +3,8 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
-#include "account/abstractaccount.h"
-#include "timeline/abstracttimelinemodel.h"
+#include "abstractaccount.h"
+#include "abstracttimelinemodel.h"
 
 class Identity;
 class Post;

@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "identity.h"
+
 #include "abstractaccount.h"
 #include "relationship.h"
-
-#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 

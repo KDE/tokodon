@@ -2,12 +2,14 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "filehelper.h"
+
+#include "abstractaccount.h"
 #include "filetransferjob.h"
+
 #ifdef HAVE_KIO
 #include <KIO/Job>
 #include <KJobTrackerInterface>
 #endif
-#include "account/abstractaccount.h"
 
 FileHelper::FileHelper(QObject *parent)
     : QObject(parent)

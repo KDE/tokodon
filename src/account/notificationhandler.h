@@ -3,9 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-
-#include "timeline/post.h"
+#include "post.h"
 
 class QNetworkAccessManager;
 

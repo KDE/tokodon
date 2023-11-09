@@ -4,11 +4,7 @@
 #pragma once
 
 #include "polleditorbackend.h"
-#include "timeline/poll.h"
-#include "timeline/post.h"
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
-#include <memory>
+#include "post.h"
 
 class AttachmentEditorModel;
 

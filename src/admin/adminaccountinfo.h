@@ -4,12 +4,7 @@
 
 #pragma once
 
-#include <QFlags>
-#include <QJsonArray>
-#include <QObject>
-#include <QSettings>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class AbstractAccount;
 class Identity;

@@ -3,9 +3,7 @@
 
 #pragma once
 
-#include <QDateTime>
-#include <QJsonObject>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class Poll
 {

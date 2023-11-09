@@ -6,13 +6,6 @@
 
 #include <mpv/client.h>
 
-#include <cstring>
-
-#include <QHash>
-#include <QList>
-#include <QMetaType>
-#include <QSharedPointer>
-#include <QString>
 #include <QVariant>
 
 namespace mpv

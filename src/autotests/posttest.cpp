@@ -4,8 +4,6 @@
 #include <QtTest/QtTest>
 
 #include "mockaccount.h"
-#include "timeline/post.h"
-#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 

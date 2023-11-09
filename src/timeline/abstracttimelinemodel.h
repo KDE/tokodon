@@ -3,10 +3,7 @@
 
 #pragma once
 
-#include "account/accountmanager.h"
-#include "post.h"
-#include <QAbstractListModel>
-#include <qabstractitemmodel.h>
+#include "accountmanager.h"
 
 class AbstractAccount;
 class PostEditorBackend;

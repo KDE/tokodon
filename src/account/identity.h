@@ -4,10 +4,6 @@
 #pragma once
 
 #include <QJsonArray>
-#include <QObject>
-#include <QSettings>
-#include <QUrl>
-#include <qjsonarray.h>
 
 class AbstractAccount;
 class Relationship;

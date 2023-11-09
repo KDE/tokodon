@@ -1,14 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include <QCommandLineParser>
-#include <QFontDatabase>
-#include <QNetworkProxy>
-#include <QQmlApplicationEngine>
 #include <QQuickStyle>
-#include <QQuickWindow>
 #include <QtWebView>
-#include <clocale>
 
 #ifdef Q_OS_ANDROID
 #include "utils/androidutils.h"
@@ -17,12 +11,10 @@
 #include <QApplication>
 #endif
 
-#include <KAboutData>
 #ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
 #include <KWindowSystem>
 #endif
-#include <KLocalizedContext>
 #include <KLocalizedString>
 
 #ifdef HAVE_KUNIFIEDPUSH

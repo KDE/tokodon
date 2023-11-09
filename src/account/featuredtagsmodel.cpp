@@ -3,9 +3,9 @@
 
 #include "featuredtagsmodel.h"
 
-#include "account/abstractaccount.h"
-#include "account/relationship.h"
+#include "abstractaccount.h"
 #include "accountmanager.h"
+#include "relationship.h"
 
 using namespace Qt::StringLiterals;
 

@@ -3,11 +3,9 @@
 
 #pragma once
 
-#include "admin/emailinfo.h"
+#include "emailinfo.h"
 
-#include <QAbstractListModel>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class EmailBlockToolModel : public QAbstractListModel
 {

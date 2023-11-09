@@ -6,11 +6,11 @@
 
 #include "mpvplayer.h"
 
+#include "qthelper.hpp"
+
 #include <QOpenGLContext>
 #include <QOpenGLFramebufferObject>
 #include <QQuickWindow>
-#include <QStandardPaths>
-#include <stdexcept>
 
 namespace
 {

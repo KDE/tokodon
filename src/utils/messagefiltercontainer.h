@@ -5,8 +5,6 @@
 
 #include <QHash>
 #include <QReadWriteLock>
-#include <QString>
-#include <QtMessageHandler>
 
 struct QMessageFilterContainer {
     QMessageFilterContainer();

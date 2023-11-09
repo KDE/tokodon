@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "timelinemodel.h"
 
 /// Model used for fetching posts for a specific tag (like searching for #KDE)

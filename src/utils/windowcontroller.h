@@ -3,9 +3,7 @@
 
 #pragma once
 
-#include <QObject>
 #include <QQuickWindow>
-#include <QtQml/qqmlregistration.h>
 
 class Identity;
 class Post;

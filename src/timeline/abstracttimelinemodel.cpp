@@ -2,14 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "abstracttimelinemodel.h"
-#include "account/abstractaccount.h"
-#include "account/identity.h"
-#include "editor/attachmenteditormodel.h"
-#include "editor/posteditorbackend.h"
-#include "poll.h"
-#include "post.h"
-#include <QtMath>
-#include <qvariant.h>
+
+#include "abstractaccount.h"
+#include "attachmenteditormodel.h"
+#include "posteditorbackend.h"
 
 using namespace Qt::Literals::StringLiterals;
 

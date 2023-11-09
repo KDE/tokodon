@@ -3,9 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class AbstractAccount;
 

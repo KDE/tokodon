@@ -3,13 +3,9 @@
 
 #include "conversationmodel.h"
 
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
-#include "account/identity.h"
 #include <KLocalizedString>
+
 #include <QTextDocumentFragment>
-#include <algorithm>
-#include <qvariant.h>
 
 using namespace Qt::Literals::StringLiterals;
 

@@ -4,12 +4,9 @@
 
 #include "emojimodel.h"
 
-#include <QVariant>
-
 #include <KLocalizedString>
 
-#include "account/abstractaccount.h"
-#include "accountconfig.h"
+#include "abstractaccount.h"
 #include "emojitones.h"
 
 using namespace Qt::Literals::StringLiterals;

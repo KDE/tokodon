@@ -2,14 +2,12 @@
 // SPDX-FileCopyrightText: 2023 Rishi Kumar <rsi.dev17@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include <QDateTime>
-#include <QJsonObject>
+#include "adminaccountinfo.h"
 
 #include <KLocalizedString>
 
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
-#include "adminaccountinfo.h"
+#include "abstractaccount.h"
+#include "accountmanager.h"
 
 using namespace Qt::Literals::StringLiterals;
 

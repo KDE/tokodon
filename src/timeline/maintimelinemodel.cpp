@@ -2,10 +2,8 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "maintimelinemodel.h"
-#include "account/abstractaccount.h"
-#include "timeline/timelinemodel.h"
+
 #include <KLocalizedString>
-#include <QUrlQuery>
 
 MainTimelineModel::MainTimelineModel(QObject *parent)
     : TimelineModel(parent)

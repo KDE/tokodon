@@ -4,11 +4,8 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include <QJsonArray>
-
-#include <KPluginFactory>
-
 #include <KIO/CommandLauncherJob>
+#include <KPluginFactory>
 #include <Purpose/PluginBase>
 
 class TokodonJob : public Purpose::Job

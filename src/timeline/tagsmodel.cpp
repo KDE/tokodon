@@ -2,11 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 #include "tagsmodel.h"
+
 #include <KLocalizedString>
-#include <QJsonArray>
-#include <QUrlQuery>
-#include <QtMath>
-#include <algorithm>
 
 TagsModel::TagsModel(QObject *parent)
     : AbstractListModel(parent)

@@ -4,12 +4,8 @@
 
 #pragma once
 
-#include <QFlags>
 #include <QJsonArray>
-#include <QObject>
 #include <QQmlListProperty>
-#include <QSettings>
-#include <QUrl>
 
 class AbstractAccount;
 class AdminAccountInfo;

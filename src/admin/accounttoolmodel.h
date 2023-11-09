@@ -3,13 +3,7 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QUrl>
-#include <QUrlQuery>
-#include <QtQml/qqmlregistration.h>
-#include <memory>
-
-#include "account/abstractaccount.h"
+#include "abstractaccount.h"
 
 class AdminAccountInfo;
 

@@ -2,15 +2,13 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "posteditorbackend.h"
-#include "account/abstractaccount.h"
-#include "account/accountmanager.h"
+
+#include "abstractaccount.h"
+#include "accountmanager.h"
 #include "attachmenteditormodel.h"
-#include "config.h"
-#include "utils/utils.h"
+#include "utils.h"
+
 #include <KLocalizedString>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QUuid>
 
 using namespace Qt::Literals::StringLiterals;
 

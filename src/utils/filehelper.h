@@ -3,10 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QQuickItem>
 #include <QQuickTextDocument>
-#include <QtQml/qqmlregistration.h>
 
 class AbstractAccount;
 

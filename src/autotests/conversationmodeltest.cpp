@@ -4,11 +4,8 @@
 #include <QtTest/QtTest>
 
 #include "conversation/conversationmodel.h"
-#include "timeline/abstracttimelinemodel.h"
 #include "helperreply.h"
 #include "mockaccount.h"
-#include <QAbstractItemModelTester>
-#include <QSignalSpy>
 
 class ConversationModelTest : public QObject
 {

@@ -4,17 +4,14 @@
 #pragma once
 
 #include "accountconfig.h"
-#include "admin/adminaccountinfo.h"
-#include "admin/federationinfo.h"
-#include "admin/reportinfo.h"
+#include "adminaccountinfo.h"
+#include "customemoji.h"
 #include "identity.h"
 #include "preferences.h"
-#include "timeline/post.h"
-#include "utils/customemoji.h"
+#include "reportinfo.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QObject>
 
 class Attachment;
 class Notification;

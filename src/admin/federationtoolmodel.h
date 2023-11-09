@@ -3,11 +3,9 @@
 
 #pragma once
 
-#include "admin/federationinfo.h"
+#include "federationinfo.h"
 
-#include <QAbstractListModel>
-#include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class FederationToolModel : public QAbstractListModel
 {

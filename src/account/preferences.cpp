@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "preferences.h"
-#include "utils/utils.h"
 
-#include <QHttpMultiPart>
+#include "utils.h"
 
 Preferences::Preferences(AbstractAccount *account)
     : QObject(account)

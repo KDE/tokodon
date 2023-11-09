@@ -3,8 +3,7 @@
 
 #pragma once
 
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class QNetworkReply;
 

@@ -4,7 +4,6 @@
 #pragma once
 
 #include <QJsonArray>
-#include <QObject>
 
 /// Represents a custom emoji on a server, usually represents with colons e.g. :kde:
 class CustomEmoji
