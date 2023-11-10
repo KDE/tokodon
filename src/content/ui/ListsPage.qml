@@ -25,6 +25,16 @@ Kirigami.ScrollablePage {
         textFormat: TextEdit.RichText
     }
 
+    actions: Kirigami.Action {
+        text: i18n("Create List")
+        icon.name: "gtk-add"
+        onTriggered: {
+            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "EditListPage"), {
+                purpose: EditListPage.New
+            });
+        }
+    }
+
     ListView {
         id: listview
 

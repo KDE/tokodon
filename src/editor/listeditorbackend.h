@@ -1,0 +1,38 @@
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: LGPL-2.1-or-later
+
+#pragma once
+
+#include "post.h"
+
+class ListEditorBackend : public QObject
+{
+    Q_OBJECT
+    QML_ELEMENT
+
+    Q_PROPERTY(QString title MEMBER m_title NOTIFY titleChanged)
+    Q_PROPERTY(QString repliesPolicy MEMBER m_repliesPolicy NOTIFY repliesPolicyChanged)
+    Q_PROPERTY(bool exclusive MEMBER m_exclusive NOTIFY exclusiveChanged)
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+
+public:
+    explicit ListEditorBackend(QObject *parent = nullptr);
+
+    bool loading() const;
+
+public Q_SLOTS:
+    void create();
+
+Q_SIGNALS:
+    void titleChanged();
+    void repliesPolicyChanged();
+    void exclusiveChanged();
+    void done();
+    void loadingChanged();
+
+private:
+    QString m_title;
+    QString m_repliesPolicy = QStringLiteral("none");
+    bool m_exclusive = false;
+    bool m_loading = false;
+};

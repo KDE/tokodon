@@ -60,6 +60,8 @@ target_sources(tokodon_static
     editor/polltimemodel.h
     editor/languagemodel.cpp
     editor/languagemodel.h
+    editor/listeditorbackend.cpp
+    editor/listeditorbackend.h
     editor/polleditorbackend.cpp
     editor/polleditorbackend.h
     editor/reporteditorbackend.cpp
@@ -244,6 +246,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/AnnouncementsPage.qml
         content/ui/ConversationDelegate.qml
         content/ui/ConversationPage.qml
+        content/ui/EditListPage.qml
         content/ui/ExplorePage.qml
         content/ui/FollowDelegate.qml
         content/ui/FullScreenImage.qml
