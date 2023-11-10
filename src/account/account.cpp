@@ -322,8 +322,8 @@ void Account::validateToken(bool newAccount)
 
                     const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
 
-                    if (doc["endpoint"_L1] != NetworkController::instance().endpoint) {
-                        qWarning(TOKODON_LOG) << "KUnifiedPush endpoint has changed, resubscribing!";
+                    if (!NetworkController::instance().endpoint.isEmpty() && doc["endpoint"_L1] != NetworkController::instance().endpoint) {
+                        qWarning(TOKODON_LOG) << "KUnifiedPush endpoint has changed to" << NetworkController::instance().endpoint << ", resubscribing!";
 
                         deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [=](QNetworkReply *reply) {
                             Q_UNUSED(reply)
