@@ -78,6 +78,7 @@ FormCard.FormCardPage {
         FormCard.FormCheckDelegate {
             id: exclusiveField
             text: i18nc("@label If the list is exclusive", "Exclusive")
+            description: i18n("Posts in an exclusive list are excluded from the Home timeline.")
         }
     }
 
