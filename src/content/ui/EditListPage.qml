@@ -21,16 +21,24 @@ FormCard.FormCardPage {
     }
 
     property var purpose
+    property string listId
 
     title: purpose === EditListPage.New ? i18nc("@title:window", "Create List") : i18nc("@title:window", "Edit List")
 
     property ListEditorBackend backend: ListEditorBackend {
+        listId: root.listId
         title: titleField.text
         exclusive: exclusiveField.checked
     }
 
     data: Connections {
         target: backend
+
+        function onLoadingChanged() {
+            // If we loaded data, then overwrite the fields
+            titleField.text = backend.title;
+            exclusiveField.checked = backend.exclusive;
+        }
 
         function onDone() {
             pageStack.layers.pop();
@@ -40,6 +48,8 @@ FormCard.FormCardPage {
     Component.onCompleted: titleField.forceActiveFocus()
 
     FormCard.FormCard {
+        enabled: !backend.loading
+
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormTextFieldDelegate {
@@ -57,12 +67,20 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        enabled: !backend.loading
+
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormButtonDelegate {
             id: createButton
-            text: i18nc("@action:button Create the list", "Create")
-            onClicked: backend.create()
+            text: {
+                if (root.purpose === EditListPage.New) {
+                    return i18nc("@action:button Create the list", "Create");
+                } else {
+                    return i18nc("@action:button Edit the list", "Edit");
+                }
+            }
+            onClicked: backend.submit()
         }
     }
 }
