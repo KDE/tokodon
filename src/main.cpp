@@ -30,6 +30,7 @@
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
+#include "tokodon_debug.h"
 #include "utils/blurhashimageprovider.h"
 #include "utils/colorschemer.h"
 #include "utils/navigation.h"
@@ -142,36 +143,12 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-#ifdef HAVE_KUNIFIEDPUSH
-    if (parser.isSet(notifyOption)) {
-        // TODO: timeout
-
-        qInfo() << "Beginning to check for notifications...";
-
-        // create the lazy instance
-        AccountManager::instance().loadFromSettings();
-
-        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [] {
-            qInfo() << "Accounts have finished loading. Checking notification queue...";
-            // queue notification
-            AccountManager::instance().queueNotifications();
-        });
-
-        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
-            // TODO: use timer
-            QCoreApplication::quit();
-        });
-
-        return QCoreApplication::exec();
-    }
-#endif
-
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
 
 #ifdef HAVE_KUNIFIEDPUSH
-    auto connector = new KUnifiedPush::Connector(service.serviceName());
+    auto connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
     QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
         NetworkController::instance().endpoint = endpoint;
     });
@@ -179,6 +156,32 @@ int main(int argc, char *argv[])
     NetworkController::instance().endpoint = connector->endpoint();
 
     connector->registerClient(i18n("Receiving push notifications"));
+#endif
+
+#ifdef HAVE_KUNIFIEDPUSH
+    if (parser.isSet(notifyOption)) {
+        // TODO: timeout
+
+        qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
+
+        // create the lazy instance
+        AccountManager::instance().loadFromSettings();
+
+        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [&file] {
+            qInfo(TOKODON_LOG) << "Accounts have finished loading. Checking notification queue...";
+            // queue notification
+            AccountManager::instance().queueNotifications();
+        });
+
+        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
+            // Sleep for a bit so the notifications stay open
+            // TODO: make this depend on all of the knotifications closing
+            QThread::sleep(10);
+            QCoreApplication::quit();
+        });
+
+        return QCoreApplication::exec();
+    }
 #endif
 
 #ifdef HAVE_KDBUSADDONS
