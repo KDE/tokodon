@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
-"PO-Revision-Date: 2023-11-09 00:01+0200\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
+"PO-Revision-Date: 2023-11-09 08:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,47 +18,47 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -598,10 +598,9 @@ msgid "Posts"
 msgstr "Дописи"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "Tags"
-msgstr "Без міток"
+msgstr "Мітки"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
@@ -1916,8 +1915,7 @@ msgid "Reject media"
 msgstr "Відкидати мультимедіа"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "Відкинути скарги"
@@ -2624,48 +2622,60 @@ msgstr "Застосувати"
 msgid "Enable notifications for this account"
 msgstr "Увімкнути сповіщення для цього облікового запису"
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr "Типи"
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, kde-format
 msgid "Mentions"
 msgstr "Згадування"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr "Стани"
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
 msgid "Boosts"
 msgstr "Підсилення"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "New followers"
 msgstr "Нові ті, хто стежить"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, kde-format
 msgid "New follow requests"
 msgstr "Нові запити щодо стеження"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
 msgid "Polls"
 msgstr "Голосування"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
 msgstr "Редагування"
@@ -2723,10 +2733,9 @@ msgstr ""
 "400x400 пк."
 
 #: content/ui/Settings/ProfileEditor.qml:279
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "Вимагати запитів щодо стеження"
+msgstr "Вимагати підтвердження вказаних нижче запитів"
 
 #: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
@@ -3507,23 +3516,20 @@ msgid "Play"
 msgstr "Відтворити"
 
 #: content/ui/TimelinePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Фільтровано: %1"
+msgstr "Фільтри"
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Show Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "Показати підсилення від %1"
+msgstr "Показати підсилення"
 
 #: content/ui/TimelinePage.qml:86
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgid "Show Replies"
-msgstr "%1 відповіді"
+msgstr "Показати відповіді"
 
 #: content/ui/TimelinePage.qml:111
 #, kde-format
@@ -3632,74 +3638,74 @@ msgstr "7 днів"
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клієнт Mastodon"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021–2023; Спільнота KDE, 2021–2023"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Клієнт децентралізованих соціальних мереж, зокрема Mastodon"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Передбачено підтримку схеми адрес https і web+ap"
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Оприлюднити рядок тексту в окремому редакторі."
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr "Текст, який слід оприлюднити."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr "Лише для внутрішнього використання."
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Отримання імпульсних сповіщень"

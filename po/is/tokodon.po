@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "Gat ekki fylgst með notandaaðgangi"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Gat ekki hætt að fylgjast með notandaaðgangi"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "Gat ekki útilokað notandaaðgang"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Gat ekki hætt að útiloka notandaaðgang"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "Gat ekki þaggað niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Gat ekki hætt að þagga niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Gat ekki tekið notandaaðgang úr forgrunni"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Gat ekki breytt minnispunkti um notandaaðgang"
@@ -2760,56 +2760,68 @@ msgstr "Virkja"
 msgid "Enable notifications for this account"
 msgstr ""
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr ""
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Mentions"
 msgstr "Minnst á"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr ""
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosts"
 msgstr "Endurbirta"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, fuzzy, kde-format
 #| msgid "%1 followers"
 msgid "New followers"
 msgstr "%1 fylgjendur"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "New follow requests"
 msgstr "Fylgjast með"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorites"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Add Poll"
 msgid "Polls"
 msgstr "Bæta við könnun"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
 msgstr ""
@@ -3813,76 +3825,76 @@ msgstr ""
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Forrit fyrir Mastodon"
 
-#: main.cpp:93
+#: main.cpp:94
 #, fuzzy, kde-format
 #| msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE-samfélagið"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sveinn í Felli"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sv1@fellsnet.is"
 
-#: main.cpp:112
+#: main.cpp:113
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Forrit fyrir dreifhýsta Mastodon samfélagsnetið"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr ""
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr ""
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""

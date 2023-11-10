@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2023-11-02 22:49+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.2\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "Ezin izan dio kontuari jarraitu"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Ezin izan dio kontuari jarraitzen utzi"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "Ezin izan du kontua blokeatu"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Ezin izan du kontua blokeatzeari utzi"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "Ezin izan du kontua isilarazi"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Ezin izan du kontua ozendu"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "Ezin izan du kontua agertu"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Ezin izan dio kontuari agertzeari utzi"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Ezin izan du kontu bati buruzko oharra editatu"
@@ -2674,48 +2674,60 @@ msgstr "Ezarri"
 msgid "Enable notifications for this account"
 msgstr "Gaitu jakinarazpenak kontu honetarako"
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr "Motak"
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, kde-format
 msgid "Mentions"
 msgstr "Aipamenak"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr "Egoerak"
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
 msgid "Boosts"
 msgstr "Bultzadak"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "New followers"
 msgstr "Jarraitzaile berriak"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, kde-format
 msgid "New follow requests"
 msgstr "Jarraipen eskaera berriak"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "Gogokoak"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
 msgid "Polls"
 msgstr "Galdeketak"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
 msgstr "Editatzeak"
@@ -3684,76 +3696,76 @@ msgstr "7 egun"
 msgid "An unknown error occurred."
 msgstr "Errore ezezagun bat gertatu da."
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "«Mastodon»en bezeroa"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Komunitatea"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñigo Salvador Azurmendi"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:112
+#: main.cpp:113
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Deszentralizatutako gizarte sare honetarako bezeroa: mastodon"
 
-#: main.cpp:113
+#: main.cpp:114
 #, fuzzy, kde-format
 #| msgid "Supports web+ap: url scheme"
 msgid "Supports https and web+ap url scheme"
 msgstr "«web+ap: URL» antolaera onartzen du"
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Partekatu testu-lerro bat konposatzaile autonomoan."
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr "Partekatu beharreko testua."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""

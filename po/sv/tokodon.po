@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2023-09-13 21:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "Kunde inte följa konto"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Kunde inte sluta följa konto"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "Kunde inte blockera konto"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Kunde inte sluta blockera konto"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "Kunde inte tysta konto"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Kunde inte sluta tysta konto"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "Kunde inte välja ut konto"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Kunde inte sluta välja ut konto"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Kunde inte redigera anmärkning om ett konto"
@@ -2719,57 +2719,69 @@ msgstr "Verkställ"
 msgid "Enable notifications for this account"
 msgstr "Vidta åtgärd mot kontot"
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr ""
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Mentions"
 msgstr "Omnämnanden"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr ""
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, fuzzy, kde-format
 #| msgctxt "Show only boosts"
 #| msgid "Boosts"
 msgid "Boosts"
 msgstr "Förstärkningar"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, fuzzy, kde-format
 #| msgid "No followers"
 msgid "New followers"
 msgstr "Inga följare"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, fuzzy, kde-format
 #| msgid "No follow requests"
 msgid "New follow requests"
 msgstr "Ingen förfrågan om att följa"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "Favorites"
 msgstr "Favoriter"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Add Poll"
 msgid "Polls"
 msgstr "Bifoga enkät"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgid "Edits"
@@ -3766,76 +3778,76 @@ msgstr "7 dagar"
 msgid "An unknown error occurred."
 msgstr "Ett okänt fel uppstod."
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE-gemenskapen"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr "Underhåll"
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luna Jernberg,Stefan Asserhäll"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@bredband.net"
 
-#: main.cpp:112
+#: main.cpp:113
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
 
-#: main.cpp:113
+#: main.cpp:114
 #, fuzzy, kde-format
 #| msgid "Supports web+ap: url scheme"
 msgid "Supports https and web+ap url scheme"
 msgstr "Stöder web+ap: webbadresschema"
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Dela en textrad i det fristående fönstret."
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr "Texten att dela."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
-"PO-Revision-Date: 2023-11-08 21:36+0300\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
+"PO-Revision-Date: 2023-11-09 12:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 23.11.70\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "Hesap takip edilemedi"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Hesap takipten çıkarılamadı"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "Hesap engellenemedi"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Hesap engeli kaldırılamadı"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "Hesap sessize alınamadı"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Hesap sessizden kaldırılamadı"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "Hesap tanıtılamadı"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Hesap tanıtımı kaldırılamadı"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Bir hesap üzerine olan not düzenlenemedi"
@@ -589,7 +589,7 @@ msgstr "Gönderiler"
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Etiketler"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
@@ -1897,8 +1897,7 @@ msgid "Reject media"
 msgstr "Ortamı reddet"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "Raporları reddet"
@@ -2605,48 +2604,60 @@ msgstr "Uygula"
 msgid "Enable notifications for this account"
 msgstr "Bu hesap için bildirimleri etkinleştir"
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr "Türler"
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, kde-format
 msgid "Mentions"
 msgstr "Söz Etmeler"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr "Durumlar"
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
 msgid "Boosts"
 msgstr "Boostlar"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "New followers"
 msgstr "Yeni takipçiler"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, kde-format
 msgid "New follow requests"
 msgstr "Yeni takip istekleri"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "Favoriler"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
 msgid "Polls"
 msgstr "Anketler"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
 msgstr "Düzenlemeler"
@@ -2700,10 +2711,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 400 x 400 pks olarak ölçeklendirilir"
 
 #: content/ui/Settings/ProfileEditor.qml:279
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "Takip isteği gerektir"
+msgstr "Takip isteklerinin onayını gerektir"
 
 #: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
@@ -3480,23 +3490,20 @@ msgid "Play"
 msgstr "Oynat"
 
 #: content/ui/TimelinePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Süzüldü: %1"
+msgstr "Süzgeçler"
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Show Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "%1 Boostlarını Göster"
+msgstr "Boostları Göster"
 
 #: content/ui/TimelinePage.qml:86
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgid "Show Replies"
-msgstr "Daha Az Göster"
+msgstr "Yanıtları Göster"
 
 #: content/ui/TimelinePage.qml:111
 #, kde-format
@@ -3601,74 +3608,74 @@ msgstr "7 gün"
 msgid "An unknown error occurred."
 msgstr "Bilinmeyen bir hata oluştu."
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon İstemcisi"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Topluluğu"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr "Bakımcı"
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Emir SARI"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Mastodon gibi merkezi olmayan sosyal ağlar için istemci"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "HTTPS ve web+ap URL şemasını destekler"
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Bağımsız oluşturucuda bir metin satırı paylaşın."
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr "Paylaşılacak metin."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr "Yalnızca içsel kullanım."
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Anında bildirimleri almak"

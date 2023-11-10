@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:38+0000\n"
-"PO-Revision-Date: 2023-11-08 02:57+0100\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
+"PO-Revision-Date: 2023-11-09 03:15+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: account/abstractaccount.cpp:651
+#: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
 msgstr "ანგარიშზე მიყოლის შეცდომა"
 
-#: account/abstractaccount.cpp:652
+#: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "ანგარიშზე მიყოლის გაუქმების შეცდომა"
 
-#: account/abstractaccount.cpp:653
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
 msgstr "ანგარიშის დაბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:654
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
 msgstr "ანგარიშის განბლოკვის შეცდომა"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not mute account"
 msgstr "ანგარიშის დადუმების შეცდომა"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
 msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
 msgstr "ანგარიშის მიმაგრების შეცდომა"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "ანგარიშის მიმაგრების მოხსნის შეცდომა"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "ანგარიშის შესახებ შენიშვნის ჩასწორების შეცდომა"
@@ -270,14 +270,10 @@ msgid "Suspended"
 msgstr "გაჩერებულია"
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "ზღვარი"
+msgstr "შეზღუდული"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -315,28 +311,24 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr "დომენის ბლოკის განახლებისთვის PUT მოთხოვნის გაგზავნის შეცდომა."
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "ანგარიშის უარყოფის შეცდომა"
+msgstr "ანგარიშის ამოხსნა შეუძლებელია"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
+msgstr "ანგარიშის ამოხსნის გაუქმება შეუძლებელია"
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "ანგარიშის დადასტურების შეცდომა"
+msgstr "ანგარიშის მინიჭება შეუძლებელია"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "ანგარიშის დადუმების მოხსნის შეცდომა"
+msgstr "ანგარიშის მინიჭების გაუქმება შეუძლებელია"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -410,12 +402,10 @@ msgstr "დაბლოკვა"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "თავიდან დაპოსტვა"
+msgstr "ანგარიში…"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -862,7 +852,7 @@ msgstr "შესვლა"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "გახსნა, როგორც..."
+msgstr "გახსნა, როგორც…"
 
 #: content/ui/Main.qml:96
 #, kde-format
@@ -2040,157 +2030,138 @@ msgid "Update IP Rule"
 msgstr "IP წესის განახლება"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "თავიდან დაპოსტვა"
+msgstr "#%1-ის დარეპორტება"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "მოუგვარებლად მონიშვნა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "გადაწყვეტილად მონიშვნა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:56
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "რეპორტი მოუგვარებელია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:59
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "რეპორტი მოგვარებულია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:205
-#, fuzzy, kde-format
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "პოსტები"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "მიმდევრები"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "გამოწერილია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "შეერთებული"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@info The last time the account was active."
-#| msgid "Last Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "ბოლოს აქტიური"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "თავიდან დაპოსტვა"
+msgstr "გადაგზავნილია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "თავიდან დაპოსტვა"
+msgstr "გადაგზავნილია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:245
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "რეპორტის ავტორი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgid "Report Status"
-msgstr "შესვლის სტატუსი"
+msgstr "რეპორტის სტატუსი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgid "Resolved"
-msgstr "დომენის ამოხსნა"
+msgstr "გადაწყვეტილია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "მოუგვარებელი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:268
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "ქმედება წარმატებით განხორციელდა"
+msgstr "ქმედების ავტორი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "მინიჭებული მოდერატორი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:282
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "არავინ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "მინიჭების გაუქმება"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "ჩემზე მონიჭება"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "გადაგზავნილი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "დიახ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "არაფერი"
+msgstr "არა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:310
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "კატეგორია"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
@@ -2198,58 +2169,62 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"მიზეზი, რატომ მოხდა ამ ანგარიშის და/ან შემცველობის დარეპორტება, მოხსენიებული "
+"იქნება დარეპორტებული ანგარიშის კომუნიკაციაში"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "სხვა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:331
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "კატეგორია შეიცვალა სხვაზე"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:342
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "სპამი"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:346
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "კატეგორია შეიცვალა სპამზე"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:357
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "შემცველობა ერთ ან მეტ სერვერის წესს არღვევს"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:361
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "კატეგორია წესების დარღვევაზე შეიცვალა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:404
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "მეტი ინფორმაციის მოსაწოდებლად, %1-მა დაწერა:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:429
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "დარეპორტებული შემცველობა"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:433
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"არასასურველი შემცველობა მოხსენიებული იქნება დარეპორტებული ანგარიშის "
+"კომუნიკაციაში"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
 #: content/ui/StatusDelegate/StatusDelegate.qml:289
@@ -2276,11 +2251,9 @@ msgid "Accounts"
 msgstr "ანგარიშები"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Reports"
-msgstr "თავიდან დაპოსტვა"
+msgstr "ანგარიშები"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2306,51 +2279,43 @@ msgid "Accounts Tool Page"
 msgstr "ანგარიშების ხელსაწყოს გვერდი"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "შესვლის სტატუსი"
+msgstr "რეპორტის სტატუსი"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "მოუგვარებელი"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "დომენის ამოხსნა"
+msgstr "გადაწყვეტილია"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "წყაროს დარეპორტება"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@action:button Show all of a profile's posts"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "ყველა"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "ლოკალური"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "დაშორებული"
@@ -2358,23 +2323,21 @@ msgstr "დაშორებული"
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "რეპორტის ავტორი:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "ანგარიშის დამატება"
+msgstr "მინიჭებული ანგარიში:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
 msgstr "ანგარიშები ვერ ვიპოვე"
 
@@ -2461,45 +2424,37 @@ msgid "%1 updated their post"
 msgstr "%1 -მა მისი პოსტი განაახლა"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "თავიდან დაპოსტვა"
+msgstr "პოსტის დარეპორტება"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "მომხმარებლის დარეპორტება"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "გაწევრიანების მიზეზები"
+msgstr "ამ შეტყობინების შესახებ ანგარიშის გაგზავნის მიზეზი"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "გაწევრიანების მიზეზები"
+msgstr "ამ მომხმარებლის შესახებ ანგარიშის გაგზავნის მიზეზი"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "თავიდან დაპოსტვა"
+msgstr "ანგარიში"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -2652,48 +2607,60 @@ msgstr "გამოყენება"
 msgid "Enable notifications for this account"
 msgstr "ამ ანგარიშისთვის გაფრთხილებების ჩართვა"
 
-#: content/ui/Settings/NotificationsPage.qml:38
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid "Push notifications are enabled."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:29
+#, kde-format
+msgid ""
+"Push notifications are not available for this account. Please log out and "
+"log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
 msgstr "ტიპები"
 
-#: content/ui/Settings/NotificationsPage.qml:46
+#: content/ui/Settings/NotificationsPage.qml:47
 #, kde-format
 msgid "Mentions"
 msgstr "მოხსენებები"
 
-#: content/ui/Settings/NotificationsPage.qml:58
+#: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
 msgstr "სტატუსები"
 
-#: content/ui/Settings/NotificationsPage.qml:70
+#: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
 msgid "Boosts"
 msgstr "გაძლიერება"
 
-#: content/ui/Settings/NotificationsPage.qml:82
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "New followers"
 msgstr "ახალი მიმდევრები"
 
-#: content/ui/Settings/NotificationsPage.qml:94
+#: content/ui/Settings/NotificationsPage.qml:95
 #, kde-format
 msgid "New follow requests"
 msgstr "ახალი მიყოლის მოთხოვნები"
 
-#: content/ui/Settings/NotificationsPage.qml:106
+#: content/ui/Settings/NotificationsPage.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "სანიშნები"
 
-#: content/ui/Settings/NotificationsPage.qml:118
+#: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
 msgid "Polls"
 msgstr "გამოკითხვა"
 
-#: content/ui/Settings/NotificationsPage.qml:130
+#: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
 msgstr "&ჩასწორებები"
@@ -3347,32 +3314,28 @@ msgid "Pin on Profile"
 msgstr "პროფილზე მიმაგრება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:116
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "დადუმების გამორთვა"
+msgstr "@%1-ის დადუმების გამორთვა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "დადუმება"
+msgstr "@%1-ის დადუმება"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:135
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "განბლოკვა"
+msgstr "@%1-ის განბლოკვა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:137
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "დაბლოკვა"
+msgstr "@%1-ის დაბლოკვა"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:175
 #, kde-format
@@ -3652,76 +3615,74 @@ msgstr "7 დღე"
 msgid "An unknown error occurred."
 msgstr "უცნობი შეცდომა."
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-ის კლიენტი"
 
-#: main.cpp:93
+#: main.cpp:94
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE -ის საზოგადოება"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:95 main.cpp:100
+#: main.cpp:96 main.cpp:101
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:99
+#: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:112
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
-msgid "Client for decentralized social networks like Mastodon"
-msgstr "დეცენტრალიზებული სოციალური მედიის კლიენტი: mastodon"
-
 #: main.cpp:113
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
-msgid "Supports https and web+ap url scheme"
-msgstr "აქვს web+ap: url სქემის მხარდაჭერა"
+#, kde-format
+msgid "Client for decentralized social networks like Mastodon"
+msgstr "კლიენტი Mastodon-ის მსგავსი დეცენტრალიზებული სოციალური ქსელებისთვის"
 
-#: main.cpp:115
+#: main.cpp:114
+#, kde-format
+msgid "Supports https and web+ap url scheme"
+msgstr "აქვს https და web+ap: url სქემის მხარდაჭერა"
+
+#: main.cpp:116
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "ამ ტექსტის ხაზის ცალკე გახსნილ რედაქტორში გაზიარება."
 
-#: main.cpp:115
+#: main.cpp:116
 #, kde-format
 msgid "The text to share."
 msgstr "გასაზიარებელი ტექსტი."
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
 msgstr "მხოლოდ შიდა გამოყენებისთვის."
 
-#: main.cpp:179
+#: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "პუშ გაფრთხილებების მიღება"
