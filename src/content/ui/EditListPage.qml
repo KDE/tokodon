@@ -89,6 +89,13 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: createButton
             enabled: root.isValid
+            icon.name: {
+                if (root.purpose === EditListPage.New) {
+                    return "gtk-add";
+                } else {
+                    return "edit-rename";
+                }
+            }
             text: {
                 if (root.purpose === EditListPage.New) {
                     return i18nc("@action:button Create the list", "Create");
@@ -107,6 +114,7 @@ FormCard.FormCardPage {
             id: deleteButton
             visible: root.purpose === EditListPage.Edit
             text: i18nc("@action:button Delete the list", "Delete")
+            icon.name: "edit-delete"
             onClicked: removeListPrompt.open()
 
             Kirigami.PromptDialog {
