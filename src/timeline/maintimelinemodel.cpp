@@ -56,6 +56,8 @@ void MainTimelineModel::setListId(const QString &id)
     }
 
     m_listId = id;
+    Q_EMIT listIdChanged();
+
     setLoading(false);
     fillTimeline({});
 }

@@ -36,9 +36,12 @@ Kirigami.ScrollablePage {
         delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
+            required property string id
             required property string title
 
             text: title
+
+            onClicked: Navigation.openList(id)
         }
 
         QQC2.ProgressBar {

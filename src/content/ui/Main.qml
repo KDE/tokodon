@@ -259,6 +259,13 @@ Kirigami.ApplicationWindow {
                     identity: identity
                 });
         }
+
+        function onOpenList(listId) {
+            pageStack.push(mainTimeline, {
+                name: "list",
+                listId: listId
+            });
+        }
     }
 
     globalDrawer: Kirigami.OverlayDrawer {
@@ -564,10 +571,10 @@ Kirigami.ApplicationWindow {
         id: mainTimeline
         TimelinePage {
             id: timelinePage
-            property string name
+            property alias name: timelineModel.name
+            property alias listId: timelineModel.listId
             model: MainTimelineModel {
                 id: timelineModel
-                name: timelinePage.name
                 showReplies: timelinePage.showReplies
                 showBoosts: timelinePage.showBoosts
             }

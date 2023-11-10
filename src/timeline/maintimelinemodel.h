@@ -15,6 +15,7 @@ class MainTimelineModel : public TimelineModel
     QML_ELEMENT
 
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
     Q_PROPERTY(bool atEnd READ atEnd NOTIFY atEndChanged)
 
 public:
@@ -44,6 +45,7 @@ public:
 
 Q_SIGNALS:
     void atEndChanged();
+    void listIdChanged();
 
 private:
     QString m_timelineName;

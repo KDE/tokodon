@@ -33,6 +33,7 @@ Q_SIGNALS:
     void openTag(const QString &tag);
     void reportPost(Identity *identity, const QString &postId);
     void reportUser(Identity *identity);
+    void openList(const QString &listId);
 
 private:
     Navigation() = default;
