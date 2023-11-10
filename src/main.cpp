@@ -165,7 +165,7 @@ int main(int argc, char *argv[])
         // create the lazy instance
         AccountManager::instance().loadFromSettings();
 
-        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [&file] {
+        QObject::connect(&AccountManager::instance(), &AccountManager::accountsReady, [] {
             qInfo(TOKODON_LOG) << "Accounts have finished loading. Checking notification queue...";
             // queue notification
             AccountManager::instance().queueNotifications();
