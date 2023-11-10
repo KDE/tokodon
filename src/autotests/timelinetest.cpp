@@ -183,8 +183,8 @@ private Q_SLOTS:
 
     void testFillListTimeline()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/list/test")), new TestReply(QStringLiteral("statuses.json"), account));
-        auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/list/test"));
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/list/1")), new TestReply(QStringLiteral("statuses.json"), account));
+        auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/list/1"));
         fetchMoreUrl.setQuery(QUrlQuery{
             {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
@@ -196,7 +196,7 @@ private Q_SLOTS:
         // nothing should be loaded because we didn't give it a list id yet
         QCOMPARE(timelineModel.rowCount({}), 0);
 
-        timelineModel.setListId(QStringLiteral("test"));
+        timelineModel.setListId(QStringLiteral("1"));
 
         QCOMPARE(timelineModel.rowCount({}), 5);
         QVERIFY(timelineModel.canFetchMore({}));
