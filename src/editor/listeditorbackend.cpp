@@ -77,4 +77,15 @@ void ListEditorBackend::submit()
     }
 }
 
+void ListEditorBackend::deleteList()
+{
+    Q_ASSERT(!m_listId.isEmpty());
+
+    auto account = AccountManager::instance().selectedAccount();
+
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [=](QNetworkReply *) {
+        Q_EMIT done();
+    });
+}
+
 #include "moc_listeditorbackend.cpp"

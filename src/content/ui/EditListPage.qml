@@ -82,5 +82,27 @@ FormCard.FormCardPage {
             }
             onClicked: backend.submit()
         }
+
+        FormCard.FormDelegateSeparator {
+            visible: deleteButton.visible
+        }
+
+        FormCard.FormButtonDelegate {
+            id: deleteButton
+            visible: root.purpose === EditListPage.Edit
+            text: i18nc("@action:button Delete the list", "Delete")
+            onClicked: removeListPrompt.open()
+
+            Kirigami.PromptDialog {
+                id: removeListPrompt
+
+                title: i18nc("@title", "Deleting List")
+                subtitle: i18nc("@label", "Are you sure you want to delete this list?")
+                standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                showCloseButton: false
+
+                onAccepted: backend.deleteList()
+            }
+        }
     }
 }

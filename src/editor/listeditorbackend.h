@@ -26,6 +26,7 @@ public:
 
 public Q_SLOTS:
     void submit();
+    void deleteList();
 
 Q_SIGNALS:
     void listIdChanged();
