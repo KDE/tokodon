@@ -320,7 +320,7 @@ Kirigami.ApplicationWindow {
             }
 
             Repeater {
-                model: [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction]
+                model: [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
                 Delegates.RoundedItemDelegate {
                     required property var modelData
                     QQC2.ButtonGroup.group: pageButtonGroup
@@ -526,6 +526,20 @@ Kirigami.ApplicationWindow {
         onTriggered: {
             pageStack.clear();
             pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
+            checked = true;
+            if (Kirigami.Settings.isMobile || drawer.modal) {
+                drawer.drawerOpen = false;
+            }
+        }
+    }
+
+    property Kirigami.Action listsAction: Kirigami.Action {
+        icon.name: "view-list-text"
+        text: i18n("Lists")
+        checkable: true
+        onTriggered: {
+            pageStack.clear();
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListsPage"));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
