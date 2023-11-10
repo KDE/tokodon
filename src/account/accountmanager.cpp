@@ -509,7 +509,7 @@ void AccountManager::queueNotifications()
         AccountConfig config(account->settingsGroupName());
 
         QUrlQuery urlQuery(uri);
-        urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(1));
+        urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(10));
         if (!config.lastPushNotification().isEmpty()) {
             urlQuery.addQueryItem(QStringLiteral("min_id"), config.lastPushNotification());
         }
@@ -529,14 +529,16 @@ void AccountManager::queueNotifications()
                     return;
                 }
 
-                const auto obj = doc.array()[0].toObject();
-                std::shared_ptr<Notification> n = std::make_shared<Notification>(account, obj);
+                for (auto notification : doc.array()) {
+                    if (notification.isObject()) {
+                        std::shared_ptr<Notification> n = std::make_shared<Notification>(account, notification.toObject());
+                        Q_EMIT account->notification(n);
+                    }
+                }
 
                 AccountConfig config(account->settingsGroupName());
-                config.setLastPushNotification(obj["id"_L1].toString());
+                config.setLastPushNotification(doc.array().last()["id"_L1].toString());
                 config.save();
-
-                Q_EMIT account->notification(n);
 
                 accountsLeft--;
                 checkIfDone();
