@@ -260,10 +260,10 @@ Kirigami.ApplicationWindow {
                 });
         }
 
-        function onOpenList(listId) {
-            pageStack.push(mainTimeline, {
-                name: "list",
-                listId: listId
+        function onOpenList(listId, name) {
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListPage"), {
+                name,
+                listId
             });
         }
     }
@@ -572,7 +572,6 @@ Kirigami.ApplicationWindow {
         TimelinePage {
             id: timelinePage
             property alias name: timelineModel.name
-            property alias listId: timelineModel.listId
             model: MainTimelineModel {
                 id: timelineModel
                 showReplies: timelinePage.showReplies

@@ -248,6 +248,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/FollowDelegate.qml
         content/ui/FullScreenImage.qml
         content/ui/LanguageSelector.qml
+        content/ui/ListPage.qml
         content/ui/ListsPage.qml
         content/ui/Main.qml
         content/ui/MastoPage.qml

@@ -41,7 +41,7 @@ Kirigami.ScrollablePage {
 
             text: title
 
-            onClicked: Navigation.openList(id)
+            onClicked: Navigation.openList(id, title)
         }
 
         QQC2.ProgressBar {
