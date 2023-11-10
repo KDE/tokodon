@@ -181,6 +181,29 @@ private Q_SLOTS:
         QCOMPARE(arguments[2].value<QList<int>>()[0], AbstractTimelineModel::PollRole);
     }
 
+    void testFillListTimeline()
+    {
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/list/test")), new TestReply(QStringLiteral("statuses.json"), account));
+        auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/list/test"));
+        fetchMoreUrl.setQuery(QUrlQuery{
+            {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
+        });
+        account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
+
+        MainTimelineModel timelineModel;
+        timelineModel.setName(QStringLiteral("list"));
+
+        // nothing should be loaded because we didn't give it a list id yet
+        QCOMPARE(timelineModel.rowCount({}), 0);
+
+        timelineModel.setListId(QStringLiteral("test"));
+
+        QCOMPARE(timelineModel.rowCount({}), 5);
+        QVERIFY(timelineModel.canFetchMore({}));
+        timelineModel.fetchMore({});
+        QCOMPARE(timelineModel.rowCount({}), 10);
+    }
+
 private:
     MockAccount *account = nullptr;
 };

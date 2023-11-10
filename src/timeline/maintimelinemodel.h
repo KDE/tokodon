@@ -25,7 +25,14 @@ public:
     QString name() const;
 
     /// Set the name of the timeline to fetch ("home", "public" or "federated")
+    /// \p name Can be "home", "public", "federated", "bookmarks", "favourites", "trending" or "list"
     void setName(const QString &name);
+
+    /// Name of the list id
+    QString listId() const;
+
+    /// Set the name of the list to view, only works if name is set to "list"
+    void setListId(const QString &id);
 
     void fillTimeline(const QString &fromId) override;
     QString displayName() const override;
@@ -40,5 +47,6 @@ Q_SIGNALS:
 
 private:
     QString m_timelineName;
+    QString m_listId;
     QUrl m_next;
 };

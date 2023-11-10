@@ -37,9 +37,27 @@ QString MainTimelineModel::displayName() const
         return i18nc("@title", "Favourites");
     } else if (m_timelineName == QStringLiteral("trending")) {
         return i18nc("@title", "Trending");
+    } else if (m_timelineName == QStringLiteral("list")) {
+        return m_listId;
     }
 
     return {};
+}
+
+QString MainTimelineModel::listId() const
+{
+    return m_listId;
+}
+
+void MainTimelineModel::setListId(const QString &id)
+{
+    if (m_listId == id) {
+        return;
+    }
+
+    m_listId = id;
+    setLoading(false);
+    fillTimeline({});
 }
 
 void MainTimelineModel::setName(const QString &timelineName)
@@ -61,10 +79,16 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
                                                  QStringLiteral("federated"),
                                                  QStringLiteral("bookmarks"),
                                                  QStringLiteral("favourites"),
-                                                 QStringLiteral("trending")};
+                                                 QStringLiteral("trending"),
+                                                 QStringLiteral("list")};
     static const QSet<QString> publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
 
     if (!m_account || m_loading || !validTimelines.contains(m_timelineName)) {
+        return;
+    }
+
+    qInfo() << m_timelineName << m_listId;
+    if (m_timelineName == QStringLiteral("list") && m_listId.isEmpty()) {
         return;
     }
 
@@ -81,7 +105,11 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
     }
 
     QUrl uri;
-    if (publicTimelines.contains(m_timelineName)) {
+    if (m_timelineName == QStringLiteral("list")) {
+        const QString apiUrl = QStringLiteral("/api/v1/timelines/list/%1").arg(m_listId);
+        uri = m_account->apiUrl(apiUrl);
+        uri.setQuery(q);
+    } else if (publicTimelines.contains(m_timelineName)) {
         // federated timeline is really "public" without local set
         const QString apiUrl =
             QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
