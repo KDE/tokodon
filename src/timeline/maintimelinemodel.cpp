@@ -87,7 +87,6 @@ void MainTimelineModel::fillTimeline(const QString &from_id)
         return;
     }
 
-    qInfo() << m_timelineName << m_listId;
     if (m_timelineName == QStringLiteral("list") && m_listId.isEmpty()) {
         return;
     }
