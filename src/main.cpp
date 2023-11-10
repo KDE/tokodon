@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
     shareOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(shareOption);
 
-    QCommandLineOption notifyOption(QStringLiteral("notify"), i18n("Internal usage only."));
+    QCommandLineOption notifyOption(QStringLiteral("dbus-activated"), i18n("Internal usage only."));
     notifyOption.setFlags(QCommandLineOption::Flag::HiddenFromHelp);
     parser.addOption(notifyOption);
 
@@ -160,8 +160,6 @@ int main(int argc, char *argv[])
 
 #ifdef HAVE_KUNIFIEDPUSH
     if (parser.isSet(notifyOption)) {
-        // TODO: timeout
-
         qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
 
         // create the lazy instance
