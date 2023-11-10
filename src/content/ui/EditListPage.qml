@@ -23,6 +23,8 @@ FormCard.FormCardPage {
     property var purpose
     property string listId
 
+    readonly property bool isValid: titleField.text.length > 0
+
     title: purpose === EditListPage.New ? i18nc("@title:window", "Create List") : i18nc("@title:window", "Edit List")
 
     property ListEditorBackend backend: ListEditorBackend {
@@ -73,6 +75,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             id: createButton
+            enabled: root.isValid
             text: {
                 if (root.purpose === EditListPage.New) {
                     return i18nc("@action:button Create the list", "Create");
