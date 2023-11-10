@@ -40,6 +40,8 @@ target_sources(tokodon_static
     account/preferences.h
     account/identity.cpp
     account/identity.h
+    account/listsmodel.cpp
+    account/listsmodel.h
     account/socialgraphmodel.cpp
     account/socialgraphmodel.h
     account/relationship.cpp

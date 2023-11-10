@@ -84,6 +84,12 @@ ecm_add_test(rulesmodeltest.cpp
 		NAME_PREFIX "tokodon-"
 )
 
+ecm_add_test(listsmodeltest.cpp
+		TEST_NAME listsmodeltest
+		LINK_LIBRARIES tokodon_test_static Qt::Test
+		NAME_PREFIX "tokodon-"
+)
+
 if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
 	add_subdirectory(appiumtests)
 endif()
