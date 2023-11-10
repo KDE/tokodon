@@ -12,7 +12,6 @@ class ListEditorBackend : public QObject
 
     Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
     Q_PROPERTY(QString title MEMBER m_title NOTIFY titleChanged)
-    Q_PROPERTY(QString repliesPolicy MEMBER m_repliesPolicy NOTIFY repliesPolicyChanged)
     Q_PROPERTY(bool exclusive MEMBER m_exclusive NOTIFY exclusiveChanged)
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
@@ -27,11 +26,13 @@ public:
 public Q_SLOTS:
     void submit();
     void deleteList();
+    QStringList replyPolicies();
+    int replyPolicyIndex() const;
+    void setReplyPolicyIndex(int index);
 
 Q_SIGNALS:
     void listIdChanged();
     void titleChanged();
-    void repliesPolicyChanged();
     void exclusiveChanged();
     void done();
     void loadingChanged();

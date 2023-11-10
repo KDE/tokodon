@@ -40,6 +40,7 @@ FormCard.FormCardPage {
             // If we loaded data, then overwrite the fields
             titleField.text = backend.title;
             exclusiveField.checked = backend.exclusive;
+            repliesPolicyField.currentIndex = backend.replyPolicyIndex();
         }
 
         function onDone() {
@@ -58,6 +59,18 @@ FormCard.FormCardPage {
             id: titleField
             label: i18nc("@label:textbox List title", "Title")
             onAccepted: exclusiveField.forceActiveFocus()
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormComboBoxDelegate {
+            id: repliesPolicyField
+            text: i18nc("@label", "Show replies for")
+            model: backend.replyPolicies()
+            currentIndex: 0
+            onCurrentIndexChanged: backend.setReplyPolicyIndex(currentIndex)
+
+            Layout.fillWidth: true
         }
 
         FormCard.FormDelegateSeparator {}

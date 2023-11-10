@@ -2,11 +2,14 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "listeditorbackend.h"
+#include <KLocalizedString>
 
 #include "abstractaccount.h"
 #include "accountmanager.h"
 
 using namespace Qt::StringLiterals;
+
+const QStringList supportedPolicies{QStringLiteral("none"), QStringLiteral("list"), QStringLiteral("followed")};
 
 ListEditorBackend::ListEditorBackend(QObject *parent)
     : QObject(parent)
@@ -39,12 +42,24 @@ void ListEditorBackend::setListId(const QString &listId)
         m_title = document["title"_L1].toString();
         Q_EMIT titleChanged();
 
+        m_repliesPolicy = document["replies_policy"_L1].toString();
+
         m_exclusive = document["exclusive"_L1].toBool();
         Q_EMIT exclusiveChanged();
 
         m_loading = false;
         Q_EMIT loadingChanged();
     });
+}
+
+int ListEditorBackend::replyPolicyIndex() const
+{
+    return supportedPolicies.indexOf(m_repliesPolicy);
+}
+
+void ListEditorBackend::setReplyPolicyIndex(int index)
+{
+    m_repliesPolicy = supportedPolicies[index];
 }
 
 bool ListEditorBackend::loading() const
@@ -86,6 +101,11 @@ void ListEditorBackend::deleteList()
     account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [=](QNetworkReply *) {
         Q_EMIT done();
     });
+}
+
+QStringList ListEditorBackend::replyPolicies()
+{
+    return {i18n("No one"), i18n("Members of the list"), i18n("Any followed users")};
 }
 
 #include "moc_listeditorbackend.cpp"
