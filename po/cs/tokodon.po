@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-29 02:36+0000\n"
-"PO-Revision-Date: 2023-08-09 12:43+0200\n"
+"PO-Revision-Date: 2023-11-08 15:53+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: account/abstractaccount.cpp:472
 #, kde-format
@@ -412,7 +412,7 @@ msgstr "Příspěvky"
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Příspěvky && Odpovědi"
 
 #: content/ui/AccountInfo.qml:511
 #, kde-format
@@ -495,7 +495,7 @@ msgstr "Žádné konverzace"
 #: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Objevovat"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
@@ -549,17 +549,17 @@ msgstr ""
 #: content/ui/LoginPage.qml:35
 #, kde-format
 msgid "Welcome to Tokodon"
-msgstr ""
+msgstr "Vítejte v Tokodonu"
 
 #: content/ui/LoginPage.qml:40
 #, kde-format
 msgid "Instance Url:"
-msgstr ""
+msgstr "URL instance:"
 
 #: content/ui/LoginPage.qml:52
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "URL instance není být prázdné."
 
 #: content/ui/LoginPage.qml:76
 #, kde-format
@@ -1433,12 +1433,12 @@ msgstr "Obecné"
 #: content/ui/Settings/GeneralCard.qml:24
 #, kde-format
 msgid "Show detailed statistics about posts"
-msgstr ""
+msgstr "Zobrazit podrobné statistiky o příspěvcích"
 
 #: content/ui/Settings/GeneralCard.qml:37
 #, kde-format
 msgid "Show link preview"
-msgstr ""
+msgstr "Zobrazit náhled odkazu"
 
 #: content/ui/Settings/GeneralCard.qml:50
 #, kde-format
@@ -1531,24 +1531,26 @@ msgid ""
 "These preferences apply to the current account and are synced to other "
 "clients."
 msgstr ""
+"Tyto předvolby jasou použity pro tento účet a budou synchronizovány na jiné "
+"klienty."
 
 #: content/ui/Settings/PreferencesCard.qml:36
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Automaticky označovat odeslané soubory jako citlivé"
 
 #: content/ui/Settings/PreferencesCard.qml:48
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr ""
+msgstr "Výchozí jazyk příspěvku"
 
 #: content/ui/Settings/PreferencesCard.qml:64
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Výchozí viditelnost příspěvku"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -1601,7 +1603,7 @@ msgstr ""
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Default status privacy"
-msgstr ""
+msgstr "Výchozí soukromí stavu"
 
 #: content/ui/Settings/ProfileEditor.qml:278
 #, kde-format
@@ -1677,22 +1679,22 @@ msgstr "Povolit automatickou kontrolu pravopisu"
 #: content/ui/Settings/SonnetCard.qml:39
 #, kde-format
 msgid "Ignore uppercase words"
-msgstr ""
+msgstr "Ignorovat slova psaná velkými písmeny"
 
 #: content/ui/Settings/SonnetCard.qml:51
 #, kde-format
 msgid "Ignore hyphenated words"
-msgstr ""
+msgstr "Ignorovat slova s pomlčkou"
 
 #: content/ui/Settings/SonnetCard.qml:63
 #, kde-format
 msgid "Detect language automatically"
-msgstr ""
+msgstr "Automaticky detekovat jazyk"
 
 #: content/ui/Settings/SonnetCard.qml:74
 #, kde-format
 msgid "Selected default language:"
-msgstr ""
+msgstr "Vybraný výchozí jazyk:"
 
 # žádné parametry funkce v inspektoru funkcí
 #: content/ui/Settings/SonnetCard.qml:75
@@ -1711,11 +1713,13 @@ msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
 msgstr ""
+"Pokud je automatická detekce povolena, bude %1 poskytovat kontrolu pravopisu "
+"a návrhy pro jazyky v tomto seznamu."
 
 #: content/ui/Settings/SonnetCard.qml:106
 #, kde-format
 msgid "Open Personal Dictionary"
-msgstr ""
+msgstr "Otevřít vlastní slovník"
 
 #: content/ui/Settings/SonnetCard.qml:117
 #, kde-format
@@ -1924,7 +1928,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1/%2</b> znaků"
 
 #: content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
@@ -2097,7 +2101,7 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #, kde-format
 msgid "%1 Reply"
-msgstr ""
+msgstr "%1 Odpověď"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
@@ -2114,7 +2118,7 @@ msgstr "%1 Oblíbené"
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
 #, kde-format
 msgid "%1 Favorite"
-msgstr ""
+msgstr "%1 Oblíbené"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:587
 #, kde-format
@@ -2141,7 +2145,7 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusPoll.qml:96
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Hlasovat"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:105
 #, kde-format
@@ -2152,7 +2156,7 @@ msgstr "Přehrát"
 #: content/ui/TimelinePage.qml:184
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Žádné příspěvky"
 
 #: content/ui/UserInfo.qml:73
 #, kde-format
@@ -2319,7 +2323,7 @@ msgstr "Místní časová osa"
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr ""
+msgstr "Globální časová osa"
 
 #: timeline/maintimelinemodel.cpp:37
 #, kde-format
