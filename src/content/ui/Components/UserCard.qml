@@ -27,41 +27,6 @@ Kirigami.AbstractCard {
 
     showClickFeedback: true
 
-    header: Image {
-        id: bannerImage
-        visible: isBackgroundAvailable
-        anchors.fill: parent
-        cache: true
-        fillMode: Image.PreserveAspectCrop
-
-        source: isBackgroundAvailable ? userIdentity.backgroundUrl : ''
-
-        Layout.fillWidth: true
-        Layout.preferredHeight: isBackgroundAvailable ? Kirigami.Units.gridUnit * 10 : 0
-
-
-        Kirigami.ShadowedRectangle {
-            id: shadowedRectangle
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
-            height: parent.height
-
-            opacity: 0.5
-            color: "black"
-            readonly property real radiusFromBackground: root.background.radius - root.background.border.width
-
-            corners {
-                topLeftRadius: radiusFromBackground
-                topRightRadius: radiusFromBackground
-                bottomLeftRadius: radiusFromBackground
-                bottomRightRadius: radiusFromBackground
-            }
-        }
-
-    }
-
     contentItem: Item {
         implicitHeight: userInfo.implicitHeight
         anchors {
