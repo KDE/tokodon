@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:47+0000\n"
-"PO-Revision-Date: 2023-08-09 12:43+0200\n"
+"POT-Creation-Date: 2023-11-11 01:43+0000\n"
+"PO-Revision-Date: 2023-11-08 15:53+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -269,14 +269,10 @@ msgid "Suspended"
 msgstr ""
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Omezit"
+msgstr "Omezeno"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -314,28 +310,24 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "Účet nelze odmítnout"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unfollow account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "Nelze přestat sledovat účet"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "Účet nelze přijmout"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "Nelze zrušit ztlumení účtu"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -350,7 +342,7 @@ msgstr ""
 #: content/ui/AccountInfo.qml:213
 #, kde-format
 msgid "Unfollow"
-msgstr ""
+msgstr "Přestat sledovat"
 
 #: content/ui/AccountInfo.qml:215
 #, kde-format
@@ -412,7 +404,7 @@ msgstr "Blokovat"
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr ""
+msgstr "Nahlásit..."
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -429,13 +421,13 @@ msgstr "Editor účtů"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:362
+#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:369
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
 msgstr "Nastavit"
 
-#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:401
+#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
 #, kde-format
 msgid "Follow Requests"
 msgstr ""
@@ -485,18 +477,18 @@ msgstr ""
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<b>%1</b> příspěvek"
+msgstr[1] "<b>%1</b> příspěvky"
+msgstr[2] "<b>%1</b> příspěvků"
 
 #: content/ui/AccountInfo.qml:602
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<b>%1</b> sledující"
+msgstr[1] "<b>%1</b> sledující"
+msgstr[2] "<b>%1</b> sledujících"
 
 #: content/ui/AccountInfo.qml:615
 #, kde-format
@@ -517,7 +509,7 @@ msgstr "Příspěvky"
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Příspěvky && Odpovědi"
 
 #: content/ui/AccountInfo.qml:647
 #, kde-format
@@ -535,7 +527,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
@@ -552,7 +544,7 @@ msgstr "Sdílet vybraná média"
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr ""
+msgstr "Oznámení"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
@@ -581,30 +573,100 @@ msgstr "Konverzace"
 msgid "No Conversations"
 msgstr "Žádné konverzace"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:494
+#: content/ui/EditListPage.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgctxt "@title:window"
+msgid "Create List"
+msgstr "Vytvořen v"
+
+#: content/ui/EditListPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Edits"
+msgctxt "@title:window"
+msgid "Edit List"
+msgstr "Úpravy"
+
+#: content/ui/EditListPage.qml:60
 #, kde-format
-msgid "Explore"
+msgctxt "@label:textbox List title"
+msgid "Title"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
+#: content/ui/EditListPage.qml:68
+#, kde-format
+msgctxt "@label"
+msgid "Show replies for"
+msgstr ""
+
+#: content/ui/EditListPage.qml:80
+#, kde-format
+msgctxt "@label If the list is exclusive"
+msgid "Exclusive"
+msgstr ""
+
+#: content/ui/EditListPage.qml:81
+#, kde-format
+msgid "Posts in an exclusive list are excluded from the Home timeline."
+msgstr ""
+
+#: content/ui/EditListPage.qml:102
 #, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgctxt "@action:button Create the list"
+msgid "Create"
+msgstr "Vytvořen v"
+
+#: content/ui/EditListPage.qml:104
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the list"
+msgid "Edit"
+msgstr "Upravit"
+
+#: content/ui/EditListPage.qml:117
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the list"
+msgid "Delete"
+msgstr "Smazat"
+
+#: content/ui/EditListPage.qml:124
+#, kde-format
+msgctxt "@title"
+msgid "Deleting List"
+msgstr ""
+
+#: content/ui/EditListPage.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this post?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this list?"
+msgstr "Opravdu si přejete smazat tento příspěvek?"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
+#, kde-format
+msgid "Explore"
+msgstr "Objevovat"
+
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
-msgstr "Příspěvky"
+msgstr "Příspěvek"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "Příspěvky"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Značky"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
@@ -627,17 +689,40 @@ msgid "No Trending Tags"
 msgstr ""
 
 #: content/ui/LanguageSelector.qml:22
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Výchozí jazyk"
+msgstr "Zvolit jazyk"
+
+#: content/ui/ListPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Edits"
+msgid "Edit List"
+msgstr "Úpravy"
+
+#: content/ui/ListsPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Lists"
+msgstr ""
+
+#: content/ui/ListsPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgid "Create List"
+msgstr "Vytvořen v"
+
+#: content/ui/ListsPage.qml:65
+#, kde-format
+msgid "No lists"
+msgstr ""
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
-msgstr ""
+msgstr "Autorizace"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -697,18 +782,18 @@ msgstr "Nastavení proxy"
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
-msgstr ""
+msgstr "Přihlášení"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url:"
-msgstr ""
+msgstr "URL instance:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
-msgstr ""
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -731,14 +816,14 @@ msgstr "Pokračovat"
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "URL instance není být prázdné."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
-msgstr ""
+msgstr "Nastavení sítě"
 
 #: content/ui/LoginFlow/LoginPage.qml:96
 #: content/ui/LoginFlow/ServersPage.qml:100
@@ -751,13 +836,13 @@ msgstr "Ignorovat chyby SSL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr ""
+msgstr "Registrace"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Registrovat"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:100
 #, kde-format
@@ -767,7 +852,7 @@ msgstr "Uživatelské jméno"
 #: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "E-mailová adresa"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -787,40 +872,34 @@ msgid "Register"
 msgstr "Registrovat"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "@info:The rule attached with the ip rule"
-#| msgid "Rule *"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "Pravidlo *"
+msgstr "Pravidla"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@info:The rule attached with the ip rule"
-#| msgid "Rule *"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "Pravidlo *"
+msgstr "Pravidla"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr ""
+msgstr "Souhlasím"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "Zakázáno"
+msgstr "Nesouhlasím"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Vyberte server"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
@@ -831,7 +910,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Vyberte server"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
@@ -847,12 +926,12 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Vítejte"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
-msgstr ""
+msgstr "Vítejte v Tokodonu"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -868,22 +947,19 @@ msgstr "Přihlášení"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "Otevřít jako..."
 
 #: content/ui/Main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Odpovědět"
+msgstr ""
 
 #: content/ui/Main.qml:98
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Oblíbené"
+msgstr ""
 
 #: content/ui/Main.qml:100
 #, kde-format
@@ -892,86 +968,90 @@ msgid "Boost As…"
 msgstr ""
 
 #: content/ui/Main.qml:102
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Záložky"
+msgstr ""
 
 #: content/ui/Main.qml:104
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "Neznámá činnost"
 
-#: content/ui/Main.qml:343
+#: content/ui/Main.qml:350
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Ladění"
 
-#: content/ui/Main.qml:352
+#: content/ui/Main.qml:359
 #, kde-format
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/Main.qml:353
+#: content/ui/Main.qml:360
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
-msgstr ""
+msgstr "Nástroje pro moderování"
 
-#: content/ui/Main.qml:363
+#: content/ui/Main.qml:370
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
-#: content/ui/Main.qml:373
+#: content/ui/Main.qml:380
 #, kde-format
 msgid "Home"
 msgstr "Domů"
 
-#: content/ui/Main.qml:388 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Oznamování"
 
-#: content/ui/Main.qml:417 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:424 content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Local"
 msgstr "Místní"
 
-#: content/ui/Main.qml:432
+#: content/ui/Main.qml:439
 #, kde-format
 msgid "Global"
 msgstr "Globální"
 
-#: content/ui/Main.qml:448
+#: content/ui/Main.qml:455
 #, kde-format
 msgid "Conversation"
 msgstr "Rozhovor"
 
-#: content/ui/Main.qml:462
+#: content/ui/Main.qml:469
 #, kde-format
 msgid "Favourites"
 msgstr "Oblíbené"
 
-#: content/ui/Main.qml:478
+#: content/ui/Main.qml:485
 #, kde-format
 msgid "Bookmarks"
 msgstr "Záložky"
 
-#: content/ui/Main.qml:508
+#: content/ui/Main.qml:515
 #, kde-format
 msgid "Search"
 msgstr "Hledat"
 
-#: content/ui/Main.qml:523
+#: content/ui/Main.qml:530
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
+msgstr "Oznámení"
+
+#: content/ui/Main.qml:545
+#, kde-format
+msgid "Lists"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2047,7 +2127,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:48
 #, kde-format
 msgid "Report #%1"
-msgstr ""
+msgstr "Nahlásit #%1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
@@ -2070,44 +2150,34 @@ msgid "Report Resolved"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:205
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "Příspěvky"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "Sledující"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Sledujete"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "Připojil(a) se"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with active moderation status"
-#| msgid "Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
-msgstr "Aktivní"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
 #, kde-format
@@ -2127,16 +2197,14 @@ msgid "Reported By"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Report Status"
-msgstr "Stav přihlášení"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
 #, kde-format
 msgid "Resolved"
-msgstr ""
+msgstr "Vyřešeno"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
 #, kde-format
@@ -2154,6 +2222,7 @@ msgid "Assigned moderator"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:282
+#: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "No one"
 msgstr ""
@@ -2171,26 +2240,24 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Přeposláno"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
-# žádné parametry funkce v inspektoru funkcí
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "Nic"
+msgstr "Ne"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:310
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
@@ -2202,7 +2269,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Jiné"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:331
 #, kde-format
@@ -2212,7 +2279,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:342
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:346
 #, kde-format
@@ -2238,7 +2305,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "Nedostupné"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:429
 #, kde-format
@@ -2273,12 +2340,12 @@ msgstr "Zobrazit více"
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
-msgstr ""
+msgstr "Účty"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
 #, kde-format
 msgid "Reports"
-msgstr ""
+msgstr "Hlášení"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2299,30 +2366,27 @@ msgid "Email Blocks"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Účty"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Stav přihlášení"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "Nevyřešeno"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
 #, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr ""
+msgstr "Vyřešeno"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
@@ -2331,24 +2395,19 @@ msgid "Report Origin"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "Vše"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Místní"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "Vzdálené"
@@ -2359,22 +2418,20 @@ msgid "Reported By:"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "Přidat účet"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "Nedostupné"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "Účty nenalezeny"
+msgstr ""
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2409,13 +2466,13 @@ msgstr "Oblíbené"
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
-msgstr ""
+msgstr "Výsledky hlasování"
 
 #: content/ui/NotificationPage.qml:95
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
-msgstr ""
+msgstr "Příspěvky"
 
 #: content/ui/NotificationPage.qml:105
 #, kde-format
@@ -2459,17 +2516,16 @@ msgid "%1 updated their post"
 msgstr ""
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Smazat"
+msgstr "Nahlásit příspěvek"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Nahlásit uživatele"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
@@ -2487,12 +2543,10 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr ""
+msgstr "Nahlásit"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "Zrušit"
@@ -2529,8 +2583,7 @@ msgid "Logout"
 msgstr "Odhlásit se"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Odhlásit se"
@@ -2561,7 +2614,7 @@ msgstr "Barevný motiv"
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
-msgstr ""
+msgstr "Příspěvky"
 
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
@@ -2587,7 +2640,7 @@ msgstr "Prosím, vyberte písmo"
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
-msgstr ""
+msgstr "Média"
 
 #: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
@@ -2662,7 +2715,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Typy"
 
 #: content/ui/Settings/NotificationsPage.qml:47
 #, kde-format
@@ -2672,7 +2725,7 @@ msgstr "Zmínky"
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Stavy"
 
 #: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
@@ -2682,7 +2735,7 @@ msgstr ""
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "New followers"
-msgstr ""
+msgstr "Noví sledující"
 
 #: content/ui/Settings/NotificationsPage.qml:95
 #, kde-format
@@ -2697,12 +2750,12 @@ msgstr "Oblíbené"
 #: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
 msgid "Polls"
-msgstr ""
+msgstr "Hlasování"
 
 #: content/ui/Settings/NotificationsPage.qml:131
 #, kde-format
 msgid "Edits"
-msgstr ""
+msgstr "Úpravy"
 
 #: content/ui/Settings/ProfileEditor.qml:25
 #, kde-format
@@ -2771,19 +2824,19 @@ msgstr ""
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Automaticky označovat odeslané soubory jako citlivé"
 
 #: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr ""
+msgstr "Výchozí jazyk příspěvku"
 
 #: content/ui/Settings/ProfileEditor.qml:332
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Výchozí viditelnost příspěvku"
 
 #: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
@@ -2828,22 +2881,22 @@ msgstr "Povolit automatickou kontrolu pravopisu"
 #: content/ui/Settings/SonnetPage.qml:45
 #, kde-format
 msgid "Ignore uppercase words"
-msgstr ""
+msgstr "Ignorovat slova psaná velkými písmeny"
 
 #: content/ui/Settings/SonnetPage.qml:59
 #, kde-format
 msgid "Ignore hyphenated words"
-msgstr ""
+msgstr "Ignorovat slova s pomlčkou"
 
 #: content/ui/Settings/SonnetPage.qml:73
 #, kde-format
 msgid "Detect language automatically"
-msgstr ""
+msgstr "Automaticky detekovat jazyk"
 
 #: content/ui/Settings/SonnetPage.qml:86
 #, kde-format
 msgid "Selected default language:"
-msgstr ""
+msgstr "Vybraný výchozí jazyk:"
 
 # žádné parametry funkce v inspektoru funkcí
 #: content/ui/Settings/SonnetPage.qml:87
@@ -2862,11 +2915,13 @@ msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
 msgstr ""
+"Pokud je automatická detekce povolena, bude %1 poskytovat kontrolu pravopisu "
+"a návrhy pro jazyky v tomto seznamu."
 
 #: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
 msgid "Open Personal Dictionary"
-msgstr ""
+msgstr "Otevřít vlastní slovník"
 
 #: content/ui/Settings/SonnetPage.qml:134
 #, kde-format
@@ -2899,7 +2954,7 @@ msgstr "Přidat slovo"
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
-msgstr ""
+msgstr "Odstranit slovo"
 
 #: content/ui/ShareDialog.qml:34
 #, kde-format
@@ -2927,7 +2982,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:label Alternate text or description of the imaage"
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
 #, kde-format
@@ -3051,17 +3106,17 @@ msgstr ""
 #: content/ui/StatusComposer/StatusComposer.qml:271
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "Obrázek PNG (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "Obrázek GIF (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:273
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "Obrázek WebP (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:274
 #, kde-format
@@ -3071,12 +3126,12 @@ msgstr ""
 #: content/ui/StatusComposer/StatusComposer.qml:275
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "Obrázky HEIF (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "Obrázek AVIF (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
@@ -3086,7 +3141,7 @@ msgstr ""
 #: content/ui/StatusComposer/StatusComposer.qml:278
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "Video MPEG-4 (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
@@ -3168,19 +3223,19 @@ msgstr "Přidat emotikon"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1/%2</b> znaků"
 
 #: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
-msgstr ""
+msgstr "Odeslat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:420
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
-msgstr ""
+msgstr "Odpovědět"
 
 #: content/ui/StatusComposer/StatusComposer.qml:422
 #, kde-format
@@ -3192,7 +3247,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:52
 #, kde-format
@@ -3220,7 +3275,7 @@ msgstr "Není k dispozici"
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:265
 #, kde-format
@@ -3246,12 +3301,12 @@ msgstr ""
 #: content/ui/StatusDelegate/ImageMenu.qml:38
 #, kde-format
 msgid "Save Image As…"
-msgstr ""
+msgstr "Uložit obrázek jako…"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopírovat obrázek"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
@@ -3262,9 +3317,9 @@ msgstr ""
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 Oblíbený"
+msgstr[1] "%1 Oblíbené"
+msgstr[2] "%1 Oblíbené"
 
 #: content/ui/StatusDelegate/InformationBar.qml:124
 #, kde-format
@@ -3283,7 +3338,7 @@ msgstr "Náhled odkazu: %1"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr ""
+msgstr "Rozbalit příspěvek"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:38
 #, kde-format
@@ -3294,28 +3349,25 @@ msgstr "Otevřít původní stránku"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopírovat odkaz"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:60
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Otevřít jako..."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:67
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Odpovědět"
+msgstr "Odpovědět jako…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Oblíbené"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:81
 #, kde-format
@@ -3324,11 +3376,10 @@ msgid "Boost as…"
 msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:88
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Záložky"
+msgstr ""
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
@@ -3340,47 +3391,43 @@ msgstr "Smazat záložku"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
-msgstr ""
+msgstr "Záložka"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr ""
+msgstr "Odepnout na profilu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:103
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr ""
+msgstr "Připnout na profilu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:116
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "Povolit zvuk"
+msgstr "Povolit zvuk @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "Ztlumit"
+msgstr "Ztlumit @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:135
-#, fuzzy, kde-format
-#| msgid "Unblock"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "Odblokovat"
+msgstr "Odblokovat @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:137
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "Blokovat"
+msgstr "Blokovat @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:175
 #, kde-format
@@ -3420,17 +3467,16 @@ msgid "Pinned Post"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Smazat"
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Opravdu si přejete smazat tento příspěvek?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:227
 #, kde-format
@@ -3482,7 +3528,7 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusDelegate.qml:431
 #, kde-format
 msgid "Favourite"
-msgstr ""
+msgstr "Oblíbené"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:448
 #, kde-format
@@ -3519,7 +3565,7 @@ msgstr ""
 #: content/ui/StatusDelegate/StatusPoll.qml:97
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Hlasovat"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:72
 #, kde-format
@@ -3538,23 +3584,20 @@ msgid "Play"
 msgstr "Přehrát"
 
 #: content/ui/TimelinePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Filtrováno: %1"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgid "Show Boosts"
-msgstr "Zobrazit méně"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:86
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgid "Show Replies"
-msgstr "Zobrazit méně"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:111
 #, kde-format
@@ -3571,7 +3614,7 @@ msgstr ""
 #: content/ui/TimelinePage.qml:241
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Žádné příspěvky"
 
 #: content/ui/TimelinePage.qml:247
 #, kde-format
@@ -3606,6 +3649,17 @@ msgid_plural "%2 and %1 others"
 msgstr[0] "%2 a jeden další"
 msgstr[1] "%2  a %1 další"
 msgstr[2] "%2  a %1 další"
+
+#: editor/listeditorbackend.cpp:108
+#, kde-format
+msgid "Members of the list"
+msgstr ""
+
+#: editor/listeditorbackend.cpp:108
+#, fuzzy, kde-format
+#| msgid "New followers"
+msgid "Any followed users"
+msgstr "Noví sledující"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3688,7 +3742,7 @@ msgstr "Správce"
 #: main.cpp:100
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:105
 #, kde-format
@@ -3708,10 +3762,9 @@ msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Podporuje schéma web+ap: url"
+msgstr ""
 
 #: main.cpp:116
 #, kde-format
@@ -3775,7 +3828,7 @@ msgstr "Místní časová osa"
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr ""
+msgstr "Globální časová osa"
 
 #: timeline/maintimelinemodel.cpp:35
 #, kde-format
@@ -3948,11 +4001,3 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
-
-#~ msgctxt "@item:inlistbox Group of preferred languages"
-#~ msgid "Preferred Languages"
-#~ msgstr "Preferované jazyky"
-
-#~ msgctxt "@item:inlistbox Group of all languages"
-#~ msgid "All Languages"
-#~ msgstr "Všechny jazyky"

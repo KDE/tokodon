@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:47+0000\n"
-"PO-Revision-Date: 2023-10-23 09:50+0200\n"
+"POT-Creation-Date: 2023-11-11 01:43+0000\n"
+"PO-Revision-Date: 2023-11-08 15:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -155,22 +155,19 @@ msgstr "Segui"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Utenti silenziati"
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Bloccato"
+msgstr "Utenti bloccati"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Account in primo piano"
+msgstr "Utenti in primo piano"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
@@ -199,28 +196,24 @@ msgid "No followers"
 msgstr "Nessun seguace"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Nessun seguace"
+msgstr "Nessun utente seguito"
 
 #: account/socialgraphmodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Nessun account silenziato"
+msgstr "Nessun utente silenziato"
 
 #: account/socialgraphmodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "Nessun account bloccato"
+msgstr "Nessun utente bloccato"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Nessun account in primo piano"
+msgstr "Nessun utente in primo piano"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
@@ -274,14 +267,10 @@ msgid "Suspended"
 msgstr "Sospeso"
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Limita"
+msgstr "Limitato"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -321,28 +310,24 @@ msgstr ""
 "aggiornare il blocco del dominio."
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "Impossibile rifiutare l'account"
+msgstr "Impossibile risolvere la segnalazione"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "Impossibile rimuovere il silenzio per l'account"
+msgstr "Impossibile annullare la risoluzione della segnalazione"
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "Impossibile accettare l'account"
+msgstr "Impossibile assegnare la segnalazione"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "Impossibile rimuovere il silenzio per l'account"
+msgstr "Impossibile annullare l'assegnazione della segnalazione"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -350,16 +335,14 @@ msgid "Follows you"
 msgstr "Ti segue"
 
 #: content/ui/AccountInfo.qml:210
-#, fuzzy, kde-format
-#| msgid "Follow Request"
+#, kde-format
 msgid "Follow Requested"
 msgstr "Richiesta di seguito"
 
 #: content/ui/AccountInfo.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Segui"
+msgstr "Non seguire"
 
 #: content/ui/AccountInfo.qml:215
 #, kde-format
@@ -367,16 +350,14 @@ msgid "Follow"
 msgstr "Segui"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Smetti di avvisarmi quando %1 pubblica un commento"
+msgstr "Smetti di avvisarmi quando %1 pubblica un commento."
 
 #: content/ui/AccountInfo.qml:242
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Avvisami quando %1 pubblica un commento"
+msgstr "Avvisami quando %1 pubblica un commento."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -384,10 +365,9 @@ msgid "Hide Boosts from %1"
 msgstr "Nascondi i boost da %1"
 
 #: content/ui/AccountInfo.qml:261
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "Smetti di nascondere i boost da %1"
+msgstr "Mostra i boost da %1"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -402,7 +382,7 @@ msgstr "Evidenzia nel profilo"
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Rimuovi silenzio"
 
 #: content/ui/AccountInfo.qml:297
 #, kde-format
@@ -410,10 +390,9 @@ msgid "Mute"
 msgstr "Silenzia"
 
 #: content/ui/AccountInfo.qml:313
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Blocca"
+msgstr "Sblocca"
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
@@ -422,12 +401,10 @@ msgstr "Blocca"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Invia di nuovo"
+msgstr "Segnala…"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -444,13 +421,13 @@ msgstr "Editor degli account"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:362
+#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:369
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:401
+#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
 #, kde-format
 msgid "Follow Requests"
 msgstr "Richieste di seguito"
@@ -458,19 +435,17 @@ msgstr "Richieste di seguito"
 #: content/ui/AccountInfo.qml:357
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Utenti silenziati"
 
 #: content/ui/AccountInfo.qml:363
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Bloccato"
+msgstr "Utenti bloccati"
 
 #: content/ui/AccountInfo.qml:369
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Account in primo piano"
+msgstr "Utenti in primo piano"
 
 #: content/ui/AccountInfo.qml:374
 #, kde-format
@@ -483,10 +458,9 @@ msgid "Post link copied."
 msgstr "Collegamento del commento copiato."
 
 #: content/ui/AccountInfo.qml:462
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Nota"
+msgstr "Nota:"
 
 #: content/ui/AccountInfo.qml:470
 #, kde-format
@@ -547,9 +521,7 @@ msgid "Hide boosts"
 msgstr "Nascondi i boost"
 
 #: content/ui/AccountInfo.qml:693
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Tutti"
@@ -598,22 +570,96 @@ msgstr "Conversazioni"
 msgid "No Conversations"
 msgstr "Nessuna conversazione"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:494
+#: content/ui/EditListPage.qml:28
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgctxt "@title:window"
+msgid "Create List"
+msgstr "Creato il"
+
+#: content/ui/EditListPage.qml:28
+#, fuzzy, kde-format
+#| msgid "Edits"
+msgctxt "@title:window"
+msgid "Edit List"
+msgstr "Modifiche"
+
+#: content/ui/EditListPage.qml:60
+#, kde-format
+msgctxt "@label:textbox List title"
+msgid "Title"
+msgstr ""
+
+#: content/ui/EditListPage.qml:68
+#, fuzzy, kde-format
+#| msgid "%1 Replies"
+msgctxt "@label"
+msgid "Show replies for"
+msgstr "%1 risposte"
+
+#: content/ui/EditListPage.qml:80
+#, kde-format
+msgctxt "@label If the list is exclusive"
+msgid "Exclusive"
+msgstr ""
+
+#: content/ui/EditListPage.qml:81
+#, kde-format
+msgid "Posts in an exclusive list are excluded from the Home timeline."
+msgstr ""
+
+#: content/ui/EditListPage.qml:102
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgctxt "@action:button Create the list"
+msgid "Create"
+msgstr "Creato il"
+
+#: content/ui/EditListPage.qml:104
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button Edit the list"
+msgid "Edit"
+msgstr "Modifica"
+
+#: content/ui/EditListPage.qml:117
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button Delete the list"
+msgid "Delete"
+msgstr "Elimina"
+
+#: content/ui/EditListPage.qml:124
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Post"
+msgctxt "@title"
+msgid "Deleting List"
+msgstr "Elimina commento"
+
+#: content/ui/EditListPage.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to delete this post?"
+msgctxt "@label"
+msgid "Are you sure you want to delete this list?"
+msgstr "Sei sicuro di voler eliminare questo commento?"
+
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
 msgid "Explore"
 msgstr "Esplora"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
 msgstr "Commento"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "Commenti"
 
@@ -643,11 +689,34 @@ msgid "No Trending Tags"
 msgstr "Nessun tag di tendenza"
 
 #: content/ui/LanguageSelector.qml:22
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Lingua predefinita"
+msgstr "Seleziona lingua"
+
+#: content/ui/ListPage.qml:19
+#, fuzzy, kde-format
+#| msgid "Edits"
+msgid "Edit List"
+msgstr "Modifiche"
+
+#: content/ui/ListsPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Lists"
+msgstr ""
+
+#: content/ui/ListsPage.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@info:Time when the domain was allowed to federate."
+#| msgid "Created at"
+msgid "Create List"
+msgstr "Creato il"
+
+#: content/ui/ListsPage.qml:65
+#, kde-format
+msgid "No lists"
+msgstr ""
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -809,35 +878,28 @@ msgid "Register"
 msgstr "Registra"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "Regole IP"
+msgstr "Regole"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "Regole IP"
+msgstr "Regole"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Agreement"
+#, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr "Accordo"
+msgstr "Sono d'accordo"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "Disabilitato"
+msgstr "Non sono d'accordo"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
@@ -891,112 +953,112 @@ msgstr "Accesso"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "Apri come…"
 
 #: content/ui/Main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Rispondi"
+msgstr "Rispondi come…"
 
 #: content/ui/Main.qml:98
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Preferiti"
+msgstr "Preferito come…"
 
 #: content/ui/Main.qml:100
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Boost"
+msgstr "Boost come..."
 
 #: content/ui/Main.qml:102
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Segnalibri"
+msgstr "Segnalibro come..."
 
 #: content/ui/Main.qml:104
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "Azione sconosciuta"
 
-#: content/ui/Main.qml:343
+#: content/ui/Main.qml:350
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Debug"
 
-#: content/ui/Main.qml:352
+#: content/ui/Main.qml:359
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Strumenti di moderazione"
 
-#: content/ui/Main.qml:353
+#: content/ui/Main.qml:360
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Strumenti di moderazione"
 
-#: content/ui/Main.qml:363
+#: content/ui/Main.qml:370
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: content/ui/Main.qml:373
+#: content/ui/Main.qml:380
 #, kde-format
 msgid "Home"
 msgstr "Home"
 
-#: content/ui/Main.qml:388 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: content/ui/Main.qml:417 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:424 content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Local"
 msgstr "Locale"
 
-#: content/ui/Main.qml:432
+#: content/ui/Main.qml:439
 #, kde-format
 msgid "Global"
 msgstr "Globale"
 
-#: content/ui/Main.qml:448
+#: content/ui/Main.qml:455
 #, kde-format
 msgid "Conversation"
 msgstr "Conversazione"
 
-#: content/ui/Main.qml:462
+#: content/ui/Main.qml:469
 #, kde-format
 msgid "Favourites"
 msgstr "Preferiti"
 
-#: content/ui/Main.qml:478
+#: content/ui/Main.qml:485
 #, kde-format
 msgid "Bookmarks"
 msgstr "Segnalibri"
 
-#: content/ui/Main.qml:508
+#: content/ui/Main.qml:515
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
 
-#: content/ui/Main.qml:523
+#: content/ui/Main.qml:530
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Annunci"
+
+#: content/ui/Main.qml:545
+#, kde-format
+msgid "Lists"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -1362,7 +1424,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr "Rifiuta i resoconti"
+msgstr "Rifiuta le segnalazioni"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
@@ -2077,158 +2139,139 @@ msgid "Update IP Rule"
 msgstr "Aggiorna regola IP"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "Invia di nuovo"
+msgstr "Segnala #%1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "Segna come non risolta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "Contrassegna come risolto"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:56
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Segnalazione non risolta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:59
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Segnalazione risolta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:205
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "Commenti"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:209
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "Seguaci"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Segui"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "Entrato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@info The last time the account was active."
-#| msgid "Last Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "Ultima volta attivo"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "Invia di nuovo"
+msgstr "Segnalato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "Invia di nuovo"
+msgstr "Segnalato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:245
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "Segnalato da"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgid "Report Status"
-msgstr "Stato spoiler"
+msgstr "Stato della segnalazione"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgid "Resolved"
-msgstr "Risolvi dominio"
+msgstr "Risolti"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "Non risolti"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:268
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "Azione intrapresa correttamente"
+msgstr "Azione intrapresa da"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Moderatore assegnato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:282
+#: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "Nessuno"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Rimuovi assegnazione"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "Assegna a me"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Inoltrato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:301
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "Nessuna"
+msgstr "No"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:310
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:314
 #, kde-format
@@ -2236,58 +2279,62 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Il motivo per cui questo account e/o contenuto è stato segnalato sarà "
+"menzionato nella comunicazione con l'account segnalato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Altro"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:331
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Categoria cambiata in altro"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:342
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:346
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "Categoria cambiata in spam"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:357
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Il contenuto viola una o più regole del server"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:361
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Categoria modificata in violazione delle regole"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:404
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Per fornire ulteriori informazioni, %1 ha scritto:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:429
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "Contenuto segnalato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:433
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"I contenuti offensivi saranno menzionati nella comunicazione con l'account "
+"segnalato"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
 #: content/ui/StatusDelegate/StatusDelegate.qml:289
@@ -2314,11 +2361,9 @@ msgid "Accounts"
 msgstr "Account"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Reports"
-msgstr "Invia di nuovo"
+msgstr "Segnalazioni"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2344,51 +2389,43 @@ msgid "Accounts Tool Page"
 msgstr "Pagina dello strumento Account"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Stato spoiler"
+msgstr "Stato della segnalazione"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "Non risolti"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "Risolvi dominio"
+msgstr "Risolti"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Origine della segnalazione"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "Tutti"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Locale"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "Remoto"
@@ -2396,25 +2433,23 @@ msgstr "Remoto"
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Segnalato da:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "Aggiungi account"
+msgstr "Account assegnato:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "Nessun account trovato"
+msgstr "Nessuna segnalazione trovata"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2499,45 +2534,37 @@ msgid "%1 updated their post"
 msgstr "%1 hanno aggiornato il loro commento"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Invia di nuovo"
+msgstr "Segnala commento"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Segnala utente"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Motivi per l'adesione"
+msgstr "Motivo per la segnalazione di questo commento"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Motivi per l'adesione"
+msgstr "Motivo per la segnalazione di questo utente"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "Invia di nuovo"
+msgstr "Segnala"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "Annulla"
@@ -2559,8 +2586,7 @@ msgid "No search results"
 msgstr "Nessun risultato trovato"
 
 #: content/ui/SearchView.qml:53
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
 msgstr "Cerca persone, tag e commenti"
 
@@ -2575,8 +2601,7 @@ msgid "Logout"
 msgstr "Chiudi sessione"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Chiudi sessione"
@@ -2585,7 +2610,7 @@ msgstr "Chiudi sessione"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Sei sicuro di voler uscire da %1?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:113
 #, kde-format
@@ -3065,13 +3090,13 @@ msgstr "Scrivi un nuovo commento"
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "Elimina le bozze"
 
 #: content/ui/StatusComposer/StatusComposer.qml:95
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Sei sicuro di voler eliminare la bozza?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
 #: content/ui/StatusComposer/StatusComposer.qml:357
@@ -3283,12 +3308,10 @@ msgid "Video"
 msgstr "Video"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:348
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Media"
+msgstr "Nascondi media"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:373
 #, kde-format
@@ -3296,15 +3319,14 @@ msgid "Media Hidden"
 msgstr "Supporto nascosto"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:38
-#, fuzzy, kde-format
-#| msgid "Save as"
+#, kde-format
 msgid "Save Image As…"
-msgstr "Salva come"
+msgstr "Salva immagine come…"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Copia immagine"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
@@ -3331,11 +3353,10 @@ msgid "Link preview: %1"
 msgstr "Anteprima collegamento: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Espandi questo commento"
+msgstr "Espandi commento"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:38
 #, kde-format
@@ -3343,8 +3364,7 @@ msgid "Open Original Page"
 msgstr "Apri la pagina originale"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:46
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copia collegamento"
@@ -3353,61 +3373,52 @@ msgstr "Copia collegamento"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Apri come…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:67
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Rispondi"
+msgstr "Rispondi come…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Preferiti"
+msgstr "Preferito come…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:81
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Boost"
+msgstr "Boost come..."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:88
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Segnalibri"
+msgstr "Segnalibro come..."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr "Rimuovi il segnalibro"
+msgstr "Rimuovi segnalibro"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Segnalibro"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:103
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Rimuovi dal profilo"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:103
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Appunta sul profilo"
@@ -3416,28 +3427,25 @@ msgstr "Appunta sul profilo"
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "Rimuovi silenzio per @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "Silenzia"
+msgstr "Silenzia @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:135
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "Blocca"
+msgstr "Sblocca @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:137
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "Blocca"
+msgstr "Blocca @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:175
 #, kde-format
@@ -3471,32 +3479,28 @@ msgid "Show anyway"
 msgstr "Mostra comunque"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:157
-#, fuzzy, kde-format
-#| msgid "View Post"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Visualizza commento"
+msgstr "Commento appuntato"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Elimina la parola"
+msgstr "Elimina commento"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Sei sicuro di voler eliminare questo commento?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:227
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Elimina e riformula"
+msgstr "Elimina e riformula commento"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:228
 #, kde-format
@@ -3505,6 +3509,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Sei sicuro di voler riformulare questo commento? Questo eliminerà il "
+"commento originale."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:384
 #, kde-format
@@ -3623,11 +3629,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Impossibile contattare il server: %1. Controlla le tue impostazioni."
 
 #: content/ui/TimelinePage.qml:214
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Timeline locale"
+msgstr "Fine della timeline"
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
@@ -3638,13 +3643,12 @@ msgstr "Nessun commento"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Ritorna in cima"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Modifica account"
+msgstr "Cambia account"
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3667,6 +3671,17 @@ msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] "%2 e un altro"
 msgstr[1] "%2 e %1 altri"
+
+#: editor/listeditorbackend.cpp:108
+#, kde-format
+msgid "Members of the list"
+msgstr ""
+
+#: editor/listeditorbackend.cpp:108
+#, fuzzy, kde-format
+#| msgid "No followed users"
+msgid "Any followed users"
+msgstr "Nessun utente seguito"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3764,16 +3779,14 @@ msgid "Your emails"
 msgstr "smart2128vr@gmail.com"
 
 #: main.cpp:113
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "Cliente per la rete sociale decentralizzata: mastodon"
+msgstr "Client per reti sociali decentralizzate come Mastodon"
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Supporta lo scherma di URL web+api:"
+msgstr "Supporta lo scherma di URL https e web+ap"
 
 #: main.cpp:116
 #, kde-format
@@ -3788,12 +3801,12 @@ msgstr "Il testo da condividere."
 #: main.cpp:120
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "Solo per uso interno."
 
 #: main.cpp:158
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Ricezione delle notifiche push"
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
@@ -3801,10 +3814,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Si è verificato un errore durante il recupero dell'ultima notifica."
 
 #: search/searchmodel.cpp:136
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Utente"
+msgstr "Utenti"
 
 #: search/searchmodel.cpp:138
 #, kde-format
