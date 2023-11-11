@@ -4,6 +4,10 @@ Like other projects in the KDE ecosystem, contributions are welcome from all. Th
 
 If this is for your first code contribution, see the [GitLab wiki page](https://community.kde.org/Infrastructure/GitLab) for a tutorial on how to send a merge request.
 
+## Testing
+
+If you want to quickly test UI changes and keep network requests to servers at a minimum, then compile Tokodon with tests (`-DBUILD_TESTING=ON`) and use the `tokodon-offline` executable. It uses the same mock network backends as our testing infrastructure, and is extremely useful for rapid testing. 
+
 ## Chatting
 
 If you get stuck or need help with anything at all, head over to the [KDE New Contributors room](https://go.kde.org/matrix/#/#kde-welcome:kde.org) on Matrix. For questions about Tokodon, please ask in the [Tokodon room](https://go.kde.org/matrix/#/#tokodon:kde.org). See [Matrix](https://community.kde.org/Matrix) for more details.
