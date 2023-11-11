@@ -6,14 +6,9 @@
 
 #pragma once
 
-#include <QQuickFramebufferObject>
+#include <MpvAbstractItem>
 
-#include <mpv/client.h>
-#include <mpv/render_gl.h>
-
-class MpvRenderer;
-
-class MpvPlayer : public QQuickFramebufferObject
+class MpvPlayer : public MpvAbstractItem
 {
     Q_OBJECT
     QML_ELEMENT
@@ -28,15 +23,9 @@ class MpvPlayer : public QQuickFramebufferObject
     Q_PROPERTY(bool autoPlay READ autoPlay WRITE setAutoPlay NOTIFY autoPlayChanged)
     Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
 
-    friend class MpvRenderer;
-
 public:
-    static void on_update(void *ctx);
-
     explicit MpvPlayer(QQuickItem *parent = nullptr);
-    ~MpvPlayer() override;
-
-    Renderer *createRenderer() const override;
+    ~MpvPlayer() = default;
 
     qreal position() const;
     qreal duration() const;
@@ -58,10 +47,6 @@ public Q_SLOTS:
     Q_INVOKABLE void stop();
     Q_INVOKABLE void setPosition(double value);
     void seek(qreal offset);
-    void command(const QVariant &params);
-    void setOption(const QString &name, const QVariant &value);
-    void setProperty(const QString &name, const QVariant &value);
-    QVariant getProperty(const QString &name);
 
 Q_SIGNALS:
     void positionChanged();
@@ -75,11 +60,9 @@ Q_SIGNALS:
     void autoPlayChanged();
     void stoppedChanged();
 
-private Q_SLOTS:
-    void onMpvEvents();
-    void doUpdate();
-
 private:
+    void onPropertyChanged(const QString &property, const QVariant &value);
+
     bool m_paused = true;
     qreal m_position = 0;
     qreal m_duration = 0;
@@ -89,7 +72,4 @@ private:
     bool m_loading = false;
     bool m_looping = false;
     bool m_autoPlay = false;
-
-    mpv_handle *mpv = nullptr;
-    mpv_render_context *mpv_gl = nullptr;
 };

@@ -125,8 +125,7 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     )
 endif ()
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(MPV REQUIRED mpv)
+find_package(MpvQt REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)

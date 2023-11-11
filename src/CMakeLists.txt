@@ -122,7 +122,6 @@ target_sources(tokodon_static
     utils/messagefiltercontainer.h
     utils/mpvplayer.cpp
     utils/mpvplayer.h
-    utils/qthelper.hpp
     utils/utils.cpp
     utils/utils.h
     utils/colorschemer.cpp
@@ -345,12 +344,10 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
+        MpvQt::MpvQt
         ${QTKEYCHAIN_LIBRARIES}
-        ${MPV_LIBRARIES}
 )
-target_include_directories(tokodon_static PUBLIC ${MPV_INCLUDE_DIRS})
-target_compile_options(tokodon_static PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
-target_link_directories(tokodon_static PUBLIC ${MPV_LIBRARY_DIRS})
+target_compile_options(tokodon_static PRIVATE -fexceptions)
 
 if (TARGET KF6::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)

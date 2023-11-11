@@ -125,10 +125,6 @@ int main(int argc, char *argv[])
     parser.process(app);
     about.processCommandLine(&parser);
 
-    // Qt sets the locale in the QGuiApplication constructor, but libmpv
-    // requires the LC_NUMERIC category to be set to "C", so change it back.
-    setlocale(LC_NUMERIC, "C");
-
     auto &colorSchemer = ColorSchemer::instance();
     auto config = Config::self();
     if (!config->colorScheme().isEmpty()) {
