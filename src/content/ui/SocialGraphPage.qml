@@ -54,6 +54,10 @@ Kirigami.ScrollablePage {
                         secondary: false
                     }
 
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
                     QQC2.Button {
                         text: i18nc("@action:button Allow follow request", "Allow")
                         icon.name: "checkmark"
