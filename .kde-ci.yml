@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6', 'Android/Qt6' ]
+  - 'on': [ 'Linux', 'FreeBSD', 'Windows', 'Android' ]
     'require':
       'frameworks/extra-cmake-modules': '@latest-kf6'
       'frameworks/ki18n': '@latest-kf6'
@@ -16,39 +16,16 @@ Dependencies:
       'libraries/mpvqt': '@latest'
       'third-party/qtkeychain': '@latest'
 
-  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6' ]
+  - 'on': [ 'Linux', 'FreeBSD', 'Windows' ]
     'require':
       'frameworks/qqc2-desktop-style': '@latest-kf6'
 
-  - 'on': [ 'Linux/Qt6', 'FreeBSD/Qt6' ]
+  - 'on': [ 'Linux', 'FreeBSD' ]
     'require':
       'frameworks/kdbusaddons': '@latest-kf6'
       'frameworks/kwindowsystem': '@latest-kf6'
       'frameworks/kio': '@latest-kf6'
       'frameworks/purpose': '@latest-kf6'
-
-  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5' ]
-    'require':
-      'frameworks/extra-cmake-modules': '@stable'
-      'frameworks/ki18n': '@stable'
-      'frameworks/kirigami': '@stable'
-      'frameworks/kcoreaddons': '@stable'
-      'frameworks/knotifications': '@stable'
-      'frameworks/kconfig': '@stable'
-      'frameworks/kconfigwidgets': '@stable'
-      'libraries/kirigami-addons': '@latest'
-      'third-party/qtkeychain': '@latest'
-
-  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5' ]
-    'require':
-      'frameworks/qqc2-desktop-style': '@stable'
-
-  - 'on': [ 'Linux/Qt5', 'FreeBSD/Qt5' ]
-    'require':
-      'frameworks/kdbusaddons': '@stable'
-      'frameworks/kwindowsystem': '@stable'
-      'frameworks/kio': '@stable'
-      'frameworks/purpose': '@stable'
 
   - 'on': ['Linux']
     'require':
