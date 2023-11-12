@@ -18,6 +18,18 @@ decentralized servers that implement its API (such as Pixelfed).
 * Searching for users, hashtags and posts.
 * Moderation tools like viewing a server's accounts, email blocks and more. 
 
+## Supported Services
+
+Tokodon supports services that implement the [Mastodon Client API](https://docs.joinmastodon.org/api/). This includes most popular Fediverse software, such as:
+
+* [Mastodon](https://joinmastodon.org) (and it's forks)
+* [Akkoma](https://akkoma.social/) and [Pleroma](https://pleroma.social/)
+* [Pixelfed](https://pixelfed.org/)
+* [GoToSocial](https://gotosocial.org/)
+* [FireFish](https://joinfirefish.org/)
+
+Other services may work in Tokodon, although keep in mind it's not possible to support every extra feature.
+
 ## Get It
 
 Details on where to find stable releases of Tokodon can be found on its
