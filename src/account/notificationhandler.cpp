@@ -11,6 +11,10 @@
 #include <KLocalizedString>
 #include <KNotification>
 
+#ifdef HAVE_KIO
+#include <KIO/ApplicationLauncherJob>
+#endif
+
 NotificationHandler::NotificationHandler(QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
     , m_nam(nam)
@@ -22,27 +26,41 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     KNotification *knotification;
 
     const auto addViewPostAction = [this, &knotification, notification] {
+#ifdef HAVE_KIO
         auto viewPostAction = knotification->addAction(i18n("View Post"));
         auto defaultAction = knotification->addDefaultAction(i18n("View Post"));
 
         auto openPost = [=] {
-            NetworkController::instance().openWebApLink(notification->post()->url().toString());
+            auto url = notification->post()->url();
+            url.setScheme(QStringLiteral("web+ap"));
+
+            auto *job = new KIO::ApplicationLauncherJob(KService::serviceByDesktopName(QStringLiteral("org.kde.tokodon")));
+            job->setUrls({url});
+            job->start();
         };
 
         connect(viewPostAction, &KNotificationAction::activated, this, openPost);
         connect(defaultAction, &KNotificationAction::activated, this, openPost);
+#endif
     };
 
     const auto addViewUserAction = [this, &knotification, notification] {
+#ifdef HAVE_KIO
         auto viewProfileActions = knotification->addAction(i18n("View Profile"));
         auto defaultAction = knotification->addDefaultAction(i18n("View Profile"));
 
         auto viewProfile = [=] {
-            NetworkController::instance().openWebApLink(notification->identity()->url().toString());
+            auto url = notification->identity()->url();
+            url.setScheme(QStringLiteral("web+ap"));
+
+            auto *job = new KIO::ApplicationLauncherJob(KService::serviceByDesktopName(QStringLiteral("org.kde.tokodon")));
+            job->setUrls({url});
+            job->start();
         };
 
         connect(viewProfileActions, &KNotificationAction::activated, this, viewProfile);
         connect(defaultAction, &KNotificationAction::activated, this, viewProfile);
+#endif
     };
 
     switch (notification->type()) {
