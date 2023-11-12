@@ -537,7 +537,7 @@ void AccountManager::queueNotifications()
                 }
 
                 AccountConfig config(account->settingsGroupName());
-                config.setLastPushNotification(doc.array().last()["id"_L1].toString());
+                config.setLastPushNotification(doc.array().first()["id"_L1].toString());
                 config.save();
 
                 accountsLeft--;
