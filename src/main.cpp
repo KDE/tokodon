@@ -47,6 +47,20 @@
 
 using namespace Qt::Literals::StringLiterals;
 
+void setupUnifiedPush()
+{
+#ifdef HAVE_KUNIFIEDPUSH
+    auto connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
+    QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
+        NetworkController::instance().endpoint = endpoint;
+    });
+
+    NetworkController::instance().endpoint = connector->endpoint();
+
+    connector->registerClient(i18n("Receiving push notifications"));
+#endif
+}
+
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
 #endif
@@ -140,22 +154,13 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
 #ifdef HAVE_KUNIFIEDPUSH
-    auto connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
-    QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
-        NetworkController::instance().endpoint = endpoint;
-    });
-
-    NetworkController::instance().endpoint = connector->endpoint();
-
-    connector->registerClient(i18n("Receiving push notifications"));
-#endif
-
-#ifdef HAVE_KUNIFIEDPUSH
     if (parser.isSet(notifyOption)) {
         qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
 
         // We want to be replaceable by the main client
         KDBusService service(KDBusService::Replace);
+
+        setupUnifiedPush();
 
         // create the lazy instance
         AccountManager::instance().loadFromSettings();
@@ -169,8 +174,9 @@ int main(int argc, char *argv[])
         QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
             // Sleep for a bit so the notifications stay open
             // TODO: make this depend on all of the knotifications closing
-            QThread::sleep(10);
-            QCoreApplication::quit();
+            QTimer *timer = new QTimer();
+            timer->setInterval(1000);
+            timer->connect(timer, &QTimer::timeout, qApp, &QCoreApplication::quit);
         });
 
         return QCoreApplication::exec();
@@ -180,6 +186,8 @@ int main(int argc, char *argv[])
 #ifdef HAVE_KDBUSADDONS
     KDBusService service(KDBusService::Unique);
 #endif
+
+    setupUnifiedPush();
 
 #ifdef HAVE_KDBUSADDONS
     QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
