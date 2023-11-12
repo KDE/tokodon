@@ -4,8 +4,7 @@ A modern client for [Mastodon](https://joinmastodon.org/) and other
 decentralized servers that implement its API (such as Pixelfed).
 
 <a href='https://flathub.org/apps/details/org.kde.tokodon'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
-
-![coverage](https://invent.kde.org/network/tokodon/badges/master/coverage.svg?job=suse_tumbleweed_qt515)
+<a href='https://snapcraft.io/tokodon'><img width='190px' alt='Download on the Snap Store' src='https://snapcraft.io/static/images/badges/en/snap-store-black.svg'/></a>
 
 ![Timeline](https://cdn.kde.org/screenshots/tokodon/tokodon-desktop.png)
 
