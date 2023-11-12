@@ -1,4 +1,4 @@
-# Tokodon
+# <img src="org.kde.tokodon.svg" width="40"/> Tokodon
 
 A modern client for [Mastodon](https://joinmastodon.org/) and other
 decentralized servers that implement its API (such as Pixelfed).
