@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
-"PO-Revision-Date: 2023-11-10 09:01+0100\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"PO-Revision-Date: 2023-11-11 09:07+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -404,7 +404,7 @@ msgid "Block"
 msgstr "Blokiraj"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -456,7 +456,7 @@ msgstr "Predstavljeni uporabniki"
 msgid "Copy Link to This Profile"
 msgstr "Kopiraj povezavo v ta profil"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr "Povezava na objavo prekopirana."
@@ -581,82 +581,70 @@ msgid "No Conversations"
 msgstr "Ni pogovorov"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Ustvarjena ob"
+msgstr "Ustvari seznam"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Urejevanja"
+msgstr "Uredi seznam"
 
 #: content/ui/EditListPage.qml:60
-#, fuzzy, kde-format
-#| msgid "@title"
+#, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr "@title"
+msgstr "Naslov"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Prikaži odgovore"
+msgstr "Prikaži odgovore za"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Ekskluzivno"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
+"Objave na ekskluzivnem seznamu so izključene iz domačega časovnega plana."
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "Ustvarjena ob"
+msgstr "Ustvari"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Uredi"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
-msgstr "Briši"
+msgstr "Izbriši"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Briši objavo"
+msgstr "Brisanje seznama"
 
 #: content/ui/EditListPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Ali ste prepričani, da želite zbrisati to objavo?"
+msgstr "Ali ste prepričani, da želite izbrisati ta seznam?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
@@ -707,28 +695,25 @@ msgid "Select Language"
 msgstr "Izberi jezik"
 
 #: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgid "Edit List"
-msgstr "Urejevanja"
+msgstr "Uredi seznam"
 
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Seznami"
 
 #: content/ui/ListsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "Ustvarjena ob"
+msgstr "Ustvari seznam"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Ni seznamov"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -1070,6 +1055,12 @@ msgstr "Obvestila"
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr "Seznami"
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2817,7 +2808,7 @@ msgstr "PNG, GIF ali JPG. Največ 2 MB. Bo zmanjšano na 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "Briši"
@@ -2987,13 +2978,13 @@ msgstr "Briši besedo"
 msgid "Sharing failed"
 msgstr "Deljenje ni uspelo"
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "Dovoli"
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3064,7 +3055,7 @@ msgid "Hide vote count until the poll ends"
 msgstr "Skrij število glasov dokler glasovanje ne poteče"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
@@ -3364,102 +3355,108 @@ msgstr[3] "%1 Pospeškov"
 msgid "Link preview: %1"
 msgstr "Predogled povezave: %1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "Razširi objavo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr "Odpri izvirno stran"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopiraj povezavo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Odpri kot…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Odgovori kot…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Priljubljen kot…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Pospeši kot…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Zaznamuj kot…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Odstrani zaznamek"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Zaznamek"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Odpni na profilu"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Pripni na profil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Odutišaj @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Utišaj  @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Odblokiraj  @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Blokiraj  @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Zbriši in postavi med osnutke"
@@ -3686,13 +3683,12 @@ msgstr[3] "%2 in še %1 drugi"
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Člani seznama"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "Any followed users"
-msgstr "Ni sledenih uporabnikov"
+msgstr "Kakršenkoli sleden uporabnik"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3814,7 +3810,7 @@ msgstr "Besedilo namenjeno za deljenje."
 msgid "Internal usage only."
 msgstr "Samo za notranjo rabo."
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Sprejemanje potisnih obvestil"

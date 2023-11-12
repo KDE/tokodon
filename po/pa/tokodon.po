@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
 "PO-Revision-Date: 2023-05-19 20:28-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -418,7 +418,7 @@ msgid "Block"
 msgstr "ਪਾਬੰਦੀ ਲਾਓ"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -473,7 +473,7 @@ msgstr "ਖਾਤੇ"
 msgid "Copy Link to This Profile"
 msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr ""
@@ -1104,6 +1104,12 @@ msgstr ""
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr ""
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2953,7 +2959,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "ਹਟਾਓ"
@@ -3125,14 +3131,14 @@ msgstr "ਸ਼ਬਦ ਹਟਾਓ"
 msgid "Sharing failed"
 msgstr ""
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "ਫ਼ਾਲੋ ਕਰੋ"
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3206,7 +3212,7 @@ msgid "Hide vote count until the poll ends"
 msgstr ""
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr "ਸੋਧੋ"
@@ -3512,31 +3518,37 @@ msgstr[1] ""
 msgid "Link preview: %1"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, fuzzy, kde-format
 #| msgid "Copy Link"
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -3544,7 +3556,7 @@ msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3552,7 +3564,7 @@ msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -3560,69 +3572,69 @@ msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, fuzzy, kde-format
 #| msgid "Remove bookmark"
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "ਮੌਨ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "ਪਾਬੰਦੀ ਲਾਓ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "ਪਾਬੰਦੀ ਲਾਓ"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""
@@ -3993,7 +4005,7 @@ msgstr ""
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""

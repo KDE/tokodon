@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
-"PO-Revision-Date: 2023-11-09 20:08+0100\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"PO-Revision-Date: 2023-11-11 07:38+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -399,7 +399,7 @@ msgid "Block"
 msgstr "Bloki"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -451,7 +451,7 @@ msgstr "Elstaraj Uzantoj"
 msgid "Copy Link to This Profile"
 msgstr "Kopii Ligilon al Ĉi tiu Profilo"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr "Afiŝligilo kopiita."
@@ -570,81 +570,69 @@ msgid "No Conversations"
 msgstr "Neniuj Konversacioj"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Kreita je"
+msgstr "Krei Liston"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Redaktoj"
+msgstr "Redakti Liston"
 
 #: content/ui/EditListPage.qml:60
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Montri Respondojn"
+msgstr "Montri respondojn pri"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Ekskluziva"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr ""
+msgstr "Afiŝoj en ekskluziva listo estas ekskluditaj de la Hejmo-templinio."
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Kreita je"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Redakti"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Forigi"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Forigi vorton"
+msgstr "Forigante Liston"
 
 #: content/ui/EditListPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Ĉu vi certas ke vi volas forigi ĉi afiŝon?"
+msgstr "Ĉu vi certas ke vi volas forigi ĉi liston?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
@@ -693,28 +681,25 @@ msgid "Select Language"
 msgstr "Elekti Lingvon"
 
 #: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgid "Edit List"
-msgstr "Redaktoj"
+msgstr "Redakti Liston"
 
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Listoj"
 
 #: content/ui/ListsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "Kreita je"
+msgstr "Krei Liston"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Neniuj Listoj"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -1054,6 +1039,12 @@ msgstr "Anoncoj"
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr "Listoj"
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2797,7 +2788,7 @@ msgstr "PNG, GIF aŭ JPG. Maksimume 2 MB. Malgrandiĝos al 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
@@ -2967,13 +2958,13 @@ msgstr "Forigi vorton"
 msgid "Sharing failed"
 msgstr "Kunhavigo malsukcesis"
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "Permesi"
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3044,7 +3035,7 @@ msgid "Hide vote count until the poll ends"
 msgstr "Kaŝi balotkalkulon ĝis la balotado finiĝas"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
@@ -3340,102 +3331,108 @@ msgstr[1] "%1 Plikonatigoj"
 msgid "Link preview: %1"
 msgstr "Antaŭrigardo de ligo: %1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "Vastigi Afiŝon"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr "Malfermi Originan Paĝon"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopii Ligilon"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Malfermi kiel…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Respondi kiel…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Ŝatatigi kiel…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Plifortigi kiel…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Legomarki kiel…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Forigi Legosignon"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Legomarki"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Malpingli sur Profilo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Pingli sur Profilo"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Malŝalti @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Silentigi @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Malŝlosi @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloki @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Forigi & Re-redakti"
@@ -3660,13 +3657,12 @@ msgstr[1] "%2 kaj %1 aliaj"
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Membroj de la listo"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "Any followed users"
-msgstr "Neniuj sekvataj uzantoj"
+msgstr "Iuj sekvataj uzantoj"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3788,7 +3784,7 @@ msgstr "La teksto por dividi."
 msgid "Internal usage only."
 msgstr "Nur por interna uzo."
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Ricevante puŝ-sciigojn"

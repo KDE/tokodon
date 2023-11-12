@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
 "PO-Revision-Date: 2023-11-10 12:01+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -404,7 +404,7 @@ msgid "Block"
 msgstr "Bloqueja"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -456,7 +456,7 @@ msgstr "Usuaris destacats"
 msgid "Copy Link to This Profile"
 msgstr "Copia l'enllaç cap a este perfil"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr "S'ha copiat l'enllaç de la publicació."
@@ -1062,6 +1062,12 @@ msgstr "Anuncis"
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr ""
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2811,7 +2817,7 @@ msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 1500x500px"
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
@@ -2983,13 +2989,13 @@ msgstr "Suprimix la paraula"
 msgid "Sharing failed"
 msgstr "Ha fallat la compartició"
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "Permet"
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3060,7 +3066,7 @@ msgid "Hide vote count until the poll ends"
 msgstr "Oculta el comptador de vots fins que acabe la votació"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr "Edita"
@@ -3356,102 +3362,108 @@ msgstr[1] "%1 impulsos"
 msgid "Link preview: %1"
 msgstr "Vista prèvia d'enllaç: %1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "Expandix la publicació"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr "Obri la pàgina original"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Obri com a…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Respon com a…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Preferit com a…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Impulsa com a…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Punt com a…"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Elimina el punt"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Punt"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Deixa de fixar en el perfil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Fixa en el perfil"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Trau el silenciament de @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Silencia @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Desbloqueja @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloqueja @%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Suprimix i torna a esborrany"
@@ -3804,7 +3816,7 @@ msgstr "El text que s'ha de compartir."
 msgid "Internal usage only."
 msgstr "Només ús intern."
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Rebre les notificacions «push»"

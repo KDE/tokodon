@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
 "PO-Revision-Date: 2023-10-09 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -423,7 +423,7 @@ msgid "Block"
 msgstr "차단"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, fuzzy, kde-format
 #| msgctxt "@action:button Send the same post again"
 #| msgid "Repost"
@@ -479,7 +479,7 @@ msgstr "추천 계정"
 msgid "Copy Link to This Profile"
 msgstr "이 프로필 링크 복사"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr "게시물 링크를 복사했습니다."
@@ -1095,6 +1095,12 @@ msgstr "공지"
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr ""
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2880,7 +2886,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -3053,13 +3059,13 @@ msgstr "단어 삭제"
 msgid "Sharing failed"
 msgstr "공유 실패"
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "허용"
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3130,7 +3136,7 @@ msgid "Hide vote count until the poll ends"
 msgstr "투표가 끝날 때까지 총 투표 수 숨기기"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr "편집"
@@ -3426,32 +3432,38 @@ msgstr[0] "부스트 %1개"
 msgid "Link preview: %1"
 msgstr "링크 미리 보기: %1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, fuzzy, kde-format
 #| msgid "Expand This Post"
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "이 게시물 확장"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr "원본 페이지 열기"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, fuzzy, kde-format
 #| msgid "Copy Link"
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "링크 복사"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, fuzzy, kde-format
 #| msgctxt "@action:button Reply to a post"
 #| msgid "Reply"
@@ -3459,83 +3471,83 @@ msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "답장"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "좋아요"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, fuzzy, kde-format
 #| msgid "Boosts"
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "부스트"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "북마크"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, fuzzy, kde-format
 #| msgid "Remove bookmark"
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "북마크 삭제"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "북마크"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, fuzzy, kde-format
 #| msgid "Unpin on profile"
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "프로필에서 고정 해제"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, fuzzy, kde-format
 #| msgid "Pin on profile"
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "프로필에 고정"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, fuzzy, kde-format
 #| msgid "Mute"
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "뮤트"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "차단"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, fuzzy, kde-format
 #| msgid "Block"
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "차단"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "삭제하고 다시 쓰기"
@@ -3896,7 +3908,7 @@ msgstr "공유할 텍스트입니다."
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""

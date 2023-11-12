@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:43+0000\n"
-"PO-Revision-Date: 2023-10-21 13:51\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"PO-Revision-Date: 2023-11-11 07:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -76,10 +76,9 @@ msgid "View Profile"
 msgstr ""
 
 #: account/notificationhandler.cpp:54
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 关注了你"
+msgstr ""
 
 #: account/notificationhandler.cpp:62
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -159,11 +158,10 @@ msgid "Muted Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "屏蔽于"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:37
 #, kde-format
@@ -196,10 +194,9 @@ msgid "No followers"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "No followed users"
-msgstr "%1 关注了你"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:55
 #, kde-format
@@ -309,16 +306,14 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr "请求更新域名屏蔽时发生错误。"
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "无法关注账户"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unfollow account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "无法解除关注账户"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:196
 #, kde-format
@@ -326,10 +321,9 @@ msgid "Could not assign report"
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "无法解除静音账户"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -337,16 +331,14 @@ msgid "Follows you"
 msgstr "关注了你"
 
 #: content/ui/AccountInfo.qml:210
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Requested"
-msgstr "关注请求"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "关注"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:215
 #, kde-format
@@ -354,16 +346,14 @@ msgid "Follow"
 msgstr "关注"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "当 %1 发嘟时不要通知我"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:242
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "当 %1 发帖时通知我"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -396,10 +386,9 @@ msgid "Mute"
 msgstr "静音"
 
 #: content/ui/AccountInfo.qml:313
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "屏蔽"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
@@ -407,7 +396,7 @@ msgid "Block"
 msgstr "屏蔽"
 
 #: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:152
+#: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -445,10 +434,9 @@ msgid "Muted Users"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:363
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "屏蔽于"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:369
 #, kde-format
@@ -460,16 +448,15 @@ msgstr ""
 msgid "Copy Link to This Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:49
+#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:462
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "备注"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:470
 #, kde-format
@@ -527,9 +514,7 @@ msgid "Hide boosts"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:693
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "全部"
@@ -637,12 +622,10 @@ msgid "Delete"
 msgstr "删除"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "删除单词"
+msgstr ""
 
 #: content/ui/EditListPage.qml:125
 #, kde-format
@@ -656,17 +639,15 @@ msgid "Explore"
 msgstr ""
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
-msgstr "转嘟"
+msgstr ""
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgid "Posts"
-msgstr "转嘟"
+msgstr ""
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
@@ -692,11 +673,10 @@ msgid "No Trending Tags"
 msgstr ""
 
 #: content/ui/LanguageSelector.qml:22
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "选定的默认语言："
+msgstr ""
 
 #: content/ui/ListPage.qml:19
 #, kde-format
@@ -953,26 +933,22 @@ msgid "Open As…"
 msgstr ""
 
 #: content/ui/Main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "回复"
+msgstr ""
 
 #: content/ui/Main.qml:98
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "收藏夹"
+msgstr ""
 
 #: content/ui/Main.qml:100
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "转嘟"
+msgstr ""
 
 #: content/ui/Main.qml:102
 #, kde-format
@@ -1059,6 +1035,12 @@ msgstr ""
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
+msgstr ""
+
+#: content/ui/Main.qml:691
+#, kde-format
+msgctxt "@title"
+msgid "Embed Information"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
@@ -2000,8 +1982,7 @@ msgid "Reject media"
 msgstr "拒绝接收媒体"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "拒绝接收举报"
@@ -2156,23 +2137,19 @@ msgid "Report Resolved"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:205
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
-msgstr "转嘟"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:209
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
-msgstr "关注"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "正在关注"
@@ -2353,10 +2330,9 @@ msgid "Accounts"
 msgstr ""
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgid "Reports"
-msgstr "拒绝接收举报"
+msgstr ""
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2377,10 +2353,9 @@ msgid "Email Blocks"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "账户"
+msgstr "账户工具页面"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
 #, kde-format
@@ -2407,16 +2382,13 @@ msgid "Report Origin"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "全部"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "本地"
@@ -2433,10 +2405,9 @@ msgid "Reported By:"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "添加账户"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
@@ -2445,10 +2416,9 @@ msgid "N/A"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No federations found"
+#, kde-format
 msgid "No reports found"
-msgstr "未找到已知实例"
+msgstr ""
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2533,12 +2503,10 @@ msgid "%1 updated their post"
 msgstr ""
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "删除单词"
+msgstr ""
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -2559,12 +2527,10 @@ msgid "Reason for reporting this user"
 msgstr ""
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@info:Whether to reject incoming reports from this domain"
-#| msgid "Reject report"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "拒绝接收举报"
+msgstr ""
 
 #: content/ui/ReportDialog.qml:64
 #, kde-format
@@ -2604,8 +2570,7 @@ msgid "Logout"
 msgstr "注销"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "注销"
@@ -2812,7 +2777,7 @@ msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:203
 #: content/ui/Settings/ProfileEditor.qml:265
-#: content/ui/StatusDelegate/OverflowMenu.qml:168
+#: content/ui/StatusDelegate/OverflowMenu.qml:176
 #, kde-format
 msgid "Delete"
 msgstr "删除"
@@ -2980,13 +2945,13 @@ msgstr "删除单词"
 msgid "Sharing failed"
 msgstr ""
 
-#: content/ui/SocialGraphPage.qml:58
+#: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr ""
 
-#: content/ui/SocialGraphPage.qml:65
+#: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
@@ -3057,7 +3022,7 @@ msgid "Hide vote count until the poll ends"
 msgstr ""
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:161
+#: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
 msgstr ""
@@ -3349,110 +3314,108 @@ msgstr[0] ""
 msgid "Link preview: %1"
 msgstr "链接预览：%1"
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:31
+#: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:38
+#: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:46
+#: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:60
+#: content/ui/StatusDelegate/OverflowMenu.qml:56
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:67
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#: content/ui/StatusDelegate/OverflowMenu.qml:75
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "回复"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#: content/ui/StatusDelegate/OverflowMenu.qml:82
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "收藏夹"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:81
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#: content/ui/StatusDelegate/OverflowMenu.qml:89
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "转嘟"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:88
+#: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
-#, fuzzy, kde-format
-#| msgid "Remove Domain Block"
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr "取消屏蔽域名"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:96
+#: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:103
+#: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:116
+#: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Mute"
+#: content/ui/StatusDelegate/OverflowMenu.qml:126
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "静音"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:135
-#, fuzzy, kde-format
-#| msgid "Block"
+#: content/ui/StatusDelegate/OverflowMenu.qml:143
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "屏蔽"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:137
-#, fuzzy, kde-format
-#| msgid "Block"
+#: content/ui/StatusDelegate/OverflowMenu.qml:145
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "屏蔽"
+msgstr ""
 
-#: content/ui/StatusDelegate/OverflowMenu.qml:175
+#: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr ""
@@ -3484,19 +3447,16 @@ msgid "Show anyway"
 msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:157
-#, fuzzy, kde-format
-#| msgid "Pinned entry"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "固定的条目"
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:213
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "删除单词"
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
 #, kde-format
@@ -3616,10 +3576,9 @@ msgid "Filters"
 msgstr ""
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgid "Show Boosts"
-msgstr "转嘟"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:86
 #, kde-format
@@ -3633,12 +3592,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "无法连接到服务器：%1。请检查您的设置。"
 
 #: content/ui/TimelinePage.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "本地时间线"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
@@ -3652,10 +3609,9 @@ msgid "Return to Top"
 msgstr ""
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "添加账户"
+msgstr ""
 
 #: content/ui/UserInfo.qml:118
 #, kde-format
@@ -3785,10 +3741,9 @@ msgid "Your emails"
 msgstr "slreycn@outlook.com, git@blumia.net"
 
 #: main.cpp:113
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "去中心化的社交网络客户端：mastodon"
+msgstr ""
 
 #: main.cpp:114
 #, kde-format
@@ -3810,7 +3765,7 @@ msgstr ""
 msgid "Internal usage only."
 msgstr ""
 
-#: main.cpp:158
+#: main.cpp:154
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""
@@ -3821,10 +3776,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
 #: search/searchmodel.cpp:136
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "用户"
+msgstr ""
 
 #: search/searchmodel.cpp:138
 #, kde-format
@@ -4025,37 +3979,3 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
-
-#~ msgid "Trending Posts"
-#~ msgstr "热门嘟文"
-
-#~ msgid "Trending Tags"
-#~ msgstr "热门标签"
-
-#~ msgctxt "@info:Whether to reject incoming reports from this domain"
-#~ msgid "Reject report"
-#~ msgstr "拒绝接收举报"
-
-#~ msgid "Requested"
-#~ msgstr "已请求"
-
-#, fuzzy
-#~| msgid "Notifications"
-#~ msgctxt "@title:group"
-#~ msgid "Notifications"
-#~ msgstr "通知"
-
-#, fuzzy
-#~| msgid "Mentions"
-#~ msgid "Mention"
-#~ msgstr "提及"
-
-#, fuzzy
-#~| msgid "Favorites"
-#~ msgid "Favorite"
-#~ msgstr "收藏夹"
-
-#, fuzzy
-#~| msgid "Add Poll"
-#~ msgid "Poll"
-#~ msgstr "添加投票"
