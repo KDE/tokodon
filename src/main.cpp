@@ -139,10 +139,6 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-#ifdef HAVE_KDBUSADDONS
-    KDBusService service(KDBusService::Unique);
-#endif
-
 #ifdef HAVE_KUNIFIEDPUSH
     auto connector = new KUnifiedPush::Connector(QStringLiteral("org.kde.tokodon"));
     QObject::connect(connector, &KUnifiedPush::Connector::endpointChanged, [=](const auto &endpoint) {
@@ -157,6 +153,9 @@ int main(int argc, char *argv[])
 #ifdef HAVE_KUNIFIEDPUSH
     if (parser.isSet(notifyOption)) {
         qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
+
+        // We want to be replaceable by the main client
+        KDBusService service(KDBusService::Replace);
 
         // create the lazy instance
         AccountManager::instance().loadFromSettings();
@@ -176,6 +175,10 @@ int main(int argc, char *argv[])
 
         return QCoreApplication::exec();
     }
+#endif
+
+#ifdef HAVE_KDBUSADDONS
+    KDBusService service(KDBusService::Unique);
 #endif
 
 #ifdef HAVE_KDBUSADDONS
