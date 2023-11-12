@@ -107,8 +107,21 @@ void NetworkController::openLink()
         m_requestedLink.setUserInfo(QString());
     }
 
+    const QUrl instanceUrl(account->instanceUri());
+
+    // TODO: this assumes the post id is in the last path segment
+    // Is this always true? Maybe there's some way to query it.
+    if (instanceUrl.host() == m_requestedLink.host()) {
+        QString path = m_requestedLink.path();
+        path.remove(0, path.lastIndexOf(QLatin1Char('/')) + 1);
+
+        Q_EMIT NetworkController::instance().openPost(path);
+        return;
+    }
+
     requestRemoteObject(account, m_requestedLink.toString(), [=](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
         const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
 
