@@ -92,13 +92,13 @@ if (ANDROID AND NOT TARGET OpenSSL::SSL)
         PURPOSE "Encrypted communications"
     )
 else()
-    if (NOT SAILFISHOS)
-        find_package(KF6QQC2DesktopStyle REQUIRED)
-        set_package_properties(KF6QQC2DesktopStyle PROPERTIES
-                PURPOSE "Preferred Qt Quick Controls style"
-        )
-    endif()
-endif ()
+
+if (NOT SAILFISHOS AND NOT ANDROID)
+    find_package(KF6QQC2DesktopStyle REQUIRED)
+    set_package_properties(KF6QQC2DesktopStyle PROPERTIES
+            PURPOSE "Preferred Qt Quick Controls style"
+    )
+endif()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
