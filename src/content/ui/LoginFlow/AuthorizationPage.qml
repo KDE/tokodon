@@ -20,24 +20,39 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    function setAuthCode(authCode) {
+        account.setToken(authCode);
+        pageStack.layers.clear();
+        pageStack.replace(mainTimeline, {
+            name: "home"
+        });
+        if (root.Window.window !== applicationWindow()) {
+            root.Window.window.close();
+        }
+    }
+
     WebView {
+        id: webView
+
         anchors.fill: parent
 
         url: root.account.authorizeUrl
+
+        onLoadingChanged: (loadRequest) => {
+            let urlObject = new URL(loadRequest.url);
+
+            if (urlObject.protocol === "tokodon:") {
+                webView.stop();
+                root.setAuthCode(urlObject.searchParams.get("code"));
+            }
+        }
     }
 
     data: Connections {
         target: Controller
 
         function onReceivedAuthCode(authCode) {
-            account.setToken(authCode);
-            pageStack.layers.clear();
-            pageStack.replace(mainTimeline, {
-                name: "home"
-            });
-            if (root.Window.window !== applicationWindow()) {
-                root.Window.window.close();
-            }
+            root.setAuthCode(authCode);
         }
     }
 }
