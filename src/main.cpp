@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
             AndroidUtils::instance().checkPendingIntents();
         }
     });
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    // QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
