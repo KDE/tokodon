@@ -81,6 +81,7 @@ int main(int argc, char *argv[])
             AndroidUtils::instance().checkPendingIntents();
         }
     });
+    // TODO: restore once qqc2-breeze-style works again
     // QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
