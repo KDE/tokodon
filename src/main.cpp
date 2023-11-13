@@ -66,6 +66,11 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
+    // TODO: temporary qt6 android fix
+#ifdef Q_OS_ANDROID
+    qputenv("QT_MEDIA_BACKEND", "ANDROID");
+#endif
+
     QNetworkProxyFactory::setUseSystemConfiguration(true);
     QtWebView::initialize();
 
