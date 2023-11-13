@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-11-11 07:38+0100\n"
+"POT-Creation-Date: 2023-11-13 01:38+0000\n"
+"PO-Revision-Date: 2023-11-12 23:17+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -63,12 +63,12 @@ msgstr "Ne eblis malfunkciigi konton"
 msgid "Could not edit note about an account"
 msgstr "Ne eblis redakti noton pri konto"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
+#: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
 msgstr "Rigardi Afiŝon"
 
-#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
+#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -76,45 +76,45 @@ msgstr "Rigardi Afiŝon"
 msgid "View Profile"
 msgstr "Rigardi Profilon"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:72
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 manciis vin"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:80
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 skribis novan afiŝon"
 
-#: account/notificationhandler.cpp:70
+#: account/notificationhandler.cpp:88
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 plifortigis vian afiŝon"
 
-#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 sekvis vin"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:104
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 alpetis sekvi vin"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:112
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ŝatigis vian afiŝon"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:120
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Enketo per %1 finiĝis"
 
-#: account/notificationhandler.cpp:110
+#: account/notificationhandler.cpp:128
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 redaktis afiŝon"
@@ -1045,7 +1045,7 @@ msgstr "Listoj"
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Enkonstrui Informon"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2263,6 +2263,8 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"La kialo, ke ĉi tiu konto kaj/aŭ enhavo estis raportitaj, estos citita en "
+"komunikado kun la raportita konto"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
@@ -2272,7 +2274,7 @@ msgstr "Alia"
 #: content/ui/ModerationTools/MainReportToolPage.qml:331
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Kategorio ŝanĝita al alia"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:342
 #, kde-format
@@ -2282,22 +2284,22 @@ msgstr "Spamo"
 #: content/ui/ModerationTools/MainReportToolPage.qml:346
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "Kategorio ŝanĝita al spamo"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:357
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Enhavo malobservas unu aŭ pli servilregulojn"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:361
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Kategorio ŝanĝita al regulmalkonformo"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:404
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Por provizi plian informon, %1 skribis:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #, kde-format
@@ -2314,7 +2316,7 @@ msgstr "Raportita Enhavo"
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "Ofenda enhavo estos citita en komunikado kun la raportita konto"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
 #: content/ui/StatusDelegate/StatusDelegate.qml:289
@@ -2523,7 +2525,7 @@ msgstr "Raporti Afiŝon"
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Raporti Uzanton"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
@@ -2700,7 +2702,7 @@ msgstr "Ŝalti sciigojn por ĉi tiu konto"
 #: content/ui/Settings/NotificationsPage.qml:29
 #, kde-format
 msgid "Push notifications are enabled."
-msgstr ""
+msgstr "Puŝ-sciigoj estas ŝaltitaj."
 
 #: content/ui/Settings/NotificationsPage.qml:29
 #, kde-format
@@ -2708,6 +2710,8 @@ msgid ""
 "Push notifications are not available for this account. Please log out and "
 "log back in."
 msgstr ""
+"Puŝ-sciigoj ne estas disponeblaj por ĉi konto. Bonvolu elsaluti kaj re-"
+"ensaluti."
 
 #: content/ui/Settings/NotificationsPage.qml:39
 #, kde-format
@@ -3352,7 +3356,7 @@ msgstr "Kopii Ligilon"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Enkonstrui"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -3717,77 +3721,77 @@ msgstr "7 tagoj"
 msgid "An unknown error occurred."
 msgstr "Nekonata eraro okazis."
 
-#: main.cpp:90
+#: main.cpp:60
+#, kde-format
+msgid "Receiving push notifications"
+msgstr "Ricevante puŝ-sciigojn"
+
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:92
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-kliento"
 
-#: main.cpp:94
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE-Komunumo"
 
-#: main.cpp:95
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:96 main.cpp:101
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:100
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Josuo Goins"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Oliver Kellogg"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: main.cpp:113
+#: main.cpp:127
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Kliento por malcentralizitaj sociaj retoj kiel Mastodon"
 
-#: main.cpp:114
+#: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Subtenas https kaj web+ap url-skemon"
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Kunhavigi linion de teksto en la memstara komponisto."
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "La teksto por dividi."
 
-#: main.cpp:120
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Nur por interna uzo."
-
-#: main.cpp:154
-#, kde-format
-msgid "Receiving push notifications"
-msgstr "Ricevante puŝ-sciigojn"
 
 #: notification/notificationmodel.cpp:96
 #, kde-format

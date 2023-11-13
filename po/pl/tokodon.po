@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-11-11 13:40+0100\n"
+"POT-Creation-Date: 2023-11-13 01:38+0000\n"
+"PO-Revision-Date: 2023-11-12 11:48+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -64,12 +64,12 @@ msgstr "Nie można przestać wyróżniać konta"
 msgid "Could not edit note about an account"
 msgstr "Nie można zmienić uwagi o koncie"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
+#: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
 msgstr "Obejrzyj wpis"
 
-#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
+#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -77,45 +77,45 @@ msgstr "Obejrzyj wpis"
 msgid "View Profile"
 msgstr "Obejrzyj profil"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:72
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 wspominał o tobie"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:80
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 napisał nowy wpis"
 
-#: account/notificationhandler.cpp:70
+#: account/notificationhandler.cpp:88
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 udostępnił twój wpis"
 
-#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 obserwuje cię"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:104
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 pyta czy może cię obserwować"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:112
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 polubił twój wpis"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:120
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Głosowanie za %1 dobiegło końca"
 
-#: account/notificationhandler.cpp:110
+#: account/notificationhandler.cpp:128
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 zmienił wpis"
@@ -782,7 +782,7 @@ msgstr "Logowanie"
 #: content/ui/LoginFlow/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url:"
-msgstr "Adres URL wystąpienia:"
+msgstr "Adres URL serwera:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -813,7 +813,7 @@ msgstr "Kontynuuj"
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr "Adres URL wystąpienia nie może być pusty!"
+msgstr "Adres URL serwera nie może być pusty!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -1055,7 +1055,7 @@ msgstr "Listy"
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Osadź informację"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -1475,8 +1475,8 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
-"Ustawienie dozwolonych domen jest dostępne dla wystąpień z włączonym "
-"ograniczonym trybem federacji"
+"Ustawienie dozwolonych domen jest dostępne dla serwerów z włączonym trybem "
+"ograniczonej federacji"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
@@ -2737,7 +2737,7 @@ msgstr "Wspomnienia"
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgid "Statuses"
-msgstr "Dostępności"
+msgstr "Wpisy"
 
 #: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
@@ -3370,7 +3370,7 @@ msgstr "Skopiuj odnośnik"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Osadź"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -3734,77 +3734,77 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Wystąpił nieznany błąd."
 
-#: main.cpp:90
+#: main.cpp:60
+#, kde-format
+msgid "Receiving push notifications"
+msgstr "Otrzymywanie powiadomień Push"
+
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:92
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Program Mastodon"
 
-#: main.cpp:94
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Społeczność KDE"
 
-#: main.cpp:95
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:96 main.cpp:101
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Opiekun"
 
-#: main.cpp:100
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Łukasz Wojniłowicz, Marcin Mikołajczak"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lukasz.wojnilowicz@gmail.com, me@mkljczk.pl"
 
-#: main.cpp:113
+#: main.cpp:127
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Program do rozproszonych sieci społecznościowych takich jak Mastodon"
 
-#: main.cpp:114
+#: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Obsługuje sposób zapisu URL https oraz web+ap"
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Udostępnij wiersz tekstu w osobnym edytorze."
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "Tekst do udostępnienia."
 
-#: main.cpp:120
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Tylko do użytku wewnętrznego."
-
-#: main.cpp:154
-#, kde-format
-msgid "Receiving push notifications"
-msgstr "Otrzymywanie powiadomień Push"
 
 #: notification/notificationmodel.cpp:96
 #, kde-format

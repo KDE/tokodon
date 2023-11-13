@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-11-10 12:01+0100\n"
+"POT-Creation-Date: 2023-11-13 01:38+0000\n"
+"PO-Revision-Date: 2023-11-12 16:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -66,12 +66,12 @@ msgstr "No s'ha pogut desfer el fet de destacar el compte"
 msgid "Could not edit note about an account"
 msgstr "No s'ha pogut editar una nota quant al compte"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
+#: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
 msgstr "Visualitza la publicació"
 
-#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
+#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -79,45 +79,45 @@ msgstr "Visualitza la publicació"
 msgid "View Profile"
 msgstr "Visualitza el perfil"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:72
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 vos ha mencionat"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:80
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 ha escrit una publicació nova"
 
-#: account/notificationhandler.cpp:70
+#: account/notificationhandler.cpp:88
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 ha impulsat la vostra publicació"
 
-#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vos seguix"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:104
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 ha sol·licitat seguir-vos"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:112
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ha marcat la vostra publicació com a preferida"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:120
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "La votació de %1 ha acabat"
 
-#: account/notificationhandler.cpp:110
+#: account/notificationhandler.cpp:128
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 ha editat una publicació"
@@ -575,81 +575,71 @@ msgid "No Conversations"
 msgstr "Sense converses"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Creat el"
+msgstr "Creació de llista"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Edicions"
+msgstr "Edició de llista"
 
 #: content/ui/EditListPage.qml:60
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr ""
+msgstr "Títol"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Mostra les respostes"
+msgstr "Mostra les respostes per a"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Exclusiu"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
+"Les publicacions en una llista exclusiva s'exclouen de la línia de temps "
+"d'Inici"
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "Creat el"
+msgstr "Crea"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Edita"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Suprimix"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Suprimix la publicació"
+msgstr "Suprimix la llista"
 
 #: content/ui/EditListPage.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Segur que voleu suprimir esta publicació?"
+msgstr "Segur que voleu suprimir esta llista?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
@@ -698,28 +688,25 @@ msgid "Select Language"
 msgstr "Seleccioneu l'idioma"
 
 #: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgid "Edit List"
-msgstr "Edicions"
+msgstr "Edita la llista"
 
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Llistes"
 
 #: content/ui/ListsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "Creat el"
+msgstr "Crea una llista"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Sense llistes"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -1062,13 +1049,13 @@ msgstr "Anuncis"
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
-msgstr ""
+msgstr "Llistes"
 
 #: content/ui/Main.qml:691
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Incrusta la informació"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2252,7 +2239,7 @@ msgstr "Ningú"
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Unassign"
-msgstr "Traure l'assignació"
+msgstr "Trau l'assignació"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
@@ -3383,7 +3370,7 @@ msgstr "Copia l'enllaç"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Incrusta"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -3688,13 +3675,12 @@ msgstr[1] "%2 i %1 altres"
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Membres de la llista"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "Any followed users"
-msgstr "Sense usuaris seguits"
+msgstr "Qualsevol usuari seguit"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3749,77 +3735,77 @@ msgstr "7 dies"
 msgid "An unknown error occurred."
 msgstr "S'ha produït un error desconegut."
 
-#: main.cpp:90
+#: main.cpp:60
+#, kde-format
+msgid "Receiving push notifications"
+msgstr "Rebre les notificacions «push»"
+
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:92
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client de Mastodon"
 
-#: main.cpp:94
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 Comunitat KDE"
 
-#: main.cpp:95
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:96 main.cpp:101
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:100
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: main.cpp:113
+#: main.cpp:127
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Client per a xarxes socials descentralitzades com Mastodon"
 
-#: main.cpp:114
+#: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Implementa «https» i l'esquema «web+ap: url»"
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Compartix una línia de text en l'editor autònom."
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "El text que s'ha de compartir."
 
-#: main.cpp:120
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Només ús intern."
-
-#: main.cpp:154
-#, kde-format
-msgid "Receiving push notifications"
-msgstr "Rebre les notificacions «push»"
 
 #: notification/notificationmodel.cpp:96
 #, kde-format

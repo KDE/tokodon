@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"POT-Creation-Date: 2023-11-13 01:38+0000\n"
 "PO-Revision-Date: 2023-11-02 22:49+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -65,12 +65,12 @@ msgstr "Ezin izan dio kontuari agertzeari utzi"
 msgid "Could not edit note about an account"
 msgstr "Ezin izan du kontu bati buruzko oharra editatu"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
+#: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
 msgstr "Ikusi posta"
 
-#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
+#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -78,45 +78,45 @@ msgstr "Ikusi posta"
 msgid "View Profile"
 msgstr "Ikusi profila"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:72
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1(e)k aipatu zaitu"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:80
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1(e)k posta berri bat Idatzi du"
 
-#: account/notificationhandler.cpp:70
+#: account/notificationhandler.cpp:88
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1(e)k zure posta bultzatu du(te)"
 
-#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1(e)k jarraitu zaituzte"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:104
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1(e)k zuri jarraitzea eskatu du"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:112
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1(e)k zure posta gogoko du"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:120
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "%1(e)ren galdeketa bukatu da"
 
-#: account/notificationhandler.cpp:110
+#: account/notificationhandler.cpp:128
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1(e)k posta editatu du"
@@ -3824,78 +3824,78 @@ msgstr "7 egun"
 msgid "An unknown error occurred."
 msgstr "Errore ezezagun bat gertatu da."
 
-#: main.cpp:90
+#: main.cpp:60
+#, kde-format
+msgid "Receiving push notifications"
+msgstr ""
+
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:92
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "«Mastodon»en bezeroa"
 
-#: main.cpp:94
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Komunitatea"
 
-#: main.cpp:95
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:96 main.cpp:101
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: main.cpp:100
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñigo Salvador Azurmendi"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:113
+#: main.cpp:127
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Deszentralizatutako gizarte sare honetarako bezeroa: mastodon"
 
-#: main.cpp:114
+#: main.cpp:128
 #, fuzzy, kde-format
 #| msgid "Supports web+ap: url scheme"
 msgid "Supports https and web+ap url scheme"
 msgstr "«web+ap: URL» antolaera onartzen du"
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Partekatu testu-lerro bat konposatzaile autonomoan."
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "Partekatu beharreko testua."
 
-#: main.cpp:120
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
-
-#: main.cpp:154
-#, kde-format
-msgid "Receiving push notifications"
 msgstr ""
 
 #: notification/notificationmodel.cpp:96

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-11-10 14:27+0100\n"
+"POT-Creation-Date: 2023-11-13 01:38+0000\n"
+"PO-Revision-Date: 2023-11-11 20:46+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -60,12 +60,12 @@ msgstr "Impossible de ne pas présenter un compte"
 msgid "Could not edit note about an account"
 msgstr "Impossible de modifier une note concernant un compte"
 
-#: account/notificationhandler.cpp:25 account/notificationhandler.cpp:26
+#: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
 msgstr "Afficher un message"
 
-#: account/notificationhandler.cpp:37 account/notificationhandler.cpp:38
+#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -73,46 +73,46 @@ msgstr "Afficher un message"
 msgid "View Profile"
 msgstr "Afficher un profil"
 
-#: account/notificationhandler.cpp:54
+#: account/notificationhandler.cpp:72
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 vous a cité"
 
-#: account/notificationhandler.cpp:62
+#: account/notificationhandler.cpp:80
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 a écrit un nouveau message"
 
-#: account/notificationhandler.cpp:70
+#: account/notificationhandler.cpp:88
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 a mis en avant votre message"
 
-#: account/notificationhandler.cpp:78 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vous a suivi"
 
-#: account/notificationhandler.cpp:86
+#: account/notificationhandler.cpp:104
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 vous a demandé à vous suivre"
 
-#: account/notificationhandler.cpp:94
+#: account/notificationhandler.cpp:112
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 a favorisé votre message"
 
-#: account/notificationhandler.cpp:102
+#: account/notificationhandler.cpp:120
 #, fuzzy, kde-format
 #| msgid "Your poll has ended"
 msgid "Poll by %1 has ended"
 msgstr "Votre sondage est terminé"
 
-#: account/notificationhandler.cpp:110
+#: account/notificationhandler.cpp:128
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 a modifié un message"
@@ -908,12 +908,10 @@ msgid "Rules"
 msgstr "Règles"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "Règles IP"
+msgstr "Règles"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
@@ -2309,6 +2307,8 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"La raison pour laquelle ce compte et / ou son contenu ont été signalés "
+"seront cités dans la communication avec le compte signalé."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
@@ -3781,79 +3781,79 @@ msgstr "7 jours"
 msgid "An unknown error occurred."
 msgstr "Une erreur inconnue est survenue."
 
-#: main.cpp:90
+#: main.cpp:60
+#, kde-format
+msgid "Receiving push notifications"
+msgstr "Recevoir des notifications automatiques"
+
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:92
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Client Mastodon"
 
-#: main.cpp:94
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021 - 2023 Carl Schwan, 2021 - 2023 La communauté KDE"
 
-#: main.cpp:95
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:96 main.cpp:101
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Mainteneur"
 
-#: main.cpp:100
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Xavier Besnard"
 
-#: main.cpp:105
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: main.cpp:113
+#: main.cpp:127
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Un client pour le réseau social décentralisé : mastodon."
 
-#: main.cpp:114
+#: main.cpp:128
 #, fuzzy, kde-format
 #| msgid "Supports web+ap: url scheme"
 msgid "Supports https and web+ap url scheme"
 msgstr "Prend en charge un thème « web+ap: URL »"
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Partager une ligne de texte dans le compositeur autonome."
 
-#: main.cpp:116
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "Le texte à partager."
 
-#: main.cpp:120
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Utilisation interne uniquement."
-
-#: main.cpp:154
-#, kde-format
-msgid "Receiving push notifications"
-msgstr "Recevoir des notifications automatiques"
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
