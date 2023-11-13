@@ -157,8 +157,10 @@ int main(int argc, char *argv[])
     if (parser.isSet(notifyOption)) {
         qInfo(TOKODON_LOG) << "Beginning to check for notifications...";
 
+#ifdef HAVE_KDBUSADDONS
         // We want to be replaceable by the main client
         KDBusService service(KDBusService::Replace);
+#endif
 
         setupUnifiedPush();
 
