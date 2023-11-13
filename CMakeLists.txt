@@ -91,7 +91,7 @@ if (ANDROID AND NOT TARGET OpenSSL::SSL)
         TYPE REQUIRED
         PURPOSE "Encrypted communications"
     )
-else()
+endif()
 
 if (NOT SAILFISHOS AND NOT ANDROID)
     find_package(KF6QQC2DesktopStyle REQUIRED)
