@@ -53,7 +53,7 @@ set_package_properties(Qt6 PROPERTIES
         )
 qt_policy(SET QTP0001 NEW)
 
-find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami2 KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
