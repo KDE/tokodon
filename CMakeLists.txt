@@ -93,7 +93,12 @@ if (ANDROID AND NOT TARGET OpenSSL::SSL)
     )
 endif()
 
-if (NOT SAILFISHOS AND NOT ANDROID)
+if (SAILFISHOS OR ANDROID)
+    find_package(QQC2BreezeStyle REQUIRED)
+    set_package_properties(QQC2BreezeStyle PROPERTIES
+            PURPOSE "Preferred Qt Quick Controls style"
+    )
+else()
     find_package(KF6QQC2DesktopStyle REQUIRED)
     set_package_properties(KF6QQC2DesktopStyle PROPERTIES
             PURPOSE "Preferred Qt Quick Controls style"
