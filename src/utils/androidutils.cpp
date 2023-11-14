@@ -24,7 +24,7 @@ AndroidUtils &AndroidUtils::instance()
 
 void AndroidUtils::checkPendingIntents()
 {
-    QJniObject activity = QJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");
+    QJniObject activity = QJniObject::callStaticObjectMethod("org/qtproject/qt/android/QtNative", "activity", "()Landroid/app/Activity;");
     Q_ASSERT(activity.isValid());
 
     QJniObject::callStaticMethod<void>("org/kde/tokodon/OpenUriActivity", "checkPendingIntents");
