@@ -46,7 +46,7 @@ MastoPage {
     FormCard.FormCard {
         FormCard.FormTextFieldDelegate {
             id: instanceUrl
-            label: i18n("Instance Url:")
+            label: i18n("Instance URL:")
             placeholderText: i18n("mastodon.social")
             onAccepted: continueButton.clicked()
             inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
