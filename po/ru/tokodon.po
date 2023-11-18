@@ -2,21 +2,23 @@
 # This file is distributed under the same license as the tokodon package.
 #
 # Alexander Yavorsky <kekcuha@gmail.com>, 2023.
+# Алевтина  <karashokovaaa@basealt.ru>, 2023.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-29 02:36+0000\n"
-"PO-Revision-Date: 2023-06-11 14:27+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-11-17 16:42+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: account/abstractaccount.cpp:472
 #, kde-format
@@ -107,163 +109,150 @@ msgstr "Данные учётной записи сохранены"
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr ""
+msgstr "Запросы на подписку"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr ""
+msgstr "Подписчики"
 
 #: account/socialgraphmodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr ""
+msgstr "Подписки"
 
 #: account/socialgraphmodel.cpp:36
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Muted Accounts"
-msgstr "Учётные записи"
+msgstr "Игнорируемые учётные записи"
 
 #: account/socialgraphmodel.cpp:38
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Accounts"
-msgstr "Добавить учётную запись"
+msgstr "Заблокированные учётные записи"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Accounts"
-msgstr "Учётные записи"
+msgstr "Учётные записи, добавленные в подборку"
 
 #: account/socialgraphmodel.cpp:48
 #, kde-format
 msgid "No follow requests"
-msgstr ""
+msgstr "Запросов на подписку нет"
 
 #: account/socialgraphmodel.cpp:50
 #, kde-format
 msgid "No followers"
-msgstr ""
+msgstr "Подписчиков нет"
 
 #: account/socialgraphmodel.cpp:52
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgid "No followed accounts"
-msgstr "Не удалось подписаться на учётную запись"
+msgstr "Подписок нет"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No muted accounts"
-msgstr "Учётные записи"
+msgstr "Игнорируемых учётных записей нет"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "No blocked accounts"
-msgstr "Добавить учётную запись"
+msgstr "Заблокированных учётных записей нет"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "No featured accounts"
-msgstr "Не удалось добавить учётную запись в подборку"
+msgstr "Учётных записей, добавленных в подборку, нет"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Не удалось отключить уведомления учётной записи"
+msgstr "Не удалось принять запрос на подписку от учётной записи"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Не удалось отключить уведомления учётной записи"
+msgstr "Не удалось отклонить запрос на подписку от учётной записи"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not edit note about an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Не удалось отредактировать заметку об учётной записи"
+msgstr "Не удалось принять меры против учётной записи"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Не удалось добавить учётную запись в подборку"
+msgstr "Не удалось включить отключённую учётную запись"
 
 #: admin/accounttoolmodel.cpp:303
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsilence the account"
-msgstr "Не удалось включить уведомления учётной записи"
+msgstr "Не удалось снять глушение учётной записи"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Не удалось включить уведомления учётной записи"
+msgstr "Не удалось разблокировать учётную запись"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Не удалось отключить уведомления учётной записи"
+msgstr "Не удалось пометить учётную запись как неконфиденциальную"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Заблокировано"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Silenced"
-msgstr ""
+msgstr "Заглушено"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Конфиденциально"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "Заморожено"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "Адрес электронной почты не подтверждён"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "Не утверждено"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Без ограничений"
 
 #: admin/federationtoolmodel.cpp:153
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"Возникла ошибка при выполнении PUT-запроса на обновление блокировки домена."
 
 #: content/ui/AccountInfo.qml:70
 #, kde-format
@@ -298,27 +287,27 @@ msgstr "Уведомлять о публикациях %1"
 #: content/ui/AccountInfo.qml:159
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr ""
+msgstr "Скрывать записи, которыми вы поделились, от %1"
 
 #: content/ui/AccountInfo.qml:161
 #, kde-format
 msgid "Stop Hiding Boosts from %1"
-msgstr ""
+msgstr "Не скрывать записи, которыми вы поделились, от %1"
 
 #: content/ui/AccountInfo.qml:178
 #, kde-format
 msgid "Stop Featuring on Profile"
-msgstr ""
+msgstr "Не рекомендовать профиль"
 
 #: content/ui/AccountInfo.qml:180
 #, kde-format
 msgid "Feature on Profile"
-msgstr ""
+msgstr "Рекомендовать профиль"
 
 #: content/ui/AccountInfo.qml:197
 #, kde-format
 msgid "Stop Muting"
-msgstr ""
+msgstr "Включить уведомления"
 
 #: content/ui/AccountInfo.qml:199
 #, kde-format
@@ -328,7 +317,7 @@ msgstr "Отключить уведомления"
 #: content/ui/AccountInfo.qml:216
 #, kde-format
 msgid "Stop Blocking"
-msgstr ""
+msgstr "Разблокировать"
 
 #: content/ui/AccountInfo.qml:218
 #, kde-format
@@ -338,7 +327,7 @@ msgstr "Заблокировать"
 #: content/ui/AccountInfo.qml:233
 #, kde-format
 msgid "Edit Profile"
-msgstr ""
+msgstr "Изменить профиль"
 
 #: content/ui/AccountInfo.qml:237 content/ui/Settings/AccountsCard.qml:35
 #, kde-format
@@ -362,32 +351,29 @@ msgid "Follow Requests"
 msgstr "Запросы на подписку"
 
 #: content/ui/AccountInfo.qml:258
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Muted Accounts"
-msgstr "Учётные записи"
+msgstr "Игнорируемые учётные записи"
 
 #: content/ui/AccountInfo.qml:265
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked Accounts"
-msgstr "Добавить учётную запись"
+msgstr "Заблокированные учётные записи"
 
 #: content/ui/AccountInfo.qml:272
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Featured Accounts"
-msgstr "Учётные записи"
+msgstr "Учётные записи, добавленные в подборку"
 
 #: content/ui/AccountInfo.qml:278
 #, kde-format
 msgid "Copy Link to This Profile"
-msgstr ""
+msgstr "Копировать ссылку на этот профиль"
 
 #: content/ui/AccountInfo.qml:281 content/ui/StatusDelegate/OverflowMenu.qml:42
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Ссылка на публикацию скопирована."
 
 #: content/ui/AccountInfo.qml:368
 #, kde-format
@@ -408,54 +394,54 @@ msgstr "Нажмите, чтобы добавить заметку"
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> posts"
-msgstr ""
+msgstr "Публикаций: <b>%1</b>"
 
 #: content/ui/AccountInfo.qml:479
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> followers"
-msgstr ""
+msgstr "Подписчиков: <b>%1</b>"
 
 #: content/ui/AccountInfo.qml:491
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> following"
-msgstr ""
+msgstr "Подписок: <b>%1</b>"
 
 #: content/ui/AccountInfo.qml:503
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr ""
+msgstr "Публикации"
 
 #: content/ui/AccountInfo.qml:507
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Публикации и ответы"
 
 #: content/ui/AccountInfo.qml:511
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr ""
+msgstr "Медиафайлы"
 
 #: content/ui/AccountInfo.qml:538
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr ""
+msgstr "Скрывать записи, которыми вы поделились"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Опубликовать"
 
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Опубликовать выбранные медиафайлы"
 
 #: content/ui/AuthorizationPage.qml:15
 #, kde-format
@@ -475,17 +461,17 @@ msgstr "Для продолжения откройте следующую ссы
 #: content/ui/AuthorizationPage.qml:57 content/ui/AuthorizationPage.qml:76
 #, kde-format
 msgid "Open Link"
-msgstr ""
+msgstr "Открыть ссылку"
 
 #: content/ui/AuthorizationPage.qml:62 content/ui/AuthorizationPage.qml:84
 #, kde-format
 msgid "Copy Link"
-msgstr ""
+msgstr "Копировать ссылку"
 
 #: content/ui/AuthorizationPage.qml:65 content/ui/AuthorizationPage.qml:87
 #, kde-format
 msgid "Link copied."
-msgstr ""
+msgstr "Ссылка скопирована."
 
 #: content/ui/AuthorizationPage.qml:101
 #, kde-format
@@ -515,7 +501,7 @@ msgstr "Нет ни одного чата"
 #: content/ui/ExplorePage.qml:17 content/ui/main.qml:358
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Просмотр"
 
 #: content/ui/ExplorePage.qml:29 content/ui/NotificationPage.qml:29
 #: content/ui/TimelinePage.qml:61 search/searchmodel.cpp:141
@@ -526,22 +512,22 @@ msgstr "Публикация"
 #: content/ui/ExplorePage.qml:46
 #, kde-format
 msgid "Trending Posts"
-msgstr ""
+msgstr "Популярные публикации"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Trending Tags"
-msgstr ""
+msgstr "Популярные метки"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
 msgid "%1 people are talking"
-msgstr ""
+msgstr "%1 человек(а) обсуждают"
 
 #: content/ui/ExplorePage.qml:166
 #, kde-format
 msgid "No Tags"
-msgstr ""
+msgstr "Нет ни одной метки"
 
 #: content/ui/LanguageSelector.qml:64
 #, kde-format
@@ -600,21 +586,20 @@ msgid "Proxy Settings"
 msgstr "Параметры прокси-сервера"
 
 #: content/ui/main.qml:215
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation Tools"
-msgstr "Чаты"
+msgstr "Инструменты модерации"
 
 #: content/ui/main.qml:216
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Moderation Tools"
-msgstr ""
+msgstr "Открыть инструменты модерации"
 
 #: content/ui/main.qml:226
 #, kde-format
 msgid "Open settings"
-msgstr ""
+msgstr "Открыть параметры"
 
 #: content/ui/main.qml:236
 #, kde-format
@@ -657,53 +642,48 @@ msgid "Search"
 msgstr "Поиск"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Учётные записи"
+msgstr "Страница управления учётными записями"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
+msgstr "Расширенный поиск"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
-msgstr "Пользователь"
+msgstr "Имя пользователя:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Display Name"
+#, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Отображаемое имя"
+msgstr "Отображаемое имя:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "Адрес эл. почты:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
 msgstr "Поиск"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
 msgstr "Сбросить"
@@ -715,50 +695,42 @@ msgstr "Сбросить"
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Уведомления"
+msgstr "Местоположение"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
 msgstr "Все"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
-msgstr "Локальная лента"
+msgstr "Локальные"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Удалить"
+msgstr "Удалённые"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Чаты"
+msgstr "Состояние модерации"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
 msgstr "Все"
@@ -767,42 +739,40 @@ msgstr "Все"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Активная"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr ""
+msgstr "Ожидание"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Отключена"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Заглушена"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Заблокирована"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "Полномочия"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "Show all notifications"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
 msgstr "Все"
@@ -811,117 +781,112 @@ msgstr "Все"
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Модератор"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "Администратор"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "Владелец"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:300
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "Учётные записи не найдены"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Federation Tool Page"
-msgstr "Чаты"
+msgstr "Страница управления федерацией"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:25
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Сведения о разрешённом домене"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:31
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Домен"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:37
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Время создания"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:46
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Запретить федерацию с доменом"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:50
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Неодобренная федерация с доменом"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Добавить блокировку домена"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:70
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Домен*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:75
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:145
-#, fuzzy, kde-format
-#| msgid "Public post"
+#, kde-format
 msgid "Public comment"
-msgstr "Общедоступная публикация"
+msgstr "Общедоступный комментарий"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Только для подписчиков"
+msgstr "Комментарий с ограниченным доступом"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:85
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "Moderation"
-msgstr "Чаты"
+msgstr "Модерация"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:90
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Заглушить"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Заблокировать"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:98
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
-msgstr "Не выбран"
+msgstr "Не выбрано"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:107
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Отклонять медиафайлы"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -930,24 +895,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Удалять локально сохранённые медиафайлы и не загружать их в будущем. "
+"Неприменимо в случае блокировки"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:113
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Отклонять жалобы"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:114
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Игнорировать все жалобы, поступающие от этого домена. Неприменимо в случае "
+"блокировки"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Скрывать доменное имя"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -956,24 +925,26 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Частично скрывать доменное имя в списке, если включена функция списка "
+"доменных ограничений"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Создать блокировку"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:137
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Добавлена новая блокировка домена"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:316
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Разрешить федерацию с доменом"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:152
 #, kde-format
@@ -981,12 +952,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Домен*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:167
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Добавлен новый разрешённый домен"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:180
 #, kde-format
@@ -994,53 +965,51 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Параметр «Разрешённый домен» доступен для экземпляров с включённым режимом "
+"ограниченной федерации"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:187
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Чаты"
+msgstr "Модерация"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:202
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Добавить учётную запись"
+msgstr "Заблокированные домены"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:206
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Разрешённые домены"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:272
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Допустимо для федерации"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:295
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgid "No federations found"
-msgstr "Чаты"
+msgstr "Ни одной федерации не найдено"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:307
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Добавить новую блокировку домена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgid "Not Available"
 msgstr "Недоступно"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:30
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "Выполнение модерации %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
@@ -1048,7 +1017,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "Отправить предупреждение"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:40
 #, kde-format
@@ -1056,14 +1025,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "Заморозить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:45
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Принудительно пометить медиафайлы как конфиденциальные"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -1071,7 +1040,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Ограничить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
@@ -1079,7 +1048,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Заблокировать"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
@@ -1087,80 +1056,78 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Уведомить пользователя по электронной почте"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Предупреждение о содержимом"
+msgstr "Предупреждение пользователю"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:78
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:94
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Действие успешно выполнено"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:99
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "Вы уверены?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:110
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Будут приняты меры против учётной записи."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:118
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "Заявка %1 на регистрацию одобрена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:122
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "Заявка %1 на регистрацию отклонена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:126
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "Учётная запись %1 разморожена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:130
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "Глушение учётной записи %1 прекращено"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:134
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "Учётная запись %1 разблокирована"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:138
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "Принудительная пометка учётной записи %1 как конфиденциальной снята"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:142
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "Данные учётной записи %1 удалены"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:284
-#, fuzzy, kde-format
-#| msgid "Bio"
+#, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
 msgstr "О себе"
@@ -1168,200 +1135,187 @@ msgstr "О себе"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:329
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Причины присоединения"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
-msgstr "Публикация"
+msgstr "Публикации"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:380
-#, fuzzy, kde-format
-#| msgctxt "Show only follows"
-#| msgid "Follows"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "Подписки"
+msgstr "Подписчики"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:384
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Вы подписаны"
+msgstr "Подписки"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
 msgid "No role"
-msgstr ""
+msgstr "Без роли"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr ""
+msgstr "Роль"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:392
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Время последней активности"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:396
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Состояние входа"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:410
 #, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
-msgstr ""
+msgstr "Роль"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:418
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "Адрес эл. почты"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:425
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "Состояние электронной почты"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Confirmed"
-msgstr "Настройка"
+msgstr "Подтверждена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:426
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgid "Not Confirmed"
-msgstr "Настройка"
+msgstr "Не подтверждена"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:433
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Редактор учётной записи"
+msgstr "Язык учётной записи"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Присоединился(ась)"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Последний IP-адрес"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:477
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "Получено приглашение от"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:500
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "Принять"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:512
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "Отклонить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:523
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Учётные записи"
+msgstr "Удалить данные учётной записи"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:535
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Разморозить"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:545
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Снять ограничение"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:555
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Разблокировать"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Снять принудительную пометку о конфиденциальности"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Принять меры против учётной записи"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgid "Remove Domain Block"
-msgstr "Удалить закладку"
+msgstr "Удалить блокировку домена"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Блокировка домена удалена"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Изменить блокировку домена"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Только для подписчиков"
+msgstr "Комментарий с ограниченным доступом"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Обновить блокировку"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Блокировка домена обновлена"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked at"
-msgstr "Добавить учётную запись"
+msgstr "Блокировка"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
 msgstr "Не выбран"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
 msgstr "Не выбран"
@@ -1370,30 +1324,30 @@ msgstr "Не выбран"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Правило"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:166
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Скрывать"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:173
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Отклонять медиафайлы"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:180
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject report"
-msgstr ""
+msgstr "Отклонять жалобы"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:193
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Изменить блокировку домена"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:14
 #: content/ui/Settings/AccountsCard.qml:23
@@ -1402,10 +1356,9 @@ msgid "Accounts"
 msgstr "Учётные записи"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Federation"
-msgstr "Чат"
+msgstr "Федерация"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -1470,8 +1423,7 @@ msgid "Search for peoples, tags and posts"
 msgstr "Поиск людей, меток и публикаций"
 
 #: content/ui/SearchView.qml:139
-#, fuzzy, kde-format
-#| msgid "Hashtags"
+#, kde-format
 msgid "Hashtag"
 msgstr "Метки"
 
@@ -1582,7 +1534,7 @@ msgstr "Применить"
 #, kde-format
 msgctxt "@label Settings header"
 msgid "Preferences"
-msgstr ""
+msgstr "Параметры"
 
 #: content/ui/Settings/PreferencesCard.qml:30
 #, kde-format
@@ -1591,24 +1543,26 @@ msgid ""
 "These preferences apply to the current account and are synced to other "
 "clients."
 msgstr ""
+"Эти параметры применяются к текущей учётной записи и синхронизируются с "
+"другими клиентами."
 
 #: content/ui/Settings/PreferencesCard.qml:36
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Помечать по умолчанию загружаемые медиафайлы как конфиденциальные"
 
 #: content/ui/Settings/PreferencesCard.qml:48
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr ""
+msgstr "Язык публикации по умолчанию"
 
 #: content/ui/Settings/PreferencesCard.qml:64
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Видимость публикации по умолчанию"
 
 #: content/ui/Settings/ProfileEditor.qml:23
 #, kde-format
@@ -1654,10 +1608,9 @@ msgid "Avatar"
 msgstr "Аватар"
 
 #: content/ui/Settings/ProfileEditor.qml:243
-#, fuzzy, kde-format
-#| msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+#, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 1500×500 пкс"
+msgstr "PNG, GIF или JPG. Не более 2 МБ. Будет уменьшено до 400×400 пкс"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
@@ -1763,7 +1716,7 @@ msgstr "Не выбран"
 #: content/ui/Settings/SonnetCard.qml:94
 #, kde-format
 msgid "Additional Spell Checking Languages"
-msgstr ""
+msgstr "Дополнительные языки проверки орфографии"
 
 #: content/ui/Settings/SonnetCard.qml:95
 #, kde-format
@@ -1805,7 +1758,7 @@ msgstr "Добавить новое слово в личный словарь…
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Word"
-msgstr ""
+msgstr "Добавить слово"
 
 #: content/ui/Settings/SonnetCard.qml:186
 #, kde-format
@@ -1815,20 +1768,19 @@ msgstr "Удалить слово"
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Поделиться не удалось"
 
 #: content/ui/SocialGraphPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Подписаться"
+msgstr "Разрешить"
 
 #: content/ui/SocialGraphPage.qml:65
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Запретить"
 
 #: content/ui/StatusComposer/AttachmentGrid.qml:69
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
@@ -1897,22 +1849,22 @@ msgstr "Скрывать количество голосов до окончан
 #: content/ui/StatusComposer/StatusComposer.qml:46
 #, kde-format
 msgid "Edit this post"
-msgstr ""
+msgstr "Изменить эту публикацию"
 
 #: content/ui/StatusComposer/StatusComposer.qml:48
 #, kde-format
 msgid "Reply to this post"
-msgstr ""
+msgstr "Ответить на эту публикацию"
 
 #: content/ui/StatusComposer/StatusComposer.qml:50
 #, kde-format
 msgid "Rewrite this post"
-msgstr ""
+msgstr "Отредактировать публикацию"
 
 #: content/ui/StatusComposer/StatusComposer.qml:52
 #, kde-format
 msgid "Write a new post"
-msgstr ""
+msgstr "Создать новую публикацию"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
 #: content/ui/StatusComposer/StatusComposer.qml:287
@@ -1987,7 +1939,7 @@ msgstr "Язык публикации"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "Символов: <b>%1/%2</b>"
 
 #: content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
@@ -2002,12 +1954,12 @@ msgstr "Недоступно"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:191
 #, kde-format
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:248
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Видео"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:281
 #, kde-format
@@ -2022,25 +1974,24 @@ msgid "View profile"
 msgstr "Показать профиль"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:16
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Link preview: %1"
-msgstr "Предварительный просмотр ссылок"
+msgstr "Предварительный просмотр ссылок: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:24
 #, kde-format
 msgid "Expand This Post"
-msgstr ""
+msgstr "Развернуть эту публикацию"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:31
 #, kde-format
 msgid "Open Original Page"
-msgstr ""
+msgstr "Открыть исходную страницу"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Copy Link to This Post"
-msgstr ""
+msgstr "Копировать ссылку на эту публикацию"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:50
 #: content/ui/StatusDelegate/StatusDelegate.qml:514
@@ -2054,16 +2005,14 @@ msgid "Bookmark"
 msgstr "Добавить в закладки"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Показать профиль"
+msgstr "Открепить профиль"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Pin on profile"
-msgstr "Показать профиль"
+msgstr "Закрепить профиль"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
 #, kde-format
@@ -2103,12 +2052,12 @@ msgstr "%1 поделился(ась)"
 #: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "Ответ для %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:269
 #, kde-format
 msgid "%1 replied to your post"
-msgstr ""
+msgstr "%1 ответил(а) на вашу публикацию"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:332
 #, kde-format
@@ -2117,10 +2066,9 @@ msgid "More"
 msgstr "Больше"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:370
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "Предупреждение о содержимом"
+msgstr "<b>Предупреждение о содержимом</b><br /> %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:376
 #, kde-format
@@ -2145,12 +2093,10 @@ msgid "Boost"
 msgstr "Поделиться"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:495
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Избранное"
+msgstr "Добавить в избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:514
 #, kde-format
@@ -2161,49 +2107,40 @@ msgstr "Добавить в закладки"
 #: content/ui/StatusDelegate/StatusDelegate.qml:531
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "посредством %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgid "%1 Reply"
-msgstr "Ответить"
+msgstr "%1 ответил(а)"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:563
 #: content/ui/StatusDelegate/StatusDelegate.qml:564
 #, kde-format
 msgid "%1 Replies"
-msgstr ""
+msgstr "%1 ответили"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:575
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorites"
-msgstr "Избранное"
+msgstr "%1 добавили в избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:576
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "%1 Favorite"
-msgstr "Избранное"
+msgstr "%1 добавил(а) в избранное"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:587
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
+#, kde-format
 msgid "%1 Boost"
 msgstr "%1 поделился(ась)"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:587
 #: content/ui/StatusDelegate/StatusDelegate.qml:588
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "%1 Boosts"
-msgstr "Записи, которыми поделились"
+msgstr "%1 поделились"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:38
 #, kde-format
@@ -2225,7 +2162,7 @@ msgstr "Ответить"
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
-msgstr ""
+msgstr "Воспроизвести"
 
 #: content/ui/TimelinePage.qml:184
 #, kde-format
@@ -2235,7 +2172,7 @@ msgstr "Нет ни одной публикации"
 #: content/ui/UserInfo.qml:73
 #, kde-format
 msgid "Switch user"
-msgstr ""
+msgstr "Переключить пользователя"
 
 #: content/ui/UserInfo.qml:106
 #, kde-format
@@ -2253,12 +2190,13 @@ msgid "%1 and %2"
 msgstr "%1 и %2"
 
 #: conversation/conversationmodel.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] "%2 и ещё %1"
 msgstr[1] "%2 и ещё %1"
 msgstr[2] "%2 и ещё %1"
+msgstr[3] "%2 и ещё один"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -2415,7 +2353,7 @@ msgstr "Избранное"
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr ""
+msgstr "Популярное"
 
 #: timeline/notificationmodel.cpp:99
 #, kde-format
@@ -2425,17 +2363,17 @@ msgstr "Ошибка при получении последнего уведом
 #: timeline/post.cpp:340
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "в будущем"
 
 #: timeline/post.cpp:342
 #, kde-format
 msgid "%1s"
-msgstr ""
+msgstr "%1 с"
 
 #: timeline/post.cpp:344
 #, kde-format
 msgid "%1m"
-msgstr ""
+msgstr "%1 мин"
 
 #: timeline/post.cpp:346
 #, kde-format
@@ -2451,33 +2389,33 @@ msgstr "%1 д"
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 неделю назад"
+msgstr[1] "%1 недели назад"
+msgstr[2] "%1 недель назад"
+msgstr[3] "одну неделю назад"
 
 #: timeline/post.cpp:355
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 месяц назад"
+msgstr[1] "%1 месяца назад"
+msgstr[2] "%1 месяцев назад"
+msgstr[3] "один месяц назад"
 
 #: timeline/post.cpp:359
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 год назад"
+msgstr[1] "%1 года назад"
+msgstr[2] "%1 лет назад"
+msgstr[3] "один год назад"
 
 #: timeline/tagsmodel.cpp:24
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Популярное"
 
 #: timeline/threadmodel.cpp:29
 #, kde-format
@@ -2516,3 +2454,345 @@ msgstr "Назначение"
 
 #~ msgid "Toot"
 #~ msgstr "Запись"
+
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgctxt "@title"
+#~ msgid "%1 favourites"
+#~ msgstr "Избранное: %1"
+
+#~| msgctxt "Show only boosts"
+#~| msgid "Boosts"
+#~ msgctxt "@title"
+#~ msgid "%1 boosts"
+#~ msgstr "Записи, которыми поделились: %1"
+
+#~| msgid "%1 favorited your post"
+#~ msgid "No users favourited this post"
+#~ msgstr "Никто не добавил эту публикацию в избранное"
+
+#~| msgid "%1 boosted your post"
+#~ msgid "No users boosted this post"
+#~ msgstr "Никто не поделился этой публикацией"
+
+#~ msgid "No emojis"
+#~ msgstr "Нет ни одного эмодзи"
+
+#~| msgid "Conversations"
+#~ msgctxt "@title"
+#~ msgid "Email Block Tool Page"
+#~ msgstr "Страница настройки блокировки электронной почты"
+
+#~ msgctxt "@title"
+#~ msgid "E-Mail Domain Info"
+#~ msgstr "Сведения о домене электронной почты"
+
+#~ msgctxt "@info The domain on which the block is imposed"
+#~ msgid "Email domain name"
+#~ msgstr "Имя домена электронной почты"
+
+#~| msgid "Add Account"
+#~ msgctxt "@info Time when the block was imposed."
+#~ msgid "Block created at"
+#~ msgstr "Время создания блокировки"
+
+#~ msgctxt ""
+#~ "@info The counted accounts signup attempts using that email domain within "
+#~ "the last week."
+#~ msgid "Account sign-up attempts in this week"
+#~ msgstr "Попытки регистрации учётной записи на этой неделе"
+
+#~ msgctxt ""
+#~ "@info The counted IP signup attempts of that email domain within that day."
+#~ msgid "IP sign-up attempts in this week"
+#~ msgstr "Попытки регистрации IP-адреса на этой неделе"
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgctxt "@action:button"
+#~ msgid "Delete email block"
+#~ msgstr "Удалить блокировку электронной почты"
+
+#~ msgid "Email block deleted"
+#~ msgstr "Блокировка электронной почты удалена"
+
+#~ msgid "@title"
+#~ msgstr "@заголовок"
+
+#~ msgctxt "@info The domain on which the block will be imposed"
+#~ msgid "Domain *"
+#~ msgstr "Домен *"
+
+#~ msgid ""
+#~ "This can be the domain name that shows up in the e-mail address or the MX "
+#~ "record it uses. They will be checked upon sign-up."
+#~ msgstr ""
+#~ "Это может быть доменное имя, которое отображается в адресе электронной "
+#~ "почты или используемая запись MX. Они будут проверены при регистрации."
+
+#~| msgid "Remove bookmark"
+#~ msgctxt "@action:button"
+#~ msgid "Resolve domain"
+#~ msgstr "Преобразовать доменное имя"
+
+#~ msgid "New email block added"
+#~ msgstr "Добавлена новая блокировка электронной почты"
+
+#~ msgctxt "@info"
+#~ msgid "%1 sign-up attempts over the last week"
+#~ msgstr "Попыток регистрации на прошлой неделе: %1"
+
+#~| msgid "Conversations"
+#~ msgid "No email blocks found"
+#~ msgstr "Ни одной блокировки электронной почты не найдено"
+
+#~| msgid "Remove bookmark"
+#~ msgctxt "@action:button"
+#~ msgid "Create Email Block"
+#~ msgstr "Создать блокировку электронной почты"
+
+#~| msgid "Accounts"
+#~ msgid "IP Rule Tool Page"
+#~ msgstr "Страница настройки правила IP-адреса"
+
+#~ msgid "New IP Rule"
+#~ msgstr "Новое правило IP-адреса"
+
+#~ msgctxt "@info:Enter the domain address of the domain block"
+#~ msgid "IP*"
+#~ msgstr "IP-адрес*"
+
+#~ msgctxt "@info:Time after which the rule will be lifted"
+#~ msgid "Expire After"
+#~ msgstr "Срок действия"
+
+#~| msgctxt "@item:inlistbox Poll expire times"
+#~| msgid "1 day"
+#~ msgctxt "@info:Option to block out the IP for 1 day"
+#~ msgid "1 day"
+#~ msgstr "1 день"
+
+#~ msgctxt "@info:Option to block out the IP for 2 weeks"
+#~ msgid "2 weeks"
+#~ msgstr "2 недели"
+
+#~ msgctxt "@info:Option to block out the IP for 1 month"
+#~ msgid "1 month"
+#~ msgstr "1 месяц"
+
+#~ msgctxt "@info:Option to block out the IP for 6 months"
+#~ msgid "6 month"
+#~ msgstr "6 месяцев"
+
+#~ msgctxt "@info:Option to block out the IP for 1 year"
+#~ msgid "1 year"
+#~ msgstr "1 год"
+
+#~ msgctxt "@info:Option to block out the IP for 3 years"
+#~ msgid "3 year"
+#~ msgstr "3 года"
+
+#~| msgid "Private"
+#~ msgctxt "@info: The comment attached with the ip rule"
+#~ msgid "Comment"
+#~ msgstr "Комментарий"
+
+#~ msgid "Optional. Remember why you added this rule."
+#~ msgstr "Необязательное поле. Укажите причину добавления этого правила."
+
+#~ msgctxt "@info:The rule attached with the ip rule"
+#~ msgid "Rule *"
+#~ msgstr "Правило *"
+
+#~ msgid "Choose what will happen with requests from this IP"
+#~ msgstr "Выберите, что будет происходить с запросами от этого IP-адреса"
+
+#~ msgid "Limit sign-ups"
+#~ msgstr "Ограничивать регистрации"
+
+#~ msgid "New sign-ups will require your approval"
+#~ msgstr ""
+#~ "Для регистрации новых пользователей будет требоваться ваше разрешение"
+
+#~| msgid "Add Account"
+#~ msgid "Block sign-ups"
+#~ msgstr "Блокировать регистрации"
+
+#~ msgid "New sign-ups will not be possible"
+#~ msgstr "Регистрация новых пользователей будет невозможна"
+
+#~| msgid "Add Account"
+#~ msgid "Block access"
+#~ msgstr "Блокировать доступ"
+
+#~ msgid "Block access to all resources"
+#~ msgstr "Блокировать доступ ко всем ресурсам"
+
+#~ msgctxt "@info:Button to create a IP rule"
+#~ msgid "Create IP rule"
+#~ msgstr "Создать правило IP-адреса"
+
+#~ msgid "New IP rule added"
+#~ msgstr "Добавлено новое правило IP-адреса"
+
+#~ msgctxt "@label"
+#~ msgid "Limit sign-ups"
+#~ msgstr "Ограничивать регистрации"
+
+#~| msgid "Add Account"
+#~ msgctxt "@label"
+#~ msgid "Block sign-ups"
+#~ msgstr "Блокировать регистрации"
+
+#~| msgid "Add Account"
+#~ msgctxt "@label"
+#~ msgid "Block access"
+#~ msgstr "Блокировать доступ"
+
+#~ msgid "No IP rules found"
+#~ msgstr "Ни одного правила IP-адреса не найдено"
+
+#~ msgctxt "@action:button"
+#~ msgid "Create Rule"
+#~ msgstr "Создать правило"
+
+#~| msgid "Remove"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Remove IP Rule"
+#~ msgstr "Удалить правило IP-адреса"
+
+#~ msgid "IP Rule Removed"
+#~ msgstr "Правило IP-адреса удалено"
+
+#~ msgctxt "@title:window"
+#~ msgid "Update IP Rule"
+#~ msgstr "Обновление правила IP-адреса"
+
+#~ msgctxt "@info IP address of the ip block"
+#~ msgid "IP"
+#~ msgstr "IP-адрес"
+
+#~ msgctxt "@info Time after which the rule will be lifted"
+#~ msgid "Expire After"
+#~ msgstr "Срок действия"
+
+#~| msgctxt "@item:inlistbox Poll expire times"
+#~| msgid "1 day"
+#~ msgctxt "@info Option to block out the IP for 1 day"
+#~ msgid "1 day"
+#~ msgstr "1 день"
+
+#~ msgctxt "@info Option to block out the IP for 2 weeks"
+#~ msgid "2 weeks"
+#~ msgstr "2 недели"
+
+#~ msgctxt "@info Option to block out the IP for 1 month"
+#~ msgid "1 month"
+#~ msgstr "1 месяц"
+
+#~ msgctxt "@info Option to block out the IP for 6 months"
+#~ msgid "6 month"
+#~ msgstr "6 месяцев"
+
+#~ msgctxt "@info Option to block out the IP for 1 year"
+#~ msgid "1 year"
+#~ msgstr "1 год"
+
+#~ msgctxt "@info Option to block out the IP for 3 years"
+#~ msgid "3 year"
+#~ msgstr "3 года"
+
+#~| msgid "Private"
+#~ msgctxt "@info The comment attached with the ip rule"
+#~ msgid "Comment"
+#~ msgstr "Комментарий"
+
+#~ msgctxt "@info The rule attached with the ip rule"
+#~ msgid "Rule *"
+#~ msgstr "Правило *"
+
+#~ msgctxt "@info Cancel button to close the dailog"
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgctxt "@info Button to update an IP rule"
+#~ msgid "Update IP rule"
+#~ msgstr "Обновить правило IP-адреса"
+
+#~ msgid "IP rule updated"
+#~ msgstr "Правило IP-адреса обновлено"
+
+#~ msgctxt "@info Time after which the rule will be lifted"
+#~ msgid "Expires at"
+#~ msgstr "Действительно до:"
+
+#~| msgid "None"
+#~ msgctxt "@info No public comment provided"
+#~ msgid "None"
+#~ msgstr "Не выбрано"
+
+#~ msgctxt "@info The severity to be applied by this IP rule"
+#~ msgid "Severity"
+#~ msgstr "Строгость"
+
+#~ msgctxt "@action:button"
+#~ msgid "Update IP Rule"
+#~ msgstr "Обновить правило IP-адреса"
+
+#~ msgid "Ip rules"
+#~ msgstr "Правила IP-адреса"
+
+#~ msgid "Email block"
+#~ msgstr "Блокировка электронной почты"
+
+#~| msgctxt "@action:intoolbar Poll toolbar"
+#~| msgid "Add Choice"
+#~ msgid "Add Emoji"
+#~ msgstr "Добавить эмодзи"
+
+#~ msgctxt "Previously used emojis"
+#~ msgid "History"
+#~ msgstr "Последние использованные"
+
+#~ msgctxt "'Custom' is a category of emoji"
+#~ msgid "Custom"
+#~ msgstr "Другие"
+
+#~ msgctxt "'Smileys' is a category of emoji"
+#~ msgid "Smileys"
+#~ msgstr "Смайлики"
+
+#~| msgid "People"
+#~ msgctxt "'People' is a category of emoji"
+#~ msgid "People"
+#~ msgstr "Люди"
+
+#~ msgctxt "'Nature' is a category of emoji"
+#~ msgid "Nature"
+#~ msgstr "Природа"
+
+#~ msgctxt "'Food' is a category of emoji"
+#~ msgid "Food"
+#~ msgstr "Еда"
+
+#~ msgctxt "'Activities' is a category of emoji"
+#~ msgid "Activities"
+#~ msgstr "Занятия"
+
+#~ msgctxt "'Travel' is  a category of emoji"
+#~ msgid "Travel"
+#~ msgstr "Путешествия"
+
+#~ msgctxt "'Objects' is a category of emoji"
+#~ msgid "Objects"
+#~ msgstr "Объекты"
+
+#~ msgctxt "'Symbols' is a category of emoji"
+#~ msgid "Symbols"
+#~ msgstr "Символы"
+
+#~ msgctxt "'Flags' is a category of emoji"
+#~ msgid "Flags"
+#~ msgstr "Флаги"
