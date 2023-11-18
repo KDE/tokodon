@@ -31,12 +31,14 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         auto defaultAction = knotification->addDefaultAction(i18n("View Post"));
 
         auto openPost = [=] {
-            auto url = notification->post()->url();
-            url.setScheme(QStringLiteral("web+ap"));
+            if (auto post = notification->post(); post != nullptr) {
+                auto url = post->url();
+                url.setScheme(QStringLiteral("web+ap"));
 
-            auto *job = new KIO::ApplicationLauncherJob(KService::serviceByDesktopName(QStringLiteral("org.kde.tokodon")));
-            job->setUrls({url});
-            job->start();
+                auto *job = new KIO::ApplicationLauncherJob(KService::serviceByDesktopName(QStringLiteral("org.kde.tokodon")));
+                job->setUrls({url});
+                job->start();
+            }
         };
 
         connect(viewPostAction, &KNotificationAction::activated, this, openPost);

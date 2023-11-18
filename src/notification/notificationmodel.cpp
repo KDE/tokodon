@@ -162,25 +162,28 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     case TypeRole:
         return notification->type();
     case IsBoostedRole:
-        return post->boosted() || notification->type() == Notification::Repeat;
-    case BoostAuthorIdentityRole:
-        if (post->boostIdentity()) {
-            return QVariant::fromValue<Identity *>(post->boostIdentity().get());
-        }
-        if (notification->type() == Notification::Repeat) {
-            return QVariant::fromValue<Identity *>(notification->identity().get());
+        return post != nullptr ? (post->boosted() || notification->type() == Notification::Repeat) : false;
+    case BoostAuthorIdentityRole: {
+        if (post != nullptr) {
+            if (post->boostIdentity()) {
+                return QVariant::fromValue<Identity *>(post->boostIdentity().get());
+            }
+            if (notification->type() == Notification::Repeat) {
+                return QVariant::fromValue<Identity *>(notification->identity().get());
+            }
         }
         return {};
+    }
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
     case AuthorIdentityRole:
         if (notification->type() == Notification::Follow || notification->type() == Notification::FollowRequest) {
             return QVariant::fromValue<Identity *>(notification->identity().get());
-        } else {
+        } else if (post != nullptr) {
             return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
     default:
-        if (post) {
+        if (post != nullptr) {
             return postData(post, role);
         }
     }
@@ -192,50 +195,59 @@ void NotificationModel::actionReply(const QModelIndex &index)
 {
     int row = index.row();
     auto p = m_notifications[row]->post();
-
-    Q_EMIT wantReply(m_account, p, index);
+    if (p != nullptr) {
+        Q_EMIT wantReply(m_account, p, index);
+    }
 }
 
 void NotificationModel::actionFavorite(const QModelIndex &index)
 {
     int row = index.row();
     auto post = m_notifications[row]->post();
-    AbstractTimelineModel::actionFavorite(index, post);
+    if (post != nullptr) {
+        AbstractTimelineModel::actionFavorite(index, post);
+    }
 }
 
 void NotificationModel::actionRepeat(const QModelIndex &index)
 {
     const int row = index.row();
     const auto post = m_notifications[row]->post();
-    AbstractTimelineModel::actionRepeat(index, post);
+    if (post != nullptr) {
+        AbstractTimelineModel::actionRepeat(index, post);
+    }
 }
 
 void NotificationModel::actionRedraft(const QModelIndex &index, bool isEdit)
 {
     const int row = index.row();
     const auto p = m_notifications[row]->post();
-
-    AbstractTimelineModel::actionRedraft(index, p, isEdit);
+    if (p != nullptr) {
+        AbstractTimelineModel::actionRedraft(index, p, isEdit);
+    }
 }
 
 void NotificationModel::actionBookmark(const QModelIndex &index)
 {
     const int row = index.row();
     const auto post = m_notifications[row]->post();
-    ;
-
-    AbstractTimelineModel::actionBookmark(index, post);
+    if (post != nullptr) {
+        AbstractTimelineModel::actionBookmark(index, post);
+    }
 }
 
 void NotificationModel::actionDelete(const QModelIndex &index)
 {
     const auto p = m_notifications[index.row()]->post();
+    if (p == nullptr) {
+        return;
+    }
 
     AbstractTimelineModel::actionDelete(index, p);
 
     // TODO: this sucks
     for (auto &notification : m_notifications) {
-        if (notification->post()->postId() == p->postId()) {
+        if (notification->post() != nullptr && notification->post()->postId() == p->postId()) {
             int row = m_notifications.indexOf(notification);
             beginRemoveRows({}, row, row);
             m_notifications.removeOne(notification);
