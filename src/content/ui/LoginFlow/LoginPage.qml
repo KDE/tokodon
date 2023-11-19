@@ -46,7 +46,7 @@ MastoPage {
     FormCard.FormCard {
         FormCard.FormTextFieldDelegate {
             id: instanceUrl
-            label: i18n("Instance URL:")
+            label: i18n("Server URL:")
             placeholderText: i18n("mastodon.social")
             onAccepted: continueButton.clicked()
             inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
@@ -71,7 +71,7 @@ MastoPage {
 
                 if (!instanceUrl.text) {
                     instanceUrl.status = Kirigami.MessageType.Error;
-                    instanceUrl.statusMessage = i18n("Instance URL must not be empty!");
+                    instanceUrl.statusMessage = i18n("Server URL must not be empty!");
                     return;
                 }
 
