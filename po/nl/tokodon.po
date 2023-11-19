@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:38+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2023-11-12 14:01+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -67,7 +67,7 @@ msgstr "Kon notitie over een account niet bewerken"
 msgid "View Post"
 msgstr "Post bekijken"
 
-#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
+#: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -75,45 +75,45 @@ msgstr "Post bekijken"
 msgid "View Profile"
 msgstr "Profiel bekijken"
 
-#: account/notificationhandler.cpp:72
+#: account/notificationhandler.cpp:74
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 noemde u"
 
-#: account/notificationhandler.cpp:80
+#: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 schreef een nieuw bericht"
 
-#: account/notificationhandler.cpp:88
+#: account/notificationhandler.cpp:90
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 heeft uw bericht opgepept"
 
-#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 volgde u"
 
-#: account/notificationhandler.cpp:104
+#: account/notificationhandler.cpp:106
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 verzocht u te volgen"
 
-#: account/notificationhandler.cpp:112
+#: account/notificationhandler.cpp:114
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 vond uw bericht de favoriet"
 
-#: account/notificationhandler.cpp:120
+#: account/notificationhandler.cpp:122
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "Peiling door %1 is beëindigd"
 
-#: account/notificationhandler.cpp:128
+#: account/notificationhandler.cpp:130
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 heeft uw bericht bewerkt"
@@ -775,8 +775,9 @@ msgid "Login"
 msgstr "Aanmelden"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, kde-format
-msgid "Instance Url:"
+#, fuzzy, kde-format
+#| msgid "Instance Url:"
+msgid "Instance URL:"
 msgstr "Url van exemplaar:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
@@ -905,8 +906,9 @@ msgid "Pick a Server"
 msgstr "Kies een server"
 
 #: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server Url:"
+#, fuzzy, kde-format
+#| msgid "Server Url:"
+msgid "Server URL:"
 msgstr "Server-Url:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
