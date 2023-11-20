@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-12 23:17+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 07:08+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -770,10 +770,10 @@ msgid "Login"
 msgstr "Ensaluto"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Kaza URL:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "Servila URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -802,9 +802,10 @@ msgid "Continue"
 msgstr "Daŭrigi"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "Kaza URL ne devas esti malplena!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Servila URL ne devas esti malplena!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -899,12 +900,6 @@ msgstr "Ĉi servilo estas fermata pri registriĝo: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Elekti Servilon"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Servila URL:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4007,3 +4002,9 @@ msgstr "Fonto"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Celo"
+
+#~ msgid "Instance URL:"
+#~ msgstr "Instanca URL:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Kaza URL ne devas esti malplena!"

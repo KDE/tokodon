@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -847,10 +847,10 @@ msgid "Login"
 msgstr "Innskráning"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Slóð á netþjónstilvik:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -881,7 +881,7 @@ msgstr "Halda áfram"
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Instance URL and username must not be empty!"
-msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -982,11 +982,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
@@ -4238,6 +4233,16 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Minnst á"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Slóð á netþjónstilvik:"
+
+#, fuzzy
+#~| msgid "Instance URL and username must not be empty!"
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
 
 #, fuzzy
 #~| msgctxt "Reply to a post"

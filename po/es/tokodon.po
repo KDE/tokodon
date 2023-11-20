@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:38+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-11-14 17:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -69,7 +69,7 @@ msgstr "No se ha podido editar la nota sobre una cuenta"
 msgid "View Post"
 msgstr "Ver publicación"
 
-#: account/notificationhandler.cpp:49 account/notificationhandler.cpp:50
+#: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
@@ -77,45 +77,45 @@ msgstr "Ver publicación"
 msgid "View Profile"
 msgstr "Ver perfil"
 
-#: account/notificationhandler.cpp:72
+#: account/notificationhandler.cpp:74
 #, kde-format
 msgid "%1 mentioned you"
 msgstr "%1 lo ha mencionado"
 
-#: account/notificationhandler.cpp:80
+#: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 ha escrito una nueva publicación"
 
-#: account/notificationhandler.cpp:88
+#: account/notificationhandler.cpp:90
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 ha promovido su publicación"
 
-#: account/notificationhandler.cpp:96 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 le está siguiendo"
 
-#: account/notificationhandler.cpp:104
+#: account/notificationhandler.cpp:106
 #, kde-format
 msgid "%1 requested to follow you"
 msgstr "%1 ha solicitado seguirle"
 
-#: account/notificationhandler.cpp:112
+#: account/notificationhandler.cpp:114
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ha marcado su publicación como favorita"
 
-#: account/notificationhandler.cpp:120
+#: account/notificationhandler.cpp:122
 #, kde-format
 msgid "Poll by %1 has ended"
 msgstr "La encuesta de %1 ha finalizado"
 
-#: account/notificationhandler.cpp:128
+#: account/notificationhandler.cpp:130
 #, kde-format
 msgid "%1 edited a post"
 msgstr "%1 ha editado una publicación"
@@ -777,9 +777,11 @@ msgid "Login"
 msgstr "Inicio de sesión"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, kde-format
-msgid "Instance Url:"
-msgstr "URL de la instancia:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "URL del servidor:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -808,9 +810,10 @@ msgid "Continue"
 msgstr "Continuar"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "El URL de la instancia no puede estar vacío."
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "La URL del servidor no puede estar vacía."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -905,11 +908,6 @@ msgstr "Este servidor está cerrado para registros: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Escoger un servidor"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server Url:"
-msgstr "URL del servidor:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4016,6 +4014,12 @@ msgstr "Origen"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#~ msgid "Instance Url:"
+#~ msgstr "URL de la instancia:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "El URL de la instancia no puede estar vacío."
 
 #~ msgid "Trending Posts"
 #~ msgstr "Publicaciones de tendencia"

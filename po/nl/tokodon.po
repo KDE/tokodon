@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-12 14:01+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 15:12+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -775,10 +775,10 @@ msgid "Login"
 msgstr "Aanmelden"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Url van exemplaar:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "Server-URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -807,9 +807,10 @@ msgid "Continue"
 msgstr "Doorgaan"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "URL van exemplaar mag niet leeg zijn!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Server-URL mag niet leeg zijn."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -904,12 +905,6 @@ msgstr "Deze server is gesloten voor registratie: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Kies een server"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Server-Url:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4015,6 +4010,13 @@ msgstr "Bron"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
+
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "URL van exemplaar:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "URL van exemplaar mag niet leeg zijn!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Trending berichten"

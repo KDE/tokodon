@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-10-09 00:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -814,10 +814,11 @@ msgid "Login"
 msgstr "로그인"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/ServersPage.qml:67
 #, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "인스턴스 URL:"
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "서버 URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -846,9 +847,10 @@ msgid "Continue"
 msgstr "계속"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "인스턴스 URL을 입력해야 합니다!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "인스턴스 URL을 입력해야 합니다."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -950,12 +952,6 @@ msgstr "이 서버의 등록이 비활성화되어 있습니다: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "서버 선택"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "서버 URL:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4125,6 +4121,14 @@ msgstr "원본"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "인스턴스 URL:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "인스턴스 URL을 입력해야 합니다!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "트렌드 게시물"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2022-01-20 14:10+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -833,10 +833,10 @@ msgid "Login"
 msgstr "Bejelentkezés"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Példány URL:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -867,7 +867,7 @@ msgstr "Folytatás"
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Instance URL and username must not be empty!"
-msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "A példány URL és a felhasználónév nem lehet üres!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -967,11 +967,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
@@ -4196,6 +4191,16 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Beállítások:"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Példány URL:"
+
+#, fuzzy
+#~| msgid "Instance URL and username must not be empty!"
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "A példány URL és a felhasználónév nem lehet üres!"
 
 #, fuzzy
 #~| msgctxt "Reply to a post"

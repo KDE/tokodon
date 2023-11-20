@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-11-08 15:53+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -773,10 +773,11 @@ msgid "Login"
 msgstr "Přihlášení"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/ServersPage.qml:67
 #, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "URL instance:"
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "URL serveru:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -803,8 +804,9 @@ msgid "Continue"
 msgstr "Pokračovat"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "URL instance není být prázdné."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -900,12 +902,6 @@ msgstr ""
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Vyberte server"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "URL serveru:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4002,3 +3998,8 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "URL instance:"

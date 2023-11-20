@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-11-12 11:48+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -780,10 +780,11 @@ msgid "Login"
 msgstr "Logowanie"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/ServersPage.qml:67
 #, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Adres URL serwera:"
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "URL Serwera:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -812,9 +813,10 @@ msgid "Continue"
 msgstr "Kontynuuj"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "Adres URL serwera nie może być pusty!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Adres URL serwera nie może być pusty."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -909,12 +911,6 @@ msgstr "Ten serwer jest zamknięty na rejestrację: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Wybierz serwer"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "URL Serwera:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4023,6 +4019,14 @@ msgstr "Źródło"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Miejsce docelowe"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Adres URL serwera:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Adres URL serwera nie może być pusty!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Wpisy na czasie"

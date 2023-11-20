@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-12 14:07+0200\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 08:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -787,10 +787,10 @@ msgid "Login"
 msgstr "Вхід"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Адреса екземпляра:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "Адреса сервера:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -819,9 +819,10 @@ msgid "Continue"
 msgstr "Продовжити"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "Адреса екземпляра не може бути порожньою!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Адреса сервера не може бути порожньою."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -916,12 +917,6 @@ msgstr "Цей сервер закрито для реєстрації: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Вибір сервера"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Адреса сервера:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4047,6 +4042,13 @@ msgstr "Джерело"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
+
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Адреса екземпляра:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Адреса екземпляра не може бути порожньою!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Тенденції у дописах"

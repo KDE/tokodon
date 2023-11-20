@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-09-13 21:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -824,10 +824,10 @@ msgid "Login"
 msgstr "Logga in"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Instans Url:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -860,8 +860,9 @@ msgid "Continue"
 msgstr "Fortsätt"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "Instanswebbadressen får inte vara tom."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -968,11 +969,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
@@ -4194,6 +4190,14 @@ msgstr "Källa"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Mål"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Instans Url:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Instanswebbadressen får inte vara tom."
 
 #~ msgid "Trending Posts"
 #~ msgstr "Trendande inlägg"

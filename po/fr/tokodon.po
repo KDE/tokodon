@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-11-14 18:33+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -799,10 +799,11 @@ msgid "Login"
 msgstr "Connexion"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/ServersPage.qml:67
 #, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Instance d'URL :"
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "URL du serveur :"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -834,9 +835,10 @@ msgid "Continue"
 msgstr "Continuer"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "L'URL d'instance ne doit pas être vide !"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "L'URL du serveur ne doit pas être vide."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -931,12 +933,6 @@ msgstr "Le serveur ne prend pas en charge les inscriptions : %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Sélectionner un serveur"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "URL du serveur :"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4059,6 +4055,14 @@ msgstr "Source"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Instance d'URL :"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "L'URL d'instance ne doit pas être vide !"
 
 #, fuzzy
 #~| msgctxt "@title"

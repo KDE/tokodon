@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-08-14 21:26+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -827,10 +827,10 @@ msgid "Login"
 msgstr "Anmelden"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Instanz-Adresse:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -860,8 +860,9 @@ msgid "Continue"
 msgstr "Fortfahren"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "Instanz-Adresse darf nicht leer sein."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -964,11 +965,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
@@ -4222,6 +4218,14 @@ msgstr "Quelle"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Ziel"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Instanz-Adresse:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Instanz-Adresse darf nicht leer sein."
 
 #~ msgctxt "login status"
 #~ msgid "Silenced"

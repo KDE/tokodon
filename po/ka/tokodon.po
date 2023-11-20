@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-13 10:59+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 06:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -774,10 +774,10 @@ msgid "Login"
 msgstr "შესვლა"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "გაშვებული ასლის URL:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "სერვერის URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -806,9 +806,10 @@ msgid "Continue"
 msgstr "გაგრძელება"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -903,12 +904,6 @@ msgstr "ეს სერვერი დახურულია რეგის
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "აირჩიეთ სერვერი"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "სერვერის Url:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4011,6 +4006,12 @@ msgstr "წყარო"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
+
+#~ msgid "Instance URL:"
+#~ msgstr "გაშვებული ასლის URL:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "ტრენდული პოსტები"

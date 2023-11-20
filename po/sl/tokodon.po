@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-12 09:56+0100\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 08:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.1\n"
 
 #: account/abstractaccount.cpp:655
@@ -786,10 +786,10 @@ msgid "Login"
 msgstr "Prijava"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Url pojavka:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "URL strežnika:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -818,9 +818,10 @@ msgid "Continue"
 msgstr "Nadaljuj"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "URL pojavka ne sme biti prazno!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "URL pojavka ne sme biti prazno."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -915,12 +916,6 @@ msgstr "Ta strežnik je zaprt za registracijo: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Izberite trežnik"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Url strežnika:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4035,6 +4030,12 @@ msgstr "Vir"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
+
+#~ msgid "Instance URL:"
+#~ msgstr "Url pojavka:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "URL pojavka ne sme biti prazno!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Objave v trendu"

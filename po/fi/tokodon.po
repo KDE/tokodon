@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-10-30 14:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -821,10 +821,10 @@ msgid "Login"
 msgstr "Kirjaudu"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Instanssin verkko-osoite:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -852,8 +852,9 @@ msgid "Continue"
 msgstr "Jatka"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
+#, fuzzy, kde-format
+#| msgid "Instance URL must not be empty!"
+msgid "Server URL must not be empty!"
 msgstr "Instanssin verkko-osoite ei voi olla tyhjä!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
@@ -958,11 +959,6 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, kde-format
-msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
@@ -4157,6 +4153,14 @@ msgstr "Lähde"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Instanssin verkko-osoite:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Instanssin verkko-osoite ei voi olla tyhjä!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Nousussa olevat julkaisut"

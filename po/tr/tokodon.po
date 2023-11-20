@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-12 05:29+0300\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
+"PO-Revision-Date: 2023-11-19 17:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -772,10 +772,10 @@ msgid "Login"
 msgstr "Oturum Aç"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Örnek URL'si:"
+#: content/ui/LoginFlow/ServersPage.qml:67
+#, kde-format
+msgid "Server URL:"
+msgstr "Sunucu URL'si:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -804,9 +804,10 @@ msgid "Continue"
 msgstr "Sürdür"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "Örnek URL'si boş olmamalı!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Sunucu URL'si boş olamaz."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -901,12 +902,6 @@ msgstr "Bu sunucu, kayıt için kapalı: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Bir Sunucu Seç"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Sunucu URL'si:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4011,6 +4006,13 @@ msgstr "Kaynak"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Hedef"
+
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Örnek URL'si:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Örnek URL'si boş olmamalı!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Popüler Gönderiler"

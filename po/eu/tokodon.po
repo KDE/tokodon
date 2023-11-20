@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-11-20 01:59+0000\n"
 "PO-Revision-Date: 2023-11-02 22:49+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -803,10 +803,11 @@ msgid "Login"
 msgstr "Saio-hasi"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/ServersPage.qml:67
 #, fuzzy, kde-format
-#| msgid "Instance Url:"
-msgid "Instance URL:"
-msgstr "Instantziaren URL:"
+#| msgid "Server Url:"
+msgid "Server URL:"
+msgstr "Zerbitzariaren URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -835,9 +836,10 @@ msgid "Continue"
 msgstr "Jarraitu"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, kde-format
-msgid "Instance URL must not be empty!"
-msgstr "Instantziaren URL ez da hutsik egon behar!"
+#, fuzzy, kde-format
+#| msgid "Server URL must not be empty."
+msgid "Server URL must not be empty!"
+msgstr "Zerbitzariaren URL ez da hutsk egon behar."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -939,12 +941,6 @@ msgstr "Zerbitzari hori erregistratzeko itxita dago: %1"
 msgctxt "@title:group"
 msgid "Pick a Server"
 msgstr "Aukeratu zerbitzari bat"
-
-#: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
-msgid "Server URL:"
-msgstr "Zerbitzariaren URL:"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -4112,6 +4108,14 @@ msgstr "Sorburua"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
+
+#, fuzzy
+#~| msgid "Instance Url:"
+#~ msgid "Instance URL:"
+#~ msgstr "Instantziaren URL:"
+
+#~ msgid "Instance URL must not be empty!"
+#~ msgstr "Instantziaren URL ez da hutsik egon behar!"
 
 #~ msgid "Trending Posts"
 #~ msgstr "Joeran dauden postak"
