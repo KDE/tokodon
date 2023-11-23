@@ -5,9 +5,9 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 01:59+0000\n"
-"PO-Revision-Date: 2023-11-14 18:33+0100\n"
+"PO-Revision-Date: 2023-11-21 22:18+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,10 +107,9 @@ msgid "%1 favorited your post"
 msgstr "%1 a favorisé votre message"
 
 #: account/notificationhandler.cpp:122
-#, fuzzy, kde-format
-#| msgid "Your poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Votre sondage est terminé"
+msgstr "Le sondage réalisé par %1 est terminé"
 
 #: account/notificationhandler.cpp:130
 #, kde-format
@@ -165,11 +164,10 @@ msgid "Blocked Users"
 msgstr "Utilisateurs bloqués"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Comptes"
+msgstr "Utilisateurs publiés"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
@@ -180,14 +178,12 @@ msgstr[0] "%1 signets"
 msgstr[1] "%1 favoris"
 
 #: account/socialgraphmodel.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "Stimulations"
-msgstr[1] "Stimulations"
+msgstr[0] "Coup de pouce %1"
+msgstr[1] "%1 coups de pouce"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
@@ -200,10 +196,9 @@ msgid "No followers"
 msgstr "Aucun abonné(e)"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Aucun abonné(e)"
+msgstr "Aucun utilisateur suivi"
 
 #: account/socialgraphmodel.cpp:55
 #, kde-format
@@ -216,10 +211,9 @@ msgid "No blocked users"
 msgstr "Aucun utilisateur bloqué"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "No featured users"
-msgstr "Impossible de présenter un compte"
+msgstr "Aucun utilisateur publié"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
@@ -227,10 +221,9 @@ msgid "No users favourited this post"
 msgstr "Aucun utilisateur n'a mis ce message en signet"
 
 #: account/socialgraphmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgid "No users boosted this post"
-msgstr "Ré-écrire ce message"
+msgstr "Aucun utilisateur n'a donné un coup de pouce pour ce message"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -258,16 +251,14 @@ msgid "Could not unsilence the account"
 msgstr "Impossible de sortir un un compte du mode pause"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Impossible de sortir un un compte du mode pause"
+msgstr "Impossible de retirer le compte"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Impossible de mettre un compte en pause"
+msgstr "Impossible de marquer ce compte comme non sensible"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
@@ -324,10 +315,9 @@ msgid "Could not resolve report"
 msgstr "Impossible de résoudre un rapport"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "Impossible de sortir un un compte du mode pause"
+msgstr "Impossible de résoudre le rapport"
 
 #: admin/reporttoolmodel.cpp:196
 #, kde-format
@@ -335,10 +325,9 @@ msgid "Could not assign report"
 msgstr "Impossible d'attribuer un rapport"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "Impossible de sortir un un compte du mode pause"
+msgstr "Impossible de dé-assigner un rapport"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -346,10 +335,9 @@ msgid "Follows you"
 msgstr "Vous suit"
 
 #: content/ui/AccountInfo.qml:210
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Requested"
-msgstr "Demandes de suivi"
+msgstr "Suivi demandé"
 
 #: content/ui/AccountInfo.qml:213
 #, kde-format
@@ -362,10 +350,9 @@ msgid "Follow"
 msgstr "Suivre"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Arrêter de m'envoyer des notifications lorsque %1 écrit des messages"
+msgstr "Arrêter de m'envoyer des notifications lorsque %1 écrit des messages."
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -378,10 +365,9 @@ msgid "Hide Boosts from %1"
 msgstr "Masquer les encouragements de %1"
 
 #: content/ui/AccountInfo.qml:261
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "Arrêter de masquer les encouragements de %1"
+msgstr "Afficher les coups de pouce de %1"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -457,10 +443,9 @@ msgid "Blocked Users"
 msgstr "Utilisateurs bloqués"
 
 #: content/ui/AccountInfo.qml:369
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Comptes"
+msgstr "Utilisateurs publiés"
 
 #: content/ui/AccountInfo.qml:374
 #, kde-format
@@ -504,14 +489,12 @@ msgstr[0] "Abonné <b>%1</b> "
 msgstr[1] "<b>%1</b> abonné(e)s"
 
 #: content/ui/AccountInfo.qml:615
-#, fuzzy, kde-format
-#| msgctxt "@label User's number of followers"
-#| msgid "<b>%1</b> followers"
+#, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "<b>%1</b> abonné(e)s"
-msgstr[1] "<b>%1</b> abonné(e)s"
+msgstr[0] "<b>%1</b> suit"
+msgstr[1] "<b>%1</b> suiveurs"
 
 #: content/ui/AccountInfo.qml:639
 #, kde-format
@@ -606,11 +589,10 @@ msgid "Title"
 msgstr "Titre"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "%1 réponses"
+msgstr "Afficher les réponses pour"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
@@ -653,7 +635,7 @@ msgstr "Suppression d'une liste"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer cette liste ?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
@@ -684,20 +666,16 @@ msgstr[0] "La personne %1 parle."
 msgstr[1] "%1 personnes discutent."
 
 #: content/ui/ExplorePage.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Tendance"
+msgstr "Aucun message populaire"
 
 #: content/ui/ExplorePage.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Tendance"
+msgstr "Aucune étiquette populaire"
 
 #: content/ui/LanguageSelector.qml:22
 #, kde-format
@@ -773,14 +751,12 @@ msgstr "Connexion"
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"Impossible de contacter le serveur : %1. Veuillez vérifier votre "
-"configuration."
+"Impossible de contacter le serveur : %1. Veuillez vérifier la configuration "
+"de votre serveur mandataire."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -800,8 +776,7 @@ msgstr "Connexion"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
 #: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
+#, kde-format
 msgid "Server URL:"
 msgstr "URL du serveur :"
 
@@ -817,16 +792,13 @@ msgid "Enable moderation tools"
 msgstr "Activer les outils de modération"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
-"Permettre à Tokodon d'accéder aux outils de modération.Essayez de désactiver "
-"cela si vous avez du mal à vous connecter à votre serveur."
+"Permettre à Tokodon d'accéder aux outils de modération. Veuillez essayez de "
+"désactiver ceci si vous avez du mal à vous connecter."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -835,10 +807,9 @@ msgid "Continue"
 msgstr "Continuer"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Server URL must not be empty."
+#, kde-format
 msgid "Server URL must not be empty!"
-msgstr "L'URL du serveur ne doit pas être vide."
+msgstr "L'URL du serveur ne doit pas être vide !"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -979,11 +950,10 @@ msgid "Favorite As…"
 msgstr "Mettre en signet comme..."
 
 #: content/ui/Main.qml:100
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Stimulations"
+msgstr "Dynamiser comme..."
 
 #: content/ui/Main.qml:102
 #, kde-format
@@ -1449,12 +1419,14 @@ msgstr "Rejeter des rapports"
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignorer tous les rapports provenant de ce domaine. Non pertinent pour les "
+"suspensions."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Masquer un nom de domaine"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -1463,6 +1435,8 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Masquer partiellement le nom de domaine dans la liste si des limitations de "
+"publications sur la liste de domaines sont activées."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:177
@@ -1713,7 +1687,7 @@ msgstr "Geler"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Sensible à la force"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:51
 #, kde-format
@@ -1889,11 +1863,10 @@ msgid "Not Confirmed"
 msgstr "Non confirmé"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:428
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Éditeur de comptes"
+msgstr "Localisation du compte"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:436
 #, kde-format
@@ -1947,7 +1920,7 @@ msgstr "Annuler la suspension"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:559
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Annuler la sensibilisé à la force"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:570
 #, kde-format
@@ -2258,7 +2231,7 @@ msgstr "Personne"
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Dé-assigner"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:290
 #, kde-format
@@ -2319,17 +2292,17 @@ msgstr "Catégorie modifiée à « Pourriel »"
 #: content/ui/ModerationTools/MainReportToolPage.qml:357
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Le contenu viole une ou plusieurs règles du serveur."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:361
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Catégorie modifiée suite à une violation de règle"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:404
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Pour fournir plus d'informations, %1 a écrit :"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #, kde-format
@@ -2347,6 +2320,7 @@ msgstr "Contenu signalé"
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"Le contenu offensant sera cité dans la communication avec le compte signalé."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
 #: content/ui/StatusDelegate/StatusDelegate.qml:289
@@ -2521,16 +2495,14 @@ msgid "View %1's Profile"
 msgstr "Afficher le profil de %1"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
+#, kde-format
 msgid "%1 users favorited your post"
-msgstr "%1 a favorisé votre message"
+msgstr "%1 utilisateurs ont mis votre message en signet"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgid "%1 boosted your post"
+#, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 a mis en avant votre message"
+msgstr "%1 utilisateurs ont donné un coup de pouce à votre message"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
@@ -2624,7 +2596,7 @@ msgstr "Se déconnecter"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Voulez-vous vraiment vous déconnecter de %1 ?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:113
 #, kde-format
@@ -2649,10 +2621,9 @@ msgid "Posts"
 msgstr "Messages"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Rechercher des personnes, des étiquettes et des messages"
+msgstr "Afficher le nombre de réponses, les signets et les coups de pouce"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -2676,10 +2647,9 @@ msgid "Media"
 msgstr "Média"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Rogner les images dans la frise chronologique pour le ration 16 : 9"
+msgstr "Rogner les images dans la frise chronologique au ration 16 : 9"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
@@ -2729,10 +2699,9 @@ msgid "Apply"
 msgstr "Appliquer"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Prendre des mesures à l'encontre de ce compte"
+msgstr "Activer les notifications pour ce compte"
 
 #: content/ui/Settings/NotificationsPage.qml:29
 #, kde-format
@@ -2775,10 +2744,9 @@ msgid "New followers"
 msgstr "Nouveaux suiveurs"
 
 #: content/ui/Settings/NotificationsPage.qml:95
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Aucune demande de suivi"
+msgstr "Nouvelles requêtes de suivi"
 
 #: content/ui/Settings/NotificationsPage.qml:107
 #, kde-format
@@ -2839,16 +2807,16 @@ msgid "Avatar"
 msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:251
-#, fuzzy, kde-format
-#| msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+#, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr "PNG, GIF or JPG. Au moins 2 Mo. Sera réduite à 1500 x 500 px"
+msgstr ""
+"Formats « PNG », « GIF » ou « JPG ». Au moins 2 Mo. Sera réduit à 400 x 400 "
+"px"
 
 #: content/ui/Settings/ProfileEditor.qml:279
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "Demandes de suivi requises"
+msgstr "Exiger l’approbation des demandes de suivi"
 
 #: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
@@ -3117,7 +3085,7 @@ msgstr "Annuler le brouillon"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer votre brouillon ?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
 #: content/ui/StatusComposer/StatusComposer.qml:357
@@ -3362,12 +3330,11 @@ msgstr[0] "Favori %1"
 msgstr[1] "%1 favoris"
 
 #: content/ui/StatusDelegate/InformationBar.qml:124
-#, fuzzy, kde-format
-#| msgid "%1 boosted"
+#, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
-msgstr[0] "mis en avant par %1"
-msgstr[1] "mis en avant par %1"
+msgstr[0] "Coup de pouce %1"
+msgstr[1] "%1 coups de pouce"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:19
 #, kde-format
@@ -3416,11 +3383,10 @@ msgid "Favorite as…"
 msgstr "Mettre en signet comme..."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:89
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Stimulations"
+msgstr "Donner un coup de pouce comme..."
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
@@ -3441,11 +3407,10 @@ msgid "Bookmark"
 msgstr "Signet"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr "Afficher un profil"
+msgstr "Détacher du profil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
@@ -3454,11 +3419,10 @@ msgid "Pin on Profile"
 msgstr "Épingler au profil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:124
-#, fuzzy, kde-format
-#| msgid "Unmute"
+#, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "Remettre le son"
+msgstr "Remettre le son pour @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, kde-format
@@ -3495,11 +3459,9 @@ msgid "Normal Status"
 msgstr "État normal"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "État de connexion"
+msgstr "État de divulgâcheur"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:135
 #, kde-format
@@ -3527,14 +3489,13 @@ msgstr "Supprimer un message"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer ce message ?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:227
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Supprimer et reformuler"
+msgstr "Supprimer et re-écrire un message"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:228
 #, kde-format
@@ -3543,6 +3504,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Voulez-vous vraiment ré-écrire ce message ? Cela supprimera le message "
+"original."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:384
 #, kde-format
@@ -3642,10 +3605,9 @@ msgid "Filters"
 msgstr "Filtres"
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "Arrêter de masquer les encouragements de %1"
+msgstr "Afficher les coups de pouce"
 
 #: content/ui/TimelinePage.qml:86
 #, kde-format
@@ -3710,10 +3672,9 @@ msgid "Members of the list"
 msgstr "Membres de la liste"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "Any followed users"
-msgstr "Aucun abonné(e)"
+msgstr "Aucun utilisateur suiveur"
 
 #: editor/polltimemodel.cpp:12
 #, kde-format
@@ -3816,16 +3777,14 @@ msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
 #: main.cpp:133
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "Un client pour le réseau social décentralisé : mastodon."
+msgstr "Un client pour des réseaux sociaux décentralisés comme Mastodon."
 
 #: main.cpp:134
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Prend en charge un thème « web+ap: URL »"
+msgstr "Prend en charge les thèmes d'URL « https » et « web+ap »"
 
 #: main.cpp:136
 #, kde-format
