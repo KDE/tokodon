@@ -5,9 +5,9 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-29 02:36+0000\n"
-"PO-Revision-Date: 2023-11-13 19:18+0100\n"
+"PO-Revision-Date: 2023-11-21 22:18+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,11 +131,10 @@ msgid "Blocked Accounts"
 msgstr "Comptes bloqués"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Accounts"
-msgstr "Comptes"
+msgstr "Comptes publiés"
 
 #: account/socialgraphmodel.cpp:48
 #, kde-format
@@ -163,10 +162,9 @@ msgid "No blocked accounts"
 msgstr "Aucun compte bloqué"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgid "No featured accounts"
-msgstr "Impossible de présenter un compte"
+msgstr "Aucun compte publié"
 
 #: admin/accounttoolmodel.cpp:299
 #, kde-format
@@ -194,16 +192,14 @@ msgid "Could not unsilence the account"
 msgstr "Impossible de sortir un un compte du mode pause"
 
 #: admin/accounttoolmodel.cpp:304
-#, fuzzy, kde-format
-#| msgid "Could not unmute account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Impossible de sortir un un compte du mode pause"
+msgstr "Impossible de retirer le compte"
 
 #: admin/accounttoolmodel.cpp:305
-#, fuzzy, kde-format
-#| msgid "Could not mute account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Impossible de mettre un compte en pause"
+msgstr "Impossible de marquer ce compte comme non sensible"
 
 #: admin/adminaccountinfo.cpp:20
 #, kde-format
@@ -361,10 +357,9 @@ msgid "Blocked Accounts"
 msgstr "Comptes bloqués"
 
 #: content/ui/AccountInfo.qml:272
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Featured Accounts"
-msgstr "Comptes"
+msgstr "Comptes publiés"
 
 #: content/ui/AccountInfo.qml:278
 #, kde-format
@@ -512,18 +507,14 @@ msgid "Post"
 msgstr "Message"
 
 #: content/ui/ExplorePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Posts"
-msgstr "Tendance"
+msgstr "Messages populaires"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Trending"
+#, kde-format
 msgid "Trending Tags"
-msgstr "Tendance"
+msgstr "Étiquettes populaires"
 
 #: content/ui/ExplorePage.qml:149
 #, kde-format
@@ -916,12 +907,14 @@ msgstr "Rejeter des rapports"
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignorer tous les rapports provenant de ce domaine. Non pertinent pour les "
+"suspensions."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:119
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Masquer un nom de domaine"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:120
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -930,6 +923,8 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Masquer partiellement le nom de domaine dans la liste si des limitations de "
+"publications sur la liste de domaines sont activées."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:132
 #: content/ui/ModerationTools/FederationToolPage.qml:163
@@ -1035,7 +1030,7 @@ msgstr "Geler"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Sensible à la force"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -1210,11 +1205,10 @@ msgid "Not Confirmed"
 msgstr "Non confirmé"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:433
-#, fuzzy, kde-format
-#| msgid "Account editor"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Éditeur de comptes"
+msgstr "Localisation du compte"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:441
 #, kde-format
@@ -1268,7 +1262,7 @@ msgstr "Annuler la suspension"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:565
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Annuler la sensibilisé à la force"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:576
 #, kde-format
@@ -1612,10 +1606,11 @@ msgid "Avatar"
 msgstr "Avatar"
 
 #: content/ui/Settings/ProfileEditor.qml:243
-#, fuzzy, kde-format
-#| msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
+#, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr "PNG, GIF or JPG. Au moins 2 Mo. Sera réduite à 1500 x 500 px"
+msgstr ""
+"Formats « PNG », « GIF » ou « JPG ». Au moins 2 Mo. Sera réduit à 400 x 400 "
+"px"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
@@ -2010,10 +2005,9 @@ msgid "Bookmark"
 msgstr "Signet"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "Unpin on profile"
-msgstr "Afficher un profil"
+msgstr "Détacher du profil"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:57
 #, kde-format
