@@ -42,7 +42,7 @@ QQC2.TextArea {
     activeFocusOnTab: false
     readOnly: true
     background: null
-    wrapMode: Text.Wrap
+    wrapMode: TextEdit.Wrap
     selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
     onLinkActivated: (link) => applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor

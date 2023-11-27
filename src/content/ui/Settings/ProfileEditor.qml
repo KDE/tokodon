@@ -134,6 +134,7 @@ FormCard.FormCardPage {
                 QQC2.TextArea {
                     id: bioField
                     Layout.fillWidth: true
+                    wrapMode: TextEdit.Wrap
                     text: backend.note
                     onTextChanged: backend.note = text
                     activeFocusOnTab: false

@@ -239,7 +239,7 @@ Kirigami.ScrollablePage {
                         QQC2.Pane {
                             contentItem: QQC2.Label {
                                 text: modelData.name
-                                wrapMode: Text.WordWrap
+                                wrapMode: TextEdit.Wrap
                             }
                             Layout.minimumWidth: Kirigami.Units.gridUnit * 10
                             Layout.maximumWidth: Kirigami.Units.gridUnit * 10
@@ -254,7 +254,7 @@ Kirigami.ScrollablePage {
                             Layout.fillWidth: true
                             Layout.fillHeight: true
                             readOnly: true
-                            wrapMode: Text.WordWrap
+                            wrapMode: TextEdit.WordWrap
                             background: Rectangle {
                                 color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : Kirigami.Theme.backgroundColor
                             }

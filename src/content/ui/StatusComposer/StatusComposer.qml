@@ -159,7 +159,7 @@ Kirigami.ScrollablePage {
             id: textArea
             placeholderText: i18n("What's new?")
             text: root.backend.status
-            wrapMode: Text.Wrap
+            wrapMode: TextEdit.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredHeight: Math.max(implicitHeight, Kirigami.Units.gridUnit * 12) + actions.implicitHeight

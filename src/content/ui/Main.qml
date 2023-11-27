@@ -693,6 +693,7 @@ Kirigami.ApplicationWindow {
                 id: textArea
 
                 readOnly: true
+                wrapMode: TextEdit.Wrap
 
                 Kirigami.SpellCheck.enabled: false
             }

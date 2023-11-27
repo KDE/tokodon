@@ -153,7 +153,7 @@ Kirigami.ScrollablePage {
                 QQC2.Pane {
                     contentItem: QQC2.Label {
                         text: i18nc("@info Bio label of account.", "Bio")
-                        wrapMode: Text.WordWrap
+                        wrapMode: Text.Wrap
                     }
                     Layout.minimumWidth: Kirigami.Units.gridUnit * 10
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 10
@@ -178,7 +178,7 @@ Kirigami.ScrollablePage {
                     bottomPadding: 0
                     topPadding: 0
                     background: null
-                    wrapMode: Text.WordWrap
+                    wrapMode: TextEdit.Wrap
                     onLinkActivated: Qt.openUrlExternally(link)
                     MouseArea {
                         anchors.fill: parent
@@ -313,7 +313,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 text: i18n("The reason this account and/or content was reported will be cited in communication with the reported account")
                 Layout.fillWidth: true
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 Layout.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
                 Layout.rightMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
                 Layout.bottomMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
@@ -496,7 +496,7 @@ Kirigami.ScrollablePage {
                     }
 
                     RowLayout {
-                        visible:true
+                        visible: true
                         QQC2.Label {
                             text: modelData.absoluteTime
                             elide: Text.ElideRight

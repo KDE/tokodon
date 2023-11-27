@@ -173,12 +173,12 @@ TimelinePage {
                                     maximumLineCount: 2
                                     wrapMode: Text.Wrap
                                     elide: Text.ElideRight
-
                                 }
 
                                 QQC2.TextArea {
                                     text: "@" + model.identity.account
                                     textFormat: TextEdit.PlainText
+                                    wrapMode: TextEdit.Wrap
                                     readOnly: true
                                     background: null
                                     font.pixelSize: 18
@@ -415,7 +415,7 @@ TimelinePage {
 
                                     QQC2.Label {
                                         text: modelData.name
-                                        wrapMode: Text.WordWrap
+                                        wrapMode: Text.Wrap
 
                                         topPadding: Kirigami.Units.smallSpacing
                                         bottomPadding: Kirigami.Units.smallSpacing
@@ -427,8 +427,8 @@ TimelinePage {
                                     QQC2.TextArea {
                                         Layout.fillWidth: true
                                         readOnly: true
-                                        wrapMode: Text.WordWrap
                                         background: null
+                                        wrapMode: TextEdit.Wrap
                                         textFormat: TextEdit.RichText
                                         text: modelData.value
                                         onLinkActivated: Qt.openUrlExternally(link)
@@ -484,6 +484,7 @@ TimelinePage {
                                 background: null
                                 placeholderText: i18n("Click to add a note")
                                 textFormat: TextEdit.PlainText
+                                wrapMode: TextEdit.Wrap
                                 leftPadding: 0
                                 rightPadding: 0
                                 text: accountInfo.model.identity.relationship ? accountInfo.model.identity.relationship.note : ''
@@ -546,7 +547,7 @@ TimelinePage {
                             bottomPadding: 0
                             topPadding: 0
                             background: null
-                            wrapMode: Text.WordWrap
+                            wrapMode: TextEdit.Wrap
                             onLinkActivated: (link) => applicationWindow().navigateLink(link, true)
                             onHoveredLinkChanged: if (hoveredLink.length > 0) {
                                 applicationWindow().hoverLinkIndicator.text = hoveredLink;

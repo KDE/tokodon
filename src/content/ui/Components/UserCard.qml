@@ -57,7 +57,7 @@ Kirigami.AbstractCard {
                 textFormat: TextEdit.RichText
                 readOnly: true
                 background: null
-                wrapMode: Text.Wrap
+                wrapMode: TextEdit.Wrap
                 selectByMouse: !Kirigami.Settings.isMobile
                 onLinkActivated: {
                     // Tag has a complete url in the form of https://domain.tld/tags/tag
