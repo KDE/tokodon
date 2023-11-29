@@ -94,7 +94,7 @@ ColumnLayout {
             text: modelData ? modelData.emoji : ""
             QQC2.ToolTip.text: modelData ? modelData.name : ""
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            QQC2.ToolTip.visible: hovered
+            QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text !== ""
             onClicked: {
                 categories.currentIndex = index;
                 categories.focus = true;

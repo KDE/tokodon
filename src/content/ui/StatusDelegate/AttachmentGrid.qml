@@ -168,7 +168,7 @@ QQC2.Control {
                                 checkable: false
                                 text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
                                 closable: false
-                                visible: modelData.caption.length !== 0
+                                visible: modelData.caption !== ""
                             }
 
                             HoverHandler {
@@ -185,7 +185,7 @@ QQC2.Control {
                             }
 
                             QQC2.ToolTip.text: modelData.caption
-                            QQC2.ToolTip.visible: hover.hovered
+                            QQC2.ToolTip.visible: hover.hovered && QQC2.ToolTip.text !== ""
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         }
                     }

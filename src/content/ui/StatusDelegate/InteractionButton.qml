@@ -23,7 +23,7 @@ QQC2.AbstractButton {
     activeFocusOnTab: interactable
 
     QQC2.ToolTip.text: control.tooltip
-    QQC2.ToolTip.visible: hovered
+    QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text !== ""
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Accessible.name: tooltip

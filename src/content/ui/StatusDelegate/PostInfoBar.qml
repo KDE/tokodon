@@ -39,7 +39,7 @@ InlineIdentityInfo {
         }
 
         QQC2.ToolTip.text: root.absoluteTime
-        QQC2.ToolTip.visible: hover.hovered
+        QQC2.ToolTip.visible: hover.hovered && QQC2.ToolTip.text !== ""
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
         Layout.alignment: Qt.AlignBaseline

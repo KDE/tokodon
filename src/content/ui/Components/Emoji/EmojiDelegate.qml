@@ -16,7 +16,7 @@ Delegates.RoundedItemDelegate {
     property bool isImage: false
 
     QQC2.ToolTip.text: emojiDelegate.name
-    QQC2.ToolTip.visible: hovered && emojiDelegate.name !== ""
+    QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text !== ""
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Accessible.name: name
