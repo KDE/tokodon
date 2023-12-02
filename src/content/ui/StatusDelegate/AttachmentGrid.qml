@@ -348,6 +348,8 @@ QQC2.Control {
         text: i18nc("@action:button", "Hide Media")
         display: QQC2.Button.IconOnly
 
+        implicitWidth: implicitHeight
+
         QQC2.ToolTip.text: text
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
