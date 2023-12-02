@@ -393,6 +393,8 @@ TimelinePage {
                 }
 
                 FormCard.FormCard {
+                    Layout.topMargin: bioCard.cardWidthRestricted ? 0 : Kirigami.Units.largeSpacing
+
                     visible: accountInfo.model.identity.fields.length > 0
 
                     Repeater {
