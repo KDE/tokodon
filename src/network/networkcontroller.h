@@ -13,6 +13,8 @@ class NetworkController : public QObject
     QML_NAMED_ELEMENT(Controller)
     QML_SINGLETON
 
+    Q_PROPERTY(bool pushNotificationsAvailable READ pushNotificationsAvailable CONSTANT)
+
 public:
     static NetworkController *create(QQmlEngine *, QJSEngine *)
     {
@@ -29,6 +31,8 @@ public:
     void startComposing(const QString &text);
 
     void requestRemoteObject(AbstractAccount *account, const QString &url, std::function<void(QNetworkReply *)> callback);
+
+    bool pushNotificationsAvailable() const;
 
     QString endpoint;
 
