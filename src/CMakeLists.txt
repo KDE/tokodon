@@ -453,6 +453,15 @@ if(ANDROID)
             "note"
             "view-list-text"
             "view-filter"
+            "preferences-desktop-theme-global"
+            "preferences-desktop-notification"
+            "preferences-system-users"
+            "kde"
+            "cloud-upload"
+            "expand"
+            "view-web-browser-dom-tree"
+            "window"
+            "emblem-shared-symbolic"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
