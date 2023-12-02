@@ -470,6 +470,8 @@ if(ANDROID)
             "object-rotate-right"
             "add-subtitle"
             "unlock"
+            "dialog-warning-symbolic"
+            "list-remove-user"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
