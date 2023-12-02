@@ -469,6 +469,7 @@ if(ANDROID)
             "object-rotate-left"
             "object-rotate-right"
             "add-subtitle"
+            "unlock"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
