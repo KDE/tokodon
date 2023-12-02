@@ -579,8 +579,8 @@ TimelinePage {
                             left: parent.left
                             right: parent.right
                             top: parent.top
-                            leftMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : 0
-                            rightMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : 0
+                            leftMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
+                            rightMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
                         }
 
                         Kirigami.Chip {
