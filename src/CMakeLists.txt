@@ -462,6 +462,8 @@ if(ANDROID)
             "view-web-browser-dom-tree"
             "window"
             "emblem-shared-symbolic"
+            "data-warning"
+            "arrow-up"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
