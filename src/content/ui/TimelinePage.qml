@@ -236,7 +236,16 @@ Kirigami.ScrollablePage {
         }
 
         Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
+            anchors {
+                horizontalCenter: listview.horizontalCenter
+                top: listview.top
+                topMargin: {
+                    let height = listview.height;
+                    let y = listview.headerItem ? listview.headerItem.height : 0;
+
+                    return ((height - y) / 2) + y;
+                }
+            }
             text: i18n("No posts")
             visible: !listview.model.loading && listview.count === 0
             width: parent.width - Kirigami.Units.gridUnit * 4
