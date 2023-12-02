@@ -464,6 +464,7 @@ if(ANDROID)
             "emblem-shared-symbolic"
             "data-warning"
             "arrow-up"
+            "arrow-down"
             "zoom-out"
             "zoom-in"
             "object-rotate-left"
