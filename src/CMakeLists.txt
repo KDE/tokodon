@@ -281,7 +281,7 @@ qt_target_qml_sources(tokodon_static
 if (NOT ANDROID)
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/actions)
 else()
-    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/)
 endif()
 
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/search)
