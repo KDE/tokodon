@@ -35,12 +35,12 @@ QQC2.AbstractButton {
         }
     }
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Button
-    Kirigami.Theme.inherit: false
-
     background: Rectangle {
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
+
         radius: Kirigami.Units.mediumSpacing
-        color: Kirigami.Theme.backgroundColor
+        color: Kirigami.Theme.alternateBackgroundColor
         border {
             width: root.visualFocus ? 2 : 0
             color: root.visualFocus ? Kirigami.Theme.focusColor : 'transparent'
