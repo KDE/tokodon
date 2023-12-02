@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
         }
     });
     // TODO: restore once qqc2-breeze-style works again
-    // QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
