@@ -625,6 +625,9 @@ TimelinePage {
                 QQC2.TabBar {
                     id: bar
 
+                    Kirigami.Theme.inherit: false
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+
                     // Hack to disable the qqc2-desktop-style scrolling behavior.
                     // This bar is on a scrollable page, you will eventually run into this tab bar which is annoying.
                     background: null
@@ -651,6 +654,9 @@ TimelinePage {
                 }
                 Rectangle {
                     Layout.fillWidth: true
+
+                    Kirigami.Theme.inherit: false
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
 
                     enabled: !accountInfo.model.loading
 
