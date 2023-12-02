@@ -130,6 +130,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
         model: root.model
+        reuseItems: true
 
         Component {
             id: fullScreenImage
