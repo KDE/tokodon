@@ -450,6 +450,9 @@ if(ANDROID)
             "edit-entry"
             "edit-cut"
             "system-switch-user"
+            "note"
+            "view-list-text"
+            "view-filter"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
