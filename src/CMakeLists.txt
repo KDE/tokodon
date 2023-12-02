@@ -464,6 +464,11 @@ if(ANDROID)
             "emblem-shared-symbolic"
             "data-warning"
             "arrow-up"
+            "zoom-out"
+            "zoom-in"
+            "object-rotate-left"
+            "object-rotate-right"
+            "add-subtitle"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
