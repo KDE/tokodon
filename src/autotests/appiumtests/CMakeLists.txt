@@ -23,10 +23,6 @@ add_test(
         NAME TimelineTest
         COMMAND ${SELENIUM_RUN} ${CMAKE_CURRENT_SOURCE_DIR}/TimelineTest.py $<TARGET_FILE:tokodon-offline>
 )
-if ("$ENV{KDECI_BUILD}" STREQUAL "TRUE")
-    set_tests_properties(SearchboxTest PROPERTIES TIMEOUT 300 ENVIRONMENT "TEST_WITH_KWIN_WAYLAND=0;USE_CUSTOM_BUS=1;GDK_BACKEND=x11")
-    set_tests_properties(TimelineTest PROPERTIES TIMEOUT 300 ENVIRONMENT "TEST_WITH_KWIN_WAYLAND=0;USE_CUSTOM_BUS=1;GDK_BACKEND=x11")
-else ()
-    set_tests_properties(SearchboxTest PROPERTIES TIMEOUT 300)
-    set_tests_properties(TimelineTest PROPERTIES TIMEOUT 300)
-endif ()
+
+set_tests_properties(SearchboxTest PROPERTIES TIMEOUT 300)
+set_tests_properties(TimelineTest PROPERTIES TIMEOUT 300)
