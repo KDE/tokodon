@@ -131,8 +131,6 @@ Kirigami.ScrollablePage {
         id: listview
         model: root.model
 
-        // HACK: Temporary workaround to help with performance issues
-        cacheBuffer: 100
         Component {
             id: fullScreenImage
             FullScreenImage {}
