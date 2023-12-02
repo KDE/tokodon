@@ -284,6 +284,11 @@ void AccountManager::loadFromSettings()
         if (id.contains('@'_L1)) {
             auto accountConfig = new AccountConfig{id};
 
+            if (accountConfig->clientId().isEmpty() || accountConfig->instanceUri().isEmpty()) {
+                accountConfig->deleteLater();
+                continue;
+            }
+
             const int index = m_accountStatus.size();
             m_accountStatus.push_back(AccountStatus::NotLoaded);
             m_accountStatusStrings.push_back({});
