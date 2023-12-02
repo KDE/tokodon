@@ -17,7 +17,7 @@ private Q_SLOTS:
         QCOMPARE(pollTimeModel.data(pollTimeModel.index(0, 0), PollTimeModel::TimeRole).toInt(), 300);
         QCOMPARE(pollTimeModel.data(pollTimeModel.index(0, 0), PollTimeModel::TextRole).toString(), QStringLiteral("5 minutes"));
 
-        QCOMPARE(pollTimeModel.data(pollTimeModel.index(3, 0), PollTimeModel::TimeRole).toInt(), 26000);
+        QCOMPARE(pollTimeModel.data(pollTimeModel.index(3, 0), PollTimeModel::TimeRole).toInt(), 21600);
         QCOMPARE(pollTimeModel.data(pollTimeModel.index(3, 0), PollTimeModel::TextRole).toString(), QStringLiteral("6 hours"));
 
         QCOMPARE(pollTimeModel.data(pollTimeModel.index(7, 0), PollTimeModel::TimeRole).toInt(), 604800);

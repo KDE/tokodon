@@ -8,15 +8,17 @@
 PollTimeModel::PollTimeModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    using namespace std::chrono_literals;
+
     m_times = {
-        {i18nc("@item:inlistbox Poll expire times", "5 minutes"), 300},
-        {i18nc("@item:inlistbox Poll expire times", "30 minutes"), 1800},
-        {i18nc("@item:inlistbox Poll expire times", "1 hour"), 3600},
-        {i18nc("@item:inlistbox Poll expire times", "6 hours"), 26000},
-        {i18nc("@item:inlistbox Poll expire times", "12 hours"), 43200},
-        {i18nc("@item:inlistbox Poll expire times", "1 day"), 86400},
-        {i18nc("@item:inlistbox Poll expire times", "3 days"), 259200},
-        {i18nc("@item:inlistbox Poll expire times", "7 days"), 604800},
+        {i18nc("@item:inlistbox Poll expire times", "5 minutes"), std::chrono::seconds{5min}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "30 minutes"), std::chrono::seconds{30min}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "1 hour"), std::chrono::seconds{1h}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "6 hours"), std::chrono::seconds{6h}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "12 hours"), std::chrono::seconds{12h}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "1 day"), std::chrono::seconds{24h}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "3 days"), std::chrono::seconds{72h}.count()},
+        {i18nc("@item:inlistbox Poll expire times", "7 days"), std::chrono::seconds{168h}.count()},
     };
 }
 
