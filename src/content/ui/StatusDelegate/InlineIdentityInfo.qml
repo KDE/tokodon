@@ -58,6 +58,9 @@ RowLayout {
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight
             textFormat: Text.RichText
+            maximumLineCount: 1
+
+            Layout.fillWidth: true
 
             MouseArea {
                 anchors.fill: parent
@@ -72,8 +75,9 @@ RowLayout {
             color: Kirigami.Theme.disabledTextColor
             text: `@${root.identity.account}`
             verticalAlignment: Text.AlignTop
+            maximumLineCount: 1
 
-            width: parent.width
+            Layout.fillWidth: true
 
             MouseArea {
                 anchors.fill: parent
@@ -89,6 +93,9 @@ RowLayout {
             type: Kirigami.Heading.Type.Secondary
             verticalAlignment: Text.AlignTop
             elide: Text.ElideRight
+            maximumLineCount: 1
+
+            Layout.fillWidth: true
         }
     }
 }
