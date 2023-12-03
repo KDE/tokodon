@@ -93,7 +93,7 @@ ColumnLayout {
     }
 
     QQC2.Button {
-        visible: index !== undefined && !root.showResults
+        visible: !root.showResults
         text: i18n("Vote")
         enabled: pollGroup.checkState !== Qt.Unchecked
         onClicked: {
