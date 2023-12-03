@@ -275,8 +275,10 @@ QQC2.ItemDelegate {
             QQC2.Control {
                 Layout.fillWidth: true
                 visible: root.spoilerText.length !== 0
+                Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
                 contentItem: RowLayout {
-                    spacing: 0
+                    id: warningLayout
+                    spacing: Kirigami.Units.largeSpacing
 
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
