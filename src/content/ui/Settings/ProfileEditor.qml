@@ -335,13 +335,13 @@ FormCard.FormCardPage {
             valueRole: "display"
             model: ListModel {
                 ListElement {
-                    display: "Public"
+                    display: i18nc("Default post visibility rule", "Public")
                 }
                 ListElement {
-                    display: "Unlisted"
+                    display: i18nc("Default post visibility rule", "Unlisted")
                 }
                 ListElement {
-                    display: "Private"
+                    display: i18nc("Default post visibility rule", "Private")
                 }
             }
             Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
