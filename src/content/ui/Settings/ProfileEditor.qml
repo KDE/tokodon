@@ -331,19 +331,11 @@ FormCard.FormCardPage {
             Layout.fillWidth: true
             id: postVisibility
             text: i18nc("@label Account preferences", "Default post visibility")
-            textRole: "display"
-            valueRole: "display"
-            model: ListModel {
-                ListElement {
-                    display: "Public"
-                }
-                ListElement {
-                    display: "Unlisted"
-                }
-                ListElement {
-                    display: "Private"
-                }
-            }
+            model: [
+                i18nc("@item:inlistbox Default post visibility rule", "Public"),
+                i18nc("@item:inlistbox Default post visibility rule", "Unlisted"),
+                i18nc("@item:inlistbox Default post visibility rule", "Private")
+            ]
             Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
             onCurrentValueChanged: AccountManager.selectedAccount.preferences.defaultVisibility = currentIndex
         }
