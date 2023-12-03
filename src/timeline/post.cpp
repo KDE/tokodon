@@ -143,9 +143,17 @@ QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorI
 
     for (const auto &tag : tags) {
         const auto tagObj = tag.toObject();
-        content = content.replace(baseUrl + QStringLiteral("/tags/") + tagObj["name"_L1].toString(),
-                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                  Qt::CaseInsensitive);
+
+        const QList<QString> tagFormats = {
+            QStringLiteral("tags"), // Mastodon
+            QStringLiteral("tag") // Akkoma/Pleroma
+        };
+
+        for (const QString &tagFormat : tagFormats) {
+            content = content.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
+                                      QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
+                                      Qt::CaseInsensitive);
+        }
     }
 
     const auto mentions = obj["mentions"_L1].toArray();
