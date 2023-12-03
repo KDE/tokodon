@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import Qt5Compat.GraphicalEffects
 
 import "../Components"
@@ -32,6 +33,8 @@ QQC2.Dialog {
 
     onApplied: root.close()
     onRejected: root.close()
+
+    background: Components.DialogRoundedBackground {}
 
     contentItem: RowLayout {
         id: layout
@@ -90,7 +93,7 @@ QQC2.Dialog {
             Layout.fillHeight: true
 
             Kirigami.Heading {
-                text: i18nc("@info:label Alternate text or description of the imaage", "Description")
+                text: i18nc("@title:group Alternate text or description of the image", "Description")
                 level: 2
                 Layout.fillWidth: true
             }
@@ -108,7 +111,7 @@ QQC2.Dialog {
             Layout.fillHeight: true
 
             Kirigami.Heading {
-                text: i18n("Focal point")
+                text: i18nc("@title:group", "Focal point")
                 level: 2
                 Layout.fillWidth: true
             }
@@ -132,7 +135,7 @@ QQC2.Dialog {
                             anchors.centerIn: parent
                             width: imageContainer.width
                             height: imageContainer.height
-                            radius: Kirigami.Units.mediumSpacing
+                            radius: 3 // same as in breeze
                         }
                     }
                 }
