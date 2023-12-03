@@ -7,6 +7,14 @@
 #ifdef Q_OS_ANDROID
 #include "utils/androidutils.h"
 #include <QGuiApplication>
+#include <QJniObject>
+
+// WindowManager.LayoutParams
+#define FLAG_TRANSLUCENT_STATUS 0x04000000
+#define FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS 0x80000000
+// View
+#define SYSTEM_UI_FLAG_LIGHT_STATUS_BAR 0x00002000
+
 #else
 #include <QApplication>
 #endif
@@ -77,6 +85,15 @@ int main(int argc, char *argv[])
         }
     });
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+
+    QNativeInterface::QAndroidApplication::runOnAndroidMainThread([=]() {
+        QJniObject activity = QNativeInterface::QAndroidApplication::context();
+        QJniObject window = activity.callObjectMethod("getWindow", "()Landroid/view/Window;");
+        window.callMethod<void>("addFlags", "(I)V", FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.callMethod<void>("clearFlags", "(I)V", FLAG_TRANSLUCENT_STATUS);
+        window.callMethod<void>("setStatusBarColor", "(I)V", QColor("#2196f3").rgba());
+        window.callMethod<void>("setNavigationBarColor", "(I)V", QColor("#2196f3").rgba());
+    });
 #else
     QApplication app(argc, argv);
     // Default to org.kde.desktop style unless the user forces another style
