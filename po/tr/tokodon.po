@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 01:35+0000\n"
-"PO-Revision-Date: 2023-11-28 21:38+0300\n"
+"POT-Creation-Date: 2023-12-04 01:37+0000\n"
+"PO-Revision-Date: 2023-12-03 13:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -301,7 +301,7 @@ msgstr "Onaylanmadı"
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr "Uygulanan Sınırlama Yok"
+msgstr "Uygulanan sınırlama yok"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
@@ -568,7 +568,7 @@ msgstr "Sohbetler"
 #: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
-msgstr "Sohbet Yok"
+msgstr "Sohbet yok"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -686,7 +686,7 @@ msgstr "Dil Seç"
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: content/ui/ListPage.qml:19
 #, kde-format
@@ -2325,19 +2325,19 @@ msgstr ""
 "yapılacaktır"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
-#: content/ui/StatusDelegate/StatusDelegate.qml:289
+#: content/ui/StatusDelegate/StatusDelegate.qml:291
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>İçerik Uyarısı</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show Less"
 msgstr "Daha Az Göster"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show More"
 msgstr "Daha Çok Göster"
@@ -2695,7 +2695,7 @@ msgid "User"
 msgstr "Kullanıcı"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:367
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Apply"
 msgstr "Uygula"
@@ -2846,7 +2846,28 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Öntanımlı gönderi görünürlüğü"
 
-#: content/ui/Settings/ProfileEditor.qml:360
+#: content/ui/Settings/ProfileEditor.qml:335
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Public"
+msgstr "Genel"
+
+#: content/ui/Settings/ProfileEditor.qml:336
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Unlisted"
+msgstr "Listelenmemiş"
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Private"
+msgstr "Gizli"
+
+#: content/ui/Settings/ProfileEditor.qml:352
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
@@ -2985,14 +3006,18 @@ msgstr "Reddet"
 msgid "No accounts available"
 msgstr "Kullanılabilir hesap yok"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, kde-format
-msgctxt "@info:label Alternate text or description of the imaage"
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
+#, fuzzy, kde-format
+#| msgctxt "@info:label Alternate text or description of the imaage"
+#| msgid "Description"
+msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Açıklama"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
-#, kde-format
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:114
+#, fuzzy, kde-format
+#| msgid "Focal point"
+msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Odak noktası"
 
@@ -3507,61 +3532,61 @@ msgstr ""
 "Bu gönderiyi yeniden yazmak istediğinizden emin misiniz? Bu, özgün gönderiyi "
 "silecektir."
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:384
+#: content/ui/StatusDelegate/StatusDelegate.qml:386
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:407
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boostla"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Boosted"
 msgstr "Boostlandı"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Boost"
 msgstr "Boostla"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:428
+#: content/ui/StatusDelegate/StatusDelegate.qml:430
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorilere ekle"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, kde-format
 msgid "Favourited"
 msgstr "Favorilendi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, kde-format
 msgid "Favourite"
 msgstr "Favorile"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Yer imini kaldır"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Yer imlerine ekle"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Bookmarked"
 msgstr "Yer İmlerine Eklendi"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Bookmark"
 msgstr "Yer İmlerine Ekle"
@@ -3732,69 +3757,69 @@ msgstr "Bilinmeyen bir hata oluştu."
 msgid "Receiving push notifications"
 msgstr "Anında bildirimleri almak"
 
-#: main.cpp:110
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon İstemcisi"
 
-#: main.cpp:114
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Topluluğu"
 
-#: main.cpp:115
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Bakımcı"
 
-#: main.cpp:120
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Emir SARI"
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: main.cpp:133
+#: main.cpp:127
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Mastodon gibi merkezi olmayan sosyal ağlar için istemci"
 
-#: main.cpp:134
+#: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "HTTPS ve web+ap URL şemasını destekler"
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Bağımsız oluşturucuda bir metin satırı paylaşın."
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "Paylaşılacak metin."
 
-#: main.cpp:140
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Yalnızca içsel kullanım."
@@ -3861,46 +3886,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Popüler"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:391
 #, kde-format
 msgid "in the future"
 msgstr "gelecekte"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1s"
 msgstr "%1 sn"
 
-#: timeline/post.cpp:387
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1m"
 msgstr "%1 dk"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1h"
 msgstr "%1 sa"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:399
 #, kde-format
 msgid "%1d"
 msgstr "%1 g"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:403
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 hafta önce"
 msgstr[1] "%1 hafta önce"
 
-#: timeline/post.cpp:398
+#: timeline/post.cpp:406
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 ay önce"
 msgstr[1] "%1 ay önce"
 
-#: timeline/post.cpp:402
+#: timeline/post.cpp:410
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

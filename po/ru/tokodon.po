@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 01:35+0000\n"
+"POT-Creation-Date: 2023-12-04 01:37+0000\n"
 "PO-Revision-Date: 2023-06-11 14:27+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2458,20 +2458,20 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
-#: content/ui/StatusDelegate/StatusDelegate.qml:289
+#: content/ui/StatusDelegate/StatusDelegate.qml:291
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "Предупреждение о содержимом"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show Less"
 msgstr "Показать меньше"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show More"
 msgstr "Показать больше"
@@ -2860,7 +2860,7 @@ msgid "User"
 msgstr "Пользователь"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:367
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Apply"
 msgstr "Применить"
@@ -3023,7 +3023,28 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:360
+#: content/ui/Settings/ProfileEditor.qml:335
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Public"
+msgstr "Общедоступная запись"
+
+#: content/ui/Settings/ProfileEditor.qml:336
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Unlisted"
+msgstr "Скрытая запись"
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Private"
+msgstr "Только для подписчиков"
+
+#: content/ui/Settings/ProfileEditor.qml:352
 #, kde-format
 msgid "Reset"
 msgstr "Сбросить"
@@ -3166,16 +3187,17 @@ msgstr ""
 msgid "No accounts available"
 msgstr "Недоступно"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
 #, fuzzy, kde-format
 #| msgctxt "The location being downloaded to"
 #| msgid "Destination"
-msgctxt "@info:label Alternate text or description of the imaage"
+msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Назначение"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:114
 #, kde-format
+msgctxt "@title:group"
 msgid "Focal point"
 msgstr ""
 
@@ -3723,33 +3745,33 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:384
+#: content/ui/StatusDelegate/StatusDelegate.qml:386
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Ответить"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:407
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Поделиться"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosted"
 msgstr "Поделиться"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boost"
 msgstr "Поделиться"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:428
+#: content/ui/StatusDelegate/StatusDelegate.qml:430
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3757,36 +3779,36 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Избранное"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourited"
 msgstr "Избранное"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourite"
 msgstr "Избранное"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Удалить закладку"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Добавить в закладки"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
 msgstr "Добавить в закладки"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Bookmark"
 msgstr "Добавить в закладки"
@@ -3967,71 +3989,71 @@ msgstr "Произошла неизвестная ошибка."
 msgid "Receiving push notifications"
 msgstr ""
 
-#: main.cpp:110
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Клиент Mastodon"
 
-#: main.cpp:114
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021—2023; Сообщество KDE, 2021—2023"
 
-#: main.cpp:115
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Сопровождающий"
 
-#: main.cpp:120
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Алевтина Карашокова"
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
-#: main.cpp:133
+#: main.cpp:127
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Клиент децентрализованной социальной сети: mastodon"
 
-#: main.cpp:134
+#: main.cpp:128
 #, fuzzy, kde-format
 #| msgid "Supports web+ap: url scheme"
 msgid "Supports https and web+ap url scheme"
 msgstr "Предусмотрена поддержка схемы URL-адреса web+ap:"
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr ""
 
-#: main.cpp:140
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
@@ -4099,32 +4121,32 @@ msgctxt "@title"
 msgid "Trending"
 msgstr ""
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:391
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1s"
 msgstr ""
 
-#: timeline/post.cpp:387
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1m"
 msgstr ""
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1h"
 msgstr "%1 ч"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:399
 #, kde-format
 msgid "%1d"
 msgstr "%1 д"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:403
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -4133,7 +4155,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: timeline/post.cpp:398
+#: timeline/post.cpp:406
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -4142,7 +4164,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: timeline/post.cpp:402
+#: timeline/post.cpp:410
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"

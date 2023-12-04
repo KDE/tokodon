@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-03 01:35+0000\n"
+"POT-Creation-Date: 2023-12-04 01:37+0000\n"
 "PO-Revision-Date: 2023-11-21 10:57+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2310,19 +2310,19 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
-#: content/ui/StatusDelegate/StatusDelegate.qml:289
+#: content/ui/StatusDelegate/StatusDelegate.qml:291
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Aviso de Contento </b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show Less"
 msgstr "Monstra minus"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
-#: content/ui/StatusDelegate/StatusDelegate.qml:296
+#: content/ui/StatusDelegate/StatusDelegate.qml:298
 #, kde-format
 msgid "Show More"
 msgstr "Monstra  plus"
@@ -2680,7 +2680,7 @@ msgid "User"
 msgstr "Usator"
 
 #: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:367
+#: content/ui/Settings/ProfileEditor.qml:359
 #, kde-format
 msgid "Apply"
 msgstr "Applica"
@@ -2829,7 +2829,28 @@ msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:360
+#: content/ui/Settings/ProfileEditor.qml:335
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Public"
+msgstr "Public"
+
+#: content/ui/Settings/ProfileEditor.qml:336
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Unlisted"
+msgstr "Non listate"
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Private"
+msgstr "Private"
+
+#: content/ui/Settings/ProfileEditor.qml:352
 #, kde-format
 msgid "Reset"
 msgstr "Reinitialisa"
@@ -2968,14 +2989,17 @@ msgstr "Nega"
 msgid "No accounts available"
 msgstr ""
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:93
-#, kde-format
-msgctxt "@info:label Alternate text or description of the imaage"
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
+#, fuzzy, kde-format
+#| msgctxt "@info:label Alternate text or description of the imaage"
+#| msgid "Description"
+msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Description"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:111
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:114
 #, kde-format
+msgctxt "@title:group"
 msgid "Focal point"
 msgstr ""
 
@@ -3488,61 +3512,61 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:384
+#: content/ui/StatusDelegate/StatusDelegate.qml:386
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Responde"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:407
+#: content/ui/StatusDelegate/StatusDelegate.qml:409
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Boosted"
 msgstr "Boosted"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:410
+#: content/ui/StatusDelegate/StatusDelegate.qml:412
 #, kde-format
 msgid "Boost"
 msgstr "Boost"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:428
+#: content/ui/StatusDelegate/StatusDelegate.qml:430
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorito"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, kde-format
 msgid "Favourited"
 msgstr "Favorito"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:431
+#: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, kde-format
 msgid "Favourite"
 msgstr "Favorite"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Remove marcator de libro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:448
+#: content/ui/StatusDelegate/StatusDelegate.qml:450
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Marcator de libro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Bookmarked"
 msgstr "Ponite in le marcatores de libro"
 
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
+#: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Bookmark"
 msgstr "Marcator de libro"
@@ -3713,69 +3737,69 @@ msgstr "Il occurreva un error incognite"
 msgid "Receiving push notifications"
 msgstr "Recipente notificationes de push"
 
-#: main.cpp:110
+#: main.cpp:104
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:106
 #, kde-format
 msgid "Mastodon client"
 msgstr "Cliente de Mastodon"
 
-#: main.cpp:114
+#: main.cpp:108
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "©2021-2023 Carl Schwan,  2021-2023 Communitate de KDE"
 
-#: main.cpp:115
+#: main.cpp:109
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenitor"
 
-#: main.cpp:120
+#: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Giovanni Sora"
 
-#: main.cpp:125
+#: main.cpp:119
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: main.cpp:133
+#: main.cpp:127
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 
-#: main.cpp:134
+#: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr ""
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:136
+#: main.cpp:130
 #, kde-format
 msgid "The text to share."
 msgstr "Le texto a comparttir."
 
-#: main.cpp:140
+#: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
 msgstr "Solmente per uso interne."
@@ -3842,46 +3866,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Tendentia"
 
-#: timeline/post.cpp:383
+#: timeline/post.cpp:391
 #, kde-format
 msgid "in the future"
 msgstr "in le futuro"
 
-#: timeline/post.cpp:385
+#: timeline/post.cpp:393
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:387
+#: timeline/post.cpp:395
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:389
+#: timeline/post.cpp:397
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:391
+#: timeline/post.cpp:399
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:395
+#: timeline/post.cpp:403
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 septimana ante"
 msgstr[1] "%1 septimanas ante"
 
-#: timeline/post.cpp:398
+#: timeline/post.cpp:406
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 mense ante"
 msgstr[1] "%1 menses ante"
 
-#: timeline/post.cpp:402
+#: timeline/post.cpp:410
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
