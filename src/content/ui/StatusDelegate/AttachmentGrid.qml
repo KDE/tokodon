@@ -47,6 +47,10 @@ QQC2.Control {
     Layout.topMargin: Kirigami.Units.largeSpacing
 
     Accessible.description: {
+        if (root.attachments.length === 0) {
+            return "";
+        }
+
         switch (root.attachments[0].attachmentType) {
             case Attachment.Image:
                 return i18n("Status with image attachment");
