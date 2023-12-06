@@ -11,7 +11,7 @@ import org.kde.tokodon
 ColumnLayout {
     id: root
 
-    property var index
+    required property var index
     required property var poll
     readonly property bool showResults: poll.voted || poll.expired
 

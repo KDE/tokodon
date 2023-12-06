@@ -321,6 +321,7 @@ QQC2.ItemDelegate {
 
         Loader {
             sourceComponent: StatusPoll {
+                index: root.index
                 poll: root.poll
             }
 
