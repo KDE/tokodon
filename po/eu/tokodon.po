@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:37+0000\n"
-"PO-Revision-Date: 2023-12-02 22:46+0100\n"
+"PO-Revision-Date: 2023-12-05 08:10+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -317,22 +317,22 @@ msgstr ""
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
 msgid "Could not resolve report"
-msgstr "Ezin izan du txostena ebatzi"
+msgstr "Ezin izan du salaketa ebatzi"
 
 #: admin/reporttoolmodel.cpp:195
 #, kde-format
 msgid "Could not unresolve report"
-msgstr "Ezin izan du txostenaren ebazpena desegin"
+msgstr "Ezin izan du salaketaren ebazpena desegin"
 
 #: admin/reporttoolmodel.cpp:196
 #, kde-format
 msgid "Could not assign report"
-msgstr "Ezin izan du txostena esleitu"
+msgstr "Ezin izan du salaketa esleitu"
 
 #: admin/reporttoolmodel.cpp:197
 #, kde-format
 msgid "Could not unassign report"
-msgstr "Ezin izan du txostenaren esleipena desegin"
+msgstr "Ezin izan du salaketaren esleipena desegin"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -409,7 +409,7 @@ msgstr "Blokeatu"
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Txostena..."
+msgstr "Salatu..."
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -610,6 +610,7 @@ msgstr "Esklusiboa"
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
+"Zerrenda esklusibo bateko postak etxeko denbora-lerrotik kanpo uzten dira."
 
 #: content/ui/EditListPage.qml:102
 #, kde-format
@@ -688,8 +689,7 @@ msgid "Select Language"
 msgstr "Aukeratu hizkuntza"
 
 #: content/ui/LanguageSelector.qml:47
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Itxi"
@@ -1422,7 +1422,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr "Errefusatu txostenak"
+msgstr "Errefusatu salaketak"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
@@ -2136,11 +2136,9 @@ msgid "Update IP Rule"
 msgstr "Eguneratu IP araua"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:48
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "Birbidali posta"
+msgstr "Jakinarazpen zk %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:52
 #, kde-format
@@ -2155,12 +2153,12 @@ msgstr "Markatu ebatzitako gisa"
 #: content/ui/ModerationTools/MainReportToolPage.qml:56
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Jakinarazpena ebatzi gabe"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:59
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Salaketa ebatzita"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:205
 #, kde-format
@@ -2193,31 +2191,26 @@ msgid "Last Active"
 msgstr "Azkenekoz aktibo"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "Birbidali posta"
+msgstr "Salatua"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "Birbidali posta"
+msgstr "Salatua"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:245
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "Salatu du,"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgid "Report Status"
-msgstr "Zapuzle egoera"
+msgstr "Salaketaren egoera"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:261
 #, kde-format
@@ -2230,15 +2223,14 @@ msgid "Unresolved"
 msgstr "Ebazteke"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:268
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "Ekintza hartze arrakastatsua"
+msgstr "Ekintza hartzailea,"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Esleitutako moderatzailea"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:282
 #: editor/listeditorbackend.cpp:108
@@ -2284,6 +2276,8 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Kontu eta/edo eduki hori salatzeko arrazoia aipatu egingo da salatutako "
+"kontuarekiko komunikazioan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:326
 #, kde-format
@@ -2329,19 +2323,20 @@ msgstr "E/E"
 #: content/ui/ModerationTools/MainReportToolPage.qml:429
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "Salatutako edukia"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:433
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"Eduki arau-hauslea aipatu egingo da salatutako kontuarekiko komunikazioan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:464
 #: content/ui/StatusDelegate/StatusDelegate.qml:291
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "<b>Edukiaren abisua</b><br /> %1"
+msgstr "<b>Edukiari buruzko abisua</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:470
 #: content/ui/StatusDelegate/StatusDelegate.qml:298
@@ -2364,7 +2359,7 @@ msgstr "Kontuak"
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
 #, kde-format
 msgid "Reports"
-msgstr "Txostenak"
+msgstr "Salaketak"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2390,11 +2385,10 @@ msgid "Accounts Tool Page"
 msgstr "Kontuen tresna orria"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Zapuzle egoera"
+msgstr "Salaketaren egoera"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
@@ -2412,13 +2406,13 @@ msgstr "Ebatzita"
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Salaketaren jatorria"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
 #, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
-msgstr "Guztia"
+msgstr "Dena"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
 #, kde-format
@@ -2435,7 +2429,7 @@ msgstr "Urrutikoa"
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Salatu du:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
 #, kde-format
@@ -2449,10 +2443,9 @@ msgid "N/A"
 msgstr "E/E"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "Ez da konturik aurkitu"
+msgstr "Ez da salaketarik aurkitu"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2537,40 +2530,34 @@ msgid "%1 updated their post"
 msgstr "%1(e)k bere posta eguneratu du"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Birbidali posta"
+msgstr "Eman postaren berri"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Eman erabiltzailearen berri"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Batzeko arrazoiak"
+msgstr "Posta horren berri emateko arrazoia"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Batzeko arrazoiak"
+msgstr "Erabiltzaile horren berri emateko arrazoia"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "Birbidali posta"
+msgstr "Jakinarazi"
 
 #: content/ui/ReportDialog.qml:64
 #, kde-format
@@ -2737,6 +2724,8 @@ msgid ""
 "Push notifications are not available for this account. Please log out and "
 "log back in."
 msgstr ""
+"Bultzada jakinarazpenak ez daude erabilgarri kontu honetarako. Mesedez saio-"
+"itxi eta berriz ireki."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -2867,22 +2856,19 @@ msgid "Default post visibility"
 msgstr "Posten ikusgaitasun lehenetsia"
 
 #: content/ui/Settings/ProfileEditor.qml:335
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publikoa"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
-msgstr "Zerrendatu gabea"
+msgstr "Zerrendatu gabe"
 
 #: content/ui/Settings/ProfileEditor.qml:337
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Pribatua"
@@ -3027,16 +3013,13 @@ msgid "No accounts available"
 msgstr "Ez dago kontu erabilgarririk"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@info:label Alternate text or description of the imaage"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Deskribapena"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:114
-#, fuzzy, kde-format
-#| msgid "Focal point"
+#, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Puntu fokala"
@@ -3407,7 +3390,7 @@ msgstr "Kopiatu esteka"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Txertatu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
@@ -3537,11 +3520,10 @@ msgid "Are you sure you want to delete this post?"
 msgstr "Ziur zaude posta hori ezabatu nahi duzula?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:227
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Ezabatu eta zirriborroa egin"
+msgstr "Posta ezabatu eta berriz zirriborro egin"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:228
 #, kde-format
@@ -3550,6 +3532,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Ziur zaude posta hori berriz zirriborro egin nahi duzula? Horrek jatorrizko "
+"posta ezabatuko du."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:386
 #, kde-format
