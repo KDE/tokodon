@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import Qt.labs.platform 1.1
+import QtQuick.Dialogs
 import Qt.labs.qmlmodels 1.0
 
 import org.kde.kirigami 2 as Kirigami
@@ -37,7 +37,7 @@ Components.AlbumMaximizeComponent {
             url: content.currentItem.source,
         })
         dialog.open();
-        dialog.currentFile = dialog.folder + "/" + FileHelper.fileName(content.currentItem.source);
+        dialog.selectedFile = dialog.folder + "/" + FileHelper.fileName(content.currentItem.source);
     }
 
     onItemRightClicked: imageMenu.popup()
@@ -47,13 +47,13 @@ Components.AlbumMaximizeComponent {
         FileDialog {
             property var url
             fileMode: FileDialog.SaveFile
-            folder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+            currentFolder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
             onAccepted: {
-                if (!currentFile) {
+                if (!selectedFile) {
                     return;
                 }
-                console.log(url, currentFile, AccountManager.selectedAccount)
-                FileHelper.downloadFile(AccountManager.selectedAccount, url, currentFile)
+                console.log(url, selectedFile, AccountManager.selectedAccount)
+                FileHelper.downloadFile(AccountManager.selectedAccount, url, selectedFile)
             }
         }
     }

@@ -6,7 +6,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
-import Qt.labs.platform 1.1
+import QtQuick.Dialogs
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import Qt5Compat.GraphicalEffects
@@ -29,8 +29,8 @@ FormCard.FormCardPage {
         FileDialog {
             signal chosen(string path)
             title: i18n("Please choose a file")
-            folder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
-            onAccepted: chosen(file)
+            currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
+            onAccepted: chosen(selectedFile)
         }
     }
 
@@ -172,7 +172,8 @@ FormCard.FormCardPage {
 
                             fileDialog = openFileDialog.createObject(QQC2.ApplicationWindow.Overlay)
 
-                            fileDialog.chosen.connect(function(receivedSource) {
+                            fileDialog.onAccepted.connect(function() {
+                                const receivedSource = headerUpload.fileDialog.selectedFile;
                                 headerUpload.fileDialog = null;
                                 if (!receivedSource) {
                                     return;

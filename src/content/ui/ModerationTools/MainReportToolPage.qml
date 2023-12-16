@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
 import org.kde.tokodon.private
-import Qt.labs.platform
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import Qt5Compat.GraphicalEffects
