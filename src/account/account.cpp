@@ -310,6 +310,8 @@ void Account::validateToken(bool newAccount)
                 config()->setEnablePushNotifications(true);
                 config()->save();
             }
+#else
+            Q_UNUSED(newAccount)
 #endif
 
 #ifdef HAVE_KUNIFIEDPUSH
