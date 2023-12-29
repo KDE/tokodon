@@ -16,6 +16,16 @@
         "--device=dri",
         "--share=network"
     ],
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "version": "23.08",
+            "add-ld-path": "."
+        }
+    },
+    "cleanup-commands": [
+        "mkdir -p /app/lib/ffmpeg"
+    ],
     "modules": [
         {
             "name": "libmpv",
@@ -107,41 +117,6 @@
                             "type": "archive",
                             "url": "https://github.com/FFmpeg/nv-codec-headers/releases/download/n11.1.5.2/nv-codec-headers-11.1.5.2.tar.gz",
                             "sha256": "1442e3159e7311dd71f8fca86e615f51609998939b6a6d405d6683d8eb3af6ee"
-                        }
-                    ]
-                },
-                {
-                    "name": "ffmpeg",
-                    "cleanup": [
-                        "/include",
-                        "/lib/pkgconfig",
-                        "/share/ffmpeg/examples"
-                    ],
-                    "config-opts": [
-                        "--enable-shared",
-                        "--disable-static",
-                        "--enable-gnutls",
-                        "--enable-gpl",
-                        "--disable-doc",
-                        "--disable-programs",
-                        "--disable-encoders",
-                        "--disable-muxers",
-                        "--enable-encoder=png,libwebp",
-                        "--enable-libv4l2",
-                        "--enable-libdav1d",
-                        "--enable-libfontconfig",
-                        "--enable-libfreetype",
-                        "--enable-libopus",
-                        "--enable-librsvg",
-                        "--enable-libvpx",
-                        "--enable-libmp3lame",
-                        "--enable-libwebp"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://ffmpeg.org/releases/ffmpeg-6.0.tar.gz",
-                            "sha256": "f4ccf961403752c93961927715f524576d1f4dd02cd76d8c76aed3bbe6686656"
                         }
                     ]
                 },
