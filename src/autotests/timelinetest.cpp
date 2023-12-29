@@ -31,7 +31,7 @@ private Q_SLOTS:
 
     void testMainDisplayName()
     {
-        KLocalizedString::setApplicationDomain("tokodon");
+        KLocalizedString::setApplicationDomain(QByteArrayLiteral("tokodon"));
         KLocalizedString::setLanguages(QStringList{QStringLiteral("C")});
         account->setUsername(QStringLiteral("test"));
 

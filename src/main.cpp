@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     font.setPointSize(10);
     app.setFont(font);
 #endif
-    KLocalizedString::setApplicationDomain("tokodon");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("tokodon"));
 
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
 
