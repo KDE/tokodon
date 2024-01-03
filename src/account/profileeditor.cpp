@@ -240,7 +240,7 @@ void ProfileEditorBackend::save()
         if (file->open(QIODevice::ReadOnly)) {
             QHttpPart headerPart;
             headerPart.setHeader(QNetworkRequest::ContentTypeHeader, mime.name());
-            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"header\""));
+            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"header\"; filename=\"header\""));
             headerPart.setBodyDevice(file);
             file->setParent(multiPart);
             multiPart->append(headerPart);
@@ -257,7 +257,7 @@ void ProfileEditorBackend::save()
         if (file->open(QIODevice::ReadOnly)) {
             QHttpPart headerPart;
             headerPart.setHeader(QNetworkRequest::ContentTypeHeader, mime.name());
-            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"avatar\""));
+            headerPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"avatar\"; filename=\"avatar\""));
             headerPart.setBodyDevice(file);
             file->setParent(multiPart);
             multiPart->append(headerPart);
