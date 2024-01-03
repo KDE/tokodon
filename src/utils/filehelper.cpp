@@ -8,6 +8,7 @@
 
 #ifdef HAVE_KIO
 #include <KIO/Job>
+#include <KIO/JobTracker>
 #include <KJobTrackerInterface>
 #endif
 
