@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Kristof Kiszel <ulysses@fsf.hu>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-17 01:35+0000\n"
-"PO-Revision-Date: 2022-01-20 14:10+0100\n"
+"PO-Revision-Date: 2024-01-03 21:03+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,58 +15,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
 msgid "Could not follow account"
-msgstr ""
+msgstr "Nem sikerült követni a fiókot"
 
 #: account/abstractaccount.cpp:656
 #, kde-format
 msgid "Could not unfollow account"
-msgstr ""
+msgstr "Nem sikerült leállítani a fiók követését"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
-msgstr ""
+msgstr "Nem sikerült tiltani a fiókot"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
-msgstr ""
+msgstr "Nem sikerült leállítani a fiók tiltását"
 
 #: account/abstractaccount.cpp:659
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not mute account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült némítani a fiókot"
 
 #: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unmute account"
-msgstr ""
+msgstr "Nem sikerült leállítani a fiók némítását"
 
 #: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not feature account"
-msgstr ""
+msgstr "Nem sikerült kiemelni a fiókot"
 
 #: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unfeature account"
-msgstr ""
+msgstr "Nem sikerült leállítani a fiók kiemelését"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr ""
+msgstr "Nem sikerült szerkeszteni egy fiókhoz tartozó megjegyzést"
 
 #: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
-msgstr ""
+msgstr "Bejegyzés megtekintése"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -74,88 +73,80 @@ msgstr ""
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:65
 #, kde-format
 msgid "View Profile"
-msgstr ""
+msgstr "Profil megtekintése"
 
 #: account/notificationhandler.cpp:74
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 követő"
+msgstr "%1 megemlítette"
 
 #: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "%1 wrote a new post"
-msgstr "Új tülk írása"
+msgstr "%1 új bejegyzést írt"
 
 #: account/notificationhandler.cpp:90
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr ""
+msgstr "%1 hangsúlyozta a bejegyzését"
 
 #: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 followed you"
-msgstr "%1 követő"
+msgstr "%1 követi"
 
 #: account/notificationhandler.cpp:106
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 követő"
+msgstr "%1 kéri, hogy kövesse"
 
 #: account/notificationhandler.cpp:114
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
-msgstr ""
+msgstr "%1 kedvencelte a bejegyzését"
 
 #: account/notificationhandler.cpp:122
 #, kde-format
 msgid "Poll by %1 has ended"
-msgstr ""
+msgstr "%1 szavazása véget ért"
 
 #: account/notificationhandler.cpp:130
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "%1 edited a post"
-msgstr "Nem listázott"
+msgstr "%1 szerkesztett egy bejegyzést"
 
 #: account/profileeditor.cpp:146
 #, kde-format
 msgid "Image is too big"
-msgstr ""
+msgstr "A kép túl nagy"
 
 #: account/profileeditor.cpp:159
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
+msgstr "Nem támogatott képfájl. Csak JPEG-, PNG- és GIF-fájlok támogatottak."
 
 #: account/profileeditor.cpp:273
 #, kde-format
 msgid "Account details saved"
-msgstr ""
+msgstr "Fiókadatok mentve"
 
 #: account/socialgraphmodel.cpp:27
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr "Követés"
+msgstr "Követési kérések"
 
 #: account/socialgraphmodel.cpp:29
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Követés"
+msgstr "Követők"
 
 #: account/socialgraphmodel.cpp:31
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Követés"
@@ -164,171 +155,152 @@ msgstr "Követés"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Némított felhasználók"
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Fiók hozzáadása"
+msgstr "Tiltott felhasználók"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Fiókok"
+msgstr "Kiemelt felhasználók"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 kedvencelés"
+msgstr[1] "%1 kedvencelés"
 
 #: account/socialgraphmodel.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "Kiemelés"
-msgstr[1] "Kiemelés"
+msgstr[0] "%1 kiemelés"
+msgstr[1] "%1 kiemelés"
 
 #: account/socialgraphmodel.cpp:49
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "No follow requests"
-msgstr "Követés"
+msgstr "Nincsenek követési kérések"
 
 #: account/socialgraphmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "No followers"
-msgstr "%1 követő"
+msgstr "Nincsenek követők"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "%1 followers"
+#, kde-format
 msgid "No followed users"
-msgstr "%1 követő"
+msgstr "Nincsenek követett felhasználók"
 
 #: account/socialgraphmodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Fiókok"
+msgstr "Nincsenek némított felhasználók"
 
 #: account/socialgraphmodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "No blocked users"
-msgstr "Fiók hozzáadása"
+msgstr "Nincsenek tiltott felhasználók"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Fiókok"
+msgstr "Nincsenek kiemelt felhasználók"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "No users favourited this post"
-msgstr "Új tülk írása"
+msgstr "Senki sem kedvencelte ezt a bejegyzést"
 
 #: account/socialgraphmodel.cpp:63
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "No users boosted this post"
-msgstr "Új tülk írása"
+msgstr "Senki sem hangsúlyozta ezt a bejegyzést"
 
 #: admin/accounttoolmodel.cpp:296
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not accept account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült elfogadni a fiókot"
 
 #: admin/accounttoolmodel.cpp:297
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not reject account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült elutasítani a fiókot"
 
 #: admin/accounttoolmodel.cpp:298
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not take action against the account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült intézkedni a fiókkal szemben"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not enable  the disabled account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült engedélyezni a letiltott fiókot"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not unsilence the account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült megszüntetni a fiók némítását"
 
 #: admin/accounttoolmodel.cpp:301
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült megszüntetni a fiók felfüggesztését"
 
 #: admin/accounttoolmodel.cpp:302
-#, fuzzy, kde-format
-#| msgid "Add an account"
+#, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Fiók hozzáadása"
+msgstr "Nem sikerült megjelölni a fiókot nem érzékenyként"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Felfüggesztve"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr ""
+msgstr "Korlátozva"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Érzékenyítve"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr ""
+msgstr "Fagyasztva"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr ""
+msgstr "E-mail cím nincs megerősítve"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr ""
+msgstr "Nem elfogadott"
 
 #: admin/adminaccountinfo.cpp:34
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Nincsenek korlátozások"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
@@ -4111,13 +4083,13 @@ msgstr[1] ""
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 évvel ezelőtt"
+msgstr[1] "%1 évvel ezelőtt"
 
 #: timeline/tagsmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Népszerű"
 
 #: timeline/threadmodel.cpp:28
 #, kde-format
@@ -4129,67 +4101,67 @@ msgstr "Szál"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "Nemrég használt"
 
 #: utils/emojimodel.cpp:134
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr ""
+msgstr "Egyéni"
 
 #: utils/emojimodel.cpp:139
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr ""
+msgstr "Szmájlik"
 
 #: utils/emojimodel.cpp:144
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
-msgstr ""
+msgstr "Emberek"
 
 #: utils/emojimodel.cpp:149
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
-msgstr ""
+msgstr "Természet"
 
 #: utils/emojimodel.cpp:154
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
-msgstr ""
+msgstr "Étel"
 
 #: utils/emojimodel.cpp:159
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
-msgstr ""
+msgstr "Tevékenységek"
 
 #: utils/emojimodel.cpp:164
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
-msgstr ""
+msgstr "Utazás"
 
 #: utils/emojimodel.cpp:169
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
-msgstr ""
+msgstr "Tárgyak"
 
 #: utils/emojimodel.cpp:174
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
-msgstr ""
+msgstr "Szimbólumok"
 
 #: utils/emojimodel.cpp:179
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
-msgstr ""
+msgstr "Zászlók"
 
 #: utils/filetransferjob.cpp:31
 #, kde-format
@@ -4202,24 +4174,22 @@ msgid "Could not reserve disk space for download"
 msgstr ""
 
 #: utils/filetransferjob.cpp:81
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "Betöltés"
+msgstr "Letöltés"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
-msgstr ""
+msgstr "Forrás"
 
 #: utils/filetransferjob.cpp:83
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "Beállítások:"
+msgstr "Cél"
 
 #, fuzzy
 #~| msgid "Instance Url:"
