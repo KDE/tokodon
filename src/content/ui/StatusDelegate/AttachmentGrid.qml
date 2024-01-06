@@ -23,6 +23,7 @@ QQC2.Control {
     required property bool secondary
     required property bool expandedPost
     required property bool inViewPort
+    required property real viewportWidth
 
     property bool canHideMedia: true
 
@@ -89,7 +90,7 @@ QQC2.Control {
 
                         count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.width
+                        rootWidth: root.viewportWidth
                         gridLayout: attachmentGridLayout
 
                         sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
@@ -205,7 +206,7 @@ QQC2.Control {
 
                         count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.width
+                        rootWidth: root.viewportWidth
                         gridLayout: attachmentGridLayout
 
                         videoUrl: modelData.source
@@ -283,7 +284,7 @@ QQC2.Control {
 
                         count: attachmentsRepeater.count
                         shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.width
+                        rootWidth: root.viewportWidth
                         gridLayout: attachmentGridLayout
 
                         videoUrl: modelData.source

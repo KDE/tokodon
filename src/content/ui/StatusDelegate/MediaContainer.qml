@@ -35,12 +35,11 @@ Item {
 
     readonly property int heightDivisor: (isSpecialAttachment || count < 3) ? 1 : 2
 
-    Layout.fillWidth: shouldKeepAspectRatio
-    Layout.fillHeight: shouldKeepAspectRatio
+    Layout.fillWidth: true
+    Layout.fillHeight: !shouldKeepAspectRatio
     Layout.rowSpan: isSpecialAttachment ? 2 : 1
 
     readonly property real extraSpacing: isSpecialAttachment ? gridLayout.rowSpacing : 0
 
-    Layout.preferredWidth: shouldKeepAspectRatio ? -1 : parent.width / gridLayout.columns
-    Layout.preferredHeight: shouldKeepAspectRatio ? (parent.width * aspectRatio) : (rootWidth * mediaRatio / heightDivisor) + extraSpacing
+    Layout.preferredHeight: shouldKeepAspectRatio ? Math.ceil(rootWidth * aspectRatio) : Math.ceil(rootWidth * mediaRatio / heightDivisor) + extraSpacing
 }

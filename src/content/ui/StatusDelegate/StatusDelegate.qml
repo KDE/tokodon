@@ -340,6 +340,7 @@ QQC2.ItemDelegate {
                 sensitive: root.sensitive
                 secondary: root.secondary
                 inViewPort: root.inViewPort
+                viewportWidth: flexColumn.innerWidth
             }
             active: !root.secondary && root.attachments.length > 0 && !filtered
             visible: active
