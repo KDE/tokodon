@@ -393,6 +393,8 @@ TimelinePage {
                 }
 
                 FormCard.FormCard {
+                    id: usernameCard
+
                     Layout.topMargin: bioCard.cardWidthRestricted ? 0 : Kirigami.Units.largeSpacing
 
                     visible: accountInfo.model.identity.fields.length > 0
@@ -527,9 +529,10 @@ TimelinePage {
                     }
                 }
 
-
                 FormCard.FormCard {
                     id: bioCard
+
+                    visible: accountInfo.model.identity.bio.length > 0
 
                     Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -581,8 +584,8 @@ TimelinePage {
                             left: parent.left
                             right: parent.right
                             top: parent.top
-                            leftMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
-                            rightMargin: bioCard.cardWidthRestricted ? Math.round((bioCard.width - bioCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
+                            leftMargin: usernameCard.cardWidthRestricted ? Math.round((usernameCard.width - usernameCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
+                            rightMargin: usernameCard.cardWidthRestricted ? Math.round((usernameCard.width - usernameCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
                         }
 
                         Kirigami.Chip {
