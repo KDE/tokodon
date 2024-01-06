@@ -409,6 +409,7 @@ TimelinePage {
                             FormCard.AbstractFormDelegate {
                                 topPadding: 0
                                 bottomPadding: 0
+                                hoverEnabled: false
 
                                 background: Rectangle {
                                     color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : "transparent"
