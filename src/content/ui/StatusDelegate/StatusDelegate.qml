@@ -209,6 +209,7 @@ QQC2.ItemDelegate {
                 id: deleteDialog
 
                 active: false
+                visible: false // to prevent the menu from taking space in the layout
                 sourceComponent: Kirigami.PromptDialog {
                     title: i18nc("@title", "Delete Post")
                     subtitle: i18nc("@label", "Are you sure you want to delete this post?")
@@ -223,6 +224,7 @@ QQC2.ItemDelegate {
                 id: redraftDialog
 
                 active: false
+                visible: false
                 sourceComponent: Kirigami.PromptDialog {
                     title: i18nc("@title", "Delete & Re-draft Post")
                     subtitle: i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
@@ -241,8 +243,7 @@ QQC2.ItemDelegate {
             id: postMenu
 
             active: false
-            visible: active
-
+            visible: false
             sourceComponent: OverflowMenu {
                 index: root.index
                 postId: root.id
