@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2019 Black Hat <bhat@encom.eu.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
+import QtCore
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
@@ -33,11 +34,11 @@ Components.AlbumMaximizeComponent {
     }
 
     onSaveItem: {
-        const dialog = saveAsDialog.createObject(QQC2.ApplicationWindow.overlay, {
+        const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
             url: content.currentItem.source,
         })
+        dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(content.currentItem.source);
         dialog.open();
-        dialog.selectedFile = dialog.folder + "/" + FileHelper.fileName(content.currentItem.source);
     }
 
     onItemRightClicked: imageMenu.popup()
