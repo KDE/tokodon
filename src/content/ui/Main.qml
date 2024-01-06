@@ -465,7 +465,7 @@ Kirigami.ApplicationWindow {
     }
 
     property Kirigami.Action favouritesAction: Kirigami.Action {
-        icon.name: "favorite"
+        icon.name: "tokodon-post-favorite"
         text: i18n("Favourites")
         checkable: true
         onTriggered: {
