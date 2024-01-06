@@ -130,7 +130,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
         model: root.model
-        reuseItems: true
+        reuseItems: false // TODO: this causes jumping on the timeline. needs more investigation before it's re-enabled
 
         Component {
             id: fullScreenImage
