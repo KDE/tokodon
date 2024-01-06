@@ -38,7 +38,7 @@ QQC2.Menu {
         text: i18n("Save Image As…")
 
         onTriggered: {
-            const dialog = saveAsDialog.createObject(null, {
+            const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
                 url: root.attachment.source,
             });
             dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(root.attachment.source);
