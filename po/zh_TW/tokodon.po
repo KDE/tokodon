@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-07 01:54+0000\n"
-"PO-Revision-Date: 2024-01-05 05:30+0900\n"
+"PO-Revision-Date: 2024-01-08 19:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.85\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -265,7 +265,7 @@ msgstr "無法將帳號標記為非敏感內容"
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "已被停權"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "受限制的"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "敏感化"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
@@ -1220,7 +1220,7 @@ msgstr "電子郵件網域名稱"
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr ""
+msgstr "封鎖建立時間"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -1228,14 +1228,14 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "本週的帳號註冊嘗試次數"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "本週的 IP 註冊嘗試次數"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
@@ -1291,7 +1291,7 @@ msgstr "已新增電子郵件封鎖"
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "這一週來 %1 的註冊嘗試次數"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
@@ -1307,12 +1307,12 @@ msgstr "新增網域封鎖"
 #: content/ui/ModerationTools/FederationToolPage.qml:160
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "允許與此網域進行聯邦連線"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "允許網域資訊"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
@@ -1329,12 +1329,12 @@ msgstr "建立時間"
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "禁止與此網域進行聯邦連線"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "與此網域所禁止的聯邦連線"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
@@ -1377,7 +1377,7 @@ msgstr "靜音"
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "停權"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
@@ -1398,7 +1398,7 @@ msgstr "拒絕媒體檔案"
 msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
-msgstr ""
+msgstr "會移除本地所儲存的媒體檔，並在未來也拒絕下載任何媒體檔。與停權無關"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
@@ -1431,7 +1431,7 @@ msgstr "啟用網域限制資訊顯示時在列表中部分混淆網域名稱"
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "建立封鎖"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
@@ -1479,12 +1479,12 @@ msgstr "已允許網域"
 #: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "允許聯邦連線"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
-msgstr ""
+msgstr "找不到聯邦連線"
 
 #: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
@@ -1745,7 +1745,7 @@ msgstr "已成功拒絕 %1 的註冊申請"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:125
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "已成功解除凍結 %1 的帳號"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:129
 #, kde-format
@@ -1932,7 +1932,7 @@ msgstr "編輯網域封鎖"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
 #, kde-format
 msgid "Private comment"
-msgstr ""
+msgstr "私人備註"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
@@ -2201,7 +2201,7 @@ msgstr "未解決"
 #: content/ui/ModerationTools/MainReportToolPage.qml:267
 #, kde-format
 msgid "Action taken by"
-msgstr ""
+msgstr "動作由誰進行"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
@@ -2227,7 +2227,7 @@ msgstr "指派給我"
 #: content/ui/ModerationTools/MainReportToolPage.qml:299
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "已轉寄"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
@@ -2276,7 +2276,7 @@ msgstr "分類已改為垃圾訊息"
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "內容違反一則或多則伺服器規則"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:360
 #, kde-format
@@ -2286,18 +2286,18 @@ msgstr "分類已改為違規"
 #: content/ui/ModerationTools/MainReportToolPage.qml:403
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "為了提供更多資訊，%1 寫道："
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:412
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "不適用"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:428
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "被檢舉的內容"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:432
 #, kde-format
@@ -2332,7 +2332,7 @@ msgstr "帳號"
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
 #, kde-format
 msgid "Reports"
-msgstr ""
+msgstr "報告"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2418,7 +2418,7 @@ msgstr "不適用"
 #: content/ui/ModerationTools/ReportToolPage.qml:296
 #, kde-format
 msgid "No reports found"
-msgstr ""
+msgstr "未找到報告"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2768,7 +2768,7 @@ msgstr "個人簡介"
 #: content/ui/Settings/ProfileEditor.qml:157
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "標頭"
 
 #: content/ui/Settings/ProfileEditor.qml:192
 #, kde-format
@@ -2920,7 +2920,7 @@ msgstr "額外的拼字檢查語言"
 msgid ""
 "%1 will provide spell checking and suggestions for the languages listed here "
 "when autodetection is enabled."
-msgstr ""
+msgstr "當自動偵測啟用時，%1 會提供此處列出的語言的拼字檢查和建議。"
 
 #: content/ui/Settings/SonnetPage.qml:122
 #, kde-format
@@ -3264,12 +3264,12 @@ msgstr "Status with image attachment"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:59
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "有 GifV 附件的狀態"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:61
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "有影片附件的狀態"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:159
 #, kde-format
@@ -3457,7 +3457,7 @@ msgstr "正常狀態"
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
 #, kde-format
 msgid "Spoiler Status"
-msgstr ""
+msgstr "暴雷狀態"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:135
 #, kde-format

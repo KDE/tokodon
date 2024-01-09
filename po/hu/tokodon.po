@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-07 01:54+0000\n"
-"PO-Revision-Date: 2024-01-07 22:55+0100\n"
+"PO-Revision-Date: 2024-01-08 11:04+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -587,11 +587,10 @@ msgid "Title"
 msgstr "Cím"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Több megjelenítése"
+msgstr "Válaszok megjelenítése ehhez:"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
@@ -675,11 +674,10 @@ msgid "No Trending Tags"
 msgstr "Nincsenek népszerű címkék"
 
 #: content/ui/LanguageSelector.qml:25
-#, fuzzy, kde-format
-#| msgid "Selected default language:"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Alapértelmezett nyelv:"
+msgstr "Nyelvválasztás"
 
 #: content/ui/LanguageSelector.qml:47
 #, kde-format
@@ -787,10 +785,9 @@ msgid "mastodon.social"
 msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Enable moderation tools"
-msgstr "Fiókok"
+msgstr "Moderációs eszközök bekapcsolása"
 
 #: content/ui/LoginFlow/LoginPage.qml:60
 #, kde-format
@@ -806,10 +803,9 @@ msgid "Continue"
 msgstr "Folytatás"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Instance URL and username must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty!"
-msgstr "A példány URL és a felhasználónév nem lehet üres!"
+msgstr "A kiszolgáló URL-címe nem lehet üres."
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -820,11 +816,10 @@ msgstr "Hálózati beállítások"
 
 #: content/ui/LoginFlow/LoginPage.qml:96
 #: content/ui/LoginFlow/ServersPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Ignore uppercase words"
+#, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
-msgstr "Nagybetűs szavak kihagyása"
+msgstr "SSL-hibák figyelmen kívül hagyása"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
 #, kde-format
@@ -907,10 +902,9 @@ msgid "Pick a Server"
 msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL and username must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "A példány URL és a felhasználónév nem lehet üres!"
+msgstr "A kiszolgáló URL-címe nem lehet üres."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
@@ -981,16 +975,13 @@ msgid "Moderation Tools"
 msgstr ""
 
 #: content/ui/Main.qml:360
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
-msgstr "Beállítások:"
+msgstr "Moderációs eszközök"
 
 #: content/ui/Main.qml:370
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Beállítások"
@@ -1017,10 +1008,9 @@ msgid "Global"
 msgstr "Globális"
 
 #: content/ui/Main.qml:455
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgid "Conversation"
-msgstr "Beállítások:"
+msgstr "Beszélgetés"
 
 #: content/ui/Main.qml:469
 #, kde-format
@@ -1061,8 +1051,7 @@ msgid "Advanced Search"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
 msgstr "Felhasználónév:"
@@ -1108,11 +1097,10 @@ msgid "Cancel"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Értesítések"
+msgstr "Hely"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
 #, kde-format
@@ -1121,8 +1109,7 @@ msgid "All"
 msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
 msgstr "Helyi"
@@ -1231,11 +1218,10 @@ msgid "Email domain name"
 msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Fiók hozzáadása"
+msgstr "Tiltás kezdete:"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -1290,11 +1276,10 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Fiók hozzáadása"
+msgstr "Tartomány feloldása"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
@@ -1308,10 +1293,9 @@ msgid "%1 sign-up attempts over the last week"
 msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgid "No email blocks found"
-msgstr "Beállítások:"
+msgstr "Nem találhatók tiltott e-mail címek"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
@@ -1365,23 +1349,20 @@ msgstr ""
 #: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgid "Public comment"
-msgstr "Nyilvános"
+msgstr "Nyilvános hozzászólás"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private Comment"
-msgstr "Privát"
+msgstr "Privát hozzászólás"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgid "Moderation"
-msgstr "Beállítások:"
+msgstr "Moderáció"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
@@ -1477,18 +1458,16 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Beállítások:"
+msgstr "Moderáció"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:216
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Fiók hozzáadása"
+msgstr "Tiltott tartományok"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
@@ -1502,10 +1481,9 @@ msgid "Allowed for federation"
 msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgid "No federations found"
-msgstr "Beállítások:"
+msgstr "Nem találhatók összevonások"
 
 #: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
@@ -1567,11 +1545,10 @@ msgid "3 year"
 msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Privát"
+msgstr "Megjegyzés"
 
 #: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
@@ -1605,10 +1582,9 @@ msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Block sign-ups"
-msgstr "Fiók hozzáadása"
+msgstr "Feliratkozások tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
@@ -1618,10 +1594,9 @@ msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Block access"
-msgstr "Fiók hozzáadása"
+msgstr "Hozzáférés tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
@@ -1649,19 +1624,17 @@ msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Fiók hozzáadása"
+msgstr "Feliratkozások tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Fiók hozzáadása"
+msgstr "Hozzáférés tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
@@ -1726,11 +1699,10 @@ msgid "Notify the user per e-mail"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Tartalmi figyelmeztetés"
+msgstr "Egyéni figyelmeztetés"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:77
 #, kde-format
@@ -1807,23 +1779,19 @@ msgid "Reasons for joining"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:372
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
-msgstr "Kiemelés"
+msgstr "Bejegyzések"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:376
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "Követés"
+msgstr "Követők"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:380
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Követés"
@@ -1880,11 +1848,10 @@ msgid "Not Confirmed"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:427
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Fiókok"
+msgstr "Fiók nyelve"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:435
 #, kde-format
@@ -1915,10 +1882,9 @@ msgid "Reject"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:516
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Delete Account Data"
-msgstr "Fiókok"
+msgstr "Fiókadatok törlése"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:528
 #, kde-format
@@ -1963,10 +1929,9 @@ msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgid "Private comment"
-msgstr "Privát"
+msgstr "Privát hozzászólás"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
@@ -1981,10 +1946,9 @@ msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:132
 #: content/ui/ModerationTools/MainIpRulePage.qml:175
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Blocked at"
-msgstr "Fiók hozzáadása"
+msgstr "Tiltva ekkor:"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:140
 #, kde-format
@@ -2094,11 +2058,10 @@ msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Privát"
+msgstr "Megjegyzés"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
@@ -2173,23 +2136,19 @@ msgid "Report Resolved"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
-msgstr "Kiemelés"
+msgstr "Bejegyzések"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
-msgstr "Követés"
+msgstr "Követők"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Követés"
@@ -2229,10 +2188,9 @@ msgid "Report Status"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Resolved"
-msgstr "Fiók hozzáadása"
+msgstr "Megoldott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
@@ -2348,28 +2306,24 @@ msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
 #: content/ui/StatusDelegate/StatusDelegate.qml:292
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "Tartalmi figyelmeztetés"
+msgstr "<b>Tartalmi figyelmeztetés</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
 #: content/ui/StatusDelegate/StatusDelegate.qml:299
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show Less"
-msgstr "Több megjelenítése"
+msgstr "Kevesebb"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
 #: content/ui/StatusDelegate/StatusDelegate.qml:299
-#, fuzzy, kde-format
-#| msgid "Show more"
+#, kde-format
 msgid "Show More"
-msgstr "Több megjelenítése"
+msgstr "Több"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Fiókok"
@@ -2380,11 +2334,10 @@ msgid "Reports"
 msgstr ""
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "@title"
 msgid "Federation"
-msgstr "Beállítások:"
+msgstr "Összevonás"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:33
 #, kde-format
@@ -2393,17 +2346,15 @@ msgid "IP Rules"
 msgstr ""
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:39
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
-msgstr "Fiókok"
+msgstr "Tiltott e-mail címek"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgid "Accounts Tool Page"
-msgstr "Fiókok"
+msgstr "Fiókeszközök oldal"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
 #, kde-format
@@ -2418,11 +2369,10 @@ msgid "Unresolved"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "Fiók hozzáadása"
+msgstr "Megoldott"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
@@ -2431,15 +2381,13 @@ msgid "Report Origin"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
-msgstr "Követés"
+msgstr "Összes"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Helyi"
@@ -2456,10 +2404,9 @@ msgid "Reported By:"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "Fiók hozzáadása"
+msgstr "Társított fiók:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
@@ -2468,16 +2415,14 @@ msgid "N/A"
 msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgid "No reports found"
-msgstr "Beállítások:"
+msgstr "Nem találhatók jelentések"
 
 #: content/ui/NotificationPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Group Notifications"
-msgstr "Értesítések"
+msgstr "Csoportértesítések"
 
 #: content/ui/NotificationPage.qml:44
 #, kde-format
@@ -2486,19 +2431,16 @@ msgid "All"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Options:"
+#, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Beállítások:"
+msgstr "Említések"
 
 #: content/ui/NotificationPage.qml:65
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Kiemelés"
+msgstr "Kiemelések"
 
 #: content/ui/NotificationPage.qml:75
 #, kde-format
@@ -2513,19 +2455,16 @@ msgid "Poll Results"
 msgstr ""
 
 #: content/ui/NotificationPage.qml:95
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
-msgstr "Kiemelés"
+msgstr "Bejegyzések"
 
 #: content/ui/NotificationPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Követés"
+msgstr "Követések"
 
 #: content/ui/NotificationPage.qml:236
 #, kde-format
@@ -2538,22 +2477,19 @@ msgid "View %1's Profile"
 msgstr ""
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "%1 users favorited your post"
-msgstr "Új tülk írása"
+msgstr "%1 felhasználó kedvencelte a bejegyzését"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgid "Write a new toot"
+#, kde-format
 msgid "%1 users boosted your post"
-msgstr "Új tülk írása"
+msgstr "%1 felhasználó kiemelte a bejegyzését"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "%1 replied to your post"
-msgstr "Nem listázott"
+msgstr "%1 válaszolt a bejegyzésére"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
@@ -2561,10 +2497,9 @@ msgid "A poll has ended"
 msgstr ""
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "%1 updated their post"
-msgstr "Nem listázott"
+msgstr "%1 frissítette a bejegyzését"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
