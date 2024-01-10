@@ -98,7 +98,15 @@ QQC2.Pane {
             model: AccountManager
             currentIndex: AccountManager.selectedIndex
 
-            header: Kirigami.Separator {}
+            header: Kirigami.Separator {
+                anchors {
+                    left: parent.left
+                    leftMargin: Kirigami.Units.smallSpacing
+
+                    right: parent.right
+                    rightMargin: Kirigami.Units.smallSpacing
+                }
+            }
 
             footer: Delegates.RoundedItemDelegate {
                 id: addAccountDelegaze
@@ -163,6 +171,7 @@ QQC2.Pane {
 
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
+            Layout.topMargin: Kirigami.Units.smallSpacing
 
             delegate: Delegates.RoundedItemDelegate {
                 id: accountDelegate
