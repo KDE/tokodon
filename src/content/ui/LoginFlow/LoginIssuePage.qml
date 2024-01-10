@@ -20,6 +20,10 @@ MastoPage {
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormTextDelegate {
+            leading: Kirigami.Icon {
+                source: "data-warning"
+            }
+
             text: i18n("There was an issue logging into the server:<br><b>%1</b>", AccountManager.selectedAccountLoginIssue())
             textItem.textFormat: Text.RichText
         }
@@ -31,6 +35,7 @@ MastoPage {
         FormCard.FormTextDelegate {
             id: helpLabel
             text: i18n("Resolve this issue by logging into the server's website. Once completed, try logging in again with the button below.")
+            icon.name: "internet-services-symbolic"
             textItem {
                 wrapMode: Text.WordWrap
             }
@@ -41,6 +46,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: continueButton
             text: i18n("View Website")
+            icon.name: "edit-redo-symbolic"
             onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
         }
 
