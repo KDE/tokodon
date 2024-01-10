@@ -108,6 +108,8 @@ target_sources(tokodon_static
     utils/filehelper.h
     utils/filetransferjob.cpp
     utils/filetransferjob.h
+    utils/initialsetupflow.cpp
+    utils/initialsetupflow.h
     utils/clipboard.cpp
     utils/clipboard.h
     utils/navigation.cpp
@@ -178,6 +180,11 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/FocusedImage.qml
         content/ui/Components/PopupShadow.qml
         content/ui/Components/UserCard.qml
+
+        # Initial Setup
+        content/ui/InitialSetup/SetupNotifications.qml
+        content/ui/InitialSetup/SetupPassword.qml
+        content/ui/InitialSetup/SetupWelcome.qml
 
         # Login Flow
         content/ui/LoginFlow/AuthorizationPage.qml
