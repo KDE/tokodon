@@ -34,7 +34,7 @@ MastoPage {
 
         FormCard.FormTextDelegate {
             id: helpLabel
-            text: i18n("Resolve this issue by logging into the server's website. Once completed, try logging in again with the button below.")
+            text: i18n("Please check if the password service is running. For other login issues, you can try logging into the server's website.\\n\\nYou can attempt to log in again with the button below, or restart Tokodon.")
             icon.name: "internet-services-symbolic"
             textItem {
                 wrapMode: Text.WordWrap
@@ -46,7 +46,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: continueButton
             text: i18n("View Website")
-            icon.name: "edit-redo-symbolic"
+            icon.name: "internet-services-symbolic"
             onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
         }
 
@@ -55,6 +55,7 @@ MastoPage {
         FormCard.FormButtonDelegate {
             id: attemptButton
             text: i18n("Re-Attempt Log In")
+            icon.name: "edit-redo-symbolic"
             onClicked: {
                 AccountManager.selectedAccount.validateToken()
                 AccountManager.selectedAccount = AccountManager.selectedAccount; // reload the pages
