@@ -498,15 +498,18 @@ void Account::subscribePushNotifications()
 
     formdata.addQueryItem(QStringLiteral("data[policy]"), QStringLiteral("all"));
 
-    post(apiUrl(QStringLiteral("/api/v1/push/subscription")),
-         formdata,
-         true,
-         this,
-         [=](QNetworkReply *reply) {
-             m_hasPushSubscription = true;
-             qCDebug(TOKODON_HTTP) << "Subscribed to push notifications:" << reply->readAll();
-         },
-         {});
+    post(
+        apiUrl(QStringLiteral("/api/v1/push/subscription")),
+        formdata,
+        true,
+        this,
+        [=](QNetworkReply *reply) {
+            m_hasPushSubscription = true;
+            qCDebug(TOKODON_HTTP) << "Subscribed to push notifications:" << reply->readAll();
+        },
+        [=](QNetworkReply *reply) {
+            Q_UNUSED(reply); // to prevent a visible error
+        });
 #endif
 }
 
