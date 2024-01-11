@@ -185,7 +185,7 @@ Kirigami.ScrollablePage {
                     if (!root.isCurrentPage) {
                         status.inViewPort = false
                     } else {
-                        listview.onContentYChanged()
+                        listview.contentYChanged()
                     }
                 }
             }
@@ -197,7 +197,7 @@ Kirigami.ScrollablePage {
                     if (appwindow.isShowingFullScreenImage) {
                         status.inViewPort = false
                     } else {
-                        listview.onContentYChanged()
+                        listview.contentYChanged()
                     }
                 }
             }
