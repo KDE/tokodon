@@ -36,6 +36,10 @@ SearchModel::~SearchModel() = default;
 
 void SearchModel::search(const QString &queryString)
 {
+    beginResetModel();
+    clear();
+    endResetModel();
+
     auto url = m_account->apiUrl(QStringLiteral("/api/v2/search"));
     url.setQuery({{QStringLiteral("q"), queryString}});
     setLoading(true);
