@@ -122,7 +122,8 @@ ListView {
         DelegateChoice {
             roleValue: SearchModel.Status
             StatusDelegate {
-                width: ListView.view.width
+                x: Kirigami.Units.smallSpacing
+                width: ListView.view.width - Kirigami.Units.smallSpacing * 2
                 secondary: true
                 showSeparator: true
                 showInteractionButton: false
