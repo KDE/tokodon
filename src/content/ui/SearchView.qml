@@ -30,6 +30,7 @@ ListView {
         property: "type"
         delegate: Kirigami.ListSectionHeader {
             text: searchModel.labelForType(section)
+            width: parent.width
         }
     }
 
