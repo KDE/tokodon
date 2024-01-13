@@ -465,5 +465,19 @@ QQC2.ItemDelegate {
 
             sourceComponent: InformationBar {}
         }
+
+        Loader {
+            active: root.selected && root.visibility === Post.Private
+            visible: active
+
+            Layout.fillWidth: true
+
+            sourceComponent: Kirigami.InlineMessage {
+                id: privacyWarning
+
+                text: i18n("This post has been marked private. Some posts may be missing because it's replies are marked as private by default.")
+                visible: true
+            }
+        }
     }
 }
