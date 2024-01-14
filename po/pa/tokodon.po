@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"POT-Creation-Date: 2024-01-14 00:37+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -434,13 +434,13 @@ msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:369
+#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:376
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
 msgstr "ਸੰਰਚਨਾ"
 
-#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
+#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:415
 #, kde-format
 msgid "Follow Requests"
 msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
@@ -666,7 +666,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
 #, kde-format
 msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
@@ -678,7 +678,7 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "ਪੋਸਟ"
 
-#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:140
+#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -712,6 +712,84 @@ msgstr "ਰੁਝਾਨ"
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "ਰੁਝਾਨ"
+
+#: content/ui/InitialSetup/SetupNotifications.qml:19
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title:window"
+msgid "Notifications"
+msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
+
+#: content/ui/InitialSetup/SetupNotifications.qml:22
+#: content/ui/InitialSetup/SetupPassword.qml:20
+#, kde-format
+msgid "Setup Required"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupNotifications.qml:27
+#, kde-format
+msgid ""
+"Tokodon can show notifications for activity such as users boosting or "
+"replying to your posts.\n"
+"\n"
+"The types of notifications shown can be fine tuned when logged in."
+msgstr ""
+
+#: content/ui/InitialSetup/SetupNotifications.qml:34
+#, fuzzy, kde-format
+#| msgid "No Notifications"
+msgid "Allow Notifications"
+msgstr "ਕੋਈ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਹੀਂ"
+
+#: content/ui/InitialSetup/SetupNotifications.qml:48
+#: content/ui/InitialSetup/SetupWelcome.qml:42
+#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/ServersPage.qml:77
+#, kde-format
+msgid "Continue"
+msgstr "ਜਾਰੀ ਰੱਖੋ"
+
+#: content/ui/InitialSetup/SetupPassword.qml:17
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@title:window"
+msgid "Password Service"
+msgstr "ਪਾਸਵਰਡ"
+
+#: content/ui/InitialSetup/SetupPassword.qml:25
+#, kde-format
+msgid ""
+"Tokodon requires a password service to be running to save personally "
+"sensitive information.\n"
+"\n"
+"Tokodon can use KWallet, GNOME Keyring or any libsecret-compatible service.\n"
+"\n"
+"After you installed the service, make sure it's running and restart Tokodon."
+msgstr ""
+
+#: content/ui/InitialSetup/SetupPassword.qml:32
+#, fuzzy, kde-format
+#| msgid "About Tokodon"
+msgid "Quit Tokodon"
+msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
+
+#: content/ui/InitialSetup/SetupWelcome.qml:17
+#: content/ui/LoginFlow/WelcomePage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupWelcome.qml:30
+#: content/ui/LoginFlow/WelcomePage.qml:30
+#, kde-format
+msgid "Welcome to Tokodon"
+msgstr "ਟੂਕੂਡੂਨ ਲਈ ਜੀ ਆਇਆਂ ਨੂੰ"
+
+#: content/ui/InitialSetup/SetupWelcome.qml:35
+#, kde-format
+msgid "Some initial setup is required before you can use Tokodon."
+msgstr ""
 
 #: content/ui/LanguageSelector.qml:25
 #, fuzzy, kde-format
@@ -844,12 +922,6 @@ msgid ""
 "trouble logging in."
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:68
-#: content/ui/LoginFlow/ServersPage.qml:77
-#, kde-format
-msgid "Continue"
-msgstr "ਜਾਰੀ ਰੱਖੋ"
-
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Server URL must not be empty!"
@@ -961,17 +1033,6 @@ msgstr ""
 msgid "Server URL must not be empty."
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:17
-#, kde-format
-msgctxt "@title:window"
-msgid "Welcome"
-msgstr ""
-
-#: content/ui/LoginFlow/WelcomePage.qml:30
-#, kde-format
-msgid "Welcome to Tokodon"
-msgstr "ਟੂਕੂਡੂਨ ਲਈ ਜੀ ਆਇਆਂ ਨੂੰ"
-
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
@@ -982,13 +1043,13 @@ msgstr ""
 msgid "Login"
 msgstr "ਲਾਗਇਨ"
 
-#: content/ui/Main.qml:94
+#: content/ui/Main.qml:101
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr ""
 
-#: content/ui/Main.qml:96
+#: content/ui/Main.qml:103
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -996,7 +1057,7 @@ msgctxt "@title"
 msgid "Reply As…"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/Main.qml:98
+#: content/ui/Main.qml:105
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -1004,7 +1065,7 @@ msgctxt "@title"
 msgid "Favorite As…"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:100
+#: content/ui/Main.qml:107
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -1012,98 +1073,98 @@ msgctxt "@title"
 msgid "Boost As…"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/Main.qml:102
+#: content/ui/Main.qml:109
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:104
+#: content/ui/Main.qml:111
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:350
+#: content/ui/Main.qml:357
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:359
+#: content/ui/Main.qml:366
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgid "Moderation Tools"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
-#: content/ui/Main.qml:360
+#: content/ui/Main.qml:367
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
-#: content/ui/Main.qml:370
+#: content/ui/Main.qml:377
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/Main.qml:380
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Home"
 msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 
-#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:402 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
-#: content/ui/Main.qml:424 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:323
 #, kde-format
 msgid "Local"
 msgstr "ਲੋਕਲ"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:446
 #, kde-format
 msgid "Global"
 msgstr "ਗਲੋਬਲ"
 
-#: content/ui/Main.qml:455
+#: content/ui/Main.qml:462
 #, kde-format
 msgid "Conversation"
 msgstr "ਗੱਲਬਾਤ"
 
-#: content/ui/Main.qml:469
+#: content/ui/Main.qml:476
 #, kde-format
 msgid "Favourites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:492
 #, kde-format
 msgid "Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:515
+#: content/ui/Main.qml:522
 #, kde-format
 msgid "Search"
 msgstr "ਖੋਜੋ"
 
-#: content/ui/Main.qml:530
+#: content/ui/Main.qml:537
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/Main.qml:545
+#: content/ui/Main.qml:552
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:691
+#: content/ui/Main.qml:698
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2705,22 +2766,22 @@ msgctxt "@title"
 msgid "Search"
 msgstr "ਖੋਜੋ"
 
-#: content/ui/SearchView.qml:37
+#: content/ui/SearchView.qml:38
 #, kde-format
 msgid "Loading..."
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: content/ui/SearchView.qml:45
+#: content/ui/SearchView.qml:46
 #, kde-format
 msgid "No search results"
 msgstr "ਕੋਈ ਖੋਜ ਨਤੀਜੇ ਨਹੀਂ"
 
-#: content/ui/SearchView.qml:53
+#: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
 msgstr ""
 
-#: content/ui/SearchView.qml:145
+#: content/ui/SearchView.qml:147
 #, fuzzy, kde-format
 #| msgid "Hashtags"
 msgid "Hashtag"
@@ -4033,13 +4094,13 @@ msgstr ""
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: search/searchmodel.cpp:136
+#: search/searchmodel.cpp:140
 #, fuzzy, kde-format
 #| msgid "User"
 msgid "Users"
 msgstr "ਵਰਤੋਂਕਾਰ"
 
-#: search/searchmodel.cpp:138
+#: search/searchmodel.cpp:142
 #, kde-format
 msgid "Hashtags"
 msgstr "ਹੈਸ਼-ਟੈਗ"

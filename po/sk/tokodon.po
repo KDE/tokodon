@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"POT-Creation-Date: 2024-01-14 00:37+0000\n"
 "PO-Revision-Date: 2022-04-07 18:19+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -445,13 +445,13 @@ msgstr "Účty"
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:369
+#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:376
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
+#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:415
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -668,7 +668,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -679,7 +679,7 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:140
+#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
 #, kde-format
 msgid "Posts"
 msgstr ""
@@ -707,6 +707,81 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupNotifications.qml:19
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Notifications"
+msgstr "Upozornenia"
+
+#: content/ui/InitialSetup/SetupNotifications.qml:22
+#: content/ui/InitialSetup/SetupPassword.qml:20
+#, kde-format
+msgid "Setup Required"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupNotifications.qml:27
+#, kde-format
+msgid ""
+"Tokodon can show notifications for activity such as users boosting or "
+"replying to your posts.\n"
+"\n"
+"The types of notifications shown can be fine tuned when logged in."
+msgstr ""
+
+#: content/ui/InitialSetup/SetupNotifications.qml:34
+#, fuzzy, kde-format
+msgid "Allow Notifications"
+msgstr "Upozornenia"
+
+#: content/ui/InitialSetup/SetupNotifications.qml:48
+#: content/ui/InitialSetup/SetupWelcome.qml:42
+#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/ServersPage.qml:77
+#, kde-format
+msgid "Continue"
+msgstr "Pokračovať"
+
+#: content/ui/InitialSetup/SetupPassword.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Password Service"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupPassword.qml:25
+#, kde-format
+msgid ""
+"Tokodon requires a password service to be running to save personally "
+"sensitive information.\n"
+"\n"
+"Tokodon can use KWallet, GNOME Keyring or any libsecret-compatible service.\n"
+"\n"
+"After you installed the service, make sure it's running and restart Tokodon."
+msgstr ""
+
+#: content/ui/InitialSetup/SetupPassword.qml:32
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgid "Quit Tokodon"
+msgstr "Tokodon"
+
+#: content/ui/InitialSetup/SetupWelcome.qml:17
+#: content/ui/LoginFlow/WelcomePage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupWelcome.qml:30
+#: content/ui/LoginFlow/WelcomePage.qml:30
+#, kde-format
+msgid "Welcome to Tokodon"
+msgstr ""
+
+#: content/ui/InitialSetup/SetupWelcome.qml:35
+#, kde-format
+msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
 
 #: content/ui/LanguageSelector.qml:25
@@ -834,12 +909,6 @@ msgid ""
 "trouble logging in."
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:68
-#: content/ui/LoginFlow/ServersPage.qml:77
-#, kde-format
-msgid "Continue"
-msgstr "Pokračovať"
-
 #: content/ui/LoginFlow/LoginPage.qml:74
 #, kde-format
 msgid "Server URL must not be empty!"
@@ -944,17 +1013,6 @@ msgstr ""
 msgid "Server URL must not be empty."
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:17
-#, kde-format
-msgctxt "@title:window"
-msgid "Welcome"
-msgstr ""
-
-#: content/ui/LoginFlow/WelcomePage.qml:30
-#, kde-format
-msgid "Welcome to Tokodon"
-msgstr ""
-
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
@@ -965,118 +1023,118 @@ msgstr ""
 msgid "Login"
 msgstr "Prihlásenie"
 
-#: content/ui/Main.qml:94
+#: content/ui/Main.qml:101
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr ""
 
-#: content/ui/Main.qml:96
+#: content/ui/Main.qml:103
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Odpovedať"
 
-#: content/ui/Main.qml:98
+#: content/ui/Main.qml:105
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr ""
 
-#: content/ui/Main.qml:100
+#: content/ui/Main.qml:107
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr ""
 
-#: content/ui/Main.qml:102
+#: content/ui/Main.qml:109
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr ""
 
-#: content/ui/Main.qml:104
+#: content/ui/Main.qml:111
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:350
+#: content/ui/Main.qml:357
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:359
+#: content/ui/Main.qml:366
 #, kde-format
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/Main.qml:360
+#: content/ui/Main.qml:367
 #, fuzzy, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Voľby:"
 
-#: content/ui/Main.qml:370
+#: content/ui/Main.qml:377
 #, fuzzy, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: content/ui/Main.qml:380
+#: content/ui/Main.qml:387
 #, fuzzy, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:402 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, fuzzy, kde-format
 msgid "Notifications"
 msgstr "Upozornenia"
 
-#: content/ui/Main.qml:424 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:323
 #, fuzzy, kde-format
 msgid "Local"
 msgstr "Lokálne"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:446
 #, fuzzy, kde-format
 msgid "Global"
 msgstr "Globálne"
 
-#: content/ui/Main.qml:455
+#: content/ui/Main.qml:462
 #, fuzzy, kde-format
 msgid "Conversation"
 msgstr "Voľby:"
 
-#: content/ui/Main.qml:469
+#: content/ui/Main.qml:476
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:492
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:515
+#: content/ui/Main.qml:522
 #, kde-format
 msgid "Search"
 msgstr ""
 
-#: content/ui/Main.qml:530
+#: content/ui/Main.qml:537
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/Main.qml:545
+#: content/ui/Main.qml:552
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:691
+#: content/ui/Main.qml:698
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2604,22 +2662,22 @@ msgctxt "@title"
 msgid "Search"
 msgstr ""
 
-#: content/ui/SearchView.qml:37
+#: content/ui/SearchView.qml:38
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "Načítavam"
 
-#: content/ui/SearchView.qml:45
+#: content/ui/SearchView.qml:46
 #, kde-format
 msgid "No search results"
 msgstr ""
 
-#: content/ui/SearchView.qml:53
+#: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
 msgstr ""
 
-#: content/ui/SearchView.qml:145
+#: content/ui/SearchView.qml:147
 #, kde-format
 msgid "Hashtag"
 msgstr ""
@@ -3874,12 +3932,12 @@ msgstr ""
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: search/searchmodel.cpp:136
+#: search/searchmodel.cpp:140
 #, fuzzy, kde-format
 msgid "Users"
 msgstr "Užívateľské meno:"
 
-#: search/searchmodel.cpp:138
+#: search/searchmodel.cpp:142
 #, kde-format
 msgid "Hashtags"
 msgstr ""
