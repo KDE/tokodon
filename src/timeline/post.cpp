@@ -822,22 +822,39 @@ bool Post::isEmpty() const
 QPair<QString, QList<QString>> Post::parseContent(const QString &html)
 {
     const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
+    const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
 
     QList<QString> standaloneTags;
 
-    const auto lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
-    const auto lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
-    auto lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
+    // Find the last <p> or <br>
+    const int lastBreak = html.lastIndexOf(QStringLiteral("<br>"));
+    int lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
+    if (lastBreak > lastParagraphBegin) {
+        lastParagraphBegin = lastBreak;
+    }
+
+    const int lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
+    QString lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
 
     QString processedHtml = html;
 
-    // Catch all the tags in the last paragraph of the post
+    // Catch all the tags in the last paragraph of the post, but only if they are not surrounded by text
     {
-        auto matchIterator = hashtagExp.globalMatch(lastParagraph);
+        QList<QString> possibleTags;
+        QString possibleLastParagraph = lastParagraph;
+
+        auto matchIterator = hashtagExp.globalMatch(possibleLastParagraph);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
-            standaloneTags.push_back(match.captured(1));
-            processedHtml = processedHtml.replace(match.captured(0), QStringLiteral(""));
+            possibleTags.push_back(match.captured(1));
+            possibleLastParagraph = possibleLastParagraph.replace(match.captured(0), QStringLiteral(""));
+        }
+
+        // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
+        auto extraneousIterator = extraneousParagraph.globalMatch(possibleLastParagraph);
+        if (extraneousIterator.hasNext()) {
+            processedHtml.replace(lastParagraph, possibleLastParagraph);
+            standaloneTags = possibleTags;
         }
     }
 
@@ -852,8 +869,6 @@ QPair<QString, QList<QString>> Post::parseContent(const QString &html)
             processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
         }
     }
-
-    const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<p\\s*\\/?>)+\\s*<\\/p>)"));
 
     // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
     // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"

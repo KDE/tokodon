@@ -121,6 +121,34 @@ private Q_SLOTS:
         QCOMPARE(tags[1], QStringLiteral("魔法少女まどかマギカ"));
         QCOMPARE(content, expected);
     }
+
+    // Ensure that posts that separate the tags not in a separate paragraph, but with a <br> for some reason
+    void testContentParsingEdgeCaseThree()
+    {
+        const QString testHtml = QStringLiteral(
+            R"(<p>Made a small FPS demo in @godotengine</p><p>Walls were made in <a href=\"/tags/MaterialMaker\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>MaterialMaker</span></a> but it seems godot has trouble with the normal maps :( One common trick I use is to flip faces to break repetition but even if you don't it makes those weird light artefacts<br><a href=\"/tags/indiedev\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>indiedev</span></a> <a href=\"/tags/gamedev\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>gamedev</span></a> <a href=\"/tags/GodotEngine\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>GodotEngine</span></a></p>)");
+
+        const auto [content, tags] = Post::parseContent(testHtml);
+
+        const QString expected = QStringLiteral(
+            R"(<p>Made a small FPS demo in @godotengine</p><p>Walls were made in <a href=\"/tags/MaterialMaker\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>MaterialMaker</span></a> but it seems godot has trouble with the normal maps :( One common trick I use is to flip faces to break repetition but even if you don't it makes those weird light artefacts</p>)");
+
+        QCOMPARE(tags[1], QStringLiteral("gamedev"));
+        QCOMPARE(content, expected);
+    }
+
+    // Ensure that posts that paragraphs that have a mix of tags and text don't get snipped
+    void testContentParsingEdgeCaseFour()
+    {
+        const QString testHtml = QStringLiteral(
+            R"(<p>I never got around to writing my <a href=\"/tags/introduction\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>introduction</span></a>, so here it is then.</p><p><a href=\"/tags/Books\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>Books</span></a> &amp; <a href=\"/tags/movies\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>movies</span></a> recommendations are always welcome!</p>)");
+
+        const auto [content, tags] = Post::parseContent(testHtml);
+
+        // Nothing should happen to this text
+        QVERIFY(tags.empty());
+        QCOMPARE(content, testHtml);
+    }
 };
 
 QTEST_MAIN(PostTest)
