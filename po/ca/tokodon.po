@@ -1,16 +1,16 @@
 # Translation of tokodon.po to Catalan
-# Copyright (C) 2021-2023 This_file_is_part_of_KDE
+# Copyright (C) 2021-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2023-12-04 12:48+0100\n"
+"PO-Revision-Date: 2024-01-14 11:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -682,8 +682,7 @@ msgid "No Trending Tags"
 msgstr "Sense etiquetes amb tendències"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Notificacions"
@@ -692,7 +691,7 @@ msgstr "Notificacions"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Es requereix una configuració"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -702,12 +701,16 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"El Tokodon pot mostrar notificacions per a activitats com ara els usuaris "
+"que impulsen o responen a les vostres entrades.\n"
+"\n"
+"Els tipus de notificacions que es mostren es poden afinar quan s'ha iniciat "
+"la sessió."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Sense notificacions"
+msgstr "Permet les notificacions"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -718,11 +721,10 @@ msgid "Continue"
 msgstr "Continua"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Contrasenya"
+msgstr "Servei de contrasenya"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -734,12 +736,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"El Tokodon requereix que s'executi un servei de contrasenyes per a desar "
+"informació confidencial.\n"
+"\n"
+"El Tokodon pot utilitzar el KWallet, l'anell de claus del GNOME o qualsevol "
+"servei compatible amb la «libsecret».\n"
+"\n"
+"Després d'instal·lar el servei, assegureu-vos que s'està executant i "
+"reinicieu el Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Quant al Tokodon"
+msgstr "Surt del Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -758,6 +767,7 @@ msgstr "Us donem la benvinguda al Tokodon"
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
+"Es requereix una configuració inicial abans de poder utilitzar el Tokodon."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format

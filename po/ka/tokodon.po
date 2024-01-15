@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2023-12-04 06:24+0100\n"
+"PO-Revision-Date: 2024-01-14 06:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -678,8 +678,7 @@ msgid "No Trending Tags"
 msgstr "ტრენდული ჭდეების გარეშე"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "გაფრთხილებები"
@@ -688,7 +687,7 @@ msgstr "გაფრთხილებები"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "აუცილებელია მორგება"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -698,12 +697,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon-ს შეუძლია, გაფრთხილებები ისეთ აქტივობებზე გაჩვენოთ, როგორიცაა "
+"მომხმარებლების მიერ თქვენი პოსტების აწევა ან მათზე პასუხი.\n"
+"\n"
+"ნაჩვენები გაფრთხილების ტიპების მორგება შესვლის შემდეგ შეგიძლიათ."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "შეტყობინებების გარეშე"
+msgstr "შეტყობინებების დაშვება"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -714,11 +716,10 @@ msgid "Continue"
 msgstr "გაგრძელება"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "პაროლი"
+msgstr "პაროლის სერვისი"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -730,12 +731,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon-ს ესაჭიროება, რომ გაშვებული იყოს პაროლის სერვისი, რათა პირადი "
+"ინფორმაციის შენახვა უსაფრთხოდ შეიძლებოდეს.\n"
+"\n"
+"Tokodon-ს შეუძლია გამოიყენოს KWallet, GNOME Keyring ან ნებისმიერი libsecret-"
+"თან თავსებადი სერვისი.\n"
+"\n"
+"მას შემდეგ, რაც სერვისს დააყენებთ, დარწმუნდით, რომ ის გაშვებულია და "
+"გადატვირთეთ Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Tokodon-ის შესახებ"
+msgstr "Tokodon-დან გასვლა"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -753,7 +761,7 @@ msgstr "მოგესალმებით Tokodon-ში"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Tokodon-ის გამოყენებამდე, აუცილებელია, ზოგიერთი პარამეტრი მოირგოთ."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format

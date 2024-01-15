@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2023-12-04 21:17+0100\n"
+"PO-Revision-Date: 2024-01-14 10:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -689,17 +689,16 @@ msgid "No Trending Tags"
 msgstr "Ni značk v trendu"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
-msgstr "Opozorila"
+msgstr "Obvestila"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:22
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Zahtevana nastavitev"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -709,12 +708,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon lahko prikaže obvestila za dejavnosti, kot so uporabniki, ki "
+"spodbujajo vaše objave ali odgovarjajo nanje.\n"
+"\n"
+"Vrste prikazanih obvestil je mogoče natančno nastaviti, ko ste prijavljeni."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Ni opozoril"
+msgstr "Dovoli obvestila"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -725,11 +727,10 @@ msgid "Continue"
 msgstr "Nadaljuj"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Geslo"
+msgstr "Storitev gesla"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -741,12 +742,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon zahteva, da se izvaja storitev gesel za shranjevanje občutljivih "
+"osebnih podatkov.\n"
+"\n"
+"Tokodon lahko uporablja KWallet, GNOME Keyring ali katero koli storitev, "
+"združljivo z libsecret.\n"
+"\n"
+"Ko ste namestili storitev, se prepričajte, da deluje, in znova zaženite "
+"Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "O Tokodonu"
+msgstr "Zapusti Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -765,6 +773,7 @@ msgstr "Dobrodošli v Tokodon"
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
+"Preden lahko uporabite Tokodon, je potrebnih nekaj začetnih nastavitev."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
