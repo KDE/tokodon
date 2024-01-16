@@ -1,16 +1,16 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2003 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2003, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2023-12-05 08:10+0100\n"
+"PO-Revision-Date: 2024-01-15 21:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -683,8 +683,7 @@ msgid "No Trending Tags"
 msgstr "Ez dago joerako etiketarik"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Jakinarazpenak"
@@ -693,7 +692,7 @@ msgstr "Jakinarazpenak"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Ezartzea beharrezkoa da"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -703,12 +702,16 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"«Tokodon»ek, erabiltzaileek zure postei bultzada ematea edo haiei erantzutea "
+"gisako jardueren jakinarazpenak erakuts ditzake.\n"
+"\n"
+"Erakutsitako jakinarazpen motak, saio-hasita izanik xehetasun handiarekin "
+"doi daitezke."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Jakinarazpenik ez"
+msgstr "Baimendu jakinarazpenak"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -719,11 +722,10 @@ msgid "Continue"
 msgstr "Jarraitu"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Pasahitza"
+msgstr "Pasahitz-zerbitzua"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -735,12 +737,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"«Tokodon»ek, babes berezia behar duen norbanakoen informazioa gordetzeko "
+"pasahitz zerbitzu bat martxan egotea behar du.\n"
+"\n"
+"«Tokodon»ek KWallet, «GNOME Keyring» edo «libsecret»ekin bateragarria den "
+"edozein zerbitzu erabil dezake.\n"
+"\n"
+"Zerbitzua instalatu ondoren, ziurtatu martxan dagoela eta berrabiarazi "
+"Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "«Tokodon»i buruz"
+msgstr "Irten «Tokodon»etik"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -759,6 +768,7 @@ msgstr "Ongi etorri «Tokodon»era"
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
+"Tokodon erabili ahal izateko, hasierako ezarpen batzuk beharrezkoak dira."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format

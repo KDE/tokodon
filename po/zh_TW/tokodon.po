@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2024-01-08 19:27+0900\n"
+"PO-Revision-Date: 2024-01-15 18:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.85\n"
+"X-Generator: Lokalize 24.01.90\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -671,8 +671,7 @@ msgid "No Trending Tags"
 msgstr "無熱門標籤"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "通知"
@@ -681,7 +680,7 @@ msgstr "通知"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "需要進行設定"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -691,12 +690,14 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon 可以為某些活動顯示通知，例如使用者轉嘟或是回覆您的嘟文。\n"
+"\n"
+"登入後可以詳細調整要顯示的通知類型。"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "沒有通知"
+msgstr "允許通知"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -707,11 +708,10 @@ msgid "Continue"
 msgstr "繼續"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "密碼"
+msgstr "密碼服務"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -723,12 +723,16 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon 需要系統上有執行中的密碼服務，用來儲存敏感的個人資訊。\n"
+"\n"
+"Tokodon 支援使用 KWallet、GNOME 鑰匙圈或是其他任何與 libsecret 相容的服務。\n"
+"\n"
+"安裝服務之後，請確定它確實在執行中，然後重新啟動 Tokodon。"
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "關於 Tokodon"
+msgstr "離開 Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -746,7 +750,7 @@ msgstr "歡迎來到 Tokodon"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "需要進行一些初始設定才能開始使用 Tokodon。"
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
@@ -2312,7 +2316,7 @@ msgstr "分類"
 msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
-msgstr ""
+msgstr "這個帳號或內容被檢舉的原因會在管理員與該帳號聯絡時被參考"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:325
 #, kde-format
@@ -2364,7 +2368,7 @@ msgstr "被檢舉的內容"
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "違反的內容會在管理員與該帳號聯絡時被參考"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
 #: content/ui/StatusDelegate/StatusDelegate.qml:292
@@ -2858,7 +2862,7 @@ msgstr ""
 #: content/ui/Settings/ProfileEditor.qml:281
 #, kde-format
 msgid "Require approval of follow requests"
-msgstr ""
+msgstr "要求跟隨請求需要先准許"
 
 #: content/ui/Settings/ProfileEditor.qml:289
 #, kde-format
