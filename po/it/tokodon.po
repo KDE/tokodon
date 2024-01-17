@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2023-12-05 06:23+0100\n"
+"PO-Revision-Date: 2024-01-14 16:20+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -678,8 +678,7 @@ msgid "No Trending Tags"
 msgstr "Nessun tag di tendenza"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Notifiche"
@@ -688,7 +687,7 @@ msgstr "Notifiche"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Cio"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -698,12 +697,16 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon può mostrare notifiche per attività come gli utenti che mettono in "
+"evidenza o rispondono ai tuoi commenti.\n"
+"\n"
+"I tipi di notifiche visualizzate possono essere ottimizzati una volta "
+"effettuato l'accesso."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Nessuna notifica"
+msgstr "Consenti notifiche"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -714,11 +717,10 @@ msgid "Continue"
 msgstr "Continua"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Password"
+msgstr "Servizio password"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -730,12 +732,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon richiede l'esecuzione di un servizio password per salvare "
+"informazioni personali sensibili.\n"
+"\n"
+"Tokodon può utilizzare KWallet, GNOME Keyring o qualsiasi servizio "
+"compatibile con libsecret.\n"
+"\n"
+"Dopo aver installato il servizio, assicurati che sia in esecuzione e riavvia "
+"Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Informazioni su Tokodon"
+msgstr "Esci da Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -754,6 +763,7 @@ msgstr "Benvenuto in Tokodon"
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
+"È necessaria una configurazione iniziale prima di poter utilizzare Tokodon."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
