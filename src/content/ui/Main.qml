@@ -373,7 +373,7 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "settings-configure"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure"), width: Kirigami.Units.gridUnit * 50, height: Kirigami.Units.gridUnit * 35 })
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
 

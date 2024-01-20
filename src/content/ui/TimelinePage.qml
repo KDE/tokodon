@@ -49,7 +49,7 @@ Kirigami.ScrollablePage {
         actions: Kirigami.Action {
             text: i18n("Settings")
             icon.name: "settings-configure"
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
+            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure"), width: Kirigami.Units.gridUnit * 50, height: Kirigami.Units.gridUnit * 35 })
         }
     }
 
