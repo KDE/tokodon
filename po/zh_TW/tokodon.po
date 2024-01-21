@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 18:58+0900\n"
+"POT-Creation-Date: 2024-01-21 00:37+0000\n"
+"PO-Revision-Date: 2024-01-21 02:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.90\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -803,17 +803,14 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "登入伺服器時發生問題：<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Resolve this issue by logging into the server's website. Once completed, "
-#| "try logging in again with the button below."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\\n\\nYou can attempt to log in "
 "again with the button below, or restart Tokodon."
 msgstr ""
-"要解決這個問題，請先到伺服器的網站進行登入。完成之後，再試著使用下方按鈕在此"
-"嘗試登入。"
+"請檢查密碼服務是否為執行中。對於其他登入問題，您可以試著到伺服器的網站進行登"
+"入。\\n\\n您可以試著使用下方按鈕再次嘗試登入，或是重新啟動 Tokodon。"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -3628,6 +3625,13 @@ msgstr "已加入書籤"
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:478
+#, kde-format
+msgid ""
+"This post has been marked private. Some posts may be missing because it's "
+"replies are marked as private by default."
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format

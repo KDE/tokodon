@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-14 23:59+0100\n"
+"POT-Creation-Date: 2024-01-21 00:37+0000\n"
+"PO-Revision-Date: 2024-01-20 02:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -817,17 +817,16 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Ha ocurrido un problema al iniciar sesión en el servidor:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Resolve this issue by logging into the server's website. Once completed, "
-#| "try logging in again with the button below."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\\n\\nYou can attempt to log in "
 "again with the button below, or restart Tokodon."
 msgstr ""
-"Resuelva este problema iniciando sesión en el sitio web del servidor. Tras "
-"hacerlo, pruebe a iniciar sesión de nuevo con el botón inferior."
+"Compruebe si está funcionando el servicio de contraseñas. Para otros "
+"problemas de inicio de sesión, puede probar a iniciar sesión en el sitio web "
+"del servidor.\\n\\nPuede probar a iniciar sesión de nuevo con el botón "
+"inferior, o reiniciar Tokodon."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -3663,6 +3662,13 @@ msgstr "Marcada"
 #, kde-format
 msgid "Bookmark"
 msgstr "Añadir marcador"
+
+#: content/ui/StatusDelegate/StatusDelegate.qml:478
+#, kde-format
+msgid ""
+"This post has been marked private. Some posts may be missing because it's "
+"replies are marked as private by default."
+msgstr ""
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format
