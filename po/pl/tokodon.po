@@ -1,15 +1,15 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # SPDX-FileCopyrightText: 2023 Marcin Mikołajczak <me@mkljczk.pl>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-21 00:37+0000\n"
-"PO-Revision-Date: 2023-12-23 13:59+0100\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
+"PO-Revision-Date: 2024-01-21 08:19+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -683,8 +683,7 @@ msgid "No Trending Tags"
 msgstr "Nie ma żadnych znaczników na czasie"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Powiadomienia"
@@ -693,7 +692,7 @@ msgstr "Powiadomienia"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Wymagane ustawienia"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:27
 #, kde-format
@@ -703,12 +702,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon może pokazywać powiadomienia dla zdarzeń takich jak udostępnianie "
+"lub odpowiadanie na twoje wpisy.\n"
+"\n"
+"Rodzaj pokazywanych powiadomień można dostosować po wejściu na konto."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:34
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Bez powiadomień"
+msgstr "Zezwól na powiadomienia"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:48
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -719,11 +721,10 @@ msgid "Continue"
 msgstr "Kontynuuj"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Hasło"
+msgstr "Usługa haseł"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -735,12 +736,18 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon wymaga uruchomionej usługi przechowywania haseł, aby zapisywać twoje "
+"dane poufne.\n"
+"\n"
+"Tokodon obsługuje KWallet, Pęk Kluczy GNOME oraz usługi zgodne z libsecret.\n"
+"\n"
+"Po wgraniu usługi, upewnij się, ze została ona uruchomiona i uruchom "
+"Tokodona ponownie."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "O Tokodon"
+msgstr "Zakończ Tokodona"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -759,6 +766,8 @@ msgstr "Witaj w Tokodon"
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
+"Wymagane jest dokonanie wstępnych ustawień zanim będzie można korzystać z "
+"Tokodona."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
@@ -811,17 +820,16 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Napotkano kłopot przy wchodzeniu na serwer:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Resolve this issue by logging into the server's website. Once completed, "
-#| "try logging in again with the button below."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\\n\\nYou can attempt to log in "
 "again with the button below, or restart Tokodon."
 msgstr ""
-"Rozwiąż ten kłopot, wchodząc na stronę sieciową serwera. Następnie spróbuj "
-"ponownie wejść na serwer przy użyciu poniższego przycisku."
+"Upewnij się, że usługa przechowywania haseł została uruchomiona. Na inne "
+"kłopoty związane z wchodzeniem na konto, możesz spróbować na nie wejść na "
+"stronie sieciowe.\\n\\nMożesz ponownie spróbować wejść na konto przy użyciu "
+"poniższego przycisku lub ponownie uruchomić Tokodona."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -3664,6 +3672,8 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
+"Ten wpis oznaczono jako prywatny. Niektórych wpisów może brakować, bo ich "
+"odpowiedzi zostały domyślnie oznaczone jako prywatne."
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format
