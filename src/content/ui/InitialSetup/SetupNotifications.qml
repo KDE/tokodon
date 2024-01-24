@@ -24,6 +24,7 @@ MastoPage {
 
     FormCard.FormCard {
         FormCard.FormTextDelegate {
+            labelItem.wrapMode: Text.WordWrap
             text: i18n("Tokodon can show notifications for activity such as users boosting or replying to your posts.\n\nThe types of notifications shown can be fine tuned when logged in.")
         }
 
