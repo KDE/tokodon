@@ -25,7 +25,19 @@ Kirigami.ScrollablePage {
     readonly property bool showBoosts: showBoostsAction.checked
     property alias showFilterAction: filterAction.visible
 
-    title: model.displayName
+    title: {
+        // Show the account name if the drawer is not open, so there's no way to tell which account you're on.
+        if (name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
+            if (AccountManager.rowCount() > 1) {
+                if (AccountManager.selectedAccount === null) {
+                    return i18n("Loading");
+                }
+                return i18n("Home (%1)", AccountManager.selectedAccount.identity.displayNameHtml);
+            }
+        } else {
+            return model.displayName;
+        }
+    }
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true

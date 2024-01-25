@@ -19,14 +19,7 @@ QString MainTimelineModel::name() const
 QString MainTimelineModel::displayName() const
 {
     if (m_timelineName == QStringLiteral("home")) {
-        if (m_manager && m_manager->rowCount() > 1) {
-            if (m_manager->selectedAccount() == nullptr) {
-                return i18n("Loading");
-            }
-            return i18nc("@title", "Home (%1)", m_manager->selectedAccount()->identity()->displayNameHtml());
-        } else {
-            return i18nc("@title", "Home");
-        }
+        return i18nc("@title", "Home");
     } else if (m_timelineName == QStringLiteral("public")) {
         return i18nc("@title", "Local Timeline");
     } else if (m_timelineName == QStringLiteral("federated")) {

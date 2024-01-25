@@ -49,11 +49,6 @@ private Q_SLOTS:
         timelineModel.setName(QStringLiteral("home"));
         QCOMPARE(timelineModel.displayName(), QStringLiteral("Home"));
 
-        auto account2 = new MockAccount();
-        AccountManager::instance().addAccount(account2, false);
-
-        QCOMPARE(timelineModel.displayName(), QStringLiteral("Home (test)"));
-
         account->clearFakeIdentity();
     }
 
