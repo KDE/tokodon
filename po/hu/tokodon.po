@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 03:07+0000\n"
-"PO-Revision-Date: 2024-01-15 11:21+0100\n"
+"PO-Revision-Date: 2024-01-27 23:12+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.01.85\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -183,8 +183,8 @@ msgstr[1] "%1 kedvencelés"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 kiemelés"
-msgstr[1] "%1 kiemelés"
+msgstr[0] "%1 hangsúlyozás"
+msgstr[1] "%1 hangsúlyozás"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
@@ -306,7 +306,7 @@ msgstr "Nincsenek korlátozások"
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
-msgstr ""
+msgstr "Hiba lépett fel a domaintiltás frissítésére irányuló PUT kérés során."
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
@@ -351,37 +351,37 @@ msgstr "Követés"
 #: content/ui/AccountInfo.qml:240
 #, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr ""
+msgstr "Ne értesítsen többé, ha %1 posztol."
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
 msgid "Notify me when %1 posts."
-msgstr ""
+msgstr "Értesítsen, ha %1 posztol."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr ""
+msgstr "%1 hangsúlyozásainak elrejtése"
 
 #: content/ui/AccountInfo.qml:261
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr ""
+msgstr "%1 hangsúlyozásainak megjelenítése"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
 msgid "Stop Featuring on Profile"
-msgstr ""
+msgstr "Kiemelés leállítása a profilon"
 
 #: content/ui/AccountInfo.qml:279
 #, kde-format
 msgid "Feature on Profile"
-msgstr ""
+msgstr "Kiemelés a profilon"
 
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Visszahangosítás"
 
 #: content/ui/AccountInfo.qml:297
 #, kde-format
@@ -391,19 +391,19 @@ msgstr "Némítás"
 #: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Unblock"
-msgstr ""
+msgstr "Tiltás feloldása"
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
 msgid "Block"
-msgstr ""
+msgstr "Tiltás"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr ""
+msgstr "Jelentés…"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -424,7 +424,7 @@ msgstr "Beállítások"
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Beállítás"
 
 #: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
 #, kde-format
@@ -434,7 +434,7 @@ msgstr "Követési kérések"
 #: content/ui/AccountInfo.qml:357
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Némított felhasználók"
 
 #: content/ui/AccountInfo.qml:363
 #, kde-format
@@ -449,27 +449,27 @@ msgstr "Kiemelt felhasználók"
 #: content/ui/AccountInfo.qml:374
 #, kde-format
 msgid "Copy Link to This Profile"
-msgstr ""
+msgstr "Hivatkozás másolása a profilhoz"
 
 #: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:50
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Bejegyzés hivatkozása másolva."
 
 #: content/ui/AccountInfo.qml:467
 #, kde-format
 msgid "Note:"
-msgstr ""
+msgstr "Jegyzet:"
 
 #: content/ui/AccountInfo.qml:475
 #, kde-format
 msgid "Saved"
-msgstr ""
+msgstr "Mentve"
 
 #: content/ui/AccountInfo.qml:490
 #, kde-format
 msgid "Click to add a note"
-msgstr ""
+msgstr "Kattintson jegyzet hozzáadásához"
 
 #: content/ui/AccountInfo.qml:596
 #, kde-format
@@ -505,7 +505,7 @@ msgstr "Bejegyzések"
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr ""
+msgstr "Bejegyzések és válaszok"
 
 #: content/ui/AccountInfo.qml:657
 #, kde-format
@@ -517,7 +517,7 @@ msgstr "Média"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr ""
+msgstr "Hangsúlyozások elrejtése"
 
 #: content/ui/AccountInfo.qml:706
 #, kde-format
@@ -529,40 +529,40 @@ msgstr "Összes"
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "A kiválaszott média megosztása"
 
 #: content/ui/AnnouncementsPage.qml:18
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr ""
+msgstr "Bejelentések"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr ""
+msgstr "Bejelentés, %1"
 
 #: content/ui/AnnouncementsPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "No announcements"
-msgstr ""
+msgstr "Nincsenek bejelentések"
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
-msgstr ""
+msgstr "Nincsenek emojik"
 
 #: content/ui/ConversationPage.qml:11
 #, kde-format
 msgid "Conversations"
-msgstr ""
+msgstr "Beszélgetések"
 
 #: content/ui/ConversationPage.qml:35
 #, kde-format
@@ -573,7 +573,7 @@ msgstr "Nincsenek beszélgetések"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr ""
+msgstr "Lista létrehozása"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -597,24 +597,25 @@ msgstr "Válaszok megjelenítése ehhez:"
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Kizárólagos"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
+"A kizárólagos listák bejegyzései nem jelennek meg a Kezdőlap idővonalán."
 
 #: content/ui/EditListPage.qml:102
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr ""
+msgstr "Létrehozás"
 
 #: content/ui/EditListPage.qml:104
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #: content/ui/EditListPage.qml:117
 #, kde-format
@@ -632,12 +633,12 @@ msgstr "Lista törlése"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr ""
+msgstr "Biztosan törölni szeretné ezt a listát?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
 #, kde-format
 msgid "Explore"
-msgstr ""
+msgstr "Felfedezés"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
 #, kde-format
@@ -653,14 +654,14 @@ msgstr "Bejegyzések"
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Címkék"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 személy beszél"
+msgstr[1] "%1 személy beszélget"
 
 #: content/ui/ExplorePage.qml:176
 #, kde-format
@@ -695,17 +696,17 @@ msgstr "Lista szerkesztése"
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Listák"
 
 #: content/ui/ListsPage.qml:29
 #, kde-format
 msgid "Create List"
-msgstr ""
+msgstr "Lista létrehozása"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Nincsenek listák"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -722,7 +723,7 @@ msgstr "Bejelentkezési hiba"
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Hiba történt a kiszolgálóra bejelentkezés során:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
 #, kde-format
@@ -730,16 +731,18 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Ezt a problémát a kiszolgáló weboldalán történő bejelentkezéssel oldhatja "
+"meg. Ha befejezte, próbáljon meg újra bejelentkezni a lenti gombbal."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Weboldal felkeresése"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Bejelentkezés újra"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
 #, kde-format
@@ -756,6 +759,8 @@ msgstr "Bejelentkezés"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a "
+"proxybeállításokat."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -777,7 +782,7 @@ msgstr "Bejelentkezés"
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
-msgstr ""
+msgstr "Kiszolgáló URL-címe:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -796,6 +801,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
+"Lehetővé teszi a Tokodonnal a moderációs eszközökhöz hozzáférést. Próbálja "
+"meg kikapcsolni ezt, ha gondja akad a bejelentkezéssel."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -832,7 +839,7 @@ msgstr "Regisztráció"
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Regisztráció"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:100
 #, kde-format
@@ -842,65 +849,65 @@ msgstr "Felhasználónév"
 #: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "E-mail cím"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Jelszó"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Ok"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Regisztráció"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr ""
+msgstr "Szabályok"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr ""
+msgstr "Szabályok"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr ""
+msgstr "Egyetértek"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
 #, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr ""
+msgstr "Nem értek egyet"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Kiszolgáló kiválasztása"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Ez a kiszolgáló lezárta a regisztrációt: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Kiszolgáló kiválasztása"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
@@ -911,7 +918,7 @@ msgstr "A kiszolgáló URL-címe nem lehet üres."
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Üdvözöljük"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -921,7 +928,7 @@ msgstr "Üdvözli a Tokodon"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Tudjon meg többet"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -932,7 +939,7 @@ msgstr "Bejelentkezés"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "Megnyitás mint…"
 
 #: content/ui/Main.qml:96
 #, kde-format
@@ -944,36 +951,36 @@ msgstr "Válasz mint…"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr ""
+msgstr "Kedvencelés mint…"
 
 #: content/ui/Main.qml:100
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Kiemelés mint…"
+msgstr "Hangsúlyozás mint…"
 
 #: content/ui/Main.qml:102
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr ""
+msgstr "Könyvjelzőzés mint…"
 
 #: content/ui/Main.qml:104
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "Ismeretlen művelet"
 
 #: content/ui/Main.qml:350
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Hibakeresés"
 
 #: content/ui/Main.qml:359
 #, kde-format
 msgid "Moderation Tools"
-msgstr ""
+msgstr "Moderációs eszközök"
 
 #: content/ui/Main.qml:360
 #, kde-format
@@ -1016,40 +1023,40 @@ msgstr "Beszélgetés"
 #: content/ui/Main.qml:469
 #, kde-format
 msgid "Favourites"
-msgstr ""
+msgstr "Kedvencek"
 
 #: content/ui/Main.qml:485
 #, kde-format
 msgid "Bookmarks"
-msgstr ""
+msgstr "Könyvjelzők"
 
 #: content/ui/Main.qml:515
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: content/ui/Main.qml:530
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
-msgstr ""
+msgstr "Bejelentések"
 
 #: content/ui/Main.qml:545
 #, kde-format
 msgid "Lists"
-msgstr ""
+msgstr "Listák"
 
 #: content/ui/Main.qml:691
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Információk beágyazása"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr ""
+msgstr "Részletes keresés"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
 #, kde-format
@@ -1061,31 +1068,31 @@ msgstr "Felhasználónév:"
 #, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr ""
+msgstr "Megjelenítendő név:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr ""
+msgstr "E-mail:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr ""
+msgstr "IP-cím:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
 #, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
 #, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
-msgstr ""
+msgstr "Visszaállítás"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
 #: content/ui/ModerationTools/FederationToolPage.qml:141
@@ -1095,7 +1102,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
 #, kde-format
@@ -1107,7 +1114,7 @@ msgstr "Hely"
 #, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
-msgstr ""
+msgstr "Mind"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
 #, kde-format
@@ -1119,7 +1126,7 @@ msgstr "Helyi"
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr ""
+msgstr "Távoli"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
 #, kde-format
@@ -1127,96 +1134,96 @@ msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr ""
+msgstr "Moderációs állapot"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
 #, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
-msgstr ""
+msgstr "Mind"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:145
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Aktív"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr ""
+msgstr "Függőben"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Letiltva"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr ""
+msgstr "Némítva"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Felfüggesztve"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr ""
+msgstr "Szerep"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
 #, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
-msgstr ""
+msgstr "Mind"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:192
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Moderátor"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr ""
+msgstr "Adminisztrátor"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr ""
+msgstr "Tulajdonos"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:299
 #, kde-format
 msgid "No accounts found"
-msgstr ""
+msgstr "Nem találhatók fiókok"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr ""
+msgstr "E-mail tiltás létrehozása"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr ""
+msgstr "E-mail domaininformáció"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr ""
+msgstr "E-mail domainnév"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
@@ -1230,44 +1237,44 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Fiókregisztrációs kísérletek ezen a héten"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "IP regisztrációs kísérletek ezen a héten"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr ""
+msgstr "E-mail tiltás törlése"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr ""
+msgstr "E-mail tiltás törölve"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr ""
+msgstr "Új e-mail domain tiltás"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
-msgstr ""
+msgstr "Domain *"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
@@ -1275,6 +1282,8 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Ez lehet az e-mail címben megjelenő tartománynév vagy az MX rekord, amelyet "
+"használ. Ezeket a regisztrációkor ellenőrzik."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
@@ -1285,67 +1294,67 @@ msgstr "Tartomány feloldása"
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr ""
+msgstr "Új e-mail tiltás hozzáadva"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 regisztrációs kísérlet az elmúlt héten"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
-msgstr "Nem találhatók tiltott e-mail címek"
+msgstr "Nem találhatók e-mail tiltások"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Új domain tiltás hozzáadása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:27
 #: content/ui/ModerationTools/FederationToolPage.qml:160
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Domainösszevonások engedélyezése"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Engedélyezett domainek információi"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr ""
+msgstr "Létrehozva:"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Domainösszevonások tiltása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Összevonás nem engedélyezett a domainre"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
-msgstr ""
+msgstr "Domain tiltás hozzáadása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr ""
+msgstr "Domain*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
@@ -1370,27 +1379,27 @@ msgstr "Moderáció"
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Csend"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Felfüggesztés"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr ""
+msgstr "Médiafájlok elutasítása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:122
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -1399,24 +1408,28 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Eltávolít minden helyben tárolt médiafájlt, és elutasítja továbbiak "
+"letöltését a jövőben. Felfüggesztések esetén irreleváns"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr ""
+msgstr "Jelentések elutasítása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Figyelmen kívül hagy minden erről a domainről érkező jelentést. "
+"Felfüggesztések esetén irreleváns"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Domainnév összezavarása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -1425,18 +1438,20 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Részben olvashatatlanná teszi a domainnevet a listában, ha a "
+"domainkorlátozások listájának hirdetése engedélyezett"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:177
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr ""
+msgstr "Tiltás létrehozása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Új domain tiltás hozzáadva"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
@@ -1444,12 +1459,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr ""
+msgstr "Domain*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Új engedélyezett domain hozzáadva"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
@@ -1457,6 +1472,8 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Az engedélyezett domain opció a korlátozott összevonás módot engedélyező "
+"példányoknál érhető el"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
@@ -1474,12 +1491,12 @@ msgstr "Tiltott tartományok"
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr ""
+msgstr "Engedélyezett domainek"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Összevonások engedélyezése"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
@@ -1490,60 +1507,60 @@ msgstr "Nem találhatók összevonások"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr ""
+msgstr "Szabály létrehozása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
-msgstr ""
+msgstr "Új IP-szabály"
 
 #: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "IP*"
-msgstr ""
+msgstr "IP*"
 
 #: content/ui/ModerationTools/IpRulePage.qml:43
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Lejárat"
 
 #: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr ""
+msgstr "1 nap"
 
 #: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr ""
+msgstr "2 hét"
 
 #: content/ui/ModerationTools/IpRulePage.qml:56
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr ""
+msgstr "1 hónap"
 
 #: content/ui/ModerationTools/IpRulePage.qml:60
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr ""
+msgstr "6 hónap"
 
 #: content/ui/ModerationTools/IpRulePage.qml:64
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr ""
+msgstr "1 év"
 
 #: content/ui/ModerationTools/IpRulePage.qml:68
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr ""
+msgstr "3 év"
 
 #: content/ui/ModerationTools/IpRulePage.qml:79
 #, kde-format
@@ -1555,43 +1572,43 @@ msgstr "Megjegyzés"
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr ""
+msgstr "Opcionális. Emlékezzen rá, miért hozta létre ezt a szabályt!"
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Szabály *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Válassza ki, mi történjen az erről az IP-címről érkező kérésekkel"
 
 #: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Regisztrációk korlátozása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Az új regisztrációk a jóváhagyását igénylik"
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
-msgstr "Feliratkozások tiltása"
+msgstr "Regisztrációk tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "Új regisztráció nem engedélyezett"
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
@@ -1603,32 +1620,32 @@ msgstr "Hozzáférés tiltása"
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Hozzáférés tiltása az összes erőforráshoz"
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr ""
+msgstr "IP-szabály létrehozása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
-msgstr ""
+msgstr "Új IP-szabály hozzáadva"
 
 #: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Regisztrációk korlátozása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Feliratkozások tiltása"
+msgstr "Regisztrációk tiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
@@ -1640,17 +1657,17 @@ msgstr "Hozzáférés tiltása"
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr ""
+msgstr "Nem találhatók IP-szabályok"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:20
 #, kde-format
 msgid "Not Available"
-msgstr ""
+msgstr "Nem érhető el"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:30
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "%1 moderálása"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:36
 #, kde-format
@@ -1658,7 +1675,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr ""
+msgstr "Figyelmeztetés"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:40
 #, kde-format
@@ -1666,14 +1683,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr ""
+msgstr "Befagyasztás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:45
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Érzékenység kényszerítése"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:50
 #, kde-format
@@ -1681,7 +1698,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Korlátozás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:55
 #, kde-format
@@ -1689,7 +1706,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Felfüggesztés"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:60
 #, kde-format
@@ -1697,7 +1714,7 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Felhasználó értesítése e-mailben"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:66
 #, kde-format
@@ -1709,75 +1726,75 @@ msgstr "Egyéni figyelmeztetés"
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr ""
+msgstr "Elküldés"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:93
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Intézkedés sikeresen végrehajtva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:98
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Are you sure?"
-msgstr ""
+msgstr "Biztos benne?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:109
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "A fiók ellen intézkedni fognak."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:117
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "%1 regisztrációs kérelme sikeresen jóváhagyva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:121
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "%1 regisztrációs kérelme sikeresen elutasítva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:125
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "%1 fiókjának fagyasztása sikeresen feloldva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:129
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "%1 fiókjának némítása sikeresen feloldva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:133
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "%1 fiókjának felfüggesztése sikeresen feloldva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:137
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "%1 fiókjának kényszerített érzékenyként jelölése sikeresen visszavonva"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:141
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "%1 fiókadatai sikeresen törölve"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:281
 #: content/ui/ModerationTools/MainReportToolPage.qml:154
 #, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
-msgstr ""
+msgstr "Életrajz"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:326
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Csatlakozás okai"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:372
 #, kde-format
@@ -1800,53 +1817,53 @@ msgstr "Követés"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:383
 #, kde-format
 msgid "No role"
-msgstr ""
+msgstr "Nincs szerep"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:384
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr ""
+msgstr "Szerep"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:388
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Utolsó aktivitás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:392
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr ""
+msgstr "Bejelentkezési állapot"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:404
 #, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
-msgstr ""
+msgstr "Szerep"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:412
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:419
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr ""
+msgstr "E-mail állapot"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:420
 #, kde-format
 msgid "Confirmed"
-msgstr ""
+msgstr "Megerősítve"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:420
 #, kde-format
 msgid "Not Confirmed"
-msgstr ""
+msgstr "Nincs megerősítve"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:427
 #, kde-format
@@ -1858,29 +1875,29 @@ msgstr "Fiók nyelve"
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Csatlakozott"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:443
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Legutolsó IP-cím"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:471
 #, kde-format
 msgid "Invited By"
-msgstr ""
+msgstr "Megívó"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:493
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr ""
+msgstr "Elfogadás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:505
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr ""
+msgstr "Elutasítás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:516
 #, kde-format
@@ -1891,42 +1908,42 @@ msgstr "Fiókadatok törlése"
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Feloldás"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:538
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Korlátozás visszavonása"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:548
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Felfüggesztés visszavonása"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:558
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Érzékenyítés kényszerítésének visszavonása"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:569
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Intézkedés foganatosítása a fiókkal szemben"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr ""
+msgstr "Domain tiltás eltávolítása"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Domain tiltás eltávolítva"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Domain tiltás szerkesztése"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
@@ -1938,12 +1955,12 @@ msgstr "Privát hozzászólás"
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr ""
+msgstr "Tiltás frissítése"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Domain tiltás frissítve"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:132
 #: content/ui/ModerationTools/MainIpRulePage.qml:175
@@ -1955,107 +1972,107 @@ msgstr "Tiltva ekkor:"
 #, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:147
 #, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Szabály"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:160
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Összezavarás"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:167
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr ""
+msgstr "Média elutasítása"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
-msgstr ""
+msgstr "Jelentések elutasítása"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:185
 #, kde-format
 msgid "Edit Domain Block"
-msgstr ""
+msgstr "Domain tiltás szerkesztése"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr ""
+msgstr "IP-szabály eltávolítása"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr ""
+msgstr "IP-szabály eltávolítva"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "IP-szabály frissítése"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
 #, kde-format
 msgctxt "@info IP address of the ip block"
 msgid "IP"
-msgstr ""
+msgstr "IP-cím"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:72
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Lejárat"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr ""
+msgstr "1 nap"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
 #, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr ""
+msgstr "2 hét"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr ""
+msgstr "1 hónap"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
 #, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr ""
+msgstr "6 hónap"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr ""
+msgstr "1 év"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
 #, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr ""
+msgstr "3 év"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
@@ -2068,73 +2085,73 @@ msgstr "Megjegyzés"
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr ""
+msgstr "Szabály *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:154
 #, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr ""
+msgstr "IP-szabály frissítése"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:164
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "IP-szabály frissítve"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:182
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Lejárat"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:190
 #, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:196
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Súlyosság"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:207
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr ""
+msgstr "IP-szabály frissítése"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:47
 #, kde-format
 msgid "Report #%1"
-msgstr ""
+msgstr "#%1 jelentése"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "Megjelölés megoldatlanként"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "Megjelölés megoldottként"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:55
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Megoldatlan jelentés"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:58
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Megoldott jelentés"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
@@ -2158,35 +2175,35 @@ msgstr "Követés"
 #, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
-msgstr ""
+msgstr "Csatlakozott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:220
 #, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
-msgstr ""
+msgstr "Utolsó aktivitás"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr ""
+msgstr "Jelentett"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:236
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr ""
+msgstr "Jelentve"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "Jelentő"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:259
 #, kde-format
 msgid "Report Status"
-msgstr ""
+msgstr "Jelentés állapota"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
@@ -2196,55 +2213,55 @@ msgstr "Megoldott"
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "Megoldatlan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:267
 #, kde-format
 msgid "Action taken by"
-msgstr ""
+msgstr "Intézkedő"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Hozzárendelt moderátor"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "Senki"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Visszavonás"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "Hozzárendelés magamhoz"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:299
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Továbbított"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "Igen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr ""
+msgstr "Nem"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:309
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategória"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:313
 #, kde-format
@@ -2252,58 +2269,61 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"A fiók és/vagy tartalom jelentésének oka idézve lesz a jelentett fiókkal "
+"folytatott kommunikációban"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:325
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Egyéb"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:330
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "A kategória egyébre változott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:341
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:345
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "A kategória spamre változott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "A tartalom megszeg egy vagy több szabályt a kiszolgálón"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:360
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "A kategória szabályszegésre változott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:403
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Hogy további információkkal szolgáljon, %1 ezt írta:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:412
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:428
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "Jelentett tartalom"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:432
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"A sértő tartalom idézve lesz a jelentett fiókkal folytatott kommunikációban"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
 #: content/ui/StatusDelegate/StatusDelegate.qml:292
@@ -2332,7 +2352,7 @@ msgstr "Fiókok"
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
 #, kde-format
 msgid "Reports"
-msgstr ""
+msgstr "Jelentések"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2344,7 +2364,7 @@ msgstr "Összevonás"
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
-msgstr ""
+msgstr "IP-szabályok"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:39
 #, kde-format
@@ -2361,13 +2381,13 @@ msgstr "Fiókeszközök oldal"
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr ""
+msgstr "Jelentés állapota"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "Megoldatlan"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
 #, kde-format
@@ -2379,13 +2399,13 @@ msgstr "Megoldott"
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Jelentés eredete"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
 #, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
-msgstr "Összes"
+msgstr "Mind"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
 #, kde-format
@@ -2397,12 +2417,12 @@ msgstr "Helyi"
 #, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
-msgstr ""
+msgstr "Távoli"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Jelentő:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
 #, kde-format
@@ -2413,7 +2433,7 @@ msgstr "Társított fiók:"
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
 #, kde-format
@@ -2429,7 +2449,7 @@ msgstr "Csoportértesítések"
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr ""
+msgstr "Mind"
 
 #: content/ui/NotificationPage.qml:55
 #, kde-format
@@ -2447,13 +2467,13 @@ msgstr "Kiemelések"
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr ""
+msgstr "Kedvencek"
 
 #: content/ui/NotificationPage.qml:85
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
-msgstr ""
+msgstr "Szavazási eredmények"
 
 #: content/ui/NotificationPage.qml:95
 #, kde-format
@@ -2475,7 +2495,7 @@ msgstr "Nincsenek értesítések"
 #: content/ui/Notifications/GroupInteractionLabel.qml:60
 #, kde-format
 msgid "View %1's Profile"
-msgstr ""
+msgstr "%1 profiljának megtekintése"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
@@ -2485,7 +2505,7 @@ msgstr "%1 felhasználó kedvencelte a bejegyzését"
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 felhasználó kiemelte a bejegyzését"
+msgstr "%1 felhasználó hangsúlyozta a bejegyzését"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
@@ -2495,7 +2515,7 @@ msgstr "%1 válaszolt a bejegyzésére"
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "A poll has ended"
-msgstr ""
+msgstr "Egy szavazás véget ért"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
@@ -2512,37 +2532,37 @@ msgstr "Bejegyzés jelentése"
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Felhasználó jelentése"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr ""
+msgstr "A bejegyzés jelentésének oka"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr ""
+msgstr "A felhasználó jelentésének oka"
 
 #: content/ui/ReportDialog.qml:55
 #, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr ""
+msgstr "Jelentés"
 
 #: content/ui/ReportDialog.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: content/ui/SearchView.qml:38
 #, kde-format
@@ -2552,17 +2572,17 @@ msgstr "Betöltés…"
 #: content/ui/SearchView.qml:46
 #, kde-format
 msgid "No search results"
-msgstr ""
+msgstr "Nincs találat a keresésre"
 
 #: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr ""
+msgstr "Felhasználók, címkék és bejegyzések keresése"
 
 #: content/ui/SearchView.qml:147
 #, kde-format
 msgid "Hashtag"
-msgstr ""
+msgstr "Hashtag"
 
 #: content/ui/Settings/AccountsPage.qml:72
 #, kde-format
@@ -2579,7 +2599,7 @@ msgstr "Kijelentkezés"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Biztosan szeretne kijelentkezni innen: %1?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:121
 #, kde-format
@@ -2595,7 +2615,7 @@ msgstr "Általános"
 #: content/ui/Settings/AppearancePage.qml:24
 #, kde-format
 msgid "Color theme"
-msgstr ""
+msgstr "Színtéma"
 
 #: content/ui/Settings/AppearancePage.qml:38
 #, kde-format
@@ -2606,12 +2626,12 @@ msgstr "Bejegyzések"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr ""
+msgstr "Válaszok, kedvencelések és hangsúlyozások számának megjelenítése"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
 msgid "Show link previews"
-msgstr ""
+msgstr "Hivatkozások előnézetének megjelenítése"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -2627,48 +2647,48 @@ msgstr "Válasszon egy betűtípust"
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
-msgstr ""
+msgstr "Média"
 
 #: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr ""
+msgstr "Képek levágása az idővonalon 16x9-re"
 
 #: content/ui/Settings/AppearancePage.qml:111
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr ""
+msgstr "Animált GIF-ek automatikus lejátszása"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Hálózati proxy"
 
 #: content/ui/Settings/NetworkProxyPage.qml:24
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Rendszer alapértelmezése"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "SOCKS5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Gépnév"
 
 #: content/ui/Settings/NetworkProxyPage.qml:77
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: content/ui/Settings/NetworkProxyPage.qml:98
 #, kde-format
@@ -2684,12 +2704,12 @@ msgstr "Alkalmazás"
 #: content/ui/Settings/NotificationsPage.qml:28
 #, kde-format
 msgid "Enable notifications for this account"
-msgstr ""
+msgstr "Értesítések engedélyezése a fiókhoz"
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Push notifications are enabled."
-msgstr ""
+msgstr "Leküldéses értesítések engedélyezve."
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
@@ -2697,12 +2717,14 @@ msgid ""
 "Push notifications are not available for this account. Please log out and "
 "log back in."
 msgstr ""
+"A leküldéses értesítések nem érhetők el ehhez a fiókhoz. Jelentkezzen ki és "
+"vissza."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Típusok"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
@@ -2712,12 +2734,12 @@ msgstr "Említések"
 #: content/ui/Settings/NotificationsPage.qml:69
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Állapotok"
 
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
 msgid "Boosts"
-msgstr "Kiemelések"
+msgstr "Hangsúlyozások"
 
 #: content/ui/Settings/NotificationsPage.qml:93
 #, kde-format
@@ -2732,7 +2754,7 @@ msgstr "Új követési kérések"
 #: content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Kedvencek"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -2742,7 +2764,7 @@ msgstr "Szavazások"
 #: content/ui/Settings/NotificationsPage.qml:141
 #, kde-format
 msgid "Edits"
-msgstr ""
+msgstr "Szerkesztések"
 
 #: content/ui/Settings/ProfileEditor.qml:25
 #, kde-format
@@ -2758,22 +2780,22 @@ msgstr "Válasszon egy fájlt"
 #: content/ui/Settings/ProfileEditor.qml:113
 #, kde-format
 msgid "Display Name"
-msgstr ""
+msgstr "Megjelenített név"
 
 #: content/ui/Settings/ProfileEditor.qml:131
 #, kde-format
 msgid "Bio"
-msgstr ""
+msgstr "Életrajz"
 
 #: content/ui/Settings/ProfileEditor.qml:157
 #, kde-format
 msgid "Header"
-msgstr ""
+msgstr "Fejléc"
 
 #: content/ui/Settings/ProfileEditor.qml:192
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr ""
+msgstr "PNG, GIF vagy JPG. Legfeljebb 2 MB. Leskálázódik 1500x1500 képpontra"
 
 #: content/ui/Settings/ProfileEditor.qml:205
 #: content/ui/Settings/ProfileEditor.qml:267
@@ -2785,12 +2807,12 @@ msgstr "Törlés"
 #: content/ui/Settings/ProfileEditor.qml:220
 #, kde-format
 msgid "Avatar"
-msgstr ""
+msgstr "Profilkép"
 
 #: content/ui/Settings/ProfileEditor.qml:253
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
-msgstr ""
+msgstr "PNG, GIF vagy JPG. Legfeljebb 2 MB. Leskálázódik 400x400 képpontra"
 
 #: content/ui/Settings/ProfileEditor.qml:281
 #, kde-format
@@ -2800,18 +2822,18 @@ msgstr "Követési kérelmek jóváhagyásának megkövetelése"
 #: content/ui/Settings/ProfileEditor.qml:289
 #, kde-format
 msgid "This is a bot account"
-msgstr ""
+msgstr "Ez egy gépi fiók"
 
 #: content/ui/Settings/ProfileEditor.qml:297
 #, kde-format
 msgid "Suggest account to others"
-msgstr ""
+msgstr "Fiók ajánlása másoknak"
 
 #: content/ui/Settings/ProfileEditor.qml:305
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr ""
+msgstr "Feltöltött média megjelelölése érzékeny tartalomként alapértelmezetten"
 
 #: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
@@ -2823,7 +2845,7 @@ msgstr "Alapértelmezett nyelv"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr ""
+msgstr "Bejegyzések alapértelmezett láthatósága"
 
 #: content/ui/Settings/ProfileEditor.qml:336
 #, kde-format
@@ -2846,12 +2868,12 @@ msgstr "Privát"
 #: content/ui/Settings/ProfileEditor.qml:353
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Visszaállítás"
 
 #: content/ui/Settings/SettingsPage.qml:13
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Megjelenés"
 
 #: content/ui/Settings/SettingsPage.qml:25
 #, kde-format
@@ -2866,7 +2888,7 @@ msgstr "Helyesírás-ellenőrzés"
 #: content/ui/Settings/SettingsPage.qml:38
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Hálózati proxy"
 
 #: content/ui/Settings/SettingsPage.qml:44
 #, kde-format
@@ -2906,7 +2928,7 @@ msgstr "Alapértelmezett nyelv:"
 #: content/ui/Settings/SonnetPage.qml:87
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: content/ui/Settings/SonnetPage.qml:108
 #, kde-format
@@ -2963,7 +2985,7 @@ msgstr "Szó törlése"
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Sikertelen megosztás"
 
 #: content/ui/SocialGraphPage.qml:62
 #, kde-format
@@ -2975,12 +2997,12 @@ msgstr "Engedélyezés"
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr ""
+msgstr "Elutasítás"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
 msgid "No accounts available"
-msgstr ""
+msgstr "Nem érhetők el fiókok"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
 #, kde-format
@@ -2992,7 +3014,7 @@ msgstr "Leírás"
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
-msgstr ""
+msgstr "Fókuszpont"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:37
 #, kde-format
@@ -3010,48 +3032,48 @@ msgstr "Választás hozzáadása"
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr ""
+msgstr "Új szavazási lehetőség hozzáadása"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:81
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr ""
+msgstr "Mikor jár le a szavazás"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:90
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr ""
+msgstr "Többszörös választás"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:96
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr ""
+msgstr "Többszörös választás engedélyezése"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:105
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr ""
+msgstr "Összesítés elrejtése"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:111
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr ""
+msgstr "Szavazatszámok elrejtése a szavazás végéig"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
 #: content/ui/StatusDelegate/OverflowMenu.qml:169
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:108
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Eltávolítás"
 
 #: content/ui/StatusComposer/StatusComposer.qml:51
 #, kde-format
@@ -3077,13 +3099,13 @@ msgstr "Új bejegyzés írása"
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "Piszkozat eldobása"
 
 #: content/ui/StatusComposer/StatusComposer.qml:95
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Biztosan el szeretné dobni a piszkozatot?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
 #: content/ui/StatusComposer/StatusComposer.qml:357
@@ -3102,71 +3124,73 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
+"Minden támogatott formátum (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:270
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
+msgstr "JPEG képek (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:271
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr ""
+msgstr "PNG képek (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:272
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr ""
+msgstr "GIF képek (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:273
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr ""
+msgstr "WebP képek (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:274
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr ""
+msgstr "HEIC képek (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:275
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr ""
+msgstr "HEIF képek (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr ""
+msgstr "AVIF kép (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr ""
+msgstr "WebM videók (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:278
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr ""
+msgstr "MPEG-4 videók (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr ""
+msgstr "M4V videók (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr ""
+msgstr "QuickTime videók (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:281
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Minden fájl (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgid "Attach File"
-msgstr ""
+msgstr "Fájl csatolása"
 
 #: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
@@ -3206,7 +3230,7 @@ msgstr "Közvetlen üzenet"
 #: content/ui/StatusComposer/StatusComposer.qml:349
 #, kde-format
 msgid "Visibility"
-msgstr ""
+msgstr "Láthatóság"
 
 #: content/ui/StatusComposer/StatusComposer.qml:354
 #, kde-format
@@ -3228,7 +3252,7 @@ msgstr "Emodzsi hozzáadása"
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr ""
+msgstr "<b>%1/%2</b> karakter"
 
 #: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
@@ -3246,33 +3270,33 @@ msgstr "Válasz"
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
-msgstr ""
+msgstr "Ismételt bejegyzés"
 
 #: content/ui/StatusComposer/StatusComposer.qml:424
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:57
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Állapot képmelléklettel"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:59
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Állapot GifV melléklettel"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:61
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Állapot videómelléklettel"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:159
 #, kde-format
 msgid "Not available"
-msgstr ""
+msgstr "Nem érhető el"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:174
 #: content/ui/StatusDelegate/AttachmentGrid.qml:262
@@ -3280,73 +3304,73 @@ msgstr ""
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr ""
+msgstr "Helyettesítő"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:270
 #, kde-format
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:341
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Videó"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:353
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr ""
+msgstr "Média elrejtése"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:380
 #, kde-format
 msgid "Media Hidden"
-msgstr ""
+msgstr "Média elrejtve"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:38
 #, kde-format
 msgid "Save Image As…"
-msgstr ""
+msgstr "Kép mentése másként…"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Kép másolása"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
 msgid "via %1"
-msgstr ""
+msgstr "ezen keresztül: %1"
 
 #: content/ui/StatusDelegate/InformationBar.qml:105
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 kedvencelés"
+msgstr[1] "%1 kedvencelés"
 
 #: content/ui/StatusDelegate/InformationBar.qml:124
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
-msgstr[0] "%1 kiemelés"
-msgstr[1] "%1 kiemelés"
+msgstr[0] "%1 hangsúlyozás"
+msgstr[1] "%1 hangsúlyozás"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:19
 #, kde-format
 msgid "Link preview: %1"
-msgstr ""
+msgstr "Hivatkozás előnézete: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:32
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr ""
+msgstr "Bejegyzés kibontása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
 msgid "Open Original Page"
-msgstr ""
+msgstr "Eredeti oldal megnyitása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:47
 #, kde-format
@@ -3358,13 +3382,13 @@ msgstr "Hivatkozás másolása"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Beágyazás"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Megnyitás mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
 #, kde-format
@@ -3376,61 +3400,61 @@ msgstr "Válasz mint…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr ""
+msgstr "Kedvencelés mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:89
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Kiemelés mint…"
+msgstr "Hangsúlyozás mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr ""
+msgstr "Könyvjelzőzés mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "Könyvjelző eltávolítása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:104
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
-msgstr ""
+msgstr "Könyvjelző"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr ""
+msgstr "Levétel a profilról"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr ""
+msgstr "Kitűzés a profilra"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:124
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "@%1 visszahangosítása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr ""
+msgstr "@%1 némítása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:143
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr ""
+msgstr "@%1 tiltásának feloldása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:145
 #, kde-format
@@ -3441,7 +3465,7 @@ msgstr "@%1 tiltása"
 #: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Törlés és ismét piszkozat"
 
 #: content/ui/StatusDelegate/PostInfoBar.qml:101
 #, kde-format
@@ -3452,22 +3476,22 @@ msgstr "Több"
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
 #, kde-format
 msgid "Normal Status"
-msgstr ""
+msgstr "Normál állapot"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
 #, kde-format
 msgid "Spoiler Status"
-msgstr ""
+msgstr "Spoiler állapot"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:135
 #, kde-format
 msgid "Filtered: %1"
-msgstr ""
+msgstr "Szűrt: %1"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:139
 #, kde-format
 msgid "Show anyway"
-msgstr ""
+msgstr "Megjelenítés mindenképp"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:157
 #, kde-format
@@ -3485,13 +3509,13 @@ msgstr "Bejegyzés törlése"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Biztosan törölni szeretné ezt a bejegyzést?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:229
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr ""
+msgstr "Bejegyzés törlése és ismét piszkozattá tétele"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:230
 #, kde-format
@@ -3500,6 +3524,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Biztosan ismét piszkozattá szeretné tenni ezt a bejegyzést? Ezzel törli az "
+"eredeti bejegyzést."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:389
 #, kde-format
@@ -3511,54 +3537,54 @@ msgstr "Válasz"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Kiemelés"
+msgstr "Hangsúlyozás"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:415
 #, kde-format
 msgid "Boosted"
-msgstr "Kiemelt"
+msgstr "Hangsúlyozott"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:415
 #, kde-format
 msgid "Boost"
-msgstr "Kiemelés"
+msgstr "Hangsúlyozás"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:433
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr ""
+msgstr "Kedvencelés"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
 msgid "Favourited"
-msgstr ""
+msgstr "Kedvencelve"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
 #, kde-format
 msgid "Favourite"
-msgstr ""
+msgstr "Kedvencelés"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Könyvjelző eltávolítása"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
-msgstr ""
+msgstr "Könyvjelzőzés"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Bookmarked"
-msgstr ""
+msgstr "Könyvjelzőzve"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
 msgid "Bookmark"
-msgstr ""
+msgstr "Könyvjelző"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format
@@ -3569,39 +3595,39 @@ msgstr "%1%"
 #: content/ui/StatusDelegate/StatusPoll.qml:63
 #, kde-format
 msgid "(No votes)"
-msgstr ""
+msgstr "(Nincsenek szavazatok)"
 
 #: content/ui/StatusDelegate/StatusPoll.qml:97
 #, kde-format
 msgid "Vote"
-msgstr ""
+msgstr "Szavazás"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:72
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
+msgstr "%1 hangsúlyozva"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:74
 #, kde-format
 msgid "In reply to %1"
-msgstr ""
+msgstr "Válasz neki: %1"
 
 #: content/ui/StatusDelegate/VideoAttachment.qml:106
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
-msgstr ""
+msgstr "Lejátszás"
 
 #: content/ui/TimelinePage.qml:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr ""
+msgstr "Szűrők"
 
 #: content/ui/TimelinePage.qml:79
 #, kde-format
 msgid "Show Boosts"
-msgstr "Kiemelések megjelenítése"
+msgstr "Hangsúlyozások megjelenítése"
 
 #: content/ui/TimelinePage.qml:86
 #, kde-format
@@ -3613,6 +3639,7 @@ msgstr "Válaszok megjelenítése"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
+"Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a beállításokat."
 
 #: content/ui/TimelinePage.qml:213
 #, kde-format
@@ -3623,13 +3650,13 @@ msgstr "Idővonal vége"
 #: content/ui/TimelinePage.qml:249
 #, kde-format
 msgid "No posts"
-msgstr ""
+msgstr "Nincsenek bejegyzések"
 
 #: content/ui/TimelinePage.qml:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Vissza a tetejére"
 
 #: content/ui/UserInfo.qml:85
 #, kde-format
@@ -3639,29 +3666,29 @@ msgstr "Fiókváltás"
 #: content/ui/UserInfo.qml:126
 #, kde-format
 msgid "Log in to an existing account"
-msgstr ""
+msgstr "Bejelentkezés meglévő fiókba"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
 msgid "Empty conversation"
-msgstr ""
+msgstr "Üres beszélgetés"
 
 #: conversation/conversationmodel.cpp:61
 #, kde-format
 msgid "%1 and %2"
-msgstr ""
+msgstr "%1 és %2"
 
 #: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 és egy valaki"
+msgstr[1] "%2 és %1 további"
 
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "A lista tagjai"
 
 #: editor/listeditorbackend.cpp:108
 #, kde-format
@@ -3672,59 +3699,59 @@ msgstr "Bármely követett felhasználó"
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr ""
+msgstr "5 perc"
 
 #: editor/polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr ""
+msgstr "30 perc"
 
 #: editor/polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr ""
+msgstr "1 óra"
 
 #: editor/polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr ""
+msgstr "6 óra"
 
 #: editor/polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr ""
+msgstr "12 óra"
 
 #: editor/polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr ""
+msgstr "1 nap"
 
 #: editor/polltimemodel.cpp:20
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr ""
+msgstr "3 nap"
 
 #: editor/polltimemodel.cpp:21
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr ""
+msgstr "7 nap"
 
 #: editor/posteditorbackend.cpp:240
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Ismeretlen hiba történt."
 
 #: main.cpp:60
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Leküldéses értesítések fogadása"
 
 #: main.cpp:104
 #, kde-format
@@ -3749,12 +3776,12 @@ msgstr "Carl Schwan"
 #: main.cpp:110 main.cpp:115
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Karbantartó"
 
 #: main.cpp:114
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:119
 #, kde-format
@@ -3777,27 +3804,27 @@ msgstr ""
 #: main.cpp:128
 #, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr ""
+msgstr "A https és web+ap URL-sémák támogatása"
 
 #: main.cpp:130
 #, kde-format
 msgid "Share a line of text in the standalone composer."
-msgstr ""
+msgstr "Egy sor szöveg megosztása az önálló szerkesztőben."
 
 #: main.cpp:130
 #, kde-format
 msgid "The text to share."
-msgstr ""
+msgstr "A megosztandó szöveg."
 
 #: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "Csak belső használatra."
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr ""
+msgstr "Hiba történt a legutóbbi értesítések lekérésekor."
 
 #: search/searchmodel.cpp:140
 #, kde-format
@@ -3807,7 +3834,7 @@ msgstr "Felhasználók"
 #: search/searchmodel.cpp:142
 #, kde-format
 msgid "Hashtags"
-msgstr ""
+msgstr "Hashtagek"
 
 #: timeline/accountmodel.cpp:35 timeline/maintimelinemodel.cpp:24
 #, kde-format
@@ -3842,24 +3869,24 @@ msgstr "Globális idővonal"
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr ""
+msgstr "Könyvjelzők"
 
 #: timeline/maintimelinemodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr ""
+msgstr "Kedvencek"
 
 #: timeline/maintimelinemodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr ""
+msgstr "Népszerű"
 
 #: timeline/post.cpp:391
 #, kde-format
 msgid "in the future"
-msgstr ""
+msgstr "a jövőben"
 
 #: timeline/post.cpp:393
 #, kde-format
@@ -3885,15 +3912,15 @@ msgstr "%1 nap"
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 héttel ezelőtt"
+msgstr[1] "%1 héttel ezelőtt"
 
 #: timeline/post.cpp:406
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 hónappal ezelőtt"
+msgstr[1] "%1 hónappal ezelőtt"
 
 #: timeline/post.cpp:410
 #, kde-format
@@ -3982,12 +4009,12 @@ msgstr "Zászlók"
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Nem sikerült megnyitni az átmeneti letöltési fájlt"
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Nem sikerült lefoglalni a lemezterületet a letöltéshez"
 
 #: utils/filetransferjob.cpp:81
 #, kde-format
