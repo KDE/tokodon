@@ -136,7 +136,7 @@ Kirigami.ScrollablePage {
     }
 
     Kirigami.FlexColumn {
-        maximumWidth: Kirigami.Units.gridUnit * 30
+        maximumWidth: Kirigami.Units.gridUnit * 40
         padding: 0
 
 
