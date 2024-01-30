@@ -29,22 +29,36 @@ ColumnLayout {
         }
     }
 
-    StatusDelegate.PostContent {
-        content: post.content
-        expandedPost: false
-        secondary: true
-        shouldOpenInternalLinks: false
+    Loader {
+        active: post.content.length > 0
+        visible: active
+
+        Layout.fillWidth: true
+
+        sourceComponent: StatusDelegate.PostContent {
+            content: post.content
+            expandedPost: false
+            secondary: true
+            shouldOpenInternalLinks: false
+        }
     }
 
-    StatusDelegate.AttachmentGrid {
-        expandedPost: false
-        attachments: root.post.attachments
-        sensitive: false
-        secondary: false
-        inViewPort: true
-        canHideMedia: false
-        identity: root.post.authorIdentity
-        viewportWidth: root.width
+    Loader {
+        active: post.attachments.length > 0
+        visible: active
+
+        Layout.fillWidth: true
+
+        sourceComponent: StatusDelegate.AttachmentGrid {
+            expandedPost: false
+            attachments: root.post.attachments
+            sensitive: false
+            secondary: false
+            inViewPort: true
+            canHideMedia: false
+            identity: root.post.authorIdentity
+            viewportWidth: root.width
+        }
     }
 
     Loader {
