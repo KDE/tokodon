@@ -198,6 +198,16 @@ Kirigami.ScrollablePage {
                 }
             }
 
+            DropArea {
+                anchors.fill: parent
+                enabled: !AccountManager.isFlatpak
+                onDropped: (drop) => {
+                    for (let index in drop.urls) {
+                        root.uploadFile(drop.urls[index])
+                    }
+                }
+            }
+
             ColumnLayout {
                 id: actions
                 spacing: 0
@@ -428,16 +438,6 @@ Kirigami.ScrollablePage {
                 enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
                 Layout.alignment: Qt.AlignRight
                 onClicked: root.submitPost()
-            }
-        }
-    }
-
-    DropArea {
-        anchors.fill: parent
-        enabled: !AccountManager.isFlatpak
-        onDropped: (drop) => {
-            for (let index in drop.urls) {
-                root.uploadFile(drop.urls[index])
             }
         }
     }
