@@ -44,6 +44,7 @@ ColumnLayout {
         inViewPort: true
         canHideMedia: false
         identity: root.post.authorIdentity
+        viewportWidth: root.width
     }
 
     Loader {
