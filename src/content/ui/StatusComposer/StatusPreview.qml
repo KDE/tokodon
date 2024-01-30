@@ -23,8 +23,9 @@ ColumnLayout {
             id: heading
             font.pixelSize: Config.defaultFont.pixelSize + 1
             text: root.post.relativeTime
-            verticalAlignment: Text.AlignTop
+            verticalAlignment: Text.AlignVCenter
             Layout.alignment: Qt.AlignTop
+            Layout.fillHeight: true
             elide: Text.ElideRight
         }
     }
