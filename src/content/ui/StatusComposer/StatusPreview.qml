@@ -15,6 +15,8 @@ ColumnLayout {
 
     required property var post
 
+    spacing: Kirigami.Units.largeSpacing
+
     StatusDelegate.InlineIdentityInfo {
         identity: root.post.authorIdentity
         secondary: false
