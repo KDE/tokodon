@@ -404,6 +404,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignLeft
+                verticalAlignment: Text.AlignVCenter
                 text: i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
             }
 
