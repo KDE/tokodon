@@ -423,6 +423,18 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Button {
+                icon.name: {
+                    switch (root.purpose) {
+                        case StatusComposer.New:
+                            return "document-send-symbolic";
+                        case StatusComposer.Reply:
+                            return "tokodon-post-reply";
+                        case StatusComposer.Redraft:
+                            return "edit-redo-symbolic";
+                        case StatusComposer.Edit:
+                            return "document-edit-symbolic";
+                    }
+                }
                 text: {
                     switch (root.purpose) {
                         case StatusComposer.New:
