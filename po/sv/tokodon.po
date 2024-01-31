@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 00:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:37+0000\n"
 "PO-Revision-Date: 2023-09-13 21:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -442,13 +442,13 @@ msgstr "Redigera profil"
 msgid "Account editor"
 msgstr "Kontoeditor"
 
-#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:50
+#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:62
 #, kde-format
 msgid "Settings"
 msgstr "Inställningar"
 
 #: content/ui/AccountInfo.qml:346 content/ui/Main.qml:376
-#: content/ui/TimelinePage.qml:52
+#: content/ui/TimelinePage.qml:64
 #, kde-format
 msgid "Configure"
 msgstr "Anpassa"
@@ -681,7 +681,7 @@ msgstr ""
 msgid "Explore"
 msgstr "Utforska"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:80
 #, fuzzy, kde-format
 #| msgid "Post"
 msgctxt "@action:button"
@@ -733,7 +733,7 @@ msgstr "Underrättelser"
 msgid "Setup Required"
 msgstr ""
 
-#: content/ui/InitialSetup/SetupNotifications.qml:27
+#: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
 msgid ""
 "Tokodon can show notifications for activity such as users boosting or "
@@ -742,13 +742,13 @@ msgid ""
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
 
-#: content/ui/InitialSetup/SetupNotifications.qml:34
+#: content/ui/InitialSetup/SetupNotifications.qml:35
 #, fuzzy, kde-format
 #| msgid "No Notifications"
 msgid "Allow Notifications"
 msgstr "Inga underrättelser"
 
-#: content/ui/InitialSetup/SetupNotifications.qml:48
+#: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -1144,7 +1144,7 @@ msgstr "Hem"
 msgid "Notifications"
 msgstr "Underrättelser"
 
-#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:333
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
@@ -2971,7 +2971,7 @@ msgid "Edit Account"
 msgstr "Lägg till konto"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:266
+#: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "Please choose a file"
 msgstr "Välj en fil"
@@ -3320,7 +3320,7 @@ msgid "Are you sure you want to discard your draft?"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:367
 #, kde-format
 msgid "Content Warning"
 msgstr "Innehållsvarning"
@@ -3330,7 +3330,7 @@ msgstr "Innehållsvarning"
 msgid "What's new?"
 msgstr "Vad är en nytt?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3339,77 +3339,77 @@ msgstr ""
 "Alla format som stöds (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:270
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG-bild (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:271
+#: content/ui/StatusComposer/StatusComposer.qml:281
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG-bild (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF-bild (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP-bild (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC-bild (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:275
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF-bild (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:276
+#: content/ui/StatusComposer/StatusComposer.qml:286
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF-bild (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM-video (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:288
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4-video (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:279
+#: content/ui/StatusComposer/StatusComposer.qml:289
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V-video (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:290
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime-video (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:281
+#: content/ui/StatusComposer/StatusComposer.qml:291
 #, kde-format
 msgid "All files (*)"
 msgstr "Alla filer (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgid "Attach File"
 msgstr "Bifoga fil"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:303
 #, kde-format
 msgid "Add Poll"
 msgstr "Bifoga enkät"
 
-#: content/ui/StatusComposer/StatusComposer.qml:329
+#: content/ui/StatusComposer/StatusComposer.qml:339
 #: content/ui/StatusDelegate/InformationBar.qml:80
 #: content/ui/StatusDelegate/InformationBar.qml:88
 #: content/ui/StatusDelegate/PostInfoBar.qml:82
@@ -3418,73 +3418,73 @@ msgstr "Bifoga enkät"
 msgid "Public"
 msgstr "Öppen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:334
+#: content/ui/StatusComposer/StatusComposer.qml:344
 #: content/ui/StatusDelegate/InformationBar.qml:82
 #: content/ui/StatusDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Olistad"
 
-#: content/ui/StatusComposer/StatusComposer.qml:339
+#: content/ui/StatusComposer/StatusComposer.qml:349
 #: content/ui/StatusDelegate/InformationBar.qml:84
 #: content/ui/StatusDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:354
 #: content/ui/StatusDelegate/InformationBar.qml:86
 #: content/ui/StatusDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Direkt meddelande"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:359
 #, kde-format
 msgid "Visibility"
 msgstr "Synlighet"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:364
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "iv"
 
-#: content/ui/StatusComposer/StatusComposer.qml:363
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "Post Language"
 msgstr "Inläggsspråk"
 
-#: content/ui/StatusComposer/StatusComposer.qml:392
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgid "Add Emoji"
 msgstr "Lägg till emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:407
+#: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tecken"
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:441
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Skicka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:443
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/StatusComposer/StatusComposer.qml:422
+#: content/ui/StatusComposer/StatusComposer.qml:445
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Skicka igen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:447
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3869,44 +3869,56 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Spela"
 
-#: content/ui/TimelinePage.qml:74
+#: content/ui/TimelinePage.qml:33 timeline/accountmodel.cpp:35
+#, kde-format
+msgid "Loading"
+msgstr "Läser in"
+
+#: content/ui/TimelinePage.qml:35
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Home (%1)"
+msgid "Home (%1)"
+msgstr "Hem (%1)"
+
+#: content/ui/TimelinePage.qml:86
 #, fuzzy, kde-format
 #| msgid "Filtered: %1"
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Filtrerad: %1"
 
-#: content/ui/TimelinePage.qml:79
+#: content/ui/TimelinePage.qml:91
 #, fuzzy, kde-format
 #| msgid "Stop Hiding Boosts from %1"
 msgid "Show Boosts"
 msgstr "Sluta dölja förstärkningar från %1"
 
-#: content/ui/TimelinePage.qml:86
+#: content/ui/TimelinePage.qml:98
 #, fuzzy, kde-format
 #| msgid "%1 Replies"
 msgid "Show Replies"
 msgstr "%1 svar"
 
-#: content/ui/TimelinePage.qml:111
+#: content/ui/TimelinePage.qml:123
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Misslyckades ansluta till server: %1. Kontrollera inställningarna."
 
-#: content/ui/TimelinePage.qml:213
+#: content/ui/TimelinePage.qml:225
 #, fuzzy, kde-format
 #| msgid "Local Timeline"
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Lokal tidslinje"
 
-#: content/ui/TimelinePage.qml:249
+#: content/ui/TimelinePage.qml:261
 #, kde-format
 msgid "No posts"
 msgstr "Inga inlägg"
 
-#: content/ui/TimelinePage.qml:255
+#: content/ui/TimelinePage.qml:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -4094,48 +4106,37 @@ msgstr "Användare"
 msgid "Hashtags"
 msgstr "Hashtaggar"
 
-#: timeline/accountmodel.cpp:35 timeline/maintimelinemodel.cpp:24
-#, kde-format
-msgid "Loading"
-msgstr "Läser in"
-
-#: timeline/maintimelinemodel.cpp:26
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "Hem (%1)"
-
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Hem"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:24
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Lokal tidslinje"
 
-#: timeline/maintimelinemodel.cpp:33
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Global tidslinje"
 
-#: timeline/maintimelinemodel.cpp:35
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: timeline/maintimelinemodel.cpp:37
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
 msgstr "Favoriter"
 
-#: timeline/maintimelinemodel.cpp:39
+#: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Trending"

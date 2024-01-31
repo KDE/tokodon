@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 00:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:37+0000\n"
 "PO-Revision-Date: 2024-01-21 09:42+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -421,13 +421,13 @@ msgstr "Змінити профіль"
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:50
+#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:62
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
 #: content/ui/AccountInfo.qml:346 content/ui/Main.qml:376
-#: content/ui/TimelinePage.qml:52
+#: content/ui/TimelinePage.qml:64
 #, kde-format
 msgid "Configure"
 msgstr "Налаштувати"
@@ -652,7 +652,7 @@ msgstr "Ви справді хочете вилучити цей список?"
 msgid "Explore"
 msgstr "Ознайомлення"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -701,7 +701,7 @@ msgstr "Сповіщення"
 msgid "Setup Required"
 msgstr "Потрібне налаштовування"
 
-#: content/ui/InitialSetup/SetupNotifications.qml:27
+#: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
 msgid ""
 "Tokodon can show notifications for activity such as users boosting or "
@@ -714,12 +714,12 @@ msgstr ""
 "\n"
 "Типи показаних сповіщень можна скоригувати після входу до системи."
 
-#: content/ui/InitialSetup/SetupNotifications.qml:34
+#: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
 msgid "Allow Notifications"
 msgstr "Дозволити сповіщення"
 
-#: content/ui/InitialSetup/SetupNotifications.qml:48
+#: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -1092,7 +1092,7 @@ msgstr "Домівка"
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:333
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
@@ -2862,7 +2862,7 @@ msgid "Edit Account"
 msgstr "Змінити обліковий запис"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:266
+#: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "Please choose a file"
 msgstr "Будь ласка, виберіть файл"
@@ -3202,7 +3202,7 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Ви справді хочете відкинути вашу чернетку?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:367
 #, kde-format
 msgid "Content Warning"
 msgstr "Попередження щодо вмісту"
@@ -3212,7 +3212,7 @@ msgstr "Попередження щодо вмісту"
 msgid "What's new?"
 msgstr "Що нового?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3221,77 +3221,77 @@ msgstr ""
 "усі підтримувані формати (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
 "avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:270
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "зображення JPEG (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:271
+#: content/ui/StatusComposer/StatusComposer.qml:281
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "зображення PNG (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "зображення GIF (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "зображення WebP (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "зображення HEIC (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:275
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "зображення HEIF (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:276
+#: content/ui/StatusComposer/StatusComposer.qml:286
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "зображення AVIF (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "відео WebM (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:288
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "відео MPEG-4 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:279
+#: content/ui/StatusComposer/StatusComposer.qml:289
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "відео M4V (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:290
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "відео QuickTime (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:281
+#: content/ui/StatusComposer/StatusComposer.qml:291
 #, kde-format
 msgid "All files (*)"
 msgstr "усі файли (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgid "Attach File"
 msgstr "Долучити файл"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:303
 #, kde-format
 msgid "Add Poll"
 msgstr "Додати голосування"
 
-#: content/ui/StatusComposer/StatusComposer.qml:329
+#: content/ui/StatusComposer/StatusComposer.qml:339
 #: content/ui/StatusDelegate/InformationBar.qml:80
 #: content/ui/StatusDelegate/InformationBar.qml:88
 #: content/ui/StatusDelegate/PostInfoBar.qml:82
@@ -3300,73 +3300,73 @@ msgstr "Додати голосування"
 msgid "Public"
 msgstr "Загальнодоступне"
 
-#: content/ui/StatusComposer/StatusComposer.qml:334
+#: content/ui/StatusComposer/StatusComposer.qml:344
 #: content/ui/StatusDelegate/InformationBar.qml:82
 #: content/ui/StatusDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Незареєстрований"
 
-#: content/ui/StatusComposer/StatusComposer.qml:339
+#: content/ui/StatusComposer/StatusComposer.qml:349
 #: content/ui/StatusDelegate/InformationBar.qml:84
 #: content/ui/StatusDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Особисте"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:354
 #: content/ui/StatusDelegate/InformationBar.qml:86
 #: content/ui/StatusDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Безпосереднє повідомлення"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:359
 #, kde-format
 msgid "Visibility"
 msgstr "Видимість"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:364
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "пв"
 
-#: content/ui/StatusComposer/StatusComposer.qml:363
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "Post Language"
 msgstr "Мова допису"
 
-#: content/ui/StatusComposer/StatusComposer.qml:392
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgid "Add Emoji"
 msgstr "Додати емоційку"
 
-#: content/ui/StatusComposer/StatusComposer.qml:407
+#: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1 з %2</b> символів"
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:441
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Надіслати"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:443
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/StatusComposer/StatusComposer.qml:422
+#: content/ui/StatusComposer/StatusComposer.qml:445
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Репост"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:447
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3725,23 +3725,35 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Відтворити"
 
-#: content/ui/TimelinePage.qml:74
+#: content/ui/TimelinePage.qml:33 timeline/accountmodel.cpp:35
+#, kde-format
+msgid "Loading"
+msgstr "Завантаження"
+
+#: content/ui/TimelinePage.qml:35
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Home (%1)"
+msgid "Home (%1)"
+msgstr "Домівка (%1)"
+
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Фільтри"
 
-#: content/ui/TimelinePage.qml:79
+#: content/ui/TimelinePage.qml:91
 #, kde-format
 msgid "Show Boosts"
 msgstr "Показати підсилення"
 
-#: content/ui/TimelinePage.qml:86
+#: content/ui/TimelinePage.qml:98
 #, kde-format
 msgid "Show Replies"
 msgstr "Показати відповіді"
 
-#: content/ui/TimelinePage.qml:111
+#: content/ui/TimelinePage.qml:123
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -3749,18 +3761,18 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри."
 
-#: content/ui/TimelinePage.qml:213
+#: content/ui/TimelinePage.qml:225
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Кінець розкладу"
 
-#: content/ui/TimelinePage.qml:249
+#: content/ui/TimelinePage.qml:261
 #, kde-format
 msgid "No posts"
 msgstr "Немає дописів"
 
-#: content/ui/TimelinePage.qml:255
+#: content/ui/TimelinePage.qml:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3945,48 +3957,37 @@ msgstr "Користувачі"
 msgid "Hashtags"
 msgstr "Хештеґи"
 
-#: timeline/accountmodel.cpp:35 timeline/maintimelinemodel.cpp:24
-#, kde-format
-msgid "Loading"
-msgstr "Завантаження"
-
-#: timeline/maintimelinemodel.cpp:26
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "Домівка (%1)"
-
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Домівка"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:24
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Місцевий розклад"
 
-#: timeline/maintimelinemodel.cpp:33
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Загальний розклад"
 
-#: timeline/maintimelinemodel.cpp:35
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: timeline/maintimelinemodel.cpp:37
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
 msgstr "Улюблені"
 
-#: timeline/maintimelinemodel.cpp:39
+#: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Trending"

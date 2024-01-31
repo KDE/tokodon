@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 00:37+0000\n"
+"POT-Creation-Date: 2024-01-31 00:37+0000\n"
 "PO-Revision-Date: 2024-01-22 09:56+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -416,13 +416,13 @@ msgstr "Modifica profilo"
 msgid "Account editor"
 msgstr "Editor degli account"
 
-#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:50
+#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:62
 #, kde-format
 msgid "Settings"
 msgstr "Impostazioni"
 
 #: content/ui/AccountInfo.qml:346 content/ui/Main.qml:376
-#: content/ui/TimelinePage.qml:52
+#: content/ui/TimelinePage.qml:64
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
@@ -642,7 +642,7 @@ msgstr "Sei sicuro di voler eliminare questo elenco?"
 msgid "Explore"
 msgstr "Esplora"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -689,7 +689,7 @@ msgstr "Notifiche"
 msgid "Setup Required"
 msgstr "Cio"
 
-#: content/ui/InitialSetup/SetupNotifications.qml:27
+#: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
 msgid ""
 "Tokodon can show notifications for activity such as users boosting or "
@@ -703,12 +703,12 @@ msgstr ""
 "I tipi di notifiche visualizzate possono essere ottimizzati una volta "
 "effettuato l'accesso."
 
-#: content/ui/InitialSetup/SetupNotifications.qml:34
+#: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
 msgid "Allow Notifications"
 msgstr "Consenti notifiche"
 
-#: content/ui/InitialSetup/SetupNotifications.qml:48
+#: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -1080,7 +1080,7 @@ msgstr "Home"
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:323
+#: content/ui/Main.qml:431 content/ui/StatusComposer/StatusComposer.qml:333
 #, kde-format
 msgid "Local"
 msgstr "Locale"
@@ -2849,7 +2849,7 @@ msgid "Edit Account"
 msgstr "Modifica account"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:266
+#: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgid "Please choose a file"
 msgstr "Scegli un file"
@@ -3185,7 +3185,7 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Sei sicuro di voler eliminare la bozza?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:367
 #, kde-format
 msgid "Content Warning"
 msgstr "Avviso contenuti"
@@ -3195,7 +3195,7 @@ msgstr "Avviso contenuti"
 msgid "What's new?"
 msgstr "Cosa c'è di nuovo?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:269
+#: content/ui/StatusComposer/StatusComposer.qml:279
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3204,77 +3204,77 @@ msgstr ""
 "Tutti i formati supportati (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
 "avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:270
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "Immagine JPEG (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:271
+#: content/ui/StatusComposer/StatusComposer.qml:281
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "Immagine PNG (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:272
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "Immagine GIF (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:273
+#: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "Immagine WebP (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:274
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "Immagine HEIC (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:275
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "Immagine HEIF (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:276
+#: content/ui/StatusComposer/StatusComposer.qml:286
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "Immagine AVIF (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:277
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "Video WebM (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:278
+#: content/ui/StatusComposer/StatusComposer.qml:288
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "Video MPEG-4 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:279
+#: content/ui/StatusComposer/StatusComposer.qml:289
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "Video M4V (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:290
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "Video QuickTime (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:281
+#: content/ui/StatusComposer/StatusComposer.qml:291
 #, kde-format
 msgid "All files (*)"
 msgstr "Tutti i file (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:293
 #, kde-format
 msgid "Attach File"
 msgstr "Allega file"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:303
 #, kde-format
 msgid "Add Poll"
 msgstr "Aggiungi sondaggio"
 
-#: content/ui/StatusComposer/StatusComposer.qml:329
+#: content/ui/StatusComposer/StatusComposer.qml:339
 #: content/ui/StatusDelegate/InformationBar.qml:80
 #: content/ui/StatusDelegate/InformationBar.qml:88
 #: content/ui/StatusDelegate/PostInfoBar.qml:82
@@ -3283,73 +3283,73 @@ msgstr "Aggiungi sondaggio"
 msgid "Public"
 msgstr "Pubblico"
 
-#: content/ui/StatusComposer/StatusComposer.qml:334
+#: content/ui/StatusComposer/StatusComposer.qml:344
 #: content/ui/StatusDelegate/InformationBar.qml:82
 #: content/ui/StatusDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Non elencato"
 
-#: content/ui/StatusComposer/StatusComposer.qml:339
+#: content/ui/StatusComposer/StatusComposer.qml:349
 #: content/ui/StatusDelegate/InformationBar.qml:84
 #: content/ui/StatusDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privato"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:354
 #: content/ui/StatusDelegate/InformationBar.qml:86
 #: content/ui/StatusDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Messaggio diretto"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:359
 #, kde-format
 msgid "Visibility"
 msgstr "Visibilità"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:364
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "ac"
 
-#: content/ui/StatusComposer/StatusComposer.qml:363
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "Post Language"
 msgstr "Lingua dei commenti"
 
-#: content/ui/StatusComposer/StatusComposer.qml:392
+#: content/ui/StatusComposer/StatusComposer.qml:402
 #, kde-format
 msgid "Add Emoji"
 msgstr "Aggiungi emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:407
+#: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caratteri"
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:441
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Invia"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:443
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Rispondi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:422
+#: content/ui/StatusComposer/StatusComposer.qml:445
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Invia di nuovo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:447
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3705,40 +3705,52 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Riproduci"
 
-#: content/ui/TimelinePage.qml:74
+#: content/ui/TimelinePage.qml:33 timeline/accountmodel.cpp:35
+#, kde-format
+msgid "Loading"
+msgstr "Caricamento in corso"
+
+#: content/ui/TimelinePage.qml:35
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Home (%1)"
+msgid "Home (%1)"
+msgstr "Home (%1)"
+
+#: content/ui/TimelinePage.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Filtri"
 
-#: content/ui/TimelinePage.qml:79
+#: content/ui/TimelinePage.qml:91
 #, kde-format
 msgid "Show Boosts"
 msgstr "Mostra boost"
 
-#: content/ui/TimelinePage.qml:86
+#: content/ui/TimelinePage.qml:98
 #, kde-format
 msgid "Show Replies"
 msgstr "Mostra risposte"
 
-#: content/ui/TimelinePage.qml:111
+#: content/ui/TimelinePage.qml:123
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Impossibile contattare il server: %1. Controlla le tue impostazioni."
 
-#: content/ui/TimelinePage.qml:213
+#: content/ui/TimelinePage.qml:225
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Fine della timeline"
 
-#: content/ui/TimelinePage.qml:249
+#: content/ui/TimelinePage.qml:261
 #, kde-format
 msgid "No posts"
 msgstr "Nessun commento"
 
-#: content/ui/TimelinePage.qml:255
+#: content/ui/TimelinePage.qml:267
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3921,48 +3933,37 @@ msgstr "Utenti"
 msgid "Hashtags"
 msgstr "Hashtag"
 
-#: timeline/accountmodel.cpp:35 timeline/maintimelinemodel.cpp:24
-#, kde-format
-msgid "Loading"
-msgstr "Caricamento in corso"
-
-#: timeline/maintimelinemodel.cpp:26
-#, kde-format
-msgctxt "@title"
-msgid "Home (%1)"
-msgstr "Home (%1)"
-
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Home"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:24
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Timeline locale"
 
-#: timeline/maintimelinemodel.cpp:33
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Timeline globale"
 
-#: timeline/maintimelinemodel.cpp:35
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Segnalibri"
 
-#: timeline/maintimelinemodel.cpp:37
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
 msgstr "Preferiti"
 
-#: timeline/maintimelinemodel.cpp:39
+#: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
