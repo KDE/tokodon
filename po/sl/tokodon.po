@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-31 00:37+0000\n"
-"PO-Revision-Date: 2024-01-23 13:59+0100\n"
+"PO-Revision-Date: 2024-01-31 07:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: account/abstractaccount.cpp:655
@@ -3720,11 +3720,9 @@ msgid "Loading"
 msgstr "Nalaganje"
 
 #: content/ui/TimelinePage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Home (%1)"
+#, kde-format
 msgid "Home (%1)"
-msgstr "Domov (%1)"
+msgstr "Dom (%1)"
 
 #: content/ui/TimelinePage.qml:86
 #, kde-format

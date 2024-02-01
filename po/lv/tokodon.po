@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-31 00:37+0000\n"
-"PO-Revision-Date: 2024-01-07 12:25+0200\n"
-"Last-Translator: Māris Nartišs <maris.kde@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-01-30 14:35+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -685,8 +685,7 @@ msgid "No Trending Tags"
 msgstr "Nav populāru birku"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Paziņojumi"
@@ -695,7 +694,7 @@ msgstr "Paziņojumi"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Nepieciešama iestatīšana"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
@@ -705,12 +704,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"„Tokodon“ var parādīt dažādu aktivitāšu paziņojumus, piemēram, cilvēkiem "
+"pastiprinot vai atbildot uz ierakstu.\n"
+"\n"
+"Parādītie paziņojumu veidi var tikt pielāgoti pēc ierakstīšanās."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Nav paziņojumu"
+msgstr "Atļaut paziņojumus"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -721,11 +723,10 @@ msgid "Continue"
 msgstr "Turpināt"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Parole"
+msgstr "Paroles serviss"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -737,12 +738,19 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"„Tokodon“ ir nepieciešams palaists paroles serviss, lai saglabātu sensitīvu "
+"personas informāciju.\n"
+"\n"
+"„Tokodon“ var lietot „KWallet“, GNOME atslēgu saišķi vai jebkuru citu ar "
+"„libsecret“ saderīgu servicu.\n"
+"\n"
+"Pēc servisa instalēšanas pārliecinieties, ka tas darbojas un pārstartējiet "
+"„Tokodon“."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Par „Tokodon“"
+msgstr "Iziet no „Tokodon“"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -760,7 +768,7 @@ msgstr "Laipni lūgti programmā „Tokodon“"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Pirms „Tokodon“ lietošanas ir jāveic daži pirmie soļi."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
@@ -813,17 +821,16 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Ir radusies kļūda, ierakstoties serverī:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Resolve this issue by logging into the server's website. Once completed, "
-#| "try logging in again with the button below."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\\n\\nYou can attempt to log in "
 "again with the button below, or restart Tokodon."
 msgstr ""
-"Šo problēmu varat atrisināt, ierakstoties servera tīmekļa vietnē. Pēc "
-"pabeigšanas, mēģiniet ierakstīties atkārtoti, nospiežot zemāk esošo pogu."
+"Pārbaudiet, vai ir palaists paroļu serviss. Ja ir citas ierakstīšanās "
+"problēmas, varat mēģināt ierakstīties servera tīmekļa vietnē.\\n\\nVarat "
+"mēģināt ierakstīties atkal, nospiežot zemāk esošo pogu, vai pārstartējiet "
+"„Tokodon“."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -3669,6 +3676,8 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
+"Šis ieraksts ir atzīmēts kā privāts. Daži ieraksti var trūkt, jo tā atbildes "
+"pēc noklusējuma arī ir privātas."
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format
@@ -3977,22 +3986,22 @@ msgstr "nākotnē"
 #: timeline/post.cpp:393
 #, kde-format
 msgid "%1s"
-msgstr "%1s"
+msgstr "%1 sek."
 
 #: timeline/post.cpp:395
 #, kde-format
 msgid "%1m"
-msgstr "%1min"
+msgstr "%1 min."
 
 #: timeline/post.cpp:397
 #, kde-format
 msgid "%1h"
-msgstr "%1h"
+msgstr "%1 st."
 
 #: timeline/post.cpp:399
 #, kde-format
 msgid "%1d"
-msgstr "%1d"
+msgstr "%1 d."
 
 #: timeline/post.cpp:403
 #, kde-format
