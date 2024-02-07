@@ -383,6 +383,7 @@ Kirigami.ApplicationWindow {
                 padding: Kirigami.Units.largeSpacing
 
                 Layout.fillWidth: true
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
             }
         }
     }
