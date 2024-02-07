@@ -141,4 +141,10 @@ void ThreadModel::reset()
     endResetModel();
 }
 
+void ThreadModel::refresh()
+{
+    reset();
+    fillTimeline();
+}
+
 #include "moc_threadmodel.cpp"

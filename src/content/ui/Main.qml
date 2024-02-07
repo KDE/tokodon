@@ -19,6 +19,9 @@ Kirigami.ApplicationWindow {
 
     property bool isShowingFullScreenImage: false
 
+    // A new post was created by us. Currently used by ThreadPages to update themselves when we reply.
+    signal newPost()
+
     minimumWidth: Kirigami.Units.gridUnit * 21
     minimumHeight: Kirigami.Units.gridUnit * 20
 
