@@ -38,6 +38,9 @@ public:
 
     void reset() override;
 
+    /// Resets and refreshes the timeline for new posts
+    Q_INVOKABLE void refresh();
+
 Q_SIGNALS:
     void postIdChanged();
 

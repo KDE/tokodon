@@ -67,6 +67,7 @@ Kirigami.ScrollablePage {
                 } else {
                     applicationWindow().pageStack.layers.pop();
                 }
+                applicationWindow().newPost();
             } else {
                 banner.text = error
                 console.log(error);

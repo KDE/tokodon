@@ -21,6 +21,15 @@ TimelinePage {
         }
     }
 
+    Connections {
+        target: applicationWindow()
+
+        // Refresh the model when we reply to it ourselves
+        function onNewPost() {
+            model.refresh();
+        }
+    }
+
     model: ThreadModel {
         postId: root.postId
     }
