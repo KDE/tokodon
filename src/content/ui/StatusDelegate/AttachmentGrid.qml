@@ -182,7 +182,20 @@ QQC2.Control {
 
                             TapHandler {
                                 acceptedButtons: Qt.RightButton
+                                acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus | PointerDevice.TouchPad
+                                exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
                                 onTapped: {
+                                    imageMenu.active = true;
+                                    imageMenu.item.attachment = modelData;
+                                    imageMenu.item.popup();
+                                }
+                            }
+
+                            TapHandler {
+                                acceptedButtons: Qt.LeftButton
+                                acceptedDevices: PointerDevice.TouchScreen
+                                exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
+                                onLongPressed: {
                                     imageMenu.active = true;
                                     imageMenu.item.attachment = modelData;
                                     imageMenu.item.popup();

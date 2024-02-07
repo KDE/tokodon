@@ -49,7 +49,9 @@ QQC2.TextArea {
 
     TapHandler {
         enabled: !parent.hoveredLink && !root.expandedPost
-        onTapped: root.clicked()
+        acceptedButtons: Qt.LeftButton
+        exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
+        onSingleTapped: root.clicked()
     }
 
     MouseArea {
