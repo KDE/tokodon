@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-31 02:37+0000\n"
-"PO-Revision-Date: 2023-10-30 14:11+0200\n"
+"POT-Creation-Date: 2024-02-08 02:28+0000\n"
+"PO-Revision-Date: 2024-02-02 17:32+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -63,10 +63,9 @@ msgid "Could not edit note about an account"
 msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
 
 #: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgid "View Post"
-msgstr "Näytä profiili"
+msgstr "Näytä julkaisu"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -77,10 +76,9 @@ msgid "View Profile"
 msgstr "Näytä profiili"
 
 #: account/notificationhandler.cpp:74
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 alkoi seurata sinua"
+msgstr "%1 mainitsi sinut"
 
 #: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -157,22 +155,19 @@ msgstr "Seuratut"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Vaimennetut käyttäjät"
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Estetty"
+msgstr "Estetyt käyttäjät"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Esitellyt tilit"
+msgstr "Esitellyt käyttäjät"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
@@ -201,28 +196,24 @@ msgid "No followers"
 msgstr "Ei seuraajia"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Ei seuraajia"
+msgstr "Ei seurattuja käyttäjiä"
 
 #: account/socialgraphmodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Ei vaimennettuja tilejä"
+msgstr "Ei vaimennettuja käyttäjiä"
 
 #: account/socialgraphmodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "Ei estettyjä tilejä"
+msgstr "Ei estettyjä käyttäjiä"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Ei esiteltyjä tilejä"
+msgstr "Ei esiteltyjä käyttäjiä"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
@@ -276,14 +267,10 @@ msgid "Suspended"
 msgstr "Keskeytetty"
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Rajoita"
+msgstr "Rajoitettu"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -321,28 +308,24 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr "Sattui virhe tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi."
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "Tiliä ei voitu hylätä"
+msgstr "Ilmoitusta ei voitu ratkaista"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "Tilin hiljennystä ei voitu perua"
+msgstr "Ilmoituksen ratkaisua ei voitu perua"
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "Tiliä ei voitu hyväksyä"
+msgstr "Ilmoitusta ei voitu osoittaa"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "Tilin hiljennystä ei voitu perua"
+msgstr "Ilmoituksen osoitusta ei voitu perua"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -350,16 +333,14 @@ msgid "Follows you"
 msgstr "Seuraa sinua"
 
 #: content/ui/AccountInfo.qml:210
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Requested"
-msgstr "Seurauspyynnöt"
+msgstr "Seuraamista pyydetty"
 
 #: content/ui/AccountInfo.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Seuraa"
+msgstr "Lakkaa seuraamasta"
 
 #: content/ui/AccountInfo.qml:215
 #, kde-format
@@ -367,16 +348,14 @@ msgid "Follow"
 msgstr "Seuraa"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Älä ilmoita enää, kun %1 viestittelee"
+msgstr "Älä ilmoita enää, kun %1 julkaisee."
 
 #: content/ui/AccountInfo.qml:242
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Ilmoita, kun %1 viestittelee"
+msgstr "Ilmoita, kun %1 julkaisee."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -384,10 +363,9 @@ msgid "Hide Boosts from %1"
 msgstr "Piilota käyttäjän %1 tehostukset"
 
 #: content/ui/AccountInfo.qml:261
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "Lakkaa piilottamasta käyttäjän %1 tehostuksia"
+msgstr "Piilota käyttäjän %1 tehostukset"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -402,7 +380,7 @@ msgstr "Esittele profiilissa"
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Poista vaimennus"
 
 #: content/ui/AccountInfo.qml:297
 #, kde-format
@@ -410,10 +388,9 @@ msgid "Mute"
 msgstr "Vaimenna"
 
 #: content/ui/AccountInfo.qml:313
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Estä"
+msgstr "Poista esto"
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
@@ -422,12 +399,10 @@ msgstr "Estä"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:160
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoita…"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -444,13 +419,13 @@ msgstr "Tilimuokkain"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:369
+#: content/ui/AccountInfo.qml:346 content/ui/Main.qml:374
 #: content/ui/TimelinePage.qml:52
 #, kde-format
 msgid "Configure"
 msgstr "Asetukset"
 
-#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:408
+#: content/ui/AccountInfo.qml:351 content/ui/Main.qml:414
 #, kde-format
 msgid "Follow Requests"
 msgstr "Seurauspyynnöt"
@@ -458,19 +433,17 @@ msgstr "Seurauspyynnöt"
 #: content/ui/AccountInfo.qml:357
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Vaimennetut käyttäjät"
 
 #: content/ui/AccountInfo.qml:363
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Estetty"
+msgstr "Estetyt käyttäjät"
 
 #: content/ui/AccountInfo.qml:369
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Esitellyt tilit"
+msgstr "Esitellyt käyttäjät"
 
 #: content/ui/AccountInfo.qml:374
 #, kde-format
@@ -483,10 +456,9 @@ msgid "Post link copied."
 msgstr "Julkaisulinkki kopioitu."
 
 #: content/ui/AccountInfo.qml:467
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Muistiinpano"
+msgstr "Muistiinpano:"
 
 #: content/ui/AccountInfo.qml:475
 #, kde-format
@@ -547,9 +519,7 @@ msgid "Hide boosts"
 msgstr "Piilota tehostukset"
 
 #: content/ui/AccountInfo.qml:706
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Kaikki"
@@ -569,19 +539,19 @@ msgstr "Jaa valittu media"
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr ""
+msgstr "Tiedotteet"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr ""
+msgstr "Tiedote %1"
 
 #: content/ui/AnnouncementsPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "No announcements"
-msgstr ""
+msgstr "Ei tiedotteita"
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -599,104 +569,90 @@ msgid "No Conversations"
 msgstr "Ei keskusteluja"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Luotu"
+msgstr "Luo luettelo"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Muokkaukset"
+msgstr "Muokkaa luetteloa"
 
 #: content/ui/EditListPage.qml:60
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr ""
+msgstr "Otsikko"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "%1 vastausta"
+msgstr "Näytä vastaukset julkaisuun"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Sulkuluettelo"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr ""
+msgstr "Sulkuluettelossa olevat julkaisut poistetaan kotiaikajanalta."
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "Luotu"
+msgstr "Luo"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Muokkaa"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Poista"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Poista sana"
+msgstr "Poistetaan luetteloa"
 
 #: content/ui/EditListPage.qml:125
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr ""
+msgstr "Haluatko varmasti poistaa tämän luettelon?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:507
 #, kde-format
 msgid "Explore"
 msgstr "Selaa"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
-msgstr "Julkaisu"
+msgstr "Julkaise"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "Julkaisut"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "Tags"
-msgstr "Ei tunnisteita"
+msgstr "Luokitukset"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
@@ -718,61 +674,54 @@ msgid "No Trending Tags"
 msgstr "Ei nousussa olevia aihetunnisteita"
 
 #: content/ui/LanguageSelector.qml:25
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Oletuskieli"
+msgstr "Valitse kieli"
 
 #: content/ui/LanguageSelector.qml:47
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Sulje"
 
 #: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgid "Edit List"
-msgstr "Muokkaukset"
+msgstr "Muokkaa luetteloa"
 
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Luettelot"
 
 #: content/ui/ListsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "Luotu"
+msgstr "Luo luettelo"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Ei luetteloja"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
-msgstr "Valtuutus"
+msgstr "Tunnistautuminen"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Kirjaudu"
+msgstr "Kirjautumisongelma"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Palvelimeen kirjauduttaessa ilmeni ongelma:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
 #, kde-format
@@ -780,20 +729,21 @@ msgid ""
 "Resolve this issue by logging into the server's website. Once completed, try "
 "logging in again with the button below."
 msgstr ""
+"Ratkaise ongelma kirjautumalla palvelimen sivustolle. Kun olet valmis, yritä "
+"kirjautua uudelleen alla olevalla painikkeella."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Siirry sivustolle"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:57
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Yritä uudelleen kirjautua"
 
 #: content/ui/LoginFlow/LoginPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Kirjaudu"
@@ -803,12 +753,10 @@ msgstr "Kirjaudu"
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
+msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelinasetukset."
 
 #: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -821,8 +769,7 @@ msgid "Proxy Settings"
 msgstr "Välityspalvelinasetukset"
 
 #: content/ui/LoginFlow/LoginPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Kirjaudu"
@@ -831,14 +778,13 @@ msgstr "Kirjaudu"
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
-msgstr ""
+msgstr "Palvelimen osoite:"
 
 #: content/ui/LoginFlow/LoginPage.qml:50
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Mastodon-asiakas"
+msgstr "mastodon.social"
 
 #: content/ui/LoginFlow/LoginPage.qml:59
 #, kde-format
@@ -851,6 +797,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
+"Salli Tokodonin päästä moderointityökaluihin. Jos kirjautumisessa on "
+"ongelmia, kokeile poistaa asetus käytöstä."
 
 #: content/ui/LoginFlow/LoginPage.qml:68
 #: content/ui/LoginFlow/ServersPage.qml:77
@@ -859,16 +807,13 @@ msgid "Continue"
 msgstr "Jatka"
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty!"
-msgstr "Instanssin verkko-osoite ei voi olla tyhjä!"
+msgstr "Palvelimen verkko-osoite ei voi olla tyhjä!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Verkkoasetukset"
@@ -881,12 +826,10 @@ msgid "Ignore SSL errors"
 msgstr "Sivuuta SSL-virheet"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Kohde"
+msgstr "Rekisteröityminen"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
@@ -895,16 +838,14 @@ msgid "Register"
 msgstr ""
 
 #: content/ui/LoginFlow/RegistrationPage.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Käyttäjätunnus:"
+msgstr "Käyttäjätunnus"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "Sähköpostiosoite"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:108
@@ -915,70 +856,65 @@ msgstr "Salasana"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Syy"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Rekisteröidy"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "Poista"
+msgstr "Säännöt"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "Poista"
+msgstr "Säännöt"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr ""
+msgstr "Hyväksy"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "Ei käytössä"
+msgstr "Älä hyväksy"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Valitse palvelin"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Palvelin on sulkenut rekisteröitymisen: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Valitse palvelin"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "Instanssin verkko-osoite ei voi olla tyhjä!"
+msgstr "Palvelimen verkko-osoite ei voi olla tyhjä."
 
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Tervetuloa"
 
 #: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
@@ -988,134 +924,129 @@ msgstr "Tervetuloa Tokodoniin"
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Lisätietoa"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: content/ui/Main.qml:94
+#: content/ui/Main.qml:97
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "Avaa nimellä…"
 
-#: content/ui/Main.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#: content/ui/Main.qml:99
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Vastaa"
+msgstr "Vastaa nimellä…"
 
-#: content/ui/Main.qml:98
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#: content/ui/Main.qml:101
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Suosikit"
+msgstr "Tee suosikki nimellä…"
 
-#: content/ui/Main.qml:100
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#: content/ui/Main.qml:103
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Tehostukset"
+msgstr "Tehosta nimellä…"
 
-#: content/ui/Main.qml:102
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#: content/ui/Main.qml:105
+#, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Kirjanmerkit"
+msgstr "Tee kirjanmerkki nimellä…"
 
-#: content/ui/Main.qml:104
+#: content/ui/Main.qml:107
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "Tuntematon toiminto"
 
-#: content/ui/Main.qml:350
+#: content/ui/Main.qml:355
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:359
+#: content/ui/Main.qml:364
 #, kde-format
 msgid "Moderation Tools"
 msgstr "Moderointityökalut"
 
-#: content/ui/Main.qml:360
+#: content/ui/Main.qml:365
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderointityökalut"
 
-#: content/ui/Main.qml:370
+#: content/ui/Main.qml:375
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: content/ui/Main.qml:380
+#: content/ui/Main.qml:386
 #, kde-format
 msgid "Home"
 msgstr "Koti"
 
-#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:401 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/SettingsPage.qml:19
 #, kde-format
 msgid "Notifications"
 msgstr "Ilmoitukset"
 
-#: content/ui/Main.qml:424 content/ui/StatusComposer/StatusComposer.qml:333
+#: content/ui/Main.qml:430 content/ui/StatusComposer/StatusComposer.qml:334
 #, kde-format
 msgid "Local"
 msgstr "Paikallinen"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:445
 #, kde-format
 msgid "Global"
 msgstr "Yleinen"
 
-#: content/ui/Main.qml:455
+#: content/ui/Main.qml:461
 #, kde-format
 msgid "Conversation"
 msgstr "Keskustelu"
 
-#: content/ui/Main.qml:469
+#: content/ui/Main.qml:475
 #, kde-format
 msgid "Favourites"
 msgstr "Suosikit"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:491
 #, kde-format
 msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
-#: content/ui/Main.qml:515
+#: content/ui/Main.qml:521
 #, kde-format
 msgid "Search"
 msgstr "Etsi"
 
-#: content/ui/Main.qml:530
+#: content/ui/Main.qml:536
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
-msgstr ""
+msgstr "Tiedotteet"
 
-#: content/ui/Main.qml:545
+#: content/ui/Main.qml:551
 #, kde-format
 msgid "Lists"
-msgstr ""
+msgstr "Luettelot"
 
-#: content/ui/Main.qml:691
+#: content/ui/Main.qml:697
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Upota tieto"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2064,11 +1995,10 @@ msgid "Reject media"
 msgstr "Hylkää media"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
-msgstr "Hylkää raportit"
+msgstr "Hylkää ilmoitukset"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:185
 #, kde-format
@@ -2195,160 +2125,139 @@ msgid "Update IP Rule"
 msgstr "Päivitä IP-sääntö"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoita #%1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "Merkitse ratkaisemattomaksi"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "Merkitse ratkaistuksi"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:55
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Ilmoita ratkaisemattomaksi"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:58
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Ilmoita ratkaistuksi"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "Julkaisut"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:208
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "Seuraajat"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Seuraa"
+msgstr "Seuratut"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:216
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
-msgstr "Liitytty"
+msgstr "Liittynyt"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:220
-#, fuzzy, kde-format
-#| msgctxt "@info The last time the account was active."
-#| msgid "Last Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "Viimeksi aktiivinen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoitettu"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoitettu"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "Ilmoittanut"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:259
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Report Status"
-msgstr "Kirjautumisen tila"
+msgstr "Ilmoituksen tila"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgid "Resolved"
-msgstr "Selvitä verkkoalue"
+msgstr "Ratkaistu"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "Ratkaisematta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:267
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "Toimenpide onnistui"
+msgstr "Toimeen ryhtynyt"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Osoitettu moderaattori"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "Ei kukaan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Poista osoitus"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "Osoita minulle"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:299
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Edennetty"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "Kyllä"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "Ei mitään"
+msgstr "Ei"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:309
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Luokka"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:313
 #, kde-format
@@ -2356,58 +2265,60 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Syy, miksi tilistä tai sisällöstä ilmoitettiin, sisällytetään viesteihin "
+"ilmoitetun tilin kanssa"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:325
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Muu"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:330
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Luokaksi vaihdettu muu syy"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:341
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "Roskaposti"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:345
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "Luokaksi vaihdettu roskaposti"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Sisältö rikkoo yhtä tai useampia palvelinsääntöjä"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:360
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Luokaksi vaihdettu sääntörikkomus"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:403
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "Lisätiedoksi %1 kirjoitti:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:412
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "Ei käyt."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:428
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "Ilmoitettu sisältö"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:432
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "Loukkaavaa sisältöä lainataan viestittäessä ilmoitetun tilin kanssa"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
 #: content/ui/StatusDelegate/StatusDelegate.qml:292
@@ -2434,11 +2345,9 @@ msgid "Accounts"
 msgstr "Tilit"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Reports"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoitukset"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2464,78 +2373,67 @@ msgid "Accounts Tool Page"
 msgstr "Tilityökalujen sivu"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Kirjautumisen tila"
+msgstr "Ilmoituksen tila"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "Ratkaisematta"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "Selvitä verkkoalue"
+msgstr "Ratkaistut"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Ilmoituksen alkuperä"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "Kaikki"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Paikallinen"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
-msgstr "Etä"
+msgstr "Etätilit"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Ilmoittaja:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "Lisää tili"
+msgstr "Osoitettu tili:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "Ei käyt."
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "Tilejä ei löytynyt"
+msgstr "Ilmoituksia ei löytynyt"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2621,45 +2519,37 @@ msgid "%1 updated their post"
 msgstr "%1 päivitti julkaisuaan"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoita julkaisusta"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Ilmoita käyttäjästä"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Liittymissyyt"
+msgstr "Syy julkaisusta ilmoittamiseen"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Liittymissyyt"
+msgstr "Syy käyttäjästä ilmoittamiseen"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "Lähetä uudelleen"
+msgstr "Ilmoita"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "Peru"
@@ -2681,10 +2571,9 @@ msgid "No search results"
 msgstr "Ei hakutuloksia"
 
 #: content/ui/SearchView.qml:54
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Etsi ihmisiä, luokituksia ja julkaisuja"
+msgstr "Etsi käyttäjiä, luokituksia ja julkaisuja"
 
 #: content/ui/SearchView.qml:147
 #, kde-format
@@ -2697,8 +2586,7 @@ msgid "Logout"
 msgstr "Kirjaudu ulos"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Kirjaudu ulos"
@@ -2707,7 +2595,7 @@ msgstr "Kirjaudu ulos"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Haluatko varmasti kirjautua ulos tililtä %1?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:121
 #, kde-format
@@ -2817,7 +2705,7 @@ msgstr "Ota tämän tilin ilmoitukset käyttöön"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Push notifications are enabled."
-msgstr ""
+msgstr "Push-ilmoitukset ovat käytössä."
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
@@ -2825,6 +2713,8 @@ msgid ""
 "Push notifications are not available for this account. Please log out and "
 "log back in."
 msgstr ""
+"Push-ilmoitukset eivät ole saatavilla tälle tilille. Kirjaudu ulos ja "
+"takaisin sisään."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -2878,7 +2768,7 @@ msgid "Edit Account"
 msgstr "Muokkaa tiliä"
 
 #: content/ui/Settings/ProfileEditor.qml:31
-#: content/ui/StatusComposer/StatusComposer.qml:276
+#: content/ui/StatusComposer/StatusComposer.qml:277
 #, kde-format
 msgid "Please choose a file"
 msgstr "Valitse tiedosto"
@@ -2923,10 +2813,9 @@ msgstr ""
 "PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan alas 400 × 400 kuvapisteeseen"
 
 #: content/ui/Settings/ProfileEditor.qml:281
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "Vaadi seurauspyynnöt"
+msgstr "Vaadi seurauspyyntöjen hyväksymistä"
 
 #: content/ui/Settings/ProfileEditor.qml:289
 #, kde-format
@@ -2957,22 +2846,19 @@ msgid "Default post visibility"
 msgstr "Julkaisun oletusnäkyvyys"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Julkinen"
 
 #: content/ui/Settings/ProfileEditor.qml:337
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Luettelematon"
 
 #: content/ui/Settings/ProfileEditor.qml:338
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Yksityinen"
@@ -3117,9 +3003,7 @@ msgid "No accounts available"
 msgstr "Ei käytettävissä olevia tilejä"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@info:label Alternate text or description of the imaage"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Kuvaus"
@@ -3128,7 +3012,7 @@ msgstr "Kuvaus"
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
-msgstr ""
+msgstr "Kohdistettu kohta"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:37
 #, kde-format
@@ -3209,30 +3093,30 @@ msgstr "Kirjoita tämä julkaisu uudelleen"
 msgid "Write a new post"
 msgstr "Kirjoita uusi julkaisu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:94
+#: content/ui/StatusComposer/StatusComposer.qml:95
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "Hylkää luonnos"
 
-#: content/ui/StatusComposer/StatusComposer.qml:95
+#: content/ui/StatusComposer/StatusComposer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Haluatko varmasti hylätä luonnoksen?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:144
-#: content/ui/StatusComposer/StatusComposer.qml:367
+#: content/ui/StatusComposer/StatusComposer.qml:145
+#: content/ui/StatusComposer/StatusComposer.qml:368
 #, kde-format
 msgid "Content Warning"
 msgstr "Sisältövaroitus"
 
-#: content/ui/StatusComposer/StatusComposer.qml:160
+#: content/ui/StatusComposer/StatusComposer.qml:161
 #, kde-format
 msgid "What's new?"
 msgstr "Mitä uutta?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:279
+#: content/ui/StatusComposer/StatusComposer.qml:280
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3241,77 +3125,77 @@ msgstr ""
 "Kaikki tuetut tiedostomuodot (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif "
 "*.avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:280
+#: content/ui/StatusComposer/StatusComposer.qml:281
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG-kuva (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:281
+#: content/ui/StatusComposer/StatusComposer.qml:282
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG-kuva (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:282
+#: content/ui/StatusComposer/StatusComposer.qml:283
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF-kuva (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:283
+#: content/ui/StatusComposer/StatusComposer.qml:284
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP-kuva (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:284
+#: content/ui/StatusComposer/StatusComposer.qml:285
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC-kuva (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:285
+#: content/ui/StatusComposer/StatusComposer.qml:286
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF-kuva (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:286
+#: content/ui/StatusComposer/StatusComposer.qml:287
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF-kuva (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:287
+#: content/ui/StatusComposer/StatusComposer.qml:288
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM-video (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:288
+#: content/ui/StatusComposer/StatusComposer.qml:289
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4-video (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:289
+#: content/ui/StatusComposer/StatusComposer.qml:290
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V-video (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:290
+#: content/ui/StatusComposer/StatusComposer.qml:291
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime-video (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:291
+#: content/ui/StatusComposer/StatusComposer.qml:292
 #, kde-format
 msgid "All files (*)"
 msgstr "Kaikki tiedostot (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:293
+#: content/ui/StatusComposer/StatusComposer.qml:294
 #, kde-format
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: content/ui/StatusComposer/StatusComposer.qml:303
+#: content/ui/StatusComposer/StatusComposer.qml:304
 #, kde-format
 msgid "Add Poll"
 msgstr "Lisää kysely"
 
-#: content/ui/StatusComposer/StatusComposer.qml:339
+#: content/ui/StatusComposer/StatusComposer.qml:340
 #: content/ui/StatusDelegate/InformationBar.qml:80
 #: content/ui/StatusDelegate/InformationBar.qml:88
 #: content/ui/StatusDelegate/PostInfoBar.qml:82
@@ -3320,73 +3204,73 @@ msgstr "Lisää kysely"
 msgid "Public"
 msgstr "Julkinen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:345
 #: content/ui/StatusDelegate/InformationBar.qml:82
 #: content/ui/StatusDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Luettelematon"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:350
 #: content/ui/StatusDelegate/InformationBar.qml:84
 #: content/ui/StatusDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Yksityinen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:355
 #: content/ui/StatusDelegate/InformationBar.qml:86
 #: content/ui/StatusDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Suoraviesti"
 
-#: content/ui/StatusComposer/StatusComposer.qml:359
+#: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "Visibility"
 msgstr "Näkyvyys"
 
-#: content/ui/StatusComposer/StatusComposer.qml:364
+#: content/ui/StatusComposer/StatusComposer.qml:365
 #, kde-format
 msgctxt "Short for content warning"
 msgid "cw"
 msgstr "sis.var."
 
-#: content/ui/StatusComposer/StatusComposer.qml:373
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "Post Language"
 msgstr "Julkaisukieli"
 
-#: content/ui/StatusComposer/StatusComposer.qml:402
+#: content/ui/StatusComposer/StatusComposer.qml:403
 #, kde-format
 msgid "Add Emoji"
 msgstr "Lisää emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> merkkiä"
 
-#: content/ui/StatusComposer/StatusComposer.qml:441
+#: content/ui/StatusComposer/StatusComposer.qml:442
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Lähetä"
 
-#: content/ui/StatusComposer/StatusComposer.qml:443
+#: content/ui/StatusComposer/StatusComposer.qml:444
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: content/ui/StatusComposer/StatusComposer.qml:445
+#: content/ui/StatusComposer/StatusComposer.qml:446
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Lähetä uudelleen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:447
+#: content/ui/StatusComposer/StatusComposer.qml:448
 #, kde-format
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
@@ -3395,17 +3279,17 @@ msgstr "Muokkaa"
 #: content/ui/StatusDelegate/AttachmentGrid.qml:57
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Tila kuvaliitteellä"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:59
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Tila GifV-liitteellä"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:61
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Tila videoliitteellä"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:159
 #, kde-format
@@ -3413,46 +3297,43 @@ msgid "Not available"
 msgstr "Ei käytettävissä"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:174
-#: content/ui/StatusDelegate/AttachmentGrid.qml:262
-#: content/ui/StatusDelegate/AttachmentGrid.qml:333
+#: content/ui/StatusDelegate/AttachmentGrid.qml:275
+#: content/ui/StatusDelegate/AttachmentGrid.qml:346
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "Kuvaus"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:270
+#: content/ui/StatusDelegate/AttachmentGrid.qml:283
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:341
+#: content/ui/StatusDelegate/AttachmentGrid.qml:354
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:353
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#: content/ui/StatusDelegate/AttachmentGrid.qml:366
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Media"
+msgstr "Piilota media"
 
-#: content/ui/StatusDelegate/AttachmentGrid.qml:380
+#: content/ui/StatusDelegate/AttachmentGrid.qml:393
 #, kde-format
 msgid "Media Hidden"
 msgstr "Piilotettu media"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:38
-#, fuzzy, kde-format
-#| msgid "Save as"
+#, kde-format
 msgid "Save Image As…"
-msgstr "Tallenna nimellä"
+msgstr "Tallenna kuva nimellä…"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopioi kuva"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
@@ -3479,11 +3360,10 @@ msgid "Link preview: %1"
 msgstr "Linkin esikatselu: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Laajenna tämä julkaisu"
+msgstr "Laajenna julkaisu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
@@ -3491,8 +3371,7 @@ msgid "Open Original Page"
 msgstr "Avaa alkuperäinen sivu"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:47
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopioi linkki"
@@ -3501,46 +3380,40 @@ msgstr "Kopioi linkki"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Upota"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Avaa nimellä…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Vastaa"
+msgstr "Vastaa nimellä…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Suosikit"
+msgstr "Tee suosikki nimellä…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:89
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Tehostukset"
+msgstr "Tehosta nimellä…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Kirjanmerkit"
+msgstr "Tee kirjanmerkki nimellä…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:104
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Poista kirjanmerkki"
@@ -3553,15 +3426,13 @@ msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Irrota profiilista"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Kiinnitä profiiliin"
@@ -3570,28 +3441,25 @@ msgstr "Kiinnitä profiiliin"
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "Vaimenna @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:126
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "Vaimenna"
+msgstr "Vaimenna @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:143
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "Estä"
+msgstr "Poista esto: @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:145
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "Estä"
+msgstr "Estä @%1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
@@ -3605,18 +3473,14 @@ msgid "More"
 msgstr "Lisää"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "Sähköpostin tila"
+msgstr "Tavallinen tila"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Kirjautumisen tila"
+msgstr "Ilonpilaajatila"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:135
 #, kde-format
@@ -3629,32 +3493,28 @@ msgid "Show anyway"
 msgstr "Näytä silti"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:157
-#, fuzzy, kde-format
-#| msgid "View profile"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Näytä profiili"
+msgstr "Kiinnitetty julkaisu"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Poista sana"
+msgstr "Poista julkaisu"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:215
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Haluatko varmasti poistaa tämän julkaisun?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:229
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Poista ja kirjoita uudelleen"
+msgstr "Poista ja luonnostele julkaisu uudelleen"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:230
 #, kde-format
@@ -3663,6 +3523,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Haluatko varmasti luonnostella julkaisun uudelleen? Alkuperäinen julkaisu "
+"poistetaan."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:389
 #, kde-format
@@ -3677,16 +3539,12 @@ msgid "Boost"
 msgstr "Tehosta"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:415
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Tehosta"
+msgstr "Tehostettu"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:415
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Tehosta"
 
@@ -3697,16 +3555,14 @@ msgid "Favorite"
 msgstr "Suosikki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Suosikit"
+msgstr "Merkitty suosikiksi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:436
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Suosikit"
+msgstr "Suosikki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:453
 #, kde-format
@@ -3720,10 +3576,9 @@ msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:456
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Kirjanmerkki"
+msgstr "Kirjanmerkitty"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:456
 #, kde-format
@@ -3763,23 +3618,20 @@ msgid "Play"
 msgstr "Toista"
 
 #: content/ui/TimelinePage.qml:74
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Suodatettu: %1"
+msgstr "Suodattimet"
 
 #: content/ui/TimelinePage.qml:79
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "Lakkaa piilottamasta käyttäjän %1 tehostuksia"
+msgstr "Piilota tehostukset"
 
 #: content/ui/TimelinePage.qml:86
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgid "Show Replies"
-msgstr "%1 vastausta"
+msgstr "Näytä vastaukset"
 
 #: content/ui/TimelinePage.qml:111
 #, kde-format
@@ -3788,11 +3640,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
 
 #: content/ui/TimelinePage.qml:213
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Paikallinen aikajana"
+msgstr "Aikajanan loppu"
 
 #: content/ui/TimelinePage.qml:249
 #, kde-format
@@ -3803,13 +3654,12 @@ msgstr "Ei julkaisuja"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Palaa ylös"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Lisää tili"
+msgstr "Vaihda tiliä"
 
 #: content/ui/UserInfo.qml:126
 #, kde-format
@@ -3836,13 +3686,12 @@ msgstr[1] "%2 ja %1 muuta"
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Luettelon jäsenet"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "Any followed users"
-msgstr "Ei seuraajia"
+msgstr "Kuka tahansa seurattu käyttäjä"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -3900,7 +3749,7 @@ msgstr "Tapahtui tuntematon virhe."
 #: main.cpp:60
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Vastaanotetaan push-ilmoituksia"
 
 #: main.cpp:104
 #, kde-format
@@ -3945,16 +3794,14 @@ msgid "Your emails"
 msgstr "translator@legisign.org"
 
 #: main.cpp:127
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "Asiakas hajautettuun sosiaaliseen verkkoon, Mastodoniin"
+msgstr "Asiakas hajautettuihin sosiaalisiin verkkoihin kuten Mastodoniin"
 
 #: main.cpp:128
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Tukee web+ap: -verkko-osoitemallia"
+msgstr "Tukee https- ja web+ap-verkko-osoitemalleja"
 
 #: main.cpp:130
 #, kde-format
@@ -3969,7 +3816,7 @@ msgstr "Jaettava teksti."
 #: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "Vain sisäiseen käyttöön."
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
@@ -3977,10 +3824,9 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Noudettaessa viimeisintä ilmoitusta tapahtui virhe."
 
 #: search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
-msgstr "Käyttäjä"
+msgstr "Käyttäjät"
 
 #: search/searchmodel.cpp:142
 #, kde-format
@@ -4160,12 +4006,12 @@ msgstr "Liput"
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Väliaikaista lataustiedostoa ei voitu avata."
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Latausta varten ei voitu varata levytilaa"
 
 #: utils/filetransferjob.cpp:81
 #, kde-format
