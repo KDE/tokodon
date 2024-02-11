@@ -201,10 +201,6 @@ QQC2.Control {
                                     imageMenu.item.popup();
                                 }
                             }
-
-                            QQC2.ToolTip.text: modelData.caption
-                            QQC2.ToolTip.visible: hover.hovered && QQC2.ToolTip.text !== ""
-                            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                         }
                     }
                 }
