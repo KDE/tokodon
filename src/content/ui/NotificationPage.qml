@@ -162,6 +162,7 @@ Kirigami.ScrollablePage {
                     timelineModel: notificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
+                    showInteractionButton: false
                 }
             }
 
@@ -173,6 +174,7 @@ Kirigami.ScrollablePage {
                     timelineModel: notificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
+                    showInteractionButton: false
                 }
             }
 
@@ -198,6 +200,7 @@ Kirigami.ScrollablePage {
                     timelineModel: notificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
+                    showInteractionButton: false
                 }
             }
 
@@ -209,6 +212,7 @@ Kirigami.ScrollablePage {
                     timelineModel: notificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
+                    showInteractionButton: false
                 }
             }
         }
