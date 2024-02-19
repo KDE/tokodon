@@ -18,25 +18,13 @@ Kirigami.ScrollablePage {
 
     property alias listViewHeader: listview.header
     readonly property bool typesAreGroupable: !mentionOnlyAction.checked && !followsOnlyAction.checked && !pollResultsOnlyAction.checked
-    property bool shouldGroupNotifications: groupNotificationsAction.checked && typesAreGroupable
+    property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
     onBackRequested: if (dialog) {
         dialog.close();
         dialog = null;
         event.accepted = true;
-    }
-
-    actions: Kirigami.Action {
-        id: groupNotificationsAction
-
-        icon.name: "view-visible"
-
-        displayComponent: QQC2.Switch {
-            text: i18n("Group Notifications")
-            enabled: typesAreGroupable
-            onToggled: groupNotificationsAction.checked = checked
-        }
     }
 
     property Kirigami.Action showAllAction: Kirigami.Action {
