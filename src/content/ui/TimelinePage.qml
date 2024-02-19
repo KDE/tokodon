@@ -27,7 +27,7 @@ Kirigami.ScrollablePage {
 
     title: {
         // Show the account name if the drawer is not open, so there's no way to tell which account you're on.
-        if (name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
+        if (model.name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
             if (AccountManager.rowCount() > 1) {
                 if (AccountManager.selectedAccount === null) {
                     return i18n("Loading");
