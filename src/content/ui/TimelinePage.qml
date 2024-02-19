@@ -24,6 +24,7 @@ Kirigami.ScrollablePage {
     readonly property bool showReplies: showRepliesAction.checked
     readonly property bool showBoosts: showBoostsAction.checked
     property alias showFilterAction: filterAction.visible
+    property string originalPostUrl
 
     title: {
         // Show the account name if the drawer is not open, so there's no way to tell which account you're on.
@@ -215,20 +216,38 @@ Kirigami.ScrollablePage {
             }
         }
 
-        footer: Item {
+        footer: ColumnLayout {
             width: parent.width
-            height: Kirigami.Units.gridUnit * 4
+            implicitHeight: Kirigami.Units.gridUnit * 4
+            spacing: Kirigami.Units.largeSpacing
 
             Kirigami.PlaceholderMessage {
-                anchors.fill: parent
+                Layout.topMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                visible: root.originalPostUrl.length !== 0
+                text: i18nc("@info:status", "Some replies are not available")
+                explanation: i18n("To view all replies, open the post on the original server.")
+                helpfulAction: Kirigami.Action {
+                    icon.name: "window"
+                    text: i18nc("@action:button", "Open Original Page")
+                    onTriggered: Qt.openUrlExternally(root.originalPostUrl)
+                }
+            }
+
+            Kirigami.PlaceholderMessage {
                 visible: root.model.atEnd ?? false
                 text: i18nc("@info:status", "End of Timeline")
+
+                Layout.alignment: Qt.AlignHCenter
             }
 
             QQC2.ProgressBar {
-                anchors.centerIn: parent
                 visible: root.model.loading
                 indeterminate: true
+
+                Layout.alignment: Qt.AlignHCenter
             }
         }
 

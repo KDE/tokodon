@@ -19,6 +19,12 @@ TimelinePage {
         function onLoadingChanged() {
             root.listView.positionViewAtIndex(root.model.getRootIndex(), ListView.Beginning);
         }
+
+        function onHasHiddenRepliesChanged() {
+            if (root.model.hasHiddenReplies) {
+                root.originalPostUrl = root.model.postUrl;
+            }
+        }
     }
 
     Connections {

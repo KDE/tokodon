@@ -44,6 +44,11 @@ void ThreadModel::setPostId(const QString &postId)
     fillTimeline();
 }
 
+QString ThreadModel::postUrl() const
+{
+    return m_postUrl;
+}
+
 void ThreadModel::fillTimeline(const QString &fromId)
 {
     Q_UNUSED(fromId)
@@ -79,13 +84,19 @@ void ThreadModel::fillTimeline(const QString &fromId)
         auto ancestors = obj["ancestors"_L1].toArray().toVariantList();
         std::reverse(ancestors.begin(), ancestors.end());
 
+        const auto descendents = obj["descendants"_L1].toArray();
+
+        // If the root post has a non-zero reply count but no context from the server, it's possible that some replies are not available to us.
+        if (descendents.isEmpty() && thread->front()->repliesCount() != 0) {
+            m_hasHiddenReplies = true;
+            Q_EMIT hasHiddenRepliesChanged();
+        }
+
         for (const auto &ancestor : ancestors) {
             if (ancestor.canConvert<QJsonObject>() || ancestor.canConvert<QVariantMap>()) {
                 thread->push_front(new Post(m_account, ancestor.toJsonObject(), this));
             }
         }
-
-        const auto descendents = obj["descendants"_L1].toArray();
 
         for (const auto &descendent : descendents) {
             if (!descendent.isObject()) {
@@ -110,6 +121,10 @@ void ThreadModel::fillTimeline(const QString &fromId)
             return;
         }
         thread->push_front(new Post(m_account, obj, this));
+
+        m_postUrl = thread->front()->url().toString();
+        Q_EMIT postUrlChanged();
+
         m_account->get(contextUrl, true, this, onFetchContext, handleError);
     };
 
@@ -145,6 +160,11 @@ void ThreadModel::refresh()
 {
     reset();
     fillTimeline();
+}
+
+bool ThreadModel::hasHiddenReplies() const
+{
+    return m_hasHiddenReplies;
 }
 
 #include "moc_threadmodel.cpp"
