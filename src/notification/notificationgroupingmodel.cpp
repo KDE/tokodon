@@ -436,7 +436,11 @@ QModelIndex NotificationGroupingModel::mapToSource(const QModelIndex &proxyIndex
 bool NotificationGroupingModel::loading() const
 {
     auto notificationModel = (NotificationModel *)sourceModel();
-    return notificationModel->loading();
+    if (notificationModel != nullptr) {
+        return notificationModel->loading();
+    } else {
+        return true;
+    }
 }
 
 void NotificationGroupingModel::setSourceModel(NotificationModel *model)
