@@ -403,7 +403,7 @@ QQC2.ItemDelegate {
                 interacted: root.reblogged
                 interactionColor: "#63c605"
 
-                enabled: root.visibility !== Post.Direct
+                enabled: root.visibility !== Post.Direct && root.visibility !== Post.Private
 
                 iconName: 'tokodon-post-boost'
                 interactedIconName: 'tokodon-post-boosted'
