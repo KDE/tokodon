@@ -1,6 +1,6 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Shinjo Park <kde@peremen.name>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 #
 # 마스토돈 한국어 번역을 참조할 것.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-12 00:37+0000\n"
-"PO-Revision-Date: 2023-10-09 00:09+0200\n"
+"PO-Revision-Date: 2024-02-19 22:02+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -67,10 +67,9 @@ msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
 
 #: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View Post"
-msgstr "프로필 보기"
+msgstr "게시물 보기"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -81,10 +80,9 @@ msgid "View Profile"
 msgstr "프로필 보기"
 
 #: account/notificationhandler.cpp:74
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 님이 팔로우함"
+msgstr "%1 님이 멘션함"
 
 #: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -161,22 +159,19 @@ msgstr "팔로잉"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "뮤트된 사용자"
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "차단 시기"
+msgstr "차단된 사용자"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "추천 계정"
+msgstr "추천 사용자"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
@@ -203,28 +198,24 @@ msgid "No followers"
 msgstr "팔로워 없음"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "팔로워 없음"
+msgstr "팔로우한 사용자 없음"
 
 #: account/socialgraphmodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "뮤트한 계정 없음"
+msgstr "뮤트한 사용자 없음"
 
 #: account/socialgraphmodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "차단한 계정 없음"
+msgstr "차단한 사용자 없음"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "추천하는 계정 없음"
+msgstr "추천하는 사용자 없음"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
@@ -278,14 +269,10 @@ msgid "Suspended"
 msgstr "정지됨"
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "제한"
+msgstr "제한됨"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -323,28 +310,24 @@ msgid "Error occured when making a PUT request to update the domain block."
 msgstr "도메인 차단을 업데이트하기 위해서 PUT 요청을 하는 중 오류 발생"
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "계정을 거절할 수 없음"
+msgstr "신고를 해결할 수 없음"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "계정 제한을 해제할 수 없음"
+msgstr "신고를 해결 해제할 수 없음"
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "계정을 수락할 수 없음"
+msgstr "신고를 배당할 수 없음"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "계정 제한을 해제할 수 없음"
+msgstr "신고를 배당 해제할 수 없음"
 
 #: content/ui/AccountInfo.qml:118
 #, kde-format
@@ -352,16 +335,14 @@ msgid "Follows you"
 msgstr "나를 팔로우함"
 
 #: content/ui/AccountInfo.qml:210
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Requested"
-msgstr "팔로우 요청"
+msgstr "팔로우 요청됨"
 
 #: content/ui/AccountInfo.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "팔로우"
+msgstr "팔로우 해제"
 
 #: content/ui/AccountInfo.qml:215
 #, kde-format
@@ -369,16 +350,14 @@ msgid "Follow"
 msgstr "팔로우"
 
 #: content/ui/AccountInfo.qml:240
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "%1 님이 올린 게시물 알림 받지 않기"
+msgstr "%1 님이 올린 게시물 알림을 더 이상 받지 않습니다."
 
 #: content/ui/AccountInfo.qml:242
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "%1 님이 올린 게시물 알림 받기"
+msgstr "%1 님이 올린 게시물 알림을 받습니다."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -386,10 +365,9 @@ msgid "Hide Boosts from %1"
 msgstr "%1 님의 부스트 숨기기"
 
 #: content/ui/AccountInfo.qml:261
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "%1 님의 부스트 숨기지 않기"
+msgstr "%1 님의 부스트 표시"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -404,7 +382,7 @@ msgstr "프로필에 추천하기"
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "음소거 해제"
 
 #: content/ui/AccountInfo.qml:297
 #, kde-format
@@ -412,10 +390,9 @@ msgid "Mute"
 msgstr "뮤트"
 
 #: content/ui/AccountInfo.qml:313
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "차단"
+msgstr "차단 해제"
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
@@ -424,12 +401,10 @@ msgstr "차단"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:160
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "재게시"
+msgstr "신고…"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -460,19 +435,17 @@ msgstr "팔로우 요청"
 #: content/ui/AccountInfo.qml:357
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "뮤트된 사용자"
 
 #: content/ui/AccountInfo.qml:363
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "차단 시기"
+msgstr "차단된 사용자"
 
 #: content/ui/AccountInfo.qml:369
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "추천 계정"
+msgstr "추천 사용자"
 
 #: content/ui/AccountInfo.qml:374
 #, kde-format
@@ -485,10 +458,9 @@ msgid "Post link copied."
 msgstr "게시물 링크를 복사했습니다."
 
 #: content/ui/AccountInfo.qml:467
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "메모"
+msgstr "메모:"
 
 #: content/ui/AccountInfo.qml:475
 #, kde-format
@@ -546,9 +518,7 @@ msgid "Hide boosts"
 msgstr "부스트 숨기기"
 
 #: content/ui/AccountInfo.qml:706
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "모두"
@@ -598,79 +568,69 @@ msgid "No Conversations"
 msgstr "대화 없음"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "생성 시간"
+msgstr "리스트 만들기"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "편집"
+msgstr "리스트 편집"
 
 #: content/ui/EditListPage.qml:60
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr ""
+msgstr "제목"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "덜 보기"
+msgstr "다음의 답장 표시"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "제외 리스트"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr ""
+msgstr "제외 목록에 포함된 게시물은 홈 타임라인에서 제외됩니다."
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "생성 시간"
+msgstr "만들기"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "편집"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "삭제"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "단어 삭제"
+msgstr "리스트 삭제"
 
 #: content/ui/EditListPage.qml:125
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr ""
+msgstr "이 리스트를 삭제하시겠습니까?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:514
 #, kde-format
@@ -678,23 +638,20 @@ msgid "Explore"
 msgstr "탐색"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
 msgstr "게시물"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "게시물"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "태그"
 
 #: content/ui/ExplorePage.qml:159
 #, kde-format
@@ -715,8 +672,7 @@ msgid "No Trending Tags"
 msgstr "트렌드 태그가 없음"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "알림"
@@ -725,7 +681,7 @@ msgstr "알림"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "설정 필요함"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
@@ -735,12 +691,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon에서는 내 게시물을 부스트하거나 답장을 받는 등의 활동 알림을 표시할 "
+"수 있습니다.\n"
+"\n"
+"로그인했을 때 알림을 미세 조정할 수 있습니다."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "알림 없음"
+msgstr "알림 허용"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -751,11 +710,10 @@ msgid "Continue"
 msgstr "계속"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "암호"
+msgstr "암호 서비스"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -767,12 +725,18 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon에서 민감한 개인 정보를 저장하려면 암호 서비스가 실행 중이어야 합니"
+"다.\n"
+"\n"
+"Tokodon에서는 KWallet, 그놈 키 모음, 임의의 libsecret 호환 서비스를 지원합니"
+"다.\n"
+"\n"
+"해당 서비스를 설치한 후 실행 중인지 확인한 다음 Tokodon을 다시 시작하십시오."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Tokodon 정보"
+msgstr "Tokodon 끝내기"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
@@ -790,45 +754,40 @@ msgstr "Tokodon에 오신 것을 환영합니다"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Tokodon을 사용하기 전에 몇 가지 초기 설정이 필요합니다."
 
 #: content/ui/LanguageSelector.qml:25
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "기본 언어"
+msgstr "언어 선택"
 
 #: content/ui/LanguageSelector.qml:47
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "닫기"
 
 #: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edits"
+#, kde-format
 msgid "Edit List"
-msgstr "편집"
+msgstr "리스트 편집"
 
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "리스트"
 
 #: content/ui/ListsPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "생성 시간"
+msgstr "리스트 만들기"
 
 #: content/ui/ListsPage.qml:65
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "리스트 없음"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -848,17 +807,15 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "서버에 로그인하는 중 오류 발생:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Resolve this issue by logging into the server's website. Once completed, "
-#| "try logging in again with the button below."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\\n\\nYou can attempt to log in "
 "again with the button below, or restart Tokodon."
 msgstr ""
-"서버의 웹사이트에 로그인하여 이 문제를 해결해 보십시오. 작업이 완료되면 아래"
-"쪽에 있는 단추를 사용하여 로그인을 다시 시도하십시오."
+"암호 서비스가 실행 중인지 확인하십시오. 다른 로그인 문제의 경우 서버의 웹사이"
+"트에 로그인을 시도해 볼 수 있습니다.\\n\\n아래 단추를 사용해서 로그인을 다시 "
+"시도해 보거나 Tokodon을 다시 시작해 보십시오."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:48
 #, kde-format
@@ -904,8 +861,7 @@ msgstr "로그인"
 
 #: content/ui/LoginFlow/LoginPage.qml:49
 #: content/ui/LoginFlow/ServersPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Server Url:"
+#, kde-format
 msgid "Server URL:"
 msgstr "서버 URL:"
 
@@ -930,10 +886,9 @@ msgstr ""
 "이 설정을 비활성화해 보십시오."
 
 #: content/ui/LoginFlow/LoginPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Server URL must not be empty."
+#, kde-format
 msgid "Server URL must not be empty!"
-msgstr "인스턴스 URL을 입력해야 합니다."
+msgstr "인스턴스 URL을 입력해야 합니다!"
 
 #: content/ui/LoginFlow/LoginPage.qml:90
 #: content/ui/LoginFlow/ServersPage.qml:94
@@ -989,35 +944,28 @@ msgid "Register"
 msgstr "등록"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "IP 규칙"
+msgstr "규칙"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "IP 규칙"
+msgstr "규칙"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Agreement"
+#, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr "조항"
+msgstr "동의함"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "비활성화됨"
+msgstr "동의하지 않음"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
@@ -1055,48 +1003,43 @@ msgstr "로그인"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "다음으로 열기…"
 
 #: content/ui/Main.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "답장"
+msgstr "다음으로 답장…"
 
 #: content/ui/Main.qml:108
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "좋아요"
+msgstr "다음으로 좋아요…"
 
 #: content/ui/Main.qml:110
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "부스트"
+msgstr "다음으로 부스트…"
 
 #: content/ui/Main.qml:112
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "북마크"
+msgstr "다음으로 북마크…"
 
 #: content/ui/Main.qml:114
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "알 수 없는 작업"
 
 #: content/ui/Main.qml:362
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "디버그"
 
 #: content/ui/Main.qml:371
 #, kde-format
@@ -1165,13 +1108,13 @@ msgstr "공지"
 #: content/ui/Main.qml:558
 #, kde-format
 msgid "Lists"
-msgstr ""
+msgstr "목록"
 
 #: content/ui/Main.qml:704
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "정보 포함"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2115,8 +2058,7 @@ msgid "Reject media"
 msgstr "미디어 거부"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "신고 거절"
@@ -2246,218 +2188,198 @@ msgid "Update IP Rule"
 msgstr "IP 규칙 업데이트"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "재게시"
+msgstr "신고 #%1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "해결되지 않음으로 표시"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:51
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "해결됨으로 표시"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:55
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "신고 해결되지 않음"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:58
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "신고 해결됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "게시물"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:208
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "팔로워"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "팔로잉"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:216
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "가입 시간"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:220
-#, fuzzy, kde-format
-#| msgctxt "@info The last time the account was active."
-#| msgid "Last Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "마지막 활성"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "재게시"
+msgstr "신고됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "재게시"
+msgstr "신고 시간"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "신고자"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgid "Report Status"
-msgstr "스포일러 글"
+msgstr "신고 상태"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgid "Resolved"
-msgstr "도메인 해결"
+msgstr "해결됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:260
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "해결되지 않음"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:267
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "작업이 성공했습니다"
+msgstr "작업 수행자"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:280
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "배당된 중재자"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:281
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "없음"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "배당 해제"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "나에게 배당"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:299
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "전달됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "예"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "없음"
+msgstr "아니요"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:309
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "분류"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:313
 #, kde-format
 msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
-msgstr ""
+msgstr "신고된 계정과 연락할 때 이 계정이나 내용이 보고된 이유가 포함됩니다"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:325
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "기타"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:330
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "분류가 기타로 변경됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:341
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "스팸"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:345
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "분류가 스팸으로 변경됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "내용이 서버 규칙을 위반함"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:360
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "분류가 규칙 위반으로 변경됨"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:403
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "%1 님의 추가 정보:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:412
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "없음"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:428
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "신고된 내용"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:432
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "신고된 계정과 연락할 때 신고된 내용이 포함됩니다"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
 #: content/ui/StatusDelegate/StatusDelegate.qml:292
@@ -2484,11 +2406,9 @@ msgid "Accounts"
 msgstr "계정"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Reports"
-msgstr "재게시"
+msgstr "보고서"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2514,51 +2434,43 @@ msgid "Accounts Tool Page"
 msgstr "계정 도구 페이지"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgid "Spoiler Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "스포일러 글"
+msgstr "신고 상태"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "해결되지 않음"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "도메인 해결"
+msgstr "해결됨"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "신고 접수처"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "모두"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "로컬"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "원격"
@@ -2566,25 +2478,23 @@ msgstr "원격"
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "신고자:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "계정 추가"
+msgstr "배당된 계정:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "없음"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "계정을 찾을 수 없음"
+msgstr "신고를 찾을 수 없음"
 
 #: content/ui/NotificationPage.qml:36
 #, kde-format
@@ -2669,45 +2579,37 @@ msgid "%1 updated their post"
 msgstr "%1 님이 게시물을 업데이트함"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "재게시"
+msgstr "게시물 신고"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "사용자 신고"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "가입하는 이유"
+msgstr "이 게시물을 신고하는 이유"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "가입하는 이유"
+msgstr "이 사용자를 신고하는 이유"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "재게시"
+msgstr "신고"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "취소"
@@ -2729,10 +2631,9 @@ msgid "No search results"
 msgstr "검색 결과 없음"
 
 #: content/ui/SearchView.qml:54
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "사람, 태그, 게시물 검색"
+msgstr "사용자, 태그, 게시물 검색"
 
 #: content/ui/SearchView.qml:147
 #, kde-format
@@ -2745,8 +2646,7 @@ msgid "Logout"
 msgstr "로그아웃"
 
 #: content/ui/Settings/AccountsPage.qml:78
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "로그아웃"
@@ -2755,7 +2655,7 @@ msgstr "로그아웃"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "%1에서 로그아웃하시겠습니까?"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:121
 #, kde-format
@@ -2865,7 +2765,7 @@ msgstr "이 계정의 알림 활성화"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Push notifications are enabled."
-msgstr ""
+msgstr "푸시 알림이 활성화되었습니다."
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
@@ -2873,6 +2773,8 @@ msgid ""
 "Push notifications are not available for this account. Please log out and "
 "log back in."
 msgstr ""
+"이 계정에서 푸시 알림을 사용할 수 없습니다. 로그아웃한 후 다시 로그인하십시"
+"오."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -2973,10 +2875,9 @@ msgstr ""
 "됩니다"
 
 #: content/ui/Settings/ProfileEditor.qml:281
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "팔로우 요청 필요함"
+msgstr "팔로우 요청에 승인이 필요함"
 
 #: content/ui/Settings/ProfileEditor.qml:289
 #, kde-format
@@ -3007,25 +2908,22 @@ msgid "Default post visibility"
 msgstr "기본 게시물 공개 설정"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "공개"
 
 #: content/ui/Settings/ProfileEditor.qml:337
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
-msgstr "제한 공개"
+msgstr "미등재"
 
 #: content/ui/Settings/ProfileEditor.qml:338
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
-msgstr "개인"
+msgstr "비공개"
 
 #: content/ui/Settings/ProfileEditor.qml:353
 #, kde-format
@@ -3167,16 +3065,13 @@ msgid "No accounts available"
 msgstr "사용할 수 있는 계정 없음"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@info:label Alternate text or description of the imaage"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "설명"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:114
-#, fuzzy, kde-format
-#| msgid "Focal point"
+#, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "내용 중심점"
@@ -3264,13 +3159,13 @@ msgstr "새 게시물 쓰기"
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "임시 저장 삭제"
 
 #: content/ui/StatusComposer/StatusComposer.qml:96
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:145
 #: content/ui/StatusComposer/StatusComposer.qml:368
@@ -3376,14 +3271,14 @@ msgstr "공개"
 #: content/ui/StatusDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
-msgstr "제한 공개"
+msgstr "미등재"
 
 #: content/ui/StatusComposer/StatusComposer.qml:350
 #: content/ui/StatusDelegate/InformationBar.qml:84
 #: content/ui/StatusDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
-msgstr "개인"
+msgstr "비공개"
 
 #: content/ui/StatusComposer/StatusComposer.qml:355
 #: content/ui/StatusDelegate/InformationBar.qml:86
@@ -3482,12 +3377,10 @@ msgid "Video"
 msgstr "동영상"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:362
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "미디어"
+msgstr "미디어 숨기기"
 
 #: content/ui/StatusDelegate/AttachmentGrid.qml:389
 #, kde-format
@@ -3497,12 +3390,12 @@ msgstr "미디어 숨겨짐"
 #: content/ui/StatusDelegate/ImageMenu.qml:38
 #, kde-format
 msgid "Save Image As…"
-msgstr ""
+msgstr "다른 이름으로 그림 저장..."
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "그림 복사"
 
 #: content/ui/StatusDelegate/InformationBar.qml:34
 #, kde-format
@@ -3527,11 +3420,10 @@ msgid "Link preview: %1"
 msgstr "링크 미리 보기: %1"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:32
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "이 게시물 확장"
+msgstr "게시물 확장"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:39
 #, kde-format
@@ -3539,8 +3431,7 @@ msgid "Open Original Page"
 msgstr "원본 페이지 열기"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:47
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "링크 복사"
@@ -3549,67 +3440,58 @@ msgstr "링크 복사"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "임베드"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:68
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "다음으로 열기…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:75
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "답장"
+msgstr "다음으로 답장…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:82
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "좋아요"
+msgstr "다음으로 좋아요…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:89
-#, fuzzy, kde-format
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "부스트"
+msgstr "다음으로 부스트…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:96
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "북마크"
+msgstr "다음으로 북마크…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:104
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "북마크 삭제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:104
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "북마크"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "프로필에서 고정 해제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "프로필에 고정"
@@ -3618,28 +3500,25 @@ msgstr "프로필에 고정"
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "@%1 님 뮤트 해제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:126
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "뮤트"
+msgstr "@%1 님 뮤트"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:143
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "차단"
+msgstr "@%1 님 차단 해제"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:145
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "차단"
+msgstr "@%1 님 차단"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:183
 #, kde-format
@@ -3673,29 +3552,25 @@ msgid "Show anyway"
 msgstr "그래도 표시"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:157
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "프로필 보기"
+msgstr "고정된 게시물"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:214
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "단어 삭제"
+msgstr "게시물 삭제"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:215
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "이 게시물을 삭제하시겠습니까?"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:229
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "삭제하고 다시 쓰기"
@@ -3706,7 +3581,7 @@ msgctxt "@label"
 msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
-msgstr ""
+msgstr "이 게시물을 삭제하고 다시 쓰시겠습니까? 원래 게시물이 삭제됩니다."
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:389
 #, kde-format
@@ -3773,6 +3648,8 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
+"이 게시물이 비공개로 표시되었습니다. 이 게시물의 답장은 기본적으로 비공개되"
+"어 있으므로 일부 게시물이 표시되지 않을 수도 있습니다."
 
 #: content/ui/StatusDelegate/StatusPoll.qml:39
 #, kde-format
@@ -3812,30 +3689,25 @@ msgid "Loading"
 msgstr "불러오는 중"
 
 #: content/ui/TimelinePage.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Home (%1)"
+#, kde-format
 msgid "Home (%1)"
 msgstr "홈(%1)"
 
 #: content/ui/TimelinePage.qml:86
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "필터됨: %1"
+msgstr "필터"
 
 #: content/ui/TimelinePage.qml:91
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "%1 님의 부스트 숨기지 않기"
+msgstr "부스트 표시"
 
 #: content/ui/TimelinePage.qml:98
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgid "Show Replies"
-msgstr "덜 보기"
+msgstr "답장 표시"
 
 #: content/ui/TimelinePage.qml:123
 #, kde-format
@@ -3844,11 +3716,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "서버와 통신할 수 없음: %1. 설정을 확인하십시오."
 
 #: content/ui/TimelinePage.qml:225
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "로컬 타임라인"
+msgstr "타임라인의 끝"
 
 #: content/ui/TimelinePage.qml:261
 #, kde-format
@@ -3859,13 +3730,12 @@ msgstr "게시물 없음"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "맨 위로 돌아가기"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "계정 편집"
+msgstr "계정 전환"
 
 #: content/ui/UserInfo.qml:126
 #, kde-format
@@ -3891,13 +3761,12 @@ msgstr[0] "%2 외 %1명 더"
 #: editor/listeditorbackend.cpp:108
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "리스트의 구성원"
 
 #: editor/listeditorbackend.cpp:108
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "Any followed users"
-msgstr "팔로워 없음"
+msgstr "임의의 팔로우한 사용자"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -3955,7 +3824,7 @@ msgstr "알 수 없는 오류가 발생했습니다."
 #: main.cpp:60
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "푸시 알림 수신 중"
 
 #: main.cpp:104
 #, kde-format
@@ -4000,16 +3869,14 @@ msgid "Your emails"
 msgstr "kde@peremen.name"
 
 #: main.cpp:127
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "마스토돈 분산 소셜 네트워크 클라이언트"
+msgstr "마스토돈 등의 분산 소셜 네트워크 클라이언트"
 
 #: main.cpp:128
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "web+ap: URL 형식 지원"
+msgstr "https와 web+ap: URL 형식 지원"
 
 #: main.cpp:130
 #, kde-format
@@ -4024,7 +3891,7 @@ msgstr "공유할 텍스트입니다."
 #: main.cpp:134
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "내부 용도입니다."
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
@@ -4032,8 +3899,7 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "마지막 알림을 가져오는 중 오류가 발생했습니다."
 
 #: search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
 msgstr "사용자"
 
