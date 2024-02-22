@@ -21,6 +21,7 @@ QQC2.Menu {
     required property bool expandedPost
     required property bool pinned
     required property var authorIdentity
+    required property bool isPrivate
 
     readonly property bool hasMultipleAccounts: AccountManager.rowCount() > 1
 
@@ -54,6 +55,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "view-web-browser-dom-tree"
         text: i18nc("@action Open embed into website dialog", "Embed")
+        visible: !root.isPrivate
 
         onTriggered: AccountManager.selectedAccount.fetchOEmbed(root.postId, root.authorIdentity)
     }
