@@ -16,8 +16,20 @@ ThreadModel::ThreadModel(QObject *parent)
 
 QVariant ThreadModel::data(const QModelIndex &index, int role) const
 {
+    if (!index.isValid()) {
+        return {};
+    }
+
     if (role == SelectedRole) {
         return m_postId == TimelineModel::data(index, IdRole).toString();
+    } else if (role == IsThreadReplyRole) {
+        // This prevents ancestors from being accidentally considered
+        const bool isReplyAfterRootPost = index.row() > m_rootPostIndex;
+        const bool isReplyToRootPost = m_postId != m_timeline[index.row()]->inReplyTo();
+
+        return isReplyAfterRootPost && isReplyToRootPost;
+    } else if (role == IsLastThreadReplyRole) {
+        return !data(ThreadModel::index(index.row() + 1, index.column()), IsThreadReplyRole).toBool();
     }
 
     return TimelineModel::data(index, role);
@@ -91,6 +103,8 @@ void ThreadModel::fillTimeline(const QString &fromId)
             m_hasHiddenReplies = true;
             Q_EMIT hasHiddenRepliesChanged();
         }
+
+        m_rootPostIndex = ancestors.size();
 
         for (const auto &ancestor : ancestors) {
             if (ancestor.canConvert<QJsonObject>() || ancestor.canConvert<QVariantMap>()) {

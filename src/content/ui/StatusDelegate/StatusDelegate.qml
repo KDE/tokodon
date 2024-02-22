@@ -59,6 +59,8 @@ QQC2.ItemDelegate {
     required property int visibility
     required property bool wasEdited
     required property string editedAt
+    required property bool isThreadReply
+    required property bool isLastThreadReply
 
     required property var post
 
@@ -77,6 +79,7 @@ QQC2.ItemDelegate {
     property bool hasWebsite: root.application && root.application.website !== undefined && root.application.website.toString().trim().length > 0
 
     readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
+    readonly property real threadMargin: Kirigami.Units.largeSpacing * 4
 
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
@@ -108,10 +111,13 @@ QQC2.ItemDelegate {
         color: root.selected ? Kirigami.Theme.alternateBackgroundColor : Kirigami.Theme.backgroundColor
 
         Kirigami.Separator {
-            width: flexColumn.innerWidth
+            readonly property bool isReply: root.expandedPost && (root.isThreadReply && !root.isLastThreadReply)
+
+            width: isReply ? flexColumn.innerWidth - root.threadMargin : flexColumn.innerWidth
             visible: root.showSeparator && !root.selected
             anchors {
                 horizontalCenter: parent.horizontalCenter
+                horizontalCenterOffset: isReply ? (root.threadMargin / 2) : 0
                 bottom: parent.bottom
             }
         }
@@ -126,358 +132,421 @@ QQC2.ItemDelegate {
         maximumWidth: Kirigami.Units.gridUnit * 40
 
         RowLayout {
-            spacing: Kirigami.Units.largeSpacing
-            visible: filtered
-            Layout.fillWidth: true
-            QQC2.Label {
-                font: Config.defaultFont
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Filtered: %1", root.filters.join(', '))
-            }
-            Kirigami.LinkButton {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Show anyway")
-                onClicked: filtered = false
-            }
-        }
+            spacing: 0
 
-        RowLayout {
-            spacing: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
-            visible: root.pinned && !root.filtered
-            Kirigami.Icon {
-                source: "pin"
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
-                Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
-            }
-            QQC2.Label {
-                font: Config.defaultFont
-                text: i18nc("@label", "Pinned Post")
-                color: Kirigami.Theme.disabledTextColor
-                Layout.alignment: Qt.AlignVCenter
-                Layout.fillWidth: true
-            }
-        }
+            Item {
+                id: threadSpace
 
-        // Normal interaction labels on the timeline
-        Loader {
-            sourceComponent: UserInteractionLabel {
-                isBoosted: root.isBoosted
-                isReply: root.isReply
-                type: root.type
-                boostAuthorIdentity: root.boostAuthorIdentity
-                replyAuthorIdentity: root.replyAuthorIdentity
-            }
-            active: !root.notificationActorIdentity && (root.isBoosted || root.isReply)
-            visible: active
-        }
+                visible: isThreadReply && isReply
 
-        // Interaction labels for notifications
-        Loader {
-            sourceComponent: Notifications.UserInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
-            }
-            active: root.notificationActorIdentity !== undefined && !root.isGroup
-            visible: active
-        }
+                Layout.preferredWidth: visible ? root.threadMargin : 0
+                Layout.fillHeight: true
 
-        // Interaction labels for grouped notifications
-        Loader {
-            sourceComponent: Notifications.GroupInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
-                numInGroup: root.numInGroup
-            }
-            active: root.notificationActorIdentity !== undefined && root.isGroup
-            visible: active
-        }
+                Kirigami.Separator {
+                    id: threadSeparator
 
-        PostInfoBar {
-            id: infoBar
+                    readonly property bool shouldDrawFullLine: !root.isLastThreadReply
+                    readonly property real avatarOffset: 30
 
-            Layout.fillWidth: true
+                    anchors {
+                        top: parent.top
+                        topMargin: -root.topPadding
+                        bottom: shouldDrawFullLine ? parent.bottom : undefined
+                        bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
+                        horizontalCenter: threadSpace.horizontalCenter
+                    }
 
-            onMoreOpened: {
-                postMenu.active = true;
-                postMenu.item.popup(infoBar)
-            }
+                    height: shouldDrawFullLine ? threadSpace.height : threadSeparator.avatarOffset
 
-            Loader {
-                id: deleteDialog
+                    Kirigami.Separator {
+                        anchors {
+                            top: parent.top
+                            topMargin: threadSeparator.avatarOffset
+                            left: parent.left
+                        }
 
-                active: false
-                visible: false // to prevent the menu from taking space in the layout
-                sourceComponent: Kirigami.PromptDialog {
-                    title: i18nc("@title", "Delete Post")
-                    subtitle: i18nc("@label", "Are you sure you want to delete this post?")
-                    standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-                    showCloseButton: false
-
-                    onAccepted: timelineModel.actionDelete(timelineModel.index(root.index, 0))
-                }
-            }
-
-            Loader {
-                id: redraftDialog
-
-                active: false
-                visible: false
-                sourceComponent: Kirigami.PromptDialog {
-                    title: i18nc("@title", "Delete & Re-draft Post")
-                    subtitle: i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
-                    standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-                    showCloseButton: false
-
-                    onAccepted: {
-                        timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
-                        timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                        width: threadSeparator.avatarOffset
                     }
                 }
             }
-        }
 
-        Loader {
-            id: postMenu
+            ColumnLayout {
+                spacing: Kirigami.Units.largeSpacing
 
-            active: false
-            visible: false
-            sourceComponent: OverflowMenu {
-                index: root.index
-                postId: root.id
-                url: root.url
-                bookmarked: root.bookmarked
-                isSelf: root.isSelf
-                expandedPost: root.expandedPost
-                pinned: root.pinned
-                authorIdentity: root.authorIdentity
-                modal: true
-                isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
-
-                onDeletePost: {
-                    deleteDialog.active = true;
-                    deleteDialog.item.open()
-                }
-                onRedraftPost: {
-                    redraftDialog.active = true;
-                    redraftDialog.item.open()
-                }
-                onClosed: postMenu.active = false
-            }
-        }
-
-        ColumnLayout {
-            visible: !filtered && root.content.length !== 0
-            spacing: Kirigami.Units.largeSpacing
-
-            Layout.fillWidth: true
-
-            QQC2.Control {
-                Layout.fillWidth: true
-                visible: root.spoilerText.length !== 0
-                Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
-                contentItem: RowLayout {
-                    id: warningLayout
+                RowLayout {
                     spacing: Kirigami.Units.largeSpacing
+                    visible: filtered
+
+                    Layout.fillWidth: true
+
+                    QQC2.Label {
+                        font: Config.defaultFont
+                        Layout.alignment: Qt.AlignHCenter
+                        text: i18n("Filtered: %1", root.filters.join(', '))
+                    }
+                    Kirigami.LinkButton {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: i18n("Show anyway")
+                        onClicked: filtered = false
+                    }
+                }
+
+                RowLayout {
+                    spacing: Kirigami.Units.largeSpacing
+                    visible: root.pinned && !root.filtered
+
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
 
                     Kirigami.Icon {
-                        Layout.alignment: Qt.AlignVCenter
-                        source: "data-warning"
+                        source: "pin"
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
+                        Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
                     }
 
                     QQC2.Label {
-                        id: spoilerTextLabel
-                        Layout.fillWidth: true
-                        text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
-                        wrapMode: Text.Wrap
                         font: Config.defaultFont
-
-                    }
-
-                    QQC2.Button {
-                        text: postContent.visible ? i18n("Show Less") : i18n("Show More")
-                        onClicked: postContent.visible = !postContent.visible
+                        text: i18nc("@label", "Pinned Post")
+                        color: Kirigami.Theme.disabledTextColor
+                        Layout.alignment: Qt.AlignVCenter
+                        Layout.fillWidth: true
                     }
                 }
 
-                background: Rectangle {
-                    radius: Kirigami.Units.largeSpacing
-                    color: Kirigami.Theme.neutralBackgroundColor
+                // Normal interaction labels on the timeline
+                Loader {
+                    sourceComponent: UserInteractionLabel {
+                        isBoosted: root.isBoosted
+                        isReply: root.isReply
+                        type: root.type
+                        boostAuthorIdentity: root.boostAuthorIdentity
+                        replyAuthorIdentity: root.replyAuthorIdentity
+                    }
+                    active: !root.expandedPost && !root.notificationActorIdentity && (root.isBoosted || root.isReply)
+                    visible: active
                 }
-            }
 
-            PostContent {
-                id: postContent
+                // Interaction labels for notifications
+                Loader {
+                    active: root.notificationActorIdentity !== undefined && !root.isGroup
+                    visible: active
 
-                content: root.content
-                expandedPost: root.expandedPost
-                secondary: root.secondary
-                visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
-                shouldOpenInternalLinks: true
+                    sourceComponent: Notifications.UserInteractionLabel {
+                        type: root.type
+                        notificationActorIdentity: root.notificationActorIdentity
+                    }
+                }
 
-                onClicked: root.clicked()
-            }
-        }
+                // Interaction labels for grouped notifications
+                Loader {
+                    active: root.notificationActorIdentity !== undefined && root.isGroup
+                    visible: active
 
-        Loader {
-            sourceComponent: StatusPoll {
-                index: root.index
-                poll: root.poll
-            }
+                    sourceComponent: Notifications.GroupInteractionLabel {
+                        type: root.type
+                        notificationActorIdentity: root.notificationActorIdentity
+                        numInGroup: root.numInGroup
+                    }
+                }
 
-            active: root.poll !== null && root.poll !== undefined
-            visible: active
+                PostInfoBar {
+                    id: infoBar
 
-            Layout.fillWidth: true
-        }
+                    Layout.fillWidth: true
 
-        Loader {
-            sourceComponent: AttachmentGrid {
-                expandedPost: root.expandedPost
-                attachments: root.post.attachments
-                identity: root.authorIdentity
-                sensitive: root.sensitive
-                secondary: root.secondary
-                inViewPort: root.inViewPort
-                viewportWidth: flexColumn.innerWidth
-            }
-            active: !root.secondary && root.attachments.length > 0 && !filtered
-            visible: active
+                    onMoreOpened: {
+                        postMenu.active = true;
+                        postMenu.item.popup(infoBar)
+                    }
 
-            Layout.fillWidth: true
-        }
+                    Loader {
+                        id: deleteDialog
 
-        Loader {
-            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
-            visible: active && postContent.visible
+                        active: false
+                        visible: false // to prevent the menu from taking space in the layout
 
-            Layout.fillWidth: true
+                        sourceComponent: Kirigami.PromptDialog {
+                            title: i18nc("@title", "Delete Post")
+                            subtitle: i18nc("@label", "Are you sure you want to delete this post?")
+                            standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                            showCloseButton: false
 
-            sourceComponent: LinkPreview {
-                card: root.card
-                selected: root.selected
-            }
-        }
+                            onAccepted: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                        }
+                    }
 
-        StandaloneTags {
-            standaloneTags: root.post.standaloneTags
+                    Loader {
+                        id: redraftDialog
 
-            Layout.fillWidth: true
-        }
+                        active: false
+                        visible: false
 
-        RowLayout {
-            id: buttonLayout
+                        sourceComponent: Kirigami.PromptDialog {
+                            title: i18nc("@title", "Delete & Re-draft Post")
+                            subtitle: i18nc("@label", "Are you sure you want to redraft this post? This will delete the original post.")
+                            standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                            showCloseButton: false
 
-            readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
-            readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+                            onAccepted: {
+                                timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
+                                timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                            }
+                        }
+                    }
+                }
 
-            visible: showInteractionButton && !filtered
-            Layout.fillWidth: true
-            spacing: shouldExpand ? 0 : Kirigami.Units.gridUnit * 2
+                Loader {
+                    id: postMenu
 
-            InteractionButton {
-                topPadding: buttonLayout.buttonPadding
-                bottomPadding: buttonLayout.buttonPadding
-                rightPadding: buttonLayout.buttonPadding
-                leftPadding: buttonLayout.buttonPadding
+                    active: false
+                    visible: false
 
-                interacted: root.repliesCount > 0
-                iconName: "tokodon-post-reply"
-                interactedIconName: "tokodon-post-reply-filled"
+                    sourceComponent: OverflowMenu {
+                        index: root.index
+                        postId: root.id
+                        url: root.url
+                        bookmarked: root.bookmarked
+                        isSelf: root.isSelf
+                        expandedPost: root.expandedPost
+                        pinned: root.pinned
+                        authorIdentity: root.authorIdentity
+                        modal: true
+                        isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
 
-                tooltip: i18nc("Reply to a post", "Reply")
-                text: Config.showPostStats && !root.selected ? root.repliesCount : ''
+                        onDeletePost: {
+                            deleteDialog.active = true;
+                            deleteDialog.item.open()
+                        }
+                        onRedraftPost: {
+                            redraftDialog.active = true;
+                            redraftDialog.item.open()
+                        }
+                        onClosed: postMenu.active = false
+                    }
+                }
 
-                onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
-            }
-            Item {
-                Layout.fillWidth: buttonLayout.shouldExpand
-            }
-            InteractionButton {
-                topPadding: buttonLayout.buttonPadding
-                bottomPadding: buttonLayout.buttonPadding
-                leftPadding: buttonLayout.buttonPadding
-                rightPadding: buttonLayout.buttonPadding
+                ColumnLayout {
+                    visible: !filtered && root.content.length !== 0
+                    spacing: Kirigami.Units.largeSpacing
 
-                interacted: root.reblogged
-                interactionColor: "#63c605"
+                    Layout.fillWidth: true
 
-                enabled: root.visibility !== Post.Direct && root.visibility !== Post.Private
+                    QQC2.Control {
+                        visible: root.spoilerText.length !== 0
 
-                iconName: 'tokodon-post-boost'
-                interactedIconName: 'tokodon-post-boosted'
+                        Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
+                        Layout.fillWidth: true
 
-                text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
-                tooltip: i18nc("Share a post", "Boost")
+                        contentItem: RowLayout {
+                            id: warningLayout
+                            spacing: Kirigami.Units.largeSpacing
 
-                onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
-                Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
-            }
-            Item {
-                Layout.fillWidth: buttonLayout.shouldExpand
-            }
-            InteractionButton {
-                topPadding: buttonLayout.buttonPadding
-                bottomPadding: buttonLayout.buttonPadding
-                leftPadding: buttonLayout.buttonPadding
-                rightPadding: buttonLayout.buttonPadding
+                            Kirigami.Icon {
+                                Layout.alignment: Qt.AlignVCenter
+                                source: "data-warning"
+                            }
 
-                interacted: root.favourited
-                interactionColor: "#fa8865"
+                            QQC2.Label {
+                                id: spoilerTextLabel
+                                Layout.fillWidth: true
+                                text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
+                                wrapMode: Text.Wrap
+                                font: Config.defaultFont
 
-                iconName: 'tokodon-post-favorite'
-                interactedIconName: 'tokodon-post-favorited'
+                            }
 
-                text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
-                tooltip: i18nc("Favorite a post", "Favorite")
+                            QQC2.Button {
+                                text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                                onClicked: postContent.visible = !postContent.visible
+                            }
+                        }
 
-                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
-                Accessible.description: root.favourited ? i18n("Favourited") : i18n("Favourite")
-            }
-            Item {
-                Layout.fillWidth: buttonLayout.shouldExpand
-            }
-            InteractionButton {
-                topPadding: buttonLayout.buttonPadding
-                bottomPadding: buttonLayout.buttonPadding
-                leftPadding: buttonLayout.buttonPadding
-                rightPadding: buttonLayout.buttonPadding
+                        background: Rectangle {
+                            radius: Kirigami.Units.largeSpacing
+                            color: Kirigami.Theme.neutralBackgroundColor
+                        }
+                    }
 
-                interacted: root.bookmarked
-                interactionColor: "#1b89f3"
+                    PostContent {
+                        id: postContent
 
-                iconName: 'bookmarks'
-                interactedIconName: 'tokodon-post-bookmarked'
+                        content: root.content
+                        expandedPost: root.expandedPost
+                        secondary: root.secondary
+                        visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
+                        shouldOpenInternalLinks: true
 
-                tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
+                        onClicked: root.clicked()
+                    }
+                }
 
-                onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
-                Accessible.description: root.bookmarked ? i18n("Bookmarked") : i18n("Bookmark")
-            }
-        }
+                Loader {
+                    sourceComponent: StatusPoll {
+                        index: root.index
+                        poll: root.poll
+                    }
 
-        Loader {
-            active: root.selected
-            visible: root.selected
+                    active: root.poll !== null && root.poll !== undefined
+                    visible: active
 
-            Layout.fillWidth: true
+                    Layout.fillWidth: true
+                }
 
-            sourceComponent: InformationBar {}
-        }
+                Loader {
+                    sourceComponent: AttachmentGrid {
+                        expandedPost: root.expandedPost
+                        attachments: root.post.attachments
+                        identity: root.authorIdentity
+                        sensitive: root.sensitive
+                        secondary: root.secondary
+                        inViewPort: root.inViewPort
+                        viewportWidth: flexColumn.innerWidth
+                    }
 
-        Loader {
-            active: root.selected && root.visibility === Post.Private
-            visible: active
+                    active: !root.secondary && root.attachments.length > 0 && !filtered
+                    visible: active
 
-            Layout.fillWidth: true
+                    Layout.fillWidth: true
+                }
 
-            sourceComponent: Kirigami.InlineMessage {
-                id: privacyWarning
+                Loader {
+                    active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+                    visible: active && postContent.visible
 
-                text: i18n("This post has been marked private. Some posts may be missing because it's replies are marked as private by default.")
-                visible: true
+                    Layout.fillWidth: true
+
+                    sourceComponent: LinkPreview {
+                        card: root.card
+                        selected: root.selected
+                    }
+                }
+
+                StandaloneTags {
+                    standaloneTags: root.post.standaloneTags
+
+                    Layout.fillWidth: true
+                }
+
+                RowLayout {
+                    id: buttonLayout
+
+                    readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
+                    readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
+
+                    visible: showInteractionButton && !filtered
+                    Layout.fillWidth: true
+                    spacing: shouldExpand ? 0 : Kirigami.Units.gridUnit * 2
+
+                    InteractionButton {
+                        topPadding: buttonLayout.buttonPadding
+                        bottomPadding: buttonLayout.buttonPadding
+                        rightPadding: buttonLayout.buttonPadding
+                        leftPadding: buttonLayout.buttonPadding
+
+                        interacted: root.repliesCount > 0
+                        iconName: "tokodon-post-reply"
+                        interactedIconName: "tokodon-post-reply-filled"
+
+                        tooltip: i18nc("Reply to a post", "Reply")
+                        text: Config.showPostStats && !root.selected ? root.repliesCount : ''
+
+                        onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
+                    }
+
+                    Item {
+                        Layout.fillWidth: buttonLayout.shouldExpand
+                    }
+
+                    InteractionButton {
+                        topPadding: buttonLayout.buttonPadding
+                        bottomPadding: buttonLayout.buttonPadding
+                        leftPadding: buttonLayout.buttonPadding
+                        rightPadding: buttonLayout.buttonPadding
+
+                        interacted: root.reblogged
+                        interactionColor: "#63c605"
+
+                        enabled: root.visibility !== Post.Direct && root.visibility !== Post.Private
+
+                        iconName: 'tokodon-post-boost'
+                        interactedIconName: 'tokodon-post-boosted'
+
+                        text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
+                        tooltip: i18nc("Share a post", "Boost")
+
+                        onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                        Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
+                    }
+
+                    Item {
+                        Layout.fillWidth: buttonLayout.shouldExpand
+                    }
+
+                    InteractionButton {
+                        topPadding: buttonLayout.buttonPadding
+                        bottomPadding: buttonLayout.buttonPadding
+                        leftPadding: buttonLayout.buttonPadding
+                        rightPadding: buttonLayout.buttonPadding
+
+                        interacted: root.favourited
+                        interactionColor: "#fa8865"
+
+                        iconName: 'tokodon-post-favorite'
+                        interactedIconName: 'tokodon-post-favorited'
+
+                        text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
+                        tooltip: i18nc("Favorite a post", "Favorite")
+
+                        onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+                        Accessible.description: root.favourited ? i18n("Favourited") : i18n("Favourite")
+                    }
+
+                    Item {
+                        Layout.fillWidth: buttonLayout.shouldExpand
+                    }
+
+                    InteractionButton {
+                        topPadding: buttonLayout.buttonPadding
+                        bottomPadding: buttonLayout.buttonPadding
+                        leftPadding: buttonLayout.buttonPadding
+                        rightPadding: buttonLayout.buttonPadding
+
+                        interacted: root.bookmarked
+                        interactionColor: "#1b89f3"
+
+                        iconName: 'bookmarks'
+                        interactedIconName: 'tokodon-post-bookmarked'
+
+                        tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
+
+                        onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+                        Accessible.description: root.bookmarked ? i18n("Bookmarked") : i18n("Bookmark")
+                    }
+                }
+
+                Loader {
+                    active: root.selected
+                    visible: root.selected
+
+                    Layout.fillWidth: true
+
+                    sourceComponent: InformationBar {}
+                }
+
+                Loader {
+                    active: root.selected && root.visibility === Post.Private
+                    visible: active
+
+                    Layout.fillWidth: true
+
+                    sourceComponent: Kirigami.InlineMessage {
+                        id: privacyWarning
+
+                        text: i18n("This post has been marked private. Some posts may be missing because it's replies are marked as private by default.")
+                        visible: true
+                    }
+                }
             }
         }
     }

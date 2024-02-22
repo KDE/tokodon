@@ -32,6 +32,8 @@ public:
         VisibilityRole, ///< The visibility of the post
         WasEditedRole, ///< If the post was edited at all
         EditedAtRole, ///< The datetime of the last edit
+        IsThreadReplyRole, ///< True if this reply in the thread is not for the main thread
+        IsLastThreadReplyRole, ///< True if this reply is the last "thread reply" and should be visually separated
 
         // Additional content
         AttachmentsRole, ///< Media attachments for the post, which can be null

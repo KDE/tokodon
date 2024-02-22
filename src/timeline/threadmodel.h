@@ -57,6 +57,7 @@ Q_SIGNALS:
 private:
     QString m_postId, m_postUrl;
     bool m_hasHiddenReplies = false;
+    qsizetype m_rootPostIndex = 0;
 
     friend class TimelineTest;
 };
