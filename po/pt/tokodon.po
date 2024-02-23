@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-12 00:37+0000\n"
+"POT-Creation-Date: 2024-02-23 00:37+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -444,13 +444,13 @@ msgstr "Editar o Perfil"
 msgid "Account editor"
 msgstr "Editor da conta"
 
-#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:62
+#: content/ui/AccountInfo.qml:345 content/ui/TimelinePage.qml:63
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"
 
 #: content/ui/AccountInfo.qml:346 content/ui/Main.qml:381
-#: content/ui/TimelinePage.qml:64
+#: content/ui/TimelinePage.qml:65
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
@@ -684,7 +684,7 @@ msgstr ""
 msgid "Explore"
 msgstr "Explorar"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:80
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:81
 #, fuzzy, kde-format
 #| msgid "Post"
 msgctxt "@action:button"
@@ -2665,37 +2665,31 @@ msgstr ""
 msgid "No reports found"
 msgstr "Nenhuma conta encontrada"
 
-#: content/ui/NotificationPage.qml:36
-#, fuzzy, kde-format
-#| msgid "No Notifications"
-msgid "Group Notifications"
-msgstr "Sem Notificações"
-
-#: content/ui/NotificationPage.qml:44
+#: content/ui/NotificationPage.qml:32
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "Tudo"
 
-#: content/ui/NotificationPage.qml:55
+#: content/ui/NotificationPage.qml:43
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "Citações"
 
-#: content/ui/NotificationPage.qml:65
+#: content/ui/NotificationPage.qml:53
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Destaques"
 
-#: content/ui/NotificationPage.qml:75
+#: content/ui/NotificationPage.qml:63
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: content/ui/NotificationPage.qml:85
+#: content/ui/NotificationPage.qml:73
 #, fuzzy, kde-format
 #| msgctxt "Show only poll results"
 #| msgid "Poll results"
@@ -2703,7 +2697,7 @@ msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "Resultados de sondagens"
 
-#: content/ui/NotificationPage.qml:95
+#: content/ui/NotificationPage.qml:83
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -2711,13 +2705,13 @@ msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Publicações"
 
-#: content/ui/NotificationPage.qml:105
+#: content/ui/NotificationPage.qml:93
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Seguimentos"
 
-#: content/ui/NotificationPage.qml:236
+#: content/ui/NotificationPage.qml:228
 #, kde-format
 msgid "No Notifications"
 msgstr "Sem Notificações"
@@ -3940,38 +3934,38 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Reproduzir"
 
-#: content/ui/TimelinePage.qml:33 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "A carregar"
 
-#: content/ui/TimelinePage.qml:35
+#: content/ui/TimelinePage.qml:36
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Home (%1)"
 msgid "Home (%1)"
 msgstr "Início (%1)"
 
-#: content/ui/TimelinePage.qml:86
+#: content/ui/TimelinePage.qml:87
 #, fuzzy, kde-format
 #| msgid "Filtered: %1"
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Filtrados: %1"
 
-#: content/ui/TimelinePage.qml:91
+#: content/ui/TimelinePage.qml:92
 #, fuzzy, kde-format
 #| msgid "Stop Hiding Boosts from %1"
 msgid "Show Boosts"
 msgstr "Parar de Esconder os Destaques do %1"
 
-#: content/ui/TimelinePage.qml:98
+#: content/ui/TimelinePage.qml:99
 #, fuzzy, kde-format
 #| msgid "%1 Replies"
 msgid "Show Replies"
 msgstr "%1 Respostas"
 
-#: content/ui/TimelinePage.qml:123
+#: content/ui/TimelinePage.qml:124
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -3979,7 +3973,25 @@ msgstr ""
 "Não foi possível contactar o servidor: %1. Verifique por favor a sua "
 "configuração."
 
-#: content/ui/TimelinePage.qml:225
+#: content/ui/TimelinePage.qml:230
+#, kde-format
+msgctxt "@info:status"
+msgid "Some replies are not available"
+msgstr ""
+
+#: content/ui/TimelinePage.qml:231
+#, kde-format
+msgid "To view all replies, open the post on the original server."
+msgstr ""
+
+#: content/ui/TimelinePage.qml:234
+#, fuzzy, kde-format
+#| msgid "Open Original Page"
+msgctxt "@action:button"
+msgid "Open Original Page"
+msgstr "Abrir a Página Original"
+
+#: content/ui/TimelinePage.qml:241
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Local Timeline"
@@ -3987,12 +3999,12 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Cronologia Local"
 
-#: content/ui/TimelinePage.qml:261
+#: content/ui/TimelinePage.qml:280
 #, kde-format
 msgid "No posts"
 msgstr "Sem publicações"
 
-#: content/ui/TimelinePage.qml:267
+#: content/ui/TimelinePage.qml:286
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -4373,6 +4385,11 @@ msgstr "Origem"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
+
+#, fuzzy
+#~| msgid "No Notifications"
+#~ msgid "Group Notifications"
+#~ msgstr "Sem Notificações"
 
 #, fuzzy
 #~| msgid "Instance Url:"
