@@ -21,7 +21,7 @@ ColumnLayout {
     }
 
     RowLayout {
-        spacing: 0
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: "Posted on " + root.absoluteTime
