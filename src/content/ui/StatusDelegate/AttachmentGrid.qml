@@ -186,9 +186,11 @@ QQC2.Control {
                                 acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus | PointerDevice.TouchPad
                                 exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
                                 onTapped: {
-                                    imageMenu.active = true;
-                                    imageMenu.item.attachment = modelData;
-                                    imageMenu.item.popup();
+                                    if (!root.isSensitive) {
+                                        imageMenu.active = true;
+                                        imageMenu.item.attachment = modelData;
+                                        imageMenu.item.popup();
+                                    }
                                 }
                             }
 
@@ -197,9 +199,11 @@ QQC2.Control {
                                 acceptedDevices: PointerDevice.TouchScreen
                                 exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
                                 onLongPressed: {
-                                    imageMenu.active = true;
-                                    imageMenu.item.attachment = modelData;
-                                    imageMenu.item.popup();
+                                    if (!root.isSensitive) {
+                                        imageMenu.active = true;
+                                        imageMenu.item.attachment = modelData;
+                                        imageMenu.item.popup();
+                                    }
                                 }
                             }
                         }
