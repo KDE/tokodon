@@ -118,6 +118,7 @@ MediaContainer {
             right: parent.right
             bottom: parent.bottom
             left: parent.left
+            margins: Kirigami.Units.largeSpacing
         }
         height: mediaControlsLayout.implicitHeight
 
