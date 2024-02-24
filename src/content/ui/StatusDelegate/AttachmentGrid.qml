@@ -169,6 +169,7 @@ QQC2.Control {
                                     rightMargin: Kirigami.Units.smallSpacing
                                 }
 
+                                enabled: false
                                 checked: false
                                 checkable: false
                                 text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
@@ -270,6 +271,7 @@ QQC2.Control {
                                 checkable: false
                                 text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
                                 closable: false
+                                enabled: false
                                 visible: modelData.caption.length !== 0
                             }
 
@@ -278,6 +280,7 @@ QQC2.Control {
                                 checkable: false
                                 text: i18n("GIF")
                                 closable: false
+                                enabled: false
                             }
                         }
                     }
@@ -341,6 +344,7 @@ QQC2.Control {
                                 checkable: false
                                 text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
                                 closable: false
+                                enabled: false
                                 visible: modelData.caption.length !== 0
                             }
 
@@ -349,6 +353,7 @@ QQC2.Control {
                                 checkable: false
                                 text: i18n("Video")
                                 closable: false
+                                enabled: false
                             }
                         }
                     }
