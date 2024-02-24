@@ -622,12 +622,14 @@ Kirigami.ApplicationWindow {
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
-        parent: overlay.parent
+        parent: overlay
         property alias text: linkText.text
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:") && !text.startsWith("account:")
 
-        z: 999990
+        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.ToolTip
+        z: Kirigami.OverlayZStacking.z
+
         x: 0
         y: parent.height - implicitHeight
         contentItem: QQC2.Label {
