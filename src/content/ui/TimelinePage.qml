@@ -216,12 +216,26 @@ Kirigami.ScrollablePage {
             }
         }
 
-        footer: ColumnLayout {
-            width: parent.width
-            implicitHeight: Kirigami.Units.gridUnit * 4
+        footer: Kirigami.FlexColumn {
+            id: flexColumn
+
             spacing: Kirigami.Units.largeSpacing
 
+            padding: 0
+            maximumWidth: Kirigami.Units.gridUnit * 40
+
+            width: parent.width
+            implicitHeight: Kirigami.Units.gridUnit * 4
+            visible: listview.count > 0
+
+            Kirigami.Separator {
+                Layout.fillWidth: true
+                visible: endOfTimelineMessage.visible || loadingBar.visible
+            }
+
             Kirigami.PlaceholderMessage {
+                id: repliesNotAvailableMessage
+
                 Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -237,13 +251,18 @@ Kirigami.ScrollablePage {
             }
 
             Kirigami.PlaceholderMessage {
+                id: endOfTimelineMessage
+
                 visible: root.model.atEnd ?? false
                 text: i18nc("@info:status", "End of Timeline")
 
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.alignment: Qt.AlignHCenter
             }
 
             QQC2.ProgressBar {
+                id: loadingBar
+
                 visible: root.model.loading
                 indeterminate: true
 
