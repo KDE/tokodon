@@ -124,8 +124,8 @@ target_sources(tokodon_static
     utils/messagefiltercontainer.h
     utils/mpvplayer.cpp
     utils/mpvplayer.h
-    utils/textpreprocessing.cpp
-    utils/textpreprocessing.h
+    utils/texthandler.cpp
+    utils/texthandler.h
     utils/utils.cpp
     utils/utils.h
     utils/colorschemer.cpp

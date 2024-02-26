@@ -313,10 +313,6 @@ public:
         return m_hidden;
     }
 
-    /// Parses a HTML body and returns a processed body and a list of tags respectively.
-    /// The returned body does not have the tags included and is cleaned up.
-    static QPair<QString, QList<QString>> parseContent(const QString &html);
-
 Q_SIGNALS:
     void spoilerTextChanged();
     void contentChanged();

@@ -32,7 +32,7 @@ QQC2.TextArea {
 
     font: Config.defaultFont
     Layout.fillWidth: true
-    text: TextPreprocessing.preprocessHTML(root.content, Kirigami.Theme.linkColor)
+    text: TextHandler.preprocessHTML(root.content, Kirigami.Theme.linkColor)
     textFormat: TextEdit.RichText
     activeFocusOnTab: false
     readOnly: true

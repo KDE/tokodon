@@ -4,6 +4,7 @@
 #include "post.h"
 
 #include "account/abstractaccount.h"
+#include "texthandler.h"
 #include "utils/utils.h"
 
 #include <KLocalizedString>
@@ -133,39 +134,6 @@ Post::Post(AbstractAccount *account, QObject *parent)
     m_visibility = stringToVisibility(visibilityString);
 }
 
-QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity)
-{
-    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
-    QString content = CustomEmoji::replaceCustomEmojis(emojis, obj["content"_L1].toString());
-
-    const auto tags = obj["tags"_L1].toArray();
-    const QString baseUrl = authorIdentity->url().toDisplayString(QUrl::RemovePath);
-
-    for (const auto &tag : tags) {
-        const auto tagObj = tag.toObject();
-
-        const QList<QString> tagFormats = {
-            QStringLiteral("tags"), // Mastodon
-            QStringLiteral("tag") // Akkoma/Pleroma
-        };
-
-        for (const QString &tagFormat : tagFormats) {
-            content = content.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
-                                      QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                      Qt::CaseInsensitive);
-        }
-    }
-
-    const auto mentions = obj["mentions"_L1].toArray();
-
-    for (const auto &mention : mentions) {
-        const auto mentionObj = mention.toObject();
-        content = content.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
-    }
-
-    return content;
-}
-
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
@@ -212,10 +180,10 @@ void Post::fromJson(QJsonObject obj)
     m_spoilerText = obj["spoiler_text"_L1].toString();
 
     // First process HTML for links, and custom emojis
-    const QString computedContent = computeContent(obj, m_authorIdentity);
+    const QString computedContent = TextHandler::computeContent(obj, m_authorIdentity);
 
     // And then parse the content for standalone tags
-    auto [processedContent, standaloneTags] = parseContent(computedContent);
+    auto [processedContent, standaloneTags] = TextHandler::parseContent(computedContent);
     m_content = processedContent;
     m_standaloneTags = standaloneTags;
 
@@ -817,70 +785,6 @@ QString Post::originalPostId() const
 bool Post::isEmpty() const
 {
     return m_postId.isEmpty();
-}
-
-QPair<QString, QList<QString>> Post::parseContent(const QString &html)
-{
-    const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
-    const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
-
-    QList<QString> standaloneTags;
-
-    // Find the last <p> or <br>
-    const int lastBreak = html.lastIndexOf(QStringLiteral("<br>"));
-    int lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
-    if (lastBreak > lastParagraphBegin) {
-        lastParagraphBegin = lastBreak;
-    }
-
-    const int lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
-    QString lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
-
-    QString processedHtml = html;
-
-    // Catch all the tags in the last paragraph of the post, but only if they are not surrounded by text
-    {
-        QList<QString> possibleTags;
-        QString possibleLastParagraph = lastParagraph;
-
-        auto matchIterator = hashtagExp.globalMatch(possibleLastParagraph);
-        while (matchIterator.hasNext()) {
-            const QRegularExpressionMatch match = matchIterator.next();
-            possibleTags.push_back(match.captured(1));
-            possibleLastParagraph = possibleLastParagraph.replace(match.captured(0), QStringLiteral(""));
-        }
-
-        // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
-        auto extraneousIterator = extraneousParagraph.globalMatch(possibleLastParagraph);
-        if (extraneousIterator.hasNext()) {
-            processedHtml.replace(lastParagraph, possibleLastParagraph);
-            standaloneTags = possibleTags;
-        }
-    }
-
-    const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
-
-    // Ensure we remove any remaining <br>'s which will mess up the spacing in a post.
-    // Example: "<p>Yosemite Valley reflections with rock<br />    </p>"
-    {
-        auto matchIterator = extraneousBreakExp.globalMatch(processedHtml);
-        while (matchIterator.hasNext()) {
-            const QRegularExpressionMatch match = matchIterator.next();
-            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
-        }
-    }
-
-    // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
-    // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"
-    {
-        auto matchIterator = extraneousParagraph.globalMatch(processedHtml);
-        while (matchIterator.hasNext()) {
-            const QRegularExpressionMatch match = matchIterator.next();
-            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
-        }
-    }
-
-    return {processedHtml, standaloneTags};
 }
 
 #include "moc_post.cpp"
