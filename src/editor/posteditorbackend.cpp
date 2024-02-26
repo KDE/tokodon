@@ -6,7 +6,6 @@
 #include "abstractaccount.h"
 #include "accountmanager.h"
 #include "attachmenteditormodel.h"
-#include "utils.h"
 
 #include <KLocalizedString>
 
@@ -192,7 +191,7 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
     obj["spoiler_text"_L1] = m_spoilerText;
     obj["status"_L1] = m_status;
     obj["sensitive"_L1] = m_sensitive;
-    obj["visibility"_L1] = visibilityToString(m_visibility);
+    obj["visibility"_L1] = Post::visibilityToString(m_visibility);
 
     if (!m_inReplyTo.isEmpty()) {
         obj["in_reply_to_id"_L1] = m_inReplyTo;

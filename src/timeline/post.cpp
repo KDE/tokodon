@@ -5,7 +5,6 @@
 
 #include "account/abstractaccount.h"
 #include "texthandler.h"
-#include "utils/utils.h"
 
 #include <KLocalizedString>
 
@@ -825,6 +824,31 @@ void Post::processContent(const QJsonObject &obj)
 
     // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
     m_content = TextHandler::fixBidirectionality(standaloneContent);
+}
+
+static QMap<Post::Visibility, QString> p_visibilityToString = {
+    {Post::Visibility::Public, QStringLiteral("public")},
+    {Post::Visibility::Unlisted, QStringLiteral("unlisted")},
+    {Post::Visibility::Private, QStringLiteral("private")},
+    {Post::Visibility::Direct, QStringLiteral("direct")},
+};
+
+static QMap<QString, Post::Visibility> p_stringToVisibility = {
+    {QStringLiteral("public"), Post::Visibility::Public},
+    {QStringLiteral("unlisted"), Post::Visibility::Unlisted},
+    {QStringLiteral("private"), Post::Visibility::Private},
+    {QStringLiteral("direct"), Post::Visibility::Direct},
+    {QStringLiteral("local"), Post::Visibility::Local},
+};
+
+QString Post::visibilityToString(Post::Visibility visibility)
+{
+    return p_visibilityToString[visibility];
+}
+
+Post::Visibility Post::stringToVisibility(const QString &visibility)
+{
+    return p_stringToVisibility[visibility];
 }
 
 #include "moc_post.cpp"

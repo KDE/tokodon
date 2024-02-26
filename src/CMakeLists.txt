@@ -126,8 +126,6 @@ target_sources(tokodon_static
     utils/mpvplayer.h
     utils/texthandler.cpp
     utils/texthandler.h
-    utils/utils.cpp
-    utils/utils.h
     utils/colorschemer.cpp
     utils/colorschemer.h
     utils/customemoji.cpp

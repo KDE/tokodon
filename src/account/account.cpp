@@ -7,7 +7,6 @@
 #include "networkcontroller.h"
 #include "notificationhandler.h"
 #include "tokodon_http_debug.h"
-#include "utils.h"
 
 #ifdef HAVE_KUNIFIEDPUSH
 #include "ecdh.h"
@@ -81,7 +80,7 @@ void Account::post(const QUrl &url,
 
     QNetworkRequest request = makeRequest(url, authenticated);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
-    for (const auto [headerKey, headerValue] : asKeyValueRange(headers)) {
+    for (const auto [headerKey, headerValue] : headers.asKeyValueRange()) {
         request.setRawHeader(headerKey, headerValue);
     }
     qCDebug(TOKODON_HTTP) << "POST" << url << "[" << post_data << "]";

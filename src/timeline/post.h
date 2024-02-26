@@ -313,6 +313,10 @@ public:
         return m_hidden;
     }
 
+    static QString visibilityToString(Post::Visibility visibility);
+
+    static Post::Visibility stringToVisibility(const QString &visibility);
+
 Q_SIGNALS:
     void spoilerTextChanged();
     void contentChanged();
