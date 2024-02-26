@@ -25,11 +25,6 @@ QQC2.TextArea {
     rightPadding: 0
     bottomPadding: 0
 
-    // Work around QTBUG 93281
-    Component.onCompleted: if (text.includes("<img")) {
-        FileHelper.forceRefreshTextDocument(root.textDocument, root);
-    }
-
     font: Config.defaultFont
     Layout.fillWidth: true
     text: root.content
