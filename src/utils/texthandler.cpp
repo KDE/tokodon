@@ -25,6 +25,10 @@ static const auto fsi = QStringLiteral("\u2068");
 static const auto pdi = QStringLiteral("\u2069");
 static const auto lineSeparator = QStringLiteral("\u2028");
 
+static const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
+static const QRegularExpression extraneousParagraphExp(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
+static const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
+
 QString TextHandler::fixBidirectionality(const QString &html)
 {
     QTextDocument doc;
@@ -71,19 +75,16 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
 {
     // Finally, find the "standalone tags" for the post, so we can display them separately.
     // These usually appear in the last paragraph or so. We also do some extra processing to ensure there aren't blank lines left over.
-    const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
-    const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
-
     QList<QString> standaloneTags;
 
     // Find the last <p> or <br>
-    const int lastBreak = contentHtml.lastIndexOf(QStringLiteral("<br>"));
-    int lastParagraphBegin = contentHtml.lastIndexOf(QStringLiteral("<p>"));
+    const qsizetype lastBreak = contentHtml.lastIndexOf(QStringLiteral("<br>"));
+    qsizetype lastParagraphBegin = contentHtml.lastIndexOf(QStringLiteral("<p>"));
     if (lastBreak > lastParagraphBegin) {
         lastParagraphBegin = lastBreak;
     }
 
-    const int lastParagraphEnd = contentHtml.lastIndexOf(QStringLiteral("</p>"));
+    const qsizetype lastParagraphEnd = contentHtml.lastIndexOf(QStringLiteral("</p>"));
     QString lastParagraph = contentHtml.mid(lastParagraphBegin, lastParagraphEnd - contentHtml.length());
 
     // Catch all the tags in the last paragraph of the post, but only if they are not surrounded by text
@@ -99,14 +100,12 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         }
 
         // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
-        auto extraneousIterator = extraneousParagraph.globalMatch(possibleLastParagraph);
+        auto extraneousIterator = extraneousParagraphExp.globalMatch(possibleLastParagraph);
         if (extraneousIterator.hasNext()) {
             contentHtml.replace(lastParagraph, possibleLastParagraph);
             standaloneTags = possibleTags;
         }
     }
-
-    const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
 
     // Ensure we remove any remaining <br>'s which will mess up the spacing in a post.
     // Example: "<p>Yosemite Valley reflections with rock<br />    </p>"
@@ -121,7 +120,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
     // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
     // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"
     {
-        auto matchIterator = extraneousParagraph.globalMatch(contentHtml);
+        auto matchIterator = extraneousParagraphExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
             contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
