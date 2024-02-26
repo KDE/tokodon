@@ -1,7 +1,6 @@
 // SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
-//
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #pragma once

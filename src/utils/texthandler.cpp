@@ -1,9 +1,6 @@
-/**
- * SPDX-FileCopyrightText: 2023 Janet Black
- * SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
- *
- * SPDX-License-Identifier: LGPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2023 Janet Black
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "texthandler.h"
 #include "customemoji.h"
