@@ -327,6 +327,8 @@ Q_SIGNALS:
     void replyIdentityChanged();
 
 private:
+    void processContent(const QJsonObject &obj);
+
     bool m_attachments_visible = true;
     QDateTime m_publishedAt;
     QString m_postId;

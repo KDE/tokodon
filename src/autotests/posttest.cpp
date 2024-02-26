@@ -29,7 +29,7 @@ private Q_SLOTS:
         Post post(&account, doc.object());
 
         QCOMPARE(post.spoilerText(), QStringLiteral("SPOILER"));
-        QCOMPARE(post.content(), QStringLiteral("<p>LOREM</p>"));
+        QCOMPARE(post.content(), TextHandler::fixBidirectionality(QStringLiteral("<p>LOREM</p>")));
         QVERIFY(post.card());
         QCOMPARE(post.contentType(), QString());
         QCOMPARE(post.sensitive(), false);
@@ -90,7 +90,7 @@ private Q_SLOTS:
                                                  QStringLiteral("landscape"),
                                                  QStringLiteral("photography")};
 
-        QCOMPARE(post.content(), QStringLiteral("<p>Yosemite Valley reflections with rock</p>"));
+        QCOMPARE(post.content(), TextHandler::fixBidirectionality(QStringLiteral("<p>Yosemite Valley reflections with rock</p>")));
         QCOMPARE(post.standaloneTags(), standaloneTags);
     }
 
@@ -103,7 +103,7 @@ private Q_SLOTS:
             "rel=\"tag\">#<span>Halloween</span></a> <a href=\"https://mastodon.art/tags/TheMummy\" class=\"mention hashtag\" "
             "rel=\"tag\">#<span>TheMummy</span></a></p>");
 
-        const auto [content, tags] = TextHandler::parseContent(testHtml);
+        const auto [content, tags] = TextHandler::removeStandaloneTags(testHtml);
 
         QCOMPARE(content, QStringLiteral("<p>Boris Karloff (again) as Imhotep</p>"));
     }
@@ -114,7 +114,7 @@ private Q_SLOTS:
         const QString testHtml = QStringLiteral(
             R"(<p>cropping of homura and madoka <br />\uD83C\uDF80\uD83E\uDDA2\uD83C\uDF38\uD83C\uDFF9✨</p><p>finished version here - <a href=\"https://floodkiss.tumblr.com/post/682418812978659328/even-if-you-cant-see-me-even-if-you-cant-hear\" target=\"_blank\" rel=\"nofollow noopener noreferrer\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">floodkiss.tumblr.com/post/6824</span><span class=\"invisible\">18812978659328/even-if-you-cant-see-me-even-if-you-cant-hear</span></a></p><p><a href=\"https://mastodon.art/tags/MadokaMagica\" class=\"mention hashtag\" rel=\"tag\">#<span>MadokaMagica</span></a> <a href=\"https://mastodon.art/tags/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E3%81%BE%E3%81%A9%E3%81%8B%E3%83%9E%E3%82%AE%E3%82%AB\" class=\"mention hashtag\" rel=\"tag\">#<span>魔法少女まどかマギカ</span></a> <a href=\"https://mastodon.art/tags/FediArt\" class=\"mention hashtag\" rel=\"tag\">#<span>FediArt</span></a> <a href=\"https://mastodon.art/tags/MastoArt\" class=\"mention hashtag\" rel=\"tag\">#<span>MastoArt</span></a> <a href=\"https://mastodon.art/tags/FanArt\" class=\"mention hashtag\" rel=\"tag\">#<span>FanArt</span></a> <a href=\"https://mastodon.art/tags/HomuraAkemi\" class=\"mention hashtag\" rel=\"tag\">#<span>HomuraAkemi</span></a> <a href=\"https://mastodon.art/tags/MadokaKaname\" class=\"mention hashtag\" rel=\"tag\">#<span>MadokaKaname</span></a></p>)");
 
-        const auto [content, tags] = TextHandler::parseContent(testHtml);
+        const auto [content, tags] = TextHandler::removeStandaloneTags(testHtml);
 
         const QString expected = QStringLiteral(
             R"(<p>cropping of homura and madoka <br />\uD83C\uDF80\uD83E\uDDA2\uD83C\uDF38\uD83C\uDFF9✨</p><p>finished version here - <a href=\"https://floodkiss.tumblr.com/post/682418812978659328/even-if-you-cant-see-me-even-if-you-cant-hear\" target=\"_blank\" rel=\"nofollow noopener noreferrer\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">floodkiss.tumblr.com/post/6824</span><span class=\"invisible\">18812978659328/even-if-you-cant-see-me-even-if-you-cant-hear</span></a></p>)");
@@ -129,7 +129,7 @@ private Q_SLOTS:
         const QString testHtml = QStringLiteral(
             R"(<p>Made a small FPS demo in @godotengine</p><p>Walls were made in <a href=\"/tags/MaterialMaker\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>MaterialMaker</span></a> but it seems godot has trouble with the normal maps :( One common trick I use is to flip faces to break repetition but even if you don't it makes those weird light artefacts<br><a href=\"/tags/indiedev\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>indiedev</span></a> <a href=\"/tags/gamedev\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>gamedev</span></a> <a href=\"/tags/GodotEngine\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>GodotEngine</span></a></p>)");
 
-        const auto [content, tags] = TextHandler::parseContent(testHtml);
+        const auto [content, tags] = TextHandler::removeStandaloneTags(testHtml);
 
         const QString expected = QStringLiteral(
             R"(<p>Made a small FPS demo in @godotengine</p><p>Walls were made in <a href=\"/tags/MaterialMaker\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>MaterialMaker</span></a> but it seems godot has trouble with the normal maps :( One common trick I use is to flip faces to break repetition but even if you don't it makes those weird light artefacts</p>)");
@@ -144,7 +144,7 @@ private Q_SLOTS:
         const QString testHtml = QStringLiteral(
             R"(<p>I never got around to writing my <a href=\"/tags/introduction\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>introduction</span></a>, so here it is then.</p><p><a href=\"/tags/Books\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>Books</span></a> &amp; <a href=\"/tags/movies\" class=\"mention hashtag status-link\" rel=\"tag\">#<span>movies</span></a> recommendations are always welcome!</p>)");
 
-        const auto [content, tags] = TextHandler::parseContent(testHtml);
+        const auto [content, tags] = TextHandler::removeStandaloneTags(testHtml);
 
         // Nothing should happen to this text
         QVERIFY(tags.empty());

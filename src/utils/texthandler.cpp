@@ -25,7 +25,7 @@ static const auto fsi = QStringLiteral("\u2068");
 static const auto pdi = QStringLiteral("\u2069");
 static const auto lineSeparator = QStringLiteral("\u2028");
 
-QString TextHandler::preprocessHTML(const QString &html, const QColor &linkColor)
+QString TextHandler::fixBidirectionality(const QString &html)
 {
     QTextDocument doc;
     doc.setHtml(html);
@@ -49,15 +49,9 @@ QString TextHandler::preprocessHTML(const QString &html, const QColor &linkColor
             // while we're iterating through fragments we might as well set the kirigami
             // link colour here
             if (it.charFormat().isAnchor()) {
-                auto format = it.charFormat();
-                format.setForeground(linkColor);
-                format.setFontUnderline(false);
-                format.setUnderlineStyle(QTextCharFormat::NoUnderline);
-
                 QTextCursor curs(&doc);
                 curs.setPosition(it.position(), QTextCursor::MoveAnchor);
                 curs.setPosition(it.position() + it.length(), QTextCursor::KeepAnchor);
-                curs.setCharFormat(format);
             }
         }
     }
@@ -73,57 +67,24 @@ QString TextHandler::preprocessHTML(const QString &html, const QColor &linkColor
     return doc.toHtml();
 }
 
-QString TextHandler::computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity)
+QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString contentHtml)
 {
-    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
-    QString content = CustomEmoji::replaceCustomEmojis(emojis, obj["content"_L1].toString());
-
-    const auto tags = obj["tags"_L1].toArray();
-    const QString baseUrl = authorIdentity->url().toDisplayString(QUrl::RemovePath);
-
-    for (const auto &tag : tags) {
-        const auto tagObj = tag.toObject();
-
-        const QList<QString> tagFormats = {
-            QStringLiteral("tags"), // Mastodon
-            QStringLiteral("tag") // Akkoma/Pleroma
-        };
-
-        for (const QString &tagFormat : tagFormats) {
-            content = content.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
-                                      QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                      Qt::CaseInsensitive);
-        }
-    }
-
-    const auto mentions = obj["mentions"_L1].toArray();
-
-    for (const auto &mention : mentions) {
-        const auto mentionObj = mention.toObject();
-        content = content.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
-    }
-
-    return content;
-}
-
-QPair<QString, QList<QString>> TextHandler::parseContent(const QString &html)
-{
+    // Finally, find the "standalone tags" for the post, so we can display them separately.
+    // These usually appear in the last paragraph or so. We also do some extra processing to ensure there aren't blank lines left over.
     const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
     const QRegularExpression extraneousParagraph(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
 
     QList<QString> standaloneTags;
 
     // Find the last <p> or <br>
-    const int lastBreak = html.lastIndexOf(QStringLiteral("<br>"));
-    int lastParagraphBegin = html.lastIndexOf(QStringLiteral("<p>"));
+    const int lastBreak = contentHtml.lastIndexOf(QStringLiteral("<br>"));
+    int lastParagraphBegin = contentHtml.lastIndexOf(QStringLiteral("<p>"));
     if (lastBreak > lastParagraphBegin) {
         lastParagraphBegin = lastBreak;
     }
 
-    const int lastParagraphEnd = html.lastIndexOf(QStringLiteral("</p>"));
-    QString lastParagraph = html.mid(lastParagraphBegin, lastParagraphEnd - html.length());
-
-    QString processedHtml = html;
+    const int lastParagraphEnd = contentHtml.lastIndexOf(QStringLiteral("</p>"));
+    QString lastParagraph = contentHtml.mid(lastParagraphBegin, lastParagraphEnd - contentHtml.length());
 
     // Catch all the tags in the last paragraph of the post, but only if they are not surrounded by text
     {
@@ -140,7 +101,7 @@ QPair<QString, QList<QString>> TextHandler::parseContent(const QString &html)
         // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
         auto extraneousIterator = extraneousParagraph.globalMatch(possibleLastParagraph);
         if (extraneousIterator.hasNext()) {
-            processedHtml.replace(lastParagraph, possibleLastParagraph);
+            contentHtml.replace(lastParagraph, possibleLastParagraph);
             standaloneTags = possibleTags;
         }
     }
@@ -150,24 +111,24 @@ QPair<QString, QList<QString>> TextHandler::parseContent(const QString &html)
     // Ensure we remove any remaining <br>'s which will mess up the spacing in a post.
     // Example: "<p>Yosemite Valley reflections with rock<br />    </p>"
     {
-        auto matchIterator = extraneousBreakExp.globalMatch(processedHtml);
+        auto matchIterator = extraneousBreakExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
-            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
+            contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
         }
     }
 
     // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
     // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"
     {
-        auto matchIterator = extraneousParagraph.globalMatch(processedHtml);
+        auto matchIterator = extraneousParagraph.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
-            processedHtml = processedHtml.replace(match.captured(1), QStringLiteral(""));
+            contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
         }
     }
 
-    return {processedHtml, standaloneTags};
+    return {contentHtml, standaloneTags};
 }
 
 #include "moc_texthandler.cpp"

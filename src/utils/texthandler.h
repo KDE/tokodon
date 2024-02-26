@@ -24,11 +24,9 @@ public:
     explicit TextHandler(QObject *parent = nullptr);
     ~TextHandler() override;
 
-    Q_INVOKABLE QString preprocessHTML(const QString &html, const QColor &linkColor);
-
-    static QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorIdentity);
+    static QString fixBidirectionality(const QString &html);
 
     /// Parses a HTML body and returns a processed body and a list of tags respectively.
     /// The returned body does not have the tags included and is cleaned up.
-    static QPair<QString, QList<QString>> parseContent(const QString &html);
+    static QPair<QString, QList<QString>> removeStandaloneTags(QString contentHtml);
 };

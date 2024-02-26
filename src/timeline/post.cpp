@@ -179,13 +179,7 @@ void Post::fromJson(QJsonObject obj)
 
     m_spoilerText = obj["spoiler_text"_L1].toString();
 
-    // First process HTML for links, and custom emojis
-    const QString computedContent = TextHandler::computeContent(obj, m_authorIdentity);
-
-    // And then parse the content for standalone tags
-    auto [processedContent, standaloneTags] = TextHandler::parseContent(computedContent);
-    m_content = processedContent;
-    m_standaloneTags = standaloneTags;
+    processContent(obj);
 
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
@@ -785,6 +779,52 @@ QString Post::originalPostId() const
 bool Post::isEmpty() const
 {
     return m_postId.isEmpty();
+}
+
+void Post::processContent(const QJsonObject &obj)
+{
+    const QString originalHtml = obj["content"_L1].toString();
+
+    // First, replace custom emojis with their HTML representations
+    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
+    QString processedHtml = CustomEmoji::replaceCustomEmojis(emojis, originalHtml);
+
+    // Then turn hashtags into proper links, so they link inside Tokodon
+    const auto tags = obj["tags"_L1].toArray();
+    const QString baseUrl = m_authorIdentity->url().toDisplayString(QUrl::RemovePath);
+
+    for (const auto &tag : tags) {
+        const auto tagObj = tag.toObject();
+
+        // The "url" field in the tag object is for our own instance,
+        // but the url for the tag in the HTML we're given is for their instance. Hence, the odd search & replace done here.
+        const QList<QString> tagFormats = {
+            QStringLiteral("tags"), // Mastodon
+            QStringLiteral("tag") // Akkoma/Pleroma
+        };
+
+        for (const QString &tagFormat : tagFormats) {
+            processedHtml = processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
+                                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
+                                                  Qt::CaseInsensitive);
+        }
+    }
+
+    // Do the same for mentions
+    const auto mentions = obj["mentions"_L1].toArray();
+
+    for (const auto &mention : mentions) {
+        const auto mentionObj = mention.toObject();
+        processedHtml =
+            processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
+    }
+
+    // Remove the standalone tags from the main content
+    auto [standaloneContent, standaloneTags] = TextHandler::removeStandaloneTags(processedHtml);
+    m_standaloneTags = standaloneTags;
+
+    // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
+    m_content = TextHandler::fixBidirectionality(standaloneContent);
 }
 
 #include "moc_post.cpp"
