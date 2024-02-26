@@ -74,6 +74,10 @@ target_sources(tokodon_static
     # Timeline
     timeline/post.cpp
     timeline/post.h
+    timeline/attachment.cpp
+    timeline/attachment.h
+    timeline/notification.cpp
+    timeline/notification.h
     timeline/poll.cpp
     timeline/poll.h
     timeline/tag.h

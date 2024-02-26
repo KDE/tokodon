@@ -4,7 +4,8 @@
 
 #pragma once
 
-#include "post.h"
+#include "timeline/notification.h"
+#include "timeline/post.h"
 
 #include <KAboutData>
 

@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "post.h"
+#include "timeline/notification.h"
 
 class QNetworkAccessManager;
 
