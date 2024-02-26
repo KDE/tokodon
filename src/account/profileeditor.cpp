@@ -4,6 +4,7 @@
 #include "profileeditor.h"
 
 #include "abstractaccount.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -40,7 +41,7 @@ QString ProfileEditorBackend::displayName() const
 
 QString ProfileEditorBackend::displayNameHtml() const
 {
-    return CustomEmoji::replaceCustomEmojis(m_account->customEmojis(), m_displayName);
+    return TextHandler::replaceCustomEmojis(m_account->customEmojis(), m_displayName);
 }
 
 void ProfileEditorBackend::setDisplayName(const QString &displayName)

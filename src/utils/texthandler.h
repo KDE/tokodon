@@ -9,6 +9,7 @@
 
 #include <QtQml>
 
+#include "customemoji.h"
 #include "identity.h"
 
 /**
@@ -26,4 +27,10 @@ public:
     /// Parses a HTML body and returns a processed body and a list of tags respectively.
     /// \return The processed HTML as the first item in the pair, and the list of standalone tags (if any) as the second item.
     static QPair<QString, QList<QString>> removeStandaloneTags(QString contentHtml);
+
+    /// Replaces parts of a plaintext string that contain an existing custom emoji
+    /// \param emojis The list of custom emojis, given from CustomEmoji::parseCustomEmojis()
+    /// \param source The plaintext source to use
+    /// \returns HTML to be used as rich text
+    static QString replaceCustomEmojis(const QList<CustomEmoji> &emojis, const QString &source);
 };

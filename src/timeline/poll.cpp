@@ -3,6 +3,7 @@
 
 #include "poll.h"
 
+#include "texthandler.h"
 #include "utils/customemoji.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -30,7 +31,7 @@ Poll::Poll(const QJsonObject &json)
     const auto options = json[QStringLiteral("options")].toArray();
     std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> QVariantMap {
         const auto option = value.toObject();
-        QString title = CustomEmoji::replaceCustomEmojis(emojis, option[QStringLiteral("title")].toString());
+        QString title = TextHandler::replaceCustomEmojis(emojis, option[QStringLiteral("title")].toString());
 
         return {
             {"title"_L1, title},

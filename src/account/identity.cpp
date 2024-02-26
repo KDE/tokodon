@@ -5,6 +5,7 @@
 
 #include "abstractaccount.h"
 #include "relationship.h"
+#include "texthandler.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -122,8 +123,8 @@ void Identity::fromSourceData(const QJsonObject &doc)
 
     const auto emojis = CustomEmoji::parseCustomEmojis(doc["emojis"_L1].toArray());
 
-    m_displayNameHtml = CustomEmoji::replaceCustomEmojis(emojis, m_displayNameHtml);
-    m_bio = CustomEmoji::replaceCustomEmojis(emojis, m_bio);
+    m_displayNameHtml = TextHandler::replaceCustomEmojis(emojis, m_displayNameHtml);
+    m_bio = TextHandler::replaceCustomEmojis(emojis, m_bio);
 
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
 

@@ -19,12 +19,6 @@ public:
     /// \param json The JSON array to parse
     static QList<CustomEmoji> parseCustomEmojis(const QJsonArray &json);
 
-    /// Replaces parts of a plaintext string that contain an existing custom emoji
-    /// \param emojis The list of custom emojis, given from CustomEmoji::parseCustomEmojis()
-    /// \param source The plaintext source to use
-    /// \returns HTML to be used as rich text
-    static QString replaceCustomEmojis(const QList<CustomEmoji> &emojis, const QString &source);
-
     /// The shortcode name. For example, :kde: would have a shortcode of "kde"
     QString shortcode;
 

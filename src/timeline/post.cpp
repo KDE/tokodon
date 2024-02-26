@@ -787,7 +787,7 @@ void Post::processContent(const QJsonObject &obj)
 
     // First, replace custom emojis with their HTML representations
     const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
-    QString processedHtml = CustomEmoji::replaceCustomEmojis(emojis, originalHtml);
+    QString processedHtml = TextHandler::replaceCustomEmojis(emojis, originalHtml);
 
     // Then turn hashtags into proper links, so they link inside Tokodon
     const auto tags = obj["tags"_L1].toArray();

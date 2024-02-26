@@ -3,6 +3,7 @@
 
 #include <QtTest/QtTest>
 
+#include "texthandler.h"
 #include "utils/customemoji.h"
 
 class CustomEmojiTest : public QObject
@@ -35,7 +36,7 @@ private Q_SLOTS:
 
         QString content{QStringLiteral(":artaww: :meowybara:")};
 
-        content = CustomEmoji::replaceCustomEmojis(emojis, content);
+        content = TextHandler::replaceCustomEmojis(emojis, content);
         QCOMPARE(content,
                  QStringLiteral(
                      "<img height=\"16\" align=\"middle\" width=\"16\" "

@@ -21,15 +21,4 @@ QList<CustomEmoji> CustomEmoji::parseCustomEmojis(const QJsonArray &json)
     return emojis;
 }
 
-QString CustomEmoji::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const QString &source)
-{
-    QString processed = source;
-    for (const auto &emoji : emojis) {
-        processed = processed.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
-                                      QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emoji.url + QStringLiteral("\">"));
-    }
-
-    return processed;
-}
-
 #include "moc_customemoji.cpp"
