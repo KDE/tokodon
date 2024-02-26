@@ -7,7 +7,9 @@
 
 class AbstractAccount;
 
-/// Class responsible for editing the account personal information and preferences
+/**
+ * @brief Class responsible for editing the account personal information and preferences.
+ */
 class ProfileEditorBackend : public QObject
 {
     Q_OBJECT
@@ -29,69 +31,107 @@ public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
     ~ProfileEditorBackend() override;
 
-    /// Returns the account we're updating
+    /**
+     * @return The account we're updating.
+     */
     AbstractAccount *account() const;
 
-    /// Sets the account to edit
-    /// \param account The account to edit
+    /**
+     * @brief Sets the account to edit.
+     * @param account The account to edit.
+     */
     void setAccount(AbstractAccount *account);
 
-    /// Returns the display name of the account
+    /**
+     * @return The display name of the account.
+     */
     QString displayName() const;
 
-    /// Returns the display name of the account, processed to HTML (for custom emojis)
+    /**
+     * @return The display name of the account, processed to HTML (for custom emojis)
+     */
     QString displayNameHtml() const;
 
-    /// Sets a new display name for the account
-    /// \param displayName The new display name, should be plain text
+    /**
+     * @brief Sets a new display name for the account.
+     * @param displayName The new display name, should be plain text.
+     */
     void setDisplayName(const QString &displayName);
 
-    /// Returns the biography text for the account
+    /**
+     * @return The biography text for the account.
+     */
     QString note() const;
 
-    /// Sets a new biography text for the account
-    /// \param note The new bio
+    /**
+     * @brief Sets a new biography text for the account.
+     * @param note The new note.
+     */
     void setNote(const QString &note);
 
-    /// Returns if the account should be marked as a bot
+    /**
+     * @return If the account should be marked as a bot.
+     */
     bool bot() const;
 
-    /// Sets if the account should be marked as a bot
-    /// \param bot If true, the account is marked as a bot and will be visible on the profile
+    /**
+     * @brief Sets if the account should be marked as a bot.
+     * @param bot If true, the account is marked as a bot and will be visible on the profile.
+     */
     void setBot(bool bot);
 
-    /// Returns the current avatar URL for the account
+    /**
+     * @return The current avatar URL for the account.
+     */
     QUrl avatarUrl() const;
 
-    /// Returns a localized error if the new avatar failed to upload
+    /**
+     * @return A localized error if the new avatar failed to upload.
+     */
     QString avatarUrlError() const;
 
-    /// Sets a new avatar URL for the account
-    /// \param avatarUrl The new media URL for the avatar
+    /**
+     * @brief Sets a new avatar URL for the account.
+     * @param avatarUrl The new media URL for the avatar.
+     */
     void setAvatarUrl(const QUrl &avatarUrl);
 
-    /// Returns the current background URL for the account
+    /**
+     * @return The current background URL for the account.
+     */
     QUrl backgroundUrl() const;
 
-    /// Returns a localized error if the new background failed to upload
+    /**
+     * @return A localized error if the new background failed to upload.
+     */
     QString backgroundUrlError() const;
 
-    /// Sets a new background URL for the account
-    /// \param backgroundUrl The new media URL for the background
+    /**
+     * @brief Sets a new background URL for the account.
+     * @param backgroundUrl The new media URL for the background.
+     */
     void setBackgroundUrl(const QUrl &backgroundUrl);
 
-    /// Whether the account should be discoverable on the server directory
+    /**
+     * @return Whether the account should be discoverable on the server directory.
+     */
     bool discoverable() const;
 
-    /// Sets whether the account should be discoverable on the server directory
-    /// \param discoverable If set to true, the account will be listed on the server's directory
+    /**
+     * @brief Sets whether the account should be discoverable on the server directory.
+     * @param discoverable If set to true, the account will be listed on the server's directory.
+     */
     void setDiscoverable(bool discoverable);
 
-    /// Whether the account is locked
+    /**
+     * @return If the account is locked.
+     */
     bool locked() const;
 
-    /// Sets if the account is locked or not
-    /// \param locked If true, the account is locked
+    /**
+     * @brief Sets if the account is locked or not.
+     * @param locked If true, the account is locked.
+     */
     void setLocked(bool locked);
 
 public Q_SLOTS:

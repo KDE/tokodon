@@ -16,19 +16,23 @@ struct Conversation {
     QString id;
 };
 
-/// Model used for direct messages (called Conversations in the application)
-/// \see AbstractTimelineModel
+/**
+ * @brief Model used for direct messages (called Conversations in the application)
+ * @see AbstractTimelineModel
+ */
 class ConversationModel : public AbstractTimelineModel
 {
     Q_OBJECT
     QML_ELEMENT
 
 public:
-    /// Extra roles specifically for this model
+    /**
+     * @brief Extra roles specifically for this model.
+     */
     enum ExtraRole {
-        UnreadRole = AbstractTimelineModel::ExtraRole + 1, ///< Number of unread messages
-        ConversationAuthorsRole, ///< Human-readable list of accounts for this conversation
-        ConversationIdRole, ///< Id for this conversation
+        UnreadRole = AbstractTimelineModel::ExtraRole + 1, /** Number of unread messages. */
+        ConversationAuthorsRole, /** Human-readable list of accounts for this conversation. */
+        ConversationIdRole, /** Id for this conversation. */
     };
     Q_ENUM(ExtraRole)
 
@@ -39,7 +43,9 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    /// Mark the conversation of \p id as read
+    /**
+     * @brief Mark the conversation of @p id as read.
+     */
     Q_INVOKABLE void markAsRead(const QString &id);
 
 private:

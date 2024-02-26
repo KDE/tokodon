@@ -7,11 +7,17 @@
 
 #include <openssl/ec.h>
 
-/// Generates a ECDH keypair using the prime256v1 curve.
+/**
+ * @brief Generates a ECDH keypair using the prime256v1 curve.
+ */
 EC_KEY *generateECDHKeypair();
 
-/// Returns the private key of a ECDH keypair.
+/**
+ * @return The private key of a ECDH keypair.
+ */
 QByteArray exportPrivateKey(const EC_KEY *key);
 
-/// Returns the public key of a ECDH keypair.
+/**
+ * @return The public key of a ECDH keypair.
+ */
 QByteArray exportPublicKey(const EC_KEY *key);

@@ -5,7 +5,9 @@
 
 #include <QtQml>
 
-/// Fetches server announcements
+/**
+ * @brief Fetches server announcements.
+ */
 class AnnouncementModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -14,11 +16,13 @@ class AnnouncementModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
-    /// Custom roles for this model
+    /**
+     * @brief Custom roles for this model.
+     */
     enum CustomRoles {
-        IdRole = Qt::UserRole, ///< ID of the announcement
-        ContentRole, ///< Content of the announcement, given in rich HTML
-        PublishedAt ///< The date and time the announcement was published
+        IdRole = Qt::UserRole, /**< ID of the announcement. */
+        ContentRole, /**< Content of the announcement, given in rich HTML. */
+        PublishedAt /**< The date and time the announcement was published. */
     };
 
     explicit AnnouncementModel(QObject *parent = nullptr);

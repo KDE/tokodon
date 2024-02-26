@@ -5,7 +5,9 @@
 
 #include <QtQml>
 
-/// Fetches a user's lists
+/**
+ * @brief Fetches a user's lists.
+ */
 class ListsModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -14,10 +16,12 @@ class ListsModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
-    /// Custom roles for this model
+    /**
+     * @brief Custom roles for this model.
+     */
     enum CustomRoles {
-        IdRole = Qt::UserRole, ///< ID of the list
-        TitleRole ///< Title of the list
+        IdRole = Qt::UserRole, /**< ID of the list. */
+        TitleRole /**< Title of the list. */
     };
 
     explicit ListsModel(QObject *parent = nullptr);

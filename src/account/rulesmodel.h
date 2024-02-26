@@ -5,7 +5,9 @@
 
 #include "account/abstractaccount.h"
 
-/// Fetches server rules
+/**
+ * @brief Fetches server rules.
+ */
 class RulesModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -15,10 +17,12 @@ class RulesModel : public QAbstractListModel
     Q_PROPERTY(AbstractAccount *account READ account WRITE setAccount NOTIFY accountChanged)
 
 public:
-    /// Custom roles for this model
+    /**
+     * @brief Custom roles for this model.
+     */
     enum CustomRoles {
-        IdRole = Qt::UserRole, ///< ID of the rule
-        TextRole, ///< Text content of the rule
+        IdRole = Qt::UserRole, /** ID of the rule. */
+        TextRole, /** Text content of the rule. */
     };
 
     explicit RulesModel(QObject *parent = nullptr);

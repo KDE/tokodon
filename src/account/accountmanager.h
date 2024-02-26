@@ -15,7 +15,9 @@
 class AbstractAccount;
 class QNetworkAccessManager;
 
-/// Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
+/**
+ * @brief Handles managing accounts in Tokodon, and tracks state such as which one is currently selected.
+ */
 class AccountManager : public QAbstractListModel
 {
     Q_OBJECT
@@ -41,76 +43,116 @@ public:
         return inst;
     }
 
-    /// Custom roles for the AccountManager model
+    /**
+     * @brief Custom roles for the AccountManager model.
+     */
     enum CustomRoles {
-        AccountRole = Qt::UserRole + 1, ///< Account object
-        DisplayNameRole, ///< Display name of the account. Uses the display name if set, otherwise falls back to the username
-        DescriptionRole, ///< Username of the account
-        InstanceRole, ///< Instance name of the account
+        AccountRole = Qt::UserRole + 1, /**< Account object. */
+        DisplayNameRole, /**< Display name of the account. Uses the display name if set, otherwise falls back to the username. */
+        DescriptionRole, /**< Username of the account. */
+        InstanceRole, /**< Instance name of the account. */
     };
 
     static AccountManager &instance();
 
-    /// Load accounts from disk
+    /**
+     * @brief Load accounts from disk
+     */
     void loadFromSettings();
 
-    /// Migrates old Tokodon settings to newer formats
+    /**
+     * @brief Migrates old Tokodon settings to newer formats.
+     */
     void migrateSettings();
 
-    /// Enables or disables test mode. Used internally for tokodon-offline
-    /// \param enabled Whether test mode should be enabled
+    /**
+     * @brief Enables or disables test mode. Used internally for tokodon-offline.
+     * @param enabled Whether test mode should be enabled.
+     */
     void setTestMode(bool enabled);
 
-    /// Returns if testing mode is enabled
+    /**
+     * @return If testing mode is enabled.
+     */
     bool testMode() const;
 
-    /// Whether or not the account manager is completely ready
-    /// This doesn't mean it has accounts, simply that it's done reading configs and the keychain
+    /**
+     * @return Whether or not the account manager is completely ready.
+     * @note This doesn't mean it has accounts, simply that it's done reading configs and the keychain.
+     */
     bool isReady() const;
 
-    /// If there any valid accounts loaded
+    /**
+     * @return If there any valid accounts loaded.
+     */
     bool hasAccounts() const;
 
-    /// If there are any accounts in the config
+    /**
+     * @return If there are any accounts in the config.
+     */
     bool hasAnyAccounts() const;
 
-    /// Adds a new account
-    /// \param account The account to manage
-    /// \param skipAuthenticationCheck Whether the account manager should internally check if the account is valid
+    /**
+     * @brief Adds a new account.
+     * @param account The account to manage.
+     * @param skipAuthenticationCheck Whether the account manager should internally check if the account is valid.
+     */
     Q_INVOKABLE void addAccount(AbstractAccount *account, bool skipAuthenticationCheck);
 
-    /// Removes an existing account
-    /// \param account The account to remove
+    /**
+     * @brief Removes an existing account.
+     * @param account The account to remove.
+     */
     Q_INVOKABLE void removeAccount(AbstractAccount *account);
 
-    /// Re-validates every account's credentials
+    /**
+     * @brief Re-validates every account's credentials.
+     */
     void reloadAccounts();
+
     void queueNotifications();
 
-    /// Returns if the currently selected account has issues with authentication
+    /**
+     * @return If the currently selected account has issues with authentication.
+     */
     Q_INVOKABLE bool selectedAccountHasIssue() const;
 
-    /// If the selected account has a login issue, returns a localized string explaining why
+    /**
+     * @return If the selected account has a login issue, returns a localized string explaining why.
+     */
     Q_INVOKABLE QString selectedAccountLoginIssue() const;
 
-    /// Switches to an existing account
-    /// \param explicitUserAction If true, considers this an explicit user action and the new selected account will be written to disk
+    /**
+     * @brief Switches to an existing account.
+     * @param account The account to switch to.
+     * @param explicitUserAction If true, considers this an explicit user action and the new selected account will be written to disk.
+     */
     void selectAccount(AbstractAccount *account, bool explicitUserAction = true);
 
-    /// The currently selected account
+    /**
+     * @return The currently selected account.
+     */
     AbstractAccount *selectedAccount() const;
 
-    /// The currently selected account's id
+    /**
+     * @return The currently selected account's id.
+     */
     QString selectedAccountId() const;
 
-    /// The index of the selected account in the account list
+    /**
+     * @return The index of the selected account in the account list.
+     */
     int selectedIndex() const;
 
-    /// Sets the application about data
-    /// \param aboutData The new about data
+    /**
+     * @brief Sets the application about data.
+     * @param aboutData The new about data.
+     */
     void setAboutData(const KAboutData &aboutData);
 
-    /// Returns the application's about data
+    /**
+     * @return The application's about data.
+     */
     [[nodiscard]] KAboutData aboutData() const;
 
     int rowCount(const QModelIndex &index = QModelIndex()) const override;
@@ -119,27 +161,38 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    /// Creates a new account, and adds it to the manager
-    /// \param instanceUri The URI of the instance
-    /// \param ignoreSslErrors Whether or ignore SSL errors from this URI
-    /// \param admin Request admin scopes
+    /**
+     * @brief Creates a new account, and adds it to the manager.
+     * @param instanceUri The URI of the instance.
+     * @param ignoreSslErrors Whether or ignore SSL errors from this URI.
+     * @param admin Request admin scopes.
+     * @return The newly created account.
+     */
     Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false, bool admin = true);
 
-    /// Returns whether or not Tokodon is built as a Flatpak
+    /**
+     * @return Whether or not Tokodon is built as a Flatpak.
+     */
     bool isFlatpak() const;
 
-    /// Returns the preferred settings group name for an account name and an instance uri.
-    /// It's preferred to use AbstractAccount::settingsGroupName as it fills in the relevant information.
+    /**
+     * @note It's preferred to use AbstractAccount::settingsGroupName as it fills in the relevant information.
+     * @return The preferred settings group name for an account name and an instance uri.
+     */
     static QString settingsGroupName(const QString &name, const QString &instanceUri);
 
-    /// Returns the preferred key name for the client secret given a settings group name.
-    /// It's preferred to use AbstractAccount::clientSecretKey as it fills in the relevant information.
-    /// \param name The settings group name, from AbstractAccount::settingsGroupName()
+    /**
+     * @note It's preferred to use AbstractAccount::clientSecretKey as it fills in the relevant information.
+     * @param name The settings group name, from AbstractAccount::settingsGroupName().
+     * @return The preferred key name for the client secret given a settings group name.
+     */
     static QString clientSecretKey(const QString &name);
 
-    /// Returns the preferred key name for the access token.
-    /// It's preferred to use AbstractAccount::accessTokenKey as it fills in the relevant information.
-    /// \param name The settings group name, from AbstractAccount::settingsGroupName()
+    /**
+     * @note It's preferred to use AbstractAccount::accessTokenKey as it fills in the relevant information.
+     * @param name The settings group name, from AbstractAccount::settingsGroupName().
+     * @return The preferred key name for the access token.
+     */
     static QString accessTokenKey(const QString &name);
 
 Q_SIGNALS:

@@ -7,9 +7,7 @@
 #include <QtQml>
 
 /**
- * @class Emoji
- *
- * Defines the structure of a typical Unicode emoji.
+ * @brief Defines the structure of a typical Unicode emoji.
  */
 struct Emoji {
     Emoji(QString unicode, QString shortname, bool isCustom = false)
@@ -42,9 +40,7 @@ struct Emoji {
 class AbstractAccount;
 
 /**
- * @class EmojiModel
- *
- * This class defines the model for visualising a list of emojis.
+ * @brief This class defines the model for visualising a list of emojis.
  */
 class EmojiModel : public QObject
 {

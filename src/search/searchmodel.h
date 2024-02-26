@@ -8,8 +8,10 @@
 class Identity;
 class Post;
 
-/// Represents a search hashtag result, which only stores the name (and skips other information like occurences) for now
-/// \see SearchModel
+/**
+ * @brief Represents a search hashtag result, which only stores the name (and skips other information like occurrences) for now.
+ * @see SearchModel
+ */
 class SearchHashtag
 {
 public:
@@ -21,8 +23,10 @@ private:
     QString m_name;
 };
 
-/// Model used to fetch search results
-/// \see AbstractTimelineModel
+/**
+ * @brief Model used to fetch search results.
+ * @see AbstractTimelineModel
+ */
 class SearchModel : public AbstractTimelineModel
 {
     Q_OBJECT
@@ -31,40 +35,55 @@ class SearchModel : public AbstractTimelineModel
     Q_PROPERTY(bool loaded READ loaded NOTIFY loadedChanged)
 
 public:
-    /// The search result type
+    /**
+     * The search result type.
+     */
     enum ResultType {
-        Status, ///< A status (for full-text search)
-        Account, ///< An account
-        Hashtag, ///< A hashtag
+        Status, /** A status (for full-text search) */
+        Account, /** An account. */
+        Hashtag, /** A hashtag. */
     };
     Q_ENUM(ResultType);
 
     explicit SearchModel(QObject *parent = nullptr);
     ~SearchModel() override;
 
-    /// Check if the search has finished loading
-    /// \see setLoaded
+    /**
+     * @return If the search has finished loading
+     * @see setLoaded()
+     */
     bool loaded() const;
 
-    /// Sets the search loading status
-    /// \see laoded
+    /**
+     * @brief Sets the search loading status
+     * @see loaded()
+     */
     void setLoaded(bool loaded);
 
-    /// Start searching for \p queryString
+    ///
+    /**
+     * @brief Start searching for @p queryString.
+     */
     Q_INVOKABLE void search(const QString &queryString);
 
-    /// Get a localized label for a result type
+    /**
+     * @brief Get a localized label for a result type.
+     */
     Q_INVOKABLE QString labelForType(SearchModel::ResultType sectionType);
 
-    /// Clear the fetched search results
+    /**
+     * @brief Clear the fetched search results.
+     */
     Q_INVOKABLE void clear();
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
 Q_SIGNALS:
-    /// Emitted if the loading status has changed
-    /// \see setLoaded
+    /**
+     * @brief Emitted if the loading status has changed.
+     * @see setLoaded()
+     */
     void loadedChanged();
 
 private:

@@ -10,13 +10,17 @@ class FeaturedTagsModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
 
-    /// The account id of the account we want to display
+    /**
+     * @brief The account id of the account we want to display.
+     */
     Q_PROPERTY(QString accountId READ accountId WRITE setAccountId NOTIFY accountIdChanged)
 
 public:
-    /// Custom roles for this model
+    /**
+     * @brief Custom roles for this model.
+     */
     enum CustomRoles {
-        NameRole = Qt::UserRole, ///< Name of the tag
+        NameRole = Qt::UserRole, /**< Name of the tag. */
     };
 
     explicit FeaturedTagsModel(QObject *parent = nullptr);

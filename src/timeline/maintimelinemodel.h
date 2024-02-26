@@ -7,8 +7,10 @@
 
 class AbstractAccount;
 
-/// Model for the three main timelines (Home, Public, and Federated)
-/// \see TimelineModel
+/**
+ * @brief Model for the three main timelines (Home, Public, and Federated)
+ * @see TimelineModel
+ */
 class MainTimelineModel : public TimelineModel
 {
     Q_OBJECT
@@ -21,18 +23,26 @@ class MainTimelineModel : public TimelineModel
 public:
     explicit MainTimelineModel(QObject *parent = nullptr);
 
-    /// Name of the timeline
-    /// \see setName
+    /**
+     * @return Name of the timeline.
+     * @see setName()
+     */
     QString name() const;
 
-    /// Set the name of the timeline to fetch ("home", "public" or "federated")
-    /// \p name Can be "home", "public", "federated", "bookmarks", "favourites", "trending" or "list"
+    /**
+     * @brief Set the name of the timeline to fetch ("home", "public" or "federated")
+     * @param name Can be "home", "public", "federated", "bookmarks", "favourites", "trending" or "list".
+     */
     void setName(const QString &name);
 
-    /// Name of the list id
+    /**
+     * @return Name of the list id.
+     */
     QString listId() const;
 
-    /// Set the name of the list to view, only works if name is set to "list"
+    /**
+     * @brief Set the name of the list to view, only works if name is set to "list".
+     */
     void setListId(const QString &id);
 
     void fillTimeline(const QString &fromId) override;

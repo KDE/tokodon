@@ -6,8 +6,10 @@
 
 #include "timeline/timelinemodel.h"
 
-/// Model for displaying and organizing post threads
-/// \see TimelineModel
+/**
+ * @brief Model for displaying and organizing post threads
+ * @see TimelineModel
+ */
 class ThreadModel : public TimelineModel
 {
     Q_OBJECT
@@ -20,15 +22,23 @@ class ThreadModel : public TimelineModel
 public:
     explicit ThreadModel(QObject *parent = nullptr);
 
-    /// The post id of the "root" post of the thread
-    /// \see setPostId
+    /**
+     * @return The post id of the "root" post of the thread
+     * @see setPostId()
+     */
     QString postId() const;
 
-    /// Set the post id of the "root" post of the thread
+    ///
     /// \see postId
+    /**
+     * @brief Set the post id of the "root" post of the thread.
+     * @see postId()
+     */
     void setPostId(const QString &postId);
 
-    /// The original post url of the "root" post of the thread
+    /**
+     * @return The original post url of the "root" post of the thread.
+     */
     QString postUrl() const;
 
     QVariant data(const QModelIndex &index, int role) const override;
@@ -37,16 +47,21 @@ public:
     void fillTimeline(const QString &fromId = QString()) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
-    /// Returns the index of the root post in the model
-    /// Can be used to find where exactly to position the view
+    /**
+     * @return Returns the index of the root post in the model. Can be used to find where exactly to position the view.
+     */
     Q_INVOKABLE int getRootIndex() const;
 
     void reset() override;
 
-    /// Resets and refreshes the timeline for new posts
+    /**
+     * @brief Resets and refreshes the timeline for new posts.
+     */
     Q_INVOKABLE void refresh();
 
-    /// Whether the post may have replies hidden from the server, but available on the original
+    /**
+     * @return Whether the post may have replies hidden from the server, but available on the original
+     */
     bool hasHiddenReplies() const;
 
 Q_SIGNALS:

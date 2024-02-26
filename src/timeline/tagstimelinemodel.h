@@ -5,8 +5,10 @@
 
 #include "timeline/timelinemodel.h"
 
-/// Model used for fetching posts for a specific tag (like searching for #KDE)
-/// \see TimelineModel
+/**
+ * @brief Model used for fetching posts for a specific tag (like searching for #KDE)
+ * @see TimelineModel
+ */
 class TagsTimelineModel : public TimelineModel
 {
     Q_OBJECT
@@ -21,20 +23,25 @@ public:
     void fillTimeline(const QString &fromId) override;
     QString displayName() const override;
 
-    /// The hashtag the timeline is searching for
-    /// \see setHashtag
+    /**
+     * @brief The hashtag the timeline is searching for.
+     * @see setHashtag()
+     */
     QString hashtag() const;
 
-    /// Sets the hashtag the timeline is searching for
-    /// Once called, will start re-filling the timeline
-    /// \see hashtag
+    /**
+     * @brief Sets the hashtag the timeline is searching for.
+     * @see hashtag()
+     */
     void setHashtag(const QString &hashtag);
 
     void reset() override;
 
 Q_SIGNALS:
-    /// Emitted if the hashtag is changed
-    /// \see setHashtag
+    /**
+     * @brief Emitted if the hashtag is changed
+     * @see setHashtag()
+     */
     void hashtagChanged();
 
 private:

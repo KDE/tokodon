@@ -9,9 +9,12 @@
 
 class Post;
 
-/// Post's attachment object.
-/// TODO make it possible to fetch the images with a Qml image provider.
-/// TODO use getter and setter
+/**
+ * @brief Post's attachment object.
+ * @see Post
+ */
+// TODO: make it possible to fetch the images with a Qml image provider.
+// TODO: use getter and setter
 class Attachment : public QObject
 {
     Q_OBJECT
@@ -58,7 +61,9 @@ public:
     void setDescription(const QString &description);
     QString description() const;
 
-    /// Used exclusively in Maximize component to tell it whether or not an attachment is a video
+    /**
+     * @brief Used exclusively in Maximize component to tell it whether or not an attachment is a video
+     */
     int isVideo() const;
 
     QString tempSource() const;

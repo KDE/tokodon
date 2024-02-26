@@ -7,7 +7,9 @@
 
 class QNetworkAccessManager;
 
-/// Handles desktop notifications using KNotification
+/**
+ * @brief Handles desktop notifications using KNotification.
+ */
 class NotificationHandler : public QObject
 {
     Q_OBJECT
@@ -15,9 +17,11 @@ class NotificationHandler : public QObject
 public:
     explicit NotificationHandler(QNetworkAccessManager *nam, QObject *parent = nullptr);
 
-    /// Display a new notification for an account
-    /// \param notification The shared handle for the notification
-    /// \param account The account the notification belongs to
+    /**
+     * @brief Display a new notification for an account.
+     * @param notification The shared handle for the notification.
+     * @param account The account the notification belongs to.
+     */
     void handle(std::shared_ptr<Notification> notification, AbstractAccount *account);
 
 private:

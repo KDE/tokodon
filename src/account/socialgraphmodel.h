@@ -20,7 +20,9 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool isFollowing READ isFollowing CONSTANT)
     Q_PROPERTY(bool isFollower READ isFollower CONSTANT)
 
-    /// The account id of the account we want to display
+    /**
+     * @brief The account id of the account we want to display
+     */
     Q_PROPERTY(QString accountId READ accountId WRITE setAccountId NOTIFY accountIdChanged)
     Q_PROPERTY(QString statusId READ statusId WRITE setStatusId NOTIFY statusIdChanged)
     Q_PROPERTY(int count READ count WRITE setCount)

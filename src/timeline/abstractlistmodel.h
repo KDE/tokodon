@@ -105,7 +105,7 @@ private:
      * @brief A pointer to the AbstractAccount object.
      */
     AbstractAccount *m_account = nullptr;
-    /*
+    /**
      * @brief A pointer to the AccountManager object.
      */
     AccountManager *m_manager = nullptr;

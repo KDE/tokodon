@@ -9,7 +9,7 @@ class QClipboard;
 class QImage;
 
 /**
- * Clipboard proxy
+ * @brief Clipboard proxy
  */
 class Clipboard : public QObject
 {

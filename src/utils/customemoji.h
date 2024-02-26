@@ -5,7 +5,9 @@
 
 #include <QJsonArray>
 
-/// Represents a custom emoji on a server, usually represents with colons e.g. :kde:
+/**
+ * @brief A custom emoji on a server, usually represented with colons e.g. :kde:
+ */
 class CustomEmoji
 {
     Q_GADGET
@@ -15,17 +17,25 @@ class CustomEmoji
     Q_PROPERTY(bool isCustom MEMBER isCustom)
 
 public:
-    /// Parses an array of custom emoji, usually returned as a property with a key of "emojis"
-    /// \param json The JSON array to parse
+    /**
+     * @brief Parses an array of custom emoji, usually returned as a property with a key of "emojis".
+     * @param json The JSON array to parse.
+     */
     static QList<CustomEmoji> parseCustomEmojis(const QJsonArray &json);
 
-    /// The shortcode name. For example, :kde: would have a shortcode of "kde"
+    /**
+     * @brief The shortcode name. For example, :kde: would have a shortcode of "kde"
+     */
     QString shortcode;
 
-    /// The static URL of the emoji
+    /**
+     * @brief The static URL of the emoji.
+     */
     QString url;
 
-    /// Whether the emoji is custom, should always be true
+    /**
+     * @brief Whether the emoji is custom, should always be true.
+     */
     bool isCustom = true;
 };
 
