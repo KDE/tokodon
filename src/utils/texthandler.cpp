@@ -14,13 +14,6 @@
 
 using namespace Qt::StringLiterals;
 
-TextHandler::TextHandler(QObject *parent)
-    : QObject(parent)
-{
-}
-
-TextHandler::~TextHandler() = default;
-
 static const auto fsi = QStringLiteral("\u2068");
 static const auto pdi = QStringLiteral("\u2069");
 static const auto lineSeparator = QStringLiteral("\u2028");
@@ -129,5 +122,3 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
 
     return {contentHtml, standaloneTags};
 }
-
-#include "moc_texthandler.cpp"

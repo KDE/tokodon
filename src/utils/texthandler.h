@@ -14,16 +14,9 @@
 /**
  * Clipboard proxy
  */
-class TextHandler : public QObject
+class TextHandler
 {
-    Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
-
 public:
-    explicit TextHandler(QObject *parent = nullptr);
-    ~TextHandler() override;
-
     static QString fixBidirectionality(const QString &html);
 
     /// Parses a HTML body and returns a processed body and a list of tags respectively.
