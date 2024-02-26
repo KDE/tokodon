@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2021 kaniini <https://git.pleroma.social/kaniini>
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "post.h"
@@ -10,10 +11,20 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-QString Post::type() const
-{
-    return QStringLiteral("post");
-}
+static const QMap<Post::Visibility, QString> p_visibilityToString = {
+    {Post::Visibility::Public, QStringLiteral("public")},
+    {Post::Visibility::Unlisted, QStringLiteral("unlisted")},
+    {Post::Visibility::Private, QStringLiteral("private")},
+    {Post::Visibility::Direct, QStringLiteral("direct")},
+};
+
+static const QMap<QString, Post::Visibility> p_stringToVisibility = {
+    {QStringLiteral("public"), Post::Visibility::Public},
+    {QStringLiteral("unlisted"), Post::Visibility::Unlisted},
+    {QStringLiteral("private"), Post::Visibility::Private},
+    {QStringLiteral("direct"), Post::Visibility::Direct},
+    {QStringLiteral("local"), Post::Visibility::Local},
+};
 
 Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
@@ -149,74 +160,16 @@ void Post::fromJson(QJsonObject obj)
     if (obj.contains(QStringLiteral("poll")) && !obj[QStringLiteral("poll")].isNull()) {
         m_poll = std::make_unique<Poll>(obj[QStringLiteral("poll")].toObject());
     }
-
-    m_attachments_visible = !m_sensitive;
 }
 
-void Post::addAttachments(const QJsonArray &attachments)
+QString Post::postId() const
 {
-    for (const auto &attachment : attachments) {
-        m_attachments.append(new Attachment{attachment.toObject(), this});
-    }
+    return m_postId;
 }
 
-void Post::addAttachment(const QJsonObject &attachment)
+QString Post::originalPostId() const
 {
-    auto att = new Attachment{attachment, this};
-    if (att->m_url.isEmpty()) {
-        return;
-    }
-    m_attachments.append(att);
-
-    Q_EMIT attachmentUploaded();
-}
-
-void Post::setInReplyTo(const QString &inReplyTo)
-{
-    if (inReplyTo == m_replyTargetId) {
-        return;
-    }
-    m_replyTargetId = inReplyTo;
-    Q_EMIT inReplyToChanged();
-}
-
-int Post::repliesCount() const
-{
-    return m_repliesCount;
-}
-
-QString Post::inReplyTo() const
-{
-    return m_replyTargetId;
-}
-
-void Post::setDirtyAttachment()
-{
-    m_parent->invalidatePost(this);
-}
-
-QStringList Post::mentions() const
-{
-    return m_mentions;
-}
-
-QStringList Post::filters() const
-{
-    return m_filters;
-}
-
-QUrl Post::url() const
-{
-    return m_url;
-}
-
-void Post::setMentions(const QStringList &mentions)
-{
-    if (mentions == m_mentions) {
-        return;
-    }
-    m_mentions = mentions;
-    Q_EMIT mentionsChanged();
+    return m_originalPostId;
 }
 
 QDateTime Post::publishedAt() const
@@ -259,14 +212,54 @@ QString Post::absoluteTime() const
     return QLocale::system().toString(publishedAt(), QLocale::LongFormat);
 }
 
-QString Post::editedAt() const
+std::shared_ptr<Identity> Post::authorIdentity() const
 {
-    return QLocale::system().toString(m_editedAt, QLocale::ShortFormat);
+    return m_authorIdentity;
 }
 
-bool Post::wasEdited() const
+QString Post::content() const
 {
-    return m_editedAt.isValid();
+    return m_content;
+}
+
+Post::Visibility Post::visibility() const
+{
+    return m_visibility;
+}
+
+bool Post::sensitive() const
+{
+    return m_sensitive;
+}
+
+QString Post::spoilerText() const
+{
+    return m_spoilerText;
+}
+
+QList<Attachment *> Post::attachments() const
+{
+    return m_attachments;
+}
+
+std::optional<Application> Post::application() const
+{
+    return m_application;
+}
+
+QStringList Post::mentions() const
+{
+    return m_mentions;
+}
+
+QVector<QString> Post::standaloneTags() const
+{
+    return m_standaloneTags;
+}
+
+int Post::repliesCount() const
+{
+    return m_repliesCount;
 }
 
 int Post::favouritesCount() const
@@ -279,93 +272,30 @@ int Post::reblogsCount() const
     return m_reblogsCount;
 }
 
-QString Post::spoilerText() const
+QUrl Post::url() const
 {
-    return m_spoilerText;
+    return m_url;
 }
 
-void Post::setSpoilerText(const QString &spoilerText)
+QString Post::inReplyTo() const
 {
-    if (spoilerText == m_spoilerText) {
-        return;
-    }
-    m_spoilerText = spoilerText;
-    Q_EMIT spoilerTextChanged();
+    return m_replyTargetId;
 }
 
-QString Post::content() const
+std::shared_ptr<Identity> Post::replyIdentity() const
 {
-    return m_content;
+    return m_replyIdentity;
 }
 
-void Post::setContent(const QString &content)
+Poll *Post::poll() const
 {
-    if (content == m_content) {
-        return;
-    }
-    m_content = content;
-    Q_EMIT contentChanged();
+    return m_poll.get();
 }
 
-QVector<QString> Post::standaloneTags() const
+void Post::setPollJson(const QJsonObject &object)
 {
-    return m_standaloneTags;
-}
-
-QString Post::contentType() const
-{
-    return m_content_type;
-}
-
-void Post::setContentType(const QString &contentType)
-{
-    if (m_content_type == contentType) {
-        return;
-    }
-    m_content_type = contentType;
-    Q_EMIT contentTypeChanged();
-}
-
-bool Post::sensitive() const
-{
-    return m_sensitive;
-}
-
-void Post::setSensitive(bool sensitive)
-{
-    if (m_sensitive == sensitive) {
-        return;
-    }
-    m_sensitive = sensitive;
-    Q_EMIT sensitiveChanged();
-}
-
-Post::Visibility Post::visibility() const
-{
-    return m_visibility;
-}
-
-void Post::setVisibility(Visibility visibility)
-{
-    if (visibility == m_visibility) {
-        return;
-    }
-    m_visibility = visibility;
-    Q_EMIT visibilityChanged();
-}
-
-QString Post::language() const
-{
-    return m_language;
-}
-
-void Post::setLanguage(const QString &language)
-{
-    if (language == m_language) {
-        return;
-    }
-    m_language = language;
-    Q_EMIT languageChanged();
+    m_poll = std::make_unique<Poll>(object);
+    Q_EMIT pollChanged();
 }
 
 std::optional<Card> Post::card() const
@@ -373,28 +303,29 @@ std::optional<Card> Post::card() const
     return m_card;
 }
 
-Card *Post::getCard() const
+QString Post::language() const
 {
-    if (m_card.has_value()) {
-        return const_cast<Card *>(&m_card.value());
-    } else {
-        return nullptr;
-    }
+    return m_language;
 }
 
-void Post::setCard(std::optional<Card> card)
+bool Post::wasEdited() const
 {
-    m_card = card;
+    return m_editedAt.isValid();
 }
 
-std::optional<Application> Post::application() const
+QString Post::editedAt() const
 {
-    return m_application;
+    return QLocale::system().toString(m_editedAt, QLocale::ShortFormat);
 }
 
-void Post::setApplication(std::optional<Application> application)
+bool Post::boosted() const
 {
-    m_application = application;
+    return m_boosted;
+}
+
+std::shared_ptr<Identity> Post::boostIdentity() const
+{
+    return m_boostIdentity;
 }
 
 bool Post::favourited() const
@@ -417,6 +348,16 @@ void Post::setReblogged(bool reblogged)
     m_reblogged = reblogged;
 }
 
+bool Post::bookmarked() const
+{
+    return m_bookmarked;
+}
+
+void Post::setBookmarked(bool bookmarked)
+{
+    m_bookmarked = bookmarked;
+}
+
 bool Post::muted() const
 {
     return m_muted;
@@ -427,14 +368,14 @@ void Post::setMuted(bool muted)
     m_muted = muted;
 }
 
-bool Post::bookmarked() const
+QStringList Post::filters() const
 {
-    return m_bookmarked;
+    return m_filters;
 }
 
-void Post::setBookmarked(bool bookmarked)
+bool Post::hidden() const
 {
-    m_bookmarked = bookmarked;
+    return m_hidden;
 }
 
 bool Post::pinned() const
@@ -452,9 +393,31 @@ bool Post::filtered() const
     return m_filtered;
 }
 
-QList<Attachment *> Post::attachments() const
+void Post::addAttachments(const QJsonArray &attachments)
 {
-    return m_attachments;
+    for (const auto &attachment : attachments) {
+        m_attachments.append(new Attachment{attachment.toObject(), this});
+    }
+}
+
+QString Post::visibilityToString(Post::Visibility visibility)
+{
+    return p_visibilityToString[visibility];
+}
+
+Post::Visibility Post::stringToVisibility(const QString &visibility)
+{
+    return p_stringToVisibility[visibility];
+}
+
+QString Post::type() const
+{
+    return QStringLiteral("post");
+}
+
+Identity *Post::getAuthorIdentity() const
+{
+    return authorIdentity().get();
 }
 
 QQmlListProperty<Attachment> Post::attachmentList() const
@@ -462,19 +425,69 @@ QQmlListProperty<Attachment> Post::attachmentList() const
     return m_attachmentList;
 }
 
-void Post::setAttachmentsVisible(bool attachmentsVisible)
+Card *Post::getCard() const
 {
-    m_attachments_visible = attachmentsVisible;
+    if (m_card.has_value()) {
+        return const_cast<Card *>(&m_card.value());
+    } else {
+        return nullptr;
+    }
 }
 
-bool Post::attachmentsVisible() const
+void Post::setCard(std::optional<Card> card)
 {
-    return m_attachments_visible;
+    m_card = card;
 }
 
-bool Post::boosted() const
+void Post::setApplication(std::optional<Application> application)
 {
-    return m_boosted;
+    m_application = application;
+}
+
+void Post::processContent(const QJsonObject &obj)
+{
+    const QString originalHtml = obj["content"_L1].toString();
+
+    // First, replace custom emojis with their HTML representations
+    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
+    QString processedHtml = TextHandler::replaceCustomEmojis(emojis, originalHtml);
+
+    // Then turn hashtags into proper links, so they link inside Tokodon
+    const auto tags = obj["tags"_L1].toArray();
+    const QString baseUrl = m_authorIdentity->url().toDisplayString(QUrl::RemovePath);
+
+    for (const auto &tag : tags) {
+        const auto tagObj = tag.toObject();
+
+        // The "url" field in the tag object is for our own instance,
+        // but the url for the tag in the HTML we're given is for their instance. Hence, the odd search & replace done here.
+        const QList<QString> tagFormats = {
+            QStringLiteral("tags"), // Mastodon
+            QStringLiteral("tag") // Akkoma/Pleroma
+        };
+
+        for (const QString &tagFormat : tagFormats) {
+            processedHtml = processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
+                                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
+                                                  Qt::CaseInsensitive);
+        }
+    }
+
+    // Do the same for mentions
+    const auto mentions = obj["mentions"_L1].toArray();
+
+    for (const auto &mention : mentions) {
+        const auto mentionObj = mention.toObject();
+        processedHtml =
+            processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
+    }
+
+    // Remove the standalone tags from the main content
+    auto [standaloneContent, standaloneTags] = TextHandler::removeStandaloneTags(processedHtml);
+    m_standaloneTags = standaloneTags;
+
+    // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
+    m_content = TextHandler::fixBidirectionality(standaloneContent);
 }
 
 Card::Card(QJsonObject card)
@@ -564,123 +577,6 @@ QString Application::name() const
 QUrl Application::website() const
 {
     return QUrl::fromUserInput(m_application[QLatin1String("website")].toString());
-}
-
-Identity *Post::getAuthorIdentity() const
-{
-    return authorIdentity().get();
-}
-
-std::shared_ptr<Identity> Post::authorIdentity() const
-{
-    return m_authorIdentity;
-}
-
-std::shared_ptr<Identity> Post::boostIdentity() const
-{
-    return m_boostIdentity;
-}
-
-std::shared_ptr<Identity> Post::replyIdentity() const
-{
-    return m_replyIdentity;
-}
-
-Poll *Post::poll() const
-{
-    return m_poll.get();
-}
-
-void Post::setPollJson(const QJsonObject &object)
-{
-    m_poll = std::make_unique<Poll>(object);
-    Q_EMIT pollChanged();
-}
-
-QString Post::postId() const
-{
-    return m_postId;
-}
-
-QString Post::originalPostId() const
-{
-    return m_originalPostId;
-}
-
-bool Post::isEmpty() const
-{
-    return m_postId.isEmpty();
-}
-
-void Post::processContent(const QJsonObject &obj)
-{
-    const QString originalHtml = obj["content"_L1].toString();
-
-    // First, replace custom emojis with their HTML representations
-    const auto emojis = CustomEmoji::parseCustomEmojis(obj["emojis"_L1].toArray());
-    QString processedHtml = TextHandler::replaceCustomEmojis(emojis, originalHtml);
-
-    // Then turn hashtags into proper links, so they link inside Tokodon
-    const auto tags = obj["tags"_L1].toArray();
-    const QString baseUrl = m_authorIdentity->url().toDisplayString(QUrl::RemovePath);
-
-    for (const auto &tag : tags) {
-        const auto tagObj = tag.toObject();
-
-        // The "url" field in the tag object is for our own instance,
-        // but the url for the tag in the HTML we're given is for their instance. Hence, the odd search & replace done here.
-        const QList<QString> tagFormats = {
-            QStringLiteral("tags"), // Mastodon
-            QStringLiteral("tag") // Akkoma/Pleroma
-        };
-
-        for (const QString &tagFormat : tagFormats) {
-            processedHtml = processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
-                                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                                  Qt::CaseInsensitive);
-        }
-    }
-
-    // Do the same for mentions
-    const auto mentions = obj["mentions"_L1].toArray();
-
-    for (const auto &mention : mentions) {
-        const auto mentionObj = mention.toObject();
-        processedHtml =
-            processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
-    }
-
-    // Remove the standalone tags from the main content
-    auto [standaloneContent, standaloneTags] = TextHandler::removeStandaloneTags(processedHtml);
-    m_standaloneTags = standaloneTags;
-
-    // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
-    m_content = TextHandler::fixBidirectionality(standaloneContent);
-}
-
-static QMap<Post::Visibility, QString> p_visibilityToString = {
-    {Post::Visibility::Public, QStringLiteral("public")},
-    {Post::Visibility::Unlisted, QStringLiteral("unlisted")},
-    {Post::Visibility::Private, QStringLiteral("private")},
-    {Post::Visibility::Direct, QStringLiteral("direct")},
-};
-
-static QMap<QString, Post::Visibility> p_stringToVisibility = {
-    {QStringLiteral("public"), Post::Visibility::Public},
-    {QStringLiteral("unlisted"), Post::Visibility::Unlisted},
-    {QStringLiteral("private"), Post::Visibility::Private},
-    {QStringLiteral("direct"), Post::Visibility::Direct},
-    {QStringLiteral("local"), Post::Visibility::Local},
-};
-
-QString Post::visibilityToString(Post::Visibility visibility)
-{
-    return p_visibilityToString[visibility];
-}
-
-Post::Visibility Post::stringToVisibility(const QString &visibility)
-{
-    return p_stringToVisibility[visibility];
 }
 
 #include "moc_post.cpp"

@@ -31,7 +31,6 @@ private Q_SLOTS:
         QCOMPARE(post.spoilerText(), QStringLiteral("SPOILER"));
         QCOMPARE(post.content(), TextHandler::fixBidirectionality(QStringLiteral("<p>LOREM</p>")));
         QVERIFY(post.card());
-        QCOMPARE(post.contentType(), QString());
         QCOMPARE(post.sensitive(), false);
         QCOMPARE(post.visibility(), Post::Visibility::Public);
         QCOMPARE(post.wasEdited(), false);
