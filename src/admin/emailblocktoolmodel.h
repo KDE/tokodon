@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "emailinfo.h"
+#include "admin/emailinfo.h"
 
 #include <QtQml>
 

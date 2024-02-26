@@ -2,11 +2,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "accountmanager.h"
+#include "account/accountmanager.h"
 
-#include "account.h"
+#include "account/account.h"
 #include "config.h"
-#include "networkaccessmanagerfactory.h"
+#include "network/networkaccessmanagerfactory.h"
 #include "tokodon_debug.h"
 
 #include <qt6keychain/keychain.h>

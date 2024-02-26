@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "abstractlistmodel.h"
-#include "tag.h"
+#include "timeline/abstractlistmodel.h"
+#include "timeline/tag.h"
 
 /**
  * @class TagsModel

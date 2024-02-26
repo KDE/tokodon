@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "post.h"
+#include "timeline/post.h"
 
 class ListEditorBackend : public QObject
 {

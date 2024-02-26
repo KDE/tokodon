@@ -2,9 +2,9 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "attachmenteditormodel.h"
+#include "editor/attachmenteditormodel.h"
 
-#include "account.h"
+#include "account/account.h"
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)
     : QAbstractListModel(parent)

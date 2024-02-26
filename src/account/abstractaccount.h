@@ -3,12 +3,12 @@
 
 #pragma once
 
+#include "account/identity.h"
+#include "account/preferences.h"
 #include "accountconfig.h"
-#include "adminaccountinfo.h"
-#include "customemoji.h"
-#include "identity.h"
-#include "preferences.h"
-#include "reportinfo.h"
+#include "admin/adminaccountinfo.h"
+#include "admin/reportinfo.h"
+#include "utils/customemoji.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -280,7 +280,8 @@ public:
     /// \param authenticated Whether the request should be authenticated
     /// \param parent The parent object that calls get() or the callback belongs to
     /// \param callback The callback that should be executed if the request is successful
-    virtual QNetworkReply *post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+    virtual QNetworkReply *
+    post(const QUrl &url, QHttpMultiPart *message, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
 
     /// Make an HTTP PUT request to the server
     /// \param url The url of the request

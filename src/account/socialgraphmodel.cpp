@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "socialgraphmodel.h"
+#include "account/socialgraphmodel.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
-#include "relationship.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
+#include "account/relationship.h"
 
 #include <KLocalizedString>
 

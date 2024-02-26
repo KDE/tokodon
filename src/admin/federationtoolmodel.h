@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "federationinfo.h"
+#include "admin/federationinfo.h"
 
 #include <QtQml>
 

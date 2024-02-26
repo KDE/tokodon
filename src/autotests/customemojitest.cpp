@@ -3,8 +3,8 @@
 
 #include <QtTest/QtTest>
 
-#include "texthandler.h"
 #include "utils/customemoji.h"
+#include "utils/texthandler.h"
 
 class CustomEmojiTest : public QObject
 {

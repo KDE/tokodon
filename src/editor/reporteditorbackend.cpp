@@ -1,10 +1,9 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "reporteditorbackend.h"
+#include "editor/reporteditorbackend.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/accountmanager.h"
 
 using namespace Qt::StringLiterals;
 

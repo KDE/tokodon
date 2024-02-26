@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "ipinfo.h"
+#include "admin/ipinfo.h"
 
 #include <QtQml>
 

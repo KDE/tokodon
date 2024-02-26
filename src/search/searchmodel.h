@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "abstracttimelinemodel.h"
+#include "timeline/abstracttimelinemodel.h"
 
 class Identity;
 class Post;

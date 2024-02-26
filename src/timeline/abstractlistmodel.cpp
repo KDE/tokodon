@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Shubham Arora <shubhamarora@protonmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "abstractlistmodel.h"
+#include "timeline/abstractlistmodel.h"
 
 AbstractListModel::AbstractListModel(QObject *parent)
     : QAbstractListModel(parent)

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "timelinemodel.h"
+#include "timeline/timelinemodel.h"
 
 /// Model for displaying and organizing post threads
 /// \see TimelineModel

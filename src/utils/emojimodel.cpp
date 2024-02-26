@@ -2,12 +2,12 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "emojimodel.h"
+#include "utils/emojimodel.h"
 
 #include <KLocalizedString>
 
-#include "abstractaccount.h"
-#include "emojitones.h"
+#include "account/abstractaccount.h"
+#include "utils/emojitones.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -17,7 +17,7 @@ EmojiModel::EmojiModel(QObject *parent)
     : QObject(parent)
 {
     if (_emojis.isEmpty()) {
-#include "emojis.h"
+#include "utils/emojis.h"
     }
 }
 

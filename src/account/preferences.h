@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "abstractaccount.h"
-#include "post.h"
+#include "account/abstractaccount.h"
+#include "timeline/post.h"
 
 /// Account-specific preferences which are stored server-side
 class Preferences : public QObject

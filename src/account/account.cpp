@@ -2,10 +2,10 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "account.h"
+#include "account/account.h"
 
-#include "networkcontroller.h"
-#include "notificationhandler.h"
+#include "account/notificationhandler.h"
+#include "network/networkcontroller.h"
 #include "tokodon_http_debug.h"
 
 #ifdef HAVE_KUNIFIEDPUSH
@@ -143,7 +143,7 @@ QNetworkReply *Account::post(const QUrl &url, QHttpMultiPart *message, bool auth
     QNetworkReply *reply = m_qnam->post(request, message);
     reply->setParent(parent);
     handleReply(reply, reply_cb);
-	return reply;
+    return reply;
 }
 
 void Account::patch(const QUrl &url, QHttpMultiPart *multiPart, bool authenticated, QObject *parent, std::function<void(QNetworkReply *)> callback)

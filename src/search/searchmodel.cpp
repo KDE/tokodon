@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "searchmodel.h"
+#include "search/searchmodel.h"
 
-#include "account.h"
+#include "account/account.h"
 
 #include <KLocalizedString>
 

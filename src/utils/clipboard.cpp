@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2019 Black Hat <bhat@encom.eu.org>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "clipboard.h"
+#include "utils/clipboard.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
 
 #include <QClipboard>
 #include <QGuiApplication>

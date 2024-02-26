@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "networkaccessmanagerfactory.h"
+#include "network/networkaccessmanagerfactory.h"
 
 #include <QNetworkAccessManager>
 #include <QNetworkDiskCache>

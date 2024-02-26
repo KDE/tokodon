@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "abstracttimelinemodel.h"
+#include "timeline/abstracttimelinemodel.h"
 
-#include "abstractaccount.h"
-#include "attachmenteditormodel.h"
-#include "posteditorbackend.h"
+#include "account/abstractaccount.h"
+#include "editor/attachmenteditormodel.h"
+#include "editor/posteditorbackend.h"
 
 using namespace Qt::Literals::StringLiterals;
 

@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "listeditorbackend.h"
+#include "editor/listeditorbackend.h"
+
 #include <KLocalizedString>
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
 
 using namespace Qt::StringLiterals;
 

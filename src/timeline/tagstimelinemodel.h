@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timelinemodel.h"
+#include "timeline/timelinemodel.h"
 
 /// Model used for fetching posts for a specific tag (like searching for #KDE)
 /// \see TimelineModel

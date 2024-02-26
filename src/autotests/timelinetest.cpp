@@ -3,12 +3,13 @@
 
 #include <QtTest/QtTest>
 
-#include "helperreply.h"
-#include "mockaccount.h"
-#include "texthandler.h"
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
 #include "timeline/maintimelinemodel.h"
 #include "timeline/tagstimelinemodel.h"
 #include "timeline/threadmodel.h"
+#include "utils/texthandler.h"
+
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;

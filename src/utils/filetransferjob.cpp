@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "filetransferjob.h"
+#include "utils/filetransferjob.h"
 
-#include "account.h"
+#include "account/account.h"
 #include "tokodon_http_debug.h"
 
 #include <KLocalizedString>

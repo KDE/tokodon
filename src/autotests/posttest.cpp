@@ -3,8 +3,8 @@
 
 #include <QtTest/QtTest>
 
-#include "mockaccount.h"
-#include "texthandler.h"
+#include "autotests/mockaccount.h"
+#include "utils/texthandler.h"
 
 using namespace Qt::Literals::StringLiterals;
 

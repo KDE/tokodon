@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Gary Wang <wzc782970009@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include "networkcontroller.h"
+#include "network/networkcontroller.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
 #include "config.h"
 #include "tokodon_http_debug.h"
 

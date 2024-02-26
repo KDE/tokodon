@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "filehelper.h"
+#include "utils/filehelper.h"
 
-#include "abstractaccount.h"
-#include "filetransferjob.h"
+#include "account/abstractaccount.h"
+#include "utils/filetransferjob.h"
 
 #ifdef HAVE_KIO
 #include <KIO/Job>

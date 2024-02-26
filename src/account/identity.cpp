@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "identity.h"
+#include "account/identity.h"
 
-#include "abstractaccount.h"
-#include "relationship.h"
-#include "texthandler.h"
+#include "account/abstractaccount.h"
+#include "account/relationship.h"
+#include "utils/texthandler.h"
 
 using namespace Qt::Literals::StringLiterals;
 

@@ -2,14 +2,14 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "abstractaccount.h"
+#include "account/abstractaccount.h"
 
-#include "accountmanager.h"
-#include "messagefiltercontainer.h"
-#include "navigation.h"
-#include "networkcontroller.h"
-#include "relationship.h"
+#include "account/accountmanager.h"
+#include "account/relationship.h"
+#include "network/networkcontroller.h"
 #include "tokodon_debug.h"
+#include "utils/messagefiltercontainer.h"
+#include "utils/navigation.h"
 
 #include <KLocalizedString>
 

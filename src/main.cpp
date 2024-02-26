@@ -33,7 +33,6 @@
 #include "tokodon_debug.h"
 #include "utils/blurhashimageprovider.h"
 #include "utils/colorschemer.h"
-#include "utils/navigation.h"
 #include "utils/windowcontroller.h"
 
 #ifdef Q_OS_WINDOWS

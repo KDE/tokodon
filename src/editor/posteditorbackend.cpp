@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "posteditorbackend.h"
+#include "editor/posteditorbackend.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
-#include "attachmenteditormodel.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
+#include "editor/attachmenteditormodel.h"
 
 #include <KLocalizedString>
 

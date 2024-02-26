@@ -3,9 +3,9 @@
 
 #include <QtTest/QtTest>
 
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
 #include "conversation/conversationmodel.h"
-#include "helperreply.h"
-#include "mockaccount.h"
 
 class ConversationModelTest : public QObject
 {

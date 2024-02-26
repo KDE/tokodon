@@ -3,8 +3,8 @@
 
 #include "account/accountmanager.h"
 #include "admin/emailblocktoolmodel.h"
-#include "helperreply.h"
-#include "mockaccount.h"
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
 
 #include <QtTest/QtTest>
 

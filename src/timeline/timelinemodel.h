@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "abstractaccount.h"
-#include "abstracttimelinemodel.h"
+#include "account/abstractaccount.h"
+#include "timeline/abstracttimelinemodel.h"
 
 /// Model building on top of AbstractTimelineModel, used by MainTimelineModel and ThreadModel for example
 /// \see AbstractTimelineModel

@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "profileeditor.h"
+#include "account/profileeditor.h"
 
-#include "abstractaccount.h"
-#include "texthandler.h"
+#include "account/abstractaccount.h"
+#include "utils/texthandler.h"
 
 #include <KLocalizedString>
 

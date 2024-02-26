@@ -2,8 +2,9 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "texthandler.h"
-#include "customemoji.h"
+#include "utils/texthandler.h"
+
+#include "utils/customemoji.h"
 
 #include <QTextBlock>
 #include <QTextCursor>

@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "polleditorbackend.h"
+#include "editor/polleditorbackend.h"
 
 #include <QJsonArray>
 

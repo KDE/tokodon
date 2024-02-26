@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/abstractaccount.h"
+#include "account/accountmanager.h"
 
 class AbstractAccount;
 

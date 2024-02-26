@@ -1,11 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "featuredtagsmodel.h"
+#include "account/featuredtagsmodel.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
-#include "relationship.h"
+#include "account/accountmanager.h"
+#include "account/relationship.h"
 
 using namespace Qt::StringLiterals;
 

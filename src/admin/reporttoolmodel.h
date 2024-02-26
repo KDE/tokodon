@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "reportinfo.h"
+#include "admin/reportinfo.h"
 
 #include <QtQml>
 

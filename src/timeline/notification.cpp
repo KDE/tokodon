@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "notification.h"
+#include "timeline/notification.h"
 
 using namespace Qt::StringLiterals;
 

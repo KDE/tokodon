@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "poll.h"
+#include "timeline/poll.h"
 
-#include "texthandler.h"
 #include "utils/customemoji.h"
+#include "utils/texthandler.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -20,11 +20,9 @@ Poll::Poll(const QJsonObject &json)
     m_votersCount = json[QStringLiteral("voters_count")].toInt(-1);
     m_voted = json[QStringLiteral("voted")].toBool();
     const auto ownVotes = json[QStringLiteral("own_votes")].toArray();
-    std::transform(
-        ownVotes.cbegin(),
-        ownVotes.cend(),
-        std::back_inserter(m_ownVotes),
-        [](const QJsonValue &value) -> auto{ return value.toInt(); });
+    std::transform(ownVotes.cbegin(), ownVotes.cend(), std::back_inserter(m_ownVotes), [](const QJsonValue &value) -> auto {
+        return value.toInt();
+    });
 
     const auto emojis = CustomEmoji::parseCustomEmojis(json[QStringLiteral("emojis")].toArray());
 

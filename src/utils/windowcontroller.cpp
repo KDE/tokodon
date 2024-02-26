@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "windowcontroller.h"
+#include "utils/windowcontroller.h"
 
 #include <KSharedConfig>
 #include <KWindowConfig>

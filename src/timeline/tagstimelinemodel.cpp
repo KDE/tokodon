@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "tagstimelinemodel.h"
+#include "timeline/tagstimelinemodel.h"
 
 TagsTimelineModel::TagsTimelineModel(QObject *parent)
     : TimelineModel(parent)

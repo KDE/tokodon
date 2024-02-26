@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include "abstractaccount.h"
-#include "relationship.h"
+#include "account/abstractaccount.h"
+#include "account/relationship.h"
 
 #include <QWebSocket>
 

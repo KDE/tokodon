@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2021 Tobias Fella <fella@posteo.de>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "blurhashimageprovider.h"
+#include "utils/blurhashimageprovider.h"
 
-#include "blurhash.hpp"
+#include "utils/blurhash.hpp"
 
 /*
  * Qt unfortunately re-encodes the base83 string in QML.

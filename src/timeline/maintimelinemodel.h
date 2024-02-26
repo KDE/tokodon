@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "timelinemodel.h"
+#include "timeline/timelinemodel.h"
 
 class AbstractAccount;
 

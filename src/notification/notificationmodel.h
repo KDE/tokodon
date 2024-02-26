@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "abstracttimelinemodel.h"
+#include "timeline/abstracttimelinemodel.h"
 
 /// Model for the notifications page
 /// \see AbstractTimelineModel

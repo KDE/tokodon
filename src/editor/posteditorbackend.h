@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "polleditorbackend.h"
-#include "post.h"
+#include "editor/polleditorbackend.h"
+#include "timeline/post.h"
 
 class AttachmentEditorModel;
 

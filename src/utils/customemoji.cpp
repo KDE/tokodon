@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "customemoji.h"
+#include "utils/customemoji.h"
 
 QList<CustomEmoji> CustomEmoji::parseCustomEmojis(const QJsonArray &json)
 {

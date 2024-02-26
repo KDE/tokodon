@@ -2,10 +2,10 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-only
 
-#include "post.h"
+#include "timeline/post.h"
 
 #include "account/abstractaccount.h"
-#include "texthandler.h"
+#include "utils/texthandler.h"
 
 #include <KLocalizedString>
 

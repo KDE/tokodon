@@ -6,8 +6,8 @@
 
 #include <QtQml>
 
-#include "customemoji.h"
-#include "identity.h"
+#include "account/identity.h"
+#include "utils/customemoji.h"
 
 /**
  * Handles some miscellaneous text processing tasks.

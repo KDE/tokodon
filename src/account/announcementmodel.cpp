@@ -1,10 +1,9 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "announcementmodel.h"
+#include "account/announcementmodel.h"
 
-#include "abstractaccount.h"
-#include "accountmanager.h"
+#include "account/accountmanager.h"
 
 using namespace Qt::Literals::StringLiterals;
 

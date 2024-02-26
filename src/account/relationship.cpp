@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2022 Jeremy Winter <jeremy.winter@tutanota.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include "relationship.h"
+#include "account/relationship.h"
 
-#include "account.h"
+#include "account/account.h"
 
 using namespace Qt::Literals::StringLiterals;
 

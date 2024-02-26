@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "accountmanager.h"
+#include "account/accountmanager.h"
 
 class AbstractAccount;
 class PostEditorBackend;

@@ -4,8 +4,8 @@
 #include <QtTest/QtTest>
 
 #include "account/accountmanager.h"
+#include "autotests/mockaccount.h"
 #include "editor/posteditorbackend.h"
-#include "mockaccount.h"
 
 class PostEditorTest : public QObject
 {

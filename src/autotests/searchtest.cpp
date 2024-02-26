@@ -3,8 +3,8 @@
 
 #include <QtTest/QtTest>
 
-#include "helperreply.h"
-#include "mockaccount.h"
+#include "autotests/helperreply.h"
+#include "autotests/mockaccount.h"
 #include "search/searchmodel.h"
 
 class SearchTest : public QObject

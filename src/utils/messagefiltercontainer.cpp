@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2019 Harald Sitter <sitter@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "messagefiltercontainer.h"
+#include "utils/messagefiltercontainer.h"
 
 // Extra filter rigging. We don't want to leak secrets via qdebug, so install
 // a message handler which does nothing more than replace secrets in debug

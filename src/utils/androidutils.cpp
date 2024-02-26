@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
-#include "androidutils.h"
+#include "utils/androidutils.h"
 
 #include <QCoreApplication>
 #include <QJniObject>
@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QUrl>
 
-#include "networkcontroller.h"
+#include "network/networkcontroller.h"
 
 AndroidUtils::AndroidUtils(QObject *parent)
     : QObject(parent)

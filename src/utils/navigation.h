@@ -5,8 +5,8 @@
 
 #include <QJSEngine>
 
-#include "identity.h"
-#include "post.h"
+#include "account/identity.h"
+#include "timeline/post.h"
 
 class Navigation : public QObject
 {
