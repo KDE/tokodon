@@ -9,6 +9,9 @@ import org.kde.tokodon
 
 import ".."
 
+/**
+ * @brief The context menu for image attachments.
+ */
 QQC2.Menu {
     id: root
 
