@@ -9,7 +9,9 @@ import org.kde.tokodon
 
 import ".."
 
-// The menu located in the "three dots hamburger" icon on a status.
+/**
+ * @brief The menu located in the "three dots hamburger" icon on a status.
+ */
 QQC2.Menu {
     id: root
 

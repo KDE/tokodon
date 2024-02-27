@@ -258,7 +258,7 @@ QQC2.ItemDelegate {
             active: false
             visible: false
 
-            sourceComponent: OverflowMenu {
+            sourceComponent: StatusMenu {
                 index: root.index
                 postId: root.id
                 url: root.url
