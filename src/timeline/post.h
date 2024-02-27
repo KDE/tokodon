@@ -83,6 +83,7 @@ class Post : public QObject
 
     Q_PROPERTY(QString spoilerText READ spoilerText CONSTANT)
     Q_PROPERTY(QString content READ content CONSTANT)
+    Q_PROPERTY(bool hasContent READ hasContent CONSTANT)
     Q_PROPERTY(bool sensitive READ sensitive CONSTANT)
     Q_PROPERTY(Visibility visibility READ visibility CONSTANT)
     Q_PROPERTY(QString language READ language CONSTANT)
@@ -158,6 +159,12 @@ public:
      * @return The HTML text of this post.
      */
     QString content() const;
+
+    /**
+     * @return If the post has any text content.
+     * @note Use this instead of checking the length of content() because it could contain useless HTML code.
+     */
+    bool hasContent() const;
 
     /**
      * @brief The possible visibility levels of a post.
@@ -378,6 +385,7 @@ private:
     QString m_originalPostId;
     QUrl m_url;
     QString m_content;
+    bool m_hasContent;
     QString m_spoilerText;
     QString m_author;
     QString m_reply_to_author;

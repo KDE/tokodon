@@ -222,6 +222,11 @@ QString Post::content() const
     return m_content;
 }
 
+bool Post::hasContent() const
+{
+    return m_hasContent;
+}
+
 Post::Visibility Post::visibility() const
 {
     return m_visibility;
@@ -485,6 +490,8 @@ void Post::processContent(const QJsonObject &obj)
     // Remove the standalone tags from the main content
     auto [standaloneContent, standaloneTags] = TextHandler::removeStandaloneTags(processedHtml);
     m_standaloneTags = standaloneTags;
+
+    m_hasContent = !standaloneContent.isEmpty();
 
     // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
     m_content = TextHandler::fixBidirectionality(standaloneContent);

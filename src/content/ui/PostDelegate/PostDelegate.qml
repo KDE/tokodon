@@ -283,7 +283,7 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !filtered && root.content.length !== 0
+            visible: !filtered && root.post.hasContent
             spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
