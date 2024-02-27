@@ -378,7 +378,7 @@ QQC2.ItemDelegate {
             }
         }
 
-        StandaloneTags {
+        StatusTags {
             standaloneTags: root.post.standaloneTags
 
             Layout.fillWidth: true
