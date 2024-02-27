@@ -182,6 +182,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/Emoji/EmojiPicker.qml
         content/ui/Components/Emoji/EmojiTonesPicker.qml
         content/ui/Components/FocusedImage.qml
+        content/ui/Components/InlineIdentityInfo.qml
         content/ui/Components/PopupShadow.qml
         content/ui/Components/UserCard.qml
 
@@ -238,7 +239,6 @@ qt_target_qml_sources(tokodon_static
         content/ui/PostDelegate/AttachmentGrid.qml
         content/ui/PostDelegate/AttachmentMenu.qml
         content/ui/PostDelegate/InformationBar.qml
-        content/ui/PostDelegate/InlineIdentityInfo.qml
         content/ui/PostDelegate/InteractionButton.qml
         content/ui/PostDelegate/LinkPreview.qml
         content/ui/PostDelegate/MediaContainer.qml

@@ -17,7 +17,7 @@ ColumnLayout {
 
     spacing: Kirigami.Units.largeSpacing
 
-    PostDelegate.InlineIdentityInfo {
+    InlineIdentityInfo {
         identity: root.post.authorIdentity
         secondary: false
 

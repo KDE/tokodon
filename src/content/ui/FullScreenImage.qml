@@ -27,7 +27,7 @@ Components.AlbumMaximizeComponent {
         }
     }
 
-    leading: PostDelegate.InlineIdentityInfo {
+    leading: InlineIdentityInfo {
         identity: root.identity
         secondary: false
         onClicked: close()
