@@ -6,20 +6,21 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 
-// A specialized button used for the "Favorite", "Boost", and etc buttons on a status
-QQC2.AbstractButton {
+/**
+ * @brief A specialized button used for the "Favorite", "Boost", etc buttons on a status
+ */
+QQC2.ToolButton {
     id: control
 
     required property string iconName
-    property string interactedIconName
+    required property string tooltip
 
+    property string interactedIconName
     property bool interactable: true
     property bool interacted: false
     property color interactionColor
 
-    required property string tooltip
-
-    hoverEnabled: true
+    display: QQC2.AbstractButton.IconOnly
     activeFocusOnTab: interactable
 
     QQC2.ToolTip.text: control.tooltip
@@ -27,11 +28,6 @@ QQC2.AbstractButton {
     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
     Accessible.name: tooltip
-
-    topPadding: Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.smallSpacing
-    leftPadding: Kirigami.Units.smallSpacing
-    rightPadding: Kirigami.Units.smallSpacing
 
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
@@ -46,7 +42,7 @@ QQC2.AbstractButton {
             source: control.interacted ? control.interactedIconName : control.iconName
 
             isMask: true
-            color: (interactable && (control.hovered || parent.activeFocus)) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
+            color: (interactable && parent.activeFocus) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
         }
 
         QQC2.Label {
@@ -56,25 +52,8 @@ QQC2.AbstractButton {
             verticalAlignment: Text.AlignVCenter
             visible: control.text
             color: Kirigami.Theme.disabledTextColor
-        }
-    }
 
-    background: Rectangle {
-        color: control.hovered && control.interactable ? Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.1) : "transparent"
-        radius: Kirigami.Units.mediumSpacing
-
-        Rectangle {
-            visible: control.visualFocus
-            radius: parent.radius
-            color: "transparent"
-            anchors {
-                fill: parent
-                margins: -2
-            }
-            border {
-                width: 2
-                color: Kirigami.Theme.focusColor
-            }
+            Layout.rightMargin: Kirigami.Units.smallSpacing
         }
     }
 }
