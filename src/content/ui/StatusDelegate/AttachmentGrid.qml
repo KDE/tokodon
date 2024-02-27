@@ -8,12 +8,13 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.tokodon.private
-import Qt5Compat.GraphicalEffects
 import Qt.labs.qmlmodels 1.0
 
 import "../Components"
 
-// The attachment grid used in statuses, which is on a specialized grid layout
+/**
+ * @brief The attachment grid used in statuses, which is on a specialized grid layout
+ */
 QQC2.Control {
     id: root
 
@@ -35,12 +36,22 @@ QQC2.Control {
     signal userSensitivityChanged(hide: bool)
 
     property bool hasValidAttachment: {
-        for (let i in root.attachments) {
+        for (const i in root.attachments) {
             if (root.attachments[i].attachmentType !== Attachment.Unknown) {
                 return true;
             }
         }
         return false;
+    }
+
+    function showMedia(): void {
+        isSensitive = false;
+        userSensitivityChanged(false);
+    }
+
+    function hideMedia(): void {
+        isSensitive = true;
+        userSensitivityChanged(true);
     }
 
     Layout.fillWidth: true
@@ -69,6 +80,7 @@ QQC2.Control {
 
     contentItem: GridLayout {
         id: attachmentGridLayout
+
         columns: Math.min(root.attachments.length, 2)
         rowSpacing: Kirigami.Units.smallSpacing
         columnSpacing: Kirigami.Units.smallSpacing
@@ -96,6 +108,14 @@ QQC2.Control {
                         sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
                         sourceHeight: modelData.sourceHeight > img.sourceSize.height ? modelData.sourceHeight : img.sourceSize.height
 
+                        onClicked: {
+                            if (root.isSensitive) {
+                                root.showMedia();
+                            } else {
+                                Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
+                            }
+                        }
+
                         Accessible.description: modelData.caption
 
                         FocusedImage {
@@ -115,32 +135,6 @@ QQC2.Control {
                             focusX: modelData.focusX
                             focusY: modelData.focusY
 
-                            layer.enabled: true
-                            layer.effect: OpacityMask {
-                                maskSource: Item {
-                                    width: img.width
-                                    height: img.height
-                                    Rectangle {
-                                        anchors.centerIn: parent
-                                        width: img.width
-                                        height: img.height
-                                        radius: Kirigami.Units.mediumSpacing
-                                    }
-                                }
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    if (root.isSensitive) {
-                                        root.isSensitive = false;
-                                        root.userSensitivityChanged(false);
-                                    } else {
-                                        Navigation.openFullScreenImage(root.attachments, root.identity, imgContainer.index);
-                                    }
-                                }
-                            }
-
                             Rectangle {
                                 anchors.fill: parent
                                 color: "black"
@@ -155,30 +149,12 @@ QQC2.Control {
                             }
 
                             QQC2.Button {
+                                anchors.centerIn: parent
+
                                 visible: modelData.attachmentType === Attachment.Unknown
                                 text: i18n("Not available")
-                                anchors.centerIn: parent
+
                                 onClicked: Qt.openUrlExternally(modelData.remoteUrl)
-                            }
-
-                            Kirigami.Chip {
-                                anchors {
-                                    top: parent.top
-                                    topMargin: Kirigami.Units.smallSpacing
-                                    right: parent.right
-                                    rightMargin: Kirigami.Units.smallSpacing
-                                }
-
-                                enabled: false
-                                checked: false
-                                checkable: false
-                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
-                                closable: false
-                                visible: modelData.caption !== ""
-                            }
-
-                            HoverHandler {
-                                id: hover
                             }
 
                             TapHandler {
@@ -229,18 +205,17 @@ QQC2.Control {
                         isSensitive: root.isSensitive
                         showControls: false
                         looping: true
+                        showGifChip: true
 
-                        Accessible.description: modelData.caption
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: if (root.isSensitive) {
-                                root.isSensitive = false;
-                                root.userSensitivityChanged(false);
+                        onClicked: {
+                            if (root.isSensitive) {
+                                root.showMedia();
                             } else {
                                 video.togglePlayPause()
                             }
                         }
+
+                        Accessible.description: modelData.caption
 
                         Connections {
                             target: root
@@ -257,34 +232,6 @@ QQC2.Control {
                                 } else if (video.autoPlay) {
                                     video.play()
                                 }
-                            }
-                        }
-
-                        RowLayout {
-                            spacing: Kirigami.Units.mediumSpacing
-
-                            anchors {
-                                top: parent.top
-                                topMargin: Kirigami.Units.smallSpacing
-                                right: parent.right
-                                rightMargin: Kirigami.Units.smallSpacing
-                            }
-
-                            Kirigami.Chip {
-                                checked: false
-                                checkable: false
-                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
-                                closable: false
-                                enabled: false
-                                visible: modelData.caption.length !== 0
-                            }
-
-                            Kirigami.Chip {
-                                checked: false
-                                checkable: false
-                                text: i18n("GIF")
-                                closable: false
-                                enabled: false
                             }
                         }
                     }
@@ -308,14 +255,13 @@ QQC2.Control {
                         autoPlay: false
                         isSensitive: root.isSensitive
                         looping: false
+                        showVideoChip: true
 
                         Accessible.description: modelData.caption
 
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: if (root.isSensitive) {
-                                root.isSensitive = false;
-                                root.userSensitivityChanged(false);
+                        onClicked: {
+                            if (root.isSensitive) {
+                                root.showMedia();
                             } else {
                                 video.togglePlayPause()
                             }
@@ -332,34 +278,6 @@ QQC2.Control {
                                 video.pause()
                             }
                         }
-
-                        RowLayout {
-                            spacing: Kirigami.Units.mediumSpacing
-
-                            anchors {
-                                top: parent.top
-                                topMargin: Kirigami.Units.smallSpacing
-                                right: parent.right
-                                rightMargin: Kirigami.Units.smallSpacing
-                            }
-
-                            Kirigami.Chip {
-                                checked: false
-                                checkable: false
-                                text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
-                                closable: false
-                                enabled: false
-                                visible: modelData.caption.length !== 0
-                            }
-
-                            Kirigami.Chip {
-                                checked: false
-                                checkable: false
-                                text: i18n("Video")
-                                closable: false
-                                enabled: false
-                            }
-                        }
                     }
                 }
             }
@@ -367,41 +285,32 @@ QQC2.Control {
     }
 
     QQC2.Button {
+        anchors {
+            top: parent.top
+            topMargin: Kirigami.Units.smallSpacing
+            left: parent.left
+            leftMargin: Kirigami.Units.smallSpacing
+        }
+
+        visible: !parent.isSensitive && parent.hasValidAttachment && root.canHideMedia
         icon.name: "view-hidden"
         text: i18nc("@action:button", "Hide Media")
         display: QQC2.Button.IconOnly
-
-        implicitWidth: implicitHeight
 
         QQC2.ToolTip.text: text
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
-        visible: !parent.isSensitive && parent.hasValidAttachment && root.canHideMedia
-
-        anchors.top: parent.top
-        anchors.topMargin: Kirigami.Units.smallSpacing
-        anchors.left: parent.left
-        anchors.leftMargin: Kirigami.Units.smallSpacing
-
-        onClicked: {
-            root.isSensitive = true
-            root.userSensitivityChanged(true)
-        }
+        onClicked: root.hideMedia()
     }
 
     QQC2.Button {
         anchors.centerIn: parent
 
         visible: parent.isSensitive && parent.hasValidAttachment
-
         text: i18n("Media Hidden")
-        onClicked: if (root.isSensitive) {
-            root.isSensitive = false;
-            root.userSensitivityChanged(false);
-        } else {
-            Navigation.openFullScreenImage(root.attachments, root.identity, 0);
-        }
+
+        onClicked: root.showMedia()
     }
 
     Loader {

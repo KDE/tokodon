@@ -72,15 +72,6 @@ MediaContainer {
         anchors.centerIn: parent
     }
 
-    MouseArea {
-        id: playerMouseArea
-        acceptedButtons: root.autoPlay ? Qt.NoButton : Qt.LeftButton
-        hoverEnabled: true
-        anchors.fill: parent
-
-        onClicked: root.togglePlayPause()
-    }
-
     QQC2.Button {
         visible: {
             // don't overlay the controls with the "Media is hidden" message
@@ -133,7 +124,7 @@ MediaContainer {
                 return 0.7;
             }
 
-            return playerMouseArea.containsMouse || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
+            return root.containsMouse || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
         }
         Behavior on opacity {
             OpacityAnimator {
