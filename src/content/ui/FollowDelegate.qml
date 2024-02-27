@@ -8,7 +8,7 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
 import org.kde.tokodon.private
-import "./StatusDelegate"
+import "./PostDelegate"
 import "./Components"
 
 QQC2.ItemDelegate {

@@ -8,7 +8,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
 import org.kde.tokodon.private
 import '..'
-import '../StatusDelegate'
+import '../PostDelegate'
 
 Kirigami.AbstractCard {
     id: root

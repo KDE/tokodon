@@ -126,7 +126,7 @@ QQC2.ItemDelegate {
         }
     }
 
-    contentItem: StatusLayout {
+    contentItem: PostLayout {
         id: flexColumn
 
         RowLayout {
@@ -258,7 +258,7 @@ QQC2.ItemDelegate {
             active: false
             visible: false
 
-            sourceComponent: StatusMenu {
+            sourceComponent: PostMenu {
                 index: root.index
                 postId: root.id
                 url: root.url
@@ -338,7 +338,7 @@ QQC2.ItemDelegate {
         }
 
         Loader {
-            sourceComponent: StatusPoll {
+            sourceComponent: PostPoll {
                 index: root.index
                 poll: root.poll
             }
@@ -378,7 +378,7 @@ QQC2.ItemDelegate {
             }
         }
 
-        StatusTags {
+        PostTags {
             standaloneTags: root.post.standaloneTags
 
             Layout.fillWidth: true

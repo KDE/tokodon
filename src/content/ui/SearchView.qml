@@ -9,7 +9,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import org.kde.tokodon
-import './StatusDelegate'
+import './PostDelegate'
 
 ListView {
     id: root
@@ -121,7 +121,7 @@ ListView {
 
         DelegateChoice {
             roleValue: SearchModel.Status
-            StatusDelegate {
+            PostDelegate {
                 x: Kirigami.Units.smallSpacing
                 width: ListView.view.width - Kirigami.Units.smallSpacing * 2
                 secondary: true

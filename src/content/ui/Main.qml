@@ -12,7 +12,7 @@ import org.kde.tokodon
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import "./StatusComposer"
-import "./StatusDelegate"
+import "./PostDelegate"
 
 Kirigami.ApplicationWindow {
     id: appwindow

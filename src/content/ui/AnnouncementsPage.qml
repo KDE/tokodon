@@ -10,7 +10,7 @@ import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import org.kde.tokodon
 
-import "./StatusDelegate"
+import "./PostDelegate"
 
 Kirigami.ScrollablePage {
     id: root

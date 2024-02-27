@@ -9,7 +9,7 @@ import QtQml.Models
 import org.kde.tokodon
 
 import "./StatusComposer"
-import "./StatusDelegate"
+import "./PostDelegate"
 
 Kirigami.ApplicationWindow {
     id: appwindow

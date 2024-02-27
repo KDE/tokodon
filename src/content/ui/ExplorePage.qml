@@ -10,7 +10,7 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import QtQml.Models
-import "./StatusDelegate"
+import "./PostDelegate"
 import "./StatusComposer"
 
 Kirigami.ScrollablePage {
@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
         Component {
             id: trendingPostsModelComponent
 
-            StatusDelegate {
+            PostDelegate {
                 width: ListView.view.width
                 timelineModel: tagsView.model
                 loading: tagsView.model.loading

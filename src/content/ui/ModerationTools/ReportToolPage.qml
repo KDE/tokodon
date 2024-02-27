@@ -9,7 +9,7 @@ import org.kde.tokodon
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
-import "../StatusDelegate"
+import "../PostDelegate"
 
 Kirigami.ScrollablePage {
     title: i18n("Accounts Tool Page")

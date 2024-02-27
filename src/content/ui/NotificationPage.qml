@@ -7,7 +7,7 @@ import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
-import "./StatusDelegate"
+import "./PostDelegate"
 import "./StatusComposer"
 
 Kirigami.ScrollablePage {
@@ -156,7 +156,7 @@ Kirigami.ScrollablePage {
             role: "type"
             DelegateChoice {
                 roleValue: Notification.Favorite
-                StatusDelegate {
+                PostDelegate {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
@@ -168,7 +168,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Repeat
-                StatusDelegate {
+                PostDelegate {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
@@ -180,7 +180,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Mention
-                StatusDelegate {
+                PostDelegate {
                     width: ListView.view.width
                     timelineModel: notificationModel
                     loading: listview.model.loading
@@ -194,7 +194,7 @@ Kirigami.ScrollablePage {
             }
             DelegateChoice {
                 roleValue: Notification.Update
-                StatusDelegate {
+                PostDelegate {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel
@@ -206,7 +206,7 @@ Kirigami.ScrollablePage {
 
             DelegateChoice {
                 roleValue: Notification.Poll
-                StatusDelegate {
+                PostDelegate {
                     width: ListView.view.width
                     secondary: true
                     timelineModel: notificationModel

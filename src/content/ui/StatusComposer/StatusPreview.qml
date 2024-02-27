@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.tokodon.private
 
-import "../StatusDelegate" as StatusDelegate
+import "../PostDelegate" as PostDelegate
 
 ColumnLayout {
     id: root
@@ -17,7 +17,7 @@ ColumnLayout {
 
     spacing: Kirigami.Units.largeSpacing
 
-    StatusDelegate.InlineIdentityInfo {
+    PostDelegate.InlineIdentityInfo {
         identity: root.post.authorIdentity
         secondary: false
 
@@ -38,7 +38,7 @@ ColumnLayout {
 
         Layout.fillWidth: true
 
-        sourceComponent: StatusDelegate.PostContent {
+        sourceComponent: PostDelegate.PostContent {
             content: post.content
             expandedPost: false
             secondary: true
@@ -52,7 +52,7 @@ ColumnLayout {
 
         Layout.fillWidth: true
 
-        sourceComponent: StatusDelegate.AttachmentGrid {
+        sourceComponent: PostDelegate.AttachmentGrid {
             expandedPost: false
             attachments: root.post.attachments
             sensitive: false
@@ -66,7 +66,7 @@ ColumnLayout {
 
     Loader {
         active: root.post.poll !== null
-        sourceComponent: StatusDelegate.StatusPoll
+        sourceComponent: PostDelegate.PostPoll
         {
             poll: root.post.poll
         }

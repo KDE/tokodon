@@ -9,7 +9,7 @@ import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
-import "./StatusDelegate"
+import "./PostDelegate"
 
 Kirigami.ScrollablePage {
     id: root

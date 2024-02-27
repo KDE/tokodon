@@ -235,22 +235,22 @@ qt_target_qml_sources(tokodon_static
         content/ui/StatusComposer/StatusPreview.qml
 
         # Delegate
-        content/ui/StatusDelegate/AttachmentGrid.qml
-        content/ui/StatusDelegate/AttachmentMenu.qml
-        content/ui/StatusDelegate/InformationBar.qml
-        content/ui/StatusDelegate/InlineIdentityInfo.qml
-        content/ui/StatusDelegate/InteractionButton.qml
-        content/ui/StatusDelegate/LinkPreview.qml
-        content/ui/StatusDelegate/MediaContainer.qml
-        content/ui/StatusDelegate/PostContent.qml
-        content/ui/StatusDelegate/PostInfoBar.qml
-        content/ui/StatusDelegate/StatusDelegate.qml
-        content/ui/StatusDelegate/StatusLayout.qml
-        content/ui/StatusDelegate/StatusMenu.qml
-        content/ui/StatusDelegate/StatusPoll.qml
-        content/ui/StatusDelegate/StatusTags.qml
-        content/ui/StatusDelegate/UserInteractionLabel.qml
-        content/ui/StatusDelegate/VideoAttachment.qml
+        content/ui/PostDelegate/AttachmentGrid.qml
+        content/ui/PostDelegate/AttachmentMenu.qml
+        content/ui/PostDelegate/InformationBar.qml
+        content/ui/PostDelegate/InlineIdentityInfo.qml
+        content/ui/PostDelegate/InteractionButton.qml
+        content/ui/PostDelegate/LinkPreview.qml
+        content/ui/PostDelegate/MediaContainer.qml
+        content/ui/PostDelegate/PostContent.qml
+        content/ui/PostDelegate/PostInfoBar.qml
+        content/ui/PostDelegate/PostDelegate.qml
+        content/ui/PostDelegate/PostLayout.qml
+        content/ui/PostDelegate/PostMenu.qml
+        content/ui/PostDelegate/PostPoll.qml
+        content/ui/PostDelegate/PostTags.qml
+        content/ui/PostDelegate/UserInteractionLabel.qml
+        content/ui/PostDelegate/VideoAttachment.qml
 
         # Other
         content/ui/AccountInfo.qml

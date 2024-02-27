@@ -8,7 +8,7 @@ import org.kde.kirigamiaddons.components 1 as Components
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import './StatusDelegate'
+import './PostDelegate'
 import './StatusComposer'
 
 Kirigami.ScrollablePage {
@@ -150,7 +150,7 @@ Kirigami.ScrollablePage {
             FullScreenImage {}
         }
 
-        delegate: StatusDelegate {
+        delegate: PostDelegate {
             id: status
 
             timelineModel: root.model

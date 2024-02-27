@@ -12,7 +12,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as Components
 import org.kde.tokodon
 
-import "./StatusDelegate" as StatusDelegate
+import "./PostDelegate" as PostDelegate
 
 Components.AlbumMaximizeComponent {
     id: root
@@ -27,7 +27,7 @@ Components.AlbumMaximizeComponent {
         }
     }
 
-    leading: StatusDelegate.InlineIdentityInfo {
+    leading: PostDelegate.InlineIdentityInfo {
         identity: root.identity
         secondary: false
         onClicked: close()
