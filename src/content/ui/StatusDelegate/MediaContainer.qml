@@ -44,6 +44,7 @@ Item {
     readonly property int heightDivisor: (isSpecialAttachment || count < 3) ? 1 : 2
 
     signal clicked()
+    signal contextMenuRequested()
 
     Layout.fillWidth: true
     Layout.fillHeight: !shouldKeepAspectRatio
@@ -72,8 +73,23 @@ Item {
         id: mouseArea
 
         anchors.fill: parent
+        acceptedButtons: Qt.LeftButton
 
         onClicked: root.clicked()
+    }
+
+    TapHandler {
+        acceptedButtons: Qt.RightButton
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus | PointerDevice.TouchPad
+        exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
+        onTapped: root.contextMenuRequested()
+    }
+
+    TapHandler {
+        acceptedButtons: Qt.LeftButton
+        acceptedDevices: PointerDevice.TouchScreen
+        exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
+        onLongPressed: root.contextMenuRequested()
     }
 
     RowLayout {

@@ -54,6 +54,12 @@ QQC2.Control {
         userSensitivityChanged(true);
     }
 
+    function openAttachmentMenu(attachment: Attachment): void {
+        imageMenu.active = true;
+        imageMenu.item.attachment = attachment;
+        imageMenu.item.popup();
+    }
+
     Layout.fillWidth: true
     Layout.fillHeight: shouldKeepAspectRatio
     Layout.topMargin: Kirigami.Units.largeSpacing
@@ -116,6 +122,12 @@ QQC2.Control {
                             }
                         }
 
+                        onContextMenuRequested: {
+                            if (!root.isSensitive) {
+                                root.openAttachmentMenu(modelData);
+                            }
+                        }
+
                         Accessible.description: modelData.caption
 
                         FocusedImage {
@@ -156,32 +168,6 @@ QQC2.Control {
 
                                 onClicked: Qt.openUrlExternally(modelData.remoteUrl)
                             }
-
-                            TapHandler {
-                                acceptedButtons: Qt.RightButton
-                                acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus | PointerDevice.TouchPad
-                                exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
-                                onTapped: {
-                                    if (!root.isSensitive) {
-                                        imageMenu.active = true;
-                                        imageMenu.item.attachment = modelData;
-                                        imageMenu.item.popup();
-                                    }
-                                }
-                            }
-
-                            TapHandler {
-                                acceptedButtons: Qt.LeftButton
-                                acceptedDevices: PointerDevice.TouchScreen
-                                exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
-                                onLongPressed: {
-                                    if (!root.isSensitive) {
-                                        imageMenu.active = true;
-                                        imageMenu.item.attachment = modelData;
-                                        imageMenu.item.popup();
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -212,6 +198,12 @@ QQC2.Control {
                                 root.showMedia();
                             } else {
                                 video.togglePlayPause()
+                            }
+                        }
+
+                        onContextMenuRequested: {
+                            if (!root.isSensitive) {
+                                root.openAttachmentMenu(modelData);
                             }
                         }
 
@@ -267,6 +259,12 @@ QQC2.Control {
                             }
                         }
 
+                        onContextMenuRequested: {
+                            if (!root.isSensitive) {
+                                root.openAttachmentMenu(modelData);
+                            }
+                        }
+
                         Connections {
                             target: root
                             function onInViewPortChanged() {
@@ -319,7 +317,7 @@ QQC2.Control {
         active: false
         visible: active
 
-        sourceComponent: ImageMenu {
+        sourceComponent: AttachmentMenu {
             onClosed: postMenu.active = false
         }
     }

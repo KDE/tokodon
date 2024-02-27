@@ -68,7 +68,7 @@ Components.AlbumMaximizeComponent {
         forceActiveFocus();
     }
 
-    ImageMenu {
+    AttachmentMenu {
         id: imageMenu
         attachment: content.currentItem
     }

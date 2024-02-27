@@ -38,7 +38,19 @@ QQC2.Menu {
         enabled: root.attachment !== null
 
         icon.name: "window"
-        text: i18n("Save Image As…")
+        text: {
+            if (root.attachment == null) {
+                return;
+            }
+
+            if (root.attachment.attachmentType === Attachment.Image) {
+                return i18n("Save Image As…");
+            } else if (root.attachment.attachmentType === Attachment.GifV) {
+                return i18n("Save Gif As…");
+            } else if (root.attachment.attachmentType === Attachment.Video) {
+                return i18n("Save Video As…");
+            }
+        }
 
         onTriggered: {
             const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
@@ -51,6 +63,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         enabled: root.attachment !== null
+        visible: root.attachment != null && root.attachment.attachmentType === Attachment.Image
 
         icon.name: "edit-copy"
         text: i18n("Copy Image")
