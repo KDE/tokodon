@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the tokodon package.
 #
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Matjaž Jeran <matjaz.jeran@amis.net>
+# SPDX-FileCopyrightText: 2024 Jure Repinc <jlp@holodeck1.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-23 05:41+0100\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"PO-Revision-Date: 2024-02-27 13:59+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -91,7 +92,7 @@ msgstr "%1 je zapisal novo objavo"
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1 je ojačalo vašo objavo"
+msgstr "%1 je izpostavil vašo objavo"
 
 #: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
 #, kde-format
@@ -175,20 +176,20 @@ msgstr "Predstavljeni uporabniki"
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 priljubljen"
-msgstr[1] "%1 priljubljena"
-msgstr[2] "%1 priljubljeni"
-msgstr[3] "%1 priljubljenih"
+msgstr[0] "%1 priljubljenih"
+msgstr[1] "%1 priljubljen"
+msgstr[2] "%1 priljubljena"
+msgstr[3] "%1 priljubljeni"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 pospešek"
-msgstr[1] "%1 pospeška"
-msgstr[2] "%1 pospeški"
-msgstr[3] "%1 pospeškov"
+msgstr[0] "%1 izpostavitev"
+msgstr[1] "%1 izpostavitev"
+msgstr[2] "%1 izpostavitvi"
+msgstr[3] "%1 izpostavitve"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
@@ -228,7 +229,7 @@ msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
 #: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No users boosted this post"
-msgstr "Ni uporabnika, ki bi pospešil to objavo"
+msgstr "Ni uporabnika, ki bi izpostavil to objavo"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -366,12 +367,12 @@ msgstr "Obveščaj me, ko objavlja %1."
 #: content/ui/AccountInfo.qml:259
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Skrivaj izbruhe iz %1"
+msgstr "Skrij izpostavitve od  %1"
 
 #: content/ui/AccountInfo.qml:261
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Prikazuj izbruhe od %1"
+msgstr "Prikaži izpostavitve od %1"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -408,7 +409,7 @@ msgstr "Blokiraj"
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Poročaj…"
+msgstr "Prijavi …"
 
 #: content/ui/AccountInfo.qml:335
 #, kde-format
@@ -481,30 +482,30 @@ msgstr "Kliknite za dodajanje opombe"
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
-msgstr[0] "<b>%1</b> objava"
-msgstr[1] "<b>%1</b> objavi"
-msgstr[2] "<b>%1</b> objave"
-msgstr[3] "<b>%1</b> objav"
+msgstr[0] "<b>%1</b> objav"
+msgstr[1] "<b>%1</b> objava"
+msgstr[2] "<b>%1</b> objavi"
+msgstr[3] "<b>%1</b> objave"
 
 #: content/ui/AccountInfo.qml:609
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
-msgstr[0] "<b>%1</b> sledilec"
-msgstr[1] "<b>%1</b> sledilca"
-msgstr[2] "<b>%1</b> sledilci"
-msgstr[3] "<b>%1</b> sledilcev"
+msgstr[0] "<b>%1</b> sledilcev"
+msgstr[1] "<b>%1</b> sledilec"
+msgstr[2] "<b>%1</b> sledilca"
+msgstr[3] "<b>%1</b> sledilci"
 
 #: content/ui/AccountInfo.qml:622
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "<b>%1</b> sledi"
-msgstr[1] "<b>%1</b> sledita"
-msgstr[2] "<b>%1</b> sledijo"
-msgstr[3] "<b>%1</b> sledi"
+msgstr[0] "<b>%1</b> sledenih"
+msgstr[1] "<b>%1</b> sleden"
+msgstr[2] "<b>%1</b> sledena"
+msgstr[3] "<b>%1</b> sledeni"
 
 #: content/ui/AccountInfo.qml:649
 #, kde-format
@@ -528,7 +529,7 @@ msgstr "Mediji"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Skrij pospeševanja"
+msgstr "Skrij izpostavitve"
 
 #: content/ui/AccountInfo.qml:706
 #, kde-format
@@ -671,10 +672,10 @@ msgstr "Značke"
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] "%1 človek se pogovarja"
-msgstr[1] "%1 človeka se pogovarjata"
-msgstr[2] "%1 ljudje se pogovarjajo"
-msgstr[3] "%1 ljudi se pogovarja"
+msgstr[0] "%1 ljudi govori"
+msgstr[1] "%1 človek govori"
+msgstr[2] "%1 človeka govorita"
+msgstr[3] "%1 ljudje govorijo"
 
 #: content/ui/ExplorePage.qml:176
 #, kde-format
@@ -709,7 +710,7 @@ msgid ""
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
 "Tokodon lahko prikaže obvestila za dejavnosti, kot so uporabniki, ki "
-"spodbujajo vaše objave ali odgovarjajo nanje.\n"
+"izpostavljajo vaše objave ali odgovarjajo nanje.\n"
 "\n"
 "Vrste prikazanih obvestil je mogoče natančno nastaviti, ko ste prijavljeni."
 
@@ -1024,31 +1025,31 @@ msgstr "Prijava"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "Odpri kot…"
+msgstr "Odpri kot …"
 
 #: content/ui/Main.qml:106
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Odgovori kot…"
+msgstr "Odgovori kot …"
 
 #: content/ui/Main.qml:108
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Priljubljena kot…"
+msgstr "Priljubljena kot …"
 
 #: content/ui/Main.qml:110
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Pospeši kot…"
+msgstr "Izpostavi kot …"
 
 #: content/ui/Main.qml:112
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Zaznamuj kot…"
+msgstr "Zaznamuj kot …"
 
 #: content/ui/Main.qml:114
 #, kde-format
@@ -2539,7 +2540,7 @@ msgstr "Omembe"
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Pospeški"
+msgstr "Izpostavitve"
 
 #: content/ui/NotificationPage.qml:63
 #, kde-format
@@ -2583,7 +2584,7 @@ msgstr "%1 je pohvalilo vašo objavo"
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 uporabnikov je ojačalo vašo objavo"
+msgstr "%1 uporabnikov je izpostavilo vašo objavo"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
@@ -2645,7 +2646,7 @@ msgstr "Išči"
 #: content/ui/SearchView.qml:38
 #, kde-format
 msgid "Loading..."
-msgstr "Nalaganje..."
+msgstr "Nalaganje …"
 
 #: content/ui/SearchView.qml:46
 #, kde-format
@@ -2704,7 +2705,7 @@ msgstr "Objave"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Prikaži število odgovorov, pohval in pospeškov"
+msgstr "Prikaži število odgovorov, priljubljenih in izpostavitev"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -2817,7 +2818,7 @@ msgstr "Statusi"
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
 msgid "Boosts"
-msgstr "Pospeški"
+msgstr "Izpostavitve"
 
 #: content/ui/Settings/NotificationsPage.qml:93
 #, kde-format
@@ -3046,7 +3047,7 @@ msgstr "Slovar črkovalnika"
 #: content/ui/Settings/SonnetPage.qml:165
 #, kde-format
 msgid "Add a new word to your personal dictionary…"
-msgstr "Dodaj novo besedo v vaš osebni slovar…"
+msgstr "Dodajte novo besedo v svoj osebni slovar …"
 
 #: content/ui/Settings/SonnetPage.qml:168
 #, kde-format
@@ -3408,7 +3409,7 @@ msgstr "Mediji skriti"
 #: content/ui/StatusDelegate/ImageMenu.qml:38
 #, kde-format
 msgid "Save Image As…"
-msgstr "Shrani sliko kot…"
+msgstr "Shrani sliko kot …"
 
 #: content/ui/StatusDelegate/ImageMenu.qml:53
 #, kde-format
@@ -3424,19 +3425,19 @@ msgstr "prek %1"
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
-msgstr[0] "%1 Priljubljen"
-msgstr[1] "%1 Priljubljena"
-msgstr[2] "%1 Priljubljeni"
-msgstr[3] "%1 Priljubljenih"
+msgstr[0] "%1 Priljubljenih"
+msgstr[1] "%1 Priljubljen"
+msgstr[2] "%1 Priljubljena"
+msgstr[3] "%1 Priljubljeni"
 
 #: content/ui/StatusDelegate/InformationBar.qml:124
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
-msgstr[0] "%1 Pospešek"
-msgstr[1] "%1 Pospeška"
-msgstr[2] "%1 Pospeški"
-msgstr[3] "%1 Pospeškov"
+msgstr[0] "%1 Izpostavitev"
+msgstr[1] "%1 Izpostavitev"
+msgstr[2] "%1 Izpostavitvi"
+msgstr[3] "%1 Izpostavitve"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:19
 #, kde-format
@@ -3470,31 +3471,31 @@ msgstr "Vdelaj"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr "Odpri kot…"
+msgstr "Odpri kot …"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Odgovori kot…"
+msgstr "Odgovori kot …"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Priljubljen kot…"
+msgstr "Priljubljena kot …"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:91
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Pospeši kot…"
+msgstr "Izpostavi kot …"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:98
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Zaznamuj kot…"
+msgstr "Zaznamuj kot …"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:106
 #, kde-format
@@ -3619,17 +3620,17 @@ msgstr "Odgovori"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Pospeši"
+msgstr "Izpostavi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:479
 #, kde-format
 msgid "Boosted"
-msgstr "Pospešeno"
+msgstr "Izpostavljeno"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:479
 #, kde-format
 msgid "Boost"
-msgstr "Pospeši"
+msgstr "Izpostavi"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:499
 #, kde-format
@@ -3696,7 +3697,7 @@ msgstr "Glas"
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:72
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1 ojačalo"
+msgstr "%1 je izpostavil"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:74
 #, kde-format
@@ -3728,7 +3729,7 @@ msgstr "Filtri"
 #: content/ui/TimelinePage.qml:92
 #, kde-format
 msgid "Show Boosts"
-msgstr "Prikazuj izbruhe"
+msgstr "Prikaži izpostavitve"
 
 #: content/ui/TimelinePage.qml:99
 #, kde-format
@@ -3799,9 +3800,9 @@ msgstr "%1 in %2"
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] "%2 in še %1 drug"
-msgstr[1] "%2 in še %1 druga"
-msgstr[2] "%2 in še %1 drugi"
+msgstr[0] "%2 in še %1 drugih"
+msgstr[1] "%2 in še %1 drug"
+msgstr[2] "%2 in še %1 druga"
 msgstr[3] "%2 in še %1 drugi"
 
 #: editor/listeditorbackend.cpp:109
@@ -4019,27 +4020,27 @@ msgstr "%1d"
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] "pred %1 tednom"
-msgstr[1] "pred %1 tednoma"
-msgstr[2] "pred %1 tedni"
+msgstr[0] "pred %1 tedni"
+msgstr[1] "pred %1 tednom"
+msgstr[2] "pred %1 tednoma"
 msgstr[3] "pred %1 tedni"
 
 #: timeline/post.cpp:202
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] "pred %1 mesecem"
-msgstr[1] "pred %1 mesecema"
-msgstr[2] "pred %1 meseci"
+msgstr[0] "pred %1 meseci"
+msgstr[1] "pred %1 mesecem"
+msgstr[2] "pred %1 mesecema"
 msgstr[3] "pred %1 meseci"
 
 #: timeline/post.cpp:206
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] "pred %1 letom"
-msgstr[1] "pred %1 letoma"
-msgstr[2] "pred %1 leti"
+msgstr[0] "pred %1 leti"
+msgstr[1] "pred %1 letom"
+msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
 
 #: timeline/tagsmodel.cpp:21
