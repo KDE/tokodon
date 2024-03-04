@@ -165,15 +165,13 @@
             "name": "kirigami-addons",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DBUILD_WITH_QT6=ON"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-addons.git",
-                    "commit": "34d311219e8b7209746a98b3a29b91ded05ff936"
+                    "url": "https://invent.kde.org/libraries/kirigami-addons.git"
                 }
             ]
         },
