@@ -349,6 +349,7 @@ Kirigami.ApplicationWindow {
                     Layout.fillWidth: true
                     visible: modelData.visible
                     enabled: !AccountManager.selectedAccountHasIssue
+                    activeFocusOnTab: true
                 }
             }
 
@@ -362,6 +363,7 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button Open debug page", "Debug")
                 visible: AccountManager.testMode
                 padding: Kirigami.Units.largeSpacing
+                activeFocusOnTab: true
 
                 Layout.fillWidth: true
             }
@@ -372,6 +374,7 @@ Kirigami.ApplicationWindow {
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
                 padding: Kirigami.Units.largeSpacing
+                activeFocusOnTab: true
 
                 Layout.fillWidth: true
             }
@@ -381,6 +384,7 @@ Kirigami.ApplicationWindow {
                 onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
+                activeFocusOnTab: true
 
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
