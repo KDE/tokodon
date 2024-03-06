@@ -97,6 +97,7 @@ QQC2.Pane {
 
             model: AccountManager
             currentIndex: AccountManager.selectedIndex
+            activeFocusOnTab: true
 
             header: Kirigami.Separator {
                 anchors {
@@ -111,6 +112,7 @@ QQC2.Pane {
             footer: Delegates.RoundedItemDelegate {
                 id: addAccountDelegaze
 
+                activeFocusOnTab: true
                 width: parent.width
                 highlighted: focus
                 icon {
