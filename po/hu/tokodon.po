@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-06 02:18+0000\n"
-"PO-Revision-Date: 2024-01-27 23:12+0100\n"
+"PO-Revision-Date: 2024-03-11 10:05+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "%1 új bejegyzést írt"
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1 hangsúlyozta a bejegyzését"
+msgstr "%1 megtolta a bejegyzését"
 
 #: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
 #, kde-format
@@ -183,8 +183,8 @@ msgstr[1] "%1 kedvencelés"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 hangsúlyozás"
-msgstr[1] "%1 hangsúlyozás"
+msgstr[0] "%1 megtolás"
+msgstr[1] "%1 megtolás"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "Senki sem kedvencelte ezt a bejegyzést"
 #: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No users boosted this post"
-msgstr "Senki sem hangsúlyozta ezt a bejegyzést"
+msgstr "Senki sem tolta meg ezt a bejegyzést"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -361,12 +361,12 @@ msgstr "Értesítsen, ha %1 posztol."
 #: content/ui/AccountInfo.qml:259
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "%1 hangsúlyozásainak elrejtése"
+msgstr "%1 megtolásainak elrejtése"
 
 #: content/ui/AccountInfo.qml:261
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "%1 hangsúlyozásainak megjelenítése"
+msgstr "%1 megtolásainak megjelenítése"
 
 #: content/ui/AccountInfo.qml:277
 #, kde-format
@@ -517,7 +517,7 @@ msgstr "Média"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Hangsúlyozások elrejtése"
+msgstr "Megtolások elrejtése"
 
 #: content/ui/AccountInfo.qml:706
 #, kde-format
@@ -957,7 +957,7 @@ msgstr "Kedvencelés mint…"
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Hangsúlyozás mint…"
+msgstr "Megtolás mint…"
 
 #: content/ui/Main.qml:105
 #, kde-format
@@ -2456,7 +2456,7 @@ msgstr "Említések"
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Kiemelések"
+msgstr "Megtolások"
 
 #: content/ui/NotificationPage.qml:63
 #, kde-format
@@ -2500,7 +2500,7 @@ msgstr "%1 felhasználó kedvencelte a bejegyzését"
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 felhasználó hangsúlyozta a bejegyzését"
+msgstr "%1 felhasználó tolta meg a bejegyzését"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
@@ -2621,7 +2621,7 @@ msgstr "Bejegyzések"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Válaszok, kedvencelések és hangsúlyozások számának megjelenítése"
+msgstr "Válaszok, kedvencelések és megtolások számának megjelenítése"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -2734,7 +2734,7 @@ msgstr "Állapotok"
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
 msgid "Boosts"
-msgstr "Hangsúlyozások"
+msgstr "Megtolások"
 
 #: content/ui/Settings/NotificationsPage.qml:93
 #, kde-format
@@ -3348,8 +3348,8 @@ msgstr[1] "%1 kedvencelés"
 #, kde-format
 msgid "%1 Boost"
 msgid_plural "%1 Boosts"
-msgstr[0] "%1 hangsúlyozás"
-msgstr[1] "%1 hangsúlyozás"
+msgstr[0] "%1 megtolás"
+msgstr[1] "%1 megtolás"
 
 #: content/ui/StatusDelegate/LinkPreview.qml:19
 #, kde-format
@@ -3401,7 +3401,7 @@ msgstr "Kedvencelés mint…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Hangsúlyozás mint…"
+msgstr "Megtolás mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:98
 #, kde-format
@@ -3532,17 +3532,17 @@ msgstr "Válasz"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Hangsúlyozás"
+msgstr "Megtolás"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:416
 #, kde-format
 msgid "Boosted"
-msgstr "Hangsúlyozott"
+msgstr "Megtolt"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:416
 #, kde-format
 msgid "Boost"
-msgstr "Hangsúlyozás"
+msgstr "Megtolás"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:434
 #, kde-format
@@ -3600,7 +3600,7 @@ msgstr "Szavazás"
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:72
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1 hangsúlyozva"
+msgstr "%1 megtolva"
 
 #: content/ui/StatusDelegate/UserInteractionLabel.qml:74
 #, kde-format
@@ -3622,7 +3622,7 @@ msgstr "Szűrők"
 #: content/ui/TimelinePage.qml:79
 #, kde-format
 msgid "Show Boosts"
-msgstr "Hangsúlyozások megjelenítése"
+msgstr "Megtolások megjelenítése"
 
 #: content/ui/TimelinePage.qml:86
 #, kde-format
