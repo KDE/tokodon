@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-13 00:38+0000\n"
-"PO-Revision-Date: 2024-03-11 10:05+0100\n"
+"PO-Revision-Date: 2024-03-13 10:00+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -31,12 +31,12 @@ msgstr "Nem sikerült leállítani a fiók követését"
 #: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not block account"
-msgstr "Nem sikerült tiltani a fiókot"
+msgstr "Nem sikerült letiltani a fiókot"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unblock account"
-msgstr "Nem sikerült leállítani a fiók tiltását"
+msgstr "Nem sikerült leállítani a fiók letiltását"
 
 #: account/abstractaccount.cpp:659
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "%1 kéri, hogy kövesse"
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
-msgstr "%1 kedvencelte a bejegyzését"
+msgstr "%1 kedvencnek jelölte a bejegyzését"
 
 #: account/notificationhandler.cpp:122
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Követők"
 #, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr "Követés"
+msgstr "Követett"
 
 #: account/socialgraphmodel.cpp:33
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "Némított felhasználók"
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Tiltott felhasználók"
+msgstr "Letiltott felhasználók"
 
 #: account/socialgraphmodel.cpp:37
 #, kde-format
@@ -175,8 +175,8 @@ msgstr "Kiemelt felhasználók"
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 kedvencelés"
-msgstr[1] "%1 kedvencelés"
+msgstr[0] "%1 kedvencnek jelölés"
+msgstr[1] "%1 kedvencnek jelölés"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -209,7 +209,7 @@ msgstr "Nincsenek némított felhasználók"
 #: account/socialgraphmodel.cpp:57
 #, kde-format
 msgid "No blocked users"
-msgstr "Nincsenek tiltott felhasználók"
+msgstr "Nincsenek letiltott felhasználók"
 
 #: account/socialgraphmodel.cpp:59
 #, kde-format
@@ -219,7 +219,7 @@ msgstr "Nincsenek kiemelt felhasználók"
 #: account/socialgraphmodel.cpp:61
 #, kde-format
 msgid "No users favourited this post"
-msgstr "Senki sem kedvencelte ezt a bejegyzést"
+msgstr "Senki sem jelölte kedvencnek ezt a bejegyzést"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -306,7 +306,8 @@ msgstr "Nincsenek korlátozások"
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
-msgstr "Hiba lépett fel a domaintiltás frissítésére irányuló PUT kérés során."
+msgstr ""
+"Hiba lépett fel a domainletiltás frissítésére irányuló PUT kérés során."
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
@@ -351,12 +352,12 @@ msgstr "Követés"
 #: content/ui/AccountInfo.qml:240
 #, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Ne értesítsen többé, ha %1 posztol."
+msgstr "Ne értesítsen többé, ha %1 bejegyzést ír."
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Értesítsen, ha %1 posztol."
+msgstr "Értesítsen, ha %1 bejegyzést ír."
 
 #: content/ui/AccountInfo.qml:259
 #, kde-format
@@ -381,7 +382,7 @@ msgstr "Kiemelés a profilon"
 #: content/ui/AccountInfo.qml:295
 #, kde-format
 msgid "Unmute"
-msgstr "Visszahangosítás"
+msgstr "Némítás feloldása"
 
 #: content/ui/AccountInfo.qml:297
 #, kde-format
@@ -391,12 +392,12 @@ msgstr "Némítás"
 #: content/ui/AccountInfo.qml:313
 #, kde-format
 msgid "Unblock"
-msgstr "Tiltás feloldása"
+msgstr "Letiltás feloldása"
 
 #: content/ui/AccountInfo.qml:315
 #, kde-format
 msgid "Block"
-msgstr "Tiltás"
+msgstr "Letiltás"
 
 #: content/ui/AccountInfo.qml:329
 #: content/ui/StatusDelegate/OverflowMenu.qml:162
@@ -439,7 +440,7 @@ msgstr "Némított felhasználók"
 #: content/ui/AccountInfo.qml:363
 #, kde-format
 msgid "Blocked Users"
-msgstr "Tiltott felhasználók"
+msgstr "Letiltott felhasználók"
 
 #: content/ui/AccountInfo.qml:369
 #, kde-format
@@ -696,7 +697,7 @@ msgid ""
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
 "A Tokodon meg tud jeleníteni értesítéseket olyan tevékenységekhez, mint a "
-"bejegyzéseinek hangsúlyozása vagy válaszok azokra.\n"
+"bejegyzéseinek megtolása vagy válaszok azokra.\n"
 "\n"
 "A megjelenítendő értesítéstípusok bejelentkezés után finomhangokhatók."
 
@@ -1023,7 +1024,7 @@ msgstr "Válasz mint…"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Kedvencelés mint…"
+msgstr "Kedvencnek jelölés mint…"
 
 #: content/ui/Main.qml:110
 #, kde-format
@@ -1283,7 +1284,7 @@ msgstr "Nem találhatók fiókok"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "E-mail tiltás létrehozása"
+msgstr "E-mail letiltás létrehozása"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
@@ -1301,7 +1302,7 @@ msgstr "E-mail domainnév"
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Tiltás kezdete:"
+msgstr "Letiltás kezdete:"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -1329,18 +1330,18 @@ msgstr "Mégse"
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "E-mail tiltás törlése"
+msgstr "E-mail letiltás törlése"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr "E-mail tiltás törölve"
+msgstr "E-mail letiltás törölve"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr "Új e-mail domain tiltás"
+msgstr "Új e-mail domain letiltás"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
@@ -1366,7 +1367,7 @@ msgstr "Tartomány feloldása"
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr "Új e-mail tiltás hozzáadva"
+msgstr "Új e-mail letiltás hozzáadva"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
@@ -1377,12 +1378,12 @@ msgstr "%1 regisztrációs kísérlet az elmúlt héten"
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
-msgstr "Nem találhatók e-mail tiltások"
+msgstr "Nem találhatók e-mail letiltások"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
 msgid "Add New Domain Block"
-msgstr "Új domain tiltás hozzáadása"
+msgstr "Új domain letiltás hozzáadása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:27
 #: content/ui/ModerationTools/FederationToolPage.qml:160
@@ -1420,7 +1421,7 @@ msgstr "Összevonás nem engedélyezett a domainre"
 #: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
-msgstr "Domain tiltás hozzáadása"
+msgstr "Domain letiltás hozzáadása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
@@ -1518,12 +1519,12 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr "Tiltás létrehozása"
+msgstr "Letiltás létrehozása"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
-msgstr "Új domain tiltás hozzáadva"
+msgstr "Új domain letiltás hozzáadva"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
@@ -1557,7 +1558,7 @@ msgstr "Moderáció"
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Tiltott tartományok"
+msgstr "Letiltott tartományok"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
@@ -1674,7 +1675,7 @@ msgstr "Az új regisztrációk a jóváhagyását igénylik"
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
-msgstr "Regisztrációk tiltása"
+msgstr "Regisztrációk letiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
@@ -1686,13 +1687,13 @@ msgstr "Új regisztráció nem engedélyezett"
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
-msgstr "Hozzáférés tiltása"
+msgstr "Hozzáférés letiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr "Hozzáférés tiltása az összes erőforráshoz"
+msgstr "Hozzáférés letiltása az összes erőforráshoz"
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
@@ -1717,14 +1718,14 @@ msgstr "Regisztrációk korlátozása"
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Regisztrációk tiltása"
+msgstr "Regisztrációk letiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Hozzáférés tiltása"
+msgstr "Hozzáférés letiltása"
 
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
@@ -1884,7 +1885,7 @@ msgstr "Követők"
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Követés"
+msgstr "Követett"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:383
 #, kde-format
@@ -2005,17 +2006,17 @@ msgstr "Intézkedés foganatosítása a fiókkal szemben"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr "Domain tiltás eltávolítása"
+msgstr "Domain letiltás eltávolítása"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr "Domain tiltás eltávolítva"
+msgstr "Domain letiltás eltávolítva"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr "Domain tiltás szerkesztése"
+msgstr "Domain letiltás szerkesztése"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
@@ -2027,18 +2028,18 @@ msgstr "Privát hozzászólás"
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr "Tiltás frissítése"
+msgstr "Letiltás frissítése"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr "Domain tiltás frissítve"
+msgstr "Domain letiltás frissítve"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:132
 #: content/ui/ModerationTools/MainIpRulePage.qml:175
 #, kde-format
 msgid "Blocked at"
-msgstr "Tiltva ekkor:"
+msgstr "Letiltva ekkor:"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:140
 #, kde-format
@@ -2079,7 +2080,7 @@ msgstr "Jelentések elutasítása"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:185
 #, kde-format
 msgid "Edit Domain Block"
-msgstr "Domain tiltás szerkesztése"
+msgstr "Domain letiltás szerkesztése"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
 #, kde-format
@@ -2241,7 +2242,7 @@ msgstr "Követők"
 #, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Követés"
+msgstr "Követett"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:216
 #, kde-format
@@ -2442,7 +2443,7 @@ msgstr "IP-szabályok"
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
-msgstr "Tiltott e-mail címek"
+msgstr "Letiltott e-mail címek"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:15
 #, kde-format
@@ -2567,7 +2568,7 @@ msgstr "%1 profiljának megtekintése"
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr "%1 felhasználó kedvencelte a bejegyzését"
+msgstr "%1 felhasználó jelölte kedvencnek a bejegyzését"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
@@ -2693,7 +2694,7 @@ msgstr "Bejegyzések"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Válaszok, kedvencelések és megtolások számának megjelenítése"
+msgstr "Válaszok, kedvencnek jelölések és megtolások számának megjelenítése"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -3413,8 +3414,8 @@ msgstr "ezen keresztül: %1"
 #, kde-format
 msgid "%1 Favorite"
 msgid_plural "%1 Favorites"
-msgstr[0] "%1 kedvencelés"
-msgstr[1] "%1 kedvencelés"
+msgstr[0] "%1 kedvencnek jelölés"
+msgstr[1] "%1 kedvencnek jelölés"
 
 #: content/ui/StatusDelegate/InformationBar.qml:124
 #, kde-format
@@ -3467,7 +3468,7 @@ msgstr "Válasz mint…"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Kedvencelés mint…"
+msgstr "Kedvencnek jelölés mint…"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:91
 #, kde-format
@@ -3509,7 +3510,7 @@ msgstr "Kitűzés a profilra"
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "@%1 visszahangosítása"
+msgstr "@%1 némításának feloldása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:128
 #, kde-format
@@ -3521,13 +3522,13 @@ msgstr "@%1 némítása"
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "@%1 tiltásának feloldása"
+msgstr "@%1 letiltásának feloldása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:147
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "@%1 tiltása"
+msgstr "@%1 letiltása"
 
 #: content/ui/StatusDelegate/OverflowMenu.qml:185
 #, kde-format
@@ -3620,17 +3621,17 @@ msgstr "Megtolás"
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Kedvencelés"
+msgstr "Kedvencnek jelölés"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:502
 #, kde-format
 msgid "Favourited"
-msgstr "Kedvencelve"
+msgstr "Kedvencnek jelölt"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:502
 #, kde-format
 msgid "Favourite"
-msgstr "Kedvencelés"
+msgstr "Kedvencnek jelölés"
 
 #: content/ui/StatusDelegate/StatusDelegate.qml:521
 #, kde-format
