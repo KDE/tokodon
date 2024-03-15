@@ -140,6 +140,11 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     }
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
+    if (m_lastConnection != nullptr) {
+        disconnect(m_lastConnection);
+    }
+    m_lastConnection = connect(knotification, &KNotification::closed, this, &NotificationHandler::lastNotificationClosed);
+
     if (!notification->identity()->avatarUrl().isEmpty()) {
         const auto avatarUrl = notification->identity()->avatarUrl();
         auto request = QNetworkRequest(avatarUrl);

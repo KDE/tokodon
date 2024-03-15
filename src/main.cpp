@@ -173,13 +173,7 @@ int main(int argc, char *argv[])
             AccountManager::instance().queueNotifications();
         });
 
-        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, [] {
-            // Sleep for a bit so the notifications stay open
-            // TODO: make this depend on all of the knotifications closing
-            QTimer *timer = new QTimer();
-            timer->setInterval(1000);
-            timer->connect(timer, &QTimer::timeout, qApp, &QCoreApplication::quit);
-        });
+        QObject::connect(AccountManager::instance().notificationHandler(), &NotificationHandler::lastNotificationClosed, qApp, &QCoreApplication::quit);
 
         return QCoreApplication::exec();
     }
