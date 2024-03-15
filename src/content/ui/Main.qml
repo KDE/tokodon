@@ -271,7 +271,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenList(listId, name) {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListPage"), {
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListTimelinePage"), {
                 name,
                 listId
             });
@@ -631,9 +631,7 @@ Kirigami.ApplicationWindow {
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:") && !text.startsWith("account:")
 
-        Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.ToolTip
-        z: Kirigami.OverlayZStacking.z
-
+        z: applicationWindow().globalDrawer.z + 1
         x: 0
         y: parent.height - implicitHeight
         contentItem: QQC2.Label {
