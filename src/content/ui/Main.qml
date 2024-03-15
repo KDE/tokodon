@@ -209,11 +209,22 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    function popoutStatusComposer() {
+        applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+            purpose: StatusComposer.New,
+            closeApplicationWhenFinished: true
+        }, {
+            width: Kirigami.Units.gridUnit * 30,
+            height: Kirigami.Units.gridUnit * 30,
+            modality: Qt.NonModal
+        });
+    }
+
     Connections {
         target: Navigation
 
         function onOpenStatusComposer() {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: StatusComposer.New
             });
         }

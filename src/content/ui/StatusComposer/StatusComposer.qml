@@ -58,16 +58,28 @@ Kirigami.ScrollablePage {
         }
     }
 
+    actions: [
+        Kirigami.Action {
+            text: i18nc("@action Pop out the status composer", "Pop Out")
+            icon.name: "window-new-symbolic"
+            visible: !Kirigami.Settings.isMobile && !root.closeApplicationWhenFinished
+            onTriggered: {
+                pageStack.layers.pop();
+                applicationWindow().popoutStatusComposer();
+            }
+        }
+    ]
+
     data: Connections {
         target: backend
         function onPosted(error) {
             if (error.length === 0) {
                 if (root.closeApplicationWhenFinished) {
-                    applicationWindow().close();
+                    root.Window.window.close();
                 } else {
-                    applicationWindow().pageStack.layers.pop();
+                    root.Window.window.pageStack.layers.pop();
                 }
-                applicationWindow().newPost();
+                root.Window.window.newPost();
             } else {
                 banner.text = error
                 console.log(error);
