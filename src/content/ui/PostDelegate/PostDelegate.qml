@@ -212,8 +212,10 @@ QQC2.ItemDelegate {
             Layout.fillWidth: true
 
             onMoreOpened: parentItem => {
+                parentItem.down = true;
                 postMenu.active = true;
-                postMenu.item.popup(parentItem, 0, parentItem.height)
+                postMenu.item.closed.connect(() => parentItem.down = false);
+                postMenu.item.popup(parentItem, 0, parentItem.height);
             }
 
             Loader {
