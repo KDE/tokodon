@@ -143,11 +143,6 @@ void MockAccount::validateToken(bool newAccount)
     Q_UNUSED(newAccount)
 }
 
-bool MockAccount::hasFollowRequests() const
-{
-    return false;
-}
-
 void MockAccount::checkForFollowRequests()
 {
 }

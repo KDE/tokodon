@@ -56,8 +56,6 @@ public:
 
     void validateToken(bool newAccount = false) override;
 
-    bool hasFollowRequests() const override;
-
     Q_INVOKABLE void checkForFollowRequests() override;
 
     Q_INVOKABLE void updatePushNotifications() override;

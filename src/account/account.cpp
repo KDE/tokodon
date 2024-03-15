@@ -411,19 +411,13 @@ void Account::buildFromSettings()
     clientSecretJob->start();
 }
 
-bool Account::hasFollowRequests() const
-{
-    return m_hasFollowRequests;
-}
-
 void Account::checkForFollowRequests()
 {
     get(apiUrl(QStringLiteral("/api/v1/follow_requests")), true, this, [this](QNetworkReply *reply) {
         const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
-        const bool hasFollowRequests = followRequestResult.isArray() && !followRequestResult.array().isEmpty();
-        if (hasFollowRequests != m_hasFollowRequests) {
-            m_hasFollowRequests = hasFollowRequests;
-            Q_EMIT hasFollowRequestsChanged();
+        if (m_followRequestCount != followRequestResult.array().size()) {
+            m_followRequestCount = followRequestResult.array().size();
+            Q_EMIT followRequestCountChanged();
         }
     });
 }

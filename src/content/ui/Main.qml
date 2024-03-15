@@ -350,6 +350,30 @@ Kirigami.ApplicationWindow {
                     visible: modelData.visible
                     enabled: !AccountManager.selectedAccountHasIssue
                     activeFocusOnTab: true
+
+                    Rectangle {
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            right: parent.right
+                            rightMargin: Kirigami.Units.largeSpacing
+                        }
+
+                        color: Kirigami.Theme.highlightColor
+
+                        width: 20
+                        height: width
+                        radius: width
+                        visible: modelData.alertCount > 0
+
+                        QQC2.Label {
+                            anchors {
+                                centerIn: parent
+                            }
+
+                            text: modelData.alertCount ?? ""
+                            horizontalAlignment: Text.AlignHCenter
+                        }
+                    }
                 }
             }
 
@@ -421,10 +445,12 @@ Kirigami.ApplicationWindow {
         }
     }
     property Kirigami.Action followRequestAction: Kirigami.Action {
+        readonly property int alertCount: AccountManager.selectedAccount.followRequestCount
+
         icon.name: "list-add-user"
         text: i18n("Follow Requests")
         checkable: true
-        visible: AccountManager.hasAccounts && AccountManager.selectedAccount && AccountManager.selectedAccount.hasFollowRequests
+        visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
         onTriggered: {
             pageStack.clear();
             pageStack.push(socialGraphComponent, {

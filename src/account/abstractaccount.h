@@ -39,7 +39,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QUrl authorizeUrl READ getAuthorizeUrl NOTIFY registered)
     Q_PROPERTY(Identity *identity READ identity NOTIFY identityChanged)
     Q_PROPERTY(Preferences *preferences READ preferences CONSTANT)
-    Q_PROPERTY(bool hasFollowRequests READ hasFollowRequests NOTIFY hasFollowRequestsChanged)
+    Q_PROPERTY(int followRequestCount READ followRequestCount NOTIFY followRequestCountChanged)
     Q_PROPERTY(AccountConfig *config READ config NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(bool registrationsOpen READ registrationsOpen NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString registrationMessage READ registrationMessage NOTIFY fetchedInstanceMetadata)
@@ -453,7 +453,7 @@ public:
     /**
      * @return If the account has any follow requests.
      */
-    virtual bool hasFollowRequests() const = 0;
+    int followRequestCount() const;
 
     /**
      * @brief Check against the server for any new follow requests.
@@ -655,9 +655,9 @@ Q_SIGNALS:
     void streamingEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload);
 
     /**
-     * @brief Emitted when the account has follow requests.
+     * @brief Emitted when the number of follow requests was changed.
      */
-    void hasFollowRequestsChanged();
+    void followRequestCountChanged();
 
     /**
      * @brief Emitted when a registration error has occurred.
@@ -695,7 +695,7 @@ protected:
     AccountConfig *m_config = nullptr;
     bool m_registrationsOpen = false;
     QString m_registrationMessage;
-    bool m_hasFollowRequests = false;
+    int m_followRequestCount = 0;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

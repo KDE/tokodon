@@ -618,8 +618,8 @@ void AbstractAccount::handleNotification(const QJsonDocument &doc)
     std::shared_ptr<Notification> n = std::make_shared<Notification>(this, obj);
 
     if (n->type() == Notification::FollowRequest) {
-        m_hasFollowRequests = true;
-        Q_EMIT hasFollowRequestsChanged();
+        m_followRequestCount++;
+        Q_EMIT followRequestCountChanged();
     }
 
     Q_EMIT notification(n);
@@ -674,6 +674,11 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
 
         Q_EMIT identity->relationshipChanged();
     });
+}
+
+int AbstractAccount::followRequestCount() const
+{
+    return m_followRequestCount;
 }
 
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)

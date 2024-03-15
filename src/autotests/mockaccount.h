@@ -47,8 +47,6 @@ public:
 
     void validateToken(bool newAccount = false) override;
 
-    bool hasFollowRequests() const override;
-
     void checkForFollowRequests() override;
 
     void registerPost(const QString &url, QNetworkReply *reply);
