@@ -24,6 +24,10 @@ public:
      */
     void handle(std::shared_ptr<Notification> notification, AbstractAccount *account);
 
+Q_SIGNALS:
+    void lastNotificationClosed();
+
 private:
     QNetworkAccessManager *m_nam;
+    QMetaObject::Connection m_lastConnection;
 };
