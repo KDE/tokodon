@@ -50,36 +50,43 @@ RowLayout {
         Layout.preferredWidth: Kirigami.Units.largeSpacing * 2
     }
 
-    QQC2.AbstractButton {
-        contentItem: RowLayout {
-            KirigamiComponents.AvatarButton {
-                implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
-                implicitWidth: implicitHeight
+    RowLayout {
+        KirigamiComponents.AvatarButton {
+            implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+            implicitWidth: implicitHeight
 
-                name: root.identity ? root.identity.displayName : ''
-                source: root.identity ? root.identity.avatarUrl : ''
-                cache: true
+            name: root.identity ? root.identity.displayName : ''
+            source: root.identity ? root.identity.avatarUrl : ''
+            cache: true
 
-                onClicked: Navigation.openAccount(root.identity.id)
+            onClicked: Navigation.openAccount(root.identity.id)
 
-                QQC2.ToolTip.text: i18n("View Profile")
-                QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            }
-            QQC2.Label {
-                text: {
-                    if (root.isBoosted) {
-                        return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
-                    } else if (root.isReply) {
-                        return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
-                    }
+            QQC2.ToolTip.text: i18n("View Profile")
+            QQC2.ToolTip.visible: hovered
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+        }
+        QQC2.Label {
+            text: {
+                if (root.isBoosted) {
+                    return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
+                } else if (root.isReply) {
+                    return root.identity ? i18n("In reply to %1", root.identity.displayNameHtml) : '';
                 }
-                color: Kirigami.Theme.disabledTextColor
-                font: Config.defaultFont
-
-                Layout.alignment: Qt.AlignBaseline
-                Layout.fillWidth: true
             }
+            color: Kirigami.Theme.disabledTextColor
+            font: Config.defaultFont
+
+            Layout.alignment: Qt.AlignBaseline
+            Layout.fillWidth: true
+        }
+
+        TapHandler {
+            acceptedButtons: Qt.LeftButton
+            onTapped: Navigation.openAccount(root.identity.id)
+        }
+
+        HoverHandler {
+            cursorShape: Qt.PointingHandCursor
         }
     }
 }
