@@ -542,9 +542,14 @@ void AccountManager::queueNotifications()
                     return;
                 }
 
-                for (auto notification : doc.array()) {
-                    if (notification.isObject()) {
-                        std::shared_ptr<Notification> n = std::make_shared<Notification>(account, notification.toObject());
+                // We want to post the notifications in reverse order, because the way Plasma displays them.
+                // If we post the newest notification, it would be buried by the older ones.
+                auto notifications = doc.array().toVariantList();
+                std::reverse(notifications.begin(), notifications.end());
+
+                for (const auto &notification : notifications) {
+                    if (notification.canConvert<QJsonObject>()) {
+                        std::shared_ptr<Notification> n = std::make_shared<Notification>(account, notification.toJsonObject());
                         Q_EMIT account->notification(n);
                     }
                 }
