@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "notificationhandler.h"
 #include "post.h"
 
 #include <KAboutData>
@@ -72,6 +73,8 @@ public:
 
     /// If there are any accounts in the config
     bool hasAnyAccounts() const;
+
+    NotificationHandler *notificationHandler() const;
 
     /// Adds a new account
     /// \param account The account to manage
@@ -191,6 +194,8 @@ private:
 
     QList<AccountStatus> m_accountStatus;
     QList<QString> m_accountStatusStrings;
+
+    NotificationHandler *m_notificationHandler;
 
     bool m_ready = false;
     bool m_hasAnyAccounts = false;

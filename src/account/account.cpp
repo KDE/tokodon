@@ -28,11 +28,6 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
     registerApplication(QStringLiteral("Tokodon"),
                         QStringLiteral("https://apps.kde.org/tokodon"),
                         admin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""));
-
-    auto notificationHandler = new NotificationHandler(m_qnam, this);
-    connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
-        notificationHandler->handle(notification, this);
-    });
 }
 
 Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent)
@@ -40,11 +35,6 @@ Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *p
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
-    auto notificationHandler = new NotificationHandler(m_qnam, this);
-    connect(this, &Account::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
-        notificationHandler->handle(notification, this);
-    });
-
     m_config = settings;
     connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
     buildFromSettings();

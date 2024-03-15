@@ -17,6 +17,7 @@ AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
+    , m_notificationHandler(new NotificationHandler(m_qnam, this))
 {
 }
 
@@ -94,6 +95,11 @@ bool AccountManager::hasAnyAccounts() const
     return m_hasAnyAccounts;
 }
 
+NotificationHandler *AccountManager::notificationHandler() const
+{
+    return m_notificationHandler;
+}
+
 void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticationCheck)
 {
     beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
@@ -141,6 +147,7 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
         Q_EMIT invalidatedPost(account, p);
     });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
+        AccountManager::instance().notificationHandler()->handle(std::move(n), account);
         Q_EMIT notification(account, std::move(n));
     });
 
