@@ -54,6 +54,9 @@ Item {
 
     Layout.preferredHeight: shouldKeepAspectRatio ? Math.ceil(rootWidth * aspectRatio) : Math.ceil(rootWidth * mediaRatio / heightDivisor) + extraSpacing
 
+    Keys.onSpacePressed: event => clicked()
+
+    activeFocusOnTab: true
     layer.enabled: true
     layer.effect: OpacityMask {
         maskSource: Item {
@@ -128,6 +131,21 @@ Item {
             closable: false
             enabled: false
             visible: root.showVideoChip
+        }
+    }
+
+    Rectangle {
+        anchors.fill: parent
+
+        z: 3
+
+        visible: root.activeFocus
+        radius: Kirigami.Units.mediumSpacing
+        color: "transparent"
+
+        border {
+            width: 1
+            color: Kirigami.Theme.focusColor
         }
     }
 }
