@@ -178,7 +178,7 @@ void SocialGraphModel::actionAllow(const QModelIndex &index)
                   QJsonDocument{},
                   true,
                   this,
-                  [this, requestIdentity, index](QNetworkReply *reply) {
+                  [this, account, requestIdentity, index](QNetworkReply *reply) {
                       const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
                       m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
@@ -186,9 +186,9 @@ void SocialGraphModel::actionAllow(const QModelIndex &index)
                       beginRemoveRows(QModelIndex(), index.row(), index.row());
                       m_accounts.removeAt(index.row());
                       endRemoveRows();
-                  });
 
-    account->checkForFollowRequests();
+                      account->checkForFollowRequests();
+                  });
 }
 
 void SocialGraphModel::actionDeny(const QModelIndex &index)
@@ -205,7 +205,7 @@ void SocialGraphModel::actionDeny(const QModelIndex &index)
                   QJsonDocument{},
                   true,
                   this,
-                  [this, requestIdentity, index](QNetworkReply *reply) {
+                  [this, account, requestIdentity, index](QNetworkReply *reply) {
                       const auto newRelation = QJsonDocument::fromJson(reply->readAll()).object();
 
                       m_accounts[index.row()]->setRelationship(new Relationship(requestIdentity, newRelation));
@@ -213,9 +213,9 @@ void SocialGraphModel::actionDeny(const QModelIndex &index)
                       beginRemoveRows(QModelIndex(), index.row(), index.row());
                       m_accounts.removeAt(index.row());
                       endRemoveRows();
-                  });
 
-    account->checkForFollowRequests();
+                      account->checkForFollowRequests();
+                  });
 }
 
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
