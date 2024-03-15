@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "account/notificationhandler.h"
 #include "timeline/notification.h"
 #include "timeline/post.h"
 
@@ -91,6 +92,11 @@ public:
      * @return If there are any accounts in the config.
      */
     bool hasAnyAccounts() const;
+
+    /**
+     * @return The notification handler for posting notifications to the system.
+     */
+    NotificationHandler *notificationHandler() const;
 
     /**
      * @brief Adds a new account.
@@ -245,6 +251,8 @@ private:
 
     QList<AccountStatus> m_accountStatus;
     QList<QString> m_accountStatusStrings;
+
+    NotificationHandler *m_notificationHandler;
 
     bool m_ready = false;
     bool m_hasAnyAccounts = false;
