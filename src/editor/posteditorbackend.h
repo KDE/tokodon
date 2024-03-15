@@ -66,6 +66,8 @@ public:
 
     int charactersLeft() const;
 
+    Q_INVOKABLE void copyFromOther(PostEditorBackend *other);
+
 public Q_SLOTS:
     void save();
     void edit();

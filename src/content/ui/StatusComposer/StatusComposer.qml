@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
             visible: !Kirigami.Settings.isMobile && !root.closeApplicationWhenFinished
             onTriggered: {
                 pageStack.layers.pop();
-                applicationWindow().popoutStatusComposer();
+                applicationWindow().popoutStatusComposer(root);
             }
         }
     ]
@@ -87,7 +87,11 @@ Kirigami.ScrollablePage {
         }
 
         function onEditComplete(obj) {
-            applicationWindow().pageStack.layers.pop();
+            if (root.closeApplicationWhenFinished) {
+                root.Window.window.close();
+            } else {
+                root.Window.window.pageStack.layers.pop();
+            }
         }
     }
 
@@ -158,6 +162,8 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
+
+            Component.onCompleted: text = root.backend.spoilerText
         }
 
         Loader {
@@ -312,6 +318,7 @@ Kirigami.ScrollablePage {
                             id: addPool
                             icon.name: "gnumeric-graphguru"
                             checkable: true
+                            checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
                             QQC2.ToolTip.text: i18n("Add Poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -379,6 +386,7 @@ Kirigami.ScrollablePage {
                             QQC2.ToolTip {
                                 text: i18n("Content Warning")
                             }
+                            Component.onCompleted: checked = root.backend.spoilerText.length > 0
                         }
                         QQC2.ToolButton {
                             id: languageButton

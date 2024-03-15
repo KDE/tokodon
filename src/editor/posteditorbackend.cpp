@@ -184,6 +184,22 @@ int PostEditorBackend::charactersLeft() const
     return m_account->maxPostLength() - m_status.length() + sum;
 }
 
+void PostEditorBackend::copyFromOther(PostEditorBackend *other)
+{
+    setId(other->id());
+    setSpoilerText(other->spoilerText());
+    setVisibility(other->visibility());
+    setLanguage(other->language());
+    setScheduledAt(other->scheduledAt());
+    setMentions(other->mentions());
+    setSensitive(other->sensitive());
+    setAccount(other->account());
+    m_pollEnabled = other->m_pollEnabled;
+    Q_EMIT pollEnabledChanged();
+    m_poll->copyFromOther(other->m_poll);
+    m_attachmentEditorModel->copyFromOther(other->m_attachmentEditorModel);
+}
+
 QJsonDocument PostEditorBackend::toJsonDocument() const
 {
     QJsonObject obj;

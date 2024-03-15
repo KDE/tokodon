@@ -26,6 +26,8 @@ public:
 
     QJsonObject toJsonObject() const;
 
+    void copyFromOther(PollEditorBackend *other);
+
 Q_SIGNALS:
     void optionsChanged();
     void multipleChoiceChanged();

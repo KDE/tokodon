@@ -126,4 +126,12 @@ const QList<Attachment *> &AttachmentEditorModel::attachments() const
     return m_attachments;
 }
 
+void AttachmentEditorModel::copyFromOther(AttachmentEditorModel *other)
+{
+    beginResetModel();
+    m_attachments = other->m_attachments;
+    endResetModel();
+    m_account = other->m_account;
+}
+
 #include "moc_attachmenteditormodel.cpp"

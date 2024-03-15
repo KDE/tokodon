@@ -26,6 +26,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     const QList<Attachment *> &attachments() const;
 
+    void copyFromOther(AttachmentEditorModel *other);
+
 public Q_SLOTS:
     QNetworkReply *append(const QString &fileName);
     void appendExisting(Attachment *attachment);

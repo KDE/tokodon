@@ -62,6 +62,23 @@ bool PollEditorBackend::isValid() const
     return m_valid;
 }
 
+void PollEditorBackend::copyFromOther(PollEditorBackend *other)
+{
+    m_options = other->m_options;
+    Q_EMIT optionsChanged();
+
+    m_multipleChoice = other->m_multipleChoice;
+    Q_EMIT multipleChoiceChanged();
+
+    m_hideTotals = other->m_hideTotals;
+    Q_EMIT hideTotalsChanged();
+
+    m_expiresIn = other->m_expiresIn;
+    Q_EMIT expiresInChanged();
+
+    checkValidity();
+}
+
 void PollEditorBackend::checkValidity()
 {
     const bool isValid = std::all_of(m_options.cbegin(), m_options.cend(), [](const auto &option) {

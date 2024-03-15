@@ -209,15 +209,19 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function popoutStatusComposer() {
-        applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
-            purpose: StatusComposer.New,
-            closeApplicationWhenFinished: true
+    function popoutStatusComposer(originalEditor: var) {
+        const item = applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+            closeApplicationWhenFinished: true,
+            purpose: originalEditor.purpose,
+            initialText: originalEditor.backend.status,
+            inReplyTo: originalEditor.inReplyTo,
+            previewPost: originalEditor.previewPost
         }, {
             width: Kirigami.Units.gridUnit * 30,
             height: Kirigami.Units.gridUnit * 30,
             modality: Qt.NonModal
         });
+        item.backend.copyFromOther(originalEditor.backend);
     }
 
     Connections {
