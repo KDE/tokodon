@@ -294,6 +294,7 @@ QQC2.Control {
         icon.name: "view-hidden"
         text: i18nc("@action:button", "Hide Media")
         display: QQC2.Button.IconOnly
+        activeFocusOnTab: false
 
         QQC2.ToolTip.text: text
         QQC2.ToolTip.visible: hovered
