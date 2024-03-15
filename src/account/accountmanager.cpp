@@ -524,7 +524,7 @@ void AccountManager::queueNotifications()
         QUrlQuery urlQuery(uri);
         urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(10));
         if (!config.lastPushNotification().isEmpty()) {
-            urlQuery.addQueryItem(QStringLiteral("min_id"), config.lastPushNotification());
+            urlQuery.addQueryItem(QStringLiteral("since_id"), config.lastPushNotification());
         }
         uri.setQuery(urlQuery);
 
