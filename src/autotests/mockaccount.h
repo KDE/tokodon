@@ -67,6 +67,9 @@ public:
     Q_INVOKABLE void updateNotification();
     Q_INVOKABLE void pollNotification();
 
+    Q_INVOKABLE void increaseFollowRequests();
+    Q_INVOKABLE void decreaseFollowRequests();
+
 private:
     void readNotificationFromFile(QLatin1String filename);
 

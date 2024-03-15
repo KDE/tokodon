@@ -16,6 +16,21 @@ MastoPage {
     title: "Debug"
 
     FormCard.FormHeader {
+        title: "Alerts"
+    }
+
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Increase follow request count")
+            onClicked: AccountManager.selectedAccount.increaseFollowRequests()
+        }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button", "Decrease follow request count")
+            onClicked: AccountManager.selectedAccount.decreaseFollowRequests()
+        }
+    }
+
+    FormCard.FormHeader {
         title: "Notifications"
     }
 

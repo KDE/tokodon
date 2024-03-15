@@ -208,6 +208,18 @@ void MockAccount::pollNotification()
     readNotificationFromFile("notification_poll.json"_L1);
 }
 
+void MockAccount::increaseFollowRequests()
+{
+    m_followRequestCount++;
+    Q_EMIT followRequestCountChanged();
+}
+
+void MockAccount::decreaseFollowRequests()
+{
+    m_followRequestCount--;
+    Q_EMIT followRequestCountChanged();
+}
+
 void MockAccount::readNotificationFromFile(QLatin1String filename)
 {
     QFile statusExampleApi;
