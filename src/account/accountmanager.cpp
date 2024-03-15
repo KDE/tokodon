@@ -504,11 +504,12 @@ bool AccountManager::testMode() const
 
 void AccountManager::queueNotifications()
 {
-    static int accountsLeft = m_accounts.size();
+    static qsizetype accountsLeft = m_accounts.size();
+    static qsizetype totalNotifications = 0;
 
     const auto checkIfDone = [this]() {
-        qInfo() << "Accounts left to check:" << accountsLeft;
-        if (accountsLeft <= 0) {
+        // If there's no more accounts left to check, and none of them have notifications then early exit
+        if (accountsLeft <= 0 && totalNotifications <= 0) {
             Q_EMIT finishedNotificationQueue();
         }
     };
@@ -551,6 +552,8 @@ void AccountManager::queueNotifications()
                 AccountConfig config(account->settingsGroupName());
                 config.setLastPushNotification(doc.array().first()["id"_L1].toString());
                 config.save();
+
+                totalNotifications = doc.array().size();
 
                 accountsLeft--;
                 checkIfDone();

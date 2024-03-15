@@ -173,6 +173,7 @@ int main(int argc, char *argv[])
         });
 
         QObject::connect(AccountManager::instance().notificationHandler(), &NotificationHandler::lastNotificationClosed, qApp, &QCoreApplication::quit);
+        QObject::connect(&AccountManager::instance(), &AccountManager::finishedNotificationQueue, qApp, &QCoreApplication::quit);
 
         return QCoreApplication::exec();
     }
