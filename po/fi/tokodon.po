@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2024-02-14 19:17+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -68,9 +68,9 @@ msgid "View Post"
 msgstr "Näytä julkaisu"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
+#: content/ui/Components/InlineIdentityInfo.qml:35
 #: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:65
 #, kde-format
 msgid "View Profile"
 msgstr "Näytä profiili"
@@ -397,8 +397,7 @@ msgstr "Poista esto"
 msgid "Block"
 msgstr "Estä"
 
-#: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:162
+#: content/ui/AccountInfo.qml:329 content/ui/PostDelegate/PostMenu.qml:164
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -450,7 +449,7 @@ msgstr "Esitellyt käyttäjät"
 msgid "Copy Link to This Profile"
 msgstr "Kopioi linkki tähän profiiliin"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:51
+#: content/ui/AccountInfo.qml:377 content/ui/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgid "Post link copied."
 msgstr "Julkaisulinkki kopioitu."
@@ -771,11 +770,6 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Sulje"
 
-#: content/ui/ListPage.qml:19
-#, kde-format
-msgid "Edit List"
-msgstr "Muokkaa luetteloa"
-
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -791,6 +785,11 @@ msgstr "Luo luettelo"
 #, kde-format
 msgid "No lists"
 msgstr "Ei luetteloja"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid "Edit List"
+msgstr "Muokkaa luetteloa"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -2393,19 +2392,19 @@ msgid ""
 msgstr "Loukkaavaa sisältöä lainataan viestittäessä ilmoitetun tilin kanssa"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
-#: content/ui/StatusDelegate/StatusDelegate.qml:353
+#: content/ui/PostDelegate/PostDelegate.qml:309
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Sisältövaroitus</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show Less"
 msgstr "Näytä vähemmän"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show More"
 msgstr "Näytä enemmän"
@@ -2584,6 +2583,408 @@ msgstr "Kysely on päättynyt"
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 päivitti julkaisuaan"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:74
+#, kde-format
+msgid "Status with image attachment"
+msgstr "Tila kuvaliitteellä"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:76
+#, kde-format
+msgid "Status with GifV attachment"
+msgstr "Tila GifV-liitteellä"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:78
+#, kde-format
+msgid "Status with Video attachment"
+msgstr "Tila videoliitteellä"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:167
+#, kde-format
+msgid "Not available"
+msgstr "Ei käytettävissä"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:295
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Piilota media"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:309
+#, kde-format
+msgid "Media Hidden"
+msgstr "Piilotettu media"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:47
+#, kde-format
+msgid "Save Image As…"
+msgstr "Tallenna kuva nimellä…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Save Image As…"
+msgid "Save Gif As…"
+msgstr "Tallenna kuva nimellä…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:51
+#, fuzzy, kde-format
+#| msgid "Save Image As…"
+msgid "Save Video As…"
+msgstr "Tallenna kuva nimellä…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:69
+#, kde-format
+msgid "Copy Image"
+msgstr "Kopioi kuva"
+
+#: content/ui/PostDelegate/InformationBar.qml:34
+#, kde-format
+msgid "via %1"
+msgstr "%1 kautta"
+
+#: content/ui/PostDelegate/InformationBar.qml:80
+#: content/ui/PostDelegate/InformationBar.qml:88
+#: content/ui/PostDelegate/PostInfoBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:90
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, kde-format
+msgid "Public"
+msgstr "Julkinen"
+
+#: content/ui/PostDelegate/InformationBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:84
+#: content/ui/StatusComposer/StatusComposer.qml:345
+#, kde-format
+msgid "Unlisted"
+msgstr "Luettelematon"
+
+#: content/ui/PostDelegate/InformationBar.qml:84
+#: content/ui/PostDelegate/PostInfoBar.qml:86
+#: content/ui/StatusComposer/StatusComposer.qml:350
+#, kde-format
+msgid "Private"
+msgstr "Yksityinen"
+
+#: content/ui/PostDelegate/InformationBar.qml:86
+#: content/ui/PostDelegate/PostInfoBar.qml:88
+#: content/ui/StatusComposer/StatusComposer.qml:355
+#, kde-format
+msgid "Direct Message"
+msgstr "Suoraviesti"
+
+#: content/ui/PostDelegate/InformationBar.qml:105
+#, kde-format
+msgid "%1 Favorite"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 suosikki"
+msgstr[1] "%1 suosikkia"
+
+#: content/ui/PostDelegate/InformationBar.qml:124
+#, kde-format
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 tehostus"
+msgstr[1] "%1 tehostusta"
+
+#: content/ui/PostDelegate/LinkPreview.qml:19
+#, kde-format
+msgid "Link preview: %1"
+msgstr "Linkin esikatselu: %1"
+
+#: content/ui/PostDelegate/MediaContainer.qml:109
+#, kde-format
+msgctxt "Attachment has alt-text, Short for alt-text"
+msgid "Alt"
+msgstr "Kuvaus"
+
+#: content/ui/PostDelegate/MediaContainer.qml:118
+#, kde-format
+msgid "GIF"
+msgstr "GIF"
+
+#: content/ui/PostDelegate/MediaContainer.qml:127
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, kde-format
+msgid "Normal Status"
+msgstr "Tavallinen tila"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, kde-format
+msgid "Spoiler Status"
+msgstr "Ilonpilaajatila"
+
+#: content/ui/PostDelegate/PostDelegate.qml:141
+#, kde-format
+msgid "Filtered: %1"
+msgstr "Suodatettu: %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:145
+#, kde-format
+msgid "Show anyway"
+msgstr "Näytä silti"
+
+#: content/ui/PostDelegate/PostDelegate.qml:166
+#, kde-format
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Kiinnitetty julkaisu"
+
+#: content/ui/PostDelegate/PostDelegate.qml:226
+#, kde-format
+msgctxt "@title"
+msgid "Delete Post"
+msgstr "Poista julkaisu"
+
+#: content/ui/PostDelegate/PostDelegate.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to delete this post?"
+msgstr "Haluatko varmasti poistaa tämän julkaisun?"
+
+#: content/ui/PostDelegate/PostDelegate.qml:242
+#, kde-format
+msgctxt "@title"
+msgid "Delete & Re-draft Post"
+msgstr "Poista ja luonnostele julkaisu uudelleen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:243
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Are you sure you want to redraft this post? This will delete the original "
+"post."
+msgstr ""
+"Haluatko varmasti luonnostella julkaisun uudelleen? Alkuperäinen julkaisu "
+"poistetaan."
+
+#: content/ui/PostDelegate/PostDelegate.qml:407
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Vastaa"
+
+#: content/ui/PostDelegate/PostDelegate.qml:432
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "Tehosta"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, kde-format
+msgid "Boosted"
+msgstr "Tehostettu"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, kde-format
+msgid "Boost"
+msgstr "Tehosta"
+
+#: content/ui/PostDelegate/PostDelegate.qml:455
+#, kde-format
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr "Suosikki"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, kde-format
+msgid "Favourited"
+msgstr "Merkitty suosikiksi"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, kde-format
+msgid "Favourite"
+msgstr "Suosikki"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgid "Remove bookmark"
+msgstr "Poista kirjanmerkki"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr "Kirjanmerkki"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, kde-format
+msgid "Bookmarked"
+msgstr "Kirjanmerkitty"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, kde-format
+msgid "Bookmark"
+msgstr "Kirjanmerkki"
+
+#: content/ui/PostDelegate/PostDelegate.qml:502
+#, kde-format
+msgid ""
+"This post has been marked private. Some posts may be missing because it's "
+"replies are marked as private by default."
+msgstr ""
+"Julkaisu on merkitty yksityiseksi. Joitakin julkaisuja voi puuttua, koska "
+"vastauksetkin on oletusarvoisesti merkitty yksityisiksi."
+
+#: content/ui/PostDelegate/PostInfoBar.qml:101
+#, kde-format
+msgctxt "Show more options"
+msgid "More"
+msgstr "Lisää"
+
+#: content/ui/PostDelegate/PostMenu.qml:35
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Expand Post"
+msgstr "Laajenna julkaisu"
+
+#: content/ui/PostDelegate/PostMenu.qml:42
+#, kde-format
+msgid "Open Original Page"
+msgstr "Avaa alkuperäinen sivu"
+
+#: content/ui/PostDelegate/PostMenu.qml:50
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Kopioi linkki"
+
+#: content/ui/PostDelegate/PostMenu.qml:59
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr "Upota"
+
+#: content/ui/PostDelegate/PostMenu.qml:72
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open as…"
+msgstr "Avaa nimellä…"
+
+#: content/ui/PostDelegate/PostMenu.qml:79
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Reply as…"
+msgstr "Vastaa nimellä…"
+
+#: content/ui/PostDelegate/PostMenu.qml:86
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Favorite as…"
+msgstr "Tee suosikki nimellä…"
+
+#: content/ui/PostDelegate/PostMenu.qml:93
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Boost as…"
+msgstr "Tehosta nimellä…"
+
+#: content/ui/PostDelegate/PostMenu.qml:100
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Bookmark as…"
+msgstr "Tee kirjanmerkki nimellä…"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
+msgstr "Poista kirjanmerkki"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Bookmark"
+msgstr "Kirjanmerkki"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
+msgstr "Irrota profiilista"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Kiinnitä profiiliin"
+
+#: content/ui/PostDelegate/PostMenu.qml:128
+#, kde-format
+msgctxt "@action:inmenu Unmute account"
+msgid "Unmute @%1"
+msgstr "Vaimenna @%1"
+
+#: content/ui/PostDelegate/PostMenu.qml:130
+#, kde-format
+msgctxt "@action:inmenu Mute account"
+msgid "Mute @%1"
+msgstr "Vaimenna @%1"
+
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, kde-format
+msgctxt "@action:inmenu Unblock account"
+msgid "Unblock @%1"
+msgstr "Poista esto: @%1"
+
+#: content/ui/PostDelegate/PostMenu.qml:149
+#, kde-format
+msgctxt "@action:inmenu Block account"
+msgid "Block @%1"
+msgstr "Estä @%1"
+
+#: content/ui/PostDelegate/PostMenu.qml:173
+#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
+#, kde-format
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: content/ui/PostDelegate/PostMenu.qml:180
+#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:267
+#, kde-format
+msgid "Delete"
+msgstr "Poista"
+
+#: content/ui/PostDelegate/PostMenu.qml:187
+#, kde-format
+msgid "Delete & Re-draft"
+msgstr "Poista ja kirjoita uudelleen"
+
+#: content/ui/PostDelegate/PostPoll.qml:39
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%1 %"
+
+#: content/ui/PostDelegate/PostPoll.qml:63
+#, kde-format
+msgid "(No votes)"
+msgstr "(Ei ääniä)"
+
+#: content/ui/PostDelegate/PostPoll.qml:97
+#, kde-format
+msgid "Vote"
+msgstr "Äänestä"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:72
+#, kde-format
+msgid "%1 boosted"
+msgstr "%1 tehosti"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:74
+#, kde-format
+msgid "In reply to %1"
+msgstr "Vastauksessa julkaisuun %1"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:97
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr "Toista"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -2861,13 +3262,6 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 "PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan 1500 × 500 kuvapisteeseen."
 
-#: content/ui/Settings/ProfileEditor.qml:205
-#: content/ui/Settings/ProfileEditor.qml:267
-#: content/ui/StatusDelegate/OverflowMenu.qml:178
-#, kde-format
-msgid "Delete"
-msgstr "Poista"
-
 #: content/ui/Settings/ProfileEditor.qml:220
 #, kde-format
 msgid "Avatar"
@@ -3129,12 +3523,6 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Piilota tulokset kunnes kysely päättyy"
 
-#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:171
-#, kde-format
-msgid "Edit"
-msgstr "Muokkaa"
-
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:108
 #, kde-format
 msgid "Remove"
@@ -3262,36 +3650,6 @@ msgstr "Liitä tiedosto"
 msgid "Add Poll"
 msgstr "Lisää kysely"
 
-#: content/ui/StatusComposer/StatusComposer.qml:340
-#: content/ui/StatusDelegate/InformationBar.qml:80
-#: content/ui/StatusDelegate/InformationBar.qml:88
-#: content/ui/StatusDelegate/PostInfoBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:90
-#, kde-format
-msgid "Public"
-msgstr "Julkinen"
-
-#: content/ui/StatusComposer/StatusComposer.qml:345
-#: content/ui/StatusDelegate/InformationBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:84
-#, kde-format
-msgid "Unlisted"
-msgstr "Luettelematon"
-
-#: content/ui/StatusComposer/StatusComposer.qml:350
-#: content/ui/StatusDelegate/InformationBar.qml:84
-#: content/ui/StatusDelegate/PostInfoBar.qml:86
-#, kde-format
-msgid "Private"
-msgstr "Yksityinen"
-
-#: content/ui/StatusComposer/StatusComposer.qml:355
-#: content/ui/StatusDelegate/InformationBar.qml:86
-#: content/ui/StatusDelegate/PostInfoBar.qml:88
-#, kde-format
-msgid "Direct Message"
-msgstr "Suoraviesti"
-
 #: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "Visibility"
@@ -3342,355 +3700,6 @@ msgstr "Lähetä uudelleen"
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Muokkaa"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:57
-#, kde-format
-msgid "Status with image attachment"
-msgstr "Tila kuvaliitteellä"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:59
-#, kde-format
-msgid "Status with GifV attachment"
-msgstr "Tila GifV-liitteellä"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:61
-#, kde-format
-msgid "Status with Video attachment"
-msgstr "Tila videoliitteellä"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:159
-#, kde-format
-msgid "Not available"
-msgstr "Ei käytettävissä"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:175
-#: content/ui/StatusDelegate/AttachmentGrid.qml:276
-#: content/ui/StatusDelegate/AttachmentGrid.qml:349
-#, kde-format
-msgctxt "Attachment has alt-text, Short for alt-text"
-msgid "Alt"
-msgstr "Kuvaus"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:285
-#, kde-format
-msgid "GIF"
-msgstr "GIF"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:358
-#, kde-format
-msgid "Video"
-msgstr "Video"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:371
-#, kde-format
-msgctxt "@action:button"
-msgid "Hide Media"
-msgstr "Piilota media"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:398
-#, kde-format
-msgid "Media Hidden"
-msgstr "Piilotettu media"
-
-#: content/ui/StatusDelegate/ImageMenu.qml:38
-#, kde-format
-msgid "Save Image As…"
-msgstr "Tallenna kuva nimellä…"
-
-#: content/ui/StatusDelegate/ImageMenu.qml:53
-#, kde-format
-msgid "Copy Image"
-msgstr "Kopioi kuva"
-
-#: content/ui/StatusDelegate/InformationBar.qml:34
-#, kde-format
-msgid "via %1"
-msgstr "%1 kautta"
-
-#: content/ui/StatusDelegate/InformationBar.qml:105
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] "%1 suosikki"
-msgstr[1] "%1 suosikkia"
-
-#: content/ui/StatusDelegate/InformationBar.qml:124
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
-msgstr[0] "%1 tehostus"
-msgstr[1] "%1 tehostusta"
-
-#: content/ui/StatusDelegate/LinkPreview.qml:19
-#, kde-format
-msgid "Link preview: %1"
-msgstr "Linkin esikatselu: %1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:33
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "Laajenna julkaisu"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Open Original Page"
-msgstr "Avaa alkuperäinen sivu"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Copy Link"
-msgstr "Kopioi linkki"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgctxt "@action Open embed into website dialog"
-msgid "Embed"
-msgstr "Upota"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:70
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open as…"
-msgstr "Avaa nimellä…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:77
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Reply as…"
-msgstr "Vastaa nimellä…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:84
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Favorite as…"
-msgstr "Tee suosikki nimellä…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:91
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Boost as…"
-msgstr "Tehosta nimellä…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:98
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Bookmark as…"
-msgstr "Tee kirjanmerkki nimellä…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Remove Bookmark"
-msgstr "Poista kirjanmerkki"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Bookmark"
-msgstr "Kirjanmerkki"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Unpin on Profile"
-msgstr "Irrota profiilista"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Pin on Profile"
-msgstr "Kiinnitä profiiliin"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:126
-#, kde-format
-msgctxt "@action:inmenu Unmute account"
-msgid "Unmute @%1"
-msgstr "Vaimenna @%1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:128
-#, kde-format
-msgctxt "@action:inmenu Mute account"
-msgid "Mute @%1"
-msgstr "Vaimenna @%1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:145
-#, kde-format
-msgctxt "@action:inmenu Unblock account"
-msgid "Unblock @%1"
-msgstr "Poista esto: @%1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:147
-#, kde-format
-msgctxt "@action:inmenu Block account"
-msgid "Block @%1"
-msgstr "Estä @%1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:185
-#, kde-format
-msgid "Delete & Re-draft"
-msgstr "Poista ja kirjoita uudelleen"
-
-#: content/ui/StatusDelegate/PostInfoBar.qml:101
-#, kde-format
-msgctxt "Show more options"
-msgid "More"
-msgstr "Lisää"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, kde-format
-msgid "Normal Status"
-msgstr "Tavallinen tila"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, kde-format
-msgid "Spoiler Status"
-msgstr "Ilonpilaajatila"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:185
-#, kde-format
-msgid "Filtered: %1"
-msgstr "Suodatettu: %1"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:189
-#, kde-format
-msgid "Show anyway"
-msgstr "Näytä silti"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:210
-#, kde-format
-msgctxt "@label"
-msgid "Pinned Post"
-msgstr "Kiinnitetty julkaisu"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:270
-#, kde-format
-msgctxt "@title"
-msgid "Delete Post"
-msgstr "Poista julkaisu"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:271
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to delete this post?"
-msgstr "Haluatko varmasti poistaa tämän julkaisun?"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:286
-#, kde-format
-msgctxt "@title"
-msgid "Delete & Re-draft Post"
-msgstr "Poista ja luonnostele julkaisu uudelleen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:287
-#, kde-format
-msgctxt "@label"
-msgid ""
-"Are you sure you want to redraft this post? This will delete the original "
-"post."
-msgstr ""
-"Haluatko varmasti luonnostella julkaisun uudelleen? Alkuperäinen julkaisu "
-"poistetaan."
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Vastaa"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:476
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "Tehosta"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, kde-format
-msgid "Boosted"
-msgstr "Tehostettu"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, kde-format
-msgid "Boost"
-msgstr "Tehosta"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:499
-#, kde-format
-msgctxt "Favorite a post"
-msgid "Favorite"
-msgstr "Suosikki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, kde-format
-msgid "Favourited"
-msgstr "Merkitty suosikiksi"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, kde-format
-msgid "Favourite"
-msgstr "Suosikki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgid "Remove bookmark"
-msgstr "Poista kirjanmerkki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr "Kirjanmerkki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, kde-format
-msgid "Bookmarked"
-msgstr "Kirjanmerkitty"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, kde-format
-msgid "Bookmark"
-msgstr "Kirjanmerkki"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:546
-#, kde-format
-msgid ""
-"This post has been marked private. Some posts may be missing because it's "
-"replies are marked as private by default."
-msgstr ""
-"Julkaisu on merkitty yksityiseksi. Joitakin julkaisuja voi puuttua, koska "
-"vastauksetkin on oletusarvoisesti merkitty yksityisiksi."
-
-#: content/ui/StatusDelegate/StatusPoll.qml:39
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%1 %"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:63
-#, kde-format
-msgid "(No votes)"
-msgstr "(Ei ääniä)"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:97
-#, kde-format
-msgid "Vote"
-msgstr "Äänestä"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:72
-#, kde-format
-msgid "%1 boosted"
-msgstr "%1 tehosti"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:74
-#, kde-format
-msgid "In reply to %1"
-msgstr "Vastauksessa julkaisuun %1"
-
-#: content/ui/StatusDelegate/VideoAttachment.qml:106
-#, kde-format
-msgctxt "@action:button Start media playback"
-msgid "Play"
-msgstr "Toista"
 
 #: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2024-03-13 10:00+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -69,9 +69,9 @@ msgid "View Post"
 msgstr "Bejegyzés megtekintése"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
+#: content/ui/Components/InlineIdentityInfo.qml:35
 #: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:65
 #, kde-format
 msgid "View Profile"
 msgstr "Profil megtekintése"
@@ -399,8 +399,7 @@ msgstr "Letiltás feloldása"
 msgid "Block"
 msgstr "Letiltás"
 
-#: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:162
+#: content/ui/AccountInfo.qml:329 content/ui/PostDelegate/PostMenu.qml:164
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -452,7 +451,7 @@ msgstr "Kiemelt felhasználók"
 msgid "Copy Link to This Profile"
 msgstr "Hivatkozás másolása a profilhoz"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:51
+#: content/ui/AccountInfo.qml:377 content/ui/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgid "Post link copied."
 msgstr "Bejegyzés hivatkozása másolva."
@@ -774,11 +773,6 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Bezárás"
 
-#: content/ui/ListPage.qml:19
-#, kde-format
-msgid "Edit List"
-msgstr "Lista szerkesztése"
-
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -794,6 +788,11 @@ msgstr "Lista létrehozása"
 #, kde-format
 msgid "No lists"
 msgstr "Nincsenek listák"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid "Edit List"
+msgstr "Lista szerkesztése"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, kde-format
@@ -2399,19 +2398,19 @@ msgstr ""
 "A sértő tartalom idézve lesz a jelentett fiókkal folytatott kommunikációban"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
-#: content/ui/StatusDelegate/StatusDelegate.qml:353
+#: content/ui/PostDelegate/PostDelegate.qml:309
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Tartalmi figyelmeztetés</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show Less"
 msgstr "Kevesebb"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show More"
 msgstr "Több"
@@ -2589,6 +2588,408 @@ msgstr "Egy szavazás véget ért"
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 frissítette a bejegyzését"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:74
+#, kde-format
+msgid "Status with image attachment"
+msgstr "Állapot képmelléklettel"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:76
+#, kde-format
+msgid "Status with GifV attachment"
+msgstr "Állapot GifV melléklettel"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:78
+#, kde-format
+msgid "Status with Video attachment"
+msgstr "Állapot videómelléklettel"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:167
+#, kde-format
+msgid "Not available"
+msgstr "Nem érhető el"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:295
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Média elrejtése"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:309
+#, kde-format
+msgid "Media Hidden"
+msgstr "Média elrejtve"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:47
+#, kde-format
+msgid "Save Image As…"
+msgstr "Kép mentése másként…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:49
+#, fuzzy, kde-format
+#| msgid "Save Image As…"
+msgid "Save Gif As…"
+msgstr "Kép mentése másként…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:51
+#, fuzzy, kde-format
+#| msgid "Save Image As…"
+msgid "Save Video As…"
+msgstr "Kép mentése másként…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:69
+#, kde-format
+msgid "Copy Image"
+msgstr "Kép másolása"
+
+#: content/ui/PostDelegate/InformationBar.qml:34
+#, kde-format
+msgid "via %1"
+msgstr "ezen keresztül: %1"
+
+#: content/ui/PostDelegate/InformationBar.qml:80
+#: content/ui/PostDelegate/InformationBar.qml:88
+#: content/ui/PostDelegate/PostInfoBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:90
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, kde-format
+msgid "Public"
+msgstr "Nyilvános"
+
+#: content/ui/PostDelegate/InformationBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:84
+#: content/ui/StatusComposer/StatusComposer.qml:345
+#, kde-format
+msgid "Unlisted"
+msgstr "Nem listázott"
+
+#: content/ui/PostDelegate/InformationBar.qml:84
+#: content/ui/PostDelegate/PostInfoBar.qml:86
+#: content/ui/StatusComposer/StatusComposer.qml:350
+#, kde-format
+msgid "Private"
+msgstr "Privát"
+
+#: content/ui/PostDelegate/InformationBar.qml:86
+#: content/ui/PostDelegate/PostInfoBar.qml:88
+#: content/ui/StatusComposer/StatusComposer.qml:355
+#, kde-format
+msgid "Direct Message"
+msgstr "Közvetlen üzenet"
+
+#: content/ui/PostDelegate/InformationBar.qml:105
+#, kde-format
+msgid "%1 Favorite"
+msgid_plural "%1 Favorites"
+msgstr[0] "%1 kedvencnek jelölés"
+msgstr[1] "%1 kedvencnek jelölés"
+
+#: content/ui/PostDelegate/InformationBar.qml:124
+#, kde-format
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "%1 megtolás"
+msgstr[1] "%1 megtolás"
+
+#: content/ui/PostDelegate/LinkPreview.qml:19
+#, kde-format
+msgid "Link preview: %1"
+msgstr "Hivatkozás előnézete: %1"
+
+#: content/ui/PostDelegate/MediaContainer.qml:109
+#, kde-format
+msgctxt "Attachment has alt-text, Short for alt-text"
+msgid "Alt"
+msgstr "Helyettesítő"
+
+#: content/ui/PostDelegate/MediaContainer.qml:118
+#, kde-format
+msgid "GIF"
+msgstr "GIF"
+
+#: content/ui/PostDelegate/MediaContainer.qml:127
+#, kde-format
+msgid "Video"
+msgstr "Videó"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, kde-format
+msgid "Normal Status"
+msgstr "Normál állapot"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, kde-format
+msgid "Spoiler Status"
+msgstr "Spoiler állapot"
+
+#: content/ui/PostDelegate/PostDelegate.qml:141
+#, kde-format
+msgid "Filtered: %1"
+msgstr "Szűrt: %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:145
+#, kde-format
+msgid "Show anyway"
+msgstr "Megjelenítés mindenképp"
+
+#: content/ui/PostDelegate/PostDelegate.qml:166
+#, kde-format
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Kitűzött bejegyzés"
+
+#: content/ui/PostDelegate/PostDelegate.qml:226
+#, kde-format
+msgctxt "@title"
+msgid "Delete Post"
+msgstr "Bejegyzés törlése"
+
+#: content/ui/PostDelegate/PostDelegate.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to delete this post?"
+msgstr "Biztosan törölni szeretné ezt a bejegyzést?"
+
+#: content/ui/PostDelegate/PostDelegate.qml:242
+#, kde-format
+msgctxt "@title"
+msgid "Delete & Re-draft Post"
+msgstr "Bejegyzés törlése és ismét piszkozattá tétele"
+
+#: content/ui/PostDelegate/PostDelegate.qml:243
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Are you sure you want to redraft this post? This will delete the original "
+"post."
+msgstr ""
+"Biztosan ismét piszkozattá szeretné tenni ezt a bejegyzést? Ezzel törli az "
+"eredeti bejegyzést."
+
+#: content/ui/PostDelegate/PostDelegate.qml:407
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Válasz"
+
+#: content/ui/PostDelegate/PostDelegate.qml:432
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "Megtolás"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, kde-format
+msgid "Boosted"
+msgstr "Megtolt"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, kde-format
+msgid "Boost"
+msgstr "Megtolás"
+
+#: content/ui/PostDelegate/PostDelegate.qml:455
+#, kde-format
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr "Kedvencnek jelölés"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, kde-format
+msgid "Favourited"
+msgstr "Kedvencnek jelölt"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, kde-format
+msgid "Favourite"
+msgstr "Kedvencnek jelölés"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgid "Remove bookmark"
+msgstr "Könyvjelző eltávolítása"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr "Könyvjelzőzés"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, kde-format
+msgid "Bookmarked"
+msgstr "Könyvjelzőzve"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, kde-format
+msgid "Bookmark"
+msgstr "Könyvjelző"
+
+#: content/ui/PostDelegate/PostDelegate.qml:502
+#, kde-format
+msgid ""
+"This post has been marked private. Some posts may be missing because it's "
+"replies are marked as private by default."
+msgstr ""
+"Ezt a bejegyzést privátként jelölték meg. Néhány bejegyzés hiányozhat, mivel "
+"a válaszai alapértelmezetten privátként lettek megjelölve."
+
+#: content/ui/PostDelegate/PostInfoBar.qml:101
+#, kde-format
+msgctxt "Show more options"
+msgid "More"
+msgstr "Több"
+
+#: content/ui/PostDelegate/PostMenu.qml:35
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Expand Post"
+msgstr "Bejegyzés kibontása"
+
+#: content/ui/PostDelegate/PostMenu.qml:42
+#, kde-format
+msgid "Open Original Page"
+msgstr "Eredeti oldal megnyitása"
+
+#: content/ui/PostDelegate/PostMenu.qml:50
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Hivatkozás másolása"
+
+#: content/ui/PostDelegate/PostMenu.qml:59
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr "Beágyazás"
+
+#: content/ui/PostDelegate/PostMenu.qml:72
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open as…"
+msgstr "Megnyitás mint…"
+
+#: content/ui/PostDelegate/PostMenu.qml:79
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Reply as…"
+msgstr "Válasz mint…"
+
+#: content/ui/PostDelegate/PostMenu.qml:86
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Favorite as…"
+msgstr "Kedvencnek jelölés mint…"
+
+#: content/ui/PostDelegate/PostMenu.qml:93
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Boost as…"
+msgstr "Megtolás mint…"
+
+#: content/ui/PostDelegate/PostMenu.qml:100
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Bookmark as…"
+msgstr "Könyvjelzőzés mint…"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
+msgstr "Könyvjelző eltávolítása"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Bookmark"
+msgstr "Könyvjelző"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
+msgstr "Levétel a profilról"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Kitűzés a profilra"
+
+#: content/ui/PostDelegate/PostMenu.qml:128
+#, kde-format
+msgctxt "@action:inmenu Unmute account"
+msgid "Unmute @%1"
+msgstr "@%1 némításának feloldása"
+
+#: content/ui/PostDelegate/PostMenu.qml:130
+#, kde-format
+msgctxt "@action:inmenu Mute account"
+msgid "Mute @%1"
+msgstr "@%1 némítása"
+
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, kde-format
+msgctxt "@action:inmenu Unblock account"
+msgid "Unblock @%1"
+msgstr "@%1 letiltásának feloldása"
+
+#: content/ui/PostDelegate/PostMenu.qml:149
+#, kde-format
+msgctxt "@action:inmenu Block account"
+msgid "Block @%1"
+msgstr "@%1 letiltása"
+
+#: content/ui/PostDelegate/PostMenu.qml:173
+#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
+#, kde-format
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: content/ui/PostDelegate/PostMenu.qml:180
+#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:267
+#, kde-format
+msgid "Delete"
+msgstr "Törlés"
+
+#: content/ui/PostDelegate/PostMenu.qml:187
+#, kde-format
+msgid "Delete & Re-draft"
+msgstr "Törlés és ismét piszkozat"
+
+#: content/ui/PostDelegate/PostPoll.qml:39
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%1%"
+
+#: content/ui/PostDelegate/PostPoll.qml:63
+#, kde-format
+msgid "(No votes)"
+msgstr "(Nincsenek szavazatok)"
+
+#: content/ui/PostDelegate/PostPoll.qml:97
+#, kde-format
+msgid "Vote"
+msgstr "Szavazás"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:72
+#, kde-format
+msgid "%1 boosted"
+msgstr "%1 megtolva"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:74
+#, kde-format
+msgid "In reply to %1"
+msgstr "Válasz neki: %1"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:97
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr "Lejátszás"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -2865,13 +3266,6 @@ msgstr "Fejléc"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF vagy JPG. Legfeljebb 2 MB. Leskálázódik 1500x1500 képpontra"
 
-#: content/ui/Settings/ProfileEditor.qml:205
-#: content/ui/Settings/ProfileEditor.qml:267
-#: content/ui/StatusDelegate/OverflowMenu.qml:178
-#, kde-format
-msgid "Delete"
-msgstr "Törlés"
-
 #: content/ui/Settings/ProfileEditor.qml:220
 #, kde-format
 msgid "Avatar"
@@ -3132,12 +3526,6 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Szavazatszámok elrejtése a szavazás végéig"
 
-#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:171
-#, kde-format
-msgid "Edit"
-msgstr "Szerkesztés"
-
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:108
 #, kde-format
 msgid "Remove"
@@ -3265,36 +3653,6 @@ msgstr "Fájl csatolása"
 msgid "Add Poll"
 msgstr "Szavazás hozzáadása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:340
-#: content/ui/StatusDelegate/InformationBar.qml:80
-#: content/ui/StatusDelegate/InformationBar.qml:88
-#: content/ui/StatusDelegate/PostInfoBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:90
-#, kde-format
-msgid "Public"
-msgstr "Nyilvános"
-
-#: content/ui/StatusComposer/StatusComposer.qml:345
-#: content/ui/StatusDelegate/InformationBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:84
-#, kde-format
-msgid "Unlisted"
-msgstr "Nem listázott"
-
-#: content/ui/StatusComposer/StatusComposer.qml:350
-#: content/ui/StatusDelegate/InformationBar.qml:84
-#: content/ui/StatusDelegate/PostInfoBar.qml:86
-#, kde-format
-msgid "Private"
-msgstr "Privát"
-
-#: content/ui/StatusComposer/StatusComposer.qml:355
-#: content/ui/StatusDelegate/InformationBar.qml:86
-#: content/ui/StatusDelegate/PostInfoBar.qml:88
-#, kde-format
-msgid "Direct Message"
-msgstr "Közvetlen üzenet"
-
 #: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "Visibility"
@@ -3345,355 +3703,6 @@ msgstr "Ismételt bejegyzés"
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Szerkesztés"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:57
-#, kde-format
-msgid "Status with image attachment"
-msgstr "Állapot képmelléklettel"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:59
-#, kde-format
-msgid "Status with GifV attachment"
-msgstr "Állapot GifV melléklettel"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:61
-#, kde-format
-msgid "Status with Video attachment"
-msgstr "Állapot videómelléklettel"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:159
-#, kde-format
-msgid "Not available"
-msgstr "Nem érhető el"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:175
-#: content/ui/StatusDelegate/AttachmentGrid.qml:276
-#: content/ui/StatusDelegate/AttachmentGrid.qml:349
-#, kde-format
-msgctxt "Attachment has alt-text, Short for alt-text"
-msgid "Alt"
-msgstr "Helyettesítő"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:285
-#, kde-format
-msgid "GIF"
-msgstr "GIF"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:358
-#, kde-format
-msgid "Video"
-msgstr "Videó"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:371
-#, kde-format
-msgctxt "@action:button"
-msgid "Hide Media"
-msgstr "Média elrejtése"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:398
-#, kde-format
-msgid "Media Hidden"
-msgstr "Média elrejtve"
-
-#: content/ui/StatusDelegate/ImageMenu.qml:38
-#, kde-format
-msgid "Save Image As…"
-msgstr "Kép mentése másként…"
-
-#: content/ui/StatusDelegate/ImageMenu.qml:53
-#, kde-format
-msgid "Copy Image"
-msgstr "Kép másolása"
-
-#: content/ui/StatusDelegate/InformationBar.qml:34
-#, kde-format
-msgid "via %1"
-msgstr "ezen keresztül: %1"
-
-#: content/ui/StatusDelegate/InformationBar.qml:105
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] "%1 kedvencnek jelölés"
-msgstr[1] "%1 kedvencnek jelölés"
-
-#: content/ui/StatusDelegate/InformationBar.qml:124
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
-msgstr[0] "%1 megtolás"
-msgstr[1] "%1 megtolás"
-
-#: content/ui/StatusDelegate/LinkPreview.qml:19
-#, kde-format
-msgid "Link preview: %1"
-msgstr "Hivatkozás előnézete: %1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:33
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "Bejegyzés kibontása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Open Original Page"
-msgstr "Eredeti oldal megnyitása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Copy Link"
-msgstr "Hivatkozás másolása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgctxt "@action Open embed into website dialog"
-msgid "Embed"
-msgstr "Beágyazás"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:70
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open as…"
-msgstr "Megnyitás mint…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:77
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Reply as…"
-msgstr "Válasz mint…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:84
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Favorite as…"
-msgstr "Kedvencnek jelölés mint…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:91
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Boost as…"
-msgstr "Megtolás mint…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:98
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Bookmark as…"
-msgstr "Könyvjelzőzés mint…"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Remove Bookmark"
-msgstr "Könyvjelző eltávolítása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Bookmark"
-msgstr "Könyvjelző"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Unpin on Profile"
-msgstr "Levétel a profilról"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Pin on Profile"
-msgstr "Kitűzés a profilra"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:126
-#, kde-format
-msgctxt "@action:inmenu Unmute account"
-msgid "Unmute @%1"
-msgstr "@%1 némításának feloldása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:128
-#, kde-format
-msgctxt "@action:inmenu Mute account"
-msgid "Mute @%1"
-msgstr "@%1 némítása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:145
-#, kde-format
-msgctxt "@action:inmenu Unblock account"
-msgid "Unblock @%1"
-msgstr "@%1 letiltásának feloldása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:147
-#, kde-format
-msgctxt "@action:inmenu Block account"
-msgid "Block @%1"
-msgstr "@%1 letiltása"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:185
-#, kde-format
-msgid "Delete & Re-draft"
-msgstr "Törlés és ismét piszkozat"
-
-#: content/ui/StatusDelegate/PostInfoBar.qml:101
-#, kde-format
-msgctxt "Show more options"
-msgid "More"
-msgstr "Több"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, kde-format
-msgid "Normal Status"
-msgstr "Normál állapot"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, kde-format
-msgid "Spoiler Status"
-msgstr "Spoiler állapot"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:185
-#, kde-format
-msgid "Filtered: %1"
-msgstr "Szűrt: %1"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:189
-#, kde-format
-msgid "Show anyway"
-msgstr "Megjelenítés mindenképp"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:210
-#, kde-format
-msgctxt "@label"
-msgid "Pinned Post"
-msgstr "Kitűzött bejegyzés"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:270
-#, kde-format
-msgctxt "@title"
-msgid "Delete Post"
-msgstr "Bejegyzés törlése"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:271
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to delete this post?"
-msgstr "Biztosan törölni szeretné ezt a bejegyzést?"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:286
-#, kde-format
-msgctxt "@title"
-msgid "Delete & Re-draft Post"
-msgstr "Bejegyzés törlése és ismét piszkozattá tétele"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:287
-#, kde-format
-msgctxt "@label"
-msgid ""
-"Are you sure you want to redraft this post? This will delete the original "
-"post."
-msgstr ""
-"Biztosan ismét piszkozattá szeretné tenni ezt a bejegyzést? Ezzel törli az "
-"eredeti bejegyzést."
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Válasz"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:476
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "Megtolás"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, kde-format
-msgid "Boosted"
-msgstr "Megtolt"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, kde-format
-msgid "Boost"
-msgstr "Megtolás"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:499
-#, kde-format
-msgctxt "Favorite a post"
-msgid "Favorite"
-msgstr "Kedvencnek jelölés"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, kde-format
-msgid "Favourited"
-msgstr "Kedvencnek jelölt"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, kde-format
-msgid "Favourite"
-msgstr "Kedvencnek jelölés"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgid "Remove bookmark"
-msgstr "Könyvjelző eltávolítása"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr "Könyvjelzőzés"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, kde-format
-msgid "Bookmarked"
-msgstr "Könyvjelzőzve"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, kde-format
-msgid "Bookmark"
-msgstr "Könyvjelző"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:546
-#, kde-format
-msgid ""
-"This post has been marked private. Some posts may be missing because it's "
-"replies are marked as private by default."
-msgstr ""
-"Ezt a bejegyzést privátként jelölték meg. Néhány bejegyzés hiányozhat, mivel "
-"a válaszai alapértelmezetten privátként lettek megjelölve."
-
-#: content/ui/StatusDelegate/StatusPoll.qml:39
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%1%"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:63
-#, kde-format
-msgid "(No votes)"
-msgstr "(Nincsenek szavazatok)"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:97
-#, kde-format
-msgid "Vote"
-msgstr "Szavazás"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:72
-#, kde-format
-msgid "%1 boosted"
-msgstr "%1 megtolva"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:74
-#, kde-format
-msgid "In reply to %1"
-msgstr "Válasz neki: %1"
-
-#: content/ui/StatusDelegate/VideoAttachment.qml:106
-#, kde-format
-msgctxt "@action:button Start media playback"
-msgid "Play"
-msgstr "Lejátszás"
 
 #: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
 #, kde-format

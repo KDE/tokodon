@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-13 00:38+0000\n"
+"POT-Creation-Date: 2024-03-15 00:38+0000\n"
 "PO-Revision-Date: 2023-08-14 21:26+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -70,9 +70,9 @@ msgid "View Post"
 msgstr "Profil anzeigen"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
+#: content/ui/Components/InlineIdentityInfo.qml:35
 #: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/StatusDelegate/InlineIdentityInfo.qml:35
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:65
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgid "View Profile"
@@ -430,8 +430,7 @@ msgstr "Blockieren"
 msgid "Block"
 msgstr "Blockieren"
 
-#: content/ui/AccountInfo.qml:329
-#: content/ui/StatusDelegate/OverflowMenu.qml:162
+#: content/ui/AccountInfo.qml:329 content/ui/PostDelegate/PostMenu.qml:164
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -485,7 +484,7 @@ msgstr "Zugänge"
 msgid "Copy Link to This Profile"
 msgstr "Verknüpfung zum Profil kopieren"
 
-#: content/ui/AccountInfo.qml:377 content/ui/StatusDelegate/OverflowMenu.qml:51
+#: content/ui/AccountInfo.qml:377 content/ui/PostDelegate/PostMenu.qml:53
 #, kde-format
 msgid "Post link copied."
 msgstr "Beitrag-Verknüpfung kopiert."
@@ -815,12 +814,6 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Schließen"
 
-#: content/ui/ListPage.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit"
-msgid "Edit List"
-msgstr "Bearbeiten"
-
 #: content/ui/ListsPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -836,6 +829,12 @@ msgstr ""
 #, kde-format
 msgid "No lists"
 msgstr ""
+
+#: content/ui/ListTimelinePage.qml:19
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit List"
+msgstr "Bearbeiten"
 
 #: content/ui/LoginFlow/AuthorizationPage.qml:16
 #, fuzzy, kde-format
@@ -2500,19 +2499,19 @@ msgid ""
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:463
-#: content/ui/StatusDelegate/StatusDelegate.qml:353
+#: content/ui/PostDelegate/PostDelegate.qml:309
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show Less"
 msgstr "Weniger anzeigen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:469
-#: content/ui/StatusDelegate/StatusDelegate.qml:360
+#: content/ui/PostDelegate/PostDelegate.qml:316
 #, kde-format
 msgid "Show More"
 msgstr "Mehr anzeigen"
@@ -2714,6 +2713,442 @@ msgstr "Ihre Umfrage ist abgelaufen"
 #| msgid "%1 edited a post"
 msgid "%1 updated their post"
 msgstr "%1 bearbeitete einen Betrag"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:74
+#, kde-format
+msgid "Status with image attachment"
+msgstr ""
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:76
+#, kde-format
+msgid "Status with GifV attachment"
+msgstr ""
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:78
+#, kde-format
+msgid "Status with Video attachment"
+msgstr ""
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:167
+#, kde-format
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:295
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@action:button"
+msgid "Hide Media"
+msgstr "Medien"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:309
+#, kde-format
+msgid "Media Hidden"
+msgstr "Medien ausgeblendet"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:47
+#, kde-format
+msgid "Save Image As…"
+msgstr ""
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:49
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Save Gif As…"
+msgstr "Favoriten"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:51
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Save Video As…"
+msgstr "Favoriten"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:69
+#, kde-format
+msgid "Copy Image"
+msgstr ""
+
+#: content/ui/PostDelegate/InformationBar.qml:34
+#, kde-format
+msgid "via %1"
+msgstr "über %1"
+
+#: content/ui/PostDelegate/InformationBar.qml:80
+#: content/ui/PostDelegate/InformationBar.qml:88
+#: content/ui/PostDelegate/PostInfoBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:90
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, kde-format
+msgid "Public"
+msgstr "Öffentlich"
+
+#: content/ui/PostDelegate/InformationBar.qml:82
+#: content/ui/PostDelegate/PostInfoBar.qml:84
+#: content/ui/StatusComposer/StatusComposer.qml:345
+#, kde-format
+msgid "Unlisted"
+msgstr "Nicht aufgeführt"
+
+#: content/ui/PostDelegate/InformationBar.qml:84
+#: content/ui/PostDelegate/PostInfoBar.qml:86
+#: content/ui/StatusComposer/StatusComposer.qml:350
+#, kde-format
+msgid "Private"
+msgstr "Privat"
+
+#: content/ui/PostDelegate/InformationBar.qml:86
+#: content/ui/PostDelegate/PostInfoBar.qml:88
+#: content/ui/StatusComposer/StatusComposer.qml:355
+#, kde-format
+msgid "Direct Message"
+msgstr "Direktnachricht"
+
+#: content/ui/PostDelegate/InformationBar.qml:105
+#, kde-format
+msgid "%1 Favorite"
+msgid_plural "%1 Favorites"
+msgstr[0] ""
+msgstr[1] ""
+
+#: content/ui/PostDelegate/InformationBar.qml:124
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "%1 Boost"
+msgid_plural "%1 Boosts"
+msgstr[0] "Teilen"
+msgstr[1] "Teilen"
+
+#: content/ui/PostDelegate/LinkPreview.qml:19
+#, kde-format
+msgid "Link preview: %1"
+msgstr "Verknüpfungs-Vorschau: %1"
+
+#: content/ui/PostDelegate/MediaContainer.qml:109
+#, fuzzy, kde-format
+#| msgctxt "@info:Filter out accounts from any location"
+#| msgid "All"
+msgctxt "Attachment has alt-text, Short for alt-text"
+msgid "Alt"
+msgstr "Alle"
+
+#: content/ui/PostDelegate/MediaContainer.qml:118
+#, kde-format
+msgid "GIF"
+msgstr "GIF"
+
+#: content/ui/PostDelegate/MediaContainer.qml:127
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, fuzzy, kde-format
+#| msgctxt "@info: Email confirmation status of the user."
+#| msgid "Email Status"
+msgid "Normal Status"
+msgstr "Status der E-Mail-Adresse"
+
+#: content/ui/PostDelegate/PostDelegate.qml:95
+#, fuzzy, kde-format
+#| msgctxt "@info The current login status of the account."
+#| msgid "Login Status"
+msgid "Spoiler Status"
+msgstr "Anmeldestatus"
+
+#: content/ui/PostDelegate/PostDelegate.qml:141
+#, kde-format
+msgid "Filtered: %1"
+msgstr "Gefiltert: %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:145
+#, kde-format
+msgid "Show anyway"
+msgstr "Trotzdem anzeigen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:166
+#, fuzzy, kde-format
+#| msgid "View profile"
+msgctxt "@label"
+msgid "Pinned Post"
+msgstr "Profil anzeigen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:226
+#, fuzzy, kde-format
+#| msgid "Delete word"
+msgctxt "@title"
+msgid "Delete Post"
+msgstr "Wort löschen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:227
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to delete this post?"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:242
+#, fuzzy, kde-format
+#| msgid "Delete & Re-draft"
+msgctxt "@title"
+msgid "Delete & Re-draft Post"
+msgstr "Löschen und neu entwerfen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:243
+#, kde-format
+msgctxt "@label"
+msgid ""
+"Are you sure you want to redraft this post? This will delete the original "
+"post."
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:407
+#, kde-format
+msgctxt "Reply to a post"
+msgid "Reply"
+msgstr "Antworten"
+
+#: content/ui/PostDelegate/PostDelegate.qml:432
+#, kde-format
+msgctxt "Share a post"
+msgid "Boost"
+msgstr "Teilen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boosted"
+msgstr "Teilen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:435
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgid "Boost"
+msgstr "Teilen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:455
+#, kde-format
+msgctxt "Favorite a post"
+msgid "Favorite"
+msgstr "Favorisieren"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, fuzzy, kde-format
+#| msgid "Favourites"
+msgid "Favourited"
+msgstr "Favoriten"
+
+#: content/ui/PostDelegate/PostDelegate.qml:458
+#, fuzzy, kde-format
+#| msgid "Favourites"
+msgid "Favourite"
+msgstr "Favoriten"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgid "Remove bookmark"
+msgstr "Lesezeichen entfernen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:477
+#, kde-format
+msgctxt "Bookmark a post"
+msgid "Bookmark"
+msgstr "Lesezeichen hinzufügen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgid "Bookmarked"
+msgstr "Lesezeichen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:480
+#, kde-format
+msgid "Bookmark"
+msgstr "Lesezeichen"
+
+#: content/ui/PostDelegate/PostDelegate.qml:502
+#, kde-format
+msgid ""
+"This post has been marked private. Some posts may be missing because it's "
+"replies are marked as private by default."
+msgstr ""
+
+#: content/ui/PostDelegate/PostInfoBar.qml:101
+#, kde-format
+msgctxt "Show more options"
+msgid "More"
+msgstr "Mehr"
+
+#: content/ui/PostDelegate/PostMenu.qml:35
+#, fuzzy, kde-format
+#| msgid "Expand This Post"
+msgctxt "@action:inmenu"
+msgid "Expand Post"
+msgstr "Beitrag ausklappen"
+
+#: content/ui/PostDelegate/PostMenu.qml:42
+#, kde-format
+msgid "Open Original Page"
+msgstr "Original öffnen"
+
+#: content/ui/PostDelegate/PostMenu.qml:50
+#, fuzzy, kde-format
+#| msgid "Copy Link"
+msgctxt "@action:inmenu"
+msgid "Copy Link"
+msgstr "Verknüpfung kopieren"
+
+#: content/ui/PostDelegate/PostMenu.qml:59
+#, kde-format
+msgctxt "@action Open embed into website dialog"
+msgid "Embed"
+msgstr ""
+
+#: content/ui/PostDelegate/PostMenu.qml:72
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open as…"
+msgstr ""
+
+#: content/ui/PostDelegate/PostMenu.qml:79
+#, fuzzy, kde-format
+#| msgctxt "Reply to a post"
+#| msgid "Reply"
+msgctxt "@action:inmenu"
+msgid "Reply as…"
+msgstr "Antworten"
+
+#: content/ui/PostDelegate/PostMenu.qml:86
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgctxt "@action:inmenu"
+msgid "Favorite as…"
+msgstr "Favoriten"
+
+#: content/ui/PostDelegate/PostMenu.qml:93
+#, fuzzy, kde-format
+#| msgctxt "Show only boosts"
+#| msgid "Boosts"
+msgctxt "@action:inmenu"
+msgid "Boost as…"
+msgstr "Geteilte Beiträge"
+
+#: content/ui/PostDelegate/PostMenu.qml:100
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgctxt "@action:inmenu"
+msgid "Bookmark as…"
+msgstr "Lesezeichen"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, fuzzy, kde-format
+#| msgid "Remove bookmark"
+msgctxt "@action:inmenu"
+msgid "Remove Bookmark"
+msgstr "Lesezeichen entfernen"
+
+#: content/ui/PostDelegate/PostMenu.qml:108
+#, fuzzy, kde-format
+#| msgid "Bookmark"
+msgctxt "@action:inmenu"
+msgid "Bookmark"
+msgstr "Lesezeichen"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, fuzzy, kde-format
+#| msgid "Unpin on profile"
+msgctxt "@action:inmenu"
+msgid "Unpin on Profile"
+msgstr "Anheften am Profil entfernen"
+
+#: content/ui/PostDelegate/PostMenu.qml:115
+#, fuzzy, kde-format
+#| msgid "Pin on profile"
+msgctxt "@action:inmenu"
+msgid "Pin on Profile"
+msgstr "Am Profil anheften"
+
+#: content/ui/PostDelegate/PostMenu.qml:128
+#, kde-format
+msgctxt "@action:inmenu Unmute account"
+msgid "Unmute @%1"
+msgstr ""
+
+#: content/ui/PostDelegate/PostMenu.qml:130
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:inmenu Mute account"
+msgid "Mute @%1"
+msgstr "Stummschalten"
+
+#: content/ui/PostDelegate/PostMenu.qml:147
+#, fuzzy, kde-format
+#| msgid "Block"
+msgctxt "@action:inmenu Unblock account"
+msgid "Unblock @%1"
+msgstr "Blockieren"
+
+#: content/ui/PostDelegate/PostMenu.qml:149
+#, fuzzy, kde-format
+#| msgid "Block"
+msgctxt "@action:inmenu Block account"
+msgid "Block @%1"
+msgstr "Blockieren"
+
+#: content/ui/PostDelegate/PostMenu.qml:173
+#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
+#, kde-format
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: content/ui/PostDelegate/PostMenu.qml:180
+#: content/ui/Settings/ProfileEditor.qml:205
+#: content/ui/Settings/ProfileEditor.qml:267
+#, kde-format
+msgid "Delete"
+msgstr "Löschen"
+
+#: content/ui/PostDelegate/PostMenu.qml:187
+#, kde-format
+msgid "Delete & Re-draft"
+msgstr "Löschen und neu entwerfen"
+
+#: content/ui/PostDelegate/PostPoll.qml:39
+#, kde-format
+msgctxt "Votes percentage"
+msgid "%1%"
+msgstr "%1 %"
+
+#: content/ui/PostDelegate/PostPoll.qml:63
+#, kde-format
+msgid "(No votes)"
+msgstr "(Keine Stimmen)"
+
+#: content/ui/PostDelegate/PostPoll.qml:97
+#, kde-format
+msgid "Vote"
+msgstr "Abstimmen"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:72
+#, kde-format
+msgid "%1 boosted"
+msgstr "%1 teilte"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:74
+#, kde-format
+msgid "In reply to %1"
+msgstr "Als Antwort auf %1"
+
+#: content/ui/PostDelegate/VideoAttachment.qml:97
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr "Wiedergabe"
 
 #: content/ui/ReportDialog.qml:22
 #, fuzzy, kde-format
@@ -3015,13 +3450,6 @@ msgstr "Kopfzeile"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF oder JPG. Maximal 2 MB. Wird auf 1500x500px herunterskaliert"
 
-#: content/ui/Settings/ProfileEditor.qml:205
-#: content/ui/Settings/ProfileEditor.qml:267
-#: content/ui/StatusDelegate/OverflowMenu.qml:178
-#, kde-format
-msgid "Delete"
-msgstr "Löschen"
-
 #: content/ui/Settings/ProfileEditor.qml:220
 #, kde-format
 msgid "Avatar"
@@ -3290,12 +3718,6 @@ msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
 msgstr "Stimmenzählung bis zum Ende der Umfrage ausblenden"
 
-#: content/ui/StatusComposer/EditorAttachmentGrid.qml:71
-#: content/ui/StatusDelegate/OverflowMenu.qml:171
-#, kde-format
-msgid "Edit"
-msgstr "Bearbeiten"
-
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:108
 #, kde-format
 msgid "Remove"
@@ -3421,36 +3843,6 @@ msgstr "Datei anhängen"
 msgid "Add Poll"
 msgstr "Umfrage hinzufügen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:340
-#: content/ui/StatusDelegate/InformationBar.qml:80
-#: content/ui/StatusDelegate/InformationBar.qml:88
-#: content/ui/StatusDelegate/PostInfoBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:90
-#, kde-format
-msgid "Public"
-msgstr "Öffentlich"
-
-#: content/ui/StatusComposer/StatusComposer.qml:345
-#: content/ui/StatusDelegate/InformationBar.qml:82
-#: content/ui/StatusDelegate/PostInfoBar.qml:84
-#, kde-format
-msgid "Unlisted"
-msgstr "Nicht aufgeführt"
-
-#: content/ui/StatusComposer/StatusComposer.qml:350
-#: content/ui/StatusDelegate/InformationBar.qml:84
-#: content/ui/StatusDelegate/PostInfoBar.qml:86
-#, kde-format
-msgid "Private"
-msgstr "Privat"
-
-#: content/ui/StatusComposer/StatusComposer.qml:355
-#: content/ui/StatusDelegate/InformationBar.qml:86
-#: content/ui/StatusDelegate/PostInfoBar.qml:88
-#, kde-format
-msgid "Direct Message"
-msgstr "Direktnachricht"
-
 #: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "Visibility"
@@ -3505,387 +3897,6 @@ msgstr ""
 msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Bearbeiten"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:57
-#, kde-format
-msgid "Status with image attachment"
-msgstr ""
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:59
-#, kde-format
-msgid "Status with GifV attachment"
-msgstr ""
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:61
-#, kde-format
-msgid "Status with Video attachment"
-msgstr ""
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:159
-#, kde-format
-msgid "Not available"
-msgstr "Nicht verfügbar"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:175
-#: content/ui/StatusDelegate/AttachmentGrid.qml:276
-#: content/ui/StatusDelegate/AttachmentGrid.qml:349
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
-msgctxt "Attachment has alt-text, Short for alt-text"
-msgid "Alt"
-msgstr "Alle"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:285
-#, kde-format
-msgid "GIF"
-msgstr "GIF"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:358
-#, kde-format
-msgid "Video"
-msgstr "Video"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:371
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
-msgctxt "@action:button"
-msgid "Hide Media"
-msgstr "Medien"
-
-#: content/ui/StatusDelegate/AttachmentGrid.qml:398
-#, kde-format
-msgid "Media Hidden"
-msgstr "Medien ausgeblendet"
-
-#: content/ui/StatusDelegate/ImageMenu.qml:38
-#, kde-format
-msgid "Save Image As…"
-msgstr ""
-
-#: content/ui/StatusDelegate/ImageMenu.qml:53
-#, kde-format
-msgid "Copy Image"
-msgstr ""
-
-#: content/ui/StatusDelegate/InformationBar.qml:34
-#, kde-format
-msgid "via %1"
-msgstr "über %1"
-
-#: content/ui/StatusDelegate/InformationBar.qml:105
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] ""
-msgstr[1] ""
-
-#: content/ui/StatusDelegate/InformationBar.qml:124
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
-msgstr[0] "Teilen"
-msgstr[1] "Teilen"
-
-#: content/ui/StatusDelegate/LinkPreview.qml:19
-#, kde-format
-msgid "Link preview: %1"
-msgstr "Verknüpfungs-Vorschau: %1"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:33
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "Beitrag ausklappen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:40
-#, kde-format
-msgid "Open Original Page"
-msgstr "Original öffnen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:48
-#, fuzzy, kde-format
-#| msgid "Copy Link"
-msgctxt "@action:inmenu"
-msgid "Copy Link"
-msgstr "Verknüpfung kopieren"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:57
-#, kde-format
-msgctxt "@action Open embed into website dialog"
-msgid "Embed"
-msgstr ""
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:70
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open as…"
-msgstr ""
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:77
-#, fuzzy, kde-format
-#| msgctxt "Reply to a post"
-#| msgid "Reply"
-msgctxt "@action:inmenu"
-msgid "Reply as…"
-msgstr "Antworten"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:84
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
-msgctxt "@action:inmenu"
-msgid "Favorite as…"
-msgstr "Favoriten"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:91
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
-msgctxt "@action:inmenu"
-msgid "Boost as…"
-msgstr "Geteilte Beiträge"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:98
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
-msgctxt "@action:inmenu"
-msgid "Bookmark as…"
-msgstr "Lesezeichen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
-msgctxt "@action:inmenu"
-msgid "Remove Bookmark"
-msgstr "Lesezeichen entfernen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:106
-#, fuzzy, kde-format
-#| msgid "Bookmark"
-msgctxt "@action:inmenu"
-msgid "Bookmark"
-msgstr "Lesezeichen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
-msgctxt "@action:inmenu"
-msgid "Unpin on Profile"
-msgstr "Anheften am Profil entfernen"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:113
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
-msgctxt "@action:inmenu"
-msgid "Pin on Profile"
-msgstr "Am Profil anheften"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:126
-#, kde-format
-msgctxt "@action:inmenu Unmute account"
-msgid "Unmute @%1"
-msgstr ""
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:128
-#, fuzzy, kde-format
-#| msgid "Mute"
-msgctxt "@action:inmenu Mute account"
-msgid "Mute @%1"
-msgstr "Stummschalten"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:145
-#, fuzzy, kde-format
-#| msgid "Block"
-msgctxt "@action:inmenu Unblock account"
-msgid "Unblock @%1"
-msgstr "Blockieren"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:147
-#, fuzzy, kde-format
-#| msgid "Block"
-msgctxt "@action:inmenu Block account"
-msgid "Block @%1"
-msgstr "Blockieren"
-
-#: content/ui/StatusDelegate/OverflowMenu.qml:185
-#, kde-format
-msgid "Delete & Re-draft"
-msgstr "Löschen und neu entwerfen"
-
-#: content/ui/StatusDelegate/PostInfoBar.qml:101
-#, kde-format
-msgctxt "Show more options"
-msgid "More"
-msgstr "Mehr"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
-msgid "Normal Status"
-msgstr "Status der E-Mail-Adresse"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:92
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
-msgid "Spoiler Status"
-msgstr "Anmeldestatus"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:185
-#, kde-format
-msgid "Filtered: %1"
-msgstr "Gefiltert: %1"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:189
-#, kde-format
-msgid "Show anyway"
-msgstr "Trotzdem anzeigen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:210
-#, fuzzy, kde-format
-#| msgid "View profile"
-msgctxt "@label"
-msgid "Pinned Post"
-msgstr "Profil anzeigen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:270
-#, fuzzy, kde-format
-#| msgid "Delete word"
-msgctxt "@title"
-msgid "Delete Post"
-msgstr "Wort löschen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:271
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to delete this post?"
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:286
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
-msgctxt "@title"
-msgid "Delete & Re-draft Post"
-msgstr "Löschen und neu entwerfen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:287
-#, kde-format
-msgctxt "@label"
-msgid ""
-"Are you sure you want to redraft this post? This will delete the original "
-"post."
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:451
-#, kde-format
-msgctxt "Reply to a post"
-msgid "Reply"
-msgstr "Antworten"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:476
-#, kde-format
-msgctxt "Share a post"
-msgid "Boost"
-msgstr "Teilen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boosted"
-msgstr "Teilen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:479
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgid "Boost"
-msgstr "Teilen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:499
-#, kde-format
-msgctxt "Favorite a post"
-msgid "Favorite"
-msgstr "Favorisieren"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, fuzzy, kde-format
-#| msgid "Favourites"
-msgid "Favourited"
-msgstr "Favoriten"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:502
-#, fuzzy, kde-format
-#| msgid "Favourites"
-msgid "Favourite"
-msgstr "Favoriten"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgid "Remove bookmark"
-msgstr "Lesezeichen entfernen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:521
-#, kde-format
-msgctxt "Bookmark a post"
-msgid "Bookmark"
-msgstr "Lesezeichen hinzufügen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, fuzzy, kde-format
-#| msgid "Bookmark"
-msgid "Bookmarked"
-msgstr "Lesezeichen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:524
-#, kde-format
-msgid "Bookmark"
-msgstr "Lesezeichen"
-
-#: content/ui/StatusDelegate/StatusDelegate.qml:546
-#, kde-format
-msgid ""
-"This post has been marked private. Some posts may be missing because it's "
-"replies are marked as private by default."
-msgstr ""
-
-#: content/ui/StatusDelegate/StatusPoll.qml:39
-#, kde-format
-msgctxt "Votes percentage"
-msgid "%1%"
-msgstr "%1 %"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:63
-#, kde-format
-msgid "(No votes)"
-msgstr "(Keine Stimmen)"
-
-#: content/ui/StatusDelegate/StatusPoll.qml:97
-#, kde-format
-msgid "Vote"
-msgstr "Abstimmen"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:72
-#, kde-format
-msgid "%1 boosted"
-msgstr "%1 teilte"
-
-#: content/ui/StatusDelegate/UserInteractionLabel.qml:74
-#, kde-format
-msgid "In reply to %1"
-msgstr "Als Antwort auf %1"
-
-#: content/ui/StatusDelegate/VideoAttachment.qml:106
-#, kde-format
-msgctxt "@action:button Start media playback"
-msgid "Play"
-msgstr "Wiedergabe"
 
 #: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
 #, kde-format
