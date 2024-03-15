@@ -19,7 +19,7 @@ InlineIdentityInfo {
     secondary: root.secondary
     visible: !filtered
 
-    signal moreOpened
+    signal moreOpened(parentItem: var)
 
     Item {
         Layout.fillWidth: true
@@ -97,12 +97,14 @@ InlineIdentityInfo {
     }
 
     InteractionButton {
+        id: moreButton
+
         iconName: 'overflow-menu'
         tooltip: i18nc("Show more options", "More")
 
         Layout.alignment: Qt.AlignVCenter
         Layout.preferredWidth: implicitHeight
 
-        onClicked: infoBar.moreOpened()
+        onClicked: infoBar.moreOpened(moreButton)
     }
 }

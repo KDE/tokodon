@@ -211,9 +211,9 @@ QQC2.ItemDelegate {
 
             Layout.fillWidth: true
 
-            onMoreOpened: {
+            onMoreOpened: parentItem => {
                 postMenu.active = true;
-                postMenu.item.popup(infoBar)
+                postMenu.item.popup(parentItem, 0, parentItem.height)
             }
 
             Loader {
