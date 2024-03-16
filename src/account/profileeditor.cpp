@@ -41,7 +41,11 @@ QString ProfileEditorBackend::displayName() const
 
 QString ProfileEditorBackend::displayNameHtml() const
 {
-    return TextHandler::replaceCustomEmojis(m_account->customEmojis(), m_displayName);
+    if (m_account != nullptr) {
+        return TextHandler::replaceCustomEmojis(m_account->customEmojis(), m_displayName);
+    } else {
+        return m_displayName;
+    }
 }
 
 void ProfileEditorBackend::setDisplayName(const QString &displayName)
