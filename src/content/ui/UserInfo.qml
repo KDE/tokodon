@@ -99,13 +99,17 @@ QQC2.Pane {
             currentIndex: AccountManager.selectedIndex
             activeFocusOnTab: true
 
-            header: Kirigami.Separator {
-                anchors {
-                    left: parent.left
-                    leftMargin: Kirigami.Units.smallSpacing
+            header: Item {
+                width: ListView.view.width
 
-                    right: parent.right
-                    rightMargin: Kirigami.Units.smallSpacing
+                Kirigami.Separator {
+                    anchors {
+                        left: parent.left
+                        leftMargin: Kirigami.Units.smallSpacing
+
+                        right: parent.right
+                        rightMargin: Kirigami.Units.smallSpacing
+                    }
                 }
             }
 
