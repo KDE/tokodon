@@ -6,7 +6,6 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQml.Models
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
 
 import "../Components"
 
@@ -52,18 +51,7 @@ GridLayout {
             Layout.preferredHeight: (parent.width * mediaRatio / heightDivisor) + extraSpacing
 
             layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: Item {
-                    width: img.width
-                    height: img.height
-                    Rectangle {
-                        anchors.centerIn: parent
-                        width: img.width
-                        height: img.height
-                        radius: Kirigami.Units.smallSpacing
-                    }
-                }
-            }
+            layer.effect: RoundedEffect {}
 
             QQC2.RoundButton {
                 id: editButton

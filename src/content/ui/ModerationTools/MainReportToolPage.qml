@@ -9,7 +9,6 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
-import Qt5Compat.GraphicalEffects
 import "../PostDelegate"
 
 Kirigami.ScrollablePage {
@@ -79,66 +78,11 @@ Kirigami.ScrollablePage {
                 color: Kirigami.Theme.backgroundColor
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                Image {
-                    id: bg
-                    anchors.centerIn: parent
-                    source: root.reportInfo.targetAccount.userLevelIdentity.backgroundUrl
-                    fillMode: Image.PreserveAspectFit
-                    visible: true
-                }
-
-                QQC2.Pane {
-                    id: pane
-                    visible: true
-                    background: Item {
-                        FastBlur {
-                            id: blur
-                            source: bg
-                            radius: 48
-                            width: pane.width
-                            height: pane.height
-                        }
-                        ColorOverlay {
-                            width: pane.width
-                            height: pane.height
-                            source: blur
-                            color: "#66808080"
-                        }
-                        Rectangle {
-                            id: strip
-                            color: "#66F0F0F0"
-                            anchors.bottom: parent.bottom;
-                            height: 2 * Kirigami.Units.gridUnit
-                            width: parent.width
-                            visible: children.length > 0
-                        }
-                    }
-                    anchors.left: parent.left
-                    anchors.bottom: parent.bottom;
-                    anchors.right: parent.right
-                    contentItem:
-                        ColumnLayout {
-                        spacing: 0
-
-                        RowLayout {
-                            implicitHeight: Kirigami.Units.gridUnit * 5
-                            KirigamiComponents.Avatar {
-                                source: root.reportInfo.targetAccount.userLevelIdentity.avatarUrl
-                            }
-
-                            Column {
-                                Layout.fillWidth: true
-                                Kirigami.Heading {
-                                    level: 5
-                                    text: root.reportInfo.targetAccount.userLevelIdentity.username
-                                    type: Kirigami.Heading.Primary
-                                }
-                                QQC2.Label {
-                                    text: "@" + root.reportInfo.targetAccount.userLevelIdentity.account
-                                }
-                            }
-                        }
-                    }
+                ProfileHeader {
+                    backgroundUrl: root.reportInfo.targetAccount.userLevelIdentity.backgroundUrl
+                    avatarUrl: root.reportInfo.targetAccount.userLevelIdentity.avatarUrl
+                    displayName: root.reportInfo.targetAccount.userLevelIdentity.displayName
+                    account: root.reportInfo.targetAccount.userLevelIdentity.account
                 }
             }
 

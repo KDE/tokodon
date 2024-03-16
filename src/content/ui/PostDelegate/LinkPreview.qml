@@ -6,7 +6,6 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import Qt5Compat.GraphicalEffects
 
 // The visual "link preview box" when there's some data attached to a link
 // Such as the website page description and title
@@ -66,18 +65,7 @@ QQC2.AbstractButton {
             Layout.leftMargin: Kirigami.Units.smallSpacing
 
             layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: Item {
-                    width: img.width
-                    height: img.height
-                    Kirigami.ShadowedRectangle {
-                        anchors.centerIn: parent
-                        radius: Kirigami.Units.mediumSpacing
-                        width: img.width
-                        height: img.height
-                    }
-                }
-            }
+            layer.effect: RoundedEffect {}
 
             fillMode: Image.PreserveAspectCrop
             source: root.card ? root.card.image : ''

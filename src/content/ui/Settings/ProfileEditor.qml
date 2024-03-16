@@ -9,7 +9,6 @@ import org.kde.tokodon
 import QtQuick.Dialogs
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
-import Qt5Compat.GraphicalEffects
 import ".."
 
 FormCard.FormCardPage {

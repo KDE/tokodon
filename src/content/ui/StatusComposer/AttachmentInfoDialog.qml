@@ -6,7 +6,6 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
-import Qt5Compat.GraphicalEffects
 
 import "../Components"
 
@@ -127,18 +126,7 @@ QQC2.Dialog {
                 clip: true
 
                 layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Item {
-                        width: imageContainer.width
-                        height: imageContainer.height
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width: imageContainer.width
-                            height: imageContainer.height
-                            radius: 3 // same as in breeze
-                        }
-                    }
-                }
+                layer.effect: RoundedEffect {}
 
                 Image {
                     id: image
@@ -175,18 +163,7 @@ QQC2.Dialog {
                         height: width * (9.0 / 16.0)
 
                         layer.enabled: true
-                        layer.effect: OpacityMask {
-                            maskSource: Item {
-                                width: preview.width
-                                height: preview.height
-                                Rectangle {
-                                    anchors.centerIn: parent
-                                    width: preview.width
-                                    height: preview.height
-                                    radius: Kirigami.Units.mediumSpacing
-                                }
-                            }
-                        }
+                        layer.effect: RoundedEffect {}
 
                         HoverHandler {
                             id: previewHover

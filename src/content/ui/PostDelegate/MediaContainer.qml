@@ -3,8 +3,10 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
-import Qt5Compat.GraphicalEffects
+
+import "../Components"
 
 // Wrapper component used for the attachment grid
 Item {
@@ -57,19 +59,9 @@ Item {
     Keys.onSpacePressed: event => clicked()
 
     activeFocusOnTab: true
+
     layer.enabled: true
-    layer.effect: OpacityMask {
-        maskSource: Item {
-            width: root.width
-            height: root.height
-            Rectangle {
-                anchors.centerIn: parent
-                width: root.width
-                height: root.height
-                radius: Kirigami.Units.mediumSpacing
-            }
-        }
-    }
+    layer.effect: RoundedEffect {}
 
     // TODO: port to TapHandler/HoverHandler?
     MouseArea {
