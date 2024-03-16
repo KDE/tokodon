@@ -22,8 +22,8 @@ Kirigami.ApplicationWindow {
     // A new post was created by us. Currently used by ThreadPages to update themselves when we reply.
     signal newPost()
 
-    minimumWidth: Kirigami.Units.gridUnit * 21
-    minimumHeight: Kirigami.Units.gridUnit * 20
+    minimumWidth: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 22
+    minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 20
 
     pageStack {
         defaultColumnWidth: appwindow.width
