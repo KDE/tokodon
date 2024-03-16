@@ -10,6 +10,7 @@ TimelinePage {
 
     property alias listId: timelineModel.listId
     required property string name
+    property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
 
     title: name
 
@@ -19,7 +20,7 @@ TimelinePage {
         text: i18n("Edit List")
         icon.name: "edit-rename"
         onTriggered: {
-            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "EditListPage"), {
+            pageStack.layers.push(editListPage.createObject(appwindow), {
                 purpose: EditListPage.Edit,
                 listId: root.listId
             });

@@ -13,6 +13,8 @@ import "./PostDelegate"
 Kirigami.ScrollablePage {
     id: root
 
+    property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
+
     title: i18nc("@title", "Lists")
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
@@ -29,7 +31,7 @@ Kirigami.ScrollablePage {
         text: i18n("Create List")
         icon.name: "gtk-add"
         onTriggered: {
-            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "EditListPage"), {
+            pageStack.layers.push(editListPage.createObject(appwindow), {
                 purpose: EditListPage.New
             });
         }

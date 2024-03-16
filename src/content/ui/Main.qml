@@ -53,7 +53,7 @@ Kirigami.ApplicationWindow {
         if (AccountManager.selectedAccountHasIssue) {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: 'home',
             });
         }
@@ -179,7 +179,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onAccountsReloaded() {
-            pageStack.replace(mainTimeline, {
+            pageStack.replace(mainTimeline.createObject(appwindow), {
                 name: "home"
             });
         }
@@ -271,10 +271,10 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenList(listId, name) {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListTimelinePage"), {
+            pageStack.push(listTimelinePage.createObject(appwindow, {
                 name,
                 listId
-            });
+            }));
         }
     }
 
@@ -422,7 +422,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: "home"
             });
             checked = true;
@@ -437,7 +437,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(notificationTimeline);
+            pageStack.push(notificationTimeline.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -453,7 +453,7 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
         onTriggered: {
             pageStack.clear();
-            pageStack.push(socialGraphComponent, {
+            pageStack.push(socialGraphComponent.createObject(appwindow), {
                 name: "request"
             });
             checked = true;
@@ -468,7 +468,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: "public",
             });
             checked = true;
@@ -483,7 +483,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: "federated",
             });
             checked = true;
@@ -499,7 +499,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "ConversationPage"));
+            pageStack.push(conversationPage.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -513,7 +513,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: "favourites",
             });
             checked = true;
@@ -529,7 +529,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline, {
+            pageStack.push(mainTimeline.createObject(appwindow), {
                 name: "bookmarks",
             });
             checked = true;
@@ -545,7 +545,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(exploreTimeline);
+            pageStack.push(exploreTimeline.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -560,7 +560,7 @@ Kirigami.ApplicationWindow {
         visible: Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "SearchPage"));
+            pageStack.push(searchPage.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile) {
                 drawer.drawerOpen = false;
@@ -575,7 +575,7 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount
         onTriggered: {
             pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "AnnouncementsPage"));
+            pageStack.push(announcementsPage.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -589,13 +589,19 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "ListsPage"));
+            pageStack.push(listsPage.createObject(appwindow));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
         }
     }
+
+    property Component announcementsPage: Qt.createComponent("org.kde.tokodon", "AnnouncementsPage", Qt.Asynchronous)
+    property Component listsPage: Qt.createComponent("org.kde.tokodon", "ListsPage", Qt.Asynchronous)
+    property Component searchPage: Qt.createComponent("org.kde.tokodon", "SearchPage", Qt.Asynchronous)
+    property Component conversationPage: Qt.createComponent("org.kde.tokodon", "ConversationPage", Qt.Asynchronous)
+    property Component listTimelinePage: Qt.createComponent("org.kde.tokodon", "ListTimelinePage", Qt.Asynchronous)
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
