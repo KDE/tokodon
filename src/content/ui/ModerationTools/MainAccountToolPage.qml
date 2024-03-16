@@ -162,66 +162,11 @@ Kirigami.ScrollablePage {
                 color: Kirigami.Theme.backgroundColor
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                Image {
-                    id: bg
-                    anchors.centerIn: parent
-                    source: root.identity.userLevelIdentity.backgroundUrl
-                    fillMode: Image.PreserveAspectFit
-                    visible: true //change
-                }
-
-                QQC2.Pane {
-                    id: pane
-                    visible: true
-                    background: Item {
-                        // Background image
-
-                        FastBlur {
-                            id: blur
-                            source: bg
-                            radius: 48
-                            width: pane.width
-                            height: pane.height
-                        }
-                        ColorOverlay {
-                            width: pane.width
-                            height: pane.height
-                            source: blur
-                            color: "#66808080"
-                        }
-                        Rectangle {
-                            id: strip
-                            color: "#66F0F0F0"
-                            anchors.bottom: parent.bottom;
-                            height: 2 * Kirigami.Units.gridUnit
-                            width: parent.width
-                            visible: children.length > 0
-                        }
-                    }
-                    anchors.left: parent.left
-                    anchors.bottom: parent.bottom;
-                    anchors.right: parent.right
-
-                    contentItem: ColumnLayout {
-                        RowLayout {
-                            implicitHeight: Kirigami.Units.gridUnit * 5
-                            KirigamiComponents.Avatar {
-                                source: root.identity.userLevelIdentity.avatarUrl
-                            }
-
-                            Column {
-                                Layout.fillWidth: true
-                                Kirigami.Heading {
-                                    level: 5
-                                    text: root.identity.userLevelIdentity.username
-                                    type: Kirigami.Heading.Primary
-                                }
-                                QQC2.Label {
-                                    text: "@" + root.identity.userLevelIdentity.account
-                                }
-                            }
-                        }
-                    }
+                ProfileHeader {
+                    backgroundUrl: root.identity.userLevelIdentity.backgroundUrl
+                    avatarUrl: root.identity.userLevelIdentity.avatarUrl
+                    displayName: root.identity.userLevelIdentity.displayName
+                    account: root.identity.userLevelIdentity.account
                 }
             }
 

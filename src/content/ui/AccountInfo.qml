@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.kirigamiaddons.formcard 1 as FormCard
-import Qt5Compat.GraphicalEffects
 import QtQuick.Controls 2 as QQC2
 import QtQml.Models
 import QtQuick.Layouts
@@ -80,16 +80,16 @@ TimelinePage {
                             }
 
                             layer.enabled: true
-                            layer.effect: HueSaturation {
-                                cached: true
-
+                            layer.effect: MultiEffect {
                                 saturation: 1.9
 
                                 layer {
                                     enabled: true
-                                    effect: FastBlur {
-                                        cached: true
-                                        radius: 100
+                                    effect: MultiEffect {
+                                        blurEnabled: true
+                                        autoPaddingEnabled: false
+                                        blurMax: 100
+                                        blur: 1.0
                                     }
                                 }
                             }

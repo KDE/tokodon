@@ -44,68 +44,11 @@ FormCard.FormCardPage {
             color: Kirigami.Theme.backgroundColor
             Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-            Image {
-                anchors.centerIn: parent
-                source: backend.backgroundUrl
-                fillMode: Image.PreserveAspectFit
-                visible: backend.backgroundUrl
-            }
-
-            QQC2.Pane {
-                id: pane
-                background: Item {
-                    // Background image
-                    Image {
-                        id: bg
-                        width: pane.width
-                        height: pane.height
-                        source: backend.backgroundUrl
-                    }
-
-                    FastBlur {
-                        id: blur
-                        source: bg
-                        radius: 48
-                        width: pane.width
-                        height: pane.height
-                    }
-                    ColorOverlay {
-                        width: pane.width
-                        height: pane.height
-                        source: blur
-                        color: "#66808080"
-                    }
-                    Rectangle {
-                        id: strip
-                        color: "#66F0F0F0"
-                        anchors.bottom: parent.bottom;
-                        height: 2 * Kirigami.Units.gridUnit
-                        width: parent.width
-                        visible: children.length > 0
-                    }
-                }
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-                contentItem: RowLayout {
-                    implicitHeight: Kirigami.Units.gridUnit * 5
-                    KirigamiComponents.Avatar {
-                        source: backend.avatarUrl
-                    }
-
-                    Column {
-                        Layout.fillWidth: true
-                        Kirigami.Heading {
-                            level: 5
-                            text: backend.displayNameHtml
-                            type: Kirigami.Heading.Primary
-                            textFormat: Text.RichText
-                        }
-                        QQC2.Label {
-                            text: '@' + account.username + '@' + account.instanceName
-                        }
-                    }
-                }
+            ProfileHeader {
+                backgroundUrl: backend.backgroundUrl
+                avatarUrl: backend.avatarUrl
+                displayName: backend.displayNameHtml
+                account: backend.account.identity.account
             }
         }
 
