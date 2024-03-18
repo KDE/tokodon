@@ -39,7 +39,7 @@ class SearchBoxTest(unittest.TestCase):
         searchElement.send_keys("myquery")
         searchElement.send_keys(Keys.ENTER)
 
-        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="People") or self.driver.find_element(by=AppiumBy.NAME, value="Post") or self.driver.find_element(by=AppiumBy.NAME, value="Hashtags") )
+        self.assertTrue(self.driver.find_element(by=AppiumBy.NAME, value="Users") or self.driver.find_element(by=AppiumBy.NAME, value="Posts") or self.driver.find_element(by=AppiumBy.NAME, value="Hashtags") )
 
 
 
