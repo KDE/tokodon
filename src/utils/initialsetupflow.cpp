@@ -55,9 +55,13 @@ public:
 
     bool isSetupNeeded() override
     {
+#ifdef Q_OS_ANDROID
         // Don't show the notification permission prompt if the user asked not to
         auto config = Config::self();
         return !config->promptedNotificationPermission();
+#else
+        return false;
+#endif
     }
 
     QString moduleName() override
