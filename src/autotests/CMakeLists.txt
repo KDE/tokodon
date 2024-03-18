@@ -96,6 +96,6 @@ ecm_add_test(polltimemodeltest.cpp
 		NAME_PREFIX "tokodon-"
 )
 
-if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
+if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 	add_subdirectory(appiumtests)
 endif()
