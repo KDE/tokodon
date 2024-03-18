@@ -380,6 +380,10 @@ if (SAILFISHOS)
     target_compile_definitions(tokodon_static PUBLIC -DSAILFISHOS)
 endif()
 
+if ("$ENV{KDECI_BUILD}" STREQUAL "TRUE")
+    target_compile_definitions(tokodon_static PUBLIC -DKDECI)
+endif()
+
 if(TOKODON_FLATPAK)
     target_compile_definitions(tokodon_static PUBLIC TOKODON_FLATPAK)
 endif()

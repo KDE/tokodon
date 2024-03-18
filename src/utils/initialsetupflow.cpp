@@ -32,7 +32,7 @@ public:
     bool isSetupNeeded() override
     {
         // Sailfish doesn't have a secure backend yet, so always skip this setup
-#ifdef SAILFISHOS
+#if defined(SAILFISHOS) || defined(KDECI)
         return false;
 #else
         return !QKeychain::isAvailable();
