@@ -30,6 +30,25 @@ class TimelineTest(unittest.TestCase):
         self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
         self.driver.quit()
 
+    def test_status_type(self):
+        self.assertTrue(self.driver.find_element(by='description', value="Normal Status"))
+        self.assertTrue(self.driver.find_element(by='description', value="Spoiler Status"))
+
+    def test_favourite_interactions(self):
+        favouriteButton=self.driver.find_element(by='description',value="Favourite")
+        favouriteButton.click()
+        self.assertTrue(self.driver.find_element(by='description', value="Favourited"))
+
+    def test_bookmark_interactions(self):
+        bookmarkButton=self.driver.find_element(by='description',value="Bookmark")
+        bookmarkButton.click()
+        self.assertTrue(self.driver.find_element(by='description', value="Bookmarked"))
+
+    def test_boost_interactions(self):
+        boostButton=self.driver.find_element(by='description',value="Boost")
+        boostButton.click()
+        self.assertTrue(self.driver.find_element(by='description', value="Boosted"))
+
     def test_status_media(self):
         timelineElement = self.driver.find_element(by='name',value="Home Timeline")
         timelineElement.send_keys(Keys.DOWN)
