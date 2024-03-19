@@ -68,8 +68,6 @@ Kirigami.ScrollablePage {
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
 
-    Accessible.name: i18n("%1 Timeline", model.displayName)
-
     onBackRequested: if (dialog) {
         dialog.close();
         dialog = null;

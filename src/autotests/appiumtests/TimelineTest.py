@@ -50,7 +50,7 @@ class TimelineTest(unittest.TestCase):
         self.assertTrue(self.driver.find_element(by='description', value="Boosted"))
 
     def test_status_media(self):
-        timelineElement = self.driver.find_element(by='name',value="Home Timeline")
+        timelineElement = self.driver.find_element(AppiumBy.CLASS_NAME, "[page tab | Home]")
         timelineElement.send_keys(Keys.DOWN)
         timelineElement.send_keys(Keys.DOWN)
         timelineElement.send_keys(Keys.DOWN)
