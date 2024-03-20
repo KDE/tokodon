@@ -27,8 +27,8 @@ class SearchBoxTest(unittest.TestCase):
 
 
     def tearDown(self):
-        self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
-        self.driver.quit()
+        if not self._outcome.result.wasSuccessful():
+            self.driver.get_screenshot_as_file("failed_test_shot_{}.png".format(self.id()))
 
 
     def test_search_and_app(self):
