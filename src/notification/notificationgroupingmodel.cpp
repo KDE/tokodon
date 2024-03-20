@@ -19,7 +19,10 @@ bool NotificationGroupingModel::notificationsMatch(const QModelIndex &a, const Q
     const QVariant bType = b.data(AbstractTimelineModel::CustoRoles::TypeRole);
 
     // it makes no sense to group poll or edit updates
-    if (aType == bType && (aType == Notification::Type::Poll || aType == Notification::Type::Update || aType == Notification::Type::Status)) {
+    // TODO: support grouping follow notifications
+    if (aType == bType
+        && (aType == Notification::Type::Follow || aType == Notification::Type::Poll || aType == Notification::Type::Update
+            || aType == Notification::Type::Status)) {
         return false;
     }
 
