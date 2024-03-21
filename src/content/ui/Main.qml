@@ -222,6 +222,7 @@ Kirigami.ApplicationWindow {
             modality: Qt.NonModal
         });
         item.backend.copyFromOther(originalEditor.backend);
+        item.refreshData();
     }
 
     Connections {

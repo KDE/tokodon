@@ -105,6 +105,14 @@ Kirigami.ScrollablePage {
         textArea.forceActiveFocus()
     }
 
+    // Currently only used for pop-out, but could be repurposed for loading drafts
+    function refreshData() {
+        if (root.backend.spoilerText.length > 0) {
+            contentWarningField.text = root.backend.spoilerText;
+            contentWarning.checked = true;
+        }
+    }
+
     Kirigami.PromptDialog {
         id: discardDraftPrompt
 
@@ -158,12 +166,12 @@ Kirigami.ScrollablePage {
 
 
         QQC2.TextField {
+            id: contentWarningField
+
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
-
-            Component.onCompleted: text = root.backend.spoilerText
         }
 
         Loader {
@@ -386,7 +394,6 @@ Kirigami.ScrollablePage {
                             QQC2.ToolTip {
                                 text: i18n("Content Warning")
                             }
-                            Component.onCompleted: checked = root.backend.spoilerText.length > 0
                         }
                         QQC2.ToolButton {
                             id: languageButton
