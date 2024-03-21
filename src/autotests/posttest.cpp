@@ -149,6 +149,28 @@ private Q_SLOTS:
         QVERIFY(tags.empty());
         QCOMPARE(content, testHtml);
     }
+
+    // Ensure that post URLs are detected
+    void testContentParsingPostURLDetection_data()
+    {
+        QTest::addColumn<QString>("url");
+        QTest::addColumn<bool>("valid");
+
+        QTest::addRow("Mastodon") << "https://mastodon.art/@auser/105304668353589277" << true;
+        QTest::addRow("Pleroma/Akkoma/Misskey") << "https://somesite.art/notes/A5DFjasba5" << true;
+        QTest::addRow("Pixelfed") << "https://pixelfed.de/p/durchdiewelt/704323350617677895" << true;
+
+        QTest::addRow("Regular website") << "https://kde.org" << false;
+        QTest::addRow("Clearly malformed URL") << "https://mastodon.art/admin/abc" << false;
+    }
+
+    void testContentParsingPostURLDetection()
+    {
+        QFETCH(QString, url);
+        QFETCH(bool, valid);
+
+        QCOMPARE(TextHandler::isPostUrl(url), valid);
+    }
 };
 
 QTEST_MAIN(PostTest)

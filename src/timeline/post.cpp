@@ -5,6 +5,9 @@
 #include "timeline/post.h"
 
 #include "account/abstractaccount.h"
+#include "accountmanager.h"
+#include "networkcontroller.h"
+#include "tokodon_debug.h"
 #include "utils/texthandler.h"
 
 #include <KLocalizedString>
@@ -72,6 +75,33 @@ void Post::fromJson(QJsonObject obj)
     m_spoilerText = obj["spoiler_text"_L1].toString();
 
     processContent(obj);
+
+    // Process all URLs in the body
+    const auto urlMatches = TextRegex::url.match(m_content);
+    if (urlMatches.hasMatch()) {
+        for (auto &url : urlMatches.capturedTexts()) {
+            // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
+            if (TextHandler::isPostUrl(url)) {
+                // Then request said URL from our server
+                NetworkController::instance().requestRemoteObject(m_parent, url, [=](QNetworkReply *reply) {
+                    const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+
+                    const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+
+                    if (statuses.isEmpty()) {
+                        qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
+                    } else {
+                        const auto status = statuses[0].toObject();
+
+                        m_quotedPost = new Post(m_parent, status, this);
+                        Q_EMIT quotedPostChanged();
+                    }
+                });
+
+                break;
+            }
+        }
+    }
 
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
@@ -442,6 +472,11 @@ Card *Post::getCard() const
 void Post::setCard(std::optional<Card> card)
 {
     m_card = card;
+}
+
+Post *Post::quotedPost() const
+{
+    return m_quotedPost;
 }
 
 void Post::setApplication(std::optional<Application> application)

@@ -353,6 +353,18 @@ QQC2.ItemDelegate {
         }
 
         Loader {
+            // note: using from post object instead of timeline model because it's loaded async
+            active: root.post.quotedPost !== null
+            visible: active
+
+            Layout.fillWidth: true
+
+            sourceComponent: QuotePost {
+                post: root.post.quotedPost
+            }
+        }
+
+        Loader {
             sourceComponent: AttachmentGrid {
                 expandedPost: root.expandedPost
                 attachments: root.post.attachments

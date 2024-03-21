@@ -44,4 +44,17 @@ public:
      * @return HTML to be used as rich text.
      */
     static QString replaceCustomEmojis(const QList<CustomEmoji> &emojis, const QString &source);
+
+    /**
+     * @brief Determines whether or not a URL could possibly be a post.
+     * @note This isn't supposed to be perfect, but catch the 99% case.
+     */
+    static bool isPostUrl(const QString &url);
 };
+
+namespace TextRegex
+{
+static const QRegularExpression
+    url(QStringLiteral(R"(\b((www\.(?!\.)(?!(\w|\.|-)+@)|https?:(//)?\w)(&(?![lg]t;)|[^&\s<>'"])+(&(?![lg]t;)|[^&!,.\s<>'"\]):])))"),
+        QRegularExpression::CaseInsensitiveOption | QRegularExpression::UseUnicodePropertiesOption);
+}

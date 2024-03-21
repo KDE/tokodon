@@ -54,6 +54,7 @@ QQC2.TextArea {
     }
 
     MouseArea {
+        enabled: root.hoverEnabled
         anchors.fill: parent
         acceptedButtons: Qt.NoButton // don't eat clicks on the Text
         cursorShape: root.hoveredLink !== '' ? Qt.PointingHandCursor : Qt.ArrowCursor

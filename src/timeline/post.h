@@ -81,6 +81,7 @@ class Post : public QObject
     QML_ELEMENT
     QML_UNCREATABLE("Posts should be accessed via models")
 
+    Q_PROPERTY(QString postId READ postId CONSTANT)
     Q_PROPERTY(QString spoilerText READ spoilerText CONSTANT)
     Q_PROPERTY(QString content READ content CONSTANT)
     Q_PROPERTY(bool hasContent READ hasContent CONSTANT)
@@ -100,6 +101,7 @@ class Post : public QObject
     Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
     Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
     Q_PROPERTY(QList<QString> standaloneTags READ standaloneTags CONSTANT)
+    Q_PROPERTY(Post *quotedPost READ quotedPost NOTIFY quotedPostChanged)
 
 public:
     Post() = delete;
@@ -359,9 +361,12 @@ public:
      */
     static Post::Visibility stringToVisibility(const QString &visibility);
 
+    Post *quotedPost() const;
+
 Q_SIGNALS:
     void pollChanged();
     void replyIdentityChanged();
+    void quotedPostChanged();
 
 private:
     QString type() const;
@@ -394,6 +399,7 @@ private:
     QString m_language;
     QDateTime m_editedAt;
     QVector<QString> m_standaloneTags;
+    Post *m_quotedPost = nullptr;
 
     QString m_replyTargetId;
     QStringList m_filters;

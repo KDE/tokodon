@@ -27,10 +27,11 @@ QQC2.Control {
     required property real viewportWidth
 
     property bool canHideMedia: true
+    property bool forceCrop: false
 
     // Only uncrop timeline media if requested by the user, and there's only one attachment
     // Expanded posts (like in threads) are always uncropped.
-    readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1
+    readonly property var shouldKeepAspectRatio: (!Config.cropMedia || root.expandedPost) && root.attachments.length === 1 && !forceCrop
 
     property bool isSensitive: (AccountManager.selectedAccount.preferences.extendMedia === "hide_all" ? true : (AccountManager.selectedAccount.preferences.extendMedia === "show_all" ? false : root.sensitive))
     signal userSensitivityChanged(hide: bool)

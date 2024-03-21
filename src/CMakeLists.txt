@@ -255,6 +255,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/PostDelegate/PostTags.qml
         content/ui/PostDelegate/UserInteractionLabel.qml
         content/ui/PostDelegate/VideoAttachment.qml
+        content/ui/PostDelegate/QuotePost.qml
 
         # Other
         content/ui/AccountInfo.qml

@@ -131,4 +131,34 @@ QString TextHandler::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const
     return processed;
 }
 
+bool TextHandler::isPostUrl(const QString &url)
+{
+    // Check if the URL is behind HTTPs, that's a good indicator as any.
+    if (!url.contains(QStringLiteral("https"))) {
+        return false;
+    }
+
+    // Then check if the URL is especially Mastodon-like.
+    static QRegularExpression mastodonRegex(QStringLiteral("(/@\\w*)/+(\\d*)"));
+    const auto match = mastodonRegex.match(url);
+
+    // There are 3 capture groups, first is the global. Second is the username, third is the post id.
+    if (match.hasMatch() && match.capturedTexts().length() == 3) {
+        return true;
+    }
+
+    // TODO: create regex to better whittle down these cases:
+    // Pleroma/Akkoma/Misskey
+    if (url.contains(QStringLiteral("/notes/"))) {
+        return true;
+    }
+
+    // Pixelfed
+    if (url.contains(QStringLiteral("/p/"))) {
+        return true;
+    }
+
+    return false;
+}
+
 #include "moc_texthandler.cpp"
