@@ -76,12 +76,13 @@ Kirigami.ScrollablePage {
         target: backend
         function onPosted(error) {
             if (error.length === 0) {
+                root.discardDraft = true;
                 if (root.closeApplicationWhenFinished) {
                     root.Window.window.close();
                 } else {
                     root.Window.window.pageStack.layers.pop();
                 }
-                root.Window.window.newPost();
+                applicationWindow().newPost();
             } else {
                 banner.text = error
                 console.log(error);
