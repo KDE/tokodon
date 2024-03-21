@@ -223,6 +223,11 @@ Kirigami.ApplicationWindow {
         });
         item.backend.copyFromOther(originalEditor.backend);
         item.refreshData();
+        item.Window.window.closing.connect(event => {
+            if (item.shouldClose()) {
+                event.accepted = false;
+            }
+        });
     }
 
     Connections {

@@ -33,6 +33,7 @@ Kirigami.ScrollablePage {
     property var previewPost: null
     property string initialText
     property bool closeApplicationWhenFinished: false
+    property bool discardDraft: false
 
     readonly property PostEditorBackend defaultBackend: PostEditorBackend {
         inReplyTo: root.inReplyTo
@@ -122,15 +123,31 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         showCloseButton: false
 
-        onAccepted: applicationWindow().pageStack.layers.pop();
+        onAccepted: {
+            root.discardDraft = true;
+            if (root.closeApplicationWhenFinished) {
+                root.Window.window.close();
+            } else {
+                applicationWindow().pageStack.layers.pop();
+            }
+        }
     }
 
     onBackRequested: (event) => {
-        if (textArea.text.length > 0) {
+        if (shouldClose()) {
+            event.accepted = true;
+        }
+    }
+
+    function shouldClose(): bool {
+        if (textArea.text.length > 0 && !root.discardDraft) {
             discardDraftPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
             discardDraftPrompt.open();
-            event.accepted = false;
+
+            return true;
         }
+
+        return false;
     }
 
     function submitPost() {
