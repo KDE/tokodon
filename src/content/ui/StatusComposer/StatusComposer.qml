@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import QtQuick.Window
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 import org.kde.tokodon
@@ -126,8 +127,9 @@ Kirigami.ScrollablePage {
 
     onBackRequested: (event) => {
         if (textArea.text.length > 0) {
+            discardDraftPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
             discardDraftPrompt.open();
-            event.accepted = true;
+            event.accepted = false;
         }
     }
 
