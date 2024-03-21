@@ -166,6 +166,8 @@ QString computeContent(const QJsonObject &obj, std::shared_ptr<Identity> authorI
     return content;
 }
 
+static int i = 0;
+
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
@@ -218,6 +220,16 @@ void Post::fromJson(QJsonObject obj)
     auto [processedContent, standaloneTags] = parseContent(computedContent);
     m_content = processedContent;
     m_standaloneTags = standaloneTags;
+
+    if (processedContent.contains(QStringLiteral("mastodon"))) {
+        m_parent->get(m_parent->apiUrl(QStringLiteral("/api/v1/statuses/111914863069837642")), true, this, [this](QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
+
+            m_quotedPost = new Post(m_parent, doc.object(), this);
+            Q_EMIT quotedPostChanged();
+        });
+    }
 
     m_replyTargetId = obj["in_reply_to_id"_L1].toString();
 
@@ -672,6 +684,11 @@ QQmlListProperty<Attachment> Post::attachmentList() const
 void Post::setAttachmentsVisible(bool attachmentsVisible)
 {
     m_attachments_visible = attachmentsVisible;
+}
+
+Post *Post::quotedPost() const
+{
+    return m_quotedPost;
 }
 
 bool Post::attachmentsVisible() const

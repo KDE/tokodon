@@ -33,56 +33,64 @@ Kirigami.ScrollablePage {
 
         currentIndex: -1
 
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: Kirigami.FlexColumn
+        {
             id: delegate
+            maximumWidth: Kirigami.Units.gridUnit * 40
+            padding: 0
 
             required property var index
             required property var identity
+            width: ListView.view.width
 
-            text: identity.displayName
+            Delegates.RoundedItemDelegate {
+                Layout.fillWidth: true
 
-            onClicked: Navigation.openAccount(delegate.identity.id)
+                text: identity.displayName
 
-            contentItem: ColumnLayout {
-                spacing: 0
+                onClicked: Navigation.openAccount(delegate.identity.id)
 
-                RowLayout {
-                    Layout.fillWidth: true
+                contentItem: ColumnLayout {
+                    spacing: 0
 
-                    InlineIdentityInfo {
-                        identity: delegate.identity
-                        secondary: false
-                    }
-
-                    Item {
+                    RowLayout {
                         Layout.fillWidth: true
+
+                        InlineIdentityInfo {
+                            identity: delegate.identity
+                            secondary: false
+                        }
+
+                        Item {
+                            Layout.fillWidth: true
+                        }
+
+                        QQC2.Button {
+                            text: i18nc("@action:button Allow follow request", "Allow")
+                            icon.name: "checkmark"
+                            onClicked: model.actionAllow(model.index(delegate.index, 0))
+                            visible: model.isFollowRequest
+                        }
+
+                        QQC2.Button {
+                            text: i18nc("@action:button Deny follow request", "Deny")
+                            icon.name: "cards-block"
+                            onClicked: model.actionDeny(model.index(delegate.index, 0))
+                            visible: model.isFollowRequest
+                        }
                     }
 
-                    QQC2.Button {
-                        text: i18nc("@action:button Allow follow request", "Allow")
-                        icon.name: "checkmark"
-                        onClicked: model.actionAllow(model.index(delegate.index, 0))
-                        visible: model.isFollowRequest
+                    QQC2.ProgressBar {
+                        visible: listview.model.loading && (index == listview.count - 1)
+                        indeterminate: true
+                        padding: Kirigami.Units.largeSpacing * 2
+
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                        Layout.topMargin: Kirigami.Units.largeSpacing
+                        Layout.bottomMargin: Kirigami.Units.largeSpacing
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        Layout.rightMargin: Kirigami.Units.largeSpacing
                     }
-
-                    QQC2.Button {
-                        text: i18nc("@action:button Deny follow request", "Deny")
-                        icon.name: "cards-block"
-                        onClicked: model.actionDeny(model.index(delegate.index, 0))
-                        visible: model.isFollowRequest
-                    }
-                }
-
-                QQC2.ProgressBar {
-                    visible: listview.model.loading && (index == listview.count - 1)
-                    indeterminate: true
-                    padding: Kirigami.Units.largeSpacing * 2
-
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
             }
         }

@@ -177,6 +177,7 @@ class Post : public QObject
     QML_ELEMENT
     QML_UNCREATABLE("Posts should be accessed via models")
 
+    Q_PROPERTY(QString postId READ postId CONSTANT)
     Q_PROPERTY(QString spoilerText READ spoilerText WRITE setSpoilerText NOTIFY spoilerTextChanged)
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
     Q_PROPERTY(QString contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
@@ -196,6 +197,7 @@ class Post : public QObject
     Q_PROPERTY(QString editedAt READ editedAt CONSTANT)
     Q_PROPERTY(bool wasEdited READ wasEdited CONSTANT)
     Q_PROPERTY(QList<QString> standaloneTags READ standaloneTags NOTIFY contentChanged)
+    Q_PROPERTY(Post *quotedPost READ quotedPost NOTIFY quotedPostChanged)
 
 public:
     Post() = delete;
@@ -313,6 +315,8 @@ public:
         return m_hidden;
     }
 
+    Post *quotedPost() const;
+
     /// Parses a HTML body and returns a processed body and a list of tags respectively.
     /// The returned body does not have the tags included and is cleaned up.
     static QPair<QString, QList<QString>> parseContent(const QString &html);
@@ -329,6 +333,7 @@ Q_SIGNALS:
     void attachmentUploaded();
     void pollChanged();
     void replyIdentityChanged();
+    void quotedPostChanged();
 
 private:
     bool m_attachments_visible = true;
@@ -345,6 +350,7 @@ private:
     QString m_language;
     QDateTime m_editedAt;
     QVector<QString> m_standaloneTags;
+    Post *m_quotedPost = nullptr;
 
     QString m_replyTargetId;
     QStringList m_filters;
