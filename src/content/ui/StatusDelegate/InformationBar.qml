@@ -24,14 +24,14 @@ ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            text: "Posted on " + root.absoluteTime
+            text: i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %s", root.absoluteTime)
             elide: Text.ElideRight
             color: Kirigami.Theme.disabledTextColor
         }
 
         QQC2.Label {
             visible: root.application && root.application.name
-            text: root.application && root.application.name ? i18n("via %1", root.application.name) : ''
+            text: root.application && root.application.name ? i18nc("%1 is the Mastodon application name used for posting", ", via %1", root.application.name) : ''
             elide: Text.ElideRight
             Layout.fillWidth: true
             color: Kirigami.Theme.disabledTextColor
