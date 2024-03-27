@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 02:18+0000\n"
+"POT-Creation-Date: 2024-03-27 02:51+0000\n"
 "PO-Revision-Date: 2023-12-04 12:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3341,9 +3341,17 @@ msgstr "Desa la imatge com a…"
 msgid "Copy Image"
 msgstr "Copia la imatge"
 
-#: content/ui/StatusDelegate/InformationBar.qml:34
+#: content/ui/StatusDelegate/InformationBar.qml:27
 #, kde-format
-msgid "via %1"
+msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+msgid "Posted on %s"
+msgstr ""
+
+#: content/ui/StatusDelegate/InformationBar.qml:34
+#, fuzzy, kde-format
+#| msgid "via %1"
+msgctxt "%1 is the Mastodon application name used for posting"
+msgid ", via %1"
 msgstr "mitjançant %1"
 
 #: content/ui/StatusDelegate/InformationBar.qml:105
