@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:37+0000\n"
-"PO-Revision-Date: 2024-03-20 14:02+0100\n"
+"POT-Creation-Date: 2024-03-27 00:37+0000\n"
+"PO-Revision-Date: 2024-03-26 11:58+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -2652,9 +2652,17 @@ msgstr "Videó mentése másként…"
 msgid "Copy Image"
 msgstr "Kép másolása"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:26
 #, kde-format
-msgid "via %1"
+msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+msgid "Posted on %s"
+msgstr ""
+
+#: content/ui/PostDelegate/InformationBar.qml:33
+#, fuzzy, kde-format
+#| msgid "via %1"
+msgctxt "%1 is the Mastodon application name used for posting"
+msgid ", via %1"
 msgstr "ezen keresztül: %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
@@ -3565,7 +3573,7 @@ msgstr "Új bejegyzés írása"
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr ""
+msgstr "Válasz új ablakban"
 
 #: content/ui/StatusComposer/StatusComposer.qml:122
 #, kde-format
