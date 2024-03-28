@@ -346,7 +346,7 @@ TimelinePage {
                                             icon.name: "settings-configure"
                                             visible: model.isSelf
                                             text: i18n("Settings")
-                                            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, { title: i18n("Configure") })
+                                            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, { title: i18nc("@title:window", "Settings") })
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"
