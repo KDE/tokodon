@@ -17,6 +17,8 @@ import "./PostDelegate"
 Kirigami.ApplicationWindow {
     id: appwindow
 
+    title: pageStack.currentItem?.title ?? ""
+
     property bool isShowingFullScreenImage: false
 
     // A new post was created by us. Currently used by ThreadPages to update themselves when we reply.
@@ -426,7 +428,7 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "settings-configure"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Configure")})
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Settings")})
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
                 activeFocusOnTab: true
