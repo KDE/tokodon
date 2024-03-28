@@ -23,7 +23,7 @@ ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            text: i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %s", root.absoluteTime)
+            text: i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %1", root.absoluteTime)
             elide: Text.ElideRight
             color: Kirigami.Theme.disabledTextColor
         }
