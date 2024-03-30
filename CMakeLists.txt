@@ -13,8 +13,19 @@ project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
 
+<<<<<<< Updated upstream
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6")
+||||||| Stash base
+set(KF_MIN_VERSION "5.240.0")
+set(QT_MIN_VERSION "6.5")
+if (ANDROID)
+    set(QT_MIN_VERSION "5.15.10")
+endif()
+=======
+set(KF_MIN_VERSION "5.240.0")
+set(QT_MIN_VERSION "6.5")
+>>>>>>> Stashed changes
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
