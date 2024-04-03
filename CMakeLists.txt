@@ -56,7 +56,7 @@ set_package_properties(KF6 PROPERTIES
     PURPOSE "Required application components"
 )
 
-find_package(KF6KirigamiAddons 0.11.40 REQUIRED)
+find_package(KF6KirigamiAddons 1.1.0 REQUIRED)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components and runtime dependency"
