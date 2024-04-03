@@ -161,6 +161,12 @@ public:
     QString content() const;
 
     /**
+     * @return The "plain" HTML text of this post.
+     * @note This has not been touched for bidirectionality, but ideal for scenarios where that's not super important like notifications.
+     */
+    QString plainContent() const;
+
+    /**
      * @return If the post has any text content.
      * @note Use this instead of checking the length of content() because it could contain useless HTML code.
      */
@@ -385,6 +391,7 @@ private:
     QString m_originalPostId;
     QUrl m_url;
     QString m_content;
+    QString m_plainContent;
     bool m_hasContent;
     QString m_spoilerText;
     QString m_author;

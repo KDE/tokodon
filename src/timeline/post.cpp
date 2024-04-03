@@ -222,6 +222,11 @@ QString Post::content() const
     return m_content;
 }
 
+QString Post::plainContent() const
+{
+    return m_plainContent;
+}
+
 bool Post::hasContent() const
 {
     return m_hasContent;
@@ -495,6 +500,7 @@ void Post::processContent(const QJsonObject &obj)
 
     // Finally, fix the bidirectionality of text if needed. See BUG 475043 for more details.
     m_content = TextHandler::fixBidirectionality(standaloneContent);
+    m_plainContent = standaloneContent;
 }
 
 Card::Card(QJsonObject card)
