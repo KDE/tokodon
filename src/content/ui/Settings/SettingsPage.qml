@@ -43,13 +43,13 @@ KirigamiSettings.CategorizedSettings {
             actionName: "about"
             text: i18n("About Tokodon")
             icon.name: "help-about"
-            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AboutPage.qml")
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
         },
         KirigamiSettings.SettingAction {
             actionName: "aboutkde"
             text: i18n("About KDE")
             icon.name: "kde"
-            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/tokodon/content/ui/Settings/AboutKDEPage.qml")
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDE"))
         }
     ]
 }

@@ -219,8 +219,6 @@ qt_target_qml_sources(tokodon_static
         content/ui/Notifications/UserInteractionLabel.qml
 
         # Settings
-        content/ui/Settings/AboutKDEPage.qml
-        content/ui/Settings/AboutPage.qml
         content/ui/Settings/AccountsPage.qml
         content/ui/Settings/AppearancePage.qml
         content/ui/Settings/NetworkProxyPage.qml
