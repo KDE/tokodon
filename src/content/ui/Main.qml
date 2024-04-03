@@ -219,6 +219,7 @@ Kirigami.ApplicationWindow {
             inReplyTo: originalEditor.inReplyTo,
             previewPost: originalEditor.previewPost
         }, {
+            title: i18n("Write a new post"),
             width: Kirigami.Units.gridUnit * 30,
             height: Kirigami.Units.gridUnit * 30,
             modality: Qt.NonModal
