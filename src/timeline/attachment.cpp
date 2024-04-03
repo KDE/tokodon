@@ -3,6 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 #include "timeline/attachment.h"
+#include "accountmanager.h"
+
+#include <QClipboard>
+#include <QGuiApplication>
 
 using namespace Qt::StringLiterals;
 
@@ -113,6 +117,23 @@ void Attachment::setFocusY(double value)
         m_focusY = value;
         Q_EMIT focusYChanged();
     }
+}
+
+void Attachment::copyToClipboard()
+{
+    // TODO: maybe Attachment should have access to the post, and thus the account?
+    // TODO: m_url may not always be valid, like for blocked attachments
+    AccountManager::instance().selectedAccount()->get(
+        QUrl::fromUserInput(m_url),
+        false,
+        this,
+        [this](QNetworkReply *reply) {
+            QImage image;
+            image.loadFromData(reply->readAll());
+
+            QGuiApplication::clipboard()->setImage(image);
+        },
+        nullptr);
 }
 
 #include "moc_attachment.cpp"

@@ -11,6 +11,7 @@ import QtQuick.Dialogs
 import QtQuick.Window
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.tokodon
 import '..'
 
@@ -164,13 +165,15 @@ Kirigami.ScrollablePage {
     }
 
     function pasteImage() {
-        let localPath = Clipboard.saveImage();
+        let localPath = clipboard.content;
         if (localPath.length === 0) {
             return false;
         }
         uploadFile(localPath);
         return true;
     }
+
+    KQuickControlsAddons.Clipboard { id: clipboard }
 
     header: KirigamiComponents.Banner {
         id: banner

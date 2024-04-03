@@ -60,7 +60,11 @@ QNetworkReply *AttachmentEditorModel::append(const QString &filename)
     if (rowCount({}) >= 4) {
         return nullptr;
     }
-    return m_account->upload(QUrl(filename), [=](QNetworkReply *reply) {
+
+    QString localFilename = filename;
+    localFilename.remove(QStringLiteral("file://"));
+
+    return m_account->upload(QUrl::fromLocalFile(localFilename), [=](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
 
         if (!doc.isObject()) {

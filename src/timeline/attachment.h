@@ -74,6 +74,12 @@ public:
     double focusY() const;
     void setFocusY(double value);
 
+    /**
+     * @brief Copies the attachment image data to the clipboard.
+     * @note We don't do this on the QML side because we have to do a network request. We might as well do it all in C++.
+     */
+    Q_INVOKABLE void copyToClipboard();
+
 Q_SIGNALS:
     void focusXChanged();
     void focusYChanged();

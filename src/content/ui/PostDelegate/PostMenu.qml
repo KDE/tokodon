@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 
 import ".."
 
@@ -49,9 +50,11 @@ QQC2.Menu {
         icon.name: "edit-copy"
         text: i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
-            Clipboard.saveText(root.url)
+            clipboard.content = root.url;
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
+
+        KQuickControlsAddons.Clipboard { id: clipboard }
     }
 
     QQC2.MenuItem {

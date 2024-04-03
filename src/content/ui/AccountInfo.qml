@@ -6,6 +6,7 @@ import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import QtQuick.Controls 2 as QQC2
 import QtQml.Models
 import QtQuick.Layouts
@@ -196,6 +197,8 @@ TimelinePage {
                                     flat: false
                                     alignment: Qt.AlignLeft
 
+                                    KQuickControlsAddons.Clipboard { id: clipboard }
+
                                     actions: [
                                         Kirigami.Action {
                                             icon.name: {
@@ -373,7 +376,7 @@ TimelinePage {
                                             icon.name: "edit-copy"
                                             text: i18n("Copy Link to This Profile")
                                             onTriggered: {
-                                                Clipboard.saveText(model.identity.url)
+                                                clipboard.content = model.identity.url;
                                                 applicationWindow().showPassiveNotification(i18n("Post link copied."));
                                             }
                                         },

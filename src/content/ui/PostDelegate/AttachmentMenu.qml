@@ -67,7 +67,7 @@ QQC2.Menu {
 
         icon.name: "edit-copy"
         text: i18n("Copy Image")
-        onTriggered: Clipboard.copyImage(root.attachment.source)
+        onTriggered: root.attachment.copyToClipboard()
     }
 
     QQC2.MenuSeparator {}
