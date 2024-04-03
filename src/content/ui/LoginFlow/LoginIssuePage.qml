@@ -34,8 +34,7 @@ MastoPage {
 
         FormCard.FormTextDelegate {
             id: helpLabel
-            text: i18n("Please check if the password service is running. For other login issues, you can try logging into the server's website.\\n\\nYou can attempt to log in again with the button below, or restart Tokodon.")
-            icon.name: "internet-services-symbolic"
+            text: i18n("Please check if the password service is running. For other login issues, you can try logging into the server's website.\n\nYou can attempt to log in again with the button below, or restart Tokodon.")
             textItem {
                 wrapMode: Text.WordWrap
             }
