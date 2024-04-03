@@ -336,7 +336,7 @@ void Account::validateToken(bool newAccount)
         [=](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
 
-            Q_EMIT authenticated(false, doc["error"_L1].toString());
+            Q_EMIT authenticated(false, doc.isEmpty() ? reply->errorString() : doc["error"_L1].toString());
         });
 
     fetchInstanceMetadata();
