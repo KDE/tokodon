@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-01-30 14:35+0200\n"
+"PO-Revision-Date: 2024-04-05 09:54+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: account/abstractaccount.cpp:655
 #, kde-format
@@ -427,8 +427,7 @@ msgid "Settings"
 msgstr "Iestatījumi"
 
 #: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:65
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Iestatījumi"
@@ -580,18 +579,16 @@ msgid "No Conversations"
 msgstr "Nav sarunu"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr "Jaunu sekotāju lūgumi"
+msgstr "Palielināt sekošanas pieprasījumu skaitu"
 
 #: content/ui/Debug/DebugPage.qml:28
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr "Jaunu sekotāju lūgumi"
+msgstr "Samazināt sekošanas pieprasījumu skaitu"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -836,11 +833,7 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Ir radusies kļūda, ierakstoties serverī:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please check if the password service is running. For other login issues, "
-#| "you can try logging into the server's website.\\n\\nYou can attempt to "
-#| "log in again with the button below, or restart Tokodon."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\n"
@@ -848,9 +841,10 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 "Pārbaudiet, vai ir palaists paroļu serviss. Ja ir citas ierakstīšanās "
-"problēmas, varat mēģināt ierakstīties servera tīmekļa vietnē.\\n\\nVarat "
-"mēģināt ierakstīties atkal, nospiežot zemāk esošo pogu, vai pārstartējiet "
-"„Tokodon“."
+"problēmas, varat mēģināt ierakstīties servera tīmekļa vietnē.\n"
+"\n"
+"Varat mēģināt ierakstīties atkal, nospiežot zemāk esošo pogu, vai "
+"pārstartējiet „Tokodon“."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -2659,16 +2653,14 @@ msgid "Save Image As…"
 msgstr "Saglabāt attēlu kā..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Gif As…"
-msgstr "Saglabāt attēlu kā..."
+msgstr "Saglabāt GIF kā..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Video As…"
-msgstr "Saglabāt attēlu kā..."
+msgstr "Saglabāt video kā..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -2679,14 +2671,13 @@ msgstr "Kopēt attēlu"
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "Publicēts %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "via %1"
+#, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
-msgstr "caur %1"
+msgstr ", izmantojot „%1“"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
 #: content/ui/PostDelegate/InformationBar.qml:87
@@ -3595,7 +3586,7 @@ msgstr "Pārrakstīt šo ierakstu"
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr ""
+msgstr "Izlekt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:123
 #, kde-format
@@ -3756,9 +3747,7 @@ msgid "Loading"
 msgstr "Ielādējas"
 
 #: content/ui/TimelinePage.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Home (%1)"
+#, kde-format
 msgid "Home (%1)"
 msgstr "Mājas (%1)"
 
@@ -3790,16 +3779,15 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
-msgstr ""
+msgstr "Dažas atbildes nav pieejamas"
 
 #: content/ui/TimelinePage.qml:245
 #, kde-format
 msgid "To view all replies, open the post on the original server."
-msgstr ""
+msgstr "Lai skatītu visas atbildes, atveriet ierakstu sākotnējā serverī."
 
 #: content/ui/TimelinePage.qml:248
-#, fuzzy, kde-format
-#| msgid "Open Original Page"
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr "Atvērt sākotnējo lapu"
@@ -3930,7 +3918,7 @@ msgstr "Mastodon klients"
 #: main.cpp:107
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
-msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgstr "© 2021—2023 Carl Schwan, 2021—2023 KDE kopiena"
 
 #: main.cpp:108
 #, kde-format
