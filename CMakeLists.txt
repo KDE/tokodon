@@ -12,7 +12,13 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
-option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" OFF)
+
+set(SHOULD_USE_QTMULTIMEDIA OFF)
+if (WIN32)
+    set(SHOULD_USE_QTMULTIMEDIA ON)
+endif()
+
+option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
 
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6")
