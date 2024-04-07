@@ -353,6 +353,7 @@ else()
             utils/mpvplayer.h
     )
     target_link_libraries(tokodon_static PUBLIC MpvQt::MpvQt)
+    target_compile_options(tokodon_static PRIVATE -fexceptions)
 endif()
 
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
@@ -375,8 +376,6 @@ target_link_libraries(tokodon_static
         KF6::ColorScheme
         ${QTKEYCHAIN_LIBRARIES}
 )
-
-target_compile_options(tokodon_static PRIVATE -fexceptions)
 
 if (TARGET KF6::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
