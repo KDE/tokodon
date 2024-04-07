@@ -48,8 +48,6 @@ void SearchModel::search(const QString &queryString)
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
 
-        qInfo() << searchResult;
-
         beginResetModel();
         clear();
 

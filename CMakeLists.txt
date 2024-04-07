@@ -12,6 +12,7 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
+option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" OFF)
 
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6")
@@ -127,7 +128,15 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     )
 endif ()
 
-find_package(MpvQt REQUIRED)
+if (USE_QTMULTIMEDIA)
+    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
+else()
+    find_package(MpvQt)
+    set_package_properties(MpvQt PROPERTIES
+            PURPOSE "Video playback"
+            TYPE REQUIRED
+    )
+endif()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.sonnet 1.0)

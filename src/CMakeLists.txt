@@ -124,8 +124,6 @@ target_sources(tokodon_static
     utils/emojitones_data.h
     utils/messagefiltercontainer.cpp
     utils/messagefiltercontainer.h
-    utils/mpvplayer.cpp
-    utils/mpvplayer.h
     utils/texthandler.cpp
     utils/texthandler.h
     utils/colorschemer.cpp
@@ -336,6 +334,27 @@ else()
     )
 endif()
 
+if (USE_QTMULTIMEDIA)
+    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
+    set_package_properties(Qt6Multimedia PROPERTIES
+            PURPOSE "Video playback"
+            TYPE REQUIRED
+    )
+    target_link_libraries(tokodon_static PUBLIC Qt::Multimedia)
+
+    qt_target_qml_sources(tokodon_static
+            QML_FILES
+            content/ui/QtMultimedia/MpvPlayer.qml
+    )
+else()
+    target_sources(tokodon_static
+            PRIVATE
+            utils/mpvplayer.cpp
+            utils/mpvplayer.h
+    )
+    target_link_libraries(tokodon_static PUBLIC MpvQt::MpvQt)
+endif()
+
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
 target_link_libraries(tokodon_static
     PUBLIC
@@ -354,9 +373,9 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
-        MpvQt::MpvQt
         ${QTKEYCHAIN_LIBRARIES}
 )
+
 target_compile_options(tokodon_static PRIVATE -fexceptions)
 
 if (TARGET KF6::KIOWidgets)
