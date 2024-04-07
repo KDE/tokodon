@@ -19,7 +19,6 @@ if (WIN32)
 endif()
 
 option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
-option(USE_QTWEBVIEW "Use QtWebView for the built-in authentication page" ON)
 
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6")
@@ -58,9 +57,12 @@ set_package_properties(Qt6 PROPERTIES
         )
 qt_policy(SET QTP0001 NEW)
 
-if (USE_QTWEBVIEW)
-    find_package(Qt6WebView ${QT_MIN_VERSION} REQUIRED)
-endif()
+find_package(Qt6WebView ${QT_MIN_VERSION})
+set_package_properties(Qt6WebView PROPERTIES
+        TYPE OPTIONAL
+        PURPOSE "For in-app authentication on mobile"
+)
+set(USE_QTWEBVIEW ${Qt6WebView_FOUND})
 
 find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Kirigami KirigamiPlatform I18n Notifications Config CoreAddons ColorScheme)
 set_package_properties(KF6 PROPERTIES
