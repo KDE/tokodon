@@ -530,14 +530,14 @@ endif()
 
 install(TARGETS tokodon ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 
-if(BUILD_TESTING)
+if(BUILD_TESTING AND NOT ANDRIOID)
     add_definitions(-DDATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/autotests/data" )
 
     add_executable(tokodon-offline
             main.cpp
             autotests/mockaccount.cpp)
     target_compile_definitions(tokodon-offline PUBLIC TEST_MODE=1)
-    target_link_libraries(tokodon-offline PRIVATE tokodon_static tokodon_staticplugin)
+    target_link_libraries(tokodon-offline PRIVATE tokodon_static tokodon_staticplugin Qt::Widgets)
     target_include_directories(tokodon-offline PRIVATE ${CMAKE_BINARY_DIR})
 
     if (TARGET KF6::DBusAddons)
