@@ -32,6 +32,9 @@ MpvPlayer::MpvPlayer(QQuickItem *parent)
     setProperty(QStringLiteral("input-default-bindings"), QStringLiteral("no"));
     setProperty(QStringLiteral("input-vo-keyboard"), QStringLiteral("no"));
 
+    // shut up output
+    setProperty(QStringLiteral("msg-level"), QStringLiteral("all=warn"));
+
     observeProperty(QStringLiteral("duration"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("time-pos"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("pause"), MPV_FORMAT_FLAG);
