@@ -22,7 +22,7 @@ private Q_SLOTS:
         AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
-        url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myQuery")}});
+        url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myQuery")}, {QStringLiteral("resolve"), QStringLiteral("true")}});
         account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
         SearchModel searchModel;

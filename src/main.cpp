@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
     AccountManager::instance().selectAccount(account);
 
     QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
-    url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}});
+    url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}, {QStringLiteral("resolve"), QStringLiteral("true")}});
     account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
     account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
