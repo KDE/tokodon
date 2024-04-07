@@ -41,12 +41,14 @@ void SearchModel::search(const QString &queryString)
     endResetModel();
 
     auto url = m_account->apiUrl(QStringLiteral("/api/v2/search"));
-    url.setQuery({{QStringLiteral("q"), queryString}});
+    url.setQuery({{QStringLiteral("q"), queryString}, {QStringLiteral("resolve"), QStringLiteral("true")}});
     setLoading(true);
     setLoaded(false);
     m_account->get(url, true, this, [this](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+
+        qInfo() << searchResult;
 
         beginResetModel();
         clear();
