@@ -117,7 +117,7 @@ QUrl AbstractAccount::apiUrl(const QString &path) const
     return url;
 }
 
-void AbstractAccount::registerApplication(const QString &appName, const QString &website, const QString &additionalScopes)
+void AbstractAccount::registerApplication(const QString &appName, const QString &website, const QString &additionalScopes, const bool useAuthCode)
 {
     // clear any previous bearer token credentials
     m_token = QString();
@@ -130,11 +130,13 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     // Store for future usage (e.g. authorizeUrl)
     m_additionalScopes = ourAdditionalScopes + additionalScopes;
 
+    m_redirectUri = useAuthCode ? QStringLiteral("urn:ietf:wg:oauth:2.0:oob") : QStringLiteral("tokodon://oauth");
+
     // register
     const QUrl regUrl = apiUrl(QStringLiteral("/api/v1/apps"));
     const QJsonObject obj{
         {QStringLiteral("client_name"), appName},
-        {QStringLiteral("redirect_uris"), QStringLiteral("tokodon://oauth")},
+        {QStringLiteral("redirect_uris"), m_redirectUri},
         {QStringLiteral("scopes"), QStringLiteral("read write follow %1").arg(m_additionalScopes)},
         {QStringLiteral("website"), website},
     };
@@ -302,7 +304,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
     QUrl url = apiUrl(QStringLiteral("/oauth/authorize"));
     QUrlQuery q = buildOAuthQuery();
 
-    q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
+    q.addQueryItem(QStringLiteral("redirect_uri"), m_redirectUri);
     q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
     q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
 
@@ -345,7 +347,7 @@ void AbstractAccount::setToken(const QString &authcode)
     QUrlQuery q = buildOAuthQuery();
 
     q.addQueryItem(QStringLiteral("client_secret"), m_client_secret);
-    q.addQueryItem(QStringLiteral("redirect_uri"), QStringLiteral("tokodon://oauth"));
+    q.addQueryItem(QStringLiteral("redirect_uri"), m_redirectUri);
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("authorization_code"));
     q.addQueryItem(QStringLiteral("code"), authcode);
 

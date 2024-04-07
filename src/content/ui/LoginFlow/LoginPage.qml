@@ -13,7 +13,11 @@ import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.tokodon
 
 MastoPage {
+    id: root
+
     title: i18nc("@title:window", "Login")
+
+    property var account
 
     data: Connections {
         target: Controller
@@ -35,6 +39,60 @@ MastoPage {
             icon.name: "settings-configure"
             onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
         }
+    }
+
+    function _openWebViewAuthPage(): void {
+        account.registered.disconnect(_openWebViewAuthPage);
+
+        if (Window.window.pageStack.currentItem !== root) {
+            Window.window.pageStack.pop();
+        }
+
+        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "WebViewAuthorization"), {
+            account: account,
+            loginPage: root
+        });
+    }
+
+    function openWebViewAuthPage(): void {
+        account.registerTokodon(false);
+        account.registered.connect(_openWebViewAuthPage);
+    }
+
+    function _openBrowserAuthPage(): void {
+        account.registered.disconnect(_openBrowserAuthPage);
+
+        if (Window.window.pageStack.currentItem !== root) {
+            Window.window.pageStack.pop();
+        }
+
+        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "BrowserAuthorization"), {
+            account: account,
+            loginPage: root
+        });
+    }
+
+    function openBrowserAuthPage(): void {
+        account.registerTokodon(false);
+        account.registered.connect(_openBrowserAuthPage);
+    }
+
+    function _openCodeAuthPage(): void {
+        account.registered.disconnect(_openCodeAuthPage);
+
+        if (Window.window.pageStack.currentItem !== root) {
+            Window.window.pageStack.pop();
+        }
+
+        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "CodeAuthorization"), {
+            account: account,
+            loginPage: root
+        });
+    }
+
+    function openCodeAuthPage(): void {
+        account.registerTokodon(true);
+        account.registered.connect(_openCodeAuthPage);
     }
 
     Component.onCompleted: instanceUrl.forceActiveFocus()
@@ -75,13 +133,18 @@ MastoPage {
                     return;
                 }
 
-                const account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
+                root.account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
 
-                account.registered.connect(() => {
-                    Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AuthorizationPage"), {
-                        account: account,
-                    });
-                });
+                // Determine the best authorization type
+                if (Kirigami.Settings.isMobile && Navigation.hasWebView()) {
+                    // Prefer the in-app authorization if possible on mobile, it's the best.
+                    openWebViewAuthPage();
+                } else if (Navigation.isDebug()) {
+                    // Prefer the auth code when debugging because it doesn't try to open the system Tokodon
+                    openCodeAuthPage();
+                } else {
+                    openBrowserAuthPage();
+                }
             }
         }
     }

@@ -2,7 +2,10 @@
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 #include <QQuickStyle>
+
+#ifdef HAVE_WEBVIEW
 #include <QtWebView>
+#endif
 
 #ifdef Q_OS_ANDROID
 #include "utils/androidutils.h"
@@ -66,7 +69,10 @@ Q_DECL_EXPORT
 int main(int argc, char *argv[])
 {
     QNetworkProxyFactory::setUseSystemConfiguration(true);
+
+#ifdef HAVE_WEBVIEW
     QtWebView::initialize();
+#endif
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);

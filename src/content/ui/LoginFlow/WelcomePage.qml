@@ -44,7 +44,7 @@ MastoPage {
             id: registerButton
             text: i18n("Register")
             icon.name: "list-add-user"
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
+            onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
         }
 
         FormCard.FormDelegateSeparator {}
@@ -53,7 +53,7 @@ MastoPage {
             id: loginButton
             text: i18n("Login")
             icon.name: "user"
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+            onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
         }
     }
 }

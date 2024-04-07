@@ -24,9 +24,7 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
 {
     m_preferences = new Preferences(this);
     setInstanceUri(instanceUri);
-    registerApplication(QStringLiteral("Tokodon"),
-                        QStringLiteral("https://apps.kde.org/tokodon"),
-                        admin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""));
+    m_requestingAdmin = admin;
 }
 
 Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent)
@@ -517,6 +515,14 @@ QUrlQuery Account::buildNotificationFormData()
     addQuery(QStringLiteral("admin.report"), cfg->notifyReport());
 
     return formdata;
+}
+
+void Account::registerTokodon(const bool authCode)
+{
+    registerApplication(QStringLiteral("Tokodon"),
+                        QStringLiteral("https://apps.kde.org/tokodon"),
+                        m_requestingAdmin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""),
+                        authCode);
 }
 
 #include "moc_account.cpp"

@@ -9,4 +9,22 @@ Navigation &Navigation::instance()
     return navigation;
 }
 
+bool Navigation::isDebug() const
+{
+#ifdef TOKODON_DEBUG
+    return true;
+#else
+    return false;
+#endif
+}
+
+bool Navigation::hasWebView() const
+{
+#ifdef HAVE_WEBVIEW
+    return true;
+#else
+    return false;
+#endif
+}
+
 #include "moc_navigation.cpp"

@@ -190,7 +190,9 @@ qt_target_qml_sources(tokodon_static
         content/ui/InitialSetup/SetupWelcome.qml
 
         # Login Flow
-        content/ui/LoginFlow/AuthorizationPage.qml
+        content/ui/LoginFlow/BaseAuthorization.qml
+        content/ui/LoginFlow/BrowserAuthorization.qml
+        content/ui/LoginFlow/CodeAuthorization.qml
         content/ui/LoginFlow/LoginIssuePage.qml
         content/ui/LoginFlow/LoginPage.qml
         content/ui/LoginFlow/RegistrationPage.qml
@@ -356,6 +358,19 @@ else()
     target_compile_options(tokodon_static PRIVATE -fexceptions)
 endif()
 
+if (USE_QTWEBVIEW)
+    qt_target_qml_sources(tokodon_static
+            QML_FILES
+            content/ui/LoginFlow/WebViewAuthorization.qml
+    )
+    target_link_libraries(tokodon_static PUBLIC Qt::WebView)
+    target_compile_definitions(tokodon_static PUBLIC -DHAVE_WEBVIEW)
+endif()
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(tokodon_static PUBLIC -DTOKODON_DEBUG)
+endif()
+
 kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
 target_link_libraries(tokodon_static
     PUBLIC
@@ -365,7 +380,6 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
-        Qt::WebView
         KF6::I18n
         KF6::Kirigami
         KF6::KirigamiPlatform

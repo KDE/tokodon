@@ -53,8 +53,9 @@ public:
      * @param appName The name of the application displayed to other clients.
      * @param website The application's website.
      * @param additionalScopes Any additional scopes to request.
+     * @param useAuthCode If the auth code method should be used instead of an ouath callback.
      */
-    void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {});
+    void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {}, bool useAuthCode = false);
 
     /**
      * @brief Register a new account on the server.
@@ -696,6 +697,7 @@ protected:
     bool m_registrationsOpen = false;
     QString m_registrationMessage;
     int m_followRequestCount = 0;
+    QString m_redirectUri;
 
     // OAuth authorization
     QUrlQuery buildOAuthQuery() const;

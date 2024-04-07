@@ -60,6 +60,8 @@ public:
 
     Q_INVOKABLE void updatePushNotifications() override;
 
+    Q_INVOKABLE void registerTokodon(bool authCode);
+
 private:
     void unsubscribePushNotifications();
     void subscribePushNotifications();
@@ -69,6 +71,7 @@ private:
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
     bool m_hasPushSubscription = false;
+    bool m_requestingAdmin = false;
 
     // common parts for all HTTP request
     QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;

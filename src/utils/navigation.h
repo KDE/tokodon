@@ -24,6 +24,16 @@ public:
 
     static Navigation &instance();
 
+    /**
+     * @return If this is a debug build. Currently only controls if the auth code page is preferred.
+     */
+    Q_INVOKABLE bool isDebug() const;
+
+    /**
+     * @return If Tokodon was built with QtWebView support.
+     */
+    Q_INVOKABLE bool hasWebView() const;
+
 Q_SIGNALS:
     void openStatusComposer();
     void replyTo(const QString &inReplyTo, const QVariant &mentions, int visibility, Identity *authorIdentity, Post *post);
