@@ -13,7 +13,6 @@ Dependencies:
       'frameworks/kcolorscheme': '@latest-kf6'
       'frameworks/kitemmodels': '@latest-kf6'
       'libraries/kirigami-addons': '@latest-kf6'
-      'libraries/mpvqt': '@latest'
       'third-party/qtkeychain': '@latest'
 
   - 'on': [ 'Linux', 'FreeBSD', 'Windows' ]
@@ -23,6 +22,7 @@ Dependencies:
   - 'on': [ 'Linux', 'FreeBSD', 'Android' ]
     'require':
       'libraries/kunifiedpush': '@latest-kf6'
+      'libraries/mpvqt': '@latest'
 
   - 'on': [ 'Linux', 'FreeBSD' ]
     'require':
