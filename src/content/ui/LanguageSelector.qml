@@ -28,6 +28,7 @@ Components.MessageDialog {
     implicitHeight: Kirigami.Units.gridUnit * 30
 
     padding: 0
+    bottomPadding: 1 // HACK: prevent the scrollview to go out of the dialog
 
     header: ColumnLayout {
         width: parent.width
@@ -58,35 +59,37 @@ Components.MessageDialog {
 
     onOpened: listView.positionViewAtIndex(listView.currentIndex, ListView.Center)
 
-    contentItem: ListView {
-        id: listView
-
+    contentItem: QQC2.ScrollView {
         clip: true
 
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        ListView {
+            id: listView
 
-        currentIndex: -1
-        model: KSortFilterProxyModel{
-            sourceModel: RawLanguageModel {}
-            sortRoleName: "preferred"
-            sortOrder: Qt.DescendingOrder
-        }
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-        delegate: Delegates.RoundedItemDelegate {
-            id: delegate
+            currentIndex: -1
+            model: KSortFilterProxyModel{
+                sourceModel: RawLanguageModel {}
+                sortRoleName: "preferred"
+                sortOrder: Qt.DescendingOrder
+            }
 
-            required property int index
-            required property string name
-            required property string code
-            required property bool preferred
+            delegate: Delegates.RoundedItemDelegate {
+                id: delegate
 
-            highlighted: ListView.isCurrentItem
-            text: name
-            icon.source: preferred ? "favorite" : undefined
+                required property int index
+                required property string name
+                required property string code
+                required property bool preferred
 
-            onClicked: {
-                controlRoot.codeSelected(code);
-                controlRoot.close();
+                highlighted: ListView.isCurrentItem
+                text: name
+                icon.source: preferred ? "favorite" : undefined
+
+                onClicked: {
+                    controlRoot.codeSelected(code);
+                    controlRoot.close();
+                }
             }
         }
     }
