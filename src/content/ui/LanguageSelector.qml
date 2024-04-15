@@ -13,7 +13,7 @@ import org.kde.kitemmodels
 
 import "Components"
 
-Components.MessageDialog {
+Kirigami.OverlaySheet {
     id: controlRoot
 
     property alias listView: listView
@@ -29,39 +29,10 @@ Components.MessageDialog {
 
     padding: 0
 
-    header: ColumnLayout {
-        width: parent.width
-        spacing: 0
-
-        RowLayout {
-            Layout.margins: Kirigami.Units.smallSpacing
-            Kirigami.Heading {
-                Layout.leftMargin: Kirigami.Units.smallSpacing
-                Layout.rightMargin: Kirigami.Units.smallSpacing
-                Layout.fillWidth: true
-                text: controlRoot.title
-            }
-
-            QQC2.ToolButton {
-                icon.name: "dialog-close"
-                text: i18nc("@action:button", "Close")
-                display: QQC2.Button.IconOnly
-            }
-        }
-
-        Kirigami.Separator {
-            Layout.fillWidth: true
-        }
-    }
-
-    footer: null
-
     onOpened: listView.positionViewAtIndex(listView.currentIndex, ListView.Center)
 
-    contentItem: ListView {
+    ListView {
         id: listView
-
-        clip: true
 
         Kirigami.Theme.colorSet: Kirigami.Theme.View
 
