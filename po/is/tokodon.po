@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-17 00:38+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not follow account"
 msgstr "Gat ekki fylgst með notandaaðgangi"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Gat ekki hætt að fylgjast með notandaaðgangi"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "Gat ekki útilokað notandaaðgang"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Gat ekki hætt að útiloka notandaaðgang"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "Gat ekki þaggað niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Gat ekki hætt að þagga niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Gat ekki tekið notandaaðgang úr forgrunni"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Gat ekki breytt minnispunkti um notandaaðgang"
@@ -790,7 +790,8 @@ msgstr "Tilkynningar"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
-#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/CodeAuthorization.qml:32
+#: content/ui/LoginFlow/LoginPage.qml:126
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
@@ -873,13 +874,61 @@ msgstr ""
 msgid "Edit List"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#: content/ui/LoginFlow/BaseAuthorization.qml:25
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Minnst á"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#, fuzzy, kde-format
+#| msgid ""
+#| "To continue, please open the following link and authorize Tokodon: %1"
+msgid ""
+"To continue, please open the following link in your web browser to authorize "
+"Tokodon: %1"
+msgstr ""
+"Til að halda áfram skaltu opna eftirfarandi tengil og gefa Tokodon heimild: "
+"%1"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Open Authorization Link"
+msgstr "Minnst á"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Copy Authorization Link"
+msgstr "Minnst á"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#, kde-format
+msgid "Link copied."
+msgstr ""
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgctxt "Show only mentions"
+#| msgid "Mentions"
+msgid "Use Authorization Code"
+msgstr "Minnst á"
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:26
+#, kde-format
+msgid "Use this login method if the above link does not work."
+msgstr ""
+
+#: content/ui/LoginFlow/CodeAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgid "Enter token:"
+msgid "Enter authorization token:"
+msgstr "Settu inn teikn:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, fuzzy, kde-format
@@ -912,14 +961,14 @@ msgstr ""
 msgid "Re-Attempt Log In"
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:16
+#: content/ui/LoginFlow/LoginPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Innskráning"
 
-#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
@@ -929,7 +978,7 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -941,46 +990,46 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Stillingar"
 
-#: content/ui/LoginFlow/LoginPage.qml:43
+#: content/ui/LoginFlow/LoginPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Innskráning"
 
-#: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/LoginPage.qml:108
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Mastodon client"
 msgid "mastodon.social"
 msgstr "Forrit fyrir Mastodon"
 
-#: content/ui/LoginFlow/LoginPage.qml:59
+#: content/ui/LoginFlow/LoginPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgid "Enable moderation tools"
 msgstr "Notandaaðgangar"
 
-#: content/ui/LoginFlow/LoginPage.qml:60
+#: content/ui/LoginFlow/LoginPage.qml:118
 #, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
 
-#: content/ui/LoginFlow/LoginPage.qml:74
+#: content/ui/LoginFlow/LoginPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Instance URL and username must not be empty!"
 msgid "Server URL must not be empty!"
 msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
 
-#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/LoginPage.qml:153
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
@@ -989,7 +1038,7 @@ msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Stillingar"
 
-#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/LoginPage.qml:159
 #: content/ui/LoginFlow/ServersPage.qml:100
 #, fuzzy, kde-format
 #| msgid "Ignore ssl errors"
@@ -1085,6 +1134,12 @@ msgstr ""
 #| msgid "Instance URL and username must not be empty!"
 msgid "Server URL must not be empty."
 msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
+
+#: content/ui/LoginFlow/WebViewAuthorization.qml:22
+#, kde-format
+msgctxt "@action:button Open in external web browser"
+msgid "Open Externally"
+msgstr ""
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -4101,76 +4156,76 @@ msgstr ""
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:59
+#: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""
 
-#: main.cpp:103
+#: main.cpp:109
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:105
+#: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
 msgstr "Forrit fyrir Mastodon"
 
-#: main.cpp:107
+#: main.cpp:113
 #, fuzzy, kde-format
 #| msgid "© 2021 Carl Schwan, 2021 KDE Community"
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021 Carl Schwan, 2021 KDE-samfélagið"
 
-#: main.cpp:108
+#: main.cpp:114
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:109 main.cpp:114
+#: main.cpp:115 main.cpp:120
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:113
+#: main.cpp:119
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Sveinn í Felli"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sv1@fellsnet.is"
 
-#: main.cpp:126
+#: main.cpp:132
 #, fuzzy, kde-format
 #| msgid "Client for the decentralized social network: mastodon"
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Forrit fyrir dreifhýsta Mastodon samfélagsnetið"
 
-#: main.cpp:127
+#: main.cpp:133
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr ""
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "The text to share."
 msgstr ""
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
@@ -4488,12 +4543,6 @@ msgstr "Minnst á"
 #~ msgid "Poll"
 #~ msgstr "Bæta við könnun"
 
-#~ msgid ""
-#~ "To continue, please open the following link and authorize Tokodon: %1"
-#~ msgstr ""
-#~ "Til að halda áfram skaltu opna eftirfarandi tengil og gefa Tokodon "
-#~ "heimild: %1"
-
 #, fuzzy
 #~| msgid "Open link"
 #~ msgid "Open Link"
@@ -4532,9 +4581,6 @@ msgstr "Minnst á"
 #~| msgid "Boost"
 #~ msgid "%1 Boosts"
 #~ msgstr "Endurbirta"
-
-#~ msgid "Enter token:"
-#~ msgstr "Settu inn teikn:"
 
 #~ msgid "Please insert the generated token."
 #~ msgstr "Settu inn útbúna teiknið."

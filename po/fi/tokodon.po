@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-17 00:38+0000\n"
 "PO-Revision-Date: 2024-02-14 19:17+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not follow account"
 msgstr "Tiliä ei voitu seurata"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Tilin seuraamista ei voitu perua"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "Tiliä ei voitu estää"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Tilin estoa ei voitu perua"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "Tiliä ei voitu vaimentaa"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Tilin vaimennusta ei voitu perua"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "Tiliä ei voitu esitellä"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Tilin esittelyä ei voitu perua"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Tiliä koskevaa muistiinpanoa ei voitu muokata"
@@ -719,7 +719,8 @@ msgstr "Salli ilmoitukset"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
-#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/CodeAuthorization.qml:32
+#: content/ui/LoginFlow/LoginPage.qml:126
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
@@ -806,11 +807,57 @@ msgstr "Ei luetteloja"
 msgid "Edit List"
 msgstr "Muokkaa luetteloa"
 
-#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#: content/ui/LoginFlow/BaseAuthorization.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Tunnistautuminen"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#, fuzzy, kde-format
+#| msgid ""
+#| "To continue, please open the following link and authorize Tokodon: %1"
+msgid ""
+"To continue, please open the following link in your web browser to authorize "
+"Tokodon: %1"
+msgstr "Jatka valitsemalla seuraava linkki ja valtuuta Tokodon: %1"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Open Authorization Link"
+msgstr "Tunnistautuminen"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Copy Authorization Link"
+msgstr "Tunnistautuminen"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#, kde-format
+msgid "Link copied."
+msgstr "Linkki kopioitu."
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Use Authorization Code"
+msgstr "Tunnistautuminen"
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:26
+#, kde-format
+msgid "Use this login method if the above link does not work."
+msgstr ""
+
+#: content/ui/LoginFlow/CodeAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgid "Enter token:"
+msgid "Enter authorization token:"
+msgstr "Syötä merkki:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -850,13 +897,13 @@ msgstr "Siirry sivustolle"
 msgid "Re-Attempt Log In"
 msgstr "Yritä uudelleen kirjautua"
 
-#: content/ui/LoginFlow/LoginPage.qml:16
+#: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
@@ -866,7 +913,7 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelinasetukset."
 
-#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -876,30 +923,30 @@ msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelinasetukset."
 msgid "Proxy Settings"
 msgstr "Välityspalvelinasetukset"
 
-#: content/ui/LoginFlow/LoginPage.qml:43
+#: content/ui/LoginFlow/LoginPage.qml:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Kirjaudu"
 
-#: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "Palvelimen osoite:"
 
-#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/LoginPage.qml:108
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
 
-#: content/ui/LoginFlow/LoginPage.qml:59
+#: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "Käytä moderointityökaluja"
 
-#: content/ui/LoginFlow/LoginPage.qml:60
+#: content/ui/LoginFlow/LoginPage.qml:118
 #, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
@@ -908,19 +955,19 @@ msgstr ""
 "Salli Tokodonin päästä moderointityökaluihin. Jos kirjautumisessa on "
 "ongelmia, kokeile poistaa asetus käytöstä."
 
-#: content/ui/LoginFlow/LoginPage.qml:74
+#: content/ui/LoginFlow/LoginPage.qml:132
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "Palvelimen verkko-osoite ei voi olla tyhjä!"
 
-#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/LoginPage.qml:153
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Verkkoasetukset"
 
-#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/LoginPage.qml:159
 #: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
@@ -1011,6 +1058,12 @@ msgstr "Valitse palvelin"
 #, kde-format
 msgid "Server URL must not be empty."
 msgstr "Palvelimen verkko-osoite ei voi olla tyhjä."
+
+#: content/ui/LoginFlow/WebViewAuthorization.qml:22
+#, kde-format
+msgctxt "@action:button Open in external web browser"
+msgid "Open Externally"
+msgstr ""
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -3892,74 +3945,74 @@ msgstr "7 päivää"
 msgid "An unknown error occurred."
 msgstr "Tapahtui tuntematon virhe."
 
-#: main.cpp:59
+#: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Vastaanotetaan push-ilmoituksia"
 
-#: main.cpp:103
+#: main.cpp:109
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:105
+#: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
-#: main.cpp:107
+#: main.cpp:113
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE-yhteisö"
 
-#: main.cpp:108
+#: main.cpp:114
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:109 main.cpp:114
+#: main.cpp:115 main.cpp:120
 #, kde-format
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: main.cpp:113
+#: main.cpp:119
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:126
+#: main.cpp:132
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Asiakas hajautettuihin sosiaalisiin verkkoihin kuten Mastodoniin"
 
-#: main.cpp:127
+#: main.cpp:133
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Tukee https- ja web+ap-verkko-osoitemalleja"
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Jaa tekstirivi itsenäiseen kirjoitusohjelmaan."
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "The text to share."
 msgstr "Jaettava teksti."
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Internal usage only."
 msgstr "Vain sisäiseen käyttöön."
@@ -4280,15 +4333,8 @@ msgstr "Kohde"
 #~ msgid "Authorize Tokodon to act on your behalf"
 #~ msgstr "Valtuuta Tokodon toimimaan puolestasi"
 
-#~ msgid ""
-#~ "To continue, please open the following link and authorize Tokodon: %1"
-#~ msgstr "Jatka valitsemalla seuraava linkki ja valtuuta Tokodon: %1"
-
 #~ msgid "Open Link"
 #~ msgstr "Avaa linkki"
-
-#~ msgid "Link copied."
-#~ msgstr "Linkki kopioitu."
 
 #~ msgid "Show detailed statistics about posts"
 #~ msgstr "Näytä julkaisujen yksityiskohtaiset tilastot"
@@ -4347,9 +4393,6 @@ msgstr "Kohde"
 
 #~ msgid "%1 Boosts"
 #~ msgstr "%1 tehostusta"
-
-#~ msgid "Enter token:"
-#~ msgstr "Syötä merkki:"
 
 #~ msgid "Please insert the generated token."
 #~ msgstr "Syötä annettu merkki."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-17 00:38+0000\n"
 "PO-Revision-Date: 2024-04-04 10:55+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.04.70\n"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not follow account"
 msgstr "Nem sikerült követni a fiókot"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Nem sikerült leállítani a fiók követését"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "Nem sikerült letiltani a fiókot"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Nem sikerült leállítani a fiók letiltását"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "Nem sikerült némítani a fiókot"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Nem sikerült leállítani a fiók némítását"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "Nem sikerült kiemelni a fiókot"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Nem sikerült leállítani a fiók kiemelését"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Nem sikerült szerkeszteni egy fiókhoz tartozó megjegyzést"
@@ -720,7 +720,8 @@ msgstr "Értesítések engedélyezése"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
-#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/CodeAuthorization.qml:32
+#: content/ui/LoginFlow/LoginPage.qml:126
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
@@ -807,11 +808,60 @@ msgstr "Nincsenek listák"
 msgid "Edit List"
 msgstr "Lista szerkesztése"
 
-#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#: content/ui/LoginFlow/BaseAuthorization.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Felhasználóazonosítás"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#, fuzzy, kde-format
+#| msgid ""
+#| "To continue, please open the following link and authorize Tokodon: %1"
+msgid ""
+"To continue, please open the following link in your web browser to authorize "
+"Tokodon: %1"
+msgstr ""
+"A folytatáshoz nyissa meg a következő hivatkozást, és hitelesítse a "
+"Tokodont: %1"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Open Authorization Link"
+msgstr "Felhasználóazonosítás"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Copy Authorization Link"
+msgstr "Felhasználóazonosítás"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Link copied."
+msgstr "Bejegyzés hivatkozása másolva."
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Use Authorization Code"
+msgstr "Felhasználóazonosítás"
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:26
+#, kde-format
+msgid "Use this login method if the above link does not work."
+msgstr ""
+
+#: content/ui/LoginFlow/CodeAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgid "Enter token:"
+msgid "Enter authorization token:"
+msgstr "Adja meg a kódot:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -847,13 +897,13 @@ msgstr "Weboldal felkeresése"
 msgid "Re-Attempt Log In"
 msgstr "Bejelentkezés újra"
 
-#: content/ui/LoginFlow/LoginPage.qml:16
+#: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Bejelentkezés"
 
-#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
@@ -865,7 +915,7 @@ msgstr ""
 "Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a "
 "proxybeállításokat."
 
-#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -875,30 +925,30 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Proxybeállítások"
 
-#: content/ui/LoginFlow/LoginPage.qml:43
+#: content/ui/LoginFlow/LoginPage.qml:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Bejelentkezés"
 
-#: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "Kiszolgáló URL-címe:"
 
-#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/LoginPage.qml:108
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
 
-#: content/ui/LoginFlow/LoginPage.qml:59
+#: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "Moderációs eszközök bekapcsolása"
 
-#: content/ui/LoginFlow/LoginPage.qml:60
+#: content/ui/LoginFlow/LoginPage.qml:118
 #, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
@@ -907,19 +957,19 @@ msgstr ""
 "Lehetővé teszi a Tokodonnal a moderációs eszközökhöz hozzáférést. Próbálja "
 "meg kikapcsolni ezt, ha gondja akad a bejelentkezéssel."
 
-#: content/ui/LoginFlow/LoginPage.qml:74
+#: content/ui/LoginFlow/LoginPage.qml:132
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "A kiszolgáló URL-címe nem lehet üres."
 
-#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/LoginPage.qml:153
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Hálózati beállítások"
 
-#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/LoginPage.qml:159
 #: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
@@ -1010,6 +1060,12 @@ msgstr "Kiszolgáló kiválasztása"
 #, kde-format
 msgid "Server URL must not be empty."
 msgstr "A kiszolgáló URL-címe nem lehet üres."
+
+#: content/ui/LoginFlow/WebViewAuthorization.qml:22
+#, kde-format
+msgctxt "@action:button Open in external web browser"
+msgid "Open Externally"
+msgstr ""
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -3888,75 +3944,75 @@ msgstr "7 nap"
 msgid "An unknown error occurred."
 msgstr "Ismeretlen hiba történt."
 
-#: main.cpp:59
+#: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Leküldéses értesítések fogadása"
 
-#: main.cpp:103
+#: main.cpp:109
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:105
+#: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon kliens"
 
-#: main.cpp:107
+#: main.cpp:113
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© Carl Schwan, 2021-2023., A KDE közösség, 2021-2023."
 
-#: main.cpp:108
+#: main.cpp:114
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:109 main.cpp:114
+#: main.cpp:115 main.cpp:120
 #, kde-format
 msgid "Maintainer"
 msgstr "Karbantartó"
 
-#: main.cpp:113
+#: main.cpp:119
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kiszel Kristóf"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: main.cpp:126
+#: main.cpp:132
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 "Kliens decentralizált közösségi hálózatokhoz, mint például a Mastodonhoz"
 
-#: main.cpp:127
+#: main.cpp:133
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "A https és web+ap URL-sémák támogatása"
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Egy sor szöveg megosztása az önálló szerkesztőben."
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "The text to share."
 msgstr "A megosztandó szöveg."
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Internal usage only."
 msgstr "Csak belső használatra."
@@ -4255,12 +4311,6 @@ msgstr "Cél"
 #~ msgid "Poll"
 #~ msgstr "Szó hozzáadása"
 
-#~ msgid ""
-#~ "To continue, please open the following link and authorize Tokodon: %1"
-#~ msgstr ""
-#~ "A folytatáshoz nyissa meg a következő hivatkozást, és hitelesítse a "
-#~ "Tokodont: %1"
-
 #, fuzzy
 #~| msgid "Open link"
 #~ msgid "Open Link"
@@ -4299,9 +4349,6 @@ msgstr "Cél"
 #~| msgid "Boost"
 #~ msgid "%1 Boosts"
 #~ msgstr "Kiemelés"
-
-#~ msgid "Enter token:"
-#~ msgstr "Adja meg a kódot:"
 
 #~ msgid "Please insert the generated token."
 #~ msgstr "Illessze be a generált kódot."

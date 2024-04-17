@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 21:19+0900\n"
+"POT-Creation-Date: 2024-04-17 00:38+0000\n"
+"PO-Revision-Date: 2024-04-16 19:19+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -20,47 +20,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.04.70\n"
 
-#: account/abstractaccount.cpp:655
+#: account/abstractaccount.cpp:657
 #, kde-format
 msgid "Could not follow account"
 msgstr "無法追隨帳號"
 
-#: account/abstractaccount.cpp:656
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "無法取消追隨帳號"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not block account"
 msgstr "無法封鎖帳號"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unblock account"
 msgstr "無法解除封鎖帳號"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not mute account"
 msgstr "無法靜音帳號"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unmute account"
 msgstr "無法取消靜音帳號"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not feature account"
 msgstr "無法推薦帳號"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "無法取消推薦帳號"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "無法編輯關於帳號的簡介"
@@ -421,8 +421,7 @@ msgid "Settings"
 msgstr "設定"
 
 #: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:65
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "設定"
@@ -714,7 +713,8 @@ msgstr "允許通知"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
-#: content/ui/LoginFlow/LoginPage.qml:68
+#: content/ui/LoginFlow/CodeAuthorization.qml:32
+#: content/ui/LoginFlow/LoginPage.qml:126
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
@@ -798,10 +798,56 @@ msgstr "無列表"
 msgid "Edit List"
 msgstr "編輯列表"
 
-#: content/ui/LoginFlow/AuthorizationPage.qml:16
+#: content/ui/LoginFlow/BaseAuthorization.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
+msgstr "認證"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#, kde-format
+msgid ""
+"To continue, please open the following link in your web browser to authorize "
+"Tokodon: %1"
+msgstr ""
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Open Authorization Link"
+msgstr "認證"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Copy Authorization Link"
+msgstr "認證"
+
+#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Link copied."
+msgstr "已複製嘟文連結。"
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Use Authorization Code"
+msgstr "認證"
+
+#: content/ui/LoginFlow/BrowserAuthorization.qml:26
+#, kde-format
+msgid "Use this login method if the above link does not work."
+msgstr ""
+
+#: content/ui/LoginFlow/CodeAuthorization.qml:25
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Authorization"
+msgid "Enter authorization token:"
 msgstr "認證"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
@@ -816,11 +862,7 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "登入伺服器時發生問題：<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please check if the password service is running. For other login issues, "
-#| "you can try logging into the server's website.\\n\\nYou can attempt to "
-#| "log in again with the button below, or restart Tokodon."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\n"
@@ -828,7 +870,9 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 "請檢查密碼服務是否為執行中。對於其他登入問題，您可以試著到伺服器的網站進行登"
-"入。\\n\\n您可以試著使用下方按鈕再次嘗試登入，或是重新啟動 Tokodon。"
+"入。\n"
+"\n"
+"您可以試著使用下方按鈕再次嘗試登入，或是重新啟動 Tokodon。"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -840,13 +884,13 @@ msgstr "檢視網站"
 msgid "Re-Attempt Log In"
 msgstr "重新嘗試登入"
 
-#: content/ui/LoginFlow/LoginPage.qml:16
+#: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "登入"
 
-#: content/ui/LoginFlow/LoginPage.qml:21
+#: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
@@ -856,7 +900,7 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "伺服器連線失敗：%1。請檢查您的代理伺服器設定。"
 
-#: content/ui/LoginFlow/LoginPage.qml:34 content/ui/LoginFlow/LoginPage.qml:103
+#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -866,49 +910,49 @@ msgstr "伺服器連線失敗：%1。請檢查您的代理伺服器設定。"
 msgid "Proxy Settings"
 msgstr "代理伺服器設定"
 
-#: content/ui/LoginFlow/LoginPage.qml:43
+#: content/ui/LoginFlow/LoginPage.qml:101
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "登入"
 
-#: content/ui/LoginFlow/LoginPage.qml:49
+#: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "伺服器網址："
 
-#: content/ui/LoginFlow/LoginPage.qml:50
+#: content/ui/LoginFlow/LoginPage.qml:108
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
 
-#: content/ui/LoginFlow/LoginPage.qml:59
+#: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "啟用站務工具"
 
-#: content/ui/LoginFlow/LoginPage.qml:60
+#: content/ui/LoginFlow/LoginPage.qml:118
 #, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr "允許 Tokodon 存取站務工具。如果您登入時出現問題的話試著停用此選項。"
 
-#: content/ui/LoginFlow/LoginPage.qml:74
+#: content/ui/LoginFlow/LoginPage.qml:132
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "伺服器網址不能是空白的！"
 
-#: content/ui/LoginFlow/LoginPage.qml:90
+#: content/ui/LoginFlow/LoginPage.qml:153
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "網路設定"
 
-#: content/ui/LoginFlow/LoginPage.qml:96
+#: content/ui/LoginFlow/LoginPage.qml:159
 #: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
@@ -999,6 +1043,12 @@ msgstr "選取伺服器"
 #, kde-format
 msgid "Server URL must not be empty."
 msgstr "伺服器網址不能是空白的。"
+
+#: content/ui/LoginFlow/WebViewAuthorization.qml:22
+#, kde-format
+msgctxt "@action:button Open in external web browser"
+msgid "Open Externally"
+msgstr ""
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -3855,74 +3905,74 @@ msgstr "7 天"
 msgid "An unknown error occurred."
 msgstr "發生未知的錯誤。"
 
-#: main.cpp:59
+#: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "正在接收推送通知"
 
-#: main.cpp:103
+#: main.cpp:109
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:105
+#: main.cpp:111
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon 用戶端"
 
-#: main.cpp:107
+#: main.cpp:113
 #, kde-format
 msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE 社群"
 
-#: main.cpp:108
+#: main.cpp:114
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:109 main.cpp:114
+#: main.cpp:115 main.cpp:120
 #, kde-format
 msgid "Maintainer"
 msgstr "維護者"
 
-#: main.cpp:113
+#: main.cpp:119
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kisaragi Hiu"
 
-#: main.cpp:118
+#: main.cpp:124
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: main.cpp:126
+#: main.cpp:132
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "去中心化社群媒體（如 Mastodon）的用戶端"
 
-#: main.cpp:127
+#: main.cpp:133
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "支援 https 和 web+ap 網址機制"
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "用獨立撰寫工具分享一行文字。"
 
-#: main.cpp:129
+#: main.cpp:135
 #, kde-format
 msgid "The text to share."
 msgstr "要分享的文字。"
 
-#: main.cpp:133
+#: main.cpp:139
 #, kde-format
 msgid "Internal usage only."
 msgstr "僅內部用。"
