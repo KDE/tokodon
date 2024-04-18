@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-17 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 13:38+0200\n"
+"PO-Revision-Date: 2024-04-17 11:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -818,27 +818,23 @@ msgid "Authorization"
 msgstr "Autorisatie"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
-msgstr "Om door te gaan, open de volgende koppeling en autoriseer Tokodon: %1"
+msgstr ""
+"Om door te gaan, open de volgende koppeling in uw webbrowser en autoriseer "
+"Tokodon: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Autorisatie"
+msgstr "Autorisatiekoppeling openen"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Autorisatie"
+msgstr "Autorisatiekoppeling kopiëren"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:102
 #, kde-format
@@ -846,22 +842,20 @@ msgid "Link copied."
 msgstr "Koppeling gekopieerd."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Autorisatie"
+msgstr "Autorisatiecode gebruiken"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr ""
+"Deze aanmeldmethode gebruiken als de bovenstaande koppeling niet werkt."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Token invoeren:"
+msgstr "Autorisatietoken invoeren:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -1065,7 +1059,7 @@ msgstr "Server-URL mag niet leeg zijn."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Extern openen"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
