@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-17 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 09:23+0300\n"
+"PO-Revision-Date: 2024-04-18 22:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -829,29 +829,23 @@ msgid "Authorization"
 msgstr "Уповноваження"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
-"Щоб продовжити, будь ласка, відкрийте вказане нижче посилання і уповноважте "
-"Tokodon: %1"
+"Щоб продовжити, будь ласка, відкрийте вказане нижче посилання у вашій "
+"програмі для перегляду інтернету і уповноважте Tokodon: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Уповноваження"
+msgstr "Відкрити посилання уповноваження"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Уповноваження"
+msgstr "Копіювати посилання уповноваження"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:102
 #, kde-format
@@ -859,22 +853,21 @@ msgid "Link copied."
 msgstr "Посилання скопійовано."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Уповноваження"
+msgstr "Скористатися кодом уповноваження"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr ""
+"Скористайтеся цим способом входу, якщо наведене вище посилання не "
+"працюватиме."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Введіть жетон:"
+msgstr "Введіть жетон уповноваження:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -1079,7 +1072,7 @@ msgstr "Адреса сервера не може бути порожньою."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Відкрити у сторонній програмі"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
