@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-17 00:38+0000\n"
-"PO-Revision-Date: 2024-04-18 19:50\n"
+"PO-Revision-Date: 2024-04-20 19:41\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -699,6 +699,9 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon 可以显示活动通知，如用户转嘟或回复您的嘟文。\n"
+"\n"
+"登录时显示的通知类型可以微调。"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
@@ -752,7 +755,7 @@ msgstr "欢迎使用 Tokodon"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "在使用 Tokodon 之前，需要进行一些初始设置。"
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
@@ -798,17 +801,17 @@ msgstr ""
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
-msgstr ""
+msgstr "若要继续，请在 Web 浏览器中打开以下链接并授权 Tokodon：%1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:89
 #, kde-format
 msgid "Open Authorization Link"
-msgstr ""
+msgstr "打开授权链接"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:98
 #, kde-format
 msgid "Copy Authorization Link"
-msgstr ""
+msgstr "复制授权链接"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:102
 #, kde-format
@@ -818,17 +821,17 @@ msgstr "链接已复制。"
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use Authorization Code"
-msgstr ""
+msgstr "使用授权码"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "如果上面的链接不可用，请使用此登录方法。"
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
-msgstr ""
+msgstr "输入授权码："
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -849,6 +852,9 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
+"请检查密码服务是否在运行。对于其他登录问题，可以尝试登录到服务器的网站。\n"
+"\n"
+"您可以尝试使用下面的按钮重新登录或重启 Tokodon。"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -1024,7 +1030,7 @@ msgstr "服务器 URL 不能为空。"
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "使用外部程序打开"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -1156,7 +1162,7 @@ msgstr "列表"
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "嵌入信息"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2244,12 +2250,12 @@ msgstr "标记为已解决"
 #: content/ui/ModerationTools/MainReportToolPage.qml:54
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "举报未处理"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:57
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "举报已处理"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:148
 #, kde-format
@@ -2291,7 +2297,7 @@ msgstr "已举报"
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr ""
+msgstr "已举报"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:188
 #, kde-format
@@ -2301,7 +2307,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:203
 #, kde-format
 msgid "Report Status"
-msgstr ""
+msgstr "举报状态"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
@@ -2342,7 +2348,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:243
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "已转发"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
@@ -2371,7 +2377,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:269
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "其他"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:274
 #, kde-format
@@ -2381,7 +2387,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:285
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "垃圾信息"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
@@ -2391,7 +2397,7 @@ msgstr ""
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "内容违反服务器规则"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:304
 #, kde-format
@@ -2447,7 +2453,7 @@ msgstr "账户"
 #: content/ui/ModerationTools/ModerationToolPage.qml:21
 #, kde-format
 msgid "Reports"
-msgstr ""
+msgstr "举报"
 
 #: content/ui/ModerationTools/ModerationToolPage.qml:27
 #, kde-format
@@ -2476,19 +2482,19 @@ msgstr "账户工具页面"
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr ""
+msgstr "举报状态"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "未处理"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
 #, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr ""
+msgstr "已处理"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
@@ -2533,7 +2539,7 @@ msgstr ""
 #: content/ui/ModerationTools/ReportToolPage.qml:296
 #, kde-format
 msgid "No reports found"
-msgstr ""
+msgstr "未找到举报"
 
 #: content/ui/NotificationPage.qml:32
 #, kde-format
@@ -2651,12 +2657,12 @@ msgstr "将图像另存为…"
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
 #, kde-format
 msgid "Save Gif As…"
-msgstr ""
+msgstr "将 Gif 另存为…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
 #, kde-format
 msgid "Save Video As…"
-msgstr ""
+msgstr "将视频另存为…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -2667,7 +2673,7 @@ msgstr "复制图像"
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "发布于 %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
 #, kde-format
@@ -2780,7 +2786,7 @@ msgstr "确定要删除此嘟文吗？"
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr ""
+msgstr "删除并重新起草嘟文"
 
 #: content/ui/PostDelegate/PostDelegate.qml:245
 #, kde-format
@@ -2788,7 +2794,7 @@ msgctxt "@label"
 msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
-msgstr ""
+msgstr "确定要重新起草此嘟文吗？此操作将删除原来的嘟文。"
 
 #: content/ui/PostDelegate/PostDelegate.qml:409
 #, kde-format
@@ -2854,7 +2860,7 @@ msgstr ""
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
-msgstr ""
+msgstr "此嘟文已被标记为私密。有些嘟文由于回复默认私密，可能无法显示。"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
@@ -2883,7 +2889,7 @@ msgstr "复制链接"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "嵌入"
 
 #: content/ui/PostDelegate/PostMenu.qml:75
 #, kde-format
@@ -2931,37 +2937,37 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr ""
+msgstr "在个人资料页面取消置顶"
 
 #: content/ui/PostDelegate/PostMenu.qml:118
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr ""
+msgstr "在个人资料页面置顶"
 
 #: content/ui/PostDelegate/PostMenu.qml:131
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "取消隐藏 @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:133
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr ""
+msgstr "隐藏 @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:150
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr ""
+msgstr "取消屏蔽 @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:152
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr ""
+msgstr "屏蔽 @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:176
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
@@ -3041,7 +3047,7 @@ msgstr "举报此用户的原因"
 #, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr ""
+msgstr "举报"
 
 #: content/ui/ReportDialog.qml:64
 #, kde-format
@@ -3068,7 +3074,7 @@ msgstr "无搜索结果"
 #: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr ""
+msgstr "搜索用户、标签和嘟文"
 
 #: content/ui/SearchView.qml:147
 #, kde-format
@@ -3090,7 +3096,7 @@ msgstr "注销"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "确定要退出登录 %1 吗？"
 
 #: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:127
 #, kde-format
@@ -3117,7 +3123,7 @@ msgstr "嘟文"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr ""
+msgstr "显示回复、喜欢和转嘟数"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -3213,7 +3219,7 @@ msgstr "此账户无法使用推送通知。请退出并重新登录。"
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "类型"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
@@ -3223,7 +3229,7 @@ msgstr "提及"
 #: content/ui/Settings/NotificationsPage.qml:69
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "状态"
 
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
@@ -3253,7 +3259,7 @@ msgstr "投票"
 #: content/ui/Settings/NotificationsPage.qml:141
 #, kde-format
 msgid "Edits"
-msgstr ""
+msgstr "编辑"
 
 #: content/ui/Settings/ProfileEditor.qml:24
 #, kde-format
@@ -3759,12 +3765,12 @@ msgstr "无法连接到服务器：%1。请检查您的设置。"
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
-msgstr ""
+msgstr "有些回复不可用"
 
 #: content/ui/TimelinePage.qml:245
 #, kde-format
 msgid "To view all replies, open the post on the original server."
-msgstr ""
+msgstr "要查看所有回复，请在原始服务器上打开嘟文。"
 
 #: content/ui/TimelinePage.qml:248
 #, kde-format
@@ -3881,7 +3887,7 @@ msgstr "发生了未知错误。"
 #: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "正在接收推送通知"
 
 #: main.cpp:109
 #, kde-format
@@ -3928,7 +3934,7 @@ msgstr "slreycn@outlook.com, git@blumia.net, integral@member.fsf.org"
 #: main.cpp:132
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr ""
+msgstr "去中心化的社交网络客户端，例如 Mastodon"
 
 #: main.cpp:133
 #, kde-format
@@ -3958,7 +3964,7 @@ msgstr ""
 #: search/searchmodel.cpp:140
 #, kde-format
 msgid "Users"
-msgstr ""
+msgstr "用户"
 
 #: search/searchmodel.cpp:142
 #, kde-format
@@ -4124,7 +4130,7 @@ msgstr ""
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "无法打开临时下载文件"
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
