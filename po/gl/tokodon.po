@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-17 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 10:43+0100\n"
+"PO-Revision-Date: 2024-04-21 10:14+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -816,27 +816,23 @@ msgid "Authorization"
 msgstr "Autorización"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
-msgstr "Para continuar, abre a seguinte ligazón e autoriza a Tokodon: %1"
+msgstr ""
+"Para continuar, abra a seguinte ligazón nun navegador web para autorizar a "
+"Tokodon: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Autorización"
+msgstr "Abrir a ligazón de autorización"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Autorización"
+msgstr "Copiar a ligazón de autorización"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:102
 #, kde-format
@@ -844,22 +840,19 @@ msgid "Link copied."
 msgstr "Copiouse a ligazón."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Autorización"
+msgstr "Usar un código de autorización"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Use este método de acceso se a ligazón anterior non funciona."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Escribir o código:"
+msgstr "Introduza a mostra de autorización:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -873,11 +866,7 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Produciuse un problema ao acceder ao servidor:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please check if the password service is running. For other login issues, "
-#| "you can try logging into the server's website.\\n\\nYou can attempt to "
-#| "log in again with the button below, or restart Tokodon."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\n"
@@ -885,8 +874,9 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 "Comprobe se o servizo de contrasinais está en execución. Para outros "
-"problemas de acceso, pode intentar acceder desde o sitio web do servidor.\\n"
-"\\nPode intentar acceder de novo co botón de embaixo, ou reiniciar Tokodon."
+"problemas de acceso, pode intentar acceder desde o sitio web do servidor.\n"
+"\n"
+"Pode intentar acceder de novo co botón de embaixo, ou reiniciar Tokodon."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -1065,7 +1055,7 @@ msgstr "O URL do servidor non pode estar baleiro."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Abrir externamente"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
