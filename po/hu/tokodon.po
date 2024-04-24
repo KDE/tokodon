@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-17 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 10:55+0200\n"
+"PO-Revision-Date: 2024-04-23 10:32+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -815,53 +815,43 @@ msgid "Authorization"
 msgstr "Felhasználóazonosítás"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
-"A folytatáshoz nyissa meg a következő hivatkozást, és hitelesítse a "
-"Tokodont: %1"
+"A folytatáshoz nyissa meg a következő hivatkozást a webböngészőjében a "
+"Tokodon hitelesítéséhez: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:89
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Felhasználóazonosítás"
+msgstr "Hitelesítési hivatkozás megnyitása"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Felhasználóazonosítás"
+msgstr "Hitelesítési hivatkozás másolása"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:102
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Link copied."
-msgstr "Bejegyzés hivatkozása másolva."
+msgstr "Hivatkozás másolva."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Felhasználóazonosítás"
+msgstr "Hitelesítési kód használata"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Használja ezt a hitelesítési módot, ha a fenti hivatkozás nem működik."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Adja meg a kódot:"
+msgstr "Adja meg a hitelesítési kódot:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -1065,7 +1055,7 @@ msgstr "A kiszolgáló URL-címe nem lehet üres."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Megnyitás külső programmal"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
