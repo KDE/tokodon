@@ -3,6 +3,8 @@
 
 #include "network/networkcontroller.h"
 
+#include <QNetworkProxyFactory>
+
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "config.h"
@@ -46,6 +48,7 @@ void NetworkController::setApplicationProxy()
         proxy.setPort(cfg->proxyPort());
         proxy.setUser(cfg->proxyUser());
         proxy.setPassword(cfg->proxyPassword());
+        QNetworkProxy::setApplicationProxy(proxy);
         break;
     case 2: // SOCKS 5
         proxy.setType(QNetworkProxy::Socks5Proxy);
@@ -53,14 +56,13 @@ void NetworkController::setApplicationProxy()
         proxy.setPort(cfg->proxyPort());
         proxy.setUser(cfg->proxyUser());
         proxy.setPassword(cfg->proxyPassword());
+        QNetworkProxy::setApplicationProxy(proxy);
         break;
     case 0: // System Default
     default:
-        // do nothing
+        QNetworkProxyFactory::setUseSystemConfiguration(true);
         break;
     }
-
-    QNetworkProxy::setApplicationProxy(proxy);
 
     AccountManager::instance().reloadAccounts();
 }
