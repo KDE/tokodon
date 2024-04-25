@@ -15,6 +15,10 @@ using namespace Qt::Literals::StringLiterals;
 NetworkController::NetworkController(QObject *parent)
     : QObject(parent)
 {
+    // Save the original system-level proxy settings
+    m_systemHttpProxy = qgetenv("http_proxy");
+    m_systemHttpsProxy = qgetenv("https_proxy");
+
     setApplicationProxy();
 
     connect(&AccountManager::instance(), &AccountManager::accountsReady, this, [=] {
@@ -40,6 +44,18 @@ void NetworkController::setApplicationProxy()
     Config *cfg = Config::self();
     QNetworkProxy proxy;
 
+    // define network proxy environment variable
+    // this is needed for the media backends which don't obey qt's settings
+    QByteArray appProxy;
+    if (!cfg->proxyUser().isEmpty()) {
+        appProxy += QUrl::toPercentEncoding(cfg->proxyUser());
+        if (!cfg->proxyPassword().isEmpty()) {
+            appProxy += ":" + QUrl::toPercentEncoding(cfg->proxyPassword());
+        }
+        appProxy += "@";
+    }
+    appProxy += cfg->proxyHost().toLocal8Bit() + ":" + QByteArray::number(cfg->proxyPort());
+
     // type match to ProxyType from config.kcfg
     switch (cfg->proxyType()) {
     case 1: // HTTP
@@ -49,6 +65,11 @@ void NetworkController::setApplicationProxy()
         proxy.setUser(cfg->proxyUser());
         proxy.setPassword(cfg->proxyPassword());
         QNetworkProxy::setApplicationProxy(proxy);
+
+        // also set it through environment variables for the media backends
+        appProxy.prepend("http://");
+        qputenv("http_proxy", appProxy);
+        qputenv("https_proxy", appProxy);
         break;
     case 2: // SOCKS 5
         proxy.setType(QNetworkProxy::Socks5Proxy);
@@ -57,14 +78,35 @@ void NetworkController::setApplicationProxy()
         proxy.setUser(cfg->proxyUser());
         proxy.setPassword(cfg->proxyPassword());
         QNetworkProxy::setApplicationProxy(proxy);
+
+        // also set it through environment variables for the media backends
+        appProxy.prepend("socks5://");
+        qputenv("http_proxy", appProxy);
+        qputenv("https_proxy", appProxy);
         break;
     case 3:
         proxy.setType(QNetworkProxy::NoProxy);
         QNetworkProxy::setApplicationProxy(proxy);
+
+        // also reset environment variables if they have been set
+        qunsetenv("http_proxy");
+        qunsetenv("https_proxy");
         break;
     case 0: // System Default
     default:
         QNetworkProxyFactory::setUseSystemConfiguration(true);
+
+        // also reset env variables that might have been overridden
+        if (!m_systemHttpProxy.isEmpty()) {
+            qputenv("http_proxy", m_systemHttpProxy);
+        } else {
+            qunsetenv("http_proxy");
+        }
+        if (!m_systemHttpProxy.isEmpty()) {
+            qputenv("https_proxy", m_systemHttpsProxy);
+        } else {
+            qunsetenv("https_proxy");
+        }
         break;
     }
 

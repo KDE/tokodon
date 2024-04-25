@@ -51,4 +51,7 @@ private:
     QUrl m_requestedLink;
     bool m_accountsReady = false;
     QString m_storedComposedText;
+
+    QByteArray m_systemHttpProxy;
+    QByteArray m_systemHttpsProxy;
 };
