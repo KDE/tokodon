@@ -29,7 +29,19 @@ FormCard.FormCardPage {
             }
         }
 
-        FormCard.FormDelegateSeparator { below: systemDefault; above: http }
+        FormCard.FormDelegateSeparator { below: systemDefault; above: noProxy }
+
+        FormCard.FormRadioDelegate {
+            id:noProxy
+            text: i18n("No Proxy")
+            checked: currentType === 3
+            enabled: !Config.isProxyTypeImmutable
+            onToggled: {
+                currentType = 3;
+            }
+        }
+
+        FormCard.FormDelegateSeparator { below: noProxy; above: http }
 
         FormCard.FormRadioDelegate {
             id: http
