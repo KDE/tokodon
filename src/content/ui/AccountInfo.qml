@@ -343,10 +343,12 @@ TimelinePage {
                                                             })
                                         },
                                         Kirigami.Action {
-                                            icon.name: "settings-configure"
                                             visible: model.isSelf
-                                            text: i18n("Settings")
-                                            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, { title: i18nc("@title:window", "Settings") })
+                                            text: i18nc("@action:button Open settings dialog", "Settings")
+                                            icon.name: 'settings-configure-symbolic'
+                                            onClicked: {
+                                                ConfigurationsView.open();
+                                            }
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"

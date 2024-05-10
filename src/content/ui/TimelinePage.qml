@@ -70,9 +70,11 @@ Kirigami.ScrollablePage {
         showCloseButton: true
 
         actions: Kirigami.Action {
-            text: i18n("Settings")
-            icon.name: "settings-configure"
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")})
+            text: i18nc("@action:button Open settings dialog", "Settings")
+            icon.name: 'settings-configure-symbolic'
+            onTriggered: {
+                ConfigurationsView.open();
+            }
         }
     }
 

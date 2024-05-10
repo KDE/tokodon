@@ -170,6 +170,12 @@ target_sources(tokodon_static
     notification/notificationmodel.h
 )
 
+set_source_files_properties(
+    content/ui/Settings/ConfigurationsView.qml
+    PROPERTIES
+        QT_QML_SINGLETON_TYPE TRUE
+)
+
 qt_target_qml_sources(tokodon_static
     QML_FILES
         # Components
@@ -209,7 +215,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ModerationTools/MainFederationToolPage.qml
         content/ui/ModerationTools/MainIpRulePage.qml
         content/ui/ModerationTools/MainReportToolPage.qml
-        content/ui/ModerationTools/ModerationToolPage.qml
+        content/ui/ModerationTools/ModerationToolsView.qml
         content/ui/ModerationTools/ReportToolPage.qml
 
         # Notifications
@@ -222,7 +228,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/NetworkProxyPage.qml
         content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml
-        content/ui/Settings/SettingsPage.qml
+        content/ui/Settings/ConfigurationsView.qml
         content/ui/Settings/SonnetPage.qml
 
         # Composer

@@ -15,7 +15,7 @@ import "./StatusComposer"
 import "./PostDelegate"
 
 Kirigami.ApplicationWindow {
-    id: appwindow
+    id: root
 
     title: pageStack.currentItem?.title ?? ""
 
@@ -28,13 +28,13 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.gridUnit * 20
 
     pageStack {
-        defaultColumnWidth: appwindow.width
+        defaultColumnWidth: root.width
 
         globalToolBar {
             canContainHandles: true
             style: Kirigami.ApplicationHeaderStyle.ToolBar
-            showNavigationButtons: if (applicationWindow().pageStack.currentIndex > 0
-                || applicationWindow().pageStack.currentIndex > 0) {
+            showNavigationButtons: if (root.pageStack.currentIndex > 0
+                || root.pageStack.currentIndex > 0) {
                 Kirigami.ApplicationHeaderStyle.ShowBackButton
             } else {
                 0
@@ -55,7 +55,7 @@ Kirigami.ApplicationWindow {
         if (AccountManager.selectedAccountHasIssue) {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: 'home',
             });
         }
@@ -158,6 +158,8 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: {
+        ConfigurationsView.window = root;
+
         if (AccountManager.isReady) {
             startupAccountCheck();
         }
@@ -181,13 +183,13 @@ Kirigami.ApplicationWindow {
         }
 
         function onAccountsReloaded() {
-            pageStack.replace(mainTimeline.createObject(appwindow), {
+            pageStack.replace(mainTimeline.createObject(root), {
                 name: "home"
             });
         }
 
         function onAccountsReady() {
-            appwindow.startupAccountCheck();
+            root.startupAccountCheck();
         }
     }
 
@@ -206,13 +208,13 @@ Kirigami.ApplicationWindow {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                 purpose: StatusComposer.New,
                 initialText: text,
-                onPostFinished: applicationWindow().pageStack.layers.pop()
+                onPostFinished: root.pageStack.layers.pop()
             });
         }
     }
 
     function popoutStatusComposer(originalEditor: var) {
-        const item = applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+        const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
             closeApplicationWhenFinished: true,
             purpose: originalEditor.purpose,
             initialText: originalEditor.backend.status,
@@ -288,7 +290,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onReportPost(identity, postId) {
-            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
                 {
                     type: ReportDialog.Post,
                     identity: identity,
@@ -297,7 +299,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onReportUser(identity) {
-            applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
                 {
                     type: ReportDialog.User,
                     identity: identity
@@ -305,7 +307,7 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenList(listId, name) {
-            pageStack.push(listTimelinePage.createObject(appwindow, {
+            pageStack.push(listTimelinePage.createObject(root, {
                 name,
                 listId
             }));
@@ -316,7 +318,7 @@ Kirigami.ApplicationWindow {
         id: drawer
         enabled: AccountManager.hasAccounts && AccountManager.isReady
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-        modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+        modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (root.width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
         z: modal ? Math.round(position * 10000000) : 100
         drawerOpen: !Kirigami.Settings.isMobile && enabled
         width: Kirigami.Units.gridUnit * 16
@@ -428,24 +430,35 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "lock"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ModerationToolPage"), {}, {title: i18n("Moderation Tools")})
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
                 padding: Kirigami.Units.largeSpacing
                 activeFocusOnTab: true
 
                 Layout.fillWidth: true
+
+                onClicked: {
+                    moderationToolsView.open();
+                }
+
+                ModerationToolsView {
+                    id: moderationToolsView
+                    window: root
+                }
             }
 
             Delegates.RoundedItemDelegate {
-                icon.name: "settings-configure"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "SettingsPage"), {}, {title: i18n("Settings")})
                 text: i18nc("@action:button Open settings dialog", "Settings")
+                icon.name: 'settings-configure-symbolic'
                 padding: Kirigami.Units.largeSpacing
                 activeFocusOnTab: true
 
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
+
+                onClicked: {
+                    ConfigurationsView.open();
+                }
             }
         }
     }
@@ -456,7 +469,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: "home"
             });
             checked = true;
@@ -471,7 +484,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(notificationTimeline.createObject(appwindow));
+            pageStack.push(notificationTimeline.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -487,7 +500,7 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount && alertCount > 0
         onTriggered: {
             pageStack.clear();
-            pageStack.push(socialGraphComponent.createObject(appwindow), {
+            pageStack.push(socialGraphComponent.createObject(root), {
                 name: "request"
             });
             checked = true;
@@ -502,7 +515,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: "public",
             });
             checked = true;
@@ -517,7 +530,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: "federated",
             });
             checked = true;
@@ -533,7 +546,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(conversationPage.createObject(appwindow));
+            pageStack.push(conversationPage.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -547,7 +560,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: "favourites",
             });
             checked = true;
@@ -563,7 +576,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(mainTimeline.createObject(appwindow), {
+            pageStack.push(mainTimeline.createObject(root), {
                 name: "bookmarks",
             });
             checked = true;
@@ -579,7 +592,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(exploreTimeline.createObject(appwindow));
+            pageStack.push(exploreTimeline.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -594,7 +607,7 @@ Kirigami.ApplicationWindow {
         visible: Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.clear();
-            pageStack.push(searchPage.createObject(appwindow));
+            pageStack.push(searchPage.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile) {
                 drawer.drawerOpen = false;
@@ -609,7 +622,7 @@ Kirigami.ApplicationWindow {
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount
         onTriggered: {
             pageStack.clear();
-            pageStack.push(announcementsPage.createObject(appwindow));
+            pageStack.push(announcementsPage.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -623,7 +636,7 @@ Kirigami.ApplicationWindow {
         checkable: true
         onTriggered: {
             pageStack.clear();
-            pageStack.push(listsPage.createObject(appwindow));
+            pageStack.push(listsPage.createObject(root));
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
@@ -639,7 +652,7 @@ Kirigami.ApplicationWindow {
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
-        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !appwindow.wideScreen
+        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideScreen
         actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
         enabled: !AccountManager.selectedAccountHasIssue
     }
@@ -697,7 +710,7 @@ Kirigami.ApplicationWindow {
         opacity: text.length > 0 ? 1 : 0
         visible: !Kirigami.Settings.isMobile && !text.startsWith("hashtag:") && !text.startsWith("account:")
 
-        z: applicationWindow().globalDrawer.z + 1
+        z: root.globalDrawer.z + 1
         x: 0
         y: parent.height - implicitHeight
         contentItem: QQC2.Label {
@@ -745,7 +758,7 @@ Kirigami.ApplicationWindow {
     Connections {
         id: saveWindowGeometryConnections
         enabled: false // Disable on startup to avoid writing wrong values if the window is hidden
-        target: appwindow
+        target: root
 
         function onClosing() { WindowController.saveGeometry(); }
         function onWidthChanged() { saveWindowGeometryTimer.restart(); }
