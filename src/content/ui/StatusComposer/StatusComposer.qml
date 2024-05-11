@@ -224,7 +224,6 @@ Kirigami.ScrollablePage {
             leftInset: -1
             rightInset: -1
             onTextChanged: backend.status = text
-            Kirigami.SpellCheck.enabled: true
 
             Keys.onEnterPressed: (event)=> {
                if (event.modifiers & Qt.ControlModifier) {
