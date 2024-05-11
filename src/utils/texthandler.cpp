@@ -4,8 +4,6 @@
 
 #include "utils/texthandler.h"
 
-#include "utils/customemoji.h"
-
 #include <QTextBlock>
 #include <QTextCursor>
 #include <QTextDocument>
