@@ -115,7 +115,11 @@ Kirigami.ScrollablePage {
             contentWarning.checked = true;
         }
 
-        textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ");
+        const filteredMentions = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account));
+        if (filteredMentions.length > 0) {
+            textArea.text = filteredMentions.join(" ") + " ";
+            textArea.cursorPosition = textArea.length;
+        }
     }
 
     Kirigami.PromptDialog {
@@ -191,6 +195,13 @@ Kirigami.ScrollablePage {
         maximumWidth: Kirigami.Units.gridUnit * 40
         padding: 0
 
+        Loader {
+            active: root.previewPost !== null
+            Layout.fillWidth: true
+            sourceComponent: StatusPreview {
+                post: root.previewPost
+            }
+        }
 
         QQC2.TextField {
             id: contentWarningField
@@ -199,14 +210,6 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
-        }
-
-        Loader {
-            active: root.previewPost !== null
-            Layout.fillWidth: true
-            sourceComponent: StatusPreview {
-                post: root.previewPost
-            }
         }
 
         QQC2.TextArea {
