@@ -242,17 +242,13 @@ Kirigami.ApplicationWindow {
             });
         }
 
-        function onReplyTo(inReplyTo, mentions, visibility, authorIdentity, post) {
-            if (!mentions.includes(`@${authorIdentity.account}`)) {
-                mentions.push(`@${authorIdentity.account}`);
-            }
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+        function onReplyTo(post) {
+            const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                 purpose: StatusComposer.Reply,
-                inReplyTo: inReplyTo,
-                mentions: mentions,
-                visibility: visibility,
                 previewPost: post
             });
+            item.backend.setupReplyTo(post);
+            item.refreshData();
         }
 
         function onOpenThread(postId) {

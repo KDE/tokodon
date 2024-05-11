@@ -409,7 +409,7 @@ QQC2.ItemDelegate {
                 tooltip: i18nc("Reply to a post", "Reply")
                 text: Config.showPostStats && !root.selected ? root.repliesCount : ''
 
-                onClicked: Navigation.replyTo(root.id, root.mentions, root.visibility, root.authorIdentity, root.post)
+                onClicked: Navigation.replyTo(root.post)
             }
 
             Item {

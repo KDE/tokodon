@@ -752,7 +752,7 @@ void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
                 // TODO: we can't delete this immediately, will need some smarter cleanup in the PostEditorBackend
                 Post *post = new Post(this, this);
                 post->fromJson(status);
-                Q_EMIT Navigation::instance().replyTo(post->postId(), post->mentions(), post->visibility(), post->authorIdentity().get(), post);
+                Q_EMIT Navigation::instance().replyTo(post);
             } else {
                 const QString localID = status["id"_L1].toString();
                 mutatePost(localID, verb);

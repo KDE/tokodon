@@ -35,6 +35,7 @@ Kirigami.ScrollablePage {
     property string initialText
     property bool closeApplicationWhenFinished: false
     property bool discardDraft: false
+    property string contentWarning: 'test'
 
     readonly property PostEditorBackend defaultBackend: PostEditorBackend {
         inReplyTo: root.inReplyTo
@@ -102,8 +103,6 @@ Kirigami.ScrollablePage {
     Component.onCompleted: {
         if (initialText.length > 0) {
             backend.status = initialText
-        } else if (root.purpose === StatusComposer.New || root.purpose === StatusComposer.Reply) {
-            textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ")
         }
 
         textArea.forceActiveFocus()
@@ -115,6 +114,8 @@ Kirigami.ScrollablePage {
             contentWarningField.text = root.backend.spoilerText;
             contentWarning.checked = true;
         }
+
+        textArea.text = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account)).join(" ");
     }
 
     Kirigami.PromptDialog {
