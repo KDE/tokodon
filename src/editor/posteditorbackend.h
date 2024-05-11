@@ -68,6 +68,8 @@ public:
 
     Q_INVOKABLE void copyFromOther(PostEditorBackend *other);
 
+    Q_INVOKABLE void setupReplyTo(Post *post);
+
 public Q_SLOTS:
     void save();
     void edit();

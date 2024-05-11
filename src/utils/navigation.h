@@ -36,7 +36,7 @@ public:
 
 Q_SIGNALS:
     void openStatusComposer();
-    void replyTo(const QString &inReplyTo, const QVariant &mentions, int visibility, Identity *authorIdentity, Post *post);
+    void replyTo(Post *post);
     void openAccount(const QString &accountId);
     void openThread(const QString &postId);
     void openFullScreenImage(const QVariant &attachments, Identity *identity, int currentIndex);

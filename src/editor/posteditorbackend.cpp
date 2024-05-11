@@ -200,6 +200,14 @@ void PostEditorBackend::copyFromOther(PostEditorBackend *other)
     m_attachmentEditorModel->copyFromOther(other->m_attachmentEditorModel);
 }
 
+void PostEditorBackend::setupReplyTo(Post *post)
+{
+    setInReplyTo(post->originalPostId());
+    setSpoilerText(post->spoilerText());
+    setVisibility(post->visibility());
+    setMentions({'@'_L1 + post->authorIdentity()->account()});
+}
+
 QJsonDocument PostEditorBackend::toJsonDocument() const
 {
     QJsonObject obj;
