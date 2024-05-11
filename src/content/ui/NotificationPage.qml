@@ -125,20 +125,6 @@ Kirigami.ScrollablePage {
         model: timelinePage.currentModel
 
         Connections {
-            target: Navigation
-            function onOpenFullScreenImage(attachments, identity, currentIndex) {
-                if (timelinePage.isCurrentPage) {
-                    timelinePage.dialog = fullScreenImage.createObject(parent, {
-                        attachments: attachments,
-                        identity: identity,
-                        initialIndex: currentIndex,
-                    });
-                    timelinePage.dialog.open();
-                }
-            }
-        }
-
-        Connections {
             target: timelinePage.currentModel
             function onPostSourceReady(backend) {
                 pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
@@ -148,10 +134,6 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Component {
-            id: fullScreenImage
-            FullScreenImage {}
-        }
         delegate: DelegateChooser {
             role: "type"
             DelegateChoice {

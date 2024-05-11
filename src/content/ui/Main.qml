@@ -233,8 +233,22 @@ Kirigami.ApplicationWindow {
         });
     }
 
+    Component {
+        id: fullScreenImage
+        FullScreenImage {}
+    }
+
     Connections {
         target: Navigation
+
+        function onOpenFullScreenImage(attachments, identity, currentIndex) {
+            const dialog = fullScreenImage.createObject(parent, {
+                attachments: attachments,
+                identity: identity,
+                initialIndex: currentIndex,
+            });
+            dialog.open();
+        }
 
         function onOpenStatusComposer() {
             pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {

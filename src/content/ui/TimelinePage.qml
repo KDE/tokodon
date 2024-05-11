@@ -105,20 +105,6 @@ Kirigami.ScrollablePage {
     ]
 
     Connections {
-        target: Navigation
-        function onOpenFullScreenImage(attachments, identity, currentIndex) {
-            if (root.isCurrentPage) {
-                root.dialog = fullScreenImage.createObject(parent, {
-                    attachments: attachments,
-                    identity: identity,
-                    initialIndex: currentIndex,
-                });
-                root.dialog.open();
-            }
-        }
-    }
-
-    Connections {
         target: Controller
         function onNetworkErrorOccurred(error) {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
@@ -144,11 +130,6 @@ Kirigami.ScrollablePage {
         id: listview
         model: root.model
         reuseItems: false // TODO: this causes jumping on the timeline. needs more investigation before it's re-enabled
-
-        Component {
-            id: fullScreenImage
-            FullScreenImage {}
-        }
 
         delegate: PostDelegate {
             id: status

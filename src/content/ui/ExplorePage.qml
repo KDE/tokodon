@@ -87,20 +87,6 @@ Kirigami.ScrollablePage {
         model: tendingPostsAction.checked ? trendingPostsModel : tagsModel
 
         Connections {
-            target: Navigation
-            function onOpenFullScreenImage(attachments, identity, currentIndex) {
-                if (timelinePage.isCurrentPage) {
-                    timelinePage.dialog = fullScreenImage.createObject(parent, {
-                        attachments: attachments,
-                        identity: identity,
-                        initialIndex: currentIndex,
-                    });
-                    timelinePage.dialog.open();
-                }
-            }
-        }
-
-        Connections {
             target: trendingPostsModel
             function onPostSourceReady(backend) {
                 pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
@@ -108,11 +94,6 @@ Kirigami.ScrollablePage {
                     backend: backend
                 });
             }
-        }
-
-        Component {
-            id: fullScreenImage
-            FullScreenImage {}
         }
 
         Component {
