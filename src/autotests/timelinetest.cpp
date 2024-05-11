@@ -142,8 +142,7 @@ private Q_SLOTS:
 
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::IdRole).value<QString>(), QStringLiteral("103270115826048975"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::MentionsRole).value<QStringList>(), QStringList{});
-        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(),
-                 TextHandler::fixBidirectionality(QStringLiteral("<p>LOREM</p>")));
+        QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::ContentRole).value<QString>(), QStringLiteral("<p>LOREM</p>"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->id(), QStringLiteral("1"));
         QCOMPARE(timelineModel.data(timelineModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayNameHtml(),
                  QStringLiteral("Eugen <img height=\"16\" align=\"middle\" width=\"16\" src=\"https://kde.org\">"));

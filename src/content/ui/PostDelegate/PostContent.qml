@@ -30,9 +30,8 @@ QQC2.TextArea {
         FileHelper.forceRefreshTextDocument(root.textDocument, root);
     }
 
-    font: Config.defaultFont
+    text: TextHandler.fixBidirectionality(root.content, Config.defaultFont)
     Layout.fillWidth: true
-    text: root.content
     textFormat: TextEdit.RichText
     activeFocusOnTab: false
     readOnly: true

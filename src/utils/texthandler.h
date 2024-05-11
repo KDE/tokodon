@@ -6,14 +6,17 @@
 
 #include <QtQml>
 
-#include "account/identity.h"
 #include "utils/customemoji.h"
 
 /**
  * @brief Handles some miscellaneous text processing tasks.
  */
-class TextHandler
+class TextHandler : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
 public:
     /**
      * @brief Fixes bidirectionality in posts.
@@ -22,9 +25,10 @@ public:
      * details on why this is necessary.
      *
      * @param html The HTML text to process.
+     * @param font The font to use.
      * @return The processed HTML, do note that we use QTextDocument so the HTML may be littered with unnecessary styling and other garbage.
      */
-    static QString fixBidirectionality(const QString &html);
+    static Q_INVOKABLE QString fixBidirectionality(const QString &html, const QFont &font);
 
     /**
      * @brief Parses a HTML body and returns a processed body and a list of tags respectively.
