@@ -122,10 +122,18 @@ Kirigami.ScrollablePage {
 
         title: i18nc("@title", "Discard Draft")
         subtitle: i18nc("@label", "Are you sure you want to discard your draft?")
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+        standardButtons: Kirigami.Dialog.Discard
         showCloseButton: false
 
-        onAccepted: {
+        customFooterActions: [
+             Kirigami.Action {
+                 text: i18n("Keep")
+                 icon.name: "dialog-cancel-symbolic"
+                 onTriggered: discardDraftPrompt.close()
+             }
+        ]
+
+        onDiscarded: {
             root.discardDraft = true;
             if (root.closeApplicationWhenFinished) {
                 root.Window.window.close();
