@@ -169,8 +169,11 @@ Kirigami.ScrollablePage {
         if (localPath.length === 0) {
             return false;
         }
-        uploadFile(localPath);
-        return true;
+        if (backend.attachmentEditorModel.isLocalFile(localPath)) {
+            uploadFile(localPath);
+            return true;
+        }
+        return false;
     }
 
     KQuickControlsAddons.Clipboard { id: clipboard }

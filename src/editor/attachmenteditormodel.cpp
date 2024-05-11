@@ -138,4 +138,13 @@ void AttachmentEditorModel::copyFromOther(AttachmentEditorModel *other)
     m_account = other->m_account;
 }
 
+bool AttachmentEditorModel::isLocalFile(const QString &fileName)
+{
+    QString localFilename = fileName;
+    localFilename.remove(QStringLiteral("file://"));
+
+    QFileInfo info(localFilename);
+    return info.exists();
+}
+
 #include "moc_attachmenteditormodel.cpp"
