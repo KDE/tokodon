@@ -136,7 +136,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     }
 
     if (notification->post() != nullptr) {
-        knotification->setText(notification->post()->plainContent());
+        knotification->setText(notification->post()->content());
     }
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 

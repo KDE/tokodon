@@ -20,10 +20,11 @@ static const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>
 static const QRegularExpression extraneousParagraphExp(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
 static const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
 
-QString TextHandler::fixBidirectionality(const QString &html)
+QString TextHandler::fixBidirectionality(const QString &html, const QFont &font)
 {
     QTextDocument doc;
     doc.setHtml(html);
+    doc.setDefaultFont(font);
 
     // transform mentions into isolates
     // this causes mentions to effectively be treated as opaque and non-text for
@@ -131,3 +132,5 @@ QString TextHandler::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const
 
     return processed;
 }
+
+#include "moc_texthandler.cpp"

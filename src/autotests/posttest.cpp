@@ -29,7 +29,7 @@ private Q_SLOTS:
         Post post(&account, doc.object());
 
         QCOMPARE(post.spoilerText(), QStringLiteral("SPOILER"));
-        QCOMPARE(post.content(), TextHandler::fixBidirectionality(QStringLiteral("<p>LOREM</p>")));
+        QCOMPARE(post.content(), QStringLiteral("<p>LOREM</p>"));
         QVERIFY(post.card());
         QCOMPARE(post.sensitive(), false);
         QCOMPARE(post.visibility(), Post::Visibility::Public);
@@ -89,7 +89,7 @@ private Q_SLOTS:
                                                  QStringLiteral("landscape"),
                                                  QStringLiteral("photography")};
 
-        QCOMPARE(post.content(), TextHandler::fixBidirectionality(QStringLiteral("<p>Yosemite Valley reflections with rock</p>")));
+        QCOMPARE(post.content(), QStringLiteral("<p>Yosemite Valley reflections with rock</p>"));
         QCOMPARE(post.standaloneTags(), standaloneTags);
     }
 
