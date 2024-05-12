@@ -316,6 +316,7 @@ QQC2.ItemDelegate {
 
                     QQC2.Button {
                         text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                        icon.name: postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
                         onClicked: postContent.visible = !postContent.visible
                     }
                 }
