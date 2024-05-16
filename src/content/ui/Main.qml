@@ -326,7 +326,7 @@ Kirigami.ApplicationWindow {
                 easing.type: Easing.InOutQuad
             }
         }
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
 
         handleClosedIcon.source: modal ? null : "sidebar-expand-left"
