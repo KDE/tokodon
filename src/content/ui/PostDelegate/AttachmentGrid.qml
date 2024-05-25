@@ -296,7 +296,7 @@ QQC2.Control {
         display: QQC2.Button.IconOnly
         activeFocusOnTab: false
 
-        QQC2.ToolTip.text: text
+        QQC2.ToolTip.text: i18nc("@info:tooltip", "Hide media")
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
