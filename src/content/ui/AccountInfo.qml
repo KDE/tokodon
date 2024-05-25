@@ -277,9 +277,9 @@ TimelinePage {
                                             visible: model.identity.relationship && !model.isSelf
                                             text: {
                                                 if (model.identity.relationship && model.identity.relationship.endorsed) {
-                                                    return i18n("Stop Featuring on Profile");
+                                                    return i18n("Stop Featuring This Profile");
                                                 } else {
-                                                    return i18n("Feature on Profile");
+                                                    return i18n("Feature This Profile");
                                                 }
                                             }
                                             onTriggered: {
@@ -374,10 +374,10 @@ TimelinePage {
                                         },
                                         Kirigami.Action {
                                             icon.name: "edit-copy"
-                                            text: i18n("Copy Link to This Profile")
+                                            text: i18n("Copy Link")
                                             onTriggered: {
                                                 clipboard.content = model.identity.url;
-                                                applicationWindow().showPassiveNotification(i18n("Post link copied."));
+                                                applicationWindow().showPassiveNotification(i18n("Profile link copied."));
                                             }
                                         },
                                         ShareAction {
