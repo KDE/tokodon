@@ -529,7 +529,7 @@ Kirigami.ApplicationWindow {
 
     property Kirigami.Action conversationAction: Kirigami.Action {
         icon.name: "tokodon-chat-reply"
-        text: i18n("Conversation")
+        text: i18n("Conversations")
         checkable: true
         onTriggered: {
             pageStack.clear();
