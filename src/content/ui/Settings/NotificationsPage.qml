@@ -29,12 +29,12 @@ FormCard.FormCardPage {
             description: {
                 if (Controller.pushNotificationsAvailable) {
                     if (root.config.enablePushNotifications) {
-                        return i18n("Push notifications are enabled.");
+                        return i18n("Notifications can appear even when Tokodon isn't running.");
                     } else {
-                        return i18n("Push notifications are not available for this account. Please log out and log back in.");
+                        return i18n("Push notifications are available but could not be enabled. Please log out and log back in.");
                     }
                 } else {
-                    return "";
+                    return i18n("Notifications will only appear when Tokodon is running.");
                 }
             }
             checked: root.config.enableNotifications
