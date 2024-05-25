@@ -84,7 +84,7 @@ QQC2.Pane {
                     }
                     text: i18n("Switch Account")
                     display: QQC2.AbstractButton.IconOnly
-                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.text: i18n("Switch account")
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     Layout.minimumWidth: Layout.preferredWidth
