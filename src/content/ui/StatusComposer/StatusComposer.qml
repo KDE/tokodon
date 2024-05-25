@@ -52,13 +52,13 @@ Kirigami.ScrollablePage {
     title: {
         switch (root.purpose) {
             case StatusComposer.Edit:
-                return i18n("Edit this post")
+                return i18nc("@title:window", "Edit This Post")
             case StatusComposer.Reply:
-                return i18n("Reply to this post")
+                return i18nc("@title:window", "Reply to This Post")
             case StatusComposer.Redraft:
-                return i18n("Rewrite this post")
+                return i18nc("@title:window", "Rewrite This Post")
             case StatusComposer.New:
-                return i18n("Write a new post")
+                return i18nc("@title:window", "Write a New Post")
         }
     }
 
@@ -132,7 +132,7 @@ Kirigami.ScrollablePage {
 
         customFooterActions: [
              Kirigami.Action {
-                 text: i18n("Keep")
+                 text: i18nc("@action:button Keep this draft", "Keep")
                  icon.name: "dialog-cancel-symbolic"
                  onTriggered: discardDraftPrompt.close()
              }
@@ -214,7 +214,7 @@ Kirigami.ScrollablePage {
         QQC2.TextField {
             id: contentWarningField
 
-            placeholderText: i18n("Content warning")
+            placeholderText: i18nc("@info:placeholder", "Content warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
@@ -222,7 +222,7 @@ Kirigami.ScrollablePage {
 
         QQC2.TextArea {
             id: textArea
-            placeholderText: i18n("What's new?")
+            placeholderText: i18nc("@info:placeholder", "What's new?")
             text: root.backend.status
             wrapMode: TextEdit.Wrap
             Layout.fillWidth: true
@@ -337,7 +337,7 @@ Kirigami.ScrollablePage {
                             FileDialog {
                                 id: fileDialog
                                 currentFolder: StandardPaths.standardLocations(StandardPaths.HomeLocation)[0]
-                                title: i18n("Please choose a file")
+                                title: i18nc("@title:window", "Choose a File")
                                 onAccepted: root.uploadFile(fileDialog.selectedFile);
                                 selectedNameFilter.index: 0
                                 nameFilters: [i18n("All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)"),
@@ -354,7 +354,7 @@ Kirigami.ScrollablePage {
                                     i18n("QuickTime video (*.mov)"),
                                     i18n("All files (*)")]
                             }
-                            QQC2.ToolTip.text: i18n("Attach file")
+                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Attach file")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -365,7 +365,7 @@ Kirigami.ScrollablePage {
                             checkable: true
                             checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
-                            QQC2.ToolTip.text: i18n("Add poll")
+                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Add poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
 
@@ -395,47 +395,47 @@ Kirigami.ScrollablePage {
                                 id: visibilityMenu
                                 QQC2.MenuItem {
                                     icon.name: "group"
-                                    text: i18n("Local")
+                                    text: i18nc("@item:inmenu Local to this server", "Local")
                                     onTriggered: backend.visibility = Post.Local
                                     visible: AccountManager.selectedAccount.supportsLocalVisibility
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "kstars_xplanet"
-                                    text: i18n("Public")
+                                    text: i18nc("@item:inmenu Public to the world", "Public")
                                     onTriggered: backend.visibility = Post.Public
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "unlock"
-                                    text: i18n("Unlisted")
+                                    text: i18nc("@item:inmenu Public but less so", "Unlisted")
                                     onTriggered: backend.visibility = Post.Unlisted
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "lock"
-                                    text: i18n("Private")
+                                    text: i18nc("@item:inmenu Only to followers", "Private")
                                     onTriggered: backend.visibility = Post.Private
                                 }
                                 QQC2.MenuItem {
                                     icon.name: "mail-message"
-                                    text: i18n("Direct Message")
+                                    text: i18nc("@item:inmenu Only to who is explicitly mentioned", "Direct Message")
                                     onTriggered: backend.visibility = Post.Direct
                                 }
                             }
                             QQC2.ToolTip {
-                                text: i18n("Visibility")
+                                text: i18nc("@info:tooltip Post visibility", "Visibility")
                             }
                         }
                         QQC2.ToolButton {
                             id: contentWarning
-                            text: i18nc("Short for content warning", "cw")
+                            text: i18nc("@action:intoolbar Short for content warning", "cw")
                             checkable: true
                             QQC2.ToolTip {
-                                text: i18n("Content warning")
+                                text: i18nc("@info:tooltip", "Content warning")
                             }
                         }
                         QQC2.ToolButton {
                             id: languageButton
                             text: backend.language
-                            QQC2.ToolTip.text: i18n("Post language")
+                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Post language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                             checkable: true
@@ -464,7 +464,7 @@ Kirigami.ScrollablePage {
                                 onChosen: (emoji) => textArea.insert(textArea.cursorPosition, emoji)
                                 onClosed: if (emojiButton.checked) emojiButton.checked = false
                             }
-                            QQC2.ToolTip.text: i18n("Add emoji")
+                            QQC2.ToolTip.text: i18nc("@info:tooltip", "Add emoji")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
