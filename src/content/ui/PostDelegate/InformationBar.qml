@@ -101,7 +101,7 @@ ColumnLayout {
             icon.name: "tokodon-post-favorited"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
-            text: i18np("%1 Favorite", "%1 Favorites", root.favouritesCount)
+            text: i18np("%1 favorite", "%1 favorites", root.favouritesCount)
             closable: false
             checkable: false
             HoverHandler {
@@ -120,7 +120,7 @@ ColumnLayout {
             icon.name: "tokodon-post-boosted"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
-            text: i18np("%1 Boost", "%1 Boosts", root.reblogsCount)
+            text: i18np("%1 boost", "%1 boosts", root.reblogsCount)
             closable: false
             checkable: false
             HoverHandler {
