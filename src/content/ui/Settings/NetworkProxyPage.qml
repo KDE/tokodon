@@ -71,6 +71,9 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        // It makes no sense to configure proxy settings for "System Default" and "No Proxy"
+        enabled: currentType !== 0 && currentType !== 3
+
         FormCard.FormTextFieldDelegate {
             id: hostField
             label: i18n("Host")
@@ -136,6 +139,7 @@ FormCard.FormCardPage {
 
             QQC2.Button  {
                 text: i18n("Apply")
+                icon.name: "dialog-ok-apply-symbolic"
                 enabled: currentType !== Config.proxyType || proxyConfigChanged
                 onClicked: {
                     Config.proxyType = currentType
@@ -152,6 +156,7 @@ FormCard.FormCardPage {
     }
 
     Component.onCompleted: {
-        currentType = Config.proxyType
+        proxyConfigChanged = false; // Make doubly sure that stupid bindings haven't turned this on
+        currentType = Config.proxyType;
     }
 }
