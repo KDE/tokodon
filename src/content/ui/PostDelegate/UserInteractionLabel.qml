@@ -16,10 +16,10 @@ RowLayout {
     id: root
 
     readonly property var identity: {
-        if (replyAuthorIdentity) {
-            return replyAuthorIdentity;
-        } else if (boostAuthorIdentity) {
+        if (boostAuthorIdentity) {
             return boostAuthorIdentity;
+        } else if (replyAuthorIdentity) {
+            return replyAuthorIdentity;
         }
     }
 
