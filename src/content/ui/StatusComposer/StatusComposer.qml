@@ -214,7 +214,7 @@ Kirigami.ScrollablePage {
         QQC2.TextField {
             id: contentWarningField
 
-            placeholderText: i18n("Content Warning")
+            placeholderText: i18n("Content warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: root.backend.spoilerText = text
@@ -354,7 +354,7 @@ Kirigami.ScrollablePage {
                                     i18n("QuickTime video (*.mov)"),
                                     i18n("All files (*)")]
                             }
-                            QQC2.ToolTip.text: i18n("Attach File")
+                            QQC2.ToolTip.text: i18n("Attach file")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
@@ -365,7 +365,7 @@ Kirigami.ScrollablePage {
                             checkable: true
                             checked: backend.pollEnabled
                             enabled: backend.attachmentEditorModel.count === 0 && root.purpose !== StatusComposer.Edit
-                            QQC2.ToolTip.text: i18n("Add Poll")
+                            QQC2.ToolTip.text: i18n("Add poll")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
 
@@ -429,13 +429,13 @@ Kirigami.ScrollablePage {
                             text: i18nc("Short for content warning", "cw")
                             checkable: true
                             QQC2.ToolTip {
-                                text: i18n("Content Warning")
+                                text: i18n("Content warning")
                             }
                         }
                         QQC2.ToolButton {
                             id: languageButton
                             text: backend.language
-                            QQC2.ToolTip.text: i18n("Post Language")
+                            QQC2.ToolTip.text: i18n("Post language")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                             checkable: true
@@ -464,7 +464,7 @@ Kirigami.ScrollablePage {
                                 onChosen: (emoji) => textArea.insert(textArea.cursorPosition, emoji)
                                 onClosed: if (emojiButton.checked) emojiButton.checked = false
                             }
-                            QQC2.ToolTip.text: i18n("Add Emoji")
+                            QQC2.ToolTip.text: i18n("Add emoji")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                             QQC2.ToolTip.visible: hovered
                         }
