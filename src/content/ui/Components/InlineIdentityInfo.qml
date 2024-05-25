@@ -32,12 +32,15 @@ RowLayout {
 
         source: root.identity.avatarUrl
         cache: true
-        text: i18n("View Profile")
         onClicked: if (!admin) {
             Navigation.openAccount(root.identity.id);
             root.clicked();
         }
         name: root.identity.displayName
+
+        QQC2.ToolTip.text: i18n("View profile")
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
     }
 
     ColumnLayout {

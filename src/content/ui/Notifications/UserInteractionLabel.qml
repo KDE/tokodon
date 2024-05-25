@@ -62,7 +62,7 @@ RowLayout {
 
                 onClicked: Navigation.openAccount(root.notificationActorIdentity.id)
 
-                QQC2.ToolTip.text: i18n("View Profile")
+                QQC2.ToolTip.text: i18n("View profile")
                 QQC2.ToolTip.visible: hovered
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
