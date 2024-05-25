@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
@@ -105,6 +106,11 @@ Item {
             closable: false
             enabled: false
             visible: modelData.caption.length !== 0
+            hoverEnabled: true
+
+            QQC2.ToolTip.text: i18n("Text description available")
+            QQC2.ToolTip.visible: hovered
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
 
         Kirigami.Chip {
