@@ -98,7 +98,7 @@ InlineIdentityInfo {
         id: moreButton
 
         iconName: 'overflow-menu'
-        tooltip: i18nc("Show more options", "More")
+        tooltip: i18nc("Show more options", "More actions")
 
         Layout.alignment: Qt.AlignVCenter
         Layout.preferredWidth: implicitHeight
