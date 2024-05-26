@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:38+0000\n"
+"POT-Creation-Date: 2024-05-26 00:38+0000\n"
 "PO-Revision-Date: 2024-05-12 08:31+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -918,7 +918,7 @@ msgstr ""
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
-#: content/ui/Settings/NetworkProxyPage.qml:58
+#: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Ustawienia pośrednika"
@@ -997,7 +997,7 @@ msgid "Email Address"
 msgstr "Adres e-mail"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
-#: content/ui/Settings/NetworkProxyPage.qml:108
+#: content/ui/Settings/NetworkProxyPage.qml:123
 #, kde-format
 msgid "Password"
 msgstr "Hasło"
@@ -3216,31 +3216,37 @@ msgid "System Default"
 msgstr "Domyślne systemowe"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
+#, fuzzy, kde-format
+#| msgid "Network Proxy"
+msgid "No Proxy"
+msgstr "Pośrednik sieciowy"
+
+#: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: content/ui/Settings/NetworkProxyPage.qml:48
+#: content/ui/Settings/NetworkProxyPage.qml:60
 #, kde-format
 msgid "Socks5"
 msgstr "Socks5"
 
-#: content/ui/Settings/NetworkProxyPage.qml:64
+#: content/ui/Settings/NetworkProxyPage.qml:79
 #, kde-format
 msgid "Host"
 msgstr "Gospodarz"
 
-#: content/ui/Settings/NetworkProxyPage.qml:77
+#: content/ui/Settings/NetworkProxyPage.qml:92
 #, kde-format
 msgid "Port"
 msgstr "Port"
 
-#: content/ui/Settings/NetworkProxyPage.qml:98
+#: content/ui/Settings/NetworkProxyPage.qml:113
 #, kde-format
 msgid "User"
 msgstr "Użytkownik"
 
-#: content/ui/Settings/NetworkProxyPage.qml:126
+#: content/ui/Settings/NetworkProxyPage.qml:141
 #: content/ui/Settings/ProfileEditor.qml:302
 #, kde-format
 msgid "Apply"
@@ -3253,17 +3259,25 @@ msgstr "Włącz powiadomienia dla tego konta"
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
-msgid "Push notifications are enabled."
-msgstr "Powiadomienia Push są włączone."
+msgid "Notifications can appear even when Tokodon isn't running."
+msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Push notifications are not available for this account. Please log out and "
+#| "log back in."
 msgid ""
-"Push notifications are not available for this account. Please log out and "
-"log back in."
+"Push notifications are available but could not be enabled. Please log out "
+"and log back in."
 msgstr ""
 "Powiadomienia Push nie są dostępne dla tego konta. Zalecamy wylogowanie i "
 "ponowne zalogowanie się."
+
+#: content/ui/Settings/NotificationsPage.qml:37
+#, kde-format
+msgid "Notifications will only appear when Tokodon is running."
+msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -4222,6 +4236,9 @@ msgstr "Źródło"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Miejsce docelowe"
+
+#~ msgid "Push notifications are enabled."
+#~ msgstr "Powiadomienia Push są włączone."
 
 #~ msgid "Configure"
 #~ msgstr "Ustawienia"

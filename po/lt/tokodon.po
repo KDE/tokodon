@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:38+0000\n"
+"POT-Creation-Date: 2024-05-26 00:38+0000\n"
 "PO-Revision-Date: 2023-02-25 01:00+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -900,7 +900,7 @@ msgstr ""
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
-#: content/ui/Settings/NetworkProxyPage.qml:58
+#: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
 msgstr ""
@@ -977,7 +977,7 @@ msgid "Email Address"
 msgstr ""
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
-#: content/ui/Settings/NetworkProxyPage.qml:108
+#: content/ui/Settings/NetworkProxyPage.qml:123
 #, kde-format
 msgid "Password"
 msgstr ""
@@ -3186,30 +3186,35 @@ msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
-msgid "HTTP"
+msgid "No Proxy"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:60
+#, kde-format
 msgid "Socks5"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:64
+#: content/ui/Settings/NetworkProxyPage.qml:79
 #, kde-format
 msgid "Host"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:77
+#: content/ui/Settings/NetworkProxyPage.qml:92
 #, kde-format
 msgid "Port"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:98
+#: content/ui/Settings/NetworkProxyPage.qml:113
 #, kde-format
 msgid "User"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:126
+#: content/ui/Settings/NetworkProxyPage.qml:141
 #: content/ui/Settings/ProfileEditor.qml:302
 #, kde-format
 msgid "Apply"
@@ -3222,14 +3227,19 @@ msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
-msgid "Push notifications are enabled."
+msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
 msgid ""
-"Push notifications are not available for this account. Please log out and "
-"log back in."
+"Push notifications are available but could not be enabled. Please log out "
+"and log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:37
+#, kde-format
+msgid "Notifications will only appear when Tokodon is running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:49

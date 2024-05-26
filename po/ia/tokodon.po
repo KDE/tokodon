@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-13 00:38+0000\n"
+"POT-Creation-Date: 2024-05-26 00:38+0000\n"
 "PO-Revision-Date: 2024-04-17 15:06+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -890,7 +890,7 @@ msgstr ""
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
-#: content/ui/Settings/NetworkProxyPage.qml:58
+#: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Preferentias de proxy"
@@ -967,7 +967,7 @@ msgid "Email Address"
 msgstr "Adresse de E-Posta"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
-#: content/ui/Settings/NetworkProxyPage.qml:108
+#: content/ui/Settings/NetworkProxyPage.qml:123
 #, kde-format
 msgid "Password"
 msgstr "Contrasigno"
@@ -3171,31 +3171,37 @@ msgid "System Default"
 msgstr "Predefinite de systema"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
+#, fuzzy, kde-format
+#| msgid "Network Proxy"
+msgid "No Proxy"
+msgstr "Proxy de rete"
+
+#: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: content/ui/Settings/NetworkProxyPage.qml:48
+#: content/ui/Settings/NetworkProxyPage.qml:60
 #, kde-format
 msgid "Socks5"
 msgstr "Socks5"
 
-#: content/ui/Settings/NetworkProxyPage.qml:64
+#: content/ui/Settings/NetworkProxyPage.qml:79
 #, kde-format
 msgid "Host"
 msgstr "Hospite"
 
-#: content/ui/Settings/NetworkProxyPage.qml:77
+#: content/ui/Settings/NetworkProxyPage.qml:92
 #, kde-format
 msgid "Port"
 msgstr "Porto"
 
-#: content/ui/Settings/NetworkProxyPage.qml:98
+#: content/ui/Settings/NetworkProxyPage.qml:113
 #, kde-format
 msgid "User"
 msgstr "Usator"
 
-#: content/ui/Settings/NetworkProxyPage.qml:126
+#: content/ui/Settings/NetworkProxyPage.qml:141
 #: content/ui/Settings/ProfileEditor.qml:302
 #, kde-format
 msgid "Apply"
@@ -3208,14 +3214,19 @@ msgstr "Habilita notificatione per iste conto"
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
-msgid "Push notifications are enabled."
+msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
 msgid ""
-"Push notifications are not available for this account. Please log out and "
-"log back in."
+"Push notifications are available but could not be enabled. Please log out "
+"and log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:37
+#, kde-format
+msgid "Notifications will only appear when Tokodon is running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:49
