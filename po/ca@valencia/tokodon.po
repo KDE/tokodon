@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-26 00:38+0000\n"
-"PO-Revision-Date: 2024-05-12 09:46+0200\n"
+"PO-Revision-Date: 2024-05-26 11:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3221,10 +3221,9 @@ msgid "System Default"
 msgstr "Predeterminada del sistema"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "Servidor intermediari de la xarxa"
+msgstr "Sense servidor intermediari"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3266,23 +3265,21 @@ msgstr "Activa les notificacions per a este compte"
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
+"Les notificacions poden aparéixer encara que Tokodon no s'estiga executant."
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Push notifications are not available for this account. Please log out and "
-#| "log back in."
+#, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"Les notificacions «push» no estan disponibles per a este compte. Eixiu de la "
-"sessió i torneu-la a iniciar."
+"Les notificacions «push» estan disponibles però no es poden activar. Eixiu "
+"de la sessió i torneu-la a iniciar."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Les notificacions només apareixeran quan Tokodon s'estiga executant."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -4237,6 +4234,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgid "Push notifications are enabled."
-#~ msgstr "Les notificacions «push» estan activades."
