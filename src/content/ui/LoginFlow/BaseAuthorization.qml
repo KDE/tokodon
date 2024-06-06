@@ -74,7 +74,7 @@ Kirigami.ScrollablePage {
                     selectByMouse: true
                     text: i18n("To continue, please open the following link in your web browser to authorize Tokodon: %1", "<br /><br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
                     wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(root.authUrl)
+                    onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
                     Layout.fillWidth: true
                     HoverHandler {
                         cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
