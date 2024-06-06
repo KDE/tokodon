@@ -54,34 +54,19 @@ Kirigami.AbstractCard {
                 readOnly: true
                 background: null
                 wrapMode: TextEdit.Wrap
-                selectByMouse: !Kirigami.Settings.isMobile
-                onLinkActivated: {
-                    // Tag has a complete url in the form of https://domain.tld/tags/tag
-                    const [, , hostname, ...pathSegments] = link.split('/');
-                    const path = '/' + pathSegments.join('/');
-                    const tag = path.indexOf("/tags/") !== -1 ? path.substring(path.indexOf("/tags/") + 6)
-                        : link.startsWith('hashtag:/') ? link.substring(9)
-                            : '';
-                        tag.length > 0 ? pageStack.push(tagModelComponent, { hashtag: tag }): Qt.openUrlExternally(link);
-
-                }
+                selectByMouse: false
                 color: Kirigami.Theme.textColor
-                onHoveredLinkChanged: if (hoveredLink.length > 0) {
-                    applicationWindow().hoverLinkIndicator.text = hoveredLink;
-                } else {
-                    applicationWindow().hoverLinkIndicator.text = "";
-                }
+                hoverEnabled: false
 
-                MouseArea {
-                    anchors.fill: parent
-                    acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                    cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                // So this text area doesn't eat the mouse events
+                onReleased: root.clicked()
+
+                HoverHandler {
+                    cursorShape: Qt.PointingHandCursor
                 }
             }
         }
     }
 
-    onClicked: {
-        Navigation.openAccount(root.userIdentity.id)
-    }
+    onClicked: Navigation.openAccount(root.userIdentity.id)
 }
