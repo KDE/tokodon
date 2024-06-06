@@ -30,6 +30,7 @@ BaseAuthorization {
 
         FormCard.FormButtonDelegate {
             text: i18n("Continue")
+            enabled: tokenField.text !== ""
             onClicked: {
                 root.setAuthCode(tokenField.text);
             }
