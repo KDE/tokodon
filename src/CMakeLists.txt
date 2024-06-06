@@ -524,7 +524,7 @@ else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
 
-if (TARGET KF6::DBusAddons)
+if (TARGET KF6::DBusAddons AND NOT HAIKU)
     target_link_libraries(tokodon PRIVATE KF6::DBusAddons KF6::WindowSystem)
     target_compile_definitions(tokodon PRIVATE -DHAVE_KDBUSADDONS)
 endif ()
