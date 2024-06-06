@@ -23,15 +23,41 @@ FormCard.FormCardPage {
 
     title: i18n("Edit Account")
 
-    data: Component {
-        id: openFileDialog
-        FileDialog {
-            signal chosen(string path)
-            title: i18n("Please choose a file")
-            currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
-            onAccepted: chosen(selectedFile)
+    actions: [
+        Kirigami.Action {
+            text: i18n("Logout")
+            icon.name: "im-kick-user"
+
+            onTriggered: logoutPrompt.open()
         }
-    }
+    ]
+
+    data: [
+        Component {
+            id: openFileDialog
+            FileDialog {
+                signal chosen(string path)
+                title: i18n("Please choose a file")
+                currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
+                onAccepted: chosen(selectedFile)
+            }
+        },
+        Kirigami.PromptDialog {
+            id: logoutPrompt
+
+            title: i18nc("@title", "Logout")
+            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", delegate.displayName)
+            standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+            showCloseButton: false
+
+            onAccepted: {
+                AccountManager.removeAccount(delegate.account);
+                if (!AccountManager.hasAccounts) {
+                    root.Window.window.close();
+                }
+            }
+        }
+    ]
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
