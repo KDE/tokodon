@@ -39,13 +39,15 @@ Kirigami.ScrollablePage {
 
     function setAuthCode(authCode) {
         account.setToken(authCode);
-        pageStack.layers.clear();
-        pageStack.replace(mainTimeline, {
-            name: "home"
+        account.authenticated.connect(() => {
+            pageStack.layers.clear();
+            pageStack.replace(mainTimeline, {
+                name: "home"
+            });
+            if (root.Window.window !== applicationWindow()) {
+                root.Window.window.close();
+            }
         });
-        if (root.Window.window !== applicationWindow()) {
-            root.Window.window.close();
-        }
     }
 
     ColumnLayout {
