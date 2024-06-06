@@ -21,10 +21,6 @@ Kirigami.AbstractCard {
         cursorShape: Qt.PointingHandCursor
     }
 
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: 0
-
     showClickFeedback: true
 
     contentItem: Item {
