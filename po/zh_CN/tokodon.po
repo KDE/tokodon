@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 00:38+0000\n"
+"POT-Creation-Date: 2024-06-07 00:38+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -68,9 +68,6 @@ msgid "View Post"
 msgstr "查看嘟文"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
 msgstr "查看个人资料"
@@ -367,12 +364,12 @@ msgstr "显示来自 %1 的转嘟"
 
 #: content/ui/AccountInfo.qml:280
 #, kde-format
-msgid "Stop Featuring on Profile"
+msgid "Stop Featuring This Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:282
 #, kde-format
-msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:298
@@ -444,13 +441,16 @@ msgid "Featured Users"
 msgstr "推荐的用户"
 
 #: content/ui/AccountInfo.qml:377
-#, kde-format
-msgid "Copy Link to This Profile"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Copy Link"
+msgid "Copy Link"
+msgstr "复制链接"
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:54
-#, kde-format
-msgid "Post link copied."
+#: content/ui/AccountInfo.qml:380
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Profile link copied."
 msgstr "嘟文链接已复制。"
 
 #: content/ui/AccountInfo.qml:470
@@ -553,7 +553,15 @@ msgstr "没有公告"
 msgid "No emojis"
 msgstr "无表情"
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "View profile"
+msgstr "查看个人资料"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -796,24 +804,24 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr ""
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr "若要继续，请在 Web 浏览器中打开以下链接并授权 Tokodon：%1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "打开授权链接"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "复制授权链接"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
 msgstr "链接已复制。"
@@ -1078,7 +1086,7 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知操作"
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:222
 #, kde-format
 msgid "Write a new post"
 msgstr "撰写新嘟文"
@@ -1117,7 +1125,7 @@ msgstr "主页"
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:501
 #, kde-format
 msgid "Local"
 msgstr "本地"
@@ -1126,11 +1134,6 @@ msgstr "本地"
 #, kde-format
 msgid "Global"
 msgstr "全局"
-
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
-msgstr ""
 
 #: content/ui/Main.qml:546
 #, kde-format
@@ -2644,6 +2647,14 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "隐藏媒体"
 
+#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Hide Media"
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr "隐藏媒体"
+
 #: content/ui/PostDelegate/AttachmentGrid.qml:310
 #, kde-format
 msgid "Media Hidden"
@@ -2685,42 +2696,44 @@ msgstr ""
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr "公开"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr "私有"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:104
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] ""
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 次喜欢"
 
 #: content/ui/PostDelegate/InformationBar.qml:123
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 boost"
+#| msgid_plural "%1 boosts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
 msgstr[0] "%1 次转嘟"
 
 #: content/ui/PostDelegate/LinkPreview.qml:18
@@ -2728,18 +2741,23 @@ msgstr[0] "%1 次转嘟"
 msgid "Link preview: %1"
 msgstr "链接预览：%1"
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:105
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:111
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgid "Video"
 msgstr "视频"
@@ -2863,10 +2881,11 @@ msgid ""
 msgstr "此嘟文已被标记为私密。有些嘟文由于回复默认私密，可能无法显示。"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Moderation"
 msgctxt "Show more options"
-msgid "More"
-msgstr ""
+msgid "More actions"
+msgstr "管理"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -2884,6 +2903,11 @@ msgstr ""
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "复制链接"
+
+#: content/ui/PostDelegate/PostMenu.qml:54
+#, kde-format
+msgid "Post link copied."
+msgstr "嘟文链接已复制。"
 
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
@@ -3277,7 +3301,6 @@ msgid "Edit Account"
 msgstr "编辑账户"
 
 #: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
 #, kde-format
 msgid "Please choose a file"
 msgstr "请选择文件"
@@ -3566,19 +3589,32 @@ msgid "Remove"
 msgstr "移除"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, kde-format
-msgid "Edit this post"
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr "编辑此嘟文"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, kde-format
-msgid "Reply to this post"
+#, fuzzy, kde-format
+#| msgid "Reply to this post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
 msgstr "回复此嘟文"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, kde-format
-msgid "Rewrite this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
+msgstr "编辑此嘟文"
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, fuzzy, kde-format
+#| msgid "Write a new post"
+msgctxt "@title:window"
+msgid "Write a New Post"
+msgstr "撰写新嘟文"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
@@ -3600,19 +3636,30 @@ msgstr "确定要丢弃草稿吗？"
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
+msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#: content/ui/StatusComposer/StatusComposer.qml:432
-#, kde-format
-msgid "Content Warning"
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr "内容警告"
 
 #: content/ui/StatusComposer/StatusComposer.qml:225
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "有哪些新特性？"
+
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "请选择文件"
 
 #: content/ui/StatusComposer/StatusComposer.qml:343
 #, kde-format
@@ -3684,34 +3731,85 @@ msgid "All files (*)"
 msgstr "所有文件 (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:357
-#, kde-format
-msgid "Attach File"
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr "附加文件"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, kde-format
-msgid "Add Poll"
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
 msgstr "添加投票"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:398
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "本地"
+
+#: content/ui/StatusComposer/StatusComposer.qml:404
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "公开"
+
+#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "私有"
+
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, kde-format
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:424
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "可见性"
 
 #: content/ui/StatusComposer/StatusComposer.qml:429
 #, kde-format
-msgctxt "Short for content warning"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr ""
 
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content warning"
+msgstr "内容警告"
+
 #: content/ui/StatusComposer/StatusComposer.qml:438
-#, kde-format
-msgid "Post Language"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Select Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
+msgstr "选择语言"
 
 #: content/ui/StatusComposer/StatusComposer.qml:467
-#, kde-format
-msgid "Add Emoji"
+#, fuzzy, kde-format
+#| msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr "添加表情"
 
 #: content/ui/StatusComposer/StatusComposer.qml:483
@@ -3813,6 +3911,12 @@ msgstr "返回顶部"
 #: content/ui/UserInfo.qml:85
 #, kde-format
 msgid "Switch Account"
+msgstr "切换账户"
+
+#: content/ui/UserInfo.qml:87
+#, fuzzy, kde-format
+#| msgid "Switch Account"
+msgid "Switch account"
 msgstr "切换账户"
 
 #: content/ui/UserInfo.qml:132
@@ -4169,3 +4273,7 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
+
+#~ msgid "%1 Boost"
+#~ msgid_plural "%1 Boosts"
+#~ msgstr[0] "%1 次转嘟"

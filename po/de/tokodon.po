@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 00:38+0000\n"
+"POT-Creation-Date: 2024-06-07 00:38+0000\n"
 "PO-Revision-Date: 2023-08-14 21:26+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -70,9 +70,6 @@ msgid "View Post"
 msgstr "Profil anzeigen"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, fuzzy, kde-format
 #| msgid "View profile"
 msgid "View Profile"
@@ -400,13 +397,15 @@ msgid "Show Boosts from %1"
 msgstr "Geteilte Beiträge von %1 einblenden"
 
 #: content/ui/AccountInfo.qml:280
-#, kde-format
-msgid "Stop Featuring on Profile"
+#, fuzzy, kde-format
+#| msgid "Stop Featuring on Profile"
+msgid "Stop Featuring This Profile"
 msgstr "Profil nicht mehr empfehlen"
 
 #: content/ui/AccountInfo.qml:282
-#, kde-format
-msgid "Feature on Profile"
+#, fuzzy, kde-format
+#| msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr "Profil empfehlen"
 
 #: content/ui/AccountInfo.qml:298
@@ -481,13 +480,15 @@ msgid "Featured Users"
 msgstr "Zugänge"
 
 #: content/ui/AccountInfo.qml:377
-#, kde-format
-msgid "Copy Link to This Profile"
-msgstr "Verknüpfung zum Profil kopieren"
+#, fuzzy, kde-format
+#| msgid "Copy Link"
+msgid "Copy Link"
+msgstr "Verknüpfung kopieren"
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:54
-#, kde-format
-msgid "Post link copied."
+#: content/ui/AccountInfo.qml:380
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Profile link copied."
 msgstr "Beitrag-Verknüpfung kopiert."
 
 #: content/ui/AccountInfo.qml:470
@@ -598,7 +599,14 @@ msgstr ""
 msgid "No emojis"
 msgstr "Keine Emoji"
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View profile"
+msgstr "Profil anzeigen"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
 #, kde-format
 msgid "Conversations"
 msgstr "Unterhaltungen"
@@ -859,7 +867,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorisierung"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, fuzzy, kde-format
 #| msgid ""
 #| "To continue, please open the following link and authorize Tokodon: %1"
@@ -870,19 +878,19 @@ msgstr ""
 "Um fortzufahren, öffnen Sie bitte den folgenden Link und autorisieren Sie "
 "Tokodon: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, fuzzy, kde-format
 #| msgid "Authorization"
 msgid "Open Authorization Link"
 msgstr "Autorisierung"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, fuzzy, kde-format
 #| msgid "Authorization"
 msgid "Copy Authorization Link"
 msgstr "Autorisierung"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
 msgstr "Verknüpfung kopiert."
@@ -1173,7 +1181,7 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:222
 #, kde-format
 msgid "Write a new post"
 msgstr "Einen neuen Beitrag schreiben"
@@ -1214,7 +1222,7 @@ msgstr "Startseite"
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:501
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
@@ -1223,11 +1231,6 @@ msgstr "Lokal"
 #, kde-format
 msgid "Global"
 msgstr "Global"
-
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
-msgstr "Unterhaltung"
 
 #: content/ui/Main.qml:546
 #, kde-format
@@ -2815,6 +2818,14 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Medien"
 
+#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr "Medien"
+
 #: content/ui/PostDelegate/AttachmentGrid.qml:310
 #, kde-format
 msgid "Media Hidden"
@@ -2861,45 +2872,44 @@ msgstr "über %1"
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr "Öffentlich"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr "Nicht aufgeführt"
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr "Direktnachricht"
 
 #: content/ui/PostDelegate/InformationBar.qml:104
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] ""
-msgstr[1] ""
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 Favorit"
+msgstr[1] "%1 Favoriten"
 
 #: content/ui/PostDelegate/InformationBar.qml:123
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
 msgstr[0] "Teilen"
 msgstr[1] "Teilen"
 
@@ -2908,7 +2918,7 @@ msgstr[1] "Teilen"
 msgid "Link preview: %1"
 msgstr "Verknüpfungs-Vorschau: %1"
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:105
 #, fuzzy, kde-format
 #| msgctxt "@info:Filter out accounts from any location"
 #| msgid "All"
@@ -2916,12 +2926,17 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "Alle"
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:111
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgid "Video"
 msgstr "Video"
@@ -3059,10 +3074,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Moderation"
 msgctxt "Show more options"
-msgid "More"
-msgstr "Mehr"
+msgid "More actions"
+msgstr "Moderator"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, fuzzy, kde-format
@@ -3082,6 +3098,11 @@ msgstr "Original öffnen"
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Verknüpfung kopieren"
+
+#: content/ui/PostDelegate/PostMenu.qml:54
+#, kde-format
+msgid "Post link copied."
+msgstr "Beitrag-Verknüpfung kopiert."
 
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
@@ -3517,7 +3538,6 @@ msgid "Edit Account"
 msgstr "Zugang hinzufügen"
 
 #: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
 #, kde-format
 msgid "Please choose a file"
 msgstr "Bitte wählen Sie eine Datei"
@@ -3816,19 +3836,32 @@ msgid "Remove"
 msgstr "Entfernen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, kde-format
-msgid "Edit this post"
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr "Diesen Beitrag bearbeiten"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, kde-format
-msgid "Reply to this post"
+#, fuzzy, kde-format
+#| msgid "Reply to this post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
 msgstr "Auf diesen Beitrag antworten"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, kde-format
-msgid "Rewrite this post"
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
 msgstr "Diesen Beitrag umschreiben"
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, fuzzy, kde-format
+#| msgid "Write a new post"
+msgctxt "@title:window"
+msgid "Write a New Post"
+msgstr "Einen neuen Beitrag schreiben"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
@@ -3850,19 +3883,30 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
+msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#: content/ui/StatusComposer/StatusComposer.qml:432
-#, kde-format
-msgid "Content Warning"
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr "Inhaltswarnung"
 
 #: content/ui/StatusComposer/StatusComposer.qml:225
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Was ist neu?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "Bitte wählen Sie eine Datei"
 
 #: content/ui/StatusComposer/StatusComposer.qml:343
 #, kde-format
@@ -3932,34 +3976,88 @@ msgid "All files (*)"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:357
-#, kde-format
-msgid "Attach File"
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr "Datei anhängen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, kde-format
-msgid "Add Poll"
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
 msgstr "Umfrage hinzufügen"
 
+#: content/ui/StatusComposer/StatusComposer.qml:398
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "Lokal"
+
+#: content/ui/StatusComposer/StatusComposer.qml:404
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "Öffentlich"
+
+#: content/ui/StatusComposer/StatusComposer.qml:409
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "Nicht aufgeführt"
+
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "Privat"
+
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "Direktnachricht"
+
 #: content/ui/StatusComposer/StatusComposer.qml:424
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Sichtbarkeit"
 
 #: content/ui/StatusComposer/StatusComposer.qml:429
-#, kde-format
-msgctxt "Short for content warning"
+#, fuzzy, kde-format
+#| msgctxt "Short for content warning"
+#| msgid "cw"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "IW"
 
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content warning"
+msgstr "Inhaltswarnung"
+
 #: content/ui/StatusComposer/StatusComposer.qml:438
-#, kde-format
-msgid "Post Language"
+#, fuzzy, kde-format
+#| msgid "Post Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
 msgstr "Sprache des Beitrags"
 
 #: content/ui/StatusComposer/StatusComposer.qml:467
-#, kde-format
-msgid "Add Emoji"
+#, fuzzy, kde-format
+#| msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr "Emoji hinzufügen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:483
@@ -4075,6 +4173,12 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Switch Account"
+msgstr "Zugang hinzufügen"
+
+#: content/ui/UserInfo.qml:87
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Switch account"
 msgstr "Zugang hinzufügen"
 
 #: content/ui/UserInfo.qml:132
@@ -4439,6 +4543,24 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Ziel"
 
+#~ msgid "Copy Link to This Profile"
+#~ msgstr "Verknüpfung zum Profil kopieren"
+
+#~ msgid "Conversation"
+#~ msgstr "Unterhaltung"
+
+#, fuzzy
+#~| msgctxt "Share a post"
+#~| msgid "Boost"
+#~ msgid "%1 Boost"
+#~ msgid_plural "%1 Boosts"
+#~ msgstr[0] "Teilen"
+#~ msgstr[1] "Teilen"
+
+#~ msgctxt "Show more options"
+#~ msgid "More"
+#~ msgstr "Mehr"
+
 #~ msgid "Configure"
 #~ msgstr "Einrichten"
 
@@ -4502,9 +4624,6 @@ msgstr "Ziel"
 
 #~ msgid "Blocked Accounts"
 #~ msgstr "Blockierte Konten"
-
-#~ msgid "View profile"
-#~ msgstr "Profil anzeigen"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "Verknüpfung zum Beitrag kopieren"

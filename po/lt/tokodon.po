@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 00:38+0000\n"
+"POT-Creation-Date: 2024-06-07 00:38+0000\n"
 "PO-Revision-Date: 2023-02-25 01:00+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -69,9 +69,6 @@ msgid "View Post"
 msgstr ""
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
 msgstr ""
@@ -374,12 +371,12 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:280
 #, kde-format
-msgid "Stop Featuring on Profile"
+msgid "Stop Featuring This Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:282
 #, kde-format
-msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:298
@@ -452,12 +449,12 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:377
 #, kde-format
-msgid "Copy Link to This Profile"
+msgid "Copy Link"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:54
+#: content/ui/AccountInfo.qml:380
 #, kde-format
-msgid "Post link copied."
+msgid "Profile link copied."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:470
@@ -569,7 +566,14 @@ msgstr ""
 msgid "No emojis"
 msgstr ""
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View profile"
+msgstr ""
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -812,24 +816,24 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr ""
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Open Authorization Link"
 msgstr ""
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr ""
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
 msgstr ""
@@ -1091,7 +1095,7 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:222
 #, kde-format
 msgid "Write a new post"
 msgstr ""
@@ -1130,7 +1134,7 @@ msgstr ""
 msgid "Notifications"
 msgstr ""
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:501
 #, kde-format
 msgid "Local"
 msgstr ""
@@ -1138,11 +1142,6 @@ msgstr ""
 #: content/ui/Main.qml:516
 #, kde-format
 msgid "Global"
-msgstr ""
-
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
 msgstr ""
 
 #: content/ui/Main.qml:546
@@ -2655,6 +2654,12 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr ""
 
+#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr ""
+
 #: content/ui/PostDelegate/AttachmentGrid.qml:310
 #, kde-format
 msgid "Media Hidden"
@@ -2696,36 +2701,32 @@ msgstr ""
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:104
 #, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
@@ -2733,8 +2734,8 @@ msgstr[3] ""
 
 #: content/ui/PostDelegate/InformationBar.qml:123
 #, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
@@ -2745,18 +2746,23 @@ msgstr[3] ""
 msgid "Link preview: %1"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:105
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:111
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
 msgid "GIF"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -2882,7 +2888,7 @@ msgstr ""
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
 msgctxt "Show more options"
-msgid "More"
+msgid "More actions"
 msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:36
@@ -2900,6 +2906,11 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
+msgstr ""
+
+#: content/ui/PostDelegate/PostMenu.qml:54
+#, kde-format
+msgid "Post link copied."
 msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:62
@@ -3294,7 +3305,6 @@ msgid "Edit Account"
 msgstr ""
 
 #: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
 #, kde-format
 msgid "Please choose a file"
 msgstr ""
@@ -3584,17 +3594,26 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
 #, kde-format
-msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
 #, kde-format
-msgid "Reply to this post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
 #, kde-format
-msgid "Rewrite this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, kde-format
+msgctxt "@title:window"
+msgid "Write a New Post"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
@@ -3617,18 +3636,26 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
+msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#: content/ui/StatusComposer/StatusComposer.qml:432
 #, kde-format
-msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:225
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "What's new?"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, kde-format
+msgctxt "@title:window"
+msgid "Choose a File"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:343
@@ -3700,33 +3727,74 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:357
 #, kde-format
-msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
 #, kde-format
-msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:398
+#, kde-format
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:404
+#, kde-format
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:409
+#, kde-format
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, kde-format
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, kde-format
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:424
 #, kde-format
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:429
 #, kde-format
-msgctxt "Short for content warning"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Content warning"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:438
 #, kde-format
-msgid "Post Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:467
 #, kde-format
-msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:483
@@ -3828,6 +3896,11 @@ msgstr ""
 #: content/ui/UserInfo.qml:85
 #, kde-format
 msgid "Switch Account"
+msgstr ""
+
+#: content/ui/UserInfo.qml:87
+#, kde-format
+msgid "Switch account"
 msgstr ""
 
 #: content/ui/UserInfo.qml:132

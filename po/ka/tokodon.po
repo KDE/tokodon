@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 00:38+0000\n"
+"POT-Creation-Date: 2024-06-07 00:38+0000\n"
 "PO-Revision-Date: 2024-05-27 04:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -69,9 +69,6 @@ msgid "View Post"
 msgstr "პოსტის ნახვა"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
 msgstr "პროფილის ნახვა"
@@ -371,13 +368,15 @@ msgid "Show Boosts from %1"
 msgstr "%1-დან აწევების ჩვენება"
 
 #: content/ui/AccountInfo.qml:280
-#, kde-format
-msgid "Stop Featuring on Profile"
+#, fuzzy, kde-format
+#| msgid "Stop Featuring on Profile"
+msgid "Stop Featuring This Profile"
 msgstr "პროფილზე ჩვენების შეწყვეტა"
 
 #: content/ui/AccountInfo.qml:282
-#, kde-format
-msgid "Feature on Profile"
+#, fuzzy, kde-format
+#| msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr "პროფილზე ჩვენება"
 
 #: content/ui/AccountInfo.qml:298
@@ -449,13 +448,16 @@ msgid "Featured Users"
 msgstr "მიმაგრებული მომხმარებლები"
 
 #: content/ui/AccountInfo.qml:377
-#, kde-format
-msgid "Copy Link to This Profile"
-msgstr "ამ პროფილის ბმულის კოპირება"
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Copy Link"
+msgid "Copy Link"
+msgstr "ბმულის კოპირება"
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:54
-#, kde-format
-msgid "Post link copied."
+#: content/ui/AccountInfo.qml:380
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Profile link copied."
 msgstr "პოსტის ბმული დაკოპირდა."
 
 #: content/ui/AccountInfo.qml:470
@@ -561,7 +563,14 @@ msgstr "განცხადებების გარეშე"
 msgid "No emojis"
 msgstr "ემოჯიების გარეშე"
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View profile"
+msgstr "პროფილის ნახვა"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
 #, kde-format
 msgid "Conversations"
 msgstr "საუბრები"
@@ -815,7 +824,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "ავტორიზაცია"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -824,17 +833,17 @@ msgstr ""
 "გასაგრძელებლად გახსენით ეს ბმული თქვენს ბრაუზერში და მიანიჭეთ ავტორიზაცია "
 "Tokodon-ს: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "ავტორიზაციის ბმულის გახსნა"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "ავტორიზაციის ბმულის კოპირება"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
 msgstr "ბმული დაკოპირდა."
@@ -1103,7 +1112,7 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "უცნობი ქმედება"
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:222
 #, kde-format
 msgid "Write a new post"
 msgstr "დაწერეთ ახალი პოსტი"
@@ -1142,7 +1151,7 @@ msgstr "საწყისი"
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:501
 #, kde-format
 msgid "Local"
 msgstr "ლოკალური"
@@ -1151,11 +1160,6 @@ msgstr "ლოკალური"
 #, kde-format
 msgid "Global"
 msgstr "გლობალური"
-
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
-msgstr "საუბარი"
 
 #: content/ui/Main.qml:546
 #, kde-format
@@ -2679,6 +2683,14 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "მედიის დამალვა"
 
+#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Hide Media"
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr "მედიის დამალვა"
+
 #: content/ui/PostDelegate/AttachmentGrid.qml:310
 #, kde-format
 msgid "Media Hidden"
@@ -2720,43 +2732,45 @@ msgstr ", %1-ის გავლით"
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr "საჯარო"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr "სიაში არაა"
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr "პირადი"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr "პირადი შეტყობინება"
 
 #: content/ui/PostDelegate/InformationBar.qml:104
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 სანიშნე"
 msgstr[1] "%1 სანიშნე"
 
 #: content/ui/PostDelegate/InformationBar.qml:123
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 boost"
+#| msgid_plural "%1 boosts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
 msgstr[0] "%1 აწევა"
 msgstr[1] "%1 აწევა"
 
@@ -2765,18 +2779,23 @@ msgstr[1] "%1 აწევა"
 msgid "Link preview: %1"
 msgstr "ბმულის მინიატურა: %1"
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:105
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "Alt"
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:111
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgid "Video"
 msgstr "ვიდეო"
@@ -2904,10 +2923,11 @@ msgstr ""
 "რადგან მისი პასუხები, პირადად, ნაგულისხმევადაა მონიშნული."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Moderation"
 msgctxt "Show more options"
-msgid "More"
-msgstr "მეტი"
+msgid "More actions"
+msgstr "მოდერატორი"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -2925,6 +2945,11 @@ msgstr "საწყისი გვერდის გახსნა"
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "ბმულის კოპირება"
+
+#: content/ui/PostDelegate/PostMenu.qml:54
+#, kde-format
+msgid "Post link copied."
+msgstr "პოსტის ბმული დაკოპირდა."
 
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
@@ -3321,7 +3346,6 @@ msgid "Edit Account"
 msgstr "ანგარიშის ჩასწორება"
 
 #: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
 #, kde-format
 msgid "Please choose a file"
 msgstr "გთხოვთ, აირჩიოთ ფაილი"
@@ -3612,19 +3636,32 @@ msgid "Remove"
 msgstr "ამოღება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, kde-format
-msgid "Edit this post"
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr "პოსტის ჩასწორება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, kde-format
-msgid "Reply to this post"
+#, fuzzy, kde-format
+#| msgid "Reply to this post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
 msgstr "უპასუხეთ ამ პოსტს"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, kde-format
-msgid "Rewrite this post"
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
 msgstr "გადაწერეთ ეს პოსტი"
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, fuzzy, kde-format
+#| msgid "Write a new post"
+msgctxt "@title:window"
+msgid "Write a New Post"
+msgstr "დაწერეთ ახალი პოსტი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
@@ -3645,20 +3682,32 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ, მოაცილოთ თქვენი მონახაზი?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep"
+msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "შენარჩუნება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#: content/ui/StatusComposer/StatusComposer.qml:432
-#, kde-format
-msgid "Content Warning"
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr "შემცველობის გაფრთხილება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:225
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "რა არის ახალი?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "გთხოვთ, აირჩიოთ ფაილი"
 
 #: content/ui/StatusComposer/StatusComposer.qml:343
 #, kde-format
@@ -3730,34 +3779,88 @@ msgid "All files (*)"
 msgstr "ყველა ფაილი (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:357
-#, kde-format
-msgid "Attach File"
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr "ფაილის მიმაგრება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, kde-format
-msgid "Add Poll"
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
 msgstr "დაამატე გამოკითხვა"
 
+#: content/ui/StatusComposer/StatusComposer.qml:398
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "ლოკალური"
+
+#: content/ui/StatusComposer/StatusComposer.qml:404
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "საჯარო"
+
+#: content/ui/StatusComposer/StatusComposer.qml:409
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "სიაში არაა"
+
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "პირადი"
+
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "პირადი შეტყობინება"
+
 #: content/ui/StatusComposer/StatusComposer.qml:424
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "ხილვადობა"
 
 #: content/ui/StatusComposer/StatusComposer.qml:429
-#, kde-format
-msgctxt "Short for content warning"
+#, fuzzy, kde-format
+#| msgctxt "Short for content warning"
+#| msgid "cw"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "გაფრთხ"
 
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content warning"
+msgstr "შემცველობის გაფრთხილება"
+
 #: content/ui/StatusComposer/StatusComposer.qml:438
-#, kde-format
-msgid "Post Language"
+#, fuzzy, kde-format
+#| msgid "Post Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
 msgstr "პოსტის ენა"
 
 #: content/ui/StatusComposer/StatusComposer.qml:467
-#, kde-format
-msgid "Add Emoji"
+#, fuzzy, kde-format
+#| msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr "ემოჯის დამატება"
 
 #: content/ui/StatusComposer/StatusComposer.qml:483
@@ -3859,6 +3962,12 @@ msgstr "ზემოთ დაბრუნება"
 #: content/ui/UserInfo.qml:85
 #, kde-format
 msgid "Switch Account"
+msgstr "ანგარიშის გადართვა"
+
+#: content/ui/UserInfo.qml:87
+#, fuzzy, kde-format
+#| msgid "Switch Account"
+msgid "Switch account"
 msgstr "ანგარიშის გადართვა"
 
 #: content/ui/UserInfo.qml:132
@@ -4220,6 +4329,26 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
 
+#~ msgid "Copy Link to This Profile"
+#~ msgstr "ამ პროფილის ბმულის კოპირება"
+
+#~ msgid "Conversation"
+#~ msgstr "საუბარი"
+
+#~ msgid "%1 Favorite"
+#~ msgid_plural "%1 Favorites"
+#~ msgstr[0] "%1 სანიშნე"
+#~ msgstr[1] "%1 სანიშნე"
+
+#~ msgid "%1 Boost"
+#~ msgid_plural "%1 Boosts"
+#~ msgstr[0] "%1 აწევა"
+#~ msgstr[1] "%1 აწევა"
+
+#~ msgctxt "Show more options"
+#~ msgid "More"
+#~ msgstr "მეტი"
+
 #~ msgid "Push notifications are enabled."
 #~ msgstr "პუშ გაფრთხილებების ჩართულია."
 
@@ -4291,9 +4420,6 @@ msgstr "დანიშნულება"
 
 #~ msgid "Blocked Accounts"
 #~ msgstr "დაბლოკილი ანგარიშები"
-
-#~ msgid "View profile"
-#~ msgstr "პროფილის ნახვა"
 
 #~ msgid "Copy Link to This Post"
 #~ msgstr "ამ პოსტის ბმულის კოპირება"

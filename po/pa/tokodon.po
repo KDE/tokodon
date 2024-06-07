@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-26 00:38+0000\n"
+"POT-Creation-Date: 2024-06-07 00:38+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -68,9 +68,6 @@ msgid "View Post"
 msgstr "ਪੋਸਟ ਵੇਖੋ"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
@@ -382,13 +379,15 @@ msgid "Show Boosts from %1"
 msgstr ""
 
 #: content/ui/AccountInfo.qml:280
-#, kde-format
-msgid "Stop Featuring on Profile"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Copy Link to This Post"
+msgid "Stop Featuring This Profile"
+msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
 #: content/ui/AccountInfo.qml:282
-#, kde-format
-msgid "Feature on Profile"
+#, fuzzy, kde-format
+#| msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਉੱਤੇ ਫ਼ੀਚਰ"
 
 #: content/ui/AccountInfo.qml:298
@@ -464,14 +463,15 @@ msgstr "ਖਾਤੇ"
 
 #: content/ui/AccountInfo.qml:377
 #, fuzzy, kde-format
-#| msgid "Copy Link to This Post"
-msgid "Copy Link to This Profile"
-msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
+#| msgid "Copy Link"
+msgid "Copy Link"
+msgstr "ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:54
-#, kde-format
-msgid "Post link copied."
-msgstr ""
+#: content/ui/AccountInfo.qml:380
+#, fuzzy, kde-format
+#| msgid "Link copied."
+msgid "Profile link copied."
+msgstr "ਲਿੰਕ ਕਾਪੀ ਕੀਤਾ।"
 
 #: content/ui/AccountInfo.qml:470
 #, fuzzy, kde-format
@@ -585,7 +585,14 @@ msgstr ""
 msgid "No emojis"
 msgstr ""
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, kde-format
+msgid "View profile"
+msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
 #, kde-format
 msgid "Conversations"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
@@ -848,7 +855,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "ਪਰਮਾਣੀਕਰਨ"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:75
+#: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, fuzzy, kde-format
 #| msgid ""
 #| "To continue, please open the following link and authorize Tokodon: %1"
@@ -857,19 +864,19 @@ msgid ""
 "Tokodon: %1"
 msgstr "ਜਾਰੀ ਰੱਖਣ ਲਈ ਅੱਗੇ ਦਿੱਤੇ ਲਿੰਕ ਨੂੰ ਖੋਲ੍ਹੋ ਅਤੇ ਟੂਕੂਡੂਨ ਨੂੰ ਪਰਮਾਣਿਤ ਕਰੋ: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:89
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, fuzzy, kde-format
 #| msgid "Authorization"
 msgid "Open Authorization Link"
 msgstr "ਪਰਮਾਣੀਕਰਨ"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:98
+#: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, fuzzy, kde-format
 #| msgid "Authorization"
 msgid "Copy Authorization Link"
 msgstr "ਪਰਮਾਣੀਕਰਨ"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:102
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
 msgstr "ਲਿੰਕ ਕਾਪੀ ਕੀਤਾ।"
@@ -1152,7 +1159,7 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:222
 #, kde-format
 msgid "Write a new post"
 msgstr ""
@@ -1194,7 +1201,7 @@ msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 msgid "Notifications"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:501
 #, kde-format
 msgid "Local"
 msgstr "ਲੋਕਲ"
@@ -1203,11 +1210,6 @@ msgstr "ਲੋਕਲ"
 #, kde-format
 msgid "Global"
 msgstr "ਗਲੋਬਲ"
-
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
-msgstr "ਗੱਲਬਾਤ"
 
 #: content/ui/Main.qml:546
 #, kde-format
@@ -2816,6 +2818,14 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "ਮੀਡੀਆ"
 
+#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr "ਮੀਡੀਆ"
+
 #: content/ui/PostDelegate/AttachmentGrid.qml:310
 #, kde-format
 msgid "Media Hidden"
@@ -2862,28 +2872,24 @@ msgstr "%1 ਰਾਹੀਂ"
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr "ਪਬਲਿਕ"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr "ਪ੍ਰਾਈਵੇਟ"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr "ਸਿੱਧਾ ਸੁਨੇਹਾ"
@@ -2892,24 +2898,26 @@ msgstr "ਸਿੱਧਾ ਸੁਨੇਹਾ"
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "ਮਨਪਸੰਦ"
 msgstr[1] "ਮਨਪਸੰਦ"
 
 #: content/ui/PostDelegate/InformationBar.qml:123
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
-msgstr[0] ""
-msgstr[1] ""
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Posts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "ਪੋਸਟਾਂ"
+msgstr[1] "ਪੋਸਟਾਂ"
 
 #: content/ui/PostDelegate/LinkPreview.qml:18
 #, kde-format
 msgid "Link preview: %1"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:105
 #, fuzzy, kde-format
 #| msgctxt "Show all notifications"
 #| msgid "All"
@@ -2917,12 +2925,17 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "ਸਭ"
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:111
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
 msgid "GIF"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:128
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -3059,10 +3072,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Conversations"
 msgctxt "Show more options"
-msgid "More"
-msgstr "ਹੋਰ"
+msgid "More actions"
+msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -3081,6 +3095,11 @@ msgstr ""
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
+
+#: content/ui/PostDelegate/PostMenu.qml:54
+#, kde-format
+msgid "Post link copied."
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
@@ -3508,7 +3527,6 @@ msgid "Edit Account"
 msgstr "ਖਾਤਾ ਜੋੜੋ"
 
 #: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
 #, kde-format
 msgid "Please choose a file"
 msgstr "ਫਾਇਲ ਚੁਣੋ ਜੀ"
@@ -3807,19 +3825,32 @@ msgid "Remove"
 msgstr "ਹਟਾਓ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, kde-format
-msgid "Edit this post"
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, kde-format
-msgid "Reply to this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Copy Link to This Post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
+msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, kde-format
-msgid "Rewrite this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
+msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, fuzzy, kde-format
+#| msgid "%1 wrote a new post"
+msgctxt "@title:window"
+msgid "Write a New Post"
+msgstr "%1 ਨੇ ਨਵੀਂ ਪੋਸਟ ਲਿਖੀ ਹੈ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
@@ -3841,19 +3872,30 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
+msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#: content/ui/StatusComposer/StatusComposer.qml:432
-#, kde-format
-msgid "Content Warning"
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:225
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "ਨਵਾਂ ਕੀ ਹੈ?"
+
+#: content/ui/StatusComposer/StatusComposer.qml:340
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "ਫਾਇਲ ਚੁਣੋ ਜੀ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:343
 #, kde-format
@@ -3924,35 +3966,83 @@ msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:357
 #, kde-format
-msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Add Word"
+msgctxt "@info:tooltip"
+msgid "Add poll"
+msgstr "ਸ਼ਬਦ ਜੋੜੋ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:398
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "ਲੋਕਲ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:404
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "ਪਬਲਿਕ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
-msgid "Add Poll"
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
 msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "ਪ੍ਰਾਈਵੇਟ"
+
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "ਸਿੱਧਾ ਸੁਨੇਹਾ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:424
 #, kde-format
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:429
 #, kde-format
-msgctxt "Short for content warning"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content warning"
+msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:438
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox Group of all languages"
 #| msgid "All Languages"
-msgid "Post Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
 msgstr "ਸਭ ਭਾਸ਼ਾਵਾਂ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:467
 #, kde-format
-msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:483
@@ -4067,6 +4157,12 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgid "Switch Account"
+msgstr "ਖਾਤਾ ਜੋੜੋ"
+
+#: content/ui/UserInfo.qml:87
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgid "Switch account"
 msgstr "ਖਾਤਾ ਜੋੜੋ"
 
 #: content/ui/UserInfo.qml:132
@@ -4436,6 +4532,21 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
 
+#~ msgid "Conversation"
+#~ msgstr "ਗੱਲਬਾਤ"
+
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgid "%1 Favorite"
+#~ msgid_plural "%1 Favorites"
+#~ msgstr[0] "ਮਨਪਸੰਦ"
+#~ msgstr[1] "ਮਨਪਸੰਦ"
+
+#~ msgctxt "Show more options"
+#~ msgid "More"
+#~ msgstr "ਹੋਰ"
+
 #~ msgid "Configure"
 #~ msgstr "ਸੰਰਚਨਾ"
 
@@ -4499,12 +4610,6 @@ msgstr "ਟਿਕਾਣਾ"
 #~| msgid "Add Account"
 #~ msgid "Blocked Accounts"
 #~ msgstr "ਖਾਤਾ ਜੋੜੋ"
-
-#~ msgid "View profile"
-#~ msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
-
-#~ msgid "Copy Link to This Post"
-#~ msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
 #~ msgid "Switch user"
 #~ msgstr "ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
