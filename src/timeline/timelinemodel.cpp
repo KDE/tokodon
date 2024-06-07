@@ -40,7 +40,7 @@ void TimelineModel::init()
     });
 
     connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
+        if (m_account == account || account == nullptr) {
             return;
         }
 
