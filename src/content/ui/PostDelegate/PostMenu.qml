@@ -36,6 +36,7 @@ QQC2.Menu {
         text: i18nc("@action:inmenu", "Expand Post")
         onTriggered: Navigation.openThread(root.postId)
         visible: !root.expandedPost
+        enabled: visible
     }
 
     QQC2.MenuItem {
@@ -61,6 +62,7 @@ QQC2.Menu {
         icon.name: "view-web-browser-dom-tree"
         text: i18nc("@action Open embed into website dialog", "Embed")
         visible: !root.isPrivate
+        enabled: visible
 
         onTriggered: AccountManager.selectedAccount.fetchOEmbed(root.postId, root.authorIdentity)
     }
@@ -71,6 +73,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
+        enabled: visible
         icon.name: "expand"
         text: i18nc("@action:inmenu", "Open as…")
         onTriggered: applicationWindow().requestCrossAction('open', url)
@@ -78,6 +81,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
+        enabled: visible
         icon.name: "tokodon-post-reply"
         text: i18nc("@action:inmenu", "Reply as…")
         onTriggered: applicationWindow().requestCrossAction('reply', url)
@@ -85,6 +89,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
+        enabled: visible
         icon.name: "tokodon-post-favorite"
         text: i18nc("@action:inmenu", "Favorite as…")
         onTriggered: applicationWindow().requestCrossAction('favourite', url)
@@ -92,6 +97,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
+        enabled: visible
         icon.name: "tokodon-post-boost"
         text: i18nc("@action:inmenu", "Boost as…")
         onTriggered: applicationWindow().requestCrossAction('reblog', url)
@@ -99,6 +105,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
+        enabled: visible
         icon.name: "bookmark-new"
         text: i18nc("@action:inmenu", "Bookmark as…")
         onTriggered: applicationWindow().requestCrossAction('bookmark', url)
@@ -115,6 +122,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: root.pinned ? "window-unpin" : "pin"
         visible: root.isSelf
+        enabled: visible
         text: root.pinned ? i18nc("@action:inmenu", "Unpin on Profile") : i18nc("@action:inmenu", "Pin on Profile")
         onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
@@ -126,6 +134,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "dialog-cancel"
         visible: !root.isSelf
+        enabled: visible
         text: {
             if (root.authorIdentity.relationship && root.authorIdentity.relationship.muting) {
                 return i18nc("@action:inmenu Unmute account", "Unmute @%1", root.authorIdentity.username);
@@ -145,6 +154,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "im-ban-kick-user"
         visible: !root.isSelf
+        enabled: visible
         text: {
             if (root.authorIdentity.relationship && root.authorIdentity.relationship.blocking) {
                 return i18nc("@action:inmenu Unblock account", "Unblock @%1", root.authorIdentity.username);
@@ -164,6 +174,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "dialog-warning-symbolic"
         visible: !root.isSelf
+        enabled: visible
         text: i18nc("@action:inmenu Report this post", "Report…");
         onTriggered: Navigation.reportPost(root.authorIdentity, root.postId)
     }
@@ -173,6 +184,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "edit-entry"
         visible: root.isSelf
+        enabled: visible
         text: i18n("Edit")
         onTriggered: timelineModel.actionRedraft(timelineModel.index(root.index, 0), true)
     }
@@ -180,6 +192,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "edit-delete"
         visible: root.isSelf
+        enabled: visible
         text: i18n("Delete")
         onTriggered: root.deletePost()
     }
@@ -187,6 +200,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "edit-cut"
         visible: root.isSelf
+        enabled: visible
         text: i18n("Delete & Re-draft")
         onTriggered: root.redraftPost()
     }
