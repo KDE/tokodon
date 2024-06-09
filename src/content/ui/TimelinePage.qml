@@ -26,6 +26,16 @@ Kirigami.ScrollablePage {
     property alias showFilterAction: filterAction.visible
     property string originalPostUrl
 
+    Keys.onPressed: event => {
+        if (event.key === Qt.Key_PageUp && !listview.atYBeginning) {
+            event.accepted = true;
+            listview.contentY -= height;
+        } else if (event.key === Qt.Key_PageDown && !listview.atYEnd) {
+            event.accepted = true;
+            listview.contentY += height;
+        }
+    }
+
     title: {
         // Show the account name if the drawer is not open, so there's no way to tell which account you're on.
         if (model.name === "home" && !applicationWindow().globalDrawer.drawerOpen) {
