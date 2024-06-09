@@ -432,7 +432,15 @@ QQC2.ItemDelegate {
                 interactedIconName: 'tokodon-post-boosted'
 
                 text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
-                tooltip: i18nc("Share a post", "Boost")
+                tooltip: {
+                    if (root.visibility === Post.Direct) {
+                        return i18n("Cannot boost direct messages");
+                    } else if (root.visibility === Post.Private) {
+                        return i18n("Cannot boost private posts");
+                    } else {
+                        return i18nc("Share a post", "Boost");
+                    }
+                }
 
                 onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
                 Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
