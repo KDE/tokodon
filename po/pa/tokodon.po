@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-07 00:38+0000\n"
+"POT-Creation-Date: 2024-06-10 00:38+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -428,12 +428,12 @@ msgid "Account editor"
 msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 
 #: content/ui/AccountInfo.qml:348 content/ui/Main.qml:442
-#: content/ui/TimelinePage.qml:63
+#: content/ui/TimelinePage.qml:73
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:65
+#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
@@ -692,7 +692,7 @@ msgstr ""
 msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:81
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:91
 #, fuzzy, kde-format
 #| msgid "Post"
 msgctxt "@action:button"
@@ -3002,27 +3002,37 @@ msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:435
+#: content/ui/PostDelegate/PostDelegate.qml:437
+#, kde-format
+msgid "Cannot boost direct messages"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:439
+#, kde-format
+msgid "Cannot boost private posts"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boosted"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boost"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:466
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3030,41 +3040,41 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourited"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favourite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Remove bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -4079,62 +4089,62 @@ msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "ਸੋਧੋ"
 
-#: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: content/ui/TimelinePage.qml:36
+#: content/ui/TimelinePage.qml:46
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Home (%1)"
 msgid "Home (%1)"
 msgstr "ਮੁੱਖ-ਸਫ਼ਾ (%1)"
 
-#: content/ui/TimelinePage.qml:87
+#: content/ui/TimelinePage.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:92
+#: content/ui/TimelinePage.qml:102
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Show Boosts"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/TimelinePage.qml:99
+#: content/ui/TimelinePage.qml:109
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts && Replies"
 msgid "Show Replies"
 msgstr "ਪੋਸਟਾਂ ਤੇ ਜਵਾਬ"
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/TimelinePage.qml:120
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:225
+#: content/ui/TimelinePage.qml:235
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:226
+#: content/ui/TimelinePage.qml:236
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:229
+#: content/ui/TimelinePage.qml:239
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:238
+#: content/ui/TimelinePage.qml:248
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Local Timeline"
@@ -4142,12 +4152,12 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "ਲੋਕਲ ਸਮਾਂ-ਲਾਈਨ"
 
-#: content/ui/TimelinePage.qml:280
+#: content/ui/TimelinePage.qml:290
 #, kde-format
 msgid "No posts"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
 
-#: content/ui/TimelinePage.qml:286
+#: content/ui/TimelinePage.qml:296
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"

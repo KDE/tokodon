@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-07 00:38+0000\n"
+"POT-Creation-Date: 2024-06-10 00:38+0000\n"
 "PO-Revision-Date: 2024-05-26 12:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -417,12 +417,12 @@ msgid "Account editor"
 msgstr "Edytor konta"
 
 #: content/ui/AccountInfo.qml:348 content/ui/Main.qml:442
-#: content/ui/TimelinePage.qml:63
+#: content/ui/TimelinePage.qml:73
 #, kde-format
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:65
+#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
@@ -666,7 +666,7 @@ msgstr "Czy na pewno usunąć tę listę?"
 msgid "Explore"
 msgstr "Odkrywaj"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:81
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -2866,60 +2866,70 @@ msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odpowiedz"
 
-#: content/ui/PostDelegate/PostDelegate.qml:435
+#: content/ui/PostDelegate/PostDelegate.qml:437
+#, kde-format
+msgid "Cannot boost direct messages"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:439
+#, kde-format
+msgid "Cannot boost private posts"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Udostępnij"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, kde-format
 msgid "Boosted"
 msgstr "Udostępnił"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, kde-format
 msgid "Boost"
 msgstr "Udostępnij"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:466
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Ulubione"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, kde-format
 msgid "Favourited"
 msgstr "W ulubionych"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, kde-format
 msgid "Favourite"
 msgstr "Ulubiony"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Usuń zakładkę"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zakładka"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Bookmarked"
 msgstr "W zakładkach"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Bookmark"
 msgstr "Zakładka"
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -3901,68 +3911,68 @@ msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Edytuj"
 
-#: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "Wczytywanie"
 
-#: content/ui/TimelinePage.qml:36
+#: content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Home (%1)"
 msgstr "Dom (%1)"
 
-#: content/ui/TimelinePage.qml:87
+#: content/ui/TimelinePage.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Filtry"
 
-#: content/ui/TimelinePage.qml:92
+#: content/ui/TimelinePage.qml:102
 #, kde-format
 msgid "Show Boosts"
 msgstr "Pokaż udostępnienia"
 
-#: content/ui/TimelinePage.qml:99
+#: content/ui/TimelinePage.qml:109
 #, kde-format
 msgid "Show Replies"
 msgstr "Pokaż odpowiedzi"
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/TimelinePage.qml:120
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Nie udało się porozumieć z serwerem: %1. Sprawdź swoje ustawienia."
 
-#: content/ui/TimelinePage.qml:225
+#: content/ui/TimelinePage.qml:235
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Pewne odpowiedzi są niedostępne"
 
-#: content/ui/TimelinePage.qml:226
+#: content/ui/TimelinePage.qml:236
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 "Aby obejrzeć wszystkie odpowiedzi , otwórz wpis na pierwotnym serwerze."
 
-#: content/ui/TimelinePage.qml:229
+#: content/ui/TimelinePage.qml:239
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr "Otwórz pierwotną stronę"
 
-#: content/ui/TimelinePage.qml:238
+#: content/ui/TimelinePage.qml:248
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Koniec osi czasu"
 
-#: content/ui/TimelinePage.qml:280
+#: content/ui/TimelinePage.qml:290
 #, kde-format
 msgid "No posts"
 msgstr "Nie ma żadnych wpisów"
 
-#: content/ui/TimelinePage.qml:286
+#: content/ui/TimelinePage.qml:296
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"

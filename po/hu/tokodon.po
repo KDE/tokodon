@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-07 00:38+0000\n"
+"POT-Creation-Date: 2024-06-10 00:38+0000\n"
 "PO-Revision-Date: 2024-05-14 11:41+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -415,12 +415,12 @@ msgid "Account editor"
 msgstr "Fiókszerkesztő"
 
 #: content/ui/AccountInfo.qml:348 content/ui/Main.qml:442
-#: content/ui/TimelinePage.qml:63
+#: content/ui/TimelinePage.qml:73
 #, kde-format
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:65
+#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
@@ -663,7 +663,7 @@ msgstr "Biztosan törölni szeretné ezt a listát?"
 msgid "Explore"
 msgstr "Felfedezés"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:81
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -2862,60 +2862,70 @@ msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Válasz"
 
-#: content/ui/PostDelegate/PostDelegate.qml:435
+#: content/ui/PostDelegate/PostDelegate.qml:437
+#, kde-format
+msgid "Cannot boost direct messages"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:439
+#, kde-format
+msgid "Cannot boost private posts"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:441
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Megtolás"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, kde-format
 msgid "Boosted"
 msgstr "Megtolt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:446
 #, kde-format
 msgid "Boost"
 msgstr "Megtolás"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:466
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Kedvencnek jelölés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, kde-format
 msgid "Favourited"
 msgstr "Kedvencnek jelölt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:461
+#: content/ui/PostDelegate/PostDelegate.qml:469
 #, kde-format
 msgid "Favourite"
 msgstr "Kedvencnek jelölés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Könyvjelző eltávolítása"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Könyvjelzőzés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Bookmarked"
 msgstr "Könyvjelzőzve"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Bookmark"
 msgstr "Könyvjelző"
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -3898,70 +3908,70 @@ msgctxt "@action:Button Edit a post"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: content/ui/TimelinePage.qml:34 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "Betöltés"
 
-#: content/ui/TimelinePage.qml:36
+#: content/ui/TimelinePage.qml:46
 #, kde-format
 msgid "Home (%1)"
 msgstr "Kezdőlap (%1)"
 
-#: content/ui/TimelinePage.qml:87
+#: content/ui/TimelinePage.qml:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Szűrők"
 
-#: content/ui/TimelinePage.qml:92
+#: content/ui/TimelinePage.qml:102
 #, kde-format
 msgid "Show Boosts"
 msgstr "Megtolások megjelenítése"
 
-#: content/ui/TimelinePage.qml:99
+#: content/ui/TimelinePage.qml:109
 #, kde-format
 msgid "Show Replies"
 msgstr "Válaszok megjelenítése"
 
-#: content/ui/TimelinePage.qml:110
+#: content/ui/TimelinePage.qml:120
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr ""
 "Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a beállításokat."
 
-#: content/ui/TimelinePage.qml:225
+#: content/ui/TimelinePage.qml:235
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Néhány válasz nem érhető el"
 
-#: content/ui/TimelinePage.qml:226
+#: content/ui/TimelinePage.qml:236
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 "Az összes válasz megtekintéséhez nyissa meg a bejegyzést az eredeti "
 "kiszolgálón."
 
-#: content/ui/TimelinePage.qml:229
+#: content/ui/TimelinePage.qml:239
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr "Eredeti oldal megnyitása"
 
-#: content/ui/TimelinePage.qml:238
+#: content/ui/TimelinePage.qml:248
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Idővonal vége"
 
-#: content/ui/TimelinePage.qml:280
+#: content/ui/TimelinePage.qml:290
 #, kde-format
 msgid "No posts"
 msgstr "Nincsenek bejegyzések"
 
-#: content/ui/TimelinePage.qml:286
+#: content/ui/TimelinePage.qml:296
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
