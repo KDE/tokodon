@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-10 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 09:54+0300\n"
+"PO-Revision-Date: 2024-05-27 18:51+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -838,45 +838,39 @@ msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
+"Lai turpinātu un autorizētu „Tokodon“, savā interneta pārlūkprogrammā "
+"atveriet šo saiti: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Pilnvarojums"
+msgstr "Atvērt autorizācijas saiti"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Pilnvarojums"
+msgstr "Kopēt autorizācijas saiti"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Link copied."
-msgstr "Posta saite ir nokopēta"
+msgstr "Saite ir nokopēta."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Pilnvarojums"
+msgstr "Izmantot autorizācijas kodu"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr ""
+"Izmantojiet šo ierakstīšanās metodi, ja augstāk norādītā saite nedarbojas."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Pilnvarojums"
+msgstr "Ievadiet autorizācijas kodu:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -1081,7 +1075,7 @@ msgstr "Servera URL nedrīkst palikt tukšs."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Atvērt ārēji"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -3263,10 +3257,9 @@ msgid "System Default"
 msgstr "Sistēmas noklusējuma"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "Tīkla starpniekserveris"
+msgstr "Bez starpniekservera"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3307,24 +3300,21 @@ msgstr "Ieslēgt paziņojumus šim kontam"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr ""
+msgstr "Paziņojumi var parādīties pat tad, ja „Tokodon“ nav palaists."
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Push notifications are not available for this account. Please log out and "
-#| "log back in."
+#, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"Pašpiegādes paziņojumi nav pieejami šim kontam. Izrakstieties un "
+"Pašpiegādes paziņojumi ir pieejami, bet tos nevar ieslēgt. Izrakstieties un "
 "ierakstieties no jauna."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Paziņojumi parādīsies tikai tad, kad „Tokodon“ būs ieslēgts."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -3716,10 +3706,11 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Vai tiešām vēlaties izmest savu uzmetumu?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep"
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
-msgstr ""
+msgstr "Paturēt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
 #, fuzzy, kde-format
