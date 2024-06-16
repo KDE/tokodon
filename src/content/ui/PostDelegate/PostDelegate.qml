@@ -382,7 +382,7 @@ QQC2.ItemDelegate {
         }
 
         Loader {
-            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered
+            active: Config.showLinkPreview && card && !root.secondary && root.post.attachments.length === 0 && !root.filtered && !root.post.quotedPost
             visible: active && postContent.visible
 
             Layout.fillWidth: true
