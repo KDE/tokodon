@@ -197,10 +197,10 @@ Kirigami.ScrollablePage {
             }
 
             Connections {
-                target: appwindow
+                target: applicationWindow()
 
                 function onIsShowingFullScreenImageChanged() {
-                    if (appwindow.isShowingFullScreenImage) {
+                    if (applicationWindow().isShowingFullScreenImage) {
                         status.inViewPort = false
                     } else {
                         listview.contentYChanged()
