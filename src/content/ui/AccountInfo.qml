@@ -528,6 +528,11 @@ TimelinePage {
                                     interval: 5000
                                     onTriggered: savedNotification.visible = false
                                 }
+
+                                Keys.onTabPressed: (event)=> {
+                                    nextItemInFocusChain(true).forceActiveFocus(Qt.TabFocusReason)
+                                    event.accepted = true
+                                }
                             }
                         }
                     }
