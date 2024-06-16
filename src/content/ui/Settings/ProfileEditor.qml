@@ -46,7 +46,7 @@ FormCard.FormCardPage {
             id: logoutPrompt
 
             title: i18nc("@title", "Logout")
-            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", delegate.displayName)
+            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
             standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
             showCloseButton: false
 
