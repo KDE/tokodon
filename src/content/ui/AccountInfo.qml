@@ -346,9 +346,7 @@ TimelinePage {
                                             visible: model.isSelf
                                             text: i18nc("@action:button Open settings dialog", "Settings")
                                             icon.name: 'settings-configure-symbolic'
-                                            onClicked: {
-                                                ConfigurationsView.open();
-                                            }
+                                            onTriggered: ConfigurationsView.open()
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"
