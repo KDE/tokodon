@@ -129,7 +129,7 @@ QQC2.Pane {
 
                 contentItem: Delegates.SubtitleContentItem {
                     itemDelegate: addAccountDelegaze
-                    subtitle: i18n("Log in to an existing account")
+                    subtitle: i18n("Log in or create a new account")
                 }
 
                 onClicked: {
