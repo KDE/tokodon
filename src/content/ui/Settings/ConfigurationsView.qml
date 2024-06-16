@@ -28,13 +28,7 @@ KirigamiSettings.ConfigurationsView {
             icon.name: "preferences-system-users"
             page: () => Qt.createComponent("org.kde.tokodon", "AccountsPage")
         },
-        KirigamiSettings.ConfigurationModule {
-            moduleId: "sonnet"
-            text: i18n("Spell Checking")
-            icon.name: "tools-check-spelling"
-            page: () => Qt.createComponent("org.kde.tokodon", "SonnetPage")
-            visible: Qt.platform.os !== "android"
-        },
+        KirigamiSettings.SpellcheckingConfigurationModule {},
         KirigamiSettings.ConfigurationModule {
             moduleId: "proxy"
             text: i18n("Network Proxy")

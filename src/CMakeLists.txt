@@ -229,7 +229,6 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml
         content/ui/Settings/ConfigurationsView.qml
-        content/ui/Settings/SonnetPage.qml
 
         # Composer
         content/ui/StatusComposer/EditorAttachmentGrid.qml
