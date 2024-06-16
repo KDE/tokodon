@@ -40,8 +40,10 @@ QString FileHelper::fileName(const QUrl &url) const
 
 void FileHelper::forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item)
 {
-    // HACK: Workaround bug QTBUG 93281
+    // HACK: Workaround bug QTBUG 93281, only applies to <6.7
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(textDocument->textDocument(), SIGNAL(imagesLoaded()), item, SLOT(updateWholeDocument()));
+#endif
 }
 
 #include "moc_filehelper.cpp"
