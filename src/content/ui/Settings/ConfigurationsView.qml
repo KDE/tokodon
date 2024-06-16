@@ -44,7 +44,7 @@ KirigamiSettings.ConfigurationsView {
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Tokodon")
-            icon.name: "help-about"
+            icon.name: "org.kde.tokodon"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
             category: i18nc("@title:group", "About")
         },
