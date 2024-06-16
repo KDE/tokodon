@@ -79,7 +79,7 @@ Kirigami.ApplicationWindow {
         } else if (link.startsWith('web+ap:/') && shouldOpenInternalLinks) {
             Controller.openWebApLink(link.substring(8))
         } else {
-            Qt.openUrlExternally(link)
+            Controller.openLink(link);
         }
     }
 

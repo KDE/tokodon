@@ -34,6 +34,8 @@ public:
 
     bool pushNotificationsAvailable() const;
 
+    Q_INVOKABLE void openLink(const QString &input);
+
     QString endpoint;
 
 Q_SIGNALS:

@@ -3,12 +3,15 @@
 
 #include "network/networkcontroller.h"
 
+#include <QDesktopServices>
 #include <QNetworkProxyFactory>
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "config.h"
 #include "tokodon_http_debug.h"
+#include "utils/navigation.h"
+#include "utils/texthandler.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -216,6 +219,30 @@ void NetworkController::requestRemoteObject(AbstractAccount *account, const QStr
 bool NetworkController::pushNotificationsAvailable() const
 {
     return !endpoint.isEmpty();
+}
+
+void NetworkController::openLink(const QString &input)
+{
+    // TODO: expand to profiles?
+    if (TextHandler::isPostUrl(input)) {
+        auto account = AccountManager::instance().selectedAccount();
+
+        // Then request said URL from our server
+        NetworkController::instance().requestRemoteObject(account, input, [=](QNetworkReply *reply) {
+            const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+
+            const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+
+            if (!statuses.isEmpty()) {
+                Navigation::instance().openThread(statuses.last()[QStringLiteral("id")].toString());
+            } else {
+                // worst case, open it in a web browser
+                QDesktopServices::openUrl(QUrl::fromUserInput(input));
+            }
+        });
+    } else {
+        QDesktopServices::openUrl(QUrl::fromUserInput(input));
+    }
 }
 
 #include "moc_networkcontroller.cpp"
