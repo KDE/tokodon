@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:38+0000\n"
+"POT-Creation-Date: 2024-06-17 00:39+0000\n"
 "PO-Revision-Date: 2024-06-12 01:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -412,19 +412,14 @@ msgstr "Profili Düzenle"
 msgid "Account editor"
 msgstr "Hesap düzenleyici"
 
-#: content/ui/AccountInfo.qml:348 content/ui/Main.qml:442
+#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:451
 #: content/ui/TimelinePage.qml:73
 #, kde-format
+msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:75
-#, kde-format
-msgctxt "@title:window"
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:485
+#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:498
 #, kde-format
 msgid "Follow Requests"
 msgstr "Takip İstekleri"
@@ -469,7 +464,7 @@ msgstr "Kaydedildi"
 msgid "Click to add a note"
 msgstr "Not eklemek için tıkla"
 
-#: content/ui/AccountInfo.qml:599
+#: content/ui/AccountInfo.qml:604
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -477,7 +472,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> gönderi"
 msgstr[1] "<b>%1</b> gönderi"
 
-#: content/ui/AccountInfo.qml:612
+#: content/ui/AccountInfo.qml:617
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -485,7 +480,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> takipçi"
 msgstr[1] "<b>%1</b> takipçi"
 
-#: content/ui/AccountInfo.qml:625
+#: content/ui/AccountInfo.qml:630
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -493,31 +488,31 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> takip edilen"
 msgstr[1] "<b>%1</b> takip edilen"
 
-#: content/ui/AccountInfo.qml:652
+#: content/ui/AccountInfo.qml:657
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Gönderiler"
 
-#: content/ui/AccountInfo.qml:656
+#: content/ui/AccountInfo.qml:661
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Gönderiler ve Yanıtlar"
 
-#: content/ui/AccountInfo.qml:660
+#: content/ui/AccountInfo.qml:665
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Ortam"
 
-#: content/ui/AccountInfo.qml:689
+#: content/ui/AccountInfo.qml:694
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Boostları gizle"
 
-#: content/ui/AccountInfo.qml:709
+#: content/ui/AccountInfo.qml:714
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -559,12 +554,13 @@ msgstr "Emoji yok"
 
 #: content/ui/Components/InlineIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/QuotePost.qml:58
 #: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
 msgstr "Profili görüntüle"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:532
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:545
 #, kde-format
 msgid "Conversations"
 msgstr "Sohbetler"
@@ -651,12 +647,12 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Bu listeyi silmek istediğinizden emin misiniz?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:578
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:591
 #, kde-format
 msgid "Explore"
 msgstr "Keşfet"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:91
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -1105,82 +1101,71 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Bilinmeyen Eylem"
 
-#: content/ui/Main.qml:222
+#: content/ui/Main.qml:224
 #, kde-format
 msgid "Write a new post"
 msgstr "Yeni Bir Gönderi Yaz"
 
-#: content/ui/Main.qml:421
+#: content/ui/Main.qml:423
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: content/ui/Main.qml:431
-#, kde-format
-msgid "Moderation Tools"
-msgstr "Moderasyon Araçları"
-
-#: content/ui/Main.qml:432
+#: content/ui/Main.qml:433
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderasyon Araçları"
 
-#: content/ui/Main.qml:443
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: content/ui/Main.qml:455
+#: content/ui/Main.qml:468
 #, kde-format
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: content/ui/Main.qml:470 content/ui/NotificationPage.qml:15
-#: content/ui/Settings/SettingsPage.qml:19
+#: content/ui/Main.qml:483 content/ui/NotificationPage.qml:15
+#: content/ui/Settings/ConfigurationsView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:514
 #, kde-format
 msgid "Local"
 msgstr "Yerel"
 
-#: content/ui/Main.qml:516
+#: content/ui/Main.qml:529
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:546
+#: content/ui/Main.qml:559
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriler"
 
-#: content/ui/Main.qml:562
+#: content/ui/Main.qml:575
 #, kde-format
 msgid "Bookmarks"
 msgstr "Yer İmleri"
 
-#: content/ui/Main.qml:592
+#: content/ui/Main.qml:605
 #, kde-format
 msgid "Search"
 msgstr "Ara"
 
-#: content/ui/Main.qml:607
+#: content/ui/Main.qml:620
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Duyurular"
 
-#: content/ui/Main.qml:622
+#: content/ui/Main.qml:635
 #, kde-format
 msgid "Lists"
 msgstr "Listeler"
 
-#: content/ui/Main.qml:774
+#: content/ui/Main.qml:787
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2477,30 +2462,30 @@ msgstr "Daha Az Göster"
 msgid "Show More"
 msgstr "Daha Çok Göster"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:15
+#: content/ui/ModerationTools/ModerationToolsView.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr "Hesaplar"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:21
+#: content/ui/ModerationTools/ModerationToolsView.qml:20
 #, kde-format
 msgid "Reports"
 msgstr "Raporlar"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:27
+#: content/ui/ModerationTools/ModerationToolsView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
 msgstr "Federasyon"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:33
+#: content/ui/ModerationTools/ModerationToolsView.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
 msgstr "IP Kuralları"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:39
+#: content/ui/ModerationTools/ModerationToolsView.qml:38
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
@@ -2651,39 +2636,39 @@ msgstr "Bir anket sona erdi"
 msgid "%1 updated their post"
 msgstr "%1 gönderisini güncelledi"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:74
+#: content/ui/PostDelegate/AttachmentGrid.qml:75
 #, kde-format
 msgid "Status with image attachment"
 msgstr "Görsel ekli durum"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:76
+#: content/ui/PostDelegate/AttachmentGrid.qml:77
 #, kde-format
 msgid "Status with GifV attachment"
 msgstr "GifV ekli durum"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:78
+#: content/ui/PostDelegate/AttachmentGrid.qml:79
 #, kde-format
 msgid "Status with Video attachment"
 msgstr "Video ekli durum"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:167
+#: content/ui/PostDelegate/AttachmentGrid.qml:168
 #, kde-format
 msgid "Not available"
 msgstr "Kullanılamıyor"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:295
+#: content/ui/PostDelegate/AttachmentGrid.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Ortamı Gizle"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:299
+#: content/ui/PostDelegate/AttachmentGrid.qml:300
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Ortamı gizle"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:310
+#: content/ui/PostDelegate/AttachmentGrid.qml:311
 #, kde-format
 msgid "Media Hidden"
 msgstr "Ortam Gizlendi"
@@ -2840,76 +2825,76 @@ msgstr ""
 "Bu gönderiyi yeniden yazmak istediğinizden emin misiniz? Bu, özgün gönderiyi "
 "silecektir."
 
-#: content/ui/PostDelegate/PostDelegate.qml:410
+#: content/ui/PostDelegate/PostDelegate.qml:422
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Yanıtla"
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:449
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Doğrudan iletiler boostlanamaz"
 
-#: content/ui/PostDelegate/PostDelegate.qml:439
+#: content/ui/PostDelegate/PostDelegate.qml:451
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Gizli gönderiler boostlanamaz"
 
-#: content/ui/PostDelegate/PostDelegate.qml:441
+#: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Boostla"
 
-#: content/ui/PostDelegate/PostDelegate.qml:446
+#: content/ui/PostDelegate/PostDelegate.qml:458
 #, kde-format
 msgid "Boosted"
 msgstr "Boostlandı"
 
-#: content/ui/PostDelegate/PostDelegate.qml:446
+#: content/ui/PostDelegate/PostDelegate.qml:458
 #, kde-format
 msgid "Boost"
 msgstr "Boostla"
 
-#: content/ui/PostDelegate/PostDelegate.qml:466
+#: content/ui/PostDelegate/PostDelegate.qml:478
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorilere ekle"
 
-#: content/ui/PostDelegate/PostDelegate.qml:469
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgid "Favourited"
 msgstr "Favorilendi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:469
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgid "Favourite"
 msgstr "Favorile"
 
-#: content/ui/PostDelegate/PostDelegate.qml:488
+#: content/ui/PostDelegate/PostDelegate.qml:500
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Yer imini kaldır"
 
-#: content/ui/PostDelegate/PostDelegate.qml:488
+#: content/ui/PostDelegate/PostDelegate.qml:500
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Yer imlerine ekle"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Bookmarked"
 msgstr "Yer İmlerine Eklendi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
 msgid "Bookmark"
 msgstr "Yer İmlerine Ekle"
 
-#: content/ui/PostDelegate/PostDelegate.qml:513
+#: content/ui/PostDelegate/PostDelegate.qml:525
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -3037,8 +3022,8 @@ msgid "Edit"
 msgstr "Düzenle"
 
 #: content/ui/PostDelegate/PostMenu.qml:183
-#: content/ui/Settings/ProfileEditor.qml:147
-#: content/ui/Settings/ProfileEditor.qml:209
+#: content/ui/Settings/ProfileEditor.qml:173
+#: content/ui/Settings/ProfileEditor.qml:235
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
@@ -3063,6 +3048,19 @@ msgstr "(Oy yok)"
 #, kde-format
 msgid "Vote"
 msgstr "Oy Ver"
+
+#: content/ui/PostDelegate/QuotePost.qml:64
+#, fuzzy, kde-format
+#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+#| msgid "Posted on %1"
+msgid "Post from %1"
+msgstr "Gönderim tarihi: %1"
+
+#: content/ui/PostDelegate/QuotePost.qml:83
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "Quoted post"
+msgstr "Gönderi yok"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3116,6 +3114,11 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "İptal"
 
+#: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:147
+#, kde-format
+msgid "Hashtag"
+msgstr "Etiket"
+
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -3137,29 +3140,7 @@ msgstr "Arama sonucu yok"
 msgid "Search for users, tags and posts"
 msgstr "Kullanıcılar, etiketler ve gönderiler ara"
 
-#: content/ui/SearchView.qml:147
-#, kde-format
-msgid "Hashtag"
-msgstr "Etiket"
-
-#: content/ui/Settings/AccountsPage.qml:72
-#, kde-format
-msgid "Logout"
-msgstr "Oturumu Kapat"
-
-#: content/ui/Settings/AccountsPage.qml:78
-#, kde-format
-msgctxt "@title"
-msgid "Logout"
-msgstr "Oturumu Kapat"
-
-#: content/ui/Settings/AccountsPage.qml:79
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to log out of %1?"
-msgstr "%1 oturumunu kapatmak istediğinizden emin misiniz?"
-
-#: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:127
+#: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:127
 #, kde-format
 msgid "Add Account"
 msgstr "Hesap Ekle"
@@ -3217,6 +3198,44 @@ msgstr "Zaman akışındaki görselleri 16 × 9 olarak kırp"
 msgid "Auto-play animated GIFs"
 msgstr "Canlandırmalı GIF’leri kendiliğinden oynat"
 
+#: content/ui/Settings/ConfigurationsView.qml:15
+#, kde-format
+msgid "Appearance"
+msgstr "Görünüş"
+
+#: content/ui/Settings/ConfigurationsView.qml:27
+#, kde-format
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#: content/ui/Settings/ConfigurationsView.qml:33
+#, kde-format
+msgid "Spell Checking"
+msgstr "Yazım Denetimi"
+
+#: content/ui/Settings/ConfigurationsView.qml:40
+#, kde-format
+msgid "Network Proxy"
+msgstr "Ağ Vekili"
+
+#: content/ui/Settings/ConfigurationsView.qml:46
+#, kde-format
+msgid "About Tokodon"
+msgstr "Tokodon Hakkında"
+
+#: content/ui/Settings/ConfigurationsView.qml:49
+#: content/ui/Settings/ConfigurationsView.qml:56
+#, fuzzy, kde-format
+#| msgid "About KDE"
+msgctxt "@title:group"
+msgid "About"
+msgstr "KDE Hakkında"
+
+#: content/ui/Settings/ConfigurationsView.qml:53
+#, kde-format
+msgid "About KDE"
+msgstr "KDE Hakkında"
+
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -3259,7 +3278,7 @@ msgid "User"
 msgstr "Kullanıcı"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:302
+#: content/ui/Settings/ProfileEditor.qml:328
 #, kde-format
 msgid "Apply"
 msgstr "Uygula"
@@ -3339,126 +3358,113 @@ msgstr "Düzenlemeler"
 msgid "Edit Account"
 msgstr "Hesabı Düzenle"
 
-#: content/ui/Settings/ProfileEditor.qml:30
+#: content/ui/Settings/ProfileEditor.qml:28
+#, kde-format
+msgid "Logout"
+msgstr "Oturumu Kapat"
+
+#: content/ui/Settings/ProfileEditor.qml:40
 #, kde-format
 msgid "Please choose a file"
 msgstr "Lütfen bir dosya seçin"
 
-#: content/ui/Settings/ProfileEditor.qml:55
+#: content/ui/Settings/ProfileEditor.qml:48
+#, kde-format
+msgctxt "@title"
+msgid "Logout"
+msgstr "Oturumu Kapat"
+
+#: content/ui/Settings/ProfileEditor.qml:49
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to log out of %1?"
+msgstr "%1 oturumunu kapatmak istediğinizden emin misiniz?"
+
+#: content/ui/Settings/ProfileEditor.qml:81
 #, kde-format
 msgid "Display Name"
 msgstr "Görüntü Adı"
 
-#: content/ui/Settings/ProfileEditor.qml:73
+#: content/ui/Settings/ProfileEditor.qml:99
 #, kde-format
 msgid "Bio"
 msgstr "Biyografi"
 
-#: content/ui/Settings/ProfileEditor.qml:99
+#: content/ui/Settings/ProfileEditor.qml:125
 #, kde-format
 msgid "Header"
 msgstr "Üstbilgi"
 
-#: content/ui/Settings/ProfileEditor.qml:134
+#: content/ui/Settings/ProfileEditor.qml:160
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 1500 × 500 pks olarak ölçeklendirilir"
 
-#: content/ui/Settings/ProfileEditor.qml:162
+#: content/ui/Settings/ProfileEditor.qml:188
 #, kde-format
 msgid "Avatar"
 msgstr "Avatar"
 
-#: content/ui/Settings/ProfileEditor.qml:195
+#: content/ui/Settings/ProfileEditor.qml:221
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 400 × 400 pks olarak ölçeklendirilir"
 
-#: content/ui/Settings/ProfileEditor.qml:223
+#: content/ui/Settings/ProfileEditor.qml:249
 #, kde-format
 msgid "Require approval of follow requests"
 msgstr "Takip isteklerinin onayını gerektir"
 
-#: content/ui/Settings/ProfileEditor.qml:231
+#: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
 msgid "This is a bot account"
 msgstr "Bu bir bot hesap"
 
-#: content/ui/Settings/ProfileEditor.qml:239
+#: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Hesabı başkalarına öner"
 
-#: content/ui/Settings/ProfileEditor.qml:247
+#: content/ui/Settings/ProfileEditor.qml:273
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Öntanımlı olarak yüklenen ortamı hassas olarak imle"
 
-#: content/ui/Settings/ProfileEditor.qml:255
+#: content/ui/Settings/ProfileEditor.qml:281
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Öntanımlı gönderi dili"
 
-#: content/ui/Settings/ProfileEditor.qml:276
+#: content/ui/Settings/ProfileEditor.qml:302
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Öntanımlı gönderi görünürlüğü"
 
-#: content/ui/Settings/ProfileEditor.qml:278
+#: content/ui/Settings/ProfileEditor.qml:304
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Genel"
 
-#: content/ui/Settings/ProfileEditor.qml:279
+#: content/ui/Settings/ProfileEditor.qml:305
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Listelenmemiş"
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:306
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Özel"
 
-#: content/ui/Settings/ProfileEditor.qml:295
+#: content/ui/Settings/ProfileEditor.qml:321
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
-
-#: content/ui/Settings/SettingsPage.qml:13
-#, kde-format
-msgid "Appearance"
-msgstr "Görünüş"
-
-#: content/ui/Settings/SettingsPage.qml:25
-#, kde-format
-msgid "Accounts"
-msgstr "Hesaplar"
-
-#: content/ui/Settings/SettingsPage.qml:31
-#, kde-format
-msgid "Spell Checking"
-msgstr "Yazım Denetimi"
-
-#: content/ui/Settings/SettingsPage.qml:38
-#, kde-format
-msgid "Network Proxy"
-msgstr "Ağ Vekili"
-
-#: content/ui/Settings/SettingsPage.qml:44
-#, kde-format
-msgid "About Tokodon"
-msgstr "Tokodon Hakkında"
-
-#: content/ui/Settings/SettingsPage.qml:50
-#, kde-format
-msgid "About KDE"
-msgstr "KDE Hakkında"
 
 #: content/ui/Settings/SonnetPage.qml:31
 #, kde-format
@@ -3876,57 +3882,57 @@ msgstr "Yükleniyor"
 msgid "Home (%1)"
 msgstr "Ana Sayfa (%1)"
 
-#: content/ui/TimelinePage.qml:97
+#: content/ui/TimelinePage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "Süzgeçler"
 
-#: content/ui/TimelinePage.qml:102
+#: content/ui/TimelinePage.qml:104
 #, kde-format
 msgid "Show Boosts"
 msgstr "Boostları Göster"
 
-#: content/ui/TimelinePage.qml:109
+#: content/ui/TimelinePage.qml:111
 #, kde-format
 msgid "Show Replies"
 msgstr "Yanıtları Göster"
 
-#: content/ui/TimelinePage.qml:120
+#: content/ui/TimelinePage.qml:122
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Sunucuya bağlanılamadı: %1. Lütfen ayarlarınızı denetleyin."
 
-#: content/ui/TimelinePage.qml:235
+#: content/ui/TimelinePage.qml:237
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Bazı yanıtlara ulaşılamıyor"
 
-#: content/ui/TimelinePage.qml:236
+#: content/ui/TimelinePage.qml:238
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Tüm yanıtları görmek için gönderiyi özgün sunucusunda açın."
 
-#: content/ui/TimelinePage.qml:239
+#: content/ui/TimelinePage.qml:241
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr "Özgün Sayfayı Aç"
 
-#: content/ui/TimelinePage.qml:248
+#: content/ui/TimelinePage.qml:250
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Zaman Akışının Sonu"
 
-#: content/ui/TimelinePage.qml:290
+#: content/ui/TimelinePage.qml:292
 #, kde-format
 msgid "No posts"
 msgstr "Gönderi yok"
 
-#: content/ui/TimelinePage.qml:296
+#: content/ui/TimelinePage.qml:298
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -3943,8 +3949,9 @@ msgid "Switch account"
 msgstr "Hesap değiştir"
 
 #: content/ui/UserInfo.qml:132
-#, kde-format
-msgid "Log in to an existing account"
+#, fuzzy, kde-format
+#| msgid "Log in to an existing account"
+msgid "Log in or create a new account"
 msgstr "Var olan bir hesaba oturum aç"
 
 #: conversation/conversationmodel.cpp:57
@@ -4043,8 +4050,9 @@ msgid "Mastodon client"
 msgstr "Mastodon İstemcisi"
 
 #: main.cpp:113
-#, kde-format
-msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE Topluluğu"
 
 #: main.cpp:114
@@ -4150,46 +4158,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Popüler"
 
-#: timeline/post.cpp:187
+#: timeline/post.cpp:217
 #, kde-format
 msgid "in the future"
 msgstr "gelecekte"
 
-#: timeline/post.cpp:189
+#: timeline/post.cpp:219
 #, kde-format
 msgid "%1s"
 msgstr "%1 sn"
 
-#: timeline/post.cpp:191
+#: timeline/post.cpp:221
 #, kde-format
 msgid "%1m"
 msgstr "%1 dk"
 
-#: timeline/post.cpp:193
+#: timeline/post.cpp:223
 #, kde-format
 msgid "%1h"
 msgstr "%1 sa"
 
-#: timeline/post.cpp:195
+#: timeline/post.cpp:225
 #, kde-format
 msgid "%1d"
 msgstr "%1 g"
 
-#: timeline/post.cpp:199
+#: timeline/post.cpp:229
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 hafta önce"
 msgstr[1] "%1 hafta önce"
 
-#: timeline/post.cpp:202
+#: timeline/post.cpp:232
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 ay önce"
 msgstr[1] "%1 ay önce"
 
-#: timeline/post.cpp:206
+#: timeline/post.cpp:236
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -4300,6 +4308,16 @@ msgstr "Kaynak"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Hedef"
+
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"
+
+#~ msgctxt "@title:window"
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"
+
+#~ msgid "Moderation Tools"
+#~ msgstr "Moderasyon Araçları"
 
 #~ msgid "Copy Link to This Profile"
 #~ msgstr "Bağlantıyı Bu Profile Kopyala"
