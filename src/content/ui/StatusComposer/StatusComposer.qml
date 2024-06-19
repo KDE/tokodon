@@ -209,7 +209,12 @@ Kirigami.ScrollablePage {
             placeholderText: i18n("Content Warning")
             Layout.fillWidth: true
             visible: contentWarning.checked
-            onTextChanged: root.backend.spoilerText = text
+            onTextChanged: {
+                // Only update the backend if the content warning checkbox is wanted
+                if (contentWarning.checked) {
+                    root.backend.spoilerText = text
+                }
+            }
         }
 
         QQC2.TextArea {
@@ -422,6 +427,14 @@ Kirigami.ScrollablePage {
                             checkable: true
                             QQC2.ToolTip {
                                 text: i18n("Content Warning")
+                            }
+                            onCheckedChanged: {
+                                // Clear existing content warning if not checked
+                                if (!checked) {
+                                    root.backend.spoilerText = "";
+                                } else {
+                                    root.backend.spoilerText = contentWarningField.text;
+                                }
                             }
                         }
                         QQC2.ToolButton {
