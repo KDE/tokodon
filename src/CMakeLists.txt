@@ -26,6 +26,11 @@ ecm_qt_declare_logging_category(tokodon_static
 
 target_sources(tokodon_static
     PRIVATE
+
+    # Shell
+    tokodonapplication.cpp
+    tokodonapplication.h
+
     # Account
     account/abstractaccount.cpp
     account/abstractaccount.h
@@ -397,6 +402,7 @@ target_link_libraries(tokodon_static
         KF6::ConfigGui
         KF6::CoreAddons
         KF6::ColorScheme
+        KirigamiAddonsStatefulApp
         ${QTKEYCHAIN_LIBRARIES}
 )
 

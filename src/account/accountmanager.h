@@ -206,6 +206,11 @@ public:
      */
     static QString accessTokenKey(const QString &name);
 
+    /**
+     * @return The list of accounts
+     */
+    QList<AbstractAccount *> accounts() const;
+
 Q_SIGNALS:
 
     void accountAdded(AbstractAccount *account);

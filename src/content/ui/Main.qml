@@ -9,14 +9,18 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
-import org.kde.tokodon.private
-import org.kde.kirigamiaddons.delegates 1 as Delegates
+import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import "./StatusComposer"
 import "./PostDelegate"
 
-Kirigami.ApplicationWindow {
+StatefulApp.StatefulWindow {
     id: root
+
+    application: TokodonApplication {
+        accountManager: AccountManager
+    }
 
     title: pageStack.currentItem?.title ?? ""
 
@@ -88,6 +92,11 @@ Kirigami.ApplicationWindow {
         crossActionDialog.action = action;
         crossActionDialog.url = url;
         crossActionDialog.open();
+    }
+
+    StatefulApp.Action {
+        application: root.application
+        actionName: 'open_kcommand_bar'
     }
 
     ReportDialog {
@@ -190,6 +199,20 @@ Kirigami.ApplicationWindow {
 
         function onAccountsReady(): void {
             root.startupAccountCheck();
+        }
+    }
+
+    Connections {
+        target: root.application
+
+        function onOpenConfigurations(): void {
+            ConfigurationsView.open();
+        }
+
+        function onConfigureAccount(account: AbstractAccount): void {
+            root.pageStack.layers.push("./Settings/ProfileEditor.qml", {
+                account: account,
+            });
         }
     }
 
@@ -465,15 +488,17 @@ Kirigami.ApplicationWindow {
             }
 
             Delegates.RoundedItemDelegate {
+                action: StatefulApp.Action {
+                    actionName: 'options_configure'
+                    application: root.application
+                }
                 text: i18nc("@action:button Open settings dialog", "Settings")
-                icon.name: 'settings-configure-symbolic'
                 padding: Kirigami.Units.largeSpacing
                 activeFocusOnTab: true
-
-                Layout.fillWidth: true
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-
                 onClicked: TokodonConfigurationView.open()
+
+                Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
+                Layout.fillWidth: true
             }
         }
     }

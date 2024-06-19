@@ -11,6 +11,7 @@
 #include "utils/customemoji.h"
 
 #include <QJsonObject>
+#include <QtQml/qqmlregistration.h>
 
 class Attachment;
 class Notification;
@@ -27,6 +28,8 @@ class Preferences;
 class AbstractAccount : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Abstract class")
 
     Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
 

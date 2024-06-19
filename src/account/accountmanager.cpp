@@ -580,4 +580,9 @@ void AccountManager::queueNotifications()
     }
 }
 
+QList<AbstractAccount *> AccountManager::accounts() const
+{
+    return m_accounts;
+}
+
 #include "moc_accountmanager.cpp"
