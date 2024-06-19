@@ -135,7 +135,9 @@ Kirigami.ScrollablePage {
         }
 
         function onLoadingChanged() {
-            root.completedInitialLoad = true;
+            if (!root.model.loading) {
+                root.completedInitialLoad = true;
+            }
         }
     }
 
