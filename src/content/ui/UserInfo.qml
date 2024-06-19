@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.tokodon
 
@@ -15,6 +16,7 @@ QQC2.Pane {
 
     property alias accountsListVisible: accounts.visible
     property var addAccount
+    required property TokodonApplication application
 
     visible: AccountManager.selectedAccount
     padding: 0
@@ -129,8 +131,13 @@ QQC2.Pane {
                     width: Kirigami.Units.iconSizes.medium
                     height: Kirigami.Units.iconSizes.medium
                 }
-                text: i18n("Add Account")
                 enabled: AccountManager.hasAccounts && applicationWindow().pageStack.depth > 0 && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
+
+
+                action: StatefulApp.Action {
+                    application: root.application
+                    actionName: 'add_account'
+                }
 
                 contentItem: Delegates.SubtitleContentItem {
                     itemDelegate: addAccountDelegaze
@@ -138,7 +145,6 @@ QQC2.Pane {
                 }
 
                 onClicked: {
-                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
                 }

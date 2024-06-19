@@ -11,11 +11,14 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.tokodon
 
 FormCard.FormCardPage {
     id: root
+
+    required property TokodonApplication application
 
     FormCard.FormCard {
         id: accountsCard
@@ -82,9 +85,10 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             id: addAccountDelegate
-            text: i18n("Add Account")
-            icon.name: "list-add"
-            onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"))
+            action: StatefulApp.Action {
+                application: root.application
+                actionName: 'add_account'
+            }
         }
     }
 }

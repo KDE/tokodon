@@ -168,6 +168,7 @@ StatefulApp.StatefulWindow {
 
     Component.onCompleted: {
         TokodonConfigurationView.window = root;
+        TokodonConfigurationView.application = root.application;
 
         if (AccountManager.isReady) {
             startupAccountCheck();
@@ -210,9 +211,13 @@ StatefulApp.StatefulWindow {
         }
 
         function onConfigureAccount(account: AbstractAccount): void {
-            root.pageStack.layers.push("./Settings/ProfileEditor.qml", {
+            root.pageStack.pushDialogLayers("./Settings/ProfileEditor.qml", {
                 account: account,
             });
+        }
+
+        function onAddAccount(): void {
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
         }
     }
 
@@ -365,6 +370,7 @@ StatefulApp.StatefulWindow {
 
             UserInfo {
                 Layout.fillWidth: true
+                application: root.application
             }
 
             Kirigami.Separator {
@@ -459,20 +465,12 @@ StatefulApp.StatefulWindow {
                 padding: Kirigami.Units.largeSpacing
                 activeFocusOnTab: true
 
-                Layout.fillWidth: true
-<<<<<<< HEAD
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-
-                onClicked: TokodonConfigurationView.open()
-||||||| parent of b2fcb8b2 (Add command bar from Kirigami Addons)
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-
                 onClicked: {
-                    ConfigurationsView.open();
+                    TokodonConfigurationView.open();
                 }
-=======
+
+                Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
->>>>>>> b2fcb8b2 (Add command bar from Kirigami Addons)
             }
         }
     }
