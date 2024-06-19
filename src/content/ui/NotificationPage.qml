@@ -127,10 +127,11 @@ Kirigami.ScrollablePage {
         Connections {
             target: timelinePage.currentModel
             function onPostSourceReady(backend) {
-                pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                     purpose: StatusComposer.Edit,
                     backend: backend
                 });
+                item.refreshData(); // to refresh spoiler text, etc
             }
         }
 

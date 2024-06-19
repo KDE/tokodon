@@ -125,10 +125,11 @@ Kirigami.ScrollablePage {
     Connections {
         target: root.model
         function onPostSourceReady(backend, isEdit) {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+            const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                 purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                 backend: backend
             });
+            item.refreshData(); // to refresh spoiler text, etc
         }
 
         function onLoadingChanged() {
