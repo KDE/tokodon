@@ -68,6 +68,13 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
                 m_configureUserActions[account]->setText(i18nc("@action:button", "Configure '%1'", account->identity()->displayNameHtml()));
             }
         });
+
+        auto actionName = u"add_account"_s;
+        if (KAuthorized::authorizeAction(actionName)) {
+            auto addAccount = m_accountCollection->addAction(actionName, this, &TokodonApplication::addAccount);
+            addAccount->setText(i18nc("@action:button", "Add Account"));
+            addAccount->setIcon(QIcon::fromTheme(QStringLiteral("list-add-user-symbolic")));
+        }
     }
 }
 

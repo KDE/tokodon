@@ -4,10 +4,14 @@
 pragma Singleton
 
 import QtQuick
+
+import org.kde.tokodon
 import org.kde.kirigamiaddons.settings as KirigamiSettings
 
 KirigamiSettings.ConfigurationView {
     id: root
+
+    property TokodonApplication application
 
     modules: [
         KirigamiSettings.ConfigurationModule {
@@ -27,6 +31,11 @@ KirigamiSettings.ConfigurationView {
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
             page: () => Qt.createComponent("org.kde.tokodon", "AccountsPage")
+            initialProperties: () => {
+                return {
+                    application: root.application
+                };
+            }
         },
         KirigamiSettings.SpellcheckingConfigurationModule {},
         KirigamiSettings.ConfigurationModule {
