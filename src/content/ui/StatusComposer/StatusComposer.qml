@@ -497,7 +497,7 @@ Kirigami.ScrollablePage {
                         case StatusComposer.Redraft:
                             return "edit-redo-symbolic";
                         case StatusComposer.Edit:
-                            return "document-edit-symbolic";
+                            return "document-save-symbolic";
                     }
                 }
                 text: {
@@ -509,7 +509,7 @@ Kirigami.ScrollablePage {
                         case StatusComposer.Redraft:
                             return i18nc("@action:button Send the same post again", "Repost");
                         case StatusComposer.Edit:
-                            return i18nc("@action:Button Edit a post", "Edit");
+                            return i18nc("@action:Button Save an edited a post", "Save");
                     }
                 }
                 enabled: root.isStatusValid && root.isPollValid && (!progress.uploading || backend.attachmentEditorModel.count > 0)
