@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-17 00:39+0000\n"
-"PO-Revision-Date: 2023-09-13 21:42+0200\n"
+"POT-Creation-Date: 2024-06-20 00:39+0000\n"
+"PO-Revision-Date: 2024-06-19 02:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -63,10 +63,9 @@ msgid "Could not edit note about an account"
 msgstr "Kunde inte redigera anmärkning om ett konto"
 
 #: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View Post"
-msgstr "Visa profil"
+msgstr "Visa inlägg"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #, kde-format
@@ -74,10 +73,9 @@ msgid "View Profile"
 msgstr "Visa profil"
 
 #: account/notificationhandler.cpp:74
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 mentioned you"
-msgstr "%1 följer dig"
+msgstr "%1 nämnde dig"
 
 #: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
@@ -97,10 +95,9 @@ msgid "%1 followed you"
 msgstr "%1 följer dig"
 
 #: account/notificationhandler.cpp:106
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 följer dig"
+msgstr "%1 begärde att få följa dig"
 
 #: account/notificationhandler.cpp:114
 #: content/ui/Notifications/UserInteractionLabel.qml:80
@@ -109,10 +106,9 @@ msgid "%1 favorited your post"
 msgstr "%1 markerade ditt inlägg som favorit"
 
 #: account/notificationhandler.cpp:122
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll by %1 has ended"
-msgstr "En opinionsundersökning har avslutats"
+msgstr "Opinionsundersökning av %1 har avslutats"
 
 #: account/notificationhandler.cpp:130
 #, kde-format
@@ -156,22 +152,19 @@ msgstr "Följer"
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr ""
+msgstr "Tystade användare"
 
 #: account/socialgraphmodel.cpp:35
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Blockerad"
+msgstr "Blockerade användare"
 
 #: account/socialgraphmodel.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Accounts"
+#, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Utvalda konton"
+msgstr "Utvalda användare"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
@@ -200,28 +193,24 @@ msgid "No followers"
 msgstr "Inga följare"
 
 #: account/socialgraphmodel.cpp:53
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No followed users"
-msgstr "Inga följare"
+msgstr "Inga följda användare"
 
 #: account/socialgraphmodel.cpp:55
-#, fuzzy, kde-format
-#| msgid "No muted accounts"
+#, kde-format
 msgid "No muted users"
-msgstr "Inga tystade konton"
+msgstr "Inga tystade användare"
 
 #: account/socialgraphmodel.cpp:57
-#, fuzzy, kde-format
-#| msgid "No blocked accounts"
+#, kde-format
 msgid "No blocked users"
-msgstr "Inga blockerade konton"
+msgstr "Inga blockerade användare"
 
 #: account/socialgraphmodel.cpp:59
-#, fuzzy, kde-format
-#| msgid "No featured accounts"
+#, kde-format
 msgid "No featured users"
-msgstr "Inga utvalda konton"
+msgstr "Inga utvalda användare"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
@@ -275,14 +264,10 @@ msgid "Suspended"
 msgstr "Avstängd"
 
 #: admin/adminaccountinfo.cpp:24
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Prevent the user from being able to post with public visibility, "
-#| "hide their posts and notifications from people not following them."
-#| msgid "Limit"
+#, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Begränsa"
+msgstr "Begränsad"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
@@ -321,28 +306,24 @@ msgstr ""
 "Fel uppstod när en PUT-begäran utfördes för att uppdatera domänblocket."
 
 #: admin/reporttoolmodel.cpp:194
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not resolve report"
-msgstr "Kunde inte avvisa konto"
+msgstr "Kunde inte lösa rapport"
 
 #: admin/reporttoolmodel.cpp:195
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unresolve report"
-msgstr "Kunde inte sluta tysta konto"
+msgstr "Kunde inte ta bort lösning av rapport"
 
 #: admin/reporttoolmodel.cpp:196
-#, fuzzy, kde-format
-#| msgid "Could not accept account"
+#, kde-format
 msgid "Could not assign report"
-msgstr "Kunde inte acceptera konto"
+msgstr "Kunde inte tilldela rapport"
 
 #: admin/reporttoolmodel.cpp:197
-#, fuzzy, kde-format
-#| msgid "Could not unsilence the account"
+#, kde-format
 msgid "Could not unassign report"
-msgstr "Kunde inte sluta tysta konto"
+msgstr "Kunde inte ta bort tilldelning av rapport"
 
 #: content/ui/AccountInfo.qml:119
 #, kde-format
@@ -350,16 +331,14 @@ msgid "Follows you"
 msgstr "Följer dig"
 
 #: content/ui/AccountInfo.qml:213
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "Follow Requested"
 msgstr "Förfrågan om att följa"
 
 #: content/ui/AccountInfo.qml:216
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgid "Unfollow"
-msgstr "Följ"
+msgstr "Sluta följ"
 
 #: content/ui/AccountInfo.qml:218
 #, kde-format
@@ -367,16 +346,14 @@ msgid "Follow"
 msgstr "Följ"
 
 #: content/ui/AccountInfo.qml:243
-#, fuzzy, kde-format
-#| msgid "Stop notifying me when %1 posts"
+#, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Sluta underrätta mig när %1 skickar ett inlägg"
+msgstr "Sluta underrätta mig när %1 skickar ett inlägg."
 
 #: content/ui/AccountInfo.qml:245
-#, fuzzy, kde-format
-#| msgid "Notify me when %1 posts"
+#, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Underrätta mig när %1 skickar ett inlägg"
+msgstr "Underrätta mig när %1 skickar ett inlägg."
 
 #: content/ui/AccountInfo.qml:262
 #, kde-format
@@ -384,27 +361,24 @@ msgid "Hide Boosts from %1"
 msgstr "Dölj förstärkningar från %1"
 
 #: content/ui/AccountInfo.qml:264
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts from %1"
-msgstr "Sluta dölja förstärkningar från %1"
+msgstr "Visa förstärkningar från %1"
 
 #: content/ui/AccountInfo.qml:280
-#, fuzzy, kde-format
-#| msgid "Stop Featuring on Profile"
+#, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Sluta presentera i profil"
+msgstr "Sluta välja ut profil"
 
 #: content/ui/AccountInfo.qml:282
-#, fuzzy, kde-format
-#| msgid "Feature on Profile"
+#, kde-format
 msgid "Feature This Profile"
-msgstr "Välj ut i profil"
+msgstr "Välj ut profil"
 
 #: content/ui/AccountInfo.qml:298
 #, kde-format
 msgid "Unmute"
-msgstr ""
+msgstr "Sluta tysta"
 
 #: content/ui/AccountInfo.qml:300
 #, kde-format
@@ -412,10 +386,9 @@ msgid "Mute"
 msgstr "Tysta"
 
 #: content/ui/AccountInfo.qml:316
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgid "Unblock"
-msgstr "Blockera"
+msgstr "Sluta blockera"
 
 #: content/ui/AccountInfo.qml:318
 #, kde-format
@@ -423,12 +396,10 @@ msgid "Block"
 msgstr "Blockera"
 
 #: content/ui/AccountInfo.qml:332 content/ui/PostDelegate/PostMenu.qml:167
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Skicka igen"
+msgstr "Rapportera…"
 
 #: content/ui/AccountInfo.qml:338
 #, kde-format
@@ -455,37 +426,32 @@ msgstr "Förfrågan om att följa"
 #: content/ui/AccountInfo.qml:360
 #, kde-format
 msgid "Muted Users"
-msgstr ""
+msgstr "Tystade användare"
 
 #: content/ui/AccountInfo.qml:366
-#, fuzzy, kde-format
-#| msgid "Blocked at"
+#, kde-format
 msgid "Blocked Users"
-msgstr "Blockerad"
+msgstr "Blockerade användare"
 
 #: content/ui/AccountInfo.qml:372
-#, fuzzy, kde-format
-#| msgid "Featured Accounts"
+#, kde-format
 msgid "Featured Users"
-msgstr "Utvalda konton"
+msgstr "Utvalda användare"
 
 #: content/ui/AccountInfo.qml:377
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgid "Copy Link"
 msgstr "Kopiera länk"
 
 #: content/ui/AccountInfo.qml:380
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Profile link copied."
-msgstr "Inläggslänk kopierad"
+msgstr "Profillänk kopierad."
 
 #: content/ui/AccountInfo.qml:470
-#, fuzzy, kde-format
-#| msgid "Note"
+#, kde-format
 msgid "Note:"
-msgstr "Anmärkning"
+msgstr "Anmärkning:"
 
 #: content/ui/AccountInfo.qml:478
 #, kde-format
@@ -546,9 +512,7 @@ msgid "Hide boosts"
 msgstr "Dölj förstärkningar"
 
 #: content/ui/AccountInfo.qml:714
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Alla"
@@ -568,19 +532,19 @@ msgstr "Dela de markerade medierna"
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr ""
+msgstr "Kungörelser"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr ""
+msgstr "Kungörelse %1"
 
 #: content/ui/AnnouncementsPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "No announcements"
-msgstr ""
+msgstr "Inga kungörelser"
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -606,93 +570,81 @@ msgid "No Conversations"
 msgstr "Inga konversationer"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr "Ingen förfrågan om att följa"
+msgstr "Öka antalet förfrågningar om att följa"
 
 #: content/ui/Debug/DebugPage.qml:28
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr "Ingen förfrågan om att följa"
+msgstr "Minska antalet förfrågningar om att följa"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Skapad"
+msgstr "Skapa lista"
 
 #: content/ui/EditListPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Redigera"
+msgstr "Redigera lista"
 
 #: content/ui/EditListPage.qml:60
-#, fuzzy, kde-format
-#| msgid "@title"
+#, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr "@titel"
+msgstr "Titel"
 
 #: content/ui/EditListPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "%1 svar"
+msgstr "Visa svar för"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr ""
+msgstr "Exklusiv"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr ""
+msgstr "Inlägg i en exklusiv lista undantas från tidslinjen i Hem."
 
 #: content/ui/EditListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "Skapad"
+msgstr "Skapa"
 
 #: content/ui/EditListPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Redigera"
 
 #: content/ui/EditListPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Ta bort"
 
 #: content/ui/EditListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Ta bort ord"
+msgstr "Tar bort lista"
 
 #: content/ui/EditListPage.qml:125
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort listan?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:591
 #, kde-format
@@ -700,47 +652,42 @@ msgid "Explore"
 msgstr "Utforska"
 
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:93
-#, fuzzy, kde-format
-#| msgid "Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Post"
 msgstr "Skicka"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgid "Posts"
 msgstr "Inlägg"
 
 #: content/ui/ExplorePage.qml:60
-#, fuzzy, kde-format
-#| msgid "No Tags"
+#, kde-format
 msgid "Tags"
-msgstr "Inga etiketter"
+msgstr "Etiketter"
 
-#: content/ui/ExplorePage.qml:140
+#: content/ui/ExplorePage.qml:141
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1 person talar"
 msgstr[1] "%1 personer talar"
 
-#: content/ui/ExplorePage.qml:157
+#: content/ui/ExplorePage.qml:158
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
 msgstr "Inga trendande inlägg"
 
-#: content/ui/ExplorePage.qml:157
+#: content/ui/ExplorePage.qml:158
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Inga trendande etiketter"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
 msgstr "Underrättelser"
@@ -749,7 +696,7 @@ msgstr "Underrättelser"
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr ""
+msgstr "Inställning krävs"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
@@ -759,12 +706,15 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon kan visa underrättelser om aktiviteter som att användare förstärker "
+"eller svarar på dina inlägg.\n"
+"\n"
+"De typer av underrättelser som visas kan finjusteras när du är inloggad."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgid "Allow Notifications"
-msgstr "Inga underrättelser"
+msgstr "Tillåt underrättelser"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -776,11 +726,10 @@ msgid "Continue"
 msgstr "Fortsätt"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Lösenord"
+msgstr "Lösenordstjänst"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -792,19 +741,25 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"Tokodon kräver att en lösenordstjänst körs för att spara personligt känslig "
+"information.\n"
+"\n"
+"Tokodon kan använda plånboken, GNOME:s nyckelring eller vilken tjänst som "
+"helst kompatibel med libsecret.\n"
+"\n"
+"När du har installerat tjänsten, se till att den körs och starta om Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "Quit Tokodon"
-msgstr "Om Tokodon"
+msgstr "Avsluta Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Välkommen"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
 #: content/ui/LoginFlow/WelcomePage.qml:30
@@ -815,18 +770,16 @@ msgstr "Välkommen till Tokodon"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Viss inledande inställning krävs innan Tokodon kan användas."
 
 #: content/ui/LanguageSelector.qml:25
-#, fuzzy, kde-format
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Standardspråk"
+msgstr "Välj ett språk"
 
 #: content/ui/LanguageSelector.qml:48
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button"
 msgid "Close"
 msgstr "Stäng"
@@ -835,53 +788,47 @@ msgstr "Stäng"
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr ""
+msgstr "Listor"
 
 #: content/ui/ListsPage.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@info:Time when the domain was allowed to federate."
-#| msgid "Created at"
+#, kde-format
 msgid "Create List"
-msgstr "Skapad"
+msgstr "Skapa lista"
 
 #: content/ui/ListsPage.qml:67
 #, kde-format
 msgid "No lists"
-msgstr ""
+msgstr "Inga listor"
 
 #: content/ui/ListTimelinePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit List"
-msgstr "Redigera"
+msgstr "Redigera lista"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Behörighet"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
-msgstr "Fortsätt genom att öppna följande länk och godkänna Tokodon:%1"
+msgstr ""
+"För att fortsätta, öppna följande länk i webbläsaren för att godkänna "
+"Tokodon:%1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Behörighet"
+msgstr "Öppna behörighetslänk"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Behörighet"
+msgstr "Kopiera behörighetslänk"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -889,33 +836,30 @@ msgid "Link copied."
 msgstr "Länk kopierad."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Behörighet"
+msgstr "Använd behörighetskod"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Använd den här inloggningsmetoden om ovanstående länk inte fungerar."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Ange token:"
+msgstr "Ange behörighetssymbol:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Logga in"
+msgstr "Inloggningsproblem"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Ett problem uppstod vid försök att logga in på servern:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
 #, kde-format
@@ -925,20 +869,23 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
+"Kontrollera om lösenordstjänsten körs. För andra inloggningsproblem kan du "
+"prova att logga in på serverns webbplats.\n"
+"\n"
+"Du kan försöka logga in igen med knappen nedan eller starta om Tokodon."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Visa webbplats"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:56
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Försök logga in igen"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login"
 msgstr "Logga in"
@@ -948,12 +895,10 @@ msgstr "Logga in"
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
 #: content/ui/LoginFlow/ServersPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@info:status Network status"
-#| msgid "Failed to contact server: %1. Please check your settings."
+#, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "Misslyckades ansluta till server: %1. Kontrollera inställningarna."
+msgstr "Misslyckades kontakta server: %1. Kontrollera proxyinställningarna."
 
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -966,8 +911,7 @@ msgid "Proxy Settings"
 msgstr "Proxyinställningar"
 
 #: content/ui/LoginFlow/LoginPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Logga in"
@@ -976,14 +920,13 @@ msgstr "Logga in"
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
-msgstr ""
+msgstr "Serverwebbadress:"
 
 #: content/ui/LoginFlow/LoginPage.qml:108
 #: content/ui/LoginFlow/ServersPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Mastodon client"
+#, kde-format
 msgid "mastodon.social"
-msgstr "Mastodon-klient"
+msgstr "mastodon,social"
 
 #: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
@@ -991,28 +934,22 @@ msgid "Enable moderation tools"
 msgstr "Aktivera modereringsverktyg"
 
 #: content/ui/LoginFlow/LoginPage.qml:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow Tokodon to access moderation tools. Try disabling this if you have "
-#| "trouble logging into your server."
+#, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
 "Tillåt Tokodon att komma åt modereringsverktyg. Försök att inaktivera det om "
-"du har problem med att logga in på servern."
+"du har problem med att logga in."
 
 #: content/ui/LoginFlow/LoginPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty!"
-msgstr "Instanswebbadressen får inte vara tom."
+msgstr "Serverwebbadressen får inte vara tom."
 
 #: content/ui/LoginFlow/LoginPage.qml:153
 #: content/ui/LoginFlow/ServersPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "@title:group Login page"
-#| msgid "Network Settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Nätverksinställningar"
@@ -1025,30 +962,26 @@ msgid "Ignore SSL errors"
 msgstr "Ignorera SSL-fel"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "The location being downloaded to"
-#| msgid "Destination"
+#, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Mål"
+msgstr "Registrering"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr ""
+msgstr "Registrera"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder Username for searching accounts"
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Användarnamn:"
+msgstr "Användarnamn"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
-msgstr ""
+msgstr "E-postadress"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:123
@@ -1059,77 +992,70 @@ msgstr "Lösenord"
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
-msgstr ""
+msgstr "Orsak"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
 #: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
-msgstr ""
+msgstr "Registrera"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "IP-regler"
+msgstr "Regler"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "IP Rules"
+#, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "IP-regler"
+msgstr "Regler"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr ""
+msgstr "Godkänn"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts with disabled moderation status"
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "Inaktiverad"
+msgstr "Avvisa"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Välj en server"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Servern är stängd för registrering: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr ""
+msgstr "Välj en server"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Instance URL must not be empty!"
+#, kde-format
 msgid "Server URL must not be empty."
-msgstr "Instanswebbadressen får inte vara tom."
+msgstr "Serverwebbadressen får inte vara tom."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Öppna externt"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
 msgid "Learn More"
-msgstr ""
+msgstr "Ta reda på mer"
 
 #: content/ui/LoginFlow/WelcomePage.qml:54
 #, kde-format
@@ -1140,44 +1066,37 @@ msgstr "Logga in"
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr ""
+msgstr "Öppna som…"
 
 #: content/ui/Main.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Svara"
+msgstr "Svara som…"
 
 #: content/ui/Main.qml:110
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Favoriter"
+msgstr "Favorit som…"
 
 #: content/ui/Main.qml:112
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Förstärkningar"
+msgstr "Förstärk som…"
 
 #: content/ui/Main.qml:114
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Bokmärken"
+msgstr "Bokmärk som…"
 
 #: content/ui/Main.qml:116
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr ""
+msgstr "Okänd åtgärd"
 
 #: content/ui/Main.qml:224
 #, kde-format
@@ -1188,7 +1107,7 @@ msgstr "Skriv ett nytt inlägg"
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr ""
+msgstr "Felsök"
 
 #: content/ui/Main.qml:433
 #, kde-format
@@ -1236,18 +1155,18 @@ msgstr "Sök"
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
-msgstr ""
+msgstr "Kungörelser"
 
 #: content/ui/Main.qml:635
 #, kde-format
 msgid "Lists"
-msgstr ""
+msgstr "Listor"
 
 #: content/ui/Main.qml:787
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr ""
+msgstr "Inbädda information"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
@@ -2196,8 +2115,7 @@ msgid "Reject media"
 msgstr "Avvisa media"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Reject reports"
+#, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
 msgstr "Avvisa rapporter"
@@ -2327,160 +2245,139 @@ msgid "Update IP Rule"
 msgstr "Uppdatera IP-regel"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Report #%1"
-msgstr "Skicka igen"
+msgstr "Rapport nr. %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "Markera som olöst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
 msgid "Mark as resolved"
-msgstr ""
+msgstr "Markera som löst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:54
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Rapportera olösta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:57
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Rapportera lösta"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
 msgstr "Inlägg"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
 msgstr "Följare"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Following"
+#, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
 msgstr "Följer"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:160
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "Gick med"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info The last time the account was active."
-#| msgid "Last Active"
+#, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
 msgstr "Senast aktiv"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:168
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "Skicka igen"
+msgstr "Rapporterad"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "Skicka igen"
+msgstr "Rapporterad"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:188
 #, kde-format
 msgid "Reported By"
-msgstr ""
+msgstr "Rapporterad av"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Report Status"
-msgstr "Inloggningsstatus"
+msgstr "Rapportstatus"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgid "Resolved"
-msgstr "Lös upp domän"
+msgstr "Löst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "Olöst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:211
-#, fuzzy, kde-format
-#| msgid "Action taken successfully"
+#, kde-format
 msgid "Action taken by"
-msgstr "Åtgärden utförd med lyckat resultat"
+msgstr "Åtgärden utförd av"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Tilldelad moderator"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "No one"
-msgstr ""
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Otilldelad"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "Tilldela till mig"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:243
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Vidarebefordrad"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "Ingen"
+msgstr "Nej"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:253
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:257
 #, kde-format
@@ -2488,58 +2385,61 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Anledningen till att kontot och/eller innehållet rapporterades anges vid "
+"kommunikation med det rapporterade kontot"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:269
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Annan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:274
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Kategori ändrad till annan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:285
 #, kde-format
 msgid "Spam"
-msgstr ""
+msgstr "Skräpinlägg"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Category changed to spam"
-msgstr ""
+msgstr "Kategori ändrad till skräpinlägg"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Innehållet bryter mot en eller flera serverregler"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:304
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Kategori ändrad till regelbrott"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:347
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "För att tillhandahålla mer information, skrev %1:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr ""
+msgstr "Inte tillgänglig"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:372
 #, kde-format
 msgid "Reported Content"
-msgstr ""
+msgstr "Rapporterat innehåll"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:376
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
+"Kränkande innehåll citeras vid kommunikation med det rapporterade kontot"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:407
 #: content/ui/PostDelegate/PostDelegate.qml:311
@@ -2566,11 +2466,9 @@ msgid "Accounts"
 msgstr "Konton"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgid "Reports"
-msgstr "Skicka igen"
+msgstr "Rapporter"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:26
 #, kde-format
@@ -2596,52 +2494,43 @@ msgid "Accounts Tool Page"
 msgstr "Kontoverktygssida"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Inloggningsstatus"
+msgstr "Rapportstatus"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr ""
+msgstr "Olöst"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Resolve domain"
+#, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "Lös upp domän"
+msgstr "Löst"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Rapportera ursprung"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
 msgstr "Alla"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
 msgstr "Lokal"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out remote accounts"
-#| msgid "Remote"
+#, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
 msgstr "Fjärr"
@@ -2649,25 +2538,23 @@ msgstr "Fjärr"
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr ""
+msgstr "Rapporterad av:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Assigned Account:"
-msgstr "Lägg till konto"
+msgstr "Tilldelat konto:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr ""
+msgstr "Inte tillgängligt"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
-#, fuzzy, kde-format
-#| msgid "No accounts found"
+#, kde-format
 msgid "No reports found"
-msgstr "Inga konton hittades"
+msgstr "Inga rapporter hittades"
 
 #: content/ui/NotificationPage.qml:32
 #, kde-format
@@ -2711,7 +2598,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Följer"
 
-#: content/ui/NotificationPage.qml:210
+#: content/ui/NotificationPage.qml:211
 #, kde-format
 msgid "No Notifications"
 msgstr "Inga underrättelser"
@@ -2749,17 +2636,17 @@ msgstr "%1 uppdaterade sitt inlägg"
 #: content/ui/PostDelegate/AttachmentGrid.qml:75
 #, kde-format
 msgid "Status with image attachment"
-msgstr ""
+msgstr "Status med bildbilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:77
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr ""
+msgstr "Status med GIFV-bilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:79
 #, kde-format
 msgid "Status with Video attachment"
-msgstr ""
+msgstr "Status med videobilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:168
 #, kde-format
@@ -2767,20 +2654,16 @@ msgid "Not available"
 msgstr "Inte tillgänglig"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Media"
+msgstr "Dölj media"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:300
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
-msgstr "Media"
+msgstr "Dölj media"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:311
 #, kde-format
@@ -2790,39 +2673,34 @@ msgstr "Media dold"
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
 msgid "Save Image As…"
-msgstr ""
+msgstr "Spara bild som…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Save Gif As…"
-msgstr "Favoriter"
+msgstr "Spara GIF som…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Save Video As…"
-msgstr "Favoriter"
+msgstr "Spara video som…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopiera bild"
 
 #: content/ui/PostDelegate/InformationBar.qml:26
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "Inskickad %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "via %1"
+#, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
-msgstr "via %1"
+msgstr ", via %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
 #: content/ui/PostDelegate/InformationBar.qml:87
@@ -2851,20 +2729,14 @@ msgid "Direct Message"
 msgstr "Direkt meddelande"
 
 #: content/ui/PostDelegate/InformationBar.qml:104
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 favorit"
 msgstr[1] "%1 favoriter"
 
 #: content/ui/PostDelegate/InformationBar.qml:123
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boost"
-#| msgid_plural "%1 boosts"
+#, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "%1 förstärkning"
@@ -2876,17 +2748,15 @@ msgid "Link preview: %1"
 msgstr "Förhandsgranskning av länk: %1"
 
 #: content/ui/PostDelegate/MediaContainer.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@info:Filter out accounts from any location"
-#| msgid "All"
+#, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr "Alla"
+msgstr "Alt"
 
 #: content/ui/PostDelegate/MediaContainer.qml:111
 #, kde-format
 msgid "Text description available"
-msgstr ""
+msgstr "Textbeskrivning tillgänglig"
 
 #: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
@@ -2899,18 +2769,14 @@ msgid "Video"
 msgstr "Video"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@info: Email confirmation status of the user."
-#| msgid "Email Status"
+#, kde-format
 msgid "Normal Status"
-msgstr "E-poststatus"
+msgstr "Normal status"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@info The current login status of the account."
-#| msgid "Login Status"
+#, kde-format
 msgid "Spoiler Status"
-msgstr "Inloggningsstatus"
+msgstr "Spoilerstatus"
 
 #: content/ui/PostDelegate/PostDelegate.qml:141
 #, kde-format
@@ -2923,31 +2789,28 @@ msgid "Show anyway"
 msgstr "Visa ändå"
 
 #: content/ui/PostDelegate/PostDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Visa profil"
+msgstr "Uppfäst inlägg"
 
 #: content/ui/PostDelegate/PostDelegate.qml:228
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Ta bort ord"
+msgstr "Ta bort inlägg"
 
 #: content/ui/PostDelegate/PostDelegate.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort inlägget?"
 
 #: content/ui/PostDelegate/PostDelegate.qml:244
-#, fuzzy, kde-format
-#| msgid "Delete & Re-draft"
+#, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Ta bort och skapa nytt utkast"
+msgstr "Ta bort och gör om inlägg"
 
 #: content/ui/PostDelegate/PostDelegate.qml:245
 #, kde-format
@@ -2956,6 +2819,7 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Är du säker på att du vill återkalla inlägget? Det tar bort originalinlägget."
 
 #: content/ui/PostDelegate/PostDelegate.qml:422
 #, kde-format
@@ -2966,12 +2830,12 @@ msgstr "Svara"
 #: content/ui/PostDelegate/PostDelegate.qml:449
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr ""
+msgstr "Kan inte förstärka direktmeddelanden"
 
 #: content/ui/PostDelegate/PostDelegate.qml:451
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr ""
+msgstr "Kan inte förstärka privata meddelanden"
 
 #: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
@@ -2980,16 +2844,12 @@ msgid "Boost"
 msgstr "Förstärk"
 
 #: content/ui/PostDelegate/PostDelegate.qml:458
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boosted"
-msgstr "Förstärk"
+msgstr "Förstärkt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:458
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
+#, kde-format
 msgid "Boost"
 msgstr "Förstärk"
 
@@ -3000,16 +2860,14 @@ msgid "Favorite"
 msgstr "Favorit"
 
 #: content/ui/PostDelegate/PostDelegate.qml:481
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourited"
-msgstr "Favoriter"
+msgstr "Favorit"
 
 #: content/ui/PostDelegate/PostDelegate.qml:481
-#, fuzzy, kde-format
-#| msgid "Favourites"
+#, kde-format
 msgid "Favourite"
-msgstr "Favoriter"
+msgstr "Favorit"
 
 #: content/ui/PostDelegate/PostDelegate.qml:500
 #, kde-format
@@ -3023,10 +2881,9 @@ msgid "Bookmark"
 msgstr "Bokmärk"
 
 #: content/ui/PostDelegate/PostDelegate.qml:503
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgid "Bookmarked"
-msgstr "Bokmärke"
+msgstr "Bokmärkt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:503
 #, kde-format
@@ -3039,20 +2896,20 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
+"Inlägget har markerats som privat. Vissa inlägg kan saknas eftersom svar på "
+"det normalt också är markerade som privata."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, fuzzy, kde-format
-#| msgid "Moderation"
+#, kde-format
 msgctxt "Show more options"
 msgid "More actions"
-msgstr "Moderering"
+msgstr "Fler åtgärder"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, fuzzy, kde-format
-#| msgid "Expand This Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Expandera inlägget"
+msgstr "Expandera inlägg"
 
 #: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
@@ -3060,8 +2917,7 @@ msgid "Open Original Page"
 msgstr "Öppna originalsida"
 
 #: content/ui/PostDelegate/PostMenu.qml:51
-#, fuzzy, kde-format
-#| msgid "Copy Link"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopiera länk"
@@ -3075,69 +2931,58 @@ msgstr "Inläggslänk kopierad"
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr ""
+msgstr "Inbädda"
 
 #: content/ui/PostDelegate/PostMenu.qml:75
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr ""
+msgstr "Öppna som…"
 
 #: content/ui/PostDelegate/PostMenu.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@action:button Reply to a post"
-#| msgid "Reply"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Svara"
+msgstr "Svara som…"
 
 #: content/ui/PostDelegate/PostMenu.qml:89
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Favoriter"
+msgstr "Favorit som…"
 
 #: content/ui/PostDelegate/PostMenu.qml:96
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Förstärkningar"
+msgstr "Förstärk som…"
 
 #: content/ui/PostDelegate/PostMenu.qml:103
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Bokmärken"
+msgstr "Bokmärk som…"
 
 #: content/ui/PostDelegate/PostMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Ta bort bokmärke"
 
 #: content/ui/PostDelegate/PostMenu.qml:111
-#, fuzzy, kde-format
-#| msgid "Bookmark"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
-msgstr "Bokmärke"
+msgstr "Bokmärk"
 
 #: content/ui/PostDelegate/PostMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Unpin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Fäst inte på profil"
 
 #: content/ui/PostDelegate/PostMenu.qml:118
-#, fuzzy, kde-format
-#| msgid "Pin on profile"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Fäst på profil"
@@ -3146,28 +2991,25 @@ msgstr "Fäst på profil"
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "Sluta tysta @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:133
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "Tysta"
+msgstr "Tysta @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:150
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "Blockera"
+msgstr "Sluta blockera @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:152
-#, fuzzy, kde-format
-#| msgid "Block"
+#, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "Blockera"
+msgstr "Blockera @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:176
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
@@ -3204,16 +3046,14 @@ msgid "Vote"
 msgstr "Rösta"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
-#, fuzzy, kde-format
-#| msgid "Hide Boosts from %1"
+#, kde-format
 msgid "Post from %1"
-msgstr "Dölj förstärkningar från %1"
+msgstr "Inlägg från %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
-#, fuzzy, kde-format
-#| msgid "Unlisted post"
+#, kde-format
 msgid "Quoted post"
-msgstr "Olistat inlägg"
+msgstr "Citerat inlägg"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3232,45 +3072,37 @@ msgid "Play"
 msgstr "Spela"
 
 #: content/ui/ReportDialog.qml:22
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Skicka igen"
+msgstr "Rapportera inlägg"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr ""
+msgstr "Rapportera användare"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Orsaker för att gå med"
+msgstr "Orsak för att inlägget rapporteras"
 
 #: content/ui/ReportDialog.qml:40
-#, fuzzy, kde-format
-#| msgid "Reasons for joining"
+#, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Orsaker för att gå med"
+msgstr "Orsak för att användaren rapporteras"
 
 #: content/ui/ReportDialog.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@action:button Send the same post again"
-#| msgid "Repost"
+#, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "Skicka igen"
+msgstr "Rapportera"
 
 #: content/ui/ReportDialog.qml:64
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action"
 msgid "Cancel"
 msgstr "Avbryt"
@@ -3297,10 +3129,9 @@ msgid "No search results"
 msgstr "Inga sökresultat"
 
 #: content/ui/SearchView.qml:54
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Sök efter personer, etiketter och inlägg"
+msgstr "Sök efter användare, etiketter och inlägg"
 
 #: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:127
 #, kde-format
@@ -3308,8 +3139,7 @@ msgid "Add Account"
 msgstr "Lägg till konto"
 
 #: content/ui/Settings/AppearancePage.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Allmänt"
@@ -3320,24 +3150,20 @@ msgid "Color theme"
 msgstr "Färgtema"
 
 #: content/ui/Settings/AppearancePage.qml:38
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Inlägg"
 
 #: content/ui/Settings/AppearancePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Search for peoples, tags and posts"
+#, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Sök efter personer, etiketter och inlägg"
+msgstr "Visa antal svar, favoriter och förstärkningar"
 
 #: content/ui/Settings/AppearancePage.qml:59
-#, fuzzy, kde-format
-#| msgid "Show link preview"
+#, kde-format
 msgid "Show link previews"
-msgstr "Visa förhandsgranskning av länk"
+msgstr "Visa förhandsgranskningar av länkar"
 
 #: content/ui/Settings/AppearancePage.qml:74
 #, kde-format
@@ -3350,16 +3176,13 @@ msgid "Please choose a font"
 msgstr "Välj ett teckensnitt"
 
 #: content/ui/Settings/AppearancePage.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Media"
 
 #: content/ui/Settings/AppearancePage.qml:97
-#, fuzzy, kde-format
-#| msgid "Crop images in the timeline to 16:9"
+#, kde-format
 msgid "Crop images on the timeline to 16x9"
 msgstr "Beskär bilder i tidslinjen till 16:9"
 
@@ -3371,7 +3194,7 @@ msgstr "Spela automatiskt animerade GIF-bilder"
 #: content/ui/Settings/ConfigurationsView.qml:15
 #, kde-format
 msgid "Appearance"
-msgstr ""
+msgstr "Utseende"
 
 #: content/ui/Settings/ConfigurationsView.qml:27
 #, kde-format
@@ -3379,8 +3202,7 @@ msgid "Accounts"
 msgstr "Konton"
 
 #: content/ui/Settings/ConfigurationsView.qml:33
-#, fuzzy, kde-format
-#| msgid "Spellchecking"
+#, kde-format
 msgid "Spell Checking"
 msgstr "Stavningskontroll"
 
@@ -3396,11 +3218,10 @@ msgstr "Om Tokodon"
 
 #: content/ui/Settings/ConfigurationsView.qml:49
 #: content/ui/Settings/ConfigurationsView.qml:56
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Om KDE"
+msgstr "Om"
 
 #: content/ui/Settings/ConfigurationsView.qml:53
 #, kde-format
@@ -3419,10 +3240,9 @@ msgid "System Default"
 msgstr "Systemstandard"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "Nätverksproxy"
+msgstr "Ingen proxy"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3456,15 +3276,14 @@ msgid "Apply"
 msgstr "Verkställ"
 
 #: content/ui/Settings/NotificationsPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "Enable notifications for this account"
-msgstr "Vidta åtgärd mot kontot"
+msgstr "Aktivera underrättelser för kontot"
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr ""
+msgstr "Underrättelser kan visas även när Tokodon inte kör."
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
@@ -3472,73 +3291,64 @@ msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
+"Utskickade underrättelser är tillgängliga men kunde inte aktiveras. Logga ut "
+"och logga in igen."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Underrättelser visas bara när Tokodon kör."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr ""
+msgstr "Typer"
 
 #: content/ui/Settings/NotificationsPage.qml:57
-#, fuzzy, kde-format
-#| msgctxt "Show only mentions"
-#| msgid "Mentions"
+#, kde-format
 msgid "Mentions"
 msgstr "Omnämnanden"
 
 #: content/ui/Settings/NotificationsPage.qml:69
 #, kde-format
 msgid "Statuses"
-msgstr ""
+msgstr "Status"
 
 #: content/ui/Settings/NotificationsPage.qml:81
-#, fuzzy, kde-format
-#| msgctxt "Show only boosts"
-#| msgid "Boosts"
+#, kde-format
 msgid "Boosts"
 msgstr "Förstärkningar"
 
 #: content/ui/Settings/NotificationsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "New followers"
-msgstr "Inga följare"
+msgstr "Nya följare"
 
 #: content/ui/Settings/NotificationsPage.qml:105
-#, fuzzy, kde-format
-#| msgid "No follow requests"
+#, kde-format
 msgid "New follow requests"
-msgstr "Ingen förfrågan om att följa"
+msgstr "Ny förfrågan om att följa"
 
 #: content/ui/Settings/NotificationsPage.qml:117
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
+#, kde-format
 msgid "Favorites"
 msgstr "Favoriter"
 
 #: content/ui/Settings/NotificationsPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgid "Polls"
-msgstr "Bifoga enkät"
+msgstr "Opinionsundersökningar"
 
 #: content/ui/Settings/NotificationsPage.qml:141
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edits"
-msgstr "Redigera"
+msgstr "Redigeringar"
 
 #: content/ui/Settings/ProfileEditor.qml:24
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Edit Account"
-msgstr "Lägg till konto"
+msgstr "Redigera konto"
 
 #: content/ui/Settings/ProfileEditor.qml:28
 #, kde-format
@@ -3551,8 +3361,7 @@ msgid "Please choose a file"
 msgstr "Välj en fil"
 
 #: content/ui/Settings/ProfileEditor.qml:48
-#, fuzzy, kde-format
-#| msgid "Logout"
+#, kde-format
 msgctxt "@title"
 msgid "Logout"
 msgstr "Logga ut"
@@ -3561,7 +3370,7 @@ msgstr "Logga ut"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr ""
+msgstr "Är du säker på att du vill logga ut från %1?"
 
 #: content/ui/Settings/ProfileEditor.qml:81
 #, kde-format
@@ -3598,10 +3407,9 @@ msgstr ""
 "bildpunkter."
 
 #: content/ui/Settings/ProfileEditor.qml:249
-#, fuzzy, kde-format
-#| msgid "Require follow requests"
+#, kde-format
 msgid "Require approval of follow requests"
-msgstr "Kräv begäran om att följa"
+msgstr "Kräv godkännande av förfrågningar om att följa"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3632,22 +3440,19 @@ msgid "Default post visibility"
 msgstr "Standardsynlighet för inlägg"
 
 #: content/ui/Settings/ProfileEditor.qml:304
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
-msgstr "Öppen"
+msgstr "Öppet"
 
 #: content/ui/Settings/ProfileEditor.qml:305
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
-msgstr "Olistad"
+msgstr "Olistat"
 
 #: content/ui/Settings/ProfileEditor.qml:306
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privat"
@@ -3734,8 +3539,7 @@ msgid "Add Word"
 msgstr "Lägg till ord"
 
 #: content/ui/Settings/SonnetPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Delete word"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete word"
 msgstr "Ta bort ord"
@@ -3763,16 +3567,13 @@ msgid "No accounts available"
 msgstr "Inga konton tillgängliga"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@info:label Alternate text or description of the imaage"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Beskrivning"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Focal point"
+#, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Fokuseringspunkt"
@@ -3831,29 +3632,25 @@ msgid "Remove"
 msgstr "Ta bort"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, fuzzy, kde-format
-#| msgid "Edit this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Redigera inlägget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Svara på inlägget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Skriv om inlägget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
-#, fuzzy, kde-format
-#| msgid "Write a new post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Skriv ett nytt inlägg"
@@ -3862,48 +3659,45 @@ msgstr "Skriv ett nytt inlägg"
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr ""
+msgstr "Koppla loss"
 
 #: content/ui/StatusComposer/StatusComposer.qml:128
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr ""
+msgstr "Ta bort utkast"
 
 #: content/ui/StatusComposer/StatusComposer.qml:129
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort utkastet?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
-msgstr ""
+msgstr "Behåll"
 
 #: content/ui/StatusComposer/StatusComposer.qml:217
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "Innehållsvarning"
 
-#: content/ui/StatusComposer/StatusComposer.qml:225
-#, fuzzy, kde-format
-#| msgid "What's new?"
+#: content/ui/StatusComposer/StatusComposer.qml:230
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Vad är en nytt?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:340
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#: content/ui/StatusComposer/StatusComposer.qml:345
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Välj en fil"
 
-#: content/ui/StatusComposer/StatusComposer.qml:343
+#: content/ui/StatusComposer/StatusComposer.qml:348
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3912,180 +3706,168 @@ msgstr ""
 "Alla format som stöds (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:349
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG-bild (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:345
+#: content/ui/StatusComposer/StatusComposer.qml:350
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG-bild (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:346
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF-bild (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:347
+#: content/ui/StatusComposer/StatusComposer.qml:352
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP-bild (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:348
+#: content/ui/StatusComposer/StatusComposer.qml:353
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC-bild (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:354
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF-bild (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:355
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF-bild (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:351
+#: content/ui/StatusComposer/StatusComposer.qml:356
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM-video (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:352
+#: content/ui/StatusComposer/StatusComposer.qml:357
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4-video (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:353
+#: content/ui/StatusComposer/StatusComposer.qml:358
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V-video (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:359
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime-video (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:355
+#: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "All files (*)"
 msgstr "Alla filer (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:357
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#: content/ui/StatusComposer/StatusComposer.qml:362
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Bifoga fil"
 
-#: content/ui/StatusComposer/StatusComposer.qml:368
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#: content/ui/StatusComposer/StatusComposer.qml:373
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
-msgstr "Bifoga enkät"
+msgstr "Bifoga opinionsundersökningen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:398
-#, fuzzy, kde-format
-#| msgid "Local"
+#: content/ui/StatusComposer/StatusComposer.qml:403
+#, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/StatusComposer/StatusComposer.qml:404
-#, fuzzy, kde-format
-#| msgid "Public"
+#: content/ui/StatusComposer/StatusComposer.qml:409
+#, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Öppen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:409
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#: content/ui/StatusComposer/StatusComposer.qml:414
+#, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Olistad"
 
-#: content/ui/StatusComposer/StatusComposer.qml:414
-#, fuzzy, kde-format
-#| msgid "Private"
+#: content/ui/StatusComposer/StatusComposer.qml:419
+#, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:419
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#: content/ui/StatusComposer/StatusComposer.qml:424
+#, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
-msgstr "Direkt meddelande"
+msgstr "Direktmeddelande"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
-#, fuzzy, kde-format
-#| msgid "Visibility"
+#: content/ui/StatusComposer/StatusComposer.qml:429
+#, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Synlighet"
 
-#: content/ui/StatusComposer/StatusComposer.qml:429
-#, fuzzy, kde-format
-#| msgctxt "Short for content warning"
-#| msgid "cw"
+#: content/ui/StatusComposer/StatusComposer.qml:434
+#, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "iv"
 
-#: content/ui/StatusComposer/StatusComposer.qml:432
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#: content/ui/StatusComposer/StatusComposer.qml:437
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "Innehållsvarning"
 
-#: content/ui/StatusComposer/StatusComposer.qml:438
-#, fuzzy, kde-format
-#| msgid "Post Language"
+#: content/ui/StatusComposer/StatusComposer.qml:451
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Inläggsspråk"
 
-#: content/ui/StatusComposer/StatusComposer.qml:467
-#, fuzzy, kde-format
-#| msgid "Add Emoji"
+#: content/ui/StatusComposer/StatusComposer.qml:480
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Lägg till emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:483
+#: content/ui/StatusComposer/StatusComposer.qml:496
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tecken"
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Skicka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:508
+#: content/ui/StatusComposer/StatusComposer.qml:521
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/StatusComposer/StatusComposer.qml:510
+#: content/ui/StatusComposer/StatusComposer.qml:523
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Skicka igen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:512
-#, kde-format
-msgctxt "@action:Button Edit a post"
-msgid "Edit"
-msgstr "Redigera"
+#: content/ui/StatusComposer/StatusComposer.qml:525
+#, fuzzy, kde-format
+#| msgid "Saved"
+msgctxt "@action:Button Save an edited a post"
+msgid "Save"
+msgstr "Sparad"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -4093,30 +3875,25 @@ msgid "Loading"
 msgstr "Läser in"
 
 #: content/ui/TimelinePage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Home (%1)"
+#, kde-format
 msgid "Home (%1)"
 msgstr "Hem (%1)"
 
 #: content/ui/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Filtrerad: %1"
+msgstr "Filter"
 
 #: content/ui/TimelinePage.qml:104
-#, fuzzy, kde-format
-#| msgid "Stop Hiding Boosts from %1"
+#, kde-format
 msgid "Show Boosts"
-msgstr "Sluta dölja förstärkningar från %1"
+msgstr "Visa förstärkningar"
 
 #: content/ui/TimelinePage.qml:111
-#, fuzzy, kde-format
-#| msgid "%1 Replies"
+#, kde-format
 msgid "Show Replies"
-msgstr "%1 svar"
+msgstr "Visa svar"
 
 #: content/ui/TimelinePage.qml:122
 #, kde-format
@@ -4124,59 +3901,54 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Misslyckades ansluta till server: %1. Kontrollera inställningarna."
 
-#: content/ui/TimelinePage.qml:237
+#: content/ui/TimelinePage.qml:240
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:238
-#, kde-format
-msgid "To view all replies, open the post on the original server."
-msgstr ""
+msgstr "Vissa svar är inte tillgängliga"
 
 #: content/ui/TimelinePage.qml:241
-#, fuzzy, kde-format
-#| msgid "Open Original Page"
+#, kde-format
+msgid "To view all replies, open the post on the original server."
+msgstr "För att se alla svar, öppna inlägget på den ursprungliga servern."
+
+#: content/ui/TimelinePage.qml:244
+#, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr "Öppna originalsida"
 
-#: content/ui/TimelinePage.qml:250
-#, fuzzy, kde-format
-#| msgid "Local Timeline"
+#: content/ui/TimelinePage.qml:253
+#, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Lokal tidslinje"
+msgstr "Tidslinjens slut"
 
-#: content/ui/TimelinePage.qml:292
+#: content/ui/TimelinePage.qml:295
 #, kde-format
 msgid "No posts"
 msgstr "Inga inlägg"
 
-#: content/ui/TimelinePage.qml:298
+#: content/ui/TimelinePage.qml:301
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Återgå till början"
 
 #: content/ui/UserInfo.qml:85
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Switch Account"
-msgstr "Lägg till konto"
+msgstr "Byt konto"
 
 #: content/ui/UserInfo.qml:87
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgid "Switch account"
-msgstr "Lägg till konto"
+msgstr "Byt konto"
 
 #: content/ui/UserInfo.qml:132
-#, fuzzy, kde-format
-#| msgid "Log in to an existing account"
+#, kde-format
 msgid "Log in or create a new account"
-msgstr "Logga in på ett befintligt konto"
+msgstr "Logga in eller skapa ett nytt konto"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -4198,13 +3970,12 @@ msgstr[1] "%2 och %1 andra"
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "Members of the list"
-msgstr ""
+msgstr "Medlemmar av listan"
 
 #: editor/listeditorbackend.cpp:109
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "Any followed users"
-msgstr "Inga följare"
+msgstr "Alla följda användare"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -4262,7 +4033,7 @@ msgstr "Ett okänt fel uppstod."
 #: main.cpp:62
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Tar emot utskickade underrättelser"
 
 #: main.cpp:109
 #, kde-format
@@ -4275,10 +4046,9 @@ msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
 #: main.cpp:113
-#, fuzzy, kde-format
-#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE-gemenskapen"
+msgstr "© 2021-2024 Carl Schwan, 2021-2023 KDE-gemenskapen"
 
 #: main.cpp:114
 #, kde-format
@@ -4308,16 +4078,14 @@ msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@gmail.com"
 
 #: main.cpp:132
-#, fuzzy, kde-format
-#| msgid "Client for the decentralized social network: mastodon"
+#, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "Klient för det decentraliserade sociala nätverket: mastodon"
+msgstr "Klient för decentraliserade sociala nätverk som Mastodon"
 
 #: main.cpp:133
-#, fuzzy, kde-format
-#| msgid "Supports web+ap: url scheme"
+#, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Stöder web+ap: webbadresschema"
+msgstr "Stöder https och web+ap webbadresschema"
 
 #: main.cpp:135
 #, kde-format
@@ -4332,7 +4100,7 @@ msgstr "Texten att dela."
 #: main.cpp:139
 #, kde-format
 msgid "Internal usage only."
-msgstr ""
+msgstr "Bara intern användning."
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
@@ -4340,8 +4108,7 @@ msgid "Error occurred when fetching the latest notification."
 msgstr "Fel uppstod när senaste underrättelsen skulle hämtas."
 
 #: search/searchmodel.cpp:140
-#, fuzzy, kde-format
-#| msgid "User"
+#, kde-format
 msgid "Users"
 msgstr "Användare"
 
@@ -4512,12 +4279,12 @@ msgstr "Flaggor"
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Kunde inte öppna den tillfälliga nerladdningsfilen"
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Kunde inte reservera diskutrymme för nerladdning"
 
 #: utils/filetransferjob.cpp:81
 #, kde-format
@@ -4536,6 +4303,10 @@ msgstr "Källa"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Mål"
+
+#~ msgctxt "@action:Button Edit a post"
+#~ msgid "Edit"
+#~ msgstr "Redigera"
 
 #~ msgid "Settings"
 #~ msgstr "Inställningar"
