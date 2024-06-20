@@ -176,12 +176,6 @@ target_sources(tokodon_static
     notification/notificationmodel.h
 )
 
-set_source_files_properties(
-    content/ui/Settings/TokodonConfigurationView.qml
-    PROPERTIES
-        QT_QML_SINGLETON_TYPE TRUE
-)
-
 qt_target_qml_sources(tokodon_static
     QML_FILES
         # Components

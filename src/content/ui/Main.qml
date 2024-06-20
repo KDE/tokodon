@@ -20,6 +20,11 @@ StatefulApp.StatefulWindow {
 
     application: TokodonApplication {
         accountManager: AccountManager
+
+        configurationView: TokodonConfigurationView {
+            window: root
+            application: root.application
+        }
     }
 
     title: pageStack.currentItem?.title ?? ""
@@ -167,9 +172,6 @@ StatefulApp.StatefulWindow {
     }
 
     Component.onCompleted: {
-        TokodonConfigurationView.window = root;
-        TokodonConfigurationView.application = root.application;
-
         if (AccountManager.isReady) {
             startupAccountCheck();
         }
@@ -205,10 +207,6 @@ StatefulApp.StatefulWindow {
 
     Connections {
         target: root.application
-
-        function onOpenConfigurations(): void {
-            ConfigurationsView.open();
-        }
 
         function onConfigureAccount(account: AbstractAccount): void {
             root.pageStack.pushDialogLayers("./Settings/ProfileEditor.qml", {

@@ -15,19 +15,6 @@ TokodonApplication::TokodonApplication(QObject *parent)
     setupActions();
 }
 
-void TokodonApplication::setupActions()
-{
-    AbstractKirigamiApplication::setupActions();
-
-    QString actionName = "options_configure"_L1;
-    if (KAuthorized::authorizeAction(actionName)) {
-        auto action = KStandardActions::preferences(this, &TokodonApplication::openConfigurations, this);
-        mainCollection()->addAction(action->objectName(), action);
-    }
-
-    readSettings();
-}
-
 AccountManager *TokodonApplication::accountManager() const
 {
     return m_accountManager;
@@ -75,6 +62,8 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
             addAccount->setText(i18nc("@action:button", "Add Account"));
             addAccount->setIcon(QIcon::fromTheme(QStringLiteral("list-add-user-symbolic")));
         }
+
+        readSettings();
     }
 }
 
