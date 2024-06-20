@@ -5,6 +5,7 @@ import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as LabComponents
 import org.kde.kirigamiaddons.components 1 as Components
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
@@ -69,12 +70,9 @@ Kirigami.ScrollablePage {
 
         showCloseButton: true
 
-        actions: Kirigami.Action {
-            text: i18nc("@action:button Open settings dialog", "Settings")
-            icon.name: 'settings-configure-symbolic'
-            onTriggered: {
-                TokodonConfigurationView.open();
-            }
+        actions: StatefulApp.Action {
+            application: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application
+            actionName: 'options_configure'
         }
     }
 

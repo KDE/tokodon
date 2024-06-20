@@ -7,6 +7,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import QtQuick.Controls 2 as QQC2
 import QtQml.Models
 import QtQuick.Layouts
@@ -342,11 +343,9 @@ TimelinePage {
                                                                 title: i18n("Account editor")
                                                             })
                                         },
-                                        Kirigami.Action {
-                                            visible: model.isSelf
-                                            text: i18nc("@action:button Open settings dialog", "Settings")
-                                            icon.name: 'settings-configure-symbolic'
-                                            onTriggered: TokodonConfigurationView.open()
+                                        StatefulApp.Action {
+                                            application: (accountInfo.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application
+                                            actionName: 'options_configure'
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"

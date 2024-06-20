@@ -27,13 +27,11 @@ public:
     QList<KirigamiActionCollection *> actionCollections() const override;
 
 Q_SIGNALS:
-    void openConfigurations();
     void accountManagerChanged();
     void configureAccount(AbstractAccount *account);
     void addAccount();
 
 private:
-    void setupActions() override;
     void setupAccountCollection();
     void switchAccount(AbstractAccount *account);
     void createAccountActions(AbstractAccount *account);
