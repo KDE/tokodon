@@ -26,7 +26,7 @@ QString TextHandler::fixBidirectionality(const QString &html, const QFont &font)
     // them to behave
     // pt 1 of 475043 fix
     for (auto block = doc.begin(); block != doc.end(); block = block.next()) {
-        for (auto fragment = block.begin(); fragment != block.end(); fragment++) {
+        for (auto fragment = block.begin(); fragment != block.end(); ++fragment) {
             auto it = fragment.fragment();
 
             if (it.charFormat().isAnchor() && it.text().startsWith(QStringLiteral("@"))) {
@@ -70,11 +70,10 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         lastParagraphBegin = lastBreak;
     }
 
-    const qsizetype lastParagraphEnd = contentHtml.lastIndexOf(QStringLiteral("</p>"));
-    QString lastParagraph = contentHtml.mid(lastParagraphBegin, lastParagraphEnd - contentHtml.length());
-
     // Catch all the tags in the last paragraph of the post, but only if they are not surrounded by text
     {
+        const qsizetype lastParagraphEnd = contentHtml.lastIndexOf(QStringLiteral("</p>"));
+        const QString lastParagraph = contentHtml.mid(lastParagraphBegin, lastParagraphEnd - contentHtml.length());
         QList<QString> possibleTags;
         QString possibleLastParagraph = lastParagraph;
 
@@ -86,7 +85,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         }
 
         // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
-        auto extraneousIterator = TextRegex::extraneousParagraphExp.globalMatch(possibleLastParagraph);
+        const auto extraneousIterator = TextRegex::extraneousParagraphExp.globalMatch(possibleLastParagraph);
         if (extraneousIterator.hasNext()) {
             contentHtml.replace(lastParagraph, possibleLastParagraph);
             standaloneTags = possibleTags;
