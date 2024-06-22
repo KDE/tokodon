@@ -14,7 +14,7 @@ class QQuickItem;
 /**
  * @brief Handles some miscellaneous text processing tasks.
  */
-class TextHandler final : public QObject
+class TextHandler : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

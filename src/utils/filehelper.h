@@ -10,7 +10,7 @@ class AbstractAccount;
 /**
  * @brief Deals with downloading files, and misc operations not natively supported in QML.
  */
-class FileHelper final : public QObject
+class FileHelper : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

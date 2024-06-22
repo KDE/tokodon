@@ -9,7 +9,7 @@
 /**
  * @brief Deals with navigation in the QML pages but also allows C++ to control some of the navigation too.
  */
-class Navigation final : public QObject
+class Navigation : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

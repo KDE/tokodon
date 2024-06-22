@@ -8,7 +8,7 @@
 class QAbstractItemModel;
 class KColorSchemeManager;
 
-class ColorSchemer final : public QObject
+class ColorSchemer : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

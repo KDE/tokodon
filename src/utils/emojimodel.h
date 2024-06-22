@@ -42,7 +42,7 @@ class AbstractAccount;
 /**
  * @brief This class defines the model for visualising a list of emojis.
  */
-class EmojiModel final : public QObject
+class EmojiModel : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

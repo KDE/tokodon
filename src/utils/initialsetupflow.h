@@ -11,7 +11,7 @@ class SetupStep;
  * @brief The C++ backing of the initial setup flow for Tokodon.
  * @note This is not related to the login flow in any way.
  */
-class InitialSetupFlow final : public QObject
+class InitialSetupFlow : public QObject
 {
     Q_OBJECT
     QML_ELEMENT

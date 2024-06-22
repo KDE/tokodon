@@ -12,7 +12,7 @@ class QQuickWindow;
 /**
  * @brief Handles some miscenalleous window management stuffs.
  */
-class WindowController final : public QObject
+class WindowController : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
