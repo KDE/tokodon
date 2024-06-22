@@ -21,6 +21,8 @@ FormCard.FormCardPage {
         onSendNotification: applicationWindow().showPassiveNotification(message)
     }
 
+    readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
+
     title: i18n("Edit Account")
 
     actions: [
@@ -61,6 +63,8 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
+
+        enabled: canEditProfile
 
         Rectangle {
             Layout.preferredHeight: Kirigami.Units.gridUnit * 9
@@ -245,6 +249,8 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.largeSpacing
         Layout.fillWidth: true
 
+        enabled: canEditProfile
+
         FormCard.FormCheckDelegate {
             text: i18n("Require approval of follow requests")
             checked: backend.locked
@@ -311,6 +317,7 @@ FormCard.FormCardPage {
     }
 
     footer: QQC2.ToolBar {
+        enabled: canEditProfile
         height: visible ? implicitHeight : 0
         contentItem: RowLayout {
             Item {

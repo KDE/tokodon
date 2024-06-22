@@ -216,8 +216,16 @@ bool AccountManager::selectedAccountHasIssue() const
     if (!m_selected_account) {
         return false;
     }
+    return accountHasIssue(m_selected_account);
+}
 
-    const int index = m_accounts.indexOf(m_selected_account);
+bool AccountManager::accountHasIssue(AbstractAccount *account) const
+{
+    if (!m_selected_account) {
+        return false;
+    }
+
+    const int index = m_accounts.indexOf(account);
     if (index != -1 && index < m_accountStatus.size()) {
         return m_accountStatus[index] == AccountStatus::InvalidCredentials;
     }

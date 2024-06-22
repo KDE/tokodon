@@ -124,6 +124,11 @@ public:
     Q_INVOKABLE bool selectedAccountHasIssue() const;
 
     /**
+     * @return If the @p account has issues with authentication.
+     */
+    Q_INVOKABLE bool accountHasIssue(AbstractAccount *account) const;
+
+    /**
      * @return If the selected account has a login issue, returns a localized string explaining why.
      */
     Q_INVOKABLE QString selectedAccountLoginIssue() const;
