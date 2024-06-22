@@ -58,6 +58,8 @@ target_sources(tokodon_static
     account/publicserversmodel.h
     account/notificationhandler.cpp
     account/notificationhandler.h
+    account/poststatisticsmodel.cpp
+    account/poststatisticsmodel.h
 
     # Editor
     editor/posteditorbackend.cpp
@@ -134,6 +136,10 @@ target_sources(tokodon_static
     utils/messagefiltercontainer.h
     utils/texthandler.cpp
     utils/texthandler.h
+    utils/poststatisticsdatabase.cpp
+    utils/poststatisticsdatabase.h
+    utils/rowlimitmodel.cpp
+    utils/rowlimitmodel.h
     utils/colorschemer.cpp
     utils/colorschemer.h
     utils/customemoji.cpp
@@ -278,6 +284,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ShareDialog.qml
         content/ui/SocialGraphPage.qml
         content/ui/StandaloneComposer.qml
+        content/ui/StatisticsPage.qml
         content/ui/ThreadPage.qml
         content/ui/TimelinePage.qml
         content/ui/UserInfo.qml
@@ -389,6 +396,7 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
+        Qt::Sql
         KF6::I18n
         KF6::Kirigami
         KF6::KirigamiPlatform

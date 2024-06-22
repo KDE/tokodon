@@ -491,6 +491,16 @@ StatefulApp.StatefulWindow {
             }
 
             Delegates.RoundedItemDelegate {
+                icon.name: "debug-run"
+                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatisticsPage"))
+                text: i18nc("@action:button Open debug page", "Metrics")
+                padding: Kirigami.Units.largeSpacing
+                activeFocusOnTab: true
+
+                Layout.fillWidth: true
+            }
+
+            Delegates.RoundedItemDelegate {
                 icon.name: "lock"
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
