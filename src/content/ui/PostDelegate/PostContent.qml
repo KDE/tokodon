@@ -27,7 +27,7 @@ QQC2.TextArea {
 
     // Work around QTBUG 93281
     Component.onCompleted: if (text.includes("<img")) {
-        FileHelper.forceRefreshTextDocument(root.textDocument, root);
+        TextHandler.forceRefreshTextDocument(root.textDocument, root);
     }
 
     text: TextHandler.fixBidirectionality(root.content, Config.defaultFont)
