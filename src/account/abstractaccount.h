@@ -10,7 +10,6 @@
 #include "admin/reportinfo.h"
 #include "utils/customemoji.h"
 
-#include <QJsonDocument>
 #include <QJsonObject>
 
 class Attachment;
@@ -45,9 +44,6 @@ class AbstractAccount : public QObject
     Q_PROPERTY(QString registrationMessage READ registrationMessage NOTIFY fetchedInstanceMetadata)
 
 public:
-    AbstractAccount(QObject *parent, const QString &instanceUri);
-    AbstractAccount(QObject *parent);
-
     /**
      * @brief Register the application on the server.
      * @param appName The name of the application displayed to other clients.
@@ -681,6 +677,9 @@ Q_SIGNALS:
     void fetchedOEmbed(const QString &html);
 
 protected:
+    AbstractAccount(QObject *parent, const QString &instanceUri);
+    explicit AbstractAccount(QObject *parent);
+
     QString m_name;
     QString m_instance_uri;
     QString m_token;
@@ -711,7 +710,6 @@ protected:
     QUrlQuery buildOAuthQuery() const;
 
     // updates and notifications
-    void handleUpdate(const QJsonDocument &doc, const QString &target);
     void handleNotification(const QJsonDocument &doc);
 
     void mutatePost(const QString &id, const QString &verb, bool deliver_home = false);
