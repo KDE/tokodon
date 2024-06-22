@@ -5,7 +5,7 @@
 
 #include <QByteArray>
 
-#include <openssl/ec.h>
+typedef struct ec_key_st EC_KEY;
 
 /**
  * @brief Generates a ECDH keypair using the prime256v1 curve.

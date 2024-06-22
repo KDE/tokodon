@@ -6,6 +6,8 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 
+#include <QQuickWindow>
+
 void WindowController::setWindow(QQuickWindow *window)
 {
     Q_ASSERT(window != nullptr);

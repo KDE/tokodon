@@ -3,10 +3,11 @@
 
 #pragma once
 
-#include <QQuickWindow>
+#include <QtQml>
 
 class Identity;
 class Post;
+class QQuickWindow;
 
 /**
  * @brief Handles some miscenalleous window management stuffs.
