@@ -8,6 +8,9 @@
 
 #include "utils/customemoji.h"
 
+class QQuickTextDocument;
+class QQuickItem;
+
 /**
  * @brief Handles some miscellaneous text processing tasks.
  */
@@ -50,6 +53,12 @@ public:
      * @note This isn't supposed to be perfect, but catch the 99% case.
      */
     static bool isPostUrl(const QString &url);
+
+    /**
+     * @brief Workaround for QTBUG 93281.
+     * @note Only has an effect on Qt <6.7.
+     */
+    Q_INVOKABLE void forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item);
 };
 
 namespace TextRegex

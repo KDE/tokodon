@@ -3,11 +3,14 @@
 
 #pragma once
 
-#include <QQuickTextDocument>
+#include <QtQml>
 
 class AbstractAccount;
 
-class FileHelper : public QObject
+/**
+ * @brief Deals with downloading files, and misc operations not natively supported in QML.
+ */
+class FileHelper final : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
@@ -17,9 +20,18 @@ public:
     explicit FileHelper(QObject *parent = nullptr);
     ~FileHelper() override;
 
+    /**
+     * @brief Downloads a file.
+     * @param account The account to handle the download.
+     * @param url The url to download.
+     * @param destination The path on disk where the file will end up when finished.
+     * @note Uses KIO when available.
+     */
     Q_INVOKABLE void downloadFile(AbstractAccount *account, const QString &url, const QString &destination) const;
-    Q_INVOKABLE QString url(const QUrl &url) const;
-    Q_INVOKABLE QString fileName(const QUrl &url) const;
 
-    Q_INVOKABLE void forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item);
+    // TODO: I think this can be done natively using JavaScript's URL object?
+    /**
+     * @return The filename portion of a URL.
+     */
+    Q_INVOKABLE QString fileName(const QUrl &url) const;
 };
