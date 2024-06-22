@@ -37,7 +37,13 @@ QVariant ThreadModel::data(const QModelIndex &index, int role) const
 
 QString ThreadModel::displayName() const
 {
-    return i18nc("@title", "Thread");
+    if (m_timeline.isEmpty()) {
+        return i18nc("@title:window", "Loading…");
+    }
+    auto post = m_timeline.at(m_rootPostIndex);
+
+    // FIXME: the inline page title can be HTML, but this is currently synced as the window title. hence why we're not using the HTML version here...
+    return i18nc("@title", "Post by %1", post->authorIdentity()->displayName());
 }
 
 QString ThreadModel::postId() const
@@ -124,6 +130,8 @@ void ThreadModel::fillTimeline(const QString &fromId)
         m_timeline = *thread;
         endResetModel();
         setLoading(false);
+
+        Q_EMIT nameChanged(); // update title
     };
 
     auto onFetchStatus = [=](QNetworkReply *reply) {
