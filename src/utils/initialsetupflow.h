@@ -7,7 +7,11 @@
 
 class SetupStep;
 
-class InitialSetupFlow : public QObject
+/**
+ * @brief The C++ backing of the initial setup flow for Tokodon.
+ * @note This is not related to the login flow in any way.
+ */
+class InitialSetupFlow final : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
@@ -17,7 +21,14 @@ public:
     explicit InitialSetupFlow(QObject *parent = nullptr);
     ~InitialSetupFlow() override;
 
+    /**
+     * @return True if any setup is needed.
+     */
     Q_INVOKABLE bool isSetupNeeded() const;
+
+    /**
+     * @return The name of the next step.
+     */
     Q_INVOKABLE QString getNextStep();
 
 private:

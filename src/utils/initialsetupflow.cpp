@@ -21,7 +21,7 @@ public:
     virtual QString moduleName() = 0;
 };
 
-class SetupPasswordStep : public SetupStep
+class SetupPasswordStep final : public SetupStep
 {
 public:
     explicit SetupPasswordStep(QObject *parent)
@@ -45,7 +45,7 @@ public:
     }
 };
 
-class SetupNotificationsStep : public SetupStep
+class SetupNotificationsStep final : public SetupStep
 {
 public:
     explicit SetupNotificationsStep(QObject *parent)
