@@ -20,6 +20,11 @@ QQC2.Pane {
     padding: 0
 
     function openAccountPage() {
+        // There's no way we can open the page if the account isn't working
+        if (AccountManager.selectedAccountLoginIssue) {
+            return;
+        }
+
         const accountId = AccountManager.selectedAccountId;
         if (!pageStack.currentItem.model || !pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
             const item = pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
