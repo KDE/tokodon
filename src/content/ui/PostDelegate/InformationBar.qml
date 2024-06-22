@@ -101,9 +101,16 @@ ColumnLayout {
             icon.name: "tokodon-post-favorited"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
-            text: i18np("%1 favorite", "%1 favorites", root.favouritesCount)
+            text: {
+                if (root.favouritesCount === 0) {
+                    return i18n("No favorites");
+                } else {
+                    return i18np("%1 favorite", "%1 favorites", root.favouritesCount);
+                }
+            }
             closable: false
             checkable: false
+            enabled: root.favouritesCount > 0
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
@@ -120,9 +127,16 @@ ColumnLayout {
             icon.name: "tokodon-post-boosted"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
-            text: i18np("%1 boost", "%1 boosts", root.reblogsCount)
+            text: {
+                if (root.reblogsCount === 0) {
+                    return i18n("No boosts");
+                } else {
+                    return i18np("%1 boost", "%1 boosts", root.reblogsCount);
+                }
+            }
             closable: false
             checkable: false
+            enabled: root.reblogsCount > 0
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
