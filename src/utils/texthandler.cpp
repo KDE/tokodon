@@ -14,10 +14,6 @@ static const auto fsi = QStringLiteral("\u2068");
 static const auto pdi = QStringLiteral("\u2069");
 static const auto lineSeparator = QStringLiteral("\u2028");
 
-static const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
-static const QRegularExpression extraneousParagraphExp(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
-static const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
-
 QString TextHandler::fixBidirectionality(const QString &html, const QFont &font)
 {
     QTextDocument doc;
@@ -82,7 +78,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         QList<QString> possibleTags;
         QString possibleLastParagraph = lastParagraph;
 
-        auto matchIterator = hashtagExp.globalMatch(possibleLastParagraph);
+        auto matchIterator = TextRegex::hashtagExp.globalMatch(possibleLastParagraph);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
             possibleTags.push_back(match.captured(1));
@@ -90,7 +86,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         }
 
         // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
-        auto extraneousIterator = extraneousParagraphExp.globalMatch(possibleLastParagraph);
+        auto extraneousIterator = TextRegex::extraneousParagraphExp.globalMatch(possibleLastParagraph);
         if (extraneousIterator.hasNext()) {
             contentHtml.replace(lastParagraph, possibleLastParagraph);
             standaloneTags = possibleTags;
@@ -100,7 +96,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
     // Ensure we remove any remaining <br>'s which will mess up the spacing in a post.
     // Example: "<p>Yosemite Valley reflections with rock<br />    </p>"
     {
-        auto matchIterator = extraneousBreakExp.globalMatch(contentHtml);
+        auto matchIterator = TextRegex::extraneousBreakExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
             contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
@@ -110,7 +106,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
     // Ensure we remove any empty <p>'s which will mess up the spacing in a post.
     // Example: "<p>Boris Karloff (again) as Imhotep</p><p>  </p>"
     {
-        auto matchIterator = extraneousParagraphExp.globalMatch(contentHtml);
+        auto matchIterator = TextRegex::extraneousParagraphExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
             contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
