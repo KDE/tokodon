@@ -14,13 +14,13 @@ class SearchTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        account = new MockAccount();
+        AccountManager::instance().addAccount(account, false);
+        AccountManager::instance().selectAccount(account, false);
     }
 
     void testModel()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account, false);
-        AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
         url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myQuery")}, {QStringLiteral("resolve"), QStringLiteral("true")}});
         account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
@@ -36,6 +36,9 @@ private Q_SLOTS:
         QCOMPARE(searchModel.data(searchModel.index(1, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->avatarUrl(),
                  QUrl(QStringLiteral("https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg")));
     }
+
+private:
+    MockAccount *account = nullptr;
 };
 
 QTEST_MAIN(SearchTest)

@@ -14,13 +14,13 @@ class ConversationModelTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        account = new MockAccount();
+        AccountManager::instance().addAccount(account, false);
+        AccountManager::instance().selectAccount(account, false);
     }
 
     void testModel()
     {
-        auto account = new MockAccount();
-        AccountManager::instance().addAccount(account, false);
-        AccountManager::instance().selectAccount(account);
         QUrl url = account->apiUrl(QStringLiteral("/api/v1/conversations"));
         account->registerGet(url, new TestReply(QStringLiteral("conversation-result.json"), account));
 
@@ -37,6 +37,9 @@ private Q_SLOTS:
         QCOMPARE(conversationModel.data(conversationModel.index(0, 0), AbstractTimelineModel::AuthorIdentityRole).value<Identity *>()->displayName(),
                  QStringLiteral("Eugen"));
     }
+
+private:
+    MockAccount *account = nullptr;
 };
 
 QTEST_MAIN(ConversationModelTest)

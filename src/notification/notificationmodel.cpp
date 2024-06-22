@@ -176,12 +176,14 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     }
     case NotificationActorIdentityRole:
         return QVariant::fromValue(notification->identity().get());
-    case AuthorIdentityRole:
+    case AuthorIdentityRole: {
         if (notification->type() == Notification::Follow || notification->type() == Notification::FollowRequest) {
             return QVariant::fromValue<Identity *>(notification->identity().get());
-        } else if (post != nullptr) {
+        }
+        if (post != nullptr) {
             return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
+    } break;
     default:
         if (post != nullptr) {
             return postData(post, role);

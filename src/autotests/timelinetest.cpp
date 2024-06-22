@@ -23,12 +23,7 @@ private Q_SLOTS:
     {
         account = new MockAccount();
         AccountManager::instance().addAccount(account, false);
-        AccountManager::instance().selectAccount(account);
-    }
-
-    void cleanupTestCase()
-    {
-        AccountManager::instance().removeAccount(account);
+        AccountManager::instance().selectAccount(account, false);
     }
 
     void testMainDisplayName()
@@ -114,7 +109,7 @@ private Q_SLOTS:
         threadModel.setPostId(QStringLiteral("103270115826048975"));
         QCOMPARE(threadModel.rowCount({}), 4);
         QCOMPARE(threadModel.data(threadModel.index(1, 0), AbstractTimelineModel::SelectedRole).toBool(), true);
-        QCOMPARE(threadModel.displayName(), QStringLiteral("Thread"));
+        QCOMPARE(threadModel.displayName(), QStringLiteral("Post by Eugen :kde:"));
         QCOMPARE(threadModel.postId(), QStringLiteral("103270115826048975"));
         QCOMPARE(threadModel.canFetchMore({}), false);
 

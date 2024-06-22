@@ -17,12 +17,7 @@ private Q_SLOTS:
     {
         account = new MockAccount();
         AccountManager::instance().addAccount(account, false);
-        AccountManager::instance().selectAccount(account);
-    }
-
-    void cleanupTestCase()
-    {
-        AccountManager::instance().removeAccount(account);
+        AccountManager::instance().selectAccount(account, false);
     }
 
     void testModel()
@@ -43,7 +38,7 @@ private Q_SLOTS:
     }
 
 private:
-    MockAccount *account;
+    MockAccount *account = nullptr;
 };
 
 QTEST_MAIN(RulesModelTest)

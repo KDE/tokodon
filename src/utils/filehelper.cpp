@@ -43,6 +43,9 @@ void FileHelper::forceRefreshTextDocument(QQuickTextDocument *textDocument, QQui
     // HACK: Workaround bug QTBUG 93281, only applies to <6.7
 #if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(textDocument->textDocument(), SIGNAL(imagesLoaded()), item, SLOT(updateWholeDocument()));
+#else
+    Q_UNUSED(textDocument)
+    Q_UNUSED(item)
 #endif
 }
 
