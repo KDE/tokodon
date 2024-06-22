@@ -164,6 +164,14 @@ void PostEditorBackend::setAccount(AbstractAccount *account)
     Q_EMIT accountChanged();
 }
 
+void PostEditorBackend::setHasExistingPoll(bool hasExisting)
+{
+    if (m_pollEnabled != hasExisting) {
+        m_pollEnabled = hasExisting;
+        Q_EMIT pollEnabledChanged();
+    }
+}
+
 int PostEditorBackend::charactersLeft() const
 {
     if (m_account == nullptr) {

@@ -86,7 +86,8 @@ Kirigami.ScrollablePage {
                 }
                 applicationWindow().newPost();
             } else {
-                banner.text = error
+                banner.type = Kirigami.MessageType.Error;
+                banner.text = error;
                 console.log(error);
             }
         }
@@ -119,6 +120,11 @@ Kirigami.ScrollablePage {
         if (filteredMentions.length > 0) {
             textArea.text = filteredMentions.join(" ") + " ";
             textArea.cursorPosition = textArea.length;
+        }
+
+        if (root.purpose === StatusComposer.Edit && root.backend.pollEnabled) {
+            banner.type = Kirigami.MessageType.Warning;
+            banner.text = i18n("Saving an edited post that has a poll will clear existing results.");
         }
     }
 
@@ -322,7 +328,7 @@ Kirigami.ScrollablePage {
                 }
 
                 ComposerPoll {
-                    visible: addPool.checked
+                    visible: addPool.checked && root.purpose !== StatusComposer.Edit
                     Layout.fillWidth: true
 
                     poll: backend.poll

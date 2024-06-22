@@ -220,6 +220,7 @@ void AbstractTimelineModel::actionRedraft(const QModelIndex &index, Post *post, 
                        backend->setLanguage(post->language());
                        backend->setMentions(post->mentions()); // TODO: needed?
                        backend->setSensitive(post->sensitive());
+                       backend->setHasExistingPoll(post->poll() != nullptr);
 
                        Q_EMIT postSourceReady(backend, isEdit);
 

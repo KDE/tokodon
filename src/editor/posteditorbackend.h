@@ -64,6 +64,8 @@ public:
     AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);
 
+    void setHasExistingPoll(bool hasExisting);
+
     int charactersLeft() const;
 
     Q_INVOKABLE void copyFromOther(PostEditorBackend *other);
