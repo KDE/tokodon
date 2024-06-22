@@ -442,6 +442,14 @@ public:
     virtual QNetworkReply *upload(const QUrl &filename, std::function<void(QNetworkReply *)> callback) = 0;
 
     /**
+     * @brief Find the remote URL on this account's server. For example, giving it a post @p url will give the equivalent post on this server if available.
+     * @param url The URL of the object to retrieve.
+     * @param parent The parent object for this callback.
+     * @param callback The callback when the remote object is found. Usually a JSON document.
+     */
+    virtual void requestRemoteObject(const QUrl &url, QObject *parent, std::function<void(QNetworkReply *)> callback) = 0;
+
+    /**
      * @brief Write account to settings to disk.
      */
     virtual void writeToSettings() = 0;

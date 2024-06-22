@@ -130,6 +130,13 @@ QNetworkReply *MockAccount::upload(const QUrl &filename, std::function<void(QNet
     return nullptr;
 }
 
+void MockAccount::requestRemoteObject(const QUrl &url, QObject *parent, std::function<void(QNetworkReply *)> callback)
+{
+    Q_UNUSED(url)
+    Q_UNUSED(parent)
+    Q_UNUSED(callback)
+}
+
 void MockAccount::writeToSettings()
 {
 }

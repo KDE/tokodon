@@ -85,7 +85,7 @@ void Post::fromJson(QJsonObject obj)
             // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
             if (TextHandler::isPostUrl(url)) {
                 // Then request said URL from our server
-                NetworkController::instance().requestRemoteObject(this, m_parent, url, [this](QNetworkReply *reply) {
+                m_parent->requestRemoteObject(QUrl(url), this, [this](QNetworkReply *reply) {
                     const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
                     const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -94,7 +94,6 @@ void Post::fromJson(QJsonObject obj)
                         qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
                     } else {
                         const auto status = statuses.first().toObject();
-                        qInfo() << "Fetching" << status;
 
                         m_quotedPost = new Post(m_parent, status, this);
                         Q_EMIT quotedPostChanged();

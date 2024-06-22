@@ -51,8 +51,6 @@ void Account::get(const QUrl &url,
     QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
-    qInfo() << "Setting parent to" << parent;
-
     QNetworkReply *reply = m_qnam->get(request);
     reply->setParent(parent);
     handleReply(reply, reply_cb, errorCallback);
@@ -214,6 +212,17 @@ QNetworkReply *Account::upload(const QUrl &filename, std::function<void(QNetwork
     qCDebug(TOKODON_HTTP) << "POST" << uploadUrl << "(upload)";
 
     return post(uploadUrl, mp, true, this, callback);
+}
+
+void Account::requestRemoteObject(const QUrl &remoteUrl, QObject *parent, std::function<void(QNetworkReply *)> callback)
+{
+    auto url = apiUrl(QStringLiteral("/api/v2/search"));
+    url.setQuery({
+        {QStringLiteral("q"), remoteUrl.toString()},
+        {QStringLiteral("resolve"), QStringLiteral("true")},
+        {QStringLiteral("limit"), QStringLiteral("1")},
+    });
+    get(url, true, parent, std::move(callback));
 }
 
 static QMap<QString, AbstractAccount::StreamingEventType> stringToStreamingEventType = {
