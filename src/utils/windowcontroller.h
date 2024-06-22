@@ -8,16 +8,30 @@
 class Identity;
 class Post;
 
-class WindowController : public QObject
+/**
+ * @brief Handles some miscenalleous window management stuffs.
+ */
+class WindowController final : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
 
 public:
+    /**
+     * Sets the @p window to save/restore information about.
+     */
     void setWindow(QQuickWindow *window);
 
+    /**
+     * @brief Restores the window's geometry to disk.
+     * @note Only the window size is restored on Wayland.
+     */
     void restoreGeometry();
+
+    /**
+     * @brief Saves the window's geometry to disk.
+     */
     Q_INVOKABLE void saveGeometry();
 
 private:
