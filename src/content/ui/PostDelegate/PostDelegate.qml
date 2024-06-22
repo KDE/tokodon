@@ -518,6 +518,7 @@ QQC2.ItemDelegate {
             visible: active
 
             Layout.fillWidth: true
+            Layout.preferredWidth: flexColumn.innerWidth // prevent it from messing with the width of the post overall
 
             sourceComponent: Kirigami.InlineMessage {
                 id: privacyWarning
