@@ -51,6 +51,8 @@ void Account::get(const QUrl &url,
     QNetworkRequest request = makeRequest(url, authenticated);
     qCDebug(TOKODON_HTTP) << "GET" << url;
 
+    qInfo() << "Setting parent to" << parent;
+
     QNetworkReply *reply = m_qnam->get(request);
     reply->setParent(parent);
     handleReply(reply, reply_cb, errorCallback);

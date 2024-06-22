@@ -30,7 +30,7 @@ public:
     void setAuthCode(QUrl authCode);
     void startComposing(const QString &text);
 
-    void requestRemoteObject(AbstractAccount *account, const QString &url, std::function<void(QNetworkReply *)> callback);
+    void requestRemoteObject(QObject *parent, AbstractAccount *account, const QString &url, std::function<void(QNetworkReply *)> callback);
 
     bool pushNotificationsAvailable() const;
 

@@ -34,6 +34,7 @@ Post::Post(AbstractAccount *account, QObject *parent)
     , m_parent(account)
     , m_attachmentList(this, &m_attachments)
 {
+    Q_ASSERT(account);
     QString visibilityString = account->identity()->visibility();
     m_visibility = stringToVisibility(visibilityString);
 }
@@ -44,6 +45,7 @@ Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     , m_attachmentList(this, &m_attachments)
     , m_visibility(Post::Visibility::Public)
 {
+    Q_ASSERT(account);
     fromJson(obj);
 }
 
@@ -83,7 +85,7 @@ void Post::fromJson(QJsonObject obj)
             // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
             if (TextHandler::isPostUrl(url)) {
                 // Then request said URL from our server
-                NetworkController::instance().requestRemoteObject(m_parent, url, [=](QNetworkReply *reply) {
+                NetworkController::instance().requestRemoteObject(this, m_parent, url, [this](QNetworkReply *reply) {
                     const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
                     const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -91,7 +93,8 @@ void Post::fromJson(QJsonObject obj)
                     if (statuses.isEmpty()) {
                         qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
                     } else {
-                        const auto status = statuses[0].toObject();
+                        const auto status = statuses.first().toObject();
+                        qInfo() << "Fetching" << status;
 
                         m_quotedPost = new Post(m_parent, status, this);
                         Q_EMIT quotedPostChanged();

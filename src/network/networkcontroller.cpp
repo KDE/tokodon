@@ -170,7 +170,7 @@ void NetworkController::openLink()
         return;
     }
 
-    requestRemoteObject(account, m_requestedLink.toString(), [=](QNetworkReply *reply) {
+    requestRemoteObject(account, account, m_requestedLink.toString(), [=](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
@@ -205,7 +205,7 @@ void NetworkController::startComposing(const QString &text)
     }
 }
 
-void NetworkController::requestRemoteObject(AbstractAccount *account, const QString &remoteUrl, std::function<void(QNetworkReply *)> callback)
+void NetworkController::requestRemoteObject(QObject *parent, AbstractAccount *account, const QString &remoteUrl, std::function<void(QNetworkReply *)> callback)
 {
     auto url = account->apiUrl(QStringLiteral("/api/v2/search"));
     url.setQuery({
@@ -213,7 +213,7 @@ void NetworkController::requestRemoteObject(AbstractAccount *account, const QStr
         {QStringLiteral("resolve"), QStringLiteral("true")},
         {QStringLiteral("limit"), QStringLiteral("1")},
     });
-    account->get(url, true, &AccountManager::instance(), std::move(callback));
+    account->get(url, true, parent, std::move(callback));
 }
 
 bool NetworkController::pushNotificationsAvailable() const
@@ -228,7 +228,7 @@ void NetworkController::openLink(const QString &input)
         auto account = AccountManager::instance().selectedAccount();
 
         // Then request said URL from our server
-        NetworkController::instance().requestRemoteObject(account, input, [=](QNetworkReply *reply) {
+        NetworkController::instance().requestRemoteObject(account, account, input, [=](QNetworkReply *reply) {
             const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
             const auto statuses = searchResult[QStringLiteral("statuses")].toArray();

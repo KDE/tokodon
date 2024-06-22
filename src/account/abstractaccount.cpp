@@ -740,7 +740,7 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
 
 void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
 {
-    NetworkController::instance().requestRemoteObject(this, url, [=](QNetworkReply *reply) {
+    NetworkController::instance().requestRemoteObject(this, this, url, [=](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
         const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
