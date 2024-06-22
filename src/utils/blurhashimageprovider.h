@@ -6,7 +6,7 @@
 #include <QQuickAsyncImageProvider>
 #include <QThreadPool>
 
-class AsyncImageResponse : public QQuickImageResponse
+class AsyncImageResponse final : public QQuickImageResponse
 {
 public:
     AsyncImageResponse(const QString &id, const QSize &requestedSize, QThreadPool *pool);

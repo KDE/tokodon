@@ -5,7 +5,7 @@
 
 #include <QObject>
 
-class AndroidUtils : public QObject
+class AndroidUtils final : public QObject
 {
     Q_OBJECT
 

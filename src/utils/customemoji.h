@@ -38,5 +38,3 @@ public:
      */
     bool isCustom = true;
 };
-
-Q_DECLARE_METATYPE(CustomEmoji)

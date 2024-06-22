@@ -9,7 +9,7 @@
 class QNetworkReply;
 class AbstractAccount;
 
-class FileTransferJob : public KJob
+class FileTransferJob final : public KJob
 {
 public:
     FileTransferJob(AbstractAccount *account, const QString &source, const QString &destination);
