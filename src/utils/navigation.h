@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <QJSEngine>
-
 #include "account/identity.h"
 #include "timeline/post.h"
 

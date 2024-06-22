@@ -42,7 +42,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function decideDefaultPage() {
+    function decideDefaultPage(): void {
         globalDrawer.drawerOpen = true;
         pageStack.clear();
 
@@ -61,7 +61,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function startupAccountCheck() {
+    function startupAccountCheck(): void {
         if (AccountManager.hasAccounts) {
             decideDefaultPage();
         } else {
@@ -69,7 +69,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function navigateLink(link, shouldOpenInternalLinks) {
+    function navigateLink(link: string, shouldOpenInternalLinks: bool): void {
         if (link.startsWith('hashtag:/') && shouldOpenInternalLinks) {
             pageStack.push(tagModelComponent, {
                 hashtag: link.substring(9),
@@ -83,8 +83,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function requestCrossAction(action, url) {
-        console.log("Requesting " + action + " of " + url);
+    function requestCrossAction(action: string, url: string): void {
         crossActionDialog.action = action;
         crossActionDialog.url = url;
         crossActionDialog.open();
@@ -140,7 +139,7 @@ Kirigami.ApplicationWindow {
             }
         }
 
-        function takeAction(account): void {
+        function takeAction(account: AbstractAccount): void {
             if (action === 'open' || action === 'reply') {
                 AccountManager.selectedAccount = account;
             }
@@ -171,29 +170,29 @@ Kirigami.ApplicationWindow {
     Connections {
         target: AccountManager
 
-        function onAccountSelected() {
+        function onAccountSelected(): void {
             decideDefaultPage();
         }
 
-        function onAccountRemoved() {
+        function onAccountRemoved(): void {
             if (!AccountManager.hasAccounts) {
                 pageStack.replace(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                 globalDrawer.drawerOpen = false;
             }
         }
 
-        function onAccountsReloaded() {
+        function onAccountsReloaded(): void {
             pageStack.replace(mainTimeline.createObject(root), {
                 name: "home"
             });
         }
 
-        function onAccountsReady() {
+        function onAccountsReady(): void {
             root.startupAccountCheck();
         }
     }
 
-    function popoutStatusComposer(originalEditor: var) {
+    function popoutStatusComposer(originalEditor: StatusComposer): void {
         const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
             closeApplicationWhenFinished: true,
             purpose: originalEditor.purpose,
@@ -223,7 +222,7 @@ Kirigami.ApplicationWindow {
     Connections {
         target: Navigation
 
-        function onOpenFullScreenImage(attachments, identity, currentIndex) {
+        function onOpenFullScreenImage(attachments: var, identity: Identity, currentIndex: int): void {
             const dialog = fullScreenImage.createObject(parent, {
                 attachments: attachments,
                 identity: identity,
@@ -232,14 +231,14 @@ Kirigami.ApplicationWindow {
             dialog.open();
         }
 
-        function onOpenComposer(text) {
+        function onOpenComposer(text: string): void {
             pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                 purpose: StatusComposer.New,
                 initialText: text
             });
         }
 
-        function onReplyTo(post) {
+        function onReplyTo(post: Post): void {
             const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
                 purpose: StatusComposer.Reply,
                 previewPost: post
@@ -248,7 +247,7 @@ Kirigami.ApplicationWindow {
             item.refreshData();
         }
 
-        function onOpenPost(postId) {
+        function onOpenPost(postId: string): void {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
                 pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
                     postId: postId,
@@ -256,7 +255,7 @@ Kirigami.ApplicationWindow {
             }
         }
 
-        function onOpenAccount(accountId) {
+        function onOpenAccount(accountId: string): void {
             if (!pageStack.currentItem.accountId || pageStack.currentItem.accountId !== accountId) {
                 pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
                     accountId: accountId,
@@ -264,13 +263,13 @@ Kirigami.ApplicationWindow {
             }
         }
 
-        function onOpenTag(tag) {
+        function onOpenTag(tag: string): void {
             pageStack.push(tagModelComponent, {
                 hashtag: tag,
             })
         }
 
-        function onReportPost(identity, postId) {
+        function onReportPost(identity: var, postId: string): void {
             root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
                 {
                     type: ReportDialog.Post,
@@ -279,7 +278,7 @@ Kirigami.ApplicationWindow {
                 });
         }
 
-        function onReportUser(identity) {
+        function onReportUser(identity: Identity): void {
             root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ReportDialog"),
                 {
                     type: ReportDialog.User,
@@ -287,7 +286,7 @@ Kirigami.ApplicationWindow {
                 });
         }
 
-        function onOpenList(listId, name) {
+        function onOpenList(listId: string, name: string): void {
             pageStack.push(listTimelinePage.createObject(root, {
                 name,
                 listId
@@ -368,6 +367,7 @@ Kirigami.ApplicationWindow {
                     enabled: !AccountManager.selectedAccountHasIssue
                     activeFocusOnTab: true
 
+                    // Notification indicator
                     Rectangle {
                         anchors {
                             verticalCenter: parent.verticalCenter
@@ -418,9 +418,7 @@ Kirigami.ApplicationWindow {
 
                 Layout.fillWidth: true
 
-                onClicked: {
-                    moderationToolsView.open();
-                }
+                onClicked: moderationToolsView.open()
 
                 ModerationToolsView {
                     id: moderationToolsView
@@ -437,9 +435,7 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
 
-                onClicked: {
-                    ConfigurationsView.open();
-                }
+                onClicked: ConfigurationsView.open()
             }
         }
     }
@@ -640,10 +636,6 @@ Kirigami.ApplicationWindow {
 
     footer: Kirigami.Settings.isMobile ? tabBar : null
 
-    contextDrawer: Kirigami.ContextDrawer {
-        id: contextDrawer
-    }
-
     Component {
         id: mainTimeline
         TimelinePage {
@@ -677,12 +669,12 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: notificationTimeline
-        NotificationPage { }
+        NotificationPage {}
     }
 
     Component {
         id: exploreTimeline
-        ExplorePage { }
+        ExplorePage {}
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
@@ -741,17 +733,17 @@ Kirigami.ApplicationWindow {
         enabled: false // Disable on startup to avoid writing wrong values if the window is hidden
         target: root
 
-        function onClosing() { WindowController.saveGeometry(); }
-        function onWidthChanged() { saveWindowGeometryTimer.restart(); }
-        function onHeightChanged() { saveWindowGeometryTimer.restart(); }
-        function onXChanged() { saveWindowGeometryTimer.restart(); }
-        function onYChanged() { saveWindowGeometryTimer.restart(); }
+        function onClosing(): void { WindowController.saveGeometry(); }
+        function onWidthChanged(): void { saveWindowGeometryTimer.restart(); }
+        function onHeightChanged(): void { saveWindowGeometryTimer.restart(); }
+        function onXChanged(): void { saveWindowGeometryTimer.restart(); }
+        function onYChanged(): void { saveWindowGeometryTimer.restart(); }
     }
 
     Connections {
         target: AccountManager.selectedAccount
 
-        function onFetchedOEmbed(html) {
+        function onFetchedOEmbed(html: string): void {
             embedDialog.active = true;
             embedDialog.item.html = html;
             embedDialog.item.open()
