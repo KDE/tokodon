@@ -190,7 +190,7 @@ void AccountManager::removeAccount(AbstractAccount *account)
     endRemoveRows();
 
     if (hasAccounts()) {
-        m_selected_account = m_accounts[0];
+        m_selected_account = m_accounts.first();
     } else {
         m_selected_account = nullptr;
     }
@@ -387,6 +387,8 @@ bool AccountManager::isReady() const
 
 QString AccountManager::settingsGroupName(const QString &name, const QString &instanceUri)
 {
+    Q_ASSERT(!name.isEmpty());
+    Q_ASSERT(!instanceUri.isEmpty());
     return name + QLatin1Char('@') + QUrl(instanceUri).host();
 }
 

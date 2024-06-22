@@ -318,7 +318,8 @@ void AbstractAccount::setAccessToken(const QString &token)
     m_token = token;
     s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
     AccountManager::instance().addAccount(this, false);
-    AccountManager::instance().selectAccount(this, true);
+    // Future programmer: make sure not to set explicitUserAction here because it needs the settingsGroupName() to be valid first
+    AccountManager::instance().selectAccount(this, false);
     validateToken(true);
 }
 
