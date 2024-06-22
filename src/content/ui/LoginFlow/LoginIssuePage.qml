@@ -60,5 +60,25 @@ MastoPage {
                 AccountManager.selectedAccount = AccountManager.selectedAccount; // reload the pages
             }
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            id: logoutButton
+            text: i18n("Logout")
+            icon.name: "im-kick-user"
+            onClicked: logoutPrompt.open()
+
+            Kirigami.PromptDialog {
+                id: logoutPrompt
+
+                title: i18nc("@title", "Logout")
+                subtitle: i18nc("@label", "Are you sure you want to log out?")
+                standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+                showCloseButton: false
+
+                onAccepted: AccountManager.removeAccount(AccountManager.selectedAccount);
+            }
+        }
     }
 }
