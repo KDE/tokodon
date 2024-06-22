@@ -21,7 +21,7 @@ QQC2.Pane {
 
     function openAccountPage() {
         // There's no way we can open the page if the account isn't working
-        if (AccountManager.selectedAccountLoginIssue) {
+        if (AccountManager.selectedAccountHasIssue) {
             return;
         }
 
