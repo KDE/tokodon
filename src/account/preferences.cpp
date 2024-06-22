@@ -3,6 +3,8 @@
 
 #include "account/preferences.h"
 
+#include "account/abstractaccount.h"
+
 Preferences::Preferences(AbstractAccount *account)
     : QObject(account)
     , m_account(account)
@@ -11,7 +13,7 @@ Preferences::Preferences(AbstractAccount *account)
         account->get(account->apiUrl(QStringLiteral("/api/v1/preferences")), true, this, [this](QNetworkReply *reply) {
             const auto obj = QJsonDocument::fromJson(reply->readAll()).object();
 
-            if (auto defaultLanguage = obj[QStringLiteral("posting:default:language")]; !defaultLanguage.isNull()) {
+            if (const auto defaultLanguage = obj[QStringLiteral("posting:default:language")]; !defaultLanguage.isNull()) {
                 m_defaultLanguage = defaultLanguage.toString();
             }
 
@@ -33,7 +35,7 @@ Post::Visibility Preferences::defaultVisibility() const
     return m_defaultVisibility;
 }
 
-void Preferences::setDefaultVisibility(Post::Visibility visibility)
+void Preferences::setDefaultVisibility(const Post::Visibility visibility)
 {
     if (visibility == m_defaultVisibility) {
         return;
@@ -50,7 +52,7 @@ bool Preferences::defaultSensitive() const
     return m_defaultSensitive;
 }
 
-void Preferences::setDefaultSensitive(bool sensitive)
+void Preferences::setDefaultSensitive(const bool sensitive)
 {
     if (sensitive == m_defaultSensitive) {
         return;
@@ -71,7 +73,7 @@ QString Preferences::defaultLanguage() const
     }
 }
 
-void Preferences::setDefaultLanguage(QString language)
+void Preferences::setDefaultLanguage(const QString &language)
 {
     if (language == m_defaultLanguage) {
         return;
@@ -93,16 +95,16 @@ bool Preferences::extendSpoiler() const
     return m_extendSpoiler;
 }
 
-void Preferences::setPreferencesField(QString name, QString value)
+void Preferences::setPreferencesField(const QString &name, const QString &value)
 {
-    auto multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+    const auto multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
     QHttpPart preferencesPart;
     preferencesPart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"%1\"").arg(name));
     preferencesPart.setBody(value.toUtf8());
     multiPart->append(preferencesPart);
 
-    m_account->patch(m_account->apiUrl(QStringLiteral("/api/v1/accounts/update_credentials")), multiPart, true, this, [=](QNetworkReply *) {});
+    m_account->patch(m_account->apiUrl(QStringLiteral("/api/v1/accounts/update_credentials")), multiPart, true, this, [](QNetworkReply *) {});
 }
 
 #include "moc_preferences.cpp"

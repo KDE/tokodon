@@ -3,13 +3,12 @@
 
 #pragma once
 
-#include "account/abstractaccount.h"
 #include "timeline/post.h"
 
 /**
  * @brief Account-specific preferences which are stored server-side.
  */
-class Preferences : public QObject
+class Preferences final : public QObject
 {
     Q_OBJECT
 
@@ -59,7 +58,7 @@ public:
      * @param language The new default language code.
      * @see defaultLanguage()
      */
-    void setDefaultLanguage(QString language);
+    void setDefaultLanguage(const QString &language);
 
     /**
      * @return If media should not be cropped to 16:9.
@@ -103,7 +102,7 @@ Q_SIGNALS:
     void extendSpoilerChanged();
 
 private:
-    void setPreferencesField(QString name, QString value);
+    void setPreferencesField(const QString &name, const QString &value);
 
     AbstractAccount *m_account;
 
