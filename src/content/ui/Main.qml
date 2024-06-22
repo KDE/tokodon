@@ -193,26 +193,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Connections {
-        target: Controller
-
-        function onOpenPost(id) {
-            Navigation.openThread(id)
-        }
-
-        function onOpenAccount(id) {
-            Navigation.openAccount(id)
-        }
-
-        function onOpenComposer(text) {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: StatusComposer.New,
-                initialText: text,
-                onPostFinished: root.pageStack.layers.pop()
-            });
-        }
-    }
-
     function popoutStatusComposer(originalEditor: var) {
         const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
             closeApplicationWhenFinished: true,
@@ -252,9 +232,10 @@ Kirigami.ApplicationWindow {
             dialog.open();
         }
 
-        function onOpenStatusComposer() {
-            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
-                purpose: StatusComposer.New
+        function onOpenComposer(text) {
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: StatusComposer.New,
+                initialText: text
             });
         }
 
@@ -267,7 +248,7 @@ Kirigami.ApplicationWindow {
             item.refreshData();
         }
 
-        function onOpenThread(postId) {
+        function onOpenPost(postId) {
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
                 pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
                     postId: postId,

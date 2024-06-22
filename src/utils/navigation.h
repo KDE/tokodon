@@ -35,10 +35,10 @@ public:
     Q_INVOKABLE bool hasWebView() const;
 
 Q_SIGNALS:
-    void openStatusComposer();
+    void openComposer(const QString &text);
     void replyTo(Post *post);
     void openAccount(const QString &accountId);
-    void openThread(const QString &postId);
+    void openPost(const QString &postId);
     void openFullScreenImage(const QVariant &attachments, Identity *identity, int currentIndex);
     void openTag(const QString &tag);
     void reportPost(Identity *identity, const QString &postId);

@@ -7,6 +7,9 @@
 
 class AbstractAccount;
 
+/**
+ * @brief Handles miscenallous operations, mostly a glue between C++ and QML.
+ */
 class NetworkController : public QObject
 {
     Q_OBJECT
@@ -24,24 +27,44 @@ public:
     }
 
     static NetworkController &instance();
+
+    /**
+     * @brief Sets up the application proxy.
+     */
     Q_INVOKABLE void setApplicationProxy();
 
-    Q_INVOKABLE void openWebApLink(QString input);
+    /**
+     * @brief Sets the authentication code for the current account.
+     */
     void setAuthCode(QUrl authCode);
+
+    /**
+     * @brief Opens the composer with @p text.
+     * @note This is similiar to Navigation.openStatusComposer() except this is meant to be called before Tokodon fully loads. Otherwise it calls directly into
+     * Navigation.
+     */
     void startComposing(const QString &text);
 
+    /**
+     * @return Whether or not we have a push notification endpoint available.
+     */
     bool pushNotificationsAvailable() const;
 
+    /**
+     * @brief Opens an arbitrary HTML link (post, account, etc URL) if available on the current account's server.
+     */
     Q_INVOKABLE void openLink(const QString &input);
+
+    /**
+     * @brief Same function as openLink, but for the web+ap protocol.
+     */
+    Q_INVOKABLE void openWebApLink(QString input);
 
     QString endpoint;
 
 Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
-    void openPost(QString id);
-    void openAccount(QString id);
     void receivedAuthCode(QString authCode);
-    void openComposer(const QString &text);
 
 private:
     explicit NetworkController(QObject *parent = nullptr);

@@ -29,7 +29,7 @@ NetworkController::NetworkController(QObject *parent)
         openLink();
 
         if (!m_storedComposedText.isEmpty()) {
-            Q_EMIT openComposer(m_storedComposedText);
+            Q_EMIT Navigation::instance().openComposer(m_storedComposedText);
             m_storedComposedText.clear();
         }
     });
@@ -166,7 +166,7 @@ void NetworkController::openLink()
         QString path = m_requestedLink.path();
         path.remove(0, path.lastIndexOf(QLatin1Char('/')) + 1);
 
-        Q_EMIT NetworkController::instance().openPost(path);
+        Q_EMIT Navigation::instance().openPost(path);
         return;
     }
 
@@ -181,7 +181,7 @@ void NetworkController::openLink()
         } else {
             const auto status = statuses[0].toObject();
 
-            Q_EMIT NetworkController::instance().openPost(status["id"_L1].toString());
+            Q_EMIT Navigation::instance().openPost(status["id"_L1].toString());
         }
 
         if (accounts.isEmpty()) {
@@ -189,7 +189,7 @@ void NetworkController::openLink()
         } else {
             const auto account = accounts[0].toObject();
 
-            Q_EMIT NetworkController::instance().openAccount(account["id"_L1].toString());
+            Q_EMIT Navigation::instance().openAccount(account["id"_L1].toString());
         }
 
         m_requestedLink.clear();
@@ -199,7 +199,7 @@ void NetworkController::openLink()
 void NetworkController::startComposing(const QString &text)
 {
     if (m_accountsReady) {
-        Q_EMIT openComposer(text);
+        Q_EMIT Navigation::instance().openComposer(text);
     } else {
         m_storedComposedText = text;
     }
@@ -223,7 +223,7 @@ void NetworkController::openLink(const QString &input)
             const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
 
             if (!statuses.isEmpty()) {
-                Navigation::instance().openThread(statuses.last()[QStringLiteral("id")].toString());
+                Navigation::instance().openPost(statuses.last()[QStringLiteral("id")].toString());
             } else {
                 // worst case, open it in a web browser
                 QDesktopServices::openUrl(QUrl::fromUserInput(input));

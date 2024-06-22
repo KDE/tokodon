@@ -20,7 +20,7 @@ QQC2.AbstractButton {
     rightPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
 
-    onClicked: Navigation.openThread(post.postId)
+    onClicked: Navigation.openPost(post.postId)
 
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window

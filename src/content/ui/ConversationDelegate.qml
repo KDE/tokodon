@@ -24,7 +24,7 @@ Delegates.IndicatorItemDelegate {
     signal markAsRead(conversationId: string)
 
     onClicked: {
-        Navigation.openThread(root.id)
+        Navigation.openPost(root.id)
         if (root.unread) {
             root.markAsRead(root.conversationId);
         }

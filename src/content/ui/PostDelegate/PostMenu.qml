@@ -34,7 +34,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         icon.name: "expand"
         text: i18nc("@action:inmenu", "Expand Post")
-        onTriggered: Navigation.openThread(root.postId)
+        onTriggered: Navigation.openPost(root.postId)
         visible: !root.expandedPost
         enabled: visible
     }

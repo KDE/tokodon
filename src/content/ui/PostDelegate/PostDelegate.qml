@@ -98,7 +98,7 @@ QQC2.ItemDelegate {
         if (postContent.hoveredLink) {
             return;
         }
-        Navigation.openThread(root.id);
+        Navigation.openPost(root.id);
     }
 
     ListView.onReused: {
