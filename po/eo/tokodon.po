@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-20 00:39+0000\n"
+"POT-Creation-Date: 2024-06-23 00:38+0000\n"
 "PO-Revision-Date: 2024-06-21 23:56+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not follow account"
 msgstr "Ne eblis sekvi konton"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Ne eblis malsekvi konton"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not block account"
 msgstr "Ne eblis bloki konton"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Ne eblis malbloki konton"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not mute account"
 msgstr "Ne eblis silentigi konton"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Ne eblis malsilentigi konton"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not feature account"
 msgstr "Ne eblis prezenti konton"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Ne eblis malfunkciigi konton"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Ne eblis redakti noton pri konto"
@@ -395,7 +395,7 @@ msgstr "Malbloki"
 msgid "Block"
 msgstr "Bloki"
 
-#: content/ui/AccountInfo.qml:332 content/ui/PostDelegate/PostMenu.qml:167
+#: content/ui/AccountInfo.qml:332 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -411,14 +411,14 @@ msgstr "Redakti Profilon"
 msgid "Account editor"
 msgstr "Kontoredaktilo"
 
-#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:451
+#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:430
 #: content/ui/TimelinePage.qml:73
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:498
+#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:475
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sekvi Petojn"
@@ -559,7 +559,7 @@ msgstr "Neniuj emojis"
 msgid "View profile"
 msgstr "Rigardi profilon"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:545
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:522
 #, kde-format
 msgid "Conversations"
 msgstr "Konversacioj"
@@ -646,7 +646,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Ĉu vi certas ke vi volas forigi ĉi liston?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:591
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:568
 #, kde-format
 msgid "Explore"
 msgstr "Esplori"
@@ -882,6 +882,27 @@ msgstr "Risardi Retejon"
 msgid "Re-Attempt Log In"
 msgstr "Reprovi Ensaluton"
 
+#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/Settings/ProfileEditor.qml:30
+#, kde-format
+msgid "Logout"
+msgstr "Elsaluti"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/Settings/ProfileEditor.qml:50
+#, kde-format
+msgctxt "@title"
+msgid "Logout"
+msgstr "Elsaluti"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to log out of %1?"
+msgctxt "@label"
+msgid "Are you sure you want to log out?"
+msgstr "Ĉu vi certas ke vi volas elsaluti el %1?"
+
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
 msgctxt "@title:window"
@@ -1060,107 +1081,107 @@ msgstr "Lernu Pli"
 msgid "Login"
 msgstr "Ensaluti"
 
-#: content/ui/Main.qml:106
+#: content/ui/Main.qml:105
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Malfermi Kiel…"
 
-#: content/ui/Main.qml:108
+#: content/ui/Main.qml:107
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Respondi Kiel…"
 
-#: content/ui/Main.qml:110
+#: content/ui/Main.qml:109
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Ŝatatigi Kiel…"
 
-#: content/ui/Main.qml:112
+#: content/ui/Main.qml:111
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Plifortigi Kiel…"
 
-#: content/ui/Main.qml:114
+#: content/ui/Main.qml:113
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Legosigni Kiel…"
 
-#: content/ui/Main.qml:116
+#: content/ui/Main.qml:115
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Nekonata Ago"
 
-#: content/ui/Main.qml:224
+#: content/ui/Main.qml:203
 #, kde-format
 msgid "Write a new post"
 msgstr "Skribi novan afiŝon"
 
-#: content/ui/Main.qml:423
+#: content/ui/Main.qml:404
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Sencimigi"
 
-#: content/ui/Main.qml:433
+#: content/ui/Main.qml:414
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderaj Iloj"
 
-#: content/ui/Main.qml:468
+#: content/ui/Main.qml:445
 #, kde-format
 msgid "Home"
 msgstr "Hejmo"
 
-#: content/ui/Main.qml:483 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/ConfigurationsView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "Sciigoj"
 
-#: content/ui/Main.qml:514
+#: content/ui/Main.qml:491
 #, kde-format
 msgid "Local"
 msgstr "Loka"
 
-#: content/ui/Main.qml:529
+#: content/ui/Main.qml:506
 #, kde-format
 msgid "Global"
 msgstr "Ĉiea"
 
-#: content/ui/Main.qml:559
+#: content/ui/Main.qml:536
 #, kde-format
 msgid "Favourites"
 msgstr "Plej ŝatataj"
 
-#: content/ui/Main.qml:575
+#: content/ui/Main.qml:552
 #, kde-format
 msgid "Bookmarks"
 msgstr "Legosignoj"
 
-#: content/ui/Main.qml:605
+#: content/ui/Main.qml:582
 #, kde-format
 msgid "Search"
 msgstr "Serĉi"
 
-#: content/ui/Main.qml:620
+#: content/ui/Main.qml:597
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Anoncoj"
 
-#: content/ui/Main.qml:635
+#: content/ui/Main.qml:612
 #, kde-format
 msgid "Lists"
 msgstr "Listoj"
 
-#: content/ui/Main.qml:787
+#: content/ui/Main.qml:760
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2724,14 +2745,27 @@ msgstr "Privata"
 msgid "Direct Message"
 msgstr "Rekta Mesaĝo"
 
-#: content/ui/PostDelegate/InformationBar.qml:104
+#: content/ui/PostDelegate/InformationBar.qml:106
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
+msgid "No favorites"
+msgstr "%1 plejŝatata"
+
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 plejŝatata"
 msgstr[1] "%1 plejŝatataj"
 
-#: content/ui/PostDelegate/InformationBar.qml:123
+#: content/ui/PostDelegate/InformationBar.qml:132
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "No boosts"
+msgstr "Neniuj afiŝoj"
+
+#: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -2887,7 +2921,7 @@ msgstr "Legomarkita"
 msgid "Bookmark"
 msgstr "Legomarko"
 
-#: content/ui/PostDelegate/PostDelegate.qml:525
+#: content/ui/PostDelegate/PostDelegate.qml:526
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -2908,120 +2942,120 @@ msgctxt "@action:inmenu"
 msgid "Expand Post"
 msgstr "Vastigi Afiŝon"
 
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgid "Open Original Page"
 msgstr "Malfermi Originan Paĝon"
 
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopii Ligilon"
 
-#: content/ui/PostDelegate/PostMenu.qml:54
+#: content/ui/PostDelegate/PostMenu.qml:55
 #, kde-format
 msgid "Post link copied."
 msgstr "Afiŝligilo kopiita."
 
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Enkonstrui"
 
-#: content/ui/PostDelegate/PostMenu.qml:75
+#: content/ui/PostDelegate/PostMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Malfermi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:82
+#: content/ui/PostDelegate/PostMenu.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Respondi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:89
+#: content/ui/PostDelegate/PostMenu.qml:94
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Ŝatatigi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:96
+#: content/ui/PostDelegate/PostMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Plifortigi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:103
+#: content/ui/PostDelegate/PostMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Legomarki kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:111
+#: content/ui/PostDelegate/PostMenu.qml:118
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Forigi Legosignon"
 
-#: content/ui/PostDelegate/PostMenu.qml:111
+#: content/ui/PostDelegate/PostMenu.qml:118
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Legomarki"
 
-#: content/ui/PostDelegate/PostMenu.qml:118
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Malpingli sur Profilo"
 
-#: content/ui/PostDelegate/PostMenu.qml:118
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Pingli sur Profilo"
 
-#: content/ui/PostDelegate/PostMenu.qml:131
+#: content/ui/PostDelegate/PostMenu.qml:140
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Malŝalti @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:133
+#: content/ui/PostDelegate/PostMenu.qml:142
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Silentigi @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:150
+#: content/ui/PostDelegate/PostMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Malŝlosi @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:152
+#: content/ui/PostDelegate/PostMenu.qml:162
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloki @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:176
+#: content/ui/PostDelegate/PostMenu.qml:188
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
 
-#: content/ui/PostDelegate/PostMenu.qml:183
-#: content/ui/Settings/ProfileEditor.qml:173
-#: content/ui/Settings/ProfileEditor.qml:235
+#: content/ui/PostDelegate/PostMenu.qml:196
+#: content/ui/Settings/ProfileEditor.qml:177
+#: content/ui/Settings/ProfileEditor.qml:239
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
 
-#: content/ui/PostDelegate/PostMenu.qml:190
+#: content/ui/PostDelegate/PostMenu.qml:204
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Forigi & Re-redakti"
@@ -3130,7 +3164,7 @@ msgstr "Neniuj serĉrezultoj"
 msgid "Search for users, tags and posts"
 msgstr "Serĉi uzantojn, etikedojn kaj afiŝojn"
 
-#: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:127
+#: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:132
 #, kde-format
 msgid "Add Account"
 msgstr "Aldoni konton"
@@ -3198,29 +3232,24 @@ msgstr "Aspekto"
 msgid "Accounts"
 msgstr "Kontoj"
 
-#: content/ui/Settings/ConfigurationsView.qml:33
-#, kde-format
-msgid "Spell Checking"
-msgstr "Ortografio"
-
-#: content/ui/Settings/ConfigurationsView.qml:40
+#: content/ui/Settings/ConfigurationsView.qml:34
 #, kde-format
 msgid "Network Proxy"
 msgstr "Reta Prokurilo"
 
-#: content/ui/Settings/ConfigurationsView.qml:46
+#: content/ui/Settings/ConfigurationsView.qml:40
 #, kde-format
 msgid "About Tokodon"
 msgstr "Pri Tokodon"
 
-#: content/ui/Settings/ConfigurationsView.qml:49
-#: content/ui/Settings/ConfigurationsView.qml:56
+#: content/ui/Settings/ConfigurationsView.qml:43
+#: content/ui/Settings/ConfigurationsView.qml:50
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Pri"
 
-#: content/ui/Settings/ConfigurationsView.qml:53
+#: content/ui/Settings/ConfigurationsView.qml:47
 #, kde-format
 msgid "About KDE"
 msgstr "Pri KDE"
@@ -3267,7 +3296,7 @@ msgid "User"
 msgstr "Uzanto"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:328
+#: content/ui/Settings/ProfileEditor.qml:335
 #, kde-format
 msgid "Apply"
 msgstr "Apliki"
@@ -3342,200 +3371,107 @@ msgstr "Enketoj"
 msgid "Edits"
 msgstr "Redaktoj"
 
-#: content/ui/Settings/ProfileEditor.qml:24
+#: content/ui/Settings/ProfileEditor.qml:26
 #, kde-format
 msgid "Edit Account"
 msgstr "Redakti Konton"
 
-#: content/ui/Settings/ProfileEditor.qml:28
-#, kde-format
-msgid "Logout"
-msgstr "Elsaluti"
-
-#: content/ui/Settings/ProfileEditor.qml:40
+#: content/ui/Settings/ProfileEditor.qml:42
 #, kde-format
 msgid "Please choose a file"
 msgstr "Bonvolu elekti dosieron"
 
-#: content/ui/Settings/ProfileEditor.qml:48
-#, kde-format
-msgctxt "@title"
-msgid "Logout"
-msgstr "Elsaluti"
-
-#: content/ui/Settings/ProfileEditor.qml:49
+#: content/ui/Settings/ProfileEditor.qml:51
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
 msgstr "Ĉu vi certas ke vi volas elsaluti el %1?"
 
-#: content/ui/Settings/ProfileEditor.qml:81
+#: content/ui/Settings/ProfileEditor.qml:85
 #, kde-format
 msgid "Display Name"
 msgstr "Montra Nomo"
 
-#: content/ui/Settings/ProfileEditor.qml:99
+#: content/ui/Settings/ProfileEditor.qml:103
 #, kde-format
 msgid "Bio"
 msgstr "Bio"
 
-#: content/ui/Settings/ProfileEditor.qml:125
+#: content/ui/Settings/ProfileEditor.qml:129
 #, kde-format
 msgid "Header"
 msgstr "Kapo"
 
-#: content/ui/Settings/ProfileEditor.qml:160
+#: content/ui/Settings/ProfileEditor.qml:164
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF aŭ JPG. Maksimume 2 MB. Malgrandiĝos al 1500x500px"
 
-#: content/ui/Settings/ProfileEditor.qml:188
+#: content/ui/Settings/ProfileEditor.qml:192
 #, kde-format
 msgid "Avatar"
 msgstr "Avataro"
 
-#: content/ui/Settings/ProfileEditor.qml:221
+#: content/ui/Settings/ProfileEditor.qml:225
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF aŭ JPG. Maksimume 2 MB. Estos malgrandigita al 400x400px"
 
-#: content/ui/Settings/ProfileEditor.qml:249
+#: content/ui/Settings/ProfileEditor.qml:255
 #, kde-format
 msgid "Require approval of follow requests"
 msgstr "Postuli aprobon de sekvopetoj"
 
-#: content/ui/Settings/ProfileEditor.qml:257
+#: content/ui/Settings/ProfileEditor.qml:263
 #, kde-format
 msgid "This is a bot account"
 msgstr "Ĉi tio estas bot-konto"
 
-#: content/ui/Settings/ProfileEditor.qml:265
+#: content/ui/Settings/ProfileEditor.qml:271
 #, kde-format
 msgid "Suggest account to others"
 msgstr "Sugesti konton al aliaj"
 
-#: content/ui/Settings/ProfileEditor.qml:273
+#: content/ui/Settings/ProfileEditor.qml:279
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Marki alŝutitajn komunikaĵon kiel sentema defaŭlte"
 
-#: content/ui/Settings/ProfileEditor.qml:281
+#: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Defaŭlta afiŝolingvo"
 
-#: content/ui/Settings/ProfileEditor.qml:302
+#: content/ui/Settings/ProfileEditor.qml:308
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Defaŭlta afiŝo-videbleco"
 
-#: content/ui/Settings/ProfileEditor.qml:304
+#: content/ui/Settings/ProfileEditor.qml:310
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publika"
 
-#: content/ui/Settings/ProfileEditor.qml:305
+#: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Nelistigita"
 
-#: content/ui/Settings/ProfileEditor.qml:306
+#: content/ui/Settings/ProfileEditor.qml:312
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privata"
 
-#: content/ui/Settings/ProfileEditor.qml:321
+#: content/ui/Settings/ProfileEditor.qml:328
 #, kde-format
 msgid "Reset"
 msgstr "Restarigi"
-
-#: content/ui/Settings/SonnetPage.qml:31
-#, kde-format
-msgid "Enable automatic spell checking"
-msgstr "Ebligi aŭtomatan literumkontrolon"
-
-#: content/ui/Settings/SonnetPage.qml:45
-#, kde-format
-msgid "Ignore uppercase words"
-msgstr "Ignori majusklojn"
-
-#: content/ui/Settings/SonnetPage.qml:59
-#, kde-format
-msgid "Ignore hyphenated words"
-msgstr "Ignori dividitajn vortojn"
-
-#: content/ui/Settings/SonnetPage.qml:73
-#, kde-format
-msgid "Detect language automatically"
-msgstr "Detekti lingvon aŭtomate"
-
-#: content/ui/Settings/SonnetPage.qml:86
-#, kde-format
-msgid "Selected default language:"
-msgstr "Elektita defaŭlta lingvo:"
-
-#: content/ui/Settings/SonnetPage.qml:87
-#, kde-format
-msgid "None"
-msgstr "Neniu"
-
-#: content/ui/Settings/SonnetPage.qml:108
-#, kde-format
-msgid "Additional Spell Checking Languages"
-msgstr "Pliaj Literumkontrolaj Lingvoj"
-
-#: content/ui/Settings/SonnetPage.qml:109
-#, kde-format
-msgid ""
-"%1 will provide spell checking and suggestions for the languages listed here "
-"when autodetection is enabled."
-msgstr ""
-"%1 provizos literumkontrolon kaj sugestojn por la lingvoj listigitaj ĉi tie "
-"kiam aŭtomata detekto estas ebligita."
-
-#: content/ui/Settings/SonnetPage.qml:122
-#, kde-format
-msgid "Open Personal Dictionary"
-msgstr "Malfermi Personan Vortaron"
-
-#: content/ui/Settings/SonnetPage.qml:134
-#, kde-format
-msgctxt "@title:window"
-msgid "Spell checking languages"
-msgstr "Literumaj lingvoj"
-
-#: content/ui/Settings/SonnetPage.qml:146
-#, kde-format
-msgid "Default Language"
-msgstr "Defaŭlta Lingvo"
-
-#: content/ui/Settings/SonnetPage.qml:158
-#, kde-format
-msgid "Spell checking dictionary"
-msgstr "Vortaro por ortografiokontrolo"
-
-#: content/ui/Settings/SonnetPage.qml:165
-#, kde-format
-msgid "Add a new word to your personal dictionary…"
-msgstr "Aldoni novan vorton al via persona vortaro…"
-
-#: content/ui/Settings/SonnetPage.qml:168
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Word"
-msgstr "Aldoni Vorton"
-
-#: content/ui/Settings/SonnetPage.qml:203
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete word"
-msgstr "Forigi vorton"
 
 #: content/ui/ShareDialog.qml:34
 #, kde-format
@@ -3654,43 +3590,48 @@ msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "Elklapi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:128
+#: content/ui/StatusComposer/StatusComposer.qml:127
+#, kde-format
+msgid "Saving an edited post that has a poll will clear existing results."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Forĵeti Redaktaĵon"
 
-#: content/ui/StatusComposer/StatusComposer.qml:129
+#: content/ui/StatusComposer/StatusComposer.qml:135
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Ĉu vi certas ke vi volas forĵeti vian redaktaĵon?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:135
+#: content/ui/StatusComposer/StatusComposer.qml:141
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "Reteni"
 
-#: content/ui/StatusComposer/StatusComposer.qml:217
+#: content/ui/StatusComposer/StatusComposer.qml:223
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "Enhav-averto"
 
-#: content/ui/StatusComposer/StatusComposer.qml:230
+#: content/ui/StatusComposer/StatusComposer.qml:236
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Kio novas?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:345
+#: content/ui/StatusComposer/StatusComposer.qml:351
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Elekti Dosieron"
 
-#: content/ui/StatusComposer/StatusComposer.qml:348
+#: content/ui/StatusComposer/StatusComposer.qml:354
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3699,163 +3640,163 @@ msgstr ""
 "Ĉiuj subtenataj formatoj (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
 "avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:355
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG-bildo (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:356
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG bildo (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:351
+#: content/ui/StatusComposer/StatusComposer.qml:357
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF-bildo (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:352
+#: content/ui/StatusComposer/StatusComposer.qml:358
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP-bildo (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:353
+#: content/ui/StatusComposer/StatusComposer.qml:359
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC-bildo(*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:360
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF-bildo (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:355
+#: content/ui/StatusComposer/StatusComposer.qml:361
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF-bildo (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:356
+#: content/ui/StatusComposer/StatusComposer.qml:362
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM-vidbendo (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:363
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "Video MPEG-4 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:358
+#: content/ui/StatusComposer/StatusComposer.qml:364
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V-vidbendo (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:359
+#: content/ui/StatusComposer/StatusComposer.qml:365
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime-vidbendo (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:360
+#: content/ui/StatusComposer/StatusComposer.qml:366
 #, kde-format
 msgid "All files (*)"
 msgstr "Ĉiuj dosieroj (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:362
+#: content/ui/StatusComposer/StatusComposer.qml:368
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Aldoni dosieron"
 
-#: content/ui/StatusComposer/StatusComposer.qml:373
+#: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Aldoni enketon"
 
-#: content/ui/StatusComposer/StatusComposer.qml:403
+#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Loka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:409
+#: content/ui/StatusComposer/StatusComposer.qml:415
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Publika"
 
-#: content/ui/StatusComposer/StatusComposer.qml:414
+#: content/ui/StatusComposer/StatusComposer.qml:420
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Nelistigita"
 
-#: content/ui/StatusComposer/StatusComposer.qml:419
+#: content/ui/StatusComposer/StatusComposer.qml:425
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privata"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:430
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Rekta Mesaĝo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:429
+#: content/ui/StatusComposer/StatusComposer.qml:435
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Videbleco"
 
-#: content/ui/StatusComposer/StatusComposer.qml:434
+#: content/ui/StatusComposer/StatusComposer.qml:440
 #, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "ea"
 
-#: content/ui/StatusComposer/StatusComposer.qml:437
+#: content/ui/StatusComposer/StatusComposer.qml:443
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "Enhav-Averto"
 
-#: content/ui/StatusComposer/StatusComposer.qml:451
+#: content/ui/StatusComposer/StatusComposer.qml:457
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Afiŝa lingvo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:480
+#: content/ui/StatusComposer/StatusComposer.qml:486
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Aldoni emoĝi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:496
+#: content/ui/StatusComposer/StatusComposer.qml:502
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> signoj"
 
-#: content/ui/StatusComposer/StatusComposer.qml:519
+#: content/ui/StatusComposer/StatusComposer.qml:525
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Sendi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:521
+#: content/ui/StatusComposer/StatusComposer.qml:527
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Respondi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:523
+#: content/ui/StatusComposer/StatusComposer.qml:529
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Repost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:531
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -3927,17 +3868,17 @@ msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "Reiri al Supro"
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/UserInfo.qml:90
 #, kde-format
 msgid "Switch Account"
 msgstr "Ŝanĝi Konton"
 
-#: content/ui/UserInfo.qml:87
+#: content/ui/UserInfo.qml:92
 #, kde-format
 msgid "Switch account"
 msgstr "Ŝanĝi konton"
 
-#: content/ui/UserInfo.qml:132
+#: content/ui/UserInfo.qml:137
 #, kde-format
 msgid "Log in or create a new account"
 msgstr "Ensaluti aŭ krei novan konton"
@@ -4017,79 +3958,79 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 tagoj"
 
-#: editor/posteditorbackend.cpp:263
+#: editor/posteditorbackend.cpp:271
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Nekonata eraro okazis."
 
-#: main.cpp:62
+#: main.cpp:63
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Ricevante puŝ-sciigojn"
 
-#: main.cpp:109
+#: main.cpp:110
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-kliento"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© 2021-2024 Carl Schwan, 2021-2023 KDE-Komunumo"
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:115 main.cpp:120
+#: main.cpp:116 main.cpp:121
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Josuo Goins"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Oliver Kellogg"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: main.cpp:132
+#: main.cpp:133
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Kliento por malcentralizitaj sociaj retoj kiel Mastodon"
 
-#: main.cpp:133
+#: main.cpp:134
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Subtenas https kaj web+ap url-skemon"
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Kunhavigi linion de teksto en la memstara komponisto."
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "The text to share."
 msgstr "La teksto por dividi."
 
-#: main.cpp:139
+#: main.cpp:140
 #, kde-format
 msgid "Internal usage only."
 msgstr "Nur por interna uzo."
@@ -4145,46 +4086,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr "Tendenco"
 
-#: timeline/post.cpp:217
+#: timeline/post.cpp:219
 #, kde-format
 msgid "in the future"
 msgstr "estontece"
 
-#: timeline/post.cpp:219
+#: timeline/post.cpp:221
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: timeline/post.cpp:221
+#: timeline/post.cpp:223
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: timeline/post.cpp:223
+#: timeline/post.cpp:225
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: timeline/post.cpp:225
+#: timeline/post.cpp:227
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: timeline/post.cpp:229
+#: timeline/post.cpp:231
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "Antaŭ unu semajno"
 msgstr[1] "Antaŭ %1 semajnoj"
 
-#: timeline/post.cpp:232
+#: timeline/post.cpp:234
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "Antaŭ unu monato"
 msgstr[1] "Antaŭ %1 monatoj"
 
-#: timeline/post.cpp:236
+#: timeline/post.cpp:238
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -4196,11 +4137,19 @@ msgstr[1] "Antaŭ %1 jaroj"
 msgid "Trending"
 msgstr "Tendenco"
 
-#: timeline/threadmodel.cpp:40
-#, kde-format
+#: timeline/threadmodel.cpp:41
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "@title:window"
+msgid "Loading…"
+msgstr "Ŝargante"
+
+#: timeline/threadmodel.cpp:46
+#, fuzzy, kde-format
+#| msgid "Post from %1"
 msgctxt "@title"
-msgid "Thread"
-msgstr "Fadeno"
+msgid "Post by %1"
+msgstr "Afiŝita el %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4295,3 +4244,62 @@ msgstr "Fonto"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Celo"
+
+#~ msgid "Spell Checking"
+#~ msgstr "Ortografio"
+
+#~ msgid "Enable automatic spell checking"
+#~ msgstr "Ebligi aŭtomatan literumkontrolon"
+
+#~ msgid "Ignore uppercase words"
+#~ msgstr "Ignori majusklojn"
+
+#~ msgid "Ignore hyphenated words"
+#~ msgstr "Ignori dividitajn vortojn"
+
+#~ msgid "Detect language automatically"
+#~ msgstr "Detekti lingvon aŭtomate"
+
+#~ msgid "Selected default language:"
+#~ msgstr "Elektita defaŭlta lingvo:"
+
+#~ msgid "None"
+#~ msgstr "Neniu"
+
+#~ msgid "Additional Spell Checking Languages"
+#~ msgstr "Pliaj Literumkontrolaj Lingvoj"
+
+#~ msgid ""
+#~ "%1 will provide spell checking and suggestions for the languages listed "
+#~ "here when autodetection is enabled."
+#~ msgstr ""
+#~ "%1 provizos literumkontrolon kaj sugestojn por la lingvoj listigitaj ĉi "
+#~ "tie kiam aŭtomata detekto estas ebligita."
+
+#~ msgid "Open Personal Dictionary"
+#~ msgstr "Malfermi Personan Vortaron"
+
+#~ msgctxt "@title:window"
+#~ msgid "Spell checking languages"
+#~ msgstr "Literumaj lingvoj"
+
+#~ msgid "Default Language"
+#~ msgstr "Defaŭlta Lingvo"
+
+#~ msgid "Spell checking dictionary"
+#~ msgstr "Vortaro por ortografiokontrolo"
+
+#~ msgid "Add a new word to your personal dictionary…"
+#~ msgstr "Aldoni novan vorton al via persona vortaro…"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add Word"
+#~ msgstr "Aldoni Vorton"
+
+#~ msgctxt "@action:button"
+#~ msgid "Delete word"
+#~ msgstr "Forigi vorton"
+
+#~ msgctxt "@title"
+#~ msgid "Thread"
+#~ msgstr "Fadeno"
