@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-20 12:34+0200\n"
+"PO-Revision-Date: 2024-06-23 08:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "%1 ha sol·licitat seguir-vos"
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
-msgstr "%1 ha marcat com a favorit la vostra publicació"
+msgstr "%1 ha marcat com a preferida la vostra publicació"
 
 #: account/notificationhandler.cpp:122
 #, kde-format
@@ -912,12 +912,10 @@ msgid "Logout"
 msgstr "Sortida"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Segur que voleu sortir de la sessió de %1?"
+msgstr "Segur que voleu sortir de la sessió?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -2648,7 +2646,7 @@ msgstr "Visualitza el perfil de %1"
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr "%1 usuaris han marcat com a favorit la vostra publicació"
+msgstr "%1 usuaris han marcat com a preferida la vostra publicació"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
@@ -2766,11 +2764,9 @@ msgid "Direct Message"
 msgstr "Missatge directe"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 preferit"
+msgstr "Sense preferits"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2780,10 +2776,9 @@ msgstr[0] "%1 preferit"
 msgstr[1] "%1 preferits"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Sense publicacions"
+msgstr "Sense impulsos"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3620,6 +3615,8 @@ msgstr "Mou a fora"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Desar una publicació editada que té una votació netejarà els resultats "
+"existents."
 
 #: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
@@ -4165,15 +4162,13 @@ msgid "Trending"
 msgstr "Tendències"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "S'està carregant"
+msgstr "S'està carregant…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "Publicació de %1"

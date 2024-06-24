@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-20 13:44+0200\n"
+"PO-Revision-Date: 2024-06-23 15:04+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -906,12 +906,10 @@ msgid "Logout"
 msgstr "Afmelden"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Wilt u zich afmelden uit %1?"
+msgstr "Wilt u zich afmelden?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -2759,11 +2757,9 @@ msgid "Direct Message"
 msgstr "Direct bericht"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 favoriet"
+msgstr "Geen favorieten"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2773,10 +2769,9 @@ msgstr[0] "%1 favoriet"
 msgstr[1] "%1 favorieten"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Geen berichten"
+msgstr "Geen oppeppers"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3609,6 +3604,8 @@ msgstr "Verschijnt"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Een bewerkte post opslaan die een peiling bevat zal bestaande resultaten "
+"wissen."
 
 #: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
@@ -4153,18 +4150,16 @@ msgid "Trending"
 msgstr "Trending"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Laden"
+msgstr "Laden…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Gepost uit %1"
+msgstr "Gepost door %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
