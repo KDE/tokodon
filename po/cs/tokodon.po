@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-20 16:30+0200\n"
+"PO-Revision-Date: 2024-06-24 10:16+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -886,12 +886,10 @@ msgid "Logout"
 msgstr "Odhlásit se"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to delete this post?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Opravdu si přejete smazat tento příspěvek?"
+msgstr "Opravdu si přejete odhlásit se?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -2727,10 +2725,9 @@ msgid "Direct Message"
 msgstr "Přímá zpráva"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "Oblíbené"
+msgstr "Žádné oblíbené"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2741,10 +2738,9 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Žádné příspěvky"
+msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -4116,18 +4112,16 @@ msgid "Trending"
 msgstr "Trendy"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Načítání"
+msgstr "Probíhá načítání…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Příspěvky od %1"
+msgstr "Příspěvek od %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4222,53 +4216,3 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
-
-#~ msgid "Spell Checking"
-#~ msgstr "Kontrola pravopisu"
-
-#~ msgid "Enable automatic spell checking"
-#~ msgstr "Povolit automatickou kontrolu pravopisu"
-
-#~ msgid "Ignore uppercase words"
-#~ msgstr "Ignorovat slova psaná velkými písmeny"
-
-#~ msgid "Ignore hyphenated words"
-#~ msgstr "Ignorovat slova s pomlčkou"
-
-#~ msgid "Detect language automatically"
-#~ msgstr "Automaticky detekovat jazyk"
-
-#~ msgid "Selected default language:"
-#~ msgstr "Vybraný výchozí jazyk:"
-
-# žádné parametry funkce v inspektoru funkcí
-#~ msgid "None"
-#~ msgstr "Nic"
-
-#~ msgid "Additional Spell Checking Languages"
-#~ msgstr "Další jazyky pro kontrolu pravopisu"
-
-#~ msgid ""
-#~ "%1 will provide spell checking and suggestions for the languages listed "
-#~ "here when autodetection is enabled."
-#~ msgstr ""
-#~ "Pokud je automatická detekce povolena, bude %1 poskytovat kontrolu "
-#~ "pravopisu a návrhy pro jazyky v tomto seznamu."
-
-#~ msgid "Open Personal Dictionary"
-#~ msgstr "Otevřít vlastní slovník"
-
-#~ msgid "Default Language"
-#~ msgstr "Výchozí jazyk"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Word"
-#~ msgstr "Přidat slovo"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Odstranit slovo"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "Vlákno"

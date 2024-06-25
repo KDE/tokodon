@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-20 12:34+0200\n"
+"PO-Revision-Date: 2024-06-23 08:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -107,7 +107,7 @@ msgstr "%1 ha sol·licitat seguir-vos"
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
-msgstr "%1 ha marcat la vostra publicació com a preferida"
+msgstr "%1 ha marcat com a preferida la vostra publicació"
 
 #: account/notificationhandler.cpp:122
 #, kde-format
@@ -911,12 +911,10 @@ msgid "Logout"
 msgstr "Eixida"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Segur que voleu eixir de la sessió de %1?"
+msgstr "Segur que voleu eixir de la sessió?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -2647,7 +2645,7 @@ msgstr "Visualitza el perfil de %1"
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr "%1 usuaris han marcat com a favorit la vostra publicació"
+msgstr "%1 usuaris han marcat com a preferida la vostra publicació"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
@@ -2765,11 +2763,9 @@ msgid "Direct Message"
 msgstr "Missatge directe"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 preferit"
+msgstr "Sense preferits"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2779,10 +2775,9 @@ msgstr[0] "%1 preferit"
 msgstr[1] "%1 preferits"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Sense publicacions"
+msgstr "Sense impulsos"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3617,6 +3612,8 @@ msgstr "Mou cap a fora"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Guardar una publicació editada que té una votació netejarà els resultats "
+"existents."
 
 #: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
@@ -4162,15 +4159,13 @@ msgid "Trending"
 msgstr "Tendències"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "S'està carregant"
+msgstr "S'està carregant…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "Publicació de %1"
@@ -4268,62 +4263,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgid "Spell Checking"
-#~ msgstr "Verificació ortogràfica"
-
-#~ msgid "Enable automatic spell checking"
-#~ msgstr "Activa la verificació ortogràfica automàtica"
-
-#~ msgid "Ignore uppercase words"
-#~ msgstr "Ignora les paraules en majúscules"
-
-#~ msgid "Ignore hyphenated words"
-#~ msgstr "Ignora les paraules amb guió"
-
-#~ msgid "Detect language automatically"
-#~ msgstr "Detecta automàticament l'idioma"
-
-#~ msgid "Selected default language:"
-#~ msgstr "Idioma predeterminat seleccionat:"
-
-#~ msgid "None"
-#~ msgstr "Sense"
-
-#~ msgid "Additional Spell Checking Languages"
-#~ msgstr "Idiomes addicionals de verificació ortogràfica"
-
-#~ msgid ""
-#~ "%1 will provide spell checking and suggestions for the languages listed "
-#~ "here when autodetection is enabled."
-#~ msgstr ""
-#~ "%1 proporcionarà la verificació ortogràfica i suggeriments per als "
-#~ "idiomes llistats ací si s'ha marcat la detecció automàtica."
-
-#~ msgid "Open Personal Dictionary"
-#~ msgstr "Obri un diccionari personal"
-
-#~ msgctxt "@title:window"
-#~ msgid "Spell checking languages"
-#~ msgstr "Idiomes de verificació ortogràfica"
-
-#~ msgid "Default Language"
-#~ msgstr "Idioma predeterminat"
-
-#~ msgid "Spell checking dictionary"
-#~ msgstr "Diccionari de verificació ortogràfica"
-
-#~ msgid "Add a new word to your personal dictionary…"
-#~ msgstr "Afig una paraula nova al vostre diccionari personal…"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Word"
-#~ msgstr "Afig una paraula"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Suprimix la paraula"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "Fil"
