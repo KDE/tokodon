@@ -157,7 +157,7 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: {
-        ConfigurationsView.window = root;
+        TokodonConfigurationView.window = root;
 
         if (AccountManager.isReady) {
             startupAccountCheck();
@@ -435,7 +435,7 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
 
-                onClicked: ConfigurationsView.open()
+                onClicked: TokodonConfigurationView.open()
             }
         }
     }

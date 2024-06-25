@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button Open settings dialog", "Settings")
             icon.name: 'settings-configure-symbolic'
             onTriggered: {
-                ConfigurationsView.open();
+                TokodonConfigurationView.open();
             }
         }
     }

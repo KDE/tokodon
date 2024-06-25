@@ -171,7 +171,7 @@ target_sources(tokodon_static
 )
 
 set_source_files_properties(
-    content/ui/Settings/ConfigurationsView.qml
+    content/ui/Settings/TokodonConfigurationView.qml
     PROPERTIES
         QT_QML_SINGLETON_TYPE TRUE
 )
@@ -228,7 +228,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/NetworkProxyPage.qml
         content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml
-        content/ui/Settings/ConfigurationsView.qml
+        content/ui/Settings/TokodonConfigurationView.qml
 
         # Composer
         content/ui/StatusComposer/EditorAttachmentGrid.qml
