@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-24 10:16+0200\n"
+"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -553,7 +553,7 @@ msgstr ""
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
-msgstr ""
+msgstr "Žádné emotikony"
 
 #: content/ui/Components/InlineIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -1126,7 +1126,7 @@ msgid "Home"
 msgstr "Domů"
 
 #: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
-#: content/ui/Settings/ConfigurationsView.qml:21
+#: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "Oznamování"
@@ -3196,38 +3196,6 @@ msgstr ""
 msgid "Auto-play animated GIFs"
 msgstr "Automaticky přehrát animované GIFy"
 
-#: content/ui/Settings/ConfigurationsView.qml:15
-#, kde-format
-msgid "Appearance"
-msgstr "Vzhled"
-
-#: content/ui/Settings/ConfigurationsView.qml:27
-#, kde-format
-msgid "Accounts"
-msgstr "Účty"
-
-#: content/ui/Settings/ConfigurationsView.qml:34
-#, kde-format
-msgid "Network Proxy"
-msgstr "Síťová proxy"
-
-#: content/ui/Settings/ConfigurationsView.qml:40
-#, kde-format
-msgid "About Tokodon"
-msgstr "O aplikaci Tokodon"
-
-#: content/ui/Settings/ConfigurationsView.qml:43
-#: content/ui/Settings/ConfigurationsView.qml:50
-#, kde-format
-msgctxt "@title:group"
-msgid "About"
-msgstr "O aplikaci"
-
-#: content/ui/Settings/ConfigurationsView.qml:47
-#, kde-format
-msgid "About KDE"
-msgstr "O prostředí KDE"
-
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -3444,6 +3412,38 @@ msgstr "Soukromý"
 #, kde-format
 msgid "Reset"
 msgstr "Obnovit"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:15
+#, kde-format
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:27
+#, kde-format
+msgid "Accounts"
+msgstr "Účty"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:34
+#, kde-format
+msgid "Network Proxy"
+msgstr "Síťová proxy"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:40
+#, kde-format
+msgid "About Tokodon"
+msgstr "O aplikaci Tokodon"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
+#, kde-format
+msgctxt "@title:group"
+msgid "About"
+msgstr "O aplikaci"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:47
+#, kde-format
+msgid "About KDE"
+msgstr "O prostředí KDE"
 
 #: content/ui/ShareDialog.qml:34
 #, kde-format
@@ -4139,7 +4139,7 @@ msgstr "Vlastní"
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr ""
+msgstr "Smajlíky"
 
 #: utils/emojimodel.cpp:144
 #, kde-format

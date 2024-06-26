@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-23 00:38+0000\n"
+"POT-Creation-Date: 2024-06-26 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -880,12 +880,10 @@ msgid "Logout"
 msgstr "注销"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "确定要退出登录 %1 吗？"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -1122,7 +1120,7 @@ msgid "Home"
 msgstr "主页"
 
 #: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
-#: content/ui/Settings/ConfigurationsView.qml:21
+#: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
@@ -2719,10 +2717,9 @@ msgid "Direct Message"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "收藏夹"
+msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2731,10 +2728,9 @@ msgid_plural "%1 favorites"
 msgstr[0] ""
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "暂无嘟文"
+msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3188,38 +3184,6 @@ msgstr "将时间线上的图像裁剪到 16x9"
 msgid "Auto-play animated GIFs"
 msgstr ""
 
-#: content/ui/Settings/ConfigurationsView.qml:15
-#, kde-format
-msgid "Appearance"
-msgstr "外观"
-
-#: content/ui/Settings/ConfigurationsView.qml:27
-#, kde-format
-msgid "Accounts"
-msgstr "账户"
-
-#: content/ui/Settings/ConfigurationsView.qml:34
-#, kde-format
-msgid "Network Proxy"
-msgstr "网络代理"
-
-#: content/ui/Settings/ConfigurationsView.qml:40
-#, kde-format
-msgid "About Tokodon"
-msgstr "关于 Tokodon"
-
-#: content/ui/Settings/ConfigurationsView.qml:43
-#: content/ui/Settings/ConfigurationsView.qml:50
-#, kde-format
-msgctxt "@title:group"
-msgid "About"
-msgstr ""
-
-#: content/ui/Settings/ConfigurationsView.qml:47
-#, kde-format
-msgid "About KDE"
-msgstr "关于 KDE"
-
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -3436,6 +3400,38 @@ msgstr "私有"
 #, kde-format
 msgid "Reset"
 msgstr "重置"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:15
+#, kde-format
+msgid "Appearance"
+msgstr "外观"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:27
+#, kde-format
+msgid "Accounts"
+msgstr "账户"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:34
+#, kde-format
+msgid "Network Proxy"
+msgstr "网络代理"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:40
+#, kde-format
+msgid "About Tokodon"
+msgstr "关于 Tokodon"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
+#, kde-format
+msgctxt "@title:group"
+msgid "About"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:47
+#, kde-format
+msgid "About KDE"
+msgstr "关于 KDE"
 
 #: content/ui/ShareDialog.qml:34
 #, kde-format
@@ -4098,19 +4094,16 @@ msgid "Trending"
 msgstr ""
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "正在载入"
+msgstr ""
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "发布于 %1"
+msgstr ""
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4205,42 +4198,3 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
-
-#~ msgid "Spell Checking"
-#~ msgstr "拼写检查"
-
-#~ msgid "Enable automatic spell checking"
-#~ msgstr "启用自动拼写检查"
-
-#~ msgid "Ignore uppercase words"
-#~ msgstr "忽略大写单词"
-
-#~ msgid "Ignore hyphenated words"
-#~ msgstr "忽略连字符单词"
-
-#~ msgid "Detect language automatically"
-#~ msgstr "自动检测语言"
-
-#~ msgid "Selected default language:"
-#~ msgstr "选定的默认语言："
-
-#~ msgid "Open Personal Dictionary"
-#~ msgstr "打开个人词典"
-
-#~ msgctxt "@title:window"
-#~ msgid "Spell checking languages"
-#~ msgstr "拼写检查语言"
-
-#~ msgid "Spell checking dictionary"
-#~ msgstr "拼写检查词典"
-
-#~ msgid "Add a new word to your personal dictionary…"
-#~ msgstr "在您的个人字典中添加一个新单词…"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "删除单词"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "嘟文"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-23 00:38+0000\n"
-"PO-Revision-Date: 2024-06-20 02:26+0900\n"
+"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"PO-Revision-Date: 2024-06-26 06:43+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -889,12 +889,10 @@ msgid "Logout"
 msgstr "登出"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "您確定要登出 %1 嗎？"
+msgstr "您確定要登出嗎？"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -1131,7 +1129,7 @@ msgid "Home"
 msgstr "首頁"
 
 #: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
-#: content/ui/Settings/ConfigurationsView.qml:21
+#: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
@@ -2728,11 +2726,9 @@ msgid "Direct Message"
 msgstr "私訊"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 個最愛"
+msgstr "沒有最愛"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2741,10 +2737,9 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1 個最愛"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "無嘟文"
+msgstr "沒有轉嘟"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3199,38 +3194,6 @@ msgstr "裁切時間軸上的影像到 16x9"
 msgid "Auto-play animated GIFs"
 msgstr "自動播放動態 GIF"
 
-#: content/ui/Settings/ConfigurationsView.qml:15
-#, kde-format
-msgid "Appearance"
-msgstr "外觀"
-
-#: content/ui/Settings/ConfigurationsView.qml:27
-#, kde-format
-msgid "Accounts"
-msgstr "帳號"
-
-#: content/ui/Settings/ConfigurationsView.qml:34
-#, kde-format
-msgid "Network Proxy"
-msgstr "網路代理伺服器"
-
-#: content/ui/Settings/ConfigurationsView.qml:40
-#, kde-format
-msgid "About Tokodon"
-msgstr "關於 Tokodon"
-
-#: content/ui/Settings/ConfigurationsView.qml:43
-#: content/ui/Settings/ConfigurationsView.qml:50
-#, kde-format
-msgctxt "@title:group"
-msgid "About"
-msgstr "關於"
-
-#: content/ui/Settings/ConfigurationsView.qml:47
-#, kde-format
-msgid "About KDE"
-msgstr "關於 KDE"
-
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -3450,6 +3413,38 @@ msgstr "僅限跟隨者"
 msgid "Reset"
 msgstr "重設"
 
+#: content/ui/Settings/TokodonConfigurationView.qml:15
+#, kde-format
+msgid "Appearance"
+msgstr "外觀"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:27
+#, kde-format
+msgid "Accounts"
+msgstr "帳號"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:34
+#, kde-format
+msgid "Network Proxy"
+msgstr "網路代理伺服器"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:40
+#, kde-format
+msgid "About Tokodon"
+msgstr "關於 Tokodon"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
+#, kde-format
+msgctxt "@title:group"
+msgid "About"
+msgstr "關於"
+
+#: content/ui/Settings/TokodonConfigurationView.qml:47
+#, kde-format
+msgid "About KDE"
+msgstr "關於 KDE"
+
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
@@ -3570,7 +3565,7 @@ msgstr "彈出"
 #: content/ui/StatusComposer/StatusComposer.qml:127
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
-msgstr ""
+msgstr "儲存包含投票的編輯嘟文會清除現有的投票結果。"
 
 #: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
@@ -3774,11 +3769,10 @@ msgid "Repost"
 msgstr "重新嘟文"
 
 #: content/ui/StatusComposer/StatusComposer.qml:531
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "已儲存"
+msgstr "儲存"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -4112,15 +4106,13 @@ msgid "Trending"
 msgstr "熱門趨勢"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "載入中"
+msgstr "載入中…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "來自 %1 的嘟文"
