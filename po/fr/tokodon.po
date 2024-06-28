@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-26 00:39+0000\n"
-"PO-Revision-Date: 2024-06-11 09:15+0200\n"
+"PO-Revision-Date: 2024-06-26 13:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -907,12 +907,10 @@ msgid "Logout"
 msgstr "Se déconnecter"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Voulez-vous vraiment vous déconnecter de %1 ?"
+msgstr "Voulez-vous vraiment vous déconnecter ?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -2762,11 +2760,9 @@ msgid "Direct Message"
 msgstr "Message direct"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "signet %1"
+msgstr "Aucun signet"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -3093,17 +3089,14 @@ msgid "Vote"
 msgstr "Vote"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgid "Post from %1"
-msgstr "Publié sur %1"
+msgstr "Publié par %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
-#, fuzzy, kde-format
-#| msgid "Unlisted post"
+#, kde-format
 msgid "Quoted post"
-msgstr "Message non répertorié"
+msgstr "Message en citation"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3488,11 +3481,10 @@ msgstr "À propos de Tokodon"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:43
 #: content/ui/Settings/TokodonConfigurationView.qml:50
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "À propos de KDE"
+msgstr "À propos"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:47
 #, kde-format
@@ -3620,6 +3612,8 @@ msgstr "Sortir"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"L'enregistrement d'une publication modifiée soumise à un sondage effacera "
+"les résultats existants."
 
 #: content/ui/StatusComposer/StatusComposer.qml:134
 #, kde-format
@@ -3823,11 +3817,10 @@ msgid "Repost"
 msgstr "Envoyer un message à nouveau"
 
 #: content/ui/StatusComposer/StatusComposer.qml:531
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "Enregistré"
+msgstr "Enregistrer"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -3910,10 +3903,9 @@ msgid "Switch account"
 msgstr "Changer de compte"
 
 #: content/ui/UserInfo.qml:137
-#, fuzzy, kde-format
-#| msgid "Log in to an existing account"
+#, kde-format
 msgid "Log in or create a new account"
-msgstr "Se connecter à un compte existant"
+msgstr "Se connecter ou créer un nouveau compte"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -4011,10 +4003,9 @@ msgid "Mastodon client"
 msgstr "Client Mastodon"
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© 2021 - 2023 Carl Schwan, 2021 - 2023 La communauté KDE"
+msgstr "© 2021 - 2024 Carl Schwan, 2021 - 2024 La communauté de KDE"
 
 #: main.cpp:115
 #, kde-format
@@ -4172,19 +4163,16 @@ msgid "Trending"
 msgstr "Tendance"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Chargement"
+msgstr "Chargement en cours..."
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Publié sur %1"
+msgstr "Publié par %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
