@@ -18,6 +18,9 @@ QQC2.ItemDelegate {
     required property var notificationActorIdentity
     required property bool selected
 
+    required property var type
+    readonly property bool isAdminSignUp: type === Notification.AdminSignUp
+
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.largeSpacing * 2
     leftPadding: Kirigami.Units.largeSpacing * 2
@@ -47,7 +50,11 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 font: Config.defaultFont
-                text: i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
+                text: if (isAdminSignUp) {
+                    i18n("%1 signed up", root.notificationActorIdentity.displayNameHtml)
+                } else {
+                    i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
+                }
                 textFormat: Text.RichText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter

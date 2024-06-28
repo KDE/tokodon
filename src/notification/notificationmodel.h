@@ -35,7 +35,7 @@ public:
     /**
      * @brief Set the types of notifications to exclude.
      *
-     * Valid options are "mention", "status", "reblog", "follow", "follow_request", "favourite", "poll" and "update".
+     * Valid options are "mention", "status", "reblog", "follow", "follow_request", "favourite", "poll", "update" and "admin.sign_up".
      *
      * @see excludeTypes()
      */

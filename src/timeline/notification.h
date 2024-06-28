@@ -13,7 +13,7 @@ public:
     Notification() = default;
     explicit Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
 
-    enum Type { Mention, Follow, Repeat, Favorite, Poll, FollowRequest, Update, Status };
+    enum Type { Mention, Follow, Repeat, Favorite, Poll, FollowRequest, Update, Status, AdminSignUp };
     Q_ENUM(Type);
 
     int id() const;

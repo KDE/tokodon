@@ -45,7 +45,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
+                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
         }
     }
 
@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
         }
     }
 
@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up'];
         }
     }
 
@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up'];
         }
     }
 
@@ -85,7 +85,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update'];
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
         }
     }
 
@@ -95,7 +95,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
         }
     }
 
@@ -197,6 +197,11 @@ Kirigami.ScrollablePage {
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
                 }
+            }
+
+            DelegateChoice {
+                roleValue: Notification.AdminSignUp
+                FollowDelegate {}
             }
         }
 
