@@ -99,9 +99,8 @@ StatefulApp.StatefulWindow {
         crossActionDialog.open();
     }
 
-    StatefulApp.Action {
-        application: root.application
-        actionName: 'open_kcommand_bar'
+    Kirigami.Action {
+        fromQAction: root.application.action('open_kcommand_bar')
     }
 
     ReportDialog {
@@ -492,9 +491,8 @@ StatefulApp.StatefulWindow {
             }
 
             Delegates.RoundedItemDelegate {
-                action: StatefulApp.Action {
-                    actionName: 'options_configure'
-                    application: root.application
+                action: Kirigami.Action {
+                    fromQAction: root.application.action('options_configure')
                 }
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing

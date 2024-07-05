@@ -343,9 +343,8 @@ TimelinePage {
                                                                 title: i18n("Account editor")
                                                             })
                                         },
-                                        StatefulApp.Action {
-                                            application: (accountInfo.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application
-                                            actionName: 'options_configure'
+                                        Kirigami.Action {
+                                            fromQAction: (accountInfo.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application.action('options_configure')
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"

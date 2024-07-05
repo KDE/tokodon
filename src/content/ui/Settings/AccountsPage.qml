@@ -11,7 +11,6 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.tokodon
 
@@ -85,9 +84,8 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             id: addAccountDelegate
-            action: StatefulApp.Action {
-                application: root.application
-                actionName: 'add_account'
+            action: Kirigami.Action {
+                fromQAction: root.application.action('add_account')
             }
         }
     }

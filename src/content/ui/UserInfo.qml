@@ -134,9 +134,8 @@ QQC2.Pane {
                 enabled: AccountManager.hasAccounts && applicationWindow().pageStack.depth > 0 && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
 
 
-                action: StatefulApp.Action {
-                    application: root.application
-                    actionName: 'add_account'
+                action: Kirigami.Action {
+                    fromQAction: root.application.action('add_account')
                 }
 
                 contentItem: Delegates.SubtitleContentItem {

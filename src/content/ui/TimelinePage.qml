@@ -70,9 +70,8 @@ Kirigami.ScrollablePage {
 
         showCloseButton: true
 
-        actions: StatefulApp.Action {
-            application: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application
-            actionName: 'options_configure'
+        actions: Kirigami.Action {
+            fromQAction: (root.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application.action('options_configure')
         }
     }
 
