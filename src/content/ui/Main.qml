@@ -9,6 +9,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
+import org.kde.tokodon.private
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import "./StatusComposer"
@@ -232,19 +233,56 @@ Kirigami.ApplicationWindow {
         }
 
         function onOpenComposer(text: string): void {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: StatusComposer.New,
-                initialText: text
-            });
+            if (Config.popOutByDefault) {
+                const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                    closeApplicationWhenFinished: true,
+                    purpose: StatusComposer.New,
+                    initialText: text
+                }, {
+                    title: i18n("Write a new post"),
+                    width: Kirigami.Units.gridUnit * 30,
+                    height: Kirigami.Units.gridUnit * 30,
+                    modality: Qt.NonModal
+                });
+                item.Window.window.closing.connect(event => {
+                    if (item.shouldClose()) {
+                        event.accepted = false;
+                    }
+                });
+            } else {
+                pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                    purpose: StatusComposer.New,
+                    initialText: text
+                });
+            }
         }
 
         function onReplyTo(post: Post): void {
-            const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                purpose: StatusComposer.Reply,
-                previewPost: post
-            });
-            item.backend.setupReplyTo(post);
-            item.refreshData();
+            if (Config.popOutByDefault) {
+                const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                    closeApplicationWhenFinished: true,
+                    purpose: StatusComposer.Reply,
+                }, {
+                    title: i18n("Reply to post"),
+                    width: Kirigami.Units.gridUnit * 30,
+                    height: Kirigami.Units.gridUnit * 30,
+                    modality: Qt.NonModal
+                });
+                item.backend.setupReplyTo(post);
+                item.refreshData();
+                item.Window.window.closing.connect(event => {
+                    if (item.shouldClose()) {
+                        event.accepted = false;
+                    }
+                });
+            } else {
+                const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                    purpose: StatusComposer.Reply,
+                    previewPost: post
+                });
+                item.backend.setupReplyTo(post);
+                item.refreshData();
+            }
         }
 
         function onOpenPost(postId: string): void {

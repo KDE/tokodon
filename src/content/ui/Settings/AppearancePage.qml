@@ -32,6 +32,23 @@ FormCard.FormCardPage {
                 Config.save();
             }
         }
+
+        FormCard.FormDelegateSeparator {
+            below: popoutComposer; above: colorTheme
+            visible: Kirigami.Settings.isMobile
+        }
+
+        FormCard.FormSwitchDelegate {
+            id: popoutComposer
+            text: i18n("Pop out the post composer by default")
+            checked: Config.popOutByDefault
+            enabled: !Config.popOutByDefaultImmutable
+            visible: Kirigami.Settings.isMobile
+            onToggled: {
+                Config.popOutByDefault = checked
+                Config.save()
+            }
+        }
     }
 
     FormCard.FormHeader {
