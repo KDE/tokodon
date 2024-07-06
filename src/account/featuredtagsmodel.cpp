@@ -59,21 +59,30 @@ void FeaturedTagsModel::fill()
 {
     const auto account = AccountManager::instance().selectedAccount();
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/accounts/%1/featured_tags").arg(m_accountId)), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto tags = doc.array().toVariantList();
+    account->get(
+        account->apiUrl(QStringLiteral("/api/v1/accounts/%1/featured_tags").arg(m_accountId)),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto tags = doc.array().toVariantList();
 
-        if (!tags.isEmpty()) {
-            QVector<QString> fetchedTags;
+            if (!tags.isEmpty()) {
+                QVector<QString> fetchedTags;
 
-            std::transform(tags.cbegin(), tags.cend(), std::back_inserter(fetchedTags), [=](const QVariant &value) -> auto {
-                return value.toJsonObject()["name"_L1].toString();
-            });
-            beginInsertRows({}, m_tags.size(), m_tags.size() + fetchedTags.size() - 1);
-            m_tags += fetchedTags;
-            endInsertRows();
-        }
-    });
+                std::transform(tags.cbegin(), tags.cend(), std::back_inserter(fetchedTags), [=](const QVariant &value) -> auto {
+                    return value.toJsonObject()["name"_L1].toString();
+                });
+                beginInsertRows({}, m_tags.size(), m_tags.size() + fetchedTags.size() - 1);
+                m_tags += fetchedTags;
+                endInsertRows();
+            }
+        },
+        [](const QNetworkReply *reply) {
+            Q_UNUSED(reply)
+            // Note: we are silently failing here because some servers don't implement this endpoint
+            // See BUG: 484475 and https://docs.akkoma.dev/stable-docs/development/API/differences_in_mastoapi_responses/#featured-tags
+        });
 }
 
 #include "moc_featuredtagsmodel.cpp"
