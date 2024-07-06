@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-06 00:38+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -93,7 +93,7 @@ msgstr "Skrifa nýja færslu"
 msgid "%1 boosted your post"
 msgstr "%1s endurbirti færsluna þína"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 fylgist núna með þér"
@@ -758,6 +758,12 @@ msgstr "Endurbirta"
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr ""
+
+#: content/ui/FollowDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "%1 signed up"
+msgstr "%1 fylgist núna með þér"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, fuzzy, kde-format
@@ -2763,7 +2769,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Fylgjast með"
 
-#: content/ui/NotificationPage.qml:211
+#: content/ui/NotificationPage.qml:216
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "No Notifications"

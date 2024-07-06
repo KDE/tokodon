@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-06 00:38+0000\n"
 "PO-Revision-Date: 2024-06-23 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -91,7 +91,7 @@ msgstr "%1 je napisal novo objavo"
 msgid "%1 boosted your post"
 msgstr "%1 je izpostavil vašo objavo"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 vam sledi"
@@ -699,6 +699,12 @@ msgstr "Ni objav v trendu"
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Ni ključnikov v trendu"
+
+#: content/ui/FollowDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1 mentioned you"
+msgid "%1 signed up"
+msgstr "%1 vas je omenil"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -2634,7 +2640,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Sledenja"
 
-#: content/ui/NotificationPage.qml:211
+#: content/ui/NotificationPage.qml:216
 #, kde-format
 msgid "No Notifications"
 msgstr "Ni obvestil"

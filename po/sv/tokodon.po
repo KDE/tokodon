@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-06 00:38+0000\n"
 "PO-Revision-Date: 2024-06-23 09:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr "%1 skev ett nytt inlägg"
 msgid "%1 boosted your post"
 msgstr "%1 förstärkte ditt inlägg"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 följer dig"
@@ -685,6 +685,12 @@ msgstr "Inga trendande inlägg"
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Inga trendande etiketter"
+
+#: content/ui/FollowDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1 mentioned you"
+msgid "%1 signed up"
+msgstr "%1 nämnde dig"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -2617,7 +2623,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Följer"
 
-#: content/ui/NotificationPage.qml:211
+#: content/ui/NotificationPage.qml:216
 #, kde-format
 msgid "No Notifications"
 msgstr "Inga underrättelser"

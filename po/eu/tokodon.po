@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-06 00:38+0000\n"
 "PO-Revision-Date: 2024-04-19 22:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr "%1(e)k posta berri bat Idatzi du"
 msgid "%1 boosted your post"
 msgstr "%1(e)k zure posta bultzatu du(te)"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1(e)k jarraitu zaituzte"
@@ -698,6 +698,12 @@ msgstr "Joerako postarik ez"
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Ez dago joerako etiketarik"
+
+#: content/ui/FollowDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1 mentioned you"
+msgid "%1 signed up"
+msgstr "%1(e)k aipatu zaitu"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -2638,7 +2644,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Jarraitzen ditu"
 
-#: content/ui/NotificationPage.qml:211
+#: content/ui/NotificationPage.qml:216
 #, kde-format
 msgid "No Notifications"
 msgstr "Jakinarazpenik ez"
