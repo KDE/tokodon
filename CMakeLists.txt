@@ -20,7 +20,7 @@ endif()
 
 option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
 
-set(KF_MIN_VERSION "6.0.0")
+set(KF_MIN_VERSION "6.5.0")
 set(QT_MIN_VERSION "6.6")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)

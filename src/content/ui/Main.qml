@@ -12,6 +12,7 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.config as KConfig
 
 import "./StatusComposer"
 import "./PostDelegate"
@@ -177,7 +178,6 @@ StatefulApp.StatefulWindow {
             startupAccountCheck();
         }
 
-        saveWindowGeometryConnections.enabled = true;
         homeAction.checked = true;
     }
 
@@ -805,26 +805,8 @@ StatefulApp.StatefulWindow {
         }
     }
 
-    // This timer allows to batch update the window size change to reduce
-    // the io load and also work around the fact that x/y/width/height are
-    // changed when loading the page and overwrite the saved geometry from
-    // the previous session.
-    Timer {
-        id: saveWindowGeometryTimer
-        interval: 1000
-        onTriggered: WindowController.saveGeometry()
-    }
-
-    Connections {
-        id: saveWindowGeometryConnections
-        enabled: false // Disable on startup to avoid writing wrong values if the window is hidden
-        target: root
-
-        function onClosing(): void { WindowController.saveGeometry(); }
-        function onWidthChanged(): void { saveWindowGeometryTimer.restart(); }
-        function onHeightChanged(): void { saveWindowGeometryTimer.restart(); }
-        function onXChanged(): void { saveWindowGeometryTimer.restart(); }
-        function onYChanged(): void { saveWindowGeometryTimer.restart(); }
+    KConfig.WindowStateSaver {
+        configGroupName: "Main"
     }
 
     Connections {
