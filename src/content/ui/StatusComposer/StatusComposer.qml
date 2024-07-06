@@ -115,10 +115,13 @@ Kirigami.ScrollablePage {
             contentWarning.checked = true;
         }
 
-        const filteredMentions = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account));
-        if (filteredMentions.length > 0) {
-            textArea.text = filteredMentions.join(" ") + " ";
-            textArea.cursorPosition = textArea.length;
+        // Stop it from overwriting existing text
+        if (textArea.text === "") {
+            const filteredMentions = root.backend.mentions.filter((mention) => mention !== ('@' + AccountManager.selectedAccount.identity.account));
+            if (filteredMentions.length > 0) {
+                textArea.text = filteredMentions.join(" ") + " ";
+                textArea.cursorPosition = textArea.length;
+            }
         }
     }
 
