@@ -172,10 +172,10 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
     connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo"_L1)) {
-            qCWarning(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
             if (errorCallback) {
                 errorCallback(reply);
             } else {
+                qCWarning(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
             }
             return;
