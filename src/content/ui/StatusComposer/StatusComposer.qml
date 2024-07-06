@@ -182,11 +182,23 @@ Kirigami.ScrollablePage {
         }
     }
 
-    function uploadFile(url) {
+    function uploadFile(url: string): void {
         progress.reply = backend.attachmentEditorModel.append(url);
     }
 
-    function pasteImage() {
+    function uploadData(data: var): void {
+        progress.reply = backend.attachmentEditorModel.appendData(data);
+    }
+
+    function pasteImage(): bool {
+        // First let's check if there's image data in the clipboard we can use.
+        // Despite this being named image/png, lots of applications will provide image/png even if the underlying type is something else.
+        if (clipboard.formats.includes("image/png")) {
+            uploadData(clipboard.contentFormat("image/png"));
+            return true;
+        }
+
+        // Otherwise, if it's a local path and the system failed to give us image data, try to upload that.
         let localPath = clipboard.content;
         if (localPath.length === 0) {
             return false;
@@ -195,6 +207,8 @@ Kirigami.ScrollablePage {
             uploadFile(localPath);
             return true;
         }
+
+        // In the last case, paste it anyway to prevent it from disappearing into the void
         return false;
     }
 

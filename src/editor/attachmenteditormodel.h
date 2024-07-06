@@ -30,6 +30,7 @@ public:
 
 public Q_SLOTS:
     QNetworkReply *append(const QString &fileName);
+    QNetworkReply *appendData(QVariant data);
     void appendExisting(Attachment *attachment);
     void removeAttachment(int row);
     void setDescription(int row, const QString &description);
@@ -44,4 +45,6 @@ private:
     QList<Attachment *> m_attachments;
     QHash<QString, QTimer *> m_updateTimers;
     AbstractAccount *m_account;
+
+    QTemporaryDir m_saveDir;
 };

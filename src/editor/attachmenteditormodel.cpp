@@ -78,6 +78,18 @@ QNetworkReply *AttachmentEditorModel::append(const QString &filename)
     });
 }
 
+QNetworkReply *AttachmentEditorModel::appendData(QVariant data)
+{
+    const auto image = data.value<QImage>();
+
+    const QString tempPath = m_saveDir.filePath(QStringLiteral("%1.png").arg(QUuid::createUuid().toString()));
+    if (image.save(tempPath, "PNG")) {
+        return append(tempPath);
+    }
+
+    return nullptr;
+}
+
 void AttachmentEditorModel::appendExisting(Attachment *attachment)
 {
     beginInsertRows({}, m_attachments.count(), m_attachments.count());
