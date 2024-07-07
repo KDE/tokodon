@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:38+0000\n"
+"POT-Creation-Date: 2024-07-07 00:38+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -441,7 +441,7 @@ msgstr ""
 msgid "Account editor"
 msgstr "Adicionar conta"
 
-#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:430
+#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:468
 #: content/ui/TimelinePage.qml:73
 #, fuzzy, kde-format
 #| msgid "Open link"
@@ -449,7 +449,7 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Abrir link"
 
-#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:475
+#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:513
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
@@ -598,7 +598,7 @@ msgstr ""
 msgid "View profile"
 msgstr ""
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:522
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:560
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -691,7 +691,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:568
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:606
 #, kde-format
 msgid "Explore"
 msgstr ""
@@ -1130,13 +1130,13 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: content/ui/Main.qml:105
+#: content/ui/Main.qml:106
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr ""
 
-#: content/ui/Main.qml:107
+#: content/ui/Main.qml:108
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -1144,97 +1144,103 @@ msgctxt "@title"
 msgid "Reply As…"
 msgstr "Responder"
 
-#: content/ui/Main.qml:109
+#: content/ui/Main.qml:110
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr ""
 
-#: content/ui/Main.qml:111
+#: content/ui/Main.qml:112
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr ""
 
-#: content/ui/Main.qml:113
+#: content/ui/Main.qml:114
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr ""
 
-#: content/ui/Main.qml:115
+#: content/ui/Main.qml:116
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:203
+#: content/ui/Main.qml:204 content/ui/Main.qml:242
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgid "Write a new post"
 msgstr "Não listado"
 
-#: content/ui/Main.qml:404
+#: content/ui/Main.qml:266
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgid "Reply to post"
+msgstr "Não listado"
+
+#: content/ui/Main.qml:442
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:414
+#: content/ui/Main.qml:452
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Notificações"
 
-#: content/ui/Main.qml:445
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Home"
 msgstr "Início"
 
-#: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:498 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:529
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/Main.qml:506
+#: content/ui/Main.qml:544
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:536
+#: content/ui/Main.qml:574
 #, kde-format
 msgid "Favourites"
 msgstr ""
 
-#: content/ui/Main.qml:552
+#: content/ui/Main.qml:590
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:582
+#: content/ui/Main.qml:620
 #, kde-format
 msgid "Search"
 msgstr ""
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:635
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/Main.qml:612
+#: content/ui/Main.qml:650
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:760
+#: content/ui/Main.qml:798
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3273,46 +3279,51 @@ msgstr ""
 msgid "Color theme"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:38
+#: content/ui/Settings/AppearancePage.qml:43
+#, kde-format
+msgid "Pop out the post composer by default"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:44
+#: content/ui/Settings/AppearancePage.qml:61
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:59
+#: content/ui/Settings/AppearancePage.qml:76
 #, kde-format
 msgid "Show link previews"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:74
+#: content/ui/Settings/AppearancePage.qml:91
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "Content font"
 msgstr "Aviso de conteúdo"
 
-#: content/ui/Settings/AppearancePage.qml:80
+#: content/ui/Settings/AppearancePage.qml:97
 #, fuzzy, kde-format
 #| msgid "Please choose a file"
 msgid "Please choose a font"
 msgstr "Escolha um arquivo"
 
-#: content/ui/Settings/AppearancePage.qml:91
+#: content/ui/Settings/AppearancePage.qml:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:97
+#: content/ui/Settings/AppearancePage.qml:114
 #, kde-format
 msgid "Crop images on the timeline to 16x9"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:111
+#: content/ui/Settings/AppearancePage.qml:128
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr ""
@@ -3702,209 +3713,209 @@ msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:127
+#: content/ui/StatusComposer/StatusComposer.qml:130
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:134
+#: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:135
+#: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:141
+#: content/ui/StatusComposer/StatusComposer.qml:144
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:223
+#: content/ui/StatusComposer/StatusComposer.qml:240
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "Aviso de conteúdo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:236
+#: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:351
+#: content/ui/StatusComposer/StatusComposer.qml:368
 #, fuzzy, kde-format
 #| msgid "Please choose a file"
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Escolha um arquivo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:371
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:355
+#: content/ui/StatusComposer/StatusComposer.qml:372
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:356
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:358
+#: content/ui/StatusComposer/StatusComposer.qml:375
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:359
+#: content/ui/StatusComposer/StatusComposer.qml:376
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:360
+#: content/ui/StatusComposer/StatusComposer.qml:377
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:361
+#: content/ui/StatusComposer/StatusComposer.qml:378
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:362
+#: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:363
+#: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:364
+#: content/ui/StatusComposer/StatusComposer.qml:381
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:365
+#: content/ui/StatusComposer/StatusComposer.qml:382
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:366
+#: content/ui/StatusComposer/StatusComposer.qml:383
 #, kde-format
 msgid "All files (*)"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:368
+#: content/ui/StatusComposer/StatusComposer.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:379
+#: content/ui/StatusComposer/StatusComposer.qml:396
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:409
+#: content/ui/StatusComposer/StatusComposer.qml:426
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/StatusComposer/StatusComposer.qml:415
+#: content/ui/StatusComposer/StatusComposer.qml:432
 #, fuzzy, kde-format
 #| msgid "Public"
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Público"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:437
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Não listado"
 
-#: content/ui/StatusComposer/StatusComposer.qml:425
+#: content/ui/StatusComposer/StatusComposer.qml:442
 #, fuzzy, kde-format
 #| msgid "Private"
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privado"
 
-#: content/ui/StatusComposer/StatusComposer.qml:430
+#: content/ui/StatusComposer/StatusComposer.qml:447
 #, fuzzy, kde-format
 #| msgid "Direct Message"
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Mensagem direta"
 
-#: content/ui/StatusComposer/StatusComposer.qml:435
+#: content/ui/StatusComposer/StatusComposer.qml:452
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:440
+#: content/ui/StatusComposer/StatusComposer.qml:457
 #, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:443
+#: content/ui/StatusComposer/StatusComposer.qml:460
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "Aviso de conteúdo"
 
-#: content/ui/StatusComposer/StatusComposer.qml:457
+#: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:486
+#: content/ui/StatusComposer/StatusComposer.qml:503
 #, fuzzy, kde-format
 #| msgid "Choice %1"
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Escolher %1"
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:542
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Enviar"
 
-#: content/ui/StatusComposer/StatusComposer.qml:527
+#: content/ui/StatusComposer/StatusComposer.qml:544
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -3912,13 +3923,13 @@ msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Responder"
 
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:546
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:531
+#: content/ui/StatusComposer/StatusComposer.qml:548
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"

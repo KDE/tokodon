@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-06 00:38+0000\n"
+"POT-Creation-Date: 2024-07-07 00:38+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -408,14 +408,14 @@ msgstr "编辑个人资料"
 msgid "Account editor"
 msgstr "账户编辑器"
 
-#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:430
+#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:468
 #: content/ui/TimelinePage.qml:73
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "设置"
 
-#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:475
+#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:513
 #, kde-format
 msgid "Follow Requests"
 msgstr "关注请求"
@@ -553,7 +553,7 @@ msgstr "无表情"
 msgid "View profile"
 msgstr "查看个人资料"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:522
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:560
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -640,7 +640,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "确定要删除此列表吗？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:568
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:606
 #, kde-format
 msgid "Explore"
 msgstr "探索"
@@ -1067,107 +1067,113 @@ msgstr "了解更多"
 msgid "Login"
 msgstr "登录"
 
-#: content/ui/Main.qml:105
+#: content/ui/Main.qml:106
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "打开方式"
 
-#: content/ui/Main.qml:107
+#: content/ui/Main.qml:108
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr ""
 
-#: content/ui/Main.qml:109
+#: content/ui/Main.qml:110
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr ""
 
-#: content/ui/Main.qml:111
+#: content/ui/Main.qml:112
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr ""
 
-#: content/ui/Main.qml:113
+#: content/ui/Main.qml:114
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr ""
 
-#: content/ui/Main.qml:115
+#: content/ui/Main.qml:116
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知操作"
 
-#: content/ui/Main.qml:203
+#: content/ui/Main.qml:204 content/ui/Main.qml:242
 #, kde-format
 msgid "Write a new post"
 msgstr "撰写新嘟文"
 
-#: content/ui/Main.qml:404
+#: content/ui/Main.qml:266
+#, fuzzy, kde-format
+#| msgid "%1 replied to your post"
+msgid "Reply to post"
+msgstr "%1 回复了您的嘟文"
+
+#: content/ui/Main.qml:442
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "调试"
 
-#: content/ui/Main.qml:414
+#: content/ui/Main.qml:452
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/Main.qml:445
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Home"
 msgstr "主页"
 
-#: content/ui/Main.qml:460 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:498 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:529
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/Main.qml:506
+#: content/ui/Main.qml:544
 #, kde-format
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/Main.qml:536
+#: content/ui/Main.qml:574
 #, kde-format
 msgid "Favourites"
 msgstr "喜欢"
 
-#: content/ui/Main.qml:552
+#: content/ui/Main.qml:590
 #, kde-format
 msgid "Bookmarks"
 msgstr "书签"
 
-#: content/ui/Main.qml:582
+#: content/ui/Main.qml:620
 #, kde-format
 msgid "Search"
 msgstr "搜索"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:635
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "公告"
 
-#: content/ui/Main.qml:612
+#: content/ui/Main.qml:650
 #, kde-format
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:760
+#: content/ui/Main.qml:798
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3148,44 +3154,49 @@ msgstr "常规"
 msgid "Color theme"
 msgstr "颜色主题"
 
-#: content/ui/Settings/AppearancePage.qml:38
+#: content/ui/Settings/AppearancePage.qml:43
+#, kde-format
+msgid "Pop out the post composer by default"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/Settings/AppearancePage.qml:44
+#: content/ui/Settings/AppearancePage.qml:61
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
 msgstr "显示回复、喜欢和转嘟数"
 
-#: content/ui/Settings/AppearancePage.qml:59
+#: content/ui/Settings/AppearancePage.qml:76
 #, kde-format
 msgid "Show link previews"
 msgstr "显示链接预览"
 
-#: content/ui/Settings/AppearancePage.qml:74
+#: content/ui/Settings/AppearancePage.qml:91
 #, kde-format
 msgid "Content font"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:80
+#: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
 msgid "Please choose a font"
 msgstr "请选择字体"
 
-#: content/ui/Settings/AppearancePage.qml:91
+#: content/ui/Settings/AppearancePage.qml:108
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "媒体"
 
-#: content/ui/Settings/AppearancePage.qml:97
+#: content/ui/Settings/AppearancePage.qml:114
 #, kde-format
 msgid "Crop images on the timeline to 16x9"
 msgstr "将时间线上的图像裁剪到 16x9"
 
-#: content/ui/Settings/AppearancePage.qml:111
+#: content/ui/Settings/AppearancePage.qml:128
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr ""
@@ -3556,48 +3567,48 @@ msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:127
+#: content/ui/StatusComposer/StatusComposer.qml:130
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:134
+#: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "丢弃草稿"
 
-#: content/ui/StatusComposer/StatusComposer.qml:135
+#: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "确定要丢弃草稿吗？"
 
-#: content/ui/StatusComposer/StatusComposer.qml:141
+#: content/ui/StatusComposer/StatusComposer.qml:144
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:223
+#: content/ui/StatusComposer/StatusComposer.qml:240
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:236
+#: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "有哪些新特性？"
 
-#: content/ui/StatusComposer/StatusComposer.qml:351
+#: content/ui/StatusComposer/StatusComposer.qml:368
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:371
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3606,163 +3617,163 @@ msgstr ""
 "所有支持的格式 (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm "
 "*.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:355
+#: content/ui/StatusComposer/StatusComposer.qml:372
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG 图像 (*.jpg, *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:356
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG 图像 (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:357
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF 图像 (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:358
+#: content/ui/StatusComposer/StatusComposer.qml:375
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP 图像 (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:359
+#: content/ui/StatusComposer/StatusComposer.qml:376
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC 图像 (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:360
+#: content/ui/StatusComposer/StatusComposer.qml:377
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF 图像 (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:361
+#: content/ui/StatusComposer/StatusComposer.qml:378
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF 图像 (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:362
+#: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM 视频 (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:363
+#: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4 视频 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:364
+#: content/ui/StatusComposer/StatusComposer.qml:381
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V 视频 (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:365
+#: content/ui/StatusComposer/StatusComposer.qml:382
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime 视频 (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:366
+#: content/ui/StatusComposer/StatusComposer.qml:383
 #, kde-format
 msgid "All files (*)"
 msgstr "所有文件 (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:368
+#: content/ui/StatusComposer/StatusComposer.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:379
+#: content/ui/StatusComposer/StatusComposer.qml:396
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:409
+#: content/ui/StatusComposer/StatusComposer.qml:426
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/StatusComposer/StatusComposer.qml:415
+#: content/ui/StatusComposer/StatusComposer.qml:432
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "公开"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:437
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:425
+#: content/ui/StatusComposer/StatusComposer.qml:442
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "私有"
 
-#: content/ui/StatusComposer/StatusComposer.qml:430
+#: content/ui/StatusComposer/StatusComposer.qml:447
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:435
+#: content/ui/StatusComposer/StatusComposer.qml:452
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "可见性"
 
-#: content/ui/StatusComposer/StatusComposer.qml:440
+#: content/ui/StatusComposer/StatusComposer.qml:457
 #, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:443
+#: content/ui/StatusComposer/StatusComposer.qml:460
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:457
+#: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:486
+#: content/ui/StatusComposer/StatusComposer.qml:503
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:525
+#: content/ui/StatusComposer/StatusComposer.qml:542
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:527
+#: content/ui/StatusComposer/StatusComposer.qml:544
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "回复"
 
-#: content/ui/StatusComposer/StatusComposer.qml:529
+#: content/ui/StatusComposer/StatusComposer.qml:546
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:531
+#: content/ui/StatusComposer/StatusComposer.qml:548
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
