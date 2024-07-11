@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 # Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-07 00:38+0000\n"
-"PO-Revision-Date: 2024-03-20 18:11+0200\n"
-"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"PO-Revision-Date: 2024-07-09 10:04+0300\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Poedit 2.3\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -365,16 +366,14 @@ msgid "Show Boosts from %1"
 msgstr "Piilota käyttäjän %1 tehostukset"
 
 #: content/ui/AccountInfo.qml:280
-#, fuzzy, kde-format
-#| msgid "Stop Featuring on Profile"
+#, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Lopeta esittely profiilissa"
+msgstr "Lopeta esittely tässä profiilissa"
 
 #: content/ui/AccountInfo.qml:282
-#, fuzzy, kde-format
-#| msgid "Feature on Profile"
+#, kde-format
 msgid "Feature This Profile"
-msgstr "Esittele profiilissa"
+msgstr "Esittele tässä profiilissa"
 
 #: content/ui/AccountInfo.qml:298
 #, kde-format
@@ -445,10 +444,9 @@ msgid "Copy Link"
 msgstr "Kopioi linkki"
 
 #: content/ui/AccountInfo.qml:380
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Profile link copied."
-msgstr "Julkaisulinkki kopioitu."
+msgstr "Profiililinkki kopioitu."
 
 #: content/ui/AccountInfo.qml:470
 #, kde-format
@@ -572,18 +570,16 @@ msgid "No Conversations"
 msgstr "Ei keskusteluja"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr "Uudet seurauspyynnöt"
+msgstr "Lisää seurantapyyntöjen määrää"
 
 #: content/ui/Debug/DebugPage.qml:28
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr "Uudet seurauspyynnöt"
+msgstr "Vähennä seurantapyyntöjen määrää"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -716,7 +712,7 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
-"Tokodon voi näyttää ilmoituksia tehostamisista ja julkaisuihisi "
+"Tokodon voi näyttää ilmoituksia tehostamisista ja julkaisuihin "
 "vastaamisesta.\n"
 "\n"
 "Kirjautumisen jälkeen näytettyjen ilmoitusten tyyppejä voi hienosäätää."
@@ -752,12 +748,12 @@ msgid ""
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
 "Tokodon vaatii käynnissä olevan salasanapalvelun tallentaakseen "
-"arkaluonteiset tiedot.\n"
+"arkaluonteisia tietoja.\n"
 "\n"
-"Tokodon voi käyttää KWalletia, GNOMEn avainrengasta tai mitä tahansa "
+"Tokodon käyttää KWallet tai GNOME avainrengasta. Lisäksi mitä tahansa "
 "libsecret-yhteensopivaa palvelua.\n"
 "\n"
-"Asennettuasi palvelun varmista sen olevan käynnissä ja käynnistä Tokodon "
+"Kun palvelu on asennettu. Varmista sen olevan käynnissä ja käynnistä Tokodon "
 "uudelleen."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
@@ -823,27 +819,21 @@ msgid "Authorization"
 msgstr "Tunnistautuminen"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr "Jatka valitsemalla seuraava linkki ja valtuuta Tokodon: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "Tunnistautuminen"
+msgstr "Avaa valtuutuslinkki"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "Tunnistautuminen"
+msgstr "Kopioi valtuutuslinkki"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -851,22 +841,19 @@ msgid "Link copied."
 msgstr "Linkki kopioitu."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "Tunnistautuminen"
+msgstr "Käytä valtuutuskoodia"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Käytä tätä kirjautumistapaa, jos yllä oleva linkki ei toimi."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "Syötä merkki:"
+msgstr "Anna valtuutustunnus:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -880,11 +867,7 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "Palvelimeen kirjauduttaessa ilmeni ongelma:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please check if the password service is running. For other login issues, "
-#| "you can try logging into the server's website.\\n\\nYou can attempt to "
-#| "log in again with the button below, or restart Tokodon."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\n"
@@ -892,9 +875,8 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 "Tarkista, että salasanapalvelu on käynnissä. Muissa kirjautumisongelmissa "
-"kokeile kirjaudu palvelimen kotisivulle.\\n\\nAlla olevalla painikkeella voi "
-"vielä kokeilla kirjautumista, tai voit kokeilla käynnistää Tokodonin "
-"uudelleen."
+"kokeile kirjaudu palvelimen kotisivulle.Painikkeella voi vielä kokeilla "
+"kirjautumista, tai voit kokeilla käynnistää Tokodon uudelleen."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -920,12 +902,10 @@ msgid "Logout"
 msgstr "Kirjaudu ulos"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Haluatko varmasti kirjautua ulos tililtä %1?"
+msgstr "Haluatko kirjautua ulos?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -941,7 +921,8 @@ msgstr "Kirjaudu"
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelinasetukset."
+msgstr ""
+"Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelimen asetukset."
 
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -951,7 +932,7 @@ msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista välityspalvelinasetukset."
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
-msgstr "Välityspalvelinasetukset"
+msgstr "Välityspalvelimen asetukset"
 
 #: content/ui/LoginFlow/LoginPage.qml:101
 #, kde-format
@@ -974,7 +955,7 @@ msgstr "mastodon.social"
 #: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
 msgid "Enable moderation tools"
-msgstr "Käytä moderointityökaluja"
+msgstr "Käytä valvojan työkaluja"
 
 #: content/ui/LoginFlow/LoginPage.qml:118
 #, kde-format
@@ -982,8 +963,8 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
-"Salli Tokodonin päästä moderointityökaluihin. Jos kirjautumisessa on "
-"ongelmia, kokeile poistaa asetus käytöstä."
+"Salli Tokodon valvojan työkalut. Jos kirjautumisessa on ongelmia, kokeile "
+"poistaa asetus käytöstä."
 
 #: content/ui/LoginFlow/LoginPage.qml:132
 #, kde-format
@@ -1094,7 +1075,7 @@ msgstr "Palvelimen verkko-osoite ei voi olla tyhjä."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "Avaa ulkopuolelta"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -1163,7 +1144,7 @@ msgstr "Virheenpaikannus"
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
-msgstr "Moderointityökalut"
+msgstr "Valvojan työkalut"
 
 #: content/ui/Main.qml:483
 #, kde-format
@@ -1300,7 +1281,7 @@ msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Moderoinnin tila"
+msgstr "Valvontatila"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
 #, kde-format
@@ -1360,7 +1341,7 @@ msgstr "Moderaattori"
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr "Ylläpitäjä"
+msgstr "Admin"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
@@ -1538,7 +1519,7 @@ msgstr "Yksityinen kommentti"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
-msgstr "Moderointi"
+msgstr "Valvonta"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
@@ -1645,7 +1626,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Moderointi"
+msgstr "Valvonta"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:216
 #, kde-format
@@ -1833,7 +1814,7 @@ msgstr "Ei saatavilla"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:29
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr "%1 – suorita moderointitoimia"
+msgstr "Suorita valvontatoiminto kohteessa %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:35
 #, kde-format
@@ -1856,7 +1837,7 @@ msgstr "Jäädytä"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr ""
+msgstr "Pakota arkaluontoiseksi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
 #, kde-format
@@ -1943,7 +1924,7 @@ msgstr "%1 – tilin keskeytyksen peruminen onnistui"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "%1 – tilin arkaluoteisuuden peruminen onnistui"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
@@ -2089,7 +2070,7 @@ msgstr "Peru keskeytys"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:502
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr ""
+msgstr "Peru arkaluonteisuus"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:513
 #, kde-format
@@ -2671,7 +2652,7 @@ msgstr "%1 käyttäjää tehosti julkaisuasi"
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
-msgstr "%1 vastasi julkaisuusi"
+msgstr "%1 vastasi sinun julkaisuun"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
@@ -2710,9 +2691,7 @@ msgid "Hide Media"
 msgstr "Piilota media"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:300
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Hide Media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Piilota media"
@@ -2728,16 +2707,14 @@ msgid "Save Image As…"
 msgstr "Tallenna kuva nimellä…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Gif As…"
-msgstr "Tallenna kuva nimellä…"
+msgstr "Tallenna gif nimellä…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Video As…"
-msgstr "Tallenna kuva nimellä…"
+msgstr "Tallenna video nimellä…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -2748,14 +2725,13 @@ msgstr "Kopioi kuva"
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "Lähetetty %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "via %1"
+#, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
-msgstr "%1 kautta"
+msgstr ", %1 kautta"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
 #: content/ui/PostDelegate/InformationBar.qml:87
@@ -2784,34 +2760,24 @@ msgid "Direct Message"
 msgstr "Suoraviesti"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 suosikki"
+msgstr "Ei suosikkeja"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 suosikki"
 msgstr[1] "%1 suosikkia"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Ei julkaisuja"
+msgstr "Ei tehosteita"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boost"
-#| msgid_plural "%1 boosts"
+#, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "%1 tehostus"
@@ -2831,7 +2797,7 @@ msgstr "Kuvaus"
 #: content/ui/PostDelegate/MediaContainer.qml:111
 #, kde-format
 msgid "Text description available"
-msgstr ""
+msgstr "Tekstikuvaus saatavilla"
 
 #: content/ui/PostDelegate/MediaContainer.qml:119
 #, kde-format
@@ -2879,7 +2845,7 @@ msgstr "Poista julkaisu"
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr "Haluatko varmasti poistaa tämän julkaisun?"
+msgstr "Haluatko poistaa tämän julkaisun?"
 
 #: content/ui/PostDelegate/PostDelegate.qml:244
 #, kde-format
@@ -2893,9 +2859,7 @@ msgctxt "@label"
 msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
-msgstr ""
-"Haluatko varmasti luonnostella julkaisun uudelleen? Alkuperäinen julkaisu "
-"poistetaan."
+msgstr "Haluatko luonnostella julkaisun uudelleen? Alkuperäinen  poistetaan."
 
 #: content/ui/PostDelegate/PostDelegate.qml:422
 #, kde-format
@@ -2906,12 +2870,12 @@ msgstr "Vastaa"
 #: content/ui/PostDelegate/PostDelegate.qml:449
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr ""
+msgstr "Suoria julkaisuja ei voi tehostaa"
 
 #: content/ui/PostDelegate/PostDelegate.qml:451
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr ""
+msgstr "Yksityisiä julkaisuja ei voi tehostaa"
 
 #: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
@@ -2973,20 +2937,19 @@ msgid ""
 "replies are marked as private by default."
 msgstr ""
 "Julkaisu on merkitty yksityiseksi. Joitakin julkaisuja voi puuttua, koska "
-"vastauksetkin on oletusarvoisesti merkitty yksityisiksi."
+"vastauksetkin on oletuksena merkitty yksityisiksi."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, fuzzy, kde-format
-#| msgid "Moderation"
+#, kde-format
 msgctxt "Show more options"
 msgid "More actions"
-msgstr "Moderointi"
+msgstr "Lisää toimintoja"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Laajenna julkaisu"
+msgstr "Laajenna viesti"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
@@ -3123,16 +3086,14 @@ msgid "Vote"
 msgstr "Äänestä"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
-#, fuzzy, kde-format
-#| msgid "Hide Boosts from %1"
+#, kde-format
 msgid "Post from %1"
-msgstr "Piilota käyttäjän %1 tehostukset"
+msgstr "Julkaisu vastaanotettu %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
-#, fuzzy, kde-format
-#| msgid "Unlisted post"
+#, kde-format
 msgid "Quoted post"
-msgstr "Luettelematon julkaisu"
+msgstr "Lainattu julkaisu"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3154,7 +3115,7 @@ msgstr "Toista"
 #, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Ilmoita julkaisusta"
+msgstr "Raportoi julkaisu"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3166,7 +3127,7 @@ msgstr "Ilmoita käyttäjästä"
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Syy julkaisusta ilmoittamiseen"
+msgstr "Syy tämän raportoimiseen"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
@@ -3200,7 +3161,7 @@ msgstr "Etsi"
 #: content/ui/SearchView.qml:38
 #, kde-format
 msgid "Loading..."
-msgstr "Ladataan…"
+msgstr "Ladataan..."
 
 #: content/ui/SearchView.qml:46
 #, kde-format
@@ -3210,7 +3171,7 @@ msgstr "Ei hakutuloksia"
 #: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Etsi käyttäjiä, luokituksia ja julkaisuja"
+msgstr "Etsi käyttäjiä, tagit ja jukaisut"
 
 #: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:132
 #, kde-format
@@ -3237,7 +3198,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
-msgstr "Julkaisut"
+msgstr "Viestit"
 
 #: content/ui/Settings/AppearancePage.qml:61
 #, kde-format
@@ -3287,10 +3248,9 @@ msgid "System Default"
 msgstr "Järjestelmän oletus"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "Välityspalvelin"
+msgstr "Ei välityspalvelinta"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3331,24 +3291,21 @@ msgstr "Ota tämän tilin ilmoitukset käyttöön"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr ""
+msgstr "Ilmoitukset voivat näkyä, vaikka Tokodon ei ole käynnissä."
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Push notifications are not available for this account. Please log out and "
-#| "log back in."
+#, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"Push-ilmoitukset eivät ole saatavilla tälle tilille. Kirjaudu ulos ja "
-"takaisin sisään."
+"Push-ilmoitukset ovat saatavilla, mutta niitä ei voitu ottaa käyttöön. "
+"Kirjaudu ulos ja kirjaudu takaisin sisään."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Ilmoitukset näkyvät vain kun Tokodon on käynnissä."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -3430,8 +3387,7 @@ msgstr "Otsake"
 #: content/ui/Settings/ProfileEditor.qml:164
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
-msgstr ""
-"PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan 1500 × 500 kuvapisteeseen."
+msgstr "PNG, GIF tai JPEG. Enintään 2 Mt. Skaalataan 1500 × 500 kuvapisteeseen"
 
 #: content/ui/Settings/ProfileEditor.qml:192
 #, kde-format
@@ -3463,7 +3419,7 @@ msgstr "Ehdota tiliä muille"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr "Merkitse lähetetty media oletusarvoisesti arkaluontoiseksi"
+msgstr "Merkitse lähetetty media oletuksena arkaluontoiseksi"
 
 #: content/ui/Settings/ProfileEditor.qml:287
 #, kde-format
@@ -3475,7 +3431,7 @@ msgstr "Julkaisun oletuskieli"
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr "Julkaisun oletusnäkyvyys"
+msgstr "Julkaisun näkyvyys oletuksena"
 
 #: content/ui/Settings/ProfileEditor.qml:310
 #, kde-format
@@ -3518,15 +3474,14 @@ msgstr "Välityspalvelin"
 #: content/ui/Settings/TokodonConfigurationView.qml:40
 #, kde-format
 msgid "About Tokodon"
-msgstr "Tietoa Tokodonista"
+msgstr "Tietoa Tokodon"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:43
 #: content/ui/Settings/TokodonConfigurationView.qml:50
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Tietoa KDE:stä"
+msgstr "Tietoa"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:47
 #, kde-format
@@ -3621,29 +3576,25 @@ msgid "Remove"
 msgstr "Poista"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, fuzzy, kde-format
-#| msgid "Edit this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Muokkaa tätä julkaisua"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Vastaa tähän julkaisuun"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Kirjoita tämä julkaisu uudelleen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
-#, fuzzy, kde-format
-#| msgid "Write a new post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Kirjoita uusi julkaisu"
@@ -3652,12 +3603,14 @@ msgstr "Kirjoita uusi julkaisu"
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr ""
+msgstr "Ponnahtaa esiin"
 
 #: content/ui/StatusComposer/StatusComposer.qml:130
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Muokatun julkaisun, jossa on kysely, tallentaminen tyhjentää olemassa olevat "
+"tulokset."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
@@ -3675,25 +3628,22 @@ msgstr "Haluatko varmasti hylätä luonnoksen?"
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
-msgstr ""
+msgstr "Pidä"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "Sisältövaroitus"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
-#, fuzzy, kde-format
-#| msgid "What's new?"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Mitä uutta?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Valitse tiedosto"
@@ -3768,86 +3718,73 @@ msgid "All files (*)"
 msgstr "Kaikki tiedostot (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:385
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Liitä tiedosto"
 
 #: content/ui/StatusComposer/StatusComposer.qml:396
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Lisää kysely"
 
 #: content/ui/StatusComposer/StatusComposer.qml:426
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Paikallinen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:432
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Julkinen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:437
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Luettelematon"
 
 #: content/ui/StatusComposer/StatusComposer.qml:442
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Yksityinen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:447
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
-msgstr "Suoraviesti"
+msgstr "Suora viesti"
 
 #: content/ui/StatusComposer/StatusComposer.qml:452
-#, fuzzy, kde-format
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Näkyvyys"
 
 #: content/ui/StatusComposer/StatusComposer.qml:457
-#, fuzzy, kde-format
-#| msgctxt "Short for content warning"
-#| msgid "cw"
+#, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "sis.var."
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "Sisältövaroitus"
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
-#, fuzzy, kde-format
-#| msgid "Post Language"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
-msgstr "Julkaisukieli"
+msgstr "Julkaisun kieli"
 
 #: content/ui/StatusComposer/StatusComposer.qml:503
-#, fuzzy, kde-format
-#| msgid "Add Emoji"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Lisää emoji"
@@ -3877,11 +3814,10 @@ msgid "Repost"
 msgstr "Lähetä uudelleen"
 
 #: content/ui/StatusComposer/StatusComposer.qml:548
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "Tallennettu"
+msgstr "Tallenna"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -3941,7 +3877,7 @@ msgstr "Aikajanan loppu"
 #: content/ui/TimelinePage.qml:295
 #, kde-format
 msgid "No posts"
-msgstr "Ei julkaisuja"
+msgstr "Ei viestejä"
 
 #: content/ui/TimelinePage.qml:301
 #, kde-format
@@ -3955,16 +3891,14 @@ msgid "Switch Account"
 msgstr "Vaihda tiliä"
 
 #: content/ui/UserInfo.qml:92
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgid "Switch account"
 msgstr "Vaihda tiliä"
 
 #: content/ui/UserInfo.qml:137
-#, fuzzy, kde-format
-#| msgid "Log in to an existing account"
+#, kde-format
 msgid "Log in or create a new account"
-msgstr "Kirjaudu olemassa olevalle tilille"
+msgstr "Kirjaudu tai rekisteröi uusi tili"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -4062,10 +3996,9 @@ msgid "Mastodon client"
 msgstr "Mastodon-asiakas"
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© 2021–2023 Carl Schwan, 2021–2023 KDE-yhteisö"
+msgstr "© 2021–2024 Carl Schwan, 2021–2024 KDE-yhteisö"
 
 #: main.cpp:115
 #, kde-format
@@ -4222,18 +4155,16 @@ msgid "Trending"
 msgstr "Nousussa"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Ladataan"
+msgstr "Ladataan…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Hide Boosts from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Piilota käyttäjän %1 tehostukset"
+msgstr "Lähettäjä %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4304,7 +4235,7 @@ msgstr "Liput"
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr "Väliaikaista lataustiedostoa ei voitu avata."
+msgstr "Väliaikaisesti ladattua tiedostoa ei voitu avata"
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
