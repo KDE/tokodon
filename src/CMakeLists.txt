@@ -361,8 +361,10 @@ else()
             utils/mpvplayer.h
     )
     target_link_libraries(tokodon_static PUBLIC MpvQt::MpvQt)
-    target_compile_options(tokodon_static PRIVATE -fexceptions)
 endif()
+
+# NOTE: Needed for MPV, but also for blurhash.cpp. We can look into making this more selective lter.
+target_compile_options(tokodon_static PRIVATE -fexceptions)
 
 if (USE_QTWEBVIEW)
     qt_target_qml_sources(tokodon_static
