@@ -1,10 +1,11 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: BSD-2-Clause
 
-qt_add_qml_module(tokodon_static
-        STATIC
-        URI org.kde.tokodon
-        VERSION 1.0)
+add_library(tokodon_static STATIC)
+
+ecm_add_qml_module(tokodon_static GENERATE_PLUGIN_SOURCE
+        OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/tokodon # Shuts up an annoying upstream Qt warning
+        URI org.kde.tokodon)
 
 ecm_qt_declare_logging_category(tokodon_static
     HEADER tokodon_debug.h
