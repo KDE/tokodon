@@ -152,7 +152,10 @@ else()
 endif()
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
-ecm_find_qmlmodule(org.kde.sonnet 1.0)
+
+if (NOT ANDROID)
+    ecm_find_qmlmodule(org.kde.sonnet 1.0)
+endif()
 
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
 
