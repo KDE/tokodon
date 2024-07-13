@@ -379,6 +379,7 @@ QQC2.ItemDelegate {
             visible: active
 
             Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
         }
 
         Loader {

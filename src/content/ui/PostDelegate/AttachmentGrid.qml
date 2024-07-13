@@ -45,6 +45,13 @@ QQC2.Control {
         return false;
     }
 
+    property int firstAttachmentAspectRatio: {
+        const firstAttachment = root.attachments[0];
+        const aspectRatio = firstAttachment.sourceHeight / Math.max(firstAttachment.sourceWidth, 1)
+
+        return aspectRatio;
+    }
+
     function showMedia(): void {
         isSensitive = false;
         userSensitivityChanged(false);
@@ -61,9 +68,12 @@ QQC2.Control {
         imageMenu.item.popup();
     }
 
-    Layout.fillWidth: true
-    Layout.fillHeight: shouldKeepAspectRatio
-    Layout.topMargin: Kirigami.Units.largeSpacing
+    function isSpecialAttachment(count: int, index: int): bool {
+        return index === 0 && count === 3;
+    }
+
+    readonly property real aspectRatio: 9.0 / 16.0
+    implicitHeight: shouldKeepAspectRatio ? Math.ceil(viewportWidth * firstAttachmentAspectRatio) : Math.ceil(viewportWidth * aspectRatio)
 
     Accessible.description: {
         if (root.attachments.length === 0) {
@@ -106,14 +116,7 @@ QQC2.Control {
                         id: imgContainer
 
                         required property var modelData
-
-                        count: attachmentsRepeater.count
-                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.viewportWidth
-                        gridLayout: attachmentGridLayout
-
-                        sourceWidth: modelData.sourceWidth > img.sourceSize.width ? modelData.sourceWidth : img.sourceSize.width
-                        sourceHeight: modelData.sourceHeight > img.sourceSize.height ? modelData.sourceHeight : img.sourceSize.height
+                        required property int index
 
                         onClicked: {
                             if (root.isSensitive) {
@@ -130,6 +133,10 @@ QQC2.Control {
                         }
 
                         Accessible.description: modelData.caption
+
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         FocusedImage {
                             id: img
@@ -180,11 +187,7 @@ QQC2.Control {
                         id: video
 
                         required property var modelData
-
-                        count: attachmentsRepeater.count
-                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.viewportWidth
-                        gridLayout: attachmentGridLayout
+                        required property int index
 
                         videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
@@ -209,6 +212,10 @@ QQC2.Control {
                         }
 
                         Accessible.description: modelData.caption
+
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         Connections {
                             target: root
@@ -237,11 +244,7 @@ QQC2.Control {
                         id: video
 
                         required property var modelData
-
-                        count: attachmentsRepeater.count
-                        shouldKeepAspectRatio: root.shouldKeepAspectRatio
-                        rootWidth: root.viewportWidth
-                        gridLayout: attachmentGridLayout
+                        required property int index
 
                         videoUrl: modelData.source
                         previewUrl: modelData.previewUrl
@@ -251,6 +254,10 @@ QQC2.Control {
                         showVideoChip: true
 
                         Accessible.description: modelData.caption
+
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         onClicked: {
                             if (root.isSensitive) {

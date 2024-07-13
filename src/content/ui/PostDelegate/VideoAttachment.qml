@@ -15,9 +15,6 @@ import QtQml 2.15
 MediaContainer {
     id: root
 
-    sourceWidth: Math.max(modelData.sourceWidth, player.sourceSize.width)
-    sourceHeight: Math.max(modelData.sourceHeight, player.sourceSize.height)
-
     required property var videoUrl
     required property var previewUrl
     required property bool autoPlay
