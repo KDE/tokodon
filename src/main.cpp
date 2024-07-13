@@ -249,6 +249,12 @@ int main(int argc, char *argv[])
     AccountManager::instance().loadFromSettings();
 #endif
 
+    // If this isn't initialized previous on Android, it crashes??
+    // TODO: investigate why does this happen
+#ifdef Q_OS_ANDROID
+    Q_UNUSED(NetworkController::instance());
+#endif
+
     if (parser.isSet(shareOption)) {
         engine.loadFromModule("org.kde.tokodon", "StandaloneComposer");
 
