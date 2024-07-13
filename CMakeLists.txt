@@ -165,7 +165,6 @@ ki18n_install(po)
 
 if (ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
-    kirigami_package_breeze_icons(ICONS bookmarks)
 endif()
 
 install(FILES org.kde.tokodon.desktop DESTINATION ${KDE_INSTALL_APPDIR})
