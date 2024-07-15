@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-05-14 11:41+0200\n"
+"PO-Revision-Date: 2024-07-14 21:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -367,16 +367,14 @@ msgid "Show Boosts from %1"
 msgstr "%1 megtolásainak megjelenítése"
 
 #: content/ui/AccountInfo.qml:280
-#, fuzzy, kde-format
-#| msgid "Stop Featuring on Profile"
+#, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Kiemelés leállítása a profilon"
+msgstr "Profil kiemelésének leállítása"
 
 #: content/ui/AccountInfo.qml:282
-#, fuzzy, kde-format
-#| msgid "Feature on Profile"
+#, kde-format
 msgid "Feature This Profile"
-msgstr "Kiemelés a profilon"
+msgstr "Profil kiemelése"
 
 #: content/ui/AccountInfo.qml:298
 #, kde-format
@@ -442,17 +440,14 @@ msgid "Featured Users"
 msgstr "Kiemelt felhasználók"
 
 #: content/ui/AccountInfo.qml:377
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Copy Link"
+#, kde-format
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
 #: content/ui/AccountInfo.qml:380
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Profile link copied."
-msgstr "Bejegyzés hivatkozása másolva."
+msgstr "Profil hivatkozása másolva."
 
 #: content/ui/AccountInfo.qml:470
 #, kde-format
@@ -561,8 +556,7 @@ msgstr "Nincsenek emojik"
 #: content/ui/Notifications/UserInteractionLabel.qml:65
 #: content/ui/PostDelegate/QuotePost.qml:58
 #: content/ui/PostDelegate/UserInteractionLabel.qml:64
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "View profile"
 msgstr "Profil megtekintése"
 
@@ -695,10 +689,9 @@ msgid "No Trending Tags"
 msgstr "Nincsenek népszerű címkék"
 
 #: content/ui/FollowDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "%1 mentioned you"
+#, kde-format
 msgid "%1 signed up"
-msgstr "%1 megemlítette"
+msgstr "%1 feliratkozott"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -913,12 +906,10 @@ msgid "Logout"
 msgstr "Kijelentkezés"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Biztosan szeretne kijelentkezni innen: %1?"
+msgstr "Biztosan ki szeretne jelentkezni?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -1142,10 +1133,9 @@ msgid "Write a new post"
 msgstr "Új bejegyzés írása"
 
 #: content/ui/Main.qml:266
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgid "Reply to post"
-msgstr "Válasz erre a bejegyzésre"
+msgstr "Válasz a bejegyzésre"
 
 #: content/ui/Main.qml:442
 #, kde-format
@@ -2704,9 +2694,7 @@ msgid "Hide Media"
 msgstr "Média elrejtése"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Hide Media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Média elrejtése"
@@ -2775,34 +2763,24 @@ msgid "Direct Message"
 msgstr "Közvetlen üzenet"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 kedvencnek jelölés"
+msgstr "Nincsenek kedvencek"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 kedvencnek jelölés"
 msgstr[1] "%1 kedvencnek jelölés"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Nincsenek bejegyzések"
+msgstr "Nincsenek megtolások"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boost"
-#| msgid_plural "%1 boosts"
+#, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "%1 megtolás"
@@ -2822,7 +2800,7 @@ msgstr "Helyettesítő"
 #: content/ui/PostDelegate/MediaContainer.qml:76
 #, kde-format
 msgid "Text description available"
-msgstr ""
+msgstr "Szöveges leírás érhető el"
 
 #: content/ui/PostDelegate/MediaContainer.qml:84
 #, kde-format
@@ -2897,12 +2875,12 @@ msgstr "Válasz"
 #: content/ui/PostDelegate/PostDelegate.qml:450
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr ""
+msgstr "Nem lehet megtolni közvetlen üzeneteket"
 
 #: content/ui/PostDelegate/PostDelegate.qml:452
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr ""
+msgstr "Nem lehet megtolni privát bejegyzéseket"
 
 #: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
@@ -2967,11 +2945,10 @@ msgstr ""
 "a válaszai alapértelmezetten privátként lettek megjelölve."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, fuzzy, kde-format
-#| msgid "Moderation"
+#, kde-format
 msgctxt "Show more options"
 msgid "More actions"
-msgstr "Moderáció"
+msgstr "További műveletek"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -3114,17 +3091,14 @@ msgid "Vote"
 msgstr "Szavazás"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgid "Post from %1"
-msgstr "%1"
+msgstr "%1 bejegyzése"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Quoted post"
-msgstr "Nem listázott"
+msgstr "Idézett bejegyzés"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3223,7 +3197,7 @@ msgstr "Színtéma"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr ""
+msgstr "Bejegyzésszerkesztő új ablakban alapértelmezetten"
 
 #: content/ui/Settings/AppearancePage.qml:56
 #, kde-format
@@ -3279,10 +3253,9 @@ msgid "System Default"
 msgstr "Rendszer alapértelmezése"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "Hálózati proxy"
+msgstr "Nincs proxy"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3323,24 +3296,21 @@ msgstr "Értesítések engedélyezése a fiókhoz"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr ""
+msgstr "Az értesítések akkor is megjelenhetnek, amikor a Tokodon nem fut."
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Push notifications are not available for this account. Please log out and "
-#| "log back in."
+#, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"A leküldéses értesítések nem érhetők el ehhez a fiókhoz. Jelentkezzen ki és "
-"vissza."
+"A leküldéses értesítések elérhetők, de nem engedélyezhetők. Jelentkezzen ki "
+"és vissza."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Az értesítések csak akkor jelennek meg, ha a Tokodon fut."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -3512,11 +3482,10 @@ msgstr "A Tokodon névjegye"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:43
 #: content/ui/Settings/TokodonConfigurationView.qml:50
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "A KDE névjegye"
+msgstr "Névjegy"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:47
 #, kde-format
@@ -3611,29 +3580,25 @@ msgid "Remove"
 msgstr "Eltávolítás"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, fuzzy, kde-format
-#| msgid "Edit this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Bejegyzés szerkesztése"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Válasz erre a bejegyzésre"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Bejegyzés újraírása"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
-#, fuzzy, kde-format
-#| msgid "Write a new post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Új bejegyzés írása"
@@ -3648,6 +3613,8 @@ msgstr "Válasz új ablakban"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Szavazást tartalmazó szerkesztett bejegyzés mentése törli a meglévő "
+"eredményeket."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
@@ -3662,29 +3629,25 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Biztosan el szeretné dobni a piszkozatot?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
-#, fuzzy, kde-format
-#| msgid "Keep"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "Megtartás"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "Tartalmi figyelmeztetés"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
-#, fuzzy, kde-format
-#| msgid "What's new?"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Újdonságok"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Válasszon egy fájlt"
@@ -3759,86 +3722,73 @@ msgid "All files (*)"
 msgstr "Minden fájl (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:385
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Fájl csatolása"
 
 #: content/ui/StatusComposer/StatusComposer.qml:396
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Szavazás hozzáadása"
 
 #: content/ui/StatusComposer/StatusComposer.qml:426
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Helyi"
 
 #: content/ui/StatusComposer/StatusComposer.qml:432
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Nyilvános"
 
 #: content/ui/StatusComposer/StatusComposer.qml:437
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Nem listázott"
 
 #: content/ui/StatusComposer/StatusComposer.qml:442
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privát"
 
 #: content/ui/StatusComposer/StatusComposer.qml:447
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Közvetlen üzenet"
 
 #: content/ui/StatusComposer/StatusComposer.qml:452
-#, fuzzy, kde-format
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Láthatóság"
 
 #: content/ui/StatusComposer/StatusComposer.qml:457
-#, fuzzy, kde-format
-#| msgctxt "Short for content warning"
-#| msgid "cw"
+#, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "tf"
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "Tartalmi figyelmeztetés"
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
-#, fuzzy, kde-format
-#| msgid "Post Language"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Bejegyzés nyelve"
 
 #: content/ui/StatusComposer/StatusComposer.qml:503
-#, fuzzy, kde-format
-#| msgid "Add Emoji"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emodzsi hozzáadása"
@@ -3868,11 +3818,10 @@ msgid "Repost"
 msgstr "Ismételt bejegyzés"
 
 #: content/ui/StatusComposer/StatusComposer.qml:548
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "Mentve"
+msgstr "Mentés"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -3949,16 +3898,14 @@ msgid "Switch Account"
 msgstr "Fiókváltás"
 
 #: content/ui/UserInfo.qml:92
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#, kde-format
 msgid "Switch account"
 msgstr "Fiókváltás"
 
 #: content/ui/UserInfo.qml:137
-#, fuzzy, kde-format
-#| msgid "Log in to an existing account"
+#, kde-format
 msgid "Log in or create a new account"
-msgstr "Bejelentkezés meglévő fiókba"
+msgstr "Bejelentkezés vagy új fiók létrehozása"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -4056,10 +4003,9 @@ msgid "Mastodon client"
 msgstr "Mastodon kliens"
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© Carl Schwan, 2021-2023., A KDE közösség, 2021-2023."
+msgstr "© Carl Schwan, 2021-2024., A KDE közösség, 2021-2024."
 
 #: main.cpp:115
 #, kde-format
@@ -4217,19 +4163,16 @@ msgid "Trending"
 msgstr "Népszerű"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Betöltés"
+msgstr "Betöltés…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "%1"
+msgstr "%1 bejegyzése"
 
 #: utils/emojimodel.cpp:129
 #, kde-format

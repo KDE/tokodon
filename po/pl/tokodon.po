@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-06-22 07:52+0200\n"
+"PO-Revision-Date: 2024-07-14 13:34+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -695,10 +695,9 @@ msgid "No Trending Tags"
 msgstr "Nie ma żadnych znaczników na czasie"
 
 #: content/ui/FollowDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "%1 mentioned you"
+#, kde-format
 msgid "%1 signed up"
-msgstr "%1 wspominał o tobie"
+msgstr "%1 zapisany"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -915,12 +914,10 @@ msgid "Logout"
 msgstr "Wyloguj"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Czy na pewno wylogować się z %1?"
+msgstr "Czy na pewno wylogować się?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -1144,9 +1141,7 @@ msgid "Write a new post"
 msgstr "Napisz nowy wpis"
 
 #: content/ui/Main.qml:266
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Reply to This Post"
+#, kde-format
 msgid "Reply to post"
 msgstr "Odpowiedz na ten wpis"
 
@@ -2774,11 +2769,9 @@ msgid "Direct Message"
 msgstr "Bezpośrednia wiadomość"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgid "No favorites"
-msgstr "%1 ulubiony"
+msgstr "Brak ulubionych"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
@@ -2789,10 +2782,9 @@ msgstr[1] "%1 ulubione"
 msgstr[2] "%1 ulubionych"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "Nie ma żadnych wpisów"
+msgstr "Brak udostępnień"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
@@ -3211,7 +3203,7 @@ msgstr "Zestaw kolorów"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr ""
+msgstr "Domyślnie otwórz twórcę wpisów"
 
 #: content/ui/Settings/AppearancePage.qml:56
 #, kde-format
@@ -3630,6 +3622,8 @@ msgstr "Odczep"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Zapisanie edytowanego wpisu, który zawiera ankietę wyczyści istniejące "
+"wyniki."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
@@ -4179,18 +4173,16 @@ msgid "Trending"
 msgstr "Na czasie"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Wczytywanie"
+msgstr "Wczytywanie…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Post from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Wysłano z %1"
+msgstr "Wysłane przez %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
