@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2021 Tobias Fella <fella@posteo.de>
-// SPDX-License-Identifier: LGPL-2.0-or-later
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: MIT
 
 #pragma once
 
@@ -15,7 +15,7 @@ public:
     QImage m_image;
 };
 
-class BlurhashImageProvider : public QQuickAsyncImageProvider
+class BlurHashImageProvider : public QQuickAsyncImageProvider
 {
 public:
     QQuickImageResponse *requestImageResponse(const QString &id, const QSize &requestedSize) override;

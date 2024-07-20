@@ -1,9 +1,9 @@
-// SPDX-FileCopyrightText: 2021 Tobias Fella <fella@posteo.de>
-// SPDX-License-Identifier: LGPL-2.0-or-later
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: MIT
 
-#include "utils/blurhashimageprovider.h"
+#include "blurhashimageprovider.h"
 
-#include "utils/blurhash.hpp"
+#include "blurhash.h"
 
 /*
  * Qt unfortunately re-encodes the base83 string in QML.
@@ -48,30 +48,22 @@ public:
         : m_id(id)
         , m_requestedSize(requestedSize)
     {
-        if (m_requestedSize.width() == -1) {
+        if (m_requestedSize.width() == -1)
             m_requestedSize.setWidth(64);
-        }
-        if (m_requestedSize.height() == -1) {
+        if (m_requestedSize.height() == -1)
             m_requestedSize.setHeight(64);
-        }
     }
 
     void run() override
     {
-        if (m_id.isEmpty()) {
+        if (m_id.isEmpty())
             return;
-        }
 
         QString decodedId = m_id;
-
-        QMap<QLatin1String, QLatin1String>::const_iterator i;
-        for (i = knownEncodings.constBegin(); i != knownEncodings.constEnd(); ++i)
+        for (auto i = knownEncodings.constBegin(); i != knownEncodings.constEnd(); ++i)
             decodedId.replace(i.key(), i.value());
 
-        auto data = blurhash::decode(decodedId.toLatin1().constData(), m_requestedSize.width(), m_requestedSize.height());
-        QImage image(data.image.data(), static_cast<int>(data.width), static_cast<int>(data.height), static_cast<int>(data.width * 3), QImage::Format_RGB888);
-
-        Q_EMIT done(image.convertToFormat(QImage::Format_RGB32));
+        Q_EMIT done(BlurHash::decode(decodedId, m_requestedSize));
     }
 
 private:
@@ -81,7 +73,7 @@ private:
 
 AsyncImageResponse::AsyncImageResponse(const QString &id, const QSize &requestedSize, QThreadPool *pool)
 {
-    auto runnable = new AsyncImageResponseRunnable(id, requestedSize);
+    const auto runnable = new AsyncImageResponseRunnable(id, requestedSize);
     connect(runnable, &AsyncImageResponseRunnable::done, this, &AsyncImageResponse::handleDone);
     pool->start(runnable);
 }
@@ -97,7 +89,7 @@ QQuickTextureFactory *AsyncImageResponse::textureFactory() const
     return QQuickTextureFactory::textureFactoryForImage(m_image);
 }
 
-QQuickImageResponse *BlurhashImageProvider::requestImageResponse(const QString &id, const QSize &requestedSize)
+QQuickImageResponse *BlurHashImageProvider::requestImageResponse(const QString &id, const QSize &requestedSize)
 {
     return new AsyncImageResponse(id, requestedSize, &pool);
 }

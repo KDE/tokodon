@@ -1,66 +1,103 @@
-// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: MIT
 
-#include <QtTest/QtTest>
+#include <blurhash.h>
 
-#include "utils/blurhash.hpp"
-#include "utils/blurhashimageprovider.h"
+#include <QTest>
 
 class BlurHashTest : public QObject
 {
     Q_OBJECT
 
-    QImage goodBlurHashImage;
-    QImage specialBlurHashImage;
-    BlurhashImageProvider *imageProvider = nullptr;
-
 private Q_SLOTS:
-    void initTestCase()
-    {
-        goodBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash.png"));
-        specialBlurHashImage = QImage(QLatin1String(DATA_DIR) + QLatin1String("/blurhash2.png"));
-        imageProvider = new BlurhashImageProvider();
-    }
+    void decode83_data();
+    void decode83();
 
-    void testImageProviderEncoding()
-    {
-        const QString blurHashEncoded = QStringLiteral(
-            "%7CKO2%3FU%252Tw%3DwR6cErDEhOD%5D%7ERBVZRip0W9ofwxM_%7D;RPxuwH%253s89%5Dt8%24%25tLOtxZ%25gixtQt8IUS%23I.ENa0NZIVt6xFM%7BM%7B%251j%5EM_bcRPX9nht7n%"
-            "2Bj%5BrrW;ni%25Mt7V%40W;t7t8%251bbxat7WBIUR%2ARjRjRjxuRjs.MxbbV%40WY");
+    void unpackComponents();
 
-        auto response = dynamic_cast<AsyncImageResponse *>(imageProvider->requestImageResponse(blurHashEncoded, QSize(25, 25)));
-        QSignalSpy spy(response, &QQuickImageResponse::finished);
-        spy.wait();
+    void decodeMaxAC();
 
-        QCOMPARE(response->m_image.size(), QSize(25, 25));
-        QCOMPARE(response->m_image, goodBlurHashImage);
-    }
+    void decodeAverageColor_data();
+    void decodeAverageColor();
 
-    void testImageProviderSpecialEncoding()
-    {
-        const QString blurHashEncoded = QStringLiteral("URI#cIR+L1%14eoJtAWYXMt5IAob4oRQfiRR");
+    void decodeAC();
 
-        auto response = dynamic_cast<AsyncImageResponse *>(imageProvider->requestImageResponse(blurHashEncoded, QSize(25, 25)));
-        QSignalSpy spy(response, &QQuickImageResponse::finished);
-        spy.wait();
-
-        QCOMPARE(response->m_image.size(), QSize(25, 25));
-        QCOMPARE(response->m_image, specialBlurHashImage);
-    }
-
-    void testBlurHashAlgo()
-    {
-        const QByteArray blurHash = QByteArrayLiteral(
-            "|KO2?U%2Tw=wR6cErDEhOD]~RBVZRip0W9ofwxM_};RPxuwH%3s89]t8$%tLOtxZ%gixtQt8IUS#I.ENa0NZIVt6xFM{M{%1j^M_bcRPX9nht7n+j[rrW;ni%Mt7V@W;t7t8%1bbxat7WBIUR*"
-            "RjRjRjxuRjs.MxbbV@WY");
-
-        auto data = blurhash::decode(blurHash.constData(), 25, 25);
-        QImage image(data.image.data(), 25, 25, 25 * 3, QImage::Format_RGB888);
-        image.convertTo(QImage::Format_RGB32);
-
-        QCOMPARE(image, goodBlurHashImage);
-    }
+    void decodeImage();
 };
 
-QTEST_MAIN(BlurHashTest)
+void BlurHashTest::decode83_data()
+{
+    QTest::addColumn<QString>("value");
+    QTest::addColumn<std::optional<int>>("expected");
+
+    // invalid base83 characters
+    QTest::addRow("decoding 1") << "試し" << std::optional<int>(std::nullopt);
+    QTest::addRow("decoding 2") << "(" << std::optional<int>(std::nullopt);
+
+    QTest::addRow("decoding 3") << "0" << std::optional(0);
+    QTest::addRow("decoding 4") << "L" << std::optional(21);
+    QTest::addRow("decoding 5") << "U" << std::optional(30);
+    QTest::addRow("decoding 6") << "Y" << std::optional(34);
+    QTest::addRow("decoding 7") << "1" << std::optional(1);
+}
+
+void BlurHashTest::decode83()
+{
+    QFETCH(QString, value);
+    QFETCH(std::optional<int>, expected);
+
+    QCOMPARE(BlurHash::decode83(value), expected);
+}
+
+void BlurHashTest::unpackComponents()
+{
+    BlurHash::Components components;
+    components.x = 6;
+    components.y = 6;
+    QCOMPARE(BlurHash::unpackComponents(50), components);
+}
+
+void BlurHashTest::decodeMaxAC()
+{
+    QCOMPARE(BlurHash::decodeMaxAC(50), 0.307229f);
+}
+
+void BlurHashTest::decodeAverageColor_data()
+{
+    QTest::addColumn<int>("value");
+    QTest::addColumn<QColor>("expected");
+
+    QTest::addRow("decoding 1") << 12688010 << QColor(0xffc19a8a);
+    QTest::addRow("decoding 2") << 9934485 << QColor(0xff979695);
+    QTest::addRow("decoding 3") << 8617624 << QColor(0xff837e98);
+    QTest::addRow("decoding 4") << 14604757 << QColor(0xffded9d5);
+    QTest::addRow("decoding 5") << 13742755 << QColor(0xffd1b2a3);
+}
+
+void BlurHashTest::decodeAverageColor()
+{
+    QFETCH(int, value);
+    QFETCH(QColor, expected);
+
+    QCOMPARE(BlurHash::decodeAverageColor(value), expected);
+}
+
+void BlurHashTest::decodeAC()
+{
+    constexpr auto maxAC = 0.289157f;
+    QCOMPARE(BlurHash::decodeAC(0, maxAC), QColor::fromRgbF(-0.289063f, -0.289063f, -0.289063f));
+}
+
+void BlurHashTest::decodeImage()
+{
+    const auto image = BlurHash::decode(QStringLiteral("eBB4=;054UK$=402%s%|r^O%06#?*7RijMxGpYMzniVNT@rFN3#=Kt"), QSize(50, 50));
+    QVERIFY(!image.isNull());
+
+    QCOMPARE(image.width(), 50);
+    QCOMPARE(image.height(), 50);
+    QCOMPARE(image.pixelColor(0, 0), QColor(0xff005f00));
+    QCOMPARE(image.pixelColor(30, 30), QColor(0xff99b76d));
+}
+
+QTEST_GUILESS_MAIN(BlurHashTest)
 #include "blurhashtest.moc"

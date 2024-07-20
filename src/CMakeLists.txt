@@ -113,7 +113,7 @@ target_sources(tokodon_static
 
     # Misc utils
     utils/blurhash.cpp
-    utils/blurhash.hpp
+    utils/blurhash.h
     utils/blurhashimageprovider.cpp
     utils/blurhashimageprovider.h
     utils/filehelper.cpp
