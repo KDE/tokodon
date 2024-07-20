@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-07 02:31+0000\n"
-"PO-Revision-Date: 2024-04-19 22:37+0200\n"
+"PO-Revision-Date: 2024-07-19 22:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: account/abstractaccount.cpp:657
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "%1(e)k posta berri bat Idatzi du"
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "%1(e)k zure posta bultzatu du(te)"
+msgstr "%1(e)k zure posta goratu du"
 
 #: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
 #, kde-format
@@ -188,8 +188,8 @@ msgstr[1] "%1 gogoko"
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "Bultzada %1"
-msgstr[1] "%1 bultzada"
+msgstr[0] "Goratze %1"
+msgstr[1] "%1 goratze"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "Ez dago posta hori gogoko egin duen erabiltzailerik"
 #: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No users boosted this post"
-msgstr "Erabiltzaile bakar batek ere ez du posta hori bultzatu"
+msgstr "Erabiltzaile bakar batek ere ez du posta hori goratu"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -367,12 +367,12 @@ msgstr "Jakinarazi niri, %1(e)k posta bidaltzen duenean"
 #: content/ui/AccountInfo.qml:262
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Ezkutatu %1(e)ren bultzadak"
+msgstr "Ezkutatu %1(e)ren goratzeak"
 
 #: content/ui/AccountInfo.qml:264
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Erakutsi %1(e)ren bultzadak"
+msgstr "Erakutsi %1(e)ren goratzeak"
 
 #: content/ui/AccountInfo.qml:280
 #, kde-format
@@ -524,7 +524,7 @@ msgstr "Hedabideak"
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Ezkutatu bultzadak"
+msgstr "Ezkutatu goratzeak"
 
 #: content/ui/AccountInfo.qml:714
 #, kde-format
@@ -714,8 +714,8 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
-"«Tokodon»ek, erabiltzaileek zure postei bultzada ematea edo haiei erantzutea "
-"gisako jardueren jakinarazpenak erakuts ditzake.\n"
+"Tokodon-ek, erabiltzaileek zure postak goratzea edo haiei erantzutea gisako "
+"jardueren jakinarazpenak erakuts ditzake.\n"
 "\n"
 "Erakutsitako jakinarazpen motak, saio-hasita izanik xehetasun handiarekin "
 "doi daitezke."
@@ -1098,7 +1098,7 @@ msgstr "Gogokoa ... gisa"
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Bultzada ... gisa"
+msgstr "Goratu ... gisa"
 
 #: content/ui/Main.qml:114
 #, kde-format
@@ -2602,7 +2602,7 @@ msgstr "Aipamenak"
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Bultzadak"
+msgstr "Goratzeak"
 
 #: content/ui/NotificationPage.qml:63
 #, kde-format
@@ -2646,7 +2646,7 @@ msgstr "%1 erabiltzailek zure posta gogoko dute"
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "%1 erabiltzailek zure posta bultzatu dute"
+msgstr "%1 erabiltzailek zure posta goratu dute"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
@@ -2855,17 +2855,17 @@ msgstr "Erantzun"
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Bultzada"
+msgstr "Goratu"
 
 #: content/ui/PostDelegate/PostDelegate.qml:437
 #, kde-format
 msgid "Boosted"
-msgstr "Bultzatua"
+msgstr "Goratuta"
 
 #: content/ui/PostDelegate/PostDelegate.qml:437
 #, kde-format
 msgid "Boost"
-msgstr "Bultzada"
+msgstr "Goratu"
 
 #: content/ui/PostDelegate/PostDelegate.qml:457
 #, kde-format
@@ -2964,7 +2964,7 @@ msgstr "Gogokoa ... gisa"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Bultzada ... gisa"
+msgstr "Goratu ... gisa"
 
 #: content/ui/PostDelegate/PostMenu.qml:110
 #, kde-format
@@ -3057,7 +3057,7 @@ msgstr "Bozkatu"
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1(e)k bultzatu du(te)"
+msgstr "%1(e)k goratu du"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:73
 #, kde-format
@@ -3174,7 +3174,7 @@ msgstr "Postak"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Erakutsi erantzun, gogoko eta bultzada kopurua"
+msgstr "Erakutsi erantzun, gogoko eta goratze kopurua"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -3287,7 +3287,7 @@ msgstr "Egoerak"
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
 msgid "Boosts"
-msgstr "Bultzadak"
+msgstr "Goratzeak"
 
 #: content/ui/Settings/NotificationsPage.qml:93
 #, kde-format
@@ -3804,7 +3804,7 @@ msgstr "Iragazkiak"
 #: content/ui/TimelinePage.qml:102
 #, kde-format
 msgid "Show Boosts"
-msgstr "Erakutsi bultzadak"
+msgstr "Erakutsi goratzeak"
 
 #: content/ui/TimelinePage.qml:109
 #, kde-format
