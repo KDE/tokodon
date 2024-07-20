@@ -230,7 +230,7 @@ int main(int argc, char *argv[])
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
 
-    engine.addImageProvider(QLatin1String("blurhash"), new BlurhashImageProvider);
+    engine.addImageProvider(QLatin1String("blurhash"), new BlurHashImageProvider);
 
 #ifdef TEST_MODE
     AccountManager::instance().setTestMode(true);
