@@ -44,7 +44,7 @@ FormCard.FormCardPage {
             text: i18n("Pop out the post composer by default")
             checked: Config.popOutByDefault
             enabled: !Config.popOutByDefaultImmutable
-            visible: Kirigami.Settings.isMobile
+            visible: !Kirigami.Settings.isMobile
             onToggled: {
                 Config.popOutByDefault = checked
                 Config.save()
