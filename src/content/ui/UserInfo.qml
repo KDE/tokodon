@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls as QQC2
+import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.components as KirigamiComponents
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.delegates 1 as Delegates
+import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 
 import org.kde.tokodon
 
@@ -38,7 +38,7 @@ QQC2.Pane {
 
         spacing: 0
 
-        QQC2.ItemDelegate {
+        Delegates.RoundedItemDelegate {
             id: currentAccountDelegate
 
             readonly property string name: {
@@ -184,7 +184,7 @@ QQC2.Pane {
             Layout.preferredHeight: contentHeight
             Layout.topMargin: Kirigami.Units.smallSpacing
 
-            delegate: QQC2.ItemDelegate {
+            delegate: Delegates.RoundedItemDelegate {
                 id: accountDelegate
 
                 required property int index
@@ -193,7 +193,6 @@ QQC2.Pane {
                 required property var account
 
                 text: displayName
-                width: ListView.view.width
 
                 contentItem: RowLayout {
                     spacing: Kirigami.Units.smallSpacing

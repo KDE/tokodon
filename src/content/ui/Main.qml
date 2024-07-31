@@ -125,7 +125,7 @@ Kirigami.ApplicationWindow {
 
                 model: AccountManager
 
-                delegate: QQC2.ItemDelegate {
+                delegate: Delegates.RoundedItemDelegate {
                     required property int index
                     required property string displayName
                     required property string instance
@@ -394,7 +394,7 @@ Kirigami.ApplicationWindow {
                 model: Kirigami.Settings.isMobile ?
                     [searchAction, announcementsAction, followRequestAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
                     [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
-                QQC2.ItemDelegate {
+                Delegates.RoundedItemDelegate {
                     required property var modelData
                     QQC2.ButtonGroup.group: pageButtonGroup
 
@@ -436,7 +436,7 @@ Kirigami.ApplicationWindow {
                 Layout.fillHeight: true
             }
 
-            QQC2.ItemDelegate {
+            Delegates.RoundedItemDelegate {
                 icon.name: "debug-run"
                 onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
                 text: i18nc("@action:button Open debug page", "Debug")
@@ -447,7 +447,7 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
             }
 
-            QQC2.ItemDelegate {
+            Delegates.RoundedItemDelegate {
                 icon.name: "lock"
                 text: i18nc("@action:button Open moderation tools", "Moderation Tools")
                 visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
@@ -464,7 +464,7 @@ Kirigami.ApplicationWindow {
                 }
             }
 
-            QQC2.ItemDelegate {
+            Delegates.RoundedItemDelegate {
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 icon.name: 'settings-configure-symbolic'
                 padding: Kirigami.Units.largeSpacing
