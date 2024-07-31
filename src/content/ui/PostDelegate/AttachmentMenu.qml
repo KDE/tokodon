@@ -39,7 +39,7 @@ QQC2.Menu {
 
         icon.name: "window"
         text: {
-            if (root.attachment == null) {
+            if (root.attachment === null) {
                 return;
             }
 
@@ -63,7 +63,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         enabled: root.attachment !== null
-        visible: root.attachment != null && root.attachment.attachmentType === Attachment.Image
+        visible: root.attachment !== null && root.attachment.attachmentType === Attachment.Image
 
         icon.name: "edit-copy"
         text: i18n("Copy Image")
