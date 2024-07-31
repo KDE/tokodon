@@ -37,7 +37,7 @@ bool FederationInfo::rejectMedia() const
     return m_rejectMedia;
 }
 
-void FederationInfo::setRejectMedia(const bool &rejectMedia)
+void FederationInfo::setRejectMedia(bool rejectMedia)
 {
     m_rejectMedia = rejectMedia;
 }
@@ -47,7 +47,7 @@ bool FederationInfo::rejectReports() const
     return m_rejectReports;
 }
 
-void FederationInfo::setRejectReports(const bool &rejectReports)
+void FederationInfo::setRejectReports(bool rejectReports)
 {
     m_rejectReports = rejectReports;
 }
@@ -77,7 +77,7 @@ bool FederationInfo::obfuscate() const
     return m_obfuscate;
 }
 
-void FederationInfo::setObfuscate(const bool &obfuscate)
+void FederationInfo::setObfuscate(bool obfuscate)
 {
     m_obfuscate = obfuscate;
 }

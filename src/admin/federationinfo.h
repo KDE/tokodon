@@ -14,15 +14,15 @@ public:
     QString severity() const;
     void setSeverity(const QString &severity);
     bool rejectMedia() const;
-    void setRejectMedia(const bool &rejectMedia);
+    void setRejectMedia(bool rejectMedia);
     bool rejectReports() const;
-    void setRejectReports(const bool &rejectReports);
+    void setRejectReports(bool rejectReports);
     QString privateComment() const;
     void setPrivateComment(const QString &privateComment);
     QString publicComment() const;
     void setPublicComment(const QString &publicComment);
     bool obfuscate() const;
-    void setObfuscate(const bool &obfuscate);
+    void setObfuscate(bool obfuscate);
 
     static FederationInfo fromSourceData(const QJsonObject &doc);
 
