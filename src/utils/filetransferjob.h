@@ -20,7 +20,7 @@ public:
     };
 
 private:
-    AbstractAccount *m_account = nullptr;
+    AbstractAccount *const m_account;
     QString m_source;
     QString m_destination;
     QScopedPointer<QSaveFile> m_temporaryFile;

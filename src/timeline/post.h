@@ -383,7 +383,7 @@ private:
 
     void processContent(const QJsonObject &obj);
 
-    AbstractAccount *m_parent;
+    AbstractAccount *const m_parent;
 
     QDateTime m_publishedAt;
     QString m_postId;
