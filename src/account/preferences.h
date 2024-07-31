@@ -104,7 +104,7 @@ Q_SIGNALS:
 private:
     void setPreferencesField(const QString &name, const QString &value);
 
-    AbstractAccount *m_account;
+    AbstractAccount *const m_account;
 
     Post::Visibility m_defaultVisibility;
     bool m_defaultSensitive;

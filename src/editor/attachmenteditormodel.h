@@ -44,7 +44,7 @@ Q_SIGNALS:
 private:
     QList<Attachment *> m_attachments;
     QHash<QString, QTimer *> m_updateTimers;
-    AbstractAccount *m_account;
+    AbstractAccount *m_account = nullptr;
 
     QTemporaryDir m_saveDir;
 };

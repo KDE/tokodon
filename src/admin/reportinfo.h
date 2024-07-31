@@ -74,10 +74,10 @@ private:
     bool m_assignedModerator = false;
     QDateTime m_createdAt;
     QDateTime m_updatedAt;
-    AdminAccountInfo *m_filedAccount;
-    AdminAccountInfo *m_targetAccount;
-    AdminAccountInfo *m_assignedAccount;
-    AdminAccountInfo *m_actionTakenByAccount;
+    AdminAccountInfo *m_filedAccount = nullptr;
+    AdminAccountInfo *m_targetAccount = nullptr;
+    AdminAccountInfo *m_assignedAccount = nullptr;
+    AdminAccountInfo *m_actionTakenByAccount = nullptr;
     QList<Post *> m_reportStatus;
     QQmlListProperty<Post> m_reportStatusList;
     QJsonArray m_rules;
