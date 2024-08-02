@@ -53,7 +53,8 @@ FormCard.FormCardPage {
             showCloseButton: false
 
             onAccepted: {
-                AccountManager.removeAccount(delegate.account);
+                AccountManager.removeAccount(root.account);
+                QQC2.ApplicationWindow.window.pageStack.pop();
                 if (!AccountManager.hasAccounts) {
                     root.Window.window.close();
                 }
