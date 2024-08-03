@@ -289,6 +289,7 @@ qt_target_qml_sources(tokodon_static
     PREFIX /
     RESOURCES
         content/elephant.svg
+        content/mastodon-logo.svg
         ../org.kde.tokodon.svg
 )
 
