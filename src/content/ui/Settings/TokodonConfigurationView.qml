@@ -4,7 +4,9 @@
 pragma Singleton
 
 import QtQuick
+
 import org.kde.kirigamiaddons.settings as KirigamiSettings
+import org.kde.tokodon
 
 KirigamiSettings.ConfigurationView {
     id: root
@@ -21,12 +23,14 @@ KirigamiSettings.ConfigurationView {
             text: i18n("Notifications")
             icon.name: "preferences-desktop-notification"
             page: () => Qt.createComponent("org.kde.tokodon", "NotificationsPage")
+            visible: AccountManager.hasAccounts
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "accounts"
             text: i18n("Accounts")
             icon.name: "preferences-system-users"
             page: () => Qt.createComponent("org.kde.tokodon", "AccountsPage")
+            visible: AccountManager.hasAccounts
         },
         KirigamiSettings.SpellcheckingConfigurationModule {},
         KirigamiSettings.ConfigurationModule {
