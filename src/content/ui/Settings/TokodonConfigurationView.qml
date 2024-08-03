@@ -23,6 +23,7 @@ KirigamiSettings.ConfigurationView {
             text: i18n("Notifications")
             icon.name: "preferences-desktop-notification"
             page: () => Qt.createComponent("org.kde.tokodon", "NotificationsPage")
+            visible: AccountManager.hasAccounts
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "accounts"
@@ -34,6 +35,7 @@ KirigamiSettings.ConfigurationView {
                     application: root.application
                 };
             }
+            visible: AccountManager.hasAccounts
         },
         KirigamiSettings.SpellcheckingConfigurationModule {},
         KirigamiSettings.ConfigurationModule {
