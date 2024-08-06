@@ -28,6 +28,7 @@ StatefulApp.StatefulWindow {
     }
 
     title: pageStack.currentItem?.title ?? ""
+    windowName: "Main"
 
     property bool isShowingFullScreenImage: false
 
