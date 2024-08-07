@@ -47,6 +47,10 @@
 #include "autotests/mockaccount.h"
 #endif
 
+#if __has_include("KCrash")
+#include <KCrash>
+#endif
+
 using namespace Qt::Literals::StringLiterals;
 
 void setupUnifiedPush()
@@ -127,6 +131,10 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
+
+#if __has_include("KCrash")
+    KCrash::initialize();
+#endif
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Client for decentralized social networks like Mastodon"));

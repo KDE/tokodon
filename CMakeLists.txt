@@ -70,6 +70,12 @@ set_package_properties(KF6 PROPERTIES
     PURPOSE "Required application components"
 )
 
+find_package(KF6Crash ${KF_MIN_VERSION})
+set_package_properties(KF6Crash PROPERTIES
+        TYPE OPTIONAL
+        PURPOSE "For crash handling"
+)
+
 find_package(KF6KirigamiAddons 1.1.0 REQUIRED)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
