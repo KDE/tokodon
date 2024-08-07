@@ -436,6 +436,10 @@ add_executable(tokodon
 target_include_directories(tokodon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(tokodon PRIVATE tokodon_static tokodon_staticplugin)
 
+if (TARGET KF6::Crash)
+    target_link_libraries(tokodon PUBLIC KF6::Crash)
+endif()
+
 if(ANDROID)
     target_link_libraries(tokodon PRIVATE Qt::Svg OpenSSL::SSL)
     kirigami_package_breeze_icons(ICONS
