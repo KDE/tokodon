@@ -36,7 +36,7 @@ FormCard.FormCardPage {
 
         FormCard.FormDelegateSeparator {
             below: popoutComposer; above: colorTheme
-            visible: Kirigami.Settings.isMobile
+            visible: !Kirigami.Settings.isMobile
         }
 
         FormCard.FormSwitchDelegate {
