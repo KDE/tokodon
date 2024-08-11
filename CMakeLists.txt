@@ -40,6 +40,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 include(KDEGitCommitHooks)
+include(ECMQmlModule)
 
 if (ANDROID)
     include(ECMAddAndroidApk)
@@ -55,7 +56,6 @@ set_package_properties(Qt6 PROPERTIES
         TYPE REQUIRED
         PURPOSE "Required application components"
         )
-qt_policy(SET QTP0001 NEW)
 
 find_package(Qt6WebView ${QT_MIN_VERSION})
 set_package_properties(Qt6WebView PROPERTIES
