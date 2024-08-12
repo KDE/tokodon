@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-07 02:31+0000\n"
+"POT-Creation-Date: 2024-08-03 02:34+0000\n"
 "PO-Revision-Date: 2024-08-04 13:52+0330\n"
 "Last-Translator: Sohrab Behdani <behdanisohrab@proton.me>\n"
 "Language-Team: Persian <kde-i18n-doc@kde.org>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: account/abstractaccount.cpp:657
+#: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not follow account"
 msgstr "نمی‌توان حساب‌کاربری را پی‌گرفت"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "نمی‌توان حساب را پی‌نگرفت"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not block account"
 msgstr "نمی‌توان حساب را مسدود کرد"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unblock account"
 msgstr "نمی‌توان حساب را از اسنداد خارج کرد"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not mute account"
 msgstr "نمی‌توان حساب را بی‌صدا کرد"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not unmute account"
 msgstr "نمی‌توان حساب را از بی‌صدا بودن خارج کرد"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not feature account"
 msgstr "نمی‌توان حساب را معرفی کرد"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "نمی‌توان حساب را از معرفی خارج کرد"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "نمی‌توان یادداشت این حساب را ویرایش کرد"
@@ -68,9 +68,6 @@ msgid "View Post"
 msgstr "دیدن فرسته"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
-#: content/ui/Components/InlineIdentityInfo.qml:35
-#: content/ui/Notifications/UserInteractionLabel.qml:65
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View Profile"
 msgstr "دیدن نمایه"
@@ -92,7 +89,7 @@ msgstr "%1 یک فرسته جدید نوشت"
 msgid "%1 boosted your post"
 msgstr "%1 فرسته شما را تقویت کرد"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:50
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 شمارا پی‌گرفت"
@@ -126,8 +123,7 @@ msgstr "تصویر بزرگ است"
 #: account/profileeditor.cpp:164
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
-"فرمت تصویر پشتیبانی نشده. تنها فرمت‌های jpg، png و gif پشتیبانی می‌شوند."
+msgstr "فرمت تصویر پشتیبانی نشده. تنها فرمت‌های jpg، png و gif پشتیبانی می‌شوند."
 
 #: account/profileeditor.cpp:278
 #, kde-format
@@ -369,13 +365,15 @@ msgid "Show Boosts from %1"
 msgstr "نمایش تقویت های %1"
 
 #: content/ui/AccountInfo.qml:280
-#, kde-format
-msgid "Stop Featuring on Profile"
+#, fuzzy, kde-format
+#| msgid "Stop Featuring on Profile"
+msgid "Stop Featuring This Profile"
 msgstr "صرف‌نظر از معرفی این حساب"
 
 #: content/ui/AccountInfo.qml:282
-#, kde-format
-msgid "Feature on Profile"
+#, fuzzy, kde-format
+#| msgid "Feature on Profile"
+msgid "Feature This Profile"
 msgstr "معرفی این حساب"
 
 #: content/ui/AccountInfo.qml:298
@@ -414,19 +412,14 @@ msgstr "ویرایش نمایه"
 msgid "Account editor"
 msgstr "ویرایش حساب کاربری"
 
-#: content/ui/AccountInfo.qml:348 content/ui/Main.qml:442
+#: content/ui/AccountInfo.qml:347 content/ui/Main.qml:468
 #: content/ui/TimelinePage.qml:73
 #, kde-format
+msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: content/ui/AccountInfo.qml:349 content/ui/TimelinePage.qml:75
-#, kde-format
-msgctxt "@title:window"
-msgid "Settings"
-msgstr "تنظیمات"
-
-#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:485
+#: content/ui/AccountInfo.qml:354 content/ui/Main.qml:513
 #, kde-format
 msgid "Follow Requests"
 msgstr "درخواست‌های پی‌گیری"
@@ -448,12 +441,13 @@ msgstr "کاربران معرفی شده"
 
 #: content/ui/AccountInfo.qml:377
 #, kde-format
-msgid "Copy Link to This Profile"
-msgstr "رونوشت گرفتن از پیوند این نمایه"
+msgid "Copy Link"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:380 content/ui/PostDelegate/PostMenu.qml:55
-#, kde-format
-msgid "Post link copied."
+#: content/ui/AccountInfo.qml:380
+#, fuzzy, kde-format
+#| msgid "Post link copied."
+msgid "Profile link copied."
 msgstr "پیوند فرسته رونوشت گرفته شد."
 
 #: content/ui/AccountInfo.qml:470
@@ -559,7 +553,16 @@ msgstr "هیچ اطلاعیه‌ای وجود ندارد"
 msgid "No emojis"
 msgstr "بدون شکلک"
 
-#: content/ui/ConversationPage.qml:11
+#: content/ui/Components/InlineIdentityInfo.qml:41
+#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/PostDelegate/QuotePost.qml:58
+#: content/ui/PostDelegate/UserInteractionLabel.qml:64
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "View profile"
+msgstr "دیدن نمایه"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:560
 #, kde-format
 msgid "Conversations"
 msgstr "گفتگو‌ها"
@@ -646,12 +649,12 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "آیا از حذف این لیست مطمعن هستید؟"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:578
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:606
 #, kde-format
 msgid "Explore"
 msgstr "کاوش"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:91
+#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -686,6 +689,12 @@ msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "هیچ برچسب محبوبی وجود ندارد"
 
+#: content/ui/FollowDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1 mentioned you"
+msgid "%1 signed up"
+msgstr "%1 از شما نام برد"
+
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
 msgctxt "@title:window"
@@ -708,8 +717,7 @@ msgid ""
 msgstr ""
 "توکودون می‌تواند آگاهی‌هایی برای فعالیت‌هایی مانند تقویت کاربران و یا پاسخ به "
 "فرسته‌هایتان را نمایش دهد. \n"
-"انواع آگاهی‌هایی که به شما نمایش داده می‌شوند می‌توانند بعد از ورود تغییر"
-" یابند."
+"انواع آگاهی‌هایی که به شما نمایش داده می‌شوند می‌توانند بعد از ورود تغییر یابند."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
@@ -743,11 +751,11 @@ msgid ""
 msgstr ""
 "توکودون برای ذخیره اطلاعات حیاتی شما، نیازمند یک سرویس رمز است. \n"
 "\n"
-"توکودون می‌تواند از kwallet، GNOME Keyring و یا هر سرویس‌دیگری که با"
-" libsecret سازگار است، استفاده کند. \n"
+"توکودون می‌تواند از kwallet، GNOME Keyring و یا هر سرویس‌دیگری که با libsecret "
+"سازگار است، استفاده کند. \n"
 "\n"
-"بعد از نصب سرویس، از اجرای آن اطمینان حاصل کنید و سپس توکودون را مجدداً اجرا"
-" کنید."
+"بعد از نصب سرویس، از اجرای آن اطمینان حاصل کنید و سپس توکودون را مجدداً اجرا "
+"کنید."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
 #, kde-format
@@ -780,7 +788,7 @@ msgctxt "@title"
 msgid "Select Language"
 msgstr "انتخاب زبان"
 
-#: content/ui/LanguageSelector.qml:47
+#: content/ui/LanguageSelector.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -819,8 +827,7 @@ msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
-"برای ادامه، لطفاً پیوند روبرو را داخل مرورگرتان برای تأیید توکودون باز کنید:"
-"  "
+"برای ادامه، لطفاً پیوند روبرو را داخل مرورگرتان برای تأیید توکودون باز کنید:  "
 "%1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
@@ -872,11 +879,11 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
-"لطفاً از اجرای سرویس رمز اطمینان حاصل کنید. برای مشکلات دیگری در ورود شما"
-" می‌توانید از وبگاه کارساز دیدن کنید. \n"
+"لطفاً از اجرای سرویس رمز اطمینان حاصل کنید. برای مشکلات دیگری در ورود شما "
+"می‌توانید از وبگاه کارساز دیدن کنید. \n"
 "\n"
-"شما می‌توانید با دکمه زیر مجدداً برای ورود تلاش کنید و یا توکودون را مجدد"
-" اجرا کنید."
+"شما می‌توانید با دکمه زیر مجدداً برای ورود تلاش کنید و یا توکودون را مجدد اجرا "
+"کنید."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -887,6 +894,27 @@ msgstr "دیدن وبگاه"
 #, kde-format
 msgid "Re-Attempt Log In"
 msgstr "تلاش مجدد برای ورود"
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:68
+#: content/ui/Settings/ProfileEditor.qml:30
+#, kde-format
+msgid "Logout"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:75
+#: content/ui/Settings/ProfileEditor.qml:50
+#, kde-format
+msgctxt "@title"
+msgid "Logout"
+msgstr ""
+
+#: content/ui/LoginFlow/LoginIssuePage.qml:76
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Are you sure you want to discard your draft?"
+msgctxt "@label"
+msgid "Are you sure you want to log out?"
+msgstr "آیا از صرف‌نظر کردن از پیش‌نویس خود مطمعن هستید؟"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -909,7 +937,7 @@ msgstr "ارتباط با کارساز شکست خورد: %1. لطفاً تنظ�
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
 #: content/ui/LoginFlow/ServersPage.qml:107
-#: content/ui/Settings/NetworkProxyPage.qml:58
+#: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
 msgstr "تنظیمات پیشکار"
@@ -988,7 +1016,7 @@ msgid "Email Address"
 msgstr "رایانامه"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
-#: content/ui/Settings/NetworkProxyPage.qml:108
+#: content/ui/Settings/NetworkProxyPage.qml:123
 #, kde-format
 msgid "Password"
 msgstr "کلمه عبور"
@@ -1102,87 +1130,77 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "عملیات ناشناخته"
 
-#: content/ui/Main.qml:222 content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/Main.qml:204 content/ui/Main.qml:242
 #, kde-format
 msgid "Write a new post"
 msgstr "نوشتن یک فرسته جدید"
 
-#: content/ui/Main.qml:421
+#: content/ui/Main.qml:266
+#, fuzzy, kde-format
+#| msgid "Reply to this post"
+msgid "Reply to post"
+msgstr "پاسخ دادن به فرسته"
+
+#: content/ui/Main.qml:442
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "اشکال‌زدایی"
 
-#: content/ui/Main.qml:431
-#, kde-format
-msgid "Moderation Tools"
-msgstr "ابزارهای مدیریت"
-
-#: content/ui/Main.qml:432
+#: content/ui/Main.qml:452
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "ابزارهای مدیریت"
 
-#: content/ui/Main.qml:443
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "تنظیمات"
-
-#: content/ui/Main.qml:455
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Home"
 msgstr "خانه"
 
-#: content/ui/Main.qml:470 content/ui/NotificationPage.qml:15
-#: content/ui/Settings/SettingsPage.qml:19
+#: content/ui/Main.qml:498 content/ui/NotificationPage.qml:15
+#: content/ui/Settings/TokodonConfigurationView.qml:21
 #, kde-format
 msgid "Notifications"
 msgstr "آگاهی‌ها"
 
-#: content/ui/Main.qml:501 content/ui/StatusComposer/StatusComposer.qml:398
+#: content/ui/Main.qml:529
 #, kde-format
 msgid "Local"
 msgstr "محلی"
 
-#: content/ui/Main.qml:516
+#: content/ui/Main.qml:544
 #, kde-format
 msgid "Global"
 msgstr "همه"
 
-#: content/ui/Main.qml:532
-#, kde-format
-msgid "Conversation"
-msgstr "گفتگو"
-
-#: content/ui/Main.qml:546
+#: content/ui/Main.qml:574
 #, kde-format
 msgid "Favourites"
 msgstr "پسندیده‌ها"
 
-#: content/ui/Main.qml:562
+#: content/ui/Main.qml:590
 #, kde-format
 msgid "Bookmarks"
 msgstr "نشانک‌‌گذاری شده ها"
 
-#: content/ui/Main.qml:592
+#: content/ui/Main.qml:620
 #, kde-format
 msgid "Search"
 msgstr "جستجو"
 
-#: content/ui/Main.qml:607
+#: content/ui/Main.qml:635
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "اطلاعیه‌ها"
 
-#: content/ui/Main.qml:622
+#: content/ui/Main.qml:650
 #, kde-format
 msgid "Lists"
 msgstr "لیست‌ها"
 
-#: content/ui/Main.qml:774
+#: content/ui/Main.qml:798
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -1418,9 +1436,8 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
-"این می‌تواند نام دامنه‌ای باشد که در نشانی رایانامه و یا رکورد های MX استفاده"
-" می‌شود. "
-"در هنگام نام‌نویسی چک خواهند شد."
+"این می‌تواند نام دامنه‌ای باشد که در نشانی رایانامه و یا رکورد های MX استفاده "
+"می‌شود. در هنگام نام‌نویسی چک خواهند شد."
 
 # حتماً این ترجمه رو دوباره چک کنید چون برای resolve معادل های خوبی به ذهنم نرسید.
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
@@ -1546,8 +1563,8 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
-"حذف کردن پرونده‌های رسانه محلی و اجازه‌ندادن برای دانلود در آینده. نامربوط به"
-" معلق کردن"
+"حذف کردن پرونده‌های رسانه محلی و اجازه‌ندادن برای دانلود در آینده. نامربوط به "
+"معلق کردن"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
@@ -1560,8 +1577,8 @@ msgstr "رد کردن گزارشات"
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
-"تمامی گزارشاتی که از سوی این دامنه ارسال می‌شوند را نادیده بگیر. نامربوط به"
-" معلق‌کردن"
+"تمامی گزارشاتی که از سوی این دامنه ارسال می‌شوند را نادیده بگیر. نامربوط به "
+"معلق‌کردن"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
@@ -1576,8 +1593,8 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
-"مخدوش کردن جزئی نام دامنه ها در لیست، اگر تبلیغ لیست حساب‌های محدود شده فعال"
-" باشد."
+"مخدوش کردن جزئی نام دامنه ها در لیست، اگر تبلیغ لیست حساب‌های محدود شده فعال "
+"باشد."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:177
@@ -1610,8 +1627,8 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
-"لیست دامنه‌های اجازه شده در کارسازهایی فعال هستند که فدراسیون محدود داشته"
-" باشند."
+"لیست دامنه‌های اجازه شده در کارسازهایی فعال هستند که فدراسیون محدود داشته "
+"باشند."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
@@ -2478,30 +2495,30 @@ msgstr ""
 msgid "Show More"
 msgstr ""
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:15
+#: content/ui/ModerationTools/ModerationToolsView.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
 msgstr ""
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:21
+#: content/ui/ModerationTools/ModerationToolsView.qml:20
 #, kde-format
 msgid "Reports"
 msgstr ""
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:27
+#: content/ui/ModerationTools/ModerationToolsView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
 msgstr ""
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:33
+#: content/ui/ModerationTools/ModerationToolsView.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
 msgstr "قوانین آی‌پی"
 
-#: content/ui/ModerationTools/ModerationToolPage.qml:39
+#: content/ui/ModerationTools/ModerationToolsView.qml:38
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
@@ -2617,7 +2634,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:211
+#: content/ui/NotificationPage.qml:216
 #, kde-format
 msgid "No Notifications"
 msgstr ""
@@ -2652,33 +2669,41 @@ msgstr ""
 msgid "%1 updated their post"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:74
+#: content/ui/PostDelegate/AttachmentGrid.qml:85
 #, kde-format
 msgid "Status with image attachment"
 msgstr "وضعیت تصاویر پیوست شده"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:76
+#: content/ui/PostDelegate/AttachmentGrid.qml:87
 #, kde-format
 msgid "Status with GifV attachment"
 msgstr "وضعیت تصاویر متحرک پیوست شده"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:78
+#: content/ui/PostDelegate/AttachmentGrid.qml:89
 #, kde-format
 msgid "Status with Video attachment"
 msgstr "وضعیت ویدئوهای پیوست شده"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:167
+#: content/ui/PostDelegate/AttachmentGrid.qml:175
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:295
+#: content/ui/PostDelegate/AttachmentGrid.qml:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:310
+#: content/ui/PostDelegate/AttachmentGrid.qml:307
+#, fuzzy, kde-format
+#| msgctxt "@info:Whether to reject incoming media from this domain"
+#| msgid "Reject media"
+msgctxt "@info:tooltip"
+msgid "Hide media"
+msgstr "رد کردن رسانه"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:318
 #, kde-format
 msgid "Media Hidden"
 msgstr ""
@@ -2719,63 +2744,86 @@ msgstr ""
 #: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:80
 #: content/ui/PostDelegate/PostInfoBar.qml:88
-#: content/ui/StatusComposer/StatusComposer.qml:404
 #, kde-format
 msgid "Public"
 msgstr "عمومی"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgid "Unlisted"
 msgstr "لیست نشده"
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
-#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "Private"
 msgstr "خصوصی"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
-#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "Direct Message"
 msgstr "پیام شخصی"
 
-#: content/ui/PostDelegate/InformationBar.qml:104
-#, kde-format
-msgid "%1 Favorite"
-msgid_plural "%1 Favorites"
-msgstr[0] ""
-msgstr[1] ""
+#: content/ui/PostDelegate/InformationBar.qml:106
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
+msgid "No favorites"
+msgstr "%1 پسندیدن"
 
-#: content/ui/PostDelegate/InformationBar.qml:123
-#, kde-format
-msgid "%1 Boost"
-msgid_plural "%1 Boosts"
-msgstr[0] ""
-msgstr[1] ""
+#: content/ui/PostDelegate/InformationBar.qml:108
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 پسندیدن"
+msgstr[1] "%1 پسندیدن"
+
+#: content/ui/PostDelegate/InformationBar.qml:132
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 boost"
+#| msgid_plural "%1 boosts"
+msgid "No boosts"
+msgstr "%1 تقویت"
+
+#: content/ui/PostDelegate/InformationBar.qml:134
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 boost"
+#| msgid_plural "%1 boosts"
+msgid "%1 boost"
+msgid_plural "%1 boosts"
+msgstr[0] "%1 تقویت"
+msgstr[1] "%1 تقویت"
 
 #: content/ui/PostDelegate/LinkPreview.qml:18
 #, kde-format
 msgid "Link preview: %1"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:104
+#: content/ui/PostDelegate/MediaContainer.qml:70
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:113
+#: content/ui/PostDelegate/MediaContainer.qml:76
+#, kde-format
+msgid "Text description available"
+msgstr ""
+
+#: content/ui/PostDelegate/MediaContainer.qml:84
 #, kde-format
 msgid "GIF"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:93
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -2832,66 +2880,76 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:409
+#: content/ui/PostDelegate/PostDelegate.qml:423
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:434
+#: content/ui/PostDelegate/PostDelegate.qml:450
+#, kde-format
+msgid "Cannot boost direct messages"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:452
+#, kde-format
+msgid "Cannot boost private posts"
+msgstr ""
+
+#: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boosted"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:437
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:457
+#: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favourited"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favourite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmarked"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:505
+#: content/ui/PostDelegate/PostDelegate.qml:527
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because it's "
@@ -2899,10 +2957,11 @@ msgid ""
 msgstr ""
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Moderation"
 msgctxt "Show more options"
-msgid "More"
-msgstr ""
+msgid "More actions"
+msgstr "مدیریت"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -2920,6 +2979,11 @@ msgstr ""
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr ""
+
+#: content/ui/PostDelegate/PostMenu.qml:55
+#, kde-format
+msgid "Post link copied."
+msgstr "پیوند فرسته رونوشت گرفته شد."
 
 #: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
@@ -3012,8 +3076,8 @@ msgid "Edit"
 msgstr "ویرایش"
 
 #: content/ui/PostDelegate/PostMenu.qml:196
-#: content/ui/Settings/ProfileEditor.qml:147
-#: content/ui/Settings/ProfileEditor.qml:209
+#: content/ui/Settings/ProfileEditor.qml:178
+#: content/ui/Settings/ProfileEditor.qml:240
 #, kde-format
 msgid "Delete"
 msgstr ""
@@ -3039,6 +3103,17 @@ msgstr ""
 msgid "Vote"
 msgstr ""
 
+#: content/ui/PostDelegate/QuotePost.qml:64
+#, fuzzy, kde-format
+#| msgid "Hide Boosts from %1"
+msgid "Post from %1"
+msgstr "مخفی کردن تقویت های %1"
+
+#: content/ui/PostDelegate/QuotePost.qml:83
+#, kde-format
+msgid "Quoted post"
+msgstr ""
+
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
@@ -3049,7 +3124,7 @@ msgstr ""
 msgid "In reply to %1"
 msgstr ""
 
-#: content/ui/PostDelegate/VideoAttachment.qml:96
+#: content/ui/PostDelegate/VideoAttachment.qml:93
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -3091,6 +3166,11 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr ""
 
+#: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:147
+#, kde-format
+msgid "Hashtag"
+msgstr ""
+
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
@@ -3112,82 +3192,65 @@ msgstr ""
 msgid "Search for users, tags and posts"
 msgstr ""
 
-#: content/ui/SearchView.qml:147
-#, kde-format
-msgid "Hashtag"
-msgstr ""
-
-#: content/ui/Settings/AccountsPage.qml:72
-#, kde-format
-msgid "Logout"
-msgstr ""
-
-#: content/ui/Settings/AccountsPage.qml:78
-#, kde-format
-msgctxt "@title"
-msgid "Logout"
-msgstr ""
-
-#: content/ui/Settings/AccountsPage.qml:79
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to log out of %1?"
-msgstr ""
-
-#: content/ui/Settings/AccountsPage.qml:108 content/ui/UserInfo.qml:127
+#: content/ui/Settings/AccountsPage.qml:85 content/ui/UserInfo.qml:132
 #, kde-format
 msgid "Add Account"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:17
+#: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:24
+#: content/ui/Settings/AppearancePage.qml:25
 #, kde-format
 msgid "Color theme"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:38
+#: content/ui/Settings/AppearancePage.qml:44
+#, kde-format
+msgid "Pop out the post composer by default"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:56
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:44
+#: content/ui/Settings/AppearancePage.qml:62
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:59
+#: content/ui/Settings/AppearancePage.qml:77
 #, kde-format
 msgid "Show link previews"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:74
+#: content/ui/Settings/AppearancePage.qml:92
 #, kde-format
 msgid "Content font"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:80
+#: content/ui/Settings/AppearancePage.qml:98
 #, kde-format
 msgid "Please choose a font"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:91
+#: content/ui/Settings/AppearancePage.qml:109
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:97
+#: content/ui/Settings/AppearancePage.qml:115
 #, kde-format
 msgid "Crop images on the timeline to 16x9"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:111
+#: content/ui/Settings/AppearancePage.qml:129
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr ""
@@ -3205,31 +3268,36 @@ msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
-msgid "HTTP"
+msgid "No Proxy"
 msgstr ""
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: content/ui/Settings/NetworkProxyPage.qml:60
+#, kde-format
 msgid "Socks5"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:64
+#: content/ui/Settings/NetworkProxyPage.qml:79
 #, kde-format
 msgid "Host"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:77
+#: content/ui/Settings/NetworkProxyPage.qml:92
 #, kde-format
 msgid "Port"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:98
+#: content/ui/Settings/NetworkProxyPage.qml:113
 #, kde-format
 msgid "User"
 msgstr ""
 
-#: content/ui/Settings/NetworkProxyPage.qml:126
-#: content/ui/Settings/ProfileEditor.qml:302
+#: content/ui/Settings/NetworkProxyPage.qml:141
+#: content/ui/Settings/ProfileEditor.qml:336
 #, kde-format
 msgid "Apply"
 msgstr ""
@@ -3241,14 +3309,19 @@ msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
-msgid "Push notifications are enabled."
+msgid "Notifications can appear even when Tokodon isn't running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
 msgid ""
-"Push notifications are not available for this account. Please log out and "
-"log back in."
+"Push notifications are available but could not be enabled. Please log out "
+"and log back in."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:37
+#, kde-format
+msgid "Notifications will only appear when Tokodon is running."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:49
@@ -3297,211 +3370,138 @@ msgstr ""
 msgid "Edits"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:24
+#: content/ui/Settings/ProfileEditor.qml:26
 #, kde-format
 msgid "Edit Account"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:30
-#: content/ui/StatusComposer/StatusComposer.qml:340
+#: content/ui/Settings/ProfileEditor.qml:42
 #, kde-format
 msgid "Please choose a file"
 msgstr "لطفاً یک سند انتخاب کنید"
 
-#: content/ui/Settings/ProfileEditor.qml:55
+#: content/ui/Settings/ProfileEditor.qml:51
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to log out of %1?"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:86
 #, kde-format
 msgid "Display Name"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:73
+#: content/ui/Settings/ProfileEditor.qml:104
 #, kde-format
 msgid "Bio"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:99
+#: content/ui/Settings/ProfileEditor.qml:130
 #, kde-format
 msgid "Header"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:134
+#: content/ui/Settings/ProfileEditor.qml:165
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:162
+#: content/ui/Settings/ProfileEditor.qml:193
 #, kde-format
 msgid "Avatar"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:195
+#: content/ui/Settings/ProfileEditor.qml:226
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:223
+#: content/ui/Settings/ProfileEditor.qml:256
 #, kde-format
 msgid "Require approval of follow requests"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:231
+#: content/ui/Settings/ProfileEditor.qml:264
 #, kde-format
 msgid "This is a bot account"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:239
+#: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
 msgid "Suggest account to others"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:247
+#: content/ui/Settings/ProfileEditor.qml:280
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:255
+#: content/ui/Settings/ProfileEditor.qml:288
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:276
+#: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:278
+#: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:279
+#: content/ui/Settings/ProfileEditor.qml:312
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:295
+#: content/ui/Settings/ProfileEditor.qml:329
 #, kde-format
 msgid "Reset"
 msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:13
+#: content/ui/Settings/TokodonConfigurationView.qml:15
 #, kde-format
 msgid "Appearance"
 msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:25
+#: content/ui/Settings/TokodonConfigurationView.qml:27
 #, kde-format
 msgid "Accounts"
 msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:31
-#, kde-format
-msgid "Spell Checking"
-msgstr ""
-
-#: content/ui/Settings/SettingsPage.qml:38
+#: content/ui/Settings/TokodonConfigurationView.qml:34
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:44
+#: content/ui/Settings/TokodonConfigurationView.qml:40
 #, kde-format
 msgid "About Tokodon"
 msgstr ""
 
-#: content/ui/Settings/SettingsPage.qml:50
+#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
+#, kde-format
+msgctxt "@title:group"
+msgid "About"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:47
 #, kde-format
 msgid "About KDE"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:31
-#, kde-format
-msgid "Enable automatic spell checking"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:45
-#, kde-format
-msgid "Ignore uppercase words"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:59
-#, kde-format
-msgid "Ignore hyphenated words"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:73
-#, kde-format
-msgid "Detect language automatically"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:86
-#, kde-format
-msgid "Selected default language:"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:87
-#, kde-format
-msgid "None"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:108
-#, kde-format
-msgid "Additional Spell Checking Languages"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:109
-#, kde-format
-msgid ""
-"%1 will provide spell checking and suggestions for the languages listed here "
-"when autodetection is enabled."
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:122
-#, kde-format
-msgid "Open Personal Dictionary"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:134
-#, kde-format
-msgctxt "@title:window"
-msgid "Spell checking languages"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:146
-#, kde-format
-msgid "Default Language"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:158
-#, kde-format
-msgid "Spell checking dictionary"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:165
-#, kde-format
-msgid "Add a new word to your personal dictionary…"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:168
-#, kde-format
-msgctxt "@action:button"
-msgid "Add Word"
-msgstr ""
-
-#: content/ui/Settings/SonnetPage.qml:203
-#, kde-format
-msgctxt "@action:button"
-msgid "Delete word"
 msgstr ""
 
 #: content/ui/ShareDialog.qml:34
@@ -3592,19 +3592,32 @@ msgid "Remove"
 msgstr "حذف کردن"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, kde-format
-msgid "Edit this post"
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgctxt "@title:window"
+msgid "Edit This Post"
 msgstr "ویرایش کردن فرسته"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, kde-format
-msgid "Reply to this post"
+#, fuzzy, kde-format
+#| msgid "Reply to this post"
+msgctxt "@title:window"
+msgid "Reply to This Post"
 msgstr "پاسخ دادن به فرسته"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, kde-format
-msgid "Rewrite this post"
+#, fuzzy, kde-format
+#| msgid "Rewrite this post"
+msgctxt "@title:window"
+msgid "Rewrite This Post"
 msgstr "بازنویسی فرسته"
+
+#: content/ui/StatusComposer/StatusComposer.qml:61
+#, fuzzy, kde-format
+#| msgid "Write a new post"
+msgctxt "@title:window"
+msgid "Write a New Post"
+msgstr "نوشتن یک فرسته جدید"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
@@ -3612,158 +3625,234 @@ msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "بالاپر"
 
-#: content/ui/StatusComposer/StatusComposer.qml:131
+#: content/ui/StatusComposer/StatusComposer.qml:130
+#, kde-format
+msgid "Saving an edited post that has a poll will clear existing results."
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "صرف‌نظر از پیشنویس"
 
-#: content/ui/StatusComposer/StatusComposer.qml:132
+#: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "آیا از صرف‌نظر کردن از پیش‌نویس خود مطمعن هستید؟"
 
-#: content/ui/StatusComposer/StatusComposer.qml:212
-#: content/ui/StatusComposer/StatusComposer.qml:432
+#: content/ui/StatusComposer/StatusComposer.qml:144
 #, kde-format
-msgid "Content Warning"
+msgctxt "@action:button Keep this draft"
+msgid "Keep"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:240
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:placeholder"
+msgid "Content warning"
 msgstr "هشدار محتوا"
 
-#: content/ui/StatusComposer/StatusComposer.qml:225
-#, kde-format
+#: content/ui/StatusComposer/StatusComposer.qml:253
+#, fuzzy, kde-format
+#| msgid "What's new?"
+msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "چه‌چیزی جدید است؟"
 
-#: content/ui/StatusComposer/StatusComposer.qml:343
+#: content/ui/StatusComposer/StatusComposer.qml:368
+#, fuzzy, kde-format
+#| msgid "Please choose a file"
+msgctxt "@title:window"
+msgid "Choose a File"
+msgstr "لطفاً یک سند انتخاب کنید"
+
+#: content/ui/StatusComposer/StatusComposer.qml:371
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
-"تمامی پسوند‌های پشتیبانی شده (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif"
-" *.avif *.webm *.mp4 *.m4v *.mov)"
+"تمامی پسوند‌های پشتیبانی شده (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
+"avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:344
+#: content/ui/StatusComposer/StatusComposer.qml:372
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "تصاویر JPEG (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:345
+#: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "تصاویر PNG (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:346
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "تصاویر GIF (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:347
+#: content/ui/StatusComposer/StatusComposer.qml:375
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "تصاویر WebP (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:348
+#: content/ui/StatusComposer/StatusComposer.qml:376
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "تصاویر HEIC (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:349
+#: content/ui/StatusComposer/StatusComposer.qml:377
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "تصاویر HEIF (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:350
+#: content/ui/StatusComposer/StatusComposer.qml:378
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "تصاویر AVIF (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:351
+#: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "ویدئو WebM (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:352
+#: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "ویدئو MPEG-4  (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:353
+#: content/ui/StatusComposer/StatusComposer.qml:381
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "ویدئو M4V (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:354
+#: content/ui/StatusComposer/StatusComposer.qml:382
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "ویدئو QuickTime (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:355
+#: content/ui/StatusComposer/StatusComposer.qml:383
 #, kde-format
 msgid "All files (*)"
 msgstr "همه اسناد (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:357
-#, kde-format
-msgid "Attach File"
+#: content/ui/StatusComposer/StatusComposer.qml:385
+#, fuzzy, kde-format
+#| msgid "Attach File"
+msgctxt "@info:tooltip"
+msgid "Attach file"
 msgstr "پیوست‌کردن سند"
 
-#: content/ui/StatusComposer/StatusComposer.qml:368
-#, kde-format
-msgid "Add Poll"
+#: content/ui/StatusComposer/StatusComposer.qml:396
+#, fuzzy, kde-format
+#| msgid "Add Poll"
+msgctxt "@info:tooltip"
+msgid "Add poll"
 msgstr "افزودن نظرسنجی"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
-#, kde-format
+#: content/ui/StatusComposer/StatusComposer.qml:426
+#, fuzzy, kde-format
+#| msgid "Local"
+msgctxt "@item:inmenu Local to this server"
+msgid "Local"
+msgstr "محلی"
+
+#: content/ui/StatusComposer/StatusComposer.qml:432
+#, fuzzy, kde-format
+#| msgid "Public"
+msgctxt "@item:inmenu Public to the world"
+msgid "Public"
+msgstr "عمومی"
+
+#: content/ui/StatusComposer/StatusComposer.qml:437
+#, fuzzy, kde-format
+#| msgid "Unlisted"
+msgctxt "@item:inmenu Public but less so"
+msgid "Unlisted"
+msgstr "لیست نشده"
+
+#: content/ui/StatusComposer/StatusComposer.qml:442
+#, fuzzy, kde-format
+#| msgid "Private"
+msgctxt "@item:inmenu Only to followers"
+msgid "Private"
+msgstr "خصوصی"
+
+#: content/ui/StatusComposer/StatusComposer.qml:447
+#, fuzzy, kde-format
+#| msgid "Direct Message"
+msgctxt "@item:inmenu Only to who is explicitly mentioned"
+msgid "Direct Message"
+msgstr "پیام شخصی"
+
+#: content/ui/StatusComposer/StatusComposer.qml:452
+#, fuzzy, kde-format
+#| msgid "Visibility"
+msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "دید"
 
-#: content/ui/StatusComposer/StatusComposer.qml:429
-#, kde-format
-msgctxt "Short for content warning"
+#: content/ui/StatusComposer/StatusComposer.qml:457
+#, fuzzy, kde-format
+#| msgctxt "Short for content warning"
+#| msgid "cw"
+msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "cw"
 
-#: content/ui/StatusComposer/StatusComposer.qml:446
-#, kde-format
-msgid "Post Language"
+#: content/ui/StatusComposer/StatusComposer.qml:460
+#, fuzzy, kde-format
+#| msgid "Content Warning"
+msgctxt "@info:tooltip"
+msgid "Content warning"
+msgstr "هشدار محتوا"
+
+#: content/ui/StatusComposer/StatusComposer.qml:474
+#, fuzzy, kde-format
+#| msgid "Post Language"
+msgctxt "@info:tooltip"
+msgid "Post language"
 msgstr "زبان فرسته"
 
-#: content/ui/StatusComposer/StatusComposer.qml:475
-#, kde-format
-msgid "Add Emoji"
+#: content/ui/StatusComposer/StatusComposer.qml:503
+#, fuzzy, kde-format
+#| msgid "Add Emoji"
+msgctxt "@info:tooltip"
+msgid "Add emoji"
 msgstr "افزودن شمایل"
 
-#: content/ui/StatusComposer/StatusComposer.qml:491
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> حرف"
 
-#: content/ui/StatusComposer/StatusComposer.qml:514
+#: content/ui/StatusComposer/StatusComposer.qml:542
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "ارسال"
 
-#: content/ui/StatusComposer/StatusComposer.qml:516
+#: content/ui/StatusComposer/StatusComposer.qml:544
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "پاسخ‌دادن"
 
-#: content/ui/StatusComposer/StatusComposer.qml:518
+#: content/ui/StatusComposer/StatusComposer.qml:546
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "بازنشر"
 
-#: content/ui/StatusComposer/StatusComposer.qml:520
-#, kde-format
-msgctxt "@action:Button Edit a post"
-msgid "Edit"
-msgstr "ویرایش"
+#: content/ui/StatusComposer/StatusComposer.qml:548
+#, fuzzy, kde-format
+#| msgid "Saved"
+msgctxt "@action:Button Save an edited a post"
+msgid "Save"
+msgstr "ذخیره شد"
 
 #: content/ui/TimelinePage.qml:44 timeline/accountmodel.cpp:35
 #, kde-format
@@ -3775,72 +3864,77 @@ msgstr ""
 msgid "Home (%1)"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:97
+#: content/ui/TimelinePage.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:102
+#: content/ui/TimelinePage.qml:104
 #, kde-format
 msgid "Show Boosts"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:109
+#: content/ui/TimelinePage.qml:111
 #, kde-format
 msgid "Show Replies"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:120
+#: content/ui/TimelinePage.qml:122
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr ""
-"در ارتباط با کارساز مشکل پیش آمد: %1 لطفاً تنظیمات خود را بازبینی کنید."
+msgstr "در ارتباط با کارساز مشکل پیش آمد: %1 لطفاً تنظیمات خود را بازبینی کنید."
 
-#: content/ui/TimelinePage.qml:238
+#: content/ui/TimelinePage.qml:240
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "برخی از پاسخ‌ها در دسترس نیستند."
 
-#: content/ui/TimelinePage.qml:239
+#: content/ui/TimelinePage.qml:241
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr ""
 
-#: content/ui/TimelinePage.qml:242
+#: content/ui/TimelinePage.qml:244
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:251
+#: content/ui/TimelinePage.qml:253
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "پایان خط زمانی"
 
-#: content/ui/TimelinePage.qml:293
+#: content/ui/TimelinePage.qml:295
 #, kde-format
 msgid "No posts"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:299
+#: content/ui/TimelinePage.qml:301
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr ""
 
-#: content/ui/UserInfo.qml:85
+#: content/ui/UserInfo.qml:90
 #, kde-format
 msgid "Switch Account"
 msgstr ""
 
-#: content/ui/UserInfo.qml:132
+#: content/ui/UserInfo.qml:92
 #, kde-format
-msgid "Log in to an existing account"
+msgid "Switch account"
 msgstr ""
+
+#: content/ui/UserInfo.qml:137
+#, fuzzy, kde-format
+#| msgid "Could not feature account"
+msgid "Log in or create a new account"
+msgstr "نمی‌توان حساب را معرفی کرد"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -3917,79 +4011,79 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr ""
 
-#: editor/posteditorbackend.cpp:263
+#: editor/posteditorbackend.cpp:271
 #, kde-format
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:63
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""
 
-#: main.cpp:109
+#: main.cpp:110
 #, kde-format
 msgid "Tokodon"
 msgstr ""
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Mastodon client"
 msgstr ""
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
-msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr ""
 
-#: main.cpp:114
+#: main.cpp:115
 #, kde-format
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:115 main.cpp:120
+#: main.cpp:116 main.cpp:121
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "سهراب بهدانی"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "behdanisohrab@proton.me"
 
-#: main.cpp:132
+#: main.cpp:133
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 
-#: main.cpp:133
+#: main.cpp:134
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr ""
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:135
+#: main.cpp:136
 #, kde-format
 msgid "The text to share."
 msgstr ""
 
-#: main.cpp:139
+#: main.cpp:140
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
@@ -4045,46 +4139,46 @@ msgctxt "@title"
 msgid "Trending"
 msgstr ""
 
-#: timeline/post.cpp:187
+#: timeline/post.cpp:219
 #, kde-format
 msgid "in the future"
 msgstr ""
 
-#: timeline/post.cpp:189
+#: timeline/post.cpp:221
 #, kde-format
 msgid "%1s"
 msgstr ""
 
-#: timeline/post.cpp:191
+#: timeline/post.cpp:223
 #, kde-format
 msgid "%1m"
 msgstr ""
 
-#: timeline/post.cpp:193
+#: timeline/post.cpp:225
 #, kde-format
 msgid "%1h"
 msgstr ""
 
-#: timeline/post.cpp:195
+#: timeline/post.cpp:227
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: timeline/post.cpp:199
+#: timeline/post.cpp:231
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:202
+#: timeline/post.cpp:234
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timeline/post.cpp:206
+#: timeline/post.cpp:238
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -4096,10 +4190,16 @@ msgstr[1] ""
 msgid "Trending"
 msgstr ""
 
-#: timeline/threadmodel.cpp:40
+#: timeline/threadmodel.cpp:41
+#, kde-format
+msgctxt "@title:window"
+msgid "Loading…"
+msgstr ""
+
+#: timeline/threadmodel.cpp:46
 #, kde-format
 msgctxt "@title"
-msgid "Thread"
+msgid "Post by %1"
 msgstr ""
 
 #: utils/emojimodel.cpp:129
@@ -4196,4 +4296,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
 
+#~ msgid "Settings"
+#~ msgstr "تنظیمات"
 
+#~ msgctxt "@title:window"
+#~ msgid "Settings"
+#~ msgstr "تنظیمات"
+
+#~ msgid "Copy Link to This Profile"
+#~ msgstr "رونوشت گرفتن از پیوند این نمایه"
+
+#~ msgid "Moderation Tools"
+#~ msgstr "ابزارهای مدیریت"
+
+#~ msgid "Conversation"
+#~ msgstr "گفتگو"
+
+#~ msgctxt "@action:Button Edit a post"
+#~ msgid "Edit"
+#~ msgstr "ویرایش"
