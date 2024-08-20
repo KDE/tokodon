@@ -361,6 +361,7 @@ StatefulApp.StatefulWindow {
 
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
+
         enabled: AccountManager.hasAccounts && AccountManager.isReady
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (root.width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
@@ -407,6 +408,7 @@ StatefulApp.StatefulWindow {
             UserInfo {
                 Layout.fillWidth: true
                 application: root.application
+                sidebar: root.globalDrawer
             }
 
             Kirigami.Separator {
@@ -432,6 +434,12 @@ StatefulApp.StatefulWindow {
                     visible: modelData.visible
                     enabled: !AccountManager.selectedAccountHasIssue
                     activeFocusOnTab: true
+
+                    onClicked: {
+                        if (drawer.modal) {
+                            drawer.close();
+                        }
+                    }
 
                     // Notification indicator
                     Rectangle {
@@ -466,7 +474,12 @@ StatefulApp.StatefulWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "debug-run"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+                onClicked: {
+                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+                    if (drawer.modal) {
+                        drawer.close();
+                    }
+                }
                 text: i18nc("@action:button Open debug page", "Debug")
                 visible: AccountManager.testMode
                 padding: Kirigami.Units.largeSpacing
@@ -484,7 +497,12 @@ StatefulApp.StatefulWindow {
 
                 Layout.fillWidth: true
 
-                onClicked: moderationToolsView.open()
+                onClicked: {
+                    moderationToolsView.open()
+                    if (drawer.modal) {
+                        drawer.close();
+                    }
+                }
 
                 ModerationToolsView {
                     id: moderationToolsView
@@ -495,6 +513,9 @@ StatefulApp.StatefulWindow {
             Delegates.RoundedItemDelegate {
                 action: Kirigami.Action {
                     fromQAction: root.application.action('options_configure')
+                    onTriggered: if (drawer.modal) {
+                        drawer.close();
+                    }
                 }
                 text: i18nc("@action:button Open settings dialog", "Settings")
                 padding: Kirigami.Units.largeSpacing
