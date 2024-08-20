@@ -15,6 +15,7 @@ QQC2.Pane {
 
     property alias accountsListVisible: accounts.visible
     property var addAccount
+    required property Kirigami.OverlayDrawer sidebar
 
     visible: AccountManager.selectedAccount
     padding: 0
@@ -55,7 +56,12 @@ QQC2.Pane {
 
             text: name
 
-            onClicked: openAccountPage()
+            onClicked: {
+                openAccountPage()
+                if (userInfo.sidebar.modal) {
+                    userInfo.sidebar.close();
+                }
+            }
             Layout.fillWidth: true
 
             contentItem: RowLayout {
@@ -141,6 +147,9 @@ QQC2.Pane {
                     pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
+                    if (userInfo.sidebar.modal) {
+                        userInfo.sidebar.close();
+                    }
                 }
 
                 Component.onCompleted: userInfo.addAccount = this
@@ -220,6 +229,9 @@ QQC2.Pane {
                         accounts.currentIndex = accountDelegate.index;
                     }
                     userInfo.accountsListVisible = false
+                    if (userInfo.sidebar.modal) {
+                        userInfo.sidebar.close();
+                    }
                 }
             }
         }

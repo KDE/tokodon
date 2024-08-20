@@ -334,6 +334,7 @@ Kirigami.ApplicationWindow {
 
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
+
         enabled: AccountManager.hasAccounts && AccountManager.isReady
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (root.width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
@@ -379,6 +380,7 @@ Kirigami.ApplicationWindow {
 
             UserInfo {
                 Layout.fillWidth: true
+                sidebar: root.globalDrawer
             }
 
             Kirigami.Separator {
@@ -404,6 +406,12 @@ Kirigami.ApplicationWindow {
                     visible: modelData.visible
                     enabled: !AccountManager.selectedAccountHasIssue
                     activeFocusOnTab: true
+
+                    onClicked: {
+                        if (drawer.modal) {
+                            drawer.close();
+                        }
+                    }
 
                     // Notification indicator
                     Rectangle {
@@ -438,7 +446,12 @@ Kirigami.ApplicationWindow {
 
             Delegates.RoundedItemDelegate {
                 icon.name: "debug-run"
-                onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+                onClicked: {
+                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+                    if (drawer.modal) {
+                        drawer.close();
+                    }
+                }
                 text: i18nc("@action:button Open debug page", "Debug")
                 visible: AccountManager.testMode
                 padding: Kirigami.Units.largeSpacing
@@ -456,7 +469,12 @@ Kirigami.ApplicationWindow {
 
                 Layout.fillWidth: true
 
-                onClicked: moderationToolsView.open()
+                onClicked: {
+                    moderationToolsView.open()
+                    if (drawer.modal) {
+                        drawer.close();
+                    }
+                }
 
                 ModerationToolsView {
                     id: moderationToolsView
@@ -473,7 +491,12 @@ Kirigami.ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
 
-                onClicked: TokodonConfigurationView.open()
+                onClicked: {
+                    TokodonConfigurationView.open()
+                    if (drawer.modal) {
+                        drawer.close();
+                    }
+                }
             }
         }
     }
