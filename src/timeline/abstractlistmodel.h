@@ -35,13 +35,13 @@ public:
      *
      * This method should be overridden by derived classes to provide the specific display name.
      */
-    virtual QString displayName() const = 0;
+    [[nodiscard]] virtual QString displayName() const = 0;
 
     /**
      * @brief Returns the name of the list model.
      * @return The name as a QString.
      */
-    QString name() const;
+    [[nodiscard]] QString name() const;
 
     /**
      * @brief Sets the name of the list model.
@@ -53,7 +53,7 @@ public:
      * @brief Returns the loading state of the list model.
      * @return True if the list model is currently loading, false otherwise.
      */
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     /**
      * @brief Sets the loading state of the list model.
      * @param loading The loading state to set.
@@ -64,13 +64,13 @@ public:
      * @return A pointer to the AbstractAccount object.
      */
 
-    AbstractAccount *account() const;
+    [[nodiscard]] AbstractAccount *account() const;
 
     /**
      * @brief Returns whether the list model should load more items.
      * @return True if the list model should load more items, false otherwise.
      */
-    bool shouldLoadMore() const;
+    [[nodiscard]] bool shouldLoadMore() const;
 
     /**
      * @brief Sets whether the list model should load more items.

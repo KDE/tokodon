@@ -26,7 +26,7 @@ public:
      * @return The post id of the "root" post of the thread
      * @see setPostId()
      */
-    QString postId() const;
+    [[nodiscard]] QString postId() const;
 
     ///
     /// \see postId
@@ -39,18 +39,18 @@ public:
     /**
      * @return The original post url of the "root" post of the thread.
      */
-    QString postUrl() const;
+    [[nodiscard]] QString postUrl() const;
 
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
-    QString displayName() const override;
+    [[nodiscard]] QString displayName() const override;
     void fillTimeline(const QString &fromId = QString()) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
 
     /**
      * @return Returns the index of the root post in the model. Can be used to find where exactly to position the view.
      */
-    Q_INVOKABLE int getRootIndex() const;
+    Q_INVOKABLE [[nodiscard]] int getRootIndex() const;
 
     void reset() override;
 
@@ -62,7 +62,7 @@ public:
     /**
      * @return Whether the post may have replies hidden from the server, but available on the original
      */
-    bool hasHiddenReplies() const;
+    [[nodiscard]] bool hasHiddenReplies() const;
 
 Q_SIGNALS:
     void postIdChanged();

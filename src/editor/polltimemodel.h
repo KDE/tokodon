@@ -20,9 +20,9 @@ public:
 
     explicit PollTimeModel(QObject *parent = nullptr);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE int getTime(int index);
 

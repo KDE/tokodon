@@ -47,44 +47,44 @@ public:
 
     explicit AccountsToolModel(QObject *parent = nullptr);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     void setLoading(bool loading);
 
-    QUrlQuery buildQuery() const;
+    [[nodiscard]] QUrlQuery buildQuery() const;
 
     // location
-    QString location() const;
+    [[nodiscard]] QString location() const;
     void setLocation(const QString &location);
 
     // moderation status
-    QString moderationStatus() const;
+    [[nodiscard]] QString moderationStatus() const;
     void setModerationStatus(const QString &moderationStatus);
 
     // role
-    QString role() const;
+    [[nodiscard]] QString role() const;
     void setRole(const QString &role);
 
     // UserName
-    QString username() const;
+    [[nodiscard]] QString username() const;
     void setUsername(const QString &username);
 
     // displayName
-    QString displayName() const;
+    [[nodiscard]] QString displayName() const;
     void setDisplayName(const QString &displayName);
 
     // email
-    QString email() const;
+    [[nodiscard]] QString email() const;
     void setEmail(const QString &email);
 
     // ip
-    QString ip() const;
+    [[nodiscard]] QString ip() const;
     void setIp(const QString &role);
 
-    int selectedAccountPosition() const;
+    [[nodiscard]] int selectedAccountPosition() const;
 
     // clearing and reloading the model
     void clear();
@@ -112,7 +112,7 @@ Q_SIGNALS:
 protected:
     void fetchSelectedAccountPosition();
     void fetchMore(const QModelIndex &parent) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
     void executeAdminAction(int row, AdminAccountAction accountAction, const QJsonObject &extraArguments = {});
 
 private:

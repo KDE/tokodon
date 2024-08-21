@@ -25,8 +25,8 @@ public:
     Application() = default;
     explicit Application(QJsonObject application);
 
-    QString name() const;
-    QUrl website() const;
+    [[nodiscard]] QString name() const;
+    [[nodiscard]] QUrl website() const;
 
 private:
     QJsonObject m_application;
@@ -54,19 +54,19 @@ public:
     Card() = default;
     explicit Card(QJsonObject card);
 
-    QString authorName() const;
-    QString authorUrl() const;
-    QString blurhash() const;
-    QString description() const;
-    QString embedUrl() const;
-    int width() const;
-    int height() const;
-    QString html() const;
-    QString image() const;
-    QString providerName() const;
-    QString providerUrl() const;
-    QString title() const;
-    QUrl url() const;
+    [[nodiscard]] QString authorName() const;
+    [[nodiscard]] QString authorUrl() const;
+    [[nodiscard]] QString blurhash() const;
+    [[nodiscard]] QString description() const;
+    [[nodiscard]] QString embedUrl() const;
+    [[nodiscard]] int width() const;
+    [[nodiscard]] int height() const;
+    [[nodiscard]] QString html() const;
+    [[nodiscard]] QString image() const;
+    [[nodiscard]] QString providerName() const;
+    [[nodiscard]] QString providerUrl() const;
+    [[nodiscard]] QString title() const;
+    [[nodiscard]] QUrl url() const;
 
 private:
     QJsonObject m_card;
@@ -129,44 +129,44 @@ public:
      * @note The id may be different because it was boosted. This is the id of the parent post.
      * @sa originalPostId()
      */
-    QString postId() const;
+    [[nodiscard]] QString postId() const;
 
     /**
      * @return The post's original id if boosted, but identical to postId if not.
      * @sa postId()
      */
-    QString originalPostId() const;
+    [[nodiscard]] QString originalPostId() const;
 
     /**
      * @return The published/creation time of this post.
      */
-    QDateTime publishedAt() const;
+    [[nodiscard]] QDateTime publishedAt() const;
 
     /**
      * @return A locale-aware relative time when the post was published.
      */
-    QString relativeTime() const;
+    [[nodiscard]] QString relativeTime() const;
 
     /**
      * @return A absolute locale-aware time when the post was published.
      */
-    QString absoluteTime() const;
+    [[nodiscard]] QString absoluteTime() const;
 
     /**
      * @return The identity of this post's author.
      */
-    std::shared_ptr<Identity> authorIdentity() const;
+    [[nodiscard]] std::shared_ptr<Identity> authorIdentity() const;
 
     /**
      * @return The HTML text of this post.
      */
-    QString content() const;
+    [[nodiscard]] QString content() const;
 
     /**
      * @return If the post has any text content.
      * @note Use this instead of checking the length of content() because it could contain useless HTML code.
      */
-    bool hasContent() const;
+    [[nodiscard]] bool hasContent() const;
 
     /**
      * @brief The possible visibility levels of a post.
@@ -177,72 +177,72 @@ public:
     /**
      * @return The visibility of the post.
      */
-    Visibility visibility() const;
+    [[nodiscard]] Visibility visibility() const;
 
     /**
      * @return Whether the post has a content warning and should be considered sensitive.
      */
-    bool sensitive() const;
+    [[nodiscard]] bool sensitive() const;
 
     /**
      * @return The spoiler text (subject) of the post.
      */
-    QString spoilerText() const;
+    [[nodiscard]] QString spoilerText() const;
 
     /**
      * @return The attachments for this post.
      */
-    QList<Attachment *> attachments() const;
+    [[nodiscard]] QList<Attachment *> attachments() const;
 
     /**
      * @return The application used to write this post, if there is one available.
      */
-    std::optional<Application> application() const;
+    [[nodiscard]] std::optional<Application> application() const;
 
     /**
      * @return The list of username mentions in this post.
      */
-    QStringList mentions() const;
+    [[nodiscard]] QStringList mentions() const;
 
     /**
      * @return The standalone tags of this post that are not part of the main text.
      */
-    QVector<QString> standaloneTags() const;
+    [[nodiscard]] QVector<QString> standaloneTags() const;
 
     /**
      * @return The number of time this post has been replied.
      */
-    int repliesCount() const;
+    [[nodiscard]] int repliesCount() const;
 
     /**
      * @return The number of time this post has been favorited.
      */
-    int favouritesCount() const;
+    [[nodiscard]] int favouritesCount() const;
 
     /**
      * @brief The number of time this post has been boosted.
      */
-    int reblogsCount() const;
+    [[nodiscard]] int reblogsCount() const;
 
     /**
      * @return A web accessible URL to this post.
      */
-    QUrl url() const;
+    [[nodiscard]] QUrl url() const;
 
     /**
      * @return The id that this post is replying to. Could be empty if it isn't replying to anything.
      */
-    QString inReplyTo() const;
+    [[nodiscard]] QString inReplyTo() const;
 
     /**
      * @return The identity of who replied to this post, if someone did.
      */
-    std::shared_ptr<Identity> replyIdentity() const;
+    [[nodiscard]] std::shared_ptr<Identity> replyIdentity() const;
 
     /**
      * @return The poll on this post, if there is one.
      */
-    Poll *poll() const;
+    [[nodiscard]] Poll *poll() const;
 
     /**
      * @brief Sets the poll on this post from JSON @p object.
@@ -252,39 +252,39 @@ public:
     /**
      * @return The link card for this post, if there is one.
      */
-    std::optional<Card> card() const;
+    [[nodiscard]] std::optional<Card> card() const;
 
     /**
      * @return The ISO-639 language code that the post is sent in.
      * @note This doesn't reflect the actual content of the post, and is set by the author.
      */
-    QString language() const;
+    [[nodiscard]] QString language() const;
 
     /**
      * @return If the post was edited.
      */
-    bool wasEdited() const;
+    [[nodiscard]] bool wasEdited() const;
 
     /**
      * @return The time this post was last edited
      */
-    QString editedAt() const;
+    [[nodiscard]] QString editedAt() const;
 
     /**
      * @return If this post existed because it was boosted by someone else.
      * @sa boostIdentity()
      */
-    bool boosted() const;
+    [[nodiscard]] bool boosted() const;
 
     /**
      * @return The identity of who boosted this post, if someone did.
      */
-    std::shared_ptr<Identity> boostIdentity() const;
+    [[nodiscard]] std::shared_ptr<Identity> boostIdentity() const;
 
     /**
      * @return Whether the user favorited this post or not.
      */
-    bool favourited() const;
+    [[nodiscard]] bool favourited() const;
 
     /**
      * @brief Set this post as favourited as or not.
@@ -294,7 +294,7 @@ public:
     /**
      * @return Whether the user boosted this post.
      */
-    bool reblogged() const;
+    [[nodiscard]] bool reblogged() const;
 
     /**
      * @brief Set this post as boosted or not.
@@ -304,7 +304,7 @@ public:
     /**
      * @return Whether the user bookmarked this post.
      */
-    bool bookmarked() const;
+    [[nodiscard]] bool bookmarked() const;
 
     /**
      * @brief Set this post as bookmarked or not.
@@ -314,7 +314,7 @@ public:
     /**
      * @return Whether the user muted this post.
      */
-    bool muted() const;
+    [[nodiscard]] bool muted() const;
 
     /**
      * @brief Set this post as muted or not.
@@ -324,17 +324,17 @@ public:
     /**
      * @return The filters that apply to this post.
      */
-    QStringList filters() const;
+    [[nodiscard]] QStringList filters() const;
 
     /**
      * @return Whether this post is supposed to be hidden by a filter.
      */
-    bool hidden() const;
+    [[nodiscard]] bool hidden() const;
 
     /**
      * @return Whether the user pinned this post.
      */
-    bool pinned() const;
+    [[nodiscard]] bool pinned() const;
 
     /**
      * @brief Set whether or not this post is pinned to the top of the timeline.
@@ -344,7 +344,7 @@ public:
     /**
      * @return Whether the user filtered this post.
      */
-    bool filtered() const;
+    [[nodiscard]] bool filtered() const;
 
     /**
      * @brief Adds @p attachments to this post.
@@ -361,7 +361,7 @@ public:
      */
     static Post::Visibility stringToVisibility(const QString &visibility);
 
-    Post *quotedPost() const;
+    [[nodiscard]] Post *quotedPost() const;
 
 Q_SIGNALS:
     void pollChanged();
@@ -369,13 +369,13 @@ Q_SIGNALS:
     void quotedPostChanged();
 
 private:
-    QString type() const;
+    [[nodiscard]] QString type() const;
 
-    Identity *getAuthorIdentity() const;
+    [[nodiscard]] Identity *getAuthorIdentity() const;
 
-    QQmlListProperty<Attachment> attachmentList() const;
+    [[nodiscard]] QQmlListProperty<Attachment> attachmentList() const;
 
-    Card *getCard() const;
+    [[nodiscard]] Card *getCard() const;
 
     void setCard(std::optional<Card> card);
 

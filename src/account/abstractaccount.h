@@ -72,22 +72,22 @@ public:
      * @return If the application is registered
      * @sa registerApplication
      */
-    bool isRegistered() const;
+    [[nodiscard]] bool isRegistered() const;
 
     /**
      * @return If this account's instance has registrations open.
      */
-    bool registrationsOpen() const;
+    [[nodiscard]] bool registrationsOpen() const;
 
     /**
      * @return The reason why registrations are disabled.
      */
-    QString registrationMessage() const;
+    [[nodiscard]] QString registrationMessage() const;
 
     /**
      * @return The oauth2 authorization url.
      */
-    Q_INVOKABLE QUrl getAuthorizeUrl() const;
+    Q_INVOKABLE [[nodiscard]] QUrl getAuthorizeUrl() const;
 
     /**
      * @brief Sets the access token.
@@ -98,7 +98,7 @@ public:
     /**
      * @return The oauth2 token url.
      */
-    QUrl getTokenUrl() const;
+    [[nodiscard]] QUrl getTokenUrl() const;
 
     /**
      * @brief Set the oauth2 token.
@@ -110,17 +110,17 @@ public:
      * @return If the account has a token set.
      * @see setToken()
      */
-    bool haveToken() const;
+    [[nodiscard]] bool haveToken() const;
 
     /**
      * @return If the account has a username yet.
      */
-    bool hasName() const;
+    [[nodiscard]] bool hasName() const;
 
     /**
      * @return If the account has an instance uri set.
      */
-    bool hasInstanceUrl() const;
+    [[nodiscard]] bool hasInstanceUrl() const;
 
     /**
      * @brief Verifies the token with the instance and if successful, loads identity information for the account.
@@ -135,13 +135,13 @@ public:
     /**
      * @return The server-side preferences.
      */
-    Preferences *preferences() const;
+    [[nodiscard]] Preferences *preferences() const;
 
     /**
      * @return The username of the account.
      * @see setUsername()
      */
-    QString username() const;
+    [[nodiscard]] QString username() const;
 
     /**
      * @brief Sets the username for the account.
@@ -162,13 +162,13 @@ public:
     /**
      * @return The custom emojis that's accessible for this account.
      */
-    QList<CustomEmoji> customEmojis() const;
+    [[nodiscard]] QList<CustomEmoji> customEmojis() const;
 
     /**
      * @return The instance URI.
      * @see setInstanceUri()
      */
-    QString instanceUri() const;
+    [[nodiscard]] QString instanceUri() const;
 
     /**
      * @brief Sets the instance URI for the account.
@@ -179,28 +179,28 @@ public:
     /**
      * @return The max allowable length of posts in characters.
      */
-    size_t maxPostLength() const;
+    [[nodiscard]] size_t maxPostLength() const;
 
     /**
      * @return The maximum number of poll options.
      */
-    size_t maxPollOptions() const;
+    [[nodiscard]] size_t maxPollOptions() const;
 
     /**
      * @return Certain servers (like Pleroma/Akkoma) support an additional visibility type, called Local.
      * @sa Post::Visibility
      */
-    bool supportsLocalVisibility() const;
+    [[nodiscard]] bool supportsLocalVisibility() const;
 
     /**
      * @return Returns the amount of characters that URLs take. Any URL that appears in a post will only be counted by this limit.
      */
-    size_t charactersReservedPerUrl() const;
+    [[nodiscard]] size_t charactersReservedPerUrl() const;
 
     /**
      * @return The title set by the instance.
      */
-    QString instanceName() const;
+    [[nodiscard]] QString instanceName() const;
 
     /**
      * @return The identity of the account.
@@ -221,7 +221,7 @@ public:
      * @param accountId The account ID to look up.
      * @return If the identity was cached.
      */
-    bool identityCached(const QString &accountId) const;
+    [[nodiscard]] bool identityCached(const QString &accountId) const;
 
     /**
      * Get identity of the admin::account.
@@ -323,7 +323,7 @@ public:
     /**
      * @return The allowed content types of the account's instance.
      */
-    AllowedContentType allowedContentTypes() const
+    [[nodiscard]] AllowedContentType allowedContentTypes() const
     {
         return m_allowedContentTypes;
     }
@@ -332,7 +332,7 @@ public:
      * @param path The base API path.
      * @return A well-formed URL of an API path.
      */
-    QUrl apiUrl(const QString &path) const;
+    [[nodiscard]] QUrl apiUrl(const QString &path) const;
 
     /**
      * @brief Make an HTTP GET request to the server.
@@ -461,7 +461,7 @@ public:
     /**
      * @return If the account has any follow requests.
      */
-    int followRequestCount() const;
+    [[nodiscard]] int followRequestCount() const;
 
     /**
      * @brief Check against the server for any new follow requests.
@@ -542,17 +542,17 @@ public:
     /**
      * @return The preferred settings group name for this Account which includes the username and the instance uri.
      */
-    QString settingsGroupName() const;
+    [[nodiscard]] QString settingsGroupName() const;
 
     /**
      * @return The preferred key name for the client secret.
      */
-    QString clientSecretKey() const;
+    [[nodiscard]] QString clientSecretKey() const;
 
     /**
      * @return The preferred key name for the access token.
      */
-    QString accessTokenKey() const;
+    [[nodiscard]] QString accessTokenKey() const;
 
     /**
      * @brief Type of account action.
@@ -710,7 +710,7 @@ protected:
     QString m_redirectUri;
 
     // OAuth authorization
-    QUrlQuery buildOAuthQuery() const;
+    [[nodiscard]] QUrlQuery buildOAuthQuery() const;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);

@@ -65,38 +65,38 @@ public:
 
     Q_DECLARE_FLAGS(Permissions, Permission)
     Q_ENUM(Permission)
-    QString ip() const;
-    QString email() const;
-    QString emailProvider() const;
-    QString locale() const;
-    QDateTime joined() const;
-    QDateTime lastActive() const;
-    QString role() const;
-    QString loginStatus() const;
-    QString inviteRequest() const;
-    bool emailStatus() const;
-    bool suspended() const;
+    [[nodiscard]] QString ip() const;
+    [[nodiscard]] QString email() const;
+    [[nodiscard]] QString emailProvider() const;
+    [[nodiscard]] QString locale() const;
+    [[nodiscard]] QDateTime joined() const;
+    [[nodiscard]] QDateTime lastActive() const;
+    [[nodiscard]] QString role() const;
+    [[nodiscard]] QString loginStatus() const;
+    [[nodiscard]] QString inviteRequest() const;
+    [[nodiscard]] bool emailStatus() const;
+    [[nodiscard]] bool suspended() const;
     void setSuspended(bool suspended);
-    bool silenced() const;
+    [[nodiscard]] bool silenced() const;
     void setSilence(bool silenced);
-    bool sensitized() const;
+    [[nodiscard]] bool sensitized() const;
     void setSensitized(bool sensitized);
-    bool disabled() const;
+    [[nodiscard]] bool disabled() const;
     void setDisabled(bool disabled);
-    bool approved() const;
+    [[nodiscard]] bool approved() const;
     void setApproved(bool approved);
-    bool isLocal() const;
-    int position() const;
+    [[nodiscard]] bool isLocal() const;
+    [[nodiscard]] int position() const;
 
-    QJsonArray fields() const;
-    QJsonArray ips() const;
+    [[nodiscard]] QJsonArray fields() const;
+    [[nodiscard]] QJsonArray ips() const;
 
     void fromSourceData(const QJsonObject &jdoc);
     void reparentAdminAccountInfo(AbstractAccount *parent);
 
-    Identity *invitedByIdentity() const;
-    Identity *userLevelIdentity() const;
-    Identity *userLevelIdentityWithVanillaPointer() const;
+    [[nodiscard]] Identity *invitedByIdentity() const;
+    [[nodiscard]] Identity *userLevelIdentity() const;
+    [[nodiscard]] Identity *userLevelIdentityWithVanillaPointer() const;
 
 Q_SIGNALS:
     void adminAccountInfoUpdated();

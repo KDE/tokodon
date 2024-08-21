@@ -31,29 +31,29 @@ public:
 
     Identity *m_parent;
 
-    bool following() const;
+    [[nodiscard]] bool following() const;
     void setFollowing(bool following);
-    bool requested() const;
+    [[nodiscard]] bool requested() const;
     void setRequested(bool requested);
-    bool endorsed() const;
+    [[nodiscard]] bool endorsed() const;
     void setEndorsed(bool endorsed);
-    bool followedBy() const;
+    [[nodiscard]] bool followedBy() const;
     void setFollowedBy(bool followedBy);
-    bool muting() const;
+    [[nodiscard]] bool muting() const;
     void setMuting(bool muting);
-    bool mutingNotifications() const;
+    [[nodiscard]] bool mutingNotifications() const;
     void setMutingNotifications(bool mutingNotifications);
-    bool showingReblogs() const;
+    [[nodiscard]] bool showingReblogs() const;
     void setShowingReblogs(bool showingReblogs);
-    bool notifying() const;
+    [[nodiscard]] bool notifying() const;
     void setNotifying(bool notifying);
-    bool blocking() const;
+    [[nodiscard]] bool blocking() const;
     void setBlocking(bool blocking);
-    bool domainBlocking() const;
+    [[nodiscard]] bool domainBlocking() const;
     void setDomainBlocking(bool domainBlocking);
-    bool blockedBy() const;
+    [[nodiscard]] bool blockedBy() const;
     void setBlockedBy(bool blockedBy);
-    QString note() const;
+    [[nodiscard]] QString note() const;
     void setNote(const QString &note);
 
 Q_SIGNALS:

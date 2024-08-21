@@ -39,82 +39,82 @@ public:
     /**
      * @return The numeric ID associated with this identity.
      */
-    QString id() const;
+    [[nodiscard]] QString id() const;
 
     /**
      * @return This identity's display name, if not set then returns the username
      */
-    QString displayName() const;
+    [[nodiscard]] QString displayName() const;
 
     /**
      * @return The username for this identity.
      */
-    QString username() const;
+    [[nodiscard]] QString username() const;
 
     /**
      * @return This identity's display name, but processed as HTML (for custom emojis). If not set, returns the username.
      */
-    QString displayNameHtml() const;
+    [[nodiscard]] QString displayNameHtml() const;
 
     /**
      * @return The biography for this identity.
      */
-    QString bio() const;
+    [[nodiscard]] QString bio() const;
 
     /**
      * @return The account ID for this identity.
      */
-    QString account() const;
+    [[nodiscard]] QString account() const;
 
     /**
      * @return The URL to this identity's profile, which exists on their original server.
      */
-    QUrl url() const;
+    [[nodiscard]] QUrl url() const;
 
     /**
      * @return If this identity is locked or not.
      */
-    bool locked() const;
+    [[nodiscard]] bool locked() const;
 
     /**
      * @return The profile visibility.
      */
-    QString visibility() const;
+    [[nodiscard]] QString visibility() const;
 
     /**
      * @return URL to this identity's avatar.
      */
-    QUrl avatarUrl() const;
+    [[nodiscard]] QUrl avatarUrl() const;
 
     /**
      * @return URL to this identity's background.
      */
-    QUrl backgroundUrl() const;
+    [[nodiscard]] QUrl backgroundUrl() const;
 
     /**
      * @return The number of users following this identity.
      */
-    int followersCount() const;
+    [[nodiscard]] int followersCount() const;
 
     /**
      * @return The number of users this identity follows.
      */
-    int followingCount() const;
+    [[nodiscard]] int followingCount() const;
 
     /**
      * @return The number of posts written by this identity.
      */
-    int statusesCount() const;
+    [[nodiscard]] int statusesCount() const;
 
     /**
      * @return The permissions of this identity.
      */
-    int permission() const;
+    [[nodiscard]] int permission() const;
 
     /**
      * @return Custom fields set by this identity.
      */
-    QJsonArray fields() const;
+    [[nodiscard]] QJsonArray fields() const;
 
     /**
      * @brief Fills in identity data from JSON.
@@ -131,7 +131,7 @@ public:
     /**
      * @return Our relationship to this identity.
      */
-    Relationship *relationship() const;
+    [[nodiscard]] Relationship *relationship() const;
 
     /**
      * @brief Replaces the existing relationship with a new one.

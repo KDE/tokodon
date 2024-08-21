@@ -32,19 +32,19 @@ public:
 
     explicit ReportToolModel(QObject *parent = nullptr);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     void setLoading(bool loading);
 
-    QUrlQuery buildQuery() const;
+    [[nodiscard]] QUrlQuery buildQuery() const;
 
-    QString moderationStatus() const;
+    [[nodiscard]] QString moderationStatus() const;
     void setModerationStatus(const QString &moderationStatus);
 
-    QString origin() const;
+    [[nodiscard]] QString origin() const;
     void setOrigin(const QString &origin);
 
     void clear();
@@ -64,7 +64,7 @@ Q_SIGNALS:
 protected:
     void fetchSelectedAccountPosition();
     void fetchMore(const QModelIndex &parent) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
     void executeReportAction(const int row, ReportAction accountAction, const QJsonObject &extraArguments = {});
 
 private:

@@ -22,9 +22,9 @@ public:
     Q_INVOKABLE void removeOption(int index);
     Q_INVOKABLE void setOption(int index, const QString &name);
 
-    bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    QJsonObject toJsonObject() const;
+    [[nodiscard]] QJsonObject toJsonObject() const;
 
     void copyFromOther(PollEditorBackend *other);
 

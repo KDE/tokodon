@@ -56,22 +56,22 @@ public:
     int m_sourceWidth = -1;
     int m_sourceHeight = -1;
 
-    QString id() const;
+    [[nodiscard]] QString id() const;
 
     void setDescription(const QString &description);
-    QString description() const;
+    [[nodiscard]] QString description() const;
 
     /**
      * @brief Used exclusively in Maximize component to tell it whether or not an attachment is a video
      */
-    int isVideo() const;
+    [[nodiscard]] int isVideo() const;
 
-    QString tempSource() const;
+    [[nodiscard]] QString tempSource() const;
 
-    double focusX() const;
+    [[nodiscard]] double focusX() const;
     void setFocusX(double value);
 
-    double focusY() const;
+    [[nodiscard]] double focusY() const;
     void setFocusY(double value);
 
     /**

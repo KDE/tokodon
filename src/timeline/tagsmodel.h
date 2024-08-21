@@ -32,7 +32,7 @@ public:
      * @param parent The parent index (unused).
      * @return The number of rows in the model.
      */
-    int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
 
     /**
      * @brief Returns the data for the given role and index.
@@ -40,13 +40,13 @@ public:
      * @param role The role for which to return data.
      * @return The data for the given role and index.
      */
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     /**
      * @brief Returns the role names used by the model.
      * @return The role names used by the model.
      */
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     /**
      * @brief Fills the timeline with tags starting from the specified ID.
@@ -65,12 +65,12 @@ public:
      * @param parent The parent index.
      * @return True if more data can be fetched, false otherwise.
      */
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
     /**
      * @brief Returns the display name of the model.
      * @return The display name of the model.
      */
-    QString displayName() const override;
+    [[nodiscard]] QString displayName() const override;
 
 public Q_SLOTS:
     /**

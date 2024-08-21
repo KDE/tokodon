@@ -14,15 +14,15 @@ public:
 
     Q_ENUM(SeverityValues)
 
-    QString id() const;
-    QString ip() const;
+    [[nodiscard]] QString id() const;
+    [[nodiscard]] QString ip() const;
     void setIp(const QString &ip);
-    SeverityValues severity() const;
+    [[nodiscard]] SeverityValues severity() const;
     void setSeverity(const QString &severity);
-    QString comment() const;
+    [[nodiscard]] QString comment() const;
     void setComment(const QString &comment);
-    QDateTime createdAt() const;
-    QDateTime expiresAt() const;
+    [[nodiscard]] QDateTime createdAt() const;
+    [[nodiscard]] QDateTime expiresAt() const;
     void setExpiredAt(int expiresAt);
 
     static IpInfo fromSourceData(const QJsonObject &doc);

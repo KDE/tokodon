@@ -8,20 +8,20 @@
 class FederationInfo
 {
 public:
-    QString id() const;
-    QString domain() const;
-    QDateTime createdAt() const;
-    QString severity() const;
+    [[nodiscard]] QString id() const;
+    [[nodiscard]] QString domain() const;
+    [[nodiscard]] QDateTime createdAt() const;
+    [[nodiscard]] QString severity() const;
     void setSeverity(const QString &severity);
-    bool rejectMedia() const;
+    [[nodiscard]] bool rejectMedia() const;
     void setRejectMedia(bool rejectMedia);
-    bool rejectReports() const;
+    [[nodiscard]] bool rejectReports() const;
     void setRejectReports(bool rejectReports);
-    QString privateComment() const;
+    [[nodiscard]] QString privateComment() const;
     void setPrivateComment(const QString &privateComment);
-    QString publicComment() const;
+    [[nodiscard]] QString publicComment() const;
     void setPublicComment(const QString &publicComment);
-    bool obfuscate() const;
+    [[nodiscard]] bool obfuscate() const;
     void setObfuscate(bool obfuscate);
 
     static FederationInfo fromSourceData(const QJsonObject &doc);

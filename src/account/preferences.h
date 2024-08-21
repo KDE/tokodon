@@ -25,7 +25,7 @@ public:
      * @return The default visibility when composing new statuses.
      * @see setDefaultVisibility()
      */
-    Post::Visibility defaultVisibility() const;
+    [[nodiscard]] Post::Visibility defaultVisibility() const;
 
     /**
      * @brief Sets the default visibility when composing new statuses.
@@ -38,7 +38,7 @@ public:
      * @return Whether newly uploaded media attachments are sensitive by default.
      * @see setDefaultSensitive()
      */
-    bool defaultSensitive() const;
+    [[nodiscard]] bool defaultSensitive() const;
 
     /**
      * @brief Set whether newly uploaded media attachments are sensitive by default.
@@ -51,7 +51,7 @@ public:
      * @return The default language code (ISO 6391) when composing new statuses.
      * @see setDefaultLanguage()
      */
-    QString defaultLanguage() const;
+    [[nodiscard]] QString defaultLanguage() const;
 
     /**
      * @brief Set the default language code (ISO 6391) when composing new statuses.
@@ -64,13 +64,13 @@ public:
      * @return If media should not be cropped to 16:9.
      * @note Currently read-only, see https://github.com/mastodon/mastodon/issues/7021
      */
-    QString extendMedia() const;
+    [[nodiscard]] QString extendMedia() const;
 
     /**
      * @return If spoilers on statuses should be ignored, and always shown.
      * @note Currently read-only, see https://github.com/mastodon/mastodon/issues/7021
      */
-    bool extendSpoiler() const;
+    [[nodiscard]] bool extendSpoiler() const;
 
 Q_SIGNALS:
     /**

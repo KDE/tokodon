@@ -23,8 +23,8 @@ class TimelineModel : public AbstractTimelineModel
 public:
     explicit TimelineModel(QObject *parent = nullptr);
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     /**
      * @brief Start filling the timeline starting at @p fromId
@@ -34,7 +34,7 @@ public:
     /**
      * @return A translated label for the timeline (e.g. "Home")
      */
-    virtual QString displayName() const = 0;
+    [[nodiscard]] virtual QString displayName() const = 0;
 
     /**
      * @brief Handle an incoming streaming event.
@@ -110,7 +110,7 @@ Q_SIGNALS:
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
     void fetchedTimeline(const QByteArray &array, bool alwaysAppendToEnd = false);
 
     AccountManager *m_manager = nullptr;

@@ -81,13 +81,13 @@ public:
 
     explicit AbstractTimelineModel(QObject *parent = nullptr);
 
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     /**
      * @return If the timeline is still loading.
      * @see setLoading()
      */
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
 
     /**
      * @brief Set the loading status of the timeline.

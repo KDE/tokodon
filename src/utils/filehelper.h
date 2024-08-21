@@ -33,5 +33,5 @@ public:
     /**
      * @return The filename portion of a URL.
      */
-    Q_INVOKABLE QString fileName(const QUrl &url) const;
+    Q_INVOKABLE [[nodiscard]] QString fileName(const QUrl &url) const;
 };

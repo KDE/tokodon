@@ -20,17 +20,17 @@ class NotificationModel : public AbstractTimelineModel
 public:
     explicit NotificationModel(QObject *parent = nullptr);
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     virtual void fillTimeline(const QUrl &next = {});
 
     /// Get a shared pointer to the underlying notification object at \p index
-    std::shared_ptr<Notification> internalData(const QModelIndex &index) const;
+    [[nodiscard]] std::shared_ptr<Notification> internalData(const QModelIndex &index) const;
 
     /// Returns the list of excluded notification types
     /// \see setExcludesTypes
-    QStringList excludeTypes() const;
+    [[nodiscard]] QStringList excludeTypes() const;
 
     /**
      * @brief Set the types of notifications to exclude.
@@ -88,7 +88,7 @@ Q_SIGNALS:
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
 
     QString m_timelineName;
     AccountManager *m_manager = nullptr;

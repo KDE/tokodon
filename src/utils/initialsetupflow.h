@@ -24,7 +24,7 @@ public:
     /**
      * @return True if any setup is needed.
      */
-    Q_INVOKABLE bool isSetupNeeded() const;
+    Q_INVOKABLE [[nodiscard]] bool isSetupNeeded() const;
 
     /**
      * @return The name of the next step.

@@ -28,11 +28,11 @@ public:
 
     static ColorSchemer &instance();
 
-    QAbstractItemModel *model() const;
+    [[nodiscard]] QAbstractItemModel *model() const;
     Q_INVOKABLE void apply(int idx);
     Q_INVOKABLE void apply(const QString &name);
-    Q_INVOKABLE int indexForScheme(const QString &name) const;
-    Q_INVOKABLE QString nameForIndex(int index) const;
+    Q_INVOKABLE [[nodiscard]] int indexForScheme(const QString &name) const;
+    Q_INVOKABLE [[nodiscard]] QString nameForIndex(int index) const;
 
 private:
     KColorSchemeManager *c;

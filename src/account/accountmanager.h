@@ -75,28 +75,28 @@ public:
     /**
      * @return If testing mode is enabled.
      */
-    bool testMode() const;
+    [[nodiscard]] bool testMode() const;
 
     /**
      * @return Whether or not the account manager is completely ready.
      * @note This doesn't mean it has accounts, simply that it's done reading configs and the keychain.
      */
-    bool isReady() const;
+    [[nodiscard]] bool isReady() const;
 
     /**
      * @return If there any valid accounts loaded.
      */
-    bool hasAccounts() const;
+    [[nodiscard]] bool hasAccounts() const;
 
     /**
      * @return If there are any accounts in the config.
      */
-    bool hasAnyAccounts() const;
+    [[nodiscard]] bool hasAnyAccounts() const;
 
     /**
      * @return The notification handler for posting notifications to the system.
      */
-    NotificationHandler *notificationHandler() const;
+    [[nodiscard]] NotificationHandler *notificationHandler() const;
 
     /**
      * @brief Adds a new account.
@@ -121,7 +121,7 @@ public:
     /**
      * @return If the currently selected account has issues with authentication.
      */
-    Q_INVOKABLE bool selectedAccountHasIssue() const;
+    Q_INVOKABLE [[nodiscard]] bool selectedAccountHasIssue() const;
 
     /**
      * @return If the @p account has issues with authentication.
@@ -131,7 +131,7 @@ public:
     /**
      * @return If the selected account has a login issue, returns a localized string explaining why.
      */
-    Q_INVOKABLE QString selectedAccountLoginIssue() const;
+    Q_INVOKABLE [[nodiscard]] QString selectedAccountLoginIssue() const;
 
     /**
      * @brief Switches to an existing account.
@@ -143,17 +143,17 @@ public:
     /**
      * @return The currently selected account.
      */
-    AbstractAccount *selectedAccount() const;
+    [[nodiscard]] AbstractAccount *selectedAccount() const;
 
     /**
      * @return The currently selected account's id.
      */
-    QString selectedAccountId() const;
+    [[nodiscard]] QString selectedAccountId() const;
 
     /**
      * @return The index of the selected account in the account list.
      */
-    int selectedIndex() const;
+    [[nodiscard]] int selectedIndex() const;
 
     /**
      * @brief Sets the application about data.
@@ -166,11 +166,11 @@ public:
      */
     [[nodiscard]] KAboutData aboutData() const;
 
-    int rowCount(const QModelIndex &index = QModelIndex()) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &index = QModelIndex()) const override;
 
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     /**
      * @brief Creates a new account, and adds it to the manager.
@@ -184,7 +184,7 @@ public:
     /**
      * @return Whether or not Tokodon is built as a Flatpak.
      */
-    bool isFlatpak() const;
+    [[nodiscard]] bool isFlatpak() const;
 
     /**
      * @note It's preferred to use AbstractAccount::settingsGroupName as it fills in the relevant information.
@@ -209,7 +209,7 @@ public:
     /**
      * @return The list of accounts
      */
-    QList<AbstractAccount *> accounts() const;
+    [[nodiscard]] QList<AbstractAccount *> accounts() const;
 
 Q_SIGNALS:
 

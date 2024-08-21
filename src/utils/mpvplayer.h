@@ -26,15 +26,15 @@ public:
     explicit MpvPlayer(QQuickItem *parent = nullptr);
     ~MpvPlayer() = default;
 
-    qreal position() const;
-    qreal duration() const;
-    bool paused() const;
-    QSize sourceSize() const;
-    QString source() const;
-    bool loading() const;
-    bool looping() const;
-    bool autoPlay() const;
-    bool stopped() const;
+    [[nodiscard]] qreal position() const;
+    [[nodiscard]] qreal duration() const;
+    [[nodiscard]] bool paused() const;
+    [[nodiscard]] QSize sourceSize() const;
+    [[nodiscard]] QString source() const;
+    [[nodiscard]] bool loading() const;
+    [[nodiscard]] bool looping() const;
+    [[nodiscard]] bool autoPlay() const;
+    [[nodiscard]] bool stopped() const;
 
     void setSource(const QString &source);
     void setLooping(bool loop);

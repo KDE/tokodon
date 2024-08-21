@@ -32,41 +32,41 @@ public:
     explicit PostEditorBackend(QObject *parent = nullptr);
     ~PostEditorBackend() override;
 
-    QString id() const;
+    [[nodiscard]] QString id() const;
     void setId(const QString &id);
 
-    QString status() const;
+    [[nodiscard]] QString status() const;
     void setStatus(const QString &status);
 
-    QString spoilerText() const;
+    [[nodiscard]] QString spoilerText() const;
     void setSpoilerText(const QString &spoilerText);
 
-    QString inReplyTo() const;
+    [[nodiscard]] QString inReplyTo() const;
     void setInReplyTo(const QString &inReplyTo);
 
-    Post::Visibility visibility() const;
+    [[nodiscard]] Post::Visibility visibility() const;
     void setVisibility(Post::Visibility visibility);
 
-    QString language() const;
+    [[nodiscard]] QString language() const;
     void setLanguage(const QString &language);
 
-    QDateTime scheduledAt() const;
+    [[nodiscard]] QDateTime scheduledAt() const;
     void setScheduledAt(const QDateTime &scheduledAt);
 
-    QStringList mentions() const;
+    [[nodiscard]] QStringList mentions() const;
     void setMentions(const QStringList &mentions);
 
-    AttachmentEditorModel *attachmentEditorModel() const;
+    [[nodiscard]] AttachmentEditorModel *attachmentEditorModel() const;
 
-    bool sensitive() const;
+    [[nodiscard]] bool sensitive() const;
     void setSensitive(bool sensitive);
 
-    AbstractAccount *account() const;
+    [[nodiscard]] AbstractAccount *account() const;
     void setAccount(AbstractAccount *account);
 
     void setHasExistingPoll(bool hasExisting);
 
-    int charactersLeft() const;
+    [[nodiscard]] int charactersLeft() const;
 
     Q_INVOKABLE void copyFromOther(PostEditorBackend *other);
 
@@ -102,7 +102,7 @@ Q_SIGNALS:
     void pollEnabledChanged();
 
 private:
-    QJsonDocument toJsonDocument() const;
+    [[nodiscard]] QJsonDocument toJsonDocument() const;
 
     QString m_id;
     QString m_status;

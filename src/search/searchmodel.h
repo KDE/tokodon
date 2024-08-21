@@ -17,7 +17,7 @@ class SearchHashtag
 public:
     explicit SearchHashtag(const QJsonObject &object);
 
-    QString getName() const;
+    [[nodiscard]] QString getName() const;
 
 private:
     QString m_name;
@@ -52,7 +52,7 @@ public:
      * @return If the search has finished loading
      * @see setLoaded()
      */
-    bool loaded() const;
+    [[nodiscard]] bool loaded() const;
 
     /**
      * @brief Sets the search loading status
@@ -76,8 +76,8 @@ public:
      */
     Q_INVOKABLE void clear();
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
 Q_SIGNALS:
     /**

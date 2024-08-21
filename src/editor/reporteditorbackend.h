@@ -18,7 +18,7 @@ class ReportEditorBackend : public QObject
 public:
     explicit ReportEditorBackend(QObject *parent = nullptr);
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
 
 public Q_SLOTS:
     void submit();

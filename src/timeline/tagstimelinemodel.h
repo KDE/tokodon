@@ -21,13 +21,13 @@ public:
     ~TagsTimelineModel() override;
 
     void fillTimeline(const QString &fromId) override;
-    QString displayName() const override;
+    [[nodiscard]] QString displayName() const override;
 
     /**
      * @brief The hashtag the timeline is searching for.
      * @see setHashtag()
      */
-    QString hashtag() const;
+    [[nodiscard]] QString hashtag() const;
 
     /**
      * @brief Sets the hashtag the timeline is searching for.

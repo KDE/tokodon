@@ -39,13 +39,13 @@ public:
 
     void clear();
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     void setLoading(bool loading);
-    FederationToolModel::FederationAction federationAction() const;
+    [[nodiscard]] FederationToolModel::FederationAction federationAction() const;
     void setFederationAction(const FederationToolModel::FederationAction &federationAction);
     void filltimeline(FederationAction action = FederationAction::BlockedDomains);
 

@@ -27,7 +27,7 @@ public:
      * @return Name of the timeline.
      * @see setName()
      */
-    QString name() const;
+    [[nodiscard]] QString name() const;
 
     /**
      * @brief Set the name of the timeline to fetch ("home", "public" or "federated")
@@ -38,7 +38,7 @@ public:
     /**
      * @return Name of the list id.
      */
-    QString listId() const;
+    [[nodiscard]] QString listId() const;
 
     /**
      * @brief Set the name of the list to view, only works if name is set to "list".
@@ -46,10 +46,10 @@ public:
     void setListId(const QString &id);
 
     void fillTimeline(const QString &fromId) override;
-    QString displayName() const override;
+    [[nodiscard]] QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
 
-    bool atEnd() const;
+    [[nodiscard]] bool atEnd() const;
 
     void reset() override;
 

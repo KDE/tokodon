@@ -94,7 +94,7 @@ public:
     /**
      * @brief Return a list of emoji tones for the given base emoji.
      */
-    Q_INVOKABLE QVariantList tones(const QString &baseEmoji) const;
+    Q_INVOKABLE [[nodiscard]] QVariantList tones(const QString &baseEmoji) const;
 
     /**
      * @brief Return a list of emoji that were recently used.
@@ -110,7 +110,7 @@ public Q_SLOTS:
 private:
     static QHash<Category, QVariantList> _emojis;
 
-    QVariantList categories() const;
+    [[nodiscard]] QVariantList categories() const;
 
     static QVariantList filterModelNoCustom(const QString &filter);
     static QVariantList filterCustomModel(AbstractAccount *account, const QString &filter);

@@ -44,7 +44,7 @@ public:
     {
     }
 
-    Purpose::Job *createJob() const override
+    [[nodiscard]] Purpose::Job *createJob() const override
     {
         return new TokodonJob(nullptr);
     }

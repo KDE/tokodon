@@ -14,11 +14,11 @@ public:
 
     Q_ENUM(SeverityValues)
 
-    QString id() const;
-    QString domain() const;
-    QDateTime createdAt() const;
-    int accountSignupCount() const;
-    int ipSignupCount() const;
+    [[nodiscard]] QString id() const;
+    [[nodiscard]] QString domain() const;
+    [[nodiscard]] QDateTime createdAt() const;
+    [[nodiscard]] int accountSignupCount() const;
+    [[nodiscard]] int ipSignupCount() const;
 
     void calculateCount(const QJsonArray &history, EmailInfo &info);
 

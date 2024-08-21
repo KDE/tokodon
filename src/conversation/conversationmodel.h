@@ -39,9 +39,9 @@ public:
     explicit ConversationModel(QObject *parent = nullptr);
     ~ConversationModel() override;
 
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     /**
      * @brief Mark the conversation of @p id as read.

@@ -48,7 +48,7 @@ public:
     /**
      * @return Whether or not we have a push notification endpoint available.
      */
-    bool pushNotificationsAvailable() const;
+    [[nodiscard]] bool pushNotificationsAvailable() const;
 
     /**
      * @brief Opens an arbitrary HTML link (post, account, etc URL) if available on the current account's server.

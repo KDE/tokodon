@@ -23,15 +23,15 @@ public:
     Poll();
     explicit Poll(const QJsonObject &json);
 
-    QString id() const;
-    QDateTime expiresAt() const;
-    bool expired() const;
-    bool multiple() const;
-    int votesCount() const;
-    int votersCount() const;
-    bool voted() const;
-    QList<int> ownVotes() const;
-    QList<QVariantMap> options() const;
+    [[nodiscard]] QString id() const;
+    [[nodiscard]] QDateTime expiresAt() const;
+    [[nodiscard]] bool expired() const;
+    [[nodiscard]] bool multiple() const;
+    [[nodiscard]] int votesCount() const;
+    [[nodiscard]] int votersCount() const;
+    [[nodiscard]] bool voted() const;
+    [[nodiscard]] QList<int> ownVotes() const;
+    [[nodiscard]] QList<QVariantMap> options() const;
 
 private:
     QString m_id;

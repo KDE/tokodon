@@ -27,12 +27,12 @@ public:
 
     explicit AnnouncementModel(QObject *parent = nullptr);
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     void setLoading(bool loading);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     void fillTimeline();
 
@@ -48,5 +48,5 @@ private:
 
     QList<Announcement> m_announcements;
     bool m_loading = false;
-    Announcement fromSourceData(const QJsonObject &object) const;
+    [[nodiscard]] Announcement fromSourceData(const QJsonObject &object) const;
 };

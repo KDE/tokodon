@@ -34,25 +34,25 @@ public:
 
     explicit SocialGraphModel(QObject *parent = nullptr);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
     void setLoading(bool loading);
 
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
-    QString displayName() const;
-    QString placeholderText() const;
-    QString accountId() const;
+    [[nodiscard]] QString displayName() const;
+    [[nodiscard]] QString placeholderText() const;
+    [[nodiscard]] QString accountId() const;
     void setAccountId(const QString &accountId);
-    bool isFollowRequest() const;
-    bool isFollowing() const;
-    bool isFollower() const;
-    QString statusId() const;
+    [[nodiscard]] bool isFollowRequest() const;
+    [[nodiscard]] bool isFollowing() const;
+    [[nodiscard]] bool isFollower() const;
+    [[nodiscard]] QString statusId() const;
     void setStatusId(const QString &statusId);
-    int count() const;
+    [[nodiscard]] int count() const;
     void setCount(int count);
 
 public Q_SLOTS:
@@ -67,7 +67,7 @@ Q_SIGNALS:
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
-    bool canFetchMore(const QModelIndex &parent) const override;
+    [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
 
 private:
     void fillTimeline();

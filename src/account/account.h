@@ -75,6 +75,6 @@ private:
     bool m_requestingAdmin = false;
 
     // common parts for all HTTP request
-    QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;
+    [[nodiscard]] QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;
     void handleReply(QNetworkReply *reply, std::function<void(QNetworkReply *)> reply_cb, std::function<void(QNetworkReply *)> errorCallback = nullptr) const;
 };

@@ -11,7 +11,7 @@ class AsyncImageResponse final : public QQuickImageResponse
 public:
     AsyncImageResponse(const QString &id, const QSize &requestedSize, QThreadPool *pool);
     void handleDone(QImage image);
-    QQuickTextureFactory *textureFactory() const override;
+    [[nodiscard]] QQuickTextureFactory *textureFactory() const override;
     QImage m_image;
 };
 

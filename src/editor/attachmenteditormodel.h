@@ -19,12 +19,12 @@ public:
 
     enum ExtraRole { PreviewRole = Qt::UserRole + 1, DescriptionRole, FocalXRole, FocalYRole };
 
-    int count() const;
+    [[nodiscard]] int count() const;
 
-    Q_INVOKABLE int rowCount(const QModelIndex &parent = {}) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
-    const QList<Attachment *> &attachments() const;
+    Q_INVOKABLE [[nodiscard]] int rowCount(const QModelIndex &parent = {}) const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] const QList<Attachment *> &attachments() const;
 
     void copyFromOther(AttachmentEditorModel *other);
 

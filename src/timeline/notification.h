@@ -16,11 +16,11 @@ public:
     enum Type { Mention, Follow, Repeat, Favorite, Poll, FollowRequest, Update, Status, AdminSignUp };
     Q_ENUM(Type);
 
-    int id() const;
-    AbstractAccount *account() const;
-    Type type() const;
-    Post *post() const;
-    std::shared_ptr<Identity> identity() const;
+    [[nodiscard]] int id() const;
+    [[nodiscard]] AbstractAccount *account() const;
+    [[nodiscard]] Type type() const;
+    [[nodiscard]] Post *post() const;
+    [[nodiscard]] std::shared_ptr<Identity> identity() const;
 
 private:
     int m_id = 0;

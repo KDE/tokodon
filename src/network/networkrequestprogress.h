@@ -20,12 +20,12 @@ class NetworkRequestProgress : public QObject
 public:
     explicit NetworkRequestProgress(QObject *parent = nullptr);
 
-    QNetworkReply *reply() const;
+    [[nodiscard]] QNetworkReply *reply() const;
     void setReply(QNetworkReply *reply);
 
-    bool uploading() const;
+    [[nodiscard]] bool uploading() const;
 
-    int progress() const;
+    [[nodiscard]] int progress() const;
     void setProgress(int progress);
 
 Q_SIGNALS:

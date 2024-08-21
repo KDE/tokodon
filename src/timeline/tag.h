@@ -36,9 +36,9 @@ public:
     Tag() = default;
     explicit Tag(QJsonObject obj);
 
-    QString name() const;
-    QUrl url() const;
-    QList<History> history() const;
+    [[nodiscard]] QString name() const;
+    [[nodiscard]] QUrl url() const;
+    [[nodiscard]] QList<History> history() const;
 
 private:
     void fromJson(QJsonObject obj);

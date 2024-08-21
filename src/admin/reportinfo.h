@@ -34,27 +34,27 @@ class ReportInfo : public QObject
 
 public:
     explicit ReportInfo(QObject *parent = nullptr);
-    QString reportId() const;
-    bool actionTaken() const;
+    [[nodiscard]] QString reportId() const;
+    [[nodiscard]] bool actionTaken() const;
     void setActionTaken(bool actionTaken);
-    bool assignedModerator() const;
+    [[nodiscard]] bool assignedModerator() const;
     void setAssignedModerator(bool moderatorAssigned);
-    QDateTime actionTakenAt() const;
-    QString category() const;
-    QString comment() const;
-    bool forwarded() const;
-    QDateTime createdAt() const;
-    QDateTime updatedAt() const;
-    int statusCount() const;
-    int mediaAttachmentCount() const;
-    AdminAccountInfo *filedAccount() const;
-    AdminAccountInfo *targetAccount() const;
-    AdminAccountInfo *assignedAccount() const;
+    [[nodiscard]] QDateTime actionTakenAt() const;
+    [[nodiscard]] QString category() const;
+    [[nodiscard]] QString comment() const;
+    [[nodiscard]] bool forwarded() const;
+    [[nodiscard]] QDateTime createdAt() const;
+    [[nodiscard]] QDateTime updatedAt() const;
+    [[nodiscard]] int statusCount() const;
+    [[nodiscard]] int mediaAttachmentCount() const;
+    [[nodiscard]] AdminAccountInfo *filedAccount() const;
+    [[nodiscard]] AdminAccountInfo *targetAccount() const;
+    [[nodiscard]] AdminAccountInfo *assignedAccount() const;
     void setAssignedAccount(AdminAccountInfo *newAssignedAccount);
-    AdminAccountInfo *actionTakenByAccount() const;
-    QList<Post *> reportStatus() const;
-    QQmlListProperty<Post> reportStatusList() const;
-    QJsonArray rules() const;
+    [[nodiscard]] AdminAccountInfo *actionTakenByAccount() const;
+    [[nodiscard]] QList<Post *> reportStatus() const;
+    [[nodiscard]] QQmlListProperty<Post> reportStatusList() const;
+    [[nodiscard]] QJsonArray rules() const;
     void fromSourceData(const QJsonObject &doc);
     void reparentReportInfo(AbstractAccount *parent);
 

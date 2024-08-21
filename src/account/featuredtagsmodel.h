@@ -25,12 +25,12 @@ public:
 
     explicit FeaturedTagsModel(QObject *parent = nullptr);
 
-    QString accountId() const;
+    [[nodiscard]] QString accountId() const;
     void setAccountId(const QString &accountId);
 
-    QVariant data(const QModelIndex &index, int role) const override;
-    int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
+    [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
 Q_SIGNALS:
     void accountIdChanged();

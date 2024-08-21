@@ -18,16 +18,16 @@ class ListEditorBackend : public QObject
 public:
     explicit ListEditorBackend(QObject *parent = nullptr);
 
-    QString listId() const;
+    [[nodiscard]] QString listId() const;
     void setListId(const QString &listId);
 
-    bool loading() const;
+    [[nodiscard]] bool loading() const;
 
 public Q_SLOTS:
     void submit();
     void deleteList();
     QStringList replyPolicies();
-    int replyPolicyIndex() const;
+    [[nodiscard]] int replyPolicyIndex() const;
     void setReplyPolicyIndex(int index);
 
 Q_SIGNALS:

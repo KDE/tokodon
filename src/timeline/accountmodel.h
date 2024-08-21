@@ -71,14 +71,14 @@ public:
     enum AccountTab { Posts, Replies, Media, None };
     Q_ENUM(AccountTab)
 
-    QString accountId() const;
+    [[nodiscard]] QString accountId() const;
     void setAccountId(const QString &accountId);
 
-    Identity *identity() const;
+    [[nodiscard]] Identity *identity() const;
 
-    QString displayName() const override;
-    AbstractAccount *account() const;
-    bool isSelf() const;
+    [[nodiscard]] QString displayName() const override;
+    [[nodiscard]] AbstractAccount *account() const;
+    [[nodiscard]] bool isSelf() const;
 
     void fillTimeline(const QString &fromId = {}) override;
 

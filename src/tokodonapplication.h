@@ -21,10 +21,10 @@ public:
     TokodonApplication(QObject *parent = nullptr);
     ~TokodonApplication() override = default;
 
-    AccountManager *accountManager() const;
+    [[nodiscard]] AccountManager *accountManager() const;
     void setAccountManager(AccountManager *accountManager);
 
-    QList<KirigamiActionCollection *> actionCollections() const override;
+    [[nodiscard]] QList<KirigamiActionCollection *> actionCollections() const override;
 
 Q_SIGNALS:
     void accountManagerChanged();

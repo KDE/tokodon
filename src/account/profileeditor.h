@@ -34,7 +34,7 @@ public:
     /**
      * @return The account we're updating.
      */
-    AbstractAccount *account() const;
+    [[nodiscard]] AbstractAccount *account() const;
 
     /**
      * @brief Sets the account to edit.
@@ -45,12 +45,12 @@ public:
     /**
      * @return The display name of the account.
      */
-    QString displayName() const;
+    [[nodiscard]] QString displayName() const;
 
     /**
      * @return The display name of the account, processed to HTML (for custom emojis)
      */
-    QString displayNameHtml() const;
+    [[nodiscard]] QString displayNameHtml() const;
 
     /**
      * @brief Sets a new display name for the account.
@@ -61,7 +61,7 @@ public:
     /**
      * @return The biography text for the account.
      */
-    QString note() const;
+    [[nodiscard]] QString note() const;
 
     /**
      * @brief Sets a new biography text for the account.
@@ -72,7 +72,7 @@ public:
     /**
      * @return If the account should be marked as a bot.
      */
-    bool bot() const;
+    [[nodiscard]] bool bot() const;
 
     /**
      * @brief Sets if the account should be marked as a bot.
@@ -83,12 +83,12 @@ public:
     /**
      * @return The current avatar URL for the account.
      */
-    QUrl avatarUrl() const;
+    [[nodiscard]] QUrl avatarUrl() const;
 
     /**
      * @return A localized error if the new avatar failed to upload.
      */
-    QString avatarUrlError() const;
+    [[nodiscard]] QString avatarUrlError() const;
 
     /**
      * @brief Sets a new avatar URL for the account.
@@ -99,12 +99,12 @@ public:
     /**
      * @return The current background URL for the account.
      */
-    QUrl backgroundUrl() const;
+    [[nodiscard]] QUrl backgroundUrl() const;
 
     /**
      * @return A localized error if the new background failed to upload.
      */
-    QString backgroundUrlError() const;
+    [[nodiscard]] QString backgroundUrlError() const;
 
     /**
      * @brief Sets a new background URL for the account.
@@ -115,7 +115,7 @@ public:
     /**
      * @return Whether the account should be discoverable on the server directory.
      */
-    bool discoverable() const;
+    [[nodiscard]] bool discoverable() const;
 
     /**
      * @brief Sets whether the account should be discoverable on the server directory.
@@ -126,7 +126,7 @@ public:
     /**
      * @return If the account is locked.
      */
-    bool locked() const;
+    [[nodiscard]] bool locked() const;
 
     /**
      * @brief Sets if the account is locked or not.
