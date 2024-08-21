@@ -231,7 +231,7 @@ void AbstractTimelineModel::actionRedraft(const QModelIndex &index, Post *post, 
 
                        if (isEdit) {
                            connect(backend, &PostEditorBackend::editComplete, this, [this, post, index](QJsonObject object) {
-                               post->fromJson(object);
+                               post->fromJson(std::move(object));
                                Q_EMIT dataChanged(index, index);
                            });
                        }
