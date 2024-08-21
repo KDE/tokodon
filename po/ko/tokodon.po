@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
-"PO-Revision-Date: 2024-02-24 22:11+0100\n"
+"POT-Creation-Date: 2024-08-21 00:47+0000\n"
+"PO-Revision-Date: 2024-08-21 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -367,16 +367,14 @@ msgid "Show Boosts from %1"
 msgstr "%1 님의 부스트 표시"
 
 #: content/ui/AccountInfo.qml:281
-#, fuzzy, kde-format
-#| msgid "Stop Featuring on Profile"
+#, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "프로필의 추천 숨기기"
+msgstr "이 프로필 추천 숨기기"
 
 #: content/ui/AccountInfo.qml:283
-#, fuzzy, kde-format
-#| msgid "Feature on Profile"
+#, kde-format
 msgid "Feature This Profile"
-msgstr "프로필에 추천하기"
+msgstr "이 프로필 추천"
 
 #: content/ui/AccountInfo.qml:299
 #, kde-format
@@ -414,7 +412,7 @@ msgstr "프로필 편집"
 msgid "Account editor"
 msgstr "계정 편집기"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:541
+#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:562
 #, kde-format
 msgid "Follow Requests"
 msgstr "팔로우 요청"
@@ -440,10 +438,9 @@ msgid "Copy Link"
 msgstr "링크 복사"
 
 #: content/ui/AccountInfo.qml:378
-#, fuzzy, kde-format
-#| msgid "Post link copied."
+#, kde-format
 msgid "Profile link copied."
-msgstr "게시물 링크를 복사했습니다."
+msgstr "프로필 링크를 복사했습니다."
 
 #: content/ui/AccountInfo.qml:468
 #, kde-format
@@ -553,7 +550,7 @@ msgstr "이모지 없음"
 msgid "View profile"
 msgstr "프로필 보기"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:588
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:609
 #, kde-format
 msgid "Conversations"
 msgstr "대화"
@@ -564,18 +561,16 @@ msgid "No Conversations"
 msgstr "대화 없음"
 
 #: content/ui/Debug/DebugPage.qml:24
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr "새 팔로우 요청"
+msgstr "팔로우 요청 개수 증가"
 
 #: content/ui/Debug/DebugPage.qml:28
-#, fuzzy, kde-format
-#| msgid "New follow requests"
+#, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr "새 팔로우 요청"
+msgstr "팔로우 요청 개수 감소"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -642,7 +637,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "이 리스트를 삭제하시겠습니까?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:634
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:655
 #, kde-format
 msgid "Explore"
 msgstr "탐색"
@@ -682,10 +677,9 @@ msgid "No Trending Tags"
 msgstr "트렌드 태그가 없음"
 
 #: content/ui/FollowDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "%1 mentioned you"
+#, kde-format
 msgid "%1 signed up"
-msgstr "%1 님이 멘션함"
+msgstr "%1 님이 등록함"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -813,27 +807,22 @@ msgid "Authorization"
 msgstr "인증"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "To continue, please open the following link and authorize Tokodon: %1"
+#, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
-msgstr "계속 진행하려면 다음 링크를 열고 Tokodon을 인증하십시오: %1"
+msgstr ""
+"계속 진행하려면 웹 브라우저에서 다음 링크를 열고 Tokodon을 인증하십시오: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Open Authorization Link"
-msgstr "인증"
+msgstr "인증 링크 열기"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Copy Authorization Link"
-msgstr "인증"
+msgstr "인증 링크 복사"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -841,22 +830,19 @@ msgid "Link copied."
 msgstr "링크가 복사되었습니다."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Authorization"
+#, kde-format
 msgid "Use Authorization Code"
-msgstr "인증"
+msgstr "인증 코드 사용"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "위의 링크가 작동하지 않으면 이 로그인 방법을 사용하십시오."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
-#, fuzzy, kde-format
-#| msgid "Enter token:"
+#, kde-format
 msgid "Enter authorization token:"
-msgstr "토큰 입력:"
+msgstr "인증 토큰 입력:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
@@ -870,11 +856,7 @@ msgid "There was an issue logging into the server:<br><b>%1</b>"
 msgstr "서버에 로그인하는 중 오류 발생:<br><b>%1</b>"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please check if the password service is running. For other login issues, "
-#| "you can try logging into the server's website.\\n\\nYou can attempt to "
-#| "log in again with the button below, or restart Tokodon."
+#, kde-format
 msgid ""
 "Please check if the password service is running. For other login issues, you "
 "can try logging into the server's website.\n"
@@ -882,8 +864,10 @@ msgid ""
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
 "암호 서비스가 실행 중인지 확인하십시오. 다른 로그인 문제의 경우 서버의 웹사이"
-"트에 로그인을 시도해 볼 수 있습니다.\\n\\n아래 단추를 사용해서 로그인을 다시 "
-"시도해 보거나 Tokodon을 다시 시작해 보십시오."
+"트에 로그인을 시도해 볼 수 있습니다.\n"
+"\n"
+"아래 단추를 사용해서 로그인을 다시 시도해 보거나 Tokodon을 다시 시작해 보십시"
+"오."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
@@ -909,12 +893,10 @@ msgid "Logout"
 msgstr "로그아웃"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Are you sure you want to log out of %1?"
+#, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "%1에서 로그아웃하시겠습니까?"
+msgstr "로그아웃하시겠습니까?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
@@ -1082,7 +1064,7 @@ msgstr "인스턴스 URL을 입력해야 합니다."
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr ""
+msgstr "외부 프로그램으로 열기"
 
 #: content/ui/LoginFlow/WelcomePage.qml:36
 #, kde-format
@@ -1136,77 +1118,76 @@ msgid "Write a new post"
 msgstr "새 게시물 쓰기"
 
 #: content/ui/Main.qml:293
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgid "Reply to post"
-msgstr "이 게시물에 답장 쓰기"
+msgstr "게시물에 답장 쓰기"
 
-#: content/ui/Main.qml:470
+#: content/ui/Main.qml:483
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "디버그"
 
-#: content/ui/Main.qml:480
+#: content/ui/Main.qml:493
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "중재 도구"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:520
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "설정"
 
-#: content/ui/Main.qml:511
+#: content/ui/Main.qml:532
 #, kde-format
 msgid "Home"
 msgstr "홈"
 
-#: content/ui/Main.qml:526 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:547 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: content/ui/Main.qml:557
+#: content/ui/Main.qml:578
 #, kde-format
 msgid "Local"
 msgstr "로컬"
 
-#: content/ui/Main.qml:572
+#: content/ui/Main.qml:593
 #, kde-format
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/Main.qml:602
+#: content/ui/Main.qml:623
 #, kde-format
 msgid "Favourites"
 msgstr "좋아요"
 
-#: content/ui/Main.qml:618
+#: content/ui/Main.qml:639
 #, kde-format
 msgid "Bookmarks"
 msgstr "북마크"
 
-#: content/ui/Main.qml:648
+#: content/ui/Main.qml:669
 #, kde-format
 msgid "Search"
 msgstr "검색"
 
-#: content/ui/Main.qml:663
+#: content/ui/Main.qml:684
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "공지"
 
-#: content/ui/Main.qml:678
+#: content/ui/Main.qml:699
 #, kde-format
 msgid "Lists"
 msgstr "목록"
 
-#: content/ui/Main.qml:826
+#: content/ui/Main.qml:847
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2696,9 +2677,7 @@ msgid "Hide Media"
 msgstr "미디어 숨기기"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Hide Media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "미디어 숨기기"
@@ -2714,16 +2693,14 @@ msgid "Save Image As…"
 msgstr "다른 이름으로 그림 저장..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Gif As…"
-msgstr "다른 이름으로 그림 저장..."
+msgstr "다른 이름으로 GIF 저장..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
-#, fuzzy, kde-format
-#| msgid "Save Image As…"
+#, kde-format
 msgid "Save Video As…"
-msgstr "다른 이름으로 그림 저장..."
+msgstr "다른 이름으로 비디오 저장..."
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -2734,14 +2711,13 @@ msgstr "그림 복사"
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr ""
+msgstr "%1에 게시됨"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "via %1"
+#, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
-msgstr "%1 사용"
+msgstr ", %1 사용"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
 #: content/ui/PostDelegate/InformationBar.qml:87
@@ -2770,33 +2746,23 @@ msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "No favorites"
-msgstr "좋아요 %1개"
+msgstr "북마크 없음"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 favourite"
-#| msgid_plural "%1 favourites"
+#, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] "좋아요 %1개"
+msgstr[0] "북마크 %1개"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No boosts"
-msgstr "게시물 없음"
+msgstr "부스트 없음"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 boost"
-#| msgid_plural "%1 boosts"
+#, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "부스트 %1개"
@@ -2815,7 +2781,7 @@ msgstr "대체"
 #: content/ui/PostDelegate/MediaContainer.qml:76
 #, kde-format
 msgid "Text description available"
-msgstr ""
+msgstr "텍스트 설명을 사용할 수 있음"
 
 #: content/ui/PostDelegate/MediaContainer.qml:84
 #, kde-format
@@ -2888,12 +2854,12 @@ msgstr "답장"
 #: content/ui/PostDelegate/PostDelegate.qml:450
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr ""
+msgstr "개인적인 멘션을 부스트할 수 없음"
 
 #: content/ui/PostDelegate/PostDelegate.qml:452
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr ""
+msgstr "비공개 게시물을 부스트할 수 없음"
 
 #: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
@@ -2958,11 +2924,10 @@ msgstr ""
 "어 있으므로 일부 게시물이 표시되지 않을 수도 있습니다."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
-#, fuzzy, kde-format
-#| msgid "Moderation"
+#, kde-format
 msgctxt "Show more options"
 msgid "More actions"
-msgstr "중재"
+msgstr "더 많은 동작"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
@@ -3105,16 +3070,14 @@ msgid "Vote"
 msgstr "투표"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
-#, fuzzy, kde-format
-#| msgid "Hide Boosts from %1"
+#, kde-format
 msgid "Post from %1"
-msgstr "%1 님의 부스트 숨기기"
+msgstr "%1 님의 게시물"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgid "Quoted post"
-msgstr "제한 공개"
+msgstr "인용된 게시물"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
@@ -3208,7 +3171,7 @@ msgstr "색 테마"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr ""
+msgstr "기본값으로 게시물 작성기를 떼내기"
 
 #: content/ui/Settings/AppearancePage.qml:56
 #, kde-format
@@ -3264,10 +3227,9 @@ msgid "System Default"
 msgstr "시스템 기본값"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
-#, fuzzy, kde-format
-#| msgid "Network Proxy"
+#, kde-format
 msgid "No Proxy"
-msgstr "네트워크 프록시"
+msgstr "프록시 없음"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3308,24 +3270,21 @@ msgstr "이 계정의 알림 활성화"
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr ""
+msgstr "Tokodon이 실행 중이 아니어도 알림이 표시될 수 있습니다."
 
 #: content/ui/Settings/NotificationsPage.qml:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Push notifications are not available for this account. Please log out and "
-#| "log back in."
+#, kde-format
 msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"이 계정에서 푸시 알림을 사용할 수 없습니다. 로그아웃한 후 다시 로그인하십시"
-"오."
+"푸시 알림을 사용할 수 있지만 활성화할 수 없습니다. 로그아웃한 후 다시 로그인"
+"하십시오."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr ""
+msgstr "Tokodon이 실행 중일 때에만 알림이 표시됩니다."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
@@ -3501,11 +3460,10 @@ msgstr "Tokodon 정보"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:50
 #: content/ui/Settings/TokodonConfigurationView.qml:57
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "KDE 정보"
+msgstr "정보"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:54
 #, kde-format
@@ -3600,29 +3558,25 @@ msgid "Remove"
 msgstr "삭제"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
-#, fuzzy, kde-format
-#| msgid "Edit this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "이 게시물 편집"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "이 게시물에 답장 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
-#, fuzzy, kde-format
-#| msgid "Rewrite this post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "이 게시물 다시 쓰기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
-#, fuzzy, kde-format
-#| msgid "Write a new post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "새 게시물 쓰기"
@@ -3631,12 +3585,12 @@ msgstr "새 게시물 쓰기"
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr ""
+msgstr "떼내기"
 
 #: content/ui/StatusComposer/StatusComposer.qml:130
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
-msgstr ""
+msgstr "투표가 부착된 편집된 게시물을 저장하면 기존 결과를 삭제합니다."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
@@ -3654,25 +3608,22 @@ msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
-msgstr ""
+msgstr "유지"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
 msgstr "내용 경고"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
-#, fuzzy, kde-format
-#| msgid "What's new?"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "지금 무엇을 하고 있나요?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
-#, fuzzy, kde-format
-#| msgid "Please choose a file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "파일 선택"
@@ -3747,86 +3698,73 @@ msgid "All files (*)"
 msgstr "모든 파일 (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:385
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "파일 첨부"
 
 #: content/ui/StatusComposer/StatusComposer.qml:396
-#, fuzzy, kde-format
-#| msgid "Add Poll"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "투표 추가"
 
 #: content/ui/StatusComposer/StatusComposer.qml:426
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "로컬"
 
 #: content/ui/StatusComposer/StatusComposer.qml:432
-#, fuzzy, kde-format
-#| msgid "Public"
+#, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "공개"
 
 #: content/ui/StatusComposer/StatusComposer.qml:437
-#, fuzzy, kde-format
-#| msgid "Unlisted"
+#, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "미등재"
 
 #: content/ui/StatusComposer/StatusComposer.qml:442
-#, fuzzy, kde-format
-#| msgid "Private"
+#, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "비공개"
 
 #: content/ui/StatusComposer/StatusComposer.qml:447
-#, fuzzy, kde-format
-#| msgid "Direct Message"
+#, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "다이렉트 메시지"
 
 #: content/ui/StatusComposer/StatusComposer.qml:452
-#, fuzzy, kde-format
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "표시 여부"
 
 #: content/ui/StatusComposer/StatusComposer.qml:457
-#, fuzzy, kde-format
-#| msgctxt "Short for content warning"
-#| msgid "cw"
+#, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
 msgstr "경고"
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
-#, fuzzy, kde-format
-#| msgid "Content Warning"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
 msgstr "내용 경고"
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
-#, fuzzy, kde-format
-#| msgid "Post Language"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "게시물 언어"
 
 #: content/ui/StatusComposer/StatusComposer.qml:503
-#, fuzzy, kde-format
-#| msgid "Add Emoji"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "이모지 추가"
@@ -3856,11 +3794,10 @@ msgid "Repost"
 msgstr "재게시"
 
 #: content/ui/StatusComposer/StatusComposer.qml:548
-#, fuzzy, kde-format
-#| msgid "Saved"
+#, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "저장됨"
+msgstr "저장"
 
 #: content/ui/TimelinePage.qml:45 timeline/accountmodel.cpp:35
 #, kde-format
@@ -3928,22 +3865,20 @@ msgctxt "@info:tooltip"
 msgid "Return to Top"
 msgstr "맨 위로 돌아가기"
 
-#: content/ui/UserInfo.qml:92
+#: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
 msgstr "계정 전환"
 
-#: content/ui/UserInfo.qml:94
-#, fuzzy, kde-format
-#| msgid "Switch Account"
+#: content/ui/UserInfo.qml:100
+#, kde-format
 msgid "Switch account"
 msgstr "계정 전환"
 
-#: content/ui/UserInfo.qml:143
-#, fuzzy, kde-format
-#| msgid "Log in to an existing account"
+#: content/ui/UserInfo.qml:149
+#, kde-format
 msgid "Log in or create a new account"
-msgstr "기존 계정에 로그인"
+msgstr "기존 계정에 로그인하거나 새 계정 만들기"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
@@ -4040,10 +3975,9 @@ msgid "Mastodon client"
 msgstr "마스토돈 클라이언트"
 
 #: main.cpp:114
-#, fuzzy, kde-format
-#| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
+#, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© 2021-2023 Carl Schwan, 2021-2023 KDE 커뮤니티"
+msgstr "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 
 #: main.cpp:115
 #, kde-format
@@ -4197,22 +4131,19 @@ msgid "Trending"
 msgstr "트렌드"
 
 #: timeline/threadmodel.cpp:41
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "불러오는 중"
+msgstr "불러오는 중…"
 
 #: timeline/threadmodel.cpp:46
-#, fuzzy, kde-format
-#| msgid "Hide Boosts from %1"
+#, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "%1 님의 부스트 숨기기"
+msgstr "%1 님의 게시물"
 
 #: tokodonapplication.cpp:13
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "계정"
@@ -4221,35 +4152,31 @@ msgstr "계정"
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
-msgstr ""
+msgstr "'%1'(으)로 전환"
 
 #: tokodonapplication.cpp:55
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
-msgstr "설정"
+msgstr "'%1' 설정"
 
 #: tokodonapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "계정 추가"
 
 #: tokodonapplication.cpp:93
-#, fuzzy, kde-format
-#| msgid "Switch user"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch %1"
-msgstr "사용자 전환"
+msgstr "%1 전환"
 
 #: tokodonapplication.cpp:101
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure %1"
-msgstr "설정"
+msgstr "%1 설정"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
