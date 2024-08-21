@@ -41,17 +41,31 @@ MastoPage {
         }
     }
 
+    function openPage(componentName: string): void {
+        if (Kirigami.Settings.isMobile) {
+            if (Window.window.pageStack.layers.currentItem !== root) {
+                Window.window.pageStack.layers.pop();
+            }
+
+            Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", componentName), {
+                account: account,
+                loginPage: root
+            });
+        } else {
+            if (Window.window.pageStack.currentItem !== root) {
+                Window.window.pageStack.pop();
+            }
+
+            Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", componentName), {
+                account: account,
+                loginPage: root
+            });
+        }
+    }
+
     function _openWebViewAuthPage(): void {
         account.registered.disconnect(_openWebViewAuthPage);
-
-        if (Window.window.pageStack.currentItem !== root) {
-            Window.window.pageStack.pop();
-        }
-
-        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "WebViewAuthorization"), {
-            account: account,
-            loginPage: root
-        });
+        openPage("WebViewAuthorization");
     }
 
     function openWebViewAuthPage(): void {
@@ -61,15 +75,7 @@ MastoPage {
 
     function _openBrowserAuthPage(): void {
         account.registered.disconnect(_openBrowserAuthPage);
-
-        if (Window.window.pageStack.currentItem !== root) {
-            Window.window.pageStack.pop();
-        }
-
-        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "BrowserAuthorization"), {
-            account: account,
-            loginPage: root
-        });
+        openPage("BrowserAuthorization");
     }
 
     function openBrowserAuthPage(): void {
@@ -80,14 +86,7 @@ MastoPage {
     function _openCodeAuthPage(): void {
         account.registered.disconnect(_openCodeAuthPage);
 
-        if (Window.window.pageStack.currentItem !== root) {
-            Window.window.pageStack.pop();
-        }
-
-        Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "CodeAuthorization"), {
-            account: account,
-            loginPage: root
-        });
+        openPage("CodeAuthorization");
     }
 
     function openCodeAuthPage(): void {

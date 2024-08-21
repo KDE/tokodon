@@ -44,7 +44,13 @@ MastoPage {
             id: registerButton
             text: i18n("Register")
             icon.name: "list-add-user"
-            onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
+            onClicked: {
+                if (Kirigami.Settings.isMobile) {
+                    QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
+                } else {
+                    QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "ServersPage"))
+                }
+            }
         }
 
         FormCard.FormDelegateSeparator {}
@@ -53,7 +59,13 @@ MastoPage {
             id: loginButton
             text: i18n("Login")
             icon.name: "user"
-            onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+            onClicked: {
+                if (Kirigami.Settings.isMobile) {
+                    QQC2.ApplicationWindow.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+                } else {
+                    QQC2.ApplicationWindow.window.pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginPage"))
+                }
+            }
         }
     }
 }

@@ -144,7 +144,11 @@ QQC2.Pane {
                 }
 
                 onClicked: {
-                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+                    if (Kirigami.Settings.isMobile) {
+                        pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+                    } else {
+                        pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+                    }
                     userInfo.accountsListVisible = false
                     accounts.currentIndex = AccountManager.selectedIndex
                     if (userInfo.sidebar.modal) {
