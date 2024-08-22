@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-21 00:47+0000\n"
-"PO-Revision-Date: 2024-07-08 11:37+0200\n"
+"POT-Creation-Date: 2024-08-22 00:39+0000\n"
+"PO-Revision-Date: 2024-08-16 11:33+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -721,7 +721,7 @@ msgstr "Autoriser les notifications"
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
-#: content/ui/LoginFlow/LoginPage.qml:126
+#: content/ui/LoginFlow/LoginPage.qml:125
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
@@ -928,7 +928,7 @@ msgstr ""
 "Impossible de contacter le serveur : %1. Veuillez vérifier la configuration "
 "de votre serveur mandataire."
 
-#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:166
+#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
@@ -938,30 +938,30 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Configuration du serveur mandataire"
 
-#: content/ui/LoginFlow/LoginPage.qml:101
+#: content/ui/LoginFlow/LoginPage.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
 msgstr "Connexion"
 
-#: content/ui/LoginFlow/LoginPage.qml:107
+#: content/ui/LoginFlow/LoginPage.qml:106
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "URL du serveur :"
 
-#: content/ui/LoginFlow/LoginPage.qml:108
+#: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
 
-#: content/ui/LoginFlow/LoginPage.qml:117
+#: content/ui/LoginFlow/LoginPage.qml:116
 #, kde-format
 msgid "Enable moderation tools"
 msgstr "Activer les outils de modération"
 
-#: content/ui/LoginFlow/LoginPage.qml:118
+#: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
 msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
@@ -970,19 +970,19 @@ msgstr ""
 "Permettre à Tokodon d'accéder aux outils de modération. Veuillez essayez de "
 "désactiver ceci si vous avez du mal à vous connecter."
 
-#: content/ui/LoginFlow/LoginPage.qml:132
+#: content/ui/LoginFlow/LoginPage.qml:131
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "L'URL du serveur ne doit pas être vide !"
 
-#: content/ui/LoginFlow/LoginPage.qml:153
+#: content/ui/LoginFlow/LoginPage.qml:152
 #: content/ui/LoginFlow/ServersPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Configuration du réseau"
 
-#: content/ui/LoginFlow/LoginPage.qml:159
+#: content/ui/LoginFlow/LoginPage.qml:158
 #: content/ui/LoginFlow/ServersPage.qml:100
 #, kde-format
 msgctxt "@option:check Login page"
@@ -1085,7 +1085,7 @@ msgstr "Ouvrir de façon externe"
 msgid "Learn More"
 msgstr "En apprendre plus"
 
-#: content/ui/LoginFlow/WelcomePage.qml:54
+#: content/ui/LoginFlow/WelcomePage.qml:60
 #, kde-format
 msgid "Login"
 msgstr "Connexion"
@@ -3706,7 +3706,7 @@ msgstr "Image AVIF (*.avif)"
 #: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr "Vidéo Webm (*.webm)"
+msgstr "Vidéo WebM (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
@@ -4183,45 +4183,40 @@ msgid "Post by %1"
 msgstr "Publié par %1"
 
 #: tokodonapplication.cpp:13
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
-msgstr "Comptes"
+msgstr "Compte"
 
 #: tokodonapplication.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
-msgstr ""
+msgstr "Basculer vers %1"
 
 #: tokodonapplication.cpp:55
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
-msgstr "Configurer"
+msgstr "Configurer « %1 »"
 
 #: tokodonapplication.cpp:62
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Ajouter un compte"
 
 #: tokodonapplication.cpp:93
-#, fuzzy, kde-format
-#| msgid "Switch user"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch %1"
-msgstr "Changer d'utilisateur"
+msgstr "Basculer %1"
 
 #: tokodonapplication.cpp:101
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure %1"
-msgstr "Configurer"
+msgstr "Configurer %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
