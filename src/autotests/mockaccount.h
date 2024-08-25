@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
-
+#pragma once
 #include "account/abstractaccount.h"
 
 class MockAccount : public AbstractAccount

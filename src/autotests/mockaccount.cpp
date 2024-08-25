@@ -235,3 +235,5 @@ void MockAccount::readNotificationFromFile(QLatin1String filename)
 
     handleNotification(QJsonDocument::fromJson(statusExampleApi.readAll()));
 }
+
+#include "moc_mockaccount.cpp"
