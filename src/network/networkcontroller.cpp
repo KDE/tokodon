@@ -22,7 +22,9 @@ NetworkController::NetworkController(QObject *parent)
     m_systemHttpProxy = qgetenv("http_proxy");
     m_systemHttpsProxy = qgetenv("https_proxy");
 
-    setApplicationProxy();
+    // We don't want to reload accounts, as that may inadvertenly call back into this constructor
+    // BUG: 492383 is an example of this
+    setApplicationProxy(false);
 
     connect(&AccountManager::instance(), &AccountManager::accountsReady, this, [=] {
         m_accountsReady = true;
@@ -42,7 +44,7 @@ NetworkController &NetworkController::instance()
     return _instance;
 }
 
-void NetworkController::setApplicationProxy()
+void NetworkController::setApplicationProxy(const bool reloadAccounts)
 {
     Config *cfg = Config::self();
     QNetworkProxy proxy;
@@ -113,7 +115,9 @@ void NetworkController::setApplicationProxy()
         break;
     }
 
-    AccountManager::instance().reloadAccounts();
+    if (reloadAccounts) {
+        AccountManager::instance().reloadAccounts();
+    }
 }
 
 void NetworkController::openWebApLink(QString input)

@@ -30,8 +30,9 @@ public:
 
     /**
      * @brief Sets up the application proxy.
+     * @param reloadAccounts Whether to tell AccountManager to reload the accounts for us.
      */
-    Q_INVOKABLE void setApplicationProxy();
+    Q_INVOKABLE void setApplicationProxy(bool reloadAccounts = true);
 
     /**
      * @brief Sets the authentication code for the current account.
