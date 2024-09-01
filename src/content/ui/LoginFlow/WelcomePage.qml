@@ -17,9 +17,6 @@ Kirigami.Page {
     title: i18nc("@title:window", "Welcome")
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
-    readonly property real minimumWindowWidth: 800
-    readonly property bool wideScreen: root.width > minimumWindowWidth
-
     header: Kirigami.Separator {
         width: root.width
     }
@@ -101,15 +98,10 @@ Kirigami.Page {
 
             QQC2.AbstractButton {
                 Layout.alignment: Qt.AlignHCenter
+                Layout.topMargin: Kirigami.Units.largeSpacing
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
-
-                    Behavior on opacity {
-                        OpacityAnimator {
-                            duration: Kirigami.Units.shortDuration
-                        }
-                    }
 
                     QQC2.Label {
                         text: i18nc("@info Compatible with Mastodon", "Compatible with")
