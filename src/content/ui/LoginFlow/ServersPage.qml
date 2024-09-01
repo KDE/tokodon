@@ -86,6 +86,7 @@ MastoPage {
 
                 root.account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, false);
                 root.account.fetchedInstanceMetadata.connect(handleRegistration);
+                root.account.registerTokodon(false);
             }
         }
     }
