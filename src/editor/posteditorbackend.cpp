@@ -213,7 +213,14 @@ void PostEditorBackend::setupReplyTo(Post *post)
     setInReplyTo(post->originalPostId());
     setSpoilerText(post->spoilerText());
     setVisibility(post->visibility());
-    setMentions({'@'_L1 + post->authorIdentity()->account()});
+    QStringList mentions = {'@'_L1 + post->authorIdentity()->account()};
+    for (const auto &mention : post->mentions()) {
+        if (mentions.contains(mention)) {
+            continue;
+        }
+        mentions.append(mention);
+    }
+    setMentions(mentions);
 }
 
 QJsonDocument PostEditorBackend::toJsonDocument() const
