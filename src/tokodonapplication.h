@@ -32,6 +32,7 @@ Q_SIGNALS:
     void addAccount();
 
 private:
+    void setupActions() override;
     void setupAccountCollection();
     void switchAccount(AbstractAccount *account);
     void createAccountActions(AbstractAccount *account);

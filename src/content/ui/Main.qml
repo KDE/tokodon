@@ -103,6 +103,10 @@ StatefulApp.StatefulWindow {
     }
 
     Kirigami.Action {
+        fromQAction: root.application.action('open_status_composer')
+    }
+
+    Kirigami.Action {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 

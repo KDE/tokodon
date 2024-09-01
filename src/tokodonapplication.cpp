@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "tokodonapplication.h"
+#include "navigation.h"
 
 #include <KAuthorized>
 #include <KLocalizedString>
@@ -65,6 +66,20 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
 
         readSettings();
     }
+}
+
+void TokodonApplication::setupActions()
+{
+    AbstractKirigamiApplication::setupActions();
+
+    auto configureAction = mainCollection()->addAction(u"open_status_composer"_s, this, []() {
+        Q_EMIT Navigation::instance().openComposer(QString{});
+    });
+    configureAction->setText(i18nc("@action:button", "Write a New Post"));
+    configureAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+
+    mainCollection()->addAction(configureAction->objectName(), configureAction);
+    mainCollection()->setDefaultShortcut(configureAction, QKeySequence(Qt::CTRL | Qt::Key_N));
 }
 
 void TokodonApplication::setupAccountCollection()
