@@ -36,6 +36,7 @@ private:
     void setupAccountCollection();
     void switchAccount(AbstractAccount *account);
     void createAccountActions(AbstractAccount *account);
+    void updateAccountActions();
 
     AccountManager *m_accountManager = nullptr;
     KirigamiActionCollection *m_accountCollection = nullptr;

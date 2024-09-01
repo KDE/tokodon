@@ -28,6 +28,7 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
     }
 
     if (m_accountManager) {
+        disconnect(m_accountManager, &AccountManager::accountsChanged, this, nullptr);
         disconnect(m_accountManager, &AccountManager::accountAdded, this, nullptr);
         disconnect(m_accountManager, &AccountManager::accountRemoved, this, nullptr);
         disconnect(m_accountManager, &AccountManager::identityChanged, this, nullptr);
@@ -39,6 +40,9 @@ void TokodonApplication::setAccountManager(AccountManager *accountManager)
 
     if (m_accountManager) {
         setupAccountCollection();
+        updateAccountActions();
+
+        connect(m_accountManager, &AccountManager::accountSelected, this, &TokodonApplication::updateAccountActions);
 
         connect(m_accountManager, &AccountManager::accountAdded, this, [this](AbstractAccount *account) {
             createAccountActions(account);
@@ -77,6 +81,7 @@ void TokodonApplication::setupActions()
     });
     configureAction->setText(i18nc("@action:button", "Write a New Post"));
     configureAction->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    updateAccountActions();
 
     mainCollection()->addAction(configureAction->objectName(), configureAction);
     mainCollection()->setDefaultShortcut(configureAction, QKeySequence(Qt::CTRL | Qt::Key_N));
@@ -119,6 +124,13 @@ void TokodonApplication::createAccountActions(AbstractAccount *account)
     configureAction->setIcon(QIcon::fromTheme(QStringLiteral("im-user-symbolic")));
     m_configureUserActions[account] = configureAction;
     m_accountCollection->setShortcutsConfigurable(configureAction, false);
+}
+
+void TokodonApplication::updateAccountActions()
+{
+    mainCollection()
+        ->action(u"open_status_composer"_s)
+        ->setEnabled(AccountManager::instance().selectedAccount() && !AccountManager::instance().selectedAccountHasIssue());
 }
 
 QList<KirigamiActionCollection *> TokodonApplication::actionCollections() const
