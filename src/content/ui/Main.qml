@@ -210,7 +210,7 @@ StatefulApp.StatefulWindow {
         target: root.application
 
         function onConfigureAccount(account: AbstractAccount): void {
-            root.pageStack.pushDialogLayers("./Settings/ProfileEditor.qml", {
+            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
                 account: account,
             });
         }
