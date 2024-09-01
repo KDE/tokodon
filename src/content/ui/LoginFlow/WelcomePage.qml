@@ -21,6 +21,8 @@ Kirigami.Page {
         width: root.width
     }
 
+    property TokodonConfigurationView settingsWindow: TokodonConfigurationView {}
+
     contentItem: Item {
         ColumnLayout {
             anchors {
@@ -92,7 +94,7 @@ Kirigami.Page {
                     id: settingsButton
                     text: i18nc("@action:button Application settings", "Settings")
                     icon.name: "settings-configure"
-                    onClicked: TokodonConfigurationView.open()
+                    onClicked: settingsWindow.open()
                 }
             }
 
