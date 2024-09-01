@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
                 auto args = arguments;
                 args.removeFirst();
 
-                if (arguments.length() >= 1) {
+                if (!args.empty()) {
                     if (args[0].startsWith("web+ap"_L1)) {
                         NetworkController::instance().openWebApLink(args[0]);
                     } else if (args[0].startsWith("tokodon"_L1)) {
