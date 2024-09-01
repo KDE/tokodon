@@ -44,7 +44,6 @@ Kirigami.ApplicationWindow {
     }
 
     function decideDefaultPage(): void {
-        globalDrawer.drawerOpen = true;
         pageStack.clear();
 
         if (InitialSetupFlow.isSetupNeeded()) {
@@ -339,7 +338,6 @@ Kirigami.ApplicationWindow {
         edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
         modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (root.width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
         z: modal ? Math.round(position * 10000000) : 100
-        drawerOpen: !Kirigami.Settings.isMobile && enabled
         width: Kirigami.Units.gridUnit * 14
         Behavior on width {
             NumberAnimation {
