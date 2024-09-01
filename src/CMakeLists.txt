@@ -54,6 +54,8 @@ target_sources(tokodon_static
     account/rulesmodel.cpp
     account/rulesmodel.h
     account/profileeditor.cpp
+    account/publicserversmodel.cpp
+    account/publicserversmodel.h
     account/notificationhandler.cpp
     account/notificationhandler.h
 

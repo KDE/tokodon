@@ -1,50 +1,40 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
-// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import QtQml.Models
+import QtQuick.Window
+import QtQuick.Controls as QQC2
 
-import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.components 1 as Components
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kitemmodels as KItemModels
 
 import org.kde.tokodon
 
-MastoPage {
+Kirigami.ScrollablePage {
     id: root
 
     title: i18nc("@title:window", "Pick a Server")
 
+    property alias filterString: searchField.text
     property var account
 
     data: Connections {
         target: Controller
-        function onNetworkErrorOccurred(error) {
-            message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
-            message.visible = true;
+        function onNetworkErrorOccurred(error: string): void {
+            errorBanner.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", error)
+            errorBanner.visible = true;
         }
     }
 
-    header: Components.Banner {
-        id: message
-        type: Kirigami.MessageType.Error
-        width: parent.width
-
-        showCloseButton: true
-
-        actions: Kirigami.Action {
-            text: i18n("Proxy Settings")
-            icon.name: "settings-configure"
-            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxySettings"))
-        }
-    }
-
-    function handleRegistration() {
+    function handleRegistration(): void {
         if (!account.registrationsOpen) {
-            instanceUrl.status = Kirigami.MessageType.Error;
-            instanceUrl.statusMessage = i18n("This server is closed for registration: %1", account.registrationMessage);
+            errorBanner.text = i18n("This server is closed for registration: %1", account.registrationMessage);
+            errorBanner.visible = true;
             return;
         }
 
@@ -55,58 +45,127 @@ MastoPage {
         });
     }
 
-    Component.onCompleted: instanceUrl.forceActiveFocus()
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Pick a Server")
+    function register(domain: string): void {
+        errorBanner.visible = false;
+        account = AccountManager.createNewAccount(domain, false, false);
+        account.fetchedInstanceMetadata.connect(handleRegistration);
+        account.registerTokodon(false);
     }
 
-    FormCard.FormCard {
-        FormCard.FormTextFieldDelegate {
-            id: instanceUrl
-            label: i18n("Server URL:")
-            placeholderText: i18n("mastodon.social")
-            onAccepted: continueButton.clicked()
-            inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
+    header: QQC2.Control {
+        topPadding: 0
+        bottomPadding: 0
+        leftPadding: 0
+        rightPadding: 0
+
+        background: Rectangle {
+            Kirigami.Theme.colorSet: Kirigami.Theme.Window
+            Kirigami.Theme.inherit: false
+            color: Kirigami.Theme.backgroundColor
+
+            Kirigami.Separator {
+                anchors {
+                    left: parent.left
+                    bottom: parent.bottom
+                    right: parent.right
+                }
+            }
         }
 
-        FormCard.FormDelegateSeparator { above: continueButton }
+        contentItem: ColumnLayout {
+            spacing: 0
 
-        FormCard.FormButtonDelegate {
-            id: continueButton
-            text: i18n("Continue")
-            onClicked: {
-                instanceUrl.statusMessage = "";
+            Components.Banner {
+                id: errorBanner
+                type: Kirigami.MessageType.Error
+                width: parent.width
 
-                if (!instanceUrl.text) {
-                    instanceUrl.status = Kirigami.MessageType.Error;
-                    instanceUrl.statusMessage = i18n("Server URL must not be empty.");
-                    return;
+                showCloseButton: true
+
+                Layout.fillWidth: true
+
+                actions: Kirigami.Action {
+                    text: i18n("Proxy Settings")
+                    icon.name: "settings-configure"
+                    onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NetworkProxySettings"))
                 }
+            }
 
-                root.account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, false);
-                root.account.fetchedInstanceMetadata.connect(handleRegistration);
-                root.account.registerTokodon(false);
+            Kirigami.SearchField {
+                id: searchField
+                placeholderText: i18n("Search or enter URL…")
+
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.largeSpacing
             }
         }
     }
 
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Network Settings")
-    }
+    ListView {
+        id: listView
 
-    FormCard.FormCard {
-        FormCard.FormSwitchDelegate {
-            id: sslErrors
-            text: i18nc("@option:check Login page", "Ignore SSL errors")
+        model: KItemModels.KSortFilterProxyModel {
+            id: filterModel
+
+            sourceModel: PublicServersModel {
+                id: publicServersModel
+            }
+
+            filterString: root.filterString
+            filterRoleName: "domain"
         }
 
-        FormCard.FormDelegateSeparator { above: proxySettingDelegate; below: sslErrors }
+        header: QQC2.ItemDelegate {
+            onClicked: root.register(root.filterString)
 
-        FormCard.FormButtonDelegate {
-            id: proxySettingDelegate
-            text: i18n("Proxy Settings")
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
+            activeFocusOnTab: false // We handle moving to this item via up/down arrows, otherwise the tab order is wacky
+
+            contentItem: Kirigami.IconTitleSubtitle {
+                icon.name: "compass-symbolic"
+                title: root.filterString
+                subtitle: i18n("Custom Server")
+            }
+
+            width: ListView.view.width
+            height: visible ? implicitHeight : 0
+            visible: !publicServersModel.loading && listView.count === 0 && root.filterString !== ""
+        }
+
+        section.delegate: Kirigami.ListSectionHeader {
+            width: ListView.view.width
+            text: i18n("Public Servers")
+        }
+        section.property: "isPublic"
+
+        delegate: QQC2.ItemDelegate {
+            id: delegate
+
+            required property int index
+            required property string domain
+            required property string description
+            required property string iconSource
+
+            width: ListView.view.width
+
+            contentItem: Kirigami.IconTitleSubtitle {
+                icon.source: delegate.iconSource
+                title: delegate.domain
+                subtitle: delegate.description
+            }
+
+            onClicked: root.register(delegate.domain)
+        }
+
+        Kirigami.LoadingPlaceholder {
+            anchors.centerIn: parent
+            visible: publicServersModel.loading
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No Public Servers")
+            explanation: i18n("Enter a server URL manually in the search field.")
+            visible: !publicServersModel.loading && listView.count === 0 && root.filterString === ""
         }
     }
 }

@@ -142,6 +142,8 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     };
     const QJsonDocument doc(obj);
 
+    fetchInstanceMetadata();
+
     post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
         if (!reply->isFinished()) {
             qCDebug(TOKODON_LOG) << "not finished";
@@ -158,7 +160,6 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
 
         if (isRegistered()) {
             Q_EMIT registered();
-            fetchInstanceMetadata();
         }
     });
 }
