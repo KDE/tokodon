@@ -90,7 +90,9 @@ void TokodonApplication::createAccountActions(AbstractAccount *account)
     auto switchAction = m_accountCollection->addAction(u"switch_account_"_s + account->username() + account->instanceUri(), this, [this, account]() {
         switchAccount(account);
     });
-    switchAction->setText(i18nc("@action:button", "Switch %1", account->identity()->displayNameHtml()));
+    // We are intentionally using AbstractAccount::username() here because the identity may not be filled out yet
+    // Either because the account is not yet loaded, or there was an error while loading it.
+    switchAction->setText(i18nc("@action:button", "Switch '%1'", account->username()));
     switchAction->setIcon(QIcon::fromTheme(QStringLiteral("system-switch-user")));
     m_switchUserActions[account] = switchAction;
     m_accountCollection->setShortcutsConfigurable(switchAction, false);
@@ -98,7 +100,7 @@ void TokodonApplication::createAccountActions(AbstractAccount *account)
     auto configureAction = m_accountCollection->addAction(u"configure_account_"_s + account->username() + account->instanceUri(), this, [this, account]() {
         Q_EMIT configureAccount(account);
     });
-    configureAction->setText(i18nc("@action:button", "Configure %1", account->identity()->displayNameHtml()));
+    configureAction->setText(i18nc("@action:button", "Configure '%1'", account->username()));
     configureAction->setIcon(QIcon::fromTheme(QStringLiteral("im-user-symbolic")));
     m_configureUserActions[account] = configureAction;
     m_accountCollection->setShortcutsConfigurable(configureAction, false);
