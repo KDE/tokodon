@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-07-14 21:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -412,7 +412,7 @@ msgstr "Profil szerkesztése"
 msgid "Account editor"
 msgstr "Fiókszerkesztő"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:562
+#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
 #, kde-format
 msgid "Follow Requests"
 msgstr "Követési kérések"
@@ -553,7 +553,7 @@ msgstr "Nincsenek emojik"
 msgid "View profile"
 msgstr "Profil megtekintése"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:609
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
 #, kde-format
 msgid "Conversations"
 msgstr "Beszélgetések"
@@ -641,7 +641,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Biztosan törölni szeretné ezt a listát?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:655
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
 #, kde-format
 msgid "Explore"
 msgstr "Felfedezés"
@@ -763,7 +763,6 @@ msgid "Welcome"
 msgstr "Üdvözöljük"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
-#: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Üdvözli a Tokodon"
@@ -926,7 +925,7 @@ msgstr ""
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/LoginFlow/ServersPage.qml:108
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -970,14 +969,14 @@ msgid "Server URL must not be empty!"
 msgstr "A kiszolgáló URL-címe nem lehet üres."
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:94
+#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Hálózati beállítások"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:100
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1017,7 +1016,6 @@ msgid "Reason"
 msgstr "Ok"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
-#: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr "Regisztráció"
@@ -1074,128 +1072,167 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "Megnyitás külső programmal"
 
-#: content/ui/LoginFlow/WelcomePage.qml:36
-#, kde-format
-msgid "Learn More"
-msgstr "Tudjon meg többet"
+#: content/ui/LoginFlow/WelcomePage.qml:47
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgctxt "@info"
+msgid "Tokodon"
+msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:60
+#: content/ui/LoginFlow/WelcomePage.qml:56
 #, kde-format
-msgid "Login"
-msgstr "Bejelentkezés"
+msgctxt "@info"
+msgid ""
+"Browse the Fediverse and connect with people on Mastodon (and other "
+"compatible software)."
+msgstr ""
 
-#: content/ui/Main.qml:121
+#: content/ui/LoginFlow/WelcomePage.qml:72
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgctxt "@action:button Pick a Mastodon server"
+msgid "Pick a Server"
+msgstr "Kiszolgáló kiválasztása"
+
+#: content/ui/LoginFlow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Edit Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use an Existing Account"
+msgstr "Fiók szerkesztése"
+
+#: content/ui/LoginFlow/WelcomePage.qml:95
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "Beállítások"
+
+#: content/ui/LoginFlow/WelcomePage.qml:109
+#, kde-format
+msgctxt "@info Compatible with Mastodon"
+msgid "Compatible with"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:119
+#, kde-format
+msgctxt "@action:button"
+msgid "Compatible with Mastodon"
+msgstr ""
+
+#: content/ui/Main.qml:125
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Megnyitás mint…"
 
-#: content/ui/Main.qml:123
+#: content/ui/Main.qml:127
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Válasz mint…"
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:129
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Kedvencnek jelölés mint…"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:131
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Megtolás mint…"
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:133
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Könyvjelzőzés mint…"
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Ismeretlen művelet"
 
-#: content/ui/Main.qml:231 content/ui/Main.qml:269
+#: content/ui/Main.qml:234 content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr "Új bejegyzés írása"
 
-#: content/ui/Main.qml:293
+#: content/ui/Main.qml:296
 #, kde-format
 msgid "Reply to post"
 msgstr "Válasz a bejegyzésre"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:485
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Hibakeresés"
 
-#: content/ui/Main.qml:493
+#: content/ui/Main.qml:495
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderációs eszközök"
 
-#: content/ui/Main.qml:520
+#: content/ui/Main.qml:522
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:534
 #, kde-format
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: content/ui/Main.qml:547 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Értesítések"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:580
 #, kde-format
 msgid "Local"
 msgstr "Helyi"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:595
 #, kde-format
 msgid "Global"
 msgstr "Globális"
 
-#: content/ui/Main.qml:623
+#: content/ui/Main.qml:625
 #, kde-format
 msgid "Favourites"
 msgstr "Kedvencek"
 
-#: content/ui/Main.qml:639
+#: content/ui/Main.qml:641
 #, kde-format
 msgid "Bookmarks"
 msgstr "Könyvjelzők"
 
-#: content/ui/Main.qml:669
+#: content/ui/Main.qml:671
 #, kde-format
 msgid "Search"
 msgstr "Keresés"
 
-#: content/ui/Main.qml:684
+#: content/ui/Main.qml:686
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Bejelentések"
 
-#: content/ui/Main.qml:699
+#: content/ui/Main.qml:701
 #, kde-format
 msgid "Lists"
 msgstr "Listák"
 
-#: content/ui/Main.qml:847
+#: content/ui/Main.qml:831
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3459,29 +3496,29 @@ msgstr "Visszaállítás"
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:29
+#: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Accounts"
 msgstr "Fiókok"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:41
+#: content/ui/Settings/TokodonConfigurationView.qml:43
 #, kde-format
 msgid "Network Proxy"
 msgstr "Hálózati proxy"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:47
+#: content/ui/Settings/TokodonConfigurationView.qml:49
 #, kde-format
 msgid "About Tokodon"
 msgstr "A Tokodon névjegye"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:50
-#: content/ui/Settings/TokodonConfigurationView.qml:57
+#: content/ui/Settings/TokodonConfigurationView.qml:52
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Névjegy"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:54
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About KDE"
 msgstr "A KDE névjegye"
@@ -3976,80 +4013,80 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 nap"
 
-#: editor/posteditorbackend.cpp:271
+#: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Ismeretlen hiba történt."
 
-#: main.cpp:63
+#: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Leküldéses értesítések fogadása"
 
-#: main.cpp:110
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon kliens"
 
-#: main.cpp:114
+#: main.cpp:117
 #, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© Carl Schwan, 2021-2024., A KDE közösség, 2021-2024."
 
-#: main.cpp:115
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:119 main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "Karbantartó"
 
-#: main.cpp:120
+#: main.cpp:123
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kiszel Kristóf"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: main.cpp:133
+#: main.cpp:140
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 "Kliens decentralizált közösségi hálózatokhoz, mint például a Mastodonhoz"
 
-#: main.cpp:134
+#: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "A https és web+ap URL-sémák támogatása"
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Egy sor szöveg megosztása az önálló szerkesztőben."
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "The text to share."
 msgstr "A megosztandó szöveg."
 
-#: main.cpp:140
+#: main.cpp:147
 #, kde-format
 msgid "Internal usage only."
 msgstr "Csak belső használatra."
@@ -4168,46 +4205,47 @@ msgctxt "@title"
 msgid "Post by %1"
 msgstr "%1 bejegyzése"
 
-#: tokodonapplication.cpp:13
+#: tokodonapplication.cpp:14
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "Fiókok"
 
-#: tokodonapplication.cpp:54
+#: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr ""
 
-#: tokodonapplication.cpp:55
+#: tokodonapplication.cpp:60 tokodonapplication.cpp:123
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "Beállítás"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:67
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Fiók hozzáadása"
 
-#: tokodonapplication.cpp:93
+#: tokodonapplication.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Write a New Post"
+msgctxt "@action:button"
+msgid "Write a New Post"
+msgstr "Új bejegyzés írása"
+
+#: tokodonapplication.cpp:115
 #, fuzzy, kde-format
 #| msgid "Switch Account"
 msgctxt "@action:button"
-msgid "Switch %1"
+msgid "Switch '%1'"
 msgstr "Fiókváltás"
-
-#: tokodonapplication.cpp:101
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgctxt "@action:button"
-msgid "Configure %1"
-msgstr "Beállítás"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4303,6 +4341,18 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cél"
 
+#~ msgid "Learn More"
+#~ msgstr "Tudjon meg többet"
+
+#~ msgid "Login"
+#~ msgstr "Bejelentkezés"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@action:button"
+#~ msgid "Configure %1"
+#~ msgstr "Beállítás"
+
 #~ msgid "Spell Checking"
 #~ msgstr "Helyesírás-ellenőrzés"
 
@@ -4365,9 +4415,6 @@ msgstr "Cél"
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
 #~ msgstr "Szerkesztés"
-
-#~ msgid "Settings"
-#~ msgstr "Beállítások"
 
 #~ msgctxt "@title:window"
 #~ msgid "Settings"

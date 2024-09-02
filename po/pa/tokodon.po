@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -427,7 +427,7 @@ msgstr "ਪਰੋਫ਼ਾਈਲ ਸੋਧੋ"
 msgid "Account editor"
 msgstr "ਖਾਤਾ ਐਡੀਟਰ"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:562
+#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
 #, kde-format
 msgid "Follow Requests"
 msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
@@ -581,7 +581,7 @@ msgstr ""
 msgid "View profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:609
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
 #, kde-format
 msgid "Conversations"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
@@ -676,7 +676,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:655
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
 #, kde-format
 msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
@@ -798,7 +798,6 @@ msgid "Welcome"
 msgstr ""
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
-#: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "ਟੂਕੂਡੂਨ ਲਈ ਜੀ ਆਇਆਂ ਨੂੰ"
@@ -965,7 +964,7 @@ msgstr ""
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/LoginFlow/ServersPage.qml:108
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -1010,7 +1009,7 @@ msgid "Server URL must not be empty!"
 msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:94
+#: content/ui/LoginFlow/ServersPage.qml:95
 #, fuzzy, kde-format
 #| msgctxt "@title:group Login page"
 #| msgid "Network Settings"
@@ -1019,7 +1018,7 @@ msgid "Network Settings"
 msgstr "ਨੈੱਟਵਰਕ ਸੈਟਿੰਗਾਂ"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:100
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1062,7 +1061,6 @@ msgid "Reason"
 msgstr ""
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
-#: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr ""
@@ -1121,23 +1119,60 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:36
+#: content/ui/LoginFlow/WelcomePage.qml:47
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgctxt "@info"
+msgid "Tokodon"
+msgstr "ਟੂਕੂਡੂਨ"
+
+#: content/ui/LoginFlow/WelcomePage.qml:56
 #, kde-format
-msgid "Learn More"
+msgctxt "@info"
+msgid ""
+"Browse the Fediverse and connect with people on Mastodon (and other "
+"compatible software)."
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:60
+#: content/ui/LoginFlow/WelcomePage.qml:72
 #, kde-format
-msgid "Login"
-msgstr "ਲਾਗਇਨ"
+msgctxt "@action:button Pick a Mastodon server"
+msgid "Pick a Server"
+msgstr ""
 
-#: content/ui/Main.qml:121
+#: content/ui/LoginFlow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Add Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use an Existing Account"
+msgstr "ਖਾਤਾ ਜੋੜੋ"
+
+#: content/ui/LoginFlow/WelcomePage.qml:95
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "ਸੈਟਿੰਗਾਂ"
+
+#: content/ui/LoginFlow/WelcomePage.qml:109
+#, kde-format
+msgctxt "@info Compatible with Mastodon"
+msgid "Compatible with"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:119
+#, kde-format
+msgctxt "@action:button"
+msgid "Compatible with Mastodon"
+msgstr ""
+
+#: content/ui/Main.qml:125
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr ""
 
-#: content/ui/Main.qml:123
+#: content/ui/Main.qml:127
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -1145,7 +1180,7 @@ msgctxt "@title"
 msgid "Reply As…"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:129
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -1153,7 +1188,7 @@ msgctxt "@title"
 msgid "Favorite As…"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:131
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -1161,98 +1196,98 @@ msgctxt "@title"
 msgid "Boost As…"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:133
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:231 content/ui/Main.qml:269
+#: content/ui/Main.qml:234 content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr ""
 
-#: content/ui/Main.qml:293
+#: content/ui/Main.qml:296
 #, fuzzy, kde-format
 #| msgid "Copy Link to This Post"
 msgid "Reply to post"
 msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:485
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:493
+#: content/ui/Main.qml:495
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
-#: content/ui/Main.qml:520
+#: content/ui/Main.qml:522
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:534
 #, kde-format
 msgid "Home"
 msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 
-#: content/ui/Main.qml:547 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:580
 #, kde-format
 msgid "Local"
 msgstr "ਲੋਕਲ"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:595
 #, kde-format
 msgid "Global"
 msgstr "ਗਲੋਬਲ"
 
-#: content/ui/Main.qml:623
+#: content/ui/Main.qml:625
 #, kde-format
 msgid "Favourites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:639
+#: content/ui/Main.qml:641
 #, kde-format
 msgid "Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:669
+#: content/ui/Main.qml:671
 #, kde-format
 msgid "Search"
 msgstr "ਖੋਜੋ"
 
-#: content/ui/Main.qml:684
+#: content/ui/Main.qml:686
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/Main.qml:699
+#: content/ui/Main.qml:701
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:847
+#: content/ui/Main.qml:831
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3663,30 +3698,30 @@ msgstr "ਮੁੜ-ਸੈੱਟ"
 msgid "Appearance"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:29
+#: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Accounts"
 msgstr "ਖਾਤੇ"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:41
+#: content/ui/Settings/TokodonConfigurationView.qml:43
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:47
+#: content/ui/Settings/TokodonConfigurationView.qml:49
 #, kde-format
 msgid "About Tokodon"
 msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:50
-#: content/ui/Settings/TokodonConfigurationView.qml:57
+#: content/ui/Settings/TokodonConfigurationView.qml:52
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, fuzzy, kde-format
 #| msgid "About KDE"
 msgctxt "@title:group"
 msgid "About"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:54
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About KDE"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
@@ -4210,80 +4245,80 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 ਦਿਨ"
 
-#: editor/posteditorbackend.cpp:271
+#: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
 msgstr ""
 
-#: main.cpp:63
+#: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
 msgstr ""
 
-#: main.cpp:110
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "ਟੂਕੂਡੂਨ"
 
-#: main.cpp:112
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "ਮਸਟੂਡੂਨ ਕਲਾਈਂਟ"
 
-#: main.cpp:114
+#: main.cpp:117
 #, fuzzy, kde-format
 #| msgid "© 2021-2023 Carl Schwan, 2021-2023 KDE Community"
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© ੨੦੨੧-੨੦੨੩ Carl Schwan, 2021-2023 KDE ਕਮਿਊਨਟੀ"
 
-#: main.cpp:115
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "ਕਾਰਲ ਸਚਵਾਨ"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:119 main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "ਪਰਬੰਧਕ"
 
-#: main.cpp:120
+#: main.cpp:123
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ ੨੦੨੩"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:133
+#: main.cpp:140
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr ""
 
-#: main.cpp:134
+#: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr ""
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr ""
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "The text to share."
 msgstr ""
 
-#: main.cpp:140
+#: main.cpp:147
 #, kde-format
 msgid "Internal usage only."
 msgstr ""
@@ -4409,46 +4444,46 @@ msgctxt "@title"
 msgid "Post by %1"
 msgstr ""
 
-#: tokodonapplication.cpp:13
+#: tokodonapplication.cpp:14
 #, fuzzy, kde-format
 #| msgid "Accounts"
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "ਖਾਤੇ"
 
-#: tokodonapplication.cpp:54
+#: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr ""
 
-#: tokodonapplication.cpp:55
+#: tokodonapplication.cpp:60 tokodonapplication.cpp:123
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "ਸੰਰਚਨਾ"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:67
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "ਖਾਤਾ ਜੋੜੋ"
 
-#: tokodonapplication.cpp:93
+#: tokodonapplication.cpp:82
+#, fuzzy, kde-format
+#| msgid "%1 wrote a new post"
+msgctxt "@action:button"
+msgid "Write a New Post"
+msgstr "%1 ਨੇ ਨਵੀਂ ਪੋਸਟ ਲਿਖੀ ਹੈ"
+
+#: tokodonapplication.cpp:115
 #, fuzzy, kde-format
 #| msgid "Switch user"
 msgctxt "@action:button"
-msgid "Switch %1"
+msgid "Switch '%1'"
 msgstr "ਵਰਤੋਂਕਾਰ ਬਦਲੋ"
-
-#: tokodonapplication.cpp:101
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgctxt "@action:button"
-msgid "Configure %1"
-msgstr "ਸੰਰਚਨਾ"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4545,6 +4580,15 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
 
+#~ msgid "Login"
+#~ msgstr "ਲਾਗਇਨ"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@action:button"
+#~ msgid "Configure %1"
+#~ msgstr "ਸੰਰਚਨਾ"
+
 #, fuzzy
 #~| msgid "Spellchecking"
 #~ msgid "Spell Checking"
@@ -4578,9 +4622,6 @@ msgstr "ਟਿਕਾਣਾ"
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
 #~ msgstr "ਸੋਧੋ"
-
-#~ msgid "Settings"
-#~ msgstr "ਸੈਟਿੰਗਾਂ"
 
 #~ msgctxt "@title:window"
 #~ msgid "Settings"

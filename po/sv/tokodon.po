@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-08-07 06:47+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -411,7 +411,7 @@ msgstr "Redigera profil"
 msgid "Account editor"
 msgstr "Kontoeditor"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:562
+#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
 #, kde-format
 msgid "Follow Requests"
 msgstr "Förfrågan om att följa"
@@ -552,7 +552,7 @@ msgstr "Inga emoji"
 msgid "View profile"
 msgstr "Visa profil"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:609
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
 #, kde-format
 msgid "Conversations"
 msgstr "Konversationer"
@@ -639,7 +639,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Är du säker på att du vill ta bort listan?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:655
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
 #, kde-format
 msgid "Explore"
 msgstr "Utforska"
@@ -760,7 +760,6 @@ msgid "Welcome"
 msgstr "Välkommen"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
-#: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "Välkommen till Tokodon"
@@ -921,7 +920,7 @@ msgstr "Misslyckades kontakta server: %1. Kontrollera proxyinställningarna."
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/LoginFlow/ServersPage.qml:108
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -965,14 +964,14 @@ msgid "Server URL must not be empty!"
 msgstr "Serverwebbadressen får inte vara tom."
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:94
+#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Nätverksinställningar"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:100
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1012,7 +1011,6 @@ msgid "Reason"
 msgstr "Orsak"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
-#: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr "Registrera"
@@ -1069,128 +1067,167 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "Öppna externt"
 
-#: content/ui/LoginFlow/WelcomePage.qml:36
-#, kde-format
-msgid "Learn More"
-msgstr "Ta reda på mer"
+#: content/ui/LoginFlow/WelcomePage.qml:47
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgctxt "@info"
+msgid "Tokodon"
+msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:60
+#: content/ui/LoginFlow/WelcomePage.qml:56
 #, kde-format
-msgid "Login"
-msgstr "Logga in"
+msgctxt "@info"
+msgid ""
+"Browse the Fediverse and connect with people on Mastodon (and other "
+"compatible software)."
+msgstr ""
 
-#: content/ui/Main.qml:121
+#: content/ui/LoginFlow/WelcomePage.qml:72
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgctxt "@action:button Pick a Mastodon server"
+msgid "Pick a Server"
+msgstr "Välj en server"
+
+#: content/ui/LoginFlow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Edit Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use an Existing Account"
+msgstr "Redigera konto"
+
+#: content/ui/LoginFlow/WelcomePage.qml:95
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "Inställningar"
+
+#: content/ui/LoginFlow/WelcomePage.qml:109
+#, kde-format
+msgctxt "@info Compatible with Mastodon"
+msgid "Compatible with"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:119
+#, kde-format
+msgctxt "@action:button"
+msgid "Compatible with Mastodon"
+msgstr ""
+
+#: content/ui/Main.qml:125
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Öppna som…"
 
-#: content/ui/Main.qml:123
+#: content/ui/Main.qml:127
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Svara som…"
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:129
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Favorit som…"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:131
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Förstärk som…"
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:133
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Bokmärk som…"
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Okänd åtgärd"
 
-#: content/ui/Main.qml:231 content/ui/Main.qml:269
+#: content/ui/Main.qml:234 content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr "Skriv ett nytt inlägg"
 
-#: content/ui/Main.qml:293
+#: content/ui/Main.qml:296
 #, kde-format
 msgid "Reply to post"
 msgstr "Svara på inlägg"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:485
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Felsök"
 
-#: content/ui/Main.qml:493
+#: content/ui/Main.qml:495
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Modereringsverktyg"
 
-#: content/ui/Main.qml:520
+#: content/ui/Main.qml:522
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:534
 #, kde-format
 msgid "Home"
 msgstr "Hem"
 
-#: content/ui/Main.qml:547 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Underrättelser"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:580
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:595
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:623
+#: content/ui/Main.qml:625
 #, kde-format
 msgid "Favourites"
 msgstr "Favoriter"
 
-#: content/ui/Main.qml:639
+#: content/ui/Main.qml:641
 #, kde-format
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: content/ui/Main.qml:669
+#: content/ui/Main.qml:671
 #, kde-format
 msgid "Search"
 msgstr "Sök"
 
-#: content/ui/Main.qml:684
+#: content/ui/Main.qml:686
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Kungörelser"
 
-#: content/ui/Main.qml:699
+#: content/ui/Main.qml:701
 #, kde-format
 msgid "Lists"
 msgstr "Listor"
 
-#: content/ui/Main.qml:847
+#: content/ui/Main.qml:831
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3457,29 +3494,29 @@ msgstr "Återställ"
 msgid "Appearance"
 msgstr "Utseende"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:29
+#: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Accounts"
 msgstr "Konton"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:41
+#: content/ui/Settings/TokodonConfigurationView.qml:43
 #, kde-format
 msgid "Network Proxy"
 msgstr "Nätverksproxy"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:47
+#: content/ui/Settings/TokodonConfigurationView.qml:49
 #, kde-format
 msgid "About Tokodon"
 msgstr "Om Tokodon"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:50
-#: content/ui/Settings/TokodonConfigurationView.qml:57
+#: content/ui/Settings/TokodonConfigurationView.qml:52
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Om"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:54
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About KDE"
 msgstr "Om KDE"
@@ -3971,79 +4008,79 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 dagar"
 
-#: editor/posteditorbackend.cpp:271
+#: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Ett okänt fel uppstod."
 
-#: main.cpp:63
+#: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Tar emot utskickade underrättelser"
 
-#: main.cpp:110
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon-klient"
 
-#: main.cpp:114
+#: main.cpp:117
 #, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© 2021-2024 Carl Schwan, 2021-2023 KDE-gemenskapen"
 
-#: main.cpp:115
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:119 main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "Underhåll"
 
-#: main.cpp:120
+#: main.cpp:123
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Luna Jernberg,Stefan Asserhäll"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "droidbittin@gmail.com,stefan.asserhall@gmail.com"
 
-#: main.cpp:133
+#: main.cpp:140
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "Klient för decentraliserade sociala nätverk som Mastodon"
 
-#: main.cpp:134
+#: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Stöder https och web+ap webbadresschema"
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Dela en textrad i det fristående fönstret."
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "The text to share."
 msgstr "Texten att dela."
 
-#: main.cpp:140
+#: main.cpp:147
 #, kde-format
 msgid "Internal usage only."
 msgstr "Bara intern användning."
@@ -4162,41 +4199,45 @@ msgctxt "@title"
 msgid "Post by %1"
 msgstr "Inlägg av %1"
 
-#: tokodonapplication.cpp:13
+#: tokodonapplication.cpp:14
 #, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "Konto"
 
-#: tokodonapplication.cpp:54
+#: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "Byt till '%1'"
 
-#: tokodonapplication.cpp:55
+#: tokodonapplication.cpp:60 tokodonapplication.cpp:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "Anpassa '%1'"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Lägg till konto"
 
-#: tokodonapplication.cpp:93
-#, kde-format
+#: tokodonapplication.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Write a New Post"
 msgctxt "@action:button"
-msgid "Switch %1"
-msgstr "Byt %1"
+msgid "Write a New Post"
+msgstr "Skriv ett nytt inlägg"
 
-#: tokodonapplication.cpp:101
-#, kde-format
+#: tokodonapplication.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Switch %1"
 msgctxt "@action:button"
-msgid "Configure %1"
-msgstr "Anpassa %1"
+msgid "Switch '%1'"
+msgstr "Byt %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4292,6 +4333,16 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Mål"
 
+#~ msgid "Learn More"
+#~ msgstr "Ta reda på mer"
+
+#~ msgid "Login"
+#~ msgstr "Logga in"
+
+#~ msgctxt "@action:button"
+#~ msgid "Configure %1"
+#~ msgstr "Anpassa %1"
+
 #~ msgid "Spell Checking"
 #~ msgstr "Stavningskontroll"
 
@@ -4354,9 +4405,6 @@ msgstr "Mål"
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
 #~ msgstr "Redigera"
-
-#~ msgid "Settings"
-#~ msgstr "Inställningar"
 
 #~ msgctxt "@title:window"
 #~ msgid "Settings"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-22 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:39+0000\n"
 "PO-Revision-Date: 2024-08-15 05:49+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -411,7 +411,7 @@ msgstr "編輯個人檔案"
 msgid "Account editor"
 msgstr "帳號編輯器"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:562
+#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
 #, kde-format
 msgid "Follow Requests"
 msgstr "跟隨請求"
@@ -549,7 +549,7 @@ msgstr "無表情符號"
 msgid "View profile"
 msgstr "檢視個人檔案"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:609
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
 #, kde-format
 msgid "Conversations"
 msgstr "對話"
@@ -636,7 +636,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "您確定要刪除這個列表嗎？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:655
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
 #, kde-format
 msgid "Explore"
 msgstr "探索"
@@ -753,7 +753,6 @@ msgid "Welcome"
 msgstr "歡迎"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
-#: content/ui/LoginFlow/WelcomePage.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
 msgstr "歡迎來到 Tokodon"
@@ -912,7 +911,7 @@ msgstr "伺服器連線失敗：%1。請檢查您的代理伺服器設定。"
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:107
+#: content/ui/LoginFlow/ServersPage.qml:108
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -954,14 +953,14 @@ msgid "Server URL must not be empty!"
 msgstr "伺服器網址不能是空白的！"
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:94
+#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "網路設定"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:100
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1001,7 +1000,6 @@ msgid "Reason"
 msgstr "原因"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
-#: content/ui/LoginFlow/WelcomePage.qml:45
 #, kde-format
 msgid "Register"
 msgstr "註冊"
@@ -1058,128 +1056,167 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "在外部開啟"
 
-#: content/ui/LoginFlow/WelcomePage.qml:36
-#, kde-format
-msgid "Learn More"
-msgstr "了解更多"
+#: content/ui/LoginFlow/WelcomePage.qml:47
+#, fuzzy, kde-format
+#| msgid "Tokodon"
+msgctxt "@info"
+msgid "Tokodon"
+msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:60
+#: content/ui/LoginFlow/WelcomePage.qml:56
 #, kde-format
-msgid "Login"
-msgstr "登入"
+msgctxt "@info"
+msgid ""
+"Browse the Fediverse and connect with people on Mastodon (and other "
+"compatible software)."
+msgstr ""
 
-#: content/ui/Main.qml:121
+#: content/ui/LoginFlow/WelcomePage.qml:72
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgctxt "@action:button Pick a Mastodon server"
+msgid "Pick a Server"
+msgstr "選取伺服器"
+
+#: content/ui/LoginFlow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Edit Account"
+msgctxt "@action:button Use an existing Mastodon account"
+msgid "Use an Existing Account"
+msgstr "編輯帳號"
+
+#: content/ui/LoginFlow/WelcomePage.qml:95
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "設定"
+
+#: content/ui/LoginFlow/WelcomePage.qml:109
+#, kde-format
+msgctxt "@info Compatible with Mastodon"
+msgid "Compatible with"
+msgstr ""
+
+#: content/ui/LoginFlow/WelcomePage.qml:119
+#, kde-format
+msgctxt "@action:button"
+msgid "Compatible with Mastodon"
+msgstr ""
+
+#: content/ui/Main.qml:125
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "以身份開啟…"
 
-#: content/ui/Main.qml:123
+#: content/ui/Main.qml:127
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "以身份回覆…"
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:129
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "以身份加入最愛…"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:131
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "以身份轉嘟…"
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:133
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "以身份加入書籤…"
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知動作"
 
-#: content/ui/Main.qml:231 content/ui/Main.qml:269
+#: content/ui/Main.qml:234 content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr "撰寫新嘟文"
 
-#: content/ui/Main.qml:293
+#: content/ui/Main.qml:296
 #, kde-format
 msgid "Reply to post"
 msgstr "回覆給嘟文"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:485
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "除錯"
 
-#: content/ui/Main.qml:493
+#: content/ui/Main.qml:495
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "站務工具"
 
-#: content/ui/Main.qml:520
+#: content/ui/Main.qml:522
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "設定"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:534
 #, kde-format
 msgid "Home"
 msgstr "首頁"
 
-#: content/ui/Main.qml:547 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:580
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:595
 #, kde-format
 msgid "Global"
 msgstr "全域"
 
-#: content/ui/Main.qml:623
+#: content/ui/Main.qml:625
 #, kde-format
 msgid "Favourites"
 msgstr "最愛"
 
-#: content/ui/Main.qml:639
+#: content/ui/Main.qml:641
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: content/ui/Main.qml:669
+#: content/ui/Main.qml:671
 #, kde-format
 msgid "Search"
 msgstr "搜尋"
 
-#: content/ui/Main.qml:684
+#: content/ui/Main.qml:686
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "公告"
 
-#: content/ui/Main.qml:699
+#: content/ui/Main.qml:701
 #, kde-format
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:847
+#: content/ui/Main.qml:831
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3427,29 +3464,29 @@ msgstr "重設"
 msgid "Appearance"
 msgstr "外觀"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:29
+#: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Accounts"
 msgstr "帳號"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:41
+#: content/ui/Settings/TokodonConfigurationView.qml:43
 #, kde-format
 msgid "Network Proxy"
 msgstr "網路代理伺服器"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:47
+#: content/ui/Settings/TokodonConfigurationView.qml:49
 #, kde-format
 msgid "About Tokodon"
 msgstr "關於 Tokodon"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:50
-#: content/ui/Settings/TokodonConfigurationView.qml:57
+#: content/ui/Settings/TokodonConfigurationView.qml:52
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "關於"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:54
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About KDE"
 msgstr "關於 KDE"
@@ -3938,79 +3975,79 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 天"
 
-#: editor/posteditorbackend.cpp:271
+#: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "發生未知的錯誤。"
 
-#: main.cpp:63
+#: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "正在接收推送通知"
 
-#: main.cpp:110
+#: main.cpp:113
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:112
+#: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
 msgstr "Mastodon 用戶端"
 
-#: main.cpp:114
+#: main.cpp:117
 #, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgstr "© 2021-2024 Carl Schwan, 2021-2024 KDE 社群"
 
-#: main.cpp:115
+#: main.cpp:118
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:116 main.cpp:121
+#: main.cpp:119 main.cpp:124
 #, kde-format
 msgid "Maintainer"
 msgstr "維護者"
 
-#: main.cpp:120
+#: main.cpp:123
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kisaragi Hiu"
 
-#: main.cpp:125
+#: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: main.cpp:133
+#: main.cpp:140
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
 msgstr "去中心化社群媒體（如 Mastodon）的用戶端"
 
-#: main.cpp:134
+#: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "支援 https 和 web+ap 網址機制"
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "用獨立撰寫工具分享一行文字。"
 
-#: main.cpp:136
+#: main.cpp:143
 #, kde-format
 msgid "The text to share."
 msgstr "要分享的文字。"
 
-#: main.cpp:140
+#: main.cpp:147
 #, kde-format
 msgid "Internal usage only."
 msgstr "僅內部用。"
@@ -4126,43 +4163,46 @@ msgctxt "@title"
 msgid "Post by %1"
 msgstr "來自 %1 的嘟文"
 
-#: tokodonapplication.cpp:13
+#: tokodonapplication.cpp:14
 #, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
 msgstr "帳號"
 
-#: tokodonapplication.cpp:54
+#: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
 msgstr "切換到「%1」"
 
-#: tokodonapplication.cpp:55
+#: tokodonapplication.cpp:60 tokodonapplication.cpp:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
 msgstr "設定「%1」"
 
-#: tokodonapplication.cpp:62
+#: tokodonapplication.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "新增帳號"
 
-# %1 是帳號的 display name
-#: tokodonapplication.cpp:93
-#, kde-format
+#: tokodonapplication.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Write a New Post"
 msgctxt "@action:button"
-msgid "Switch %1"
-msgstr "切換 %1"
+msgid "Write a New Post"
+msgstr "撰寫新嘟文"
 
 # %1 是帳號的 display name
-#: tokodonapplication.cpp:101
-#, kde-format
+#: tokodonapplication.cpp:115
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Switch %1"
 msgctxt "@action:button"
-msgid "Configure %1"
-msgstr "設定 %1"
+msgid "Switch '%1'"
+msgstr "切換 %1"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
@@ -4258,6 +4298,17 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "目的地"
 
+#~ msgid "Learn More"
+#~ msgstr "了解更多"
+
+#~ msgid "Login"
+#~ msgstr "登入"
+
+# %1 是帳號的 display name
+#~ msgctxt "@action:button"
+#~ msgid "Configure %1"
+#~ msgstr "設定 %1"
+
 #~ msgid "Spell Checking"
 #~ msgstr "拼字檢查"
 
@@ -4318,9 +4369,6 @@ msgstr "目的地"
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
 #~ msgstr "編輯"
-
-#~ msgid "Settings"
-#~ msgstr "設定"
 
 #~ msgctxt "@title:window"
 #~ msgid "Settings"
