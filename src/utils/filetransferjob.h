@@ -6,7 +6,6 @@
 #include <KJob>
 #include <QSaveFile>
 
-class QNetworkReply;
 class AbstractAccount;
 
 class FileTransferJob final : public KJob

@@ -5,8 +5,6 @@
 
 #include <QtQml>
 
-class AbstractAccount;
-
 /**
  * @brief Handles miscenallous operations, mostly a glue between C++ and QML.
  */

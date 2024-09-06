@@ -13,11 +13,9 @@
 #include <QJsonObject>
 #include <QtQml/qqmlregistration.h>
 
-class Attachment;
 class Notification;
 class QNetworkReply;
 class QHttpMultiPart;
-class QFile;
 class Preferences;
 
 /**
