@@ -296,7 +296,7 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
                 {AdminAccountAction::ApproveAccount, i18n("Could not accept account")},
                 {AdminAccountAction::RejectAccount, i18n("Could not reject account")},
                 {AdminAccountAction::ActionAgainstAccount, i18n("Could not take action against the account")},
-                {AdminAccountAction::EnableDisabledAccount, i18n("Could not enable  the disabled account")},
+                {AdminAccountAction::EnableDisabledAccount, i18n("Could not enable the disabled account")},
                 {AdminAccountAction::UnsilenceAccount, i18n("Could not unsilence the account")},
                 {AdminAccountAction::UnsuspendAccount, i18n("Could not unsuspend the account")},
                 {AdminAccountAction::UnmarkSensitiveAccount, i18n("Could not mark the account as not sensitive")},
