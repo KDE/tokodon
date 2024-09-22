@@ -1,561 +1,551 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the tokodon package.
+# Translation of tokodon to Norwegian Nynorsk
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2024 Karl Ove Hufthammer <karl@huftis.org>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-22 00:40+0000\n"
-"PO-Revision-Date: 2024-09-02 09:53+0300\n"
-"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2024-09-21 15:14+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.11.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
 msgid "Could not follow account"
-msgstr "Не вдалося встановити стеження за обліковим записом"
+msgstr "Klarte ikkje følgja kontoen"
 
 #: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not unfollow account"
-msgstr "Не вдалося скасувати стеження за обліковим записом"
+msgstr "Klarte ikkje slutta å følgja kontoen"
 
 #: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not block account"
-msgstr "Не вдалося заблокувати обліковий запис"
+msgstr "Klarte ikkje blokkera kontoen"
 
 #: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unblock account"
-msgstr "Не вдалося розблокувати обліковий запис"
+msgstr "Klarte ikkje slutta å blokkera kontoen"
 
 #: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not mute account"
-msgstr "Не вдалося заборонити повідомлення від облікового запису"
+msgstr "Klarte ikkje målbinda kontoen"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not unmute account"
-msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
+msgstr "Klarte ikkje slutta å målbinda av kontoen"
 
 #: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not feature account"
-msgstr "Не вдалося встановити рекомендування облікового запису"
+msgstr "Klarte ikkje framheva kontoen"
 
 #: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not unfeature account"
-msgstr "Не вдалося скасувати рекомендування облікового запису"
+msgstr "Klarte ikkje slutta å framheva kontoen"
 
 #: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not edit note about an account"
-msgstr "Не вдалося змінити нотатку щодо облікового запису"
+msgstr "Klarte ikkje redigera merknadar om kontoen"
 
 #: account/notificationhandler.cpp:30 account/notificationhandler.cpp:31
 #, kde-format
 msgid "View Post"
-msgstr "Переглянути допис"
+msgstr "Vis innlegg"
 
 #: account/notificationhandler.cpp:51 account/notificationhandler.cpp:52
 #, kde-format
 msgid "View Profile"
-msgstr "Переглянути профіль"
+msgstr "Vis profil"
 
 #: account/notificationhandler.cpp:74
 #, kde-format
 msgid "%1 mentioned you"
-msgstr "Вас згадано у дописі %1"
+msgstr "%1 nemnde deg"
 
 #: account/notificationhandler.cpp:82
 #: content/ui/Notifications/UserInteractionLabel.qml:86
 #, kde-format
 msgid "%1 wrote a new post"
-msgstr "%1 створено новий допис"
+msgstr "%1 skreiv eit nytt innlegg"
 
 #: account/notificationhandler.cpp:90
 #: content/ui/Notifications/UserInteractionLabel.qml:76
 #, kde-format
 msgid "%1 boosted your post"
-msgstr "Ваш допис підсилено %1"
+msgstr "%1 framheva innlegget ditt"
 
 #: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
 #, kde-format
 msgid "%1 followed you"
-msgstr "%1 стежить за вашими дописами"
+msgstr "%1 følgjer deg"
 
 #: account/notificationhandler.cpp:106
 #, kde-format
 msgid "%1 requested to follow you"
-msgstr "%1 надіслано запит щодо стеження за вами"
+msgstr "%1 ba om å få følgja deg"
 
 #: account/notificationhandler.cpp:114
 #: content/ui/Notifications/UserInteractionLabel.qml:80
 #, kde-format
 msgid "%1 favorited your post"
-msgstr "Ваш допис позначено %1 як улюблений"
+msgstr "%1 merkte innlegget ditt som favoritt"
 
 #: account/notificationhandler.cpp:122
 #, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Голосування %1 завершено"
+msgstr "Avstemminga til %1 er avslutta"
 
 #: account/notificationhandler.cpp:130
 #, kde-format
 msgid "%1 edited a post"
-msgstr "%1 змінено допис"
+msgstr "%1 redigerte eit innlegg"
 
 #: account/profileeditor.cpp:151
 #, kde-format
 msgid "Image is too big"
-msgstr "Зображення є надто великим"
+msgstr "Biletet er for stort"
 
 #: account/profileeditor.cpp:164
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr ""
-"Непідтримуваний файл зображення. Передбачено підтримку лише файлів jpeg, png "
-"і gif."
+msgstr "Ustøtta biletformat. Berre JPEG, PNG og GIF er støtta."
 
 #: account/profileeditor.cpp:278
 #, kde-format
 msgid "Account details saved"
-msgstr "Подробиці щодо облікового запису збережено"
+msgstr "Kontodetaljane er no lagra"
 
 #: account/socialgraphmodel.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
-msgstr "Запити щодо стеження"
+msgstr "Følgjeførespurnadar"
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
-msgstr "Ті, хто стежить"
+msgstr "Følgjarar"
 
 #: account/socialgraphmodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Following"
-msgstr "Стежить"
+msgstr "Følgjer"
 
 #: account/socialgraphmodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
-msgstr "Позбавлені голосу користувачі"
+msgstr "Målbundne brukarar"
 
 #: account/socialgraphmodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
-msgstr "Заблоковані користувачі"
+msgstr "Blokkerte brukarar"
 
 #: account/socialgraphmodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Особливі користувачі"
+msgstr "Framheva brukarar"
 
 #: account/socialgraphmodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 улюблений запис"
-msgstr[1] "%1 улюблені записи"
-msgstr[2] "%1 улюблених записів"
-msgstr[3] "%1 улюблений запис"
+msgstr[0] "%1 favorittmerkt"
+msgstr[1] "%1 favorittmerkte"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 підсилення"
-msgstr[1] "%1 підсилення"
-msgstr[2] "%1 підсилень"
-msgstr[3] "%1 підсилення"
+msgstr[0] "%1 framheving"
+msgstr[1] "%1 framhevingar"
 
 #: account/socialgraphmodel.cpp:49
 #, kde-format
 msgid "No follow requests"
-msgstr "Немає запитів щодо стеження"
+msgstr "Ingen følgjeførespurndar"
 
 #: account/socialgraphmodel.cpp:51
 #, kde-format
 msgid "No followers"
-msgstr "Немає тих, хто стежить"
+msgstr "Ingen følgjarar"
 
 #: account/socialgraphmodel.cpp:53
 #, kde-format
 msgid "No followed users"
-msgstr "Немає користувачів, за якими ведеться стеження"
+msgstr "Følgjer ikkje nokon"
 
 #: account/socialgraphmodel.cpp:55
 #, kde-format
 msgid "No muted users"
-msgstr "Немає позбавлених голосу користувачів"
+msgstr "Ingen målbunde brukarar"
 
 #: account/socialgraphmodel.cpp:57
 #, kde-format
 msgid "No blocked users"
-msgstr "Немає заблокованих користувачів"
+msgstr "Ingen blokkerte brukarar"
 
 #: account/socialgraphmodel.cpp:59
 #, kde-format
 msgid "No featured users"
-msgstr "Немає особливих користувачів"
+msgstr "Ingen framheva brukarar"
 
 #: account/socialgraphmodel.cpp:61
 #, kde-format
 msgid "No users favourited this post"
-msgstr "Жоден користувач не зробив цей допис улюбленим"
+msgstr "Ingen har merkt innlegget som favoritt"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No users boosted this post"
-msgstr "Жоден користувач не підсилив цей допис"
+msgstr "Ingen har framheva innlegget"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
 msgid "Could not accept account"
-msgstr "Не вдалося прийняти обліковий запис"
+msgstr "Klarte ikkje godta kontoen"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
 msgid "Could not reject account"
-msgstr "Не вдалося відмовити в обліковому записі"
+msgstr "Klarte ikkje avvisa kontoen"
 
 #: admin/accounttoolmodel.cpp:298
 #, kde-format
 msgid "Could not take action against the account"
-msgstr "Не вдалося виконати дію щодо облікового запису"
+msgstr "Klarte ikkje gjera handling på kontoen"
 
 #: admin/accounttoolmodel.cpp:299
 #, fuzzy, kde-format
 #| msgid "Could not enable  the disabled account"
 msgid "Could not enable the disabled account"
-msgstr "Не вдалося увімкнути вимкнений обліковий запис"
+msgstr "Klarte ikkje aktivera den deaktiverte kontoen"
 
 #: admin/accounttoolmodel.cpp:300
 #, kde-format
 msgid "Could not unsilence the account"
-msgstr "Не вдалося скасувати заглушення для облікового запису"
+msgstr "Klarte ikkje stoppa å målbinda kontoen"
 
 #: admin/accounttoolmodel.cpp:301
 #, kde-format
 msgid "Could not unsuspend the account"
-msgstr "Не вдалося скасувати призупинення для облікового запису"
+msgstr ""
 
 #: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not mark the account as not sensitive"
-msgstr "Не вдалося позначити обліковий запис як неконфіденційний"
+msgstr "Klarte ikkje merkja kontoen som ikkje potensielt støytande"
 
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr "Призупинено"
+msgstr ""
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
 msgctxt "login status"
 msgid "Limited"
-msgstr "Обмежено"
+msgstr "Avgrensa"
 
 #: admin/adminaccountinfo.cpp:26
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr "Позначено як конфіденційний"
+msgstr ""
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
 msgctxt "login status"
 msgid "Frozen"
-msgstr "Заморожено"
+msgstr "Frosen"
 
 #: admin/adminaccountinfo.cpp:30
 #, kde-format
 msgctxt "login status"
 msgid "Email Not confirmed"
-msgstr "Адресу ел. пошти не підтверджено"
+msgstr "E-postadresse ikkje stadfesta"
 
 #: admin/adminaccountinfo.cpp:32
 #, kde-format
 msgctxt "login status"
 msgid "Not Approved"
-msgstr "Не схвалений"
+msgstr "Ikkje godkjend"
 
 #: admin/adminaccountinfo.cpp:34
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr "Обмежень не накладено"
+msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
-msgstr "Сталася помилка при виконанні запиту PUT для оновлення блоку домену."
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
 msgid "Could not resolve report"
-msgstr "Не вдалося розв'язати скаргу"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:195
 #, kde-format
 msgid "Could not unresolve report"
-msgstr "Не вдалося скасувати розв'язання скарги"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:196
 #, kde-format
 msgid "Could not assign report"
-msgstr "Не вдалося призначити скаргу"
+msgstr ""
 
 #: admin/reporttoolmodel.cpp:197
 #, kde-format
 msgid "Could not unassign report"
-msgstr "Не вдалося скасувати призначення скарги"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:120
 #, kde-format
 msgid "Follows you"
-msgstr "Стежить за вами"
+msgstr "Følgjer deg"
 
 #: content/ui/AccountInfo.qml:214
 #, kde-format
 msgid "Follow Requested"
-msgstr "Надіслано запит щодо стеження"
+msgstr "Følgjeførespurnad"
 
 #: content/ui/AccountInfo.qml:217
 #, kde-format
 msgid "Unfollow"
-msgstr "Зняти слідкування"
+msgstr "Slutt å følgja"
 
 #: content/ui/AccountInfo.qml:219
 #, kde-format
 msgid "Follow"
-msgstr "Стежити"
+msgstr "Følg"
 
 #: content/ui/AccountInfo.qml:244
 #, kde-format
 msgid "Stop notifying me when %1 posts."
-msgstr "Припинити сповіщення про дописи %1."
+msgstr "Ikkje lenger varsla meg når %1 legg ut innlegg."
 
 #: content/ui/AccountInfo.qml:246
 #, kde-format
 msgid "Notify me when %1 posts."
-msgstr "Сповіщати про дописи %1."
+msgstr "Varsla meg når %1 legg ut innlegg."
 
 #: content/ui/AccountInfo.qml:263
 #, kde-format
 msgid "Hide Boosts from %1"
-msgstr "Приховати підсилення від %1"
+msgstr "Gøym framhevingar frå %1"
 
 #: content/ui/AccountInfo.qml:265
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Показати підсилення від %1"
+msgstr "Viser framhevingar frå %1"
 
 #: content/ui/AccountInfo.qml:281
 #, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Припинити рекомендувати цей профіль"
+msgstr "Ikkje lenger framhev profilen"
 
 #: content/ui/AccountInfo.qml:283
 #, kde-format
 msgid "Feature This Profile"
-msgstr "Рекомендувати цей профіль"
+msgstr "Framhev profilen"
 
 #: content/ui/AccountInfo.qml:299
 #, kde-format
 msgid "Unmute"
-msgstr "Дозволити повідомлення"
+msgstr "Slutt å målbinda"
 
 #: content/ui/AccountInfo.qml:301
 #, kde-format
 msgid "Mute"
-msgstr "Заборонити повідомлення"
+msgstr "Målbind"
 
 #: content/ui/AccountInfo.qml:317
 #, kde-format
 msgid "Unblock"
-msgstr "Розблокувати"
+msgstr "Avblokker"
 
 #: content/ui/AccountInfo.qml:319
 #, kde-format
 msgid "Block"
-msgstr "Заблокувати"
+msgstr "Blokker"
 
 #: content/ui/AccountInfo.qml:333 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
-msgstr "Поскаржитися…"
+msgstr "Rapporter …"
 
 #: content/ui/AccountInfo.qml:339
 #, kde-format
 msgid "Edit Profile"
-msgstr "Змінити профіль"
+msgstr "Rediger profil"
 
 #: content/ui/AccountInfo.qml:343
 #, kde-format
 msgid "Account editor"
-msgstr "Редактор облікових записів"
+msgstr "Kontoredigering"
 
 #: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
 #, kde-format
 msgid "Follow Requests"
-msgstr "Запити щодо стеження"
+msgstr "Følgjeførespurnadar"
 
 #: content/ui/AccountInfo.qml:358
 #, kde-format
 msgid "Muted Users"
-msgstr "Позбавлені голосу користувачі"
+msgstr "Målbundne brukarar"
 
 #: content/ui/AccountInfo.qml:364
 #, kde-format
 msgid "Blocked Users"
-msgstr "Заблоковані користувачі"
+msgstr "Blokkerte brukarar"
 
 #: content/ui/AccountInfo.qml:370
 #, kde-format
 msgid "Featured Users"
-msgstr "Особливі користувачі"
+msgstr "Framheva brukarar"
 
 #: content/ui/AccountInfo.qml:375
 #, kde-format
 msgid "Copy Link"
-msgstr "Копіювати посилання"
+msgstr "Kopier lenkja"
 
 #: content/ui/AccountInfo.qml:378
 #, kde-format
 msgid "Profile link copied."
-msgstr "Посилання на профіль скопійовано."
+msgstr "Profillenkje kopiert."
 
 #: content/ui/AccountInfo.qml:468
 #, kde-format
 msgid "Note:"
-msgstr "Примітка:"
+msgstr "Merknad:"
 
 #: content/ui/AccountInfo.qml:476
 #, kde-format
 msgid "Saved"
-msgstr "Збережено"
+msgstr "Lagra"
 
 #: content/ui/AccountInfo.qml:491
 #, kde-format
 msgid "Click to add a note"
-msgstr "Натисніть, щоб додати нотатку"
+msgstr "Trykk for å leggja til merknad"
 
 #: content/ui/AccountInfo.qml:602
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
-msgstr[0] "<b>%1</b> допис"
-msgstr[1] "<b>%1</b> дописи"
-msgstr[2] "<b>%1</b> дописів"
-msgstr[3] "<b>%1</b> допис"
+msgstr[0] "<b>%1</b> innlegg"
+msgstr[1] "<b>%1</b> innlegg"
 
 #: content/ui/AccountInfo.qml:615
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
-msgstr[0] "Має <b>%1</b> того, хто стежить"
-msgstr[1] "Має <b>%1</b> тих, хто стежать"
-msgstr[2] "Має <b>%1</b> тих, хто стежать"
-msgstr[3] "Має <b>одного</b> того, хто стежить"
+msgstr[0] "<b>%1</b> følgjar"
+msgstr[1] "<b>%1</b> følgjarar"
 
 #: content/ui/AccountInfo.qml:628
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
-msgstr[0] "Стежить за <b>%1</b>"
-msgstr[1] "Стежить за <b>%1</b>"
-msgstr[2] "Стежить за <b>%1</b>"
-msgstr[3] "Стежить за <b>%1</b>"
+msgstr[0] "følgjer <b>%1</b>"
+msgstr[1] "følgjer <b>%1</b>"
 
 #: content/ui/AccountInfo.qml:655
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/AccountInfo.qml:659
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
-msgstr "Дописи і відповіді"
+msgstr "Innlegg og svar"
 
 #: content/ui/AccountInfo.qml:663
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
-msgstr "Мультимедіа"
+msgstr "Mediefiler"
 
 #: content/ui/AccountInfo.qml:692
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
-msgstr "Приховати підсилення"
+msgstr "Gøym framhevingar"
 
 #: content/ui/AccountInfo.qml:712
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
 #: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr "Оприлюднити"
+msgstr "Del"
 
 #: content/ui/Android/ShareAction.qml:16 content/ui/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr "Оприлюднити позначені мультимедійні дані"
+msgstr "Del valde mediefiler"
 
 #: content/ui/AnnouncementsPage.qml:18
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr "Оголошення"
+msgstr "Kunngjeringar"
 
 #: content/ui/AnnouncementsPage.qml:41
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
-msgstr "Оголошення від %1"
+msgstr "Kunngjeringar på %1"
 
 #: content/ui/AnnouncementsPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "No announcements"
-msgstr "Немає оголошень"
+msgstr "Ingen kunngjeringar"
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
 msgid "No emojis"
-msgstr "Без емодзі"
+msgstr "Ingen emojiar"
 
 #: content/ui/Components/InlineIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:65
@@ -563,154 +553,152 @@ msgstr "Без емодзі"
 #: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
-msgstr "Переглянути профіль"
+msgstr "Vis profil"
 
 #: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
 #, kde-format
 msgid "Conversations"
-msgstr "Спілкування"
+msgstr "Samtalar"
 
 #: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
-msgstr "Немає спілкувань"
+msgstr "Ingen samtalar"
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr "Збільшити кількість запитів щодо стеження"
+msgstr ""
 
 #: content/ui/Debug/DebugPage.qml:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr "Зменшити кількість запитів щодо стеження"
+msgstr ""
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
-msgstr "Створення списку"
+msgstr "Lag liste"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
-msgstr "Редагування списку"
+msgstr "Rediger liste"
 
 #: content/ui/EditListPage.qml:60
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Tittel"
 
 #: content/ui/EditListPage.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
-msgstr "Показати відповіді"
+msgstr "Vis svar for"
 
 #: content/ui/EditListPage.qml:80
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
-msgstr "Виключення"
+msgstr "Eksklusiv"
 
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
-"Дописи у списку виключення буде виключено зі списку на домашній сторінці."
 
 #: content/ui/EditListPage.qml:102
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
-msgstr "Створити"
+msgstr "Lag"
 
 #: content/ui/EditListPage.qml:104
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
-msgstr "Змінити"
+msgstr "Rediger"
 
 #: content/ui/EditListPage.qml:117
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
-msgstr "Вилучити"
+msgstr "Slett"
 
 #: content/ui/EditListPage.qml:124
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
-msgstr "Вилучення списку"
+msgstr "Slettar liste"
 
 #: content/ui/EditListPage.qml:125
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
-msgstr "Ви справді хочете вилучити цей список?"
+msgstr "Er du sikker på at du vil sletta lista?"
 
 #: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
 #, kde-format
 msgid "Explore"
-msgstr "Ознайомлення"
+msgstr "Utforsk"
 
+# Hovudknappen oppe til høgre, som opnar vindauge for å skriva eit nytt innlegg.
 #: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:90
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
-msgstr "Надіслати"
+msgstr "Skriv innlegg"
 
 #: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
 #, kde-format
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/ExplorePage.qml:60
 #, kde-format
 msgid "Tags"
-msgstr "Мітки"
+msgstr "Merkelappar"
 
 #: content/ui/ExplorePage.qml:141
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
-msgstr[0] "Розмовляє %1 людина"
-msgstr[1] "Розмовляє %1 людей"
-msgstr[2] "Розмовляє %1 людей"
-msgstr[3] "Розмовляє %1 людина"
+msgstr[0] "%1 person pratar"
+msgstr[1] "%1 personar pratar"
 
 #: content/ui/ExplorePage.qml:158
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
-msgstr "Немає тенденцій у дописах"
+msgstr "Ingen innlegg på veg opp"
 
 #: content/ui/ExplorePage.qml:158
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
-msgstr "Немає тенденцій у мітках"
+msgstr "Ingen merkelappar på veg opp"
 
 #: content/ui/FollowDelegate.qml:54
 #, kde-format
 msgid "%1 signed up"
-msgstr "%1 підписано"
+msgstr "%1 registrerte seg"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Notifications"
-msgstr "Сповіщення"
+msgstr "Varslingar"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:22
 #: content/ui/InitialSetup/SetupPassword.qml:20
 #, kde-format
 msgid "Setup Required"
-msgstr "Потрібне налаштовування"
+msgstr "Treng oppsett"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:28
 #, kde-format
@@ -720,15 +708,11 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
-"Tokodon може показувати сповіщення щодо дій, зокрема підсилення ваших "
-"дописів або відповідей на них.\n"
-"\n"
-"Типи показаних сповіщень можна скоригувати після входу до системи."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
 msgid "Allow Notifications"
-msgstr "Дозволити сповіщення"
+msgstr "Tillat varslingar"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:49
 #: content/ui/InitialSetup/SetupWelcome.qml:42
@@ -737,13 +721,13 @@ msgstr "Дозволити сповіщення"
 #: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
-msgstr "Продовжити"
+msgstr "Hald fram"
 
 #: content/ui/InitialSetup/SetupPassword.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Password Service"
-msgstr "Служба паролів"
+msgstr "Passordlagring"
 
 #: content/ui/InitialSetup/SetupPassword.qml:25
 #, kde-format
@@ -755,76 +739,67 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
-"Tokodon потрібна служба паролів для зберігання особистих конфіденційних "
-"відомостей.\n"
-"\n"
-"Tokodon може використовувати KWallet, сховище ключів GNOME або будь-яку "
-"службу, яка сумісна з libsecret.\n"
-"\n"
-"Після встановлення служби запустіть її і перезапустіть Tokodon."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
 #, kde-format
 msgid "Quit Tokodon"
-msgstr "Вийти з Tokodon"
+msgstr "Avslutt Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
 #: content/ui/LoginFlow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr "Вітаємо"
+msgstr "Velkommen"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:30
 #, kde-format
 msgid "Welcome to Tokodon"
-msgstr "Вітаємо у Tokodon"
+msgstr "Velkommen til Tokodon"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
 msgstr ""
-"Перш, ніж ви зможете користуватися Tokodon, слід виконати початкове "
-"налаштовування."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
 msgctxt "@title"
 msgid "Select Language"
-msgstr "Виберіть мову"
+msgstr "Vel språk"
 
 #: content/ui/LanguageSelector.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr "Закрити"
+msgstr "Lukk"
 
 #: content/ui/ListsPage.qml:18
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
-msgstr "Списки"
+msgstr "Lister"
 
 #: content/ui/ListsPage.qml:31
 #, kde-format
 msgid "Create List"
-msgstr "Створити список"
+msgstr "Lag liste"
 
 #: content/ui/ListsPage.qml:67
 #, kde-format
 msgid "No lists"
-msgstr "Немає списків"
+msgstr "Ingen lister"
 
 #: content/ui/ListTimelinePage.qml:20
 #, kde-format
 msgid "Edit List"
-msgstr "Змінити список"
+msgstr "Rediger liste"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
-msgstr "Уповноваження"
+msgstr "Løyve"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:77
 #, kde-format
@@ -832,51 +807,47 @@ msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
-"Щоб продовжити, будь ласка, відкрийте вказане нижче посилання у вашій "
-"програмі для перегляду інтернету і уповноважте Tokodon: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Open Authorization Link"
-msgstr "Відкрити посилання уповноваження"
+msgstr ""
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Authorization Link"
-msgstr "Копіювати посилання уповноваження"
+msgstr ""
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Link copied."
-msgstr "Посилання скопійовано."
+msgstr "Lenkje kopiert."
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use Authorization Code"
-msgstr "Скористатися кодом уповноваження"
+msgstr "Bruk løyvekode"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
 msgstr ""
-"Скористайтеся цим способом входу, якщо наведене вище посилання не "
-"працюватиме."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
-msgstr "Введіть жетон уповноваження:"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr "Проблеми із входом"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr "Під час спроби увійти до сервера виникли проблеми:<br><b>%1</b>"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
 #, kde-format
@@ -886,46 +857,41 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
-"Будь ласка, перевірте, чи запущено службу паролів. Якщо маєте інші проблеми "
-"із входом, ви можете спробувати увійти за допомогою сайта сервера.\n"
-"\n"
-"Ви можете спробувати знову увійти за допомогою розташованої нижче кнопки або "
-"перезапустити Tokodon."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
 msgid "View Website"
-msgstr "Переглянути сайт"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:56
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr "Ще раз спробувати увійти"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:68
 #: content/ui/Settings/ProfileEditor.qml:30
 #, kde-format
 msgid "Logout"
-msgstr "Вийти"
+msgstr "Logg ut"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:75
 #: content/ui/Settings/ProfileEditor.qml:50
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
-msgstr "Вийти"
+msgstr "Logg ut"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:76
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out?"
-msgstr "Ви справді хочете вийти з облікового запису?"
+msgstr "Er du sikker på at du vil logga ut?"
 
 #: content/ui/LoginFlow/LoginPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Login"
-msgstr "Вхід"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
@@ -936,8 +902,6 @@ msgstr "Вхід"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
-"задано параметри проксі."
 
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -947,19 +911,19 @@ msgstr ""
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
-msgstr "Параметри проксі"
+msgstr "Mellomtenar-innstillingar"
 
 #: content/ui/LoginFlow/LoginPage.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
-msgstr "Вхід"
+msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:106
 #: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
-msgstr "Адреса сервера:"
+msgstr "Tenaradresse:"
 
 #: content/ui/LoginFlow/LoginPage.qml:107
 #: content/ui/LoginFlow/ServersPage.qml:68
@@ -970,7 +934,7 @@ msgstr "mastodon.social"
 #: content/ui/LoginFlow/LoginPage.qml:116
 #, kde-format
 msgid "Enable moderation tools"
-msgstr "Увімкнути засоби модерації"
+msgstr "Bruk modereringsverktøy"
 
 #: content/ui/LoginFlow/LoginPage.qml:117
 #, kde-format
@@ -978,117 +942,115 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
-"Дозволити Tokodon доступ до засобів модерації. Спробуйте вимкнути, якщо у "
-"вас виникають проблеми із входом."
 
 #: content/ui/LoginFlow/LoginPage.qml:131
 #, kde-format
 msgid "Server URL must not be empty!"
-msgstr "Адреса сервера не може бути порожньою."
+msgstr "Tenarsadressa kan ikkje vera tom."
 
 #: content/ui/LoginFlow/LoginPage.qml:152
 #: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
-msgstr "Параметри мережі"
+msgstr "Nettverksinnstillingar"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
-msgstr "Ігнорувати помилки SSL"
+msgstr "Ignorer SSL-feil"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Registration"
-msgstr "Реєстрація"
+msgstr "Registrering"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:94
 #, kde-format
 msgctxt "@title:group"
 msgid "Register"
-msgstr "Реєстрація"
+msgstr "Registrer"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:100
 #, kde-format
 msgid "Username"
-msgstr "Користувач"
+msgstr "Brukarnamn"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:109
 #, kde-format
 msgid "Email Address"
-msgstr "Адреса пошти"
+msgstr "E-postadresse"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:118
 #: content/ui/Settings/NetworkProxyPage.qml:123
 #, kde-format
 msgid "Password"
-msgstr "Пароль"
+msgstr "Passord"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:128
 #, kde-format
 msgid "Reason"
-msgstr "Причина"
+msgstr "Grunngjeving"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:137
 #, kde-format
 msgid "Register"
-msgstr "Зареєструватися"
+msgstr "Registrer"
 
 #: content/ui/LoginFlow/RulesPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Rules"
-msgstr "Правила"
+msgstr "Reglar"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
-msgstr "Правила"
+msgstr "Reglar"
 
 #: content/ui/LoginFlow/RulesPage.qml:81
 #, kde-format
 msgctxt "@action:button Agree to server rules"
 msgid "Agree"
-msgstr "Погоджуюсь"
+msgstr "Godta"
 
 #: content/ui/LoginFlow/RulesPage.qml:99
 #, kde-format
 msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
-msgstr "Не погоджуюся"
+msgstr "Ikkje godta"
 
 #: content/ui/LoginFlow/ServersPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
-msgstr "Вибір сервера"
+msgstr "Vel tenar"
 
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr "Цей сервер закрито для реєстрації: %1"
+msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
 msgctxt "@title:group"
 msgid "Pick a Server"
-msgstr "Вибір сервера"
+msgstr "Vel tenar"
 
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
 msgid "Server URL must not be empty."
-msgstr "Адреса сервера не може бути порожньою."
+msgstr "Tenarsadressa kan ikkje vera tom."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
 msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
-msgstr "Відкрити у сторонній програмі"
+msgstr "Opna eksternt"
 
 #: content/ui/LoginFlow/WelcomePage.qml:47
 #, kde-format
@@ -1103,179 +1065,179 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
-"Перейти до Fediverse і з'єднатися з учасниками на Mastodon (та іншим "
-"сумісним програмним забезпеченням)."
+"Bla gjennom Allheimen og ta kontakt med folk på Mastodon (og annan "
+"kompatibel programvare)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:72
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
-msgstr "Вибір сервера"
+msgstr "Vel tenar"
 
 #: content/ui/LoginFlow/WelcomePage.qml:82
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
-msgstr "Використати наявний обліковий запис"
+msgstr "Bruk registrert konto"
 
 #: content/ui/LoginFlow/WelcomePage.qml:95
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
-msgstr "Параметри"
+msgstr "Innstillingar"
 
 #: content/ui/LoginFlow/WelcomePage.qml:109
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
-msgstr "Сумісне з"
+msgstr "Kompatibel med"
 
 #: content/ui/LoginFlow/WelcomePage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
-msgstr "Сумісність з Mastodon"
+msgstr "Kompatibel med Mastodon"
 
 #: content/ui/Main.qml:125
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
-msgstr "Відкрити як…"
+msgstr "Opna som …"
 
 #: content/ui/Main.qml:127
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
-msgstr "Відповісти як…"
+msgstr "Svar som …"
 
 #: content/ui/Main.qml:129
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
-msgstr "Додати до улюбленого як…"
+msgstr "Merk som favoritt som …"
 
 #: content/ui/Main.qml:131
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
-msgstr "Підсилити як…"
+msgstr "Framhev som …"
 
 #: content/ui/Main.qml:133
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
-msgstr "Додати до закладок як…"
+msgstr "Bokmerk som …"
 
 #: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
-msgstr "Невідома дія"
+msgstr "Ukjend handling"
 
 #: content/ui/Main.qml:234 content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
-msgstr "Написати новий допис"
+msgstr "Skriv nytt innlegg"
 
 #: content/ui/Main.qml:296
 #, kde-format
 msgid "Reply to post"
-msgstr "Відповісти на допис"
+msgstr "Svar på innlegg"
 
 #: content/ui/Main.qml:485
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
-msgstr "Діагностика"
+msgstr "Feilsøk"
 
 #: content/ui/Main.qml:495
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
-msgstr "Засоби модерації"
+msgstr "Modereringsverktøy"
 
 #: content/ui/Main.qml:522
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr "Параметри"
+msgstr "Innstillingar"
 
 #: content/ui/Main.qml:534
 #, kde-format
 msgid "Home"
-msgstr "Домівка"
+msgstr "Heim"
 
 #: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
-msgstr "Сповіщення"
+msgstr "Varslingar"
 
 #: content/ui/Main.qml:580
 #, kde-format
 msgid "Local"
-msgstr "Місцевий"
+msgstr "Lokalt"
 
 #: content/ui/Main.qml:595
 #, kde-format
 msgid "Global"
-msgstr "Загальний"
+msgstr "Globalt"
 
 #: content/ui/Main.qml:625
 #, kde-format
 msgid "Favourites"
-msgstr "Улюблені"
+msgstr "Favorittar"
 
 #: content/ui/Main.qml:641
 #, kde-format
 msgid "Bookmarks"
-msgstr "Закладки"
+msgstr "Bokmerke"
 
 #: content/ui/Main.qml:671
 #, kde-format
 msgid "Search"
-msgstr "Шукати"
+msgstr "Søk"
 
 #: content/ui/Main.qml:686
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
-msgstr "Оголошення"
+msgstr "Kunngjeringar"
 
 #: content/ui/Main.qml:701
 #, kde-format
 msgid "Lists"
-msgstr "Списки"
+msgstr "Lister"
 
 #: content/ui/Main.qml:831
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
-msgstr "Вбудовування відомостей"
+msgstr "Innebygg informasjon"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:30
 #: content/ui/ModerationTools/AccountToolPage.qml:214
 #, kde-format
 msgid "Advanced Search"
-msgstr "Розширений пошук"
+msgstr "Avansert søk"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:40
 #, kde-format
 msgctxt "@info:placeholder Username for searching accounts"
 msgid "Username:"
-msgstr "Користувач:"
+msgstr "Brukarnamn:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:45
 #, kde-format
 msgctxt "@info:placeholder display name for searching accounts"
 msgid "Display Name:"
-msgstr "Екранне ім'я:"
+msgstr "Visingsnamn:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:50
 #, kde-format
 msgctxt "@info:placeholder email for searching accounts"
 msgid "Email:"
-msgstr "Ел. пошта:"
+msgstr "E-postadresse:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:55
 #, kde-format
@@ -1287,13 +1249,13 @@ msgstr "IP:"
 #, kde-format
 msgctxt "@info:Search button to initiate searching accounts"
 msgid "Search"
-msgstr "Шукати"
+msgstr "Søk"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:73
 #, kde-format
 msgctxt "@info:Reset button to reset all the text fields"
 msgid "Reset"
-msgstr "Скинути"
+msgstr "Tilbakestill"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:78
 #: content/ui/ModerationTools/FederationToolPage.qml:141
@@ -1303,31 +1265,31 @@ msgstr "Скинути"
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog"
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "Avbryt"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:95
 #, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr "Місце"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
 #, kde-format
 msgctxt "@info:Filter out accounts from any location"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:112
 #, kde-format
 msgctxt "@info:Filter out local accounts"
 msgid "Local"
-msgstr "Місцеві"
+msgstr "Lokale"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:116
 #, kde-format
 msgctxt "@info:Filter out remote accounts"
 msgid "Remote"
-msgstr "Віддалені"
+msgstr "Eksterne"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:130
 #, kde-format
@@ -1335,102 +1297,102 @@ msgctxt ""
 "@info:Moderation Status combobox to choose between different moderation "
 "status filters"
 msgid "Moderation Status"
-msgstr "Стан модерації"
+msgstr "Modereringsstatus"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:141
 #, kde-format
 msgctxt "@info:Filter out accounts with any moderation status"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:145
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr "Активні"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr "Очікування"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr "Вимкнено"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr "Заглушено"
+msgstr "Målbundne"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr "Призупинено"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
 msgctxt "@info:Role combobox to choose between different role filters"
 msgid "Role"
-msgstr "Роль"
+msgstr "Rolle"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:188
 #, kde-format
 msgctxt "@info:Filter out accounts with any role"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:192
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr "Модератор"
+msgstr ""
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
 msgctxt "@info:Filter out accounts with admin role"
 msgid "Admin"
-msgstr "Адміністратор"
+msgstr "Administrator"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:200
 #, kde-format
 msgctxt "@info:Filter out accounts with owner role"
 msgid "Owner"
-msgstr "Власник"
+msgstr "Eigar"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:299
 #, kde-format
 msgid "No accounts found"
-msgstr "Не знайдено жодного облікового запису"
+msgstr "Fann ikkje nokon kontoar"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr "Створити блокування ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr "Дані щодо домену ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr "Назва домену ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr "Блокування створено"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -1438,44 +1400,44 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr "Спроби увійти до облікового запису цього тижня"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr "Спроби увійти для IP-адреси цього тижня"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "Avbryt"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr "Вилучити блокування ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr "Блокування ел. пошти вилучено"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr "Нове блокування домену ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
 msgctxt "@info The domain on which the block will be imposed"
 msgid "Domain *"
-msgstr "Домен *"
+msgstr "Domene *"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:103
 #, kde-format
@@ -1483,124 +1445,122 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
-"Це може бути назва домену, яку показано в адресі електронної пошти або "
-"запису MX, який використано. Їх буде перевірено під час реєстрації."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr "Розв'язати домен"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr "Додано нове блокування адреси ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr "%1 спроб увійти протягом останнього тижня"
+msgstr ""
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
-msgstr "Не знайдено блокувань ел. пошти"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
 msgid "Add New Domain Block"
-msgstr "Додати нове блокування доменів"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:27
 #: content/ui/ModerationTools/FederationToolPage.qml:160
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr "Дозволити федерацію з доменом"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr "Дані щодо дозволених доменів"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
 msgctxt "@info:The domain that is allowed to federate"
 msgid "Domain"
-msgstr "Домен"
+msgstr "Domene"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:51
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr "Створено"
+msgstr "Oppretta "
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr "Заборонити федерацію з доменом"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr "Заборонена федерація з доменом"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
-msgstr "Додати блокування домену"
+msgstr "Legg til domeneblokkering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
 msgctxt "@info:Enter the domain address of the domain block"
 msgid "Domain*"
-msgstr "Домен*"
+msgstr "Domene*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:89
 #: content/ui/ModerationTools/MainFederationToolPage.qml:74
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgid "Public comment"
-msgstr "Загальнодоступний коментар"
+msgstr "Offentleg kommentar"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #, kde-format
 msgid "Private Comment"
-msgstr "Конфіденційний коментар"
+msgstr "Privat kommentar"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
 #, kde-format
 msgid "Moderation"
-msgstr "Модерація"
+msgstr "Moderering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr "Придушити"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr "Призупинити"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "None"
-msgstr "Немає"
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:121
 #: content/ui/ModerationTools/MainFederationToolPage.qml:85
 #, kde-format
 msgid "Reject media files"
-msgstr "Відкидати мультимедійні файли"
+msgstr "Avvis mediefiler"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:122
 #: content/ui/ModerationTools/MainFederationToolPage.qml:86
@@ -1609,27 +1569,24 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
-"Вилучає локально збережені мультимедійні файли і забороняє отримувати такі у "
-"майбутньому. Не пов'язано із призупиненнями"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
 #, kde-format
 msgid "Reject reports"
-msgstr "Відкинути скарги"
+msgstr "Avvis rapportar"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:128
 #: content/ui/ModerationTools/MainFederationToolPage.qml:94
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
-"Ігнорувати скарги, що находять з цього домену. Не пов'язано із призупиненнями"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr "Шифрувати назву домену"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -1638,20 +1595,18 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
-"Частково зашифрувати назву домену у списку, якщо увімкнено розповсюдження "
-"списку обмежень доменів"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:177
 #, kde-format
 msgctxt "@info:Button to create a domain block"
 msgid "Create Block"
-msgstr "Створити блокування"
+msgstr "Lag blokkering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
-msgstr "Додано нове блокування доменів"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
@@ -1659,12 +1614,12 @@ msgctxt ""
 "@info:This domain will be able to fetch data from this server and incoming "
 "data from it will be processed and stored"
 msgid "Domain*"
-msgstr "Домен*"
+msgstr "Domene*"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr "Додано новий дозволений домен"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
@@ -1672,47 +1627,45 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
-"Параметр дозволу доменів доступний для екземплярів із увімкненим режимом "
-"обмеження федерації"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
 msgctxt "@info:Choose between allowed and limited domains"
 msgid "Moderation"
-msgstr "Модерація"
+msgstr "Moderering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:216
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr "Блоковані домени"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains in limited federation mode"
 msgid "Allowed domains"
-msgstr "Дозволені домени"
+msgstr "Tillatne domene"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr "Дозволено для федерації"
+msgstr ""
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
-msgstr "Федерацій не знайдено"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Створити правило"
+msgstr "Lag ny regel"
 
 #: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
 msgid "New IP Rule"
-msgstr "Нове IP-правило"
+msgstr "Ny IP-regel"
 
 #: content/ui/ModerationTools/IpRulePage.qml:37
 #, kde-format
@@ -1724,150 +1677,150 @@ msgstr "IP*"
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr "Строк дії"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr "1 день"
+msgstr "1 dag"
 
 #: content/ui/ModerationTools/IpRulePage.qml:52
 #, kde-format
 msgctxt "@info:Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "2 тижні"
+msgstr "2 veker"
 
 #: content/ui/ModerationTools/IpRulePage.qml:56
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "1 місяць"
+msgstr "1 månad"
 
 #: content/ui/ModerationTools/IpRulePage.qml:60
 #, kde-format
 msgctxt "@info:Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "6 місяців"
+msgstr "6 månadar"
 
 #: content/ui/ModerationTools/IpRulePage.qml:64
 #, kde-format
 msgctxt "@info:Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "1 рік"
+msgstr "1 år"
 
 #: content/ui/ModerationTools/IpRulePage.qml:68
 #, kde-format
 msgctxt "@info:Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "3 роки"
+msgstr "3 år"
 
 #: content/ui/ModerationTools/IpRulePage.qml:79
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Коментар"
+msgstr "Kommentar"
 
 #: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr "Необов'язковий. Для визначення причини додавання цього правила."
+msgstr "Valfritt. Bruk for å hugs korfor du la til regelen."
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
 msgctxt "@info:The rule attached with the ip rule"
 msgid "Rule *"
-msgstr "Правило *"
+msgstr "Regel *"
 
 #: content/ui/ModerationTools/IpRulePage.qml:91
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr "Виберіть, що слід робити із запитами з цієї IP-адреси"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
-msgstr "Обмежити реєстрації"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr "Нові реєстрації потребуватимуть вашого підтвердження"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
-msgstr "Блокувати реєстрацію"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr "Нові реєстрації стануть неможливими"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
-msgstr "Блокувати доступ"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr "Блокувати доступ до усіх ресурсів"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
 msgctxt "@info:Button to create a IP rule"
 msgid "Create IP rule"
-msgstr "Створити IP-правило"
+msgstr "Ny IP-regel"
 
 #: content/ui/ModerationTools/IpRulePage.qml:130
 #, kde-format
 msgid "New IP rule added"
-msgstr "Додано нове IP-правило"
+msgstr "Ny IP-regel lagd til"
 
 #: content/ui/ModerationTools/IpRulePage.qml:156
 #: content/ui/ModerationTools/MainIpRulePage.qml:29
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr "Обмежити реєстрації"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr "Блокувати реєстрацію"
+msgstr ""
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Block access"
-msgstr "Блокувати доступ"
+msgstr "Blokker tilgang"
 
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr "Не знайдено жодного IP-правила"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:19
 #, kde-format
 msgid "Not Available"
-msgstr "Немає доступу"
+msgstr "Ikkje tilgjengeleg"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:29
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr "Виконати дію з модерації для %1"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:35
 #, kde-format
@@ -1875,7 +1828,7 @@ msgctxt ""
 "@info: Use this to send a warning to the user, without triggering any other "
 "action."
 msgid "Warn"
-msgstr "Попередити"
+msgstr "Åtvar"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:39
 #, kde-format
@@ -1883,14 +1836,14 @@ msgctxt ""
 "@info: Prevent the user from using their account, but do not delete or hide "
 "their contents."
 msgid "Freeze"
-msgstr "Заморозити"
+msgstr "Frys"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr "Зробити конфіденційним примусово"
+msgstr "Merk automatisk som potensielt støytande"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
 #, kde-format
@@ -1898,7 +1851,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr "Обмежити"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:54
 #, kde-format
@@ -1906,7 +1859,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr "Призупинити"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:59
 #, kde-format
@@ -1914,320 +1867,317 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr "Сповістити користувача електронною поштою"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:65
 #, kde-format
 msgctxt "@info: Send a warning note to the user."
 msgid "Custom warning"
-msgstr "Нетипове попередження"
+msgstr "Tilpassa åtvaring"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:76
 #, kde-format
 msgctxt "@info:Button to submit the action aginst the user."
 msgid "Submit"
-msgstr "Надіслати"
+msgstr "Send inn"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:92
 #, kde-format
 msgid "Action taken successfully"
-msgstr "Дію успішно виконано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:97
 #, kde-format
 msgctxt "@info:Cancel button to close the dailog."
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "Avbryt"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:107
 #, kde-format
 msgid "Are you sure?"
-msgstr "Ви впевнені?"
+msgstr "Er du sikker?"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr "Щодо облікового запису буде виконано дію."
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:116
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr "Успішно затверджено запит %1 щодо реєстрації"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:120
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr "Успішно відмовлено у запиті %1 щодо реєстрації"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:124
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr "Успішно розморожено обліковий запис %1"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:128
 #, kde-format
 msgid "Successfully unsilenced %1's account"
 msgstr ""
-"Успішно розблоковано можливість писати повідомлення для облікового запису %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:132
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr "Успішно скасовано призупинення облікового запису %1"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
 msgstr ""
-"Успішно скасовано примусове встановлення конфіденційності повідомлень "
-"облікового запису %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr "Успішно вилучено дані облікового запису %1"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:225
 #: content/ui/ModerationTools/MainReportToolPage.qml:98
 #, kde-format
 msgctxt "@info Bio label of account."
 msgid "Bio"
-msgstr "Біо"
+msgstr "Biografi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:270
 #, kde-format
 msgid "Reasons for joining"
-msgstr "Причини долучення"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:316
 #, kde-format
 msgctxt "@info:Number of Posts"
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:320
 #, kde-format
 msgctxt "@info:Number of followers."
 msgid "Followers"
-msgstr "Ті, хто стежить"
+msgstr "Følgjarar"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:324
 #, kde-format
 msgctxt "@info:row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Стежить"
+msgstr "Følgjer"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:327
 #, kde-format
 msgid "No role"
-msgstr "Без ролі"
+msgstr "Ingen rolle"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:328
 #, kde-format
 msgctxt "@info Role of the account on this server."
 msgid "Role"
-msgstr "Роль"
+msgstr "Rolle"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:332
 #, kde-format
 msgctxt "@info The last time the account was active."
 msgid "Last Active"
-msgstr "Остання активність"
+msgstr "Sist aktiv"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:336
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Login Status"
-msgstr "Стан входу"
+msgstr "Innloggingsstatus"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:348
 #, kde-format
 msgctxt "@info: Role of the user."
 msgid "Role"
-msgstr "Роль"
+msgstr "Rolle"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:356
 #, kde-format
 msgctxt "@info: Email of the user."
 msgid "Email"
-msgstr "Ел. пошта"
+msgstr "E-postadresse"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:363
 #, kde-format
 msgctxt "@info: Email confirmation status of the user."
 msgid "Email Status"
-msgstr "Стан ел. пошти"
+msgstr "E-poststatus"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:364
 #, kde-format
 msgid "Confirmed"
-msgstr "Підтверджено"
+msgstr "Stadfesta"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:364
 #, kde-format
 msgid "Not Confirmed"
-msgstr "Не підтверджено"
+msgstr "Ikkje stadfesta"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:371
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr "Локаль облікового запису"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:379
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr "Долучення"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
 msgid "Most recent IP"
-msgstr "Остання IP-адреса"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:415
 #, kde-format
 msgid "Invited By"
-msgstr "Запрошено"
+msgstr "Invitert av"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:437
 #, kde-format
 msgctxt "@info: Approve the user's request"
 msgid "Approve"
-msgstr "Підтвердити"
+msgstr "Godkjenn"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:449
 #, kde-format
 msgctxt "@info: Reject the user's request"
 msgid "Reject"
-msgstr "Відкинути"
+msgstr "Avvis"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:460
 #, kde-format
 msgid "Delete Account Data"
-msgstr "Вилучити дані облікового запису"
+msgstr "Slett kontodata"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:472
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr "Розморозити"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:482
 #, kde-format
 msgid "Undo Limit"
-msgstr "Кількість дій, які можна скасувати"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:492
 #, kde-format
 msgid "Undo Suspension"
-msgstr "Скасувати призупинення"
+msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:502
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr "Скасувати примусову конфіденційність"
+msgstr "Ikkje merk automatisk som potensielt støytande"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:513
 #, kde-format
 msgid "Take action against this account"
-msgstr "Виконати дію з обліковим записом"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr "Вилучити блокування домену"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr "Блокування домену вимкнено"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr "Редагувати блокування домену"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
 #, kde-format
 msgid "Private comment"
-msgstr "Конфіденційний коментар"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
 msgctxt "@info:Button to update the domain block with new values"
 msgid "Update Block"
-msgstr "Оновити блокування"
+msgstr "Oppdater blokkering"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr "Оновлено блокування домену"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:132
 #: content/ui/ModerationTools/MainIpRulePage.qml:175
 #, kde-format
 msgid "Blocked at"
-msgstr "Заблоковано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:140
 #, kde-format
 msgctxt "@info: No public comment provided"
 msgid "None"
-msgstr "Немає"
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:147
 #, kde-format
 msgctxt "@info: No private comment provided"
 msgid "None"
-msgstr "Немає"
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:153
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr "Правила"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:160
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr "Затемнення"
+msgstr ""
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:167
 #, kde-format
 msgctxt "@info:Whether to reject incoming media from this domain"
 msgid "Reject media"
-msgstr "Відкидати мультимедіа"
+msgstr "Avvis mediefiler"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:174
 #, kde-format
 msgctxt "@info:Whether to reject incoming reports from this domain"
 msgid "Reject reports"
-msgstr "Відкинути скарги"
+msgstr "Avvis rapportar"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:185
 #, kde-format
 msgid "Edit Domain Block"
-msgstr "Редагувати блокування домену"
+msgstr "Rediger domeneblokkering"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:40
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove IP Rule"
-msgstr "Вилучити IP-правило"
+msgstr "Fjern IP-regel"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:43
 #, kde-format
 msgid "IP Rule Removed"
-msgstr "Вилучено IP-правилоRule Removed"
+msgstr "IP-regel vart fjerna"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Update IP Rule"
-msgstr "Оновити IP-правило"
+msgstr "Oppdater IP-regel"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:63
 #, kde-format
@@ -2239,232 +2189,232 @@ msgstr "IP"
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr "Строк дії"
+msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 day"
 msgid "1 day"
-msgstr "1 день"
+msgstr "1 dag"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:81
 #, kde-format
 msgctxt "@info Option to block out the IP for 2 weeks"
 msgid "2 weeks"
-msgstr "2 тижні"
+msgstr "2 veker"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:85
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 month"
 msgid "1 month"
-msgstr "1 місяць"
+msgstr "1 månad"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:89
 #, kde-format
 msgctxt "@info Option to block out the IP for 6 months"
 msgid "6 month"
-msgstr "6 місяців"
+msgstr "6 månadar"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:93
 #, kde-format
 msgctxt "@info Option to block out the IP for 1 year"
 msgid "1 year"
-msgstr "1 рік"
+msgstr "1 år"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:97
 #, kde-format
 msgctxt "@info Option to block out the IP for 3 years"
 msgid "3 year"
-msgstr "3 роки"
+msgstr "3 år"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:108
 #: content/ui/ModerationTools/MainIpRulePage.qml:189
 #, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Коментар"
+msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
 msgctxt "@info The rule attached with the ip rule"
 msgid "Rule *"
-msgstr "Правило *"
+msgstr "Regel *"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:154
 #, kde-format
 msgctxt "@info Cancel button to close the dailog"
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "Avbryt"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:159
 #, kde-format
 msgctxt "@info Button to update an IP rule"
 msgid "Update IP rule"
-msgstr "Оновити IP-правило"
+msgstr "Oppdater IP-regel"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:164
 #, kde-format
 msgid "IP rule updated"
-msgstr "Оновлено IP-правило"
+msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:182
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr "Строк дії завершується"
+msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:190
 #, kde-format
 msgctxt "@info No public comment provided"
 msgid "None"
-msgstr "Немає"
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:196
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr "Критичність"
+msgstr ""
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:207
 #, kde-format
 msgctxt "@action:button"
 msgid "Update IP Rule"
-msgstr "Оновити IP-правило"
+msgstr "Oppdater IP-regel"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:46
 #, kde-format
 msgid "Report #%1"
-msgstr "Скарга №%1"
+msgstr "Rapporter #%1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
 msgid "Mark as unresolved"
-msgstr "Позначити як нерозв'язану"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
 msgid "Mark as resolved"
-msgstr "Позначити як розв'язану"
+msgstr "Merk som løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:54
 #, kde-format
 msgid "Report Unresolved"
-msgstr "Скаргу не розв'язано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:57
 #, kde-format
 msgid "Report Resolved"
-msgstr "Скаргу розв'язано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:148
 #, kde-format
 msgctxt "@info Number of Posts"
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:152
 #, kde-format
 msgctxt "@info Number of followers."
 msgid "Followers"
-msgstr "Ті, хто стежить"
+msgstr "Følgjarar"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:156
 #, kde-format
 msgctxt "@info Row Number of accounts followed by the account"
 msgid "Following"
-msgstr "Стежить"
+msgstr "Følgjer"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:160
 #, kde-format
 msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
-msgstr "Долучення"
+msgstr "Vart med"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:164
 #, kde-format
 msgctxt "@info The last time the reported account was active."
 msgid "Last Active"
-msgstr "Остання активність"
+msgstr "Sist aktiv"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:168
 #, kde-format
 msgctxt "@info The current login status of the account."
 msgid "Reported"
-msgstr "Повідомлено"
+msgstr "Rapportert"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:180
 #, kde-format
 msgctxt "@info Time at which the report was made"
 msgid "Reported"
-msgstr "Повідомлено"
+msgstr "Rapportert"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:188
 #, kde-format
 msgid "Reported By"
-msgstr "Автор повідомлення"
+msgstr "Rapportert av"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:203
 #, kde-format
 msgid "Report Status"
-msgstr "Стан звіту"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Resolved"
-msgstr "Розв’язано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Unresolved"
-msgstr "Нерозв'язане"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:211
 #, kde-format
 msgid "Action taken by"
-msgstr "Дію виконано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
 #, kde-format
 msgid "Assigned moderator"
-msgstr "Призначено модератора"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "No one"
-msgstr "Ніхто"
+msgstr "Ingen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Unassign"
-msgstr "Скасувати призначення"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Assign to me"
-msgstr "Призначити вам"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:243
 #, kde-format
 msgid "Forwarded"
-msgstr "Переслано"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgctxt "@info:The report is forwarded"
 msgid "Yes"
-msgstr "Так"
+msgstr "Ja"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
 msgctxt "@info:The report is not forwarded"
 msgid "No"
-msgstr "Ні"
+msgstr "Nei"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:253
 #, kde-format
 msgid "Category"
-msgstr "Категорія"
+msgstr "Kategori"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:257
 #, kde-format
@@ -2472,323 +2422,323 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
-"Причину скарги на цей обліковий запис і/або дописи буде процитовано у "
-"спілкуванні із обліковим записом, на який скаржаться"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:269
 #, kde-format
 msgid "Other"
-msgstr "Інше"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:274
 #, kde-format
 msgid "Category changed to other"
-msgstr "Категорію змінено на «Інше»"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:285
 #, kde-format
 msgid "Spam"
-msgstr "Спам"
+msgstr "Søppelpost"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:289
 #, kde-format
 msgid "Category changed to spam"
-msgstr "Категорію змінено на «Спам»"
+msgstr "Kategorien vart endra til søppelpost"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr "Вміст порушує одне або декілька правил сервера"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:304
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr "Категорію змінено на «Порушення правил»"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:347
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr "З метою надання додаткових відомостей %1 написано:"
+msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
 msgctxt "@info:Account didn't provide any comment on the report "
 msgid "N/A"
-msgstr "н/д"
+msgstr "–"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:372
 #, kde-format
 msgid "Reported Content"
-msgstr "Повідомлення, на які скаржаться"
+msgstr "Rapportert innhald"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:376
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
 msgstr ""
-"Вміст, на який скаржаться, буде процитовано у спілкуванні із обліковим "
-"записом, на який скаржаться"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:407
 #: content/ui/PostDelegate/PostDelegate.qml:311
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
-msgstr "<b>Попередження щодо вмісту</b><br /> %1"
+msgstr "<b>Innhaldsåtvaring</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #: content/ui/PostDelegate/PostDelegate.qml:318
 #, kde-format
 msgid "Show Less"
-msgstr "Показати менше"
+msgstr "Vis mindre"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
 #: content/ui/PostDelegate/PostDelegate.qml:318
 #, kde-format
 msgid "Show More"
-msgstr "Докладніше"
+msgstr "Vis meir"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:14
 #, kde-format
 msgctxt "@title"
 msgid "Accounts"
-msgstr "Облікові записи"
+msgstr "Kontoar"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:20
 #, kde-format
 msgid "Reports"
-msgstr "Скарги"
+msgstr "Rapportar"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:26
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
-msgstr "Федерація"
+msgstr ""
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "IP Rules"
-msgstr "IP-правила"
+msgstr "IP-reglar"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:38
 #, kde-format
 msgctxt "@title"
 msgid "Email Blocks"
-msgstr "Блокування ел. пошти"
+msgstr "E-postblokkering"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:15
 #, kde-format
 msgid "Accounts Tool Page"
-msgstr "Сторінка інструментів облікових записів"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
 #, kde-format
 msgctxt "@info:Combobox to choose Report Status"
 msgid "Report Status"
-msgstr "Стан скарги"
+msgstr "Rapportstatus"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:45
 #, kde-format
 msgctxt "@info:Filter out unresolved reports"
 msgid "Unresolved"
-msgstr "Нерозв'язані"
+msgstr "Ikkje løyste"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:49
 #, kde-format
 msgctxt "@info:Filter out resolved reports"
 msgid "Resolved"
-msgstr "Розв'язані"
+msgstr "Løyste"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:63
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr "Походження скарги"
+msgstr ""
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
 #, kde-format
 msgctxt "@info:Filter out accounts with any origin"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:80
 #, kde-format
 msgctxt "@info:Filter out accounts with local origin"
 msgid "Local"
-msgstr "Локальні"
+msgstr "Lokale"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:84
 #, kde-format
 msgctxt "@info:Filter out accounts with remote origin"
 msgid "Remote"
-msgstr "Віддалені"
+msgstr "Eksterne"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:155
 #, kde-format
 msgid "Reported By:"
-msgstr "Автор повідомлення:"
+msgstr "Rapportert av:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:240
 #, kde-format
 msgid "Assigned Account:"
-msgstr "Призначений обліковий запис:"
+msgstr "Tildelt konto:"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:265
 #, kde-format
 msgctxt "@info: No account assigned to the report"
 msgid "N/A"
-msgstr "н/д"
+msgstr "–"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:296
 #, kde-format
 msgid "No reports found"
-msgstr "Скарг не знайдено"
+msgstr "Fann ikkje nokon rapportar"
 
 #: content/ui/NotificationPage.qml:32
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
-msgstr "Усі"
+msgstr "Alle"
 
+# Teksten må vera veldig kort.
 #: content/ui/NotificationPage.qml:43
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
-msgstr "Згадки"
+msgstr "Nemnd"
 
+# Teksten må vera veldig kort (vert automatisk delt over to linjer).
 #: content/ui/NotificationPage.qml:53
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
-msgstr "Підсилення"
+msgstr "Fram­hevingar"
 
+# Uelegant orddeling, men må til (kan bli delt over to linjer når kategorien er valt og teksten vert halvfeit).
 #: content/ui/NotificationPage.qml:63
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
-msgstr "Улюблене"
+msgstr "Favo­rittar"
 
+# Teksten må vera veldig kort (vert vist under kategorien «Varslingar» i sidestolpen).
 #: content/ui/NotificationPage.qml:73
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
-msgstr "Результати голосування"
+msgstr "Røyste­resultat"
 
 #: content/ui/NotificationPage.qml:83
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/NotificationPage.qml:93
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
-msgstr "Стеження"
+msgstr "Følgjarar"
 
 #: content/ui/NotificationPage.qml:216
 #, kde-format
 msgid "No Notifications"
-msgstr "Немає сповіщень"
+msgstr "Ingen varslingar"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:60
 #, kde-format
 msgid "View %1's Profile"
-msgstr "Переглянути профіль %1"
+msgstr ""
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr "Ваш допис позначено як улюблений %1 користувачами"
+msgstr ""
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr "Ваш допис підсилено %1 користувачами"
+msgstr ""
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
-msgstr "%1 надіслано відповідь на ваш допис"
+msgstr ""
 
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "A poll has ended"
-msgstr "Голосування завершено"
+msgstr ""
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
 msgid "%1 updated their post"
-msgstr "%1 оновлено допис"
+msgstr "%1 oppdaterte eit innlegg"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:85
 #, kde-format
 msgid "Status with image attachment"
-msgstr "Стан з долученням зображення"
+msgstr "Status med biletvedlegg"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:87
 #, kde-format
 msgid "Status with GifV attachment"
-msgstr "Стан з долученням GifV"
+msgstr "Status med GifV-vedlegg"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:89
 #, kde-format
 msgid "Status with Video attachment"
-msgstr "Стан з долученням відео"
+msgstr "Status med videovedlegg"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:175
 #, kde-format
 msgid "Not available"
-msgstr "Немає доступу"
+msgstr "Ikkje tilgjengeleg"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:303
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
-msgstr "Приховати мультимедіа"
+msgstr "Gøym mediefil"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
-msgstr "Приховати мультимедіа"
+msgstr "Gøym mediefil"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:318
 #, kde-format
 msgid "Media Hidden"
-msgstr "Мультимедіа приховано"
+msgstr "Mediefil gøymd"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
 msgid "Save Image As…"
-msgstr "Зберегти зображення як…"
+msgstr "Lagra bilete som …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
 #, kde-format
 msgid "Save Gif As…"
-msgstr "Зберегти GIF як…"
+msgstr "Lagra gif som …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
 #, kde-format
 msgid "Save Video As…"
-msgstr "Зберегти відео як…"
+msgstr "Lagra video som …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
 msgid "Copy Image"
-msgstr "Копіювати зображення"
+msgstr "Kopier bilete"
 
 #: content/ui/PostDelegate/InformationBar.qml:26
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
-msgstr "Надіслано %1"
+msgstr "Lagt ut %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
 #, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
-msgstr ", з використанням %1"
+msgstr ", via %1"
 
 #: content/ui/PostDelegate/InformationBar.qml:79
 #: content/ui/PostDelegate/InformationBar.qml:87
@@ -2796,69 +2746,65 @@ msgstr ", з використанням %1"
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Public"
-msgstr "Загальнодоступне"
+msgstr "Offentleg"
 
 #: content/ui/PostDelegate/InformationBar.qml:81
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #, kde-format
 msgid "Unlisted"
-msgstr "Незареєстрований"
+msgstr "Ikkje oppført"
 
 #: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Private"
-msgstr "Особисте"
+msgstr "Privat"
 
 #: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Direct Message"
-msgstr "Безпосереднє повідомлення"
+msgstr "Direktemelding"
 
 #: content/ui/PostDelegate/InformationBar.qml:106
 #, kde-format
 msgid "No favorites"
-msgstr "Немає улюблених"
+msgstr "Ingen favorittar"
 
 #: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] "%1 улюблений запис"
-msgstr[1] "%1 улюблені записи"
-msgstr[2] "%1 улюблених записів"
-msgstr[3] "%1 улюблений запис"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content/ui/PostDelegate/InformationBar.qml:132
 #, kde-format
 msgid "No boosts"
-msgstr "Немає підсилень"
+msgstr "Ingen framhevingar"
 
 #: content/ui/PostDelegate/InformationBar.qml:134
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
-msgstr[0] "%1 підсилення"
-msgstr[1] "%1 підсилення"
-msgstr[2] "%1 підсилень"
-msgstr[3] "%1 підсилення"
+msgstr[0] "%1 framheving"
+msgstr[1] "%1 framhevingar"
 
 #: content/ui/PostDelegate/LinkPreview.qml:18
 #, kde-format
 msgid "Link preview: %1"
-msgstr "Перегляд посилань: %1"
+msgstr "Førehandsvising av lenkje: %1"
 
 #: content/ui/PostDelegate/MediaContainer.qml:70
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr "Альт."
+msgstr ""
 
 #: content/ui/PostDelegate/MediaContainer.qml:76
 #, kde-format
 msgid "Text description available"
-msgstr "Доступний опис тексту"
+msgstr "Tekstskildring tilgjengeleg"
 
 #: content/ui/PostDelegate/MediaContainer.qml:84
 #, kde-format
@@ -2868,51 +2814,51 @@ msgstr "GIF"
 #: content/ui/PostDelegate/MediaContainer.qml:93
 #, kde-format
 msgid "Video"
-msgstr "Відео"
+msgstr "Video"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
 msgid "Normal Status"
-msgstr "Звичайний стан"
+msgstr "Normal status"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
 msgid "Spoiler Status"
-msgstr "Стан спойлера"
+msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:141
 #, kde-format
 msgid "Filtered: %1"
-msgstr "Фільтровано: %1"
+msgstr "Filtrert: %1"
 
 #: content/ui/PostDelegate/PostDelegate.qml:145
 #, kde-format
 msgid "Show anyway"
-msgstr "Показувати попри це"
+msgstr "Vis likevel"
 
 #: content/ui/PostDelegate/PostDelegate.qml:166
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
-msgstr "Пришпилений допис"
+msgstr "Festa innlegg"
 
 #: content/ui/PostDelegate/PostDelegate.qml:228
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
-msgstr "Вилучити допис"
+msgstr "Slett innlegg"
 
 #: content/ui/PostDelegate/PostDelegate.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
-msgstr "Ви справді хочете вилучити цей допис?"
+msgstr "Er du sikker på at du vil sletta innlegget?"
 
 #: content/ui/PostDelegate/PostDelegate.qml:244
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr "Вилучити і переписати допис"
+msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:245
 #, kde-format
@@ -2921,77 +2867,75 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
-"Ви справді хочете переписати цей допис? У результаті буде вилучено "
-"початковий допис."
 
 #: content/ui/PostDelegate/PostDelegate.qml:423
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
-msgstr "Відповісти"
+msgstr "Svar"
 
 #: content/ui/PostDelegate/PostDelegate.qml:450
 #, kde-format
 msgid "Cannot boost direct messages"
-msgstr "Не можна підсилювати безпосередні повідомлення"
+msgstr "Kan ikkje framheva direktemeldingar"
 
 #: content/ui/PostDelegate/PostDelegate.qml:452
 #, kde-format
 msgid "Cannot boost private posts"
-msgstr "Не можна підсилювати приватні дописи"
+msgstr "Kan ikkje framheva private meldingar"
 
 #: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
-msgstr "Підсилення"
+msgstr "Framhev"
 
 #: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boosted"
-msgstr "Підсилено"
+msgstr "Framheva"
 
 #: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Boost"
-msgstr "Підсилення"
+msgstr "Framhev"
 
 #: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
-msgstr "Улюблене"
+msgstr "Merk som favoritt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favourited"
-msgstr "Додано до улюблених"
+msgstr "Merkt som favoritt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favourite"
-msgstr "Улюблені"
+msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Remove bookmark"
-msgstr "Вилучити закладку"
+msgstr "Fjern bokmerke"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
-msgstr "Створити закладку"
+msgstr "Lag bokmerke"
 
 #: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmarked"
-msgstr "Додано до закладок"
+msgstr "La til bokmerke"
 
 #: content/ui/PostDelegate/PostDelegate.qml:504
 #, kde-format
 msgid "Bookmark"
-msgstr "Закладка"
+msgstr "Bokmerke"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
 #, kde-format
@@ -2999,316 +2943,315 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
-"Цей допис позначено як конфіденційний. Деякі дописи може бути пропущено, "
-"оскільки відповіді на них типово позначено як конфіденційні."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
 msgctxt "Show more options"
 msgid "More actions"
-msgstr "Додаткові дії"
+msgstr "Fleire handlingar"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Expand Post"
-msgstr "Розгорнути допис"
+msgstr "Utvid innlegget"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgid "Open Original Page"
-msgstr "Відкрити початкову сторінку"
+msgstr "Opna opphavleg side"
 
+# Lenkje til profilside. Det finst i utgangspunktet ikkje ei lenkje, så det vert litt feil å bruka bunden form.
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
-msgstr "Копіювати посилання"
+msgstr "Kopier lenkje"
 
 #: content/ui/PostDelegate/PostMenu.qml:55
 #, kde-format
 msgid "Post link copied."
-msgstr "Посилання на допис скопійовано."
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
-msgstr "Вбудувати"
+msgstr "Innebygg"
 
 #: content/ui/PostDelegate/PostMenu.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
-msgstr "Відкрити як…"
+msgstr "Opna som …"
 
 #: content/ui/PostDelegate/PostMenu.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
-msgstr "Відповісти як…"
+msgstr "Svar som …"
 
 #: content/ui/PostDelegate/PostMenu.qml:94
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
-msgstr "Додати до улюбленого як…"
+msgstr "Merk som favoritt som …"
 
 #: content/ui/PostDelegate/PostMenu.qml:102
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
-msgstr "Підсилити як…"
+msgstr "Framhev som …"
 
 #: content/ui/PostDelegate/PostMenu.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
-msgstr "Додати до закладок як…"
+msgstr "Bokmerk som …"
 
 #: content/ui/PostDelegate/PostMenu.qml:118
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
-msgstr "Вилучити закладку"
+msgstr "Fjern bokmerke"
 
 #: content/ui/PostDelegate/PostMenu.qml:118
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
-msgstr "Створити закладку"
+msgstr "Bokmerk"
 
 #: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr "Відшпилити на профілі"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr "Пришпилити на профілі"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:140
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr "Дозволити повідомлення @%1"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:142
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
-msgstr "Заборонити повідомлення @%1"
+msgstr "Målbind @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:160
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
-msgstr "Розблокувати @%1"
+msgstr "Avblokker @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:162
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
-msgstr "Заблокувати @%1"
+msgstr "Blokker @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:188
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
-msgstr "Змінити"
+msgstr "Rediger"
 
 #: content/ui/PostDelegate/PostMenu.qml:196
 #: content/ui/Settings/ProfileEditor.qml:178
 #: content/ui/Settings/ProfileEditor.qml:240
 #, kde-format
 msgid "Delete"
-msgstr "Вилучити"
+msgstr "Slett"
 
 #: content/ui/PostDelegate/PostMenu.qml:204
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr "Вилучити і переписати"
+msgstr ""
 
 #: content/ui/PostDelegate/PostPoll.qml:39
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: content/ui/PostDelegate/PostPoll.qml:63
 #, kde-format
 msgid "(No votes)"
-msgstr "(немає голосів)"
+msgstr "(ingen røyster)"
 
 #: content/ui/PostDelegate/PostPoll.qml:97
 #, kde-format
 msgid "Vote"
-msgstr "Голосувати"
+msgstr "Røyst"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
 #, kde-format
 msgid "Post from %1"
-msgstr "Допис від %1"
+msgstr "Innlegg frå %1"
 
 #: content/ui/PostDelegate/QuotePost.qml:83
 #, kde-format
 msgid "Quoted post"
-msgstr "Цитований допис"
+msgstr ""
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
-msgstr "%1 підсилено"
+msgstr ""
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:73
 #, kde-format
 msgid "In reply to %1"
-msgstr "У відповідь на %1"
+msgstr "I svar til %1"
 
 #: content/ui/PostDelegate/VideoAttachment.qml:93
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
-msgstr "Відтворити"
+msgstr "Spel av"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report Post"
-msgstr "Скарга на допис"
+msgstr "Rapporter innlegg"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Report User"
-msgstr "Скарга на користувача"
+msgstr "Rapporter brukar"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this post"
-msgstr "Причина скарги щодо цього допису"
+msgstr "Grunngjeving for rapportering av innlegget"
 
 #: content/ui/ReportDialog.qml:40
 #, kde-format
 msgctxt "@title"
 msgid "Reason for reporting this user"
-msgstr "Причина скарги щодо цього користувача"
+msgstr "Grunngjeving for rapportering av brukaren"
 
 #: content/ui/ReportDialog.qml:55
 #, kde-format
 msgctxt "@action:button 'Report' as in 'Report this to moderators'"
 msgid "Report"
-msgstr "Поскаржитися"
+msgstr "Rapporter"
 
 #: content/ui/ReportDialog.qml:64
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
-msgstr "Скасувати"
+msgstr "Avbryt"
 
 #: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:147
 #, kde-format
 msgid "Hashtag"
-msgstr "Хештеґ"
+msgstr ""
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Search"
-msgstr "Пошук"
+msgstr "Søk"
 
 #: content/ui/SearchView.qml:38
 #, kde-format
 msgid "Loading..."
-msgstr "Завантаження…"
+msgstr "Lastar …"
 
 #: content/ui/SearchView.qml:46
 #, kde-format
 msgid "No search results"
-msgstr "Нічого не знайдено"
+msgstr "Ingen søkjetreff"
 
 #: content/ui/SearchView.qml:54
 #, kde-format
 msgid "Search for users, tags and posts"
-msgstr "Шукати користувачів, мітки та дописи"
+msgstr "Søk etter brukarar, merkelappar og innlegg"
 
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr "Загальне"
+msgstr "Generelt"
 
 #: content/ui/Settings/AppearancePage.qml:25
 #, kde-format
 msgid "Color theme"
-msgstr "Тема кольорів"
+msgstr "Fargetema"
 
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr "Типово відкривати редактор дописів"
+msgstr "Sprett ut skrivevindauget som standard"
 
 #: content/ui/Settings/AppearancePage.qml:56
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
-msgstr "Дописи"
+msgstr "Innlegg"
 
 #: content/ui/Settings/AppearancePage.qml:62
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
-msgstr "Показати кількість відповідей, додавань до улюблених і підсилень"
+msgstr "Vis talet på svar, favorittar og framhevingar"
 
 #: content/ui/Settings/AppearancePage.qml:77
 #, kde-format
 msgid "Show link previews"
-msgstr "Показати попередній перегляд вмісту посилання"
+msgstr "Førehandsvis lenkjer i innlegg"
 
 #: content/ui/Settings/AppearancePage.qml:92
 #, kde-format
 msgid "Content font"
-msgstr "Шрифт вмісту"
+msgstr "Skrifttype for innhald"
 
 #: content/ui/Settings/AppearancePage.qml:98
 #, kde-format
 msgid "Please choose a font"
-msgstr "Будь ласка, виберіть шрифт"
+msgstr "Vel skrift"
 
 #: content/ui/Settings/AppearancePage.qml:109
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
-msgstr "Мультимедіа"
+msgstr "Mediefiler"
 
 #: content/ui/Settings/AppearancePage.qml:115
 #, kde-format
 msgid "Crop images on the timeline to 16x9"
-msgstr "Обрізати зображення у розкладі до 16х9"
+msgstr "Skjer av bilete på tidslinja til 16:9-format"
 
 #: content/ui/Settings/AppearancePage.qml:129
 #, kde-format
 msgid "Auto-play animated GIFs"
-msgstr "Автоматично відтворювати анімовані GIF"
+msgstr "Spel automatisk av animerte GIF-bilete"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr "Проксі-сервер мережі"
+msgstr "Mellomtenar"
 
 #: content/ui/Settings/NetworkProxyPage.qml:24
 #, kde-format
 msgid "System Default"
-msgstr "Типовий для системи"
+msgstr "Systemstandard"
 
 #: content/ui/Settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "No Proxy"
-msgstr "Без проксі"
+msgstr "Ingen mellomtenar"
 
 #: content/ui/Settings/NetworkProxyPage.qml:48
 #, kde-format
@@ -3318,38 +3261,38 @@ msgstr "HTTP"
 #: content/ui/Settings/NetworkProxyPage.qml:60
 #, kde-format
 msgid "Socks5"
-msgstr "Socks5"
+msgstr "SOCKS5"
 
 #: content/ui/Settings/NetworkProxyPage.qml:79
 #, kde-format
 msgid "Host"
-msgstr "Вузол"
+msgstr "Vert"
 
 #: content/ui/Settings/NetworkProxyPage.qml:92
 #, kde-format
 msgid "Port"
-msgstr "Порт"
+msgstr "Port"
 
 #: content/ui/Settings/NetworkProxyPage.qml:113
 #, kde-format
 msgid "User"
-msgstr "Користувач"
+msgstr "Brukarnamn"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
 #: content/ui/Settings/ProfileEditor.qml:336
 #, kde-format
 msgid "Apply"
-msgstr "Застосувати"
+msgstr "Bruk"
 
 #: content/ui/Settings/NotificationsPage.qml:28
 #, kde-format
 msgid "Enable notifications for this account"
-msgstr "Увімкнути сповіщення для цього облікового запису"
+msgstr "Bruk varslingar for denne kontoen"
 
 #: content/ui/Settings/NotificationsPage.qml:32
 #, kde-format
 msgid "Notifications can appear even when Tokodon isn't running."
-msgstr "Сповіщення може бути показано, навіть якщо Tokodon не запущено."
+msgstr "Varslingane kan visast sjølv når Tokodon ikkje køyrer."
 
 #: content/ui/Settings/NotificationsPage.qml:34
 #, kde-format
@@ -3357,357 +3300,353 @@ msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
-"Імпульсні сповіщення доступні, але їх не вдалося увімкнути. Будь ласка, "
-"вийдіть з облікового запису і увійдіть до нього знову."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
 msgid "Notifications will only appear when Tokodon is running."
-msgstr "Сповіщення буде показано, лише якщо Tokodon запущено."
+msgstr "Varslingane vert berre viste når Tokodon køyrer."
 
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
 msgctxt "@title:group"
 msgid "Types"
-msgstr "Типи"
+msgstr "Typar"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
 msgid "Mentions"
-msgstr "Згадування"
+msgstr "Nemning"
 
+# Ein «status» i Mastodon er det same som eit innlegg:
+# https://socialhub.activitypub.rocks/t/mastodon-to-replace-terminology-of-toots-and-status-with-post/1627
 #: content/ui/Settings/NotificationsPage.qml:69
 #, kde-format
 msgid "Statuses"
-msgstr "Стани"
+msgstr "Innlegg"
 
 #: content/ui/Settings/NotificationsPage.qml:81
 #, kde-format
 msgid "Boosts"
-msgstr "Підсилення"
+msgstr "Framhevingar"
 
 #: content/ui/Settings/NotificationsPage.qml:93
 #, kde-format
 msgid "New followers"
-msgstr "Нові ті, хто стежить"
+msgstr "Nye følgjarar"
 
 #: content/ui/Settings/NotificationsPage.qml:105
 #, kde-format
 msgid "New follow requests"
-msgstr "Нові запити щодо стеження"
+msgstr "Nye følgjeførespurndar"
 
 #: content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
-msgstr "Улюблене"
+msgstr "Favorittar"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
 msgid "Polls"
-msgstr "Голосування"
+msgstr "Avstemmingar"
 
 #: content/ui/Settings/NotificationsPage.qml:141
 #, kde-format
 msgid "Edits"
-msgstr "Редагування"
+msgstr "Redigeringar"
 
 #: content/ui/Settings/ProfileEditor.qml:26
 #, kde-format
 msgid "Edit Account"
-msgstr "Змінити обліковий запис"
+msgstr "Rediger konto"
 
 #: content/ui/Settings/ProfileEditor.qml:42
 #, kde-format
 msgid "Please choose a file"
-msgstr "Будь ласка, виберіть файл"
+msgstr "Vel fil"
 
 #: content/ui/Settings/ProfileEditor.qml:51
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to log out of %1?"
-msgstr "Ви справді хочете вийти з запису %1?"
+msgstr "Er du sikker på at du vil logga ut av %1?"
 
 #: content/ui/Settings/ProfileEditor.qml:86
 #, kde-format
 msgid "Display Name"
-msgstr "Екранне ім'я"
+msgstr "Visingsnamn"
 
 #: content/ui/Settings/ProfileEditor.qml:104
 #, kde-format
 msgid "Bio"
-msgstr "Біо"
+msgstr "Biografi"
 
 #: content/ui/Settings/ProfileEditor.qml:130
 #, kde-format
 msgid "Header"
-msgstr "Заголовок"
+msgstr "Overskriftsbilete"
 
 #: content/ui/Settings/ProfileEditor.qml:165
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
-"PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
-"1500x500 пк."
+"PNG, GIF eller JPEG. Maks 2 MB. Vert skalert ned til 1500 × 500 pikslar."
 
 #: content/ui/Settings/ProfileEditor.qml:193
 #, kde-format
 msgid "Avatar"
-msgstr "Аватар"
+msgstr "Avatarbilete"
 
 #: content/ui/Settings/ProfileEditor.qml:226
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
-"PNG, GIF або JPG. Не більше 2 МБ. Буде масштабовано, щоб не перевищувати "
-"400x400 пк."
+"PNG, GIF eller JPEG. Maks 2 MB. Vert skalert ned til 400 × 400 pikslar."
 
 #: content/ui/Settings/ProfileEditor.qml:256
 #, kde-format
 msgid "Require approval of follow requests"
-msgstr "Вимагати підтвердження вказаних нижче запитів"
+msgstr "Krev godkjenning før andre får følgja deg"
 
 #: content/ui/Settings/ProfileEditor.qml:264
 #, kde-format
 msgid "This is a bot account"
-msgstr "Це обліковий запис бота"
+msgstr "Dette er ein robot-konto"
 
 #: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
 msgid "Suggest account to others"
-msgstr "Пропонувати запис іншим"
+msgstr "Føreslå kontoen til andre"
 
 #: content/ui/Settings/ProfileEditor.qml:280
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
-msgstr "Типово позначати вивантажені мультимедійні дані як конфіденційні"
+msgstr "Merk som standard opplasta mediefiler som potensielt støytande"
 
 #: content/ui/Settings/ProfileEditor.qml:288
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
-msgstr "Типова мова дописів"
+msgstr "Standardspråk for innlegg"
 
 #: content/ui/Settings/ProfileEditor.qml:309
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
-msgstr "Типова видимість дописів"
+msgstr "Merk som standard innlegg som"
 
 #: content/ui/Settings/ProfileEditor.qml:311
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
-msgstr "Загальнодоступне"
+msgstr "Offentleg"
 
 #: content/ui/Settings/ProfileEditor.qml:312
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
-msgstr "Поза списком"
+msgstr "Ikkje oppført"
 
 #: content/ui/Settings/ProfileEditor.qml:313
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
-msgstr "Особисте"
+msgstr "Privat"
 
 #: content/ui/Settings/ProfileEditor.qml:329
 #, kde-format
 msgid "Reset"
-msgstr "Скинути"
+msgstr "Tilbakestill"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:17
 #, kde-format
 msgid "Appearance"
-msgstr "Вигляд"
+msgstr "Utsjånad"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Accounts"
-msgstr "Облікові записи"
+msgstr "Kontoar"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:43
 #, kde-format
 msgid "Network Proxy"
-msgstr "Проксі-сервер мережі"
+msgstr "Mellomtenar"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:49
 #, kde-format
 msgid "About Tokodon"
-msgstr "Про Tokodon"
+msgstr "Om Tokodon"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:52
 #: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Відомості"
+msgstr "Om"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About KDE"
-msgstr "Про KDE"
+msgstr "Om KDE"
 
 #: content/ui/ShareDialog.qml:34
 #, kde-format
 msgid "Sharing failed"
-msgstr "Не вдалося оприлюднити"
+msgstr "Feil ved deling"
 
 #: content/ui/SocialGraphPage.qml:62
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
-msgstr "Дозволити"
+msgstr "Tillat"
 
 #: content/ui/SocialGraphPage.qml:69
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
-msgstr "Відмовити"
+msgstr "Avvis"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
 msgid "No accounts available"
-msgstr "Немає доступних облікових записів"
+msgstr ""
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:95
 #, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
-msgstr "Опис"
+msgstr "Skildring"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:113
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
-msgstr "Точка фокусування"
+msgstr ""
 
 #: content/ui/StatusComposer/ComposerPoll.qml:37
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
-msgstr "Варіант %1"
+msgstr "Val %1"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Додати варіант"
+msgstr "Legg til val"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:62
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr "Додати новий варіант відповіді"
+msgstr "Legg til svaralternativ"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:81
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr "Коли завершується строк голосування"
+msgstr "Når avstemminga vert avslutta"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:90
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
-msgstr "Вибір з варіантів"
+msgstr "Fleire alternativ"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:96
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
-msgstr "Дозволити декілька варіантів"
+msgstr "Tillat fleire svaralternativ"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:105
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr "Приховати результати"
+msgstr ""
 
 #: content/ui/StatusComposer/ComposerPoll.qml:111
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr "Ховати кількість голосів до завершення голосування"
+msgstr ""
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:96
 #, kde-format
 msgid "Remove"
-msgstr "Вилучити"
+msgstr "Fjern"
 
 #: content/ui/StatusComposer/StatusComposer.qml:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
-msgstr "Редагування цього допису"
+msgstr "Rediger innlegget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
-msgstr "Відповідь на цей допис"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
-msgstr "Переписування цього допису"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
-msgstr "Новий допис"
+msgstr "Skriv nytt innlegg"
 
 #: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
-msgstr "Виокремити"
+msgstr "Sprett ut"
 
 #: content/ui/StatusComposer/StatusComposer.qml:130
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
-"Збереження редагованого допису із опитуванням призведе до вилучення наявних "
-"результатів опитування."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
-msgstr "Відкинути чернетку"
+msgstr "Forkast utkast"
 
 #: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
-msgstr "Ви справді хочете відкинути вашу чернетку?"
+msgstr "Er du sikker på at du vil forkasta utkastet?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:144
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
-msgstr "Зберегти"
+msgstr "Behald"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content warning"
-msgstr "Попередження щодо вмісту"
+msgstr "Innhaldsåtvaring"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
-msgstr "Що нового?"
+msgstr "Kva har du på hjarta?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:368
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
-msgstr "Виберіть файл"
+msgstr "Vel fil"
 
 #: content/ui/StatusComposer/StatusComposer.qml:371
 #, kde-format
@@ -3715,340 +3654,336 @@ msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
 "*.webm *.mp4 *.m4v *.mov)"
 msgstr ""
-"усі підтримувані формати (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
-"avif *.webm *.mp4 *.m4v *.mov)"
+"Alle støtta format (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *."
+"webm *.mp4 *.m4v *.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:372
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
-msgstr "зображення JPEG (*.jpg *.jpeg)"
+msgstr "JPEG-bilete (*.jpg *.jpeg)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:373
 #, kde-format
 msgid "PNG image (*.png)"
-msgstr "зображення PNG (*.png)"
+msgstr "PNG-bilete (*.png)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid "GIF image (*.gif)"
-msgstr "зображення GIF (*.gif)"
+msgstr "GIF-bilete (*.gif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:375
 #, kde-format
 msgid "WebP image (*.webp)"
-msgstr "зображення WebP (*.webp)"
+msgstr "WebP-bilete (*.webp)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:376
 #, kde-format
 msgid "HEIC image(*.heic)"
-msgstr "зображення HEIC (*.heic)"
+msgstr "HEIC-bilete (*.heic)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:377
 #, kde-format
 msgid "HEIF image (*.heif)"
-msgstr "зображення HEIF (*.heif)"
+msgstr "HEIF-bilete (*.heif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:378
 #, kde-format
 msgid "AVIF image (*.avif)"
-msgstr "зображення AVIF (*.avif)"
+msgstr "AVIF-bilete (*.avif)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "WebM video (*.webm)"
-msgstr "відео WebM (*.webm)"
+msgstr "WebM-videoar (*.webm)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
-msgstr "відео MPEG-4 (*.mp4)"
+msgstr "MPEG-4-videoar (*.mp4)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:381
 #, kde-format
 msgid "M4V video (*.m4v)"
-msgstr "відео M4V (*.m4v)"
+msgstr "M4V-videoar (*.m4v)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:382
 #, kde-format
 msgid "QuickTime video (*.mov)"
-msgstr "відео QuickTime (*.mov)"
+msgstr "QuickTime-videoar (*.mov)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:383
 #, kde-format
 msgid "All files (*)"
-msgstr "усі файли (*)"
+msgstr "Alle filer (*)"
 
 #: content/ui/StatusComposer/StatusComposer.qml:385
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
-msgstr "Долучити файл"
+msgstr "Legg ved fil"
 
 #: content/ui/StatusComposer/StatusComposer.qml:396
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
-msgstr "Додати голосування"
+msgstr "Legg til avstemming"
 
 #: content/ui/StatusComposer/StatusComposer.qml:426
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
-msgstr "Місцевий"
+msgstr "Lokalt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:432
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
-msgstr "Загальнодоступний"
+msgstr "Offentleg"
 
 #: content/ui/StatusComposer/StatusComposer.qml:437
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
-msgstr "Незареєстрований"
+msgstr "Ikkje oppført"
 
 #: content/ui/StatusComposer/StatusComposer.qml:442
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
-msgstr "Особистий"
+msgstr "Privat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:447
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
-msgstr "Безпосереднє повідомлення"
+msgstr "Direktemelding"
 
 #: content/ui/StatusComposer/StatusComposer.qml:452
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
-msgstr "Видимість"
+msgstr "Synlegheit"
 
 #: content/ui/StatusComposer/StatusComposer.qml:457
 #, kde-format
 msgctxt "@action:intoolbar Short for content warning"
 msgid "cw"
-msgstr "пв"
+msgstr "IÅ"
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content warning"
-msgstr "Попередження щодо вмісту"
+msgstr "Innhaldsåtvaring"
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
-msgstr "Мова допису"
+msgstr "Språk på innlegget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:503
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
-msgstr "Додати емоційку"
+msgstr "Legg til emoji"
 
 #: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
-msgstr "<b>%1 з %2</b> символів"
+msgstr "<b>%1/%2</b> teikn"
 
 #: content/ui/StatusComposer/StatusComposer.qml:542
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
-msgstr "Надіслати"
+msgstr "Send"
 
 #: content/ui/StatusComposer/StatusComposer.qml:544
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
-msgstr "Відповісти"
+msgstr "Svar"
 
 #: content/ui/StatusComposer/StatusComposer.qml:546
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
-msgstr "Репост"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:548
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
-msgstr "Зберегти"
+msgstr "Lagra"
 
 #: content/ui/TimelinePage.qml:45 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
-msgstr "Завантаження"
+msgstr "Hentar inn"
 
 #: content/ui/TimelinePage.qml:47
 #, kde-format
 msgid "Home (%1)"
-msgstr "Домівка (%1)"
+msgstr "Heim (%1)"
 
 #: content/ui/TimelinePage.qml:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
-msgstr "Фільтри"
+msgstr "Filter"
 
 #: content/ui/TimelinePage.qml:101
 #, kde-format
 msgid "Show Boosts"
-msgstr "Показати підсилення"
+msgstr "Vis framhevingar"
 
 #: content/ui/TimelinePage.qml:108
 #, kde-format
 msgid "Show Replies"
-msgstr "Показати відповіді"
+msgstr "Vis svar"
 
 #: content/ui/TimelinePage.qml:119
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
-msgstr ""
-"Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
-"задано параметри."
+msgstr "Fekk ikkje kontakt med tenaren: %1. Kontroller innstillingane."
 
 #: content/ui/TimelinePage.qml:237
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
-msgstr "Деякі відповіді недоступні"
+msgstr "Nokre svar er ikkje tilgjengelege"
 
 #: content/ui/TimelinePage.qml:238
 #, kde-format
 msgid "To view all replies, open the post on the original server."
-msgstr "Щоб переглянути усі відповіді, відкрийте допис на початковому сервері."
+msgstr ""
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
 msgctxt "@action:button"
 msgid "Open Original Page"
-msgstr "Відкрити початкову сторінку"
+msgstr "Opna opphavleg side"
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
-msgstr "Кінець розкладу"
+msgstr "Slutt på tidslinja"
 
 #: content/ui/TimelinePage.qml:292
 #, kde-format
 msgid "No posts"
-msgstr "Немає дописів"
+msgstr "Ingen innlegg"
 
 #: content/ui/TimelinePage.qml:298
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr "Повернутися до початку"
+msgstr ""
 
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
-msgstr "Перемкнути обліковий запис"
+msgstr "Byt konto"
 
 #: content/ui/UserInfo.qml:100
 #, kde-format
 msgid "Switch account"
-msgstr "Перемкнути обліковий запис"
+msgstr "Byt konto"
 
 #: content/ui/UserInfo.qml:149
 #, kde-format
 msgid "Log in or create a new account"
-msgstr "Увійдіть до облікового запису або створіть обліковий запис"
+msgstr "Logg inn eller registrer ny konto"
 
 #: conversation/conversationmodel.cpp:57
 #, kde-format
 msgid "Empty conversation"
-msgstr "Порожнє спілкування"
+msgstr "Tom samtale"
 
 #: conversation/conversationmodel.cpp:61
 #, kde-format
 msgid "%1 and %2"
-msgstr "%1 і %2"
+msgstr "%1 og %2"
 
 #: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
-msgstr[0] "%2 і ще %1"
-msgstr[1] "%2 і ще %1"
-msgstr[2] "%2 і ще %1"
-msgstr[3] "%2 і ще один"
+msgstr[0] "%2 og éin annan"
+msgstr[1] "%2 og %1 andre"
 
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "Members of the list"
-msgstr "Учасники списку"
+msgstr "Listemedlemmar"
 
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "Any followed users"
-msgstr "Будь-які користувачі, за якими ведеться стеження"
+msgstr ""
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "5 minutes"
-msgstr "5 хвилин"
+msgstr "5 minutt"
 
 #: editor/polltimemodel.cpp:15
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "30 minutes"
-msgstr "30 хвилин"
+msgstr "30 minutt"
 
 #: editor/polltimemodel.cpp:16
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 hour"
-msgstr "1 година"
+msgstr "1 time"
 
 #: editor/polltimemodel.cpp:17
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "6 hours"
-msgstr "6 годин"
+msgstr "6 timar"
 
 #: editor/polltimemodel.cpp:18
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "12 hours"
-msgstr "12 годин"
+msgstr "12 timar"
 
 #: editor/polltimemodel.cpp:19
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "1 day"
-msgstr "1 день"
+msgstr "1 dag"
 
 #: editor/polltimemodel.cpp:20
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "3 days"
-msgstr "3 дні"
+msgstr "3 dagar"
 
 #: editor/polltimemodel.cpp:21
 #, kde-format
 msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
-msgstr "7 днів"
+msgstr "7 dagar"
 
 #: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
-msgstr "Сталася невідома помилка."
+msgstr ""
 
 #: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
-msgstr "Отримання імпульсних сповіщень"
+msgstr ""
 
 #: main.cpp:113
 #, kde-format
@@ -4058,12 +3993,12 @@ msgstr "Tokodon"
 #: main.cpp:115
 #, kde-format
 msgid "Mastodon client"
-msgstr "Клієнт Mastodon"
+msgstr "Mastodon-klient"
 
 #: main.cpp:117
 #, kde-format
 msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
-msgstr "© Carl Schwan, 2021–2024; Спільнота KDE, 2021–2024"
+msgstr "© 2021–2024 Carl Schwan, 2021–2024 KDE-fellesskapet"
 
 #: main.cpp:118
 #, kde-format
@@ -4073,7 +4008,7 @@ msgstr "Carl Schwan"
 #: main.cpp:119 main.cpp:124
 #, kde-format
 msgid "Maintainer"
-msgstr "Супровідник"
+msgstr "Vedlikehaldar"
 
 #: main.cpp:123
 #, kde-format
@@ -4084,662 +4019,280 @@ msgstr "Joshua Goins"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Юрій Чорноіван"
+msgstr "Karl Ove Hufthammer"
 
 #: main.cpp:128
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "yurchor@ukr.net"
+msgstr "karl@huftis.org"
 
 #: main.cpp:140
 #, kde-format
 msgid "Client for decentralized social networks like Mastodon"
-msgstr "Клієнт децентралізованих соціальних мереж, зокрема Mastodon"
+msgstr "Klient for desentraliserte sosiale nettverk, som Mastodon"
 
 #: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr "Передбачено підтримку схеми адрес https і web+ap"
+msgstr ""
 
 #: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
-msgstr "Оприлюднити рядок тексту в окремому редакторі."
+msgstr ""
 
 #: main.cpp:143
 #, kde-format
 msgid "The text to share."
-msgstr "Текст, який слід оприлюднити."
+msgstr "Tekst du vil dela."
 
 #: main.cpp:147
 #, kde-format
 msgid "Internal usage only."
-msgstr "Лише для внутрішнього використання."
+msgstr "Berre intern bruk."
 
 #: notification/notificationmodel.cpp:96
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
-msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
+msgstr "Det oppstod ein feil ved innhenting av varslingar."
 
 #: search/searchmodel.cpp:140
 #, kde-format
 msgid "Users"
-msgstr "Користувачі"
+msgstr "Brukarar"
 
 #: search/searchmodel.cpp:142
 #, kde-format
 msgid "Hashtags"
-msgstr "Хештеґи"
+msgstr "Emneknaggar"
 
 #: timeline/maintimelinemodel.cpp:22
 #, kde-format
 msgctxt "@title"
 msgid "Home"
-msgstr "Домівка"
+msgstr "Heim"
 
 #: timeline/maintimelinemodel.cpp:24
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
-msgstr "Місцевий розклад"
+msgstr "Lokal tidsslinje"
 
 #: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
-msgstr "Загальний розклад"
+msgstr "Global tidslinje"
 
 #: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
-msgstr "Закладки"
+msgstr "Bokmerke"
 
 #: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Favourites"
-msgstr "Улюблені"
+msgstr "Favorittar"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
-msgstr "Тренди"
+msgstr "På veg opp"
 
 #: timeline/post.cpp:219
 #, kde-format
 msgid "in the future"
-msgstr "у майбутньому"
+msgstr "i framtida"
 
 #: timeline/post.cpp:221
 #, kde-format
 msgid "%1s"
-msgstr "%1с"
+msgstr "%1 s"
 
 #: timeline/post.cpp:223
 #, kde-format
 msgid "%1m"
-msgstr "%1хв"
+msgstr "%1 m"
 
 #: timeline/post.cpp:225
 #, kde-format
 msgid "%1h"
-msgstr "%1г"
+msgstr "%1 t"
 
 #: timeline/post.cpp:227
 #, kde-format
 msgid "%1d"
-msgstr "%1д"
+msgstr "%1 d"
 
 #: timeline/post.cpp:231
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
-msgstr[0] "%1 тиждень тому"
-msgstr[1] "%1 тижні тому"
-msgstr[2] "%1 тижнів тому"
-msgstr[3] "1 тиждень тому"
+msgstr[0] "Éi veke sidan"
+msgstr[1] "%1 veker sidan"
 
 #: timeline/post.cpp:234
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
-msgstr[0] "%1 місяць тому"
-msgstr[1] "%1 місяці тому"
-msgstr[2] "%1 місяців тому"
-msgstr[3] "1 місяць тому"
+msgstr[0] "1 månad sidan"
+msgstr[1] "%1 månadar sidan"
 
 #: timeline/post.cpp:238
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
-msgstr[0] "%1 рік тому"
-msgstr[1] "%1 роки тому"
-msgstr[2] "%1 років тому"
-msgstr[3] "1 рік тому"
+msgstr[0] "Eitt år sidan"
+msgstr[1] "%1 år sidan"
 
 #: timeline/tagsmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr "Тренди"
+msgstr "På veg opp"
 
 #: timeline/threadmodel.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
-msgstr "Завантаження…"
+msgstr "Lastar …"
 
 #: timeline/threadmodel.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Post by %1"
-msgstr "Допис від %1"
+msgstr "Innlegg frå %1"
 
 #: tokodonapplication.cpp:14
 #, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
-msgstr "Обліковий запис"
+msgstr "Konto"
 
 #: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
-msgstr "Перемкнутися на «%1»"
+msgstr "Byt til «%1»"
 
 #: tokodonapplication.cpp:60 tokodonapplication.cpp:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
-msgstr "Налаштувати «%1»"
+msgstr "Set opp «%1»"
 
 #: tokodonapplication.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
-msgstr "Додати обліковий запис"
+msgstr "Legg til konto"
 
 #: tokodonapplication.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
-msgstr "Новий допис"
+msgstr "Skriv nytt innlegg"
 
 #: tokodonapplication.cpp:115
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
-msgstr "Перемкнути «%1»"
+msgstr "Byt til «%1»"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr "Журнал"
+msgstr ""
 
 #: utils/emojimodel.cpp:134
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
-msgstr "Нетиповий"
+msgstr "Tilpassa"
 
+# Brukar same kategorinamn som i emojiveljaren i Plasma («Ctr + .»). Dei er litt lengre og skildrande enn dei engelske namna i Tokodon.
 #: utils/emojimodel.cpp:139
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
-msgstr "Емоційки"
+msgstr "Fjesingar og kjensler"
 
 #: utils/emojimodel.cpp:144
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
-msgstr "Люди"
+msgstr "Folk og kropp"
 
 #: utils/emojimodel.cpp:149
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
-msgstr "Природа"
+msgstr "Dyr og natur"
 
 #: utils/emojimodel.cpp:154
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
-msgstr "Їжа"
+msgstr "Mat og drikke"
 
 #: utils/emojimodel.cpp:159
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
-msgstr "Діяльність"
+msgstr "Aktivitetar"
 
 #: utils/emojimodel.cpp:164
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
-msgstr "Подорожі"
+msgstr "Reise og stadar"
 
 #: utils/emojimodel.cpp:169
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
-msgstr "Об'єкти"
+msgstr "Gjenstandar"
 
 #: utils/emojimodel.cpp:174
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
-msgstr "Символи"
+msgstr "Symbol"
 
 #: utils/emojimodel.cpp:179
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
-msgstr "Прапорці"
+msgstr "Flagg"
 
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr "Не вдалося відкрити тимчасовий отриманий файл"
+msgstr ""
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr "Не вдалося зарезервувати місце на диску для отримання даних"
+msgstr ""
 
 #: utils/filetransferjob.cpp:81
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
-msgstr "Отримання"
+msgstr "Lastar ned"
 
 #: utils/filetransferjob.cpp:82
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
-msgstr "Джерело"
+msgstr "Kjelde"
 
 #: utils/filetransferjob.cpp:83
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
-msgstr "Призначення"
-
-#~ msgid "Learn More"
-#~ msgstr "Дізнатись більше"
-
-#~ msgid "Login"
-#~ msgstr "Увійти"
-
-#~ msgctxt "@action:button"
-#~ msgid "Configure %1"
-#~ msgstr "Налаштувати %1"
-
-#~ msgid "Spell Checking"
-#~ msgstr "Перевірка орфографії"
-
-#~ msgid "Enable automatic spell checking"
-#~ msgstr "Увімкнути автоматичну перевірку правопису"
-
-#~ msgid "Ignore uppercase words"
-#~ msgstr "Ігнорувати слова великими літерами"
-
-#~ msgid "Ignore hyphenated words"
-#~ msgstr "Ігнорувати слова з дефісами"
-
-#~ msgid "Detect language automatically"
-#~ msgstr "Визначати мову автоматично"
-
-#~ msgid "Selected default language:"
-#~ msgstr "Вибрана типова мова:"
-
-#~ msgid "None"
-#~ msgstr "Немає"
-
-#~ msgid "Additional Spell Checking Languages"
-#~ msgstr "Додаткові мови перевірки правопису"
-
-#~ msgid ""
-#~ "%1 will provide spell checking and suggestions for the languages listed "
-#~ "here when autodetection is enabled."
-#~ msgstr ""
-#~ "Якщо буде увімкнено автоматичне визначення мови, %1 надаватиме послуги "
-#~ "перевірки правопису та пропозиції для мов з цього списку."
-
-#~ msgid "Open Personal Dictionary"
-#~ msgstr "Відкрити особистий словник"
-
-#~ msgctxt "@title:window"
-#~ msgid "Spell checking languages"
-#~ msgstr "Мови перевірки правопису"
-
-#~ msgid "Default Language"
-#~ msgstr "Типова мова"
-
-#~ msgid "Spell checking dictionary"
-#~ msgstr "Словник для перевірки правопису"
-
-#~ msgid "Add a new word to your personal dictionary…"
-#~ msgstr "Додати нове слово до вашого особистого словника."
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Word"
-#~ msgstr "Додати слово"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Вилучити слово"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "Потік"
-
-#~ msgctxt "@action:Button Edit a post"
-#~ msgid "Edit"
-#~ msgstr "Змінити"
-
-#~ msgctxt "@title:window"
-#~ msgid "Settings"
-#~ msgstr "Параметри"
-
-#~ msgid "Moderation Tools"
-#~ msgstr "Засоби модерації"
-
-#~ msgid "Copy Link to This Profile"
-#~ msgstr "Копіювати посилання на цей профіль"
-
-#~ msgid "Conversation"
-#~ msgstr "Спілкування"
-
-#~ msgid "%1 Favorite"
-#~ msgid_plural "%1 Favorites"
-#~ msgstr[0] "%1 улюблене"
-#~ msgstr[1] "%1 улюблених"
-#~ msgstr[2] "%1 улюблених"
-#~ msgstr[3] "%1 улюблене"
-
-#~ msgid "%1 Boost"
-#~ msgid_plural "%1 Boosts"
-#~ msgstr[0] "%1 підсилення"
-#~ msgstr[1] "%1 підсилення"
-#~ msgstr[2] "%1 підсилень"
-#~ msgstr[3] "%1 підсилення"
-
-#~ msgctxt "Show more options"
-#~ msgid "More"
-#~ msgstr "Інше"
-
-#~ msgid "Push notifications are enabled."
-#~ msgstr "Імпульсні сповіщення увімкнено."
-
-#~ msgid "Group Notifications"
-#~ msgstr "Групові сповіщення"
-
-#~| msgid "Instance Url:"
-#~ msgid "Instance URL:"
-#~ msgstr "Адреса екземпляра:"
-
-#~ msgid "Instance URL must not be empty!"
-#~ msgstr "Адреса екземпляра не може бути порожньою!"
-
-#~ msgid "Trending Posts"
-#~ msgstr "Тенденції у дописах"
-
-#~ msgid "Trending Tags"
-#~ msgstr "Тенденції у мітках"
-
-#~ msgctxt "@info:Whether to reject incoming reports from this domain"
-#~ msgid "Reject report"
-#~ msgstr "Відкинути скаргу"
-
-#~ msgctxt "login status"
-#~ msgid "Silenced"
-#~ msgstr "Заглушено"
-
-#~ msgid "%1 Reply"
-#~ msgid_plural "%1 Replies"
-#~ msgstr[0] "%1 відповідь"
-#~ msgstr[1] "%1 відповіді"
-#~ msgstr[2] "%1 відповідей"
-#~ msgstr[3] "%1 відповідь"
-
-#~ msgctxt "@item:inlistbox Group of preferred languages"
-#~ msgid "Preferred Languages"
-#~ msgstr "Пріоритетні мови"
-
-#~ msgctxt "@item:inlistbox Group of all languages"
-#~ msgid "All Languages"
-#~ msgstr "Усі мови"
-
-#~ msgid "I have read and agree to the server's rules, terms and policies."
-#~ msgstr "Мною прочитано правила і умови надання послуг сервера."
-
-#~| msgid "@action:inmenu"
-#~ msgid "@action:button"
-#~ msgstr "@action:button"
-
-#~ msgctxt "@title"
-#~ msgid "Muted Accounts"
-#~ msgstr "Записи без голосу"
-
-#~ msgctxt "@title"
-#~ msgid "Blocked Accounts"
-#~ msgstr "Заблоковані записи"
-
-#~ msgid "No followed accounts"
-#~ msgstr "Записи без стеження"
-
-#~ msgid "Requested"
-#~ msgstr "Надіслано запит"
-
-#~ msgid "Stop Muting"
-#~ msgstr "Припинити заборону повідомлень"
-
-#~ msgid "Stop Blocking"
-#~ msgstr "Припинити блокування"
-
-#~ msgid "Muted Accounts"
-#~ msgstr "Записи без голосу"
-
-#~ msgid "Blocked Accounts"
-#~ msgstr "Заблоковані записи"
-
-#~ msgid "Copy Link to This Post"
-#~ msgstr "Копіювати посилання на цій допис"
-
-#~ msgid "Pinned entry"
-#~ msgstr "Пришпилений запис"
-
-#~ msgid "People"
-#~ msgstr "Люди"
-
-#~ msgctxt "@title:window"
-#~ msgid "Debug"
-#~ msgstr "Діагностика"
-
-#~ msgctxt "@title:group"
-#~ msgid "Notifications"
-#~ msgstr "Сповіщення"
-
-#~ msgid "Mention"
-#~ msgstr "Згадування"
-
-#~ msgid "Favorite"
-#~ msgstr "Улюблене"
-
-#~ msgid "Status"
-#~ msgstr "Стан"
-
-#~ msgid "Update/Edit"
-#~ msgstr "Оновити/Змінити"
-
-#~ msgid "Poll"
-#~ msgstr "Голосування"
-
-#~ msgid "Authorize Tokodon to act on your behalf"
-#~ msgstr "Уповноважте Tokodon на дії від вашого імені"
-
-#~ msgid "Open Link"
-#~ msgstr "Відкрити посилання"
-
-#~ msgid "Show detailed statistics about posts"
-#~ msgstr "Показати докладну статистику щодо дописів"
-
-#~ msgctxt "@label Account preferences"
-#~ msgid ""
-#~ "These preferences apply to the current account and are synced to other "
-#~ "clients."
-#~ msgstr ""
-#~ "Це налаштування стосуються поточного облікового запису і синхронізуються "
-#~ "з клієнтами."
-
-#~ msgid "Profile Editor"
-#~ msgstr "Редактор профілів"
-
-#~ msgctxt "@label Settings header"
-#~ msgid "Preferences"
-#~ msgstr "Налаштування"
-
-#~ msgid "All supported formats"
-#~ msgstr "Усі підтримувані формати"
-
-#~ msgid "A poll you voted in has ended"
-#~ msgstr "Голосування, у якому ви віддали голос, завершено"
-
-#~ msgctxt "@action:button"
-#~ msgid "Open Moderation Tools"
-#~ msgstr "Відкрити засоби модерації"
-
-#~ msgid "Open settings"
-#~ msgstr "Відкрити вікно параметрів"
-
-#~ msgid "Add a description"
-#~ msgstr "Додати опис"
-
-#~ msgctxt "@title"
-#~ msgid "Email Block Tool Page"
-#~ msgstr "Сторінка засобу блокування ел. пошти"
-
-#~ msgctxt "@title"
-#~ msgid "Federation Tool Page"
-#~ msgstr "Сторінка засобів федерації"
-
-#~ msgid "IP Rule Tool Page"
-#~ msgstr "Сторінка інструментів IP-правил"
-
-#~ msgctxt "@label User's number of followed accounts"
-#~ msgid "<b>%1</b> following"
-#~ msgstr "Стежить за <b>%1</b>"
-
-#~ msgid "%1 Favorites"
-#~ msgstr "%1 улюблених"
-
-#~ msgid "%1 Boosts"
-#~ msgstr "%1 підсилень"
-
-#~ msgid "Please insert the generated token."
-#~ msgstr "Будь ласка, вставте створений жетон."
-
-#~ msgid "Default status privacy"
-#~ msgstr "Конфіденційність типового стану"
-
-#~ msgid "Public post"
-#~ msgstr "Загальнодоступний допис"
-
-#~ msgid "Followers-only post"
-#~ msgstr "Допис лише для тих, хто стежить"
-
-#~ msgid "Direct post"
-#~ msgstr "Безпосередній допис"
-
-#~ msgid "Mark by default content as sensitive"
-#~ msgstr "Типово позначати вміст як конфіденційний"
-
-#~ msgctxt "@info:whatsthis Post language selection"
-#~ msgid "Select the language the post is written in"
-#~ msgstr "Вибрати мову, якою написано допис"
-
-#~ msgid "Add"
-#~ msgstr "Додати"
-
-#~ msgid "No Posts"
-#~ msgstr "Немає дописів"
-
-#~ msgid "Not following anyone"
-#~ msgstr "Ні за ким не стежить"
-
-#~ msgid "%1 months ago"
-#~ msgstr "%1 місяців тому"
-
-#~ msgid "%1 years ago"
-#~ msgstr "%1 років тому"
-
-#~ msgctxt "@info: Email of the user."
-#~ msgid "Role"
-#~ msgstr "Роль"
-
-#~ msgctxt "More than one reply"
-#~ msgid "1+"
-#~ msgstr "1+"
-
-#~ msgctxt "Like a post"
-#~ msgid "Like"
-#~ msgstr "Подобається"
-
-#~ msgid "Toot"
-#~ msgstr "Тут"
-
-#~ msgid "Zoom in"
-#~ msgstr "Збільшити"
-
-#~ msgid "Zoom out"
-#~ msgstr "Зменшити"
-
-#~ msgid "Rotate left"
-#~ msgstr "Обернути ліворуч"
-
-#~ msgid "Rotate right"
-#~ msgstr "Обернути праворуч"
-
-#~ msgid "Previous image"
-#~ msgstr "Попереднє зображення"
-
-#~ msgid "Next image"
-#~ msgstr "Наступне зображення"
-
-#~ msgid "%1 toots"
-#~ msgstr "%1 тутів"
-
-#~ msgctxt "hour:minute"
-#~ msgid "%1:%2"
-#~ msgstr "%1:%2"
-
-#~ msgid "Make pool auto-exclusive"
-#~ msgstr "Зробити буфер автовиключним"
-
-#~ msgctxt "Boookmark a post"
-#~ msgid "Bookmark"
-#~ msgstr "Створити закладку"
-
-#~ msgid "Refresh"
-#~ msgstr "Освіжити"
-
-#~ msgid "Image View"
-#~ msgstr "Перегляд зображення"
-
-#~ msgid "Global Timeline"
-#~ msgstr "Загальний розклад"
-
-#~ msgid "Add an account"
-#~ msgstr "Додати обліковий запис"
-
-#~ msgid "Options:"
-#~ msgstr "Параметри:"
-
-#~ msgid "Notifications support is not implemented yet"
-#~ msgstr "Підтримки сповіщень ще не передбачено"
-
-#~ msgid "Shared by %1"
-#~ msgstr "Оприлюднено %1"
+msgstr "Mål"
