@@ -117,7 +117,7 @@ void IpRulesToolModel::updateIpBlock(const int row, const QString &ip, const QSt
         const auto jsonObj = doc.object();
 
         if (!jsonObj.value("error"_L1).isUndefined()) {
-            account->errorOccured(i18n("Error occured when making a PUT request to update the domain block."));
+            account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
         }
         ipInfo.setIp(ip);
         ipInfo.setSeverity(severity);

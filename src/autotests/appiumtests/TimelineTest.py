@@ -38,9 +38,9 @@ class TimelineTest(unittest.TestCase):
         self.assertTrue(self.driver.find_element(by='description', value="Spoiler Status"))
 
     def test_favourite_interactions(self):
-        favouriteButton=self.driver.find_element(by='description',value="Favourite")
+        favouriteButton=self.driver.find_element(by='description',value="Favorite")
         favouriteButton.click()
-        self.assertTrue(self.driver.find_element(by='description', value="Favourited"))
+        self.assertTrue(self.driver.find_element(by='description', value="Favorited"))
 
     def test_bookmark_interactions(self):
         bookmarkButton=self.driver.find_element(by='description',value="Bookmark")

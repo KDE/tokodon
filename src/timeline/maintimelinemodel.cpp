@@ -27,7 +27,7 @@ QString MainTimelineModel::displayName() const
     } else if (m_timelineName == QStringLiteral("bookmarks")) {
         return i18nc("@title", "Bookmarks");
     } else if (m_timelineName == QStringLiteral("favourites")) {
-        return i18nc("@title", "Favourites");
+        return i18nc("@title", "Favorites");
     } else if (m_timelineName == QStringLiteral("trending")) {
         return i18nc("@title", "Trending");
     } else if (m_timelineName == QStringLiteral("list")) {

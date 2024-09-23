@@ -157,7 +157,7 @@ void FederationToolModel::updateDomainBlock(const int row,
                      const auto jsonObj = doc.object();
 
                      if (!jsonObj.value("error"_L1).isUndefined()) {
-                         account->errorOccured(i18n("Error occured when making a PUT request to update the domain block."));
+                         account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
                      }
                      federationInfo.setPublicComment(publicComment);
                      federationInfo.setPrivateComment(privateComment);

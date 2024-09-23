@@ -622,7 +622,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action favouritesAction: Kirigami.Action {
         icon.name: "tokodon-post-favorite"
-        text: i18n("Favourites")
+        text: i18n("Favorites")
         checkable: true
         onTriggered: {
             pageStack.clear();

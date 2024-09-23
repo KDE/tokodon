@@ -479,7 +479,7 @@ QQC2.ItemDelegate {
                 tooltip: i18nc("Favorite a post", "Favorite")
 
                 onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
-                Accessible.description: root.favourited ? i18n("Favourited") : i18n("Favourite")
+                Accessible.description: root.favourited ? i18n("Favorited") : i18n("Favorite")
             }
 
             Item {

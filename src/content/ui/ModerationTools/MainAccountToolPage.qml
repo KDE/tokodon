@@ -41,7 +41,7 @@ Kirigami.ScrollablePage {
             }
             QQC2.RadioButton {
                 id: sensitive
-                text: i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Senstive")
+                text: i18nc("@info: Force all this user's media attachments to be flagged as sensitive.", "Force-Sensitive")
                 visible: !root.identity.sensitized
             }
             QQC2.RadioButton {

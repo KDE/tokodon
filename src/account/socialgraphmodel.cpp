@@ -36,7 +36,7 @@ QString SocialGraphModel::displayName() const
     } else if (m_followListName == QStringLiteral("featured")) {
         return i18nc("@title", "Featured Users");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
-        return i18ncp("@title", "%1 favourite", "%1 favourites", m_count);
+        return i18ncp("@title", "%1 favorite", "%1 favorites", m_count);
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18ncp("@title", "%1 boost", "%1 boosts", m_count);
     }
@@ -58,7 +58,7 @@ QString SocialGraphModel::placeholderText() const
     } else if (m_followListName == QStringLiteral("featured")) {
         return i18n("No featured users");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
-        return i18n("No users favourited this post");
+        return i18n("No users favorited this post");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18n("No users boosted this post");
     }
