@@ -1,13 +1,11 @@
 # Translation of tokodon to Norwegian Nynorsk
 #
-# SPDX-FileCopyrightText: 2024 Karl Ove Hufthammer <karl@huftis.org>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-22 00:40+0000\n"
-"PO-Revision-Date: 2024-09-21 15:14+0200\n"
+"PO-Revision-Date: 2024-09-22 16:44+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -111,7 +109,7 @@ msgstr "%1 merkte innlegget ditt som favoritt"
 #: account/notificationhandler.cpp:122
 #, kde-format
 msgid "Poll by %1 has ended"
-msgstr "Avstemminga til %1 er avslutta"
+msgstr "Avrøystinga til %1 er avslutta"
 
 #: account/notificationhandler.cpp:130
 #, kde-format
@@ -174,8 +172,8 @@ msgstr "Framheva brukarar"
 msgctxt "@title"
 msgid "%1 favourite"
 msgid_plural "%1 favourites"
-msgstr[0] "%1 favorittmerkt"
-msgstr[1] "%1 favorittmerkte"
+msgstr[0] "%1 favorittmerking"
+msgstr[1] "%1 favorittmerkingar"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -241,31 +239,33 @@ msgid "Could not take action against the account"
 msgstr "Klarte ikkje gjera handling på kontoen"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
-msgstr "Klarte ikkje aktivera den deaktiverte kontoen"
+msgstr "Klarte ikkje opna den stengde kontoen"
 
+# Heiter no «limited», ikkje «silenced»:
+# https://docs.joinmastodon.org/admin/moderation/#limit-user
 #: admin/accounttoolmodel.cpp:300
 #, kde-format
 msgid "Could not unsilence the account"
-msgstr "Klarte ikkje stoppa å målbinda kontoen"
+msgstr "Klarte ikkje slutta å avgrensa kontoen"
 
 #: admin/accounttoolmodel.cpp:301
 #, kde-format
 msgid "Could not unsuspend the account"
-msgstr ""
+msgstr "Klarte ikkje opna kontoen att"
 
 #: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not mark the account as not sensitive"
 msgstr "Klarte ikkje merkja kontoen som ikkje potensielt støytande"
 
+# https://docs.joinmastodon.org/admin/moderation/#suspend-user
 #: admin/adminaccountinfo.cpp:22
 #, kde-format
 msgctxt "login status"
 msgid "Suspended"
-msgstr ""
+msgstr "Merkt for sletting"
 
 #: admin/adminaccountinfo.cpp:24
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "Avgrensa"
 #, kde-format
 msgctxt "login status"
 msgid "Sensitized"
-msgstr ""
+msgstr "Merkt som potensielt støytande"
 
 #: admin/adminaccountinfo.cpp:28
 #, kde-format
@@ -301,32 +301,33 @@ msgstr "Ikkje godkjend"
 #, kde-format
 msgctxt "login status"
 msgid "No Limits Imposed"
-msgstr ""
+msgstr "Ingen avgrensingar"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
 msgid "Error occured when making a PUT request to update the domain block."
 msgstr ""
+"Det oppstod ein feil ved PUT-førespurnad for å oppdatera domeneblokkeringa."
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
 msgid "Could not resolve report"
-msgstr ""
+msgstr "Klarte ikkje merkja rapporten som løyst"
 
 #: admin/reporttoolmodel.cpp:195
 #, kde-format
 msgid "Could not unresolve report"
-msgstr ""
+msgstr "Klarte ikkje merkja rapporten som ikkje løyst"
 
 #: admin/reporttoolmodel.cpp:196
 #, kde-format
 msgid "Could not assign report"
-msgstr ""
+msgstr "Klart ikkje tildela rapporten til brukar"
 
 #: admin/reporttoolmodel.cpp:197
 #, kde-format
 msgid "Could not unassign report"
-msgstr ""
+msgstr "Klarte ikkje merkja rapporten som ikkje tildelt"
 
 #: content/ui/AccountInfo.qml:120
 #, kde-format
@@ -366,7 +367,7 @@ msgstr "Gøym framhevingar frå %1"
 #: content/ui/AccountInfo.qml:265
 #, kde-format
 msgid "Show Boosts from %1"
-msgstr "Viser framhevingar frå %1"
+msgstr "Vis framhevingar frå %1"
 
 #: content/ui/AccountInfo.qml:281
 #, kde-format
@@ -569,13 +570,13 @@ msgstr "Ingen samtalar"
 #, kde-format
 msgctxt "@action:button"
 msgid "Increase follow request count"
-msgstr ""
+msgstr "Auk talet på følgjeførespurnadar"
 
 #: content/ui/Debug/DebugPage.qml:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Decrease follow request count"
-msgstr ""
+msgstr "Mink talet på følgjeførespurnadar"
 
 #: content/ui/EditListPage.qml:28
 #, kde-format
@@ -610,7 +611,7 @@ msgstr "Eksklusiv"
 #: content/ui/EditListPage.qml:81
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
-msgstr ""
+msgstr "Innlegg i ei eksklusiv liste vert ekskludert frå «Heim»-tidslinja."
 
 #: content/ui/EditListPage.qml:102
 #, kde-format
@@ -708,6 +709,10 @@ msgid ""
 "\n"
 "The types of notifications shown can be fine tuned when logged in."
 msgstr ""
+"Tokodon kan visa varslingar når nokon for eksempel framhevar eller svarar på "
+"innlegga dine.\n"
+"\n"
+"Når du er logga inn, kan du kan tilpassa kva du vil ha varsling for."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:35
 #, kde-format
@@ -739,6 +744,13 @@ msgid ""
 "\n"
 "After you installed the service, make sure it's running and restart Tokodon."
 msgstr ""
+"For å kunna lagra sensitive data krev Tokodon at ei passord­teneste køyrer.\n"
+"\n"
+"Tokodon kan bruka både KWallet, GNOME Keyring og andre libsecret-kompatible "
+"tenester.\n"
+"\n"
+"Etter at du har installert tenesta, sjå til at ho køyrer, og start så "
+"Tokodon på nytt."
 
 #: content/ui/InitialSetup/SetupPassword.qml:32
 #, kde-format
@@ -760,7 +772,7 @@ msgstr "Velkommen til Tokodon"
 #: content/ui/InitialSetup/SetupWelcome.qml:35
 #, kde-format
 msgid "Some initial setup is required before you can use Tokodon."
-msgstr ""
+msgstr "Før du kan bruka Tokodon, må me ordna nokre innstillingar."
 
 #: content/ui/LanguageSelector.qml:25
 #, kde-format
@@ -807,16 +819,18 @@ msgid ""
 "To continue, please open the following link in your web browser to authorize "
 "Tokodon: %1"
 msgstr ""
+"For å halda fram må du opna denne lenkja i ein nettlesar og gje Tokodon "
+"tilgang til kontoen din: %1"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
 #, kde-format
 msgid "Open Authorization Link"
-msgstr ""
+msgstr "Opna tilgangslenkje"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
 #, kde-format
 msgid "Copy Authorization Link"
-msgstr ""
+msgstr "Kopier tilgangslenkje"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -826,29 +840,30 @@ msgstr "Lenkje kopiert."
 #: content/ui/LoginFlow/BrowserAuthorization.qml:25
 #, kde-format
 msgid "Use Authorization Code"
-msgstr "Bruk løyvekode"
+msgstr "Bruk tilgangskode"
 
 #: content/ui/LoginFlow/BrowserAuthorization.qml:26
 #, kde-format
 msgid "Use this login method if the above link does not work."
-msgstr ""
+msgstr "Bruk denne innloggings­metoden dersom lenkja ovanfor ikkje verkar."
 
 #: content/ui/LoginFlow/CodeAuthorization.qml:25
 #, kde-format
 msgid "Enter authorization token:"
-msgstr ""
+msgstr "Skriv inn tilgangskode:"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Issue"
-msgstr ""
+msgstr "Innloggingsproblem"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:27
 #, kde-format
 msgid "There was an issue logging into the server:<br><b>%1</b>"
-msgstr ""
+msgstr "Klarte ikkje logga på tenaren:<br><b>%1</b>"
 
+# Ville helst hatt «logga inn på nytt», men då vert det to «på nytt», som er litt uelegant. Sjekk òg at omsetjinga er konsistent med teksten på knappen.
 #: content/ui/LoginFlow/LoginIssuePage.qml:37
 #, kde-format
 msgid ""
@@ -857,16 +872,22 @@ msgid ""
 "\n"
 "You can attempt to log in again with the button below, or restart Tokodon."
 msgstr ""
+"Sjå til at passordtenesta køyrer. Er det andre innloggings­problem, kan du "
+"prøva å logga inn via nettsida til tenaren.\n"
+"\n"
+"Du kan òg prøva om att å logga inn. Eventuelt kan du prøva å starta Tokodon "
+"på nytt."
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:47
 #, kde-format
 msgid "View Website"
-msgstr ""
+msgstr "Gå til nettsida"
 
+# Sjekk at teksten på knappen er konsistent med hjelpeteksten (nokre tekstar ovanfor).
 #: content/ui/LoginFlow/LoginIssuePage.qml:56
 #, kde-format
 msgid "Re-Attempt Log In"
-msgstr ""
+msgstr "Prøv om att å logga inn"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:68
 #: content/ui/Settings/ProfileEditor.qml:30
@@ -891,7 +912,7 @@ msgstr "Er du sikker på at du vil logga ut?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Login"
-msgstr ""
+msgstr "Logg inn"
 
 #: content/ui/LoginFlow/LoginPage.qml:25
 #: content/ui/LoginFlow/RegistrationPage.qml:26
@@ -902,6 +923,7 @@ msgstr ""
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Fekk ikkje kontakt med tenaren: %1. Kontroller mellomtenar-innstillingane."
 
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
@@ -913,11 +935,12 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Mellomtenar-innstillingar"
 
+# Overskrift til innloggingsfelta.
 #: content/ui/LoginFlow/LoginPage.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Login"
-msgstr ""
+msgstr "Innlogging"
 
 #: content/ui/LoginFlow/LoginPage.qml:106
 #: content/ui/LoginFlow/ServersPage.qml:67
@@ -942,11 +965,13 @@ msgid ""
 "Allow Tokodon to access moderation tools. Try disabling this if you have "
 "trouble logging in."
 msgstr ""
+"Gjev Tokodon tilgang til modererings­verktøy. Du kan prøva å slå av dette "
+"dersom du har vanskar med å logga inn."
 
 #: content/ui/LoginFlow/LoginPage.qml:131
 #, kde-format
 msgid "Server URL must not be empty!"
-msgstr "Tenarsadressa kan ikkje vera tom."
+msgstr "Tenaradressa kan ikkje vera tom."
 
 #: content/ui/LoginFlow/LoginPage.qml:152
 #: content/ui/LoginFlow/ServersPage.qml:95
@@ -1033,7 +1058,7 @@ msgstr "Vel tenar"
 #: content/ui/LoginFlow/ServersPage.qml:47
 #, kde-format
 msgid "This server is closed for registration: %1"
-msgstr ""
+msgstr "Tenaren tillèt ikkje lenger registrering: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:61
 #, kde-format
@@ -1044,7 +1069,7 @@ msgstr "Vel tenar"
 #: content/ui/LoginFlow/ServersPage.qml:83
 #, kde-format
 msgid "Server URL must not be empty."
-msgstr "Tenarsadressa kan ikkje vera tom."
+msgstr "Tenaradressa kan ikkje vera tom."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1154,7 +1179,7 @@ msgstr "Feilsøk"
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
-msgstr "Modereringsverktøy"
+msgstr "Modererings­verktøy"
 
 #: content/ui/Main.qml:522
 #, kde-format
@@ -1243,7 +1268,7 @@ msgstr "E-postadresse:"
 #, kde-format
 msgctxt "@info:placeholder ip for searching accounts"
 msgid "IP:"
-msgstr "IP:"
+msgstr "IP-adresse:"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:62
 #, kde-format
@@ -1271,7 +1296,7 @@ msgstr "Avbryt"
 #, kde-format
 msgctxt "@info:Location combobox to choose location filters"
 msgid "Location"
-msgstr ""
+msgstr "Plassering"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:108
 #, kde-format
@@ -1309,31 +1334,33 @@ msgstr "Alle"
 #, kde-format
 msgctxt "@info:Filter out accounts with active moderation status"
 msgid "Active"
-msgstr ""
+msgstr "Verksame"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:149
 #, kde-format
 msgctxt "@info:Filter out accounts with pending moderation status"
 msgid "Pending"
-msgstr ""
+msgstr "Ventar på godkjenning"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:153
 #, kde-format
 msgctxt "@info:Filter out accounts with disabled moderation status"
 msgid "Disabled"
-msgstr ""
+msgstr "Stengde"
 
+# Heiter no «limited», ikkje «silenced»:
+# https://docs.joinmastodon.org/admin/moderation/#limit-user
 #: content/ui/ModerationTools/AccountToolPage.qml:157
 #, kde-format
 msgctxt "@info:Filter out accounts with silenced moderation status"
 msgid "Silenced"
-msgstr "Målbundne"
+msgstr "Avgrensa"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:161
 #, kde-format
 msgctxt "@info:Filter out accounts with suspended moderation status"
 msgid "Suspended"
-msgstr ""
+msgstr "Merkte for sletting"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:174
 #, kde-format
@@ -1351,7 +1378,7 @@ msgstr "Alle"
 #, kde-format
 msgctxt "@info:Filter out accounts with moderator role"
 msgid "Moderator"
-msgstr ""
+msgstr "Moderator"
 
 #: content/ui/ModerationTools/AccountToolPage.qml:196
 #, kde-format
@@ -1374,25 +1401,25 @@ msgstr "Fann ikkje nokon kontoar"
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Email Block"
-msgstr ""
+msgstr "Lag e-postblokkering"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:31
 #, kde-format
 msgctxt "@title"
 msgid "E-Mail Domain Info"
-msgstr ""
+msgstr "Informasjon om e-postdomene"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:40
 #, kde-format
 msgctxt "@info The domain on which the block is imposed"
 msgid "Email domain name"
-msgstr ""
+msgstr "Namn på e-postdomene"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:48
 #, kde-format
 msgctxt "@info Time when the block was imposed."
 msgid "Block created at"
-msgstr ""
+msgstr "Blokkering oppretta"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:56
 #, kde-format
@@ -1400,14 +1427,14 @@ msgctxt ""
 "@info The counted accounts signup attempts using that email domain within "
 "the last week."
 msgid "Account sign-up attempts in this week"
-msgstr ""
+msgstr "Innloggingsforsøk til kontoen denne veka"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:64
 #, kde-format
 msgctxt ""
 "@info The counted IP signup attempts of that email domain within that day."
 msgid "IP sign-up attempts in this week"
-msgstr ""
+msgstr "Registreringsforsøk frå IP-adressa denne veka"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:73
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:111
@@ -1420,18 +1447,18 @@ msgstr "Avbryt"
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete email block"
-msgstr ""
+msgstr "Fjern e-postblokkering"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:82
 #, kde-format
 msgid "Email block deleted"
-msgstr ""
+msgstr "E-postblokkeringa vart fjerna"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:92
 #, kde-format
 msgctxt "@title"
 msgid "New E-Mail Domain Block"
-msgstr ""
+msgstr "Ny blokkering av e-postdomene"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:102
 #, kde-format
@@ -1445,44 +1472,46 @@ msgid ""
 "This can be the domain name that shows up in the e-mail address or the MX "
 "record it uses. They will be checked upon sign-up."
 msgstr ""
+"Dette kan vera domene­namnet i e-postadressa eller MX-oppføringa. Vert "
+"kontrollert ved registrering."
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Resolve domain"
-msgstr ""
+msgstr "Løys domenet"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:120
 #, kde-format
 msgid "New email block added"
-msgstr ""
+msgstr "Ny e-postblokkering lagd til"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:163
 #, kde-format
 msgctxt "@info"
 msgid "%1 sign-up attempts over the last week"
-msgstr ""
+msgstr "%1 registreringsforsøk siste veke"
 
 #: content/ui/ModerationTools/EmailBlockToolPage.qml:185
 #, kde-format
 msgid "No email blocks found"
-msgstr ""
+msgstr "Fann ingen e-postblokkeringar"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:21
 #, kde-format
 msgid "Add New Domain Block"
-msgstr ""
+msgstr "Ny domeneblokkering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:27
 #: content/ui/ModerationTools/FederationToolPage.qml:160
 #, kde-format
 msgid "Allow Federation with Domain"
-msgstr ""
+msgstr "Tillat samarbeid med domenet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:39
 #, kde-format
 msgid "Allowed Domain Info"
-msgstr ""
+msgstr "Informasjon om tillate domene"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:45
 #, kde-format
@@ -1494,22 +1523,22 @@ msgstr "Domene"
 #, kde-format
 msgctxt "@info:Time when the domain was allowed to federate."
 msgid "Created at"
-msgstr "Oppretta "
+msgstr "Oppretta"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:60
 #, kde-format
 msgid "Disallow Federation with Domain"
-msgstr ""
+msgstr "Ikkje tillat samarbeid med domenet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:64
 #, kde-format
 msgid "Disallowed federation with the domain"
-msgstr ""
+msgstr "Tillèt ikkje samarbeid med domenet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:74
 #, kde-format
 msgid "Add Domain Block"
-msgstr "Legg til domeneblokkering"
+msgstr "Ny domeneblokkering"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:84
 #, kde-format
@@ -1522,12 +1551,12 @@ msgstr "Domene*"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:139
 #, kde-format
 msgid "Public comment"
-msgstr "Offentleg kommentar"
+msgstr "Offentleg merknad"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:94
 #, kde-format
 msgid "Private Comment"
-msgstr "Privat kommentar"
+msgstr "Privat merknad"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:99
 #: content/ui/ModerationTools/MainFederationToolPage.qml:50
@@ -1535,19 +1564,21 @@ msgstr "Privat kommentar"
 msgid "Moderation"
 msgstr "Moderering"
 
+# Heiter no «limited», ikkje «silenced»:
+# https://docs.joinmastodon.org/admin/moderation/#limit-user
 #: content/ui/ModerationTools/FederationToolPage.qml:104
 #: content/ui/ModerationTools/MainFederationToolPage.qml:55
 #, kde-format
 msgctxt "@info:Filter out all the allowed domains"
 msgid "Silence"
-msgstr ""
+msgstr "Avgrensa"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:108
 #: content/ui/ModerationTools/MainFederationToolPage.qml:59
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Suspend"
-msgstr ""
+msgstr "Merkt for sletting"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:112
 #: content/ui/ModerationTools/MainFederationToolPage.qml:63
@@ -1569,6 +1600,8 @@ msgid ""
 "Removes locally stored media files and refuses to download any in the "
 "future. Irrelevant for suspensions"
 msgstr ""
+"Fjernar lokalt lagra mediefiler og lèt vera å lasta ned nye i framtida. "
+"Ikkje relevant for kontoar merkte for sletting."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:127
 #: content/ui/ModerationTools/MainFederationToolPage.qml:93
@@ -1581,12 +1614,14 @@ msgstr "Avvis rapportar"
 #, kde-format
 msgid "Ignore all reports coming from this domain. Irrelevant for suspensions"
 msgstr ""
+"Ignorer alle rapportar frå dette domenet. Ikkje relevant for kontoar merkte "
+"for sletting."
 
 #: content/ui/ModerationTools/FederationToolPage.qml:133
 #: content/ui/ModerationTools/MainFederationToolPage.qml:101
 #, kde-format
 msgid "Obfuscate domain name"
-msgstr ""
+msgstr "Kamufler domenenamnet"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:134
 #: content/ui/ModerationTools/MainFederationToolPage.qml:102
@@ -1595,6 +1630,8 @@ msgid ""
 "Partially obfuscate the domain name in the list if advertising the list of "
 "domain limitations is enabled"
 msgstr ""
+"Gøym delar av domenenamnet i lista dersom det er påslått kunngjering av "
+"liste over domeneavgrensingar"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:146
 #: content/ui/ModerationTools/FederationToolPage.qml:177
@@ -1606,7 +1643,7 @@ msgstr "Lag blokkering"
 #: content/ui/ModerationTools/FederationToolPage.qml:151
 #, kde-format
 msgid "New domain block added"
-msgstr ""
+msgstr "Ny domeneblokkering lagd til"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:166
 #, kde-format
@@ -1619,7 +1656,7 @@ msgstr "Domene*"
 #: content/ui/ModerationTools/FederationToolPage.qml:181
 #, kde-format
 msgid "New Allowed Domain Added"
-msgstr ""
+msgstr "Nytt tillate domene lagt til"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:194
 #, kde-format
@@ -1627,6 +1664,8 @@ msgid ""
 "Allowed domain option is available for instances with limited federation "
 "mode enabled"
 msgstr ""
+"Valet for tillatne domene er tilgjengeleg for instansar med avgrensa "
+"samarbeidsmodus påslått"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:201
 #, kde-format
@@ -1638,7 +1677,7 @@ msgstr "Moderering"
 #, kde-format
 msgctxt "@info:Filter out all the blocked domains"
 msgid "Blocked domains"
-msgstr ""
+msgstr "Blokkerte domene"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:220
 #, kde-format
@@ -1649,18 +1688,18 @@ msgstr "Tillatne domene"
 #: content/ui/ModerationTools/FederationToolPage.qml:286
 #, kde-format
 msgid "Allowed for federation"
-msgstr ""
+msgstr "Tillate for samarbeid"
 
 #: content/ui/ModerationTools/FederationToolPage.qml:309
 #, kde-format
 msgid "No federations found"
-msgstr ""
+msgstr "Ingen samarbeid funne"
 
 #: content/ui/ModerationTools/IpRulePage.qml:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Rule"
-msgstr "Lag ny regel"
+msgstr "Ny regel"
 
 #: content/ui/ModerationTools/IpRulePage.qml:25
 #, kde-format
@@ -1677,7 +1716,7 @@ msgstr "IP*"
 #, kde-format
 msgctxt "@info:Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Går ut etter"
 
 #: content/ui/ModerationTools/IpRulePage.qml:48
 #, kde-format
@@ -1719,13 +1758,13 @@ msgstr "3 år"
 #, kde-format
 msgctxt "@info: The comment attached with the ip rule"
 msgid "Comment"
-msgstr "Kommentar"
+msgstr "Merknad"
 
 #: content/ui/ModerationTools/IpRulePage.qml:80
 #: content/ui/ModerationTools/MainIpRulePage.qml:110
 #, kde-format
 msgid "Optional. Remember why you added this rule."
-msgstr "Valfritt. Bruk for å hugs korfor du la til regelen."
+msgstr "Valfritt. Bruk for å hugsa korfor du la til regelen."
 
 #: content/ui/ModerationTools/IpRulePage.qml:87
 #, kde-format
@@ -1737,43 +1776,43 @@ msgstr "Regel *"
 #: content/ui/ModerationTools/MainIpRulePage.qml:121
 #, kde-format
 msgid "Choose what will happen with requests from this IP"
-msgstr ""
+msgstr "Vel kva som skal gjerast med førespurnadar frå IP-adressa"
 
 #: content/ui/ModerationTools/IpRulePage.qml:98
 #: content/ui/ModerationTools/MainIpRulePage.qml:129
 #, kde-format
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Avgrens talet på registreringar"
 
 #: content/ui/ModerationTools/IpRulePage.qml:99
 #: content/ui/ModerationTools/MainIpRulePage.qml:130
 #, kde-format
 msgid "New sign-ups will require your approval"
-msgstr ""
+msgstr "Registrering av nye kontoar krev godkjenning"
 
 #: content/ui/ModerationTools/IpRulePage.qml:105
 #: content/ui/ModerationTools/MainIpRulePage.qml:136
 #, kde-format
 msgid "Block sign-ups"
-msgstr ""
+msgstr "Blokker registrering"
 
 #: content/ui/ModerationTools/IpRulePage.qml:106
 #: content/ui/ModerationTools/MainIpRulePage.qml:137
 #, kde-format
 msgid "New sign-ups will not be possible"
-msgstr ""
+msgstr "Registrering av nye kontoar vert ikkje mogleg"
 
 #: content/ui/ModerationTools/IpRulePage.qml:111
 #: content/ui/ModerationTools/MainIpRulePage.qml:143
 #, kde-format
 msgid "Block access"
-msgstr ""
+msgstr "Blokker tilgang"
 
 #: content/ui/ModerationTools/IpRulePage.qml:112
 #: content/ui/ModerationTools/MainIpRulePage.qml:144
 #, kde-format
 msgid "Block access to all resources"
-msgstr ""
+msgstr "Tilgang til alle ressursar vert blokkert"
 
 #: content/ui/ModerationTools/IpRulePage.qml:126
 #, kde-format
@@ -1791,14 +1830,14 @@ msgstr "Ny IP-regel lagd til"
 #, kde-format
 msgctxt "@label"
 msgid "Limit sign-ups"
-msgstr ""
+msgstr "Avgrens talet på registreringar"
 
 #: content/ui/ModerationTools/IpRulePage.qml:158
 #: content/ui/ModerationTools/MainIpRulePage.qml:31
 #, kde-format
 msgctxt "@label"
 msgid "Block sign-ups"
-msgstr ""
+msgstr "Blokker registrering"
 
 #: content/ui/ModerationTools/IpRulePage.qml:160
 #: content/ui/ModerationTools/MainIpRulePage.qml:33
@@ -1810,7 +1849,7 @@ msgstr "Blokker tilgang"
 #: content/ui/ModerationTools/IpRulePage.qml:207
 #, kde-format
 msgid "No IP rules found"
-msgstr ""
+msgstr "Fann ingen IP-reglar"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:19
 #, kde-format
@@ -1820,7 +1859,7 @@ msgstr "Ikkje tilgjengeleg"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:29
 #, kde-format
 msgid "Perform moderation action on %1"
-msgstr ""
+msgstr "Gjer moderering av %1"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:35
 #, kde-format
@@ -1843,7 +1882,7 @@ msgstr "Frys"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Senstive"
-msgstr "Merk automatisk som potensielt støytande"
+msgstr "Merk som potensielt støytande"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
 #, kde-format
@@ -1851,7 +1890,7 @@ msgctxt ""
 "@info: Prevent the user from being able to post with public visibility, hide "
 "their posts and notifications from people not following them."
 msgid "Limit"
-msgstr ""
+msgstr "Avgrens"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:54
 #, kde-format
@@ -1859,7 +1898,7 @@ msgctxt ""
 "@info: Prevent any interaction from or to this account and delete its "
 "contents. Revertible within 30 days."
 msgid "Suspend"
-msgstr ""
+msgstr "Merk for sletting"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:59
 #, kde-format
@@ -1867,7 +1906,7 @@ msgctxt ""
 "@info: The user will receive an explanation of what happened with their "
 "account"
 msgid "Notify the user per e-mail"
-msgstr ""
+msgstr "Varsla brukaren via e-post"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:65
 #, kde-format
@@ -1884,7 +1923,7 @@ msgstr "Send inn"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:92
 #, kde-format
 msgid "Action taken successfully"
-msgstr ""
+msgstr "Handlinga vart gjord"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:97
 #, kde-format
@@ -1900,42 +1939,44 @@ msgstr "Er du sikker?"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:108
 #, kde-format
 msgid "Action will be taken against the account."
-msgstr ""
+msgstr "Handling vert gjord på kontoen."
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:116
 #, kde-format
 msgid "Successfully approved %1's sign-up application"
-msgstr ""
+msgstr "Registreringa til %1 vart godkjend"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:120
 #, kde-format
 msgid "Successfully rejected %1's sign-up application"
-msgstr ""
+msgstr "Registreringa til %1 vart avvist"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:124
 #, kde-format
 msgid "Successfully unfreezed %1's account"
-msgstr ""
+msgstr "Kontoen til %1 er ikkje lenger frosen"
 
+# Heiter no «limited», ikkje «silenced»:
+# https://docs.joinmastodon.org/admin/moderation/#limit-user
 #: content/ui/ModerationTools/MainAccountToolPage.qml:128
 #, kde-format
 msgid "Successfully unsilenced %1's account"
-msgstr ""
+msgstr "Kontoen til %1 er ikkje lenger avgrensa"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:132
 #, kde-format
 msgid "Successfully unsuspended %1's account"
-msgstr ""
+msgstr "Kontoen til %1 er ikkje lenger merkt for sletting"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:136
 #, kde-format
 msgid "Successfully undo force-sensitive %1's account"
-msgstr ""
+msgstr "Kontoen til %1 er ikkje lenger merkt som potensielt støytande"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:140
 #, kde-format
 msgid "Successfully deleted %1's account data"
-msgstr ""
+msgstr "Kontodataa til %1 er no sletta"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:225
 #: content/ui/ModerationTools/MainReportToolPage.qml:98
@@ -1947,7 +1988,7 @@ msgstr "Biografi"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:270
 #, kde-format
 msgid "Reasons for joining"
-msgstr ""
+msgstr "Grunngjeving for å verta med"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:316
 #, kde-format
@@ -1970,7 +2011,7 @@ msgstr "Følgjer"
 #: content/ui/ModerationTools/MainAccountToolPage.qml:327
 #, kde-format
 msgid "No role"
-msgstr "Ingen rolle"
+msgstr "Inga rolle"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:328
 #, kde-format
@@ -1978,6 +2019,7 @@ msgctxt "@info Role of the account on this server."
 msgid "Role"
 msgstr "Rolle"
 
+# skip-rule: aktiv
 #: content/ui/ModerationTools/MainAccountToolPage.qml:332
 #, kde-format
 msgctxt "@info The last time the account was active."
@@ -2022,18 +2064,18 @@ msgstr "Ikkje stadfesta"
 #, kde-format
 msgctxt "@info: Locale of the user."
 msgid "Account Locale"
-msgstr ""
+msgstr "Kontospråk"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:379
 #, kde-format
 msgctxt "@info: Joining date of the user"
 msgid "Joined"
-msgstr ""
+msgstr "Vart med"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:387
 #, kde-format
 msgid "Most recent IP"
-msgstr ""
+msgstr "Nyaste IP-adresse"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:415
 #, kde-format
@@ -2061,48 +2103,48 @@ msgstr "Slett kontodata"
 #, kde-format
 msgctxt "@info: Unfreeze the user's account"
 msgid "Unfreeze"
-msgstr ""
+msgstr "Angra merking som frosen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:482
 #, kde-format
 msgid "Undo Limit"
-msgstr ""
+msgstr "Angra merking som avgrensa"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:492
 #, kde-format
 msgid "Undo Suspension"
-msgstr ""
+msgstr "Angra merking for sletting"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:502
 #, kde-format
 msgid "Undo force-sensitive"
-msgstr "Ikkje merk automatisk som potensielt støytande"
+msgstr "Angra merking som potensielt støytande"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:513
 #, kde-format
 msgid "Take action against this account"
-msgstr ""
+msgstr "Gjer handling på kontoen"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:29
 #, kde-format
 msgid "Remove Domain Block"
-msgstr ""
+msgstr "Fjern domeneblokkering"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:32
 #, kde-format
 msgid "Domain Block Removed"
-msgstr ""
+msgstr "Domeneblokkeringa vart fjerna"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:40
 #, kde-format
 msgid "Edit domain block"
-msgstr ""
+msgstr "Rediger domeneblokkering"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:80
 #: content/ui/ModerationTools/MainFederationToolPage.qml:146
 #, kde-format
 msgid "Private comment"
-msgstr ""
+msgstr "Privat merknad"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:115
 #, kde-format
@@ -2113,13 +2155,14 @@ msgstr "Oppdater blokkering"
 #: content/ui/ModerationTools/MainFederationToolPage.qml:122
 #, kde-format
 msgid "Domain block updated"
-msgstr ""
+msgstr "Domeneblokkeringa vart oppdatert"
 
+# Vert etterfølgd av dato.
 #: content/ui/ModerationTools/MainFederationToolPage.qml:132
 #: content/ui/ModerationTools/MainIpRulePage.qml:175
 #, kde-format
 msgid "Blocked at"
-msgstr ""
+msgstr "Blokkert"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:140
 #, kde-format
@@ -2137,13 +2180,13 @@ msgstr "Ingen"
 #, kde-format
 msgctxt "@info:The policy to be applied by this domain block"
 msgid "Policy"
-msgstr ""
+msgstr "Reglar"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:160
 #, kde-format
 msgctxt "@info:Whether to obfuscate public displays of this domain block"
 msgid "Obfuscate"
-msgstr ""
+msgstr "Kamufler"
 
 #: content/ui/ModerationTools/MainFederationToolPage.qml:167
 #, kde-format
@@ -2189,7 +2232,7 @@ msgstr "IP"
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expire After"
-msgstr ""
+msgstr "Går ut etter"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:77
 #, kde-format
@@ -2232,7 +2275,7 @@ msgstr "3 år"
 #, kde-format
 msgctxt "@info The comment attached with the ip rule"
 msgid "Comment"
-msgstr ""
+msgstr "Merknad"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:117
 #, kde-format
@@ -2255,13 +2298,13 @@ msgstr "Oppdater IP-regel"
 #: content/ui/ModerationTools/MainIpRulePage.qml:164
 #, kde-format
 msgid "IP rule updated"
-msgstr ""
+msgstr "IP-regelen vart oppdatert"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:182
 #, kde-format
 msgctxt "@info Time after which the rule will be lifted"
 msgid "Expires at"
-msgstr ""
+msgstr "Går ut etter"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:190
 #, kde-format
@@ -2273,7 +2316,7 @@ msgstr "Ingen"
 #, kde-format
 msgctxt "@info The severity to be applied by this IP rule"
 msgid "Severity"
-msgstr ""
+msgstr "Alvorsgrad"
 
 #: content/ui/ModerationTools/MainIpRulePage.qml:207
 #, kde-format
@@ -2289,7 +2332,7 @@ msgstr "Rapporter #%1"
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
 msgid "Mark as unresolved"
-msgstr ""
+msgstr "Merk som ikkje løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:50
 #, kde-format
@@ -2299,12 +2342,12 @@ msgstr "Merk som løyst"
 #: content/ui/ModerationTools/MainReportToolPage.qml:54
 #, kde-format
 msgid "Report Unresolved"
-msgstr ""
+msgstr "Rapport ikkje løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:57
 #, kde-format
 msgid "Report Resolved"
-msgstr ""
+msgstr "Rapport løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:148
 #, kde-format
@@ -2330,6 +2373,7 @@ msgctxt "@info Time at which the reported account joined."
 msgid "Joined"
 msgstr "Vart med"
 
+# skip-rule: aktiv
 #: content/ui/ModerationTools/MainReportToolPage.qml:164
 #, kde-format
 msgctxt "@info The last time the reported account was active."
@@ -2356,27 +2400,27 @@ msgstr "Rapportert av"
 #: content/ui/ModerationTools/MainReportToolPage.qml:203
 #, kde-format
 msgid "Report Status"
-msgstr ""
+msgstr "Rapporteringsstatus"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Resolved"
-msgstr ""
+msgstr "Løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:204
 #, kde-format
 msgid "Unresolved"
-msgstr ""
+msgstr "Ikkje løyst"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:211
 #, kde-format
 msgid "Action taken by"
-msgstr ""
+msgstr "Handling gjord av"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:224
 #, kde-format
 msgid "Assigned moderator"
-msgstr ""
+msgstr "Tildelt moderator"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
 #: editor/listeditorbackend.cpp:109
@@ -2387,17 +2431,17 @@ msgstr "Ingen"
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Unassign"
-msgstr ""
+msgstr "Merk som ikkje tildelt"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:233
 #, kde-format
 msgid "Assign to me"
-msgstr ""
+msgstr "Tildel meg"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:243
 #, kde-format
 msgid "Forwarded"
-msgstr ""
+msgstr "Vidaresend"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:244
 #, kde-format
@@ -2422,16 +2466,18 @@ msgid ""
 "The reason this account and/or content was reported will be cited in "
 "communication with the reported account"
 msgstr ""
+"Grunngjeving for at kontoen og/eller innhaldet vart rapportert. Vert teke "
+"med i kommunikasjon med kontoen."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:269
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Annan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:274
 #, kde-format
 msgid "Category changed to other"
-msgstr ""
+msgstr "Kategori endra til annan"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:285
 #, kde-format
@@ -2446,17 +2492,17 @@ msgstr "Kategorien vart endra til søppelpost"
 #: content/ui/ModerationTools/MainReportToolPage.qml:300
 #, kde-format
 msgid "Content violates one or more server rules"
-msgstr ""
+msgstr "Innhaldet bryt med minst éin regel for tenaren"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:304
 #, kde-format
 msgid "Category changed to rule violation"
-msgstr ""
+msgstr "Kategorien vart endra til regelbrot"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:347
 #, kde-format
 msgid "To provide more information, %1 wrote:"
-msgstr ""
+msgstr "%1 oppgav følgjande tilleggsinformasjon:"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:356
 #, kde-format
@@ -2473,7 +2519,7 @@ msgstr "Rapportert innhald"
 #, kde-format
 msgid ""
 "Offending content will be cited in communication with the reported account"
-msgstr ""
+msgstr "Det støytande innhaldet vert teke med i kommunikasjon med kontoen."
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:407
 #: content/ui/PostDelegate/PostDelegate.qml:311
@@ -2508,7 +2554,7 @@ msgstr "Rapportar"
 #, kde-format
 msgctxt "@title"
 msgid "Federation"
-msgstr ""
+msgstr "Samarbeid"
 
 #: content/ui/ModerationTools/ModerationToolsView.qml:32
 #, kde-format
@@ -2525,7 +2571,7 @@ msgstr "E-postblokkering"
 #: content/ui/ModerationTools/ReportToolPage.qml:15
 #, kde-format
 msgid "Accounts Tool Page"
-msgstr ""
+msgstr "Kontoverktøy-side"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:33
 #, kde-format
@@ -2549,7 +2595,7 @@ msgstr "Løyste"
 #, kde-format
 msgctxt "@info:Combobox to choose the origin of report"
 msgid "Report Origin"
-msgstr ""
+msgstr "Rapportopphav"
 
 #: content/ui/ModerationTools/ReportToolPage.qml:76
 #, kde-format
@@ -2644,27 +2690,27 @@ msgstr "Ingen varslingar"
 #: content/ui/Notifications/GroupInteractionLabel.qml:60
 #, kde-format
 msgid "View %1's Profile"
-msgstr ""
+msgstr "Vis profilen til %1"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:69
 #, kde-format
 msgid "%1 users favorited your post"
-msgstr ""
+msgstr "%1 brukarar merkte innlegget ditt som favoritt"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users boosted your post"
-msgstr ""
+msgstr "%1 brukarar framheva innlegget ditt"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:78
 #, kde-format
 msgid "%1 replied to your post"
-msgstr ""
+msgstr "%1 svara på innlegget ditt"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:82
 #, kde-format
 msgid "A poll has ended"
-msgstr ""
+msgstr "Ei avrøysting er avslutta"
 
 #: content/ui/Notifications/UserInteractionLabel.qml:84
 #, kde-format
@@ -2716,7 +2762,7 @@ msgstr "Lagra bilete som …"
 #: content/ui/PostDelegate/AttachmentMenu.qml:49
 #, kde-format
 msgid "Save Gif As…"
-msgstr "Lagra gif som …"
+msgstr "Lagra GIF som …"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:51
 #, kde-format
@@ -2726,7 +2772,7 @@ msgstr "Lagra video som …"
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
 msgid "Copy Image"
-msgstr "Kopier bilete"
+msgstr "Kopier biletet"
 
 #: content/ui/PostDelegate/InformationBar.qml:26
 #, kde-format
@@ -2775,8 +2821,8 @@ msgstr "Ingen favorittar"
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 favorittmerking"
+msgstr[1] "%1 favorittmerkingar"
 
 #: content/ui/PostDelegate/InformationBar.qml:132
 #, kde-format
@@ -2799,12 +2845,12 @@ msgstr "Førehandsvising av lenkje: %1"
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #: content/ui/PostDelegate/MediaContainer.qml:76
 #, kde-format
 msgid "Text description available"
-msgstr "Tekstskildring tilgjengeleg"
+msgstr "Tekstskildring er tilgjengeleg"
 
 #: content/ui/PostDelegate/MediaContainer.qml:84
 #, kde-format
@@ -2824,7 +2870,7 @@ msgstr "Normal status"
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
 msgid "Spoiler Status"
-msgstr ""
+msgstr "Røpealarm-status"
 
 #: content/ui/PostDelegate/PostDelegate.qml:141
 #, kde-format
@@ -2858,7 +2904,7 @@ msgstr "Er du sikker på at du vil sletta innlegget?"
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
-msgstr ""
+msgstr "Slett og lag nytt utkast"
 
 #: content/ui/PostDelegate/PostDelegate.qml:245
 #, kde-format
@@ -2867,6 +2913,8 @@ msgid ""
 "Are you sure you want to redraft this post? This will delete the original "
 "post."
 msgstr ""
+"Er du sikker på at vil laga nytt utkast av innlegget? Det opphavlege "
+"innlegget vert då sletta."
 
 #: content/ui/PostDelegate/PostDelegate.qml:423
 #, kde-format
@@ -2914,7 +2962,7 @@ msgstr "Merkt som favoritt"
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Favourite"
-msgstr ""
+msgstr "Favoritt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -2943,6 +2991,8 @@ msgid ""
 "This post has been marked private. Some posts may be missing because it's "
 "replies are marked as private by default."
 msgstr ""
+"Innlegget er merkt som privat. Nokre innlegg kan mangla, då svar på "
+"innlegget vert merkt som privat som standard."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
@@ -2971,7 +3021,7 @@ msgstr "Kopier lenkje"
 #: content/ui/PostDelegate/PostMenu.qml:55
 #, kde-format
 msgid "Post link copied."
-msgstr ""
+msgstr "Lenkje til innlegget er kopiert."
 
 #: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
@@ -3025,19 +3075,19 @@ msgstr "Bokmerk"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
-msgstr ""
+msgstr "Ikkje lenger fest øvst på profilen"
 
 #: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
-msgstr ""
+msgstr "Fest øvst på profilen"
 
 #: content/ui/PostDelegate/PostMenu.qml:140
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
-msgstr ""
+msgstr "Slutt å målbinda @%1"
 
 #: content/ui/PostDelegate/PostMenu.qml:142
 #, kde-format
@@ -3073,7 +3123,7 @@ msgstr "Slett"
 #: content/ui/PostDelegate/PostMenu.qml:204
 #, kde-format
 msgid "Delete & Re-draft"
-msgstr ""
+msgstr "Slett og lag nytt utkast"
 
 #: content/ui/PostDelegate/PostPoll.qml:39
 #, kde-format
@@ -3099,12 +3149,12 @@ msgstr "Innlegg frå %1"
 #: content/ui/PostDelegate/QuotePost.qml:83
 #, kde-format
 msgid "Quoted post"
-msgstr ""
+msgstr "Sitert innlegg"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
 #, kde-format
 msgid "%1 boosted"
-msgstr ""
+msgstr "%1 framheva"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:73
 #, kde-format
@@ -3156,7 +3206,7 @@ msgstr "Avbryt"
 #: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:147
 #, kde-format
 msgid "Hashtag"
-msgstr ""
+msgstr "Emneknagg"
 
 #: content/ui/SearchPage.qml:16
 #, kde-format
@@ -3300,6 +3350,8 @@ msgid ""
 "Push notifications are available but could not be enabled. Please log out "
 "and log back in."
 msgstr ""
+"Pushvarslingar er tilgjengelege, men kunne ikkje takst i bruk. Prøv å logga "
+"ut og inn att."
 
 #: content/ui/Settings/NotificationsPage.qml:37
 #, kde-format
@@ -3347,7 +3399,7 @@ msgstr "Favorittar"
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
 msgid "Polls"
-msgstr "Avstemmingar"
+msgstr "Avrøystingar"
 
 #: content/ui/Settings/NotificationsPage.qml:141
 #, kde-format
@@ -3385,22 +3437,26 @@ msgstr "Biografi"
 msgid "Header"
 msgstr "Overskriftsbilete"
 
+# MB er her mebibyte (1024 × 1024) byte. Kjeldekoden (til Mastodon, ikkje Tokodon) brukar suffikset .megabytes, som er definert her:
+# https://api.rubyonrails.org/classes/Numeric.html#method-i-megabytes
 #: content/ui/Settings/ProfileEditor.qml:165
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
-"PNG, GIF eller JPEG. Maks 2 MB. Vert skalert ned til 1500 × 500 pikslar."
+"PNG, GIF eller JPEG. Maks 2 MiB. Vert skalert ned til 1500 × 500 pikslar."
 
 #: content/ui/Settings/ProfileEditor.qml:193
 #, kde-format
 msgid "Avatar"
 msgstr "Avatarbilete"
 
+# MB er her mebibyte (1024 × 1024) byte. Kjeldekoden (til Mastodon, ikkje Tokodon) brukar suffikset .megabytes, som er definert her:
+# https://api.rubyonrails.org/classes/Numeric.html#method-i-megabytes
 #: content/ui/Settings/ProfileEditor.qml:226
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
-"PNG, GIF eller JPEG. Maks 2 MB. Vert skalert ned til 400 × 400 pikslar."
+"PNG, GIF eller JPEG. Maks 2 MiB. Vert skalert ned til 400 × 400 pikslar."
 
 #: content/ui/Settings/ProfileEditor.qml:256
 #, kde-format
@@ -3510,7 +3566,7 @@ msgstr "Avvis"
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
 msgid "No accounts available"
-msgstr ""
+msgstr "Ingen tilgjengelege kontoar"
 
 #: content/ui/StatusComposer/AttachmentInfoDialog.qml:95
 #, kde-format
@@ -3522,31 +3578,31 @@ msgstr "Skildring"
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
-msgstr ""
+msgstr "Fokuspunkt"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:37
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
-msgstr "Val %1"
+msgstr "Alternativ %1"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:61
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
-msgstr "Legg til val"
+msgstr "Legg til alternativ"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:62
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
-msgstr "Legg til svaralternativ"
+msgstr "Legg til nytt svaralternativ"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:81
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
-msgstr "Når avstemminga vert avslutta"
+msgstr "Når avrøystinga vert avslutta"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:90
 #, kde-format
@@ -3564,13 +3620,13 @@ msgstr "Tillat fleire svaralternativ"
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
-msgstr ""
+msgstr "Gøym røystetal"
 
 #: content/ui/StatusComposer/ComposerPoll.qml:111
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
-msgstr ""
+msgstr "Gøym røystetal til avrøystinga er avslutta"
 
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:96
 #, kde-format
@@ -3587,13 +3643,13 @@ msgstr "Rediger innlegget"
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
-msgstr ""
+msgstr "Svar på innlegget"
 
 #: content/ui/StatusComposer/StatusComposer.qml:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
-msgstr ""
+msgstr "Skriv innlegget på nytt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -3611,6 +3667,8 @@ msgstr "Sprett ut"
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
+"Viss du redigerer eit innlegg med avrøysting, vert røyste­resultata "
+"nullstilte."
 
 #: content/ui/StatusComposer/StatusComposer.qml:137
 #, kde-format
@@ -3727,7 +3785,7 @@ msgstr "Legg ved fil"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
-msgstr "Legg til avstemming"
+msgstr "Legg til avrøysting"
 
 #: content/ui/StatusComposer/StatusComposer.qml:426
 #, kde-format
@@ -3811,7 +3869,7 @@ msgstr "Svar"
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
-msgstr ""
+msgstr "Send på nytt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:548
 #, kde-format
@@ -3860,7 +3918,7 @@ msgstr "Nokre svar er ikkje tilgjengelege"
 #: content/ui/TimelinePage.qml:238
 #, kde-format
 msgid "To view all replies, open the post on the original server."
-msgstr ""
+msgstr "For å sjå alle svara kan du opna innlegget på den opphavlege tenaren."
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
@@ -3883,7 +3941,7 @@ msgstr "Ingen innlegg"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
-msgstr ""
+msgstr "Tilbake til toppen"
 
 #: content/ui/UserInfo.qml:98
 #, kde-format
@@ -3925,7 +3983,7 @@ msgstr "Listemedlemmar"
 #: editor/listeditorbackend.cpp:109
 #, kde-format
 msgid "Any followed users"
-msgstr ""
+msgstr "Alle følgde brukarar"
 
 #: editor/polltimemodel.cpp:14
 #, kde-format
@@ -3978,12 +4036,12 @@ msgstr "7 dagar"
 #: editor/posteditorbackend.cpp:278
 #, kde-format
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Det oppstod ein ukjend feil."
 
 #: main.cpp:66
 #, kde-format
 msgid "Receiving push notifications"
-msgstr ""
+msgstr "Tek imot pushvarslingar"
 
 #: main.cpp:113
 #, kde-format
@@ -4035,17 +4093,17 @@ msgstr "Klient for desentraliserte sosiale nettverk, som Mastodon"
 #: main.cpp:141
 #, kde-format
 msgid "Supports https and web+ap url scheme"
-msgstr ""
+msgstr "Støttar https- og web+ap-adresser"
 
 #: main.cpp:143
 #, kde-format
 msgid "Share a line of text in the standalone composer."
-msgstr ""
+msgstr "Del ei linje tekst i frittståande skriveprogram."
 
 #: main.cpp:143
 #, kde-format
 msgid "The text to share."
-msgstr "Tekst du vil dela."
+msgstr "Teksten du vil dela."
 
 #: main.cpp:147
 #, kde-format
@@ -4206,7 +4264,7 @@ msgstr "Byt til «%1»"
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
-msgstr ""
+msgstr "Logg"
 
 #: utils/emojimodel.cpp:134
 #, kde-format
@@ -4272,12 +4330,12 @@ msgstr "Flagg"
 #: utils/filetransferjob.cpp:31
 #, kde-format
 msgid "Could not open the temporary download file"
-msgstr ""
+msgstr "Klarte ikkje opna mellombels nedlasta fil"
 
 #: utils/filetransferjob.cpp:73
 #, kde-format
 msgid "Could not reserve disk space for download"
-msgstr ""
+msgstr "Klarte ikkje reservera diskplass for nedlasting"
 
 #: utils/filetransferjob.cpp:81
 #, kde-format
