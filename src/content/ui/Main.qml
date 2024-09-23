@@ -808,7 +808,7 @@ StatefulApp.StatefulWindow {
     }
 
     KConfig.WindowStateSaver {
-        configGroupName: "Main"
+        configGroupName: "MainWindow"
     }
 
     Connections {
