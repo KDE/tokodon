@@ -524,7 +524,7 @@ QQC2.ItemDelegate {
             sourceComponent: Kirigami.InlineMessage {
                 id: privacyWarning
 
-                text: i18n("This post has been marked private. Some posts may be missing because it's replies are marked as private by default.")
+                text: i18n("This post has been marked private. Some posts may be missing because its replies are marked as private by default.")
                 visible: true
             }
         }
