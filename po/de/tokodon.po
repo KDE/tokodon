@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-08 15:49+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -169,10 +169,13 @@ msgid "Featured Users"
 msgstr "Empfohlene Benutzer"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 Favorit"
 msgstr[1] "%1 Favoriten"
 
@@ -215,8 +218,9 @@ msgid "No featured users"
 msgstr "Keine empfohlenen Benutzer"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Kein Benuzter hat diese Beitrag favorisiert"
 
 #: account/socialgraphmodel.cpp:63
@@ -304,7 +308,7 @@ msgstr "Keine Beschränkungen gesetzt"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
@@ -1210,9 +1214,9 @@ msgstr "Lokal"
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Favoriten"
 
 #: content/ui/Main.qml:641
@@ -1888,10 +1892,13 @@ msgid "Freeze"
 msgstr "Einfrieren"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Inhaltswarnung erzwingen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2989,14 +2996,17 @@ msgid "Favorite"
 msgstr "Favorisieren"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Favorisiert"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
-msgstr "Favorit"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "Favorisieren"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3424,11 +3434,6 @@ msgstr "Neue Abonnenten"
 #, kde-format
 msgid "New follow requests"
 msgstr "Neue Abonnement-Anfrage"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Favoriten"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4209,9 +4214,10 @@ msgid "Bookmarks"
 msgstr "Lesezeichen"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Favoriten"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4420,6 +4426,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Ziel"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 Favorit"
+#~ msgstr[1] "%1 Favoriten"
+
+#~ msgid "Favourites"
+#~ msgstr "Favoriten"
+
+#~ msgid "Favourite"
+#~ msgstr "Favorit"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Favoriten"
+
 #~ msgid "Login"
 #~ msgstr "Anmelden"
 
@@ -4604,12 +4626,6 @@ msgstr "Ziel"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "Nennungen"
-
-#, fuzzy
-#~| msgctxt "Favorite a post"
-#~| msgid "Favorite"
-#~ msgid "Favorite"
-#~ msgstr "Favorisieren"
 
 #, fuzzy
 #~| msgctxt "@info The current login status of the account."

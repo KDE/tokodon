@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
-"PO-Revision-Date: 2024-09-17 07:19+0900\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"PO-Revision-Date: 2024-09-23 20:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -170,10 +170,12 @@ msgid "Featured Users"
 msgstr "推薦使用者"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 個最愛"
 
 #: account/socialgraphmodel.cpp:41
@@ -214,8 +216,9 @@ msgid "No featured users"
 msgstr "無推薦使用者"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "沒有使用者將這篇嘟文加入最愛"
 
 #: account/socialgraphmodel.cpp:63
@@ -239,8 +242,7 @@ msgid "Could not take action against the account"
 msgstr "無法對帳號進行動作"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "無法啟用該停用帳號"
 
@@ -302,8 +304,9 @@ msgid "No Limits Imposed"
 msgstr "未受限制"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "進行 PUT 請求來更新網域封鎖時發生錯誤。"
 
 #: admin/reporttoolmodel.cpp:194
@@ -1186,9 +1189,9 @@ msgstr "本地"
 msgid "Global"
 msgstr "全域"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "最愛"
 
 #: content/ui/Main.qml:641
@@ -1844,10 +1847,13 @@ msgid "Freeze"
 msgstr "凍結"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "強制標記為敏感内容"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2906,13 +2912,16 @@ msgid "Favorite"
 msgstr "最愛"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "已加入最愛"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
 msgstr "最愛"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3335,11 +3344,6 @@ msgstr "新跟隨者"
 #, kde-format
 msgid "New follow requests"
 msgstr "新跟隨請求"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "最愛"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4088,9 +4092,10 @@ msgid "Bookmarks"
 msgstr "書籤"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "最愛"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4289,6 +4294,21 @@ msgstr "來源"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "目的地"
+
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 個最愛"
+
+#~ msgid "Favourites"
+#~ msgstr "最愛"
+
+#~ msgid "Favourite"
+#~ msgstr "最愛"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "最愛"
 
 #~ msgid "Learn More"
 #~ msgstr "了解更多"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-18 19:03+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -168,12 +168,14 @@ msgid "Featured Users"
 msgstr "Elstaraj Uzantoj"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "%1 ŝatata"
-msgstr[1] "%1 ŝatataj"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 plejŝatata"
+msgstr[1] "%1 plejŝatataj"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -214,8 +216,9 @@ msgid "No featured users"
 msgstr "Neniuj elstaraj uzantoj"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Neniuj uzantoj ŝatis ĉi tiun afiŝon"
 
 #: account/socialgraphmodel.cpp:63
@@ -302,8 +305,9 @@ msgid "No Limits Imposed"
 msgstr "Neniuj Limoj Truditaj"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "Eraro okazis kiam faris PUT-peton ĝisdatigi la domajnan blokon."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1197,10 +1201,10 @@ msgstr "Loka"
 msgid "Global"
 msgstr "Ĉiea"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "Plej ŝatataj"
+msgid "Favorites"
+msgstr "Ŝatatoj"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1862,10 +1866,13 @@ msgid "Freeze"
 msgstr "Frosti"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Forto-Sentema"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2930,14 +2937,17 @@ msgid "Favorite"
 msgstr "Igi Ŝatata"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Ŝatatigita"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
-msgstr "Ŝatataj"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "Igi Ŝatata"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3362,11 +3372,6 @@ msgstr "Neniuj sekvantoj"
 #, kde-format
 msgid "New follow requests"
 msgstr "Neniuj alpetoj pri sekvo"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Ŝatatoj"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4115,10 +4120,11 @@ msgid "Bookmarks"
 msgstr "Legosignoj"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "Plej ŝatataj"
+msgid "Favorites"
+msgstr "Ŝatatoj"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4318,3 +4324,19 @@ msgstr "Fonto"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Celo"
+
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 ŝatata"
+#~ msgstr[1] "%1 ŝatataj"
+
+#~ msgid "Favourites"
+#~ msgstr "Plej ŝatataj"
+
+#~ msgid "Favourite"
+#~ msgstr "Ŝatataj"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Plej ŝatataj"

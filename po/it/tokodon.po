@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-02 23:30+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -167,10 +167,12 @@ msgid "Featured Users"
 msgstr "Utenti in primo piano"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 preferito"
 msgstr[1] "%1 preferiti"
 
@@ -213,8 +215,9 @@ msgid "No featured users"
 msgstr "Nessun utente in primo piano"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Nessun utente ha preferito questo commento"
 
 #: account/socialgraphmodel.cpp:63
@@ -301,8 +304,9 @@ msgid "No Limits Imposed"
 msgstr "Nessun limite imposto"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Si è verificato un errore durante l'esecuzione di una richiesta PUT per "
 "aggiornare il blocco del dominio."
@@ -1209,9 +1213,9 @@ msgstr "Locale"
 msgid "Global"
 msgstr "Globale"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Preferiti"
 
 #: content/ui/Main.qml:641
@@ -1876,10 +1880,13 @@ msgid "Freeze"
 msgstr "Blocca"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Forza-sensibile"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2946,13 +2953,14 @@ msgid "Favorite"
 msgstr "Preferito"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Preferito"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
+msgid "Favorite"
 msgstr "Preferito"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3380,11 +3388,6 @@ msgstr "Nuovi seguaci"
 #, kde-format
 msgid "New follow requests"
 msgstr "Nuova richiesta di seguito"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Preferiti"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4135,9 +4138,10 @@ msgid "Bookmarks"
 msgstr "Segnalibri"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Preferiti"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4339,6 +4343,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinazione"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 preferito"
+#~ msgstr[1] "%1 preferiti"
+
+#~ msgid "Favourites"
+#~ msgstr "Preferiti"
+
+#~ msgid "Favourite"
+#~ msgstr "Preferito"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Preferiti"
+
 #~ msgid "Learn More"
 #~ msgstr "Ulteriori informazioni"
 
@@ -4528,9 +4548,6 @@ msgstr "Destinazione"
 
 #~ msgid "Mention"
 #~ msgstr "Menzione"
-
-#~ msgid "Favorite"
-#~ msgstr "Preferito"
 
 #~ msgid "Status"
 #~ msgstr "Stato"

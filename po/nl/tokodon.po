@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-22 13:39+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -170,11 +170,13 @@ msgid "Featured Users"
 msgstr "Aanbevolen gebruikers"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "Favoriet"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 favoriet"
 msgstr[1] "%1 favorieten"
 
 #: account/socialgraphmodel.cpp:41
@@ -216,8 +218,9 @@ msgid "No featured users"
 msgstr "Niet aanbevolen gebruikers"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Geen gebruikers hebben dit bericht als favoriet gemarkeerd"
 
 #: account/socialgraphmodel.cpp:63
@@ -303,8 +306,9 @@ msgid "No Limits Imposed"
 msgstr "Geen beperkingen opgelegd"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Er deed zich een fout voor bij het maken van en PUT verzoek om de "
 "domeinblokkade bij te werken."
@@ -1207,9 +1211,9 @@ msgstr "Lokaal"
 msgid "Global"
 msgstr "Globaal"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Favorieten"
 
 #: content/ui/Main.qml:641
@@ -1872,10 +1876,13 @@ msgid "Freeze"
 msgstr "Bevries"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Gevoelig-afdwingen"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2942,13 +2949,14 @@ msgid "Favorite"
 msgstr "Favoriet"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Als favoriet gemarkeerd"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
+msgid "Favorite"
 msgstr "Favoriet"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3374,11 +3382,6 @@ msgstr "Nieuwe volgers"
 #, kde-format
 msgid "New follow requests"
 msgstr "Nieuwe verzoeken om te volgen"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Favorieten"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4130,9 +4133,10 @@ msgid "Bookmarks"
 msgstr "Bladwijzers"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Favorieten"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4334,6 +4338,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Bestemming"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "Favoriet"
+#~ msgstr[1] "%1 favorieten"
+
+#~ msgid "Favourites"
+#~ msgstr "Favorieten"
+
+#~ msgid "Favourite"
+#~ msgstr "Favoriet"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Favorieten"
+
 #~ msgid "Learn More"
 #~ msgstr "Meer informatie"
 
@@ -4528,9 +4548,6 @@ msgstr "Bestemming"
 
 #~ msgid "Mention"
 #~ msgstr "Vermelding"
-
-#~ msgid "Favorite"
-#~ msgstr "Favoriet"
 
 #~ msgid "Status"
 #~ msgstr "Status"

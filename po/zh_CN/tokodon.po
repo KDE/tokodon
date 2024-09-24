@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -167,10 +167,13 @@ msgid "Featured Users"
 msgstr "推荐的用户"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 favourite"
+#| msgid_plural "%1 favourites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 次喜欢"
 
 #: account/socialgraphmodel.cpp:41
@@ -211,8 +214,9 @@ msgid "No featured users"
 msgstr "没有推荐的用户"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "无用户喜欢此嘟文"
 
 #: account/socialgraphmodel.cpp:63
@@ -299,8 +303,9 @@ msgid "No Limits Imposed"
 msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "请求更新域名屏蔽时发生错误。"
 
 #: admin/reporttoolmodel.cpp:194
@@ -1177,10 +1182,10 @@ msgstr "本地"
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "喜欢"
+msgid "Favorites"
+msgstr "收藏夹"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1838,7 +1843,7 @@ msgstr ""
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2897,13 +2902,16 @@ msgid "Favorite"
 msgstr "喜欢"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "已喜欢"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
 msgstr "喜欢"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3325,11 +3333,6 @@ msgstr "新关注者"
 #, kde-format
 msgid "New follow requests"
 msgstr "新关注请求"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "收藏夹"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4076,10 +4079,11 @@ msgid "Bookmarks"
 msgstr "书签"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "喜欢"
+msgid "Favorites"
+msgstr "收藏夹"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4276,3 +4280,13 @@ msgstr ""
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr ""
+
+#~ msgid "Favourites"
+#~ msgstr "喜欢"
+
+#~ msgid "Favourite"
+#~ msgstr "喜欢"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "喜欢"

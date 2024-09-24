@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-22 06:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -169,14 +169,16 @@ msgid "Featured Users"
 msgstr "Izpostavljeni uporabniki"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "%1 priljubljenj"
-msgstr[1] "%1 priljubljenje"
-msgstr[2] "%1 priljubljenji"
-msgstr[3] "%1 priljubljenja"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 priljubljeni"
+msgstr[1] "%1 priljubljen"
+msgstr[2] "%1 priljubljena"
+msgstr[3] "%1 priljubljeni"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -219,8 +221,9 @@ msgid "No featured users"
 msgstr "Ni izpostavljenih uporabnikov"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
 
 #: account/socialgraphmodel.cpp:63
@@ -306,8 +309,9 @@ msgid "No Limits Imposed"
 msgstr "Brez omejitev"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Pri izvajanju zahteve PUT za posodobitev blokade domene je prišlo do napake."
 
@@ -1217,10 +1221,10 @@ msgstr "Krajevno"
 msgid "Global"
 msgstr "Globalno"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "Priljubljene"
+msgid "Favorites"
+msgstr "Vzljubitve"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1882,10 +1886,13 @@ msgid "Freeze"
 msgstr "Zamrzni"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Uveljavi občutljivost"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2954,14 +2961,15 @@ msgid "Favorite"
 msgstr "Vzljubi"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Vzljubljeno"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
-msgstr "Vzljubi"
+msgid "Favorite"
+msgstr "Priljubljen"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3386,11 +3394,6 @@ msgstr "Novi sledilci"
 #, kde-format
 msgid "New follow requests"
 msgstr "Nove zahteve za sledenje"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Vzljubitve"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4141,10 +4144,11 @@ msgid "Bookmarks"
 msgstr "Zaznamki"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "Priljubljene"
+msgid "Favorites"
+msgstr "Vzljubitve"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4351,6 +4355,24 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cilj"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 priljubljenj"
+#~ msgstr[1] "%1 priljubljenje"
+#~ msgstr[2] "%1 priljubljenji"
+#~ msgstr[3] "%1 priljubljenja"
+
+#~ msgid "Favourites"
+#~ msgstr "Priljubljene"
+
+#~ msgid "Favourite"
+#~ msgstr "Vzljubi"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Priljubljene"
+
 #~ msgid "Learn More"
 #~ msgstr "Izvedite več"
 
@@ -4548,9 +4570,6 @@ msgstr "Cilj"
 
 #~ msgid "Mention"
 #~ msgstr "Omemba"
-
-#~ msgid "Favorite"
-#~ msgstr "Priljubljen"
 
 #~ msgid "Status"
 #~ msgstr "Stanja"

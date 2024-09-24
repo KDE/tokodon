@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -172,8 +172,8 @@ msgstr "ਖਾਤੇ"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "ਮਨਪਸੰਦ"
 msgstr[1] "ਮਨਪਸੰਦ"
 
@@ -220,9 +220,10 @@ msgid "No featured users"
 msgstr "ਖਾਤੇ"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Edit this post"
+msgid "No users favorited this post"
+msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -310,7 +311,7 @@ msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
@@ -1262,9 +1263,11 @@ msgstr "ਲੋਕਲ"
 msgid "Global"
 msgstr "ਗਲੋਬਲ"
 
-#: content/ui/Main.qml:625
-#, kde-format
-msgid "Favourites"
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
 #: content/ui/Main.qml:641
@@ -1962,7 +1965,7 @@ msgstr ""
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -3107,13 +3110,14 @@ msgstr "ਮਨਪਸੰਦ"
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
 #| msgid "Favourites"
-msgid "Favourited"
+msgid "Favorited"
 msgstr "ਮਨਪਸੰਦ"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
-#| msgid "Favourites"
-msgid "Favourite"
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3568,13 +3572,6 @@ msgstr "ਫ਼ਾਲੋਅਰ"
 #| msgid "Follow Requests"
 msgid "New follow requests"
 msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
-msgid "Favorites"
-msgstr "ਮਨਪਸੰਦ"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4365,9 +4362,11 @@ msgid "Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4581,6 +4580,27 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
 
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "ਮਨਪਸੰਦ"
+#~ msgstr[1] "ਮਨਪਸੰਦ"
+
+#~ msgid "Favourites"
+#~ msgstr "ਮਨਪਸੰਦ"
+
+#, fuzzy
+#~| msgid "Favourites"
+#~ msgid "Favourite"
+#~ msgstr "ਮਨਪਸੰਦ"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "ਮਨਪਸੰਦ"
+
 #~ msgid "Login"
 #~ msgstr "ਲਾਗਇਨ"
 
@@ -4723,12 +4743,6 @@ msgstr "ਟਿਕਾਣਾ"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "ਜ਼ਿਕਰ"
-
-#, fuzzy
-#~| msgctxt "Show only favorites"
-#~| msgid "Favorites"
-#~ msgid "Favorite"
-#~ msgstr "ਮਨਪਸੰਦ"
 
 #, fuzzy
 #~| msgid "Conversations"

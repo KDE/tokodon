@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-22 09:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -170,10 +170,12 @@ msgid "Featured Users"
 msgstr "Особливі користувачі"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 улюблений запис"
 msgstr[1] "%1 улюблені записи"
 msgstr[2] "%1 улюблених записів"
@@ -220,8 +222,9 @@ msgid "No featured users"
 msgstr "Немає особливих користувачів"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Жоден користувач не зробив цей допис улюбленим"
 
 #: account/socialgraphmodel.cpp:63
@@ -307,8 +310,9 @@ msgid "No Limits Imposed"
 msgstr "Обмежень не накладено"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "Сталася помилка при виконанні запиту PUT для оновлення блоку домену."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1220,10 +1224,10 @@ msgstr "Місцевий"
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "Улюблені"
+msgid "Favorites"
+msgstr "Улюблене"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1885,10 +1889,13 @@ msgid "Freeze"
 msgstr "Заморозити"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Зробити конфіденційним примусово"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2962,14 +2969,15 @@ msgid "Favorite"
 msgstr "Улюблене"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Додано до улюблених"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
-msgstr "Улюблені"
+msgid "Favorite"
+msgstr "Улюблене"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3394,11 +3402,6 @@ msgstr "Нові ті, хто стежить"
 #, kde-format
 msgid "New follow requests"
 msgstr "Нові запити щодо стеження"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Улюблене"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4156,10 +4159,11 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "Улюблені"
+msgid "Favorites"
+msgstr "Улюблене"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4366,6 +4370,24 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 улюблений запис"
+#~ msgstr[1] "%1 улюблені записи"
+#~ msgstr[2] "%1 улюблених записів"
+#~ msgstr[3] "%1 улюблений запис"
+
+#~ msgid "Favourites"
+#~ msgstr "Улюблені"
+
+#~ msgid "Favourite"
+#~ msgstr "Улюблені"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Улюблені"
+
 #~ msgid "Learn More"
 #~ msgstr "Дізнатись більше"
 
@@ -4564,9 +4586,6 @@ msgstr "Призначення"
 
 #~ msgid "Mention"
 #~ msgstr "Згадування"
-
-#~ msgid "Favorite"
-#~ msgstr "Улюблене"
 
 #~ msgid "Status"
 #~ msgstr "Стан"

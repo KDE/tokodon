@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-03 07:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -167,12 +167,14 @@ msgid "Featured Users"
 msgstr "Utilisateurs publiés"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "%1 signets"
-msgstr[1] "%1 favoris"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "signet %1"
+msgstr[1] "%1 signets"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -213,8 +215,9 @@ msgid "No featured users"
 msgstr "Aucun utilisateur publié"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Aucun utilisateur n'a mis ce message en signet"
 
 #: account/socialgraphmodel.cpp:63
@@ -301,8 +304,9 @@ msgid "No Limits Imposed"
 msgstr "Aucune limite imposée"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Une erreur s'est produite lors d'une demande « PUT » pour mettre à jour le "
 "bloc de domaine."
@@ -1210,10 +1214,10 @@ msgstr "Local"
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "Signets"
+msgid "Favorites"
+msgstr "Préférés"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1877,10 +1881,13 @@ msgid "Freeze"
 msgstr "Geler"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Sensible à la force"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2946,13 +2953,14 @@ msgid "Favorite"
 msgstr "Favori"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Mis en préféré"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
+msgid "Favorite"
 msgstr "Préféré"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3382,11 +3390,6 @@ msgstr "Nouveaux suiveurs"
 #, kde-format
 msgid "New follow requests"
 msgstr "Nouvelles requêtes de suivi"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Préférés"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4143,10 +4146,11 @@ msgid "Bookmarks"
 msgstr "Signets"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "Signets"
+msgid "Favorites"
+msgstr "Préférés"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4347,6 +4351,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destination"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 signets"
+#~ msgstr[1] "%1 favoris"
+
+#~ msgid "Favourites"
+#~ msgstr "Signets"
+
+#~ msgid "Favourite"
+#~ msgstr "Préféré"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Signets"
+
 #~ msgid "Learn More"
 #~ msgstr "En apprendre plus"
 
@@ -4542,9 +4562,6 @@ msgstr "Destination"
 
 #~ msgid "Mention"
 #~ msgstr "Références"
-
-#~ msgid "Favorite"
-#~ msgstr "Préféré"
 
 #~ msgid "Status"
 #~ msgstr "État"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -181,8 +181,8 @@ msgstr "Notandaaðgangar"
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1s setti færslu frá þér í eftirlæti"
 msgstr[1] "%1s setti færslu frá þér í eftirlæti"
 
@@ -235,7 +235,7 @@ msgstr "Gat ekki sett notandaaðgang í forgrunn"
 #: account/socialgraphmodel.cpp:61
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
-msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Skrifa nýja færslu"
 
 #: account/socialgraphmodel.cpp:63
@@ -330,7 +330,7 @@ msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
@@ -1299,10 +1299,11 @@ msgstr "Staðvært"
 msgid "Global"
 msgstr "Víðvært"
 
-#: content/ui/Main.qml:625
-#, kde-format
-msgid "Favourites"
-msgstr ""
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "Favorites"
+msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1985,7 +1986,7 @@ msgstr ""
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -3106,13 +3107,13 @@ msgstr ""
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
-msgid "Favourited"
+msgid "Favorited"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
-msgid "Favourite"
+msgid "Favorite"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3567,12 +3568,6 @@ msgstr "%1 fylgjendur"
 #| msgid "Follow"
 msgid "New follow requests"
 msgstr "Fylgjast með"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, fuzzy, kde-format
-#| msgid "%1 favorited your post"
-msgid "Favorites"
-msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, fuzzy, kde-format
@@ -4366,10 +4361,11 @@ msgid "Bookmarks"
 msgstr ""
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
 msgctxt "@title"
-msgid "Favourites"
-msgstr ""
+msgid "Favorites"
+msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4581,6 +4577,19 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Minnst á"
 
+#, fuzzy
+#~| msgid "%1 favorited your post"
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1s setti færslu frá þér í eftirlæti"
+#~ msgstr[1] "%1s setti færslu frá þér í eftirlæti"
+
+#, fuzzy
+#~| msgid "%1 favorited your post"
+#~ msgid "Favourite"
+#~ msgstr "%1s setti færslu frá þér í eftirlæti"
+
 #~ msgid "Login"
 #~ msgstr "Innskráning"
 
@@ -4786,11 +4795,6 @@ msgstr "Minnst á"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "Minnst á"
-
-#, fuzzy
-#~| msgid "%1 favorited your post"
-#~ msgid "Favorite"
-#~ msgstr "%1s setti færslu frá þér í eftirlæti"
 
 #, fuzzy
 #~| msgid "Add Poll"

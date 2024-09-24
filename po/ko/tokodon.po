@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-08-21 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -171,11 +171,13 @@ msgid "Featured Users"
 msgstr "추천 사용자"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "좋아요 %1개"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "북마크 %1개"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -215,8 +217,9 @@ msgid "No featured users"
 msgstr "추천하는 사용자 없음"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "이 게시물을 좋아요 표시한 사용자가 없음"
 
 #: account/socialgraphmodel.cpp:63
@@ -303,8 +306,9 @@ msgid "No Limits Imposed"
 msgstr "가해진 제한 없음"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "도메인 차단을 업데이트하기 위해서 PUT 요청을 하는 중 오류 발생"
 
 #: admin/reporttoolmodel.cpp:194
@@ -1199,9 +1203,9 @@ msgstr "로컬"
 msgid "Global"
 msgstr "연합"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "좋아요"
 
 #: content/ui/Main.qml:641
@@ -1860,10 +1864,13 @@ msgid "Freeze"
 msgstr "동결"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "강제로 민감함으로 표시"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2922,14 +2929,17 @@ msgid "Favorite"
 msgstr "좋아요"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "좋아요 표시됨"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
-msgstr "북마크"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "좋아요"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3354,11 +3364,6 @@ msgstr "새 팔로워"
 #, kde-format
 msgid "New follow requests"
 msgstr "새 팔로우 요청"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "좋아요"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4109,9 +4114,10 @@ msgid "Bookmarks"
 msgstr "북마크"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "좋아요"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4314,6 +4320,21 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "좋아요 %1개"
+
+#~ msgid "Favourites"
+#~ msgstr "좋아요"
+
+#~ msgid "Favourite"
+#~ msgstr "북마크"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "좋아요"
+
 #~ msgid "Learn More"
 #~ msgstr "더 알아보기"
 
@@ -4500,12 +4521,6 @@ msgstr "대상"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "멘션"
-
-#, fuzzy
-#~| msgctxt "Favorite a post"
-#~| msgid "Favorite"
-#~ msgid "Favorite"
-#~ msgstr "좋아요"
 
 #, fuzzy
 #~| msgid "Statuses"

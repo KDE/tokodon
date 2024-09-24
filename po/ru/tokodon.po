@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:06+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -175,8 +175,8 @@ msgstr "Рекомендуемые пользователи"
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "Избранное"
 msgstr[1] "Избранное"
 msgstr[2] "Избранное"
@@ -231,7 +231,7 @@ msgstr "Не удалось добавить учётную запись в по
 #: account/socialgraphmodel.cpp:61
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
-msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "%1 добавил(а) вашу публикацию в избранное"
 
 #: account/socialgraphmodel.cpp:63
@@ -326,7 +326,7 @@ msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
@@ -1278,9 +1278,11 @@ msgstr "Локальная лента"
 msgid "Global"
 msgstr "Глобальная лента"
 
-#: content/ui/Main.qml:625
-#, kde-format
-msgid "Favourites"
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Favorites"
 msgstr "Избранное"
 
 #: content/ui/Main.qml:641
@@ -1971,7 +1973,7 @@ msgstr ""
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -3112,13 +3114,14 @@ msgstr "Избранное"
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
 #| msgid "Favourites"
-msgid "Favourited"
+msgid "Favorited"
 msgstr "Избранное"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, fuzzy, kde-format
-#| msgid "Favourites"
-msgid "Favourite"
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
+msgid "Favorite"
 msgstr "Избранное"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3573,13 +3576,6 @@ msgstr "Подписки"
 #| msgid "Require follow requests"
 msgid "New follow requests"
 msgstr "Требовать запрос на подписку"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, fuzzy, kde-format
-#| msgctxt "Show only favorites"
-#| msgid "Favorites"
-msgid "Favorites"
-msgstr "Избранное"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, fuzzy, kde-format
@@ -4383,9 +4379,11 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "Show only favorites"
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Избранное"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4600,6 +4598,29 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Назначение"
 
+#, fuzzy
+#~| msgctxt "Show only favorites"
+#~| msgid "Favorites"
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "Избранное"
+#~ msgstr[1] "Избранное"
+#~ msgstr[2] "Избранное"
+#~ msgstr[3] "Избранное"
+
+#~ msgid "Favourites"
+#~ msgstr "Избранное"
+
+#, fuzzy
+#~| msgid "Favourites"
+#~ msgid "Favourite"
+#~ msgstr "Избранное"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Избранное"
+
 #~ msgid "Login"
 #~ msgstr "Вход в систему"
 
@@ -4779,12 +4800,6 @@ msgstr "Назначение"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "Упоминания"
-
-#, fuzzy
-#~| msgctxt "Show only favorites"
-#~| msgid "Favorites"
-#~ msgid "Favorite"
-#~ msgstr "Избранное"
 
 #, fuzzy
 #~| msgid "Conversations"

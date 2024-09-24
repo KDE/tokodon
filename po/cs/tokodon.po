@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-17 15:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -167,13 +167,14 @@ msgid "Featured Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "Žádné oblíbené"
+msgstr[1] "Žádné oblíbené"
+msgstr[2] "Žádné oblíbené"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -215,9 +216,10 @@ msgid "No featured users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No favorites"
+msgid "No users favorited this post"
+msgstr "Žádné oblíbené"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -304,7 +306,7 @@ msgstr ""
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
 #, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 
 #: admin/reporttoolmodel.cpp:194
@@ -1183,9 +1185,9 @@ msgstr "Místní"
 msgid "Global"
 msgstr "Globální"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Oblíbené"
 
 #: content/ui/Main.qml:641
@@ -1843,7 +1845,7 @@ msgstr "Zmrazit"
 #, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr ""
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2909,13 +2911,17 @@ msgid "Favorite"
 msgstr "Oblíbené"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorited"
+msgstr "Oblíbené"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
 msgstr "Oblíbené"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3337,11 +3343,6 @@ msgstr "Noví sledující"
 #, kde-format
 msgid "New follow requests"
 msgstr ""
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Oblíbené"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4088,9 +4089,10 @@ msgid "Bookmarks"
 msgstr "Záložky"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Oblíbené"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4294,3 +4296,13 @@ msgstr "Zdroj"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cíl"
+
+#~ msgid "Favourites"
+#~ msgstr "Oblíbené"
+
+#~ msgid "Favourite"
+#~ msgstr "Oblíbené"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Oblíbené"

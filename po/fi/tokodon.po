@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-07-09 10:04+0300\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -168,10 +168,12 @@ msgid "Featured Users"
 msgstr "Esitellyt käyttäjät"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 suosikki"
 msgstr[1] "%1 suosikkia"
 
@@ -214,8 +216,9 @@ msgid "No featured users"
 msgstr "Ei esiteltyjä käyttäjiä"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Kukaan ei ole merkinnyt tätä julkaisua suosikiksi"
 
 #: account/socialgraphmodel.cpp:63
@@ -302,8 +305,9 @@ msgid "No Limits Imposed"
 msgstr "Ei asetettuja rajoituksia"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "Sattui virhe tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1204,9 +1208,9 @@ msgstr "Paikallinen"
 msgid "Global"
 msgstr "Yleinen"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Suosikit"
 
 #: content/ui/Main.qml:641
@@ -1870,10 +1874,13 @@ msgid "Freeze"
 msgstr "Jäädytä"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Pakota arkaluontoiseksi"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2937,13 +2944,16 @@ msgid "Favorite"
 msgstr "Suosikki"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Merkitty suosikiksi"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
 msgstr "Suosikki"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3369,11 +3379,6 @@ msgstr "Uudet seuraajat"
 #, kde-format
 msgid "New follow requests"
 msgstr "Uudet seurauspyynnöt"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Suosikit"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4124,9 +4129,10 @@ msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Suosikit"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4334,6 +4340,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Kohde"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 suosikki"
+#~ msgstr[1] "%1 suosikkia"
+
+#~ msgid "Favourites"
+#~ msgstr "Suosikit"
+
+#~ msgid "Favourite"
+#~ msgstr "Suosikki"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Suosikit"
+
 #~ msgid "Learn More"
 #~ msgstr "Lisätietoa"
 
@@ -4523,12 +4545,6 @@ msgstr "Kohde"
 #~| msgid "Mentions"
 #~ msgid "Mention"
 #~ msgstr "Maininnat"
-
-#, fuzzy
-#~| msgctxt "Favorite a post"
-#~| msgid "Favorite"
-#~ msgid "Favorite"
-#~ msgstr "Suosikki"
 
 #, fuzzy
 #~| msgctxt "@info The current login status of the account."

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-02 06:49+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -173,10 +173,12 @@ msgid "Featured Users"
 msgstr "Nabarmendutako erabiltzaileak"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "Gogoko %1"
 msgstr[1] "%1 gogoko"
 
@@ -219,8 +221,9 @@ msgid "No featured users"
 msgstr "Ez dago nabarmendutako erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Ez dago posta hori gogoko egin duen erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:63
@@ -307,8 +310,9 @@ msgid "No Limits Imposed"
 msgstr "Ez da mugarik inposatu"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Errorea gertatu da, domeinu blokea eguneratzeko PUT eskaera bat egitean."
 
@@ -1213,9 +1217,9 @@ msgstr "Lokala"
 msgid "Global"
 msgstr "Globala"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Gogokoak"
 
 #: content/ui/Main.qml:641
@@ -1878,10 +1882,13 @@ msgid "Freeze"
 msgstr "Izoztu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Behartu-bereziki babestu"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2948,13 +2955,14 @@ msgid "Favorite"
 msgstr "Gogokoena"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Gogokoen egina"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
+msgid "Favorite"
 msgstr "Gogokoena"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3380,11 +3388,6 @@ msgstr "Jarraitzaile berriak"
 #, kde-format
 msgid "New follow requests"
 msgstr "Jarraipen eskaera berriak"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Gogokoak"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4137,9 +4140,10 @@ msgid "Bookmarks"
 msgstr "Laster-markak"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Gogokoak"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4341,6 +4345,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Helburua"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "Gogoko %1"
+#~ msgstr[1] "%1 gogoko"
+
+#~ msgid "Favourites"
+#~ msgstr "Gogokoak"
+
+#~ msgid "Favourite"
+#~ msgstr "Gogokoena"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Gogokoak"
+
 #~ msgid "Learn More"
 #~ msgstr "Jakizu gehiago"
 
@@ -4536,9 +4556,6 @@ msgstr "Helburua"
 
 #~ msgid "Mention"
 #~ msgstr "Aipamena"
-
-#~ msgid "Favorite"
-#~ msgstr "Gogokoena"
 
 #~ msgid "Status"
 #~ msgstr "Egoera"

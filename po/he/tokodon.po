@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
-"PO-Revision-Date: 2024-09-02 07:59+0300\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
+"PO-Revision-Date: 2024-09-23 19:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -168,10 +168,12 @@ msgid "Featured Users"
 msgstr "חשבונות מקודמים"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "מועדף"
 msgstr[1] "שני מועדפים"
 msgstr[2] "%1 מועדפים"
@@ -218,8 +220,9 @@ msgid "No featured users"
 msgstr "אין משתמשים מקודמים"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "אף משתמש לא הוסיף את הרשומה הזאת למועדפים"
 
 #: account/socialgraphmodel.cpp:63
@@ -243,10 +246,9 @@ msgid "Could not take action against the account"
 msgstr "לא ניתן לנקוט בפעולות נגד החשבון"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
-msgstr "לא ניתן להפעיל חשבון מושבת"
+msgstr "לא ניתן להפעיל את החשבון המושבת"
 
 #: admin/accounttoolmodel.cpp:300
 #, kde-format
@@ -306,8 +308,9 @@ msgid "No Limits Imposed"
 msgstr "לא חלות מגבלות"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "אירעה שגיאה בהגשת בקשת PUT לעדכון חסימת שם התחום."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1206,9 +1209,9 @@ msgstr "מקומי"
 msgid "Global"
 msgstr "כללי"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
+msgid "Favorites"
 msgstr "מועדפים"
 
 #: content/ui/Main.qml:641
@@ -1866,10 +1869,13 @@ msgid "Freeze"
 msgstr "הקפאה"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "אילוץ-רגיש"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2934,14 +2940,17 @@ msgid "Favorite"
 msgstr "הוספה למועדפים"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "נוסף למועדפים"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
-msgstr "מועדף"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "הוספה למועדפים"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3366,11 +3375,6 @@ msgstr "עוקבים חדשים"
 #, kde-format
 msgid "New follow requests"
 msgstr "בקשות מעקב חדשות"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "מועדפים"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4120,9 +4124,10 @@ msgid "Bookmarks"
 msgstr "סימניות"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "מועדפים"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4329,6 +4334,24 @@ msgstr "מקור"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "יעד"
+
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "מועדף"
+#~ msgstr[1] "שני מועדפים"
+#~ msgstr[2] "%1 מועדפים"
+#~ msgstr[3] "%1 מועדפים"
+
+#~ msgid "Favourites"
+#~ msgstr "מועדפים"
+
+#~ msgid "Favourite"
+#~ msgstr "מועדף"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "מועדפים"
 
 #~ msgid "Learn More"
 #~ msgstr "מידע נוסף"

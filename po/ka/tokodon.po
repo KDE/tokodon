@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-09-22 05:29+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -170,10 +170,12 @@ msgid "Featured Users"
 msgstr "მიმაგრებული მომხმარებლები"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
 msgstr[0] "%1 სანიშნე"
 msgstr[1] "%1 სანიშნე"
 
@@ -216,8 +218,9 @@ msgid "No featured users"
 msgstr "მიმაგრებული მომხმარებლების გარეშე"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "ეს პოსტი არც ერთ მომხმარებელს ჩაუნიშნავს"
 
 #: account/socialgraphmodel.cpp:63
@@ -303,8 +306,9 @@ msgid "No Limits Imposed"
 msgstr "შეზღუდვები დაწესებული არაა"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "დომენის ბლოკის განახლებისთვის PUT მოთხოვნის გაგზავნის შეცდომა."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1203,10 +1207,10 @@ msgstr "ლოკალური"
 msgid "Global"
 msgstr "გლობალური"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "რჩეულები"
+msgid "Favorites"
+msgstr "სანიშნები"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1867,10 +1871,13 @@ msgid "Freeze"
 msgstr "გაყინვა"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "ძალით მგრძნობიარე"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2937,13 +2944,14 @@ msgid "Favorite"
 msgstr "რჩეული"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "რჩეულებში დამახსოვრებული"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
-msgid "Favourite"
+msgid "Favorite"
 msgstr "რჩეული"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
@@ -3370,11 +3378,6 @@ msgstr "ახალი მიმდევრები"
 #, kde-format
 msgid "New follow requests"
 msgstr "ახალი მიყოლის მოთხოვნები"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "სანიშნები"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4122,10 +4125,11 @@ msgid "Bookmarks"
 msgstr "სანიშნები"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
-msgstr "რჩეულები"
+msgid "Favorites"
+msgstr "სანიშნები"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format
@@ -4326,6 +4330,22 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
 
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 სანიშნე"
+#~ msgstr[1] "%1 სანიშნე"
+
+#~ msgid "Favourites"
+#~ msgstr "რჩეულები"
+
+#~ msgid "Favourite"
+#~ msgstr "რჩეული"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "რჩეულები"
+
 #~ msgid "Learn More"
 #~ msgstr "დაწვრილებით"
 
@@ -4514,9 +4534,6 @@ msgstr "დანიშნულება"
 
 #~ msgid "Mention"
 #~ msgstr "ხსენება"
-
-#~ msgid "Favorite"
-#~ msgstr "რჩეული"
 
 #~ msgid "Status"
 #~ msgstr "სტატუსი"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-22 00:40+0000\n"
+"POT-Creation-Date: 2024-09-24 00:39+0000\n"
 "PO-Revision-Date: 2024-08-27 11:31+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -171,13 +171,15 @@ msgid "Featured Users"
 msgstr "Izceltie lietotāji"
 
 #: account/socialgraphmodel.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 favorite"
+#| msgid_plural "%1 favorites"
 msgctxt "@title"
-msgid "%1 favourite"
-msgid_plural "%1 favourites"
-msgstr[0] "%1 iecienīts"
-msgstr[1] "%1 iecienīti"
-msgstr[2] "%1 iecienītu"
+msgid "%1 favorite"
+msgid_plural "%1 favorites"
+msgstr[0] "%1 zvaigznīte"
+msgstr[1] "%1 zvaigznītes"
+msgstr[2] "%1 zvaigznīšu"
 
 #: account/socialgraphmodel.cpp:41
 #, kde-format
@@ -219,8 +221,9 @@ msgid "No featured users"
 msgstr "Nav izceltu lietotāju"
 
 #: account/socialgraphmodel.cpp:61
-#, kde-format
-msgid "No users favourited this post"
+#, fuzzy, kde-format
+#| msgid "No users favourited this post"
+msgid "No users favorited this post"
 msgstr "Šim ierakstam nav pieliktas zvagznītes"
 
 #: account/socialgraphmodel.cpp:63
@@ -307,8 +310,9 @@ msgid "No Limits Imposed"
 msgstr "Nav uzliktu ierobežojumu"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, kde-format
-msgid "Error occured when making a PUT request to update the domain block."
+#, fuzzy, kde-format
+#| msgid "Error occured when making a PUT request to update the domain block."
+msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Notika kļūda, veidojot PUT pieprasījumu, lai atjauninātu domēna bloķēšanu."
 
@@ -1217,10 +1221,10 @@ msgstr "Lokālā"
 msgid "Global"
 msgstr "Globālā"
 
-#: content/ui/Main.qml:625
+#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
-msgid "Favourites"
-msgstr "Iecienītākie"
+msgid "Favorites"
+msgstr "Zvaigznītes"
 
 #: content/ui/Main.qml:641
 #, kde-format
@@ -1881,10 +1885,13 @@ msgid "Freeze"
 msgstr "Iesaldēt"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info: Force all this user's media attachments to be flagged as sensitive."
+#| msgid "Force-Senstive"
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
-msgid "Force-Senstive"
+msgid "Force-Sensitive"
 msgstr "Piespiedu sensitīva marķēšana"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
@@ -2953,14 +2960,17 @@ msgid "Favorite"
 msgstr "Pielikt zvaigznīti"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourited"
+#, fuzzy, kde-format
+#| msgid "Favourited"
+msgid "Favorited"
 msgstr "Pielikta zvaigznīte"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, kde-format
-msgid "Favourite"
-msgstr "Pielikta zvaigznīte"
+#, fuzzy, kde-format
+#| msgctxt "Favorite a post"
+#| msgid "Favorite"
+msgid "Favorite"
+msgstr "Pielikt zvaigznīti"
 
 #: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
@@ -3385,11 +3395,6 @@ msgstr "Jauni sekotāji"
 #, kde-format
 msgid "New follow requests"
 msgstr "Jaunu sekotāju lūgumi"
-
-#: content/ui/Settings/NotificationsPage.qml:117
-#, kde-format
-msgid "Favorites"
-msgstr "Zvaigznītes"
 
 #: content/ui/Settings/NotificationsPage.qml:129
 #, kde-format
@@ -4143,9 +4148,10 @@ msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
 #: timeline/maintimelinemodel.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Favorites"
 msgctxt "@title"
-msgid "Favourites"
+msgid "Favorites"
 msgstr "Zvaigznītes"
 
 #: timeline/maintimelinemodel.cpp:32
@@ -4353,6 +4359,23 @@ msgstr "Avots"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Galamērķis"
+
+#~ msgctxt "@title"
+#~ msgid "%1 favourite"
+#~ msgid_plural "%1 favourites"
+#~ msgstr[0] "%1 iecienīts"
+#~ msgstr[1] "%1 iecienīti"
+#~ msgstr[2] "%1 iecienītu"
+
+#~ msgid "Favourites"
+#~ msgstr "Iecienītākie"
+
+#~ msgid "Favourite"
+#~ msgstr "Pielikta zvaigznīte"
+
+#~ msgctxt "@title"
+#~ msgid "Favourites"
+#~ msgstr "Zvaigznītes"
 
 #~ msgid "Learn More"
 #~ msgstr "Uzzināt vairāk"
