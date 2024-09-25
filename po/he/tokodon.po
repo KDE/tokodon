@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
-"PO-Revision-Date: 2024-09-23 19:34+0300\n"
+"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"PO-Revision-Date: 2024-09-24 08:03+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -168,9 +168,7 @@ msgid "Featured Users"
 msgstr "חשבונות מקודמים"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -220,8 +218,7 @@ msgid "No featured users"
 msgstr "אין משתמשים מקודמים"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
 msgstr "אף משתמש לא הוסיף את הרשומה הזאת למועדפים"
 
@@ -308,8 +305,7 @@ msgid "No Limits Imposed"
 msgstr "לא חלות מגבלות"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "אירעה שגיאה בהגשת בקשת PUT לעדכון חסימת שם התחום."
 
@@ -1869,10 +1865,7 @@ msgid "Freeze"
 msgstr "הקפאה"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2940,15 +2933,12 @@ msgid "Favorite"
 msgstr "הוספה למועדפים"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "נוסף למועדפים"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "הוספה למועדפים"
 
@@ -2974,9 +2964,12 @@ msgid "Bookmark"
 msgstr "סימנייה"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This post has been marked private. Some posts may be missing because it's "
+#| "replies are marked as private by default."
 msgid ""
-"This post has been marked private. Some posts may be missing because it's "
+"This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 "הרשומה הזאת סומנה כפרטית. חלק מהרשומות כנראה חסרות כיוון שהתגובות מסומנות "
@@ -4124,8 +4117,7 @@ msgid "Bookmarks"
 msgstr "סימניות"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "מועדפים"

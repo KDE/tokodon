@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
-"PO-Revision-Date: 2024-09-22 06:18+0200\n"
+"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"PO-Revision-Date: 2024-09-24 06:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -169,13 +169,11 @@ msgid "Featured Users"
 msgstr "Izpostavljeni uporabniki"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] "%1 priljubljeni"
+msgstr[0] "%1 priljubljenih"
 msgstr[1] "%1 priljubljen"
 msgstr[2] "%1 priljubljena"
 msgstr[3] "%1 priljubljeni"
@@ -221,8 +219,7 @@ msgid "No featured users"
 msgstr "Ni izpostavljenih uporabnikov"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
 msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
 
@@ -309,11 +306,10 @@ msgid "No Limits Imposed"
 msgstr "Brez omejitev"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
-"Pri izvajanju zahteve PUT za posodobitev blokade domene je prišlo do napake."
+"Prišlo je do napake pri izvajanju zahteve PUT za posodobitev bloka domene."
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
@@ -1886,10 +1882,7 @@ msgid "Freeze"
 msgstr "Zamrzni"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2961,8 +2954,7 @@ msgid "Favorite"
 msgstr "Vzljubi"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Vzljubljeno"
 
@@ -2993,9 +2985,12 @@ msgid "Bookmark"
 msgstr "Zaznamuj"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This post has been marked private. Some posts may be missing because it's "
+#| "replies are marked as private by default."
 msgid ""
-"This post has been marked private. Some posts may be missing because it's "
+"This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 "Ta objava je bila označena kot zasebna. Nekatere objave morda manjkajo, ker "
@@ -4144,11 +4139,10 @@ msgid "Bookmarks"
 msgstr "Zaznamki"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr "Vzljubitve"
+msgstr "Priljubljene"
 
 #: timeline/maintimelinemodel.cpp:32
 #, kde-format

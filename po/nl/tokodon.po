@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-24 00:39+0000\n"
-"PO-Revision-Date: 2024-09-22 13:39+0200\n"
+"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"PO-Revision-Date: 2024-09-24 11:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -170,9 +170,7 @@ msgid "Featured Users"
 msgstr "Aanbevolen gebruikers"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -218,8 +216,7 @@ msgid "No featured users"
 msgstr "Niet aanbevolen gebruikers"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
 msgstr "Geen gebruikers hebben dit bericht als favoriet gemarkeerd"
 
@@ -306,11 +303,10 @@ msgid "No Limits Imposed"
 msgstr "Geen beperkingen opgelegd"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
-"Er deed zich een fout voor bij het maken van en PUT verzoek om de "
+"Er deed zich een fout voor bij het maken van een PUT verzoek om de "
 "domeinblokkade bij te werken."
 
 #: admin/reporttoolmodel.cpp:194
@@ -1876,10 +1872,7 @@ msgid "Freeze"
 msgstr "Bevries"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2949,8 +2942,7 @@ msgid "Favorite"
 msgstr "Favoriet"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Als favoriet gemarkeerd"
 
@@ -2981,9 +2973,12 @@ msgid "Bookmark"
 msgstr "Bladwijzer"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This post has been marked private. Some posts may be missing because it's "
+#| "replies are marked as private by default."
 msgid ""
-"This post has been marked private. Some posts may be missing because it's "
+"This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 "Deze post is gemarkeerd als privé. Sommige posts kunnen ontbreken omdat zijn "
@@ -4133,8 +4128,7 @@ msgid "Bookmarks"
 msgstr "Bladwijzers"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Favorieten"
