@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-25 00:39+0000\n"
-"PO-Revision-Date: 2024-09-02 23:30+0200\n"
+"PO-Revision-Date: 2024-09-25 13:04+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -167,9 +167,7 @@ msgid "Featured Users"
 msgstr "Utenti in primo piano"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -215,10 +213,9 @@ msgid "No featured users"
 msgstr "Nessun utente in primo piano"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
-msgstr "Nessun utente ha preferito questo commento"
+msgstr "Nessun utente ha aggiunto questo commento ai preferiti"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -241,8 +238,7 @@ msgid "Could not take action against the account"
 msgstr "Impossibile intraprendere un'azione nei confronti dell'account"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "Impossibile abilitare l'account disabilitato"
 
@@ -304,8 +300,7 @@ msgid "No Limits Imposed"
 msgstr "Nessun limite imposto"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Si è verificato un errore durante l'esecuzione di una richiesta PUT per "
@@ -1880,10 +1875,7 @@ msgid "Freeze"
 msgstr "Blocca"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2953,8 +2945,7 @@ msgid "Favorite"
 msgstr "Preferito"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Preferito"
 
@@ -2985,10 +2976,7 @@ msgid "Bookmark"
 msgstr "Segnalibro"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, fuzzy, kde-format
-#| msgid ""
-#| "This post has been marked private. Some posts may be missing because it's "
-#| "replies are marked as private by default."
+#, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
@@ -4141,8 +4129,7 @@ msgid "Bookmarks"
 msgstr "Segnalibri"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Preferiti"

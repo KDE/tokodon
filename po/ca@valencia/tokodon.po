@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-25 00:39+0000\n"
-"PO-Revision-Date: 2024-09-02 12:29+0200\n"
+"PO-Revision-Date: 2024-09-25 09:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: account/abstractaccount.cpp:658
 #, kde-format
@@ -171,9 +171,7 @@ msgid "Featured Users"
 msgstr "Usuaris destacats"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -219,8 +217,7 @@ msgid "No featured users"
 msgstr "Sense usuaris destacats"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
 msgstr "Cap usuari ha preferit esta publicació"
 
@@ -245,8 +242,7 @@ msgid "Could not take action against the account"
 msgstr "No s'ha pogut prendre cap acció sobre el compte"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "No s'ha pogut activar el compte desactivat"
 
@@ -308,8 +304,7 @@ msgid "No Limits Imposed"
 msgstr "No s'ha imposat cap límit"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "S'ha produït un error en fer una sol·licitud PUT per a actualitzar el "
@@ -1884,10 +1879,7 @@ msgid "Freeze"
 msgstr "Congela"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2956,15 +2948,12 @@ msgid "Favorite"
 msgstr "Preferit"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Ha preferit"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
@@ -2990,16 +2979,13 @@ msgid "Bookmark"
 msgstr "Punt"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, fuzzy, kde-format
-#| msgid ""
-#| "This post has been marked private. Some posts may be missing because it's "
-#| "replies are marked as private by default."
+#, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 "Esta publicació s'ha marcat com a privada. Potser faltaran algunes "
-"publicacions perquè les respostes es marcaran com a privades de manera "
+"publicacions perquè les seues respostes es marcaran com a privades de manera "
 "predeterminada."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
@@ -4148,8 +4134,7 @@ msgid "Bookmarks"
 msgstr "Punts"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Preferits"
@@ -4352,19 +4337,3 @@ msgstr "Font"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destinació"
-
-#~ msgctxt "@title"
-#~ msgid "%1 favourite"
-#~ msgid_plural "%1 favourites"
-#~ msgstr[0] "%1 preferit"
-#~ msgstr[1] "%1 preferits"
-
-#~ msgid "Favourites"
-#~ msgstr "Preferides"
-
-#~ msgid "Favourite"
-#~ msgstr "Preferit"
-
-#~ msgctxt "@title"
-#~ msgid "Favourites"
-#~ msgstr "Preferits"
