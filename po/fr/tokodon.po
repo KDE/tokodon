@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-25 00:39+0000\n"
-"PO-Revision-Date: 2024-09-23 17:40+0200\n"
+"PO-Revision-Date: 2024-09-25 11:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -167,13 +167,11 @@ msgid "Featured Users"
 msgstr "Utilisateurs publiés"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] "signet %1"
+msgstr[0] "Signet %1"
 msgstr[1] "%1 signets"
 
 #: account/socialgraphmodel.cpp:41
@@ -215,10 +213,9 @@ msgid "No featured users"
 msgstr "Aucun utilisateur publié"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
-msgstr "Aucun utilisateur n'a mis ce message en signet"
+msgstr "Aucun utilisateur n'a mis ce message en signet."
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -303,8 +300,7 @@ msgid "No Limits Imposed"
 msgstr "Aucune limite imposée"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
 "Une erreur s'est produite lors d'une demande « PUT » pour mettre à jour le "
@@ -1880,14 +1876,11 @@ msgid "Freeze"
 msgstr "Geler"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
-msgstr "Sensible à la force"
+msgstr "Forcer le respect de la casse"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:49
 #, kde-format
@@ -2952,8 +2945,7 @@ msgid "Favorite"
 msgstr "Favori"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Mis en préféré"
 
@@ -4148,8 +4140,7 @@ msgid "Bookmarks"
 msgstr "Signets"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Préférés"
