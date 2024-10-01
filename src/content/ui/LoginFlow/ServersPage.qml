@@ -9,6 +9,7 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels as KItemModels
@@ -115,18 +116,21 @@ Kirigami.ScrollablePage {
             filterRoleName: "domain"
         }
 
-        header: QQC2.ItemDelegate {
+        header: Delegates.RoundedItemDelegate {
             onClicked: root.register(root.filterString)
+
+            property int index: 0
 
             activeFocusOnTab: false // We handle moving to this item via up/down arrows, otherwise the tab order is wacky
 
-            contentItem: Kirigami.IconTitleSubtitle {
-                icon.name: "compass-symbolic"
-                title: root.filterString
+            text: root.filterString
+            icon.name: "compass-symbolic"
+
+            contentItem: Delegates.SubtitleContentItem {
+                itemDelegate: parent
                 subtitle: i18n("Custom Server")
             }
 
-            width: ListView.view.width
             height: visible ? implicitHeight : 0
             visible: !publicServersModel.loading && listView.count === 0 && root.filterString !== ""
         }
@@ -137,7 +141,7 @@ Kirigami.ScrollablePage {
         }
         section.property: "isPublic"
 
-        delegate: QQC2.ItemDelegate {
+        delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
             required property int index
@@ -145,11 +149,11 @@ Kirigami.ScrollablePage {
             required property string description
             required property string iconSource
 
-            width: ListView.view.width
+            text: domain
+            icon.source: iconSource
 
-            contentItem: Kirigami.IconTitleSubtitle {
-                icon.source: delegate.iconSource
-                title: delegate.domain
+            contentItem: Delegates.SubtitleContentItem {
+                itemDelegate: delegate
                 subtitle: delegate.description
             }
 
