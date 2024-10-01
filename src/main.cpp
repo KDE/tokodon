@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
                     QUrl(QStringLiteral("https://redstrate.com/rss-image.png")));
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
-    about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=tokodon");
+    about.setBugAddress("https://bugs.kde.org/enter_bug.cgi?product=Tokodon&component=general");
 
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.tokodon")));
