@@ -34,15 +34,28 @@ Kirigami.Page {
         }
     ]
 
-    Kirigami.PromptDialog {
+    leftPadding: 0
+    topPadding: 0
+    rightPadding: 0
+    bottomPadding: 0
+
+    Components.MessageDialog {
         id: syncPrompt
 
         title: i18nc("@title", "Sync")
-        subtitle: i18nc("@label", "Are you sure you want to sync? This will download your profile posts and may temporarily rate-limit your account. Please be mindful of your server and only do this rarely.")
+        dialogType: Components.MessageDialog.Error
+        Kirigami.SelectableLabel {
+            text: i18nc("@label", "Are you sure you want to sync? This will download your profile posts and may temporarily rate-limit your account. Please be mindful of your server and only do this rarely.")
+            Layout.fillWidth: true
+        }
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        showCloseButton: false
 
-        onAccepted: database.fill(AccountManager.selectedAccount)
+        onAccepted: {
+            database.fill(AccountManager.selectedAccount)
+            close();
+        }
+        onRejected: close();
+        parent: undefined
     }
 
     PostStatisticsDatabase {
@@ -52,99 +65,97 @@ Kirigami.Page {
     Kirigami.LoadingPlaceholder {
         anchors.centerIn: parent
         visible: database.loading
+        parent: stackLayout.currentItem
     }
 
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
 
+        parent: stackLayout.currentItem
         visible: false // !database.loading
-        text: "No Posts Synced"
-        explanation: "Synchronize this account's public posts to compare and view metrics.\nTokodon saves public posts and information only, and the data stays on this device."
+        text: i18n("No Posts Synced")
+        explanation: i18n("Synchronize this account's public posts to compare and view metrics.\nTokodon saves public posts and information only, and the data stays on this device.")
     }
 
-    ColumnLayout {
-        anchors.fill: parent
+    header: Kirigami.NavigationTabBar {
+        width: parent.width
 
-        QQC2.TabBar {
-            id: bar
-
-            Layout.alignment: Qt.AlignHCenter
-            Layout.fillWidth: true
-
-            QQC2.TabButton {
+        actions: [
+            QQC2.Action {
                 text: i18nc("@item:inmenu Profile Post Filter", "Overview")
-                implicitWidth: bar.width / 2
-            }
-            QQC2.TabButton {
+                onTriggered: stackLayout.currentIndex = 0
+            },
+            QQC2.Action {
                 text: i18nc("@item:inmenu Profile Post Filter", "Posts")
-                implicitWidth: bar.width / 2
+                onTriggered: stackLayout.currentIndex = 1
             }
+        ]
+    }
+
+    contentItem: StackLayout {
+        id: stackLayout
+
+        currentIndex: 1
+
+        Item {
+            id: homeTab
         }
 
-        StackLayout {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            currentIndex: bar.currentIndex
-            Item {
-                id: homeTab
-            }
-            QQC2.ScrollView {
-                TableView.ListTableView {
-                    id: table
+        QQC2.ScrollView {
+            TableView.ListTableView {
+                id: table
 
-                    clip: true
+                clip: true
 
-                    model: KItemModels.KSortFilterProxyModel
-                        {
-                            id: proxy
-                            sourceModel: PostStatisticsModel {
-                                database: database
-                            }
-
-                            filterRowCallback: function(source_row, source_parent) {
-                                let index = proxy.mapFromSource(sourceModel.index(source_row, 0, source_parent));
-                                console.info(index.row);
-                                if (index.row < 15) {
-                                    return true
-                                } else {
-                                    return false;
-                                }
-                            }
-                        }
-
-                    onColumnClicked: (column, headerComponent) => {
-                        proxy.sortRoleName = headerComponent.textRole;
-
-                        if (proxy.sortOrder === Qt.AscendingOrder) {
-                            proxy.sortOrder = Qt.DescendingOrder;
-                        } else {
-                            proxy.sortOrder = Qt.AscendingOrder;
-                        }
+                model: KItemModels.KSortFilterProxyModel {
+                    id: proxy
+                    sourceModel: PostStatisticsModel {
+                        database: database
                     }
 
-                    headerComponents: [
-                        TableView.HeaderComponent {
-                            width: 240
-                            title: i18nc("@title:column", "Content")
-                            textRole: "content"
-                        },
-                        TableView.HeaderComponent {
-                            width: 240
-                            title: i18nc("@title:column", "Favorites")
-                            textRole: "favoriteCount"
-                        },
-                        TableView.HeaderComponent {
-                            width: 240
-                            title: i18nc("@title:column", "Boosts")
-                            textRole: "boostCount"
-                        },
-                        TableView.HeaderComponent {
-                            width: 240
-                            title: i18nc("@title:column", "Date")
-                            textRole: "publishedAt"
+                    filterRowCallback: function(source_row, source_parent) {
+                        let index = proxy.mapFromSource(sourceModel.index(source_row, 0, source_parent));
+                        console.info(index.row);
+                        if (index.row < 15) {
+                            return true
+                        } else {
+                            return false;
                         }
-                    ]
+                    }
                 }
+
+                onColumnClicked: (column, headerComponent) => {
+                    proxy.sortRoleName = headerComponent.textRole;
+
+                    if (proxy.sortOrder === Qt.AscendingOrder) {
+                        proxy.sortOrder = Qt.DescendingOrder;
+                    } else {
+                        proxy.sortOrder = Qt.AscendingOrder;
+                    }
+                }
+
+                headerComponents: [
+                    TableView.HeaderComponent {
+                        width: 240
+                        title: i18nc("@title:column", "Content")
+                        textRole: "content"
+                    },
+                    TableView.HeaderComponent {
+                        width: 240
+                        title: i18nc("@title:column", "Favorites")
+                        textRole: "favoriteCount"
+                    },
+                    TableView.HeaderComponent {
+                        width: 240
+                        title: i18nc("@title:column", "Boosts")
+                        textRole: "boostCount"
+                    },
+                    TableView.HeaderComponent {
+                        width: 240
+                        title: i18nc("@title:column", "Date")
+                        textRole: "publishedAt"
+                    }
+                ]
             }
         }
     }
