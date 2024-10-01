@@ -7,6 +7,7 @@ import QtQuick.Controls 2 as QQC2
 
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 
 import org.kde.tokodon
 
@@ -100,7 +101,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Copy Authorization Link")
                 icon.name: "edit-copy"
                 onClicked: {
-                    Clipboard.saveText(account.authorizeUrl)
+                    KQuickControlsAddons.Clipboard.saveText(account.authorizeUrl)
                     applicationWindow().showPassiveNotification(i18n("Link copied."));
                 }
             }
