@@ -45,7 +45,7 @@ InlineIdentityInfo {
 
     InteractionButton {
         iconName: "document-edit"
-        tooltip: "Edited on " + root.editedAt
+        tooltip: i18nc("Edited on <datetime>", "Edited on %1", root.editedAt)
         visible: !root.selected && root.wasEdited
 
         Layout.alignment: Qt.AlignVCenter
