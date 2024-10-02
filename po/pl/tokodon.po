@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:39+0000\n"
 "PO-Revision-Date: 2024-09-29 09:54+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not follow account"
 msgstr "Nie można zacząć obserwować konta"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Nie można przestać obserwować konta"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not block account"
 msgstr "Nie można zablokować konta"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Nie można odblokować konta"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not mute account"
 msgstr "Nie można wyciszyć konta"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Nie można usunąć wyciszenia konta"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not feature account"
 msgstr "Nie można zacząć wyróżniać konta"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Nie można przestać wyróżniać konta"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Nie można zmienić uwagi o koncie"
@@ -726,7 +726,6 @@ msgstr "Zezwól na powiadomienia"
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
 #: content/ui/LoginFlow/LoginPage.qml:125
-#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "Kontynuuj"
@@ -812,13 +811,13 @@ msgstr "Bez listy"
 msgid "Edit List"
 msgstr "Edytuj listę"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:25
+#: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Uwierzytelnianie"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:77
+#: content/ui/LoginFlow/BaseAuthorization.qml:78
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -827,17 +826,17 @@ msgstr ""
 "Aby przejść dalej, otwórz następujący odnośnik w swojej przeglądarce "
 "sieciowej, aby uwierzytelnić Tokodona: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:91
+#: content/ui/LoginFlow/BaseAuthorization.qml:92
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Otwórz odnośnik uwierzytelniający"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:100
+#: content/ui/LoginFlow/BaseAuthorization.qml:101
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Skopiuj odnośnik uwierzytelniający"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:104
+#: content/ui/LoginFlow/BaseAuthorization.qml:105
 #, kde-format
 msgid "Link copied."
 msgstr "Skopiowano odnośnik."
@@ -921,7 +920,7 @@ msgstr "Logowanie"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
-#: content/ui/LoginFlow/ServersPage.qml:25
+#: content/ui/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -932,8 +931,7 @@ msgstr ""
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:108
+#: content/ui/LoginFlow/ServersPage.qml:89
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -946,13 +944,11 @@ msgid "Login"
 msgstr "Logowanie"
 
 #: content/ui/LoginFlow/LoginPage.qml:106
-#: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "Adres URL serwera:"
 
 #: content/ui/LoginFlow/LoginPage.qml:107
-#: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
@@ -977,14 +973,12 @@ msgid "Server URL must not be empty!"
 msgstr "Adres URL serwera nie może być pusty!"
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Ustawienia sieci"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1052,27 +1046,47 @@ msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr "Odrzucam"
 
-#: content/ui/LoginFlow/ServersPage.qml:18
+#: content/ui/LoginFlow/ServersPage.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "Wybierz serwer"
 
-#: content/ui/LoginFlow/ServersPage.qml:47
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "Ten serwer jest zamknięty na rejestrację: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:61
+#: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
-msgctxt "@title:group"
-msgid "Pick a Server"
+msgid "Search or enter URL…"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "'Custom' is a category of emoji"
+#| msgid "Custom"
+msgid "Custom Server"
+msgstr "Własna"
+
+#: content/ui/LoginFlow/ServersPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "Public Servers"
 msgstr "Wybierz serwer"
 
-#: content/ui/LoginFlow/ServersPage.qml:83
+#: content/ui/LoginFlow/ServersPage.qml:170
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "No Public Servers"
+msgstr "Wybierz serwer"
+
+#: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
-msgid "Server URL must not be empty."
-msgstr "Adres URL serwera nie może być pusty."
+msgid "Enter a server URL manually in the search field."
+msgstr ""
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -2983,6 +2997,14 @@ msgstr ""
 "Ten wpis oznaczono jako prywatny. Niektórych wpisów może brakować, bo ich "
 "odpowiedzi zostały domyślnie oznaczone jako prywatne."
 
+#: content/ui/PostDelegate/PostInfoBar.qml:48
+#, fuzzy, kde-format
+#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+#| msgid "Posted on %1"
+msgctxt "Edited on <datetime>"
+msgid "Edited on %1"
+msgstr "Wysłano dnia %1"
+
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
 msgctxt "Show more options"
@@ -4336,6 +4358,13 @@ msgstr "Źródło"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Miejsce docelowe"
+
+#~ msgctxt "@title:group"
+#~ msgid "Pick a Server"
+#~ msgstr "Wybierz serwer"
+
+#~ msgid "Server URL must not be empty."
+#~ msgstr "Adres URL serwera nie może być pusty."
 
 #~ msgctxt "@title"
 #~ msgid "%1 favourite"

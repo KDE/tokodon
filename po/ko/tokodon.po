@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:39+0000\n"
 "PO-Revision-Date: 2024-08-21 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not follow account"
 msgstr "계정을 팔로우할 수 없음"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "계정을 팔로우 해제할 수 없음"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not block account"
 msgstr "계정을 차단할 수 없음"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unblock account"
 msgstr "계정의 차단을 해제할 수 없음"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not mute account"
 msgstr "계정을 뮤트할 수 없음"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unmute account"
 msgstr "계정의 뮤트를 해제할 수 없음"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not feature account"
 msgstr "계정을 추천할 수 없음"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "계정을 추천 해제할 수 없음"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "계정 자기소개 정보를 편집할 수 없음"
@@ -720,7 +720,6 @@ msgstr "알림 허용"
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
 #: content/ui/LoginFlow/LoginPage.qml:125
-#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "계속"
@@ -804,13 +803,13 @@ msgstr "리스트 없음"
 msgid "Edit List"
 msgstr "리스트 편집"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:25
+#: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "인증"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:77
+#: content/ui/LoginFlow/BaseAuthorization.qml:78
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -818,17 +817,17 @@ msgid ""
 msgstr ""
 "계속 진행하려면 웹 브라우저에서 다음 링크를 열고 Tokodon을 인증하십시오: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:91
+#: content/ui/LoginFlow/BaseAuthorization.qml:92
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "인증 링크 열기"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:100
+#: content/ui/LoginFlow/BaseAuthorization.qml:101
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "인증 링크 복사"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:104
+#: content/ui/LoginFlow/BaseAuthorization.qml:105
 #, kde-format
 msgid "Link copied."
 msgstr "링크가 복사되었습니다."
@@ -912,7 +911,7 @@ msgstr "로그인"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
-#: content/ui/LoginFlow/ServersPage.qml:25
+#: content/ui/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -921,8 +920,7 @@ msgstr "서버와 통신할 수 없음: %1. 프록시 설정을 확인하십시�
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:108
+#: content/ui/LoginFlow/ServersPage.qml:89
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -935,13 +933,11 @@ msgid "Login"
 msgstr "로그인"
 
 #: content/ui/LoginFlow/LoginPage.qml:106
-#: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "서버 URL:"
 
 #: content/ui/LoginFlow/LoginPage.qml:107
-#: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
@@ -966,14 +962,12 @@ msgid "Server URL must not be empty!"
 msgstr "인스턴스 URL을 입력해야 합니다!"
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "네트워크 설정"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1041,27 +1035,47 @@ msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr "동의하지 않음"
 
-#: content/ui/LoginFlow/ServersPage.qml:18
+#: content/ui/LoginFlow/ServersPage.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "서버 선택"
 
-#: content/ui/LoginFlow/ServersPage.qml:47
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "이 서버의 등록이 비활성화되어 있습니다: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:61
+#: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
-msgctxt "@title:group"
-msgid "Pick a Server"
+msgid "Search or enter URL…"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "'Custom' is a category of emoji"
+#| msgid "Custom"
+msgid "Custom Server"
+msgstr "사용자 정의"
+
+#: content/ui/LoginFlow/ServersPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "Public Servers"
 msgstr "서버 선택"
 
-#: content/ui/LoginFlow/ServersPage.qml:83
+#: content/ui/LoginFlow/ServersPage.qml:170
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "No Public Servers"
+msgstr "서버 선택"
+
+#: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
-msgid "Server URL must not be empty."
-msgstr "인스턴스 URL을 입력해야 합니다."
+msgid "Enter a server URL manually in the search field."
+msgstr ""
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -2974,6 +2988,14 @@ msgstr ""
 "이 게시물이 비공개로 표시되었습니다. 이 게시물의 답장은 기본적으로 비공개되"
 "어 있으므로 일부 게시물이 표시되지 않을 수도 있습니다."
 
+#: content/ui/PostDelegate/PostInfoBar.qml:48
+#, fuzzy, kde-format
+#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+#| msgid "Posted on %1"
+msgctxt "Edited on <datetime>"
+msgid "Edited on %1"
+msgstr "%1에 게시됨"
+
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
 msgctxt "Show more options"
@@ -4322,6 +4344,13 @@ msgstr "원본"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
+
+#~ msgctxt "@title:group"
+#~ msgid "Pick a Server"
+#~ msgstr "서버 선택"
+
+#~ msgid "Server URL must not be empty."
+#~ msgstr "인스턴스 URL을 입력해야 합니다."
 
 #~ msgctxt "@title"
 #~ msgid "%1 favourite"

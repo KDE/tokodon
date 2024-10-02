@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:39+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -17,47 +17,47 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not follow account"
 msgstr "Gat ekki fylgst með notandaaðgangi"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Gat ekki hætt að fylgjast með notandaaðgangi"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not block account"
 msgstr "Gat ekki útilokað notandaaðgang"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Gat ekki hætt að útiloka notandaaðgang"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not mute account"
 msgstr "Gat ekki þaggað niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Gat ekki hætt að þagga niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not feature account"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Gat ekki tekið notandaaðgang úr forgrunni"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Gat ekki breytt minnispunkti um notandaaðgang"
@@ -788,7 +788,6 @@ msgstr "Tilkynningar"
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
 #: content/ui/LoginFlow/LoginPage.qml:125
-#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "Halda áfram"
@@ -869,7 +868,7 @@ msgstr ""
 msgid "Edit List"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:25
+#: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -877,7 +876,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Minnst á"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:77
+#: content/ui/LoginFlow/BaseAuthorization.qml:78
 #, fuzzy, kde-format
 #| msgid ""
 #| "To continue, please open the following link and authorize Tokodon: %1"
@@ -888,21 +887,21 @@ msgstr ""
 "Til að halda áfram skaltu opna eftirfarandi tengil og gefa Tokodon heimild: "
 "%1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:91
+#: content/ui/LoginFlow/BaseAuthorization.qml:92
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Open Authorization Link"
 msgstr "Minnst á"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:100
+#: content/ui/LoginFlow/BaseAuthorization.qml:101
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
 msgid "Copy Authorization Link"
 msgstr "Minnst á"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:104
+#: content/ui/LoginFlow/BaseAuthorization.qml:105
 #, kde-format
 msgid "Link copied."
 msgstr ""
@@ -987,7 +986,7 @@ msgstr "Innskráning"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
-#: content/ui/LoginFlow/ServersPage.qml:25
+#: content/ui/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -996,8 +995,7 @@ msgstr ""
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:108
+#: content/ui/LoginFlow/ServersPage.qml:89
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
@@ -1013,13 +1011,11 @@ msgid "Login"
 msgstr "Innskráning"
 
 #: content/ui/LoginFlow/LoginPage.qml:106
-#: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr ""
 
 #: content/ui/LoginFlow/LoginPage.qml:107
-#: content/ui/LoginFlow/ServersPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Mastodon client"
 msgid "mastodon.social"
@@ -1045,7 +1041,6 @@ msgid "Server URL must not be empty!"
 msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:95
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -1054,7 +1049,6 @@ msgid "Network Settings"
 msgstr "Stillingar"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Ignore ssl errors"
 msgctxt "@option:check Login page"
@@ -1126,28 +1120,42 @@ msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:18
+#: content/ui/LoginFlow/ServersPage.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:47
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:61
+#: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
-msgctxt "@title:group"
-msgid "Pick a Server"
+msgid "Search or enter URL…"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:83
+#: content/ui/LoginFlow/ServersPage.qml:131
+#, kde-format
+msgid "Custom Server"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:140
 #, fuzzy, kde-format
-#| msgid "Instance URL and username must not be empty!"
-msgid "Server URL must not be empty."
-msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
+#| msgid "Public"
+msgid "Public Servers"
+msgstr "Opinbert"
+
+#: content/ui/LoginFlow/ServersPage.qml:170
+#, kde-format
+msgid "No Public Servers"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:171
+#, kde-format
+msgid "Enter a server URL manually in the search field."
+msgstr ""
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -3144,6 +3152,12 @@ msgid ""
 "replies are marked as private by default."
 msgstr ""
 
+#: content/ui/PostDelegate/PostInfoBar.qml:48
+#, kde-format
+msgctxt "Edited on <datetime>"
+msgid "Edited on %1"
+msgstr ""
+
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
@@ -4578,6 +4592,11 @@ msgid "Destination"
 msgstr "Minnst á"
 
 #, fuzzy
+#~| msgid "Instance URL and username must not be empty!"
+#~ msgid "Server URL must not be empty."
+#~ msgstr "Slóð á netþjón og notandanafn mega ekki vera auð!"
+
+#, fuzzy
 #~| msgid "%1 favorited your post"
 #~ msgctxt "@title"
 #~ msgid "%1 favourite"
@@ -4842,11 +4861,6 @@ msgstr "Minnst á"
 
 #~ msgid "Please insert the generated token."
 #~ msgstr "Settu inn útbúna teiknið."
-
-#, fuzzy
-#~| msgid "Public"
-#~ msgid "Public post"
-#~ msgstr "Opinbert"
 
 #, fuzzy
 #~| msgid "Follow"

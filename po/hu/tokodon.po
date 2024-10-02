@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-25 00:39+0000\n"
+"POT-Creation-Date: 2024-10-02 00:39+0000\n"
 "PO-Revision-Date: 2024-09-30 22:11+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: account/abstractaccount.cpp:658
+#: account/abstractaccount.cpp:659
 #, kde-format
 msgid "Could not follow account"
 msgstr "Nem sikerült követni a fiókot"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Nem sikerült leállítani a fiók követését"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not block account"
 msgstr "Nem sikerült letiltani a fiókot"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Nem sikerült leállítani a fiók letiltását"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not mute account"
 msgstr "Nem sikerült némítani a fiókot"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Nem sikerült leállítani a fiók némítását"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not feature account"
 msgstr "Nem sikerült kiemelni a fiókot"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Nem sikerült leállítani a fiók kiemelését"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Nem sikerült szerkeszteni egy fiókhoz tartozó megjegyzést"
@@ -720,7 +720,6 @@ msgstr "Értesítések engedélyezése"
 #: content/ui/InitialSetup/SetupWelcome.qml:42
 #: content/ui/LoginFlow/CodeAuthorization.qml:32
 #: content/ui/LoginFlow/LoginPage.qml:125
-#: content/ui/LoginFlow/ServersPage.qml:77
 #, kde-format
 msgid "Continue"
 msgstr "Folytatás"
@@ -805,13 +804,13 @@ msgstr "Nincsenek listák"
 msgid "Edit List"
 msgstr "Lista szerkesztése"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:25
+#: content/ui/LoginFlow/BaseAuthorization.qml:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Felhasználóazonosítás"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:77
+#: content/ui/LoginFlow/BaseAuthorization.qml:78
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -820,17 +819,17 @@ msgstr ""
 "A folytatáshoz nyissa meg a következő hivatkozást a webböngészőjében a "
 "Tokodon hitelesítéséhez: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:91
+#: content/ui/LoginFlow/BaseAuthorization.qml:92
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Hitelesítési hivatkozás megnyitása"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:100
+#: content/ui/LoginFlow/BaseAuthorization.qml:101
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Hitelesítési hivatkozás másolása"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:104
+#: content/ui/LoginFlow/BaseAuthorization.qml:105
 #, kde-format
 msgid "Link copied."
 msgstr "Hivatkozás másolva."
@@ -913,7 +912,7 @@ msgstr "Bejelentkezés"
 #: content/ui/LoginFlow/RegistrationPage.qml:26
 #: content/ui/LoginFlow/RegistrationPage.qml:37
 #: content/ui/LoginFlow/RulesPage.qml:26
-#: content/ui/LoginFlow/ServersPage.qml:25
+#: content/ui/LoginFlow/ServersPage.qml:30
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -924,8 +923,7 @@ msgstr ""
 #: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:38
-#: content/ui/LoginFlow/ServersPage.qml:108
+#: content/ui/LoginFlow/ServersPage.qml:89
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -938,13 +936,11 @@ msgid "Login"
 msgstr "Bejelentkezés"
 
 #: content/ui/LoginFlow/LoginPage.qml:106
-#: content/ui/LoginFlow/ServersPage.qml:67
 #, kde-format
 msgid "Server URL:"
 msgstr "Kiszolgáló URL-címe:"
 
 #: content/ui/LoginFlow/LoginPage.qml:107
-#: content/ui/LoginFlow/ServersPage.qml:68
 #, kde-format
 msgid "mastodon.social"
 msgstr "mastodon.social"
@@ -969,14 +965,12 @@ msgid "Server URL must not be empty!"
 msgstr "A kiszolgáló URL-címe nem lehet üres."
 
 #: content/ui/LoginFlow/LoginPage.qml:152
-#: content/ui/LoginFlow/ServersPage.qml:95
 #, kde-format
 msgctxt "@title:group"
 msgid "Network Settings"
 msgstr "Hálózati beállítások"
 
 #: content/ui/LoginFlow/LoginPage.qml:158
-#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgctxt "@option:check Login page"
 msgid "Ignore SSL errors"
@@ -1044,27 +1038,47 @@ msgctxt "@action:button Disagree to server rules"
 msgid "Disagree"
 msgstr "Nem értek egyet"
 
-#: content/ui/LoginFlow/ServersPage.qml:18
+#: content/ui/LoginFlow/ServersPage.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "Kiszolgáló kiválasztása"
 
-#: content/ui/LoginFlow/ServersPage.qml:47
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "Ez a kiszolgáló lezárta a regisztrációt: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:61
+#: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
-msgctxt "@title:group"
-msgid "Pick a Server"
+msgid "Search or enter URL…"
+msgstr ""
+
+#: content/ui/LoginFlow/ServersPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "'Custom' is a category of emoji"
+#| msgid "Custom"
+msgid "Custom Server"
+msgstr "Egyéni"
+
+#: content/ui/LoginFlow/ServersPage.qml:140
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "Public Servers"
 msgstr "Kiszolgáló kiválasztása"
 
-#: content/ui/LoginFlow/ServersPage.qml:83
+#: content/ui/LoginFlow/ServersPage.qml:170
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Pick a Server"
+msgid "No Public Servers"
+msgstr "Kiszolgáló kiválasztása"
+
+#: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
-msgid "Server URL must not be empty."
-msgstr "A kiszolgáló URL-címe nem lehet üres."
+msgid "Enter a server URL manually in the search field."
+msgstr ""
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -2977,6 +2991,14 @@ msgstr ""
 "Ezt a bejegyzést privátként jelölték meg. Néhány bejegyzés hiányozhat, mivel "
 "a válaszai alapértelmezetten privátként lettek megjelölve."
 
+#: content/ui/PostDelegate/PostInfoBar.qml:48
+#, fuzzy, kde-format
+#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+#| msgid "Posted on %1"
+msgctxt "Edited on <datetime>"
+msgid "Edited on %1"
+msgstr "%1"
+
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
 msgctxt "Show more options"
@@ -4326,6 +4348,13 @@ msgstr "Forrás"
 msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cél"
+
+#~ msgctxt "@title:group"
+#~ msgid "Pick a Server"
+#~ msgstr "Kiszolgáló kiválasztása"
+
+#~ msgid "Server URL must not be empty."
+#~ msgstr "A kiszolgáló URL-címe nem lehet üres."
 
 #~ msgctxt "@title"
 #~ msgid "%1 favourite"
