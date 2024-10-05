@@ -34,6 +34,7 @@ class Identity : public QObject
     Q_PROPERTY(int permission READ permission NOTIFY identityUpdated)
     Q_PROPERTY(QJsonArray fields READ fields NOTIFY identityUpdated)
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
+    Q_PROPERTY(QDateTime lastStatusAt READ lastStatusAt NOTIFY identityUpdated)
 
 public:
     /**
@@ -116,6 +117,8 @@ public:
      */
     [[nodiscard]] QJsonArray fields() const;
 
+    [[nodiscard]] QDateTime lastStatusAt() const;
+
     /**
      * @brief Fills in identity data from JSON.
      * @param doc The JSON data to load from.
@@ -160,6 +163,7 @@ private:
     int m_followingCount;
     int m_statusesCount;
     int m_permission;
+    QDateTime m_lastStatusAt;
     Relationship *m_relationship = nullptr;
     AbstractAccount *m_parent = nullptr;
 };
