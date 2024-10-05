@@ -211,32 +211,7 @@ QDateTime Post::publishedAt() const
 
 QString Post::relativeTime() const
 {
-    const auto current = QDateTime::currentDateTime();
-    const auto publishingDate = publishedAt();
-    const auto secsTo = publishingDate.secsTo(current);
-    const auto daysTo = publishingDate.daysTo(current);
-    if (secsTo < 0) {
-        return i18n("in the future");
-    } else if (secsTo < 60) {
-        return i18n("%1s", qCeil(secsTo));
-    } else if (secsTo < 60 * 60) {
-        return i18n("%1m", qCeil(secsTo / 60));
-    } else if (secsTo < 60 * 60 * 24) {
-        return i18n("%1h", qCeil(secsTo / (60 * 60)));
-    } else if (daysTo < 7) {
-        return i18n("%1d", qCeil(daysTo));
-    } else if (daysTo < 365) {
-        const auto weeksTo = qCeil(daysTo / 7);
-        if (weeksTo < 5) {
-            return i18np("1 week ago", "%1 weeks ago", weeksTo);
-        } else {
-            const auto monthsTo = qCeil(daysTo / 30);
-            return i18np("1 month ago", "%1 months ago", monthsTo);
-        }
-    } else {
-        const auto yearsTo = qCeil(daysTo / 365);
-        return i18np("1 year ago", "%1 years ago", yearsTo);
-    }
+    return TextHandler::getRelativeDateTime(publishedAt());
 }
 
 QString Post::absoluteTime() const
