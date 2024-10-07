@@ -188,6 +188,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/PopupShadow.qml
         content/ui/Components/ProfileHeader.qml
         content/ui/Components/RoundedEffect.qml
+        content/ui/Components/Sidebar.qml
         content/ui/Components/UserCard.qml
 
         # Initial Setup
