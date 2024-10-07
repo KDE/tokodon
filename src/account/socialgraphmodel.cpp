@@ -6,6 +6,7 @@
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "account/relationship.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -110,14 +111,34 @@ void SocialGraphModel::setCount(int count)
     m_count = count;
 }
 
+bool SocialGraphModel::fetchAll() const
+{
+    return m_fetchAll;
+}
+
+void SocialGraphModel::setFetchAll(const bool fetchAll)
+{
+    if (m_fetchAll != fetchAll) {
+        m_fetchAll = fetchAll;
+        if (canFetchMore({})) {
+            fillTimeline();
+        }
+        Q_EMIT fetchAllChanged();
+    }
+}
+
 QVariant SocialGraphModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
     const auto identity = m_accounts[index.row()].get();
     switch (role) {
-    case CustomRoles::IdentityRole:
+    case IdentityRole:
         return QVariant::fromValue<Identity *>(identity);
+    case LastStatusAtRole:
+        return identity->lastStatusAt();
+    case RelativeTimeRole:
+        return TextHandler::getRelativeDateTime(identity->lastStatusAt());
     default:
         Q_UNREACHABLE();
     }
@@ -130,9 +151,7 @@ int SocialGraphModel::rowCount(const QModelIndex &) const
 
 QHash<int, QByteArray> SocialGraphModel::roleNames() const
 {
-    return {
-        {CustomRoles::IdentityRole, "identity"},
-    };
+    return {{IdentityRole, "identity"}, {LastStatusAtRole, "lastStatusAt"}, {RelativeTimeRole, "relativeTime"}};
 }
 
 bool SocialGraphModel::loading() const
@@ -309,6 +328,10 @@ void SocialGraphModel::fillTimeline()
         }
 
         setLoading(false);
+
+        if (fetchAll() && canFetchMore({})) {
+            fillTimeline();
+        }
     });
 }
 

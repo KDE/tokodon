@@ -19,6 +19,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool isFollowRequest READ isFollowRequest CONSTANT)
     Q_PROPERTY(bool isFollowing READ isFollowing CONSTANT)
     Q_PROPERTY(bool isFollower READ isFollower CONSTANT)
+    Q_PROPERTY(bool fetchAll READ fetchAll WRITE setFetchAll NOTIFY fetchAllChanged)
 
     /**
      * @brief The account id of the account we want to display
@@ -28,9 +29,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(int count READ count WRITE setCount)
 
 public:
-    enum CustomRoles {
-        IdentityRole = Qt::UserRole + 1,
-    };
+    enum CustomRoles { IdentityRole = Qt::UserRole + 1, LastStatusAtRole, RelativeTimeRole };
 
     explicit SocialGraphModel(QObject *parent = nullptr);
 
@@ -54,6 +53,8 @@ public:
     void setStatusId(const QString &statusId);
     [[nodiscard]] int count() const;
     void setCount(int count);
+    [[nodiscard]] bool fetchAll() const;
+    void setFetchAll(bool fetchAll);
 
 public Q_SLOTS:
     void actionAllow(const QModelIndex &index);
@@ -64,6 +65,7 @@ Q_SIGNALS:
     void nameChanged();
     void accountIdChanged();
     void statusIdChanged();
+    void fetchAllChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -75,6 +77,7 @@ private:
     QList<std::shared_ptr<Identity>> m_accounts;
     bool m_loading = false;
     QUrl m_next;
+    bool m_fetchAll = false;
 
     QString m_followListName;
     QString m_accountId;
