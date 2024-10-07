@@ -66,6 +66,11 @@ public:
      * Example: If the function is called at 13:00, and you're given a QDateTime at 12:00 that day. The return value would say "1h"
      */
     static QString getRelativeDateTime(const QDateTime &dateTime);
+
+    /**
+     * @brief Converts a QDate to it's relative equivalent, when this function is called. Similiar to getRelativeDateTime but only for dates.
+     */
+    static QString getRelativeDate(const QDate &dateTime);
 };
 
 namespace TextRegex

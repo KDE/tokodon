@@ -424,8 +424,8 @@ StatefulApp.StatefulWindow {
 
             Repeater {
                 model: Kirigami.Settings.isMobile ?
-                    [searchAction, announcementsAction, followRequestAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
-                    [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
+                    [searchAction, announcementsAction, followRequestAction, followingAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
+                    [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
                 Delegates.RoundedItemDelegate {
                     required property var modelData
                     QQC2.ButtonGroup.group: pageButtonGroup
@@ -666,6 +666,20 @@ StatefulApp.StatefulWindow {
         }
     }
 
+    property Kirigami.Action followingAction: Kirigami.Action {
+        icon.name: "user-group-properties-symbolic"
+        text: i18n("Following")
+        checkable: true
+        onTriggered: {
+            pageStack.clear();
+            pageStack.push(followingTimeline.createObject(root));
+            checked = true;
+            if (Kirigami.Settings.isMobile || drawer.modal) {
+                drawer.drawerOpen = false;
+            }
+        }
+    }
+
     property Kirigami.Action searchAction: Kirigami.Action {
         icon.name: "search"
         text: i18n("Search")
@@ -764,6 +778,11 @@ StatefulApp.StatefulWindow {
     Component {
         id: exploreTimeline
         ExplorePage {}
+    }
+
+    Component {
+        id: followingTimeline
+        FollowingPage {}
     }
 
     property Item hoverLinkIndicator: QQC2.Control {

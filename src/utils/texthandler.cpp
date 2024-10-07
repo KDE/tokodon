@@ -173,7 +173,6 @@ QString TextHandler::getRelativeDateTime(const QDateTime &dateTime)
 {
     const auto current = QDateTime::currentDateTime();
     const auto secsTo = dateTime.secsTo(current);
-    const auto daysTo = dateTime.daysTo(current);
     if (secsTo < 0) {
         return i18n("in the future");
     } else if (secsTo < 60) {
@@ -182,6 +181,17 @@ QString TextHandler::getRelativeDateTime(const QDateTime &dateTime)
         return i18n("%1m", qCeil(secsTo / 60));
     } else if (secsTo < 60 * 60 * 24) {
         return i18n("%1h", qCeil(secsTo / (60 * 60)));
+    } else {
+        return getRelativeDate(dateTime.date());
+    }
+}
+
+QString TextHandler::getRelativeDate(const QDate &dateTime)
+{
+    const auto current = QDate::currentDate();
+    const auto daysTo = dateTime.daysTo(current);
+    if (daysTo == 0) {
+        return i18n("Today");
     } else if (daysTo < 7) {
         return i18n("%1d", qCeil(daysTo));
     } else if (daysTo < 365) {

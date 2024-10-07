@@ -118,7 +118,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     // will get empty strings.
     QJsonObject source = doc["source"_L1].toObject();
     m_visibility = source["privacy"_L1].toString();
-    m_lastStatusAt = QDateTime::fromString(doc["last_status_at"_L1].toString(), Qt::ISODate).toLocalTime();
+    m_lastStatusAt = QDate::fromString(doc["last_status_at"_L1].toString(), Qt::ISODate);
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
@@ -169,7 +169,7 @@ QUrl Identity::url() const
     return m_url;
 }
 
-QDateTime Identity::lastStatusAt() const
+QDate Identity::lastStatusAt() const
 {
     return m_lastStatusAt;
 }

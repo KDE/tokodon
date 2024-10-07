@@ -28,9 +28,7 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(int count READ count WRITE setCount)
 
 public:
-    enum CustomRoles {
-        IdentityRole = Qt::UserRole + 1,
-    };
+    enum CustomRoles { IdentityRole = Qt::UserRole + 1, LastStatusAtRole, RelativeTimeRole };
 
     explicit SocialGraphModel(QObject *parent = nullptr);
 
