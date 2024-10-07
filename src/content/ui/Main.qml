@@ -362,171 +362,13 @@ StatefulApp.StatefulWindow {
         }
     }
 
-    globalDrawer: Kirigami.OverlayDrawer {
-        id: drawer
-
-        enabled: AccountManager.hasAccounts && AccountManager.isReady
-        edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-        modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (root.width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
-        z: modal ? Math.round(position * 10000000) : 100
-        width: Kirigami.Units.gridUnit * 14
-        Behavior on width {
-            NumberAnimation {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-
-        handleClosedIcon.source: modal ? null : "sidebar-expand-left"
-        handleOpenIcon.source: modal ? null : "sidebar-collapse-left"
-        handleVisible: modal && !isShowingFullScreenImage && enabled
-        onModalChanged: drawerOpen = !modal;
-
-        leftPadding: 0
-        rightPadding: 0
-        topPadding: 0
-        bottomPadding: 0
-
-        contentItem: ColumnLayout {
-            spacing: 0
-
-            QQC2.ToolBar {
-                Layout.fillWidth: true
-                Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
-                Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
-
-                leftPadding: 3
-                rightPadding: 3
-                topPadding: 3
-                bottomPadding: 3
-
-                visible: !Kirigami.Settings.isMobile
-
-                contentItem: SearchField {}
-            }
-
-            UserInfo {
-                Layout.fillWidth: true
-                application: root.application
-                sidebar: root.globalDrawer
-            }
-
-            Kirigami.Separator {
-                Layout.fillWidth: true
-                Layout.margins: Kirigami.Units.smallSpacing
-            }
-
-            QQC2.ButtonGroup {
-                id: pageButtonGroup
-            }
-
-            Repeater {
-                model: Kirigami.Settings.isMobile ?
-                    [searchAction, announcementsAction, followRequestAction, followingAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
-                    [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
-                Delegates.RoundedItemDelegate {
-                    required property var modelData
-                    QQC2.ButtonGroup.group: pageButtonGroup
-
-                    padding: Kirigami.Units.largeSpacing
-                    action: modelData
-                    Layout.fillWidth: true
-                    visible: modelData.visible
-                    enabled: !AccountManager.selectedAccountHasIssue
-                    activeFocusOnTab: true
-
-                    onClicked: {
-                        if (drawer.modal) {
-                            drawer.close();
-                        }
-                    }
-
-                    // Notification indicator
-                    Rectangle {
-                        anchors {
-                            verticalCenter: parent.verticalCenter
-                            right: parent.right
-                            rightMargin: Kirigami.Units.largeSpacing
-                        }
-
-                        color: Kirigami.Theme.highlightColor
-
-                        width: 20
-                        height: width
-                        radius: width
-                        visible: modelData.alertCount > 0
-
-                        QQC2.Label {
-                            anchors {
-                                centerIn: parent
-                            }
-
-                            text: modelData.alertCount ?? ""
-                            horizontalAlignment: Text.AlignHCenter
-                        }
-                    }
-                }
-            }
-
-            Item {
-                Layout.fillHeight: true
-            }
-
-            Delegates.RoundedItemDelegate {
-                icon.name: "debug-run"
-                onClicked: {
-                    pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
-                    if (drawer.modal) {
-                        drawer.close();
-                    }
-                }
-                text: i18nc("@action:button Open debug page", "Debug")
-                visible: AccountManager.testMode
-                padding: Kirigami.Units.largeSpacing
-                activeFocusOnTab: true
-
-                Layout.fillWidth: true
-            }
-
-            Delegates.RoundedItemDelegate {
-                icon.name: "lock"
-                text: i18nc("@action:button Open moderation tools", "Moderation Tools")
-                visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
-                padding: Kirigami.Units.largeSpacing
-                activeFocusOnTab: true
-
-                Layout.fillWidth: true
-
-                onClicked: {
-                    moderationToolsView.open()
-                    if (drawer.modal) {
-                        drawer.close();
-                    }
-                }
-
-                ModerationToolsView {
-                    id: moderationToolsView
-                    window: root
-                }
-            }
-
-            Delegates.RoundedItemDelegate {
-                action: Kirigami.Action {
-                    fromQAction: root.application.action('options_configure')
-                    onTriggered: if (drawer.modal) {
-                        drawer.close();
-                    }
-                }
-                text: i18nc("@action:button Open settings dialog", "Settings")
-                padding: Kirigami.Units.largeSpacing
-                activeFocusOnTab: true
-
-                Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
-                Layout.fillWidth: true
-            }
-        }
+    globalDrawer: Sidebar {
+        application: root.application
+        shouldCollapse: root.width < Kirigami.Units.gridUnit * 50
+        actions: Kirigami.Settings.isMobile ?
+            [searchAction, announcementsAction, followRequestAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
+            [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
+        bottomActions: [debugAction, moderationToolsAction, configureAction]
     }
 
     property Kirigami.Action homeAction: Kirigami.Action {
@@ -721,6 +563,44 @@ StatefulApp.StatefulWindow {
             if (Kirigami.Settings.isMobile || drawer.modal) {
                 drawer.drawerOpen = false;
             }
+        }
+    }
+
+    property Kirigami.Action debugAction: Kirigami.Action {
+        icon.name: "debug-run"
+        onTriggered: {
+            pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
+            if (drawer.modal) {
+                drawer.close();
+            }
+        }
+        visible: AccountManager.testMode
+        text: i18nc("@action:button Open debug page", "Debug")
+    }
+
+    property ModerationToolsView moderationToolsView: ModerationToolsView {
+        id: moderationToolsView
+        window: root
+    }
+
+    property Kirigami.Action moderationToolsAction: Kirigami.Action {
+        icon.name: "lock"
+        text: i18nc("@action:button Open moderation tools", "Moderation Tools")
+        visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
+
+        onTriggered: {
+            moderationToolsView.open()
+            if (drawer.modal) {
+                drawer.close();
+            }
+        }
+    }
+
+    property Kirigami.Action configureAction: Kirigami.Action {
+        text: i18nc("@action:button Open settings dialog", "Settings")
+        fromQAction: root.application.action('options_configure')
+        onTriggered: if (drawer.modal) {
+            drawer.close();
         }
     }
 
