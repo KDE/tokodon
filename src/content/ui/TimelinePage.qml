@@ -238,7 +238,7 @@ Kirigami.ScrollablePage {
                 explanation: i18n("To view all replies, open the post on the original server.")
                 helpfulAction: Kirigami.Action {
                     icon.name: "window"
-                    text: i18nc("@action:button", "Open Original Page")
+                    text: i18nc("@action:button 'Browser' being a web browser", "Open in Browser")
                     onTriggered: Qt.openUrlExternally(root.originalPostUrl)
                 }
             }

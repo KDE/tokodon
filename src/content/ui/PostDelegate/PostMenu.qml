@@ -33,7 +33,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "expand"
-        text: i18nc("@action:inmenu", "Expand Post")
+        text: i18nc("@action:inmenu 'Thread' is a series of posts.", "Open Thread")
         onTriggered: Navigation.openPost(root.postId)
         visible: !root.expandedPost
         enabled: visible
@@ -41,7 +41,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         icon.name: "window"
-        text: i18n("Open Original Page")
+        text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
         onTriggered: {
             Qt.openUrlExternally(root.url)
         }
