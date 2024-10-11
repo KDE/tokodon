@@ -106,9 +106,7 @@ TimelinePage {
                         }
                     }
 
-                    QQC2.Control {
-                        visible: accountInfo.model.identity.relationship && accountInfo.model.identity.relationship.followedBy
-
+                    RowLayout {
                         anchors {
                             right: parent.right
                             rightMargin: Kirigami.Units.smallSpacing
@@ -116,14 +114,44 @@ TimelinePage {
                             topMargin: Kirigami.Units.smallSpacing
                         }
 
-                        contentItem: QQC2.Label {
-                            text: i18n("Follows you")
-                            color: '#fafafa'
+                        spacing: Kirigami.Units.mediumSpacing
+
+                        QQC2.Control {
+                            visible: accountInfo.model.identity.relationship && accountInfo.model.identity.relationship.followedBy
+
+
+
+                            contentItem: QQC2.Label {
+                                text: i18n("Follows you")
+                                color: '#fafafa'
+                            }
+
+                            background: Rectangle {
+                                radius: 3
+                                color: '#090b0d'
+                            }
                         }
 
-                        background: Rectangle {
-                            radius: 3
-                            color: '#090b0d'
+                        QQC2.Control {
+                            visible: accountInfo.model.identity.bot
+
+                            contentItem: RowLayout {
+                                spacing: Kirigami.Units.smallSpacing
+                                Kirigami.Icon {
+                                    source: "automated-tasks"
+                                    Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                                    Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+                                }
+                                QQC2.Label {
+                                    text: i18n("Bot")
+                                    color: '#fafafa'
+                                }
+                            }
+
+                            background: Rectangle {
+                                radius: 3
+                                color: '#090b0d'
+                            }
                         }
                     }
 

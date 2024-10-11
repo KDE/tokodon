@@ -34,6 +34,11 @@ bool Identity::locked() const
     return m_locked;
 }
 
+bool Identity::bot() const
+{
+    return m_bot;
+}
+
 QString Identity::visibility() const
 {
     return m_visibility;
@@ -105,6 +110,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_account = doc["acct"_L1].toString();
     m_bio = doc["note"_L1].toString();
     m_locked = doc["locked"_L1].toBool();
+    m_bot = doc["bot"_L1].toBool();
     m_backgroundUrl = QUrl(doc["header"_L1].toString());
     m_avatarUrl = QUrl(doc["avatar"_L1].toString());
     m_followersCount = doc["followers_count"_L1].toInt();

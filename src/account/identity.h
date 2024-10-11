@@ -25,6 +25,7 @@ class Identity : public QObject
     Q_PROPERTY(QString account READ account NOTIFY identityUpdated)
     Q_PROPERTY(QUrl url READ url NOTIFY identityUpdated)
     Q_PROPERTY(bool locked READ locked NOTIFY identityUpdated)
+    Q_PROPERTY(bool bot READ bot NOTIFY identityUpdated)
     Q_PROPERTY(QString visibility READ visibility NOTIFY identityUpdated)
     Q_PROPERTY(QUrl avatarUrl READ avatarUrl NOTIFY identityUpdated)
     Q_PROPERTY(QUrl backgroundUrl READ backgroundUrl NOTIFY identityUpdated)
@@ -75,6 +76,11 @@ public:
      * @return If this identity is locked or not.
      */
     [[nodiscard]] bool locked() const;
+
+    /**
+     * @return If this identity is a bot or not.
+     */
+    [[nodiscard]] bool bot() const;
 
     /**
      * @return The profile visibility.
@@ -165,4 +171,5 @@ private:
     QDate m_lastStatusAt;
     Relationship *m_relationship = nullptr;
     AbstractAccount *m_parent = nullptr;
+    bool m_bot;
 };
