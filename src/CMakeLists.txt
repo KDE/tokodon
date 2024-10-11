@@ -102,6 +102,8 @@ target_sources(tokodon_static
     timeline/maintimelinemodel.h
     timeline/abstracttimelinemodel.cpp
     timeline/abstracttimelinemodel.h
+    timeline/accountmediatimelinemodel.cpp
+    timeline/accountmediatimelinemodel.h
     timeline/tagsmodel.h
     timeline/tagsmodel.cpp
     timeline/abstractlistmodel.cpp
@@ -189,6 +191,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/ProfileHeader.qml
         content/ui/Components/RoundedEffect.qml
         content/ui/Components/Sidebar.qml
+        content/ui/Components/TimelineView.qml
         content/ui/Components/UserCard.qml
 
         # Initial Setup

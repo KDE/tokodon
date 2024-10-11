@@ -40,7 +40,8 @@ QString AccountModel::displayName() const
 
 void AccountModel::fillTimeline(const QString &fromId)
 {
-    if (m_accountId.isEmpty() || m_accountId.isNull()) {
+    // Media is now handled by AccountMediaTimelineModel
+    if (m_accountId.isEmpty() || m_accountId.isNull() || m_currentTab == Media) {
         return;
     }
     setLoading(true);
@@ -222,12 +223,6 @@ void AccountModel::updateTabFilters()
         m_excludePinned = true;
         m_excludeReplies = false;
         m_onlyMedia = false;
-        break;
-    case Media:
-        m_excludeBoosts = true;
-        m_excludePinned = true;
-        m_excludeReplies = false;
-        m_onlyMedia = true;
         break;
     default:
         break;

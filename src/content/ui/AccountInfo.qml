@@ -14,12 +14,13 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.tokodon
 
-TimelinePage {
+Kirigami.Page {
     id: accountInfo
 
     required property string accountId
 
     property var postsBar
+    property string selectedTag
 
     readonly property var currentIndex: postsBar ? postsBar.currentIndex : 0
     readonly property bool onPostsTab: accountInfo.currentIndex === 0
@@ -27,21 +28,121 @@ TimelinePage {
     readonly property bool onMediaTab: accountInfo.currentIndex === 2
 
     readonly property bool canExcludeBoosts: accountInfo.onPostsTab || accountInfo.onRepliesTab
-    property alias excludeBoosts: model.excludeBoosts
+    property alias excludeBoosts: accountModel.excludeBoosts
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
-    showFilterAction: false
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
 
-    model: AccountModel {
-        id: model
+    background: Rectangle {
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-        accountId: accountInfo.accountId
-
-        currentTab: accountInfo.currentIndex
+        color: Kirigami.Theme.backgroundColor
     }
 
-    listViewHeader: QQC2.Pane {
+    StackLayout {
+        currentIndex: accountInfo.onMediaTab ? 1 : 0
+
+        anchors.fill: parent
+
+        implicitHeight: children[currentIndex].implicitHeight
+
+        QQC2.ScrollView {
+            TimelineView {
+                Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+                model: AccountModel {
+                    id: accountModel
+
+                    accountId: accountInfo.accountId
+                    tagged: accountInfo.selectedTag
+                    currentTab: accountInfo.currentIndex
+                }
+            }
+        }
+
+        QQC2.ScrollView {
+            GridView {
+                id: gridView
+
+                property int numCells: gridView.width < 1000 ? 3 : 5
+                property real cellSize: gridView.width / numCells
+
+                cellWidth: cellSize
+                cellHeight: cellSize
+
+                model: AccountMediaTimelineModel {
+                    accountId: accountInfo.accountId
+                    tagged: accountInfo.selectedTag
+                }
+
+                delegate: Item {
+                    id: imageDelegate
+
+                    required property string postId
+                    required property string source
+                    required property string tempSource
+                    required property real focusX
+                    required property real focusY
+                    required property bool sensitive
+                    required property var attachment
+
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    FocusedImage {
+                        id: image
+
+                        anchors.fill: parent
+
+                        source: imageDelegate.source
+                        focusX: imageDelegate.focusX
+                        focusY: imageDelegate.focusY
+                    }
+
+                    Image {
+                        id: tempImage
+
+                        anchors.fill: parent
+
+                        source: imageDelegate.tempSource
+                        visible: image.status !== Image.Ready || imageDelegate.sensitive
+
+                        Kirigami.Icon {
+                            anchors.centerIn: parent
+                            source: "view-hidden-symbolic"
+                        }
+                    }
+
+                    Rectangle {
+                        anchors.fill: parent
+
+                        visible: hoverHandler.hovered
+                        color: "transparent"
+
+                        border {
+                            width: 2
+                            color: Kirigami.Theme.hoverColor
+                        }
+                    }
+
+                    TapHandler {
+                        onTapped: Navigation.openFullScreenImage([imageDelegate.attachment], accountModel.identity, 0);
+                    }
+
+                    HoverHandler {
+                        id: hoverHandler
+                        acceptedDevices: PointerDevice.AllDevices
+                    }
+                }
+            }
+        }
+    }
+
+    header: QQC2.Pane {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
 
@@ -53,7 +154,7 @@ TimelinePage {
         topPadding: 0
 
         contentItem: Loader {
-            active: model.identity
+            active: accountModel.identity
             sourceComponent: ColumnLayout {
                 spacing: 0
 
@@ -75,7 +176,7 @@ TimelinePage {
                                 scale: 1.8
                                 anchors.fill: parent
 
-                                source: model.identity.backgroundUrl
+                                source: accountModel.identity.backgroundUrl
 
                                 implicitWidth: 512
                                 implicitHeight: 512
@@ -117,9 +218,7 @@ TimelinePage {
                         spacing: Kirigami.Units.mediumSpacing
 
                         QQC2.Control {
-                            visible: accountInfo.model.identity.relationship && accountInfo.model.identity.relationship.followedBy
-
-
+                            visible: accountModel.identity.relationship && accountModel.identity.relationship.followedBy
 
                             contentItem: QQC2.Label {
                                 text: i18n("Follows you")
@@ -182,8 +281,8 @@ TimelinePage {
                                     height: parent.height
                                     width: height
 
-                                    name: model.identity.displayName
-                                    source: model.identity.avatarUrl
+                                    name: accountModel.identity.displayName
+                                    source: accountModel.identity.avatarUrl
                                     imageMode: Components.Avatar.ImageMode.AdaptiveImageOrInitals
                                 }
                             }
@@ -197,7 +296,7 @@ TimelinePage {
 
                                 QQC2.Label {
                                     Layout.fillWidth: true
-                                    text: model.identity.displayNameHtml
+                                    text: accountModel.identity.displayNameHtml
                                     font.bold: true
                                     font.pixelSize: 24
                                     maximumLineCount: 2
@@ -206,7 +305,7 @@ TimelinePage {
                                 }
 
                                 QQC2.TextArea {
-                                    text: "@" + model.identity.account
+                                    text: "@" + accountModel.identity.account
                                     textFormat: TextEdit.PlainText
                                     wrapMode: TextEdit.Wrap
                                     readOnly: true
@@ -231,142 +330,142 @@ TimelinePage {
                                     actions: [
                                         Kirigami.Action {
                                             icon.name: {
-                                                if (model.identity.relationship && model.identity.relationship.following) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.following) {
                                                     return "list-remove-user";
                                                 }
                                                 return "list-add-user";
                                             }
 
                                             text: {
-                                                if (model.identity.relationship && model.identity.relationship.requested) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.requested) {
                                                     return i18n("Follow Requested");
                                                 }
-                                                if (model.identity.relationship && model.identity.relationship.following) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.following) {
                                                     return i18n("Unfollow");
                                                 }
                                                 return i18n("Follow");
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship.requested
-                                                    || model.identity.relationship.following) {
-                                                    model.account.unfollowAccount(model.identity);
+                                                if (accountModel.identity.relationship.requested
+                                                    || accountModel.identity.relationship.following) {
+                                                    accountModel.account.unfollowAccount(accountModel.identity);
                                                 } else {
-                                                    model.account.followAccount(model.identity);
+                                                    accountModel.account.followAccount(accountModel.identity);
                                                 }
                                             }
-                                            visible: !model.isSelf
+                                            visible: !accountModel.isSelf
                                         },
                                         Kirigami.Action {
                                             displayHint: Kirigami.DisplayHint.IconOnly
                                             icon.name: {
-                                                if (model.identity.relationship && model.identity.relationship.notifying) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.notifying) {
                                                     return "notifications-disabled";
                                                 } else {
                                                     return "notifications";
                                                 }
                                             }
 
-                                            visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
+                                            visible: accountModel.identity.relationship && accountModel.identity.relationship.following && !accountModel.isSelf
                                             tooltip: {
-                                                if (model.identity.relationship && model.identity.relationship.notifying) {
-                                                    return i18n("Stop notifying me when %1 posts.", '@' + model.identity.account);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.notifying) {
+                                                    return i18n("Stop notifying me when %1 posts.", '@' + accountModel.identity.account);
                                                 } else {
-                                                    return i18n("Notify me when %1 posts.", '@' + model.identity.account);
+                                                    return i18n("Notify me when %1 posts.", '@' + accountModel.identity.account);
                                                 }
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship && model.identity.relationship.notifying) {
-                                                    model.account.followAccount(model.identity, model.identity.relationship.showingReblogs, false);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.notifying) {
+                                                    accountModel.account.followAccount(accountModel.identity, accountModel.identity.relationship.showingReblogs, false);
                                                 } else {
-                                                    model.account.followAccount(model.identity, model.identity.relationship.showingReblogs, true);
+                                                    accountModel.account.followAccount(accountModel.identity, accountModel.identity.relationship.showingReblogs, true);
                                                 }
                                             }
                                         },
                                         Kirigami.Action {
                                             icon.name: "view-hidden"
                                             displayHint: Kirigami.DisplayHint.IconOnly
-                                            visible: model.identity.relationship && model.identity.relationship.following && !model.isSelf
+                                            visible: accountModel.identity.relationship && accountModel.identity.relationship.following && !accountModel.isSelf
                                             text: {
-                                                if (model.identity.relationship && model.identity.relationship.showingReblogs) {
-                                                    return i18n("Hide Boosts from %1", '@' + model.identity.account);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.showingReblogs) {
+                                                    return i18n("Hide Boosts from %1", '@' + accountModel.identity.account);
                                                 } else {
-                                                    return i18n("Show Boosts from %1", '@' + model.identity.account);
+                                                    return i18n("Show Boosts from %1", '@' + accountModel.identity.account);
                                                 }
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship && model.identity.relationship.showingReblogs) {
-                                                    model.account.followAccount(model.identity, false, model.identity.relationship.notifying);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.showingReblogs) {
+                                                    accountModel.account.followAccount(accountModel.identity, false, accountModel.identity.relationship.notifying);
                                                 } else {
-                                                    model.account.followAccount(model.identity, true, model.identity.relationship.notifying);
+                                                    accountModel.account.followAccount(accountModel.identity, true, accountModel.identity.relationship.notifying);
                                                 }
                                             }
                                         },
                                         Kirigami.Action {
                                             icon.name: "favorite"
-                                            visible: model.identity.relationship && !model.isSelf
+                                            visible: accountModel.identity.relationship && !accountModel.isSelf
                                             text: {
-                                                if (model.identity.relationship && model.identity.relationship.endorsed) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.endorsed) {
                                                     return i18n("Stop Featuring This Profile");
                                                 } else {
                                                     return i18n("Feature This Profile");
                                                 }
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship && model.identity.relationship.endorsed) {
-                                                    model.account.unpin(model.identity);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.endorsed) {
+                                                    accountModel.account.unpin(accountModel.identity);
                                                 } else {
-                                                    model.account.pin(model.identity);
+                                                    accountModel.account.pin(accountModel.identity);
                                                 }
                                             }
                                         },
                                         Kirigami.Action {
                                             icon.name: "dialog-cancel"
-                                            visible: model.identity.relationship && !model.isSelf
+                                            visible: accountModel.identity.relationship && !accountModel.isSelf
                                             text: {
-                                                if (model.identity.relationship && model.identity.relationship.muting) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.muting) {
                                                     return i18n("Unmute");
                                                 } else {
                                                     return i18n("Mute");
                                                 }
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship && model.identity.relationship.muting) {
-                                                    model.account.unmuteAccount(model.identity);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.muting) {
+                                                    accountModel.account.unmuteAccount(accountModel.identity);
                                                 } else {
-                                                    model.account.muteAccount(model.identity);
+                                                    accountModel.account.muteAccount(accountModel.identity);
                                                 }
                                             }
                                         },
                                         Kirigami.Action {
                                             icon.name: "im-ban-kick-user"
-                                            visible: model.identity.relationship && !model.isSelf
+                                            visible: accountModel.identity.relationship && !accountModel.isSelf
                                             text: {
-                                                if (model.identity.relationship && model.identity.relationship.blocking) {
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.blocking) {
                                                     return i18n("Unblock");
                                                 } else {
                                                     return i18n("Block");
                                                 }
                                             }
                                             onTriggered: {
-                                                if (model.identity.relationship && model.identity.relationship.blocking) {
-                                                    model.account.unblock(model.identity);
+                                                if (accountModel.identity.relationship && accountModel.identity.relationship.blocking) {
+                                                    accountModel.account.unblock(accountModel.identity);
                                                 } else {
-                                                    model.account.block(model.identity);
+                                                    accountModel.account.block(accountModel.identity);
                                                 }
                                             }
                                         },
                                         Kirigami.Action {
                                             icon.name: "dialog-warning-symbolic"
-                                            visible: !model.isSelf
+                                            visible: !accountModel.isSelf
                                             text: i18nc("@action:inmenu Report this post", "Report…");
-                                            onTriggered: Navigation.reportUser(model.identity)
+                                            onTriggered: Navigation.reportUser(accountModel.identity)
                                         },
                                         Kirigami.Action {
                                             icon.name: "user-group-properties"
-                                            visible: model.isSelf
+                                            visible: accountModel.isSelf
                                             text: i18n("Edit Profile")
                                             onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
-                                                                account: model.account
+                                                                account: accountModel.account
                                                             }, {
                                                                 title: i18n("Account editor")
                                                             })
@@ -376,25 +475,25 @@ TimelinePage {
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"
-                                            visible: model.isSelf
+                                            visible: accountModel.isSelf
                                             text: i18n("Follow Requests")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "request" });
                                         },
                                         Kirigami.Action {
                                             icon.name: "microphone-sensitivity-muted"
-                                            visible: model.isSelf
+                                            visible: accountModel.isSelf
                                             text: i18n("Muted Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "mutes" });
                                         },
                                         Kirigami.Action {
                                             icon.name: "cards-block"
-                                            visible: model.isSelf
+                                            visible: accountModel.isSelf
                                             text: i18n("Blocked Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
                                         },
                                         Kirigami.Action {
                                             icon.name: "favorite"
-                                            visible: model.isSelf
+                                            visible: accountModel.isSelf
                                             text: i18n("Featured Users")
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
                                         },
@@ -402,7 +501,7 @@ TimelinePage {
                                             icon.name: "edit-copy"
                                             text: i18n("Copy Link")
                                             onTriggered: {
-                                                clipboard.content = model.identity.url;
+                                                clipboard.content = accountModel.identity.url;
                                                 applicationWindow().showPassiveNotification(i18n("Profile link copied."));
                                             }
                                         },
@@ -410,7 +509,7 @@ TimelinePage {
                                             id: shareAction
 
                                             inputData: {
-                                                'urls': [model.identity.url.toString()],
+                                                'urls': [accountModel.identity.url.toString()],
                                                 'title': "Profile",
                                             }
                                         }
@@ -426,10 +525,10 @@ TimelinePage {
 
                     Layout.topMargin: bioCard.cardWidthRestricted ? 0 : Kirigami.Units.largeSpacing
 
-                    visible: accountInfo.model.identity.fields.length > 0
+                    visible: accountModel.identity.fields.length > 0
 
                     Repeater {
-                        model: accountInfo.model.identity.fields
+                        model: accountModel.identity.fields
                         ColumnLayout {
                             Layout.fillWidth: true
                             spacing: 0
@@ -479,7 +578,7 @@ TimelinePage {
                 }
 
                 FormCard.FormCard {
-                    visible: accountInfo.model.identity.relationship
+                    visible: accountModel.identity.relationship
 
                     Layout.topMargin: Kirigami.Units.largeSpacing
 
@@ -521,14 +620,14 @@ TimelinePage {
                                 wrapMode: TextEdit.Wrap
                                 leftPadding: 0
                                 rightPadding: 0
-                                text: accountInfo.model.identity.relationship ? accountInfo.model.identity.relationship.note : ''
+                                text: accountModel.identity.relationship ? accountModel.identity.relationship.note : ''
                                 property string lastSavedText: ''
                                 onActiveFocusChanged: {
                                     lastSavedText = text;
                                     if (activeFocus) {
                                         autoSaveTimer.start()
                                     } else {
-                                        accountInfo.model.account.addNote(accountInfo.model.identity, text);
+                                        accountModel.account.addNote(accountModel.identity, text);
                                         savedNotification.visible = true;
                                         savedNotificationTimer.restart();
                                         lastSavedText = text;
@@ -541,7 +640,7 @@ TimelinePage {
                                     repeat: true
                                     interval: 5000
                                     onTriggered: if (noteField.lastSavedText !== noteField.text) {
-                                        accountInfo.model.account.addNote(accountInfo.model.identity, noteField.text);
+                                        accountModel.account.addNote(accountModel.identity, noteField.text);
                                         savedNotification.visible = true;
                                         noteField.lastSavedText = noteField.text;
                                         savedNotificationTimer.restart();
@@ -567,14 +666,14 @@ TimelinePage {
                 FormCard.FormCard {
                     id: bioCard
 
-                    visible: accountInfo.model.identity.bio.length > 0
+                    visible: accountModel.identity.bio.length > 0
 
                     Layout.topMargin: Kirigami.Units.largeSpacing
 
                     FormCard.AbstractFormDelegate {
                         background: null
                         contentItem: QQC2.TextArea {
-                            text: accountInfo.model.identity.bio
+                            text: accountModel.identity.bio
                             textFormat: TextEdit.RichText
                             readOnly: true
                             Layout.fillWidth: true
@@ -627,7 +726,7 @@ TimelinePage {
                             closable: false
                             enabled: false
 
-                            text: i18ncp("@label User's number of statuses", "<b>%1</b> post", "<b>%1</b> posts", model.identity.statusesCount)
+                            text: i18ncp("@label User's number of statuses", "<b>%1</b> post", "<b>%1</b> posts", accountModel.identity.statusesCount)
                         }
 
                         Kirigami.Chip {
@@ -640,7 +739,7 @@ TimelinePage {
                                     accountId: accountId,
                                 });
                             }
-                            text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", model.identity.followersCount)
+                            text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", accountModel.identity.followersCount)
                         }
 
                         Kirigami.Chip {
@@ -653,7 +752,7 @@ TimelinePage {
                                     accountId: accountId,
                                 });
                             }
-                            text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", model.identity.followingCount)
+                            text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", accountModel.identity.followingCount)
                         }
 
                         Item {
@@ -672,7 +771,7 @@ TimelinePage {
                     // This bar is on a scrollable page, you will eventually run into this tab bar which is annoying.
                     background: null
 
-                    enabled: !accountInfo.model.loading
+                    enabled: !accountModel.loading
 
                     Component.onCompleted: accountInfo.postsBar = bar
 
@@ -698,7 +797,7 @@ TimelinePage {
                     Kirigami.Theme.inherit: false
                     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                    enabled: !accountInfo.model.loading
+                    enabled: !accountModel.loading
 
                     implicitHeight: extraLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
 
@@ -720,7 +819,7 @@ TimelinePage {
                             text: i18nc("@option:check", "Hide boosts")
 
                             checked: accountInfo.excludeBoosts
-                            enabled: accountInfo.canExcludeBoosts && !accountInfo.model.loading
+                            enabled: accountInfo.canExcludeBoosts && !accountModel.loading
 
                             onToggled: accountInfo.excludeBoosts = checked
                         }
@@ -741,7 +840,7 @@ TimelinePage {
                                     closable: false
                                     checked: true
 
-                                    onClicked: accountInfo.model.tagged = ""
+                                    onClicked: accountInfo.selectedTag = ""
 
                                     QQC2.ButtonGroup.group: tagGroup
                                 }
@@ -751,14 +850,13 @@ TimelinePage {
                                         accountId: accountInfo.accountId
                                     }
 
-                                    delegate: Kirigami.Chip
-                                    {
+                                    delegate: Kirigami.Chip {
                                         required property string name
 
                                         text: '#' + name
                                         closable: false
 
-                                        onClicked: accountInfo.model.tagged = name
+                                        onClicked: accountInfo.selectedTag = name
 
                                         QQC2.ButtonGroup.group: tagGroup
                                     }
