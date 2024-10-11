@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-08 00:39+0000\n"
-"PO-Revision-Date: 2024-08-27 11:31+0300\n"
+"PO-Revision-Date: 2024-10-09 21:07+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -171,9 +171,7 @@ msgid "Featured Users"
 msgstr "Izceltie lietotāji"
 
 #: account/socialgraphmodel.cpp:39
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -221,10 +219,9 @@ msgid "No featured users"
 msgstr "Nav izceltu lietotāju"
 
 #: account/socialgraphmodel.cpp:61
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
-msgstr "Šim ierakstam nav pieliktas zvagznītes"
+msgstr "Šim ierakstam nav pieliktas zvaigznītes"
 
 #: account/socialgraphmodel.cpp:63
 #, kde-format
@@ -247,8 +244,7 @@ msgid "Could not take action against the account"
 msgstr "Neizdevās veikt darbību pret kontu"
 
 #: admin/accounttoolmodel.cpp:299
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "Neizdevās ieslēgt izslēgtu kontu"
 
@@ -310,11 +306,9 @@ msgid "No Limits Imposed"
 msgstr "Nav uzliktu ierobežojumu"
 
 #: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
-msgstr ""
-"Notika kļūda, veidojot PUT pieprasījumu, lai atjauninātu domēna bloķēšanu."
+msgstr "Kļūda, PUT pieprasījuma laikā, lai atjauninātu domēna bloķēšanu."
 
 #: admin/reporttoolmodel.cpp:194
 #, kde-format
@@ -1067,33 +1061,27 @@ msgstr "Šī servera reģistrācija ir slēgta: %1"
 #: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Meklēt vai ierakstīt URL…"
 
 #: content/ui/LoginFlow/ServersPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "'Custom' is a category of emoji"
-#| msgid "Custom"
+#, kde-format
 msgid "Custom Server"
-msgstr "Pielāgots"
+msgstr "Pielāgots serveris"
 
 #: content/ui/LoginFlow/ServersPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "Public Servers"
-msgstr "Izvēlieties serveri"
+msgstr "Publiskie serveri"
 
 #: content/ui/LoginFlow/ServersPage.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "No Public Servers"
-msgstr "Izvēlieties serveri"
+msgstr "Nav publisko serveru"
 
 #: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Ierakstiet servera URL meklēšanas laukā."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1102,8 +1090,7 @@ msgid "Open Externally"
 msgstr "Atvērt ārēji"
 
 #: content/ui/LoginFlow/WelcomePage.qml:47
-#, fuzzy, kde-format
-#| msgid "Tokodon"
+#, kde-format
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -1115,25 +1102,23 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
+"Pārlūkojiet „Fediverse“ un sekojiet cilvēkiem „Mastodon“ (un citos saderīgos "
+"pakalpojumos)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr "Izvēlieties serveri"
 
 #: content/ui/LoginFlow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
-msgstr "Rediģēt kontu"
+msgstr "Izmantot esošu kontu"
 
 #: content/ui/LoginFlow/WelcomePage.qml:95
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Iestatījumi"
@@ -1142,13 +1127,13 @@ msgstr "Iestatījumi"
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
-msgstr ""
+msgstr "Saderīgs ar"
 
 #: content/ui/LoginFlow/WelcomePage.qml:119
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
-msgstr ""
+msgstr "Saderīgs ar „Mastodon“"
 
 #: content/ui/Main.qml:125
 #, kde-format
@@ -1899,10 +1884,7 @@ msgid "Freeze"
 msgstr "Iesaldēt"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2974,15 +2956,12 @@ msgid "Favorite"
 msgstr "Pielikt zvaigznīti"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Pielikta zvaigznīte"
 
 #: content/ui/PostDelegate/PostDelegate.qml:482
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "Pielikt zvaigznīti"
 
@@ -3008,21 +2987,16 @@ msgid "Bookmark"
 msgstr "Grāmatzīme"
 
 #: content/ui/PostDelegate/PostDelegate.qml:527
-#, fuzzy, kde-format
-#| msgid ""
-#| "This post has been marked private. Some posts may be missing because it's "
-#| "replies are marked as private by default."
+#, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
-"Šis ieraksts ir atzīmēts kā privāts. Daži ieraksti var trūkt, jo tā atbildes "
-"pēc noklusējuma arī ir privātas."
+"Šis ieraksts ir atzīmēts kā privāts. Daži ieraksti var iztrūkt, jo tā "
+"atbildes pēc noklusējuma arī ir privātas."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:48
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
 msgstr "Publicēts %1"
@@ -4173,8 +4147,7 @@ msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Zvaigznītes"
@@ -4227,20 +4200,16 @@ msgid "Add Account"
 msgstr "Pievienot kontu"
 
 #: tokodonapplication.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "Rakstīt jaunu ierakstu"
 
 #: tokodonapplication.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Switch %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
-msgstr "Pārslēgties uz %1"
+msgstr "Pārslēgties uz „%1“"
 
 #: utils/emojimodel.cpp:129
 #, kde-format
