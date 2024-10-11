@@ -261,7 +261,7 @@ void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAc
 
     m_selected_account = account;
 
-    if (explicitUserAction) {
+    if (explicitUserAction && !testMode()) {
         auto config = Config::self();
         config->setLastUsedAccount(account->settingsGroupName());
         config->save();
