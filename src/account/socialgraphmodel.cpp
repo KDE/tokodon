@@ -221,6 +221,28 @@ void SocialGraphModel::actionDeny(const QModelIndex &index)
                   });
 }
 
+void SocialGraphModel::actionUnfollow(const QModelIndex &index)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    account->unfollowAccount(requestIdentity);
+}
+
+void SocialGraphModel::actionRemoveFollower(const QModelIndex &index)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid))
+        return;
+
+    auto requestIdentity = m_accounts[index.row()].get();
+    account->removeFollower(requestIdentity);
+}
+
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
@@ -305,6 +327,25 @@ void SocialGraphModel::fillTimeline()
                     const auto identityJson = value.toObject();
                     return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
                 });
+
+            size_t i = m_accounts.size();
+            for (auto &identity : fetchedAccounts) {
+                connect(identity.get(), &Identity::relationshipChanged, this, [this, i, identity] {
+                    bool shouldRemove = false;
+                    if (isFollowing()) {
+                        shouldRemove = identity->relationship() != nullptr ? !identity->relationship()->following() : true;
+                    } else if (isFollower()) {
+                        shouldRemove = identity->relationship() != nullptr ? identity->relationship()->following() : true;
+                    }
+
+                    if (shouldRemove) {
+                        beginRemoveRows({}, i, i);
+                        m_accounts.removeAt(i);
+                        endRemoveRows();
+                    }
+                });
+                i++;
+            }
 
             beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
             m_accounts += fetchedAccounts;

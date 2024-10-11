@@ -634,6 +634,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
     const QHash<AccountAction, QString> accountActionMap = {
         {AccountAction::Follow, QStringLiteral("/follow")},
         {AccountAction::Unfollow, QStringLiteral("/unfollow")},
+        {AccountAction::RemoveFollower, QStringLiteral("/remove_from_followers")},
         {AccountAction::Block, QStringLiteral("/block")},
         {AccountAction::Unblock, QStringLiteral("/unblock")},
         {AccountAction::Mute, QStringLiteral("/mute")},
@@ -658,6 +659,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
             const QHash<AccountAction, QString> accountActionMap = {
                 {AccountAction::Follow, i18n("Could not follow account")},
                 {AccountAction::Unfollow, i18n("Could not unfollow account")},
+                {AccountAction::RemoveFollower, i18n("Could not remove account as your follower")},
                 {AccountAction::Block, i18n("Could not block account")},
                 {AccountAction::Unblock, i18n("Could not unblock account")},
                 {AccountAction::Mute, i18n("Could not mute account")},
@@ -674,7 +676,9 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
         // Returned relationship should have a value of true
         // under either the "following" or "requested" keys.
         auto relationship = identity->relationship();
-        relationship->updateFromJson(jsonObj);
+        if (relationship != nullptr) {
+            relationship->updateFromJson(jsonObj);
+        }
 
         Q_EMIT identity->relationshipChanged();
     });
@@ -698,6 +702,11 @@ void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notif
 void AbstractAccount::unfollowAccount(Identity *identity)
 {
     executeAction(identity, AccountAction::Unfollow);
+}
+
+void AbstractAccount::removeFollower(Identity *identity)
+{
+    executeAction(identity, AccountAction::RemoveFollower);
 }
 
 void AbstractAccount::blockAccount(Identity *identity)

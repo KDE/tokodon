@@ -56,6 +56,8 @@ public:
 public Q_SLOTS:
     void actionAllow(const QModelIndex &index);
     void actionDeny(const QModelIndex &index);
+    void actionUnfollow(const QModelIndex &index);
+    void actionRemoveFollower(const QModelIndex &index);
 
 Q_SIGNALS:
     void loadingChanged();

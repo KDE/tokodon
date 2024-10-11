@@ -486,6 +486,12 @@ public:
     Q_INVOKABLE void unfollowAccount(Identity *identity);
 
     /**
+     * @brief Remove the given account as your follower.
+     * @param identity The account to remove as follower.
+     */
+    Q_INVOKABLE void removeFollower(Identity *identity);
+
+    /**
      * @brief Block the given account.
      * @param identity The account to block.
      */
@@ -558,6 +564,7 @@ public:
     enum AccountAction {
         Follow, /**< Follow the account. */
         Unfollow, /**< Unfollow the account. */
+        RemoveFollower, /**< Remove the account as your follower. */
         Block, /**< Block the account. */
         Unblock, /**< Unlock the account. */
         Mute, /**< Mute the account. */
