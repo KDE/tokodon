@@ -253,7 +253,8 @@ FormCard.FormCardPage {
         enabled: canEditProfile
 
         FormCard.FormCheckDelegate {
-            text: i18n("Require approval of follow requests")
+            text: i18n("Require approval for new followers")
+            description: i18n("By default new followers are automatically accepted. Uncheck if you want to manually approve or deny new ones. You always have the option to force someone to unfollow you.")
             checked: backend.locked
             onCheckedChanged: backend.locked = checked
         }
@@ -261,7 +262,8 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
-            text: i18n("This is a bot account")
+            text: i18n("Is automated")
+            description: i18n("Whether to publicly mark this account as doing any kind of automated actions.")
             checked: backend.bot
             onCheckedChanged: backend.bot = checked
         }
@@ -269,7 +271,17 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormCheckDelegate {
-            text: i18n("Suggest account to others")
+            text: i18n("Feature profile and posts")
+            description: i18n("Your public profile and posts may be featured to other users.")
+            checked: backend.discoverable
+            onCheckedChanged: backend.discoverable = checked
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            text: i18n("Publicly list follows and followers")
+            description: i18n("By default everyone you follow and everyone who follows you is public.")
             checked: backend.discoverable
             onCheckedChanged: backend.discoverable = checked
         }
