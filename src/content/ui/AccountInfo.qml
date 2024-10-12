@@ -516,7 +516,7 @@ TimelinePage {
                                 id: noteField
                                 Layout.fillWidth: true
                                 background: null
-                                placeholderText: i18n("Click to add a note")
+                                placeholderText: i18n("Write down something about this user, this isn't visible to anyone but you")
                                 textFormat: TextEdit.PlainText
                                 wrapMode: TextEdit.Wrap
                                 leftPadding: 0
