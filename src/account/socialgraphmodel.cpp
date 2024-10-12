@@ -40,6 +40,8 @@ QString SocialGraphModel::displayName() const
         return i18ncp("@title", "%1 favorite", "%1 favorites", m_count);
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18ncp("@title", "%1 boost", "%1 boosts", m_count);
+    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+        return i18nc("@title", "Familiar Followers");
     }
     return {};
 }
@@ -62,6 +64,8 @@ QString SocialGraphModel::placeholderText() const
         return i18n("No users favorited this post");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
         return i18n("No users boosted this post");
+    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+        return i18n("No familiar followers");
     }
     return {};
 }
@@ -296,6 +300,8 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/statuses/%1/favourited_by").arg(m_statusId);
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
         uri = QStringLiteral("/api/v1/statuses/%1/reblogged_by").arg(m_statusId);
+    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+        uri = QStringLiteral("/api/v1/accounts/familiar_followers");
     }
 
     QUrl url;
@@ -303,6 +309,12 @@ void SocialGraphModel::fillTimeline()
         url = account->apiUrl(uri);
     } else {
         url = m_next;
+    }
+
+    if (m_followListName == QStringLiteral("familiar_followers")) {
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("id"), m_accountId);
+        url.setQuery(query);
     }
 
     account->get(url, true, this, [this, account](QNetworkReply *reply) {
@@ -318,15 +330,17 @@ void SocialGraphModel::fillTimeline()
             }
 
             QList<std::shared_ptr<Identity>> fetchedAccounts;
+            QJsonArray value = accounts;
 
-            std::transform(
-                accounts.cbegin(),
-                accounts.cend(),
-                std::back_inserter(fetchedAccounts),
-                [account](const QJsonValue &value) -> auto{
-                    const auto identityJson = value.toObject();
-                    return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
-                });
+            // This is a list of FamiliarFollower, not Account. So we need to transform it first.
+            if (m_followListName == QStringLiteral("familiar_followers")) {
+                value = accounts.first()["accounts"_L1].toArray();
+            }
+
+            std::transform(value.cbegin(), value.cend(), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
+                const auto identityJson = value.toObject();
+                return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
+            });
 
             size_t i = m_accounts.size();
             for (auto &identity : fetchedAccounts) {
