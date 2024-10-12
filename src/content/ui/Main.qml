@@ -366,8 +366,8 @@ StatefulApp.StatefulWindow {
         application: root.application
         shouldCollapse: root.width < Kirigami.Units.gridUnit * 50
         actions: Kirigami.Settings.isMobile ?
-            [searchAction, announcementsAction, followRequestAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
-            [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
+            [searchAction, announcementsAction, followRequestAction, followingAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
+            [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
         bottomActions: [debugAction, moderationToolsAction, configureAction]
     }
 
