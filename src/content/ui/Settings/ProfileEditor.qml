@@ -327,6 +327,16 @@ FormCard.FormCardPage {
             Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
             onCurrentValueChanged: AccountManager.selectedAccount.preferences.defaultVisibility = currentIndex
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            Layout.fillWidth: true
+            id: websiteDelegate
+            text: i18nc("@abel Account preferences", "Open Server in Browser")
+            description: i18n("Some settings can only be configured on your server's website.")
+            onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
+        }
     }
 
     footer: QQC2.ToolBar {
