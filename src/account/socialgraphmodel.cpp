@@ -85,6 +85,7 @@ void SocialGraphModel::setAccountId(const QString &accountId)
 {
     m_accountId = accountId;
     Q_EMIT accountIdChanged();
+    reset();
     fillTimeline();
 }
 
@@ -97,6 +98,7 @@ void SocialGraphModel::setStatusId(const QString &statusId)
 {
     m_statusId = statusId;
     Q_EMIT statusIdChanged();
+    reset();
     fillTimeline();
 }
 
@@ -310,6 +312,13 @@ void SocialGraphModel::fillTimeline()
 
         setLoading(false);
     });
+}
+
+void SocialGraphModel::reset()
+{
+    beginResetModel();
+    m_accounts.clear();
+    endResetModel();
 }
 
 #include "moc_socialgraphmodel.cpp"

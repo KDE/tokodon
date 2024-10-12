@@ -71,6 +71,7 @@ protected:
 
 private:
     void fillTimeline();
+    void reset();
 
     QList<std::shared_ptr<Identity>> m_accounts;
     bool m_loading = false;
