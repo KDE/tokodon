@@ -260,9 +260,9 @@ TimelinePage {
                                             displayHint: Kirigami.DisplayHint.IconOnly
                                             icon.name: {
                                                 if (model.identity.relationship && model.identity.relationship.notifying) {
-                                                    return "notifications";
-                                                } else {
                                                     return "notifications-disabled";
+                                                } else {
+                                                    return "notifications";
                                                 }
                                             }
 
