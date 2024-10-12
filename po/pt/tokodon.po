@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-08 00:39+0000\n"
+"POT-Creation-Date: 2024-10-12 00:39+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -135,38 +135,38 @@ msgstr ""
 msgid "Account details saved"
 msgstr "Detalhes da conta gravados"
 
-#: account/socialgraphmodel.cpp:27
+#: account/socialgraphmodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Pedidos de Seguimento"
 
-#: account/socialgraphmodel.cpp:29
+#: account/socialgraphmodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Seguidores"
 
-#: account/socialgraphmodel.cpp:31
+#: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "A Seguir"
 
-#: account/socialgraphmodel.cpp:33
+#: account/socialgraphmodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:35
+#: account/socialgraphmodel.cpp:36
 #, fuzzy, kde-format
 #| msgid "Blocked Accounts"
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Contas Bloqueadas"
 
-#: account/socialgraphmodel.cpp:37
+#: account/socialgraphmodel.cpp:38
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Featured Accounts"
@@ -174,7 +174,7 @@ msgctxt "@title"
 msgid "Featured Users"
 msgstr "Contas em Destaque"
 
-#: account/socialgraphmodel.cpp:39
+#: account/socialgraphmodel.cpp:40
 #, fuzzy, kde-format
 #| msgid "%1 Favorites"
 msgctxt "@title"
@@ -183,7 +183,7 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1 Favoritos"
 msgstr[1] "%1 Favoritos"
 
-#: account/socialgraphmodel.cpp:41
+#: account/socialgraphmodel.cpp:42
 #, fuzzy, kde-format
 #| msgid "%1 Boosts"
 msgctxt "@title"
@@ -192,47 +192,47 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 Destaques"
 msgstr[1] "%1 Destaques"
 
-#: account/socialgraphmodel.cpp:49
+#: account/socialgraphmodel.cpp:50
 #, kde-format
 msgid "No follow requests"
 msgstr "Sem pedidos de seguimento"
 
-#: account/socialgraphmodel.cpp:51
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No followers"
 msgstr "Sem seguidores"
 
-#: account/socialgraphmodel.cpp:53
+#: account/socialgraphmodel.cpp:54
 #, fuzzy, kde-format
 #| msgid "No followers"
 msgid "No followed users"
 msgstr "Sem seguidores"
 
-#: account/socialgraphmodel.cpp:55
+#: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
 #| msgid "No muted accounts"
 msgid "No muted users"
 msgstr "Nenhuma contas silenciadas"
 
-#: account/socialgraphmodel.cpp:57
+#: account/socialgraphmodel.cpp:58
 #, fuzzy, kde-format
 #| msgid "No blocked accounts"
 msgid "No blocked users"
 msgstr "Nenhumas contas bloqueadas"
 
-#: account/socialgraphmodel.cpp:59
+#: account/socialgraphmodel.cpp:60
 #, fuzzy, kde-format
 #| msgid "No featured accounts"
 msgid "No featured users"
 msgstr "Nenhumas contas em destaque"
 
-#: account/socialgraphmodel.cpp:61
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "Rewrite this post"
 msgid "No users favorited this post"
 msgstr "Escrever de novo esta publicação"
 
-#: account/socialgraphmodel.cpp:63
+#: account/socialgraphmodel.cpp:64
 #, fuzzy, kde-format
 #| msgid "Rewrite this post"
 msgid "No users boosted this post"
@@ -743,6 +743,47 @@ msgstr "Nas Tendências"
 #| msgid "%1 followed you"
 msgid "%1 signed up"
 msgstr "%1 seguiu-o"
+
+#: content/ui/FollowingPage.qml:20
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgctxt "@title 'Following' as in the users you're following on Mastodon."
+msgid "Following"
+msgstr "A Seguir"
+
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
+#, fuzzy, kde-format
+#| msgid "Filtered: %1"
+msgctxt "@action:button"
+msgid "Filters"
+msgstr "Filtrados: %1"
+
+#: content/ui/FollowingPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Stop Hiding Boosts from %1"
+msgctxt "@action:inmenu"
+msgid "Show Boosts"
+msgstr "Parar de Esconder os Destaques do %1"
+
+#: content/ui/FollowingPage.qml:56
+#, fuzzy, kde-format
+#| msgid "%1 Replies"
+msgctxt "@action:inmenu"
+msgid "Show Replies"
+msgstr "%1 Respostas"
+
+#: content/ui/FollowingPage.qml:193
+#, kde-format
+msgid "No User Selected"
+msgstr ""
+
+#: content/ui/FollowingPage.qml:194
+#, kde-format
+msgid ""
+"With the Following view, easily check on each user you're following and only "
+"their posts - sorted by recent activity."
+msgstr ""
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, fuzzy, kde-format
@@ -1309,22 +1350,29 @@ msgid "Bookmarks"
 msgstr "Favoritos"
 
 #: content/ui/Main.qml:671
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgid "Following"
+msgstr "A Seguir"
+
+#: content/ui/Main.qml:685
 #, kde-format
 msgid "Search"
 msgstr "Procurar"
 
-#: content/ui/Main.qml:686
+#: content/ui/Main.qml:700
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr ""
 
-#: content/ui/Main.qml:701
+#: content/ui/Main.qml:715
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:831
+#: content/ui/Main.qml:850
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3211,15 +3259,17 @@ msgstr "Moderador"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
 #, fuzzy, kde-format
-#| msgid "Expand This Post"
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "Expandir esta Publicação"
+#| msgctxt "@title"
+#| msgid "Thread"
+msgctxt "@action:inmenu 'Thread' is a series of posts."
+msgid "Open Thread"
+msgstr "Tópico"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
-msgid "Open Original Page"
-msgstr "Abrir a Página Original"
+msgctxt "@action:inmenu 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, fuzzy, kde-format
@@ -4160,13 +4210,6 @@ msgstr "A carregar"
 msgid "Home (%1)"
 msgstr "Início (%1)"
 
-#: content/ui/TimelinePage.qml:96
-#, fuzzy, kde-format
-#| msgid "Filtered: %1"
-msgctxt "@action:button"
-msgid "Filters"
-msgstr "Filtrados: %1"
-
 #: content/ui/TimelinePage.qml:101
 #, fuzzy, kde-format
 #| msgid "Stop Hiding Boosts from %1"
@@ -4199,11 +4242,10 @@ msgid "To view all replies, open the post on the original server."
 msgstr ""
 
 #: content/ui/TimelinePage.qml:241
-#, fuzzy, kde-format
-#| msgid "Open Original Page"
-msgctxt "@action:button"
-msgid "Open Original Page"
-msgstr "Abrir a Página Original"
+#, kde-format
+msgctxt "@action:button 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:250
 #, fuzzy, kde-format
@@ -4613,51 +4655,71 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Destino"
 
-#: utils/texthandler.cpp:178
+#: utils/texthandler.cpp:177
 #, kde-format
 msgid "in the future"
 msgstr "no futuro"
 
-#: utils/texthandler.cpp:180
+#: utils/texthandler.cpp:179
 #, kde-format
 msgid "%1s"
 msgstr "%1s"
 
-#: utils/texthandler.cpp:182
+#: utils/texthandler.cpp:181
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: utils/texthandler.cpp:184
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "%1h"
 msgstr "%1h"
 
-#: utils/texthandler.cpp:186
+#: utils/texthandler.cpp:194
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: utils/texthandler.cpp:196
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: utils/texthandler.cpp:190
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "há 1 semana"
 msgstr[1] "há %1 semanas"
 
-#: utils/texthandler.cpp:193
+#: utils/texthandler.cpp:203
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "há 1 mês"
 msgstr[1] "há %1 meses"
 
-#: utils/texthandler.cpp:197
+#: utils/texthandler.cpp:207
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "há 1 ano"
 msgstr[1] "há %1 anos"
+
+#, fuzzy
+#~| msgid "Expand This Post"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Expand Post"
+#~ msgstr "Expandir esta Publicação"
+
+#~ msgid "Open Original Page"
+#~ msgstr "Abrir a Página Original"
+
+#, fuzzy
+#~| msgid "Open Original Page"
+#~ msgctxt "@action:button"
+#~ msgid "Open Original Page"
+#~ msgstr "Abrir a Página Original"
 
 #, fuzzy
 #~| msgid "Instance URL must not be empty!"
@@ -4751,10 +4813,6 @@ msgstr[1] "há %1 anos"
 #~ msgctxt "@action:button"
 #~ msgid "Delete word"
 #~ msgstr "Apaga a palavra"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "Tópico"
 
 #, fuzzy
 #~| msgid "Edit"

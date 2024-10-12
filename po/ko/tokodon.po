@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-08 00:39+0000\n"
+"POT-Creation-Date: 2024-10-12 00:39+0000\n"
 "PO-Revision-Date: 2024-08-21 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -134,43 +134,43 @@ msgstr "지원하지 않는 그림 파일입니다. JPEG, PNG, GIF 파일만 지
 msgid "Account details saved"
 msgstr "계정 정보 저장됨"
 
-#: account/socialgraphmodel.cpp:27
+#: account/socialgraphmodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "팔로우 요청"
 
-#: account/socialgraphmodel.cpp:29
+#: account/socialgraphmodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "팔로워"
 
-#: account/socialgraphmodel.cpp:31
+#: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "팔로잉"
 
-#: account/socialgraphmodel.cpp:33
+#: account/socialgraphmodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "뮤트된 사용자"
 
-#: account/socialgraphmodel.cpp:35
+#: account/socialgraphmodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "차단된 사용자"
 
-#: account/socialgraphmodel.cpp:37
+#: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "추천 사용자"
 
-#: account/socialgraphmodel.cpp:39
+#: account/socialgraphmodel.cpp:40
 #, fuzzy, kde-format
 #| msgid "%1 favorite"
 #| msgid_plural "%1 favorites"
@@ -179,50 +179,50 @@ msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "북마크 %1개"
 
-#: account/socialgraphmodel.cpp:41
+#: account/socialgraphmodel.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "부스트 %1개"
 
-#: account/socialgraphmodel.cpp:49
+#: account/socialgraphmodel.cpp:50
 #, kde-format
 msgid "No follow requests"
 msgstr "팔로우 요청 없음"
 
-#: account/socialgraphmodel.cpp:51
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No followers"
 msgstr "팔로워 없음"
 
-#: account/socialgraphmodel.cpp:53
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followed users"
 msgstr "팔로우한 사용자 없음"
 
-#: account/socialgraphmodel.cpp:55
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No muted users"
 msgstr "뮤트한 사용자 없음"
 
-#: account/socialgraphmodel.cpp:57
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No blocked users"
 msgstr "차단한 사용자 없음"
 
-#: account/socialgraphmodel.cpp:59
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No featured users"
 msgstr "추천하는 사용자 없음"
 
-#: account/socialgraphmodel.cpp:61
+#: account/socialgraphmodel.cpp:62
 #, fuzzy, kde-format
 #| msgid "No users favourited this post"
 msgid "No users favorited this post"
 msgstr "이 게시물을 좋아요 표시한 사용자가 없음"
 
-#: account/socialgraphmodel.cpp:63
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users boosted this post"
 msgstr "이 게시물을 부스트한 사용자가 없음"
@@ -685,6 +685,46 @@ msgstr "트렌드 태그가 없음"
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 님이 등록함"
+
+#: content/ui/FollowingPage.qml:20
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgctxt "@title 'Following' as in the users you're following on Mastodon."
+msgid "Following"
+msgstr "팔로잉"
+
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Filters"
+msgstr "필터"
+
+#: content/ui/FollowingPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "@action:inmenu"
+msgid "Show Boosts"
+msgstr "부스트 표시"
+
+#: content/ui/FollowingPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Show Replies"
+msgctxt "@action:inmenu"
+msgid "Show Replies"
+msgstr "답장 표시"
+
+#: content/ui/FollowingPage.qml:193
+#, kde-format
+msgid "No User Selected"
+msgstr ""
+
+#: content/ui/FollowingPage.qml:194
+#, kde-format
+msgid ""
+"With the Following view, easily check on each user you're following and only "
+"their posts - sorted by recent activity."
+msgstr ""
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1228,22 +1268,29 @@ msgid "Bookmarks"
 msgstr "북마크"
 
 #: content/ui/Main.qml:671
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgid "Following"
+msgstr "팔로잉"
+
+#: content/ui/Main.qml:685
 #, kde-format
 msgid "Search"
 msgstr "검색"
 
-#: content/ui/Main.qml:686
+#: content/ui/Main.qml:700
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "공지"
 
-#: content/ui/Main.qml:701
+#: content/ui/Main.qml:715
 #, kde-format
 msgid "Lists"
 msgstr "목록"
 
-#: content/ui/Main.qml:831
+#: content/ui/Main.qml:850
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3003,15 +3050,18 @@ msgid "More actions"
 msgstr "더 많은 동작"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "게시물 확장"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Thread"
+msgctxt "@action:inmenu 'Thread' is a series of posts."
+msgid "Open Thread"
+msgstr "스레드"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
-msgid "Open Original Page"
-msgstr "원본 페이지 열기"
+msgctxt "@action:inmenu 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3877,12 +3927,6 @@ msgstr "불러오는 중"
 msgid "Home (%1)"
 msgstr "홈(%1)"
 
-#: content/ui/TimelinePage.qml:96
-#, kde-format
-msgctxt "@action:button"
-msgid "Filters"
-msgstr "필터"
-
 #: content/ui/TimelinePage.qml:101
 #, kde-format
 msgid "Show Boosts"
@@ -3912,9 +3956,9 @@ msgstr "모든 답글을 보려면 원본 서버에서 게시물을 여십시오
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
-msgctxt "@action:button"
-msgid "Open Original Page"
-msgstr "원본 페이지 열기"
+msgctxt "@action:button 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4302,48 +4346,64 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "대상"
 
-#: utils/texthandler.cpp:178
+#: utils/texthandler.cpp:177
 #, kde-format
 msgid "in the future"
 msgstr "미래에"
 
-#: utils/texthandler.cpp:180
+#: utils/texthandler.cpp:179
 #, kde-format
 msgid "%1s"
 msgstr "%1초"
 
-#: utils/texthandler.cpp:182
+#: utils/texthandler.cpp:181
 #, kde-format
 msgid "%1m"
 msgstr "%1분"
 
-#: utils/texthandler.cpp:184
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "%1h"
 msgstr "%1시간"
 
-#: utils/texthandler.cpp:186
+#: utils/texthandler.cpp:194
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: utils/texthandler.cpp:196
 #, kde-format
 msgid "%1d"
 msgstr "%1일"
 
-#: utils/texthandler.cpp:190
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "%1주 전"
 
-#: utils/texthandler.cpp:193
+#: utils/texthandler.cpp:203
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "%1개월 전"
 
-#: utils/texthandler.cpp:197
+#: utils/texthandler.cpp:207
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Expand Post"
+#~ msgstr "게시물 확장"
+
+#~ msgid "Open Original Page"
+#~ msgstr "원본 페이지 열기"
+
+#~ msgctxt "@action:button"
+#~ msgid "Open Original Page"
+#~ msgstr "원본 페이지 열기"
 
 #~ msgctxt "@title:group"
 #~ msgid "Pick a Server"
@@ -4431,10 +4491,6 @@ msgstr[0] "%1년 전"
 #~ msgctxt "@action:button"
 #~ msgid "Delete word"
 #~ msgstr "단어 삭제"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "스레드"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"

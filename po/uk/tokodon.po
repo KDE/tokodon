@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-08 00:39+0000\n"
+"POT-Creation-Date: 2024-10-12 00:39+0000\n"
 "PO-Revision-Date: 2024-10-02 20:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -133,43 +133,43 @@ msgstr ""
 msgid "Account details saved"
 msgstr "Подробиці щодо облікового запису збережено"
 
-#: account/socialgraphmodel.cpp:27
+#: account/socialgraphmodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
-#: account/socialgraphmodel.cpp:29
+#: account/socialgraphmodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Ті, хто стежить"
 
-#: account/socialgraphmodel.cpp:31
+#: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Стежить"
 
-#: account/socialgraphmodel.cpp:33
+#: account/socialgraphmodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "Позбавлені голосу користувачі"
 
-#: account/socialgraphmodel.cpp:35
+#: account/socialgraphmodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Заблоковані користувачі"
 
-#: account/socialgraphmodel.cpp:37
+#: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "Особливі користувачі"
 
-#: account/socialgraphmodel.cpp:39
+#: account/socialgraphmodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
@@ -179,7 +179,7 @@ msgstr[1] "%1 улюблені записи"
 msgstr[2] "%1 улюблених записів"
 msgstr[3] "%1 улюблений запис"
 
-#: account/socialgraphmodel.cpp:41
+#: account/socialgraphmodel.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -189,42 +189,42 @@ msgstr[1] "%1 підсилення"
 msgstr[2] "%1 підсилень"
 msgstr[3] "%1 підсилення"
 
-#: account/socialgraphmodel.cpp:49
+#: account/socialgraphmodel.cpp:50
 #, kde-format
 msgid "No follow requests"
 msgstr "Немає запитів щодо стеження"
 
-#: account/socialgraphmodel.cpp:51
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No followers"
 msgstr "Немає тих, хто стежить"
 
-#: account/socialgraphmodel.cpp:53
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followed users"
 msgstr "Немає користувачів, за якими ведеться стеження"
 
-#: account/socialgraphmodel.cpp:55
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No muted users"
 msgstr "Немає позбавлених голосу користувачів"
 
-#: account/socialgraphmodel.cpp:57
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No blocked users"
 msgstr "Немає заблокованих користувачів"
 
-#: account/socialgraphmodel.cpp:59
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No featured users"
 msgstr "Немає особливих користувачів"
 
-#: account/socialgraphmodel.cpp:61
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No users favorited this post"
 msgstr "Жоден користувач не зробив цей допис улюбленим"
 
-#: account/socialgraphmodel.cpp:63
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users boosted this post"
 msgstr "Жоден користувач не підсилив цей допис"
@@ -698,6 +698,46 @@ msgstr "Немає тенденцій у мітках"
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 підписано"
+
+#: content/ui/FollowingPage.qml:20
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgctxt "@title 'Following' as in the users you're following on Mastodon."
+msgid "Following"
+msgstr "Стежить"
+
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Filters"
+msgstr "Фільтри"
+
+#: content/ui/FollowingPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "@action:inmenu"
+msgid "Show Boosts"
+msgstr "Показати підсилення"
+
+#: content/ui/FollowingPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Show Replies"
+msgctxt "@action:inmenu"
+msgid "Show Replies"
+msgstr "Показати відповіді"
+
+#: content/ui/FollowingPage.qml:193
+#, kde-format
+msgid "No User Selected"
+msgstr ""
+
+#: content/ui/FollowingPage.qml:194
+#, kde-format
+msgid ""
+"With the Following view, easily check on each user you're following and only "
+"their posts - sorted by recent activity."
+msgstr ""
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1239,22 +1279,29 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: content/ui/Main.qml:671
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgid "Following"
+msgstr "Стежить"
+
+#: content/ui/Main.qml:685
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/Main.qml:686
+#: content/ui/Main.qml:700
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Оголошення"
 
-#: content/ui/Main.qml:701
+#: content/ui/Main.qml:715
 #, kde-format
 msgid "Lists"
 msgstr "Списки"
 
-#: content/ui/Main.qml:831
+#: content/ui/Main.qml:850
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3022,15 +3069,18 @@ msgid "More actions"
 msgstr "Додаткові дії"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "Розгорнути допис"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Thread"
+msgctxt "@action:inmenu 'Thread' is a series of posts."
+msgid "Open Thread"
+msgstr "Потік"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
-msgid "Open Original Page"
-msgstr "Відкрити початкову сторінку"
+msgctxt "@action:inmenu 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3898,12 +3948,6 @@ msgstr "Завантаження"
 msgid "Home (%1)"
 msgstr "Домівка (%1)"
 
-#: content/ui/TimelinePage.qml:96
-#, kde-format
-msgctxt "@action:button"
-msgid "Filters"
-msgstr "Фільтри"
-
 #: content/ui/TimelinePage.qml:101
 #, kde-format
 msgid "Show Boosts"
@@ -3935,9 +3979,9 @@ msgstr "Щоб переглянути усі відповіді, відкрий�
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
-msgctxt "@action:button"
-msgid "Open Original Page"
-msgstr "Відкрити початкову сторінку"
+msgctxt "@action:button 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4323,32 +4367,37 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Призначення"
 
-#: utils/texthandler.cpp:178
+#: utils/texthandler.cpp:177
 #, kde-format
 msgid "in the future"
 msgstr "у майбутньому"
 
-#: utils/texthandler.cpp:180
+#: utils/texthandler.cpp:179
 #, kde-format
 msgid "%1s"
 msgstr "%1с"
 
-#: utils/texthandler.cpp:182
+#: utils/texthandler.cpp:181
 #, kde-format
 msgid "%1m"
 msgstr "%1хв"
 
-#: utils/texthandler.cpp:184
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "%1h"
 msgstr "%1г"
 
-#: utils/texthandler.cpp:186
+#: utils/texthandler.cpp:194
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: utils/texthandler.cpp:196
 #, kde-format
 msgid "%1d"
 msgstr "%1д"
 
-#: utils/texthandler.cpp:190
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
@@ -4357,7 +4406,7 @@ msgstr[1] "%1 тижні тому"
 msgstr[2] "%1 тижнів тому"
 msgstr[3] "1 тиждень тому"
 
-#: utils/texthandler.cpp:193
+#: utils/texthandler.cpp:203
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
@@ -4366,7 +4415,7 @@ msgstr[1] "%1 місяці тому"
 msgstr[2] "%1 місяців тому"
 msgstr[3] "1 місяць тому"
 
-#: utils/texthandler.cpp:197
+#: utils/texthandler.cpp:207
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
@@ -4374,6 +4423,17 @@ msgstr[0] "%1 рік тому"
 msgstr[1] "%1 роки тому"
 msgstr[2] "%1 років тому"
 msgstr[3] "1 рік тому"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Expand Post"
+#~ msgstr "Розгорнути допис"
+
+#~ msgid "Open Original Page"
+#~ msgstr "Відкрити початкову сторінку"
+
+#~ msgctxt "@action:button"
+#~ msgid "Open Original Page"
+#~ msgstr "Відкрити початкову сторінку"
 
 #~ msgctxt "@title:group"
 #~ msgid "Pick a Server"
@@ -4464,10 +4524,6 @@ msgstr[3] "1 рік тому"
 #~ msgctxt "@action:button"
 #~ msgid "Delete word"
 #~ msgstr "Вилучити слово"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "Потік"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-08 00:39+0000\n"
+"POT-Creation-Date: 2024-10-12 00:39+0000\n"
 "PO-Revision-Date: 2024-10-08 03:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -133,43 +133,43 @@ msgstr ""
 msgid "Account details saved"
 msgstr "ანგარშის დეტალები შენახულია"
 
-#: account/socialgraphmodel.cpp:27
+#: account/socialgraphmodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "მიყოლის მოთხოვნები"
 
-#: account/socialgraphmodel.cpp:29
+#: account/socialgraphmodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "მიმდევრები"
 
-#: account/socialgraphmodel.cpp:31
+#: account/socialgraphmodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "მიყვებით"
 
-#: account/socialgraphmodel.cpp:33
+#: account/socialgraphmodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "დადუმებული მომხმარებლები"
 
-#: account/socialgraphmodel.cpp:35
+#: account/socialgraphmodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "დაბლოკილი მომხმარებლები"
 
-#: account/socialgraphmodel.cpp:37
+#: account/socialgraphmodel.cpp:38
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "მიმაგრებული მომხმარებლები"
 
-#: account/socialgraphmodel.cpp:39
+#: account/socialgraphmodel.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
@@ -177,7 +177,7 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1 სანიშნე"
 msgstr[1] "%1 სანიშნე"
 
-#: account/socialgraphmodel.cpp:41
+#: account/socialgraphmodel.cpp:42
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -185,42 +185,42 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 აწევა"
 msgstr[1] "%1 აწევა"
 
-#: account/socialgraphmodel.cpp:49
+#: account/socialgraphmodel.cpp:50
 #, kde-format
 msgid "No follow requests"
 msgstr "მიყოლის მოთხოვნების გარეშე"
 
-#: account/socialgraphmodel.cpp:51
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No followers"
 msgstr "მიმდევრების გარეშე"
 
-#: account/socialgraphmodel.cpp:53
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followed users"
 msgstr "მიმდევრების გარეშე"
 
-#: account/socialgraphmodel.cpp:55
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No muted users"
 msgstr "დადუმებული მომხმარებლების გარეშე"
 
-#: account/socialgraphmodel.cpp:57
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No blocked users"
 msgstr "დაბლოკილი მომხმარებლების გარეშე"
 
-#: account/socialgraphmodel.cpp:59
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No featured users"
 msgstr "მიმაგრებული მომხმარებლების გარეშე"
 
-#: account/socialgraphmodel.cpp:61
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No users favorited this post"
 msgstr "ეს პოსტი არც ერთ მომხმარებელს ჩაუნიშნავს"
 
-#: account/socialgraphmodel.cpp:63
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users boosted this post"
 msgstr "ეს პოსტი არც ერთ მომხმარებელს აუწევია"
@@ -686,6 +686,46 @@ msgstr "ტრენდული ჭდეების გარეშე"
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 დარეგისტრირდა"
+
+#: content/ui/FollowingPage.qml:20
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgctxt "@title 'Following' as in the users you're following on Mastodon."
+msgid "Following"
+msgstr "მიყვებით"
+
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Filters"
+msgstr "ფილტრები"
+
+#: content/ui/FollowingPage.qml:48
+#, fuzzy, kde-format
+#| msgid "Show Boosts"
+msgctxt "@action:inmenu"
+msgid "Show Boosts"
+msgstr "აწევების ჩვენება"
+
+#: content/ui/FollowingPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Show Replies"
+msgctxt "@action:inmenu"
+msgid "Show Replies"
+msgstr "პასუხების ჩვენება"
+
+#: content/ui/FollowingPage.qml:193
+#, kde-format
+msgid "No User Selected"
+msgstr ""
+
+#: content/ui/FollowingPage.qml:194
+#, kde-format
+msgid ""
+"With the Following view, easily check on each user you're following and only "
+"their posts - sorted by recent activity."
+msgstr ""
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1222,22 +1262,29 @@ msgid "Bookmarks"
 msgstr "სანიშნები"
 
 #: content/ui/Main.qml:671
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Following"
+msgid "Following"
+msgstr "მიყვებით"
+
+#: content/ui/Main.qml:685
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
 
-#: content/ui/Main.qml:686
+#: content/ui/Main.qml:700
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "განცხადებები"
 
-#: content/ui/Main.qml:701
+#: content/ui/Main.qml:715
 #, kde-format
 msgid "Lists"
 msgstr "სიები"
 
-#: content/ui/Main.qml:831
+#: content/ui/Main.qml:850
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2997,15 +3044,18 @@ msgid "More actions"
 msgstr "მეტი ქმედება"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Expand Post"
-msgstr "პოსტის გაფართოება"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Thread"
+msgctxt "@action:inmenu 'Thread' is a series of posts."
+msgid "Open Thread"
+msgstr "ნაკადი"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
-msgid "Open Original Page"
-msgstr "საწყისი გვერდის გახსნა"
+msgctxt "@action:inmenu 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3868,12 +3918,6 @@ msgstr "ჩატვირთვა"
 msgid "Home (%1)"
 msgstr "საწყისი (%1)"
 
-#: content/ui/TimelinePage.qml:96
-#, kde-format
-msgctxt "@action:button"
-msgid "Filters"
-msgstr "ფილტრები"
-
 #: content/ui/TimelinePage.qml:101
 #, kde-format
 msgid "Show Boosts"
@@ -3903,9 +3947,9 @@ msgstr "ყველა პასუხის სანახავად პო
 
 #: content/ui/TimelinePage.qml:241
 #, kde-format
-msgctxt "@action:button"
-msgid "Open Original Page"
-msgstr "საწყისი გვერდის გახსნა"
+msgctxt "@action:button 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr ""
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4289,51 +4333,67 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "დანიშნულება"
 
-#: utils/texthandler.cpp:178
+#: utils/texthandler.cpp:177
 #, kde-format
 msgid "in the future"
 msgstr "მომავალში"
 
-#: utils/texthandler.cpp:180
+#: utils/texthandler.cpp:179
 #, kde-format
 msgid "%1s"
 msgstr "%1წმ"
 
-#: utils/texthandler.cpp:182
+#: utils/texthandler.cpp:181
 #, kde-format
 msgid "%1m"
 msgstr "%1წთ"
 
-#: utils/texthandler.cpp:184
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "%1h"
 msgstr "%1სთ"
 
-#: utils/texthandler.cpp:186
+#: utils/texthandler.cpp:194
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: utils/texthandler.cpp:196
 #, kde-format
 msgid "%1d"
 msgstr "%1დღ"
 
-#: utils/texthandler.cpp:190
+#: utils/texthandler.cpp:200
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 კვირის წინ"
 msgstr[1] "%1 კვირის წინ"
 
-#: utils/texthandler.cpp:193
+#: utils/texthandler.cpp:203
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 თვის წინ"
 msgstr[1] "%1 თვის წინ"
 
-#: utils/texthandler.cpp:197
+#: utils/texthandler.cpp:207
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 წლის წინ"
 msgstr[1] "%1 წლის წინ"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Expand Post"
+#~ msgstr "პოსტის გაფართოება"
+
+#~ msgid "Open Original Page"
+#~ msgstr "საწყისი გვერდის გახსნა"
+
+#~ msgctxt "@action:button"
+#~ msgid "Open Original Page"
+#~ msgstr "საწყისი გვერდის გახსნა"
 
 #~ msgctxt "@title:group"
 #~ msgid "Pick a Server"
@@ -4422,10 +4482,6 @@ msgstr[1] "%1 წლის წინ"
 #~ msgctxt "@action:button"
 #~ msgid "Delete word"
 #~ msgstr "სიტყვის წაშლა"
-
-#~ msgctxt "@title"
-#~ msgid "Thread"
-#~ msgstr "ნაკადი"
 
 #~ msgctxt "@action:Button Edit a post"
 #~ msgid "Edit"
