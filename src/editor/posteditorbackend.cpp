@@ -248,6 +248,10 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
         obj["poll"_L1] = m_poll->toJsonObject();
     }
 
+    if (m_scheduledAt.isValid()) {
+        obj["scheduled_at"_L1] = m_scheduledAt.toString(Qt::DateFormat::ISODate);
+    }
+
     return QJsonDocument(obj);
 }
 
