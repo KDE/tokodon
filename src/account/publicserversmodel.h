@@ -5,8 +5,6 @@
 
 #include <QtQml>
 
-class QNetworkReply;
-
 class PublicServersModel : public QAbstractListModel
 {
     Q_OBJECT
