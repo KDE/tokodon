@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:39+0000\n"
-"PO-Revision-Date: 2024-10-02 20:37+0300\n"
+"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"PO-Revision-Date: 2024-10-12 09:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -18,47 +18,53 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
+#, fuzzy, kde-format
+#| msgid "Could not reject account"
+msgid "Could not remove account as your follower"
+msgstr "Не вдалося відмовити в обліковому записі"
+
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:668
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:667
+#: account/abstractaccount.cpp:669
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -189,45 +195,59 @@ msgstr[1] "%1 підсилення"
 msgstr[2] "%1 підсилень"
 msgstr[3] "%1 підсилення"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Followers"
+msgctxt "@title"
+msgid "Familiar Followers"
+msgstr "Ті, хто стежить"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "Немає запитів щодо стеження"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "Немає тих, хто стежить"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed users"
 msgstr "Немає користувачів, за якими ведеться стеження"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted users"
 msgstr "Немає позбавлених голосу користувачів"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked users"
 msgstr "Немає заблокованих користувачів"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured users"
 msgstr "Немає особливих користувачів"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users favorited this post"
 msgstr "Жоден користувач не зробив цей допис улюбленим"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No users boosted this post"
 msgstr "Жоден користувач не підсилив цей допис"
+
+#: account/socialgraphmodel.cpp:68
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No familiar followers"
+msgstr "Немає тих, хто стежить"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -331,138 +351,145 @@ msgstr "Не вдалося призначити скаргу"
 msgid "Could not unassign report"
 msgstr "Не вдалося скасувати призначення скарги"
 
-#: content/ui/AccountInfo.qml:120
+#: content/ui/AccountInfo.qml:125
 #, kde-format
 msgid "Follows you"
 msgstr "Стежить за вами"
 
-#: content/ui/AccountInfo.qml:214
+#: content/ui/AccountInfo.qml:146
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgid "Bot"
+msgstr "Підсилення"
+
+#: content/ui/AccountInfo.qml:242
 #, kde-format
 msgid "Follow Requested"
 msgstr "Надіслано запит щодо стеження"
 
-#: content/ui/AccountInfo.qml:217
+#: content/ui/AccountInfo.qml:245
 #, kde-format
 msgid "Unfollow"
 msgstr "Зняти слідкування"
 
-#: content/ui/AccountInfo.qml:219
+#: content/ui/AccountInfo.qml:247
 #, kde-format
 msgid "Follow"
 msgstr "Стежити"
 
-#: content/ui/AccountInfo.qml:244
+#: content/ui/AccountInfo.qml:272
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Припинити сповіщення про дописи %1."
 
-#: content/ui/AccountInfo.qml:246
+#: content/ui/AccountInfo.qml:274
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Сповіщати про дописи %1."
 
-#: content/ui/AccountInfo.qml:263
+#: content/ui/AccountInfo.qml:291
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Приховати підсилення від %1"
 
-#: content/ui/AccountInfo.qml:265
+#: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Показати підсилення від %1"
 
-#: content/ui/AccountInfo.qml:281
+#: content/ui/AccountInfo.qml:309
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Припинити рекомендувати цей профіль"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:311
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Рекомендувати цей профіль"
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Unmute"
 msgstr "Дозволити повідомлення"
 
-#: content/ui/AccountInfo.qml:301
+#: content/ui/AccountInfo.qml:329
 #, kde-format
 msgid "Mute"
 msgstr "Заборонити повідомлення"
 
-#: content/ui/AccountInfo.qml:317
+#: content/ui/AccountInfo.qml:345
 #, kde-format
 msgid "Unblock"
 msgstr "Розблокувати"
 
-#: content/ui/AccountInfo.qml:319
+#: content/ui/AccountInfo.qml:347
 #, kde-format
 msgid "Block"
 msgstr "Заблокувати"
 
-#: content/ui/AccountInfo.qml:333 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:361 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Поскаржитися…"
 
-#: content/ui/AccountInfo.qml:339
+#: content/ui/AccountInfo.qml:367
 #, kde-format
 msgid "Edit Profile"
 msgstr "Змінити профіль"
 
-#: content/ui/AccountInfo.qml:343
+#: content/ui/AccountInfo.qml:371
 #, kde-format
 msgid "Account editor"
 msgstr "Редактор облікових записів"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
+#: content/ui/AccountInfo.qml:380 content/ui/Main.qml:406
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
-#: content/ui/AccountInfo.qml:358
+#: content/ui/AccountInfo.qml:386
 #, kde-format
 msgid "Muted Users"
 msgstr "Позбавлені голосу користувачі"
 
-#: content/ui/AccountInfo.qml:364
+#: content/ui/AccountInfo.qml:392
 #, kde-format
 msgid "Blocked Users"
 msgstr "Заблоковані користувачі"
 
-#: content/ui/AccountInfo.qml:370
+#: content/ui/AccountInfo.qml:398
 #, kde-format
 msgid "Featured Users"
 msgstr "Особливі користувачі"
 
-#: content/ui/AccountInfo.qml:375
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
-#: content/ui/AccountInfo.qml:378
+#: content/ui/AccountInfo.qml:406
 #, kde-format
 msgid "Profile link copied."
 msgstr "Посилання на профіль скопійовано."
 
-#: content/ui/AccountInfo.qml:468
+#: content/ui/AccountInfo.qml:496
 #, kde-format
 msgid "Note:"
 msgstr "Примітка:"
 
-#: content/ui/AccountInfo.qml:476
+#: content/ui/AccountInfo.qml:504
 #, kde-format
 msgid "Saved"
 msgstr "Збережено"
 
-#: content/ui/AccountInfo.qml:491
+#: content/ui/AccountInfo.qml:519
 #, kde-format
-msgid "Click to add a note"
-msgstr "Натисніть, щоб додати нотатку"
+msgid ""
+"Write down something about this user, this isn't visible to anyone but you"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:602
+#: content/ui/AccountInfo.qml:630
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -472,7 +499,7 @@ msgstr[1] "<b>%1</b> дописи"
 msgstr[2] "<b>%1</b> дописів"
 msgstr[3] "<b>%1</b> допис"
 
-#: content/ui/AccountInfo.qml:615
+#: content/ui/AccountInfo.qml:643
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -482,7 +509,7 @@ msgstr[1] "Має <b>%1</b> тих, хто стежать"
 msgstr[2] "Має <b>%1</b> тих, хто стежать"
 msgstr[3] "Має <b>одного</b> того, хто стежить"
 
-#: content/ui/AccountInfo.qml:628
+#: content/ui/AccountInfo.qml:656
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -492,31 +519,31 @@ msgstr[1] "Стежить за <b>%1</b>"
 msgstr[2] "Стежить за <b>%1</b>"
 msgstr[3] "Стежить за <b>%1</b>"
 
-#: content/ui/AccountInfo.qml:655
+#: content/ui/AccountInfo.qml:683
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Дописи"
 
-#: content/ui/AccountInfo.qml:659
+#: content/ui/AccountInfo.qml:687
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Дописи і відповіді"
 
-#: content/ui/AccountInfo.qml:663
+#: content/ui/AccountInfo.qml:691
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Мультимедіа"
 
-#: content/ui/AccountInfo.qml:692
+#: content/ui/AccountInfo.qml:720
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Приховати підсилення"
 
-#: content/ui/AccountInfo.qml:712
+#: content/ui/AccountInfo.qml:740
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -564,7 +591,7 @@ msgstr "Без емодзі"
 msgid "View profile"
 msgstr "Переглянути профіль"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:453
 #, kde-format
 msgid "Conversations"
 msgstr "Спілкування"
@@ -652,7 +679,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Ви справді хочете вилучити цей список?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:499
 #, kde-format
 msgid "Explore"
 msgstr "Ознайомлення"
@@ -700,12 +727,10 @@ msgid "%1 signed up"
 msgstr "%1 підписано"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
-msgstr "Стежить"
+msgstr "Стеження"
 
 #: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
 #, kde-format
@@ -714,15 +739,13 @@ msgid "Filters"
 msgstr "Фільтри"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Показати підсилення"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Показати відповіді"
@@ -730,7 +753,7 @@ msgstr "Показати відповіді"
 #: content/ui/FollowingPage.qml:193
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "Не вибрано користувача"
 
 #: content/ui/FollowingPage.qml:194
 #, kde-format
@@ -738,6 +761,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"За допомогою панелі перегляду стеження можна без проблем бачити дані кожного "
+"користувача, за яким ви стежите, і його дописи — упорядковані за давністю."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1229,79 +1254,77 @@ msgstr "Написати новий допис"
 msgid "Reply to post"
 msgstr "Відповісти на допис"
 
-#: content/ui/Main.qml:485
-#, kde-format
-msgctxt "@action:button Open debug page"
-msgid "Debug"
-msgstr "Діагностика"
-
-#: content/ui/Main.qml:495
-#, kde-format
-msgctxt "@action:button Open moderation tools"
-msgid "Moderation Tools"
-msgstr "Засоби модерації"
-
-#: content/ui/Main.qml:522
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "Параметри"
-
-#: content/ui/Main.qml:534
+#: content/ui/Main.qml:376
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:391 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/Main.qml:580
+#: content/ui/Main.qml:422
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:437
 #, kde-format
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:467 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/Main.qml:641
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/Main.qml:671
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#: content/ui/Main.qml:513
+#, kde-format
 msgid "Following"
-msgstr "Стежить"
+msgstr "Стеження"
 
-#: content/ui/Main.qml:685
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/Main.qml:700
+#: content/ui/Main.qml:542
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Оголошення"
 
-#: content/ui/Main.qml:715
+#: content/ui/Main.qml:557
 #, kde-format
 msgid "Lists"
 msgstr "Списки"
 
-#: content/ui/Main.qml:850
+#: content/ui/Main.qml:578
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr "Діагностика"
+
+#: content/ui/Main.qml:588
+#, kde-format
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "Засоби модерації"
+
+#: content/ui/Main.qml:600
+#, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "Параметри"
+
+#: content/ui/Main.qml:730
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3069,18 +3092,16 @@ msgid "More actions"
 msgstr "Додаткові дії"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Thread"
+#, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr "Потік"
+msgstr "Відкрити гілку"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Відкрити у переглядачі"
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3399,7 +3420,7 @@ msgid "User"
 msgstr "Користувач"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:336
+#: content/ui/Settings/ProfileEditor.qml:358
 #, kde-format
 msgid "Apply"
 msgstr "Застосувати"
@@ -3520,57 +3541,101 @@ msgstr ""
 "400x400 пк."
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, kde-format
-msgid "Require approval of follow requests"
+#, fuzzy, kde-format
+#| msgid "Require approval of follow requests"
+msgid "Require approval for new followers"
 msgstr "Вимагати підтвердження вказаних нижче запитів"
 
-#: content/ui/Settings/ProfileEditor.qml:264
+#: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
-msgid "This is a bot account"
-msgstr "Це обліковий запис бота"
+msgid ""
+"By default new followers are automatically accepted. Uncheck if you want to "
+"manually approve or deny new ones. You always have the option to force "
+"someone to unfollow you."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:272
+#: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
-msgid "Suggest account to others"
-msgstr "Пропонувати запис іншим"
+msgid "Is automated"
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:266
+#, kde-format
+msgid ""
+"Whether to publicly mark this account as doing any kind of automated actions."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:274
+#, fuzzy, kde-format
+#| msgid "Feature This Profile"
+msgid "Feature profile and posts"
+msgstr "Рекомендувати цей профіль"
+
+#: content/ui/Settings/ProfileEditor.qml:275
+#, kde-format
+msgid "Your public profile and posts may be featured to other users."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:283
+#, kde-format
+msgid "Publicly list follows and followers"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:284
+#, kde-format
+msgid "By default everyone you follow and everyone who follows you is public."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Типово позначати вивантажені мультимедійні дані як конфіденційні"
 
-#: content/ui/Settings/ProfileEditor.qml:288
+#: content/ui/Settings/ProfileEditor.qml:300
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Типова мова дописів"
 
-#: content/ui/Settings/ProfileEditor.qml:309
+#: content/ui/Settings/ProfileEditor.qml:321
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Типова видимість дописів"
 
-#: content/ui/Settings/ProfileEditor.qml:311
+#: content/ui/Settings/ProfileEditor.qml:323
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Загальнодоступне"
 
-#: content/ui/Settings/ProfileEditor.qml:312
+#: content/ui/Settings/ProfileEditor.qml:324
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Поза списком"
 
-#: content/ui/Settings/ProfileEditor.qml:313
+#: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Особисте"
 
-#: content/ui/Settings/ProfileEditor.qml:329
+#: content/ui/Settings/ProfileEditor.qml:336
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu 'Browser' being a web browser"
+#| msgid "Open in Browser"
+msgctxt "@abel Account preferences"
+msgid "Open Server in Browser"
+msgstr "Відкрити у переглядачі"
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, kde-format
+msgid "Some settings can only be configured on your server's website."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
@@ -3623,6 +3688,20 @@ msgstr "Дозволити"
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
 msgstr "Відмовити"
+
+#: content/ui/SocialGraphPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Unfollow"
+msgctxt "@action:button Deny follow request"
+msgid "Unfollow"
+msgstr "Зняти слідкування"
+
+#: content/ui/SocialGraphPage.qml:83
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgctxt "@action:button Deny follow request"
+msgid "Remove Follower"
+msgstr "Немає тих, хто стежить"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -3981,7 +4060,7 @@ msgstr "Щоб переглянути усі відповіді, відкрий�
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Відкрити у переглядачі"
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4092,7 +4171,7 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 днів"
 
-#: editor/posteditorbackend.cpp:278
+#: editor/posteditorbackend.cpp:282
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
@@ -4390,7 +4469,7 @@ msgstr "%1г"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Сьогодні"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4423,6 +4502,15 @@ msgstr[0] "%1 рік тому"
 msgstr[1] "%1 роки тому"
 msgstr[2] "%1 років тому"
 msgstr[3] "1 рік тому"
+
+#~ msgid "Click to add a note"
+#~ msgstr "Натисніть, щоб додати нотатку"
+
+#~ msgid "This is a bot account"
+#~ msgstr "Це обліковий запис бота"
+
+#~ msgid "Suggest account to others"
+#~ msgstr "Пропонувати запис іншим"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Expand Post"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:39+0000\n"
+"POT-Creation-Date: 2024-10-13 00:39+0000\n"
 "PO-Revision-Date: 2024-10-02 22:36+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,47 +18,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not follow account"
 msgstr "Nem sikerült követni a fiókot"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Nem sikerült leállítani a fiók követését"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
+#, fuzzy, kde-format
+#| msgid "Could not reject account"
+msgid "Could not remove account as your follower"
+msgstr "Nem sikerült elutasítani a fiókot"
+
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not block account"
 msgstr "Nem sikerült letiltani a fiókot"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Nem sikerült leállítani a fiók letiltását"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not mute account"
 msgstr "Nem sikerült némítani a fiókot"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Nem sikerült leállítani a fiók némítását"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not feature account"
 msgstr "Nem sikerült kiemelni a fiókot"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:668
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Nem sikerült leállítani a fiók kiemelését"
 
-#: account/abstractaccount.cpp:667
+#: account/abstractaccount.cpp:669
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Nem sikerült szerkeszteni egy fiókhoz tartozó megjegyzést"
@@ -183,45 +189,59 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 megtolás"
 msgstr[1] "%1 megtolás"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Followers"
+msgctxt "@title"
+msgid "Familiar Followers"
+msgstr "Követők"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "Nincsenek követési kérések"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "Nincsenek követők"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed users"
 msgstr "Nincsenek követett felhasználók"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted users"
 msgstr "Nincsenek némított felhasználók"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked users"
 msgstr "Nincsenek letiltott felhasználók"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured users"
 msgstr "Nincsenek kiemelt felhasználók"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users favorited this post"
 msgstr "Senki sem jelölte kedvencnek ezt a bejegyzést"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No users boosted this post"
 msgstr "Senki sem tolta meg ezt a bejegyzést"
+
+#: account/socialgraphmodel.cpp:68
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No familiar followers"
+msgstr "Nincsenek követők"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -326,138 +346,145 @@ msgstr "Nem sikerült hozzárendelni a jelentést"
 msgid "Could not unassign report"
 msgstr "Nem sikerült feloldani a jelentés hozzárendelését"
 
-#: content/ui/AccountInfo.qml:120
+#: content/ui/AccountInfo.qml:125
 #, kde-format
 msgid "Follows you"
 msgstr "Követi"
 
-#: content/ui/AccountInfo.qml:214
+#: content/ui/AccountInfo.qml:146
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgid "Bot"
+msgstr "Megtolás"
+
+#: content/ui/AccountInfo.qml:242
 #, kde-format
 msgid "Follow Requested"
 msgstr "Követés kérve"
 
-#: content/ui/AccountInfo.qml:217
+#: content/ui/AccountInfo.qml:245
 #, kde-format
 msgid "Unfollow"
 msgstr "Követés leállítása"
 
-#: content/ui/AccountInfo.qml:219
+#: content/ui/AccountInfo.qml:247
 #, kde-format
 msgid "Follow"
 msgstr "Követés"
 
-#: content/ui/AccountInfo.qml:244
+#: content/ui/AccountInfo.qml:272
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Ne értesítsen többé, ha %1 bejegyzést ír."
 
-#: content/ui/AccountInfo.qml:246
+#: content/ui/AccountInfo.qml:274
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Értesítsen, ha %1 bejegyzést ír."
 
-#: content/ui/AccountInfo.qml:263
+#: content/ui/AccountInfo.qml:291
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "%1 megtolásainak elrejtése"
 
-#: content/ui/AccountInfo.qml:265
+#: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "%1 megtolásainak megjelenítése"
 
-#: content/ui/AccountInfo.qml:281
+#: content/ui/AccountInfo.qml:309
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Profil kiemelésének leállítása"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:311
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Profil kiemelése"
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Unmute"
 msgstr "Némítás feloldása"
 
-#: content/ui/AccountInfo.qml:301
+#: content/ui/AccountInfo.qml:329
 #, kde-format
 msgid "Mute"
 msgstr "Némítás"
 
-#: content/ui/AccountInfo.qml:317
+#: content/ui/AccountInfo.qml:345
 #, kde-format
 msgid "Unblock"
 msgstr "Letiltás feloldása"
 
-#: content/ui/AccountInfo.qml:319
+#: content/ui/AccountInfo.qml:347
 #, kde-format
 msgid "Block"
 msgstr "Letiltás"
 
-#: content/ui/AccountInfo.qml:333 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:361 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Jelentés…"
 
-#: content/ui/AccountInfo.qml:339
+#: content/ui/AccountInfo.qml:367
 #, kde-format
 msgid "Edit Profile"
 msgstr "Profil szerkesztése"
 
-#: content/ui/AccountInfo.qml:343
+#: content/ui/AccountInfo.qml:371
 #, kde-format
 msgid "Account editor"
 msgstr "Fiókszerkesztő"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
+#: content/ui/AccountInfo.qml:380 content/ui/Main.qml:406
 #, kde-format
 msgid "Follow Requests"
 msgstr "Követési kérések"
 
-#: content/ui/AccountInfo.qml:358
+#: content/ui/AccountInfo.qml:386
 #, kde-format
 msgid "Muted Users"
 msgstr "Némított felhasználók"
 
-#: content/ui/AccountInfo.qml:364
+#: content/ui/AccountInfo.qml:392
 #, kde-format
 msgid "Blocked Users"
 msgstr "Letiltott felhasználók"
 
-#: content/ui/AccountInfo.qml:370
+#: content/ui/AccountInfo.qml:398
 #, kde-format
 msgid "Featured Users"
 msgstr "Kiemelt felhasználók"
 
-#: content/ui/AccountInfo.qml:375
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
-#: content/ui/AccountInfo.qml:378
+#: content/ui/AccountInfo.qml:406
 #, kde-format
 msgid "Profile link copied."
 msgstr "Profil hivatkozása másolva."
 
-#: content/ui/AccountInfo.qml:468
+#: content/ui/AccountInfo.qml:496
 #, kde-format
 msgid "Note:"
 msgstr "Jegyzet:"
 
-#: content/ui/AccountInfo.qml:476
+#: content/ui/AccountInfo.qml:504
 #, kde-format
 msgid "Saved"
 msgstr "Mentve"
 
-#: content/ui/AccountInfo.qml:491
+#: content/ui/AccountInfo.qml:519
 #, kde-format
-msgid "Click to add a note"
-msgstr "Kattintson jegyzet hozzáadásához"
+msgid ""
+"Write down something about this user, this isn't visible to anyone but you"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:602
+#: content/ui/AccountInfo.qml:630
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -465,7 +492,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> bejegyzés"
 msgstr[1] "<b>%1</b> bejegyzés"
 
-#: content/ui/AccountInfo.qml:615
+#: content/ui/AccountInfo.qml:643
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -473,7 +500,7 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> követő"
 msgstr[1] "<b>%1</b> követő"
 
-#: content/ui/AccountInfo.qml:628
+#: content/ui/AccountInfo.qml:656
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -481,31 +508,31 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> követett"
 msgstr[1] "<b>%1</b> követett"
 
-#: content/ui/AccountInfo.qml:655
+#: content/ui/AccountInfo.qml:683
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Bejegyzések"
 
-#: content/ui/AccountInfo.qml:659
+#: content/ui/AccountInfo.qml:687
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Bejegyzések és válaszok"
 
-#: content/ui/AccountInfo.qml:663
+#: content/ui/AccountInfo.qml:691
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Média"
 
-#: content/ui/AccountInfo.qml:692
+#: content/ui/AccountInfo.qml:720
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Megtolások elrejtése"
 
-#: content/ui/AccountInfo.qml:712
+#: content/ui/AccountInfo.qml:740
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -553,7 +580,7 @@ msgstr "Nincsenek emojik"
 msgid "View profile"
 msgstr "Profil megtekintése"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:453
 #, kde-format
 msgid "Conversations"
 msgstr "Beszélgetések"
@@ -641,7 +668,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Biztosan törölni szeretné ezt a listát?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:499
 #, kde-format
 msgid "Explore"
 msgstr "Felfedezés"
@@ -1212,79 +1239,79 @@ msgstr "Új bejegyzés írása"
 msgid "Reply to post"
 msgstr "Válasz a bejegyzésre"
 
-#: content/ui/Main.qml:485
-#, kde-format
-msgctxt "@action:button Open debug page"
-msgid "Debug"
-msgstr "Hibakeresés"
-
-#: content/ui/Main.qml:495
-#, kde-format
-msgctxt "@action:button Open moderation tools"
-msgid "Moderation Tools"
-msgstr "Moderációs eszközök"
-
-#: content/ui/Main.qml:522
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "Beállítások"
-
-#: content/ui/Main.qml:534
+#: content/ui/Main.qml:376
 #, kde-format
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:391 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Értesítések"
 
-#: content/ui/Main.qml:580
+#: content/ui/Main.qml:422
 #, kde-format
 msgid "Local"
 msgstr "Helyi"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:437
 #, kde-format
 msgid "Global"
 msgstr "Globális"
 
-#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:467 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
 msgstr "Kedvencek"
 
-#: content/ui/Main.qml:641
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Bookmarks"
 msgstr "Könyvjelzők"
 
-#: content/ui/Main.qml:671
+#: content/ui/Main.qml:513
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Following"
 msgid "Following"
 msgstr "Követett"
 
-#: content/ui/Main.qml:685
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "Search"
 msgstr "Keresés"
 
-#: content/ui/Main.qml:700
+#: content/ui/Main.qml:542
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Bejelentések"
 
-#: content/ui/Main.qml:715
+#: content/ui/Main.qml:557
 #, kde-format
 msgid "Lists"
 msgstr "Listák"
 
-#: content/ui/Main.qml:850
+#: content/ui/Main.qml:578
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr "Hibakeresés"
+
+#: content/ui/Main.qml:588
+#, kde-format
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "Moderációs eszközök"
+
+#: content/ui/Main.qml:600
+#, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "Beállítások"
+
+#: content/ui/Main.qml:730
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3375,7 +3402,7 @@ msgid "User"
 msgstr "Felhasználó"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:336
+#: content/ui/Settings/ProfileEditor.qml:358
 #, kde-format
 msgid "Apply"
 msgstr "Alkalmazás"
@@ -3492,57 +3519,99 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF vagy JPG. Legfeljebb 2 MB. Leskálázódik 400x400 képpontra"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, kde-format
-msgid "Require approval of follow requests"
+#, fuzzy, kde-format
+#| msgid "Require approval of follow requests"
+msgid "Require approval for new followers"
 msgstr "Követési kérelmek jóváhagyásának megkövetelése"
 
-#: content/ui/Settings/ProfileEditor.qml:264
+#: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
-msgid "This is a bot account"
-msgstr "Ez egy gépi fiók"
+msgid ""
+"By default new followers are automatically accepted. Uncheck if you want to "
+"manually approve or deny new ones. You always have the option to force "
+"someone to unfollow you."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:272
+#: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
-msgid "Suggest account to others"
-msgstr "Fiók ajánlása másoknak"
+msgid "Is automated"
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:266
+#, kde-format
+msgid ""
+"Whether to publicly mark this account as doing any kind of automated actions."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:274
+#, fuzzy, kde-format
+#| msgid "Feature This Profile"
+msgid "Feature profile and posts"
+msgstr "Profil kiemelése"
+
+#: content/ui/Settings/ProfileEditor.qml:275
+#, kde-format
+msgid "Your public profile and posts may be featured to other users."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:283
+#, kde-format
+msgid "Publicly list follows and followers"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:284
+#, kde-format
+msgid "By default everyone you follow and everyone who follows you is public."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "Feltöltött média megjelelölése érzékeny tartalomként alapértelmezetten"
 
-#: content/ui/Settings/ProfileEditor.qml:288
+#: content/ui/Settings/ProfileEditor.qml:300
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Alapértelmezett nyelv"
 
-#: content/ui/Settings/ProfileEditor.qml:309
+#: content/ui/Settings/ProfileEditor.qml:321
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Bejegyzések alapértelmezett láthatósága"
 
-#: content/ui/Settings/ProfileEditor.qml:311
+#: content/ui/Settings/ProfileEditor.qml:323
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Nyilvános"
 
-#: content/ui/Settings/ProfileEditor.qml:312
+#: content/ui/Settings/ProfileEditor.qml:324
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Nem listázott"
 
-#: content/ui/Settings/ProfileEditor.qml:313
+#: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privát"
 
-#: content/ui/Settings/ProfileEditor.qml:329
+#: content/ui/Settings/ProfileEditor.qml:336
+#, kde-format
+msgctxt "@abel Account preferences"
+msgid "Open Server in Browser"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, kde-format
+msgid "Some settings can only be configured on your server's website."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
 msgid "Reset"
 msgstr "Visszaállítás"
@@ -3595,6 +3664,20 @@ msgstr "Engedélyezés"
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
 msgstr "Elutasítás"
+
+#: content/ui/SocialGraphPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Unfollow"
+msgctxt "@action:button Deny follow request"
+msgid "Unfollow"
+msgstr "Követés leállítása"
+
+#: content/ui/SocialGraphPage.qml:83
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgctxt "@action:button Deny follow request"
+msgid "Remove Follower"
+msgstr "Nincsenek követők"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -4063,7 +4146,7 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 nap"
 
-#: editor/posteditorbackend.cpp:278
+#: editor/posteditorbackend.cpp:282
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Ismeretlen hiba történt."
@@ -4389,6 +4472,15 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 évvel ezelőtt"
 msgstr[1] "%1 évvel ezelőtt"
+
+#~ msgid "Click to add a note"
+#~ msgstr "Kattintson jegyzet hozzáadásához"
+
+#~ msgid "This is a bot account"
+#~ msgstr "Ez egy gépi fiók"
+
+#~ msgid "Suggest account to others"
+#~ msgstr "Fiók ajánlása másoknak"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Expand Post"

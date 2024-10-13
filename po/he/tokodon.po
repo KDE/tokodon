@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:39+0000\n"
-"PO-Revision-Date: 2024-10-07 07:01+0300\n"
+"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"PO-Revision-Date: 2024-10-12 07:40+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,47 +18,53 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: account/abstractaccount.cpp:659
+#: account/abstractaccount.cpp:660
 #, kde-format
 msgid "Could not follow account"
 msgstr "לא ניתן לעקוב אחרי חשבון"
 
-#: account/abstractaccount.cpp:660
+#: account/abstractaccount.cpp:661
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "לא ניתן לבטל מעקב אחרי חשבון"
 
-#: account/abstractaccount.cpp:661
+#: account/abstractaccount.cpp:662
+#, fuzzy, kde-format
+#| msgid "Could not reject account"
+msgid "Could not remove account as your follower"
+msgstr "לא ניתן לדחות חשבון"
+
+#: account/abstractaccount.cpp:663
 #, kde-format
 msgid "Could not block account"
 msgstr "לא ניתן לחסום חשבון"
 
-#: account/abstractaccount.cpp:662
+#: account/abstractaccount.cpp:664
 #, kde-format
 msgid "Could not unblock account"
 msgstr "לא ניתן לשחרר חסימת חשבון"
 
-#: account/abstractaccount.cpp:663
+#: account/abstractaccount.cpp:665
 #, kde-format
 msgid "Could not mute account"
 msgstr "לא ניתן להשתיק חשבון"
 
-#: account/abstractaccount.cpp:664
+#: account/abstractaccount.cpp:666
 #, kde-format
 msgid "Could not unmute account"
 msgstr "לא ניתן לבטל השתקת חשבון"
 
-#: account/abstractaccount.cpp:665
+#: account/abstractaccount.cpp:667
 #, kde-format
 msgid "Could not feature account"
 msgstr "לא ניתן לקדם חשבון"
 
-#: account/abstractaccount.cpp:666
+#: account/abstractaccount.cpp:668
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "לא ניתן לבטל קידום חשבון"
 
-#: account/abstractaccount.cpp:667
+#: account/abstractaccount.cpp:669
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "לא ניתן לערוך הערה על חשבון"
@@ -187,45 +193,59 @@ msgstr[1] "שני עידודים"
 msgstr[2] "%1 עידודים"
 msgstr[3] "%1 עידודים"
 
-#: account/socialgraphmodel.cpp:50
+#: account/socialgraphmodel.cpp:44
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Followers"
+msgctxt "@title"
+msgid "Familiar Followers"
+msgstr "עוקבים"
+
+#: account/socialgraphmodel.cpp:52
 #, kde-format
 msgid "No follow requests"
 msgstr "אין בקשות מעקב"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No followers"
 msgstr "אין עוקבים"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followed users"
 msgstr "אין משתמשים נעקבים"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No muted users"
 msgstr "אין משתמשים מושתקים"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No blocked users"
 msgstr "אין משתמשים חסומים"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No featured users"
 msgstr "אין משתמשים מקודמים"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No users favorited this post"
 msgstr "אף משתמש לא הוסיף את הרשומה הזאת למועדפים"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No users boosted this post"
 msgstr "אף משתמש לא עודד את הרשומה הזאת"
+
+#: account/socialgraphmodel.cpp:68
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No familiar followers"
+msgstr "אין עוקבים"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -329,138 +349,145 @@ msgstr "לא ניתן להקצות דוח"
 msgid "Could not unassign report"
 msgstr "לא ניתן לבטל הקצאת דוח"
 
-#: content/ui/AccountInfo.qml:120
+#: content/ui/AccountInfo.qml:125
 #, kde-format
 msgid "Follows you"
 msgstr "במעקב אחריך"
 
-#: content/ui/AccountInfo.qml:214
+#: content/ui/AccountInfo.qml:146
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgid "Bot"
+msgstr "עידוד"
+
+#: content/ui/AccountInfo.qml:242
 #, kde-format
 msgid "Follow Requested"
 msgstr "נשלחה בקשת מעקב"
 
-#: content/ui/AccountInfo.qml:217
+#: content/ui/AccountInfo.qml:245
 #, kde-format
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
-#: content/ui/AccountInfo.qml:219
+#: content/ui/AccountInfo.qml:247
 #, kde-format
 msgid "Follow"
 msgstr "מעקב"
 
-#: content/ui/AccountInfo.qml:244
+#: content/ui/AccountInfo.qml:272
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "להפסיק להודיע לי על רשומות של %1."
 
-#: content/ui/AccountInfo.qml:246
+#: content/ui/AccountInfo.qml:274
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "להודיע לי על רשומות של %1."
 
-#: content/ui/AccountInfo.qml:263
+#: content/ui/AccountInfo.qml:291
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "הסתרת עידודים של %1"
 
-#: content/ui/AccountInfo.qml:265
+#: content/ui/AccountInfo.qml:293
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "הצגת עידודים של %1"
 
-#: content/ui/AccountInfo.qml:281
+#: content/ui/AccountInfo.qml:309
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "להפסיק להציב את הפרופיל הזה כמוביל"
 
-#: content/ui/AccountInfo.qml:283
+#: content/ui/AccountInfo.qml:311
 #, kde-format
 msgid "Feature This Profile"
 msgstr "הוספת הפרופיל הזה למובילים"
 
-#: content/ui/AccountInfo.qml:299
+#: content/ui/AccountInfo.qml:327
 #, kde-format
 msgid "Unmute"
 msgstr "ביטול השתקה"
 
-#: content/ui/AccountInfo.qml:301
+#: content/ui/AccountInfo.qml:329
 #, kde-format
 msgid "Mute"
 msgstr "השתקה"
 
-#: content/ui/AccountInfo.qml:317
+#: content/ui/AccountInfo.qml:345
 #, kde-format
 msgid "Unblock"
 msgstr "שחרור חסימה"
 
-#: content/ui/AccountInfo.qml:319
+#: content/ui/AccountInfo.qml:347
 #, kde-format
 msgid "Block"
 msgstr "חסימה"
 
-#: content/ui/AccountInfo.qml:333 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:361 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "דיווח…"
 
-#: content/ui/AccountInfo.qml:339
+#: content/ui/AccountInfo.qml:367
 #, kde-format
 msgid "Edit Profile"
 msgstr "עריכת פרופיל"
 
-#: content/ui/AccountInfo.qml:343
+#: content/ui/AccountInfo.qml:371
 #, kde-format
 msgid "Account editor"
 msgstr "עורך חשבונות"
 
-#: content/ui/AccountInfo.qml:352 content/ui/Main.qml:564
+#: content/ui/AccountInfo.qml:380 content/ui/Main.qml:406
 #, kde-format
 msgid "Follow Requests"
 msgstr "בקשות מעקב"
 
-#: content/ui/AccountInfo.qml:358
+#: content/ui/AccountInfo.qml:386
 #, kde-format
 msgid "Muted Users"
 msgstr "משתמשים מושתקים"
 
-#: content/ui/AccountInfo.qml:364
+#: content/ui/AccountInfo.qml:392
 #, kde-format
 msgid "Blocked Users"
 msgstr "משתמשים חסומים"
 
-#: content/ui/AccountInfo.qml:370
+#: content/ui/AccountInfo.qml:398
 #, kde-format
 msgid "Featured Users"
 msgstr "משתמשים מובילים"
 
-#: content/ui/AccountInfo.qml:375
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "Copy Link"
 msgstr "העתקת קישור"
 
-#: content/ui/AccountInfo.qml:378
+#: content/ui/AccountInfo.qml:406
 #, kde-format
 msgid "Profile link copied."
 msgstr "הקישור לפרופיל הועתק."
 
-#: content/ui/AccountInfo.qml:468
+#: content/ui/AccountInfo.qml:496
 #, kde-format
 msgid "Note:"
 msgstr "הערה:"
 
-#: content/ui/AccountInfo.qml:476
+#: content/ui/AccountInfo.qml:504
 #, kde-format
 msgid "Saved"
 msgstr "נשמר"
 
-#: content/ui/AccountInfo.qml:491
+#: content/ui/AccountInfo.qml:519
 #, kde-format
-msgid "Click to add a note"
-msgstr "לחיצה להוספת הערה"
+msgid ""
+"Write down something about this user, this isn't visible to anyone but you"
+msgstr ""
 
-#: content/ui/AccountInfo.qml:602
+#: content/ui/AccountInfo.qml:630
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -470,7 +497,7 @@ msgstr[1] "<b>שתי</b> רשומות"
 msgstr[2] "<b>%1</b> רשומות"
 msgstr[3] "<b>%1</b> רשומות"
 
-#: content/ui/AccountInfo.qml:615
+#: content/ui/AccountInfo.qml:643
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -480,7 +507,7 @@ msgstr[1] "<b>שניים</b> במעקב"
 msgstr[2] "<b>%1</b> במעקב"
 msgstr[3] "<b>%1</b> במעקב"
 
-#: content/ui/AccountInfo.qml:628
+#: content/ui/AccountInfo.qml:656
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -490,31 +517,31 @@ msgstr[1] "<b>שני</b> נעקבים"
 msgstr[2] "<b>%1</b> נעקבים"
 msgstr[3] "<b>%1</b> נעקבים"
 
-#: content/ui/AccountInfo.qml:655
+#: content/ui/AccountInfo.qml:683
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "רשומות"
 
-#: content/ui/AccountInfo.qml:659
+#: content/ui/AccountInfo.qml:687
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "רשומות ותגובות"
 
-#: content/ui/AccountInfo.qml:663
+#: content/ui/AccountInfo.qml:691
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "מדיה"
 
-#: content/ui/AccountInfo.qml:692
+#: content/ui/AccountInfo.qml:720
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "הסתרת עידודים"
 
-#: content/ui/AccountInfo.qml:712
+#: content/ui/AccountInfo.qml:740
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -562,7 +589,7 @@ msgstr "אין אמוג׳ים"
 msgid "View profile"
 msgstr "הצגת פרופיל"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:611
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:453
 #, kde-format
 msgid "Conversations"
 msgstr "שיחות"
@@ -649,7 +676,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "למחוק את הרשימה הזאת?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:657
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:499
 #, kde-format
 msgid "Explore"
 msgstr "סיור"
@@ -697,9 +724,7 @@ msgid "%1 signed up"
 msgstr "%1 נרשם או נרשמה"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "נעקבים"
@@ -711,15 +736,13 @@ msgid "Filters"
 msgstr "מסננים"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "הצגת עידודים"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "הצגת תגובות"
@@ -727,7 +750,7 @@ msgstr "הצגת תגובות"
 #: content/ui/FollowingPage.qml:193
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "לא נבחר אף משתמש"
 
 #: content/ui/FollowingPage.qml:194
 #, kde-format
@@ -735,6 +758,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"עם התצוגה הבאה, אפשר לראות בקלות רק את הפוסטים של משתמשים במעקב - מסודרים "
+"לפי הפוסטים האחרונים שלהם."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1214,79 +1239,77 @@ msgstr "כתיבת רשומה חדשה"
 msgid "Reply to post"
 msgstr "תגובה לרשומה"
 
-#: content/ui/Main.qml:485
-#, kde-format
-msgctxt "@action:button Open debug page"
-msgid "Debug"
-msgstr "ניפוי שגיאות"
-
-#: content/ui/Main.qml:495
-#, kde-format
-msgctxt "@action:button Open moderation tools"
-msgid "Moderation Tools"
-msgstr "כלי השגחה"
-
-#: content/ui/Main.qml:522
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "הגדרות"
-
-#: content/ui/Main.qml:534
+#: content/ui/Main.qml:376
 #, kde-format
 msgid "Home"
 msgstr "בית"
 
-#: content/ui/Main.qml:549 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:391 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "התראות"
 
-#: content/ui/Main.qml:580
+#: content/ui/Main.qml:422
 #, kde-format
 msgid "Local"
 msgstr "מקומי"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:437
 #, kde-format
 msgid "Global"
 msgstr "כללי"
 
-#: content/ui/Main.qml:625 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:467 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: content/ui/Main.qml:641
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "Bookmarks"
 msgstr "סימניות"
 
-#: content/ui/Main.qml:671
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#: content/ui/Main.qml:513
+#, kde-format
 msgid "Following"
 msgstr "נעקבים"
 
-#: content/ui/Main.qml:685
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "Search"
 msgstr "חיפוש"
 
-#: content/ui/Main.qml:700
+#: content/ui/Main.qml:542
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "הכרזות"
 
-#: content/ui/Main.qml:715
+#: content/ui/Main.qml:557
 #, kde-format
 msgid "Lists"
 msgstr "רשימות"
 
-#: content/ui/Main.qml:850
+#: content/ui/Main.qml:578
+#, kde-format
+msgctxt "@action:button Open debug page"
+msgid "Debug"
+msgstr "ניפוי שגיאות"
+
+#: content/ui/Main.qml:588
+#, kde-format
+msgctxt "@action:button Open moderation tools"
+msgid "Moderation Tools"
+msgstr "כלי השגחה"
+
+#: content/ui/Main.qml:600
+#, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "הגדרות"
+
+#: content/ui/Main.qml:730
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3043,13 +3066,13 @@ msgstr "פעולות נוספות"
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr ""
+msgstr "פתיחת שרשור"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "פתיחה בדפדפן"
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3368,7 +3391,7 @@ msgid "User"
 msgstr "משתמש"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:336
+#: content/ui/Settings/ProfileEditor.qml:358
 #, kde-format
 msgid "Apply"
 msgstr "החלה"
@@ -3485,57 +3508,101 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "‏PNG,‏ GIF או JPG.‏ 2 מ״ב לכל היותר. יוקטן לגודל 400×400 פיקסלים"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, kde-format
-msgid "Require approval of follow requests"
+#, fuzzy, kde-format
+#| msgid "Require approval of follow requests"
+msgid "Require approval for new followers"
 msgstr "לדרוש אישור לבקשות מעקב"
 
-#: content/ui/Settings/ProfileEditor.qml:264
+#: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
-msgid "This is a bot account"
-msgstr "זה חשבון בוט"
+msgid ""
+"By default new followers are automatically accepted. Uncheck if you want to "
+"manually approve or deny new ones. You always have the option to force "
+"someone to unfollow you."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:272
+#: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
-msgid "Suggest account to others"
-msgstr "הצעת החשבון לאחרים"
+msgid "Is automated"
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:280
+#: content/ui/Settings/ProfileEditor.qml:266
+#, kde-format
+msgid ""
+"Whether to publicly mark this account as doing any kind of automated actions."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:274
+#, fuzzy, kde-format
+#| msgid "Feature This Profile"
+msgid "Feature profile and posts"
+msgstr "הוספת הפרופיל הזה למובילים"
+
+#: content/ui/Settings/ProfileEditor.qml:275
+#, kde-format
+msgid "Your public profile and posts may be featured to other users."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:283
+#, kde-format
+msgid "Publicly list follows and followers"
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:284
+#, kde-format
+msgid "By default everyone you follow and everyone who follows you is public."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Mark uploaded media as sensitive by default"
 msgstr "סימון מדיה שנשלחת כרגישה כברירת מחדל"
 
-#: content/ui/Settings/ProfileEditor.qml:288
+#: content/ui/Settings/ProfileEditor.qml:300
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "שפת רשומות כברירת מחדל"
 
-#: content/ui/Settings/ProfileEditor.qml:309
+#: content/ui/Settings/ProfileEditor.qml:321
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "חשיפת רשומות כברירת מחדל"
 
-#: content/ui/Settings/ProfileEditor.qml:311
+#: content/ui/Settings/ProfileEditor.qml:323
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "ציבורי"
 
-#: content/ui/Settings/ProfileEditor.qml:312
+#: content/ui/Settings/ProfileEditor.qml:324
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "נסתר"
 
-#: content/ui/Settings/ProfileEditor.qml:313
+#: content/ui/Settings/ProfileEditor.qml:325
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "פרטי"
 
-#: content/ui/Settings/ProfileEditor.qml:329
+#: content/ui/Settings/ProfileEditor.qml:336
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu 'Browser' being a web browser"
+#| msgid "Open in Browser"
+msgctxt "@abel Account preferences"
+msgid "Open Server in Browser"
+msgstr "פתיחה בדפדפן"
+
+#: content/ui/Settings/ProfileEditor.qml:337
+#, kde-format
+msgid "Some settings can only be configured on your server's website."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
 msgid "Reset"
 msgstr "איפוס"
@@ -3588,6 +3655,20 @@ msgstr "לאפשר"
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
 msgstr "לסרב"
+
+#: content/ui/SocialGraphPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Unfollow"
+msgctxt "@action:button Deny follow request"
+msgid "Unfollow"
+msgstr "ביטול מעקב"
+
+#: content/ui/SocialGraphPage.qml:83
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgctxt "@action:button Deny follow request"
+msgid "Remove Follower"
+msgstr "אין עוקבים"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -3942,7 +4023,7 @@ msgstr "כדי לצפות בכל התגובות, יש לפתוח את הרשומ
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "פתיחה בדפדפן"
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4053,7 +4134,7 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 ימים"
 
-#: editor/posteditorbackend.cpp:278
+#: editor/posteditorbackend.cpp:282
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "אירעה שגיאה בלתי ידועה."
@@ -4351,7 +4432,7 @@ msgstr "%1 שע׳"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "היום"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4384,6 +4465,15 @@ msgstr[0] "לפני שנה"
 msgstr[1] "לפני שנתיים"
 msgstr[2] "לפני %1 שנה"
 msgstr[3] "לפני %1 שנים"
+
+#~ msgid "Click to add a note"
+#~ msgstr "לחיצה להוספת הערה"
+
+#~ msgid "This is a bot account"
+#~ msgstr "זה חשבון בוט"
+
+#~ msgid "Suggest account to others"
+#~ msgstr "הצעת החשבון לאחרים"
 
 #~ msgctxt "@action:inmenu"
 #~ msgid "Expand Post"
