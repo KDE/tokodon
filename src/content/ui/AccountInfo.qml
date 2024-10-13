@@ -493,7 +493,7 @@ TimelinePage {
 
                                 Kirigami.Heading {
                                     Layout.fillWidth: true
-                                    text: i18n("Note:")
+                                    text: i18nc("@label:textfield", "Private Note:")
                                     level: 5
                                 }
 
