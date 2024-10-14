@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 05:38+0200\n"
+"PO-Revision-Date: 2024-10-13 07:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "ანგარიშზე მიყოლის გაუქმების შეცდომა"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "ანგარიშის უარყოფის შეცდომა"
+msgstr "ანგარიშის წაშლა შეუძლებელია თქვენი მომყოლის სახით"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -192,12 +191,10 @@ msgstr[0] "%1 აწევა"
 msgstr[1] "%1 აწევა"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "მიმდევრები"
+msgstr "ნაცნობი მიმდევრები"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -240,10 +237,9 @@ msgid "No users boosted this post"
 msgstr "ეს პოსტი არც ერთ მომხმარებელს აუწევია"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "მიმდევრების გარეშე"
+msgstr "ნაცნობი მიმდევრების გარეშე"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -353,10 +349,9 @@ msgid "Follows you"
 msgstr "მოგყვებათ"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "აწევა"
+msgstr "ბოტი"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -484,6 +479,7 @@ msgstr "შენახულია"
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
 msgstr ""
+"ჩაწერეთ რამე ამ მომხმარებლის შესახებ. ამას, თქვნ გარდა ვერავინ დაინახავს"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3513,10 +3509,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF ან JPG. მაქს 2 მბ. დაპატარავდება ზომებამდე 400x400px"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "გამოწერის მოთხოვნის დადასტურების აუცილებლობის ჩართვა"
+msgstr "გამოწერის მოთხოვნა ახალი მომყოლებისთვის"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3525,38 +3520,44 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"ნაგულისხმევად ახალი მიმდევრები ავტომატურად დასტურდება. გამორთეთ ეს, თუ "
+"გნებავთ, ისინი ხელით დაადასტუროთ. იმისათვის, რომ ვინმეს აიძულოთ, თქვენი "
+"მიმდევრობა გააუქმოთ, ეს პარამეტრი უნდა გამოიყენოთ."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "ავტომატიზებულია"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"ექნება თუ არა საჯარო ნიშანი ამ ანგარიშს, რომ ის ავტომატიზებულ ქმედებებს "
+"იყენებს."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "ამ პროფილის ჩვენება"
+msgstr "ამ პროფილის და პოსტების ჩვენება"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
-msgstr ""
+msgstr "თქვენი საჯარო პროფილი და პოსტები, შეიძლება სხვა მომხმარებლებმაც ნახონ."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "თქვენი მიყოლების და თქვენზე მიყოლების საჯარო ჩამონათვალი"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"ნაგულისხმევად სია ყველასი, ვისაც თქვენ მისდევთ და ვინც თქვენ მოგდევთ, "
+"საჯაროა."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3595,17 +3596,16 @@ msgid "Private"
 msgstr "პირადი"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "ბრაუზერში გახსნა"
+msgstr "სერვისის ბრაუზერში გახსნა"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"ზოგიერთი პარამეტრი, მხოლოდ, თქვენი სერვერის ვებგვერდზე შეგიძლიათ, მოირგოთ."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3662,18 +3662,16 @@ msgid "Deny"
 msgstr "უარყოფა"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "გამოწერის გაუქმება"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "მიმდევრების გარეშე"
+msgstr "მიმდევრის წაშლა"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

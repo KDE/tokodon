@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 09:45+0300\n"
+"PO-Revision-Date: 2024-10-13 16:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Не вдалося відмовити в обліковому записі"
+msgstr "Не вдалося вилучити обліковий запис з тих, хто стежить"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -196,12 +195,10 @@ msgstr[2] "%1 підсилень"
 msgstr[3] "%1 підсилення"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Ті, хто стежить"
+msgstr "Ті знайомі, хто стежить"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -244,10 +241,9 @@ msgid "No users boosted this post"
 msgstr "Жоден користувач не підсилив цей допис"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Немає тих, хто стежить"
+msgstr "Немає знайомих тих, хто стежить"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -357,10 +353,9 @@ msgid "Follows you"
 msgstr "Стежить за вами"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Підсилення"
+msgstr "Бот"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -488,6 +483,8 @@ msgstr "Збережено"
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
 msgstr ""
+"Запишіть щось щодо цього користувача. Ці дані не буде показано нікому, окрім "
+"вас."
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3541,10 +3538,9 @@ msgstr ""
 "400x400 пк."
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Вимагати підтвердження вказаних нижче запитів"
+msgstr "Вимагати підтвердження для нових охочих стежити"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3553,38 +3549,47 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Типово, система автоматично прийматиме усіх нових користувачів, які вирішать "
+"стежити за вами. Зніміть позначку, якщо ви хочете вручну затверджувати або "
+"відкидати користувачів. У вас завжди лишатиметься можливість скасувати чиєсь "
+"стеження за вами у примусовому режимі."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Автоматизовано"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Визначає, чи слід позначати цей обліковий запис як такий, дії якого "
+"автоматизовано, для усіх."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Рекомендувати цей профіль"
+msgstr "Рекомендувати профіль та дописи"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Ваш загальнодоступний профіль та дописи може бути рекомендовано іншим "
+"користувачам."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Загальнодоступний список стежень та тих, хто стежить"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"Типово, список усіх, за ким ви стежите, і тих, хто стежить за вами, є "
+"загальнодоступним."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3623,17 +3628,15 @@ msgid "Private"
 msgstr "Особисте"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Відкрити у переглядачі"
+msgstr "Відкрити сервер у переглядачі"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "Деякі параметри можна налаштувати лише на сайті вашого сервера."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3690,18 +3693,16 @@ msgid "Deny"
 msgstr "Відмовити"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Зняти слідкування"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Немає тих, хто стежить"
+msgstr "Вилучити того, хто стежить"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

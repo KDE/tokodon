@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 17:43+0200\n"
+"PO-Revision-Date: 2024-10-13 06:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -31,10 +31,9 @@ msgid "Could not unfollow account"
 msgstr "Ezin izan dio kontuari jarraitzen utzi"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Ezin izan du kontua errefusatu"
+msgstr "Ezin izan du kontua zure jarraitzaile izatetik kendu"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -195,12 +194,10 @@ msgstr[0] "Goratze %1"
 msgstr[1] "%1 goratze"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Jarraitzaileak"
+msgstr "Jarraitzaile ezagunak"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -243,10 +240,9 @@ msgid "No users boosted this post"
 msgstr "Erabiltzaile bakar batek ere ez du posta hori goratu"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Jarraitzailerik ez"
+msgstr "Jarraitzaile ezagunik ez"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -357,10 +353,9 @@ msgid "Follows you"
 msgstr "Jarraitzen zaitu"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Goratu"
+msgstr "Bota"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -489,6 +484,8 @@ msgstr "Gordeta"
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
 msgstr ""
+"Idatz ezazu erabiltzaile honi buruzko zerbait, zuretzako bakarrik egongo da "
+"ikusgai"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3522,10 +3519,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF edo JPG. Gehienez 2 MB. Eskala 400x400px-era txikituko da"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Eskatu jarraipen eskarien onarpena"
+msgstr "Jarraitzaile berrietarako onarpena eskatu"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3534,38 +3530,45 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Era lehenetsian, jarraitzaileak automatikoki onartzen dira. Marka kendu, "
+"berriak eskuz onartu edo ukatu nahi badituzu. Beti duzu norbaitek zu ez "
+"jarraitzea behartzeko aukera."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Automatizatuta dago"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Kontu hau, automatizatutako ekintzaren bat egiten duela gisa publikoki "
+"markatu behar den."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Nabarmendu profil hau"
+msgstr "Nabarmendu profila eta postak"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Zure profil publikoa eta postak beste erabiltze batzuentzat nabarmenduta "
+"ager daitezke."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Publikoki zerrendatu jarraitzen dituenak eta jarraitzaileak"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"Era lehenetsian, jarraitzen duzun edo jarraitzen zaituen oro publikoa da."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3605,17 +3608,16 @@ msgid "Private"
 msgstr "Pribatua"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Ireki arakatzailean"
+msgstr "Ireki Zerbitzaria arakatzailean"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"Ezarpen batzuk zure zerbitzariaren webgunean bakarrik konfiguratu daitezke."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3672,18 +3674,16 @@ msgid "Deny"
 msgstr "Ukatu"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
-msgstr " jarraitzeari utzi"
+msgstr "Jarraitzeari utzi"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Jarraitzailerik ez"
+msgstr "Kendu jarraitzailea"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

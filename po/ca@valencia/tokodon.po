@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-02 10:21+0200\n"
+"PO-Revision-Date: 2024-10-12 11:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -719,9 +719,7 @@ msgid "%1 signed up"
 msgstr "%1 s'ha registrat"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Seguint"
@@ -733,15 +731,13 @@ msgid "Filters"
 msgstr "Filtres"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Mostra els impulsos"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Mostra les respostes"
@@ -749,7 +745,7 @@ msgstr "Mostra les respostes"
 #: content/ui/FollowingPage.qml:193
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "No s'ha seleccionat cap usuari"
 
 #: content/ui/FollowingPage.qml:194
 #, kde-format
@@ -757,6 +753,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"Amb la vista de Seguint, comproveu amb facilitat cada usuari que seguiu i "
+"només les seues publicacions, ordenades per activitat recent."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1281,9 +1279,7 @@ msgid "Bookmarks"
 msgstr "Punts"
 
 #: content/ui/Main.qml:513
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgid "Following"
 msgstr "Seguint"
 
@@ -3086,13 +3082,13 @@ msgstr "Més accions"
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr ""
+msgstr "Obri un fil"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Obri en el navegador"
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3613,10 +3609,12 @@ msgid "Private"
 msgstr "Privat"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu 'Browser' being a web browser"
+#| msgid "Open in Browser"
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr ""
+msgstr "Obri en el navegador"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
@@ -4047,7 +4045,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Obri en el navegador"
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4454,7 +4452,7 @@ msgstr "%1h"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Hui"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4481,23 +4479,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
-
-#~ msgid "Click to add a note"
-#~ msgstr "Feu clic per a afegir una nota"
-
-#~ msgid "This is a bot account"
-#~ msgstr "Este és un compte de bot"
-
-#~ msgid "Suggest account to others"
-#~ msgstr "Suggerix el compte a altres"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Expandix la publicació"
-
-#~ msgid "Open Original Page"
-#~ msgstr "Obri la pàgina original"
-
-#~ msgctxt "@action:button"
-#~ msgid "Open Original Page"
-#~ msgstr "Obri la pàgina original"

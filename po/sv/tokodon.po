@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 19:20+0200\n"
+"PO-Revision-Date: 2024-10-13 21:44+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -28,10 +28,9 @@ msgid "Could not unfollow account"
 msgstr "Kunde inte sluta följa konto"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Kunde inte avvisa konto"
+msgstr "Kunde inte ta bort konto som din följare"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -189,12 +188,10 @@ msgstr[0] "%1 förstärkning"
 msgstr[1] "%1 förstärkningar"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Följare"
+msgstr "Bekanta följare"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -237,10 +234,9 @@ msgid "No users boosted this post"
 msgstr "Inga användare har förstärkt inlägget"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Inga följare"
+msgstr "Inga bekanta följare"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -351,10 +347,9 @@ msgid "Follows you"
 msgstr "Följer dig"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Förstärk"
+msgstr "Bot"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -482,6 +477,7 @@ msgstr "Sparad"
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
 msgstr ""
+"Skriv ner något om användaren, det är inte synligt för någon annan en dig"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3511,10 +3507,9 @@ msgstr ""
 "bildpunkter."
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Kräv godkännande av förfrågningar om att följa"
+msgstr "Kräv godkännande för nya följare"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3523,38 +3518,42 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Normalt accepteras nya följare automatiskt. Avmarkera om du vill godkänna "
+"eller neka nya manuellt. Du har alltid möjlighet att tvinga någon att sluta "
+"följa dig."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "är automatiserat"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Om det här kontot ska öppet markeras att det utför någon form av automatiska "
+"åtgärder."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Välj ut profil"
+msgstr "Utvald profil och inlägg"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
-msgstr ""
+msgstr "Din öppna profil och inlägg kan utväljas för andra användare."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Lista öppet följer och följare"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
+msgstr "Normalt är alla du följer och alla som följer dig öppna."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3593,17 +3592,15 @@ msgid "Private"
 msgstr "Privat"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Öppna i webbläsare"
+msgstr "Öppna server i webbläsare"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "Vissa inställningar kan bara anpassas på serverns webbplats."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3660,18 +3657,16 @@ msgid "Deny"
 msgstr "Neka"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Sluta följ"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Inga följare"
+msgstr "Ta bort följare"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

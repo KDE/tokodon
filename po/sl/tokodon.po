@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 08:52+0200\n"
+"PO-Revision-Date: 2024-10-13 08:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -30,10 +30,9 @@ msgid "Could not unfollow account"
 msgstr "Ni bilo mogoče prenehati slediti računu"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Ni bilo mogoče zavrniti računa"
+msgstr "Ni bilo mogoče odstraniti računa kot vašega sledivca"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -195,12 +194,10 @@ msgstr[2] "%1 izpostavitvi"
 msgstr[3] "%1 izpostavitve"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Sledilci"
+msgstr "Znani sledilci"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -243,10 +240,9 @@ msgid "No users boosted this post"
 msgstr "Ni uporabnika, ki bi izpostavil to objavo"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Ni sledilcev"
+msgstr "Ni znanih sledilcev"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -357,10 +353,9 @@ msgid "Follows you"
 msgstr "Vam sledi"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Izpostavi"
+msgstr "Bot"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -487,7 +482,7 @@ msgstr "Shranjeno"
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
-msgstr ""
+msgstr "Zapiši nekaj o tem uporabniku, to ni vidno nikomur razen vam"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3529,10 +3524,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF ali JPG. Največ 2 MB. Zmanjšana bo na 400×400 pik"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Zahtevaj odobritev zahtev za sledenje"
+msgstr "Zahtevaj odobritev za nove sledilce"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3541,38 +3535,41 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Privzeto so novi sledilci samodejno sprejeti. Počistite polje, če želite "
+"ročno odobriti ali zavrniti nove. Vedno imate možnost nekoga prisiliti, da "
+"vam preneha slediti."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Je samodejen"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Ali naj ta račun javno označi, da izvaja kakršna koli samodejna dejanja."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Predstavi ta profil"
+msgstr "Predstavi profil in objave"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
-msgstr ""
+msgstr "Vaš javni profil in objave so lahko predstavljene drugim uporabnikom."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Javno seznam sledenih in sledilcev"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
+msgstr "Privzeto so javni vsi, ki jim sledite, in vsi, ki sledijo vam."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3611,17 +3608,17 @@ msgid "Private"
 msgstr "Zasebno"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Odpri v brskalniku"
+msgstr "Odpri strežnik v brskalniku"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"Nekatere nastavitve je mogoče konfigurirati samo na spletnem mestu vašega "
+"strežnika."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3678,18 +3675,16 @@ msgid "Deny"
 msgstr "Zavrni"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Prenehaj slediti"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Ni sledilcev"
+msgstr "Odstrani sledilca"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format

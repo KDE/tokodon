@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 13:03+0300\n"
+"PO-Revision-Date: 2024-10-13 12:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "Hesap takipten çıkarılamadı"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Hesap reddedilemedi"
+msgstr "Hesap takipçilerinizden kaldırılamadı"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -190,12 +189,10 @@ msgstr[0] "%1 boost"
 msgstr[1] "%1 boost"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Takip Edilenler"
+msgstr "Tanıdık Takipçiler"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -238,10 +235,9 @@ msgid "No users boosted this post"
 msgstr "Bu gönderiyi hiçbir kullanıcı boostlamadı"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Takipçisi yok"
+msgstr "Tanıdık takipçi yok"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -352,10 +348,9 @@ msgid "Follows you"
 msgstr "Sizi takip ediyor"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Boostla"
+msgstr "Bot"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -483,6 +478,7 @@ msgstr "Kaydedildi"
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you"
 msgstr ""
+"Bu kullanıcı hakkında bir şeyler yazın; bunu yalnızca siz görebilirsiniz."
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3509,10 +3505,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF veya JPG. En çok 2 MB. 400 × 400 pks olarak ölçeklendirilir"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Takip isteklerinin onayını gerektir"
+msgstr "Yeni takipçiler için onay gerektir"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3521,38 +3516,46 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Öntanımlı olarak yeni takipçiler kendiliğinden kabul edilirler. Yeni "
+"kullanıcıları elle onaylamak veya reddetmek için işaretini kaldırın. "
+"Birisinin sizi takipten çıkarmasını istediğiniz zaman zorlayabilirsiniz."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Otomatikleştirilmiş"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Bu hesabın herkese açık olarak otomatikleştirilmiş eylemlerde bulunup "
+"bulunmadığını imleyin."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Bu Profili Tanıt"
+msgstr "Profili ve gönderileri öne çıkar"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Sizin herkese açık profiliniz ve başka kullanıcılar için öne çıkarılabilecek "
+"gönderileriniz."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Takipçileri ve takip edilenleri herkese açık olarak listele"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"Öntanımlı olarak, takip ettiğiniz ve sizi takip eden herkesi tüm "
+"kullanıcılar görebilir."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3591,17 +3594,15 @@ msgid "Private"
 msgstr "Özel"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Tarayıcıda Aç"
+msgstr "Sunucuyu tarayıcıda aç"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "Bazı ayarlar yalnızca sunucunuzun web sitesinden yapılandırılabilir."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3658,18 +3659,16 @@ msgid "Deny"
 msgstr "Reddet"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Takibi Bırak"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Takipçisi yok"
+msgstr "Takipçiyi Kaldır"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
