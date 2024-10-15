@@ -23,33 +23,18 @@ option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" $
 set(KF_MIN_VERSION "6.5.0")
 set(QT_MIN_VERSION "6.6")
 
-find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
+include(FeatureSummary)
+
+find_package(ECM ${KF_MIN_VERSION} NO_MODULE)
+set_package_properties(ECM PROPERTIES
+    TYPE REQUIRED
+    URL "https://api.kde.org/ecm/"
+    DESCRIPTION "extra cmake modules")
 
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-include(FeatureSummary)
-include(ECMSetupVersion)
-include(KDEInstallDirs)
-include(ECMFindQmlModule)
-include(KDEClangFormat)
-include(ECMQtDeclareLoggingCategory)
-include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
-include(ECMAddTests)
-include(KDEGitCommitHooks)
-include(ECMQmlModule)
-
-if (ANDROID)
-    include(ECMAddAndroidApk)
-endif ()
-
-ecm_setup_version(${PROJECT_VERSION}
-    VARIABLE_PREFIX TOKODON
-    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
-)
 
 find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
 set_package_properties(Qt6 PROPERTIES
@@ -76,7 +61,7 @@ set_package_properties(KF6Crash PROPERTIES
         PURPOSE "For crash handling"
 )
 
-find_package(KF6KirigamiAddons 1.1.0 REQUIRED)
+find_package(KF6KirigamiAddons 1.1.0)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components and runtime dependency"
@@ -116,39 +101,48 @@ if (SAILFISHOS OR ANDROID)
             PURPOSE "Preferred Qt Quick Controls style"
     )
 else()
-    find_package(KF6QQC2DesktopStyle REQUIRED)
+    find_package(KF6QQC2DesktopStyle)
     set_package_properties(KF6QQC2DesktopStyle PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Preferred Qt Quick Controls style"
     )
 endif()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+    find_package(KF6KIO ${KF_MIN_VERSION})
     set_package_properties(KF6KIO PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Sharing content and downloading files"
     )
 endif ()
 
 if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+    find_package(KF6Purpose ${KF_MIN_VERSION})
     set_package_properties(KF6Purpose PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Sharing content from other KDE applications"
     )
 endif ()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
-    find_package(KF6DBusAddons ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6DBusAddons ${KF_MIN_VERSION})
     set_package_properties(KF6DBusAddons PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Single application support"
     )
-    find_package(KF6WindowSystem ${KF_MIN_VERSION} REQUIRED)
+    find_package(KF6WindowSystem ${KF_MIN_VERSION})
     set_package_properties(KF6WindowSystem PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Misc windowing operations"
     )
 endif ()
 
 if (USE_QTMULTIMEDIA)
-    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
+    find_package(Qt6Multimedia ${QT_MIN_VERSION})
+    set_package_properties(Qt6Multimedia PROPERTIES
+            TYPE REQUIRED
+            PURPOSE "Video playback"
+    )
 else()
     find_package(MpvQt)
     set_package_properties(MpvQt PROPERTIES
@@ -156,6 +150,28 @@ else()
             TYPE REQUIRED
     )
 endif()
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+include(ECMSetupVersion)
+include(KDEInstallDirs)
+include(ECMFindQmlModule)
+include(KDEClangFormat)
+include(ECMQtDeclareLoggingCategory)
+include(KDECMakeSettings)
+include(KDECompilerSettings NO_POLICY_SCOPE)
+include(ECMAddTests)
+include(KDEGitCommitHooks)
+include(ECMQmlModule)
+
+if (ANDROID)
+    include(ECMAddAndroidApk)
+endif ()
+
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX TOKODON
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
+)
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 
@@ -182,8 +198,6 @@ ecm_qt_install_logging_categories(
     FILE tokodon.categories
     SORT DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
-
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES src/*.cpp src/*.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
