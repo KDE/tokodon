@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 08:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -469,9 +469,11 @@ msgid "Profile link copied."
 msgstr "Povezava profila prekopirana."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Opomba:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Zasebni komentar"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -479,9 +481,11 @@ msgid "Saved"
 msgstr "Shranjeno"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr "Zapiši nekaj o tem uporabniku, to ni vidno nikomur razen vam"
 
 #: content/ui/AccountInfo.qml:630
@@ -4482,6 +4486,9 @@ msgstr[0] "pred %1 leti"
 msgstr[1] "pred %1 letom"
 msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
+
+#~ msgid "Note:"
+#~ msgstr "Opomba:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Kliknite za dodajanje opombe"

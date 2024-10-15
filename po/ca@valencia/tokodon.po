@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 11:44+0200\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
+"PO-Revision-Date: 2024-10-13 19:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -32,10 +32,9 @@ msgid "Could not unfollow account"
 msgstr "No s'ha pogut desfer el seguiment del compte"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "No s'ha pogut rebutjar el compte"
+msgstr "No s'ha pogut eliminar el compte com a seguidor vostre"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -193,12 +192,10 @@ msgstr[0] "%1 impuls"
 msgstr[1] "%1 impulsos"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Seguidors"
+msgstr "Seguidors familiars"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -241,10 +238,9 @@ msgid "No users boosted this post"
 msgstr "Cap usuari ha impulsat esta publicació"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Sense seguidors"
+msgstr "Sense seguidors familiars"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -356,10 +352,9 @@ msgid "Follows you"
 msgstr "Vos seguix"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Impulsa"
+msgstr "Bot"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -473,9 +468,11 @@ msgid "Profile link copied."
 msgstr "S'ha copiat l'enllaç del perfil."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Nota:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Comentari privat"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -483,10 +480,13 @@ msgid "Saved"
 msgstr "Guardat"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
+"Escriviu alguna cosa sobre este usuari, açò no és visible a ningú més que vós"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3525,10 +3525,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF o JPG. Màxim 2 MB. L'escala es reduirà a 400x400px"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Requerix l'aprovació de sol·licituds de seguiment"
+msgstr "Requerix l'aprovació dels seguidors nous"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3537,38 +3536,44 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"De manera predeterminada s'accepten automàticament seguidors nous. "
+"Desmarqueu-la si voleu aprovar manualment o denegar-ne els nous. Sempre "
+"teniu l'opció d'obligar algú a no seguir-vos."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "És automatitzat"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Si s'ha de marcar públicament este compte com si estiguera fent qualsevol "
+"classe d'acció automatitzada."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Destaca este perfil"
+msgstr "Destaca el perfil i les publicacions"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"El vostre perfil públic i les publicacions poden aparéixer a altres usuaris."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Llista públicament els seguits i els seguidors"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"De manera predeterminada, tothom a qui seguiu i qui vos seguix és públic."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3609,17 +3614,16 @@ msgid "Private"
 msgstr "Privat"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "Obri en el navegador"
+msgstr "Obri el servidor en el navegador"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"Alguns paràmetres només es poden configurar en el lloc web del servidor."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3676,18 +3680,16 @@ msgid "Deny"
 msgstr "Denega"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Deixa de seguir"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Sense seguidors"
+msgstr "Elimina el seguidor"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -4479,3 +4481,6 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
+
+#~ msgid "Note:"
+#~ msgstr "Nota:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-09 21:07+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -473,9 +473,11 @@ msgid "Profile link copied."
 msgstr "Posta saite ir nokopēta."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Piezīme:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Privāts komentārs"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -485,7 +487,7 @@ msgstr "Saglabāts"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -4485,6 +4487,9 @@ msgid_plural "%1 years ago"
 msgstr[0] "Pirms %1 gada"
 msgstr[1] "Pirms %1 gadiem"
 msgstr[2] "Pirms %1 gadiem"
+
+#~ msgid "Note:"
+#~ msgstr "Piezīme:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Klikšķiniet, lai pievienotu piezīmi"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 06:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -470,9 +470,11 @@ msgid "Profile link copied."
 msgstr "Profileko esteka kopiatu da."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Oharra:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Iruzkin pribatua"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -480,9 +482,11 @@ msgid "Saved"
 msgstr "Gordeta"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "Idatz ezazu erabiltzaile honi buruzko zerbait, zuretzako bakarrik egongo da "
 "ikusgai"
@@ -4476,6 +4480,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Duela urtebete"
 msgstr[1] "Duela %1 urte"
+
+#~ msgid "Note:"
+#~ msgstr "Oharra:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Egin klik ohar bat gehitzeko"

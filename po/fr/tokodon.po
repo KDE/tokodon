@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-03 07:17+0200\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
+"PO-Revision-Date: 2024-10-13 18:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -469,9 +469,11 @@ msgid "Profile link copied."
 msgstr "Lien du profil copié."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Remarques :"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Commentaire privé"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -481,7 +483,7 @@ msgstr "Enregistré"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -715,9 +717,7 @@ msgid "%1 signed up"
 msgstr "%1 s'est inscrit"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Suivant"
@@ -729,15 +729,13 @@ msgid "Filters"
 msgstr "Filtres"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "Afficher les coups de pouce"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Afficher les réponses"
@@ -745,7 +743,7 @@ msgstr "Afficher les réponses"
 #: content/ui/FollowingPage.qml:193
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "Aucun utilisateur n'est sélectionné. "
 
 #: content/ui/FollowingPage.qml:194
 #, kde-format
@@ -753,6 +751,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"Avec la vue « Suivante », vérifier facilement chaque utilisateur que vous "
+"suivez et uniquement ses messages - triés par activité récente."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -3077,18 +3077,16 @@ msgid "More actions"
 msgstr "Plus d'actions"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Thread"
+#, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr "Fil d'exécution "
+msgstr "Ouvrir un fil de discussions "
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Ouvrir dans un navigateur"
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -4049,7 +4047,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Ouvrir dans un navigateur"
 
 #: content/ui/TimelinePage.qml:250
 #, kde-format
@@ -4457,7 +4455,7 @@ msgstr "%1 h"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Aujourd’hui"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4484,6 +4482,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Il y a une année"
 msgstr[1] "Il y a %1 années"
+
+#~ msgid "Note:"
+#~ msgstr "Remarques :"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Cliquer pour ajouter une note"

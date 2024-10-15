@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 16:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -469,9 +469,11 @@ msgid "Profile link copied."
 msgstr "Посилання на профіль скопійовано."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Примітка:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Конфіденційний коментар"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -479,9 +481,11 @@ msgid "Saved"
 msgstr "Збережено"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "Запишіть щось щодо цього користувача. Ці дані не буде показано нікому, окрім "
 "вас."
@@ -4503,6 +4507,9 @@ msgstr[0] "%1 рік тому"
 msgstr[1] "%1 роки тому"
 msgstr[2] "%1 років тому"
 msgstr[3] "1 рік тому"
+
+#~ msgid "Note:"
+#~ msgstr "Примітка:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Натисніть, щоб додати нотатку"

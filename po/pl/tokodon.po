@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-05 12:22+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -472,9 +472,11 @@ msgid "Profile link copied."
 msgstr "Skopiowano odnośnik do profilu."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Notatka:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Prywatna uwaga"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -484,7 +486,7 @@ msgstr "Zapisany"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -4482,6 +4484,9 @@ msgid_plural "%1 years ago"
 msgstr[0] "1 rok temu"
 msgstr[1] "%1 lata temu"
 msgstr[2] "%1 lat temu"
+
+#~ msgid "Note:"
+#~ msgstr "Notatka:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Naciśnij, aby dodać uwagę"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 21:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -463,9 +463,11 @@ msgid "Profile link copied."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "الملاحظة:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "تعليق خاص"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -475,7 +477,7 @@ msgstr "محفوظ"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -492,7 +494,11 @@ msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "المتابعين"
+msgstr[2] "المتابعين"
+msgstr[3] "المتابعين"
+msgstr[4] "المتابعين"
+msgstr[5] "المتابعين"
 
 #: content/ui/AccountInfo.qml:656
 #, kde-format
@@ -500,7 +506,11 @@ msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "تتبع"
+msgstr[2] "تتبع"
+msgstr[3] "تتبع"
+msgstr[4] "تتبع"
+msgstr[5] "تتبع"
 
 #: content/ui/AccountInfo.qml:683
 #, kde-format
@@ -4017,7 +4027,11 @@ msgstr "%1 و%2"
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] " و واحد أخر"
+msgstr[2] " واثنين آخرين"
+msgstr[3] " و%1 أخرى"
+msgstr[4] " و%1 أخرى"
+msgstr[5] " و%1 أخرى"
 
 #: editor/listeditorbackend.cpp:109
 #, kde-format
@@ -4401,4 +4415,11 @@ msgstr[1] ""
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] ""
-msgstr[1] ""
+msgstr[1] "من 30 سنة"
+msgstr[2] "من 30 سنة"
+msgstr[3] "من 30 سنة"
+msgstr[4] "من 30 سنة"
+msgstr[5] "من 30 سنة"
+
+#~ msgid "Note:"
+#~ msgstr "الملاحظة:"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-08-21 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -474,9 +474,11 @@ msgid "Profile link copied."
 msgstr "프로필 링크를 복사했습니다."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "메모:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "비밀 설명"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -486,7 +488,7 @@ msgstr "저장됨"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -4476,6 +4478,9 @@ msgstr[0] "%1개월 전"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
+
+#~ msgid "Note:"
+#~ msgstr "메모:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "메모를 추가하려면 클릭하십시오"

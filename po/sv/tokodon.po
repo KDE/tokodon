@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-10-13 21:44+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -463,9 +463,11 @@ msgid "Profile link copied."
 msgstr "Profillänk kopierad."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Anmärkning:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Privat kommentar"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -473,9 +475,11 @@ msgid "Saved"
 msgstr "Sparad"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "Skriv ner något om användaren, det är inte synligt för någon annan en dig"
 
@@ -4457,6 +4461,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "för 1 år sedan"
 msgstr[1] "för %1 år sedan"
+
+#~ msgid "Note:"
+#~ msgstr "Anmärkning:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Klicka för att lägga till en anmärkning"

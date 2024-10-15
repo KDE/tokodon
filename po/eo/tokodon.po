@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-09-18 19:03+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -473,9 +473,11 @@ msgid "Profile link copied."
 msgstr "Profilligilo kopiita."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Noto:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Privata Komento"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -485,7 +487,7 @@ msgstr "Konservita"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -4479,6 +4481,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Antaŭ unu jaro"
 msgstr[1] "Antaŭ %1 jaroj"
+
+#~ msgid "Note:"
+#~ msgstr "Noto:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Klaku por aldoni noton"

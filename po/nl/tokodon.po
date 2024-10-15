@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 15:47+0200\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
+"PO-Revision-Date: 2024-10-14 11:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: account/abstractaccount.cpp:660
 #, kde-format
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "Moest het account volgen "
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Kon account niet afwijzen"
+msgstr "Kon account niet als uw volger niet verwijderen"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -192,12 +191,10 @@ msgstr[0] "Oppepper"
 msgstr[1] "%1 oppeppers"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Volgers"
+msgstr "Familiaire volgers"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -240,10 +237,9 @@ msgid "No users boosted this post"
 msgstr "Geen gebruikers hebben dit bericht opgepept"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Geen volgers"
+msgstr "Geen familiaire volgers"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -355,10 +351,9 @@ msgid "Follows you"
 msgstr "Volgt u"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Oppepper"
+msgstr "Bot"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -472,9 +467,11 @@ msgid "Profile link copied."
 msgstr "Koppeling naar profiel gekopieerd."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "Notitie:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Privé commentaar"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -482,10 +479,12 @@ msgid "Saved"
 msgstr "Opgeslagen"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
-msgstr ""
+"Write down something about this user, this isn't visible to anyone but you."
+msgstr "Schrijf iets neer over deze gebruiker, dit is alleen zichtbaar voor u"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3519,10 +3518,9 @@ msgstr ""
 "PNG, GIF of JPG. Hoogstens 2 MB. Zal omlaag geschaald worden naar 400x400px"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Vereist toestemming om verzoeken te volgen"
+msgstr "Toestemming vereisen voor nieuwe volgers"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3531,38 +3529,44 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Standaard worden nieuwe volgers automatisch geaccepteerd. Deactiveer als u "
+"handmatig nieuwe wilt toestemmen of afwijzen. U hebt altijd de optie om "
+"iemand het volgen te ontnemen."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "Is geautomatiseerd"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Of dit account publiekelijk gemarkeerd wordt als het doen van elk soort van "
+"geautomatiseerde acties."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Dit profiel aanbevelen"
+msgstr "Profiel van mogelijkheden en berichten"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Uw publieke profiel en berichten kan mogelijk gemaakt worden voor andere "
+"gebruikers."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Publieke lijst met wie volgt en volgers"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
+msgstr "Standaard is iedereen die u volgt en iedereen die u volgt publiek."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3601,17 +3605,17 @@ msgid "Private"
 msgstr "Privé"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "In browser openen"
+msgstr "Server in browser openen"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
+"Sommige instellingen kunnen alleen geconfigureerd worden op de website van "
+"uw server."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3668,18 +3672,16 @@ msgid "Deny"
 msgstr "Weigeren"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
-msgstr "Volgen uitschakelen"
+msgstr "Volgen ontnemen"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Geen volgers"
+msgstr "Volger verwijderen"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -4470,6 +4472,9 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 jaar geleden"
 msgstr[1] "%1 jaren geleden"
+
+#~ msgid "Note:"
+#~ msgstr "Notitie:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Klik om notitie toe te voegen"

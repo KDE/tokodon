@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
-"PO-Revision-Date: 2024-10-12 07:40+0300\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
+"PO-Revision-Date: 2024-10-14 21:03+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "לא ניתן לבטל מעקב אחרי חשבון"
 
 #: account/abstractaccount.cpp:662
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "לא ניתן לדחות חשבון"
+msgstr "לא ניתן להסיר חשבון כעוקב שלך"
 
 #: account/abstractaccount.cpp:663
 #, kde-format
@@ -194,12 +193,10 @@ msgstr[2] "%1 עידודים"
 msgstr[3] "%1 עידודים"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "עוקבים"
+msgstr "עוקבים ידועים"
 
 #: account/socialgraphmodel.cpp:52
 #, kde-format
@@ -242,10 +239,9 @@ msgid "No users boosted this post"
 msgstr "אף משתמש לא עודד את הרשומה הזאת"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "אין עוקבים"
+msgstr "אין עוקבים ידועים"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -355,10 +351,9 @@ msgid "Follows you"
 msgstr "במעקב אחריך"
 
 #: content/ui/AccountInfo.qml:146
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "עידוד"
+msgstr "בוט"
 
 #: content/ui/AccountInfo.qml:242
 #, kde-format
@@ -472,9 +467,11 @@ msgid "Profile link copied."
 msgstr "הקישור לפרופיל הועתק."
 
 #: content/ui/AccountInfo.qml:496
-#, kde-format
-msgid "Note:"
-msgstr "הערה:"
+#, fuzzy, kde-format
+#| msgid "Private Comment"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "הערה פרטית"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -482,10 +479,12 @@ msgid "Saved"
 msgstr "נשמר"
 
 #: content/ui/AccountInfo.qml:519
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Write down something about this user, this isn't visible to anyone but you"
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
-msgstr ""
+"Write down something about this user, this isn't visible to anyone but you."
+msgstr "נא לכתוב משהו על המשתמש הזה, זה לא יהיה חשוף לאף אחד אחר"
 
 #: content/ui/AccountInfo.qml:630
 #, kde-format
@@ -3508,10 +3507,9 @@ msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "‏PNG,‏ GIF או JPG.‏ 2 מ״ב לכל היותר. יוקטן לגודל 400×400 פיקסלים"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "לדרוש אישור לבקשות מעקב"
+msgstr "לדרוש אישור לעוקבים חדשים"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3520,38 +3518,42 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"כברירת מחדל עוקבים חדשים מתקבלים אוטומטית. יש לבטל את הסימון הזה כדי לאשר או "
+"לדחות ידנית עוקבים חדשים. תמיד אפשר לאלץ מישהו או מישהי להפסיק לעקוב אחריך."
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "אוטומטי"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"האם לסמן את החשבון הזה באופן ציבורי ככזה שמבצע סוג כלשהו של משימות אוטומטיות."
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "הוספת הפרופיל הזה למובילים"
+msgstr "לאפשר הצגת הפרופיל והרשומות כמובילים"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"הפרופיל והרשומות הציבוריות שלך יכולות להופיע כמומלצות בפני משתמשים אחרים."
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "להציג את העוקבים והנעקבים באופן ציבורי"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
 msgstr ""
+"כברירת מחדל כל מי שבחרו לעקוב אחריך ובחרת לעקוב אחריהם יהיו חשופים לציבור."
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3590,17 +3592,15 @@ msgid "Private"
 msgstr "פרטי"
 
 #: content/ui/Settings/ProfileEditor.qml:336
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu 'Browser' being a web browser"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr "פתיחה בדפדפן"
+msgstr "לפתוח את השרת בדפדפן"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "חלק מההגדרות ניתן להגדיר רק דרך אתר השרת שלך."
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3657,18 +3657,16 @@ msgid "Deny"
 msgstr "לסרב"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "אין עוקבים"
+msgstr "הסרת מעקב"
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -4465,6 +4463,9 @@ msgstr[0] "לפני שנה"
 msgstr[1] "לפני שנתיים"
 msgstr[2] "לפני %1 שנה"
 msgstr[3] "לפני %1 שנים"
+
+#~ msgid "Note:"
+#~ msgstr "הערה:"
 
 #~ msgid "Click to add a note"
 #~ msgstr "לחיצה להוספת הערה"

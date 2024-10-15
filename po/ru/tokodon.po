@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-13 00:39+0000\n"
+"POT-Creation-Date: 2024-10-15 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:06+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -505,9 +505,10 @@ msgstr ""
 
 #: content/ui/AccountInfo.qml:496
 #, fuzzy, kde-format
-#| msgid "Note"
-msgid "Note:"
-msgstr "Заметка"
+#| msgid "Private"
+msgctxt "@label:textfield"
+msgid "Private Note:"
+msgstr "Только для подписчиков"
 
 #: content/ui/AccountInfo.qml:504
 #, kde-format
@@ -517,7 +518,7 @@ msgstr "Сохранено"
 #: content/ui/AccountInfo.qml:519
 #, kde-format
 msgid ""
-"Write down something about this user, this isn't visible to anyone but you"
+"Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
@@ -4743,6 +4744,11 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
+
+#, fuzzy
+#~| msgid "Note"
+#~ msgid "Note:"
+#~ msgstr "Заметка"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Нажмите, чтобы добавить заметку"
