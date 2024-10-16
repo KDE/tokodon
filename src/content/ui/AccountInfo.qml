@@ -22,10 +22,10 @@ Kirigami.Page {
     property var postsBar
     property string selectedTag
 
-    readonly property var currentIndex: postsBar ? postsBar.currentIndex : 0
-    readonly property bool onPostsTab: accountInfo.currentIndex === 0
-    readonly property bool onRepliesTab: accountInfo.currentIndex === 1
-    readonly property bool onMediaTab: accountInfo.currentIndex === 2
+    property var currentIndex: 0
+    readonly property bool onPostsTab: currentIndex === 0
+    readonly property bool onRepliesTab: currentIndex === 1
+    readonly property bool onMediaTab: currentIndex === 2
 
     readonly property bool canExcludeBoosts: accountInfo.onPostsTab || accountInfo.onRepliesTab
     property alias excludeBoosts: accountModel.excludeBoosts
@@ -43,16 +43,40 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
     }
 
+    Connections {
+        target: postsBar
+        enabled: postsBar !== null
+
+        function onCurrentIndexChanged(): void {
+            accountInfo.currentIndex = postsBar.currentIndex;
+        }
+    }
+
+    function updateTabs(): void {
+        stackLayout.children[stackLayout.currentIndex].contentItem.headerItem.activateBar();
+        postsBar.currentIndex = accountInfo.currentIndex;
+    }
+
     StackLayout {
-        currentIndex: accountInfo.onMediaTab ? 1 : 0
+        id: stackLayout
+
+        currentIndex: accountInfo.currentIndex === 2 ? 1 : 0
 
         anchors.fill: parent
 
         implicitHeight: children[currentIndex].implicitHeight
 
+        onCurrentIndexChanged: accountInfo.updateTabs()
+
+        Component.onCompleted: accountInfo.updateTabs()
+
         QQC2.ScrollView {
+            clip: true
+
             TimelineView {
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+                header: AccountHeader {}
 
                 model: AccountModel {
                     id: accountModel
@@ -65,12 +89,15 @@ Kirigami.Page {
         }
 
         QQC2.ScrollView {
+            clip: true
+
             GridView {
                 id: gridView
 
                 property int numCells: gridView.width < 1000 ? 3 : 5
                 property real cellSize: gridView.width / numCells
 
+                header: AccountHeader {}
                 cellWidth: cellSize
                 cellHeight: cellSize
 
@@ -142,7 +169,7 @@ Kirigami.Page {
         }
     }
 
-    header: QQC2.Pane {
+    component AccountHeader: QQC2.Pane {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
 
@@ -153,10 +180,18 @@ Kirigami.Page {
         bottomPadding: 0
         topPadding: 0
 
+        function activateBar(): void {
+            accountInfo.postsBar = contentItem.item?.bar;
+        }
+
         contentItem: Loader {
             active: accountModel.identity
             sourceComponent: ColumnLayout {
+                id: layout
+
                 spacing: 0
+
+                property var bar
 
                 QQC2.Control {
                     Layout.fillWidth: true
@@ -771,9 +806,9 @@ Kirigami.Page {
                     // This bar is on a scrollable page, you will eventually run into this tab bar which is annoying.
                     background: null
 
-                    enabled: !accountModel.loading
+                    Component.onCompleted: layout.bar = bar
 
-                    Component.onCompleted: accountInfo.postsBar = bar
+                    enabled: !accountModel.loading
 
                     Layout.alignment: Qt.AlignHCenter
                     Layout.fillWidth: true
