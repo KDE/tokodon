@@ -37,6 +37,8 @@ public:
     void setSourceModel(NotificationModel *model);
     NotificationModel *getSourceModel();
 
+    Q_INVOKABLE void markAllNotificationsAsRead();
+
 Q_SIGNALS:
     void loadingChanged();
     void sourceModelChanged();

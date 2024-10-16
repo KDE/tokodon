@@ -599,6 +599,17 @@ void AbstractAccount::invalidate()
     Q_EMIT invalidated();
 }
 
+void AbstractAccount::saveTimelinePosition(const QString &timeline, const QString &lastReadId)
+{
+    QUrl uri = apiUrl(QStringLiteral("/api/v1/markers"));
+
+    QUrlQuery urlQuery(uri);
+    urlQuery.addQueryItem(QStringLiteral("%1[last_read_id]").arg(timeline), lastReadId);
+    uri.setQuery(urlQuery);
+
+    post(uri, urlQuery, true, this, {});
+}
+
 void AbstractAccount::invalidatePost(Post *p)
 {
     Q_EMIT invalidatedPost(p);
@@ -624,6 +635,9 @@ void AbstractAccount::handleNotification(const QJsonDocument &doc)
     if (n->type() == Notification::FollowRequest) {
         m_followRequestCount++;
         Q_EMIT followRequestCountChanged();
+    } else {
+        m_unreadNotificationsCount++;
+        Q_EMIT unreadNotificationsCountChanged();
     }
 
     Q_EMIT notification(n);
@@ -687,6 +701,12 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
 int AbstractAccount::followRequestCount() const
 {
     return m_followRequestCount;
+}
+
+void AbstractAccount::resetUnreadNotificationsCount()
+{
+    m_unreadNotificationsCount = 0;
+    Q_EMIT unreadNotificationsCountChanged();
 }
 
 int AbstractAccount::unreadNotificationsCount() const

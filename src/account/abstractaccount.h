@@ -246,6 +246,13 @@ public:
     void invalidate();
 
     /**
+     * @brief Saves the timeline position.
+     * @param timeline Which timeline to save, right now can only be "home" or "notifications"
+     * @param lastReadId The last read post id.
+     */
+    Q_INVOKABLE void saveTimelinePosition(const QString &timeline, const QString &lastReadId);
+
+    /**
      * @brief Favorite a post.
      * @param p The post object to mutate.
      * @see unfavorite()
@@ -471,6 +478,13 @@ public:
      * @brief Update the number of unread notifications from the server.
      */
     virtual void checkForUnreadNotifications() = 0;
+
+    /**
+     * @brief Resets the unread notifications count *only* on the client-side.
+     *
+     * Use checkForUnreadNotifications() if you want to check if it's reset on the server.
+     */
+    void resetUnreadNotificationsCount();
 
     [[nodiscard]] int unreadNotificationsCount() const;
 

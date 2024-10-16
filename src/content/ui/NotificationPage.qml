@@ -21,6 +21,14 @@ Kirigami.ScrollablePage {
     property bool shouldGroupNotifications: typesAreGroupable
     readonly property var currentModel: shouldGroupNotifications ? groupedNotificationModel : notificationModel
 
+    actions: [
+        Kirigami.Action {
+            icon.name: "checkmark-symbolic"
+            text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
+            onTriggered: timelinePage.currentModel.markAllNotificationsAsRead()
+        }
+    ]
+
     onBackRequested: if (dialog) {
         dialog.close();
         dialog = null;

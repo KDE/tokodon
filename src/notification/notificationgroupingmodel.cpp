@@ -458,4 +458,10 @@ NotificationModel *NotificationGroupingModel::getSourceModel()
     return qobject_cast<NotificationModel *>(sourceModel());
 }
 
+void NotificationGroupingModel::markAllNotificationsAsRead()
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel()))
+        model->markAllNotificationsAsRead();
+}
+
 #include "moc_notificationgroupingmodel.cpp"

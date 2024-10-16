@@ -65,6 +65,12 @@ void NotificationModel::setExcludesTypes(const QStringList &excludeTypes)
     Q_EMIT excludeTypesChanged();
 }
 
+void NotificationModel::markAllNotificationsAsRead()
+{
+    m_account->saveTimelinePosition(QStringLiteral("notifications"), QString::number(m_notifications.first()->id()));
+    m_account->resetUnreadNotificationsCount();
+}
+
 void NotificationModel::fillTimeline(const QUrl &next)
 {
     if (!m_account) {

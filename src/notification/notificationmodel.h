@@ -41,6 +41,8 @@ public:
      */
     void setExcludesTypes(const QStringList &excludeTypes);
 
+    Q_INVOKABLE void markAllNotificationsAsRead();
+
 public Q_SLOTS:
     /**
      * @brief Reply to the notification at @p index.
