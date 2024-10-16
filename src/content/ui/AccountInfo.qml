@@ -232,7 +232,7 @@ Kirigami.Page {
                         }
 
                         QQC2.Control {
-                            visible: accountInfo.model.identity.bot
+                            visible: accountModel.identity.bot
 
                             contentItem: RowLayout {
                                 spacing: Kirigami.Units.smallSpacing
