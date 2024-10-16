@@ -41,7 +41,7 @@ QString AccountModel::displayName() const
 void AccountModel::fillTimeline(const QString &fromId)
 {
     // Media is now handled by AccountMediaTimelineModel
-    if (m_accountId.isEmpty() || m_accountId.isNull() || m_currentTab == Media) {
+    if (m_accountId.isEmpty() || m_accountId.isNull() || m_currentTab == Media || loading()) {
         return;
     }
     setLoading(true);
@@ -174,6 +174,7 @@ void AccountModel::setAccountId(const QString &accountId)
     }
     Q_EMIT accountIdChanged();
 
+    reset();
     fillTimeline();
 }
 
