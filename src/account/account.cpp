@@ -34,6 +34,7 @@ Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *p
     m_preferences = new Preferences(this);
     m_config = settings;
     connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
+    connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
     buildFromSettings();
 }
 
@@ -427,6 +428,18 @@ void Account::checkForFollowRequests()
         if (m_followRequestCount != followRequestResult.array().size()) {
             m_followRequestCount = followRequestResult.array().size();
             Q_EMIT followRequestCountChanged();
+        }
+    });
+}
+
+void Account::checkForUnreadNotifications()
+{
+    get(apiUrl(QStringLiteral("/api/v1/notifications/unread_count")), true, this, [this](QNetworkReply *reply) {
+        const auto unreadNotificationsObject = QJsonDocument::fromJson(reply->readAll());
+        const auto count = unreadNotificationsObject["count"_L1].toInt();
+        if (m_unreadNotificationsCount != count) {
+            m_unreadNotificationsCount = count;
+            Q_EMIT unreadNotificationsCountChanged();
         }
     });
 }

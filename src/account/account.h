@@ -59,6 +59,8 @@ public:
 
     Q_INVOKABLE void checkForFollowRequests() override;
 
+    Q_INVOKABLE void checkForUnreadNotifications() override;
+
     Q_INVOKABLE void updatePushNotifications() override;
 
     Q_INVOKABLE void registerTokodon(bool authCode);

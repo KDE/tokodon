@@ -43,6 +43,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(AccountConfig *config READ config NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(bool registrationsOpen READ registrationsOpen NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString registrationMessage READ registrationMessage NOTIFY fetchedInstanceMetadata)
+    Q_PROPERTY(int unreadNotificationsCount READ unreadNotificationsCount NOTIFY unreadNotificationsCountChanged)
 
 public:
     /**
@@ -467,6 +468,13 @@ public:
     virtual void checkForFollowRequests() = 0;
 
     /**
+     * @brief Update the number of unread notifications from the server.
+     */
+    virtual void checkForUnreadNotifications() = 0;
+
+    [[nodiscard]] int unreadNotificationsCount() const;
+
+    /**
      * @brief Update the push notification rules.
      */
     virtual void updatePushNotifications() = 0;
@@ -673,6 +681,11 @@ Q_SIGNALS:
     void followRequestCountChanged();
 
     /**
+     * @brief Emitted when the number of unread notifications was changed.
+     */
+    void unreadNotificationsCountChanged();
+
+    /**
      * @brief Emitted when a registration error has occurred.
      * @param json The JSON body for further processing.
      */
@@ -712,6 +725,7 @@ protected:
     bool m_registrationsOpen = false;
     QString m_registrationMessage;
     int m_followRequestCount = 0;
+    int m_unreadNotificationsCount = 0;
     QString m_redirectUri;
 
     // OAuth authorization

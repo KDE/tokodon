@@ -154,6 +154,10 @@ void MockAccount::checkForFollowRequests()
 {
 }
 
+void MockAccount::checkForUnreadNotifications()
+{
+}
+
 void MockAccount::registerPost(const QString &url, QNetworkReply *reply)
 {
     m_postReplies[apiUrl(url)] = reply;

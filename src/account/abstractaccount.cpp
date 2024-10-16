@@ -689,6 +689,11 @@ int AbstractAccount::followRequestCount() const
     return m_followRequestCount;
 }
 
+int AbstractAccount::unreadNotificationsCount() const
+{
+    return m_unreadNotificationsCount;
+}
+
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)
 {
     executeAction(identity,

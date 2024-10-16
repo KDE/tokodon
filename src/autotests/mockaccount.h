@@ -51,6 +51,8 @@ public:
 
     void checkForFollowRequests() override;
 
+    void checkForUnreadNotifications() override;
+
     void registerPost(const QString &url, QNetworkReply *reply);
 
     void registerGet(const QUrl &url, QNetworkReply *reply);

@@ -387,6 +387,8 @@ StatefulApp.StatefulWindow {
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
+        readonly property int alertCount: AccountManager.selectedAccount.unreadNotificationsCount
+
         icon.name: "notifications"
         text: i18n("Notifications")
         checkable: true
