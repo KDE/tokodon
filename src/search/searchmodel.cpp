@@ -87,6 +87,9 @@ int SearchModel::rowCount(const QModelIndex &parent) const
 QVariant SearchModel::data(const QModelIndex &index, int role) const
 {
     const auto row = index.row();
+    if (row >= m_accounts.size()) {
+        return {};
+    }
 
     const bool isStatus = row >= m_accounts.count() && row < m_accounts.count() + m_statuses.size();
     const bool isHashtag = row >= m_accounts.size() + m_statuses.count();

@@ -295,6 +295,26 @@ void SocialGraphModel::actionRemoveFromList(const QModelIndex &index)
     });
 }
 
+void SocialGraphModel::actionAddToList(const QString &accountId)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (m_listId.isEmpty()) {
+        return;
+    }
+
+    const QUrlQuery query{{QStringLiteral("account_ids[]"), accountId}};
+
+    const auto url = account->apiUrl(QStringLiteral("/api/v1/lists/%1/accounts").arg(m_listId));
+    account->post(url, query, true, this, [this, account, accountId](QNetworkReply *reply) {
+        Q_UNUSED(reply)
+
+        beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
+        m_accounts.push_back(account->identityLookup(accountId, {}));
+        endInsertRows();
+    });
+}
+
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
