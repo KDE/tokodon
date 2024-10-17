@@ -13,7 +13,7 @@ ColumnLayout {
 
     required property var index
     required property var poll
-    readonly property bool showResults: poll.voted || poll.expired
+    readonly property bool showResults: poll.voted || poll.expired || showVotesSwitch.checked
 
     QQC2.ButtonGroup {
         id: pollGroup
@@ -92,24 +92,41 @@ ColumnLayout {
         }
     }
 
-    QQC2.Button {
-        visible: !root.showResults
-        text: i18n("Vote")
-        enabled: pollGroup.checkState !== Qt.Unchecked
-        onClicked: {
-            let choices = [];
-            const buttons = pollGroup.buttons;
-            for (let i in buttons) {
-                const button = buttons[i];
-                if (!button.visible) {
-                    continue;
-                }
+    RowLayout {
+        spacing: Kirigami.Units.largeSpacing
+        visible: !poll.expired && !poll.voted
 
-                if (button.checked) {
-                    choices.push(button.choiceIndex);
+        QQC2.Button {
+            enabled: !root.showResults && pollGroup.checkState !== Qt.Unchecked
+            text: i18n("Vote")
+            icon.name: "checkbox-symbolic"
+            onClicked: {
+                let choices = [];
+                const buttons = pollGroup.buttons;
+                for (let i in buttons) {
+                    const button = buttons[i];
+                    if (!button.visible) {
+                        continue;
+                    }
+
+                    if (button.checked) {
+                        choices.push(button.choiceIndex);
+                    }
                 }
+                timelineModel.actionVote(timelineModel.index(root.index, 0), choices)
             }
-            timelineModel.actionVote(timelineModel.index(root.index, 0), choices)
         }
+
+        QQC2.Switch {
+            id: showVotesSwitch
+
+            text: i18nc("@option:check Show poll results", "Show Results")
+        }
+    }
+
+    QQC2.Label {
+        visible: poll.expired
+        text: i18n("Poll has closed")
+        color: Kirigami.Theme.disabledTextColor
     }
 }
