@@ -299,13 +299,13 @@ QQC2.ItemDelegate {
 
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
-                        source: "data-warning"
+                        source: "data-information"
                     }
 
                     QQC2.Label {
                         id: spoilerTextLabel
                         Layout.fillWidth: true
-                        text: i18n("<b>Content Warning</b><br /> %1", root.spoilerText)
+                        text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
                         wrapMode: Text.Wrap
                         font: Config.defaultFont
 
@@ -320,7 +320,7 @@ QQC2.ItemDelegate {
 
                 background: Rectangle {
                     radius: Kirigami.Units.largeSpacing
-                    color: Kirigami.Theme.neutralBackgroundColor
+                    color: Kirigami.Theme.activeBackgroundColor
                 }
             }
 

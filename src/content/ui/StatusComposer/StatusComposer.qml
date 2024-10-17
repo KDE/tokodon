@@ -237,7 +237,7 @@ Kirigami.ScrollablePage {
         QQC2.TextField {
             id: contentWarningField
 
-            placeholderText: i18nc("@info:placeholder", "Content warning")
+            placeholderText: i18nc("@info:placeholder", "Content notice")
             Layout.fillWidth: true
             visible: contentWarning.checked
             onTextChanged: {
@@ -454,10 +454,10 @@ Kirigami.ScrollablePage {
                         }
                         QQC2.ToolButton {
                             id: contentWarning
-                            text: i18nc("@action:intoolbar Short for content warning", "cw")
+                            text: i18nc("@action:intoolbar Short for content notice, also known as content warning", "cn")
                             checkable: true
                             QQC2.ToolTip {
-                                text: i18nc("@info:tooltip", "Content warning")
+                                text: i18nc("@info:tooltip", "Content notice")
                             }
                             onCheckedChanged: {
                                 // Clear existing content warning if not checked
