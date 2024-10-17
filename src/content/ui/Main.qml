@@ -363,6 +363,8 @@ StatefulApp.StatefulWindow {
     }
 
     globalDrawer: Sidebar {
+        id: drawer
+
         application: root.application
         shouldCollapse: root.width < Kirigami.Units.gridUnit * 50
         actions: Kirigami.Settings.isMobile ?
