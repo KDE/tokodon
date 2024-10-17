@@ -31,7 +31,7 @@ Kirigami.ScrollablePage {
         text: i18n("Create List")
         icon.name: "gtk-add"
         onTriggered: {
-            pageStack.layers.push(editListPage.createObject(appwindow), {
+            pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.New
             });
         }

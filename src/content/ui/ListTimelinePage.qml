@@ -20,7 +20,7 @@ TimelinePage {
         text: i18n("Edit List")
         icon.name: "edit-rename"
         onTriggered: {
-            pageStack.layers.push(editListPage.createObject(appwindow), {
+            pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.Edit,
                 listId: root.listId
             });
