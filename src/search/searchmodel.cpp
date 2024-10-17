@@ -48,7 +48,7 @@ void SearchModel::search(const QString &queryString, const QString &type, const 
         query.addQueryItem(QStringLiteral("type"), type);
     }
     if (following) {
-        query.addQueryItem(QStringLiteral("following"), following ? QStringLiteral("true") : QStringLiteral("false"));
+        query.addQueryItem(QStringLiteral("following"), QStringLiteral("true"));
     }
     query.addQueryItem(QStringLiteral("resolve"), QStringLiteral("true"));
 
@@ -98,9 +98,6 @@ int SearchModel::rowCount(const QModelIndex &parent) const
 QVariant SearchModel::data(const QModelIndex &index, int role) const
 {
     const auto row = index.row();
-    if (row >= m_accounts.size()) {
-        return {};
-    }
 
     const bool isStatus = row >= m_accounts.count() && row < m_accounts.count() + m_statuses.size();
     const bool isHashtag = row >= m_accounts.size() + m_statuses.count();
@@ -126,6 +123,10 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
         case IdRole:
             return hashtag.getName();
         }
+    }
+
+    if (row >= m_accounts.size()) {
+        return {};
     }
 
     const auto identity = m_accounts[row];
