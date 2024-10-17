@@ -80,6 +80,27 @@ FormCard.FormCardPage {
             text: i18nc("@label If the list is exclusive", "Exclusive")
             description: i18n("Posts in an exclusive list are excluded from the Home timeline.")
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            id: manageUsersButton
+            visible: root.purpose === EditListPage.Edit
+            text: i18nc("@action:button Delete the list", "Manage Users")
+            onClicked: pageStack.layers.push(socialGraphComponent, { name: "list", listId: root.listId });
+        }
+    }
+
+    Component {
+        id: socialGraphComponent
+        SocialGraphPage {
+            id: socialGraphPage
+            property alias name: socialGraphModel.name
+            property alias listId: socialGraphModel.listId
+            model: SocialGraphModel {
+                id: socialGraphModel
+            }
+        }
     }
 
     FormCard.FormCard {

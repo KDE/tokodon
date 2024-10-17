@@ -42,6 +42,8 @@ QString SocialGraphModel::displayName() const
         return i18ncp("@title", "%1 boost", "%1 boosts", m_count);
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
         return i18nc("@title", "Familiar Followers");
+    } else if (m_followListName == QStringLiteral("list")) {
+        return i18nc("@title", "Manage List Users");
     }
     return {};
 }
@@ -66,6 +68,8 @@ QString SocialGraphModel::placeholderText() const
         return i18n("No users boosted this post");
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
         return i18n("No familiar followers");
+    } else if (m_followListName == QStringLiteral("list")) {
+        return i18n("No users in this list");
     }
     return {};
 }
@@ -115,6 +119,19 @@ int SocialGraphModel::count() const
 void SocialGraphModel::setCount(int count)
 {
     m_count = count;
+}
+
+QString SocialGraphModel::listId() const
+{
+    return m_listId;
+}
+
+void SocialGraphModel::setListId(const QString &listId)
+{
+    m_listId = listId;
+    Q_EMIT listIdChanged();
+    reset();
+    fillTimeline();
 }
 
 QVariant SocialGraphModel::data(const QModelIndex &index, int role) const
@@ -171,6 +188,11 @@ bool SocialGraphModel::isFollowing() const
 bool SocialGraphModel::isFollower() const
 {
     return m_followListName == QStringLiteral("followers");
+}
+
+bool SocialGraphModel::isList() const
+{
+    return m_followListName == QStringLiteral("list");
 }
 
 void SocialGraphModel::actionAllow(const QModelIndex &index)
@@ -280,6 +302,10 @@ void SocialGraphModel::fillTimeline()
         return;
     }
 
+    if (m_followListName == QStringLiteral("list") && (m_listId.isEmpty() || m_listId.isNull())) {
+        return;
+    }
+
     if (m_loading) {
         return;
     }
@@ -304,6 +330,8 @@ void SocialGraphModel::fillTimeline()
         uri = QStringLiteral("/api/v1/statuses/%1/reblogged_by").arg(m_statusId);
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
         uri = QStringLiteral("/api/v1/accounts/familiar_followers");
+    } else if (m_followListName == QStringLiteral("list")) {
+        uri = QStringLiteral("/api/v1/lists/%1/accounts").arg(m_listId);
     }
 
     QUrl url;

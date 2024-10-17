@@ -19,12 +19,14 @@ class SocialGraphModel : public QAbstractListModel
     Q_PROPERTY(bool isFollowRequest READ isFollowRequest CONSTANT)
     Q_PROPERTY(bool isFollowing READ isFollowing CONSTANT)
     Q_PROPERTY(bool isFollower READ isFollower CONSTANT)
+    Q_PROPERTY(bool isList READ isList CONSTANT)
 
     /**
      * @brief The account id of the account we want to display
      */
     Q_PROPERTY(QString accountId READ accountId WRITE setAccountId NOTIFY accountIdChanged)
     Q_PROPERTY(QString statusId READ statusId WRITE setStatusId NOTIFY statusIdChanged)
+    Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
     Q_PROPERTY(int count READ count WRITE setCount)
 
 public:
@@ -48,10 +50,13 @@ public:
     [[nodiscard]] bool isFollowRequest() const;
     [[nodiscard]] bool isFollowing() const;
     [[nodiscard]] bool isFollower() const;
+    [[nodiscard]] bool isList() const;
     [[nodiscard]] QString statusId() const;
     void setStatusId(const QString &statusId);
     [[nodiscard]] int count() const;
     void setCount(int count);
+    [[nodiscard]] QString listId() const;
+    void setListId(const QString &listId);
 
 public Q_SLOTS:
     void actionAllow(const QModelIndex &index);
@@ -64,6 +69,7 @@ Q_SIGNALS:
     void nameChanged();
     void accountIdChanged();
     void statusIdChanged();
+    void listIdChanged();
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
@@ -80,5 +86,6 @@ private:
     QString m_followListName;
     QString m_accountId;
     QString m_statusId;
+    QString m_listId;
     int m_count = 0;
 };
