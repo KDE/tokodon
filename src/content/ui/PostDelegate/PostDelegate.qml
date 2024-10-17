@@ -246,10 +246,7 @@ QQC2.ItemDelegate {
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
-                    onAccepted: {
-                        timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
-                        timelineModel.actionDelete(timelineModel.index(root.index, 0))
-                    }
+                    onAccepted: timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
                 }
             }
         }

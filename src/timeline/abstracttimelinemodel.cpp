@@ -209,6 +209,10 @@ void AbstractTimelineModel::actionRedraft(const QModelIndex &index, Post *post, 
                    true,
                    this,
                    [this, post, index, isEdit](QNetworkReply *reply) {
+                       if (!isEdit) {
+                           actionDelete(index, post);
+                       }
+
                        const auto postSource = QJsonDocument::fromJson(reply->readAll()).object();
 
                        auto backend = new PostEditorBackend();
