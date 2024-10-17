@@ -46,9 +46,9 @@ Kirigami.ScrollablePage {
                 }
                 return i18n("Home (%1)", AccountManager.selectedAccount.identity.displayNameHtml);
             }
-        } else {
-            return model.displayName;
         }
+
+        return model.displayName ?? "";
     }
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
