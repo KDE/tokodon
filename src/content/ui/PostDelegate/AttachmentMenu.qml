@@ -35,11 +35,11 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        enabled: root.attachment !== null
+        enabled: root.attachment != null
 
         icon.name: "window"
         text: {
-            if (root.attachment === null) {
+            if (root.attachment == null) {
                 return;
             }
 
@@ -62,8 +62,8 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        enabled: root.attachment !== null
-        visible: root.attachment !== null && root.attachment.attachmentType === Attachment.Image
+        enabled: root.attachment != null
+        visible: root.attachment != null && root.attachment.attachmentType === Attachment.Image
 
         icon.name: "edit-copy"
         text: i18n("Copy Image")
@@ -73,8 +73,8 @@ QQC2.Menu {
     QQC2.MenuSeparator {}
 
     ShareMenu {
-        enabled: root.attachment !== null
+        enabled: root.attachment != null
 
-        url: root.attachment !== null && root.attachment !== undefined ? root.attachment.source : ""
+        url: root.attachment != null ? root.attachment.source : ""
     }
 }
