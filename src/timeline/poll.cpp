@@ -83,4 +83,9 @@ QList<QVariantMap> Poll::options() const
     return m_options;
 }
 
+bool Poll::hasVotedFor(const int index) const
+{
+    return m_ownVotes.contains(index);
+}
+
 #include "moc_poll.cpp"

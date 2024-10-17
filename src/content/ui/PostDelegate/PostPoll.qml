@@ -26,6 +26,7 @@ ColumnLayout {
         ColumnLayout {
             id: votedPollDelegate
 
+            required property int index
             required property var modelData
 
             RowLayout {
@@ -44,12 +45,30 @@ ColumnLayout {
 
                 QQC2.Label {
                     text: votedPollDelegate.modelData.title
-                    Layout.fillWidth: true
                     Layout.alignment: Qt.AlignVCenter
+                }
+
+                Kirigami.Icon {
+                    source: "checkmark-symbolic"
+                    visible: root.poll.hasVotedFor(votedPollDelegate.index)
+
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+                    Layout.alignment: Qt.AlignVCenter
+
+                    QQC2.ToolTip.text: i18n("You voted for this option")
+                    QQC2.ToolTip.visible: optionHover.hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                    HoverHandler {
+                        id: optionHover
+                    }
                 }
             }
 
             RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 QQC2.ProgressBar {
                     from: 0
                     to: 100

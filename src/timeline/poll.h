@@ -32,6 +32,7 @@ public:
     [[nodiscard]] bool voted() const;
     [[nodiscard]] QList<int> ownVotes() const;
     [[nodiscard]] QList<QVariantMap> options() const;
+    [[nodiscard]] Q_INVOKABLE bool hasVotedFor(int index) const;
 
 private:
     QString m_id;
