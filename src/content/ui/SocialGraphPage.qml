@@ -85,6 +85,13 @@ Kirigami.ScrollablePage {
                         onClicked: model.actionRemoveFollower(model.index(delegate.index, 0))
                         visible: model.isFollower
                     }
+
+                    QQC2.Button {
+                        text: i18nc("@action:button Deny follow request", "Remove")
+                        icon.name: "list-remove-user"
+                        onClicked: model.actionRemoveFromList(model.index(delegate.index, 0))
+                        visible: model.isList
+                    }
                 }
 
                 QQC2.ProgressBar {

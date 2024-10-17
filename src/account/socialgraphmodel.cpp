@@ -271,6 +271,30 @@ void SocialGraphModel::actionRemoveFollower(const QModelIndex &index)
     account->removeFollower(requestIdentity);
 }
 
+void SocialGraphModel::actionRemoveFromList(const QModelIndex &index)
+{
+    auto account = AccountManager::instance().selectedAccount();
+
+    if (!checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid) || m_listId.isEmpty()) {
+        return;
+    }
+
+    auto requestIdentity = m_accounts[index.row()].get();
+
+    const QUrlQuery query{{QStringLiteral("account_ids[]"), requestIdentity->id()}};
+
+    auto url = account->apiUrl(QStringLiteral("/api/v1/lists/%1/accounts").arg(m_listId));
+    url.setQuery(query);
+
+    account->deleteResource(url, true, this, [this, account, requestIdentity, index](QNetworkReply *reply) {
+        Q_UNUSED(reply)
+
+        beginRemoveRows(QModelIndex(), index.row(), index.row());
+        m_accounts.removeAt(index.row());
+        endRemoveRows();
+    });
+}
+
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
