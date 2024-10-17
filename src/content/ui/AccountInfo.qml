@@ -506,7 +506,7 @@ Kirigami.Page {
                                                             })
                                         },
                                         Kirigami.Action {
-                                            fromQAction: (accountInfo.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow).application.action('options_configure')
+                                            fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
                                         },
                                         Kirigami.Action {
                                             icon.name: "list-add-user"
