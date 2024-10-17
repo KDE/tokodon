@@ -34,14 +34,25 @@ SearchModel::SearchModel(QObject *parent)
 
 SearchModel::~SearchModel() = default;
 
-void SearchModel::search(const QString &queryString)
+void SearchModel::search(const QString &queryString, const QString &type, const bool following)
 {
     beginResetModel();
     clear();
     endResetModel();
 
     auto url = m_account->apiUrl(QStringLiteral("/api/v2/search"));
-    url.setQuery({{QStringLiteral("q"), queryString}, {QStringLiteral("resolve"), QStringLiteral("true")}});
+
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("q"), queryString);
+    if (!type.isEmpty()) {
+        query.addQueryItem(QStringLiteral("type"), type);
+    }
+    if (following) {
+        query.addQueryItem(QStringLiteral("following"), following ? QStringLiteral("true") : QStringLiteral("false"));
+    }
+    query.addQueryItem(QStringLiteral("resolve"), QStringLiteral("true"));
+
+    url.setQuery(query);
     setLoading(true);
     setLoaded(false);
     m_account->get(url, true, this, [this](QNetworkReply *reply) {

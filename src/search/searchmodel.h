@@ -64,7 +64,7 @@ public:
     /**
      * @brief Start searching for @p queryString.
      */
-    Q_INVOKABLE void search(const QString &queryString);
+    Q_INVOKABLE void search(const QString &queryString, const QString &type = {}, bool following = false);
 
     /**
      * @brief Get a localized label for a result type.

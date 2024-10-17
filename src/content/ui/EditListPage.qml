@@ -205,7 +205,7 @@ FormCard.FormCardPage {
                                     Layout.margins: Kirigami.Units.largeSpacing
 
                                     onAccepted: if (text.length > 2) {
-                                        listView.model.search(text)
+                                        listView.model.search(text, "accounts", true)
                                     }
                                 }
                             }
