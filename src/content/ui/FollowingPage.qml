@@ -165,6 +165,8 @@ Kirigami.Page {
             sourceComponent: QQC2.ScrollView {
                 anchors.fill: parent
 
+                QQC2.ScrollBar.vertical.interactive: false
+
                 ListView {
                     id: timelineListView
 

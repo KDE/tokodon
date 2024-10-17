@@ -113,6 +113,13 @@ Kirigami.ScrollablePage {
         }
     ]
 
+    Component.onCompleted: {
+        // TODO: When we can require KF 6.8, set it as a normal property
+        if (root.verticalScrollBarInteractive !== undefined) {
+            root.verticalScrollBarInteractive = false;
+        }
+    }
+
     Connections {
         target: Controller
         function onNetworkErrorOccurred(error) {

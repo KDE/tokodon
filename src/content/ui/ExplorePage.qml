@@ -80,7 +80,14 @@ Kirigami.ScrollablePage {
         Kirigami.Theme.inherit: false
     }
 
-    Component.onCompleted: tendingPostsAction.checked = true
+    Component.onCompleted: {
+        tendingPostsAction.checked = true
+
+        // TODO: When we can require KF 6.8, set it as a normal property
+        if (timelinePage.verticalScrollBarInteractive !== undefined) {
+            timelinePage.verticalScrollBarInteractive = false;
+        }
+    }
 
     ListView {
         id: tagsView
