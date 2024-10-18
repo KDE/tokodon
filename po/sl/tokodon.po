@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-17 00:40+0000\n"
-"PO-Revision-Date: 2024-10-15 07:10+0200\n"
+"POT-Creation-Date: 2024-10-18 00:39+0000\n"
+"PO-Revision-Date: 2024-10-17 07:18+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -199,50 +199,62 @@ msgctxt "@title"
 msgid "Familiar Followers"
 msgstr "Znani sledilci"
 
-#: account/socialgraphmodel.cpp:52
+#: account/socialgraphmodel.cpp:46
+#, kde-format
+msgctxt "@title"
+msgid "Manage List Users"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:54
 #, kde-format
 msgid "No follow requests"
 msgstr "Ni zahtev za sledenje"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:56
 #, kde-format
 msgid "No followers"
 msgstr "Ni sledilcev"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:58
 #, kde-format
 msgid "No followed users"
 msgstr "Ni sledenih uporabnikov"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:60
 #, kde-format
 msgid "No muted users"
 msgstr "Ni utišanih uporabnikov"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:62
 #, kde-format
 msgid "No blocked users"
 msgstr "Ni blokiranih uporabnikov"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:64
 #, kde-format
 msgid "No featured users"
 msgstr "Ni izpostavljenih uporabnikov"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:66
 #, kde-format
 msgid "No users favorited this post"
 msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
 
-#: account/socialgraphmodel.cpp:66
+#: account/socialgraphmodel.cpp:68
 #, kde-format
 msgid "No users boosted this post"
 msgstr "Ni uporabnika, ki bi izpostavil to objavo"
 
-#: account/socialgraphmodel.cpp:68
+#: account/socialgraphmodel.cpp:70
 #, kde-format
 msgid "No familiar followers"
 msgstr "Ni znanih sledilcev"
+
+#: account/socialgraphmodel.cpp:72
+#, fuzzy, kde-format
+#| msgid "No users favorited this post"
+msgid "No users in this list"
+msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
 
 #: admin/accounttoolmodel.cpp:296
 #, kde-format
@@ -438,7 +450,7 @@ msgstr "Uredi profil"
 msgid "Account editor"
 msgstr "Urejevalnik računa"
 
-#: content/ui/AccountInfo.qml:514 content/ui/Main.qml:408
+#: content/ui/AccountInfo.qml:514 content/ui/Main.qml:410
 #, kde-format
 msgid "Follow Requests"
 msgstr "Zahteve za sledenje"
@@ -587,7 +599,7 @@ msgstr "Ni čustvenčkov"
 msgid "View profile"
 msgstr "Poglej profil"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:455
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:457
 #, kde-format
 msgid "Conversations"
 msgstr "Pogovori"
@@ -609,72 +621,104 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Zmanjšaj število zahtev za sledenje"
 
-#: content/ui/EditListPage.qml:28
+#: content/ui/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "Ustvari seznam"
 
-#: content/ui/EditListPage.qml:28
+#: content/ui/EditListPage.qml:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Uredi seznam"
 
-#: content/ui/EditListPage.qml:60
+#: content/ui/EditListPage.qml:61
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "Naslov"
 
-#: content/ui/EditListPage.qml:68
+#: content/ui/EditListPage.qml:69
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Prikaži odgovore za"
 
-#: content/ui/EditListPage.qml:80
+#: content/ui/EditListPage.qml:81
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "Izključno"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:82
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "Objave na izključnem seznamu so izključene iz domače časovnice."
 
-#: content/ui/EditListPage.qml:102
+#: content/ui/EditListPage.qml:90
+#, fuzzy, kde-format
+#| msgid "Muted Users"
+msgctxt "@action:button Delete the list"
+msgid "Manage Users"
+msgstr "Utišani uporabniki"
+
+#: content/ui/EditListPage.qml:107
+#, fuzzy, kde-format
+#| msgid "Users"
+msgctxt "@action:intoolbar Add users to list"
+msgid "Add Users"
+msgstr "Uporabniki"
+
+#: content/ui/EditListPage.qml:118
+#, kde-format
+msgctxt "@title"
+msgid "Add Users to List…"
+msgstr ""
+
+#: content/ui/EditListPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Add"
+msgctxt "@action:button Add user to this list"
+msgid "Add"
+msgstr "Dodaj"
+
+#: content/ui/EditListPage.qml:202
+#, kde-format
+msgid "Search among users you follow…"
+msgstr ""
+
+#: content/ui/EditListPage.qml:236
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Ustvari"
 
-#: content/ui/EditListPage.qml:104
+#: content/ui/EditListPage.qml:238
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Uredi"
 
-#: content/ui/EditListPage.qml:117
+#: content/ui/EditListPage.qml:251
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: content/ui/EditListPage.qml:124
+#: content/ui/EditListPage.qml:258
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Brisanje seznama"
 
-#: content/ui/EditListPage.qml:125
+#: content/ui/EditListPage.qml:259
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Ali ste prepričani, da želite izbrisati ta seznam?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:501
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:503
 #, kde-format
 msgid "Explore"
 msgstr "Razišči"
@@ -685,7 +729,7 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Objavi"
 
-#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:144
+#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:159
 #, kde-format
 msgid "Posts"
 msgstr "Objave"
@@ -695,7 +739,7 @@ msgstr "Objave"
 msgid "Tags"
 msgstr "Ključniki"
 
-#: content/ui/ExplorePage.qml:141
+#: content/ui/ExplorePage.qml:148
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -704,13 +748,13 @@ msgstr[1] "%1 človek govori"
 msgstr[2] "%1 človeka govorita"
 msgstr[3] "%1 ljudje govorijo"
 
-#: content/ui/ExplorePage.qml:158
+#: content/ui/ExplorePage.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Posts"
 msgstr "Ni objav v trendu"
 
-#: content/ui/ExplorePage.qml:158
+#: content/ui/ExplorePage.qml:165
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
@@ -745,12 +789,12 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Prikaži odgovore"
 
-#: content/ui/FollowingPage.qml:193
+#: content/ui/FollowingPage.qml:195
 #, kde-format
 msgid "No User Selected"
 msgstr "Ni izbranega uporabnika"
 
-#: content/ui/FollowingPage.qml:194
+#: content/ui/FollowingPage.qml:196
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -873,7 +917,7 @@ msgstr "Ustvari seznam"
 msgid "No lists"
 msgstr "Ni seznamov"
 
-#: content/ui/ListTimelinePage.qml:20
+#: content/ui/ListTimelinePage.qml:27
 #, kde-format
 msgid "Edit List"
 msgstr "Uredi seznam"
@@ -1247,77 +1291,77 @@ msgstr "Napiši novo objavo"
 msgid "Reply to post"
 msgstr "Odgovori na objavo"
 
-#: content/ui/Main.qml:376
+#: content/ui/Main.qml:378
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/Main.qml:393 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Obvestila"
 
-#: content/ui/Main.qml:424
+#: content/ui/Main.qml:426
 #, kde-format
 msgid "Local"
 msgstr "Krajevno"
 
-#: content/ui/Main.qml:439
+#: content/ui/Main.qml:441
 #, kde-format
 msgid "Global"
 msgstr "Globalno"
 
-#: content/ui/Main.qml:469 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:471 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
 msgstr "Vzljubitve"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:487
 #, kde-format
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: content/ui/Main.qml:515
+#: content/ui/Main.qml:517
 #, kde-format
 msgid "Following"
 msgstr "Sledenje"
 
-#: content/ui/Main.qml:529
+#: content/ui/Main.qml:531
 #, kde-format
 msgid "Search"
 msgstr "Iskanje"
 
-#: content/ui/Main.qml:544
+#: content/ui/Main.qml:546
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Obvestila strežnika"
 
-#: content/ui/Main.qml:559
+#: content/ui/Main.qml:561
 #, kde-format
 msgid "Lists"
 msgstr "Seznami"
 
-#: content/ui/Main.qml:580
+#: content/ui/Main.qml:582
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: content/ui/Main.qml:590
+#: content/ui/Main.qml:592
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Orodja moderiranja"
 
-#: content/ui/Main.qml:602
+#: content/ui/Main.qml:604
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: content/ui/Main.qml:732
+#: content/ui/Main.qml:734
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2595,19 +2639,18 @@ msgid ""
 msgstr "Žaljiva vsebina bo navedena v komunikaciji s prijavljenim računom"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:407
-#: content/ui/PostDelegate/PostDelegate.qml:311
 #, kde-format
 msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Vsebinsko opozorilo</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:318
+#: content/ui/PostDelegate/PostDelegate.qml:315
 #, kde-format
 msgid "Show Less"
 msgstr "Prikaži manj"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:318
+#: content/ui/PostDelegate/PostDelegate.qml:315
 #, kde-format
 msgid "Show More"
 msgstr "Prikaži več"
@@ -2713,7 +2756,7 @@ msgstr "Ni najdenih prijav"
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
-msgstr ""
+msgstr "Označi vse kot prebrano"
 
 #: content/ui/NotificationPage.qml:40
 #, kde-format
@@ -2757,7 +2800,7 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Sledenja"
 
-#: content/ui/NotificationPage.qml:224
+#: content/ui/NotificationPage.qml:231
 #, kde-format
 msgid "No Notifications"
 msgstr "Ni obvestil"
@@ -2995,76 +3038,82 @@ msgstr ""
 "Ali ste prepričani, da želite spremeniti to objavo v osnutek? To bo "
 "izbrisalo izvirno objavo."
 
-#: content/ui/PostDelegate/PostDelegate.qml:423
+#: content/ui/PostDelegate/PostDelegate.qml:308
+#, fuzzy, kde-format
+#| msgid "<b>Content Warning</b><br /> %1"
+msgid "<b>Content Notice</b><br /> %1"
+msgstr "<b>Vsebinsko opozorilo</b><br /> %1"
+
+#: content/ui/PostDelegate/PostDelegate.qml:420
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Odgovori"
 
-#: content/ui/PostDelegate/PostDelegate.qml:450
+#: content/ui/PostDelegate/PostDelegate.qml:447
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Ni mogoče pospešiti neposrednih sporočil"
 
-#: content/ui/PostDelegate/PostDelegate.qml:452
+#: content/ui/PostDelegate/PostDelegate.qml:449
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Ni mogoče pospešiti zasebnih objav"
 
-#: content/ui/PostDelegate/PostDelegate.qml:454
+#: content/ui/PostDelegate/PostDelegate.qml:451
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Izpostavi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:456
 #, kde-format
 msgid "Boosted"
 msgstr "Izpostavljeno"
 
-#: content/ui/PostDelegate/PostDelegate.qml:459
+#: content/ui/PostDelegate/PostDelegate.qml:456
 #, kde-format
 msgid "Boost"
 msgstr "Izpostavi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
+#: content/ui/PostDelegate/PostDelegate.qml:476
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Vzljubi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgid "Favorited"
 msgstr "Vzljubljeno"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:479
 #, kde-format
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:498
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Odstrani zaznamek"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:498
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Zaznamuj"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Bookmarked"
 msgstr "Dodano med zaznamke"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:501
 #, kde-format
 msgid "Bookmark"
 msgstr "Zaznamuj"
 
-#: content/ui/PostDelegate/PostDelegate.qml:527
+#: content/ui/PostDelegate/PostDelegate.qml:524
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3210,21 +3259,40 @@ msgstr "Izbriši"
 msgid "Delete & Re-draft"
 msgstr "Izbriši in spiši na novo"
 
-#: content/ui/PostDelegate/PostPoll.qml:39
+#: content/ui/PostDelegate/PostPoll.qml:40
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1 %"
 
-#: content/ui/PostDelegate/PostPoll.qml:63
+#: content/ui/PostDelegate/PostPoll.qml:59
+#, fuzzy, kde-format
+#| msgid "No users favorited this post"
+msgid "You voted for this option"
+msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
+
+#: content/ui/PostDelegate/PostPoll.qml:82
 #, kde-format
 msgid "(No votes)"
 msgstr "(Ni glasov)"
 
-#: content/ui/PostDelegate/PostPoll.qml:97
+#: content/ui/PostDelegate/PostPoll.qml:120
 #, kde-format
 msgid "Vote"
 msgstr "Glasuj"
+
+#: content/ui/PostDelegate/PostPoll.qml:142
+#, fuzzy, kde-format
+#| msgid "Show Less"
+msgctxt "@option:check Show poll results"
+msgid "Show Results"
+msgstr "Prikaži manj"
+
+#: content/ui/PostDelegate/PostPoll.qml:148
+#, fuzzy, kde-format
+#| msgid "A poll has ended"
+msgid "Poll has closed"
+msgstr "Anketa se je zaključila"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
 #, kde-format
@@ -3693,6 +3761,13 @@ msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
 msgstr "Odstrani sledilca"
 
+#: content/ui/SocialGraphPage.qml:90
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button Deny follow request"
+msgid "Remove"
+msgstr "Odstrani"
+
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
 msgid "No accounts available"
@@ -3818,10 +3893,11 @@ msgid "Keep"
 msgstr "Ohrani"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Content font"
 msgctxt "@info:placeholder"
-msgid "Content warning"
-msgstr "Vsebinsko opozorilo"
+msgid "Content notice"
+msgstr "Pisava vsebine"
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
@@ -3954,15 +4030,17 @@ msgstr "Vidnost"
 
 #: content/ui/StatusComposer/StatusComposer.qml:457
 #, kde-format
-msgctxt "@action:intoolbar Short for content warning"
-msgid "cw"
-msgstr "cw"
+msgctxt ""
+"@action:intoolbar Short for content notice, also known as content warning"
+msgid "cn"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Content font"
 msgctxt "@info:tooltip"
-msgid "Content warning"
-msgstr "Vsebinsko opozorilo"
+msgid "Content notice"
+msgstr "Pisava vsebine"
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
@@ -4026,41 +4104,41 @@ msgstr "Prikaži izpostavitve"
 msgid "Show Replies"
 msgstr "Prikaži odgovore"
 
-#: content/ui/TimelinePage.qml:119
+#: content/ui/TimelinePage.qml:126
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Ni mogoče priti v stik s strežnikom: %1. Preverite vaše nastavitve."
 
-#: content/ui/TimelinePage.qml:237
+#: content/ui/TimelinePage.qml:244
 #, kde-format
 msgctxt "@info:status"
 msgid "Some replies are not available"
 msgstr "Nekaj odgovorov ni na voljo"
 
-#: content/ui/TimelinePage.qml:238
+#: content/ui/TimelinePage.qml:245
 #, kde-format
 msgid "To view all replies, open the post on the original server."
 msgstr "Za ogled vseh odgovorov, odprite objavo na izvirnem strežniku."
 
-#: content/ui/TimelinePage.qml:241
+#: content/ui/TimelinePage.qml:248
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Odpri v brskalniku"
 
-#: content/ui/TimelinePage.qml:250
+#: content/ui/TimelinePage.qml:257
 #, kde-format
 msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Konec časovnice"
 
-#: content/ui/TimelinePage.qml:292
+#: content/ui/TimelinePage.qml:299
 #, kde-format
 msgid "No posts"
 msgstr "Ni objav"
 
-#: content/ui/TimelinePage.qml:298
+#: content/ui/TimelinePage.qml:305
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Return to Top"
@@ -4240,12 +4318,12 @@ msgstr "Samo za notranjo rabo."
 msgid "Error occurred when fetching the latest notification."
 msgstr "Prišlo je do napake pri pridobivanju najnovejšega obvestila."
 
-#: search/searchmodel.cpp:140
+#: search/searchmodel.cpp:155
 #, kde-format
 msgid "Users"
 msgstr "Uporabniki"
 
-#: search/searchmodel.cpp:142
+#: search/searchmodel.cpp:157
 #, kde-format
 msgid "Hashtags"
 msgstr "Ključniki"
@@ -4489,6 +4567,18 @@ msgstr[0] "pred %1 leti"
 msgstr[1] "pred %1 letom"
 msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "Content warning"
+#~ msgstr "Vsebinsko opozorilo"
+
+#~ msgctxt "@action:intoolbar Short for content warning"
+#~ msgid "cw"
+#~ msgstr "cw"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Content warning"
+#~ msgstr "Vsebinsko opozorilo"
 
 #~ msgid "Note:"
 #~ msgstr "Opomba:"
@@ -4823,9 +4913,6 @@ msgstr[3] "pred %1 leti"
 #~ msgctxt "@info:whatsthis Post language selection"
 #~ msgid "Select the language the post is written in"
 #~ msgstr "Izberi jezik, v katerem je napisana objava"
-
-#~ msgid "Add"
-#~ msgstr "Dodaj"
 
 #~ msgid "No Posts"
 #~ msgstr "Ni objav"
