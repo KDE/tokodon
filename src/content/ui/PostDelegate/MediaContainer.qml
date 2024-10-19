@@ -69,9 +69,13 @@ Item {
             checkable: false
             text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
             closable: false
-            enabled: false
             visible: modelData.caption.length !== 0
             hoverEnabled: true
+
+            onClicked: {
+                altPopup.subtitle = modelData.caption;
+                altPopup.open();
+            }
 
             QQC2.ToolTip.text: i18n("Text description available")
             QQC2.ToolTip.visible: hovered
@@ -110,5 +114,14 @@ Item {
             width: 1
             color: Kirigami.Theme.focusColor
         }
+    }
+
+    Kirigami.PromptDialog {
+        id: altPopup
+
+        width: 400
+        height: 300
+
+        title: i18nc("@title", "Media Description")
     }
 }
