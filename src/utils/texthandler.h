@@ -71,6 +71,16 @@ public:
      * @brief Converts a QDate to it's relative equivalent, when this function is called. Similiar to getRelativeDateTime but only for dates.
      */
     static QString getRelativeDate(const QDate &dateTime);
+
+    /**
+     * @breif Gets "next" link for pagination from a Link header, if found.
+     */
+    static std::optional<QUrl> getNextLink(const QString &linkText);
+
+    /**
+     * @breif Gets "prev" link for pagination from a Link header, if found.
+     */
+    static std::optional<QUrl> getPrevLink(const QString &linkText);
 };
 
 namespace TextRegex
@@ -81,4 +91,6 @@ static const QRegularExpression
 static const QRegularExpression hashtagExp(QStringLiteral("(?:<a\\b[^>]*>#<span>(\\S*)<\\/span><\\/a>)"));
 static const QRegularExpression extraneousParagraphExp(QStringLiteral("(\\s*(?:<(?:p|br)\\s*\\/?>)+\\s*<\\/p>)"));
 static const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
+static const QRegularExpression nextLink(QStringLiteral("<(.*)>; rel=\"next\""));
+static const QRegularExpression prevLink(QStringLiteral(".*<(.*)>; rel=\"prev\""));
 }

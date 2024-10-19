@@ -82,7 +82,7 @@ private:
     /**
      * @brief The next URL for fetching more data.
      */
-    QUrl m_next;
+    std::optional<QUrl> m_next;
     /**
      * @brief The list of tags in the model.
      */

@@ -318,7 +318,7 @@ void SocialGraphModel::actionAddToList(const QString &accountId)
 bool SocialGraphModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return !m_next.isEmpty();
+    return m_next.has_value();
 }
 
 void SocialGraphModel::fetchMore(const QModelIndex &parent)
@@ -379,10 +379,10 @@ void SocialGraphModel::fillTimeline()
     }
 
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         url = account->apiUrl(uri);
     } else {
-        url = m_next;
+        url = m_next.value();
     }
 
     if (m_followListName == QStringLiteral("familiar_followers")) {
@@ -396,12 +396,8 @@ void SocialGraphModel::fillTimeline()
         const auto accounts = followRequestResult.array();
 
         if (!accounts.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
 
             QList<std::shared_ptr<Identity>> fetchedAccounts;
             QJsonArray value = accounts;

@@ -4,6 +4,7 @@
 #include "admin/emailblocktoolmodel.h"
 
 #include "account/accountmanager.h"
+#include "texthandler.h"
 
 EmailBlockToolModel::EmailBlockToolModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -110,10 +111,10 @@ void EmailBlockToolModel::filltimeline()
     }
     setLoading(true);
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         url = account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks"));
     } else {
-        url = m_next;
+        url = m_next.value();
     }
 
     account->get(url, true, this, [this](QNetworkReply *reply) {
@@ -121,12 +122,9 @@ void EmailBlockToolModel::filltimeline()
         const auto emailblocks = doc.array();
 
         if (!emailblocks.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             QList<EmailInfo> fetchedEmailblocks;
 
             std::transform(

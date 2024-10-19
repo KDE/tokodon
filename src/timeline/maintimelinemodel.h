@@ -72,7 +72,7 @@ private:
     QString m_timelineName;
     QString m_listId;
 
-    QUrl m_next, m_prev;
+    std::optional<QUrl> m_next, m_prev;
     QString m_lastReadId;
     bool fetchingLastId = false;
     bool fetchedLastId = false;

@@ -102,6 +102,12 @@ ecm_add_test(socialgraphmodeltest.cpp
 		NAME_PREFIX "tokodon-"
 )
 
+ecm_add_test(texthandlertest.cpp
+		TEST_NAME texthandlertest
+		LINK_LIBRARIES tokodon_test_static Qt::Test
+		NAME_PREFIX "tokodon-"
+)
+
 if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
 	add_subdirectory(appiumtests)
 endif()

@@ -129,6 +129,6 @@ private:
     QString m_location;
     QString m_moderationStatus;
     QString m_role;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
     int m_selectedAccountPosition = 0;
 };

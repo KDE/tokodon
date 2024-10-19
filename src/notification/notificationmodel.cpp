@@ -4,6 +4,7 @@
 #include "notification/notificationmodel.h"
 
 #include "account/abstractaccount.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -20,7 +21,7 @@ NotificationModel::NotificationModel(QObject *parent)
             beginResetModel();
             m_notifications.clear();
             endResetModel();
-            m_next = QUrl();
+            m_next = {};
             setLoading(false);
         }
     });
@@ -41,7 +42,7 @@ NotificationModel::NotificationModel(QObject *parent)
         beginResetModel();
         m_notifications.clear();
         endResetModel();
-        m_next = QUrl();
+        m_next = {};
         setLoading(false);
         fillTimeline();
     });
@@ -102,10 +103,9 @@ void NotificationModel::fillTimeline(const QUrl &next)
             m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
             return;
         }
-        static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-        const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-        const auto match = re.match(QString::fromUtf8(next));
-        m_next = QUrl::fromUserInput(match.captured(1));
+
+        const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+        m_next = TextHandler::getNextLink(linkHeader);
 
         QList<std::shared_ptr<Notification>> notifications;
         const auto values = doc.array();
@@ -133,11 +133,11 @@ void NotificationModel::fetchMore(const QModelIndex &parent)
 {
     Q_UNUSED(parent);
 
-    if (m_notifications.isEmpty() || !m_next.isValid() || m_loading) {
+    if (m_notifications.isEmpty() || !m_next || m_loading) {
         return;
     }
 
-    fillTimeline(m_next);
+    fillTimeline(m_next.value());
 }
 
 bool NotificationModel::canFetchMore(const QModelIndex &parent) const

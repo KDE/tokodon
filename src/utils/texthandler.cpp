@@ -208,4 +208,22 @@ QString TextHandler::getRelativeDate(const QDate &dateTime)
     }
 }
 
+std::optional<QUrl> TextHandler::getNextLink(const QString &linkText)
+{
+    const auto match = TextRegex::nextLink.match(linkText);
+    if (match.isValid() && !match.captured(1).isEmpty()) {
+        return QUrl::fromUserInput(match.captured(1));
+    }
+    return std::nullopt;
+}
+
+std::optional<QUrl> TextHandler::getPrevLink(const QString &linkText)
+{
+    const auto match = TextRegex::prevLink.match(linkText);
+    if (match.isValid() && !match.captured(1).isEmpty()) {
+        return QUrl::fromUserInput(match.captured(1));
+    }
+    return std::nullopt;
+}
+
 #include "moc_texthandler.cpp"

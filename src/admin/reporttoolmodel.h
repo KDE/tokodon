@@ -77,5 +77,5 @@ private:
     std::shared_ptr<AdminAccountInfo> m_selectedAccount;
     QString m_origin;
     bool m_pagination = true;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 };

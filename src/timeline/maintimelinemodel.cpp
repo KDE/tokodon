@@ -3,6 +3,8 @@
 
 #include "timeline/maintimelinemodel.h"
 
+#include "texthandler.h"
+
 #include <KLocalizedString>
 
 MainTimelineModel::MainTimelineModel(QObject *parent)
@@ -108,26 +110,24 @@ void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
     QUrl uri;
 
     // FIXME: this logic is terrible and needs to be rewritten
-    if (!backwards && !m_next.isEmpty()) {
+    if (!backwards && !m_next) {
         // Fixes issues where on reaching the end the data is fetched from the start
-        if (m_next.isEmpty() && !m_timeline.isEmpty()) {
+        if (!m_next && !m_timeline.isEmpty()) {
             setLoading(false);
             return;
         }
-        uri = m_next.isEmpty()
-            ? m_account->apiUrl(
-                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-            : m_next;
-    } else if (backwards && !m_prev.isEmpty()) {
+        uri = !m_next ? m_account->apiUrl(
+                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+                      : m_next.value();
+    } else if (backwards && !m_prev) {
         // Fixes issues where on reaching the end the data is fetched from the start
-        if (m_prev.isEmpty() && !m_timeline.isEmpty()) {
+        if (!m_prev && !m_timeline.isEmpty()) {
             setLoading(false);
             return;
         }
-        uri = m_prev.isEmpty()
-            ? m_account->apiUrl(
-                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-            : m_prev;
+        uri = !m_prev ? m_account->apiUrl(
+                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+                      : m_prev.value();
     } else if (publicTimelines.contains(m_timelineName)) {
         // federated timeline is really "public" without local set
         const QString apiUrl =
@@ -148,13 +148,13 @@ void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
         uri.setQuery(q);
     } else if (!backwards) {
         // Fixes issues where on reaching the end the data is fetched from the start
-        if (m_next.isEmpty() && !m_timeline.isEmpty()) {
+        if (!m_next && !m_timeline.isEmpty()) {
             setLoading(false);
             return;
         }
-        uri = m_next.isEmpty() ? m_account->apiUrl(
-                  QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-                               : m_next;
+        uri = !m_next ? m_account->apiUrl(
+                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
+                      : m_next.value();
     }
 
     auto account = m_account;
@@ -169,29 +169,10 @@ void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
                 return;
             }
 
-            // Fetch next post link
-            {
-                static QRegularExpression re(QStringLiteral(".*<(.*)>; rel=\"next\""));
-                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-                const auto match = re.match(QString::fromUtf8(next));
-                if (match.isValid()) {
-                    m_next = QUrl::fromUserInput(match.captured(1));
-                } else {
-                    m_next.clear();
-                }
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
 
-            // Fetch prev post link
-            {
-                static QRegularExpression re(QStringLiteral(".*<(.*)>; rel=\"prev\""));
-                const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-                const auto match = re.match(QString::fromUtf8(next));
-                if (match.isValid()) {
-                    m_prev = QUrl::fromUserInput(match.captured(1));
-                } else {
-                    m_prev.clear();
-                }
-            }
+            m_next = TextHandler::getNextLink(linkHeader);
+            m_prev = TextHandler::getPrevLink(linkHeader);
 
             if (publicTimelines.contains(m_timelineName) && backwards) {
                 int pos = fetchedTimeline(reply->readAll());
@@ -236,7 +217,7 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
 
 bool MainTimelineModel::atEnd() const
 {
-    return m_next.isEmpty();
+    return !m_next;
 }
 
 void MainTimelineModel::reset()
@@ -245,7 +226,8 @@ void MainTimelineModel::reset()
     qDeleteAll(m_timeline);
     m_timeline.clear();
     endResetModel();
-    m_next.clear();
+    m_next = {};
+    m_prev = {};
 }
 
 void MainTimelineModel::fetchLastReadId()
@@ -286,7 +268,7 @@ void MainTimelineModel::fetchPrevious()
 bool MainTimelineModel::hasPrevious() const
 {
     const bool lastReadTimeIsValid = m_lastReadTime.isValid();
-    const bool hasPreviousLink = !m_prev.isEmpty();
+    const bool hasPreviousLink = m_prev.has_value();
     const bool hasAnyPosts = !m_timeline.isEmpty();
     if (hasAnyPosts) {
         return lastReadTimeIsValid && hasPreviousLink;

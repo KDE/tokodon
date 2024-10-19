@@ -4,6 +4,7 @@
 #include "admin/accounttoolmodel.h"
 
 #include "account/accountmanager.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -246,7 +247,7 @@ void AccountsToolModel::actionAgainstAccount(const int row, const QString &type,
 bool AccountsToolModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return !m_next.isEmpty() && m_pagination;
+    return m_next.has_value() && m_pagination;
 }
 
 void AccountsToolModel::deleteAccountData(const int row)
@@ -375,10 +376,10 @@ void AccountsToolModel::fillTimeline()
     setLoading(true);
 
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         url = account->apiUrl(QStringLiteral("/api/v2/admin/accounts"));
     } else {
-        url = m_next;
+        url = m_next.value();
     }
     // To be removed when the pagination api response is fixed
     if (url.toString().contains("v1"_L1)) {
@@ -392,12 +393,9 @@ void AccountsToolModel::fillTimeline()
         const auto accounts = doc.array();
 
         if (!accounts.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             QList<std::shared_ptr<AdminAccountInfo>> fetchedAccounts;
 
             std::transform(

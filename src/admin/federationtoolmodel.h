@@ -75,5 +75,5 @@ private:
     QList<FederationInfo> m_federations;
     bool m_loading = false;
     FederationToolModel::FederationAction m_federationAction = FederationAction::BlockedDomains;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 };

@@ -5,6 +5,7 @@
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -224,7 +225,7 @@ void ReportToolModel::executeReportAction(const int row, ReportAction reportActi
 bool ReportToolModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return !m_next.isEmpty() && m_pagination;
+    return m_next.has_value() && m_pagination;
 }
 
 void ReportToolModel::fetchMore(const QModelIndex &parent)
@@ -245,10 +246,10 @@ void ReportToolModel::fillTimeline()
     setLoading(true);
 
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         url = account->apiUrl(QStringLiteral("/api/v1/admin/reports"));
     } else {
-        url = m_next;
+        url = m_next.value();
     }
     url.setQuery(buildQuery());
 
@@ -257,12 +258,9 @@ void ReportToolModel::fillTimeline()
         const auto reportsArray = doc.array();
 
         if (!reportsArray.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             QList<std::shared_ptr<ReportInfo>> fetchedReports;
 
             std::transform(

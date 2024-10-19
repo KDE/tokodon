@@ -83,7 +83,7 @@ private:
 
     QList<std::shared_ptr<Identity>> m_accounts;
     bool m_loading = false;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 
     QString m_followListName;
     QString m_accountId;

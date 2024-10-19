@@ -60,5 +60,5 @@ Q_SIGNALS:
 private:
     QList<IpInfo> m_ipinfo;
     bool m_loading = false;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 };

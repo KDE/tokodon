@@ -5,6 +5,7 @@
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -231,7 +232,7 @@ void FederationToolModel::clear()
 {
     beginResetModel();
     m_federations.clear();
-    m_next.clear();
+    m_next = {};
     endResetModel();
     setLoading(false);
 }
@@ -245,7 +246,7 @@ void FederationToolModel::filltimeline(FederationAction action)
     }
     setLoading(true);
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         switch (action) {
         case FederationAction::AllowedDomains:
             url = account->apiUrl(QStringLiteral("/api/v1/admin/domain_allows"));
@@ -255,7 +256,7 @@ void FederationToolModel::filltimeline(FederationAction action)
             break;
         }
     } else {
-        url = m_next;
+        url = m_next.value();
     }
 
     account->get(url, true, this, [this](QNetworkReply *reply) {
@@ -263,12 +264,9 @@ void FederationToolModel::filltimeline(FederationAction action)
         const auto federations = doc.array();
 
         if (!federations.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             QList<FederationInfo> fetchedFederations;
 
             std::transform(

@@ -5,6 +5,7 @@
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
+#include "texthandler.h"
 
 #include <KLocalizedString>
 
@@ -151,10 +152,10 @@ void IpRulesToolModel::filltimeline()
     }
     setLoading(true);
     QUrl url;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         url = account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks"));
     } else {
-        url = m_next;
+        url = m_next.value();
     }
 
     account->get(url, true, this, [this](QNetworkReply *reply) {
@@ -162,12 +163,9 @@ void IpRulesToolModel::filltimeline()
         const auto ipblocks = doc.array();
 
         if (!ipblocks.isEmpty()) {
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            if (re.isValid()) {
-                m_next = QUrl::fromUserInput(match.captured(1));
-            }
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             QList<IpInfo> fetchedIpblocks;
 
             std::transform(

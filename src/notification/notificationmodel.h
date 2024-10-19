@@ -97,5 +97,5 @@ protected:
 
     QList<std::shared_ptr<Notification>> m_notifications;
     QStringList m_excludeTypes;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 };

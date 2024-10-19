@@ -43,5 +43,5 @@ Q_SIGNALS:
 private:
     QList<EmailInfo> m_emailinfo;
     bool m_loading = false;
-    QUrl m_next;
+    std::optional<QUrl> m_next;
 };

@@ -3,6 +3,8 @@
 
 #include "timeline/tagsmodel.h"
 
+#include "texthandler.h"
+
 #include <KLocalizedString>
 
 TagsModel::TagsModel(QObject *parent)
@@ -34,7 +36,7 @@ void TagsModel::fetchMore(const QModelIndex &parent)
 bool TagsModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return !m_next.isEmpty();
+    return m_next.has_value();
 }
 
 void TagsModel::fillTimeline(const QString &fromId)
@@ -48,13 +50,13 @@ void TagsModel::fillTimeline(const QString &fromId)
     QUrlQuery q;
     q.addQueryItem(QStringLiteral("limit"), QStringLiteral("20"));
     QUrl uri;
-    if (m_next.isEmpty()) {
+    if (!m_next) {
         if (name() == QStringLiteral("trending")) {
             uri = account()->apiUrl(QStringLiteral("/api/v1/trends/tags"));
             uri.setQuery(q);
         }
     } else {
-        uri = m_next;
+        uri = m_next.value();
     }
 
     setLoading(true);
@@ -68,10 +70,10 @@ void TagsModel::fillTimeline(const QString &fromId)
             if (!doc.isArray()) {
                 return;
             }
-            static QRegularExpression re(QStringLiteral("<(.*)>; rel=\"next\""));
-            const auto next = reply->rawHeader(QByteArrayLiteral("Link"));
-            const auto match = re.match(QString::fromUtf8(next));
-            m_next = QUrl::fromUserInput(match.captured(1));
+
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+
             const auto values = doc.array();
 
             QList<Tag> tags;
