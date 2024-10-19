@@ -148,6 +148,8 @@ Kirigami.Page {
                         root.currentAccountId = identity.id;
                         if (columnView.isOneColumn) {
                             pageStack.push(accountTimeline, {});
+                        } else {
+                            loader.item?.forceActiveFocus(Qt.MouseFocusReason);
                         }
                     }
                 }
@@ -165,9 +167,12 @@ Kirigami.Page {
             sourceComponent: QQC2.ScrollView {
                 anchors.fill: parent
 
+                focus: true
                 clip: true
 
                 QQC2.ScrollBar.vertical.interactive: false
+
+                Keys.onPressed: event => timelineListView.handleKeyEvent(event)
 
                 TimelineView {
                     id: timelineListView

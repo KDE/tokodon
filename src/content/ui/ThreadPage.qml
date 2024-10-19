@@ -16,11 +16,11 @@ TimelinePage {
     Connections {
         target: root.model
 
-        function onLoadingChanged() {
+        function onLoadingChanged(): void {
             root.listView.positionViewAtIndex(root.model.getRootIndex(), ListView.Beginning);
         }
 
-        function onHasHiddenRepliesChanged() {
+        function onHasHiddenRepliesChanged(): void {
             if (root.model.hasHiddenReplies) {
                 root.originalPostUrl = root.model.postUrl;
             }

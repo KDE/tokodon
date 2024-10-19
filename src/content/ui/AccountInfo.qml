@@ -71,9 +71,14 @@ Kirigami.Page {
         Component.onCompleted: accountInfo.updateTabs()
 
         QQC2.ScrollView {
+            focus: true
             clip: true
 
+            Keys.onPressed: event => timelineView.handleKeyEvent(event)
+
             TimelineView {
+                id: timelineView
+
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
 
                 header: AccountHeader {}

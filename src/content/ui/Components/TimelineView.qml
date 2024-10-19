@@ -14,10 +14,30 @@ import '../PostDelegate'
 ListView {
     id: root
 
+    // Set to expand all of the posts in the list
     property bool expandedPost: false
+
+    // Set to the original post URL to show the "show more replies" message
+    property string originalPostUrl
+
     property bool completedInitialLoad: false
 
-    reuseItems: false // TODO: this causes jumping on the timeline. needs more investigation before it's re-enabled
+    // This causes jumping on the timeline. needs more investigation before it's re-enabled
+    reuseItems: false
+
+    // Call this function in Keys.onPressed to get PgUp/PgDn support
+    function handleKeyEvent(event): void {
+        if (event.key === Qt.Key_PageUp && !root.atYBeginning) {
+            event.accepted = true;
+            root.contentY -= height;
+        } else if (event.key === Qt.Key_PageDown && !root.atYEnd) {
+            event.accepted = true;
+            root.contentY += height;
+        }
+    }
+
+    // Used for pages like TimelinePage to control video playback
+    property bool isCurrentPage: true
 
     Connections {
         target: root.model
@@ -98,6 +118,23 @@ ListView {
         }
 
         Kirigami.PlaceholderMessage {
+            id: repliesNotAvailableMessage
+
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            visible: root.originalPostUrl.length !== 0
+            text: i18nc("@info:status", "Some replies are not available")
+            explanation: i18n("To view all replies, open the post on the original server.")
+            helpfulAction: Kirigami.Action {
+                icon.name: "window"
+                text: i18nc("@action:button 'Browser' being a web browser", "Open in Browser")
+                onTriggered: Qt.openUrlExternally(root.originalPostUrl)
+            }
+        }
+
+        Kirigami.PlaceholderMessage {
             id: endOfTimelineMessage
 
             visible: root.model.atEnd ?? false
@@ -133,8 +170,8 @@ ListView {
                 const aMin = status.y;
                 const aMax = status.y + status.height;
 
-                const bMin = ListView.view.contentY;
-                const bMax = ListView.view.contentY + ListView.view.height;
+                const bMin = status.ListView.view.contentY;
+                const bMax = status.ListView.view.contentY + status.ListView.view.height;
 
                 if (!root.isCurrentPage) {
                     status.inViewPort = false;
@@ -146,7 +183,7 @@ ListView {
 
                 // we are still checking two rectangles, but if one is bigger than the other
                 // just switch which one should be checked.
-                if (status.height > ListView.view.height) {
+                if (status.height > status.ListView.view.height) {
                     topEdgeVisible = bMin > aMin && bMin < aMax;
                     bottomEdgeVisible = bMax > aMin && bMax < aMax;
                 } else {
@@ -159,13 +196,25 @@ ListView {
         }
 
         Connections {
+            target: root
+
+            function onIsCurrentPageChanged() {
+                if (!root.isCurrentPage) {
+                    status.inViewPort = false;
+                } else {
+                    status.ListView.view.contentYChanged();
+                }
+            }
+        }
+
+        Connections {
             target: applicationWindow()
 
             function onIsShowingFullScreenImageChanged(): void {
                 if (applicationWindow().isShowingFullScreenImage) {
                     status.inViewPort = false;
                 } else {
-                    ListView.view.contentYChanged();
+                    status.ListView.view.contentYChanged();
                 }
             }
         }
