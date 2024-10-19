@@ -175,8 +175,21 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Follow
                 FollowDelegate {}
             }
+
             DelegateChoice {
                 roleValue: Notification.Update
+                PostDelegate {
+                    width: ListView.view.width
+                    secondary: true
+                    timelineModel: notificationModel
+                    loading: listview.model.loading
+                    showSeparator: index !== ListView.view.count - 1
+                    showInteractionButton: false
+                }
+            }
+
+            DelegateChoice {
+                roleValue: Notification.Status
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
