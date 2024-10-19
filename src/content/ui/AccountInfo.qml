@@ -775,11 +775,11 @@ Kirigami.Page {
 
                             onClicked: {
                                 pageStack.push(socialGraphComponent, {
-                                    name: "followers",
+                                    name: "following",
                                     accountId: accountId,
                                 });
                             }
-                            text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", accountModel.identity.followersCount)
+                            text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", accountModel.identity.followingCount)
                         }
 
                         Kirigami.Chip {
@@ -788,11 +788,11 @@ Kirigami.Page {
 
                             onClicked: {
                                 pageStack.push(socialGraphComponent, {
-                                    name: "following",
+                                    name: "followers",
                                     accountId: accountId,
                                 });
                             }
-                            text: i18ncp("@label User's number of followed accounts", "<b>%1</b> follows", "<b>%1</b> following", accountModel.identity.followingCount)
+                            text: i18ncp("@label User's number of followers", "<b>%1</b> follower", "<b>%1</b> followers", accountModel.identity.followersCount)
                         }
 
                         Item {
