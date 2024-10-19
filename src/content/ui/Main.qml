@@ -219,7 +219,8 @@ StatefulApp.StatefulWindow {
         }
 
         function onAddAccount(): void {
-            root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+            let page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+            page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
     }
 

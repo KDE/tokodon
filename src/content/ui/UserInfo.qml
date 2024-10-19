@@ -139,7 +139,6 @@ QQC2.Pane {
                 }
                 enabled: AccountManager.hasAccounts && applicationWindow().pageStack.depth > 0 && applicationWindow().pageStack.get(0).objectName !== 'loginPage' && applicationWindow().pageStack.get(0).objectName !== 'authorizationPage' && (applicationWindow().pageStack.layers.depth === 1 || applicationWindow().pageStack.layers.get(1).objectName !== 'loginPage' && applicationWindow().pageStack.layers.get(1).objectName !== 'authorizationPage')
 
-
                 action: Kirigami.Action {
                     fromQAction: root.application.action('add_account')
                 }
@@ -147,19 +146,6 @@ QQC2.Pane {
                 contentItem: Delegates.SubtitleContentItem {
                     itemDelegate: addAccountDelegaze
                     subtitle: i18n("Log in or create a new account")
-                }
-
-                onClicked: {
-                    if (Kirigami.Settings.isMobile) {
-                        pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
-                    } else {
-                        pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
-                    }
-                    userInfo.accountsListVisible = false
-                    accounts.currentIndex = AccountManager.selectedIndex
-                    if (userInfo.sidebar.modal) {
-                        userInfo.sidebar.close();
-                    }
                 }
 
                 Component.onCompleted: userInfo.addAccount = this
