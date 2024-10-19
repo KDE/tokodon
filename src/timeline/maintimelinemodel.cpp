@@ -176,7 +176,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             setLoading(false);
 
             // Only overwrite the read marker if they hit the button themselves
-            if (m_userHasTakenReadAction && isHome) {
+            if (m_userHasTakenReadAction && isHome && backwards) {
                 // We want to force a refresh of the read marker in case we reached the top
                 m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
             }
