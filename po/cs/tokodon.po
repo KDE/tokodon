@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-18 00:39+0000\n"
-"PO-Revision-Date: 2024-09-27 11:44+0200\n"
+"PO-Revision-Date: 2024-10-01 16:39+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -28,10 +28,9 @@ msgid "Could not unfollow account"
 msgstr "Nelze přestat sledovat účet"
 
 #: account/abstractaccount.cpp:676
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Účet nelze odmítnout"
+msgstr ""
 
 #: account/abstractaccount.cpp:677
 #, kde-format
@@ -177,9 +176,9 @@ msgstr ""
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 oblíbený"
+msgstr[1] "%1 oblíbené"
+msgstr[2] "%1 oblíbených"
 
 #: account/socialgraphmodel.cpp:42
 #, kde-format
@@ -191,12 +190,10 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Sledující"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:46
 #, kde-format
@@ -245,10 +242,9 @@ msgid "No users boosted this post"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgid "New followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "Noví sledující"
+msgstr ""
 
 #: account/socialgraphmodel.cpp:72
 #, kde-format
@@ -479,11 +475,10 @@ msgid "Profile link copied."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:630
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
-msgstr "Soukromý komentář"
+msgstr ""
 
 #: content/ui/AccountInfo.qml:638
 #, kde-format
@@ -659,11 +654,10 @@ msgid "Manage Users"
 msgstr ""
 
 #: content/ui/EditListPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
-msgstr "Uživatelé"
+msgstr ""
 
 #: content/ui/EditListPage.qml:118
 #, kde-format
@@ -759,12 +753,10 @@ msgid "%1 signed up"
 msgstr ""
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
-msgstr "Sledujete"
+msgstr ""
 
 #: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
 #, kde-format
@@ -773,18 +765,16 @@ msgid "Filters"
 msgstr "Filtry"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
-msgstr "Zobrazit méně"
+msgstr ""
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
-msgstr "Zobrazit méně"
+msgstr ""
 
 #: content/ui/FollowingPage.qml:195
 #, kde-format
@@ -1142,28 +1132,22 @@ msgstr ""
 #: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Hledat nebo zadat URL..."
 
 #: content/ui/LoginFlow/ServersPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "'Custom' is a category of emoji"
-#| msgid "Custom"
+#, kde-format
 msgid "Custom Server"
-msgstr "Vlastní"
+msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "Public Servers"
-msgstr "Vyberte server"
+msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "No Public Servers"
-msgstr "Vyberte server"
+msgstr ""
 
 #: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
@@ -1298,9 +1282,7 @@ msgid "Bookmarks"
 msgstr "Záložky"
 
 #: content/ui/Main.qml:517
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgid "Following"
 msgstr "Sledujete"
 
@@ -3005,10 +2987,9 @@ msgid ""
 msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:308
-#, fuzzy, kde-format
-#| msgid "<b>Content Warning</b><br /> %1"
+#, kde-format
 msgid "<b>Content Notice</b><br /> %1"
-msgstr "<b>Varování o obsahu:</b><br />%1"
+msgstr ""
 
 #: content/ui/PostDelegate/PostDelegate.qml:420
 #, kde-format
@@ -3245,11 +3226,10 @@ msgid "Vote"
 msgstr "Hlasovat"
 
 #: content/ui/PostDelegate/PostPoll.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
-msgstr "Zobrazit méně"
+msgstr ""
 
 #: content/ui/PostDelegate/PostPoll.qml:148
 #, kde-format
@@ -3704,25 +3684,22 @@ msgid "Deny"
 msgstr "Zakázat"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
-msgstr "Přestat sledovat"
+msgstr ""
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Remove bookmark"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Smazat záložku"
+msgstr ""
 
 #: content/ui/SocialGraphPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
-msgstr "Odstranit"
+msgstr ""
 
 #: content/ui/StandaloneComposer.qml:58
 #, kde-format
@@ -3848,11 +3825,10 @@ msgid "Keep"
 msgstr "Ponechat"
 
 #: content/ui/StatusComposer/StatusComposer.qml:240
-#, fuzzy, kde-format
-#| msgid "Content font"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
-msgstr "Písmo obsahu"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:253
 #, kde-format
@@ -3989,11 +3965,10 @@ msgid "cn"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:460
-#, fuzzy, kde-format
-#| msgid "Content font"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
-msgstr "Písmo obsahu"
+msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
@@ -4486,7 +4461,7 @@ msgstr "%1h"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4516,29 +4491,3 @@ msgid_plural "%1 years ago"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "Content warning"
-#~ msgstr "Varování o obsahu"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Content warning"
-#~ msgstr "Varování o obsahu"
-
-#~ msgid "Note:"
-#~ msgstr "Poznámka:"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Rozbalit příspěvek"
-
-#~ msgid "Open Original Page"
-#~ msgstr "Otevřít původní stránku"
-
-#~ msgctxt "@action:button"
-#~ msgid "Open Original Page"
-#~ msgstr "Otevřít původní stránku"
-
-#~ msgctxt "@title:group"
-#~ msgid "Pick a Server"
-#~ msgstr "Vyberte server"
