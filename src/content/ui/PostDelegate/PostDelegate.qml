@@ -94,7 +94,7 @@ QQC2.ItemDelegate {
 
     Accessible.description: root.spoilerText.length === 0 ? i18n("Normal Status") : i18n("Spoiler Status")
 
-    onClicked: {
+    function openPost(): void {
         if (postContent.hoveredLink) {
             return;
         }
@@ -128,6 +128,8 @@ QQC2.ItemDelegate {
 
     contentItem: PostLayout {
         id: flexColumn
+
+        onTapped: root.openPost()
 
         RowLayout {
             spacing: Kirigami.Units.largeSpacing
@@ -333,7 +335,7 @@ QQC2.ItemDelegate {
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 shouldOpenInternalLinks: true
 
-                onClicked: root.clicked()
+                onClicked: root.openPost()
             }
         }
 

@@ -11,54 +11,72 @@ Kirigami.FlexColumn {
 
     default property alias content: inner.children
 
+    signal tapped
+
     spacing: Kirigami.Units.largeSpacing
 
     padding: 0
     maximumWidth: Kirigami.Units.gridUnit * 40
 
-    RowLayout {
-        spacing: 0
+    Item {
+        Layout.fillWidth: true
+        Layout.fillHeight: true
 
-        Item {
-            id: threadSpace
+        Layout.preferredWidth: layout.implicitWidth
+        Layout.preferredHeight: layout.implicitHeight
 
-            visible: isThreadReply && isReply
-
-            Layout.preferredWidth: visible ? root.threadMargin : 0
-            Layout.fillHeight: true
-
-            Kirigami.Separator {
-                id: threadSeparator
-
-                readonly property bool shouldDrawFullLine: !root.isLastThreadReply
-                readonly property real avatarOffset: 30
-
-                anchors {
-                    top: parent.top
-                    topMargin: -root.topPadding
-                    bottom: shouldDrawFullLine ? parent.bottom : undefined
-                    bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
-                    horizontalCenter: threadSpace.horizontalCenter
-                }
-
-                height: shouldDrawFullLine ? threadSpace.height : threadSeparator.avatarOffset
-
-                Kirigami.Separator {
-                    anchors {
-                        top: parent.top
-                        topMargin: threadSeparator.avatarOffset
-                        left: parent.left
-                    }
-
-                    width: threadSeparator.avatarOffset
-                }
-            }
+        TapHandler {
+            onTapped: flexColumn.tapped()
         }
 
-        ColumnLayout {
-            id: inner
+        RowLayout {
+            id: layout
 
-            spacing: Kirigami.Units.largeSpacing
+            anchors.fill: parent
+
+            spacing: 0
+
+            Item {
+                id: threadSpace
+
+                visible: isThreadReply && isReply
+
+                Layout.preferredWidth: visible ? root.threadMargin : 0
+                Layout.fillHeight: true
+
+                Kirigami.Separator {
+                    id: threadSeparator
+
+                    readonly property bool shouldDrawFullLine: !root.isLastThreadReply
+                    readonly property real avatarOffset: 30
+
+                    anchors {
+                        top: parent.top
+                        topMargin: -root.topPadding
+                        bottom: shouldDrawFullLine ? parent.bottom : undefined
+                        bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
+                        horizontalCenter: threadSpace.horizontalCenter
+                    }
+
+                    height: shouldDrawFullLine ? threadSpace.height : threadSeparator.avatarOffset
+
+                    Kirigami.Separator {
+                        anchors {
+                            top: parent.top
+                            topMargin: threadSeparator.avatarOffset
+                            left: parent.left
+                        }
+
+                        width: threadSeparator.avatarOffset
+                    }
+                }
+            }
+
+            ColumnLayout {
+                id: inner
+
+                spacing: Kirigami.Units.largeSpacing
+            }
         }
     }
 }
