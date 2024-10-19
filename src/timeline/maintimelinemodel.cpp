@@ -69,101 +69,87 @@ void MainTimelineModel::setName(const QString &timelineName)
     fillTimeline({});
 }
 
-void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
+void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 {
-    static const QSet<QString> validTimelines = {QStringLiteral("home"),
-                                                 QStringLiteral("public"),
-                                                 QStringLiteral("federated"),
-                                                 QStringLiteral("bookmarks"),
-                                                 QStringLiteral("favourites"),
-                                                 QStringLiteral("trending"),
-                                                 QStringLiteral("list")};
-    static const QSet<QString> publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
+    static const QSet validTimelines = {QStringLiteral("home"),
+                                        QStringLiteral("public"),
+                                        QStringLiteral("federated"),
+                                        QStringLiteral("bookmarks"),
+                                        QStringLiteral("favourites"),
+                                        QStringLiteral("trending"),
+                                        QStringLiteral("list")};
+    static const QSet publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
 
-    if (!m_account || m_loading || !validTimelines.contains(m_timelineName)) {
+    const bool isHome = m_timelineName == QStringLiteral("home");
+    const bool isList = m_timelineName == QStringLiteral("list");
+    const bool isPublic = m_timelineName == QStringLiteral("public");
+    const bool isTrending = m_timelineName == QStringLiteral("trending");
+    const bool isFederated = m_timelineName == QStringLiteral("federated");
+
+    // Ensure we aren't trying to load without an account, loading something else, or with an invalid timeline name.
+    if (!m_account || loading() || !validTimelines.contains(m_timelineName)) {
         return;
     }
 
-    if (m_timelineName == QStringLiteral("home") && !fetchingLastId) {
+    // If we are fetching the home timeline, then make sure we fetch the read marker first before continuing.
+    if (isHome && !fetchingLastId) {
         fetchLastReadId();
         return;
     }
 
-    if (m_timelineName == QStringLiteral("list") && m_listId.isEmpty()) {
+    // If we are trying to load a list, don't continue without knowing which one to load.
+    if (isList && m_listId.isEmpty()) {
         return;
     }
 
     setLoading(true);
 
-    const bool local = m_timelineName == QStringLiteral("public");
-
-    QUrlQuery q;
-    if (local) {
-        q.addQueryItem(QStringLiteral("local"), QStringLiteral("true"));
+    QUrl url;
+    if (backwards) {
+        // If we are moving backwards, use the prev url
+        Q_ASSERT(m_prev.has_value());
+        url = m_prev.value();
+    } else {
+        if (m_next) {
+            // Otherwise, use the next url
+            url = m_next.value();
+        } else {
+            // And if we're doing this for the first time, we need to know where to begin
+            if (isTrending) {
+                // Trending has a special URL
+                url = m_account->apiUrl(QStringLiteral("/api/v1/trends/statuses"));
+            } else if (isFederated) {
+                // Federated timelines is "public" without local set
+                url = m_account->apiUrl(QStringLiteral("/api/v1/timelines/public"));
+            } else if (isList) {
+                // List needs the list id appended to it
+                url = m_account->apiUrl(QStringLiteral("/api/v1/timelines/list/%1").arg(m_listId));
+            } else if (publicTimelines.contains(m_timelineName)) {
+                url = m_account->apiUrl(QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName));
+            } else {
+                url = m_account->apiUrl(QStringLiteral("/api/v1/%1").arg(m_timelineName));
+            }
+        }
     }
-    if (!from_id.isEmpty()) {
+
+    auto query = QUrlQuery(url.query());
+    if (isPublic) {
+        query.addQueryItem(QStringLiteral("local"), QStringLiteral("true"));
+    }
+    if (!fromId.isEmpty() && !query.hasQueryItem(QStringLiteral("max_id"))) {
         // TODO: this is an *upper bound* so it always is one less than the last post we read
         // is this really how it's supposed to work wrt read markers?
-        q.addQueryItem(QStringLiteral("max_id"), from_id);
+        query.addQueryItem(QStringLiteral("max_id"), fromId);
     }
+    url.setQuery(query);
 
-    QUrl uri;
-
-    // FIXME: this logic is terrible and needs to be rewritten
-    if (!backwards && !m_next) {
-        // Fixes issues where on reaching the end the data is fetched from the start
-        if (!m_next && !m_timeline.isEmpty()) {
-            setLoading(false);
-            return;
-        }
-        uri = !m_next ? m_account->apiUrl(
-                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-                      : m_next.value();
-    } else if (backwards && !m_prev) {
-        // Fixes issues where on reaching the end the data is fetched from the start
-        if (!m_prev && !m_timeline.isEmpty()) {
-            setLoading(false);
-            return;
-        }
-        uri = !m_prev ? m_account->apiUrl(
-                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-                      : m_prev.value();
-    } else if (publicTimelines.contains(m_timelineName)) {
-        // federated timeline is really "public" without local set
-        const QString apiUrl =
-            QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
-        uri = m_account->apiUrl(apiUrl);
-        uri.setQuery(q);
-    }
-
-    if (m_timelineName == QStringLiteral("list")) {
-        const QString apiUrl = QStringLiteral("/api/v1/timelines/list/%1").arg(m_listId);
-        uri = m_account->apiUrl(apiUrl);
-        uri.setQuery(q);
-    } else if (publicTimelines.contains(m_timelineName) && !backwards) {
-        // federated timeline is really "public" without local set
-        const QString apiUrl =
-            QStringLiteral("/api/v1/timelines/%1").arg(m_timelineName == QStringLiteral("federated") ? QStringLiteral("public") : m_timelineName);
-        uri = m_account->apiUrl(apiUrl);
-        uri.setQuery(q);
-    } else if (!backwards) {
-        // Fixes issues where on reaching the end the data is fetched from the start
-        if (!m_next && !m_timeline.isEmpty()) {
-            setLoading(false);
-            return;
-        }
-        uri = !m_next ? m_account->apiUrl(
-                            QStringLiteral("/api/v1/%1").arg(m_timelineName == QStringLiteral("trending") ? QStringLiteral("trends/statuses") : m_timelineName))
-                      : m_next.value();
-    }
-
-    auto account = m_account;
-    auto currentTimelineName = m_timelineName;
     m_account->get(
-        uri,
+        url,
         true,
         this,
-        [this, currentTimelineName, account, backwards](QNetworkReply *reply) {
+        [this, currentTimelineName = m_timelineName, account = m_account, backwards, isHome](QNetworkReply *reply) {
+            // This weird m_account != account is to protect against account switches that might happen while loading
+            // Ditto for timeline name
             if (m_account != account || m_timelineName != currentTimelineName) {
                 setLoading(false);
                 return;
@@ -172,29 +158,30 @@ void MainTimelineModel::fillTimeline(const QString &from_id, bool backwards)
             const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
 
             m_next = TextHandler::getNextLink(linkHeader);
+            Q_EMIT atEndChanged();
+
             m_prev = TextHandler::getPrevLink(linkHeader);
 
             if (publicTimelines.contains(m_timelineName) && backwards) {
-                int pos = fetchedTimeline(reply->readAll());
+                int const pos = fetchedTimeline(reply->readAll());
                 Q_EMIT repositionAt(pos);
-                setLoading(false);
             } else {
                 fetchedTimeline(reply->readAll(), true);
-                setLoading(false);
             }
 
             fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
+
+            // hasPrevious depends not just on m_prev, but also m_timeline!
+            Q_EMIT hasPreviousChanged();
             setLoading(false);
 
-            Q_EMIT hasPreviousChanged();
-
             // Only overwrite the read marker if they hit the button themselves
-            if (m_userHasTakenReadAction && m_timelineName == QStringLiteral("home")) {
+            if (m_userHasTakenReadAction && isHome) {
                 // We want to force a refresh of the read marker in case we reached the top
                 m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
             }
         },
-        [this](QNetworkReply *reply) {
+        [this](const QNetworkReply *reply) {
             Q_UNUSED(reply)
             setLoading(false);
         });
@@ -217,6 +204,12 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
 
 bool MainTimelineModel::atEnd() const
 {
+    // Trending doesnt have pagination
+    const bool isTrending = m_timelineName == QStringLiteral("trending");
+    if (isTrending) {
+        return true;
+    }
+
     return !m_next;
 }
 
@@ -263,6 +256,12 @@ void MainTimelineModel::fetchPrevious()
     m_userHasTakenReadAction = true;
     Q_EMIT userHasTakenReadActionChanged();
     fillTimeline({}, true);
+}
+
+bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent)
+    return !atEnd();
 }
 
 bool MainTimelineModel::hasPrevious() const

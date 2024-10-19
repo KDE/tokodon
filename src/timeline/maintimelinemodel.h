@@ -51,6 +51,7 @@ public:
     void fillTimeline(const QString &fromId, bool backwards = false) override;
     [[nodiscard]] QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
+    bool canFetchMore(const QModelIndex &parent) const override;
 
     [[nodiscard]] bool atEnd() const;
     [[nodiscard]] bool hasPrevious() const;

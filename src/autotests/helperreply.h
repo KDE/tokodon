@@ -33,5 +33,10 @@ public:
     {
     }
 
+    void setRawHeader(const QByteArray &headerName, const QByteArray &value)
+    {
+        QNetworkReply::setRawHeader(headerName, value);
+    }
+
     QFile apiResult;
 };

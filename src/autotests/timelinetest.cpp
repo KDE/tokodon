@@ -68,12 +68,15 @@ private Q_SLOTS:
         QUrl markersUrl = account->apiUrl(QStringLiteral("/api/v1/markers"));
         markersUrl.setQuery(QStringLiteral("timeline[]=home"));
         account->registerGet(markersUrl, new TestReply(QStringLiteral("markers.json"), account));
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
             {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
         account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
+
+        auto statusReply = new TestReply(QStringLiteral("statuses.json"), account);
+        statusReply->setRawHeader("Link", QStringLiteral("<%1>; rel=\"next\", <>; rel=\"prev\"").arg(fetchMoreUrl.toString()).toUtf8());
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), statusReply);
 
         MainTimelineModel timelineModel;
         timelineModel.setName(QStringLiteral("home"));
@@ -178,12 +181,15 @@ private Q_SLOTS:
 
     void testFillListTimeline()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/list/1")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/list/1"));
         fetchMoreUrl.setQuery(QUrlQuery{
             {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
         account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
+
+        auto statusReply = new TestReply(QStringLiteral("statuses.json"), account);
+        statusReply->setRawHeader("Link", QStringLiteral("<%1>; rel=\"next\", <>; rel=\"prev\"").arg(fetchMoreUrl.toString()).toUtf8());
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/list/1")), statusReply);
 
         MainTimelineModel timelineModel;
         timelineModel.setName(QStringLiteral("list"));
