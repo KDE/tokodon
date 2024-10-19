@@ -1,103 +1,255 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
+import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import org.kde.tokodon
 
 // The visual "link preview box" when there's some data attached to a link
 // Such as the website page description and title
-QQC2.AbstractButton {
+Item {
     id: root
 
     required property var card
     required property bool selected
 
+    readonly property bool hasAuthorship: card.authorName !== "" || card.authorIdentity != null
+
+    implicitWidth: mainLayout.implicitWidth
+    implicitHeight: mainLayout.implicitHeight
+
     Accessible.name: i18n("Link preview: %1", root.card ? root.card.title : '')
     Accessible.description: root.card ? root.card.providerName : ''
 
-    leftPadding: Kirigami.Units.largeSpacing
-    topPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
+    ColumnLayout {
+        id: mainLayout
 
-    onClicked: Qt.openUrlExternally(root.card.url)
+        anchors.fill: parent
 
-    HoverHandler {
-        cursorShape: Qt.PointingHandCursor
-        onHoveredChanged: if (hovered) {
-            applicationWindow().hoverLinkIndicator.text = root.card.url;
-        } else {
-            applicationWindow().hoverLinkIndicator.text = "";
-        }
-    }
-
-    background: Rectangle {
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-
-        radius: Kirigami.Units.mediumSpacing
-        color: Kirigami.Theme.alternateBackgroundColor
-        border {
-            width: root.visualFocus ? 2 : 0
-            color: root.visualFocus ? Kirigami.Theme.focusColor : 'transparent'
-        }
-    }
-
-    contentItem: RowLayout {
         spacing: 0
 
-        Image {
-            id: img
-            mipmap: true
-            smooth: true
+        QQC2.Control {
+            id: topControl
 
-            visible: root.card && root.card.image
+            activeFocusOnTab: true
+            hoverEnabled: true
 
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 3
-            Layout.maximumHeight: Kirigami.Units.gridUnit * 3
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 3
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 3
-            Layout.topMargin: 0
-            Layout.bottomMargin: 0
-            Layout.leftMargin: Kirigami.Units.smallSpacing
+            function openLink(): void {
+                Qt.openUrlExternally(root.card.url);
+            }
 
-            layer.enabled: true
-            layer.effect: RoundedEffect {}
+            Accessible.onPressAction: openLink()
+            Keys.onSpacePressed: openLink()
 
-            fillMode: Image.PreserveAspectCrop
-            source: root.card ? root.card.image : ''
-        }
-        ColumnLayout {
+            TapHandler {
+                onTapped: topControl.openLink()
+            }
+
+            onHoveredChanged: if (hovered) {
+                applicationWindow().hoverLinkIndicator.text = root.card.url;
+            } else {
+                applicationWindow().hoverLinkIndicator.text = "";
+            }
+
             Layout.fillWidth: true
-            Layout.margins: Kirigami.Units.smallSpacing
-            Layout.leftMargin: Kirigami.Units.largeSpacing
-            spacing: 0
-            QQC2.Label {
-                text: root.card ? root.card.providerName : ''
-                elide: Text.ElideRight
-                font: Kirigami.Theme.smallFont
-                visible: text
-                Layout.fillWidth: true
-                maximumLineCount: 1
+            Layout.fillHeight: true
+
+            background: Kirigami.ShadowedRectangle {
+                Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                Kirigami.Theme.inherit: false
+
+                color: Kirigami.Theme.alternateBackgroundColor
+                corners {
+                    topLeftRadius: Kirigami.Units.cornerRadius
+                    topRightRadius: Kirigami.Units.cornerRadius
+                    bottomLeftRadius: root.hasAuthorship ? 0 : Kirigami.Units.cornerRadius
+                    bottomRightRadius: root.hasAuthorship ? 0 : Kirigami.Units.cornerRadius
+                }
+                border {
+                    width: topControl.visualFocus || topControl.hovered ? 2 : 0
+                    color: topControl.visualFocus || topControl.hovered ? Kirigami.Theme.focusColor : 'transparent'
+                }
             }
-            Kirigami.Heading {
-                level: 5
-                text: root.card ? root.card.title : ''
-                elide: Text.ElideRight
-                font.weight: Font.DemiBold
-                maximumLineCount: 1
-                visible: text
-                Layout.fillWidth: true
+
+            contentItem: RowLayout {
+                spacing: 0
+
+                Image {
+                    id: img
+                    mipmap: true
+                    smooth: true
+
+                    visible: root.card && root.card.image
+
+                    Layout.minimumHeight: Kirigami.Units.gridUnit * 3
+                    Layout.maximumHeight: Kirigami.Units.gridUnit * 3
+                    Layout.minimumWidth: Kirigami.Units.gridUnit * 3
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 3
+                    Layout.topMargin: 0
+                    Layout.bottomMargin: 0
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+
+                    layer.enabled: true
+                    layer.effect: RoundedEffect {}
+
+                    fillMode: Image.PreserveAspectCrop
+                    source: root.card ? root.card.image : ''
+                }
+                ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Layout.fillWidth: true
+                    Layout.margins: Kirigami.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                    QQC2.Label {
+                        text: root.card ? root.card.providerName : ''
+                        elide: Text.ElideRight
+                        font: Kirigami.Theme.smallFont
+                        visible: text
+                        maximumLineCount: 1
+                        color: Kirigami.Theme.disabledTextColor
+
+                        Layout.fillWidth: true
+                    }
+                    Kirigami.Heading {
+                        level: 5
+                        text: root.card ? root.card.title : ''
+                        elide: Text.ElideRight
+                        font.weight: Font.DemiBold
+                        maximumLineCount: 1
+                        visible: text
+
+                        Layout.fillWidth: true
+                    }
+                    QQC2.Label {
+                        text: root.card ? root.card.description : ''
+                        elide: Text.ElideRight
+                        visible: text
+                        maximumLineCount: 1
+
+                        Layout.fillWidth: true
+                    }
+                }
             }
-            QQC2.Label {
-                text: root.card ? root.card.description : ''
-                elide: Text.ElideRight
-                visible: text
-                maximumLineCount: 1
-                Layout.fillWidth: true
+        }
+
+        QQC2.Control {
+            id: authorControl
+
+            readonly property bool hasMastodonAccount: root.card.authorIdentity != null
+
+            activeFocusOnTab: true
+            hoverEnabled: true
+            visible: root.hasAuthorship
+
+            Layout.fillWidth: true
+            Layout.preferredHeight: visible ? 40 : 0
+
+            function openLink(): void {
+                if (authorControl.hasMastodonAccount) {
+                    Navigation.openAccount(root.card.authorIdentity.id);
+                } else {
+                    Qt.openUrlExternally(root.card.authorUrl);
+                }
+            }
+
+            onHoveredChanged: if (hovered && !hasMastodonAccount) {
+                applicationWindow().hoverLinkIndicator.text = root.card.authorUrl;
+            } else {
+                applicationWindow().hoverLinkIndicator.text = "";
+            }
+
+            Accessible.onPressAction: openLink()
+            Keys.onSpacePressed: openLink()
+
+            TapHandler {
+                onTapped: authorControl.openLink()
+            }
+
+            background: Kirigami.ShadowedRectangle {
+                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.inherit: false
+
+                color: Kirigami.Theme.backgroundColor
+                corners {
+                    bottomLeftRadius: Kirigami.Units.cornerRadius
+                    bottomRightRadius: Kirigami.Units.cornerRadius
+                }
+                border {
+                    width: authorControl.visualFocus || authorControl.hovered ? 2 : 0
+                    color: authorControl.visualFocus || authorControl.hovered ? Kirigami.Theme.focusColor : 'transparent'
+                }
+            }
+
+            contentItem: Item {
+                id: authorLayout
+
+                Loader {
+                    anchors.fill: parent
+
+                    sourceComponent: authorControl.hasMastodonAccount ? mastodonAuthor : webAuthor
+
+                    property Component mastodonAuthor: Component {
+                        RowLayout {
+                            spacing: Kirigami.Units.mediumSpacing
+
+                            QQC2.Label {
+                                text: root.card ? i18nc("@info:label 'More from [this author]', where we put the user's avatar and name next to this label", "More from") : ''
+                                elide: Text.ElideRight
+                                verticalAlignment: Qt.AlignVCenter
+                                visible: text
+                                maximumLineCount: 1
+                                color: Kirigami.Theme.disabledTextColor
+
+                                Layout.fillHeight: true
+                                Layout.leftMargin: Kirigami.Units.largeSpacing
+                            }
+                            KirigamiComponents.Avatar {
+                                implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+                                implicitWidth: implicitHeight
+
+                                name: root.card.authorIdentity ? root.card.authorIdentity.displayName : ''
+                                source: root.card.authorIdentity ? root.card.authorIdentity.avatarUrl : ''
+                                cache: true
+                            }
+                            QQC2.Label {
+                                text: root.card ? root.card.authorIdentity.displayNameHtml : ''
+                                elide: Text.ElideRight
+                                verticalAlignment: Qt.AlignVCenter
+                                visible: text
+                                maximumLineCount: 1
+
+                                Layout.fillHeight: true
+                            }
+                            Item {
+                                Layout.fillWidth: true
+                            }
+                        }
+                    }
+
+                    property Component webAuthor: Component {
+                        RowLayout {
+                            spacing: 0
+
+                            QQC2.Label {
+                                text: root.card ? i18nc("@info:label 'This is written by %1'", "By %1", root.card.authorName) : ''
+                                color: Kirigami.Theme.disabledTextColor
+                                elide: Text.ElideRight
+                                verticalAlignment: Qt.AlignVCenter
+                                visible: text
+                                maximumLineCount: 1
+
+                                Layout.fillHeight: true
+                                Layout.leftMargin: Kirigami.Units.largeSpacing
+                            }
+                        }
+                    }
+                }
             }
         }
     }

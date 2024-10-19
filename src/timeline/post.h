@@ -38,6 +38,7 @@ class Card
 
     Q_PROPERTY(QString authorName READ authorName)
     Q_PROPERTY(QString authorUrl READ authorUrl)
+    Q_PROPERTY(Identity *authorIdentity READ authorIdentity)
     Q_PROPERTY(QString blurhash READ blurhash)
     Q_PROPERTY(QString description READ description)
     Q_PROPERTY(QString embedUrl READ embedUrl)
@@ -52,10 +53,11 @@ class Card
 
 public:
     Card() = default;
-    explicit Card(QJsonObject card);
+    explicit Card(AbstractAccount *account, QJsonObject card);
 
     [[nodiscard]] QString authorName() const;
     [[nodiscard]] QString authorUrl() const;
+    [[nodiscard]] Identity *authorIdentity() const;
     [[nodiscard]] QString blurhash() const;
     [[nodiscard]] QString description() const;
     [[nodiscard]] QString embedUrl() const;
@@ -69,7 +71,11 @@ public:
     [[nodiscard]] QUrl url() const;
 
 private:
+    /// Returns the new PreviewCardAuthor object if found.
+    std::optional<QJsonObject> authorObject() const;
+
     QJsonObject m_card;
+    AbstractAccount *m_account = nullptr;
 };
 
 /**

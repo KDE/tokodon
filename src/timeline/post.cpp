@@ -176,7 +176,7 @@ void Post::fromJson(QJsonObject obj)
     addAttachments(obj["media_attachments"_L1].toArray());
     const QJsonArray mentions = obj["mentions"_L1].toArray();
     if (obj.contains("card"_L1) && !obj["card"_L1].toObject().empty()) {
-        setCard(std::make_optional<Card>(obj["card"_L1].toObject()));
+        setCard(std::make_optional<Card>(m_parent, obj["card"_L1].toObject()));
     }
 
     if (obj.contains("application"_L1) && !obj["application"_L1].toObject().empty()) {
@@ -507,19 +507,39 @@ void Post::processContent(const QJsonObject &obj)
     m_content = standaloneContent;
 }
 
-Card::Card(QJsonObject card)
+Card::Card(AbstractAccount *account, QJsonObject card)
     : m_card(card)
+    , m_account(account)
 {
 }
 
 QString Card::authorName() const
 {
+    if (const auto author = authorObject()) {
+        return (*author)["name"_L1].toString();
+    }
     return m_card[QLatin1String("author_name")].toString();
 }
 
 QString Card::authorUrl() const
 {
+    if (const auto author = authorObject()) {
+        return (*author)["url"_L1].toString();
+    }
     return m_card[QLatin1String("author_url")].toString();
+}
+
+Identity *Card::authorIdentity() const
+{
+    if (m_account != nullptr) {
+        if (const auto author = authorObject()) {
+            const auto account = (*author)["account"_L1];
+            if (!account.isNull()) {
+                return m_account->identityLookup(account["id"_L1].toString(), account.toObject()).get();
+            }
+        }
+    }
+    return nullptr;
 }
 
 QString Card::blurhash() const
@@ -579,6 +599,17 @@ QString Card::title() const
 QUrl Card::url() const
 {
     return QUrl::fromUserInput(m_card[QLatin1String("url")].toString());
+}
+
+std::optional<QJsonObject> Card::authorObject() const
+{
+    if (m_card.contains("authors"_L1)) {
+        const auto &authors = m_card["authors"_L1].toArray();
+        if (!authors.isEmpty()) {
+            return authors.first().toObject();
+        }
+    }
+    return std::nullopt;
 }
 
 Application::Application(QJsonObject application)
