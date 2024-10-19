@@ -84,7 +84,7 @@ FormCard.FormCardPage {
             id: addAccountDelegate
             text: i18n("Add Account")
             icon.name: "list-add"
-            onClicked: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"))
+            onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"))
         }
     }
 }
