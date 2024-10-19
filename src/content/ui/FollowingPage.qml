@@ -165,24 +165,14 @@ Kirigami.Page {
             sourceComponent: QQC2.ScrollView {
                 anchors.fill: parent
 
+                clip: true
+
                 QQC2.ScrollBar.vertical.interactive: false
 
-                ListView {
+                TimelineView {
                     id: timelineListView
 
-                    clip: true
-
                     model: root.accountModel
-
-                    delegate: PostDelegate {
-                        id: status
-
-                        timelineModel: timelineListView.model
-                        expandedPost: false
-                        showSeparator: index !== ListView.view.count - 1
-                        loading: timelineListView.model.loading
-                        width: ListView.view.width
-                    }
 
                     Kirigami.PlaceholderMessage {
                         id: missingAccountMessage
