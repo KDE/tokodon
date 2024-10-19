@@ -13,6 +13,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.tokodon
+import org.kde.tokodon.private
 import '..'
 
 Kirigami.ScrollablePage {
@@ -240,6 +241,7 @@ Kirigami.ScrollablePage {
             placeholderText: i18nc("@info:placeholder", "Content notice")
             Layout.fillWidth: true
             visible: contentWarning.checked
+            font.pixelSize: Config.defaultFont.pixelSize + 1
             onTextChanged: {
                 // Only update the backend if the content warning checkbox is wanted
                 if (contentWarning.checked) {
@@ -252,6 +254,7 @@ Kirigami.ScrollablePage {
             id: textArea
             placeholderText: i18nc("@info:placeholder", "What's new?")
             text: root.backend.status
+            font.pixelSize: Config.defaultFont.pixelSize + 1
             wrapMode: TextEdit.Wrap
             Layout.fillWidth: true
             Layout.fillHeight: true
