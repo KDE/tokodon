@@ -25,6 +25,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "checkmark-symbolic"
             text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
+            enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0
             onTriggered: timelinePage.currentModel.markAllNotificationsAsRead()
         }
     ]
