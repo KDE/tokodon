@@ -13,11 +13,16 @@ import QtQml.Models
 import "./PostDelegate"
 import "./StatusComposer"
 
-Kirigami.ScrollablePage {
+Kirigami.Page {
     id: timelinePage
     title: i18n("Explore")
 
     property var dialog: null
+
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
 
     onBackRequested: if (dialog) {
         dialog.close();
@@ -30,15 +35,6 @@ Kirigami.ScrollablePage {
         text: i18nc("@action:button", "Post")
         enabled: AccountManager.hasAccounts
         onTriggered: Navigation.openComposer("")
-    }
-
-    TagsModel {
-        id: tagsModel
-    }
-
-    MainTimelineModel {
-        id: trendingPostsModel
-        name: "trending"
     }
 
     property Kirigami.Action tendingPostsAction: Kirigami.Action {
@@ -89,82 +85,86 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ListView {
-        id: tagsView
-        model: tendingPostsAction.checked ? trendingPostsModel : tagsModel
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
-        Connections {
-            target: trendingPostsModel
-            function onPostSourceReady(backend, isEdit) {
-                const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                    purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
-                    backend: backend
-                });
-                item.refreshData(); // to refresh spoiler text, etc
-            }
-        }
+    StackLayout {
+        anchors.fill: parent
 
-        Component {
-            id: trendingPostsModelComponent
+        currentIndex: tendingPostsAction.checked ? 0 : 1
 
-            PostDelegate {
-                width: ListView.view.width
-                timelineModel: tagsView.model
-                loading: tagsView.model.loading
-                showSeparator: index !== tagsView.count - 1
-            }
-        }
+        QQC2.ScrollView {
+            clip: true
 
-        Component {
-            id: trendingTagsModelComponent
+            Keys.onPressed: event => timelineView.handleKeyEvent(event)
 
-            Delegates.RoundedItemDelegate {
-                id: delegate
+            QQC2.ScrollBar.vertical.interactive: false
 
-                required property string name
-                required property url url
-                required property var history
+            TimelineView {
+                id: timelineView
 
-                width: ListView.view.width
-
-                onClicked: pageStack.push(tagModelComponent, { hashtag: delegate.name })
-
-                contentItem: ColumnLayout {
-                    Kirigami.Heading {
-                        level: 4
-                        text: `#${delegate.name}`
-                        type: Kirigami.Heading.Type.Primary
-                        verticalAlignment: Text.AlignTop
-                        elide: Text.ElideRight
-                        textFormat: Text.RichText
-                        Layout.fillWidth: true
-                    }
-
-                    QQC2.Label {
-                        font.pixelSize: Config.defaultFont.pixelSize + 1
-                        Layout.fillWidth: true
-                        elide: Text.ElideRight
-                        color: Kirigami.Theme.disabledTextColor
-                        text: i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
-                        verticalAlignment: Text.AlignTop
-                    }
+                model: MainTimelineModel {
+                    id: trendingPostsModel
+                    name: "trending"
                 }
             }
         }
+        QQC2.ScrollView {
+            clip: true
 
-        delegate: tendingPostsAction.checked ? trendingPostsModelComponent : trendingTagsModelComponent
+            ListView {
+                id: tagsView
 
-        QQC2.ProgressBar {
-            visible: tagsView.model.loading && tagsView.count === 0
-            anchors.centerIn: parent
-            indeterminate: true
-        }
+                model: TagsModel {
+                    id: tagsModel
+                }
 
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            text: tendingPostsAction.checked ? i18nc("@label", "No Trending Posts") : i18nc("@label", "No Trending Tags")
-            visible: !tagsView.model.loading && tagsView.count === 0
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                delegate: Delegates.RoundedItemDelegate {
+                    id: delegate
+
+                    required property string name
+                    required property url url
+                    required property var history
+
+                    width: ListView.view.width
+
+                    onClicked: pageStack.push(tagModelComponent, {hashtag: delegate.name})
+
+                    QQC2.ProgressBar {
+                        visible: tagsView.model.loading && tagsView.count === 0
+                        anchors.centerIn: parent
+                        indeterminate: true
+                    }
+
+                    Kirigami.PlaceholderMessage {
+                        anchors.centerIn: parent
+                        text: i18nc("@label", "No Trending Tags")
+                        visible: !tagsView.model.loading && tagsView.count === 0
+                        width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                    }
+
+                    contentItem: ColumnLayout {
+                        Kirigami.Heading {
+                            level: 4
+                            text: `#${delegate.name}`
+                            type: Kirigami.Heading.Type.Primary
+                            verticalAlignment: Text.AlignTop
+                            elide: Text.ElideRight
+                            textFormat: Text.RichText
+                            Layout.fillWidth: true
+                        }
+
+                        QQC2.Label {
+                            font.pixelSize: Config.defaultFont.pixelSize + 1
+                            Layout.fillWidth: true
+                            elide: Text.ElideRight
+                            color: Kirigami.Theme.disabledTextColor
+                            text: i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
+                            verticalAlignment: Text.AlignTop
+                        }
+                    }
+                }
+            }
         }
     }
 }
