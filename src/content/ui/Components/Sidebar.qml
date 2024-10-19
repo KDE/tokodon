@@ -52,7 +52,6 @@ Kirigami.OverlayDrawer {
 
         padding: Kirigami.Units.largeSpacing
         Layout.fillWidth: true
-        enabled: !AccountManager.selectedAccountHasIssue
         activeFocusOnTab: true
 
         onClicked: {
@@ -128,6 +127,7 @@ Kirigami.OverlayDrawer {
 
                 action: modelData
                 visible: modelData.visible
+                enabled: !AccountManager.selectedAccountHasIssue
                 alertCount: modelData.alertCount ?? 0
             }
         }
