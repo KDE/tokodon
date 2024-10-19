@@ -351,7 +351,7 @@ QQC2.ItemDelegate {
 
         Loader {
             // note: using from post object instead of timeline model because it's loaded async
-            active: root.post.quotedPost !== null
+            active: root.post.quotedPost !== null && postContent.visible && root.post.attachments.length === 0
             visible: active
 
             Layout.fillWidth: true
