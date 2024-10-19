@@ -126,10 +126,19 @@ QQC2.ItemDelegate {
         }
     }
 
+    TapHandler {
+        onTapped: eventPoint => {
+            // Get the inner ColumnLayout for the FlexColumn
+            const innerChild = flexColumn.children[0];
+            // Check if we're inside the inner column, not on the outside:
+            if (innerChild.contains(innerChild.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y))) {
+                root.openPost();
+            }
+        }
+    }
+
     contentItem: PostLayout {
         id: flexColumn
-
-        onTapped: root.openPost()
 
         RowLayout {
             spacing: Kirigami.Units.largeSpacing

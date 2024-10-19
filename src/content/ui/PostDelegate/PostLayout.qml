@@ -11,72 +11,54 @@ Kirigami.FlexColumn {
 
     default property alias content: inner.children
 
-    signal tapped
-
     spacing: Kirigami.Units.largeSpacing
 
     padding: 0
     maximumWidth: Kirigami.Units.gridUnit * 40
 
-    Item {
-        Layout.fillWidth: true
-        Layout.fillHeight: true
+    RowLayout {
+        spacing: 0
 
-        Layout.preferredWidth: layout.implicitWidth
-        Layout.preferredHeight: layout.implicitHeight
+        Item {
+            id: threadSpace
 
-        TapHandler {
-            onTapped: flexColumn.tapped()
-        }
+            visible: isThreadReply && isReply
 
-        RowLayout {
-            id: layout
+            Layout.preferredWidth: visible ? root.threadMargin : 0
+            Layout.fillHeight: true
 
-            anchors.fill: parent
+            Kirigami.Separator {
+                id: threadSeparator
 
-            spacing: 0
+                readonly property bool shouldDrawFullLine: !root.isLastThreadReply
+                readonly property real avatarOffset: 30
 
-            Item {
-                id: threadSpace
+                anchors {
+                    top: parent.top
+                    topMargin: -root.topPadding
+                    bottom: shouldDrawFullLine ? parent.bottom : undefined
+                    bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
+                    horizontalCenter: threadSpace.horizontalCenter
+                }
 
-                visible: isThreadReply && isReply
-
-                Layout.preferredWidth: visible ? root.threadMargin : 0
-                Layout.fillHeight: true
+                height: shouldDrawFullLine ? threadSpace.height : threadSeparator.avatarOffset
 
                 Kirigami.Separator {
-                    id: threadSeparator
-
-                    readonly property bool shouldDrawFullLine: !root.isLastThreadReply
-                    readonly property real avatarOffset: 30
-
                     anchors {
                         top: parent.top
-                        topMargin: -root.topPadding
-                        bottom: shouldDrawFullLine ? parent.bottom : undefined
-                        bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
-                        horizontalCenter: threadSpace.horizontalCenter
+                        topMargin: threadSeparator.avatarOffset
+                        left: parent.left
                     }
 
-                    height: shouldDrawFullLine ? threadSpace.height : threadSeparator.avatarOffset
-
-                    Kirigami.Separator {
-                        anchors {
-                            top: parent.top
-                            topMargin: threadSeparator.avatarOffset
-                            left: parent.left
-                        }
-
-                        width: threadSeparator.avatarOffset
-                    }
+                    width: threadSeparator.avatarOffset
                 }
             }
+        }
 
-            ColumnLayout {
-                id: inner
+        ColumnLayout {
+            id: inner
 
-                spacing: Kirigami.Units.largeSpacing
-            }
+            spacing: Kirigami.Units.largeSpacing
         }
     }
 }
