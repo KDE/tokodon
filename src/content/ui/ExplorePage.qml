@@ -130,10 +130,9 @@ Kirigami.Page {
 
                     onClicked: pageStack.push(tagModelComponent, {hashtag: delegate.name})
 
-                    QQC2.ProgressBar {
+                    Kirigami.LoadingPlaceholder {
                         visible: tagsView.model.loading && tagsView.count === 0
                         anchors.centerIn: parent
-                        indeterminate: true
                     }
 
                     Kirigami.PlaceholderMessage {

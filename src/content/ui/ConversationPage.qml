@@ -24,10 +24,9 @@ Kirigami.ScrollablePage {
             }
         }
 
-        QQC2.ProgressBar {
+        Kirigami.LoadingPlaceholder {
             visible: conversationView.count === 0 && conversationView.model.loading
             anchors.centerIn: parent
-            indeterminate: true
         }
 
         Kirigami.PlaceholderMessage {
