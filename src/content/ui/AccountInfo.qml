@@ -216,6 +216,8 @@ Kirigami.Page {
                 property var bar
 
                 QQC2.Control {
+                    id: avatarControl
+
                     Layout.fillWidth: true
 
                     background: Item {
@@ -581,9 +583,47 @@ Kirigami.Page {
                 }
 
                 FormCard.FormCard {
+                    id: bioCard
+
+                    visible: accountModel.identity.bio.length > 0
+
+                    FormCard.AbstractFormDelegate {
+                        background: null
+                        contentItem: QQC2.TextArea {
+                            text: accountModel.identity.bio
+                            textFormat: TextEdit.RichText
+                            readOnly: true
+                            Layout.fillWidth: true
+                            Layout.leftMargin: Kirigami.Units.largeSpacing
+                            Layout.rightMargin: Kirigami.Units.largeSpacing
+                            Layout.topMargin: Kirigami.Units.smallSpacing
+                            Layout.bottomMargin: Kirigami.Units.smallSpacing
+                            leftPadding: 0
+                            rightPadding: 0
+                            bottomPadding: 0
+                            topPadding: 0
+                            background: null
+                            wrapMode: TextEdit.Wrap
+                            onLinkActivated: (link) => applicationWindow().navigateLink(link, true)
+                            onHoveredLinkChanged: if (hoveredLink.length > 0) {
+                                applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                            } else {
+                                applicationWindow().hoverLinkIndicator.text = "";
+                            }
+
+                            MouseArea {
+                                anchors.fill: parent
+                                acceptedButtons: Qt.NoButton // don't eat clicks on the Text
+                                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                            }
+                        }
+                    }
+                }
+
+                FormCard.FormCard {
                     id: usernameCard
 
-                    Layout.topMargin: bioCard.cardWidthRestricted ? 0 : Kirigami.Units.largeSpacing
+                    Layout.topMargin: Kirigami.Units.largeSpacing
 
                     visible: accountModel.identity.fields.length > 0
 
@@ -638,6 +678,8 @@ Kirigami.Page {
                 }
 
                 FormCard.FormCard {
+                    id: privateCard
+
                     visible: accountModel.identity.relationship
 
                     Layout.topMargin: Kirigami.Units.largeSpacing
@@ -723,46 +765,6 @@ Kirigami.Page {
                     }
                 }
 
-                FormCard.FormCard {
-                    id: bioCard
-
-                    visible: accountModel.identity.bio.length > 0
-
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-
-                    FormCard.AbstractFormDelegate {
-                        background: null
-                        contentItem: QQC2.TextArea {
-                            text: accountModel.identity.bio
-                            textFormat: TextEdit.RichText
-                            readOnly: true
-                            Layout.fillWidth: true
-                            Layout.leftMargin: Kirigami.Units.largeSpacing
-                            Layout.rightMargin: Kirigami.Units.largeSpacing
-                            Layout.topMargin: Kirigami.Units.smallSpacing
-                            Layout.bottomMargin: Kirigami.Units.smallSpacing
-                            leftPadding: 0
-                            rightPadding: 0
-                            bottomPadding: 0
-                            topPadding: 0
-                            background: null
-                            wrapMode: TextEdit.Wrap
-                            onLinkActivated: (link) => applicationWindow().navigateLink(link, true)
-                            onHoveredLinkChanged: if (hoveredLink.length > 0) {
-                                applicationWindow().hoverLinkIndicator.text = hoveredLink;
-                            } else {
-                                applicationWindow().hoverLinkIndicator.text = "";
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                acceptedButtons: Qt.NoButton // don't eat clicks on the Text
-                                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                            }
-                        }
-                    }
-                }
-
                 Item {
                     Layout.fillWidth: true
                     Layout.topMargin: Kirigami.Units.largeSpacing
@@ -774,12 +776,14 @@ Kirigami.Page {
                     RowLayout {
                         id: chips
 
+                        readonly property FormCard.FormCard cardParent: privateCard.visible ? privateCard : bioCard
+
                         anchors {
                             left: parent.left
                             right: parent.right
                             top: parent.top
-                            leftMargin: usernameCard.cardWidthRestricted ? Math.round((usernameCard.width - usernameCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
-                            rightMargin: usernameCard.cardWidthRestricted ? Math.round((usernameCard.width - usernameCard.maximumWidth) / 2) : Kirigami.Units.largeSpacing
+                            leftMargin: cardParent.cardWidthRestricted ? Math.round((cardParent.width - cardParent.maximumWidth) / 2) : Kirigami.Units.largeSpacing
+                            rightMargin: cardParent.cardWidthRestricted ? Math.round((cardParent.width - cardParent.maximumWidth) / 2) : Kirigami.Units.largeSpacing
                         }
 
                         Kirigami.Chip {
