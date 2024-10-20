@@ -27,6 +27,11 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
             enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0
             onTriggered: timelinePage.currentModel.markAllNotificationsAsRead()
+        },
+        Kirigami.Action {
+            icon.name: "configure-symbolic"
+            text: i18nc("@action:intoolbar", "Configure Notifications…")
+            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "NotificationsPage"))
         }
     ]
 
