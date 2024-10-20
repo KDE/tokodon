@@ -228,15 +228,11 @@ Kirigami.Page {
                                 opacity: 0.2
 
                             }
-                            Kirigami.Icon {
+                            Image {
                                 visible: source
-                                scale: 1.8
                                 anchors.fill: parent
 
                                 source: accountModel.identity.backgroundUrl
-
-                                implicitWidth: 512
-                                implicitHeight: 512
                             }
 
                             layer.enabled: true
