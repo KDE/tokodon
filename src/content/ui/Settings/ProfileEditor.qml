@@ -11,7 +11,7 @@ import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import ".."
 
-FormCard.FormCardPage {
+ColumnLayout {
     id: root
 
     property var account
@@ -23,17 +23,6 @@ FormCard.FormCardPage {
 
     readonly property bool canEditProfile: !AccountManager.accountHasIssue(account)
 
-    title: i18n("Edit Account")
-
-    actions: [
-        Kirigami.Action {
-            text: i18n("Logout")
-            icon.name: "im-kick-user"
-
-            onTriggered: logoutPrompt.open()
-        }
-    ]
-
     data: [
         Component {
             id: openFileDialog
@@ -42,22 +31,6 @@ FormCard.FormCardPage {
                 title: i18n("Please choose a file")
                 currentFolder: StandardPaths.writableLocation(StandardPaths.PicturesLocation)
                 onAccepted: chosen(selectedFile)
-            }
-        },
-        Kirigami.PromptDialog {
-            id: logoutPrompt
-
-            title: i18nc("@title", "Logout")
-            subtitle: i18nc("@label", "Are you sure you want to log out of %1?", account.identity.displayName)
-            standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-            showCloseButton: false
-
-            onAccepted: {
-                AccountManager.removeAccount(root.account);
-                QQC2.ApplicationWindow.window.pageStack.pop();
-                if (!AccountManager.hasAccounts) {
-                    root.Window.window.close();
-                }
             }
         }
     ]
@@ -246,102 +219,7 @@ FormCard.FormCardPage {
         }
     }
 
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
-        Layout.fillWidth: true
-
-        enabled: canEditProfile
-
-        FormCard.FormCheckDelegate {
-            text: i18n("Require approval for new followers")
-            description: i18n("By default new followers are automatically accepted. Uncheck if you want to manually approve or deny new ones. You always have the option to force someone to unfollow you.")
-            checked: backend.locked
-            onCheckedChanged: backend.locked = checked
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormCheckDelegate {
-            text: i18n("Is automated")
-            description: i18n("Whether to publicly mark this account as doing any kind of automated actions.")
-            checked: backend.bot
-            onCheckedChanged: backend.bot = checked
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormCheckDelegate {
-            text: i18n("Feature profile and posts")
-            description: i18n("Your public profile and posts may be featured to other users.")
-            checked: backend.discoverable
-            onCheckedChanged: backend.discoverable = checked
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormCheckDelegate {
-            text: i18n("Publicly list follows and followers")
-            description: i18n("By default everyone you follow and everyone who follows you is public.")
-            checked: backend.discoverable
-            onCheckedChanged: backend.discoverable = checked
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormSwitchDelegate {
-            text: i18nc("@label Account preferences", "Mark uploaded media as sensitive by default")
-            checked: AccountManager.selectedAccount.preferences.defaultSensitive
-            onToggled: AccountManager.selectedAccount.preferences.defaultSensitive = checked
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormButtonDelegate {
-            text: i18nc("@label Account preferences", "Default post language")
-            description: Qt.locale(AccountManager.selectedAccount.preferences.defaultLanguage).nativeLanguageName
-
-            onClicked: languageSelect.open()
-
-            LanguageSelector {
-                id: languageSelect
-
-                onAboutToShow: {
-                    const sourceIndex = listView.model.sourceModel.indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
-                    listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
-                }
-                onCodeSelected: code => AccountManager.selectedAccount.preferences.defaultLanguage = code
-            }
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormComboBoxDelegate {
-            Layout.fillWidth: true
-            id: postVisibility
-            text: i18nc("@label Account preferences", "Default post visibility")
-            model: [
-                i18nc("@item:inlistbox Default post visibility rule", "Public"),
-                i18nc("@item:inlistbox Default post visibility rule", "Unlisted"),
-                i18nc("@item:inlistbox Default post visibility rule", "Private")
-            ]
-            Component.onCompleted: currentIndex = AccountManager.selectedAccount.preferences.defaultVisibility
-            onCurrentValueChanged: AccountManager.selectedAccount.preferences.defaultVisibility = currentIndex
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormButtonDelegate {
-            Layout.fillWidth: true
-            id: websiteDelegate
-            text: i18nc("@abel Account preferences", "Open Server in Browser")
-            description: i18n("Some settings can only be configured on your server's website.")
-            onClicked: Qt.openUrlExternally(AccountManager.selectedAccount.instanceUri)
-        }
-    }
-
-    footer: QQC2.ToolBar {
-        enabled: canEditProfile
-        height: visible ? implicitHeight : 0
+    property QQC2.ToolBar profileFooter: QQC2.ToolBar {
         contentItem: RowLayout {
             Item {
                 Layout.fillWidth: true

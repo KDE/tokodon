@@ -538,7 +538,7 @@ Kirigami.Page {
                                             icon.name: "user-group-properties"
                                             visible: accountModel.isSelf
                                             text: i18n("Edit Profile")
-                                            onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "ProfileEditor"), {
+                                            onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "EditProfilePage"), {
                                                                 account: accountModel.account
                                                             }, {
                                                                 title: i18n("Account editor")

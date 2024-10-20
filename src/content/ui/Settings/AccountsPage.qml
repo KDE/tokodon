@@ -34,7 +34,7 @@ FormCard.FormCardPage {
                 required property string displayName
 
                 Layout.fillWidth: true
-                onClicked: Window.window.pageStack.layers.push("./ProfileEditor.qml", {
+                onClicked: Window.window.pageStack.layers.push("./AccountPage.qml", {
                     account: delegate.account
                 })
 
