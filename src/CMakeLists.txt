@@ -108,6 +108,8 @@ target_sources(tokodon_static
     timeline/tagsmodel.cpp
     timeline/abstractlistmodel.cpp
     timeline/abstractlistmodel.h
+    timeline/trendingnewsmodel.cpp
+    timeline/trendingnewsmodel.h
 
     # Search
     search/searchmodel.cpp

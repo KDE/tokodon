@@ -37,47 +37,35 @@ Kirigami.Page {
         onTriggered: Navigation.openComposer("")
     }
 
-    property Kirigami.Action tendingPostsAction: Kirigami.Action {
+    property Kirigami.Action trendingPostsAction: Kirigami.Action {
         text: i18n("Posts")
         icon.name: "tokodon-chat-reply"
         checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked) {
-                if (tagsModel.name.length === 0) {
-                    trendingPostsModel.name = "trending";
-                } else {
-                    trendingPostsModel.shouldLoadMore = false;
-                }
-            }
-        }
     }
 
     property Kirigami.Action trendingTagsAction: Kirigami.Action {
         text: i18n("Hashtags")
         icon.name: "tag-symbolic"
         checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked) {
-                if (tagsModel.name.length === 0) {
-                    tagsModel.name = "trending";
-                } else {
-                    tagsModel.shouldLoadMore = false;
-                }
-            }
-        }
+    }
+
+    property Kirigami.Action trendingNewsAction: Kirigami.Action {
+        text: i18n("News")
+        icon.name: "view-pim-news-symbolic"
+        checkable: true
     }
 
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [tendingPostsAction, trendingTagsAction]
+        actions: [trendingPostsAction, trendingTagsAction, trendingNewsAction]
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
     }
 
     Component.onCompleted: {
-        tendingPostsAction.checked = true
+        trendingPostsAction.checked = true
 
         // TODO: When we can require KF 6.8, set it as a normal property
         if (timelinePage.verticalScrollBarInteractive !== undefined) {
@@ -91,7 +79,14 @@ Kirigami.Page {
     StackLayout {
         anchors.fill: parent
 
-        currentIndex: tendingPostsAction.checked ? 0 : 1
+        currentIndex: {
+            if (trendingNewsAction.checked) {
+                return 2;
+            } else if (trendingTagsAction.checked) {
+                return 1;
+            }
+            return 0;
+        }
 
         QQC2.ScrollView {
             clip: true
@@ -106,6 +101,7 @@ Kirigami.Page {
                 model: MainTimelineModel {
                     id: trendingPostsModel
                     name: "trending"
+                    shouldLoadMore: trendingPostsAction.checked
                 }
             }
         }
@@ -117,6 +113,20 @@ Kirigami.Page {
 
                 model: TagsModel {
                     id: tagsModel
+                    name: "trending"
+                    shouldLoadMore: trendingTagsAction.checked
+                }
+
+                Kirigami.LoadingPlaceholder {
+                    visible: tagsView.model.loading && tagsView.count === 0
+                    anchors.centerIn: parent
+                }
+
+                Kirigami.PlaceholderMessage {
+                    anchors.centerIn: parent
+                    text: i18nc("@label", "No Trending Tags")
+                    visible: !tagsView.model.loading && tagsView.count === 0
+                    width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 }
 
                 delegate: Delegates.RoundedItemDelegate {
@@ -129,18 +139,6 @@ Kirigami.Page {
                     width: ListView.view.width
 
                     onClicked: pageStack.push(tagModelComponent, {hashtag: delegate.name})
-
-                    Kirigami.LoadingPlaceholder {
-                        visible: tagsView.model.loading && tagsView.count === 0
-                        anchors.centerIn: parent
-                    }
-
-                    Kirigami.PlaceholderMessage {
-                        anchors.centerIn: parent
-                        text: i18nc("@label", "No Trending Tags")
-                        visible: !tagsView.model.loading && tagsView.count === 0
-                        width: parent.width - (Kirigami.Units.largeSpacing * 4)
-                    }
 
                     contentItem: ColumnLayout {
                         Kirigami.Heading {
@@ -160,6 +158,70 @@ Kirigami.Page {
                             color: Kirigami.Theme.disabledTextColor
                             text: i18np("%1 person is talking", "%1 people are talking", delegate.history[0].accounts)
                             verticalAlignment: Text.AlignTop
+                        }
+                    }
+                }
+            }
+        }
+        QQC2.ScrollView {
+            clip: true
+
+            ListView {
+                id: newsView
+
+                model: TrendingNewsModel {
+                    id: newsModel
+                    shouldLoadMore: trendingNewsAction.checked
+                }
+
+                delegate: Delegates.RoundedItemDelegate {
+                    id: delegate
+
+                    required property string title
+                    required property url url
+                    required property string description
+                    required property string image
+
+                    width: ListView.view.width
+
+                    onClicked: Qt.openUrlExternally(url)
+
+                    contentItem: RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Image {
+                            source: delegate.image
+
+                            layer.enabled: true
+                            layer.effect: RoundedEffect {}
+
+                            Layout.preferredHeight: 50
+                            Layout.preferredWidth: 50
+                        }
+
+                        ColumnLayout {
+                            spacing: Kirigami.Units.smallSpacing
+
+                            Kirigami.Heading {
+                                level: 4
+                                text: delegate.title
+                                type: Kirigami.Heading.Type.Primary
+                                verticalAlignment: Text.AlignTop
+                                elide: Text.ElideRight
+                                textFormat: Text.RichText
+                                maximumLineCount: 1
+                                Layout.fillWidth: true
+                            }
+
+                            QQC2.Label {
+                                font.pixelSize: Config.defaultFont.pixelSize + 1
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
+                                color: Kirigami.Theme.disabledTextColor
+                                text: delegate.description
+                                maximumLineCount: 2
+                                verticalAlignment: Text.AlignTop
+                            }
                         }
                     }
                 }
