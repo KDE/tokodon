@@ -26,6 +26,13 @@ KirigamiSettings.ConfigurationView {
             visible: AccountManager.hasAccounts
         },
         KirigamiSettings.ConfigurationModule {
+            moduleId: "safety"
+            text: i18n("Safety")
+            icon.name: "preferences-security"
+            page: () => Qt.createComponent("org.kde.tokodon", "SafetyPage")
+            visible: AccountManager.hasAccounts
+        },
+        KirigamiSettings.ConfigurationModule {
             moduleId: "accounts"
             text: i18n("Accounts")
             icon.name: "preferences-system-users"

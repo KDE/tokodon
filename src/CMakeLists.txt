@@ -235,6 +235,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/NetworkProxyPage.qml
         content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml
+        content/ui/Settings/SafetyPage.qml
         content/ui/Settings/TokodonConfigurationView.qml
 
         # Composer
