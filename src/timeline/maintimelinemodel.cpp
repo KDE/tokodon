@@ -6,6 +6,7 @@
 #include "texthandler.h"
 
 #include <KLocalizedString>
+#include <config.h>
 
 MainTimelineModel::MainTimelineModel(QObject *parent)
     : TimelineModel(parent)
@@ -90,7 +91,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
     }
 
     // If we are fetching the home timeline, then make sure we fetch the read marker first before continuing.
-    if (isHome && !fetchingLastId) {
+    if (isHome && !fetchingLastId && Config::continueReading()) {
         fetchLastReadId();
         return;
     }
@@ -175,7 +176,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             setLoading(false);
 
             // Only overwrite the read marker if they hit the button themselves
-            if (m_userHasTakenReadAction && isHome && backwards) {
+            if (m_userHasTakenReadAction && isHome && backwards && Config::continueReading()) {
                 // We want to force a refresh of the read marker in case we reached the top
                 m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
             }

@@ -13,6 +13,7 @@
 #include "tokodon_debug.h"
 #endif
 
+#include <config.h>
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
@@ -258,7 +259,9 @@ QWebSocket *Account::streamingSocket(const QString &stream)
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
         if (env.isObject() && env.object().contains("event"_L1)) {
             const auto event = stringToStreamingEventType[env.object()["event"_L1].toString()];
-            Q_EMIT streamingEvent(event, env.object()["payload"_L1].toString().toLocal8Bit());
+            if (Config::autoUpdate()) {
+                Q_EMIT streamingEvent(event, env.object()["payload"_L1].toString().toLocal8Bit());
+            }
 
             if (event == NotificationEvent) {
                 const auto doc = QJsonDocument::fromJson(env.object()["payload"_L1].toString().toLocal8Bit());

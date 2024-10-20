@@ -50,6 +50,34 @@ FormCard.FormCardPage {
                 Config.save()
             }
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
+            id: continueDelegate
+            text: i18n("Continue reading where you last left off")
+            description: i18n("If checked, Tokodon will save where you were in your Home timeline.")
+            checked: Config.continueReading
+            enabled: !Config.continueReadingImmutable
+            onToggled: {
+                Config.continueReading = checked
+                Config.save()
+            }
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
+            id: autoUpdateDelegate
+            text: i18n("Auto-update timelines")
+            description: i18n("If checked, Tokodon will automatically update certain timelines as new posts come in.")
+            checked: Config.autoUpdate
+            enabled: !Config.autoUpdateImmutable
+            onToggled: {
+                Config.autoUpdate = checked
+                Config.save()
+            }
+        }
     }
 
     FormCard.FormHeader {
