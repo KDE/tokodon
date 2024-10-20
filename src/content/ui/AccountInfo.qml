@@ -625,14 +625,42 @@ Kirigami.Page {
 
                     Layout.topMargin: Kirigami.Units.largeSpacing
 
-                    visible: accountModel.identity.fields.length > 0
+                    FormCard.AbstractFormDelegate {
+                        topPadding: 0
+                        bottomPadding: 0
+                        hoverEnabled: false
+
+                        contentItem: RowLayout {
+                            spacing: 0
+
+                            QQC2.Label {
+                                text: i18nc("@info:label Joined at", "Joined")
+                                wrapMode: Text.Wrap
+
+                                topPadding: Kirigami.Units.smallSpacing
+                                bottomPadding: Kirigami.Units.smallSpacing
+
+                                Layout.minimumWidth: Kirigami.Units.gridUnit * 7
+                                Layout.maximumWidth: Kirigami.Units.gridUnit * 7
+                            }
+
+                            QQC2.TextArea {
+                                Layout.fillWidth: true
+                                readOnly: true
+                                background: null
+                                wrapMode: TextEdit.Wrap
+                                textFormat: TextEdit.PlainText
+                                text: accountModel.identity.createdAt
+                            }
+                        }
+                    }
 
                     Repeater {
                         model: accountModel.identity.fields
                         ColumnLayout {
                             Layout.fillWidth: true
                             spacing: 0
-                            FormCard.FormDelegateSeparator { visible: index !== 0 }
+                            FormCard.FormDelegateSeparator {}
 
                             FormCard.AbstractFormDelegate {
                                 topPadding: 0
