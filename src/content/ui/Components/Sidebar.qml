@@ -21,9 +21,8 @@ Kirigami.OverlayDrawer {
     property alias actions: actionsRepeater.model
     property alias bottomActions: bottomActionsRepeater.model
 
-    enabled: AccountManager.hasAccounts && AccountManager.isReady
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (shouldCollapse && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
+    modal: shouldCollapse || !enabled
     z: modal ? Math.round(position * 10000000) : 100
     width: Kirigami.Units.gridUnit * 14
     Behavior on width {
@@ -99,7 +98,7 @@ Kirigami.OverlayDrawer {
             topPadding: 3
             bottomPadding: 3
 
-            visible: !Kirigami.Settings.isMobile
+            visible: !drawer.shouldCollapse
 
             contentItem: SearchField {}
         }

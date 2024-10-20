@@ -33,6 +33,7 @@ StatefulApp.StatefulWindow {
     windowName: "Main"
 
     property bool isShowingFullScreenImage: false
+    readonly property bool wideMode: root.width >= Kirigami.Units.gridUnit * 50
 
     // A new post was created by us. Currently used by ThreadPages to update themselves when we reply.
     signal newPost()
@@ -364,12 +365,13 @@ StatefulApp.StatefulWindow {
     globalDrawer: Sidebar {
         id: drawer
 
+        enabled: AccountManager.hasAccounts && AccountManager.isReady
         application: root.application
-        shouldCollapse: root.width < Kirigami.Units.gridUnit * 50
-        actions: Kirigami.Settings.isMobile ?
-            [searchAction, announcementsAction, followRequestAction, followingAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction] :
-            [homeAction, notificationAction, searchAction, announcementsAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, exploreAction, conversationAction, favouritesAction, bookmarksAction, listsAction]
-        bottomActions: [debugAction, moderationToolsAction, configureAction]
+        shouldCollapse: !root.wideMode
+        actions: !root.wideMode ?
+            [searchAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
+            [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
+        bottomActions: [announcementsAction, debugAction, moderationToolsAction, configureAction]
     }
 
     property Kirigami.Action homeAction: Kirigami.Action {
@@ -385,9 +387,6 @@ StatefulApp.StatefulWindow {
                 placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
@@ -400,9 +399,6 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(notificationTimeline.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
     property Kirigami.Action followRequestAction: Kirigami.Action {
@@ -418,9 +414,6 @@ StatefulApp.StatefulWindow {
                 name: "request",
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
     property Kirigami.Action localTimelineAction: Kirigami.Action {
@@ -436,9 +429,6 @@ StatefulApp.StatefulWindow {
                 placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
     property Kirigami.Action globalTimelineAction: Kirigami.Action {
@@ -454,9 +444,6 @@ StatefulApp.StatefulWindow {
                 placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -468,9 +455,6 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(conversationPage.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -487,9 +471,6 @@ StatefulApp.StatefulWindow {
                 placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -506,9 +487,6 @@ StatefulApp.StatefulWindow {
                 placeholderExplanation: i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
             });
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -520,9 +498,6 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(exploreTimeline.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -534,9 +509,6 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(followingTimeline.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -544,14 +516,10 @@ StatefulApp.StatefulWindow {
         icon.name: "search"
         text: i18n("Search")
         checkable: true
-        visible: Kirigami.Settings.isMobile
         onTriggered: {
             pageStack.clear();
             pageStack.push(searchPage.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -564,9 +532,6 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(announcementsPage.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
         }
     }
 
@@ -578,20 +543,25 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(listsPage.createObject(root));
             checked = true;
-            if (Kirigami.Settings.isMobile || drawer.modal) {
-                drawer.drawerOpen = false;
-            }
+        }
+    }
+
+    property Kirigami.Action profileAction: Kirigami.Action {
+        icon.name: "user"
+        text: i18n("Profile")
+        checkable: true
+        onTriggered: {
+            pageStack.clear();
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
+                accountId: AccountManager.selectedAccountId,
+            });
+            checked = true;
         }
     }
 
     property Kirigami.Action debugAction: Kirigami.Action {
         icon.name: "debug-run"
-        onTriggered: {
-            pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
-            if (drawer.modal) {
-                drawer.close();
-            }
-        }
+        onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "DebugPage"))
         visible: AccountManager.testMode
         text: i18nc("@action:button Open debug page", "Debug")
     }
@@ -606,20 +576,12 @@ StatefulApp.StatefulWindow {
         text: i18nc("@action:button Open moderation tools", "Moderation Tools")
         visible: AccountManager.selectedAccount && (AccountManager.selectedAccount.identity.permission & AdminAccountInfo.ManageUsers)
 
-        onTriggered: {
-            moderationToolsView.open()
-            if (drawer.modal) {
-                drawer.close();
-            }
-        }
+        onTriggered: moderationToolsView.open()
     }
 
     property Kirigami.Action configureAction: Kirigami.Action {
         text: i18nc("@action:button Open settings dialog", "Settings")
         fromQAction: root.application.action('options_configure')
-        onTriggered: if (drawer.modal) {
-            drawer.close();
-        }
     }
 
     property Component announcementsPage: Qt.createComponent("org.kde.tokodon", "AnnouncementsPage", Qt.Asynchronous)
@@ -630,12 +592,12 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
-        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideScreen
-        actions: [homeAction, notificationAction, localTimelineAction, globalTimelineAction]
+        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode
+        actions: [homeAction, notificationAction, exploreAction, profileAction]
         enabled: !AccountManager.selectedAccountHasIssue
     }
 
-    footer: Kirigami.Settings.isMobile ? tabBar : null
+    footer: !root.wideMode ? tabBar : null
 
     Component {
         id: mainTimeline
