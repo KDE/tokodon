@@ -53,7 +53,7 @@ Kirigami.Page {
     }
 
     property Kirigami.Action trendingTagsAction: Kirigami.Action {
-        text: i18n("Tags")
+        text: i18n("Hashtags")
         icon.name: "tag-symbolic"
         checkable: true
         onCheckedChanged: (checked) => {
