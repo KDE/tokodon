@@ -377,8 +377,8 @@ StatefulApp.StatefulWindow {
         application: root.application
         shouldCollapse: !root.wideMode
         actions: !root.wideMode ?
-            [searchAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
-            [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
+            [searchAction, followRequestAction, followingAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
+            [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
         bottomActions: [announcementsAction, debugAction, moderationToolsAction, configureAction]
     }
 
