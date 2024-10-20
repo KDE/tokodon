@@ -112,7 +112,8 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormSwitchDelegate {
             id: cropMedia
-            text: i18n("Crop images on the timeline to 16x9")
+            text: i18n("Crop images on the timeline")
+            description: i18n("If unchecked, posts with only one image attached will be uncropped and shown in full.")
             checked: Config.cropMedia
             onToggled: {
                 Config.cropMedia = checked
