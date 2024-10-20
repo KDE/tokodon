@@ -87,7 +87,7 @@ public:
      * @return If the timeline is still loading.
      * @see setLoading()
      */
-    [[nodiscard]] bool loading() const;
+    [[nodiscard]] virtual bool loading() const;
 
     /**
      * @brief Set the loading status of the timeline.

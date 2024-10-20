@@ -53,7 +53,6 @@ void MainTimelineModel::setListId(const QString &id)
     m_listId = id;
     Q_EMIT listIdChanged();
 
-    setLoading(false);
     fillTimeline({});
 }
 
@@ -65,7 +64,6 @@ void MainTimelineModel::setName(const QString &timelineName)
 
     m_timelineName = timelineName;
     Q_EMIT nameChanged();
-    setLoading(false);
     fillTimeline({});
 }
 
@@ -173,6 +171,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 
             // hasPrevious depends not just on m_prev, but also m_timeline!
             Q_EMIT hasPreviousChanged();
+
             setLoading(false);
 
             // Only overwrite the read marker if they hit the button themselves
@@ -221,6 +220,11 @@ void MainTimelineModel::reset()
     endResetModel();
     m_next = {};
     m_prev = {};
+}
+
+bool MainTimelineModel::loading() const
+{
+    return m_timelineName.isEmpty() || TimelineModel::loading();
 }
 
 void MainTimelineModel::fetchLastReadId()

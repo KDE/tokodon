@@ -59,6 +59,7 @@ public:
     [[nodiscard]] bool userHasTakenReadAction() const;
 
     void reset() override;
+    bool loading() const override;
 
     Q_INVOKABLE void fetchPrevious();
 
