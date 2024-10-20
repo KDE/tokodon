@@ -17,6 +17,8 @@ Kirigami.Page {
     title: i18nc("@title:window", "Welcome")
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
+    property alias showSettingsButton: settingsCard.visible
+
     header: Kirigami.Separator {
         width: root.width
     }
@@ -86,6 +88,8 @@ Kirigami.Page {
             }
 
             FormCard.FormCard {
+                id: settingsCard
+
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
                 maximumWidth: Kirigami.Units.gridUnit * 20
