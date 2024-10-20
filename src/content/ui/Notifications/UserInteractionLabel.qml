@@ -51,6 +51,7 @@ RowLayout {
 
     QQC2.AbstractButton {
         contentItem: RowLayout {
+            spacing: Kirigami.Units.smallSpacing
             KirigamiComponents.AvatarButton {
                 implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
                 implicitWidth: implicitHeight

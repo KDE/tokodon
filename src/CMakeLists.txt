@@ -223,7 +223,10 @@ qt_target_qml_sources(tokodon_static
         content/ui/ModerationTools/ReportToolPage.qml
 
         # Notifications
+        content/ui/Notifications/AccountWarningDelegate.qml
         content/ui/Notifications/GroupInteractionLabel.qml
+        content/ui/Notifications/RelationshipSeveranceDelegate.qml
+        content/ui/Notifications/ReportDelegate.qml
         content/ui/Notifications/UserInteractionLabel.qml
 
         # Settings

@@ -84,8 +84,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
     setLoading(true);
     QUrl uri;
     if (next.isEmpty()) {
-        uri = QUrl::fromUserInput(m_account->instanceUri());
-        uri.setPath(QStringLiteral("/api/v1/notifications"));
+        uri = m_account->apiUrl(QStringLiteral("/api/v1/notifications"));
     } else {
         uri = next;
     }
@@ -190,6 +189,12 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
             return QVariant::fromValue<Identity *>(post->authorIdentity().get());
         }
     } break;
+    case ReportRole:
+        return QVariant::fromValue<ReportInfo *>(notification->report());
+    case RelationshipSeveranceEventRole:
+        return QVariant::fromValue<RelationshipSeveranceEvent>(*notification->relationshipSeveranceEvent());
+    case ModerationWarningRole:
+        return QVariant::fromValue<AccountWarning>(*notification->accountWarning());
     default:
         if (post != nullptr) {
             return postData(post, role);
@@ -197,6 +202,14 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
     }
 
     return {};
+}
+QHash<int, QByteArray> NotificationModel::roleNames() const
+{
+    auto roles = AbstractTimelineModel::roleNames();
+    roles.insert(ReportRole, QByteArrayLiteral("report"));
+    roles.insert(RelationshipSeveranceEventRole, QByteArrayLiteral("relationshipSeveranceEvent"));
+    roles.insert(ModerationWarningRole, QByteArrayLiteral("moderationWarning"));
+    return roles;
 }
 
 void NotificationModel::actionReply(const QModelIndex &index)

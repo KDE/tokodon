@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
@@ -8,21 +8,18 @@ import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
 import org.kde.tokodon.private
-import "./PostDelegate"
-import "./Components"
 
 QQC2.ItemDelegate {
     id: root
 
     required property int index
-    required property var notificationActorIdentity
+    required property var relationshipSeveranceEvent
     required property bool selected
 
     required property var type
-    readonly property bool isAdminSignUp: type === Notification.AdminSignUp
 
     topPadding: Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.largeSpacing * 2
+    bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing * 2
     rightPadding: Kirigami.Units.largeSpacing * 2
 
@@ -52,10 +49,9 @@ QQC2.ItemDelegate {
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
-            Layout.topMargin: visible ? Kirigami.Units.smallSpacing : 0
-            Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
+
             Kirigami.Icon {
-                source: 'list-add-user'
+                source: 'im-kick-user'
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 color: Kirigami.Theme.disabledTextColor
                 Layout.preferredHeight: Kirigami.Units.largeSpacing * 2
@@ -63,20 +59,8 @@ QQC2.ItemDelegate {
             }
 
             QQC2.Label {
-                font: Config.defaultFont
-                text: if (isAdminSignUp) {
-                    i18n("%1 signed up", root.notificationActorIdentity.displayNameHtml)
-                } else {
-                    i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
-                }
-                textFormat: Text.RichText
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignVCenter
+                text: i18nc("@info:label", "%1 relationships were severed due to moderation actions.", root.relationshipSeveranceEvent.relationshipsCount)
             }
-        }
-
-        UserCard {
-            userIdentity: root.notificationActorIdentity
         }
     }
 }

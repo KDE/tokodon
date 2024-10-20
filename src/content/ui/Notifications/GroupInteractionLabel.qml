@@ -20,6 +20,8 @@ RowLayout {
     required property var notificationActorIdentity
     required property var numInGroup
 
+    spacing: Kirigami.Units.smallSpacing
+
     Layout.fillWidth: true
 
     Kirigami.Icon {

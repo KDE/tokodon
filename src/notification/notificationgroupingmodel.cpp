@@ -22,7 +22,8 @@ bool NotificationGroupingModel::notificationsMatch(const QModelIndex &a, const Q
     // TODO: support grouping follow notifications
     if (aType == bType
         && (aType == Notification::Type::Follow || aType == Notification::Type::Poll || aType == Notification::Type::Update
-            || aType == Notification::Type::Status || aType == Notification::Type::AdminSignUp)) {
+            || aType == Notification::Type::Status || aType == Notification::Type::AdminSignUp || aType == Notification::Type::AdminReport
+            || aType == Notification::Type::SeveredRelationships || aType == Notification::Type::ModerationWarning)) {
         return false;
     }
 

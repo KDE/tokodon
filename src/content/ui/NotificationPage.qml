@@ -54,7 +54,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -64,7 +64,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -74,7 +74,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -84,7 +84,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -94,7 +94,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -104,7 +104,7 @@ Kirigami.ScrollablePage {
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up'];
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
@@ -231,6 +231,21 @@ Kirigami.ScrollablePage {
             DelegateChoice {
                 roleValue: Notification.AdminSignUp
                 FollowDelegate {}
+            }
+
+            DelegateChoice {
+                roleValue: Notification.AdminReport
+                ReportDelegate {}
+            }
+
+            DelegateChoice {
+                roleValue: Notification.SeveredRelationships
+                RelationshipSeveranceDelegate {}
+            }
+
+            DelegateChoice {
+                roleValue: Notification.ModerationWarning
+                AccountWarningDelegate {}
             }
         }
 

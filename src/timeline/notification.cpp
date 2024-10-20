@@ -14,6 +14,90 @@ Post *Notification::createPost(AbstractAccount *account, const QJsonObject &obj,
     return nullptr;
 }
 
+static QMap<QString, AccountWarning::Action> str_to_act_type = {
+    {QStringLiteral("none"), AccountWarning::Action::None},
+    {QStringLiteral("disable"), AccountWarning::Action::Disable},
+    {QStringLiteral("mark_statuses_as_sensitive"), AccountWarning::Action::MarkStatusesAsSensitive},
+    {QStringLiteral("delete_statuses"), AccountWarning::Action::DeleteStatuses},
+    {QStringLiteral("sensitive"), AccountWarning::Action::Sensitive},
+    {QStringLiteral("silence"), AccountWarning::Action::Silence},
+    {QStringLiteral("suspend"), AccountWarning::Action::Suspend},
+};
+
+AccountWarning::AccountWarning(const QJsonObject &source)
+{
+    m_id = source["id"_L1].toString();
+    m_action = str_to_act_type[source["action"_L1].toString()];
+    m_text = source["text"_L1].toString();
+    m_createdAt = QDateTime::fromString(source["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
+}
+
+QString AccountWarning::id() const
+{
+    return m_id;
+}
+
+AccountWarning::Action AccountWarning::action() const
+{
+    return m_action;
+}
+
+QString AccountWarning::text() const
+{
+    return m_text;
+}
+
+QDateTime AccountWarning::createdAt() const
+{
+    return m_createdAt;
+}
+
+static QMap<QString, RelationshipSeveranceEvent::Type> str_to_sev_type = {
+    {QStringLiteral("domain_block"), RelationshipSeveranceEvent::Type::DomainBlock},
+    {QStringLiteral("user_domain_block"), RelationshipSeveranceEvent::Type::UserDomainBlock},
+    {QStringLiteral("account_suspension"), RelationshipSeveranceEvent::Type::AccountSuspension},
+};
+
+RelationshipSeveranceEvent::RelationshipSeveranceEvent(const QJsonObject &source)
+{
+    m_id = source["id"_L1].toString();
+    m_type = str_to_sev_type[source["type"_L1].toString()];
+    m_purged = source["purged"_L1].toBool();
+    m_targetName = source["target_name"_L1].toString();
+    m_relationshipsCount = source["relationships_count"_L1].toInt();
+    m_createdAt = QDateTime::fromString(source["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
+}
+
+QString RelationshipSeveranceEvent::id() const
+{
+    return m_id;
+}
+
+RelationshipSeveranceEvent::Type RelationshipSeveranceEvent::type() const
+{
+    return m_type;
+}
+
+bool RelationshipSeveranceEvent::purged() const
+{
+    return m_purged;
+}
+
+QString RelationshipSeveranceEvent::targetName() const
+{
+    return m_targetName;
+}
+
+int RelationshipSeveranceEvent::relationshipsCount() const
+{
+    return m_relationshipsCount;
+}
+
+QDateTime RelationshipSeveranceEvent::createdAt() const
+{
+    return m_createdAt;
+}
+
 static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("favourite"), Notification::Type::Favorite},
     {QStringLiteral("follow"), Notification::Type::Follow},
@@ -24,6 +108,9 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("status"), Notification::Type::Status},
     {QStringLiteral("follow_request"), Notification::Type::FollowRequest},
     {QStringLiteral("admin.sign_up"), Notification::Type::AdminSignUp},
+    {QStringLiteral("admin.report"), Notification::Type::AdminReport},
+    {QStringLiteral("severed_relationships"), Notification::Type::SeveredRelationships},
+    {QStringLiteral("moderation_warning"), Notification::Type::ModerationWarning},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
@@ -38,6 +125,15 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     m_identity = m_account->identityLookup(accountId, accountObj);
     m_type = str_to_not_type[type];
     m_id = obj["id"_L1].toString().toInt();
+
+    if (m_type == ModerationWarning) {
+        m_accountWarning = AccountWarning(obj["moderation_warning"_L1].toObject());
+    } else if (m_type == SeveredRelationships) {
+        m_relationshipSeveranceEvent = RelationshipSeveranceEvent(obj["relationship_severance_event"_L1].toObject());
+    } else if (m_type == AdminReport) {
+        m_report = new ReportInfo();
+        m_report->fromSourceData(obj["report"_L1].toObject());
+    }
 }
 
 int Notification::id() const
@@ -58,6 +154,21 @@ Notification::Type Notification::type() const
 Post *Notification::post() const
 {
     return m_post;
+}
+
+ReportInfo *Notification::report() const
+{
+    return m_report;
+}
+
+std::optional<RelationshipSeveranceEvent> Notification::relationshipSeveranceEvent() const
+{
+    return m_relationshipSeveranceEvent;
+}
+
+std::optional<AccountWarning> Notification::accountWarning() const
+{
+    return m_accountWarning;
 }
 
 std::shared_ptr<Identity> Notification::identity() const

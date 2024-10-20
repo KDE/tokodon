@@ -18,10 +18,13 @@ class NotificationModel : public AbstractTimelineModel
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
 
 public:
+    enum NotificationRoles { ReportRole = ExtraRole, RelationshipSeveranceEventRole, ModerationWarningRole };
+
     explicit NotificationModel(QObject *parent = nullptr);
 
     [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
+    [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
     virtual void fillTimeline(const QUrl &next = {});
 

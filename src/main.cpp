@@ -251,6 +251,7 @@ int main(int argc, char *argv[])
     account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
     account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
+    account->registerGet(account->apiUrl(QStringLiteral("/api/v1/notifications")), new TestReply(QStringLiteral("notifications.json"), account));
 #else
     AccountManager::instance().migrateSettings();
     AccountManager::instance().loadFromSettings();
