@@ -536,24 +536,6 @@ Kirigami.Page {
                                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
                                         },
                                         Kirigami.Action {
-                                            icon.name: "list-add-user"
-                                            visible: accountModel.isSelf
-                                            text: i18n("Follow Requests")
-                                            onTriggered: pageStack.push(socialGraphComponent, { name: "request" });
-                                        },
-                                        Kirigami.Action {
-                                            icon.name: "microphone-sensitivity-muted"
-                                            visible: accountModel.isSelf
-                                            text: i18n("Muted Users")
-                                            onTriggered: pageStack.push(socialGraphComponent, { name: "mutes" });
-                                        },
-                                        Kirigami.Action {
-                                            icon.name: "cards-block"
-                                            visible: accountModel.isSelf
-                                            text: i18n("Blocked Users")
-                                            onTriggered: pageStack.push(socialGraphComponent, { name: "blocks" });
-                                        },
-                                        Kirigami.Action {
                                             icon.name: "favorite"
                                             visible: accountModel.isSelf
                                             text: i18n("Featured Users")
