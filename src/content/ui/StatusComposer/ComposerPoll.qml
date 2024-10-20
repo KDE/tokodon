@@ -29,7 +29,11 @@ ColumnLayout {
 
             contentItem: RowLayout {
                 QQC2.RadioButton {
-                    autoExclusive: !poll.multipleChoice
+                    visible: !poll.multipleChoice
+                    enabled: false
+                }
+                QQC2.CheckBox {
+                    visible: poll.multipleChoice
                     enabled: false
                 }
                 QQC2.TextField {
