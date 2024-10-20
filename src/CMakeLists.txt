@@ -50,6 +50,8 @@ target_sources(tokodon_static
     account/listsmodel.h
     account/socialgraphmodel.cpp
     account/socialgraphmodel.h
+    account/suggestionsmodel.cpp
+    account/suggestionsmodel.h
     account/relationship.cpp
     account/rulesmodel.cpp
     account/rulesmodel.h

@@ -55,10 +55,16 @@ Kirigami.Page {
         checkable: true
     }
 
+    property Kirigami.Action suggestedUsersAction: Kirigami.Action {
+        text: i18n("Users")
+        icon.name: "system-users-symbolic"
+        checkable: true
+    }
+
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [trendingPostsAction, trendingTagsAction, trendingNewsAction]
+        actions: [trendingPostsAction, trendingTagsAction, trendingNewsAction, suggestedUsersAction]
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
@@ -80,7 +86,9 @@ Kirigami.Page {
         anchors.fill: parent
 
         currentIndex: {
-            if (trendingNewsAction.checked) {
+            if (suggestedUsersAction.checked) {
+                return 3;
+            } else if (trendingNewsAction.checked) {
                 return 2;
             } else if (trendingTagsAction.checked) {
                 return 1;
@@ -223,6 +231,32 @@ Kirigami.Page {
                                 verticalAlignment: Text.AlignTop
                             }
                         }
+                    }
+                }
+            }
+        }
+        QQC2.ScrollView {
+            clip: true
+
+            ListView {
+                id: suggestionsView
+
+                model: SuggestionsModel {
+                    id: usersModel
+                    shouldLoadMore: suggestedUsersAction.checked
+                }
+
+                delegate: Delegates.RoundedItemDelegate {
+                    id: delegate
+
+                    required property var identity
+
+                    width: ListView.view.width
+
+                    onClicked: Qt.openUrlExternally(url)
+
+                    contentItem: UserCard {
+                        userIdentity: delegate.identity
                     }
                 }
             }
