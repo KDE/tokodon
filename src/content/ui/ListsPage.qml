@@ -64,7 +64,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No lists")
+            icon.name: "view-list-text"
+            text: i18n("No Lists")
+            explanation: i18n("Lists allow you to categorize who you're following.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
