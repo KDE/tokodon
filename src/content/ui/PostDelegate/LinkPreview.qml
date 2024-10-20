@@ -172,10 +172,10 @@ Item {
             }
 
             background: Kirigami.ShadowedRectangle {
-                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.colorSet: Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
-                color: Kirigami.Theme.backgroundColor
+                color: Qt.darker(Kirigami.Theme.backgroundColor, 1.1)
                 corners {
                     bottomLeftRadius: Kirigami.Units.cornerRadius
                     bottomRightRadius: Kirigami.Units.cornerRadius
@@ -204,7 +204,6 @@ Item {
                                 verticalAlignment: Qt.AlignVCenter
                                 visible: text
                                 maximumLineCount: 1
-                                color: Kirigami.Theme.disabledTextColor
 
                                 Layout.fillHeight: true
                                 Layout.leftMargin: Kirigami.Units.largeSpacing
@@ -238,7 +237,6 @@ Item {
 
                             QQC2.Label {
                                 text: root.card ? i18nc("@info:label 'This is written by %1'", "By %1", root.card.authorName) : ''
-                                color: Kirigami.Theme.disabledTextColor
                                 elide: Text.ElideRight
                                 verticalAlignment: Qt.AlignVCenter
                                 visible: text
