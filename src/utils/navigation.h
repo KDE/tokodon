@@ -42,6 +42,11 @@ Q_SIGNALS:
     void openComposer(const QString &text);
 
     /**
+     * @brief Opens the composer UI with @p text. In the future this may redirect to an existing conversation.
+     */
+    void openConversation(const QString &accountId);
+
+    /**
      * @brief Opens the composer UI to reply to @p post.
      */
     void replyTo(Post *post);

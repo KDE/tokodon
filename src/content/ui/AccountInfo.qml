@@ -444,6 +444,18 @@ Kirigami.Page {
                                             }
                                         },
                                         Kirigami.Action {
+                                            icon.name: "list-add"
+                                            visible: !accountModel.isSelf
+                                            text: i18n("Mention…")
+                                            onTriggered: Navigation.openComposer("@" + accountModel.identity.account + " ")
+                                        },
+                                        Kirigami.Action {
+                                            icon.name: "tokodon-chat-reply"
+                                            visible: !accountModel.isSelf
+                                            text: i18n("Start a Conversation…")
+                                            onTriggered: Navigation.openConversation(accountModel.identity.account)
+                                        },
+                                        Kirigami.Action {
                                             icon.name: "view-hidden"
                                             displayHint: Kirigami.DisplayHint.IconOnly
                                             visible: accountModel.identity.relationship && accountModel.identity.relationship.following && !accountModel.isSelf
@@ -533,6 +545,7 @@ Kirigami.Page {
                                                             })
                                         },
                                         Kirigami.Action {
+                                            visible: accountModel.isSelf
                                             fromQAction: (toolbar.QQC2.ApplicationWindow.window as StatefulApp.StatefulWindow)?.application.action('options_configure') ?? null
                                         },
                                         Kirigami.Action {

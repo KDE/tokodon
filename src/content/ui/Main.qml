@@ -250,6 +250,33 @@ StatefulApp.StatefulWindow {
         FullScreenImage {}
     }
 
+    function openComposer(initialText: string, visibility: var) {
+        if (Config.popOutByDefault) {
+            const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                closeApplicationWhenFinished: true,
+                purpose: StatusComposer.New,
+                initialText,
+                visibility: visibility ?? AccountManager.selectedAccount.preferences.defaultVisibility
+            }, {
+                title: i18n("Write a new post"),
+                width: Kirigami.Units.gridUnit * 30,
+                height: Kirigami.Units.gridUnit * 30,
+                modality: Qt.NonModal
+            });
+            item.Window.window.closing.connect(event => {
+                if (item.shouldClose()) {
+                    event.accepted = false;
+                }
+            });
+        } else {
+            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                purpose: StatusComposer.New,
+                initialText,
+                visibility: visibility ?? AccountManager.selectedAccount.preferences.defaultVisibility
+            });
+        }
+    }
+
     Connections {
         target: Navigation
 
@@ -263,28 +290,11 @@ StatefulApp.StatefulWindow {
         }
 
         function onOpenComposer(text: string): void {
-            if (Config.popOutByDefault) {
-                const item = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
-                    closeApplicationWhenFinished: true,
-                    purpose: StatusComposer.New,
-                    initialText: text
-                }, {
-                    title: i18n("Write a new post"),
-                    width: Kirigami.Units.gridUnit * 30,
-                    height: Kirigami.Units.gridUnit * 30,
-                    modality: Qt.NonModal
-                });
-                item.Window.window.closing.connect(event => {
-                    if (item.shouldClose()) {
-                        event.accepted = false;
-                    }
-                });
-            } else {
-                pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
-                    purpose: StatusComposer.New,
-                    initialText: text
-                });
-            }
+            root.openComposer(text, undefined);
+        }
+
+        function onOpenConversation(accountId: string): void {
+            root.openComposer("@" + accountId + " ", Post.Direct);
         }
 
         function onReplyTo(post: Post): void {
