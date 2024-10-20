@@ -179,8 +179,6 @@ StatefulApp.StatefulWindow {
         if (AccountManager.isReady) {
             startupAccountCheck();
         }
-
-        homeAction.checked = true;
     }
 
     Connections {
