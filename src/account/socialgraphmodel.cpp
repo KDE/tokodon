@@ -51,25 +51,77 @@ QString SocialGraphModel::displayName() const
 QString SocialGraphModel::placeholderText() const
 {
     if (m_followListName == QStringLiteral("request")) {
-        return i18n("No follow requests");
+        return i18n("No Follow Requests");
     } else if (m_followListName == QStringLiteral("followers")) {
-        return i18n("No followers");
+        return i18n("No Followers");
     } else if (m_followListName == QStringLiteral("following")) {
-        return i18n("No followed users");
+        return i18n("No Followed Users");
     } else if (m_followListName == QStringLiteral("mutes")) {
-        return i18n("No muted users");
+        return i18n("No Muted Users");
     } else if (m_followListName == QStringLiteral("blocks")) {
-        return i18n("No blocked users");
+        return i18n("No Blocked Users");
     } else if (m_followListName == QStringLiteral("featured")) {
-        return i18n("No featured users");
+        return i18n("No Featured Users");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
-        return i18n("No users favorited this post");
+        return i18n("No Users Favorited This Post");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
-        return i18n("No users boosted this post");
+        return i18n("No Users Boosted This Post");
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
-        return i18n("No familiar followers");
+        return i18n("No Familiar Followers");
     } else if (m_followListName == QStringLiteral("list")) {
-        return i18n("No users in this list");
+        return i18n("No Users");
+    }
+    return {};
+}
+
+QString SocialGraphModel::placeholderExplanation() const
+{
+    if (m_followListName == QStringLiteral("request")) {
+        return i18n("Some users need to be manually approved before they can follow you, and will show up here.");
+    } else if (m_followListName == QStringLiteral("followers")) {
+        return {};
+    } else if (m_followListName == QStringLiteral("following")) {
+        return {};
+    } else if (m_followListName == QStringLiteral("mutes")) {
+        return i18n("Mute users to stop them from showing up in your notifications.");
+    } else if (m_followListName == QStringLiteral("blocks")) {
+        return i18n("Block users to hide the user from your timeline entirely.");
+    } else if (m_followListName == QStringLiteral("featured")) {
+        return i18n("Users you like can be featured and shown on your profile.");
+    } else if (m_followListName == QStringLiteral("favourited_by")) {
+        return i18n("No one has favorited this post yet. Maybe you'll be the first?");
+    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+        return i18n("No one has boosted this post yet. You should boost it to expand it's reach!");
+    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+        return {};
+    } else if (m_followListName == QStringLiteral("list")) {
+        return i18n("There is no one in this list yet.");
+    }
+    return {};
+}
+
+QString SocialGraphModel::placeholderIconName() const
+{
+    if (m_followListName == QStringLiteral("request")) {
+        return QStringLiteral("list-add-user");
+    } else if (m_followListName == QStringLiteral("followers")) {
+        return QStringLiteral("list-add-user");
+    } else if (m_followListName == QStringLiteral("following")) {
+        return QStringLiteral("list-add-user");
+    } else if (m_followListName == QStringLiteral("mutes")) {
+        return QStringLiteral("microphone-sensitivity-muted");
+    } else if (m_followListName == QStringLiteral("blocks")) {
+        return QStringLiteral("cards-block");
+    } else if (m_followListName == QStringLiteral("featured")) {
+        return QStringLiteral("favorite");
+    } else if (m_followListName == QStringLiteral("favourited_by")) {
+        return QStringLiteral("tokodon-post-favorite");
+    } else if (m_followListName == QStringLiteral("reblogged_by")) {
+        return QStringLiteral("tokodon-post-boost");
+    } else if (m_followListName == QStringLiteral("familiar_followers")) {
+        return QStringLiteral("list-add-user");
+    } else if (m_followListName == QStringLiteral("list")) {
+        return QStringLiteral("list-add-user");
     }
     return {};
 }

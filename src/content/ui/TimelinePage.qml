@@ -26,6 +26,9 @@ Kirigami.ScrollablePage {
     readonly property bool showBoosts: showBoostsAction.checked
     property alias showFilterAction: filterAction.visible
     property alias originalPostUrl: listview.originalPostUrl
+    property string iconName
+    property alias placeholderText: placeholderMessage.text
+    property alias placeholderExplanation: placeholderMessage.explanation
 
     Keys.onPressed: event => listview.handleKeyEvent(event)
 
@@ -117,6 +120,19 @@ Kirigami.ScrollablePage {
         function onNetworkErrorOccurred(error) {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
             message.visible = true
+        }
+    }
+
+    background: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+
+        Kirigami.PlaceholderMessage {
+            id: placeholderMessage
+
+            anchors.centerIn: parent
+            icon.name: root.iconName
+            visible: listview.count === 0 && !listview.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 

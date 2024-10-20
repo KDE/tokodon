@@ -66,7 +66,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18nc("@label", "No announcements")
+            icon.name: "note"
+            text: i18nc("@label", "No Announcements")
+            explanation: i18n("Your server has not made any announcements yet.")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

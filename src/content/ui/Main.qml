@@ -67,9 +67,7 @@ StatefulApp.StatefulWindow {
         if (AccountManager.selectedAccountHasIssue) {
             pageStack.push(Qt.createComponent("org.kde.tokodon", "LoginIssuePage"));
         } else {
-            pageStack.push(mainTimeline.createObject(root), {
-                name: 'home',
-            });
+            homeAction.trigger();
         }
     }
 
@@ -381,7 +379,10 @@ StatefulApp.StatefulWindow {
         onTriggered: {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
-                name: "home"
+                name: "home",
+                iconName: "go-home-large",
+                placeholderText: i18n("No Posts"),
+                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -414,7 +415,7 @@ StatefulApp.StatefulWindow {
         onTriggered: {
             pageStack.clear();
             pageStack.push(socialGraphComponent.createObject(root), {
-                name: "request"
+                name: "request",
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -430,6 +431,9 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "public",
+                iconName: "system-users",
+                placeholderText: i18n("No Posts"),
+                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -445,6 +449,9 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "federated",
+                iconName: "kstars_xplanet",
+                placeholderText: i18n("No Posts"),
+                placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -475,6 +482,9 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "favourites",
+                iconName: "tokodon-post-favorite",
+                placeholderText: i18n("No Favorites"),
+                placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -491,6 +501,9 @@ StatefulApp.StatefulWindow {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "bookmarks",
+                iconName: "bookmarks",
+                placeholderText: i18n("No Bookmarks"),
+                placeholderExplanation: i18n("Bookmark posts and they will show up here. Bookmarks are always kept private, even to the post's author.")
             });
             checked = true;
             if (Kirigami.Settings.isMobile || drawer.modal) {
@@ -628,7 +641,9 @@ StatefulApp.StatefulWindow {
         id: mainTimeline
         TimelinePage {
             id: timelinePage
+
             property alias name: timelineModel.name
+
             model: MainTimelineModel {
                 id: timelineModel
                 showReplies: timelinePage.showReplies

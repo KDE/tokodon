@@ -90,6 +90,14 @@ Kirigami.Page {
                     tagged: accountInfo.selectedTag
                     currentTab: accountInfo.currentIndex
                 }
+
+                Kirigami.PlaceholderMessage {
+                    anchors.centerIn: parent
+                    text: i18nc("@label", "No Posts")
+                    explanation: i18n("This user hasn't posted anything yet.")
+                    visible: timelineView.count === 0 && !timelineView.model.loading
+                    width: parent.width - Kirigami.Units.gridUnit * 4
+                }
             }
         }
 
@@ -169,6 +177,14 @@ Kirigami.Page {
                         id: hoverHandler
                         acceptedDevices: PointerDevice.AllDevices
                     }
+                }
+
+                Kirigami.PlaceholderMessage {
+                    anchors.centerIn: parent
+                    text: i18nc("@label", "No Media")
+                    explanation: i18n("This user hasn't posted any media yet.")
+                    visible: gridView.count === 0 && !gridView.model.loading
+                    width: parent.width - Kirigami.Units.gridUnit * 4
                 }
             }
         }

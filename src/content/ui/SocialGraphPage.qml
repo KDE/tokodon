@@ -116,7 +116,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
+            icon.name: listview.model.placeholderIconName
             text: listview.model.placeholderText
+            explanation: listview.model.placeholderExplanation
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }
