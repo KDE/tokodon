@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action showAllAction: Kirigami.Action {
         id: showAllAction
-        text: i18nc("Show all notifications", "All")
+        text: i18nc("@action:intoolbar Show all notifications", "All")
         icon.name: "notifications"
         checkable: true
         onCheckedChanged: (checked) => {
@@ -49,7 +49,7 @@ Kirigami.ScrollablePage {
 
     property Kirigami.Action mentionOnlyAction: Kirigami.Action {
         id: onlyMentionAction
-        text: i18nc("Show only mentions", "Mentions")
+        text: i18nc("@action:intoolbar Show only mentions", "Mentions")
         icon.name: "tokodon-chat-reply"
         checkable: true
         onCheckedChanged: (checked) => {
@@ -58,60 +58,53 @@ Kirigami.ScrollablePage {
         }
     }
 
-    property Kirigami.Action boostsOnlyAction: Kirigami.Action {
-        text: i18nc("Show only boosts", "Boosts")
-        icon.name: "tokodon-post-boost"
+    property Kirigami.Action moreAction: Kirigami.Action {
+        icon.name: "view-more-horizontal-symbolic"
+        text: i18nc("@action:intoolbar More filter categories", "More")
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.popup();
         }
     }
 
-    property Kirigami.Action favoritesOnlyAction: Kirigami.Action {
-        text: i18nc("Show only favorites", "Favorites")
-        icon.name: "tokodon-post-favorite"
-        checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
-        }
-    }
+    QQC2.Menu {
+        id: visibilityMenu
 
-    property Kirigami.Action pollResultsOnlyAction: Kirigami.Action {
-        text: i18nc("Show only poll results", "Poll Results")
-        icon.name: "office-chart-bar"
-        checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
-        }
-    }
+        visible: false
+        onClosed: moreAction.checked = false
 
-    property Kirigami.Action postsOnlyAction: Kirigami.Action {
-        text: i18nc("Show only followed statuses", "Posts")
-        icon.name: "user-home-symbolic"
-        checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked)
-                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+        QQC2.MenuItem {
+            icon.name: "tokodon-post-boost"
+            text: i18nc("Show only boosts", "Boosts")
+            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
-    }
-
-    property Kirigami.Action followsOnlyAction: Kirigami.Action {
-        text: i18nc("Show only follows", "Follows")
-        icon.name: "list-add-user"
-        checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked)
-                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+        QQC2.MenuItem {
+            icon.name: "tokodon-post-favorite"
+            text: i18nc("Show only favorites", "Favorites")
+            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+        }
+        QQC2.MenuItem {
+            icon.name: "office-chart-bar"
+            text: i18nc("Show only poll results", "Poll Results")
+            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+        }
+        QQC2.MenuItem {
+            icon.name: "user-home-symbolic"
+            text: i18nc("Show only followed statuses", "Posts")
+            onTriggered: notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+        }
+        QQC2.MenuItem {
+            icon.name: "list-add-user"
+            text: i18nc("Show only follows", "Follows")
+            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
     }
 
     header: Kirigami.NavigationTabBar {
         anchors.left: parent.left
         anchors.right: parent.right
-        actions: [showAllAction, mentionOnlyAction, favoritesOnlyAction, boostsOnlyAction, pollResultsOnlyAction, postsOnlyAction, followsOnlyAction]
+        actions: [showAllAction, mentionOnlyAction, moreAction]
         enabled: !listview.model.loading
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
