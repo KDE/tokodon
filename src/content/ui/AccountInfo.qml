@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.components 1 as Components
+import org.kde.kirigamiaddons.labs.components as Labs
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
@@ -331,7 +332,7 @@ Kirigami.Page {
                                     color: Qt.rgba(0, 0, 0, 0.2)
                                 }
 
-                                Components.Avatar {
+                                Components.AvatarButton {
                                     id: avatar
 
                                     height: parent.height
@@ -340,6 +341,13 @@ Kirigami.Page {
                                     name: accountModel.identity.displayName
                                     source: accountModel.identity.avatarUrl
                                     imageMode: Components.Avatar.ImageMode.AdaptiveImageOrInitals
+
+                                    property Labs.AlbumModelItem album: Labs.AlbumModelItem {
+                                        type: Labs.AlbumModelItem.Image
+                                        source: accountModel.identity.avatarUrl
+                                    }
+
+                                    onClicked: Navigation.openFullScreenImage([album], accountModel.identity, 0);
                                 }
                             }
 
