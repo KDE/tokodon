@@ -26,6 +26,7 @@ class ProfileEditorBackend : public QObject
     Q_PROPERTY(QString avatarUrlError READ avatarUrlError NOTIFY avatarUrlChanged)
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
     Q_PROPERTY(bool discoverable READ discoverable WRITE setDiscoverable NOTIFY discoverableChanged)
+    Q_PROPERTY(QJsonArray fields READ fields WRITE setFields NOTIFY fieldsChanged)
 
 public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
@@ -124,6 +125,16 @@ public:
     void setDiscoverable(bool discoverable);
 
     /**
+     * @return This account's fields.
+     */
+    [[nodiscard]] QJsonArray fields() const;
+
+    /**
+     * @brief Replaces this account's fields with @p fields.
+     */
+    void setFields(const QJsonArray &fields);
+
+    /**
      * @return If the account is locked.
      */
     [[nodiscard]] bool locked() const;
@@ -137,6 +148,8 @@ public:
 public Q_SLOTS:
     void save();
     void fetchAccountInfo();
+    void setFieldName(int index, const QString &name);
+    void setFieldValue(int index, const QString &value);
 
 Q_SIGNALS:
     void accountChanged();
@@ -147,6 +160,7 @@ Q_SIGNALS:
     void backgroundUrlChanged();
     void discoverableChanged();
     void lockedChanged();
+    void fieldsChanged();
     void sendNotification(const QString &message, const QString &type = QStringLiteral("info"));
 
 private:
@@ -158,4 +172,5 @@ private:
     QUrl m_backgroundUrl;
     bool m_discoverable = true;
     bool m_locked = false;
+    QJsonArray m_fields;
 };

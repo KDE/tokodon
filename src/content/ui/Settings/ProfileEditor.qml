@@ -217,6 +217,49 @@ ColumnLayout {
                 }
             }
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.AbstractFormDelegate {
+            background: null
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                QQC2.Label {
+                    text: i18nc("Profile fields", "Fields")
+                }
+
+                Repeater {
+                    model: backend.fields
+
+                    delegate: RowLayout {
+                        id: delegate
+
+                        required property int index
+                        required property var modelData
+
+                        spacing: Kirigami.Units.largeSpacing
+
+                        QQC2.TextField {
+                            Layout.fillWidth: true
+                            Layout.preferredWidth: parent.width / 2
+                            text: delegate.modelData.name
+                            activeFocusOnTab: false
+                            onTextEdited: backend.setFieldName(delegate.index, text)
+                        }
+
+                        QQC2.TextField {
+                            id: valueArea
+
+                            Layout.fillWidth: true
+                            Layout.preferredWidth: parent.width / 2
+                            text: delegate.modelData.value
+                            activeFocusOnTab: false
+                            onEditingFinished: backend.setFieldValue(delegate.index, text)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     property QQC2.ToolBar profileFooter: QQC2.ToolBar {

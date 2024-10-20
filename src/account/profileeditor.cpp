@@ -7,6 +7,7 @@
 #include "utils/texthandler.h"
 
 #include <KLocalizedString>
+#include <QTextDocument>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -97,6 +98,34 @@ void ProfileEditorBackend::setDiscoverable(bool discoverable)
     }
     m_discoverable = discoverable;
     Q_EMIT discoverableChanged();
+}
+
+QJsonArray ProfileEditorBackend::fields() const
+{
+    return m_fields;
+}
+
+void ProfileEditorBackend::setFields(const QJsonArray &fields)
+{
+    if (m_fields == fields) {
+        return;
+    }
+    m_fields = fields;
+    Q_EMIT fieldsChanged();
+}
+
+void ProfileEditorBackend::setFieldName(const int index, const QString &name)
+{
+    auto field = m_fields[index].toObject();
+    field["name"_L1] = name;
+    m_fields[index] = field;
+}
+
+void ProfileEditorBackend::setFieldValue(const int index, const QString &value)
+{
+    auto field = m_fields[index].toObject();
+    field["value"_L1] = value;
+    m_fields[index] = field;
 }
 
 bool ProfileEditorBackend::locked() const
@@ -203,6 +232,18 @@ void ProfileEditorBackend::fetchAccountInfo()
         setAvatarUrl(QUrl(obj["avatar_static"_L1].toString()));
         setLocked(obj["locked"_L1].toBool());
         setDiscoverable(obj["discoverable"_L1].toBool());
+
+        m_fields = {};
+        // The field value is HTML, we must process and strip it
+        for (const auto &fieldVal : obj["fields"_L1].toArray()) {
+            auto field = fieldVal.toObject();
+            QTextDocument document;
+            document.setHtml(field["value"_L1].toString());
+            field["value"_L1] = document.toPlainText();
+
+            m_fields.append(field);
+        }
+        Q_EMIT fieldsChanged();
     });
 }
 
@@ -236,6 +277,18 @@ void ProfileEditorBackend::save()
     discoverablePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"discoverable\""));
     discoverablePart.setBody(discoverable() ? "1" : "0");
     multiPart->append(discoverablePart);
+
+    for (int i = 0; i < m_fields.size(); i++) {
+        QHttpPart fieldNamePart;
+        fieldNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"fields_attributes[%1][name]\"").arg(i));
+        fieldNamePart.setBody(m_fields[i]["name"_L1].toString().toUtf8());
+        multiPart->append(fieldNamePart);
+
+        QHttpPart fieldValuePart;
+        fieldValuePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"fields_attributes[%1][value]\"").arg(i));
+        fieldValuePart.setBody(m_fields[i]["value"_L1].toString().toUtf8());
+        multiPart->append(fieldValuePart);
+    }
 
     QMimeDatabase mimeDatabase;
 
