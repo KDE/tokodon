@@ -137,7 +137,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     const QString baseUrl = m_url.toDisplayString(QUrl::RemovePath);
 
     // Attempt to replace the tag URLs with proper ones, although this should really be handled by the Mastodon API
-    m_bio = m_bio.replace(baseUrl + QStringLiteral("/tags/"), QStringLiteral("hashtag:/"), Qt::CaseInsensitive);
+    m_bio.replace(baseUrl + QStringLiteral("/tags/"), QStringLiteral("hashtag:/"), Qt::CaseInsensitive);
 
     // Even worse, mentions are not given proper ids so we must figure it out on our own.
     // The account could be on a different server, so let's take advantage of web+ap and use that
@@ -153,7 +153,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
             if (captured.contains('@'_L1)) {
                 // The length of "href=" which is used in the regex.
                 const int hrefLength = 6;
-                m_bio = m_bio.replace(start + hrefLength, length - hrefLength, QStringLiteral("web+ap:/") + captured.mid(hrefLength));
+                m_bio.replace(start + hrefLength, length - hrefLength, QStringLiteral("web+ap:/") + captured.mid(hrefLength));
             }
         }
     }

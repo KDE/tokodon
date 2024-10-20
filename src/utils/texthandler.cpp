@@ -83,7 +83,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
             possibleTags.push_back(match.captured(1));
-            possibleLastParagraph = possibleLastParagraph.replace(match.captured(0), QStringLiteral(""));
+            possibleLastParagraph.replace(match.captured(0), QStringLiteral(""));
         }
 
         // If this paragraph is truly extraneous, then we can take its tags, otherwise skip.
@@ -100,7 +100,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         auto matchIterator = TextRegex::extraneousBreakExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
-            contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
+            contentHtml.replace(match.captured(1), QStringLiteral(""));
         }
     }
 
@@ -110,7 +110,7 @@ QPair<QString, QList<QString>> TextHandler::removeStandaloneTags(QString content
         auto matchIterator = TextRegex::extraneousParagraphExp.globalMatch(contentHtml);
         while (matchIterator.hasNext()) {
             const QRegularExpressionMatch match = matchIterator.next();
-            contentHtml = contentHtml.replace(match.captured(1), QStringLiteral(""));
+            contentHtml.replace(match.captured(1), QStringLiteral(""));
         }
     }
 
@@ -121,8 +121,8 @@ QString TextHandler::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const
 {
     QString processed = source;
     for (const auto &emoji : emojis) {
-        processed = processed.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
-                                      QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emoji.url + QStringLiteral("\">"));
+        processed.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
+                          QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emoji.url + QStringLiteral("\">"));
     }
 
     return processed;

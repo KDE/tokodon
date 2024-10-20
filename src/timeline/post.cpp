@@ -484,9 +484,9 @@ void Post::processContent(const QJsonObject &obj)
         };
 
         for (const QString &tagFormat : tagFormats) {
-            processedHtml = processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
-                                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                                  Qt::CaseInsensitive);
+            processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
+                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
+                                  Qt::CaseInsensitive);
         }
     }
 
