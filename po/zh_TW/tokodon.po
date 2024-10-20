@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:39+0000\n"
-"PO-Revision-Date: 2024-09-23 20:38+0900\n"
+"POT-Creation-Date: 2024-10-20 00:40+0000\n"
+"PO-Revision-Date: 2024-10-20 00:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -31,10 +31,9 @@ msgid "Could not unfollow account"
 msgstr "無法取消跟隨帳號"
 
 #: account/abstractaccount.cpp:676
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "無法拒絕帳號"
+msgstr "無法將帳號從您的跟隨者中移除"
 
 #: account/abstractaccount.cpp:677
 #, kde-format
@@ -87,18 +86,18 @@ msgid "%1 mentioned you"
 msgstr "%1 提及您"
 
 #: account/notificationhandler.cpp:82
-#: content/ui/Notifications/UserInteractionLabel.qml:86
+#: content/ui/Notifications/UserInteractionLabel.qml:87
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 撰寫了新的嘟文"
 
 #: account/notificationhandler.cpp:90
-#: content/ui/Notifications/UserInteractionLabel.qml:76
+#: content/ui/Notifications/UserInteractionLabel.qml:77
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 轉嘟了您的嘟文"
 
-#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:56
+#: account/notificationhandler.cpp:98 content/ui/FollowDelegate.qml:70
 #, kde-format
 msgid "%1 followed you"
 msgstr "%1 已跟隨您"
@@ -109,7 +108,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 已請求跟隨您"
 
 #: account/notificationhandler.cpp:114
-#: content/ui/Notifications/UserInteractionLabel.qml:80
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 將您的嘟文加入最愛"
@@ -176,9 +175,7 @@ msgid "Featured Users"
 msgstr "推薦使用者"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -192,18 +189,16 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 次轉嘟"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "跟隨者"
+msgstr "相識的跟隨者"
 
 #: account/socialgraphmodel.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
-msgstr ""
+msgstr "管理列表使用者"
 
 #: account/socialgraphmodel.cpp:54
 #, kde-format
@@ -236,8 +231,7 @@ msgid "No featured users"
 msgstr "無推薦使用者"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users favorited this post"
 msgstr "沒有使用者將這篇嘟文加入最愛"
 
@@ -247,48 +241,46 @@ msgid "No users boosted this post"
 msgstr "沒有使用者轉嘟了這篇嘟文"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No familiar followers"
-msgstr "無跟隨者"
+msgstr "沒有相識的跟隨者"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "No users in this list"
-msgstr "沒有使用者將這篇嘟文加入最愛"
+msgstr "此列表中沒有使用者"
 
-#: admin/accounttoolmodel.cpp:296
+#: admin/accounttoolmodel.cpp:297
 #, kde-format
 msgid "Could not accept account"
 msgstr "無法接受帳號"
 
-#: admin/accounttoolmodel.cpp:297
+#: admin/accounttoolmodel.cpp:298
 #, kde-format
 msgid "Could not reject account"
 msgstr "無法拒絕帳號"
 
-#: admin/accounttoolmodel.cpp:298
+#: admin/accounttoolmodel.cpp:299
 #, kde-format
 msgid "Could not take action against the account"
 msgstr "無法對帳號進行動作"
 
-#: admin/accounttoolmodel.cpp:299
+#: admin/accounttoolmodel.cpp:300
 #, kde-format
 msgid "Could not enable the disabled account"
 msgstr "無法啟用該停用帳號"
 
-#: admin/accounttoolmodel.cpp:300
+#: admin/accounttoolmodel.cpp:301
 #, kde-format
 msgid "Could not unsilence the account"
 msgstr "無法取消靜音該帳號"
 
-#: admin/accounttoolmodel.cpp:301
+#: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not unsuspend the account"
 msgstr "無法取消停權該帳號"
 
-#: admin/accounttoolmodel.cpp:302
+#: admin/accounttoolmodel.cpp:303
 #, kde-format
 msgid "Could not mark the account as not sensitive"
 msgstr "無法將帳號標記為非敏感內容"
@@ -335,218 +327,215 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "未受限制"
 
-#: admin/federationtoolmodel.cpp:160 admin/iprulestoolmodel.cpp:120
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "進行 PUT 請求來更新網域封鎖時發生錯誤。"
 
-#: admin/reporttoolmodel.cpp:194
+#: admin/reporttoolmodel.cpp:195
 #, kde-format
 msgid "Could not resolve report"
 msgstr "無法將檢舉標記為已解決"
 
-#: admin/reporttoolmodel.cpp:195
+#: admin/reporttoolmodel.cpp:196
 #, kde-format
 msgid "Could not unresolve report"
 msgstr "無法將檢舉標記為未解決"
 
-#: admin/reporttoolmodel.cpp:196
+#: admin/reporttoolmodel.cpp:197
 #, kde-format
 msgid "Could not assign report"
 msgstr "無法指派檢舉"
 
-#: admin/reporttoolmodel.cpp:197
+#: admin/reporttoolmodel.cpp:198
 #, kde-format
 msgid "Could not unassign report"
 msgstr "無法取消指派檢舉"
 
-#: content/ui/AccountInfo.qml:259
+#: content/ui/AccountInfo.qml:264
 #, kde-format
 msgid "Follows you"
 msgstr "跟隨您"
 
-#: content/ui/AccountInfo.qml:280
-#, fuzzy, kde-format
-#| msgid "Boost"
+#: content/ui/AccountInfo.qml:285
+#, kde-format
 msgid "Bot"
-msgstr "轉嘟"
+msgstr "機器人"
 
-#: content/ui/AccountInfo.qml:376
+#: content/ui/AccountInfo.qml:381
 #, kde-format
 msgid "Follow Requested"
 msgstr "已請求跟隨"
 
-#: content/ui/AccountInfo.qml:379
+#: content/ui/AccountInfo.qml:384
 #, kde-format
 msgid "Unfollow"
 msgstr "取消跟隨"
 
-#: content/ui/AccountInfo.qml:381
+#: content/ui/AccountInfo.qml:386
 #, kde-format
 msgid "Follow"
 msgstr "跟隨"
 
-#: content/ui/AccountInfo.qml:406
+#: content/ui/AccountInfo.qml:411
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "%1 嘟文時不要再通知我。"
 
-#: content/ui/AccountInfo.qml:408
+#: content/ui/AccountInfo.qml:413
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "%1 嘟文時通知我。"
 
-#: content/ui/AccountInfo.qml:425
+#: content/ui/AccountInfo.qml:430
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "隱藏 %1 的轉嘟"
 
-#: content/ui/AccountInfo.qml:427
+#: content/ui/AccountInfo.qml:432
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "顯示 %1 的轉嘟"
 
-#: content/ui/AccountInfo.qml:443
+#: content/ui/AccountInfo.qml:448
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "取消推薦這個個人檔案"
 
-#: content/ui/AccountInfo.qml:445
+#: content/ui/AccountInfo.qml:450
 #, kde-format
 msgid "Feature This Profile"
 msgstr "推薦這個個人檔案"
 
-#: content/ui/AccountInfo.qml:461
+#: content/ui/AccountInfo.qml:466
 #, kde-format
 msgid "Unmute"
 msgstr "取消靜音"
 
-#: content/ui/AccountInfo.qml:463
+#: content/ui/AccountInfo.qml:468
 #, kde-format
 msgid "Mute"
 msgstr "靜音"
 
-#: content/ui/AccountInfo.qml:479
+#: content/ui/AccountInfo.qml:484
 #, kde-format
 msgid "Unblock"
 msgstr "解除封鎖"
 
-#: content/ui/AccountInfo.qml:481
+#: content/ui/AccountInfo.qml:486
 #, kde-format
 msgid "Block"
 msgstr "封鎖"
 
-#: content/ui/AccountInfo.qml:495 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:500 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "檢舉…"
 
-#: content/ui/AccountInfo.qml:501
+#: content/ui/AccountInfo.qml:506
 #, kde-format
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
 
-#: content/ui/AccountInfo.qml:505
+#: content/ui/AccountInfo.qml:510
 #, kde-format
 msgid "Account editor"
 msgstr "帳號編輯器"
 
-#: content/ui/AccountInfo.qml:514 content/ui/Main.qml:410
+#: content/ui/AccountInfo.qml:519 content/ui/Main.qml:411
 #, kde-format
 msgid "Follow Requests"
 msgstr "跟隨請求"
 
-#: content/ui/AccountInfo.qml:520
+#: content/ui/AccountInfo.qml:525
 #, kde-format
 msgid "Muted Users"
 msgstr "已靜音的使用者"
 
-#: content/ui/AccountInfo.qml:526
+#: content/ui/AccountInfo.qml:531
 #, kde-format
 msgid "Blocked Users"
 msgstr "已封鎖的使用者"
 
-#: content/ui/AccountInfo.qml:532
+#: content/ui/AccountInfo.qml:537
 #, kde-format
 msgid "Featured Users"
 msgstr "推薦使用者"
 
-#: content/ui/AccountInfo.qml:537
+#: content/ui/AccountInfo.qml:542
 #, kde-format
 msgid "Copy Link"
 msgstr "複製連結"
 
-#: content/ui/AccountInfo.qml:540
+#: content/ui/AccountInfo.qml:545
 #, kde-format
 msgid "Profile link copied."
 msgstr "已複製個人檔案連結。"
 
-#: content/ui/AccountInfo.qml:630
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#: content/ui/AccountInfo.qml:635
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
-msgstr "私人備註"
+msgstr "私人備註："
 
-#: content/ui/AccountInfo.qml:638
+#: content/ui/AccountInfo.qml:643
 #, kde-format
 msgid "Saved"
 msgstr "已儲存"
 
-#: content/ui/AccountInfo.qml:653
+#: content/ui/AccountInfo.qml:658
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
-msgstr ""
+msgstr "寫下關於此使用者的一點備註。這個備註不會被除了您以外的任何人看到。"
 
-#: content/ui/AccountInfo.qml:764
+#: content/ui/AccountInfo.qml:769
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> 篇嘟文"
 
-#: content/ui/AccountInfo.qml:777
-#, kde-format
-msgctxt "@label User's number of followers"
-msgid "<b>%1</b> follower"
-msgid_plural "<b>%1</b> followers"
-msgstr[0] "<b>%1</b> 名跟隨者"
-
-#: content/ui/AccountInfo.qml:790
+#: content/ui/AccountInfo.qml:782
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "正在跟隨 <b>%1</b> 人"
 
-#: content/ui/AccountInfo.qml:817
+#: content/ui/AccountInfo.qml:795
+#, kde-format
+msgctxt "@label User's number of followers"
+msgid "<b>%1</b> follower"
+msgid_plural "<b>%1</b> followers"
+msgstr[0] "<b>%1</b> 名跟隨者"
+
+#: content/ui/AccountInfo.qml:822
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/AccountInfo.qml:821
+#: content/ui/AccountInfo.qml:826
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "嘟文與回覆"
 
-#: content/ui/AccountInfo.qml:825
+#: content/ui/AccountInfo.qml:830
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "媒體"
 
-#: content/ui/AccountInfo.qml:854
+#: content/ui/AccountInfo.qml:859
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "隱藏轉嘟"
 
-#: content/ui/AccountInfo.qml:874
+#: content/ui/AccountInfo.qml:879
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -587,14 +576,43 @@ msgid "No emojis"
 msgstr "無表情符號"
 
 #: content/ui/Components/InlineIdentityInfo.qml:41
-#: content/ui/Notifications/UserInteractionLabel.qml:65
+#: content/ui/Notifications/UserInteractionLabel.qml:66
 #: content/ui/PostDelegate/QuotePost.qml:58
 #: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
 msgstr "檢視個人檔案"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:457
+#: content/ui/Components/TimelineView.qml:64
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Return to Top"
+msgstr "回到頂端"
+
+#: content/ui/Components/TimelineView.qml:128
+#, kde-format
+msgctxt "@info:status"
+msgid "Some replies are not available"
+msgstr "某些回覆無法使用"
+
+#: content/ui/Components/TimelineView.qml:129
+#, kde-format
+msgid "To view all replies, open the post on the original server."
+msgstr "要檢視所有回覆，請在嘟文原本的伺服器上開啟它。"
+
+#: content/ui/Components/TimelineView.qml:132
+#, kde-format
+msgctxt "@action:button 'Browser' being a web browser"
+msgid "Open in Browser"
+msgstr "在瀏覽器開啟"
+
+#: content/ui/Components/TimelineView.qml:141
+#, kde-format
+msgctxt "@info:status"
+msgid "End of Timeline"
+msgstr "時間軸尾端"
+
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:458
 #, kde-format
 msgid "Conversations"
 msgstr "對話"
@@ -652,35 +670,33 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "排除式列表中的貼文會從首頁時間軸中隱藏。"
 
 #: content/ui/EditListPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
-msgstr "已靜音的使用者"
+msgstr "管理使用者"
 
 #: content/ui/EditListPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
-msgstr "使用者"
+msgstr "新增使用者"
 
 #: content/ui/EditListPage.qml:118
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr ""
+msgstr "將使用者加入列表…"
 
 #: content/ui/EditListPage.qml:155
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
-msgstr ""
+msgstr "新增"
 
 #: content/ui/EditListPage.qml:202
 #, kde-format
 msgid "Search among users you follow…"
-msgstr ""
+msgstr "在您跟隨的使用者中搜尋…"
 
 #: content/ui/EditListPage.qml:236
 #, kde-format
@@ -712,89 +728,81 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "您確定要刪除這個列表嗎？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:503
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:504
 #, kde-format
 msgid "Explore"
 msgstr "探索"
 
-#: content/ui/ExplorePage.qml:30 content/ui/TimelinePage.qml:90
+#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
 msgstr "後間隙："
 
-#: content/ui/ExplorePage.qml:45 search/searchmodel.cpp:159
+#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:159
 #, kde-format
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/ExplorePage.qml:60
+#: content/ui/ExplorePage.qml:56
 #, kde-format
 msgid "Tags"
 msgstr "標籤"
 
-#: content/ui/ExplorePage.qml:148
-#, kde-format
-msgid "%1 person is talking"
-msgid_plural "%1 people are talking"
-msgstr[0] "%1 人在講話"
-
-#: content/ui/ExplorePage.qml:165
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Posts"
-msgstr "無熱門嘟文"
-
-#: content/ui/ExplorePage.qml:165
+#: content/ui/ExplorePage.qml:141
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "無熱門標籤"
 
-#: content/ui/FollowDelegate.qml:54
+#: content/ui/ExplorePage.qml:162
+#, kde-format
+msgid "%1 person is talking"
+msgid_plural "%1 people are talking"
+msgstr[0] "%1 人在講話"
+
+#: content/ui/FollowDelegate.qml:68
 #, kde-format
 msgid "%1 signed up"
 msgstr "%1 已註冊"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "正在跟隨"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:96
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
 msgstr "過濾器"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
 msgstr "顯示轉嘟"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "顯示回覆"
 
-#: content/ui/FollowingPage.qml:195
+#: content/ui/FollowingPage.qml:190
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "沒有選擇任何使用者"
 
-#: content/ui/FollowingPage.qml:196
+#: content/ui/FollowingPage.qml:191
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"在「正在跟隨」檢視當中，您可以隨心地查看來自您所跟隨的各個使用者的嘟文，並且"
+"不會包含其他任何使用者的嘟文。以最近更新排序。"
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1152,33 +1160,27 @@ msgstr "這個伺服器不允許註冊：%1"
 #: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "搜尋或輸入網址…"
 
 #: content/ui/LoginFlow/ServersPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "'Custom' is a category of emoji"
-#| msgid "Custom"
+#, kde-format
 msgid "Custom Server"
-msgstr "自訂"
+msgstr "自訂伺服器"
 
 #: content/ui/LoginFlow/ServersPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "Public Servers"
-msgstr "選取伺服器"
+msgstr "公開伺服器"
 
 #: content/ui/LoginFlow/ServersPage.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "No Public Servers"
-msgstr "選取伺服器"
+msgstr "沒有公開伺服器"
 
 #: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "在搜尋欄位手動輸入伺服器網址。"
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1266,89 +1268,87 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知動作"
 
-#: content/ui/Main.qml:234 content/ui/Main.qml:272
+#: content/ui/Main.qml:235 content/ui/Main.qml:273
 #, kde-format
 msgid "Write a new post"
 msgstr "撰寫新嘟文"
 
-#: content/ui/Main.qml:296
+#: content/ui/Main.qml:297
 #, kde-format
 msgid "Reply to post"
 msgstr "回覆給嘟文"
 
-#: content/ui/Main.qml:378
+#: content/ui/Main.qml:379
 #, kde-format
 msgid "Home"
 msgstr "首頁"
 
-#: content/ui/Main.qml:395 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:396 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:426
+#: content/ui/Main.qml:427
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/Main.qml:441
+#: content/ui/Main.qml:442
 #, kde-format
 msgid "Global"
 msgstr "全域"
 
-#: content/ui/Main.qml:471 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:472 content/ui/Settings/NotificationsPage.qml:117
 #, kde-format
 msgid "Favorites"
 msgstr "最愛"
 
-#: content/ui/Main.qml:487
+#: content/ui/Main.qml:488
 #, kde-format
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: content/ui/Main.qml:517
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#: content/ui/Main.qml:518
+#, kde-format
 msgid "Following"
 msgstr "正在跟隨"
 
-#: content/ui/Main.qml:531
+#: content/ui/Main.qml:532
 #, kde-format
 msgid "Search"
 msgstr "搜尋"
 
-#: content/ui/Main.qml:546
+#: content/ui/Main.qml:547
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "公告"
 
-#: content/ui/Main.qml:561
+#: content/ui/Main.qml:562
 #, kde-format
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:582
+#: content/ui/Main.qml:583
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "除錯"
 
-#: content/ui/Main.qml:592
+#: content/ui/Main.qml:593
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "站務工具"
 
-#: content/ui/Main.qml:604
+#: content/ui/Main.qml:605
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "設定"
 
-#: content/ui/Main.qml:734
+#: content/ui/Main.qml:735
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -1980,10 +1980,7 @@ msgid "Freeze"
 msgstr "凍結"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -2625,13 +2622,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>內容警告</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:315
+#: content/ui/PostDelegate/PostDelegate.qml:326
 #, kde-format
 msgid "Show Less"
 msgstr "顯示更少"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:315
+#: content/ui/PostDelegate/PostDelegate.qml:326
 #, kde-format
 msgid "Show More"
 msgstr "顯示更多"
@@ -2737,81 +2734,99 @@ msgstr "未找到報告"
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
-msgstr ""
+msgstr "將全部標為已讀"
 
-#: content/ui/NotificationPage.qml:40
+#: content/ui/NotificationPage.qml:41
 #, kde-format
 msgctxt "Show all notifications"
 msgid "All"
 msgstr "全部"
 
-#: content/ui/NotificationPage.qml:51
+#: content/ui/NotificationPage.qml:52
 #, kde-format
 msgctxt "Show only mentions"
 msgid "Mentions"
 msgstr "提及"
 
-#: content/ui/NotificationPage.qml:61
+#: content/ui/NotificationPage.qml:62
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "轉嘟"
 
-#: content/ui/NotificationPage.qml:71
+#: content/ui/NotificationPage.qml:72
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "最愛"
 
-#: content/ui/NotificationPage.qml:81
+#: content/ui/NotificationPage.qml:82
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "投票結果"
 
-#: content/ui/NotificationPage.qml:91
+#: content/ui/NotificationPage.qml:92
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/NotificationPage.qml:101
+#: content/ui/NotificationPage.qml:102
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "跟隨"
 
-#: content/ui/NotificationPage.qml:231
+#: content/ui/NotificationPage.qml:260
 #, kde-format
 msgid "No Notifications"
 msgstr "沒有通知"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:60
+#: content/ui/Notifications/AccountWarningDelegate.qml:66
+#, fuzzy, kde-format
+#| msgid "Take action against this account"
+msgid "%1 has issued a warning against your account"
+msgstr "對帳號進行動作"
+
+#: content/ui/Notifications/GroupInteractionLabel.qml:62
 #, kde-format
 msgid "View %1's Profile"
 msgstr "檢視 %1 的個人檔案"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:69
+#: content/ui/Notifications/GroupInteractionLabel.qml:71
 #, kde-format
 msgid "%1 users favorited your post"
 msgstr "%1 個使用者將您的嘟文加入最愛"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:71
+#: content/ui/Notifications/GroupInteractionLabel.qml:73
 #, kde-format
 msgid "%1 users boosted your post"
 msgstr "%1 個使用者轉嘟了您的嘟文"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:78
+#: content/ui/Notifications/RelationshipSeveranceDelegate.qml:62
+#, kde-format
+msgctxt "@info:label"
+msgid "%1 relationships were severed due to moderation actions."
+msgstr ""
+
+#: content/ui/Notifications/ReportDelegate.qml:61
+#, kde-format
+msgctxt "@info:label"
+msgid "A report has been filed against a user in your server."
+msgstr ""
+
+#: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
 msgid "%1 replied to your post"
 msgstr "%1 回覆了您的嘟文"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:82
+#: content/ui/Notifications/UserInteractionLabel.qml:83
 #, kde-format
 msgid "A poll has ended"
 msgstr "一個投票已結束"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:84
+#: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 更新了嘟文"
@@ -2933,10 +2948,26 @@ msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "%1 次轉嘟"
 
-#: content/ui/PostDelegate/LinkPreview.qml:18
+#: content/ui/PostDelegate/LinkPreview.qml:25
 #, kde-format
 msgid "Link preview: %1"
 msgstr "連結預覽：%1"
+
+#: content/ui/PostDelegate/LinkPreview.qml:202
+#, fuzzy, kde-format
+#| msgctxt "Show more options"
+#| msgid "More"
+msgctxt ""
+"@info:label 'More from [this author]', where we put the user's avatar and "
+"name next to this label"
+msgid "More from"
+msgstr "更多"
+
+#: content/ui/PostDelegate/LinkPreview.qml:240
+#, kde-format
+msgctxt "@info:label 'This is written by %1'"
+msgid "By %1"
+msgstr ""
 
 #: content/ui/PostDelegate/MediaContainer.qml:70
 #, kde-format
@@ -2944,20 +2975,28 @@ msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "ALT"
 
-#: content/ui/PostDelegate/MediaContainer.qml:76
+#: content/ui/PostDelegate/MediaContainer.qml:80
 #, kde-format
 msgid "Text description available"
 msgstr "有可用的文字描述"
 
-#: content/ui/PostDelegate/MediaContainer.qml:84
+#: content/ui/PostDelegate/MediaContainer.qml:88
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:93
+#: content/ui/PostDelegate/MediaContainer.qml:97
 #, kde-format
 msgid "Video"
 msgstr "影片"
+
+#: content/ui/PostDelegate/MediaContainer.qml:125
+#, fuzzy, kde-format
+#| msgctxt "@title:group Alternate text or description of the image"
+#| msgid "Description"
+msgctxt "@title"
+msgid "Media Description"
+msgstr "描述"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
@@ -2969,41 +3008,41 @@ msgstr "正常狀態"
 msgid "Spoiler Status"
 msgstr "暴雷狀態"
 
-#: content/ui/PostDelegate/PostDelegate.qml:141
+#: content/ui/PostDelegate/PostDelegate.qml:152
 #, kde-format
 msgid "Filtered: %1"
 msgstr "已過濾：%1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:145
+#: content/ui/PostDelegate/PostDelegate.qml:156
 #, kde-format
 msgid "Show anyway"
 msgstr "還是要顯示"
 
-#: content/ui/PostDelegate/PostDelegate.qml:166
+#: content/ui/PostDelegate/PostDelegate.qml:177
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "已釘選嘟文"
 
-#: content/ui/PostDelegate/PostDelegate.qml:228
+#: content/ui/PostDelegate/PostDelegate.qml:239
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "刪除嘟文"
 
-#: content/ui/PostDelegate/PostDelegate.qml:229
+#: content/ui/PostDelegate/PostDelegate.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "您確定要刪除這篇嘟文嗎？"
 
-#: content/ui/PostDelegate/PostDelegate.qml:244
+#: content/ui/PostDelegate/PostDelegate.qml:255
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "刪除嘟文並重新打草稿"
 
-#: content/ui/PostDelegate/PostDelegate.qml:245
+#: content/ui/PostDelegate/PostDelegate.qml:256
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3011,89 +3050,82 @@ msgid ""
 "post."
 msgstr "您確定要重新打這篇嘟文的草稿嗎？這個動作會刪除原有的嘟文。"
 
-#: content/ui/PostDelegate/PostDelegate.qml:308
-#, fuzzy, kde-format
-#| msgid "<b>Content Warning</b><br /> %1"
+#: content/ui/PostDelegate/PostDelegate.qml:319
+#, kde-format
 msgid "<b>Content Notice</b><br /> %1"
-msgstr "<b>內容警告</b><br /> %1"
+msgstr "<b>內容告警</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:420
+#: content/ui/PostDelegate/PostDelegate.qml:431
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "回覆"
 
-#: content/ui/PostDelegate/PostDelegate.qml:447
+#: content/ui/PostDelegate/PostDelegate.qml:458
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "私信不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:449
+#: content/ui/PostDelegate/PostDelegate.qml:460
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "私人嘟文不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:451
+#: content/ui/PostDelegate/PostDelegate.qml:462
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:456
+#: content/ui/PostDelegate/PostDelegate.qml:467
 #, kde-format
 msgid "Boosted"
 msgstr "已轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:456
+#: content/ui/PostDelegate/PostDelegate.qml:467
 #, kde-format
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:476
+#: content/ui/PostDelegate/PostDelegate.qml:487
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#: content/ui/PostDelegate/PostDelegate.qml:490
+#, kde-format
 msgid "Favorited"
 msgstr "已加入最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:479
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#: content/ui/PostDelegate/PostDelegate.qml:490
+#, kde-format
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:498
+#: content/ui/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgid "Remove bookmark"
 msgstr "移除書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:498
+#: content/ui/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Bookmarked"
 msgstr "已加入書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:524
-#, fuzzy, kde-format
-#| msgid ""
-#| "This post has been marked private. Some posts may be missing because it's "
-#| "replies are marked as private by default."
+#: content/ui/PostDelegate/PostDelegate.qml:535
+#, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
@@ -3101,12 +3133,10 @@ msgstr ""
 "此嘟文已被標記為私人。可能會缺少某些嘟文，因為它的回覆預設也會被標記為私人。"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:48
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
-msgstr "發佈於 %1"
+msgstr "編輯於 %1"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:101
 #, kde-format
@@ -3115,18 +3145,16 @@ msgid "More actions"
 msgstr "更多動作"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Thread"
+#, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr "串文"
+msgstr "開啟串文"
 
 #: content/ui/PostDelegate/PostMenu.qml:44
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "在瀏覽器開啟"
 
 #: content/ui/PostDelegate/PostMenu.qml:52
 #, kde-format
@@ -3248,10 +3276,9 @@ msgid "%1%"
 msgstr "%1%"
 
 #: content/ui/PostDelegate/PostPoll.qml:59
-#, fuzzy, kde-format
-#| msgid "No users favourited this post"
+#, kde-format
 msgid "You voted for this option"
-msgstr "沒有使用者將這篇嘟文加入最愛"
+msgstr "您已投票給此選項"
 
 #: content/ui/PostDelegate/PostPoll.qml:82
 #, kde-format
@@ -3264,17 +3291,15 @@ msgid "Vote"
 msgstr "投票"
 
 #: content/ui/PostDelegate/PostPoll.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
-msgstr "顯示更少"
+msgstr "顯示結果"
 
 #: content/ui/PostDelegate/PostPoll.qml:148
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll has closed"
-msgstr "一個投票已結束"
+msgstr "投票已結束"
 
 #: content/ui/PostDelegate/QuotePost.qml:64
 #, kde-format
@@ -3301,6 +3326,21 @@ msgstr "回覆給 %1"
 msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "播放"
+
+#: content/ui/ReadMarker.qml:25
+#, fuzzy, kde-format
+#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
+#| msgid "Posted on %1"
+msgctxt "Last read on this date"
+msgid "Last read on %1"
+msgstr "發佈於 %1"
+
+#: content/ui/ReadMarker.qml:35
+#, fuzzy, kde-format
+#| msgid "Learn More"
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "了解更多"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3581,10 +3621,9 @@ msgstr ""
 "支援 PNG、GIF 或 JPG 格式，檔案最大為 2 MB。會等比例縮減至 400x400 像素"
 
 #: content/ui/Settings/ProfileEditor.qml:256
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "要求跟隨請求需要先准許"
+msgstr "要求准許才能成為新跟隨者"
 
 #: content/ui/Settings/ProfileEditor.qml:257
 #, kde-format
@@ -3593,38 +3632,39 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"新跟隨者預設會自動接受。取消勾選來手動批准或拒絕新的跟隨請求。無論是否勾選，"
+"您都還是可以強制使人取消跟隨您。"
 
 #: content/ui/Settings/ProfileEditor.qml:265
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "是自動化帳號"
 
 #: content/ui/Settings/ProfileEditor.qml:266
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
-msgstr ""
+msgstr "是否公開標記此帳號為會進行任何自動化操作的帳號。"
 
 #: content/ui/Settings/ProfileEditor.qml:274
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "推薦這個個人檔案"
+msgstr "推薦個人檔案和嘟文"
 
 #: content/ui/Settings/ProfileEditor.qml:275
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
-msgstr ""
+msgstr "您的公開個人檔案和嘟文可能會推薦給其他使用者。"
 
 #: content/ui/Settings/ProfileEditor.qml:283
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "公開列出跟隨您和您跟隨的使用者"
 
 #: content/ui/Settings/ProfileEditor.qml:284
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
+msgstr "您所跟隨的人和所有跟隨您的人的列表預設都是公開的。"
 
 #: content/ui/Settings/ProfileEditor.qml:292
 #, kde-format
@@ -3666,12 +3706,12 @@ msgstr "僅限跟隨者"
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr ""
+msgstr "在瀏覽器開啟伺服器"
 
 #: content/ui/Settings/ProfileEditor.qml:337
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "某些設定值只能在您所屬的伺服器的網站上調整。"
 
 #: content/ui/Settings/ProfileEditor.qml:351
 #, kde-format
@@ -3728,22 +3768,19 @@ msgid "Deny"
 msgstr "拒絕"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "取消跟隨"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "無跟隨者"
+msgstr "移除跟隨者"
 
 #: content/ui/SocialGraphPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "移除"
@@ -3818,79 +3855,78 @@ msgstr "隱藏票數直到投票結束"
 msgid "Remove"
 msgstr "移除"
 
-#: content/ui/StatusComposer/StatusComposer.qml:55
+#: content/ui/StatusComposer/StatusComposer.qml:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "編輯這篇嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:57
+#: content/ui/StatusComposer/StatusComposer.qml:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "回覆給這篇嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:59
+#: content/ui/StatusComposer/StatusComposer.qml:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "重寫這篇嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "撰寫新嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:67
+#: content/ui/StatusComposer/StatusComposer.qml:68
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "彈出"
 
-#: content/ui/StatusComposer/StatusComposer.qml:130
+#: content/ui/StatusComposer/StatusComposer.qml:131
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr "儲存包含投票的編輯嘟文會清除現有的投票結果。"
 
-#: content/ui/StatusComposer/StatusComposer.qml:137
+#: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "捨棄草稿"
 
-#: content/ui/StatusComposer/StatusComposer.qml:138
+#: content/ui/StatusComposer/StatusComposer.qml:139
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "您確定要捨棄這個草稿嗎？"
 
-#: content/ui/StatusComposer/StatusComposer.qml:144
+#: content/ui/StatusComposer/StatusComposer.qml:145
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "保留"
 
-#: content/ui/StatusComposer/StatusComposer.qml:240
-#, fuzzy, kde-format
-#| msgid "Content font"
+#: content/ui/StatusComposer/StatusComposer.qml:241
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
-msgstr "內容字型"
+msgstr "內容告警"
 
-#: content/ui/StatusComposer/StatusComposer.qml:253
+#: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "正在想些什麼嗎？"
 
-#: content/ui/StatusComposer/StatusComposer.qml:368
+#: content/ui/StatusComposer/StatusComposer.qml:371
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "請選擇檔案"
 
-#: content/ui/StatusComposer/StatusComposer.qml:371
+#: content/ui/StatusComposer/StatusComposer.qml:374
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -3899,229 +3935,194 @@ msgstr ""
 "所有支援的格式 (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm "
 "*.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:372
+#: content/ui/StatusComposer/StatusComposer.qml:375
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG 影像 (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:373
+#: content/ui/StatusComposer/StatusComposer.qml:376
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG 影像 (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:374
+#: content/ui/StatusComposer/StatusComposer.qml:377
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF 影像 (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:375
+#: content/ui/StatusComposer/StatusComposer.qml:378
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP 影像 (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:376
+#: content/ui/StatusComposer/StatusComposer.qml:379
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC 影像(*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:377
+#: content/ui/StatusComposer/StatusComposer.qml:380
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF 影像 (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:378
+#: content/ui/StatusComposer/StatusComposer.qml:381
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF 影像 (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:379
+#: content/ui/StatusComposer/StatusComposer.qml:382
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM 影片 (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:380
+#: content/ui/StatusComposer/StatusComposer.qml:383
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4 影片 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:381
+#: content/ui/StatusComposer/StatusComposer.qml:384
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V 影片 (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:382
+#: content/ui/StatusComposer/StatusComposer.qml:385
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime 影片 (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:383
+#: content/ui/StatusComposer/StatusComposer.qml:386
 #, kde-format
 msgid "All files (*)"
 msgstr "所有檔案 (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:385
+#: content/ui/StatusComposer/StatusComposer.qml:388
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "附加檔案"
 
-#: content/ui/StatusComposer/StatusComposer.qml:396
+#: content/ui/StatusComposer/StatusComposer.qml:399
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "新增投票"
 
-#: content/ui/StatusComposer/StatusComposer.qml:426
+#: content/ui/StatusComposer/StatusComposer.qml:429
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/StatusComposer/StatusComposer.qml:432
+#: content/ui/StatusComposer/StatusComposer.qml:435
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "公開"
 
-#: content/ui/StatusComposer/StatusComposer.qml:437
+#: content/ui/StatusComposer/StatusComposer.qml:440
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "不於公開時間軸顯示"
 
-#: content/ui/StatusComposer/StatusComposer.qml:442
+#: content/ui/StatusComposer/StatusComposer.qml:445
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "僅限跟隨者"
 
-#: content/ui/StatusComposer/StatusComposer.qml:447
+#: content/ui/StatusComposer/StatusComposer.qml:450
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "私訊"
 
-#: content/ui/StatusComposer/StatusComposer.qml:452
+#: content/ui/StatusComposer/StatusComposer.qml:455
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "可見度"
 
-#: content/ui/StatusComposer/StatusComposer.qml:457
+#: content/ui/StatusComposer/StatusComposer.qml:460
 #, kde-format
 msgctxt ""
 "@action:intoolbar Short for content notice, also known as content warning"
 msgid "cn"
-msgstr ""
+msgstr "內容告警"
 
-#: content/ui/StatusComposer/StatusComposer.qml:460
-#, fuzzy, kde-format
-#| msgid "Content font"
+#: content/ui/StatusComposer/StatusComposer.qml:463
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
-msgstr "內容字型"
+msgstr "內容告警"
 
-#: content/ui/StatusComposer/StatusComposer.qml:474
+#: content/ui/StatusComposer/StatusComposer.qml:477
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "嘟文語言"
 
-#: content/ui/StatusComposer/StatusComposer.qml:503
+#: content/ui/StatusComposer/StatusComposer.qml:506
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "新增表情符號"
 
-#: content/ui/StatusComposer/StatusComposer.qml:519
+#: content/ui/StatusComposer/StatusComposer.qml:522
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> 個字元"
 
-#: content/ui/StatusComposer/StatusComposer.qml:542
+#: content/ui/StatusComposer/StatusComposer.qml:545
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "傳送"
 
-#: content/ui/StatusComposer/StatusComposer.qml:544
+#: content/ui/StatusComposer/StatusComposer.qml:547
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "回覆"
 
-#: content/ui/StatusComposer/StatusComposer.qml:546
+#: content/ui/StatusComposer/StatusComposer.qml:549
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "重新嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:548
+#: content/ui/StatusComposer/StatusComposer.qml:551
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "儲存"
 
-#: content/ui/TimelinePage.qml:45 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:37 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "載入中"
 
-#: content/ui/TimelinePage.qml:47
+#: content/ui/TimelinePage.qml:39
 #, kde-format
 msgid "Home (%1)"
 msgstr "首頁 (%1)"
 
-#: content/ui/TimelinePage.qml:101
+#: content/ui/TimelinePage.qml:93
 #, kde-format
 msgid "Show Boosts"
 msgstr "顯示轉嘟"
 
-#: content/ui/TimelinePage.qml:108
+#: content/ui/TimelinePage.qml:100
 #, kde-format
 msgid "Show Replies"
 msgstr "顯示回覆"
 
-#: content/ui/TimelinePage.qml:126
+#: content/ui/TimelinePage.qml:118
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
-
-#: content/ui/TimelinePage.qml:244
-#, kde-format
-msgctxt "@info:status"
-msgid "Some replies are not available"
-msgstr "某些回覆無法使用"
-
-#: content/ui/TimelinePage.qml:245
-#, kde-format
-msgid "To view all replies, open the post on the original server."
-msgstr "要檢視所有回覆，請在嘟文原本的伺服器上開啟它。"
-
-#: content/ui/TimelinePage.qml:248
-#, kde-format
-msgctxt "@action:button 'Browser' being a web browser"
-msgid "Open in Browser"
-msgstr ""
-
-#: content/ui/TimelinePage.qml:257
-#, kde-format
-msgctxt "@info:status"
-msgid "End of Timeline"
-msgstr "時間軸尾端"
-
-#: content/ui/TimelinePage.qml:299
-#, kde-format
-msgid "No posts"
-msgstr "無嘟文"
-
-#: content/ui/TimelinePage.qml:305
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Return to Top"
-msgstr "回到頂端"
 
 #: content/ui/UserInfo.qml:98
 #, kde-format
@@ -4133,7 +4134,7 @@ msgstr "切換帳號"
 msgid "Switch account"
 msgstr "切換帳號"
 
-#: content/ui/UserInfo.qml:149
+#: content/ui/UserInfo.qml:148
 #, kde-format
 msgid "Log in or create a new account"
 msgstr "登入或建立新帳號"
@@ -4304,44 +4305,43 @@ msgstr "使用者"
 msgid "Hashtags"
 msgstr "主題標籤"
 
-#: timeline/maintimelinemodel.cpp:22
+#: timeline/maintimelinemodel.cpp:24
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "首頁"
 
-#: timeline/maintimelinemodel.cpp:24
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "本地時間軸"
 
-#: timeline/maintimelinemodel.cpp:26
+#: timeline/maintimelinemodel.cpp:28
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "全域時間軸"
 
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:30
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#: timeline/maintimelinemodel.cpp:32
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "最愛"
 
-#: timeline/maintimelinemodel.cpp:32
+#: timeline/maintimelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
 msgstr "熱門趨勢"
 
-#: timeline/tagsmodel.cpp:21
+#: timeline/tagsmodel.cpp:23
 #, kde-format
 msgid "Trending"
 msgstr "熱門趨勢"
@@ -4512,7 +4512,7 @@ msgstr "%1 小時"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "今天"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4536,6 +4536,13 @@ msgstr[0] "%1 個月前"
 msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
+
+#~ msgctxt "@label"
+#~ msgid "No Trending Posts"
+#~ msgstr "無熱門嘟文"
+
+#~ msgid "No posts"
+#~ msgstr "無嘟文"
 
 #~ msgctxt "@info:placeholder"
 #~ msgid "Content warning"
@@ -4593,9 +4600,6 @@ msgstr[0] "%1 年前"
 #~ msgctxt "@title"
 #~ msgid "Favourites"
 #~ msgstr "最愛"
-
-#~ msgid "Learn More"
-#~ msgstr "了解更多"
 
 #~ msgid "Login"
 #~ msgstr "登入"
@@ -4682,10 +4686,6 @@ msgstr[0] "%1 年前"
 #~ msgid "%1 Boost"
 #~ msgid_plural "%1 Boosts"
 #~ msgstr[0] "%1 次轉嘟"
-
-#~ msgctxt "Show more options"
-#~ msgid "More"
-#~ msgstr "更多"
 
 #~ msgid "Push notifications are enabled."
 #~ msgstr "已啟用推送通知。"
