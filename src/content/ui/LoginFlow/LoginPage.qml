@@ -147,23 +147,4 @@ MastoPage {
             }
         }
     }
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Network Settings")
-    }
-
-    FormCard.FormCard {
-        FormCard.FormSwitchDelegate {
-            id: sslErrors
-            text: i18nc("@option:check Login page", "Ignore SSL errors")
-        }
-
-        FormCard.FormDelegateSeparator { above: proxySettingDelegate; below: sslErrors }
-
-        FormCard.FormButtonDelegate {
-            id: proxySettingDelegate
-            text: i18n("Proxy Settings")
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "NetworkProxyPage"))
-        }
-    }
 }
