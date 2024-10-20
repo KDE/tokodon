@@ -788,6 +788,61 @@ Kirigami.Page {
                     }
                 }
 
+            FormCard.FormCard {
+                id: followingCard
+
+                visible: followsRepeater.count !== 0
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
+
+                FormCard.AbstractFormDelegate {
+                    background: null
+
+                    contentItem: ColumnLayout {
+                        QQC2.Label {
+                            text: i18n("Also followed by:")
+                        }
+                        RowLayout {
+                            Repeater {
+                                id: followsRepeater
+
+                                model: LimiterModel {
+                                    id: limiterModel
+                                    maximumCount: 5
+                                    sourceModel: SocialGraphModel {
+                                        name: "familiar_followers"
+                                        accountId: accountModel.identity.id
+                                    }
+                                }
+
+                                delegate: Components.AvatarButton {
+                                    id: delegate
+
+                                    required property var identity
+
+                                    source: identity.avatarUrl
+                                    cache: true
+                                    name: identity.displayName
+                                    Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                                    Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+
+                                    onClicked: Navigation.openAccount(identity.id)
+                                }
+                            }
+                            QQC2.Button {
+                                text: limiterModel.extraCount > 0 ? i18nc("@action:button See all familiar followers", "View %1 More", limiterModel.extraCount) : i18nc("@action:button See all familiar followers", "View All")
+                                onClicked: {
+                                    pageStack.push(socialGraphComponent, {
+                                        name: "familiar_followers",
+                                        accountId: accountModel.identity.id
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
                 Item {
                     Layout.fillWidth: true
                     Layout.topMargin: Kirigami.Units.largeSpacing

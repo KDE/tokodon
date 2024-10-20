@@ -388,7 +388,8 @@ void SocialGraphModel::fillTimeline()
         return;
     }
 
-    if ((m_followListName == QStringLiteral("followers") || m_followListName == QStringLiteral("following"))
+    if ((m_followListName == QStringLiteral("followers") || m_followListName == QStringLiteral("following")
+         || m_followListName == QStringLiteral("familiar_followers"))
         && (m_accountId.isEmpty() || m_accountId.isNull())) {
         return;
     }

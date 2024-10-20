@@ -128,6 +128,8 @@ target_sources(tokodon_static
     utils/filetransferjob.h
     utils/initialsetupflow.cpp
     utils/initialsetupflow.h
+    utils/limitermodel.cpp
+    utils/limitermodel.h
     utils/navigation.cpp
     utils/navigation.h
     utils/emojimodel.cpp
