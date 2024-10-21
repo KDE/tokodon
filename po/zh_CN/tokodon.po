@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-20 00:40+0000\n"
+"POT-Creation-Date: 2024-10-21 00:39+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -120,17 +120,17 @@ msgstr "%1 发起的投票已结束"
 msgid "%1 edited a post"
 msgstr "%1 编辑了嘟文"
 
-#: account/profileeditor.cpp:151
+#: account/profileeditor.cpp:180
 #, kde-format
 msgid "Image is too big"
 msgstr "图像过大"
 
-#: account/profileeditor.cpp:164
+#: account/profileeditor.cpp:193
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "不支持该图像文件。只支持 jpeg、png 和 gif。"
 
-#: account/profileeditor.cpp:278
+#: account/profileeditor.cpp:331
 #, kde-format
 msgid "Account details saved"
 msgstr "账户详细信息已保存"
@@ -198,54 +198,109 @@ msgid "Manage List Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:54
-#, kde-format
-msgid "No follow requests"
-msgstr "无关注请求"
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "No Follow Requests"
+msgstr "关注请求"
 
 #: account/socialgraphmodel.cpp:56
-#, kde-format
-msgid "No followers"
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No Followers"
 msgstr "无关注者"
 
 #: account/socialgraphmodel.cpp:58
-#, kde-format
-msgid "No followed users"
+#, fuzzy, kde-format
+#| msgid "No followed users"
+msgid "No Followed Users"
 msgstr "没有关注的用户"
 
 #: account/socialgraphmodel.cpp:60
-#, kde-format
-msgid "No muted users"
-msgstr "没有静音的用户"
+#, fuzzy, kde-format
+#| msgid "Muted Users"
+msgid "No Muted Users"
+msgstr "静音的用户"
 
 #: account/socialgraphmodel.cpp:62
-#, kde-format
-msgid "No blocked users"
-msgstr "没有屏蔽的用户"
+#, fuzzy, kde-format
+#| msgid "Blocked Users"
+msgid "No Blocked Users"
+msgstr "屏蔽的用户"
 
 #: account/socialgraphmodel.cpp:64
-#, kde-format
-msgid "No featured users"
-msgstr "没有推荐的用户"
+#, fuzzy, kde-format
+#| msgid "Featured Users"
+msgid "No Featured Users"
+msgstr "推荐的用户"
 
 #: account/socialgraphmodel.cpp:66
-#, kde-format
-msgid "No users favorited this post"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No users boosted this post"
+msgid "No Users Favorited This Post"
+msgstr "无用户转嘟此嘟文"
 
 #: account/socialgraphmodel.cpp:68
-#, kde-format
-msgid "No users boosted this post"
+#, fuzzy, kde-format
+#| msgid "No users boosted this post"
+msgid "No Users Boosted This Post"
 msgstr "无用户转嘟此嘟文"
 
 #: account/socialgraphmodel.cpp:70
-#, kde-format
-msgid "No familiar followers"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No Familiar Followers"
+msgstr "无关注者"
 
 #: account/socialgraphmodel.cpp:72
+#, fuzzy, kde-format
+#| msgid "Users"
+msgid "No Users"
+msgstr "用户"
+
+#: account/socialgraphmodel.cpp:80
 #, kde-format
-msgid "No users in this list"
+msgid ""
+"Some users need to be manually approved before they can follow you, and will "
+"show up here."
 msgstr ""
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgid "Mute users to stop them from showing up in your notifications."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgid "Block users to hide the user from your timeline entirely."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:90
+#, kde-format
+msgid "Users you like can be featured and shown on your profile."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:92
+#, kde-format
+msgid "No one has favorited this post yet. Maybe you'll be the first?"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:94
+#, kde-format
+msgid ""
+"No one has boosted this post yet. You should boost it to expand it's reach!"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:98
+#, kde-format
+msgid "There is no one in this list yet."
+msgstr ""
+
+#: account/suggestionsmodel.cpp:47
+#, fuzzy, kde-format
+#| msgid "Muted Users"
+msgctxt "@title:window"
+msgid "Suggested Users"
+msgstr "静音的用户"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -349,190 +404,237 @@ msgstr "无法分配报告"
 msgid "Could not unassign report"
 msgstr "无法取消分配报告"
 
-#: content/ui/AccountInfo.qml:264
+#: content/ui/AccountInfo.qml:97
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgctxt "@label"
+msgid "No Posts"
+msgstr "暂无嘟文"
+
+#: content/ui/AccountInfo.qml:98
+#, kde-format
+msgid "This user hasn't posted anything yet."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@label"
+msgid "No Media"
+msgstr "媒体"
+
+#: content/ui/AccountInfo.qml:186
+#, kde-format
+msgid "This user hasn't posted any media yet."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:279
 #, kde-format
 msgid "Follows you"
 msgstr "关注了你"
 
-#: content/ui/AccountInfo.qml:285
+#: content/ui/AccountInfo.qml:300
 #, kde-format
 msgid "Bot"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:381
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "Follow Requested"
 msgstr "已发送关注请求"
 
-#: content/ui/AccountInfo.qml:384
+#: content/ui/AccountInfo.qml:406
 #, kde-format
 msgid "Unfollow"
 msgstr "取消关注"
 
-#: content/ui/AccountInfo.qml:386
+#: content/ui/AccountInfo.qml:408
 #, kde-format
 msgid "Follow"
 msgstr "关注"
 
-#: content/ui/AccountInfo.qml:411
+#: content/ui/AccountInfo.qml:433
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "当 %1 发帖时不再通知我。"
 
-#: content/ui/AccountInfo.qml:413
+#: content/ui/AccountInfo.qml:435
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "当 %1 发帖时通知我。"
 
-#: content/ui/AccountInfo.qml:430
+#: content/ui/AccountInfo.qml:449
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgid "Mention…"
+msgstr "提及"
+
+#: content/ui/AccountInfo.qml:455
+#, kde-format
+msgid "Start a Conversation…"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:464
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:432
+#: content/ui/AccountInfo.qml:466
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "显示来自 %1 的转嘟"
 
-#: content/ui/AccountInfo.qml:448
+#: content/ui/AccountInfo.qml:482
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:450
+#: content/ui/AccountInfo.qml:484
 #, kde-format
 msgid "Feature This Profile"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:466
+#: content/ui/AccountInfo.qml:500
 #, kde-format
 msgid "Unmute"
 msgstr "取消静音"
 
-#: content/ui/AccountInfo.qml:468
+#: content/ui/AccountInfo.qml:502
 #, kde-format
 msgid "Mute"
 msgstr "静音"
 
-#: content/ui/AccountInfo.qml:484
+#: content/ui/AccountInfo.qml:518
 #, kde-format
 msgid "Unblock"
 msgstr "解除屏蔽"
 
-#: content/ui/AccountInfo.qml:486
+#: content/ui/AccountInfo.qml:520
 #, kde-format
 msgid "Block"
 msgstr "屏蔽"
 
-#: content/ui/AccountInfo.qml:500 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:534 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "举报"
 
-#: content/ui/AccountInfo.qml:506
+#: content/ui/AccountInfo.qml:540
 #, kde-format
 msgid "Edit Profile"
 msgstr "编辑个人资料"
 
-#: content/ui/AccountInfo.qml:510
+#: content/ui/AccountInfo.qml:544
 #, kde-format
 msgid "Account editor"
 msgstr "账户编辑器"
 
-#: content/ui/AccountInfo.qml:519 content/ui/Main.qml:411
-#, kde-format
-msgid "Follow Requests"
-msgstr "关注请求"
-
-#: content/ui/AccountInfo.qml:525
-#, kde-format
-msgid "Muted Users"
-msgstr "静音的用户"
-
-#: content/ui/AccountInfo.qml:531
-#, kde-format
-msgid "Blocked Users"
-msgstr "屏蔽的用户"
-
-#: content/ui/AccountInfo.qml:537
+#: content/ui/AccountInfo.qml:554
 #, kde-format
 msgid "Featured Users"
 msgstr "推荐的用户"
 
-#: content/ui/AccountInfo.qml:542
+#: content/ui/AccountInfo.qml:559
 #, kde-format
 msgid "Copy Link"
 msgstr "复制链接"
 
-#: content/ui/AccountInfo.qml:545
+#: content/ui/AccountInfo.qml:562
 #, kde-format
 msgid "Profile link copied."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:635
+#: content/ui/AccountInfo.qml:632
+#, kde-format
+msgctxt "@info:label Joined at"
+msgid "Joined"
+msgstr ""
+
+#: content/ui/AccountInfo.qml:720
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:643
+#: content/ui/AccountInfo.qml:728
 #, kde-format
 msgid "Saved"
 msgstr "已保存"
 
-#: content/ui/AccountInfo.qml:658
+#: content/ui/AccountInfo.qml:743
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:769
+#: content/ui/AccountInfo.qml:803
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "Also followed by:"
+msgstr "%1 关注了你"
+
+#: content/ui/AccountInfo.qml:833
+#, fuzzy, kde-format
+#| msgid "View %1's Profile"
+msgctxt "@action:button See all familiar followers"
+msgid "View %1 More"
+msgstr "查看 %1 的个人资料"
+
+#: content/ui/AccountInfo.qml:833
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgctxt "@action:button See all familiar followers"
+msgid "View All"
+msgstr "查看个人资料"
+
+#: content/ui/AccountInfo.qml:871
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> 条嘟文"
 
-#: content/ui/AccountInfo.qml:782
+#: content/ui/AccountInfo.qml:884
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "正在关注 <b>%1</b> 人"
 
-#: content/ui/AccountInfo.qml:795
+#: content/ui/AccountInfo.qml:897
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] "被 <b>%1</b> 人关注"
 
-#: content/ui/AccountInfo.qml:822
+#: content/ui/AccountInfo.qml:924
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/AccountInfo.qml:826
+#: content/ui/AccountInfo.qml:928
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "嘟文和回复"
 
-#: content/ui/AccountInfo.qml:830
+#: content/ui/AccountInfo.qml:932
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "媒体"
 
-#: content/ui/AccountInfo.qml:859
+#: content/ui/AccountInfo.qml:961
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "隐藏转嘟"
 
-#: content/ui/AccountInfo.qml:879
+#: content/ui/AccountInfo.qml:981
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -562,10 +664,17 @@ msgid "Announcement on %1"
 msgstr "%1 公告"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "No announcements"
 msgctxt "@label"
-msgid "No announcements"
+msgid "No Announcements"
 msgstr "没有公告"
+
+#: content/ui/AnnouncementsPage.qml:70
+#, kde-format
+msgid "Your server has not made any announcements yet."
+msgstr ""
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -609,7 +718,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "时间线结尾"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:458
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:460
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -617,6 +726,13 @@ msgstr ""
 #: content/ui/ConversationPage.qml:35
 #, kde-format
 msgid "No Conversations"
+msgstr ""
+
+#: content/ui/ConversationPage.qml:36
+#, kde-format
+msgid ""
+"Direct messages to other users will show up here. Do not share any sensitive "
+"information over a conversation."
 msgstr ""
 
 #: content/ui/Debug/DebugPage.qml:24
@@ -725,12 +841,12 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "确定要删除此列表吗？"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:504
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:503
 #, kde-format
 msgid "Explore"
 msgstr "探索"
 
-#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:82
+#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -741,18 +857,28 @@ msgstr ""
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/ExplorePage.qml:56
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
 #, kde-format
-msgid "Tags"
-msgstr "标签"
+msgid "Hashtags"
+msgstr "话题标签"
 
-#: content/ui/ExplorePage.qml:141
+#: content/ui/ExplorePage.qml:53
+#, kde-format
+msgid "News"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#, kde-format
+msgid "Users"
+msgstr "用户"
+
+#: content/ui/ExplorePage.qml:135
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "无热门标签"
 
-#: content/ui/ExplorePage.qml:162
+#: content/ui/ExplorePage.qml:167
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -769,7 +895,7 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "正在关注"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:88
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -899,9 +1025,15 @@ msgid "Create List"
 msgstr "创建列表"
 
 #: content/ui/ListsPage.qml:67
-#, kde-format
-msgid "No lists"
+#, fuzzy, kde-format
+#| msgid "No lists"
+msgid "No Lists"
 msgstr "没有列表"
+
+#: content/ui/ListsPage.qml:68
+#, kde-format
+msgid "Lists allow you to categorize who you're following."
+msgstr ""
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -985,13 +1117,13 @@ msgid "Re-Attempt Log In"
 msgstr "重新尝试登录"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:68
-#: content/ui/Settings/ProfileEditor.qml:30
+#: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "注销"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:75
-#: content/ui/Settings/ProfileEditor.qml:50
+#: content/ui/Settings/AccountPage.qml:54
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
@@ -1019,7 +1151,7 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "无法连接到服务器：%1。请检查您的代理设置。"
 
-#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
+#: content/ui/LoginFlow/LoginPage.qml:38
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:89
@@ -1060,18 +1192,6 @@ msgstr ""
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "服务器 URL 不能为空！"
-
-#: content/ui/LoginFlow/LoginPage.qml:152
-#, kde-format
-msgctxt "@title:group"
-msgid "Network Settings"
-msgstr "网络设置"
-
-#: content/ui/LoginFlow/LoginPage.qml:158
-#, kde-format
-msgctxt "@option:check Login page"
-msgid "Ignore SSL errors"
-msgstr "忽略 SSL 错误"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
 #, kde-format
@@ -1177,13 +1297,13 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "使用外部程序打开"
 
-#: content/ui/LoginFlow/WelcomePage.qml:47
+#: content/ui/LoginFlow/WelcomePage.qml:49
 #, kde-format
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:56
+#: content/ui/LoginFlow/WelcomePage.qml:58
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1191,153 +1311,201 @@ msgid ""
 "compatible software)."
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:72
+#: content/ui/LoginFlow/WelcomePage.qml:74
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:82
+#: content/ui/LoginFlow/WelcomePage.qml:84
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:95
+#: content/ui/LoginFlow/WelcomePage.qml:99
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "设置"
 
-#: content/ui/LoginFlow/WelcomePage.qml:109
+#: content/ui/LoginFlow/WelcomePage.qml:113
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:119
+#: content/ui/LoginFlow/WelcomePage.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr ""
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:124
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "打开方式"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:126
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr ""
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:128
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr ""
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:130
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr ""
 
-#: content/ui/Main.qml:133
+#: content/ui/Main.qml:132
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr ""
 
-#: content/ui/Main.qml:135
+#: content/ui/Main.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "未知操作"
 
-#: content/ui/Main.qml:235 content/ui/Main.qml:273
+#: content/ui/Main.qml:232 content/ui/Main.qml:259
 #, kde-format
 msgid "Write a new post"
 msgstr "撰写新嘟文"
 
-#: content/ui/Main.qml:297
+#: content/ui/Main.qml:304
 #, kde-format
 msgid "Reply to post"
 msgstr ""
 
-#: content/ui/Main.qml:379
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Home"
 msgstr "主页"
 
-#: content/ui/Main.qml:396 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgid "No Posts"
+msgstr "暂无嘟文"
+
+#: content/ui/Main.qml:395 content/ui/Main.qml:437 content/ui/Main.qml:452
+#, kde-format
+msgid "It seems pretty quiet right now, try posting something!"
+msgstr ""
+
+#: content/ui/Main.qml:404 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "通知"
 
-#: content/ui/Main.qml:427
+#: content/ui/Main.qml:416
+#, kde-format
+msgid "Follow Requests"
+msgstr "关注请求"
+
+#: content/ui/Main.qml:429
 #, kde-format
 msgid "Local"
 msgstr "本地"
 
-#: content/ui/Main.qml:442
+#: content/ui/Main.qml:444
 #, kde-format
 msgid "Global"
 msgstr "全局"
 
-#: content/ui/Main.qml:472 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:471 content/ui/Settings/NotificationsPage.qml:122
 #, kde-format
 msgid "Favorites"
 msgstr "收藏夹"
 
-#: content/ui/Main.qml:488
+#: content/ui/Main.qml:478
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgid "No Favorites"
+msgstr "收藏夹"
+
+#: content/ui/Main.qml:479
+#, kde-format
+msgid ""
+"Posts that you favorite will show up here. If you appreciate someone's post, "
+"favorite it!"
+msgstr ""
+
+#: content/ui/Main.qml:487
 #, kde-format
 msgid "Bookmarks"
 msgstr "书签"
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:494
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "No Bookmarks"
+msgstr "书签"
+
+#: content/ui/Main.qml:495
+#, kde-format
+msgid ""
+"Bookmark posts and they will show up here. Bookmarks are always kept "
+"private, even to the post's author."
+msgstr ""
+
+#: content/ui/Main.qml:514
 #, kde-format
 msgid "Following"
 msgstr "正在关注"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:525
 #, kde-format
 msgid "Search"
 msgstr "搜索"
 
-#: content/ui/Main.qml:547
+#: content/ui/Main.qml:536
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "公告"
 
-#: content/ui/Main.qml:562
+#: content/ui/Main.qml:548
 #, kde-format
 msgid "Lists"
 msgstr "列表"
 
-#: content/ui/Main.qml:583
+#: content/ui/Main.qml:559 content/ui/Settings/AccountPage.qml:70
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "Profile"
+msgstr "查看个人资料"
+
+#: content/ui/Main.qml:574
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "调试"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:584
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr ""
 
-#: content/ui/Main.qml:605
+#: content/ui/Main.qml:591
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "设置"
 
-#: content/ui/Main.qml:735
+#: content/ui/Main.qml:720
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2725,52 +2893,75 @@ msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:41
-#, kde-format
-msgctxt "Show all notifications"
+#: content/ui/NotificationPage.qml:33
+#, fuzzy, kde-format
+#| msgid "No Notifications"
+msgctxt "@action:intoolbar"
+msgid "Configure Notifications…"
+msgstr "无通知"
+
+#: content/ui/NotificationPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button Show all of a profile's posts"
+#| msgid "All"
+msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "全部"
 
-#: content/ui/NotificationPage.qml:52
-#, kde-format
-msgctxt "Show only mentions"
+#: content/ui/NotificationPage.qml:57
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "提及"
 
-#: content/ui/NotificationPage.qml:62
+#: content/ui/NotificationPage.qml:68
+#, kde-format
+msgctxt "@action:intoolbar More filter categories"
+msgid "More"
+msgstr ""
+
+#: content/ui/NotificationPage.qml:84
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "转嘟"
 
-#: content/ui/NotificationPage.qml:72
+#: content/ui/NotificationPage.qml:89
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "收藏夹"
 
-#: content/ui/NotificationPage.qml:82
+#: content/ui/NotificationPage.qml:94
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "投票结果"
 
-#: content/ui/NotificationPage.qml:92
+#: content/ui/NotificationPage.qml:99
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/NotificationPage.qml:102
+#: content/ui/NotificationPage.qml:104
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "关注"
 
-#: content/ui/NotificationPage.qml:260
+#: content/ui/NotificationPage.qml:258
 #, kde-format
 msgid "No Notifications"
 msgstr "无通知"
+
+#: content/ui/NotificationPage.qml:259
+#, kde-format
+msgid ""
+"You have no notifications yet. when people reply, favorite or boost your "
+"posts they will show up here."
+msgstr ""
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
 #, kde-format
@@ -2949,7 +3140,7 @@ msgctxt ""
 msgid "More from"
 msgstr ""
 
-#: content/ui/PostDelegate/LinkPreview.qml:240
+#: content/ui/PostDelegate/LinkPreview.qml:239
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3241,8 +3432,8 @@ msgid "Edit"
 msgstr "编辑"
 
 #: content/ui/PostDelegate/PostMenu.qml:196
-#: content/ui/Settings/ProfileEditor.qml:178
-#: content/ui/Settings/ProfileEditor.qml:240
+#: content/ui/Settings/ProfileEditor.qml:151
+#: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "删除"
@@ -3386,6 +3577,120 @@ msgstr "无搜索结果"
 msgid "Search for users, tags and posts"
 msgstr "搜索用户、标签和嘟文"
 
+#: content/ui/Settings/AccountPage.qml:26
+#, kde-format
+msgid "Edit Account"
+msgstr "编辑账户"
+
+#: content/ui/Settings/AccountPage.qml:46
+#: content/ui/Settings/ProfileEditor.qml:31
+#, kde-format
+msgid "Please choose a file"
+msgstr "请选择文件"
+
+#: content/ui/Settings/AccountPage.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to log out of %1?"
+msgstr "确定要退出登录 %1 吗？"
+
+#: content/ui/Settings/AccountPage.qml:77
+#, fuzzy, kde-format
+#| msgid "Accounts"
+msgid "Account"
+msgstr "账户"
+
+#: content/ui/Settings/AccountPage.qml:128
+#, kde-format
+msgid "Require approval for new followers"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:129
+#, kde-format
+msgid ""
+"By default new followers are automatically accepted. Uncheck if you want to "
+"manually approve or deny new ones. You always have the option to force "
+"someone to unfollow you."
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:138
+#, kde-format
+msgid "Is automated"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:139
+#, kde-format
+msgid ""
+"Whether to publicly mark this account as doing any kind of automated actions."
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:148
+#, kde-format
+msgid "Feature profile and posts"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:149
+#, kde-format
+msgid "Your public profile and posts may be featured to other users."
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:158
+#, kde-format
+msgid "Publicly list follows and followers"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:159
+#, kde-format
+msgid "By default everyone you follow and everyone who follows you is public."
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:168
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:177
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:199
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:201
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Public"
+msgstr "公开"
+
+#: content/ui/Settings/AccountPage.qml:202
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Unlisted"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:203
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Private"
+msgstr "私有"
+
+#: content/ui/Settings/AccountPage.qml:215
+#, kde-format
+msgctxt "@abel Account preferences"
+msgid "Open Server in Browser"
+msgstr ""
+
+#: content/ui/Settings/AccountPage.qml:216
+#, kde-format
+msgid "Some settings can only be configured on your server's website."
+msgstr ""
+
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
 msgctxt "@title:group"
@@ -3402,47 +3707,84 @@ msgstr "颜色主题"
 msgid "Pop out the post composer by default"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:56
+#: content/ui/Settings/AppearancePage.qml:58
+#, kde-format
+msgid "Continue reading where you last left off"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:59
+#, kde-format
+msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:72
+#, kde-format
+msgid "Auto-update timelines"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:73
+#, kde-format
+msgid ""
+"If checked, Tokodon will automatically update certain timelines as new posts "
+"come in."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/Settings/AppearancePage.qml:62
+#: content/ui/Settings/AppearancePage.qml:90
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
 msgstr "显示回复、喜欢和转嘟数"
 
-#: content/ui/Settings/AppearancePage.qml:77
+#: content/ui/Settings/AppearancePage.qml:105
 #, kde-format
 msgid "Show link previews"
 msgstr "显示链接预览"
 
-#: content/ui/Settings/AppearancePage.qml:92
+#: content/ui/Settings/AppearancePage.qml:120
 #, kde-format
 msgid "Content font"
 msgstr ""
 
-#: content/ui/Settings/AppearancePage.qml:98
+#: content/ui/Settings/AppearancePage.qml:126
 #, kde-format
 msgid "Please choose a font"
 msgstr "请选择字体"
 
-#: content/ui/Settings/AppearancePage.qml:109
+#: content/ui/Settings/AppearancePage.qml:137
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "媒体"
 
-#: content/ui/Settings/AppearancePage.qml:115
-#, kde-format
-msgid "Crop images on the timeline to 16x9"
+#: content/ui/Settings/AppearancePage.qml:143
+#, fuzzy, kde-format
+#| msgid "Crop images on the timeline to 16x9"
+msgid "Crop images on the timeline"
 msgstr "将时间线上的图像裁剪到 16x9"
 
-#: content/ui/Settings/AppearancePage.qml:129
+#: content/ui/Settings/AppearancePage.qml:144
+#, kde-format
+msgid ""
+"If unchecked, posts with only one image attached will be uncropped and shown "
+"in full."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr ""
+
+#: content/ui/Settings/EditProfilePage.qml:26
+#, fuzzy, kde-format
+#| msgid "Edit Profile"
+msgctxt "@title:window"
+msgid "Edit Profile"
+msgstr "编辑个人资料"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -3486,7 +3828,7 @@ msgid "User"
 msgstr "用户"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:358
+#: content/ui/Settings/ProfileEditor.qml:279
 #, kde-format
 msgid "Apply"
 msgstr "应用"
@@ -3516,185 +3858,169 @@ msgstr ""
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
 msgctxt "@title:group"
-msgid "Types"
-msgstr "类型"
+msgid "Events"
+msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
 msgid "Mentions"
 msgstr "提及"
 
-#: content/ui/Settings/NotificationsPage.qml:69
+#: content/ui/Settings/NotificationsPage.qml:58
+#, kde-format
+msgid ""
+"When someone mentions you in a new post, or replies to one of your threads."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:70
 #, kde-format
 msgid "Statuses"
 msgstr "状态"
 
-#: content/ui/Settings/NotificationsPage.qml:81
+#: content/ui/Settings/NotificationsPage.qml:71
+#, kde-format
+msgid "When a user you have notifications turned on for makes a new post."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "Boosts"
 msgstr "转嘟"
 
-#: content/ui/Settings/NotificationsPage.qml:93
+#: content/ui/Settings/NotificationsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "%1 users boosted your post"
+msgid "When someone boosted one of your posts."
+msgstr "%1 位用户转嘟了您的嘟文"
+
+#: content/ui/Settings/NotificationsPage.qml:96
 #, kde-format
 msgid "New followers"
 msgstr "新关注者"
 
-#: content/ui/Settings/NotificationsPage.qml:105
+#: content/ui/Settings/NotificationsPage.qml:97
+#, kde-format
+msgid "When someone follows you."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:109
 #, kde-format
 msgid "New follow requests"
 msgstr "新关注请求"
 
-#: content/ui/Settings/NotificationsPage.qml:129
+#: content/ui/Settings/NotificationsPage.qml:110
+#, kde-format
+msgid "When an account who requires manual approval wants to follow you."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:123
+#, kde-format
+msgid "When a post you made was favorited by another user."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:135
 #, kde-format
 msgid "Polls"
 msgstr "投票"
 
-#: content/ui/Settings/NotificationsPage.qml:141
+#: content/ui/Settings/NotificationsPage.qml:136
+#, kde-format
+msgid "When a poll you voted in has ended."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:148
 #, kde-format
 msgid "Edits"
 msgstr "编辑"
 
-#: content/ui/Settings/ProfileEditor.qml:26
+#: content/ui/Settings/NotificationsPage.qml:149
 #, kde-format
-msgid "Edit Account"
-msgstr "编辑账户"
+msgid "When a post you interacted with was edited by the author."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:42
+#: content/ui/Settings/NotificationsPage.qml:161
 #, kde-format
-msgid "Please choose a file"
-msgstr "请选择文件"
+msgid "Server Sign-ups"
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:51
+#: content/ui/Settings/NotificationsPage.qml:162
 #, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to log out of %1?"
-msgstr "确定要退出登录 %1 吗？"
+msgid "When someone signs up to your server."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:86
+#: content/ui/Settings/NotificationsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Reports"
+msgid "Server Reports"
+msgstr "举报"
+
+#: content/ui/Settings/NotificationsPage.qml:178
+#, kde-format
+msgid "When someone files a report against a user on your server."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:193
+#, kde-format
+msgid "Severed Relationships"
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:194
+#, kde-format
+msgid ""
+"When you or your server moderates another server, which you are following "
+"users on have followers with."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
 msgid "Display Name"
 msgstr "显示名称"
 
-#: content/ui/Settings/ProfileEditor.qml:104
+#: content/ui/Settings/ProfileEditor.qml:77
 #, kde-format
 msgid "Bio"
 msgstr "个人简介"
 
-#: content/ui/Settings/ProfileEditor.qml:130
+#: content/ui/Settings/ProfileEditor.qml:103
 #, kde-format
 msgid "Header"
 msgstr "横幅"
 
-#: content/ui/Settings/ProfileEditor.qml:165
+#: content/ui/Settings/ProfileEditor.qml:138
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:193
+#: content/ui/Settings/ProfileEditor.qml:166
 #, kde-format
 msgid "Avatar"
 msgstr "头像"
 
-#: content/ui/Settings/ProfileEditor.qml:226
+#: content/ui/Settings/ProfileEditor.qml:199
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:256
+#: content/ui/Settings/ProfileEditor.qml:228
 #, kde-format
-msgid "Require approval for new followers"
+msgctxt "Profile fields"
+msgid "Fields"
 msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:257
-#, kde-format
-msgid ""
-"By default new followers are automatically accepted. Uncheck if you want to "
-"manually approve or deny new ones. You always have the option to force "
-"someone to unfollow you."
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:265
-#, kde-format
-msgid "Is automated"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:266
-#, kde-format
-msgid ""
-"Whether to publicly mark this account as doing any kind of automated actions."
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:274
-#, kde-format
-msgid "Feature profile and posts"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Your public profile and posts may be featured to other users."
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:283
-#, kde-format
-msgid "Publicly list follows and followers"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:284
-#, kde-format
-msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:292
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Mark uploaded media as sensitive by default"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:300
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post language"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:321
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post visibility"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:323
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Public"
-msgstr "公开"
-
-#: content/ui/Settings/ProfileEditor.qml:324
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Unlisted"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:325
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Private"
-msgstr "私有"
-
-#: content/ui/Settings/ProfileEditor.qml:336
-#, kde-format
-msgctxt "@abel Account preferences"
-msgid "Open Server in Browser"
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:337
-#, kde-format
-msgid "Some settings can only be configured on your server's website."
-msgstr ""
-
-#: content/ui/Settings/ProfileEditor.qml:351
+#: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
 msgid "Reset"
 msgstr "重置"
+
+#: content/ui/Settings/SafetyPage.qml:26
+#, kde-format
+msgid "Muted Users"
+msgstr "静音的用户"
+
+#: content/ui/Settings/SafetyPage.qml:34
+#, kde-format
+msgid "Blocked Users"
+msgstr "屏蔽的用户"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:17
 #, kde-format
@@ -3703,27 +4029,32 @@ msgstr "外观"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
+msgid "Safety"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:37
+#, kde-format
 msgid "Accounts"
 msgstr "账户"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
 #, kde-format
 msgid "Network Proxy"
 msgstr "网络代理"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:49
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About Tokodon"
 msgstr "关于 Tokodon"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:52
 #: content/ui/Settings/TokodonConfigurationView.qml:59
+#: content/ui/Settings/TokodonConfigurationView.qml:66
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:56
+#: content/ui/Settings/TokodonConfigurationView.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "关于 KDE"
@@ -3780,49 +4111,49 @@ msgctxt "@title:group"
 msgid "Focal point"
 msgstr ""
 
-#: content/ui/StatusComposer/ComposerPoll.qml:37
+#: content/ui/StatusComposer/ComposerPoll.qml:41
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr ""
 
-#: content/ui/StatusComposer/ComposerPoll.qml:61
+#: content/ui/StatusComposer/ComposerPoll.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "添加选项"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:62
+#: content/ui/StatusComposer/ComposerPoll.qml:66
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "添加新投票选项"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:81
+#: content/ui/StatusComposer/ComposerPoll.qml:85
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr ""
 
-#: content/ui/StatusComposer/ComposerPoll.qml:90
+#: content/ui/StatusComposer/ComposerPoll.qml:94
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "多选"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:96
+#: content/ui/StatusComposer/ComposerPoll.qml:100
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "允许多选"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:105
+#: content/ui/StatusComposer/ComposerPoll.qml:109
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr ""
 
-#: content/ui/StatusComposer/ComposerPoll.qml:111
+#: content/ui/StatusComposer/ComposerPoll.qml:115
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -4076,27 +4407,27 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr ""
 
-#: content/ui/TimelinePage.qml:37 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:40 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "正在载入"
 
-#: content/ui/TimelinePage.qml:39
+#: content/ui/TimelinePage.qml:42
 #, kde-format
 msgid "Home (%1)"
 msgstr "主页 (%1)"
 
-#: content/ui/TimelinePage.qml:93
+#: content/ui/TimelinePage.qml:96
 #, kde-format
 msgid "Show Boosts"
 msgstr "显示转嘟"
 
-#: content/ui/TimelinePage.qml:100
+#: content/ui/TimelinePage.qml:103
 #, kde-format
 msgid "Show Replies"
 msgstr "显示回复"
 
-#: content/ui/TimelinePage.qml:118
+#: content/ui/TimelinePage.qml:121
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -4273,47 +4604,37 @@ msgstr "仅限内部使用。"
 msgid "Error occurred when fetching the latest notification."
 msgstr ""
 
-#: search/searchmodel.cpp:155
-#, kde-format
-msgid "Users"
-msgstr "用户"
-
-#: search/searchmodel.cpp:157
-#, kde-format
-msgid "Hashtags"
-msgstr "话题标签"
-
-#: timeline/maintimelinemodel.cpp:24
+#: timeline/maintimelinemodel.cpp:25
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "首页"
 
-#: timeline/maintimelinemodel.cpp:26
+#: timeline/maintimelinemodel.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "本地时间线"
 
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "全局时间线"
 
-#: timeline/maintimelinemodel.cpp:30
+#: timeline/maintimelinemodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "书签"
 
-#: timeline/maintimelinemodel.cpp:32
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "收藏夹"
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
@@ -4335,6 +4656,14 @@ msgstr ""
 msgctxt "@title"
 msgid "Post by %1"
 msgstr ""
+
+#: timeline/trendingnewsmodel.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "No Trending Tags"
+msgctxt "@title:window"
+msgid "Trending News"
+msgstr "无热门标签"
 
 #: tokodonapplication.cpp:14
 #, kde-format
@@ -4514,9 +4843,41 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
 
+#~ msgid "No follow requests"
+#~ msgstr "无关注请求"
+
+#~ msgid "No muted users"
+#~ msgstr "没有静音的用户"
+
+#~ msgid "No blocked users"
+#~ msgstr "没有屏蔽的用户"
+
+#~ msgid "No featured users"
+#~ msgstr "没有推荐的用户"
+
+#~ msgid "Tags"
+#~ msgstr "标签"
+
+#~ msgctxt "@title:group"
+#~ msgid "Network Settings"
+#~ msgstr "网络设置"
+
+#~ msgctxt "@option:check Login page"
+#~ msgid "Ignore SSL errors"
+#~ msgstr "忽略 SSL 错误"
+
+#~ msgctxt "Show all notifications"
+#~ msgid "All"
+#~ msgstr "全部"
+
+#~ msgctxt "Show only mentions"
+#~ msgid "Mentions"
+#~ msgstr "提及"
+
+#~ msgctxt "@title:group"
+#~ msgid "Types"
+#~ msgstr "类型"
+
 #~ msgctxt "@label"
 #~ msgid "No Trending Posts"
 #~ msgstr "无热门嘟文"
-
-#~ msgid "No posts"
-#~ msgstr "暂无嘟文"

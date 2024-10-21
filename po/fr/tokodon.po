@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-20 00:40+0000\n"
-"PO-Revision-Date: 2024-10-18 08:21+0200\n"
+"POT-Creation-Date: 2024-10-21 00:39+0000\n"
+"PO-Revision-Date: 2024-10-19 17:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -118,19 +118,19 @@ msgstr "Le sondage réalisé par %1 est terminé"
 msgid "%1 edited a post"
 msgstr "%1 a modifié un message"
 
-#: account/profileeditor.cpp:151
+#: account/profileeditor.cpp:180
 #, kde-format
 msgid "Image is too big"
 msgstr "L'image est trop volumineuse"
 
-#: account/profileeditor.cpp:164
+#: account/profileeditor.cpp:193
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr ""
 "Fichier d'image non pris en charge. Seuls les formats « jpeg », « png » et "
 "« gif » sont pris en charge."
 
-#: account/profileeditor.cpp:278
+#: account/profileeditor.cpp:331
 #, kde-format
 msgid "Account details saved"
 msgstr "Détails du compte enregistrés"
@@ -197,58 +197,113 @@ msgstr "Abonnés réguliers"
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
-msgstr ""
+msgstr "Gérer les utilisateurs de la liste"
 
 #: account/socialgraphmodel.cpp:54
-#, kde-format
-msgid "No follow requests"
-msgstr "Aucune demande de suivi"
+#, fuzzy, kde-format
+#| msgid "Follow Requests"
+msgid "No Follow Requests"
+msgstr "Demandes de suivi"
 
 #: account/socialgraphmodel.cpp:56
-#, kde-format
-msgid "No followers"
+#, fuzzy, kde-format
+#| msgid "No followers"
+msgid "No Followers"
 msgstr "Aucun abonné(e)"
 
 #: account/socialgraphmodel.cpp:58
-#, kde-format
-msgid "No followed users"
+#, fuzzy, kde-format
+#| msgid "No followed users"
+msgid "No Followed Users"
 msgstr "Aucun utilisateur suivi"
 
 #: account/socialgraphmodel.cpp:60
-#, kde-format
-msgid "No muted users"
-msgstr "Aucun utilisateur muet"
+#, fuzzy, kde-format
+#| msgid "Muted Users"
+msgid "No Muted Users"
+msgstr "Utilisateurs en mode muet"
 
 #: account/socialgraphmodel.cpp:62
-#, kde-format
-msgid "No blocked users"
-msgstr "Aucun utilisateur bloqué"
+#, fuzzy, kde-format
+#| msgid "Blocked Users"
+msgid "No Blocked Users"
+msgstr "Utilisateurs bloqués"
 
 #: account/socialgraphmodel.cpp:64
-#, kde-format
-msgid "No featured users"
-msgstr "Aucun utilisateur publié"
+#, fuzzy, kde-format
+#| msgid "Featured Users"
+msgid "No Featured Users"
+msgstr "Utilisateurs publiés"
 
 #: account/socialgraphmodel.cpp:66
-#, kde-format
-msgid "No users favorited this post"
+#, fuzzy, kde-format
+#| msgid "No users favorited this post"
+msgid "No Users Favorited This Post"
 msgstr "Aucun utilisateur n'a mis ce message en signet."
 
 #: account/socialgraphmodel.cpp:68
-#, kde-format
-msgid "No users boosted this post"
+#, fuzzy, kde-format
+#| msgid "No users boosted this post"
+msgid "No Users Boosted This Post"
 msgstr "Aucun utilisateur n'a donné un coup de pouce pour ce message"
 
 #: account/socialgraphmodel.cpp:70
-#, kde-format
-msgid "No familiar followers"
-msgstr "Aucun abonné régulier"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Familiar Followers"
+msgid "No Familiar Followers"
+msgstr "Abonnés réguliers"
 
 #: account/socialgraphmodel.cpp:72
 #, fuzzy, kde-format
-#| msgid "No users favorited this post"
-msgid "No users in this list"
-msgstr "Aucun utilisateur n'a mis ce message en signet."
+#| msgid "Users"
+msgid "No Users"
+msgstr "Utilisateurs"
+
+#: account/socialgraphmodel.cpp:80
+#, kde-format
+msgid ""
+"Some users need to be manually approved before they can follow you, and will "
+"show up here."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:86
+#, kde-format
+msgid "Mute users to stop them from showing up in your notifications."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:88
+#, kde-format
+msgid "Block users to hide the user from your timeline entirely."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:90
+#, kde-format
+msgid "Users you like can be featured and shown on your profile."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:92
+#, kde-format
+msgid "No one has favorited this post yet. Maybe you'll be the first?"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:94
+#, kde-format
+msgid ""
+"No one has boosted this post yet. You should boost it to expand it's reach!"
+msgstr ""
+
+#: account/socialgraphmodel.cpp:98
+#, kde-format
+msgid "There is no one in this list yet."
+msgstr ""
+
+#: account/suggestionsmodel.cpp:47
+#, fuzzy, kde-format
+#| msgid "Muted Users"
+msgctxt "@title:window"
+msgid "Suggested Users"
+msgstr "Utilisateurs en mode muet"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -354,139 +409,169 @@ msgstr "Impossible d'attribuer un rapport"
 msgid "Could not unassign report"
 msgstr "Impossible de dé-assigner un rapport"
 
-#: content/ui/AccountInfo.qml:264
+#: content/ui/AccountInfo.qml:97
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@label"
+msgid "No Posts"
+msgstr "Aucun message"
+
+#: content/ui/AccountInfo.qml:98
+#, kde-format
+msgid "This user hasn't posted anything yet."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@label"
+msgid "No Media"
+msgstr "Média"
+
+#: content/ui/AccountInfo.qml:186
+#, kde-format
+msgid "This user hasn't posted any media yet."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:279
 #, kde-format
 msgid "Follows you"
 msgstr "Vous suit"
 
-#: content/ui/AccountInfo.qml:285
+#: content/ui/AccountInfo.qml:300
 #, kde-format
 msgid "Bot"
 msgstr "Robot"
 
-#: content/ui/AccountInfo.qml:381
+#: content/ui/AccountInfo.qml:403
 #, kde-format
 msgid "Follow Requested"
 msgstr "Suivi demandé"
 
-#: content/ui/AccountInfo.qml:384
+#: content/ui/AccountInfo.qml:406
 #, kde-format
 msgid "Unfollow"
 msgstr "Ne plus suivre"
 
-#: content/ui/AccountInfo.qml:386
+#: content/ui/AccountInfo.qml:408
 #, kde-format
 msgid "Follow"
 msgstr "Suivre"
 
-#: content/ui/AccountInfo.qml:411
+#: content/ui/AccountInfo.qml:433
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Arrêter de m'envoyer des notifications lorsque %1 écrit des messages."
 
-#: content/ui/AccountInfo.qml:413
+#: content/ui/AccountInfo.qml:435
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "M'envoyer une notification lorsque %1 envoie des messages."
 
-#: content/ui/AccountInfo.qml:430
+#: content/ui/AccountInfo.qml:449
+#, fuzzy, kde-format
+#| msgid "Mention"
+msgid "Mention…"
+msgstr "Références"
+
+#: content/ui/AccountInfo.qml:455
+#, fuzzy, kde-format
+#| msgid "Conversation"
+msgid "Start a Conversation…"
+msgstr "Conversation"
+
+#: content/ui/AccountInfo.qml:464
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Masquer les encouragements de %1"
 
-#: content/ui/AccountInfo.qml:432
+#: content/ui/AccountInfo.qml:466
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Afficher les coups de pouce de %1"
 
-#: content/ui/AccountInfo.qml:448
+#: content/ui/AccountInfo.qml:482
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Arrêter de présenter ce profil"
 
-#: content/ui/AccountInfo.qml:450
+#: content/ui/AccountInfo.qml:484
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Présenter ce profil"
 
-#: content/ui/AccountInfo.qml:466
+#: content/ui/AccountInfo.qml:500
 #, kde-format
 msgid "Unmute"
 msgstr "Remettre le son"
 
-#: content/ui/AccountInfo.qml:468
+#: content/ui/AccountInfo.qml:502
 #, kde-format
 msgid "Mute"
 msgstr "Mettre en pause"
 
-#: content/ui/AccountInfo.qml:484
+#: content/ui/AccountInfo.qml:518
 #, kde-format
 msgid "Unblock"
 msgstr "Débloquer"
 
-#: content/ui/AccountInfo.qml:486
+#: content/ui/AccountInfo.qml:520
 #, kde-format
 msgid "Block"
 msgstr "Bloquer"
 
-#: content/ui/AccountInfo.qml:500 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountInfo.qml:534 content/ui/PostDelegate/PostMenu.qml:178
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Signaler…"
 
-#: content/ui/AccountInfo.qml:506
+#: content/ui/AccountInfo.qml:540
 #, kde-format
 msgid "Edit Profile"
 msgstr "Modifier un profil"
 
-#: content/ui/AccountInfo.qml:510
+#: content/ui/AccountInfo.qml:544
 #, kde-format
 msgid "Account editor"
 msgstr "Éditeur de comptes"
 
-#: content/ui/AccountInfo.qml:519 content/ui/Main.qml:411
-#, kde-format
-msgid "Follow Requests"
-msgstr "Demandes de suivi"
-
-#: content/ui/AccountInfo.qml:525
-#, kde-format
-msgid "Muted Users"
-msgstr "Utilisateurs en mode muet"
-
-#: content/ui/AccountInfo.qml:531
-#, kde-format
-msgid "Blocked Users"
-msgstr "Utilisateurs bloqués"
-
-#: content/ui/AccountInfo.qml:537
+#: content/ui/AccountInfo.qml:554
 #, kde-format
 msgid "Featured Users"
 msgstr "Utilisateurs publiés"
 
-#: content/ui/AccountInfo.qml:542
+#: content/ui/AccountInfo.qml:559
 #, kde-format
 msgid "Copy Link"
 msgstr "Copier un lien"
 
-#: content/ui/AccountInfo.qml:545
+#: content/ui/AccountInfo.qml:562
 #, kde-format
 msgid "Profile link copied."
 msgstr "Lien du profil copié."
 
-#: content/ui/AccountInfo.qml:635
+#: content/ui/AccountInfo.qml:632
+#, fuzzy, kde-format
+#| msgctxt "@info: Joining date of the user"
+#| msgid "Joined"
+msgctxt "@info:label Joined at"
+msgid "Joined"
+msgstr "Joint"
+
+#: content/ui/AccountInfo.qml:720
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Commentaire privé :"
 
-#: content/ui/AccountInfo.qml:643
+#: content/ui/AccountInfo.qml:728
 #, kde-format
 msgid "Saved"
 msgstr "Enregistré"
 
-#: content/ui/AccountInfo.qml:658
+#: content/ui/AccountInfo.qml:743
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
@@ -494,7 +579,27 @@ msgstr ""
 "Notez quelque chose à propos de cet utilisateur. Cela n'est visible que pour "
 "vous."
 
-#: content/ui/AccountInfo.qml:769
+#: content/ui/AccountInfo.qml:803
+#, fuzzy, kde-format
+#| msgid "%1 followed you"
+msgid "Also followed by:"
+msgstr "%1 vous a suivi"
+
+#: content/ui/AccountInfo.qml:833
+#, fuzzy, kde-format
+#| msgid "View %1's Profile"
+msgctxt "@action:button See all familiar followers"
+msgid "View %1 More"
+msgstr "Afficher le profil de %1"
+
+#: content/ui/AccountInfo.qml:833
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgctxt "@action:button See all familiar followers"
+msgid "View All"
+msgstr "Afficher un profil"
+
+#: content/ui/AccountInfo.qml:871
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -502,7 +607,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "Message <b>%1</b>"
 msgstr[1] "<b>%1</b> messages"
 
-#: content/ui/AccountInfo.qml:782
+#: content/ui/AccountInfo.qml:884
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -510,7 +615,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> suit"
 msgstr[1] "<b>%1</b> suiveurs"
 
-#: content/ui/AccountInfo.qml:795
+#: content/ui/AccountInfo.qml:897
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -518,31 +623,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "Abonné <b>%1</b> "
 msgstr[1] "<b>%1</b> abonné(e)s"
 
-#: content/ui/AccountInfo.qml:822
+#: content/ui/AccountInfo.qml:924
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/AccountInfo.qml:826
+#: content/ui/AccountInfo.qml:928
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Messages && réponses"
 
-#: content/ui/AccountInfo.qml:830
+#: content/ui/AccountInfo.qml:932
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Média"
 
-#: content/ui/AccountInfo.qml:859
+#: content/ui/AccountInfo.qml:961
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Masquer les encouragements"
 
-#: content/ui/AccountInfo.qml:879
+#: content/ui/AccountInfo.qml:981
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -572,10 +677,17 @@ msgid "Announcement on %1"
 msgstr "Annonce sur %1"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "No announcements"
 msgctxt "@label"
-msgid "No announcements"
+msgid "No Announcements"
 msgstr "Aucune annonce"
+
+#: content/ui/AnnouncementsPage.qml:70
+#, kde-format
+msgid "Your server has not made any announcements yet."
+msgstr ""
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -621,7 +733,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Fin de la frise chronologique"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:458
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:460
 #, kde-format
 msgid "Conversations"
 msgstr "Conversations"
@@ -630,6 +742,13 @@ msgstr "Conversations"
 #, kde-format
 msgid "No Conversations"
 msgstr "Aucune conversation"
+
+#: content/ui/ConversationPage.qml:36
+#, kde-format
+msgid ""
+"Direct messages to other users will show up here. Do not share any sensitive "
+"information over a conversation."
+msgstr ""
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
@@ -681,28 +800,25 @@ msgstr ""
 "de l'accueil."
 
 #: content/ui/EditListPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
-msgstr "Utilisateurs en mode muet"
+msgstr "Gérer les utilisateurs"
 
 #: content/ui/EditListPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
-msgstr "Utilisateurs"
+msgstr "Ajouter des utilisateurs"
 
 #: content/ui/EditListPage.qml:118
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr ""
+msgstr "Ajouter des utilisateurs à la liste…"
 
 #: content/ui/EditListPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Ajouter"
@@ -710,7 +826,7 @@ msgstr "Ajouter"
 #: content/ui/EditListPage.qml:202
 #, kde-format
 msgid "Search among users you follow…"
-msgstr ""
+msgstr "Rechercher parmi les utilisateurs que vous suivez…"
 
 #: content/ui/EditListPage.qml:236
 #, kde-format
@@ -742,12 +858,12 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Voulez-vous vraiment supprimer cette liste ?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:504
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:503
 #, kde-format
 msgid "Explore"
 msgstr "Explorer"
 
-#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:82
+#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:85
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -758,18 +874,28 @@ msgstr "Message"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/ExplorePage.qml:56
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
 #, kde-format
-msgid "Tags"
-msgstr "Étiquettes"
+msgid "Hashtags"
+msgstr "Hashtags"
 
-#: content/ui/ExplorePage.qml:141
+#: content/ui/ExplorePage.qml:53
+#, kde-format
+msgid "News"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#, kde-format
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: content/ui/ExplorePage.qml:135
 #, kde-format
 msgctxt "@label"
 msgid "No Trending Tags"
 msgstr "Aucune étiquette populaire"
 
-#: content/ui/ExplorePage.qml:162
+#: content/ui/ExplorePage.qml:167
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -787,7 +913,7 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Suivant"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:88
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:91
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -930,9 +1056,15 @@ msgid "Create List"
 msgstr "Créer une liste"
 
 #: content/ui/ListsPage.qml:67
-#, kde-format
-msgid "No lists"
+#, fuzzy, kde-format
+#| msgid "No lists"
+msgid "No Lists"
 msgstr "Aucune liste"
+
+#: content/ui/ListsPage.qml:68
+#, kde-format
+msgid "Lists allow you to categorize who you're following."
+msgstr ""
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -1022,13 +1154,13 @@ msgid "Re-Attempt Log In"
 msgstr "Renouveler la tentative de connexion"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:68
-#: content/ui/Settings/ProfileEditor.qml:30
+#: content/ui/Settings/AccountPage.qml:34
 #, kde-format
 msgid "Logout"
 msgstr "Déconnexion"
 
 #: content/ui/LoginFlow/LoginIssuePage.qml:75
-#: content/ui/Settings/ProfileEditor.qml:50
+#: content/ui/Settings/AccountPage.qml:54
 #, kde-format
 msgctxt "@title"
 msgid "Logout"
@@ -1058,7 +1190,7 @@ msgstr ""
 "Impossible de contacter le serveur : %1. Veuillez vérifier la configuration "
 "de votre serveur mandataire."
 
-#: content/ui/LoginFlow/LoginPage.qml:38 content/ui/LoginFlow/LoginPage.qml:165
+#: content/ui/LoginFlow/LoginPage.qml:38
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
 #: content/ui/LoginFlow/ServersPage.qml:89
@@ -1101,18 +1233,6 @@ msgstr ""
 #, kde-format
 msgid "Server URL must not be empty!"
 msgstr "L'URL du serveur ne doit pas être vide !"
-
-#: content/ui/LoginFlow/LoginPage.qml:152
-#, kde-format
-msgctxt "@title:group"
-msgid "Network Settings"
-msgstr "Configuration du réseau"
-
-#: content/ui/LoginFlow/LoginPage.qml:158
-#, kde-format
-msgctxt "@option:check Login page"
-msgid "Ignore SSL errors"
-msgstr "Ignorer les erreurs « SSL »"
 
 #: content/ui/LoginFlow/RegistrationPage.qml:18
 #, kde-format
@@ -1218,13 +1338,13 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "Ouvrir de façon externe"
 
-#: content/ui/LoginFlow/WelcomePage.qml:47
+#: content/ui/LoginFlow/WelcomePage.qml:49
 #, kde-format
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:56
+#: content/ui/LoginFlow/WelcomePage.qml:58
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1234,153 +1354,200 @@ msgstr ""
 "Parcourez le Fediverse et connectez-vous avec des personnes sur Mastodon (Et "
 "d’autres logiciels compatibles)."
 
-#: content/ui/LoginFlow/WelcomePage.qml:72
+#: content/ui/LoginFlow/WelcomePage.qml:74
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr "Sélectionner un serveur"
 
-#: content/ui/LoginFlow/WelcomePage.qml:82
+#: content/ui/LoginFlow/WelcomePage.qml:84
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
 msgstr "Utiliser un compte existant"
 
-#: content/ui/LoginFlow/WelcomePage.qml:95
+#: content/ui/LoginFlow/WelcomePage.qml:99
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Configuration"
 
-#: content/ui/LoginFlow/WelcomePage.qml:109
+#: content/ui/LoginFlow/WelcomePage.qml:113
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "Compatible avec"
 
-#: content/ui/LoginFlow/WelcomePage.qml:119
+#: content/ui/LoginFlow/WelcomePage.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Compatible avec Mastodon"
 
-#: content/ui/Main.qml:125
+#: content/ui/Main.qml:124
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Ouvrir sous…"
 
-#: content/ui/Main.qml:127
+#: content/ui/Main.qml:126
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Répondre comme..."
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:128
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Mettre en signet comme..."
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:130
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Dynamiser comme..."
 
-#: content/ui/Main.qml:133
+#: content/ui/Main.qml:132
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Mettre en signet comme..."
 
-#: content/ui/Main.qml:135
+#: content/ui/Main.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Action inconnue"
 
-#: content/ui/Main.qml:235 content/ui/Main.qml:273
+#: content/ui/Main.qml:232 content/ui/Main.qml:259
 #, kde-format
 msgid "Write a new post"
 msgstr "Écrire un nouveau message"
 
-#: content/ui/Main.qml:297
+#: content/ui/Main.qml:304
 #, kde-format
 msgid "Reply to post"
 msgstr "Répondre à ce message"
 
-#: content/ui/Main.qml:379
+#: content/ui/Main.qml:387
 #, kde-format
 msgid "Home"
 msgstr "Accueil"
 
-#: content/ui/Main.qml:396 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
+#, kde-format
+msgid "No Posts"
+msgstr "Aucun message"
+
+#: content/ui/Main.qml:395 content/ui/Main.qml:437 content/ui/Main.qml:452
+#, kde-format
+msgid "It seems pretty quiet right now, try posting something!"
+msgstr ""
+
+#: content/ui/Main.qml:404 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Notifications"
 
-#: content/ui/Main.qml:427
+#: content/ui/Main.qml:416
+#, kde-format
+msgid "Follow Requests"
+msgstr "Demandes de suivi"
+
+#: content/ui/Main.qml:429
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/Main.qml:442
+#: content/ui/Main.qml:444
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:472 content/ui/Settings/NotificationsPage.qml:117
+#: content/ui/Main.qml:471 content/ui/Settings/NotificationsPage.qml:122
 #, kde-format
 msgid "Favorites"
 msgstr "Préférés"
 
-#: content/ui/Main.qml:488
+#: content/ui/Main.qml:478
+#, fuzzy, kde-format
+#| msgid "No favorites"
+msgid "No Favorites"
+msgstr "Aucun signet"
+
+#: content/ui/Main.qml:479
+#, kde-format
+msgid ""
+"Posts that you favorite will show up here. If you appreciate someone's post, "
+"favorite it!"
+msgstr ""
+
+#: content/ui/Main.qml:487
 #, kde-format
 msgid "Bookmarks"
 msgstr "Signets"
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:494
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "No Bookmarks"
+msgstr "Signets"
+
+#: content/ui/Main.qml:495
+#, kde-format
+msgid ""
+"Bookmark posts and they will show up here. Bookmarks are always kept "
+"private, even to the post's author."
+msgstr ""
+
+#: content/ui/Main.qml:514
 #, kde-format
 msgid "Following"
 msgstr "Suivant"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:525
 #, kde-format
 msgid "Search"
 msgstr "Rechercher"
 
-#: content/ui/Main.qml:547
+#: content/ui/Main.qml:536
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Annonces"
 
-#: content/ui/Main.qml:562
+#: content/ui/Main.qml:548
 #, kde-format
 msgid "Lists"
 msgstr "Listes"
 
-#: content/ui/Main.qml:583
+#: content/ui/Main.qml:559 content/ui/Settings/AccountPage.qml:70
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgid "Profile"
+msgstr "Afficher un profil"
+
+#: content/ui/Main.qml:574
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Déboguer"
 
-#: content/ui/Main.qml:593
+#: content/ui/Main.qml:584
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Outils de modération"
 
-#: content/ui/Main.qml:605
+#: content/ui/Main.qml:591
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuration"
 
-#: content/ui/Main.qml:735
+#: content/ui/Main.qml:720
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2780,52 +2947,76 @@ msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
 msgstr "Tout marquer comme lu"
 
-#: content/ui/NotificationPage.qml:41
-#, kde-format
-msgctxt "Show all notifications"
-msgid "All"
-msgstr "Tous"
+#: content/ui/NotificationPage.qml:33
+#, fuzzy, kde-format
+#| msgid "No Notifications"
+msgctxt "@action:intoolbar"
+msgid "Configure Notifications…"
+msgstr "Aucune notification"
 
-#: content/ui/NotificationPage.qml:52
-#, kde-format
-msgctxt "Show only mentions"
+#: content/ui/NotificationPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button Show all of a profile's posts"
+#| msgid "All"
+msgctxt "@action:intoolbar Show all notifications"
+msgid "All"
+msgstr "Tout"
+
+#: content/ui/NotificationPage.qml:57
+#, fuzzy, kde-format
+#| msgid "Mentions"
+msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Références"
 
-#: content/ui/NotificationPage.qml:62
+#: content/ui/NotificationPage.qml:68
+#, fuzzy, kde-format
+#| msgid "Show More"
+msgctxt "@action:intoolbar More filter categories"
+msgid "More"
+msgstr "Afficher plus"
+
+#: content/ui/NotificationPage.qml:84
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Stimulations"
 
-#: content/ui/NotificationPage.qml:72
+#: content/ui/NotificationPage.qml:89
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoris"
 
-#: content/ui/NotificationPage.qml:82
+#: content/ui/NotificationPage.qml:94
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "Résultats de vote"
 
-#: content/ui/NotificationPage.qml:92
+#: content/ui/NotificationPage.qml:99
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/NotificationPage.qml:102
+#: content/ui/NotificationPage.qml:104
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Suivis"
 
-#: content/ui/NotificationPage.qml:260
+#: content/ui/NotificationPage.qml:258
 #, kde-format
 msgid "No Notifications"
 msgstr "Aucune notification"
+
+#: content/ui/NotificationPage.qml:259
+#, kde-format
+msgid ""
+"You have no notifications yet. when people reply, favorite or boost your "
+"posts they will show up here."
+msgstr ""
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
 #, fuzzy, kde-format
@@ -3009,7 +3200,7 @@ msgctxt ""
 msgid "More from"
 msgstr "Plus encore"
 
-#: content/ui/PostDelegate/LinkPreview.qml:240
+#: content/ui/PostDelegate/LinkPreview.qml:239
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3099,10 +3290,9 @@ msgstr ""
 "original."
 
 #: content/ui/PostDelegate/PostDelegate.qml:319
-#, fuzzy, kde-format
-#| msgid "<b>Content Warning</b><br /> %1"
+#, kde-format
 msgid "<b>Content Notice</b><br /> %1"
-msgstr "<b>Avertissement sur le contenu</b><br /> %1"
+msgstr "<b>Avis sur le contenu</b><br /> %1"
 
 #: content/ui/PostDelegate/PostDelegate.qml:431
 #, kde-format
@@ -3308,8 +3498,8 @@ msgid "Edit"
 msgstr "Modifier"
 
 #: content/ui/PostDelegate/PostMenu.qml:196
-#: content/ui/Settings/ProfileEditor.qml:178
-#: content/ui/Settings/ProfileEditor.qml:240
+#: content/ui/Settings/ProfileEditor.qml:151
+#: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Supprimer"
@@ -3326,10 +3516,9 @@ msgid "%1%"
 msgstr "%1 %"
 
 #: content/ui/PostDelegate/PostPoll.qml:59
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "You voted for this option"
-msgstr "Aucun utilisateur n'a mis ce message en signet."
+msgstr "Vous avez voté pour cette option."
 
 #: content/ui/PostDelegate/PostPoll.qml:82
 #, kde-format
@@ -3342,17 +3531,15 @@ msgid "Vote"
 msgstr "Vote"
 
 #: content/ui/PostDelegate/PostPoll.qml:142
-#, fuzzy, kde-format
-#| msgid "Show Less"
+#, kde-format
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
-msgstr "Afficher moins"
+msgstr "Afficher les résultats"
 
 #: content/ui/PostDelegate/PostPoll.qml:148
-#, fuzzy, kde-format
-#| msgid "A poll has ended"
+#, kde-format
 msgid "Poll has closed"
-msgstr "Un sondage est terminé"
+msgstr "Le sondage est terminé."
 
 #: content/ui/PostDelegate/QuotePost.qml:64
 #, kde-format
@@ -3457,6 +3644,132 @@ msgstr "Aucun résultat pour la recherche"
 msgid "Search for users, tags and posts"
 msgstr "Rechercher des utilisateurs, des étiquettes et des messages"
 
+#: content/ui/Settings/AccountPage.qml:26
+#, kde-format
+msgid "Edit Account"
+msgstr "Modifier un compte"
+
+#: content/ui/Settings/AccountPage.qml:46
+#: content/ui/Settings/ProfileEditor.qml:31
+#, kde-format
+msgid "Please choose a file"
+msgstr "Veuillez choisir un fichier"
+
+#: content/ui/Settings/AccountPage.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to log out of %1?"
+msgstr "Voulez-vous vraiment vous déconnecter de %1 ?"
+
+#: content/ui/Settings/AccountPage.qml:77
+#, fuzzy, kde-format
+#| msgctxt "@title:group Title for the group of account related actions"
+#| msgid "Account"
+msgid "Account"
+msgstr "Compte"
+
+#: content/ui/Settings/AccountPage.qml:128
+#, kde-format
+msgid "Require approval for new followers"
+msgstr "Exiger une approbation pour les nouveaux abonnés"
+
+#: content/ui/Settings/AccountPage.qml:129
+#, kde-format
+msgid ""
+"By default new followers are automatically accepted. Uncheck if you want to "
+"manually approve or deny new ones. You always have the option to force "
+"someone to unfollow you."
+msgstr ""
+"Par défaut, les nouveaux abonnés sont automatiquement acceptés. Décochez "
+"cette option si vous souhaitez approuver ou refuser manuellement ceux-ci. "
+"Vous avez toujours la possibilité de forcer quelqu'un à ne plus vous suivre."
+
+#: content/ui/Settings/AccountPage.qml:138
+#, kde-format
+msgid "Is automated"
+msgstr "Est automatisé"
+
+#: content/ui/Settings/AccountPage.qml:139
+#, kde-format
+msgid ""
+"Whether to publicly mark this account as doing any kind of automated actions."
+msgstr ""
+"Définir s'il faut signaler publiquement ce compte lorsqu'il effectue "
+"n'importe quel type d'actions automatisées."
+
+#: content/ui/Settings/AccountPage.qml:148
+#, kde-format
+msgid "Feature profile and posts"
+msgstr "Profil et messages de la fonctionnalité"
+
+#: content/ui/Settings/AccountPage.qml:149
+#, kde-format
+msgid "Your public profile and posts may be featured to other users."
+msgstr ""
+"Votre profil public et vos messages peuvent être présentés à d'autres "
+"utilisateurs."
+
+#: content/ui/Settings/AccountPage.qml:158
+#, kde-format
+msgid "Publicly list follows and followers"
+msgstr "Lister publiquement les suiveurs et les abonnés"
+
+#: content/ui/Settings/AccountPage.qml:159
+#, kde-format
+msgid "By default everyone you follow and everyone who follows you is public."
+msgstr ""
+"Par défaut, toutes les personnes que vous suivez et toutes les personnes qui "
+"vous suivent sont publiques."
+
+#: content/ui/Settings/AccountPage.qml:168
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Mark uploaded media as sensitive by default"
+msgstr "Marquer les média téléchargés comme sensible par défaut"
+
+#: content/ui/Settings/AccountPage.qml:177
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post language"
+msgstr "Langue par défaut des messages"
+
+#: content/ui/Settings/AccountPage.qml:199
+#, kde-format
+msgctxt "@label Account preferences"
+msgid "Default post visibility"
+msgstr "Visibilité des messages par défaut"
+
+#: content/ui/Settings/AccountPage.qml:201
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Public"
+msgstr "Public"
+
+#: content/ui/Settings/AccountPage.qml:202
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Unlisted"
+msgstr "Non répertorié"
+
+#: content/ui/Settings/AccountPage.qml:203
+#, kde-format
+msgctxt "@item:inlistbox Default post visibility rule"
+msgid "Private"
+msgstr "Privé"
+
+#: content/ui/Settings/AccountPage.qml:215
+#, kde-format
+msgctxt "@abel Account preferences"
+msgid "Open Server in Browser"
+msgstr "Ouvrir le serveur dans un navigateur"
+
+#: content/ui/Settings/AccountPage.qml:216
+#, kde-format
+msgid "Some settings can only be configured on your server's website."
+msgstr ""
+"Certains paramètres ne peuvent être configurés que sur le site Internet de "
+"votre serveur."
+
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
 msgctxt "@title:group"
@@ -3473,47 +3786,84 @@ msgstr "Thème de couleurs"
 msgid "Pop out the post composer by default"
 msgstr "Faire apparaître le compositeur de messages par défaut"
 
-#: content/ui/Settings/AppearancePage.qml:56
+#: content/ui/Settings/AppearancePage.qml:58
+#, kde-format
+msgid "Continue reading where you last left off"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:59
+#, kde-format
+msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:72
+#, kde-format
+msgid "Auto-update timelines"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:73
+#, kde-format
+msgid ""
+"If checked, Tokodon will automatically update certain timelines as new posts "
+"come in."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/Settings/AppearancePage.qml:62
+#: content/ui/Settings/AppearancePage.qml:90
 #, kde-format
 msgid "Show number of replies, favorites and boosts"
 msgstr "Afficher le nombre de réponses, les signets et les coups de pouce"
 
-#: content/ui/Settings/AppearancePage.qml:77
+#: content/ui/Settings/AppearancePage.qml:105
 #, kde-format
 msgid "Show link previews"
 msgstr "Afficher des aperçus de liens"
 
-#: content/ui/Settings/AppearancePage.qml:92
+#: content/ui/Settings/AppearancePage.qml:120
 #, kde-format
 msgid "Content font"
 msgstr "Police pour le contenu"
 
-#: content/ui/Settings/AppearancePage.qml:98
+#: content/ui/Settings/AppearancePage.qml:126
 #, kde-format
 msgid "Please choose a font"
 msgstr "Veuillez sélectionner une police"
 
-#: content/ui/Settings/AppearancePage.qml:109
+#: content/ui/Settings/AppearancePage.qml:137
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Média"
 
-#: content/ui/Settings/AppearancePage.qml:115
-#, kde-format
-msgid "Crop images on the timeline to 16x9"
+#: content/ui/Settings/AppearancePage.qml:143
+#, fuzzy, kde-format
+#| msgid "Crop images on the timeline to 16x9"
+msgid "Crop images on the timeline"
 msgstr "Rogner les images dans la frise chronologique au ration 16 : 9"
 
-#: content/ui/Settings/AppearancePage.qml:129
+#: content/ui/Settings/AppearancePage.qml:144
+#, kde-format
+msgid ""
+"If unchecked, posts with only one image attached will be uncropped and shown "
+"in full."
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "Lire automatiquement les fichiers « GIF » animés"
+
+#: content/ui/Settings/EditProfilePage.qml:26
+#, fuzzy, kde-format
+#| msgid "Edit Profile"
+msgctxt "@title:window"
+msgid "Edit Profile"
+msgstr "Modifier un profil"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -3557,7 +3907,7 @@ msgid "User"
 msgstr "Utilisateur"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:358
+#: content/ui/Settings/ProfileEditor.qml:279
 #, kde-format
 msgid "Apply"
 msgstr "Appliquer"
@@ -3593,198 +3943,172 @@ msgstr ""
 #: content/ui/Settings/NotificationsPage.qml:49
 #, kde-format
 msgctxt "@title:group"
-msgid "Types"
-msgstr "Types"
+msgid "Events"
+msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
 msgid "Mentions"
 msgstr "Références"
 
-#: content/ui/Settings/NotificationsPage.qml:69
+#: content/ui/Settings/NotificationsPage.qml:58
+#, kde-format
+msgid ""
+"When someone mentions you in a new post, or replies to one of your threads."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:70
 #, kde-format
 msgid "Statuses"
 msgstr "États"
 
-#: content/ui/Settings/NotificationsPage.qml:81
+#: content/ui/Settings/NotificationsPage.qml:71
+#, kde-format
+msgid "When a user you have notifications turned on for makes a new post."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgid "Boosts"
 msgstr "Stimulations"
 
-#: content/ui/Settings/NotificationsPage.qml:93
+#: content/ui/Settings/NotificationsPage.qml:84
+#, fuzzy, kde-format
+#| msgid "%1 users boosted your post"
+msgid "When someone boosted one of your posts."
+msgstr "%1 utilisateurs ont donné un coup de pouce à votre message"
+
+#: content/ui/Settings/NotificationsPage.qml:96
 #, kde-format
 msgid "New followers"
 msgstr "Nouveaux suiveurs"
 
-#: content/ui/Settings/NotificationsPage.qml:105
+#: content/ui/Settings/NotificationsPage.qml:97
+#, kde-format
+msgid "When someone follows you."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:109
 #, kde-format
 msgid "New follow requests"
 msgstr "Nouvelles requêtes de suivi"
 
-#: content/ui/Settings/NotificationsPage.qml:129
+#: content/ui/Settings/NotificationsPage.qml:110
+#, kde-format
+msgid "When an account who requires manual approval wants to follow you."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:123
+#, kde-format
+msgid "When a post you made was favorited by another user."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:135
 #, kde-format
 msgid "Polls"
 msgstr "Votes"
 
-#: content/ui/Settings/NotificationsPage.qml:141
+#: content/ui/Settings/NotificationsPage.qml:136
+#, fuzzy, kde-format
+#| msgid "A poll you voted in has ended"
+msgid "When a poll you voted in has ended."
+msgstr "Votre sondage auquel vous avez participé, est terminé"
+
+#: content/ui/Settings/NotificationsPage.qml:148
 #, kde-format
 msgid "Edits"
 msgstr "Modifications"
 
-#: content/ui/Settings/ProfileEditor.qml:26
+#: content/ui/Settings/NotificationsPage.qml:149
 #, kde-format
-msgid "Edit Account"
-msgstr "Modifier un compte"
+msgid "When a post you interacted with was edited by the author."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:42
+#: content/ui/Settings/NotificationsPage.qml:161
 #, kde-format
-msgid "Please choose a file"
-msgstr "Veuillez choisir un fichier"
+msgid "Server Sign-ups"
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:51
+#: content/ui/Settings/NotificationsPage.qml:162
 #, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to log out of %1?"
-msgstr "Voulez-vous vraiment vous déconnecter de %1 ?"
+msgid "When someone signs up to your server."
+msgstr ""
 
-#: content/ui/Settings/ProfileEditor.qml:86
+#: content/ui/Settings/NotificationsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Reports"
+msgid "Server Reports"
+msgstr "Rapports"
+
+#: content/ui/Settings/NotificationsPage.qml:178
+#, kde-format
+msgid "When someone files a report against a user on your server."
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:193
+#, kde-format
+msgid "Severed Relationships"
+msgstr ""
+
+#: content/ui/Settings/NotificationsPage.qml:194
+#, kde-format
+msgid ""
+"When you or your server moderates another server, which you are following "
+"users on have followers with."
+msgstr ""
+
+#: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
 msgid "Display Name"
 msgstr "Nom d'affichage"
 
-#: content/ui/Settings/ProfileEditor.qml:104
+#: content/ui/Settings/ProfileEditor.qml:77
 #, kde-format
 msgid "Bio"
 msgstr "Bio"
 
-#: content/ui/Settings/ProfileEditor.qml:130
+#: content/ui/Settings/ProfileEditor.qml:103
 #, kde-format
 msgid "Header"
 msgstr "En-tête"
 
-#: content/ui/Settings/ProfileEditor.qml:165
+#: content/ui/Settings/ProfileEditor.qml:138
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 1500x500px"
 msgstr "PNG, GIF or JPG. Au moins 2 Mo. Sera réduite à 1500 x 500 px"
 
-#: content/ui/Settings/ProfileEditor.qml:193
+#: content/ui/Settings/ProfileEditor.qml:166
 #, kde-format
 msgid "Avatar"
 msgstr "Avatar"
 
-#: content/ui/Settings/ProfileEditor.qml:226
+#: content/ui/Settings/ProfileEditor.qml:199
 #, kde-format
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr ""
 "Formats « PNG », « GIF » ou « JPG ». Au moins 2 Mo. Sera réduit à 400 x 400 "
 "px"
 
-#: content/ui/Settings/ProfileEditor.qml:256
+#: content/ui/Settings/ProfileEditor.qml:228
 #, kde-format
-msgid "Require approval for new followers"
-msgstr "Exiger une approbation pour les nouveaux abonnés"
-
-#: content/ui/Settings/ProfileEditor.qml:257
-#, kde-format
-msgid ""
-"By default new followers are automatically accepted. Uncheck if you want to "
-"manually approve or deny new ones. You always have the option to force "
-"someone to unfollow you."
+msgctxt "Profile fields"
+msgid "Fields"
 msgstr ""
-"Par défaut, les nouveaux abonnés sont automatiquement acceptés. Décochez "
-"cette option si vous souhaitez approuver ou refuser manuellement ceux-ci. "
-"Vous avez toujours la possibilité de forcer quelqu'un à ne plus vous suivre."
 
-#: content/ui/Settings/ProfileEditor.qml:265
-#, kde-format
-msgid "Is automated"
-msgstr "Est automatisé"
-
-#: content/ui/Settings/ProfileEditor.qml:266
-#, kde-format
-msgid ""
-"Whether to publicly mark this account as doing any kind of automated actions."
-msgstr ""
-"Définir s'il faut signaler publiquement ce compte lorsqu'il effectue "
-"n'importe quel type d'actions automatisées."
-
-#: content/ui/Settings/ProfileEditor.qml:274
-#, kde-format
-msgid "Feature profile and posts"
-msgstr "Profil et messages de la fonctionnalité"
-
-#: content/ui/Settings/ProfileEditor.qml:275
-#, kde-format
-msgid "Your public profile and posts may be featured to other users."
-msgstr ""
-"Votre profil public et vos messages peuvent être présentés à d'autres "
-"utilisateurs."
-
-#: content/ui/Settings/ProfileEditor.qml:283
-#, kde-format
-msgid "Publicly list follows and followers"
-msgstr "Lister publiquement les suiveurs et les abonnés"
-
-#: content/ui/Settings/ProfileEditor.qml:284
-#, kde-format
-msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
-"Par défaut, toutes les personnes que vous suivez et toutes les personnes qui "
-"vous suivent sont publiques."
-
-#: content/ui/Settings/ProfileEditor.qml:292
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Mark uploaded media as sensitive by default"
-msgstr "Marquer les média téléchargés comme sensible par défaut"
-
-#: content/ui/Settings/ProfileEditor.qml:300
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post language"
-msgstr "Langue par défaut des messages"
-
-#: content/ui/Settings/ProfileEditor.qml:321
-#, kde-format
-msgctxt "@label Account preferences"
-msgid "Default post visibility"
-msgstr "Visibilité des messages par défaut"
-
-#: content/ui/Settings/ProfileEditor.qml:323
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Public"
-msgstr "Public"
-
-#: content/ui/Settings/ProfileEditor.qml:324
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Unlisted"
-msgstr "Non répertorié"
-
-#: content/ui/Settings/ProfileEditor.qml:325
-#, kde-format
-msgctxt "@item:inlistbox Default post visibility rule"
-msgid "Private"
-msgstr "Privé"
-
-#: content/ui/Settings/ProfileEditor.qml:336
-#, kde-format
-msgctxt "@abel Account preferences"
-msgid "Open Server in Browser"
-msgstr "Ouvrir le serveur dans un navigateur"
-
-#: content/ui/Settings/ProfileEditor.qml:337
-#, kde-format
-msgid "Some settings can only be configured on your server's website."
-msgstr ""
-"Certains paramètres ne peuvent être configurés que sur le site Internet de "
-"votre serveur."
-
-#: content/ui/Settings/ProfileEditor.qml:351
+#: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
 msgid "Reset"
 msgstr "Ré-initialiser"
+
+#: content/ui/Settings/SafetyPage.qml:26
+#, kde-format
+msgid "Muted Users"
+msgstr "Utilisateurs en mode muet"
+
+#: content/ui/Settings/SafetyPage.qml:34
+#, kde-format
+msgid "Blocked Users"
+msgstr "Utilisateurs bloqués"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:17
 #, kde-format
@@ -3793,27 +4117,32 @@ msgstr "Apparence"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
+msgid "Safety"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:37
+#, kde-format
 msgid "Accounts"
 msgstr "Comptes"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:43
+#: content/ui/Settings/TokodonConfigurationView.qml:50
 #, kde-format
 msgid "Network Proxy"
 msgstr "Serveur mandataire du réseau"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:49
+#: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "About Tokodon"
 msgstr "À propos de Tokodon"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:52
 #: content/ui/Settings/TokodonConfigurationView.qml:59
+#: content/ui/Settings/TokodonConfigurationView.qml:66
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "À propos"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:56
+#: content/ui/Settings/TokodonConfigurationView.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "À propos de KDE"
@@ -3848,8 +4177,7 @@ msgid "Remove Follower"
 msgstr "Supprimer un(e) abonné(e)"
 
 #: content/ui/SocialGraphPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove"
 msgstr "Supprimer"
@@ -3871,49 +4199,49 @@ msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Point focal"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:37
+#: content/ui/StatusComposer/ComposerPoll.qml:41
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Choix %1"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:61
+#: content/ui/StatusComposer/ComposerPoll.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Ajouter un choix"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:62
+#: content/ui/StatusComposer/ComposerPoll.qml:66
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Ajouter un nouveau choix de sondage"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:81
+#: content/ui/StatusComposer/ComposerPoll.qml:85
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Lorsque le sondage expirera"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:90
+#: content/ui/StatusComposer/ComposerPoll.qml:94
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Choix multiple"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:96
+#: content/ui/StatusComposer/ComposerPoll.qml:100
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Ajouter des choix multiples"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:105
+#: content/ui/StatusComposer/ComposerPoll.qml:109
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Masquer les totaux"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:111
+#: content/ui/StatusComposer/ComposerPoll.qml:115
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -3980,11 +4308,10 @@ msgid "Keep"
 msgstr "Conserver"
 
 #: content/ui/StatusComposer/StatusComposer.qml:241
-#, fuzzy, kde-format
-#| msgid "Content font"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
-msgstr "Police pour le contenu"
+msgstr "Avis sur le contenu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:255
 #, kde-format
@@ -4120,14 +4447,13 @@ msgstr "Visibilité"
 msgctxt ""
 "@action:intoolbar Short for content notice, also known as content warning"
 msgid "cn"
-msgstr ""
+msgstr "cn"
 
 #: content/ui/StatusComposer/StatusComposer.qml:463
-#, fuzzy, kde-format
-#| msgid "Content font"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content notice"
-msgstr "Police pour le contenu"
+msgstr "Avis sur le contenu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:477
 #, kde-format
@@ -4171,27 +4497,27 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Enregistrer"
 
-#: content/ui/TimelinePage.qml:37 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:40 timeline/accountmodel.cpp:35
 #, kde-format
 msgid "Loading"
 msgstr "Chargement"
 
-#: content/ui/TimelinePage.qml:39
+#: content/ui/TimelinePage.qml:42
 #, kde-format
 msgid "Home (%1)"
 msgstr "Accueil (%1)"
 
-#: content/ui/TimelinePage.qml:93
+#: content/ui/TimelinePage.qml:96
 #, kde-format
 msgid "Show Boosts"
 msgstr "Afficher les coups de pouce"
 
-#: content/ui/TimelinePage.qml:100
+#: content/ui/TimelinePage.qml:103
 #, kde-format
 msgid "Show Replies"
 msgstr "Afficher les réponses"
 
-#: content/ui/TimelinePage.qml:118
+#: content/ui/TimelinePage.qml:121
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
@@ -4372,47 +4698,37 @@ msgid "Error occurred when fetching the latest notification."
 msgstr ""
 "Une erreur est survenue durant la rechercher de la dernière notification."
 
-#: search/searchmodel.cpp:155
-#, kde-format
-msgid "Users"
-msgstr "Utilisateurs"
-
-#: search/searchmodel.cpp:157
-#, kde-format
-msgid "Hashtags"
-msgstr "Hashtags"
-
-#: timeline/maintimelinemodel.cpp:24
+#: timeline/maintimelinemodel.cpp:25
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Accueil"
 
-#: timeline/maintimelinemodel.cpp:26
+#: timeline/maintimelinemodel.cpp:27
 #, kde-format
 msgctxt "@title"
 msgid "Local Timeline"
 msgstr "Chronologie locale"
 
-#: timeline/maintimelinemodel.cpp:28
+#: timeline/maintimelinemodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Global Timeline"
 msgstr "Chronologie globale"
 
-#: timeline/maintimelinemodel.cpp:30
+#: timeline/maintimelinemodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Signets"
 
-#: timeline/maintimelinemodel.cpp:32
+#: timeline/maintimelinemodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Préférés"
 
-#: timeline/maintimelinemodel.cpp:34
+#: timeline/maintimelinemodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
@@ -4434,6 +4750,14 @@ msgstr "Chargement en cours..."
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "Publié par %1"
+
+#: timeline/trendingnewsmodel.cpp:51
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Trending"
+msgctxt "@title:window"
+msgid "Trending News"
+msgstr "Tendance"
 
 #: tokodonapplication.cpp:14
 #, kde-format
@@ -4616,6 +4940,47 @@ msgid_plural "%1 years ago"
 msgstr[0] "Il y a une année"
 msgstr[1] "Il y a %1 années"
 
+#~ msgid "No follow requests"
+#~ msgstr "Aucune demande de suivi"
+
+#~ msgid "No muted users"
+#~ msgstr "Aucun utilisateur muet"
+
+#~ msgid "No blocked users"
+#~ msgstr "Aucun utilisateur bloqué"
+
+#~ msgid "No featured users"
+#~ msgstr "Aucun utilisateur publié"
+
+#~ msgid "No familiar followers"
+#~ msgstr "Aucun abonné régulier"
+
+#~ msgid "No users in this list"
+#~ msgstr "Aucun utilisateur dans cette liste."
+
+#~ msgid "Tags"
+#~ msgstr "Étiquettes"
+
+#~ msgctxt "@title:group"
+#~ msgid "Network Settings"
+#~ msgstr "Configuration du réseau"
+
+#~ msgctxt "@option:check Login page"
+#~ msgid "Ignore SSL errors"
+#~ msgstr "Ignorer les erreurs « SSL »"
+
+#~ msgctxt "Show all notifications"
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgctxt "Show only mentions"
+#~ msgid "Mentions"
+#~ msgstr "Références"
+
+#~ msgctxt "@title:group"
+#~ msgid "Types"
+#~ msgstr "Types"
+
 #~ msgctxt "@label"
 #~ msgid "No Trending Posts"
 #~ msgstr "Aucun message populaire"
@@ -4757,9 +5122,6 @@ msgstr[1] "Il y a %1 années"
 #~ msgid "Copy Link to This Profile"
 #~ msgstr "Copier un lien vers ce profil"
 
-#~ msgid "Conversation"
-#~ msgstr "Conversation"
-
 #~ msgid "%1 Favorite"
 #~ msgid_plural "%1 Favorites"
 #~ msgstr[0] "Favori %1"
@@ -4788,12 +5150,6 @@ msgstr[1] "Il y a %1 années"
 #~| msgctxt "@title"
 #~| msgid "Trending"
 #~ msgid "Trending Posts"
-#~ msgstr "Tendance"
-
-#, fuzzy
-#~| msgctxt "@title"
-#~| msgid "Trending"
-#~ msgid "Trending Tags"
 #~ msgstr "Tendance"
 
 #~ msgctxt "@info:Whether to reject incoming reports from this domain"
@@ -4863,9 +5219,6 @@ msgstr[1] "Il y a %1 années"
 #~ msgid "Notifications"
 #~ msgstr "Notifications"
 
-#~ msgid "Mention"
-#~ msgstr "Références"
-
 #~ msgid "Status"
 #~ msgstr "État"
 
@@ -4901,9 +5254,6 @@ msgstr[1] "Il y a %1 années"
 
 #~ msgid "All supported formats"
 #~ msgstr "Tous les formats pris en charge"
-
-#~ msgid "A poll you voted in has ended"
-#~ msgstr "Votre sondage auquel vous avez participé, est terminé"
 
 #~ msgid "Open settings"
 #~ msgstr "Ouvrir la configuration"
@@ -4962,9 +5312,6 @@ msgstr[1] "Il y a %1 années"
 #~ msgctxt "@info:whatsthis Post language selection"
 #~ msgid "Select the language the post is written in"
 #~ msgstr "Sélectionner la langue dans laquelle le message est rédigé"
-
-#~ msgid "No Posts"
-#~ msgstr "Aucun message"
 
 #~ msgid "Not following anyone"
 #~ msgstr "Ne suivant personne"
