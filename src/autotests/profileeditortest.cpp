@@ -50,11 +50,11 @@ private Q_SLOTS:
         account->setUsername(QStringLiteral("trwnh"));
         backend.setAccount(account);
         backend.setDisplayName(QStringLiteral("Hello"));
-        backend.setAvatarUrl(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")));
-        backend.setBackgroundUrl(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")));
+        backend.setAvatarUrl(QUrl(QLatin1String(DATA_DIR "/test.png")));
+        backend.setBackgroundUrl(QUrl(QLatin1String(DATA_DIR "/test.png")));
         QCOMPARE(QStringLiteral("Hello"), backend.displayName());
-        QCOMPARE(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")), backend.avatarUrl());
-        QCOMPARE(QUrl(QLatin1String(DATA_DIR) + QLatin1String("/test.png")), backend.backgroundUrl());
+        QCOMPARE(QUrl(QLatin1String(DATA_DIR "/test.png")), backend.avatarUrl());
+        QCOMPARE(QUrl(QLatin1String(DATA_DIR "/test.png")), backend.backgroundUrl());
         QCOMPARE(QString(), backend.backgroundUrlError());
         QCOMPARE(QString(), backend.avatarUrlError());
     }

@@ -394,7 +394,7 @@ QString AccountManager::settingsGroupName(const QString &name, const QString &in
 {
     Q_ASSERT(!name.isEmpty());
     Q_ASSERT(!instanceUri.isEmpty());
-    return name + QLatin1Char('@') + QUrl(instanceUri).host();
+    return QStringLiteral("%1@%2").arg(name, QUrl(instanceUri).host());
 }
 
 QString AccountManager::clientSecretKey(const QString &name)
@@ -437,7 +437,7 @@ void AccountManager::migrateSettings()
             const auto keysInChild = settings.childKeys();
             const auto childName = settings.value("name").toString();
             const auto childInstance = QUrl(settings.value("instance_uri").toString()).host();
-            const QString newName = childName + QLatin1Char('@') + childInstance;
+            const QString newName = QStringLiteral("%1@%2").arg(childName, childInstance);
             qCDebug(TOKODON_LOG) << "Rewriting key from" << child << "to" << newName;
             settings.endGroup();
             for (const auto &key : keysInChild) {
@@ -468,7 +468,7 @@ void AccountManager::migrateSettings()
             const auto childName = settings.value("name").toString();
             const auto childInstance = QUrl(settings.value("instance_uri").toString()).host();
 
-            const QString settingsGroupName = childName + QLatin1Char('@') + childInstance;
+            const QString settingsGroupName = QStringLiteral("%1@%2").arg(childName, childInstance);
 
             AccountConfig config(settingsGroupName);
             config.setClientId(settings.value("client_id").toString());

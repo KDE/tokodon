@@ -661,7 +661,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
     const auto apiCall = accountActionMap[accountAction];
 
     const auto accountId = identity->id();
-    const QString accountApiUrl = QStringLiteral("/api/v1/accounts/") + accountId + apiCall;
+    const QString accountApiUrl = QStringLiteral("/api/v1/accounts/%1%2").arg(accountId, apiCall);
     const QJsonDocument doc(extraArguments);
 
     post(apiUrl(accountApiUrl), doc, true, this, [=](QNetworkReply *reply) {

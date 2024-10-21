@@ -234,7 +234,7 @@ void MockAccount::decreaseFollowRequests()
 void MockAccount::readNotificationFromFile(QLatin1String filename)
 {
     QFile statusExampleApi;
-    statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + filename);
+    statusExampleApi.setFileName(QLatin1String(DATA_DIR "/%1").arg(filename));
     statusExampleApi.open(QIODevice::ReadOnly);
 
     handleNotification(QJsonDocument::fromJson(statusExampleApi.readAll()));

@@ -52,7 +52,7 @@ private Q_SLOTS:
     void testStreamUpdate()
     {
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json"_L1);
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
 
         MainTimelineModel timelineModel;
@@ -136,7 +136,7 @@ private Q_SLOTS:
         timelineModel.setName(QStringLiteral("home"));
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json"_L1);
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status-poll.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
         account->streamingEvent(AbstractAccount::StreamingEventType::UpdateEvent, statusExampleApi.readAll());
         QCOMPARE(timelineModel.rowCount({}), 6);

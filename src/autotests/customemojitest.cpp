@@ -13,7 +13,7 @@ class CustomEmojiTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        QFile emojiFile(QLatin1String(DATA_DIR) + QLatin1Char('/') + QStringLiteral("emoji.json"));
+        QFile emojiFile(QLatin1String(DATA_DIR "/emoji.json"));
         emojiFile.open(QFile::ReadOnly);
 
         doc = QJsonDocument::fromJson(emojiFile.readAll());

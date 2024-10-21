@@ -279,7 +279,7 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
 
     const auto accountId = identity->userLevelIdentity()->id();
 
-    const QString accountApiUrl = QStringLiteral("/api/v1/admin/accounts/") + accountId + apiCall;
+    const QString accountApiUrl = QStringLiteral("/api/v1/admin/accounts/%1%2").arg(accountId, apiCall);
 
     const QJsonDocument doc(extraArguments);
     // to be used when receiving parameter from actionAgainstAccount

@@ -484,9 +484,9 @@ void Post::processContent(const QJsonObject &obj)
         };
 
         for (const QString &tagFormat : tagFormats) {
-            processedHtml.replace(baseUrl + QStringLiteral("/%1/").arg(tagFormat) + tagObj["name"_L1].toString(),
-                                  QStringLiteral("hashtag:/") + tagObj["name"_L1].toString(),
-                                  Qt::CaseInsensitive);
+            const QString tagName = tagObj["name"_L1].toString();
+
+            processedHtml.replace(QStringLiteral("%1/%2/%3").arg(baseUrl, tagFormat, tagName), QStringLiteral("hashtag:/%1").arg(tagName), Qt::CaseInsensitive);
         }
     }
 
@@ -495,8 +495,7 @@ void Post::processContent(const QJsonObject &obj)
 
     for (const auto &mention : mentions) {
         const auto mentionObj = mention.toObject();
-        processedHtml =
-            processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
+        processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
     }
 
     // Remove the standalone tags from the main content

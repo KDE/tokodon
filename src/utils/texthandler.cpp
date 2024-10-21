@@ -121,8 +121,8 @@ QString TextHandler::replaceCustomEmojis(const QList<CustomEmoji> &emojis, const
 {
     QString processed = source;
     for (const auto &emoji : emojis) {
-        processed.replace(QLatin1Char(':') + emoji.shortcode + QLatin1Char(':'),
-                          QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"") + emoji.url + QStringLiteral("\">"));
+        processed.replace(QStringLiteral(":%1:").arg(emoji.shortcode),
+                          QStringLiteral("<img height=\"16\" align=\"middle\" width=\"16\" src=\"%1\">").arg(emoji.url));
     }
 
     return processed;

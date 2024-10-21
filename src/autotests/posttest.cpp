@@ -22,7 +22,7 @@ private Q_SLOTS:
         MockAccount account;
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status.json"_L1);
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
 
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
@@ -44,7 +44,7 @@ private Q_SLOTS:
         MockAccount account;
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-poll.json"_L1);
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status-poll.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
 
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());
@@ -77,7 +77,7 @@ private Q_SLOTS:
         MockAccount account;
 
         QFile statusExampleApi;
-        statusExampleApi.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + "status-tags.json"_L1);
+        statusExampleApi.setFileName(QLatin1String(DATA_DIR "/status-tags.json"));
         statusExampleApi.open(QIODevice::ReadOnly);
 
         const auto doc = QJsonDocument::fromJson(statusExampleApi.readAll());

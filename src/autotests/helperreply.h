@@ -15,7 +15,7 @@ public:
         setError(NetworkError::NoError, QString());
         setFinished(true);
 
-        apiResult.setFileName(QLatin1String(DATA_DIR) + QLatin1Char('/') + jsonFile);
+        apiResult.setFileName(QLatin1String(DATA_DIR "/%1").arg(jsonFile));
         apiResult.open(QIODevice::ReadOnly);
     }
 
