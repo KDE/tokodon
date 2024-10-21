@@ -91,7 +91,7 @@ QString SocialGraphModel::placeholderExplanation() const
     } else if (m_followListName == QStringLiteral("favourited_by")) {
         return i18n("No one has favorited this post yet. Maybe you'll be the first?");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
-        return i18n("No one has boosted this post yet. You should boost it to expand it's reach!");
+        return i18n("No one has boosted this post yet. You should boost it to expand its reach!");
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
         return {};
     } else if (m_followListName == QStringLiteral("list")) {

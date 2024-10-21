@@ -191,7 +191,7 @@ FormCard.FormCardPage {
         FormCard.FormSwitchDelegate {
             id: relationshipsDelegate
             text: i18n("Severed Relationships")
-            description: i18n("When you or your server moderates another server, which you are following users on have followers with.")
+            description: i18n("When you or your server moderates another server, which you are following users or have followers with.")
             checked: root.config.notifyRelationships
             onToggled: {
                 root.config.notifyRelationships = checked;
