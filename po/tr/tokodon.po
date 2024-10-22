@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-21 00:39+0000\n"
-"PO-Revision-Date: 2024-10-20 12:27+0300\n"
+"POT-Creation-Date: 2024-10-22 00:39+0000\n"
+"PO-Revision-Date: 2024-10-21 14:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -56,12 +56,12 @@ msgstr "Hesap sessizden kaldırılamadı"
 #: account/abstractaccount.cpp:681
 #, kde-format
 msgid "Could not feature account"
-msgstr "Hesap tanıtılamadı"
+msgstr "Hesap öne çıkarılamadı"
 
 #: account/abstractaccount.cpp:682
 #, kde-format
 msgid "Could not unfeature account"
-msgstr "Hesap tanıtımı kaldırılamadı"
+msgstr "Hesap öne çıkarması kaldırılamadı"
 
 #: account/abstractaccount.cpp:683
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "Engelli Kullanıcılar"
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
-msgstr "Tanıtılan Kullanıcılar"
+msgstr "Öne Çıkarılan Kullanıcılar"
 
 #: account/socialgraphmodel.cpp:40
 #, kde-format
@@ -201,65 +201,54 @@ msgid "Manage List Users"
 msgstr "Liste Kullanıcılarını Yönet"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Takip İstekleri"
+msgstr "Takip İsteği Yok"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No Followers"
-msgstr "Takipçisi yok"
+msgstr "Takipçi Yok"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "No Followed Users"
-msgstr "Takip edilen kullanıcı yok"
+msgstr "Takip Edilen Kullanıcı Yok"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgid "No Muted Users"
-msgstr "Sessize Alınan Kullanıcılar"
+msgstr "Sessize Alınan Kullanıcı Yok"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Blocked Users"
+#, kde-format
 msgid "No Blocked Users"
-msgstr "Engellenen Kullanıcılar"
+msgstr "Engellenen Kullanıcı Yok"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Featured Users"
+#, kde-format
 msgid "No Featured Users"
-msgstr "Tanıtılan Kullanıcılar"
+msgstr "Öne Çıkarılan Kullanıcı Yok"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "No Users Favorited This Post"
-msgstr "Bu gönderiyi hiçbir kullanıcı favorilemedi"
+msgstr "Gönderiyi Kimse Favorilemedi"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No users boosted this post"
+#, kde-format
 msgid "No Users Boosted This Post"
-msgstr "Bu gönderiyi hiçbir kullanıcı boostlamadı"
+msgstr "Gönderiyi Kimse Boostlamadı"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Familiar Followers"
+#, kde-format
 msgid "No Familiar Followers"
-msgstr "Tanıdık Takipçiler"
+msgstr "Tanıdık Takipçi Yok"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgid "No Users"
-msgstr "Kullanıcılar"
+msgstr "Kullanıcı Yok"
 
 #: account/socialgraphmodel.cpp:80
 #, kde-format
@@ -267,44 +256,56 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Bazı kullanıcıların sizi takip edebilmeleri için elle onaylanmaları gerekir "
+"ve bunlar burada gösterilir."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
+"Kullanıcıları sessize alarak bildirimlerinizde görünmelerini "
+"engelleyebilirsiniz."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr ""
+"Kullanıcıyı engelle seçeneğini kullanarak kullanıcıyı zaman akışınızdan "
+"tümüyle gizleyebilirsiniz."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
+"Beğendiğiniz kullanıcıları öne çıkarabilir ve profilinizde gösterebilirsiniz."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
+"Henüz kimse bu gönderiyi favorilerine eklemedi. Belki ilk siz eklersiniz?"
 
 #: account/socialgraphmodel.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "No one has boosted this post yet. You should boost it to expand it's "
+#| "reach!"
 msgid ""
-"No one has boosted this post yet. You should boost it to expand it's reach!"
+"No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Henüz kimse bu gönderiyi boostlamadı. Erişimini genişletmek için siz de "
+"boostlamalısınız!"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "Bu listede henüz kimse yok."
 
 #: account/suggestionsmodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr "Sessize Alınan Kullanıcılar"
+msgstr "Önerilen Kullanıcılar"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -410,29 +411,26 @@ msgid "Could not unassign report"
 msgstr "Raporun ataması geri alınamadı"
 
 #: content/ui/AccountInfo.qml:97
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Posts"
-msgstr "Gönderi yok"
+msgstr "Gönderi Yok"
 
 #: content/ui/AccountInfo.qml:98
 #, kde-format
 msgid "This user hasn't posted anything yet."
-msgstr ""
+msgstr "Bu kullanıcı henüz bir şey göndermedi."
 
 #: content/ui/AccountInfo.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Ortam"
+msgstr "Ortam Yok"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr ""
+msgstr "Bu kullanıcı henüz bir ortam göndermedi."
 
 #: content/ui/AccountInfo.qml:279
 #, kde-format
@@ -470,16 +468,14 @@ msgid "Notify me when %1 posts."
 msgstr "%1 gönderide bulunduğunda bana bildir."
 
 #: content/ui/AccountInfo.qml:449
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgid "Mention…"
-msgstr "Söz etmeler"
+msgstr "Söz Et…"
 
 #: content/ui/AccountInfo.qml:455
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgid "Start a Conversation…"
-msgstr "Sohbet yok"
+msgstr "Konuşma Başlat…"
 
 #: content/ui/AccountInfo.qml:464
 #, kde-format
@@ -494,12 +490,12 @@ msgstr "%1 Boostlarını Göster"
 #: content/ui/AccountInfo.qml:482
 #, kde-format
 msgid "Stop Featuring This Profile"
-msgstr "Bu Profili Tanıtmayı Bırak"
+msgstr "Bu Profili Öne Çıkarmayı Bırak"
 
 #: content/ui/AccountInfo.qml:484
 #, kde-format
 msgid "Feature This Profile"
-msgstr "Bu Profili Tanıt"
+msgstr "Bu Profili Öne Çıkar"
 
 #: content/ui/AccountInfo.qml:500
 #, kde-format
@@ -540,7 +536,7 @@ msgstr "Hesap düzenleyici"
 #: content/ui/AccountInfo.qml:554
 #, kde-format
 msgid "Featured Users"
-msgstr "Tanıtılan Kullanıcılar"
+msgstr "Öne Çıkarılar Kullanıcılar"
 
 #: content/ui/AccountInfo.qml:559
 #, kde-format
@@ -553,12 +549,10 @@ msgid "Profile link copied."
 msgstr "Profil bağlantısı kopyalandı."
 
 #: content/ui/AccountInfo.qml:632
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
-msgstr "Katılma"
+msgstr "Katılma:"
 
 #: content/ui/AccountInfo.qml:720
 #, kde-format
@@ -579,24 +573,21 @@ msgstr ""
 "Bu kullanıcı hakkında bir şeyler yazın; bunu yalnızca siz görebilirsiniz."
 
 #: content/ui/AccountInfo.qml:803
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "Also followed by:"
-msgstr "%1 sizi takip etti"
+msgstr "Ayrıca takip edenler:"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "%1 kişisinin profilini görüntüle"
+msgstr "%1 Daha Görüntüle"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
-msgstr "Profili görüntüle"
+msgstr "Tümünü Görüntüle"
 
 #: content/ui/AccountInfo.qml:871
 #, kde-format
@@ -676,17 +667,15 @@ msgid "Announcement on %1"
 msgstr "%1 tarihinde duyuruldu"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No announcements"
+#, kde-format
 msgctxt "@label"
 msgid "No Announcements"
-msgstr "Duyuru yok"
+msgstr "Duyuru Yok"
 
 #: content/ui/AnnouncementsPage.qml:70
 #, kde-format
 msgid "Your server has not made any announcements yet."
-msgstr ""
+msgstr "Sunucunuz henüz bir duyuru yapmadı."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -746,6 +735,8 @@ msgid ""
 "Direct messages to other users will show up here. Do not share any sensitive "
 "information over a conversation."
 msgstr ""
+"Diğer kullanıcılara doğrudan gönderilen iletiler burada gösterilecektir. Bir "
+"konuşma sırasında hassas bilgiler paylaşmayın."
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
@@ -877,7 +868,7 @@ msgstr "Etiketler"
 #: content/ui/ExplorePage.qml:53
 #, kde-format
 msgid "News"
-msgstr ""
+msgstr "Haberler"
 
 #: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
 #, kde-format
@@ -1049,15 +1040,15 @@ msgid "Create List"
 msgstr "Liste Oluştur"
 
 #: content/ui/ListsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No lists"
+#, kde-format
 msgid "No Lists"
-msgstr "Liste yok"
+msgstr "Liste Yok"
 
 #: content/ui/ListsPage.qml:68
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
+"Listeler takip ettiğiniz kişileri kategorilere ayırmanıza olanak tanır."
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -1423,15 +1414,15 @@ msgid "Home"
 msgstr "Ana Sayfa"
 
 #: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
-msgstr "Gönderi yok"
+msgstr "Gönderi Yok"
 
 #: content/ui/Main.qml:395 content/ui/Main.qml:437 content/ui/Main.qml:452
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
+"Şu anda ortalık oldukça sessiz görünüyor, bir şeyler paylaşmayı deneyin!"
 
 #: content/ui/Main.qml:404 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
@@ -1460,10 +1451,9 @@ msgid "Favorites"
 msgstr "Favoriler"
 
 #: content/ui/Main.qml:478
-#, fuzzy, kde-format
-#| msgid "No favorites"
+#, kde-format
 msgid "No Favorites"
-msgstr "Favori yok"
+msgstr "Favori Yok"
 
 #: content/ui/Main.qml:479
 #, kde-format
@@ -1471,6 +1461,8 @@ msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
+"Favorilediğiniz gönderiler burada gösterilecektir. Birinin gönderisini "
+"beğendiyseniz favorileyin!"
 
 #: content/ui/Main.qml:487
 #, kde-format
@@ -1478,10 +1470,9 @@ msgid "Bookmarks"
 msgstr "Yer İmleri"
 
 #: content/ui/Main.qml:494
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "No Bookmarks"
-msgstr "Yer İmleri"
+msgstr "Yer İmi Yok"
 
 #: content/ui/Main.qml:495
 #, kde-format
@@ -1489,6 +1480,8 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
+"Gönderilere yer imi koyun ve burada gösterilsinler. Yer imleri her zaman "
+"gizli tutulur, gönderinin yazarına bile."
 
 #: content/ui/Main.qml:514
 #, kde-format
@@ -1512,10 +1505,9 @@ msgid "Lists"
 msgstr "Listeler"
 
 #: content/ui/Main.qml:559 content/ui/Settings/AccountPage.qml:70
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "Profile"
-msgstr "Profili görüntüle"
+msgstr "Profil"
 
 #: content/ui/Main.qml:574
 #, kde-format
@@ -2935,33 +2927,28 @@ msgid "Mark All As Read"
 msgstr "Tümünü Okundu Olarak İmle"
 
 #: content/ui/NotificationPage.qml:33
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
-msgstr "Bildirim yok"
+msgstr "Bildirimleri Yapılandır…"
 
 #: content/ui/NotificationPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button Show all of a profile's posts"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Tümü"
 
 #: content/ui/NotificationPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
-msgstr "Söz etmeler"
+msgstr "Söz Etmeler"
 
 #: content/ui/NotificationPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
-msgstr "Daha Çok Göster"
+msgstr "Daha Fazla"
 
 #: content/ui/NotificationPage.qml:84
 #, kde-format
@@ -2999,11 +2986,16 @@ msgid "No Notifications"
 msgstr "Bildirim yok"
 
 #: content/ui/NotificationPage.qml:259
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "You have no notifications yet. when people reply, favorite or boost your "
+#| "posts they will show up here."
 msgid ""
-"You have no notifications yet. when people reply, favorite or boost your "
+"You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr ""
+"Henüz bildiriminiz yok. Kişiler gönderilerinizi yanıtladığında, favorilerine "
+"eklediğinde veya öne çıkardığında bunlar burada görünecek."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
 #, kde-format
@@ -3641,9 +3633,7 @@ msgid "Are you sure you want to log out of %1?"
 msgstr "%1 oturumunu kapatmak istediğinizden emin misiniz?"
 
 #: content/ui/Settings/AccountPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Title for the group of account related actions"
-#| msgid "Account"
+#, kde-format
 msgid "Account"
 msgstr "Hesap"
 
@@ -3766,17 +3756,18 @@ msgstr "Gönderi oluşturucusunu kendiliğinden dışarı çıkar"
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "En son kalınan yerden okumayı sürdür"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
 msgid "If checked, Tokodon will save where you were in your Home timeline."
 msgstr ""
+"İşaretlendiğinde Tokodon, ana zaman akışınızda nerede kaldığınızı kaydeder."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "Zaman akışlarını kendiliğinden güncelle"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
@@ -3784,6 +3775,8 @@ msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
 msgstr ""
+"İşaretlendiğinde Tokodon, yeni gönderiler geldikçe belirli zaman akışlarını "
+"kendiliğinden günceller."
 
 #: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
@@ -3818,10 +3811,9 @@ msgid "Media"
 msgstr "Ortam"
 
 #: content/ui/Settings/AppearancePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Crop images on the timeline to 16x9"
+#, kde-format
 msgid "Crop images on the timeline"
-msgstr "Zaman akışındaki görselleri 16 × 9 olarak kırp"
+msgstr "Zaman akışındaki görselleri kırp"
 
 #: content/ui/Settings/AppearancePage.qml:144
 #, kde-format
@@ -3829,6 +3821,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
+"İşaretli değilse yalnızca bir görsel ekli gönderiler kırpılmaz ve tümüyle "
+"gösterilir."
 
 #: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
@@ -3836,8 +3830,7 @@ msgid "Auto-play animated GIFs"
 msgstr "Canlandırmalı GIF’leri kendiliğinden oynat"
 
 #: content/ui/Settings/EditProfilePage.qml:26
-#, fuzzy, kde-format
-#| msgid "Edit Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "Profili Düzenle"
@@ -3917,7 +3910,7 @@ msgstr "Bildirimler yalnızca Tokodon çalışırken görünür."
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
-msgstr ""
+msgstr "Olaylar"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
@@ -3929,6 +3922,8 @@ msgstr "Söz etmeler"
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
 msgstr ""
+"Birisi yeni bir gönderide sizden söz ettiğinde veya konularınızdan birini "
+"yanıtladığında"
 
 #: content/ui/Settings/NotificationsPage.qml:70
 #, kde-format
@@ -3938,7 +3933,7 @@ msgstr "Durumlar"
 #: content/ui/Settings/NotificationsPage.qml:71
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
-msgstr ""
+msgstr "Bildirimlerini açtığınız bir kullanıcı yeni bir gönderi paylaştığında"
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
@@ -3946,10 +3941,9 @@ msgid "Boosts"
 msgstr "Boostlar"
 
 #: content/ui/Settings/NotificationsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "%1 users boosted your post"
+#, kde-format
 msgid "When someone boosted one of your posts."
-msgstr "%1 kullanıcı gönderinizi boostladı"
+msgstr "Birisi gönderilerinizden birini boostladığında"
 
 #: content/ui/Settings/NotificationsPage.qml:96
 #, kde-format
@@ -3959,7 +3953,7 @@ msgstr "Yeni takipçiler"
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
 msgid "When someone follows you."
-msgstr ""
+msgstr "Birisi sizi takip ettiğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:109
 #, kde-format
@@ -3969,12 +3963,12 @@ msgstr "Yeni takip istekleri"
 #: content/ui/Settings/NotificationsPage.qml:110
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
-msgstr ""
+msgstr "Elle onay gerektiren bir hesap sizi takip etmek istediğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:123
 #, kde-format
 msgid "When a post you made was favorited by another user."
-msgstr ""
+msgstr "Bir gönderiniz başka bir kullanıcı tarafından favorilendiğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:135
 #, kde-format
@@ -3984,7 +3978,7 @@ msgstr "Anketler"
 #: content/ui/Settings/NotificationsPage.qml:136
 #, kde-format
 msgid "When a poll you voted in has ended."
-msgstr ""
+msgstr "Oy verdiğiniz bir anket bittiğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:148
 #, kde-format
@@ -3994,42 +3988,44 @@ msgstr "Düzenlemeler"
 #: content/ui/Settings/NotificationsPage.qml:149
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
-msgstr ""
+msgstr "Etkileşimde bulunduğunuz bir gönderi yazarı tarafından düzenlendiğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:161
 #, kde-format
 msgid "Server Sign-ups"
-msgstr ""
+msgstr "Sunucu Hesap Kayıtları"
 
 #: content/ui/Settings/NotificationsPage.qml:162
 #, kde-format
 msgid "When someone signs up to your server."
-msgstr ""
+msgstr "Birisi sizi bir sunucuda kayıt ettiğinde"
 
 #: content/ui/Settings/NotificationsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Reports"
+#, kde-format
 msgid "Server Reports"
-msgstr "Raporlar"
+msgstr "Sunucu Raporları"
 
 #: content/ui/Settings/NotificationsPage.qml:178
-#, fuzzy, kde-format
-#| msgctxt "@info:label"
-#| msgid "A report has been filed against a user in your server."
+#, kde-format
 msgid "When someone files a report against a user on your server."
-msgstr "Sunucunuzdaki bir kullanıcı hakkında bir rapor dosyalandı."
+msgstr "Birisi sunucunuzdaki bir kullanıcı hakkında bir rapor dosyaladığında"
 
 #: content/ui/Settings/NotificationsPage.qml:193
 #, kde-format
 msgid "Severed Relationships"
-msgstr ""
+msgstr "Ayrılmış İlişkiler"
 
 #: content/ui/Settings/NotificationsPage.qml:194
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you or your server moderates another server, which you are following "
+#| "users on have followers with."
 msgid ""
 "When you or your server moderates another server, which you are following "
-"users on have followers with."
+"users or have followers with."
 msgstr ""
+"Siz veya sunucunuz, takip ettiğiniz kullanıcıların bulunduğu başka bir "
+"sunucuyu yönettiğinde"
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4065,7 +4061,7 @@ msgstr "PNG, GIF veya JPG. En çok 2 MB. 400 × 400 pks olarak ölçeklendirilir
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
-msgstr ""
+msgstr "Alanlar"
 
 #: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
@@ -4090,7 +4086,7 @@ msgstr "Görünüş"
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Safety"
-msgstr ""
+msgstr "Güvenlik"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:37
 #, kde-format
@@ -4721,11 +4717,10 @@ msgid "Post by %1"
 msgstr "%1 Kişisinin Gönderisi"
 
 #: timeline/trendingnewsmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trending News"
-msgstr "Popüler"
+msgstr "Popüler Haberler"
 
 #: tokodonapplication.cpp:14
 #, kde-format

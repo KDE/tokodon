@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Matjaž Jeran <matjaz.jeran@amis.net>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Matjaž Jeran <matjaz.jeran@amis.net>
 # SPDX-FileCopyrightText: 2024 Jure Repinc <jlp@holodeck1.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-21 00:39+0000\n"
-"PO-Revision-Date: 2024-10-20 10:58+0200\n"
+"POT-Creation-Date: 2024-10-22 00:39+0000\n"
+"PO-Revision-Date: 2024-10-21 07:44+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -206,65 +206,54 @@ msgid "Manage List Users"
 msgstr "Upravljaj uporabnike seznama"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Zahteve za sledenje"
+msgstr "Ni zahtev za sledenje"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No Followers"
 msgstr "Ni sledilcev"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "No Followed Users"
 msgstr "Ni sledenih uporabnikov"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgid "No Muted Users"
-msgstr "Utišani uporabniki"
+msgstr "Ni utišanih uporabnikov"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Blocked Users"
+#, kde-format
 msgid "No Blocked Users"
-msgstr "Blokirani uporabniki"
+msgstr "Ni blokiranih uporabnikov"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Featured Users"
+#, kde-format
 msgid "No Featured Users"
-msgstr "Izpostavljeni uporabniki"
+msgstr "Ni izpostavljenih uporabnikov"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "No Users Favorited This Post"
-msgstr "Ni uporabnika, ki bi se mu priljubila ta objava"
+msgstr "Ni uporabnikov, ki bi se mu priljubila ta objava"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No users boosted this post"
+#, kde-format
 msgid "No Users Boosted This Post"
-msgstr "Ni uporabnika, ki bi izpostavil to objavo"
+msgstr "Ni uporabnikov, ki bi izpostavil to objavo"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Familiar Followers"
+#, kde-format
 msgid "No Familiar Followers"
-msgstr "Znani sledilci"
+msgstr "Ni znanih sledilcov"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgid "No Users"
-msgstr "Uporabniki"
+msgstr "Ni uporabnikov"
 
 #: account/socialgraphmodel.cpp:80
 #, kde-format
@@ -272,44 +261,54 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Nekatere uporabnike je treba ročno odobriti, preden vam lahko sledijo, in "
+"bodo prikazani tukaj."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
+"Utišaj uporabnike, da preprečite njihovo prikazovanje v vaših obvestilih."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr ""
+"Blokiraj uporabnike, da popolnoma skrijete uporabnika s svoje časovnice."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
+"Uporabniki, ki so vam všeč, so lahko predstavljeni in prikazani v vašem "
+"profilu."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
-msgstr ""
+msgstr "Nihče še ni dodal te objave med priljubljene. Morda boste vi prvi?"
 
 #: account/socialgraphmodel.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "No one has boosted this post yet. You should boost it to expand it's "
+#| "reach!"
 msgid ""
-"No one has boosted this post yet. You should boost it to expand it's reach!"
+"No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Nihče še ni izpostavil te objave. Morali bi ga izpostaviti, da razširite "
+"njegov doseg!"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "Na tem seznamu še ni nikogar."
 
 #: account/suggestionsmodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr "Utišani uporabniki"
+msgstr "Predlagani uporabniki"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -415,8 +414,7 @@ msgid "Could not unassign report"
 msgstr "Prijave ni bilo mogoče oddeliti"
 
 #: content/ui/AccountInfo.qml:97
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Ni objav"
@@ -424,20 +422,18 @@ msgstr "Ni objav"
 #: content/ui/AccountInfo.qml:98
 #, kde-format
 msgid "This user hasn't posted anything yet."
-msgstr ""
+msgstr "Ta uporabnik ni še ničesar objavil."
 
 #: content/ui/AccountInfo.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Slike in videi"
+msgstr "Ni medijev"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr ""
+msgstr "Ta uporabnik še ni objavil nobenega medija."
 
 #: content/ui/AccountInfo.qml:279
 #, kde-format
@@ -475,16 +471,14 @@ msgid "Notify me when %1 posts."
 msgstr "Obveščaj me, ko objavlja %1."
 
 #: content/ui/AccountInfo.qml:449
-#, fuzzy, kde-format
-#| msgid "Mention"
+#, kde-format
 msgid "Mention…"
-msgstr "Omemba"
+msgstr "Omeni…"
 
 #: content/ui/AccountInfo.qml:455
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Start a Conversation…"
-msgstr "Pogovori"
+msgstr "Začni pogovor…"
 
 #: content/ui/AccountInfo.qml:464
 #, kde-format
@@ -558,9 +552,7 @@ msgid "Profile link copied."
 msgstr "Povezava profila prekopirana."
 
 #: content/ui/AccountInfo.qml:632
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Pridružen"
@@ -583,24 +575,21 @@ msgid ""
 msgstr "Zapiši nekaj o tem uporabniku, to ni vidno nikomur razen vam."
 
 #: content/ui/AccountInfo.qml:803
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "Also followed by:"
-msgstr "%1 vam sledi"
+msgstr "Sleden tudi od:"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "Poglej profil od %1"
+msgstr "Prikaži %1 več"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
-msgstr "Poglej profil"
+msgstr "Poglej vse"
 
 #: content/ui/AccountInfo.qml:871
 #, kde-format
@@ -686,9 +675,7 @@ msgid "Announcement on %1"
 msgstr "Obvestilo z dne %1"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No announcements"
+#, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "Ni obvestil"
@@ -696,7 +683,7 @@ msgstr "Ni obvestil"
 #: content/ui/AnnouncementsPage.qml:70
 #, kde-format
 msgid "Your server has not made any announcements yet."
-msgstr ""
+msgstr "Vaš strežnik še ni objavil nobene objave."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -756,6 +743,8 @@ msgid ""
 "Direct messages to other users will show up here. Do not share any sensitive "
 "information over a conversation."
 msgstr ""
+"Neposredna sporočila drugim uporabnikom bodo prikazana tukaj. Med pogovorom "
+"ne delite občutljivih informacij."
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
@@ -887,7 +876,7 @@ msgstr "Ključniki"
 #: content/ui/ExplorePage.qml:53
 #, kde-format
 msgid "News"
-msgstr ""
+msgstr "Novice"
 
 #: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
 #, kde-format
@@ -1062,15 +1051,14 @@ msgid "Create List"
 msgstr "Ustvari seznam"
 
 #: content/ui/ListsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No lists"
+#, kde-format
 msgid "No Lists"
 msgstr "Ni seznamov"
 
 #: content/ui/ListsPage.qml:68
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
-msgstr ""
+msgstr "Seznami vam omogočajo, da kategorizirate osebe, ki jih sledite."
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -1447,7 +1435,7 @@ msgstr "Ni objav"
 #: content/ui/Main.qml:395 content/ui/Main.qml:437 content/ui/Main.qml:452
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
-msgstr ""
+msgstr "Trenutno se zdi precej tiho, poskusite kaj objaviti!"
 
 #: content/ui/Main.qml:404 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
@@ -1476,8 +1464,7 @@ msgid "Favorites"
 msgstr "Vzljubitve"
 
 #: content/ui/Main.qml:478
-#, fuzzy, kde-format
-#| msgid "No favorites"
+#, kde-format
 msgid "No Favorites"
 msgstr "Ni priljubljenih"
 
@@ -1487,6 +1474,8 @@ msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
+"Objave, ki jih imate med priljubljenimi, bodo prikazane tukaj. Če cenite "
+"objavo nekoga, jo dodajte med priljubljene!"
 
 #: content/ui/Main.qml:487
 #, kde-format
@@ -1494,10 +1483,9 @@ msgid "Bookmarks"
 msgstr "Zaznamki"
 
 #: content/ui/Main.qml:494
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "No Bookmarks"
-msgstr "Zaznamki"
+msgstr "Ni zaznamkov"
 
 #: content/ui/Main.qml:495
 #, kde-format
@@ -1505,6 +1493,8 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
+"Zaznamujte objave in prikazane bodo tukaj. Zaznamki so vedno zasebni, tudi "
+"za avtorja objave."
 
 #: content/ui/Main.qml:514
 #, kde-format
@@ -1528,10 +1518,9 @@ msgid "Lists"
 msgstr "Seznami"
 
 #: content/ui/Main.qml:559 content/ui/Settings/AccountPage.qml:70
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "Profile"
-msgstr "Poglej profil"
+msgstr "Profil"
 
 #: content/ui/Main.qml:574
 #, kde-format
@@ -2949,33 +2938,28 @@ msgid "Mark All As Read"
 msgstr "Označi vse kot prebrano"
 
 #: content/ui/NotificationPage.qml:33
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
-msgstr "Ni obvestil"
+msgstr "Konfiguriraj obvestila…"
 
 #: content/ui/NotificationPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button Show all of a profile's posts"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Vse"
 
 #: content/ui/NotificationPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Omembe"
 
 #: content/ui/NotificationPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
-msgstr "Prikaži več"
+msgstr "Več"
 
 #: content/ui/NotificationPage.qml:84
 #, kde-format
@@ -3013,11 +2997,16 @@ msgid "No Notifications"
 msgstr "Ni obvestil"
 
 #: content/ui/NotificationPage.qml:259
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "You have no notifications yet. when people reply, favorite or boost your "
+#| "posts they will show up here."
 msgid ""
-"You have no notifications yet. when people reply, favorite or boost your "
+"You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr ""
+"Nimate še nobenega obvestila. Ko bodo ljudje odgovorili, dodali med "
+"priljubljene ali okrepili vaše objave, se bodo prikazali tukaj."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
 #, kde-format
@@ -3659,9 +3648,7 @@ msgid "Are you sure you want to log out of %1?"
 msgstr "Ali ste prepričani, da se želite odjaviti iz %1?"
 
 #: content/ui/Settings/AccountPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Title for the group of account related actions"
-#| msgid "Account"
+#, kde-format
 msgid "Account"
 msgstr "Račun"
 
@@ -3781,17 +3768,17 @@ msgstr "Privzeto odpri dialog z avtorjem objave"
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "Nadaljujte z branjem tam, kjer ste nazadnje končali"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
 msgid "If checked, Tokodon will save where you were in your Home timeline."
-msgstr ""
+msgstr "Če je označeno, bo Tokodon shranil, kje ste bili, na domači časovnici."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "Samodejno posodobi časovnice"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
@@ -3799,6 +3786,8 @@ msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
 msgstr ""
+"Če je označeno, bo Tokodon samodejno posodobil določene časovnice, ko bodo "
+"prišle nove objave."
 
 #: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
@@ -3833,10 +3822,9 @@ msgid "Media"
 msgstr "Slike in videi"
 
 #: content/ui/Settings/AppearancePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Crop images on the timeline to 16x9"
+#, kde-format
 msgid "Crop images on the timeline"
-msgstr "Obreži slike v časovnici na 16×9"
+msgstr "Obreži slike v časovnici"
 
 #: content/ui/Settings/AppearancePage.qml:144
 #, kde-format
@@ -3844,6 +3832,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
+"Če ni označeno, bodo objave s samo eno priloženo sliko neobrezane in "
+"prikazane v celoti."
 
 #: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
@@ -3851,8 +3841,7 @@ msgid "Auto-play animated GIFs"
 msgstr "Samodejno predvajaj animirane GIFe"
 
 #: content/ui/Settings/EditProfilePage.qml:26
-#, fuzzy, kde-format
-#| msgid "Edit Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "Uredi profil"
@@ -3932,7 +3921,7 @@ msgstr "Obvestila se bodo prikazovala samo, ko bo Tokodon tekel."
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
-msgstr ""
+msgstr "Dogodki"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
@@ -3943,7 +3932,7 @@ msgstr "Omembe"
 #, kde-format
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
-msgstr ""
+msgstr "Ko vas nekdo omeni v novi objavi ali odgovori na eno od vaših niti."
 
 #: content/ui/Settings/NotificationsPage.qml:70
 #, kde-format
@@ -3954,6 +3943,7 @@ msgstr "Stanja"
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
+"Ko uporabnik, za katerega imate vklopljena obvestila, objavi novo objavo."
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
@@ -3961,10 +3951,9 @@ msgid "Boosts"
 msgstr "Izpostavitve"
 
 #: content/ui/Settings/NotificationsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "%1 users boosted your post"
+#, kde-format
 msgid "When someone boosted one of your posts."
-msgstr "%1 uporabnikov je izpostavilo vašo objavo"
+msgstr "Ko je nekdo izpostavil eno od vaših objav."
 
 #: content/ui/Settings/NotificationsPage.qml:96
 #, kde-format
@@ -3974,7 +3963,7 @@ msgstr "Novi sledilci"
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
 msgid "When someone follows you."
-msgstr ""
+msgstr "Kadar vam nekdo sledi."
 
 #: content/ui/Settings/NotificationsPage.qml:109
 #, kde-format
@@ -3984,23 +3973,22 @@ msgstr "Nove zahteve za sledenje"
 #: content/ui/Settings/NotificationsPage.qml:110
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
-msgstr ""
+msgstr "Kadar vam želi slediti račun, ki zahteva ročno odobritev."
 
 #: content/ui/Settings/NotificationsPage.qml:123
 #, kde-format
 msgid "When a post you made was favorited by another user."
-msgstr ""
+msgstr "Ko je vašo objavo drug uporabnik označil kot priljubljeno."
 
 #: content/ui/Settings/NotificationsPage.qml:135
 #, kde-format
 msgid "Polls"
-msgstr "Ankete"
+msgstr "Glasovanja"
 
 #: content/ui/Settings/NotificationsPage.qml:136
-#, fuzzy, kde-format
-#| msgid "A poll you voted in has ended"
+#, kde-format
 msgid "When a poll you voted in has ended."
-msgstr "Glasovanje, kjer ste glasovali, se je končalo"
+msgstr "Ko se je glasovanje, kjer ste glasovali, končalo"
 
 #: content/ui/Settings/NotificationsPage.qml:148
 #, kde-format
@@ -4010,42 +3998,44 @@ msgstr "Urejanja"
 #: content/ui/Settings/NotificationsPage.qml:149
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
-msgstr ""
+msgstr "Ko je objavo, s katero ste komunicirali, uredil avtor."
 
 #: content/ui/Settings/NotificationsPage.qml:161
 #, kde-format
 msgid "Server Sign-ups"
-msgstr ""
+msgstr "Prijave na strežnik"
 
 #: content/ui/Settings/NotificationsPage.qml:162
 #, kde-format
 msgid "When someone signs up to your server."
-msgstr ""
+msgstr "Ko se nekdo prijavi na vaš strežnik."
 
 #: content/ui/Settings/NotificationsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Reports"
+#, kde-format
 msgid "Server Reports"
-msgstr "Prijave"
+msgstr "Poročila strežnika"
 
 #: content/ui/Settings/NotificationsPage.qml:178
-#, fuzzy, kde-format
-#| msgctxt "@info:label"
-#| msgid "A report has been filed against a user in your server."
+#, kde-format
 msgid "When someone files a report against a user on your server."
-msgstr "Proti uporabniku na vašem strežniku je bila vložena prijava."
+msgstr "Ko nekdo prijavi uporabnika na vašem strežniku."
 
 #: content/ui/Settings/NotificationsPage.qml:193
 #, kde-format
 msgid "Severed Relationships"
-msgstr ""
+msgstr "Prekinjena razmerja"
 
 #: content/ui/Settings/NotificationsPage.qml:194
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "When you or your server moderates another server, which you are following "
+#| "users on have followers with."
 msgid ""
 "When you or your server moderates another server, which you are following "
-"users on have followers with."
+"users or have followers with."
 msgstr ""
+"Ko vi ali vaš strežnik moderirate drug strežnik, na katerem spremljate "
+"uporabnike, imate sledilce."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4081,7 +4071,7 @@ msgstr "PNG, GIF ali JPG. Največ 2 MB. Zmanjšana bo na 400×400 pik"
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
-msgstr ""
+msgstr "Polja"
 
 #: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
@@ -4106,7 +4096,7 @@ msgstr "Videz"
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Safety"
-msgstr ""
+msgstr "Varnost"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:37
 #, kde-format
@@ -4738,11 +4728,10 @@ msgid "Post by %1"
 msgstr "Objava od %1"
 
 #: timeline/trendingnewsmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trending News"
-msgstr "Značke v trendu"
+msgstr "Novice v trendu"
 
 #: tokodonapplication.cpp:14
 #, kde-format
