@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-22 00:39+0000\n"
-"PO-Revision-Date: 2024-10-19 17:36+0200\n"
+"PO-Revision-Date: 2024-10-21 11:33+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -200,10 +200,9 @@ msgid "Manage List Users"
 msgstr "Gérer les utilisateurs de la liste"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Demandes de suivi"
+msgstr "Aucune demande de suivi"
 
 #: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
@@ -1436,8 +1435,7 @@ msgid "Home"
 msgstr "Accueil"
 
 #: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgid "No Posts"
 msgstr "Aucun message"
 
@@ -3020,10 +3018,9 @@ msgid ""
 msgstr ""
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "%1 has issued a warning against your account"
-msgstr "Prendre des mesures à l'encontre de ce compte"
+msgstr "%1 a émis une alarme concernant ce compte."
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:62
 #, kde-format
@@ -3045,12 +3042,13 @@ msgstr "%1 utilisateurs ont donné un coup de pouce à votre message"
 msgctxt "@info:label"
 msgid "%1 relationships were severed due to moderation actions."
 msgstr ""
+"Les %1 mises en relations ont été rompues en raison d'actions de modération."
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr ""
+msgstr "Un rapport a été déposé contre un utilisateur de votre serveur."
 
 #: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
@@ -3192,9 +3190,7 @@ msgid "Link preview: %1"
 msgstr "Aperçu du lien : %1"
 
 #: content/ui/PostDelegate/LinkPreview.qml:202
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More"
+#, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
 "name next to this label"
@@ -3205,7 +3201,7 @@ msgstr "Plus encore"
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
-msgstr ""
+msgstr "Par %1"
 
 #: content/ui/PostDelegate/MediaContainer.qml:70
 #, kde-format
@@ -3229,12 +3225,10 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: content/ui/PostDelegate/MediaContainer.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Media Description"
-msgstr "Description"
+msgstr "Description du media"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
@@ -3569,19 +3563,16 @@ msgid "Play"
 msgstr "Lire"
 
 #: content/ui/ReadMarker.qml:25
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr "Publié sur %1"
+msgstr "Dernière lecture sur %1"
 
 #: content/ui/ReadMarker.qml:35
-#, fuzzy, kde-format
-#| msgid "Learn More"
+#, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
-msgstr "En apprendre plus"
+msgstr "En charger plus"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
