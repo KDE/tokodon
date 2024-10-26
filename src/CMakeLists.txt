@@ -259,6 +259,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/PostDelegate/AttachmentMenu.qml
         content/ui/PostDelegate/InformationBar.qml
         content/ui/PostDelegate/InteractionButton.qml
+        content/ui/PostDelegate/LinkMenu.qml
         content/ui/PostDelegate/LinkPreview.qml
         content/ui/PostDelegate/MediaContainer.qml
         content/ui/PostDelegate/PostContent.qml

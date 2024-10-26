@@ -24,6 +24,7 @@ QQC2.TextArea {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
+    property string clickedUrl: ""
 
     // Work around QTBUG 93281
     Component.onCompleted: if (text.includes("<img")) {
@@ -51,6 +52,27 @@ QQC2.TextArea {
         acceptedButtons: Qt.LeftButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
         onSingleTapped: root.clicked()
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+
+        onClicked: function(mouse) {
+            const foundLink = root.linkAt(mouse.x, mouse.y);
+
+            if (!foundLink) {
+                return;
+            }
+            console.log("Right-clicked on link:", foundLink);
+            root.clickedUrl = foundLink
+            linkMenu.popup(mouse)
+        }
+    }
+
+    LinkMenu {
+        id: linkMenu
+        url: root.clickedUrl
     }
 
     MouseArea {
