@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-22 00:39+0000\n"
-"PO-Revision-Date: 2024-10-19 12:54+0200\n"
+"PO-Revision-Date: 2024-10-26 12:25+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -204,65 +204,54 @@ msgid "Manage List Users"
 msgstr "Zarządzaj użytkownikami na liście"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Żądania obserwacji"
+msgstr "Nie ma żadnych żądań śledzenia"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No Followers"
-msgstr "Nie ma żadnych obserwujących"
+msgstr "Bez obserwujących"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "No Followed Users"
-msgstr "Nie masz żadnych obserwowanych użytkowników"
+msgstr "Bez obserwowanych użytkowników"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgid "No Muted Users"
-msgstr "Wyciszeni użytkownicy"
+msgstr "Nie masz żadnych wyciszonych użytkowników"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Blocked Users"
+#, kde-format
 msgid "No Blocked Users"
-msgstr "Zablokowani użytkownicy"
+msgstr "Bez zablokowanych użytkowników"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Featured Users"
+#, kde-format
 msgid "No Featured Users"
-msgstr "Wyróżnieni użytkownicy"
+msgstr "Bez wyróżnionych użytkowników"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "No Users Favorited This Post"
 msgstr "Żaden z użytkowników nie dodał tego wpisu do ulubionych"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No users boosted this post"
+#, kde-format
 msgid "No Users Boosted This Post"
 msgstr "Żaden z użytkowników nie udostępnił tego wpisu"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Familiar Followers"
+#, kde-format
 msgid "No Familiar Followers"
-msgstr "Znani obserwujący"
+msgstr "Bez znanych obserwujących"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgid "No Users"
-msgstr "Użytkownicy"
+msgstr "Bez użytkowników"
 
 #: account/socialgraphmodel.cpp:80
 #, kde-format
@@ -270,44 +259,52 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Niektórych użytkowników będzie trzeba ręcznie zatwierdzić zanim będą mogli "
+"cię obserwować. Pojawią się oni tutaj."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
-msgstr ""
+msgstr "Wycisz użytkowników, aby nie pojawiali się w twoich powiadomieniach."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr ""
+"Zablokuj użytkowników, aby ukryć użytkownika całkowicie z twojej osi czasu."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
+"Użytkownicy, których lubisz, mogą zostać wyróżnieni i pokazani na twoim "
+"profilu."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
+"Jeszcze nikt nie dodał tego wpisu do ulubionych. Może to ty będziesz "
+"pierwszym?"
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Nikt nie udostępnił jeszcze tego wpisu. Udostępnij go, aby poszerzyć jego "
+"zasięg!"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "Nie ma jeszcze nikogo na tej liście."
 
 #: account/suggestionsmodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr "Wyciszeni użytkownicy"
+msgstr "Sugerowani użytkownicy"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -413,29 +410,26 @@ msgid "Could not unassign report"
 msgstr "Nie można usunąć przypisania zgłoszeniu"
 
 #: content/ui/AccountInfo.qml:97
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Posts"
-msgstr "Nie ma żadnych wpisów"
+msgstr "Bez wpisów"
 
 #: content/ui/AccountInfo.qml:98
 #, kde-format
 msgid "This user hasn't posted anything yet."
-msgstr ""
+msgstr "Ten użytkownik nie dodał jeszcze żadnego wpisu."
 
 #: content/ui/AccountInfo.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Media"
+msgstr "Bez treści"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr ""
+msgstr "Ten użytkownik nie wysłał jeszcze żadnych treści."
 
 #: content/ui/AccountInfo.qml:279
 #, kde-format
@@ -473,16 +467,14 @@ msgid "Notify me when %1 posts."
 msgstr "Powiadom mnie, gdy %1 coś napisze."
 
 #: content/ui/AccountInfo.qml:449
-#, fuzzy, kde-format
-#| msgid "Mention"
+#, kde-format
 msgid "Mention…"
-msgstr "Wspomnienia"
+msgstr "Wzmianka…"
 
 #: content/ui/AccountInfo.qml:455
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Start a Conversation…"
-msgstr "Rozmowy"
+msgstr "Rozpocznij rozmowę…"
 
 #: content/ui/AccountInfo.qml:464
 #, kde-format
@@ -556,12 +548,10 @@ msgid "Profile link copied."
 msgstr "Skopiowano odnośnik do profilu."
 
 #: content/ui/AccountInfo.qml:632
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
-msgstr "Dołączono"
+msgstr "Dołączył"
 
 #: content/ui/AccountInfo.qml:720
 #, kde-format
@@ -581,24 +571,21 @@ msgid ""
 msgstr "Napisz coś o tym użytkowniku. Będzie to widoczne tylko dla ciebie."
 
 #: content/ui/AccountInfo.qml:803
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "Also followed by:"
-msgstr "%1 obserwuje cię"
+msgstr "Również obserwowany przez:"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "Obejrzyj profil %1"
+msgstr "Obejrzyj %1 więcej"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
-msgstr "Obejrzyj profil"
+msgstr "Zobacz wszystkie"
 
 #: content/ui/AccountInfo.qml:871
 #, kde-format
@@ -681,9 +668,7 @@ msgid "Announcement on %1"
 msgstr "Ogłoszenie nt. %1"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No announcements"
+#, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "Bez ogłoszeń"
@@ -691,7 +676,7 @@ msgstr "Bez ogłoszeń"
 #: content/ui/AnnouncementsPage.qml:70
 #, kde-format
 msgid "Your server has not made any announcements yet."
-msgstr ""
+msgstr "Twój serwer nie obwieścił jeszcze niczego."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -752,6 +737,8 @@ msgid ""
 "Direct messages to other users will show up here. Do not share any sensitive "
 "information over a conversation."
 msgstr ""
+"Tu będą pojawiać się bezpośrednie wiadomości do innych użytkowników. Nie "
+"dziel się żadnymi poufnymi danymi w rozmowach."
 
 #: content/ui/Debug/DebugPage.qml:24
 #, kde-format
@@ -883,7 +870,7 @@ msgstr "Hasztagi"
 #: content/ui/ExplorePage.qml:53
 #, kde-format
 msgid "News"
-msgstr ""
+msgstr "Wieści"
 
 #: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
 #, kde-format
@@ -1057,15 +1044,14 @@ msgid "Create List"
 msgstr "Utwórz listę"
 
 #: content/ui/ListsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No lists"
+#, kde-format
 msgid "No Lists"
 msgstr "Bez listy"
 
 #: content/ui/ListsPage.qml:68
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
-msgstr ""
+msgstr "Listy umożliwiają kategoryzowanie tych, których obserwujesz."
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -1435,15 +1421,14 @@ msgid "Home"
 msgstr "Dom"
 
 #: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
-msgstr "Nie ma żadnych wpisów"
+msgstr "Bez wpisów"
 
 #: content/ui/Main.qml:395 content/ui/Main.qml:437 content/ui/Main.qml:452
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
-msgstr ""
+msgstr "Jest tu teraz całkiem cicho, więc spróbuj napisać coś nowego!"
 
 #: content/ui/Main.qml:404 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
@@ -1472,10 +1457,9 @@ msgid "Favorites"
 msgstr "Ulubione"
 
 #: content/ui/Main.qml:478
-#, fuzzy, kde-format
-#| msgid "No favorites"
+#, kde-format
 msgid "No Favorites"
-msgstr "Brak ulubionych"
+msgstr "Bez ulubionych"
 
 #: content/ui/Main.qml:479
 #, kde-format
@@ -1483,6 +1467,8 @@ msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
+"Tutaj będą się pojawiać wpisy dodane przez ciebie do ulubionych. Jeśli "
+"cenisz czyjś wpis, to dodaj go tutaj!"
 
 #: content/ui/Main.qml:487
 #, kde-format
@@ -1490,10 +1476,9 @@ msgid "Bookmarks"
 msgstr "Zakładki"
 
 #: content/ui/Main.qml:494
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "No Bookmarks"
-msgstr "Zakładki"
+msgstr "Brak zakładek"
 
 #: content/ui/Main.qml:495
 #, kde-format
@@ -1501,6 +1486,8 @@ msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
+"Dodaj wpis do zakładek, a pojawi się on tutaj. Zakładki trzymane są w "
+"prywatności, nawet wobec autora wpisu."
 
 #: content/ui/Main.qml:514
 #, kde-format
@@ -1524,10 +1511,9 @@ msgid "Lists"
 msgstr "Listy"
 
 #: content/ui/Main.qml:559 content/ui/Settings/AccountPage.qml:70
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "Profile"
-msgstr "Obejrzyj profil"
+msgstr "Profil"
 
 #: content/ui/Main.qml:574
 #, kde-format
@@ -2945,33 +2931,28 @@ msgid "Mark All As Read"
 msgstr "Oznacz wszystkie jako przeczytane"
 
 #: content/ui/NotificationPage.qml:33
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
-msgstr "Bez powiadomień"
+msgstr "Ustawienia powiadomień..."
 
 #: content/ui/NotificationPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button Show all of a profile's posts"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Wszystkie"
 
 #: content/ui/NotificationPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Wspomnienia"
 
 #: content/ui/NotificationPage.qml:68
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
-msgstr "Pokaż więcej"
+msgstr "Więcej"
 
 #: content/ui/NotificationPage.qml:84
 #, kde-format
@@ -3014,12 +2995,13 @@ msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
 msgstr ""
+"Nie masz jeszcze żadnych powiadomień. Gdy ktoś odpowie, doda do ulubionych "
+"lub udostępni twój wpis, to pojawi się on tutaj."
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
-#, fuzzy, kde-format
-#| msgid "Take action against this account"
+#, kde-format
 msgid "%1 has issued a warning against your account"
-msgstr "Podejmij działania względem tego konta"
+msgstr "%1 wydał ostrzeżenie o twoim koncie"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:62
 #, kde-format
@@ -3040,13 +3022,13 @@ msgstr "%1 użytkowników udostępniło twój wpis"
 #, kde-format
 msgctxt "@info:label"
 msgid "%1 relationships were severed due to moderation actions."
-msgstr ""
+msgstr "%1 stosunków zostało zerwanych ze względu na działania moderacyjne."
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
 msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
-msgstr ""
+msgstr "Ktoś zgłosił innego użytkownika na twoim serwerze."
 
 #: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
@@ -3190,20 +3172,18 @@ msgid "Link preview: %1"
 msgstr "Podgląd łącza: %1"
 
 #: content/ui/PostDelegate/LinkPreview.qml:202
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More"
+#, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
 "name next to this label"
 msgid "More from"
-msgstr "Więcej"
+msgstr "Więcej od"
 
 #: content/ui/PostDelegate/LinkPreview.qml:239
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
-msgstr ""
+msgstr "Przez %1"
 
 #: content/ui/PostDelegate/MediaContainer.qml:70
 #, kde-format
@@ -3227,12 +3207,10 @@ msgid "Video"
 msgstr "Nagrania"
 
 #: content/ui/PostDelegate/MediaContainer.qml:125
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Media Description"
-msgstr "Opis"
+msgstr "Opis treści"
 
 #: content/ui/PostDelegate/PostDelegate.qml:95
 #, kde-format
@@ -3565,19 +3543,16 @@ msgid "Play"
 msgstr "Odtwórz"
 
 #: content/ui/ReadMarker.qml:25
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr "Wysłano dnia %1"
+msgstr "Ostatnio odczytany dnia %1"
 
 #: content/ui/ReadMarker.qml:35
-#, fuzzy, kde-format
-#| msgid "Learn More"
+#, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
-msgstr "Dowiedz się więcej"
+msgstr "Wczytaj więcej"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3659,9 +3634,7 @@ msgid "Are you sure you want to log out of %1?"
 msgstr "Czy na pewno wylogować się z %1?"
 
 #: content/ui/Settings/AccountPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Title for the group of account related actions"
-#| msgid "Account"
+#, kde-format
 msgid "Account"
 msgstr "Konto"
 
@@ -3782,17 +3755,19 @@ msgstr "Domyślnie otwórz twórcę wpisów"
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "Wznów czytanie w miejscu, w którym ostatnio przerwałeś"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
 msgid "If checked, Tokodon will save where you were in your Home timeline."
 msgstr ""
+"Po zaznaczeniu, Tokodon zapisze miejsce twojego przebywania na domowej osi "
+"czasu."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "Sam uaktualniaj osie czasu"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
@@ -3800,6 +3775,8 @@ msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
 msgstr ""
+"Po zaznaczeniu, Tokodon sam uaktualni niektóre z osi czasu po dotarciu "
+"nowych wpisów."
 
 #: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
@@ -3834,10 +3811,9 @@ msgid "Media"
 msgstr "Media"
 
 #: content/ui/Settings/AppearancePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Crop images on the timeline to 16x9"
+#, kde-format
 msgid "Crop images on the timeline"
-msgstr "Przytnij obrazy na osi czasu do 16x9"
+msgstr "Przytnij obrazy na osi czasu"
 
 #: content/ui/Settings/AppearancePage.qml:144
 #, kde-format
@@ -3845,6 +3821,8 @@ msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr ""
+"Po odznaczeniu, wpisy z załączonym tylko obrazem nie zostaną przycięte i "
+"zostaną pokazane w pełni."
 
 #: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
@@ -3852,8 +3830,7 @@ msgid "Auto-play animated GIFs"
 msgstr "Sam odtwarzaj animowane GIFy"
 
 #: content/ui/Settings/EditProfilePage.qml:26
-#, fuzzy, kde-format
-#| msgid "Edit Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "Edytuj profil"
@@ -3934,7 +3911,7 @@ msgstr "Powiadomienia będą się pojawiać, tylko gdy będzie uruchomiony Tokod
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
-msgstr ""
+msgstr "Wydarzenia"
 
 #: content/ui/Settings/NotificationsPage.qml:57
 #, kde-format
@@ -3946,6 +3923,7 @@ msgstr "Wspomnienia"
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
 msgstr ""
+"Gdy ktoś wspomni cię w nowym wpisie lub odpowie na twój w jakimś wątku."
 
 #: content/ui/Settings/NotificationsPage.qml:70
 #, kde-format
@@ -3956,6 +3934,7 @@ msgstr "Wpisy"
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
 msgstr ""
+"Gdy użytkownik, dla którego masz włączone powiadomienia, doda nowy wpis."
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
@@ -3963,10 +3942,9 @@ msgid "Boosts"
 msgstr "Udostępnia"
 
 #: content/ui/Settings/NotificationsPage.qml:84
-#, fuzzy, kde-format
-#| msgid "%1 users boosted your post"
+#, kde-format
 msgid "When someone boosted one of your posts."
-msgstr "%1 użytkowników udostępniło twój wpis"
+msgstr "Gdy ktoś udostępni jeden z twoich wpisów."
 
 #: content/ui/Settings/NotificationsPage.qml:96
 #, kde-format
@@ -3976,7 +3954,7 @@ msgstr "Nowi obserwujący"
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
 msgid "When someone follows you."
-msgstr ""
+msgstr "Gdy ktoś cię obserwuje."
 
 #: content/ui/Settings/NotificationsPage.qml:109
 #, kde-format
@@ -3987,11 +3965,12 @@ msgstr "Nowa prośba o możliwość obserwacji"
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
 msgstr ""
+"Gdy konto, które wymaga ręcznego zatwierdzenia będzie chciało cię obserwować."
 
 #: content/ui/Settings/NotificationsPage.qml:123
 #, kde-format
 msgid "When a post you made was favorited by another user."
-msgstr ""
+msgstr "Gdy dodany przez ciebie wpis inny użytkownik dodał do ulubionych."
 
 #: content/ui/Settings/NotificationsPage.qml:135
 #, kde-format
@@ -3999,10 +3978,9 @@ msgid "Polls"
 msgstr "Głosowania"
 
 #: content/ui/Settings/NotificationsPage.qml:136
-#, fuzzy, kde-format
-#| msgid "A poll you voted in has ended"
+#, kde-format
 msgid "When a poll you voted in has ended."
-msgstr "Głosowanie, w którym brałeś udział, zakończyło się"
+msgstr "Gdy głosowanie, w którym wziąłeś udział, dobiegło końca."
 
 #: content/ui/Settings/NotificationsPage.qml:148
 #, kde-format
@@ -4013,32 +3991,32 @@ msgstr "Edycje"
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
 msgstr ""
+"Gdy wpis, na który jakoś zareagowałeś, został zmieniony przez jego autora."
 
 #: content/ui/Settings/NotificationsPage.qml:161
 #, kde-format
 msgid "Server Sign-ups"
-msgstr ""
+msgstr "Zapisy na serwer"
 
 #: content/ui/Settings/NotificationsPage.qml:162
 #, kde-format
 msgid "When someone signs up to your server."
-msgstr ""
+msgstr "Gdy ktoś zapisuje się na twoim serwerze."
 
 #: content/ui/Settings/NotificationsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Reports"
+#, kde-format
 msgid "Server Reports"
-msgstr "Zgłoszenia"
+msgstr "Zgłoszenia serwera"
 
 #: content/ui/Settings/NotificationsPage.qml:178
 #, kde-format
 msgid "When someone files a report against a user on your server."
-msgstr ""
+msgstr "Gdy ktoś zgłasza innego użytkownika na twoim serwerze."
 
 #: content/ui/Settings/NotificationsPage.qml:193
 #, kde-format
 msgid "Severed Relationships"
-msgstr ""
+msgstr "Zerwanych stosunków"
 
 #: content/ui/Settings/NotificationsPage.qml:194
 #, kde-format
@@ -4046,6 +4024,8 @@ msgid ""
 "When you or your server moderates another server, which you are following "
 "users or have followers with."
 msgstr ""
+"Gdy ty lub twój serwer moderuje inny serwer, na którym obserwujesz "
+"użytkowników lub oni cię obserwują."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4083,7 +4063,7 @@ msgstr ""
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
-msgstr ""
+msgstr "Pola"
 
 #: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
@@ -4108,7 +4088,7 @@ msgstr "Wygląd"
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Safety"
-msgstr ""
+msgstr "Bezpieczeństwo"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:37
 #, kde-format
@@ -4740,11 +4720,10 @@ msgid "Post by %1"
 msgstr "Wysłane przez %1"
 
 #: timeline/trendingnewsmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Trending Tags"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trending News"
-msgstr "Znaczniki na czasie"
+msgstr "Wieści na czasie"
 
 #: tokodonapplication.cpp:14
 #, kde-format
