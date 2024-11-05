@@ -24,6 +24,7 @@ QQC2.TextArea {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
+    property string clickedUrl: ""
 
     // Work around QTBUG 93281
     Component.onCompleted: if (text.includes("<img")) {
@@ -51,6 +52,27 @@ QQC2.TextArea {
         acceptedButtons: Qt.LeftButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
         onSingleTapped: root.clicked()
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+
+        onClicked: function(mouse) {
+            const foundLink = root.linkAt(mouse.x, mouse.y);
+            if (!foundLink) {
+                return;
+            }
+            console.log("Right-clicked on link:", foundLink);
+
+            const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
+            const linkMenu = linkMenuComponent.createObject(root, {
+                id: 'linkMenu',
+                url: foundLink,
+            });
+
+            linkMenu.popup(mouse);
+        }
     }
 
     MouseArea {
