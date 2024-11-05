@@ -12,7 +12,6 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
-import org.kde.config as KConfig
 
 import "./StatusComposer"
 import "./PostDelegate"
@@ -694,10 +693,6 @@ StatefulApp.StatefulWindow {
         Kirigami.LoadingPlaceholder {
             anchors.centerIn: parent
         }
-    }
-
-    KConfig.WindowStateSaver {
-        configGroupName: "MainWindow"
     }
 
     Connections {
