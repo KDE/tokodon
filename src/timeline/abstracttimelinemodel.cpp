@@ -48,6 +48,7 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {SensitiveRole, QByteArrayLiteral("sensitive")},
         {IsThreadReplyRole, "isThreadReply"},
         {IsLastThreadReplyRole, QByteArrayLiteral("isLastThreadReply")},
+        {ShowReadMarkerRole, "showReadMarker"},
 
         // Additional content
         {CardRole, QByteArrayLiteral("card")},

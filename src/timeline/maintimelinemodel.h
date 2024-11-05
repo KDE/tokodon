@@ -53,6 +53,8 @@ public:
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
+    QVariant data(const QModelIndex &index, int role) const override;
+
     [[nodiscard]] bool atEnd() const;
     [[nodiscard]] bool hasPrevious() const;
     [[nodiscard]] QDateTime lastReadTime() const;

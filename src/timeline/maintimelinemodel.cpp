@@ -3,6 +3,8 @@
 
 #include "timeline/maintimelinemodel.h"
 
+#include "abstracttimelinemodel.h"
+#include "identity.h"
 #include "texthandler.h"
 
 #include <KLocalizedString>
@@ -93,7 +95,6 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
     // If we are fetching the home timeline, then make sure we fetch the read marker first before continuing.
     if (isHome && !fetchingLastId && Config::continueReading()) {
         fetchLastReadId();
-        return;
     }
 
     // If we are trying to load a list, don't continue without knowing which one to load.
@@ -146,7 +147,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
         url,
         true,
         this,
-        [this, currentTimelineName = m_timelineName, account = m_account, backwards, isHome](QNetworkReply *reply) {
+        [this, fromId, currentTimelineName = m_timelineName, account = m_account, backwards, isHome](QNetworkReply *reply) {
             // This weird m_account != account is to protect against account switches that might happen while loading
             // Ditto for timeline name
             if (m_account != account || m_timelineName != currentTimelineName) {
@@ -169,17 +170,14 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             }
 
             fetchedTimeline(reply->readAll(), !publicTimelines.contains(m_timelineName));
+            if (fromId.isEmpty() && isHome) {
+                m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
+            }
 
             // hasPrevious depends not just on m_prev, but also m_timeline!
             Q_EMIT hasPreviousChanged();
 
             setLoading(false);
-
-            // Only overwrite the read marker if they hit the button themselves
-            if (m_userHasTakenReadAction && isHome && backwards && Config::continueReading()) {
-                // We want to force a refresh of the read marker in case we reached the top
-                m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
-            }
         },
         [this](const QNetworkReply *reply) {
             Q_UNUSED(reply)
@@ -252,7 +250,6 @@ void MainTimelineModel::fetchLastReadId()
         Q_EMIT hasPreviousChanged();
 
         fetchedLastId = true;
-        fillTimeline(m_lastReadId);
     });
 }
 
@@ -288,6 +285,21 @@ QDateTime MainTimelineModel::lastReadTime() const
 bool MainTimelineModel::userHasTakenReadAction() const
 {
     return m_userHasTakenReadAction;
+}
+
+QVariant MainTimelineModel::data(const QModelIndex &index, int role) const
+{
+    if (role != ShowReadMarkerRole) {
+        return TimelineModel::data(index, role);
+    }
+
+    if (!fetchedLastId) {
+        return false;
+    }
+
+    const auto postId = data(index, OriginalIdRole).toLongLong();
+
+    return m_lastReadId.toLongLong() >= postId;
 }
 
 #include "moc_maintimelinemodel.cpp"

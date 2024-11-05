@@ -6,38 +6,20 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
+import org.kde.coreaddons as CoreAddons
 
-ColumnLayout {
+QQC2.Label {
     id: root
 
-    property alias shouldShowDate: dateLabel.visible
     required property var date
-
-    spacing: 0
-
-    signal clicked()
 
     Layout.alignment: Qt.AlignHCenter
 
-    QQC2.Label {
-        id: dateLabel
+    text: i18nc("Last read on this date", "Last read: %1", CoreAddons.Format.formatRelativeDateTime(root.date, Locale.ShortFormat))
+    color: Kirigami.Theme.disabledTextColor
+    verticalAlignment: Qt.AlignVCenter
+    horizontalAlignment: Qt.AlignHCenter
 
-        text: i18nc("Last read on this date", "Last read on %1", Qt.formatDate(root.date))
-        color: Kirigami.Theme.disabledTextColor
-        verticalAlignment: Qt.AlignVCenter
-        horizontalAlignment: Qt.AlignHCenter
-
-        Layout.fillWidth: true
-        Layout.topMargin: Kirigami.Units.largeSpacing
-    }
-
-    QQC2.Button {
-        text: i18nc("@action:button Load more posts above this", "Load More")
-        icon.name: "content-loading-symbolic"
-
-        onClicked: root.clicked()
-
-        Layout.alignment: Qt.AlignHCenter
-        Layout.topMargin: Kirigami.Units.largeSpacing
-    }
+    Layout.fillWidth: true
+    Layout.topMargin: Kirigami.Units.largeSpacing
 }

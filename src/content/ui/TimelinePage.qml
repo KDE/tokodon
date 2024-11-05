@@ -142,24 +142,26 @@ Kirigami.ScrollablePage {
         model: root.model
         isCurrentPage: root.isCurrentPage
 
-        header: Kirigami.FlexColumn {
-            id: flexColumn
+        section {
+            property: "showReadMarker"
+            delegate: Kirigami.FlexColumn {
+                id: flexColumn
 
-            spacing: 0
-            padding: 0
-            maximumWidth: Kirigami.Units.gridUnit * 40
+                required property bool section
 
-            width: parent.width
-            height: visible ? Kirigami.Units.gridUnit * 4 : 0
-            visible: root.model.hasPrevious ?? false
+                spacing: 0
+                padding: 0
+                maximumWidth: Kirigami.Units.gridUnit * 40
 
-            ReadMarker {
-                shouldShowDate: !root.model.userHasTakenReadAction
-                date: root.model.lastReadTime
-                onClicked: timelineModel.fetchPrevious()
+                width: parent.width
 
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                ReadMarker {
+                    date: root.model.lastReadTime
+                    visible: flexColumn.section
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
             }
         }
     }
