@@ -132,7 +132,7 @@ MastoPage {
                     return;
                 }
 
-                root.account = AccountManager.createNewAccount(instanceUrl.text, sslErrors.checked, adminScopeDelegate.checked);
+                root.account = AccountManager.createNewAccount(instanceUrl.text, false, adminScopeDelegate.checked);
 
                 // Determine the best authorization type
                 if (Kirigami.Settings.isMobile && Navigation.hasWebView()) {
