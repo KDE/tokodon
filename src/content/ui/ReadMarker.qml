@@ -13,7 +13,7 @@ ColumnLayout {
     property alias shouldShowDate: dateLabel.visible
     required property var date
 
-    spacing: 0
+    spacing: Kirigami.Units.largeSpacing
 
     signal clicked()
 
@@ -38,6 +38,10 @@ ColumnLayout {
         onClicked: root.clicked()
 
         Layout.alignment: Qt.AlignHCenter
-        Layout.topMargin: Kirigami.Units.largeSpacing
+    }
+
+    Kirigami.Separator {
+        Layout.fillWidth: true
+        Layout.topMargin: -2
     }
 }
