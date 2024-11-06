@@ -150,16 +150,41 @@ Kirigami.ScrollablePage {
             maximumWidth: Kirigami.Units.gridUnit * 40
 
             width: parent.width
-            height: visible ? Kirigami.Units.gridUnit * 4 : 0
+            height: visible ? Kirigami.Units.gridUnit * 2 : 0
             visible: root.model.hasPrevious ?? false
 
-            ReadMarker {
-                shouldShowDate: !root.model.userHasTakenReadAction
-                date: root.model.lastReadTime
+            QQC2.Button {
+                text: i18nc("@action:button Load more posts above this", "Load More")
+                icon.name: "content-loading-symbolic"
+
                 onClicked: timelineModel.fetchPrevious()
 
-                Layout.fillWidth: true
-                Layout.fillHeight: true
+                Layout.alignment: Qt.AlignHCenter
+                Layout.topMargin: Kirigami.Units.largeSpacing
+            }
+        }
+
+        section {
+            property: "showReadMarker"
+            delegate: Kirigami.FlexColumn {
+                id: flexColumn
+
+                required property bool section
+
+                spacing: 0
+                padding: 0
+                maximumWidth: Kirigami.Units.gridUnit * 40
+
+                width: parent.width
+                height: visible ? Kirigami.Units.gridUnit * 2 : 0
+
+                ReadMarker {
+                    date: root.model.lastReadTime
+                    visible: flexColumn.section
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
             }
         }
     }

@@ -76,6 +76,8 @@ public:
 
         PostRole, /** The original Post object. */
 
+        ShowReadMarkerRole, /** Show the read marker above this post */
+
         ExtraRole, /** Base role for sub-class roles. */
     };
 
