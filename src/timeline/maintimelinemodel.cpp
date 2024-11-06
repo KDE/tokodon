@@ -174,12 +174,6 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             Q_EMIT hasPreviousChanged();
 
             setLoading(false);
-
-            // Only overwrite the read marker if they hit the button themselves
-            if (m_userHasTakenReadAction && isHome && backwards && Config::continueReading()) {
-                // We want to force a refresh of the read marker in case we reached the top
-                m_account->saveTimelinePosition(QStringLiteral("home"), m_timeline.first()->originalPostId());
-            }
         },
         [this](const QNetworkReply *reply) {
             Q_UNUSED(reply)
@@ -264,6 +258,21 @@ void MainTimelineModel::fetchPrevious()
     m_userHasTakenReadAction = true;
     Q_EMIT userHasTakenReadActionChanged();
     fillTimeline({}, true);
+}
+
+void MainTimelineModel::updateReadMarker(const QString &postId)
+{
+    const bool isHome = m_timelineName == QStringLiteral("home");
+
+    // Only overwrite the read marker if they hit the button themselves
+    if (isHome && Config::continueReading()) {
+        const auto lastReadId = m_lastReadId.toULongLong();
+        if (postId.toULongLong() > lastReadId) {
+            // We want to force a refresh of the read marker in case we reached the top
+            m_account->saveTimelinePosition(QStringLiteral("home"), postId);
+            m_lastReadId = postId;
+        }
+    }
 }
 
 bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const

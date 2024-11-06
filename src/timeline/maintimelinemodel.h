@@ -64,6 +64,7 @@ public:
     bool loading() const override;
 
     Q_INVOKABLE void fetchPrevious();
+    Q_INVOKABLE void updateReadMarker(const QString &postId);
 
 Q_SIGNALS:
     void atEndChanged();
