@@ -53,6 +53,8 @@ public:
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
     bool canFetchMore(const QModelIndex &parent) const override;
 
+    QVariant data(const QModelIndex &index, int role) const override;
+
     [[nodiscard]] bool atEnd() const;
     [[nodiscard]] bool hasPrevious() const;
     [[nodiscard]] QDateTime lastReadTime() const;
@@ -75,7 +77,7 @@ private:
     QString m_listId;
 
     std::optional<QUrl> m_next, m_prev;
-    QString m_lastReadId;
+    QString m_lastReadId, m_initialLastReadId;
     bool fetchingLastId = false;
     bool fetchedLastId = false;
 

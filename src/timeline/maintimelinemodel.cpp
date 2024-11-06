@@ -246,6 +246,9 @@ void MainTimelineModel::fetchLastReadId()
         const auto doc = QJsonDocument::fromJson(reply->readAll());
 
         m_lastReadId = doc.object()[QLatin1String("home")].toObject()[QLatin1String("last_read_id")].toString();
+        if (m_initialLastReadId.isEmpty()) {
+            m_initialLastReadId = m_lastReadId;
+        }
         m_lastReadTime =
             QDateTime::fromString(doc.object()[QLatin1String("home")].toObject()[QLatin1String("updated_at")].toString(), Qt::ISODate).toLocalTime();
 
@@ -267,6 +270,20 @@ bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
     return !atEnd();
+}
+
+QVariant MainTimelineModel::data(const QModelIndex &index, int role) const
+{
+    if (role != ShowReadMarkerRole) {
+        return TimelineModel::data(index, role);
+    }
+
+    if (!fetchedLastId) {
+        return false;
+    }
+
+    const auto postId = data(index, OriginalIdRole).toLongLong();
+    return m_initialLastReadId.toLongLong() >= postId;
 }
 
 bool MainTimelineModel::hasPrevious() const

@@ -83,6 +83,8 @@ QHash<int, QByteArray> AbstractTimelineModel::roleNames() const
         {IsGroupRole, "isGroup"},
         {NumInGroupRole, "numInGroup"},
         {IsInGroupRole, "isInGroup"},
+
+        {ShowReadMarkerRole, "showReadMarker"},
     };
 }
 
