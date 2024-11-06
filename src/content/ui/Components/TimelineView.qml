@@ -164,7 +164,7 @@ ListView {
         width: ListView.view.width
 
         Connections {
-            target: ListView.view
+            target: status.ListView.view
 
             function onContentYChanged(): void {
                 const aMin = status.y;
@@ -192,6 +192,9 @@ ListView {
                 }
 
                 status.inViewPort = topEdgeVisible || bottomEdgeVisible;
+                if (status.inViewPort) {
+                    status.ListView.view.model.updateReadMarker(status.originalId);
+                }
             }
         }
 
