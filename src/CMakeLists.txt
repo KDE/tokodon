@@ -532,6 +532,8 @@ if(ANDROID)
             "unlock"
             "dialog-warning-symbolic"
             "list-remove-user"
+            "window-close"
+            "window-close-symbolic"
             )
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
