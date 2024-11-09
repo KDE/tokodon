@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
     KAboutData about(QStringLiteral("tokodon"),
                      i18n("Tokodon"),
                      QStringLiteral(TOKODON_VERSION_STRING),
-                     i18n("Mastodon client"),
+                     i18n("Browse the Fediverse"),
                      KAboutLicense::GPL_V3,
                      i18n("© 2021-2024 Carl Schwan, 2021-2024 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"),
@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 #endif
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("Client for decentralized social networks like Mastodon"));
+    parser.setApplicationDescription(i18n("Browse the Fediverse"));
     parser.addPositionalArgument(QStringLiteral("urls"), i18n("Supports https and web+ap url scheme"));
 
     QCommandLineOption shareOption(QStringLiteral("share"), i18n("Share a line of text in the standalone composer."), i18n("The text to share."));
