@@ -599,7 +599,7 @@ Kirigami.ScrollablePage {
                         case StatusComposer.New:
                             return "document-send-symbolic";
                         case StatusComposer.Reply:
-                            return "tokodon-post-reply";
+                            return "view-conversation-balloon-symbolic";
                         case StatusComposer.Redraft:
                             return "edit-redo-symbolic";
                         case StatusComposer.Edit:

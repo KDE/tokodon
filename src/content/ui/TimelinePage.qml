@@ -94,14 +94,14 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 id: showBoostsAction
                 text: i18n("Show Boosts")
-                icon.name: "tokodon-post-boost"
+                icon.name: "boost"
                 checkable: true
                 checked: true
             }
             Kirigami.Action {
                 id: showRepliesAction
                 text: i18n("Show Replies")
-                icon.name: "tokodon-post-reply"
+                icon.name: "view-conversation-balloon-symbolic"
                 checkable: true
                 checked: true
             }

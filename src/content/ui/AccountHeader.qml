@@ -281,7 +281,7 @@ QQC2.Pane {
                             onTriggered: Navigation.openComposer("@" + root.identity.account + " ")
                         },
                         Kirigami.Action {
-                            icon.name: "tokodon-chat-reply"
+                            icon.name: "view-conversation-balloon-symbolic"
                             visible: !root.isSelf
                             text: i18n("Start a Conversation…")
                             onTriggered: Navigation.openConversation(root.identity.account)

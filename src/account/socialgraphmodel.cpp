@@ -119,9 +119,9 @@ QString SocialGraphModel::placeholderIconName() const
     } else if (m_followListName == QStringLiteral("featured")) {
         return QStringLiteral("favorite");
     } else if (m_followListName == QStringLiteral("favourited_by")) {
-        return QStringLiteral("tokodon-post-favorite");
+        return QStringLiteral("favorite");
     } else if (m_followListName == QStringLiteral("reblogged_by")) {
-        return QStringLiteral("tokodon-post-boost");
+        return QStringLiteral("boost");
     } else if (m_followListName == QStringLiteral("familiar_followers")) {
         return QStringLiteral("list-add-user");
     } else if (m_followListName == QStringLiteral("list")) {

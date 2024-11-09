@@ -463,7 +463,7 @@ StatefulApp.StatefulWindow {
     }
 
     property Kirigami.Action conversationAction: Kirigami.Action {
-        icon.name: "tokodon-chat-reply"
+        icon.name: "view-conversation-balloon-symbolic"
         text: i18n("Conversations")
         checkable: true
         onTriggered: {
@@ -474,14 +474,14 @@ StatefulApp.StatefulWindow {
     }
 
     property Kirigami.Action favouritesAction: Kirigami.Action {
-        icon.name: "tokodon-post-favorite"
+        icon.name: "favorite"
         text: i18n("Favorites")
         checkable: true
         onTriggered: {
             pageStack.clear();
             pageStack.push(mainTimeline.createObject(root), {
                 name: "favourites",
-                iconName: "tokodon-post-favorite",
+                iconName: "favorite",
                 placeholderText: i18n("No Favorites"),
                 placeholderExplanation: i18n("Posts that you favorite will show up here. If you appreciate someone's post, favorite it!")
             });

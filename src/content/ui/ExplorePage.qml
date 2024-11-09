@@ -39,7 +39,7 @@ Kirigami.Page {
 
     property Kirigami.Action trendingPostsAction: Kirigami.Action {
         text: i18n("Posts")
-        icon.name: "tokodon-chat-reply"
+        icon.name: "view-conversation-balloon-symbolic"
         checkable: true
     }
 

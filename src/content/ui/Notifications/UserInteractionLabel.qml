@@ -30,9 +30,9 @@ RowLayout {
     Kirigami.Icon {
         source: {
             if (root.isBoost) {
-                return "tokodon-post-boost"
+                return "boost"
             } else if (root.isReply || root.isStatus) {
-                return "tokodon-post-reply"
+                return "view-conversation-balloon-symbolic"
             } else if (root.isFavorite) {
                 return "favorite"
             } else if (root.isUpdate) {

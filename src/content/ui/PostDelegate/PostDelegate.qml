@@ -447,8 +447,8 @@ QQC2.ItemDelegate {
                 leftPadding: buttonLayout.buttonPadding
 
                 interacted: root.repliesCount > 0
-                iconName: "tokodon-post-reply"
-                interactedIconName: "tokodon-post-reply-filled"
+                iconName: "view-conversation-balloon-symbolic"
+                interactedIconName: "view-conversation-balloon-symbolic"
 
                 tooltip: i18nc("Reply to a post", "Reply")
                 text: Config.showPostStats && !root.selected ? root.repliesCount : ''
@@ -471,8 +471,8 @@ QQC2.ItemDelegate {
 
                 enabled: root.visibility !== Post.Direct && root.visibility !== Post.Private
 
-                iconName: 'tokodon-post-boost'
-                interactedIconName: 'tokodon-post-boosted'
+                iconName: 'boost'
+                interactedIconName: 'boost-boosted'
 
                 text: Config.showPostStats && !root.selected ? root.reblogsCount : ''
                 tooltip: {
@@ -502,8 +502,8 @@ QQC2.ItemDelegate {
                 interacted: root.favourited
                 interactionColor: "#fa8865"
 
-                iconName: 'tokodon-post-favorite'
-                interactedIconName: 'tokodon-post-favorited'
+                iconName: 'favorite'
+                interactedIconName: 'favorite-favorited'
 
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
                 tooltip: i18nc("Favorite a post", "Favorite")
@@ -526,7 +526,7 @@ QQC2.ItemDelegate {
                 interactionColor: "#1b89f3"
 
                 iconName: 'bookmarks'
-                interactedIconName: 'tokodon-post-bookmarked'
+                interactedIconName: 'bookmarks-bookmarked'
 
                 tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
 
