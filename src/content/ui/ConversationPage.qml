@@ -31,7 +31,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            icon.name: "tokodon-chat-reply"
+            icon.name: "view-conversation-balloon-symbolic"
             text: i18n("No Conversations")
             explanation: i18n("Direct messages to other users will show up here. Do not share any sensitive information over a conversation.")
             visible: conversationView.count === 0 && !conversationView.model.loading

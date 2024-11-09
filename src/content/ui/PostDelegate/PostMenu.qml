@@ -82,7 +82,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
         enabled: visible
-        icon.name: "tokodon-post-reply"
+        icon.name: "view-conversation-balloon-symbolic"
         text: i18nc("@action:inmenu", "Reply as…")
         onTriggered: applicationWindow().requestCrossAction('reply', url)
     }
@@ -90,7 +90,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
         enabled: visible
-        icon.name: "tokodon-post-favorite"
+        icon.name: "favorite"
         text: i18nc("@action:inmenu", "Favorite as…")
         onTriggered: applicationWindow().requestCrossAction('favourite', url)
     }
@@ -98,7 +98,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         visible: root.hasMultipleAccounts
         enabled: visible
-        icon.name: "tokodon-post-boost"
+        icon.name: "boost"
         text: i18nc("@action:inmenu", "Boost as…")
         onTriggered: applicationWindow().requestCrossAction('reblog', url)
     }

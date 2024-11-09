@@ -27,7 +27,7 @@ RowLayout {
     Kirigami.Icon {
         source: {
             if (root.isBoost) {
-                return "tokodon-post-boost"
+                return "boost"
             } else if (root.isFavorite) {
                 return "favorite"
             }

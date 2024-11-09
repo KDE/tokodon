@@ -450,7 +450,7 @@ Kirigami.Page {
                                             onTriggered: Navigation.openComposer("@" + accountModel.identity.account + " ")
                                         },
                                         Kirigami.Action {
-                                            icon.name: "tokodon-chat-reply"
+                                            icon.name: "view-conversation-balloon-symbolic"
                                             visible: !accountModel.isSelf
                                             text: i18n("Start a Conversation…")
                                             onTriggered: Navigation.openConversation(accountModel.identity.account)

@@ -98,7 +98,7 @@ ColumnLayout {
         }
 
         Kirigami.Chip {
-            icon.name: "tokodon-post-favorited"
+            icon.name: "favorite-favorited"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
             text: {
@@ -124,7 +124,7 @@ ColumnLayout {
         }
 
         Kirigami.Chip {
-            icon.name: "tokodon-post-boosted"
+            icon.name: "boost-boosted"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
             text: {

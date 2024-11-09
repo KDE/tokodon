@@ -46,7 +46,7 @@ Kirigami.Page {
             Kirigami.Action {
                 id: showBoostsAction
                 text: i18nc("@action:inmenu", "Show Boosts")
-                icon.name: "tokodon-post-boost"
+                icon.name: "boost"
                 checkable: true
                 checked: true
                 enabled: root.currentAccountId !== ""
@@ -54,7 +54,7 @@ Kirigami.Page {
             Kirigami.Action {
                 id: showRepliesAction
                 text: i18nc("@action:inmenu", "Show Replies")
-                icon.name: "tokodon-post-reply"
+                icon.name: "view-conversation-balloon-symbolic"
                 checkable: true
                 checked: true
                 enabled: root.currentAccountId !== ""

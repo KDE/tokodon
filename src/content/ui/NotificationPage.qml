@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
     property Kirigami.Action mentionOnlyAction: Kirigami.Action {
         id: onlyMentionAction
         text: i18nc("@action:intoolbar Show only mentions", "Mentions")
-        icon.name: "tokodon-chat-reply"
+        icon.name: "view-conversation-balloon-symbolic"
         checkable: true
         onCheckedChanged: (checked) => {
             if (checked)
@@ -80,12 +80,12 @@ Kirigami.ScrollablePage {
         onClosed: moreAction.checked = false
 
         QQC2.MenuItem {
-            icon.name: "tokodon-post-boost"
+            icon.name: "boost"
             text: i18nc("Show only boosts", "Boosts")
             onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
         QQC2.MenuItem {
-            icon.name: "tokodon-post-favorite"
+            icon.name: "favorite"
             text: i18nc("Show only favorites", "Favorites")
             onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
         }
