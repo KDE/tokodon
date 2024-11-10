@@ -67,6 +67,10 @@ RowLayout {
         }
         QQC2.Label {
             text: {
+                if (!root.identity) {
+                    return i18nc("@info Loading user that started this interaction", "Loading…");
+                }
+
                 if (root.isBoosted) {
                     return root.identity ? i18n("%1 boosted", root.identity.displayNameHtml) : '';
                 } else if (root.isReply) {
