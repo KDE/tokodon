@@ -119,7 +119,7 @@ Kirigami.ScrollablePage {
             implicitWidth: ListView.view.width
             Layout.fillWidth: true
 
-            onClicked: applicationWindow().pageStack.layers.push("./MainReportToolPage.qml", {
+            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainReportToolPage"), {
                 reportInfo: delegate.reportInfo,
                 index: delegate.index,
                 model: reportView.model

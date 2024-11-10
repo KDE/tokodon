@@ -233,7 +233,7 @@ Kirigami.ScrollablePage {
             implicitWidth: ListView.view.width
             Layout.fillWidth: true
 
-            onClicked: applicationWindow().pageStack.layers.push("./MainAccountToolPage.qml", {
+            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "MainAccountToolPage"), {
                 identity: delegate.identity,
                 index: delegate.index,
                 model: accountView.model
