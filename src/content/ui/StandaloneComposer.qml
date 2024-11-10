@@ -31,7 +31,7 @@ Kirigami.ApplicationWindow {
         target: Controller
 
         function onOpenComposer(text) {
-            pageStack.push(Qt.resolvedUrl("./StatusComposer/StatusComposer.qml"), {
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: StatusComposer.New,
                 initialText: text,
                 closeApplicationWhenFinished: true,

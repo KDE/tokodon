@@ -266,7 +266,7 @@ StatefulApp.StatefulWindow {
                 }
             });
         } else {
-            pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+            pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: StatusComposer.New,
                 initialText,
                 visibility: visibility ?? AccountManager.selectedAccount.preferences.defaultVisibility
@@ -313,7 +313,7 @@ StatefulApp.StatefulWindow {
                     }
                 });
             } else {
-                const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+                const item = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                     purpose: StatusComposer.Reply,
                     previewPost: post
                 });
