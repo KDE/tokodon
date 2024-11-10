@@ -18,9 +18,14 @@ FileHelper::FileHelper(QObject *parent)
 
 FileHelper::~FileHelper() = default;
 
-void FileHelper::downloadFile(AbstractAccount *account, const QString &url, const QString &destination) const
+void FileHelper::downloadFile(AbstractAccount *account, const QString &url, const QUrl &destination) const
 {
-    auto job = new FileTransferJob(account, url, destination);
+    // Android gives us content:// URIs, otherwise convert file:// URIs
+#ifdef Q_OS_ANDROID
+    auto job = new FileTransferJob(account, url, destination.toString());
+#else
+    auto job = new FileTransferJob(account, url, destination.toLocalFile());
+#endif
 #ifdef HAVE_KIO
     KIO::getJobTracker()->registerJob(job);
 #endif
