@@ -554,7 +554,16 @@ if(ANDROID)
             "list-remove-user"
             "window-close"
             "window-close-symbolic"
-            )
+            "view-readermode"
+            "view-more-horizontal-symbolic"
+            "preferences-security"
+            "edit-rename"
+            "gtk-add"
+            "edit-delete"
+            "view-pim-news-symbolic"
+            "tag-symbolic"
+            "dialog-cancel")
+    install(FILES ../org.kde.tokodon.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.svg)
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
 endif()
