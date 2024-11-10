@@ -34,7 +34,7 @@ FormCard.FormCardPage {
                 required property string displayName
 
                 Layout.fillWidth: true
-                onClicked: Window.window.pageStack.layers.push("./AccountPage.qml", {
+                onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "AccountPage"), {
                     account: delegate.account
                 })
 
