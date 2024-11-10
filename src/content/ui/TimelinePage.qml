@@ -150,7 +150,7 @@ Kirigami.ScrollablePage {
             maximumWidth: Kirigami.Units.gridUnit * 40
 
             width: parent.width
-            height: visible ? Kirigami.Units.gridUnit * 2 : 0
+            height: visible ? Kirigami.Units.gridUnit * 3 : 0
             visible: root.model.hasPrevious ?? false
 
             QQC2.Button {
@@ -176,14 +176,42 @@ Kirigami.ScrollablePage {
                 maximumWidth: Kirigami.Units.gridUnit * 40
 
                 width: parent.width
-                height: visible ? Kirigami.Units.gridUnit * 2 : 0
+                height: marker.visible ? Kirigami.Units.gridUnit * 2 : 0
 
-                ReadMarker {
-                    date: root.model.lastReadTime
+                RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
                     visible: flexColumn.section
 
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    Kirigami.Icon {
+                        source: "view-readermode"
+                        color: Kirigami.Theme.disabledTextColor
+
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+                    }
+
+                    ReadMarker {
+                        id: marker
+
+                        date: root.model.lastReadTime
+                    }
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+                }
+
+                Kirigami.Separator {
+                    Layout.fillWidth: true
                 }
             }
         }

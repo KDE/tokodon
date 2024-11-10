@@ -91,7 +91,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
     }
 
     // If we are fetching the home timeline, then make sure we fetch the read marker first before continuing.
-    if (isHome && !fetchingLastId && Config::continueReading()) {
+    if (isHome && !fetchingLastId) {
         fetchLastReadId();
         return;
     }
@@ -249,7 +249,12 @@ void MainTimelineModel::fetchLastReadId()
         Q_EMIT hasPreviousChanged();
 
         fetchedLastId = true;
-        fillTimeline(m_lastReadId);
+
+        if (Config::continueReading()) {
+            fillTimeline(m_lastReadId);
+        } else {
+            fillTimeline({});
+        }
     });
 }
 
@@ -265,7 +270,7 @@ void MainTimelineModel::updateReadMarker(const QString &postId)
     const bool isHome = m_timelineName == QStringLiteral("home");
 
     // Only overwrite the read marker if they hit the button themselves
-    if (isHome && Config::continueReading()) {
+    if (isHome) {
         const auto lastReadId = m_lastReadId.toULongLong();
         if (postId.toULongLong() > lastReadId) {
             // We want to force a refresh of the read marker in case we reached the top
@@ -297,6 +302,9 @@ QVariant MainTimelineModel::data(const QModelIndex &index, int role) const
 
 bool MainTimelineModel::hasPrevious() const
 {
+    if (!Config::continueReading()) {
+        return false;
+    }
     const bool lastReadTimeIsValid = m_lastReadTime.isValid();
     const bool hasPreviousLink = m_prev.has_value();
     const bool hasAnyPosts = !m_timeline.isEmpty();

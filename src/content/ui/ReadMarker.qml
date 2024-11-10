@@ -12,13 +12,8 @@ QQC2.Label {
 
     required property var date
 
-    Layout.alignment: Qt.AlignHCenter
-
     text: i18nc("Last read on this date", "Last read on %1", Qt.formatDate(root.date))
     color: Kirigami.Theme.disabledTextColor
     verticalAlignment: Qt.AlignVCenter
     horizontalAlignment: Qt.AlignHCenter
-
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
 }
