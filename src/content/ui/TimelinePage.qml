@@ -211,6 +211,7 @@ Kirigami.ScrollablePage {
                 }
 
                 Kirigami.Separator {
+                    visible: flexColumn.section
                     Layout.fillWidth: true
                 }
             }
