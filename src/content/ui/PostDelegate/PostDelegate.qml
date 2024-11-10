@@ -300,6 +300,7 @@ QQC2.ItemDelegate {
 
             QQC2.Control {
                 visible: root.spoilerText.length !== 0
+                padding: Kirigami.Units.largeSpacing
 
                 Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
                 Layout.fillWidth: true
@@ -330,7 +331,7 @@ QQC2.ItemDelegate {
                 }
 
                 background: Rectangle {
-                    radius: Kirigami.Units.largeSpacing
+                    radius: Kirigami.Units.cornerRadius
                     color: Kirigami.Theme.activeBackgroundColor
                 }
             }
