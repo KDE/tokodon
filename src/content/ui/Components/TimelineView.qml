@@ -42,7 +42,7 @@ ListView {
     Connections {
         target: root.model
         function onPostSourceReady(backend, isEdit): void {
-            const item = pageStack.layers.push("./StatusComposer/StatusComposer.qml", {
+            const item = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
                 purpose: isEdit ? StatusComposer.Edit : StatusComposer.Redraft,
                 backend: backend
             });
