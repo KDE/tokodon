@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-06 00:40+0000\n"
+"POT-Creation-Date: 2024-11-10 00:40+0000\n"
 "PO-Revision-Date: 2024-09-25 21:17+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -204,10 +204,9 @@ msgid "Manage List Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Solicitudes de seguimento"
+msgstr "Sen solicitudes"
 
 #: account/socialgraphmodel.cpp:56
 #, fuzzy, kde-format
@@ -1443,7 +1442,8 @@ msgid "Home"
 msgstr "Inicio"
 
 #: content/ui/Main.qml:393 content/ui/Main.qml:435 content/ui/Main.qml:450
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Posts"
 msgid "No Posts"
 msgstr "Non hai publicacións"
 
@@ -1510,9 +1510,7 @@ msgid ""
 msgstr ""
 
 #: content/ui/Main.qml:513
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgid "Following"
 msgstr "Seguindo"
 
@@ -4636,10 +4634,10 @@ msgstr "Recibindo notificacións levadas"
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115
+#: main.cpp:115 main.cpp:140
 #, kde-format
-msgid "Mastodon client"
-msgstr "Cliente Mastodon"
+msgid "Browse the Fediverse"
+msgstr ""
 
 #: main.cpp:117
 #, kde-format
@@ -4672,11 +4670,6 @@ msgstr "Xosé M., Adrián Chaves (Gallaecio)"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "correoxm@disroot.org, adrian@chaves.io"
-
-#: main.cpp:140
-#, kde-format
-msgid "Client for decentralized social networks like Mastodon"
-msgstr "Cliente para redes sociais descentralizadas como Mastodon"
 
 #: main.cpp:141
 #, kde-format
@@ -4944,6 +4937,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "hai 1 ano"
 msgstr[1] "hai %1 anos"
+
+#~ msgid "Mastodon client"
+#~ msgstr "Cliente Mastodon"
+
+#~ msgid "Client for decentralized social networks like Mastodon"
+#~ msgstr "Cliente para redes sociais descentralizadas como Mastodon"
 
 #~ msgid "No follow requests"
 #~ msgstr "Non hai solicitudes de seguimento"
