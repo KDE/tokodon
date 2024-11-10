@@ -101,6 +101,38 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
                                }),
                 posts.end());
 
+    for (auto &post : posts) {
+        // If we are still waiting on the reply identity, make sure to update it's row
+        if (!post->inReplyTo().isEmpty() && post->replyIdentity() == nullptr) {
+            connect(
+                post,
+                &Post::replyIdentityChanged,
+                this,
+                [this, post] {
+                    const int row = m_timeline.indexOf(post);
+                    if (row != -1) {
+                        Q_EMIT dataChanged(index(row, 0), index(row, 0), {ReplyAuthorIdentityRole});
+                    }
+                },
+                Qt::SingleShotConnection);
+        }
+
+        // Ditto for boost identity
+        if (!post->boosted() && post->boostIdentity() == nullptr) {
+            connect(
+                post,
+                &Post::boostIdentity,
+                this,
+                [this, post] {
+                    const int row = m_timeline.indexOf(post);
+                    if (row != -1) {
+                        Q_EMIT dataChanged(index(row, 0), index(row, 0), {BoostAuthorIdentityRole});
+                    }
+                },
+                Qt::SingleShotConnection);
+        }
+    }
+
     if (!m_timeline.isEmpty()) {
         if (alwaysAppendToEnd) {
             beginInsertRows({}, m_timeline.size(), m_timeline.size() + posts.size() - 1);
