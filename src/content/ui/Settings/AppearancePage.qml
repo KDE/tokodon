@@ -56,7 +56,7 @@ FormCard.FormCardPage {
         FormCard.FormSwitchDelegate {
             id: continueDelegate
             text: i18n("Continue reading where you last left off")
-            description: i18n("If checked, Tokodon will save where you were in your Home timeline.")
+            description: i18n("If checked, the Home timeline will begin where you last read. The position in the timeline is shared with other clients.")
             checked: Config.continueReading
             enabled: !Config.continueReadingImmutable
             onToggled: {
