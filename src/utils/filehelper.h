@@ -27,7 +27,7 @@ public:
      * @param destination The path on disk where the file will end up when finished.
      * @note Uses KIO when available.
      */
-    Q_INVOKABLE void downloadFile(AbstractAccount *account, const QString &url, const QString &destination) const;
+    Q_INVOKABLE void downloadFile(AbstractAccount *account, const QString &url, const QUrl &destination) const;
 
     // TODO: I think this can be done natively using JavaScript's URL object?
     /**

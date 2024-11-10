@@ -13,8 +13,12 @@ FileTransferJob::FileTransferJob(AbstractAccount *account, const QString &source
     , m_account(account)
     , m_source(source)
     , m_destination(destination)
-    , m_temporaryFile(new QSaveFile(QUrl(destination).toLocalFile()))
+    , m_temporaryFile(new QSaveFile(destination))
 {
+    // Enable direct write on Android, because we don't have the permissions to write anywhere where we save
+#ifdef Q_OS_ANDROID
+    m_temporaryFile->setDirectWriteFallback(true);
+#endif
 }
 
 void FileTransferJob::start()
@@ -25,7 +29,7 @@ void FileTransferJob::start()
         auto reply = qnam->get(QNetworkRequest(QUrl(m_source)));
 
         setTotalAmount(Unit::Files, 1);
-        if (!m_temporaryFile->isReadable() && !m_temporaryFile->open(QIODevice::WriteOnly)) {
+        if (!m_temporaryFile->open(QIODevice::WriteOnly)) {
             qCWarning(TOKODON_HTTP) << "Couldn't open the temporary file" << m_temporaryFile->fileName() << "for writing" << m_temporaryFile->errorString();
             setError(FileError);
             setErrorText(i18n("Could not open the temporary download file"));
