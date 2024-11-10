@@ -37,6 +37,7 @@ Item {
 
             activeFocusOnTab: true
             hoverEnabled: true
+            padding: Kirigami.Units.largeSpacing
 
             function openLink(): void {
                 Qt.openUrlExternally(root.card.url);
@@ -146,6 +147,7 @@ Item {
             activeFocusOnTab: true
             hoverEnabled: true
             visible: root.hasAuthorship
+            padding: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
             Layout.preferredHeight: visible ? 40 : 0
