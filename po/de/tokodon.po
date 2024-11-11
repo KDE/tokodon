@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 00:40+0000\n"
+"POT-Creation-Date: 2024-11-11 00:40+0000\n"
 "PO-Revision-Date: 2024-11-04 14:04+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2841,13 +2841,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show Less"
 msgstr "Weniger anzeigen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show More"
 msgstr "Mehr anzeigen"
@@ -3223,7 +3223,7 @@ msgstr "Beitrag-Verknüpfung kopiert."
 msgid "Link preview: %1"
 msgstr "Verknüpfungs-Vorschau: %1"
 
-#: content/ui/PostDelegate/LinkPreview.qml:202
+#: content/ui/PostDelegate/LinkPreview.qml:204
 #, fuzzy, kde-format
 #| msgctxt "Show more options"
 #| msgid "More"
@@ -3233,7 +3233,7 @@ msgctxt ""
 msgid "More from"
 msgstr "Mehr"
 
-#: content/ui/PostDelegate/LinkPreview.qml:239
+#: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3322,85 +3322,85 @@ msgstr ""
 "Wollen Sie diesen Beitrag wirklich neu verfassen? Dies wird den "
 "ursprünglichen Beitrag löschen."
 
-#: content/ui/PostDelegate/PostDelegate.qml:319
+#: content/ui/PostDelegate/PostDelegate.qml:320
 #, fuzzy, kde-format
 #| msgid "<b>Content Warning</b><br /> %1"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:431
+#: content/ui/PostDelegate/PostDelegate.qml:432
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Direktnachrichten können nicht geteilt werden"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Private Beiträge können nicht geteilt werden"
 
-#: content/ui/PostDelegate/PostDelegate.qml:462
+#: content/ui/PostDelegate/PostDelegate.qml:463
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boosted"
 msgstr "Geteilt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:487
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorisieren"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, fuzzy, kde-format
 #| msgid "Favourited"
 msgid "Favorited"
 msgstr "Favorisiert"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, fuzzy, kde-format
 #| msgctxt "Favorite a post"
 #| msgid "Favorite"
 msgid "Favorite"
 msgstr "Favorisieren"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Lesezeichen entfernen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Lesezeichen hinzufügen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmarked"
 msgstr "Lesezeichen gespeichert"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3576,11 +3576,18 @@ msgid "Quoted post"
 msgstr "Zitierter Beitrag"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "Wird geladen"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:75
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 teilte"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:73
+#: content/ui/PostDelegate/UserInteractionLabel.qml:77
 #, kde-format
 msgid "In reply to %1"
 msgstr "Als Antwort auf %1"
@@ -3591,18 +3598,11 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Wiedergabe"
 
-#: content/ui/ReadMarker.qml:25
+#: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
 msgstr ""
-
-#: content/ui/ReadMarker.qml:35
-#, fuzzy, kde-format
-#| msgid "Show More"
-msgctxt "@action:button Load more posts above this"
-msgid "Load More"
-msgstr "Mehr anzeigen"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3807,7 +3807,9 @@ msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
-msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgid ""
+"If checked, the Home timeline will begin where you last read. The position "
+"in the timeline is shared with other clients."
 msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:72
@@ -4553,6 +4555,13 @@ msgstr ""
 "Server konnte nicht kontaktiert werden: %1. Bitte überprüfen Sie Ihre "
 "Einstellungen."
 
+#: content/ui/TimelinePage.qml:157
+#, fuzzy, kde-format
+#| msgid "Show More"
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "Mehr anzeigen"
+
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
@@ -4894,29 +4903,29 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "Flaggen"
 
-#: utils/filetransferjob.cpp:31
+#: utils/filetransferjob.cpp:35
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr ""
 
-#: utils/filetransferjob.cpp:73
+#: utils/filetransferjob.cpp:77
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr ""
 
-#: utils/filetransferjob.cpp:81
+#: utils/filetransferjob.cpp:85
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Wird heruntergeladen"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:86
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "Quelle"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:87
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"

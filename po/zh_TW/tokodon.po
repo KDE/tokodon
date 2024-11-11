@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 00:40+0000\n"
+"POT-Creation-Date: 2024-11-11 00:40+0000\n"
 "PO-Revision-Date: 2024-10-20 00:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2794,13 +2794,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>內容警告</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show Less"
 msgstr "顯示更少"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show More"
 msgstr "顯示更多"
@@ -3169,7 +3169,7 @@ msgstr "已複製嘟文連結。"
 msgid "Link preview: %1"
 msgstr "連結預覽：%1"
 
-#: content/ui/PostDelegate/LinkPreview.qml:202
+#: content/ui/PostDelegate/LinkPreview.qml:204
 #, fuzzy, kde-format
 #| msgctxt "Show more options"
 #| msgid "More"
@@ -3179,7 +3179,7 @@ msgctxt ""
 msgid "More from"
 msgstr "更多"
 
-#: content/ui/PostDelegate/LinkPreview.qml:239
+#: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3266,81 +3266,81 @@ msgid ""
 "post."
 msgstr "您確定要重新打這篇嘟文的草稿嗎？這個動作會刪除原有的嘟文。"
 
-#: content/ui/PostDelegate/PostDelegate.qml:319
+#: content/ui/PostDelegate/PostDelegate.qml:320
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>內容告警</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:431
+#: content/ui/PostDelegate/PostDelegate.qml:432
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "回覆"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "私信不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "私人嘟文不能轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:462
+#: content/ui/PostDelegate/PostDelegate.qml:463
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boosted"
 msgstr "已轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:487
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorited"
 msgstr "已加入最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Remove bookmark"
 msgstr "移除書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmarked"
 msgstr "已加入書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3511,11 +3511,19 @@ msgid "Quoted post"
 msgstr "已引用的嘟文"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Loading…"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "載入中…"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:75
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 已轉嘟"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:73
+#: content/ui/PostDelegate/UserInteractionLabel.qml:77
 #, kde-format
 msgid "In reply to %1"
 msgstr "回覆給 %1"
@@ -3526,20 +3534,13 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "播放"
 
-#: content/ui/ReadMarker.qml:25
+#: content/ui/ReadMarker.qml:15
 #, fuzzy, kde-format
 #| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 #| msgid "Posted on %1"
 msgctxt "Last read on this date"
 msgid "Last read on %1"
 msgstr "發佈於 %1"
-
-#: content/ui/ReadMarker.qml:35
-#, fuzzy, kde-format
-#| msgid "Learn More"
-msgctxt "@action:button Load more posts above this"
-msgid "Load More"
-msgstr "了解更多"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3743,7 +3744,9 @@ msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
-msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgid ""
+"If checked, the Home timeline will begin where you last read. The position "
+"in the timeline is shared with other clients."
 msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:72
@@ -4464,6 +4467,13 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
 
+#: content/ui/TimelinePage.qml:157
+#, fuzzy, kde-format
+#| msgid "Learn More"
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "了解更多"
+
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
@@ -4793,29 +4803,29 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "旗幟"
 
-#: utils/filetransferjob.cpp:31
+#: utils/filetransferjob.cpp:35
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr "無法開啟下載用的暫存檔"
 
-#: utils/filetransferjob.cpp:73
+#: utils/filetransferjob.cpp:77
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr "無法預留磁碟空間供下載"
 
-#: utils/filetransferjob.cpp:81
+#: utils/filetransferjob.cpp:85
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "下載中"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:86
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "來源"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:87
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
