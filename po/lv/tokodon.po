@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 02:41+0000\n"
+"POT-Creation-Date: 2024-11-11 02:40+0000\n"
 "PO-Revision-Date: 2024-10-28 22:47+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2817,13 +2817,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Satura brīdinājums</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show Less"
 msgstr "Rādīt mazāk"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show More"
 msgstr "Rādīt vairāk"
@@ -3192,7 +3192,7 @@ msgstr "Posta saite ir nokopēta"
 msgid "Link preview: %1"
 msgstr "Saites priekšskatījums: %1"
 
-#: content/ui/PostDelegate/LinkPreview.qml:202
+#: content/ui/PostDelegate/LinkPreview.qml:204
 #, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
@@ -3200,7 +3200,7 @@ msgctxt ""
 msgid "More from"
 msgstr "Vairāk no"
 
-#: content/ui/PostDelegate/LinkPreview.qml:239
+#: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3287,81 +3287,81 @@ msgstr ""
 "Vai tiešām vēlaties atgriezties pie šī ieraksta uzmetuma? Šī darbība dzēsīs "
 "publicēto ierakstu."
 
-#: content/ui/PostDelegate/PostDelegate.qml:319
+#: content/ui/PostDelegate/PostDelegate.qml:320
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Satura brīdinājums</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:431
+#: content/ui/PostDelegate/PostDelegate.qml:432
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Atbildēt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Nevar pastiprināt personīgas ziņas"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Nevar pastiprināt privātus ierakstus"
 
-#: content/ui/PostDelegate/PostDelegate.qml:462
+#: content/ui/PostDelegate/PostDelegate.qml:463
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Pastiprināt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boosted"
 msgstr "Pastiprināts"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boost"
 msgstr "Pastiprināt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:487
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Pielikt zvaigznīti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorited"
 msgstr "Pielikta zvaigznīte"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorite"
 msgstr "Pielikt zvaigznīti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Noņemt grāmatzīmi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Pievienot grāmatzīmēm"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmarked"
 msgstr "Pievienots grāmatzīmēm"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmark"
 msgstr "Grāmatzīme"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3533,11 +3533,19 @@ msgid "Quoted post"
 msgstr "Citēta ierakstu"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Loading…"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "Ielādē…"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:75
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 pastiprināts"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:73
+#: content/ui/PostDelegate/UserInteractionLabel.qml:77
 #, kde-format
 msgid "In reply to %1"
 msgstr "Atbildot uz %1"
@@ -3548,17 +3556,11 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Atskaņot"
 
-#: content/ui/ReadMarker.qml:25
+#: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
 msgstr "Pēdējo reizi lasīt %1"
-
-#: content/ui/ReadMarker.qml:35
-#, kde-format
-msgctxt "@action:button Load more posts above this"
-msgid "Load More"
-msgstr "Ielādēt vairāk"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3767,8 +3769,10 @@ msgstr "Turpināt lasīt no vietas, kur pēdējo reizi palikāt"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
-msgid "If checked, Tokodon will save where you were in your Home timeline."
-msgstr "Ja atzīmēts, „Tokodon“ saglabās pēdējo skatīto vietu laika joslā."
+msgid ""
+"If checked, the Home timeline will begin where you last read. The position "
+"in the timeline is shared with other clients."
+msgstr ""
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4497,6 +4501,12 @@ msgstr ""
 "Neizdevās sazināties ar serveri: %1. Pārbaudiet datora un programmas "
 "iestatījumus."
 
+#: content/ui/TimelinePage.qml:157
+#, kde-format
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "Ielādēt vairāk"
+
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
@@ -4826,29 +4836,29 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "Karogi"
 
-#: utils/filetransferjob.cpp:31
+#: utils/filetransferjob.cpp:35
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr "Neizdevās atvērt pagaidu lejupielādes datni"
 
-#: utils/filetransferjob.cpp:73
+#: utils/filetransferjob.cpp:77
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr "Neizdevās rezervēt vietu uz diska lejupielādei"
 
-#: utils/filetransferjob.cpp:81
+#: utils/filetransferjob.cpp:85
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "Lejupielādē"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:86
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "Avots"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:87
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
@@ -4907,6 +4917,9 @@ msgid_plural "%1 years ago"
 msgstr[0] "Pirms %1 gada"
 msgstr[1] "Pirms %1 gadiem"
 msgstr[2] "Pirms %1 gadiem"
+
+#~ msgid "If checked, Tokodon will save where you were in your Home timeline."
+#~ msgstr "Ja atzīmēts, „Tokodon“ saglabās pēdējo skatīto vietu laika joslā."
 
 #~ msgid "Mastodon client"
 #~ msgstr "Mastodon klients"

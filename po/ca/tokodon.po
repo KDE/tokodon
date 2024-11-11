@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 02:41+0000\n"
-"PO-Revision-Date: 2024-10-27 19:19+0100\n"
+"POT-Creation-Date: 2024-11-11 02:40+0000\n"
+"PO-Revision-Date: 2024-11-10 11:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -2820,13 +2820,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Avís de contingut</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show Less"
 msgstr "Mostra'n menys"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show More"
 msgstr "Mostra'n més"
@@ -3193,7 +3193,7 @@ msgstr "S'ha copiat l'enllaç de la publicació."
 msgid "Link preview: %1"
 msgstr "Vista prèvia d'enllaç: %1"
 
-#: content/ui/PostDelegate/LinkPreview.qml:202
+#: content/ui/PostDelegate/LinkPreview.qml:204
 #, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
@@ -3201,7 +3201,7 @@ msgctxt ""
 msgid "More from"
 msgstr "Més de"
 
-#: content/ui/PostDelegate/LinkPreview.qml:239
+#: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3288,81 +3288,81 @@ msgstr ""
 "Segur que voleu tornar a esborrany aquesta publicació? Això suprimirà la "
 "publicació original."
 
-#: content/ui/PostDelegate/PostDelegate.qml:319
+#: content/ui/PostDelegate/PostDelegate.qml:320
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Notificació de contingut</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:431
+#: content/ui/PostDelegate/PostDelegate.qml:432
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "No es poden impulsar els missatges directes"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "No es poden impulsar les publicacions privades"
 
-#: content/ui/PostDelegate/PostDelegate.qml:462
+#: content/ui/PostDelegate/PostDelegate.qml:463
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Impulsa"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boosted"
 msgstr "Impulsat"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boost"
 msgstr "Impulsa"
 
-#: content/ui/PostDelegate/PostDelegate.qml:487
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorited"
 msgstr "Ha preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Elimina el punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Afegeix un punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmarked"
 msgstr "Afegida a les adreces d'interès"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmark"
 msgstr "Punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3535,11 +3535,19 @@ msgid "Quoted post"
 msgstr "Publicació citada"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Loading…"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "S'està carregant…"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:75
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ha impulsat"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:73
+#: content/ui/PostDelegate/UserInteractionLabel.qml:77
 #, kde-format
 msgid "In reply to %1"
 msgstr "En resposta a %1"
@@ -3550,17 +3558,11 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Reprodueix"
 
-#: content/ui/ReadMarker.qml:25
+#: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
 msgstr "Última lectura el %1"
-
-#: content/ui/ReadMarker.qml:35
-#, kde-format
-msgctxt "@action:button Load more posts above this"
-msgid "Load More"
-msgstr "Carrega'n més"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3770,9 +3772,10 @@ msgstr "Continueu llegint des d'on ho vau deixar"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
-msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgid ""
+"If checked, the Home timeline will begin where you last read. The position "
+"in the timeline is shared with other clients."
 msgstr ""
-"Si està marcada, el Tokodon desarà on éreu a la línia de temps d'inici."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4503,6 +4506,12 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Ha fallat en contactar amb el servidor: %1. Reviseu la configuració."
 
+#: content/ui/TimelinePage.qml:157
+#, kde-format
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "Carrega'n més"
+
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
@@ -4611,7 +4620,7 @@ msgstr "Tokodon"
 #: main.cpp:115 main.cpp:140
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr ""
+msgstr "Navegueu pel Fedivers"
 
 #: main.cpp:117
 #, kde-format
@@ -4831,29 +4840,29 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "Banderes"
 
-#: utils/filetransferjob.cpp:31
+#: utils/filetransferjob.cpp:35
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr "No s'ha pogut obrir el fitxer temporal de baixada"
 
-#: utils/filetransferjob.cpp:73
+#: utils/filetransferjob.cpp:77
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr "No s'ha pogut reservar espai de disc per a la baixada"
 
-#: utils/filetransferjob.cpp:81
+#: utils/filetransferjob.cpp:85
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "S'està baixant"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:86
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "Font"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:87
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
@@ -4910,203 +4919,6 @@ msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
 
-#~ msgid "Mastodon client"
-#~ msgstr "Client del Mastodon"
-
-#~ msgid "Client for decentralized social networks like Mastodon"
-#~ msgstr "Client per a xarxes socials descentralitzades com Mastodon"
-
-#~ msgid "No follow requests"
-#~ msgstr "Sense sol·licituds de seguiment"
-
-#~ msgid "No muted users"
-#~ msgstr "Sense usuaris silenciats"
-
-#~ msgid "No blocked users"
-#~ msgstr "Sense usuaris bloquejats"
-
-#~ msgid "No featured users"
-#~ msgstr "Sense usuaris destacats"
-
-#~ msgid "No familiar followers"
-#~ msgstr "Sense seguidors familiars"
-
-#~ msgid "No users in this list"
-#~ msgstr "No hi ha cap usuari en aquesta llista"
-
-#~ msgid "Tags"
-#~ msgstr "Etiquetes"
-
-#~ msgctxt "@title:group"
-#~ msgid "Network Settings"
-#~ msgstr "Configuració de la xarxa"
-
-#~ msgctxt "@option:check Login page"
-#~ msgid "Ignore SSL errors"
-#~ msgstr "Ignora els errors d'SSL"
-
-#~ msgctxt "Show all notifications"
-#~ msgid "All"
-#~ msgstr "Totes"
-
-#~ msgctxt "Show only mentions"
-#~ msgid "Mentions"
-#~ msgstr "Mencions"
-
-#~ msgctxt "@title:group"
-#~ msgid "Types"
-#~ msgstr "Tipus"
-
-#~ msgctxt "@label"
-#~ msgid "No Trending Posts"
-#~ msgstr "Sense publicacions amb tendències"
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "Content warning"
-#~ msgstr "Avís de contingut"
-
-#~ msgctxt "@action:intoolbar Short for content warning"
-#~ msgid "cw"
-#~ msgstr "ac"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Content warning"
-#~ msgstr "Avís de contingut"
-
-#~ msgid "Note:"
-#~ msgstr "Nota:"
-
-#~ msgid "Click to add a note"
-#~ msgstr "Feu clic per a afegir una nota"
-
-#~ msgid "This is a bot account"
-#~ msgstr "Aquest és un compte de bot"
-
-#~ msgid "Suggest account to others"
-#~ msgstr "Suggereix el compte a altres"
-
-#~ msgctxt "@action:inmenu"
-#~ msgid "Expand Post"
-#~ msgstr "Expandeix la publicació"
-
-#~ msgid "Open Original Page"
-#~ msgstr "Obre la pàgina original"
-
-#~ msgctxt "@action:button"
-#~ msgid "Open Original Page"
-#~ msgstr "Obre la pàgina original"
-
-#~ msgctxt "@title:group"
-#~ msgid "Pick a Server"
-#~ msgstr "Trieu un servidor"
-
-#~ msgid "Server URL must not be empty."
-#~ msgstr "L'URL del servidor no pot estar buit."
-
-#~ msgctxt "@title"
-#~ msgid "%1 favourite"
-#~ msgid_plural "%1 favourites"
-#~ msgstr[0] "%1 preferit"
-#~ msgstr[1] "%1 preferits"
-
-#~ msgid "Favourites"
-#~ msgstr "Preferides"
-
-#~ msgid "Favourite"
-#~ msgstr "Preferit"
-
-#~ msgctxt "@title"
-#~ msgid "Favourites"
-#~ msgstr "Preferits"
-
-#~ msgid "Login"
-#~ msgstr "Inici de sessió"
-
-#~ msgctxt "@action:button"
-#~ msgid "Configure %1"
-#~ msgstr "Configura %1"
-
-#~ msgid "Spell Checking"
-#~ msgstr "Verificació ortogràfica"
-
-#~ msgid "Enable automatic spell checking"
-#~ msgstr "Activa la verificació ortogràfica automàtica"
-
-#~ msgid "Ignore uppercase words"
-#~ msgstr "Ignora les paraules en majúscules"
-
-#~ msgid "Ignore hyphenated words"
-#~ msgstr "Ignora les paraules amb guió"
-
-#~ msgid "Detect language automatically"
-#~ msgstr "Detecta automàticament l'idioma"
-
-#~ msgid "Selected default language:"
-#~ msgstr "Idioma predeterminat seleccionat:"
-
-#~ msgid "None"
-#~ msgstr "Sense"
-
-#~ msgid "Additional Spell Checking Languages"
-#~ msgstr "Idiomes addicionals de verificació ortogràfica"
-
-#~ msgid ""
-#~ "%1 will provide spell checking and suggestions for the languages listed "
-#~ "here when autodetection is enabled."
+#~ msgid "If checked, Tokodon will save where you were in your Home timeline."
 #~ msgstr ""
-#~ "%1 proporcionarà la verificació ortogràfica i suggeriments per als "
-#~ "idiomes llistats aquí si s'ha activat la detecció automàtica."
-
-#~ msgid "Open Personal Dictionary"
-#~ msgstr "Obre un diccionari personal"
-
-#~ msgctxt "@title:window"
-#~ msgid "Spell checking languages"
-#~ msgstr "Idiomes de verificació ortogràfica"
-
-#~ msgid "Default Language"
-#~ msgstr "Idioma predeterminat"
-
-#~ msgid "Spell checking dictionary"
-#~ msgstr "Diccionari de verificació ortogràfica"
-
-#~ msgid "Add a new word to your personal dictionary…"
-#~ msgstr "Afegeix una paraula nova al vostre diccionari personal…"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Word"
-#~ msgstr "Afegeix una paraula"
-
-#~ msgctxt "@action:button"
-#~ msgid "Delete word"
-#~ msgstr "Suprimeix la paraula"
-
-#~ msgctxt "@action:Button Edit a post"
-#~ msgid "Edit"
-#~ msgstr "Edita"
-
-#~ msgctxt "@title:window"
-#~ msgid "Settings"
-#~ msgstr "Configuració"
-
-#~ msgid "Moderation Tools"
-#~ msgstr "Eines de moderació"
-
-#~ msgid "Copy Link to This Profile"
-#~ msgstr "Copia l'enllaç a aquest perfil"
-
-#~ msgid "%1 Favorite"
-#~ msgid_plural "%1 Favorites"
-#~ msgstr[0] "%1 preferit"
-#~ msgstr[1] "%1 preferits"
-
-#~ msgid "%1 Boost"
-#~ msgid_plural "%1 Boosts"
-#~ msgstr[0] "%1 impuls"
-#~ msgstr[1] "%1 impulsos"
-
-#~ msgid "Push notifications are enabled."
-#~ msgstr "Les notificacions «push» estan activades."
-
-#~ msgid "Group Notifications"
-#~ msgstr "Agrupació de notificacions"
+#~ "Si està marcada, el Tokodon desarà on éreu a la línia de temps d'inici."

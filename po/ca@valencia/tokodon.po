@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-10 02:41+0000\n"
+"POT-Creation-Date: 2024-11-11 02:40+0000\n"
 "PO-Revision-Date: 2024-10-27 19:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2819,13 +2819,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Avís de contingut</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show Less"
 msgstr "Mostra'n menys"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:327
 #, kde-format
 msgid "Show More"
 msgstr "Mostra'n més"
@@ -3192,7 +3192,7 @@ msgstr "S'ha copiat l'enllaç de la publicació."
 msgid "Link preview: %1"
 msgstr "Vista prèvia d'enllaç: %1"
 
-#: content/ui/PostDelegate/LinkPreview.qml:202
+#: content/ui/PostDelegate/LinkPreview.qml:204
 #, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
@@ -3200,7 +3200,7 @@ msgctxt ""
 msgid "More from"
 msgstr "Més de"
 
-#: content/ui/PostDelegate/LinkPreview.qml:239
+#: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
 msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
@@ -3287,81 +3287,81 @@ msgstr ""
 "Segur que voleu tornar a esborrany esta publicació? Açò suprimirà la "
 "publicació original."
 
-#: content/ui/PostDelegate/PostDelegate.qml:319
+#: content/ui/PostDelegate/PostDelegate.qml:320
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Notificació de contingut</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:431
+#: content/ui/PostDelegate/PostDelegate.qml:432
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/PostDelegate/PostDelegate.qml:458
+#: content/ui/PostDelegate/PostDelegate.qml:459
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "No es poden impulsar els missatges directes"
 
-#: content/ui/PostDelegate/PostDelegate.qml:460
+#: content/ui/PostDelegate/PostDelegate.qml:461
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "No es poden impulsar les publicacions privades"
 
-#: content/ui/PostDelegate/PostDelegate.qml:462
+#: content/ui/PostDelegate/PostDelegate.qml:463
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Impulsa"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boosted"
 msgstr "Impulsat"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:468
 #, kde-format
 msgid "Boost"
 msgstr "Impulsa"
 
-#: content/ui/PostDelegate/PostDelegate.qml:487
+#: content/ui/PostDelegate/PostDelegate.qml:488
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorited"
 msgstr "Ha preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Favorite"
 msgstr "Preferit"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Elimina el punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Afig un punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmarked"
 msgstr "Afegida a les adreces d'interés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Bookmark"
 msgstr "Punt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3534,11 +3534,19 @@ msgid "Quoted post"
 msgstr "Publicació citada"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Loading…"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "S'està carregant…"
+
+#: content/ui/PostDelegate/UserInteractionLabel.qml:75
 #, kde-format
 msgid "%1 boosted"
 msgstr "%1 ha impulsat"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:73
+#: content/ui/PostDelegate/UserInteractionLabel.qml:77
 #, kde-format
 msgid "In reply to %1"
 msgstr "En resposta a %1"
@@ -3549,17 +3557,11 @@ msgctxt "@action:button Start media playback"
 msgid "Play"
 msgstr "Reproduïx"
 
-#: content/ui/ReadMarker.qml:25
+#: content/ui/ReadMarker.qml:15
 #, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
 msgstr "Última lectura %1"
-
-#: content/ui/ReadMarker.qml:35
-#, kde-format
-msgctxt "@action:button Load more posts above this"
-msgid "Load More"
-msgstr "Carrega'n més"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3769,9 +3771,10 @@ msgstr "Continueu llegint des d'on ho vau deixar"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
-msgid "If checked, Tokodon will save where you were in your Home timeline."
+msgid ""
+"If checked, the Home timeline will begin where you last read. The position "
+"in the timeline is shared with other clients."
 msgstr ""
-"Si està marcada, Tokodon guardarà on éreu en la línia de temps d'inici."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4500,6 +4503,12 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració."
 
+#: content/ui/TimelinePage.qml:157
+#, kde-format
+msgctxt "@action:button Load more posts above this"
+msgid "Load More"
+msgstr "Carrega'n més"
+
 #: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch Account"
@@ -4828,29 +4837,29 @@ msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
 msgstr "Banderes"
 
-#: utils/filetransferjob.cpp:31
+#: utils/filetransferjob.cpp:35
 #, kde-format
 msgid "Could not open the temporary download file"
 msgstr "No s'ha pogut obrir el fitxer temporal de baixada"
 
-#: utils/filetransferjob.cpp:73
+#: utils/filetransferjob.cpp:77
 #, kde-format
 msgid "Could not reserve disk space for download"
 msgstr "No s'ha pogut reservar espai de disc per a la baixada"
 
-#: utils/filetransferjob.cpp:81
+#: utils/filetransferjob.cpp:85
 #, kde-format
 msgctxt "Job heading, like 'Copying'"
 msgid "Downloading"
 msgstr "S'està baixant"
 
-#: utils/filetransferjob.cpp:82
+#: utils/filetransferjob.cpp:86
 #, kde-format
 msgctxt "The URL being downloaded/uploaded"
 msgid "Source"
 msgstr "Font"
 
-#: utils/filetransferjob.cpp:83
+#: utils/filetransferjob.cpp:87
 #, kde-format
 msgctxt "The location being downloaded to"
 msgid "Destination"
@@ -4906,6 +4915,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
+
+#~ msgid "If checked, Tokodon will save where you were in your Home timeline."
+#~ msgstr ""
+#~ "Si està marcada, Tokodon guardarà on éreu en la línia de temps d'inici."
 
 #~ msgid "Mastodon client"
 #~ msgstr "Client de Mastodon"
