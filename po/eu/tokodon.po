@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-11 02:40+0000\n"
-"PO-Revision-Date: 2024-10-15 22:22+0200\n"
+"PO-Revision-Date: 2024-11-11 18:03+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: account/abstractaccount.cpp:674
 #, kde-format
@@ -206,66 +206,55 @@ msgid "Manage List Users"
 msgstr ""
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "Jarraipen eskaera"
+msgstr "Jarraipen eskaerarik ez"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No Followers"
 msgstr "Jarraitzailerik ez"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "No Followed Users"
-msgstr "Ez dago jarraitutako erabiltzailerik"
+msgstr "Jarraitutako erabiltzailerik ez"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgid "No Muted Users"
-msgstr "Isilarazitako erabiltzaileak"
+msgstr "Isilarazitako erabiltzailerik ez"
 
 # 2023-09-04 al. xalba. Egiaztatu itzulpena egokia den.
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Blocked Users"
+#, kde-format
 msgid "No Blocked Users"
-msgstr "Oztopatutako erabiltzaileak"
+msgstr "Oztopatutako erabiltzailerik ez"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Featured Users"
+#, kde-format
 msgid "No Featured Users"
-msgstr "Nabarmendutako erabiltzaileak"
+msgstr "Nabarmendutako erabiltzailerik ez"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "No Users Favorited This Post"
 msgstr "Ez dago posta hori gogoko egin duen erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No users boosted this post"
+#, kde-format
 msgid "No Users Boosted This Post"
-msgstr "Erabiltzaile bakar batek ere ez du posta hori goratu"
+msgstr "Ez dago posta hori gogoko goratu duen erabiltzailerik"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Familiar Followers"
+#, kde-format
 msgid "No Familiar Followers"
-msgstr "Jarraitzaile ezagunak"
+msgstr "Jarraitzaile ezagunik ez"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgid "No Users"
-msgstr "Erabiltzaileak"
+msgstr "Erabiltzailerik ez"
 
 #: account/socialgraphmodel.cpp:80
 #, kde-format
@@ -273,44 +262,52 @@ msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
+"Erabiltzaile batzuk eskuz onartu behar dira haiek zu jarraitzeko, eta hemen "
+"azalduko dira."
 
 #: account/socialgraphmodel.cpp:86
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
+"Isilarazi erabiltzaileak haiek zure jakinarazpenetan agertzeari uzteko."
 
 #: account/socialgraphmodel.cpp:88
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr ""
+"Oztopatu erabiltzaileak haiek zure denbora-lerrotik erabat ezkutatzeko."
 
 #: account/socialgraphmodel.cpp:90
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
+"Gustuko dituzun erabiltzaileak nabarmendu daitezke eta zure profilean "
+"erakutsi."
 
 #: account/socialgraphmodel.cpp:92
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
+"Posta hori ez du oraindik inork gogoko egin. Akaso zu izango zara lehenengoa?"
 
 #: account/socialgraphmodel.cpp:94
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
+"Posta hau ez du oraindik inork goratu. Hura goratu behar zenuke bere "
+"hedapena zabaltzeko!"
 
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "Zerrenda honetan oraindik ez dago inor."
 
 #: account/suggestionsmodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr "Isilarazitako erabiltzaileak"
+msgstr "Iradokitako erabiltzaileak"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -416,8 +413,7 @@ msgid "Could not unassign report"
 msgstr "Ezin izan du salaketaren esleipena desegin"
 
 #: content/ui/AccountInfo.qml:97
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "Postarik ez"
@@ -425,20 +421,18 @@ msgstr "Postarik ez"
 #: content/ui/AccountInfo.qml:98
 #, kde-format
 msgid "This user hasn't posted anything yet."
-msgstr ""
+msgstr "Erabiltzaile horrek ez du oraindik postik bidali."
 
 #: content/ui/AccountInfo.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "Hedabideak"
+msgstr "Hedabiderik ez"
 
 #: content/ui/AccountInfo.qml:186
 #, kde-format
 msgid "This user hasn't posted any media yet."
-msgstr ""
+msgstr "Erabiltzaile horrek ez du oraindik hedabiderik bidali."
 
 #: content/ui/AccountInfo.qml:279
 #, kde-format
@@ -476,16 +470,14 @@ msgid "Notify me when %1 posts."
 msgstr "Jakinarazi niri, %1(e)k posta bidaltzen duenean"
 
 #: content/ui/AccountInfo.qml:449
-#, fuzzy, kde-format
-#| msgid "Mention"
+#, kde-format
 msgid "Mention…"
-msgstr "Aipamena"
+msgstr "Aipamena..."
 
 #: content/ui/AccountInfo.qml:455
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Start a Conversation…"
-msgstr "Elkarrizketa"
+msgstr "Elkarrizketa bat abiatu..."
 
 #: content/ui/AccountInfo.qml:464
 #, kde-format
@@ -559,12 +551,10 @@ msgid "Profile link copied."
 msgstr "Profileko esteka kopiatu da."
 
 #: content/ui/AccountInfo.qml:632
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
-msgstr "Batu da"
+msgstr "Batuta"
 
 #: content/ui/AccountInfo.qml:720
 #, kde-format
@@ -586,24 +576,21 @@ msgstr ""
 "ikusgai."
 
 #: content/ui/AccountInfo.qml:803
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "Also followed by:"
-msgstr "%1(e)k jarraitu zaituzte"
+msgstr "Ondokoek ere jarraitua:"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "Ikusi %1(e)ren profila"
+msgstr "Ikusi %1 gehiago"
 
 #: content/ui/AccountInfo.qml:833
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
-msgstr "Ikusi profila"
+msgstr "Ikusi dena"
 
 #: content/ui/AccountInfo.qml:871
 #, kde-format
@@ -683,9 +670,7 @@ msgid "Announcement on %1"
 msgstr "%1(e)ko iragarpena"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No announcements"
+#, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "Iragarpenik ez"
@@ -693,7 +678,7 @@ msgstr "Iragarpenik ez"
 #: content/ui/AnnouncementsPage.qml:70
 #, kde-format
 msgid "Your server has not made any announcements yet."
-msgstr ""
+msgstr "Zure zerbitzariak ez du oraindik iragarpenik egin."
 
 #: content/ui/Components/Emoji/EmojiGrid.qml:78
 #, kde-format
@@ -803,28 +788,25 @@ msgstr ""
 "Zerrenda esklusibo bateko postak etxeko denbora-lerrotik kanpo uzten dira."
 
 #: content/ui/EditListPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
-msgstr "Isilarazitako erabiltzaileak"
+msgstr "Kudeatu erabiltzaileak"
 
 #: content/ui/EditListPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
-msgstr "Erabiltzaileak"
+msgstr "Gehitu erabiltzaileak"
 
 #: content/ui/EditListPage.qml:118
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
-msgstr ""
+msgstr "Gehitu erabiltzaileak zerrendara..."
 
 #: content/ui/EditListPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Gehitu"
@@ -832,7 +814,7 @@ msgstr "Gehitu"
 #: content/ui/EditListPage.qml:202
 #, kde-format
 msgid "Search among users you follow…"
-msgstr ""
+msgstr "Bilatu jarraitzen dituzun erabiltzaileen artean..."
 
 #: content/ui/EditListPage.qml:236
 #, kde-format
@@ -888,7 +870,7 @@ msgstr "Traolak"
 #: content/ui/ExplorePage.qml:53
 #, kde-format
 msgid "News"
-msgstr ""
+msgstr "Albisteak"
 
 #: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
 #, kde-format
@@ -1062,15 +1044,15 @@ msgid "Create List"
 msgstr "Sortu zerrenda"
 
 #: content/ui/ListsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "No lists"
+#, kde-format
 msgid "No Lists"
-msgstr "Zerrendarik ez"
+msgstr "Zerrendarik gabe"
 
 #: content/ui/ListsPage.qml:68
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
+"Zerrendek jarraitzen dituzun haiek kategorizatzeko aukera ematen dizute."
 
 #: content/ui/ListTimelinePage.qml:27
 #, kde-format
@@ -1440,15 +1422,16 @@ msgid "Home"
 msgstr "Etxea"
 
 #: content/ui/Main.qml:393 content/ui/Main.qml:435 content/ui/Main.qml:450
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
-msgstr "Postarik ez"
+msgstr "Postarik gabe"
 
 #: content/ui/Main.qml:394 content/ui/Main.qml:436 content/ui/Main.qml:451
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
+"Oraintxe bertan nahiko isilik dagoela dirudi, saia zaitez postaren bat "
+"bidaltzen!"
 
 #: content/ui/Main.qml:403 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
@@ -1477,8 +1460,7 @@ msgid "Favorites"
 msgstr "Gogokoak"
 
 #: content/ui/Main.qml:477
-#, fuzzy, kde-format
-#| msgid "No favorites"
+#, kde-format
 msgid "No Favorites"
 msgstr "Gogokorik gabe"
 
@@ -1495,10 +1477,9 @@ msgid "Bookmarks"
 msgstr "Laster-markak"
 
 #: content/ui/Main.qml:493
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "No Bookmarks"
-msgstr "Laster-markak"
+msgstr "Laster-markarik ez"
 
 #: content/ui/Main.qml:494
 #, kde-format
