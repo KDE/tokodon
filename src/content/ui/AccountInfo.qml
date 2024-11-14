@@ -555,6 +555,11 @@ Kirigami.Page {
                                             onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
                                         },
                                         Kirigami.Action {
+                                            icon.name: "window"
+                                            text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
+                                            onTriggered: Qt.openUrlExternally(accountModel.identity.url)
+                                        },
+                                        Kirigami.Action {
                                             icon.name: "edit-copy"
                                             text: i18n("Copy Link")
                                             onTriggered: {
