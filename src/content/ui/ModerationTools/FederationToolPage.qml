@@ -7,7 +7,6 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.labs.components 1 as Components
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 Kirigami.ScrollablePage {
@@ -189,11 +188,12 @@ Kirigami.ScrollablePage {
         Layout.topMargin: Kirigami.Units.largeSpacing * 6
         Layout.bottomMargin: Kirigami.Units.largeSpacing * 6
 
-        Components.Banner {
+        Kirigami.InlineMessage {
             topPadding: Kirigami.Units.largeSpacing
             text: i18n("Allowed domain option is available for instances with limited federation mode enabled")
             Layout.fillWidth: true
             visible: true
+            position: Kirigami.InlineMessage.Position.Header
         }
 
         Kirigami.Heading {
