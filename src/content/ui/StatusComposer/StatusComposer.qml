@@ -10,7 +10,6 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Window
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1 as KirigamiComponents
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.tokodon
 import org.kde.tokodon.private
@@ -215,12 +214,13 @@ Kirigami.ScrollablePage {
 
     KQuickControlsAddons.Clipboard { id: clipboard }
 
-    header: KirigamiComponents.Banner {
+    header: Kirigami.InlineMessage {
         id: banner
         Layout.fillWidth: true
         width: parent.width
         visible: text.length !== 0
         type: Kirigami.MessageType.Error
+        position: Kirigami.InlineMessage.Position.Header
     }
 
     Kirigami.FlexColumn {

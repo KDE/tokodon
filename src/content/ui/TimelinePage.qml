@@ -3,7 +3,6 @@
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.labs.components 1 as LabComponents
 import org.kde.kirigamiaddons.components 1 as Components
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import QtQuick.Controls 2 as QQC2
@@ -58,10 +57,11 @@ Kirigami.ScrollablePage {
         textFormat: TextEdit.RichText
     }
 
-    header: LabComponents.Banner {
+    header: Kirigami.InlineMessage {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
+        position: Kirigami.InlineMessage.Position.Header
 
         showCloseButton: true
 

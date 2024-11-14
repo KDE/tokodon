@@ -8,7 +8,6 @@ import QtQml.Models
 
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
-import org.kde.kirigamiaddons.components 1 as Components
 
 import org.kde.tokodon
 
@@ -27,10 +26,11 @@ MastoPage {
         }
     }
 
-    header: Components.Banner {
+    header: Kirigami.InlineMessage {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
+        position: Kirigami.InlineMessage.Position.Header
 
         showCloseButton: true
 
