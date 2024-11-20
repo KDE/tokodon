@@ -21,7 +21,7 @@ decentralized servers that implement its API (such as Pixelfed).
 
 Tokodon supports services that implement the [Mastodon Client API](https://docs.joinmastodon.org/api/). This includes most popular Fediverse software, such as:
 
-* [Mastodon](https://joinmastodon.org) (and it's forks)
+* [Mastodon](https://joinmastodon.org) (and its forks)
 * [Akkoma](https://akkoma.social/) and [Pleroma](https://pleroma.social/)
 * [Pixelfed](https://pixelfed.org/)
 * [GoToSocial](https://gotosocial.org/)
