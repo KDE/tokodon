@@ -84,10 +84,16 @@ QQC2.ItemDelegate {
     readonly property bool isSelf: AccountManager.selectedAccount.identity === root.authorIdentity
     readonly property real threadMargin: Kirigami.Units.largeSpacing * 4
 
+    padding: 0
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
     leftPadding: Kirigami.Units.largeSpacing
     rightPadding: Kirigami.Units.largeSpacing
+
+    topInset: 0
+    leftInset: 0
+    rightInset: 0
+    bottomInset: 0
 
     highlighted: false
     hoverEnabled: false
