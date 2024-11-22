@@ -141,6 +141,7 @@ Kirigami.ScrollablePage {
 
         model: root.model
         isCurrentPage: root.isCurrentPage
+        expandedPost: root.expandedPost
 
         header: Kirigami.FlexColumn {
             id: flexColumn
