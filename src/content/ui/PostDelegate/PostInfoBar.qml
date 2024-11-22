@@ -19,6 +19,8 @@ InlineIdentityInfo {
 
     signal moreOpened(parentItem: var)
 
+    onClicked: Navigation.openAccount(identity.id)
+
     Item {
         Layout.fillWidth: true
     }
