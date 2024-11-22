@@ -93,4 +93,5 @@ static const QRegularExpression extraneousParagraphExp(QStringLiteral("(\\s*(?:<
 static const QRegularExpression extraneousBreakExp(QStringLiteral("(\\s*(?:<br\\s*\\/?>)+\\s*)<\\/p>"));
 static const QRegularExpression nextLink(QStringLiteral("<(.*)>; rel=\"next\""));
 static const QRegularExpression prevLink(QStringLiteral(".*<(.*)>; rel=\"prev\""));
+static const QRegularExpression linkTags(QStringLiteral("<a[^>]+href=\"([^\"]+)\"[^>]+>"));
 }

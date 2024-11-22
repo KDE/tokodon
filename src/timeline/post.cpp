@@ -79,29 +79,28 @@ void Post::fromJson(QJsonObject obj)
     processContent(obj);
 
     // Process all URLs in the body
-    const auto urlMatches = TextRegex::url.match(m_content);
-    if (urlMatches.hasMatch()) {
-        for (auto &url : urlMatches.capturedTexts()) {
-            // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
-            if (TextHandler::isPostUrl(url)) {
-                // Then request said URL from our server
-                m_parent->requestRemoteObject(QUrl(url), this, [this](QNetworkReply *reply) {
-                    const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+    auto matchIterator = TextRegex::url.globalMatch(m_content);
+    while (matchIterator.hasNext()) {
+        const QRegularExpressionMatch match = matchIterator.next();
+        // To whittle down the number of requests (which in most cases should be zero) check if the URL could point to a valid post.
+        if (TextHandler::isPostUrl(match.captured(0))) {
+            // Then request said URL from our server
+            m_parent->requestRemoteObject(QUrl(match.captured(0)), this, [this](QNetworkReply *reply) {
+                const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
-                    const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+                const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
 
-                    if (statuses.isEmpty()) {
-                        qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
-                    } else {
-                        const auto status = statuses.first().toObject();
+                if (statuses.isEmpty()) {
+                    qCDebug(TOKODON_LOG) << "Failed to find any statuses!";
+                } else {
+                    const auto status = statuses.first().toObject();
 
-                        m_quotedPost = new Post(m_parent, status, this);
-                        Q_EMIT quotedPostChanged();
-                    }
-                });
+                    m_quotedPost = new Post(m_parent, status, this);
+                    Q_EMIT quotedPostChanged();
+                }
+            });
 
-                break;
-            }
+            break;
         }
     }
 
@@ -493,9 +492,20 @@ void Post::processContent(const QJsonObject &obj)
     // Do the same for mentions
     const auto mentions = obj["mentions"_L1].toArray();
 
-    for (const auto &mention : mentions) {
-        const auto mentionObj = mention.toObject();
-        processedHtml.replace(mentionObj["url"_L1].toString(), QStringLiteral("account:/") + mentionObj["id"_L1].toString(), Qt::CaseInsensitive);
+    // Go through all link tags
+    auto matchIterator = TextRegex::linkTags.globalMatch(processedHtml);
+    while (matchIterator.hasNext()) {
+        const QRegularExpressionMatch match = matchIterator.next();
+        // Check if it's actually a mention, to prevent it from overwriting post URLs for example
+        if (match.captured(0).contains(QStringLiteral("class=\"u-url mention\""))) {
+            for (const auto &mention : mentions) {
+                // Replace if the mention URL matches with an internal Tokodon account URI
+                if (mention["url"_L1].toString() == match.captured(1)) {
+                    processedHtml.replace(match.capturedStart(1), match.capturedLength(1), QStringLiteral("account:/") + mention["id"_L1].toString());
+                    break;
+                }
+            }
+        }
     }
 
     // Remove the standalone tags from the main content
