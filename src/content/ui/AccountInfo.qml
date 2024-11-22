@@ -125,7 +125,7 @@ Kirigami.Page {
 
                     required property string postId
                     required property string source
-                    required property string tempSource
+                    required property url tempSource
                     required property real focusX
                     required property real focusY
                     required property bool sensitive

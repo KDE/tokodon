@@ -88,9 +88,13 @@ int Attachment::isVideo() const
     return 0;
 }
 
-QString Attachment::tempSource() const
+QUrl Attachment::tempSource() const
 {
-    return QStringLiteral("image://blurhash/%1").arg(m_blurhash);
+    QUrl url;
+    url.setScheme(QStringLiteral("image"));
+    url.setHost(QStringLiteral("blurhash"));
+    url.setPath(QLatin1Char('/') + m_blurhash, QUrl::DecodedMode);
+    return url;
 }
 
 double Attachment::focusX() const
