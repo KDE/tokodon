@@ -33,6 +33,20 @@ Kirigami.Page {
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
+    title: accountModel.identity.displayName
+    titleDelegate: Kirigami.Heading {
+        // identical to normal Kirigami headers
+        Layout.fillWidth: true
+        Layout.maximumWidth: implicitWidth + 1
+        Layout.minimumWidth: 0
+        maximumLineCount: 1
+        elide: Text.ElideRight
+
+        text: accountModel.identity.displayNameHtml
+
+        textFormat: TextEdit.RichText
+    }
+
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
