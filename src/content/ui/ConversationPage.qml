@@ -56,8 +56,6 @@ Kirigami.ScrollablePage {
                             secondary: false
 
                             Layout.fillWidth: true
-
-                            onClicked: delegate.clicked()
                         }
 
                         QQC2.ProgressBar {

@@ -30,7 +30,10 @@ Components.AlbumMaximizeComponent {
     leading: InlineIdentityInfo {
         identity: root.identity
         secondary: false
-        onClicked: close()
+        onClicked: {
+            close();
+            Navigation.openAccount(root.identity.id);
+        }
     }
 
     onSaveItem: {
