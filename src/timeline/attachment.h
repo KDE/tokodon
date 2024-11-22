@@ -28,7 +28,7 @@ class Attachment : public QObject
     Q_PROPERTY(QString source MEMBER m_url CONSTANT)
     Q_PROPERTY(QString remoteUrl MEMBER m_remote_url CONSTANT)
     Q_PROPERTY(QString caption READ description CONSTANT)
-    Q_PROPERTY(QString tempSource READ tempSource CONSTANT)
+    Q_PROPERTY(QUrl tempSource READ tempSource CONSTANT)
     Q_PROPERTY(int sourceWidth MEMBER m_sourceWidth CONSTANT)
     Q_PROPERTY(int sourceHeight MEMBER m_sourceHeight CONSTANT)
     Q_PROPERTY(double focusX READ focusX WRITE setFocusX NOTIFY focusXChanged)
@@ -66,7 +66,7 @@ public:
      */
     [[nodiscard]] int isVideo() const;
 
-    [[nodiscard]] QString tempSource() const;
+    [[nodiscard]] QUrl tempSource() const;
 
     [[nodiscard]] double focusX() const;
     void setFocusX(double value);
