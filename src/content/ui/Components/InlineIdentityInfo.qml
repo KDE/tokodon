@@ -33,7 +33,6 @@ RowLayout {
         source: root.identity.avatarUrl
         cache: true
         onClicked: if (!admin) {
-            Navigation.openAccount(root.identity.id);
             root.clicked();
         }
         name: root.identity.displayName
