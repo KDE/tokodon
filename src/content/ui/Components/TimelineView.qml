@@ -194,7 +194,7 @@ ListView {
                 }
 
                 status.inViewPort = topEdgeVisible || bottomEdgeVisible;
-                if (status.inViewPort) {
+                if (status.inViewPort && status.ListView.view.model.updateReadMarker) {
                     status.ListView.view.model.updateReadMarker(status.originalId);
                 }
             }
