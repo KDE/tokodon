@@ -47,8 +47,11 @@ QQC2.Control {
 
     property double firstAttachmentAspectRatio: {
         const firstAttachment = root.attachments[0];
-        const aspectRatio = firstAttachment.sourceHeight / Math.max(firstAttachment.sourceWidth, 1)
+        if (firstAttachment.sourceHeight === 0) {
+            return 1.0;
+        }
 
+        const aspectRatio = firstAttachment.sourceHeight / Math.max(firstAttachment.sourceWidth, 1)
         return aspectRatio;
     }
 
