@@ -67,8 +67,9 @@ Item {
             hoverEnabled: true
 
             onClicked: {
-                altPopup.subtitle = modelData.caption;
-                altPopup.open();
+                altPopupLoader.active = true;
+                altPopupLoader.item.subtitle = modelData.caption;
+                altPopupLoader.item.open();
             }
 
             QQC2.ToolTip.text: i18n("Text description available")
@@ -110,12 +111,17 @@ Item {
         }
     }
 
-    Kirigami.PromptDialog {
-        id: altPopup
+    Loader {
+        id: altPopupLoader
 
-        width: 400
-        height: 300
+        active: false
+        sourceComponent: Kirigami.PromptDialog {
+            width: 400
+            height: 300
 
-        title: i18nc("@title", "Media Description")
+            title: i18nc("@title", "Media Description")
+
+            onClosed: altPopupLoader.active = false
+        }
     }
 }
