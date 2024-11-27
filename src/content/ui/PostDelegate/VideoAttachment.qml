@@ -63,6 +63,10 @@ MediaContainer {
         fillMode: Image.PreserveAspectCrop
     }
 
+    HoverHandler {
+        id: hoverHandler
+    }
+
     QQC2.BusyIndicator {
         visible: player.loading && !root.isSensitive
         anchors.centerIn: parent
@@ -120,7 +124,7 @@ MediaContainer {
                 return 0.7;
             }
 
-            return root.containsMouse || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
+            return hoverHandler.hovered || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
         }
         Behavior on opacity {
             OpacityAnimator {
