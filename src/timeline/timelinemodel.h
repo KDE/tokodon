@@ -109,6 +109,7 @@ Q_SIGNALS:
     void showBoostsChanged();
 
     void repositionAt(int index);
+    void streamedPostAdded(const QString &postId);
 
 protected:
     void fetchMore(const QModelIndex &parent) override;
