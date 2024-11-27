@@ -169,7 +169,19 @@ QQC2.Control {
                                     source: visible ? modelData.tempSource : ''
                                 }
 
-                                visible: parent.status !== Image.Ready || root.isSensitive
+                                visible: opacity !== 0.0
+                                opacity: parent.status !== Image.Ready || root.isSensitive ? 1.0 : 0.0
+
+                                Behavior on opacity {
+                                    NumberAnimation {
+                                        duration: Kirigami.Units.longDuration
+                                    }
+                                }
+                            }
+
+                            QQC2.BusyIndicator {
+                                anchors.centerIn: parent
+                                visible: parent.status !== Image.Ready
                             }
 
                             QQC2.Button {
