@@ -136,8 +136,12 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         Q_UNREACHABLE();
     }
 
-    if (notification->post() != nullptr) {
-        knotification->setText(notification->post()->content());
+    if (notification->post() != nullptr && notification->type() != Notification::Follow && notification->type() != Notification::FollowRequest) {
+        if (notification->post()->spoilerText().isEmpty()) {
+            knotification->setText(notification->post()->content());
+        } else {
+            knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
+        }
     }
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
