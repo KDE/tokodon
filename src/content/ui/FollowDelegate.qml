@@ -77,6 +77,9 @@ QQC2.ItemDelegate {
 
         UserCard {
             userIdentity: root.notificationActorIdentity
+
+            Kirigami.Theme.colorSet: Kirigami.Theme.Window
+            Kirigami.Theme.inherit: false
         }
     }
 }

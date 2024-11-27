@@ -15,13 +15,8 @@ Kirigami.AbstractCard {
 
     required property var userIdentity
 
-    property bool isBackgroundAvailable: !userIdentity.backgroundUrl.toString().trim().endsWith("/headers/original/missing.png")
-
-    HoverHandler {
-        cursorShape: Qt.PointingHandCursor
-    }
-
     showClickFeedback: true
+    onClicked: Navigation.openAccount(root.userIdentity.id)
 
     contentItem: Item {
         implicitHeight: userInfo.implicitHeight
@@ -60,13 +55,7 @@ Kirigami.AbstractCard {
 
                 // So this text area doesn't eat the mouse events
                 onReleased: root.clicked()
-
-                HoverHandler {
-                    cursorShape: Qt.PointingHandCursor
-                }
             }
         }
     }
-
-    onClicked: Navigation.openAccount(root.userIdentity.id)
 }
