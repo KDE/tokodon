@@ -41,8 +41,8 @@ Kirigami.ScrollablePage {
     function setAuthCode(authCode) {
         account.setToken(authCode);
         account.authenticated.connect(() => {
-            pageStack.layers.clear();
-            pageStack.replace(mainTimeline, {
+            root.Window.window.pageStack.layers.clear();
+            root.Window.windowpageStack.replace(mainTimeline, {
                 name: "home"
             });
             if (root.Window.window !== applicationWindow()) {
