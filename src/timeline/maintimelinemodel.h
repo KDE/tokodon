@@ -69,7 +69,6 @@ public:
 Q_SIGNALS:
     void atEndChanged();
     void listIdChanged();
-    void repositionAt(int index);
     void hasPreviousChanged();
     void userHasTakenReadActionChanged();
 
