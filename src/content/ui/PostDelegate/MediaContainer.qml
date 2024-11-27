@@ -102,7 +102,7 @@ Item {
         z: 3
 
         visible: root.activeFocus
-        radius: Kirigami.Units.mediumSpacing
+        radius: Kirigami.Units.cornerRadius
         color: "transparent"
 
         border {

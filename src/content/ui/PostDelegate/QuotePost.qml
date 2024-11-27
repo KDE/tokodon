@@ -26,7 +26,7 @@ QQC2.AbstractButton {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
 
-        radius: Kirigami.Units.mediumSpacing
+        radius: Kirigami.Units.cornerRadius
         color: Kirigami.Theme.alternateBackgroundColor
         border {
             width: root.visualFocus ? 2 : 0

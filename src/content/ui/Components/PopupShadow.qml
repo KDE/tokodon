@@ -6,7 +6,7 @@ import org.kde.kirigami 2 as Kirigami
 
 Kirigami.ShadowedRectangle {
     color: Kirigami.Theme.backgroundColor
-    radius: Kirigami.Units.mediumSpacing
+    radius: Kirigami.Units.cornerRadius
     shadow {
         size: Kirigami.Units.largeSpacing
         color: Qt.rgba(0.0, 0.0, 0.0, 0.3)

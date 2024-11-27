@@ -16,7 +16,7 @@ MultiEffect {
         sourceItem: Rectangle {
             width: root.width
             height: root.height
-            radius: Kirigami.Units.mediumSpacing
+            radius: Kirigami.Units.cornerRadius
         }
     }
 }
