@@ -170,6 +170,7 @@ Kirigami.ScrollablePage {
             text: i18n("No Public Servers")
             explanation: i18n("Enter a server URL manually in the search field.")
             visible: !publicServersModel.loading && listView.count === 0 && root.filterString === ""
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 }
