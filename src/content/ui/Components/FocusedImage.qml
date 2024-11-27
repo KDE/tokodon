@@ -14,7 +14,7 @@ Rectangle {
     readonly property real aspectRatio: width / height
 
     property alias source: image.source
-    property alias sourceSize: image.sourceSize
+    property size sourceSize
     property alias status: image.status
 
     property bool crop: true
@@ -30,7 +30,10 @@ Rectangle {
         id: image
 
         // The aspect ratio of the image (before it's cropped).
-        readonly property real aspectRatio: sourceSize.width / Math.max(sourceSize.height, 1)
+        readonly property real aspectRatio: {
+            let size = root.sourceSize !== Qt.size(0, 0) ? root.sourceSize : image.sourceSize;
+            return size.width / Math.max(size.height, 1);
+        }
 
         // Whether the image is going to be vertically or horizontally cropped, based on if the aspect ratio is bigger
         // or smaller.
@@ -56,7 +59,6 @@ Rectangle {
         width: horizontallyCropped ? (parent.height * aspectRatio) : parent.width
         height: verticallyCropped ? (parent.width * (1.0 / aspectRatio)) : parent.height
 
-        mipmap: true
-        cache: true
+        cache: false
     }
 }
