@@ -14,41 +14,48 @@ const static auto fromLinearSRGB = QColorSpace(QColorSpace::SRgbLinear).transfor
 QImage BlurHash::decode(const QString &blurhash, const QSize &size)
 {
     // 10 is the minimum length of a blurhash string
-    if (blurhash.length() < 10)
+    if (blurhash.length() < 10) {
         return {};
+    }
 
     // First character is the number of components
     const auto components83 = decode83(blurhash.first(1));
-    if (!components83.has_value())
+    if (!components83.has_value()) {
         return {};
+    }
 
     const auto components = unpackComponents(*components83);
     const auto minimumSize = 1 + 1 + 4 + (components.x * components.y - 1) * 2;
-    if (components.x < 1 || components.y < 1 || blurhash.size() != minimumSize)
+    if (components.x < 1 || components.y < 1 || blurhash.size() != minimumSize) {
         return {};
+    }
 
     // Second character is the maximum AC component value
     const auto maxAC83 = decode83(blurhash.mid(1, 1));
-    if (!maxAC83.has_value())
+    if (!maxAC83.has_value()) {
         return {};
+    }
 
     const auto maxAC = decodeMaxAC(*maxAC83);
 
     // Third character onward is the average color of the image
     const auto averageColor83 = decode83(blurhash.mid(2, 4));
-    if (!averageColor83.has_value())
+    if (!averageColor83.has_value()) {
         return {};
+    }
 
     const auto averageColor = toLinearSRGB.map(decodeAverageColor(*averageColor83));
 
     QList values = {averageColor};
+    values.reserve(blurhash.size() - 7);
 
     // Iterate through the rest of the string for the color values
     // Each AC component is two characters each
     for (qsizetype c = 6; c < blurhash.size(); c += 2) {
         const auto acComponent83 = decode83(blurhash.mid(c, 2));
-        if (!acComponent83.has_value())
+        if (!acComponent83.has_value()) {
             return {};
+        }
 
         values.append(decodeAC(*acComponent83, maxAC));
     }
@@ -67,29 +74,31 @@ QImage BlurHash::decode(const QString &blurhash, const QSize &size)
 
             for (int nx = 0; nx < components.x; nx++) {
                 for (int ny = 0; ny < components.y; ny++) {
-                    const float basis = basisX[x * components.x + nx] * basisY[y * components.y + ny];
+                    const float basis = basisX.value(x * components.x + nx) * basisY.value(y * components.y + ny);
+                    const auto colorValue = values.value(nx + ny * components.x);
 
-                    linearSumR += values[nx + ny * components.x].redF() * basis;
-                    linearSumG += values[nx + ny * components.x].greenF() * basis;
-                    linearSumB += values[nx + ny * components.x].blueF() * basis;
+                    linearSumR += colorValue.redF() * basis;
+                    linearSumG += colorValue.greenF() * basis;
+                    linearSumB += colorValue.blueF() * basis;
                 }
             }
 
             auto linearColor = QColor::fromRgbF(linearSumR, linearSumG, linearSumB);
-            image.setPixelColor(x, y, fromLinearSRGB.map(linearColor));
+            image.setPixelColor(x, y, linearColor);
         }
     }
 
-    return image;
+    return image.colorTransformed(fromLinearSRGB);
 }
 
 std::optional<int> BlurHash::decode83(const QString &encodedString)
 {
     int temp = 0;
-    for (const QChar c : encodedString) {
+    for (const QChar c : std::as_const(encodedString)) {
         const auto index = b83Characters.indexOf(c);
-        if (index == -1)
+        if (index == -1) {
             return std::nullopt;
+        }
 
         temp = temp * 83 + static_cast<int>(index);
     }
