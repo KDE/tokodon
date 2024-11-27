@@ -12,6 +12,7 @@ MockAccount::MockAccount(QObject *parent)
 {
     registerGet(apiUrl(QStringLiteral("/api/v1/preferences")), new TestReply(QStringLiteral("preferences.json"), this));
     m_preferences = new Preferences(this);
+    m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
     auto notificationHandler = new NotificationHandler(new QNetworkAccessManager, this);
     connect(this, &MockAccount::notification, notificationHandler, [this, notificationHandler](std::shared_ptr<Notification> notification) {
         notificationHandler->handle(notification, this);

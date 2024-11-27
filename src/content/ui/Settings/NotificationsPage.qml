@@ -46,6 +46,68 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
+        title: i18nc("@title:group", "Filtering Policy")
+    }
+
+    component PolicyCombo: FormCard.FormComboBoxDelegate {
+        Layout.fillWidth: true
+
+        textRole: "display"
+        valueRole: "value"
+        model: [
+            {
+                display: i18nc("@info:Option Accept and show this in notifications", "Accept"),
+                value: "accept"
+            },
+            {
+                display: i18nc("@info:Option Filter and send to the filtered inbox", "Filter"),
+                value: "filter"
+            },
+            {
+                display: i18nc("@info:Option Ignore completely, do not show notification", "Ignore"),
+                value: "drop"
+            },
+        ]
+    }
+
+    FormCard.FormCard {
+        PolicyCombo {
+            text: i18nc("@label Notification preferences", "People you don't follow")
+            description: i18nc("@label Notification preferences", "Until you manually approve them.")
+            Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing)
+            onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowing = currentValue
+        }
+        FormCard.FormDelegateSeparator {}
+        PolicyCombo {
+            text: i18nc("@label Notification preferences", "People not following you")
+            description: i18nc("@label Notification preferences", "Including people who have been following you fewer than 3 days.")
+            Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers)
+            onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNotFollowers = currentValue
+        }
+        FormCard.FormDelegateSeparator {}
+        PolicyCombo {
+            text: i18nc("@label Notification preferences", "New accounts")
+            description: i18nc("@label Notification preferences", "Created within the past 30 days.")
+            Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts)
+            onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forNewAccounts = currentValue
+        }
+        FormCard.FormDelegateSeparator {}
+        PolicyCombo {
+            text: i18nc("@label Notification preferences", "Unsolicited conversations")
+            description: i18nc("@label Notification preferences", "Filtered unless it's in reply to your own mention or if you follow the sender.")
+            Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions)
+            onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forPrivateMentions = currentValue
+        }
+        FormCard.FormDelegateSeparator {}
+        PolicyCombo {
+            text: i18nc("@label Notification preferences", "Moderated accounts")
+            description: i18nc("@label Notification preferences", "Limited by server moderators.")
+            Component.onCompleted: currentIndex = indexOfValue(AccountManager.selectedAccount.notificationFilteringPolicy.forLimitedAccounts)
+            onCurrentValueChanged: AccountManager.selectedAccount.notificationFilteringPolicy.forLimitedAccounts = currentValue
+        }
+    }
+
+    FormCard.FormHeader {
         title: i18nc("@title:group", "Events")
     }
 

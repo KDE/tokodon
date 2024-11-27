@@ -24,6 +24,7 @@ Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ig
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
+    m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
     setInstanceUri(instanceUri);
     m_requestingAdmin = admin;
 }
@@ -33,6 +34,7 @@ Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *p
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
+    m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
     m_config = settings;
     connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
     connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);

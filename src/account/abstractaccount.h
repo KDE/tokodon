@@ -4,6 +4,7 @@
 #pragma once
 
 #include "account/identity.h"
+#include "account/notificationfilteringpolicy.h"
 #include "account/preferences.h"
 #include "accountconfig.h"
 #include "admin/adminaccountinfo.h"
@@ -16,7 +17,6 @@
 class Notification;
 class QNetworkReply;
 class QHttpMultiPart;
-class Preferences;
 
 /**
  * @brief Represents an account, which could possibly be real or a mock for testing.
@@ -44,6 +44,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(bool registrationsOpen READ registrationsOpen NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(QString registrationMessage READ registrationMessage NOTIFY fetchedInstanceMetadata)
     Q_PROPERTY(int unreadNotificationsCount READ unreadNotificationsCount NOTIFY unreadNotificationsCountChanged)
+    Q_PROPERTY(NotificationFilteringPolicy *notificationFilteringPolicy READ notificationFilteringPolicy CONSTANT)
 
 public:
     /**
@@ -135,6 +136,11 @@ public:
      * @return The server-side preferences.
      */
     [[nodiscard]] Preferences *preferences() const;
+
+    /**
+     * @return The server-side notification filtering policy.
+     */
+    [[nodiscard]] NotificationFilteringPolicy *notificationFilteringPolicy() const;
 
     /**
      * @return The username of the account.
@@ -733,6 +739,7 @@ protected:
     std::shared_ptr<ReportInfo> m_reportInfo;
     AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
+    NotificationFilteringPolicy *m_notificationFilteringPolicy = nullptr;
     QList<CustomEmoji> m_customEmojis;
     QString m_additionalScopes;
     AccountConfig *m_config = nullptr;

@@ -60,6 +60,8 @@ target_sources(tokodon_static
     account/publicserversmodel.h
     account/notificationhandler.cpp
     account/notificationhandler.h
+    account/notificationfilteringpolicy.cpp
+    account/notificationfilteringpolicy.h
 
     # Editor
     editor/posteditorbackend.cpp

@@ -54,6 +54,11 @@ Preferences *AbstractAccount::preferences() const
     return m_preferences;
 }
 
+NotificationFilteringPolicy *AbstractAccount::notificationFilteringPolicy() const
+{
+    return m_notificationFilteringPolicy;
+}
+
 QString AbstractAccount::username() const
 {
     return m_name;
