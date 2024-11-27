@@ -133,7 +133,6 @@ QQC2.ItemDelegate {
     }
 
     TapHandler {
-        gesturePolicy: TapHandler.WithinBounds
         onTapped: eventPoint => {
             // Get the inner ColumnLayout for the FlexColumn
             const innerChild = flexColumn.children[0];
