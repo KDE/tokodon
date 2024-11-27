@@ -253,8 +253,4 @@ Item {
             }
         }
     }
-
-    HoverHandler {
-        cursorShape: Qt.PointingHandCursor
-    }
 }
