@@ -55,6 +55,11 @@ StatefulApp.StatefulWindow {
         }
     }
 
+    header: Kirigami.Separator {
+        width: root.width
+        visible: !AccountManager.isReady
+    }
+
     function decideDefaultPage(): void {
         pageStack.clear();
 
@@ -692,6 +697,13 @@ StatefulApp.StatefulWindow {
 
         Kirigami.LoadingPlaceholder {
             anchors.centerIn: parent
+        }
+
+        Image {
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            source: "qrc:/content/elephant.svg"
+            LayoutMirroring.enabled: false
         }
     }
 
