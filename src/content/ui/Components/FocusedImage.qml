@@ -31,7 +31,7 @@ Rectangle {
 
         // The aspect ratio of the image (before it's cropped).
         readonly property real aspectRatio: {
-            let size = root.sourceSize !== Qt.size(0, 0) ? root.sourceSize : image.sourceSize;
+            let size = root.sourceSize !== Qt.size(-1, -1) && root.sourceSize !== Qt.size(0, 0) ? root.sourceSize : image.sourceSize;
             return size.width / Math.max(size.height, 1);
         }
 
