@@ -143,6 +143,7 @@ ListView {
             text: i18nc("@info:status", "End of Timeline")
 
             Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: Kirigami.Units.largeSpacing * 2
             Layout.alignment: Qt.AlignHCenter
         }
 
