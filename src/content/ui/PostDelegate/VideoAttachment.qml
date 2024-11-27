@@ -20,30 +20,40 @@ MediaContainer {
     required property bool autoPlay
     required property bool isSensitive
     property alias showControls: mediaControls.visible
-    property alias looping: player.looping
+    property bool looping: false
 
     function pause() {
-        player.pause();
-    }
-
-    function play() {
-        player.play();
-    }
-
-    function togglePlayPause() {
-        if (player.paused || player.stopped) {
-            player.play();
-        } else {
-            player.pause();
+        // Unlike the other functions, we want to make sure the item doesn't accidentally get created when the video is auto-paused due to scrolling
+        if (player.active) {
+            player.item?.pause();
         }
     }
 
-    MpvPlayer {
+    function play() {
+        player.active = true;
+        player.item?.play();
+    }
+
+    function togglePlayPause() {
+        player.active = true;
+        if (player.item?.paused || player.item?.stopped) {
+            player.item?.play();
+        } else {
+            player.item?.pause();
+        }
+    }
+
+    Loader {
         id: player
+        active: root.autoPlay
+
         anchors.fill: parent
 
-        autoPlay: root.autoPlay
-        source: root.videoUrl
+        sourceComponent: MpvPlayer {
+            autoPlay: root.autoPlay
+            source: root.videoUrl
+            looping: root.looping
+        }
     }
 
     Image {
@@ -58,7 +68,7 @@ MediaContainer {
         anchors.fill: parent
         source: root.previewUrl
 
-        visible: (player.loading || player.stopped) && !root.isSensitive
+        visible: ((player.item?.loading ?? false) || (player.item?.stopped ?? true)) && !root.isSensitive
 
         fillMode: Image.PreserveAspectCrop
     }
@@ -68,7 +78,7 @@ MediaContainer {
     }
 
     QQC2.BusyIndicator {
-        visible: player.loading && !root.isSensitive
+        visible: player.active && (player.item?.loading ?? false) && !root.isSensitive
         anchors.centerIn: parent
     }
 
@@ -79,16 +89,20 @@ MediaContainer {
                 return false;
             }
 
+            if (!player.active) {
+                return true;
+            }
+
             // don't show the controls if the media is still loading
-            if (player.loading) {
+            if (player.item.loading) {
                 return false;
             }
 
             // if the media is paused, definitely show them
-            return player.paused || player.stopped;
+            return player.item?.paused || player.item?.stopped;
         }
         anchors.centerIn: parent
-        onClicked: player.play()
+        onClicked: player?.item?.play()
 
         Accessible.name: i18nc("@action:button Start media playback", "Play")
 
@@ -114,7 +128,7 @@ MediaContainer {
 
         radius: Kirigami.Units.cornerRadius
         color: Kirigami.Theme.backgroundColor
-        opacity: hoverHandler.hovered && !root.isSensitive && !player.paused && !player.stopped ? 0.7 : 0.0
+        opacity: hoverHandler.hovered && !root.isSensitive && !(player.item?.paused ?? true) && !(player.item?.stopped ?? true) ? 0.7 : 0.0
         Behavior on opacity {
             OpacityAnimator {
                 duration: Kirigami.Units.longDuration
@@ -143,17 +157,17 @@ MediaContainer {
                 Layout.fillWidth: true
 
                 from: 0
-                to: player.duration
+                to: player.item?.duration ?? 0.0
 
                 Binding {
                     target: videoSeekSlider
                     property: "value"
-                    value: player.position
+                    value: player.item?.position
                     when: !videoSeekSlider.pressed
                     restoreMode: Binding.RestoreBindingOrValue
                 }
 
-                onMoved: player.setPosition(value)
+                onMoved: player.item?.setPosition(value)
             }
         }
     }
