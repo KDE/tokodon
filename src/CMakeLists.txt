@@ -191,6 +191,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/Emoji/EmojiGrid.qml
         content/ui/Components/Emoji/EmojiPicker.qml
         content/ui/Components/Emoji/EmojiTonesPicker.qml
+        content/ui/Components/ClickableIdentityInfo.qml
         content/ui/Components/FocusedImage.qml
         content/ui/Components/InlineIdentityInfo.qml
         content/ui/Components/PopupShadow.qml

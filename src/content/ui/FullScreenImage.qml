@@ -27,7 +27,7 @@ Components.AlbumMaximizeComponent {
         }
     }
 
-    leading: InlineIdentityInfo {
+    leading: ClickableIdentityInfo {
         identity: root.identity
         secondary: false
         onClicked: {

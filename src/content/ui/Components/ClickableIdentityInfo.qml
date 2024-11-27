@@ -11,7 +11,7 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 
 // Used everywhere, is a component with an Avatar, some labels and such smashed together.
-// If you want to click on this (e.g. the user info used in a post) use ClickableIdentityInfo. Otherwise use this.
+// If you want to click on this (e.g. the user info used in a post) use this. Otherwise use InlineIdentityInfo.
 RowLayout {
     id: root
 
@@ -23,7 +23,9 @@ RowLayout {
 
     spacing: Kirigami.Units.mediumSpacing
 
-    KirigamiComponents.Avatar {
+    signal clicked()
+
+    KirigamiComponents.AvatarButton {
         id: avatar
 
         Layout.alignment: admin ? Qt.AlignCenter : Qt.AlignTop
@@ -31,7 +33,14 @@ RowLayout {
 
         source: root.identity.avatarUrl
         cache: true
+        onClicked: if (!admin) {
+            root.clicked();
+        }
         name: root.identity.displayName
+
+        QQC2.ToolTip.text: i18n("View profile")
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
     }
 
     ColumnLayout {
@@ -55,7 +64,14 @@ RowLayout {
             maximumLineCount: 1
 
             Layout.fillWidth: true
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: avatar.clicked()
+            }
         }
+
         QQC2.Label {
             font.pixelSize: Config.defaultFont.pixelSize + 1
             elide: Text.ElideRight
@@ -65,6 +81,12 @@ RowLayout {
             maximumLineCount: 1
 
             Layout.fillWidth: true
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: avatar.clicked()
+            }
         }
         Kirigami.Heading {
             id: emailHeading

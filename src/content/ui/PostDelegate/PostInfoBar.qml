@@ -10,7 +10,7 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 
 // This is the top part of the status that contains the author information, and some more actions
-InlineIdentityInfo {
+ClickableIdentityInfo {
     id: infoBar
 
     identity: root.authorIdentity
