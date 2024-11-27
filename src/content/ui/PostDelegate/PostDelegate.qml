@@ -166,7 +166,7 @@ QQC2.ItemDelegate {
 
         RowLayout {
             spacing: Kirigami.Units.largeSpacing
-            visible: root.pinned && !root.filtered
+            visible: root.pinned && !root.notificationActorIdentity && !root.filtered
 
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
