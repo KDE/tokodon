@@ -60,6 +60,13 @@ ListView {
         function onRepositionAt(index): void {
             root.positionViewAtIndex(index, ListView.Beginning);
         }
+
+        function onStreamedPostAdded(id: string): void {
+            // Update the read marker if we're at the top and a post just came in
+            if (root.atYBeginning && root.model.updateReadMarker) {
+                root.model.updateReadMarker(id);
+            }
+        }
     }
 
     Components.FloatingButton {

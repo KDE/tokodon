@@ -192,6 +192,7 @@ void MainTimelineModel::handleEvent(AbstractAccount::StreamingEventType eventTyp
             beginInsertRows({}, 0, 0);
             m_timeline.push_front(post);
             endInsertRows();
+            Q_EMIT streamedPostAdded(post->originalPostId());
         }
     }
 }
