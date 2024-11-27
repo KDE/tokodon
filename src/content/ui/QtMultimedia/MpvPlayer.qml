@@ -16,6 +16,7 @@ Item {
     property bool looping
     property bool autoPlay
     property alias source: player.source
+    property alias position: player.position
 
     function play(): void {
         player.play();

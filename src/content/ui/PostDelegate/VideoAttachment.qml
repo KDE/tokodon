@@ -31,7 +31,7 @@ MediaContainer {
     }
 
     function togglePlayPause() {
-        if (player.paused) {
+        if (player.paused || player.stopped) {
             player.play();
         } else {
             player.pause();
@@ -85,11 +85,7 @@ MediaContainer {
             }
 
             // if the media is paused, definitely show them
-            if (player.paused) {
-                return true;
-            }
-
-            return false;
+            return player.paused || player.stopped;
         }
         anchors.centerIn: parent
         onClicked: player.play()
@@ -116,16 +112,9 @@ MediaContainer {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
         Kirigami.Theme.inherit: false
 
-        visible: !root.isSensitive
-        radius: previewImage.visible ? 0 : Kirigami.Units.smallSpacing
+        radius: Kirigami.Units.cornerRadius
         color: Kirigami.Theme.backgroundColor
-        opacity: {
-            if (!player.paused) {
-                return 0.7;
-            }
-
-            return hoverHandler.hovered || playPauseButton.hovered || videoSeekSlider.hovered ? 0.7 : 0.0
-        }
+        opacity: hoverHandler.hovered && !root.isSensitive && !player.paused && !player.stopped ? 0.7 : 0.0
         Behavior on opacity {
             OpacityAnimator {
                 duration: Kirigami.Units.longDuration
@@ -136,11 +125,13 @@ MediaContainer {
             id: mediaControlsLayout
             anchors.fill: parent
 
+            spacing: Kirigami.Units.smallSpacing
+
             QQC2.ToolButton {
                 id: playPauseButton
                 Layout.alignment: Qt.AlignVCenter
 
-                icon.name: player.paused ? "media-playback-start" : "media-playback-pause"
+                icon.name: "media-playback-pause"
 
                 onClicked: root.togglePlayPause()
             }
@@ -148,6 +139,7 @@ MediaContainer {
             QQC2.Slider {
                 id: videoSeekSlider
                 Layout.alignment: Qt.AlignVCenter
+                Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.fillWidth: true
 
                 from: 0
