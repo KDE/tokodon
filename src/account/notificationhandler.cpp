@@ -4,6 +4,7 @@
 #include "account/notificationhandler.h"
 
 #include "account/account.h"
+#include "account/accountmanager.h"
 #include "network/networkcontroller.h"
 
 #include <QPainter>
@@ -67,7 +68,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
 
     switch (notification->type()) {
     case Notification::Mention:
-        if (!account->config()->notifyMention()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyMention()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("mention"));
@@ -75,7 +76,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewPostAction();
         break;
     case Notification::Status:
-        if (!account->config()->notifyStatus()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyStatus()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("status"));
@@ -83,7 +84,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewPostAction();
         break;
     case Notification::Repeat:
-        if (!account->config()->notifyBoost()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyBoost()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("boost"));
@@ -91,7 +92,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewPostAction();
         break;
     case Notification::Follow:
-        if (!account->config()->notifyFollow()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyFollow()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("follow"));
@@ -99,7 +100,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewUserAction();
         break;
     case Notification::FollowRequest:
-        if (!account->config()->notifyFollowRequest()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyFollowRequest()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("follow-request"));
@@ -107,7 +108,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewUserAction();
         break;
     case Notification::Favorite:
-        if (!account->config()->notifyFavorite()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyFavorite()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("favorite"));
@@ -115,7 +116,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewPostAction();
         break;
     case Notification::Poll:
-        if (!account->config()->notifyPoll()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyPoll()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("poll"));
@@ -123,7 +124,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         addViewPostAction();
         break;
     case Notification::Update:
-        if (!account->config()->notifyUpdate()) {
+        if (!AccountManager::instance().testMode() && !account->config()->notifyUpdate()) {
             return;
         }
         knotification = new KNotification(QStringLiteral("update"));
