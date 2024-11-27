@@ -13,10 +13,10 @@ Item {
     readonly property size sourceSize: Qt.size(videoOutput.sourceRect.width, videoOutput.sourceRect.height)
 
     property alias duration: player.duration
-    property bool looping
     property bool autoPlay
     property alias source: player.source
     property alias position: player.position
+    property bool looping
 
     function play(): void {
         player.play();
@@ -33,6 +33,7 @@ Item {
     MediaPlayer {
         id: player
         videoOutput: videoOutput
+        loops: root.looping ? MediaPlayer.Infinite : 0
 
         onMediaStatusChanged: {
             if (player.mediaStatus !== MediaPlayer.LoadingMedia) {
