@@ -64,7 +64,8 @@ RelationshipSeveranceEvent::RelationshipSeveranceEvent(const QJsonObject &source
     m_type = str_to_sev_type[source["type"_L1].toString()];
     m_purged = source["purged"_L1].toBool();
     m_targetName = source["target_name"_L1].toString();
-    m_relationshipsCount = source["relationships_count"_L1].toInt();
+    m_followersCount = source["followers_count"_L1].toInt();
+    m_followingCount = source["following_count"_L1].toInt();
     m_createdAt = QDateTime::fromString(source["created_at"_L1].toString(), Qt::ISODate).toLocalTime();
 }
 
@@ -90,7 +91,7 @@ QString RelationshipSeveranceEvent::targetName() const
 
 int RelationshipSeveranceEvent::relationshipsCount() const
 {
-    return m_relationshipsCount;
+    return m_followersCount + m_followingCount;
 }
 
 QDateTime RelationshipSeveranceEvent::createdAt() const
@@ -127,12 +128,12 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     m_id = obj["id"_L1].toString().toInt();
 
     if (m_type == ModerationWarning) {
-        m_accountWarning = AccountWarning(obj["moderation_warning"_L1].toObject());
+        m_accountWarning = AccountWarning(obj["event"_L1].toObject());
     } else if (m_type == SeveredRelationships) {
-        m_relationshipSeveranceEvent = RelationshipSeveranceEvent(obj["relationship_severance_event"_L1].toObject());
+        m_relationshipSeveranceEvent = RelationshipSeveranceEvent(obj["event"_L1].toObject());
     } else if (m_type == AdminReport) {
         m_report = new ReportInfo();
-        m_report->fromSourceData(obj["report"_L1].toObject());
+        m_report->fromSourceData(obj["event"_L1].toObject());
     }
 }
 
