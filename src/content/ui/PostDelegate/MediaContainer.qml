@@ -17,8 +17,6 @@ Item {
     property bool showGifChip: false
     property bool showVideoChip: false
 
-    property alias containsMouse: mouseArea.containsMouse
-
     signal clicked()
     signal contextMenuRequested()
 
@@ -29,14 +27,10 @@ Item {
     layer.enabled: true
     layer.effect: RoundedEffect {}
 
-    // TODO: port to TapHandler/HoverHandler?
-    MouseArea {
-        id: mouseArea
-
-        anchors.fill: parent
+    TapHandler {
         acceptedButtons: Qt.LeftButton
-
-        onClicked: root.clicked()
+        gesturePolicy: TapHandler.WithinBounds
+        onTapped: root.clicked()
     }
 
     TapHandler {
