@@ -250,6 +250,9 @@ int main(int argc, char *argv[])
     url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}, {QStringLiteral("resolve"), QStringLiteral("true")}});
     account->registerGet(url, new TestReply(QStringLiteral("search-result.json"), account));
 
+    QUrl readMarkerUrl = account->apiUrl(QStringLiteral("/api/v1/markers"));
+    readMarkerUrl.setQuery(QUrlQuery{{QStringLiteral("timeline[]"), QStringLiteral("home")}});
+    account->registerGet(readMarkerUrl, new TestReply(QStringLiteral("markers_home.json"), account));
     account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/home")), new TestReply(QStringLiteral("statuses.json"), account));
     account->registerGet(account->apiUrl(QStringLiteral("/api/v1/notifications")), new TestReply(QStringLiteral("notifications.json"), account));
 #else
