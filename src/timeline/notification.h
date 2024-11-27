@@ -59,7 +59,8 @@ private:
     Type m_type;
     bool m_purged;
     QString m_targetName;
-    int m_relationshipsCount = 0;
+    int m_followersCount = 0;
+    int m_followingCount = 0;
     QDateTime m_createdAt;
 };
 
