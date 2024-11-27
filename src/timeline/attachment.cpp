@@ -51,9 +51,9 @@ void Attachment::fromJson(const QJsonObject &obj)
         m_type = stringToAttachmentType[type];
     }
 
-    if (!m_remote_url.isEmpty()) {
+    if (!m_remote_url.isEmpty() && m_type == Unknown) {
         const auto mimeType = QMimeDatabase().mimeTypeForFile(m_remote_url);
-        if (m_type == AttachmentType::Unknown && mimeType.name().contains("image"_L1)) {
+        if (mimeType.name().contains("image"_L1)) {
             m_type = AttachmentType::Image;
         }
     }
