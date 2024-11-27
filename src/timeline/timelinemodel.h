@@ -108,6 +108,8 @@ Q_SIGNALS:
     void showRepliesChanged();
     void showBoostsChanged();
 
+    void repositionAt(int index);
+
 protected:
     void fetchMore(const QModelIndex &parent) override;
     [[nodiscard]] bool canFetchMore(const QModelIndex &parent) const override;
