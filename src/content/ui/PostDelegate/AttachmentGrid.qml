@@ -331,7 +331,8 @@ QQC2.Control {
         anchors.centerIn: parent
 
         visible: parent.isSensitive && parent.hasValidAttachment
-        text: i18n("Media Hidden")
+        text: i18n("Show Media")
+        icon.name: "view-visible-symbolic"
 
         onClicked: root.showMedia()
     }
