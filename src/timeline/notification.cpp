@@ -89,9 +89,14 @@ QString RelationshipSeveranceEvent::targetName() const
     return m_targetName;
 }
 
-int RelationshipSeveranceEvent::relationshipsCount() const
+int RelationshipSeveranceEvent::followersCount() const
 {
-    return m_followersCount + m_followingCount;
+    return m_followersCount;
+}
+
+int RelationshipSeveranceEvent::followingCount() const
+{
+    return m_followingCount;
 }
 
 QDateTime RelationshipSeveranceEvent::createdAt() const

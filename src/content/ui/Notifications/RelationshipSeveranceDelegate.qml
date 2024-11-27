@@ -59,7 +59,10 @@ QQC2.ItemDelegate {
             }
 
             QQC2.Label {
-                text: i18nc("@info:label", "%1 relationships were severed due to moderation actions.", root.relationshipSeveranceEvent.relationshipsCount)
+                text: xi18nc("@info:label", "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 account you follow.", root.relationshipSeveranceEvent.targetName, root.relationshipSeveranceEvent.followingCount, root.relationshipSeveranceEvent.followersCount)
+                wrapMode: Text.WordWrap
+
+                Layout.fillWidth: true
             }
         }
     }

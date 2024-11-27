@@ -39,7 +39,8 @@ class RelationshipSeveranceEvent
     Q_PROPERTY(Type type READ type CONSTANT)
     Q_PROPERTY(bool purged READ purged CONSTANT)
     Q_PROPERTY(QString targetName READ targetName CONSTANT)
-    Q_PROPERTY(int relationshipsCount READ relationshipsCount CONSTANT)
+    Q_PROPERTY(int followersCount READ followersCount CONSTANT)
+    Q_PROPERTY(int followingCount READ followingCount CONSTANT)
 
 public:
     enum Type { DomainBlock, UserDomainBlock, AccountSuspension };
@@ -51,7 +52,8 @@ public:
     Type type() const;
     bool purged() const;
     QString targetName() const;
-    int relationshipsCount() const;
+    int followersCount() const;
+    int followingCount() const;
     QDateTime createdAt() const;
 
 private:
