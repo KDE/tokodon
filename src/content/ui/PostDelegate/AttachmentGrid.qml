@@ -157,6 +157,7 @@ QQC2.Control {
                             crop: !root.shouldKeepAspectRatio
                             focusX: modelData.focusX
                             focusY: modelData.focusY
+                            sourceSize: Qt.size(modelData.sourceWidth, modelData.sourceHeight)
 
                             Rectangle {
                                 anchors.fill: parent
