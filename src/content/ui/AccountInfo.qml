@@ -61,6 +61,7 @@ Kirigami.Page {
     Connections {
         target: postsBar
         enabled: postsBar !== null
+        ignoreUnknownSignals: true // postsBar is null when this is initially constructed
 
         function onCurrentIndexChanged(): void {
             accountInfo.currentIndex = postsBar.currentIndex;
