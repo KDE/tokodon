@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
                      QStringLiteral(TOKODON_VERSION_STRING),
                      i18n("Browse the Fediverse"),
                      KAboutLicense::GPL_V3,
-                     i18n("© 2021-2024 Carl Schwan, 2021-2024 KDE Community"));
+                     i18n("© 2021-2024 KDE Community"));
     about.addAuthor(i18n("Carl Schwan"),
                     i18n("Maintainer"),
                     QStringLiteral("carl@carlschwan.eu"),
