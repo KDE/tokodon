@@ -139,6 +139,7 @@ Kirigami.ScrollablePage {
             text: i18n("No Conversations")
             explanation: i18n("Direct messages to other users will show up here. Do not share any sensitive information over a conversation.")
             visible: conversationView.count === 0 && !conversationView.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 }
