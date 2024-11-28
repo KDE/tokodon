@@ -231,9 +231,10 @@ StatefulApp.StatefulWindow {
             purpose: originalEditor.purpose,
             initialText: originalEditor.backend.status,
             inReplyTo: originalEditor.inReplyTo,
-            previewPost: originalEditor.previewPost
+            previewPost: originalEditor.previewPost,
+            globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
         }, {
-            title: i18n("Write a new post"),
+            title: i18n("Write a New Post"),
             width: Kirigami.Units.gridUnit * 30,
             height: Kirigami.Units.gridUnit * 30,
             modality: Qt.NonModal
