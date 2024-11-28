@@ -397,6 +397,8 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
 
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         QQC2.ToolButton {
                             enabled: backend.attachmentEditorModel.count < 4 && !addPool.checked
                             icon.name: "mail-attachment-symbolic"
@@ -438,6 +440,25 @@ Kirigami.ScrollablePage {
 
                             onToggled: backend.pollEnabled = checked
                         }
+
+                        QQC2.ToolButton {
+                            id: contentWarning
+                            icon.name: "view-hidden-symbolic"
+                            checkable: true
+                            QQC2.ToolTip {
+                                text: i18nc("@info:tooltip", "Content Notice")
+                            }
+                            onCheckedChanged: {
+                                // Clear existing content warning if not checked
+                                if (!checked) {
+                                    root.backend.spoilerText = "";
+                                } else {
+                                    root.backend.spoilerText = contentWarningField.text;
+                                }
+                            }
+                        }
+
+                        QQC2.ToolSeparator {}
 
                         QQC2.ToolButton {
                             icon.name: {
@@ -491,22 +512,7 @@ Kirigami.ScrollablePage {
                                 text: i18nc("@info:tooltip Post visibility", "Visibility")
                             }
                         }
-                        QQC2.ToolButton {
-                            id: contentWarning
-                            icon.name: "view-hidden-symbolic"
-                            checkable: true
-                            QQC2.ToolTip {
-                                text: i18nc("@info:tooltip", "Content Notice")
-                            }
-                            onCheckedChanged: {
-                                // Clear existing content warning if not checked
-                                if (!checked) {
-                                    root.backend.spoilerText = "";
-                                } else {
-                                    root.backend.spoilerText = contentWarningField.text;
-                                }
-                            }
-                        }
+
                         QQC2.ToolButton {
                             id: languageButton
                             text: backend.language
@@ -526,8 +532,13 @@ Kirigami.ScrollablePage {
                                 onCodeSelected: code => backend.language = code
                             }
                         }
+
+                        QQC2.ToolSeparator {}
+
                         QQC2.ToolButton {
                             id: emojiButton
+
+                            Layout.alignment: Qt.AlignRight
 
                             icon.name: "smiley"
                             onClicked: emojiDialog.open()
