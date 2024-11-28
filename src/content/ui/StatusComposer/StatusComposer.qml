@@ -515,11 +515,24 @@ Kirigami.ScrollablePage {
         RowLayout {
             Layout.fillWidth: true
 
-            QQC2.Label {
-                Layout.fillHeight: true
-                Layout.alignment: Qt.AlignLeft
-                verticalAlignment: Text.AlignVCenter
-                text: i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
+            Rectangle {
+                Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+
+                color: Kirigami.Theme.backgroundColor
+                radius: Kirigami.Units.cornerRadius
+
+                implicitWidth: characterCountLabel.implicitWidth + Kirigami.Units.smallSpacing
+                implicitHeight: characterCountLabel.implicitHeight + Kirigami.Units.smallSpacing
+
+                QQC2.Label {
+                    id: characterCountLabel
+
+                    anchors.fill: parent
+
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    text: i18nc("@label Character count in the status composer", "<b>%1/%2</b> characters", root.backend.charactersLeft, AccountManager.selectedAccount.maxPostLength)
+                }
             }
 
             Item {
