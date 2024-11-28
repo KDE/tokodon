@@ -101,6 +101,7 @@ ColumnLayout {
             icon.name: "tokodon-post-favorited"
             icon.color: Kirigami.Theme.textColor
             iconMask: true
+            visible: root.favouritesCount > 0
             text: {
                 if (root.favouritesCount === 0) {
                     return i18n("No favorites");
@@ -110,7 +111,7 @@ ColumnLayout {
             }
             closable: false
             checkable: false
-            enabled: root.favouritesCount > 0
+            enabled: visible
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
@@ -136,7 +137,8 @@ ColumnLayout {
             }
             closable: false
             checkable: false
-            enabled: root.reblogsCount > 0
+            visible: root.reblogsCount > 0
+            enabled: visible
             HoverHandler {
                 cursorShape: Qt.PointingHandCursor
             }
