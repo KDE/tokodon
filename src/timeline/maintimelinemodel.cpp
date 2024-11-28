@@ -24,9 +24,9 @@ QString MainTimelineModel::displayName() const
     if (m_timelineName == QStringLiteral("home")) {
         return i18nc("@title", "Home");
     } else if (m_timelineName == QStringLiteral("public")) {
-        return i18nc("@title", "Local Timeline");
+        return i18nc("@title", "Local");
     } else if (m_timelineName == QStringLiteral("federated")) {
-        return i18nc("@title", "Global Timeline");
+        return i18nc("@title", "Global");
     } else if (m_timelineName == QStringLiteral("bookmarks")) {
         return i18nc("@title", "Bookmarks");
     } else if (m_timelineName == QStringLiteral("favourites")) {
