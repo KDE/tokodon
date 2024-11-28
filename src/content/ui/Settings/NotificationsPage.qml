@@ -22,7 +22,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormSwitchDelegate {
             text: i18n("Enable notifications for this account")

@@ -19,7 +19,7 @@ FormCard.FormCardPage {
     readonly property var config: account.config
 
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
