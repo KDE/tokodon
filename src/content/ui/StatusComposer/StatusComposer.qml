@@ -242,6 +242,14 @@ Kirigami.ScrollablePage {
             visible: root.previewPost !== null
         }
 
+        InlineIdentityInfo {
+            identity: AccountManager.selectedAccount.identity
+            secondary: false
+
+            Layout.fillWidth: true
+            Layout.bottomMargin: Kirigami.Units.smallSpacing * 2
+        }
+
         QQC2.TextField {
             id: contentWarningField
 
