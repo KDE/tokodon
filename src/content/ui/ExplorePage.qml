@@ -257,6 +257,9 @@ Kirigami.Page {
 
                     contentItem: UserCard {
                         userIdentity: delegate.identity
+
+                        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+                        Kirigami.Theme.inherit: false
                     }
                 }
             }
