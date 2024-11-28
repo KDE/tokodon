@@ -9,6 +9,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import QtQuick.Window
+import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.tokodon
@@ -325,9 +326,6 @@ Kirigami.ScrollablePage {
                     left: parent.left
                     right: parent.right
                     bottom: parent.bottom
-                    leftMargin: 1
-                    rightMargin: 1
-                    bottomMargin: 1
                 }
                 height: implicitHeight
 
@@ -374,6 +372,27 @@ Kirigami.ScrollablePage {
                     id: actionsToolbar
 
                     position: QQC2.ToolBar.Footer
+
+                    // To make sure the corners are rounded like the text area it's sitting in
+                    layer.enabled: true
+                    layer.effect: MultiEffect {
+                        id: rootEffect
+
+                        maskEnabled: true
+                        maskSpreadAtMax: 1
+                        maskSpreadAtMin: 1
+                        maskThresholdMin: 0.5
+                        maskSource: ShaderEffectSource {
+                            sourceItem: Kirigami.ShadowedRectangle {
+                                width: rootEffect.width
+                                height: rootEffect.height
+                                corners {
+                                    bottomLeftRadius: Kirigami.Units.cornerRadius
+                                    bottomRightRadius: Kirigami.Units.cornerRadius
+                                }
+                            }
+                        }
+                    }
 
                     Layout.fillWidth: true
 
