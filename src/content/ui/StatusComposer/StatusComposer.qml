@@ -365,6 +365,8 @@ Kirigami.ScrollablePage {
                 QQC2.ToolBar {
                     id: actionsToolbar
 
+                    position: QQC2.ToolBar.Footer
+
                     Layout.fillWidth: true
 
                     RowLayout {
