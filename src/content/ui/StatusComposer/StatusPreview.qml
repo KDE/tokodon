@@ -61,13 +61,13 @@ ColumnLayout {
             canHideMedia: false
             identity: root.post.authorIdentity
             viewportWidth: root.width
+            forceCrop: true
         }
     }
 
     Loader {
         active: root.post.poll !== null
-        sourceComponent: PostDelegate.PostPoll
-        {
+        sourceComponent: PostDelegate.PostPoll {
             poll: root.post.poll
         }
     }
