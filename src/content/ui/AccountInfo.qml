@@ -291,7 +291,7 @@ Kirigami.Page {
                             visible: accountModel.identity.relationship && accountModel.identity.relationship.followedBy
 
                             contentItem: QQC2.Label {
-                                text: accountModel.identity.relationship.following && accountModel.identity.relationship.followedBy ? i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : i18n("Follows you")
+                                text: accountModel.identity.relationship && accountModel.identity.relationship.following && accountModel.identity.relationship.followedBy ? i18nc("'Mutual' is the common English word used in social media platforms describe people who follow you back. This the same meaning as 'mutual friends', for example.", "Mutual") : i18n("Follows you")
                                 color: '#fafafa'
                             }
 
