@@ -47,10 +47,14 @@ Delegates.RoundedItemDelegate {
             anchors.fill: parent
 
             active: emojiDelegate.isImage
-            sourceComponent: Image {
+            sourceComponent: AnimatedImage {
                 source: visible ? emojiDelegate.emoji : ""
                 fillMode: Image.PreserveAspectFit
                 cache: true
+                mipmap: false
+                playing: Kirigami.Units.shortDuration > 0 // Only play with animations enabled
+                sourceSize.width: parent.width
+                sourceSize.height: parent.height
             }
         }
     }
