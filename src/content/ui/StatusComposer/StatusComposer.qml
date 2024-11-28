@@ -235,6 +235,13 @@ Kirigami.ScrollablePage {
             }
         }
 
+        Kirigami.Separator {
+            Layout.fillWidth: true
+            Layout.bottomMargin: Kirigami.Units.smallSpacing * 2
+
+            visible: root.previewPost !== null
+        }
+
         QQC2.TextField {
             id: contentWarningField
 
