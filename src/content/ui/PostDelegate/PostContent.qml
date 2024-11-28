@@ -17,6 +17,7 @@ QQC2.TextArea {
     required property bool expandedPost
     required property bool secondary
     required property bool shouldOpenInternalLinks
+    property bool shouldOpenAnyLinks: true
 
     signal clicked()
 
@@ -39,7 +40,11 @@ QQC2.TextArea {
     background: null
     wrapMode: TextEdit.Wrap
     selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
-    onLinkActivated: (link) => applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
+    onLinkActivated: link => {
+        if (root.shouldOpenAnyLinks) {
+            applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
+        }
+    }
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     onHoveredLinkChanged: if (hoveredLink.length > 0) {
         applicationWindow().hoverLinkIndicator.text = hoveredLink;
@@ -48,37 +53,31 @@ QQC2.TextArea {
     }
 
     TapHandler {
-        enabled: !parent.hoveredLink && !root.expandedPost
-        acceptedButtons: Qt.LeftButton
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
-        onSingleTapped: root.clicked()
-    }
 
-    MouseArea {
-        anchors.fill: parent
-        acceptedButtons: Qt.RightButton
+        onSingleTapped: (eventPoint, button) => {
+            if (button === Qt.RightButton) {
+                const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
+                const foundLink = root.linkAt(point.x, point.y);
+                if (!foundLink) {
+                    return;
+                }
 
-        onClicked: function(mouse) {
-            const foundLink = root.linkAt(mouse.x, mouse.y);
-            if (!foundLink) {
-                return;
+                const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
+                const linkMenu = linkMenuComponent.createObject(root, {
+                    url: foundLink,
+                });
+
+                linkMenu.popup(point);
+            } else if (button === Qt.LeftButton && !root.hoveredLink && !root.expandedPost) {
+                root.clicked();
             }
-            console.log("Right-clicked on link:", foundLink);
-
-            const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
-            const linkMenu = linkMenuComponent.createObject(root, {
-                id: 'linkMenu',
-                url: foundLink,
-            });
-
-            linkMenu.popup(mouse);
         }
     }
 
-    MouseArea {
+    HoverHandler {
         enabled: root.hoverEnabled
-        anchors.fill: parent
-        acceptedButtons: Qt.NoButton // don't eat clicks on the Text
         cursorShape: root.hoveredLink !== '' ? Qt.PointingHandCursor : Qt.ArrowCursor
     }
 }

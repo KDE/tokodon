@@ -76,62 +76,74 @@ ListView {
                     root.itemSelected();
                 }
 
-                contentItem: RowLayout {
-                    KirigamiComponents.Avatar {
-                        Layout.alignment: Qt.AlignTop
-                        Layout.rowSpan: 5
-                        source: accountDelegate.authorIdentity.avatarUrl
-                        cache: true
-                        name: accountDelegate.authorIdentity.displayName
-                    }
-
-                    ColumnLayout {
-                        spacing: 0
-
-                        Layout.fillWidth: true
-                        Layout.bottomMargin: Kirigami.Units.smallSpacing
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-
-                        Kirigami.Heading {
-                            id: heading
-
-                            level: 5
-                            text: accountDelegate.text
-                            textFormat: Text.RichText
-                            type: Kirigami.Heading.Type.Primary
-                            color: Kirigami.Theme.textColor
-                            verticalAlignment: Text.AlignTop
-
-                            Layout.fillWidth: true
-                        }
-
-                        Kirigami.Heading {
-                            level: 5
-                            elide: Text.ElideRight
-                            color: Kirigami.Theme.disabledTextColor
-                            text: `@${accountDelegate.authorIdentity.account}`
-                            verticalAlignment: Text.AlignTop
-
-                            Layout.fillWidth: true
-                        }
-                    }
+                contentItem: InlineIdentityInfo {
+                    identity: accountDelegate.authorIdentity
+                    secondary: false
                 }
             }
         }
 
         DelegateChoice {
             roleValue: SearchModel.Status
-            PostDelegate {
-                x: Kirigami.Units.smallSpacing
-                width: ListView.view.width - Kirigami.Units.smallSpacing * 2
-                secondary: true
-                showSeparator: true
-                showInteractionButton: false
+            Delegates.RoundedItemDelegate {
+                id: accountDelegate
 
-                leftPadding: 0
-                rightPadding: 0
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
+                required property var post
+
+                width: ListView.view.width
+
+                onClicked: {
+                    Navigation.openPost(post.postId);
+                    root.itemSelected();
+                }
+
+                contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
+                        KirigamiComponents.Avatar {
+                            id: avatar
+
+                            implicitHeight: Math.round(Kirigami.Units.gridUnit * 1.5)
+                            implicitWidth: implicitHeight
+                            source: post.authorIdentity.avatarUrl
+                            cache: true
+                            name: post.authorIdentity.displayName
+                        }
+
+                        Kirigami.Heading {
+                            level: 4
+                            text: post.authorIdentity.displayNameHtml
+                            type: Kirigami.Heading.Type.Primary
+                            verticalAlignment: Text.AlignTop
+                            elide: Text.ElideRight
+                            textFormat: Text.RichText
+                            maximumLineCount: 1
+
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    Loader {
+                        active: post.content.length > 0
+                        visible: active
+
+                        Layout.fillWidth: true
+
+                        sourceComponent: PostContent {
+                            content: post.content
+                            expandedPost: false
+                            secondary: true
+                            shouldOpenInternalLinks: false
+                            shouldOpenAnyLinks: false
+                            hoverEnabled: false
+
+                            onClicked: accountDelegate.clicked()
+                        }
+                    }
+                }
             }
         }
 
