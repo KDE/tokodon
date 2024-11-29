@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 00:40+0000\n"
+"POT-Creation-Date: 2024-11-29 00:41+0000\n"
 "PO-Revision-Date: 2024-11-23 11:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -740,7 +740,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Final de la línia de temps"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:464
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:465
 #, kde-format
 msgid "Conversations"
 msgstr "Converses"
@@ -884,7 +884,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Segur que voleu suprimir esta llista?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:507
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
 #, kde-format
 msgid "Explore"
 msgstr "Explora"
@@ -1445,63 +1445,70 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Acció desconeguda"
 
-#: content/ui/Main.qml:236 content/ui/Main.qml:263
+#: content/ui/Main.qml:237
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Write a New Post"
+msgid "Write a New Post"
+msgstr "Escriviu una publicació nova"
+
+#: content/ui/Main.qml:264
 #, kde-format
 msgid "Write a new post"
 msgstr "Escriviu una publicació nova"
 
-#: content/ui/Main.qml:308
+#: content/ui/Main.qml:309
 #, kde-format
 msgid "Reply to post"
 msgstr "Respon a la publicació"
 
-#: content/ui/Main.qml:391
+#: content/ui/Main.qml:392
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/Main.qml:398 content/ui/Main.qml:440 content/ui/Main.qml:455
+#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
 #, kde-format
 msgid "No Posts"
 msgstr "Sense publicacions"
 
-#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
+#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Pareix bastant tranquil ara mateix, intenteu publicar alguna cosa!"
 
-#: content/ui/Main.qml:408 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:409 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/Main.qml:420
+#: content/ui/Main.qml:421
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
-#: content/ui/Main.qml:433
+#: content/ui/Main.qml:434
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/Main.qml:448
+#: content/ui/Main.qml:449
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:475 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:476 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Preferits"
 
-#: content/ui/Main.qml:482
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "No Favorites"
 msgstr "Sense preferits"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:484
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1510,17 +1517,17 @@ msgstr ""
 "Les publicacions que preferiu es mostraran ací. Si aprecieu la publicació "
 "d'algú, feu-la preferida!"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:492
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
 
-#: content/ui/Main.qml:498
+#: content/ui/Main.qml:499
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Sense punts"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:500
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1529,51 +1536,51 @@ msgstr ""
 "Apunteu publicacions i es mostraran ací. Els punts sempre es mantenen "
 "privats, fins i tot a l'autor de la publicació."
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:519
 #, kde-format
 msgid "Following"
 msgstr "Seguint"
 
-#: content/ui/Main.qml:529
+#: content/ui/Main.qml:530
 #, kde-format
 msgid "Search"
 msgstr "Busca"
 
-#: content/ui/Main.qml:540
+#: content/ui/Main.qml:541
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Anuncis"
 
-#: content/ui/Main.qml:552
+#: content/ui/Main.qml:553
 #, kde-format
 msgid "Lists"
 msgstr "Llistes"
 
-#: content/ui/Main.qml:563 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:564 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Perfil"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:579
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Depuració"
 
-#: content/ui/Main.qml:588
+#: content/ui/Main.qml:589
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Eines de moderació"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:596
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuració"
 
-#: content/ui/Main.qml:727
+#: content/ui/Main.qml:728
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2978,6 +2985,14 @@ msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
 msgstr "Configura les notificacions…"
 
+#: content/ui/NotificationPage.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Notifications"
+msgctxt "@title:window"
+msgid "Notification Settings"
+msgstr "Notificacions"
+
 #: content/ui/NotificationPage.qml:46
 #, kde-format
 msgctxt "@action:intoolbar Show all notifications"
@@ -3186,24 +3201,24 @@ msgstr "Privat"
 msgid "Direct Message"
 msgstr "Missatge directe"
 
-#: content/ui/PostDelegate/InformationBar.qml:106
+#: content/ui/PostDelegate/InformationBar.qml:107
 #, kde-format
 msgid "No favorites"
 msgstr "Sense preferits"
 
-#: content/ui/PostDelegate/InformationBar.qml:108
+#: content/ui/PostDelegate/InformationBar.qml:109
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 preferit"
 msgstr[1] "%1 preferits"
 
-#: content/ui/PostDelegate/InformationBar.qml:132
+#: content/ui/PostDelegate/InformationBar.qml:133
 #, kde-format
 msgid "No boosts"
 msgstr "Sense impulsos"
 
-#: content/ui/PostDelegate/InformationBar.qml:134
+#: content/ui/PostDelegate/InformationBar.qml:135
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3633,7 +3648,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:147
+#: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:159
 #, kde-format
 msgid "Hashtag"
 msgstr "Etiqueta"
@@ -4361,80 +4376,80 @@ msgstr "Oculta el comptador de vots fins que acabe la votació"
 msgid "Remove"
 msgstr "Elimina"
 
-#: content/ui/StatusComposer/StatusComposer.qml:55
+#: content/ui/StatusComposer/StatusComposer.qml:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Edita esta publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:57
+#: content/ui/StatusComposer/StatusComposer.qml:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Respon a esta publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:59
+#: content/ui/StatusComposer/StatusComposer.qml:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Torna a escriure esta publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Escriviu una publicació nova"
 
-#: content/ui/StatusComposer/StatusComposer.qml:67
+#: content/ui/StatusComposer/StatusComposer.qml:68
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "Mou cap a fora"
 
-#: content/ui/StatusComposer/StatusComposer.qml:130
+#: content/ui/StatusComposer/StatusComposer.qml:131
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 "Guardar una publicació editada que té una votació netejarà els resultats "
 "existents."
 
-#: content/ui/StatusComposer/StatusComposer.qml:137
+#: content/ui/StatusComposer/StatusComposer.qml:138
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Descartar l'esborrany"
 
-#: content/ui/StatusComposer/StatusComposer.qml:138
+#: content/ui/StatusComposer/StatusComposer.qml:139
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Segur que voleu descartar este esborrany?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:144
+#: content/ui/StatusComposer/StatusComposer.qml:145
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "Mantín"
 
-#: content/ui/StatusComposer/StatusComposer.qml:241
+#: content/ui/StatusComposer/StatusComposer.qml:257
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "Notificació de contingut"
 
-#: content/ui/StatusComposer/StatusComposer.qml:255
+#: content/ui/StatusComposer/StatusComposer.qml:271
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Què hi ha de nou?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:371
+#: content/ui/StatusComposer/StatusComposer.qml:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Escolliu un fitxer"
 
-#: content/ui/StatusComposer/StatusComposer.qml:374
+#: content/ui/StatusComposer/StatusComposer.qml:412
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -4443,164 +4458,159 @@ msgstr ""
 "Tots els formats acceptats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
 "avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:375
+#: content/ui/StatusComposer/StatusComposer.qml:413
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "Imatge JPEG (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:376
+#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "Imatge PNG (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:377
+#: content/ui/StatusComposer/StatusComposer.qml:415
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "Imatge GIF (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:378
+#: content/ui/StatusComposer/StatusComposer.qml:416
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "Imatge WebP (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:379
+#: content/ui/StatusComposer/StatusComposer.qml:417
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "Imatge HEIC (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:380
+#: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "Imatge HEIF (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:381
+#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "Imatge AVIF (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:382
+#: content/ui/StatusComposer/StatusComposer.qml:420
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "Vídeo WebM (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:383
+#: content/ui/StatusComposer/StatusComposer.qml:421
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "Vídeo MPEG-4 (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:384
+#: content/ui/StatusComposer/StatusComposer.qml:422
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "Vídeo M4V (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:385
+#: content/ui/StatusComposer/StatusComposer.qml:423
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "Vídeo QuickTime (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:386
+#: content/ui/StatusComposer/StatusComposer.qml:424
 #, kde-format
 msgid "All files (*)"
 msgstr "Tots els fitxers (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:388
+#: content/ui/StatusComposer/StatusComposer.qml:426
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Adjunta un fitxer"
 
-#: content/ui/StatusComposer/StatusComposer.qml:399
+#: content/ui/StatusComposer/StatusComposer.qml:437
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Afig una votació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:429
+#: content/ui/StatusComposer/StatusComposer.qml:449
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Content notice"
+msgctxt "@info:tooltip"
+msgid "Content Notice"
+msgstr "Notificació de contingut"
+
+#: content/ui/StatusComposer/StatusComposer.qml:486
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/StatusComposer/StatusComposer.qml:435
+#: content/ui/StatusComposer/StatusComposer.qml:492
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Públic"
 
-#: content/ui/StatusComposer/StatusComposer.qml:440
+#: content/ui/StatusComposer/StatusComposer.qml:497
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "No llistat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:445
+#: content/ui/StatusComposer/StatusComposer.qml:502
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:450
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Missatge directe"
 
-#: content/ui/StatusComposer/StatusComposer.qml:455
+#: content/ui/StatusComposer/StatusComposer.qml:512
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Visibilitat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:460
-#, kde-format
-msgctxt ""
-"@action:intoolbar Short for content notice, also known as content warning"
-msgid "cn"
-msgstr "nc"
-
-#: content/ui/StatusComposer/StatusComposer.qml:463
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Content notice"
-msgstr "Notificació de contingut"
-
-#: content/ui/StatusComposer/StatusComposer.qml:477
+#: content/ui/StatusComposer/StatusComposer.qml:519
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Idioma de la publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:506
+#: content/ui/StatusComposer/StatusComposer.qml:553
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Afig un emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:522
+#: content/ui/StatusComposer/StatusComposer.qml:581
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caràcters"
 
-#: content/ui/StatusComposer/StatusComposer.qml:545
+#: content/ui/StatusComposer/StatusComposer.qml:605
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Envia"
 
-#: content/ui/StatusComposer/StatusComposer.qml:547
+#: content/ui/StatusComposer/StatusComposer.qml:607
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Respon"
 
-#: content/ui/StatusComposer/StatusComposer.qml:549
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Torna a enviar la publicació"
 
-#: content/ui/StatusComposer/StatusComposer.qml:551
+#: content/ui/StatusComposer/StatusComposer.qml:611
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -4813,16 +4823,18 @@ msgid "Home"
 msgstr "Inici"
 
 #: timeline/maintimelinemodel.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Local"
 msgctxt "@title"
-msgid "Local Timeline"
-msgstr "Línia de temps local"
+msgid "Local"
+msgstr "Local"
 
 #: timeline/maintimelinemodel.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Global"
 msgctxt "@title"
-msgid "Global Timeline"
-msgstr "Línia de temps global"
+msgid "Global"
+msgstr "Global"
 
 #: timeline/maintimelinemodel.cpp:31
 #, kde-format
@@ -5045,6 +5057,19 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
+
+#~ msgctxt ""
+#~ "@action:intoolbar Short for content notice, also known as content warning"
+#~ msgid "cn"
+#~ msgstr "nc"
+
+#~ msgctxt "@title"
+#~ msgid "Local Timeline"
+#~ msgstr "Línia de temps local"
+
+#~ msgctxt "@title"
+#~ msgid "Global Timeline"
+#~ msgstr "Línia de temps global"
 
 #~ msgctxt "@info:label"
 #~ msgid "%1 relationships were severed due to moderation actions."
