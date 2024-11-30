@@ -403,7 +403,7 @@ StatefulApp.StatefulWindow {
         }
     }
     property Kirigami.Action notificationAction: Kirigami.Action {
-        readonly property int alertCount: AccountManager.selectedAccount.unreadNotificationsCount
+        readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.unreadNotificationsCount : 0
 
         icon.name: "notifications"
         text: i18n("Notifications")
@@ -415,7 +415,7 @@ StatefulApp.StatefulWindow {
         }
     }
     property Kirigami.Action followRequestAction: Kirigami.Action {
-        readonly property int alertCount: AccountManager.selectedAccount.followRequestCount
+        readonly property int alertCount: AccountManager.selectedAccount ? AccountManager.selectedAccount.followRequestCount : 0
 
         icon.name: "list-add-user"
         text: i18n("Follow Requests")
