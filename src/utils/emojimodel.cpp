@@ -69,8 +69,7 @@ QStringList EmojiModel::history(AbstractAccount *account) const
         return {};
     }
 
-    AccountConfig config(account->settingsGroupName());
-    return config.lastUsedEmojis();
+    return account->config()->lastUsedEmojis();
 }
 
 QVariantList EmojiModel::filterModelNoCustom(const QString &filter)
@@ -114,9 +113,8 @@ void EmojiModel::emojiUsed(AbstractAccount *account, const QString &shortcode)
         list.resize(100);
     }
 
-    AccountConfig config(account->settingsGroupName());
-    config.setLastUsedEmojis(list.toList());
-    config.save();
+    account->config()->setLastUsedEmojis(list.toList());
+    account->config()->save();
 
     Q_EMIT historyChanged();
 }

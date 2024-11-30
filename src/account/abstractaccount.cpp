@@ -36,9 +36,12 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
 AccountConfig *AbstractAccount::config()
 {
     if (!m_config) {
-        m_config = new AccountConfig{settingsGroupName(), this};
+        // do not write to settings if we do not have complete information yet,
+        // or else it writes malformed and possibly duplicate accounts to settings.
+        if (!m_name.isEmpty() && m_instance_uri.isEmpty()) {
+            m_config = new AccountConfig{settingsGroupName(), this};
+        }
     }
-    Q_ASSERT(m_config != nullptr);
     return m_config;
 }
 
