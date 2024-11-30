@@ -20,6 +20,23 @@ private Q_SLOTS:
         AccountManager::instance().selectAccount(account, false);
     }
 
+    // Make sure the account is in the correct state when it's first created
+    void newValues()
+    {
+        QVERIFY(!account->isRegistered());
+    }
+
+    // Ensure the settings group is named correctly
+    void settingsNames()
+    {
+        account->setUsername(QStringLiteral("foo"));
+        account->setInstanceUri(QStringLiteral("kde.social"));
+
+        QCOMPARE(account->settingsGroupName(), QStringLiteral("foo@kde.social"));
+        QCOMPARE(account->clientSecretKey(), QStringLiteral("foo@kde.social-client-secret"));
+        QCOMPARE(account->accessTokenKey(), QStringLiteral("foo@kde.social-access-token"));
+    }
+
     // Make sure we can parse v1 instance information
     void testApiV1InstanceInfo()
     {
