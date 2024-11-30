@@ -33,7 +33,11 @@ Kirigami.ScrollablePage {
 
     function handleRegistration(): void {
         if (!account.registrationsOpen) {
-            errorBanner.text = i18n("This server is closed for registration: %1", account.registrationMessage);
+            if (account.registrationMessage.length > 0) {
+                errorBanner.text = i18n("This server is closed for registration: %1", account.registrationMessage);
+            } else {
+                errorBanner.text = i18n("This server is closed for registration, and did not provide a reason.");
+            }
             errorBanner.visible = true;
             return;
         }
