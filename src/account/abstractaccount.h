@@ -81,12 +81,6 @@ public:
     Q_INVOKABLE [[nodiscard]] QUrl getAuthorizeUrl() const;
 
     /**
-     * @brief Sets the access token.
-     * @param token The access token.
-     */
-    void setAccessToken(const QString &token);
-
-    /**
      * @brief Set the oauth2 token.
      * @param authcode The oauth2 authentication code.
      */
@@ -682,6 +676,12 @@ protected:
      * @brief Fetches instance-specific custom emojis.
      */
     void fetchCustomEmojis();
+
+    /**
+     * @brief Sets the access token.
+     * @param token The access token.
+     */
+    void setAccessToken(const QString &token);
 
     QString m_name;
     QString m_instance_uri;
