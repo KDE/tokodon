@@ -14,12 +14,11 @@ struct QMessageFilterContainer {
 
     QString filter(const QString &msg);
 
+    static QMessageFilterContainer *self();
+
+private:
     // Message handler is called across threads. Synchronize for good measure.
     QReadWriteLock lock;
     QtMessageHandler handler;
-
-private:
     QHash<QString, QString> filters;
 };
-
-Q_GLOBAL_STATIC(QMessageFilterContainer, s_messageFilter)

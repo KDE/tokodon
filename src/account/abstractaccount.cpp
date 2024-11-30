@@ -161,7 +161,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
         m_client_id = doc.object()["client_id"_L1].toString();
         m_client_secret = doc.object()["client_secret"_L1].toString();
 
-        s_messageFilter->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
+        QMessageFilterContainer::self()->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
 
         if (isRegistered()) {
             Q_EMIT registered();
@@ -190,7 +190,7 @@ void AbstractAccount::registerAccount(const QString &username,
 
         // override the token for now
         m_token = doc.object()["access_token"_L1].toString();
-        s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
+        QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
 
         const QUrlQuery formdata{
             {QStringLiteral("username"), username},
@@ -322,7 +322,7 @@ QUrl AbstractAccount::getAuthorizeUrl() const
 void AbstractAccount::setAccessToken(const QString &token)
 {
     m_token = token;
-    s_messageFilter->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
+    QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
     AccountManager::instance().addAccount(this, false);
     // Future programmer: make sure not to set explicitUserAction here because it needs the settingsGroupName() to be valid first
     AccountManager::instance().selectAccount(this, false);
