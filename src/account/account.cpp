@@ -270,6 +270,9 @@ QWebSocket *Account::streamingSocket(const QString &stream)
             }
         }
     });
+    connect(socket, &QWebSocket::errorOccurred, this, [=](QAbstractSocket::SocketError error) {
+        qCWarning(TOKODON_HTTP) << "Error in" << stream << ":" << socket->errorString();
+    });
 
     socket->open(url);
 
