@@ -129,11 +129,6 @@ public:
     void fetchInstanceMetadata();
 
     /**
-     * @brief Fetches instance-specific custom emojis.
-     */
-    void fetchCustomEmojis();
-
-    /**
      * @return The custom emojis that's accessible for this account.
      */
     [[nodiscard]] QList<CustomEmoji> customEmojis() const;
@@ -689,6 +684,11 @@ protected:
      * @param instance_uri The new instance URI.
      */
     void setInstanceUri(const QString &instance_uri);
+
+    /**
+     * @brief Fetches instance-specific custom emojis.
+     */
+    void fetchCustomEmojis();
 
     QString m_name;
     QString m_instance_uri;
