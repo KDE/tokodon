@@ -86,11 +86,6 @@ public:
     void setAccessToken(const QString &token);
 
     /**
-     * @return The oauth2 token url.
-     */
-    [[nodiscard]] QUrl getTokenUrl() const;
-
-    /**
      * @brief Set the oauth2 token.
      * @param authcode The oauth2 authentication code.
      */
