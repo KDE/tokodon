@@ -16,9 +16,9 @@ class Account : public AbstractAccount
     Q_OBJECT
 
 public:
-    explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, QObject *parent = nullptr);
-    explicit Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
+    explicit Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account() override;
+
     void get(const QUrl &url,
              bool authenticated,
              QObject *parent,
@@ -56,6 +56,8 @@ public:
     void buildFromSettings() override;
 
     void validateToken(bool newAccount = false) override;
+
+    void setConfig(AccountConfig *config);
 
     Q_INVOKABLE void checkForFollowRequests() override;
 

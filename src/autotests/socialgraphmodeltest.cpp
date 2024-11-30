@@ -15,6 +15,8 @@ class SocialGraphModelTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        AccountManager::instance().setTestMode(true);
+
         account = new MockAccount();
 
         QUrl url = account->apiUrl(QStringLiteral("/api/v1/follow_requests"));

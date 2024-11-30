@@ -686,8 +686,7 @@ Q_SIGNALS:
     void fetchedOEmbed(const QString &html);
 
 protected:
-    AbstractAccount(QObject *parent, const QString &instanceUri);
-    explicit AbstractAccount(QObject *parent);
+    explicit AbstractAccount(const QString &instanceUri, QObject *parent = nullptr);
 
     /**
      * @brief Sets the username for the account.
@@ -714,8 +713,8 @@ protected:
     QJsonArray m_instance_rules;
     std::shared_ptr<Identity> m_identity;
     std::shared_ptr<AdminAccountInfo> m_adminIdentity;
-    AdminAccountInfo *m_adminIdentityWithVanillaPointer;
-    AdminAccountInfo *m_federationIdentity;
+    AdminAccountInfo *m_adminIdentityWithVanillaPointer{};
+    AdminAccountInfo *m_federationIdentity{};
     std::shared_ptr<ReportInfo> m_reportInfo;
     Preferences *m_preferences = nullptr;
     QList<CustomEmoji> m_customEmojis;
