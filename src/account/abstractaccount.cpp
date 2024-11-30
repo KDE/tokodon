@@ -25,7 +25,6 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
     , m_preferences(new Preferences(this))
-    , m_notificationFilteringPolicy(new NotificationFilteringPolicy(this))
 {
     // Test code uses a blank instance URI
     if (!AccountManager::instance().testMode()) {
