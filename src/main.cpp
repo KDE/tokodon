@@ -215,11 +215,11 @@ int main(int argc, char *argv[])
                 args.removeFirst();
 
                 if (!args.empty()) {
-                    if (args[0].startsWith("web+ap"_L1)) {
+                    if (args.first().startsWith("web+ap"_L1)) {
                         NetworkController::instance().openWebApLink(args[0]);
-                    } else if (args[0].startsWith("tokodon"_L1)) {
+                    } else if (args.first().startsWith("tokodon"_L1)) {
                         NetworkController::instance().setAuthCode(QUrl(args[0]));
-                    } else if (args[0] == "--share"_L1) {
+                    } else if (args.first() == "--share"_L1) {
                         NetworkController::instance().startComposing(args[1]);
                     } else {
                         NetworkController::instance().openWebApLink(args[0]);
