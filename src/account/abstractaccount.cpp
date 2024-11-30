@@ -24,7 +24,6 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     , m_supportsLocalVisibility(false)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
-    , m_allowedContentTypes(AllowedContentType::PlainText)
 {
 }
 
@@ -36,7 +35,6 @@ AbstractAccount::AbstractAccount(QObject *parent)
     , m_supportsLocalVisibility(false)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
-    , m_allowedContentTypes(AllowedContentType::PlainText)
 {
 }
 
@@ -427,53 +425,6 @@ void AbstractAccount::unpin(Post *p)
     mutatePost(p->postId(), QStringLiteral("unpin"));
 }
 
-// It seemed clearer to keep this logic separate from the general instance metadata collection, on the off chance
-// that it might need to be extended later on.
-static AbstractAccount::AllowedContentType parseVersion(const QString &instanceVer)
-{
-    using ContentType = AbstractAccount::AllowedContentType;
-
-    unsigned int result = ContentType::PlainText;
-    if (instanceVer.contains("glitch"_L1)) {
-        result |= ContentType::Markdown | ContentType::Html;
-    }
-
-    return static_cast<ContentType>(result);
-}
-
-static QMap<QString, AbstractAccount::AllowedContentType> stringToContentType = {
-    {QStringLiteral("text/plain"), AbstractAccount::AllowedContentType::PlainText},
-    {QStringLiteral("text/bbcode"), AbstractAccount::AllowedContentType::BBCode},
-    {QStringLiteral("text/html"), AbstractAccount::AllowedContentType::Html},
-    {QStringLiteral("text/markdown"), AbstractAccount::AllowedContentType::Markdown},
-};
-
-static AbstractAccount::AllowedContentType parsePleromaInfo(const QJsonDocument &doc)
-{
-    using ContentType = AbstractAccount::AllowedContentType;
-    unsigned int result = ContentType::PlainText;
-
-    auto obj = doc.object();
-    if (obj.contains("metadata"_L1)) {
-        auto metadata = obj["metadata"_L1].toObject();
-        if (!metadata.contains("postFormats"_L1))
-            return static_cast<ContentType>(result);
-
-        auto formats = metadata["postFormats"_L1].toArray();
-
-        for (auto c : formats) {
-            auto fmt = c.toString();
-
-            if (!stringToContentType.contains(fmt))
-                continue;
-
-            result |= (unsigned int)stringToContentType[fmt];
-        }
-    }
-
-    return static_cast<ContentType>(result);
-}
-
 void AbstractAccount::fetchInstanceMetadata()
 {
     get(
@@ -498,11 +449,6 @@ void AbstractAccount::fetchInstanceMetadata()
                     m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
                     m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                 }
-            }
-
-            // One can only hope that there will always be a version attached
-            if (obj.contains("version"_L1)) {
-                m_allowedContentTypes = parseVersion(obj["version"_L1].toString());
             }
 
             // Pleroma/Akkoma may report maximum post characters here, instead
@@ -554,11 +500,6 @@ void AbstractAccount::fetchInstanceMetadata()
                     }
                 }
 
-                // One can only hope that there will always be a version attached
-                if (obj.contains("version"_L1)) {
-                    m_allowedContentTypes = parseVersion(obj["version"_L1].toString());
-                }
-
                 // Pleroma/Akkoma may report maximum post characters here, instead
                 if (obj.contains("max_toot_chars"_L1)) {
                     m_maxPostLength = obj["max_toot_chars"_L1].toInt();
@@ -583,14 +524,6 @@ void AbstractAccount::fetchInstanceMetadata()
                 Q_EMIT fetchedInstanceMetadata();
             });
         });
-
-    get(apiUrl(QStringLiteral("/nodeinfo/2.1.json")), false, this, [=](QNetworkReply *reply) {
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
-
-        m_allowedContentTypes = parsePleromaInfo(doc);
-        Q_EMIT fetchedInstanceMetadata();
-    });
 
     fetchCustomEmojis();
 }
