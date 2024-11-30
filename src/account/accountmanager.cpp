@@ -143,9 +143,6 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
         Q_EMIT fetchedInstanceMetadata(account);
         Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
     });
-    connect(account, &Account::invalidatedPost, this, [this, account](Post *p) {
-        Q_EMIT invalidatedPost(account, p);
-    });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
         AccountManager::instance().notificationHandler()->handle(std::move(n), account);
         Q_EMIT notification(account, std::move(n));
