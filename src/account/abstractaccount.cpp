@@ -481,14 +481,12 @@ void AbstractAccount::fetchInstanceMetadata()
         false,
         this,
         [=](QNetworkReply *reply) {
-            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
-                return;
-
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
-            if (!doc.isObject())
+            if (!doc.isObject()) {
                 return;
+            }
 
             const auto obj = doc.object();
 
@@ -537,14 +535,12 @@ void AbstractAccount::fetchInstanceMetadata()
             // Fall back to v1 instance information
             // TODO: a lot of this can be merged with v2 handling
             get(apiUrl(QStringLiteral("/api/v1/instance")), false, this, [=](QNetworkReply *reply) {
-                if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
-                    return;
-
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 
-                if (!doc.isObject())
+                if (!doc.isObject()) {
                     return;
+                }
 
                 const auto obj = doc.object();
 
