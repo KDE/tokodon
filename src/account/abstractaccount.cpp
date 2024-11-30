@@ -847,7 +847,7 @@ void AbstractAccount::fetchCustomEmojis()
 {
     m_customEmojis.clear();
 
-    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), false, this, [=](QNetworkReply *reply) {
+    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), true, this, [=](QNetworkReply *reply) {
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
             return;
 
