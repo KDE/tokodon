@@ -42,9 +42,9 @@ Kirigami.ScrollablePage {
         // We need to call this before setToken, so when the identity is loaded the manager can write it to the settings.
         AccountManager.addAccount(root.account);
         account.authenticated.connect(() => {
-            AccountManager.selectAccount(root.account, true);
+            AccountManager.selectedAccount = root.account;
             root.Window.window.pageStack.layers.clear();
-            root.Window.windowpageStack.replace(mainTimeline, {
+            root.Window.window.pageStack.replace(mainTimeline, {
                 name: "home"
             });
             if (root.Window.window !== applicationWindow()) {

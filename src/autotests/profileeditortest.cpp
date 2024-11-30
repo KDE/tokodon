@@ -18,7 +18,6 @@ private Q_SLOTS:
         AccountManager::instance().setTestMode(true);
         account = new MockAccount();
         AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account, false);
     }
 
     void loadDataTest()

@@ -244,7 +244,7 @@ int main(int argc, char *argv[])
 
     auto account = new MockAccount();
     AccountManager::instance().addAccount(account);
-    AccountManager::instance().selectAccount(account);
+    AccountManager::instance().selectAccount(account, false);
 
     QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));
     url.setQuery(QUrlQuery{{QStringLiteral("q"), QStringLiteral("myquery")}, {QStringLiteral("resolve"), QStringLiteral("true")}});
