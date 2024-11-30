@@ -80,9 +80,9 @@ AccountManager &AccountManager::instance()
     return accountManager;
 }
 
-AbstractAccount *AccountManager::createNewAccount(const QString &instanceUri, bool ignoreSslErrors, bool admin)
+AbstractAccount *AccountManager::createNewAccount(const QString &instanceUri)
 {
-    return new Account(instanceUri, m_qnam, ignoreSslErrors, admin, this);
+    return new Account(instanceUri, m_qnam, this);
 }
 
 bool AccountManager::hasAccounts() const
@@ -474,7 +474,6 @@ void AccountManager::migrateSettings()
             config.setClientId(settings.value("client_id").toString());
             config.setInstanceUri(settings.value("instance_uri").toString());
             config.setName(settings.value("name").toString());
-            config.setIgnoreSslErrors(settings.value("ignoreSslErrors").toBool());
 
             config.save();
 

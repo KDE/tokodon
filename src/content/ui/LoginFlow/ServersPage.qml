@@ -47,9 +47,9 @@ Kirigami.ScrollablePage {
 
     function register(domain: string): void {
         errorBanner.visible = false;
-        account = AccountManager.createNewAccount(domain, false, false);
+        account = AccountManager.createNewAccount(domain);
         account.fetchedInstanceMetadata.connect(handleRegistration);
-        account.registerTokodon(false);
+        account.registerTokodon(false, false);
     }
 
     header: QQC2.Control {

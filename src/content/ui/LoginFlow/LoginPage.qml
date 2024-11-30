@@ -69,7 +69,7 @@ MastoPage {
     }
 
     function openWebViewAuthPage(): void {
-        account.registerTokodon(false);
+        account.registerTokodon(false, adminScopeDelegate.checked);
         account.registered.connect(_openWebViewAuthPage);
     }
 
@@ -79,7 +79,7 @@ MastoPage {
     }
 
     function openBrowserAuthPage(): void {
-        account.registerTokodon(false);
+        account.registerTokodon(false, adminScopeDelegate.checked);
         account.registered.connect(_openBrowserAuthPage);
     }
 
@@ -90,7 +90,7 @@ MastoPage {
     }
 
     function openCodeAuthPage(): void {
-        account.registerTokodon(true);
+        account.registerTokodon(true, adminScopeDelegate.checked);
         account.registered.connect(_openCodeAuthPage);
     }
 
@@ -132,7 +132,7 @@ MastoPage {
                     return;
                 }
 
-                root.account = AccountManager.createNewAccount(instanceUrl.text, false, adminScopeDelegate.checked);
+                root.account = AccountManager.createNewAccount(instanceUrl.text);
 
                 // Determine the best authorization type
                 if (Kirigami.Settings.isMobile && Navigation.hasWebView()) {

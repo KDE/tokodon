@@ -175,11 +175,9 @@ public:
     /**
      * @brief Creates a new account, and adds it to the manager.
      * @param instanceUri The URI of the instance.
-     * @param ignoreSslErrors Whether or ignore SSL errors from this URI.
-     * @param admin Request admin scopes.
      * @return The newly created account.
      */
-    Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri, bool ignoreSslErrors = false, bool admin = true);
+    Q_INVOKABLE AbstractAccount *createNewAccount(const QString &instanceUri);
 
     /**
      * @return Whether or not Tokodon is built as a Flatpak.

@@ -20,15 +20,13 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, bool ignoreSslErrors, bool admin, QObject *parent)
+Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent)
     : AbstractAccount(parent, instanceUri)
-    , m_ignoreSslErrors(ignoreSslErrors)
     , m_qnam(nam)
 {
     m_preferences = new Preferences(this);
     m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
     setInstanceUri(instanceUri);
-    m_requestingAdmin = admin;
 }
 
 Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent)
@@ -188,11 +186,6 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
             reply_cb(reply);
         }
     });
-    if (m_ignoreSslErrors) {
-        connect(reply, &QNetworkReply::sslErrors, this, [reply](const QList<QSslError> &) {
-            reply->ignoreSslErrors();
-        });
-    }
 }
 
 // assumes file is already opened and named
@@ -374,7 +367,6 @@ void Account::writeToSettings()
     config.setClientId(m_client_id);
     config.setInstanceUri(m_instance_uri);
     config.setName(m_name);
-    config.setIgnoreSslErrors(m_ignoreSslErrors);
 
     config.save();
 
@@ -400,7 +392,6 @@ void Account::buildFromSettings()
     m_client_id = m_config->clientId();
     m_name = m_config->name();
     m_instance_uri = m_config->instanceUri();
-    m_ignoreSslErrors = m_config->ignoreSslErrors();
 
     auto accessTokenJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
@@ -551,11 +542,11 @@ QUrlQuery Account::buildNotificationFormData()
     return formdata;
 }
 
-void Account::registerTokodon(const bool authCode)
+void Account::registerTokodon(const bool authCode, const bool admin)
 {
     registerApplication(QStringLiteral("Tokodon"),
                         QStringLiteral("https://apps.kde.org/tokodon"),
-                        m_requestingAdmin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""),
+                        admin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""),
                         authCode);
 }
 

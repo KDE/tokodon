@@ -16,7 +16,7 @@ class Account : public AbstractAccount
     Q_OBJECT
 
 public:
-    explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, bool ignoreSslErrors = false, bool admin = true, QObject *parent = nullptr);
+    explicit Account(const QString &instance_uri, QNetworkAccessManager *nam, QObject *parent = nullptr);
     explicit Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account() override;
     void get(const QUrl &url,
@@ -63,18 +63,20 @@ public:
 
     Q_INVOKABLE void updatePushNotifications() override;
 
-    Q_INVOKABLE void registerTokodon(bool authCode);
+    /**
+     * @param authCode Whether to use a manually typed code. Otherwise, uses the tokodon:// URI as a callback.
+     * @param admin Whether to request the admin scope.
+     */
+    Q_INVOKABLE void registerTokodon(bool authCode, bool admin);
 
 private:
     void unsubscribePushNotifications();
     void subscribePushNotifications();
     QUrlQuery buildNotificationFormData();
 
-    bool m_ignoreSslErrors = false;
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
     bool m_hasPushSubscription = false;
-    bool m_requestingAdmin = false;
 
     // common parts for all HTTP request
     [[nodiscard]] QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;
