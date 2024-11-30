@@ -25,7 +25,7 @@ Tokodon supports services that implement the [Mastodon Client API](https://docs.
 * [Akkoma](https://akkoma.social/) and [Pleroma](https://pleroma.social/)
 * [Pixelfed](https://pixelfed.org/)
 * [GoToSocial](https://gotosocial.org/)
-* [FireFish](https://joinfirefish.org/)
+* [FireFish](https://codeberg.org/firefish/firefish), [Iceshrimp.NET](https://iceshrimp.net) and other Misskey forks
 
 Other services may work in Tokodon, although keep in mind it's not possible to support every extra feature.
 
