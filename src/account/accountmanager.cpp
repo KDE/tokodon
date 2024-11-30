@@ -488,12 +488,10 @@ void AccountManager::queueNotifications()
     for (auto account : m_accounts) {
         QUrl uri = account->apiUrl(QStringLiteral("/api/v1/notifications"));
 
-        AccountConfig config(account->settingsGroupName());
-
         QUrlQuery urlQuery(uri);
         urlQuery.addQueryItem(QStringLiteral("limit"), QString::number(10));
-        if (!config.lastPushNotification().isEmpty()) {
-            urlQuery.addQueryItem(QStringLiteral("since_id"), config.lastPushNotification());
+        if (!account->config()->lastPushNotification().isEmpty()) {
+            urlQuery.addQueryItem(QStringLiteral("since_id"), account->config()->lastPushNotification());
         }
         uri.setQuery(urlQuery);
 
