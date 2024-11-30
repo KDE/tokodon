@@ -366,7 +366,7 @@ QString AccountManager::clientSecretKey(const QString &name)
 QString AccountManager::accessTokenKey(const QString &name)
 {
 #ifdef TOKODON_FLATPAK
-    return QStringLiteral("%1-flatpak-  client-secret").arg(name);
+    return QStringLiteral("%1-flatpak-access-token").arg(name);
 #else
     return QStringLiteral("%1-access-token").arg(name);
 #endif
