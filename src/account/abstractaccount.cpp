@@ -191,7 +191,8 @@ void AbstractAccount::registerAccount(const QString &username,
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        setAccessToken(m_token);
+        // We do not use setAccessToken here because it's a temporary one, and cannot be validated.
+        m_token = doc.object()["access_token"_L1].toString();
 
         const QUrlQuery formdata{
             {QStringLiteral("username"), username},
