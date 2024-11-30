@@ -19,6 +19,8 @@ public:
     explicit Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~Account() override;
 
+    bool successfullyAuthenticated() const override;
+
     void get(const QUrl &url,
              bool authenticated,
              QObject *parent,
@@ -79,6 +81,7 @@ private:
     QNetworkAccessManager *m_qnam;
     QMap<QString, QWebSocket *> m_websockets;
     bool m_hasPushSubscription = false;
+    bool m_authenticated = false;
 
     // common parts for all HTTP request
     [[nodiscard]] QNetworkRequest makeRequest(const QUrl &url, bool authenticated) const;

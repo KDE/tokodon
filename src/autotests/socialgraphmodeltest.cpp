@@ -46,7 +46,7 @@ private Q_SLOTS:
         url = account->apiUrl(QStringLiteral("/api/v1/accounts/familiar_followers"));
         account->registerGet(url, new TestReply(QStringLiteral("socialgraphmodel_follows.json"), account));
 
-        AccountManager::instance().addAccount(account, false);
+        AccountManager::instance().addAccount(account);
         AccountManager::instance().selectAccount(account, false);
     }
 

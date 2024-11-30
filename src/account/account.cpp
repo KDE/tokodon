@@ -33,6 +33,11 @@ Account::~Account()
     m_identityCache.clear();
 }
 
+bool Account::successfullyAuthenticated() const
+{
+    return m_authenticated;
+}
+
 void Account::get(const QUrl &url,
                   bool authenticated,
                   QObject *parent,
@@ -289,6 +294,7 @@ void Account::validateToken()
             m_identity = identityLookup(object["id"_L1].toString(), object);
             m_name = m_identity->username();
             Q_EMIT identityChanged();
+            m_authenticated = true;
             Q_EMIT authenticated(true, {});
 
 #ifdef HAVE_KUNIFIEDPUSH

@@ -60,6 +60,11 @@ public:
     registerAccount(const QString &username, const QString &email, const QString &password, bool agreement, const QString &locale, const QString &reason);
 
     /**
+     * @return If the account has successfully authenticated with the server.
+     */
+    virtual bool successfullyAuthenticated() const = 0;
+
+    /**
      * @return If this account's instance has registrations open.
      */
     [[nodiscard]] bool registrationsOpen() const;

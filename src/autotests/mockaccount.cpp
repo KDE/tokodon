@@ -22,6 +22,11 @@ MockAccount::MockAccount(QObject *parent)
     Q_EMIT authenticated(true, {});
 }
 
+bool MockAccount::successfullyAuthenticated() const
+{
+    return true;
+}
+
 void MockAccount::get(const QUrl &url,
                       bool authenticated,
                       QObject *parent,
