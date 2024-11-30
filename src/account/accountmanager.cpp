@@ -486,9 +486,7 @@ void AccountManager::queueNotifications()
     };
 
     for (auto account : m_accounts) {
-        QUrl uri;
-        uri = QUrl::fromUserInput(account->instanceUri());
-        uri.setPath(QStringLiteral("/api/v1/notifications"));
+        QUrl uri = account->apiUrl(QStringLiteral("/api/v1/notifications"));
 
         AccountConfig config(account->settingsGroupName());
 

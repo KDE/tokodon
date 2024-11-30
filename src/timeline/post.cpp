@@ -111,10 +111,7 @@ void Post::fromJson(QJsonObject obj)
             m_replyIdentity = m_parent->identityLookup(obj["in_reply_to_account_id"_L1].toString(), {});
         } else {
             const auto accountId = obj["in_reply_to_account_id"_L1].toString();
-            QUrl uriAccount(m_parent->instanceUri());
-            uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
-
-            m_parent->get(uriAccount, true, this, [this, accountId](QNetworkReply *reply) {
+            m_parent->get(m_parent->apiUrl(QStringLiteral("/api/v1/accounts/%1").arg(accountId)), true, this, [this, accountId](QNetworkReply *reply) {
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 

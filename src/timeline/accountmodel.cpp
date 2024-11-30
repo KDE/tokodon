@@ -159,10 +159,7 @@ void AccountModel::setAccountId(const QString &accountId)
     Q_EMIT accountIdChanged();
 
     if (!m_account->identityCached(accountId)) {
-        QUrl uriAccount(m_account->instanceUri());
-        uriAccount.setPath(QStringLiteral("/api/v1/accounts/%1").arg(accountId));
-
-        m_account->get(uriAccount, true, this, [this, accountId](QNetworkReply *reply) {
+        m_account->get(m_account->apiUrl(QStringLiteral("/api/v1/accounts/%1").arg(accountId)), true, this, [this, accountId](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
@@ -193,8 +190,7 @@ void AccountModel::updateRelationships()
     }
 
     // Fetch relationship. Don't cache this; it's lightweight.
-    QUrl uriRelationship(m_account->instanceUri());
-    uriRelationship.setPath(QStringLiteral("/api/v1/accounts/relationships"));
+    QUrl uriRelationship = m_account->apiUrl(QStringLiteral("/api/v1/accounts/relationships"));
     uriRelationship.setQuery(QUrlQuery{
         {QStringLiteral("id[]"), m_identity->id()},
     });
