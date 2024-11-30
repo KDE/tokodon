@@ -35,6 +35,7 @@ int LimiterModel::extraCount() const
 
 bool LimiterModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
+    Q_UNUSED(source_parent)
     return source_row <= maximumCount();
 }
 

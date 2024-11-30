@@ -107,6 +107,8 @@ void RulesModel::fill()
             setLoading(false);
         },
         [=](QNetworkReply *reply) {
+            Q_UNUSED(reply)
+
             setLoading(false);
 
             beginInsertRows({}, 0, 0);
