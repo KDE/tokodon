@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-29 00:41+0000\n"
-"PO-Revision-Date: 2024-11-23 14:27+0200\n"
+"PO-Revision-Date: 2024-11-29 10:56+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -122,10 +122,9 @@ msgid "%1 edited a post"
 msgstr "רשומה נערכה על ידי %1"
 
 #: account/notificationhandler.cpp:143
-#, fuzzy, kde-kuit-format
-#| msgid "<b>Content Notice</b><br /> %1"
+#, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr "<b>התראת תוכן</b><br /> %1"
+msgstr "<b>התראת תוכן</b><br />: %1"
 
 #: account/profileeditor.cpp:180
 #, kde-format
@@ -437,7 +436,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "הדדי"
 
 #: content/ui/AccountInfo.qml:294
 #, kde-format
@@ -1431,9 +1430,7 @@ msgid "Unknown Action"
 msgstr "פעולה לא ידועה"
 
 #: content/ui/Main.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgid "Write a New Post"
 msgstr "כתיבת רשומה חדשה"
 
@@ -2962,12 +2959,10 @@ msgid "Configure Notifications…"
 msgstr "הגדרת התראות…"
 
 #: content/ui/NotificationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr "התראות"
+msgstr "הגדרות התראה"
 
 #: content/ui/NotificationPage.qml:46
 #, kde-format
@@ -3057,7 +3052,7 @@ msgctxt "@info:label"
 msgid ""
 "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 "
 "account you follow."
-msgstr ""
+msgstr "המפקחים חסמו את <b>%1</b>, לרבות %2 מעוקביך ו־%3 חשבונות שבמעקב שלך."
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
@@ -3113,11 +3108,9 @@ msgid "Hide media"
 msgstr "הסתרת מדיה"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:334
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Media"
+#, kde-format
 msgid "Show Media"
-msgstr "אין מדיה"
+msgstr "הצגת מדיה"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
@@ -3944,72 +3937,67 @@ msgstr "התראות תופענה רק כש־Tokodon פעיל."
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
-msgstr ""
+msgstr "מדיניות סינון"
 
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
-msgstr ""
+msgstr "אישור"
 
 #: content/ui/Settings/NotificationsPage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
-msgstr "מסננים"
+msgstr "מסנן"
 
 #: content/ui/Settings/NotificationsPage.qml:67
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
-msgstr ""
+msgstr "התעלמות"
 
 #: content/ui/Settings/NotificationsPage.qml:75
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People you don't follow"
-msgstr ""
+msgstr "אנשים שאינם במעקב שלך"
 
 #: content/ui/Settings/NotificationsPage.qml:76
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
-msgstr ""
+msgstr "עד לאישור שלהם ידנית מצדך."
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr "לא ניתן לעקוב אחרי חשבון"
+msgstr "אנשים שלא עוקבים אחריך"
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr ""
+msgstr "כולל אנשים שעקבו אחריך במשך יותר מ־3 ימים."
 
 #: content/ui/Settings/NotificationsPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
-msgstr "חשבונות"
+msgstr "חשבונות חדשים"
 
 #: content/ui/Settings/NotificationsPage.qml:90
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
-msgstr ""
+msgstr "נוצר ב־30 הימים האחרונים."
 
 #: content/ui/Settings/NotificationsPage.qml:96
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr "אין שיחות"
+msgstr "שיחות עם זרים"
 
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
@@ -4017,20 +4005,19 @@ msgctxt "@label Notification preferences"
 msgid ""
 "Filtered unless it's in reply to your own mention or if you follow the "
 "sender."
-msgstr ""
+msgstr "מסונן אלא אם כן זה בתגובה לאזורים שלך או אם השולח ברשימת המעקב שלך."
 
 #: content/ui/Settings/NotificationsPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr "לא ניתן לקדם חשבון"
+msgstr "חשבונות מפוקחים"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
-msgstr ""
+msgstr "מוגבל למפקחי השרת."
 
 #: content/ui/Settings/NotificationsPage.qml:111
 #, kde-format
@@ -4495,9 +4482,7 @@ msgid "Add poll"
 msgstr "הוספת סקר"
 
 #: content/ui/StatusComposer/StatusComposer.qml:449
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "התראת תוכן"
@@ -4725,10 +4710,9 @@ msgid "Browse the Fediverse"
 msgstr "מסע בפדיברס"
 
 #: main.cpp:117
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021‏-2024 קארל שוואן, 2021-‏2024 קהילת KDE"
+msgstr "© 2021‏-2024 קהילת KDE"
 
 #: main.cpp:118
 #, kde-format
@@ -4789,15 +4773,13 @@ msgid "Home"
 msgstr "בית"
 
 #: timeline/maintimelinemodel.cpp:27
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "מקומי"
 
 #: timeline/maintimelinemodel.cpp:29
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "כללי"

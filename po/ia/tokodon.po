@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-29 00:41+0000\n"
-"PO-Revision-Date: 2024-11-25 17:57+0100\n"
+"PO-Revision-Date: 2024-11-29 12:20+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -122,10 +122,9 @@ msgid "%1 edited a post"
 msgstr "%1 modificava un post"
 
 #: account/notificationhandler.cpp:143
-#, fuzzy, kde-kuit-format
-#| msgid "<b>Content Notice</b><br /> %1"
+#, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr "<b>Aviso de Contento </b><br /> %1"
+msgstr "<b>Aviso de Contento  </b>: %1"
 
 #: account/profileeditor.cpp:180
 #, kde-format
@@ -1399,9 +1398,7 @@ msgid "Unknown Action"
 msgstr "Action incognite"
 
 #: content/ui/Main.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgid "Write a New Post"
 msgstr "Scribe un nove message public (post)"
 
@@ -2922,12 +2919,10 @@ msgid "Configure Notifications…"
 msgstr "Configura notificationes ..."
 
 #: content/ui/NotificationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr "Notificationes"
+msgstr "Preferentias de notification"
 
 #: content/ui/NotificationPage.qml:46
 #, kde-format
@@ -3071,11 +3066,9 @@ msgid "Hide media"
 msgstr "Cela medios"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:334
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Media"
+#, kde-format
 msgid "Show Media"
-msgstr "Nulle media"
+msgstr "Monstra media"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
@@ -3890,21 +3883,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
-msgstr ""
+msgstr "Accepta"
 
 #: content/ui/Settings/NotificationsPage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
-msgstr "Filtros"
+msgstr "Filtro"
 
 #: content/ui/Settings/NotificationsPage.qml:67
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignora"
 
 #: content/ui/Settings/NotificationsPage.qml:75
 #, kde-format
@@ -3919,11 +3910,10 @@ msgid "Until you manually approve them."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr "Non pote sequer conto"
+msgstr "Gente que non te seque"
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
@@ -3932,11 +3922,10 @@ msgid "Including people who have been following you fewer than 3 days."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
-msgstr "Contos"
+msgstr "Nove Contos"
 
 #: content/ui/Settings/NotificationsPage.qml:90
 #, kde-format
@@ -3945,11 +3934,10 @@ msgid "Created within the past 30 days."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Conversations"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr "Conversationes"
+msgstr "Conversationes non sollicitate"
 
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
@@ -3960,11 +3948,10 @@ msgid ""
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Muted Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr "Contos in surdina"
+msgstr "Contos moderate"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
@@ -4432,9 +4419,7 @@ msgid "Add poll"
 msgstr "Adde Inquesta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:449
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Aviso de Contento  "
@@ -4660,10 +4645,9 @@ msgid "Browse the Fediverse"
 msgstr ""
 
 #: main.cpp:117
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "©2021-2024 Carl Schwan,  2021-2024 Communitate de KDE"
+msgstr "© 2021-2024 Communitate de KDE"
 
 #: main.cpp:118
 #, kde-format
@@ -4724,15 +4708,13 @@ msgid "Home"
 msgstr "Domo o initio"
 
 #: timeline/maintimelinemodel.cpp:27
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "Local"
 
 #: timeline/maintimelinemodel.cpp:29
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "Global"
