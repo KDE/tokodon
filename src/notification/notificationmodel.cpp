@@ -14,18 +14,6 @@ NotificationModel::NotificationModel(QObject *parent)
     m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
 
-    connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
-            qDebug() << "Invalidating account" << account;
-
-            beginResetModel();
-            m_notifications.clear();
-            endResetModel();
-            m_next = {};
-            setLoading(false);
-        }
-    });
-
     connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account != account) {
             m_account = account;

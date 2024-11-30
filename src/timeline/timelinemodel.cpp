@@ -21,15 +21,6 @@ void TimelineModel::init()
         connect(m_account, &AbstractAccount::streamingEvent, this, &TimelineModel::handleEvent);
     }
 
-    connect(m_manager, &AccountManager::invalidated, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
-            qDebug() << "Invalidating account" << account;
-
-            reset();
-            fillTimeline();
-        }
-    });
-
     connect(this, &TimelineModel::showBoostsChanged, this, [this] {
         reset();
         fillTimeline();

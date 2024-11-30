@@ -198,11 +198,6 @@ public:
     std::shared_ptr<ReportInfo> reportInfoLookup(const QString &reportId, const QJsonObject &doc);
 
     /**
-     * @brief Invalidates this account.
-     */
-    void invalidate();
-
-    /**
      * @brief Saves the timeline position.
      * @param timeline Which timeline to save, right now can only be "home" or "notifications"
      * @param lastReadId The last read post id.
@@ -575,12 +570,6 @@ Q_SIGNALS:
      * @param posts The list of posts fetched.
      */
     void fetchedTimeline(const QString &timelineName, QList<Post *> posts);
-
-    /**
-     * @brief Emitted when th=e account has been invalidated
-     * @see invalidate()
-     */
-    void invalidated();
 
     /**
      * @brief Emitted when the account's username has been changed.

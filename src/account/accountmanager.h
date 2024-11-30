@@ -31,7 +31,6 @@ class AccountManager : public QAbstractListModel
     Q_PROPERTY(AbstractAccount *selectedAccount READ selectedAccount WRITE selectAccount NOTIFY accountSelected)
     Q_PROPERTY(QString selectedAccountId READ selectedAccountId NOTIFY accountSelected)
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY accountSelected)
-    Q_PROPERTY(KAboutData aboutData READ aboutData WRITE setAboutData NOTIFY aboutDataChanged)
     Q_PROPERTY(bool isFlatpak READ isFlatpak CONSTANT)
     Q_PROPERTY(bool selectedAccountHasIssue READ selectedAccountHasIssue NOTIFY accountSelected)
     Q_PROPERTY(bool testMode READ testMode CONSTANT)
@@ -154,17 +153,6 @@ public:
      */
     [[nodiscard]] int selectedIndex() const;
 
-    /**
-     * @brief Sets the application about data.
-     * @param aboutData The new about data.
-     */
-    void setAboutData(const KAboutData &aboutData);
-
-    /**
-     * @return The application's about data.
-     */
-    [[nodiscard]] KAboutData aboutData() const;
-
     [[nodiscard]] int rowCount(const QModelIndex &index = QModelIndex()) const override;
 
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
@@ -209,7 +197,6 @@ public:
     [[nodiscard]] QList<AbstractAccount *> accounts() const;
 
 Q_SIGNALS:
-
     void accountAdded(AbstractAccount *account);
 
     void accountRemoved(AbstractAccount *account);
@@ -224,18 +211,6 @@ Q_SIGNALS:
 
     void identityChanged(AbstractAccount *account);
 
-    void fetchedTimeline(AbstractAccount *account, QString original_name, QList<Post *> posts);
-
-    void invalidated(AbstractAccount *account);
-
-    void fetchedInstanceMetadata(AbstractAccount *account);
-
-    void notification(AbstractAccount *account, std::shared_ptr<Notification> n);
-
-    void aboutDataChanged();
-
-    void webapLink(QString id);
-
     void finishedNotificationQueue();
 
 public Q_SLOTS:
@@ -249,7 +224,6 @@ private:
 
     QList<AbstractAccount *> m_accounts;
     AbstractAccount *m_selected_account = nullptr;
-    KAboutData m_aboutData;
     QNetworkAccessManager *m_qnam;
 
     enum class AccountStatus { NotLoaded, Loaded, InvalidCredentials };

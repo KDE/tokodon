@@ -125,20 +125,11 @@ void AccountManager::addAccount(AbstractAccount *account)
             checkIfLoadingFinished();
         });
     }
-
-    connect(account, &Account::fetchedTimeline, this, [this, account](const QString &original_name, QList<Post *> posts) {
-        Q_EMIT fetchedTimeline(account, original_name, std::move(posts));
-    });
-    connect(account, &Account::invalidated, this, [this, account]() {
-        Q_EMIT invalidated(account);
-    });
     connect(account, &Account::fetchedInstanceMetadata, this, [this, account, acctIndex]() {
-        Q_EMIT fetchedInstanceMetadata(account);
         Q_EMIT dataChanged(index(acctIndex, 0), index(acctIndex, 0));
     });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
         notificationHandler()->handle(std::move(n), account);
-        Q_EMIT notification(account, std::move(n));
     });
 
     if (m_selected_account == nullptr) {
@@ -306,17 +297,6 @@ void AccountManager::loadFromSettings()
     }
 
     checkIfLoadingFinished();
-}
-
-KAboutData AccountManager::aboutData() const
-{
-    return m_aboutData;
-}
-
-void AccountManager::setAboutData(const KAboutData &aboutData)
-{
-    m_aboutData = aboutData;
-    Q_EMIT aboutDataChanged();
 }
 
 void AccountManager::checkIfLoadingFinished()
