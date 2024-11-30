@@ -103,11 +103,6 @@ public:
     [[nodiscard]] bool hasName() const;
 
     /**
-     * @return If the account has an instance uri set.
-     */
-    [[nodiscard]] bool hasInstanceUrl() const;
-
-    /**
      * @brief Verifies the token with the instance and if successful, loads identity information for the account.
      */
     Q_INVOKABLE virtual void validateToken(bool newAccount = false) = 0;

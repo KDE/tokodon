@@ -96,11 +96,6 @@ bool AbstractAccount::hasName() const
     return !m_name.isEmpty();
 }
 
-bool AbstractAccount::hasInstanceUrl() const
-{
-    return !m_instance_uri.isEmpty();
-}
-
 QUrl AbstractAccount::apiUrl(const QString &path) const
 {
     QUrl url = QUrl::fromUserInput(m_instance_uri);
