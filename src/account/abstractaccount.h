@@ -309,20 +309,6 @@ public:
     void invalidatePost(Post *p);
 
     /**
-     * @brief Types of formatting that we may use is determined primarily by the server metadata, this is a simple enough way to determine what formats are
-     * accepted.
-     */
-    enum AllowedContentType { PlainText = 1 << 0, Markdown = 1 << 1, Html = 1 << 2, BBCode = 1 << 3 };
-
-    /**
-     * @return The allowed content types of the account's instance.
-     */
-    [[nodiscard]] AllowedContentType allowedContentTypes() const
-    {
-        return m_allowedContentTypes;
-    }
-
-    /**
      * @param path The base API path.
      * @return A well-formed URL of an API path.
      */
@@ -731,7 +717,6 @@ protected:
     AdminAccountInfo *m_adminIdentityWithVanillaPointer;
     AdminAccountInfo *m_federationIdentity;
     std::shared_ptr<ReportInfo> m_reportInfo;
-    AllowedContentType m_allowedContentTypes;
     Preferences *m_preferences = nullptr;
     QList<CustomEmoji> m_customEmojis;
     QString m_additionalScopes;
