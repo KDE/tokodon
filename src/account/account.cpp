@@ -536,12 +536,12 @@ QUrlQuery Account::buildNotificationFormData()
     return formdata;
 }
 
-void Account::registerTokodon(const bool authCode, const bool admin)
+void Account::registerTokodon(const bool useAuthCode, const bool addAdminScope)
 {
     registerApplication(QStringLiteral("Tokodon"),
                         QStringLiteral("https://apps.kde.org/tokodon"),
-                        admin ? QStringLiteral("admin:read admin:write") : QStringLiteral(""),
-                        authCode);
+                        addAdminScope ? QStringLiteral("admin:read admin:write") : QStringLiteral(""),
+                        useAuthCode);
 }
 
 #include "moc_account.cpp"

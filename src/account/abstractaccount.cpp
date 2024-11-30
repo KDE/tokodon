@@ -118,7 +118,7 @@ QUrl AbstractAccount::apiUrl(const QString &path) const
 void AbstractAccount::registerApplication(const QString &appName, const QString &website, const QString &additionalScopes, const bool useAuthCode)
 {
     // clear any previous bearer token credentials
-    m_token = QString();
+    m_token.clear();
 
     QString ourAdditionalScopes;
 #ifdef HAVE_KUNIFIEDPUSH

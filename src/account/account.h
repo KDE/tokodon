@@ -66,10 +66,10 @@ public:
     Q_INVOKABLE void updatePushNotifications() override;
 
     /**
-     * @param authCode Whether to use a manually typed code. Otherwise, uses the tokodon:// URI as a callback.
-     * @param admin Whether to request the admin scope.
+     * @param useAuthCode Whether to use a manually typed code. Otherwise, uses the tokodon:// URI as a callback.
+     * @param addAdminScope Whether to request the admin scope.
      */
-    Q_INVOKABLE void registerTokodon(bool authCode, bool admin);
+    Q_INVOKABLE void registerTokodon(bool useAuthCode, bool addAdminScope);
 
 private:
     void unsubscribePushNotifications();
