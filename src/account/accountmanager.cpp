@@ -125,7 +125,7 @@ void AccountManager::addAccount(AbstractAccount *account)
             checkIfLoadingFinished();
         });
     }
-    connect(account, &Account::fetchedInstanceMetadata, this, [this, account, acctIndex]() {
+    connect(account, &Account::fetchedInstanceMetadata, this, [this, acctIndex]() {
         Q_EMIT dataChanged(index(acctIndex, 0), index(acctIndex, 0));
     });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {

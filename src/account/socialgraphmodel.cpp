@@ -339,7 +339,7 @@ void SocialGraphModel::actionRemoveFromList(const QModelIndex &index)
     auto url = account->apiUrl(QStringLiteral("/api/v1/lists/%1/accounts").arg(m_listId));
     url.setQuery(query);
 
-    account->deleteResource(url, true, this, [this, account, requestIdentity, index](QNetworkReply *reply) {
+    account->deleteResource(url, true, this, [this, index](QNetworkReply *reply) {
         Q_UNUSED(reply)
 
         beginRemoveRows(QModelIndex(), index.row(), index.row());

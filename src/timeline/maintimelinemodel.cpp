@@ -147,7 +147,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
         url,
         true,
         this,
-        [this, currentTimelineName = m_timelineName, account = m_account, backwards, isHome](QNetworkReply *reply) {
+        [this, currentTimelineName = m_timelineName, account = m_account, backwards](QNetworkReply *reply) {
             // This weird m_account != account is to protect against account switches that might happen while loading
             // Ditto for timeline name
             if (m_account != account || m_timelineName != currentTimelineName) {

@@ -131,7 +131,7 @@ void Attachment::copyToClipboard()
         QUrl::fromUserInput(m_url),
         false,
         this,
-        [this](QNetworkReply *reply) {
+        [](QNetworkReply *reply) {
             QImage image;
             image.loadFromData(reply->readAll());
 
