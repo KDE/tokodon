@@ -56,7 +56,7 @@ MastoPage {
             text: i18n("Re-Attempt Log In")
             icon.name: "edit-redo-symbolic"
             onClicked: {
-                AccountManager.selectedAccount.validateToken()
+                AccountManager.selectedAccount.validateToken();
                 AccountManager.selectedAccount = AccountManager.selectedAccount; // reload the pages
             }
         }

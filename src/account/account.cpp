@@ -262,7 +262,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
     return socket;
 }
 
-void Account::validateToken(bool newAccount)
+void Account::validateToken()
 {
     const QUrl verify_credentials = apiUrl(QStringLiteral("/api/v1/accounts/verify_credentials"));
 
@@ -290,16 +290,6 @@ void Account::validateToken(bool newAccount)
             m_name = m_identity->username();
             Q_EMIT identityChanged();
             Q_EMIT authenticated(true, {});
-
-#ifdef HAVE_KUNIFIEDPUSH
-            if (newAccount) {
-                // We asked for the push scope, so we can safely start subscribing to notifications
-                config()->setEnablePushNotifications(true);
-                config()->save();
-            }
-#else
-            Q_UNUSED(newAccount)
-#endif
 
 #ifdef HAVE_KUNIFIEDPUSH
             get(
@@ -393,12 +383,8 @@ void Account::buildFromSettings()
 #endif
     accessTokenJob->setKey(accessTokenKey());
 
-    QObject::connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
-        m_token = accessTokenJob->textData();
-
-        QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
-
-        validateToken();
+    connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
+        setAccessToken(accessTokenJob->textData());
     });
 
     accessTokenJob->start();
@@ -409,7 +395,7 @@ void Account::buildFromSettings()
 #endif
     clientSecretJob->setKey(clientSecretKey());
 
-    QObject::connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {
+    connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {
         m_client_secret = clientSecretJob->textData();
     });
 

@@ -149,6 +149,12 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
         m_client_id = doc.object()["client_id"_L1].toString();
         m_client_secret = doc.object()["client_secret"_L1].toString();
 
+#ifdef HAVE_KUNIFIEDPUSH
+        // We asked for the push scope, so we can safely start subscribing to notifications
+        config()->setEnablePushNotifications(true);
+        config()->save();
+#endif
+
         QMessageFilterContainer::self()->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
 
         if (isRegistered()) {
@@ -177,9 +183,7 @@ void AbstractAccount::registerAccount(const QString &username,
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
-        // override the token for now
-        m_token = doc.object()["access_token"_L1].toString();
-        QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
+        setAccessToken(m_token);
 
         const QUrlQuery formdata{
             {QStringLiteral("username"), username},
@@ -308,10 +312,7 @@ void AbstractAccount::setAccessToken(const QString &token)
 {
     m_token = token;
     QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
-    AccountManager::instance().addAccount(this, false);
-    // Future programmer: make sure not to set explicitUserAction here because it needs the settingsGroupName() to be valid first
-    AccountManager::instance().selectAccount(this, false);
-    validateToken(true);
+    validateToken();
 }
 
 void AbstractAccount::setInstanceUri(const QString &instance_uri)
