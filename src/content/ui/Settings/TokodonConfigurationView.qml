@@ -52,6 +52,12 @@ KirigamiSettings.ConfigurationView {
             page: () => Qt.createComponent("org.kde.tokodon", "NetworkProxyPage")
         },
         KirigamiSettings.ConfigurationModule {
+            moduleId: "errorlog"
+            text: i18n("Error Log")
+            icon.name: "error-symbolic"
+            page: () => Qt.createComponent("org.kde.tokodon", "ErrorLogPage")
+        },
+        KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Tokodon")
             icon.name: "org.kde.tokodon"

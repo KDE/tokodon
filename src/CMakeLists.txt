@@ -243,6 +243,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/AccountsPage.qml
         content/ui/Settings/AppearancePage.qml
         content/ui/Settings/EditProfilePage.qml
+        content/ui/Settings/ErrorLogPage.qml
         content/ui/Settings/NetworkProxyPage.qml
         content/ui/Settings/NotificationsPage.qml
         content/ui/Settings/ProfileEditor.qml

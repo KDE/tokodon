@@ -13,6 +13,8 @@
 #include "tokodon_debug.h"
 #endif
 
+#include "messagefiltercontainer.h"
+
 #include <config.h>
 #include <qt6keychain/keychain.h>
 
@@ -181,7 +183,7 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
                 qCDebug(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 errorCallback(reply);
             } else {
-                qCWarning(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
+                NetworkController::instance().logError(reply->url().toString(), reply->errorString());
                 Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
             }
             return;
@@ -275,7 +277,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
         }
     });
     connect(socket, &QWebSocket::errorOccurred, this, [=](QAbstractSocket::SocketError) {
-        qCWarning(TOKODON_HTTP) << "Error in" << stream << ":" << socket->errorString();
+        NetworkController::instance().logError(url.toString(), socket->errorString());
     });
 
     socket->open(url);

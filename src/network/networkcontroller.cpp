@@ -9,6 +9,7 @@
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "config.h"
+#include "messagefiltercontainer.h"
 #include "tokodon_http_debug.h"
 #include "utils/navigation.h"
 #include "utils/texthandler.h"
@@ -134,6 +135,48 @@ void NetworkController::openWebApLink(QString input)
     if (m_accountsReady) {
         openLink();
     }
+}
+
+void NetworkController::logError(const QString &url, const QString &message)
+{
+    // URLs can contain sensitive information like access tokens
+    const QString sanitizedUrl = QMessageFilterContainer::self()->filter(url);
+
+    qCWarning(TOKODON_HTTP) << sanitizedUrl << message;
+
+    auto config = KSharedConfig::openStateConfig();
+    auto networkGroup = config->group(QStringLiteral("Network"));
+
+    const QString messages = networkGroup.readEntry(QStringLiteral("ErrorMessages"), QString());
+    QJsonArray messageArray = QJsonDocument::fromJson(messages.toUtf8()).array();
+    messageArray.push_front(QJsonObject{{QStringLiteral("url"), sanitizedUrl}, {QStringLiteral("message"), message}});
+    // Limit to the last five error messages
+    while (messageArray.size() > 5) {
+        messageArray.pop_back();
+    }
+    networkGroup.writeEntry(QStringLiteral("ErrorMessages"), QJsonDocument(messageArray).toJson(QJsonDocument::Compact));
+
+    config->sync();
+
+    Q_EMIT errorMessagesChanged();
+}
+
+QJsonArray NetworkController::errorMessages() const
+{
+    auto config = KSharedConfig::openStateConfig();
+    auto networkGroup = config->group(QStringLiteral("Network"));
+
+    const QString messages = networkGroup.readEntry(QStringLiteral("ErrorMessages"), QString());
+    return QJsonDocument::fromJson(messages.toUtf8()).array();
+}
+
+void NetworkController::clearErrorMessages()
+{
+    auto config = KSharedConfig::openStateConfig();
+    config->deleteGroup(QStringLiteral("Network"));
+    config->sync();
+
+    Q_EMIT errorMessagesChanged();
 }
 
 void NetworkController::setAuthCode(QUrl authCode)

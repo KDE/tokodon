@@ -15,6 +15,7 @@ class NetworkController : public QObject
     QML_SINGLETON
 
     Q_PROPERTY(bool pushNotificationsAvailable READ pushNotificationsAvailable CONSTANT)
+    Q_PROPERTY(QJsonArray errorMessages READ errorMessages NOTIFY errorMessagesChanged)
 
 public:
     static NetworkController *create(QQmlEngine *, QJSEngine *)
@@ -59,11 +60,31 @@ public:
      */
     Q_INVOKABLE void openWebApLink(QString input);
 
+    /**
+     * @brief Log the error @p message which can be later viewed in the settings UI.
+     *
+     * This also prints this as a warning to the log.
+     *
+     * @note The number of error messages kept is limited to the 5 most recent.
+     */
+    void logError(const QString &url, const QString &message);
+
+    /**
+     * @return The last 5 most recent errors messages.
+     */
+    [[nodiscard]] QJsonArray errorMessages() const;
+
+    /**
+     * @brief Clear all of the error messages.
+     */
+    Q_INVOKABLE void clearErrorMessages();
+
     QString endpoint;
 
 Q_SIGNALS:
     void networkErrorOccurred(const QString &errorString);
     void receivedAuthCode(QString authCode);
+    void errorMessagesChanged();
 
 private:
     explicit NetworkController(QObject *parent = nullptr);
