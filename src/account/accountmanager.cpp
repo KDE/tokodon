@@ -15,20 +15,12 @@ using namespace Qt::Literals::StringLiterals;
 
 AccountManager::AccountManager(QObject *parent)
     : QAbstractListModel(parent)
-    , m_selected_account(nullptr)
     , m_qnam(NetworkAccessManagerFactory().create(this))
     , m_notificationHandler(new NotificationHandler(m_qnam, this))
 {
 }
 
-AccountManager::~AccountManager()
-{
-    for (auto a : std::as_const(m_accounts)) {
-        delete a;
-    }
-
-    m_accounts.clear();
-}
+AccountManager::~AccountManager() = default;
 
 QVariant AccountManager::data(const QModelIndex &index, int role) const
 {
@@ -37,30 +29,34 @@ QVariant AccountManager::data(const QModelIndex &index, int role) const
     }
 
     auto account = m_accounts.at(index.row());
-    if (account->identity() == nullptr) {
+    if (!account->identity()) {
         return {};
     }
+
     switch (role) {
     case Qt::DisplayRole:
-    case DisplayNameRole:
-        if (!account->identity()->displayNameHtml().isEmpty())
+    case DisplayNameRole: {
+        if (!account->identity()->displayNameHtml().isEmpty()) {
             return account->identity()->displayNameHtml();
-        else
-            return account->username();
+        }
+
+        return account->username();
+    }
     case DescriptionRole:
         return account->identity()->account();
     case InstanceRole:
         return account->instanceName();
     case AccountRole:
         return QVariant::fromValue(m_accounts[index.row()]);
+    default:
+        return {};
     }
-    return {};
 }
 
 int AccountManager::rowCount(const QModelIndex &index) const
 {
     Q_UNUSED(index)
-    return m_accounts.size();
+    return static_cast<int32_t>(m_accounts.size());
 }
 
 QHash<int, QByteArray> AccountManager::roleNames() const
@@ -106,11 +102,7 @@ void AccountManager::addAccount(AbstractAccount *account)
     m_accounts.append(account);
     int const acctIndex = m_accountStatus.size();
     if (!account->successfullyAuthenticated()) {
-        if (m_testMode) {
-            m_accountStatus.push_back(AccountStatus::Loaded);
-        } else {
-            m_accountStatus.push_back(AccountStatus::NotLoaded);
-        }
+        m_accountStatus.push_back(AccountStatus::NotLoaded);
         m_accountStatusStrings.push_back({});
     }
     endInsertRows();
@@ -129,7 +121,7 @@ void AccountManager::addAccount(AbstractAccount *account)
                 m_accountStatus[acctIndex] = AccountStatus::InvalidCredentials;
                 m_accountStatusStrings[acctIndex] = errorMessage;
             }
-            Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+            Q_EMIT dataChanged(index(acctIndex, 0), index(acctIndex, 0));
             checkIfLoadingFinished();
         });
     }
@@ -140,12 +132,12 @@ void AccountManager::addAccount(AbstractAccount *account)
     connect(account, &Account::invalidated, this, [this, account]() {
         Q_EMIT invalidated(account);
     });
-    connect(account, &Account::fetchedInstanceMetadata, this, [this, account]() {
+    connect(account, &Account::fetchedInstanceMetadata, this, [this, account, acctIndex]() {
         Q_EMIT fetchedInstanceMetadata(account);
-        Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+        Q_EMIT dataChanged(index(acctIndex, 0), index(acctIndex, 0));
     });
     connect(account, &Account::notification, this, [this, account](std::shared_ptr<Notification> n) {
-        AccountManager::instance().notificationHandler()->handle(std::move(n), account);
+        notificationHandler()->handle(std::move(n), account);
         Q_EMIT notification(account, std::move(n));
     });
 
@@ -253,7 +245,7 @@ QString AccountManager::selectedAccountLoginIssue() const
 void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAction)
 {
     if (!m_accounts.contains(account)) {
-        qDebug() << "WTF: attempt to select unmanaged account" << account;
+        qCWarning(TOKODON_LOG) << "WTF: attempt to select unmanaged account" << account;
         return;
     }
 
@@ -275,17 +267,15 @@ AbstractAccount *AccountManager::selectedAccount() const
 
 QString AccountManager::selectedAccountId() const
 {
+    if (!m_selected_account) {
+        return {};
+    }
     return m_selected_account->identity()->id();
 }
 
 int AccountManager::selectedIndex() const
 {
-    for (int i = 0; i < m_accounts.length(); i++) {
-        if (m_selected_account == m_accounts[i]) {
-            return i;
-        }
-    }
-    return -1;
+    return m_accounts.indexOf(m_selected_account);
 }
 
 void AccountManager::loadFromSettings()
@@ -309,7 +299,7 @@ void AccountManager::loadFromSettings()
                 continue;
             }
 
-            const auto account = new Account(accountConfig->instanceUri(), m_qnam);
+            const auto account = new Account(accountConfig->instanceUri(), m_qnam, this);
             account->setConfig(accountConfig);
             addAccount(account);
         }
@@ -338,12 +328,10 @@ void AccountManager::checkIfLoadingFinished()
         return;
     }
 
-    bool finished = true;
-    for (auto status : m_accountStatus) {
-        if (status == AccountStatus::NotLoaded)
-            finished = false;
-    }
-
+    // ensure every account is loaded, or has an error
+    const bool finished = std::none_of(m_accountStatus.cbegin(), m_accountStatus.cend(), [](const auto status) {
+        return status == AccountStatus::NotLoaded;
+    });
     if (!finished) {
         return;
     }
