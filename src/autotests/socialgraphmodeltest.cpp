@@ -47,7 +47,6 @@ private Q_SLOTS:
         account->registerGet(url, new TestReply(QStringLiteral("socialgraphmodel_follows.json"), account));
 
         AccountManager::instance().addAccount(account);
-        AccountManager::instance().selectAccount(account, false);
     }
 
     void testInvalid()
