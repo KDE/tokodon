@@ -101,9 +101,8 @@ public:
     /**
      * @brief Adds a new account.
      * @param account The account to manage.
-     * @param skipAuthenticationCheck Whether the account manager should internally check if the account is valid.
      */
-    Q_INVOKABLE void addAccount(AbstractAccount *account, bool skipAuthenticationCheck);
+    Q_INVOKABLE void addAccount(AbstractAccount *account);
 
     /**
      * @brief Removes an existing account.

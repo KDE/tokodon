@@ -243,7 +243,7 @@ int main(int argc, char *argv[])
     AccountManager::instance().setTestMode(true);
 
     auto account = new MockAccount();
-    AccountManager::instance().addAccount(account, true);
+    AccountManager::instance().addAccount(account);
     AccountManager::instance().selectAccount(account);
 
     QUrl url = account->apiUrl(QStringLiteral("/api/v2/search"));

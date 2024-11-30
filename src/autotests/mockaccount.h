@@ -9,6 +9,9 @@ class MockAccount : public AbstractAccount
 
 public:
     explicit MockAccount(QObject *parent = nullptr);
+
+    bool successfullyAuthenticated() const override;
+
     void get(const QUrl &url,
              bool authenticated,
              QObject *parent,

@@ -40,7 +40,7 @@ Kirigami.ScrollablePage {
 
     function setAuthCode(authCode) {
         // We need to call this before setToken, so when the identity is loaded the manager can write it to the settings.
-        AccountManager.addAccount(root.account, true);
+        AccountManager.addAccount(root.account);
         account.authenticated.connect(() => {
             AccountManager.selectAccount(root.account, true);
             root.Window.window.pageStack.layers.clear();

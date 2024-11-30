@@ -100,12 +100,12 @@ NotificationHandler *AccountManager::notificationHandler() const
     return m_notificationHandler;
 }
 
-void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticationCheck)
+void AccountManager::addAccount(AbstractAccount *account)
 {
     beginInsertRows(QModelIndex(), m_accounts.size(), m_accounts.size());
     m_accounts.append(account);
-    int acctIndex = m_accountStatus.size();
-    if (!skipAuthenticationCheck) {
+    int const acctIndex = m_accountStatus.size();
+    if (!account->successfullyAuthenticated()) {
         if (m_testMode) {
             m_accountStatus.push_back(AccountStatus::Loaded);
         } else {
@@ -121,7 +121,7 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
         childIdentityChanged(account);
         account->writeToSettings();
     });
-    if (!skipAuthenticationCheck) {
+    if (!account->successfullyAuthenticated()) {
         connect(account, &Account::authenticated, this, [this, acctIndex](const bool authenticated, const QString &errorMessage) {
             if (authenticated) {
                 m_accountStatus[acctIndex] = AccountStatus::Loaded;
@@ -130,6 +130,7 @@ void AccountManager::addAccount(AbstractAccount *account, bool skipAuthenticatio
                 m_accountStatusStrings[acctIndex] = errorMessage;
             }
             Q_EMIT dataChanged(index(0, 0), index(m_accounts.size() - 1, 0));
+            checkIfLoadingFinished();
         });
     }
 
@@ -299,31 +300,18 @@ void AccountManager::loadFromSettings()
     auto config = KSharedConfig::openStateConfig();
     for (const auto &id : config->groupList()) {
         if (id.contains('@'_L1)) {
-            auto accountConfig = new AccountConfig{id};
+            const auto accountConfig = new AccountConfig{id};
 
+            Q_ASSERT(!accountConfig->clientId().isEmpty());
+            Q_ASSERT(!accountConfig->instanceUri().isEmpty());
             if (accountConfig->clientId().isEmpty() || accountConfig->instanceUri().isEmpty()) {
                 accountConfig->deleteLater();
                 continue;
             }
 
-            const int index = m_accountStatus.size();
-            m_accountStatus.push_back(AccountStatus::NotLoaded);
-            m_accountStatusStrings.push_back({});
-
-            auto account = new Account(accountConfig->instanceUri(), m_qnam);
+            const auto account = new Account(accountConfig->instanceUri(), m_qnam);
             account->setConfig(accountConfig);
-            addAccount(account, true);
-
-            connect(account, &Account::authenticated, this, [this, account, index](const bool successful, const QString &errorMessage) {
-                if (successful && account->haveToken() && account->hasName()) {
-                    m_accountStatus[index] = AccountStatus::Loaded;
-                } else {
-                    m_accountStatus[index] = AccountStatus::InvalidCredentials;
-                    m_accountStatusStrings[index] = errorMessage;
-                }
-
-                checkIfLoadingFinished();
-            });
+            addAccount(account);
         }
     }
 
