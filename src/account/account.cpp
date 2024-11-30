@@ -411,6 +411,8 @@ void Account::buildFromSettings()
     QObject::connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
         m_token = accessTokenJob->textData();
 
+        QMessageFilterContainer::self()->insert(m_token, QStringLiteral("ACCESS_TOKEN"));
+
         validateToken();
     });
 

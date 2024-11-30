@@ -8,6 +8,7 @@
 // messages with placeholders.
 // This is used as a global static (since message handlers are meant to be
 // static) and is slightly synchronizing across threads WRT the filter hash.
+Q_GLOBAL_STATIC(QMessageFilterContainer, s_messageFilter)
 
 QMessageFilterContainer::QMessageFilterContainer()
 {
@@ -41,6 +42,11 @@ QString QMessageFilterContainer::filter(const QString &msg)
         filteredMsg.replace(it.key(), it.value());
     }
     return filteredMsg;
+}
+
+QMessageFilterContainer *QMessageFilterContainer::self()
+{
+    return s_messageFilter;
 }
 
 void QMessageFilterContainer::clear()
