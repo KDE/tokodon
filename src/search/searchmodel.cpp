@@ -15,14 +15,6 @@ SearchModel::SearchModel(QObject *parent)
 {
     m_account = AccountManager::instance().selectedAccount();
 
-    connect(&AccountManager::instance(), &AccountManager::invalidated, this, [=](AbstractAccount *account) {
-        if (m_account == account) {
-            beginResetModel();
-            clear();
-            endResetModel();
-        }
-    });
-
     connect(&AccountManager::instance(), &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
         if (m_account != account) {
             m_account = account;

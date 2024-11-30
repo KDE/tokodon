@@ -509,11 +509,6 @@ void AbstractAccount::fetchInstanceMetadata()
     fetchCustomEmojis();
 }
 
-void AbstractAccount::invalidate()
-{
-    Q_EMIT invalidated();
-}
-
 void AbstractAccount::saveTimelinePosition(const QString &timeline, const QString &lastReadId)
 {
     QUrl uri = apiUrl(QStringLiteral("/api/v1/markers"));
