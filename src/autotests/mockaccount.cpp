@@ -10,6 +10,7 @@ using namespace Qt::Literals::StringLiterals;
 MockAccount::MockAccount(QObject *parent)
     : AbstractAccount(parent)
 {
+    m_errorReply = new TestReply(QStringLiteral("error.json"), this);
     registerGet(apiUrl(QStringLiteral("/api/v1/preferences")), new TestReply(QStringLiteral("preferences.json"), this));
     m_preferences = new Preferences(this);
     m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
@@ -39,7 +40,7 @@ void MockAccount::get(const QUrl &url,
     } else {
         qWarning() << "Cannot find reply for " << url;
         if (errorCallback)
-            errorCallback(nullptr);
+            errorCallback(m_errorReply);
     }
 }
 

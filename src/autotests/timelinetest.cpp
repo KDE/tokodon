@@ -40,9 +40,9 @@ private Q_SLOTS:
 
         MainTimelineModel timelineModel;
         timelineModel.setName(QStringLiteral("public"));
-        QCOMPARE(timelineModel.displayName(), QStringLiteral("Local Timeline"));
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Local"));
         timelineModel.setName(QStringLiteral("federated"));
-        QCOMPARE(timelineModel.displayName(), QStringLiteral("Global Timeline"));
+        QCOMPARE(timelineModel.displayName(), QStringLiteral("Global"));
         timelineModel.setName(QStringLiteral("home"));
         QCOMPARE(timelineModel.displayName(), QStringLiteral("Home"));
 

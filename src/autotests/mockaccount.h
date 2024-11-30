@@ -79,4 +79,5 @@ private:
 
     QHash<QUrl, QNetworkReply *> m_postReplies;
     QHash<QUrl, QNetworkReply *> m_getReplies;
+    QNetworkReply *m_errorReply;
 };
