@@ -5,6 +5,8 @@
 
 #include "networkcontroller.h"
 
+#include <KLocalizedString>
+
 using namespace Qt::Literals::StringLiterals;
 
 RulesModel::RulesModel(QObject *parent)
@@ -75,6 +77,7 @@ void RulesModel::fill()
     }
     setLoading(true);
 
+    // TODO: if v2, use the rules from the fetched metadata
     m_account->get(
         m_account->apiUrl(QStringLiteral("/api/v1/instance/rules")),
         false,
@@ -92,12 +95,26 @@ void RulesModel::fill()
                 beginInsertRows({}, m_rules.size(), m_rules.size() + fetchedRules.size() - 1);
                 m_rules += fetchedRules;
                 endInsertRows();
+            } else {
+                beginInsertRows({}, 0, 0);
+                m_rules += Rule{
+                    .id = QStringLiteral("invalid"),
+                    .text = i18n("This server provided no rules. Please see their website for more information."),
+                };
+                endInsertRows();
             }
 
             setLoading(false);
         },
         [=](QNetworkReply *reply) {
-            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+            setLoading(false);
+
+            beginInsertRows({}, 0, 0);
+            m_rules += Rule{
+                .id = QStringLiteral("invalid"),
+                .text = i18n("This server provided no rules. Please see their website for more information."),
+            };
+            endInsertRows();
         });
 }
 
