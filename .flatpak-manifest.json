@@ -10,11 +10,19 @@
     ],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
-        "--share=ipc",
-        "--socket=fallback-x11",
-        "--socket=wayland",
         "--device=dri",
-        "--share=network"
+        "--env=QML_IMPORT_PATH=/app/qml",
+        "--env=QT_PLUGIN_PATH=/app/plugins:/app/lib64/plugins:/app/lib/plugins:/usr/share/runtime/lib/plugins",
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=pulseaudio",
+        "--socket=wayland",
+        "--talk-name=org.unifiedpush.Distributor.*",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.kde.kwalletd5",
+        "--talk-name=org.kde.kwalletd6"
     ],
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
@@ -256,6 +264,24 @@
             ]
         },
         {
+            "name": "kunifiedpush",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/kunifiedpush/kunifiedpush-1.0.0.tar.xz",
+                    "sha256": "2ddeba21306d0307114ec50a2c38159ec62359f9fc6cdd58da30a369fbd550cf",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 375055,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/kunifiedpush/kunifiedpush-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
             "name": "tokodon",
             "buildsystem": "cmake-ninja",
             "sources": [
@@ -265,7 +291,8 @@
                 }
             ],
             "config-opts": [
-                "-DTOKODON_FLATPAK=ON"
+                "-DTOKODON_FLATPAK=ON",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ]
         }
     ]
