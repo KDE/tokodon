@@ -351,7 +351,7 @@ QString AccountManager::settingsGroupName(const QString &name, const QString &in
 {
     Q_ASSERT(!name.isEmpty());
     Q_ASSERT(!instanceUri.isEmpty());
-    return QStringLiteral("%1@%2").arg(name, QUrl(instanceUri).host());
+    return QStringLiteral("%1@%2").arg(name, QUrl::fromUserInput(instanceUri).host());
 }
 
 QString AccountManager::clientSecretKey(const QString &name)
@@ -521,9 +521,8 @@ void AccountManager::queueNotifications()
                     }
                 }
 
-                AccountConfig config(account->settingsGroupName());
-                config.setLastPushNotification(doc.array().first()["id"_L1].toString());
-                config.save();
+                account->config()->setLastPushNotification(doc.array().first()["id"_L1].toString());
+                account->config()->save();
 
                 totalNotifications = doc.array().size();
 

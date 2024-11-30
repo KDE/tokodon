@@ -350,18 +350,10 @@ void Account::setConfig(AccountConfig *config)
 
 void Account::writeToSettings()
 {
-    // do not write to settings if we do not have complete information yet,
-    // or else it writes malformed and possibly duplicate accounts to settings.
-    if (m_name.isEmpty() || m_instance_uri.isEmpty()) {
-        return;
-    }
-
-    AccountConfig config(settingsGroupName());
-    config.setClientId(m_client_id);
-    config.setInstanceUri(m_instance_uri);
-    config.setName(m_name);
-
-    config.save();
+    config()->setClientId(m_client_id);
+    config()->setInstanceUri(m_instance_uri);
+    config()->setName(m_name);
+    config()->save();
 
     auto accessTokenJob = new QKeychain::WritePasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
@@ -382,10 +374,10 @@ void Account::writeToSettings()
 
 void Account::buildFromSettings()
 {
-    Q_ASSERT(m_config != nullptr);
+    Q_ASSERT(config());
 
-    m_client_id = m_config->clientId();
-    m_name = m_config->name();
+    m_client_id = config()->clientId();
+    m_name = config()->name();
 
     auto accessTokenJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS
