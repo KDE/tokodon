@@ -149,12 +149,6 @@ public:
     [[nodiscard]] QString username() const;
 
     /**
-     * @brief Sets the username for the account.
-     * @param name The new username.
-     */
-    void setUsername(const QString &name);
-
-    /**
      * @brief Fetches instance-specific metadata like max post length, allowed content types, etc.
      */
     void fetchInstanceMetadata();
@@ -174,12 +168,6 @@ public:
      * @see setInstanceUri()
      */
     [[nodiscard]] QString instanceUri() const;
-
-    /**
-     * @brief Sets the instance URI for the account.
-     * @param instance_uri The new instance URI.
-     */
-    void setInstanceUri(const QString &instance_uri);
 
     /**
      * @return The max allowable length of posts in characters.
@@ -721,6 +709,18 @@ protected:
     AbstractAccount(QObject *parent, const QString &instanceUri);
     explicit AbstractAccount(QObject *parent);
 
+    /**
+     * @brief Sets the username for the account.
+     * @param name The new username.
+     */
+    void setUsername(const QString &name);
+
+    /**
+     * @brief Sets the instance URI for the account.
+     * @param instance_uri The new instance URI.
+     */
+    void setInstanceUri(const QString &instance_uri);
+
     QString m_name;
     QString m_instance_uri;
     QString m_token;
@@ -762,4 +762,9 @@ protected:
     QMap<QString, std::shared_ptr<ReportInfo>> m_reportInfoCache;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
+
+    friend class MockAccount;
+    friend class AccountTest;
+    friend class ProfileEditorTest;
+    friend class TimelineTest;
 };
