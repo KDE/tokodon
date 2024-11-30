@@ -318,7 +318,7 @@ void AccountManager::loadFromSettings()
             addAccount(account, true);
 
             connect(account, &Account::authenticated, this, [this, account, index](const bool successful, const QString &errorMessage) {
-                if (successful && account->haveToken() && account->hasName() && account->hasInstanceUrl()) {
+                if (successful && account->haveToken() && account->hasName()) {
                     m_accountStatus[index] = AccountStatus::Loaded;
                 } else {
                     m_accountStatus[index] = AccountStatus::InvalidCredentials;
