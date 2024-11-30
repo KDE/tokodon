@@ -170,7 +170,7 @@ void AbstractAccount::registerAccount(const QString &username,
                                       const QString &reason)
 {
     // get an app-level access token, obviously we don't have a user token yet.
-    const QUrl tokenUrl = getTokenUrl();
+    const QUrl tokenUrl = apiUrl(QStringLiteral("/oauth/token"));
     QUrlQuery q;
 
     q.addQueryItem(QStringLiteral("client_id"), m_client_id);
@@ -319,11 +319,6 @@ void AbstractAccount::setAccessToken(const QString &token)
     validateToken(true);
 }
 
-QUrl AbstractAccount::getTokenUrl() const
-{
-    return apiUrl(QStringLiteral("/oauth/token"));
-}
-
 void AbstractAccount::setInstanceUri(const QString &instance_uri)
 {
     // instance URI changed, get new credentials
@@ -340,7 +335,7 @@ QString AbstractAccount::instanceUri() const
 
 void AbstractAccount::setToken(const QString &authcode)
 {
-    const QUrl tokenUrl = getTokenUrl();
+    const QUrl tokenUrl = apiUrl(QStringLiteral("/oauth/token"));
     QUrlQuery q;
 
     q.addQueryItem(QStringLiteral("client_id"), m_client_id);
