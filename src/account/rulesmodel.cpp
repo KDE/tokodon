@@ -98,8 +98,8 @@ void RulesModel::fill()
             } else {
                 beginInsertRows({}, 0, 0);
                 m_rules += Rule{
-                    .id = QStringLiteral("invalid"),
-                    .text = i18n("This server provided no rules. Please see their website for more information."),
+                    QStringLiteral("invalid"),
+                    i18n("This server provided no rules. Please see their website for more information."),
                 };
                 endInsertRows();
             }
@@ -111,8 +111,8 @@ void RulesModel::fill()
 
             beginInsertRows({}, 0, 0);
             m_rules += Rule{
-                .id = QStringLiteral("invalid"),
-                .text = i18n("This server provided no rules. Please see their website for more information."),
+                QStringLiteral("invalid"),
+                i18n("This server provided no rules. Please see their website for more information."),
             };
             endInsertRows();
         });
