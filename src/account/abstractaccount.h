@@ -47,15 +47,6 @@ class AbstractAccount : public QObject
 
 public:
     /**
-     * @brief Register the application on the server.
-     * @param appName The name of the application displayed to other clients.
-     * @param website The application's website.
-     * @param additionalScopes Any additional scopes to request.
-     * @param useAuthCode If the auth code method should be used instead of an ouath callback.
-     */
-    void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {}, bool useAuthCode = false);
-
-    /**
      * @brief Register a new account on the server.
      * @param username The account's username.
      * @param email The account's email address.
@@ -687,6 +678,15 @@ Q_SIGNALS:
 
 protected:
     explicit AbstractAccount(const QString &instanceUri, QObject *parent = nullptr);
+
+    /**
+     * @brief Register the application on the server.
+     * @param appName The name of the application displayed to other clients.
+     * @param website The application's website.
+     * @param additionalScopes Any additional scopes to request.
+     * @param useAuthCode If the auth code method should be used instead of an ouath callback.
+     */
+    void registerApplication(const QString &appName, const QString &website, const QString &additionalScopes = {}, bool useAuthCode = false);
 
     /**
      * @brief Sets the username for the account.
