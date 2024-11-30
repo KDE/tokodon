@@ -279,12 +279,6 @@ public:
     QUrl streamingUrl(const QString &stream);
 
     /**
-     * @brief Invalidates a post.
-     * @param p The post object to mutate.
-     */
-    void invalidatePost(Post *p);
-
-    /**
      * @param path The base API path.
      * @return A well-formed URL of an API path.
      */
@@ -612,13 +606,6 @@ Q_SIGNALS:
      * @see fetchCustomEmojis()
      */
     void fetchedCustomEmojis();
-
-    /**
-     * @brief Emitted when a post has been invalidated.
-     * @param p The post that was invalidated.
-     * @see invalidatePost()
-     */
-    void invalidatedPost(Post *p);
 
     /**
      * @brief Emitted when a notification has been received.

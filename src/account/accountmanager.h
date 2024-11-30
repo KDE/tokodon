@@ -231,8 +231,6 @@ Q_SIGNALS:
 
     void fetchedInstanceMetadata(AbstractAccount *account);
 
-    void invalidatedPost(AbstractAccount *account, Post *post);
-
     void notification(AbstractAccount *account, std::shared_ptr<Notification> n);
 
     void aboutDataChanged();

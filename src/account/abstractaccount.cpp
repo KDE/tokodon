@@ -522,11 +522,6 @@ void AbstractAccount::saveTimelinePosition(const QString &timeline, const QStrin
     post(uri, urlQuery, true, this, {});
 }
 
-void AbstractAccount::invalidatePost(Post *p)
-{
-    Q_EMIT invalidatedPost(p);
-}
-
 QUrl AbstractAccount::streamingUrl(const QString &stream)
 {
     QUrl url = apiUrl(QStringLiteral("/api/v1/streaming"));
