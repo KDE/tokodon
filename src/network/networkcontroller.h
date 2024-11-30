@@ -82,6 +82,11 @@ public:
     QString endpoint;
 
 Q_SIGNALS:
+    /**
+     * @brief Show a visible error message to the user.
+     *
+     * Should only be used in very limited scenarios that affect normal operation. A good example is timeline loading.
+     */
     void networkErrorOccurred(const QString &errorString);
     void receivedAuthCode(QString authCode);
     void errorMessagesChanged();

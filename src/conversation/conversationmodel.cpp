@@ -3,6 +3,8 @@
 
 #include "conversation/conversationmodel.h"
 
+#include "networkcontroller.h"
+
 #include <KLocalizedString>
 
 #include <QTextDocumentFragment>
@@ -71,28 +73,36 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
 {
     setLoading(true);
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/conversations")), true, this, [account, this](QNetworkReply *reply) {
-        beginResetModel();
-        m_conversations.clear();
-        const auto conversationArray = QJsonDocument::fromJson(reply->readAll()).array();
-        for (const auto &conversation : conversationArray) {
-            const auto obj = conversation.toObject();
-            const auto accountsArray = obj["accounts"_L1].toArray();
-            QList<std::shared_ptr<Identity>> accounts;
-            std::transform(accountsArray.cbegin(), accountsArray.cend(), std::back_inserter(accounts), [account](const QJsonValue &value) -> auto {
-                const auto accountObj = value.toObject();
-                return account->identityLookup(accountObj["id"_L1].toString(), accountObj);
-            });
-            m_conversations.append(Conversation{
-                accounts,
-                new Post(account, obj["last_status"_L1].toObject(), this),
-                obj["unread"_L1].toBool(),
-                obj["id"_L1].toString(),
-            });
-        }
-        setLoading(false);
-        endResetModel();
-    });
+    account->get(
+        account->apiUrl(QStringLiteral("/api/v1/conversations")),
+        true,
+        this,
+        [account, this](QNetworkReply *reply) {
+            beginResetModel();
+            m_conversations.clear();
+            const auto conversationArray = QJsonDocument::fromJson(reply->readAll()).array();
+            for (const auto &conversation : conversationArray) {
+                const auto obj = conversation.toObject();
+                const auto accountsArray = obj["accounts"_L1].toArray();
+                QList<std::shared_ptr<Identity>> accounts;
+                std::transform(accountsArray.cbegin(), accountsArray.cend(), std::back_inserter(accounts), [account](const QJsonValue &value) -> auto {
+                    const auto accountObj = value.toObject();
+                    return account->identityLookup(accountObj["id"_L1].toString(), accountObj);
+                });
+                m_conversations.append(Conversation{
+                    accounts,
+                    new Post(account, obj["last_status"_L1].toObject(), this),
+                    obj["unread"_L1].toBool(),
+                    obj["id"_L1].toString(),
+                });
+            }
+            setLoading(false);
+            endResetModel();
+        },
+        [=](QNetworkReply *reply) {
+            setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 void ConversationModel::markAsRead(const QString &id)

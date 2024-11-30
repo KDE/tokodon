@@ -4,6 +4,7 @@
 #include "notification/notificationmodel.h"
 
 #include "account/abstractaccount.h"
+#include "networkcontroller.h"
 #include "texthandler.h"
 
 #include <KLocalizedString>
@@ -94,38 +95,46 @@ void NotificationModel::fillTimeline(const QUrl &next)
     }
     uri.setQuery(urlQuery);
 
-    m_account->get(uri, true, this, [=](QNetworkReply *reply) {
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
+    m_account->get(
+        uri,
+        true,
+        this,
+        [=](QNetworkReply *reply) {
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
 
-        if (!doc.isArray()) {
-            m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
-            return;
-        }
+            if (!doc.isArray()) {
+                m_account->errorOccured(i18n("Error occurred when fetching the latest notification."));
+                return;
+            }
 
-        const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
-        m_next = TextHandler::getNextLink(linkHeader);
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
 
-        QList<std::shared_ptr<Notification>> notifications;
-        const auto values = doc.array();
-        for (const auto &value : values) {
-            const QJsonObject obj = value.toObject();
-            const auto notification = std::make_shared<Notification>(m_account, obj, this);
+            QList<std::shared_ptr<Notification>> notifications;
+            const auto values = doc.array();
+            for (const auto &value : values) {
+                const QJsonObject obj = value.toObject();
+                const auto notification = std::make_shared<Notification>(m_account, obj, this);
 
-            notifications.push_back(notification);
-        }
+                notifications.push_back(notification);
+            }
 
-        if (notifications.isEmpty()) {
+            if (notifications.isEmpty()) {
+                setLoading(false);
+                return;
+            }
+
+            beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
+            m_notifications.append(notifications);
+            endInsertRows();
+
             setLoading(false);
-            return;
-        }
-
-        beginInsertRows({}, m_notifications.count(), m_notifications.count() + notifications.count() - 1);
-        m_notifications.append(notifications);
-        endInsertRows();
-
-        setLoading(false);
-    });
+        },
+        [=](QNetworkReply *reply) {
+            setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 void NotificationModel::fetchMore(const QModelIndex &parent)

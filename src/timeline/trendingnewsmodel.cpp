@@ -3,6 +3,8 @@
 
 #include "timeline/trendingnewsmodel.h"
 
+#include "networkcontroller.h"
+
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -58,24 +60,32 @@ void TrendingNewsModel::fill()
     }
     setLoading(true);
 
-    account()->get(account()->apiUrl(QStringLiteral("/api/v1/trends/links")), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto links = doc.array().toVariantList();
-        std::reverse(links.begin(), links.end());
+    account()->get(
+        account()->apiUrl(QStringLiteral("/api/v1/trends/links")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto links = doc.array().toVariantList();
+            std::reverse(links.begin(), links.end());
 
-        if (!links.isEmpty()) {
-            QList<Link> fetchedLinks;
+            if (!links.isEmpty()) {
+                QList<Link> fetchedLinks;
 
-            std::transform(links.cbegin(), links.cend(), std::back_inserter(fetchedLinks), [=](const QVariant &value) -> auto {
-                return fromSourceData(value.toJsonObject());
-            });
-            beginInsertRows({}, m_links.size(), m_links.size() + fetchedLinks.size() - 1);
-            m_links += fetchedLinks;
-            endInsertRows();
-        }
+                std::transform(links.cbegin(), links.cend(), std::back_inserter(fetchedLinks), [=](const QVariant &value) -> auto {
+                    return fromSourceData(value.toJsonObject());
+                });
+                beginInsertRows({}, m_links.size(), m_links.size() + fetchedLinks.size() - 1);
+                m_links += fetchedLinks;
+                endInsertRows();
+            }
 
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 TrendingNewsModel::Link TrendingNewsModel::fromSourceData(const QJsonObject &object) const

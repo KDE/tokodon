@@ -3,6 +3,8 @@
 
 #include "timeline/tagstimelinemodel.h"
 
+#include "networkcontroller.h"
+
 TagsTimelineModel::TagsTimelineModel(QObject *parent)
     : TimelineModel(parent)
 {
@@ -47,8 +49,8 @@ void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
     const auto hashtag = m_hashtag;
 
     auto handleError = [this](QNetworkReply *reply) {
-        Q_UNUSED(reply)
         setLoading(false);
+        NetworkController::instance().networkErrorOccurred(reply->errorString());
     };
 
     setLoading(true);

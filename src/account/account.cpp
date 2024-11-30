@@ -178,13 +178,9 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
     connect(reply, &QNetworkReply::finished, [reply, reply_cb, errorCallback]() {
         reply->deleteLater();
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo"_L1)) {
+            NetworkController::instance().logError(reply->url().toString(), reply->errorString());
             if (errorCallback) {
-                // If the error is handled, then only emit it for people interested in debug logs
-                qCDebug(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 errorCallback(reply);
-            } else {
-                NetworkController::instance().logError(reply->url().toString(), reply->errorString());
-                Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
             }
             return;
         }

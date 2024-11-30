@@ -3,6 +3,7 @@
 
 #include "timeline/tagsmodel.h"
 
+#include "networkcontroller.h"
 #include "texthandler.h"
 
 #include <KLocalizedString>
@@ -87,8 +88,8 @@ void TagsModel::fillTimeline(const QString &fromId)
             setLoading(false);
         },
         [this](QNetworkReply *reply) {
-            Q_UNUSED(reply);
             setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });
 }
 

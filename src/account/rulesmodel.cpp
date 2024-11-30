@@ -3,6 +3,8 @@
 
 #include "account/rulesmodel.h"
 
+#include "networkcontroller.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 RulesModel::RulesModel(QObject *parent)
@@ -73,23 +75,30 @@ void RulesModel::fill()
     }
     setLoading(true);
 
-    m_account->get(m_account->apiUrl(QStringLiteral("/api/v1/instance/rules")), false, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto rules = doc.array().toVariantList();
+    m_account->get(
+        m_account->apiUrl(QStringLiteral("/api/v1/instance/rules")),
+        false,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto rules = doc.array().toVariantList();
 
-        if (!rules.isEmpty()) {
-            QList<Rule> fetchedRules;
+            if (!rules.isEmpty()) {
+                QList<Rule> fetchedRules;
 
-            std::transform(rules.cbegin(), rules.cend(), std::back_inserter(fetchedRules), [=](const QVariant &value) -> auto {
-                return fromSourceData(value.toJsonObject());
-            });
-            beginInsertRows({}, m_rules.size(), m_rules.size() + fetchedRules.size() - 1);
-            m_rules += fetchedRules;
-            endInsertRows();
-        }
+                std::transform(rules.cbegin(), rules.cend(), std::back_inserter(fetchedRules), [=](const QVariant &value) -> auto {
+                    return fromSourceData(value.toJsonObject());
+                });
+                beginInsertRows({}, m_rules.size(), m_rules.size() + fetchedRules.size() - 1);
+                m_rules += fetchedRules;
+                endInsertRows();
+            }
 
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 RulesModel::Rule RulesModel::fromSourceData(const QJsonObject &object) const

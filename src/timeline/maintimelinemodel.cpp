@@ -3,6 +3,7 @@
 
 #include "timeline/maintimelinemodel.h"
 
+#include "networkcontroller.h"
 #include "texthandler.h"
 
 #include <KLocalizedString>
@@ -176,8 +177,8 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             setLoading(false);
         },
         [this](const QNetworkReply *reply) {
-            Q_UNUSED(reply)
             setLoading(false);
+            NetworkController::instance().networkErrorOccurred(reply->errorString());
         });
 }
 

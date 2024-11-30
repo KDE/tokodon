@@ -4,6 +4,8 @@
 
 #include "timeline/threadmodel.h"
 
+#include "networkcontroller.h"
+
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;
@@ -87,8 +89,8 @@ void ThreadModel::fillTimeline(const QString &fromId, bool backwards)
     auto thread = std::make_shared<QList<Post *>>();
 
     auto handleError = [this](QNetworkReply *reply) {
-        Q_UNUSED(reply);
         setLoading(false);
+        Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
     };
 
     auto onFetchContext = [=](QNetworkReply *reply) {

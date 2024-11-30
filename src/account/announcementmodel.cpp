@@ -4,6 +4,7 @@
 #include "account/announcementmodel.h"
 
 #include "account/accountmanager.h"
+#include "networkcontroller.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -68,24 +69,31 @@ void AnnouncementModel::fillTimeline()
     }
     setLoading(true);
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/announcements")), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto announcements = doc.array().toVariantList();
-        std::reverse(announcements.begin(), announcements.end());
+    account->get(
+        account->apiUrl(QStringLiteral("/api/v1/announcements")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto announcements = doc.array().toVariantList();
+            std::reverse(announcements.begin(), announcements.end());
 
-        if (!announcements.isEmpty()) {
-            QList<Announcement> fetchedAnnouncements;
+            if (!announcements.isEmpty()) {
+                QList<Announcement> fetchedAnnouncements;
 
-            std::transform(announcements.cbegin(), announcements.cend(), std::back_inserter(fetchedAnnouncements), [=](const QVariant &value) -> auto {
-                return fromSourceData(value.toJsonObject());
-            });
-            beginInsertRows({}, m_announcements.size(), m_announcements.size() + fetchedAnnouncements.size() - 1);
-            m_announcements += fetchedAnnouncements;
-            endInsertRows();
-        }
+                std::transform(announcements.cbegin(), announcements.cend(), std::back_inserter(fetchedAnnouncements), [=](const QVariant &value) -> auto {
+                    return fromSourceData(value.toJsonObject());
+                });
+                beginInsertRows({}, m_announcements.size(), m_announcements.size() + fetchedAnnouncements.size() - 1);
+                m_announcements += fetchedAnnouncements;
+                endInsertRows();
+            }
 
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 AnnouncementModel::Announcement AnnouncementModel::fromSourceData(const QJsonObject &object) const

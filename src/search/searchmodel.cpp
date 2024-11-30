@@ -4,6 +4,7 @@
 #include "search/searchmodel.h"
 
 #include "account/account.h"
+#include "networkcontroller.h"
 
 #include <KLocalizedString>
 
@@ -55,37 +56,37 @@ void SearchModel::search(const QString &queryString, const QString &type, const 
     url.setQuery(query);
     setLoading(true);
     setLoaded(false);
-    m_account->get(url, true, this, [this](QNetworkReply *reply) {
-        const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
-        const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
+    m_account->get(
+        url,
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
+            const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
 
-        beginResetModel();
-        clear();
+            beginResetModel();
+            clear();
 
-        std::transform(
-            statuses.cbegin(),
-            statuses.cend(),
-            std::back_inserter(m_statuses),
-            [this](const QJsonValue &value) -> auto{ return new Post(m_account, value.toObject(), this); });
-        const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
-        std::transform(
-            accounts.cbegin(),
-            accounts.cend(),
-            std::back_inserter(m_accounts),
-            [this](const QJsonValue &value) -> auto{
+            std::transform(statuses.cbegin(), statuses.cend(), std::back_inserter(m_statuses), [this](const QJsonValue &value) -> auto {
+                return new Post(m_account, value.toObject(), this);
+            });
+            const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
+            std::transform(accounts.cbegin(), accounts.cend(), std::back_inserter(m_accounts), [this](const QJsonValue &value) -> auto {
                 const auto account = value.toObject();
                 return m_account->identityLookup(account["id"_L1].toString(), account);
             });
-        const auto hashtags = searchResult[QStringLiteral("hashtags")].toArray();
-        std::transform(
-            hashtags.cbegin(),
-            hashtags.cend(),
-            std::back_inserter(m_hashtags),
-            [](const QJsonValue &value) -> auto{ return SearchHashtag(value.toObject()); });
-        endResetModel();
-        setLoading(false);
-        setLoaded(true);
-    });
+            const auto hashtags = searchResult[QStringLiteral("hashtags")].toArray();
+            std::transform(hashtags.cbegin(), hashtags.cend(), std::back_inserter(m_hashtags), [](const QJsonValue &value) -> auto {
+                return SearchHashtag(value.toObject());
+            });
+            endResetModel();
+            setLoading(false);
+            setLoaded(true);
+        },
+        [=](QNetworkReply *reply) {
+            setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 int SearchModel::rowCount(const QModelIndex &parent) const

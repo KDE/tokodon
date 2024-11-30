@@ -77,11 +77,6 @@ void FeaturedTagsModel::fill()
                 m_tags += fetchedTags;
                 endInsertRows();
             }
-        },
-        [](const QNetworkReply *reply) {
-            Q_UNUSED(reply)
-            // Note: we are silently failing here because some servers don't implement this endpoint
-            // See BUG: 484475 and https://docs.akkoma.dev/stable-docs/development/API/differences_in_mastoapi_responses/#featured-tags
         });
 }
 

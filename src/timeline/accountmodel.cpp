@@ -4,6 +4,7 @@
 #include "timeline/accountmodel.h"
 
 #include "account/relationship.h"
+#include "networkcontroller.h"
 
 #include <KLocalizedString>
 
@@ -82,8 +83,8 @@ void AccountModel::fillTimeline(const QString &fromId, bool backwards)
     const auto id = m_accountId;
 
     auto handleError = [this](QNetworkReply *reply) {
-        Q_UNUSED(reply);
         setLoading(false);
+        NetworkController::instance().networkErrorOccurred(reply->errorString());
     };
 
     auto onFetchPinned = [this, id, account](QNetworkReply *reply) {

@@ -5,6 +5,7 @@
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
+#include "networkcontroller.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -66,23 +67,30 @@ void ListsModel::fillTimeline()
     }
     setLoading(true);
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/lists")), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto lists = doc.array().toVariantList();
+    account->get(
+        account->apiUrl(QStringLiteral("/api/v1/lists")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto lists = doc.array().toVariantList();
 
-        if (!lists.isEmpty()) {
-            QList<List> fetchedLists;
+            if (!lists.isEmpty()) {
+                QList<List> fetchedLists;
 
-            std::transform(lists.cbegin(), lists.cend(), std::back_inserter(fetchedLists), [=](const QVariant &value) -> auto {
-                return fromSourceData(value.toJsonObject());
-            });
-            beginInsertRows({}, m_lists.size(), m_lists.size() + fetchedLists.size() - 1);
-            m_lists += fetchedLists;
-            endInsertRows();
-        }
+                std::transform(lists.cbegin(), lists.cend(), std::back_inserter(fetchedLists), [=](const QVariant &value) -> auto {
+                    return fromSourceData(value.toJsonObject());
+                });
+                beginInsertRows({}, m_lists.size(), m_lists.size() + fetchedLists.size() - 1);
+                m_lists += fetchedLists;
+                endInsertRows();
+            }
 
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 ListsModel::List ListsModel::fromSourceData(const QJsonObject &object) const

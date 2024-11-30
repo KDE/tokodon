@@ -3,6 +3,8 @@
 
 #include "account/suggestionsmodel.h"
 
+#include "networkcontroller.h"
+
 #include <KLocalizedString>
 
 using namespace Qt::StringLiterals;
@@ -54,24 +56,32 @@ void SuggestionsModel::fill()
     }
     setLoading(true);
 
-    account()->get(account()->apiUrl(QStringLiteral("/api/v2/suggestions")), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto suggestions = doc.array().toVariantList();
-        std::reverse(suggestions.begin(), suggestions.end());
+    account()->get(
+        account()->apiUrl(QStringLiteral("/api/v2/suggestions")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto suggestions = doc.array().toVariantList();
+            std::reverse(suggestions.begin(), suggestions.end());
 
-        if (!suggestions.isEmpty()) {
-            QList<Suggestion> fetchedSuggestions;
+            if (!suggestions.isEmpty()) {
+                QList<Suggestion> fetchedSuggestions;
 
-            std::transform(suggestions.cbegin(), suggestions.cend(), std::back_inserter(fetchedSuggestions), [=](const QVariant &value) -> auto {
-                return fromSourceData(value.toJsonObject());
-            });
-            beginInsertRows({}, m_links.size(), m_links.size() + fetchedSuggestions.size() - 1);
-            m_links += fetchedSuggestions;
-            endInsertRows();
-        }
+                std::transform(suggestions.cbegin(), suggestions.cend(), std::back_inserter(fetchedSuggestions), [=](const QVariant &value) -> auto {
+                    return fromSourceData(value.toJsonObject());
+                });
+                beginInsertRows({}, m_links.size(), m_links.size() + fetchedSuggestions.size() - 1);
+                m_links += fetchedSuggestions;
+                endInsertRows();
+            }
 
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            setLoading(false);
+            Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
+        });
 }
 
 static QMap<QString, SuggestionsModel::Source> str_to_act_type = {
