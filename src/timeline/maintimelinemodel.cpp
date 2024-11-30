@@ -237,26 +237,42 @@ void MainTimelineModel::fetchLastReadId()
     urlQuery.addQueryItem(QStringLiteral("timeline[]"), QStringLiteral("home"));
     uri.setQuery(urlQuery);
 
-    m_account->get(uri, true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
+    m_account->get(
+        uri,
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
 
-        m_lastReadId = doc.object()[QLatin1String("home")].toObject()[QLatin1String("last_read_id")].toString();
-        if (m_initialLastReadId.isEmpty()) {
-            m_initialLastReadId = m_lastReadId;
-        }
-        m_lastReadTime =
-            QDateTime::fromString(doc.object()[QLatin1String("home")].toObject()[QLatin1String("updated_at")].toString(), Qt::ISODate).toLocalTime();
+            m_lastReadId = doc.object()[QLatin1String("home")].toObject()[QLatin1String("last_read_id")].toString();
+            if (m_initialLastReadId.isEmpty()) {
+                m_initialLastReadId = m_lastReadId;
+            }
+            m_lastReadTime =
+                QDateTime::fromString(doc.object()[QLatin1String("home")].toObject()[QLatin1String("updated_at")].toString(), Qt::ISODate).toLocalTime();
 
-        Q_EMIT hasPreviousChanged();
+            Q_EMIT hasPreviousChanged();
 
-        fetchedLastId = true;
+            fetchedLastId = true;
 
-        if (Config::continueReading()) {
-            fillTimeline(m_lastReadId);
-        } else {
-            fillTimeline({});
-        }
-    });
+            if (Config::continueReading()) {
+                fillTimeline(m_lastReadId);
+            } else {
+                fillTimeline({});
+            }
+        },
+        [=](QNetworkReply *reply) {
+            Q_UNUSED(reply);
+
+            // If you failed, give up
+            fetchedLastId = true;
+
+            if (Config::continueReading()) {
+                fillTimeline(m_lastReadId);
+            } else {
+                fillTimeline({});
+            }
+        });
 }
 
 void MainTimelineModel::fetchPrevious()
