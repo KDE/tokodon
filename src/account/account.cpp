@@ -13,6 +13,8 @@
 #include "tokodon_debug.h"
 #endif
 
+#include "messagefiltercontainer.h"
+
 #include <config.h>
 #include <qt6keychain/keychain.h>
 
