@@ -194,7 +194,8 @@ StatefulApp.StatefulWindow {
 
         function onAccountRemoved(): void {
             if (!AccountManager.hasAccounts) {
-                pageStack.replace(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+                pageStack.clear();
+                pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
                 globalDrawer.drawerOpen = false;
             }
         }
