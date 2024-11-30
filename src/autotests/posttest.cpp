@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include "accountmanager.h"
+
 #include <QtTest/QtTest>
 
 #include "autotests/mockaccount.h"
@@ -15,6 +17,7 @@ class PostTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        AccountManager::instance().setTestMode(true);
     }
 
     void testFromJson()

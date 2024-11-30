@@ -21,24 +21,11 @@
 using namespace Qt::Literals::StringLiterals;
 
 Account::Account(const QString &instanceUri, QNetworkAccessManager *nam, QObject *parent)
-    : AbstractAccount(parent, instanceUri)
+    : AbstractAccount(instanceUri, parent)
     , m_qnam(nam)
 {
-    m_preferences = new Preferences(this);
-    m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
-    setInstanceUri(instanceUri);
-}
-
-Account::Account(AccountConfig *settings, QNetworkAccessManager *nam, QObject *parent)
-    : AbstractAccount(parent)
-    , m_qnam(nam)
-{
-    m_preferences = new Preferences(this);
-    m_notificationFilteringPolicy = new NotificationFilteringPolicy(this);
-    m_config = settings;
     connect(this, &Account::authenticated, this, &Account::checkForFollowRequests);
     connect(this, &Account::authenticated, this, &Account::checkForUnreadNotifications);
-    buildFromSettings();
 }
 
 Account::~Account()
@@ -355,6 +342,12 @@ void Account::validateToken(bool newAccount)
     streamingSocket(QStringLiteral("user"));
 }
 
+void Account::setConfig(AccountConfig *config)
+{
+    m_config = config;
+    buildFromSettings();
+}
+
 void Account::writeToSettings()
 {
     // do not write to settings if we do not have complete information yet,
@@ -389,9 +382,10 @@ void Account::writeToSettings()
 
 void Account::buildFromSettings()
 {
+    Q_ASSERT(m_config != nullptr);
+
     m_client_id = m_config->clientId();
     m_name = m_config->name();
-    m_instance_uri = m_config->instanceUri();
 
     auto accessTokenJob = new QKeychain::ReadPasswordJob{QStringLiteral("Tokodon"), this};
 #ifdef SAILFISHOS

@@ -15,7 +15,7 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
+AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
     : QObject(parent)
     , m_instance_uri(instanceUri)
     // default to 500, instances which support more signal it
@@ -24,18 +24,13 @@ AbstractAccount::AbstractAccount(QObject *parent, const QString &instanceUri)
     , m_supportsLocalVisibility(false)
     , m_charactersReservedPerUrl(23)
     , m_identity(std::make_shared<Identity>())
+    , m_preferences(new Preferences(this))
+    , m_notificationFilteringPolicy(new NotificationFilteringPolicy(this))
 {
-}
-
-AbstractAccount::AbstractAccount(QObject *parent)
-    : QObject(parent)
-    // default to 500, instances which support more signal it
-    , m_maxPostLength(500)
-    , m_maxPollOptions(4)
-    , m_supportsLocalVisibility(false)
-    , m_charactersReservedPerUrl(23)
-    , m_identity(std::make_shared<Identity>())
-{
+    // Test code uses a blank instance URI
+    if (!AccountManager::instance().testMode()) {
+        Q_ASSERT(!instanceUri.isEmpty());
+    }
 }
 
 AccountConfig *AbstractAccount::config()

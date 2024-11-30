@@ -14,6 +14,7 @@ class ConversationModelTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        AccountManager::instance().setTestMode(true);
         account = new MockAccount();
         AccountManager::instance().addAccount(account, false);
         AccountManager::instance().selectAccount(account, false);

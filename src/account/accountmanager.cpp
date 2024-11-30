@@ -313,7 +313,8 @@ void AccountManager::loadFromSettings()
             m_accountStatus.push_back(AccountStatus::NotLoaded);
             m_accountStatusStrings.push_back({});
 
-            auto account = new Account(accountConfig, m_qnam);
+            auto account = new Account(accountConfig->instanceUri(), m_qnam);
+            account->setConfig(accountConfig);
             addAccount(account, true);
 
             connect(account, &Account::authenticated, this, [this, account, index](const bool successful, const QString &errorMessage) {
@@ -366,18 +367,21 @@ void AccountManager::checkIfLoadingFinished()
 
     auto config = Config::self();
 
-    for (auto account : m_accounts) {
-        // old LastUsedAccount values used to be only username
-        const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
-        const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@'_L1;
-        const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
-        const bool matchesOldFormat = account->username() == config->lastUsedAccount();
+    // Test code manually selects the account
+    if (!m_testMode) {
+        for (auto account : m_accounts) {
+            // old LastUsedAccount values used to be only username
+            const bool isOldVersion = !config->lastUsedAccount().contains(QLatin1Char('@'));
+            const bool isEmpty = config->lastUsedAccount().isEmpty() || config->lastUsedAccount() == '@'_L1;
+            const bool matchesNewFormat = account->settingsGroupName() == config->lastUsedAccount();
+            const bool matchesOldFormat = account->username() == config->lastUsedAccount();
 
-        const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
+            const bool isValid = isEmpty || (isOldVersion ? matchesOldFormat : matchesNewFormat);
 
-        if (isValid) {
-            selectAccount(account, false);
-            break;
+            if (isValid) {
+                selectAccount(account, false);
+                break;
+            }
         }
     }
 

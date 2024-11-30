@@ -8,7 +8,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 MockAccount::MockAccount(QObject *parent)
-    : AbstractAccount(parent)
+    : AbstractAccount({}, parent)
 {
     m_errorReply = new TestReply(QStringLiteral("error.json"), this);
     registerGet(apiUrl(QStringLiteral("/api/v1/preferences")), new TestReply(QStringLiteral("preferences.json"), this));
