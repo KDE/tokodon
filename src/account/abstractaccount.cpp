@@ -138,27 +138,24 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
     fetchInstanceMetadata();
 
     post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
-        if (!reply->isFinished()) {
-            qCDebug(TOKODON_LOG) << "not finished";
-            return;
-        }
-
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
         m_client_id = doc.object()["client_id"_L1].toString();
         m_client_secret = doc.object()["client_secret"_L1].toString();
 
+        if (!m_client_id.isEmpty() && !m_client_secret.isEmpty()) {
 #ifdef HAVE_KUNIFIEDPUSH
-        // We asked for the push scope, so we can safely start subscribing to notifications
-        config()->setEnablePushNotifications(true);
-        config()->save();
+            // We asked for the push scope, so we can safely start subscribing to notifications
+            config()->setEnablePushNotifications(true);
+            config()->save();
 #endif
 
-        QMessageFilterContainer::self()->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
+            QMessageFilterContainer::self()->insert(m_client_secret, QStringLiteral("CLIENT_SECRET"));
 
-        if (isRegistered()) {
             Q_EMIT registered();
+        } else {
+            // TODO: emit an error here
         }
     });
 }
@@ -724,11 +721,6 @@ void AbstractAccount::fetchOEmbed(const QString &id, Identity *identity)
             Q_EMIT fetchedOEmbed(doc.object()["html"_L1].toString());
         }
     });
-}
-
-bool AbstractAccount::isRegistered() const
-{
-    return !m_client_id.isEmpty() && !m_client_secret.isEmpty();
 }
 
 bool AbstractAccount::registrationsOpen() const
