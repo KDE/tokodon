@@ -733,9 +733,6 @@ protected:
     int m_unreadNotificationsCount = 0;
     QString m_redirectUri;
 
-    // OAuth authorization
-    [[nodiscard]] QUrlQuery buildOAuthQuery() const;
-
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);
 

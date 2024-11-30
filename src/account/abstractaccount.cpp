@@ -171,8 +171,9 @@ void AbstractAccount::registerAccount(const QString &username,
 {
     // get an app-level access token, obviously we don't have a user token yet.
     const QUrl tokenUrl = getTokenUrl();
-    QUrlQuery q = buildOAuthQuery();
+    QUrlQuery q;
 
+    q.addQueryItem(QStringLiteral("client_id"), m_client_id);
     q.addQueryItem(QStringLiteral("client_secret"), m_client_secret);
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("client_credentials"));
     q.addQueryItem(QStringLiteral("scope"), QStringLiteral("write"));
@@ -293,16 +294,12 @@ bool AbstractAccount::identityCached(const QString &accountId) const
     return id && id->id() == accountId;
 }
 
-QUrlQuery AbstractAccount::buildOAuthQuery() const
-{
-    return QUrlQuery{{QStringLiteral("client_id"), m_client_id}};
-}
-
 QUrl AbstractAccount::getAuthorizeUrl() const
 {
     QUrl url = apiUrl(QStringLiteral("/oauth/authorize"));
-    QUrlQuery q = buildOAuthQuery();
+    QUrlQuery q;
 
+    q.addQueryItem(QStringLiteral("client_id"), m_client_id);
     q.addQueryItem(QStringLiteral("redirect_uri"), m_redirectUri);
     q.addQueryItem(QStringLiteral("response_type"), QStringLiteral("code"));
     q.addQueryItem(QStringLiteral("scope"), QStringLiteral("read write follow ") + m_additionalScopes);
@@ -344,8 +341,9 @@ QString AbstractAccount::instanceUri() const
 void AbstractAccount::setToken(const QString &authcode)
 {
     const QUrl tokenUrl = getTokenUrl();
-    QUrlQuery q = buildOAuthQuery();
+    QUrlQuery q;
 
+    q.addQueryItem(QStringLiteral("client_id"), m_client_id);
     q.addQueryItem(QStringLiteral("client_secret"), m_client_secret);
     q.addQueryItem(QStringLiteral("redirect_uri"), m_redirectUri);
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("authorization_code"));
