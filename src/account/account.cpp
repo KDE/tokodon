@@ -177,6 +177,8 @@ void Account::handleReply(QNetworkReply *reply, std::function<void(QNetworkReply
         reply->deleteLater();
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) && !reply->url().toString().contains("nodeinfo"_L1)) {
             if (errorCallback) {
+                // If the error is handled, then only emit it for people interested in debug logs
+                qCDebug(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
                 errorCallback(reply);
             } else {
                 qCWarning(TOKODON_HTTP) << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << reply->url();
@@ -272,7 +274,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
             }
         }
     });
-    connect(socket, &QWebSocket::errorOccurred, this, [=](QAbstractSocket::SocketError error) {
+    connect(socket, &QWebSocket::errorOccurred, this, [=](QAbstractSocket::SocketError) {
         qCWarning(TOKODON_HTTP) << "Error in" << stream << ":" << socket->errorString();
     });
 
