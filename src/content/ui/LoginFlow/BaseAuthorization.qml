@@ -39,8 +39,10 @@ Kirigami.ScrollablePage {
     }
 
     function setAuthCode(authCode) {
-        account.setToken(authCode);
+        // We need to call this before setToken, so when the identity is loaded the manager can write it to the settings.
+        AccountManager.addAccount(root.account, true);
         account.authenticated.connect(() => {
+            AccountManager.selectAccount(root.account, true);
             root.Window.window.pageStack.layers.clear();
             root.Window.windowpageStack.replace(mainTimeline, {
                 name: "home"
@@ -49,6 +51,7 @@ Kirigami.ScrollablePage {
                 root.Window.window.close();
             }
         });
+        account.setToken(authCode);
     }
 
     ColumnLayout {
