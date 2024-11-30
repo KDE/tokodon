@@ -21,12 +21,6 @@ private Q_SLOTS:
         AccountManager::instance().selectAccount(account, false);
     }
 
-    // Make sure the account is in the correct state when it's first created
-    void newValues()
-    {
-        QVERIFY(!account->isRegistered());
-    }
-
     // Ensure the settings group is named correctly
     void settingsNames()
     {

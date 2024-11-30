@@ -59,12 +59,6 @@ public:
     registerAccount(const QString &username, const QString &email, const QString &password, bool agreement, const QString &locale, const QString &reason);
 
     /**
-     * @return If the application is registered
-     * @sa registerApplication
-     */
-    [[nodiscard]] bool isRegistered() const;
-
-    /**
      * @return If this account's instance has registrations open.
      */
     [[nodiscard]] bool registrationsOpen() const;
