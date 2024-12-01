@@ -284,7 +284,6 @@ void AccountManager::loadFromSettings()
             // The id is normally made up of two parts. <username>@<instance>
             // If one of them is missing, consider the key invalid. Otherwise we may end up with duplicate accounts.
             const QStringList idParts = id.split('@'_L1, Qt::SkipEmptyParts);
-            qInfo() << id << idParts.size();
             if (idParts.size() != 2) {
                 config->deleteGroup(id);
                 continue;
