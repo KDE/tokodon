@@ -90,9 +90,6 @@ ColumnLayout {
             closable: false
             checkable: false
             enabled: visible
-            HoverHandler {
-                cursorShape: Qt.PointingHandCursor
-            }
             onClicked: {
                 pageStack.push(socialGraphComponent, {
                     name: "favourited_by",
@@ -117,9 +114,6 @@ ColumnLayout {
             checkable: false
             visible: root.reblogsCount > 0
             enabled: visible
-            HoverHandler {
-                cursorShape: Qt.PointingHandCursor
-            }
             onClicked: {
                 pageStack.push(socialGraphComponent, {
                     name: "reblogged_by",
