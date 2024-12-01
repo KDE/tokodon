@@ -420,6 +420,7 @@ target_link_libraries(tokodon_static
         KirigamiAddonsStatefulApp
         ${QTKEYCHAIN_LIBRARIES}
 )
+target_include_directories(tokodon_static PRIVATE ${CMAKE_BINARY_DIR})
 
 if (TARGET KF6::KIOWidgets)
     target_compile_definitions(tokodon_static PUBLIC -DHAVE_KIO)
