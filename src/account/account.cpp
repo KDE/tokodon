@@ -14,6 +14,7 @@
 #endif
 
 #include "messagefiltercontainer.h"
+#include "tokodon-version.h"
 
 #include <config.h>
 #include <qt6keychain/keychain.h>
@@ -265,7 +266,9 @@ QWebSocket *Account::streamingSocket(const QString &stream)
         qCWarning(TOKODON_HTTP) << "Error in" << stream << ":" << socket->errorString();
     });
 
-    socket->open(url);
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::UserAgentHeader, QStringLiteral("Tokodon/").append(QStringLiteral(TOKODON_VERSION_STRING)));
+    socket->open(request);
 
     m_websockets[stream] = socket;
     return socket;
