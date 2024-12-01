@@ -281,6 +281,14 @@ void AccountManager::loadFromSettings()
     auto config = KSharedConfig::openStateConfig();
     for (const auto &id : config->groupList()) {
         if (id.contains('@'_L1)) {
+            // The id is normally made up of two parts. <username>@<instance>
+            // If one of them is missing, consider the key invalid. Otherwise we may end up with duplicate accounts.
+            const QStringList idParts = id.split('@'_L1, Qt::SkipEmptyParts);
+            if (idParts.size() != 2) {
+                config->deleteGroup(id);
+                continue;
+            }
+
             const auto accountConfig = new AccountConfig{id};
 
             if (accountConfig->clientId().isEmpty() || accountConfig->instanceUri().isEmpty()) {
