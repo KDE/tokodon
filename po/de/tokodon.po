@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-29 00:41+0000\n"
+"POT-Creation-Date: 2024-12-01 00:40+0000\n"
 "PO-Revision-Date: 2024-11-04 14:04+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -18,53 +18,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: account/abstractaccount.cpp:679
+#: account/abstractaccount.cpp:591
 #, kde-format
 msgid "Could not follow account"
 msgstr "Konnte dem Konto nicht folgen"
 
-#: account/abstractaccount.cpp:680
+#: account/abstractaccount.cpp:592
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Konnte das Folgen des Kontos nicht beenden"
 
-#: account/abstractaccount.cpp:681
+#: account/abstractaccount.cpp:593
 #, fuzzy, kde-format
 #| msgid "Could not reject account"
 msgid "Could not remove account as your follower"
 msgstr "Konto wird nicht zurückgewiesen"
 
-#: account/abstractaccount.cpp:682
+#: account/abstractaccount.cpp:594
 #, kde-format
 msgid "Could not block account"
 msgstr "Konnte das Konto nicht blockieren"
 
-#: account/abstractaccount.cpp:683
+#: account/abstractaccount.cpp:595
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Konnte das Blockieren des Kontos nicht aufheben"
 
-#: account/abstractaccount.cpp:684
+#: account/abstractaccount.cpp:596
 #, kde-format
 msgid "Could not mute account"
 msgstr "Konnte das Konto nicht stumm schalten"
 
-#: account/abstractaccount.cpp:685
+#: account/abstractaccount.cpp:597
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Konnte die Stummschaltung des Kontos nicht aufheben"
 
-#: account/abstractaccount.cpp:686
+#: account/abstractaccount.cpp:598
 #, kde-format
 msgid "Could not feature account"
 msgstr "Konnte das Konto nicht empfehlen"
 
-#: account/abstractaccount.cpp:687
+#: account/abstractaccount.cpp:599
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Konnte die Empfehlung des Kontos nicht entfernen"
 
-#: account/abstractaccount.cpp:688
+#: account/abstractaccount.cpp:600
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Konnte die Notiz über das Konto nicht bearbeiten"
@@ -144,43 +144,49 @@ msgstr ""
 msgid "Account details saved"
 msgstr "Details zu Konto gespeichert"
 
-#: account/socialgraphmodel.cpp:28
+#: account/rulesmodel.cpp:102 account/rulesmodel.cpp:117
+#, kde-format
+msgid ""
+"This server provided no rules. Please see their website for more information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Follower-Anfragen"
 
-#: account/socialgraphmodel.cpp:30
+#: account/socialgraphmodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Follower"
 
-#: account/socialgraphmodel.cpp:32
+#: account/socialgraphmodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Folgt"
 
-#: account/socialgraphmodel.cpp:34
+#: account/socialgraphmodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "Stummgeschaltete Benutzer"
 
-#: account/socialgraphmodel.cpp:36
+#: account/socialgraphmodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Blockierte Benutzer"
 
-#: account/socialgraphmodel.cpp:38
+#: account/socialgraphmodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "Empfohlene Benutzer"
 
-#: account/socialgraphmodel.cpp:40
+#: account/socialgraphmodel.cpp:41
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "%1 favourite"
@@ -191,7 +197,7 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1 Favorit"
 msgstr[1] "%1 Favoriten"
 
-#: account/socialgraphmodel.cpp:42
+#: account/socialgraphmodel.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -199,7 +205,7 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 Mal geteilt"
 msgstr[1] "%1 Mal geteilt"
 
-#: account/socialgraphmodel.cpp:44
+#: account/socialgraphmodel.cpp:45
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Followers"
@@ -207,109 +213,109 @@ msgctxt "@title"
 msgid "Familiar Followers"
 msgstr "Follower"
 
-#: account/socialgraphmodel.cpp:46
+#: account/socialgraphmodel.cpp:47
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:55
 #, kde-format
 msgid "No Follow Requests"
 msgstr "Keine Follower-Anfragen"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:57
 #, kde-format
 msgid "No Followers"
 msgstr "Keine Follower"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:59
 #, kde-format
 msgid "No Followed Users"
 msgstr "Keine gefolgten Benutzer"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:61
 #, fuzzy, kde-format
 #| msgid "Muted Users"
 msgid "No Muted Users"
 msgstr "Stummgeschaltete Benuzter"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:63
 #, fuzzy, kde-format
 #| msgid "Blocked Users"
 msgid "No Blocked Users"
 msgstr "Blockierte Benutzer"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:65
 #, fuzzy, kde-format
 #| msgid "Featured Users"
 msgid "No Featured Users"
 msgstr "Empfohlene Benutzer"
 
-#: account/socialgraphmodel.cpp:66
+#: account/socialgraphmodel.cpp:67
 #, fuzzy, kde-format
 #| msgid "No users favourited this post"
 msgid "No Users Favorited This Post"
 msgstr "Kein Benuzter hat diese Beitrag favorisiert"
 
-#: account/socialgraphmodel.cpp:68
+#: account/socialgraphmodel.cpp:69
 #, fuzzy, kde-format
 #| msgid "No users boosted this post"
 msgid "No Users Boosted This Post"
 msgstr "Kein Benuzter hat diese Beitrag geteilt"
 
-#: account/socialgraphmodel.cpp:70
+#: account/socialgraphmodel.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Followers"
 msgid "No Familiar Followers"
 msgstr "Follower"
 
-#: account/socialgraphmodel.cpp:72
+#: account/socialgraphmodel.cpp:73
 #, fuzzy, kde-format
 #| msgid "User"
 msgid "No Users"
 msgstr "Benutzer"
 
-#: account/socialgraphmodel.cpp:80
+#: account/socialgraphmodel.cpp:81
 #, kde-format
 msgid ""
 "Some users need to be manually approved before they can follow you, and will "
 "show up here."
 msgstr ""
 
-#: account/socialgraphmodel.cpp:86
+#: account/socialgraphmodel.cpp:87
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
 
-#: account/socialgraphmodel.cpp:88
+#: account/socialgraphmodel.cpp:89
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr ""
 
-#: account/socialgraphmodel.cpp:90
+#: account/socialgraphmodel.cpp:91
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr ""
 
-#: account/socialgraphmodel.cpp:92
+#: account/socialgraphmodel.cpp:93
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:94
+#: account/socialgraphmodel.cpp:95
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
 msgstr ""
 
-#: account/socialgraphmodel.cpp:98
+#: account/socialgraphmodel.cpp:99
 #, kde-format
 msgid "There is no one in this list yet."
 msgstr ""
 
-#: account/suggestionsmodel.cpp:47
+#: account/suggestionsmodel.cpp:49
 #, fuzzy, kde-format
 #| msgid "Muted Users"
 msgctxt "@title:window"
@@ -757,7 +763,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Lokale Zeitleiste"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:465
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:466
 #, kde-format
 msgid "Conversations"
 msgstr "Unterhaltungen"
@@ -905,7 +911,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Sind Sie sicher, dass Sie diese Liste löschen wollen?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:509
 #, kde-format
 msgid "Explore"
 msgstr "Entdecken"
@@ -916,12 +922,12 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Beitrag"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:159
+#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:152
 #, kde-format
 msgid "Posts"
 msgstr "Beiträge"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:150
 #, kde-format
 msgid "Hashtags"
 msgstr "Hashtags"
@@ -931,7 +937,7 @@ msgstr "Hashtags"
 msgid "News"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:148
 #, fuzzy, kde-format
 #| msgid "User"
 msgid "Users"
@@ -1126,7 +1132,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorisierung"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:78
+#: content/ui/LoginFlow/BaseAuthorization.qml:81
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -1135,17 +1141,17 @@ msgstr ""
 "Um fortzufahren, öffnen Sie bitte den folgenden Link in Ihrem Browser und "
 "autorisieren Sie Tokodon: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:92
+#: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Autorisierungslink öffnen"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:101
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Autorisierungslink kopieren"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:105
+#: content/ui/LoginFlow/BaseAuthorization.qml:108
 #, kde-format
 msgid "Link copied."
 msgstr "Verknüpfung kopiert."
@@ -1241,7 +1247,7 @@ msgstr ""
 #: content/ui/LoginFlow/LoginPage.qml:38
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:89
+#: content/ui/LoginFlow/ServersPage.qml:93
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -1350,36 +1356,42 @@ msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "Einen Server auswählen"
 
-#: content/ui/LoginFlow/ServersPage.qml:36
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "Dieser Server nimmt keine Registrierungen entgegen: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:97
+#: content/ui/LoginFlow/ServersPage.qml:39
+#, fuzzy, kde-format
+#| msgid "This server is closed for registration: %1"
+msgid "This server is closed for registration, and did not provide a reason."
+msgstr "Dieser Server nimmt keine Registrierungen entgegen: %1"
+
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgid "Search or enter URL…"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:131
+#: content/ui/LoginFlow/ServersPage.qml:135
 #, kde-format
 msgid "Custom Server"
 msgstr ""
 
-#: content/ui/LoginFlow/ServersPage.qml:140
+#: content/ui/LoginFlow/ServersPage.qml:144
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Pick a Server"
 msgid "Public Servers"
 msgstr "Einen Server auswählen"
 
-#: content/ui/LoginFlow/ServersPage.qml:170
+#: content/ui/LoginFlow/ServersPage.qml:174
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Pick a Server"
 msgid "No Public Servers"
 msgstr "Einen Server auswählen"
 
-#: content/ui/LoginFlow/ServersPage.qml:171
+#: content/ui/LoginFlow/ServersPage.qml:175
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr ""
@@ -1470,66 +1482,66 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Unbekannte Aktion"
 
-#: content/ui/Main.qml:237
+#: content/ui/Main.qml:238
 #, fuzzy, kde-format
 #| msgid "Write a new post"
 msgid "Write a New Post"
 msgstr "Einen neuen Beitrag schreiben"
 
-#: content/ui/Main.qml:264
+#: content/ui/Main.qml:265
 #, kde-format
 msgid "Write a new post"
 msgstr "Einen neuen Beitrag schreiben"
 
-#: content/ui/Main.qml:309
+#: content/ui/Main.qml:310
 #, kde-format
 msgid "Reply to post"
 msgstr "Auf Beitrag antworten"
 
-#: content/ui/Main.qml:392
+#: content/ui/Main.qml:393
 #, kde-format
 msgid "Home"
 msgstr "Startseite"
 
-#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
+#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "No Posts"
 msgstr "Teilen"
 
-#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
+#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:409 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:410 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#: content/ui/Main.qml:421
+#: content/ui/Main.qml:422
 #, kde-format
 msgid "Follow Requests"
 msgstr "Follower-Anfragen"
 
-#: content/ui/Main.qml:434
+#: content/ui/Main.qml:435
 #, kde-format
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/Main.qml:449
+#: content/ui/Main.qml:450
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:476 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:477 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:484
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "%1 favourite"
@@ -1537,77 +1549,77 @@ msgstr "Favoriten"
 msgid "No Favorites"
 msgstr "%1 Favorit"
 
-#: content/ui/Main.qml:484
+#: content/ui/Main.qml:485
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
 
-#: content/ui/Main.qml:492
+#: content/ui/Main.qml:493
 #, kde-format
 msgid "Bookmarks"
 msgstr "Lesezeichen"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:500
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "No Bookmarks"
 msgstr "Lesezeichen"
 
-#: content/ui/Main.qml:500
+#: content/ui/Main.qml:501
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:519
+#: content/ui/Main.qml:520
 #, kde-format
 msgid "Following"
 msgstr "Folge ich"
 
-#: content/ui/Main.qml:530
+#: content/ui/Main.qml:531
 #, kde-format
 msgid "Search"
 msgstr "Suchen"
 
-#: content/ui/Main.qml:541
+#: content/ui/Main.qml:542
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Ankündigungen"
 
-#: content/ui/Main.qml:553
+#: content/ui/Main.qml:554
 #, kde-format
 msgid "Lists"
 msgstr "Listen"
 
-#: content/ui/Main.qml:564 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:565 content/ui/Settings/AccountPage.qml:70
 #, fuzzy, kde-format
 #| msgid "View Profile"
 msgid "Profile"
 msgstr "Profil anzeigen"
 
-#: content/ui/Main.qml:579
+#: content/ui/Main.qml:580
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Fehlersuche"
 
-#: content/ui/Main.qml:589
+#: content/ui/Main.qml:590
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderationswerkzeuge"
 
-#: content/ui/Main.qml:596
+#: content/ui/Main.qml:597
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: content/ui/Main.qml:728
+#: content/ui/Main.qml:729
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3203,56 +3215,56 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Am %1 geschrieben"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:35
 #, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
 msgstr " über %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:79
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:89
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Öffentlich"
 
-#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Nicht aufgeführt"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Direktnachricht"
 
-#: content/ui/PostDelegate/InformationBar.qml:107
+#: content/ui/PostDelegate/InformationBar.qml:109
 #, kde-format
 msgid "No favorites"
 msgstr "Keine Favoriten"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:111
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 Favorit"
 msgstr[1] "%1 Favoriten"
 
-#: content/ui/PostDelegate/InformationBar.qml:133
+#: content/ui/PostDelegate/InformationBar.qml:135
 #, kde-format
 msgid "No boosts"
 msgstr "Nicht geteilt"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:137
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3935,6 +3947,30 @@ msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "Profil bearbeiten"
 
+#: content/ui/Settings/ErrorLogPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Error Log"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:22
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Clear All"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:72
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy To Clipboard"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:87
+#, kde-format
+msgctxt "@label"
+msgid "No Errors"
+msgstr ""
+
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -4287,18 +4323,23 @@ msgstr "Netzwerk-Proxy"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
+msgid "Error Log"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:62
+#, kde-format
 msgid "About Tokodon"
 msgstr "Über Tokodon"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:59
-#: content/ui/Settings/TokodonConfigurationView.qml:66
+#: content/ui/Settings/TokodonConfigurationView.qml:65
+#: content/ui/Settings/TokodonConfigurationView.qml:72
 #, fuzzy, kde-format
 #| msgid "About KDE"
 msgctxt "@title:group"
 msgid "About"
 msgstr "Über KDE"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:63
+#: content/ui/Settings/TokodonConfigurationView.qml:69
 #, kde-format
 msgid "About KDE"
 msgstr "Über KDE"
@@ -4661,7 +4702,7 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Gespeichert"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:36
 #, kde-format
 msgid "Loading"
 msgstr "Wird geladen"
@@ -4717,17 +4758,17 @@ msgstr "Zugang hinzufügen"
 msgid "Log in or create a new account"
 msgstr "In ein bestehendes Konto einloggen"
 
-#: conversation/conversationmodel.cpp:57
+#: conversation/conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
 msgstr "Leere Unterhaltung"
 
-#: conversation/conversationmodel.cpp:61
+#: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
 msgstr "%1 und %2"
 
-#: conversation/conversationmodel.cpp:63
+#: conversation/conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
@@ -4866,70 +4907,70 @@ msgstr ""
 msgid "Internal usage only."
 msgstr ""
 
-#: notification/notificationmodel.cpp:102
+#: notification/notificationmodel.cpp:95
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Beim Abrufen der letzten Benachrichtigung ist ein Fehler aufgetreten."
 
-#: timeline/maintimelinemodel.cpp:25
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Startseite"
 
-#: timeline/maintimelinemodel.cpp:27
+#: timeline/maintimelinemodel.cpp:28
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@title"
 msgid "Local"
 msgstr "Lokal"
 
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:30
 #, fuzzy, kde-format
 #| msgid "Global"
 msgctxt "@title"
 msgid "Global"
 msgstr "Global"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Lesezeichen"
 
-#: timeline/maintimelinemodel.cpp:33
+#: timeline/maintimelinemodel.cpp:34
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: timeline/maintimelinemodel.cpp:35
+#: timeline/maintimelinemodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
 msgstr "Aktuelle Trends"
 
-#: timeline/tagsmodel.cpp:23
+#: timeline/tagsmodel.cpp:24
 #, kde-format
 msgid "Trending"
 msgstr "Aktuelle Trends"
 
-#: timeline/threadmodel.cpp:41
+#: timeline/threadmodel.cpp:43
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgctxt "@title:window"
 msgid "Loading…"
 msgstr "Wird geladen"
 
-#: timeline/threadmodel.cpp:46
+#: timeline/threadmodel.cpp:48
 #, fuzzy, kde-format
 #| msgid "Hide Boosts from %1"
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "Geteilte Beiträge von %1 ausblenden"
 
-#: timeline/trendingnewsmodel.cpp:51
+#: timeline/trendingnewsmodel.cpp:53
 #, fuzzy, kde-format
 #| msgid "Trending"
 msgctxt "@title:window"
@@ -4977,67 +5018,67 @@ msgctxt "@action:button"
 msgid "Switch '%1'"
 msgstr "Benutzer wechseln"
 
-#: utils/emojimodel.cpp:129
+#: utils/emojimodel.cpp:127
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Verlauf"
 
-#: utils/emojimodel.cpp:134
+#: utils/emojimodel.cpp:132
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr ""
 
-#: utils/emojimodel.cpp:139
+#: utils/emojimodel.cpp:137
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
 msgstr "Smileys"
 
-#: utils/emojimodel.cpp:144
+#: utils/emojimodel.cpp:142
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
 msgstr "Personen"
 
-#: utils/emojimodel.cpp:149
+#: utils/emojimodel.cpp:147
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
 msgstr "Natur"
 
-#: utils/emojimodel.cpp:154
+#: utils/emojimodel.cpp:152
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
 msgstr "Essen"
 
-#: utils/emojimodel.cpp:159
+#: utils/emojimodel.cpp:157
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
 msgstr "Aktivitäten"
 
-#: utils/emojimodel.cpp:164
+#: utils/emojimodel.cpp:162
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
 msgstr "Reisen"
 
-#: utils/emojimodel.cpp:169
+#: utils/emojimodel.cpp:167
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
 msgstr "Gegenstände"
 
-#: utils/emojimodel.cpp:174
+#: utils/emojimodel.cpp:172
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
 msgstr "Symbole"
 
-#: utils/emojimodel.cpp:179
+#: utils/emojimodel.cpp:177
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"

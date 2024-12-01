@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-29 00:41+0000\n"
+"POT-Creation-Date: 2024-12-01 00:40+0000\n"
 "PO-Revision-Date: 2024-10-28 22:47+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -19,52 +19,52 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: account/abstractaccount.cpp:679
+#: account/abstractaccount.cpp:591
 #, kde-format
 msgid "Could not follow account"
 msgstr "Neizdevās sekot kontam"
 
-#: account/abstractaccount.cpp:680
+#: account/abstractaccount.cpp:592
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Neizdevās beigt sekot kontam"
 
-#: account/abstractaccount.cpp:681
+#: account/abstractaccount.cpp:593
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "Neizdevās noņemt kontu kā jūsu sekotāju"
 
-#: account/abstractaccount.cpp:682
+#: account/abstractaccount.cpp:594
 #, kde-format
 msgid "Could not block account"
 msgstr "Neizdevās bloķēt kontu"
 
-#: account/abstractaccount.cpp:683
+#: account/abstractaccount.cpp:595
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Neizdevās atbloķēt kontu"
 
-#: account/abstractaccount.cpp:684
+#: account/abstractaccount.cpp:596
 #, kde-format
 msgid "Could not mute account"
 msgstr "Neizdevās apklusināt kontu"
 
-#: account/abstractaccount.cpp:685
+#: account/abstractaccount.cpp:597
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Neizdevās beigt apklusināt kontu"
 
-#: account/abstractaccount.cpp:686
+#: account/abstractaccount.cpp:598
 #, kde-format
 msgid "Could not feature account"
 msgstr "Neizdevās izcelt kontu"
 
-#: account/abstractaccount.cpp:687
+#: account/abstractaccount.cpp:599
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Neizdevās atcelt konta izcelšanu"
 
-#: account/abstractaccount.cpp:688
+#: account/abstractaccount.cpp:600
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Neizdevās rediģēt piezīmi par kontu"
@@ -145,43 +145,49 @@ msgstr ""
 msgid "Account details saved"
 msgstr "Konta informācija ir saglabāta"
 
-#: account/socialgraphmodel.cpp:28
+#: account/rulesmodel.cpp:102 account/rulesmodel.cpp:117
+#, kde-format
+msgid ""
+"This server provided no rules. Please see their website for more information."
+msgstr ""
+
+#: account/socialgraphmodel.cpp:29
 #, kde-format
 msgctxt "@title"
 msgid "Follow Requests"
 msgstr "Sekošanas lūgums"
 
-#: account/socialgraphmodel.cpp:30
+#: account/socialgraphmodel.cpp:31
 #, kde-format
 msgctxt "@title"
 msgid "Followers"
 msgstr "Sekotāji"
 
-#: account/socialgraphmodel.cpp:32
+#: account/socialgraphmodel.cpp:33
 #, kde-format
 msgctxt "@title"
 msgid "Following"
 msgstr "Seko"
 
-#: account/socialgraphmodel.cpp:34
+#: account/socialgraphmodel.cpp:35
 #, kde-format
 msgctxt "@title"
 msgid "Muted Users"
 msgstr "Apklusinātie lietotāji"
 
-#: account/socialgraphmodel.cpp:36
+#: account/socialgraphmodel.cpp:37
 #, kde-format
 msgctxt "@title"
 msgid "Blocked Users"
 msgstr "Bloķētie lietotāji"
 
-#: account/socialgraphmodel.cpp:38
+#: account/socialgraphmodel.cpp:39
 #, kde-format
 msgctxt "@title"
 msgid "Featured Users"
 msgstr "Izceltie lietotāji"
 
-#: account/socialgraphmodel.cpp:40
+#: account/socialgraphmodel.cpp:41
 #, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
@@ -190,7 +196,7 @@ msgstr[0] "%1 zvaigznīte"
 msgstr[1] "%1 zvaigznītes"
 msgstr[2] "%1 zvaigznīšu"
 
-#: account/socialgraphmodel.cpp:42
+#: account/socialgraphmodel.cpp:43
 #, kde-format
 msgctxt "@title"
 msgid "%1 boost"
@@ -199,69 +205,69 @@ msgstr[0] "%1 pastiprināts"
 msgstr[1] "%1 pastiprināti"
 msgstr[2] "%1 pastiprinātu"
 
-#: account/socialgraphmodel.cpp:44
+#: account/socialgraphmodel.cpp:45
 #, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
 msgstr "Pazīstami sekotāji"
 
-#: account/socialgraphmodel.cpp:46
+#: account/socialgraphmodel.cpp:47
 #, kde-format
 msgctxt "@title"
 msgid "Manage List Users"
 msgstr "Pārvaldīt lietotāju sarakstu"
 
-#: account/socialgraphmodel.cpp:54
+#: account/socialgraphmodel.cpp:55
 #, kde-format
 msgid "No Follow Requests"
 msgstr "Nav sekošanas lūgumu"
 
-#: account/socialgraphmodel.cpp:56
+#: account/socialgraphmodel.cpp:57
 #, kde-format
 msgid "No Followers"
 msgstr "Nav sekotāju"
 
-#: account/socialgraphmodel.cpp:58
+#: account/socialgraphmodel.cpp:59
 #, kde-format
 msgid "No Followed Users"
 msgstr "Nav lietotāju, kas seko"
 
-#: account/socialgraphmodel.cpp:60
+#: account/socialgraphmodel.cpp:61
 #, kde-format
 msgid "No Muted Users"
 msgstr "Nav apklusināto lietotāju"
 
-#: account/socialgraphmodel.cpp:62
+#: account/socialgraphmodel.cpp:63
 #, kde-format
 msgid "No Blocked Users"
 msgstr "Nav bloķēto lietotāju"
 
-#: account/socialgraphmodel.cpp:64
+#: account/socialgraphmodel.cpp:65
 #, kde-format
 msgid "No Featured Users"
 msgstr "Nav izcelto lietotāju"
 
-#: account/socialgraphmodel.cpp:66
+#: account/socialgraphmodel.cpp:67
 #, kde-format
 msgid "No Users Favorited This Post"
 msgstr "Šim ierakstam neviens lietotājs nav pielicis zvaigznīti"
 
-#: account/socialgraphmodel.cpp:68
+#: account/socialgraphmodel.cpp:69
 #, kde-format
 msgid "No Users Boosted This Post"
 msgstr "Šo ierakstu neviens nav pastiprinājis"
 
-#: account/socialgraphmodel.cpp:70
+#: account/socialgraphmodel.cpp:71
 #, kde-format
 msgid "No Familiar Followers"
 msgstr "Nav pazīstamu sekotāju"
 
-#: account/socialgraphmodel.cpp:72
+#: account/socialgraphmodel.cpp:73
 #, kde-format
 msgid "No Users"
 msgstr "Nav lietotāju"
 
-#: account/socialgraphmodel.cpp:80
+#: account/socialgraphmodel.cpp:81
 #, kde-format
 msgid ""
 "Some users need to be manually approved before they can follow you, and will "
@@ -270,30 +276,30 @@ msgstr ""
 "Daži lietotāji ir manuāli jāapstiprina pirms viņi var jums sekot. Šādi "
 "lietotāji būs redzami te."
 
-#: account/socialgraphmodel.cpp:86
+#: account/socialgraphmodel.cpp:87
 #, kde-format
 msgid "Mute users to stop them from showing up in your notifications."
 msgstr ""
 "Apklusiniet lietotājus, lai vairāk neredzētu viņu ierakstus savos "
 "paziņojumos."
 
-#: account/socialgraphmodel.cpp:88
+#: account/socialgraphmodel.cpp:89
 #, kde-format
 msgid "Block users to hide the user from your timeline entirely."
 msgstr "Bloķējiet lietotājus, lai viņus pilnībā neredzētu savā laika joslā."
 
-#: account/socialgraphmodel.cpp:90
+#: account/socialgraphmodel.cpp:91
 #, kde-format
 msgid "Users you like can be featured and shown on your profile."
 msgstr "Varat lietotājus, kuri jums patīk, izcelt un parādīt savā profilā."
 
-#: account/socialgraphmodel.cpp:92
+#: account/socialgraphmodel.cpp:93
 #, kde-format
 msgid "No one has favorited this post yet. Maybe you'll be the first?"
 msgstr ""
 "Šim ierakstam neviens vēl nav pielicis zvaigznīti. Varbūt to izdarīsiet jūs?"
 
-#: account/socialgraphmodel.cpp:94
+#: account/socialgraphmodel.cpp:95
 #, kde-format
 msgid ""
 "No one has boosted this post yet. You should boost it to expand its reach!"
@@ -301,12 +307,12 @@ msgstr ""
 "Šo ierakstu vēl neviens nav pastiprinājis. Jūs varat to pastiprināt, lai par "
 "to uzzinātu vairāk cilvēku!"
 
-#: account/socialgraphmodel.cpp:98
+#: account/socialgraphmodel.cpp:99
 #, kde-format
 msgid "There is no one in this list yet."
 msgstr "Šajā sarakstā vēl neviena nav."
 
-#: account/suggestionsmodel.cpp:47
+#: account/suggestionsmodel.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
@@ -743,7 +749,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Ziņu lentes beigas"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:465
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:466
 #, kde-format
 msgid "Conversations"
 msgstr "Sarunas"
@@ -889,7 +895,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Vai tiešām vēlaties dzēst šo sarakstu?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:509
 #, kde-format
 msgid "Explore"
 msgstr "Izpētīt"
@@ -900,12 +906,12 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Publicēt"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:159
+#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:152
 #, kde-format
 msgid "Posts"
 msgstr "Ieraksti"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:150
 #, kde-format
 msgid "Hashtags"
 msgstr "Tēmturi"
@@ -915,7 +921,7 @@ msgstr "Tēmturi"
 msgid "News"
 msgstr "Ziņas"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:148
 #, kde-format
 msgid "Users"
 msgstr "Lietotāji"
@@ -1106,7 +1112,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Pilnvarojums"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:78
+#: content/ui/LoginFlow/BaseAuthorization.qml:81
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -1115,17 +1121,17 @@ msgstr ""
 "Lai turpinātu un autorizētu „Tokodon“, savā interneta pārlūkprogrammā "
 "atveriet šo saiti: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:92
+#: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Atvērt autorizācijas saiti"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:101
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Kopēt autorizācijas saiti"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:105
+#: content/ui/LoginFlow/BaseAuthorization.qml:108
 #, kde-format
 msgid "Link copied."
 msgstr "Saite ir nokopēta."
@@ -1221,7 +1227,7 @@ msgstr ""
 #: content/ui/LoginFlow/LoginPage.qml:38
 #: content/ui/LoginFlow/RegistrationPage.qml:85
 #: content/ui/LoginFlow/RulesPage.qml:40
-#: content/ui/LoginFlow/ServersPage.qml:89
+#: content/ui/LoginFlow/ServersPage.qml:93
 #: content/ui/Settings/NetworkProxyPage.qml:70
 #, kde-format
 msgid "Proxy Settings"
@@ -1330,32 +1336,38 @@ msgctxt "@title:window"
 msgid "Pick a Server"
 msgstr "Izvēlieties serveri"
 
-#: content/ui/LoginFlow/ServersPage.qml:36
+#: content/ui/LoginFlow/ServersPage.qml:37
 #, kde-format
 msgid "This server is closed for registration: %1"
 msgstr "Šī servera reģistrācija ir slēgta: %1"
 
-#: content/ui/LoginFlow/ServersPage.qml:97
+#: content/ui/LoginFlow/ServersPage.qml:39
+#, fuzzy, kde-format
+#| msgid "This server is closed for registration: %1"
+msgid "This server is closed for registration, and did not provide a reason."
+msgstr "Šī servera reģistrācija ir slēgta: %1"
+
+#: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
 msgid "Search or enter URL…"
 msgstr "Meklēt vai ierakstīt URL…"
 
-#: content/ui/LoginFlow/ServersPage.qml:131
+#: content/ui/LoginFlow/ServersPage.qml:135
 #, kde-format
 msgid "Custom Server"
 msgstr "Pielāgots serveris"
 
-#: content/ui/LoginFlow/ServersPage.qml:140
+#: content/ui/LoginFlow/ServersPage.qml:144
 #, kde-format
 msgid "Public Servers"
 msgstr "Publiskie serveri"
 
-#: content/ui/LoginFlow/ServersPage.qml:170
+#: content/ui/LoginFlow/ServersPage.qml:174
 #, kde-format
 msgid "No Public Servers"
 msgstr "Nav publisko serveru"
 
-#: content/ui/LoginFlow/ServersPage.qml:171
+#: content/ui/LoginFlow/ServersPage.qml:175
 #, kde-format
 msgid "Enter a server URL manually in the search field."
 msgstr "Ierakstiet servera URL meklēšanas laukā."
@@ -1448,70 +1460,70 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Nezināma darbība"
 
-#: content/ui/Main.qml:237
+#: content/ui/Main.qml:238
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Write a New Post"
 msgid "Write a New Post"
 msgstr "Rakstīt jaunu ierakstu"
 
-#: content/ui/Main.qml:264
+#: content/ui/Main.qml:265
 #, kde-format
 msgid "Write a new post"
 msgstr "Rakstīt jaunu ierakstu"
 
-#: content/ui/Main.qml:309
+#: content/ui/Main.qml:310
 #, kde-format
 msgid "Reply to post"
 msgstr "Atbildēt ierakstam"
 
-#: content/ui/Main.qml:392
+#: content/ui/Main.qml:393
 #, kde-format
 msgid "Home"
 msgstr "Mājas"
 
-#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
+#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
 #, kde-format
 msgid "No Posts"
 msgstr "Nav ierakstu"
 
-#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
+#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Te ir diezgan kluss… Mēģiniet kaut ko publicēt!"
 
-#: content/ui/Main.qml:409 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:410 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Paziņojumi"
 
-#: content/ui/Main.qml:421
+#: content/ui/Main.qml:422
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sekošanas lūgums"
 
-#: content/ui/Main.qml:434
+#: content/ui/Main.qml:435
 #, kde-format
 msgid "Local"
 msgstr "Lokālā"
 
-#: content/ui/Main.qml:449
+#: content/ui/Main.qml:450
 #, kde-format
 msgid "Global"
 msgstr "Globālā"
 
-#: content/ui/Main.qml:476 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:477 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Zvaigznītes"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:484
 #, kde-format
 msgid "No Favorites"
 msgstr "Nav zvaigznīšu"
 
-#: content/ui/Main.qml:484
+#: content/ui/Main.qml:485
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1520,17 +1532,17 @@ msgstr ""
 "Te būs redzami ieraksti, kuriem pielikāt zvaigznīti. Ja jums patīk kāds "
 "ieraksts, pielieciet tam zvaigznīti!"
 
-#: content/ui/Main.qml:492
+#: content/ui/Main.qml:493
 #, kde-format
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:500
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Nav grāmatzīmju"
 
-#: content/ui/Main.qml:500
+#: content/ui/Main.qml:501
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1539,51 +1551,51 @@ msgstr ""
 "Pievienojiet ierakstus grāmatzīmēm, lai tie te parādītos. Grāmatzīmes "
 "vienmēr ir privātas — par ieraksta autoram."
 
-#: content/ui/Main.qml:519
+#: content/ui/Main.qml:520
 #, kde-format
 msgid "Following"
 msgstr "Seko"
 
-#: content/ui/Main.qml:530
+#: content/ui/Main.qml:531
 #, kde-format
 msgid "Search"
 msgstr "Meklēt"
 
-#: content/ui/Main.qml:541
+#: content/ui/Main.qml:542
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Servera paziņojumi"
 
-#: content/ui/Main.qml:553
+#: content/ui/Main.qml:554
 #, kde-format
 msgid "Lists"
 msgstr "Saraksti"
 
-#: content/ui/Main.qml:564 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:565 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Profils"
 
-#: content/ui/Main.qml:579
+#: content/ui/Main.qml:580
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Atkļūdot"
 
-#: content/ui/Main.qml:589
+#: content/ui/Main.qml:590
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderēšanas rīki"
 
-#: content/ui/Main.qml:596
+#: content/ui/Main.qml:597
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Iestatījumi"
 
-#: content/ui/Main.qml:728
+#: content/ui/Main.qml:729
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3171,44 +3183,44 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Publicēts %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:35
 #, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
 msgstr ", izmantojot „%1“"
 
-#: content/ui/PostDelegate/InformationBar.qml:79
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:89
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Publiska"
 
-#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Nerindota"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privāta"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Tiešais ziņojums"
 
-#: content/ui/PostDelegate/InformationBar.qml:107
+#: content/ui/PostDelegate/InformationBar.qml:109
 #, kde-format
 msgid "No favorites"
 msgstr "Nav zvaigznīšu"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:111
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -3216,12 +3228,12 @@ msgstr[0] "%1 zvaigznīte"
 msgstr[1] "%1 zvaigznītes"
 msgstr[2] "%1 zvaigznīšu"
 
-#: content/ui/PostDelegate/InformationBar.qml:133
+#: content/ui/PostDelegate/InformationBar.qml:135
 #, kde-format
 msgid "No boosts"
 msgstr "Nav pastiprinājumu"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:137
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3899,6 +3911,30 @@ msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "Rediģēt profilu"
 
+#: content/ui/Settings/ErrorLogPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Error Log"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:22
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Clear All"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:72
+#, kde-format
+msgctxt "@action:button"
+msgid "Copy To Clipboard"
+msgstr ""
+
+#: content/ui/Settings/ErrorLogPage.qml:87
+#, kde-format
+msgctxt "@label"
+msgid "No Errors"
+msgstr ""
+
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
 msgctxt "@title:window"
@@ -4256,17 +4292,22 @@ msgstr "Tīkla starpniekserveris"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
+msgid "Error Log"
+msgstr ""
+
+#: content/ui/Settings/TokodonConfigurationView.qml:62
+#, kde-format
 msgid "About Tokodon"
 msgstr "Par „Tokodon“"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:59
-#: content/ui/Settings/TokodonConfigurationView.qml:66
+#: content/ui/Settings/TokodonConfigurationView.qml:65
+#: content/ui/Settings/TokodonConfigurationView.qml:72
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Par"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:63
+#: content/ui/Settings/TokodonConfigurationView.qml:69
 #, kde-format
 msgid "About KDE"
 msgstr "Par KDE"
@@ -4615,7 +4656,7 @@ msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Saglabāt"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:35
+#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:36
 #, kde-format
 msgid "Loading"
 msgstr "Ielādē"
@@ -4664,17 +4705,17 @@ msgstr "Pārslēgt kontu"
 msgid "Log in or create a new account"
 msgstr "Ierakstīties vai izveidot jaunu kontu"
 
-#: conversation/conversationmodel.cpp:57
+#: conversation/conversationmodel.cpp:59
 #, kde-format
 msgid "Empty conversation"
 msgstr "Tukša saruna"
 
-#: conversation/conversationmodel.cpp:61
+#: conversation/conversationmodel.cpp:63
 #, kde-format
 msgid "%1 and %2"
 msgstr "%1 un %2"
 
-#: conversation/conversationmodel.cpp:63
+#: conversation/conversationmodel.cpp:65
 #, kde-format
 msgid "%2 and one other"
 msgid_plural "%2 and %1 others"
@@ -4813,67 +4854,67 @@ msgstr "Kopīgojamais teksts."
 msgid "Internal usage only."
 msgstr "Tikai iekšējai lietošanai."
 
-#: notification/notificationmodel.cpp:102
+#: notification/notificationmodel.cpp:95
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Kļūda, iegūstot pēdējo paziņojumu."
 
-#: timeline/maintimelinemodel.cpp:25
+#: timeline/maintimelinemodel.cpp:26
 #, kde-format
 msgctxt "@title"
 msgid "Home"
 msgstr "Mājas"
 
-#: timeline/maintimelinemodel.cpp:27
+#: timeline/maintimelinemodel.cpp:28
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@title"
 msgid "Local"
 msgstr "Lokālā"
 
-#: timeline/maintimelinemodel.cpp:29
+#: timeline/maintimelinemodel.cpp:30
 #, fuzzy, kde-format
 #| msgid "Global"
 msgctxt "@title"
 msgid "Global"
 msgstr "Globālā"
 
-#: timeline/maintimelinemodel.cpp:31
+#: timeline/maintimelinemodel.cpp:32
 #, kde-format
 msgctxt "@title"
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
-#: timeline/maintimelinemodel.cpp:33
+#: timeline/maintimelinemodel.cpp:34
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Zvaigznītes"
 
-#: timeline/maintimelinemodel.cpp:35
+#: timeline/maintimelinemodel.cpp:36
 #, kde-format
 msgctxt "@title"
 msgid "Trending"
 msgstr "Populāri"
 
-#: timeline/tagsmodel.cpp:23
+#: timeline/tagsmodel.cpp:24
 #, kde-format
 msgid "Trending"
 msgstr "Populāri"
 
-#: timeline/threadmodel.cpp:41
+#: timeline/threadmodel.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading…"
 msgstr "Ielādē…"
 
-#: timeline/threadmodel.cpp:46
+#: timeline/threadmodel.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Post by %1"
 msgstr "Publicēja %1"
 
-#: timeline/trendingnewsmodel.cpp:51
+#: timeline/trendingnewsmodel.cpp:53
 #, kde-format
 msgctxt "@title:window"
 msgid "Trending News"
@@ -4915,67 +4956,67 @@ msgctxt "@action:button"
 msgid "Switch '%1'"
 msgstr "Pārslēgties uz „%1“"
 
-#: utils/emojimodel.cpp:129
+#: utils/emojimodel.cpp:127
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Vēsture"
 
-#: utils/emojimodel.cpp:134
+#: utils/emojimodel.cpp:132
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Pielāgots"
 
-#: utils/emojimodel.cpp:139
+#: utils/emojimodel.cpp:137
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
 msgstr "Smaidiņi"
 
-#: utils/emojimodel.cpp:144
+#: utils/emojimodel.cpp:142
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
 msgstr "Cilvēki"
 
-#: utils/emojimodel.cpp:149
+#: utils/emojimodel.cpp:147
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
 msgstr "Daba"
 
-#: utils/emojimodel.cpp:154
+#: utils/emojimodel.cpp:152
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
 msgstr "Ēdiens"
 
-#: utils/emojimodel.cpp:159
+#: utils/emojimodel.cpp:157
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
 msgstr "Aktivitātes"
 
-#: utils/emojimodel.cpp:164
+#: utils/emojimodel.cpp:162
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
 msgstr "Ceļošana"
 
-#: utils/emojimodel.cpp:169
+#: utils/emojimodel.cpp:167
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
 msgstr "Objekti"
 
-#: utils/emojimodel.cpp:174
+#: utils/emojimodel.cpp:172
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
 msgstr "Simboli"
 
-#: utils/emojimodel.cpp:179
+#: utils/emojimodel.cpp:177
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
