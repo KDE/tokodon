@@ -187,8 +187,6 @@ if (NOT ANDROID)
     ecm_find_qmlmodule(org.kde.sonnet REQUIRED)
 endif()
 
-add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
-
 add_subdirectory(src)
 
 ki18n_install(po)
