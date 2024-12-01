@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 02:29+0000\n"
+"POT-Creation-Date: 2024-12-01 02:30+0000\n"
 "PO-Revision-Date: 2024-11-12 15:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -18,52 +18,52 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: account/abstractaccount.cpp:674
+#: account/abstractaccount.cpp:585
 #, kde-format
 msgid "Could not follow account"
 msgstr "Не вдалося встановити стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:675
+#: account/abstractaccount.cpp:586
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Не вдалося скасувати стеження за обліковим записом"
 
-#: account/abstractaccount.cpp:676
+#: account/abstractaccount.cpp:587
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "Не вдалося вилучити обліковий запис з тих, хто стежить"
 
-#: account/abstractaccount.cpp:677
+#: account/abstractaccount.cpp:588
 #, kde-format
 msgid "Could not block account"
 msgstr "Не вдалося заблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:678
+#: account/abstractaccount.cpp:589
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Не вдалося розблокувати обліковий запис"
 
-#: account/abstractaccount.cpp:679
+#: account/abstractaccount.cpp:590
 #, kde-format
 msgid "Could not mute account"
 msgstr "Не вдалося заборонити повідомлення від облікового запису"
 
-#: account/abstractaccount.cpp:680
+#: account/abstractaccount.cpp:591
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Не вдалося скасувати заборону повідомлень для облікового запису"
 
-#: account/abstractaccount.cpp:681
+#: account/abstractaccount.cpp:592
 #, kde-format
 msgid "Could not feature account"
 msgstr "Не вдалося встановити рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:682
+#: account/abstractaccount.cpp:593
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Не вдалося скасувати рекомендування облікового запису"
 
-#: account/abstractaccount.cpp:683
+#: account/abstractaccount.cpp:594
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Не вдалося змінити нотатку щодо облікового запису"
@@ -734,7 +734,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Кінець розкладу"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:464
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:465
 #, kde-format
 msgid "Conversations"
 msgstr "Спілкування"
@@ -860,7 +860,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Ви справді хочете вилучити цей список?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:507
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
 #, kde-format
 msgid "Explore"
 msgstr "Ознайомлення"
@@ -871,12 +871,12 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Надіслати"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:159
+#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:151
 #, kde-format
 msgid "Posts"
 msgstr "Дописи"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:149
 #, kde-format
 msgid "Hashtags"
 msgstr "Хештеґи"
@@ -886,7 +886,7 @@ msgstr "Хештеґи"
 msgid "News"
 msgstr "Новини"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:147
 #, kde-format
 msgid "Users"
 msgstr "Користувачі"
@@ -1080,7 +1080,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Уповноваження"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:78
+#: content/ui/LoginFlow/BaseAuthorization.qml:81
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -1089,17 +1089,17 @@ msgstr ""
 "Щоб продовжити, будь ласка, відкрийте вказане нижче посилання у вашій "
 "програмі для перегляду інтернету і уповноважте Tokodon: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:92
+#: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Відкрити посилання уповноваження"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:101
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Копіювати посилання уповноваження"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:105
+#: content/ui/LoginFlow/BaseAuthorization.qml:108
 #, kde-format
 msgid "Link copied."
 msgstr "Посилання скопійовано."
@@ -1423,63 +1423,63 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Невідома дія"
 
-#: content/ui/Main.qml:236 content/ui/Main.qml:263
+#: content/ui/Main.qml:237 content/ui/Main.qml:264
 #, kde-format
 msgid "Write a new post"
 msgstr "Написати новий допис"
 
-#: content/ui/Main.qml:308
+#: content/ui/Main.qml:309
 #, kde-format
 msgid "Reply to post"
 msgstr "Відповісти на допис"
 
-#: content/ui/Main.qml:391
+#: content/ui/Main.qml:392
 #, kde-format
 msgid "Home"
 msgstr "Домівка"
 
-#: content/ui/Main.qml:398 content/ui/Main.qml:440 content/ui/Main.qml:455
+#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
 #, kde-format
 msgid "No Posts"
 msgstr "Немає дописів"
 
-#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
+#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Зараз усе доволі тихо... Спробуйте додати якийсь допис!"
 
-#: content/ui/Main.qml:408 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:409 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: content/ui/Main.qml:420
+#: content/ui/Main.qml:421
 #, kde-format
 msgid "Follow Requests"
 msgstr "Запити щодо стеження"
 
-#: content/ui/Main.qml:433
+#: content/ui/Main.qml:434
 #, kde-format
 msgid "Local"
 msgstr "Місцевий"
 
-#: content/ui/Main.qml:448
+#: content/ui/Main.qml:449
 #, kde-format
 msgid "Global"
 msgstr "Загальний"
 
-#: content/ui/Main.qml:475 content/ui/Settings/NotificationsPage.qml:122
+#: content/ui/Main.qml:476 content/ui/Settings/NotificationsPage.qml:122
 #, kde-format
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: content/ui/Main.qml:482
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "No Favorites"
 msgstr "Немає улюблених"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:484
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1488,17 +1488,17 @@ msgstr ""
 "Тут буде показано дописи, які ви позначили як улюблені. Якщо вам подобається "
 "чийсь допис, зробіть його улюбленим!"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:492
 #, kde-format
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: content/ui/Main.qml:498
+#: content/ui/Main.qml:499
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Немає закладок"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:500
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1507,51 +1507,51 @@ msgstr ""
 "Створіть для допису закладку, і цей допис буде показано тут. Закладки завжди "
 "лишаються конфіденційними, їх не буде показано навіть автору допису."
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:519
 #, kde-format
 msgid "Following"
 msgstr "Стеження"
 
-#: content/ui/Main.qml:529
+#: content/ui/Main.qml:530
 #, kde-format
 msgid "Search"
 msgstr "Шукати"
 
-#: content/ui/Main.qml:540
+#: content/ui/Main.qml:541
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Оголошення"
 
-#: content/ui/Main.qml:552
+#: content/ui/Main.qml:553
 #, kde-format
 msgid "Lists"
 msgstr "Списки"
 
-#: content/ui/Main.qml:563 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:564 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Профіль"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:579
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Діагностика"
 
-#: content/ui/Main.qml:588
+#: content/ui/Main.qml:589
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Засоби модерації"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:596
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметри"
 
-#: content/ui/Main.qml:727
+#: content/ui/Main.qml:728
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3131,44 +3131,44 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Надіслано %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:35
 #, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
 msgstr ", з використанням %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:79
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:89
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Загальнодоступне"
 
-#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Незареєстрований"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Особисте"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Безпосереднє повідомлення"
 
-#: content/ui/PostDelegate/InformationBar.qml:107
+#: content/ui/PostDelegate/InformationBar.qml:109
 #, kde-format
 msgid "No favorites"
 msgstr "Немає улюблених"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:111
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -3177,12 +3177,12 @@ msgstr[1] "%1 улюблені записи"
 msgstr[2] "%1 улюблених записів"
 msgstr[3] "%1 улюблений запис"
 
-#: content/ui/PostDelegate/InformationBar.qml:133
+#: content/ui/PostDelegate/InformationBar.qml:135
 #, kde-format
 msgid "No boosts"
 msgstr "Немає підсилень"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:137
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -4689,7 +4689,7 @@ msgstr "Текст, який слід оприлюднити."
 msgid "Internal usage only."
 msgstr "Лише для внутрішнього використання."
 
-#: notification/notificationmodel.cpp:102
+#: notification/notificationmodel.cpp:90
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "Під час отримання найсвіжішого сповіщення сталася помилка."
@@ -4789,67 +4789,67 @@ msgctxt "@action:button"
 msgid "Switch '%1'"
 msgstr "Перемкнути «%1»"
 
-#: utils/emojimodel.cpp:129
+#: utils/emojimodel.cpp:127
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Журнал"
 
-#: utils/emojimodel.cpp:134
+#: utils/emojimodel.cpp:132
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Нетиповий"
 
-#: utils/emojimodel.cpp:139
+#: utils/emojimodel.cpp:137
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
 msgstr "Емоційки"
 
-#: utils/emojimodel.cpp:144
+#: utils/emojimodel.cpp:142
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
 msgstr "Люди"
 
-#: utils/emojimodel.cpp:149
+#: utils/emojimodel.cpp:147
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
 msgstr "Природа"
 
-#: utils/emojimodel.cpp:154
+#: utils/emojimodel.cpp:152
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
 msgstr "Їжа"
 
-#: utils/emojimodel.cpp:159
+#: utils/emojimodel.cpp:157
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
 msgstr "Діяльність"
 
-#: utils/emojimodel.cpp:164
+#: utils/emojimodel.cpp:162
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
 msgstr "Подорожі"
 
-#: utils/emojimodel.cpp:169
+#: utils/emojimodel.cpp:167
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
 msgstr "Об'єкти"
 
-#: utils/emojimodel.cpp:174
+#: utils/emojimodel.cpp:172
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
 msgstr "Символи"
 
-#: utils/emojimodel.cpp:179
+#: utils/emojimodel.cpp:177
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"

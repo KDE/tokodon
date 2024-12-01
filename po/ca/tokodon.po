@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 02:29+0000\n"
+"POT-Creation-Date: 2024-12-01 02:30+0000\n"
 "PO-Revision-Date: 2024-11-28 09:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,52 +21,52 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: account/abstractaccount.cpp:674
+#: account/abstractaccount.cpp:585
 #, kde-format
 msgid "Could not follow account"
 msgstr "No s'ha pogut seguir el compte"
 
-#: account/abstractaccount.cpp:675
+#: account/abstractaccount.cpp:586
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "No s'ha pogut desfer el seguiment del compte"
 
-#: account/abstractaccount.cpp:676
+#: account/abstractaccount.cpp:587
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "No s'ha pogut eliminar el compte com a seguidor vostre"
 
-#: account/abstractaccount.cpp:677
+#: account/abstractaccount.cpp:588
 #, kde-format
 msgid "Could not block account"
 msgstr "No s'ha pogut bloquejar el compte"
 
-#: account/abstractaccount.cpp:678
+#: account/abstractaccount.cpp:589
 #, kde-format
 msgid "Could not unblock account"
 msgstr "No s'ha pogut desbloquejar el compte"
 
-#: account/abstractaccount.cpp:679
+#: account/abstractaccount.cpp:590
 #, kde-format
 msgid "Could not mute account"
 msgstr "No s'ha pogut silenciar el compte"
 
-#: account/abstractaccount.cpp:680
+#: account/abstractaccount.cpp:591
 #, kde-format
 msgid "Could not unmute account"
 msgstr "No s'ha pogut desfer el silenciament del compte"
 
-#: account/abstractaccount.cpp:681
+#: account/abstractaccount.cpp:592
 #, kde-format
 msgid "Could not feature account"
 msgstr "No s'ha pogut destacar el compte"
 
-#: account/abstractaccount.cpp:682
+#: account/abstractaccount.cpp:593
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "No s'ha pogut desfer el fet de destacar el compte"
 
-#: account/abstractaccount.cpp:683
+#: account/abstractaccount.cpp:594
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "No s'ha pogut editar una nota quant al compte"
@@ -725,7 +725,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Final de la línia de temps"
 
-#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:464
+#: content/ui/ConversationPage.qml:11 content/ui/Main.qml:465
 #, kde-format
 msgid "Conversations"
 msgstr "Converses"
@@ -852,7 +852,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Segur que voleu suprimir aquesta llista?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:507
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:508
 #, kde-format
 msgid "Explore"
 msgstr "Explora"
@@ -863,12 +863,12 @@ msgctxt "@action:button"
 msgid "Post"
 msgstr "Publicació"
 
-#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:159
+#: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:151
 #, kde-format
 msgid "Posts"
 msgstr "Publicacions"
 
-#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:157
+#: content/ui/ExplorePage.qml:47 search/searchmodel.cpp:149
 #, kde-format
 msgid "Hashtags"
 msgstr "Etiqueta"
@@ -878,7 +878,7 @@ msgstr "Etiqueta"
 msgid "News"
 msgstr "Notícies"
 
-#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:155
+#: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:147
 #, kde-format
 msgid "Users"
 msgstr "Usuaris"
@@ -1070,7 +1070,7 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "Autorització"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:78
+#: content/ui/LoginFlow/BaseAuthorization.qml:81
 #, kde-format
 msgid ""
 "To continue, please open the following link in your web browser to authorize "
@@ -1079,17 +1079,17 @@ msgstr ""
 "Per a continuar obriu l'enllaç següent al navegador web per a autoritzar el "
 "Tokodon: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:92
+#: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Open Authorization Link"
 msgstr "Obre l'enllaç d'autorització"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:101
+#: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
 msgid "Copy Authorization Link"
 msgstr "Copia l'enllaç d'autorització"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:105
+#: content/ui/LoginFlow/BaseAuthorization.qml:108
 #, kde-format
 msgid "Link copied."
 msgstr "S'ha copiat l'enllaç."
@@ -1414,63 +1414,63 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Acció desconeguda"
 
-#: content/ui/Main.qml:236 content/ui/Main.qml:263
+#: content/ui/Main.qml:237 content/ui/Main.qml:264
 #, kde-format
 msgid "Write a new post"
 msgstr "Escriviu una publicació nova"
 
-#: content/ui/Main.qml:308
+#: content/ui/Main.qml:309
 #, kde-format
 msgid "Reply to post"
 msgstr "Respon a la publicació"
 
-#: content/ui/Main.qml:391
+#: content/ui/Main.qml:392
 #, kde-format
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/Main.qml:398 content/ui/Main.qml:440 content/ui/Main.qml:455
+#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
 #, kde-format
 msgid "No Posts"
 msgstr "Sense publicacions"
 
-#: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
+#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Sembla bastant tranquil ara mateix, intenteu publicar alguna cosa!"
 
-#: content/ui/Main.qml:408 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:409 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: content/ui/Main.qml:420
+#: content/ui/Main.qml:421
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sol·licituds de seguiment"
 
-#: content/ui/Main.qml:433
+#: content/ui/Main.qml:434
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/Main.qml:448
+#: content/ui/Main.qml:449
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: content/ui/Main.qml:475 content/ui/Settings/NotificationsPage.qml:122
+#: content/ui/Main.qml:476 content/ui/Settings/NotificationsPage.qml:122
 #, kde-format
 msgid "Favorites"
 msgstr "Preferits"
 
-#: content/ui/Main.qml:482
+#: content/ui/Main.qml:483
 #, kde-format
 msgid "No Favorites"
 msgstr "Sense preferits"
 
-#: content/ui/Main.qml:483
+#: content/ui/Main.qml:484
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1479,17 +1479,17 @@ msgstr ""
 "Les publicacions que preferiu es mostraran aquí. Si aprecieu la publicació "
 "d'algú, feu-la preferida!"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:492
 #, kde-format
 msgid "Bookmarks"
 msgstr "Punts"
 
-#: content/ui/Main.qml:498
+#: content/ui/Main.qml:499
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Sense punts"
 
-#: content/ui/Main.qml:499
+#: content/ui/Main.qml:500
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1498,51 +1498,51 @@ msgstr ""
 "Apunteu publicacions i es mostraran aquí. Els punts sempre es mantenen "
 "privats, fins i tot a l'autor de la publicació."
 
-#: content/ui/Main.qml:518
+#: content/ui/Main.qml:519
 #, kde-format
 msgid "Following"
 msgstr "Seguint"
 
-#: content/ui/Main.qml:529
+#: content/ui/Main.qml:530
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
 
-#: content/ui/Main.qml:540
+#: content/ui/Main.qml:541
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Anuncis"
 
-#: content/ui/Main.qml:552
+#: content/ui/Main.qml:553
 #, kde-format
 msgid "Lists"
 msgstr "Llistes"
 
-#: content/ui/Main.qml:563 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:564 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Perfil"
 
-#: content/ui/Main.qml:578
+#: content/ui/Main.qml:579
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Depuració"
 
-#: content/ui/Main.qml:588
+#: content/ui/Main.qml:589
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Eines de moderació"
 
-#: content/ui/Main.qml:595
+#: content/ui/Main.qml:596
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuració"
 
-#: content/ui/Main.qml:727
+#: content/ui/Main.qml:728
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3119,56 +3119,56 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Publicat el %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:33
+#: content/ui/PostDelegate/InformationBar.qml:35
 #, kde-format
 msgctxt "%1 is the Mastodon application name used for posting"
 msgid ", via %1"
 msgstr ", mitjançant %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:79
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:89
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Públic"
 
-#: content/ui/PostDelegate/InformationBar.qml:81
+#: content/ui/PostDelegate/InformationBar.qml:83
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "No llistat"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:85
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:87
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Missatge directe"
 
-#: content/ui/PostDelegate/InformationBar.qml:107
+#: content/ui/PostDelegate/InformationBar.qml:109
 #, kde-format
 msgid "No favorites"
 msgstr "Sense preferits"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:111
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 preferit"
 msgstr[1] "%1 preferits"
 
-#: content/ui/PostDelegate/InformationBar.qml:133
+#: content/ui/PostDelegate/InformationBar.qml:135
 #, kde-format
 msgid "No boosts"
 msgstr "Sense impulsos"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:137
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -4668,7 +4668,7 @@ msgstr "El text a compartir."
 msgid "Internal usage only."
 msgstr "Només ús intern."
 
-#: notification/notificationmodel.cpp:102
+#: notification/notificationmodel.cpp:90
 #, kde-format
 msgid "Error occurred when fetching the latest notification."
 msgstr "S'ha produït un error en recuperar la darrera notificació."
@@ -4768,67 +4768,67 @@ msgctxt "@action:button"
 msgid "Switch '%1'"
 msgstr "Canvia «%1»"
 
-#: utils/emojimodel.cpp:129
+#: utils/emojimodel.cpp:127
 #, kde-format
 msgctxt "Previously used emojis"
 msgid "History"
 msgstr "Historial"
 
-#: utils/emojimodel.cpp:134
+#: utils/emojimodel.cpp:132
 #, kde-format
 msgctxt "'Custom' is a category of emoji"
 msgid "Custom"
 msgstr "Personalitzats"
 
-#: utils/emojimodel.cpp:139
+#: utils/emojimodel.cpp:137
 #, kde-format
 msgctxt "'Smileys' is a category of emoji"
 msgid "Smileys"
 msgstr "Somriures"
 
-#: utils/emojimodel.cpp:144
+#: utils/emojimodel.cpp:142
 #, kde-format
 msgctxt "'People' is a category of emoji"
 msgid "People"
 msgstr "Persones"
 
-#: utils/emojimodel.cpp:149
+#: utils/emojimodel.cpp:147
 #, kde-format
 msgctxt "'Nature' is a category of emoji"
 msgid "Nature"
 msgstr "Natura"
 
-#: utils/emojimodel.cpp:154
+#: utils/emojimodel.cpp:152
 #, kde-format
 msgctxt "'Food' is a category of emoji"
 msgid "Food"
 msgstr "Menjar"
 
-#: utils/emojimodel.cpp:159
+#: utils/emojimodel.cpp:157
 #, kde-format
 msgctxt "'Activities' is a category of emoji"
 msgid "Activities"
 msgstr "Activitats"
 
-#: utils/emojimodel.cpp:164
+#: utils/emojimodel.cpp:162
 #, kde-format
 msgctxt "'Travel' is  a category of emoji"
 msgid "Travel"
 msgstr "Viatges"
 
-#: utils/emojimodel.cpp:169
+#: utils/emojimodel.cpp:167
 #, kde-format
 msgctxt "'Objects' is a category of emoji"
 msgid "Objects"
 msgstr "Objectes"
 
-#: utils/emojimodel.cpp:174
+#: utils/emojimodel.cpp:172
 #, kde-format
 msgctxt "'Symbols' is a category of emoji"
 msgid "Symbols"
 msgstr "Símbols"
 
-#: utils/emojimodel.cpp:179
+#: utils/emojimodel.cpp:177
 #, kde-format
 msgctxt "'Flags' is a category of emoji"
 msgid "Flags"
