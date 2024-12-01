@@ -409,6 +409,7 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
+        KF6::I18nQml
         KF6::I18n
         KF6::Kirigami
         KF6::KirigamiPlatform

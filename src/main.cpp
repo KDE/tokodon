@@ -19,6 +19,7 @@
 #include <KDBusService>
 #include <KWindowSystem>
 #endif
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 #ifdef HAVE_KUNIFIEDPUSH
@@ -231,7 +232,7 @@ int main(int argc, char *argv[])
         }
     });
 #endif
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
     QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
     NetworkAccessManagerFactory namFactory;

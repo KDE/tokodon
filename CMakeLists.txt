@@ -20,8 +20,8 @@ endif()
 
 option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
 
-set(KF_MIN_VERSION "6.5.0")
-set(QT_MIN_VERSION "6.6")
+set(KF_MIN_VERSION "6.8.0")
+set(QT_MIN_VERSION "6.7.0")
 
 include(FeatureSummary)
 
@@ -163,6 +163,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 include(KDEGitCommitHooks)
 include(ECMQmlModule)
+include(ECMDeprecationSettings)
 
 if (ANDROID)
     include(ECMAddAndroidApk)
@@ -171,6 +172,11 @@ endif ()
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX TOKODON
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/tokodon-version.h
+)
+
+ecm_set_disabled_deprecation_versions(
+        QT ${QT_MIN_VERSION}
+        KF ${KF_MIN_VERSION}
 )
 
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
