@@ -179,10 +179,12 @@ ecm_set_disabled_deprecation_versions(
         KF ${KF_MIN_VERSION}
 )
 
-ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
+ecm_find_qmlmodule(org.kde.kitemmodels REQUIRED)
+ecm_find_qmlmodule(org.kde.notifcation REQUIRED)
+ecm_find_qmlmodule(org.kde.kquickcontrolsaddons REQUIRED)
 
 if (NOT ANDROID)
-    ecm_find_qmlmodule(org.kde.sonnet 1.0)
+    ecm_find_qmlmodule(org.kde.sonnet REQUIRED)
 endif()
 
 add_definitions(-DQT_NO_FOREACH -DQT_NO_KEYWORDS)
