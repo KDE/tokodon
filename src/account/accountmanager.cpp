@@ -283,9 +283,8 @@ void AccountManager::loadFromSettings()
         if (id.contains('@'_L1)) {
             const auto accountConfig = new AccountConfig{id};
 
-            Q_ASSERT(!accountConfig->clientId().isEmpty());
-            Q_ASSERT(!accountConfig->instanceUri().isEmpty());
             if (accountConfig->clientId().isEmpty() || accountConfig->instanceUri().isEmpty()) {
+                config->deleteGroup(id);
                 accountConfig->deleteLater();
                 continue;
             }
