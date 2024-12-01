@@ -24,32 +24,8 @@ ColumnLayout {
 
         QQC2.Label {
             text: i18nc("Posted on 26 March 2024 Tuesday 20:43:18 +03", "Posted on %1", root.absoluteTime)
-            color: Kirigami.Theme.disabledTextColor
-            wrapMode: Text.WordWrap
-
-            Layout.fillWidth: true
-        }
-
-        QQC2.Label {
-            visible: root.application && root.application.name
-            text: root.application && root.application.name ? i18nc("%1 is the Mastodon application name used for posting", ", via %1", root.application.name) : ''
             elide: Text.ElideRight
-            Layout.fillWidth: true
             color: Kirigami.Theme.disabledTextColor
-
-            HoverHandler {
-                cursorShape: hasWebsite ? Qt.PointingHandCursor : Qt.ArrowCursor
-                onHoveredChanged: if (hovered) {
-                    applicationWindow().hoverLinkIndicator.text = root.application.website;
-                } else {
-                    applicationWindow().hoverLinkIndicator.text = "";
-                }
-            }
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: hasWebsite ? Qt.PointingHandCursor : Qt.ArrowCursor
-                onClicked: Qt.openUrlExternally(root.application.website)
-            }
         }
     }
 
@@ -151,6 +127,16 @@ ColumnLayout {
                     count: root.reblogsCount
                 });
             }
+        }
+
+        Kirigami.Chip {
+            icon.name: "applications-other-symbolic"
+            visible: root.application && root.application.name
+            text: root.application && root.application.name ? root.application.name : ''
+            closable: false
+            checkable: false
+
+            onClicked: Qt.openUrlExternally(root.application.website)
         }
     }
 }
