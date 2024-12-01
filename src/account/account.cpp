@@ -261,7 +261,9 @@ QWebSocket *Account::streamingSocket(const QString &stream)
         NetworkController::instance().logError(url.toString(), socket->errorString());
     });
 
-    socket->open(url);
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::UserAgentHeader, QStringLiteral("Mozilla/5.0"));
+    socket->open(request);
 
     m_websockets[stream] = socket;
     return socket;
