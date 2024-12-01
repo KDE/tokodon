@@ -538,6 +538,7 @@ public:
      * @brief Type of streaming event.
      */
     enum StreamingEventType {
+        InvalidEvent, /**< The server returned an invalid event type. */
         UpdateEvent, /**< A new Status has appeared. */
         DeleteEvent, /**< A status has been deleted. */
         NotificationEvent, /**< A new notification has appeared. */
