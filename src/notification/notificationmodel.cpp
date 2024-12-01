@@ -15,7 +15,7 @@ NotificationModel::NotificationModel(QObject *parent)
     m_manager = &AccountManager::instance();
     m_account = m_manager->selectedAccount();
 
-    connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::accountSelected, this, [this](AbstractAccount *account) {
         if (m_account != account) {
             m_account = account;
 
@@ -87,7 +87,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
         uri,
         true,
         this,
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
@@ -119,7 +119,7 @@ void NotificationModel::fillTimeline(const QUrl &next)
 
             setLoading(false);
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });

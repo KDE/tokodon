@@ -72,7 +72,7 @@ void TrendingNewsModel::fill()
             if (!links.isEmpty()) {
                 QList<Link> fetchedLinks;
 
-                std::transform(links.cbegin(), links.cend(), std::back_inserter(fetchedLinks), [=](const QVariant &value) -> auto {
+                std::transform(links.cbegin(), links.cend(), std::back_inserter(fetchedLinks), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_links.size(), m_links.size() + fetchedLinks.size() - 1);
@@ -82,7 +82,7 @@ void TrendingNewsModel::fill()
 
             setLoading(false);
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });

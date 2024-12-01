@@ -81,7 +81,7 @@ void AnnouncementModel::fillTimeline()
             if (!announcements.isEmpty()) {
                 QList<Announcement> fetchedAnnouncements;
 
-                std::transform(announcements.cbegin(), announcements.cend(), std::back_inserter(fetchedAnnouncements), [=](const QVariant &value) -> auto {
+                std::transform(announcements.cbegin(), announcements.cend(), std::back_inserter(fetchedAnnouncements), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_announcements.size(), m_announcements.size() + fetchedAnnouncements.size() - 1);

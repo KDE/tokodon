@@ -288,7 +288,7 @@ void AccountsToolModel::executeAdminAction(const int row, AdminAccountAction adm
     auto account = AccountManager::instance().selectedAccount();
     QUrl url = account->apiUrl(accountApiUrl);
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this, adminAccountAction, identity, type, account, row](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 

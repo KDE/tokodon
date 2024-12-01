@@ -27,7 +27,7 @@ NetworkController::NetworkController(QObject *parent)
     // BUG: 492383 is an example of this
     setApplicationProxy(false);
 
-    connect(&AccountManager::instance(), &AccountManager::accountsReady, this, [=] {
+    connect(&AccountManager::instance(), &AccountManager::accountsReady, this, [this] {
         m_accountsReady = true;
         openLink();
 
@@ -217,7 +217,7 @@ void NetworkController::openLink()
         return;
     }
 
-    account->requestRemoteObject(m_requestedLink, account, [=](QNetworkReply *reply) {
+    account->requestRemoteObject(m_requestedLink, account, [this](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
 
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();

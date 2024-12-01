@@ -64,7 +64,7 @@ QNetworkReply *AttachmentEditorModel::append(const QString &filename)
     QString localFilename = filename;
     localFilename.remove(QStringLiteral("file://"));
 
-    return m_account->upload(QUrl::fromLocalFile(localFilename), [=](QNetworkReply *reply) {
+    return m_account->upload(QUrl::fromLocalFile(localFilename), [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
 
         if (!doc.isObject()) {

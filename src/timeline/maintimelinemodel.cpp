@@ -262,7 +262,7 @@ void MainTimelineModel::fetchLastReadId()
                 fillTimeline({});
             }
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             Q_UNUSED(reply);
 
             // If you failed, give up

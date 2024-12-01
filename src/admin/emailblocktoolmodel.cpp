@@ -76,7 +76,7 @@ void EmailBlockToolModel::newEmailBlock(const QString &domain)
 
     const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks"));
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         const auto jsonObj = doc.object();
         const auto newEmailInfo = EmailInfo::fromSourceData(jsonObj);
@@ -93,13 +93,16 @@ void EmailBlockToolModel::deleteEmailBlock(const int row)
     const auto &emailinfo = m_emailinfo[row];
     const auto emailBlockId = emailinfo.id();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks/%1").arg(emailBlockId)), true, this, [=](QNetworkReply *reply) {
-        Q_UNUSED(reply);
-        beginRemoveRows({}, row, row);
-        m_emailinfo.removeAt(row);
-        endRemoveRows();
-        Q_EMIT dataChanged(index(row, 0), index(row, 0));
-    });
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/email_domain_blocks/%1").arg(emailBlockId)),
+                            true,
+                            this,
+                            [this, row](QNetworkReply *reply) {
+                                Q_UNUSED(reply);
+                                beginRemoveRows({}, row, row);
+                                m_emailinfo.removeAt(row);
+                                endRemoveRows();
+                                Q_EMIT dataChanged(index(row, 0), index(row, 0));
+                            });
 }
 
 void EmailBlockToolModel::filltimeline()

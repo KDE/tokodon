@@ -186,7 +186,7 @@ void ReportToolModel::executeReportAction(const int row, ReportAction reportActi
     auto account = AccountManager::instance().selectedAccount();
     QUrl url = account->apiUrl(reportApiUrl);
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this, account, reportAction, report, row](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 

@@ -93,7 +93,7 @@ void ThreadModel::fillTimeline(const QString &fromId, bool backwards)
         Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
     };
 
-    auto onFetchContext = [=](QNetworkReply *reply) {
+    auto onFetchContext = [this, thread](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
         const auto obj = doc.object();
@@ -137,7 +137,7 @@ void ThreadModel::fillTimeline(const QString &fromId, bool backwards)
         Q_EMIT nameChanged(); // update title
     };
 
-    auto onFetchStatus = [=](QNetworkReply *reply) {
+    auto onFetchStatus = [this, thread, contextUrl, onFetchContext, handleError](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
         const auto obj = doc.object();

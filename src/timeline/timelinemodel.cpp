@@ -30,7 +30,7 @@ void TimelineModel::init()
         fillTimeline();
     });
 
-    connect(m_manager, &AccountManager::accountSelected, this, [=](AbstractAccount *account) {
+    connect(m_manager, &AccountManager::accountSelected, this, [this](AbstractAccount *account) {
         if (m_account == account || account == nullptr) {
             return;
         }

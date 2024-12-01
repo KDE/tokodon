@@ -99,7 +99,7 @@ void ConversationModel::fetchConversation(AbstractAccount *account)
             setLoading(false);
             endResetModel();
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });

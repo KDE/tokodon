@@ -102,7 +102,7 @@ void FederationToolModel::removeDomainBlock(const int row)
     const auto &federationInfo = m_federations[row];
     const auto federationId = federationInfo.id();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks/%1").arg(federationId)), true, this, [=](QNetworkReply *reply) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks/%1").arg(federationId)), true, this, [this, row](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
         beginRemoveRows({}, row, row);
         m_federations.removeAt(row);
@@ -117,7 +117,7 @@ void FederationToolModel::removeAllowedDomain(const int row)
     const auto &federationInfo = m_federations[row];
     const auto federationId = federationInfo.id();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/domain_allows/%1").arg(federationId)), true, this, [=](QNetworkReply *reply) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/domain_allows/%1").arg(federationId)), true, this, [this, row](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
         beginRemoveRows({}, row, row);
         m_federations.removeAt(row);
@@ -149,25 +149,26 @@ void FederationToolModel::updateDomainBlock(const int row,
     auto &federationInfo = m_federations[row];
     const auto federationId = federationInfo.id();
 
-    account->put(account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks/%1").arg(federationId)),
-                 doc,
-                 true,
-                 this,
-                 [=, &federationInfo](QNetworkReply *reply) {
-                     const auto doc = QJsonDocument::fromJson(reply->readAll());
-                     const auto jsonObj = doc.object();
+    account->put(
+        account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks/%1").arg(federationId)),
+        doc,
+        true,
+        this,
+        [this, &federationInfo, account, publicComment, privateComment, rejectMedia, rejectReports, obfuscateReport, severity, row](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            const auto jsonObj = doc.object();
 
-                     if (!jsonObj.value("error"_L1).isUndefined()) {
-                         account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
-                     }
-                     federationInfo.setPublicComment(publicComment);
-                     federationInfo.setPrivateComment(privateComment);
-                     federationInfo.setRejectMedia(rejectMedia);
-                     federationInfo.setRejectReports(rejectReports);
-                     federationInfo.setObfuscate(obfuscateReport);
-                     federationInfo.setSeverity(severity);
-                     Q_EMIT dataChanged(index(row, 0), index(row, 0));
-                 });
+            if (!jsonObj.value("error"_L1).isUndefined()) {
+                account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
+            }
+            federationInfo.setPublicComment(publicComment);
+            federationInfo.setPrivateComment(privateComment);
+            federationInfo.setRejectMedia(rejectMedia);
+            federationInfo.setRejectReports(rejectReports);
+            federationInfo.setObfuscate(obfuscateReport);
+            federationInfo.setSeverity(severity);
+            Q_EMIT dataChanged(index(row, 0), index(row, 0));
+        });
 }
 
 void FederationToolModel::newDomainBlock(const QString &domain,
@@ -194,7 +195,7 @@ void FederationToolModel::newDomainBlock(const QString &domain,
 
     const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/domain_blocks"));
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
         auto newFederation = FederationInfo::fromSourceData(jsonObj);
@@ -217,7 +218,7 @@ void FederationToolModel::newDomainAllow(const QString &domain)
 
     const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/domain_allows"));
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
         auto newFederation = FederationInfo::fromSourceData(jsonObj);

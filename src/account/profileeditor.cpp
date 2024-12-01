@@ -326,7 +326,7 @@ void ProfileEditorBackend::save()
         multiPart->append(headerPart);
     }
 
-    m_account->patch(url, multiPart, true, this, [=](QNetworkReply *reply) {
+    m_account->patch(url, multiPart, true, this, [this, multiPart](QNetworkReply *reply) {
         multiPart->setParent(reply);
         Q_EMIT sendNotification(i18n("Account details saved"));
         fetchAccountInfo();

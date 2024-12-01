@@ -496,7 +496,7 @@ void SocialGraphModel::fillTimeline()
 
             setLoading(false);
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });

@@ -89,7 +89,7 @@ void RulesModel::fill()
             if (!rules.isEmpty()) {
                 QList<Rule> fetchedRules;
 
-                std::transform(rules.cbegin(), rules.cend(), std::back_inserter(fetchedRules), [=](const QVariant &value) -> auto {
+                std::transform(rules.cbegin(), rules.cend(), std::back_inserter(fetchedRules), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_rules.size(), m_rules.size() + fetchedRules.size() - 1);
@@ -106,7 +106,7 @@ void RulesModel::fill()
 
             setLoading(false);
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             Q_UNUSED(reply)
 
             setLoading(false);

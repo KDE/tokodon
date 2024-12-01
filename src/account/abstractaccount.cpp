@@ -155,7 +155,7 @@ void AbstractAccount::registerApplication(const QString &appName, const QString 
         Qt::SingleShotConnection);
 #endif
 
-    post(regUrl, doc, false, this, [=](QNetworkReply *reply) {
+    post(regUrl, doc, false, this, [this](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -187,7 +187,7 @@ void AbstractAccount::registerAccount(const QString &username,
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("client_credentials"));
     q.addQueryItem(QStringLiteral("scope"), QStringLiteral("write"));
 
-    post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
+    post(tokenUrl, q, false, this, [this, username, email, password, agreement, locale, reason](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
@@ -208,7 +208,7 @@ void AbstractAccount::registerAccount(const QString &username,
             formdata,
             true,
             this,
-            [=](QNetworkReply *reply) {
+            [this, username](QNetworkReply *reply) {
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 
@@ -217,7 +217,7 @@ void AbstractAccount::registerAccount(const QString &username,
                     setAccessToken(doc["access_token"_L1].toString());
                 }
             },
-            [=](QNetworkReply *reply) {
+            [this](QNetworkReply *reply) {
                 Q_EMIT registrationError(QString::fromUtf8(reply->readAll()));
             });
     });
@@ -349,7 +349,7 @@ void AbstractAccount::setToken(const QString &authcode)
     q.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("authorization_code"));
     q.addQueryItem(QStringLiteral("code"), authcode);
 
-    post(tokenUrl, q, false, this, [=](QNetworkReply *reply) {
+    post(tokenUrl, q, false, this, [this](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
 
@@ -362,7 +362,7 @@ void AbstractAccount::mutatePost(const QString &id, const QString &verb, bool de
     const QUrl mutation_url = apiUrl(QStringLiteral("/api/v1/statuses/%1/%2").arg(id, verb));
     const QJsonDocument doc;
 
-    post(mutation_url, doc, true, this, [=](QNetworkReply *reply) {
+    post(mutation_url, doc, true, this, [this, deliver_home](QNetworkReply *reply) {
         const auto data = reply->readAll();
         const auto doc = QJsonDocument::fromJson(data);
 
@@ -424,7 +424,7 @@ void AbstractAccount::fetchInstanceMetadata()
         apiUrl(QStringLiteral("/api/v2/instance")),
         false,
         this,
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             const auto data = reply->readAll();
             const auto doc = QJsonDocument::fromJson(data);
 
@@ -470,10 +470,10 @@ void AbstractAccount::fetchInstanceMetadata()
 
             Q_EMIT fetchedInstanceMetadata();
         },
-        [=](QNetworkReply *) {
+        [this](QNetworkReply *) {
             // Fall back to v1 instance information
             // TODO: a lot of this can be merged with v2 handling
-            get(apiUrl(QStringLiteral("/api/v1/instance")), false, this, [=](QNetworkReply *reply) {
+            get(apiUrl(QStringLiteral("/api/v1/instance")), false, this, [this](QNetworkReply *reply) {
                 const auto data = reply->readAll();
                 const auto doc = QJsonDocument::fromJson(data);
 
@@ -581,7 +581,7 @@ void AbstractAccount::executeAction(Identity *identity, AccountAction accountAct
     const QString accountApiUrl = QStringLiteral("/api/v1/accounts/%1%2").arg(accountId, apiCall);
     const QJsonDocument doc(extraArguments);
 
-    post(apiUrl(accountApiUrl), doc, true, this, [=](QNetworkReply *reply) {
+    post(apiUrl(accountApiUrl), doc, true, this, [this, accountAction, identity](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
 
@@ -692,7 +692,7 @@ void AbstractAccount::addNote(Identity *identity, const QString &note)
 
 void AbstractAccount::mutateRemotePost(const QString &url, const QString &verb)
 {
-    requestRemoteObject(QUrl(url), this, [=](QNetworkReply *reply) {
+    requestRemoteObject(QUrl(url), this, [this, verb](QNetworkReply *reply) {
         const auto searchResult = QJsonDocument::fromJson(reply->readAll()).object();
         const auto statuses = searchResult[QStringLiteral("statuses")].toArray();
         const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
@@ -759,7 +759,7 @@ void AbstractAccount::fetchCustomEmojis()
 {
     m_customEmojis.clear();
 
-    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), true, this, [=](QNetworkReply *reply) {
+    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), true, this, [this](QNetworkReply *reply) {
         if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
             return;
 

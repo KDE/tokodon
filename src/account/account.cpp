@@ -243,7 +243,7 @@ QWebSocket *Account::streamingSocket(const QString &stream)
 
     const auto url = streamingUrl(stream);
 
-    connect(socket, &QWebSocket::textMessageReceived, this, [=](const QString &message) {
+    connect(socket, &QWebSocket::textMessageReceived, this, [this](const QString &message) {
         const auto env = QJsonDocument::fromJson(message.toLocal8Bit());
         if (env.isObject() && env.object().contains("event"_L1)) {
             const auto event = stringToStreamingEventType[env.object()["event"_L1].toString()];
@@ -278,7 +278,7 @@ void Account::validateToken()
         verify_credentials,
         true,
         this,
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             if (!reply->isFinished()) {
                 return;
             }
@@ -305,7 +305,7 @@ void Account::validateToken()
                 apiUrl(QStringLiteral("/api/v1/push/subscription")),
                 true,
                 this,
-                [=](QNetworkReply *reply) {
+                [this](QNetworkReply *reply) {
                     m_hasPushSubscription = true;
 
                     const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -313,7 +313,7 @@ void Account::validateToken()
                     if (!NetworkController::instance().endpoint.isEmpty() && doc["endpoint"_L1] != NetworkController::instance().endpoint) {
                         qWarning(TOKODON_LOG) << "KUnifiedPush endpoint has changed to" << NetworkController::instance().endpoint << ", resubscribing!";
 
-                        deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [=](QNetworkReply *reply) {
+                        deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [this](QNetworkReply *reply) {
                             Q_UNUSED(reply)
                             m_hasPushSubscription = false;
                             subscribePushNotifications();
@@ -322,14 +322,14 @@ void Account::validateToken()
                         updatePushNotifications();
                     }
                 },
-                [=](QNetworkReply *reply) {
+                [this](QNetworkReply *reply) {
                     Q_UNUSED(reply);
                     m_hasPushSubscription = false;
                     updatePushNotifications();
                 });
 #endif
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
 
             Q_EMIT authenticated(false, doc.isEmpty() ? reply->errorString() : doc["error"_L1].toString());
@@ -456,7 +456,7 @@ void Account::unsubscribePushNotifications()
 {
 #ifdef HAVE_KUNIFIEDPUSH
     Q_ASSERT(m_hasPushSubscription);
-    deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [=](QNetworkReply *reply) {
+    deleteResource(apiUrl(QStringLiteral("/api/v1/push/subscription")), true, this, [this](QNetworkReply *reply) {
         m_hasPushSubscription = false;
         qCDebug(TOKODON_HTTP) << "Unsubscribed from push notifications:" << reply->readAll();
     });
@@ -490,7 +490,7 @@ void Account::subscribePushNotifications()
         formdata,
         true,
         this,
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             m_hasPushSubscription = true;
             qCDebug(TOKODON_HTTP) << "Subscribed to push notifications:" << reply->readAll();
         },

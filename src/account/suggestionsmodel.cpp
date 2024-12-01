@@ -68,7 +68,7 @@ void SuggestionsModel::fill()
             if (!suggestions.isEmpty()) {
                 QList<Suggestion> fetchedSuggestions;
 
-                std::transform(suggestions.cbegin(), suggestions.cend(), std::back_inserter(fetchedSuggestions), [=](const QVariant &value) -> auto {
+                std::transform(suggestions.cbegin(), suggestions.cend(), std::back_inserter(fetchedSuggestions), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_links.size(), m_links.size() + fetchedSuggestions.size() - 1);
@@ -78,7 +78,7 @@ void SuggestionsModel::fill()
 
             setLoading(false);
         },
-        [=](QNetworkReply *reply) {
+        [this](QNetworkReply *reply) {
             setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });

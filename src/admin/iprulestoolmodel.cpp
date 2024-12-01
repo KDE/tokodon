@@ -87,7 +87,7 @@ void IpRulesToolModel::newIpBlock(const QString &ip, const int expiresIn, const 
 
     const QUrl url = account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks"));
 
-    account->post(url, doc, true, this, [=](QNetworkReply *reply) {
+    account->post(url, doc, true, this, [this](QNetworkReply *reply) {
         auto doc = QJsonDocument::fromJson(reply->readAll());
         auto jsonObj = doc.object();
         auto newIpInfo = IpInfo::fromSourceData(jsonObj);
@@ -113,19 +113,23 @@ void IpRulesToolModel::updateIpBlock(const int row, const QString &ip, const QSt
     auto &ipInfo = m_ipinfo[row];
     const auto ipBlockId = ipInfo.id();
 
-    account->put(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), doc, true, this, [=, &ipInfo](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        const auto jsonObj = doc.object();
+    account->put(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)),
+                 doc,
+                 true,
+                 this,
+                 [this, &ipInfo, account, ip, severity, comment, expiresAt, row](QNetworkReply *reply) {
+                     const auto doc = QJsonDocument::fromJson(reply->readAll());
+                     const auto jsonObj = doc.object();
 
-        if (!jsonObj.value("error"_L1).isUndefined()) {
-            account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
-        }
-        ipInfo.setIp(ip);
-        ipInfo.setSeverity(severity);
-        ipInfo.setComment(comment);
-        ipInfo.setExpiredAt(expiresAt);
-        Q_EMIT dataChanged(index(row, 0), index(row, 0));
-    });
+                     if (!jsonObj.value("error"_L1).isUndefined()) {
+                         account->errorOccured(i18n("Error occurred when making a PUT request to update the domain block."));
+                     }
+                     ipInfo.setIp(ip);
+                     ipInfo.setSeverity(severity);
+                     ipInfo.setComment(comment);
+                     ipInfo.setExpiredAt(expiresAt);
+                     Q_EMIT dataChanged(index(row, 0), index(row, 0));
+                 });
 }
 
 void IpRulesToolModel::deleteIpBlock(const int row)
@@ -134,7 +138,7 @@ void IpRulesToolModel::deleteIpBlock(const int row)
     const auto &ipInfo = m_ipinfo[row];
     const auto ipBlockId = ipInfo.id();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), true, this, [=](QNetworkReply *reply) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/ip_blocks/%1").arg(ipBlockId)), true, this, [this, row](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
         beginRemoveRows({}, row, row);
         m_ipinfo.removeAt(row);

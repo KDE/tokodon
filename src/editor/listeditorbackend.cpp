@@ -37,7 +37,7 @@ void ListEditorBackend::setListId(const QString &listId)
 
     auto account = AccountManager::instance().selectedAccount();
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [=](QNetworkReply *reply) {
+    account->get(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [this](QNetworkReply *reply) {
         const auto document = QJsonDocument::fromJson(reply->readAll());
 
         m_title = document["title"_L1].toString();
@@ -83,11 +83,11 @@ void ListEditorBackend::submit()
 
     // If the listId is empty, then create a new list
     if (m_listId.isEmpty()) {
-        account->post(account->apiUrl(QStringLiteral("/api/v1/lists")), formdata, true, this, [=](QNetworkReply *) {
+        account->post(account->apiUrl(QStringLiteral("/api/v1/lists")), formdata, true, this, [this](QNetworkReply *) {
             Q_EMIT done();
         });
     } else {
-        account->put(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), formdata, true, this, [=](QNetworkReply *) {
+        account->put(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), formdata, true, this, [this](QNetworkReply *) {
             Q_EMIT done();
         });
     }
@@ -99,7 +99,7 @@ void ListEditorBackend::deleteList()
 
     auto account = AccountManager::instance().selectedAccount();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [=](QNetworkReply *) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [this](QNetworkReply *) {
         Q_EMIT done();
     });
 }
