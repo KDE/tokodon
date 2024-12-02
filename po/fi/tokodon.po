@@ -1,22 +1,22 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 02:30+0000\n"
-"PO-Revision-Date: 2024-07-09 10:04+0300\n"
-"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
+"POT-Creation-Date: 2024-12-02 03:25+0000\n"
+"PO-Revision-Date: 2024-10-17 10:44+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: account/abstractaccount.cpp:585
 #, kde-format
@@ -29,10 +29,9 @@ msgid "Could not unfollow account"
 msgstr "Tilin seuraamista ei voitu perua"
 
 #: account/abstractaccount.cpp:587
-#, fuzzy, kde-format
-#| msgid "Could not reject account"
+#, kde-format
 msgid "Could not remove account as your follower"
-msgstr "Tiliä ei voitu hylätä"
+msgstr "Tiliä ei voitu poistaa seuraajistasi"
 
 #: account/abstractaccount.cpp:588
 #, kde-format
@@ -174,9 +173,7 @@ msgid "Featured Users"
 msgstr "Esitellyt käyttäjät"
 
 #: account/socialgraphmodel.cpp:40
-#, fuzzy, kde-format
-#| msgid "%1 favorite"
-#| msgid_plural "%1 favorites"
+#, kde-format
 msgctxt "@title"
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -192,12 +189,10 @@ msgstr[0] "%1 tehostus"
 msgstr[1] "%1 tehostusta"
 
 #: account/socialgraphmodel.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Followers"
+#, kde-format
 msgctxt "@title"
 msgid "Familiar Followers"
-msgstr "Seuraajat"
+msgstr "Tutut seuraajat"
 
 #: account/socialgraphmodel.cpp:46
 #, kde-format
@@ -327,8 +322,7 @@ msgid "Could not take action against the account"
 msgstr "Tilinvastaisia toimia ei voitu tehdä"
 
 #: admin/accounttoolmodel.cpp:300
-#, fuzzy, kde-format
-#| msgid "Could not enable  the disabled account"
+#, kde-format
 msgid "Could not enable the disabled account"
 msgstr "Käytöstä poistettua tiliä ei voitu ottaa käyttöön"
 
@@ -390,10 +384,9 @@ msgid "No Limits Imposed"
 msgstr "Ei asetettuja rajoituksia"
 
 #: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
-#, fuzzy, kde-format
-#| msgid "Error occured when making a PUT request to update the domain block."
+#, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
-msgstr "Sattui virhe tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi."
+msgstr "Tehtäessä PUT-pyyntöä verkkoaluelohkon päivittämiseksi tapahtui virhe."
 
 #: admin/reporttoolmodel.cpp:195
 #, kde-format
@@ -446,10 +439,9 @@ msgid "Follows you"
 msgstr "Seuraa sinua"
 
 #: content/ui/AccountInfo.qml:315
-#, fuzzy, kde-format
-#| msgid "Boost"
+#, kde-format
 msgid "Bot"
-msgstr "Tehosta"
+msgstr "Botti"
 
 #: content/ui/AccountInfo.qml:418
 #, kde-format
@@ -555,7 +547,7 @@ msgstr "Esitellyt käyttäjät"
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Avaa selaimeen"
 
 #: content/ui/AccountInfo.qml:579
 #, kde-format
@@ -576,11 +568,10 @@ msgid "Joined"
 msgstr "Liitytty"
 
 #: content/ui/AccountInfo.qml:740
-#, fuzzy, kde-format
-#| msgid "Private Comment"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
-msgstr "Yksityinen kommentti"
+msgstr "Yksityinen muistiinpano:"
 
 #: content/ui/AccountInfo.qml:748
 #, kde-format
@@ -591,7 +582,7 @@ msgstr "Tallennettu"
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
-msgstr ""
+msgstr "Kirjoita jotakin tästä käyttäjästä: tämä ei näy kuin sinulle."
 
 #: content/ui/AccountInfo.qml:823
 #, fuzzy, kde-format
@@ -737,7 +728,7 @@ msgstr "Nähdäksesi kaikki vastaukset avaa viesti alkuperäiseltä palvelimelta
 #, kde-format
 msgctxt "@action:button 'Browser' being a web browser"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Avaa selaimeen"
 
 #: content/ui/Components/TimelineView.qml:150
 #, kde-format
@@ -916,15 +907,12 @@ msgstr[0] "%1 henkilö puhuu"
 msgstr[1] "%1 henkeä puhuu"
 
 #: content/ui/FollowDelegate.qml:68
-#, fuzzy, kde-format
-#| msgid "%1 mentioned you"
+#, kde-format
 msgid "%1 signed up"
-msgstr "%1 mainitsi sinut"
+msgstr "%1 kirjautui"
 
 #: content/ui/FollowingPage.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Seuratut"
@@ -936,15 +924,13 @@ msgid "Filters"
 msgstr "Suodattimet"
 
 #: content/ui/FollowingPage.qml:48
-#, fuzzy, kde-format
-#| msgid "Show Boosts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Boosts"
-msgstr "Piilota tehostukset"
+msgstr "Näytä tehostukset"
 
 #: content/ui/FollowingPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Show Replies"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Näytä vastaukset"
@@ -952,7 +938,7 @@ msgstr "Näytä vastaukset"
 #: content/ui/FollowingPage.qml:190
 #, kde-format
 msgid "No User Selected"
-msgstr ""
+msgstr "Käyttäjiä ei valittu"
 
 #: content/ui/FollowingPage.qml:191
 #, kde-format
@@ -960,6 +946,8 @@ msgid ""
 "With the Following view, easily check on each user you're following and only "
 "their posts - sorted by recent activity."
 msgstr ""
+"Seuratut-näkymästä voi helposti tarkistaa julkaisut kaikilta seuraamiltasi "
+"käyttäjiltä viimeaikaisen toiminnan mukaan lajiteltuna."
 
 #: content/ui/InitialSetup/SetupNotifications.qml:19
 #, kde-format
@@ -1318,33 +1306,28 @@ msgstr "Palvelin on sulkenut rekisteröitymisen: %1"
 #: content/ui/LoginFlow/ServersPage.qml:97
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Kirjoita hakulause tai verkko-osoite…"
 
 #: content/ui/LoginFlow/ServersPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "'Custom' is a category of emoji"
-#| msgid "Custom"
+#, kde-format
 msgid "Custom Server"
-msgstr "Mukautettu"
+msgstr "Mukautettu palvelin"
 
 #: content/ui/LoginFlow/ServersPage.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "Public Servers"
-msgstr "Valitse palvelin"
+msgstr "Julkiset palvelimet"
 
+# *** TARKISTA: ID:t ”Custom Server”, ”Public Servers” ja tämä liittynevät yhteen vastausvalintoina, mutta mikä on kysymys? Luultavasti muotoja pitäisi muuttaa sen mukaan.
 #: content/ui/LoginFlow/ServersPage.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgid "No Public Servers"
-msgstr "Valitse palvelin"
+msgstr "Ei julkisia palvelimia"
 
 #: content/ui/LoginFlow/ServersPage.qml:171
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Kirjoita itse hakukenttään palvelimen verkko-osoite."
 
 #: content/ui/LoginFlow/WebViewAuthorization.qml:22
 #, kde-format
@@ -1353,8 +1336,7 @@ msgid "Open Externally"
 msgstr "Avaa ulkopuolelta"
 
 #: content/ui/LoginFlow/WelcomePage.qml:49
-#, fuzzy, kde-format
-#| msgid "Tokodon"
+#, kde-format
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "Tokodon"
@@ -1366,25 +1348,23 @@ msgid ""
 "Browse the Fediverse and connect with people on Mastodon (and other "
 "compatible software)."
 msgstr ""
+"Selaa fediversumia ja ota yhteyttä ihmisiin Mastodonissa (ja muissa "
+"yhteensopivissa ohjelmissa)."
 
 #: content/ui/LoginFlow/WelcomePage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pick a Server"
+#, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr "Valitse palvelin"
 
 #: content/ui/LoginFlow/WelcomePage.qml:84
-#, fuzzy, kde-format
-#| msgid "Edit Account"
+#, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
-msgstr "Muokkaa tiliä"
+msgstr "Käytä olemassa olevaa tiliä"
 
 #: content/ui/LoginFlow/WelcomePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Asetukset"
@@ -1393,13 +1373,13 @@ msgstr "Asetukset"
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
-msgstr ""
+msgstr "Yhteensopiva"
 
 #: content/ui/LoginFlow/WelcomePage.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
-msgstr ""
+msgstr "Yhteensopiva Mastodonin kanssa"
 
 #: content/ui/Main.qml:128
 #, kde-format
@@ -1443,10 +1423,9 @@ msgid "Write a new post"
 msgstr "Kirjoita uusi julkaisu"
 
 #: content/ui/Main.qml:309
-#, fuzzy, kde-format
-#| msgid "Reply to this post"
+#, kde-format
 msgid "Reply to post"
-msgstr "Vastaa tähän julkaisuun"
+msgstr "Vastaa julkaisuun"
 
 #: content/ui/Main.qml:392
 #, kde-format
@@ -1454,7 +1433,8 @@ msgid "Home"
 msgstr "Koti"
 
 #: content/ui/Main.qml:399 content/ui/Main.qml:441 content/ui/Main.qml:456
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Posts"
 msgid "No Posts"
 msgstr "Ei julkaisuja"
 
@@ -1521,9 +1501,7 @@ msgid ""
 msgstr ""
 
 #: content/ui/Main.qml:519
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Following"
+#, kde-format
 msgid "Following"
 msgstr "Seuratut"
 
@@ -2207,10 +2185,7 @@ msgid "Freeze"
 msgstr "Jäädytä"
 
 #: content/ui/ModerationTools/MainAccountToolPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info: Force all this user's media attachments to be flagged as sensitive."
-#| msgid "Force-Senstive"
+#, kde-format
 msgctxt ""
 "@info: Force all this user's media attachments to be flagged as sensitive."
 msgid "Force-Sensitive"
@@ -3151,56 +3126,50 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Lähetetty %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", %1 kautta"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Julkinen"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Luettelematon"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Yksityinen"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Suoraviesti"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Ei suosikkeja"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 suosikki"
 msgstr[1] "%1 suosikkia"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Ei tehosteita"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3367,15 +3336,12 @@ msgid "Favorite"
 msgstr "Suosikki"
 
 #: content/ui/PostDelegate/PostDelegate.qml:497
-#, fuzzy, kde-format
-#| msgid "Favourited"
+#, kde-format
 msgid "Favorited"
 msgstr "Merkitty suosikiksi"
 
 #: content/ui/PostDelegate/PostDelegate.qml:497
-#, fuzzy, kde-format
-#| msgctxt "Favorite a post"
-#| msgid "Favorite"
+#, kde-format
 msgid "Favorite"
 msgstr "Suosikki"
 
@@ -3401,24 +3367,19 @@ msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
 #: content/ui/PostDelegate/PostDelegate.qml:542
-#, fuzzy, kde-format
-#| msgid ""
-#| "This post has been marked private. Some posts may be missing because it's "
-#| "replies are marked as private by default."
+#, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
 "replies are marked as private by default."
 msgstr ""
 "Julkaisu on merkitty yksityiseksi. Joitakin julkaisuja voi puuttua, koska "
-"vastauksetkin on oletuksena merkitty yksityisiksi."
+"vastaukset on oletuksena merkitty yksityisiksi."
 
 #: content/ui/PostDelegate/PostInfoBar.qml:50
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
-msgstr "Lähetetty %1"
+msgstr "Muokattu %1"
 
 #: content/ui/PostDelegate/PostInfoBar.qml:103
 #, kde-format
@@ -3427,12 +3388,10 @@ msgid "More actions"
 msgstr "Lisää toimintoja"
 
 #: content/ui/PostDelegate/PostMenu.qml:36
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Thread"
+#, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
-msgstr "Säie"
+msgstr "Avaa säie"
 
 #: content/ui/PostDelegate/PostMenu.qml:63
 #, kde-format
@@ -3699,10 +3658,9 @@ msgid "Account"
 msgstr "Tilit"
 
 #: content/ui/Settings/AccountPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Require approval of follow requests"
+#, kde-format
 msgid "Require approval for new followers"
-msgstr "Vaadi seurauspyyntöjen hyväksymistä"
+msgstr "Vaadi seuraajien hyväksymistä"
 
 #: content/ui/Settings/AccountPage.qml:129
 #, kde-format
@@ -3711,38 +3669,42 @@ msgid ""
 "manually approve or deny new ones. You always have the option to force "
 "someone to unfollow you."
 msgstr ""
+"Oletuksena uudet seuraajat hyväksytään automaattisesti. Poista valinta, jos "
+"haluat itse hyväksyä tai torjua uudet. Sinulla säilyy aina mahdollisuus "
+"pakottaa joku olemaan seuraamatta sinua."
 
 #: content/ui/Settings/AccountPage.qml:138
 #, kde-format
 msgid "Is automated"
-msgstr ""
+msgstr "On automatisoitu"
 
 #: content/ui/Settings/AccountPage.qml:139
 #, kde-format
 msgid ""
 "Whether to publicly mark this account as doing any kind of automated actions."
 msgstr ""
+"Merkitäänkö julkisesti tämän tilin tekevän automaattisia toimenpiteitä."
 
 #: content/ui/Settings/AccountPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Feature This Profile"
+#, kde-format
 msgid "Feature profile and posts"
-msgstr "Esittele tässä profiilissa"
+msgstr "Esittele profiili ja julkaisut"
 
 #: content/ui/Settings/AccountPage.qml:149
 #, kde-format
 msgid "Your public profile and posts may be featured to other users."
 msgstr ""
+"Julkista profiiliasi ja julkaisujasi voidaan esitellä muille käyttäjille."
 
 #: content/ui/Settings/AccountPage.qml:158
 #, kde-format
 msgid "Publicly list follows and followers"
-msgstr ""
+msgstr "Luettele seuratut ja seuraajat julkisesti"
 
 #: content/ui/Settings/AccountPage.qml:159
 #, kde-format
 msgid "By default everyone you follow and everyone who follows you is public."
-msgstr ""
+msgstr "Oletuksena on julkista, keitä seuraat ja ketkä sinua seuraavat."
 
 #: content/ui/Settings/AccountPage.qml:168
 #, kde-format
@@ -3784,12 +3746,12 @@ msgstr "Yksityinen"
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
-msgstr ""
+msgstr "Avaa palvelin selaimeen"
 
 #: content/ui/Settings/AccountPage.qml:216
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
-msgstr ""
+msgstr "Joitakin asetuksia voi muuttaa vain palvelimen verkkosivuilta."
 
 #: content/ui/Settings/AppearancePage.qml:18
 #, kde-format
@@ -3805,7 +3767,7 @@ msgstr "Väriteema"
 #: content/ui/Settings/AppearancePage.qml:44
 #, kde-format
 msgid "Pop out the post composer by default"
-msgstr ""
+msgstr "Ponnauta kirjoitusikkuna automaattisesti"
 
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
@@ -4183,18 +4145,16 @@ msgid "Deny"
 msgstr "Kiellä"
 
 #: content/ui/SocialGraphPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Lakkaa seuraamasta"
 
 #: content/ui/SocialGraphPage.qml:83
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
-msgstr "Ei seuraajia"
+msgstr "Poista seuraaja"
 
 #: content/ui/SocialGraphPage.qml:90
 #, fuzzy, kde-format
@@ -4738,8 +4698,7 @@ msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
 #: timeline/maintimelinemodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Suosikit"
@@ -4775,46 +4734,41 @@ msgid "Trending News"
 msgstr "Nousussa olevat aihetunnisteet"
 
 #: tokodonapplication.cpp:14
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@title:group Title for the group of account related actions"
 msgid "Account"
-msgstr "Tilit"
+msgstr "Tili"
 
+# *** TARKISTA: Vain oletus, että kyse on käyttäjätilin vaihtamisesta
 #: tokodonapplication.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to '%1'"
-msgstr ""
+msgstr "Vaihda käyttäjäksi ”%1”"
 
 #: tokodonapplication.cpp:60 tokodonapplication.cpp:123
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure '%1'"
-msgstr "Asetukset"
+msgstr "Asetukset – ”%1”"
 
 #: tokodonapplication.cpp:67
-#, fuzzy, kde-format
-#| msgid "Add Account"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Account"
 msgstr "Lisää tili"
 
 #: tokodonapplication.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgctxt "@action:button"
 msgid "Write a New Post"
 msgstr "Kirjoita uusi julkaisu"
 
 #: tokodonapplication.cpp:115
-#, fuzzy, kde-format
-#| msgid "Switch user"
+#, kde-format
 msgctxt "@action:button"
 msgid "Switch '%1'"
-msgstr "Vaihda käyttäjää"
+msgstr "Vaihda käyttäjäksi ”%1”"
 
 #: utils/emojimodel.cpp:127
 #, kde-format
@@ -4933,7 +4887,7 @@ msgstr "%1 t"
 #: utils/texthandler.cpp:194
 #, kde-format
 msgid "Today"
-msgstr ""
+msgstr "Tänään"
 
 #: utils/texthandler.cpp:196
 #, kde-format
@@ -4960,6 +4914,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 vuosi sitten"
 msgstr[1] "%1 vuotta sitten"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", %1 kautta"
 
 #~ msgid "Mastodon client"
 #~ msgstr "Mastodon-asiakas"

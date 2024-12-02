@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 02:30+0000\n"
+"POT-Creation-Date: 2024-12-02 03:25+0000\n"
 "PO-Revision-Date: 2023-07-13 00:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -3320,46 +3320,39 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr ""
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, fuzzy, kde-format
-#| msgid "via %1"
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr "através de %1"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Público"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Não Listado"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privado"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Mensagem Directa"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, fuzzy, kde-format
 #| msgid "%1 Favorites"
 msgid "No favorites"
 msgstr "%1 Favoritos"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, fuzzy, kde-format
 #| msgid "%1 Favorites"
 msgid "%1 favorite"
@@ -3367,13 +3360,13 @@ msgid_plural "%1 favorites"
 msgstr[0] "%1 Favoritos"
 msgstr[1] "%1 Favoritos"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, fuzzy, kde-format
 #| msgid "No posts"
 msgid "No boosts"
 msgstr "Sem publicações"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, fuzzy, kde-format
 #| msgid "%1 Boosts"
 msgid "%1 boost"
@@ -5233,6 +5226,12 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "há 1 ano"
 msgstr[1] "há %1 anos"
+
+#, fuzzy
+#~| msgid "via %1"
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr "através de %1"
 
 #~ msgid "Mastodon client"
 #~ msgstr "Cliente de Mastodon"
