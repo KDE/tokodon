@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-29 06:56+0100\n"
+"POT-Creation-Date: 2024-12-02 00:41+0000\n"
+"PO-Revision-Date: 2024-12-01 07:44+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -147,6 +147,8 @@ msgstr "Shranjene podrobnosti računa"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Ta strežnik ni zagotovil nobenih pravil. Za več informacij obiščite njihovo "
+"spletno stran."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -395,7 +397,7 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Brez omejitev"
 
-#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#: admin/federationtoolmodel.cpp:162 admin/iprulestoolmodel.cpp:125
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
@@ -1341,10 +1343,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Ta strežnik je zaprt za registracijo: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Ta strežnik je zaprt za registracijo: %1"
+msgstr "Ta strežnik je zaprt za registracijo in ni navedel razloga."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -3177,44 +3178,38 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Objavljeno na %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", prek %1"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Javno"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Nenavedeno"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Zasebno"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Neposredno sporočilo"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Ni priljubljenih"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -3223,12 +3218,12 @@ msgstr[1] "%1 priljubljen"
 msgstr[2] "%1 priljubljena"
 msgstr[3] "%1 priljubljeni"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Ni izpostav"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3909,25 +3904,25 @@ msgstr "Uredi profil"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Dnevnik napak"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Počisti vse"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Kopiraj na odložišče"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Ni napak"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4278,7 +4273,7 @@ msgstr "Omrežni posrednik"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Dnevnik napak"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4768,69 +4763,69 @@ msgstr "7 dni"
 msgid "An unknown error occurred."
 msgstr "Prišlo je do neznane napake."
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Sprejemanje potisnih obvestil"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115 main.cpp:140
+#: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Prebrskaj Fediverse"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021–2024 skupnost KDE"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:119 main.cpp:124
+#: main.cpp:120 main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Vzdrževalec"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Matjaž Jeran,Martin Srebotnjak,Jure Repinc"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net,miles@filmsi.net,jlp@holodeck1.com"
 
-#: main.cpp:141
+#: main.cpp:142
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Podpira url shemi https in web+ap"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Deli vrstico besedila v samostojnem sestavljalniku."
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "The text to share."
 msgstr "Besedilo namenjeno za deljenje."
 
-#: main.cpp:147
+#: main.cpp:148
 #, kde-format
 msgid "Internal usage only."
 msgstr "Samo za notranjo rabo."
@@ -5085,6 +5080,10 @@ msgstr[0] "pred %1 leti"
 msgstr[1] "pred %1 letom"
 msgstr[2] "pred %1 letoma"
 msgstr[3] "pred %1 leti"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", prek %1"
 
 #~ msgctxt ""
 #~ "@action:intoolbar Short for content notice, also known as content warning"

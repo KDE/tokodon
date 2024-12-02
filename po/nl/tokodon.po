@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-29 10:47+0100\n"
+"POT-Creation-Date: 2024-12-02 00:41+0000\n"
+"PO-Revision-Date: 2024-12-01 13:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -148,6 +148,7 @@ msgstr "Accountdetails opgeslagen"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Deze server leverde geen regels. Kijk op hun website voor meer informatie."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -392,7 +393,7 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Geen beperkingen opgelegd"
 
-#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#: admin/federationtoolmodel.cpp:162 admin/iprulestoolmodel.cpp:125
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
@@ -1331,10 +1332,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Deze server is gesloten voor registratie: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Deze server is gesloten voor registratie: %1"
+msgstr "Deze server is gesloten voor registratie en leverde geen reden."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -3169,56 +3169,50 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Gepost op %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", via %1"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Publiek"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Direct bericht"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Geen favorieten"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 favoriet"
 msgstr[1] "%1 favorieten"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Geen oppeppers"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3900,25 +3894,25 @@ msgstr "Profiel bewerken"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Foutenlog"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Alles wissen"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Naar klembord kopiëren"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Geen fouten"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4276,7 +4270,7 @@ msgstr "Netwerkproxy"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Foutenlog"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4765,69 +4759,69 @@ msgstr "7 dagen"
 msgid "An unknown error occurred."
 msgstr "Er is een onbekende fout opgetreden."
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Push-meldingen ontvangen"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115 main.cpp:140
+#: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "In de Fediverse bladeren"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE gemeenschap"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:119 main.cpp:124
+#: main.cpp:120 main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Onderhouder"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Freek de Kruijf - 2021 t/m 2022"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: main.cpp:141
+#: main.cpp:142
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Ondersteunt https en web+ap: url-schema"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Een regel tekst delen in de alleenstaande opsteller."
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "The text to share."
 msgstr "De te delen tekst."
 
-#: main.cpp:147
+#: main.cpp:148
 #, kde-format
 msgid "Internal usage only."
 msgstr "Alleen voor intern gebruik."
@@ -5076,6 +5070,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 jaar geleden"
 msgstr[1] "%1 jaren geleden"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", via %1"
 
 #~ msgctxt ""
 #~ "@action:intoolbar Short for content notice, also known as content warning"

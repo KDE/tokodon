@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
+"POT-Creation-Date: 2024-12-02 00:41+0000\n"
 "PO-Revision-Date: 2024-11-24 13:53+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -392,7 +392,7 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Nessun limite imposto"
 
-#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#: admin/federationtoolmodel.cpp:162 admin/iprulestoolmodel.cpp:125
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
@@ -3183,56 +3183,50 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Pubblicato il %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", tramite %1"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Pubblico"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Non elencato"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Privato"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Messaggio diretto"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Nessun preferito"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 preferito"
 msgstr[1] "%1 preferiti"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Nessun boost"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -4791,70 +4785,70 @@ msgstr "7 giorni"
 msgid "An unknown error occurred."
 msgstr "Si è verificato un errore sconosciuto."
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Ricezione delle notifiche push"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115 main.cpp:140
+#: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Naviga il fediverso"
 
-#: main.cpp:117
+#: main.cpp:118
 #, fuzzy, kde-format
 #| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 Carl Schwan, 2021-2024 La comunità KDE"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:119 main.cpp:124
+#: main.cpp:120 main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Responsabile"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Vincenzo Reale"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "smart2128vr@gmail.com"
 
-#: main.cpp:141
+#: main.cpp:142
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Supporta lo scherma di URL https e web+ap"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Condividi una riga di testo nel compositore autonomo."
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "The text to share."
 msgstr "Il testo da condividere."
 
-#: main.cpp:147
+#: main.cpp:148
 #, kde-format
 msgid "Internal usage only."
 msgstr "Solo per uso interno."
@@ -5105,6 +5099,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 anno fa"
 msgstr[1] "%1 anni fa"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", tramite %1"
 
 #~ msgctxt ""
 #~ "@action:intoolbar Short for content notice, also known as content warning"

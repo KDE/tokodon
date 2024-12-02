@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-29 18:22+0100\n"
+"POT-Creation-Date: 2024-12-02 00:41+0000\n"
+"PO-Revision-Date: 2024-12-01 09:20+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -150,6 +150,8 @@ msgstr "Kontuaren xehetasunak gorde dira"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Zerbitzari honek ez du araurik hornitu. Mesedez, begiratu haien webgunea "
+"informazio gehiago lortzeko."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -397,7 +399,7 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Ez da mugarik inposatu"
 
-#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#: admin/federationtoolmodel.cpp:162 admin/iprulestoolmodel.cpp:125
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr ""
@@ -1340,10 +1342,11 @@ msgid "This server is closed for registration: %1"
 msgstr "Zerbitzari hori erregistratzeko itxita dago: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Zerbitzari hori erregistratzeko itxita dago: %1"
+msgstr ""
+"Zerbitzari hori erregistratzeko itxita dago, eta ez du horren arrazoirik "
+"eman."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -3180,56 +3183,50 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "%1(e)an argitaratua"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", %1 bidez"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Publikoa"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Zerrendatu gabea"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Pribatua"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Zuzeneko mezua"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Gogokorik gabe"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "Gogoko %1"
 msgstr[1] "%1 gogoko"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Goratzerik gabe"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3911,25 +3908,25 @@ msgstr "Editatu profila"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Erroreen egunkaria"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Garbitu dena"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Kopiatu arbelean"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Errorerik ez"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4287,7 +4284,7 @@ msgstr "Sareko ordezkaria"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Erroreen egunkaria"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4778,69 +4775,69 @@ msgstr "7 egun"
 msgid "An unknown error occurred."
 msgstr "Errore ezezagun bat gertatu da."
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Bultzada jakinarazpenak jasotzea"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115 main.cpp:140
+#: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Arakatu Fedibertsoa"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE Komunitatea"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:119 main.cpp:124
+#: main.cpp:120 main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñigo Salvador Azurmendi"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:141
+#: main.cpp:142
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "https eta «web+ap URL» antolaerak onartzen ditu"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Partekatu testu-lerro bat konposatzaile autonomoan."
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "The text to share."
 msgstr "Partekatu beharreko testua."
 
-#: main.cpp:147
+#: main.cpp:148
 #, kde-format
 msgid "Internal usage only."
 msgstr "Barne erabilera bakarrik."
@@ -5089,6 +5086,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Duela urtebete"
 msgstr[1] "Duela %1 urte"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", %1 bidez"
 
 #~ msgctxt ""
 #~ "@action:intoolbar Short for content notice, also known as content warning"

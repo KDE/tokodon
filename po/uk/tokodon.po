@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-01 00:40+0000\n"
-"PO-Revision-Date: 2024-11-29 15:53+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"POT-Creation-Date: 2024-12-02 00:41+0000\n"
+"PO-Revision-Date: 2024-12-01 14:46+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -148,6 +148,8 @@ msgstr "Подробиці щодо облікового запису збере
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Сервером не надано жодних правил. Будь ласка, ознайомтеся із їхнім сайтом, "
+"щоб дізнатися більше."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -397,7 +399,7 @@ msgctxt "login status"
 msgid "No Limits Imposed"
 msgstr "Обмежень не накладено"
 
-#: admin/federationtoolmodel.cpp:161 admin/iprulestoolmodel.cpp:121
+#: admin/federationtoolmodel.cpp:162 admin/iprulestoolmodel.cpp:125
 #, kde-format
 msgid "Error occurred when making a PUT request to update the domain block."
 msgstr "Сталася помилка при виконанні запиту PUT для оновлення блоку домену."
@@ -1348,10 +1350,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Цей сервер закрито для реєстрації: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Цей сервер закрито для реєстрації: %1"
+msgstr "Цей сервер закрито для реєстрації без зазначення причини."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -3189,44 +3190,38 @@ msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Надіслано %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:35
-#, kde-format
-msgctxt "%1 is the Mastodon application name used for posting"
-msgid ", via %1"
-msgstr ", з використанням %1"
-
-#: content/ui/PostDelegate/InformationBar.qml:81
-#: content/ui/PostDelegate/InformationBar.qml:89
+#: content/ui/PostDelegate/InformationBar.qml:57
+#: content/ui/PostDelegate/InformationBar.qml:65
 #: content/ui/PostDelegate/PostInfoBar.qml:82
 #: content/ui/PostDelegate/PostInfoBar.qml:90
 #, kde-format
 msgid "Public"
 msgstr "Загальнодоступне"
 
-#: content/ui/PostDelegate/InformationBar.qml:83
+#: content/ui/PostDelegate/InformationBar.qml:59
 #: content/ui/PostDelegate/PostInfoBar.qml:84
 #, kde-format
 msgid "Unlisted"
 msgstr "Незареєстрований"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:61
 #: content/ui/PostDelegate/PostInfoBar.qml:86
 #, kde-format
 msgid "Private"
 msgstr "Особисте"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:63
 #: content/ui/PostDelegate/PostInfoBar.qml:88
 #, kde-format
 msgid "Direct Message"
 msgstr "Безпосереднє повідомлення"
 
-#: content/ui/PostDelegate/InformationBar.qml:109
+#: content/ui/PostDelegate/InformationBar.qml:85
 #, kde-format
 msgid "No favorites"
 msgstr "Немає улюблених"
 
-#: content/ui/PostDelegate/InformationBar.qml:111
+#: content/ui/PostDelegate/InformationBar.qml:87
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
@@ -3235,12 +3230,12 @@ msgstr[1] "%1 улюблені записи"
 msgstr[2] "%1 улюблених записів"
 msgstr[3] "%1 улюблений запис"
 
-#: content/ui/PostDelegate/InformationBar.qml:135
+#: content/ui/PostDelegate/InformationBar.qml:108
 #, kde-format
 msgid "No boosts"
 msgstr "Немає підсилень"
 
-#: content/ui/PostDelegate/InformationBar.qml:137
+#: content/ui/PostDelegate/InformationBar.qml:110
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
@@ -3925,25 +3920,25 @@ msgstr "Зміна профілю"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Журнал помилок"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Вилучити все"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Скопіювати до буфера обміну"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Без помилок"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4302,7 +4297,7 @@ msgstr "Проксі-сервер мережі"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Журнал помилок"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4795,69 +4790,69 @@ msgstr "7 днів"
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Отримання імпульсних сповіщень"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:115 main.cpp:140
+#: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Навігація Fediverse"
 
-#: main.cpp:117
+#: main.cpp:118
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© Спільнота KDE, 2021–2024"
 
-#: main.cpp:118
+#: main.cpp:119
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:119 main.cpp:124
+#: main.cpp:120 main.cpp:125
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:128
+#: main.cpp:129
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:141
+#: main.cpp:142
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Передбачено підтримку схеми адрес https і web+ap"
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Оприлюднити рядок тексту в окремому редакторі."
 
-#: main.cpp:143
+#: main.cpp:144
 #, kde-format
 msgid "The text to share."
 msgstr "Текст, який слід оприлюднити."
 
-#: main.cpp:147
+#: main.cpp:148
 #, kde-format
 msgid "Internal usage only."
 msgstr "Лише для внутрішнього використання."
@@ -5112,6 +5107,10 @@ msgstr[0] "%1 рік тому"
 msgstr[1] "%1 роки тому"
 msgstr[2] "%1 років тому"
 msgstr[3] "1 рік тому"
+
+#~ msgctxt "%1 is the Mastodon application name used for posting"
+#~ msgid ", via %1"
+#~ msgstr ", з використанням %1"
 
 #~ msgctxt ""
 #~ "@action:intoolbar Short for content notice, also known as content warning"
