@@ -7,7 +7,7 @@ import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 // This is the main text content of a status
 QQC2.Label {

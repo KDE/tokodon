@@ -344,6 +344,9 @@ qt_target_qml_sources(tokodon_static
         ../org.kde.tokodon.svg
 )
 
+kconfig_target_kcfg_file(tokodon_static FILE config.kcfg CLASS_NAME Config MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS PARENT_IN_CONSTRUCTOR SINGLETON QML_REGISTRATION)
+kconfig_target_kcfg_file(tokodon_static FILE accountconfig.kcfg CLASS_NAME AccountConfig MUTATORS GENERATE_PROPERTIES GENERATE_MOC DEFAULT_VALUE_GETTERS PARENT_IN_CONSTRUCTOR QML_REGISTRATION QML_UNCREATABLE)
+
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/search)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/timeline)
 target_include_directories(tokodon_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/account)
@@ -394,7 +397,6 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(tokodon_static PUBLIC -DTOKODON_DEBUG)
 endif()
 
-kconfig_add_kcfg_files(tokodon_static GENERATE_MOC config.kcfgc accountconfig.kcfgc)
 target_link_libraries(tokodon_static
     PUBLIC
         Qt::Quick

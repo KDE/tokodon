@@ -8,7 +8,7 @@ import QtQuick.Layouts
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 // Used everywhere, is a component with an Avatar, some labels and such smashed together.
 // If you want to click on this (e.g. the user info used in a post) use this. Otherwise use InlineIdentityInfo.

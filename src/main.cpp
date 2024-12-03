@@ -165,9 +165,6 @@ int main(int argc, char *argv[])
         colorSchemer.apply(config->colorScheme());
     }
 
-    qmlRegisterSingletonInstance("org.kde.tokodon.private", 1, 0, "Config", config);
-    qmlRegisterUncreatableType<AccountConfig>("org.kde.tokodon.private", 1, 0, "AccountConfig", QStringLiteral("Use via Account.config"));
-
     QQmlApplicationEngine engine;
 
 #ifdef HAVE_KUNIFIEDPUSH

@@ -15,7 +15,7 @@ import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 import '..'
 
 Kirigami.ScrollablePage {

@@ -7,7 +7,7 @@ import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 QQC2.ItemDelegate {
     id: root

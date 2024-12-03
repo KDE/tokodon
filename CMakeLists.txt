@@ -13,7 +13,7 @@ project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
 
-set(KF_MIN_VERSION "6.9.0")
+set(KF_MIN_VERSION "6.11.0")
 set(QT_MIN_VERSION "6.8.0")
 
 include(FeatureSummary)

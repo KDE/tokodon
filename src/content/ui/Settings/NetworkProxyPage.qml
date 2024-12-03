@@ -9,7 +9,7 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 FormCard.FormCardPage {
     title: i18nc("@title:window", "Network Proxy")

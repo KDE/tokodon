@@ -12,7 +12,7 @@ import QtQuick.Templates as T
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
