@@ -233,7 +233,6 @@ int main(int argc, char *argv[])
     });
 #endif
     KLocalization::setupLocalizedContext(&engine);
-    QObject::connect(&engine, &QQmlApplicationEngine::quit, &app, &QCoreApplication::quit);
 
     NetworkAccessManagerFactory namFactory;
     engine.setNetworkAccessManagerFactory(&namFactory);
