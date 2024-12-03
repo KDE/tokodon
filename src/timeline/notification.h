@@ -69,6 +69,8 @@ private:
 class Notification
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Only for enums")
 
 public:
     Notification() = default;

@@ -4,10 +4,13 @@
 #pragma once
 
 #include <QDateTime>
+#include <QtQml>
 
 class IpInfo
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Only for enums")
 
 public:
     enum SeverityValues { LimitSignUps, BlockSignUps, BlockAccess };

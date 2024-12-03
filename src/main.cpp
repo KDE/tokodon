@@ -161,9 +161,6 @@ int main(int argc, char *argv[])
 
     qmlRegisterSingletonInstance("org.kde.tokodon.private", 1, 0, "Config", config);
     qmlRegisterUncreatableType<AccountConfig>("org.kde.tokodon.private", 1, 0, "AccountConfig", QStringLiteral("Use via Account.config"));
-    qmlRegisterUncreatableMetaObject(Notification::staticMetaObject, "org.kde.tokodon", 1, 0, "Notification", QStringLiteral("Only for enums"));
-    qmlRegisterUncreatableMetaObject(IpInfo::staticMetaObject, "org.kde.tokodon", 1, 0, "IpInfo", QStringLiteral("Only for enums"));
-    qmlRegisterUncreatableMetaObject(EmailInfo::staticMetaObject, "org.kde.tokodon", 1, 0, "EmailInfo", QStringLiteral("Only for enums"));
 
     QQmlApplicationEngine engine;
 

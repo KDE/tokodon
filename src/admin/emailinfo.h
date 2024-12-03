@@ -4,10 +4,13 @@
 #pragma once
 
 #include <QJsonArray>
+#include <QtQml>
 
 class EmailInfo
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("Only for enums")
 
 public:
     enum SeverityValues { LimitSignUps, BlockSignUps, BlockAccess };
