@@ -9,7 +9,7 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import QtQml.Models
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.OverlayDrawer {

@@ -11,7 +11,7 @@ import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kirigami as Kirigami
 
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 FormCard.FormCardPage {
     FormCard.FormHeader {

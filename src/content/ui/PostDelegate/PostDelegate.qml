@@ -7,7 +7,7 @@ import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 import "../Notifications" as Notifications
 

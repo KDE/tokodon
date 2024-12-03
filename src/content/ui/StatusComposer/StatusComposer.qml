@@ -13,7 +13,7 @@ import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 import '..'
 
 Kirigami.ScrollablePage {

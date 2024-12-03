@@ -11,7 +11,7 @@ import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.notification 1
 
 import org.kde.tokodon
-import org.kde.tokodon.private
+
 
 MastoPage {
     id: root
