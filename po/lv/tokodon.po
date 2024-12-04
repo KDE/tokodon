@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-02 00:41+0000\n"
-"PO-Revision-Date: 2024-10-28 22:47+0200\n"
+"PO-Revision-Date: 2024-12-01 19:21+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: account/abstractaccount.cpp:591
 #, kde-format
@@ -123,10 +123,9 @@ msgid "%1 edited a post"
 msgstr "%1 rediģēja ierakstu"
 
 #: account/notificationhandler.cpp:143
-#, fuzzy, kde-kuit-format
-#| msgid "<b>Content Notice</b><br /> %1"
+#, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr "<b>Satura brīdinājums</b><br /> %1"
+msgstr "<b>Satura brīdinājums</b>: %1"
 
 #: account/profileeditor.cpp:180
 #, kde-format
@@ -150,6 +149,8 @@ msgstr "Konta informācija ir saglabāta"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Šis serveris nenorāda lietošanas noteikumus. Lai iegūtu vairāk informācijas, "
+"apmeklējiet tā tīmekļa vietni."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -449,7 +450,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "Abpusēji"
 
 #: content/ui/AccountInfo.qml:294
 #, kde-format
@@ -755,25 +756,21 @@ msgid "Conversations"
 msgstr "Sarunas"
 
 #: content/ui/ConversationPage.qml:18
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "New Conversation…"
-msgstr "Nav sarunu"
+msgstr "Jauna saruna…"
 
 #: content/ui/ConversationPage.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Featured Users"
+#, kde-format
 msgctxt "@title"
 msgid "Search Users"
-msgstr "Izceltie lietotāji"
+msgstr "Meklēt lietotājus"
 
 #: content/ui/ConversationPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Search or enter URL…"
+#, kde-format
 msgid "Search for user…"
-msgstr "Meklēt vai ierakstīt URL…"
+msgstr "Meklēt lietotāju…"
 
 #: content/ui/ConversationPage.qml:139
 #, kde-format
@@ -1342,10 +1339,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Šī servera reģistrācija ir slēgta: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Šī servera reģistrācija ir slēgta: %1"
+msgstr "Šis serveris ir aizvēris reģistrāciju, bet nav norādījis tam iemeslu."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -1461,9 +1457,7 @@ msgid "Unknown Action"
 msgstr "Nezināma darbība"
 
 #: content/ui/Main.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgid "Write a New Post"
 msgstr "Rakstīt jaunu ierakstu"
 
@@ -3000,12 +2994,10 @@ msgid "Configure Notifications…"
 msgstr "Konfigurēt paziņojumus…"
 
 #: content/ui/NotificationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr "Paziņojumi"
+msgstr "Paziņojumu iestatījumi"
 
 #: content/ui/NotificationPage.qml:46
 #, kde-format
@@ -3096,6 +3088,8 @@ msgid ""
 "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 "
 "account you follow."
 msgstr ""
+"Moderēšanas komanda ir bloķējusi <b>%1</b>, ieskaitot %2 no taviem "
+"sekotājiem un %3 kontu, kuram tu seko."
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
@@ -3151,11 +3145,9 @@ msgid "Hide media"
 msgstr "Paslēpt multividi"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:334
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Media"
+#, kde-format
 msgid "Show Media"
-msgstr "Nav multivides"
+msgstr "Rādīt multividi"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
@@ -3594,9 +3586,7 @@ msgid "Quoted post"
 msgstr "Citēta ierakstu"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Loading…"
+#, kde-format
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
 msgstr "Ielādē…"
@@ -3834,6 +3824,8 @@ msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
 msgstr ""
+"Ja atzīmēts, mājas laika josla sāksies vietā, kuru pēdējo lasījāt. Atrašanās "
+"vieta laika joslā tiek sinhronizēta starp visiem klientiem."
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -3909,25 +3901,25 @@ msgstr "Rediģēt profilu"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Kļūdu žurnāls"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Notīrīt visu"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Kopēt starpliktuvē"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Nav kļūdu"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4004,72 +3996,67 @@ msgstr "Paziņojumi parādīsies tikai tad, kad „Tokodon“ būs ieslēgts."
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
-msgstr ""
+msgstr "Filtrēšanas politika"
 
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
-msgstr ""
+msgstr "Pieņemt"
 
 #: content/ui/Settings/NotificationsPage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
-msgstr "Filtri"
+msgstr "Filtrēt"
 
 #: content/ui/Settings/NotificationsPage.qml:67
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorēt"
 
 #: content/ui/Settings/NotificationsPage.qml:75
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People you don't follow"
-msgstr ""
+msgstr "Cilvēki, kuriem tu neseko"
 
 #: content/ui/Settings/NotificationsPage.qml:76
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
-msgstr ""
+msgstr "Līdz manuālai apstiprināšanai"
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "Could not follow account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr "Neizdevās sekot kontam"
+msgstr "Cilvēki, kuriem neseko"
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr ""
+msgstr "Ieskaitot cilvēkus, kuriem tu seko mazāk par trim dienām."
 
 #: content/ui/Settings/NotificationsPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
-msgstr "Konti"
+msgstr "Jauni konti"
 
 #: content/ui/Settings/NotificationsPage.qml:90
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
-msgstr ""
+msgstr "Izveidots pēdējo 30 dienu laikā."
 
 #: content/ui/Settings/NotificationsPage.qml:96
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr "Nav sarunu"
+msgstr "Nelūgtas sarunas"
 
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
@@ -4078,19 +4065,20 @@ msgid ""
 "Filtered unless it's in reply to your own mention or if you follow the "
 "sender."
 msgstr ""
+"Filtrēt, izņemot, ja tā ir atbilde tavai pieminējumam vai ja sekojat "
+"sūtītājam."
 
 #: content/ui/Settings/NotificationsPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr "Neizdevās izcelt kontu"
+msgstr "Moderētie konti"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
-msgstr ""
+msgstr "Ierobežot ar servera moderatoriem"
 
 #: content/ui/Settings/NotificationsPage.qml:111
 #, kde-format
@@ -4287,7 +4275,7 @@ msgstr "Tīkla starpniekserveris"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Kļūdu žurnāls"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4565,9 +4553,7 @@ msgid "Add poll"
 msgstr "Pievienot aptauju"
 
 #: content/ui/StatusComposer/StatusComposer.qml:449
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Satura brīdinājums"
@@ -4793,13 +4779,12 @@ msgstr "Tokodon"
 #: main.cpp:116 main.cpp:141
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr ""
+msgstr "Pārlūkojiet Fediversu"
 
 #: main.cpp:118
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021—2023 Carl Schwan, 2021—2024 KDE kopiena"
+msgstr "© 2021—2024 KDE kopiena"
 
 #: main.cpp:119
 #, kde-format
@@ -4860,15 +4845,13 @@ msgid "Home"
 msgstr "Mājas"
 
 #: timeline/maintimelinemodel.cpp:28
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "Lokālā"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "Globālā"
