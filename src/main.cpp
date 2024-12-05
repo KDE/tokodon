@@ -34,7 +34,6 @@
 #include "account/accountmanager.h"
 #include "accountconfig.h"
 #include "admin/emailinfo.h"
-#include "admin/ipinfo.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"
 #include "network/networkcontroller.h"
@@ -216,14 +215,12 @@ int main(int argc, char *argv[])
                 args.removeFirst();
 
                 if (!args.empty()) {
-                    if (args.first().startsWith("web+ap"_L1)) {
-                        NetworkController::instance().openWebApLink(args[0]);
-                    } else if (args.first().startsWith("tokodon"_L1)) {
-                        NetworkController::instance().setAuthCode(QUrl(args[0]));
+                    if (args.first().startsWith("tokodon"_L1)) {
+                        NetworkController::instance().setAuthCode(QUrl(args.first()));
                     } else if (args.first() == "--share"_L1) {
                         NetworkController::instance().startComposing(args[1]);
                     } else {
-                        NetworkController::instance().openWebApLink(args[0]);
+                        NetworkController::instance().openWebApLink(args.first());
                     }
                 }
 
@@ -273,7 +270,7 @@ int main(int argc, char *argv[])
     } else {
         engine.loadFromModule("org.kde.tokodon", "Main");
 
-        if (parser.positionalArguments().length() > 0) {
+        if (!parser.positionalArguments().empty()) {
             NetworkController::instance().openWebApLink(parser.positionalArguments()[0]);
         }
     }
