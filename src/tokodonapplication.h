@@ -5,8 +5,6 @@
 
 #include <AbstractKirigamiApplication>
 #include <QObject>
-#include <QQmlEngine>
-#include <QSortFilterProxyModel>
 
 #include "account/accountmanager.h"
 
@@ -18,7 +16,7 @@ class TokodonApplication : public AbstractKirigamiApplication
     Q_PROPERTY(AccountManager *accountManager READ accountManager WRITE setAccountManager NOTIFY accountManagerChanged)
 
 public:
-    TokodonApplication(QObject *parent = nullptr);
+    explicit TokodonApplication(QObject *parent = nullptr);
     ~TokodonApplication() override = default;
 
     [[nodiscard]] AccountManager *accountManager() const;
