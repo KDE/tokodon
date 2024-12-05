@@ -259,8 +259,7 @@ void AccountsToolModel::deleteAccountData(const int row)
     const auto accountId = identity->userLevelIdentity()->id();
 
     account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/admin/accounts/%1").arg(accountId)), true, this, [=](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll()).object();
-        qDebug() << "DELETED: " << doc;
+        Q_UNUSED(reply);
     });
 }
 

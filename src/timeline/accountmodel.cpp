@@ -11,6 +11,8 @@
 #include <QNetworkReply>
 #include <QUrlQuery>
 
+#include "tokodon_debug.h"
+
 AccountModel::AccountModel(QObject *parent)
     : TimelineModel(parent)
 {
@@ -201,8 +203,8 @@ void AccountModel::updateRelationships()
     m_account->get(uriRelationship, true, this, [this](QNetworkReply *reply) {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (!doc.isArray()) {
-            qWarning() << "Data returned from Relationship network request is not an array"
-                       << "data: " << doc;
+            qWarning(TOKODON_LOG) << "Data returned from Relationship network request is not an array"
+                                  << "data: " << doc;
             return;
         }
 
