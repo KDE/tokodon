@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QQmlEngine>
 
 /**
  * @brief Defines the structure of a typical Unicode emoji.

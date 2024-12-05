@@ -5,6 +5,8 @@
 #include "admin/adminaccountinfo.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"

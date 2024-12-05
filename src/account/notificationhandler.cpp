@@ -11,6 +11,7 @@
 
 #include <KLocalizedString>
 #include <KNotification>
+#include <QNetworkReply>
 
 #ifdef HAVE_KIO
 #include <KIO/ApplicationLauncherJob>

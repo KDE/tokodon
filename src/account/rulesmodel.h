@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QAbstractListModel>
+
 #include "account/abstractaccount.h"
 
 /**

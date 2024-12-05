@@ -3,6 +3,11 @@
 
 #include "account/notificationfilteringpolicy.h"
 
+#include <QHttpPart>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+
 #include "account/abstractaccount.h"
 
 NotificationFilteringPolicy::NotificationFilteringPolicy(AbstractAccount *account)

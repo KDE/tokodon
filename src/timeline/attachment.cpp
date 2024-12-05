@@ -7,6 +7,8 @@
 
 #include <QClipboard>
 #include <QGuiApplication>
+#include <QNetworkReply>
+#include <qmimedatabase.h>
 
 using namespace Qt::StringLiterals;
 

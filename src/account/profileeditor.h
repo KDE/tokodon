@@ -3,7 +3,8 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QJsonArray>
+#include <QQmlEngine>
 
 class AbstractAccount;
 

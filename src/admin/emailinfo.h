@@ -4,7 +4,7 @@
 #pragma once
 
 #include <QJsonArray>
-#include <QtQml>
+#include <QQmlEngine>
 
 class EmailInfo
 {

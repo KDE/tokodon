@@ -3,6 +3,9 @@
 
 #pragma once
 
+#include <QAbstractListModel>
+#include <QUrlQuery>
+
 #include "account/abstractaccount.h"
 
 class AdminAccountInfo;

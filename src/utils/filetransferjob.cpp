@@ -7,6 +7,7 @@
 #include "tokodon_http_debug.h"
 
 #include <KLocalizedString>
+#include <QNetworkReply>
 
 FileTransferJob::FileTransferJob(AbstractAccount *account, const QString &source, const QString &destination)
     : KJob()

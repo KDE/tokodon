@@ -3,6 +3,11 @@
 
 #include "account/preferences.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <qhttpmultipart.h>
+
 #include "account/abstractaccount.h"
 
 Preferences::Preferences(AbstractAccount *account)

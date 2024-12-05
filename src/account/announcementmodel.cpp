@@ -3,6 +3,9 @@
 
 #include "account/announcementmodel.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+
 #include "account/accountmanager.h"
 #include "networkcontroller.h"
 

@@ -4,6 +4,11 @@
 
 #include "account/accountmanager.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QSettings>
+#include <QUrlQuery>
+
 #include "account/account.h"
 #include "config.h"
 #include "network/networkaccessmanagerfactory.h"

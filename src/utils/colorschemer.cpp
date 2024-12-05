@@ -4,6 +4,7 @@
 #include "utils/colorschemer.h"
 
 #include <KColorSchemeManager>
+#include <QAbstractItemModel>
 
 ColorSchemer::ColorSchemer(QObject *parent)
     : QObject(parent)

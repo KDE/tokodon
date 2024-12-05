@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+#include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QQuickWindow>
 
@@ -25,6 +26,8 @@
 #ifdef HAVE_KUNIFIEDPUSH
 #include <kunifiedpush/connector.h>
 #endif
+
+#include <QNetworkProxyFactory>
 
 #include "tokodon-version.h"
 

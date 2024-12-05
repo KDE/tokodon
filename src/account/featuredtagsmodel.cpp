@@ -3,6 +3,9 @@
 
 #include "account/featuredtagsmodel.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+
 #include "account/accountmanager.h"
 #include "account/relationship.h"
 

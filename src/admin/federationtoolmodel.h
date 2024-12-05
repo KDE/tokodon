@@ -3,9 +3,10 @@
 
 #pragma once
 
-#include "admin/federationinfo.h"
+#include <QAbstractListModel>
+#include <QQmlEngine>
 
-#include <QtQml>
+#include "admin/federationinfo.h"
 
 class FederationToolModel : public QAbstractListModel
 {

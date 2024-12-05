@@ -3,6 +3,11 @@
 
 #include "account/publicserversmodel.h"
 
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkReply>
+
 using namespace Qt::StringLiterals;
 
 PublicServersModel::PublicServersModel(QObject *parent)

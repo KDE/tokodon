@@ -3,6 +3,9 @@
 
 #include "account/listsmodel.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"
 #include "networkcontroller.h"

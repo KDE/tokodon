@@ -4,6 +4,9 @@
 #include "timeline/accountmediatimelinemodel.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 using namespace Qt::StringLiterals;
 
