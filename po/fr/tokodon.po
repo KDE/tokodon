@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-02 00:41+0000\n"
-"PO-Revision-Date: 2024-11-30 10:20+0100\n"
+"PO-Revision-Date: 2024-12-03 10:28+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.80\n"
+"X-Generator: Lokalize 24.11.90\n"
 
 #: account/abstractaccount.cpp:591
 #, kde-format
@@ -145,6 +145,8 @@ msgstr "Détails du compte enregistrés"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Ce serveur n'a fourni aucune règle. Veuillez consulter leur site Internet "
+"pour plus d'informations."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -1341,10 +1343,11 @@ msgid "This server is closed for registration: %1"
 msgstr "Le serveur ne prend pas en charge les inscriptions : %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Le serveur ne prend pas en charge les inscriptions : %1"
+msgstr ""
+"Le serveur ne prend pas en charge aucune inscription et n'a fourni aucune "
+"raison."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -3911,25 +3914,25 @@ msgstr "Modifier un profil"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Journal d’erreurs"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Tout effacer"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Copier dans le presse-papier"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Aucune erreur"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4296,7 +4299,7 @@ msgstr "Serveur mandataire du réseau"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Journal d’erreurs"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format

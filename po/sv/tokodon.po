@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-02 00:41+0000\n"
-"PO-Revision-Date: 2024-11-25 21:57+0100\n"
+"PO-Revision-Date: 2024-12-04 18:21+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -121,10 +121,9 @@ msgid "%1 edited a post"
 msgstr "%1 redigerade ett inlägg"
 
 #: account/notificationhandler.cpp:143
-#, fuzzy, kde-kuit-format
-#| msgid "<b>Content Notice</b><br /> %1"
+#, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
-msgstr "<b>Innehållsmeddelande</b><br /> %1"
+msgstr "<b>Innehållsmeddelande</b>: %1"
 
 #: account/profileeditor.cpp:180
 #, kde-format
@@ -145,7 +144,7 @@ msgstr "Kontoinformation sparad"
 #, kde-format
 msgid ""
 "This server provided no rules. Please see their website for more information."
-msgstr ""
+msgstr "Server anger inga regler. Se hemsidan för mer information."
 
 #: account/socialgraphmodel.cpp:29
 #, kde-format
@@ -445,7 +444,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "Ömsesidiga"
 
 #: content/ui/AccountInfo.qml:294
 #, kde-format
@@ -1324,10 +1323,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Servern är stängd för registrering: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Servern är stängd för registrering: %1"
+msgstr "Servern är stängd för registrering, och anger inte någon orsak."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -1443,9 +1441,7 @@ msgid "Unknown Action"
 msgstr "Okänd åtgärd"
 
 #: content/ui/Main.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgid "Write a New Post"
 msgstr "Skriv ett nytt inlägg"
 
@@ -2983,12 +2979,10 @@ msgid "Configure Notifications…"
 msgstr "Anpassa underrättelser…"
 
 #: content/ui/NotificationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr "Underrättelser"
+msgstr "Underrättelseinställningar"
 
 #: content/ui/NotificationPage.qml:46
 #, kde-format
@@ -3079,6 +3073,8 @@ msgid ""
 "Moderation has blocked <b>%1</b>, including %2 of your followers and %3 "
 "account you follow."
 msgstr ""
+"Moderering har blockerat <b>%1</b>, inklusive %2 av dina följare och %3 "
+"konton som du följer."
 
 #: content/ui/Notifications/ReportDelegate.qml:61
 #, kde-format
@@ -3134,11 +3130,9 @@ msgid "Hide media"
 msgstr "Dölj media"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:334
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No Media"
+#, kde-format
 msgid "Show Media"
-msgstr "Ingen media"
+msgstr "Visa media"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:47
 #, kde-format
@@ -3886,25 +3880,25 @@ msgstr "Redigera profil"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Fellogg"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Rensa alla"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Kopiera till klippbordet"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Inga fel"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -3981,72 +3975,67 @@ msgstr "Underrättelser visas bara när Tokodon kör."
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
-msgstr ""
+msgstr "Filtreringsprincip"
 
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
 msgctxt "@info:Option Accept and show this in notifications"
 msgid "Accept"
-msgstr ""
+msgstr "Acceptera"
 
 #: content/ui/Settings/NotificationsPage.qml:63
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Filters"
+#, kde-format
 msgctxt "@info:Option Filter and send to the filtered inbox"
 msgid "Filter"
-msgstr "Filter"
+msgstr "Filtrera"
 
 #: content/ui/Settings/NotificationsPage.qml:67
 #, kde-format
 msgctxt "@info:Option Ignore completely, do not show notification"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorera"
 
 #: content/ui/Settings/NotificationsPage.qml:75
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "People you don't follow"
-msgstr ""
+msgstr "Personer som du inte följer"
 
 #: content/ui/Settings/NotificationsPage.qml:76
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Until you manually approve them."
-msgstr ""
+msgstr "Tills du manuellt godkänner dem."
 
 #: content/ui/Settings/NotificationsPage.qml:82
-#, fuzzy, kde-format
-#| msgid "%1 following"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "People not following you"
-msgstr "%1 följer"
+msgstr "Personer som inte följer dig"
 
 #: content/ui/Settings/NotificationsPage.qml:83
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Including people who have been following you fewer than 3 days."
-msgstr ""
+msgstr "Inklusive personer som har följt dig i mindre än 3 dagar."
 
 #: content/ui/Settings/NotificationsPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "New accounts"
-msgstr "Konton"
+msgstr "Nya konton"
 
 #: content/ui/Settings/NotificationsPage.qml:90
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Created within the past 30 days."
-msgstr ""
+msgstr "Skapad under de senaste 30 dagarna."
 
 #: content/ui/Settings/NotificationsPage.qml:96
-#, fuzzy, kde-format
-#| msgid "No Conversations"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Unsolicited conversations"
-msgstr "Inga konversationer"
+msgstr "Oombedda konversationer"
 
 #: content/ui/Settings/NotificationsPage.qml:97
 #, kde-format
@@ -4055,19 +4044,20 @@ msgid ""
 "Filtered unless it's in reply to your own mention or if you follow the "
 "sender."
 msgstr ""
+"Filtreras om det inte är ett svar på ditt eget omnämnande eller om du följer "
+"avsändaren."
 
 #: content/ui/Settings/NotificationsPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Muted Accounts"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr "Tystade konton"
+msgstr "Modererade konton"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
 msgctxt "@label Notification preferences"
 msgid "Limited by server moderators."
-msgstr ""
+msgstr "Begränsade av servermoderatorer."
 
 #: content/ui/Settings/NotificationsPage.qml:111
 #, kde-format
@@ -4265,7 +4255,7 @@ msgstr "Nätverksproxy"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Fellogg"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4544,9 +4534,7 @@ msgid "Add poll"
 msgstr "Lägg till omröstning"
 
 #: content/ui/StatusComposer/StatusComposer.qml:449
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Innehållsmeddelande"
@@ -4772,10 +4760,9 @@ msgid "Browse the Fediverse"
 msgstr "Bläddra i Fediverse"
 
 #: main.cpp:118
-#, fuzzy, kde-format
-#| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
+#, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021-2024 Carl Schwan, 2021-2023 KDE-gemenskapen"
+msgstr "© 2021-2024 KDE-gemenskapen"
 
 #: main.cpp:119
 #, kde-format
@@ -4836,15 +4823,13 @@ msgid "Home"
 msgstr "Hem"
 
 #: timeline/maintimelinemodel.cpp:28
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "Lokal"
 
 #: timeline/maintimelinemodel.cpp:30
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "Global"
