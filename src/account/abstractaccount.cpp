@@ -7,11 +7,13 @@
 #include "account/accountmanager.h"
 #include "account/relationship.h"
 #include "network/networkcontroller.h"
-#include "tokodon_debug.h"
 #include "utils/messagefiltercontainer.h"
 #include "utils/navigation.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 

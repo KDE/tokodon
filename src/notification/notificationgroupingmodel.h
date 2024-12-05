@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <QAbstractProxyModel>
+
 #include "notification/notificationmodel.h"
 
 class NotificationGroupingModel : public QAbstractProxyModel

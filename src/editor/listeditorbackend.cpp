@@ -4,6 +4,9 @@
 #include "editor/listeditorbackend.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"

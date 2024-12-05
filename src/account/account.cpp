@@ -16,6 +16,12 @@
 #include "messagefiltercontainer.h"
 #include "tokodon-version.h"
 
+#include <QFileInfo>
+#include <QHttpMultiPart>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QRandomGenerator>
+#include <QUrlQuery>
 #include <config.h>
 #include <qt6keychain/keychain.h>
 

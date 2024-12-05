@@ -3,9 +3,11 @@
 
 #pragma once
 
-#include "admin/reportinfo.h"
+#include <QAbstractListModel>
+#include <QJsonObject>
+#include <QQmlEngine>
 
-#include <QtQml>
+#include "admin/reportinfo.h"
 
 class AdminAccountInfo;
 

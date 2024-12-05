@@ -5,7 +5,7 @@
 #pragma once
 
 #include <QJsonObject>
-#include <QtQml>
+#include <QQmlEngine>
 
 class Post;
 

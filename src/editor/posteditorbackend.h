@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QJsonDocument>
+
 #include "editor/polleditorbackend.h"
 #include "timeline/post.h"
 

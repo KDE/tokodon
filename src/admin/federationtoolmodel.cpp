@@ -8,6 +8,8 @@
 #include "texthandler.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
 
 using namespace Qt::Literals::StringLiterals;
 

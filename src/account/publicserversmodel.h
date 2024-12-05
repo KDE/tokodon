@@ -3,7 +3,9 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QAbstractListModel>
+#include <QNetworkAccessManager>
+#include <QQmlEngine>
 
 class PublicServersModel : public QAbstractListModel
 {

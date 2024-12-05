@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "autotests/mockaccount.h"
+
+#include <QJsonDocument>
+
 #include "account/notificationhandler.h"
 #include "autotests/helperreply.h"
 

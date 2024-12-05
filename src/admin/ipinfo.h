@@ -4,7 +4,7 @@
 #pragma once
 
 #include <QDateTime>
-#include <QtQml>
+#include <QQmlEngine>
 
 class IpInfo
 {

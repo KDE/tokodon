@@ -3,6 +3,9 @@
 
 #include "tag.h"
 
+#include <QJsonArray>
+#include <QJsonObject>
+
 using namespace Qt::Literals::StringLiterals;
 
 Tag::Tag(QJsonObject obj)

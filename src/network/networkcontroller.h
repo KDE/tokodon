@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QQmlEngine>
 
 /**
  * @brief Handles miscenallous operations, mostly a glue between C++ and QML.

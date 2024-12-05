@@ -3,8 +3,8 @@
 
 #pragma once
 
+#include <QQmlEngine>
 #include <QSortFilterProxyModel>
-#include <QtQml>
 
 class LimiterModel : public QSortFilterProxyModel
 {

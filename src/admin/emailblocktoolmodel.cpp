@@ -3,6 +3,9 @@
 
 #include "admin/emailblocktoolmodel.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+
 #include "account/accountmanager.h"
 #include "texthandler.h"
 

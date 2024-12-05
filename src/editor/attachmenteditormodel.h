@@ -4,6 +4,10 @@
 
 #pragma once
 
+#include <QAbstractListModel>
+#include <QNetworkReply>
+#include <QTemporaryDir>
+
 #include "timeline/post.h"
 
 class QTimer;

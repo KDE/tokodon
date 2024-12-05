@@ -3,7 +3,8 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QAbstractListModel>
+#include <QQmlEngine>
 
 /**
  * @brief Fetches server announcements.

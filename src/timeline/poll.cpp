@@ -3,6 +3,8 @@
 
 #include "timeline/poll.h"
 
+#include <QJsonObject>
+
 #include "utils/customemoji.h"
 #include "utils/texthandler.h"
 

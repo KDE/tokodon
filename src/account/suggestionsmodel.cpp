@@ -6,6 +6,8 @@
 #include "networkcontroller.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
 
 using namespace Qt::StringLiterals;
 

@@ -4,6 +4,9 @@
 
 #include "timeline/timelinemodel.h"
 
+#include <QJsonDocument>
+#include <QNetworkReply>
+
 using namespace Qt::Literals::StringLiterals;
 
 TimelineModel::TimelineModel(QObject *parent)

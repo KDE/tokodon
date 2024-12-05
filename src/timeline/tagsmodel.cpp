@@ -7,6 +7,9 @@
 #include "texthandler.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 TagsModel::TagsModel(QObject *parent)
     : AbstractListModel(parent)

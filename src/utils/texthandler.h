@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <QtQml>
+#include <QQmlEngine>
 
 #include "utils/customemoji.h"
 

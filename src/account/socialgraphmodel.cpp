@@ -10,6 +10,9 @@
 #include "texthandler.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 

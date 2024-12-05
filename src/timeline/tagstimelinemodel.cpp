@@ -3,6 +3,9 @@
 
 #include "timeline/tagstimelinemodel.h"
 
+#include <QNetworkReply>
+#include <QUrlQuery>
+
 #include "networkcontroller.h"
 
 TagsTimelineModel::TagsTimelineModel(QObject *parent)

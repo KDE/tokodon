@@ -4,7 +4,10 @@
 #include "network/networkcontroller.h"
 
 #include <QDesktopServices>
+#include <QJsonDocument>
 #include <QNetworkProxyFactory>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 #include "account/abstractaccount.h"
 #include "account/accountmanager.h"

@@ -7,6 +7,9 @@
 #include "networkcontroller.h"
 
 #include <KLocalizedString>
+#include <QJsonDocument>
+#include <QNetworkReply>
+#include <QUrlQuery>
 
 AccountModel::AccountModel(QObject *parent)
     : TimelineModel(parent)

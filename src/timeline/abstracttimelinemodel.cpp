@@ -3,6 +3,8 @@
 
 #include "timeline/abstracttimelinemodel.h"
 
+#include <QJsonDocument>
+
 #include "account/abstractaccount.h"
 #include "editor/attachmenteditormodel.h"
 #include "editor/posteditorbackend.h"

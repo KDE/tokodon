@@ -3,6 +3,8 @@
 
 #include "editor/reporteditorbackend.h"
 
+#include <QUrlQuery>
+
 #include "account/accountmanager.h"
 
 using namespace Qt::StringLiterals;

@@ -4,6 +4,8 @@
 
 #include "editor/attachmenteditormodel.h"
 
+#include <QJsonDocument>
+
 #include "account/account.h"
 
 AttachmentEditorModel::AttachmentEditorModel(QObject *parent, AbstractAccount *account)

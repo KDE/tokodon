@@ -3,6 +3,8 @@
 
 #include "network/networkrequestprogress.h"
 
+#include <QNetworkReply>
+
 NetworkRequestProgress::NetworkRequestProgress(QObject *parent)
     : QObject(parent)
 {
