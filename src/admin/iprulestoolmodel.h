@@ -8,10 +8,6 @@
 
 #include "admin/ipinfo.h"
 
-// todo: use std::chrono when c++20 is stable
-#define YEAR 31536000
-#define DAY 86400
-
 class IpRulesToolModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -30,12 +26,12 @@ public:
     };
 
     enum TimeInterval {
-        ThreeYears = YEAR * 3,
-        OneYear = YEAR,
-        Sixmonths = YEAR / 2,
-        Onemonth = YEAR / 12,
-        Twoweeks = DAY * 14,
-        Oneday = DAY,
+        ThreeYears = std::chrono::years{3}.count(),
+        OneYear = std::chrono::years{1}.count(),
+        Sixmonths = std::chrono::months{6}.count(),
+        Onemonth = std::chrono::months{1}.count(),
+        Twoweeks = std::chrono::weeks{2}.count(),
+        Oneday = std::chrono::days{1}.count(),
     };
 
     Q_ENUM(TimeInterval)
