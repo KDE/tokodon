@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
@@ -43,13 +45,13 @@ QQC2.AbstractButton {
             KirigamiComponents.AvatarButton {
                 id: avatar
 
-                source: post.authorIdentity.avatarUrl
+                source: root.post.authorIdentity.avatarUrl
                 cache: true
                 onClicked: {
-                    Navigation.openAccount(post.authorIdentity.id);
+                    Navigation.openAccount(root.post.authorIdentity.id);
                     root.clicked();
                 }
-                name: post.authorIdentity.displayName
+                name: root.post.authorIdentity.displayName
 
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
@@ -61,7 +63,7 @@ QQC2.AbstractButton {
             }
 
             QQC2.Label {
-                text: i18n("Post from %1", post.authorIdentity.displayName)
+                text: i18n("Post from %1", root.post.authorIdentity.displayName)
 
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
             }
@@ -87,13 +89,13 @@ QQC2.AbstractButton {
         }
 
         Loader {
-            active: post.content.length > 0
+            active: root.post.content.length > 0
             visible: active
 
             Layout.fillWidth: true
 
             sourceComponent: PostContent {
-                content: post.content
+                content: root.post.content
                 expandedPost: false
                 secondary: true
                 shouldOpenInternalLinks: false
@@ -111,7 +113,7 @@ QQC2.AbstractButton {
         }
 
         Loader {
-            active: post.attachments.length > 0
+            active: root.post.attachments.length > 0
             visible: active
 
             Layout.fillWidth: true
@@ -130,9 +132,8 @@ QQC2.AbstractButton {
         }
 
         Loader {
-            active: post.poll !== null
-            sourceComponent: PostPoll
-            {
+            active: root.post.poll !== null
+            sourceComponent: PostPoll {
                 poll: root.post.poll
             }
         }

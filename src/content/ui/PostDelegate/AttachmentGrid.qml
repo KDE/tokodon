@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
@@ -107,7 +109,7 @@ QQC2.Control {
 
         Repeater {
             id: attachmentsRepeater
-            model: root.secondary ? [] : attachments
+            model: root.secondary ? [] : root.attachments
 
             DelegateChooser {
                 role: "attachmentType"
@@ -120,6 +122,8 @@ QQC2.Control {
 
                         required property var modelData
                         required property int index
+
+                        caption: modelData.caption
 
                         onClicked: {
                             if (root.isSensitive) {
@@ -139,25 +143,25 @@ QQC2.Control {
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
+                        Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         FocusedImage {
                             id: img
 
                             anchors.fill: parent
-                            source: modelData.previewUrl
+                            source: imgContainer.modelData.previewUrl
 
                             onStatusChanged: {
                                 if (status === Image.Error) {
                                     // Fall back to remote URL
-                                    img.source = modelData.remoteUrl;
+                                    img.source = imgContainer.modelData.remoteUrl;
                                 }
                             }
 
                             crop: !root.shouldKeepAspectRatio
-                            focusX: modelData.focusX
-                            focusY: modelData.focusY
-                            sourceSize: Qt.size(modelData.sourceWidth, modelData.sourceHeight)
+                            focusX: imgContainer.modelData.focusX
+                            focusY: imgContainer.modelData.focusY
+                            sourceSize: Qt.size(imgContainer.modelData.sourceWidth, imgContainer.modelData.sourceHeight)
 
                             Rectangle {
                                 anchors.fill: parent
@@ -166,7 +170,7 @@ QQC2.Control {
                                 Image {
                                     anchors.fill: parent
 
-                                    source: visible ? modelData.tempSource : ''
+                                    source: visible ? imgContainer.modelData.tempSource : ''
                                 }
 
                                 visible: opacity !== 0.0
@@ -187,10 +191,10 @@ QQC2.Control {
                             QQC2.Button {
                                 anchors.centerIn: parent
 
-                                visible: modelData.attachmentType === Attachment.Unknown
+                                visible: imgContainer.modelData.attachmentType === Attachment.Unknown
                                 text: i18n("Not available")
 
-                                onClicked: Qt.openUrlExternally(modelData.remoteUrl)
+                                onClicked: Qt.openUrlExternally(imgContainer.modelData.remoteUrl)
                             }
                         }
                     }
@@ -200,7 +204,7 @@ QQC2.Control {
                     roleValue: Attachment.GifV
 
                     VideoAttachment {
-                        id: video
+                        id: gif
 
                         required property var modelData
                         required property int index
@@ -217,7 +221,7 @@ QQC2.Control {
                             if (root.isSensitive) {
                                 root.showMedia();
                             } else {
-                                video.togglePlayPause()
+                                gif.togglePlayPause()
                             }
                         }
 
@@ -231,22 +235,22 @@ QQC2.Control {
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
+                        Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         Connections {
                             target: root
                             function onInViewPortChanged() {
                                 if (!root.inViewPort) {
-                                    video.pause();
-                                } else if(video.autoPlay) {
-                                    video.play();
+                                    gif.pause();
+                                } else if(gif.autoPlay) {
+                                    gif.play();
                                 }
                             }
                             function onUserSensitivityChanged(hide) {
                                 if (hide) {
-                                    video.pause()
-                                } else if (video.autoPlay) {
-                                    video.play()
+                                    gif.pause()
+                                } else if (gif.autoPlay) {
+                                    gif.play()
                                 }
                             }
                         }
@@ -273,7 +277,7 @@ QQC2.Control {
 
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.rowSpan: isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
+                        Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
 
                         onClicked: {
                             if (root.isSensitive) {
@@ -344,7 +348,7 @@ QQC2.Control {
         visible: active
 
         sourceComponent: AttachmentMenu {
-            onClosed: postMenu.active = false
+            onClosed: imageMenu.active = false
         }
     }
 }

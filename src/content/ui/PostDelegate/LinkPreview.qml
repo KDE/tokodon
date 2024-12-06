@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2

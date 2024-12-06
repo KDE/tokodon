@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import org.kde.tokodon
 
 // Polls inside of a status
 ColumnLayout {
@@ -32,7 +33,7 @@ ColumnLayout {
             RowLayout {
                 spacing: root.poll.votesCount !== 0 ? Kirigami.Units.largeSpacing : 0
                 QQC2.Label {
-                    text: if (modelData.votesCount === -1) {
+                    text: if (votedPollDelegate.modelData.votesCount === -1) {
                         return ''
                     } else if (root.poll.votesCount === 0) {
                         return ''
@@ -87,24 +88,28 @@ ColumnLayout {
     }
 
     Repeater {
-        model: !root.showResults ? poll.options : []
+        model: !root.showResults ? root.poll.options : []
         RowLayout {
+            id: resultDelegate
+
+            required property var modelData
+
             QQC2.CheckBox {
-                visible: poll.multiple
+                visible: root.poll.multiple
                 Layout.alignment: Qt.AlignVCenter
                 QQC2.ButtonGroup.group: pollGroup
-                property int choiceIndex: index
+                property int choiceIndex: root.index
             }
 
             QQC2.RadioButton {
-                visible: !poll.multiple
+                visible: !root.poll.multiple
                 Layout.alignment: Qt.AlignVCenter
                 QQC2.ButtonGroup.group: pollGroup
-                property int choiceIndex: index
+                property int choiceIndex: root.index
             }
 
             QQC2.Label {
-                text: modelData.title
+                text: resultDelegate.modelData.title
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
             }
@@ -113,7 +118,7 @@ ColumnLayout {
 
     RowLayout {
         spacing: Kirigami.Units.largeSpacing
-        visible: !poll.expired && !poll.voted
+        visible: !root.poll.expired && !root.poll.voted
 
         QQC2.Button {
             enabled: !root.showResults && pollGroup.checkState !== Qt.Unchecked
@@ -144,7 +149,7 @@ ColumnLayout {
     }
 
     QQC2.Label {
-        visible: poll.expired
+        visible: root.poll.expired
         text: i18n("Poll has closed")
         color: Kirigami.Theme.disabledTextColor
     }

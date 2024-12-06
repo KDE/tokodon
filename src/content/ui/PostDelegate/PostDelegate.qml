@@ -1,9 +1,10 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
@@ -146,9 +147,14 @@ QQC2.ItemDelegate {
     contentItem: PostLayout {
         id: flexColumn
 
+        isThreadReply: root.isThreadReply
+        isReply: root.isReply
+        threadMargin: root.threadMargin
+        isLastThreadReply: root.isLastThreadReply
+
         RowLayout {
             spacing: Kirigami.Units.largeSpacing
-            visible: filtered
+            visible: root.filtered
 
             Layout.fillWidth: true
 
@@ -160,7 +166,7 @@ QQC2.ItemDelegate {
             Kirigami.LinkButton {
                 Layout.alignment: Qt.AlignHCenter
                 text: i18n("Show anyway")
-                onClicked: filtered = false
+                onClicked: root.filtered = false
             }
         }
 
@@ -226,6 +232,16 @@ QQC2.ItemDelegate {
         PostInfoBar {
             id: infoBar
 
+            identity: root.authorIdentity
+            secondary: root.secondary
+            visible: !root.filtered
+            relativeTime: root.relativeTime
+            selected: root.selected
+            wasEdited: root.wasEdited
+            editedAt: root.editedAt
+            visibility: root.visibility
+            absoluteTime: root.absoluteTime
+
             Layout.fillWidth: true
 
             onMoreOpened: parentItem => {
@@ -247,7 +263,7 @@ QQC2.ItemDelegate {
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
-                    onAccepted: timelineModel.actionDelete(timelineModel.index(root.index, 0))
+                    onAccepted: root.timelineModel.actionDelete(timelineModel.index(root.index, 0))
                 }
             }
 
@@ -263,7 +279,7 @@ QQC2.ItemDelegate {
                     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                     showCloseButton: false
 
-                    onAccepted: timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
+                    onAccepted: root.timelineModel.actionRedraft(timelineModel.index(root.index, 0), false)
                 }
             }
         }
@@ -299,7 +315,7 @@ QQC2.ItemDelegate {
         }
 
         ColumnLayout {
-            visible: !filtered && root.post.hasContent
+            visible: !root.filtered && root.post.hasContent
             spacing: Kirigami.Units.largeSpacing
 
             Layout.fillWidth: true
@@ -421,7 +437,7 @@ QQC2.ItemDelegate {
             readonly property bool shouldExpand: Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode
             readonly property real buttonPadding: shouldExpand ? Kirigami.Units.mediumSpacing : Kirigami.Units.smallSpacing
 
-            visible: showInteractionButton && !filtered
+            visible: root.showInteractionButton && !filtered
             Layout.fillWidth: true
             spacing: shouldExpand ? 0 : Kirigami.Units.gridUnit * 2
 
@@ -470,7 +486,7 @@ QQC2.ItemDelegate {
                     }
                 }
 
-                onClicked: timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                onClicked: root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
                 Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
             }
 
@@ -493,7 +509,7 @@ QQC2.ItemDelegate {
                 text: Config.showPostStats && !root.selected ? root.favouritesCount : ''
                 tooltip: i18nc("Favorite a post", "Favorite")
 
-                onClicked: timelineModel.actionFavorite(timelineModel.index(root.index, 0))
+                onClicked: root.timelineModel.actionFavorite(timelineModel.index(root.index, 0))
                 Accessible.description: root.favourited ? i18n("Favorited") : i18n("Favorite")
             }
 
@@ -515,7 +531,7 @@ QQC2.ItemDelegate {
 
                 tooltip: root.bookmarked ? i18n("Remove bookmark") : i18nc("Bookmark a post", "Bookmark")
 
-                onClicked: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
+                onClicked: root.timelineModel.actionBookmark(timelineModel.index(root.index, 0))
                 Accessible.description: root.bookmarked ? i18n("Bookmarked") : i18n("Bookmark")
             }
         }
@@ -526,7 +542,16 @@ QQC2.ItemDelegate {
 
             Layout.fillWidth: true
 
-            sourceComponent: InformationBar {}
+            sourceComponent: InformationBar {
+                selected: root.selected
+                visibility: root.visibility
+                wasEdited: root.wasEdited
+                editedAt: root.editedAt
+                favouritesCount: root.favouritesCount
+                reblogsCount: root.reblogsCount
+                application: root.application
+                absoluteTime: root.absoluteTime
+            }
         }
 
         Loader {

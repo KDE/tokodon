@@ -42,7 +42,7 @@ QQC2.ToolButton {
             source: control.interacted ? control.interactedIconName : control.iconName
 
             isMask: true
-            color: (interactable && parent.activeFocus) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
+            color: (control.interactable && parent.activeFocus) ? Kirigami.Theme.focusColor : (control.interacted ? control.interactionColor : Kirigami.Theme.textColor)
         }
 
         QQC2.Label {

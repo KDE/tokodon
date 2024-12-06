@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls 2 as QQC2
-import org.kde.kirigami 2 as Kirigami
 import org.kde.purpose 1.0 as Purpose
 
 QQC2.Menu {
@@ -27,8 +25,10 @@ QQC2.Menu {
         }
 
         delegate: QQC2.MenuItem {
-            text: model.display
-            icon.name: model.iconName
+            required property var modelData
+
+            text: modelData.display
+            icon.name: modelData.iconName
 
             onTriggered: {
                 applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "ShareDialog"), {

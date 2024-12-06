@@ -69,7 +69,7 @@ QQC2.TextArea {
                     url: foundLink,
                 });
 
-                linkMenu.popup(point);
+                (linkMenu as LinkMenu)?.popup(point);
             } else if (button === Qt.LeftButton && !root.hoveredLink && !root.expandedPost) {
                 root.clicked();
             }

@@ -3,11 +3,15 @@
 
 import QtQuick
 import org.kde.kirigami 2 as Kirigami
-import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 
 Kirigami.FlexColumn {
     id: flexColumn
+
+    required property bool isThreadReply
+    required property bool isReply
+    required property real threadMargin
+    required property bool isLastThreadReply
 
     default property alias content: inner.children
 
@@ -22,22 +26,22 @@ Kirigami.FlexColumn {
         Item {
             id: threadSpace
 
-            visible: isThreadReply && isReply
+            visible: flexColumn.isThreadReply && flexColumn.isReply
 
-            Layout.preferredWidth: visible ? root.threadMargin : 0
+            Layout.preferredWidth: visible ? flexColumn.threadMargin : 0
             Layout.fillHeight: true
 
             Kirigami.Separator {
                 id: threadSeparator
 
-                readonly property bool shouldDrawFullLine: !root.isLastThreadReply
+                readonly property bool shouldDrawFullLine: !flexColumn.isLastThreadReply
                 readonly property real avatarOffset: 30
 
                 anchors {
                     top: parent.top
-                    topMargin: -root.topPadding
+                    topMargin: -Kirigami.Units.largeSpacing
                     bottom: shouldDrawFullLine ? parent.bottom : undefined
-                    bottomMargin: shouldDrawFullLine ? -root.bottomPadding : 0
+                    bottomMargin: shouldDrawFullLine ? -Kirigami.Units.largeSpacing : 0
                     horizontalCenter: threadSpace.horizontalCenter
                 }
 

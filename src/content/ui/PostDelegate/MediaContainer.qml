@@ -1,10 +1,11 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
-import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 
 import "../Components"
@@ -12,6 +13,8 @@ import "../Components"
 // Wrapper component used for the attachment grid
 Item {
     id: root
+
+    required property string caption
 
     // Chip control
     property bool showGifChip: false
@@ -63,12 +66,12 @@ Item {
             checkable: false
             text: i18nc("Attachment has alt-text, Short for alt-text", "Alt")
             closable: false
-            visible: modelData.caption.length !== 0
+            visible: root.caption.length !== 0
             hoverEnabled: true
 
             onClicked: {
                 altPopupLoader.active = true;
-                altPopupLoader.item.subtitle = modelData.caption;
+                altPopupLoader.item.subtitle = root.caption;
                 altPopupLoader.item.open();
             }
 

@@ -11,11 +11,14 @@ import org.kde.tokodon.private
 
 // This is the top part of the status that contains the author information, and some more actions
 ClickableIdentityInfo {
-    id: infoBar
+    id: root
 
-    identity: root.authorIdentity
-    secondary: root.secondary
-    visible: !filtered
+    required property string relativeTime
+    required property bool wasEdited
+    required property bool selected
+    required property string absoluteTime
+    required property string editedAt
+    required property int visibility
 
     signal moreOpened(parentItem: var)
 
@@ -105,6 +108,6 @@ ClickableIdentityInfo {
         Layout.alignment: Qt.AlignVCenter
         Layout.preferredWidth: implicitHeight
 
-        onClicked: infoBar.moreOpened(moreButton)
+        onClicked: root.moreOpened(moreButton)
     }
 }

@@ -8,10 +8,20 @@ import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.tokodon
 import org.kde.tokodon.private
-import Qt.labs.qmlmodels 1.0
 
 // More information shown when a post is expanded, such as who favorited it etc.
 ColumnLayout {
+    id: root
+
+    required property bool selected
+    required property int visibility
+    required property bool wasEdited
+    required property string editedAt
+    required property int favouritesCount
+    required property int reblogsCount
+    required property var application
+    required property string absoluteTime
+
     spacing: Kirigami.Units.largeSpacing
 
     Kirigami.Separator {
