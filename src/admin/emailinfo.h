@@ -10,6 +10,7 @@ class EmailInfo
 {
     Q_GADGET
     QML_ELEMENT
+    QML_NAMED_ELEMENT(emailInfo)
     QML_UNCREATABLE("Only for enums")
 
 public:

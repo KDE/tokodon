@@ -70,6 +70,7 @@ class Notification
 {
     Q_GADGET
     QML_ELEMENT
+    QML_NAMED_ELEMENT(notification)
     QML_UNCREATABLE("Only for enums")
 
 public:

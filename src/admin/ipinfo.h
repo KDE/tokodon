@@ -10,6 +10,7 @@ class IpInfo
 {
     Q_GADGET
     QML_ELEMENT
+    QML_NAMED_ELEMENT(ipInfo)
     QML_UNCREATABLE("Only for enums")
 
 public:
