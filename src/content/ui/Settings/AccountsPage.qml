@@ -54,7 +54,7 @@ FormCard.FormCardPage {
                         QQC2.Label {
                             Layout.fillWidth: true
                             text: delegate.displayName
-                            textFormat: Text.RichText
+                            textFormat: Text.StyledText
                             elide: Text.ElideRight
                             wrapMode: Text.Wrap
                             maximumLineCount: 2

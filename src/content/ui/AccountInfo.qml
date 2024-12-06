@@ -44,7 +44,7 @@ Kirigami.Page {
 
         text: accountModel.identity.displayNameHtml
 
-        textFormat: TextEdit.RichText
+        textFormat: Text.StyledText
     }
 
     topPadding: 0

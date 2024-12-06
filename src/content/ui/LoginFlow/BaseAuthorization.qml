@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
 
                 contentItem: TextEdit {
                     color: Kirigami.Theme.textColor
-                    textFormat: Text.RichText
+                    textFormat: Text.StyledText
                     readOnly: true
                     selectByMouse: true
                     text: i18n("To continue, please open the following link in your web browser to authorize Tokodon: %1", "<br /><br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")

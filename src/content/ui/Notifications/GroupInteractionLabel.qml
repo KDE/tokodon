@@ -75,7 +75,7 @@ RowLayout {
 
                     return '';
                 }
-                textFormat: Text.RichText
+                textFormat: Text.StyledText
                 font.bold: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignBaseline

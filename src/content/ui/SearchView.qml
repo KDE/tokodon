@@ -119,7 +119,7 @@ ListView {
                             type: Kirigami.Heading.Type.Primary
                             verticalAlignment: Text.AlignTop
                             elide: Text.ElideRight
-                            textFormat: Text.RichText
+                            textFormat: Text.StyledText
                             maximumLineCount: 1
 
                             Layout.fillWidth: true

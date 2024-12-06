@@ -25,7 +25,7 @@ MastoPage {
             }
 
             text: i18n("There was an issue logging into the server:<br><b>%1</b>", AccountManager.selectedAccountLoginIssue())
-            textItem.textFormat: Text.RichText
+            textItem.textFormat: Text.StyledText
         }
     }
 

@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
 
                     text: delegate.content
                     wrapMode: Text.Wrap
-                    textFormat: Text.RichText
+                    textFormat: Text.StyledText
 
                     onLinkActivated: (link) => Qt.openUrlExternally(link)
                 }

@@ -50,7 +50,7 @@ DelegateChooser {
 
                         level: 5
                         text: accountDelegate.text
-                        textFormat: Text.RichText
+                        textFormat: Text.StyledText
                         type: Kirigami.Heading.Type.Primary
                         color: Kirigami.Theme.textColor
                         verticalAlignment: Text.AlignTop

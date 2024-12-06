@@ -64,7 +64,7 @@ QQC2.ItemDelegate {
             QQC2.Label {
                 font: Config.defaultFont
                 text: i18n("%1 has issued a warning against your account", root.notificationActorIdentity.displayNameHtml)
-                textFormat: Text.RichText
+                textFormat: Text.StyledText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
             }

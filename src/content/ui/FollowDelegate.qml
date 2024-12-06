@@ -69,7 +69,7 @@ QQC2.ItemDelegate {
                 } else {
                     i18n("%1 followed you", root.notificationActorIdentity.displayNameHtml)
                 }
-                textFormat: Text.RichText
+                textFormat: Text.StyledText
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
             }

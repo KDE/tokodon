@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
         maximumLineCount: 1
         elide: Text.ElideRight
         text: root.title
-        textFormat: TextEdit.RichText
+        textFormat: Text.StyledText
     }
 
     ListView {
