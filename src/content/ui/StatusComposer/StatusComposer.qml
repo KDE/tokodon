@@ -397,7 +397,7 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
 
                     RowLayout {
-                        spacing: Kirigami.Units.smallSpacing
+                        spacing: Kirigami.Units.mediumSpacing
 
                         QQC2.ToolButton {
                             enabled: backend.attachmentEditorModel.count < 4 && !addPool.checked
@@ -561,6 +561,8 @@ Kirigami.ScrollablePage {
 
         RowLayout {
             Layout.fillWidth: true
+
+            spacing: 0
 
             Rectangle {
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter

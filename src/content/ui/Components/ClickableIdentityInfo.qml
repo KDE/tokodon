@@ -21,7 +21,7 @@ RowLayout {
     property string ip
     readonly property alias avatar: avatar
 
-    spacing: Kirigami.Units.mediumSpacing
+    spacing: Kirigami.Units.largeSpacing
 
     signal clicked()
 

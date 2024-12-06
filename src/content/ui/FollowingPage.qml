@@ -98,50 +98,11 @@ Kirigami.Page {
                     text: identity.username
                     highlighted: root.currentAccountId === identity.id
 
-                    contentItem: RowLayout {
+                    contentItem: InlineIdentityInfo {
                         spacing: Kirigami.Units.mediumSpacing
 
-                        KirigamiComponents.Avatar {
-                            id: avatar
-
-                            Layout.alignment: Qt.AlignTop
-                            Layout.rowSpan: 5
-
-                            source: delegate.identity.avatarUrl
-                            cache: true
-                            name: delegate.identity.displayName
-                        }
-
-                        ColumnLayout {
-                            id: layout
-
-                            Layout.fillWidth: true
-
-                            spacing: 0
-                            clip: true
-
-                            Kirigami.Heading {
-                                level: 4
-                                text: delegate.identity.displayNameHtml
-                                type: Kirigami.Heading.Type.Primary
-                                verticalAlignment: Text.AlignTop
-                                elide: Text.ElideRight
-                                textFormat: Text.StyledText
-                                maximumLineCount: 1
-
-                                Layout.fillWidth: true
-                            }
-
-                            QQC2.Label {
-                                elide: Text.ElideRight
-                                color: Kirigami.Theme.disabledTextColor
-                                text: delegate.relativeTime
-                                verticalAlignment: Text.AlignTop
-                                maximumLineCount: 1
-
-                                Layout.fillWidth: true
-                            }
-                        }
+                        identity: delegate.identity
+                        secondary: false
                     }
 
                     onClicked: {

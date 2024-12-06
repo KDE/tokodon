@@ -171,7 +171,7 @@ QQC2.ItemDelegate {
         }
 
         RowLayout {
-            spacing: Kirigami.Units.largeSpacing
+            spacing: Kirigami.Units.smallSpacing
             visible: root.pinned && !root.notificationActorIdentity && !root.filtered
 
             Layout.fillWidth: true
@@ -329,7 +329,7 @@ QQC2.ItemDelegate {
 
                 contentItem: RowLayout {
                     id: warningLayout
-                    spacing: Kirigami.Units.largeSpacing
+                    spacing: Kirigami.Units.smallSpacing
 
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignVCenter
@@ -342,7 +342,6 @@ QQC2.ItemDelegate {
                         text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
                         wrapMode: Text.Wrap
                         font: Config.defaultFont
-
                     }
 
                     QQC2.Button {

@@ -28,6 +28,8 @@ ColumnLayout {
             required property var index
 
             contentItem: RowLayout {
+                spacing: Kirigami.Units.largeSpacing
+
                 QQC2.RadioButton {
                     visible: !poll.multipleChoice
                     enabled: false

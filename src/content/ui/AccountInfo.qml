@@ -323,6 +323,8 @@ Kirigami.Page {
                 }
 
                 contentItem: RowLayout {
+                    spacing: 0
+
                     RowLayout {
                         Layout.maximumWidth: Kirigami.Units.gridUnit * 30
                         Layout.fillWidth: true
@@ -369,29 +371,35 @@ Kirigami.Page {
                             Layout.rightMargin: Kirigami.Units.largeSpacing
                             Layout.fillWidth: true
 
-                            QQC2.Label {
-                                Layout.fillWidth: true
-                                text: accountModel.identity.displayNameHtml
-                                font.bold: true
-                                font.pixelSize: 24
-                                maximumLineCount: 2
-                                wrapMode: Text.Wrap
-                                elide: Text.ElideRight
-                            }
-
-                            QQC2.TextArea {
-                                text: "@" + accountModel.identity.account
-                                textFormat: TextEdit.PlainText
-                                wrapMode: TextEdit.Wrap
-                                readOnly: true
-                                background: null
-                                font.pixelSize: 18
-
-                                leftPadding: 0
-                                rightPadding: 0
-                                topPadding: 0
+                            ColumnLayout {
+                                spacing: 0
 
                                 Layout.fillWidth: true
+
+                                QQC2.Label {
+                                    Layout.fillWidth: true
+                                    text: accountModel.identity.displayNameHtml
+                                    font.bold: true
+                                    font.pixelSize: 24
+                                    maximumLineCount: 2
+                                    wrapMode: Text.Wrap
+                                    elide: Text.ElideRight
+                                }
+
+                                QQC2.TextArea {
+                                    text: "@" + accountModel.identity.account
+                                    textFormat: TextEdit.PlainText
+                                    wrapMode: TextEdit.Wrap
+                                    readOnly: true
+                                    background: null
+                                    font.pixelSize: 18
+
+                                    leftPadding: 0
+                                    rightPadding: 0
+                                    topPadding: 0
+
+                                    Layout.fillWidth: true
+                                }
                             }
 
                             Kirigami.ActionToolBar {
@@ -733,8 +741,11 @@ Kirigami.Page {
                     background: null
 
                     contentItem: ColumnLayout {
-                        spacing: 0
+                        spacing: Kirigami.Units.smallSpacing
+
                         RowLayout {
+                            spacing: Kirigami.Units.mediumSpacing
+
                             Layout.fillWidth: true
 
                             Kirigami.Heading {
@@ -821,10 +832,14 @@ Kirigami.Page {
                 background: null
 
                 contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     QQC2.Label {
                         text: i18n("Also followed by:")
                     }
                     RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+
                         Repeater {
                             id: followsRepeater
 
@@ -873,6 +888,8 @@ Kirigami.Page {
 
                 RowLayout {
                     id: chips
+
+                    spacing: Kirigami.Units.mediumSpacing
 
                     readonly property FormCard.FormCard cardParent: privateCard.visible ? privateCard : bioCard
 
@@ -967,6 +984,8 @@ Kirigami.Page {
 
                 RowLayout {
                     id: extraLayout
+
+                    spacing: Kirigami.Units.mediumSpacing
 
                     anchors {
                         fill: parent

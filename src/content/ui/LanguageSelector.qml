@@ -35,6 +35,8 @@ Components.MessageDialog {
         spacing: 0
 
         RowLayout {
+            spacing: 0
+
             Layout.margins: Kirigami.Units.smallSpacing
             Kirigami.Heading {
                 Layout.leftMargin: Kirigami.Units.smallSpacing

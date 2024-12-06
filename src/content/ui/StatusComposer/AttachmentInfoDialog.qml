@@ -42,6 +42,8 @@ QQC2.Dialog {
         property real focusY: -((focusTarget.y / imageContainer.height) * 2 - 1)
         property bool ready: false
 
+        spacing: Kirigami.Units.largeSpacing
+
         // For some reason, the bindings do not work and I need to set these manually, ugh.
         onFocusXChanged: {
             if (ready) {

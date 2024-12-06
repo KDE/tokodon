@@ -142,6 +142,8 @@ FormCard.FormCardPage {
                                 RowLayout {
                                     Layout.fillWidth: true
 
+                                    spacing: 0
+
                                     InlineIdentityInfo {
                                         identity: delegate.authorIdentity
                                         secondary: false

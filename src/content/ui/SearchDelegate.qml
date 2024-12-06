@@ -30,6 +30,8 @@ DelegateChooser {
             }
 
             contentItem: RowLayout {
+                spacing: Kirigami.Units.largeSpacing
+
                 KirigamiComponents.Avatar {
                     Layout.alignment: Qt.AlignTop
                     Layout.rowSpan: 5

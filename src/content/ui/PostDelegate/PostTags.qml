@@ -42,7 +42,7 @@ QQC2.Control {
             QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
             RowLayout {
-                spacing: Kirigami.Units.largeSpacing
+                spacing: Kirigami.Units.smallSpacing
 
                 Repeater {
                     model: root.standaloneTags

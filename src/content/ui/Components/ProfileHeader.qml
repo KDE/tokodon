@@ -68,6 +68,8 @@ QQC2.Pane {
     anchors.left: parent.left
     anchors.right: parent.right
     contentItem: RowLayout {
+        spacing: Kirigami.Units.largeSpacing
+
         implicitHeight: Kirigami.Units.gridUnit * 5
 
         Layout.maximumWidth: Kirigami.Units.gridUnit * 30
@@ -102,7 +104,7 @@ QQC2.Pane {
         }
 
         ColumnLayout {
-            spacing: Kirigami.Units.smallSpacing
+            spacing: 0
 
             Layout.leftMargin: Kirigami.Units.largeSpacing
             Layout.rightMargin: Kirigami.Units.largeSpacing

@@ -47,6 +47,8 @@ Kirigami.ScrollablePage {
                 spacing: 0
 
                 RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
                     Layout.fillWidth: true
 
                     InlineIdentityInfo {

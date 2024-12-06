@@ -51,7 +51,7 @@ Item {
     }
 
     RowLayout {
-        spacing: Kirigami.Units.mediumSpacing
+        spacing: Kirigami.Units.smallSpacing
         z: 20
 
         anchors {

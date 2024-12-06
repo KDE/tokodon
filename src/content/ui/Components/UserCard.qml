@@ -28,6 +28,9 @@ Kirigami.AbstractCard {
 
         ColumnLayout {
             id: userInfo
+
+            spacing: Kirigami.Units.smallSpacing
+
             InlineIdentityInfo {
                 secondary: false
                 identity: root.userIdentity

@@ -33,6 +33,8 @@ Delegates.IndicatorItemDelegate {
     contentItem: RowLayout {
         id: rowLayout
 
+        spacing: Kirigami.Units.smallSpacing
+
         KirigamiComponents.Avatar {
             name: root.authorIdentity.displayName
             source: root.authorIdentity.avatarUrl
@@ -45,9 +47,10 @@ Delegates.IndicatorItemDelegate {
 
         ColumnLayout {
             Layout.fillWidth: true
-            spacing: Kirigami.Units.smallSpacing
+            spacing: 0
 
             RowLayout {
+                spacing: 0
                 Layout.fillWidth: true
                 QQC2.Label {
                     Layout.fillWidth: true

@@ -31,7 +31,7 @@ ColumnLayout {
             required property var modelData
 
             RowLayout {
-                spacing: root.poll.votesCount !== 0 ? Kirigami.Units.largeSpacing : 0
+                spacing: root.poll.votesCount !== 0 ? Kirigami.Units.smallSpacing : 0
                 QQC2.Label {
                     text: if (votedPollDelegate.modelData.votesCount === -1) {
                         return ''
@@ -92,6 +92,8 @@ ColumnLayout {
         RowLayout {
             id: resultDelegate
 
+            spacing: Kirigami.Units.smallSpacing
+
             required property var modelData
 
             QQC2.CheckBox {
@@ -117,7 +119,7 @@ ColumnLayout {
     }
 
     RowLayout {
-        spacing: Kirigami.Units.largeSpacing
+        spacing: Kirigami.Units.smallSpacing
         visible: !root.poll.expired && !root.poll.voted
 
         QQC2.Button {

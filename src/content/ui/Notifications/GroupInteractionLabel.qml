@@ -44,6 +44,8 @@ RowLayout {
 
     QQC2.AbstractButton {
         contentItem: RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
             Repeater {
                 model: root.notificationActorIdentity
 
