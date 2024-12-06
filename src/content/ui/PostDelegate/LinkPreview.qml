@@ -83,8 +83,6 @@ Item {
 
                 Image {
                     id: img
-                    mipmap: true
-                    smooth: true
 
                     visible: root.card && root.card.image
 
