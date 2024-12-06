@@ -85,7 +85,11 @@ void BlurHashTest::decodeAverageColor()
 void BlurHashTest::decodeAC()
 {
     constexpr auto maxAC = 0.289157f;
-    QCOMPARE(BlurHash::decodeAC(0, maxAC), QColor::fromRgbF(-0.289063f, -0.289063f, -0.289063f));
+    constexpr auto expectedColor = BlurHash::ColorF{-0.289157f, -0.289157f, -0.289157f};
+    const auto resultColor = BlurHash::decodeAC(0, maxAC);
+    QCOMPARE(resultColor.r, expectedColor.r);
+    QCOMPARE(resultColor.g, expectedColor.g);
+    QCOMPARE(resultColor.b, expectedColor.b);
 }
 
 void BlurHashTest::decodeImage()

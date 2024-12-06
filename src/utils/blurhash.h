@@ -29,6 +29,14 @@ protected:
     };
 
     /**
+     * @brief This is just for storing intermediary color values.
+     * We could do this via QColor, but it doesn't work in floating points natively and thus requires expensive conversions.
+     */
+    struct ColorF {
+        float r = 0.0f, g = 0.0f, b = 0.0f;
+    };
+
+    /**
      * @brief Decodes a base 83 string to it's integer value. Returns std::nullopt if there's an invalid character in the blurhash.
      */
     static std::optional<int> decode83(const QString &encodedString);
@@ -57,7 +65,7 @@ protected:
     /**
      * @brief Decodes a encoded AC component value.
      */
-    static QColor decodeAC(int value, float maxAC);
+    static ColorF decodeAC(int value, float maxAC);
 
     /**
      * @brief Calculates the weighted sum for @p dimension across @p components.

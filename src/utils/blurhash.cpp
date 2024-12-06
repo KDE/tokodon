@@ -46,7 +46,7 @@ QImage BlurHash::decode(const QString &blurhash, const QSize &size)
 
     const auto averageColor = toLinearSRGB.map(decodeAverageColor(*averageColor83));
 
-    QList values = {averageColor};
+    std::vector<ColorF> values = {ColorF{.r = averageColor.redF(), .g = averageColor.greenF(), .b = averageColor.blueF()}};
     values.reserve(blurhash.size() - 7);
 
     // Iterate through the rest of the string for the color values
@@ -57,7 +57,7 @@ QImage BlurHash::decode(const QString &blurhash, const QSize &size)
             return {};
         }
 
-        values.append(decodeAC(*acComponent83, maxAC));
+        values.push_back(decodeAC(*acComponent83, maxAC));
     }
 
     QImage image(size, QImage::Format_RGB888);
@@ -75,11 +75,11 @@ QImage BlurHash::decode(const QString &blurhash, const QSize &size)
             for (int nx = 0; nx < components.x; nx++) {
                 for (int ny = 0; ny < components.y; ny++) {
                     const float basis = basisX.value(x * components.x + nx) * basisY.value(y * components.y + ny);
-                    const auto colorValue = values.value(nx + ny * components.x);
+                    const auto colorValue = values.at(nx + ny * components.x);
 
-                    linearSumR += colorValue.redF() * basis;
-                    linearSumG += colorValue.greenF() * basis;
-                    linearSumB += colorValue.blueF() * basis;
+                    linearSumR += colorValue.r * basis;
+                    linearSumG += colorValue.g * basis;
+                    linearSumB += colorValue.b * basis;
                 }
             }
 
@@ -130,15 +130,15 @@ float BlurHash::signPow(const float value, const float exp)
     return std::copysign(std::pow(std::abs(value), exp), value);
 }
 
-QColor BlurHash::decodeAC(const int value, const float maxAC)
+BlurHash::ColorF BlurHash::decodeAC(const int value, const float maxAC)
 {
     const auto quantR = value / (19 * 19);
     const auto quantG = (value / 19) % 19;
     const auto quantB = value % 19;
 
-    return QColor::fromRgbF(signPow((static_cast<float>(quantR) - 9) / 9, 2) * maxAC,
-                            signPow((static_cast<float>(quantG) - 9) / 9, 2) * maxAC,
-                            signPow((static_cast<float>(quantB) - 9) / 9, 2) * maxAC);
+    return {.r = signPow((static_cast<float>(quantR) - 9) / 9, 2) * maxAC,
+            .g = signPow((static_cast<float>(quantG) - 9) / 9, 2) * maxAC,
+            .b = signPow((static_cast<float>(quantB) - 9) / 9, 2) * maxAC};
 }
 
 QList<float> BlurHash::calculateWeights(const qsizetype dimension, const qsizetype components)
