@@ -34,7 +34,6 @@ static const QMap<QString, Post::Visibility> p_stringToVisibility = {
 Post::Post(AbstractAccount *account, QObject *parent)
     : QObject(parent)
     , m_parent(account)
-    , m_attachmentList(this, &m_attachments)
 {
     Q_ASSERT(account);
     QString visibilityString = account->identity()->visibility();
@@ -44,7 +43,6 @@ Post::Post(AbstractAccount *account, QObject *parent)
 Post::Post(AbstractAccount *account, QJsonObject obj, QObject *parent)
     : QObject(parent)
     , m_parent(account)
-    , m_attachmentList(this, &m_attachments)
     , m_visibility(Post::Visibility::Public)
 {
     Q_ASSERT(account);
@@ -428,11 +426,6 @@ QString Post::type() const
 Identity *Post::getAuthorIdentity() const
 {
     return authorIdentity().get();
-}
-
-QQmlListProperty<Attachment> Post::attachmentList() const
-{
-    return m_attachmentList;
 }
 
 Card *Post::getCard() const

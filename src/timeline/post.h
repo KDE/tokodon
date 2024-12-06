@@ -99,7 +99,7 @@ class Post : public QObject
     Q_PROPERTY(Poll *poll READ poll NOTIFY pollChanged)
     Q_PROPERTY(QStringList filters READ filters CONSTANT)
     Q_PROPERTY(Identity *authorIdentity READ getAuthorIdentity CONSTANT)
-    Q_PROPERTY(QQmlListProperty<Attachment> attachments READ attachmentList CONSTANT)
+    Q_PROPERTY(QList<Attachment *> attachments READ attachments CONSTANT)
     Q_PROPERTY(QString relativeTime READ relativeTime CONSTANT)
     Q_PROPERTY(QString absoluteTime READ absoluteTime CONSTANT)
     Q_PROPERTY(Card *card READ getCard CONSTANT)
@@ -379,8 +379,6 @@ private:
 
     [[nodiscard]] Identity *getAuthorIdentity() const;
 
-    [[nodiscard]] QQmlListProperty<Attachment> attachmentList() const;
-
     [[nodiscard]] Card *getCard() const;
 
     void setCard(std::optional<Card> card);
@@ -413,7 +411,6 @@ private:
     std::optional<Application> m_application;
     std::shared_ptr<Identity> m_authorIdentity;
     QList<Attachment *> m_attachments;
-    QQmlListProperty<Attachment> m_attachmentList;
     std::unique_ptr<Poll> m_poll;
 
     bool m_sensitive = false;
