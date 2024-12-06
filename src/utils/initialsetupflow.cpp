@@ -80,7 +80,7 @@ InitialSetupFlow::~InitialSetupFlow() = default;
 
 bool InitialSetupFlow::isSetupNeeded() const
 {
-    return std::any_of(m_steps.cbegin(), m_steps.cend(), [](SetupStep *step) {
+    return std::ranges::any_of(std::as_const(m_steps), [](SetupStep *step) {
         return step->isSetupNeeded();
     });
 }

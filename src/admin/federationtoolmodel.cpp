@@ -272,11 +272,9 @@ void FederationToolModel::filltimeline(FederationAction action)
 
             QList<FederationInfo> fetchedFederations;
 
-            std::transform(
-                federations.cbegin(),
-                federations.cend(),
-                std::back_inserter(fetchedFederations),
-                [=](const QJsonValue &value) -> auto{ return FederationInfo::fromSourceData(value.toObject()); });
+            std::ranges::transform(std::as_const(federations), std::back_inserter(fetchedFederations), [=](const QJsonValue &value) -> auto {
+                return FederationInfo::fromSourceData(value.toObject());
+            });
             beginInsertRows({}, m_federations.size(), m_federations.size() + fetchedFederations.size() - 1);
             m_federations += fetchedFederations;
             endInsertRows();

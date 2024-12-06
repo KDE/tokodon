@@ -105,7 +105,7 @@ void ThreadModel::fillTimeline(const QString &fromId, bool backwards)
         }
 
         auto ancestors = obj["ancestors"_L1].toArray().toVariantList();
-        std::reverse(ancestors.begin(), ancestors.end());
+        std::ranges::reverse(ancestors);
 
         const auto descendents = obj["descendants"_L1].toArray();
 

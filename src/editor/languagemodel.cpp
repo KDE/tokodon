@@ -65,7 +65,7 @@ QString RawLanguageModel::getCode(const int index) const
 
 QModelIndex RawLanguageModel::indexOfValue(const QString &code)
 {
-    const auto it = std::find(m_iso639codes.cbegin(), m_iso639codes.cend(), code);
+    const auto it = std::ranges::find(std::as_const(m_iso639codes), code);
     if (it != m_iso639codes.cend()) {
         return index(std::distance(m_iso639codes.cbegin(), it), 0);
     } else {

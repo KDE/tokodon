@@ -22,14 +22,14 @@ Poll::Poll(const QJsonObject &json)
     m_votersCount = json[QStringLiteral("voters_count")].toInt(-1);
     m_voted = json[QStringLiteral("voted")].toBool();
     const auto ownVotes = json[QStringLiteral("own_votes")].toArray();
-    std::transform(ownVotes.cbegin(), ownVotes.cend(), std::back_inserter(m_ownVotes), [](const QJsonValue &value) -> auto {
+    std::ranges::transform(std::as_const(ownVotes), std::back_inserter(m_ownVotes), [](const QJsonValue &value) -> auto {
         return value.toInt();
     });
 
     const auto emojis = CustomEmoji::parseCustomEmojis(json[QStringLiteral("emojis")].toArray());
 
     const auto options = json[QStringLiteral("options")].toArray();
-    std::transform(options.cbegin(), options.cend(), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> QVariantMap {
+    std::ranges::transform(std::as_const(options), std::back_inserter(m_options), [emojis](const QJsonValue &value) -> QVariantMap {
         const auto option = value.toObject();
         QString title = TextHandler::replaceCustomEmojis(emojis, option[QStringLiteral("title")].toString());
 

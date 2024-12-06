@@ -69,12 +69,12 @@ void TrendingNewsModel::fill()
         [this](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
             auto links = doc.array().toVariantList();
-            std::reverse(links.begin(), links.end());
+            std::ranges::reverse(links);
 
             if (!links.isEmpty()) {
                 QList<Link> fetchedLinks;
 
-                std::transform(links.cbegin(), links.cend(), std::back_inserter(fetchedLinks), [this](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(links), std::back_inserter(fetchedLinks), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_links.size(), m_links.size() + fetchedLinks.size() - 1);

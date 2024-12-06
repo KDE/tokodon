@@ -73,7 +73,7 @@ void FeaturedTagsModel::fill()
             if (!tags.isEmpty()) {
                 QVector<QString> fetchedTags;
 
-                std::transform(tags.cbegin(), tags.cend(), std::back_inserter(fetchedTags), [=](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(tags), std::back_inserter(fetchedTags), [=](const QVariant &value) -> auto {
                     return value.toJsonObject()["name"_L1].toString();
                 });
                 beginInsertRows({}, m_tags.size(), m_tags.size() + fetchedTags.size() - 1);

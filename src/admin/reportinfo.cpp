@@ -169,11 +169,9 @@ void ReportInfo::fromSourceData(const QJsonObject &doc)
     m_assignedModerator = !m_assignedAccount->userLevelIdentity()->account().isEmpty();
     // creating status array with the Post class
     const auto reportStatuses = doc[QStringLiteral("statuses")].toArray();
-    std::transform(
-        reportStatuses.cbegin(),
-        reportStatuses.cend(),
-        std::back_inserter(m_reportStatus),
-        [ this, account ](const QJsonValue &value) -> auto{ return new Post(account, value.toObject(), this); });
+    std::ranges::transform(std::as_const(reportStatuses), std::back_inserter(m_reportStatus), [this, account](const QJsonValue &value) -> auto {
+        return new Post(account, value.toObject(), this);
+    });
 
     m_rules = doc["rules"_L1].toArray();
 

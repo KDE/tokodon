@@ -65,12 +65,12 @@ void SuggestionsModel::fill()
         [this](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
             auto suggestions = doc.array().toVariantList();
-            std::reverse(suggestions.begin(), suggestions.end());
+            std::ranges::reverse(suggestions);
 
             if (!suggestions.isEmpty()) {
                 QList<Suggestion> fetchedSuggestions;
 
-                std::transform(suggestions.cbegin(), suggestions.cend(), std::back_inserter(fetchedSuggestions), [this](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(suggestions), std::back_inserter(fetchedSuggestions), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_links.size(), m_links.size() + fetchedSuggestions.size() - 1);

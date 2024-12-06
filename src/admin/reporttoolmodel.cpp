@@ -266,23 +266,19 @@ void ReportToolModel::fillTimeline()
 
             QList<std::shared_ptr<ReportInfo>> fetchedReports;
 
-            std::transform(
-                reportsArray.cbegin(),
-                reportsArray.cend(),
-                std::back_inserter(fetchedReports),
-                [ account, this ](const QJsonValue &value) -> auto{
-                    const auto reportInfoJson = value.toObject();
-                    const auto accountPopulate = account->reportInfoLookup(reportInfoJson["id"_L1].toString(), reportInfoJson);
-                    // hack to determine the report's origin to be removed when we have the specific query for it
-                    if (m_origin == QStringLiteral("local") && accountPopulate->targetAccount()->isLocal()) {
-                        return accountPopulate;
-                    } else if (m_origin == QStringLiteral("remote") && !accountPopulate->targetAccount()->isLocal()) {
-                        return accountPopulate;
-                    } else if (m_origin.isEmpty()) {
-                        return accountPopulate;
-                    }
-                    return std::shared_ptr<ReportInfo>();
-                });
+            std::ranges::transform(std::as_const(reportsArray), std::back_inserter(fetchedReports), [account, this](const QJsonValue &value) -> auto {
+                const auto reportInfoJson = value.toObject();
+                const auto accountPopulate = account->reportInfoLookup(reportInfoJson["id"_L1].toString(), reportInfoJson);
+                // hack to determine the report's origin to be removed when we have the specific query for it
+                if (m_origin == QStringLiteral("local") && accountPopulate->targetAccount()->isLocal()) {
+                    return accountPopulate;
+                } else if (m_origin == QStringLiteral("remote") && !accountPopulate->targetAccount()->isLocal()) {
+                    return accountPopulate;
+                } else if (m_origin.isEmpty()) {
+                    return accountPopulate;
+                }
+                return std::shared_ptr<ReportInfo>();
+            });
             beginInsertRows({}, m_reports.size(), m_reports.size() + fetchedReports.size() - 1);
             m_reports += fetchedReports;
             endInsertRows();

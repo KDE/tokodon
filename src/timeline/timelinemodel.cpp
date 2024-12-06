@@ -73,7 +73,7 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
         return 0;
     }
 
-    std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) -> Post * {
+    std::ranges::transform(std::as_const(array), std::back_inserter(posts), [this](const QJsonValue &value) -> Post * {
         auto post = new Post(m_account, value.toObject(), this);
         if (!post->hidden()) {
             return post;
@@ -82,17 +82,17 @@ int TimelineModel::fetchedTimeline(const QByteArray &data, bool alwaysAppendToEn
         }
     });
 
-    posts.erase(std::remove_if(posts.begin(),
-                               posts.end(),
-                               [this](Post *post) {
-                                   if (!m_showBoosts && post->boostIdentity()) {
-                                       return true;
-                                   }
-                                   if (!m_showReplies && !post->inReplyTo().isEmpty()) {
-                                       return true;
-                                   }
-                                   return post == nullptr;
-                               }),
+    posts.erase(std::ranges::remove_if(posts,
+                                       [this](Post *post) {
+                                           if (!m_showBoosts && post->boostIdentity()) {
+                                               return true;
+                                           }
+                                           if (!m_showReplies && !post->inReplyTo().isEmpty()) {
+                                               return true;
+                                           }
+                                           return post == nullptr;
+                                       })
+                    .begin(),
                 posts.end());
 
     for (auto &post : posts) {
@@ -217,11 +217,9 @@ void TimelineModel::actionVote(const QModelIndex &index, const QList<int> &choic
 
     QJsonObject obj;
     QJsonArray array;
-    std::transform(
-        choices.cbegin(),
-        choices.cend(),
-        std::back_inserter(array),
-        [](int choice) -> auto{ return choice; });
+    std::ranges::transform(std::as_const(choices), std::back_inserter(array), [](int choice) -> auto {
+        return choice;
+    });
     obj["choices"_L1] = array;
     QJsonDocument doc(obj);
     const auto id = poll->id();

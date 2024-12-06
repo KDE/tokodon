@@ -399,14 +399,10 @@ void AccountsToolModel::fillTimeline()
 
             QList<std::shared_ptr<AdminAccountInfo>> fetchedAccounts;
 
-            std::transform(
-                accounts.cbegin(),
-                accounts.cend(),
-                std::back_inserter(fetchedAccounts),
-                [account](const QJsonValue &value) -> auto{
-                    const auto identityJson = value.toObject();
-                    return account->adminIdentityLookup(identityJson["id"_L1].toString(), identityJson);
-                });
+            std::ranges::transform(std::as_const(accounts), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
+                const auto identityJson = value.toObject();
+                return account->adminIdentityLookup(identityJson["id"_L1].toString(), identityJson);
+            });
             beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
             m_accounts += fetchedAccounts;
             endInsertRows();

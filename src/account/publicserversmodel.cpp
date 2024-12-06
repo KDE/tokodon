@@ -66,7 +66,7 @@ void PublicServersModel::fill()
         if (!instances.isEmpty()) {
             QList<PublicServer> fetchedInstances;
 
-            std::transform(instances.cbegin(), instances.cend(), std::back_inserter(fetchedInstances), [this](const QVariant &value) -> auto {
+            std::ranges::transform(std::as_const(instances), std::back_inserter(fetchedInstances), [this](const QVariant &value) -> auto {
                 return fromSourceData(value.toJsonObject());
             });
             beginInsertRows({}, m_servers.size(), m_servers.size() + fetchedInstances.size() - 1);

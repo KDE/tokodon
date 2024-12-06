@@ -468,7 +468,7 @@ void SocialGraphModel::fillTimeline()
                     value = accounts.first()["accounts"_L1].toArray();
                 }
 
-                std::transform(value.cbegin(), value.cend(), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
+                std::ranges::transform(std::as_const(value), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
                     const auto identityJson = value.toObject();
                     return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
                 });

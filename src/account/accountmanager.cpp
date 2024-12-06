@@ -321,7 +321,7 @@ void AccountManager::checkIfLoadingFinished()
     }
 
     // ensure every account is loaded, or has an error
-    const bool finished = std::none_of(m_accountStatus.cbegin(), m_accountStatus.cend(), [](const auto status) {
+    const bool finished = std::ranges::none_of(std::as_const(m_accountStatus), [](const auto status) {
         return status == AccountStatus::NotLoaded;
     });
     if (!finished) {
@@ -524,7 +524,7 @@ void AccountManager::queueNotifications()
                 // We want to post the notifications in reverse order, because the way Plasma displays them.
                 // If we post the newest notification, it would be buried by the older ones.
                 auto notifications = doc.array().toVariantList();
-                std::reverse(notifications.begin(), notifications.end());
+                std::ranges::reverse(notifications);
 
                 for (const auto &notification : notifications) {
                     if (notification.canConvert<QJsonObject>()) {

@@ -81,7 +81,7 @@ void PollEditorBackend::copyFromOther(PollEditorBackend *other)
 
 void PollEditorBackend::checkValidity()
 {
-    const bool isValid = std::all_of(m_options.cbegin(), m_options.cend(), [](const auto &option) {
+    const bool isValid = std::ranges::all_of(std::as_const(m_options), [](const auto &option) {
         return !option.toString().isEmpty();
     });
 

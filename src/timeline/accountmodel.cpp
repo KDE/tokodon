@@ -110,12 +110,12 @@ void AccountModel::fillTimeline(const QString &fromId, bool backwards)
         }
 
         QList<Post *> posts;
-        std::transform(array.cbegin(), array.cend(), std::back_inserter(posts), [this](const QJsonValue &value) {
+        std::ranges::transform(std::as_const(array), std::back_inserter(posts), [this](const QJsonValue &value) {
             auto post = new Post(m_account, value.toObject(), this);
             post->setPinned(true);
             return post;
         });
-        std::reverse(posts.begin(), posts.end());
+        std::ranges::reverse(posts);
         beginInsertRows({}, 0, posts.size() - 1);
         m_timeline = posts + m_timeline;
         endInsertRows();

@@ -133,11 +133,9 @@ void EmailBlockToolModel::filltimeline()
 
             QList<EmailInfo> fetchedEmailblocks;
 
-            std::transform(
-                emailblocks.cbegin(),
-                emailblocks.cend(),
-                std::back_inserter(fetchedEmailblocks),
-                [=](const QJsonValue &value) -> auto{ return EmailInfo::fromSourceData(value.toObject()); });
+            std::ranges::transform(std::as_const(emailblocks), std::back_inserter(fetchedEmailblocks), [=](const QJsonValue &value) -> auto {
+                return EmailInfo::fromSourceData(value.toObject());
+            });
             beginInsertRows({}, m_emailinfo.size(), m_emailinfo.size() + fetchedEmailblocks.size() - 1);
             m_emailinfo += fetchedEmailblocks;
             endInsertRows();

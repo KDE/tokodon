@@ -81,7 +81,7 @@ void ListsModel::fillTimeline()
             if (!lists.isEmpty()) {
                 QList<List> fetchedLists;
 
-                std::transform(lists.cbegin(), lists.cend(), std::back_inserter(fetchedLists), [this](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(lists), std::back_inserter(fetchedLists), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_lists.size(), m_lists.size() + fetchedLists.size() - 1);

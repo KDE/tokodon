@@ -62,16 +62,16 @@ void SearchModel::search(const QString &queryString, const QString &type, const 
             beginResetModel();
             clear();
 
-            std::transform(statuses.cbegin(), statuses.cend(), std::back_inserter(m_statuses), [this](const QJsonValue &value) -> auto {
+            std::ranges::transform(std::as_const(statuses), std::back_inserter(m_statuses), [this](const QJsonValue &value) -> auto {
                 return new Post(m_account, value.toObject(), this);
             });
             const auto accounts = searchResult[QStringLiteral("accounts")].toArray();
-            std::transform(accounts.cbegin(), accounts.cend(), std::back_inserter(m_accounts), [this](const QJsonValue &value) -> auto {
+            std::ranges::transform(std::as_const(accounts), std::back_inserter(m_accounts), [this](const QJsonValue &value) -> auto {
                 const auto account = value.toObject();
                 return m_account->identityLookup(account["id"_L1].toString(), account);
             });
             const auto hashtags = searchResult[QStringLiteral("hashtags")].toArray();
-            std::transform(hashtags.cbegin(), hashtags.cend(), std::back_inserter(m_hashtags), [](const QJsonValue &value) -> auto {
+            std::ranges::transform(std::as_const(hashtags), std::back_inserter(m_hashtags), [](const QJsonValue &value) -> auto {
                 return SearchHashtag(value.toObject());
             });
             endResetModel();

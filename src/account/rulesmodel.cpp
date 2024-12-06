@@ -91,7 +91,7 @@ void RulesModel::fill()
             if (!rules.isEmpty()) {
                 QList<Rule> fetchedRules;
 
-                std::transform(rules.cbegin(), rules.cend(), std::back_inserter(fetchedRules), [this](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(rules), std::back_inserter(fetchedRules), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_rules.size(), m_rules.size() + fetchedRules.size() - 1);

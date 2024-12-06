@@ -174,11 +174,9 @@ void IpRulesToolModel::filltimeline()
 
             QList<IpInfo> fetchedIpblocks;
 
-            std::transform(
-                ipblocks.cbegin(),
-                ipblocks.cend(),
-                std::back_inserter(fetchedIpblocks),
-                [=](const QJsonValue &value) -> auto{ return IpInfo::fromSourceData(value.toObject()); });
+            std::ranges::transform(std::as_const(ipblocks), std::back_inserter(fetchedIpblocks), [=](const QJsonValue &value) -> auto {
+                return IpInfo::fromSourceData(value.toObject());
+            });
             beginInsertRows({}, m_ipinfo.size(), m_ipinfo.size() + fetchedIpblocks.size() - 1);
             m_ipinfo += fetchedIpblocks;
             endInsertRows();

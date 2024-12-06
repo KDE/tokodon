@@ -79,12 +79,12 @@ void AnnouncementModel::fillTimeline()
         [this](QNetworkReply *reply) {
             const auto doc = QJsonDocument::fromJson(reply->readAll());
             auto announcements = doc.array().toVariantList();
-            std::reverse(announcements.begin(), announcements.end());
+            std::ranges::reverse(announcements);
 
             if (!announcements.isEmpty()) {
                 QList<Announcement> fetchedAnnouncements;
 
-                std::transform(announcements.cbegin(), announcements.cend(), std::back_inserter(fetchedAnnouncements), [this](const QVariant &value) -> auto {
+                std::ranges::transform(std::as_const(announcements), std::back_inserter(fetchedAnnouncements), [this](const QVariant &value) -> auto {
                     return fromSourceData(value.toJsonObject());
                 });
                 beginInsertRows({}, m_announcements.size(), m_announcements.size() + fetchedAnnouncements.size() - 1);
