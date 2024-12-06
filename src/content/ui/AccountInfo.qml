@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
@@ -10,9 +12,7 @@ import org.kde.kirigamiaddons.formcard 1 as FormCard
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import QtQuick.Controls 2 as QQC2
-import QtQml.Models
 import QtQuick.Layouts
-import QtQuick.Dialogs
 import org.kde.tokodon
 
 Kirigami.Page {
@@ -28,7 +28,7 @@ Kirigami.Page {
     readonly property bool onRepliesTab: currentIndex === 1
     readonly property bool onMediaTab: currentIndex === 2
 
-    readonly property bool canExcludeBoosts: accountInfo.onPostsTab || accountInfo.onRepliesTab
+    readonly property bool canExcludeBoosts: onPostsTab || onRepliesTab
     property alias excludeBoosts: accountModel.excludeBoosts
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
@@ -59,12 +59,12 @@ Kirigami.Page {
     }
 
     Connections {
-        target: postsBar
-        enabled: postsBar !== null
+        target: accountInfo.postsBar
+        enabled: accountInfo.postsBar !== null
         ignoreUnknownSignals: true // postsBar is null when this is initially constructed
 
         function onCurrentIndexChanged(): void {
-            accountInfo.currentIndex = postsBar.currentIndex;
+            accountInfo.currentIndex = accountInfo.postsBar.currentIndex;
         }
     }
 
@@ -671,6 +671,10 @@ Kirigami.Page {
                 Repeater {
                     model: accountModel.identity.fields
                     ColumnLayout {
+                        id: delegate
+
+                        required property var modelData
+
                         Layout.fillWidth: true
                         spacing: 0
                         FormCard.FormDelegateSeparator {}
@@ -681,14 +685,14 @@ Kirigami.Page {
                             hoverEnabled: false
 
                             background: Rectangle {
-                                color: modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : "transparent"
+                                color: delegate.modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : "transparent"
                             }
 
                             contentItem: RowLayout {
                                 spacing: 0
 
                                 QQC2.Label {
-                                    text: modelData.name
+                                    text: delegate.modelData.name
                                     wrapMode: Text.Wrap
 
                                     topPadding: Kirigami.Units.smallSpacing
@@ -704,8 +708,8 @@ Kirigami.Page {
                                     background: null
                                     wrapMode: TextEdit.Wrap
                                     textFormat: TextEdit.RichText
-                                    text: modelData.value
-                                    onLinkActivated: Qt.openUrlExternally(link)
+                                    text: delegate.modelData.value
+                                    onLinkActivated: link => Qt.openUrlExternally(link)
                                     MouseArea {
                                         anchors.fill: parent
                                         acceptedButtons: Qt.NoButton // don't eat clicks on the Text
@@ -834,8 +838,6 @@ Kirigami.Page {
                             }
 
                             delegate: Components.AvatarButton {
-                                id: delegate
-
                                 required property var identity
 
                                 source: identity.avatarUrl
