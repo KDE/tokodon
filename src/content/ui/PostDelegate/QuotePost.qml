@@ -134,6 +134,7 @@ QQC2.AbstractButton {
         Loader {
             active: root.post.poll !== null
             sourceComponent: PostPoll {
+                index: root.index
                 poll: root.post.poll
             }
         }
