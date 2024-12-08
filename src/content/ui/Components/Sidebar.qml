@@ -111,39 +111,60 @@ Kirigami.OverlayDrawer {
 
         Kirigami.Separator {
             Layout.fillWidth: true
-            Layout.margins: Kirigami.Units.smallSpacing
+            Layout.margins: scrollView.QQC2.ScrollBar.vertical.visible ? 0 : Kirigami.Units.smallSpacing
+            Layout.topMargin: Math.round(Kirigami.Units.smallSpacing / 2)
+            Layout.bottomMargin: 0
         }
 
-        QQC2.ButtonGroup {
-            id: pageButtonGroup
-        }
+        QQC2.ScrollView {
+            id: scrollView
 
-        Repeater {
-            id: actionsRepeater
+            contentWidth: availableWidth
+            topPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
-            delegate: ActionDelegate {
-                required property var modelData
+            QQC2.ScrollBar.vertical.interactive: false
 
-                action: modelData
-                visible: modelData.visible
-                enabled: !AccountManager.selectedAccountHasIssue
-                alertCount: modelData.alertCount ?? 0
-            }
-        }
-
-        Item {
+            Layout.fillWidth: true
             Layout.fillHeight: true
-        }
 
-        Repeater {
-            id: bottomActionsRepeater
+            ColumnLayout {
+                spacing: 0
 
-            delegate: ActionDelegate {
-                required property var modelData
+                width: scrollView.contentWidth
+                height: Math.max(scrollView.availableHeight, implicitHeight)
 
-                action: modelData
-                visible: modelData.visible
-                alertCount: modelData.alertCount ?? 0
+                QQC2.ButtonGroup {
+                    id: pageButtonGroup
+                }
+
+                Repeater {
+                    id: actionsRepeater
+
+                    delegate: ActionDelegate {
+                        required property var modelData
+
+                        action: modelData
+                        visible: modelData.visible
+                        enabled: !AccountManager.selectedAccountHasIssue
+                        alertCount: modelData.alertCount ?? 0
+                    }
+                }
+
+                Item {
+                    Layout.fillHeight: true
+                }
+
+                Repeater {
+                    id: bottomActionsRepeater
+
+                    delegate: ActionDelegate {
+                        required property var modelData
+
+                        action: modelData
+                        visible: modelData.visible
+                        alertCount: modelData.alertCount ?? 0
+                    }
+                }
             }
         }
     }
