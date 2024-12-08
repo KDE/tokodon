@@ -177,7 +177,6 @@ void AccountModel::setAccountId(const QString &accountId)
         Q_EMIT identityChanged();
         updateRelationships();
     }
-    Q_EMIT accountIdChanged();
 
     reset();
     fillTimeline();
