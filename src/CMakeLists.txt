@@ -278,6 +278,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/PostDelegate/QuotePost.qml
 
         # Other
+        content/ui/AccountHeader.qml
         content/ui/AccountInfo.qml
         content/ui/AnnouncementsPage.qml
         content/ui/ConversationDelegate.qml
