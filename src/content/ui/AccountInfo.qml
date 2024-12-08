@@ -33,7 +33,7 @@ Kirigami.Page {
 
     readonly property bool largeScreen: width > Kirigami.Units.gridUnit * 25
 
-    title: accountModel.identity.displayName
+    title: accountModel.identity ? accountModel.identity.displayName : i18nc("@title:window", "Profile")
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
         Layout.fillWidth: true
@@ -42,7 +42,7 @@ Kirigami.Page {
         maximumLineCount: 1
         elide: Text.ElideRight
 
-        text: accountModel.identity.displayNameHtml
+        text: accountModel.identity ? accountModel.identity.displayNameHtml : i18nc("@title:window", "Profile")
 
         textFormat: Text.StyledText
     }
@@ -59,7 +59,7 @@ Kirigami.Page {
     }
 
     Connections {
-        target: accountInfo.postsBar
+        target: accountInfo.postsBar ?? null
         enabled: accountInfo.postsBar !== null
         ignoreUnknownSignals: true // postsBar is null when this is initially constructed
 
@@ -71,12 +71,14 @@ Kirigami.Page {
 
     function updateTabs(): void {
         if (stackLayout.currentIndex === 0) {
-            postsBar = stackLayout.children[stackLayout.currentIndex].contentItem.headerItem.getBar();
+            postsBar = stackLayout.children[stackLayout.currentIndex].contentItem.headerItem.item?.getBar();
         } else if (stackLayout.currentIndex === 1) {
             mediaTabLoader.active = true;
             postsBar = stackLayout.children[stackLayout.currentIndex].item?.contentItem.headerItem.getBar();
         }
-        postsBar.currentIndex = accountInfo.currentIndex;
+        if (postsBar) {
+            postsBar.currentIndex = accountInfo.currentIndex;
+        }
     }
 
     StackLayout {
@@ -87,8 +89,6 @@ Kirigami.Page {
         implicitHeight: children[currentIndex].implicitHeight
 
         onCurrentIndexChanged: accountInfo.updateTabs()
-
-        Component.onCompleted: accountInfo.updateTabs()
 
         QQC2.ScrollView {
             focus: true
@@ -101,10 +101,15 @@ Kirigami.Page {
 
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-                header: AccountHeader {
-                    identity: accountModel.identity
-                    isSelf: accountModel.isSelf
-                    width: timelineView.width
+                header: Loader {
+                    active: accountModel.identity
+                    onLoaded: accountInfo.updateTabs()
+
+                    sourceComponent: AccountHeader {
+                        identity: accountModel.identity
+                        isSelf: accountModel.isSelf
+                        width: timelineView.width
+                    }
                 }
 
                 model: AccountModel {
