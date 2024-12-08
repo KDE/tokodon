@@ -30,9 +30,7 @@ QQC2.Pane {
 
         const accountId = AccountManager.selectedAccountId;
         if (!pageStack.currentItem.model || !pageStack.currentItem.model.accountId || accountId !== pageStack.currentItem.accountId) {
-            const item = pageStack.push(Qt.createComponent("org.kde.tokodon", "AccountInfo"), {
-                accountId: accountId,
-            });
+            Navigation.openAccount(accountId);
         }
     }
 
