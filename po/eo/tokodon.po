@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-06 00:40+0000\n"
+"POT-Creation-Date: 2024-12-09 00:41+0000\n"
 "PO-Revision-Date: 2024-09-18 19:03+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -85,13 +85,13 @@ msgid "%1 mentioned you"
 msgstr "%1 manciis vin"
 
 #: account/notificationhandler.cpp:84
-#: content/ui/Notifications/UserInteractionLabel.qml:87
+#: content/ui/Notifications/UserInteractionLabel.qml:89
 #, kde-format
 msgid "%1 wrote a new post"
 msgstr "%1 skribis novan afiŝon"
 
 #: account/notificationhandler.cpp:92
-#: content/ui/Notifications/UserInteractionLabel.qml:77
+#: content/ui/Notifications/UserInteractionLabel.qml:79
 #, kde-format
 msgid "%1 boosted your post"
 msgstr "%1 plifortigis vian afiŝon"
@@ -107,7 +107,7 @@ msgid "%1 requested to follow you"
 msgstr "%1 alpetis sekvi vin"
 
 #: account/notificationhandler.cpp:116
-#: content/ui/Notifications/UserInteractionLabel.qml:81
+#: content/ui/Notifications/UserInteractionLabel.qml:83
 #, kde-format
 msgid "%1 favorited your post"
 msgstr "%1 ŝatigis vian afiŝon"
@@ -323,38 +323,38 @@ msgctxt "@title:window"
 msgid "Suggested Users"
 msgstr "Silentigitaj Uzantoj"
 
-#: admin/accounttoolmodel.cpp:299
+#: admin/accounttoolmodel.cpp:298
 #, kde-format
 msgid "Could not accept account"
 msgstr "Ne eblis akcepti konton"
 
-#: admin/accounttoolmodel.cpp:300
+#: admin/accounttoolmodel.cpp:299
 #, kde-format
 msgid "Could not reject account"
 msgstr "Ne eblis malakcepti konton"
 
-#: admin/accounttoolmodel.cpp:301
+#: admin/accounttoolmodel.cpp:300
 #, kde-format
 msgid "Could not take action against the account"
 msgstr "Ne eblis agi kontraŭ la konto"
 
-#: admin/accounttoolmodel.cpp:302
+#: admin/accounttoolmodel.cpp:301
 #, fuzzy, kde-format
 #| msgid "Could not enable  the disabled account"
 msgid "Could not enable the disabled account"
 msgstr "Ne eblis aktivigi la malfunkciigitan konton"
 
-#: admin/accounttoolmodel.cpp:303
+#: admin/accounttoolmodel.cpp:302
 #, kde-format
 msgid "Could not unsilence the account"
 msgstr "Ne eblis malsilentigi la konton"
 
-#: admin/accounttoolmodel.cpp:304
+#: admin/accounttoolmodel.cpp:303
 #, kde-format
 msgid "Could not unsuspend the account"
 msgstr "Ne eblis malsuspendi la konton"
 
-#: admin/accounttoolmodel.cpp:305
+#: admin/accounttoolmodel.cpp:304
 #, kde-format
 msgid "Could not mark the account as not sensitive"
 msgstr "Ne eblis marki la konton kiel ne sentema"
@@ -427,32 +427,7 @@ msgstr "Ne eblis atribui raporton"
 msgid "Could not unassign report"
 msgstr "Ne eblis nuligi raporton"
 
-#: content/ui/AccountInfo.qml:112
-#, fuzzy, kde-format
-#| msgid "No posts"
-msgctxt "@label"
-msgid "No Posts"
-msgstr "Neniuj afiŝoj"
-
-#: content/ui/AccountInfo.qml:113
-#, kde-format
-msgid "This user hasn't posted anything yet."
-msgstr ""
-
-#: content/ui/AccountInfo.qml:200
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
-msgctxt "@label"
-msgid "No Media"
-msgstr "Amaskomunikiloj"
-
-#: content/ui/AccountInfo.qml:201
-#, kde-format
-msgid "This user hasn't posted any media yet."
-msgstr ""
-
-#: content/ui/AccountInfo.qml:294
+#: content/ui/AccountHeader.qml:102
 #, kde-format
 msgctxt ""
 "'Mutual' is the common English word used in social media platforms describe "
@@ -461,133 +436,133 @@ msgctxt ""
 msgid "Mutual"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:294
+#: content/ui/AccountHeader.qml:102
 #, kde-format
 msgid "Follows you"
 msgstr "Sekvas vin"
 
-#: content/ui/AccountInfo.qml:315
+#: content/ui/AccountHeader.qml:123
 #, fuzzy, kde-format
 #| msgid "Boost"
 msgid "Bot"
 msgstr "Plikonatigi"
 
-#: content/ui/AccountInfo.qml:418
+#: content/ui/AccountHeader.qml:234
 #, kde-format
 msgid "Follow Requested"
 msgstr "Sekvi Petitan"
 
-#: content/ui/AccountInfo.qml:421
+#: content/ui/AccountHeader.qml:237
 #, kde-format
 msgid "Unfollow"
 msgstr "Malsekvi"
 
-#: content/ui/AccountInfo.qml:423
+#: content/ui/AccountHeader.qml:239
 #, kde-format
 msgid "Follow"
 msgstr "Sekvi"
 
-#: content/ui/AccountInfo.qml:448
+#: content/ui/AccountHeader.qml:264
 #, kde-format
 msgid "Stop notifying me when %1 posts."
 msgstr "Ĉesi sciigi min kiam %1 afiŝos."
 
-#: content/ui/AccountInfo.qml:450
+#: content/ui/AccountHeader.qml:266
 #, kde-format
 msgid "Notify me when %1 posts."
 msgstr "Informi min kiam %1 afiŝos."
 
-#: content/ui/AccountInfo.qml:464
+#: content/ui/AccountHeader.qml:280
 #, fuzzy, kde-format
 #| msgid "Mentions"
 msgid "Mention…"
 msgstr "Mencioj"
 
-#: content/ui/AccountInfo.qml:470
+#: content/ui/AccountHeader.qml:286
 #, fuzzy, kde-format
 #| msgid "No Conversations"
 msgid "Start a Conversation…"
 msgstr "Neniuj Konversacioj"
 
-#: content/ui/AccountInfo.qml:479
+#: content/ui/AccountHeader.qml:295
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Kaŝi Akcelojn de %1"
 
-#: content/ui/AccountInfo.qml:481
+#: content/ui/AccountHeader.qml:297
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Montri Boosts de %1"
 
-#: content/ui/AccountInfo.qml:497
+#: content/ui/AccountHeader.qml:313
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Ĉesi Prezenti Ĉi Profilon"
 
-#: content/ui/AccountInfo.qml:499
+#: content/ui/AccountHeader.qml:315
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Prezenti Ĉi Profilon"
 
-#: content/ui/AccountInfo.qml:515
+#: content/ui/AccountHeader.qml:331
 #, kde-format
 msgid "Unmute"
 msgstr "Malsilentigi"
 
-#: content/ui/AccountInfo.qml:517
+#: content/ui/AccountHeader.qml:333
 #, kde-format
 msgid "Mute"
 msgstr "Silentigi"
 
-#: content/ui/AccountInfo.qml:533
+#: content/ui/AccountHeader.qml:349
 #, kde-format
 msgid "Unblock"
 msgstr "Malbloki"
 
-#: content/ui/AccountInfo.qml:535
+#: content/ui/AccountHeader.qml:351
 #, kde-format
 msgid "Block"
 msgstr "Bloki"
 
-#: content/ui/AccountInfo.qml:549 content/ui/PostDelegate/PostMenu.qml:178
+#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:177
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Raporto…"
 
-#: content/ui/AccountInfo.qml:555
+#: content/ui/AccountHeader.qml:371
 #, kde-format
 msgid "Edit Profile"
 msgstr "Redakti Profilon"
 
-#: content/ui/AccountInfo.qml:559
+#: content/ui/AccountHeader.qml:375
 #, kde-format
 msgid "Account editor"
 msgstr "Kontoredaktilo"
 
-#: content/ui/AccountInfo.qml:569
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Featured Users"
 msgstr "Elstaraj Uzantoj"
 
-#: content/ui/AccountInfo.qml:574 content/ui/PostDelegate/LinkMenu.qml:23
-#: content/ui/PostDelegate/PostMenu.qml:44
+#: content/ui/AccountHeader.qml:390 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:579
+#: content/ui/AccountHeader.qml:395
 #, kde-format
 msgid "Copy Link"
 msgstr "Kopii Ligilon"
 
-#: content/ui/AccountInfo.qml:582
+#: content/ui/AccountHeader.qml:398
 #, kde-format
 msgid "Profile link copied."
 msgstr "Profilligilo kopiita."
 
-#: content/ui/AccountInfo.qml:652
+#: content/ui/AccountHeader.qml:468
 #, fuzzy, kde-format
 #| msgctxt "@info: Joining date of the user"
 #| msgid "Joined"
@@ -595,45 +570,45 @@ msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Aliĝis"
 
-#: content/ui/AccountInfo.qml:740
+#: content/ui/AccountHeader.qml:563
 #, fuzzy, kde-format
 #| msgid "Private Comment"
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Privata Komento"
 
-#: content/ui/AccountInfo.qml:748
+#: content/ui/AccountHeader.qml:571
 #, kde-format
 msgid "Saved"
 msgstr "Konservita"
 
-#: content/ui/AccountInfo.qml:763
+#: content/ui/AccountHeader.qml:586
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:823
+#: content/ui/AccountHeader.qml:648
 #, fuzzy, kde-format
 #| msgid "%1 followed you"
 msgid "Also followed by:"
 msgstr "%1 sekvis vin"
 
-#: content/ui/AccountInfo.qml:853
+#: content/ui/AccountHeader.qml:678
 #, fuzzy, kde-format
 #| msgid "View %1's Profile"
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Rigardi la Profilon de %1"
 
-#: content/ui/AccountInfo.qml:853
+#: content/ui/AccountHeader.qml:678
 #, fuzzy, kde-format
 #| msgid "View Profile"
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Rigardi Profilon"
 
-#: content/ui/AccountInfo.qml:891
+#: content/ui/AccountHeader.qml:718
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -641,7 +616,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> afiŝo"
 msgstr[1] "<b>%1</b> afiŝoj"
 
-#: content/ui/AccountInfo.qml:904
+#: content/ui/AccountHeader.qml:731
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -649,7 +624,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> sekvanta"
 msgstr[1] "<b>%1</b> sekvantaj"
 
-#: content/ui/AccountInfo.qml:917
+#: content/ui/AccountHeader.qml:744
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -657,38 +632,70 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> sekvanto"
 msgstr[1] "<b>%1</b> sekvantoj"
 
-#: content/ui/AccountInfo.qml:944
+#: content/ui/AccountHeader.qml:769
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Afiŝoj"
 
-#: content/ui/AccountInfo.qml:948
+#: content/ui/AccountHeader.qml:773
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Afiŝoj kaj Respondoj"
 
-#: content/ui/AccountInfo.qml:952
+#: content/ui/AccountHeader.qml:777
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Amaskomunikiloj"
 
-#: content/ui/AccountInfo.qml:981
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Kaŝi plikonatigojn"
 
-#: content/ui/AccountInfo.qml:1001
+#: content/ui/AccountHeader.qml:828
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Ĉiujn"
 
+#: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
+#, fuzzy, kde-format
+#| msgid "View Profile"
+msgctxt "@title:window"
+msgid "Profile"
+msgstr "Rigardi Profilon"
+
+#: content/ui/AccountInfo.qml:125
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgctxt "@label"
+msgid "No Posts"
+msgstr "Neniuj afiŝoj"
+
+#: content/ui/AccountInfo.qml:126
+#, kde-format
+msgid "This user hasn't posted anything yet."
+msgstr ""
+
+#: content/ui/AccountInfo.qml:222
+#, fuzzy, kde-format
+#| msgctxt "@item:inmenu Profile Post Filter"
+#| msgid "Media"
+msgctxt "@label"
+msgid "No Media"
+msgstr "Amaskomunikiloj"
+
+#: content/ui/AccountInfo.qml:223
+#, kde-format
+msgid "This user hasn't posted any media yet."
+msgstr ""
+
 #: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
-#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:15
+#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:13
 #, kde-format
 msgid "Share"
 msgstr "Kunhavigi"
@@ -724,8 +731,8 @@ msgid "Your server has not made any announcements yet."
 msgstr ""
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
-#: content/ui/Notifications/UserInteractionLabel.qml:66
-#: content/ui/PostDelegate/QuotePost.qml:58
+#: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/PostDelegate/QuotePost.qml:60
 #: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
@@ -765,7 +772,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Fino de Templinio"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:466
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:467
 #, kde-format
 msgid "Conversations"
 msgstr "Konversacioj"
@@ -870,48 +877,48 @@ msgctxt "@title"
 msgid "Add Users to List…"
 msgstr ""
 
-#: content/ui/EditListPage.qml:155
+#: content/ui/EditListPage.qml:157
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr ""
 
-#: content/ui/EditListPage.qml:202
+#: content/ui/EditListPage.qml:204
 #, kde-format
 msgid "Search among users you follow…"
 msgstr ""
 
-#: content/ui/EditListPage.qml:236
+#: content/ui/EditListPage.qml:238
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Kreita je"
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:240
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Redakti"
 
-#: content/ui/EditListPage.qml:251
+#: content/ui/EditListPage.qml:253
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Forigi"
 
-#: content/ui/EditListPage.qml:258
+#: content/ui/EditListPage.qml:260
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Forigante Liston"
 
-#: content/ui/EditListPage.qml:259
+#: content/ui/EditListPage.qml:261
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Ĉu vi certas ke vi volas forigi ĉi liston?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:509
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:510
 #, kde-format
 msgid "Explore"
 msgstr "Esplori"
@@ -988,12 +995,12 @@ msgctxt "@action:inmenu"
 msgid "Show Replies"
 msgstr "Montri Respondojn"
 
-#: content/ui/FollowingPage.qml:190
+#: content/ui/FollowingPage.qml:151
 #, kde-format
 msgid "No User Selected"
 msgstr ""
 
-#: content/ui/FollowingPage.qml:191
+#: content/ui/FollowingPage.qml:152
 #, kde-format
 msgid ""
 "With the Following view, easily check on each user you're following and only "
@@ -1088,7 +1095,7 @@ msgctxt "@title"
 msgid "Select Language"
 msgstr "Elekti Lingvon"
 
-#: content/ui/LanguageSelector.qml:48
+#: content/ui/LanguageSelector.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -1441,180 +1448,180 @@ msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Kongrua kun Mastodon"
 
-#: content/ui/Main.qml:128
+#: content/ui/Main.qml:129
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Malfermi Kiel…"
 
-#: content/ui/Main.qml:130
+#: content/ui/Main.qml:131
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Respondi Kiel…"
 
-#: content/ui/Main.qml:132
+#: content/ui/Main.qml:133
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Ŝatatigi Kiel…"
 
-#: content/ui/Main.qml:134
+#: content/ui/Main.qml:135
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Plifortigi Kiel…"
 
-#: content/ui/Main.qml:136
+#: content/ui/Main.qml:137
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Legosigni Kiel…"
 
-#: content/ui/Main.qml:138
+#: content/ui/Main.qml:139
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Nekonata Ago"
 
-#: content/ui/Main.qml:238
+#: content/ui/Main.qml:239
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Write a New Post"
 msgid "Write a New Post"
 msgstr "Skribi Novan Afiŝon"
 
-#: content/ui/Main.qml:265
+#: content/ui/Main.qml:266
 #, kde-format
 msgid "Write a new post"
 msgstr "Skribi novan afiŝon"
 
-#: content/ui/Main.qml:310
+#: content/ui/Main.qml:311
 #, kde-format
 msgid "Reply to post"
 msgstr "Respondi al afiŝo"
 
-#: content/ui/Main.qml:393
+#: content/ui/Main.qml:394
 #, kde-format
 msgid "Home"
 msgstr "Hejmo"
 
-#: content/ui/Main.qml:400 content/ui/Main.qml:442 content/ui/Main.qml:457
+#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
 #, fuzzy, kde-format
 #| msgid "No posts"
 msgid "No Posts"
 msgstr "Neniuj afiŝoj"
 
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
+#: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:410 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:411 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Sciigoj"
 
-#: content/ui/Main.qml:422
+#: content/ui/Main.qml:423
 #, kde-format
 msgid "Follow Requests"
 msgstr "Sekvi Petojn"
 
-#: content/ui/Main.qml:435
+#: content/ui/Main.qml:436
 #, kde-format
 msgid "Local"
 msgstr "Loka"
 
-#: content/ui/Main.qml:450
+#: content/ui/Main.qml:451
 #, kde-format
 msgid "Global"
 msgstr "Ĉiea"
 
-#: content/ui/Main.qml:477 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:478 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Ŝatatoj"
 
-#: content/ui/Main.qml:484
+#: content/ui/Main.qml:485
 #, fuzzy, kde-format
 #| msgid "No favorites"
 msgid "No Favorites"
 msgstr "Neniuj plejŝatatoj"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:486
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
 
-#: content/ui/Main.qml:493
+#: content/ui/Main.qml:494
 #, kde-format
 msgid "Bookmarks"
 msgstr "Legosignoj"
 
-#: content/ui/Main.qml:500
+#: content/ui/Main.qml:501
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "No Bookmarks"
 msgstr "Legosignoj"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:502
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:520
+#: content/ui/Main.qml:521
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Following"
 msgid "Following"
 msgstr "Sekvante"
 
-#: content/ui/Main.qml:531
+#: content/ui/Main.qml:532
 #, kde-format
 msgid "Search"
 msgstr "Serĉi"
 
-#: content/ui/Main.qml:542
+#: content/ui/Main.qml:543
 #, kde-format
 msgctxt "@action:button Server Announcements"
 msgid "Announcements"
 msgstr "Anoncoj"
 
-#: content/ui/Main.qml:554
+#: content/ui/Main.qml:555
 #, kde-format
 msgid "Lists"
 msgstr "Listoj"
 
-#: content/ui/Main.qml:565 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:566 content/ui/Settings/AccountPage.qml:70
 #, fuzzy, kde-format
 #| msgid "View Profile"
 msgid "Profile"
 msgstr "Rigardi Profilon"
 
-#: content/ui/Main.qml:580
+#: content/ui/Main.qml:581
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Sencimigi"
 
-#: content/ui/Main.qml:590
+#: content/ui/Main.qml:591
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderaj Iloj"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:598
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: content/ui/Main.qml:729
+#: content/ui/Main.qml:730
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2900,13 +2907,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Averto pri enhavo</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:333
+#: content/ui/PostDelegate/PostDelegate.qml:348
 #, kde-format
 msgid "Show Less"
 msgstr "Montri Malpli"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:333
+#: content/ui/PostDelegate/PostDelegate.qml:348
 #, kde-format
 msgid "Show More"
 msgstr "Montri pli"
@@ -3099,17 +3106,17 @@ msgstr ""
 msgid "%1 has issued a warning against your account"
 msgstr "Agi kontraŭ ĉi tiu konto"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:62
+#: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
 msgid "View %1's Profile"
 msgstr "Rigardi la Profilon de %1"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:71
+#: content/ui/Notifications/GroupInteractionLabel.qml:73
 #, kde-format
 msgid "%1 users favorited your post"
 msgstr "%1 uzantoj ŝatigis vian afiŝon"
 
-#: content/ui/Notifications/GroupInteractionLabel.qml:73
+#: content/ui/Notifications/GroupInteractionLabel.qml:75
 #, kde-format
 msgid "%1 users boosted your post"
 msgstr "%1 uzantoj plifortigis vian afiŝon"
@@ -3128,54 +3135,54 @@ msgctxt "@info:label"
 msgid "A report has been filed against a user in your server."
 msgstr ""
 
-#: content/ui/Notifications/UserInteractionLabel.qml:79
+#: content/ui/Notifications/UserInteractionLabel.qml:81
 #, kde-format
 msgid "%1 replied to your post"
 msgstr "%1 respondis al via afiŝo"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:83
+#: content/ui/Notifications/UserInteractionLabel.qml:85
 #, kde-format
 msgid "A poll has ended"
 msgstr "Enketo finiĝis"
 
-#: content/ui/Notifications/UserInteractionLabel.qml:85
+#: content/ui/Notifications/UserInteractionLabel.qml:87
 #, kde-format
 msgid "%1 updated their post"
 msgstr "%1 ĝisdatigis sian afiŝon"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:88
+#: content/ui/PostDelegate/AttachmentGrid.qml:90
 #, kde-format
 msgid "Status with image attachment"
 msgstr "Statuso pri bildkunsendaĵo"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:90
+#: content/ui/PostDelegate/AttachmentGrid.qml:92
 #, kde-format
 msgid "Status with GifV attachment"
 msgstr "Statuso pri bGifV-kunsendaĵo"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:92
+#: content/ui/PostDelegate/AttachmentGrid.qml:94
 #, kde-format
 msgid "Status with Video attachment"
 msgstr "Statuso pri filmeta kunsendaĵo"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:191
+#: content/ui/PostDelegate/AttachmentGrid.qml:195
 #, kde-format
 msgid "Not available"
 msgstr "Ne disponebla"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:319
+#: content/ui/PostDelegate/AttachmentGrid.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Kaŝi Komunikaĵojn"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:323
+#: content/ui/PostDelegate/AttachmentGrid.qml:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Kaŝi komunikaĵojn"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:334
+#: content/ui/PostDelegate/AttachmentGrid.qml:338
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3202,76 +3209,76 @@ msgstr "Konservi Filmeton Kiel…"
 msgid "Copy Image"
 msgstr "Kopii Bildon"
 
-#: content/ui/PostDelegate/InformationBar.qml:26
+#: content/ui/PostDelegate/InformationBar.qml:33
 #, kde-format
 msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 msgid "Posted on %1"
 msgstr "Afiŝita je %1"
 
-#: content/ui/PostDelegate/InformationBar.qml:57
-#: content/ui/PostDelegate/InformationBar.qml:65
-#: content/ui/PostDelegate/PostInfoBar.qml:82
-#: content/ui/PostDelegate/PostInfoBar.qml:90
+#: content/ui/PostDelegate/InformationBar.qml:63
+#: content/ui/PostDelegate/InformationBar.qml:71
+#: content/ui/PostDelegate/PostInfoBar.qml:85
+#: content/ui/PostDelegate/PostInfoBar.qml:93
 #, kde-format
 msgid "Public"
 msgstr "Publiko"
 
-#: content/ui/PostDelegate/InformationBar.qml:59
-#: content/ui/PostDelegate/PostInfoBar.qml:84
+#: content/ui/PostDelegate/InformationBar.qml:65
+#: content/ui/PostDelegate/PostInfoBar.qml:87
 #, kde-format
 msgid "Unlisted"
 msgstr "Nelistigita"
 
-#: content/ui/PostDelegate/InformationBar.qml:61
-#: content/ui/PostDelegate/PostInfoBar.qml:86
+#: content/ui/PostDelegate/InformationBar.qml:67
+#: content/ui/PostDelegate/PostInfoBar.qml:89
 #, kde-format
 msgid "Private"
 msgstr "Privata"
 
-#: content/ui/PostDelegate/InformationBar.qml:63
-#: content/ui/PostDelegate/PostInfoBar.qml:88
+#: content/ui/PostDelegate/InformationBar.qml:69
+#: content/ui/PostDelegate/PostInfoBar.qml:91
 #, kde-format
 msgid "Direct Message"
 msgstr "Rekta Mesaĝo"
 
-#: content/ui/PostDelegate/InformationBar.qml:85
+#: content/ui/PostDelegate/InformationBar.qml:91
 #, kde-format
 msgid "No favorites"
 msgstr "Neniuj plejŝatatoj"
 
-#: content/ui/PostDelegate/InformationBar.qml:87
+#: content/ui/PostDelegate/InformationBar.qml:93
 #, kde-format
 msgid "%1 favorite"
 msgid_plural "%1 favorites"
 msgstr[0] "%1 plejŝatata"
 msgstr[1] "%1 plejŝatataj"
 
-#: content/ui/PostDelegate/InformationBar.qml:108
+#: content/ui/PostDelegate/InformationBar.qml:114
 #, kde-format
 msgid "No boosts"
 msgstr "Neniuj plifortigoj"
 
-#: content/ui/PostDelegate/InformationBar.qml:110
+#: content/ui/PostDelegate/InformationBar.qml:116
 #, kde-format
 msgid "%1 boost"
 msgid_plural "%1 boosts"
 msgstr[0] "%1 plikonatigo"
 msgstr[1] "%1 plikonatigoj"
 
-#: content/ui/PostDelegate/LinkMenu.qml:31
-#: content/ui/PostDelegate/PostMenu.qml:52
+#: content/ui/PostDelegate/LinkMenu.qml:30
+#: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Kopii Ligilon"
 
-#: content/ui/PostDelegate/LinkMenu.qml:34
-#: content/ui/PostDelegate/PostMenu.qml:55
+#: content/ui/PostDelegate/LinkMenu.qml:33
+#: content/ui/PostDelegate/PostMenu.qml:54
 #, kde-format
 msgid "Post link copied."
 msgstr "Afiŝligilo kopiita."
 
-#: content/ui/PostDelegate/LinkPreview.qml:25
+#: content/ui/PostDelegate/LinkPreview.qml:27
 #, kde-format
 msgid "Link preview: %1"
 msgstr "Antaŭrigardo de ligo: %1"
@@ -3290,28 +3297,28 @@ msgctxt "@info:label 'This is written by %1'"
 msgid "By %1"
 msgstr ""
 
-#: content/ui/PostDelegate/MediaContainer.qml:64
+#: content/ui/PostDelegate/MediaContainer.qml:67
 #, kde-format
 msgctxt "Attachment has alt-text, Short for alt-text"
 msgid "Alt"
 msgstr "Alt"
 
-#: content/ui/PostDelegate/MediaContainer.qml:75
+#: content/ui/PostDelegate/MediaContainer.qml:78
 #, kde-format
 msgid "Text description available"
 msgstr "Tekstpriskribo havebla"
 
-#: content/ui/PostDelegate/MediaContainer.qml:83
+#: content/ui/PostDelegate/MediaContainer.qml:86
 #, kde-format
 msgid "GIF"
 msgstr "GIF"
 
-#: content/ui/PostDelegate/MediaContainer.qml:92
+#: content/ui/PostDelegate/MediaContainer.qml:95
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: content/ui/PostDelegate/MediaContainer.qml:122
+#: content/ui/PostDelegate/MediaContainer.qml:125
 #, fuzzy, kde-format
 #| msgctxt "@title:group Alternate text or description of the image"
 #| msgid "Description"
@@ -3319,51 +3326,51 @@ msgctxt "@title"
 msgid "Media Description"
 msgstr "Priskribo"
 
-#: content/ui/PostDelegate/PostDelegate.qml:101
+#: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
 msgid "Normal Status"
 msgstr "Normala Statuso"
 
-#: content/ui/PostDelegate/PostDelegate.qml:101
+#: content/ui/PostDelegate/PostDelegate.qml:102
 #, kde-format
 msgid "Spoiler Status"
 msgstr "Ensaluta Statuso"
 
-#: content/ui/PostDelegate/PostDelegate.qml:158
+#: content/ui/PostDelegate/PostDelegate.qml:164
 #, kde-format
 msgid "Filtered: %1"
 msgstr "Filtrita: %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:162
+#: content/ui/PostDelegate/PostDelegate.qml:168
 #, kde-format
 msgid "Show anyway"
 msgstr "Montri ĉiukaze"
 
-#: content/ui/PostDelegate/PostDelegate.qml:183
+#: content/ui/PostDelegate/PostDelegate.qml:189
 #, kde-format
 msgctxt "@label"
 msgid "Pinned Post"
 msgstr "Pinglita Afiŝo"
 
-#: content/ui/PostDelegate/PostDelegate.qml:245
+#: content/ui/PostDelegate/PostDelegate.qml:261
 #, kde-format
 msgctxt "@title"
 msgid "Delete Post"
 msgstr "Forigi vorton"
 
-#: content/ui/PostDelegate/PostDelegate.qml:246
+#: content/ui/PostDelegate/PostDelegate.qml:262
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this post?"
 msgstr "Ĉu vi certas ke vi volas forigi ĉi afiŝon?"
 
-#: content/ui/PostDelegate/PostDelegate.qml:261
+#: content/ui/PostDelegate/PostDelegate.qml:277
 #, kde-format
 msgctxt "@title"
 msgid "Delete & Re-draft Post"
 msgstr "Forigi & Re-redakti Afiŝon"
 
-#: content/ui/PostDelegate/PostDelegate.qml:262
+#: content/ui/PostDelegate/PostDelegate.qml:278
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -3373,85 +3380,85 @@ msgstr ""
 "Ĉu vi certas ke vi volas re-redakti ĉi afiŝon? Tio forigos la originan "
 "afiŝon."
 
-#: content/ui/PostDelegate/PostDelegate.qml:326
+#: content/ui/PostDelegate/PostDelegate.qml:342
 #, fuzzy, kde-format
 #| msgid "<b>Content Warning</b><br /> %1"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Averto pri enhavo</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:438
+#: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Respondi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:465
+#: content/ui/PostDelegate/PostDelegate.qml:480
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Ne eblas plifortigi rektajn mesaĝojn"
 
-#: content/ui/PostDelegate/PostDelegate.qml:467
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Ne eblas plifortigi privatajn afiŝojn"
 
-#: content/ui/PostDelegate/PostDelegate.qml:469
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Plikonatigi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:474
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "Plikonatigita"
 
-#: content/ui/PostDelegate/PostDelegate.qml:474
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "Plikonatigi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:494
+#: content/ui/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Igi Ŝatata"
 
-#: content/ui/PostDelegate/PostDelegate.qml:497
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, fuzzy, kde-format
 #| msgid "Favourited"
 msgid "Favorited"
 msgstr "Ŝatatigita"
 
-#: content/ui/PostDelegate/PostDelegate.qml:497
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, fuzzy, kde-format
 #| msgctxt "Favorite a post"
 #| msgid "Favorite"
 msgid "Favorite"
 msgstr "Igi Ŝatata"
 
-#: content/ui/PostDelegate/PostDelegate.qml:516
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Forigi legosignon"
 
-#: content/ui/PostDelegate/PostDelegate.qml:516
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Legomarki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:519
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "Legomarkita"
 
-#: content/ui/PostDelegate/PostDelegate.qml:519
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "Legomarko"
 
-#: content/ui/PostDelegate/PostDelegate.qml:542
+#: content/ui/PostDelegate/PostDelegate.qml:566
 #, fuzzy, kde-format
 #| msgid ""
 #| "This post has been marked private. Some posts may be missing because it's "
@@ -3463,7 +3470,7 @@ msgstr ""
 "Ĉi tiu afiŝo estis markita kiel privata. Iuj afiŝoj eble mankas ĉar ĝiaj "
 "respondoj estas markitaj kiel privataj defaŭlte."
 
-#: content/ui/PostDelegate/PostInfoBar.qml:50
+#: content/ui/PostDelegate/PostInfoBar.qml:53
 #, fuzzy, kde-format
 #| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
 #| msgid "Posted on %1"
@@ -3471,161 +3478,161 @@ msgctxt "Edited on <datetime>"
 msgid "Edited on %1"
 msgstr "Afiŝita je %1"
 
-#: content/ui/PostDelegate/PostInfoBar.qml:103
+#: content/ui/PostDelegate/PostInfoBar.qml:106
 #, kde-format
 msgctxt "Show more options"
 msgid "More actions"
 msgstr "Pliaj agoj"
 
-#: content/ui/PostDelegate/PostMenu.qml:36
+#: content/ui/PostDelegate/PostMenu.qml:35
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr ""
 
-#: content/ui/PostDelegate/PostMenu.qml:63
+#: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Enkonstrui"
 
-#: content/ui/PostDelegate/PostMenu.qml:78
+#: content/ui/PostDelegate/PostMenu.qml:77
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Malfermi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:86
+#: content/ui/PostDelegate/PostMenu.qml:85
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Respondi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:94
+#: content/ui/PostDelegate/PostMenu.qml:93
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Ŝatatigi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:102
+#: content/ui/PostDelegate/PostMenu.qml:101
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Plifortigi kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:110
+#: content/ui/PostDelegate/PostMenu.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Legomarki kiel…"
 
-#: content/ui/PostDelegate/PostMenu.qml:118
+#: content/ui/PostDelegate/PostMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Forigi Legosignon"
 
-#: content/ui/PostDelegate/PostMenu.qml:118
+#: content/ui/PostDelegate/PostMenu.qml:117
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Legomarki"
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Malpingli sur Profilo"
 
-#: content/ui/PostDelegate/PostMenu.qml:126
+#: content/ui/PostDelegate/PostMenu.qml:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Pingli sur Profilo"
 
-#: content/ui/PostDelegate/PostMenu.qml:140
+#: content/ui/PostDelegate/PostMenu.qml:139
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Malŝalti @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:142
+#: content/ui/PostDelegate/PostMenu.qml:141
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Silentigi @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:160
+#: content/ui/PostDelegate/PostMenu.qml:159
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Malŝlosi @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:162
+#: content/ui/PostDelegate/PostMenu.qml:161
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Bloki @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:188
+#: content/ui/PostDelegate/PostMenu.qml:187
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
 
-#: content/ui/PostDelegate/PostMenu.qml:196
+#: content/ui/PostDelegate/PostMenu.qml:195
 #: content/ui/Settings/ProfileEditor.qml:151
 #: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Forigi"
 
-#: content/ui/PostDelegate/PostMenu.qml:204
+#: content/ui/PostDelegate/PostMenu.qml:203
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Forigi & Re-redakti"
 
-#: content/ui/PostDelegate/PostPoll.qml:40
+#: content/ui/PostDelegate/PostPoll.qml:41
 #, kde-format
 msgctxt "Votes percentage"
 msgid "%1%"
 msgstr "%1%"
 
-#: content/ui/PostDelegate/PostPoll.qml:59
+#: content/ui/PostDelegate/PostPoll.qml:60
 #, fuzzy, kde-format
 #| msgid "No users favourited this post"
 msgid "You voted for this option"
 msgstr "Neniuj uzantoj ŝatis ĉi tiun afiŝon"
 
-#: content/ui/PostDelegate/PostPoll.qml:82
+#: content/ui/PostDelegate/PostPoll.qml:83
 #, kde-format
 msgid "(No votes)"
 msgstr "(Neniu voĉoj)"
 
-#: content/ui/PostDelegate/PostPoll.qml:120
+#: content/ui/PostDelegate/PostPoll.qml:127
 #, kde-format
 msgid "Vote"
 msgstr "Voĉdoni"
 
-#: content/ui/PostDelegate/PostPoll.qml:142
+#: content/ui/PostDelegate/PostPoll.qml:149
 #, fuzzy, kde-format
 #| msgid "Show Less"
 msgctxt "@option:check Show poll results"
 msgid "Show Results"
 msgstr "Montri Malpli"
 
-#: content/ui/PostDelegate/PostPoll.qml:148
+#: content/ui/PostDelegate/PostPoll.qml:155
 #, fuzzy, kde-format
 #| msgid "A poll has ended"
 msgid "Poll has closed"
 msgstr "Enketo finiĝis"
 
-#: content/ui/PostDelegate/QuotePost.qml:64
+#: content/ui/PostDelegate/QuotePost.qml:66
 #, kde-format
 msgid "Post from %1"
 msgstr "Afiŝita el %1"
 
-#: content/ui/PostDelegate/QuotePost.qml:83
+#: content/ui/PostDelegate/QuotePost.qml:85
 #, kde-format
 msgid "Quoted post"
 msgstr "Citita afiŝo"
@@ -3648,7 +3655,7 @@ msgstr "%1 plifortigita"
 msgid "In reply to %1"
 msgstr "En respondo al %1"
 
-#: content/ui/PostDelegate/VideoAttachment.qml:107
+#: content/ui/PostDelegate/VideoAttachment.qml:106
 #, kde-format
 msgctxt "@action:button Start media playback"
 msgid "Play"
@@ -3698,7 +3705,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Nuligi"
 
-#: content/ui/SearchDelegate.qml:100 content/ui/SearchView.qml:159
+#: content/ui/SearchDelegate.qml:102 content/ui/SearchView.qml:159
 #, kde-format
 msgid "Hashtag"
 msgstr "Krado"
@@ -4339,33 +4346,33 @@ msgstr "Pri KDE"
 msgid "Sharing failed"
 msgstr "Kunhavigo malsukcesis"
 
-#: content/ui/SocialGraphPage.qml:62
+#: content/ui/SocialGraphPage.qml:64
 #, kde-format
 msgctxt "@action:button Allow follow request"
 msgid "Allow"
 msgstr "Permesi"
 
-#: content/ui/SocialGraphPage.qml:69
+#: content/ui/SocialGraphPage.qml:71
 #, kde-format
 msgctxt "@action:button Deny follow request"
 msgid "Deny"
 msgstr "Nei"
 
-#: content/ui/SocialGraphPage.qml:76
+#: content/ui/SocialGraphPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Unfollow"
 msgctxt "@action:button Deny follow request"
 msgid "Unfollow"
 msgstr "Malsekvi"
 
-#: content/ui/SocialGraphPage.qml:83
+#: content/ui/SocialGraphPage.qml:85
 #, fuzzy, kde-format
 #| msgid "No followers"
 msgctxt "@action:button Deny follow request"
 msgid "Remove Follower"
 msgstr "Neniuj sekvantoj"
 
-#: content/ui/SocialGraphPage.qml:90
+#: content/ui/SocialGraphPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgctxt "@action:button Deny follow request"
@@ -4377,61 +4384,61 @@ msgstr "Forigi"
 msgid "No accounts available"
 msgstr "Neniuj kontoj haveblaj"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:95
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:97
 #, kde-format
 msgctxt "@title:group Alternate text or description of the image"
 msgid "Description"
 msgstr "Priskribo"
 
-#: content/ui/StatusComposer/AttachmentInfoDialog.qml:113
+#: content/ui/StatusComposer/AttachmentInfoDialog.qml:115
 #, kde-format
 msgctxt "@title:group"
 msgid "Focal point"
 msgstr "Fokusa punkto"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:41
+#: content/ui/StatusComposer/ComposerPoll.qml:43
 #, kde-format
 msgctxt "@label:textbox Poll choice"
 msgid "Choice %1"
 msgstr "Elekto %1"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:65
+#: content/ui/StatusComposer/ComposerPoll.qml:67
 #, kde-format
 msgctxt "@action:intoolbar Poll toolbar"
 msgid "Add Choice"
 msgstr "Aldoni Elekton"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:66
+#: content/ui/StatusComposer/ComposerPoll.qml:68
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Add a new poll choice"
 msgstr "Aldoni novan balot-elekton"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:85
+#: content/ui/StatusComposer/ComposerPoll.qml:87
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "When the poll will expire"
 msgstr "Kiam la balotado eksvalidiĝos"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:94
+#: content/ui/StatusComposer/ComposerPoll.qml:96
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Multiple choice"
 msgstr "Multobla elekto"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:100
+#: content/ui/StatusComposer/ComposerPoll.qml:102
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Allow multiple choices"
 msgstr "Permesi plurajn elektojn"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:109
+#: content/ui/StatusComposer/ComposerPoll.qml:111
 #, kde-format
 msgctxt "@option:check Poll toolbar"
 msgid "Hide totals"
 msgstr "Kaŝi totalojn"
 
-#: content/ui/StatusComposer/ComposerPoll.qml:115
+#: content/ui/StatusComposer/ComposerPoll.qml:117
 #, kde-format
 msgctxt "@info:tooltip Poll toolbar"
 msgid "Hide vote count until the poll ends"
@@ -4651,37 +4658,37 @@ msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Aldoni emoĝi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:581
+#: content/ui/StatusComposer/StatusComposer.qml:583
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> signoj"
 
-#: content/ui/StatusComposer/StatusComposer.qml:605
+#: content/ui/StatusComposer/StatusComposer.qml:607
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Sendi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:607
+#: content/ui/StatusComposer/StatusComposer.qml:609
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Respondi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:609
+#: content/ui/StatusComposer/StatusComposer.qml:611
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Repost"
 
-#: content/ui/StatusComposer/StatusComposer.qml:611
+#: content/ui/StatusComposer/StatusComposer.qml:613
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
 msgstr "Konservi"
 
-#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:39
+#: content/ui/TimelinePage.qml:39 timeline/accountmodel.cpp:41
 #, kde-format
 msgid "Loading"
 msgstr "Ŝargante"
@@ -4714,17 +4721,17 @@ msgctxt "@action:button Load more posts above this"
 msgid "Load More"
 msgstr "Montri pli"
 
-#: content/ui/UserInfo.qml:98
+#: content/ui/UserInfo.qml:96
 #, kde-format
 msgid "Switch Account"
 msgstr "Ŝanĝi Konton"
 
-#: content/ui/UserInfo.qml:100
+#: content/ui/UserInfo.qml:98
 #, kde-format
 msgid "Switch account"
 msgstr "Ŝanĝi konton"
 
-#: content/ui/UserInfo.qml:148
+#: content/ui/UserInfo.qml:146
 #, kde-format
 msgid "Log in or create a new account"
 msgstr "Ensaluti aŭ krei novan konton"
@@ -4809,70 +4816,70 @@ msgstr "7 tagoj"
 msgid "An unknown error occurred."
 msgstr "Nekonata eraro okazis."
 
-#: main.cpp:70
+#: main.cpp:69
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Ricevante puŝ-sciigojn"
 
-#: main.cpp:117
+#: main.cpp:116
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:119 main.cpp:144
+#: main.cpp:118 main.cpp:143
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr ""
 
-#: main.cpp:121
+#: main.cpp:120
 #, fuzzy, kde-format
 #| msgid "© 2021-2024 Carl Schwan, 2021-2024 KDE Community"
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 Carl Schwan, 2021-2023 KDE-Komunumo"
 
-#: main.cpp:122
+#: main.cpp:121
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:123 main.cpp:128
+#: main.cpp:122 main.cpp:127
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:127
+#: main.cpp:126
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Josuo Goins"
 
-#: main.cpp:132
+#: main.cpp:131
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Oliver Kellogg"
 
-#: main.cpp:132
+#: main.cpp:131
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: main.cpp:145
+#: main.cpp:144
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Subtenas https kaj web+ap url-skemon"
 
-#: main.cpp:147
+#: main.cpp:146
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Kunhavigi linion de teksto en la memstara komponisto."
 
-#: main.cpp:147
+#: main.cpp:146
 #, kde-format
 msgid "The text to share."
 msgstr "La teksto por dividi."
 
-#: main.cpp:151
+#: main.cpp:150
 #, kde-format
 msgid "Internal usage only."
 msgstr "Nur por interna uzo."
