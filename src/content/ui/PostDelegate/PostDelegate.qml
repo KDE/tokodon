@@ -195,7 +195,7 @@ QQC2.ItemDelegate {
 
         // Normal interaction labels on the timeline
         Loader {
-            sourceComponent: UserInteractionLabel {
+            sourceComponent: PostInteractionLabel {
                 isBoosted: root.isBoosted
                 isReply: root.isReply
                 type: root.type
