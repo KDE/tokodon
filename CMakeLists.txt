@@ -21,7 +21,7 @@ endif()
 option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
 
 set(KF_MIN_VERSION "6.9.0")
-set(QT_MIN_VERSION "6.7.0")
+set(QT_MIN_VERSION "6.8.0")
 
 include(FeatureSummary)
 
@@ -169,6 +169,8 @@ include(ECMCheckOutboundLicense)
 if (ANDROID)
     include(ECMAddAndroidApk)
 endif ()
+
+qt_policy(SET QTP0004 NEW)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX TOKODON
