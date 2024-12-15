@@ -151,8 +151,6 @@ else()
     )
 endif()
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
 include(ECMSetupVersion)
 include(KDEInstallDirs)
 include(ECMFindQmlModule)
@@ -187,6 +185,8 @@ ecm_find_qmlmodule(org.kde.kquickcontrolsaddons REQUIRED)
 if (NOT ANDROID)
     ecm_find_qmlmodule(org.kde.sonnet REQUIRED)
 endif()
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 add_subdirectory(src)
 
