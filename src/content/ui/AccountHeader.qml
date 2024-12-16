@@ -495,12 +495,19 @@ QQC2.Pane {
 
                     Layout.fillWidth: true
                     spacing: 0
-                    FormCard.FormDelegateSeparator {}
+                    FormCard.FormDelegateSeparator {
+                        // We want it to always be visible regardless of hover state
+                        opacity: 0.5
+                    }
 
                     FormCard.AbstractFormDelegate {
                         topPadding: 0
                         bottomPadding: 0
-                        hoverEnabled: false
+                        hoverEnabled: true
+
+                        QQC2.ToolTip.text: delegate.modelData.verified_at !== null ? i18n("Ownership of this link was checked on %1", Qt.formatDate(delegate.modelData.verified_at)) : ""
+                        QQC2.ToolTip.visible: hovered && delegate.modelData.verified_at !== null
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
                         background: Rectangle {
                             color: delegate.modelData.verified_at !== null ? Kirigami.Theme.positiveBackgroundColor : "transparent"
@@ -509,15 +516,30 @@ QQC2.Pane {
                         contentItem: RowLayout {
                             spacing: 0
 
-                            QQC2.Label {
-                                text: delegate.modelData.name
-                                wrapMode: Text.Wrap
-
-                                topPadding: Kirigami.Units.smallSpacing
-                                bottomPadding: Kirigami.Units.smallSpacing
+                            Row {
+                                spacing: Kirigami.Units.smallSpacing
 
                                 Layout.minimumWidth: Kirigami.Units.gridUnit * 7
                                 Layout.maximumWidth: Kirigami.Units.gridUnit * 7
+
+                                QQC2.Label {
+                                    text: delegate.modelData.name
+                                    wrapMode: Text.Wrap
+
+                                    topPadding: Kirigami.Units.smallSpacing
+                                    bottomPadding: Kirigami.Units.smallSpacing
+                                }
+
+                                Kirigami.Icon {
+                                    anchors {
+                                        verticalCenter: parent.verticalCenter
+                                    }
+
+                                    source: "checkmark-symbolic"
+                                    width: Kirigami.Units.iconSizes.sizeForLabels
+                                    height: Kirigami.Units.iconSizes.sizeForLabels
+                                    visible: delegate.modelData.verified_at !== null
+                                }
                             }
 
                             QQC2.TextArea {
