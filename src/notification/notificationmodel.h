@@ -18,7 +18,12 @@ class NotificationModel : public AbstractTimelineModel
     Q_PROPERTY(QStringList excludeTypes READ excludeTypes WRITE setExcludesTypes NOTIFY excludeTypesChanged)
 
 public:
-    enum NotificationRoles { ReportRole = ExtraRole, RelationshipSeveranceEventRole, ModerationWarningRole };
+    enum NotificationRoles {
+        ReportRole = ExtraRole,
+        RelationshipSeveranceEventRole,
+        ModerationWarningRole,
+        AnnualReportEventRole,
+    };
 
     explicit NotificationModel(QObject *parent = nullptr);
 

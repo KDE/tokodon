@@ -104,6 +104,18 @@ QDateTime RelationshipSeveranceEvent::createdAt() const
     return m_createdAt;
 }
 
+AnnualReportEvent::AnnualReportEvent() = default;
+
+AnnualReportEvent::AnnualReportEvent(const QJsonObject &source)
+    : m_year(source["year"_L1].toString())
+{
+}
+
+QString AnnualReportEvent::year() const
+{
+    return m_year;
+}
+
 static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("favourite"), Notification::Type::Favorite},
     {QStringLiteral("follow"), Notification::Type::Follow},
@@ -117,6 +129,7 @@ static QMap<QString, Notification::Type> str_to_not_type = {
     {QStringLiteral("admin.report"), Notification::Type::AdminReport},
     {QStringLiteral("severed_relationships"), Notification::Type::SeveredRelationships},
     {QStringLiteral("moderation_warning"), Notification::Type::ModerationWarning},
+    {QStringLiteral("annual_report"), Notification::Type::AnnualReport},
 };
 
 Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
@@ -139,6 +152,8 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
     } else if (m_type == AdminReport) {
         m_report = new ReportInfo();
         m_report->fromSourceData(obj["event"_L1].toObject());
+    } else if (m_type == AnnualReport) {
+        m_annualReportEvent = AnnualReportEvent(obj["annual_report"_L1].toObject());
     }
 }
 
@@ -170,6 +185,11 @@ ReportInfo *Notification::report() const
 std::optional<RelationshipSeveranceEvent> Notification::relationshipSeveranceEvent() const
 {
     return m_relationshipSeveranceEvent;
+}
+
+std::optional<AnnualReportEvent> Notification::annualReportEvent() const
+{
+    return m_annualReportEvent;
 }
 
 std::optional<AccountWarning> Notification::accountWarning() const

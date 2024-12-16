@@ -260,5 +260,18 @@ FormCard.FormCardPage {
                 root.saveConfig();
             }
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
+            id: relationshipsDelegate
+            text: i18nc("@option:check", "Annual Report")
+            description: i18n("When you receive your #FediWrapped at the end of the year.")
+            checked: root.config.notifyAnnualReport
+            onToggled: {
+                root.config.notifyAnnualReport = checked;
+                root.saveConfig();
+            }
+        }
     }
 }

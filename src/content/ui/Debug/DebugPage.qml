@@ -74,5 +74,10 @@ MastoPage {
             text: "Poll"
             onClicked: AccountManager.selectedAccount.pollNotification()
         }
+
+        FormCard.FormButtonDelegate {
+            text: "Annual Report"
+            onClicked: AccountManager.selectedAccount.annualReportNotification()
+        }
     }
 }

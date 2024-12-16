@@ -66,6 +66,21 @@ private:
     QDateTime m_createdAt;
 };
 
+class AnnualReportEvent
+{
+    Q_GADGET
+    QML_VALUE_TYPE(annualReportEvent)
+    Q_PROPERTY(QString year READ year CONSTANT)
+
+public:
+    AnnualReportEvent();
+    explicit AnnualReportEvent(const QJsonObject &source);
+    QString year() const;
+
+private:
+    QString m_year;
+};
+
 class Notification
 {
     Q_GADGET
@@ -77,7 +92,21 @@ public:
     Notification() = default;
     explicit Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
 
-    enum Type { Mention, Follow, Repeat, Favorite, Poll, FollowRequest, Update, Status, AdminSignUp, AdminReport, SeveredRelationships, ModerationWarning };
+    enum Type {
+        Mention,
+        Follow,
+        Repeat,
+        Favorite,
+        Poll,
+        FollowRequest,
+        Update,
+        Status,
+        AdminSignUp,
+        AdminReport,
+        SeveredRelationships,
+        ModerationWarning,
+        AnnualReport,
+    };
     Q_ENUM(Type);
 
     [[nodiscard]] int id() const;
@@ -87,6 +116,7 @@ public:
     [[nodiscard]] ReportInfo *report() const;
     [[nodiscard]] std::optional<RelationshipSeveranceEvent> relationshipSeveranceEvent() const;
     [[nodiscard]] std::optional<AccountWarning> accountWarning() const;
+    [[nodiscard]] std::optional<AnnualReportEvent> annualReportEvent() const;
     [[nodiscard]] std::shared_ptr<Identity> identity() const;
 
 private:
@@ -97,6 +127,7 @@ private:
     ReportInfo *m_report = nullptr;
     std::optional<RelationshipSeveranceEvent> m_relationshipSeveranceEvent;
     std::optional<AccountWarning> m_accountWarning;
+    std::optional<AnnualReportEvent> m_annualReportEvent;
     Type m_type = Type::Favorite;
     std::shared_ptr<Identity> m_identity;
 

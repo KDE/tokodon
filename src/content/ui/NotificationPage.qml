@@ -245,6 +245,11 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.ModerationWarning
                 AccountWarningDelegate {}
             }
+
+            DelegateChoice {
+                roleValue: Notification.AnnualReport
+                AnnualReportDelegate {}
+            }
         }
 
         Kirigami.LoadingPlaceholder {

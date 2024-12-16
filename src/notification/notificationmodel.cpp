@@ -193,6 +193,8 @@ QVariant NotificationModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue<ReportInfo *>(notification->report());
     case RelationshipSeveranceEventRole:
         return QVariant::fromValue<RelationshipSeveranceEvent>(*notification->relationshipSeveranceEvent());
+    case AnnualReportEventRole:
+        return QVariant::fromValue<AnnualReportEvent>(*notification->annualReportEvent());
     case ModerationWarningRole:
         return QVariant::fromValue<AccountWarning>(*notification->accountWarning());
     default:
@@ -209,6 +211,7 @@ QHash<int, QByteArray> NotificationModel::roleNames() const
     roles.insert(ReportRole, QByteArrayLiteral("report"));
     roles.insert(RelationshipSeveranceEventRole, QByteArrayLiteral("relationshipSeveranceEvent"));
     roles.insert(ModerationWarningRole, QByteArrayLiteral("moderationWarning"));
+    roles.insert(AnnualReportEventRole, QByteArrayLiteral("annualReportEvent"));
     return roles;
 }
 

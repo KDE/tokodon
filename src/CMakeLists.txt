@@ -239,6 +239,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Notifications/RelationshipSeveranceDelegate.qml
         content/ui/Notifications/ReportDelegate.qml
         content/ui/Notifications/UserInteractionLabel.qml
+        content/ui/Notifications/AnnualReportDelegate.qml
 
         # Settings
         content/ui/Settings/AccountPage.qml

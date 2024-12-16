@@ -132,6 +132,18 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         knotification->setTitle(i18n("%1 edited a post", notification->identity()->displayName()));
         addViewPostAction();
         break;
+    case Notification::AnnualReport:
+        if (!AccountManager::instance().testMode() && !account->config()->notifyUpdate()) {
+            return;
+        }
+        knotification = new KNotification(QStringLiteral("update"));
+        knotification->setTitle(
+            i18nc("@title this is used for notifications, when an annual report is available. It's similar to spotify wrapped, it shows profile stats / it's a "
+                  "recap of the year. The variable is the current year e.g. 2024. Please don't translate the hashtag.",
+                  "Your %1 #FediWrapped awaits!",
+                  notification->annualReportEvent()->year()));
+        knotification->setText(i18n("Unveil your year's highlights and memorable moments on Mastodon!"));
+        break;
 
     default:
         Q_UNREACHABLE();
