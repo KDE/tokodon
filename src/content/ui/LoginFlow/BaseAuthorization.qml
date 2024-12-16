@@ -69,30 +69,17 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: implicitHeight
 
-            FormCard.AbstractFormDelegate {
-                background: Item {}
+            FormCard.FormTextDelegate {
                 Layout.fillWidth: true
 
-                contentItem: TextEdit {
-                    color: Kirigami.Theme.textColor
-                    textFormat: Text.StyledText
-                    readOnly: true
-                    selectByMouse: true
-                    text: i18n("To continue, please open the following link in your web browser to authorize Tokodon: %1", "<br /><br /><a href='" + account.authorizeUrl + "'>" + account.authorizeUrl + "</a>")
-                    wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(account.authorizeUrl)
-                    Layout.fillWidth: true
-                    HoverHandler {
-                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
-                    }
-                }
+                text: i18n("To continue, you must authorize Tokodon to access your account.")
             }
 
             FormCard.FormDelegateSeparator { above: openLink }
 
             FormCard.FormButtonDelegate {
                 id: openLink
-                text: i18n("Open Authorization Link")
+                text: i18n("Open Authorization Page")
                 icon.name: "document-open"
                 onClicked: Qt.openUrlExternally(account.authorizeUrl)
             }
@@ -101,7 +88,7 @@ Kirigami.ScrollablePage {
 
             FormCard.FormButtonDelegate {
                 id: copyLink
-                text: i18n("Copy Authorization Link")
+                text: i18n("Copy Link to Authorization Page")
                 icon.name: "edit-copy"
                 onClicked: {
                     KQuickControlsAddons.Clipboard.saveText(account.authorizeUrl)
