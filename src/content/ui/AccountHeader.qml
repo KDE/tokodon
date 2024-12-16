@@ -370,7 +370,7 @@ QQC2.Pane {
                             visible: root.isSelf
                             text: i18n("Edit Profile")
                             onTriggered: pageStack.push(Qt.createComponent("org.kde.tokodon", "EditProfilePage"), {
-                                account: root.account
+                                account: AccountManager.selectedAccount
                             }, {
                                 title: i18n("Account editor")
                             })
