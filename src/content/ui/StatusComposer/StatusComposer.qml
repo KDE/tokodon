@@ -65,6 +65,11 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
+            text: i18nc("@action:intoolbar Draft or unfinished posts", "Drafts")
+            icon.name: "document-open-folder-symbolic"
+            onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true })
+        },
+        Kirigami.Action {
             text: i18nc("@action Pop out the status composer", "Pop Out")
             icon.name: "window-new-symbolic"
             visible: !Kirigami.Settings.isMobile && !root.closeApplicationWhenFinished

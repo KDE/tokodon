@@ -48,6 +48,8 @@ target_sources(tokodon_static
     account/identity.h
     account/listsmodel.cpp
     account/listsmodel.h
+    account/scheduledstatusesmodel.cpp
+    account/scheduledstatusesmodel.h
     account/socialgraphmodel.cpp
     account/socialgraphmodel.h
     account/suggestionsmodel.cpp
@@ -257,6 +259,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/StatusComposer/EmojiDialog.qml
         content/ui/StatusComposer/StatusComposer.qml
         content/ui/StatusComposer/StatusPreview.qml
+        content/ui/StatusComposer/ScheduledPostsPage.qml
 
         # Delegate
         content/ui/PostDelegate/AttachmentGrid.qml
