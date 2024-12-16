@@ -249,6 +249,8 @@ void ProfileEditorBackend::fetchAccountInfo()
             m_fields.append(field);
         }
         Q_EMIT fieldsChanged();
+
+        m_account->identity()->fromSourceData(obj);
     });
 }
 
