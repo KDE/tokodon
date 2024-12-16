@@ -16,6 +16,8 @@
 
 #include <qt6keychain/keychain.h>
 
+#include "emojihelper.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 AccountManager::AccountManager(QObject *parent)
@@ -26,6 +28,26 @@ AccountManager::AccountManager(QObject *parent)
 }
 
 AccountManager::~AccountManager() = default;
+
+void AccountManager::setAccount(AbstractAccount *account)
+{
+    m_selected_account = account;
+    if (m_selected_account != nullptr) {
+        if (m_selected_account->hasCustomEmojis()) {
+            EmojiHelper::instance().setupCustomEmoji(m_selected_account);
+        } else {
+            connect(
+                m_selected_account,
+                &AbstractAccount::fetchedCustomEmojis,
+                this,
+                [account = m_selected_account] {
+                    EmojiHelper::instance().setupCustomEmoji(account);
+                },
+                Qt::SingleShotConnection);
+        }
+    }
+    Q_EMIT accountSelected(account);
+}
 
 QVariant AccountManager::data(const QModelIndex &index, int role) const
 {
@@ -138,8 +160,7 @@ void AccountManager::addAccount(AbstractAccount *account)
     });
 
     if (m_selected_account == nullptr) {
-        m_selected_account = account;
-        Q_EMIT accountSelected(m_selected_account);
+        setAccount(account);
     }
 
     if (m_testMode) {
@@ -176,11 +197,10 @@ void AccountManager::removeAccount(AbstractAccount *account)
     endRemoveRows();
 
     if (hasAccounts()) {
-        m_selected_account = m_accounts.first();
+        setAccount(m_selected_account);
     } else {
-        m_selected_account = nullptr;
+        setAccount(nullptr);
     }
-    Q_EMIT accountSelected(m_selected_account);
 
     Q_EMIT accountRemoved(account);
     Q_EMIT accountsChanged();
@@ -245,15 +265,13 @@ void AccountManager::selectAccount(AbstractAccount *account, bool explicitUserAc
         return;
     }
 
-    m_selected_account = account;
+    setAccount(account);
 
     if (explicitUserAction && !testMode()) {
         auto config = Config::self();
         config->setLastUsedAccount(account->settingsGroupName());
         config->save();
     }
-
-    Q_EMIT accountSelected(account);
 }
 
 AbstractAccount *AccountManager::selectedAccount() const

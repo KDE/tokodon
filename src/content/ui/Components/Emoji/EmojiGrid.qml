@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import org.kde.kirigami 2 as Kirigami
+import org.kde.textaddons.emoticons
 import org.kde.tokodon
 
 QQC2.ScrollView {
@@ -47,30 +48,37 @@ QQC2.ScrollView {
 
         delegate: EmojiDelegate {
             id: emojiDelegate
+
+            required property string unicode
+            required property string fileName
+            required name
+            required property bool isCustom
+            required property string identifier
+
             checked: emojis.currentIndex === model.index
-            emoji: modelData.unicode
-            name: modelData.shortName
+            emoji: isCustom ? fileName : unicode
 
             width: emojis.cellWidth
             height: emojis.cellHeight
 
-            isImage: modelData.isCustom
+            isImage: isCustom
             Keys.onEnterPressed: clicked()
             Keys.onReturnPressed: clicked()
             onClicked: {
-                emojiGrid.chosen(modelData.isCustom ? (":" + modelData.shortName + ":") : modelData.unicode)
-                EmojiModel.emojiUsed(AccountManager.selectedAccount, name)
+                emojiGrid.chosen(emojiDelegate.isCustom ? (":" + emojiDelegate.identifier + ":") : emojiDelegate.unicode);
+                EmojiModelManager.addIdentifier(emojiDelegate.identifier);
             }
             Keys.onSpacePressed: pressAndHold()
-            onPressAndHold: {
+            // TODO: KTextAddons does not support tones (yet)
+            /*onPressAndHold: {
                 if (EmojiModel.tones(modelData.shortName).length === 0) {
                     return;
                 }
                 let tones = tonesPopupComponent.createObject(emojiDelegate, {shortName: modelData.shortName, unicode: modelData.unicode, categoryIconSize: emojiGrid.targetIconSize})
                 tones.open()
                 tones.forceActiveFocus()
-            }
-            showTones: !!modelData && EmojiModel.tones(modelData.shortName).length > 0
+            }*/
+            //showTones: !!modelData && EmojiModel.tones(modelData.shortName).length > 0
         }
 
         Kirigami.PlaceholderMessage {

@@ -5,12 +5,13 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
+import org.kde.textaddons.emoticons
 import org.kde.tokodon
 
 ColumnLayout {
     id: root
 
-    readonly property var currentEmojiModel: EmojiModel.categories
+    readonly property var currentEmojiModel: EmojiHelper.categories
     readonly property int categoryIconSize: Math.round(Kirigami.Units.gridUnit * 2.5)
     readonly property var currentCategory: currentEmojiModel[categories.currentIndex].category
     readonly property alias categoryCount: categories.count
@@ -76,7 +77,12 @@ ColumnLayout {
     EmojiGrid {
         id: emojiGrid
         targetIconSize: root.categoryIconSize  // Custom emojis are bigger
-        model: searchField.text.length === 0 ? EmojiModel.emojis(AccountManager.selectedAccount, root.currentCategory) : EmojiModel.filterModel(AccountManager.selectedAccount, searchField.text)
+        model: EmojiProxyModel {
+            id: proxyModel
+
+            sourceModel: EmojiModelManager.emojiModel
+            recentEmoticons: EmojiModelManager.recentIdentifier
+        }
         Layout.fillWidth: true
         Layout.fillHeight: true
         withCustom: true
@@ -91,12 +97,12 @@ ColumnLayout {
             width: root.categoryIconSize
             height: width
             checked: categories.currentIndex === model.index
-            text: modelData ? modelData.emoji : ""
-            QQC2.ToolTip.text: modelData ? modelData.name : ""
+            text: modelData ? modelData.name : ""
+            QQC2.ToolTip.text: modelData ? modelData.category : ""
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.visible: hovered && QQC2.ToolTip.text !== ""
             onClicked: {
-                categories.currentIndex = index;
+                proxyModel.category = modelData.category;
                 categories.focus = true;
             }
         }

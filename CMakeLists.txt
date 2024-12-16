@@ -151,6 +151,12 @@ else()
     )
 endif()
 
+find_package(KF6TextEmoticonsCore)
+set_package_properties(KF6TextEmoticonsCore PROPERTIES
+        PURPOSE "Emoji support"
+        TYPE REQUIRED
+)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 include(ECMSetupVersion)

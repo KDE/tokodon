@@ -761,32 +761,46 @@ void AbstractAccount::fetchCustomEmojis()
 {
     m_customEmojis.clear();
 
-    get(apiUrl(QStringLiteral("/api/v1/custom_emojis")), true, this, [this](QNetworkReply *reply) {
-        if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
-            return;
+    get(
+        apiUrl(QStringLiteral("/api/v1/custom_emojis")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            if (200 != reply->attribute(QNetworkRequest::HttpStatusCodeAttribute))
+                return;
 
-        const auto data = reply->readAll();
-        const auto doc = QJsonDocument::fromJson(data);
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
 
-        if (!doc.isArray())
-            return;
+            if (!doc.isArray())
+                return;
 
-        const auto array = doc.array();
+            const auto array = doc.array();
 
-        for (auto emojiObj : array) {
-            if (!emojiObj.isObject()) {
-                continue;
+            for (auto emojiObj : array) {
+                if (!emojiObj.isObject()) {
+                    continue;
+                }
+
+                CustomEmoji customEmoji{};
+                customEmoji.shortcode = emojiObj[QStringLiteral("shortcode")].toString();
+                customEmoji.url = emojiObj[QStringLiteral("url")].toString();
+
+                m_customEmojis.push_back(customEmoji);
             }
 
-            CustomEmoji customEmoji{};
-            customEmoji.shortcode = emojiObj[QStringLiteral("shortcode")].toString();
-            customEmoji.url = emojiObj[QStringLiteral("url")].toString();
+            Q_EMIT fetchedCustomEmojis();
+            m_gotCustomEmojis = true;
+        },
+        [this](QNetworkReply *reply) {
+            Q_UNUSED(reply)
+            m_gotCustomEmojis = true;
+        });
+}
 
-            m_customEmojis.push_back(customEmoji);
-        }
-
-        Q_EMIT fetchedCustomEmojis();
-    });
+bool AbstractAccount::hasCustomEmojis() const
+{
+    return m_gotCustomEmojis;
 }
 
 QList<CustomEmoji> AbstractAccount::customEmojis() const

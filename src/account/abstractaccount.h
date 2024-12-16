@@ -519,6 +519,11 @@ public:
     [[nodiscard]] QString accessTokenKey() const;
 
     /**
+     * @return If we have the custom emoji list.
+     */
+    bool hasCustomEmojis() const;
+
+    /**
      * @brief Type of account action.
      */
     enum AccountAction {
@@ -707,6 +712,8 @@ protected:
     QMap<QString, std::shared_ptr<AdminAccountInfo>> m_adminIdentityCache;
     QMap<QString, AdminAccountInfo *> m_adminIdentityCacheWithVanillaPointer;
     QMap<QString, std::shared_ptr<ReportInfo>> m_reportInfoCache;
+
+    bool m_gotCustomEmojis = false;
 
     void executeAction(Identity *i, AccountAction accountAction, const QJsonObject &extraArguments = {});
 

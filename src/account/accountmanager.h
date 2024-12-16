@@ -222,6 +222,8 @@ private:
 
     ~AccountManager() override;
 
+    void setAccount(AbstractAccount *account);
+
     QList<AbstractAccount *> m_accounts;
     AbstractAccount *m_selected_account = nullptr;
     QNetworkAccessManager *m_qnam;
