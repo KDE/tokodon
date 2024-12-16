@@ -224,6 +224,8 @@ ColumnLayout {
             background: null
             Layout.fillWidth: true
             contentItem: ColumnLayout {
+                spacing: Kirigami.Units.largeSpacing
+
                 QQC2.Label {
                     text: i18nc("Profile fields", "Fields")
                 }
@@ -256,6 +258,28 @@ ColumnLayout {
                             activeFocusOnTab: false
                             onEditingFinished: backend.setFieldValue(delegate.index, text)
                         }
+                    }
+                }
+
+                RowLayout {
+                    spacing: 0
+
+                    QQC2.Button {
+                        icon.name: "list-remove-symbolic"
+                        text: i18nc("@action:button", "Remove")
+                        enabled: backend.fields.length > 0
+                        onClicked: backend.removeField()
+                    }
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Button {
+                        icon.name: "list-add-symbolic"
+                        text: i18nc("@action:button", "Add")
+                        enabled: backend.fields.length < backend.maxFields
+                        onClicked: backend.addField()
                     }
                 }
             }

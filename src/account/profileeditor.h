@@ -28,6 +28,7 @@ class ProfileEditorBackend : public QObject
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
     Q_PROPERTY(bool discoverable READ discoverable WRITE setDiscoverable NOTIFY discoverableChanged)
     Q_PROPERTY(QJsonArray fields READ fields WRITE setFields NOTIFY fieldsChanged)
+    Q_PROPERTY(int maxFields READ maxFields CONSTANT)
 
 public:
     explicit ProfileEditorBackend(QObject *parent = nullptr);
@@ -146,11 +147,25 @@ public:
      */
     void setLocked(bool locked);
 
+    /**
+     * @return The maximum number of supported profile fields.
+     */
+    int maxFields() const;
+
 public Q_SLOTS:
     void save();
     void fetchAccountInfo();
     void setFieldName(int index, const QString &name);
     void setFieldValue(int index, const QString &value);
+    /**
+     * @brief Adds a profile field.
+     */
+    void addField();
+
+    /**
+     * @brief Removes a profile field.
+     */
+    void removeField();
 
 Q_SIGNALS:
     void accountChanged();

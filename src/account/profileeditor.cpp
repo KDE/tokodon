@@ -283,7 +283,7 @@ void ProfileEditorBackend::save()
     discoverablePart.setBody(discoverable() ? "1" : "0");
     multiPart->append(discoverablePart);
 
-    for (int i = 0; i < m_fields.size(); i++) {
+    for (int i = 0; i < maxFields(); i++) {
         QHttpPart fieldNamePart;
         fieldNamePart.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral("form-data; name=\"fields_attributes[%1][name]\"").arg(i));
         fieldNamePart.setBody(m_fields[i]["name"_L1].toString().toUtf8());
@@ -336,6 +336,24 @@ void ProfileEditorBackend::save()
         Q_EMIT sendNotification(i18n("Account details saved"));
         fetchAccountInfo();
     });
+}
+
+int ProfileEditorBackend::maxFields() const
+{
+    // TODO: some instances support more fields
+    return 4;
+}
+
+void ProfileEditorBackend::addField()
+{
+    m_fields.push_back({});
+    Q_EMIT fieldsChanged();
+}
+
+void ProfileEditorBackend::removeField()
+{
+    m_fields.pop_back();
+    Q_EMIT fieldsChanged();
 }
 
 #include "moc_profileeditor.cpp"
