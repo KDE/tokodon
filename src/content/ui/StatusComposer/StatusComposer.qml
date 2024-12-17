@@ -12,6 +12,7 @@ import QtQuick.Window
 import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.tokodon
 import org.kde.tokodon.private
 import '..'
@@ -174,6 +175,35 @@ Kirigami.ScrollablePage {
                 root.Window.window.close();
             } else {
                 applicationWindow().pageStack.layers.pop();
+            }
+        }
+    }
+
+    Kirigami.Dialog {
+        id: schedulePostPrompt
+
+        title: i18nc("@title", "Schedule Post")
+        standardButtons: Kirigami.Dialog.Cancel
+        showCloseButton: false
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@action:button Set this post's schedule to when it should be posted", "Set Schedule")
+                icon.name: "resource-calendar-insert"
+                onTriggered: {
+                    root.backend.scheduledAt = scheduleDateTimeDelegate.value;
+                    root.submitPost();
+                }
+            }
+        ]
+
+        ColumnLayout {
+            spacing: 0
+
+            FormCard.FormCard {
+                FormCard.FormDateTimeDelegate {
+                    id: scheduleDateTimeDelegate
+                }
             }
         }
     }
@@ -609,6 +639,20 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Button {
+                icon.name: "resource-calendar-insert"
+                text: i18nc("@action:button Schedule something to be posted later", "Schedule")
+                enabled: postButton.enabled
+                visible: root.purpose === StatusComposer.New
+                Layout.alignment: Qt.AlignRight
+                onClicked: {
+                    schedulePostPrompt.parent = root.Window.window.overlay; // workaround Kirigami.PromptDialog being broken
+                    schedulePostPrompt.open();
+                }
+            }
+
+            QQC2.Button {
+                id: postButton
+
                 icon.name: {
                     switch (root.purpose) {
                         case StatusComposer.New:

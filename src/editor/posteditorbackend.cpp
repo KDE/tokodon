@@ -249,7 +249,7 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
     }
 
     if (m_scheduledAt.isValid()) {
-        obj["scheduled_at"_L1] = m_scheduledAt.toString(Qt::DateFormat::ISODate);
+        obj["scheduled_at"_L1] = m_scheduledAt.toUTC().toString(Qt::DateFormat::ISODate);
     }
 
     return QJsonDocument(obj);
