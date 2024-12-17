@@ -257,6 +257,11 @@ QJsonDocument PostEditorBackend::toJsonDocument() const
 
 void PostEditorBackend::save()
 {
+    // If we were editing a scheduled or draft post, make sure to clean up the previous iteration
+    if (!m_scheduledPostId.isEmpty()) {
+        m_account->deleteResource(m_account->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(m_scheduledPostId)), true, this, {});
+    }
+
     QUrl post_status_url = m_account->apiUrl(QStringLiteral("/api/v1/statuses"));
     auto doc = toJsonDocument();
 
@@ -313,12 +318,16 @@ void PostEditorBackend::loadScheduledPost(const QString &id)
 {
     QUrl url = m_account->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(id));
 
-    m_account->get(url, true, this, [this](QNetworkReply *reply) {
+    m_account->get(url, true, this, [this, id](QNetworkReply *reply) {
         auto data = reply->readAll();
         auto doc = QJsonDocument::fromJson(data);
         auto obj = doc.object();
 
         setStatus(obj["params"_L1].toObject()["text"_L1].toString());
+
+        // Save this id for later, so we clean up the draft once we properly posted it.
+        m_scheduledPostId = id;
+
         Q_EMIT scheduledPostLoaded();
     });
 }
