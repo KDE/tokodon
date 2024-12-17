@@ -152,6 +152,16 @@ void AttachmentEditorModel::copyFromOther(AttachmentEditorModel *other)
     m_account = other->m_account;
 }
 
+void AttachmentEditorModel::copyFromArray(const QJsonArray &array)
+{
+    beginResetModel();
+    m_attachments.clear();
+    std::ranges::transform(std::as_const(array), std::back_inserter(m_attachments), [this](const QJsonValue &value) {
+        return new Attachment{value.toObject(), this};
+    });
+    endResetModel();
+}
+
 bool AttachmentEditorModel::isLocalFile(const QString &fileName)
 {
     QString localFilename = fileName;

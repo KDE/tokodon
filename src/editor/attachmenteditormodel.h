@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QJsonArray>
 #include <QNetworkReply>
 #include <QTemporaryDir>
 
@@ -31,6 +32,7 @@ public:
     [[nodiscard]] const QList<Attachment *> &attachments() const;
 
     void copyFromOther(AttachmentEditorModel *other);
+    void copyFromArray(const QJsonArray &array);
 
 public Q_SLOTS:
     QNetworkReply *append(const QString &fileName);

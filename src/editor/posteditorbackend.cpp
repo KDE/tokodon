@@ -323,7 +323,32 @@ void PostEditorBackend::loadScheduledPost(const QString &id)
         auto doc = QJsonDocument::fromJson(data);
         auto obj = doc.object();
 
-        setStatus(obj["params"_L1].toObject()["text"_L1].toString());
+        auto params = obj["params"_L1].toObject();
+        if (params["poll"_L1].isObject()) {
+            auto poll = params["poll"_L1].toObject();
+            auto options = poll["options"_L1].toArray();
+            m_poll->clearOptions();
+            // FIXME: everything but the last poll option is restored, due to limitations in how the poll composer is designed
+            for (int i = 0; i < options.size(); ++i) {
+                m_poll->addOption();
+                m_poll->setOption(i, options[i].toString());
+            }
+            m_poll->setExpiresIn(poll["expires_in"_L1].toInt());
+            m_poll->setMultipleChoice(poll["multiple"_L1].toBool());
+            m_poll->setHideTotals(poll["hide_totals"_L1].toBool());
+            m_pollEnabled = true;
+        } else {
+            m_pollEnabled = false;
+        }
+        Q_EMIT pollEnabledChanged();
+        setStatus(params["text"_L1].toString());
+        setLanguage(params["language"_L1].toString());
+        m_attachmentEditorModel->copyFromArray(obj["media_attachments"_L1].toArray());
+        setSensitive(params["sensitive"_L1].toBool());
+        setScheduledAt(QDateTime::fromString(params["scheduled_at"_L1].toString(), Qt::ISODate));
+        setSpoilerText(params["spoiler_text"_L1].toString());
+        setInReplyTo(params["in_reply_to"_L1].toString());
+        setVisibility(Post::stringToVisibility(params["visibility"_L1].toString()));
 
         // Save this id for later, so we clean up the draft once we properly posted it.
         m_scheduledPostId = id;

@@ -14,6 +14,15 @@ PollEditorBackend::PollEditorBackend(QObject *parent)
     m_options.push_back(QString{});
 }
 
+void PollEditorBackend::clearOptions()
+{
+    m_options.clear();
+
+    checkValidity();
+
+    Q_EMIT optionsChanged();
+}
+
 void PollEditorBackend::addOption()
 {
     m_options.push_back(QString{});
@@ -37,6 +46,45 @@ void PollEditorBackend::setOption(int index, const QString &name)
     m_options[index] = name;
 
     checkValidity();
+}
+
+void PollEditorBackend::setMultipleChoice(bool multipleChoice)
+{
+    if (m_multipleChoice != multipleChoice) {
+        m_multipleChoice = multipleChoice;
+        Q_EMIT multipleChoiceChanged();
+    }
+}
+
+bool PollEditorBackend::multipleChoice() const
+{
+    return m_multipleChoice;
+}
+
+void PollEditorBackend::setHideTotals(bool hideTotals)
+{
+    if (hideTotals != m_hideTotals) {
+        m_hideTotals = hideTotals;
+        Q_EMIT hideTotalsChanged();
+    }
+}
+
+bool PollEditorBackend::hideTotals() const
+{
+    return m_hideTotals;
+}
+
+void PollEditorBackend::setExpiresIn(int expiresIn)
+{
+    if (m_expiresIn != expiresIn) {
+        m_expiresIn = expiresIn;
+        Q_EMIT expiresInChanged();
+    }
+}
+
+int PollEditorBackend::expiresIn() const
+{
+    return m_expiresIn;
 }
 
 QJsonObject PollEditorBackend::toJsonObject() const

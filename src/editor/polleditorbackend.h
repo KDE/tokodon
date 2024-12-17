@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <QJsonArray>
 #include <QJsonObject>
 
 class PollEditorBackend : public QObject
@@ -10,17 +11,27 @@ class PollEditorBackend : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QVariantList options MEMBER m_options NOTIFY optionsChanged)
-    Q_PROPERTY(bool multipleChoice MEMBER m_multipleChoice NOTIFY multipleChoiceChanged)
-    Q_PROPERTY(bool hideTotals MEMBER m_hideTotals NOTIFY hideTotalsChanged)
-    Q_PROPERTY(int expiresIn MEMBER m_expiresIn NOTIFY expiresInChanged)
+    Q_PROPERTY(bool multipleChoice READ multipleChoice WRITE setMultipleChoice NOTIFY multipleChoiceChanged)
+    Q_PROPERTY(bool hideTotals READ hideTotals WRITE setHideTotals NOTIFY hideTotalsChanged)
+    Q_PROPERTY(int expiresIn READ expiresIn WRITE setExpiresIn NOTIFY expiresInChanged)
     Q_PROPERTY(bool isValid READ isValid NOTIFY validityChanged)
 
 public:
     explicit PollEditorBackend(QObject *parent = nullptr);
 
+    void clearOptions();
     Q_INVOKABLE void addOption();
     Q_INVOKABLE void removeOption(int index);
     Q_INVOKABLE void setOption(int index, const QString &name);
+
+    void setMultipleChoice(bool multipleChoice);
+    bool multipleChoice() const;
+
+    void setHideTotals(bool hideTotals);
+    bool hideTotals() const;
+
+    void setExpiresIn(int expiresIn);
+    int expiresIn() const;
 
     [[nodiscard]] bool isValid() const;
 

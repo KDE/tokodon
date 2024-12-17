@@ -113,6 +113,10 @@ Kirigami.ScrollablePage {
                 root.Window.window.pageStack.layers.pop();
             }
         }
+
+        function onScheduledPostLoaded(): void {
+            root.refreshData();
+        }
     }
 
     Component.onCompleted: {
@@ -123,8 +127,7 @@ Kirigami.ScrollablePage {
         textArea.forceActiveFocus()
     }
 
-    // Currently only used for pop-out, but could be repurposed for loading drafts
-    function refreshData() {
+    function refreshData(): void {
         if (root.backend.spoilerText.length > 0) {
             contentWarningField.text = root.backend.spoilerText;
             contentWarning.checked = true;
