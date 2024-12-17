@@ -386,6 +386,30 @@ QQC2.Pane {
                             onTriggered: pageStack.push(socialGraphComponent, { name: "featured" });
                         },
                         Kirigami.Action {
+                            icon.name: "resource-calendar-insert"
+                            visible: root.isSelf
+                            text: i18nc("@action:inmenu", "Scheduled Posts")
+                            onTriggered: {
+                                const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: false });
+                                page.opened.connect(function(id) {
+                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"));
+                                    composer.openDraft(id);
+                                });
+                            }
+                        },
+                        Kirigami.Action {
+                            icon.name: "document-open-folder-symbolic"
+                            visible: root.isSelf
+                            text: i18nc("@action:inmenu", "Draft Posts")
+                            onTriggered: {
+                                const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true });
+                                page.opened.connect(function(id) {
+                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"));
+                                    composer.openDraft(id);
+                                });
+                            }
+                        },
+                        Kirigami.Action {
                             icon.name: "window"
                             text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
                             onTriggered: Qt.openUrlExternally(root.identity.url)

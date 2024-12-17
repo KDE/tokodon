@@ -17,7 +17,7 @@ Kirigami.ScrollablePage {
     required property bool drafts
 
     // To make sure we're gone once the post is loaded
-    required property PostEditorBackend backend
+    property PostEditorBackend backend
 
     title: model.displayName
 
