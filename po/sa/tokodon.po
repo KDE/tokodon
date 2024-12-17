@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-09 00:41+0000\n"
+"POT-Creation-Date: 2024-12-17 00:40+0000\n"
 "PO-Revision-Date: 2024-12-14 09:15+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -137,7 +137,7 @@ msgstr "प्रतिबिम्बम् अतीव विशालम् 
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
 msgstr "असमर्थितप्रतिबिम्बसञ्चिका। केवलं jpeg, png, gif च समर्थितम् अस्ति ।"
 
-#: account/profileeditor.cpp:336
+#: account/profileeditor.cpp:338
 #, kde-format
 msgid "Account details saved"
 msgstr "खाताविवरणं रक्षितम्"
@@ -147,6 +147,22 @@ msgstr "खाताविवरणं रक्षितम्"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr "अयं सर्वरः कोऽपि नियमः न प्रदत्तवान् । अधिकविवरणार्थं तेषां जालपुटं पश्यन्तु।"
+
+#: account/scheduledstatusesmodel.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Report Post"
+msgctxt "@title:window"
+msgid "Draft Posts"
+msgstr "रिपोर्ट पोस्ट"
+
+#: account/scheduledstatusesmodel.cpp:53
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Post"
+msgctxt "@title:window"
+msgid "Scheduled Posts"
+msgstr "पदं विलोपयतु"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -550,41 +566,46 @@ msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "सम्मिलितः"
 
-#: content/ui/AccountHeader.qml:563
+#: content/ui/AccountHeader.qml:508
+#, kde-format
+msgid "Ownership of this link was checked on %1"
+msgstr ""
+
+#: content/ui/AccountHeader.qml:585
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "निजी टिप्पणी : १."
 
-#: content/ui/AccountHeader.qml:571
+#: content/ui/AccountHeader.qml:593
 #, kde-format
 msgid "Saved"
 msgstr "रक्षितम्"
 
-#: content/ui/AccountHeader.qml:586
+#: content/ui/AccountHeader.qml:608
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "अस्य उपयोक्तुः विषये किमपि लिखन्तु, एतत् भवतः अतिरिक्तं कस्मैचित् न दृश्यते।"
 
-#: content/ui/AccountHeader.qml:648
+#: content/ui/AccountHeader.qml:670
 #, kde-format
 msgid "Also followed by:"
 msgstr "तदनन्तरं च : १."
 
-#: content/ui/AccountHeader.qml:678
+#: content/ui/AccountHeader.qml:700
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1 अधिकं पश्यन्तु"
 
-#: content/ui/AccountHeader.qml:678
+#: content/ui/AccountHeader.qml:700
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "सर्वाणि पश्यन्तु"
 
-#: content/ui/AccountHeader.qml:718
+#: content/ui/AccountHeader.qml:740
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -592,7 +613,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> पदम्"
 msgstr[1] "<b>%1</b> पोस्ट्"
 
-#: content/ui/AccountHeader.qml:731
+#: content/ui/AccountHeader.qml:753
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -600,7 +621,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> अनुवर्तते"
 msgstr[1] "<b>%1</b> अनुसरणं करोति"
 
-#: content/ui/AccountHeader.qml:744
+#: content/ui/AccountHeader.qml:766
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -608,31 +629,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> अनुयायी"
 msgstr[1] "<b>%1</b> अनुयायिनः"
 
-#: content/ui/AccountHeader.qml:769
+#: content/ui/AccountHeader.qml:791
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "पद"
 
-#: content/ui/AccountHeader.qml:773
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "पोस्ट && उत्तर"
 
-#: content/ui/AccountHeader.qml:777
+#: content/ui/AccountHeader.qml:799
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "मीडिया"
 
-#: content/ui/AccountHeader.qml:808
+#: content/ui/AccountHeader.qml:830
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "बूस्ट्स् गोपयन्तु"
 
-#: content/ui/AccountHeader.qml:828
+#: content/ui/AccountHeader.qml:850
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1101,26 +1122,24 @@ msgctxt "@title:window"
 msgid "Authorization"
 msgstr "प्राधिकरणम्"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:81
+#: content/ui/LoginFlow/BaseAuthorization.qml:75
 #, kde-format
-msgid ""
-"To continue, please open the following link in your web browser to authorize "
-"Tokodon: %1"
+msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
-"निरन्तरं कर्तुं, कृपया Tokodon इत्यस्य अधिकृतीकरणार्थं स्वस्य जालपुटे निम्नलिखितलिङ्कं "
-"उद्घाटयन्तु: %1"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:95
-#, kde-format
-msgid "Open Authorization Link"
+#: content/ui/LoginFlow/BaseAuthorization.qml:82
+#, fuzzy, kde-format
+#| msgid "Open Authorization Link"
+msgid "Open Authorization Page"
 msgstr "प्राधिकरणलिङ्कं उद्घाटयन्तु"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:104
-#, kde-format
-msgid "Copy Authorization Link"
+#: content/ui/LoginFlow/BaseAuthorization.qml:91
+#, fuzzy, kde-format
+#| msgid "Copy Authorization Link"
+msgid "Copy Link to Authorization Page"
 msgstr "प्राधिकरणलिङ्कं प्रतिलिपितु"
 
-#: content/ui/LoginFlow/BaseAuthorization.qml:108
+#: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
 msgid "Link copied."
 msgstr "लिङ्कः प्रतिलिपिकृतः।"
@@ -3941,7 +3960,7 @@ msgid "User"
 msgstr "उपयोक्ता"
 
 #: content/ui/Settings/NetworkProxyPage.qml:141
-#: content/ui/Settings/ProfileEditor.qml:279
+#: content/ui/Settings/ProfileEditor.qml:303
 #, kde-format
 msgid "Apply"
 msgstr "आचरतु"
@@ -4204,13 +4223,28 @@ msgstr "अवतार"
 msgid "PNG, GIF or JPG. At most 2 MB. Will be downscaled to 400x400px"
 msgstr "PNG, GIF अथवा JPG। अधिकतमं २ एमबी । 400x400px यावत् न्यूनीकृतं भविष्यति"
 
-#: content/ui/Settings/ProfileEditor.qml:228
+#: content/ui/Settings/ProfileEditor.qml:230
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
 msgstr "क्षेत्राणि"
 
-#: content/ui/Settings/ProfileEditor.qml:272
+#: content/ui/Settings/ProfileEditor.qml:269
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "अपाकरोति"
+
+#: content/ui/Settings/ProfileEditor.qml:280
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add user to this list"
+#| msgid "Add"
+msgctxt "@action:button"
+msgid "Add"
+msgstr "संयोजयति"
+
+#: content/ui/Settings/ProfileEditor.qml:296
 #, kde-format
 msgid "Reset"
 msgstr "पुनः सेट् करें"
@@ -4372,6 +4406,18 @@ msgstr "मतदानस्य समाप्तिपर्यन्तं �
 msgid "Remove"
 msgstr "अपाकरोति"
 
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:32
+#, kde-format
+msgctxt "Draft, unfinished post"
+msgid "Draft"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:32
+#, kde-format
+msgctxt "Scheduled for this date"
+msgid "Scheduled for %1"
+msgstr ""
+
 #: content/ui/StatusComposer/StatusComposer.qml:56
 #, kde-format
 msgctxt "@title:window"
@@ -4398,52 +4444,58 @@ msgstr "New Post लिखें"
 
 #: content/ui/StatusComposer/StatusComposer.qml:68
 #, kde-format
+msgctxt "@action:intoolbar Draft or unfinished posts"
+msgid "Drafts"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:73
+#, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "Pop Out इति"
 
-#: content/ui/StatusComposer/StatusComposer.qml:131
+#: content/ui/StatusComposer/StatusComposer.qml:136
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr "सम्पादितं पदं रक्षित्वा यस्मिन् मतदानं भवति तत् विद्यमानं परिणामं स्वच्छं करिष्यति।"
 
-#: content/ui/StatusComposer/StatusComposer.qml:138
+#: content/ui/StatusComposer/StatusComposer.qml:143
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "मसौदा परित्यजतु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:139
+#: content/ui/StatusComposer/StatusComposer.qml:144
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "किं भवन्तः निश्चिन्ताः सन्ति यत् भवन्तः स्वस्य मसौदां परित्यक्तुं इच्छन्ति?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:145
+#: content/ui/StatusComposer/StatusComposer.qml:150
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Keep"
 msgstr "स्थापय"
 
-#: content/ui/StatusComposer/StatusComposer.qml:257
+#: content/ui/StatusComposer/StatusComposer.qml:262
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "सामग्रीसूचना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:271
+#: content/ui/StatusComposer/StatusComposer.qml:276
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "किं नूतनम् ?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:409
+#: content/ui/StatusComposer/StatusComposer.qml:414
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "एकं सञ्चिकां चिनोतु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:412
+#: content/ui/StatusComposer/StatusComposer.qml:417
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -4452,157 +4504,157 @@ msgstr ""
 "सर्वे समर्थिताः प्रारूपाः (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *."
 "webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:413
+#: content/ui/StatusComposer/StatusComposer.qml:418
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG चित्रम् (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:414
+#: content/ui/StatusComposer/StatusComposer.qml:419
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG चित्र (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:415
+#: content/ui/StatusComposer/StatusComposer.qml:420
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF चित्रम् (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:416
+#: content/ui/StatusComposer/StatusComposer.qml:421
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP चित्रम् (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:417
+#: content/ui/StatusComposer/StatusComposer.qml:422
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC छवि(*.heic) 1.1."
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:423
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF इमेज (*.heif) 1.1."
 
-#: content/ui/StatusComposer/StatusComposer.qml:419
+#: content/ui/StatusComposer/StatusComposer.qml:424
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "एवीआईएफ इमेज (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:425
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM video (*.webm) ९."
 
-#: content/ui/StatusComposer/StatusComposer.qml:421
+#: content/ui/StatusComposer/StatusComposer.qml:426
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4 विडियो (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:422
+#: content/ui/StatusComposer/StatusComposer.qml:427
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V विडियो (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:423
+#: content/ui/StatusComposer/StatusComposer.qml:428
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "त्वरितसमयविडियो (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:429
 #, kde-format
 msgid "All files (*)"
 msgstr "सर्वाणि सञ्चिकाः (*) ."
 
-#: content/ui/StatusComposer/StatusComposer.qml:426
+#: content/ui/StatusComposer/StatusComposer.qml:431
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "सञ्चिकां संलग्नं कुर्वन्तु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:437
+#: content/ui/StatusComposer/StatusComposer.qml:442
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "मतदानं योजयतु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:449
+#: content/ui/StatusComposer/StatusComposer.qml:454
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "सामग्री सूचना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:486
+#: content/ui/StatusComposer/StatusComposer.qml:491
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "स्थानिक"
 
-#: content/ui/StatusComposer/StatusComposer.qml:492
+#: content/ui/StatusComposer/StatusComposer.qml:497
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "सार्वजनिक"
 
-#: content/ui/StatusComposer/StatusComposer.qml:497
+#: content/ui/StatusComposer/StatusComposer.qml:502
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "असूचीकृतम्"
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:507
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "वैयक्तिक"
 
-#: content/ui/StatusComposer/StatusComposer.qml:507
+#: content/ui/StatusComposer/StatusComposer.qml:512
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "प्रत्यक्ष सन्देश"
 
-#: content/ui/StatusComposer/StatusComposer.qml:512
+#: content/ui/StatusComposer/StatusComposer.qml:517
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "दृश्यता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:519
+#: content/ui/StatusComposer/StatusComposer.qml:524
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "पोस्ट भाषा"
 
-#: content/ui/StatusComposer/StatusComposer.qml:553
+#: content/ui/StatusComposer/StatusComposer.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "इमोजी योजयतु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:583
+#: content/ui/StatusComposer/StatusComposer.qml:588
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> वर्णाः"
 
-#: content/ui/StatusComposer/StatusComposer.qml:607
+#: content/ui/StatusComposer/StatusComposer.qml:612
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "प्रेषयतु"
 
-#: content/ui/StatusComposer/StatusComposer.qml:609
+#: content/ui/StatusComposer/StatusComposer.qml:614
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "उत्तरं"
 
-#: content/ui/StatusComposer/StatusComposer.qml:611
+#: content/ui/StatusComposer/StatusComposer.qml:616
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "पुनः पोस्ट करें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:613
+#: content/ui/StatusComposer/StatusComposer.qml:618
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5046,3 +5098,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 वर्षपूर्वम्"
 msgstr[1] "%1 वर्षपूर्वम्"
+
+#~ msgid ""
+#~ "To continue, please open the following link in your web browser to "
+#~ "authorize Tokodon: %1"
+#~ msgstr ""
+#~ "निरन्तरं कर्तुं, कृपया Tokodon इत्यस्य अधिकृतीकरणार्थं स्वस्य जालपुटे निम्नलिखितलिङ्कं "
+#~ "उद्घाटयन्तु: %1"
