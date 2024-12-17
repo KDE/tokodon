@@ -615,7 +615,7 @@ Kirigami.ScrollablePage {
         RowLayout {
             Layout.fillWidth: true
 
-            spacing: 0
+            spacing: Kirigami.Units.smallSpacing
 
             Rectangle {
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
