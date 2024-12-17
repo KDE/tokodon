@@ -308,7 +308,7 @@ void PostEditorBackend::saveDraft()
 {
     // Set it far in the future so it's a "draft"
     auto currentDate = QDateTime::currentDateTime();
-    currentDate.setDate(QDate(DRAFT_YEAR, currentDate.date().month(), currentDate.date().day()));
+    currentDate = currentDate.addYears(3000);
     setScheduledAt(currentDate);
 
     save();

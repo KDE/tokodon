@@ -125,7 +125,4 @@ private:
     AbstractAccount *m_account = nullptr;
     AttachmentEditorModel *m_attachmentEditorModel = nullptr;
     QString m_scheduledPostId;
-
-    // Most clients use this to mark statuses as "draft" by putting them far into the future
-    const int DRAFT_YEAR = 5000;
 };
