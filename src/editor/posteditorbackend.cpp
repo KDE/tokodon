@@ -299,4 +299,18 @@ void PostEditorBackend::edit()
     });
 }
 
+void PostEditorBackend::loadScheduledPost(const QString &id)
+{
+    QUrl url = m_account->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(id));
+
+    m_account->get(url, true, this, [this](QNetworkReply *reply) {
+        auto data = reply->readAll();
+        auto doc = QJsonDocument::fromJson(data);
+        auto obj = doc.object();
+
+        setStatus(obj["params"_L1].toObject()["text"_L1].toString());
+        Q_EMIT scheduledPostLoaded();
+    });
+}
+
 #include "moc_posteditorbackend.cpp"

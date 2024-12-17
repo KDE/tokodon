@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 
@@ -14,7 +16,20 @@ Kirigami.ScrollablePage {
     // Whether to display draft or scheduled posts
     required property bool drafts
 
+    // To make sure we're gone once the post is loaded
+    required property PostEditorBackend backend
+
     title: model.displayName
+
+    signal opened(id: string)
+
+    Connections {
+        target: backend
+
+        function onScheduledPostLoaded(): void {
+            pageStack.layers.pop();
+        }
+    }
 
     ListView {
         model: ScheduledStatusesModel {
@@ -25,6 +40,7 @@ Kirigami.ScrollablePage {
         delegate: Delegates.RoundedItemDelegate {
             id: delegate
 
+            required property string id
             required property var scheduledAt
             required text
 
@@ -34,6 +50,8 @@ Kirigami.ScrollablePage {
                 font: delegate.font
                 selected: delegate.highlighted || delegate.down
             }
+
+            onClicked: root.opened(id)
         }
     }
 }

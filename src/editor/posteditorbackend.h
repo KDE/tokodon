@@ -77,6 +77,7 @@ public:
 public Q_SLOTS:
     void save();
     void edit();
+    void loadScheduledPost(const QString &id);
 
 Q_SIGNALS:
 
@@ -102,6 +103,8 @@ Q_SIGNALS:
     void posted(QString error);
 
     void pollEnabledChanged();
+
+    void scheduledPostLoaded();
 
 private:
     [[nodiscard]] QJsonDocument toJsonDocument() const;

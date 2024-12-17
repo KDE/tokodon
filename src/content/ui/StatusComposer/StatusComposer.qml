@@ -50,6 +50,10 @@ Kirigami.ScrollablePage {
     readonly property bool isPollValid: backend.pollEnabled ? backend.poll.isValid : true
     readonly property bool isStatusValid: textArea.text.length > 0 && backend.charactersLeft >= 0
 
+    function openDraft(id: string): void {
+        backend.loadScheduledPost(id);
+    }
+
     title: {
         switch (root.purpose) {
             case StatusComposer.Edit:
@@ -67,7 +71,10 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:intoolbar Draft or unfinished posts", "Drafts")
             icon.name: "document-open-folder-symbolic"
-            onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true })
+            onTriggered: {
+                const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true, backend: root.backend });
+                page.opened.connect(root.openDraft);
+            }
         },
         Kirigami.Action {
             text: i18nc("@action Pop out the status composer", "Pop Out")
