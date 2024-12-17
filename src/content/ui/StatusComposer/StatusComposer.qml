@@ -154,10 +154,18 @@ Kirigami.ScrollablePage {
 
         customFooterActions: [
              Kirigami.Action {
-                 text: i18nc("@action:button Keep this draft", "Keep")
-                 icon.name: "dialog-cancel-symbolic"
-                 onTriggered: discardDraftPrompt.close()
-             }
+                 text: i18nc("@action:button Keep this draft", "Save")
+                 icon.name: "document-save-symbolic"
+                 onTriggered: {
+                     root.backend.saveDraft();
+                     discardDraftPrompt.close()
+                 }
+             },
+            Kirigami.Action {
+                text: i18nc("@action:button Go back to editing", "Cancel")
+                icon.name: "dialog-cancel-symbolic"
+                onTriggered: discardDraftPrompt.close()
+            }
         ]
 
         onDiscarded: {

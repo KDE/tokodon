@@ -86,7 +86,7 @@ void ScheduledStatusesModel::fill()
                     return fromSourceData(value.toJsonObject());
                 });
                 const auto [first, last] = std::ranges::remove_if(fetchedStatuses, [this](const ScheduledStatus &status) {
-                    const bool isDraft = status.scheduledAt.date().year() > DRAFT_YEAR;
+                    const bool isDraft = status.scheduledAt.date().year() >= DRAFT_YEAR;
                     return m_drafts != isDraft;
                 });
                 fetchedStatuses.erase(first, last);

@@ -299,6 +299,16 @@ void PostEditorBackend::edit()
     });
 }
 
+void PostEditorBackend::saveDraft()
+{
+    // Set it far in the future so it's a "draft"
+    auto currentDate = QDateTime::currentDateTime();
+    currentDate.setDate(QDate(DRAFT_YEAR, currentDate.date().month(), currentDate.date().day()));
+    setScheduledAt(currentDate);
+
+    save();
+}
+
 void PostEditorBackend::loadScheduledPost(const QString &id)
 {
     QUrl url = m_account->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(id));

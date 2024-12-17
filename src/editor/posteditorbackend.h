@@ -77,6 +77,7 @@ public:
 public Q_SLOTS:
     void save();
     void edit();
+    void saveDraft();
     void loadScheduledPost(const QString &id);
 
 Q_SIGNALS:
@@ -123,4 +124,7 @@ private:
     Post::Visibility m_visibility = Post::Visibility::Public;
     AbstractAccount *m_account = nullptr;
     AttachmentEditorModel *m_attachmentEditorModel = nullptr;
+
+    // Most clients use this to mark statuses as "draft" by putting them far into the future
+    const int DRAFT_YEAR = 5000;
 };
