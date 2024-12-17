@@ -136,7 +136,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         if (!AccountManager::instance().testMode() && !account->config()->notifyUpdate()) {
             return;
         }
-        knotification = new KNotification(QStringLiteral("update"));
+        knotification = new KNotification(QStringLiteral("annual-report"));
         knotification->setTitle(
             i18nc("@title this is used for notifications, when an annual report is available. It's similar to spotify wrapped, it shows profile stats / it's a "
                   "recap of the year. The variable is the current year e.g. 2024. Please don't translate the hashtag.",
