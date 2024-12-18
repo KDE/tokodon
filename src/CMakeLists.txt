@@ -286,6 +286,7 @@ qt_target_qml_sources(tokodon_static
         # Other
         content/ui/AccountHeader.qml
         content/ui/AccountInfo.qml
+        content/ui/AdvancedPage.qml
         content/ui/AnnouncementsPage.qml
         content/ui/ConversationDelegate.qml
         content/ui/ConversationPage.qml
@@ -300,6 +301,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ListTimelinePage.qml
         content/ui/MastoPage.qml
         content/ui/NotificationPage.qml
+        content/ui/NotificationsView.qml
         content/ui/ReadMarker.qml
         content/ui/ReportDialog.qml
         content/ui/SearchField.qml

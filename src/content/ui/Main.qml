@@ -331,6 +331,10 @@ StatefulApp.StatefulWindow {
         }
 
         function onOpenPost(postId: string): void {
+            if (pageStack.currentItem.openPost) {
+                pageStack.currentItem.openPost(postId);
+                return;
+            }
             if (!pageStack.currentItem.postId || pageStack.currentItem.postId !== postId) {
                 pageStack.push(Qt.createComponent("org.kde.tokodon", "ThreadPage"), {
                     postId: postId,
@@ -401,6 +405,19 @@ StatefulApp.StatefulWindow {
                 placeholderText: i18n("No Posts"),
                 placeholderExplanation: i18n("It seems pretty quiet right now, try posting something!")
             });
+            checked = true;
+            if (Kirigami.Settings.isMobile || drawer.modal) {
+                drawer.drawerOpen = false;
+            }
+        }
+    }
+    property Kirigami.Action advancedAction: Kirigami.Action {
+        icon.name: "go-home-large"
+        text: i18n("Advanded")
+        checkable: true
+        onTriggered: {
+            pageStack.clear();
+            pageStack.push(advancedTimeline.createObject(root), {});
             checked = true;
         }
     }
@@ -628,7 +645,10 @@ StatefulApp.StatefulWindow {
             }
         }
     }
-
+    Component {
+        id: advancedTimeline
+        AdvancedPage {}
+    }
     Component {
         id: socialGraphComponent
         SocialGraphPage {

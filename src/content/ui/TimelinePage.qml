@@ -71,6 +71,7 @@ Kirigami.ScrollablePage {
     }
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
+    verticalScrollBarInteractive: false
 
     onBackRequested: if (dialog) {
         dialog.close();
