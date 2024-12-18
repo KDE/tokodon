@@ -15,6 +15,10 @@ Kirigami.ScrollablePage {
 
     property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
 
+    function reload(): void {
+        model.fillTimeline();
+    }
+
     title: i18nc("@title", "Lists")
     titleDelegate: Kirigami.Heading {
         // identical to normal Kirigami headers
@@ -31,12 +35,13 @@ Kirigami.ScrollablePage {
         text: i18n("Create List")
         icon.name: "gtk-add"
         onTriggered: {
-            let page = pageStack.layers.push(editListPage.createObject(root), {
+            const page = pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.New
             });
-            page.done.connect(function() {
+            page.done.connect(function(deleted) {
                 // Reload the lists since we just added one
                 model.fillTimeline();
+                pageStack.layers.pop();
             });
         }
     }
