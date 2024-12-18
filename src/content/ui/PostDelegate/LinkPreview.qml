@@ -101,7 +101,7 @@ Item {
                     source: root.card ? root.card.image : ''
                 }
                 ColumnLayout {
-                    spacing: Kirigami.Units.smallSpacing
+                    spacing: 0
 
                     Layout.fillWidth: true
                     Layout.margins: Kirigami.Units.smallSpacing
