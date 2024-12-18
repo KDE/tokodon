@@ -13,7 +13,9 @@ TimelinePage {
     property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
 
     title: name
-
+    iconName: "view-list-text"
+    placeholderText: i18n("No Posts")
+    placeholderExplanation: i18n("There are no posts from the users in your list. Only new posts will appear in a list.")
     showPostAction: false
 
     Component.onCompleted: {
