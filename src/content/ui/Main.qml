@@ -386,7 +386,7 @@ StatefulApp.StatefulWindow {
         actions: !root.wideMode ?
             [searchAction, followRequestAction, followingAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction] :
             [homeAction, notificationAction, followRequestAction, followingAction, exploreAction, localTimelineAction, globalTimelineAction, conversationAction, bookmarksAction, favouritesAction, listsAction]
-        bottomActions: [announcementsAction, debugAction, moderationToolsAction, configureAction]
+        bottomActions: [serverInformationAction, debugAction, moderationToolsAction, configureAction]
     }
 
     property Kirigami.Action homeAction: Kirigami.Action {
@@ -538,14 +538,14 @@ StatefulApp.StatefulWindow {
         }
     }
 
-    property Kirigami.Action announcementsAction: Kirigami.Action {
+    property Kirigami.Action serverInformationAction: Kirigami.Action {
         icon.name: "note"
-        text: i18nc("@action:button Server Announcements", "Announcements")
+        text: AccountManager.selectedAccount ? i18nc("@action:button Server Information", AccountManager.selectedAccount.instanceName) : ""
         checkable: true
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount
         onTriggered: {
             pageStack.clear();
-            pageStack.push(announcementsPage.createObject(root));
+            pageStack.push(serverInformationPage.createObject(root));
             checked = true;
         }
     }
@@ -599,7 +599,7 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('options_configure')
     }
 
-    property Component announcementsPage: Qt.createComponent("org.kde.tokodon", "AnnouncementsPage", Qt.Asynchronous)
+    property Component serverInformationPage: Qt.createComponent("org.kde.tokodon", "ServerInformationPage", Qt.Asynchronous)
     property Component listsPage: Qt.createComponent("org.kde.tokodon", "ListsPage", Qt.Asynchronous)
     property Component searchPage: Qt.createComponent("org.kde.tokodon", "SearchPage", Qt.Asynchronous)
     property Component conversationPage: Qt.createComponent("org.kde.tokodon", "ConversationPage", Qt.Asynchronous)

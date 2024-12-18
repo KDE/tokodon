@@ -311,6 +311,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/ThreadPage.qml
         content/ui/TimelinePage.qml
         content/ui/UserInfo.qml
+        content/ui/ServerInformationPage.qml
 )
 
 set_source_files_properties(../org.kde.tokodon.svg PROPERTIES
