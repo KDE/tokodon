@@ -15,6 +15,7 @@ class TagsTimelineModel : public TimelineModel
     QML_ELEMENT
 
     Q_PROPERTY(QString hashtag READ hashtag WRITE setHashtag NOTIFY hashtagChanged)
+    Q_PROPERTY(bool following READ following NOTIFY followedChanged)
 
 public:
     explicit TagsTimelineModel(QObject *parent = nullptr);
@@ -37,6 +38,22 @@ public:
 
     void reset() override;
 
+    /**
+     * @return If the current account is following this hashtag.
+     */
+    bool following() const;
+
+public Q_SLOTS:
+    /**
+     * @brief Follow this hashtag.
+     */
+    void follow();
+
+    /**
+     * @brief Unfollow this hashtag.
+     */
+    void unfollow();
+
 Q_SIGNALS:
     /**
      * @brief Emitted if the hashtag is changed
@@ -44,6 +61,13 @@ Q_SIGNALS:
      */
     void hashtagChanged();
 
+    /**
+     * @brief Emitted if the hashtag was followed or unfollowed.
+     * @see follow() unfollow()
+     */
+    void followedChanged();
+
 private:
     QString m_hashtag;
+    bool m_following = false;
 };

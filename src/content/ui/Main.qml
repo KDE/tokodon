@@ -685,7 +685,14 @@ StatefulApp.StatefulWindow {
         TimelinePage {
             id: tagPage
             property string hashtag
+            actions: Kirigami.Action {
+                icon.name: tagsModel.following ?  "list-remove-user" : "list-add-user"
+                text: tagsModel.following ? i18nc("@action:intoolbar", "Unfollow") : i18nc("@action:intoolbar", "Follow")
+                onTriggered: tagsModel.following ? tagsModel.unfollow() : tagsModel.follow()
+            }
             model: TagsTimelineModel {
+                id: tagsModel
+
                 hashtag: tagPage.hashtag
                 showReplies: tagPage.showReplies
                 showBoosts: tagPage.showBoosts

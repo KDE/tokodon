@@ -3,10 +3,13 @@
 
 #include "timeline/tagstimelinemodel.h"
 
+#include <QJsonDocument>
 #include <QNetworkReply>
 #include <QUrlQuery>
 
 #include "networkcontroller.h"
+
+using namespace Qt::StringLiterals;
 
 TagsTimelineModel::TagsTimelineModel(QObject *parent)
     : TimelineModel(parent)
@@ -29,6 +32,24 @@ void TagsTimelineModel::setHashtag(const QString &hashtag)
     m_hashtag = hashtag;
     Q_EMIT hashtagChanged();
     fillTimeline({});
+}
+
+void TagsTimelineModel::follow()
+{
+    m_account->post(m_account->apiUrl(QStringLiteral("/api/v1/tags/%1/follow").arg(m_hashtag)), QJsonDocument{}, true, this, [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        m_following = true;
+        Q_EMIT followedChanged();
+    });
+}
+
+void TagsTimelineModel::unfollow()
+{
+    m_account->post(m_account->apiUrl(QStringLiteral("/api/v1/tags/%1/unfollow").arg(m_hashtag)), QJsonDocument{}, true, this, [this](QNetworkReply *reply) {
+        Q_UNUSED(reply);
+        m_following = false;
+        Q_EMIT followedChanged();
+    });
 }
 
 QString TagsTimelineModel::displayName() const
@@ -68,7 +89,11 @@ void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
                 return;
             }
 
-            fetchedTimeline(reply->readAll());
+            const QByteArray data = reply->readAll();
+            const QJsonDocument doc = QJsonDocument::fromJson(data);
+            m_following = doc["following"_L1].toBool();
+
+            fetchedTimeline(data);
             setLoading(false);
         },
         handleError);
@@ -80,6 +105,11 @@ void TagsTimelineModel::reset()
     qDeleteAll(m_timeline);
     m_timeline.clear();
     endResetModel();
+}
+
+bool TagsTimelineModel::following() const
+{
+    return m_following;
 }
 
 #include "moc_tagstimelinemodel.cpp"
