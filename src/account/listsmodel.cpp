@@ -66,9 +66,17 @@ void ListsModel::fillTimeline()
     }
     setLoading(true);
 
-    account->get(account->apiUrl(QStringLiteral("/api/v1/lists")), true, this, [this](QNetworkReply *reply) {
-        const auto doc = QJsonDocument::fromJson(reply->readAll());
-        auto lists = doc.array().toVariantList();
+    beginResetModel();
+    m_lists.clear();
+    endResetModel();
+
+    account->get(
+        account->apiUrl(QStringLiteral("/api/v1/lists")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            auto lists = doc.array().toVariantList();
 
         if (!lists.isEmpty()) {
             QList<List> fetchedLists;

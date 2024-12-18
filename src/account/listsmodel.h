@@ -33,7 +33,7 @@ public:
     [[nodiscard]] int rowCount(const QModelIndex &parent) const override;
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
 
-    void fillTimeline();
+    Q_INVOKABLE void fillTimeline();
 
 Q_SIGNALS:
     void loadingChanged();

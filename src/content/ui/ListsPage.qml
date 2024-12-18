@@ -31,8 +31,12 @@ Kirigami.ScrollablePage {
         text: i18n("Create List")
         icon.name: "gtk-add"
         onTriggered: {
-            pageStack.layers.push(editListPage.createObject(root), {
+            let page = pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.New
+            });
+            page.done.connect(function() {
+                // Reload the lists since we just added one
+                model.fillTimeline();
             });
         }
     }
