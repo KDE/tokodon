@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 00:40+0000\n"
+"POT-Creation-Date: 2024-12-18 00:40+0000\n"
 "PO-Revision-Date: 2024-11-17 21:29+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -121,7 +121,22 @@ msgstr "%1 szavazása véget ért"
 msgid "%1 edited a post"
 msgstr "%1 szerkesztett egy bejegyzést"
 
-#: account/notificationhandler.cpp:144
+#: account/notificationhandler.cpp:143
+#, kde-format
+msgctxt ""
+"@title this is used for notifications, when an annual report is available. "
+"It's similar to spotify wrapped, it shows profile stats / it's a recap of "
+"the year. The variable is the current year e.g. 2024. Please don't translate "
+"the hashtag."
+msgid "Your %1 #FediWrapped awaits!"
+msgstr ""
+
+#: account/notificationhandler.cpp:145
+#, kde-format
+msgid "Unveil your year's highlights and memorable moments on Mastodon!"
+msgstr ""
+
+#: account/notificationhandler.cpp:156
 #, fuzzy, kde-kuit-format
 #| msgid "<b>Content Notice</b><br /> %1"
 msgid "<b>Content Notice</b>: %1"
@@ -544,70 +559,86 @@ msgstr "Fiókszerkesztő"
 msgid "Featured Users"
 msgstr "Kiemelt felhasználók"
 
-#: content/ui/AccountHeader.qml:390 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:391
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Post"
+msgctxt "@action:inmenu"
+msgid "Scheduled Posts"
+msgstr "Bejegyzés törlése"
+
+#: content/ui/AccountHeader.qml:403
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Report Post"
+msgctxt "@action:inmenu"
+msgid "Draft Posts"
+msgstr "Bejegyzés jelentése"
+
+#: content/ui/AccountHeader.qml:414 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Megnyitás böngészőben"
 
-#: content/ui/AccountHeader.qml:395
+#: content/ui/AccountHeader.qml:419
 #, kde-format
 msgid "Copy Link"
 msgstr "Hivatkozás másolása"
 
-#: content/ui/AccountHeader.qml:398
+#: content/ui/AccountHeader.qml:422
 #, kde-format
 msgid "Profile link copied."
 msgstr "Profil hivatkozása másolva."
 
-#: content/ui/AccountHeader.qml:468
+#: content/ui/AccountHeader.qml:492
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Csatlakozott"
 
-#: content/ui/AccountHeader.qml:508
+#: content/ui/AccountHeader.qml:532
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:585
+#: content/ui/AccountHeader.qml:609
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Privát megjegyzés:"
 
-#: content/ui/AccountHeader.qml:593
+#: content/ui/AccountHeader.qml:617
 #, kde-format
 msgid "Saved"
 msgstr "Mentve"
 
-#: content/ui/AccountHeader.qml:608
+#: content/ui/AccountHeader.qml:632
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "Írjon valamit erről a felhasználóról, ami csak az Ön számára lesz látható."
 
-#: content/ui/AccountHeader.qml:670
+#: content/ui/AccountHeader.qml:694
 #, kde-format
 msgid "Also followed by:"
 msgstr "Szintén követi:"
 
-#: content/ui/AccountHeader.qml:700
+#: content/ui/AccountHeader.qml:724
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1 további megtekintése"
 
-#: content/ui/AccountHeader.qml:700
+#: content/ui/AccountHeader.qml:724
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Összes megtekintése"
 
-#: content/ui/AccountHeader.qml:740
+#: content/ui/AccountHeader.qml:764
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -615,7 +646,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> bejegyzés"
 msgstr[1] "<b>%1</b> bejegyzés"
 
-#: content/ui/AccountHeader.qml:753
+#: content/ui/AccountHeader.qml:777
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -623,7 +654,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> követett"
 msgstr[1] "<b>%1</b> követett"
 
-#: content/ui/AccountHeader.qml:766
+#: content/ui/AccountHeader.qml:790
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -631,31 +662,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> követő"
 msgstr[1] "<b>%1</b> követő"
 
-#: content/ui/AccountHeader.qml:791
+#: content/ui/AccountHeader.qml:815
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Bejegyzések"
 
-#: content/ui/AccountHeader.qml:795
+#: content/ui/AccountHeader.qml:819
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Bejegyzések és válaszok"
 
-#: content/ui/AccountHeader.qml:799
+#: content/ui/AccountHeader.qml:823
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Média"
 
-#: content/ui/AccountHeader.qml:830
+#: content/ui/AccountHeader.qml:854
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Megtolások elrejtése"
 
-#: content/ui/AccountHeader.qml:850
+#: content/ui/AccountHeader.qml:874
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1328,6 +1359,7 @@ msgid "Rules"
 msgstr "Szabályok"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
+#: content/ui/ServerInformationPage.qml:29
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
@@ -1576,12 +1608,6 @@ msgstr "Követett"
 msgid "Search"
 msgstr "Keresés"
 
-#: content/ui/Main.qml:543
-#, kde-format
-msgctxt "@action:button Server Announcements"
-msgid "Announcements"
-msgstr "Bejelentések"
-
 #: content/ui/Main.qml:555
 #, kde-format
 msgid "Lists"
@@ -1610,7 +1636,21 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/Main.qml:730
+#: content/ui/Main.qml:690
+#, fuzzy, kde-format
+#| msgid "Unfollow"
+msgctxt "@action:intoolbar"
+msgid "Unfollow"
+msgstr "Követés leállítása"
+
+#: content/ui/Main.qml:690
+#, fuzzy, kde-format
+#| msgid "Follow"
+msgctxt "@action:intoolbar"
+msgid "Follow"
+msgstr "Követés"
+
+#: content/ui/Main.qml:737
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3071,12 +3111,12 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Követések"
 
-#: content/ui/NotificationPage.qml:258
+#: content/ui/NotificationPage.qml:263
 #, kde-format
 msgid "No Notifications"
 msgstr "Nincsenek értesítések"
 
-#: content/ui/NotificationPage.qml:259
+#: content/ui/NotificationPage.qml:264
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3089,6 +3129,24 @@ msgstr ""
 #, kde-format
 msgid "%1 has issued a warning against your account"
 msgstr "%1 figyelmeztetést állított ki a fiókja ellen"
+
+#: content/ui/Notifications/AnnualReportDelegate.qml:64
+#, kde-kuit-format
+msgctxt ""
+"@info:label this is used for notifications, when an annual report is "
+"available. It's similar to spotify wrapped, it shows profile stats / it's a "
+"recap of the year. The variable is the current year e.g. 2024. Please don't "
+"translate the hashtag."
+msgid ""
+"Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
+"moments on Mastodon!"
+msgstr ""
+
+#: content/ui/Notifications/AnnualReportDelegate.qml:71
+#, kde-format
+msgctxt "@action:button"
+msgid "View #FediWrapped"
+msgstr ""
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3697,6 +3755,14 @@ msgstr "Nincs találat a keresésre"
 msgid "Search for users, tags and posts"
 msgstr "Felhasználók, címkék és bejegyzések keresése"
 
+#: content/ui/ServerInformationPage.qml:23
+#, fuzzy, kde-format
+#| msgctxt "@title Server-wide announcements set by admins."
+#| msgid "Announcements"
+msgctxt "@action:buttin"
+msgid "Announcements"
+msgstr "Bejelentések"
+
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
 msgid "Edit Account"
@@ -4230,6 +4296,19 @@ msgstr ""
 "Amikor Ön vagy a kiszolgálója moderál egy másik kiszolgálót, amelyen Ön "
 "felhasználókat követ vagy követői vannak onnan."
 
+#: content/ui/Settings/NotificationsPage.qml:268
+#, fuzzy, kde-format
+#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
+#| msgid "Report"
+msgctxt "@option:check"
+msgid "Annual Report"
+msgstr "Jelentés"
+
+#: content/ui/Settings/NotificationsPage.qml:269
+#, kde-format
+msgid "When you receive your #FediWrapped at the end of the year."
+msgstr ""
+
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
 msgid "Display Name"
@@ -4443,98 +4522,122 @@ msgstr "Szavazatszámok elrejtése a szavazás végéig"
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:32
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:32
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:56
+#: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Bejegyzés szerkesztése"
 
-#: content/ui/StatusComposer/StatusComposer.qml:58
+#: content/ui/StatusComposer/StatusComposer.qml:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Válasz erre a bejegyzésre"
 
-#: content/ui/StatusComposer/StatusComposer.qml:60
+#: content/ui/StatusComposer/StatusComposer.qml:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Bejegyzés újraírása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:62
+#: content/ui/StatusComposer/StatusComposer.qml:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Új bejegyzés írása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:68
+#: content/ui/StatusComposer/StatusComposer.qml:73
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:73
+#: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "Válasz új ablakban"
 
-#: content/ui/StatusComposer/StatusComposer.qml:136
+#: content/ui/StatusComposer/StatusComposer.qml:147
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 "Szavazást tartalmazó szerkesztett bejegyzés mentése törli a meglévő "
 "eredményeket."
 
-#: content/ui/StatusComposer/StatusComposer.qml:143
+#: content/ui/StatusComposer/StatusComposer.qml:154
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Piszkozat eldobása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:144
+#: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Biztosan el szeretné dobni a piszkozatot?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:150
-#, kde-format
+#: content/ui/StatusComposer/StatusComposer.qml:161
+#, fuzzy, kde-format
+#| msgctxt "@action:Button Save an edited a post"
+#| msgid "Save"
 msgctxt "@action:button Keep this draft"
-msgid "Keep"
-msgstr "Megtartás"
+msgid "Save"
+msgstr "Mentés"
 
-#: content/ui/StatusComposer/StatusComposer.qml:262
+#: content/ui/StatusComposer/StatusComposer.qml:169
+#, fuzzy, kde-format
+#| msgctxt "@info:Cancel button to close the dailog"
+#| msgid "Cancel"
+msgctxt "@action:button Go back to editing"
+msgid "Cancel"
+msgstr "Mégse"
+
+#: content/ui/StatusComposer/StatusComposer.qml:188
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Post"
+msgctxt "@title"
+msgid "Schedule Post"
+msgstr "Bejegyzés törlése"
+
+#: content/ui/StatusComposer/StatusComposer.qml:194
+#, kde-format
+msgctxt "@action:button Set this post's schedule to when it should be posted"
+msgid "Set Schedule"
+msgstr ""
+
+#: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "Tartalmi figyelmeztetés"
 
-#: content/ui/StatusComposer/StatusComposer.qml:276
+#: content/ui/StatusComposer/StatusComposer.qml:324
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Újdonságok"
 
-#: content/ui/StatusComposer/StatusComposer.qml:414
+#: content/ui/StatusComposer/StatusComposer.qml:462
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Válasszon egy fájlt"
 
-#: content/ui/StatusComposer/StatusComposer.qml:417
+#: content/ui/StatusComposer/StatusComposer.qml:465
 #, kde-format
 msgid ""
 "All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
@@ -4543,79 +4646,79 @@ msgstr ""
 "Minden támogatott formátum (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *."
 "avif *.webm *.mp4 *.m4v *.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:418
+#: content/ui/StatusComposer/StatusComposer.qml:466
 #, kde-format
 msgid "JPEG image (*.jpg *.jpeg)"
 msgstr "JPEG képek (*.jpg *.jpeg)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:419
+#: content/ui/StatusComposer/StatusComposer.qml:467
 #, kde-format
 msgid "PNG image (*.png)"
 msgstr "PNG képek (*.png)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:420
+#: content/ui/StatusComposer/StatusComposer.qml:468
 #, kde-format
 msgid "GIF image (*.gif)"
 msgstr "GIF képek (*.gif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:421
+#: content/ui/StatusComposer/StatusComposer.qml:469
 #, kde-format
 msgid "WebP image (*.webp)"
 msgstr "WebP képek (*.webp)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:422
+#: content/ui/StatusComposer/StatusComposer.qml:470
 #, kde-format
 msgid "HEIC image(*.heic)"
 msgstr "HEIC képek (*.heic)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:423
+#: content/ui/StatusComposer/StatusComposer.qml:471
 #, kde-format
 msgid "HEIF image (*.heif)"
 msgstr "HEIF képek (*.heif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:424
+#: content/ui/StatusComposer/StatusComposer.qml:472
 #, kde-format
 msgid "AVIF image (*.avif)"
 msgstr "AVIF kép (*.avif)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:425
+#: content/ui/StatusComposer/StatusComposer.qml:473
 #, kde-format
 msgid "WebM video (*.webm)"
 msgstr "WebM videók (*.webm)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:426
+#: content/ui/StatusComposer/StatusComposer.qml:474
 #, kde-format
 msgid "MPEG-4 video (*.mp4)"
 msgstr "MPEG-4 videók (*.mp4)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:427
+#: content/ui/StatusComposer/StatusComposer.qml:475
 #, kde-format
 msgid "M4V video (*.m4v)"
 msgstr "M4V videók (*.m4v)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:428
+#: content/ui/StatusComposer/StatusComposer.qml:476
 #, kde-format
 msgid "QuickTime video (*.mov)"
 msgstr "QuickTime videók (*.mov)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:429
+#: content/ui/StatusComposer/StatusComposer.qml:477
 #, kde-format
 msgid "All files (*)"
 msgstr "Minden fájl (*)"
 
-#: content/ui/StatusComposer/StatusComposer.qml:431
+#: content/ui/StatusComposer/StatusComposer.qml:479
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Fájl csatolása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:442
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Szavazás hozzáadása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:454
+#: content/ui/StatusComposer/StatusComposer.qml:502
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Content notice"
@@ -4623,79 +4726,87 @@ msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Tartalmi figyelmeztetés"
 
-#: content/ui/StatusComposer/StatusComposer.qml:491
+#: content/ui/StatusComposer/StatusComposer.qml:539
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Helyi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:497
+#: content/ui/StatusComposer/StatusComposer.qml:545
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Nyilvános"
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:550
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Nem listázott"
 
-#: content/ui/StatusComposer/StatusComposer.qml:507
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privát"
 
-#: content/ui/StatusComposer/StatusComposer.qml:512
+#: content/ui/StatusComposer/StatusComposer.qml:560
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Közvetlen üzenet"
 
-#: content/ui/StatusComposer/StatusComposer.qml:517
+#: content/ui/StatusComposer/StatusComposer.qml:565
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Láthatóság"
 
-#: content/ui/StatusComposer/StatusComposer.qml:524
+#: content/ui/StatusComposer/StatusComposer.qml:572
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Bejegyzés nyelve"
 
-#: content/ui/StatusComposer/StatusComposer.qml:558
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emodzsi hozzáadása"
 
-#: content/ui/StatusComposer/StatusComposer.qml:588
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karakter"
 
-#: content/ui/StatusComposer/StatusComposer.qml:612
+#: content/ui/StatusComposer/StatusComposer.qml:646
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Post"
+msgctxt "@action:button Schedule something to be posted later"
+msgid "Schedule"
+msgstr "Bejegyzés törlése"
+
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Küldés"
 
-#: content/ui/StatusComposer/StatusComposer.qml:614
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Válasz"
 
-#: content/ui/StatusComposer/StatusComposer.qml:616
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Ismételt bejegyzés"
 
-#: content/ui/StatusComposer/StatusComposer.qml:618
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -4824,7 +4935,7 @@ msgctxt "@item:inlistbox Poll expire times"
 msgid "7 days"
 msgstr "7 nap"
 
-#: editor/posteditorbackend.cpp:282
+#: editor/posteditorbackend.cpp:287
 #, kde-format
 msgid "An unknown error occurred."
 msgstr "Ismeretlen hiba történt."
@@ -5143,6 +5254,14 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "1 évvel ezelőtt"
 msgstr[1] "%1 évvel ezelőtt"
+
+#~ msgctxt "@action:button Server Announcements"
+#~ msgid "Announcements"
+#~ msgstr "Bejelentések"
+
+#~ msgctxt "@action:button Keep this draft"
+#~ msgid "Keep"
+#~ msgstr "Megtartás"
 
 #~ msgid ""
 #~ "To continue, please open the following link in your web browser to "
