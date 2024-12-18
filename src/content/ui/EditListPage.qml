@@ -23,6 +23,7 @@ FormCard.FormCardPage {
 
     property var purpose
     property string listId
+    property bool deleted
 
     readonly property bool isValid: titleField.text.length > 0
 
@@ -35,7 +36,7 @@ FormCard.FormCardPage {
         favorite: favoriteField.checked
     }
 
-    signal done
+    signal done(bool deleted)
 
     data: Connections {
         target: backend
@@ -49,8 +50,7 @@ FormCard.FormCardPage {
         }
 
         function onDone() {
-            root.done();
-            pageStack.layers.pop();
+            root.done(root.deleted);
         }
     }
 
@@ -278,7 +278,10 @@ FormCard.FormCardPage {
                 standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
                 showCloseButton: false
 
-                onAccepted: backend.deleteList()
+                onAccepted: {
+                    root.deleted = true;
+                    backend.deleteList();
+                }
             }
         }
     }

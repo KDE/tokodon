@@ -11,6 +11,7 @@ TimelinePage {
     property alias listId: timelineModel.listId
     required property string name
     property Component editListPage: Qt.createComponent("org.kde.tokodon", "EditListPage", Qt.Asynchronous)
+    property bool favorite: false
 
     title: name
     iconName: "view-list-text"
@@ -29,9 +30,24 @@ TimelinePage {
         text: i18n("Edit List")
         icon.name: "edit-rename"
         onTriggered: {
-            pageStack.layers.push(editListPage.createObject(root), {
+            let page = pageStack.layers.push(editListPage.createObject(root), {
                 purpose: EditListPage.Edit,
                 listId: root.listId
+            });
+            page.done.connect(function(deleted) {
+                pageStack.layers.clear();
+                while (pageStack.depth > 1) {
+                    pageStack.pop();
+                }
+
+                // If we end up on a lists page, make sure to reload the model as we just deleted something.
+                const listsPage = (pageStack.currentItem as ListsPage);
+                if (listsPage) {
+                    listsPage.reload()
+                } else {
+                    // If we are here because someone has favorited, then we need to go back home.
+                    applicationWindow().homeAction.trigger();
+                }
             });
         }
     }
