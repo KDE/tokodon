@@ -794,4 +794,27 @@ QList<CustomEmoji> AbstractAccount::customEmojis() const
     return m_customEmojis;
 }
 
+void AbstractAccount::addFavoriteList(const QString &id)
+{
+    auto ids = config()->favoriteListIds();
+    ids.push_back(id);
+    config()->setFavoriteListIds(ids);
+    config()->save();
+    Q_EMIT favoriteListsChanged();
+}
+
+void AbstractAccount::removeFavoriteList(const QString &id)
+{
+    auto ids = config()->favoriteListIds();
+    ids.removeAll(id);
+    config()->setFavoriteListIds(ids);
+    config()->save();
+    Q_EMIT favoriteListsChanged();
+}
+
+bool AbstractAccount::isFavoriteList(const QString &id)
+{
+    return config()->favoriteListIds().contains(id);
+}
+
 #include "moc_abstractaccount.cpp"

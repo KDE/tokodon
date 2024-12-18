@@ -39,6 +39,8 @@ void ListEditorBackend::setListId(const QString &listId)
     Q_EMIT loadingChanged();
 
     auto account = AccountManager::instance().selectedAccount();
+    m_favorite = account->isFavoriteList(m_listId);
+    Q_EMIT favoriteChanged();
 
     account->get(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [this](QNetworkReply *reply) {
         const auto document = QJsonDocument::fromJson(reply->readAll());
@@ -90,6 +92,12 @@ void ListEditorBackend::submit()
             Q_EMIT done();
         });
     } else {
+        if (m_favorite) {
+            account->addFavoriteList(m_listId);
+        } else {
+            account->removeFavoriteList(m_listId);
+        }
+
         account->put(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), formdata, true, this, [this](QNetworkReply *) {
             Q_EMIT done();
         });
@@ -102,7 +110,8 @@ void ListEditorBackend::deleteList()
 
     auto account = AccountManager::instance().selectedAccount();
 
-    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [this](QNetworkReply *) {
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/lists/%1").arg(m_listId)), true, this, [this, account](QNetworkReply *) {
+        account->removeFavoriteList(m_listId);
         Q_EMIT done();
     });
 }

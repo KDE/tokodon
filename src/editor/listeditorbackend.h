@@ -14,6 +14,7 @@ class ListEditorBackend : public QObject
     Q_PROPERTY(QString title MEMBER m_title NOTIFY titleChanged)
     Q_PROPERTY(bool exclusive MEMBER m_exclusive NOTIFY exclusiveChanged)
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+    Q_PROPERTY(bool favorite MEMBER m_favorite NOTIFY favoriteChanged)
 
 public:
     explicit ListEditorBackend(QObject *parent = nullptr);
@@ -36,6 +37,7 @@ Q_SIGNALS:
     void exclusiveChanged();
     void done();
     void loadingChanged();
+    void favoriteChanged();
 
 private:
     QString m_listId;
@@ -43,4 +45,5 @@ private:
     QString m_repliesPolicy = QStringLiteral("none");
     bool m_exclusive = false;
     bool m_loading = false;
+    bool m_favorite = false;
 };

@@ -32,6 +32,7 @@ FormCard.FormCardPage {
         listId: root.listId
         title: titleField.text
         exclusive: exclusiveField.checked
+        favorite: favoriteField.checked
     }
 
     data: Connections {
@@ -41,6 +42,7 @@ FormCard.FormCardPage {
             // If we loaded data, then overwrite the fields
             titleField.text = backend.title;
             exclusiveField.checked = backend.exclusive;
+            favoriteField.checked = backend.favorite;
             repliesPolicyField.currentIndex = backend.replyPolicyIndex();
         }
 
@@ -80,6 +82,17 @@ FormCard.FormCardPage {
             id: exclusiveField
             text: i18nc("@label If the list is exclusive", "Exclusive")
             description: i18n("Posts in an exclusive list are excluded from the Home timeline.")
+        }
+
+        FormCard.FormDelegateSeparator {
+            visible: purpose !== EditListPage.New
+        }
+
+        FormCard.FormCheckDelegate {
+            id: favoriteField
+            visible: purpose !== EditListPage.New
+            text: i18nc("@label If the list is favorited", "Favorite")
+            description: i18n("This list will show up in the sidebar.")
         }
 
         FormCard.FormDelegateSeparator {}

@@ -151,6 +151,37 @@ Kirigami.OverlayDrawer {
                 }
 
                 Item {
+                    Layout.preferredHeight: Kirigami.Units.gridUnit
+                }
+
+                Repeater {
+                    id: favoriteListRepeater
+
+                    model: FavoriteListsModel {
+                        account: AccountManager.selectedAccount
+                    }
+
+                    delegate: ActionDelegate {
+                        id: delegate
+
+                        required property string id
+                        required property string name
+
+                        action: Kirigami.Action {
+                            icon.name: "view-list-text"
+                            text: delegate.name
+                            checkable: true
+
+                            onTriggered: {
+                                pageStack.clear();
+                                Navigation.openList(delegate.id, delegate.name);
+                                checked = true;
+                            }
+                        }
+                    }
+                }
+
+                Item {
                     Layout.fillHeight: true
                 }
 

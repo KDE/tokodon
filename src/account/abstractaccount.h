@@ -519,6 +519,21 @@ public:
     [[nodiscard]] QString accessTokenKey() const;
 
     /**
+     * @brief Add a list to this account's favorites.
+     */
+    Q_INVOKABLE void addFavoriteList(const QString &id);
+
+    /**
+     * @brief Remove a list from this account's favorites.
+     */
+    Q_INVOKABLE void removeFavoriteList(const QString &id);
+
+    /**
+     * @return If this list is favorited.
+     */
+    Q_INVOKABLE bool isFavoriteList(const QString &id);
+
+    /**
      * @brief Type of account action.
      */
     enum AccountAction {
@@ -636,6 +651,12 @@ Q_SIGNALS:
      * @see fetchOEmbed()
      */
     void fetchedOEmbed(const QString &html);
+
+    /**
+     * @brief Emitted when the list of favorite lists changed.
+     * @see addFavoriteList() removeFavoriteList()
+     */
+    void favoriteListsChanged();
 
 protected:
     explicit AbstractAccount(const QString &instanceUri, QObject *parent = nullptr);
