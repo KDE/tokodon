@@ -35,6 +35,8 @@ FormCard.FormCardPage {
         favorite: favoriteField.checked
     }
 
+    signal done
+
     data: Connections {
         target: backend
 
@@ -47,6 +49,7 @@ FormCard.FormCardPage {
         }
 
         function onDone() {
+            root.done();
             pageStack.layers.pop();
         }
     }

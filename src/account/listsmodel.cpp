@@ -70,6 +70,10 @@ void ListsModel::fillTimeline()
     }
     setLoading(true);
 
+    beginResetModel();
+    m_lists.clear();
+    endResetModel();
+
     account->get(
         account->apiUrl(QStringLiteral("/api/v1/lists")),
         true,
