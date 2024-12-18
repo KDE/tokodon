@@ -264,7 +264,7 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormSwitchDelegate {
-            id: relationshipsDelegate
+            id: annualReportDelegate
             text: i18nc("@option:check", "Annual Report")
             description: i18n("When you receive your #FediWrapped at the end of the year.")
             checked: root.config.notifyAnnualReport
