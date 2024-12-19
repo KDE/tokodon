@@ -50,5 +50,5 @@ private:
     bool m_drafts = false;
 
     // Most clients use this to mark statuses as "draft" by putting them far into the future
-    const int DRAFT_YEAR = 5000;
+    const int DRAFT_YEAR = 3000;
 };

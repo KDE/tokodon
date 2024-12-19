@@ -5,10 +5,13 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.tokodon
+
+import "../PostDelegate" as PostDelegate
 
 Kirigami.ScrollablePage {
     id: root
@@ -41,14 +44,41 @@ Kirigami.ScrollablePage {
             id: delegate
 
             required property string id
-            required property var scheduledAt
+            required property string scheduledAt
             required text
 
-            contentItem: Kirigami.TitleSubtitle {
-                title: root.drafts ? i18nc("Draft, unfinished post", "Draft") : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
-                subtitle: delegate.text
-                font: delegate.font
-                selected: delegate.highlighted || delegate.down
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    Kirigami.Heading {
+                        level: 4
+                        text: root.drafts ? i18nc("Draft, unfinished post", "Draft") : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
+                    }
+
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Label {
+                        text: delegate.scheduledAt
+                        visible: root.drafts
+                    }
+                }
+
+                PostDelegate.PostContent {
+                    content: delegate.text
+                    expandedPost: false
+                    secondary: true
+                    shouldOpenInternalLinks: false
+                    hoverEnabled: false
+
+                    onClicked: delegate.click()
+
+                    Layout.fillWidth: true
+                }
             }
 
             onClicked: root.opened(id)

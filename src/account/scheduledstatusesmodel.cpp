@@ -9,6 +9,8 @@
 #include <QJsonDocument>
 #include <QNetworkReply>
 
+#include "texthandler.h"
+
 using namespace Qt::StringLiterals;
 
 ScheduledStatusesModel::ScheduledStatusesModel(QObject *parent)
@@ -28,8 +30,12 @@ QVariant ScheduledStatusesModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case IdRole:
         return QVariant::fromValue(status.id);
-    case ScheduledAtRole:
-        return QVariant::fromValue(status.scheduledAt);
+    case ScheduledAtRole: {
+        if (m_drafts) {
+            return TextHandler::getRelativeDateTime(status.scheduledAt.addYears(-DRAFT_YEAR));
+        }
+        return status.scheduledAt.toString(Qt::DateFormat::TextDate);
+    }
     case TextRole:
         return QVariant::fromValue(status.text);
     default:
@@ -86,7 +92,7 @@ void ScheduledStatusesModel::fill()
                     return fromSourceData(value.toJsonObject());
                 });
                 const auto [first, last] = std::ranges::remove_if(fetchedStatuses, [this](const ScheduledStatus &status) {
-                    const bool isDraft = status.scheduledAt.date().year() >= DRAFT_YEAR;
+                    const bool isDraft = status.scheduledAt.date().year() >= QDate::currentDate().year() + DRAFT_YEAR;
                     return m_drafts != isDraft;
                 });
                 fetchedStatuses.erase(first, last);
