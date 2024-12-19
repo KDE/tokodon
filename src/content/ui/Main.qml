@@ -540,7 +540,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.Action serverInformationAction: Kirigami.Action {
         icon.name: "note"
-        text: AccountManager.selectedAccount ? i18nc("@action:button Server Information", AccountManager.selectedAccount.instanceName) : ""
+        text: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ""
         checkable: true
         visible: AccountManager.hasAccounts && AccountManager.selectedAccount
         onTriggered: {
