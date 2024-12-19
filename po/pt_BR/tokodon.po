@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:40+0000\n"
+"POT-Creation-Date: 2024-12-19 00:40+0000\n"
 "PO-Revision-Date: 2021-11-24 09:33-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -881,101 +881,112 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Seguir"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr ""
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Não listado"
 
-#: content/ui/EditListPage.qml:61
+#: content/ui/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr ""
 
-#: content/ui/EditListPage.qml:69
+#: content/ui/EditListPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Mostrar mais"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:86
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr ""
 
-#: content/ui/EditListPage.qml:82
+#: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
 
-#: content/ui/EditListPage.qml:90
+#: content/ui/EditListPage.qml:97
+#, kde-format
+msgctxt "@label If the list is favorited"
+msgid "Favorite"
+msgstr ""
+
+#: content/ui/EditListPage.qml:98
+#, kde-format
+msgid "This list will show up in the sidebar."
+msgstr ""
+
+#: content/ui/EditListPage.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "Adicionar conta"
 
-#: content/ui/EditListPage.qml:107
+#: content/ui/EditListPage.qml:123
 #, fuzzy, kde-format
 #| msgid "Username:"
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "Nome de usuário:"
 
-#: content/ui/EditListPage.qml:118
+#: content/ui/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr ""
 
-#: content/ui/EditListPage.qml:157
+#: content/ui/EditListPage.qml:173
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr ""
 
-#: content/ui/EditListPage.qml:204
+#: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
 msgstr ""
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:254
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr ""
 
-#: content/ui/EditListPage.qml:240
+#: content/ui/EditListPage.qml:256
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr ""
 
-#: content/ui/EditListPage.qml:253
+#: content/ui/EditListPage.qml:269
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Adicionar conta"
 
-#: content/ui/EditListPage.qml:260
+#: content/ui/EditListPage.qml:276
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Adicionar conta"
 
-#: content/ui/EditListPage.qml:261
+#: content/ui/EditListPage.qml:277
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
@@ -1159,28 +1170,42 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Fechar"
 
-#: content/ui/ListsPage.qml:18
+#: content/ui/ListsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr ""
 
-#: content/ui/ListsPage.qml:31
+#: content/ui/ListsPage.qml:35
 #, kde-format
 msgid "Create List"
 msgstr ""
 
-#: content/ui/ListsPage.qml:67
+#: content/ui/ListsPage.qml:76
 #, kde-format
 msgid "No Lists"
 msgstr ""
 
-#: content/ui/ListsPage.qml:68
+#: content/ui/ListsPage.qml:77
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
 
-#: content/ui/ListTimelinePage.qml:27
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
+#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#, fuzzy, kde-format
+#| msgid "Show more"
+msgid "No Posts"
+msgstr "Mostrar mais"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid ""
+"There are no posts from the users in your list. Only new posts will appear "
+"in a list."
+msgstr ""
+
+#: content/ui/ListTimelinePage.qml:30
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgid "Edit List"
@@ -1562,12 +1587,6 @@ msgstr "Não listado"
 #, kde-format
 msgid "Home"
 msgstr "Início"
-
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
-#, fuzzy, kde-format
-#| msgid "Show more"
-msgid "No Posts"
-msgstr "Mostrar mais"
 
 #: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
@@ -2882,7 +2901,7 @@ msgid "Assigned moderator"
 msgstr ""
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
 msgstr ""
@@ -4956,12 +4975,12 @@ msgid_plural "%2 and %1 others"
 msgstr[0] ""
 msgstr[1] ""
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
 msgstr ""
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Any followed users"

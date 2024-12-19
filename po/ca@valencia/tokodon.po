@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:40+0000\n"
-"PO-Revision-Date: 2024-12-17 10:50+0100\n"
+"POT-Creation-Date: 2024-12-19 00:40+0000\n"
+"PO-Revision-Date: 2024-12-18 10:58+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -132,12 +132,14 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "El #FediWrapped %1 vos espera!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Descobriu els vostres moments més destacats i memorables de l'any en "
+"Mastodon!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -563,17 +565,13 @@ msgid "Featured Users"
 msgstr "Usuaris destacats"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Publicacions planificades"
 
 #: content/ui/AccountHeader.qml:403
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Draft Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Esborranys de publicacions"
@@ -849,97 +847,109 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Disminuïx el nombre de sol·licituds de seguiment"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "Creació de llista"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Edició de llista"
 
-#: content/ui/EditListPage.qml:61
+#: content/ui/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "Títol"
 
-#: content/ui/EditListPage.qml:69
+#: content/ui/EditListPage.qml:74
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Mostra les respostes per a"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:86
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "Exclusiu"
 
-#: content/ui/EditListPage.qml:82
+#: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
 "Les publicacions en una llista exclusiva s'exclouen de la línia de temps "
 "d'Inici."
 
-#: content/ui/EditListPage.qml:90
+#: content/ui/EditListPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@label If the list is favorited"
+msgid "Favorite"
+msgstr "Preferit"
+
+#: content/ui/EditListPage.qml:98
+#, kde-format
+msgid "This list will show up in the sidebar."
+msgstr ""
+
+#: content/ui/EditListPage.qml:106
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "Gestiona usuaris"
 
-#: content/ui/EditListPage.qml:107
+#: content/ui/EditListPage.qml:123
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "Afig usuaris"
 
-#: content/ui/EditListPage.qml:118
+#: content/ui/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "Afig usuaris a la llista…"
 
-#: content/ui/EditListPage.qml:157
+#: content/ui/EditListPage.qml:173
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Afig"
 
-#: content/ui/EditListPage.qml:204
+#: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "Busca entre els usuaris que seguiu…"
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:254
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Crea"
 
-#: content/ui/EditListPage.qml:240
+#: content/ui/EditListPage.qml:256
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Edita"
 
-#: content/ui/EditListPage.qml:253
+#: content/ui/EditListPage.qml:269
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: content/ui/EditListPage.qml:260
+#: content/ui/EditListPage.qml:276
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Suprimix la llista"
 
-#: content/ui/EditListPage.qml:261
+#: content/ui/EditListPage.qml:277
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
@@ -1130,28 +1140,41 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Tanca"
 
-#: content/ui/ListsPage.qml:18
+#: content/ui/ListsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "Llistes"
 
-#: content/ui/ListsPage.qml:31
+#: content/ui/ListsPage.qml:35
 #, kde-format
 msgid "Create List"
 msgstr "Crea una llista"
 
-#: content/ui/ListsPage.qml:67
+#: content/ui/ListsPage.qml:76
 #, kde-format
 msgid "No Lists"
 msgstr "Sense llistes"
 
-#: content/ui/ListsPage.qml:68
+#: content/ui/ListsPage.qml:77
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "Les llistes vos permeten classificar qui esteu seguint."
 
-#: content/ui/ListTimelinePage.qml:27
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
+#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#, kde-format
+msgid "No Posts"
+msgstr "Sense publicacions"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid ""
+"There are no posts from the users in your list. Only new posts will appear "
+"in a list."
+msgstr ""
+
+#: content/ui/ListTimelinePage.qml:30
 #, kde-format
 msgid "Edit List"
 msgstr "Edita la llista"
@@ -1530,11 +1553,6 @@ msgstr "Respon a la publicació"
 msgid "Home"
 msgstr "Inici"
 
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
-#, kde-format
-msgid "No Posts"
-msgstr "Sense publicacions"
-
 #: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
@@ -1638,15 +1656,13 @@ msgid "Settings"
 msgstr "Configuració"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Deixa de seguir"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Seguix"
@@ -2831,7 +2847,7 @@ msgid "Assigned moderator"
 msgstr "Moderador assignat"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
 msgstr "Ningú"
@@ -3140,12 +3156,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"El #FediWrapped %1 vos espera! Descobriu els vostres moments més destacats i "
+"memorables de l'any en Mastodon!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Visualitzeu el #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3756,9 +3774,7 @@ msgid "Search for users, tags and posts"
 msgstr "Busca usuaris, etiquetes i publicacions"
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "Anuncis"
@@ -4293,17 +4309,15 @@ msgstr ""
 "seguint usuaris o teniu seguidors."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Informa"
+msgstr "Informe anual"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "Quan rebeu el vostre #FediWrapped a final d'any."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4583,34 +4597,28 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Segur que voleu descartar este esborrany?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Guarda"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Publicacions planificades"
+msgstr "Publicació planificada"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Definix la planificació"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4772,12 +4780,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> caràcters"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Publicacions planificades"
+msgstr "Planifica"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
@@ -4867,12 +4873,12 @@ msgid_plural "%2 and %1 others"
 msgstr[0] "%2 i un altre"
 msgstr[1] "%2 i %1 altres"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
 msgstr "Membres de la llista"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
 msgstr "Qualsevol usuari seguit"
@@ -5241,11 +5247,3 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "Fa 1 any"
 msgstr[1] "Fa %1 anys"
-
-#~ msgctxt "@action:button Server Announcements"
-#~ msgid "Announcements"
-#~ msgstr "Anuncis"
-
-#~ msgctxt "@action:button Keep this draft"
-#~ msgid "Keep"
-#~ msgstr "Mantín"

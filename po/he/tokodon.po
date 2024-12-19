@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:40+0000\n"
-"PO-Revision-Date: 2024-12-17 08:09+0200\n"
+"POT-Creation-Date: 2024-12-19 00:40+0000\n"
+"PO-Revision-Date: 2024-12-18 08:37+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:593
 #, kde-format
@@ -129,12 +129,12 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "ה־‎#FediWrapped שלך לשנת %1 מוכן!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "חשיפת הרגעים הבלתי נשכחים מהשנה שחלפה במסטודון!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -556,17 +556,13 @@ msgid "Featured Users"
 msgstr "משתמשים מובילים"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "רשומות מתוזמנות"
 
 #: content/ui/AccountHeader.qml:403
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Draft Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "רשומות כטיוטות"
@@ -845,95 +841,107 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "הקטנת כמות בקשות מעקב"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "יצירת רשימה"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "עריכת רשימה"
 
-#: content/ui/EditListPage.qml:61
+#: content/ui/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "כותרת"
 
-#: content/ui/EditListPage.qml:69
+#: content/ui/EditListPage.qml:74
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "הצגת תגובות עבור"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:86
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "בלעדי"
 
-#: content/ui/EditListPage.qml:82
+#: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "רשומות ברשימה הבלעדית מוחרגות מציר זמן הבית שלך."
 
-#: content/ui/EditListPage.qml:90
+#: content/ui/EditListPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@label If the list is favorited"
+msgid "Favorite"
+msgstr "הוספה למועדפים"
+
+#: content/ui/EditListPage.qml:98
+#, kde-format
+msgid "This list will show up in the sidebar."
+msgstr ""
+
+#: content/ui/EditListPage.qml:106
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "ניהול משתמשים"
 
-#: content/ui/EditListPage.qml:107
+#: content/ui/EditListPage.qml:123
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "הוספת משתמשים"
 
-#: content/ui/EditListPage.qml:118
+#: content/ui/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "הוספת משתמשים לרשימה…"
 
-#: content/ui/EditListPage.qml:157
+#: content/ui/EditListPage.qml:173
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "הוספה"
 
-#: content/ui/EditListPage.qml:204
+#: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "חיפוש בין המשתמשים במעקב…"
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:254
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "יצירה"
 
-#: content/ui/EditListPage.qml:240
+#: content/ui/EditListPage.qml:256
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "עריכה"
 
-#: content/ui/EditListPage.qml:253
+#: content/ui/EditListPage.qml:269
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: content/ui/EditListPage.qml:260
+#: content/ui/EditListPage.qml:276
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "רשימה נמחקת"
 
-#: content/ui/EditListPage.qml:261
+#: content/ui/EditListPage.qml:277
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
@@ -1123,28 +1131,41 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "סגירה"
 
-#: content/ui/ListsPage.qml:18
+#: content/ui/ListsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "רשימות"
 
-#: content/ui/ListsPage.qml:31
+#: content/ui/ListsPage.qml:35
 #, kde-format
 msgid "Create List"
 msgstr "יצירת רשימה"
 
-#: content/ui/ListsPage.qml:67
+#: content/ui/ListsPage.qml:76
 #, kde-format
 msgid "No Lists"
 msgstr "אין רשימות"
 
-#: content/ui/ListsPage.qml:68
+#: content/ui/ListsPage.qml:77
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "רשימות מאפשרות לך לסווג מי ברשימת המעקב שלך."
 
-#: content/ui/ListTimelinePage.qml:27
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
+#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#, kde-format
+msgid "No Posts"
+msgstr "אין רשומות"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid ""
+"There are no posts from the users in your list. Only new posts will appear "
+"in a list."
+msgstr ""
+
+#: content/ui/ListTimelinePage.qml:30
 #, kde-format
 msgid "Edit List"
 msgstr "עריכת רשימה"
@@ -1513,11 +1534,6 @@ msgstr "תגובה לרשומה"
 msgid "Home"
 msgstr "בית"
 
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
-#, kde-format
-msgid "No Posts"
-msgstr "אין רשומות"
-
 #: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
@@ -1621,15 +1637,13 @@ msgid "Settings"
 msgstr "הגדרות"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "ביטול מעקב"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "מעקב"
@@ -2808,7 +2822,7 @@ msgid "Assigned moderator"
 msgstr "משגיח או משגיחה מוקצים"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
 msgstr "אף אחד"
@@ -3114,12 +3128,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"ה־‎#FediWrapped לשנת %1 ממתין לך! חשיפת הרגעים הבלתי נשכחים מהשנה שחלפה "
+"במסטודון!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "הצגת ה־‎#FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3729,9 +3745,7 @@ msgid "Search for users, tags and posts"
 msgstr "חיפוש אחר משתמשים, תגיות ורשומות"
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "הכרזות"
@@ -4253,17 +4267,15 @@ msgstr ""
 "נתון בידיך או בידי השרת שלך."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "דיווח"
+msgstr "דוח שנתי"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "בעת קבלת ה־‎#FediWrapped שלך בסוף השנה."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4541,34 +4553,28 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "להתעלם מהטיוטה שלך?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "שמירה"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "ביטול"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "רשומות מתוזמנות"
+msgstr "תזמון רשומה"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "הגדרת תזמון"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4730,12 +4736,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> תווים"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "רשומות מתוזמנות"
+msgstr "תזמון"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
@@ -4827,12 +4831,12 @@ msgstr[1] "%2 ועוד שניים או שתיים"
 msgstr[2] "%2 ועוד %1 נוספים/ות"
 msgstr[3] "%2 ועוד %1 נוספים/ות"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
 msgstr "חברים ברשימה"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
 msgstr "כל משתמש נעקב שהוא"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:40+0000\n"
-"PO-Revision-Date: 2024-12-10 08:47+0100\n"
+"POT-Creation-Date: 2024-12-19 00:40+0000\n"
+"PO-Revision-Date: 2024-12-18 10:06+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.90\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:593
 #, kde-format
@@ -164,20 +164,16 @@ msgstr ""
 "pour plus d'informations."
 
 #: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Signaler un message"
+msgstr "Brouillons de messages"
 
 #: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Supprimer un message"
+msgstr "Messages planifiés"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -610,7 +606,7 @@ msgstr "Joint"
 #: content/ui/AccountHeader.qml:532
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "La propriété de ce lien a été vérifiée sur %1."
 
 #: content/ui/AccountHeader.qml:609
 #, kde-format
@@ -856,97 +852,109 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Diminuer le compteur de demandes de suivi"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "Créer une liste"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Modifier la liste"
 
-#: content/ui/EditListPage.qml:61
+#: content/ui/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "Titre"
 
-#: content/ui/EditListPage.qml:69
+#: content/ui/EditListPage.qml:74
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Afficher les réponses pour"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:86
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "Exclusif"
 
-#: content/ui/EditListPage.qml:82
+#: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
 "Les messages dans une liste exclusive sont exclus de la frise chronologique "
 "de l'accueil."
 
-#: content/ui/EditListPage.qml:90
+#: content/ui/EditListPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@label If the list is favorited"
+msgid "Favorite"
+msgstr "Préféré"
+
+#: content/ui/EditListPage.qml:98
+#, kde-format
+msgid "This list will show up in the sidebar."
+msgstr ""
+
+#: content/ui/EditListPage.qml:106
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "Gérer les utilisateurs"
 
-#: content/ui/EditListPage.qml:107
+#: content/ui/EditListPage.qml:123
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "Ajouter des utilisateurs"
 
-#: content/ui/EditListPage.qml:118
+#: content/ui/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "Ajouter des utilisateurs à la liste…"
 
-#: content/ui/EditListPage.qml:157
+#: content/ui/EditListPage.qml:173
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Ajouter"
 
-#: content/ui/EditListPage.qml:204
+#: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "Rechercher parmi les utilisateurs que vous suivez…"
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:254
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Créer"
 
-#: content/ui/EditListPage.qml:240
+#: content/ui/EditListPage.qml:256
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Modifier"
 
-#: content/ui/EditListPage.qml:253
+#: content/ui/EditListPage.qml:269
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: content/ui/EditListPage.qml:260
+#: content/ui/EditListPage.qml:276
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Suppression d'une liste"
 
-#: content/ui/EditListPage.qml:261
+#: content/ui/EditListPage.qml:277
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
@@ -1138,28 +1146,41 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Fermer"
 
-#: content/ui/ListsPage.qml:18
+#: content/ui/ListsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "Listes"
 
-#: content/ui/ListsPage.qml:31
+#: content/ui/ListsPage.qml:35
 #, kde-format
 msgid "Create List"
 msgstr "Créer une liste"
 
-#: content/ui/ListsPage.qml:67
+#: content/ui/ListsPage.qml:76
 #, kde-format
 msgid "No Lists"
 msgstr "Aucune liste"
 
-#: content/ui/ListsPage.qml:68
+#: content/ui/ListsPage.qml:77
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "Les listes vous permettent de classer les personnes que vous suivez."
 
-#: content/ui/ListTimelinePage.qml:27
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
+#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#, kde-format
+msgid "No Posts"
+msgstr "Aucun message"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid ""
+"There are no posts from the users in your list. Only new posts will appear "
+"in a list."
+msgstr ""
+
+#: content/ui/ListTimelinePage.qml:30
 #, kde-format
 msgid "Edit List"
 msgstr "Modifier la liste"
@@ -1173,19 +1194,17 @@ msgstr "Autorisation"
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "Pour continuer, vous devez autoriser Tokodon à accéder à votre compte."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Ouvrir le lien d'autorisation"
+msgstr "Ouvrir la page d'autorisation"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Ouvrir le lien d'autorisation"
+msgstr "Copier le lien vers la page d'autorisation"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1538,11 +1557,6 @@ msgstr "Répondre à ce message"
 #, kde-format
 msgid "Home"
 msgstr "Accueil"
-
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
-#, kde-format
-msgid "No Posts"
-msgstr "Aucun message"
 
 #: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
@@ -2842,7 +2856,7 @@ msgid "Assigned moderator"
 msgstr "Modérateur attribué"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
 msgstr "Personne"
@@ -4366,16 +4380,13 @@ msgid "Fields"
 msgstr "Champs"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Supprimer"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Ajouter"
@@ -4546,13 +4557,13 @@ msgstr "Supprimer"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:48
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "Planifié pour %1"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -4582,7 +4593,7 @@ msgstr "Écrire un nouveau message"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Brouillons"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4896,12 +4907,12 @@ msgid_plural "%2 and %1 others"
 msgstr[0] "%2 et une autre"
 msgstr[1] "%2 et %1 autres"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
 msgstr "Membres de la liste"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
 msgstr "Aucun utilisateur suiveur"

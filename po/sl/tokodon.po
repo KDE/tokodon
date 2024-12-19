@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:40+0000\n"
-"PO-Revision-Date: 2024-12-17 07:28+0100\n"
+"POT-Creation-Date: 2024-12-19 00:40+0000\n"
+"PO-Revision-Date: 2024-12-18 07:21+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -130,12 +130,12 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "Vaš %1 #FediWrapped čaka!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "Razkrij vrhunce svojega leta in nepozabne trenutke na Mastodonu!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -566,17 +566,13 @@ msgid "Featured Users"
 msgstr "Izpostavljeni uporabniki"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Načrtovane objave"
 
 #: content/ui/AccountHeader.qml:403
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Draft Posts"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Osnutki objav"
@@ -855,95 +851,107 @@ msgctxt "@action:button"
 msgid "Decrease follow request count"
 msgstr "Zmanjšaj število zahtev za sledenje"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create List"
 msgstr "Ustvari seznam"
 
-#: content/ui/EditListPage.qml:29
+#: content/ui/EditListPage.qml:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit List"
 msgstr "Uredi seznam"
 
-#: content/ui/EditListPage.qml:61
+#: content/ui/EditListPage.qml:66
 #, kde-format
 msgctxt "@label:textbox List title"
 msgid "Title"
 msgstr "Naslov"
 
-#: content/ui/EditListPage.qml:69
+#: content/ui/EditListPage.qml:74
 #, kde-format
 msgctxt "@label"
 msgid "Show replies for"
 msgstr "Prikaži odgovore za"
 
-#: content/ui/EditListPage.qml:81
+#: content/ui/EditListPage.qml:86
 #, kde-format
 msgctxt "@label If the list is exclusive"
 msgid "Exclusive"
 msgstr "Izključno"
 
-#: content/ui/EditListPage.qml:82
+#: content/ui/EditListPage.qml:87
 #, kde-format
 msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "Objave na izključnem seznamu so izključene iz domače časovnice."
 
-#: content/ui/EditListPage.qml:90
+#: content/ui/EditListPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@label If the list is favorited"
+msgid "Favorite"
+msgstr "Priljubljen"
+
+#: content/ui/EditListPage.qml:98
+#, kde-format
+msgid "This list will show up in the sidebar."
+msgstr ""
+
+#: content/ui/EditListPage.qml:106
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Manage Users"
 msgstr "Upravljaj uporabnike"
 
-#: content/ui/EditListPage.qml:107
+#: content/ui/EditListPage.qml:123
 #, kde-format
 msgctxt "@action:intoolbar Add users to list"
 msgid "Add Users"
 msgstr "Dodaj uporabnike"
 
-#: content/ui/EditListPage.qml:118
+#: content/ui/EditListPage.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Add Users to List…"
 msgstr "Dodaj uporabnike na seznam…"
 
-#: content/ui/EditListPage.qml:157
+#: content/ui/EditListPage.qml:173
 #, kde-format
 msgctxt "@action:button Add user to this list"
 msgid "Add"
 msgstr "Dodaj"
 
-#: content/ui/EditListPage.qml:204
+#: content/ui/EditListPage.qml:220
 #, kde-format
 msgid "Search among users you follow…"
 msgstr "Išči med uporabniki, ki jim slediš…"
 
-#: content/ui/EditListPage.qml:238
+#: content/ui/EditListPage.qml:254
 #, kde-format
 msgctxt "@action:button Create the list"
 msgid "Create"
 msgstr "Ustvari"
 
-#: content/ui/EditListPage.qml:240
+#: content/ui/EditListPage.qml:256
 #, kde-format
 msgctxt "@action:button Edit the list"
 msgid "Edit"
 msgstr "Uredi"
 
-#: content/ui/EditListPage.qml:253
+#: content/ui/EditListPage.qml:269
 #, kde-format
 msgctxt "@action:button Delete the list"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: content/ui/EditListPage.qml:260
+#: content/ui/EditListPage.qml:276
 #, kde-format
 msgctxt "@title"
 msgid "Deleting List"
 msgstr "Brisanje seznama"
 
-#: content/ui/EditListPage.qml:261
+#: content/ui/EditListPage.qml:277
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
@@ -1136,28 +1144,41 @@ msgctxt "@action:button"
 msgid "Close"
 msgstr "Zapri"
 
-#: content/ui/ListsPage.qml:18
+#: content/ui/ListsPage.qml:22
 #, kde-format
 msgctxt "@title"
 msgid "Lists"
 msgstr "Seznami"
 
-#: content/ui/ListsPage.qml:31
+#: content/ui/ListsPage.qml:35
 #, kde-format
 msgid "Create List"
 msgstr "Ustvari seznam"
 
-#: content/ui/ListsPage.qml:67
+#: content/ui/ListsPage.qml:76
 #, kde-format
 msgid "No Lists"
 msgstr "Ni seznamov"
 
-#: content/ui/ListsPage.qml:68
+#: content/ui/ListsPage.qml:77
 #, kde-format
 msgid "Lists allow you to categorize who you're following."
 msgstr "Seznami vam omogočajo, da kategorizirate osebe, ki jih sledite."
 
-#: content/ui/ListTimelinePage.qml:27
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
+#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#, kde-format
+msgid "No Posts"
+msgstr "Ni objav"
+
+#: content/ui/ListTimelinePage.qml:19
+#, kde-format
+msgid ""
+"There are no posts from the users in your list. Only new posts will appear "
+"in a list."
+msgstr ""
+
+#: content/ui/ListTimelinePage.qml:30
 #, kde-format
 msgid "Edit List"
 msgstr "Uredi seznam"
@@ -1531,11 +1552,6 @@ msgstr "Odgovori na objavo"
 msgid "Home"
 msgstr "Domov"
 
-#: content/ui/Main.qml:401 content/ui/Main.qml:443 content/ui/Main.qml:458
-#, kde-format
-msgid "No Posts"
-msgstr "Ni objav"
-
 #: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
@@ -1639,15 +1655,13 @@ msgid "Settings"
 msgstr "Nastavitve"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Prenehaj slediti"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Sledi"
@@ -2831,7 +2845,7 @@ msgid "Assigned moderator"
 msgstr "Dodeljen moderator"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:225
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "No one"
 msgstr "Nihče"
@@ -3139,12 +3153,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"Vaš %1 #FediWrapped čaka! Razkrijte vrhunce svojega leta in nepozabne "
+"trenutke na Mastodonu!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Oglejte si #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3758,12 +3774,10 @@ msgid "Search for users, tags and posts"
 msgstr "Poiščite uporabnike, ključnike in objave"
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
-msgstr "Obvestila strežnika"
+msgstr "Obvestila"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4285,17 +4299,15 @@ msgstr ""
 "uporabnike ali imate sledilce."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Prijavi"
+msgstr "Letno poročilo"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "Ko ob koncu leta prejmete svoj #FediWrapped."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4574,34 +4586,28 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Ali ste prepričani, da želite zavreči svoj osnutek?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Shrani"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Prekliči"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Načrtovane objave"
+msgstr "Načrtuj objave"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Nastavi načrt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4763,12 +4769,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "Znaki: <b>%1/%2</b>"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Scheduled Posts"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Načrtovane objave"
+msgstr "Načrtuj"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
@@ -4860,12 +4864,12 @@ msgstr[1] "%2 in še %1 drug"
 msgstr[2] "%2 in še %1 druga"
 msgstr[3] "%2 in še %1 drugi"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Members of the list"
 msgstr "Člani seznama"
 
-#: editor/listeditorbackend.cpp:112
+#: editor/listeditorbackend.cpp:121
 #, kde-format
 msgid "Any followed users"
 msgstr "Katerikoli sleden uporabnik"
