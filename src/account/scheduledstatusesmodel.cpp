@@ -109,6 +109,20 @@ void ScheduledStatusesModel::fill()
         });
 }
 
+void ScheduledStatusesModel::deleteDraft(const QModelIndex index)
+{
+    auto status = m_statuses[index.row()];
+    account()->deleteResource(account()->apiUrl(QStringLiteral("/api/v1/scheduled_statuses/%1").arg(status.id)),
+                              true,
+                              this,
+                              [this, index](QNetworkReply *reply) {
+                                  Q_UNUSED(reply)
+                                  beginRemoveRows({}, index.row(), index.row());
+                                  m_statuses.removeAt(index.row());
+                                  endRemoveRows();
+                              });
+}
+
 ScheduledStatusesModel::ScheduledStatus ScheduledStatusesModel::fromSourceData(const QJsonObject &object) const
 {
     ScheduledStatus status;

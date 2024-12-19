@@ -36,6 +36,9 @@ public:
     bool drafts() const;
     void setDrafts(bool draft);
 
+public Q_SLOTS:
+    void deleteDraft(QModelIndex index);
+
 private:
     void fill();
 

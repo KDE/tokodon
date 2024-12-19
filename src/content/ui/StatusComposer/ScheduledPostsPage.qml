@@ -22,6 +22,8 @@ Kirigami.ScrollablePage {
     // To make sure we're gone once the post is loaded
     property PostEditorBackend backend
 
+    property int deletedRow
+
     title: model.displayName
 
     signal opened(id: string)
@@ -46,42 +48,75 @@ Kirigami.ScrollablePage {
             required property string id
             required property string scheduledAt
             required text
+            required property int index
 
-            contentItem: ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.largeSpacing
 
-                RowLayout {
-                    Layout.fillWidth: true
+                ColumnLayout {
+                    spacing: 0
+
+                    Layout.fillHeight: true
 
                     Kirigami.Heading {
                         level: 4
                         text: root.drafts ? i18nc("Draft, unfinished post", "Draft") : i18nc("Scheduled for this date", "Scheduled for %1", delegate.scheduledAt)
                     }
 
-                    Item {
-                        Layout.fillWidth: true
-                    }
+                    PostDelegate.PostContent {
+                        content: delegate.text
+                        expandedPost: false
+                        secondary: true
+                        shouldOpenInternalLinks: false
+                        hoverEnabled: false
 
-                    QQC2.Label {
-                        text: delegate.scheduledAt
-                        visible: root.drafts
+                        onClicked: delegate.click()
+
+                        Layout.fillWidth: true
                     }
                 }
 
-                PostDelegate.PostContent {
-                    content: delegate.text
-                    expandedPost: false
-                    secondary: true
-                    shouldOpenInternalLinks: false
-                    hoverEnabled: false
-
-                    onClicked: delegate.click()
-
+                Item {
                     Layout.fillWidth: true
+                }
+
+                QQC2.Button {
+                    text: i18nc("@action:button Discard this post", "Discard")
+                    icon.name: "delete-symbolic"
+                    onClicked: {
+                        root.deletedRow = delegate.index;
+                        discardDraftPrompt.open();
+                    }
+                }
+
+                QQC2.Label {
+                    text: delegate.scheduledAt
+                    visible: root.drafts
+                    color: Kirigami.Theme.disabledTextColor
                 }
             }
 
             onClicked: root.opened(id)
         }
+    }
+
+    Kirigami.PromptDialog {
+        id: discardDraftPrompt
+
+        title: i18nc("@title", "Discard Draft")
+        subtitle: i18nc("@label", "Are you sure you want to discard your draft?")
+        standardButtons: Kirigami.Dialog.Cancel
+        showCloseButton: false
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18nc("@action:button Discard this draft", "Discard")
+                icon.name: "delete-symbolic"
+                onTriggered: {
+                    model.deleteDraft(model.index(root.deletedRow, 0));
+                    discardDraftPrompt.close();
+                }
+            }
+        ]
     }
 }
