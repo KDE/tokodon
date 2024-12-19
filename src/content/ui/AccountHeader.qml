@@ -392,7 +392,9 @@ QQC2.Pane {
                             onTriggered: {
                                 const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: false });
                                 page.opened.connect(function(id) {
-                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"));
+                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                                        purpose: StatusComposer.New,
+                                    });
                                     composer.openDraft(id);
                                 });
                             }
@@ -404,7 +406,9 @@ QQC2.Pane {
                             onTriggered: {
                                 const page = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "ScheduledPostsPage"), { drafts: true });
                                 page.opened.connect(function(id) {
-                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"));
+                                    const composer = pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "StatusComposer"), {
+                                        purpose: StatusComposer.New,
+                                    });
                                     composer.openDraft(id);
                                 });
                             }
