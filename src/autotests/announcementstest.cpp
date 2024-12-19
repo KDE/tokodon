@@ -32,7 +32,7 @@ private Q_SLOTS:
                  QStringLiteral("<p>Looks like there was an issue processing audio attachments without embedded art since yesterday due to an experimental new "
                                 "feature. That issue has now been fixed, so you may see older posts with audio from other servers pop up in your feeds now as "
                                 "they are being finally properly processed. Sorry!</p>"));
-        Q_ASSERT(announcementsModel.data(announcementsModel.index(0, 0), AnnouncementModel::PublishedAt).toDate().isValid());
+        Q_ASSERT(announcementsModel.data(announcementsModel.index(0, 0), AnnouncementModel::PublishedAtRole).toDate().isValid());
     }
 
 private:

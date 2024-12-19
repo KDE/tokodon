@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com
 // SPDX-License-Identifier: GPL-3.0-only
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Layouts
@@ -20,7 +22,9 @@ Kirigami.ScrollablePage {
     ListView {
         id: listview
 
-        model: AnnouncementModel {}
+        model: AnnouncementModel {
+            id: model
+        }
         currentIndex: -1
 
         delegate: Delegates.RoundedItemDelegate {
@@ -30,6 +34,7 @@ Kirigami.ScrollablePage {
             required property string id
             required property string content
             required property date publishedAt
+            required property var reactions
 
             contentItem: ColumnLayout {
                 id: layout
@@ -54,6 +59,69 @@ Kirigami.ScrollablePage {
                     textFormat: Text.StyledText
 
                     onLinkActivated: (link) => Qt.openUrlExternally(link)
+                }
+
+                RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Repeater {
+                        model: delegate.reactions
+
+                        QQC2.Button {
+                            id: reactionDelegate
+
+                            required property string name
+                            required property string url
+                            required property int count
+                            required property bool me
+
+                            readonly property bool isCustom: url !== ""
+
+                            padding: Kirigami.Units.smallSpacing
+
+                            checkable: true
+                            checked: me
+
+                            onToggled: {
+                                if (checked) {
+                                    model.addReaction(model.index(delegate.index, 0), reactionDelegate.name);
+                                } else {
+                                    model.removeReaction(model.index(delegate.index, 0), reactionDelegate.name);
+                                }
+                            }
+
+                            contentItem: RowLayout {
+                                spacing: Kirigami.Units.smallSpacing
+
+                                Item {
+                                    Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+
+                                    QQC2.Label {
+                                        anchors.centerIn: parent
+
+                                        text: reactionDelegate.name
+                                        visible: !reactionDelegate.isCustom
+                                    }
+
+                                    Image {
+                                        anchors.centerIn: parent
+
+                                        source: reactionDelegate.url
+                                        visible: reactionDelegate.isCustom
+
+                                        sourceSize.width: Kirigami.Units.iconSizes.sizeForLabels
+                                        sourceSize.height: Kirigami.Units.iconSizes.sizeForLabels
+                                    }
+                                }
+
+                                QQC2.Label {
+                                    id: countLabel
+
+                                    text: reactionDelegate.count
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -28,8 +28,10 @@ QVariant AnnouncementModel::data(const QModelIndex &index, int role) const
         return announcement.id;
     case ContentRole:
         return announcement.content;
-    case PublishedAt:
+    case PublishedAtRole:
         return announcement.publishedAt;
+    case ReactionsRole:
+        return QVariant::fromValue(announcement.reactions);
     default:
         return {};
     }
@@ -59,7 +61,8 @@ QHash<int, QByteArray> AnnouncementModel::roleNames() const
     return {
         {IdRole, "id"},
         {ContentRole, "content"},
-        {PublishedAt, "publishedAt"},
+        {PublishedAtRole, "publishedAt"},
+        {ReactionsRole, "reactions"},
     };
 }
 
@@ -99,12 +102,64 @@ void AnnouncementModel::fillTimeline()
         });
 }
 
+void AnnouncementModel::addReaction(const QModelIndex index, const QString &name)
+{
+    const auto announcement = m_announcements.at(index.row());
+    const auto account = AccountManager::instance().selectedAccount();
+    account->put(account->apiUrl(QStringLiteral("/api/v1/announcements/%1/reactions/%2").arg(announcement.id, name)),
+                 {},
+                 true,
+                 this,
+                 [this, index, name](QNetworkReply *reply) {
+                     Q_UNUSED(reply)
+                     auto &announcement = m_announcements[index.row()];
+                     const auto it = std::ranges::find_if(announcement.reactions, [name](const EmojiReaction &reaction) {
+                         return reaction.name == name;
+                     });
+                     if (it != announcement.reactions.end()) {
+                         it->me = true;
+                         Q_EMIT dataChanged(AnnouncementModel::index(index.row(), 0), AnnouncementModel::index(index.row(), 0), {ReactionsRole});
+                     }
+                 });
+}
+
+void AnnouncementModel::removeReaction(const QModelIndex index, const QString &name)
+{
+    const auto announcement = m_announcements.at(index.row());
+    const auto account = AccountManager::instance().selectedAccount();
+    account->deleteResource(account->apiUrl(QStringLiteral("/api/v1/announcements/%1/reactions/%2").arg(announcement.id, name)),
+                            true,
+                            this,
+                            [this, index, name](QNetworkReply *reply) {
+                                Q_UNUSED(reply)
+                                auto &announcement = m_announcements[index.row()];
+                                const auto it = std::ranges::find_if(announcement.reactions, [name](const EmojiReaction &reaction) {
+                                    return reaction.name == name;
+                                });
+                                if (it != announcement.reactions.end()) {
+                                    it->me = false;
+                                    Q_EMIT dataChanged(AnnouncementModel::index(index.row(), 0), AnnouncementModel::index(index.row(), 0), {ReactionsRole});
+                                }
+                            });
+}
+
 AnnouncementModel::Announcement AnnouncementModel::fromSourceData(const QJsonObject &object) const
 {
     Announcement announcement;
     announcement.id = object["id"_L1].toString();
     announcement.content = object["content"_L1].toString();
     announcement.publishedAt = QDateTime::fromString(object["published_at"_L1].toString(), Qt::ISODate).toLocalTime();
+
+    std::ranges::transform(object["reactions"_L1].toArray(), std::back_inserter(announcement.reactions), [](const QJsonValue &value) {
+        EmojiReaction reaction;
+        reaction.name = value["name"_L1].toString();
+        reaction.count = value["count"_L1].toInt();
+        reaction.me = value["me"_L1].toBool();
+        reaction.url = value["url"_L1].toString();
+        reaction.staticUrl = value["static_url"_L1].toString();
+
+        return reaction;
+    });
 
     return announcement;
 }

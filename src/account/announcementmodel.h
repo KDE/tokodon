@@ -6,6 +6,24 @@
 #include <QAbstractListModel>
 #include <QQmlEngine>
 
+class EmojiReaction
+{
+    Q_GADGET
+
+    Q_PROPERTY(QString name MEMBER name CONSTANT)
+    Q_PROPERTY(int count MEMBER count CONSTANT)
+    Q_PROPERTY(bool me MEMBER me CONSTANT)
+    Q_PROPERTY(QString url MEMBER url CONSTANT)
+    Q_PROPERTY(QString staticUrl MEMBER staticUrl CONSTANT)
+
+public:
+    QString name;
+    int count = 0;
+    bool me = false;
+    QString url;
+    QString staticUrl;
+};
+
 /**
  * @brief Fetches server announcements.
  */
@@ -23,7 +41,8 @@ public:
     enum CustomRoles {
         IdRole = Qt::UserRole, /**< ID of the announcement. */
         ContentRole, /**< Content of the announcement, given in rich HTML. */
-        PublishedAt /**< The date and time the announcement was published. */
+        PublishedAtRole, /**< The date and time the announcement was published. */
+        ReactionsRole, /**< The emoji reactions for this post. */
     };
 
     explicit AnnouncementModel(QObject *parent = nullptr);
@@ -37,6 +56,10 @@ public:
 
     void fillTimeline();
 
+public Q_SLOTS:
+    void addReaction(QModelIndex index, const QString &name);
+    void removeReaction(QModelIndex index, const QString &name);
+
 Q_SIGNALS:
     void loadingChanged();
 
@@ -45,6 +68,7 @@ private:
         QString id;
         QString content;
         QDateTime publishedAt;
+        QList<EmojiReaction> reactions;
     };
 
     QList<Announcement> m_announcements;
