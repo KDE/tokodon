@@ -52,6 +52,17 @@ KirigamiSettings.ConfigurationView {
             page: () => Qt.createComponent("org.kde.tokodon", "NetworkProxyPage")
         },
         KirigamiSettings.ConfigurationModule {
+            moduleId: "shortcuts"
+            text: i18n("Keyboard Shortcuts")
+            icon.name: "input-keyboard-symbolic"
+            page: () => Qt.createComponent("org.kde.kirigamiaddons.statefulapp.private", "ShortcutsEditor")
+            initialProperties: () => {
+                return {
+                    model: root.application.shortcutsModel
+                };
+            }
+        },
+        KirigamiSettings.ConfigurationModule {
             moduleId: "errorlog"
             text: i18n("Error Log")
             icon.name: "error-symbolic"
