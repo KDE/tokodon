@@ -58,7 +58,11 @@ void FavoriteListsModel::setAccount(AbstractAccount *account)
         }
         m_account = account;
         connect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
-        reloadLists();
+        if (m_account->successfullyAuthenticated()) {
+            reloadLists();
+        } else {
+            connect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists, Qt::SingleShotConnection);
+        }
         Q_EMIT accountChanged();
     }
 }
