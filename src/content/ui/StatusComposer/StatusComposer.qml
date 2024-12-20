@@ -625,6 +625,7 @@ Kirigami.ScrollablePage {
             anchors.left: parent.left
             anchors.bottom: parent.bottom
             source: "qrc:/content/elephant.svg"
+            asynchronous: true
         }
     }
 }

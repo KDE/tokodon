@@ -703,6 +703,7 @@ StatefulApp.StatefulWindow {
             anchors.bottom: parent.bottom
             source: "qrc:/content/elephant.svg"
             LayoutMirroring.enabled: false
+            asynchronous: true
         }
     }
 
