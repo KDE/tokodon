@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:40+0000\n"
-"PO-Revision-Date: 2024-11-29 12:20+0100\n"
+"POT-Creation-Date: 2024-12-20 00:40+0000\n"
+"PO-Revision-Date: 2024-12-19 10:52+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -149,7 +149,8 @@ msgstr "Inagine es troppo grande"
 #: account/profileeditor.cpp:198
 #, kde-format
 msgid "Unsupported image file. Only jpeg, png and gif are supported."
-msgstr "Fil de imaginenon supportate. Solmente jpeg, png e gif es supportate."
+msgstr ""
+"File de imagine non supportate. Solmente jpeg, png e gif es supportate."
 
 #: account/profileeditor.cpp:338
 #, kde-format
@@ -162,21 +163,17 @@ msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
 
-#: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#: account/scheduledstatusesmodel.cpp:59
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Post de report "
+msgstr "Posts de Version Provisori"
 
-#: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#: account/scheduledstatusesmodel.cpp:59
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Dele Post"
+msgstr "Posts Planificate"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -554,84 +551,80 @@ msgid "Featured Users"
 msgstr ""
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Dele Post"
+msgstr "Posts Planificate"
 
-#: content/ui/AccountHeader.qml:403
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#: content/ui/AccountHeader.qml:405
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Post de report "
+msgstr "Posts de Version Provisori"
 
-#: content/ui/AccountHeader.qml:414 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Aperi con navigator"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:423
 #, kde-format
 msgid "Copy Link"
 msgstr "Copia Ligamine"
 
-#: content/ui/AccountHeader.qml:422
+#: content/ui/AccountHeader.qml:426
 #, kde-format
 msgid "Profile link copied."
 msgstr "Ligamine de profilo  copiate."
 
-#: content/ui/AccountHeader.qml:492
+#: content/ui/AccountHeader.qml:496
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Unite"
 
-#: content/ui/AccountHeader.qml:532
+#: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:609
+#: content/ui/AccountHeader.qml:613
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Nota private:"
 
-#: content/ui/AccountHeader.qml:617
+#: content/ui/AccountHeader.qml:621
 #, kde-format
 msgid "Saved"
 msgstr "Salveguardate"
 
-#: content/ui/AccountHeader.qml:632
+#: content/ui/AccountHeader.qml:636
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 
-#: content/ui/AccountHeader.qml:694
+#: content/ui/AccountHeader.qml:698
 #, kde-format
 msgid "Also followed by:"
 msgstr "Anque sequite per:"
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Vide toto"
 
-#: content/ui/AccountHeader.qml:764
+#: content/ui/AccountHeader.qml:768
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -639,7 +632,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> post"
 msgstr[1] "<b>%1</b> posts"
 
-#: content/ui/AccountHeader.qml:777
+#: content/ui/AccountHeader.qml:781
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -647,7 +640,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> seque"
 msgstr[1] "<b>%1</b> sequente"
 
-#: content/ui/AccountHeader.qml:790
+#: content/ui/AccountHeader.qml:794
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -655,39 +648,38 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> adherente"
 msgstr[1] "<b>%1</b> adherentes"
 
-#: content/ui/AccountHeader.qml:815
+#: content/ui/AccountHeader.qml:819
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Posts"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:823
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:827
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Medios"
 
-#: content/ui/AccountHeader.qml:854
+#: content/ui/AccountHeader.qml:858
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:874
+#: content/ui/AccountHeader.qml:878
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Omne"
 
 #: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
 msgstr "Profilo"
@@ -725,25 +717,25 @@ msgstr "Comparti"
 msgid "Share the selected media"
 msgstr "Comparti le media selectionate"
 
-#: content/ui/AnnouncementsPage.qml:18
+#: content/ui/AnnouncementsPage.qml:20
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
 msgstr "Annuncios"
 
-#: content/ui/AnnouncementsPage.qml:41
+#: content/ui/AnnouncementsPage.qml:46
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
 msgstr ""
 
-#: content/ui/AnnouncementsPage.qml:69
+#: content/ui/AnnouncementsPage.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "Nulle Annuncios"
 
-#: content/ui/AnnouncementsPage.qml:70
+#: content/ui/AnnouncementsPage.qml:138
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr ""
@@ -872,8 +864,7 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr ""
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "Favorito"
@@ -1163,16 +1154,14 @@ msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Aperi Ligamine de Autorisation"
+msgstr "Aperi Pagina de Autorisation"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Copia Ligamine de Autorisation"
+msgstr "Copia Ligamine a pagina de  Autorisation"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1612,15 +1601,13 @@ msgid "Settings"
 msgstr "Preferentias"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Non Seque"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Seque"
@@ -3708,9 +3695,7 @@ msgid "Search for users, tags and posts"
 msgstr ""
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "Annuncios"
@@ -3927,25 +3912,25 @@ msgstr "Edita profilo"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Registro de Error"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Netta omne"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Copia in area de transferentia"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Nulle errores"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4217,12 +4202,10 @@ msgid ""
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Reporta"
+msgstr "Reporto Annual"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
@@ -4266,16 +4249,13 @@ msgid "Fields"
 msgstr "Campos"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Remove"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Adde"
@@ -4318,7 +4298,7 @@ msgstr "Proxy de rete"
 #: content/ui/Settings/TokodonConfigurationView.qml:56
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Registro de Error"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:62
 #, kde-format
@@ -4442,16 +4422,42 @@ msgstr "Cela computo de vioto usque le inquesta termina"
 msgid "Remove"
 msgstr "Remove"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Version provisori"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#, kde-format
+msgctxt "@action:button Discard this post"
+msgid "Discard"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:106
+#: content/ui/StatusComposer/StatusComposer.qml:154
+#, kde-format
+msgctxt "@title"
+msgid "Discard Draft"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:107
+#: content/ui/StatusComposer/StatusComposer.qml:155
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:113
+#, kde-format
+msgctxt "@action:button Discard this draft"
+msgid "Discard"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
@@ -4482,7 +4488,7 @@ msgstr "Scribe un nove message public (post)"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Versiones provisori"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4495,41 +4501,23 @@ msgstr "Facer emerger (Pop out)"
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:154
-#, kde-format
-msgctxt "@title"
-msgid "Discard Draft"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:155
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
-msgstr ""
-
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Salveguarda"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Cancella"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Dele Post"
+msgstr "Planifica Post"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
@@ -4697,12 +4685,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> characteres"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Dele Post"
+msgstr "Planifica"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:40+0000\n"
-"PO-Revision-Date: 2024-12-18 10:58+0100\n"
+"POT-Creation-Date: 2024-12-20 00:40+0000\n"
+"PO-Revision-Date: 2024-12-19 09:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -169,13 +169,13 @@ msgstr ""
 "Aquest servidor no ha proporcionat regles. Consulteu més informació al seu "
 "lloc web."
 
-#: account/scheduledstatusesmodel.cpp:53
+#: account/scheduledstatusesmodel.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
 msgstr "Esborranys de publicacions"
 
-#: account/scheduledstatusesmodel.cpp:53
+#: account/scheduledstatusesmodel.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
@@ -570,52 +570,52 @@ msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Publicacions planificades"
 
-#: content/ui/AccountHeader.qml:403
+#: content/ui/AccountHeader.qml:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Esborranys de publicacions"
 
-#: content/ui/AccountHeader.qml:414 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Obre en el navegador"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:423
 #, kde-format
 msgid "Copy Link"
 msgstr "Copia l'enllaç"
 
-#: content/ui/AccountHeader.qml:422
+#: content/ui/AccountHeader.qml:426
 #, kde-format
 msgid "Profile link copied."
 msgstr "S'ha copiat l'enllaç del perfil."
 
-#: content/ui/AccountHeader.qml:492
+#: content/ui/AccountHeader.qml:496
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Unit"
 
-#: content/ui/AccountHeader.qml:532
+#: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "La propietat d'aquest enllaç es va comprovar el %1"
 
-#: content/ui/AccountHeader.qml:609
+#: content/ui/AccountHeader.qml:613
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Nota privada:"
 
-#: content/ui/AccountHeader.qml:617
+#: content/ui/AccountHeader.qml:621
 #, kde-format
 msgid "Saved"
 msgstr "Desat"
 
-#: content/ui/AccountHeader.qml:632
+#: content/ui/AccountHeader.qml:636
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
@@ -623,24 +623,24 @@ msgstr ""
 "Escriviu alguna cosa sobre aquest usuari, això no és visible a ningú més "
 "excepte vós."
 
-#: content/ui/AccountHeader.qml:694
+#: content/ui/AccountHeader.qml:698
 #, kde-format
 msgid "Also followed by:"
 msgstr "Seguit també per:"
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Visualitza %1 més"
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Visualitza-ho tot"
 
-#: content/ui/AccountHeader.qml:764
+#: content/ui/AccountHeader.qml:768
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -648,7 +648,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> publicació"
 msgstr[1] "<b>%1</b> publicacions"
 
-#: content/ui/AccountHeader.qml:777
+#: content/ui/AccountHeader.qml:781
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -656,7 +656,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> seguits"
 msgstr[1] "<b>%1</b> seguidors"
 
-#: content/ui/AccountHeader.qml:790
+#: content/ui/AccountHeader.qml:794
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -664,31 +664,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> seguidor"
 msgstr[1] "<b>%1</b> seguidors"
 
-#: content/ui/AccountHeader.qml:815
+#: content/ui/AccountHeader.qml:819
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Publicacions"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:823
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Publicacions i respostes"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:827
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Multimèdia"
 
-#: content/ui/AccountHeader.qml:854
+#: content/ui/AccountHeader.qml:858
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Oculta els impulsos"
 
-#: content/ui/AccountHeader.qml:874
+#: content/ui/AccountHeader.qml:878
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -733,25 +733,25 @@ msgstr "Comparteix"
 msgid "Share the selected media"
 msgstr "Comparteix els elements multimèdia seleccionats"
 
-#: content/ui/AnnouncementsPage.qml:18
+#: content/ui/AnnouncementsPage.qml:20
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
 msgstr "Anuncis"
 
-#: content/ui/AnnouncementsPage.qml:41
+#: content/ui/AnnouncementsPage.qml:46
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
 msgstr "Anunci el %1"
 
-#: content/ui/AnnouncementsPage.qml:69
+#: content/ui/AnnouncementsPage.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "Sense anuncis"
 
-#: content/ui/AnnouncementsPage.qml:70
+#: content/ui/AnnouncementsPage.qml:138
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr "El vostre servidor encara no ha fet cap anunci."
@@ -885,16 +885,15 @@ msgstr ""
 "d'Inici."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
-msgstr "Preferit"
+msgstr "Preferida"
 
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "Aquesta llista es mostrarà a la barra lateral."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1174,6 +1173,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"No hi ha publicacions dels usuaris de la llista. Només apareixeran les "
+"entrades noves en una llista."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -4533,17 +4534,47 @@ msgstr "Oculta el comptador de vots fins que acabi la votació"
 msgid "Remove"
 msgstr "Elimina"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "Esborrany"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Planificada per al %1"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Discard Draft"
+msgctxt "@action:button Discard this post"
+msgid "Discard"
+msgstr "Descartar l'esborrany"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:106
+#: content/ui/StatusComposer/StatusComposer.qml:154
+#, kde-format
+msgctxt "@title"
+msgid "Discard Draft"
+msgstr "Descartar l'esborrany"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:107
+#: content/ui/StatusComposer/StatusComposer.qml:155
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr "Segur que voleu descartar aquest esborrany?"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:113
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Discard Draft"
+msgctxt "@action:button Discard this draft"
+msgid "Discard"
+msgstr "Descartar l'esborrany"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -4587,18 +4618,6 @@ msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 "Desar una publicació editada que té una votació netejarà els resultats "
 "existents."
-
-#: content/ui/StatusComposer/StatusComposer.qml:154
-#, kde-format
-msgctxt "@title"
-msgid "Discard Draft"
-msgstr "Descartar l'esborrany"
-
-#: content/ui/StatusComposer/StatusComposer.qml:155
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
-msgstr "Segur que voleu descartar aquest esborrany?"
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
 #, kde-format

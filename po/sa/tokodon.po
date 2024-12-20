@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-19 00:40+0000\n"
-"PO-Revision-Date: 2024-12-14 09:15+0530\n"
+"POT-Creation-Date: 2024-12-20 00:40+0000\n"
+"PO-Revision-Date: 2024-12-19 22:38+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -130,12 +130,12 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "तव %1 #FediWrapped प्रतीक्षत!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "मस्तोडने वर्षस्य प्रमुखक्षणान् स्मरणीयक्षणांश्च प्रकटय।"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -163,21 +163,17 @@ msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr "अयं सर्वरः कोऽपि नियमः न प्रदत्तवान् । अधिकविवरणार्थं तेषां जालपुटं पश्यन्तु।"
 
-#: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#: account/scheduledstatusesmodel.cpp:59
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "रिपोर्ट पोस्ट"
+msgstr "प्रारूपलेखाः"
 
-#: account/scheduledstatusesmodel.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#: account/scheduledstatusesmodel.cpp:59
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "पदं विलोपयतु"
+msgstr "अनुसूचितलेखाः"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -559,84 +555,80 @@ msgid "Featured Users"
 msgstr "विशेषतायुक्ताः उपयोक्तारः"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "पदं विलोपयतु"
+msgstr "अनुसूचितलेखाः"
 
-#: content/ui/AccountHeader.qml:403
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#: content/ui/AccountHeader.qml:405
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "रिपोर्ट पोस्ट"
+msgstr "प्रारूपलेखाः"
 
-#: content/ui/AccountHeader.qml:414 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "ब्राउजर् मध्ये उद्घाटयन्तु"
 
-#: content/ui/AccountHeader.qml:419
+#: content/ui/AccountHeader.qml:423
 #, kde-format
 msgid "Copy Link"
 msgstr "प्रतिलिपि लिङ्क"
 
-#: content/ui/AccountHeader.qml:422
+#: content/ui/AccountHeader.qml:426
 #, kde-format
 msgid "Profile link copied."
 msgstr "प्रोफाइल लिङ्क् प्रतिलिपिकृतम्।"
 
-#: content/ui/AccountHeader.qml:492
+#: content/ui/AccountHeader.qml:496
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "सम्मिलितः"
 
-#: content/ui/AccountHeader.qml:532
+#: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "तस्य लिङ्कस्य स्वामित्वं %1 मध्ये परीक्षणं कृतम् अस्ति।"
 
-#: content/ui/AccountHeader.qml:609
+#: content/ui/AccountHeader.qml:613
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "निजी टिप्पणी : १."
 
-#: content/ui/AccountHeader.qml:617
+#: content/ui/AccountHeader.qml:621
 #, kde-format
 msgid "Saved"
 msgstr "रक्षितम्"
 
-#: content/ui/AccountHeader.qml:632
+#: content/ui/AccountHeader.qml:636
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "अस्य उपयोक्तुः विषये किमपि लिखन्तु, एतत् भवतः अतिरिक्तं कस्मैचित् न दृश्यते।"
 
-#: content/ui/AccountHeader.qml:694
+#: content/ui/AccountHeader.qml:698
 #, kde-format
 msgid "Also followed by:"
 msgstr "तदनन्तरं च : १."
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1 अधिकं पश्यन्तु"
 
-#: content/ui/AccountHeader.qml:724
+#: content/ui/AccountHeader.qml:728
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "सर्वाणि पश्यन्तु"
 
-#: content/ui/AccountHeader.qml:764
+#: content/ui/AccountHeader.qml:768
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -644,7 +636,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> पदम्"
 msgstr[1] "<b>%1</b> पोस्ट्"
 
-#: content/ui/AccountHeader.qml:777
+#: content/ui/AccountHeader.qml:781
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -652,7 +644,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> अनुवर्तते"
 msgstr[1] "<b>%1</b> अनुसरणं करोति"
 
-#: content/ui/AccountHeader.qml:790
+#: content/ui/AccountHeader.qml:794
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -660,31 +652,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> अनुयायी"
 msgstr[1] "<b>%1</b> अनुयायिनः"
 
-#: content/ui/AccountHeader.qml:815
+#: content/ui/AccountHeader.qml:819
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "पद"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:823
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "पोस्ट && उत्तर"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:827
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "मीडिया"
 
-#: content/ui/AccountHeader.qml:854
+#: content/ui/AccountHeader.qml:858
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "बूस्ट्स् गोपयन्तु"
 
-#: content/ui/AccountHeader.qml:874
+#: content/ui/AccountHeader.qml:878
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -729,25 +721,25 @@ msgstr "संविभागः"
 msgid "Share the selected media"
 msgstr "चयनितं माध्यमं साझां कुर्वन्तु"
 
-#: content/ui/AnnouncementsPage.qml:18
+#: content/ui/AnnouncementsPage.qml:20
 #, kde-format
 msgctxt "@title Server-wide announcements set by admins."
 msgid "Announcements"
-msgstr "उद्घोषणानि"
+msgstr "घोषणाः"
 
-#: content/ui/AnnouncementsPage.qml:41
+#: content/ui/AnnouncementsPage.qml:46
 #, kde-format
 msgctxt "@label An announcement was published on a date"
 msgid "Announcement on %1"
 msgstr "%1 इत्यत्र घोषणा"
 
-#: content/ui/AnnouncementsPage.qml:69
+#: content/ui/AnnouncementsPage.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "No Announcements"
 msgstr "न घोषणाः"
 
-#: content/ui/AnnouncementsPage.qml:70
+#: content/ui/AnnouncementsPage.qml:138
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr "भवतः सर्वरेण अद्यापि किमपि घोषणां न कृतम्।"
@@ -878,16 +870,15 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "अनन्यसूचौ स्थापितानि पदानि Home timeline तः बहिष्कृतानि सन्ति।"
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
-msgstr "प्रिय"
+msgstr "प्रियः"
 
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "एष सूची पार्श्वपटले प्रदर्शिता भविष्यति।"
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1166,6 +1157,7 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"तव सूचीस्थितेषु उपयोगकर्तृषु किञ्चन लेखः नास्ति। केवलं नूतनाः लेखाः सूचीमध्ये प्रकटिष्यन्ते।"
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1181,19 +1173,17 @@ msgstr "प्राधिकरणम्"
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "यथाऽवसरं योजयितुं, त्वं टोकोडन कोष्ठकं प्रवेशाय अनुमोदनं दातव्यं।"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "प्राधिकरणलिङ्कं उद्घाटयन्तु"
+msgstr "अधिकृतिपृष्ठं उद्घाटयतु"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "प्राधिकरणलिङ्कं प्रतिलिपितु"
+msgstr "अधिकृतिपृष्ठस्य सञ्चिका अनुलेखयतु"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1643,18 +1633,16 @@ msgid "Settings"
 msgstr "सेटिंग्स्"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
-msgstr "अनफॉलो करें"
+msgstr "अनुगमनं परित्यजतु"
 
 #: content/ui/Main.qml:690
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
-msgstr "अनुशीलनं"
+msgstr "अनुगच्छतु"
 
 #: content/ui/Main.qml:737
 #, kde-format
@@ -3137,13 +3125,13 @@ msgctxt ""
 msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
-msgstr ""
+msgstr "तव %1 #FediWrapped प्रतीक्षते। मस्तोडने वर्षस्य प्रमुखक्षणान् स्मरणीयक्षणांश्च प्रकटय।"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "#FediWrapped दृश्यताम्।"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3753,12 +3741,10 @@ msgid "Search for users, tags and posts"
 msgstr "उपयोक्तारः, टैग्, पोस्ट् च अन्वेष्टुम्"
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
-msgstr "उद्घोषणानि"
+msgstr "घोषणाः"
 
 #: content/ui/Settings/AccountPage.qml:26
 #, kde-format
@@ -4280,17 +4266,15 @@ msgstr ""
 "अस्ति अथवा अनुयायिनः सन्ति ।"
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "वृत्तान्तः"
+msgstr "वार्षिकप्रतिवेदनम्"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "यदा त्वं तव #FediWrapped वर्षान्ते प्राप्तुम् अर्हसि।"
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4329,19 +4313,16 @@ msgid "Fields"
 msgstr "क्षेत्राणि"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "अपाकरोति"
+msgstr "निष्कासयतु"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "संयोजयति"
+msgstr "योजयतु"
 
 #: content/ui/Settings/ProfileEditor.qml:296
 #, kde-format
@@ -4505,17 +4486,47 @@ msgstr "मतदानस्य समाप्तिपर्यन्तं �
 msgid "Remove"
 msgstr "अपाकरोति"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "प्रारूपलेखाः"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:48
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "%1 समये अनुसूचितम्"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Discard Draft"
+msgctxt "@action:button Discard this post"
+msgid "Discard"
+msgstr "मसौदा परित्यजतु"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:106
+#: content/ui/StatusComposer/StatusComposer.qml:154
+#, kde-format
+msgctxt "@title"
+msgid "Discard Draft"
+msgstr "मसौदा परित्यजतु"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:107
+#: content/ui/StatusComposer/StatusComposer.qml:155
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to discard your draft?"
+msgstr "किं भवन्तः निश्चिन्ताः सन्ति यत् भवन्तः स्वस्य मसौदां परित्यक्तुं इच्छन्ति?"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:113
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Discard Draft"
+msgctxt "@action:button Discard this draft"
+msgid "Discard"
+msgstr "मसौदा परित्यजतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -4545,7 +4556,7 @@ msgstr "New Post लिखें"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "प्रारूपाणि"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4558,47 +4569,29 @@ msgstr "Pop Out इति"
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr "सम्पादितं पदं रक्षित्वा यस्मिन् मतदानं भवति तत् विद्यमानं परिणामं स्वच्छं करिष्यति।"
 
-#: content/ui/StatusComposer/StatusComposer.qml:154
-#, kde-format
-msgctxt "@title"
-msgid "Discard Draft"
-msgstr "मसौदा परित्यजतु"
-
-#: content/ui/StatusComposer/StatusComposer.qml:155
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to discard your draft?"
-msgstr "किं भवन्तः निश्चिन्ताः सन्ति यत् भवन्तः स्वस्य मसौदां परित्यक्तुं इच्छन्ति?"
-
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
-msgstr "रक्ष्"
+msgstr "संरक्षयतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
-msgstr "निरसयतु"
+msgstr "रद्धयतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "पदं विलोपयतु"
+msgstr "लेखं अनुसूचयतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "अनुसूचिं निर्धारयतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4760,12 +4753,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> वर्णाः"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "पदं विलोपयतु"
+msgstr "अनुसूचयतु"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
