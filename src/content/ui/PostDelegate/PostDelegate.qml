@@ -304,41 +304,44 @@ QQC2.ItemDelegate {
 
             Layout.fillWidth: true
 
-            QQC2.Control {
+            Loader {
                 visible: root.spoilerText.length !== 0
-                padding: Kirigami.Units.largeSpacing
+                active: visible
 
-                Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
-                Layout.fillWidth: true
+                sourceComponent: QQC2.Control {
+                    padding: Kirigami.Units.largeSpacing
 
-                contentItem: RowLayout {
-                    id: warningLayout
-                    spacing: Kirigami.Units.largeSpacing
+                    Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
+                    Layout.fillWidth: true
 
-                    Kirigami.Icon {
-                        Layout.alignment: Qt.AlignVCenter
-                        source: "data-information"
+                    contentItem: RowLayout {
+                        id: warningLayout
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            Layout.alignment: Qt.AlignVCenter
+                            source: "data-information"
+                        }
+
+                        QQC2.Label {
+                            id: spoilerTextLabel
+                            Layout.fillWidth: true
+                            text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
+                            wrapMode: Text.Wrap
+                            font: Config.defaultFont
+                        }
+
+                        QQC2.Button {
+                            text: postContent.visible ? i18n("Show Less") : i18n("Show More")
+                            icon.name: postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
+                            onClicked: postContent.visible = !postContent.visible
+                        }
                     }
 
-                    QQC2.Label {
-                        id: spoilerTextLabel
-                        Layout.fillWidth: true
-                        text: i18n("<b>Content Notice</b><br /> %1", root.spoilerText)
-                        wrapMode: Text.Wrap
-                        font: Config.defaultFont
-
+                    background: Rectangle {
+                        radius: Kirigami.Units.cornerRadius
+                        color: Kirigami.Theme.activeBackgroundColor
                     }
-
-                    QQC2.Button {
-                        text: postContent.visible ? i18n("Show Less") : i18n("Show More")
-                        icon.name: postContent.visible ? "view-hidden-symbolic" : "view-visible-symbolic"
-                        onClicked: postContent.visible = !postContent.visible
-                    }
-                }
-
-                background: Rectangle {
-                    radius: Kirigami.Units.cornerRadius
-                    color: Kirigami.Theme.activeBackgroundColor
                 }
             }
 
