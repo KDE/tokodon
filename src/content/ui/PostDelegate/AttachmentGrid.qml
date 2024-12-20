@@ -15,7 +15,7 @@ import "../Components"
 /**
  * @brief The attachment grid used in statuses, which is on a specialized grid layout
  */
-QQC2.Control {
+Item {
     id: root
 
     required property var attachments
@@ -97,13 +97,10 @@ QQC2.Control {
         }
     }
 
-    topPadding: 0
-    leftPadding: 0
-    bottomPadding: 0
-    rightPadding: 0
-
-    contentItem: GridLayout {
+    GridLayout {
         id: attachmentGridLayout
+
+        anchors.fill: parent
 
         columns: Math.min(root.attachments.length, 2)
         rowSpacing: Kirigami.Units.smallSpacing
