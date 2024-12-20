@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Effects
+import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -27,6 +28,7 @@ Kirigami.Page {
 
     property TokodonConfigurationView settingsWindow: TokodonConfigurationView {
         application: root.application
+        window: root.Window.window
     }
 
     contentItem: Item {
