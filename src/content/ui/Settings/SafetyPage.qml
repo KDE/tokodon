@@ -24,7 +24,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
             text: i18n("Muted Users")
-            onClicked: root.Window.window.pageStack.push(socialGraphComponent, { name: "mutes" })
+            onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "mutes" })
         }
 
         FormCard.FormDelegateSeparator {}
@@ -32,7 +32,25 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             icon.name: "cards-block"
             text: i18n("Blocked Users")
-            onClicked: root.Window.window.pageStack.push(socialGraphComponent, { name: "blocks" })
+            onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "blocks" })
+        }
+    }
+
+    Component {
+        id: socialGraphComponent
+        SocialGraphPage {
+            id: socialGraphPage
+            property alias name: socialGraphModel.name
+            property alias accountId: socialGraphModel.accountId
+            property alias statusId: socialGraphModel.statusId
+            property alias count: socialGraphModel.count
+            model: SocialGraphModel {
+                id: socialGraphModel
+                name: socialGraphPage.name
+                accountId: socialGraphPage.accountId
+                statusId: socialGraphPage.statusId
+                count: socialGraphPage.count
+            }
         }
     }
 }
