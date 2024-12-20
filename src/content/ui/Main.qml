@@ -113,11 +113,6 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 
-    ReportDialog {
-        id: reportDialog
-        visible: false
-    }
-
     Kirigami.PromptDialog {
         id: crossActionDialog
 
