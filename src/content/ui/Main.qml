@@ -100,9 +100,10 @@ StatefulApp.StatefulWindow {
     }
 
     function requestCrossAction(action: string, url: string): void {
-        crossActionDialog.action = action;
-        crossActionDialog.url = url;
-        crossActionDialog.open();
+        crossActionDialogLoader.active = true;
+        crossActionDialogLoader.item.action = action;
+        crossActionDialogLoader.item.url = url;
+        crossActionDialogLoader.item.open();
     }
 
     Kirigami.Action {
@@ -113,65 +114,73 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 
-    Kirigami.PromptDialog {
-        id: crossActionDialog
+    Loader {
+        id: crossActionDialogLoader
 
-        property string url
-        property string action
+        active: false
 
-        title: {
-            if (action === 'open') {
-                return i18nc("@title", "Open As…")
-            } else if (action === 'reply') {
-                return i18nc("@title", "Reply As…")
-            } else if (action === 'favourite') {
-                return i18nc("@title", "Favorite As…")
-            } else if (action === 'reblog') {
-                return i18nc("@title", "Boost As…")
-            } else if (action === 'bookmark') {
-                return i18nc("@title", "Bookmark As…")
-            } else {
-                return i18nc("@title", "Unknown Action")
-            }
-        }
+        sourceComponent: Kirigami.PromptDialog {
+            id: crossActionDialog
 
-        standardButtons: Kirigami.Dialog.NoButton
+            property string url
+            property string action
 
-        mainItem: ColumnLayout {
-            Repeater {
-                id: accounts
-
-                model: AccountManager
-
-                delegate: Delegates.RoundedItemDelegate {
-                    required property int index
-                    required property string displayName
-                    required property string instance
-                    required property var account
-
-                    text: displayName
-
-                    Layout.fillWidth: true
-
-                    onClicked: crossActionDialog.takeAction(account)
-                }
-            }
-        }
-
-        function takeAction(account: AbstractAccount): void {
-            if (action === 'open' || action === 'reply') {
-                AccountManager.selectedAccount = account;
-            }
-
-            Qt.callLater(() => {
+            title: {
                 if (action === 'open') {
-                    Controller.openWebApLink(url);
+                    return i18nc("@title", "Open As…")
+                } else if (action === 'reply') {
+                    return i18nc("@title", "Reply As…")
+                } else if (action === 'favourite') {
+                    return i18nc("@title", "Favorite As…")
+                } else if (action === 'reblog') {
+                    return i18nc("@title", "Boost As…")
+                } else if (action === 'bookmark') {
+                    return i18nc("@title", "Bookmark As…")
                 } else {
-                    account.mutateRemotePost(url, action);
+                    return i18nc("@title", "Unknown Action")
                 }
-            });
+            }
 
-            close();
+            standardButtons: Kirigami.Dialog.NoButton
+
+            onClosed: crossActionDialogLoader.active = false
+
+            mainItem: ColumnLayout {
+                Repeater {
+                    id: accounts
+
+                    model: AccountManager
+
+                    delegate: Delegates.RoundedItemDelegate {
+                        required property int index
+                        required property string displayName
+                        required property string instance
+                        required property var account
+
+                        text: displayName
+
+                        Layout.fillWidth: true
+
+                        onClicked: crossActionDialog.takeAction(account)
+                    }
+                }
+            }
+
+            function takeAction(account: AbstractAccount): void {
+                if (action === 'open' || action === 'reply') {
+                    AccountManager.selectedAccount = account;
+                }
+
+                Qt.callLater(() => {
+                    if (action === 'open') {
+                        Controller.openWebApLink(url);
+                    } else {
+                        account.mutateRemotePost(url, action);
+                    }
+                });
+
+                close();
+            }
         }
     }
 
