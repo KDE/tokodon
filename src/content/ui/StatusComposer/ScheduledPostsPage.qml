@@ -70,8 +70,6 @@ Kirigami.ScrollablePage {
                         shouldOpenInternalLinks: false
                         hoverEnabled: false
 
-                        onClicked: delegate.click()
-
                         Layout.fillWidth: true
                     }
                 }

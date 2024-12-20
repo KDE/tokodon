@@ -139,8 +139,6 @@ ListView {
                             shouldOpenInternalLinks: false
                             shouldOpenAnyLinks: false
                             hoverEnabled: false
-
-                            onClicked: accountDelegate.clicked()
                         }
                     }
                 }

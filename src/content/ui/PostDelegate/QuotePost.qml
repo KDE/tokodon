@@ -103,9 +103,6 @@ QQC2.AbstractButton {
 
                 Layout.fillWidth: true
 
-                // So this text area doesn't eat the mouse events
-                onReleased: root.clicked()
-
                 HoverHandler {
                     cursorShape: Qt.PointingHandCursor
                 }

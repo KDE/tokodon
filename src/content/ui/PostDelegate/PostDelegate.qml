@@ -369,8 +369,6 @@ QQC2.ItemDelegate {
                 secondary: root.secondary
                 visible: root.spoilerText.length === 0 || AccountManager.selectedAccount.preferences.extendSpoiler
                 shouldOpenInternalLinks: true
-
-                onClicked: root.openPost()
             }
         }
 

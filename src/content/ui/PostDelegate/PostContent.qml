@@ -10,7 +10,7 @@ import org.kde.tokodon
 import org.kde.tokodon.private
 
 // This is the main text content of a status
-QQC2.TextArea {
+QQC2.Label {
     id: root
 
     required property string content
@@ -18,8 +18,7 @@ QQC2.TextArea {
     required property bool secondary
     required property bool shouldOpenInternalLinks
     property bool shouldOpenAnyLinks: true
-
-    signal clicked()
+    property bool hoverEnabled: true
 
     topPadding: 0
     leftPadding: 0
@@ -36,10 +35,7 @@ QQC2.TextArea {
     Layout.fillWidth: true
     textFormat: TextEdit.RichText
     activeFocusOnTab: false
-    readOnly: true
-    background: null
     wrapMode: TextEdit.Wrap
-    selectByMouse: !Kirigami.Settings.isMobile && root.expandedPost
     onLinkActivated: link => {
         if (root.shouldOpenAnyLinks) {
             applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
@@ -53,26 +49,22 @@ QQC2.TextArea {
     }
 
     TapHandler {
-        acceptedButtons: Qt.LeftButton | Qt.RightButton
+        acceptedButtons: Qt.RightButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
 
         onSingleTapped: (eventPoint, button) => {
-            if (button === Qt.RightButton) {
-                const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
-                const foundLink = root.linkAt(point.x, point.y);
-                if (!foundLink) {
-                    return;
-                }
-
-                const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
-                const linkMenu = linkMenuComponent.createObject(root, {
-                    url: foundLink,
-                });
-
-                (linkMenu as LinkMenu)?.popup(point);
-            } else if (button === Qt.LeftButton && !root.hoveredLink && !root.expandedPost) {
-                root.clicked();
+            const point = root.mapFromGlobal(eventPoint.globalPosition.x, eventPoint.globalPosition.y);
+            const foundLink = root.linkAt(point.x, point.y);
+            if (!foundLink) {
+                return;
             }
+
+            const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
+            const linkMenu = linkMenuComponent.createObject(root, {
+                url: foundLink,
+            });
+
+            (linkMenu as LinkMenu)?.popup(point);
         }
     }
 
