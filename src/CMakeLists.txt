@@ -579,7 +579,19 @@ if(ANDROID)
             "arrow-right-symbolic"
             "network-server-symbolic"
             "globe-symbolic"
-            "donate-symbolic")
+            "donate-symbolic"
+            "input-keyboard-symbolic"
+            "error-symbolic"
+            "edit-undo"
+            "applications-development-symbolic"
+            "internet-services-symbolic"
+            "view-conversation-balloon-symbolic"
+            "favorite-favorited"
+            "boost"
+            "boost-boosted"
+            "bookmarks-bookmarked"
+            "resource-calendar-insert"
+            "applications-other-symbolic")
     install(FILES ../org.kde.tokodon.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.svg)
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
