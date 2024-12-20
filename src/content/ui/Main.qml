@@ -185,7 +185,9 @@ StatefulApp.StatefulWindow {
         target: AccountManager
 
         function onAccountSelected(): void {
-            decideDefaultPage();
+            if (AccountManager.isReady) {
+                decideDefaultPage();
+            }
         }
 
         function onAccountRemoved(): void {
