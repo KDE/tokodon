@@ -61,59 +61,59 @@ ecm_add_test(iprulestooltest.cpp
 )
 
 ecm_add_test(emailblocktooltest.cpp
-	TEST_NAME emailblocktooltest
-	LINK_LIBRARIES tokodon_test_static Qt::Test
-	NAME_PREFIX "tokodon-"
+    TEST_NAME emailblocktooltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(announcementstest.cpp
-		TEST_NAME announcementstest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME announcementstest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(customemojitest.cpp
-	TEST_NAME customemojitest
-	LINK_LIBRARIES tokodon_test_static Qt::Test
-	NAME_PREFIX "tokodon-"
+    TEST_NAME customemojitest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(rulesmodeltest.cpp
-		TEST_NAME rulesmodeltest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME rulesmodeltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(listsmodeltest.cpp
-		TEST_NAME listsmodeltest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME listsmodeltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(polltimemodeltest.cpp
-		TEST_NAME polltimemodeltest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME polltimemodeltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(socialgraphmodeltest.cpp
-		TEST_NAME socialgraphmodeltest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME socialgraphmodeltest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(texthandlertest.cpp
-		TEST_NAME texthandlertest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME texthandlertest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 ecm_add_test(accounttest.cpp
-		TEST_NAME accounttest
-		LINK_LIBRARIES tokodon_test_static Qt::Test
-		NAME_PREFIX "tokodon-"
+    TEST_NAME accounttest
+    LINK_LIBRARIES tokodon_test_static Qt::Test
+    NAME_PREFIX "tokodon-"
 )
 
 if(CMAKE_SYSTEM_NAME MATCHES "Linux" AND NOT "$ENV{KDECI_BUILD}" STREQUAL "TRUE")
-	add_subdirectory(appiumtests)
+    add_subdirectory(appiumtests)
 endif()
