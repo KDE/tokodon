@@ -55,12 +55,6 @@ public:
     static bool isPostUrl(const QString &url);
 
     /**
-     * @brief Workaround for QTBUG 93281.
-     * @note Only has an effect on Qt <6.7.
-     */
-    Q_INVOKABLE void forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item);
-
-    /**
      * @brief Converts a QDateTime to it's relative equivalent, when this function is called.
      *
      * Example: If the function is called at 13:00, and you're given a QDateTime at 12:00 that day. The return value would say "1h"

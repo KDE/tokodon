@@ -158,17 +158,6 @@ bool TextHandler::isPostUrl(const QString &url)
     return false;
 }
 
-void TextHandler::forceRefreshTextDocument(QQuickTextDocument *textDocument, QQuickItem *item)
-{
-    // HACK: Workaround bug QTBUG 93281, only applies to <6.7
-#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
-    connect(textDocument->textDocument(), SIGNAL(imagesLoaded()), item, SLOT(updateWholeDocument()));
-#else
-    Q_UNUSED(textDocument)
-    Q_UNUSED(item)
-#endif
-}
-
 QString TextHandler::getRelativeDateTime(const QDateTime &dateTime)
 {
     const auto current = QDateTime::currentDateTime();

@@ -26,11 +26,6 @@ QQC2.Label {
     bottomPadding: 0
     property string clickedUrl: ""
 
-    // Work around QTBUG 93281
-    Component.onCompleted: if (text.includes("<img")) {
-        TextHandler.forceRefreshTextDocument(root.textDocument, root);
-    }
-
     text: TextHandler.fixBidirectionality(root.content, Config.defaultFont)
     Layout.fillWidth: true
     textFormat: TextEdit.RichText
