@@ -81,7 +81,7 @@ StatefulApp.StatefulWindow {
         if (AccountManager.hasAccounts) {
             decideDefaultPage();
         } else {
-            pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+            pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
         }
     }
 
@@ -196,7 +196,7 @@ StatefulApp.StatefulWindow {
         function onAccountRemoved(): void {
             if (!AccountManager.hasAccounts) {
                 pageStack.clear();
-                pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"));
+                pageStack.push(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application });
                 globalDrawer.drawerOpen = false;
             }
         }
@@ -222,7 +222,7 @@ StatefulApp.StatefulWindow {
         }
 
         function onAddAccount(): void {
-            let page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { showSettingsButton: false });
+            let page = root.pageStack.pushDialogLayer(Qt.createComponent("org.kde.tokodon", "WelcomePage"), { application: root.application, showSettingsButton: false });
             page.QQC2.ApplicationWindow.window.pageStack.columnView.columnResizeMode = Kirigami.ColumnView.SingleColumn;
         }
     }

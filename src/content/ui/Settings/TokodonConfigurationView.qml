@@ -9,7 +9,7 @@ import org.kde.kirigamiaddons.settings as KirigamiSettings
 KirigamiSettings.ConfigurationView {
     id: root
 
-    property TokodonApplication application
+    required property TokodonApplication application
 
     modules: [
         KirigamiSettings.ConfigurationModule {

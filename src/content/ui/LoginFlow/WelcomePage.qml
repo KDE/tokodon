@@ -17,13 +17,17 @@ Kirigami.Page {
     title: i18nc("@title:window", "Welcome")
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
+    required property TokodonApplication application
+
     property alias showSettingsButton: settingsCard.visible
 
     header: Kirigami.Separator {
         width: root.width
     }
 
-    property TokodonConfigurationView settingsWindow: TokodonConfigurationView {}
+    property TokodonConfigurationView settingsWindow: TokodonConfigurationView {
+        application: root.application
+    }
 
     contentItem: Item {
         ColumnLayout {
