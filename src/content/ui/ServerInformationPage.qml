@@ -16,6 +16,8 @@ import org.kde.tokodon
 FormCard.FormCardPage {
     id: root
 
+    title: AccountManager.selectedAccount.instanceName
+
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
