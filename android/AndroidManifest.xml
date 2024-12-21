@@ -55,5 +55,32 @@
             <!-- auto screen scale factor -->
             <meta-data android:name="android.app.auto_screen_scale_factor" android:value="true"/>
         </activity>
+        <service android:name=".TokodonService" android:exported="true">
+            <intent-filter>
+                <action android:name="org.unifiedpush.android.distributor.RAISE_TO_FOREGROUND" />
+            </intent-filter>
+
+            <meta-data android:name="android.app.lib_name" android:value="tokodon"/>
+            <meta-data android:name="android.app.repository" android:value="default"/>
+            <meta-data android:name="android.app.qt_libs_resource_id" android:resource="@array/qt_libs"/>
+            <meta-data android:name="android.app.bundled_libs_resource_id" android:resource="@array/bundled_libs"/>
+            <meta-data android:name="android.app.extract_android_style" android:value="minimal"/>
+
+            <!-- Deploy Qt libs as part of package -->
+            <meta-data android:name="android.app.bundle_local_qt_libs" android:value="-- %%BUNDLE_LOCAL_QT_LIBS%% --"/>
+            <meta-data android:name="android.app.load_local_libs_resource_id" android:resource="@array/load_local_libs"/>
+            <!-- Run with local libs -->
+            <meta-data android:name="android.app.use_local_qt_libs" android:value="-- %%USE_LOCAL_QT_LIBS%% --"/>
+            <meta-data android:name="android.app.libs_prefix" android:value="/data/local/tmp/qt/"/>
+            <meta-data android:name="android.app.load_local_libs" android:value="-- %%INSERT_LOCAL_LIBS%% --"/>
+            <meta-data android:name="android.app.load_local_jars" android:value="-- %%INSERT_LOCAL_JARS%% --"/>
+            <meta-data android:name="android.app.static_init_classes" android:value="-- %%INSERT_INIT_CLASSES%% --"/>
+            <!--  Messages maps -->
+            <meta-data android:value="@string/fatal_error_msg" android:name="android.app.fatal_error_msg"/>
+            <meta-data android:value="@string/unsupported_android_version" android:name="android.app.unsupported_android_version"/>
+
+            <!-- Background running -->
+            <meta-data android:name="android.app.background_running" android:value="true"/>
+        </service>
     </application>
 </manifest>
