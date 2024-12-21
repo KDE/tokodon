@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:40+0000\n"
+"POT-Creation-Date: 2024-12-21 00:41+0000\n"
 "PO-Revision-Date: 2024-01-01 07:57-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -798,8 +798,8 @@ msgstr ""
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/PostDelegate/PostInteractionLabel.qml:64
 #: content/ui/PostDelegate/QuotePost.qml:60
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
@@ -840,7 +840,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "ਲੋਕਲ ਸਮਾਂ-ਲਾਈਨ"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:467
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:473
 #, kde-format
 msgid "Conversations"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
@@ -1006,7 +1006,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:510
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:516
 #, kde-format
 msgid "Explore"
 msgstr "ਪੜਤਾਲ ਕਰੋ"
@@ -1165,7 +1165,7 @@ msgid "Quit Tokodon"
 msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
-#: content/ui/LoginFlow/WelcomePage.qml:17
+#: content/ui/LoginFlow/WelcomePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -1215,8 +1215,8 @@ msgstr ""
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
-#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:407
+#: content/ui/Main.qml:449 content/ui/Main.qml:464
 #, fuzzy, kde-format
 #| msgid "No posts"
 msgid "No Posts"
@@ -1510,14 +1510,14 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:49
+#: content/ui/LoginFlow/WelcomePage.qml:55
 #, fuzzy, kde-format
 #| msgid "Tokodon"
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "ਟੂਕੂਡੂਨ"
 
-#: content/ui/LoginFlow/WelcomePage.qml:58
+#: content/ui/LoginFlow/WelcomePage.qml:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1525,45 +1525,45 @@ msgid ""
 "compatible software)."
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:74
+#: content/ui/LoginFlow/WelcomePage.qml:80
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:84
+#: content/ui/LoginFlow/WelcomePage.qml:90
 #, fuzzy, kde-format
 #| msgid "Add Account"
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
 msgstr "ਖਾਤਾ ਜੋੜੋ"
 
-#: content/ui/LoginFlow/WelcomePage.qml:99
+#: content/ui/LoginFlow/WelcomePage.qml:105
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/LoginFlow/WelcomePage.qml:113
+#: content/ui/LoginFlow/WelcomePage.qml:119
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr ""
 
-#: content/ui/LoginFlow/WelcomePage.qml:123
+#: content/ui/LoginFlow/WelcomePage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr ""
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:130
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr ""
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:132
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -1571,7 +1571,7 @@ msgctxt "@title"
 msgid "Reply As…"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/Main.qml:133
+#: content/ui/Main.qml:134
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -1579,7 +1579,7 @@ msgctxt "@title"
 msgid "Favorite As…"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:135
+#: content/ui/Main.qml:136
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
@@ -1587,164 +1587,164 @@ msgctxt "@title"
 msgid "Boost As…"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/Main.qml:137
+#: content/ui/Main.qml:138
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:139
+#: content/ui/Main.qml:140
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:239
+#: content/ui/Main.qml:245
 #, fuzzy, kde-format
 #| msgid "%1 wrote a new post"
 msgid "Write a New Post"
 msgstr "%1 ਨੇ ਨਵੀਂ ਪੋਸਟ ਲਿਖੀ ਹੈ"
 
-#: content/ui/Main.qml:266
+#: content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr ""
 
-#: content/ui/Main.qml:311
+#: content/ui/Main.qml:317
 #, fuzzy, kde-format
 #| msgid "Copy Link to This Post"
 msgid "Reply to post"
 msgstr "ਇਸ ਪੋਸਟ ਦਾ ਲਿੰਕ ਕਾਪੀ ਕਰੋ"
 
-#: content/ui/Main.qml:394
+#: content/ui/Main.qml:400
 #, kde-format
 msgid "Home"
 msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 
-#: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
+#: content/ui/Main.qml:408 content/ui/Main.qml:450 content/ui/Main.qml:465
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:411 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:417 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
-#: content/ui/Main.qml:423
+#: content/ui/Main.qml:429
 #, kde-format
 msgid "Follow Requests"
 msgstr "ਫ਼ਾਲੋ ਬੇਨਤੀਆਂ"
 
-#: content/ui/Main.qml:436
+#: content/ui/Main.qml:442
 #, kde-format
 msgid "Local"
 msgstr "ਲੋਕਲ"
 
-#: content/ui/Main.qml:451
+#: content/ui/Main.qml:457
 #, kde-format
 msgid "Global"
 msgstr "ਗਲੋਬਲ"
 
-#: content/ui/Main.qml:478 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:484 content/ui/Settings/NotificationsPage.qml:184
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:491
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "No Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/Main.qml:486
+#: content/ui/Main.qml:492
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
 
-#: content/ui/Main.qml:494
+#: content/ui/Main.qml:500
 #, kde-format
 msgid "Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:507
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgid "No Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/Main.qml:502
+#: content/ui/Main.qml:508
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:521
+#: content/ui/Main.qml:527
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Following"
 msgid "Following"
 msgstr "ਫ਼ਾਲੋ ਕਰ ਰਹੇ ਹੋ"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:538
 #, kde-format
 msgid "Search"
 msgstr "ਖੋਜੋ"
 
-#: content/ui/Main.qml:555
+#: content/ui/Main.qml:561
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:566 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:572 content/ui/Settings/AccountPage.qml:70
 #, fuzzy, kde-format
 #| msgid "View Profile"
 msgid "Profile"
 msgstr "ਪਰੋਫ਼ਾਈਲ ਵੇਖੋ"
 
-#: content/ui/Main.qml:581
+#: content/ui/Main.qml:587
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:591
+#: content/ui/Main.qml:597
 #, fuzzy, kde-format
 #| msgid "Conversations"
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
 
-#: content/ui/Main.qml:598
+#: content/ui/Main.qml:604
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: content/ui/Main.qml:690
+#: content/ui/Main.qml:696
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "ਫ਼ਾਲੋ ਕਰੋ"
 
-#: content/ui/Main.qml:690
+#: content/ui/Main.qml:696
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "ਫ਼ਾਲੋ ਕਰੋ"
 
-#: content/ui/Main.qml:737
+#: content/ui/Main.qml:744
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3092,13 +3092,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:348
+#: content/ui/PostDelegate/PostDelegate.qml:351
 #, kde-format
 msgid "Show Less"
 msgstr "ਘੱਟ ਵੇਖਾਓ"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:348
+#: content/ui/PostDelegate/PostDelegate.qml:351
 #, kde-format
 msgid "Show More"
 msgstr "ਹੋਰ ਵੇਖਾਓ"
@@ -3371,27 +3371,27 @@ msgstr ""
 msgid "%1 updated their post"
 msgstr "ਇਹ ਪੋਸਟ ਨੂੰ ਸੋਧੋ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:90
+#: content/ui/PostDelegate/AttachmentGrid.qml:94
 #, kde-format
 msgid "Status with image attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:92
+#: content/ui/PostDelegate/AttachmentGrid.qml:96
 #, kde-format
 msgid "Status with GifV attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:94
+#: content/ui/PostDelegate/AttachmentGrid.qml:98
 #, kde-format
 msgid "Status with Video attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:195
+#: content/ui/PostDelegate/AttachmentGrid.qml:196
 #, kde-format
 msgid "Not available"
 msgstr "ਮੌਜੂਦ ਨਹੀਂ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:323
+#: content/ui/PostDelegate/AttachmentGrid.qml:324
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3399,7 +3399,7 @@ msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "ਮੀਡੀਆ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:327
+#: content/ui/PostDelegate/AttachmentGrid.qml:328
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3407,7 +3407,7 @@ msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "ਮੀਡੀਆ"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:338
+#: content/ui/PostDelegate/AttachmentGrid.qml:339
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Media"
@@ -3623,49 +3623,49 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:342
+#: content/ui/PostDelegate/PostDelegate.qml:345
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "ਸਮੱਗਰੀ ਚੇਤਾਵਨੀ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:453
+#: content/ui/PostDelegate/PostDelegate.qml:455
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "ਜਵਾਬ ਦਿਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:484
+#: content/ui/PostDelegate/PostDelegate.qml:486
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:489
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boosted"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:489
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, fuzzy, kde-format
 #| msgctxt "@item:inmenu Profile Post Filter"
 #| msgid "Posts"
 msgid "Boost"
 msgstr "ਪੋਸਟਾਂ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:511
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
@@ -3673,42 +3673,42 @@ msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, fuzzy, kde-format
 #| msgid "Favourites"
 msgid "Favorited"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, fuzzy, kde-format
 #| msgctxt "Show only favorites"
 #| msgid "Favorites"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:531
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgid "Remove bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:531
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:534
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, fuzzy, kde-format
 #| msgid "Bookmark"
 msgid "Bookmarked"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:534
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:566
+#: content/ui/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3727,6 +3727,23 @@ msgstr ""
 msgctxt "Show more options"
 msgid "More actions"
 msgstr "ਗੱਲਾਂਬਾਤਾਂ"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:71
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:75
+#, kde-format
+msgid "%1 boosted"
+msgstr ""
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:77
+#, kde-format
+msgid "In reply to %1"
+msgstr ""
 
 #: content/ui/PostDelegate/PostMenu.qml:35
 #, fuzzy, kde-format
@@ -3897,23 +3914,6 @@ msgstr ""
 msgid "Quoted post"
 msgstr "ਕੋਈ ਪੋਸਟ ਨਹੀਂ ਹੈ"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgid "Loading"
-msgctxt "@info Loading user that started this interaction"
-msgid "Loading…"
-msgstr "ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
-
-#: content/ui/PostDelegate/UserInteractionLabel.qml:75
-#, kde-format
-msgid "%1 boosted"
-msgstr ""
-
-#: content/ui/PostDelegate/UserInteractionLabel.qml:77
-#, kde-format
-msgid "In reply to %1"
-msgstr ""
-
 #: content/ui/PostDelegate/VideoAttachment.qml:106
 #, kde-format
 msgctxt "@action:button Start media playback"
@@ -3963,7 +3963,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr ""
 
-#: content/ui/SearchDelegate.qml:102 content/ui/SearchView.qml:159
+#: content/ui/SearchDelegate.qml:102 content/ui/SearchView.qml:157
 #, fuzzy, kde-format
 #| msgid "Hashtags"
 msgid "Hashtag"
@@ -4620,25 +4620,25 @@ msgstr "ਖਾਤੇ"
 msgid "Network Proxy"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:56
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgid "Error Log"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:62
+#: content/ui/Settings/TokodonConfigurationView.qml:65
 #, kde-format
 msgid "About Tokodon"
 msgstr "ਟੂਕੂਡੂਨ ਬਾਰੇ"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:65
-#: content/ui/Settings/TokodonConfigurationView.qml:72
+#: content/ui/Settings/TokodonConfigurationView.qml:68
+#: content/ui/Settings/TokodonConfigurationView.qml:75
 #, fuzzy, kde-format
 #| msgid "About KDE"
 msgctxt "@title:group"
 msgid "About"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:69
+#: content/ui/Settings/TokodonConfigurationView.qml:72
 #, kde-format
 msgid "About KDE"
 msgstr "ਕੇਡੀਈ ਬਾਰੇ"
@@ -4767,27 +4767,27 @@ msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:106
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #: content/ui/StatusComposer/StatusComposer.qml:154
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:107
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:113
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
@@ -5483,37 +5483,37 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "ਟਿਕਾਣਾ"
 
-#: utils/texthandler.cpp:177
+#: utils/texthandler.cpp:166
 #, kde-format
 msgid "in the future"
 msgstr "ਭਵਿੱਖ ਵਿੱਚ"
 
-#: utils/texthandler.cpp:179
+#: utils/texthandler.cpp:168
 #, kde-format
 msgid "%1s"
 msgstr "%1ਸ"
 
-#: utils/texthandler.cpp:181
+#: utils/texthandler.cpp:170
 #, kde-format
 msgid "%1m"
 msgstr "%1ਮਿੰ"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:172
 #, kde-format
 msgid "%1h"
 msgstr "%1ਘੰ"
 
-#: utils/texthandler.cpp:194
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "Today"
 msgstr ""
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:185
 #, kde-format
 msgid "%1d"
 msgstr "%1ਦਿ"
 
-#: utils/texthandler.cpp:200
+#: utils/texthandler.cpp:189
 #, fuzzy, kde-format
 #| msgid "1 week ago"
 msgid "1 week ago"
@@ -5521,7 +5521,7 @@ msgid_plural "%1 weeks ago"
 msgstr[0] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਹਫ਼ਤਾ ਪਹਿਲਾਂ"
 
-#: utils/texthandler.cpp:203
+#: utils/texthandler.cpp:192
 #, fuzzy, kde-format
 #| msgid "1 month ago"
 msgid "1 month ago"
@@ -5529,7 +5529,7 @@ msgid_plural "%1 months ago"
 msgstr[0] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 msgstr[1] "1 ਮਹੀਨਾ ਪਹਿਲਾਂ"
 
-#: utils/texthandler.cpp:207
+#: utils/texthandler.cpp:196
 #, fuzzy, kde-format
 #| msgid "1 year ago"
 msgid "1 year ago"

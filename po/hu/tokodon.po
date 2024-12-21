@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:40+0000\n"
+"POT-Creation-Date: 2024-12-21 00:41+0000\n"
 "PO-Revision-Date: 2024-11-17 21:29+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -757,8 +757,8 @@ msgstr "A kiszolgálója még nem tett bejelentést."
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:68
+#: content/ui/PostDelegate/PostInteractionLabel.qml:64
 #: content/ui/PostDelegate/QuotePost.qml:60
-#: content/ui/PostDelegate/UserInteractionLabel.qml:64
 #, kde-format
 msgid "View profile"
 msgstr "Profil megtekintése"
@@ -799,7 +799,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Idővonal vége"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:467
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:473
 #, kde-format
 msgid "Conversations"
 msgstr "Beszélgetések"
@@ -958,7 +958,7 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "Biztosan törölni szeretné ezt a listát?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:510
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:516
 #, kde-format
 msgid "Explore"
 msgstr "Felfedezés"
@@ -1114,7 +1114,7 @@ msgid "Quit Tokodon"
 msgstr "Kilépés a Tokodonból"
 
 #: content/ui/InitialSetup/SetupWelcome.qml:17
-#: content/ui/LoginFlow/WelcomePage.qml:17
+#: content/ui/LoginFlow/WelcomePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -1163,8 +1163,8 @@ msgstr "Nincsenek listák"
 msgid "Lists allow you to categorize who you're following."
 msgstr "A listák segítségével kategorizálhatja, hogy kiket követ."
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:401
-#: content/ui/Main.qml:443 content/ui/Main.qml:458
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:407
+#: content/ui/Main.qml:449 content/ui/Main.qml:464
 #, kde-format
 msgid "No Posts"
 msgstr "Nincsenek bejegyzések"
@@ -1450,13 +1450,13 @@ msgctxt "@action:button Open in external web browser"
 msgid "Open Externally"
 msgstr "Megnyitás külső programmal"
 
-#: content/ui/LoginFlow/WelcomePage.qml:49
+#: content/ui/LoginFlow/WelcomePage.qml:55
 #, kde-format
 msgctxt "@info"
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: content/ui/LoginFlow/WelcomePage.qml:58
+#: content/ui/LoginFlow/WelcomePage.qml:64
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1466,131 +1466,131 @@ msgstr ""
 "Böngéssze a Fediverse-t, és lépjen kapcsolatba másokkal a Mastodonon (és más "
 "kompatibilis szoftverekben)."
 
-#: content/ui/LoginFlow/WelcomePage.qml:74
+#: content/ui/LoginFlow/WelcomePage.qml:80
 #, kde-format
 msgctxt "@action:button Pick a Mastodon server"
 msgid "Pick a Server"
 msgstr "Kiszolgáló kiválasztása"
 
-#: content/ui/LoginFlow/WelcomePage.qml:84
+#: content/ui/LoginFlow/WelcomePage.qml:90
 #, kde-format
 msgctxt "@action:button Use an existing Mastodon account"
 msgid "Use an Existing Account"
 msgstr "Meglévő fiók használata"
 
-#: content/ui/LoginFlow/WelcomePage.qml:99
+#: content/ui/LoginFlow/WelcomePage.qml:105
 #, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/LoginFlow/WelcomePage.qml:113
+#: content/ui/LoginFlow/WelcomePage.qml:119
 #, kde-format
 msgctxt "@info Compatible with Mastodon"
 msgid "Compatible with"
 msgstr "Kompatibilis ezzel:"
 
-#: content/ui/LoginFlow/WelcomePage.qml:123
+#: content/ui/LoginFlow/WelcomePage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Compatible with Mastodon"
 msgstr "Mastodonnal kompatibilis"
 
-#: content/ui/Main.qml:129
+#: content/ui/Main.qml:130
 #, kde-format
 msgctxt "@title"
 msgid "Open As…"
 msgstr "Megnyitás mint…"
 
-#: content/ui/Main.qml:131
+#: content/ui/Main.qml:132
 #, kde-format
 msgctxt "@title"
 msgid "Reply As…"
 msgstr "Válasz mint…"
 
-#: content/ui/Main.qml:133
+#: content/ui/Main.qml:134
 #, kde-format
 msgctxt "@title"
 msgid "Favorite As…"
 msgstr "Kedvencnek jelölés mint…"
 
-#: content/ui/Main.qml:135
+#: content/ui/Main.qml:136
 #, kde-format
 msgctxt "@title"
 msgid "Boost As…"
 msgstr "Megtolás mint…"
 
-#: content/ui/Main.qml:137
+#: content/ui/Main.qml:138
 #, kde-format
 msgctxt "@title"
 msgid "Bookmark As…"
 msgstr "Könyvjelzőzés mint…"
 
-#: content/ui/Main.qml:139
+#: content/ui/Main.qml:140
 #, kde-format
 msgctxt "@title"
 msgid "Unknown Action"
 msgstr "Ismeretlen művelet"
 
-#: content/ui/Main.qml:239
+#: content/ui/Main.qml:245
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Write a New Post"
 msgid "Write a New Post"
 msgstr "Új bejegyzés írása"
 
-#: content/ui/Main.qml:266
+#: content/ui/Main.qml:272
 #, kde-format
 msgid "Write a new post"
 msgstr "Új bejegyzés írása"
 
-#: content/ui/Main.qml:311
+#: content/ui/Main.qml:317
 #, kde-format
 msgid "Reply to post"
 msgstr "Válasz a bejegyzésre"
 
-#: content/ui/Main.qml:394
+#: content/ui/Main.qml:400
 #, kde-format
 msgid "Home"
 msgstr "Kezdőlap"
 
-#: content/ui/Main.qml:402 content/ui/Main.qml:444 content/ui/Main.qml:459
+#: content/ui/Main.qml:408 content/ui/Main.qml:450 content/ui/Main.qml:465
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "Elég csendesnek tűnik most, próbáljon meg posztolni valamit!"
 
-#: content/ui/Main.qml:411 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:417 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Értesítések"
 
-#: content/ui/Main.qml:423
+#: content/ui/Main.qml:429
 #, kde-format
 msgid "Follow Requests"
 msgstr "Követési kérések"
 
-#: content/ui/Main.qml:436
+#: content/ui/Main.qml:442
 #, kde-format
 msgid "Local"
 msgstr "Helyi"
 
-#: content/ui/Main.qml:451
+#: content/ui/Main.qml:457
 #, kde-format
 msgid "Global"
 msgstr "Globális"
 
-#: content/ui/Main.qml:478 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:484 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "Kedvencek"
 
-#: content/ui/Main.qml:485
+#: content/ui/Main.qml:491
 #, kde-format
 msgid "No Favorites"
 msgstr "Nincsenek kedvencek"
 
-#: content/ui/Main.qml:486
+#: content/ui/Main.qml:492
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1599,17 +1599,17 @@ msgstr ""
 "Az Ön által kedvelt bejegyzések itt fognak megjelenni. Ha értékeli valakinek "
 "a bejegyzését, jelölje kedvencnek!"
 
-#: content/ui/Main.qml:494
+#: content/ui/Main.qml:500
 #, kde-format
 msgid "Bookmarks"
 msgstr "Könyvjelzők"
 
-#: content/ui/Main.qml:501
+#: content/ui/Main.qml:507
 #, kde-format
 msgid "No Bookmarks"
 msgstr "Nincsenek könyvjelzők"
 
-#: content/ui/Main.qml:502
+#: content/ui/Main.qml:508
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1618,59 +1618,59 @@ msgstr ""
 "A könyvjelzőzött bejegyzések itt jelennek meg. A könyvjelzők mindig privátok "
 "maradnak, még a bejegyzés szerzője számára is."
 
-#: content/ui/Main.qml:521
+#: content/ui/Main.qml:527
 #, kde-format
 msgid "Following"
 msgstr "Követett"
 
-#: content/ui/Main.qml:532
+#: content/ui/Main.qml:538
 #, kde-format
 msgid "Search"
 msgstr "Keresés"
 
-#: content/ui/Main.qml:555
+#: content/ui/Main.qml:561
 #, kde-format
 msgid "Lists"
 msgstr "Listák"
 
-#: content/ui/Main.qml:566 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:572 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "Profil"
 
-#: content/ui/Main.qml:581
+#: content/ui/Main.qml:587
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "Hibakeresés"
 
-#: content/ui/Main.qml:591
+#: content/ui/Main.qml:597
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Moderációs eszközök"
 
-#: content/ui/Main.qml:598
+#: content/ui/Main.qml:604
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: content/ui/Main.qml:690
+#: content/ui/Main.qml:696
 #, fuzzy, kde-format
 #| msgid "Unfollow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Követés leállítása"
 
-#: content/ui/Main.qml:690
+#: content/ui/Main.qml:696
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Követés"
 
-#: content/ui/Main.qml:737
+#: content/ui/Main.qml:744
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2955,13 +2955,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Tartalmi figyelmeztetés</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:348
+#: content/ui/PostDelegate/PostDelegate.qml:351
 #, kde-format
 msgid "Show Less"
 msgstr "Kevesebb"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:348
+#: content/ui/PostDelegate/PostDelegate.qml:351
 #, kde-format
 msgid "Show More"
 msgstr "Több"
@@ -3212,39 +3212,39 @@ msgstr "Egy szavazás véget ért"
 msgid "%1 updated their post"
 msgstr "%1 frissítette a bejegyzését"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:90
+#: content/ui/PostDelegate/AttachmentGrid.qml:94
 #, kde-format
 msgid "Status with image attachment"
 msgstr "Állapot képmelléklettel"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:92
+#: content/ui/PostDelegate/AttachmentGrid.qml:96
 #, kde-format
 msgid "Status with GifV attachment"
 msgstr "Állapot GifV melléklettel"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:94
+#: content/ui/PostDelegate/AttachmentGrid.qml:98
 #, kde-format
 msgid "Status with Video attachment"
 msgstr "Állapot videómelléklettel"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:195
+#: content/ui/PostDelegate/AttachmentGrid.qml:196
 #, kde-format
 msgid "Not available"
 msgstr "Nem érhető el"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:323
+#: content/ui/PostDelegate/AttachmentGrid.qml:324
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "Média elrejtése"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:327
+#: content/ui/PostDelegate/AttachmentGrid.qml:328
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "Média elrejtése"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:338
+#: content/ui/PostDelegate/AttachmentGrid.qml:339
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "No Media"
@@ -3440,81 +3440,81 @@ msgstr ""
 "Biztosan ismét piszkozattá szeretné tenni ezt a bejegyzést? Ezzel törli az "
 "eredeti bejegyzést."
 
-#: content/ui/PostDelegate/PostDelegate.qml:342
+#: content/ui/PostDelegate/PostDelegate.qml:345
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Tartalmi figyelmeztetés</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:453
+#: content/ui/PostDelegate/PostDelegate.qml:455
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Válasz"
 
-#: content/ui/PostDelegate/PostDelegate.qml:480
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Nem lehet megtolni közvetlen üzeneteket"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Nem lehet megtolni privát bejegyzéseket"
 
-#: content/ui/PostDelegate/PostDelegate.qml:484
+#: content/ui/PostDelegate/PostDelegate.qml:486
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Megtolás"
 
-#: content/ui/PostDelegate/PostDelegate.qml:489
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Boosted"
 msgstr "Megtolt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:489
+#: content/ui/PostDelegate/PostDelegate.qml:491
 #, kde-format
 msgid "Boost"
 msgstr "Megtolás"
 
-#: content/ui/PostDelegate/PostDelegate.qml:509
+#: content/ui/PostDelegate/PostDelegate.qml:511
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Kedvencnek jelölés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, kde-format
 msgid "Favorited"
 msgstr "Kedvencnek jelölt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:512
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, kde-format
 msgid "Favorite"
 msgstr "Kedvencnek jelölés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:531
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Könyvjelző eltávolítása"
 
-#: content/ui/PostDelegate/PostDelegate.qml:531
+#: content/ui/PostDelegate/PostDelegate.qml:533
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Könyvjelzőzés"
 
-#: content/ui/PostDelegate/PostDelegate.qml:534
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Bookmarked"
 msgstr "Könyvjelzőzve"
 
-#: content/ui/PostDelegate/PostDelegate.qml:534
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Bookmark"
 msgstr "Könyvjelző"
 
-#: content/ui/PostDelegate/PostDelegate.qml:566
+#: content/ui/PostDelegate/PostDelegate.qml:568
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3534,6 +3534,22 @@ msgstr "Szerkesztve: %1"
 msgctxt "Show more options"
 msgid "More actions"
 msgstr "További műveletek"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:71
+#, kde-format
+msgctxt "@info Loading user that started this interaction"
+msgid "Loading…"
+msgstr "Betöltés…"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:75
+#, kde-format
+msgid "%1 boosted"
+msgstr "%1 megtolva"
+
+#: content/ui/PostDelegate/PostInteractionLabel.qml:77
+#, kde-format
+msgid "In reply to %1"
+msgstr "Válasz neki: %1"
 
 #: content/ui/PostDelegate/PostMenu.qml:35
 #, kde-format
@@ -3685,22 +3701,6 @@ msgstr "%1 bejegyzése"
 msgid "Quoted post"
 msgstr "Idézett bejegyzés"
 
-#: content/ui/PostDelegate/UserInteractionLabel.qml:71
-#, kde-format
-msgctxt "@info Loading user that started this interaction"
-msgid "Loading…"
-msgstr "Betöltés…"
-
-#: content/ui/PostDelegate/UserInteractionLabel.qml:75
-#, kde-format
-msgid "%1 boosted"
-msgstr "%1 megtolva"
-
-#: content/ui/PostDelegate/UserInteractionLabel.qml:77
-#, kde-format
-msgid "In reply to %1"
-msgstr "Válasz neki: %1"
-
 #: content/ui/PostDelegate/VideoAttachment.qml:106
 #, kde-format
 msgctxt "@action:button Start media playback"
@@ -3749,7 +3749,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: content/ui/SearchDelegate.qml:102 content/ui/SearchView.qml:159
+#: content/ui/SearchDelegate.qml:102 content/ui/SearchView.qml:157
 #, kde-format
 msgid "Hashtag"
 msgstr "Hashtag"
@@ -4415,24 +4415,24 @@ msgstr "Fiókok"
 msgid "Network Proxy"
 msgstr "Hálózati proxy"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:56
+#: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgid "Error Log"
 msgstr ""
 
-#: content/ui/Settings/TokodonConfigurationView.qml:62
+#: content/ui/Settings/TokodonConfigurationView.qml:65
 #, kde-format
 msgid "About Tokodon"
 msgstr "A Tokodon névjegye"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:65
-#: content/ui/Settings/TokodonConfigurationView.qml:72
+#: content/ui/Settings/TokodonConfigurationView.qml:68
+#: content/ui/Settings/TokodonConfigurationView.qml:75
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Névjegy"
 
-#: content/ui/Settings/TokodonConfigurationView.qml:69
+#: content/ui/Settings/TokodonConfigurationView.qml:72
 #, kde-format
 msgid "About KDE"
 msgstr "A KDE névjegye"
@@ -4554,7 +4554,7 @@ msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Discard Draft"
@@ -4562,21 +4562,21 @@ msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "Piszkozat eldobása"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:106
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #: content/ui/StatusComposer/StatusComposer.qml:154
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Piszkozat eldobása"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:107
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Biztosan el szeretné dobni a piszkozatot?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:113
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Discard Draft"
@@ -5242,51 +5242,51 @@ msgctxt "The location being downloaded to"
 msgid "Destination"
 msgstr "Cél"
 
-#: utils/texthandler.cpp:177
+#: utils/texthandler.cpp:166
 #, kde-format
 msgid "in the future"
 msgstr "a jövőben"
 
-#: utils/texthandler.cpp:179
+#: utils/texthandler.cpp:168
 #, kde-format
 msgid "%1s"
 msgstr "%1 másodperc"
 
-#: utils/texthandler.cpp:181
+#: utils/texthandler.cpp:170
 #, kde-format
 msgid "%1m"
 msgstr "%1 perc"
 
-#: utils/texthandler.cpp:183
+#: utils/texthandler.cpp:172
 #, kde-format
 msgid "%1h"
 msgstr "%1 óra"
 
-#: utils/texthandler.cpp:194
+#: utils/texthandler.cpp:183
 #, kde-format
 msgid "Today"
 msgstr "Ma"
 
-#: utils/texthandler.cpp:196
+#: utils/texthandler.cpp:185
 #, kde-format
 msgid "%1d"
 msgstr "%1 nap"
 
-#: utils/texthandler.cpp:200
+#: utils/texthandler.cpp:189
 #, kde-format
 msgid "1 week ago"
 msgid_plural "%1 weeks ago"
 msgstr[0] "1 héttel ezelőtt"
 msgstr[1] "%1 héttel ezelőtt"
 
-#: utils/texthandler.cpp:203
+#: utils/texthandler.cpp:192
 #, kde-format
 msgid "1 month ago"
 msgid_plural "%1 months ago"
 msgstr[0] "1 hónappal ezelőtt"
 msgstr[1] "%1 hónappal ezelőtt"
 
-#: utils/texthandler.cpp:207
+#: utils/texthandler.cpp:196
 #, kde-format
 msgid "1 year ago"
 msgid_plural "%1 years ago"
