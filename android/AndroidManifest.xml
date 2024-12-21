@@ -13,7 +13,8 @@
 
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
-    <!-- %%INSERT_PERMISSIONS -->
+    <!-- Qt adds way too many unnessecary permissions, so let's declare them manually: -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- %%INSERT_FEATURES -->
 
     <application android:name="org.qtproject.qt.android.bindings.QtApplication" android:label="Tokodon" android:icon="@mipmap/ic_launcher">
