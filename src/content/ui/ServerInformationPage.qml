@@ -47,6 +47,7 @@ FormCard.FormCardPage {
 
                 FormCard.FormDelegateSeparator {
                     visible: index !== 0
+                    opacity: 0.5
                 }
 
                 FormCard.FormTextDelegate {
