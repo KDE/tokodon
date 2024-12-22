@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-21 00:41+0000\n"
-"PO-Revision-Date: 2024-11-30 09:49+0100\n"
+"PO-Revision-Date: 2024-12-21 11:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:593
 #, kde-format
@@ -130,12 +130,13 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "Twój %1 #FediWrapped czeka!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Udostępnij swoje wyróżnione wydarzenia i pamiętne chwile na Mastodonie!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -162,22 +163,19 @@ msgstr "Zapisano szczegóły konta"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"Ten serwer nie ustala żadnych zasad. Odwiedź ich stronę po więcej szczegółów."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Zgłoś wpis"
+msgstr "Wpis roboczy"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Usuń wpis"
+msgstr "Wpis planowy"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -567,20 +565,16 @@ msgid "Featured Users"
 msgstr "Wyróżnieni użytkownicy"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Usuń wpis"
+msgstr "Wpis planowy"
 
 #: content/ui/AccountHeader.qml:405
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Zgłoś wpis"
+msgstr "Wpis roboczy"
 
 #: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
@@ -608,7 +602,7 @@ msgstr "Dołączył"
 #: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "Posiadanie tego odnośnika zostało sprawdzone dnia %1"
 
 #: content/ui/AccountHeader.qml:613
 #, kde-format
@@ -702,8 +696,7 @@ msgid "All"
 msgstr "Wszystkie"
 
 #: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
 msgstr "Profil"
@@ -891,8 +884,7 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "Wpisy na liście wyłącznych są wykluczone z domowej osi czasu."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "Ulubione"
@@ -900,7 +892,7 @@ msgstr "Ulubione"
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "Ta lista pokaże się na pasku bocznym."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1180,6 +1172,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"Nie ma żadnego wpisu od użytkowników na twojej liście. Na tej liście będą "
+"pokazywać się tylko nowe wpisy."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1196,18 +1190,17 @@ msgstr "Uwierzytelnianie"
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
+"Aby kontynuować, musisz zezwolić Tokodonowi na dostęp do twojego konta."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Otwórz odnośnik uwierzytelniający"
+msgstr "Otwórz stronę uwierzytelniającą"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Skopiuj odnośnik uwierzytelniający"
+msgstr "Skopiuj odnośnik do strony uwierzytelniającej"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1420,10 +1413,9 @@ msgid "This server is closed for registration: %1"
 msgstr "Ten serwer jest zamknięty na rejestrację: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "Ten serwer jest zamknięty na rejestrację: %1"
+msgstr "Ten serwer zamknął się na rejestrację i nie podał powodu."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -1661,15 +1653,13 @@ msgid "Settings"
 msgstr "Ustawienia"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Przestań obserwować"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Obserwuj"
@@ -3161,12 +3151,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"Twój %1 #FediWrapped czeka! Udostępnij swoje wyróżnione wydarzenia i "
+"pamiętne chwile na Mastodonie!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Obejrzyj #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3776,9 +3768,7 @@ msgid "Search for users, tags and posts"
 msgstr "Poszukaj użytkowników, znaczników i wpisów"
 
 #: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "Obwieszczenia"
@@ -4008,25 +3998,25 @@ msgstr "Edytuj profil"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "Dziennik błędów"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "Wyczyść wszystko"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "Skopiuj do schowka"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "Brak błędów"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4309,17 +4299,15 @@ msgstr ""
 "użytkowników lub oni cię obserwują."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Zgłoś"
+msgstr "Roczne sprawozdanie"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "Gdy otrzymasz swój #FediWrapped na koniec roku."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4360,16 +4348,13 @@ msgid "Fields"
 msgstr "Pola"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Usuń"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Dodaj"
@@ -4412,7 +4397,7 @@ msgstr "Pośrednik sieciowy"
 #: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "Dziennik błędów"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:65
 #, kde-format
@@ -4540,21 +4525,19 @@ msgstr "Usuń"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Szkic"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "Zaplanowany na %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
-msgstr "Porzuć szkic"
+msgstr "Porzuć"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #: content/ui/StatusComposer/StatusComposer.qml:154
@@ -4571,12 +4554,10 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Czy na pewno porzucić ten szkic?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
-msgstr "Porzuć szkic"
+msgstr "Porzuć"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -4606,7 +4587,7 @@ msgstr "Napisz nowy wpis"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Robocze"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4622,34 +4603,28 @@ msgstr ""
 "wyniki."
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Zapisz"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Anuluj"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Usuń wpis"
+msgstr "Zaplanuj wpis"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Ustaw plan"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4811,12 +4786,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> znaki"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Usuń wpis"
+msgstr "Harmonogram"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
