@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-21 00:41+0000\n"
-"PO-Revision-Date: 2024-12-09 18:36+0100\n"
+"POT-Creation-Date: 2024-12-23 00:40+0000\n"
+"PO-Revision-Date: 2024-12-22 17:58+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:593
 #, kde-format
@@ -131,12 +131,13 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "Zure %1 #FediWrapped zain duzu!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
+"Urteko zure aipagarrienak eta momentu gogoangarriak Mastodon-en aurkeztu!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -169,20 +170,16 @@ msgstr ""
 "informazio gehiago lortzeko."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Eman postaren berri"
+msgstr "Posta-zirriborroak"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Ezabatu posta"
+msgstr "Antolatutako postak"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -572,20 +569,16 @@ msgid "Featured Users"
 msgstr "Nabarmendutako erabiltzaileak"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Ezabatu posta"
+msgstr "Antolatutako postak"
 
 #: content/ui/AccountHeader.qml:405
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Eman postaren berri"
+msgstr "Posta-zirriborroak"
 
 #: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
@@ -613,7 +606,7 @@ msgstr "Batuta"
 #: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "Esteka honen jabetza %1(e)an egiaztatu da"
 
 #: content/ui/AccountHeader.qml:613
 #, kde-format
@@ -894,16 +887,15 @@ msgstr ""
 "Zerrenda esklusibo bateko postak etxeko denbora-lerrotik kanpo uzten dira."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
-msgstr "Gogokoena"
+msgstr "Gogokoa"
 
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "Zerrenda hau alboko-barran azalduko da."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1184,6 +1176,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"Zerrenda honetan ez dago erabiltzaileen postarik. Posta berriak bakarrik "
+"agertuko dira zerrenda batean."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1199,19 +1193,17 @@ msgstr "Baimen-ematea"
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "Jarraitzeko, Tokodon zure kontuan sartzera baimendu behar duzu."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Ireki baimena emateko esteka"
+msgstr "Ireki baimena emateko orrialdea"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Kopiatu baimena emateko esteka"
+msgstr "Kopiatu esteka baimena emateko orrialdera"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1394,7 +1386,7 @@ msgid "Rules"
 msgstr "Arauak"
 
 #: content/ui/LoginFlow/RulesPage.qml:47
-#: content/ui/ServerInformationPage.qml:29
+#: content/ui/ServerInformationPage.qml:31
 #, kde-format
 msgctxt "@title:group"
 msgid "Rules"
@@ -1668,15 +1660,13 @@ msgid "Settings"
 msgstr "Ezarpenak"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
-msgstr " jarraitzeari utzi"
+msgstr "Jarraitzeari utzi"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Jarraitu"
@@ -3170,12 +3160,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"Zure %1 #FediWrapped zain duzu! Urteko zure aipagarrienak eta momentu "
+"gogoangarriak Mastodon-en aurkeztu!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Ikusi #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3784,10 +3776,8 @@ msgstr "Ez dago bilaketaren emaitzarik"
 msgid "Search for users, tags and posts"
 msgstr "Bilatu erabiltzaileak, etiketak eta postak"
 
-#: content/ui/ServerInformationPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#: content/ui/ServerInformationPage.qml:25
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "Iragarpenak"
@@ -4321,17 +4311,15 @@ msgstr ""
 "jarraipena egiten diezun erabiltzaileak edo jarraitzen zaituztenak dituena."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Jakinarazi"
+msgstr "Urteko txostena"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "Urte bukaeran zure #FediWrapped jasotzen duzunean."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4370,16 +4358,13 @@ msgid "Fields"
 msgstr "Eremuak"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Kendu"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Gehitu"
@@ -4551,21 +4536,19 @@ msgstr "Kendu"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Zirriborroa"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "%1(e)rako antolatua"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
-msgstr "Baztertu zirriborroa"
+msgstr "Baztertu"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #: content/ui/StatusComposer/StatusComposer.qml:154
@@ -4582,12 +4565,10 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Ziur zaude zure zirriborroa baztertu nahi duzula?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
-msgstr "Baztertu zirriborroa"
+msgstr "Baztertu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:61
 #, kde-format
@@ -4617,7 +4598,7 @@ msgstr "Idatzi posta berri bat"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Zirriborroak"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4633,34 +4614,28 @@ msgstr ""
 "ezabatuko dira."
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Gorde"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Utzi"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Ezabatu posta"
+msgstr "Posta antolatu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Antolaketa ezarri"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4822,12 +4797,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karaktere"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Ezabatu posta"
+msgstr "Antolatu"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
