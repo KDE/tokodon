@@ -54,6 +54,10 @@ Kirigami.ScrollablePage {
         account.setToken(authCode);
     }
 
+    KQuickControlsAddons.Clipboard {
+        id: clipboard
+    }
+
     ColumnLayout {
         id: layout
 
@@ -75,7 +79,9 @@ Kirigami.ScrollablePage {
                 text: i18n("To continue, you must authorize Tokodon to access your account.")
             }
 
-            FormCard.FormDelegateSeparator { above: openLink }
+            FormCard.FormDelegateSeparator {
+                above: openLink
+            }
 
             FormCard.FormButtonDelegate {
                 id: openLink
@@ -84,14 +90,17 @@ Kirigami.ScrollablePage {
                 onClicked: Qt.openUrlExternally(account.authorizeUrl)
             }
 
-            FormCard.FormDelegateSeparator { above: openLink; below: copyLink }
+            FormCard.FormDelegateSeparator {
+                above: openLink
+                below: copyLink
+            }
 
             FormCard.FormButtonDelegate {
                 id: copyLink
                 text: i18n("Copy Link to Authorization Page")
                 icon.name: "edit-copy"
                 onClicked: {
-                    KQuickControlsAddons.Clipboard.saveText(account.authorizeUrl)
+                    clipboard.content = account.authorizeUrl;
                     applicationWindow().showPassiveNotification(i18n("Link copied."));
                 }
             }
