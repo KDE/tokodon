@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-23 00:40+0000\n"
-"PO-Revision-Date: 2024-11-28 23:15+0100\n"
+"PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -132,12 +132,12 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "내 %1 #FediWrapped 결산이 기다리고 있습니다!"
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "마스토돈에서의 올해의 하이라이트와 기억에 남는 순간을 발견하세요!"
 
 #: account/notificationhandler.cpp:156
 #, kde-kuit-format
@@ -164,22 +164,20 @@ msgstr "계정 정보 저장됨"
 msgid ""
 "This server provided no rules. Please see their website for more information."
 msgstr ""
+"이 서버에서는 규칙을 지정하지 않았습니다. 더 많은 정보는 웹사이트를 참조하십"
+"시오."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "게시물 신고"
+msgstr "초안 게시물"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "게시물 삭제"
+msgstr "예약된 게시물"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -560,20 +558,16 @@ msgid "Featured Users"
 msgstr "추천 사용자"
 
 #: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "게시물 삭제"
+msgstr "예약된 게시물"
 
 #: content/ui/AccountHeader.qml:405
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "게시물 신고"
+msgstr "초안 게시물"
 
 #: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
 #: content/ui/PostDelegate/PostMenu.qml:43
@@ -601,7 +595,7 @@ msgstr "가입 시간"
 #: content/ui/AccountHeader.qml:536
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "이 링크의 소유권이 %1에 확인됨"
 
 #: content/ui/AccountHeader.qml:613
 #, kde-format
@@ -690,8 +684,7 @@ msgid "All"
 msgstr "모두"
 
 #: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
 msgstr "프로필"
@@ -878,8 +871,7 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "제외 목록에 포함된 게시물은 홈 타임라인에서 제외됩니다."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "좋아요"
@@ -887,7 +879,7 @@ msgstr "좋아요"
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "이 목록은 사이드바에 표시됩니다."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1163,6 +1155,7 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"내 목록에 있는 사용자의 새 게시물이 없습니다. 새 게시물만 목록에 나타납니다."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1178,19 +1171,17 @@ msgstr "인증"
 #: content/ui/LoginFlow/BaseAuthorization.qml:75
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
-msgstr ""
+msgstr "계속 진행하려면 Tokodon이 계정에 접근할 수 있도록 허용해야 합니다."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:82
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "인증 링크 열기"
+msgstr "인증 페이지 열기"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:91
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "인증 링크 복사"
+msgstr "인증 페이지 링크 복사"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:95
 #, kde-format
@@ -1401,10 +1392,9 @@ msgid "This server is closed for registration: %1"
 msgstr "이 서버의 등록이 비활성화되어 있습니다: %1"
 
 #: content/ui/LoginFlow/ServersPage.qml:39
-#, fuzzy, kde-format
-#| msgid "This server is closed for registration: %1"
+#, kde-format
 msgid "This server is closed for registration, and did not provide a reason."
-msgstr "이 서버의 등록이 비활성화되어 있습니다: %1"
+msgstr "이 서버의 등록이 비활성화되어 있습니다. 이유를 제공하지 않았습니다."
 
 #: content/ui/LoginFlow/ServersPage.qml:101
 #, kde-format
@@ -1520,9 +1510,7 @@ msgid "Unknown Action"
 msgstr "알 수 없는 작업"
 
 #: content/ui/Main.qml:245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Write a New Post"
+#, kde-format
 msgid "Write a New Post"
 msgstr "새 게시물 쓰기"
 
@@ -1644,15 +1632,13 @@ msgid "Settings"
 msgstr "설정"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "팔로우 해제"
 
 #: content/ui/Main.qml:696
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "팔로우"
@@ -3055,12 +3041,10 @@ msgid "Configure Notifications…"
 msgstr "알림 설정…"
 
 #: content/ui/NotificationPage.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Notifications"
+#, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
-msgstr "알림"
+msgstr "알림 설정"
 
 #: content/ui/NotificationPage.qml:46
 #, kde-format
@@ -3140,12 +3124,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"내 %1 #FediWrapped 결산이 기다리고 있습니다! 마스토돈에서의 올해의 하이라이트"
+"와 기억에 남는 순간을 발견하세요!"
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "#FediWrapped 보기"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3751,9 +3737,7 @@ msgid "Search for users, tags and posts"
 msgstr "사용자, 태그, 게시물 검색"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "공지"
@@ -3982,25 +3966,25 @@ msgstr "프로필 편집"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Log"
-msgstr ""
+msgstr "오류 로그"
 
 #: content/ui/Settings/ErrorLogPage.qml:22
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Clear All"
-msgstr ""
+msgstr "모두 지우기"
 
 #: content/ui/Settings/ErrorLogPage.qml:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy To Clipboard"
-msgstr ""
+msgstr "클립보드에 복사"
 
 #: content/ui/Settings/ErrorLogPage.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "No Errors"
-msgstr ""
+msgstr "오류 없음"
 
 #: content/ui/Settings/NetworkProxyPage.qml:15
 #, kde-format
@@ -4278,17 +4262,15 @@ msgstr ""
 "또는 내 서버에서 중재 결정을 내렸습니다."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "신고"
+msgstr "연간 보고"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "연말에 #FediWrapped 보고서를 받을 때입니다."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4331,16 +4313,13 @@ msgid "Fields"
 msgstr "필드"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "삭제"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "추가"
@@ -4383,7 +4362,7 @@ msgstr "네트워크 프록시"
 #: content/ui/Settings/TokodonConfigurationView.qml:59
 #, kde-format
 msgid "Error Log"
-msgstr ""
+msgstr "오류 로그"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:65
 #, kde-format
@@ -4511,21 +4490,19 @@ msgstr "삭제"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "초안"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:63
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "%1에 예정됨"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
-msgstr "임시 저장 삭제"
+msgstr "삭제"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
 #: content/ui/StatusComposer/StatusComposer.qml:154
@@ -4542,9 +4519,7 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:111
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "임시 저장 삭제"
@@ -4577,7 +4552,7 @@ msgstr "새 게시물 쓰기"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "초안"
 
 #: content/ui/StatusComposer/StatusComposer.qml:81
 #, kde-format
@@ -4591,34 +4566,28 @@ msgid "Saving an edited post that has a poll will clear existing results."
 msgstr "투표가 부착된 편집된 게시물을 저장하면 기존 결과를 삭제합니다."
 
 #: content/ui/StatusComposer/StatusComposer.qml:161
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "저장"
 
 #: content/ui/StatusComposer/StatusComposer.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "취소"
 
 #: content/ui/StatusComposer/StatusComposer.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "게시물 삭제"
+msgstr "게시물 예약"
 
 #: content/ui/StatusComposer/StatusComposer.qml:194
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "예약 설정"
 
 #: content/ui/StatusComposer/StatusComposer.qml:310
 #, kde-format
@@ -4780,12 +4749,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b>글자"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "게시물 삭제"
+msgstr "예약"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
@@ -5016,15 +4983,13 @@ msgid "Home"
 msgstr "홈"
 
 #: timeline/maintimelinemodel.cpp:31
-#, fuzzy, kde-format
-#| msgid "Local"
+#, kde-format
 msgctxt "@title"
 msgid "Local"
 msgstr "로컬"
 
 #: timeline/maintimelinemodel.cpp:33
-#, fuzzy, kde-format
-#| msgid "Global"
+#, kde-format
 msgctxt "@title"
 msgid "Global"
 msgstr "연합"
