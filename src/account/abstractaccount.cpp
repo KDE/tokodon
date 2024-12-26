@@ -14,6 +14,7 @@
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QUrlQuery>
+#include <qmimedatabase.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -29,6 +30,19 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
     , m_preferences(new Preferences(this))
     , m_notificationFilteringPolicy(new NotificationFilteringPolicy(this))
     , m_maxMediaAttachments(4)
+    , m_attachmentFilterStrings({i18n("All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)"),
+                                 i18n("JPEG image (*.jpg *.jpeg)"),
+                                 i18n("PNG image (*.png)"),
+                                 i18n("GIF image (*.gif)"),
+                                 i18n("WebP image (*.webp)"),
+                                 i18n("HEIC image(*.heic)"),
+                                 i18n("HEIF image (*.heif)"),
+                                 i18n("AVIF image (*.avif)"),
+                                 i18n("WebM video (*.webm)"),
+                                 i18n("MPEG-4 video (*.mp4)"),
+                                 i18n("M4V video (*.m4v)"),
+                                 i18n("QuickTime video (*.mov)"),
+                                 i18n("All files (*)")})
 {
     // Test code uses a blank instance URI
     if (!AccountManager::instance().testMode()) {
@@ -446,6 +460,26 @@ void AbstractAccount::fetchInstanceMetadata()
                     m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
                     m_maxMediaAttachments = statusConfigObj["max_media_attachments"_L1].toInt();
                 }
+
+                if (configObj.contains("media_attachments"_L1)) {
+                    const auto statusConfigObj = configObj["media_attachments"_L1].toObject();
+                    if (statusConfigObj.contains("supported_mime_types"_L1)) {
+                        m_attachmentFilterStrings.clear();
+                        QStringList allGlobs;
+                        QMimeDatabase db;
+                        for (const auto &mimeTypeName : statusConfigObj["supported_mime_types"_L1].toArray()) {
+                            // FIXME: Some mimetypes such as audio/webm do not have a filter string for some reason.
+                            const auto mimeType = db.mimeTypeForName(mimeTypeName.toString());
+                            if (mimeType.isValid() && !mimeType.filterString().isEmpty() && !m_attachmentFilterStrings.contains(mimeType.filterString())) {
+                                m_attachmentFilterStrings.push_back(mimeType.filterString());
+                                allGlobs.append(mimeType.globPatterns());
+                            }
+                        }
+
+                        m_attachmentFilterStrings.prepend(i18n("All supported formats (%1)", allGlobs.join(QLatin1Char(' '))));
+                        m_attachmentFilterStrings.push_back(i18n("All files (*)"));
+                    }
+                }
             }
 
             // Pleroma/Akkoma may report maximum post characters here, instead
@@ -638,6 +672,11 @@ int AbstractAccount::unreadNotificationsCount() const
 int AbstractAccount::maxMediaAttachments() const
 {
     return m_maxMediaAttachments;
+}
+
+QStringList AbstractAccount::attachmentFilterStrings() const
+{
+    return m_attachmentFilterStrings;
 }
 
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)

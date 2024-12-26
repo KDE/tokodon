@@ -462,19 +462,7 @@ Kirigami.ScrollablePage {
                                 title: i18nc("@title:window", "Choose a File")
                                 onAccepted: root.uploadFile(fileDialog.selectedFile);
                                 selectedNameFilter.index: 0
-                                nameFilters: [i18n("All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *.webm *.mp4 *.m4v *.mov)"),
-                                    i18n("JPEG image (*.jpg *.jpeg)"),
-                                    i18n("PNG image (*.png)"),
-                                    i18n("GIF image (*.gif)"),
-                                    i18n("WebP image (*.webp)"),
-                                    i18n("HEIC image(*.heic)"),
-                                    i18n("HEIF image (*.heif)"),
-                                    i18n("AVIF image (*.avif)"),
-                                    i18n("WebM video (*.webm)"),
-                                    i18n("MPEG-4 video (*.mp4)"),
-                                    i18n("M4V video (*.m4v)"),
-                                    i18n("QuickTime video (*.mov)"),
-                                    i18n("All files (*)")]
+                                nameFilters: AccountManager.selectedAccount.attachmentFilterStrings
                             }
                             QQC2.ToolTip.text: i18nc("@info:tooltip", "Attach file")
                             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay

@@ -46,6 +46,7 @@ class AbstractAccount : public QObject
     Q_PROPERTY(int unreadNotificationsCount READ unreadNotificationsCount NOTIFY unreadNotificationsCountChanged)
     Q_PROPERTY(NotificationFilteringPolicy *notificationFilteringPolicy READ notificationFilteringPolicy CONSTANT)
     Q_PROPERTY(int maxMediaAttachments READ maxMediaAttachments CONSTANT)
+    Q_PROPERTY(QStringList attachmentFilterStrings READ attachmentFilterStrings CONSTANT)
 
 public:
     /**
@@ -429,6 +430,8 @@ public:
 
     [[nodiscard]] int maxMediaAttachments() const;
 
+    [[nodiscard]] QStringList attachmentFilterStrings() const;
+
     /**
      * @brief Update the push notification rules.
      */
@@ -723,6 +726,7 @@ protected:
     int m_unreadNotificationsCount = 0;
     QString m_redirectUri;
     int m_maxMediaAttachments;
+    QStringList m_attachmentFilterStrings;
 
     // updates and notifications
     void handleNotification(const QJsonDocument &doc);
