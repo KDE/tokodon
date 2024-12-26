@@ -59,7 +59,7 @@ QHash<int, QByteArray> AttachmentEditorModel::roleNames() const
 
 QNetworkReply *AttachmentEditorModel::append(const QString &filename)
 {
-    if (rowCount({}) >= 4) {
+    if (rowCount({}) >= m_account->maxMediaAttachments()) {
         return nullptr;
     }
 

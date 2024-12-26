@@ -453,7 +453,7 @@ Kirigami.ScrollablePage {
                         spacing: Kirigami.Units.mediumSpacing
 
                         QQC2.ToolButton {
-                            enabled: backend.attachmentEditorModel.count < 4 && !addPool.checked
+                            enabled: backend.attachmentEditorModel.count < AccountManager.selectedAccount.maxMediaAttachments && !addPool.checked
                             icon.name: "mail-attachment-symbolic"
                             onClicked: fileDialog.open()
                             FileDialog {

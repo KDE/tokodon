@@ -28,6 +28,7 @@ AbstractAccount::AbstractAccount(const QString &instanceUri, QObject *parent)
     , m_identity(std::make_shared<Identity>())
     , m_preferences(new Preferences(this))
     , m_notificationFilteringPolicy(new NotificationFilteringPolicy(this))
+    , m_maxMediaAttachments(4)
 {
     // Test code uses a blank instance URI
     if (!AccountManager::instance().testMode()) {
@@ -443,6 +444,7 @@ void AbstractAccount::fetchInstanceMetadata()
                     const auto statusConfigObj = configObj["statuses"_L1].toObject();
                     m_maxPostLength = statusConfigObj["max_characters"_L1].toInt();
                     m_charactersReservedPerUrl = statusConfigObj["characters_reserved_per_url"_L1].toInt();
+                    m_maxMediaAttachments = statusConfigObj["max_media_attachments"_L1].toInt();
                 }
             }
 
@@ -631,6 +633,11 @@ void AbstractAccount::resetUnreadNotificationsCount()
 int AbstractAccount::unreadNotificationsCount() const
 {
     return m_unreadNotificationsCount;
+}
+
+int AbstractAccount::maxMediaAttachments() const
+{
+    return m_maxMediaAttachments;
 }
 
 void AbstractAccount::followAccount(Identity *identity, bool reblogs, bool notify)
