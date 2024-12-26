@@ -133,7 +133,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         break;
 
     default:
-        Q_UNREACHABLE();
+        return;
     }
 
     if (notification->post() != nullptr) {
