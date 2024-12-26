@@ -82,6 +82,10 @@ QHash<int, QByteArray> FavoriteListsModel::roleNames() const
 
 void FavoriteListsModel::reloadLists()
 {
+    if (AccountManager::instance().testMode()) {
+        return;
+    }
+
     beginResetModel();
     m_favoritedLists.clear();
     endResetModel();
