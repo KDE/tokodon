@@ -76,21 +76,21 @@ Kirigami.ScrollablePage {
                         text: i18nc("@action:button Deny follow request", "Unfollow")
                         icon.name: "list-remove-user"
                         onClicked: model.actionUnfollow(model.index(delegate.index, 0))
-                        visible: model.isFollowing
+                        visible: model.isFollowing && model.accountId === AccountManager.selectedAccount.identity.id
                     }
 
                     QQC2.Button {
                         text: i18nc("@action:button Deny follow request", "Remove Follower")
                         icon.name: "list-remove-user"
                         onClicked: model.actionRemoveFollower(model.index(delegate.index, 0))
-                        visible: model.isFollower
+                        visible: model.isFollower && model.accountId === AccountManager.selectedAccount.identity.id
                     }
 
                     QQC2.Button {
                         text: i18nc("@action:button Deny follow request", "Remove")
                         icon.name: "list-remove-user"
                         onClicked: model.actionRemoveFromList(model.index(delegate.index, 0))
-                        visible: model.isList
+                        visible: model.isList && model.accountId === AccountManager.selectedAccount.identity.id
                     }
                 }
 
