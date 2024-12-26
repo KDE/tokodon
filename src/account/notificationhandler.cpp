@@ -151,8 +151,9 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         break;
     }
 
-    if (notification->post() != nullptr && notification->type() != Notification::Follow && notification->type() != Notification::FollowRequest
-        && notification->type() != Notification::Unknown) {
+    constexpr std::array notificationsWithPosts =
+        {Notification::Mention, Notification::Status, Notification::Repeat, Notification::Favorite, Notification::Poll, Notification::Update};
+    if (notification->post() != nullptr && std::ranges::find(notificationsWithPosts, notification->type()) != notificationsWithPosts.end()) {
         if (notification->post()->spoilerText().isEmpty()) {
             knotification->setText(notification->post()->content());
         } else {
