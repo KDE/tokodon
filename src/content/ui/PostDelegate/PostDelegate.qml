@@ -324,11 +324,10 @@ QQC2.ItemDelegate {
                 visible: root.spoilerText.length !== 0
                 active: visible
 
+                Layout.fillWidth: true
+
                 sourceComponent: QQC2.Control {
                     padding: Kirigami.Units.largeSpacing
-
-                    Layout.preferredHeight: warningLayout.implicitHeight + topPadding + bottomPadding
-                    Layout.fillWidth: true
 
                     contentItem: RowLayout {
                         id: warningLayout
