@@ -152,6 +152,8 @@ StatefulApp.StatefulWindow {
                     model: AccountManager
 
                     delegate: Delegates.RoundedItemDelegate {
+                        id: delegate
+
                         required property int index
                         required property string displayName
                         required property string instance
@@ -160,6 +162,11 @@ StatefulApp.StatefulWindow {
                         text: displayName
 
                         Layout.fillWidth: true
+
+                        contentItem: InlineIdentityInfo {
+                            identity: delegate.account.identity
+                            secondary: false
+                        }
 
                         onClicked: crossActionDialog.takeAction(account)
                     }
