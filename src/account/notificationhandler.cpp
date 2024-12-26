@@ -160,6 +160,12 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
             knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
         }
     }
+
+    constexpr std::array notificationsWithUser = {Notification::Follow, Notification::FollowRequest};
+    if (notification->identity() != nullptr && std::ranges::find(notificationsWithUser, notification->type()) != notificationsWithUser.end()) {
+        knotification->setText(notification->identity()->bio());
+    }
+
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
 
     if (m_lastConnection != nullptr) {
