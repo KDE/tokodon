@@ -3,6 +3,8 @@
 
 #include "timeline/notification.h"
 
+#include "tokodon_debug.h"
+
 using namespace Qt::StringLiterals;
 
 Post *Notification::createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent)
@@ -142,7 +144,11 @@ Notification::Notification(AbstractAccount *account, const QJsonObject &obj, QOb
 
     m_post = createPost(m_account, status, parent);
     m_identity = m_account->identityLookup(accountId, accountObj);
-    m_type = str_to_not_type[type];
+    if (str_to_not_type.contains(type)) {
+        m_type = str_to_not_type[type];
+    } else {
+        qCWarning(TOKODON_LOG) << "Unknown notification type:" << type;
+    }
     m_id = obj["id"_L1].toString().toInt();
 
     if (m_type == ModerationWarning) {

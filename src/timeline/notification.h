@@ -93,6 +93,7 @@ public:
     explicit Notification(AbstractAccount *account, const QJsonObject &obj, QObject *parent = nullptr);
 
     enum Type {
+        Unknown,
         Mention,
         Follow,
         Repeat,
@@ -128,7 +129,7 @@ private:
     std::optional<RelationshipSeveranceEvent> m_relationshipSeveranceEvent;
     std::optional<AccountWarning> m_accountWarning;
     std::optional<AnnualReportEvent> m_annualReportEvent;
-    Type m_type = Type::Favorite;
+    Type m_type = Type::Unknown;
     std::shared_ptr<Identity> m_identity;
 
     Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);

@@ -144,9 +144,11 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
                   notification->annualReportEvent()->year()));
         knotification->setText(i18n("Unveil your year's highlights and memorable moments on Mastodon!"));
         break;
-
     default:
-        Q_UNREACHABLE();
+        knotification = new KNotification(QStringLiteral("other"));
+        knotification->setTitle(i18nc("@title", "New Notification"));
+        knotification->setText(i18n("You received a new notification."));
+        break;
     }
 
     if (notification->post() != nullptr && notification->type() != Notification::Follow && notification->type() != Notification::FollowRequest) {
