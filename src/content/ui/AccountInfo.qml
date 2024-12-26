@@ -52,6 +52,13 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
+    actions: Kirigami.Action {
+        icon.name: "list-add"
+        text: i18nc("@action:button", "Post")
+        onTriggered: Navigation.openComposer("")
+        visible: accountModel.isSelf
+    }
+
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
 
