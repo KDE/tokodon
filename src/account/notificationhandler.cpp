@@ -151,7 +151,8 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
         break;
     }
 
-    if (notification->post() != nullptr && notification->type() != Notification::Follow && notification->type() != Notification::FollowRequest) {
+    if (notification->post() != nullptr && notification->type() != Notification::Follow && notification->type() != Notification::FollowRequest
+        && notification->type() != Notification::Unknown) {
         if (notification->post()->spoilerText().isEmpty()) {
             knotification->setText(notification->post()->content());
         } else {

@@ -79,5 +79,10 @@ MastoPage {
             text: "Annual Report"
             onClicked: AccountManager.selectedAccount.annualReportNotification()
         }
+
+        FormCard.FormButtonDelegate {
+            text: "Unknown/Malformed"
+            onClicked: AccountManager.selectedAccount.unknownNotification()
+        }
     }
 }

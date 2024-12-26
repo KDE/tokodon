@@ -233,6 +233,11 @@ void MockAccount::annualReportNotification()
     readNotificationFromFile("notification_annual_report.json"_L1);
 }
 
+void MockAccount::unknownNotification()
+{
+    readNotificationFromFile("notification_unknown.json"_L1);
+}
+
 void MockAccount::increaseFollowRequests()
 {
     m_followRequestCount++;

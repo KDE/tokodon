@@ -74,6 +74,7 @@ public:
     Q_INVOKABLE void updateNotification();
     Q_INVOKABLE void pollNotification();
     Q_INVOKABLE void annualReportNotification();
+    Q_INVOKABLE void unknownNotification();
 
     Q_INVOKABLE void increaseFollowRequests();
     Q_INVOKABLE void decreaseFollowRequests();
