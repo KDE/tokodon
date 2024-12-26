@@ -154,16 +154,22 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     constexpr std::array notificationsWithPosts =
         {Notification::Mention, Notification::Status, Notification::Repeat, Notification::Favorite, Notification::Poll, Notification::Update};
     if (notification->post() != nullptr && std::ranges::find(notificationsWithPosts, notification->type()) != notificationsWithPosts.end()) {
-        if (notification->post()->spoilerText().isEmpty()) {
+        if (!notification->post()->spoilerText().isEmpty()) {
+            knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
+        } else if (!notification->post()->content().isEmpty()) {
             knotification->setText(notification->post()->content());
         } else {
-            knotification->setText(xi18n("<b>Content Notice</b>: %1", notification->post()->spoilerText()));
+            knotification->setText(i18n("This post has no text."));
         }
     }
 
     constexpr std::array notificationsWithUser = {Notification::Follow, Notification::FollowRequest};
     if (notification->identity() != nullptr && std::ranges::find(notificationsWithUser, notification->type()) != notificationsWithUser.end()) {
-        knotification->setText(notification->identity()->bio());
+        if (!notification->identity()->bio().isEmpty()) {
+            knotification->setText(notification->identity()->bio());
+        } else {
+            knotification->setText(i18n("This user doesn't have a description."));
+        }
     }
 
     knotification->setHint(QStringLiteral("x-kde-origin-name"), account->identity()->displayName());
