@@ -82,7 +82,7 @@ QQC2.Pane {
                 }
 
                 Delegates.SubtitleContentItem {
-                    subtitle: AccountManager.selectedAccount ? AccountManager.selectedAccount.instanceName : ''
+                    subtitle: AccountManager.selectedAccount ? '@' + AccountManager.selectedAccount.username : ''
                     subtitleItem.textFormat: Text.PlainText
                     itemDelegate: currentAccountDelegate
                     Layout.fillWidth: true
