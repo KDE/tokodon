@@ -126,6 +126,7 @@ void Identity::fromSourceData(const QJsonObject &doc)
     m_visibility = source["privacy"_L1].toString();
     m_lastStatusAt = QDate::fromString(doc["last_status_at"_L1].toString(), Qt::ISODate);
     m_createdAt = QDate::fromString(doc["created_at"_L1].toString(), Qt::ISODate);
+    m_limited = doc["limited"_L1].toBool();
 
     m_displayNameHtml = m_displayName.replace(QLatin1Char('<'), QStringLiteral("&lt;")).replace(QLatin1Char('>'), QStringLiteral("&gt;"));
 
@@ -184,6 +185,11 @@ QDate Identity::lastStatusAt() const
 QString Identity::createdAt() const
 {
     return TextHandler::getRelativeDate(m_createdAt);
+}
+
+bool Identity::limited() const
+{
+    return m_limited;
 }
 
 #include "moc_identity.cpp"

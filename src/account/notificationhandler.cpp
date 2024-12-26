@@ -165,7 +165,9 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
 
     constexpr std::array notificationsWithUser = {Notification::Follow, Notification::FollowRequest};
     if (notification->identity() != nullptr && std::ranges::find(notificationsWithUser, notification->type()) != notificationsWithUser.end()) {
-        if (!notification->identity()->bio().isEmpty()) {
+        if (notification->identity()->limited()) {
+            knotification->setText(i18n("The moderators of your server has limited this user, view this in Tokodon to see their profile."));
+        } else if (!notification->identity()->bio().isEmpty()) {
             knotification->setText(notification->identity()->bio());
         } else {
             knotification->setText(i18n("This user doesn't have a description."));
@@ -179,7 +181,7 @@ void NotificationHandler::handle(std::shared_ptr<Notification> notification, Abs
     }
     m_lastConnection = connect(knotification, &KNotification::closed, this, &NotificationHandler::lastNotificationClosed);
 
-    if (!notification->identity()->avatarUrl().isEmpty()) {
+    if (!notification->identity()->avatarUrl().isEmpty() && !notification->identity()->limited()) {
         const auto avatarUrl = notification->identity()->avatarUrl();
         auto request = QNetworkRequest(avatarUrl);
         auto reply = m_nam->get(request);

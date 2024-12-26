@@ -36,6 +36,7 @@ class Identity : public QObject
     Q_PROPERTY(QJsonArray fields READ fields NOTIFY identityUpdated)
     Q_PROPERTY(Relationship *relationship READ relationship NOTIFY relationshipChanged)
     Q_PROPERTY(QString createdAt READ createdAt NOTIFY identityUpdated)
+    Q_PROPERTY(bool limited READ limited NOTIFY identityUpdated)
 
 public:
     /**
@@ -127,6 +128,8 @@ public:
 
     [[nodiscard]] QString createdAt() const;
 
+    [[nodiscard]] bool limited() const;
+
     /**
      * @brief Fills in identity data from JSON.
      * @param doc The JSON data to load from.
@@ -176,4 +179,5 @@ private:
     AbstractAccount *m_parent = nullptr;
     bool m_bot;
     QDate m_createdAt;
+    bool m_limited;
 };
