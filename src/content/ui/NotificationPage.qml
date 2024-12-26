@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "checkmark-symbolic"
             text: i18nc("@action:intoolbar Mark all notifications as read", "Mark All As Read")
-            enabled: AccountManager.selectedAccount.unreadNotificationsCount > 0
+            enabled: AccountManager.seectedAccount.unreadNotificationsCount > 0
             onTriggered: timelinePage.currentModel.markAllNotificationsAsRead()
         },
         Kirigami.Action {
@@ -47,8 +47,10 @@ Kirigami.ScrollablePage {
         icon.name: "notifications"
         checkable: true
         onCheckedChanged: (checked) => {
-            if (checked)
+            if (checked) {
+                visibilityMenu.lastCheckedIndex = 0;
                 notificationModel.excludeTypes = [];
+            }
         }
     }
 
@@ -58,8 +60,10 @@ Kirigami.ScrollablePage {
         icon.name: "view-conversation-balloon-symbolic"
         checkable: true
         onCheckedChanged: (checked) => {
-            if (checked)
+            if (checked) {
+                visibilityMenu.lastCheckedIndex = 1;
                 notificationModel.excludeTypes = ['status', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            }
         }
     }
 
@@ -67,46 +71,70 @@ Kirigami.ScrollablePage {
         icon.name: "view-more-horizontal-symbolic"
         text: i18nc("@action:intoolbar More filter categories", "More")
         checkable: true
-        onCheckedChanged: (checked) => {
-            if (checked)
-                visibilityMenu.popup();
+        onTriggered: {
+            visibilityMenu.tookAction = false;
+            visibilityMenu.popup();
         }
     }
 
     QQC2.Menu {
         id: visibilityMenu
 
+        property int lastCheckedIndex
+        property bool tookAction
+
         visible: false
-        onClosed: moreAction.checked = false
+        onClosed: {
+            if (!tookAction) {
+                tabBar.currentIndex = lastCheckedIndex;
+            }
+        }
 
         QQC2.MenuItem {
             icon.name: "boost"
             text: i18nc("Show only boosts", "Boosts")
-            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
         }
         QQC2.MenuItem {
             icon.name: "favorite"
             text: i18nc("Show only favorites", "Favorites")
-            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
         }
         QQC2.MenuItem {
             icon.name: "office-chart-bar"
             text: i18nc("Show only poll results", "Poll Results")
-            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow', 'follow_request', 'favourite', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
         }
         QQC2.MenuItem {
             icon.name: "user-home-symbolic"
             text: i18nc("Show only followed statuses", "Posts")
-            onTriggered: notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'reblog', 'follow', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
         }
         QQC2.MenuItem {
             icon.name: "list-add-user"
             text: i18nc("Show only follows", "Follows")
-            onTriggered: notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+            onTriggered: {
+                notificationModel.excludeTypes = ['mention', 'status', 'reblog', 'follow_request', 'favourite', 'poll', 'update', 'admin.sign_up', 'admin.report', 'severed_relationships', 'moderation_warning'];
+                visibilityMenu.tookAction = true;
+            }
         }
     }
 
     header: Kirigami.NavigationTabBar {
+        id: tabBar
+
         anchors.left: parent.left
         anchors.right: parent.right
         actions: [showAllAction, mentionOnlyAction, moreAction]
