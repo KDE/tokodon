@@ -49,6 +49,8 @@ QQC2.Menu {
                 return i18n("Save Gif As…");
             } else if (root.attachment.attachmentType === Attachment.Video) {
                 return i18n("Save Video As…");
+            } else if (root.attachment.attachmentType === Attachment.Audio) {
+                return i18n("Save Audio As…");
             }
         }
 

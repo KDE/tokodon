@@ -43,6 +43,7 @@ public:
         Image,
         GifV,
         Video,
+        Audio,
     };
     Q_ENUM(AttachmentType);
 

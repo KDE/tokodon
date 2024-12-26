@@ -16,6 +16,7 @@ static QMap<QString, Attachment::AttachmentType> stringToAttachmentType = {
     {QStringLiteral("image"), Attachment::AttachmentType::Image},
     {QStringLiteral("gifv"), Attachment::AttachmentType::GifV},
     {QStringLiteral("video"), Attachment::AttachmentType::Video},
+    {QStringLiteral("audio"), Attachment::AttachmentType::Audio},
     {QStringLiteral("unknown"), Attachment::AttachmentType::Unknown},
 };
 

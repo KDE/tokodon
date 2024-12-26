@@ -284,6 +284,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/PostDelegate/PostInteractionLabel.qml
         content/ui/PostDelegate/VideoAttachment.qml
         content/ui/PostDelegate/QuotePost.qml
+        content/ui/PostDelegate/AudioAttachment.qml
 
         # Other
         content/ui/AccountHeader.qml

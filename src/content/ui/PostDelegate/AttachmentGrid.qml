@@ -93,9 +93,11 @@ Item {
             case Attachment.Image:
                 return i18n("Status with image attachment");
             case Attachment.GifV:
-                return i18n("Status with GifV attachment");
+                return i18n("Status with gif attachment");
             case Attachment.Video:
-                return i18n("Status with Video attachment");
+                return i18n("Status with video attachment");
+            case Attachment.Audio:
+                return i18n("Status with audio attachment");
         }
     }
 
@@ -303,6 +305,51 @@ Item {
                             }
                             function onUserSensitivityChanged(hide) {
                                 video.pause()
+                            }
+                        }
+                    }
+                }
+
+                DelegateChoice {
+                    roleValue: Attachment.Audio
+
+                    AudioAttachment {
+                        id: audio
+
+                        required property var modelData
+                        required property int index
+
+                        audioUrl: modelData.source
+
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.rowSpan: root.isSpecialAttachment(attachmentsRepeater.count, index) ? 2 : 1
+
+                        Accessible.description: modelData.caption
+
+                        onClicked: {
+                            if (root.isSensitive) {
+                                root.showMedia();
+                            } else {
+                                audio.togglePlayPause()
+                            }
+                        }
+
+                        onContextMenuRequested: {
+                            if (!root.isSensitive) {
+                                root.openAttachmentMenu(modelData);
+                            }
+                        }
+
+                        Connections {
+                            target: root
+                            function onInViewPortChanged() {
+                                if (!root.inViewPort) {
+                                    audio.pause();
+                                }
+                            }
+                            function onUserSensitivityChanged(hide) {
+                                audio.pause()
                             }
                         }
                     }
