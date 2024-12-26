@@ -613,7 +613,7 @@ StatefulApp.StatefulWindow {
 
     property Kirigami.NavigationTabBar tabBar: Kirigami.NavigationTabBar {
         // Make sure we take in count drawer width
-        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode
+        visible: pageStack.layers.depth <= 1 && AccountManager.hasAccounts && !root.wideMode && AccountManager.isReady
         actions: [homeAction, notificationAction, exploreAction, profileAction]
         enabled: !AccountManager.selectedAccountHasIssue
     }
