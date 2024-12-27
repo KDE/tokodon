@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 00:41+0000\n"
+"POT-Creation-Date: 2024-12-27 00:41+0000\n"
 "PO-Revision-Date: 2022-10-14 14:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -17,53 +17,125 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: account/abstractaccount.cpp:593
+#: account/abstractaccount.cpp:33
+#, kde-format
+msgid ""
+"All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
+"*.webm *.mp4 *.m4v *.mov)"
+msgstr ""
+
+#: account/abstractaccount.cpp:34
+#, kde-format
+msgid "JPEG image (*.jpg *.jpeg)"
+msgstr ""
+
+#: account/abstractaccount.cpp:35
+#, kde-format
+msgid "PNG image (*.png)"
+msgstr ""
+
+#: account/abstractaccount.cpp:36
+#, kde-format
+msgid "GIF image (*.gif)"
+msgstr ""
+
+#: account/abstractaccount.cpp:37
+#, kde-format
+msgid "WebP image (*.webp)"
+msgstr ""
+
+#: account/abstractaccount.cpp:38
+#, kde-format
+msgid "HEIC image(*.heic)"
+msgstr ""
+
+#: account/abstractaccount.cpp:39
+#, kde-format
+msgid "HEIF image (*.heif)"
+msgstr ""
+
+#: account/abstractaccount.cpp:40
+#, kde-format
+msgid "AVIF image (*.avif)"
+msgstr ""
+
+#: account/abstractaccount.cpp:41
+#, kde-format
+msgid "WebM video (*.webm)"
+msgstr ""
+
+#: account/abstractaccount.cpp:42
+#, kde-format
+msgid "MPEG-4 video (*.mp4)"
+msgstr ""
+
+#: account/abstractaccount.cpp:43
+#, kde-format
+msgid "M4V video (*.m4v)"
+msgstr ""
+
+#: account/abstractaccount.cpp:44
+#, kde-format
+msgid "QuickTime video (*.mov)"
+msgstr ""
+
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:480
+#, kde-format
+msgid "All files (*)"
+msgstr ""
+
+#: account/abstractaccount.cpp:479
+#, kde-format
+msgid "All supported formats (%1)"
+msgstr ""
+
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not follow account"
 msgstr "Gat ekki fylgst með notandaaðgangi"
 
-#: account/abstractaccount.cpp:594
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "Gat ekki hætt að fylgjast með notandaaðgangi"
 
-#: account/abstractaccount.cpp:595
+#: account/abstractaccount.cpp:631
 #, fuzzy, kde-format
 #| msgid "Could not mute account"
 msgid "Could not remove account as your follower"
 msgstr "Gat ekki þaggað niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:596
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not block account"
 msgstr "Gat ekki útilokað notandaaðgang"
 
-#: account/abstractaccount.cpp:597
+#: account/abstractaccount.cpp:633
 #, kde-format
 msgid "Could not unblock account"
 msgstr "Gat ekki hætt að útiloka notandaaðgang"
 
-#: account/abstractaccount.cpp:598
+#: account/abstractaccount.cpp:634
 #, kde-format
 msgid "Could not mute account"
 msgstr "Gat ekki þaggað niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:599
+#: account/abstractaccount.cpp:635
 #, kde-format
 msgid "Could not unmute account"
 msgstr "Gat ekki hætt að þagga niður í notandaaðgangi"
 
-#: account/abstractaccount.cpp:600
+#: account/abstractaccount.cpp:636
 #, kde-format
 msgid "Could not feature account"
 msgstr "Gat ekki sett notandaaðgang í forgrunn"
 
-#: account/abstractaccount.cpp:601
+#: account/abstractaccount.cpp:637
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "Gat ekki tekið notandaaðgang úr forgrunni"
 
-#: account/abstractaccount.cpp:602
+#: account/abstractaccount.cpp:638
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "Gat ekki breytt minnispunkti um notandaaðgang"
@@ -142,11 +214,40 @@ msgstr ""
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
 
-#: account/notificationhandler.cpp:156
+#: account/notificationhandler.cpp:149
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgctxt "@title"
+msgid "New Notification"
+msgstr "Tilkynningar"
+
+#: account/notificationhandler.cpp:150
+#, kde-format
+msgid "You received a new notification."
+msgstr ""
+
+#: account/notificationhandler.cpp:158
 #, fuzzy, kde-kuit-format
 #| msgid "Content Warning"
 msgid "<b>Content Notice</b>: %1"
 msgstr "Aðvörun vegna efnis"
+
+#: account/notificationhandler.cpp:162
+#, kde-format
+msgid "This post has no text."
+msgstr ""
+
+#: account/notificationhandler.cpp:169
+#, kde-format
+msgid ""
+"The moderators of your server has limited this user, view this in Tokodon to "
+"see their profile."
+msgstr ""
+
+#: account/notificationhandler.cpp:173
+#, kde-format
+msgid "This user doesn't have a description."
+msgstr ""
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -758,7 +859,16 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/AccountInfo.qml:125
+#: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
+#: content/ui/TimelinePage.qml:85
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgctxt "@action:button"
+msgid "Post"
+msgstr "Endurbirta"
+
+#: content/ui/AccountInfo.qml:132
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -766,18 +876,18 @@ msgctxt "@label"
 msgid "No Posts"
 msgstr "Endurbirta"
 
-#: content/ui/AccountInfo.qml:126
+#: content/ui/AccountInfo.qml:133
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr ""
 
-#: content/ui/AccountInfo.qml:222
+#: content/ui/AccountInfo.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr ""
 
-#: content/ui/AccountInfo.qml:223
+#: content/ui/AccountInfo.qml:230
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr ""
@@ -860,7 +970,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "Staðvær tímalína"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:473
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:480
 #, kde-format
 msgid "Conversations"
 msgstr ""
@@ -1025,18 +1135,10 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr ""
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:516
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:523
 #, kde-format
 msgid "Explore"
 msgstr ""
-
-#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:85
-#, fuzzy, kde-format
-#| msgctxt "Share a post"
-#| msgid "Boost"
-msgctxt "@action:button"
-msgid "Post"
-msgstr "Endurbirta"
 
 #: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:155
 #, fuzzy, kde-format
@@ -1230,8 +1332,8 @@ msgstr ""
 msgid "Lists allow you to categorize who you're following."
 msgstr ""
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:407
-#: content/ui/Main.qml:449 content/ui/Main.qml:464
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:414
+#: content/ui/Main.qml:456 content/ui/Main.qml:471
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -1620,121 +1722,121 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr ""
 
-#: content/ui/Main.qml:245
+#: content/ui/Main.qml:252
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Write a New Post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:272
+#: content/ui/Main.qml:279
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Write a new post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:317
+#: content/ui/Main.qml:324
 #, fuzzy, kde-format
 #| msgid "Write a new toot"
 msgid "Reply to post"
 msgstr "Skrifa nýja færslu"
 
-#: content/ui/Main.qml:400
+#: content/ui/Main.qml:407
 #, kde-format
 msgid "Home"
 msgstr "Heim"
 
-#: content/ui/Main.qml:408 content/ui/Main.qml:450 content/ui/Main.qml:465
+#: content/ui/Main.qml:415 content/ui/Main.qml:457 content/ui/Main.qml:472
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:417 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "Tilkynningar"
 
-#: content/ui/Main.qml:429
+#: content/ui/Main.qml:436
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgid "Follow Requests"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:442
+#: content/ui/Main.qml:449
 #, kde-format
 msgid "Local"
 msgstr "Staðvært"
 
-#: content/ui/Main.qml:457
+#: content/ui/Main.qml:464
 #, kde-format
 msgid "Global"
 msgstr "Víðvært"
 
-#: content/ui/Main.qml:484 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:491 content/ui/Settings/NotificationsPage.qml:184
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorites"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:498
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "No Favorites"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/Main.qml:492
+#: content/ui/Main.qml:499
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
 "favorite it!"
 msgstr ""
 
-#: content/ui/Main.qml:500
+#: content/ui/Main.qml:507
 #, kde-format
 msgid "Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:507
+#: content/ui/Main.qml:514
 #, kde-format
 msgid "No Bookmarks"
 msgstr ""
 
-#: content/ui/Main.qml:508
+#: content/ui/Main.qml:515
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
 "private, even to the post's author."
 msgstr ""
 
-#: content/ui/Main.qml:527
+#: content/ui/Main.qml:534
 #, fuzzy, kde-format
 #| msgid "Following"
 msgid "Following"
 msgstr "Fylgist með"
 
-#: content/ui/Main.qml:538
+#: content/ui/Main.qml:545
 #, kde-format
 msgid "Search"
 msgstr ""
 
-#: content/ui/Main.qml:561
+#: content/ui/Main.qml:568
 #, kde-format
 msgid "Lists"
 msgstr ""
 
-#: content/ui/Main.qml:572 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:579 content/ui/Settings/AccountPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Feature on profile"
 msgid "Profile"
 msgstr "Birta í forgrunni á notandasniði"
 
-#: content/ui/Main.qml:587
+#: content/ui/Main.qml:594
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr ""
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:604
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -1742,7 +1844,7 @@ msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "Minnst á"
 
-#: content/ui/Main.qml:604
+#: content/ui/Main.qml:611
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Settings"
@@ -1750,21 +1852,21 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Stillingar"
 
-#: content/ui/Main.qml:696
+#: content/ui/Main.qml:703
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:696
+#: content/ui/Main.qml:703
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Fylgjast með"
 
-#: content/ui/Main.qml:744
+#: content/ui/Main.qml:751
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -3079,14 +3181,14 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "Aðvörun vegna efnis"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:351
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show Less"
 msgstr "Birta meira"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:351
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show More"
@@ -3229,7 +3331,7 @@ msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Allt"
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:59
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -3237,14 +3339,14 @@ msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Minnst á"
 
-#: content/ui/NotificationPage.qml:68
+#: content/ui/NotificationPage.qml:72
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
 msgstr "Birta meira"
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:95
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -3252,19 +3354,19 @@ msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Endurbirta"
 
-#: content/ui/NotificationPage.qml:89
+#: content/ui/NotificationPage.qml:103
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:94
+#: content/ui/NotificationPage.qml:111
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:99
+#: content/ui/NotificationPage.qml:119
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
@@ -3272,20 +3374,20 @@ msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Endurbirta"
 
-#: content/ui/NotificationPage.qml:104
+#: content/ui/NotificationPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Fylgjast með"
 
-#: content/ui/NotificationPage.qml:263
+#: content/ui/NotificationPage.qml:291
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "No Notifications"
 msgstr "Tilkynningar"
 
-#: content/ui/NotificationPage.qml:264
+#: content/ui/NotificationPage.qml:292
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3371,32 +3473,37 @@ msgstr ""
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:96
 #, kde-format
-msgid "Status with GifV attachment"
+msgid "Status with gif attachment"
 msgstr ""
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:98
 #, kde-format
-msgid "Status with Video attachment"
+msgid "Status with video attachment"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:196
+#: content/ui/PostDelegate/AttachmentGrid.qml:100
+#, kde-format
+msgid "Status with audio attachment"
+msgstr ""
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:198
 #, kde-format
 msgid "Not available"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:324
+#: content/ui/PostDelegate/AttachmentGrid.qml:371
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:328
+#: content/ui/PostDelegate/AttachmentGrid.qml:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr ""
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:339
+#: content/ui/PostDelegate/AttachmentGrid.qml:386
 #, fuzzy, kde-format
 #| msgid "Show more"
 msgid "Show Media"
@@ -3419,9 +3526,22 @@ msgstr "%1s setti færslu frá þér í eftirlæti"
 msgid "Save Video As…"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:69
+#: content/ui/PostDelegate/AttachmentMenu.qml:53
+#, fuzzy, kde-format
+#| msgid "%1 favorited your post"
+msgid "Save Audio As…"
+msgstr "%1s setti færslu frá þér í eftirlæti"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:71
 #, kde-format
 msgid "Copy Image"
+msgstr ""
+
+#: content/ui/PostDelegate/AudioAttachment.qml:80
+#: content/ui/PostDelegate/VideoAttachment.qml:106
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
 msgstr ""
 
 #: content/ui/PostDelegate/InformationBar.qml:33
@@ -3606,88 +3726,88 @@ msgid ""
 "post."
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:345
+#: content/ui/PostDelegate/PostDelegate.qml:344
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "Aðvörun vegna efnis"
 
-#: content/ui/PostDelegate/PostDelegate.qml:455
+#: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:484
+#: content/ui/PostDelegate/PostDelegate.qml:483
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:486
+#: content/ui/PostDelegate/PostDelegate.qml:485
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boosted"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, fuzzy, kde-format
 #| msgctxt "Share a post"
 #| msgid "Boost"
 msgid "Boost"
 msgstr "Endurbirta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:511
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorited"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, fuzzy, kde-format
 #| msgid "%1 favorited your post"
 msgid "Favorite"
 msgstr "%1s setti færslu frá þér í eftirlæti"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:532
 #, kde-format
 msgid "Remove bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:532
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:535
 #, kde-format
 msgid "Bookmarked"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:535
 #, kde-format
 msgid "Bookmark"
 msgstr ""
 
-#: content/ui/PostDelegate/PostDelegate.qml:568
+#: content/ui/PostDelegate/PostDelegate.qml:567
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3893,12 +4013,6 @@ msgstr "Fela endurbirtingar frá %1"
 #| msgid "Unlisted"
 msgid "Quoted post"
 msgstr "Óskráð"
-
-#: content/ui/PostDelegate/VideoAttachment.qml:106
-#, kde-format
-msgctxt "@action:button Start media playback"
-msgid "Play"
-msgstr ""
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4865,171 +4979,104 @@ msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Veldu skrá"
 
-#: content/ui/StatusComposer/StatusComposer.qml:465
-#, kde-format
-msgid ""
-"All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
-"*.webm *.mp4 *.m4v *.mov)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:466
-#, kde-format
-msgid "JPEG image (*.jpg *.jpeg)"
-msgstr ""
-
 #: content/ui/StatusComposer/StatusComposer.qml:467
-#, kde-format
-msgid "PNG image (*.png)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:468
-#, kde-format
-msgid "GIF image (*.gif)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:469
-#, kde-format
-msgid "WebP image (*.webp)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:470
-#, kde-format
-msgid "HEIC image(*.heic)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:471
-#, kde-format
-msgid "HEIF image (*.heif)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:472
-#, kde-format
-msgid "AVIF image (*.avif)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:473
-#, kde-format
-msgid "WebM video (*.webm)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:474
-#, kde-format
-msgid "MPEG-4 video (*.mp4)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:475
-#, kde-format
-msgid "M4V video (*.m4v)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:476
-#, kde-format
-msgid "QuickTime video (*.mov)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:477
-#, kde-format
-msgid "All files (*)"
-msgstr ""
-
-#: content/ui/StatusComposer/StatusComposer.qml:479
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Hengja við skrá"
 
-#: content/ui/StatusComposer/StatusComposer.qml:490
+#: content/ui/StatusComposer/StatusComposer.qml:478
 #, fuzzy, kde-format
 #| msgid "Add Poll"
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Bæta við könnun"
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, fuzzy, kde-format
 #| msgid "Content Warning"
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Aðvörun vegna efnis"
 
-#: content/ui/StatusComposer/StatusComposer.qml:539
+#: content/ui/StatusComposer/StatusComposer.qml:527
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Staðvært"
 
-#: content/ui/StatusComposer/StatusComposer.qml:545
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, fuzzy, kde-format
 #| msgid "Public"
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Opinbert"
 
-#: content/ui/StatusComposer/StatusComposer.qml:550
+#: content/ui/StatusComposer/StatusComposer.qml:538
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Óskráð"
 
-#: content/ui/StatusComposer/StatusComposer.qml:555
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, fuzzy, kde-format
 #| msgid "Private"
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Einka"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:548
 #, fuzzy, kde-format
 #| msgid "Direct Message"
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Bein skilaboð"
 
-#: content/ui/StatusComposer/StatusComposer.qml:565
+#: content/ui/StatusComposer/StatusComposer.qml:553
 #, fuzzy, kde-format
 #| msgid "Visibility"
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Sýnileiki"
 
-#: content/ui/StatusComposer/StatusComposer.qml:572
+#: content/ui/StatusComposer/StatusComposer.qml:560
 #, fuzzy, kde-format
 #| msgid "Selected default language:"
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Valið sjálfgefið tungumál:"
 
-#: content/ui/StatusComposer/StatusComposer.qml:606
+#: content/ui/StatusComposer/StatusComposer.qml:594
 #, fuzzy, kde-format
 #| msgid "Choice %1"
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Valkostur %1"
 
-#: content/ui/StatusComposer/StatusComposer.qml:636
+#: content/ui/StatusComposer/StatusComposer.qml:624
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:646
+#: content/ui/StatusComposer/StatusComposer.qml:634
 #, fuzzy, kde-format
 #| msgid "Delete word"
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Eyða orði"
 
-#: content/ui/StatusComposer/StatusComposer.qml:674
+#: content/ui/StatusComposer/StatusComposer.qml:662
 #, fuzzy, kde-format
 #| msgid "Send"
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Senda"
 
-#: content/ui/StatusComposer/StatusComposer.qml:676
+#: content/ui/StatusComposer/StatusComposer.qml:664
 #, fuzzy, kde-format
 #| msgctxt "Reply to a post"
 #| msgid "Reply"
@@ -5037,13 +5084,13 @@ msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Svara"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:666
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:680
+#: content/ui/StatusComposer/StatusComposer.qml:668
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"

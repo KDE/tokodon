@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-26 00:41+0000\n"
+"POT-Creation-Date: 2024-12-27 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -19,52 +19,126 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: account/abstractaccount.cpp:593
+#: account/abstractaccount.cpp:33
+#, kde-format
+msgid ""
+"All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
+"*.webm *.mp4 *.m4v *.mov)"
+msgstr ""
+"सभी समर्थित प्रारूप (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *."
+"webm *.mp4 *.m4v *.mov)"
+
+#: account/abstractaccount.cpp:34
+#, kde-format
+msgid "JPEG image (*.jpg *.jpeg)"
+msgstr "JPEG छवि (*.jpg *.jpeg)"
+
+#: account/abstractaccount.cpp:35
+#, kde-format
+msgid "PNG image (*.png)"
+msgstr "पीएनजी छवि (*.png)"
+
+#: account/abstractaccount.cpp:36
+#, kde-format
+msgid "GIF image (*.gif)"
+msgstr "GIF छवि (*.gif)"
+
+#: account/abstractaccount.cpp:37
+#, kde-format
+msgid "WebP image (*.webp)"
+msgstr "वेबपी छवि (*.webp)"
+
+#: account/abstractaccount.cpp:38
+#, kde-format
+msgid "HEIC image(*.heic)"
+msgstr "HEIC छवि(*.heic)"
+
+#: account/abstractaccount.cpp:39
+#, kde-format
+msgid "HEIF image (*.heif)"
+msgstr "HEIF छवि (*.heif)"
+
+#: account/abstractaccount.cpp:40
+#, kde-format
+msgid "AVIF image (*.avif)"
+msgstr "AVIF छवि (*.avif)"
+
+#: account/abstractaccount.cpp:41
+#, kde-format
+msgid "WebM video (*.webm)"
+msgstr "WebM video (*.webm)"
+
+#: account/abstractaccount.cpp:42
+#, kde-format
+msgid "MPEG-4 video (*.mp4)"
+msgstr "MPEG-4 वीडियो (*.mp4)"
+
+#: account/abstractaccount.cpp:43
+#, kde-format
+msgid "M4V video (*.m4v)"
+msgstr "M4V वीडियो (*.m4v)"
+
+#: account/abstractaccount.cpp:44
+#, kde-format
+msgid "QuickTime video (*.mov)"
+msgstr "क्विकटाइम वीडियो (*.mov)"
+
+#: account/abstractaccount.cpp:45 account/abstractaccount.cpp:480
+#, kde-format
+msgid "All files (*)"
+msgstr "सभी फाइलें (*)"
+
+#: account/abstractaccount.cpp:479
+#, kde-format
+msgid "All supported formats (%1)"
+msgstr ""
+
+#: account/abstractaccount.cpp:629
 #, kde-format
 msgid "Could not follow account"
 msgstr "खाते का अनुसरण नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:594
+#: account/abstractaccount.cpp:630
 #, kde-format
 msgid "Could not unfollow account"
 msgstr "अकाउंट को अनफ़ॉलो नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:595
+#: account/abstractaccount.cpp:631
 #, kde-format
 msgid "Could not remove account as your follower"
 msgstr "आपके फ़ॉलोअर के रूप में खाता हटाया नहीं जा सका"
 
-#: account/abstractaccount.cpp:596
+#: account/abstractaccount.cpp:632
 #, kde-format
 msgid "Could not block account"
 msgstr "खाता ब्लॉक नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:597
+#: account/abstractaccount.cpp:633
 #, kde-format
 msgid "Could not unblock account"
 msgstr "खाता अनब्लॉक नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:598
+#: account/abstractaccount.cpp:634
 #, kde-format
 msgid "Could not mute account"
 msgstr "खाता म्यूट नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:599
+#: account/abstractaccount.cpp:635
 #, kde-format
 msgid "Could not unmute account"
 msgstr "खाता अनम्यूट नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:600
+#: account/abstractaccount.cpp:636
 #, kde-format
 msgid "Could not feature account"
 msgstr "खाता प्रदर्शित नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:601
+#: account/abstractaccount.cpp:637
 #, kde-format
 msgid "Could not unfeature account"
 msgstr "खाते को अनफीचर नहीं किया जा सका"
 
-#: account/abstractaccount.cpp:602
+#: account/abstractaccount.cpp:638
 #, kde-format
 msgid "Could not edit note about an account"
 msgstr "किसी खाते के बारे में नोट संपादित नहीं किया जा सका"
@@ -137,10 +211,41 @@ msgstr ""
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
 msgstr ""
 
-#: account/notificationhandler.cpp:156
+#: account/notificationhandler.cpp:149
+#, fuzzy, kde-format
+#| msgid "No Notifications"
+msgctxt "@title"
+msgid "New Notification"
+msgstr "कोई सूचना नहीं"
+
+#: account/notificationhandler.cpp:150
+#, fuzzy, kde-format
+#| msgid "Receiving push notifications"
+msgid "You received a new notification."
+msgstr "पुश नोटिफिकेशन प्राप्त करना"
+
+#: account/notificationhandler.cpp:158
 #, kde-kuit-format
 msgid "<b>Content Notice</b>: %1"
 msgstr "<b>सामग्री सूचना</b> : %1"
+
+#: account/notificationhandler.cpp:162
+#, kde-format
+msgid "This post has no text."
+msgstr ""
+
+#: account/notificationhandler.cpp:169
+#, kde-format
+msgid ""
+"The moderators of your server has limited this user, view this in Tokodon to "
+"see their profile."
+msgstr ""
+
+#: account/notificationhandler.cpp:173
+#, fuzzy, kde-format
+#| msgid "This user hasn't posted any media yet."
+msgid "This user doesn't have a description."
+msgstr "इस उपयोगकर्ता ने अभी तक कोई मीडिया पोस्ट नहीं किया है."
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -696,24 +801,31 @@ msgctxt "@title:window"
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
-#: content/ui/AccountInfo.qml:125
+#: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
+#: content/ui/TimelinePage.qml:85
+#, kde-format
+msgctxt "@action:button"
+msgid "Post"
+msgstr "डाक"
+
+#: content/ui/AccountInfo.qml:132
 #, kde-format
 msgctxt "@label"
 msgid "No Posts"
 msgstr "कोई पोस्ट नहीं"
 
-#: content/ui/AccountInfo.qml:126
+#: content/ui/AccountInfo.qml:133
 #, kde-format
 msgid "This user hasn't posted anything yet."
 msgstr "इस उपयोगकर्ता ने अभी तक कुछ भी पोस्ट नहीं किया है."
 
-#: content/ui/AccountInfo.qml:222
+#: content/ui/AccountInfo.qml:229
 #, kde-format
 msgctxt "@label"
 msgid "No Media"
 msgstr "कोई औसत नहीं"
 
-#: content/ui/AccountInfo.qml:223
+#: content/ui/AccountInfo.qml:230
 #, kde-format
 msgid "This user hasn't posted any media yet."
 msgstr "इस उपयोगकर्ता ने अभी तक कोई मीडिया पोस्ट नहीं किया है."
@@ -794,7 +906,7 @@ msgctxt "@info:status"
 msgid "End of Timeline"
 msgstr "समयरेखा का अंत"
 
-#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:473
+#: content/ui/ConversationPage.qml:13 content/ui/Main.qml:480
 #, kde-format
 msgid "Conversations"
 msgstr "बात चिट"
@@ -948,16 +1060,10 @@ msgctxt "@label"
 msgid "Are you sure you want to delete this list?"
 msgstr "क्या आप वाकई इस सूची को हटाना चाहते हैं?"
 
-#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:516
+#: content/ui/ExplorePage.qml:18 content/ui/Main.qml:523
 #, kde-format
 msgid "Explore"
 msgstr "अन्वेषण करना"
-
-#: content/ui/ExplorePage.qml:35 content/ui/TimelinePage.qml:85
-#, kde-format
-msgctxt "@action:button"
-msgid "Post"
-msgstr "डाक"
 
 #: content/ui/ExplorePage.qml:41 search/searchmodel.cpp:155
 #, kde-format
@@ -1152,8 +1258,8 @@ msgstr "कोई सूची नहीं"
 msgid "Lists allow you to categorize who you're following."
 msgstr "सूचियाँ आपको यह वर्गीकृत करने की सुविधा देती हैं कि आप किसे फ़ॉलो कर रहे हैं."
 
-#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:407
-#: content/ui/Main.qml:449 content/ui/Main.qml:464
+#: content/ui/ListTimelinePage.qml:18 content/ui/Main.qml:414
+#: content/ui/Main.qml:456 content/ui/Main.qml:471
 #, kde-format
 msgid "No Posts"
 msgstr "कोई पोस्ट नहीं"
@@ -1517,63 +1623,63 @@ msgctxt "@title"
 msgid "Unknown Action"
 msgstr "अज्ञात क्रिया"
 
-#: content/ui/Main.qml:245
+#: content/ui/Main.qml:252
 #, kde-format
 msgid "Write a New Post"
 msgstr "एक नई पोस्ट लिखें"
 
-#: content/ui/Main.qml:272
+#: content/ui/Main.qml:279
 #, kde-format
 msgid "Write a new post"
 msgstr "एक नई पोस्ट लिखें"
 
-#: content/ui/Main.qml:317
+#: content/ui/Main.qml:324
 #, kde-format
 msgid "Reply to post"
 msgstr "पोस्ट का उत्तर दें"
 
-#: content/ui/Main.qml:400
+#: content/ui/Main.qml:407
 #, kde-format
 msgid "Home"
 msgstr "घर"
 
-#: content/ui/Main.qml:408 content/ui/Main.qml:450 content/ui/Main.qml:465
+#: content/ui/Main.qml:415 content/ui/Main.qml:457 content/ui/Main.qml:472
 #, kde-format
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr "अभी तो बहुत शांति है, कुछ पोस्ट करने का प्रयास करें!"
 
-#: content/ui/Main.qml:417 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:15
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
 msgstr "सूचनाएं"
 
-#: content/ui/Main.qml:429
+#: content/ui/Main.qml:436
 #, kde-format
 msgid "Follow Requests"
 msgstr "अनुरोधों का पालन करें"
 
-#: content/ui/Main.qml:442
+#: content/ui/Main.qml:449
 #, kde-format
 msgid "Local"
 msgstr "स्थानीय"
 
-#: content/ui/Main.qml:457
+#: content/ui/Main.qml:464
 #, kde-format
 msgid "Global"
 msgstr "वैश्विक"
 
-#: content/ui/Main.qml:484 content/ui/Settings/NotificationsPage.qml:184
+#: content/ui/Main.qml:491 content/ui/Settings/NotificationsPage.qml:184
 #, kde-format
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: content/ui/Main.qml:491
+#: content/ui/Main.qml:498
 #, kde-format
 msgid "No Favorites"
 msgstr "कोई पसंदीदा नहीं"
 
-#: content/ui/Main.qml:492
+#: content/ui/Main.qml:499
 #, kde-format
 msgid ""
 "Posts that you favorite will show up here. If you appreciate someone's post, "
@@ -1582,17 +1688,17 @@ msgstr ""
 "आपके द्वारा पसंद की गई पोस्ट यहाँ दिखाई देंगी। अगर आपको किसी की पोस्ट पसंद आती है, तो "
 "उसे पसंदीदा बनाएँ!"
 
-#: content/ui/Main.qml:500
+#: content/ui/Main.qml:507
 #, kde-format
 msgid "Bookmarks"
 msgstr "बुकमार्क"
 
-#: content/ui/Main.qml:507
+#: content/ui/Main.qml:514
 #, kde-format
 msgid "No Bookmarks"
 msgstr "कोई बुकमार्क नहीं"
 
-#: content/ui/Main.qml:508
+#: content/ui/Main.qml:515
 #, kde-format
 msgid ""
 "Bookmark posts and they will show up here. Bookmarks are always kept "
@@ -1601,59 +1707,59 @@ msgstr ""
 "पोस्ट को बुकमार्क करें और वे यहां दिखाई देंगे। बुकमार्क हमेशा निजी रखे जाते हैं, यहां तक कि "
 "पोस्ट के लेखक के लिए भी।"
 
-#: content/ui/Main.qml:527
+#: content/ui/Main.qml:534
 #, kde-format
 msgid "Following"
 msgstr "अगले"
 
-#: content/ui/Main.qml:538
+#: content/ui/Main.qml:545
 #, kde-format
 msgid "Search"
 msgstr "खोज"
 
-#: content/ui/Main.qml:561
+#: content/ui/Main.qml:568
 #, kde-format
 msgid "Lists"
 msgstr "सूचियों"
 
-#: content/ui/Main.qml:572 content/ui/Settings/AccountPage.qml:70
+#: content/ui/Main.qml:579 content/ui/Settings/AccountPage.qml:70
 #, kde-format
 msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
-#: content/ui/Main.qml:587
+#: content/ui/Main.qml:594
 #, kde-format
 msgctxt "@action:button Open debug page"
 msgid "Debug"
 msgstr "डिबग"
 
-#: content/ui/Main.qml:597
+#: content/ui/Main.qml:604
 #, kde-format
 msgctxt "@action:button Open moderation tools"
 msgid "Moderation Tools"
 msgstr "मॉडरेशन टूल्स"
 
-#: content/ui/Main.qml:604
+#: content/ui/Main.qml:611
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: content/ui/Main.qml:696
+#: content/ui/Main.qml:703
 #, fuzzy, kde-format
 #| msgid "Unfollow"
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
 msgstr "करें"
 
-#: content/ui/Main.qml:696
+#: content/ui/Main.qml:703
 #, fuzzy, kde-format
 #| msgid "Follow"
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "अनुसरण करना"
 
-#: content/ui/Main.qml:744
+#: content/ui/Main.qml:751
 #, kde-format
 msgctxt "@title"
 msgid "Embed Information"
@@ -2933,13 +3039,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>सामग्री चेतावनी</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:351
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, kde-format
 msgid "Show Less"
 msgstr "कम दिखाएं"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:351
+#: content/ui/PostDelegate/PostDelegate.qml:350
 #, kde-format
 msgid "Show More"
 msgstr "अधिक दिखाएं"
@@ -3065,54 +3171,54 @@ msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "सभी"
 
-#: content/ui/NotificationPage.qml:57
+#: content/ui/NotificationPage.qml:59
 #, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "का उल्लेख है"
 
-#: content/ui/NotificationPage.qml:68
+#: content/ui/NotificationPage.qml:72
 #, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
 msgstr "अधिक"
 
-#: content/ui/NotificationPage.qml:84
+#: content/ui/NotificationPage.qml:95
 #, kde-format
 msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "बूस्ट"
 
-#: content/ui/NotificationPage.qml:89
+#: content/ui/NotificationPage.qml:103
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: content/ui/NotificationPage.qml:94
+#: content/ui/NotificationPage.qml:111
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "सर्वेक्षण परिणाम"
 
-#: content/ui/NotificationPage.qml:99
+#: content/ui/NotificationPage.qml:119
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "पदों"
 
-#: content/ui/NotificationPage.qml:104
+#: content/ui/NotificationPage.qml:127
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "इस प्रकार है"
 
-#: content/ui/NotificationPage.qml:263
+#: content/ui/NotificationPage.qml:291
 #, kde-format
 msgid "No Notifications"
 msgstr "कोई सूचना नहीं"
 
-#: content/ui/NotificationPage.qml:264
+#: content/ui/NotificationPage.qml:292
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3196,33 +3302,41 @@ msgid "Status with image attachment"
 msgstr "छवि संलग्नक के साथ स्थिति"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:96
-#, kde-format
-msgid "Status with GifV attachment"
+#, fuzzy, kde-format
+#| msgid "Status with GifV attachment"
+msgid "Status with gif attachment"
 msgstr "GifV अटैचमेंट के साथ स्थिति"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:98
-#, kde-format
-msgid "Status with Video attachment"
+#, fuzzy, kde-format
+#| msgid "Status with Video attachment"
+msgid "Status with video attachment"
 msgstr "वीडियो अटैचमेंट के साथ स्थिति"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:196
+#: content/ui/PostDelegate/AttachmentGrid.qml:100
+#, fuzzy, kde-format
+#| msgid "Status with Video attachment"
+msgid "Status with audio attachment"
+msgstr "वीडियो अटैचमेंट के साथ स्थिति"
+
+#: content/ui/PostDelegate/AttachmentGrid.qml:198
 #, kde-format
 msgid "Not available"
 msgstr "उपलब्ध नहीं है"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:324
+#: content/ui/PostDelegate/AttachmentGrid.qml:371
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide Media"
 msgstr "मीडिया छुपाएं"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:328
+#: content/ui/PostDelegate/AttachmentGrid.qml:375
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide media"
 msgstr "मीडिया छुपाएं"
 
-#: content/ui/PostDelegate/AttachmentGrid.qml:339
+#: content/ui/PostDelegate/AttachmentGrid.qml:386
 #, kde-format
 msgid "Show Media"
 msgstr "मीडिया दिखाएं"
@@ -3242,10 +3356,23 @@ msgstr "Gif को इस रूप में सहेजें…"
 msgid "Save Video As…"
 msgstr "वीडियो को इस रूप में सहेजें…"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:69
+#: content/ui/PostDelegate/AttachmentMenu.qml:53
+#, fuzzy, kde-format
+#| msgid "Save Video As…"
+msgid "Save Audio As…"
+msgstr "वीडियो को इस रूप में सहेजें…"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:71
 #, kde-format
 msgid "Copy Image"
 msgstr "नकल छवि"
+
+#: content/ui/PostDelegate/AudioAttachment.qml:80
+#: content/ui/PostDelegate/VideoAttachment.qml:106
+#, kde-format
+msgctxt "@action:button Start media playback"
+msgid "Play"
+msgstr "खेल"
 
 #: content/ui/PostDelegate/InformationBar.qml:33
 #, kde-format
@@ -3414,81 +3541,81 @@ msgid ""
 "post."
 msgstr "क्या आप वाकई इस पोस्ट को फिर से लिखना चाहते हैं? इससे मूल पोस्ट हट जाएगी।"
 
-#: content/ui/PostDelegate/PostDelegate.qml:345
+#: content/ui/PostDelegate/PostDelegate.qml:344
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>सामग्री सूचना</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:455
+#: content/ui/PostDelegate/PostDelegate.qml:454
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "जवाब"
 
-#: content/ui/PostDelegate/PostDelegate.qml:482
+#: content/ui/PostDelegate/PostDelegate.qml:481
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "प्रत्यक्ष संदेश को बढ़ावा नहीं दिया जा सकता"
 
-#: content/ui/PostDelegate/PostDelegate.qml:484
+#: content/ui/PostDelegate/PostDelegate.qml:483
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "निजी पोस्ट को बढ़ावा नहीं दिया जा सकता"
 
-#: content/ui/PostDelegate/PostDelegate.qml:486
+#: content/ui/PostDelegate/PostDelegate.qml:485
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, kde-format
 msgid "Boosted"
 msgstr "बढ़ाया"
 
-#: content/ui/PostDelegate/PostDelegate.qml:491
+#: content/ui/PostDelegate/PostDelegate.qml:490
 #, kde-format
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: content/ui/PostDelegate/PostDelegate.qml:511
+#: content/ui/PostDelegate/PostDelegate.qml:510
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Favorited"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:514
+#: content/ui/PostDelegate/PostDelegate.qml:513
 #, kde-format
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:532
 #, kde-format
 msgid "Remove bookmark"
 msgstr "बुकमार्क हटाएँ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:533
+#: content/ui/PostDelegate/PostDelegate.qml:532
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:535
 #, kde-format
 msgid "Bookmarked"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:536
+#: content/ui/PostDelegate/PostDelegate.qml:535
 #, kde-format
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:568
+#: content/ui/PostDelegate/PostDelegate.qml:567
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3674,12 +3801,6 @@ msgstr "%1 से पोस्ट करें"
 #, kde-format
 msgid "Quoted post"
 msgstr "उद्धृत पोस्ट"
-
-#: content/ui/PostDelegate/VideoAttachment.qml:106
-#, kde-format
-msgctxt "@action:button Start media playback"
-msgid "Play"
-msgstr "खेल"
 
 #: content/ui/ReadMarker.qml:15
 #, kde-format
@@ -4637,148 +4758,79 @@ msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "एक फ़ाइल चुनें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:465
-#, kde-format
-msgid ""
-"All supported formats (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif "
-"*.webm *.mp4 *.m4v *.mov)"
-msgstr ""
-"सभी समर्थित प्रारूप (*.jpg *.jpeg *.png *.gif *.webp *.heic *.heif *.avif *."
-"webm *.mp4 *.m4v *.mov)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:466
-#, kde-format
-msgid "JPEG image (*.jpg *.jpeg)"
-msgstr "JPEG छवि (*.jpg *.jpeg)"
-
 #: content/ui/StatusComposer/StatusComposer.qml:467
-#, kde-format
-msgid "PNG image (*.png)"
-msgstr "पीएनजी छवि (*.png)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:468
-#, kde-format
-msgid "GIF image (*.gif)"
-msgstr "GIF छवि (*.gif)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:469
-#, kde-format
-msgid "WebP image (*.webp)"
-msgstr "वेबपी छवि (*.webp)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:470
-#, kde-format
-msgid "HEIC image(*.heic)"
-msgstr "HEIC छवि(*.heic)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:471
-#, kde-format
-msgid "HEIF image (*.heif)"
-msgstr "HEIF छवि (*.heif)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:472
-#, kde-format
-msgid "AVIF image (*.avif)"
-msgstr "AVIF छवि (*.avif)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:473
-#, kde-format
-msgid "WebM video (*.webm)"
-msgstr "WebM video (*.webm)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:474
-#, kde-format
-msgid "MPEG-4 video (*.mp4)"
-msgstr "MPEG-4 वीडियो (*.mp4)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:475
-#, kde-format
-msgid "M4V video (*.m4v)"
-msgstr "M4V वीडियो (*.m4v)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:476
-#, kde-format
-msgid "QuickTime video (*.mov)"
-msgstr "क्विकटाइम वीडियो (*.mov)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:477
-#, kde-format
-msgid "All files (*)"
-msgstr "सभी फाइलें (*)"
-
-#: content/ui/StatusComposer/StatusComposer.qml:479
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "फ़ाइल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:490
+#: content/ui/StatusComposer/StatusComposer.qml:478
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "पोल जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:502
+#: content/ui/StatusComposer/StatusComposer.qml:490
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "सामग्री सूचना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:539
+#: content/ui/StatusComposer/StatusComposer.qml:527
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "स्थानीय"
 
-#: content/ui/StatusComposer/StatusComposer.qml:545
+#: content/ui/StatusComposer/StatusComposer.qml:533
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "जनता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:550
+#: content/ui/StatusComposer/StatusComposer.qml:538
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "गैर-सूचीबद्ध"
 
-#: content/ui/StatusComposer/StatusComposer.qml:555
+#: content/ui/StatusComposer/StatusComposer.qml:543
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "निजी"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:548
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "सीधा संदेश"
 
-#: content/ui/StatusComposer/StatusComposer.qml:565
+#: content/ui/StatusComposer/StatusComposer.qml:553
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "दृश्यता"
 
-#: content/ui/StatusComposer/StatusComposer.qml:572
+#: content/ui/StatusComposer/StatusComposer.qml:560
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "पोस्ट भाषा"
 
-#: content/ui/StatusComposer/StatusComposer.qml:606
+#: content/ui/StatusComposer/StatusComposer.qml:594
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "इमोजी जोड़ें"
 
-#: content/ui/StatusComposer/StatusComposer.qml:636
+#: content/ui/StatusComposer/StatusComposer.qml:624
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> वर्ण"
 
-#: content/ui/StatusComposer/StatusComposer.qml:646
+#: content/ui/StatusComposer/StatusComposer.qml:634
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -4786,25 +4838,25 @@ msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "पोस्ट को हटाएं"
 
-#: content/ui/StatusComposer/StatusComposer.qml:674
+#: content/ui/StatusComposer/StatusComposer.qml:662
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "भेजना"
 
-#: content/ui/StatusComposer/StatusComposer.qml:676
+#: content/ui/StatusComposer/StatusComposer.qml:664
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "जवाब"
 
-#: content/ui/StatusComposer/StatusComposer.qml:678
+#: content/ui/StatusComposer/StatusComposer.qml:666
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "पोस्ट"
 
-#: content/ui/StatusComposer/StatusComposer.qml:680
+#: content/ui/StatusComposer/StatusComposer.qml:668
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
