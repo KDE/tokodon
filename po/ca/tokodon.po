@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-27 00:41+0000\n"
-"PO-Revision-Date: 2024-12-20 10:31+0100\n"
+"PO-Revision-Date: 2024-12-27 08:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -93,7 +93,7 @@ msgstr "Tots els fitxers (*)"
 #: account/abstractaccount.cpp:479
 #, kde-format
 msgid "All supported formats (%1)"
-msgstr ""
+msgstr "Tots els formats acceptats (%1)"
 
 #: account/abstractaccount.cpp:629
 #, kde-format
@@ -216,17 +216,15 @@ msgstr ""
 "Mastodon!"
 
 #: account/notificationhandler.cpp:149
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr "Sense notificacions"
+msgstr "Notificació nova"
 
 #: account/notificationhandler.cpp:150
-#, fuzzy, kde-format
-#| msgid "Receiving push notifications"
+#, kde-format
 msgid "You received a new notification."
-msgstr "Rebre les notificacions «push»"
+msgstr "Heu rebut una notificació nova."
 
 #: account/notificationhandler.cpp:158
 #, kde-kuit-format
@@ -236,7 +234,7 @@ msgstr "<b>Notificació de contingut</b>: %1"
 #: account/notificationhandler.cpp:162
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "Aquesta publicació no té text."
 
 #: account/notificationhandler.cpp:169
 #, kde-format
@@ -244,12 +242,13 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
+"Els moderadors del vostre servidor han limitat aquest usuari, visualitzeu-lo "
+"a Tokodon per a veure el seu perfil."
 
 #: account/notificationhandler.cpp:173
-#, fuzzy, kde-format
-#| msgid "This user hasn't posted any media yet."
+#, kde-format
 msgid "This user doesn't have a description."
-msgstr "Aquest usuari encara no ha publicat cap element multimèdia."
+msgstr "Aquest usuari no té cap descripció."
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -3326,22 +3325,19 @@ msgid "Status with image attachment"
 msgstr "Estat amb un adjunt d'imatge"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:96
-#, fuzzy, kde-format
-#| msgid "Status with GifV attachment"
+#, kde-format
 msgid "Status with gif attachment"
-msgstr "Estat amb un adjunt de GifV"
+msgstr "Estat amb un adjunt de GIF"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:98
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with video attachment"
 msgstr "Estat amb un adjunt de vídeo"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:100
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with audio attachment"
-msgstr "Estat amb un adjunt de vídeo"
+msgstr "Estat amb un adjunt d'àudio"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:198
 #, kde-format
@@ -3381,10 +3377,9 @@ msgid "Save Video As…"
 msgstr "Desa el vídeo com a…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:53
-#, fuzzy, kde-format
-#| msgid "Save Video As…"
+#, kde-format
 msgid "Save Audio As…"
-msgstr "Desa el vídeo com a…"
+msgstr "Desa l'àudio com a…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:71
 #, kde-format
