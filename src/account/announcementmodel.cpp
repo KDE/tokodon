@@ -107,7 +107,7 @@ void AnnouncementModel::addReaction(const QModelIndex index, const QString &name
     const auto announcement = m_announcements.at(index.row());
     const auto account = AccountManager::instance().selectedAccount();
     account->put(account->apiUrl(QStringLiteral("/api/v1/announcements/%1/reactions/%2").arg(announcement.id, name)),
-                 {},
+                 QJsonDocument{},
                  true,
                  this,
                  [this, index, name](QNetworkReply *reply) {
