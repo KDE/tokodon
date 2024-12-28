@@ -41,6 +41,39 @@ public:
 
     Q_INVOKABLE void markAllNotificationsAsRead();
 
+public Q_SLOTS:
+    /**
+     * @brief Reply to the notification at @p index.
+     * @see wantReply()
+     */
+    void actionReply(const QModelIndex &index);
+
+    /**
+     * @brief Favorite the notification at @p index.
+     */
+    void actionFavorite(const QModelIndex &index);
+
+    /**
+     * @brief Boost the notification at @p index.
+     */
+    void actionRepeat(const QModelIndex &index);
+
+    /**
+     * @brief Delete and re-draft the notification at @p index.
+     * @see postSourceReady()
+     */
+    void actionRedraft(const QModelIndex &index, bool isEdit);
+
+    /**
+     * @brief Delete the notification at @p index.
+     */
+    void actionDelete(const QModelIndex &index);
+
+    /**
+     * @brief Bookmark the notification at @p index.
+     */
+    void actionBookmark(const QModelIndex &index);
+
 Q_SIGNALS:
     void loadingChanged();
     void sourceModelChanged();
