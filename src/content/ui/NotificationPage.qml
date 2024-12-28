@@ -184,7 +184,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
@@ -196,7 +196,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
@@ -207,7 +207,7 @@ Kirigami.ScrollablePage {
                 roleValue: Notification.Mention
                 PostDelegate {
                     width: ListView.view.width
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                 }
@@ -223,7 +223,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
@@ -235,7 +235,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false
@@ -247,7 +247,7 @@ Kirigami.ScrollablePage {
                 PostDelegate {
                     width: ListView.view.width
                     secondary: true
-                    timelineModel: notificationModel
+                    timelineModel: groupedNotificationModel
                     loading: listview.model.loading
                     showSeparator: index !== ListView.view.count - 1
                     showInteractionButton: false

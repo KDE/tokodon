@@ -465,4 +465,52 @@ void NotificationGroupingModel::markAllNotificationsAsRead()
         model->markAllNotificationsAsRead();
 }
 
+void NotificationGroupingModel::actionReply(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionReply(sourceIndex);
+    }
+}
+
+void NotificationGroupingModel::actionFavorite(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionFavorite(sourceIndex);
+    }
+}
+
+void NotificationGroupingModel::actionRepeat(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionRepeat(sourceIndex);
+    }
+}
+
+void NotificationGroupingModel::actionRedraft(const QModelIndex &index, bool isEdit)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionRedraft(sourceIndex, isEdit);
+    }
+}
+
+void NotificationGroupingModel::actionDelete(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionDelete(sourceIndex);
+    }
+}
+
+void NotificationGroupingModel::actionBookmark(const QModelIndex &index)
+{
+    if (auto model = qobject_cast<NotificationModel *>(sourceModel())) {
+        const auto sourceIndex = mapToSource(index);
+        model->actionBookmark(sourceIndex);
+    }
+}
+
 #include "moc_notificationgroupingmodel.cpp"
