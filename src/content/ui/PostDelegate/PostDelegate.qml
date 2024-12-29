@@ -299,7 +299,6 @@ QQC2.ItemDelegate {
                 expandedPost: root.expandedPost
                 pinned: root.pinned
                 authorIdentity: root.authorIdentity
-                modal: true
                 isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
 
                 onDeletePost: {

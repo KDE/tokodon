@@ -6,13 +6,15 @@ import QtQuick
 import QtQuick.Controls 2 as QQC2
 import org.kde.tokodon
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigamiaddons.components as Components
 
 import ".."
 
 /**
  * @brief The menu located in the "three dots hamburger" icon on a status.
  */
-QQC2.Menu {
+Components.ContextMenu {
     id: root
 
     required property int index
@@ -30,7 +32,13 @@ QQC2.Menu {
     signal deletePost
     signal redraftPost
 
-    QQC2.MenuItem {
+    data: [
+        KQuickControlsAddons.Clipboard {
+            id: clipboard
+        }
+    ]
+
+    Kirigami.Action {
         icon.name: "expand"
         text: i18nc("@action:inmenu 'Thread' is a series of posts.", "Open Thread")
         onTriggered: Navigation.openPost(root.postId)
@@ -38,7 +46,7 @@ QQC2.Menu {
         enabled: visible
     }
 
-    QQC2.MenuItem {
+    QQC2.Action {
         icon.name: "window"
         text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
         onTriggered: {
@@ -46,18 +54,16 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuItem {
+    QQC2.Action {
         icon.name: "edit-copy"
         text: i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
             clipboard.content = root.url;
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
-
-        KQuickControlsAddons.Clipboard { id: clipboard }
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "view-web-browser-dom-tree"
         text: i18nc("@action Open embed into website dialog", "Embed")
         visible: !root.isPrivate
@@ -66,11 +72,12 @@ QQC2.Menu {
         onTriggered: AccountManager.selectedAccount.fetchOEmbed(root.postId, root.authorIdentity)
     }
 
-    QQC2.MenuSeparator {
+    Kirigami.Action {
+        separator: true
         visible: root.hasMultipleAccounts
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "expand"
@@ -78,7 +85,7 @@ QQC2.Menu {
         onTriggered: applicationWindow().requestCrossAction('open', url)
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "view-conversation-balloon-symbolic"
@@ -86,7 +93,7 @@ QQC2.Menu {
         onTriggered: applicationWindow().requestCrossAction('reply', url)
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "favorite"
@@ -94,7 +101,7 @@ QQC2.Menu {
         onTriggered: applicationWindow().requestCrossAction('favourite', url)
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "boost"
@@ -102,7 +109,7 @@ QQC2.Menu {
         onTriggered: applicationWindow().requestCrossAction('reblog', url)
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         visible: root.hasMultipleAccounts
         enabled: visible
         icon.name: "bookmark-new"
@@ -110,15 +117,17 @@ QQC2.Menu {
         onTriggered: applicationWindow().requestCrossAction('bookmark', url)
     }
 
-    QQC2.MenuSeparator {}
+    Kirigami.Action {
+        separator: true
+    }
 
-    QQC2.MenuItem {
+    QQC2.Action {
         icon.name: "bookmark-new"
         text: root.bookmarked ? i18nc("@action:inmenu", "Remove Bookmark") : i18nc("@action:inmenu", "Bookmark")
         onTriggered: timelineModel.actionBookmark(timelineModel.index(root.index, 0))
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: root.pinned ? "window-unpin" : "pin"
         visible: root.isSelf
         enabled: visible
@@ -126,11 +135,12 @@ QQC2.Menu {
         onTriggered: timelineModel.actionPin(timelineModel.index(root.index, 0))
     }
 
-    QQC2.MenuSeparator {
+    Kirigami.Action {
+        separator: true
         visible: !root.isSelf
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "dialog-cancel"
         visible: !root.isSelf
         enabled: visible
@@ -150,7 +160,7 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "im-ban-kick-user"
         visible: !root.isSelf
         enabled: visible
@@ -170,7 +180,7 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "dialog-warning-symbolic"
         visible: !root.isSelf
         enabled: visible
@@ -178,9 +188,11 @@ QQC2.Menu {
         onTriggered: Navigation.reportPost(root.authorIdentity, root.postId)
     }
 
-    QQC2.MenuSeparator {}
+    Kirigami.Action {
+        separator: true
+    }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "edit-entry"
         visible: root.isSelf
         enabled: visible
@@ -188,7 +200,7 @@ QQC2.Menu {
         onTriggered: timelineModel.actionRedraft(timelineModel.index(root.index, 0), true)
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "edit-delete"
         visible: root.isSelf
         enabled: visible
@@ -196,7 +208,7 @@ QQC2.Menu {
         onTriggered: root.deletePost()
     }
 
-    QQC2.MenuItem {
+    Kirigami.Action {
         icon.name: "edit-cut"
         visible: root.isSelf
         enabled: visible
@@ -204,7 +216,10 @@ QQC2.Menu {
         onTriggered: root.redraftPost()
     }
 
-    ShareMenu {
-        url: root.url
+    ShareAction {
+        inputData: {
+            'urls': [root.url],
+            'title': "Post",
+        }
     }
 }
