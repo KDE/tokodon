@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-27 02:34+0000\n"
-"PO-Revision-Date: 2024-10-20 00:42+0900\n"
+"PO-Revision-Date: 2024-12-29 02:21+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:585
 #, kde-format
@@ -201,65 +201,54 @@ msgid "Manage List Users"
 msgstr "管理列表使用者"
 
 #: account/socialgraphmodel.cpp:54
-#, fuzzy, kde-format
-#| msgid "Follow Requests"
+#, kde-format
 msgid "No Follow Requests"
-msgstr "跟隨請求"
+msgstr "沒有跟隨請求"
 
 #: account/socialgraphmodel.cpp:56
-#, fuzzy, kde-format
-#| msgid "No followers"
+#, kde-format
 msgid "No Followers"
-msgstr "無跟隨者"
+msgstr "沒有跟隨者"
 
 #: account/socialgraphmodel.cpp:58
-#, fuzzy, kde-format
-#| msgid "No followed users"
+#, kde-format
 msgid "No Followed Users"
 msgstr "沒有跟隨中的使用者"
 
 #: account/socialgraphmodel.cpp:60
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgid "No Muted Users"
-msgstr "已靜音的使用者"
+msgstr "沒有已靜音的使用者"
 
 #: account/socialgraphmodel.cpp:62
-#, fuzzy, kde-format
-#| msgid "Blocked Users"
+#, kde-format
 msgid "No Blocked Users"
-msgstr "已封鎖的使用者"
+msgstr "沒有已封鎖的使用者"
 
 #: account/socialgraphmodel.cpp:64
-#, fuzzy, kde-format
-#| msgid "Featured Users"
+#, kde-format
 msgid "No Featured Users"
-msgstr "推薦使用者"
+msgstr "沒有推薦使用者"
 
 #: account/socialgraphmodel.cpp:66
-#, fuzzy, kde-format
-#| msgid "No users favorited this post"
+#, kde-format
 msgid "No Users Favorited This Post"
 msgstr "沒有使用者將這篇嘟文加入最愛"
 
 #: account/socialgraphmodel.cpp:68
-#, fuzzy, kde-format
-#| msgid "No users boosted this post"
+#, kde-format
 msgid "No Users Boosted This Post"
 msgstr "沒有使用者轉嘟了這篇嘟文"
 
 #: account/socialgraphmodel.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Familiar Followers"
+#, kde-format
 msgid "No Familiar Followers"
-msgstr "相識的跟隨者"
+msgstr "沒有相識的跟隨者"
 
 #: account/socialgraphmodel.cpp:72
-#, fuzzy, kde-format
-#| msgid "Users"
+#, kde-format
 msgid "No Users"
-msgstr "使用者"
+msgstr "沒有使用者"
 
 #: account/socialgraphmodel.cpp:80
 #, kde-format
@@ -297,14 +286,13 @@ msgstr ""
 #: account/socialgraphmodel.cpp:98
 #, kde-format
 msgid "There is no one in this list yet."
-msgstr ""
+msgstr "這個列表中還沒有任何人。"
 
 #: account/suggestionsmodel.cpp:47
-#, fuzzy, kde-format
-#| msgid "Muted Users"
+#, kde-format
 msgctxt "@title:window"
 msgid "Suggested Users"
-msgstr "已靜音的使用者"
+msgstr "建議的使用者"
 
 #: admin/accounttoolmodel.cpp:297
 #, kde-format
@@ -409,11 +397,10 @@ msgid "Could not unassign report"
 msgstr "無法取消指派檢舉"
 
 #: content/ui/AccountInfo.qml:112
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgctxt "@label"
 msgid "No Posts"
-msgstr "無嘟文"
+msgstr "沒有嘟文"
 
 #: content/ui/AccountInfo.qml:113
 #, kde-format
@@ -421,12 +408,10 @@ msgid "This user hasn't posted anything yet."
 msgstr ""
 
 #: content/ui/AccountInfo.qml:200
-#, fuzzy, kde-format
-#| msgctxt "@item:inmenu Profile Post Filter"
-#| msgid "Media"
+#, kde-format
 msgctxt "@label"
 msgid "No Media"
-msgstr "媒體"
+msgstr "沒有媒體"
 
 #: content/ui/AccountInfo.qml:201
 #, kde-format
@@ -469,16 +454,14 @@ msgid "Notify me when %1 posts."
 msgstr "%1 嘟文時通知我。"
 
 #: content/ui/AccountInfo.qml:464
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgid "Mention…"
-msgstr "提及"
+msgstr "提及…"
 
 #: content/ui/AccountInfo.qml:470
-#, fuzzy, kde-format
-#| msgid "Conversation"
+#, kde-format
 msgid "Start a Conversation…"
-msgstr "對話"
+msgstr "開始對話…"
 
 #: content/ui/AccountInfo.qml:479
 #, kde-format
@@ -559,12 +542,10 @@ msgid "Profile link copied."
 msgstr "已複製個人檔案連結。"
 
 #: content/ui/AccountInfo.qml:652
-#, fuzzy, kde-format
-#| msgctxt "@info: Joining date of the user"
-#| msgid "Joined"
+#, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
-msgstr "加入日期"
+msgstr "加入時間"
 
 #: content/ui/AccountInfo.qml:740
 #, kde-format
@@ -584,24 +565,21 @@ msgid ""
 msgstr "寫下關於此使用者的一點備註。這個備註不會被除了您以外的任何人看到。"
 
 #: content/ui/AccountInfo.qml:823
-#, fuzzy, kde-format
-#| msgid "%1 followed you"
+#, kde-format
 msgid "Also followed by:"
-msgstr "%1 已跟隨您"
+msgstr "也被這些人跟隨："
 
 #: content/ui/AccountInfo.qml:853
-#, fuzzy, kde-format
-#| msgid "View %1's Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
-msgstr "檢視 %1 的個人檔案"
+msgstr "檢視其他 %1 個"
 
 #: content/ui/AccountInfo.qml:853
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
-msgstr "檢視個人檔案"
+msgstr "檢視全部"
 
 #: content/ui/AccountInfo.qml:891
 #, kde-format
@@ -678,12 +656,10 @@ msgid "Announcement on %1"
 msgstr "%1 的公告"
 
 #: content/ui/AnnouncementsPage.qml:69
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "No announcements"
+#, kde-format
 msgctxt "@label"
 msgid "No Announcements"
-msgstr "無公告"
+msgstr "沒有公告"
 
 #: content/ui/AnnouncementsPage.qml:70
 #, kde-format
@@ -879,7 +855,7 @@ msgstr "主題標籤"
 #: content/ui/ExplorePage.qml:53
 #, kde-format
 msgid "News"
-msgstr ""
+msgstr "新聞"
 
 #: content/ui/ExplorePage.qml:59 search/searchmodel.cpp:147
 #, kde-format
@@ -1046,10 +1022,9 @@ msgid "Create List"
 msgstr "建立列表"
 
 #: content/ui/ListsPage.qml:76
-#, fuzzy, kde-format
-#| msgid "No lists"
+#, kde-format
 msgid "No Lists"
-msgstr "無列表"
+msgstr "沒有列表"
 
 #: content/ui/ListsPage.qml:77
 #, kde-format
@@ -1415,10 +1390,9 @@ msgid "Home"
 msgstr "首頁"
 
 #: content/ui/Main.qml:413 content/ui/Main.qml:455 content/ui/Main.qml:470
-#, fuzzy, kde-format
-#| msgid "No posts"
+#, kde-format
 msgid "No Posts"
-msgstr "無嘟文"
+msgstr "沒有嘟文"
 
 #: content/ui/Main.qml:414 content/ui/Main.qml:456 content/ui/Main.qml:471
 #, kde-format
@@ -1452,8 +1426,7 @@ msgid "Favorites"
 msgstr "最愛"
 
 #: content/ui/Main.qml:497
-#, fuzzy, kde-format
-#| msgid "No favorites"
+#, kde-format
 msgid "No Favorites"
 msgstr "沒有最愛"
 
@@ -1470,10 +1443,9 @@ msgid "Bookmarks"
 msgstr "書籤"
 
 #: content/ui/Main.qml:513
-#, fuzzy, kde-format
-#| msgid "Bookmarks"
+#, kde-format
 msgid "No Bookmarks"
-msgstr "書籤"
+msgstr "沒有書籤"
 
 #: content/ui/Main.qml:514
 #, kde-format
@@ -1504,10 +1476,9 @@ msgid "Lists"
 msgstr "列表"
 
 #: content/ui/Main.qml:578 content/ui/Settings/AccountPage.qml:70
-#, fuzzy, kde-format
-#| msgid "View Profile"
+#, kde-format
 msgid "Profile"
-msgstr "檢視個人檔案"
+msgstr "個人檔案"
 
 #: content/ui/Main.qml:593
 #, kde-format
@@ -2916,33 +2887,28 @@ msgid "Mark All As Read"
 msgstr "將全部標為已讀"
 
 #: content/ui/NotificationPage.qml:33
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
-msgstr "沒有通知"
+msgstr "設定通知…"
 
 #: content/ui/NotificationPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button Show all of a profile's posts"
-#| msgid "All"
+#, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "全部"
 
 #: content/ui/NotificationPage.qml:59
-#, fuzzy, kde-format
-#| msgid "Mentions"
+#, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "提及"
 
 #: content/ui/NotificationPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Show More"
+#, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
-msgstr "顯示更多"
+msgstr "更多"
 
 #: content/ui/NotificationPage.qml:95
 #, kde-format
@@ -2984,7 +2950,7 @@ msgstr "沒有通知"
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
 "posts they will show up here."
-msgstr ""
+msgstr "您還沒有通知。當別人回覆、最愛或轉嘟您的嘟文的時候會作為通知顯示在此。"
 
 #: content/ui/Notifications/AccountWarningDelegate.qml:66
 #, fuzzy, kde-format
@@ -3201,12 +3167,10 @@ msgid "Video"
 msgstr "影片"
 
 #: content/ui/PostDelegate/MediaContainer.qml:122
-#, fuzzy, kde-format
-#| msgctxt "@title:group Alternate text or description of the image"
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Media Description"
-msgstr "描述"
+msgstr "媒體描述"
 
 #: content/ui/PostDelegate/PostDelegate.qml:101
 #, kde-format
@@ -3505,9 +3469,7 @@ msgid "Quoted post"
 msgstr "已引用的嘟文"
 
 #: content/ui/PostDelegate/UserInteractionLabel.qml:71
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Loading…"
+#, kde-format
 msgctxt "@info Loading user that started this interaction"
 msgid "Loading…"
 msgstr "載入中…"
@@ -3529,12 +3491,10 @@ msgid "Play"
 msgstr "播放"
 
 #: content/ui/ReadMarker.qml:15
-#, fuzzy, kde-format
-#| msgctxt "Posted on 26 March 2024 Tuesday 20:43:18 +03"
-#| msgid "Posted on %1"
+#, kde-format
 msgctxt "Last read on this date"
 msgid "Last read on %1"
-msgstr "發佈於 %1"
+msgstr "最後閱讀於 %1"
 
 #: content/ui/ReportDialog.qml:22
 #, kde-format
@@ -3616,9 +3576,7 @@ msgid "Are you sure you want to log out of %1?"
 msgstr "您確定要登出 %1 嗎？"
 
 #: content/ui/Settings/AccountPage.qml:77
-#, fuzzy, kde-format
-#| msgctxt "@title:group Title for the group of account related actions"
-#| msgid "Account"
+#, kde-format
 msgid "Account"
 msgstr "帳號"
 
@@ -3746,14 +3704,14 @@ msgstr ""
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
 msgid "Auto-update timelines"
-msgstr ""
+msgstr "自動更新時間軸"
 
 #: content/ui/Settings/AppearancePage.qml:73
 #, kde-format
 msgid ""
 "If checked, Tokodon will automatically update certain timelines as new posts "
 "come in."
-msgstr ""
+msgstr "若勾選，Tokodon 會讓某些時間軸自動更新取得新嘟文。"
 
 #: content/ui/Settings/AppearancePage.qml:84
 #, kde-format
@@ -3788,17 +3746,16 @@ msgid "Media"
 msgstr "媒體"
 
 #: content/ui/Settings/AppearancePage.qml:143
-#, fuzzy, kde-format
-#| msgid "Crop images on the timeline to 16x9"
+#, kde-format
 msgid "Crop images on the timeline"
-msgstr "裁切時間軸上的影像到 16x9"
+msgstr "裁切時間軸上的影像"
 
 #: content/ui/Settings/AppearancePage.qml:144
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
-msgstr ""
+msgstr "若不勾選，只有附上一張影像的嘟文不會被裁剪。"
 
 #: content/ui/Settings/AppearancePage.qml:158
 #, kde-format
@@ -3806,8 +3763,7 @@ msgid "Auto-play animated GIFs"
 msgstr "自動播放動態 GIF"
 
 #: content/ui/Settings/EditProfilePage.qml:26
-#, fuzzy, kde-format
-#| msgid "Edit Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
@@ -3975,10 +3931,9 @@ msgid "When someone signs up to your server."
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Reports"
+#, kde-format
 msgid "Server Reports"
-msgstr "報告"
+msgstr "伺服器報告"
 
 #: content/ui/Settings/NotificationsPage.qml:178
 #, kde-format
@@ -4033,7 +3988,7 @@ msgstr ""
 #, kde-format
 msgctxt "Profile fields"
 msgid "Fields"
-msgstr ""
+msgstr "欄位"
 
 #: content/ui/Settings/ProfileEditor.qml:272
 #, kde-format
@@ -4345,9 +4300,7 @@ msgid "Add poll"
 msgstr "新增投票"
 
 #: content/ui/StatusComposer/StatusComposer.qml:449
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Content notice"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "內容告警"
@@ -4457,11 +4410,10 @@ msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
 
 #: content/ui/TimelinePage.qml:158
-#, fuzzy, kde-format
-#| msgid "Learn More"
+#, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
-msgstr "了解更多"
+msgstr "載入更多"
 
 #: content/ui/UserInfo.qml:98
 #, kde-format
@@ -4683,11 +4635,10 @@ msgid "Post by %1"
 msgstr "來自 %1 的嘟文"
 
 #: timeline/trendingnewsmodel.cpp:51
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Trending News"
-msgstr "熱門趨勢"
+msgstr "熱門新聞"
 
 #: tokodonapplication.cpp:14
 #, kde-format
