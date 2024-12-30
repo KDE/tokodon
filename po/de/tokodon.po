@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-27 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:42+0000\n"
 "PO-Revision-Date: 2024-11-04 14:04+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -655,7 +655,7 @@ msgstr "Blockierung aufheben"
 msgid "Block"
 msgstr "Blockieren"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:177
+#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -693,7 +693,7 @@ msgid "Draft Posts"
 msgstr "Beitrag melden"
 
 #: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -3091,13 +3091,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:349
 #, kde-format
 msgid "Show Less"
 msgstr "Weniger anzeigen"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:349
 #, kde-format
 msgid "Show More"
 msgstr "Mehr anzeigen"
@@ -3494,14 +3494,14 @@ msgstr[0] "%1 Mal geteilt"
 msgstr[1] "%1 Mal geteilt"
 
 #: content/ui/PostDelegate/LinkMenu.qml:30
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Verknüpfung kopieren"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:54
+#: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgid "Post link copied."
 msgstr "Beitrag-Verknüpfung kopiert."
@@ -3610,85 +3610,85 @@ msgstr ""
 "Wollen Sie diesen Beitrag wirklich neu verfassen? Dies wird den "
 "ursprünglichen Beitrag löschen."
 
-#: content/ui/PostDelegate/PostDelegate.qml:344
+#: content/ui/PostDelegate/PostDelegate.qml:343
 #, fuzzy, kde-format
 #| msgid "<b>Content Warning</b><br /> %1"
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Inhaltswarnung</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:454
+#: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:480
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Direktnachrichten können nicht geteilt werden"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Private Beiträge können nicht geteilt werden"
 
-#: content/ui/PostDelegate/PostDelegate.qml:485
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "Geteilt"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "Teilen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Favorisieren"
 
-#: content/ui/PostDelegate/PostDelegate.qml:513
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, fuzzy, kde-format
 #| msgid "Favourited"
 msgid "Favorited"
 msgstr "Favorisiert"
 
-#: content/ui/PostDelegate/PostDelegate.qml:513
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, fuzzy, kde-format
 #| msgctxt "Favorite a post"
 #| msgid "Favorite"
 msgid "Favorite"
 msgstr "Favorisieren"
 
-#: content/ui/PostDelegate/PostDelegate.qml:532
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Lesezeichen entfernen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:532
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Lesezeichen hinzufügen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "Lesezeichen gespeichert"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: content/ui/PostDelegate/PostDelegate.qml:567
+#: content/ui/PostDelegate/PostDelegate.qml:566
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3724,7 +3724,7 @@ msgstr "%1 teilte"
 msgid "In reply to %1"
 msgstr "Als Antwort auf %1"
 
-#: content/ui/PostDelegate/PostMenu.qml:35
+#: content/ui/PostDelegate/PostMenu.qml:43
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Thread"
@@ -3732,104 +3732,104 @@ msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Diskussion"
 
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:68
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Einbetten"
 
-#: content/ui/PostDelegate/PostMenu.qml:77
+#: content/ui/PostDelegate/PostMenu.qml:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Öffnen als ..."
 
-#: content/ui/PostDelegate/PostMenu.qml:85
+#: content/ui/PostDelegate/PostMenu.qml:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Antworten als ..."
 
-#: content/ui/PostDelegate/PostMenu.qml:93
+#: content/ui/PostDelegate/PostMenu.qml:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Favorisieren als ..."
 
-#: content/ui/PostDelegate/PostMenu.qml:101
+#: content/ui/PostDelegate/PostMenu.qml:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Teilen als ..."
 
-#: content/ui/PostDelegate/PostMenu.qml:109
+#: content/ui/PostDelegate/PostMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Lesezeichen setzten als ..."
 
-#: content/ui/PostDelegate/PostMenu.qml:117
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Lesezeichen entfernen"
 
-#: content/ui/PostDelegate/PostMenu.qml:117
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: content/ui/PostDelegate/PostMenu.qml:125
+#: content/ui/PostDelegate/PostMenu.qml:134
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Anheftung am Profil entfernen"
 
-#: content/ui/PostDelegate/PostMenu.qml:125
+#: content/ui/PostDelegate/PostMenu.qml:134
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Am Profil anheften"
 
-#: content/ui/PostDelegate/PostMenu.qml:139
+#: content/ui/PostDelegate/PostMenu.qml:149
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "@%1 nicht mehr stummschalten"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:151
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "@%1 stummschalten"
 
-#: content/ui/PostDelegate/PostMenu.qml:159
+#: content/ui/PostDelegate/PostMenu.qml:169
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "@%1 entsperren"
 
-#: content/ui/PostDelegate/PostMenu.qml:161
+#: content/ui/PostDelegate/PostMenu.qml:171
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "@%1 sperren"
 
-#: content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/PostDelegate/PostMenu.qml:199
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: content/ui/PostDelegate/PostMenu.qml:195
+#: content/ui/PostDelegate/PostMenu.qml:207
 #: content/ui/Settings/ProfileEditor.qml:151
 #: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
 
-#: content/ui/PostDelegate/PostMenu.qml:203
+#: content/ui/PostDelegate/PostMenu.qml:215
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Löschen und neu verfassen"

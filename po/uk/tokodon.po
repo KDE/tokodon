@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-27 00:41+0000\n"
+"POT-Creation-Date: 2024-12-30 00:42+0000\n"
 "PO-Revision-Date: 2024-12-27 21:57+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -649,7 +649,7 @@ msgstr "Розблокувати"
 msgid "Block"
 msgstr "Заблокувати"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:177
+#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
@@ -683,7 +683,7 @@ msgid "Draft Posts"
 msgstr "Чернетки дописів"
 
 #: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
-#: content/ui/PostDelegate/PostMenu.qml:43
+#: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
@@ -3068,13 +3068,13 @@ msgid "<b>Content Warning</b><br /> %1"
 msgstr "<b>Попередження щодо вмісту</b><br /> %1"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:349
 #, kde-format
 msgid "Show Less"
 msgstr "Показати менше"
 
 #: content/ui/ModerationTools/MainReportToolPage.qml:413
-#: content/ui/PostDelegate/PostDelegate.qml:350
+#: content/ui/PostDelegate/PostDelegate.qml:349
 #, kde-format
 msgid "Show More"
 msgstr "Докладніше"
@@ -3462,14 +3462,14 @@ msgstr[2] "%1 підсилень"
 msgstr[3] "%1 підсилення"
 
 #: content/ui/PostDelegate/LinkMenu.qml:30
-#: content/ui/PostDelegate/PostMenu.qml:51
+#: content/ui/PostDelegate/PostMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Копіювати посилання"
 
 #: content/ui/PostDelegate/LinkMenu.qml:33
-#: content/ui/PostDelegate/PostMenu.qml:54
+#: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgid "Post link copied."
 msgstr "Посилання на допис скопійовано."
@@ -3574,81 +3574,81 @@ msgstr ""
 "Ви справді хочете переписати цей допис? У результаті буде вилучено "
 "початковий допис."
 
-#: content/ui/PostDelegate/PostDelegate.qml:344
+#: content/ui/PostDelegate/PostDelegate.qml:343
 #, kde-format
 msgid "<b>Content Notice</b><br /> %1"
 msgstr "<b>Попередження про вміст</b><br /> %1"
 
-#: content/ui/PostDelegate/PostDelegate.qml:454
+#: content/ui/PostDelegate/PostDelegate.qml:453
 #, kde-format
 msgctxt "Reply to a post"
 msgid "Reply"
 msgstr "Відповісти"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:480
 #, kde-format
 msgid "Cannot boost direct messages"
 msgstr "Не можна підсилювати безпосередні повідомлення"
 
-#: content/ui/PostDelegate/PostDelegate.qml:483
+#: content/ui/PostDelegate/PostDelegate.qml:482
 #, kde-format
 msgid "Cannot boost private posts"
 msgstr "Не можна підсилювати приватні дописи"
 
-#: content/ui/PostDelegate/PostDelegate.qml:485
+#: content/ui/PostDelegate/PostDelegate.qml:484
 #, kde-format
 msgctxt "Share a post"
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boosted"
 msgstr "Підсилено"
 
-#: content/ui/PostDelegate/PostDelegate.qml:490
+#: content/ui/PostDelegate/PostDelegate.qml:489
 #, kde-format
 msgid "Boost"
 msgstr "Підсилення"
 
-#: content/ui/PostDelegate/PostDelegate.qml:510
+#: content/ui/PostDelegate/PostDelegate.qml:509
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Улюблене"
 
-#: content/ui/PostDelegate/PostDelegate.qml:513
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorited"
 msgstr "Додано до улюблених"
 
-#: content/ui/PostDelegate/PostDelegate.qml:513
+#: content/ui/PostDelegate/PostDelegate.qml:512
 #, kde-format
 msgid "Favorite"
 msgstr "Улюблене"
 
-#: content/ui/PostDelegate/PostDelegate.qml:532
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Вилучити закладку"
 
-#: content/ui/PostDelegate/PostDelegate.qml:532
+#: content/ui/PostDelegate/PostDelegate.qml:531
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmarked"
 msgstr "Додано до закладок"
 
-#: content/ui/PostDelegate/PostDelegate.qml:535
+#: content/ui/PostDelegate/PostDelegate.qml:534
 #, kde-format
 msgid "Bookmark"
 msgstr "Закладка"
 
-#: content/ui/PostDelegate/PostDelegate.qml:567
+#: content/ui/PostDelegate/PostDelegate.qml:566
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -3685,110 +3685,110 @@ msgstr "%1 підсилено"
 msgid "In reply to %1"
 msgstr "У відповідь на %1"
 
-#: content/ui/PostDelegate/PostMenu.qml:35
+#: content/ui/PostDelegate/PostMenu.qml:43
 #, kde-format
 msgctxt "@action:inmenu 'Thread' is a series of posts."
 msgid "Open Thread"
 msgstr "Відкрити гілку"
 
-#: content/ui/PostDelegate/PostMenu.qml:62
+#: content/ui/PostDelegate/PostMenu.qml:68
 #, kde-format
 msgctxt "@action Open embed into website dialog"
 msgid "Embed"
 msgstr "Вбудувати"
 
-#: content/ui/PostDelegate/PostMenu.qml:77
+#: content/ui/PostDelegate/PostMenu.qml:84
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open as…"
 msgstr "Відкрити як…"
 
-#: content/ui/PostDelegate/PostMenu.qml:85
+#: content/ui/PostDelegate/PostMenu.qml:92
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Reply as…"
 msgstr "Відповісти як…"
 
-#: content/ui/PostDelegate/PostMenu.qml:93
+#: content/ui/PostDelegate/PostMenu.qml:100
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Favorite as…"
 msgstr "Додати до улюбленого як…"
 
-#: content/ui/PostDelegate/PostMenu.qml:101
+#: content/ui/PostDelegate/PostMenu.qml:108
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Boost as…"
 msgstr "Підсилити як…"
 
-#: content/ui/PostDelegate/PostMenu.qml:109
+#: content/ui/PostDelegate/PostMenu.qml:116
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark as…"
 msgstr "Додати до закладок як…"
 
-#: content/ui/PostDelegate/PostMenu.qml:117
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Bookmark"
 msgstr "Вилучити закладку"
 
-#: content/ui/PostDelegate/PostMenu.qml:117
+#: content/ui/PostDelegate/PostMenu.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Bookmark"
 msgstr "Створити закладку"
 
-#: content/ui/PostDelegate/PostMenu.qml:125
+#: content/ui/PostDelegate/PostMenu.qml:134
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unpin on Profile"
 msgstr "Відшпилити на профілі"
 
-#: content/ui/PostDelegate/PostMenu.qml:125
+#: content/ui/PostDelegate/PostMenu.qml:134
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Pin on Profile"
 msgstr "Пришпилити на профілі"
 
-#: content/ui/PostDelegate/PostMenu.qml:139
+#: content/ui/PostDelegate/PostMenu.qml:149
 #, kde-format
 msgctxt "@action:inmenu Unmute account"
 msgid "Unmute @%1"
 msgstr "Дозволити повідомлення @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:141
+#: content/ui/PostDelegate/PostMenu.qml:151
 #, kde-format
 msgctxt "@action:inmenu Mute account"
 msgid "Mute @%1"
 msgstr "Заборонити повідомлення @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:159
+#: content/ui/PostDelegate/PostMenu.qml:169
 #, kde-format
 msgctxt "@action:inmenu Unblock account"
 msgid "Unblock @%1"
 msgstr "Розблокувати @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:161
+#: content/ui/PostDelegate/PostMenu.qml:171
 #, kde-format
 msgctxt "@action:inmenu Block account"
 msgid "Block @%1"
 msgstr "Заблокувати @%1"
 
-#: content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/PostDelegate/PostMenu.qml:199
 #: content/ui/StatusComposer/EditorAttachmentGrid.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: content/ui/PostDelegate/PostMenu.qml:195
+#: content/ui/PostDelegate/PostMenu.qml:207
 #: content/ui/Settings/ProfileEditor.qml:151
 #: content/ui/Settings/ProfileEditor.qml:213
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: content/ui/PostDelegate/PostMenu.qml:203
+#: content/ui/PostDelegate/PostMenu.qml:215
 #, kde-format
 msgid "Delete & Re-draft"
 msgstr "Вилучити і переписати"
