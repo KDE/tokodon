@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-30 00:42+0000\n"
-"PO-Revision-Date: 2024-12-29 02:21+0900\n"
+"PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -243,7 +243,7 @@ msgstr ""
 #: account/notificationhandler.cpp:173
 #, kde-format
 msgid "This user doesn't have a description."
-msgstr ""
+msgstr "這個使用者沒有描述。"
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -543,7 +543,7 @@ msgctxt ""
 "people who follow you back. This the same meaning as 'mutual friends', for "
 "example."
 msgid "Mutual"
-msgstr ""
+msgstr "互相跟隨"
 
 #: content/ui/AccountHeader.qml:102
 #, kde-format
@@ -3397,14 +3397,12 @@ msgid "Link preview: %1"
 msgstr "連結預覽：%1"
 
 #: content/ui/PostDelegate/LinkPreview.qml:204
-#, fuzzy, kde-format
-#| msgctxt "Show more options"
-#| msgid "More"
+#, kde-format
 msgctxt ""
 "@info:label 'More from [this author]', where we put the user's avatar and "
 "name next to this label"
 msgid "More from"
-msgstr "更多"
+msgstr "更多這個作者的內容"
 
 #: content/ui/PostDelegate/LinkPreview.qml:241
 #, kde-format
@@ -3959,7 +3957,7 @@ msgstr "預設彈出嘟文撰寫工具"
 #: content/ui/Settings/AppearancePage.qml:58
 #, kde-format
 msgid "Continue reading where you last left off"
-msgstr ""
+msgstr "從您上次閱讀的地方繼續閱讀"
 
 #: content/ui/Settings/AppearancePage.qml:59
 #, kde-format
@@ -3967,6 +3965,7 @@ msgid ""
 "If checked, the Home timeline will begin where you last read. The position "
 "in the timeline is shared with other clients."
 msgstr ""
+"勾選時，首頁時間軸開啟時會回到您上次閱讀的位置。這個位置會與其他用戶端分享。"
 
 #: content/ui/Settings/AppearancePage.qml:72
 #, kde-format
@@ -4132,7 +4131,7 @@ msgstr "通知只會在 Tokodon 執行時顯示。"
 #, kde-format
 msgctxt "@title:group"
 msgid "Filtering Policy"
-msgstr ""
+msgstr "過濾策略"
 
 #: content/ui/Settings/NotificationsPage.qml:59
 #, kde-format
@@ -4204,11 +4203,10 @@ msgid ""
 msgstr ""
 
 #: content/ui/Settings/NotificationsPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Could not feature account"
+#, kde-format
 msgctxt "@label Notification preferences"
 msgid "Moderated accounts"
-msgstr "無法推薦帳號"
+msgstr "已監管的帳號"
 
 #: content/ui/Settings/NotificationsPage.qml:104
 #, kde-format
@@ -4220,7 +4218,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: content/ui/Settings/NotificationsPage.qml:119
 #, kde-format
@@ -4231,7 +4229,7 @@ msgstr "提及"
 #, kde-format
 msgid ""
 "When someone mentions you in a new post, or replies to one of your threads."
-msgstr ""
+msgstr "有人在新嘟文提及您，或在您的串文中回覆的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:132
 #, kde-format
@@ -4241,7 +4239,7 @@ msgstr "狀態"
 #: content/ui/Settings/NotificationsPage.qml:133
 #, kde-format
 msgid "When a user you have notifications turned on for makes a new post."
-msgstr ""
+msgstr "您已為其啟用通知的使用者發出新嘟文的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:145
 #, kde-format
@@ -4249,10 +4247,9 @@ msgid "Boosts"
 msgstr "轉嘟"
 
 #: content/ui/Settings/NotificationsPage.qml:146
-#, fuzzy, kde-format
-#| msgid "%1 users boosted your post"
+#, kde-format
 msgid "When someone boosted one of your posts."
-msgstr "%1 個使用者轉嘟了您的嘟文"
+msgstr "有人轉嘟您的嘟文的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:158
 #, kde-format
@@ -4262,7 +4259,7 @@ msgstr "新跟隨者"
 #: content/ui/Settings/NotificationsPage.qml:159
 #, kde-format
 msgid "When someone follows you."
-msgstr ""
+msgstr "有人跟隨您的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:171
 #, kde-format
@@ -4272,12 +4269,12 @@ msgstr "新跟隨請求"
 #: content/ui/Settings/NotificationsPage.qml:172
 #, kde-format
 msgid "When an account who requires manual approval wants to follow you."
-msgstr ""
+msgstr "需要手動准許才能跟隨您的帳號希望跟隨您而發出跟隨請求的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:185
 #, kde-format
 msgid "When a post you made was favorited by another user."
-msgstr ""
+msgstr "當您所發出的嘟文被另一名使用者加入最愛的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:197
 #, kde-format
@@ -4287,7 +4284,7 @@ msgstr "投票"
 #: content/ui/Settings/NotificationsPage.qml:198
 #, kde-format
 msgid "When a poll you voted in has ended."
-msgstr ""
+msgstr "您有參與的投票結束的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:210
 #, kde-format
@@ -4297,17 +4294,17 @@ msgstr "編輯"
 #: content/ui/Settings/NotificationsPage.qml:211
 #, kde-format
 msgid "When a post you interacted with was edited by the author."
-msgstr ""
+msgstr "您互動過的嘟文被作者編輯的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:223
 #, kde-format
 msgid "Server Sign-ups"
-msgstr ""
+msgstr "伺服器註冊"
 
 #: content/ui/Settings/NotificationsPage.qml:224
 #, kde-format
 msgid "When someone signs up to your server."
-msgstr ""
+msgstr "有人在您的伺服器上註冊的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:239
 #, kde-format
@@ -4317,12 +4314,12 @@ msgstr "伺服器報告"
 #: content/ui/Settings/NotificationsPage.qml:240
 #, kde-format
 msgid "When someone files a report against a user on your server."
-msgstr ""
+msgstr "有人檢舉您的伺服器上的一個使用者的時候。"
 
 #: content/ui/Settings/NotificationsPage.qml:255
 #, kde-format
 msgid "Severed Relationships"
-msgstr ""
+msgstr "關係已中斷"
 
 #: content/ui/Settings/NotificationsPage.qml:256
 #, kde-format
@@ -4330,6 +4327,8 @@ msgid ""
 "When you or your server moderates another server, which you are following "
 "users or have followers with."
 msgstr ""
+"您或您的伺服器監管另一個伺服器的聯繫，而您與該伺服器上的使用者有跟隨關係的時"
+"候。"
 
 #: content/ui/Settings/NotificationsPage.qml:268
 #, kde-format
@@ -4340,7 +4339,7 @@ msgstr "年度報告"
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "當您在年尾收到 #FediWrapped 報告的時候。"
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4415,7 +4414,7 @@ msgstr "外觀"
 #: content/ui/Settings/TokodonConfigurationView.qml:30
 #, kde-format
 msgid "Safety"
-msgstr ""
+msgstr "人身安全"
 
 #: content/ui/Settings/TokodonConfigurationView.qml:37
 #, kde-format
@@ -4564,7 +4563,7 @@ msgstr "草稿"
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "排程於 %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:82
 #, kde-format
@@ -4916,7 +4915,7 @@ msgstr "Tokodon"
 #: main.cpp:118 main.cpp:143
 #, kde-format
 msgid "Browse the Fediverse"
-msgstr ""
+msgstr "瀏覽聯邦宇宙"
 
 #: main.cpp:120
 #, kde-format
