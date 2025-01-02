@@ -14,7 +14,7 @@ import ".."
 /**
  * @brief The menu located in the "three dots hamburger" icon on a status.
  */
-Components.ContextMenu {
+Components.ConvergentContextMenu {
     id: root
 
     required property int index
