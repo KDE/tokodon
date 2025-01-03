@@ -5,19 +5,22 @@
 
 import QtQuick
 import QtQuick.Controls 2 as QQC2
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigamiaddons.components as Components
 
 import ".."
 
 /**
  * @brief The menu located in the "three dots hamburger" icon on a status.
  */
-QQC2.Menu {
+Components.ConvergentContextMenu {
     id: root
+
     property string url
 
-    QQC2.MenuItem {
+    QQC2.Action {
         icon.name: "window"
         text: i18nc("@action:inmenu 'Browser' being a web browser", "Open in Browser")
         onTriggered: {
@@ -25,7 +28,7 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuItem {
+    QQC2.Action {
         icon.name: "edit-copy"
         text: i18nc("@action:inmenu", "Copy Link")
         onTriggered: {
@@ -33,12 +36,18 @@ QQC2.Menu {
             applicationWindow().showPassiveNotification(i18n("Post link copied."));
         }
 
-        KQuickControlsAddons.Clipboard { id: clipboard }
+        readonly property KQuickControlsAddons.Clipboard clipboard: KQuickControlsAddons.Clipboard {}
     }
 
-    QQC2.MenuSeparator {}
+    Kirigami.Action {
+        separator: true
+    }
 
-    ShareMenu {
-        url: root.url
+    ShareAction {
+        inputData: ({
+            urls: [root.url],
+            title: i18nc("@title", "Post"),
+            mimeType: '*',
+        })
     }
 }
