@@ -31,11 +31,6 @@ QQC2.Label {
     textFormat: TextEdit.RichText
     activeFocusOnTab: false
     wrapMode: TextEdit.Wrap
-    onLinkActivated: link => {
-        if (root.shouldOpenAnyLinks) {
-            applicationWindow().navigateLink(link, root.shouldOpenInternalLinks)
-        }
-    }
     color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     onHoveredLinkChanged: if (hoveredLink.length > 0) {
         applicationWindow().hoverLinkIndicator.text = hoveredLink;
@@ -44,7 +39,7 @@ QQC2.Label {
     }
 
     TapHandler {
-        acceptedButtons: Qt.RightButton
+        acceptedButtons: Qt.RightButton | Qt.LeftButton
         exclusiveSignals: TapHandler.SingleTap | TapHandler.DoubleTap
 
         onSingleTapped: (eventPoint, button) => {
@@ -54,12 +49,19 @@ QQC2.Label {
                 return;
             }
 
+            if (button === Qt.LeftButton) {
+                if (root.shouldOpenAnyLinks) {
+                    applicationWindow().navigateLink(foundLink, root.shouldOpenInternalLinks)
+                }
+                return;
+            }
+
             const linkMenuComponent = Qt.createComponent("org.kde.tokodon", "LinkMenu");
-            const linkMenu = linkMenuComponent.createObject(root, {
+            const linkMenu = linkMenuComponent.createObject(root.QQC2.Overlay.overlay, {
                 url: foundLink,
             });
 
-            (linkMenu as LinkMenu)?.popup(point);
+            (linkMenu as LinkMenu)?.popup(root.QQC2.ApplicationWindow.window);
         }
     }
 
