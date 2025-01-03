@@ -5,7 +5,7 @@
 name: tokodon
 confinement: strict
 grade: stable
-base: core22
+base: core24
 adopt-info: tokodon
 apps:
   tokodon:
@@ -17,8 +17,9 @@ apps:
     plugs:
       - audio-record
       - home
+      - password-manager-service
 environment:
-  ALSA_CONFIG_PATH: "/snap/kf6-core22/current/etc/asound.conf"
+  ALSA_CONFIG_PATH: "/snap/kf6-core24/current/etc/asound.conf"
 layout:
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib:
     bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib
@@ -32,7 +33,7 @@ package-repositories:
     components:
       - main
     suites:
-      - jammy
+      - noble
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
@@ -82,7 +83,6 @@ parts:
       - gstreamer1.0-plugins-ugly
       - libblas3
       - libsecret-1-0
-      - gnome-keyring
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
@@ -100,6 +100,10 @@ parts:
       - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
       - --log-level=STATUS
       - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+    build-environment:
+      - CMAKE_FIND_ROOT_PATH: "${CMAKE_FIND_ROOT_PATH}:/snap/kf6-core24-sdk/current:$CRAFT_STAGE"
+      - PKG_CONFIG_PATH: "/snap/kf6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
+      - LD_LIBRARY_PATH: "${LD_LIBRARY_PATH}:/snap/kf6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR"
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
@@ -114,12 +118,11 @@ parts:
       - tokodon
     plugin: nil
     build-snaps:
-      - core22
-      - kf6-core22
-      - qt-common-themes
+      - core24
+      - kf6-core24
     override-prime: |
       set -eux
-      for snap in "core22" "kf6-core22" "qt-common-themes"; do
+      for snap in "core24" "kf6-core24"; do
           cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
       done
 
