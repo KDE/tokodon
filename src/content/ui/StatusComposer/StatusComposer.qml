@@ -13,6 +13,7 @@ import QtQuick.Effects
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as Components
 import org.kde.tokodon
 import org.kde.tokodon.private
 import '..'
@@ -518,32 +519,38 @@ Kirigami.ScrollablePage {
                                         return "kstars_xplanet";
                                 }
                             }
-                            onClicked: visibilityMenu.open()
+                            onClicked: visibilityMenu.popup(QQC2.Overlay.overlay)
                             enabled: root.purpose !== StatusComposer.Edit
-                            QQC2.Menu {
+
+                            Components.ConvergentContextMenu {
                                 id: visibilityMenu
-                                QQC2.MenuItem {
+
+                                headerContentItem: Kirigami.Heading {
+                                    level: 2
+                                    text: i18nc("@title", "Visibility")
+                                }
+                                Kirigami.Action {
                                     icon.name: "group"
                                     text: i18nc("@item:inmenu Local to this server", "Local")
                                     onTriggered: backend.visibility = Post.Local
                                     visible: AccountManager.selectedAccount.supportsLocalVisibility
                                 }
-                                QQC2.MenuItem {
+                                QQC2.Action {
                                     icon.name: "kstars_xplanet"
                                     text: i18nc("@item:inmenu Public to the world", "Public")
                                     onTriggered: backend.visibility = Post.Public
                                 }
-                                QQC2.MenuItem {
+                                QQC2.Action {
                                     icon.name: "unlock"
                                     text: i18nc("@item:inmenu Public but less so", "Unlisted")
                                     onTriggered: backend.visibility = Post.Unlisted
                                 }
-                                QQC2.MenuItem {
+                                QQC2.Action {
                                     icon.name: "lock"
                                     text: i18nc("@item:inmenu Only to followers", "Private")
                                     onTriggered: backend.visibility = Post.Private
                                 }
-                                QQC2.MenuItem {
+                                QQC2.Action {
                                     icon.name: "mail-message"
                                     text: i18nc("@item:inmenu Only to who is explicitly mentioned", "Direct Message")
                                     onTriggered: backend.visibility = Post.Direct
