@@ -22,7 +22,7 @@ Components.AlbumMaximizeComponent {
 
     actions: ShareAction {
         inputData: {
-            'urls': [content.currentItem.source],
+            'urls': [root.currentItem.source],
             'title': "Image",
         }
     }
@@ -38,13 +38,15 @@ Components.AlbumMaximizeComponent {
 
     onSaveItem: {
         const dialog = saveAsDialog.createObject(applicationWindow().overlay, {
-            url: content.currentItem.source,
+            url: root.currentItem.source,
         })
-        dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(content.currentItem.source);
+        dialog.selectedFile = dialog.currentFolder + "/" + FileHelper.fileName(root.currentItem.source);
         dialog.open();
     }
 
-    onItemRightClicked: imageMenu.popup()
+    onItemRightClicked: {
+        imageMenu.popup(QQC2.ApplicationWindow.window)
+    }
 
     Component {
         id: saveAsDialog
@@ -73,6 +75,6 @@ Components.AlbumMaximizeComponent {
 
     AttachmentMenu {
         id: imageMenu
-        attachment: content.currentItem
+        attachment: root.model[root.currentIndex]
     }
 }

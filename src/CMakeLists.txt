@@ -355,19 +355,14 @@ if(ANDROID)
     qt_target_qml_sources(tokodon_static
         QML_FILES
         content/ui/Android/ShareAction.qml
-        content/ui/Android/ShareMenu.qml
     )
     set_source_files_properties(content/ui/Android/ShareAction.qml PROPERTIES
         QT_RESOURCE_ALIAS content/ui/ShareAction.qml
-    )
-    set_source_files_properties(content/ui/Android/ShareMenu.qml PROPERTIES
-        QT_RESOURCE_ALIAS content/ui/ShareMenu.qml
     )
 else()
     qt_target_qml_sources(tokodon_static
         QML_FILES
         content/ui/ShareAction.qml
-        content/ui/ShareMenu.qml
     )
 endif()
 

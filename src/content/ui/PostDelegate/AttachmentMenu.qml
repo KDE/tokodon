@@ -5,42 +5,39 @@ import QtCore
 import QtQuick
 import QtQuick.Controls 2 as QQC2
 import QtQuick.Dialogs
+import org.kde.kirigami as Kirigami
 import org.kde.tokodon
+import org.kde.kirigamiaddons.components as Components
 
 import ".."
 
 /**
  * @brief The context menu for image attachments.
  */
-QQC2.Menu {
+Components.ConvergentContextMenu {
     id: root
 
-    property var attachment
+    property var attachment: null
 
-    modal: true
-
-    Component {
-        id: saveAsDialog
-        FileDialog {
-            property var url
-            fileMode: FileDialog.SaveFile
-            currentFolder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
-            onAccepted: {
-                if (!currentFile) {
-                    return;
-                }
-                FileHelper.downloadFile(AccountManager.selectedAccount, url, currentFile);
+    readonly property Component saveAsDialog: FileDialog {
+        required property var url
+        fileMode: FileDialog.SaveFile
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DownloadLocation)
+        onAccepted: {
+            if (!currentFile) {
+                return;
             }
+            FileHelper.downloadFile(AccountManager.selectedAccount, url, currentFile);
         }
     }
 
-    QQC2.MenuItem {
-        enabled: root.attachment != null
+    QQC2.Action {
+        enabled: root.attachment !== null
 
         icon.name: "window"
         text: {
-            if (root.attachment == null) {
-                return;
+            if (root.attachment === null) {
+                return '';
             }
 
             if (root.attachment.attachmentType === Attachment.Image) {
@@ -52,6 +49,7 @@ QQC2.Menu {
             } else if (root.attachment.attachmentType === Attachment.Audio) {
                 return i18n("Save Audio As…");
             }
+            return ''
         }
 
         onTriggered: {
@@ -63,20 +61,26 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuItem {
-        enabled: root.attachment != null
-        visible: root.attachment != null && root.attachment.attachmentType === Attachment.Image
+    Kirigami.Action {
+        enabled: root.attachment !== null
+        visible: root.attachment?.attachmentType === Attachment.Image
 
         icon.name: "edit-copy"
         text: i18n("Copy Image")
         onTriggered: root.attachment.copyToClipboard()
     }
 
-    QQC2.MenuSeparator {}
+    Kirigami.Action {
+        separator: true
+    }
 
-    ShareMenu {
-        enabled: root.attachment != null
+    ShareAction {
+        enabled: root.attachment !== null
 
-        url: root.attachment != null ? root.attachment.source : ""
+        inputData: ({
+            urls: [root.attachment?.source ?? ''],
+            title: i18nc("@title", "Post"),
+            mimeType: '*',
+        })
     }
 }
