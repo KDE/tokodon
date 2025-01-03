@@ -303,7 +303,6 @@ QQC2.ItemDelegate {
                 redraftDialog.active = true;
                 redraftDialog.item.open()
             }
-            onClosed: destroy();
         }
 
         ColumnLayout {
