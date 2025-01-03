@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import Qt.labs.qmlmodels 1.0
 import org.kde.kirigami 2 as Kirigami
 import org.kde.tokodon
+import org.kde.kirigamiaddons.components as Components
 import "./PostDelegate"
 import "./StatusComposer"
 
@@ -73,24 +74,23 @@ Kirigami.ScrollablePage {
         checkable: true
         onTriggered: {
             visibilityMenu.tookAction = false;
-            visibilityMenu.popup();
+            visibilityMenu.popup(timelinePage.QQC2.Overlay.overlay);
         }
     }
 
-    QQC2.Menu {
+    Components.ConvergentContextMenu {
         id: visibilityMenu
 
         property int lastCheckedIndex
         property bool tookAction
 
-        visible: false
         onClosed: {
             if (!tookAction) {
                 tabBar.currentIndex = lastCheckedIndex;
             }
         }
 
-        QQC2.MenuItem {
+        QQC2.Action {
             icon.name: "boost"
             text: i18nc("Show only boosts", "Boosts")
             onTriggered: {
@@ -98,7 +98,8 @@ Kirigami.ScrollablePage {
                 visibilityMenu.tookAction = true;
             }
         }
-        QQC2.MenuItem {
+
+        QQC2.Action {
             icon.name: "favorite"
             text: i18nc("Show only favorites", "Favorites")
             onTriggered: {
@@ -106,7 +107,8 @@ Kirigami.ScrollablePage {
                 visibilityMenu.tookAction = true;
             }
         }
-        QQC2.MenuItem {
+
+        QQC2.Action {
             icon.name: "office-chart-bar"
             text: i18nc("Show only poll results", "Poll Results")
             onTriggered: {
@@ -114,7 +116,8 @@ Kirigami.ScrollablePage {
                 visibilityMenu.tookAction = true;
             }
         }
-        QQC2.MenuItem {
+
+        QQC2.Action {
             icon.name: "user-home-symbolic"
             text: i18nc("Show only followed statuses", "Posts")
             onTriggered: {
@@ -122,7 +125,8 @@ Kirigami.ScrollablePage {
                 visibilityMenu.tookAction = true;
             }
         }
-        QQC2.MenuItem {
+
+        QQC2.Action {
             icon.name: "list-add-user"
             text: i18nc("Show only follows", "Follows")
             onTriggered: {
