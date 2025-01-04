@@ -246,9 +246,9 @@ QQC2.ItemDelegate {
 
             onMoreOpened: parentItem => {
                 parentItem.down = true;
-                postMenu.active = true;
-                postMenu.item.closed.connect(() => parentItem.down = false);
-                postMenu.item.popup(parentItem, 0, parentItem.height);
+                const item = flexColumn.postMenu.createObject(QQC2.ApplicationWindow.window);
+                item.closed.connect(() => parentItem.down = false);
+                item.popup();
             }
 
             Loader {
@@ -284,32 +284,24 @@ QQC2.ItemDelegate {
             }
         }
 
-        Loader {
-            id: postMenu
+        readonly property Component postMenu: PostMenu {
+            index: root.index
+            postId: root.id
+            url: root.url
+            bookmarked: root.bookmarked
+            isSelf: root.isSelf
+            expandedPost: root.expandedPost
+            pinned: root.pinned
+            authorIdentity: root.authorIdentity
+            isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
 
-            active: false
-            visible: false
-
-            sourceComponent: PostMenu {
-                index: root.index
-                postId: root.id
-                url: root.url
-                bookmarked: root.bookmarked
-                isSelf: root.isSelf
-                expandedPost: root.expandedPost
-                pinned: root.pinned
-                authorIdentity: root.authorIdentity
-                isPrivate: root.visibility === Post.Direct || root.visibility === Post.Private
-
-                onDeletePost: {
-                    deleteDialog.active = true;
-                    deleteDialog.item.open()
-                }
-                onRedraftPost: {
-                    redraftDialog.active = true;
-                    redraftDialog.item.open()
-                }
-                onClosed: postMenu.active = false
+            onDeletePost: {
+                deleteDialog.active = true;
+                deleteDialog.item.open()
+            }
+            onRedraftPost: {
+                redraftDialog.active = true;
+                redraftDialog.item.open()
             }
         }
 
