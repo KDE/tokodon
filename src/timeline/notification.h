@@ -119,6 +119,7 @@ public:
     [[nodiscard]] std::optional<AccountWarning> accountWarning() const;
     [[nodiscard]] std::optional<AnnualReportEvent> annualReportEvent() const;
     [[nodiscard]] std::shared_ptr<Identity> identity() const;
+    [[nodiscard]] QDateTime createdAt() const;
 
 private:
     int m_id = 0;
@@ -131,6 +132,7 @@ private:
     std::optional<AnnualReportEvent> m_annualReportEvent;
     Type m_type = Type::Unknown;
     std::shared_ptr<Identity> m_identity;
+    QDateTime m_createdAt;
 
     Post *createPost(AbstractAccount *account, const QJsonObject &obj, QObject *parent);
 };

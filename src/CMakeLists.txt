@@ -248,6 +248,10 @@ qt_target_qml_sources(tokodon_static
         content/ui/Notifications/ReportDelegate.qml
         content/ui/Notifications/UserInteractionLabel.qml
         content/ui/Notifications/AnnualReportDelegate.qml
+        content/ui/Notifications/PostNotificationDelegate.qml
+        content/ui/Notifications/NotificationDelegate.qml
+        content/ui/Notifications/FollowDelegate.qml
+        content/ui/Notifications/OwnPostNotificationDelegate.qml
 
         # Settings
         content/ui/Settings/AccountPage.qml
@@ -298,7 +302,6 @@ qt_target_qml_sources(tokodon_static
         content/ui/ConversationPage.qml
         content/ui/EditListPage.qml
         content/ui/ExplorePage.qml
-        content/ui/FollowDelegate.qml
         content/ui/FollowingPage.qml
         content/ui/FullScreenImage.qml
         content/ui/LanguageSelector.qml

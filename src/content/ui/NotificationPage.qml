@@ -185,102 +185,98 @@ Kirigami.ScrollablePage {
             role: "type"
             DelegateChoice {
                 roleValue: Notification.Favorite
-                PostDelegate {
+                OwnPostNotificationDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Repeat
-                PostDelegate {
+                OwnPostNotificationDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Mention
-                PostDelegate {
+                PostNotificationDelegate {
                     width: ListView.view.width
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Follow
-                FollowDelegate {}
+                FollowDelegate {
+                    loading: listview.model.loading
+                }
             }
 
             DelegateChoice {
                 roleValue: Notification.Update
-                PostDelegate {
+                PostNotificationDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Status
-                PostDelegate {
+                PostNotificationDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.Poll
-                PostDelegate {
+                PostNotificationDelegate {
                     width: ListView.view.width
-                    secondary: true
                     timelineModel: groupedNotificationModel
                     loading: listview.model.loading
-                    showSeparator: index !== ListView.view.count - 1
-                    showInteractionButton: false
                 }
             }
 
             DelegateChoice {
                 roleValue: Notification.AdminSignUp
-                FollowDelegate {}
+                FollowDelegate {
+                    loading: listview.model.loading
+                }
             }
 
             DelegateChoice {
                 roleValue: Notification.AdminReport
-                ReportDelegate {}
+                ReportDelegate {
+                    loading: listview.model.loading
+                }
             }
 
             DelegateChoice {
                 roleValue: Notification.SeveredRelationships
-                RelationshipSeveranceDelegate {}
+                RelationshipSeveranceDelegate {
+                    loading: listview.model.loading
+                }
             }
 
             DelegateChoice {
                 roleValue: Notification.ModerationWarning
-                AccountWarningDelegate {}
+                AccountWarningDelegate {
+                    loading: listview.model.loading
+                }
             }
 
             DelegateChoice {
                 roleValue: Notification.AnnualReport
-                AnnualReportDelegate {}
+                AnnualReportDelegate {
+                    loading: listview.model.loading
+                }
             }
         }
 

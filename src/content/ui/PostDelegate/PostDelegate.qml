@@ -32,8 +32,6 @@ QQC2.ItemDelegate {
     required property bool isReply
     required property var replyAuthorIdentity
 
-    required property var notificationActorIdentity
-
     // Interaction count
     required property int reblogsCount
     required property int repliesCount
@@ -67,10 +65,6 @@ QQC2.ItemDelegate {
     required property bool isLastThreadReply
 
     required property var post
-
-    required property bool isGroup
-    required property bool isInGroup
-    required property int numInGroup
 
     property bool filtered: root.filters.length > 0
     property var timelineModel
@@ -172,7 +166,7 @@ QQC2.ItemDelegate {
 
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
-            visible: root.pinned && !root.notificationActorIdentity && !root.filtered
+            visible: root.pinned && !root.filtered
 
             Layout.fillWidth: true
             Layout.bottomMargin: visible ? Kirigami.Units.smallSpacing : 0
@@ -202,31 +196,8 @@ QQC2.ItemDelegate {
                 boostAuthorIdentity: root.boostAuthorIdentity
                 replyAuthorIdentity: root.replyAuthorIdentity
             }
-            active: !root.expandedPost && !root.notificationActorIdentity && (root.isBoosted || root.isReply)
+            active: !root.expandedPost && (root.isBoosted || root.isReply)
             visible: active
-        }
-
-        // Interaction labels for notifications
-        Loader {
-            active: root.notificationActorIdentity !== undefined && !root.isGroup
-            visible: active
-
-            sourceComponent: Notifications.UserInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
-            }
-        }
-
-        // Interaction labels for grouped notifications
-        Loader {
-            active: root.notificationActorIdentity !== undefined && root.isGroup
-            visible: active
-
-            sourceComponent: Notifications.GroupInteractionLabel {
-                type: root.type
-                notificationActorIdentity: root.notificationActorIdentity
-                numInGroup: root.numInGroup
-            }
         }
 
         PostInfoBar {
