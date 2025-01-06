@@ -477,7 +477,20 @@ QQC2.ItemDelegate {
                     }
                 }
 
-                onClicked: root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                onClicked: {
+                    if (Config.askBeforeBoosting && !root.reblogged) {
+                        const dialog = Qt.createComponent("org.kde.tokodon", "BoostConfirmationDialog").createObject(QQC2.Overlay.overlay, {
+                            sourceIdentity: AccountManager.selectedAccount.identity,
+                            targetIdentity: root.authorIdentity
+                        });
+                        dialog.accepted.connect(function() {
+                            root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                        });
+                        dialog.visible = true;
+                    } else {
+                        root.timelineModel.actionRepeat(timelineModel.index(root.index, 0))
+                    }
+                }
                 Accessible.description: root.reblogged ? i18n("Boosted") : i18n("Boost")
             }
 

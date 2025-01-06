@@ -78,6 +78,19 @@ FormCard.FormCardPage {
                 Config.save()
             }
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormSwitchDelegate {
+            id: askBeforeBoostingDelegate
+            text: i18nc("@option:check Boosting means to repost, or retweet", "Ask before boosting")
+            checked: Config.askBeforeBoosting
+            enabled: !Config.askBeforeBoostingImmutable
+            onToggled: {
+                Config.askBeforeBoosting = checked
+                Config.save()
+            }
+        }
     }
 
     FormCard.FormHeader {

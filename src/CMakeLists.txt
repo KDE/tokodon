@@ -211,6 +211,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/TimelineView.qml
         content/ui/Components/UserCard.qml
         content/ui/Components/QrCodeMaximizeComponent.qml
+        content/ui/Components/BoostConfirmationDialog.qml
 
         # Initial Setup
         content/ui/InitialSetup/SetupNotifications.qml
