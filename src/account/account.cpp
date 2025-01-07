@@ -420,14 +420,22 @@ void Account::checkForFollowRequests()
 
 void Account::checkForUnreadNotifications()
 {
-    get(apiUrl(QStringLiteral("/api/v1/notifications/unread_count")), true, this, [this](QNetworkReply *reply) {
-        const auto unreadNotificationsObject = QJsonDocument::fromJson(reply->readAll());
-        const auto count = unreadNotificationsObject["count"_L1].toInt();
-        if (m_unreadNotificationsCount != count) {
-            m_unreadNotificationsCount = count;
-            Q_EMIT unreadNotificationsCountChanged();
-        }
-    });
+    get(
+        apiUrl(QStringLiteral("/api/v1/notifications/unread_count")),
+        true,
+        this,
+        [this](QNetworkReply *reply) {
+            const auto unreadNotificationsObject = QJsonDocument::fromJson(reply->readAll());
+            const auto count = unreadNotificationsObject["count"_L1].toInt();
+            if (m_unreadNotificationsCount != count) {
+                m_unreadNotificationsCount = count;
+                Q_EMIT unreadNotificationsCountChanged();
+            }
+        },
+        [](QNetworkReply *reply) {
+            Q_UNUSED(reply)
+            // This error can be safely ignored
+        });
 }
 
 void Account::updatePushNotifications()
