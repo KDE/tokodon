@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:41+0000\n"
+"POT-Creation-Date: 2025-01-07 00:41+0000\n"
 "PO-Revision-Date: 2024-11-04 14:04+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -692,7 +692,7 @@ msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Beitrag melden"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
@@ -853,8 +853,7 @@ msgstr "Medien"
 msgid "This user hasn't posted any media yet."
 msgstr ""
 
-#: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
-#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:13
+#: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
 msgid "Share"
 msgstr "Teilen"
@@ -1696,7 +1695,7 @@ msgstr "Startseite"
 msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 
-#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:16
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
@@ -3201,20 +3200,20 @@ msgstr "–"
 msgid "No reports found"
 msgstr "Keine Meldungen gefunden"
 
-#: content/ui/NotificationPage.qml:27
+#: content/ui/NotificationPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
 msgstr ""
 
-#: content/ui/NotificationPage.qml:33
+#: content/ui/NotificationPage.qml:34
 #, fuzzy, kde-format
 #| msgid "No Notifications"
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
 msgstr "Keine Benachrichtigungen"
 
-#: content/ui/NotificationPage.qml:34
+#: content/ui/NotificationPage.qml:35
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Notifications"
@@ -3222,7 +3221,7 @@ msgctxt "@title:window"
 msgid "Notification Settings"
 msgstr "Benachrichtigungen"
 
-#: content/ui/NotificationPage.qml:46
+#: content/ui/NotificationPage.qml:47
 #, fuzzy, kde-format
 #| msgctxt "@action:button Show all of a profile's posts"
 #| msgid "All"
@@ -3230,7 +3229,7 @@ msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Alle"
 
-#: content/ui/NotificationPage.qml:59
+#: content/ui/NotificationPage.qml:60
 #, fuzzy, kde-format
 #| msgctxt "Show only mentions"
 #| msgid "Mentions"
@@ -3238,7 +3237,7 @@ msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Nennungen"
 
-#: content/ui/NotificationPage.qml:72
+#: content/ui/NotificationPage.qml:73
 #, fuzzy, kde-format
 #| msgid "Show More"
 msgctxt "@action:intoolbar More filter categories"
@@ -3251,25 +3250,25 @@ msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Geteilte Beiträge"
 
-#: content/ui/NotificationPage.qml:103
+#: content/ui/NotificationPage.qml:104
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: content/ui/NotificationPage.qml:111
+#: content/ui/NotificationPage.qml:113
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "Umfrageergebnisse"
 
-#: content/ui/NotificationPage.qml:119
+#: content/ui/NotificationPage.qml:122
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Beiträge"
 
-#: content/ui/NotificationPage.qml:127
+#: content/ui/NotificationPage.qml:131
 #, fuzzy, kde-format
 #| msgctxt "Show only follows"
 #| msgid "Follows"
@@ -3277,12 +3276,12 @@ msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Folgt Ihnen"
 
-#: content/ui/NotificationPage.qml:291
+#: content/ui/NotificationPage.qml:295
 #, kde-format
 msgid "No Notifications"
 msgstr "Keine Benachrichtigungen"
 
-#: content/ui/NotificationPage.qml:292
+#: content/ui/NotificationPage.qml:296
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3404,31 +3403,40 @@ msgstr "Medien ausblenden"
 msgid "Show Media"
 msgstr "Medien"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:47
+#: content/ui/PostDelegate/AttachmentMenu.qml:44
 #, kde-format
 msgid "Save Image As…"
 msgstr "Bild speichern unter ..."
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:49
+#: content/ui/PostDelegate/AttachmentMenu.qml:46
 #, kde-format
 msgid "Save Gif As…"
 msgstr "Gif speichern unter …"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:51
+#: content/ui/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
 msgid "Save Video As…"
 msgstr "Video speichern unter …"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:53
+#: content/ui/PostDelegate/AttachmentMenu.qml:50
 #, fuzzy, kde-format
 #| msgid "Save Video As…"
 msgid "Save Audio As…"
 msgstr "Video speichern unter …"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:71
+#: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
 msgid "Copy Image"
 msgstr "Bild kopieren"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:82
+#: content/ui/PostDelegate/LinkMenu.qml:49
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Post"
+msgctxt "@title"
+msgid "Post"
+msgstr "Beitrag"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
 #: content/ui/PostDelegate/VideoAttachment.qml:106
@@ -3493,14 +3501,14 @@ msgid_plural "%1 boosts"
 msgstr[0] "%1 Mal geteilt"
 msgstr[1] "%1 Mal geteilt"
 
-#: content/ui/PostDelegate/LinkMenu.qml:30
+#: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Verknüpfung kopieren"
 
-#: content/ui/PostDelegate/LinkMenu.qml:33
+#: content/ui/PostDelegate/LinkMenu.qml:36
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgid "Post link copied."
@@ -4720,14 +4728,14 @@ msgid "Discard"
 msgstr ""
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#: content/ui/StatusComposer/StatusComposer.qml:154
+#: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr ""
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
-#: content/ui/StatusComposer/StatusComposer.qml:155
+#: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
@@ -4739,59 +4747,59 @@ msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/StatusComposer/StatusComposer.qml:62
 #, fuzzy, kde-format
 #| msgid "Edit this post"
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Diesen Beitrag bearbeiten"
 
-#: content/ui/StatusComposer/StatusComposer.qml:63
+#: content/ui/StatusComposer/StatusComposer.qml:64
 #, fuzzy, kde-format
 #| msgid "Reply to this post"
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Auf diesen Beitrag antworten"
 
-#: content/ui/StatusComposer/StatusComposer.qml:65
+#: content/ui/StatusComposer/StatusComposer.qml:66
 #, fuzzy, kde-format
 #| msgid "Rewrite this post"
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Diesen Beitrag umschreiben"
 
-#: content/ui/StatusComposer/StatusComposer.qml:67
+#: content/ui/StatusComposer/StatusComposer.qml:68
 #, fuzzy, kde-format
 #| msgid "Write a new post"
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Einen neuen Beitrag schreiben"
 
-#: content/ui/StatusComposer/StatusComposer.qml:73
+#: content/ui/StatusComposer/StatusComposer.qml:74
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:81
+#: content/ui/StatusComposer/StatusComposer.qml:82
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:147
+#: content/ui/StatusComposer/StatusComposer.qml:148
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:161
+#: content/ui/StatusComposer/StatusComposer.qml:162
 #, fuzzy, kde-format
 #| msgid "Saved"
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Gespeichert"
 
-#: content/ui/StatusComposer/StatusComposer.qml:169
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, fuzzy, kde-format
 #| msgctxt "@info:Cancel button to close the dailog"
 #| msgid "Cancel"
@@ -4799,7 +4807,7 @@ msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:188
+#: content/ui/StatusComposer/StatusComposer.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -4807,115 +4815,123 @@ msgctxt "@title"
 msgid "Schedule Post"
 msgstr "Beitrag löschen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:194
+#: content/ui/StatusComposer/StatusComposer.qml:195
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:310
+#: content/ui/StatusComposer/StatusComposer.qml:311
 #, fuzzy, kde-format
 #| msgid "Content font"
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "Schriftart des Inhalts"
 
-#: content/ui/StatusComposer/StatusComposer.qml:324
+#: content/ui/StatusComposer/StatusComposer.qml:325
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Was ist neu?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:462
+#: content/ui/StatusComposer/StatusComposer.qml:463
 #, fuzzy, kde-format
 #| msgid "Please choose a file"
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Bitte wählen Sie eine Datei"
 
-#: content/ui/StatusComposer/StatusComposer.qml:467
+#: content/ui/StatusComposer/StatusComposer.qml:468
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Datei anhängen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:478
+#: content/ui/StatusComposer/StatusComposer.qml:479
 #, fuzzy, kde-format
 #| msgid "Add Poll"
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Umfrage hinzufügen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:490
+#: content/ui/StatusComposer/StatusComposer.qml:491
 #, fuzzy, kde-format
 #| msgid "Content font"
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Schriftart des Inhalts"
 
-#: content/ui/StatusComposer/StatusComposer.qml:527
+#: content/ui/StatusComposer/StatusComposer.qml:530
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip Post visibility"
+#| msgid "Visibility"
+msgctxt "@title"
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: content/ui/StatusComposer/StatusComposer.qml:534
 #, fuzzy, kde-format
 #| msgid "Local"
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Lokal"
 
-#: content/ui/StatusComposer/StatusComposer.qml:533
+#: content/ui/StatusComposer/StatusComposer.qml:540
 #, fuzzy, kde-format
 #| msgid "Public"
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Öffentlich"
 
-#: content/ui/StatusComposer/StatusComposer.qml:538
+#: content/ui/StatusComposer/StatusComposer.qml:545
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Nicht aufgeführt"
 
-#: content/ui/StatusComposer/StatusComposer.qml:543
+#: content/ui/StatusComposer/StatusComposer.qml:550
 #, fuzzy, kde-format
 #| msgid "Private"
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/StatusComposer/StatusComposer.qml:548
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, fuzzy, kde-format
 #| msgid "Direct Message"
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Direktnachricht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:553
+#: content/ui/StatusComposer/StatusComposer.qml:560
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Sichtbarkeit"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:567
 #, fuzzy, kde-format
 #| msgid "Post Language"
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Sprache des Beitrags"
 
-#: content/ui/StatusComposer/StatusComposer.qml:594
+#: content/ui/StatusComposer/StatusComposer.qml:601
 #, fuzzy, kde-format
 #| msgid "Add Emoji"
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emoji hinzufügen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:624
+#: content/ui/StatusComposer/StatusComposer.qml:631
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> Zeichen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:634
+#: content/ui/StatusComposer/StatusComposer.qml:641
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -4923,25 +4939,25 @@ msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Beitrag löschen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:662
+#: content/ui/StatusComposer/StatusComposer.qml:669
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Senden"
 
-#: content/ui/StatusComposer/StatusComposer.qml:664
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/StatusComposer/StatusComposer.qml:666
+#: content/ui/StatusComposer/StatusComposer.qml:673
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:668
+#: content/ui/StatusComposer/StatusComposer.qml:675
 #, fuzzy, kde-format
 #| msgid "Saved"
 msgctxt "@action:Button Save an edited a post"

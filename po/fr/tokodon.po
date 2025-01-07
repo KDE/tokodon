@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-04 00:41+0000\n"
+"POT-Creation-Date: 2025-01-07 00:41+0000\n"
 "PO-Revision-Date: 2024-12-28 11:33+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -681,7 +681,7 @@ msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Brouillons de messages"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:22
+#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
@@ -834,8 +834,7 @@ msgstr "Aucun media"
 msgid "This user hasn't posted any media yet."
 msgstr "Cet utilisateur n'a encore publié aucun media."
 
-#: content/ui/Android/ShareAction.qml:15 content/ui/Android/ShareMenu.qml:14
-#: content/ui/ShareAction.qml:19 content/ui/ShareMenu.qml:13
+#: content/ui/Android/ShareAction.qml:15 content/ui/ShareAction.qml:19
 #, kde-format
 msgid "Share"
 msgstr "Partager"
@@ -1667,7 +1666,7 @@ msgid "It seems pretty quiet right now, try posting something!"
 msgstr ""
 "Cela semble plutôt calme en ce moment, essayez de publier quelque chose !"
 
-#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:15
+#: content/ui/Main.qml:424 content/ui/NotificationPage.qml:16
 #: content/ui/Settings/TokodonConfigurationView.qml:23
 #, kde-format
 msgid "Notifications"
@@ -3170,37 +3169,37 @@ msgstr "N / A"
 msgid "No reports found"
 msgstr "Aucun rapport trouvé"
 
-#: content/ui/NotificationPage.qml:27
+#: content/ui/NotificationPage.qml:28
 #, kde-format
 msgctxt "@action:intoolbar Mark all notifications as read"
 msgid "Mark All As Read"
 msgstr "Tout marquer comme lu"
 
-#: content/ui/NotificationPage.qml:33
+#: content/ui/NotificationPage.qml:34
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Configure Notifications…"
 msgstr "Configurer les notifications..."
 
-#: content/ui/NotificationPage.qml:34
+#: content/ui/NotificationPage.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Notification Settings"
 msgstr "Configuration des notifications"
 
-#: content/ui/NotificationPage.qml:46
+#: content/ui/NotificationPage.qml:47
 #, kde-format
 msgctxt "@action:intoolbar Show all notifications"
 msgid "All"
 msgstr "Tout"
 
-#: content/ui/NotificationPage.qml:59
+#: content/ui/NotificationPage.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Show only mentions"
 msgid "Mentions"
 msgstr "Références"
 
-#: content/ui/NotificationPage.qml:72
+#: content/ui/NotificationPage.qml:73
 #, kde-format
 msgctxt "@action:intoolbar More filter categories"
 msgid "More"
@@ -3212,36 +3211,36 @@ msgctxt "Show only boosts"
 msgid "Boosts"
 msgstr "Stimulations"
 
-#: content/ui/NotificationPage.qml:103
+#: content/ui/NotificationPage.qml:104
 #, kde-format
 msgctxt "Show only favorites"
 msgid "Favorites"
 msgstr "Favoris"
 
-#: content/ui/NotificationPage.qml:111
+#: content/ui/NotificationPage.qml:113
 #, kde-format
 msgctxt "Show only poll results"
 msgid "Poll Results"
 msgstr "Résultats de vote"
 
-#: content/ui/NotificationPage.qml:119
+#: content/ui/NotificationPage.qml:122
 #, kde-format
 msgctxt "Show only followed statuses"
 msgid "Posts"
 msgstr "Messages"
 
-#: content/ui/NotificationPage.qml:127
+#: content/ui/NotificationPage.qml:131
 #, kde-format
 msgctxt "Show only follows"
 msgid "Follows"
 msgstr "Suivis"
 
-#: content/ui/NotificationPage.qml:291
+#: content/ui/NotificationPage.qml:295
 #, kde-format
 msgid "No Notifications"
 msgstr "Aucune notification"
 
-#: content/ui/NotificationPage.qml:292
+#: content/ui/NotificationPage.qml:296
 #, kde-format
 msgid ""
 "You have no notifications yet. When people reply, favorite or boost your "
@@ -3364,30 +3363,39 @@ msgstr "Masquer le média"
 msgid "Show Media"
 msgstr "Afficher le média"
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:47
+#: content/ui/PostDelegate/AttachmentMenu.qml:44
 #, kde-format
 msgid "Save Image As…"
 msgstr "Enregistrer l'image sous..."
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:49
+#: content/ui/PostDelegate/AttachmentMenu.qml:46
 #, kde-format
 msgid "Save Gif As…"
 msgstr "Enregistrer le fichier « GIF » sous..."
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:51
+#: content/ui/PostDelegate/AttachmentMenu.qml:48
 #, kde-format
 msgid "Save Video As…"
 msgstr "Enregistrer la vidéo sous..."
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:53
+#: content/ui/PostDelegate/AttachmentMenu.qml:50
 #, kde-format
 msgid "Save Audio As…"
 msgstr "Enregistrer l'audio sous..."
 
-#: content/ui/PostDelegate/AttachmentMenu.qml:71
+#: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
 msgid "Copy Image"
 msgstr "Copier l'image"
+
+#: content/ui/PostDelegate/AttachmentMenu.qml:82
+#: content/ui/PostDelegate/LinkMenu.qml:49
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Post"
+msgctxt "@title"
+msgid "Post"
+msgstr "Message"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
 #: content/ui/PostDelegate/VideoAttachment.qml:106
@@ -3452,14 +3460,14 @@ msgid_plural "%1 boosts"
 msgstr[0] "Coup de pouce %1"
 msgstr[1] "%1 coups de pouce"
 
-#: content/ui/PostDelegate/LinkMenu.qml:30
+#: content/ui/PostDelegate/LinkMenu.qml:33
 #: content/ui/PostDelegate/PostMenu.qml:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Link"
 msgstr "Copier un lien"
 
-#: content/ui/PostDelegate/LinkMenu.qml:33
+#: content/ui/PostDelegate/LinkMenu.qml:36
 #: content/ui/PostDelegate/PostMenu.qml:62
 #, kde-format
 msgid "Post link copied."
@@ -4682,14 +4690,14 @@ msgid "Discard"
 msgstr "Rejeter"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:104
-#: content/ui/StatusComposer/StatusComposer.qml:154
+#: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Annuler le brouillon"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
-#: content/ui/StatusComposer/StatusComposer.qml:155
+#: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
@@ -4701,188 +4709,196 @@ msgctxt "@action:button Discard this draft"
 msgid "Discard"
 msgstr "Rejeter"
 
-#: content/ui/StatusComposer/StatusComposer.qml:61
+#: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit This Post"
 msgstr "Modifier ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:63
+#: content/ui/StatusComposer/StatusComposer.qml:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Reply to This Post"
 msgstr "Répondre à ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:65
+#: content/ui/StatusComposer/StatusComposer.qml:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Rewrite This Post"
 msgstr "Ré-écrire ce message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:67
+#: content/ui/StatusComposer/StatusComposer.qml:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Write a New Post"
 msgstr "Écrire un nouveau message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:73
+#: content/ui/StatusComposer/StatusComposer.qml:74
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
 msgstr "Brouillons"
 
-#: content/ui/StatusComposer/StatusComposer.qml:81
+#: content/ui/StatusComposer/StatusComposer.qml:82
 #, kde-format
 msgctxt "@action Pop out the status composer"
 msgid "Pop Out"
 msgstr "Sortir"
 
-#: content/ui/StatusComposer/StatusComposer.qml:147
+#: content/ui/StatusComposer/StatusComposer.qml:148
 #, kde-format
 msgid "Saving an edited post that has a poll will clear existing results."
 msgstr ""
 "L'enregistrement d'une publication modifiée soumise à un sondage effacera "
 "les résultats existants."
 
-#: content/ui/StatusComposer/StatusComposer.qml:161
+#: content/ui/StatusComposer/StatusComposer.qml:162
 #, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Enregistrer"
 
-#: content/ui/StatusComposer/StatusComposer.qml:169
+#: content/ui/StatusComposer/StatusComposer.qml:170
 #, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: content/ui/StatusComposer/StatusComposer.qml:188
+#: content/ui/StatusComposer/StatusComposer.qml:189
 #, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
 msgstr "Planifier un message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:194
+#: content/ui/StatusComposer/StatusComposer.qml:195
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
 msgstr "Définir une planification"
 
-#: content/ui/StatusComposer/StatusComposer.qml:310
+#: content/ui/StatusComposer/StatusComposer.qml:311
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Content notice"
 msgstr "Avis sur le contenu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:324
+#: content/ui/StatusComposer/StatusComposer.qml:325
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "What's new?"
 msgstr "Quoi de neuf ?"
 
-#: content/ui/StatusComposer/StatusComposer.qml:462
+#: content/ui/StatusComposer/StatusComposer.qml:463
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a File"
 msgstr "Sélectionnez un fichier"
 
-#: content/ui/StatusComposer/StatusComposer.qml:467
+#: content/ui/StatusComposer/StatusComposer.qml:468
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Attach file"
 msgstr "Joindre un fichier"
 
-#: content/ui/StatusComposer/StatusComposer.qml:478
+#: content/ui/StatusComposer/StatusComposer.qml:479
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add poll"
 msgstr "Ajouter un vote"
 
-#: content/ui/StatusComposer/StatusComposer.qml:490
+#: content/ui/StatusComposer/StatusComposer.qml:491
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Content Notice"
 msgstr "Avis sur le contenu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:527
+#: content/ui/StatusComposer/StatusComposer.qml:530
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip Post visibility"
+#| msgid "Visibility"
+msgctxt "@title"
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: content/ui/StatusComposer/StatusComposer.qml:534
 #, kde-format
 msgctxt "@item:inmenu Local to this server"
 msgid "Local"
 msgstr "Local"
 
-#: content/ui/StatusComposer/StatusComposer.qml:533
+#: content/ui/StatusComposer/StatusComposer.qml:540
 #, kde-format
 msgctxt "@item:inmenu Public to the world"
 msgid "Public"
 msgstr "Public"
 
-#: content/ui/StatusComposer/StatusComposer.qml:538
+#: content/ui/StatusComposer/StatusComposer.qml:545
 #, kde-format
 msgctxt "@item:inmenu Public but less so"
 msgid "Unlisted"
 msgstr "Non répertorié"
 
-#: content/ui/StatusComposer/StatusComposer.qml:543
+#: content/ui/StatusComposer/StatusComposer.qml:550
 #, kde-format
 msgctxt "@item:inmenu Only to followers"
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/StatusComposer/StatusComposer.qml:548
+#: content/ui/StatusComposer/StatusComposer.qml:555
 #, kde-format
 msgctxt "@item:inmenu Only to who is explicitly mentioned"
 msgid "Direct Message"
 msgstr "Message direct"
 
-#: content/ui/StatusComposer/StatusComposer.qml:553
+#: content/ui/StatusComposer/StatusComposer.qml:560
 #, kde-format
 msgctxt "@info:tooltip Post visibility"
 msgid "Visibility"
 msgstr "Visibilité"
 
-#: content/ui/StatusComposer/StatusComposer.qml:560
+#: content/ui/StatusComposer/StatusComposer.qml:567
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Langue du message"
 
-#: content/ui/StatusComposer/StatusComposer.qml:594
+#: content/ui/StatusComposer/StatusComposer.qml:601
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Ajouter une émoticône"
 
-#: content/ui/StatusComposer/StatusComposer.qml:624
+#: content/ui/StatusComposer/StatusComposer.qml:631
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1 / %2</b> caractères"
 
-#: content/ui/StatusComposer/StatusComposer.qml:634
+#: content/ui/StatusComposer/StatusComposer.qml:641
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Planifier"
 
-#: content/ui/StatusComposer/StatusComposer.qml:662
+#: content/ui/StatusComposer/StatusComposer.qml:669
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Envoyer"
 
-#: content/ui/StatusComposer/StatusComposer.qml:664
+#: content/ui/StatusComposer/StatusComposer.qml:671
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Répondre"
 
-#: content/ui/StatusComposer/StatusComposer.qml:666
+#: content/ui/StatusComposer/StatusComposer.qml:673
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Envoyer un message à nouveau"
 
-#: content/ui/StatusComposer/StatusComposer.qml:668
+#: content/ui/StatusComposer/StatusComposer.qml:675
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
