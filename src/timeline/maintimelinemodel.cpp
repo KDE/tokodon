@@ -317,6 +317,12 @@ QVariant MainTimelineModel::data(const QModelIndex &index, int role) const
         return false;
     }
 
+    // If it's empty (because the user never set it, or the server doesn't support it) don't show the read marker at all
+    // Otherwise it ends up at the top of the timeline, being completely useless.
+    if (m_initialLastReadId.isEmpty()) {
+        return false;
+    }
+
     const auto postId = data(index, OriginalIdRole).toLongLong();
     return m_initialLastReadId.toLongLong() >= postId;
 }
