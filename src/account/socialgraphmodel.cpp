@@ -444,53 +444,63 @@ void SocialGraphModel::fillTimeline()
         url.setQuery(query);
     }
 
-    account->get(url, true, this, [this, account](QNetworkReply *reply) {
-        const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
-        const auto accounts = followRequestResult.array();
+    account->get(
+        url,
+        true,
+        this,
+        [this, account](QNetworkReply *reply) {
+            const auto followRequestResult = QJsonDocument::fromJson(reply->readAll());
+            const auto accounts = followRequestResult.array();
 
-        if (!accounts.isEmpty()) {
-            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
-            m_next = TextHandler::getNextLink(linkHeader);
+            if (!accounts.isEmpty()) {
+                const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+                m_next = TextHandler::getNextLink(linkHeader);
 
-            QList<std::shared_ptr<Identity>> fetchedAccounts;
-            QJsonArray value = accounts;
+                QList<std::shared_ptr<Identity>> fetchedAccounts;
+                QJsonArray value = accounts;
 
-            // This is a list of FamiliarFollower, not Account. So we need to transform it first.
-            if (m_followListName == QStringLiteral("familiar_followers")) {
-                value = accounts.first()["accounts"_L1].toArray();
-            }
+                // This is a list of FamiliarFollower, not Account. So we need to transform it first.
+                if (m_followListName == QStringLiteral("familiar_followers")) {
+                    value = accounts.first()["accounts"_L1].toArray();
+                }
 
-            std::transform(value.cbegin(), value.cend(), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
-                const auto identityJson = value.toObject();
-                return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
-            });
-
-            size_t i = m_accounts.size();
-            for (auto &identity : fetchedAccounts) {
-                connect(identity.get(), &Identity::relationshipChanged, this, [this, i, identity] {
-                    bool shouldRemove = false;
-                    if (isFollowing()) {
-                        shouldRemove = identity->relationship() != nullptr ? !identity->relationship()->following() : true;
-                    } else if (isFollower()) {
-                        shouldRemove = identity->relationship() != nullptr ? identity->relationship()->following() : true;
-                    }
-
-                    if (shouldRemove) {
-                        beginRemoveRows({}, i, i);
-                        m_accounts.removeAt(i);
-                        endRemoveRows();
-                    }
+                std::transform(value.cbegin(), value.cend(), std::back_inserter(fetchedAccounts), [account](const QJsonValue &value) -> auto {
+                    const auto identityJson = value.toObject();
+                    return account->identityLookup(identityJson["id"_L1].toString(), identityJson);
                 });
-                i++;
+
+                size_t i = m_accounts.size();
+                for (auto &identity : fetchedAccounts) {
+                    connect(identity.get(), &Identity::relationshipChanged, this, [this, i, identity] {
+                        bool shouldRemove = false;
+                        if (isFollowing()) {
+                            shouldRemove = identity->relationship() != nullptr ? !identity->relationship()->following() : true;
+                        } else if (isFollower()) {
+                            shouldRemove = identity->relationship() != nullptr ? identity->relationship()->following() : true;
+                        }
+
+                        if (shouldRemove) {
+                            beginRemoveRows({}, i, i);
+                            m_accounts.removeAt(i);
+                            endRemoveRows();
+                        }
+                    });
+                    i++;
+                }
+
+                beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
+                m_accounts += fetchedAccounts;
+                endInsertRows();
             }
 
-            beginInsertRows({}, m_accounts.size(), m_accounts.size() + fetchedAccounts.size() - 1);
-            m_accounts += fetchedAccounts;
-            endInsertRows();
-        }
-
-        setLoading(false);
-    });
+            setLoading(false);
+        },
+        [=](QNetworkReply *reply) {
+            // Failing to fetch the familiar followers list is harmless, some servers do not implement this endpoint
+            if (m_followListName != QStringLiteral("familiar_followers")) {
+                qWarning() << reply->url() << reply->errorString();
+            }
+        });
 }
 
 void SocialGraphModel::reset()
