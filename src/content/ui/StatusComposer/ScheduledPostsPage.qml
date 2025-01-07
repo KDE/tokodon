@@ -37,6 +37,8 @@ Kirigami.ScrollablePage {
     }
 
     ListView {
+        id: listView
+
         model: ScheduledStatusesModel {
             id: model
             drafts: root.drafts
@@ -95,6 +97,14 @@ Kirigami.ScrollablePage {
             }
 
             onClicked: root.opened(id)
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            icon.name: "view-list-text"
+            text: root.drafts ? i18nc("@info:placeholder", "No Drafts") : i18nc("@info:placeholder", "No Scheduled Posts")
+            visible: listView.count === 0 && !listView.model.loading
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 
