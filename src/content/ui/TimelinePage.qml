@@ -116,7 +116,7 @@ Kirigami.ScrollablePage {
     }
 
     Connections {
-        target: Controller
+        target: root.model
         function onNetworkErrorOccurred(error) {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your settings.", error)
             message.visible = true

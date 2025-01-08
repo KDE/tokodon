@@ -77,6 +77,7 @@ Q_SIGNALS:
     void accountIdChanged();
     void statusIdChanged();
     void listIdChanged();
+    void networkErrorOccurred(const QString &message);
 
 protected:
     void fetchMore(const QModelIndex &parent) override;

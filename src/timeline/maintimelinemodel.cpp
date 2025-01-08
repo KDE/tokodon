@@ -181,7 +181,7 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
         },
         [this](const QNetworkReply *reply) {
             setLoading(false);
-            NetworkController::instance().networkErrorOccurred(reply->errorString());
+            Q_EMIT networkErrorOccurred(reply->errorString());
         });
 }
 

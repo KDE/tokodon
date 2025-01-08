@@ -142,6 +142,11 @@ Q_SIGNALS:
      */
     void postSourceReady(PostEditorBackend *backend, bool isEdit);
 
+    /**
+     * @brief Emitted when a network error occured when loading this timeline.
+     */
+    void networkErrorOccurred(const QString &message);
+
 protected:
     QVariant postData(Post *post, int role) const;
 
