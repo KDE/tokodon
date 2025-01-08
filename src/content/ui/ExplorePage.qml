@@ -111,6 +111,14 @@ Kirigami.Page {
                     name: "trending"
                     shouldLoadMore: trendingPostsAction.checked
                 }
+
+                Kirigami.PlaceholderMessage {
+                    icon.name: "view-conversation-balloon-symbolic"
+                    text: i18nc("@info:placeholder", "No Posts")
+                    visible: !trendingPostsModel.loading && timelineView.count === 0
+                    anchors.centerIn: parent
+                    width: parent.width - Kirigami.Units.gridUnit * 4
+                }
             }
         }
         QQC2.ScrollView {
@@ -132,7 +140,8 @@ Kirigami.Page {
 
                 Kirigami.PlaceholderMessage {
                     anchors.centerIn: parent
-                    text: i18nc("@label", "No Trending Tags")
+                    icon.name: "tag-symbolic"
+                    text: i18nc("@info:placeholder", "No Tags")
                     visible: !tagsView.model.loading && tagsView.count === 0
                     width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 }
@@ -233,6 +242,14 @@ Kirigami.Page {
                         }
                     }
                 }
+
+                Kirigami.PlaceholderMessage {
+                    icon.name: "view-pim-news-symbolic"
+                    text: i18nc("@info:placeholder", "No News")
+                    visible: !newsModel.loading && newsView.count === 0
+                    anchors.centerIn: parent
+                    width: parent.width - Kirigami.Units.gridUnit * 4
+                }
             }
         }
         QQC2.ScrollView {
@@ -261,6 +278,14 @@ Kirigami.Page {
                         Kirigami.Theme.colorSet: Kirigami.Theme.Window
                         Kirigami.Theme.inherit: false
                     }
+                }
+
+                Kirigami.PlaceholderMessage {
+                    icon.name: "system-users-symbolic"
+                    text: i18nc("@info:placeholder", "No Users")
+                    visible: !usersModel.loading && suggestionsView.count === 0
+                    anchors.centerIn: parent
+                    width: parent.width - Kirigami.Units.gridUnit * 4
                 }
             }
         }
