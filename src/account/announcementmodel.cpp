@@ -98,6 +98,7 @@ void AnnouncementModel::fillTimeline()
             setLoading(false);
         },
         [=](QNetworkReply *reply) {
+            setLoading(false);
             Q_EMIT NetworkController::instance().networkErrorOccurred(reply->errorString());
         });
 }
