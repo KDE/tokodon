@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3306,11 +3306,10 @@ msgstr "复制图像"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgid "Posts"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
-msgstr "嘟文"
+msgstr ""
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
 #: content/ui/PostDelegate/VideoAttachment.qml:106
@@ -4539,39 +4538,51 @@ msgstr "在投票结束前隐藏投票计数"
 msgid "Remove"
 msgstr "移除"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr ""
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr ""
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "丢弃草稿"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "确定要丢弃草稿吗？"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
@@ -4679,9 +4690,7 @@ msgid "Content Notice"
 msgstr ""
 
 #: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "可见性"

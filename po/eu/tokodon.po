@@ -1,16 +1,16 @@
 # Translation for tokodon.po to Euskara/Basque (eu).
-# Copyright (C) 2023-2024 This file is copyright:
+# Copyright (C) 2023-2025 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
-# SPDX-FileCopyrightText: 2003, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2003, 2024, 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
-"PO-Revision-Date: 2024-12-28 09:04+0100\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"PO-Revision-Date: 2025-01-07 19:39+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -3388,12 +3388,10 @@ msgstr "Kopiatu irudia"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Post"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
-msgstr "Bidali posta"
+msgstr "Posta bidali"
 
 #: content/ui/PostDelegate/AudioAttachment.qml:80
 #: content/ui/PostDelegate/VideoAttachment.qml:106
@@ -4656,39 +4654,55 @@ msgstr "Ezkutatu boz zenbaketa galdeketa amaitu arte"
 msgid "Remove"
 msgstr "Kendu"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "Zirriborroa"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "%1(e)rako antolatua"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "Baztertu"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Draft or unfinished posts"
+#| msgid "Drafts"
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr "Zirriborroak"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr "Antolatutako postak"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Baztertu zirriborroa"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Ziur zaude zure zirriborroa baztertu nahi duzula?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
@@ -4798,9 +4812,7 @@ msgid "Content Notice"
 msgstr "Edukiari buruzko oharra"
 
 #: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Ikusgaitasuna"

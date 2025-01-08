@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 14:29+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -4658,39 +4658,55 @@ msgstr "Nascondi il conteggio dei voti fino al termine del sondaggio"
 msgid "Remove"
 msgstr "Rimuovi"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "Bozza"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Pianificato per %1"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "Scarta"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Draft or unfinished posts"
+#| msgid "Drafts"
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr "Bozze"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr "Commenti pianificati"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Elimina le bozze"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Sei sicuro di voler eliminare la bozza?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"

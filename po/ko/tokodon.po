@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -4616,39 +4616,55 @@ msgstr "투표가 끝날 때까지 총 투표 수 숨기기"
 msgid "Remove"
 msgstr "삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "초안"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "%1에 예정됨"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Draft or unfinished posts"
+#| msgid "Drafts"
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr "초안"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr "예약된 게시물"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "임시 저장 삭제"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "임시 저장된 게시물을 삭제하시겠습니까?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"

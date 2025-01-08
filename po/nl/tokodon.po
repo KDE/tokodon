@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
-"PO-Revision-Date: 2024-12-27 11:13+0100\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"PO-Revision-Date: 2025-01-07 11:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3375,9 +3375,7 @@ msgstr "Afbeelding kopiëren"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Post"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
 msgstr "Bericht"
@@ -4643,39 +4641,55 @@ msgstr "Telling van de stemmen verbergen totdat de peiling eindigt"
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "Concept"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Gepland voor %1"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "Verwerpen"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Draft or unfinished posts"
+#| msgid "Drafts"
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr "Concepten"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr "Geplande berichten"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Concept verwerpen"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Wilt u dit concept verwerpen?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
@@ -4785,9 +4799,7 @@ msgid "Content Notice"
 msgstr "Notitie over inhoud"
 
 #: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Zichtbaarheid"

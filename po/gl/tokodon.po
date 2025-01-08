@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 # Xosé M. <correoxm@disroot.org>, 2022, 2023.
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:41+0000\n"
-"PO-Revision-Date: 2024-12-27 19:09+0100\n"
+"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"PO-Revision-Date: 2025-01-07 19:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -3373,9 +3373,7 @@ msgstr "Copiar a imaxe"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Post"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
 msgstr "Publicar"
@@ -4635,39 +4633,55 @@ msgstr "Agochar o número total de votos ata que remate."
 msgid "Remove"
 msgstr "Eliminar"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
 msgstr "Borrador"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:63
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
 msgstr "Planificada para o %1"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:82
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:84
 #, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
 msgstr "Descartar"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:104
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Draft or unfinished posts"
+#| msgid "Drafts"
+msgctxt "@info:placeholder"
+msgid "No Drafts"
+msgstr "Borradores"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Scheduled Posts"
+msgctxt "@info:placeholder"
+msgid "No Scheduled Posts"
+msgstr "Publicacións planificadas"
+
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
 #, kde-format
 msgctxt "@title"
 msgid "Discard Draft"
 msgstr "Desbotar o borrador"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:105
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:115
 #: content/ui/StatusComposer/StatusComposer.qml:156
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to discard your draft?"
 msgstr "Seguro que quere descargar o borrador?"
 
-#: content/ui/StatusComposer/ScheduledPostsPage.qml:111
+#: content/ui/StatusComposer/ScheduledPostsPage.qml:121
 #, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
@@ -4777,9 +4791,7 @@ msgid "Content Notice"
 msgstr "Nota de contido"
 
 #: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Visibilidade"
