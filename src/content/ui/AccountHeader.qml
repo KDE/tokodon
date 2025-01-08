@@ -275,6 +275,20 @@ QQC2.Pane {
                             }
                         },
                         Kirigami.Action {
+                            displayHint: Kirigami.DisplayHint.IconOnly
+                            icon.name: "view-barcode-qr-symbolic"
+
+                            tooltip: i18nc("@info:tooltip", "Show a QR code for this account")
+                            onTriggered: {
+                                const code = Qt.createComponent("org.kde.tokodon", "QrCodeMaximizeComponent").createObject(QQC2.Overlay.overlay, {
+                                    url: root.identity.url,
+                                    title: root.identity.displayName,
+                                    subtitle: '@' + root.identity.account
+                                });
+                                code.open();
+                            }
+                        },
+                        Kirigami.Action {
                             icon.name: "list-add"
                             visible: !root.isSelf
                             text: i18n("Mention…")
