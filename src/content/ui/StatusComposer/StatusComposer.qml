@@ -569,15 +569,20 @@ Kirigami.ScrollablePage {
                             QQC2.ToolTip.visible: hovered
                             checkable: true
 
-                            onClicked: languageSelect.open()
-                            LanguageSelector {
+                            onClicked: languageSelect.createObject().open()
+
+                            Component {
                                 id: languageSelect
 
-                                onAboutToShow: {
-                                    const sourceIndex = listView.model.sourceModel.indexOfValue(backend.language);
-                                    listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
+                                LanguageSelector {
+                                    parent: root.QQC2.Overlay.overlay
+                                    onAboutToShow: {
+                                        const sourceIndex = listView.model.sourceModel.indexOfValue(backend.language);
+                                        listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
+                                    }
+                                    onCodeSelected: code => backend.language = code
+                                    onClosed: destroy()
                                 }
-                                onCodeSelected: code => backend.language = code
                             }
                         }
 

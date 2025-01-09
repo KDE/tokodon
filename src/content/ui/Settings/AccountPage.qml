@@ -177,16 +177,20 @@ Kirigami.Page {
                         text: i18nc("@label Account preferences", "Default post language")
                         description: Qt.locale(AccountManager.selectedAccount.preferences.defaultLanguage).nativeLanguageName
 
-                        onClicked: languageSelect.open()
+                        onClicked: languageSelect.createObject().open()
 
-                        LanguageSelector {
+                        Component {
                             id: languageSelect
 
-                            onAboutToShow: {
-                                const sourceIndex = listView.model.sourceModel.indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
-                                listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
+                            LanguageSelector {
+                                parent: root.QQC2.Overlay.overlay
+                                onAboutToShow: {
+                                    const sourceIndex = listView.model.sourceModel.indexOfValue(AccountManager.selectedAccount.preferences.defaultLanguage);
+                                    listView.currentIndex = listView.model.mapFromSource(sourceIndex).row;
+                                }
+                                onCodeSelected: code => AccountManager.selectedAccount.preferences.defaultLanguage = code
+                                onClosed: destroyed()
                             }
-                            onCodeSelected: code => AccountManager.selectedAccount.preferences.defaultLanguage = code
                         }
                     }
 
