@@ -52,19 +52,23 @@ AbstractAccount *FavoriteListsModel::account() const
 
 void FavoriteListsModel::setAccount(AbstractAccount *account)
 {
-    if (m_account != account) {
-        if (m_account != nullptr) {
-            disconnect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
-        }
-        m_account = account;
+    if (m_account == account) {
+        return;
+    }
+    if (m_account != nullptr) {
+        disconnect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
+        disconnect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists);
+    }
+    m_account = account;
+    if (m_account) {
         connect(m_account, &AbstractAccount::favoriteListsChanged, this, &FavoriteListsModel::reloadLists);
         if (m_account->successfullyAuthenticated()) {
             reloadLists();
         } else {
             connect(m_account, &AbstractAccount::authenticated, this, &FavoriteListsModel::reloadLists, Qt::SingleShotConnection);
         }
-        Q_EMIT accountChanged();
     }
+    Q_EMIT accountChanged();
 }
 
 int FavoriteListsModel::rowCount(const QModelIndex &parent) const
