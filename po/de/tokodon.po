@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-11-04 14:04+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1116,18 +1116,41 @@ msgstr ""
 msgid "Users"
 msgstr "Benutzer"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgctxt "Share a post"
+#| msgid "Boost"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "Teilen"
+
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "No Trending Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
 msgstr "Keine aufstrebenden Tags"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "Eine Person schreibt"
 msgstr[1] "%1 Personen schreiben"
+
+#: content/ui/ExplorePage.qml:248
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "User"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "Benutzer"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -4044,40 +4067,40 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Standardsprache für Beiträge"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Standardsichtbarkeit für Beiträge"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, fuzzy, kde-format
 #| msgid "Public"
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Öffentlich"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, fuzzy, kde-format
 #| msgid "Unlisted"
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Nicht aufgeführt"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, fuzzy, kde-format
 #| msgid "Private"
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr ""
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
@@ -4932,20 +4955,20 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Sprache des Beitrags"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, fuzzy, kde-format
 #| msgid "Add Emoji"
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emoji hinzufügen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> Zeichen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -4953,25 +4976,25 @@ msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Beitrag löschen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Senden"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Antworten"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr ""
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, fuzzy, kde-format
 #| msgid "Saved"
 msgctxt "@action:Button Save an edited a post"

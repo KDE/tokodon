@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1062,17 +1062,39 @@ msgstr "新聞"
 msgid "Users"
 msgstr "使用者"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "無熱門標籤"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "沒有嘟文"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "標籤"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1 人在講話"
+
+#: content/ui/ExplorePage.qml:248
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr "新聞"
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "No Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "沒有使用者"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -3911,37 +3933,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "預設嘟文語言"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "預設嘟文能見度"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "公開"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "不於公開時間軸顯示"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "僅限跟隨者"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "在瀏覽器開啟伺服器"
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr "某些設定值只能在您所屬的伺服器的網站上調整。"
@@ -4766,43 +4788,43 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "嘟文語言"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "新增表情符號"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> 個字元"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "排程"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "傳送"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "回覆"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "重新嘟文"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5244,6 +5266,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1 年前"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "無熱門標籤"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "公告"
@@ -5300,9 +5326,6 @@ msgstr[0] "%1 年前"
 
 #~ msgid "No users in this list"
 #~ msgstr "此列表中沒有使用者"
-
-#~ msgid "Tags"
-#~ msgstr "標籤"
 
 #~ msgctxt "@title:group"
 #~ msgid "Network Settings"

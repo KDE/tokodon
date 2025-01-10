@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1077,17 +1077,39 @@ msgstr "뉴스"
 msgid "Users"
 msgstr "사용자"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "트렌드 태그가 없음"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "게시물 없음"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "태그"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1명이 대화 중"
+
+#: content/ui/ExplorePage.qml:248
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr "뉴스"
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "No Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "사용자 없음"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -3956,37 +3978,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "기본 게시물 언어"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "기본 게시물 공개 설정"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "공개"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "미등재"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "비공개"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "브라우저에서 서버 열기"
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr "일부 설정은 서버의 웹사이트에서만 변경할 수 있습니다."
@@ -4821,43 +4843,43 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "게시물 언어"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "이모지 추가"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b>글자"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "예약"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "게시!"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "답장"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "재게시"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5298,6 +5320,10 @@ msgid "1 year ago"
 msgid_plural "%1 years ago"
 msgstr[0] "%1년 전"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "트렌드 태그가 없음"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "공지"
@@ -5360,9 +5386,6 @@ msgstr[0] "%1년 전"
 #~| msgid "No users favourited this post"
 #~ msgid "No users in this list"
 #~ msgstr "이 게시물을 좋아요 표시한 사용자가 없음"
-
-#~ msgid "Tags"
-#~ msgstr "태그"
 
 #~ msgctxt "@title:group"
 #~ msgid "Network Settings"

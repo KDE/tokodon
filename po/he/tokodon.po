@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-08 16:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1080,13 +1080,21 @@ msgstr "חדשות"
 msgid "Users"
 msgstr "משתמשים"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "אין תגיות מובילות"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "אין רשומות"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "תגיות"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
@@ -1094,6 +1102,20 @@ msgstr[0] "%1 מדבר או מדברת"
 msgstr[1] "%1 מדברים"
 msgstr[2] "%1 מדברים"
 msgstr[3] "%1 מדברים"
+
+#: content/ui/ExplorePage.qml:248
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr "חדשות"
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "No Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "אין משתמשים"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -3953,37 +3975,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "שפת רשומות כברירת מחדל"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "חשיפת רשומות כברירת מחדל"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "ציבורי"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "נסתר"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "פרטי"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "לפתוח את השרת בדפדפן"
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr "חלק מההגדרות ניתן להגדיר רק דרך אתר השרת שלך."
@@ -4806,43 +4828,43 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "שפת הרשומה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "הוספת אמוג׳י"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> תווים"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "תזמון"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "שליחה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "תגובה"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "פרסום מחדש"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5295,6 +5317,10 @@ msgstr[1] "לפני שנתיים"
 msgstr[2] "לפני %1 שנה"
 msgstr[3] "לפני %1 שנים"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "אין תגיות מובילות"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "הכרזות"
@@ -5359,9 +5385,6 @@ msgstr[3] "לפני %1 שנים"
 
 #~ msgid "No users in this list"
 #~ msgstr "אין משתמשים ברשימה הזאת"
-
-#~ msgid "Tags"
-#~ msgstr "תגיות"
 
 #~ msgctxt "@title:group"
 #~ msgid "Network Settings"

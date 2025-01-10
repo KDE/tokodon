@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-09 00:30+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1083,18 +1083,40 @@ msgstr "Nieuws"
 msgid "Users"
 msgstr "Gebruikers"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "Geen trending tags"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "Geen berichten"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "Tags"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "%1 personen zijn aan het praten"
 msgstr[1] "%1 personen zijn aan het praten"
+
+#: content/ui/ExplorePage.qml:248
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr "Nieuws"
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "No Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "Geen gebruikers"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -3976,37 +3998,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Standaard taal van bericht"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Standaard zichtbaarheid van bericht"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publiek"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Uit de lijst gehaald"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privé"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "Server in browser openen"
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
@@ -4842,43 +4864,43 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Taal van bericht"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Emoji toevoegen"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tekens"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Planning"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Verzenden"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Beantwoorden"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Opnieuw posten"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5323,6 +5345,10 @@ msgid_plural "%1 years ago"
 msgstr[0] "1 jaar geleden"
 msgstr[1] "%1 jaren geleden"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "Geen trending tags"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "Aankondigingen"
@@ -5389,9 +5415,6 @@ msgstr[1] "%1 jaren geleden"
 
 #~ msgid "No users in this list"
 #~ msgstr "Geen gebruikers in deze lijst"
-
-#~ msgid "Tags"
-#~ msgstr "Tags"
 
 #~ msgctxt "@title:group"
 #~ msgid "Network Settings"

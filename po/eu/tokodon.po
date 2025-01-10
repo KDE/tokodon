@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2025-01-08 22:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1091,18 +1091,40 @@ msgstr "Albisteak"
 msgid "Users"
 msgstr "Erabiltzaileak"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "Ez dago joerako etiketarik"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No Posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "Postarik gabe"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "Etiketak"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "Pertsona %1 hitz egiten ari da"
 msgstr[1] "%1 pertsona hitz egiten ari dira"
+
+#: content/ui/ExplorePage.qml:248
+#, fuzzy, kde-format
+#| msgid "News"
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr "Albisteak"
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "No Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "Erabiltzailerik ez"
 
 #: content/ui/FollowDelegate.qml:68
 #, kde-format
@@ -3990,37 +4012,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Posten hizkuntza lehenetsia"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Posten ikusgaitasun lehenetsia"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publikoa"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "Zerrendatu gabe"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Pribatua"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr "Ireki Zerbitzaria arakatzailean"
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
@@ -4855,43 +4877,43 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Postaren hizkuntza"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Gehitu emojia"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> karaktere"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Antolatu"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Bidali"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Erantzun"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Birbidali posta"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, kde-format
 msgctxt "@action:Button Save an edited a post"
 msgid "Save"
@@ -5338,6 +5360,10 @@ msgid_plural "%1 years ago"
 msgstr[0] "Duela urtebete"
 msgstr[1] "Duela %1 urte"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "Ez dago joerako etiketarik"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "Iragarpenak"
@@ -5402,9 +5428,6 @@ msgstr[1] "Duela %1 urte"
 #~| msgid "No users favorited this post"
 #~ msgid "No users in this list"
 #~ msgstr "Ez dago posta hori gogoko egin duen erabiltzailerik"
-
-#~ msgid "Tags"
-#~ msgstr "Etiketak"
 
 #~ msgctxt "@title:group"
 #~ msgid "Network Settings"

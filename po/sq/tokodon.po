@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-08 00:41+0000\n"
+"POT-Creation-Date: 2025-01-10 09:28+0000\n"
 "PO-Revision-Date: 2024-11-17 13:03+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <kde-i18n-sq@kde.org>\n"
@@ -1129,18 +1129,39 @@ msgstr ""
 msgid "Users"
 msgstr "Përdorues"
 
-#: content/ui/ExplorePage.qml:135
-#, kde-format
-msgctxt "@label"
-msgid "No Trending Tags"
-msgstr "Pa Etiketa Në Modë"
+#: content/ui/ExplorePage.qml:117
+#, fuzzy, kde-format
+#| msgid "No posts"
+msgctxt "@info:placeholder"
+msgid "No Posts"
+msgstr "S’ka postime"
 
-#: content/ui/ExplorePage.qml:167
+#: content/ui/ExplorePage.qml:144
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@info:placeholder"
+msgid "No Tags"
+msgstr "Etiketa"
+
+#: content/ui/ExplorePage.qml:176
 #, kde-format
 msgid "%1 person is talking"
 msgid_plural "%1 people are talking"
 msgstr[0] "Po flet %1 person"
 msgstr[1] "Po flasin %1 persona"
+
+#: content/ui/ExplorePage.qml:248
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No News"
+msgstr ""
+
+#: content/ui/ExplorePage.qml:285
+#, fuzzy, kde-format
+#| msgid "Users"
+msgctxt "@info:placeholder"
+msgid "No Users"
+msgstr "Përdorues"
 
 #: content/ui/FollowDelegate.qml:68
 #, fuzzy, kde-format
@@ -4079,37 +4100,37 @@ msgctxt "@label Account preferences"
 msgid "Default post language"
 msgstr "Gjuhë parazgjedhje postimesh"
 
-#: content/ui/Settings/AccountPage.qml:199
+#: content/ui/Settings/AccountPage.qml:203
 #, kde-format
 msgctxt "@label Account preferences"
 msgid "Default post visibility"
 msgstr "Dukshmëri parazgjedhje postimesh"
 
-#: content/ui/Settings/AccountPage.qml:201
+#: content/ui/Settings/AccountPage.qml:205
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Public"
 msgstr "Publik"
 
-#: content/ui/Settings/AccountPage.qml:202
+#: content/ui/Settings/AccountPage.qml:206
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Unlisted"
 msgstr "I pashfaqur"
 
-#: content/ui/Settings/AccountPage.qml:203
+#: content/ui/Settings/AccountPage.qml:207
 #, kde-format
 msgctxt "@item:inlistbox Default post visibility rule"
 msgid "Private"
 msgstr "Privat"
 
-#: content/ui/Settings/AccountPage.qml:215
+#: content/ui/Settings/AccountPage.qml:219
 #, kde-format
 msgctxt "@abel Account preferences"
 msgid "Open Server in Browser"
 msgstr ""
 
-#: content/ui/Settings/AccountPage.qml:216
+#: content/ui/Settings/AccountPage.qml:220
 #, kde-format
 msgid "Some settings can only be configured on your server's website."
 msgstr ""
@@ -4977,20 +4998,20 @@ msgctxt "@info:tooltip"
 msgid "Post language"
 msgstr "Gjuhë Postimi"
 
-#: content/ui/StatusComposer/StatusComposer.qml:601
+#: content/ui/StatusComposer/StatusComposer.qml:606
 #, fuzzy, kde-format
 #| msgid "Add Emoji"
 msgctxt "@info:tooltip"
 msgid "Add emoji"
 msgstr "Shtoni Emoji"
 
-#: content/ui/StatusComposer/StatusComposer.qml:631
+#: content/ui/StatusComposer/StatusComposer.qml:636
 #, kde-format
 msgctxt "@label Character count in the status composer"
 msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> shenja"
 
-#: content/ui/StatusComposer/StatusComposer.qml:641
+#: content/ui/StatusComposer/StatusComposer.qml:646
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Delete Post"
@@ -4998,25 +5019,25 @@ msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
 msgstr "Fshije Postimin"
 
-#: content/ui/StatusComposer/StatusComposer.qml:669
+#: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format
 msgctxt "@action:button Send a post"
 msgid "Send"
 msgstr "Dërgoje"
 
-#: content/ui/StatusComposer/StatusComposer.qml:671
+#: content/ui/StatusComposer/StatusComposer.qml:676
 #, kde-format
 msgctxt "@action:button Reply to a post"
 msgid "Reply"
 msgstr "Përgjigjuni"
 
-#: content/ui/StatusComposer/StatusComposer.qml:673
+#: content/ui/StatusComposer/StatusComposer.qml:678
 #, kde-format
 msgctxt "@action:button Send the same post again"
 msgid "Repost"
 msgstr "Ripostojeni"
 
-#: content/ui/StatusComposer/StatusComposer.qml:675
+#: content/ui/StatusComposer/StatusComposer.qml:680
 #, fuzzy, kde-format
 #| msgid "Saved"
 msgctxt "@action:Button Save an edited a post"
@@ -5479,6 +5500,10 @@ msgid_plural "%1 years ago"
 msgstr[0] "1 vit më parë"
 msgstr[1] "%1 vjet më parë"
 
+#~ msgctxt "@label"
+#~ msgid "No Trending Tags"
+#~ msgstr "Pa Etiketa Në Modë"
+
 #~ msgctxt "@action:button Server Announcements"
 #~ msgid "Announcements"
 #~ msgstr "Lajmërime"
@@ -5520,9 +5545,6 @@ msgstr[1] "%1 vjet më parë"
 
 #~ msgid "Click to add a note"
 #~ msgstr "Klikoni që të shtoni një shënim"
-
-#~ msgid "Tags"
-#~ msgstr "Etiketa"
 
 #~ msgctxt "@label"
 #~ msgid "No Trending Posts"
