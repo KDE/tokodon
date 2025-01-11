@@ -183,6 +183,7 @@ ecm_set_disabled_deprecation_versions(
 ecm_find_qmlmodule(org.kde.kitemmodels REQUIRED)
 ecm_find_qmlmodule(org.kde.notification REQUIRED)
 ecm_find_qmlmodule(org.kde.kquickcontrolsaddons REQUIRED)
+ecm_find_qmlmodule(org.kde.prison REQUIRED)
 
 if (NOT ANDROID)
     ecm_find_qmlmodule(org.kde.sonnet REQUIRED)
