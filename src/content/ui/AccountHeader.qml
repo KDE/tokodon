@@ -280,7 +280,7 @@ QQC2.Pane {
 
                             tooltip: i18nc("@info:tooltip", "Show a QR code for this account")
                             onTriggered: {
-                                const code = Qt.createComponent("org.kde.tokodon", "QrCodeMaximizeComponent").createObject(QQC2.Overlay.overlay, {
+                                const code = Qt.createComponent("org.kde.tokodon", "QrCodeMaximizeComponent").createObject(root.QQC2.Overlay.overlay, {
                                     url: root.identity.url,
                                     title: root.identity.displayName,
                                     subtitle: '@' + root.identity.account
