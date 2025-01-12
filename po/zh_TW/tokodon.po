@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
+"POT-Creation-Date: 2025-01-12 00:42+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -580,197 +580,204 @@ msgstr "%1 嘟文時不要再通知我。"
 msgid "Notify me when %1 posts."
 msgstr "%1 嘟文時通知我。"
 
-#: content/ui/AccountHeader.qml:280
+#: content/ui/AccountHeader.qml:281
+#, fuzzy, kde-format
+#| msgid "Enable notifications for this account"
+msgctxt "@info:tooltip"
+msgid "Show a QR code for this account"
+msgstr "為這個帳號啟用通知"
+
+#: content/ui/AccountHeader.qml:294
 #, kde-format
 msgid "Mention…"
 msgstr "提及…"
 
-#: content/ui/AccountHeader.qml:286
+#: content/ui/AccountHeader.qml:300
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "開始對話…"
 
-#: content/ui/AccountHeader.qml:295
+#: content/ui/AccountHeader.qml:309
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "隱藏 %1 的轉嘟"
 
-#: content/ui/AccountHeader.qml:297
+#: content/ui/AccountHeader.qml:311
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "顯示 %1 的轉嘟"
 
-#: content/ui/AccountHeader.qml:313
+#: content/ui/AccountHeader.qml:327
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "取消推薦這個個人檔案"
 
-#: content/ui/AccountHeader.qml:315
+#: content/ui/AccountHeader.qml:329
 #, kde-format
 msgid "Feature This Profile"
 msgstr "推薦這個個人檔案"
 
-#: content/ui/AccountHeader.qml:331
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Unmute"
 msgstr "取消靜音"
 
-#: content/ui/AccountHeader.qml:333
+#: content/ui/AccountHeader.qml:347
 #, kde-format
 msgid "Mute"
 msgstr "靜音"
 
-#: content/ui/AccountHeader.qml:349
+#: content/ui/AccountHeader.qml:363
 #, kde-format
 msgid "Unblock"
 msgstr "解除封鎖"
 
-#: content/ui/AccountHeader.qml:351
+#: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Block"
 msgstr "封鎖"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "檢舉…"
 
-#: content/ui/AccountHeader.qml:371
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Edit Profile"
 msgstr "編輯個人檔案"
 
-#: content/ui/AccountHeader.qml:375
+#: content/ui/AccountHeader.qml:389
 #, kde-format
 msgid "Account editor"
 msgstr "帳號編輯器"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:399
 #, kde-format
 msgid "Featured Users"
 msgstr "推薦使用者"
 
-#: content/ui/AccountHeader.qml:391
+#: content/ui/AccountHeader.qml:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "已排程的嘟文"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:419
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "嘟文草稿"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "在瀏覽器開啟"
 
-#: content/ui/AccountHeader.qml:423
+#: content/ui/AccountHeader.qml:437
 #, kde-format
 msgid "Copy Link"
 msgstr "複製連結"
 
-#: content/ui/AccountHeader.qml:426
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Profile link copied."
 msgstr "已複製個人檔案連結。"
 
-#: content/ui/AccountHeader.qml:496
+#: content/ui/AccountHeader.qml:510
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "加入時間"
 
-#: content/ui/AccountHeader.qml:536
+#: content/ui/AccountHeader.qml:550
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr ""
 
-#: content/ui/AccountHeader.qml:613
+#: content/ui/AccountHeader.qml:627
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "私人備註："
 
-#: content/ui/AccountHeader.qml:621
+#: content/ui/AccountHeader.qml:635
 #, kde-format
 msgid "Saved"
 msgstr "已儲存"
 
-#: content/ui/AccountHeader.qml:636
+#: content/ui/AccountHeader.qml:650
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "寫下關於此使用者的一點備註。這個備註不會被除了您以外的任何人看到。"
 
-#: content/ui/AccountHeader.qml:698
+#: content/ui/AccountHeader.qml:712
 #, kde-format
 msgid "Also followed by:"
 msgstr "也被這些人跟隨："
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "檢視其他 %1 個"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "檢視全部"
 
-#: content/ui/AccountHeader.qml:768
+#: content/ui/AccountHeader.qml:782
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> 篇嘟文"
 
-#: content/ui/AccountHeader.qml:781
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "正在跟隨 <b>%1</b> 人"
 
-#: content/ui/AccountHeader.qml:794
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> 名跟隨者"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:837
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "嘟文與回覆"
 
-#: content/ui/AccountHeader.qml:827
+#: content/ui/AccountHeader.qml:841
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "媒體"
 
-#: content/ui/AccountHeader.qml:858
+#: content/ui/AccountHeader.qml:872
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "隱藏轉嘟"
 
-#: content/ui/AccountHeader.qml:878
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"

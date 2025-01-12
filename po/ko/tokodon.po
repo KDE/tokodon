@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
+"POT-Creation-Date: 2025-01-12 00:42+0000\n"
 "PO-Revision-Date: 2024-12-24 19:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -592,198 +592,205 @@ msgstr "%1 님이 올린 게시물 알림을 더 이상 받지 않습니다."
 msgid "Notify me when %1 posts."
 msgstr "%1 님이 올린 게시물 알림을 받습니다."
 
-#: content/ui/AccountHeader.qml:280
+#: content/ui/AccountHeader.qml:281
+#, fuzzy, kde-format
+#| msgid "Enable notifications for this account"
+msgctxt "@info:tooltip"
+msgid "Show a QR code for this account"
+msgstr "이 계정의 알림 활성화"
+
+#: content/ui/AccountHeader.qml:294
 #, kde-format
 msgid "Mention…"
 msgstr "멘션…"
 
-#: content/ui/AccountHeader.qml:286
+#: content/ui/AccountHeader.qml:300
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "대화 시작하기…"
 
-#: content/ui/AccountHeader.qml:295
+#: content/ui/AccountHeader.qml:309
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "%1 님의 부스트 숨기기"
 
-#: content/ui/AccountHeader.qml:297
+#: content/ui/AccountHeader.qml:311
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "%1 님의 부스트 표시"
 
-#: content/ui/AccountHeader.qml:313
+#: content/ui/AccountHeader.qml:327
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "이 프로필 추천 숨기기"
 
-#: content/ui/AccountHeader.qml:315
+#: content/ui/AccountHeader.qml:329
 #, kde-format
 msgid "Feature This Profile"
 msgstr "이 프로필 추천"
 
-#: content/ui/AccountHeader.qml:331
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Unmute"
 msgstr "음소거 해제"
 
-#: content/ui/AccountHeader.qml:333
+#: content/ui/AccountHeader.qml:347
 #, kde-format
 msgid "Mute"
 msgstr "뮤트"
 
-#: content/ui/AccountHeader.qml:349
+#: content/ui/AccountHeader.qml:363
 #, kde-format
 msgid "Unblock"
 msgstr "차단 해제"
 
-#: content/ui/AccountHeader.qml:351
+#: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Block"
 msgstr "차단"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "신고…"
 
-#: content/ui/AccountHeader.qml:371
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Edit Profile"
 msgstr "프로필 편집"
 
-#: content/ui/AccountHeader.qml:375
+#: content/ui/AccountHeader.qml:389
 #, kde-format
 msgid "Account editor"
 msgstr "계정 편집기"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:399
 #, kde-format
 msgid "Featured Users"
 msgstr "추천 사용자"
 
-#: content/ui/AccountHeader.qml:391
+#: content/ui/AccountHeader.qml:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "예약된 게시물"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:419
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "초안 게시물"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
 
-#: content/ui/AccountHeader.qml:423
+#: content/ui/AccountHeader.qml:437
 #, kde-format
 msgid "Copy Link"
 msgstr "링크 복사"
 
-#: content/ui/AccountHeader.qml:426
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Profile link copied."
 msgstr "프로필 링크를 복사했습니다."
 
-#: content/ui/AccountHeader.qml:496
+#: content/ui/AccountHeader.qml:510
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "가입 시간"
 
-#: content/ui/AccountHeader.qml:536
+#: content/ui/AccountHeader.qml:550
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "이 링크의 소유권이 %1에 확인됨"
 
-#: content/ui/AccountHeader.qml:613
+#: content/ui/AccountHeader.qml:627
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "개인 메모:"
 
-#: content/ui/AccountHeader.qml:621
+#: content/ui/AccountHeader.qml:635
 #, kde-format
 msgid "Saved"
 msgstr "저장됨"
 
-#: content/ui/AccountHeader.qml:636
+#: content/ui/AccountHeader.qml:650
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "이 사용자에 대한 메모를 작성할 수 있습니다. 다른 사람에게 표시되지 않습니다."
 
-#: content/ui/AccountHeader.qml:698
+#: content/ui/AccountHeader.qml:712
 #, kde-format
 msgid "Also followed by:"
 msgstr "다음 사람도 팔로우함:"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "%1명 더 보기"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "모두 보기"
 
-#: content/ui/AccountHeader.qml:768
+#: content/ui/AccountHeader.qml:782
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
 msgid_plural "<b>%1</b> posts"
 msgstr[0] "게시물 <b>%1</b>개"
 
-#: content/ui/AccountHeader.qml:781
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
 msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b>명이 팔로우 중"
 
-#: content/ui/AccountHeader.qml:794
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
 msgid_plural "<b>%1</b> followers"
 msgstr[0] "팔로워 <b>%1</b>명"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "게시물"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:837
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "게시물과 답장"
 
-#: content/ui/AccountHeader.qml:827
+#: content/ui/AccountHeader.qml:841
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "미디어"
 
-#: content/ui/AccountHeader.qml:858
+#: content/ui/AccountHeader.qml:872
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "부스트 숨기기"
 
-#: content/ui/AccountHeader.qml:878
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"

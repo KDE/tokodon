@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the tokodon package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2024-12-04 18:21+0100\n"
+"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"PO-Revision-Date: 2025-01-11 21:37+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: account/abstractaccount.cpp:33
 #, kde-format
@@ -87,10 +87,9 @@ msgid "All files (*)"
 msgstr "Alla filer (*)"
 
 #: account/abstractaccount.cpp:479
-#, fuzzy, kde-format
-#| msgid "All supported formats"
+#, kde-format
 msgid "All supported formats (%1)"
-msgstr "Alla format som stöds"
+msgstr "Alla format som stöds (%1)"
 
 #: account/abstractaccount.cpp:629
 #, kde-format
@@ -203,25 +202,23 @@ msgctxt ""
 "the year. The variable is the current year e.g. 2024. Please don't translate "
 "the hashtag."
 msgid "Your %1 #FediWrapped awaits!"
-msgstr ""
+msgstr "Din %1 #FediWrapped väntar."
 
 #: account/notificationhandler.cpp:145
 #, kde-format
 msgid "Unveil your year's highlights and memorable moments on Mastodon!"
-msgstr ""
+msgstr "Avslöja årets höjdpunkter och minnesvärda ögonblick på Mastodon."
 
 #: account/notificationhandler.cpp:149
-#, fuzzy, kde-format
-#| msgid "No Notifications"
+#, kde-format
 msgctxt "@title"
 msgid "New Notification"
-msgstr "Inga underrättelser"
+msgstr "Ny underrättelse"
 
 #: account/notificationhandler.cpp:150
-#, fuzzy, kde-format
-#| msgid "Receiving push notifications"
+#, kde-format
 msgid "You received a new notification."
-msgstr "Tar emot utskickade underrättelser"
+msgstr "Du tog emot en ny underrättelse."
 
 #: account/notificationhandler.cpp:158
 #, kde-kuit-format
@@ -231,7 +228,7 @@ msgstr "<b>Innehållsmeddelande</b>: %1"
 #: account/notificationhandler.cpp:162
 #, kde-format
 msgid "This post has no text."
-msgstr ""
+msgstr "Inlägget har ingen text."
 
 #: account/notificationhandler.cpp:169
 #, kde-format
@@ -239,12 +236,13 @@ msgid ""
 "The moderators of your server has limited this user, view this in Tokodon to "
 "see their profile."
 msgstr ""
+"Moderatorerna på din server har begränsat den här användaren, titta på det i "
+"Tokodon för att se användarens profil."
 
 #: account/notificationhandler.cpp:173
-#, fuzzy, kde-format
-#| msgid "This user hasn't posted any media yet."
+#, kde-format
 msgid "This user doesn't have a description."
-msgstr "Den här användaren har inte skickat in någon media ännu."
+msgstr "Användaren har ingen beskrivning."
 
 #: account/profileeditor.cpp:185
 #, kde-format
@@ -268,20 +266,16 @@ msgid ""
 msgstr "Server anger inga regler. Se hemsidan för mer information."
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Draft Posts"
-msgstr "Rapportera inlägg"
+msgstr "Inläggsutkast"
 
 #: account/scheduledstatusesmodel.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scheduled Posts"
-msgstr "Ta bort inlägg"
+msgstr "Schemalagda inlägg"
 
 #: account/socialgraphmodel.cpp:32
 #, kde-format
@@ -596,157 +590,160 @@ msgstr "Sluta underrätta mig när %1 skickar ett inlägg."
 msgid "Notify me when %1 posts."
 msgstr "Underrätta mig när %1 skickar ett inlägg."
 
-#: content/ui/AccountHeader.qml:280
+#: content/ui/AccountHeader.qml:281
+#, fuzzy, kde-format
+#| msgid "Enable notifications for this account"
+msgctxt "@info:tooltip"
+msgid "Show a QR code for this account"
+msgstr "Aktivera underrättelser för kontot"
+
+#: content/ui/AccountHeader.qml:294
 #, kde-format
 msgid "Mention…"
 msgstr "Omnämnande…"
 
-#: content/ui/AccountHeader.qml:286
+#: content/ui/AccountHeader.qml:300
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Starta ett samtal…"
 
-#: content/ui/AccountHeader.qml:295
+#: content/ui/AccountHeader.qml:309
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Dölj förstärkningar från %1"
 
-#: content/ui/AccountHeader.qml:297
+#: content/ui/AccountHeader.qml:311
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Visa förstärkningar från %1"
 
-#: content/ui/AccountHeader.qml:313
+#: content/ui/AccountHeader.qml:327
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Sluta välja ut profil"
 
-#: content/ui/AccountHeader.qml:315
+#: content/ui/AccountHeader.qml:329
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Välj ut profil"
 
-#: content/ui/AccountHeader.qml:331
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Unmute"
 msgstr "Sluta tysta"
 
-#: content/ui/AccountHeader.qml:333
+#: content/ui/AccountHeader.qml:347
 #, kde-format
 msgid "Mute"
 msgstr "Tysta"
 
-#: content/ui/AccountHeader.qml:349
+#: content/ui/AccountHeader.qml:363
 #, kde-format
 msgid "Unblock"
 msgstr "Sluta blockera"
 
-#: content/ui/AccountHeader.qml:351
+#: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Block"
 msgstr "Blockera"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Rapportera…"
 
-#: content/ui/AccountHeader.qml:371
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Edit Profile"
 msgstr "Redigera profil"
 
-#: content/ui/AccountHeader.qml:375
+#: content/ui/AccountHeader.qml:389
 #, kde-format
 msgid "Account editor"
 msgstr "Kontoeditor"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:399
 #, kde-format
 msgid "Featured Users"
 msgstr "Utvalda användare"
 
-#: content/ui/AccountHeader.qml:391
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#: content/ui/AccountHeader.qml:405
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
-msgstr "Ta bort inlägg"
+msgstr "Schemalagda inlägg"
 
-#: content/ui/AccountHeader.qml:405
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Report Post"
+#: content/ui/AccountHeader.qml:419
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
-msgstr "Rapportera inlägg"
+msgstr "Inläggsutkast"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Öppna i webbläsare"
 
-#: content/ui/AccountHeader.qml:423
+#: content/ui/AccountHeader.qml:437
 #, kde-format
 msgid "Copy Link"
 msgstr "Kopiera länk"
 
-#: content/ui/AccountHeader.qml:426
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Profile link copied."
 msgstr "Profillänk kopierad."
 
-#: content/ui/AccountHeader.qml:496
+#: content/ui/AccountHeader.qml:510
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Gick med"
 
-#: content/ui/AccountHeader.qml:536
+#: content/ui/AccountHeader.qml:550
 #, kde-format
 msgid "Ownership of this link was checked on %1"
-msgstr ""
+msgstr "Länkens ägare kontrollerades %1"
 
-#: content/ui/AccountHeader.qml:613
+#: content/ui/AccountHeader.qml:627
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Privat anmärkning:"
 
-#: content/ui/AccountHeader.qml:621
+#: content/ui/AccountHeader.qml:635
 #, kde-format
 msgid "Saved"
 msgstr "Sparad"
 
-#: content/ui/AccountHeader.qml:636
+#: content/ui/AccountHeader.qml:650
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr ""
 "Skriv ner något om användaren, det är inte synligt för någon annan en dig."
 
-#: content/ui/AccountHeader.qml:698
+#: content/ui/AccountHeader.qml:712
 #, kde-format
 msgid "Also followed by:"
 msgstr "Också följd av:"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Visa %1 fler"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Visa alla"
 
-#: content/ui/AccountHeader.qml:768
+#: content/ui/AccountHeader.qml:782
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -754,7 +751,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "<b>%1</b> inlägg"
 msgstr[1] "<b>%1</b> inlägg"
 
-#: content/ui/AccountHeader.qml:781
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -762,7 +759,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "<b>%1</b> följer"
 msgstr[1] "<b>%1</b> följer"
 
-#: content/ui/AccountHeader.qml:794
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -770,39 +767,38 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> följare"
 msgstr[1] "<b>%1</b> följare"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Inlägg"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:837
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Inlägg och svar"
 
-#: content/ui/AccountHeader.qml:827
+#: content/ui/AccountHeader.qml:841
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountHeader.qml:858
+#: content/ui/AccountHeader.qml:872
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Dölj förstärkningar"
 
-#: content/ui/AccountHeader.qml:878
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
 msgstr "Alla"
 
 #: content/ui/AccountInfo.qml:36 content/ui/AccountInfo.qml:45
-#, fuzzy, kde-format
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile"
 msgstr "Profil"
@@ -995,8 +991,7 @@ msgid "Posts in an exclusive list are excluded from the Home timeline."
 msgstr "Inlägg i en exklusiv lista undantas från tidslinjen i Hem."
 
 #: content/ui/EditListPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@label If the list is favorited"
 msgid "Favorite"
 msgstr "Favorit"
@@ -1004,7 +999,7 @@ msgstr "Favorit"
 #: content/ui/EditListPage.qml:98
 #, kde-format
 msgid "This list will show up in the sidebar."
-msgstr ""
+msgstr "Listan visas i sidoraden."
 
 #: content/ui/EditListPage.qml:106
 #, kde-format
@@ -1091,18 +1086,16 @@ msgid "Users"
 msgstr "Användare"
 
 #: content/ui/ExplorePage.qml:117
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Inga inlägg"
 
 #: content/ui/ExplorePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
-msgstr "Etiketter"
+msgstr "Inga etiketter"
 
 #: content/ui/ExplorePage.qml:176
 #, kde-format
@@ -1112,15 +1105,13 @@ msgstr[0] "%1 person talar"
 msgstr[1] "%1 personer talar"
 
 #: content/ui/ExplorePage.qml:248
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
-msgstr "Nyheter"
+msgstr "Inga nyheter"
 
 #: content/ui/ExplorePage.qml:285
-#, fuzzy, kde-format
-#| msgid "No Users"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Inga användare"
@@ -1297,6 +1288,8 @@ msgid ""
 "There are no posts from the users in your list. Only new posts will appear "
 "in a list."
 msgstr ""
+"Det finns inga inlägg från användarna i din lista. Bara nya inlägg visas i "
+"en lista."
 
 #: content/ui/ListTimelinePage.qml:30
 #, kde-format
@@ -1313,18 +1306,17 @@ msgstr "Behörighet"
 #, kde-format
 msgid "To continue, you must authorize Tokodon to access your account."
 msgstr ""
+"För att fortsätta måste du ge Tokodon behörighet att komma åt ditt konto."
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:88
-#, fuzzy, kde-format
-#| msgid "Open Authorization Link"
+#, kde-format
 msgid "Open Authorization Page"
-msgstr "Öppna behörighetslänk"
+msgstr "Öppna behörighetssida"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:100
-#, fuzzy, kde-format
-#| msgid "Copy Authorization Link"
+#, kde-format
 msgid "Copy Link to Authorization Page"
-msgstr "Kopiera behörighetslänk"
+msgstr "Kopiera länk till behörighetssida"
 
 #: content/ui/LoginFlow/BaseAuthorization.qml:104
 #, kde-format
@@ -1774,15 +1766,13 @@ msgid "Settings"
 msgstr "Inställningar"
 
 #: content/ui/Main.qml:703
-#, fuzzy, kde-format
-#| msgid "Unfollow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Unfollow"
-msgstr "Sluta följ"
+msgstr "Sluta följa"
 
 #: content/ui/Main.qml:703
-#, fuzzy, kde-format
-#| msgid "Follow"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Follow"
 msgstr "Följ"
@@ -3276,12 +3266,14 @@ msgid ""
 "Your %1 #FediWrapped awaits! Unveil your year's highlights and memorable "
 "moments on Mastodon!"
 msgstr ""
+"Din %1 #FediWrapped väntar. Avslöja årets höjdpunkter och minnesvärda "
+"stunder på Mastodon."
 
 #: content/ui/Notifications/AnnualReportDelegate.qml:71
 #, kde-format
 msgctxt "@action:button"
 msgid "View #FediWrapped"
-msgstr ""
+msgstr "Visa #FediWrapped"
 
 #: content/ui/Notifications/GroupInteractionLabel.qml:64
 #, kde-format
@@ -3335,22 +3327,19 @@ msgid "Status with image attachment"
 msgstr "Status med bildbilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:96
-#, fuzzy, kde-format
-#| msgid "Status with GifV attachment"
+#, kde-format
 msgid "Status with gif attachment"
-msgstr "Status med GIFV-bilaga"
+msgstr "Status med GIF-bilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:98
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with video attachment"
 msgstr "Status med videobilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:100
-#, fuzzy, kde-format
-#| msgid "Status with Video attachment"
+#, kde-format
 msgid "Status with audio attachment"
-msgstr "Status med videobilaga"
+msgstr "Status med ljudbilaga"
 
 #: content/ui/PostDelegate/AttachmentGrid.qml:198
 #, kde-format
@@ -3390,10 +3379,9 @@ msgid "Save Video As…"
 msgstr "Spara video som…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:50
-#, fuzzy, kde-format
-#| msgid "Save Video As…"
+#, kde-format
 msgid "Save Audio As…"
-msgstr "Spara video som…"
+msgstr "Spara ljud som…"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:69
 #, kde-format
@@ -3402,9 +3390,7 @@ msgstr "Kopiera bild"
 
 #: content/ui/PostDelegate/AttachmentMenu.qml:82
 #: content/ui/PostDelegate/LinkMenu.qml:49
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Post"
+#, kde-format
 msgctxt "@title"
 msgid "Post"
 msgstr "Skicka"
@@ -3914,9 +3900,7 @@ msgid "Search for users, tags and posts"
 msgstr "Sök efter användare, etiketter och inlägg"
 
 #: content/ui/ServerInformationPage.qml:25
-#, fuzzy, kde-format
-#| msgctxt "@title Server-wide announcements set by admins."
-#| msgid "Announcements"
+#, kde-format
 msgctxt "@action:buttin"
 msgid "Announcements"
 msgstr "Kungörelser"
@@ -4442,17 +4426,15 @@ msgstr ""
 "eller har följare."
 
 #: content/ui/Settings/NotificationsPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button 'Report' as in 'Report this to moderators'"
-#| msgid "Report"
+#, kde-format
 msgctxt "@option:check"
 msgid "Annual Report"
-msgstr "Rapportera"
+msgstr "Årsrapport"
 
 #: content/ui/Settings/NotificationsPage.qml:269
 #, kde-format
 msgid "When you receive your #FediWrapped at the end of the year."
-msgstr ""
+msgstr "När du får din #FediWrapped i slutet av året."
 
 #: content/ui/Settings/ProfileEditor.qml:59
 #, kde-format
@@ -4495,16 +4477,13 @@ msgid "Fields"
 msgstr "Fält"
 
 #: content/ui/Settings/ProfileEditor.qml:269
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Ta bort"
 
 #: content/ui/Settings/ProfileEditor.qml:280
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add user to this list"
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Lägg till"
@@ -4675,35 +4654,31 @@ msgstr "Ta bort"
 #, kde-format
 msgctxt "Draft, unfinished post"
 msgid "Draft"
-msgstr ""
+msgstr "Utkast"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:65
 #, kde-format
 msgctxt "Scheduled for this date"
 msgid "Scheduled for %1"
-msgstr ""
+msgstr "Schemalagd %1"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this post"
 msgid "Discard"
-msgstr "Ta bort utkast"
+msgstr "Kasta"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Drafts"
-msgstr ""
+msgstr "Inga utkast"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Scheduled Posts"
-msgstr "Ta bort inlägg"
+msgstr "Inga schemalagda inlägg"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:114
 #: content/ui/StatusComposer/StatusComposer.qml:155
@@ -4720,12 +4695,10 @@ msgid "Are you sure you want to discard your draft?"
 msgstr "Är du säker på att du vill ta bort utkastet?"
 
 #: content/ui/StatusComposer/ScheduledPostsPage.qml:121
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Discard Draft"
+#, kde-format
 msgctxt "@action:button Discard this draft"
 msgid "Discard"
-msgstr "Ta bort utkast"
+msgstr "Kasta"
 
 #: content/ui/StatusComposer/StatusComposer.qml:62
 #, kde-format
@@ -4755,7 +4728,7 @@ msgstr "Skriv ett nytt inlägg"
 #, kde-format
 msgctxt "@action:intoolbar Draft or unfinished posts"
 msgid "Drafts"
-msgstr ""
+msgstr "Utkast"
 
 #: content/ui/StatusComposer/StatusComposer.qml:82
 #, kde-format
@@ -4771,34 +4744,28 @@ msgstr ""
 "resultat."
 
 #: content/ui/StatusComposer/StatusComposer.qml:162
-#, fuzzy, kde-format
-#| msgctxt "@action:Button Save an edited a post"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button Keep this draft"
 msgid "Save"
 msgstr "Spara"
 
 #: content/ui/StatusComposer/StatusComposer.qml:170
-#, fuzzy, kde-format
-#| msgctxt "@info:Cancel button to close the dailog"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button Go back to editing"
 msgid "Cancel"
 msgstr "Avbryt"
 
 #: content/ui/StatusComposer/StatusComposer.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@title"
 msgid "Schedule Post"
-msgstr "Ta bort inlägg"
+msgstr "Schemalägg inlägg"
 
 #: content/ui/StatusComposer/StatusComposer.qml:195
 #, kde-format
 msgctxt "@action:button Set this post's schedule to when it should be posted"
 msgid "Set Schedule"
-msgstr ""
+msgstr "Ange schema"
 
 #: content/ui/StatusComposer/StatusComposer.qml:311
 #, kde-format
@@ -4837,9 +4804,7 @@ msgid "Content Notice"
 msgstr "Innehållsmeddelande"
 
 #: content/ui/StatusComposer/StatusComposer.qml:530
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip Post visibility"
-#| msgid "Visibility"
+#, kde-format
 msgctxt "@title"
 msgid "Visibility"
 msgstr "Synlighet"
@@ -4899,12 +4864,10 @@ msgid "<b>%1/%2</b> characters"
 msgstr "<b>%1/%2</b> tecken"
 
 #: content/ui/StatusComposer/StatusComposer.qml:646
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Post"
+#, kde-format
 msgctxt "@action:button Schedule something to be posted later"
 msgid "Schedule"
-msgstr "Ta bort inlägg"
+msgstr "Schema"
 
 #: content/ui/StatusComposer/StatusComposer.qml:674
 #, kde-format

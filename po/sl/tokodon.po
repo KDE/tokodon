@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2025-01-08 05:40+0100\n"
+"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"PO-Revision-Date: 2025-01-11 09:53+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -598,152 +598,159 @@ msgstr "Ne obveščaj me več, ko objavlja %1."
 msgid "Notify me when %1 posts."
 msgstr "Obveščaj me, ko objavlja %1."
 
-#: content/ui/AccountHeader.qml:280
+#: content/ui/AccountHeader.qml:281
+#, fuzzy, kde-format
+#| msgid "Enable notifications for this account"
+msgctxt "@info:tooltip"
+msgid "Show a QR code for this account"
+msgstr "Obvestila za ta račun"
+
+#: content/ui/AccountHeader.qml:294
 #, kde-format
 msgid "Mention…"
 msgstr "Omeni…"
 
-#: content/ui/AccountHeader.qml:286
+#: content/ui/AccountHeader.qml:300
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Začni pogovor…"
 
-#: content/ui/AccountHeader.qml:295
+#: content/ui/AccountHeader.qml:309
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Skrij izpostavitve od  %1"
 
-#: content/ui/AccountHeader.qml:297
+#: content/ui/AccountHeader.qml:311
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Prikaži izpostavitve od %1"
 
-#: content/ui/AccountHeader.qml:313
+#: content/ui/AccountHeader.qml:327
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Nehaj prikazovati ta profil"
 
-#: content/ui/AccountHeader.qml:315
+#: content/ui/AccountHeader.qml:329
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Predstavi ta profil"
 
-#: content/ui/AccountHeader.qml:331
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Unmute"
 msgstr "Povrni glas"
 
-#: content/ui/AccountHeader.qml:333
+#: content/ui/AccountHeader.qml:347
 #, kde-format
 msgid "Mute"
 msgstr "Utišaj"
 
-#: content/ui/AccountHeader.qml:349
+#: content/ui/AccountHeader.qml:363
 #, kde-format
 msgid "Unblock"
 msgstr "Prenehaj blokirati"
 
-#: content/ui/AccountHeader.qml:351
+#: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Block"
 msgstr "Blokiraj"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Prijavi …"
 
-#: content/ui/AccountHeader.qml:371
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Edit Profile"
 msgstr "Uredi profil"
 
-#: content/ui/AccountHeader.qml:375
+#: content/ui/AccountHeader.qml:389
 #, kde-format
 msgid "Account editor"
 msgstr "Urejevalnik računa"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:399
 #, kde-format
 msgid "Featured Users"
 msgstr "Izpostavljeni uporabniki"
 
-#: content/ui/AccountHeader.qml:391
+#: content/ui/AccountHeader.qml:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Načrtovane objave"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:419
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Osnutki objav"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "Odpri v brskalniku"
 
-#: content/ui/AccountHeader.qml:423
+#: content/ui/AccountHeader.qml:437
 #, kde-format
 msgid "Copy Link"
 msgstr "Kopiraj povezavo"
 
-#: content/ui/AccountHeader.qml:426
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Profile link copied."
 msgstr "Povezava profila prekopirana."
 
-#: content/ui/AccountHeader.qml:496
+#: content/ui/AccountHeader.qml:510
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Pridružen"
 
-#: content/ui/AccountHeader.qml:536
+#: content/ui/AccountHeader.qml:550
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Lastništvo te povezave je bilo preverjeno na %1"
 
-#: content/ui/AccountHeader.qml:613
+#: content/ui/AccountHeader.qml:627
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Zasebna opomba:"
 
-#: content/ui/AccountHeader.qml:621
+#: content/ui/AccountHeader.qml:635
 #, kde-format
 msgid "Saved"
 msgstr "Shranjeno"
 
-#: content/ui/AccountHeader.qml:636
+#: content/ui/AccountHeader.qml:650
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "Zapiši nekaj o tem uporabniku, to ni vidno nikomur razen vam."
 
-#: content/ui/AccountHeader.qml:698
+#: content/ui/AccountHeader.qml:712
 #, kde-format
 msgid "Also followed by:"
 msgstr "Sleden tudi od:"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Prikaži %1 več"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Poglej vse"
 
-#: content/ui/AccountHeader.qml:768
+#: content/ui/AccountHeader.qml:782
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -753,7 +760,7 @@ msgstr[1] "<b>%1</b> objava"
 msgstr[2] "<b>%1</b> objavi"
 msgstr[3] "<b>%1</b> objave"
 
-#: content/ui/AccountHeader.qml:781
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -763,7 +770,7 @@ msgstr[1] "<b>%1</b> sleden"
 msgstr[2] "<b>%1</b> sledena"
 msgstr[3] "<b>%1</b> sledeni"
 
-#: content/ui/AccountHeader.qml:794
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -773,31 +780,31 @@ msgstr[1] "<b>%1</b> sledilec"
 msgstr[2] "<b>%1</b> sledilca"
 msgstr[3] "<b>%1</b> sledilci"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Objave"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:837
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Objave in odgovori"
 
-#: content/ui/AccountHeader.qml:827
+#: content/ui/AccountHeader.qml:841
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Slike in videi"
 
-#: content/ui/AccountHeader.qml:858
+#: content/ui/AccountHeader.qml:872
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Skrij izpostavitve"
 
-#: content/ui/AccountHeader.qml:878
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1092,18 +1099,16 @@ msgid "Users"
 msgstr "Uporabniki"
 
 #: content/ui/ExplorePage.qml:117
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Ni objav"
 
 #: content/ui/ExplorePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
-msgstr "Ključniki"
+msgstr "Ni ključnikov"
 
 #: content/ui/ExplorePage.qml:176
 #, kde-format
@@ -1115,15 +1120,13 @@ msgstr[2] "%1 človeka govorita"
 msgstr[3] "%1 ljudje govorijo"
 
 #: content/ui/ExplorePage.qml:248
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
-msgstr "Novice"
+msgstr "Ni novic"
 
 #: content/ui/ExplorePage.qml:285
-#, fuzzy, kde-format
-#| msgid "No Users"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Ni uporabnikov"

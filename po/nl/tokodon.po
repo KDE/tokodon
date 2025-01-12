@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-10 09:28+0000\n"
-"PO-Revision-Date: 2025-01-09 00:30+0100\n"
+"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"PO-Revision-Date: 2025-01-11 12:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -595,152 +595,159 @@ msgstr "Mij melden stoppen bij %1 berichten."
 msgid "Notify me when %1 posts."
 msgstr "Mij melden bij %1 berichten."
 
-#: content/ui/AccountHeader.qml:280
+#: content/ui/AccountHeader.qml:281
+#, fuzzy, kde-format
+#| msgid "Enable notifications for this account"
+msgctxt "@info:tooltip"
+msgid "Show a QR code for this account"
+msgstr "Meldingen voor dit account inschakelen"
+
+#: content/ui/AccountHeader.qml:294
 #, kde-format
 msgid "Mention…"
 msgstr "Vermelding…"
 
-#: content/ui/AccountHeader.qml:286
+#: content/ui/AccountHeader.qml:300
 #, kde-format
 msgid "Start a Conversation…"
 msgstr "Begin een conversatie…"
 
-#: content/ui/AccountHeader.qml:295
+#: content/ui/AccountHeader.qml:309
 #, kde-format
 msgid "Hide Boosts from %1"
 msgstr "Oppeppers van %1 verbergen"
 
-#: content/ui/AccountHeader.qml:297
+#: content/ui/AccountHeader.qml:311
 #, kde-format
 msgid "Show Boosts from %1"
 msgstr "Oppeppers van %1 tonen"
 
-#: content/ui/AccountHeader.qml:313
+#: content/ui/AccountHeader.qml:327
 #, kde-format
 msgid "Stop Featuring This Profile"
 msgstr "Dit profiel aanbevelen stoppen"
 
-#: content/ui/AccountHeader.qml:315
+#: content/ui/AccountHeader.qml:329
 #, kde-format
 msgid "Feature This Profile"
 msgstr "Dit profiel aanbevelen"
 
-#: content/ui/AccountHeader.qml:331
+#: content/ui/AccountHeader.qml:345
 #, kde-format
 msgid "Unmute"
 msgstr "Dempen opheffen"
 
-#: content/ui/AccountHeader.qml:333
+#: content/ui/AccountHeader.qml:347
 #, kde-format
 msgid "Mute"
 msgstr "Dempen"
 
-#: content/ui/AccountHeader.qml:349
+#: content/ui/AccountHeader.qml:363
 #, kde-format
 msgid "Unblock"
 msgstr "Deblokkeren"
 
-#: content/ui/AccountHeader.qml:351
+#: content/ui/AccountHeader.qml:365
 #, kde-format
 msgid "Block"
 msgstr "Blokkeren"
 
-#: content/ui/AccountHeader.qml:365 content/ui/PostDelegate/PostMenu.qml:187
+#: content/ui/AccountHeader.qml:379 content/ui/PostDelegate/PostMenu.qml:187
 #, kde-format
 msgctxt "@action:inmenu Report this post"
 msgid "Report…"
 msgstr "Rapporteren…"
 
-#: content/ui/AccountHeader.qml:371
+#: content/ui/AccountHeader.qml:385
 #, kde-format
 msgid "Edit Profile"
 msgstr "Profiel bewerken"
 
-#: content/ui/AccountHeader.qml:375
+#: content/ui/AccountHeader.qml:389
 #, kde-format
 msgid "Account editor"
 msgstr "Accountbewerker"
 
-#: content/ui/AccountHeader.qml:385
+#: content/ui/AccountHeader.qml:399
 #, kde-format
 msgid "Featured Users"
 msgstr "Aanbevolen gebruikers"
 
-#: content/ui/AccountHeader.qml:391
+#: content/ui/AccountHeader.qml:405
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Scheduled Posts"
 msgstr "Geplande berichten"
 
-#: content/ui/AccountHeader.qml:405
+#: content/ui/AccountHeader.qml:419
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Draft Posts"
 msgstr "Concept berichten"
 
-#: content/ui/AccountHeader.qml:418 content/ui/PostDelegate/LinkMenu.qml:25
+#: content/ui/AccountHeader.qml:432 content/ui/PostDelegate/LinkMenu.qml:25
 #: content/ui/PostDelegate/PostMenu.qml:51
 #, kde-format
 msgctxt "@action:inmenu 'Browser' being a web browser"
 msgid "Open in Browser"
 msgstr "In browser openen"
 
-#: content/ui/AccountHeader.qml:423
+#: content/ui/AccountHeader.qml:437
 #, kde-format
 msgid "Copy Link"
 msgstr "Koppeling kopiëren"
 
-#: content/ui/AccountHeader.qml:426
+#: content/ui/AccountHeader.qml:440
 #, kde-format
 msgid "Profile link copied."
 msgstr "Koppeling naar profiel gekopieerd."
 
-#: content/ui/AccountHeader.qml:496
+#: content/ui/AccountHeader.qml:510
 #, kde-format
 msgctxt "@info:label Joined at"
 msgid "Joined"
 msgstr "Neemt deel aan"
 
-#: content/ui/AccountHeader.qml:536
+#: content/ui/AccountHeader.qml:550
 #, kde-format
 msgid "Ownership of this link was checked on %1"
 msgstr "Eigenschap van deze koppeling is gecontroleerd op %1"
 
-#: content/ui/AccountHeader.qml:613
+#: content/ui/AccountHeader.qml:627
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Private Note:"
 msgstr "Privé notitie:"
 
-#: content/ui/AccountHeader.qml:621
+#: content/ui/AccountHeader.qml:635
 #, kde-format
 msgid "Saved"
 msgstr "Opgeslagen"
 
-#: content/ui/AccountHeader.qml:636
+#: content/ui/AccountHeader.qml:650
 #, kde-format
 msgid ""
 "Write down something about this user, this isn't visible to anyone but you."
 msgstr "Schrijf iets neer over deze gebruiker, dit is alleen zichtbaar voor u."
 
-#: content/ui/AccountHeader.qml:698
+#: content/ui/AccountHeader.qml:712
 #, kde-format
 msgid "Also followed by:"
 msgstr "Ook gevolgd door:"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View %1 More"
 msgstr "Bekijk %1 beter"
 
-#: content/ui/AccountHeader.qml:728
+#: content/ui/AccountHeader.qml:742
 #, kde-format
 msgctxt "@action:button See all familiar followers"
 msgid "View All"
 msgstr "Alles bekijken"
 
-#: content/ui/AccountHeader.qml:768
+#: content/ui/AccountHeader.qml:782
 #, kde-format
 msgctxt "@label User's number of statuses"
 msgid "<b>%1</b> post"
@@ -748,7 +755,7 @@ msgid_plural "<b>%1</b> posts"
 msgstr[0] "Bericht"
 msgstr[1] "<b>%1</b> berichten"
 
-#: content/ui/AccountHeader.qml:781
+#: content/ui/AccountHeader.qml:795
 #, kde-format
 msgctxt "@label User's number of followed accounts"
 msgid "<b>%1</b> follows"
@@ -756,7 +763,7 @@ msgid_plural "<b>%1</b> following"
 msgstr[0] "Er wordt <b>%1</b> gevolgd"
 msgstr[1] "Er worden <b>%1</b> gevolgd"
 
-#: content/ui/AccountHeader.qml:794
+#: content/ui/AccountHeader.qml:808
 #, kde-format
 msgctxt "@label User's number of followers"
 msgid "<b>%1</b> follower"
@@ -764,31 +771,31 @@ msgid_plural "<b>%1</b> followers"
 msgstr[0] "<b>%1</b> volgers"
 msgstr[1] "<b>%1</b> volgers"
 
-#: content/ui/AccountHeader.qml:819
+#: content/ui/AccountHeader.qml:833
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts"
 msgstr "Berichten"
 
-#: content/ui/AccountHeader.qml:823
+#: content/ui/AccountHeader.qml:837
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Posts && Replies"
 msgstr "Berichten && antwoorden"
 
-#: content/ui/AccountHeader.qml:827
+#: content/ui/AccountHeader.qml:841
 #, kde-format
 msgctxt "@item:inmenu Profile Post Filter"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/AccountHeader.qml:858
+#: content/ui/AccountHeader.qml:872
 #, kde-format
 msgctxt "@option:check"
 msgid "Hide boosts"
 msgstr "Oppeppers verbergen"
 
-#: content/ui/AccountHeader.qml:878
+#: content/ui/AccountHeader.qml:892
 #, kde-format
 msgctxt "@action:button Show all of a profile's posts"
 msgid "All"
@@ -1084,18 +1091,16 @@ msgid "Users"
 msgstr "Gebruikers"
 
 #: content/ui/ExplorePage.qml:117
-#, fuzzy, kde-format
-#| msgid "No Posts"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Posts"
 msgstr "Geen berichten"
 
 #: content/ui/ExplorePage.qml:144
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Tags"
-msgstr "Tags"
+msgstr "Geen tags"
 
 #: content/ui/ExplorePage.qml:176
 #, kde-format
@@ -1105,15 +1110,13 @@ msgstr[0] "%1 personen zijn aan het praten"
 msgstr[1] "%1 personen zijn aan het praten"
 
 #: content/ui/ExplorePage.qml:248
-#, fuzzy, kde-format
-#| msgid "News"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No News"
-msgstr "Nieuws"
+msgstr "Geen nieuws"
 
 #: content/ui/ExplorePage.qml:285
-#, fuzzy, kde-format
-#| msgid "No Users"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Users"
 msgstr "Geen gebruikers"
