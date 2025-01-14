@@ -68,6 +68,8 @@ target_sources(tokodon_static
     account/annualreport.h
     account/favoritelistsmodel.cpp
     account/favoritelistsmodel.h
+    account/filtersmodel.cpp
+    account/filtersmodel.h
 
     # Editor
     editor/posteditorbackend.cpp
