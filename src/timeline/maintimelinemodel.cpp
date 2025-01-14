@@ -301,6 +301,13 @@ void MainTimelineModel::updateReadMarker(const QString &postId)
     }
 }
 
+void MainTimelineModel::refresh()
+{
+    // Because these timelines move really quickly, we might as well just start over from the beginning.
+    reset();
+    fillTimeline({});
+}
+
 bool MainTimelineModel::canFetchMore(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)

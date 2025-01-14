@@ -130,6 +130,12 @@ public:
      */
     void actionPin(const QModelIndex &index, Post *post);
 
+    /**
+     * @brief Refresh the timeline.
+     * For example, refreshing a thread should load any new replies and statistics.
+     */
+    virtual void refresh() { };
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the timeline loading status has changed.

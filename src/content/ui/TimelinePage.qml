@@ -78,6 +78,17 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
+    Connections {
+        target: Qt.application
+        function onStateChanged(): void {
+            // If we're switching back to the application, ensure we refresh the timeline.
+            // This only happens on Android because I'm not sure how this would happen on other platforms.
+            if (Qt.platform.os == "android" && Qt.application.state == Qt.ApplicationActive) {
+                root.model.refresh();
+            }
+        }
+    }
+
     actions: [
         Kirigami.Action {
             id: postAction
@@ -105,6 +116,10 @@ Kirigami.ScrollablePage {
                 checkable: true
                 checked: true
             }
+        },
+        Kirigami.Action {
+            text: "Refresh"
+            onTriggered: root.model.refresh()
         }
     ]
 

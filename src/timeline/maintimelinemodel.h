@@ -66,6 +66,9 @@ public:
     Q_INVOKABLE void fetchPrevious();
     Q_INVOKABLE void updateReadMarker(const QString &postId);
 
+public Q_SLOTS:
+    void refresh() override;
+
 Q_SIGNALS:
     void atEndChanged();
     void listIdChanged();

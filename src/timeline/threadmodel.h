@@ -57,7 +57,7 @@ public:
     /**
      * @brief Resets and refreshes the timeline for new posts.
      */
-    Q_INVOKABLE void refresh();
+    Q_INVOKABLE void refresh() override;
 
     /**
      * @return Whether the post may have replies hidden from the server, but available on the original
