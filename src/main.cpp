@@ -5,6 +5,7 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QQuickWindow>
+#include <QUrlQuery>
 
 #ifdef HAVE_WEBVIEW
 #include <QtWebView>
