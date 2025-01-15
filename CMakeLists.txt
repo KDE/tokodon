@@ -81,8 +81,9 @@ set_package_properties(KUnifiedPush PROPERTIES
 )
 
 if (TARGET KUnifiedPush)
-    find_package(OpenSSL REQUIRED)
+    find_package(OpenSSL)
     set_package_properties(OpenSSL PROPERTIES
+            TYPE REQUIRED
             PURPOSE "Generate push notification keys"
     )
 endif()
