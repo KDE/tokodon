@@ -87,7 +87,7 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormSwitchDelegate {
             id: showStats
-            text: i18n("Show number of replies, favorites and boosts")
+            text: i18n("Show number of favorites and boosts")
             checked: Config.showPostStats
             enabled: !Config.isShowPostStatsImmutable
             onToggled: {

@@ -443,7 +443,7 @@ QQC2.ItemDelegate {
                 interactedIconName: "view-conversation-balloon-symbolic"
 
                 tooltip: i18nc("Reply to a post", "Reply")
-                text: Config.showPostStats && !root.selected ? root.repliesCount : ''
+                text: root.repliesCount
 
                 onClicked: Navigation.replyTo(root.post)
             }
