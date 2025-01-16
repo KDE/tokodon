@@ -201,7 +201,27 @@ Kirigami.Page {
 
                     width: ListView.view.width
 
-                    onClicked: Qt.openUrlExternally(url)
+                    onClicked: {
+                        pageStack.push(linkTimeline.createObject(root, {
+                            url: delegate.url
+                        }));
+                    }
+
+                    Component {
+                        id: linkTimeline
+                        TimelinePage {
+                            id: timelinePage
+
+                            property alias url: timelineModel.url
+
+                            model: MainTimelineModel {
+                                id: timelineModel
+                                name: "link"
+                                showReplies: timelinePage.showReplies
+                                showBoosts: timelinePage.showBoosts
+                            }
+                        }
+                    }
 
                     contentItem: RowLayout {
                         spacing: Kirigami.Units.smallSpacing

@@ -39,6 +39,8 @@ QString MainTimelineModel::displayName() const
         return i18nc("@title", "Trending");
     } else if (m_timelineName == QStringLiteral("list")) {
         return m_listId;
+    } else if (m_timelineName == QStringLiteral("link")) {
+        return m_url;
     }
 
     return {};
@@ -57,6 +59,23 @@ void MainTimelineModel::setListId(const QString &id)
 
     m_listId = id;
     Q_EMIT listIdChanged();
+
+    fillTimeline({});
+}
+
+QString MainTimelineModel::url() const
+{
+    return m_url;
+}
+
+void MainTimelineModel::setUrl(const QString &url)
+{
+    if (m_url == url) {
+        return;
+    }
+
+    m_url = url;
+    Q_EMIT urlChanged();
 
     fillTimeline({});
 }
@@ -80,14 +99,16 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
                                         QStringLiteral("bookmarks"),
                                         QStringLiteral("favourites"),
                                         QStringLiteral("trending"),
-                                        QStringLiteral("list")};
-    static const QSet publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated")};
+                                        QStringLiteral("list"),
+                                        QStringLiteral("link")};
+    static const QSet publicTimelines = {QStringLiteral("home"), QStringLiteral("public"), QStringLiteral("federated"), QStringLiteral("link")};
 
     const bool isHome = m_timelineName == QStringLiteral("home");
     const bool isList = m_timelineName == QStringLiteral("list");
     const bool isPublic = m_timelineName == QStringLiteral("public");
     const bool isTrending = m_timelineName == QStringLiteral("trending");
     const bool isFederated = m_timelineName == QStringLiteral("federated");
+    const bool isLink = m_timelineName == QStringLiteral("link");
 
     // Ensure we aren't trying to load without an account, loading something else, or with an invalid timeline name.
     if (!m_account || loading() || !validTimelines.contains(m_timelineName)) {
@@ -102,6 +123,11 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 
     // If we are trying to load a list, don't continue without knowing which one to load.
     if (isList && m_listId.isEmpty()) {
+        return;
+    }
+
+    // If we are trying to load a link, don't continue without knowing which one to load.
+    if (isLink && m_url.isEmpty()) {
         return;
     }
 
@@ -143,6 +169,9 @@ void MainTimelineModel::fillTimeline(const QString &fromId, bool backwards)
         // TODO: this is an *upper bound* so it always is one less than the last post we read
         // is this really how it's supposed to work wrt read markers?
         query.addQueryItem(QStringLiteral("max_id"), fromId);
+    }
+    if (isLink) {
+        query.addQueryItem(QStringLiteral("url"), m_url);
     }
     url.setQuery(query);
 

@@ -21,6 +21,7 @@ class MainTimelineModel : public TimelineModel
     Q_PROPERTY(bool hasPrevious READ hasPrevious NOTIFY hasPreviousChanged)
     Q_PROPERTY(QDateTime lastReadTime READ lastReadTime NOTIFY hasPreviousChanged)
     Q_PROPERTY(bool userHasTakenReadAction READ userHasTakenReadAction NOTIFY userHasTakenReadActionChanged)
+    Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
 
 public:
     explicit MainTimelineModel(QObject *parent = nullptr);
@@ -47,6 +48,9 @@ public:
      */
     void setListId(const QString &id);
 
+    QString url() const;
+    void setUrl(const QString &url);
+
     void fillTimeline(const QString &fromId, bool backwards = false) override;
     [[nodiscard]] QString displayName() const override;
     void handleEvent(AbstractAccount::StreamingEventType eventType, const QByteArray &payload) override;
@@ -72,10 +76,12 @@ Q_SIGNALS:
     void listIdChanged();
     void hasPreviousChanged();
     void userHasTakenReadActionChanged();
+    void urlChanged();
 
 private:
     QString m_timelineName;
     QString m_listId;
+    QString m_url;
 
     std::optional<QUrl> m_next, m_prev;
     QString m_lastReadId, m_initialLastReadId;
