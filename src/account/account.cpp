@@ -285,19 +285,26 @@ void Account::validateToken()
         verify_credentials,
         true,
         this,
-        [this](QNetworkReply *reply) {
+        [this, verify_credentials](QNetworkReply *reply) {
             if (!reply->isFinished()) {
+                qCWarning(TOKODON_HTTP) << "Authentification reply not finished" << username() << verify_credentials;
+                Q_EMIT authenticated(false, {});
                 return;
             }
 
-            const auto doc = QJsonDocument::fromJson(reply->readAll());
+            const auto data = reply->readAll();
+            const auto doc = QJsonDocument::fromJson(data);
 
             if (!doc.isObject()) {
+                qCWarning(TOKODON_HTTP) << "Authentication reply is not json" << username() << verify_credentials << data;
+                Q_EMIT authenticated(false, {});
                 return;
             }
 
             const auto object = doc.object();
             if (!object.contains("source"_L1)) {
+                qCWarning(TOKODON_HTTP) << "Authentication reply does not contains source" << username() << verify_credentials;
+                Q_EMIT authenticated(false, {});
                 return;
             }
 
