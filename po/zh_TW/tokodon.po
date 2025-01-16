@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-12-30 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -790,7 +790,7 @@ msgid "Profile"
 msgstr "個人檔案"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -850,6 +850,20 @@ msgstr "沒有公告"
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr ""
+
+#: content/ui/Components/BoostConfirmationDialog.qml:19
+#, fuzzy, kde-format
+#| msgid "Confirmed"
+msgctxt "@title"
+msgid "Confirm Boost"
+msgstr "已確認"
+
+#: content/ui/Components/BoostConfirmationDialog.qml:23
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost this post"
+msgid "Boost"
+msgstr "轉嘟"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:68
@@ -1114,7 +1128,7 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "正在跟隨"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:91
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -3553,54 +3567,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boosted"
 msgstr "已轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boost"
 msgstr "轉嘟"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorited"
 msgstr "已加入最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorite"
 msgstr "最愛"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Remove bookmark"
 msgstr "移除書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmarked"
 msgstr "已加入書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmark"
 msgstr "書籤"
 
-#: content/ui/PostDelegate/PostDelegate.qml:558
+#: content/ui/PostDelegate/PostDelegate.qml:571
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4016,51 +4030,58 @@ msgid ""
 "come in."
 msgstr "若勾選，Tokodon 會讓某些時間軸自動更新取得新嘟文。"
 
-#: content/ui/Settings/AppearancePage.qml:84
+#: content/ui/Settings/AppearancePage.qml:86
+#, kde-format
+msgctxt "@option:check Boosting means to repost, or retweet"
+msgid "Ask before boosting"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "嘟文"
 
-#: content/ui/Settings/AppearancePage.qml:90
-#, kde-format
-msgid "Show number of replies, favorites and boosts"
+#: content/ui/Settings/AppearancePage.qml:103
+#, fuzzy, kde-format
+#| msgid "Show number of replies, favorites and boosts"
+msgid "Show number of favorites and boosts"
 msgstr "顯示回覆、最愛與轉嘟的數量"
 
-#: content/ui/Settings/AppearancePage.qml:105
+#: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
 msgid "Show link previews"
 msgstr "顯示連結預覽"
 
-#: content/ui/Settings/AppearancePage.qml:120
+#: content/ui/Settings/AppearancePage.qml:133
 #, kde-format
 msgid "Content font"
 msgstr "內容字型"
 
-#: content/ui/Settings/AppearancePage.qml:126
+#: content/ui/Settings/AppearancePage.qml:139
 #, kde-format
 msgid "Please choose a font"
 msgstr "請選擇字型"
 
-#: content/ui/Settings/AppearancePage.qml:137
+#: content/ui/Settings/AppearancePage.qml:150
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "媒體"
 
-#: content/ui/Settings/AppearancePage.qml:143
+#: content/ui/Settings/AppearancePage.qml:156
 #, kde-format
 msgid "Crop images on the timeline"
 msgstr "裁切時間軸上的影像"
 
-#: content/ui/Settings/AppearancePage.qml:144
+#: content/ui/Settings/AppearancePage.qml:157
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
 "in full."
 msgstr "若不勾選，只有附上一張影像的嘟文不會被裁剪。"
 
-#: content/ui/Settings/AppearancePage.qml:158
+#: content/ui/Settings/AppearancePage.qml:171
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "自動播放動態 GIF"
@@ -4847,23 +4868,23 @@ msgstr "載入中"
 msgid "Home (%1)"
 msgstr "首頁 (%1)"
 
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgid "Show Boosts"
 msgstr "顯示轉嘟"
 
-#: content/ui/TimelinePage.qml:103
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Replies"
 msgstr "顯示回覆"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "伺服器連線失敗：%1。請檢查您的設定。"
 
-#: content/ui/TimelinePage.qml:158
+#: content/ui/TimelinePage.qml:169
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -4963,69 +4984,69 @@ msgstr "7 天"
 msgid "An unknown error occurred."
 msgstr "發生未知的錯誤。"
 
-#: main.cpp:69
+#: main.cpp:71
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "正在接收推送通知"
 
-#: main.cpp:116
+#: main.cpp:118
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:118 main.cpp:143
+#: main.cpp:120 main.cpp:145
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "瀏覽聯邦宇宙"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE 社群"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:122 main.cpp:127
+#: main.cpp:124 main.cpp:129
 #, kde-format
 msgid "Maintainer"
 msgstr "維護者"
 
-#: main.cpp:126
+#: main.cpp:128
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kisaragi Hiu"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: main.cpp:144
+#: main.cpp:146
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "支援 https 和 web+ap 網址機制"
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "用獨立撰寫工具分享一行文字。"
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "The text to share."
 msgstr "要分享的文字。"
 
-#: main.cpp:150
+#: main.cpp:152
 #, kde-format
 msgid "Internal usage only."
 msgstr "僅內部用。"

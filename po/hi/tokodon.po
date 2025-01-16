@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -809,7 +809,7 @@ msgid "Profile"
 msgstr "प्रोफ़ाइल"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -869,6 +869,20 @@ msgstr "कोई घोषणा नहीं"
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr "आपके सर्वर ने अभी तक कोई घोषणा नहीं की है."
+
+#: content/ui/Components/BoostConfirmationDialog.qml:19
+#, fuzzy, kde-format
+#| msgid "Confirmed"
+msgctxt "@title"
+msgid "Confirm Boost"
+msgstr "की पुष्टि"
+
+#: content/ui/Components/BoostConfirmationDialog.qml:23
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost this post"
+msgid "Boost"
+msgstr "बढ़ाना"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:68
@@ -1138,7 +1152,7 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "अगले"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:91
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -3606,54 +3620,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boosted"
 msgstr "बढ़ाया"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boost"
 msgstr "बढ़ाना"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorited"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Remove bookmark"
 msgstr "बुकमार्क हटाएँ"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmarked"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmark"
 msgstr "बुकमार्क"
 
-#: content/ui/PostDelegate/PostDelegate.qml:558
+#: content/ui/PostDelegate/PostDelegate.qml:571
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4080,44 +4094,51 @@ msgstr ""
 "यदि चेक किया गया है, तो टोकोडॉन नए पोस्ट आने पर कुछ समयसीमाओं को स्वचालित रूप से अपडेट "
 "कर देगा।"
 
-#: content/ui/Settings/AppearancePage.qml:84
+#: content/ui/Settings/AppearancePage.qml:86
+#, kde-format
+msgctxt "@option:check Boosting means to repost, or retweet"
+msgid "Ask before boosting"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "पदों"
 
-#: content/ui/Settings/AppearancePage.qml:90
-#, kde-format
-msgid "Show number of replies, favorites and boosts"
+#: content/ui/Settings/AppearancePage.qml:103
+#, fuzzy, kde-format
+#| msgid "Show number of replies, favorites and boosts"
+msgid "Show number of favorites and boosts"
 msgstr "उत्तरों, पसंदीदा और बूस्ट की संख्या दिखाएं"
 
-#: content/ui/Settings/AppearancePage.qml:105
+#: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
 msgid "Show link previews"
 msgstr "लिंक पूर्वावलोकन दिखाएं"
 
-#: content/ui/Settings/AppearancePage.qml:120
+#: content/ui/Settings/AppearancePage.qml:133
 #, kde-format
 msgid "Content font"
 msgstr "सामग्री फ़ॉन्ट"
 
-#: content/ui/Settings/AppearancePage.qml:126
+#: content/ui/Settings/AppearancePage.qml:139
 #, kde-format
 msgid "Please choose a font"
 msgstr "कृपया एक फ़ॉन्ट चुनें"
 
-#: content/ui/Settings/AppearancePage.qml:137
+#: content/ui/Settings/AppearancePage.qml:150
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "मिडिया"
 
-#: content/ui/Settings/AppearancePage.qml:143
+#: content/ui/Settings/AppearancePage.qml:156
 #, kde-format
 msgid "Crop images on the timeline"
 msgstr "टाइमलाइन पर छवियों को क्रॉप करें"
 
-#: content/ui/Settings/AppearancePage.qml:144
+#: content/ui/Settings/AppearancePage.qml:157
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
@@ -4126,7 +4147,7 @@ msgstr ""
 "यदि अनचेक किया गया है, तो केवल एक छवि संलग्न करने वाली पोस्ट को अनक्रॉप किया जाएगा "
 "और पूरा दिखाया जाएगा।"
 
-#: content/ui/Settings/AppearancePage.qml:158
+#: content/ui/Settings/AppearancePage.qml:171
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "एनिमेटेड GIF को ऑटो-प्ले करें"
@@ -4932,23 +4953,23 @@ msgstr "लोड हो रहा है"
 msgid "Home (%1)"
 msgstr "होम (%1)"
 
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgid "Show Boosts"
 msgstr "बूस्ट दिखाएँ"
 
-#: content/ui/TimelinePage.qml:103
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Replies"
 msgstr "जवाब दिखाएं"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "सर्वर से संपर्क करने में विफल: %1. कृपया अपनी सेटिंग जांचें."
 
-#: content/ui/TimelinePage.qml:158
+#: content/ui/TimelinePage.qml:169
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5049,69 +5070,69 @@ msgstr "7 दिन"
 msgid "An unknown error occurred."
 msgstr "एक अज्ञात त्रुटि हुई।"
 
-#: main.cpp:69
+#: main.cpp:71
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "पुश नोटिफिकेशन प्राप्त करना"
 
-#: main.cpp:116
+#: main.cpp:118
 #, kde-format
 msgid "Tokodon"
 msgstr "टोकोडोन"
 
-#: main.cpp:118 main.cpp:143
+#: main.cpp:120 main.cpp:145
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "फेडिवर्स ब्राउज़ करें"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 केडीई समुदाय"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान"
 
-#: main.cpp:122 main.cpp:127
+#: main.cpp:124 main.cpp:129
 #, kde-format
 msgid "Maintainer"
 msgstr "मेंटेनर"
 
-#: main.cpp:126
+#: main.cpp:128
 #, kde-format
 msgid "Joshua Goins"
 msgstr "जोशुआ गोइन्स"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "तुम्हारे नाम"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
 
-#: main.cpp:144
+#: main.cpp:146
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "https और web+ap url योजना का समर्थन करता है"
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "स्टैंडअलोन कंपोजर में पाठ की एक पंक्ति साझा करें."
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "The text to share."
 msgstr "साझा करने के लिए पाठ."
 
-#: main.cpp:150
+#: main.cpp:152
 #, kde-format
 msgid "Internal usage only."
 msgstr "केवल आंतरिक उपयोग."

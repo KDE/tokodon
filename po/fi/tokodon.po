@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tokodon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-12 00:42+0000\n"
+"POT-Creation-Date: 2025-01-16 00:41+0000\n"
 "PO-Revision-Date: 2024-12-22 22:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -811,7 +811,7 @@ msgid "Profile"
 msgstr "Näytä profiili"
 
 #: content/ui/AccountInfo.qml:57 content/ui/ExplorePage.qml:35
-#: content/ui/TimelinePage.qml:85
+#: content/ui/TimelinePage.qml:96
 #, kde-format
 msgctxt "@action:button"
 msgid "Post"
@@ -871,6 +871,20 @@ msgstr "Ei tiedotteita"
 #, kde-format
 msgid "Your server has not made any announcements yet."
 msgstr "Palvelimesi ei ole vielä tiedottanut mitään."
+
+#: content/ui/Components/BoostConfirmationDialog.qml:19
+#, fuzzy, kde-format
+#| msgid "Confirmed"
+msgctxt "@title"
+msgid "Confirm Boost"
+msgstr "Vahvistettu"
+
+#: content/ui/Components/BoostConfirmationDialog.qml:23
+#, fuzzy, kde-format
+#| msgid "Boost"
+msgctxt "@action:button Boost this post"
+msgid "Boost"
+msgstr "Tehosta"
 
 #: content/ui/Components/ClickableIdentityInfo.qml:41
 #: content/ui/Notifications/UserInteractionLabel.qml:68
@@ -1139,7 +1153,7 @@ msgctxt "@title 'Following' as in the users you're following on Mastodon."
 msgid "Following"
 msgstr "Seuratut"
 
-#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:91
+#: content/ui/FollowingPage.qml:43 content/ui/TimelinePage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Filters"
@@ -3617,54 +3631,54 @@ msgctxt "Share a post"
 msgid "Boost"
 msgstr "Tehosta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boosted"
 msgstr "Tehostettu"
 
-#: content/ui/PostDelegate/PostDelegate.qml:481
+#: content/ui/PostDelegate/PostDelegate.qml:494
 #, kde-format
 msgid "Boost"
 msgstr "Tehosta"
 
-#: content/ui/PostDelegate/PostDelegate.qml:501
+#: content/ui/PostDelegate/PostDelegate.qml:514
 #, kde-format
 msgctxt "Favorite a post"
 msgid "Favorite"
 msgstr "Suosikki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorited"
 msgstr "Merkitty suosikiksi"
 
-#: content/ui/PostDelegate/PostDelegate.qml:504
+#: content/ui/PostDelegate/PostDelegate.qml:517
 #, kde-format
 msgid "Favorite"
 msgstr "Suosikki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgid "Remove bookmark"
 msgstr "Poista kirjanmerkki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:523
+#: content/ui/PostDelegate/PostDelegate.qml:536
 #, kde-format
 msgctxt "Bookmark a post"
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmarked"
 msgstr "Kirjanmerkitty"
 
-#: content/ui/PostDelegate/PostDelegate.qml:526
+#: content/ui/PostDelegate/PostDelegate.qml:539
 #, kde-format
 msgid "Bookmark"
 msgstr "Kirjanmerkki"
 
-#: content/ui/PostDelegate/PostDelegate.qml:558
+#: content/ui/PostDelegate/PostDelegate.qml:571
 #, kde-format
 msgid ""
 "This post has been marked private. Some posts may be missing because its "
@@ -4089,44 +4103,51 @@ msgstr ""
 "Jos valittu, Tokodon päivittää tietyt aikajanat automaattisesti uusien "
 "julkaisujen ilmestyessä."
 
-#: content/ui/Settings/AppearancePage.qml:84
+#: content/ui/Settings/AppearancePage.qml:86
+#, kde-format
+msgctxt "@option:check Boosting means to repost, or retweet"
+msgid "Ask before boosting"
+msgstr ""
+
+#: content/ui/Settings/AppearancePage.qml:97
 #, kde-format
 msgctxt "@title:group"
 msgid "Posts"
 msgstr "Viestit"
 
-#: content/ui/Settings/AppearancePage.qml:90
-#, kde-format
-msgid "Show number of replies, favorites and boosts"
+#: content/ui/Settings/AppearancePage.qml:103
+#, fuzzy, kde-format
+#| msgid "Show number of replies, favorites and boosts"
+msgid "Show number of favorites and boosts"
 msgstr "Näytä vastausten, suosikkien ja tehostusten määrä"
 
-#: content/ui/Settings/AppearancePage.qml:105
+#: content/ui/Settings/AppearancePage.qml:118
 #, kde-format
 msgid "Show link previews"
 msgstr "Näytä linkkien esikatselut"
 
-#: content/ui/Settings/AppearancePage.qml:120
+#: content/ui/Settings/AppearancePage.qml:133
 #, kde-format
 msgid "Content font"
 msgstr "Sisältöfontti"
 
-#: content/ui/Settings/AppearancePage.qml:126
+#: content/ui/Settings/AppearancePage.qml:139
 #, kde-format
 msgid "Please choose a font"
 msgstr "Valitse fontti"
 
-#: content/ui/Settings/AppearancePage.qml:137
+#: content/ui/Settings/AppearancePage.qml:150
 #, kde-format
 msgctxt "@title:group"
 msgid "Media"
 msgstr "Media"
 
-#: content/ui/Settings/AppearancePage.qml:143
+#: content/ui/Settings/AppearancePage.qml:156
 #, kde-format
 msgid "Crop images on the timeline"
 msgstr "Rajaa aikajanan kuvia"
 
-#: content/ui/Settings/AppearancePage.qml:144
+#: content/ui/Settings/AppearancePage.qml:157
 #, kde-format
 msgid ""
 "If unchecked, posts with only one image attached will be uncropped and shown "
@@ -4135,7 +4156,7 @@ msgstr ""
 "Jos on valitsematta, vain yhden kuvan sisältävät julkaisut näytetään "
 "rajaamattomina."
 
-#: content/ui/Settings/AppearancePage.qml:158
+#: content/ui/Settings/AppearancePage.qml:171
 #, kde-format
 msgid "Auto-play animated GIFs"
 msgstr "Toista animoidut GIFit automaattisesti"
@@ -4941,23 +4962,23 @@ msgstr "Ladataan"
 msgid "Home (%1)"
 msgstr "Koti (%1)"
 
-#: content/ui/TimelinePage.qml:96
+#: content/ui/TimelinePage.qml:107
 #, kde-format
 msgid "Show Boosts"
 msgstr "Piilota tehostukset"
 
-#: content/ui/TimelinePage.qml:103
+#: content/ui/TimelinePage.qml:114
 #, kde-format
 msgid "Show Replies"
 msgstr "Näytä vastaukset"
 
-#: content/ui/TimelinePage.qml:121
+#: content/ui/TimelinePage.qml:132
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your settings."
 msgstr "Palvelimeen ei saada yhteyttä: %1. Tarkista asetukset."
 
-#: content/ui/TimelinePage.qml:158
+#: content/ui/TimelinePage.qml:169
 #, kde-format
 msgctxt "@action:button Load more posts above this"
 msgid "Load More"
@@ -5058,69 +5079,69 @@ msgstr "7 päivää"
 msgid "An unknown error occurred."
 msgstr "Tapahtui tuntematon virhe."
 
-#: main.cpp:69
+#: main.cpp:71
 #, kde-format
 msgid "Receiving push notifications"
 msgstr "Vastaanotetaan push-ilmoituksia"
 
-#: main.cpp:116
+#: main.cpp:118
 #, kde-format
 msgid "Tokodon"
 msgstr "Tokodon"
 
-#: main.cpp:118 main.cpp:143
+#: main.cpp:120 main.cpp:145
 #, kde-format
 msgid "Browse the Fediverse"
 msgstr "Selaa fediversumia"
 
-#: main.cpp:120
+#: main.cpp:122
 #, kde-format
 msgid "© 2021-2024 KDE Community"
 msgstr "© 2021–2024 KDE-yhteisö"
 
-#: main.cpp:121
+#: main.cpp:123
 #, kde-format
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:122 main.cpp:127
+#: main.cpp:124 main.cpp:129
 #, kde-format
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: main.cpp:126
+#: main.cpp:128
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:131
+#: main.cpp:133
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: main.cpp:144
+#: main.cpp:146
 #, kde-format
 msgid "Supports https and web+ap url scheme"
 msgstr "Tukee https- ja web+ap-verkko-osoitemalleja"
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "Share a line of text in the standalone composer."
 msgstr "Jaa tekstirivi itsenäiseen kirjoitusohjelmaan."
 
-#: main.cpp:146
+#: main.cpp:148
 #, kde-format
 msgid "The text to share."
 msgstr "Jaettava teksti."
 
-#: main.cpp:150
+#: main.cpp:152
 #, kde-format
 msgid "Internal usage only."
 msgstr "Vain sisäiseen käyttöön."
