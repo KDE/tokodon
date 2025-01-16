@@ -22,6 +22,14 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.largeSpacing * 4
 
         FormCard.FormButtonDelegate {
+            icon.name: "filter-symbolic"
+            text: i18n("Filters")
+            onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
             icon.name: "microphone-sensitivity-muted"
             text: i18n("Muted Users")
             onClicked: root.Window.window.pageStack.layers.push(socialGraphComponent, { name: "mutes" })

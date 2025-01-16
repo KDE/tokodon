@@ -260,6 +260,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/ProfileEditor.qml
         content/ui/Settings/SafetyPage.qml
         content/ui/Settings/TokodonConfigurationView.qml
+        content/ui/Settings/FiltersPage.qml
 
         # Composer
         content/ui/StatusComposer/EditorAttachmentGrid.qml
