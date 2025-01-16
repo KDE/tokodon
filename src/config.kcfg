@@ -10,6 +10,7 @@ SPDX-License-Identifier: CC0-1.0
 -->
   <kcfgfile name="tokodonrc" />
   <include>Kirigami/Platform/PlatformTheme</include>
+  <include>QNetworkRequest</include>
   <group name="General">
     <entry name="ShowPostStats" type="bool">
       <label>Show statistics about stats</label>
@@ -94,6 +95,12 @@ SPDX-License-Identifier: CC0-1.0
     <entry name="ProxyPassword" type="Password">
       <label>The password of the proxy</label>
       <default></default>
+    </entry>
+  </group>
+  <group name="Network">
+    <entry name="Timeout" type="int">
+      <label>The default timeout for requests</label>
+      <default>(int)QNetworkRequest::DefaultTransferTimeoutConstant</default>
     </entry>
   </group>
 </kcfg>

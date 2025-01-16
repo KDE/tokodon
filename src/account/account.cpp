@@ -161,6 +161,7 @@ void Account::deleteResource(const QUrl &url, bool authenticated, QObject *paren
 QNetworkRequest Account::makeRequest(const QUrl &url, bool authenticated) const
 {
     QNetworkRequest request(url);
+    request.setTransferTimeout(Config::timeout());
 
     if (authenticated && haveToken()) {
         const QByteArray bearer = QStringLiteral("Bearer %1").arg(m_token).toLocal8Bit();
