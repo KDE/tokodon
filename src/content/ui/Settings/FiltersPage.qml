@@ -25,8 +25,8 @@ Kirigami.ScrollablePage {
     }
 
     actions: Kirigami.Action {
-        text: i18n("Create Filter")
-        icon.name: "gtk-add"
+        text: i18nc("@action:intoolbar", "Create Filter")
+        icon.name: "list-add-symbolic"
         onTriggered: {
             const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {
                 purpose: EditFilterPage.New
@@ -76,7 +76,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "filter-symbolic"
-            text: i18n("No Filters")
+            text: i18nc("@info:placeholder", "No Filters")
             visible: listview.count === 0 && !listview.model.loading
             width: parent.width - Kirigami.Units.gridUnit * 4
         }

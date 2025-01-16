@@ -21,7 +21,7 @@ FormCard.FormCardPage {
         Edit
     }
 
-    property var purpose
+    property int purpose
     property string filterId
     property bool deleted
 
@@ -44,7 +44,7 @@ FormCard.FormCardPage {
     data: Connections {
         target: backend
 
-        function onLoadingChanged() {
+        function onLoadingChanged(): void {
             // If we loaded data, then overwrite the fields
             titleField.text = backend.title;
             homeAndListsDelegate.checked = backend.homeAndListsContext;
@@ -56,7 +56,7 @@ FormCard.FormCardPage {
             hideCompletelyDelegate.checked = backend.hideCompletely;
         }
 
-        function onDone() {
+        function onDone(): void {
             root.done(root.deleted);
         }
     }
@@ -72,8 +72,14 @@ FormCard.FormCardPage {
             id: titleField
             label: i18nc("@label:textbox Filter title", "Title")
         }
+    }
 
-        FormCard.FormDelegateSeparator {}
+    FormCard.FormHeader {
+        title: i18nc("@info:header", "Contexts")
+    }
+
+    FormCard.FormCard {
+        enabled: !backend.loading
 
         FormCard.FormTextDelegate {
             text: i18nc("@info", "Select one or more contexts where this filter should apply:")
@@ -103,8 +109,14 @@ FormCard.FormCardPage {
             id: profilesDelegate
             text: i18nc("@label:checkbox", "Profiles")
         }
+    }
 
-        FormCard.FormDelegateSeparator {}
+    FormCard.FormHeader {
+        title: i18nc("@info:header", "Action")
+    }
+
+    FormCard.FormCard {
+        enabled: !backend.loading
 
         FormCard.FormRadioDelegate {
             id: hideWithNoticeDelegate
@@ -117,12 +129,14 @@ FormCard.FormCardPage {
             text: i18nc("@label:radiobutton", "Hide Completely")
             onToggled: backend.hideCompletely = true
         }
+    }
 
-        FormCard.FormDelegateSeparator {}
+    FormCard.FormHeader {
+        title: i18nc("@info:header", "Keywords")
+    }
 
-        FormCard.FormTextDelegate {
-            text: i18nc("@info", "Keywords")
-        }
+    FormCard.FormCard {
+        enabled: !backend.loading
 
         FormCard.AbstractFormDelegate {
             contentItem: ColumnLayout {
@@ -170,7 +184,7 @@ FormCard.FormCardPage {
             }
         }
     }
-    
+
     FormCard.FormCard {
         enabled: !backend.loading
     

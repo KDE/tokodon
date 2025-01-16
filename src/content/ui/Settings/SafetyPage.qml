@@ -23,7 +23,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             icon.name: "filter-symbolic"
-            text: i18n("Filters")
+            text: i18nc("@action:button", "Filters")
             onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.tokodon", "FiltersPage"))
         }
 
