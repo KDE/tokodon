@@ -43,6 +43,23 @@ void FilterEditorBackend::setFilterId(const QString &filterId)
         m_title = document["title"_L1].toString();
         Q_EMIT titleChanged();
 
+        const QJsonArray context = document["context"_L1].toArray();
+
+        m_homeAndListsContext = context.contains("home"_L1);
+        Q_EMIT homeAndListsContextChanged();
+
+        m_notificationsContext = context.contains("notifications"_L1);
+        Q_EMIT notificationsContextChanged();
+
+        m_publicTimelinesContext = context.contains("public"_L1);
+        Q_EMIT publicTimelinesContextChanged();
+
+        m_conversationsContext = context.contains("thread"_L1);
+        Q_EMIT conversationsContextChanged();
+
+        m_profilesContext = context.contains("account"_L1);
+        Q_EMIT profilesContextChanged();
+
         m_loading = false;
         Q_EMIT loadingChanged();
     });
@@ -63,6 +80,22 @@ void FilterEditorBackend::submit()
     QUrlQuery formdata;
 
     formdata.addQueryItem(QStringLiteral("title"), m_title);
+
+    if (m_homeAndListsContext) {
+        formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("home"));
+    }
+    if (m_notificationsContext) {
+        formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("notifications"));
+    }
+    if (m_publicTimelinesContext) {
+        formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("public"));
+    }
+    if (m_conversationsContext) {
+        formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("thread"));
+    }
+    if (m_profilesContext) {
+        formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("account"));
+    }
 
     // If the filterId is empty, then create a new list
     if (m_filterId.isEmpty()) {

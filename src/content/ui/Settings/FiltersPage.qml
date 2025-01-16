@@ -24,6 +24,21 @@ Kirigami.ScrollablePage {
         model.fillTimeline();
     }
 
+    actions: Kirigami.Action {
+        text: i18n("Create Filter")
+        icon.name: "gtk-add"
+        onTriggered: {
+            const page = root.Window.window.pageStack.layers.push(editFilterPage.createObject(root), {
+                purpose: EditFilterPage.New
+            });
+            page.done.connect(function(deleted) {
+                // Reload the filters since we just added one
+                model.fillTimeline();
+                root.Window.window.pageStack.layers.pop();
+            });
+        }
+    }
+
     ListView {
         id: listview
 
