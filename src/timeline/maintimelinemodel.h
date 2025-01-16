@@ -18,7 +18,6 @@ class MainTimelineModel : public TimelineModel
 
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString listId READ listId WRITE setListId NOTIFY listIdChanged)
-    Q_PROPERTY(bool atEnd READ atEnd NOTIFY atEndChanged)
     Q_PROPERTY(bool hasPrevious READ hasPrevious NOTIFY hasPreviousChanged)
     Q_PROPERTY(QDateTime lastReadTime READ lastReadTime NOTIFY hasPreviousChanged)
     Q_PROPERTY(bool userHasTakenReadAction READ userHasTakenReadAction NOTIFY userHasTakenReadActionChanged)
@@ -55,13 +54,13 @@ public:
 
     QVariant data(const QModelIndex &index, int role) const override;
 
-    [[nodiscard]] bool atEnd() const;
     [[nodiscard]] bool hasPrevious() const;
     [[nodiscard]] QDateTime lastReadTime() const;
     [[nodiscard]] bool userHasTakenReadAction() const;
 
     void reset() override;
     bool loading() const override;
+    bool atEnd() const override;
 
     Q_INVOKABLE void fetchPrevious();
     Q_INVOKABLE void updateReadMarker(const QString &postId);
@@ -70,7 +69,6 @@ public Q_SLOTS:
     void refresh() override;
 
 Q_SIGNALS:
-    void atEndChanged();
     void listIdChanged();
     void hasPreviousChanged();
     void userHasTakenReadActionChanged();

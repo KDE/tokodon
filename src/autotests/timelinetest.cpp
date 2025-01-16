@@ -89,11 +89,13 @@ private Q_SLOTS:
 
     void testTagModel()
     {
-        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), new TestReply(QStringLiteral("statuses.json"), account));
         auto fetchMoreUrl = account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home"));
         fetchMoreUrl.setQuery(QUrlQuery{
             {QStringLiteral("max_id"), QStringLiteral("103270115826038975")},
         });
+        auto statusReply = new TestReply(QStringLiteral("statuses.json"), account);
+        statusReply->setRawHeader("Link", QStringLiteral("<%1>; rel=\"next\", <>; rel=\"prev\"").arg(fetchMoreUrl.toString()).toUtf8());
+        account->registerGet(account->apiUrl(QStringLiteral("/api/v1/timelines/tag/home")), statusReply);
         account->registerGet(fetchMoreUrl, new TestReply(QStringLiteral("statuses.json"), account));
 
         TagsTimelineModel tagModel;

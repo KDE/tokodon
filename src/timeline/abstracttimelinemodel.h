@@ -18,6 +18,7 @@ class AbstractTimelineModel : public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
+    Q_PROPERTY(bool atEnd READ atEnd NOTIFY atEndChanged)
 
 public:
     enum CustoRoles {
@@ -136,6 +137,11 @@ public:
      */
     virtual void refresh() { };
 
+    virtual bool atEnd() const
+    {
+        return false;
+    }
+
 Q_SIGNALS:
     /**
      * @brief Emitted when the timeline loading status has changed.
@@ -152,6 +158,8 @@ Q_SIGNALS:
      * @brief Emitted when a network error occured when loading this timeline.
      */
     void networkErrorOccurred(const QString &message);
+
+    void atEndChanged();
 
 protected:
     QVariant postData(Post *post, int role) const;

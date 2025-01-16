@@ -23,6 +23,7 @@ public:
 
     void fillTimeline(const QString &fromId, bool backwards = false) override;
     [[nodiscard]] QString displayName() const override;
+    bool canFetchMore(const QModelIndex &parent) const override;
 
     /**
      * @brief The hashtag the timeline is searching for.
@@ -42,6 +43,8 @@ public:
      * @return If the current account is following this hashtag.
      */
     bool following() const;
+
+    bool atEnd() const override;
 
 public Q_SLOTS:
     /**
@@ -70,4 +73,5 @@ Q_SIGNALS:
 private:
     QString m_hashtag;
     bool m_following = false;
+    std::optional<QUrl> m_next;
 };

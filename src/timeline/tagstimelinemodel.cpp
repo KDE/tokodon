@@ -8,6 +8,7 @@
 #include <QUrlQuery>
 
 #include "networkcontroller.h"
+#include "texthandler.h"
 
 using namespace Qt::StringLiterals;
 
@@ -57,18 +58,25 @@ QString TagsTimelineModel::displayName() const
     return QLatin1Char('#') + m_hashtag;
 }
 
+bool TagsTimelineModel::canFetchMore(const QModelIndex &parent) const
+{
+    Q_UNUSED(parent)
+    return m_next.has_value();
+}
+
 void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 {
     Q_UNUSED(backwards)
+    Q_UNUSED(fromId)
     if (m_hashtag.isEmpty()) {
         return;
     }
-    QUrlQuery q;
-    if (!fromId.isEmpty()) {
-        q.addQueryItem(QStringLiteral("max_id"), fromId);
+    QUrl uri;
+    if (m_next) {
+        uri = m_next.value();
+    } else {
+        uri = m_account->apiUrl(QStringLiteral("/api/v1/timelines/tag/%1").arg(m_hashtag));
     }
-    auto uri = m_account->apiUrl(QStringLiteral("/api/v1/timelines/tag/%1").arg(m_hashtag));
-    uri.setQuery(q);
     const auto account = m_account;
     const auto hashtag = m_hashtag;
 
@@ -93,6 +101,10 @@ void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
             const QJsonDocument doc = QJsonDocument::fromJson(data);
             m_following = doc["following"_L1].toBool();
 
+            const auto linkHeader = QString::fromUtf8(reply->rawHeader(QByteArrayLiteral("Link")));
+            m_next = TextHandler::getNextLink(linkHeader);
+            Q_EMIT atEndChanged();
+
             fetchedTimeline(data);
             setLoading(false);
         },
@@ -101,6 +113,7 @@ void TagsTimelineModel::fillTimeline(const QString &fromId, bool backwards)
 
 void TagsTimelineModel::reset()
 {
+    m_next = {};
     beginResetModel();
     qDeleteAll(m_timeline);
     m_timeline.clear();
@@ -110,6 +123,11 @@ void TagsTimelineModel::reset()
 bool TagsTimelineModel::following() const
 {
     return m_following;
+}
+
+bool TagsTimelineModel::atEnd() const
+{
+    return !m_next;
 }
 
 #include "moc_tagstimelinemodel.cpp"
