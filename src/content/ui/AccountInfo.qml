@@ -215,7 +215,15 @@ Kirigami.Page {
                         }
 
                         TapHandler {
-                            onTapped: Navigation.openFullScreenImage([imageDelegate.attachment], accountModel.identity, 0);
+                            onTapped: {
+                                const dialog = fullScreenImage.createObject(QQC2.Overlay.overlay, {
+                                    attachments: [imageDelegate.attachment],
+                                    identity: accountModel.identity,
+                                    initialIndex: 0,
+                                    postId: imageDelegate.postId
+                                });
+                                dialog.open();
+                            }
                         }
 
                         HoverHandler {

@@ -19,13 +19,25 @@ Components.AlbumMaximizeComponent {
 
     property alias attachments: root.model
     required property var identity
+    property string postId
 
-    actions: ShareAction {
-        inputData: {
-            'urls': [root.currentItem.source],
-            'title': "Image",
+    actions: [
+        ShareAction {
+            inputData: {
+                'urls': [root.currentItem.source],
+                'title': "Image",
+            }
+        },
+        Kirigami.Action {
+            icon.name: "view-conversation-balloon-symbolic"
+            text: i18c("@action:intoolbar", "Open Post")
+            visible: root.postId !== ""
+            onTriggered: {
+                close();
+                Navigation.openPost(root.postId);
+            }
         }
-    }
+    ]
 
     leading: ClickableIdentityInfo {
         identity: root.identity
