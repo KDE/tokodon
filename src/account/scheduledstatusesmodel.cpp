@@ -67,6 +67,7 @@ bool ScheduledStatusesModel::drafts() const
 void ScheduledStatusesModel::setDrafts(bool draft)
 {
     m_drafts = draft;
+    Q_EMIT draftsChanged();
 }
 
 void ScheduledStatusesModel::fill()

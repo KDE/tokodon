@@ -9,7 +9,7 @@ class ScheduledStatusesModel : public AbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
-    Q_PROPERTY(bool drafts READ drafts WRITE setDrafts CONSTANT REQUIRED)
+    Q_PROPERTY(bool drafts READ drafts WRITE setDrafts NOTIFY draftsChanged REQUIRED)
 
 public:
     explicit ScheduledStatusesModel(QObject *parent = nullptr);
@@ -38,6 +38,9 @@ public:
 
 public Q_SLOTS:
     void deleteDraft(QModelIndex index);
+
+Q_SIGNALS:
+    void draftsChanged();
 
 private:
     void fill();
