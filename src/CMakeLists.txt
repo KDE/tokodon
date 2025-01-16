@@ -591,7 +591,8 @@ if(ANDROID)
             "boost-boosted"
             "bookmarks-bookmarked"
             "resource-calendar-insert"
-            "applications-other-symbolic")
+            "applications-other-symbolic"
+            "view-barcode-qr-symbolic")
     install(FILES ../org.kde.tokodon.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.tokodon.svg)
 else()
     target_link_libraries(tokodon PRIVATE Qt::Widgets)
