@@ -214,6 +214,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Components/UserCard.qml
         content/ui/Components/QrCodeMaximizeComponent.qml
         content/ui/Components/BoostConfirmationDialog.qml
+        content/ui/Components/VideoPlayer.qml
 
         # Initial Setup
         content/ui/InitialSetup/SetupNotifications.qml
@@ -374,27 +375,6 @@ else()
     )
 endif()
 
-if (USE_QTMULTIMEDIA)
-    find_package(Qt6Multimedia ${QT_MIN_VERSION} REQUIRED)
-    set_package_properties(Qt6Multimedia PROPERTIES
-            PURPOSE "Video playback"
-            TYPE REQUIRED
-    )
-    target_link_libraries(tokodon_static PUBLIC Qt::Multimedia)
-
-    qt_target_qml_sources(tokodon_static
-            QML_FILES
-            content/ui/QtMultimedia/MpvPlayer.qml
-    )
-else()
-    target_sources(tokodon_static
-            PRIVATE
-            utils/mpvplayer.cpp
-            utils/mpvplayer.h
-    )
-    target_link_libraries(tokodon_static PUBLIC MpvQt::MpvQt)
-endif()
-
 if (USE_QTWEBVIEW)
     qt_target_qml_sources(tokodon_static
             QML_FILES
@@ -417,6 +397,7 @@ target_link_libraries(tokodon_static
         Qt::Network
         Qt::WebSockets
         Qt::QuickControls2
+        Qt::Multimedia
         KF6::I18nQml
         KF6::I18n
         KF6::Kirigami

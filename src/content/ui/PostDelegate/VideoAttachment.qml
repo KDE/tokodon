@@ -48,7 +48,7 @@ MediaContainer {
 
         anchors.fill: parent
 
-        sourceComponent: MpvPlayer {
+        sourceComponent: VideoPlayer {
             autoPlay: root.autoPlay
             source: root.videoUrl
             looping: root.looping

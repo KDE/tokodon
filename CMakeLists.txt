@@ -13,13 +13,6 @@ project(tokodon VERSION ${RELEASE_SERVICE_VERSION})
 
 option(SAILFISHOS "Build for sailfishOS" OFF)
 
-set(SHOULD_USE_QTMULTIMEDIA OFF)
-if (WIN32)
-    set(SHOULD_USE_QTMULTIMEDIA ON)
-endif()
-
-option(USE_QTMULTIMEDIA "Use QtMultimedia instead of MpvQt for video playback" ${SHOULD_USE_QTMULTIMEDIA})
-
 set(KF_MIN_VERSION "6.9.0")
 set(QT_MIN_VERSION "6.8.0")
 
@@ -36,7 +29,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Widgets Core Quick Gui QuickControls2 Svg WebSockets Test Multimedia)
 set_package_properties(Qt6 PROPERTIES
         TYPE REQUIRED
         PURPOSE "Required application components"
@@ -137,20 +130,6 @@ if (NOT ANDROID AND NOT WIN32 AND NOT APPLE AND NOT HAIKU)
             PURPOSE "Misc windowing operations"
     )
 endif ()
-
-if (USE_QTMULTIMEDIA)
-    find_package(Qt6Multimedia ${QT_MIN_VERSION})
-    set_package_properties(Qt6Multimedia PROPERTIES
-            TYPE REQUIRED
-            PURPOSE "Video playback"
-    )
-else()
-    find_package(MpvQt)
-    set_package_properties(MpvQt PROPERTIES
-            PURPOSE "Video playback"
-            TYPE REQUIRED
-    )
-endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
