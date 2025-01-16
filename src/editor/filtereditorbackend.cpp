@@ -63,6 +63,11 @@ void FilterEditorBackend::setFilterId(const QString &filterId)
         m_hideCompletely = document["filter_action"_L1] == "hide"_L1;
         Q_EMIT hideCompletelyChanged();
 
+        m_keywords = document["keywords"_L1].toArray().toVariantList();
+        Q_EMIT keywordsChanged();
+
+        m_originalKeywords = m_keywords;
+
         m_loading = false;
         Q_EMIT loadingChanged();
     });
@@ -106,6 +111,33 @@ void FilterEditorBackend::submit()
         formdata.addQueryItem(QStringLiteral("filter_action"), QStringLiteral("warn"));
     }
 
+    if (m_originalKeywords != m_keywords) {
+        // Delete any keywords the user has removed
+        for (const auto &keyword : m_originalKeywords) {
+            bool found = false;
+            for (const auto &newKeyword : m_keywords) {
+                if (keyword.toMap()["id"_L1] == newKeyword.toMap()["id"_L1]) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                formdata.addQueryItem(QStringLiteral("keywords_attributes[][id]"), keyword.toMap()["id"_L1].toString());
+                formdata.addQueryItem(QStringLiteral("keywords_attributes[][_destroy]"), QStringLiteral("true"));
+            }
+        }
+
+        for (const auto &keyword : m_keywords) {
+            const auto map = keyword.toMap();
+            if (map.contains("id"_L1)) {
+                formdata.addQueryItem(QStringLiteral("keywords_attributes[][id]"), map["id"_L1].toString());
+            }
+            formdata.addQueryItem(QStringLiteral("keywords_attributes[][keyword]"), map["keyword"_L1].toString());
+            formdata.addQueryItem(QStringLiteral("keywords_attributes[][whole_word]"),
+                                  map["whole_word"_L1].toBool() ? QStringLiteral("true") : QStringLiteral("false"));
+        }
+    }
+
     // If the filterId is empty, then create a new list
     if (m_filterId.isEmpty()) {
         account->post(account->apiUrl(QStringLiteral("/api/v2/filters")), formdata, true, this, [this](QNetworkReply *) {
@@ -128,6 +160,43 @@ void FilterEditorBackend::deleteFilter()
         account->removeFavoriteList(m_filterId);
         Q_EMIT done();
     });
+}
+
+void FilterEditorBackend::removeKeyword(const int index)
+{
+    m_keywords.removeAt(index);
+    Q_EMIT keywordsChanged();
+}
+
+void FilterEditorBackend::addKeyword()
+{
+    m_keywords.push_back(QVariantMap{
+        {QStringLiteral("keyword"), QString{}},
+        {QStringLiteral("whole_word"), false},
+    });
+    Q_EMIT keywordsChanged();
+}
+
+void FilterEditorBackend::editKeyword(const int index, const QString &keyword)
+{
+    auto obj = m_keywords.at(index).toMap();
+    if (obj["keyword"_L1].toString() == keyword) {
+        return;
+    }
+    obj["keyword"_L1] = keyword;
+    m_keywords[index] = obj;
+    Q_EMIT keywordsChanged();
+}
+
+void FilterEditorBackend::editWholeWord(const int index, const bool wholeWord)
+{
+    auto obj = m_keywords.at(index).toMap();
+    if (obj["whole_word"_L1].toBool() == wholeWord) {
+        return;
+    }
+    obj["whole_word"_L1] = wholeWord;
+    m_keywords[index] = obj;
+    Q_EMIT keywordsChanged();
 }
 
 #include "moc_filtereditorbackend.cpp"

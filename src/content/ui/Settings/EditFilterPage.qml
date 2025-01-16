@@ -117,6 +117,58 @@ FormCard.FormCardPage {
             text: i18nc("@label:radiobutton", "Hide Completely")
             onToggled: backend.hideCompletely = true
         }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: i18nc("@info", "Keywords")
+        }
+
+        FormCard.AbstractFormDelegate {
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
+                Repeater {
+                    model: backend.keywords
+
+                    delegate: RowLayout {
+                        id: delegate
+
+                        required property int index
+                        required property string keyword
+                        required property bool whole_word
+
+                        spacing: Kirigami.Units.smallSpacing
+
+                        QQC2.TextField {
+                            text: delegate.keyword
+                            onEditingFinished: backend.editKeyword(delegate.index, text)
+
+                            Layout.fillWidth: true
+                        }
+
+                        QQC2.CheckBox {
+                            text: i18nc("@label:checkbox", "Whole word")
+                            checked: delegate.whole_word
+                            onToggled: backend.editWholeWord(delegate.index, checked)
+                        }
+
+                        QQC2.Button {
+                            text: i18nc("@action:button Remove keyword", "Remove")
+                            icon.name: "list-remove-symbolic"
+                            display: QQC2.AbstractButton.IconOnly
+                            onClicked: backend.removeKeyword(delegate.index)
+                        }
+                    }
+                }
+
+                QQC2.Button {
+                    text: i18nc("@action:button Add keyword", "Add")
+                    icon.name: "list-add-symbolic"
+                    onClicked: backend.addKeyword()
+                }
+            }
+        }
     }
     
     FormCard.FormCard {

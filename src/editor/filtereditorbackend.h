@@ -18,6 +18,7 @@ class FilterEditorBackend : public QObject
     Q_PROPERTY(bool conversationsContext MEMBER m_conversationsContext NOTIFY conversationsContextChanged)
     Q_PROPERTY(bool profilesContext MEMBER m_profilesContext NOTIFY profilesContextChanged)
     Q_PROPERTY(bool hideCompletely MEMBER m_hideCompletely NOTIFY hideCompletelyChanged)
+    Q_PROPERTY(QVariantList keywords MEMBER m_keywords NOTIFY keywordsChanged)
 
 public:
     explicit FilterEditorBackend(QObject *parent = nullptr);
@@ -30,6 +31,10 @@ public:
 public Q_SLOTS:
     void submit();
     void deleteFilter();
+    void removeKeyword(int index);
+    void addKeyword();
+    void editKeyword(int index, const QString &keyword);
+    void editWholeWord(int index, bool wholeWord);
 
 Q_SIGNALS:
     void filterIdChanged();
@@ -42,6 +47,7 @@ Q_SIGNALS:
     void conversationsContextChanged();
     void profilesContextChanged();
     void hideCompletelyChanged();
+    void keywordsChanged();
 
 private:
     QString m_filterId;
@@ -53,4 +59,6 @@ private:
     bool m_conversationsContext = false;
     bool m_profilesContext = false;
     bool m_hideCompletely = false;
+    QVariantList m_keywords;
+    QVariantList m_originalKeywords;
 };
