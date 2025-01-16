@@ -60,6 +60,9 @@ void FilterEditorBackend::setFilterId(const QString &filterId)
         m_profilesContext = context.contains("account"_L1);
         Q_EMIT profilesContextChanged();
 
+        m_hideCompletely = document["filter_action"_L1] == "hide"_L1;
+        Q_EMIT hideCompletelyChanged();
+
         m_loading = false;
         Q_EMIT loadingChanged();
     });
@@ -95,6 +98,12 @@ void FilterEditorBackend::submit()
     }
     if (m_profilesContext) {
         formdata.addQueryItem(QStringLiteral("context[]"), QStringLiteral("account"));
+    }
+
+    if (m_hideCompletely) {
+        formdata.addQueryItem(QStringLiteral("filter_action"), QStringLiteral("hide"));
+    } else {
+        formdata.addQueryItem(QStringLiteral("filter_action"), QStringLiteral("warn"));
     }
 
     // If the filterId is empty, then create a new list

@@ -52,6 +52,8 @@ FormCard.FormCardPage {
             publicTimelinesDelegate.checked = backend.publicTimelinesContext;
             conversationsDelegate.checked = backend.conversationsContext;
             profilesDelegate.checked = backend.profilesContext;
+            hideWithNoticeDelegate.checked = !backend.hideCompletely;
+            hideCompletelyDelegate.checked = backend.hideCompletely;
         }
 
         function onDone() {
@@ -100,6 +102,20 @@ FormCard.FormCardPage {
         FormCard.FormCheckDelegate {
             id: profilesDelegate
             text: i18nc("@label:checkbox", "Profiles")
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormRadioDelegate {
+            id: hideWithNoticeDelegate
+            text: i18nc("@label:radiobutton", "Hide with Content Notice")
+            onToggled: backend.hideCompletely = false
+        }
+
+        FormCard.FormRadioDelegate {
+            id: hideCompletelyDelegate
+            text: i18nc("@label:radiobutton", "Hide Completely")
+            onToggled: backend.hideCompletely = true
         }
     }
     
