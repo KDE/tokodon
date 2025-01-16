@@ -116,10 +116,6 @@ Kirigami.ScrollablePage {
                 checkable: true
                 checked: true
             }
-        },
-        Kirigami.Action {
-            text: "Refresh"
-            onTriggered: root.model.refresh()
         }
     ]
 
