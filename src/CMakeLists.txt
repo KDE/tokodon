@@ -86,6 +86,8 @@ target_sources(tokodon_static
     editor/polleditorbackend.h
     editor/reporteditorbackend.cpp
     editor/reporteditorbackend.h
+    editor/filtereditorbackend.cpp
+    editor/filtereditorbackend.h
 
     # Conversation view
     conversation/conversationmodel.cpp
@@ -261,6 +263,7 @@ qt_target_qml_sources(tokodon_static
         content/ui/Settings/SafetyPage.qml
         content/ui/Settings/TokodonConfigurationView.qml
         content/ui/Settings/FiltersPage.qml
+        content/ui/Settings/EditFilterPage.qml
 
         # Composer
         content/ui/StatusComposer/EditorAttachmentGrid.qml
